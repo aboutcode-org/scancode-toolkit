@@ -1,5 +1,6 @@
 Pygments is written and maintained by Georg Brandl <g.brandl@gmx.net>.
 
-Other major contributors are:
+Other contributors (as mentionend in :copyright:s) are:
  - Armin Ronacher <armin.ronacher@active-4.com>
-
+ - Lukas Meuser <pocoo@quittenbrod.de>
+ - Matt Good <trac@matt-good.net>
