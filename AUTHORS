@@ -1,30 +1,49 @@
-Pygments is written and maintained by Georg Brandl <g.brandl@gmx.net>.
+Pygments is written and maintained by Georg Brandl <georg@python.org>.
 
-Other contributors (as mentionend in :copyright:s) are:
+Major developers are Tim Hatch <tim@timhatch.com> and Armin Ronacher
+<armin.ronacher@active-4.com>.
 
-- Armin Ronacher <armin.ronacher@active-4.com>
-- Lukas Meuser <pocoo@quittenbrod.de>
-- Matt Good <trac@matt-good.net>
-- Tim Hatch <tim@timhatch.com>
-- Ronny Pfannschmidt
-- Dennis Kaarsemaker
-- Marek Kubica
-- Ben Bangert
-- Tiberius Teng
-- Adam Blinkinsop <blinks@acm.org>
-- Kirk McDonald
-- Christopher Creutzig <christopher@creutzig.de>
-- Frits van Bommel
-- Matteo Sasso
-- Kumar Appaiah <akumar@ee.iitm.ac.in>
-- Varun Hiremath <varunhiremath@gmail.com>
-- Jeremy Thurgood
-- Matthew Harrison
-- Steven Hazel
+Other contributors, listed alphabetically, are:
 
-Many thanks for all your contributions!
+* Kumar Appaiah -- Debian control lexer
+* Ali Afshar -- image formatter
+* Andreas Amann -- AppleScript lexer
+* Stefan Matthias Aust -- Smalltalk lexer
+* Ben Bangert -- Mako lexers
+* Max Battcher -- Darcs patch lexer
+* Michael Bayer -- Myghty lexers
+* Jarrett Billingsley -- MiniD lexer
+* Adam Blinkinsop -- Haskell, Redcode lexers
+* Frits van Bommel -- assembler lexers
+* Pierre Bourdon -- ActionScript 3 lexer
+* Christopher Creutzig -- MuPAD lexer
+* Pete Curry -- bugfixes
+* Nick Efford -- Python 3 lexer
+* Artem Egorkine -- terminal256 formatter
+* Laurent Gautier -- R/S lexer
+* Krzysiek Goj -- Scala lexer
+* Matt Good -- Genshi, Cheetah lexers
+* Matthew Harrison -- SVG formatter
+* Steven Hazel -- Tcl lexer
+* Varun Hiremath -- Debian control lexer
+* Dennis Kaarsemaker -- sources.list lexer
+* Marek Kubica -- Scheme lexer
+* Jochen Kupperschmidt -- Markdown processor
+* Kirk McDonald -- D lexer
+* Lukas Meuser -- BBCode formatter, Lua lexer
+* Paulo Moura -- Logtalk lexer
+* Ronny Pfannschmidt -- BBCode lexer
+* Benjamin Peterson -- Test suite refactoring
+* Andre Roberge -- Tango style
+* Stou Sandalski -- NumPy, FORTRAN, tcsh and XSLT lexers
+* Matteo Sasso -- Common Lisp lexer
+* Ken Schutte -- Matlab lexers
+* Tassilo Schweyer -- Io, MOOCode lexers
+* Kirill Simonov -- YAML lexer
+* Tiberius Teng -- default style overhaul
+* Jeremy Thurgood -- Erlang, Squid config lexers
+* Whitney Young -- ObjectiveC lexer
+* Nils Winter -- Smalltalk lexer
+* Davy Wybiral -- Clojure lexer
 
-Also thanks to the following contributors that helped fixing minor
-bugs:
-
-- Pierre Bourdon
+Many thanks for all contributions!
