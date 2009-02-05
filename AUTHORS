@@ -15,7 +15,7 @@ Other contributors, listed alphabetically, are:
 * Jarrett Billingsley -- MiniD lexer
 * Adam Blinkinsop -- Haskell, Redcode lexers
 * Frits van Bommel -- assembler lexers
-* Pierre Bourdon -- ActionScript 3 lexer
+* Pierre Bourdon -- bugfixes
 * Christopher Creutzig -- MuPAD lexer
 * Pete Curry -- bugfixes
 * Nick Efford -- Python 3 lexer
