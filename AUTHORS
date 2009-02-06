@@ -34,6 +34,7 @@ Other contributors, listed alphabetically, are:
 * Lukas Meuser -- BBCode formatter, Lua lexer
 * Paulo Moura -- Logtalk lexer
 * Ana Nelson -- Ragel, ANTLR lexers
+* David Oliva -- Rebol lexer
 * Ronny Pfannschmidt -- BBCode lexer
 * Benjamin Peterson -- Test suite refactoring
 * Andre Roberge -- Tango style
