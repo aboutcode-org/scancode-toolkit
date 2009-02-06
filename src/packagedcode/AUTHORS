@@ -36,6 +36,7 @@ Other contributors, listed alphabetically, are:
 * Ronny Pfannschmidt -- BBCode lexer
 * Benjamin Peterson -- Test suite refactoring
 * Andre Roberge -- Tango style
+* Mario Ruggier -- Evoque lexers
 * Stou Sandalski -- NumPy, FORTRAN, tcsh and XSLT lexers
 * Matteo Sasso -- Common Lisp lexer
 * Ken Schutte -- Matlab lexers
