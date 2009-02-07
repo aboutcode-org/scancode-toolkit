@@ -37,6 +37,7 @@ Other contributors, listed alphabetically, are:
 * David Oliva -- Rebol lexer
 * Ronny Pfannschmidt -- BBCode lexer
 * Benjamin Peterson -- Test suite refactoring
+* Justin Reidy -- MXML lexer
 * Andre Roberge -- Tango style
 * Mario Ruggier -- Evoque lexers
 * Stou Sandalski -- NumPy, FORTRAN, tcsh and XSLT lexers
