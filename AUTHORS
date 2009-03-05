@@ -45,6 +45,7 @@ Other contributors, listed alphabetically, are:
 * Matteo Sasso -- Common Lisp lexer
 * Ken Schutte -- Matlab lexers
 * Tassilo Schweyer -- Io, MOOCode lexers
+* Joerg Sieker -- ABAP lexer
 * Kirill Simonov -- YAML lexer
 * Tiberius Teng -- default style overhaul
 * Jeremy Thurgood -- Erlang, Squid config lexers
