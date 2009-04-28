@@ -30,6 +30,7 @@ Other contributors, listed alphabetically, are:
 * Marek Kubica -- Scheme lexer
 * Jochen Kupperschmidt -- Markdown processor
 * Gerd Kurzbach -- Modelica lexer
+* Mark Lee -- Vala lexer
 * Kirk McDonald -- D lexer
 * Lukas Meuser -- BBCode formatter, Lua lexer
 * Paulo Moura -- Logtalk lexer
