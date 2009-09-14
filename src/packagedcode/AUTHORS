@@ -36,6 +36,7 @@ Other contributors, listed alphabetically, are:
 * Paulo Moura -- Logtalk lexer
 * Ana Nelson -- Ragel, ANTLR lexers
 * Jesper Noehr -- HTML formatter "anchorlinenos"
+* Jonas Obrist -- BBCode lexer
 * David Oliva -- Rebol lexer
 * Ronny Pfannschmidt -- BBCode lexer
 * Benjamin Peterson -- Test suite refactoring
