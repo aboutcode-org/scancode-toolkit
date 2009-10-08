@@ -52,6 +52,7 @@ Other contributors, listed alphabetically, are:
 * Kirill Simonov -- YAML lexer
 * Tiberius Teng -- default style overhaul
 * Jeremy Thurgood -- Erlang, Squid config lexers
+* Erick Tryzelaar -- Felix lexer
 * Whitney Young -- ObjectiveC lexer
 * Dietmar Winkler -- Modelica lexer
 * Nils Winter -- Smalltalk lexer
