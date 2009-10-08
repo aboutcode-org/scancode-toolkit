@@ -18,6 +18,7 @@ Other contributors, listed alphabetically, are:
 * Pierre Bourdon -- bugfixes
 * Christopher Creutzig -- MuPAD lexer
 * Pete Curry -- bugfixes
+* Owen Durni -- haXe lexer
 * Nick Efford -- Python 3 lexer
 * Artem Egorkine -- terminal256 formatter
 * Laurent Gautier -- R/S lexer
