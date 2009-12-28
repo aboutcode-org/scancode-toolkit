@@ -37,6 +37,7 @@ Other contributors, listed alphabetically, are:
 * Lukas Meuser -- BBCode formatter, Lua lexer
 * Paulo Moura -- Logtalk lexer
 * Ana Nelson -- Ragel, ANTLR lexers
+* Nam T. Nguyen -- Monokai style
 * Jesper Noehr -- HTML formatter "anchorlinenos"
 * Jonas Obrist -- BBCode lexer
 * David Oliva -- Rebol lexer
