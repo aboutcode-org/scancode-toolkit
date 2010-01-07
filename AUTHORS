@@ -24,18 +24,22 @@ Other contributors, listed alphabetically, are:
 * Laurent Gautier -- R/S lexer
 * Krzysiek Goj -- Scala lexer
 * Matt Good -- Genshi, Cheetah lexers
+* Olivier Guibe -- Asymptote lexer
 * Matthew Harrison -- SVG formatter
 * Steven Hazel -- Tcl lexer
+* Aslak Hellesøy -- Gherkin lexer
 * Varun Hiremath -- Debian control lexer
 * Dennis Kaarsemaker -- sources.list lexer
 * Marek Kubica -- Scheme lexer
 * Jochen Kupperschmidt -- Markdown processor
 * Gerd Kurzbach -- Modelica lexer
 * Mark Lee -- Vala lexer
+* Ben Mabey -- Gherkin lexer
 * Kirk McDonald -- D lexer
 * Lukas Meuser -- BBCode formatter, Lua lexer
 * Paulo Moura -- Logtalk lexer
 * Ana Nelson -- Ragel, ANTLR, R console lexers
+* Nam T. Nguyen -- Monokai style
 * Jesper Noehr -- HTML formatter "anchorlinenos"
 * Jonas Obrist -- BBCode lexer
 * David Oliva -- Rebol lexer
@@ -43,6 +47,7 @@ Other contributors, listed alphabetically, are:
 * Benjamin Peterson -- Test suite refactoring
 * Justin Reidy -- MXML lexer
 * Andre Roberge -- Tango style
+* Konrad Rudolph -- LaTeX formatter enhancements
 * Mario Ruggier -- Evoque lexers
 * Stou Sandalski -- NumPy, FORTRAN, tcsh and XSLT lexers
 * Matteo Sasso -- Common Lisp lexer
