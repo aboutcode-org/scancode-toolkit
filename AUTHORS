@@ -11,6 +11,7 @@ Other contributors, listed alphabetically, are:
 * Stefan Matthias Aust -- Smalltalk lexer
 * Ben Bangert -- Mako lexers
 * Max Battcher -- Darcs patch lexer
+* Paul Baumgart, 280 North, Inc. -- Objective-J lexer
 * Michael Bayer -- Myghty lexers
 * Jarrett Billingsley -- MiniD lexer
 * Adam Blinkinsop -- Haskell, Redcode lexers
@@ -28,6 +29,7 @@ Other contributors, listed alphabetically, are:
 * Matthew Harrison -- SVG formatter
 * Steven Hazel -- Tcl lexer
 * Aslak Hellesøy -- Gherkin lexer
+* David Hess, Fish Software, Inc. -- Objective-J lexer
 * Varun Hiremath -- Debian control lexer
 * Dennis Kaarsemaker -- sources.list lexer
 * Marek Kubica -- Scheme lexer
