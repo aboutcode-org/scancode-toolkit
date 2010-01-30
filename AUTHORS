@@ -61,6 +61,7 @@ Other contributors, listed alphabetically, are:
 * Jeremy Thurgood -- Erlang, Squid config lexers
 * Erick Tryzelaar -- Felix lexer
 * Whitney Young -- ObjectiveC lexer
+* Nathan Weizenbaum -- Haml and Sass lexers
 * Dietmar Winkler -- Modelica lexer
 * Nils Winter -- Smalltalk lexer
 * Davy Wybiral -- Clojure lexer
