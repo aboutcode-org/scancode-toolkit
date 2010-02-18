@@ -8,6 +8,7 @@ Other contributors, listed alphabetically, are:
 * Kumar Appaiah -- Debian control lexer
 * Ali Afshar -- image formatter
 * Andreas Amann -- AppleScript lexer
+* Jeremy Ashkenas -- CoffeeScript lexer
 * Stefan Matthias Aust -- Smalltalk lexer
 * Ben Bangert -- Mako lexers
 * Max Battcher -- Darcs patch lexer
