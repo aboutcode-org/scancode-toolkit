@@ -26,6 +26,7 @@ Other contributors, listed alphabetically, are:
 * Laurent Gautier -- R/S lexer
 * Krzysiek Goj -- Scala lexer
 * Matt Good -- Genshi, Cheetah lexers
+* Patrick Gotthardt -- PHP namespaces support
 * Olivier Guibe -- Asymptote lexer
 * Matthew Harrison -- SVG formatter
 * Steven Hazel -- Tcl lexer
