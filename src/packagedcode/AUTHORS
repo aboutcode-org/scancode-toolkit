@@ -5,6 +5,7 @@ Major developers are Tim Hatch <tim@timhatch.com> and Armin Ronacher
 
 Other contributors, listed alphabetically, are:
 
+* Sam Aaron -- Ioke lexer
 * Kumar Appaiah -- Debian control lexer
 * Ali Afshar -- image formatter
 * Andreas Amann -- AppleScript lexer
