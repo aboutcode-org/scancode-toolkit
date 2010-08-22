@@ -36,6 +36,7 @@ Other contributors, listed alphabetically, are:
 * Aslak Hellesøy -- Gherkin lexer
 * David Hess, Fish Software, Inc. -- Objective-J lexer
 * Varun Hiremath -- Debian control lexer
+* Tim Howard -- BlitzMax lexer
 * Dennis Kaarsemaker -- sources.list lexer
 * Benjamin Kowarsch -- Modula-2 lexer
 * Marek Kubica -- Scheme lexer
