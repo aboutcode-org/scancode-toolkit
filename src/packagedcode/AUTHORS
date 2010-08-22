@@ -25,6 +25,7 @@ Other contributors, listed alphabetically, are:
 * Owen Durni -- haXe lexer
 * Nick Efford -- Python 3 lexer
 * Artem Egorkine -- terminal256 formatter
+* James H. Fisher -- PostScript lexer
 * Laurent Gautier -- R/S lexer
 * Krzysiek Goj -- Scala lexer
 * Matt Good -- Genshi, Cheetah lexers
