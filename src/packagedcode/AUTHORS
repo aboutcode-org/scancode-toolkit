@@ -67,6 +67,7 @@ Other contributors, listed alphabetically, are:
 * Tassilo Schweyer -- Io, MOOCode lexers
 * Joerg Sieker -- ABAP lexer
 * Kirill Simonov -- YAML lexer
+* Steve Spigarelli -- XQuery lexer
 * Tiberius Teng -- default style overhaul
 * Jeremy Thurgood -- Erlang, Squid config lexers
 * Erick Tryzelaar -- Felix lexer
