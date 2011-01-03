@@ -56,6 +56,7 @@ Other contributors, listed alphabetically, are:
 * Jesper Noehr -- HTML formatter "anchorlinenos"
 * Jonas Obrist -- BBCode lexer
 * David Oliva -- Rebol lexer
+* Jon Parise -- Protocol buffers lexer
 * Ronny Pfannschmidt -- BBCode lexer
 * Benjamin Peterson -- Test suite refactoring
 * Justin Reidy -- MXML lexer
