@@ -16,6 +16,7 @@ Other contributors, listed alphabetically, are:
 * Paul Baumgart, 280 North, Inc. -- Objective-J lexer
 * Michael Bayer -- Myghty lexers
 * John Benediktsson -- Factor lexer
+* Christopher Bertels -- Fancy lexer
 * Jarrett Billingsley -- MiniD lexer
 * Adam Blinkinsop -- Haskell, Redcode lexers
 * Frits van Bommel -- assembler lexers
