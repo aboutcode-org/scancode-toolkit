@@ -52,6 +52,7 @@ Other contributors, listed alphabetically, are:
 * Kirk McDonald -- D lexer
 * Stephen McKamey -- Duel/JBST lexer
 * Lukas Meuser -- BBCode formatter, Lua lexer
+* Michael Mior -- Awk lexer
 * Paulo Moura -- Logtalk lexer
 * Ana Nelson -- Ragel, ANTLR, R console lexers
 * Nam T. Nguyen -- Monokai style
