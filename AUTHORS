@@ -75,6 +75,7 @@ Other contributors, listed alphabetically, are:
 * Joerg Sieker -- ABAP lexer
 * Kirill Simonov -- YAML lexer
 * Steve Spigarelli -- XQuery lexer
+* Jerome St-Louis -- eC lexer
 * Tiberius Teng -- default style overhaul
 * Jeremy Thurgood -- Erlang, Squid config lexers
 * Erick Tryzelaar -- Felix lexer
