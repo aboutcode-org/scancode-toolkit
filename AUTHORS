@@ -62,6 +62,7 @@ Other contributors, listed alphabetically, are:
 * Jon Parise -- Protocol buffers lexer
 * Ronny Pfannschmidt -- BBCode lexer
 * Benjamin Peterson -- Test suite refactoring
+* Dominik Picheta -- Nimrod lexer
 * Justin Reidy -- MXML lexer
 * Lubomir Rintel -- GoodData MAQL and CL lexers
 * Andre Roberge -- Tango style
