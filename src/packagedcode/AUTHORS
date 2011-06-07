@@ -85,5 +85,6 @@ Other contributors, listed alphabetically, are:
 * Dietmar Winkler -- Modelica lexer
 * Nils Winter -- Smalltalk lexer
 * Davy Wybiral -- Clojure lexer
+* Alex Zimin -- Nemerle lexer
 
 Many thanks for all contributions!
