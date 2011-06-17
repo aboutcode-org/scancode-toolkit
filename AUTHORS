@@ -51,6 +51,7 @@ Other contributors, listed alphabetically, are:
 * Simone Margaritelli -- Hybris lexer
 * Kirk McDonald -- D lexer
 * Stephen McKamey -- Duel/JBST lexer
+* Brian McKenna -- F# lexer
 * Lukas Meuser -- BBCode formatter, Lua lexer
 * Michael Mior -- Awk lexer
 * Paulo Moura -- Logtalk lexer
