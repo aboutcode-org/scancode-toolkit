@@ -28,8 +28,9 @@ Other contributors, listed alphabetically, are:
 * Nick Efford -- Python 3 lexer
 * Artem Egorkine -- terminal256 formatter
 * James H. Fisher -- PostScript lexer
-* Naveen Garg - Autohotkey lexer
+* Naveen Garg -- Autohotkey lexer
 * Laurent Gautier -- R/S lexer
+* Alex Gaynor -- PyPy log lexer
 * Bertrand Goetzmann -- Groovy lexer
 * Krzysiek Goj -- Scala lexer
 * Matt Good -- Genshi, Cheetah lexers
