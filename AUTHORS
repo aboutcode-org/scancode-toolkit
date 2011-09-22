@@ -79,6 +79,7 @@ Other contributors, listed alphabetically, are:
 * Ken Schutte -- Matlab lexers
 * Tassilo Schweyer -- Io, MOOCode lexers
 * Joerg Sieker -- ABAP lexer
+* Robert Simmons -- Standard ML lexer
 * Kirill Simonov -- YAML lexer
 * Steve Spigarelli -- XQuery lexer
 * Jerome St-Louis -- eC lexer
