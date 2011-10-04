@@ -53,6 +53,7 @@ Other contributors, listed alphabetically, are:
 * Ben Mabey -- Gherkin lexer
 * Simone Margaritelli -- Hybris lexer
 * Kirk McDonald -- D lexer
+* Gordon McGregor -- SystemVerilog lexer
 * Stephen McKamey -- Duel/JBST lexer
 * Brian McKenna -- F# lexer
 * Lukas Meuser -- BBCode formatter, Lua lexer
