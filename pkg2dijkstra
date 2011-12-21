@@ -1,0 +1,27 @@
+#!/bin/bash
+
+IFS="`printf "\n\t"`"
+set -eu
+
+if [[ -z "${1-}" ]]; then
+    echo "usage: $0 (foo-1.2.3.tar.gz|foo/) ..."
+    exit 1
+fi
+
+targets=("$@")
+for (( i = 0; i < $#; i += 1)); do
+    target="${targets[$i]}"
+    if [[ -d "$target" ]]; then
+        echo "looks like a source directory. Doing some magic to make that work..."
+        pushd "$target" > /dev/null
+        rm -r dist/ 2>&1 > /dev/null || true
+        python setup.py sdist
+        target="$(echo "$PWD/dist/"*)"
+        popd > /dev/null
+        targets[$i]="$target"
+    fi
+done
+
+scp "${targets[@]}" luminaut@dijkstra.local:/var/www/pypi/
+
+ssh luminaut@dijkstra.local "cd /var/www/; ./dir2pypi pypi"
