@@ -22,7 +22,7 @@ def file_to_package(file):
         raise ValueError(msg)
     return (split[0], split[1].replace("_", "-"))
 
-def dir2pypi():
+def dir2pi():
     if len(sys.argv) != 2:
         print dedent("""
             usage: %s PACKAGE_DIR

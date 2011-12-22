@@ -15,5 +15,5 @@ setup(
     author_email="david@wolever.net",
     description="pip2pi builds a PyPI-compatible package repository from pip requirements",
     packages=find_packages(),
-    scripts=["pip2tgz", "dir2pypi"],
+    scripts=["pip2tgz", "dir2pi"],
 )
