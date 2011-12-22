@@ -1,11 +1,13 @@
 import os
 import sys
 import shutil
+import atexit
+import tempfile
 import textwrap
 from subprocess import check_call
 
 def dedent(text):
-    return textwrap.dedent(text)
+    return textwrap.dedent(text.lstrip("\n"))
 
 def file_to_package(file):
     """ Returns the package name for a given file.
@@ -22,10 +24,10 @@ def file_to_package(file):
         raise ValueError(msg)
     return (split[0], split[1].replace("_", "-"))
 
-def dir2pi():
-    if len(sys.argv) != 2:
+def dir2pi(argv=sys.argv):
+    if len(argv) != 2:
         print dedent("""
-            usage: %s PACKAGE_DIR
+            usage: dir2pi PACKAGE_DIR
 
             Creates the directory PACKAGE_DIR/simple/ and populates it with the
             directory structure required to use with pip's --index-url.
@@ -36,9 +38,21 @@ def dir2pi():
             
             This makes the most sense if PACKAGE_DIR is somewhere inside a
             webserver's inside htdocs directory.
-        """ %(sys.argv[0], ) )
+
+            For example:
+
+                $ ls packages/
+                foo-1.2.tar.gz
+                $ dir2pi packags/
+                $ find packages/
+                packages/
+                packages/foo-1.2.tar.gz
+                packages/simple/
+                packages/simple/foo/
+                packages/simple/foo/foo-1.2.tar.gz
+        """)
         sys.exit(1)
-    pkgdir = sys.argv[1]
+    pkgdir = argv[1]
     if not os.path.isdir(pkgdir):
         raise ValueError("no such directory: %r" %(pkgdir, ))
     pkgdirpath = lambda *x: os.path.join(pkgdir, *x)
@@ -56,25 +70,31 @@ def dir2pi():
         if not os.path.exists(pkg_dir):
             os.mkdir(pkg_dir)
         pkg_new_basename = "-".join([pkg_name, pkg_rest])
-        os.link(pkg_filepath, os.path.join(pkg_dir, pkg_new_basename))
+        symlink_target = os.path.join(pkg_dir, pkg_new_basename)
+        symlink_source = os.path.join("../../", pkg_new_basename)
+        os.symlink(symlink_source, symlink_target)
 
 
-def pip2tgz():
-    if len(sys.argv) < 3:
+def pip2tgz(argv=sys.argv):
+    if len(argv) < 3:
         print dedent("""
-            usage: %s OUTPUT_DIRECTORY PACKAGE_NAMES
+            usage: pip2tgz OUTPUT_DIRECTORY PACKAGE_NAME ...
 
             Where PACKAGE_NAMES are any names accepted by pip (ex, `foo`,
             `foo==1.2`, `-r requirements.txt`).
             
-            %s will download all packages required to install PACKAGE_NAMES and
+            pip2tgz will download all packages required to install PACKAGE_NAMES and
             save them to sanely-named tarballs in OUTPUT_DIRECTORY.
-        """ %(sys.argv[0], sys.argv[0]))
+
+            For example:
+                
+                $ pip2tgz /var/www/packages/ -r requirements.txt foo==1.2 baz/
+        """)
         sys.exit(1)
 
-    outdir = os.path.abspath(sys.argv[1])
+    outdir = os.path.abspath(argv[1])
     if not os.path.exists(outdir):
-        os.path.mkdir(outdir)
+        os.mkdir(outdir)
 
     tempdir = os.path.join(outdir, "_pip2tgz_temp")
     if os.path.exists(tempdir):
@@ -82,11 +102,12 @@ def pip2tgz():
     os.mkdir(tempdir)
 
     bundle_zip = os.path.join(tempdir, "bundle.zip")
-    check_call(["pip", "bundle", "-b", tempdir, bundle_zip] + sys.argv[2:])
+    check_call(["pip", "bundle", "-b", tempdir, bundle_zip] + argv[2:])
 
     os.chdir(tempdir)
     check_call(["unzip", "bundle.zip", "pip-manifest.txt"])
 
+    num_pakages = 0
     for line in open("pip-manifest.txt"):
         line = line.strip()
         if not line or line.startswith("#"):
@@ -102,7 +123,52 @@ def pip2tgz():
         new_input_dir = "%s-%s" %(pkg, version)
         os.rename(old_input_dir, new_input_dir)
         output_name = os.path.join("..", new_input_dir + ".tar.gz")
-        check_call(["tar", "-czvf", output_name, new_input_dir])
+        check_call(["tar", "-czf", output_name, new_input_dir])
+        num_pakages += 1
 
     os.chdir(outdir)
     shutil.rmtree(tempdir)
+    print "%s .tar.gz saved to %r" %(num_pakages, argv[1])
+
+def pip2pi(argv=sys.argv):
+    if len(argv) < 3:
+        print dedent("""
+            usage: pip2pi TARGET PACKAGE_NAME ...
+
+            Combines pip2tgz and dir2pi, adding PACKAGE_NAME to package index
+            TARGET.
+
+            If TARGET contains ':' it will be treated as a remote path. The
+            package index will be built locally then rsync will be used to copy
+            it to the remote host.
+            
+            For example, to create a remote index:
+
+                $ pip2pi example.com:/var/www/packages/ -r requirements.txt
+
+            Or to create a local index:
+
+                $ pip2pi ~/Sites/packages/ foo==1.2
+        """)
+        sys.exit(1)
+
+    target = argv[1]
+    pip_packages = argv[2:]
+    if ":" in target:
+        is_remote = True
+        working_dir = tempfile.mkdtemp(prefix="pip2pi-working-dir") 
+        atexit.register(lambda: shutil.rmtree(working_dir))
+    else:
+        is_remote = False
+        working_dir = target
+
+    pip2tgz([argv[0], working_dir] + pip_packages)
+    dir2pi([argv[0], working_dir])
+
+    if is_remote:
+        print "copying temporary index at %r to %r..." %(working_dir, target)
+        check_call([
+            "rsync",
+            "--recursive", "--progress", "--links",
+            working_dir + "/", target + "/",
+        ])
