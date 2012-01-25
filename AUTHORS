@@ -71,6 +71,7 @@ Other contributors, listed alphabetically, are:
 * Benjamin Peterson -- Test suite refactoring
 * Dominik Picheta -- Nimrod lexer
 * Justin Reidy -- MXML lexer
+* Norman Richards -- JSON lexer
 * Lubomir Rintel -- GoodData MAQL and CL lexers
 * Andre Roberge -- Tango style
 * Konrad Rudolph -- LaTeX formatter enhancements
