@@ -93,6 +93,7 @@ Other contributors, listed alphabetically, are:
 * Jeremy Thurgood -- Erlang, Squid config lexers
 * Erick Tryzelaar -- Felix lexer
 * Daniele Varrazzo -- PostgreSQL lexers
+* Abe Voelker -- OpenEdge ABL lexer
 * Whitney Young -- ObjectiveC lexer
 * Nathan Weizenbaum -- Haml and Sass lexers
 * Dietmar Winkler -- Modelica lexer
