@@ -72,6 +72,7 @@ Other contributors, listed alphabetically, are:
 * Ronny Pfannschmidt -- BBCode lexer
 * Benjamin Peterson -- Test suite refactoring
 * Dominik Picheta -- Nimrod lexer
+* Clément Prévost -- UrbiScript lexer
 * Justin Reidy -- MXML lexer
 * Norman Richards -- JSON lexer
 * Lubomir Rintel -- GoodData MAQL and CL lexers
