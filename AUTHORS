@@ -98,6 +98,7 @@ Other contributors, listed alphabetically, are:
 * Daniele Varrazzo -- PostgreSQL lexers
 * Abe Voelker -- OpenEdge ABL lexer
 * Whitney Young -- ObjectiveC lexer
+* Matthias Vallentin -- Bro lexer
 * Nathan Weizenbaum -- Haml and Sass lexers
 * Dietmar Winkler -- Modelica lexer
 * Nils Winter -- Smalltalk lexer
