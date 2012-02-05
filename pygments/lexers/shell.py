@@ -231,12 +231,12 @@ class TcshLexer(RegexLexer):
              r'continue|goto|breaksw|end|switch|endsw)\s*\b',
              Keyword),
             (r'\b(alias|alloc|bg|bindkey|break|builtins|bye|caller|cd|chdir|'
-             r'complete|dirs|echo|echotc|eval|exec|exit|'
-             r'fg|filetest|getxvers|glob|getspath|hashstat|history|hup|inlib|jobs|kill|'
+             r'complete|dirs|echo|echotc|eval|exec|exit|fg|filetest|getxvers|'
+             r'glob|getspath|hashstat|history|hup|inlib|jobs|kill|'
              r'limit|log|login|logout|ls-F|migrate|newgrp|nice|nohup|notify|'
-             r'onintr|popd|printenv|pushd|rehash|repeat|rootnode|popd|pushd|set|shift|'
-             r'sched|setenv|setpath|settc|setty|setxvers|shift|source|stop|suspend|'
-             r'source|suspend|telltc|time|'
+             r'onintr|popd|printenv|pushd|rehash|repeat|rootnode|popd|pushd|'
+             r'set|shift|sched|setenv|setpath|settc|setty|setxvers|shift|'
+             r'source|stop|suspend|source|suspend|telltc|time|'
              r'umask|unalias|uncomplete|unhash|universe|unlimit|unset|unsetenv|'
              r'ver|wait|warp|watchlog|where|which)\s*\b',
              Name.Builtin),
