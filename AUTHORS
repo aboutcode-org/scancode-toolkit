@@ -52,6 +52,7 @@ Other contributors, listed alphabetically, are:
 * Marek Kubica -- Scheme lexer
 * Jochen Kupperschmidt -- Markdown processor
 * Gerd Kurzbach -- Modelica lexer
+* Olov Lassus -- Dart lexer
 * Mark Lee -- Vala lexer
 * Ben Mabey -- Gherkin lexer
 * Simone Margaritelli -- Hybris lexer
