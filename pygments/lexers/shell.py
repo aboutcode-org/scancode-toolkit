@@ -17,7 +17,8 @@ from pygments.token import Punctuation, \
 from pygments.util import shebang_matches
 
 
-__all__ = ['BashLexer', 'BashSessionLexer', 'TcshLexer', 'BatchLexer']
+__all__ = ['BashLexer', 'BashSessionLexer', 'TcshLexer', 'BatchLexer',
+           'PowerShellLexer']
 
 line_re  = re.compile('.*?\n')
 
@@ -270,4 +271,90 @@ class TcshLexer(RegexLexer):
             (r'`', String.Backtick, '#pop'),
             include('root'),
         ],
+    }
+
+
+class PowerShellLexer(RegexLexer):
+    """
+    For Windows PowerShell code.
+
+    *New in Pygments 1.5.*
+    """
+    name = 'PowerShell'
+    aliases = ['powershell', 'posh', 'ps1']
+    filenames = ['*.ps1']
+    mimetypes = ['text/x-powershell']
+
+    flags = re.DOTALL | re.IGNORECASE | re.MULTILINE
+
+    keywords = (
+        'while validateset validaterange validatepattern validatelength '
+        'validatecount until trap switch return ref process param parameter in '
+        'if global: function foreach for finally filter end elseif else '
+        'dynamicparam do default continue cmdletbinding break begin alias \\? '
+        '% #script #private #local #global mandatory parametersetname position '
+        'valuefrompipeline valuefrompipelinebypropertyname '
+        'valuefromremainingarguments helpmessage try catch').split()
+
+    operators = (
+        'and as band bnot bor bxor casesensitive ccontains ceq cge cgt cle '
+        'clike clt cmatch cne cnotcontains cnotlike cnotmatch contains '
+        'creplace eq exact f file ge gt icontains ieq ige igt ile ilike ilt '
+        'imatch ine inotcontains inotlike inotmatch ireplace is isnot le like '
+        'lt match ne not notcontains notlike notmatch or regex replace '
+        'wildcard').split()
+
+    verbs = (
+        'write where wait use update unregister undo trace test tee take '
+        'suspend stop start split sort skip show set send select scroll resume '
+        'restore restart resolve resize reset rename remove register receive '
+        'read push pop ping out new move measure limit join invoke import '
+        'group get format foreach export expand exit enter enable disconnect '
+        'disable debug cxnew copy convertto convertfrom convert connect '
+        'complete compare clear checkpoint aggregate add').split()
+
+    commenthelp = (
+        'component description example externalhelp forwardhelpcategory '
+        'forwardhelptargetname forwardhelptargetname functionality inputs link '
+        'notes outputs parameter remotehelprunspace role synopsis').split()
+
+    tokens = {
+        'root': [
+            (r'\s+', Text),
+            (r'^(\s*#[#\s]*)(\.(?:%s))([^\n]*$)' % '|'.join(commenthelp),
+             bygroups(Comment, String.Doc, Comment)),
+            (r'#[^\n]*?$', Comment),
+            (r'(&lt;|<)#', Comment.Multiline, 'multline'),
+            (r'@"\n.*?\n"@', String.Heredoc),
+            (r"@'\n.*?\n'@", String.Heredoc),
+            (r'"', String.Double, 'string'),
+            (r"'([^']|'')*'", String.Single),
+            (r'(\$|@@|@)((global|script|private|env):)?[a-z0-9_]+',
+             Name.Variable),
+            (r'(%s)\b' % '|'.join(keywords), Keyword),
+            (r'-(%s)\b' % '|'.join(operators), Operator),
+            (r'(%s)-[a-z_][a-z0-9_]*\b' % '|'.join(verbs), Name.Builtin),
+            (r'\[[a-z_\[][a-z0-9_. `,\[\]]*\]', Name.Constant),  # .net [type]s
+            (r'-[a-z_][a-z0-9_]*', Name),
+            (r'\w+', Name),
+            (r'[.,{}\[\]$()=+*/\\&%!~?^`|<>-]', Punctuation),
+        ],
+        'multline': [
+            (r'[^#&.]+', Comment.Multiline),
+            (r'#(>|&gt;)', Comment.Multiline, '#pop'),
+            (r'\.(%s)' % '|'.join(commenthelp), String.Doc),
+            (r'[#&.]', Comment.Multiline),
+        ],
+        'string': [
+            (r'[^$`"]+', String.Double),
+            (r'\$\(', String.Interpol, 'interpol'),
+            (r'`"|""', String.Double),
+            (r'[`$]', String.Double),
+            (r'"', String.Double, '#pop'),
+        ],
+        'interpol': [
+            (r'[^$)]+', String.Interpol),
+            (r'\$\(', String.Interpol, '#push'),
+            (r'\)', String.Interpol, '#pop'),
+        ]
     }
