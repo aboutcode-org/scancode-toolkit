@@ -548,13 +548,20 @@ class ClojureLexer(RegexLexer):
     filenames = ['*.clj']
     mimetypes = ['text/x-clojure', 'application/x-clojure']
 
-    keywords = [
-        'fn', 'def', 'defn', 'defmacro', 'defmethod', 'defmulti', 'defn-',
-        'defstruct', 'if', 'cond', 'let', 'for'
+    special_forms = [
+        '.', 'def', 'do', 'fn', 'if', 'let', 'new', 'quote', 'var', 'loop'
     ]
+
+    # It's safe to consider 'ns' a declaration thing because it defines a new
+    # namespace.
+    declarations = [
+        'def-', 'defn', 'defn-', 'defmacro', 'defmulti', 'defmethod',
+        'defstruct', 'defonce', 'declare', 'definline', 'definterface',
+        'defprotocol', 'defrecord', 'deftype', 'defproject', 'ns'
+    ]
+
     builtins = [
-        '.', '..',
-        '*', '+', '-', '->', '/', '<', '<=', '=', '==', '>', '>=',
+        '*', '+', '-', '->', '/', '<', '<=', '=', '==', '>', '>=', '..',
         'accessor', 'agent', 'agent-errors', 'aget', 'alength', 'all-ns',
         'alter', 'and', 'append-child', 'apply', 'array-map', 'aset',
         'aset-boolean', 'aset-byte', 'aset-char', 'aset-double', 'aset-float',
@@ -563,13 +570,13 @@ class ClojureLexer(RegexLexer):
         'bit-shift-left', 'bit-shift-right', 'bit-xor', 'boolean', 'branch?',
         'butlast', 'byte', 'cast', 'char', 'children', 'class',
         'clear-agent-errors', 'comment', 'commute', 'comp', 'comparator',
-        'complement', 'concat', 'conj', 'cons', 'constantly',
+        'complement', 'concat', 'conj', 'cons', 'constantly', 'cond', 'if-not',
         'construct-proxy', 'contains?', 'count', 'create-ns', 'create-struct',
         'cycle', 'dec',  'deref', 'difference', 'disj', 'dissoc', 'distinct',
         'doall', 'doc', 'dorun', 'doseq', 'dosync', 'dotimes', 'doto',
         'double', 'down', 'drop', 'drop-while', 'edit', 'end?', 'ensure',
         'eval', 'every?', 'false?', 'ffirst', 'file-seq', 'filter', 'find',
-        'find-doc', 'find-ns', 'find-var', 'first', 'float', 'flush',
+        'find-doc', 'find-ns', 'find-var', 'first', 'float', 'flush', 'for',
         'fnseq', 'frest', 'gensym', 'get-proxy-class', 'get',
         'hash-map', 'hash-set', 'identical?', 'identity', 'if-let', 'import',
         'in-ns', 'inc', 'index', 'insert-child', 'insert-left', 'insert-right',
@@ -602,7 +609,7 @@ class ClojureLexer(RegexLexer):
         'val', 'vals', 'var-get', 'var-set', 'var?', 'vector', 'vector-zip',
         'vector?', 'when', 'when-first', 'when-let', 'when-not',
         'with-local-vars', 'with-meta', 'with-open', 'with-out-str',
-        'xml-seq', 'xml-zip', 'zero?', 'zipmap', 'zipper', 'ns']
+        'xml-seq', 'xml-zip', 'zero?', 'zipmap', 'zipper']
 
     # valid names for identifiers
     # well, names can only not consist fully of numbers
@@ -635,13 +642,20 @@ class ClojureLexer(RegexLexer):
             (r"\\(.|[a-z]+)", String.Char),
 
             # keywords
-            (r':' + valid_name, Name.Constant),
+            (r':' + valid_name, String.Symbol),
 
             # special operators
             (r'~@|[`\'#^~&]', Operator),
 
-            # highlight the keywords
-            (_multi_escape(keywords), Keyword),
+            # highlight the special forms
+            (_multi_escape(special_forms), Keyword),
+
+            # Technically, only the special forms are 'keywords'. The problem
+            # is that only treating them as keywords means that things like
+            # 'defn' and 'ns' need to be highlighted as builtins. This is ugly
+            # and weird for most styles. So, as a compromise we're going to
+            # highlight them as Keyword.Declarations.
+            (_multi_escape(declarations), Keyword.Declaration),
 
             # highlight the builtins
             (_multi_escape(builtins), Name.Builtin),
