@@ -55,6 +55,7 @@ Other contributors, listed alphabetically, are:
 * Jochen Kupperschmidt -- Markdown processor
 * Gerd Kurzbach -- Modelica lexer
 * Olov Lassus -- Dart lexer
+* Sylvestre Ledru -- Scilab lexer
 * Mark Lee -- Vala lexer
 * Ben Mabey -- Gherkin lexer
 * Simone Margaritelli -- Hybris lexer
@@ -106,6 +107,5 @@ Other contributors, listed alphabetically, are:
 * Davy Wybiral -- Clojure lexer
 * Diego Zamboni -- CFengine3 lexer
 * Alex Zimin -- Nemerle lexer
-* Sylvestre Ledru -- Scilab lexer
 
 Many thanks for all contributions!
