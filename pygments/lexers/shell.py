@@ -121,8 +121,8 @@ class BashSessionLexer(Lexer):
 
         for match in line_re.finditer(text):
             line = match.group()
-            m = re.match(r'^((?:|sh\S*?|\w+\S+[@:]\S+(?:\s+\S+)?|\[\S+[@:]'
-                         r'[^\n]+\].+)[$#%])(.*\n?)', line)
+            m = re.match(r'^((?:\(\S+\))?(?:|sh\S*?|\w+\S+[@:]\S+(?:\s+\S+)'
+                          r'?|\[\S+[@:][^\n]+\].+)[$#%])(.*\n?)' , line)
             if m:
                 # To support output lexers (say diff output), the output
                 # needs to be broken by prompts whenever the output lexer
