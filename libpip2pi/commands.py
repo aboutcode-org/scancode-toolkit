@@ -43,7 +43,7 @@ def dir2pi(argv=sys.argv):
 
                 $ ls packages/
                 foo-1.2.tar.gz
-                $ dir2pi packags/
+                $ dir2pi packages/
                 $ find packages/
                 packages/
                 packages/foo-1.2.tar.gz
