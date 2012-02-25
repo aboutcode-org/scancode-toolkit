@@ -676,3 +676,50 @@ class ClojureLexer(RegexLexer):
             (r'(\(|\))', Punctuation),
         ],
     }
+
+class TeaLangLexer(RegexLexer):
+    """
+    For `Tea <http://teatrove.org/>`_ source code. Only used within a TeaTemplateLexer.
+    """
+
+    flags = re.MULTILINE | re.DOTALL
+
+    #: optional Comment or Whitespace
+    _ws = r'(?:\s|//.*?\n|/[*].*?[*]/)+'
+
+    tokens = {
+        'root': [
+            # method names
+            (r'^(\s*(?:[a-zA-Z_][a-zA-Z0-9_\.\[\]]*\s+)+?)' # return arguments
+             r'([a-zA-Z_][a-zA-Z0-9_]*)'                    # method name
+             r'(\s*)(\()',                                  # signature start
+             bygroups(using(this), Name.Function, Text, Operator)),
+            (r'[^\S\n]+', Text),
+            (r'//.*?\n', Comment.Single),
+            (r'/\*.*?\*/', Comment.Multiline),
+            (r'@[a-zA-Z_][a-zA-Z0-9_\.]*', Name.Decorator),
+            (r'(and|break|else|foreach|if|in|not|or|reverse)\b',
+             Keyword),
+            (r'(as|call|define)\b', Keyword.Declaration),
+            (r'(true|false|null)\b', Keyword.Constant),
+            (r'(template)(\s+)', bygroups(Keyword.Declaration, Text), 'template'),
+            (r'(import)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
+            (r'"(\\\\|\\"|[^"])*"', String),
+            (r'\'(\\\\|\\\'|[^\'])*\'', String),
+            (r'(\.)([a-zA-Z_][a-zA-Z0-9_]*)', bygroups(Operator, Name.Attribute)),
+            (r'[a-zA-Z_][a-zA-Z0-9_]*:', Name.Label),
+            (r'[a-zA-Z_\$][a-zA-Z0-9_]*', Name),
+            (r'(isa|[.]{3}|[.]{2}|[=#!<>+-/%&;,.\*\\\(\)\[\]\{\}])', Operator),
+            (r'[0-9][0-9]*\.[0-9]+([eE][0-9]+)?[fd]?', Number.Float),
+            (r'0x[0-9a-f]+', Number.Hex),
+            (r'[0-9]+L?', Number.Integer),
+            (r'\n', Text)
+        ],
+        'template': [
+            (r'[a-zA-Z_][a-zA-Z0-9_]*', Name.Class, '#pop')
+        ],
+        'import': [
+            (r'[a-zA-Z0-9_.]+\*?', Name.Namespace, '#pop')
+        ],
+        }
+
