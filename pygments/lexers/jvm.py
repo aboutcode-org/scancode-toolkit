@@ -117,7 +117,7 @@ class ScalaLexer(RegexLexer):
              ur'lazy|match|new|override|pr(?:ivate|otected)'
              ur'|re(?:quires|turn)|s(?:ealed|uper)|'
              ur't(?:h(?:is|row)|ry)|va[lr]|w(?:hile|ith)|yield)\b|'
-             u'(<[%:-]|=>|>:|[#=@_\u21D2\u2190])(\b|(?=\\s)|$)', Keyword),
+             u'(<[%:-]|=>|>:|[#=@_\u21D2\u2190])(\\b|(?=\\s)|$)', Keyword),
             (ur':(?!%s)' % op, Keyword, 'type'),
             (ur'%s%s\b' % (upper, idrest), Name.Class),
             (r'(true|false|null)\b', Keyword.Constant),
@@ -125,7 +125,7 @@ class ScalaLexer(RegexLexer):
             (r'(type)(\s+)', bygroups(Keyword, Text), 'type'),
             (r'""".*?"""', String),
             (r'"(\\\\|\\"|[^"])*"', String),
-            (ur"'\\.'|'[^\\]'|'\\u[0-9a-f]{4}'", String.Char),
+            (r"'\\.'|'[^\\]'|'\\u[0-9a-f]{4}'", String.Char),
 #            (ur'(\.)(%s|%s|`[^`]+`)' % (idrest, op), bygroups(Operator,
 #             Name.Attribute)),
             (idrest, Name),
@@ -133,7 +133,7 @@ class ScalaLexer(RegexLexer):
             (r'\[', Operator, 'typeparam'),
             (r'[\(\)\{\};,.#]', Operator),
             (op, Operator),
-            (ur'([0-9][0-9]*\.[0-9]*|\.[0-9]+)([eE][+-]?[0-9]+)?[fFdD]?',
+            (r'([0-9][0-9]*\.[0-9]*|\.[0-9]+)([eE][+-]?[0-9]+)?[fFdD]?',
              Number.Float),
             (r'0x[0-9a-f]+', Number.Hex),
             (r'[0-9]+L?', Number.Integer),
@@ -142,7 +142,7 @@ class ScalaLexer(RegexLexer):
         'class': [
             (ur'(%s|%s|`[^`]+`)(\s*)(\[)' % (idrest, op),
              bygroups(Name.Class, Text, Operator), 'typeparam'),
-            (r'[\s\n]+', Text),
+            (r'\s+', Text),
             (r'{', Operator, '#pop'),
             (r'\(', Operator, '#pop'),
             (r'//.*?\n', Comment.Single, '#pop'),
@@ -151,7 +151,7 @@ class ScalaLexer(RegexLexer):
         'type': [
             (r'\s+', Text),
             (u'<[%:]|>:|[#_\u21D2]|forSome|type', Keyword),
-            (r'([,\);}]|=>|=)([\s\n]*)', bygroups(Operator, Text), '#pop'),
+            (r'([,\);}]|=>|=)(\s*)', bygroups(Operator, Text), '#pop'),
             (r'[\(\{]', Operator, '#push'),
             (ur'((?:%s|%s|`[^`]+`)(?:\.(?:%s|%s|`[^`]+`))*)(\s*)(\[)' %
              (idrest, op, idrest, op),
@@ -163,7 +163,7 @@ class ScalaLexer(RegexLexer):
             (ur'\.|%s|%s|`[^`]+`' % (idrest, op), Keyword.Type)
         ],
         'typeparam': [
-            (r'[\s\n,]+', Text),
+            (r'[\s,]+', Text),
             (u'<[%:]|=>|>:|[#_\u21D2]|forSome|type', Keyword),
             (r'([\]\)\}])', Operator, '#pop'),
             (r'[\(\[\{]', Operator, '#push'),
@@ -421,7 +421,7 @@ class IokeLexer(RegexLexer):
             #Documentation
             (r'((?<=fn\()|(?<=fnx\()|(?<=method\()|(?<=macro\()|(?<=lecro\()'
              r'|(?<=syntax\()|(?<=dmacro\()|(?<=dlecro\()|(?<=dlecrox\()'
-             r'|(?<=dsyntax\())[\s\n\r]*"', String.Doc, 'documentation'),
+             r'|(?<=dsyntax\())\s*"', String.Doc, 'documentation'),
 
             #Text
             (r'"', String, 'text'),
@@ -526,7 +526,7 @@ class IokeLexer(RegexLexer):
              Operator),
 
             # Punctuation
-            (r'(\`\`|\`|\'\'|\'|\.|\,|@|@@|\[|\]|\(|\)|{|})', Punctuation),
+            (r'(\`\`|\`|\'\'|\'|\.|\,|@@|@|\[|\]|\(|\)|{|})', Punctuation),
 
             #kinds
             (r'[A-Z][a-zA-Z0-9_!:?]*', Name.Class),
