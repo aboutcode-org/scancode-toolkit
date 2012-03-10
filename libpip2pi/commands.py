@@ -160,7 +160,7 @@ def pip2pi(argv=sys.argv):
         atexit.register(lambda: shutil.rmtree(working_dir))
     else:
         is_remote = False
-        working_dir = target
+        working_dir = os.path.abspath(target)
 
     pip2tgz([argv[0], working_dir] + pip_packages)
     dir2pi([argv[0], working_dir])
