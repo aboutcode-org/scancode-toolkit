@@ -96,6 +96,7 @@ Other contributors, listed alphabetically, are:
 * Kirill Simonov -- YAML lexer
 * Steve Spigarelli -- XQuery lexer
 * Jerome St-Louis -- eC lexer
+* James Strachan -- Kotlin lexer
 * Tiberius Teng -- default style overhaul
 * Jeremy Thurgood -- Erlang, Squid config lexers
 * Erick Tryzelaar -- Felix lexer
