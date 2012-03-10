@@ -68,7 +68,7 @@ class BashLexer(RegexLexer):
             (r"(?s)\$?'(\\\\|\\[0-7]+|\\.|[^'\\])*'", String.Single),
             (r';', Text),
             (r'\s+', Text),
-            (r'[^=\s\n\[\]{}()$"\'`\\<]+', Text),
+            (r'[^=\s\[\]{}()$"\'`\\<]+', Text),
             (r'\d+(?= |\Z)', Number),
             (r'\$#?(\w+|.)', Name.Variable),
             (r'<', Text),
@@ -252,7 +252,7 @@ class TcshLexer(RegexLexer):
             (r'(?s)"(\\\\|\\[0-7]+|\\.|[^"\\])*"', String.Double),
             (r"(?s)'(\\\\|\\[0-7]+|\\.|[^'\\])*'", String.Single),
             (r'\s+', Text),
-            (r'[^=\s\n\[\]{}()$"\'`\\]+', Text),
+            (r'[^=\s\[\]{}()$"\'`\\]+', Text),
             (r'\d+(?= |\Z)', Number),
             (r'\$#?(\w+|.)', Name.Variable),
         ],
@@ -316,7 +316,7 @@ class PowerShellLexer(RegexLexer):
 
     commenthelp = (
         'component description example externalhelp forwardhelpcategory '
-        'forwardhelptargetname forwardhelptargetname functionality inputs link '
+        'forwardhelptargetname functionality inputs link '
         'notes outputs parameter remotehelprunspace role synopsis').split()
 
     tokens = {
