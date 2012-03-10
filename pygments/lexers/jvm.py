@@ -677,9 +677,13 @@ class ClojureLexer(RegexLexer):
         ],
     }
 
+
 class TeaLangLexer(RegexLexer):
     """
-    For `Tea <http://teatrove.org/>`_ source code. Only used within a TeaTemplateLexer.
+    For `Tea <http://teatrove.org/>`_ source code. Only used within a
+    TeaTemplateLexer.
+
+    *New in Pygments 1.5.*
     """
 
     flags = re.MULTILINE | re.DOTALL
@@ -721,5 +725,4 @@ class TeaLangLexer(RegexLexer):
         'import': [
             (r'[a-zA-Z0-9_.]+\*?', Name.Namespace, '#pop')
         ],
-        }
-
+    }
