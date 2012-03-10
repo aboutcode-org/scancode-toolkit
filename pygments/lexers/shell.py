@@ -32,7 +32,8 @@ class BashLexer(RegexLexer):
 
     name = 'Bash'
     aliases = ['bash', 'sh', 'ksh']
-    filenames = ['*.sh', '*.ksh', '*.bash', '*.ebuild', '*.eclass']
+    filenames = ['*.sh', '*.ksh', '*.bash', '*.ebuild', '*.eclass',
+                 '.bashrc', 'bashrc', '.bash_*', 'bash_*']
     mimetypes = ['application/x-sh', 'application/x-shellscript']
 
     tokens = {
