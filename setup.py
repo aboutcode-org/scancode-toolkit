@@ -17,7 +17,7 @@ setup(
         pip2pi builds a PyPI-compatible package repository from pip
         requirements
     """,
-    long_desc=open("README.rst", "U").read(),
+    long_description=open("README.rst", "U").read(),
     packages=find_packages(),
     scripts=["pip2pi", "pip2tgz", "dir2pi"],
     license="BSD",
