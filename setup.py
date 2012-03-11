@@ -32,5 +32,5 @@ setup(
         Programming Language :: Python
         Topic :: Software Development
         Topic :: Utilities
-    """.split() if x.strip() ],
+    """.split("\n") if x.strip() ],
 )
