@@ -74,6 +74,7 @@ Other contributors, listed alphabetically, are:
 * Nam T. Nguyen -- Monokai style
 * Jesper Noehr -- HTML formatter "anchorlinenos"
 * Jonas Obrist -- BBCode lexer
+* Patrick O'Leary -- Julia lexer
 * David Oliva -- Rebol lexer
 * Jon Parise -- Protocol buffers lexer
 * Ronny Pfannschmidt -- BBCode lexer
