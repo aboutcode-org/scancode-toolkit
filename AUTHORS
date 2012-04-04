@@ -73,8 +73,8 @@ Other contributors, listed alphabetically, are:
 * Ana Nelson -- Ragel, ANTLR, R console lexers
 * Nam T. Nguyen -- Monokai style
 * Jesper Noehr -- HTML formatter "anchorlinenos"
+* Mike Nolta -- Julia lexer
 * Jonas Obrist -- BBCode lexer
-* Patrick O'Leary -- Julia lexer
 * David Oliva -- Rebol lexer
 * Jon Parise -- Protocol buffers lexer
 * Ronny Pfannschmidt -- BBCode lexer
