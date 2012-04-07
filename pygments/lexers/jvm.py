@@ -20,7 +20,8 @@ from pygments import unistring as uni
 
 
 __all__ = ['JavaLexer', 'ScalaLexer', 'GosuLexer', 'GosuTemplateLexer',
-           'GroovyLexer', 'IokeLexer', 'ClojureLexer', 'KotlinLexer']
+           'GroovyLexer', 'IokeLexer', 'ClojureLexer', 'KotlinLexer', 
+           'XtendLexer']
 
 
 class JavaLexer(RegexLexer):
