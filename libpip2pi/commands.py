@@ -2,6 +2,7 @@ import os
 import sys
 import shutil
 import atexit
+import zipfile
 import tempfile
 import textwrap
 from subprocess import check_call
@@ -9,7 +10,7 @@ from subprocess import check_call
 def dedent(text):
     return textwrap.dedent(text.lstrip("\n"))
 
-def file_to_package(file):
+def file_to_package(file, basedir=None):
     """ Returns the package name for a given file.
 
         >>> file_to_package("foo-1.2.3_rc1.tar.gz")
@@ -19,8 +20,11 @@ def file_to_package(file):
         >>> """
     split = file.rsplit("-", 1)
     if len(split) != 2:
-        msg = ("unexpected file name: %r (not in "
-               "'package-name-version.xxx' format)") %(file, )
+        msg = "unexpected file name: %r " %(file, )
+        msg += "(not in 'pkg-name-version.xxx' format"
+        if basedir:
+            msg += "; found in directory: %r" %(basedir)
+        msg += ")"
         raise ValueError(msg)
     return (split[0], split[1].replace("_", "-"))
 
@@ -65,7 +69,9 @@ def dir2pi(argv=sys.argv):
         if not os.path.isfile(pkg_filepath):
             continue
         pkg_basename = os.path.basename(file)
-        pkg_name, pkg_rest = file_to_package(pkg_basename)
+        if pkg_basename.startswith("."):
+            continue
+        pkg_name, pkg_rest = file_to_package(pkg_basename, pkgdir)
         pkg_dir = pkgdirpath("simple", pkg_name)
         if not os.path.exists(pkg_dir):
             os.mkdir(pkg_dir)
@@ -102,10 +108,16 @@ def pip2tgz(argv=sys.argv):
     os.mkdir(tempdir)
 
     bundle_zip = os.path.join(tempdir, "bundle.zip")
-    check_call(["pip", "bundle", "-b", tempdir, bundle_zip] + argv[2:])
+    build_dir = os.path.join(tempdir, "build")
+    check_call(["pip", "bundle", "-b", build_dir, bundle_zip] + argv[2:])
 
     os.chdir(tempdir)
-    check_call(["unzip", "bundle.zip", "pip-manifest.txt"])
+    if os.path.exists(build_dir):
+        zipfile.ZipFile("bundle.zip").extract("pip-manifest.txt")
+    else:
+        # Older versions of pip delete the "build" directory after they
+        # are done with it... So extract the entire bundle.zip
+        zipfile.ZipFile("bundle.zip").extractall()
 
     num_pakages = 0
     for line in open("pip-manifest.txt"):
@@ -119,7 +131,7 @@ def pip2tgz(argv=sys.argv):
                              %(bundle_file, line, ))
         pkg, version = pkg_version
         version = version.replace("-", "_")
-        old_input_dir = pkg
+        old_input_dir = os.path.join("build/", pkg)
         new_input_dir = "%s-%s" %(pkg, version)
         os.rename(old_input_dir, new_input_dir)
         output_name = os.path.join("..", new_input_dir + ".tar.gz")

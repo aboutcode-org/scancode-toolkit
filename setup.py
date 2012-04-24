@@ -17,7 +17,7 @@ version = "%s.%s.%s" %libpip2pi.__version__
 
 setup(
     name="pip2pi",
-    version="0.1.2",
+    version=version,
     url="https://github.com/wolever/pip2pi",
     author="David Wolever",
     author_email="david@wolever.net",
