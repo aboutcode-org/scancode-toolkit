@@ -45,6 +45,7 @@ Other contributors, listed alphabetically, are:
 * Jordi Gutiérrez Hermoso -- Octave lexer
 * David Hess, Fish Software, Inc. -- Objective-J lexer
 * Varun Hiremath -- Debian control lexer
+* Doug Hogan -- Mscgen lexer
 * Ben Hollis -- Mason lexer
 * Tim Howard -- BlitzMax lexer
 * Ivan Inozemtsev -- Fantom lexer
