@@ -729,6 +729,67 @@ class TeaLangLexer(RegexLexer):
         ],
     }
 
+class CeylonLexer(RegexLexer):
+    """
+    For `Ceylon <http://ceylon-lang.org/>`_ source code.
+    """
+
+    name = 'Ceylon'
+    aliases = ['ceylon']
+    filenames = ['*.ceylon']
+    mimetypes = ['text/x-ceylon']
+
+    flags = re.MULTILINE | re.DOTALL
+
+    #: optional Comment or Whitespace
+    _ws = r'(?:\s|//.*?\n|/[*].*?[*]/)+'
+
+    tokens = {
+        'root': [
+            # method names
+            (r'^(\s*(?:[a-zA-Z_][a-zA-Z0-9_\.\[\]]*\s+)+?)' # return arguments
+             r'([a-zA-Z_][a-zA-Z0-9_]*)'                    # method name
+             r'(\s*)(\()',                                  # signature start
+             bygroups(using(this), Name.Function, Text, Operator)),
+            (r'[^\S\n]+', Text),
+            (r'//.*?\n', Comment.Single),
+            (r'/\*.*?\*/', Comment.Multiline),
+            (r'(variable|shared|abstract|doc|by|formal|actual)', Name.Decorator),
+            (r'(break|case|catch|continue|default|else|finally|for|in|variable|'
+             r'if|return|switch|this|throw|try|while|is|exists|nonempty|then|outer)\b',
+             Keyword),
+            (r'(abstracts|extends|satisfies|adapts|'
+             r'super|given|of|out|assign|'
+             r'transient|volatile)\b', Keyword.Declaration),
+            (r'(function|value|void)\b',
+             Keyword.Type),
+            (r'(package)(\s+)', bygroups(Keyword.Namespace, Text)),
+            (r'(true|false|null)\b', Keyword.Constant),
+            (r'(class|interface|object)(\s+)', bygroups(Keyword.Declaration, Text), 'class'),
+            (r'(import)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
+            (r'"(\\\\|\\"|[^"])*"', String),
+            (r"'\\.'|'[^\\]'|'\\u[0-9a-f]{4}'", String.Quoted),
+            (r"`\\.`|`[^\\]`|`\\u[0-9a-f]{4}`", String.Char),
+            (r'(\.)([a-zA-Z_][a-zA-Z0-9_]*)', bygroups(Operator, Name.Attribute)),
+            (r'[a-zA-Z_][a-zA-Z0-9_]*:', Name.Label),
+            (r'[a-zA-Z_\$][a-zA-Z0-9_]*', Name),
+            (r'[~\^\*!%&\[\]\(\)\{\}<>\|+=:;,./?-]', Operator),
+            (r'\d{1,3}(_\d{3})+\.\d{1,3}(_\d{3})+[kMGPTmunpf]?', Number.Float),
+            (r'\d{1,3}(_\d{3})+\.[0-9]+([eE][+-]?[0-9]+)?[kMGPTmunpf]?', Number.Float),
+            (r'[0-9][0-9]*\.\d{1,3}(_\d{3})+[kMGPTmunpf]?', Number.Float),
+            (r'[0-9][0-9]*\.[0-9]+([eE][+-]?[0-9]+)?[kMGPTmunpf]?', Number.Float),
+            (r'0x[0-9a-f]+', Number.Hex),
+            (r'\d{1,3}(_\d{3})+[kMGPT]?', Number.Integer),
+            (r'[0-9]+[kMGPT]?', Number.Integer),
+            (r'\n', Text)
+        ],
+        'class': [
+            (r'[a-zA-Z_][a-zA-Z0-9_]*', Name.Class, '#pop')
+        ],
+        'import': [
+            (r'[a-zA-Z0-9_.]+\w+ \{([a-zA-Z,]+|\.\.\.)\}', Name.Namespace, '#pop')
+        ],
+    }
 
 class KotlinLexer(RegexLexer):
     """
