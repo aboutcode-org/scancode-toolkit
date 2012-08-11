@@ -112,5 +112,6 @@ Other contributors, listed alphabetically, are:
 * Davy Wybiral -- Clojure lexer
 * Diego Zamboni -- CFengine3 lexer
 * Alex Zimin -- Nemerle lexer
+* Paul Miller -- LiveScript lexer
 
 Many thanks for all contributions!
