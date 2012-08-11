@@ -67,6 +67,7 @@ Other contributors, listed alphabetically, are:
 * Stephen McKamey -- Duel/JBST lexer
 * Brian McKenna -- F# lexer
 * Lukas Meuser -- BBCode formatter, Lua lexer
+* Paul Miller -- LiveScript lexer
 * Hong Minhee -- HTTP lexer
 * Michael Mior -- Awk lexer
 * Paulo Moura -- Logtalk lexer
@@ -112,6 +113,5 @@ Other contributors, listed alphabetically, are:
 * Davy Wybiral -- Clojure lexer
 * Diego Zamboni -- CFengine3 lexer
 * Alex Zimin -- Nemerle lexer
-* Paul Miller -- LiveScript lexer
 
 Many thanks for all contributions!
