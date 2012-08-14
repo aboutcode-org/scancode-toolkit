@@ -644,7 +644,7 @@ class ClojureLexer(RegexLexer):
             (r"\\(.|[a-z]+)", String.Char),
 
             # keywords
-            (r':' + valid_name, String.Symbol),
+            (r'::?' + valid_name, String.Symbol),
 
             # special operators
             (r'~@|[`\'#^~&]', Operator),
