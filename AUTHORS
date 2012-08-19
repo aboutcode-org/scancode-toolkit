@@ -28,6 +28,7 @@ Other contributors, listed alphabetically, are:
 * Pete Curry -- bugfixes
 * Owen Durni -- haXe lexer
 * Nick Efford -- Python 3 lexer
+* Sven Efftinge -- Xtend lexer
 * Artem Egorkine -- terminal256 formatter
 * James H. Fisher -- PostScript lexer
 * Carlos Galdino -- Elixir and Elixir Console lexers
