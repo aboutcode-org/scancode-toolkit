@@ -9,7 +9,7 @@ Other contributors, listed alphabetically, are:
 * Kumar Appaiah -- Debian control lexer
 * Ali Afshar -- image formatter
 * Andreas Amann -- AppleScript lexer
-* Jeffrey Arnold -- R/S lexer, BUGS lexers
+* Jeffrey Arnold -- R/S, Rd and BUGS lexers
 * Jeremy Ashkenas -- CoffeeScript lexer
 * Stefan Matthias Aust -- Smalltalk lexer
 * Ben Bangert -- Mako lexers
