@@ -20,7 +20,7 @@ from pygments import unistring as uni
 
 
 __all__ = ['JavaLexer', 'ScalaLexer', 'GosuLexer', 'GosuTemplateLexer',
-           'GroovyLexer', 'IokeLexer', 'ClojureLexer', 'KotlinLexer', 
+           'GroovyLexer', 'IokeLexer', 'ClojureLexer', 'KotlinLexer',
            'XtendLexer']
 
 
@@ -35,9 +35,6 @@ class JavaLexer(RegexLexer):
     mimetypes = ['text/x-java']
 
     flags = re.MULTILINE | re.DOTALL
-
-    #: optional Comment or Whitespace
-    _ws = r'(?:\s|//.*?\n|/[*].*?[*]/)+'
 
     tokens = {
         'root': [
@@ -93,9 +90,6 @@ class ScalaLexer(RegexLexer):
     mimetypes = ['text/x-scala']
 
     flags = re.MULTILINE | re.DOTALL
-
-    #: optional Comment or Whitespace
-    _ws = r'(?:\s|//.*?\n|/[*].*?[*]/)+'
 
     # don't use raw unicode strings!
     op = u'[-~\\^\\*!%&\\\\<>\\|+=:/?@\u00a6-\u00a7\u00a9\u00ac\u00ae\u00b0-\u00b1\u00b6\u00d7\u00f7\u03f6\u0482\u0606-\u0608\u060e-\u060f\u06e9\u06fd-\u06fe\u07f6\u09fa\u0b70\u0bf3-\u0bf8\u0bfa\u0c7f\u0cf1-\u0cf2\u0d79\u0f01-\u0f03\u0f13-\u0f17\u0f1a-\u0f1f\u0f34\u0f36\u0f38\u0fbe-\u0fc5\u0fc7-\u0fcf\u109e-\u109f\u1360\u1390-\u1399\u1940\u19e0-\u19ff\u1b61-\u1b6a\u1b74-\u1b7c\u2044\u2052\u207a-\u207c\u208a-\u208c\u2100-\u2101\u2103-\u2106\u2108-\u2109\u2114\u2116-\u2118\u211e-\u2123\u2125\u2127\u2129\u212e\u213a-\u213b\u2140-\u2144\u214a-\u214d\u214f\u2190-\u2328\u232b-\u244a\u249c-\u24e9\u2500-\u2767\u2794-\u27c4\u27c7-\u27e5\u27f0-\u2982\u2999-\u29d7\u29dc-\u29fb\u29fe-\u2b54\u2ce5-\u2cea\u2e80-\u2ffb\u3004\u3012-\u3013\u3020\u3036-\u3037\u303e-\u303f\u3190-\u3191\u3196-\u319f\u31c0-\u31e3\u3200-\u321e\u322a-\u3250\u3260-\u327f\u328a-\u32b0\u32c0-\u33ff\u4dc0-\u4dff\ua490-\ua4c6\ua828-\ua82b\ufb29\ufdfd\ufe62\ufe64-\ufe66\uff0b\uff1c-\uff1e\uff5c\uff5e\uffe2\uffe4\uffe8-\uffee\ufffc-\ufffd]+'
@@ -198,9 +192,6 @@ class GosuLexer(RegexLexer):
 
     flags = re.MULTILINE | re.DOTALL
 
-    #: optional Comment or Whitespace
-    _ws = r'(?:\s|//.*?\n|/[*].*?[*]/)+'
-
     tokens = {
         'root': [
             # method names
@@ -298,9 +289,6 @@ class GroovyLexer(RegexLexer):
     mimetypes = ['text/x-groovy']
 
     flags = re.MULTILINE | re.DOTALL
-
-    #: optional Comment or Whitespace
-    _ws = r'(?:\s|//.*?\n|/[*].*?[*]/)+'
 
     tokens = {
         'root': [
@@ -691,9 +679,6 @@ class TeaLangLexer(RegexLexer):
 
     flags = re.MULTILINE | re.DOTALL
 
-    #: optional Comment or Whitespace
-    _ws = r'(?:\s|//.*?\n|/[*].*?[*]/)+'
-
     tokens = {
         'root': [
             # method names
@@ -847,11 +832,12 @@ class KotlinLexer(RegexLexer):
 
         RegexLexer.__init__(self, **options)
 
+
 class XtendLexer(RegexLexer):
     """
     For `Xtend <http://xtend-lang.org/>`_ source code.
 
-    *New in Pygments 1.5.*
+    *New in Pygments 1.6.*
     """
 
     name = 'Xtend'
@@ -860,9 +846,6 @@ class XtendLexer(RegexLexer):
     mimetypes = ['text/x-xtend']
 
     flags = re.MULTILINE | re.DOTALL
-
-    #: optional Comment or Whitespace
-    _ws = r'(?:\s|//.*?\n|/[*].*?[*]/)+'
 
     tokens = {
         'root': [
@@ -886,7 +869,8 @@ class XtendLexer(RegexLexer):
              Keyword.Type),
             (r'(package)(\s+)', bygroups(Keyword.Namespace, Text)),
             (r'(true|false|null)\b', Keyword.Constant),
-            (r'(class|interface)(\s+)', bygroups(Keyword.Declaration, Text), 'class'),
+            (r'(class|interface)(\s+)', bygroups(Keyword.Declaration, Text),
+             'class'),
             (r'(import)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
             (r"(''')", String, 'template'),
             (ur"(\u00BB)", String, 'template'),
@@ -909,6 +893,6 @@ class XtendLexer(RegexLexer):
         'template': [
             (r"'''", String, '#pop'),
             (ur"\u00AB", String, '#pop'),
-			(r'.', String)
+            (r'.', String)
         ],
     }
