@@ -9,6 +9,7 @@ Other contributors, listed alphabetically, are:
 * Kumar Appaiah -- Debian control lexer
 * Ali Afshar -- image formatter
 * Andreas Amann -- AppleScript lexer
+* Jeffrey Arnold -- R/S lexer, BUGS lexers
 * Jeremy Ashkenas -- CoffeeScript lexer
 * Stefan Matthias Aust -- Smalltalk lexer
 * Ben Bangert -- Mako lexers
@@ -51,6 +52,7 @@ Other contributors, listed alphabetically, are:
 * Brian R. Jackson -- Tea lexer
 * Dennis Kaarsemaker -- sources.list lexer
 * Igor Kalnitsky -- vhdl lexer
+* Eric Knibbe -- Lasso lexer
 * Adam Koprowski -- Opa lexer
 * Benjamin Kowarsch -- Modula-2 lexer
 * Marek Kubica -- Scheme lexer
@@ -66,6 +68,7 @@ Other contributors, listed alphabetically, are:
 * Stephen McKamey -- Duel/JBST lexer
 * Brian McKenna -- F# lexer
 * Lukas Meuser -- BBCode formatter, Lua lexer
+* Paul Miller -- LiveScript lexer
 * Hong Minhee -- HTTP lexer
 * Michael Mior -- Awk lexer
 * Paulo Moura -- Logtalk lexer
