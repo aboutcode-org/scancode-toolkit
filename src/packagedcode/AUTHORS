@@ -57,6 +57,7 @@ Other contributors, listed alphabetically, are:
 * Eric Knibbe -- Lasso lexer
 * Adam Koprowski -- Opa lexer
 * Benjamin Kowarsch -- Modula-2 lexer
+* Alexander Kriegisch -- Kconfig lexer
 * Marek Kubica -- Scheme lexer
 * Jochen Kupperschmidt -- Markdown processor
 * Gerd Kurzbach -- Modelica lexer
