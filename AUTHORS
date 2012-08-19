@@ -71,6 +71,7 @@ Other contributors, listed alphabetically, are:
 * Paul Miller -- LiveScript lexer
 * Hong Minhee -- HTTP lexer
 * Michael Mior -- Awk lexer
+* Jon Morton -- Rust lexer
 * Paulo Moura -- Logtalk lexer
 * Mher Movsisyan -- DTD lexer
 * Ana Nelson -- Ragel, ANTLR, R console lexers
