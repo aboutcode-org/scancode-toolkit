@@ -159,7 +159,7 @@ class ScalaLexer(RegexLexer):
             (r'(true|false|null)\b', Keyword.Constant),
             (r'(import|package)(\s+)', bygroups(Keyword, Text), 'import'),
             (r'(type)(\s+)', bygroups(Keyword, Text), 'type'),
-            (r'""".*?"""', String),
+            (r'""".*?"""(?!")', String),
             (r'"(\\\\|\\"|[^"])*"', String),
             (r"'\\.'|'[^\\]'|'\\u[0-9a-f]{4}'", String.Char),
 #            (ur'(\.)(%s|%s|`[^`]+`)' % (idrest, op), bygroups(Operator,
