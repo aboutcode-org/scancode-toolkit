@@ -20,7 +20,7 @@ from pygments import unistring as uni
 
 
 __all__ = ['JavaLexer', 'ScalaLexer', 'GosuLexer', 'GosuTemplateLexer',
-           'GroovyLexer', 'IokeLexer', 'ClojureLexer', 'KotlinLexer']
+           'GroovyLexer', 'IokeLexer', 'ClojureLexer', 'KotlinLexer', 'CeylonLexer']
 
 
 class JavaLexer(RegexLexer):
@@ -774,13 +774,13 @@ class CeylonLexer(RegexLexer):
             (r'[a-zA-Z_][a-zA-Z0-9_]*:', Name.Label),
             (r'[a-zA-Z_\$][a-zA-Z0-9_]*', Name),
             (r'[~\^\*!%&\[\]\(\)\{\}<>\|+=:;,./?-]', Operator),
-            (r'\d{1,3}(_\d{3})+\.\d{1,3}(_\d{3})+[kMGPTmunpf]?', Number.Float),
-            (r'\d{1,3}(_\d{3})+\.[0-9]+([eE][+-]?[0-9]+)?[kMGPTmunpf]?', Number.Float),
-            (r'[0-9][0-9]*\.\d{1,3}(_\d{3})+[kMGPTmunpf]?', Number.Float),
-            (r'[0-9][0-9]*\.[0-9]+([eE][+-]?[0-9]+)?[kMGPTmunpf]?', Number.Float),
+            (r'\d{1,3}(_\d{3})+\.\d{1,3}(_\d{3})+[kMGTPmunpf]?', Number.Float),
+            (r'\d{1,3}(_\d{3})+\.[0-9]+([eE][+-]?[0-9]+)?[kMGTPmunpf]?', Number.Float),
+            (r'[0-9][0-9]*\.\d{1,3}(_\d{3})+[kMGTPmunpf]?', Number.Float),
+            (r'[0-9][0-9]*\.[0-9]+([eE][+-]?[0-9]+)?[kMGTPmunpf]?', Number.Float),
             (r'0x[0-9a-f]+', Number.Hex),
-            (r'\d{1,3}(_\d{3})+[kMGPT]?', Number.Integer),
-            (r'[0-9]+[kMGPT]?', Number.Integer),
+            (r'\d{1,3}(_\d{3})+[kMGTP]?', Number.Integer),
+            (r'[0-9]+[kMGTP]?', Number.Integer),
             (r'\n', Text)
         ],
         'class': [
