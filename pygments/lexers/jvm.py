@@ -21,7 +21,7 @@ from pygments import unistring as uni
 
 __all__ = ['JavaLexer', 'ScalaLexer', 'GosuLexer', 'GosuTemplateLexer',
            'GroovyLexer', 'IokeLexer', 'ClojureLexer', 'KotlinLexer',
-           'CeylonLexer']
+           'CeylonLexer', 'XtendLexer', 'AspectJLexer']
 
 
 class JavaLexer(RegexLexer):
