@@ -23,6 +23,7 @@ Other contributors, listed alphabetically, are:
 * Frits van Bommel -- assembler lexers
 * Pierre Bourdon -- bugfixes
 * Hiram Chirino -- Scaml and Jade lexers
+* Ian Cooper -- VGL lexer
 * Leaf Corcoran -- MoonScript lexer
 * Christopher Creutzig -- MuPAD lexer
 * Pete Curry -- bugfixes
