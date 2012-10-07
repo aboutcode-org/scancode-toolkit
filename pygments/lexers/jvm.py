@@ -21,7 +21,7 @@ from pygments import unistring as uni
 
 __all__ = ['JavaLexer', 'ScalaLexer', 'GosuLexer', 'GosuTemplateLexer',
            'GroovyLexer', 'IokeLexer', 'ClojureLexer', 'KotlinLexer',
-           'XtendLexer', 'AspectJLexer']
+           'XtendLexer', 'AspectJLexer', 'CeylonLexer']
 
 
 class JavaLexer(RegexLexer):
@@ -757,6 +757,8 @@ class TeaLangLexer(RegexLexer):
 class CeylonLexer(RegexLexer):
     """
     For `Ceylon <http://ceylon-lang.org/>`_ source code.
+
+    *New in Pygments 1.6.*
     """
 
     name = 'Ceylon'
