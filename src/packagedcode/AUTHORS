@@ -121,6 +121,7 @@ Other contributors, listed alphabetically, are:
 * Nils Winter -- Smalltalk lexer
 * Davy Wybiral -- Clojure lexer
 * Diego Zamboni -- CFengine3 lexer
+* Enrique Zamudio -- Ceylon lexer
 * Alex Zimin -- Nemerle lexer
 
 Many thanks for all contributions!
