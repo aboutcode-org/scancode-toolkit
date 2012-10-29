@@ -67,6 +67,7 @@ Other contributors, listed alphabetically, are:
 * Sylvestre Ledru -- Scilab lexer
 * Mark Lee -- Vala lexer
 * Ben Mabey -- Gherkin lexer
+* Angus MacArthur -- QML lexer
 * Simone Margaritelli -- Hybris lexer
 * Kirk McDonald -- D lexer
 * Gordon McGregor -- SystemVerilog lexer
