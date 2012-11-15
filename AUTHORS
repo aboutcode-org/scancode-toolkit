@@ -9,7 +9,7 @@ Other contributors, listed alphabetically, are:
 * Kumar Appaiah -- Debian control lexer
 * Ali Afshar -- image formatter
 * Andreas Amann -- AppleScript lexer
-* Jeffrey Arnold -- R/S, Rd and BUGS lexers
+* Jeffrey Arnold -- R/S, Rd, BUGS, Jags, and Stan lexers
 * Jeremy Ashkenas -- CoffeeScript lexer
 * Stefan Matthias Aust -- Smalltalk lexer
 * Ben Bangert -- Mako lexers
@@ -63,6 +63,7 @@ Other contributors, listed alphabetically, are:
 * Marek Kubica -- Scheme lexer
 * Jochen Kupperschmidt -- Markdown processor
 * Gerd Kurzbach -- Modelica lexer
+* Jon Larimer, Google Inc. -- Smali lexer
 * Olov Lassus -- Dart lexer
 * Sylvestre Ledru -- Scilab lexer
 * Mark Lee -- Vala lexer
@@ -110,6 +111,7 @@ Other contributors, listed alphabetically, are:
 * Steve Spigarelli -- XQuery lexer
 * Jerome St-Louis -- eC lexer
 * James Strachan -- Kotlin lexer
+* Tom Stuart -- Treetop lexer
 * Tiberius Teng -- default style overhaul
 * Jeremy Thurgood -- Erlang, Squid config lexers
 * Erick Tryzelaar -- Felix lexer
