@@ -26,6 +26,11 @@ def file_to_package(file, basedir=None):
             msg += "; found in directory: %r" %(basedir)
         msg += ")"
         raise ValueError(msg)
+    # Note: for various reasions (which I don't 100% remember right now) we
+    # need to replace '-' in the version string with '_'. I think this has to
+    # do with the way we export the list of files from the PIP manifest, then
+    # read them back in somewhere else. It would be cool to fix this at some
+    # point.
     return (split[0], split[1].replace("_", "-"))
 
 def dir2pi(argv=sys.argv):
@@ -77,7 +82,7 @@ def dir2pi(argv=sys.argv):
             os.mkdir(pkg_dir)
         pkg_new_basename = "-".join([pkg_name, pkg_rest])
         symlink_target = os.path.join(pkg_dir, pkg_new_basename)
-        symlink_source = os.path.join("../../", pkg_new_basename)
+        symlink_source = os.path.join("../../", pkg_basename)
         os.symlink(symlink_source, symlink_target)
 
 
