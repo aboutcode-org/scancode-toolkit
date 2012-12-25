@@ -675,7 +675,7 @@ class ClojureLexer(RegexLexer):
             (r'::?' + valid_name, String.Symbol),
 
             # special operators
-            (r'~@|[`\'#^~&]', Operator),
+            (r'~@|[`\'#^~&@]', Operator),
 
             # highlight the special forms
             (_multi_escape(special_forms), Keyword),
