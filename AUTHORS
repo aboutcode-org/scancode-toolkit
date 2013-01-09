@@ -125,6 +125,7 @@ Other contributors, listed alphabetically, are:
 * Erick Tryzelaar -- Felix lexer
 * Daniele Varrazzo -- PostgreSQL lexers
 * Abe Voelker -- OpenEdge ABL lexer
+* Pepijn de Vos -- HTML formatter CTags support
 * Whitney Young -- ObjectiveC lexer
 * Matthias Vallentin -- Bro lexer
 * Nathan Weizenbaum -- Haml and Sass lexers
