@@ -115,6 +115,7 @@ Other contributors, listed alphabetically, are:
 * Joerg Sieker -- ABAP lexer
 * Robert Simmons -- Standard ML lexer
 * Kirill Simonov -- YAML lexer
+* Alexander Smishlajev -- Visual FoxPro lexer
 * Steve Spigarelli -- XQuery lexer
 * Jerome St-Louis -- eC lexer
 * James Strachan -- Kotlin lexer
