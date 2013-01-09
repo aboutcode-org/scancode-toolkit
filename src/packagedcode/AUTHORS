@@ -118,6 +118,7 @@ Other contributors, listed alphabetically, are:
 * Tom Stuart -- Treetop lexer
 * Tiberius Teng -- default style overhaul
 * Jeremy Thurgood -- Erlang, Squid config lexers
+* Brian Tiffin -- OpenCOBOL lexer
 * Erick Tryzelaar -- Felix lexer
 * Daniele Varrazzo -- PostgreSQL lexers
 * Abe Voelker -- OpenEdge ABL lexer
