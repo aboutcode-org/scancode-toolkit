@@ -74,6 +74,7 @@ Other contributors, listed alphabetically, are:
 * Gordon McGregor -- SystemVerilog lexer
 * Stephen McKamey -- Duel/JBST lexer
 * Brian McKenna -- F# lexer
+* Charles McLaughlin -- Puppet lexer
 * Lukas Meuser -- BBCode formatter, Lua lexer
 * Paul Miller -- LiveScript lexer
 * Hong Minhee -- HTTP lexer
