@@ -37,17 +37,18 @@ Other contributors, listed alphabetically, are:
 * Naveen Garg -- Autohotkey lexer
 * Laurent Gautier -- R/S lexer
 * Alex Gaynor -- PyPy log lexer
+* Alain Gilbert -- TypeScript lexer
 * Bertrand Goetzmann -- Groovy lexer
 * Krzysiek Goj -- Scala lexer
 * Matt Good -- Genshi, Cheetah lexers
 * Patrick Gotthardt -- PHP namespaces support
 * Olivier Guibe -- Asymptote lexer
+* Jordi Gutiérrez Hermoso -- Octave lexer
 * Martin Harriman -- SNOBOL lexer
 * Matthew Harrison -- SVG formatter
 * Steven Hazel -- Tcl lexer
 * Aslak Hellesøy -- Gherkin lexer
 * Greg Hendershott -- Racket lexer
-* Jordi Gutiérrez Hermoso -- Octave lexer
 * David Hess, Fish Software, Inc. -- Objective-J lexer
 * Varun Hiremath -- Debian control lexer
 * Doug Hogan -- Mscgen lexer
