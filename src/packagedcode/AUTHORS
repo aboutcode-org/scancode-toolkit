@@ -78,6 +78,7 @@ Other contributors, listed alphabetically, are:
 * Paul Miller -- LiveScript lexer
 * Hong Minhee -- HTTP lexer
 * Michael Mior -- Awk lexer
+* Bruce Mitchener -- Dylan lexer rewrite
 * Reuben Morais -- SourcePawn lexer
 * Jon Morton -- Rust lexer
 * Paulo Moura -- Logtalk lexer
