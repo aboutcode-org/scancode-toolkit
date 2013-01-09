@@ -33,6 +33,7 @@ Other contributors, listed alphabetically, are:
 * Artem Egorkine -- terminal256 formatter
 * James H. Fisher -- PostScript lexer
 * Carlos Galdino -- Elixir and Elixir Console lexers
+* Michael Galloy -- IDL lexer
 * Naveen Garg -- Autohotkey lexer
 * Laurent Gautier -- R/S lexer
 * Alex Gaynor -- PyPy log lexer
