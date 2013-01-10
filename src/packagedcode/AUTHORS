@@ -53,6 +53,7 @@ Other contributors, listed alphabetically, are:
 * Varun Hiremath -- Debian control lexer
 * Doug Hogan -- Mscgen lexer
 * Ben Hollis -- Mason lexer
+* Dustin Howett -- Logos lexer
 * Alastair Houghton -- Lexer inheritance facility
 * Tim Howard -- BlitzMax lexer
 * Ivan Inozemtsev -- Fantom lexer
