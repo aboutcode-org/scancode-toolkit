@@ -355,7 +355,7 @@ class GosuLexer(RegexLexer):
             (r'(var|delegate|construct|function|private|internal|protected|'
              r'public|abstract|override|final|static|extends|transient|'
              r'implements|represents|readonly)\b', Keyword.Declaration),
-            (r'(property\s+)(get|set|)', Keyword.Declaration),
+            (r'(property\s+)(get|set)?', Keyword.Declaration),
             (r'(boolean|byte|char|double|float|int|long|short|void|block)\b',
              Keyword.Type),
             (r'(package)(\s+)', bygroups(Keyword.Namespace, Text)),
