@@ -26,6 +26,7 @@ Other contributors, listed alphabetically, are:
 * Hiram Chirino -- Scaml and Jade lexers
 * Ian Cooper -- VGL lexer
 * Leaf Corcoran -- MoonScript lexer
+* Christian Jann -- ShellSession lexer
 * Christopher Creutzig -- MuPAD lexer
 * Pete Curry -- bugfixes
 * Owen Durni -- haXe lexer
