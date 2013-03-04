@@ -1,0 +1,7 @@
+Copyright:
+
+Upstream Author: Thom May <thom@ubuntu.com>
+
+License:
+
+Software licensed under the BSD license, see /usr/share/common-licenses/BSD
