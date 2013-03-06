@@ -43,6 +43,7 @@ Other contributors, listed alphabetically, are:
 * Bertrand Goetzmann -- Groovy lexer
 * Krzysiek Goj -- Scala lexer
 * Matt Good -- Genshi, Cheetah lexers
+* Alex Gosse -- TrafficScript lexer
 * Patrick Gotthardt -- PHP namespaces support
 * Olivier Guibe -- Asymptote lexer
 * Jordi Gutiérrez Hermoso -- Octave lexer
