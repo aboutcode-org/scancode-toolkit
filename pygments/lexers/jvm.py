@@ -888,11 +888,11 @@ class CeylonLexer(RegexLexer):
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
             (r'/\*.*?\*/', Comment.Multiline),
-            (r'(variable|shared|abstract|doc|by|formal|actual)',
+            (r'(variable|shared|abstract|doc|by|formal|actual|late|native)',
              Name.Decorator),
             (r'(break|case|catch|continue|default|else|finally|for|in|'
-             r'variable|if|return|switch|this|throw|try|while|is|exists|'
-             r'nonempty|then|outer)\b', Keyword),
+             r'variable|if|return|switch|this|throw|try|while|is|exists|dynamic'
+             r'nonempty|then|outer|assert)\b', Keyword),
             (r'(abstracts|extends|satisfies|adapts|'
              r'super|given|of|out|assign|'
              r'transient|volatile)\b', Keyword.Declaration),
@@ -900,16 +900,16 @@ class CeylonLexer(RegexLexer):
              Keyword.Type),
             (r'(package)(\s+)', bygroups(Keyword.Namespace, Text)),
             (r'(true|false|null)\b', Keyword.Constant),
-            (r'(class|interface|object)(\s+)',
+            (r'(class|interface|object|alias)(\s+)',
              bygroups(Keyword.Declaration, Text), 'class'),
             (r'(import)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
             (r'"(\\\\|\\"|[^"])*"', String),
-            (r"'\\.'|'[^\\]'|'\\u[0-9a-fA-F]{4}'", String.Quoted),
-            (r"`\\.`|`[^\\]`|`\\u[0-9a-fA-F]{4}`", String.Char),
-            (r'(\.)([a-zA-Z_][a-zA-Z0-9_]*)',
+            (r"'\\.'|'[^\\]'|'\\\{#[0-9a-fA-F]{4}\}'", String.Char),
+            (r'".*``.*``.*"', String.Interpol),
+            (r'(\.)([a-z_][a-zA-Z0-9_]*)',
              bygroups(Operator, Name.Attribute)),
             (r'[a-zA-Z_][a-zA-Z0-9_]*:', Name.Label),
-            (r'[a-zA-Z_\$][a-zA-Z0-9_]*', Name),
+            (r'[a-zA-Z_][a-zA-Z0-9_]*', Name),
             (r'[~\^\*!%&\[\]\(\)\{\}<>\|+=:;,./?-]', Operator),
             (r'\d{1,3}(_\d{3})+\.\d{1,3}(_\d{3})+[kMGTPmunpf]?', Number.Float),
             (r'\d{1,3}(_\d{3})+\.[0-9]+([eE][+-]?[0-9]+)?[kMGTPmunpf]?',
@@ -917,16 +917,19 @@ class CeylonLexer(RegexLexer):
             (r'[0-9][0-9]*\.\d{1,3}(_\d{3})+[kMGTPmunpf]?', Number.Float),
             (r'[0-9][0-9]*\.[0-9]+([eE][+-]?[0-9]+)?[kMGTPmunpf]?',
              Number.Float),
-            (r'0x[0-9a-fA-F]+', Number.Hex),
+            (r'#([0-9a-fA-F]{4})(_[0-9a-fA-F]{4})+', Number.Hex),
+            (r'#[0-9a-fA-F]+', Number.Hex),
+            (r'\$([01]{4})(_[01]{4})+', Number.Integer),
+            (r'\$[01]+', Number.Integer),
             (r'\d{1,3}(_\d{3})+[kMGTP]?', Number.Integer),
             (r'[0-9]+[kMGTP]?', Number.Integer),
             (r'\n', Text)
         ],
         'class': [
-            (r'[a-zA-Z_][a-zA-Z0-9_]*', Name.Class, '#pop')
+            (r'[a-zA-Z0-9_]+', Name.Class, '#pop')
         ],
         'import': [
-            (r'[a-zA-Z0-9_.]+\w+ \{([a-zA-Z,]+|\.\.\.)\}',
+            (r'[a-z][a-zA-Z0-9_.]*',
              Name.Namespace, '#pop')
         ],
     }
