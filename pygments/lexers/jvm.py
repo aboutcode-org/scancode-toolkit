@@ -926,7 +926,7 @@ class CeylonLexer(RegexLexer):
             (r'\n', Text)
         ],
         'class': [
-            (r'[A-Za-z_][a-zA-Z0-9_]+', Name.Class, '#pop')
+            (r'[A-Za-z_][a-zA-Z0-9_]*', Name.Class, '#pop')
         ],
         'import': [
             (r'[a-z][a-zA-Z0-9_.]*',
