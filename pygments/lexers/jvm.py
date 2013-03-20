@@ -891,7 +891,7 @@ class CeylonLexer(RegexLexer):
             (r'(variable|shared|abstract|doc|by|formal|actual|late|native)',
              Name.Decorator),
             (r'(break|case|catch|continue|default|else|finally|for|in|'
-             r'variable|if|return|switch|this|throw|try|while|is|exists|dynamic'
+             r'variable|if|return|switch|this|throw|try|while|is|exists|dynamic|'
              r'nonempty|then|outer|assert)\b', Keyword),
             (r'(abstracts|extends|satisfies|adapts|'
              r'super|given|of|out|assign|'
@@ -926,7 +926,7 @@ class CeylonLexer(RegexLexer):
             (r'\n', Text)
         ],
         'class': [
-            (r'[a-zA-Z0-9_]+', Name.Class, '#pop')
+            (r'[A-Za-z_][a-zA-Z0-9_]+', Name.Class, '#pop')
         ],
         'import': [
             (r'[a-z][a-zA-Z0-9_.]*',
