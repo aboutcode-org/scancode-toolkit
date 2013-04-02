@@ -45,6 +45,7 @@ File NomosTestfiles/PHP/PHP-3.01.txt contains license(s) PHP-3.01
 File NomosTestfiles/PHP/PHP-3.0.txt contains license(s) PHP-3.0
 File NomosTestfiles/Apache/License-2.0.Apache_v2.0 contains license(s) Apache-2.0
 File NomosTestfiles/Apache/Apache-1.0.txt contains license(s) Apache-1.0
+File NomosTestfiles/Apache/Subject.java-Apache-2.0 contains license(s) Apache-2.0
 File NomosTestfiles/Apache/Apache-1.1.txt contains license(s) Apache-1.1
 File NomosTestfiles/Apache/Apache-2.0.txt contains license(s) Apache-2.0
 File NomosTestfiles/Apache/Subject.java contains license(s) Apache-2.0
@@ -63,17 +64,18 @@ File NomosTestfiles/EUDatagrid/EUDatagrid.txt contains license(s) EUDatagrid
 File NomosTestfiles/NASA/NASA-1.3.txt contains license(s) NASA-1.3
 File NomosTestfiles/LGPL/GPL_false-positive_y_bug2307 contains license(s) LGPL-2.1+
 File NomosTestfiles/LGPL/LGPL-3.0.txt contains license(s) LGPL-3.0
+File NomosTestfiles/LGPL/LGPL-2.0b.txt contains license(s) LGPL-2.0
+File NomosTestfiles/LGPL/LGPL-3.0b.txt contains license(s) LGPL-3.0
 File NomosTestfiles/LGPL/LGPL-2.0.txt contains license(s) LGPL-2.0
-File NomosTestfiles/LGPL/LGPL-3.0+.txt contains license(s) LGPL-3.0
 File NomosTestfiles/LGPL/LGPL-2.1.txt contains license(s) LGPL-2.1
 File NomosTestfiles/LGPL/autoopts.c contains license(s) BSD,LGPL-3.0
 File NomosTestfiles/LGPL/GPL_false-positive_x_bug2307 contains license(s) LGPL-2.1+,MIT-style
-File NomosTestfiles/LGPL/LGPL-2.0+.txt contains license(s) LGPL-2.0
+File NomosTestfiles/LGPL/LGPL-2.1b.txt contains license(s) LGPL-2.1
 File NomosTestfiles/LGPL/defconfig contains license(s) BSD,LGPL
-File NomosTestfiles/LGPL/LGPL-2.1+.txt contains license(s) LGPL-2.1
 File NomosTestfiles/Artistic/Artistic-1.0.txt contains license(s) Artistic-1.0
 File NomosTestfiles/Artistic/macos_main.cpp contains license(s) Artistic-1.0
 File NomosTestfiles/Artistic/Artistic-2.0.txt contains license(s) Artistic-2.0
+File NomosTestfiles/Artistic/a2p.c contains license(s) Artistic-1.0,GPL
 File NomosTestfiles/JSON/jslint.js contains license(s) JSON
 File NomosTestfiles/NPOSL/NPOSL-3.0.txt contains license(s) NPOSL-3.0
 File NomosTestfiles/WebM/alpha.c contains license(s) WebM
@@ -96,6 +98,7 @@ File NomosTestfiles/APSL/APSL-1.2.txt contains license(s) APSL-1.2
 File NomosTestfiles/APSL/APSL-1.0.txt contains license(s) APSL-1.0
 File NomosTestfiles/MirOS/MirOS.txt contains license(s) MirOS
 File NomosTestfiles/AFL/AFL-1.2.txt contains license(s) AFL-1.2
+File NomosTestfiles/AFL/AFL-2.1_dojo.js contains license(s) AFL-2.1,BSD
 File NomosTestfiles/AFL/dojo.js contains license(s) AFL-2.1,BSD
 File NomosTestfiles/AFL/AFL-2.0.txt contains license(s) AFL-2.0
 File NomosTestfiles/AFL/AFL-2.1.txt contains license(s) AFL-2.1
@@ -146,7 +149,7 @@ File NomosTestfiles/FSF/progtest.m4 contains license(s) FSF,NOT-public-domain
 File NomosTestfiles/FSF/aclocal.m4 contains license(s) FSF,GPL-2.0-with-autoconf-exception
 File NomosTestfiles/FSF/FSF-and-GPL.txt contains license(s) FSF,GPL-2.0+
 File NomosTestfiles/YPL/YPL-1.1.txt contains license(s) YPL-1.1
-File NomosTestfiles/YPL/YPL-1.0.txt contains license(s) YPL-1.1
+File NomosTestfiles/YPL/YPL-1.1b.txt contains license(s) YPL-1.1
 File NomosTestfiles/Unlicense/bitcoin.php contains license(s) Unlicense
 File NomosTestfiles/NGPL/NGPL.txt contains license(s) NGPL
 File NomosTestfiles/Xnet/Xnet.txt contains license(s) Xnet
@@ -164,7 +167,7 @@ File NomosTestfiles/MPL/MPL-2.0.txt contains license(s) MPL-2.0
 File NomosTestfiles/BSD/Soundex.xs contains license(s) BSD-lite
 File NomosTestfiles/BSD/destest.c contains license(s) BSD-style
 File NomosTestfiles/BSD/podd.h contains license(s) BSD-style
-File NomosTestfiles/BSD/WalkinBSD contains license(s) BSD
+File NomosTestfiles/BSD/WalkinBSD contains license(s) No_license_found
 File NomosTestfiles/BSD/BSD_style_f.txt contains license(s) BSD-2-Clause
 File NomosTestfiles/BSD/BSD_style_u.txt contains license(s) BSD-3-Clause
 File NomosTestfiles/BSD/BSD_style_c.txt contains license(s) BSD-2-Clause
@@ -275,6 +278,7 @@ File NomosTestfiles/CECILL/CECILL-1.0.txt contains license(s) CECILL-1.1
 File NomosTestfiles/CECILL/CECILL-B.txt contains license(s) CECILL-B
 File NomosTestfiles/CECILL/CECILL-1.1.txt contains license(s) CECILL-1.1
 File NomosTestfiles/CECILL/CECILL-C.txt contains license(s) CECILL-C
+File NomosTestfiles/CECILL/CImg.h contains license(s) CECILL,CECILL-C,Dual-license
 File NomosTestfiles/MS/MS-PL.txt contains license(s) MS-PL
 File NomosTestfiles/MS/MS-PL_Index.aspx contains license(s) MS-PL
 File NomosTestfiles/MS/MS-RL.txt contains license(s) MS-RL
