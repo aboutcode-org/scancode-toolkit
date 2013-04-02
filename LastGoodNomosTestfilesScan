@@ -59,6 +59,7 @@ File NomosTestfiles/LPL/LPL-1.02.txt contains license(s) LPL-1.0
 File NomosTestfiles/ECL/ECL-2.0.txt contains license(s) Apache-2.0,ECL-2.0
 File NomosTestfiles/ECL/ECL-1.0.txt contains license(s) ECL-1.0
 File NomosTestfiles/CDDL/CDDL-1.1.txt contains license(s) CDDL-1.1
+File NomosTestfiles/CDDL/RegistrationData.java contains license(s) CDDL,GPL-2.0,GPL-2.0-with-classpath-exception
 File NomosTestfiles/CDDL/CDDL-1.0.txt contains license(s) CDDL-1.0
 File NomosTestfiles/EUDatagrid/EUDatagrid.txt contains license(s) EUDatagrid
 File NomosTestfiles/NASA/NASA-1.3.txt contains license(s) NASA-1.3
@@ -278,7 +279,7 @@ File NomosTestfiles/CECILL/CECILL-1.0.txt contains license(s) CECILL-1.1
 File NomosTestfiles/CECILL/CECILL-B.txt contains license(s) CECILL-B
 File NomosTestfiles/CECILL/CECILL-1.1.txt contains license(s) CECILL-1.1
 File NomosTestfiles/CECILL/CECILL-C.txt contains license(s) CECILL-C
-File NomosTestfiles/CECILL/CImg.h contains license(s) CECILL,CECILL-C,Dual-license
+File NomosTestfiles/CECILL/CImg.h contains license(s) CECILL
 File NomosTestfiles/MS/MS-PL.txt contains license(s) MS-PL
 File NomosTestfiles/MS/MS-PL_Index.aspx contains license(s) MS-PL
 File NomosTestfiles/MS/MS-RL.txt contains license(s) MS-RL
