@@ -83,6 +83,7 @@ File NomosTestfiles/WebM/alpha.c contains license(s) WebM
 File NomosTestfiles/RSCPL/RSCPL.txt contains license(s) RSCPL
 File NomosTestfiles/CATOSL/CATOSL-1.1.txt contains license(s) CATOSL-1.1
 File NomosTestfiles/AAL/AAL.txt contains license(s) AAL
+File NomosTestfiles/CPAL/abstract.php contains license(s) CPAL-1.0
 File NomosTestfiles/CPAL/CPAL-1.0.txt contains license(s) CPAL-1.0
 File NomosTestfiles/BSL/BSL-1.0.txt contains license(s) BSL-1.0
 File NomosTestfiles/See-doc/lualib.h contains license(s) See-doc(OTHER)
@@ -114,6 +115,7 @@ File NomosTestfiles/CC/CC-BY-1.0.txt contains license(s) CC-BY-1.0
 File NomosTestfiles/CC/CC-BY-NC-SA-3.0.txt contains license(s) CC-BY-NC-SA-3.0
 File NomosTestfiles/CC/CC-BY-ND-2.0.txt contains license(s) CC-BY-ND-2.0
 File NomosTestfiles/CC/CC-BY-ND-2.5.txt contains license(s) CC-BY-ND-2.5
+File NomosTestfiles/CC/CC-BY-SA-3.0b.txt contains license(s) CC-BY-SA-3.0
 File NomosTestfiles/CC/CC-BY-SA-3.0.txt contains license(s) CC-BY-SA-3.0
 File NomosTestfiles/CC/CC-BY-NC-SA-2.0.txt contains license(s) CC-BY-NC-SA-2.0
 File NomosTestfiles/CC/CC-BY-NC-ND-2.5.txt contains license(s) CC-BY-NC-ND-2.5
@@ -225,6 +227,7 @@ File NomosTestfiles/SAX-PD/SAX-PD.txt contains license(s) SAX-PD
 File NomosTestfiles/SimPL/SimPL-2.0.txt contains license(s) SimPL-2.0
 File NomosTestfiles/OLDAP/OLDAP-2.8.txt contains license(s) OLDAP-2.8
 File NomosTestfiles/VSL/VSL-1.0.txt contains license(s) VSL-1.0
+File NomosTestfiles/Condor/Condor-1.0 contains license(s) Condor-PL
 File NomosTestfiles/Frameworx/Frameworx-1.0.txt contains license(s) Frameworx-1.0
 File NomosTestfiles/APL/APL-1.0.txt contains license(s) APL-1.0
 File NomosTestfiles/EUPL/EUPL-1.0.txt contains license(s) EUPL-1.0
