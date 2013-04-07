@@ -329,8 +329,8 @@ class PowerShellLexer(RegexLexer):
     *New in Pygments 1.5.*
     """
     name = 'PowerShell'
-    aliases = ['powershell', 'posh', 'ps1']
-    filenames = ['*.ps1']
+    aliases = ['powershell', 'posh', 'ps1', 'psm1']
+    filenames = ['*.ps1','*.psm1']
     mimetypes = ['text/x-powershell']
 
     flags = re.DOTALL | re.IGNORECASE | re.MULTILINE
@@ -373,8 +373,8 @@ class PowerShellLexer(RegexLexer):
              bygroups(Comment, String.Doc, Comment)),
             (r'#[^\n]*?$', Comment),
             (r'(&lt;|<)#', Comment.Multiline, 'multline'),
-            (r'@"\n.*?\n"@', String.Heredoc),
-            (r"@'\n.*?\n'@", String.Heredoc),
+            (r'@"\n', String.Heredoc, 'heredoc-double'),
+            (r"@'\n", String.Heredoc, 'heredoc-single'),
             # escaped syntax
             (r'`[\'"$@-]', Punctuation),
             (r'"', String.Double, 'string'),
@@ -387,7 +387,7 @@ class PowerShellLexer(RegexLexer):
             (r'\[[a-z_\[][a-z0-9_. `,\[\]]*\]', Name.Constant),  # .net [type]s
             (r'-[a-z_][a-z0-9_]*', Name),
             (r'\w+', Name),
-            (r'[.,{}\[\]$()=+*/\\&%!~?^`|<>-]', Punctuation),
+            (r'([.,;@{}\[\]$()=+*/\\&%!~?^`|<>-]|::)', Punctuation),
         ],
         'multline': [
             (r'[^#&.]+', Comment.Multiline),
@@ -396,11 +396,24 @@ class PowerShellLexer(RegexLexer):
             (r'[#&.]', Comment.Multiline),
         ],
         'string': [
+            (r"`[0abfnrtv'\"\$]", String.Escape),
             (r'[^$`"]+', String.Double),
             (r'\$\(', String.Interpol, 'interpol'),
-            (r'`"|""', String.Double),
+            (r'""', String.Double),
             (r'[`$]', String.Double),
             (r'"', String.Double, '#pop'),
+        ],
+        'heredoc-double': [
+            (r'@"\n', String.Heredoc, '#push'),
+            (r"@'\n", String.Heredoc, 'heredoc-single'),
+            (r'\n"@', String.Heredoc, '#pop'),
+            (r".", String.Heredoc),
+        ],
+        'heredoc-single': [
+            (r'@"\n', String.Heredoc, 'heredoc-double'),
+            (r"@'\n", String.Heredoc, '#push'),
+            (r"\n'@", String.Heredoc, '#pop'),
+            (r".", String.Heredoc),
         ],
         'interpol': [
             (r'[^$)]+', String.Interpol),
