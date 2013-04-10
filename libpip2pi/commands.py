@@ -86,7 +86,7 @@ def dir2pi(argv=sys.argv):
         symlink_source = os.path.join("../../", pkg_basename)
         os.symlink(symlink_source, symlink_target)
         fp = open(os.path.join(pkg_dir, 'index.html'), 'a')
-        fp.write('<a href="%s">%s</a>\n' % (pkg_new_basename, pkg_name))
+        fp.write("<a href=\"%s\">%s</a>\n" % (pkg_new_basename, pkg_new_basename))
         fp.close()
 
 
