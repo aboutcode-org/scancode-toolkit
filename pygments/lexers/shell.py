@@ -342,7 +342,7 @@ class PowerShellLexer(RegexLexer):
         'dynamicparam do default continue cmdletbinding break begin alias \\? '
         '% #script #private #local #global mandatory parametersetname position '
         'valuefrompipeline valuefrompipelinebypropertyname '
-        'valuefromremainingarguments helpmessage try catch').split()
+        'valuefromremainingarguments helpmessage try catch throw').split()
 
     operators = (
         'and as band bnot bor bxor casesensitive ccontains ceq cge cgt cle '
@@ -368,13 +368,17 @@ class PowerShellLexer(RegexLexer):
 
     tokens = {
         'root': [
+            # we need to count pairs of parentheses for correct highlight
+            # of '$(...)' blocks in strings
+            (r'\(', Punctuation, '#push'),
+            (r'\)', Punctuation, '#pop'),
             (r'\s+', Text),
             (r'^(\s*#[#\s]*)(\.(?:%s))([^\n]*$)' % '|'.join(commenthelp),
              bygroups(Comment, String.Doc, Comment)),
             (r'#[^\n]*?$', Comment),
             (r'(&lt;|<)#', Comment.Multiline, 'multline'),
             (r'@"\n', String.Heredoc, 'heredoc-double'),
-            (r"@'\n", String.Heredoc, 'heredoc-single'),
+            (r"@'\n.*?\n'@", String.Heredoc),
             # escaped syntax
             (r'`[\'"$@-]', Punctuation),
             (r'"', String.Double, 'string'),
@@ -387,7 +391,7 @@ class PowerShellLexer(RegexLexer):
             (r'\[[a-z_\[][a-z0-9_. `,\[\]]*\]', Name.Constant),  # .net [type]s
             (r'-[a-z_][a-z0-9_]*', Name),
             (r'\w+', Name),
-            (r'([.,;@{}\[\]$()=+*/\\&%!~?^`|<>-]|::)', Punctuation),
+            (r'[.,;@{}\[\]$()=+*/\\&%!~?^`|<>-]|::', Punctuation),
         ],
         'multline': [
             (r'[^#&.]+', Comment.Multiline),
@@ -398,26 +402,15 @@ class PowerShellLexer(RegexLexer):
         'string': [
             (r"`[0abfnrtv'\"\$]", String.Escape),
             (r'[^$`"]+', String.Double),
-            (r'\$\(', String.Interpol, 'interpol'),
+            (r'\$\(', Punctuation, 'root'),
             (r'""', String.Double),
             (r'[`$]', String.Double),
             (r'"', String.Double, '#pop'),
         ],
         'heredoc-double': [
-            (r'@"\n', String.Heredoc, '#push'),
-            (r"@'\n", String.Heredoc, 'heredoc-single'),
             (r'\n"@', String.Heredoc, '#pop'),
+            (r'\$\(', Punctuation, 'root'),
+            (r'[^@\n]+"]', String.Heredoc),
             (r".", String.Heredoc),
-        ],
-        'heredoc-single': [
-            (r'@"\n', String.Heredoc, 'heredoc-double'),
-            (r"@'\n", String.Heredoc, '#push'),
-            (r"\n'@", String.Heredoc, '#pop'),
-            (r".", String.Heredoc),
-        ],
-        'interpol': [
-            (r'[^$)]+', String.Interpol),
-            (r'\$\(', String.Interpol, '#push'),
-            (r'\)', String.Interpol, '#pop'),
         ]
     }
