@@ -20,8 +20,8 @@ from pygments import unistring as uni
 
 
 __all__ = ['JavaLexer', 'ScalaLexer', 'GosuLexer', 'GosuTemplateLexer',
-           'GroovyLexer', 'IokeLexer', 'ClojureLexer', 'KotlinLexer',
-           'XtendLexer', 'AspectJLexer', 'CeylonLexer']
+           'GroovyLexer', 'IokeLexer', 'ClojureLexer', 'ClojureScriptLexer',
+           'KotlinLexer', 'XtendLexer', 'AspectJLexer', 'CeylonLexer']
 
 
 class JavaLexer(RegexLexer):
@@ -812,6 +812,19 @@ class ClojureLexer(RegexLexer):
             (r'(\(|\))', Punctuation),
         ],
     }
+
+
+class ClojureScriptLexer(ClojureLexer):
+    """
+    Lexer for `ClojureScript <http://clojure.org/clojurescript>`_
+    source code.
+
+    *New in Pygments 1.7.*
+    """
+    name = 'ClojureScript'
+    aliases = ['clojurescript', 'cljs']
+    filenames = ['*.cljs']
+    mimetypes = ['text/x-clojurescript', 'application/x-clojurescript']
 
 
 class TeaLangLexer(RegexLexer):
