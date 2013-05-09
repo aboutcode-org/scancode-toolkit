@@ -6,8 +6,9 @@ Major developers are Tim Hatch <tim@timhatch.com> and Armin Ronacher
 Other contributors, listed alphabetically, are:
 
 * Sam Aaron -- Ioke lexer
-* Kumar Appaiah -- Debian control lexer
 * Ali Afshar -- image formatter
+* Thomas Aglassinger -- Rexx lexer
+* Kumar Appaiah -- Debian control lexer
 * Andreas Amann -- AppleScript lexer
 * Timothy Armstrong -- Dart lexer fixes
 * Jeffrey Arnold -- R/S, Rd, BUGS, Jags, and Stan lexers
