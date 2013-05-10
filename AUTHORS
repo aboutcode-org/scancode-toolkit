@@ -53,6 +53,7 @@ Other contributors, listed alphabetically, are:
 * Greg Hendershott -- Racket lexer
 * David Hess, Fish Software, Inc. -- Objective-J lexer
 * Varun Hiremath -- Debian control lexer
+* Rob Hoelz -- Perl 6 lexer
 * Doug Hogan -- Mscgen lexer
 * Ben Hollis -- Mason lexer
 * Dustin Howett -- Logos lexer
