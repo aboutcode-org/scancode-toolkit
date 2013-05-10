@@ -370,8 +370,7 @@ class PowerShellLexer(RegexLexer):
         'root': [
             # we need to count pairs of parentheses for correct highlight
             # of '$(...)' blocks in strings
-            (r'\(', Punctuation, '#push'),
-            (r'\)', Punctuation, '#pop'),
+            (r'\(', Punctuation, 'child'),
             (r'\s+', Text),
             (r'^(\s*#[#\s]*)(\.(?:%s))([^\n]*$)' % '|'.join(commenthelp),
              bygroups(Comment, String.Doc, Comment)),
@@ -393,6 +392,10 @@ class PowerShellLexer(RegexLexer):
             (r'\w+', Name),
             (r'[.,;@{}\[\]$()=+*/\\&%!~?^`|<>-]|::', Punctuation),
         ],
+        'child': [
+            (r'\)', Punctuation, '#pop'),
+            include('root'),
+        ],
         'multline': [
             (r'[^#&.]+', Comment.Multiline),
             (r'#(>|&gt;)', Comment.Multiline, '#pop'),
@@ -402,14 +405,14 @@ class PowerShellLexer(RegexLexer):
         'string': [
             (r"`[0abfnrtv'\"\$]", String.Escape),
             (r'[^$`"]+', String.Double),
-            (r'\$\(', Punctuation, 'root'),
+            (r'\$\(', Punctuation, 'child'),
             (r'""', String.Double),
             (r'[`$]', String.Double),
             (r'"', String.Double, '#pop'),
         ],
         'heredoc-double': [
             (r'\n"@', String.Heredoc, '#pop'),
-            (r'\$\(', Punctuation, 'root'),
+            (r'\$\(', Punctuation, 'child'),
             (r'[^@\n]+"]', String.Heredoc),
             (r".", String.Heredoc),
         ]
