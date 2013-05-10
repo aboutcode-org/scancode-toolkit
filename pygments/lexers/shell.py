@@ -67,9 +67,10 @@ class BashLexer(RegexLexer):
         'data': [
             (r'(?s)\$?"(\\\\|\\[0-7]+|\\.|[^"\\])*"', String.Double),
             (r"(?s)\$?'(\\\\|\\[0-7]+|\\.|[^'\\])*'", String.Single),
-            (r';', Text),
+            (r';', Punctuation),
+            (r'&', Punctuation),
             (r'\s+', Text),
-            (r'[^=\s\[\]{}()$"\'`\\<]+', Text),
+            (r'[^=\s\[\]{}()$"\'`\\<&|;]+', Text),
             (r'\d+(?= |\Z)', Number),
             (r'\$#?(\w+|.)', Name.Variable),
             (r'<', Text),
