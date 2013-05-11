@@ -34,6 +34,7 @@ Other contributors, listed alphabetically, are:
 * Sven Efftinge -- Xtend lexer
 * Artem Egorkine -- terminal256 formatter
 * James H. Fisher -- PostScript lexer
+* William S. Fulton -- SWIG lexer
 * Carlos Galdino -- Elixir and Elixir Console lexers
 * Michael Galloy -- IDL lexer
 * Naveen Garg -- Autohotkey lexer
