@@ -30,7 +30,7 @@ Other contributors, listed alphabetically, are:
 * Christopher Creutzig -- MuPAD lexer
 * Pete Curry -- bugfixes
 * Bryan Davis -- EBNF lexer
-* Owen Durni -- haXe lexer
+* Owen Durni -- Haxe lexer
 * Nick Efford -- Python 3 lexer
 * Sven Efftinge -- Xtend lexer
 * Artem Egorkine -- terminal256 formatter
