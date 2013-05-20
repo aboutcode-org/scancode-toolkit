@@ -101,7 +101,10 @@ class BashLexer(RegexLexer):
     }
 
     def analyse_text(text):
-        return shebang_matches(text, r'(ba|z|)sh')
+        if shebang_matches(text, r'(ba|z|)sh'):
+            return 1
+        if text.startswith('$ '):
+            return 0.2
 
 
 class BashSessionLexer(Lexer):
