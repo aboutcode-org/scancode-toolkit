@@ -21,6 +21,7 @@ Other contributors, listed alphabetically, are:
 * Michael Bayer -- Myghty lexers
 * John Benediktsson -- Factor lexer
 * Christopher Bertels -- Fancy lexer
+* Sébastien Bigaret -- QVT Operational lexer
 * Jarrett Billingsley -- MiniD lexer
 * Adam Blinkinsop -- Haskell, Redcode lexers
 * Frits van Bommel -- assembler lexers
