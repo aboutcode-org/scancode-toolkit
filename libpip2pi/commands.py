@@ -1,15 +1,27 @@
 import os
 import sys
+import cgi
 import shutil
 import atexit
 import zipfile
 import tempfile
 import textwrap
+import functools
 from subprocess import check_call
 import pkg_resources
 
 def dedent(text):
     return textwrap.dedent(text.lstrip("\n"))
+
+def maintain_cwd(f):
+    @functools.wraps(f)
+    def maintain_cwd_helper(*args, **kwargs):
+        orig_dir = os.getcwd()
+        try:
+            return f(*args, **kwargs)
+        finally:
+            os.chdir(orig_dir)
+    return maintain_cwd_helper
 
 def egg_to_package(file):
     """ Extracts the package name from an egg.
@@ -71,7 +83,7 @@ def dir2pi(argv=sys.argv):
                 packages/simple/foo/index.html
                 packages/simple/foo/foo-1.2.tar.gz
         """)
-        sys.exit(1)
+        return 1
     pkgdir = argv[1]
     if not os.path.isdir(pkgdir):
         raise ValueError("no such directory: %r" %(pkgdir, ))
@@ -95,11 +107,13 @@ def dir2pi(argv=sys.argv):
         symlink_target = os.path.join(pkg_dir, pkg_new_basename)
         symlink_source = os.path.join("../../", pkg_basename)
         os.symlink(symlink_source, symlink_target)
-        fp = open(os.path.join(pkg_dir, 'index.html'), 'a')
-        fp.write("<a href=\"%s\">%s</a>\n" % (pkg_new_basename, pkg_new_basename))
-        fp.close()
+        with open(os.path.join(pkg_dir, "index.html"), "a") as fp:
+            pkg_new_basename_html = cgi.escape(pkg_new_basename)
+            fp.write("<a href='%s'>%s</a><br />\n"
+                     %(pkg_new_basename_html, pkg_new_basename_html))
+    return 0
 
-
+@maintain_cwd
 def pip2tgz(argv=sys.argv):
     if len(argv) < 3:
         print dedent("""
@@ -115,7 +129,7 @@ def pip2tgz(argv=sys.argv):
                 
                 $ pip2tgz /var/www/packages/ -r requirements.txt foo==1.2 baz/
         """)
-        sys.exit(1)
+        return 1
 
     outdir = os.path.abspath(argv[1])
     if not os.path.exists(outdir):
@@ -160,6 +174,7 @@ def pip2tgz(argv=sys.argv):
     os.chdir(outdir)
     shutil.rmtree(tempdir)
     print "%s .tar.gz saved to %r" %(num_pakages, argv[1])
+    return 0
 
 def pip2pi(argv=sys.argv):
     if len(argv) < 3:
@@ -181,7 +196,7 @@ def pip2pi(argv=sys.argv):
 
                 $ pip2pi ~/Sites/packages/ foo==1.2
         """)
-        sys.exit(1)
+        return 1
 
     target = argv[1]
     pip_packages = argv[2:]
@@ -193,8 +208,15 @@ def pip2pi(argv=sys.argv):
         is_remote = False
         working_dir = os.path.abspath(target)
 
-    pip2tgz([argv[0], working_dir] + pip_packages)
-    dir2pi([argv[0], working_dir])
+    res = pip2tgz([argv[0], working_dir] + pip_packages)
+    if res:
+        print "pip2tgz returned an error; aborting."
+        return res
+
+    res = dir2pi([argv[0], working_dir])
+    if res:
+        print "dir2pi returned an error; aborting."
+        return res
 
     if is_remote:
         print "copying temporary index at %r to %r..." %(working_dir, target)
@@ -203,3 +225,4 @@ def pip2pi(argv=sys.argv):
             "--recursive", "--progress", "--links",
             working_dir + "/", target + "/",
         ])
+    return 0
