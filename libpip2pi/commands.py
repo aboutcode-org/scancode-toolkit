@@ -6,9 +6,22 @@ import zipfile
 import tempfile
 import textwrap
 from subprocess import check_call
+import pkg_resources
 
 def dedent(text):
     return textwrap.dedent(text.lstrip("\n"))
+
+def egg_to_package(file):
+    """ Extracts the package name from an egg.
+
+        >>> egg_to_package("PyYAML-3.10-py2.7-macosx-10.7-x86_64.egg")
+        ('PyYAML', '3.10-py2.7-macosx-10.7-x86_64.egg')
+        >>> egg_to_package("python_ldap-2.3.9-py2.7-macosx-10.3-fat.egg")
+        ('python-ldap', '2.3.9-py2.7-macosx-10.3-fat.egg')
+    """
+    dist = pkg_resources.Distribution.from_location(None, file)
+    name = dist.project_name
+    return (name, file[len(name)+1:])
 
 def file_to_package(file, basedir=None):
     """ Returns the package name for a given file.
@@ -18,6 +31,8 @@ def file_to_package(file, basedir=None):
         >>> file_to_package("foo-bar-1.2.tgz")
         ('foo-bar', '1.2.tgz')
         >>> """
+    if os.path.splitext(file)[1].lower() == ".egg":
+        return egg_to_package(file)
     split = file.rsplit("-", 1)
     if len(split) != 2:
         msg = "unexpected file name: %r " %(file, )
@@ -26,12 +41,7 @@ def file_to_package(file, basedir=None):
             msg += "; found in directory: %r" %(basedir)
         msg += ")"
         raise ValueError(msg)
-    # Note: for various reasions (which I don't 100% remember right now) we
-    # need to replace '-' in the version string with '_'. I think this has to
-    # do with the way we export the list of files from the PIP manifest, then
-    # read them back in somewhere else. It would be cool to fix this at some
-    # point.
-    return (split[0], split[1].replace("_", "-"))
+    return (split[0], pkg_resources.safe_name(split[1]))
 
 def dir2pi(argv=sys.argv):
     if len(argv) != 2:
