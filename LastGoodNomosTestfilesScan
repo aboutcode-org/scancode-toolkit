@@ -34,6 +34,7 @@ File NomosTestfiles/Public-domain/nwlib.c contains license(s) Public-domain
 File NomosTestfiles/Public-domain/zpipe.c contains license(s) Public-domain
 File NomosTestfiles/Public-domain/fitblk.c contains license(s) Public-domain
 File NomosTestfiles/Public-domain/bn.tex contains license(s) Public-domain
+File NomosTestfiles/Public-domain/LzmaDec.c contains license(s) Public-domain-ref
 File NomosTestfiles/info-zip/unzip.c contains license(s) info-zip
 File NomosTestfiles/LPPL/latex.4ht contains license(s) LPPL-1.3c+
 File NomosTestfiles/LPPL/LPPL-1.3c.txt contains license(s) LPPL-1.3c
@@ -235,7 +236,7 @@ File NomosTestfiles/Watcom/Watcom-1.0.txt contains license(s) Watcom-1.0
 File NomosTestfiles/Motosoto/Motosoto.txt contains license(s) Motosoto
 File NomosTestfiles/WTFPL/wtfpl.c contains license(s) WTFPL
 File NomosTestfiles/WTFPL/random.h contains license(s) WTFPL
-File NomosTestfiles/FSF/progtest.m4 contains license(s) FSF
+File NomosTestfiles/FSF/progtest.m4 contains license(s) FSF,NOT-public-domain
 File NomosTestfiles/FSF/aclocal.m4 contains license(s) FSF,GPL-2.0-with-autoconf-exception
 File NomosTestfiles/FSF/canonicalize-lgpl.m4 contains license(s) FSF
 File NomosTestfiles/FSF/FSF-and-GPL.txt contains license(s) FSF,GPL-2.0+
@@ -252,13 +253,13 @@ File NomosTestfiles/ACAA/c32001a.ada contains license(s) Gov't-rights,Unclassifi
 File NomosTestfiles/RPL/RPL-1.5.txt contains license(s) RPL-1.5
 File NomosTestfiles/NOT-public-domain/progtest.m4 contains license(s) FSF,NOT-public-domain
 File NomosTestfiles/NOT-public-domain/README.OSS contains license(s) NOT-public-domain
-File NomosTestfiles/NOT-public-domain/gettext.m4 contains license(s) GPL-with-autoconf-exception,NOT-public-domain
+File NomosTestfiles/NOT-public-domain/gettext.m4 contains license(s) NOT-public-domain,GPL-with-autoconf-exception
 File NomosTestfiles/MPL/MPL-2.0-with-copyleft-exception.txt contains license(s) MPL-2.0
 File NomosTestfiles/MPL/mpl contains license(s) MPL-2.0-no-copyleft-exception
 File NomosTestfiles/MPL/MPL-1.1.txt contains license(s) MPL-1.1
 File NomosTestfiles/MPL/README contains license(s) MPL
 File NomosTestfiles/MPL/License.txt contains license(s) Dual-license,LGPL-2.1+,MPL-1.1
-File NomosTestfiles/MPL/opl-1.0.txt contains license(s) OPL-1.0
+File NomosTestfiles/MPL/opl-1.0.txt contains license(s) MPL-1.1-style
 File NomosTestfiles/MPL/MPL-1.0.txt contains license(s) MPL-1.0
 File NomosTestfiles/MPL/MPL-2.0.txt contains license(s) MPL-2.0-no-copyleft-exception
 File NomosTestfiles/MPL/MPL-1.1b.txt contains license(s) MPL-1.1
@@ -379,7 +380,7 @@ File NomosTestfiles/CNRI-Python/CNRI-Python.txt contains license(s) CNRI-Python
 File NomosTestfiles/ErlPL/decode_skip.h contains license(s) ErlPL-1.1
 File NomosTestfiles/ErlPL/ErlPL-1.1.txt contains license(s) ErlPL-1.1
 File NomosTestfiles/Dual-license/004.phpt.GPLv2+-PHP contains license(s) GPL-2.0+,PHP
-File NomosTestfiles/Dual-license/aclocal.m4 contains license(s) GPL-exception,NOT-public-domain
+File NomosTestfiles/Dual-license/aclocal.m4 contains license(s) NOT-public-domain,GPL-exception
 File NomosTestfiles/Dual-license/7-zip_GPL-2.1+-unRARrestriction contains license(s) LGPL-2.1+,unRAR restriction
 File NomosTestfiles/Dual-license/aes.h contains license(s) BSD-style,Dual-license,GPL
 File NomosTestfiles/Dual-license/CRYPTOGAMS.txt contains license(s) Cryptogams,Dual-license,GPL
@@ -479,7 +480,7 @@ File NomosTestfiles/GPL/aha1740.c.GPLv2 contains license(s) GPL-2.0
 File NomosTestfiles/GPL/GPL-3.0-with-autoconf-exception.txt contains license(s) GPL-3.0-with-autoconf-exception
 File NomosTestfiles/GPL/53c700_d.h_shipped.GPL-2.0+ contains license(s) GPL-2.0+
 File NomosTestfiles/GPL/GPL-2.0-with-autoconf-exception.txt contains license(s) GPL-2.0-with-autoconf-exception
-File NomosTestfiles/GPL/gettext.m4 contains license(s) GPL-with-autoconf-exception,NOT-public-domain
+File NomosTestfiles/GPL/gettext.m4 contains license(s) NOT-public-domain,GPL-with-autoconf-exception
 File NomosTestfiles/GPL/missed_detection_of_GPL_v3_bug3093 contains license(s) Apache-2.0,BSD-3-Clause,GPL-3.0+,RSA-Security
 File NomosTestfiles/GPL/Kconfig contains license(s) GPL-2.0
 File NomosTestfiles/GPL/GPL-2.0-with-GCC-exception.txt contains license(s) GPL-2.0-with-GCC-exception
