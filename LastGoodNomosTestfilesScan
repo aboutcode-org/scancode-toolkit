@@ -350,7 +350,7 @@ File NomosTestfiles/No_license_found/Ajax.js contains license(s) No_license_foun
 File NomosTestfiles/No_license_found/dep.pl contains license(s) No_license_found
 File NomosTestfiles/No_license_found/ipl.h contains license(s) No_license_found
 File NomosTestfiles/No_license_found/XinhaCor.txt contains license(s) No_license_found
-File NomosTestfiles/No_license_found/badge_BuckleUp_L.png contains license(s) No_license_found
+File NomosTestfiles/None-failure/badge_BuckleUp_L.png contains license(s) GPL
 File NomosTestfiles/NOSL/nosl-1.0 contains license(s) NOSL-1.0
 File NomosTestfiles/Fair/Fair.txt contains license(s) Fair
 File NomosTestfiles/Leptonica/affine_reg.c contains license(s) Leptonica
@@ -431,7 +431,7 @@ File NomosTestfiles/SMLNJ/assoc.java contains license(s) BSD-style,SMLNJ
 File NomosTestfiles/GPL/save_particles_Point3D_format.h contains license(s) GPL-3.0+
 File NomosTestfiles/GPL/sys-ecos.c contains license(s) CMU,GPL-2.0+
 File NomosTestfiles/GPL/aclocal.m4 contains license(s) FSF,GPL-2.0-with-autoconf-exception
-File NomosTestfiles/GPL/webserver.h contains license(s) GPL-2.0+,Dual-license,Genivia(Commercial)
+File NomosTestfiles/GPL/webserver.h contains license(s) Dual-license,GPL-2.0+,Genivia(Commercial)
 File NomosTestfiles/GPL/GPL-2.0.txt contains license(s) GPL-2.0
 File NomosTestfiles/GPL/cmdedit.c contains license(s) GPL
 File NomosTestfiles/GPL/pl.po contains license(s) GPL-3.0+
@@ -488,6 +488,7 @@ File NomosTestfiles/GPL/01.cc.GPL-2.0+ contains license(s) GPL-2.0+
 File NomosTestfiles/GPL/bsam-license.php contains license(s) GPL-2.0
 File NomosTestfiles/GPL/GPL-with-autoconf-exception contains license(s) GPL-with-autoconf-exception
 File NomosTestfiles/GPL/ps_inspect.c contains license(s) GPL-2.0+
+File NomosTestfiles/GPL/taskset.c contains license(s) GPL-2.0+
 File NomosTestfiles/eCos/eCos-2.0.txt contains license(s) GPL-2.0+,eCos-2.0
 File NomosTestfiles/Trademark-ref/53c7xx.c contains license(s) Trademark-ref
 File NomosTestfiles/OCLC/OCLC-2.0.txt contains license(s) OCLC-2.0
