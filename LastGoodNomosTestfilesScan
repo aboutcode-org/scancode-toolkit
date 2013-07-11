@@ -262,7 +262,6 @@ File NomosTestfiles/MPL/License.txt contains license(s) Dual-license,LGPL-2.1+,M
 File NomosTestfiles/MPL/opl-1.0.txt contains license(s) MPL-1.1-style
 File NomosTestfiles/MPL/MPL-1.0.txt contains license(s) MPL-1.0
 File NomosTestfiles/MPL/MPL-2.0.txt contains license(s) MPL-2.0-no-copyleft-exception
-File NomosTestfiles/MPL/MPL-1.1b.txt contains license(s) MPL-1.1
 File NomosTestfiles/MPL/mozilla.xhtml contains license(s) Dual-license,GPL-2.0+,LGPL-2.1+,MPL-1.1
 File NomosTestfiles/BSD/Soundex.xs contains license(s) BSD-lite
 File NomosTestfiles/BSD/destest.c contains license(s) BSD-style
@@ -361,7 +360,7 @@ File NomosTestfiles/Nvidia-EULA/atom.c contains license(s) Nvidia-EULA
 File NomosTestfiles/Vixie/user.c contains license(s) Vixie-license
 File NomosTestfiles/QPL/QPL-1.0.txt contains license(s) QPL-1.0
 File NomosTestfiles/RCSL/RCSL_v3.0_a.txt contains license(s) RCSL-3.0
-File NomosTestfiles/Non-profit/freeware.txt contains license(s) Non-profit!
+File NomosTestfiles/Non-profit/freeware.txt contains license(s) Non-profit!,UnclassifiedLicense
 File NomosTestfiles/Non-profit/LICENSE.txt contains license(s) Non-profit!,Not-for-sale!,UnclassifiedLicense
 File NomosTestfiles/ZPL/ZPL-2.1.txt contains license(s) ZPL-2.1
 File NomosTestfiles/ZPL/ZPL-1.1.txt contains license(s) ZPL-1.1
@@ -408,6 +407,8 @@ File NomosTestfiles/OFL/OFL-1.0.txt contains license(s) OFL-1.0
 File NomosTestfiles/OFL/OFL-1.1.txt contains license(s) OFL-1.1
 File NomosTestfiles/CPL/CPL-1.0.txt contains license(s) CPL-1.0
 File NomosTestfiles/CPL/CPL-0.5 contains license(s) CPL-0.5
+File NomosTestfiles/CPL/CPL_license_test.txt contains license(s) CPL-1.0,GPL-2.0
+File NomosTestfiles/CPL/Not_Eclipse_license.txt contains license(s) CPL-1.0
 File NomosTestfiles/RPSL/RPSL_v1.0_a.txt contains license(s) RPSL-1.0
 File NomosTestfiles/RPSL/RPSL-1.0.txt contains license(s) RPSL-1.0
 File NomosTestfiles/RPSL/RPSL_v1.0_b.txt contains license(s) RPSL-1.0
@@ -513,7 +514,7 @@ File NomosTestfiles/See-file/README.txt contains license(s) See-file(LICENSE)
 File NomosTestfiles/See-file/connection.h contains license(s) See-file(COPYING)
 File NomosTestfiles/See-file/qla_version.h contains license(s) See-file(LICENSE)
 File NomosTestfiles/See-file/mmu_context.c contains license(s) See-file(COPYING)
-File NomosTestfiles/See-file/jcparam.c contains license(s) IJG,See-file(README)
+File NomosTestfiles/See-file/jcparam.c contains license(s) IJG
 File NomosTestfiles/See-file/XmlPullParser.java contains license(s) See-file(LICENSE)
 File NomosTestfiles/ISC/ISC.txt contains license(s) ISC
 File NomosTestfiles/UnclassifiedLicense/ACE-copying.html contains license(s) UnclassifiedLicense
@@ -522,7 +523,7 @@ File NomosTestfiles/UnclassifiedLicense/ldapbaseauthenticationprovider.inc.php c
 File NomosTestfiles/UnclassifiedLicense/IPA.cpp contains license(s) See-file(LICENSE)
 File NomosTestfiles/UnclassifiedLicense/config.isc contains license(s) Wash-U-StLouis
 File NomosTestfiles/UnclassifiedLicense/license.all.html.in contains license(s) UnclassifiedLicense
-File NomosTestfiles/UnclassifiedLicense/LICENSE.fatfs contains license(s) UnclassifiedLicense
+File NomosTestfiles/UnclassifiedLicense/LICENSE.fatfs contains license(s) Non-profit!,UnclassifiedLicense
 File NomosTestfiles/UnclassifiedLicense/eula.txt contains license(s) Citrix
 File NomosTestfiles/UnclassifiedLicense/net_phy_def.h contains license(s) UnclassifiedLicense
 File NomosTestfiles/UnclassifiedLicense/Open-CASCADE-Technology-Public-License-6.3 contains license(s) UnclassifiedLicense
