@@ -1,0 +1,9 @@
+----------------------------------------------------------------------
+// Scintilla source code edit control
+/** @file WindowAccessor.cxx * Rapid easy access to contents of a Scintilla.
+  */
+// Copyright 1998-2001 by Neil Hodgson <neilh@scintilla.org> // The License.txt file describes the conditions under which this software may be distributed.
+----------------------------------------------------------------------
+/* * Copyright (C) The MX4J Contributors. * All rights reserved. * * This software is distributed under the terms of the MX4J License version 1.0. * See the terms of the MX4J License in the documentation provided with this software.
+   */
+----------------------------------------------------------------------
