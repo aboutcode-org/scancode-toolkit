@@ -53,8 +53,8 @@ File NomosTestfiles/Multics/Multics.txt contains license(s) Multics
 File NomosTestfiles/OGTSL/OGTSL.txt contains license(s) OGTSL
 File NomosTestfiles/ClArtistic/SaveAbleCollection.cpp contains license(s) ClArtistic
 File NomosTestfiles/ClArtistic/ClArtistic.txt contains license(s) ClArtistic
-File NomosTestfiles/NCSA/uiuc-ncsa.txt contains license(s) BSD-style,MIT-style,NCSA
-File NomosTestfiles/NCSA/NCSA.txt contains license(s) BSD-style,MIT-style,NCSA
+File NomosTestfiles/NCSA/uiuc-ncsa.txt contains license(s) BSD-style,NCSA
+File NomosTestfiles/NCSA/NCSA.txt contains license(s) BSD-style,NCSA
 File NomosTestfiles/OpenSSL/OpenSSL.txt contains license(s) OpenSSL
 File NomosTestfiles/OpenSSL/gost89.c contains license(s) OpenSSL
 File NomosTestfiles/OpenSSL/SSL_CTX_set_psk_client_callback.pod contains license(s) OpenSSL
@@ -333,6 +333,8 @@ File NomosTestfiles/BSD/inetd.c contains license(s) BSD-4-Clause-UC
 File NomosTestfiles/BSD/bsd-3-1 contains license(s) BSD-3-Clause
 File NomosTestfiles/BSD/bsd-3-2 contains license(s) BSD-3-Clause
 File NomosTestfiles/BSD/bsd-3-3 contains license(s) BSD-3-Clause
+File NomosTestfiles/BSD/bsd.txt contains license(s) BSD-3-Clause
+File NomosTestfiles/BSD/bsd-3.txt contains license(s) BSD-3-Clause
 File NomosTestfiles/NBPL/NBPL-1.0 contains license(s) NBPL-1.0
 File NomosTestfiles/FTL/freetype.h contains license(s) FTL
 File NomosTestfiles/FTL/watcom.mk contains license(s) FTL
@@ -533,3 +535,4 @@ File NomosTestfiles/UnclassifiedLicense/eula.txt contains license(s) Citrix
 File NomosTestfiles/UnclassifiedLicense/net_phy_def.h contains license(s) UnclassifiedLicense
 File NomosTestfiles/UnclassifiedLicense/Open-CASCADE-Technology-Public-License-6.3 contains license(s) UnclassifiedLicense
 File NomosTestfiles/MX4J/MX4J-1.0 contains license(s) MX4J-1.0
+File NomosTestfiles/Postfix/master_spawn.c contains license(s) Postfix
