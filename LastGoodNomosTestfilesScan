@@ -12,7 +12,7 @@ File NomosTestfiles/EPL/EPL-1.0.txt contains license(s) EPL-1.0
 File NomosTestfiles/EPL/filterscallbacks.h contains license(s) EPL-1.0
 File NomosTestfiles/EPL/egPrerequisites.h contains license(s) EPL-1.0
 File NomosTestfiles/DPTC/dpt_osdutil.h contains license(s) DPTC
-File NomosTestfiles/OPL/OPL.tex contains license(s) Open-PL-1.0
+File NomosTestfiles/OPL/OPL.tex contains license(s) GPL,OPL-style,Open-PL-0.4
 File NomosTestfiles/OPL/opl-1.0 contains license(s) OPL-1.0
 File NomosTestfiles/XFree86/XFree86-1.1.txt contains license(s) XFree86-1.1
 File NomosTestfiles/XFree86/license_XFree86.txt contains license(s) XFree86
@@ -47,8 +47,8 @@ File NomosTestfiles/WXwindows/License_wxWindows.txt contains license(s) GPL,WXwi
 File NomosTestfiles/WXwindows/setup.h contains license(s) WXwindows
 File NomosTestfiles/WXwindows/WXwindows.txt contains license(s) WXwindows
 File NomosTestfiles/Nokia/Nokia.txt contains license(s) Nokia
-File NomosTestfiles/ODbL/LICENSE.txt contains license(s) CC-BY-SA,ODbl-1.0
-File NomosTestfiles/ODbL/ODbL-1.0.txt contains license(s) ODbl-1.0
+File NomosTestfiles/ODbL/LICENSE.txt contains license(s) CC-BY-SA,ODbL-1.0
+File NomosTestfiles/ODbL/ODbL-1.0.txt contains license(s) ODbL-1.0
 File NomosTestfiles/Multics/Multics.txt contains license(s) Multics
 File NomosTestfiles/OGTSL/OGTSL.txt contains license(s) OGTSL
 File NomosTestfiles/ClArtistic/SaveAbleCollection.cpp contains license(s) ClArtistic
