@@ -501,6 +501,7 @@ File NomosTestfiles/GPL/ps_inspect.c contains license(s) GPL-2.0+
 File NomosTestfiles/GPL/taskset.c contains license(s) GPL-2.0+
 File NomosTestfiles/GPL/stddef.h contains license(s) GPL-3.0+-with-GCC-exception
 File NomosTestfiles/GPL/GPL-2.0+-not-bison.txt contains license(s) GPL-2.0+
+File NomosTestfiles/GPL/parser.c contains license(s) GPL-2.0+-with-bison-exception
 File NomosTestfiles/eCos/eCos-2.0.txt contains license(s) GPL-2.0+,eCos-2.0
 File NomosTestfiles/Trademark-ref/53c7xx.c contains license(s) Trademark-ref
 File NomosTestfiles/OCLC/OCLC-2.0.txt contains license(s) OCLC-2.0
