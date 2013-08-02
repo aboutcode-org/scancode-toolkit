@@ -414,7 +414,7 @@ File NomosTestfiles/OFL/OFL-1.0.txt contains license(s) OFL-1.0
 File NomosTestfiles/OFL/OFL-1.1.txt contains license(s) OFL-1.1
 File NomosTestfiles/CPL/CPL-1.0.txt contains license(s) CPL-1.0
 File NomosTestfiles/CPL/CPL-0.5 contains license(s) CPL-0.5
-File NomosTestfiles/CPL/CPL_license_test.txt contains license(s) CPL-1.0,GPL-2.0
+File NomosTestfiles/CPL/CPL_license_test.txt contains license(s) CPL-1.0,GPL-2.0+
 File NomosTestfiles/CPL/Not_Eclipse_license.txt contains license(s) CPL-1.0
 File NomosTestfiles/RPSL/RPSL_v1.0_a.txt contains license(s) RPSL-1.0
 File NomosTestfiles/RPSL/RPSL-1.0.txt contains license(s) RPSL-1.0
@@ -491,7 +491,7 @@ File NomosTestfiles/GPL/GPL-3.0-with-autoconf-exception.txt contains license(s) 
 File NomosTestfiles/GPL/53c700_d.h_shipped.GPL-2.0+ contains license(s) GPL-2.0+
 File NomosTestfiles/GPL/GPL-2.0-with-autoconf-exception.txt contains license(s) GPL-2.0-with-autoconf-exception
 File NomosTestfiles/GPL/gettext.m4 contains license(s) NOT-public-domain,GPL-with-autoconf-exception
-File NomosTestfiles/GPL/missed_detection_of_GPL_v3_bug3093 contains license(s) Apache-2.0,BSD-3-Clause,GPL-3.0+,RSA-Security
+File NomosTestfiles/GPL/missed_detection_of_GPL_v3_bug3093 contains license(s) Apache-2.0,BSD-3-Clause,GPL-2.0+,GPL-3.0+,RSA-Security
 File NomosTestfiles/GPL/Kconfig contains license(s) GPL-2.0
 File NomosTestfiles/GPL/GPL-2.0-with-GCC-exception.txt contains license(s) GPL-2.0-with-GCC-exception
 File NomosTestfiles/GPL/01.cc.GPL-2.0+ contains license(s) GPL-2.0+
