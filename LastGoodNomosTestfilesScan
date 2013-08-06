@@ -140,6 +140,8 @@ File NomosTestfiles/See-doc/http.h contains license(s) See-doc(OTHER)
 File NomosTestfiles/See-doc/xmlsec.c contains license(s) See-doc(OTHER)
 File NomosTestfiles/See-doc/cpl.pp contains license(s) See-doc(OTHER)
 File NomosTestfiles/See-doc/command.h contains license(s) See-doc(OTHER)
+File NomosTestfiles/See-doc/mic.h contains license(s) See-doc(OTHER)
+File NomosTestfiles/See-doc/init.8 contains license(s) See-doc(OTHER)
 File NomosTestfiles/SGI/gl2.h contains license(s) SGI-B-2.0
 File NomosTestfiles/SGI/sgi.txt contains license(s) SGI-B-1.1
 File NomosTestfiles/SGI/SGI-B-2.0 contains license(s) SGI-B-2.0
@@ -435,6 +437,8 @@ File NomosTestfiles/MS/MS-PL.txt contains license(s) MS-PL
 File NomosTestfiles/MS/MicrosoftPermissiveLicense.rtf contains license(s) MS-PL
 File NomosTestfiles/MS/MS-PL_Index.aspx contains license(s) MS-PL
 File NomosTestfiles/MS/MS-LPL.txt contains license(s) MS-LPL
+File NomosTestfiles/MS/linux-cdc-acm.inf contains license(s) MS-LPL
+File NomosTestfiles/MS/linux.inf contains license(s) MS-LPL
 File NomosTestfiles/MS/MS-RL.txt contains license(s) MS-RL
 File NomosTestfiles/MS/MicrosoftReciprocalLicense.rtf contains license(s) MS-RL
 File NomosTestfiles/MS/crtlicense.txt contains license(s) Microsoft,Python
@@ -528,6 +532,8 @@ File NomosTestfiles/See-file/qla_version.h contains license(s) See-file(LICENSE)
 File NomosTestfiles/See-file/mmu_context.c contains license(s) See-file(COPYING)
 File NomosTestfiles/See-file/jcparam.c contains license(s) IJG
 File NomosTestfiles/See-file/XmlPullParser.java contains license(s) See-file(LICENSE)
+File NomosTestfiles/See-file/qlcnic_ctx.c contains license(s) See-file(LICENSE)
+File NomosTestfiles/See-file/qlge.h contains license(s) See-file(LICENSE)
 File NomosTestfiles/ISC/ISC.txt contains license(s) ISC
 File NomosTestfiles/UnclassifiedLicense/ACE-copying.html contains license(s) UnclassifiedLicense
 File NomosTestfiles/UnclassifiedLicense/isc.h contains license(s) UnclassifiedLicense
