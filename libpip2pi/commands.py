@@ -114,7 +114,7 @@ def dir2pi(argv=sys.argv):
             pkg_new_basename_html = cgi.escape(pkg_new_basename)
             fp.write("<a href='%s'>%s</a><br />\n"
                      %(pkg_new_basename_html, pkg_new_basename_html))
-    pkg_index += "</body></html>"
+    pkg_index += "</body></html>\n"
     with open(pkgdirpath("simple/index.html"), "w") as fp:
         fp.write(pkg_index)
     return 0
