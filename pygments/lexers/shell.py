@@ -228,9 +228,9 @@ class BatchLexer(RegexLexer):
             # like %~$VAR:zlt
             (r'%%?[~$:\w]+%?', Name.Variable),
             (r'::.*', Comment), # Technically :: only works at BOL
-            (r'(set)(\s+)(\w+)', bygroups(Keyword, Text, Name.Variable)),
-            (r'(call)(\s+)(:\w+)', bygroups(Keyword, Text, Name.Label)),
-            (r'(goto)(\s+)(\w+)', bygroups(Keyword, Text, Name.Label)),
+            (r'\b(set)(\s+)(\w+)', bygroups(Keyword, Text, Name.Variable)),
+            (r'\b(call)(\s+)(:\w+)', bygroups(Keyword, Text, Name.Label)),
+            (r'\b(goto)(\s+)(\w+)', bygroups(Keyword, Text, Name.Label)),
             (r'\b(set|call|echo|on|off|endlocal|for|do|goto|if|pause|'
              r'setlocal|shift|errorlevel|exist|defined|cmdextversion|'
              r'errorlevel|else|cd|md|del|deltree|cls|choice)\b', Keyword),
