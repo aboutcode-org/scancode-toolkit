@@ -38,11 +38,6 @@ class JavaLexer(RegexLexer):
 
     tokens = {
         'root': [
-            # method names
-            (r'^(\s*(?:[a-zA-Z_][a-zA-Z0-9_\.\[\]<>]*\s+)+?)' # return arguments
-             r'([a-zA-Z_][a-zA-Z0-9_]*)'                      # method name
-             r'(\s*)(\()',                                    # signature start
-             bygroups(using(this), Name.Function, Text, Operator)),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
             (r'/\*.*?\*/', Comment.Multiline),
@@ -55,6 +50,11 @@ class JavaLexer(RegexLexer):
              r'transient|volatile)\b', Keyword.Declaration),
             (r'(boolean|byte|char|double|float|int|long|short|void)\b',
              Keyword.Type),
+            # method names
+            (r'^(\s*(?:[a-zA-Z_][a-zA-Z0-9_\.\[\]<>]*\s+)+?)' # return arguments
+             r'([a-zA-Z_][a-zA-Z0-9_]*)'                      # method name
+             r'(\s*)(\()',                                    # signature start
+             bygroups(using(this), Name.Function, Text, Operator)),
             (r'(package)(\s+)', bygroups(Keyword.Namespace, Text)),
             (r'(true|false|null)\b', Keyword.Constant),
             (r'(class|interface)(\s+)', bygroups(Keyword.Declaration, Text), 'class'),
