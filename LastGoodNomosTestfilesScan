@@ -116,6 +116,7 @@ File NomosTestfiles/Artistic/macos_main.cpp contains license(s) Artistic-1.0
 File NomosTestfiles/Artistic/Hero.java contains license(s) Artistic-1.0
 File NomosTestfiles/Artistic/Artistic-2.0.txt contains license(s) Artistic-2.0
 File NomosTestfiles/Artistic/a2p.c contains license(s) Artistic-1.0,GPL
+File NomosTestfiles/Artistic/Artistic-1.0-Perl.txt contains license(s) Artistic-1.0-Perl
 File NomosTestfiles/JSON/json-license.htm contains license(s) JSON
 File NomosTestfiles/JSON/jslint.js contains license(s) JSON
 File NomosTestfiles/NPOSL/NPOSL-3.0.txt contains license(s) NPOSL-3.0
@@ -247,6 +248,7 @@ File NomosTestfiles/FSF/FSF-and-GPL.txt contains license(s) FSF,GPL-2.0+
 File NomosTestfiles/YPL/YPL-1.1.txt contains license(s) YPL-1.1
 File NomosTestfiles/YPL/preamble-YPL-WebClient.txt contains license(s) YPL-1.0
 File NomosTestfiles/YPL/YPL-1.1b.txt contains license(s) YPL-1.1
+File NomosTestfiles/YPL/YPL-1.0.txt contains license(s) YPL-1.0
 File NomosTestfiles/Unlicense/bitcoin.php contains license(s) Unlicense
 File NomosTestfiles/NGPL/NGPL.txt contains license(s) NGPL
 File NomosTestfiles/Xnet/Xnet.txt contains license(s) Xnet
@@ -555,3 +557,6 @@ File NomosTestfiles/UnclassifiedLicense/Open-CASCADE-Technology-Public-License-6
 File NomosTestfiles/MX4J/MX4J-1.0 contains license(s) MX4J-1.0
 File NomosTestfiles/Postfix/master_spawn.c contains license(s) Postfix
 File NomosTestfiles/Princeton/adj.dat contains license(s) Princeton
+File NomosTestfiles/D-FSL/D-FSL-1.0.txt contains license(s) D-FSL-1.0
+File NomosTestfiles/SISSL/SISSL.txt contains license(s) SISSL-1.1
+File NomosTestfiles/SISSL/SISSL-1.2.txt contains license(s) SISSL-1.2
