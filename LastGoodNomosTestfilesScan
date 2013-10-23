@@ -109,6 +109,7 @@ File NomosTestfiles/LGPL/LGPL-2.1.txt contains license(s) LGPL-2.1
 File NomosTestfiles/LGPL/autoopts.c contains license(s) BSD,LGPL-3.0
 File NomosTestfiles/LGPL/GPL_false-positive_x_bug2307 contains license(s) LGPL-2.1+,MIT-style
 File NomosTestfiles/LGPL/LGPL-2.1b.txt contains license(s) LGPL-2.1
+File NomosTestfiles/LGPL/openjdk-7-jre-headless_license.txt contains license(s) W3C,AGPL-3.0+,ATT,Apache-2.0,GPL-2.0+-with-classpath-exception,IJG,JPEG/netpbm,LGPL-2.0,MPL,MPL-1.1,NotreDame-style,OpenGroup,Oracle-Berkeley-DB,SAX-PD,Sun(tm),SunPro,XFree86
 File NomosTestfiles/LGPL/defconfig contains license(s) BSD,LGPL
 File NomosTestfiles/Artistic/Artistic-1.0.txt contains license(s) Artistic-1.0
 File NomosTestfiles/Artistic/macos_main.cpp contains license(s) Artistic-1.0
@@ -400,13 +401,13 @@ File NomosTestfiles/Dual-license/Identity_daemon.c contains license(s) Dual-lice
 File NomosTestfiles/Dual-license/jquery.ui.core.js contains license(s) Dual-license,GPL-2.0,MIT-style
 File NomosTestfiles/Dual-license/asn1.c contains license(s) BSD,Dual-license,GPL-2.0
 File NomosTestfiles/Dual-license/api.css_GPL_MIT contains license(s) Dual-license,GPL,MIT-style
-File NomosTestfiles/Dual-license/xpmr.h contains license(s) Dual-license,GPL,LGPL-2.0+
+File NomosTestfiles/Dual-license/xpmr.h contains license(s) Dual-license,GPL-2.0+,LGPL
 File NomosTestfiles/Dual-license/qhttp.cpp contains license(s) Dual-license,GPL-3.0,LGPL-2.1
 File NomosTestfiles/Dual-license/fuse_kernel.h contains license(s) BSD-2-Clause,Dual-license,GPL
 File NomosTestfiles/Dual-license/aes-586.pl contains license(s) Cryptogams,Dual-license,OpenSSL
 File NomosTestfiles/Dual-license/sarissa.js contains license(s) Dual-license,GPL-2.0,LGPL-2.1
 File NomosTestfiles/Dual-license/ashmem.h contains license(s) Apache-2.0,Dual-license,GPL
-File NomosTestfiles/Dual-license/plc.h contains license(s) Dual-license,GPL,LGPL-2.0+
+File NomosTestfiles/Dual-license/plc.h contains license(s) Dual-license,GPL-2.0+,LGPL
 File NomosTestfiles/Dual-license/smb.h contains license(s) BSD-style,Dual-license,GPL-2.0+
 File NomosTestfiles/Dual-license/Oracle+Sun_oracle_index.html contains license(s) Oracle-Berkeley-DB,Sun(tm)
 File NomosTestfiles/Dual-license/H2_ExhibitA.rtf contains license(s) Dual-license,EPL-1.0,H2-1.0
@@ -416,6 +417,7 @@ File NomosTestfiles/Dual-license/lzf.c contains license(s) BSD-2-Clause,Dual-lic
 File NomosTestfiles/Dual-license/Artistic-1.0+GPL_META.yml contains license(s) Artistic-1.0,GPL
 File NomosTestfiles/OFL/OFL-1.0.txt contains license(s) OFL-1.0
 File NomosTestfiles/OFL/OFL-1.1.txt contains license(s) OFL-1.1
+File NomosTestfiles/OFL/font-awesome-ie7.css contains license(s) CC-BY-3.0,MIT-style,OFL-1.1
 File NomosTestfiles/CPL/CPL-1.0.txt contains license(s) CPL-1.0
 File NomosTestfiles/CPL/CPL-0.5 contains license(s) CPL-0.5
 File NomosTestfiles/CPL/CPL_license_test.txt contains license(s) CPL-1.0,GPL-2.0+
