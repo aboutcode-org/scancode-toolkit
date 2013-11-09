@@ -62,11 +62,11 @@ def dir2pi(argv=sys.argv):
 
             Creates the directory PACKAGE_DIR/simple/ and populates it with the
             directory structure required to use with pip's --index-url.
-            
+
             Assumes that PACKAGE_DIR contains a bunch of archives named
             'package-name-version.ext' (ex 'foo-2.1.tar.gz' or
             'foo-bar-1.3rc1.bz2').
-            
+
             This makes the most sense if PACKAGE_DIR is somewhere inside a
             webserver's inside htdocs directory.
 
@@ -108,7 +108,10 @@ def dir2pi(argv=sys.argv):
         pkg_new_basename = "-".join([pkg_name, pkg_rest])
         symlink_target = os.path.join(pkg_dir, pkg_new_basename)
         symlink_source = os.path.join("../../", pkg_basename)
-        os.symlink(symlink_source, symlink_target)
+        if hasattr(os, "symlink"):
+            os.symlink(symlink_source, symlink_target)
+        else:
+            shutil.copy2(pkg_filepath, symlink_target)
         pkg_name_html = cgi.escape(pkg_name)
         pkg_index += "<a href='{0}/'>{0}</a><br />\n".format(pkg_name_html)
         with open(os.path.join(pkg_dir, "index.html"), "a") as fp:
@@ -128,12 +131,12 @@ def pip2tgz(argv=sys.argv):
 
             Where PACKAGE_NAMES are any names accepted by pip (ex, `foo`,
             `foo==1.2`, `-r requirements.txt`).
-            
+
             pip2tgz will download all packages required to install PACKAGE_NAMES and
             save them to sanely-named tarballs in OUTPUT_DIRECTORY.
 
             For example:
-                
+
                 $ pip2tgz /var/www/packages/ -r requirements.txt foo==1.2 baz/
         """)
         return 1
@@ -194,7 +197,7 @@ def pip2pi(argv=sys.argv):
             If TARGET contains ':' it will be treated as a remote path. The
             package index will be built locally then rsync will be used to copy
             it to the remote host.
-            
+
             For example, to create a remote index:
 
                 $ pip2pi example.com:/var/www/packages/ -r requirements.txt
@@ -209,7 +212,7 @@ def pip2pi(argv=sys.argv):
     pip_packages = argv[2:]
     if ":" in target:
         is_remote = True
-        working_dir = tempfile.mkdtemp(prefix="pip2pi-working-dir") 
+        working_dir = tempfile.mkdtemp(prefix="pip2pi-working-dir")
         atexit.register(lambda: shutil.rmtree(working_dir))
     else:
         is_remote = False
