@@ -27,7 +27,13 @@ setup(
     """,
     long_description=long_description,
     packages=find_packages(),
-    scripts=["pip2pi", "pip2tgz", "dir2pi"],
+    entry_points={
+        'console_scripts': [
+            'dir2pi = libpip2pi.commands:dir2pi',
+            'pip2pi = libpip2pi.commands:pip2pi',
+            'pip2tgz = libpip2pi.commands:pip2tgz',
+            ],
+        },
     license="BSD",
     classifiers=[ x.strip() for x in """
         Development Status :: 4 - Beta
