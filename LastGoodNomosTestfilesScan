@@ -109,7 +109,7 @@ File NomosTestfiles/LGPL/LGPL-2.1.txt contains license(s) LGPL-2.1
 File NomosTestfiles/LGPL/autoopts.c contains license(s) BSD,LGPL-3.0
 File NomosTestfiles/LGPL/GPL_false-positive_x_bug2307 contains license(s) LGPL-2.1+,MIT-style
 File NomosTestfiles/LGPL/LGPL-2.1b.txt contains license(s) LGPL-2.1
-File NomosTestfiles/LGPL/openjdk-7-jre-headless_license.txt contains license(s) W3C,AGPL-3.0+,ATT,Apache-2.0,GPL-2.0+-with-classpath-exception,IJG,JPEG/netpbm,LGPL-2.0,MPL,MPL-1.1,NotreDame-style,OpenGroup,Oracle-Berkeley-DB,SAX-PD,Sun(tm),SunPro,XFree86
+File NomosTestfiles/LGPL/openjdk-7-jre-headless_license.txt contains license(s) W3C,AGPL-3.0+,ATT,Apache-2.0,BSD-3-Clause,GPL-2.0+-with-classpath-exception,IJG,JPEG/netpbm,LGPL-2.0,NPL-1.1,NotreDame-style,OpenGroup,SAX-PD,Sun(tm),SunPro,XFree86
 File NomosTestfiles/LGPL/defconfig contains license(s) BSD,LGPL
 File NomosTestfiles/Artistic/Artistic-1.0.txt contains license(s) Artistic-1.0
 File NomosTestfiles/Artistic/macos_main.cpp contains license(s) Artistic-1.0
