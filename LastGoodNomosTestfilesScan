@@ -518,6 +518,7 @@ File NomosTestfiles/GPL/Jersey-LICENSE.txt contains license(s) CDDL-1.1,GPL-2.0,
 File NomosTestfiles/GPL/InvalidHeaderException.cs contains license(s) GPL-2.0+-with-classpath-exception,Public-domain
 File NomosTestfiles/GPL/Adler32.cs contains license(s) GPL-2.0+-with-classpath-exception
 File NomosTestfiles/GPL/outcommentedMODULE_LICENSE.txt contains license(s) GPL-possibility
+File NomosTestfiles/GPL/gpl-3.0.xml contains license(s) GPL-3.0
 File NomosTestfiles/eCos/eCos-2.0.txt contains license(s) GPL-2.0+,eCos-2.0
 File NomosTestfiles/Trademark-ref/53c7xx.c contains license(s) Trademark-ref
 File NomosTestfiles/OCLC/OCLC-2.0.txt contains license(s) OCLC-2.0
