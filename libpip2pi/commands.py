@@ -57,7 +57,7 @@ def file_to_package(file, basedir=None):
 
 def dir2pi(argv=sys.argv):
     if len(argv) != 2:
-        print( dedent("""
+        print(dedent("""
             usage: dir2pi PACKAGE_DIR
 
             Creates the directory PACKAGE_DIR/simple/ and populates it with the
@@ -82,7 +82,7 @@ def dir2pi(argv=sys.argv):
                 packages/simple/foo/
                 packages/simple/foo/index.html
                 packages/simple/foo/foo-1.2.tar.gz
-        """) )
+        """))
         return 1
     pkgdir = argv[1]
     if not os.path.isdir(pkgdir):
@@ -126,7 +126,7 @@ def dir2pi(argv=sys.argv):
 @maintain_cwd
 def pip2tgz(argv=sys.argv):
     if len(argv) < 3:
-        print( dedent("""
+        print(dedent("""
             usage: pip2tgz OUTPUT_DIRECTORY PACKAGE_NAME ...
 
             Where PACKAGE_NAMES are any names accepted by pip (ex, `foo`,
@@ -138,7 +138,7 @@ def pip2tgz(argv=sys.argv):
             For example:
 
                 $ pip2tgz /var/www/packages/ -r requirements.txt foo==1.2 baz/
-        """) )
+        """))
         return 1
 
     outdir = os.path.abspath(argv[1])
@@ -183,12 +183,12 @@ def pip2tgz(argv=sys.argv):
 
     os.chdir(outdir)
     shutil.rmtree(tempdir)
-    print( "%s .tar.gz saved to %r" %(num_pakages, argv[1]) )
+    print("%s .tar.gz saved to %r" %(num_pakages, argv[1]))
     return 0
 
 def pip2pi(argv=sys.argv):
     if len(argv) < 3:
-        print( dedent("""
+        print(dedent("""
             usage: pip2pi TARGET PACKAGE_NAME ...
 
             Combines pip2tgz and dir2pi, adding PACKAGE_NAME to package index
@@ -205,7 +205,7 @@ def pip2pi(argv=sys.argv):
             Or to create a local index:
 
                 $ pip2pi ~/Sites/packages/ foo==1.2
-        """) )
+        """))
         return 1
 
     target = argv[1]
@@ -220,16 +220,16 @@ def pip2pi(argv=sys.argv):
 
     res = pip2tgz([argv[0], working_dir] + pip_packages)
     if res:
-        print( "pip2tgz returned an error; aborting." )
+        print("pip2tgz returned an error; aborting.")
         return res
 
     res = dir2pi([argv[0], working_dir])
     if res:
-        print( "dir2pi returned an error; aborting." )
+        print("dir2pi returned an error; aborting.")
         return res
 
     if is_remote:
-        print( "copying temporary index at %r to %r..." %(working_dir, target) )
+        print("copying temporary index at %r to %r..." %(working_dir, target))
         check_call([
             "rsync",
             "--recursive", "--progress", "--links",
