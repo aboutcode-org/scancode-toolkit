@@ -145,10 +145,10 @@ def pip2tgz(argv=sys.argv):
     if not os.path.exists(outdir):
         os.mkdir(outdir)
 
-    tempdir = os.path.join(outdir, "_pip2tgz_temp")
-    if os.path.exists(tempdir):
-        shutil.rmtree(tempdir)
-    os.mkdir(tempdir)
+    # tempdir = os.path.join(outdir, "_pip2tgz_temp")
+    # if os.path.exists(tempdir):
+    #     shutil.rmtree(tempdir)
+    # os.mkdir(tempdir)
 
     # bundle_zip = os.path.join(tempdir, "bundle.zip")
     # build_dir = os.path.join(tempdir, "build")
