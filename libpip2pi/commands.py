@@ -156,7 +156,7 @@ def pip2tgz(argv=sys.argv):
     #build_dir = os.path.join(tempdir, "build")
     
     os.chdir(outdir)
-    check_call(["pip", "install", "-d", build_dir] + argv[2:])
+    check_call(["pip", "install", "-d", '.'] + argv[2:])
 
     
     # if os.path.exists(build_dir):
