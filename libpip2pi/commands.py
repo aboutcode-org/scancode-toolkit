@@ -148,25 +148,7 @@ def pip2tgz(argv=sys.argv):
     
     check_call(["pip", "install", "-d", outdir] + argv[2:])
     os.chdir(outdir)
-    
-    # Create our pip-manifest.txt
-    if os.path.exists('pip-manifest.txt'):
-        os.remove('pip-manifest.txt')
-
-    f = open('pip-manifest.txt', 'w')
-    f.write('# Created by pip2pi\n')
-    
-    num_pakages = 0
-    for file_name in glob.glob('./*.tar.gz'):
-        file_name = file_name.split('/')[-1].replace('.tar.gz', '')
-        file_name_parts = file_name.split('-')
-        file_name = '-'.join(file_name_parts[:-1])
-        version = file_name_parts[-1]
-        num_pakages += 1
-
-        f.write('%s==%s\n' % (file_name, version))
-
-    f.close()
+    num_pakages = len(glob.glob('./*.tar.gz'))
 
     print("%s .tar.gz saved to %r" %(num_pakages, argv[1]))
     return 0
