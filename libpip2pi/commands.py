@@ -180,7 +180,7 @@ def pip2tgz(argv=sys.argv):
         version = file_name_parts[-1]
         num_pakages += 1
 
-        f.writelines(['%s==%s' % (file_name, version)])
+        f.write('%s==%s\n' % (file_name, version))
 
     f.close()
 
