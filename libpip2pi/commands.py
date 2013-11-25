@@ -150,39 +150,59 @@ def pip2tgz(argv=sys.argv):
         shutil.rmtree(tempdir)
     os.mkdir(tempdir)
 
-    bundle_zip = os.path.join(tempdir, "bundle.zip")
+    # bundle_zip = os.path.join(tempdir, "bundle.zip")
+    # build_dir = os.path.join(tempdir, "build")
+    # check_call(["pip", "bundle", "-b", build_dir, bundle_zip] + argv[2:])
     build_dir = os.path.join(tempdir, "build")
-    check_call(["pip", "bundle", "-b", build_dir, bundle_zip] + argv[2:])
-
-    os.chdir(tempdir)
-    if os.path.exists(build_dir):
-        zipfile.ZipFile("bundle.zip").extract("pip-manifest.txt")
-    else:
-        # Older versions of pip delete the "build" directory after they
-        # are done with it... So extract the entire bundle.zip
-        zipfile.ZipFile("bundle.zip").extractall()
-
-    num_pakages = 0
-    for line in open("pip-manifest.txt"):
-        line = line.strip()
-        if not line or line.startswith("#"):
-            continue
-        pkg_version = line.split("==")
-        if len(pkg_version) != 2:
-            bundle_file = os.path.abspath("pip-manifest.txt")
-            raise ValueError("surprising line in %r: %r"
-                             %(bundle_file, line, ))
-        pkg, version = pkg_version
-        version = version.replace("-", "_")
-        old_input_dir = os.path.join("build/", pkg)
-        new_input_dir = "%s-%s" %(pkg, version)
-        os.rename(old_input_dir, new_input_dir)
-        output_name = os.path.join("..", new_input_dir + ".tar.gz")
-        check_call(["tar", "-czf", output_name, new_input_dir])
-        num_pakages += 1
+    check_call(["pip", "install", "-d", build_dir] + argv[2:])
 
     os.chdir(outdir)
-    shutil.rmtree(tempdir)
+    # if os.path.exists(build_dir):
+    #     zipfile.ZipFile("bundle.zip").extract("pip-manifest.txt")
+    # else:
+    #     # Older versions of pip delete the "build" directory after they
+    #     # are done with it... So extract the entire bundle.zip
+    #     zipfile.ZipFile("bundle.zip").extractall()
+
+    # Create our pip-manifest.txt
+    if os.path.exists('pip-manifest.txt'):
+        shutil.rmtree('pip-manifest.txt')
+
+    f = open('pip-manifest', 'w')
+    f.writelines('# Created by pip2pi')
+    import glob
+    num_pakages = 0
+    for file_name in glob.glob('./*.tar.gz'):
+        file_name = file_name.replace('.tar.gz', '')
+        file_name_parts = file_name.split('-')
+        file_name = '-'.join(file_name_parts[:-1])
+        version = file_name_parts[-1]
+        num_pakages += 1
+
+        f.writelines('%s==%s' % (file_name, version))
+
+    f.close()
+
+    # for line in open("pip-manifest.txt"):
+    #     line = line.strip()
+    #     if not line or line.startswith("#"):
+    #         continue
+    #     pkg_version = line.split("==")
+    #     if len(pkg_version) != 2:
+    #         bundle_file = os.path.abspath("pip-manifest.txt")
+    #         raise ValueError("surprising line in %r: %r"
+    #                          %(bundle_file, line, ))
+    #     pkg, version = pkg_version
+    #     version = version.replace("-", "_")
+    #     old_input_dir = os.path.join("build/", pkg)
+    #     new_input_dir = "%s-%s" %(pkg, version)
+    #     os.rename(old_input_dir, new_input_dir)
+    #     output_name = os.path.join("..", new_input_dir + ".tar.gz")
+    #     check_call(["tar", "-czf", output_name, new_input_dir])
+    #     num_pakages += 1
+
+    #os.chdir(outdir)
+    #shutil.rmtree(tempdir)
     print("%s .tar.gz saved to %r" %(num_pakages, argv[1]))
     return 0
 
