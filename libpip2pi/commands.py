@@ -174,7 +174,7 @@ def pip2tgz(argv=sys.argv):
     import glob
     num_pakages = 0
     for file_name in glob.glob('./*.tar.gz'):
-        file_name = file_name.replace('.tar.gz', '')
+        file_name = file_name.split('/')[:-1].replace('.tar.gz', '')
         file_name_parts = file_name.split('-')
         file_name = '-'.join(file_name_parts[:-1])
         version = file_name_parts[-1]
