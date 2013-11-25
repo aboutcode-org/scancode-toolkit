@@ -155,9 +155,8 @@ def pip2tgz(argv=sys.argv):
     # check_call(["pip", "bundle", "-b", build_dir, bundle_zip] + argv[2:])
     #build_dir = os.path.join(tempdir, "build")
     
+    check_call(["pip", "install", "-d", outdir] + argv[2:])
     os.chdir(outdir)
-    check_call(["pip", "install", "-d", '.'] + argv[2:])
-
     
     # if os.path.exists(build_dir):
     #     zipfile.ZipFile("bundle.zip").extract("pip-manifest.txt")
