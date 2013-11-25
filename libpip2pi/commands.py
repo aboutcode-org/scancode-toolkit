@@ -169,7 +169,7 @@ def pip2tgz(argv=sys.argv):
     if os.path.exists('pip-manifest.txt'):
         shutil.rmtree('pip-manifest.txt')
 
-    f = open('pip-manifest', 'w')
+    f = open('pip-manifest.txt', 'w')
     f.writelines('# Created by pip2pi')
     import glob
     num_pakages = 0
@@ -180,7 +180,7 @@ def pip2tgz(argv=sys.argv):
         version = file_name_parts[-1]
         num_pakages += 1
 
-        f.writelines('%s==%s' % (file_name, version))
+        f.writelines(['%s==%s' % (file_name, version)])
 
     f.close()
 
