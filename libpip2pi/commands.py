@@ -146,6 +146,11 @@ def pip2tgz(argv=sys.argv):
     if not os.path.exists(outdir):
         os.mkdir(outdir)
     
+    import pip
+    version = pip.__version__
+    if version < '1.1':
+        raise RuntimeError('pip version %s is less than the required version 1.1' % version)
+
     check_call(["pip", "install", "-d", outdir] + argv[2:])
     os.chdir(outdir)
     num_pakages = len(glob.glob('./*.tar.gz'))
