@@ -56,6 +56,28 @@ def file_to_package(file, basedir=None):
         raise ValueError(msg)
     return (split[0], pkg_resources.safe_name(split[1]))
 
+def archive_pip_packages(path, package_cmds):
+    use_pip_main = False
+    try:
+        import pip
+        pip_dist = pkg_resources.get_distribution('pip')
+        version = pip_dist.version
+
+        if version < '1.1':
+            raise RuntimeError('pip >= 1.1 required, %s installed' % version)
+
+        use_pip_main = True
+    except ImportError:
+        print '\n===\nWARNING:\nCannot import `pip` - falling back to using the pip executable.'
+        print '(This will be deprecated in a future release.)\n===\n'
+
+    if use_pip_main:
+        cmds = ['install', '-d', path]
+        cmds.extend(package_cmds)
+        pip.main(cmds)
+    else:
+        check_call(["pip", "install", "-d", path] + package_cmds)
+
 def dir2pi(argv=sys.argv):
     if len(argv) != 2:
         print(dedent("""
@@ -145,13 +167,8 @@ def pip2tgz(argv=sys.argv):
     outdir = os.path.abspath(argv[1])
     if not os.path.exists(outdir):
         os.mkdir(outdir)
-    
-    import pip
-    version = pip.__version__
-    if version < '1.1':
-        raise RuntimeError('pip version %s is less than the required version 1.1' % version)
 
-    check_call(["pip", "install", "-d", outdir] + argv[2:])
+    archive_pip_packages(outdir, argv[2:])
     os.chdir(outdir)
     num_pakages = len(glob.glob('./*.tar.gz'))
 
