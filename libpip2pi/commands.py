@@ -3,7 +3,7 @@ import sys
 import cgi
 import shutil
 import atexit
-import zipfile
+#import zipfile
 import tempfile
 import textwrap
 import functools
@@ -170,9 +170,9 @@ def pip2tgz(argv=sys.argv):
 
     archive_pip_packages(outdir, argv[2:])
     os.chdir(outdir)
-    num_pakages = len(glob.glob('./*.tar.gz'))
+    num_pakages = len(glob.glob('./*.tar.*'))
 
-    print("%s .tar.gz saved to %r" %(num_pakages, argv[1]))
+    print("\nDone. %s archives currently saved in %r." %(num_pakages, argv[1]))
     return 0
 
 def pip2pi(argv=sys.argv):
