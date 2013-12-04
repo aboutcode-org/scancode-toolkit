@@ -57,26 +57,24 @@ def file_to_package(file, basedir=None):
     return (split[0], pkg_resources.safe_name(split[1]))
 
 def archive_pip_packages(path, package_cmds):
-    use_pip_main = False
+    pip_args = ["install", "-d", path] + package_cmds
     try:
         import pip
-        pip_dist = pkg_resources.get_distribution('pip')
-        version = pip_dist.version
-
-        if version < '1.1':
-            raise RuntimeError('pip >= 1.1 required, %s installed' % version)
-
-        use_pip_main = True
     except ImportError:
-        print '\n===\nWARNING:\nCannot import `pip` - falling back to using the pip executable.'
-        print '(This will be deprecated in a future release.)\n===\n'
+        print("===== WARNING =====")
+        print("Cannot `import pip` - falling back to the pip executable.")
+        print("This will be deprecated in a future release.")
+        print("Please open an issue if this will be a problem: "
+              "https://github.com/wolever/pip2pi/issues")
+        print("===================")
+        check_call(["pip"] + pip_args)
+        return
 
-    if use_pip_main:
-        cmds = ['install', '-d', path]
-        cmds.extend(package_cmds)
-        pip.main(cmds)
-    else:
-        check_call(["pip", "install", "-d", path] + package_cmds)
+    pip_dist = pkg_resources.get_distribution("pip")
+    version = pip_dist.version
+    if version < "1.1":
+        raise RuntimeError("pip >= 1.1 required, %s installed" % version)
+    pip.main(pip_args)
 
 def dir2pi(argv=sys.argv):
     if len(argv) != 2:
