@@ -173,6 +173,7 @@ File NomosTestfiles/Authorship-inference/setup contains license(s) No_license_fo
 File NomosTestfiles/Intel/Intel-software-license-emgd-1.16 contains license(s) Intel-other
 File NomosTestfiles/Intel/intel-536EP.install contains license(s) Intel-other
 File NomosTestfiles/Intel/INTEL-LICENSE.txt contains license(s) BSD-3-Clause,Intel
+File NomosTestfiles/Intel/intel-wlan-license.txt contains license(s) Intel-WLAN
 File NomosTestfiles/Python/hashlib.py contains license(s) Python
 File NomosTestfiles/Python/Python-2.0.txt contains license(s) Python-2.0
 File NomosTestfiles/Python/crtlicense.txt contains license(s) Microsoft,Python
@@ -221,6 +222,12 @@ File NomosTestfiles/CC/CC-BY-NC-ND-3.0.txt contains license(s) CC-BY-NC-ND-3.0
 File NomosTestfiles/CC/memory_map.h contains license(s) CC-BY-ND-2.0
 File NomosTestfiles/CC/DS_HuffmanEncodingTreeNode.h contains license(s) CC-BY-NC-2.5,GPL-2.0+
 File NomosTestfiles/CC/CC-BY-2.5.txt contains license(s) CC-BY-2.5
+File NomosTestfiles/CC/CC-BY-4.0.txt contains license(s) CC-BY-4.0
+File NomosTestfiles/CC/CC-BY-NC-4.0.txt contains license(s) CC-BY-NC-4.0
+File NomosTestfiles/CC/CC-BY-NC-ND-4.0.txt contains license(s) CC-BY-NC-ND-4.0
+File NomosTestfiles/CC/CC-BY-NC-SA-4.0.txt contains license(s) CC-BY-NC-SA-4.0
+File NomosTestfiles/CC/CC-BY-ND-4.0.txt contains license(s) CC-BY-ND-4.0
+File NomosTestfiles/CC/CC-BY-SA-4.0.txt contains license(s) CC-BY-SA-4.0
 File NomosTestfiles/Sun/24AF6529.license contains license(s) Sun
 File NomosTestfiles/Sun/sissl-1.1 contains license(s) SISSL-1.1
 File NomosTestfiles/Sun/SPL-1.0.txt contains license(s) SPL-1.0
@@ -562,3 +569,4 @@ File NomosTestfiles/Princeton/adj.dat contains license(s) Princeton
 File NomosTestfiles/D-FSL/D-FSL-1.0.txt contains license(s) D-FSL-1.0
 File NomosTestfiles/SISSL/SISSL.txt contains license(s) SISSL-1.1
 File NomosTestfiles/SISSL/SISSL-1.2.txt contains license(s) SISSL-1.2
+File NomosTestfiles/QT/printview.cpp contains license(s) Dual-license,GPL-3.0,LGPL-2.1,QT(Commercial)
