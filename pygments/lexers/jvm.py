@@ -936,7 +936,7 @@ class CeylonLexer(RegexLexer):
 
 class KotlinLexer(RegexLexer):
     """
-    For `Kotlin <http://confluence.jetbrains.net/display/Kotlin/>`_
+    For `Kotlin <http://kotlin.jetbrains.org/>`_
     source code.
 
     *New in Pygments 1.5.*
