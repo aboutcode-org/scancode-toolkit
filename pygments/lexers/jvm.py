@@ -949,59 +949,51 @@ class KotlinLexer(RegexLexer):
 
     flags = re.MULTILINE | re.DOTALL | re.UNICODE
 
-    kt_ident = ('@?[_' + uni.Lu + uni.Ll + uni.Lt + uni.Lm + uni.Nl + ']' +
-                '[' + uni.Lu + uni.Ll + uni.Lt + uni.Lm + uni.Nl + uni.Nd +
-                uni.Pc + uni.Cf + uni.Mn + uni.Mc + ']*')
+    kt_name = ('@?[_' + uni.Lu + uni.Ll + uni.Lt + uni.Lm + uni.Nl + ']' +
+               '[' + uni.Lu + uni.Ll + uni.Lt + uni.Lm + uni.Nl + uni.Nd +
+               uni.Pc + uni.Cf + uni.Mn + uni.Mc + ']*')
+    kt_id = '(' + kt_name + '|`' + kt_name + '`)'
 
     tokens = {
         'root': [
-            # method names
-            (r'^([ \t]*(?:' + kt_ident + r'(?:\[\])?\s+)+?)' # return type
-                r'(' + kt_ident + ')'                           # method name
-                r'(\s*)(\()',                               # signature start
-                bygroups(using(this), Name.Function, Text, Punctuation)),
             (r'^\s*\[.*?\]', Name.Attribute),
             (r'[^\S\n]+', Text),
             (r'\\\n', Text), # line continuation
             (r'//.*?\n', Comment.Single),
-            (r'/[*](.|\n)*?[*]/', Comment.Multiline),
+            (r'/[*].*?[*]/', Comment.Multiline),
             (r'\n', Text),
+            (r'::|!!|\?[:.]', Operator),
             (r'[~!%^&*()+=|\[\]:;,.<>/?-]', Punctuation),
             (r'[{}]', Punctuation),
             (r'@"(""|[^"])*"', String),
             (r'"(\\\\|\\"|[^"\n])*["\n]', String),
             (r"'\\.'|'[^\\]'", String.Char),
-            (r"[0-9](\.[0-9]*)?([eE][+-][0-9]+)?"
-                r"[flFLdD]?|0[xX][0-9a-fA-F]+[Ll]?", Number),
-            (r'#[ \t]*(if|endif|else|elif|define|undef|'
-                r'line|error|warning|region|endregion|pragma)\b.*?\n',
-                Comment.Preproc),
-            (r'\b(extern)(\s+)(alias)\b', bygroups(Keyword, Text,
-                Keyword)),
-            (r'(abstract|as|break|catch|'
-                r'fun|continue|default|delegate|'
-                r'do|else|enum|extern|false|finally|'
-                r'fixed|for|goto|if|implicit|in|interface|'
-                r'internal|is|lock|null|'
-                r'out|override|private|protected|public|readonly|'
-                r'ref|return|sealed|sizeof|'
-                r'when|this|throw|true|try|typeof|'
-                r'unchecked|unsafe|virtual|void|while|'
-                r'get|set|new|partial|yield|val|var)\b', Keyword),
-            (r'(global)(::)', bygroups(Keyword, Punctuation)),
-            (r'(bool|byte|char|decimal|double|dynamic|float|int|long|'
-                r'short)\b\??', Keyword.Type),
-            (r'(class|struct)(\s+)', bygroups(Keyword, Text), 'class'),
-            (r'(package|using)(\s+)', bygroups(Keyword, Text), 'package'),
-            (kt_ident, Name),
-        ],
-        'class': [
-            (kt_ident, Name.Class, '#pop')
+            (r"[0-9](\.[0-9]*)?([eE][+-][0-9]+)?[flFL]?|"
+             r"0[xX][0-9a-fA-F]+[Ll]?", Number),
+            (r'(class)(\s+)(object)', bygroups(Keyword, Text, Keyword)),
+            (r'(class|trait|object)(\s+)', bygroups(Keyword, Text), 'class'),
+            (r'(package|import)(\s+)', bygroups(Keyword, Text), 'package'),
+            (r'(val|var)(\s+)', bygroups(Keyword, Text), 'property'),
+            (r'(fun)(\s+)', bygroups(Keyword, Text), 'function'),
+            (r'(abstract|annotation|as|break|by|catch|class|continue|do|else|'
+             r'enum|false|final|finally|for|fun|get|if|import|in|inner|'
+             r'internal|is|null|object|open|out|override|package|private|'
+             r'protected|public|reified|return|set|super|this|throw|trait|'
+             r'true|try|type|val|var|vararg|when|where|while|This)\b', Keyword),
+            (kt_id, Name),
         ],
         'package': [
-            (r'(?=\()', Text, '#pop'), # using (resource)
-            ('(' + kt_ident + r'|\.)+', Name.Namespace, '#pop')
-        ]
+            (r'\S+', Name.Namespace, '#pop')
+        ],
+        'class': [
+            (kt_id, Name.Class, '#pop')
+        ],
+        'property': [
+            (kt_id, Name.Property, '#pop')
+        ],
+        'function': [
+            (kt_id, Name.Function, '#pop')
+        ],
     }
 
 
