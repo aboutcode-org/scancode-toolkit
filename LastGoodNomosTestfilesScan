@@ -111,6 +111,7 @@ File NomosTestfiles/LGPL/GPL_false-positive_x_bug2307 contains license(s) LGPL-2
 File NomosTestfiles/LGPL/LGPL-2.1b.txt contains license(s) LGPL-2.1
 File NomosTestfiles/LGPL/openjdk-7-jre-headless_license.txt contains license(s) W3C,AGPL-3.0+,ATT,Apache-2.0,BSD-3-Clause,GPL-2.0+-with-classpath-exception,IJG,JPEG/netpbm,LGPL-2.0,NPL-1.1,NotreDame-style,OpenGroup,SAX-PD,Sun(tm),SunPro,XFree86
 File NomosTestfiles/LGPL/defconfig contains license(s) BSD,LGPL
+File NomosTestfiles/LGPL/main.cpp contains license(s) LGPL-2.1+-KDE-exception
 File NomosTestfiles/Artistic/Artistic-1.0.txt contains license(s) Artistic-1.0
 File NomosTestfiles/Artistic/macos_main.cpp contains license(s) Artistic-1.0
 File NomosTestfiles/Artistic/Hero.java contains license(s) Artistic-1.0
@@ -526,6 +527,8 @@ File NomosTestfiles/GPL/InvalidHeaderException.cs contains license(s) GPL-2.0+-w
 File NomosTestfiles/GPL/Adler32.cs contains license(s) GPL-2.0+-with-classpath-exception
 File NomosTestfiles/GPL/outcommentedMODULE_LICENSE.txt contains license(s) GPL-possibility
 File NomosTestfiles/GPL/gpl-3.0.xml contains license(s) GPL-3.0
+File NomosTestfiles/GPL/ext4_jbd2.h contains license(s) GPL-2.0+
+File NomosTestfiles/GPL/dialogboundvalues.h contains license(s) GPL-2.0+
 File NomosTestfiles/eCos/eCos-2.0.txt contains license(s) GPL-2.0+,eCos-2.0
 File NomosTestfiles/Trademark-ref/53c7xx.c contains license(s) Trademark-ref
 File NomosTestfiles/OCLC/OCLC-2.0.txt contains license(s) OCLC-2.0
@@ -552,6 +555,19 @@ File NomosTestfiles/See-file/jcparam.c contains license(s) IJG
 File NomosTestfiles/See-file/XmlPullParser.java contains license(s) See-file(LICENSE)
 File NomosTestfiles/See-file/qlcnic_ctx.c contains license(s) See-file(LICENSE)
 File NomosTestfiles/See-file/qlge.h contains license(s) See-file(LICENSE)
+File NomosTestfiles/See-file/gdcmServiceClassUser.cxx contains license(s) See-file(copyright|license)
+File NomosTestfiles/See-file/ad_testfs_close.c contains license(s) See-file(copyright|license)
+File NomosTestfiles/See-file/itkAffineTransform.h contains license(s) See-file(copyright|license)
+File NomosTestfiles/See-file/PhotoQuery.cs contains license(s) See-file(copyright|license)
+File NomosTestfiles/See-file/FlGui.cpp contains license(s) See-file(copyright|license)
+File NomosTestfiles/See-file/fetmainform.cpp contains license(s) See-file(copyright|license)
+File NomosTestfiles/See-file/mhstatus.c contains license(s) See-file(copyright|license)
+File NomosTestfiles/See-file/json.c contains license(s) See-file(copyright|license)
+File NomosTestfiles/See-file/MPIController.cxx contains license(s) See-file(copyright|license)
+File NomosTestfiles/See-file/sel_util.c contains license(s) See-file(copyright|license)
+File NomosTestfiles/See-file/main.c contains license(s) See-file(copyright|license)
+File NomosTestfiles/See-file/pngget.c contains license(s) See-file(copyright|license)
+File NomosTestfiles/See-file/prng4.js contains license(s) See-file(copyright|license)
 File NomosTestfiles/ISC/ISC.txt contains license(s) ISC
 File NomosTestfiles/UnclassifiedLicense/ACE-copying.html contains license(s) UnclassifiedLicense
 File NomosTestfiles/UnclassifiedLicense/isc.h contains license(s) UnclassifiedLicense
