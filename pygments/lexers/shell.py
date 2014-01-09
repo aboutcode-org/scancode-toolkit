@@ -47,8 +47,8 @@ class BashLexer(RegexLexer):
         ],
         'basic': [
             (r'\b(if|fi|else|while|do|done|for|then|return|function|case|'
-             r'select|continue|until|esac|elif)\s*\b',
-             Keyword),
+             r'select|continue|until|esac|elif)(\s*)\b',
+             bygroups(Keyword, Text)),
             (r'\b(alias|bg|bind|break|builtin|caller|cd|command|compgen|'
              r'complete|declare|dirs|disown|echo|enable|eval|exec|exit|'
              r'export|false|fc|fg|getopts|hash|help|history|jobs|kill|let|'
@@ -228,9 +228,9 @@ class BatchLexer(RegexLexer):
             # like %~$VAR:zlt
             (r'%%?[~$:\w]+%?', Name.Variable),
             (r'::.*', Comment), # Technically :: only works at BOL
-            (r'(set)(\s+)(\w+)', bygroups(Keyword, Text, Name.Variable)),
-            (r'(call)(\s+)(:\w+)', bygroups(Keyword, Text, Name.Label)),
-            (r'(goto)(\s+)(\w+)', bygroups(Keyword, Text, Name.Label)),
+            (r'\b(set)(\s+)(\w+)', bygroups(Keyword, Text, Name.Variable)),
+            (r'\b(call)(\s+)(:\w+)', bygroups(Keyword, Text, Name.Label)),
+            (r'\b(goto)(\s+)(\w+)', bygroups(Keyword, Text, Name.Label)),
             (r'\b(set|call|echo|on|off|endlocal|for|do|goto|if|pause|'
              r'setlocal|shift|errorlevel|exist|defined|cmdextversion|'
              r'errorlevel|else|cd|md|del|deltree|cls|choice)\b', Keyword),
