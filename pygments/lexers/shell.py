@@ -211,7 +211,7 @@ class BatchLexer(RegexLexer):
     *New in Pygments 0.7.*
     """
     name = 'Batchfile'
-    aliases = ['bat', 'dosbatch', 'winbatch']
+    aliases = ['bat', 'batch', 'dosbatch', 'winbatch']
     filenames = ['*.bat', '*.cmd']
     mimetypes = ['application/x-dos-batch']
 
