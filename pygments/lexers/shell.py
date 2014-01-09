@@ -179,7 +179,7 @@ class ShellSessionLexer(Lexer):
 
         for match in line_re.finditer(text):
             line = match.group()
-            m = re.match(r'^((?:\[?\S+@[^$#%]+)[$#%])(.*\n?)', line)
+            m = re.match(r'^((?:\[?\S+@[^$#%]+\]?\s*)[$#%])(.*\n?)', line)
             if m:
                 # To support output lexers (say diff output), the output
                 # needs to be broken by prompts whenever the output lexer
