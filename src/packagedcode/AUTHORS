@@ -28,8 +28,8 @@ Other contributors, listed alphabetically, are:
 * Hiram Chirino -- Scaml and Jade lexers
 * Ian Cooper -- VGL lexer
 * Leaf Corcoran -- MoonScript lexer
-* Christian Jann -- ShellSession lexer
 * Christopher Creutzig -- MuPAD lexer
+* Daniël W. Crompton - Pike lexer
 * Pete Curry -- bugfixes
 * Bryan Davis -- EBNF lexer
 * Owen Durni -- Haxe lexer
@@ -68,6 +68,7 @@ Other contributors, listed alphabetically, are:
 * Tim Howard -- BlitzMax lexer
 * Ivan Inozemtsev -- Fantom lexer
 * Brian R. Jackson -- Tea lexer
+* Christian Jann -- ShellSession lexer
 * Dennis Kaarsemaker -- sources.list lexer
 * Igor Kalnitsky -- vhdl lexer
 * Pekka Klärck -- Robot Framework lexer
@@ -151,6 +152,5 @@ Other contributors, listed alphabetically, are:
 * Diego Zamboni -- CFengine3 lexer
 * Enrique Zamudio -- Ceylon lexer
 * Alex Zimin -- Nemerle lexer
-* Daniël W. Crompton - Pike lexer
 
 Many thanks for all contributions!
