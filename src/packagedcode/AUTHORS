@@ -28,8 +28,8 @@ Other contributors, listed alphabetically, are:
 * Hiram Chirino -- Scaml and Jade lexers
 * Ian Cooper -- VGL lexer
 * Leaf Corcoran -- MoonScript lexer
-* Christian Jann -- ShellSession lexer
 * Christopher Creutzig -- MuPAD lexer
+* Daniël W. Crompton - Pike lexer
 * Pete Curry -- bugfixes
 * Bryan Davis -- EBNF lexer
 * Owen Durni -- Haxe lexer
@@ -68,6 +68,7 @@ Other contributors, listed alphabetically, are:
 * Tim Howard -- BlitzMax lexer
 * Ivan Inozemtsev -- Fantom lexer
 * Brian R. Jackson -- Tea lexer
+* Christian Jann -- ShellSession lexer
 * Dennis Kaarsemaker -- sources.list lexer
 * Igor Kalnitsky -- vhdl lexer
 * Pekka Klärck -- Robot Framework lexer
@@ -75,6 +76,7 @@ Other contributors, listed alphabetically, are:
 * Stepan Koltsov -- Clay lexer
 * Adam Koprowski -- Opa lexer
 * Benjamin Kowarsch -- Modula-2 lexer
+* Domen Kožar -- Nix lexer
 * Alexander Kriegisch -- Kconfig and AspectJ lexers
 * Marek Kubica -- Scheme lexer
 * Jochen Kupperschmidt -- Markdown processor
@@ -138,6 +140,7 @@ Other contributors, listed alphabetically, are:
 * Brian Tiffin -- OpenCOBOL lexer
 # Bob Tolbert -- Hy lexer
 * Erick Tryzelaar -- Felix lexer
+* Alexander Udalov -- Kotlin lexer improvements
 * Daniele Varrazzo -- PostgreSQL lexers
 * Abe Voelker -- OpenEdge ABL lexer
 * Pepijn de Vos -- HTML formatter CTags support
