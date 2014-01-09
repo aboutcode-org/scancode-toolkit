@@ -138,7 +138,7 @@ Other contributors, listed alphabetically, are:
 * Tiberius Teng -- default style overhaul
 * Jeremy Thurgood -- Erlang, Squid config lexers
 * Brian Tiffin -- OpenCOBOL lexer
-# Bob Tolbert -- Hy lexer
+* Bob Tolbert -- Hy lexer
 * Erick Tryzelaar -- Felix lexer
 * Alexander Udalov -- Kotlin lexer improvements
 * Daniele Varrazzo -- PostgreSQL lexers
