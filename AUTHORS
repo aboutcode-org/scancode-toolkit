@@ -75,6 +75,7 @@ Other contributors, listed alphabetically, are:
 * Stepan Koltsov -- Clay lexer
 * Adam Koprowski -- Opa lexer
 * Benjamin Kowarsch -- Modula-2 lexer
+* Domen Kožar -- Nix lexer
 * Alexander Kriegisch -- Kconfig and AspectJ lexers
 * Marek Kubica -- Scheme lexer
 * Jochen Kupperschmidt -- Markdown processor
