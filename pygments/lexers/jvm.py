@@ -886,7 +886,7 @@ class CeylonLexer(RegexLexer):
              bygroups(using(this), Name.Function, Text, Operator)),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
-            (r'/\*.*?\*/', Comment.Multiline),
+            (r'/\*', Comment.Multiline, 'comment'),
             (r'(variable|shared|abstract|doc|by|formal|actual|late|native)',
              Name.Decorator),
             (r'(break|case|catch|continue|default|else|finally|for|in|'
@@ -930,6 +930,12 @@ class CeylonLexer(RegexLexer):
         'import': [
             (r'[a-z][a-zA-Z0-9_.]*',
              Name.Namespace, '#pop')
+        ],
+        'comment': [
+            (r'[^*/]', Comment.Multiline),
+            (r'/\*', Comment.Multiline, '#push'),
+            (r'\*/', Comment.Multiline, '#pop'),
+            (r'[*/]', Comment.Multiline)
         ],
     }
 
