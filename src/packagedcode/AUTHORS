@@ -87,6 +87,7 @@ Other contributors, listed alphabetically, are:
 * Mark Lee -- Vala lexer
 * Ben Mabey -- Gherkin lexer
 * Angus MacArthur -- QML lexer
+* Louis Marchand -- Eiffel lexer
 * Simone Margaritelli -- Hybris lexer
 * Kirk McDonald -- D lexer
 * Gordon McGregor -- SystemVerilog lexer
@@ -155,6 +156,5 @@ Other contributors, listed alphabetically, are:
 * Enrique Zamudio -- Ceylon lexer
 * Alex Zimin -- Nemerle lexer
 * Rob Zimmerman -- Kal lexer
-* Louis Marchand -- Eiffel lexer
 
 Many thanks for all contributions!
