@@ -78,6 +78,7 @@ File NomosTestfiles/Apache/Apache-2.0.txt contains license(s) Apache-2.0
 File NomosTestfiles/Apache/Subject.java contains license(s) Apache-2.0
 File NomosTestfiles/Apache/Apache-v1.1 contains license(s) Apache-1.1
 File NomosTestfiles/Apache/DomainList.java contains license(s) Apache-2.0
+File NomosTestfiles/Apache/x.txt contains license(s) Apache-2.0
 File NomosTestfiles/Oracle-Berkeley-DB/Oracle-Berkeley-DB.java contains license(s) Oracle-Berkeley-DB
 File NomosTestfiles/Naumen/Naumen.txt contains license(s) Naumen
 File NomosTestfiles/HPND/HPND.txt contains license(s) HPND
@@ -497,7 +498,7 @@ File NomosTestfiles/GPL/ttl.h contains license(s) AGPL-3.0
 File NomosTestfiles/GPL/GPL-2.0-with-bison-exception.txt contains license(s) GPL-2.0-with-bison-exception
 File NomosTestfiles/GPL/FSF-and-GPL.txt contains license(s) FSF,GPL-2.0+
 File NomosTestfiles/GPL/frogr-util.c contains license(s) GPL-2.0+:3.0
-File NomosTestfiles/GPL/cpio.spec contains license(s) GPL-3.0,GPL-3.0+
+File NomosTestfiles/GPL/cpio.spec contains license(s) GPL-3.0+
 File NomosTestfiles/GPL/radrealms.c contains license(s) GPL-2.0+
 File NomosTestfiles/GPL/GPL-3.0-with-GCC-exception.txt contains license(s) GPL-3.0-with-GCC-exception
 File NomosTestfiles/GPL/GPL-2.0+_abi-compliance-checker.pl contains license(s) GPL-2.0+
