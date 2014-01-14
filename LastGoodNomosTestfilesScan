@@ -11,6 +11,7 @@ File NomosTestfiles/Bittorrent/bittorrent.py contains license(s) BitTorrent-1.1
 File NomosTestfiles/EPL/EPL-1.0.txt contains license(s) EPL-1.0
 File NomosTestfiles/EPL/filterscallbacks.h contains license(s) EPL-1.0
 File NomosTestfiles/EPL/egPrerequisites.h contains license(s) EPL-1.0
+File NomosTestfiles/EPL/SampleGatherer.java contains license(s) EPL-1.0
 File NomosTestfiles/DPTC/dpt_osdutil.h contains license(s) DPTC
 File NomosTestfiles/OPL/OPL.tex contains license(s) GPL,OPL-style,Open-PL-0.4
 File NomosTestfiles/OPL/opl-1.0 contains license(s) OPL-1.0
@@ -587,3 +588,4 @@ File NomosTestfiles/D-FSL/D-FSL-1.0.txt contains license(s) D-FSL-1.0
 File NomosTestfiles/SISSL/SISSL.txt contains license(s) SISSL-1.1
 File NomosTestfiles/SISSL/SISSL-1.2.txt contains license(s) SISSL-1.2
 File NomosTestfiles/QT/printview.cpp contains license(s) Dual-license,GPL-3.0,LGPL-2.1,QT(Commercial)
+File NomosTestfiles/LIBGCJ/natStringBuilder.cc contains license(s) LIBGCJ
