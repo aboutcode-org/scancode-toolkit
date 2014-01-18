@@ -242,25 +242,25 @@ class ScalaLexer(RegexLexer):
              u'\ua760\ua762\ua764\ua766\ua768\ua76a\ua76c\ua76e\ua779\ua77b'
              u'\ua77d-\ua77e\ua780\ua782\ua784\ua786\ua78b\uff21-\uff3a]')
 
-    idrest = ur'%s(?:%s|[0-9])*(?:(?<=_)%s)?' % (letter, letter, op)
+    idrest = u'%s(?:%s|[0-9])*(?:(?<=_)%s)?' % (letter, letter, op)
 
     tokens = {
         'root': [
             # method names
             (r'(class|trait|object)(\s+)', bygroups(Keyword, Text), 'class'),
-            (ur"'%s" % idrest, Text.Symbol),
+            (u"'%s" % idrest, Text.Symbol),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
             (r'/\*', Comment.Multiline, 'comment'),
-            (ur'@%s' % idrest, Name.Decorator),
-            (ur'(abstract|ca(?:se|tch)|d(?:ef|o)|e(?:lse|xtends)|'
-             ur'f(?:inal(?:ly)?|or(?:Some)?)|i(?:f|mplicit)|'
-             ur'lazy|match|new|override|pr(?:ivate|otected)'
-             ur'|re(?:quires|turn)|s(?:ealed|uper)|'
-             ur't(?:h(?:is|row)|ry)|va[lr]|w(?:hile|ith)|yield)\b|'
+            (u'@%s' % idrest, Name.Decorator),
+            (u'(abstract|ca(?:se|tch)|d(?:ef|o)|e(?:lse|xtends)|'
+             u'f(?:inal(?:ly)?|or(?:Some)?)|i(?:f|mplicit)|'
+             u'lazy|match|new|override|pr(?:ivate|otected)'
+             u'|re(?:quires|turn)|s(?:ealed|uper)|'
+             u't(?:h(?:is|row)|ry)|va[lr]|w(?:hile|ith)|yield)\\b|'
              u'(<[%:-]|=>|>:|[#=@_\u21D2\u2190])(\\b|(?=\\s)|$)', Keyword),
-            (ur':(?!%s)' % op, Keyword, 'type'),
-            (ur'%s%s\b' % (upper, idrest), Name.Class),
+            (u':(?!%s)' % op, Keyword, 'type'),
+            (u'%s%s\\b' % (upper, idrest), Name.Class),
             (r'(true|false|null)\b', Keyword.Constant),
             (r'(import|package)(\s+)', bygroups(Keyword, Text), 'import'),
             (r'(type)(\s+)', bygroups(Keyword, Text), 'type'),
@@ -281,34 +281,34 @@ class ScalaLexer(RegexLexer):
             (r'\n', Text)
         ],
         'class': [
-            (ur'(%s|%s|`[^`]+`)(\s*)(\[)' % (idrest, op),
+            (u'(%s|%s|`[^`]+`)(\\s*)(\\[)' % (idrest, op),
              bygroups(Name.Class, Text, Operator), 'typeparam'),
             (r'\s+', Text),
             (r'{', Operator, '#pop'),
             (r'\(', Operator, '#pop'),
             (r'//.*?\n', Comment.Single, '#pop'),
-            (ur'%s|%s|`[^`]+`' % (idrest, op), Name.Class, '#pop'),
+            (u'%s|%s|`[^`]+`' % (idrest, op), Name.Class, '#pop'),
         ],
         'type': [
             (r'\s+', Text),
             (u'<[%:]|>:|[#_\u21D2]|forSome|type', Keyword),
             (r'([,\);}]|=>|=)(\s*)', bygroups(Operator, Text), '#pop'),
             (r'[\(\{]', Operator, '#push'),
-            (ur'((?:%s|%s|`[^`]+`)(?:\.(?:%s|%s|`[^`]+`))*)(\s*)(\[)' %
+            (u'((?:%s|%s|`[^`]+`)(?:\\.(?:%s|%s|`[^`]+`))*)(\\s*)(\\[)' %
              (idrest, op, idrest, op),
              bygroups(Keyword.Type, Text, Operator), ('#pop', 'typeparam')),
-            (ur'((?:%s|%s|`[^`]+`)(?:\.(?:%s|%s|`[^`]+`))*)(\s*)$' %
+            (u'((?:%s|%s|`[^`]+`)(?:\\.(?:%s|%s|`[^`]+`))*)(\\s*)$' %
              (idrest, op, idrest, op),
              bygroups(Keyword.Type, Text), '#pop'),
             (r'//.*?\n', Comment.Single, '#pop'),
-            (ur'\.|%s|%s|`[^`]+`' % (idrest, op), Keyword.Type)
+            (u'\\.|%s|%s|`[^`]+`' % (idrest, op), Keyword.Type)
         ],
         'typeparam': [
             (r'[\s,]+', Text),
             (u'<[%:]|=>|>:|[#_\u21D2]|forSome|type', Keyword),
             (r'([\]\)\}])', Operator, '#pop'),
             (r'[\(\[\{]', Operator, '#push'),
-            (ur'\.|%s|%s|`[^`]+`' % (idrest, op), Keyword.Type)
+            (u'\\.|%s|%s|`[^`]+`' % (idrest, op), Keyword.Type)
         ],
         'comment': [
             (r'[^/\*]+', Comment.Multiline),
@@ -317,7 +317,7 @@ class ScalaLexer(RegexLexer):
             (r'[*/]', Comment.Multiline)
         ],
         'import': [
-            (ur'(%s|\.)+' % idrest, Name.Namespace, '#pop')
+            (u'(%s|\\.)+' % idrest, Name.Namespace, '#pop')
         ],
     }
 
@@ -638,9 +638,9 @@ class IokeLexer(RegexLexer):
              r'System|Text|Tuple)(?![a-zA-Z0-9!:_?])', Name.Builtin),
 
             # functions
-            (ur'(generateMatchMethod|aliasMethod|\u03bb|\u028E|fnx|fn|method|'
-             ur'dmacro|dlecro|syntax|macro|dlecrox|lecrox|lecro|syntax)'
-             ur'(?![a-zA-Z0-9!:_?])', Name.Function),
+            (u'(generateMatchMethod|aliasMethod|\u03bb|\u028E|fnx|fn|method|'
+             u'dmacro|dlecro|syntax|macro|dlecrox|lecrox|lecro|syntax)'
+             u'(?![a-zA-Z0-9!:_?])', Name.Function),
 
             # Numbers
             (r'-?0[xX][0-9a-fA-F]+', Number.Hex),
@@ -650,13 +650,13 @@ class IokeLexer(RegexLexer):
             (r'#\(', Punctuation),
 
              # Operators
-            (ur'(&&>>|\|\|>>|\*\*>>|:::|::|\.\.\.|===|\*\*>|\*\*=|&&>|&&=|'
-             ur'\|\|>|\|\|=|\->>|\+>>|!>>|<>>>|<>>|&>>|%>>|#>>|@>>|/>>|\*>>|'
-             ur'\?>>|\|>>|\^>>|~>>|\$>>|=>>|<<=|>>=|<=>|<\->|=~|!~|=>|\+\+|'
-             ur'\-\-|<=|>=|==|!=|&&|\.\.|\+=|\-=|\*=|\/=|%=|&=|\^=|\|=|<\-|'
-             ur'\+>|!>|<>|&>|%>|#>|\@>|\/>|\*>|\?>|\|>|\^>|~>|\$>|<\->|\->|'
-             ur'<<|>>|\*\*|\?\||\?&|\|\||>|<|\*|\/|%|\+|\-|&|\^|\||=|\$|!|~|'
-             ur'\?|#|\u2260|\u2218|\u2208|\u2209)', Operator),
+            (r'(&&>>|\|\|>>|\*\*>>|:::|::|\.\.\.|===|\*\*>|\*\*=|&&>|&&=|'
+             r'\|\|>|\|\|=|\->>|\+>>|!>>|<>>>|<>>|&>>|%>>|#>>|@>>|/>>|\*>>|'
+             r'\?>>|\|>>|\^>>|~>>|\$>>|=>>|<<=|>>=|<=>|<\->|=~|!~|=>|\+\+|'
+             r'\-\-|<=|>=|==|!=|&&|\.\.|\+=|\-=|\*=|\/=|%=|&=|\^=|\|=|<\-|'
+             r'\+>|!>|<>|&>|%>|#>|\@>|\/>|\*>|\?>|\|>|\^>|~>|\$>|<\->|\->|'
+             r'<<|>>|\*\*|\?\||\?&|\|\||>|<|\*|\/|%|\+|\-|&|\^|\||=|\$|!|~|'
+             u'\\?|#|\u2260|\u2218|\u2208|\u2209)', Operator),
             (r'(and|nand|or|xor|nor|return|import)(?![a-zA-Z0-9_!?])',
              Operator),
 
@@ -1043,7 +1043,7 @@ class XtendLexer(RegexLexer):
              'class'),
             (r'(import)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
             (r"(''')", String, 'template'),
-            (ur"(\u00BB)", String, 'template'),
+            (u'(\u00BB)', String, 'template'),
             (r'"(\\\\|\\"|[^"])*"', String),
             (r"'(\\\\|\\'|[^'])*'", String),
             (r'[a-zA-Z_][a-zA-Z0-9_]*:', Name.Label),
@@ -1062,7 +1062,7 @@ class XtendLexer(RegexLexer):
         ],
         'template': [
             (r"'''", String, '#pop'),
-            (ur"\u00AB", String, '#pop'),
+            (u'\u00AB', String, '#pop'),
             (r'.', String)
         ],
     }
