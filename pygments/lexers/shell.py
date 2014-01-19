@@ -27,7 +27,7 @@ class BashLexer(RegexLexer):
     """
     Lexer for (ba|k|)sh shell scripts.
 
-    *New in Pygments 0.6.*
+    .. versionadded:: 0.6
     """
 
     name = 'Bash'
@@ -111,7 +111,7 @@ class BashSessionLexer(Lexer):
     """
     Lexer for simplistic shell sessions.
 
-    *New in Pygments 1.1.*
+    .. versionadded:: 1.1
     """
 
     name = 'Bash Session'
@@ -162,7 +162,7 @@ class ShellSessionLexer(Lexer):
     """
     Lexer for shell sessions that works with different command prompts
 
-    *New in Pygments 1.6.*
+    .. versionadded:: 1.6
     """
 
     name = 'Shell Session'
@@ -208,7 +208,7 @@ class BatchLexer(RegexLexer):
     """
     Lexer for the DOS/Windows Batch file format.
 
-    *New in Pygments 0.7.*
+    .. versionadded:: 0.7
     """
     name = 'Batchfile'
     aliases = ['bat', 'batch', 'dosbatch', 'winbatch']
@@ -264,7 +264,7 @@ class TcshLexer(RegexLexer):
     """
     Lexer for tcsh scripts.
 
-    *New in Pygments 0.10.*
+    .. versionadded:: 0.10
     """
 
     name = 'Tcsh'
@@ -331,7 +331,7 @@ class PowerShellLexer(RegexLexer):
     """
     For Windows PowerShell code.
 
-    *New in Pygments 1.5.*
+    .. versionadded:: 1.5
     """
     name = 'PowerShell'
     aliases = ['powershell', 'posh', 'ps1', 'psm1']
