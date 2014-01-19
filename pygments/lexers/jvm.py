@@ -82,7 +82,7 @@ class AspectJLexer(JavaLexer):
     """
     For `AspectJ <http://www.eclipse.org/aspectj/>`_ source code.
 
-    *New in Pygments 1.6.*
+    .. versionadded:: 1.6
     """
 
     name = 'AspectJ'
@@ -326,7 +326,7 @@ class GosuLexer(RegexLexer):
     """
     For Gosu source code.
 
-    *New in Pygments 1.5.*
+    .. versionadded:: 1.5
     """
 
     name = 'Gosu'
@@ -405,7 +405,7 @@ class GosuTemplateLexer(Lexer):
     """
     For Gosu templates.
 
-    *New in Pygments 1.5.*
+    .. versionadded:: 1.5
     """
 
     name = 'Gosu Template'
@@ -424,7 +424,7 @@ class GroovyLexer(RegexLexer):
     """
     For `Groovy <http://groovy.codehaus.org/>`_ source code.
 
-    *New in Pygments 1.5.*
+    .. versionadded:: 1.5
     """
 
     name = 'Groovy'
@@ -486,7 +486,7 @@ class IokeLexer(RegexLexer):
     For `Ioke <http://ioke.org/>`_ (a strongly typed, dynamic,
     prototype based programming language) source.
 
-    *New in Pygments 1.4.*
+    .. versionadded:: 1.4
     """
     name = 'Ioke'
     filenames = ['*.ik']
@@ -676,7 +676,7 @@ class ClojureLexer(RegexLexer):
     """
     Lexer for `Clojure <http://clojure.org/>`_ source code.
 
-    *New in Pygments 0.11.*
+    .. versionadded:: 0.11
     """
     name = 'Clojure'
     aliases = ['clojure', 'clj']
@@ -818,7 +818,7 @@ class TeaLangLexer(RegexLexer):
     For `Tea <http://teatrove.org/>`_ source code. Only used within a
     TeaTemplateLexer.
 
-    *New in Pygments 1.5.*
+    .. versionadded:: 1.5
     """
 
     flags = re.MULTILINE | re.DOTALL
@@ -864,7 +864,7 @@ class CeylonLexer(RegexLexer):
     """
     For `Ceylon <http://ceylon-lang.org/>`_ source code.
 
-    *New in Pygments 1.6.*
+    .. versionadded:: 1.6
     """
 
     name = 'Ceylon'
@@ -945,7 +945,7 @@ class KotlinLexer(RegexLexer):
     For `Kotlin <http://kotlin.jetbrains.org/>`_
     source code.
 
-    *New in Pygments 1.5.*
+    .. versionadded:: 1.5
     """
 
     name = 'Kotlin'
@@ -1007,7 +1007,7 @@ class XtendLexer(RegexLexer):
     """
     For `Xtend <http://xtend-lang.org/>`_ source code.
 
-    *New in Pygments 1.6.*
+    .. versionadded:: 1.6
     """
 
     name = 'Xtend'
