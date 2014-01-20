@@ -118,6 +118,7 @@ Other contributors, listed alphabetically, are:
 * Kashif Rasul -- CUDA lexer
 * Justin Reidy -- MXML lexer
 * Norman Richards -- JSON lexer
+* Corey Richardson -- Rust lexer updates
 * Lubomir Rintel -- GoodData MAQL and CL lexers
 * Andre Roberge -- Tango style
 * Konrad Rudolph -- LaTeX formatter enhancements
