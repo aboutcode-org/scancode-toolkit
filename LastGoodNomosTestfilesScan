@@ -140,6 +140,7 @@ File NomosTestfiles/CPAL/CPAL-1.0.txt contains license(s) CPAL-1.0
 File NomosTestfiles/BSL/BSL-1.0.txt contains license(s) BSL-1.0
 File NomosTestfiles/BSL/intel.hpp contains license(s) BSL-1.0
 File NomosTestfiles/BSL/boost.css contains license(s) BSL-1.0
+File NomosTestfiles/BSL/graphviz_digraph_lex.cpp contains license(s) BSL-1.0,NotreDame
 File NomosTestfiles/See-doc/lualib.h contains license(s) See-doc(OTHER)
 File NomosTestfiles/See-doc/catalog.h contains license(s) See-doc(OTHER)
 File NomosTestfiles/See-doc/http.h contains license(s) See-doc(OTHER)
@@ -531,6 +532,7 @@ File NomosTestfiles/GPL/outcommentedMODULE_LICENSE.txt contains license(s) GPL-p
 File NomosTestfiles/GPL/gpl-3.0.xml contains license(s) GPL-3.0
 File NomosTestfiles/GPL/ext4_jbd2.h contains license(s) GPL-2.0+
 File NomosTestfiles/GPL/dialogboundvalues.h contains license(s) GPL-2.0+
+File NomosTestfiles/GPL/passdb.c contains license(s) GPL-3.0+
 File NomosTestfiles/eCos/eCos-2.0.txt contains license(s) GPL-2.0+,eCos-2.0
 File NomosTestfiles/Trademark-ref/53c7xx.c contains license(s) Trademark-ref
 File NomosTestfiles/OCLC/OCLC-2.0.txt contains license(s) OCLC-2.0
@@ -572,15 +574,15 @@ File NomosTestfiles/See-file/pngget.c contains license(s) See-file(copyright|lic
 File NomosTestfiles/See-file/prng4.js contains license(s) See-file(copyright|license)
 File NomosTestfiles/ISC/ISC.txt contains license(s) ISC
 File NomosTestfiles/UnclassifiedLicense/ACE-copying.html contains license(s) UnclassifiedLicense
-File NomosTestfiles/UnclassifiedLicense/isc.h contains license(s) UnclassifiedLicense
-File NomosTestfiles/UnclassifiedLicense/ldapbaseauthenticationprovider.inc.php contains license(s) UnclassifiedLicense
+File NomosTestfiles/UnclassifiedLicense/isc.h contains license(s) Interbase-1.0
+File NomosTestfiles/UnclassifiedLicense/ldapbaseauthenticationprovider.inc.php contains license(s) KnowledgeTree-1.1
 File NomosTestfiles/UnclassifiedLicense/IPA.cpp contains license(s) See-file(LICENSE)
 File NomosTestfiles/UnclassifiedLicense/config.isc contains license(s) Wash-U-StLouis
 File NomosTestfiles/UnclassifiedLicense/license.all.html.in contains license(s) UnclassifiedLicense
 File NomosTestfiles/UnclassifiedLicense/LICENSE.fatfs contains license(s) Non-profit!,UnclassifiedLicense
 File NomosTestfiles/UnclassifiedLicense/eula.txt contains license(s) Citrix
 File NomosTestfiles/UnclassifiedLicense/net_phy_def.h contains license(s) UnclassifiedLicense
-File NomosTestfiles/UnclassifiedLicense/Open-CASCADE-Technology-Public-License-6.3 contains license(s) UnclassifiedLicense
+File NomosTestfiles/UnclassifiedLicense/Open-CASCADE-Technology-Public-License-6.3 contains license(s) OCCT
 File NomosTestfiles/MX4J/MX4J-1.0 contains license(s) MX4J-1.0
 File NomosTestfiles/Postfix/master_spawn.c contains license(s) Postfix
 File NomosTestfiles/Princeton/adj.dat contains license(s) Princeton
@@ -589,3 +591,4 @@ File NomosTestfiles/SISSL/SISSL.txt contains license(s) SISSL-1.1
 File NomosTestfiles/SISSL/SISSL-1.2.txt contains license(s) SISSL-1.2
 File NomosTestfiles/QT/printview.cpp contains license(s) Dual-license,GPL-3.0,LGPL-2.1,QT(Commercial)
 File NomosTestfiles/LIBGCJ/natStringBuilder.cc contains license(s) LIBGCJ
+File NomosTestfiles/WordNet/WordNet.txt contains license(s) WordNet
