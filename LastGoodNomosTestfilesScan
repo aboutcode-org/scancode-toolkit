@@ -6,6 +6,8 @@ File NomosTestfiles/MIT/perl-Mozilla-LDAP.spec contains license(s) GPL,LGPL,MPL-
 File NomosTestfiles/MIT/edit.c contains license(s) MIT-style
 File NomosTestfiles/MIT/Netizen.cc contains license(s) MIT-style
 File NomosTestfiles/MIT/KhronosMIT contains license(s) MIT-style
+File NomosTestfiles/MIT/net.c contains license(s) MIT
+File NomosTestfiles/MIT/privates.h contains license(s) MIT
 File NomosTestfiles/Bittorrent/bittorrent.nsi contains license(s) BitTorrent-1.0
 File NomosTestfiles/Bittorrent/bittorrent.py contains license(s) BitTorrent-1.1
 File NomosTestfiles/EPL/EPL-1.0.txt contains license(s) EPL-1.0
@@ -114,6 +116,7 @@ File NomosTestfiles/LGPL/LGPL-2.1b.txt contains license(s) LGPL-2.1
 File NomosTestfiles/LGPL/openjdk-7-jre-headless_license.txt contains license(s) W3C,AGPL-3.0+,ATT,Apache-2.0,BSD-3-Clause,GPL-2.0+-with-classpath-exception,IJG,JPEG/netpbm,LGPL-2.0,NPL-1.1,NotreDame-style,OpenGroup,SAX-PD,Sun(tm),SunPro,XFree86
 File NomosTestfiles/LGPL/defconfig contains license(s) BSD,LGPL
 File NomosTestfiles/LGPL/main.cpp contains license(s) LGPL-2.1+-KDE-exception
+File NomosTestfiles/LGPL/tracker-class.c contains license(s) LGPL-2.1+
 File NomosTestfiles/Artistic/Artistic-1.0.txt contains license(s) Artistic-1.0
 File NomosTestfiles/Artistic/macos_main.cpp contains license(s) Artistic-1.0
 File NomosTestfiles/Artistic/Hero.java contains license(s) Artistic-1.0
@@ -358,6 +361,7 @@ File NomosTestfiles/XMLDB/SimpleBinaryResource.java contains license(s) XMLDB-1.
 File NomosTestfiles/NBPL/NBPL-1.0 contains license(s) NBPL-1.0
 File NomosTestfiles/FTL/freetype.h contains license(s) FTL
 File NomosTestfiles/FTL/watcom.mk contains license(s) FTL
+File NomosTestfiles/FTL/gxvfgen.c contains license(s) FTL
 File NomosTestfiles/Unicode/Scripts.txt contains license(s) Unicode
 File NomosTestfiles/SAX-PD/SAX-PD.txt contains license(s) SAX-PD
 File NomosTestfiles/SimPL/SimPL-2.0.txt contains license(s) SimPL-2.0
@@ -436,6 +440,7 @@ File NomosTestfiles/CPL/CPL-1.0.txt contains license(s) CPL-1.0
 File NomosTestfiles/CPL/CPL-0.5 contains license(s) CPL-0.5
 File NomosTestfiles/CPL/CPL_license_test.txt contains license(s) CPL-1.0,GPL-2.0+
 File NomosTestfiles/CPL/Not_Eclipse_license.txt contains license(s) CPL-1.0
+File NomosTestfiles/CPL/Serializer.cs contains license(s) CPL-1.0
 File NomosTestfiles/RPSL/RPSL_v1.0_a.txt contains license(s) RPSL-1.0
 File NomosTestfiles/RPSL/RPSL-1.0.txt contains license(s) RPSL-1.0
 File NomosTestfiles/RPSL/RPSL_v1.0_b.txt contains license(s) RPSL-1.0
@@ -533,6 +538,11 @@ File NomosTestfiles/GPL/gpl-3.0.xml contains license(s) GPL-3.0
 File NomosTestfiles/GPL/ext4_jbd2.h contains license(s) GPL-2.0+
 File NomosTestfiles/GPL/dialogboundvalues.h contains license(s) GPL-2.0+
 File NomosTestfiles/GPL/passdb.c contains license(s) GPL-3.0+
+File NomosTestfiles/GPL/standalone_html.inc.php contains license(s) GPL
+File NomosTestfiles/GPL/grecord.cpp contains license(s) GPL
+File NomosTestfiles/GPL/curve.c contains license(s) GPL
+File NomosTestfiles/GPL/CFontz-charmap.h contains license(s) GPL
+File NomosTestfiles/GPL/server_monitor.py contains license(s) GPL-3.0
 File NomosTestfiles/eCos/eCos-2.0.txt contains license(s) GPL-2.0+,eCos-2.0
 File NomosTestfiles/Trademark-ref/53c7xx.c contains license(s) Trademark-ref
 File NomosTestfiles/OCLC/OCLC-2.0.txt contains license(s) OCLC-2.0
