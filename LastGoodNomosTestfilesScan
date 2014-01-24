@@ -8,6 +8,7 @@ File NomosTestfiles/MIT/Netizen.cc contains license(s) MIT-style
 File NomosTestfiles/MIT/KhronosMIT contains license(s) MIT-style
 File NomosTestfiles/MIT/net.c contains license(s) MIT
 File NomosTestfiles/MIT/privates.h contains license(s) MIT
+File NomosTestfiles/MIT/watch.c contains license(s) MIT
 File NomosTestfiles/Bittorrent/bittorrent.nsi contains license(s) BitTorrent-1.0
 File NomosTestfiles/Bittorrent/bittorrent.py contains license(s) BitTorrent-1.1
 File NomosTestfiles/EPL/EPL-1.0.txt contains license(s) EPL-1.0
@@ -582,6 +583,11 @@ File NomosTestfiles/See-file/sel_util.c contains license(s) See-file(copyright|l
 File NomosTestfiles/See-file/main.c contains license(s) See-file(copyright|license)
 File NomosTestfiles/See-file/pngget.c contains license(s) See-file(copyright|license)
 File NomosTestfiles/See-file/prng4.js contains license(s) See-file(copyright|license)
+File NomosTestfiles/See-file/camd_dump.c contains license(s) See-file(copyright|license)
+File NomosTestfiles/See-file/dimoopx.cc contains license(s) See-file(copyright|license)
+File NomosTestfiles/See-file/ldapmodule.c contains license(s) See-URL
+File NomosTestfiles/See-file/play.h contains license(s) See-file(copyright|license)
+File NomosTestfiles/See-file/revoco.h contains license(s) See-file(copyright|license)
 File NomosTestfiles/ISC/ISC.txt contains license(s) ISC
 File NomosTestfiles/UnclassifiedLicense/ACE-copying.html contains license(s) UnclassifiedLicense
 File NomosTestfiles/UnclassifiedLicense/isc.h contains license(s) Interbase-1.0
@@ -602,3 +608,4 @@ File NomosTestfiles/SISSL/SISSL-1.2.txt contains license(s) SISSL-1.2
 File NomosTestfiles/QT/printview.cpp contains license(s) Dual-license,GPL-3.0,LGPL-2.1,QT(Commercial)
 File NomosTestfiles/LIBGCJ/natStringBuilder.cc contains license(s) LIBGCJ
 File NomosTestfiles/WordNet/WordNet.txt contains license(s) WordNet
+File NomosTestfiles/ClearSilver/csparse.c contains license(s) ClearSilver
