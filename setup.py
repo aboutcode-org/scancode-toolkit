@@ -32,8 +32,11 @@ setup(
             'dir2pi = libpip2pi.commands:dir2pi',
             'pip2pi = libpip2pi.commands:pip2pi',
             'pip2tgz = libpip2pi.commands:pip2tgz',
-            ],
-        },
+        ],
+    },
+    install_requires=[
+        "pip>=1.1",
+    ],
     license="BSD",
     classifiers=[ x.strip() for x in """
         Development Status :: 4 - Beta

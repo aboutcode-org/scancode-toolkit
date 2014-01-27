@@ -3,7 +3,6 @@ import sys
 import cgi
 import shutil
 import atexit
-#import zipfile
 import tempfile
 import textwrap
 import functools
@@ -73,7 +72,8 @@ def archive_pip_packages(path, package_cmds):
     pip_dist = pkg_resources.get_distribution("pip")
     version = pip_dist.version
     if version < "1.1":
-        raise RuntimeError("pip >= 1.1 required, %s installed" % version)
+        raise RuntimeError("pip >= 1.1 required, but %s is installed"
+                           %(version, ))
     pip.main(pip_args)
 
 def dir2pi(argv=sys.argv):
