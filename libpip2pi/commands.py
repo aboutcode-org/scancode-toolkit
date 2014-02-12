@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 import cgi
 import shutil
@@ -42,10 +43,16 @@ def file_to_package(file, basedir=None):
         ('foo', '1.2.3-rc1.tar.gz')
         >>> file_to_package("foo-bar-1.2.tgz")
         ('foo-bar', '1.2.tgz')
+        >>> file_to_package("foo-bar-1.2-py27-none-any.whl")
+        ('foo-bar', '1.2-py27-none-any.whl')
         >>> """
     if os.path.splitext(file)[1].lower() == ".egg":
         return egg_to_package(file)
-    split = file.rsplit("-", 1)
+
+    if os.path.splitext(file)[1].lower() == ".whl":
+        split = list(re.match(r'^(.*)\-(.*\-.*\-.*\-.*\.whl)$', file).groups())
+    else:
+        split = file.rsplit("-", 1)
     if len(split) != 2:
         msg = "unexpected file name: %r " %(file, )
         msg += "(not in 'pkg-name-version.xxx' format"
@@ -55,8 +62,8 @@ def file_to_package(file, basedir=None):
         raise ValueError(msg)
     return (split[0], pkg_resources.safe_name(split[1]))
 
-def archive_pip_packages(path, package_cmds):
-    pip_args = ["install", "-d", path] + package_cmds
+def archive_pip_packages(pip_args, path, package_cmds):
+    pip_args = pip_args + [path] + package_cmds
     try:
         import pip
     except ImportError:
@@ -75,6 +82,7 @@ def archive_pip_packages(path, package_cmds):
         raise RuntimeError("pip >= 1.1 required, but %s is installed"
                            %(version, ))
     pip.main(pip_args)
+
 
 def dir2pi(argv=sys.argv):
     if len(argv) != 2:
@@ -146,29 +154,40 @@ def dir2pi(argv=sys.argv):
 
 @maintain_cwd
 def pip2tgz(argv=sys.argv):
+    return pip2archive(argv)
+
+@maintain_cwd
+def pip2whl(argv=sys.argv):
+    return pip2archive(argv, use_wheels=True)
+
+def pip2archive(argv, use_wheels=False):
+    cmd_name = 'pip2whl' if use_wheels else 'pip2tgz'
+    glob_test = './*.whl' if use_wheels else './*.tar.*'
+    pip_cmd = ['wheel', '--wheel-dir'] if use_wheels else ['install', '-d']
+
     if len(argv) < 3:
         print(dedent("""
-            usage: pip2tgz OUTPUT_DIRECTORY PACKAGE_NAME ...
+            usage: {0} OUTPUT_DIRECTORY PACKAGE_NAME ...
 
             Where PACKAGE_NAMES are any names accepted by pip (ex, `foo`,
             `foo==1.2`, `-r requirements.txt`).
 
-            pip2tgz will download all packages required to install PACKAGE_NAMES and
+            {0} will download all packages required to install PACKAGE_NAMES and
             save them to sanely-named tarballs in OUTPUT_DIRECTORY.
 
             For example:
 
-                $ pip2tgz /var/www/packages/ -r requirements.txt foo==1.2 baz/
-        """))
+                $ {0} /var/www/packages/ -r requirements.txt foo==1.2 baz/
+        """.format(cmd_name)))
         return 1
 
     outdir = os.path.abspath(argv[1])
     if not os.path.exists(outdir):
         os.mkdir(outdir)
 
-    archive_pip_packages(outdir, argv[2:])
+    archive_pip_packages(pip_cmd, outdir, argv[2:])
     os.chdir(outdir)
-    num_pakages = len(glob.glob('./*.tar.*'))
+    num_pakages = len(glob.glob(glob_test))
 
     print("\nDone. %s archives currently saved in %r." %(num_pakages, argv[1]))
     return 0
