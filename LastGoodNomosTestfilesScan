@@ -589,7 +589,6 @@ File NomosTestfiles/See-file/ldapmodule.c contains license(s) See-URL
 File NomosTestfiles/See-file/play.h contains license(s) See-file
 File NomosTestfiles/See-file/revoco.h contains license(s) See-file
 File NomosTestfiles/ISC/ISC.txt contains license(s) ISC
-File NomosTestfiles/UnclassifiedLicense/ACE-copying.html contains license(s) UnclassifiedLicense
 File NomosTestfiles/UnclassifiedLicense/isc.h contains license(s) Interbase-1.0
 File NomosTestfiles/UnclassifiedLicense/ldapbaseauthenticationprovider.inc.php contains license(s) KnowledgeTree-1.1
 File NomosTestfiles/UnclassifiedLicense/IPA.cpp contains license(s) See-file(LICENSE)
@@ -609,3 +608,4 @@ File NomosTestfiles/QT/printview.cpp contains license(s) Dual-license,GPL-3.0,LG
 File NomosTestfiles/LIBGCJ/natStringBuilder.cc contains license(s) LIBGCJ
 File NomosTestfiles/WordNet/WordNet.txt contains license(s) WordNet-3.0
 File NomosTestfiles/ClearSilver/csparse.c contains license(s) ClearSilver
+File NomosTestfiles/ACE/ACE-copying.html contains license(s) ACE
