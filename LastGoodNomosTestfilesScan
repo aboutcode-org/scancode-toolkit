@@ -6,9 +6,9 @@ File NomosTestfiles/MIT/perl-Mozilla-LDAP.spec contains license(s) GPL,LGPL,MPL-
 File NomosTestfiles/MIT/edit.c contains license(s) MIT-style
 File NomosTestfiles/MIT/Netizen.cc contains license(s) MIT-style
 File NomosTestfiles/MIT/KhronosMIT contains license(s) MIT-style
-File NomosTestfiles/MIT/net.c contains license(s) MIT
-File NomosTestfiles/MIT/privates.h contains license(s) MIT
-File NomosTestfiles/MIT/watch.c contains license(s) MIT
+File NomosTestfiles/MIT/net.c contains license(s) MIT-style
+File NomosTestfiles/MIT/privates.h contains license(s) MIT-style
+File NomosTestfiles/MIT/watch.c contains license(s) MIT-style
 File NomosTestfiles/Bittorrent/bittorrent.nsi contains license(s) BitTorrent-1.0
 File NomosTestfiles/Bittorrent/bittorrent.py contains license(s) BitTorrent-1.1
 File NomosTestfiles/EPL/EPL-1.0.txt contains license(s) EPL-1.0
