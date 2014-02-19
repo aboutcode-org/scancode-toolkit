@@ -118,6 +118,7 @@ File NomosTestfiles/LGPL/openjdk-7-jre-headless_license.txt contains license(s) 
 File NomosTestfiles/LGPL/defconfig contains license(s) BSD,LGPL
 File NomosTestfiles/LGPL/main.cpp contains license(s) LGPL-2.1+-KDE-exception
 File NomosTestfiles/LGPL/tracker-class.c contains license(s) LGPL-2.1+
+File NomosTestfiles/LGPL/valaprojectgenerator.c contains license(s) GPL-3.0+,LGPL-2.1+
 File NomosTestfiles/Artistic/Artistic-1.0.txt contains license(s) Artistic-1.0
 File NomosTestfiles/Artistic/macos_main.cpp contains license(s) Artistic-1.0
 File NomosTestfiles/Artistic/Hero.java contains license(s) Artistic-1.0
@@ -544,6 +545,9 @@ File NomosTestfiles/GPL/grecord.cpp contains license(s) GPL
 File NomosTestfiles/GPL/curve.c contains license(s) GPL
 File NomosTestfiles/GPL/CFontz-charmap.h contains license(s) GPL
 File NomosTestfiles/GPL/server_monitor.py contains license(s) GPL-3.0
+File NomosTestfiles/GPL/gwymath.c contains license(s) GPL-2.0+,LGPL-2.1+
+File NomosTestfiles/GPL/Timestamp.cc contains license(s) GPL-3.0+,LGPL-2.1+
+File NomosTestfiles/GPL/gids.c contains license(s) GPL-3.0+,LGPL-3.0+
 File NomosTestfiles/eCos/eCos-2.0.txt contains license(s) GPL-2.0+,eCos-2.0
 File NomosTestfiles/Trademark-ref/53c7xx.c contains license(s) Trademark-ref
 File NomosTestfiles/OCLC/OCLC-2.0.txt contains license(s) OCLC-2.0
