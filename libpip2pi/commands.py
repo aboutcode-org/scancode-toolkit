@@ -1,5 +1,4 @@
 import os
-import re
 import sys
 import cgi
 import shutil
@@ -25,7 +24,7 @@ def maintain_cwd(f):
     return maintain_cwd_helper
 
 def egg_to_package(file):
-    """ Extracts the package name from an egg.
+    """ Extracts the package name from an egg::
 
         >>> egg_to_package("PyYAML-3.10-py2.7-macosx-10.7-x86_64.egg")
         ('PyYAML', '3.10-py2.7-macosx-10.7-x86_64.egg')
@@ -37,7 +36,7 @@ def egg_to_package(file):
     return (name, file[len(name)+1:])
 
 def file_to_package(file, basedir=None):
-    """ Returns the package name for a given file.
+    """ Returns the package name for a given file::
 
         >>> file_to_package("foo-1.2.3_rc1.tar.gz")
         ('foo', '1.2.3-rc1.tar.gz')
@@ -45,22 +44,30 @@ def file_to_package(file, basedir=None):
         ('foo-bar', '1.2.tgz')
         >>> file_to_package("foo-bar-1.2-py27-none-any.whl")
         ('foo-bar', '1.2-py27-none-any.whl')
-        >>> """
-    if os.path.splitext(file)[1].lower() == ".egg":
+        >>> file_to_package("Cython-0.17.2-cp26-none-linux_x86_64.whl")
+        ('Cython', '0.17.2-cp26-none-linux_x86_64.whl')
+        """
+    file_ext = os.path.splitext(file)[1].lower()
+    if file_ext == ".egg":
         return egg_to_package(file)
 
-    if os.path.splitext(file)[1].lower() == ".whl":
-        split = list(re.match(r'^(.*)\-(.*\-.*\-.*\-.*\.whl)$', file).groups())
+    if file_ext == ".whl":
+        bits = file.rsplit("-", 4)
+        split = [bits[0], "-".join(bits[1:])]
+        to_safe_name = lambda x: x
     else:
         split = file.rsplit("-", 1)
-    if len(split) != 2:
+        to_safe_name = pkg_resources.safe_name
+
+    if len(split) != 2 or not split[1]:
         msg = "unexpected file name: %r " %(file, )
         msg += "(not in 'pkg-name-version.xxx' format"
         if basedir:
             msg += "; found in directory: %r" %(basedir)
         msg += ")"
         raise ValueError(msg)
-    return (split[0], pkg_resources.safe_name(split[1]))
+
+    return (split[0], to_safe_name(split[1]))
 
 def archive_pip_packages(pip_args, path, package_cmds):
     pip_args = pip_args + [path] + package_cmds
@@ -81,7 +88,7 @@ def archive_pip_packages(pip_args, path, package_cmds):
     if version < "1.1":
         raise RuntimeError("pip >= 1.1 required, but %s is installed"
                            %(version, ))
-    pip.main(pip_args)
+    return pip.main(pip_args)
 
 
 def dir2pi(argv=sys.argv):
@@ -185,7 +192,9 @@ def pip2archive(argv, use_wheels=False):
     if not os.path.exists(outdir):
         os.mkdir(outdir)
 
-    archive_pip_packages(pip_cmd, outdir, argv[2:])
+    res = archive_pip_packages(pip_cmd, outdir, argv[2:])
+    if res != 0:
+        return res
     os.chdir(outdir)
     num_pakages = len(glob.glob(glob_test))
 
