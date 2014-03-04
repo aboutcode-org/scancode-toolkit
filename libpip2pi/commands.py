@@ -10,6 +10,35 @@ from subprocess import check_call
 import pkg_resources
 import glob
 
+try:
+    import wheel as _; _
+    has_wheel = True
+except ImportError:
+    has_wheel = False
+
+class PipError(Exception):
+    pass
+
+def warn_wheel():
+    print(
+        "ERROR: .whl packages were downloaded but the wheel package "
+        "is not installed, so they cannot be correctly processed.\n"
+        "Install it with:\n"
+        "    pip install wheel"
+    )
+    try:
+        import setuptools
+        setuptools_version = setuptools.__version__
+    except ImportError:
+        setuptools_version = ''
+    if setuptools_version < '1.0.0':
+        print(
+            "WARNING: your setuptools package is out of date. This "
+            "could lead to bad things.\n"
+            "You should likely update it:\n"
+            "    pip install -U setuptools"
+        )
+
 def dedent(text):
     return textwrap.dedent(text.lstrip("\n"))
 
@@ -47,6 +76,7 @@ def file_to_package(file, basedir=None):
         >>> file_to_package("Cython-0.17.2-cp26-none-linux_x86_64.whl")
         ('Cython', '0.17.2-cp26-none-linux_x86_64.whl')
         """
+    file = os.path.basename(file)
     file_ext = os.path.splitext(file)[1].lower()
     if file_ext == ".egg":
         return egg_to_package(file)
@@ -69,8 +99,7 @@ def file_to_package(file, basedir=None):
 
     return (split[0], to_safe_name(split[1]))
 
-def archive_pip_packages(pip_args, path, package_cmds):
-    pip_args = pip_args + [path] + package_cmds
+def pip_run_command(pip_args):
     try:
         import pip
     except ImportError:
@@ -88,7 +117,10 @@ def archive_pip_packages(pip_args, path, package_cmds):
     if version < "1.1":
         raise RuntimeError("pip >= 1.1 required, but %s is installed"
                            %(version, ))
-    return pip.main(pip_args)
+    res = pip.main(pip_args)
+    if res != 0:
+        raise PipError("pip failed with status %s while running: %s"
+                       %(res, pip_args))
 
 
 def dir2pi(argv=sys.argv):
@@ -159,47 +191,76 @@ def dir2pi(argv=sys.argv):
         fp.write(pkg_index)
     return 0
 
+def globall(globs):
+    result = []
+    for g in globs:
+        result.extend(glob.glob(g))
+    return result
+
 @maintain_cwd
 def pip2tgz(argv=sys.argv):
-    return pip2archive(argv)
-
-@maintain_cwd
-def pip2whl(argv=sys.argv):
-    return pip2archive(argv, use_wheels=True)
-
-def pip2archive(argv, use_wheels=False):
-    cmd_name = 'pip2whl' if use_wheels else 'pip2tgz'
-    glob_test = './*.whl' if use_wheels else './*.tar.*'
-    pip_cmd = ['wheel', '--wheel-dir'] if use_wheels else ['install', '-d']
+    glob_exts = ['*.whl', '*.tgz', '*.gz']
 
     if len(argv) < 3:
         print(dedent("""
-            usage: {0} OUTPUT_DIRECTORY PACKAGE_NAME ...
+            usage: pip2tgz OUTPUT_DIRECTORY PACKAGE_NAME ...
 
             Where PACKAGE_NAMES are any names accepted by pip (ex, `foo`,
             `foo==1.2`, `-r requirements.txt`).
 
-            {0} will download all packages required to install PACKAGE_NAMES and
-            save them to sanely-named tarballs in OUTPUT_DIRECTORY.
+            pip2tgz will download all packages required to install PACKAGE_NAMES and
+            save them to sanely-named tarballs or wheel files in OUTPUT_DIRECTORY.
 
             For example:
 
-                $ {0} /var/www/packages/ -r requirements.txt foo==1.2 baz/
-        """.format(cmd_name)))
+                $ pip2tgz /var/www/packages/ -r requirements.txt foo==1.2 baz/
+        """))
         return 1
 
     outdir = os.path.abspath(argv[1])
     if not os.path.exists(outdir):
         os.mkdir(outdir)
 
-    res = archive_pip_packages(pip_cmd, outdir, argv[2:])
-    if res != 0:
-        return res
-    os.chdir(outdir)
-    num_pakages = len(glob.glob(glob_test))
+    full_glob_paths = [
+        os.path.join(outdir, g) for g in glob_exts
+    ]
+    pkg_file_set = lambda: set(globall(full_glob_paths))
+    old_pkgs = pkg_file_set()
 
-    print("\nDone. %s archives currently saved in %r." %(num_pakages, argv[1]))
+    pip_run_command(['install', '-d', outdir] + argv[2:])
+
+    os.chdir(outdir)
+    new_pkgs = pkg_file_set() - old_pkgs
+    new_wheels = [ f for f in new_pkgs if f.endswith(".whl") ]
+    for new_pkg in new_wheels:
+        if not has_wheel:
+            warn_wheel()
+            # Remove the wheel files so that they will be re-downloaded and
+            # their dependencies installed next time around
+            for f in new_wheels:
+                os.unlink(f)
+            return 1
+        download_wheel_deps(outdir, new_pkg)
+
+    num_pkgs = len(pkg_file_set() - old_pkgs)
+    print("\nDone. %s new archives currently saved in %r." %(num_pkgs, argv[1]))
     return 0
+
+def download_wheel_deps(outdir, pkg_file):
+    """ Downloads all the dependencies of a wheel file into outdir.
+
+        Because ``pip install -d ...`` doesn't install dependencies for
+        wheels[0], we need to hack around that and do it ourselves here.
+
+        [0]: https://github.com/pypa/pip/issues/1617
+        """
+    pkg_file_basedir = os.path.abspath(os.path.dirname(pkg_file))
+    pkg_name, _ = file_to_package(pkg_file)
+    pip_run_command([
+        'wheel', '-w', outdir,
+        '--find-links', pkg_file_basedir,
+        pkg_name,
+    ])
 
 def pip2pi(argv=sys.argv):
     if len(argv) < 3:
