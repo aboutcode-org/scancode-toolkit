@@ -16,6 +16,11 @@ try:
 except ImportError:
     has_wheel = False
 
+try:
+    import pip
+except ImportError:
+    pip = None
+
 class PipError(Exception):
     pass
 
@@ -40,7 +45,7 @@ def warn_wheel():
         )
 
 def dedent(text):
-    return textwrap.dedent(text.lstrip("\n"))
+    return textwrap.dedent(text.lstrip("\n")).rstrip()
 
 def maintain_cwd(f):
     @functools.wraps(f)
@@ -99,10 +104,18 @@ def file_to_package(file, basedir=None):
 
     return (split[0], to_safe_name(split[1]))
 
-def pip_run_command(pip_args):
+def try_int(x):
     try:
-        import pip
-    except ImportError:
+        return int(x)
+    except ValueError:
+        return x
+
+def pip_get_version():
+    pip_dist = pkg_resources.get_distribution("pip")
+    return tuple(try_int(x) for x in pip_dist.version.split("."))
+
+def pip_run_command(pip_args):
+    if pip is None:
         print("===== WARNING =====")
         print("Cannot `import pip` - falling back to the pip executable.")
         print("This will be deprecated in a future release.")
@@ -112,9 +125,8 @@ def pip_run_command(pip_args):
         check_call(["pip"] + pip_args)
         return
 
-    pip_dist = pkg_resources.get_distribution("pip")
-    version = pip_dist.version
-    if version < "1.1":
+    version = pip_get_version()
+    if version < (1, 1):
         raise RuntimeError("pip >= 1.1 required, but %s is installed"
                            %(version, ))
     res = pip.main(pip_args)
@@ -232,35 +244,59 @@ def pip2tgz(argv=sys.argv):
     os.chdir(outdir)
     new_pkgs = pkg_file_set() - old_pkgs
     new_wheels = [ f for f in new_pkgs if f.endswith(".whl") ]
-    for new_pkg in new_wheels:
-        if not has_wheel:
-            warn_wheel()
-            # Remove the wheel files so that they will be re-downloaded and
-            # their dependencies installed next time around
-            for f in new_wheels:
-                os.unlink(f)
-            return 1
-        download_wheel_deps(outdir, new_pkg)
+    res = handle_new_wheels(outdir, new_wheels)
+    if res:
+        return res
 
     num_pkgs = len(pkg_file_set() - old_pkgs)
     print("\nDone. %s new archives currently saved in %r." %(num_pkgs, argv[1]))
     return 0
 
-def download_wheel_deps(outdir, pkg_file):
-    """ Downloads all the dependencies of a wheel file into outdir.
 
-        Because ``pip install -d ...`` doesn't install dependencies for
-        wheels[0], we need to hack around that and do it ourselves here.
+def handle_new_wheels(outdir, new_wheels):
+    """ Makes sure that, if wheel files are downloaded, their dependencies are
+        correctly handled.
+
+        This is necessary because ``pip install -d ...`` was broken
+        pre-1.5.3[0].
 
         [0]: https://github.com/pypa/pip/issues/1617
         """
-    pkg_file_basedir = os.path.abspath(os.path.dirname(pkg_file))
-    pkg_name, _ = file_to_package(pkg_file)
-    pip_run_command([
-        'wheel', '-w', outdir,
-        '--find-links', pkg_file_basedir,
-        pkg_name,
-    ])
+    if not new_wheels:
+        return 0
+
+    pip_version = pip_get_version()
+    if pip_version >= (1, 5, 3):
+        return 0
+
+    print("")
+    print("!" * 80)
+
+    if not has_wheel:
+        warn_wheel()
+        # Remove the wheel files so that they will be re-downloaded and
+        # their dependencies installed next time around
+        for f in new_wheels:
+            os.unlink(f)
+        return 1
+
+    print(dedent("""
+        WARNING: Your version of pip (%s) doesn't correctly support wheel
+        files. I'll do my best to work around that for now, but if possible
+        you should upgrade to at least 1.5.3.
+    """)) %(pip_version, )
+
+    print("!" * 80)
+    print
+
+    for new_pkg in new_wheels:
+        pkg_file_basedir = os.path.abspath(os.path.dirname(new_pkg))
+        pkg_name, _ = file_to_package(new_pkg)
+        pip_run_command([
+            '-q', 'wheel', '-w', outdir,
+            '--find-links', pkg_file_basedir,
+            pkg_name,
+        ])
 
 def pip2pi(argv=sys.argv):
     if len(argv) < 3:
