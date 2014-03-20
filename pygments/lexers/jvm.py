@@ -20,7 +20,7 @@ from pygments import unistring as uni
 
 __all__ = ['JavaLexer', 'ScalaLexer', 'GosuLexer', 'GosuTemplateLexer',
            'GroovyLexer', 'IokeLexer', 'ClojureLexer', 'KotlinLexer',
-           'XtendLexer', 'AspectJLexer', 'CeylonLexer']
+           'XtendLexer', 'AspectJLexer', 'CeylonLexer', 'PigLexer']
 
 
 class JavaLexer(RegexLexer):
@@ -1064,5 +1064,55 @@ class XtendLexer(RegexLexer):
             (r"'''", String, '#pop'),
             (u'\u00AB', String, '#pop'),
             (r'.', String)
+        ],
+    }
+
+class PigLexer(RegexLexer):
+    name = 'Pig'
+    aliases = ['pig']
+    filenames = ['*.pig']
+    mimetypes = ['text/x-pig']
+
+    flags = re.MULTILINE|re.IGNORECASE
+
+    tokens = {
+        'root': [
+            (r'\s+', Text),
+            (r'--.*', Comment),
+            (r'/\*\*([^*][^/]*)/', Comment.Multiline),
+            (r'/\*\*.*\*\*/$', Comment),
+            (r'\\\n', Text),
+            (r'\\', Text),
+            (r'\'[^\'^\n]+\'', String),
+            (r'\"[^\"^\n]+\"', String),
+            include('keywords'),
+            include('types'),
+            include('builtins'),
+            (r'[0-9][0-9]*\.[0-9]+([eE][0-9]+)?[fd]?', Number.Float),
+            (r'0x[0-9a-fA-F]+', Number.Hex),
+            (r'[0-9]+L?', Number.Integer),
+            (r'\n', Text),
+            (r'([a-zA-Z_][a-zA-Z0-9_]*)(\s*)(\()',
+             bygroups(Name.Function, Text, Punctuation)),
+            (r'[()#:]', Text),
+            (r'[^(:\n#\'\")\s]+', Text),
+            (r'\S+\s+', Text)
+        ],
+        'keywords': [
+            (r'(assert|and|any|all|arrange|as|asc|bag|by|cache|CASE|cat|cd|cp|'
+             r'%declare|%default|define|dense|desc|describe|distinct|du|dump|'
+             r'eval|exex|explain|filter|flatten|foreach|full|generate|group|help|'
+             r'if|illustrate|import|inner|input|into|is|join|kill|left|limit|load|'
+             r'ls|map|matches|mkdir|mv|not|null|onschema|or|order|outer|output|'
+             r'parallel|pig|pwd|quit|register|returns|right|rm|rmf|rollup|run|sample|'
+             r'set|ship|split|stderr|stdin|stdout|store|stream|through|union|using|void)\b', Keyword)
+        ],
+        'builtins': [
+             (r'(AVG|BinStorage|cogroup|CONCAT|copyFromLocal|copyToLocal|COUNT|'
+              r'cross|DIFF|MAX|MIN|PigDump|PigStorage|SIZE|SUM|TextLoader|TOKENIZE)\b', Name.Builtin)
+        ],
+        'types':[
+             (r'(bytearray|BIGINTEGER|BIGDECIMAL|chararray|datetime|double|float|'
+              r'int|long|tuple)\b', Keyword.Type)
         ],
     }
