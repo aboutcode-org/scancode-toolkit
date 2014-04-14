@@ -65,6 +65,7 @@ Other contributors, listed alphabetically, are:
 * Rob Hoelz -- Perl 6 lexer
 * Doug Hogan -- Mscgen lexer
 * Ben Hollis -- Mason lexer
+* Max Horn -- GAP lexer
 * Dustin Howett -- Logos lexer
 * Alastair Houghton -- Lexer inheritance facility
 * Tim Howard -- BlitzMax lexer
