@@ -5,7 +5,7 @@
 
     Pygments lexers for JVM languages.
 
-    :copyright: Copyright 2006-2013 by the Pygments team, see AUTHORS.
+    :copyright: Copyright 2006-2014 by the Pygments team, see AUTHORS.
     :license: BSD, see LICENSE for details.
 """
 
@@ -15,13 +15,13 @@ from pygments.lexer import Lexer, RegexLexer, include, bygroups, using, \
      this
 from pygments.token import Text, Comment, Operator, Keyword, Name, String, \
      Number, Punctuation
-from pygments.util import get_choice_opt
 from pygments import unistring as uni
 
 
 __all__ = ['JavaLexer', 'ScalaLexer', 'GosuLexer', 'GosuTemplateLexer',
            'GroovyLexer', 'IokeLexer', 'ClojureLexer', 'ClojureScriptLexer',
-           'KotlinLexer', 'XtendLexer', 'AspectJLexer', 'CeylonLexer']
+           'KotlinLexer', 'XtendLexer', 'AspectJLexer', 'CeylonLexer',
+           'PigLexer']
 
 
 class JavaLexer(RegexLexer):
@@ -38,11 +38,6 @@ class JavaLexer(RegexLexer):
 
     tokens = {
         'root': [
-            # method names
-            (r'^(\s*(?:[a-zA-Z_][a-zA-Z0-9_\.\[\]<>]*\s+)+?)' # return arguments
-             r'([a-zA-Z_][a-zA-Z0-9_]*)'                      # method name
-             r'(\s*)(\()',                                    # signature start
-             bygroups(using(this), Name.Function, Text, Operator)),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
             (r'/\*.*?\*/', Comment.Multiline),
@@ -55,6 +50,11 @@ class JavaLexer(RegexLexer):
              r'transient|volatile)\b', Keyword.Declaration),
             (r'(boolean|byte|char|double|float|int|long|short|void)\b',
              Keyword.Type),
+            # method names
+            (r'^(\s*(?:[a-zA-Z_][a-zA-Z0-9_\.\[\]<>]*\s+)+?)' # return arguments
+             r'([a-zA-Z_][a-zA-Z0-9_]*)'                      # method name
+             r'(\s*)(\()',                                    # signature start
+             bygroups(using(this), Name.Function, Text, Operator)),
             (r'(package)(\s+)', bygroups(Keyword.Namespace, Text)),
             (r'(true|false|null)\b', Keyword.Constant),
             (r'(class|interface)(\s+)', bygroups(Keyword.Declaration, Text), 'class'),
@@ -67,7 +67,7 @@ class JavaLexer(RegexLexer):
             (r'[~\^\*!%&\[\]\(\)\{\}<>\|+=:;,./?-]', Operator),
             (r'[0-9][0-9]*\.[0-9]+([eE][0-9]+)?[fd]?', Number.Float),
             (r'0x[0-9a-fA-F]+', Number.Hex),
-            (r'[0-9]+L?', Number.Integer),
+            (r'[0-9]+(_+[0-9]+)*L?', Number.Integer),
             (r'\n', Text)
         ],
         'class': [
@@ -83,7 +83,7 @@ class AspectJLexer(JavaLexer):
     """
     For `AspectJ <http://www.eclipse.org/aspectj/>`_ source code.
 
-    *New in Pygments 1.6.*
+    .. versionadded:: 1.6
     """
 
     name = 'AspectJ'
@@ -243,25 +243,25 @@ class ScalaLexer(RegexLexer):
              u'\ua760\ua762\ua764\ua766\ua768\ua76a\ua76c\ua76e\ua779\ua77b'
              u'\ua77d-\ua77e\ua780\ua782\ua784\ua786\ua78b\uff21-\uff3a]')
 
-    idrest = ur'%s(?:%s|[0-9])*(?:(?<=_)%s)?' % (letter, letter, op)
+    idrest = u'%s(?:%s|[0-9])*(?:(?<=_)%s)?' % (letter, letter, op)
 
     tokens = {
         'root': [
             # method names
             (r'(class|trait|object)(\s+)', bygroups(Keyword, Text), 'class'),
-            (ur"'%s" % idrest, Text.Symbol),
+            (u"'%s" % idrest, Text.Symbol),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
             (r'/\*', Comment.Multiline, 'comment'),
-            (ur'@%s' % idrest, Name.Decorator),
-            (ur'(abstract|ca(?:se|tch)|d(?:ef|o)|e(?:lse|xtends)|'
-             ur'f(?:inal(?:ly)?|or(?:Some)?)|i(?:f|mplicit)|'
-             ur'lazy|match|new|override|pr(?:ivate|otected)'
-             ur'|re(?:quires|turn)|s(?:ealed|uper)|'
-             ur't(?:h(?:is|row)|ry)|va[lr]|w(?:hile|ith)|yield)\b|'
+            (u'@%s' % idrest, Name.Decorator),
+            (u'(abstract|ca(?:se|tch)|d(?:ef|o)|e(?:lse|xtends)|'
+             u'f(?:inal(?:ly)?|or(?:Some)?)|i(?:f|mplicit)|'
+             u'lazy|match|new|override|pr(?:ivate|otected)'
+             u'|re(?:quires|turn)|s(?:ealed|uper)|'
+             u't(?:h(?:is|row)|ry)|va[lr]|w(?:hile|ith)|yield)\\b|'
              u'(<[%:-]|=>|>:|[#=@_\u21D2\u2190])(\\b|(?=\\s)|$)', Keyword),
-            (ur':(?!%s)' % op, Keyword, 'type'),
-            (ur'%s%s\b' % (upper, idrest), Name.Class),
+            (u':(?!%s)' % op, Keyword, 'type'),
+            (u'%s%s\\b' % (upper, idrest), Name.Class),
             (r'(true|false|null)\b', Keyword.Constant),
             (r'(import|package)(\s+)', bygroups(Keyword, Text), 'import'),
             (r'(type)(\s+)', bygroups(Keyword, Text), 'type'),
@@ -282,34 +282,34 @@ class ScalaLexer(RegexLexer):
             (r'\n', Text)
         ],
         'class': [
-            (ur'(%s|%s|`[^`]+`)(\s*)(\[)' % (idrest, op),
+            (u'(%s|%s|`[^`]+`)(\\s*)(\\[)' % (idrest, op),
              bygroups(Name.Class, Text, Operator), 'typeparam'),
             (r'\s+', Text),
             (r'{', Operator, '#pop'),
             (r'\(', Operator, '#pop'),
             (r'//.*?\n', Comment.Single, '#pop'),
-            (ur'%s|%s|`[^`]+`' % (idrest, op), Name.Class, '#pop'),
+            (u'%s|%s|`[^`]+`' % (idrest, op), Name.Class, '#pop'),
         ],
         'type': [
             (r'\s+', Text),
             (u'<[%:]|>:|[#_\u21D2]|forSome|type', Keyword),
             (r'([,\);}]|=>|=)(\s*)', bygroups(Operator, Text), '#pop'),
             (r'[\(\{]', Operator, '#push'),
-            (ur'((?:%s|%s|`[^`]+`)(?:\.(?:%s|%s|`[^`]+`))*)(\s*)(\[)' %
+            (u'((?:%s|%s|`[^`]+`)(?:\\.(?:%s|%s|`[^`]+`))*)(\\s*)(\\[)' %
              (idrest, op, idrest, op),
              bygroups(Keyword.Type, Text, Operator), ('#pop', 'typeparam')),
-            (ur'((?:%s|%s|`[^`]+`)(?:\.(?:%s|%s|`[^`]+`))*)(\s*)$' %
+            (u'((?:%s|%s|`[^`]+`)(?:\\.(?:%s|%s|`[^`]+`))*)(\\s*)$' %
              (idrest, op, idrest, op),
              bygroups(Keyword.Type, Text), '#pop'),
             (r'//.*?\n', Comment.Single, '#pop'),
-            (ur'\.|%s|%s|`[^`]+`' % (idrest, op), Keyword.Type)
+            (u'\\.|%s|%s|`[^`]+`' % (idrest, op), Keyword.Type)
         ],
         'typeparam': [
             (r'[\s,]+', Text),
             (u'<[%:]|=>|>:|[#_\u21D2]|forSome|type', Keyword),
             (r'([\]\)\}])', Operator, '#pop'),
             (r'[\(\[\{]', Operator, '#push'),
-            (ur'\.|%s|%s|`[^`]+`' % (idrest, op), Keyword.Type)
+            (u'\\.|%s|%s|`[^`]+`' % (idrest, op), Keyword.Type)
         ],
         'comment': [
             (r'[^/\*]+', Comment.Multiline),
@@ -318,7 +318,7 @@ class ScalaLexer(RegexLexer):
             (r'[*/]', Comment.Multiline)
         ],
         'import': [
-            (ur'(%s|\.)+' % idrest, Name.Namespace, '#pop')
+            (u'(%s|\\.)+' % idrest, Name.Namespace, '#pop')
         ],
     }
 
@@ -327,7 +327,7 @@ class GosuLexer(RegexLexer):
     """
     For Gosu source code.
 
-    *New in Pygments 1.5.*
+    .. versionadded:: 1.5
     """
 
     name = 'Gosu'
@@ -406,7 +406,7 @@ class GosuTemplateLexer(Lexer):
     """
     For Gosu templates.
 
-    *New in Pygments 1.5.*
+    .. versionadded:: 1.5
     """
 
     name = 'Gosu Template'
@@ -425,7 +425,7 @@ class GroovyLexer(RegexLexer):
     """
     For `Groovy <http://groovy.codehaus.org/>`_ source code.
 
-    *New in Pygments 1.5.*
+    .. versionadded:: 1.5
     """
 
     name = 'Groovy'
@@ -487,7 +487,7 @@ class IokeLexer(RegexLexer):
     For `Ioke <http://ioke.org/>`_ (a strongly typed, dynamic,
     prototype based programming language) source.
 
-    *New in Pygments 1.4.*
+    .. versionadded:: 1.4
     """
     name = 'Ioke'
     filenames = ['*.ik']
@@ -639,9 +639,9 @@ class IokeLexer(RegexLexer):
              r'System|Text|Tuple)(?![a-zA-Z0-9!:_?])', Name.Builtin),
 
             # functions
-            (ur'(generateMatchMethod|aliasMethod|\u03bb|\u028E|fnx|fn|method|'
-             ur'dmacro|dlecro|syntax|macro|dlecrox|lecrox|lecro|syntax)'
-             ur'(?![a-zA-Z0-9!:_?])', Name.Function),
+            (u'(generateMatchMethod|aliasMethod|\u03bb|\u028E|fnx|fn|method|'
+             u'dmacro|dlecro|syntax|macro|dlecrox|lecrox|lecro|syntax)'
+             u'(?![a-zA-Z0-9!:_?])', Name.Function),
 
             # Numbers
             (r'-?0[xX][0-9a-fA-F]+', Number.Hex),
@@ -651,13 +651,13 @@ class IokeLexer(RegexLexer):
             (r'#\(', Punctuation),
 
              # Operators
-            (ur'(&&>>|\|\|>>|\*\*>>|:::|::|\.\.\.|===|\*\*>|\*\*=|&&>|&&=|'
-             ur'\|\|>|\|\|=|\->>|\+>>|!>>|<>>>|<>>|&>>|%>>|#>>|@>>|/>>|\*>>|'
-             ur'\?>>|\|>>|\^>>|~>>|\$>>|=>>|<<=|>>=|<=>|<\->|=~|!~|=>|\+\+|'
-             ur'\-\-|<=|>=|==|!=|&&|\.\.|\+=|\-=|\*=|\/=|%=|&=|\^=|\|=|<\-|'
-             ur'\+>|!>|<>|&>|%>|#>|\@>|\/>|\*>|\?>|\|>|\^>|~>|\$>|<\->|\->|'
-             ur'<<|>>|\*\*|\?\||\?&|\|\||>|<|\*|\/|%|\+|\-|&|\^|\||=|\$|!|~|'
-             ur'\?|#|\u2260|\u2218|\u2208|\u2209)', Operator),
+            (r'(&&>>|\|\|>>|\*\*>>|:::|::|\.\.\.|===|\*\*>|\*\*=|&&>|&&=|'
+             r'\|\|>|\|\|=|\->>|\+>>|!>>|<>>>|<>>|&>>|%>>|#>>|@>>|/>>|\*>>|'
+             r'\?>>|\|>>|\^>>|~>>|\$>>|=>>|<<=|>>=|<=>|<\->|=~|!~|=>|\+\+|'
+             r'\-\-|<=|>=|==|!=|&&|\.\.|\+=|\-=|\*=|\/=|%=|&=|\^=|\|=|<\-|'
+             r'\+>|!>|<>|&>|%>|#>|\@>|\/>|\*>|\?>|\|>|\^>|~>|\$>|<\->|\->|'
+             r'<<|>>|\*\*|\?\||\?&|\|\||>|<|\*|\/|%|\+|\-|&|\^|\||=|\$|!|~|'
+             u'\\?|#|\u2260|\u2218|\u2208|\u2209)', Operator),
             (r'(and|nand|or|xor|nor|return|import)(?![a-zA-Z0-9_!?])',
              Operator),
 
@@ -677,7 +677,7 @@ class ClojureLexer(RegexLexer):
     """
     Lexer for `Clojure <http://clojure.org/>`_ source code.
 
-    *New in Pygments 0.11.*
+    .. versionadded:: 0.11
     """
     name = 'Clojure'
     aliases = ['clojure', 'clj']
@@ -832,7 +832,7 @@ class TeaLangLexer(RegexLexer):
     For `Tea <http://teatrove.org/>`_ source code. Only used within a
     TeaTemplateLexer.
 
-    *New in Pygments 1.5.*
+    .. versionadded:: 1.5
     """
 
     flags = re.MULTILINE | re.DOTALL
@@ -878,7 +878,7 @@ class CeylonLexer(RegexLexer):
     """
     For `Ceylon <http://ceylon-lang.org/>`_ source code.
 
-    *New in Pygments 1.6.*
+    .. versionadded:: 1.6
     """
 
     name = 'Ceylon'
@@ -900,7 +900,7 @@ class CeylonLexer(RegexLexer):
              bygroups(using(this), Name.Function, Text, Operator)),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
-            (r'/\*.*?\*/', Comment.Multiline),
+            (r'/\*', Comment.Multiline, 'comment'),
             (r'(variable|shared|abstract|doc|by|formal|actual|late|native)',
              Name.Decorator),
             (r'(break|case|catch|continue|default|else|finally|for|in|'
@@ -945,126 +945,83 @@ class CeylonLexer(RegexLexer):
             (r'[a-z][a-zA-Z0-9_.]*',
              Name.Namespace, '#pop')
         ],
+        'comment': [
+            (r'[^*/]', Comment.Multiline),
+            (r'/\*', Comment.Multiline, '#push'),
+            (r'\*/', Comment.Multiline, '#pop'),
+            (r'[*/]', Comment.Multiline)
+        ],
     }
 
 
 class KotlinLexer(RegexLexer):
     """
-    For `Kotlin <http://confluence.jetbrains.net/display/Kotlin/>`_
+    For `Kotlin <http://kotlin.jetbrains.org/>`_
     source code.
 
-    Additional options accepted:
-
-    `unicodelevel`
-      Determines which Unicode characters this lexer allows for identifiers.
-      The possible values are:
-
-      * ``none`` -- only the ASCII letters and numbers are allowed. This
-        is the fastest selection.
-      * ``basic`` -- all Unicode characters from the specification except
-        category ``Lo`` are allowed.
-      * ``full`` -- all Unicode characters as specified in the C# specs
-        are allowed.  Note that this means a considerable slowdown since the
-        ``Lo`` category has more than 40,000 characters in it!
-
-      The default value is ``basic``.
-
-    *New in Pygments 1.5.*
+    .. versionadded:: 1.5
     """
 
     name = 'Kotlin'
     aliases = ['kotlin']
     filenames = ['*.kt']
-    mimetypes = ['text/x-kotlin'] # inferred
+    mimetypes = ['text/x-kotlin']
 
     flags = re.MULTILINE | re.DOTALL | re.UNICODE
 
-    # for the range of allowed unicode characters in identifiers,
-    # see http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf
+    kt_name = ('@?[_' + uni.Lu + uni.Ll + uni.Lt + uni.Lm + uni.Nl + ']' +
+               '[' + uni.Lu + uni.Ll + uni.Lt + uni.Lm + uni.Nl + uni.Nd +
+               uni.Pc + uni.Cf + uni.Mn + uni.Mc + ']*')
+    kt_id = '(' + kt_name + '|`' + kt_name + '`)'
 
-    levels = {
-        'none': '@?[_a-zA-Z][a-zA-Z0-9_]*',
-        'basic': ('@?[_' + uni.Lu + uni.Ll + uni.Lt + uni.Lm + uni.Nl + ']' +
-                  '[' + uni.Lu + uni.Ll + uni.Lt + uni.Lm + uni.Nl +
-                  uni.Nd + uni.Pc + uni.Cf + uni.Mn + uni.Mc + ']*'),
-        'full': ('@?(?:_|[^' +
-                 uni.allexcept('Lu', 'Ll', 'Lt', 'Lm', 'Lo', 'Nl') + '])'
-                 + '[^' + uni.allexcept('Lu', 'Ll', 'Lt', 'Lm', 'Lo', 'Nl',
-                                        'Nd', 'Pc', 'Cf', 'Mn', 'Mc') + ']*'),
+    tokens = {
+        'root': [
+            (r'^\s*\[.*?\]', Name.Attribute),
+            (r'[^\S\n]+', Text),
+            (r'\\\n', Text), # line continuation
+            (r'//.*?\n', Comment.Single),
+            (r'/[*].*?[*]/', Comment.Multiline),
+            (r'\n', Text),
+            (r'::|!!|\?[:.]', Operator),
+            (r'[~!%^&*()+=|\[\]:;,.<>/?-]', Punctuation),
+            (r'[{}]', Punctuation),
+            (r'@"(""|[^"])*"', String),
+            (r'"(\\\\|\\"|[^"\n])*["\n]', String),
+            (r"'\\.'|'[^\\]'", String.Char),
+            (r"[0-9](\.[0-9]*)?([eE][+-][0-9]+)?[flFL]?|"
+             r"0[xX][0-9a-fA-F]+[Ll]?", Number),
+            (r'(class)(\s+)(object)', bygroups(Keyword, Text, Keyword)),
+            (r'(class|trait|object)(\s+)', bygroups(Keyword, Text), 'class'),
+            (r'(package|import)(\s+)', bygroups(Keyword, Text), 'package'),
+            (r'(val|var)(\s+)', bygroups(Keyword, Text), 'property'),
+            (r'(fun)(\s+)', bygroups(Keyword, Text), 'function'),
+            (r'(abstract|annotation|as|break|by|catch|class|continue|do|else|'
+             r'enum|false|final|finally|for|fun|get|if|import|in|inner|'
+             r'internal|is|null|object|open|out|override|package|private|'
+             r'protected|public|reified|return|set|super|this|throw|trait|'
+             r'true|try|type|val|var|vararg|when|where|while|This)\b', Keyword),
+            (kt_id, Name),
+        ],
+        'package': [
+            (r'\S+', Name.Namespace, '#pop')
+        ],
+        'class': [
+            (kt_id, Name.Class, '#pop')
+        ],
+        'property': [
+            (kt_id, Name.Property, '#pop')
+        ],
+        'function': [
+            (kt_id, Name.Function, '#pop')
+        ],
     }
-
-    tokens = {}
-    token_variants = True
-
-    for levelname, cs_ident in levels.items():
-        tokens[levelname] = {
-            'root': [
-                # method names
-                (r'^([ \t]*(?:' + cs_ident + r'(?:\[\])?\s+)+?)' # return type
-                 r'(' + cs_ident + ')'                           # method name
-                 r'(\s*)(\()',                               # signature start
-                 bygroups(using(this), Name.Function, Text, Punctuation)),
-                (r'^\s*\[.*?\]', Name.Attribute),
-                (r'[^\S\n]+', Text),
-                (r'\\\n', Text), # line continuation
-                (r'//.*?\n', Comment.Single),
-                (r'/[*](.|\n)*?[*]/', Comment.Multiline),
-                (r'\n', Text),
-                (r'[~!%^&*()+=|\[\]:;,.<>/?-]', Punctuation),
-                (r'[{}]', Punctuation),
-                (r'@"(""|[^"])*"', String),
-                (r'"(\\\\|\\"|[^"\n])*["\n]', String),
-                (r"'\\.'|'[^\\]'", String.Char),
-                (r"[0-9](\.[0-9]*)?([eE][+-][0-9]+)?"
-                 r"[flFLdD]?|0[xX][0-9a-fA-F]+[Ll]?", Number),
-                (r'#[ \t]*(if|endif|else|elif|define|undef|'
-                 r'line|error|warning|region|endregion|pragma)\b.*?\n',
-                 Comment.Preproc),
-                (r'\b(extern)(\s+)(alias)\b', bygroups(Keyword, Text,
-                 Keyword)),
-                (r'(abstract|as|break|catch|'
-                 r'fun|continue|default|delegate|'
-                 r'do|else|enum|extern|false|finally|'
-                 r'fixed|for|goto|if|implicit|in|interface|'
-                 r'internal|is|lock|null|'
-                 r'out|override|private|protected|public|readonly|'
-                 r'ref|return|sealed|sizeof|'
-                 r'when|this|throw|true|try|typeof|'
-                 r'unchecked|unsafe|virtual|void|while|'
-                 r'get|set|new|partial|yield|val|var)\b', Keyword),
-                (r'(global)(::)', bygroups(Keyword, Punctuation)),
-                (r'(bool|byte|char|decimal|double|dynamic|float|int|long|'
-                 r'short)\b\??', Keyword.Type),
-                (r'(class|struct)(\s+)', bygroups(Keyword, Text), 'class'),
-                (r'(package|using)(\s+)', bygroups(Keyword, Text), 'package'),
-                (cs_ident, Name),
-            ],
-            'class': [
-                (cs_ident, Name.Class, '#pop')
-            ],
-            'package': [
-                (r'(?=\()', Text, '#pop'), # using (resource)
-                ('(' + cs_ident + r'|\.)+', Name.Namespace, '#pop')
-            ]
-        }
-
-    def __init__(self, **options):
-        level = get_choice_opt(options, 'unicodelevel', self.tokens.keys(),
-                               'basic')
-        if level not in self._all_tokens:
-            # compile the regexes now
-            self._tokens = self.__class__.process_tokendef(level)
-        else:
-            self._tokens = self._all_tokens[level]
-
-        RegexLexer.__init__(self, **options)
 
 
 class XtendLexer(RegexLexer):
     """
     For `Xtend <http://xtend-lang.org/>`_ source code.
 
-    *New in Pygments 1.6.*
+    .. versionadded:: 1.6
     """
 
     name = 'Xtend'
@@ -1100,7 +1057,7 @@ class XtendLexer(RegexLexer):
              'class'),
             (r'(import)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
             (r"(''')", String, 'template'),
-            (ur"(\u00BB)", String, 'template'),
+            (u'(\u00BB)', String, 'template'),
             (r'"(\\\\|\\"|[^"])*"', String),
             (r"'(\\\\|\\'|[^'])*'", String),
             (r'[a-zA-Z_][a-zA-Z0-9_]*:', Name.Label),
@@ -1119,7 +1076,73 @@ class XtendLexer(RegexLexer):
         ],
         'template': [
             (r"'''", String, '#pop'),
-            (ur"\u00AB", String, '#pop'),
+            (u'\u00AB', String, '#pop'),
             (r'.', String)
+        ],
+    }
+
+class PigLexer(RegexLexer):
+    """
+    For `Pig Latin <https://pig.apache.org/>`_ source code.
+
+    .. versionadded:: 2.0
+    """
+
+    name = 'Pig'
+    aliases = ['pig']
+    filenames = ['*.pig']
+    mimetypes = ['text/x-pig']
+
+    flags = re.MULTILINE | re.IGNORECASE
+
+    tokens = {
+        'root': [
+            (r'\s+', Text),
+            (r'--.*', Comment),
+            (r'/\*[\w\W]*?\*/', Comment.Multiline),
+            (r'\\\n', Text),
+            (r'\\', Text),
+            (r'\'(?:\\[ntbrf\\\']|\\u[0-9a-f]{4}|[^\'\\\n\r])*\'', String),
+            include('keywords'),
+            include('types'),
+            include('builtins'),
+            include('punct'),
+            include('operators'),
+            (r'[0-9]*\.[0-9]+([eE][0-9]+)?[fd]?', Number.Float),
+            (r'0x[0-9a-f]+', Number.Hex),
+            (r'[0-9]+L?', Number.Integer),
+            (r'\n', Text),
+            (r'([a-z_][a-z0-9_]*)(\s*)(\()',
+             bygroups(Name.Function, Text, Punctuation)),
+            (r'[()#:]', Text),
+            (r'[^(:#\'\")\s]+', Text),
+            (r'\S+\s+', Text) # TODO: make tests pass without \s+
+        ],
+        'keywords': [
+            (r'(assert|and|any|all|arrange|as|asc|bag|by|cache|CASE|cat|cd|cp|'
+             r'%declare|%default|define|dense|desc|describe|distinct|du|dump|'
+             r'eval|exex|explain|filter|flatten|foreach|full|generate|group|'
+             r'help|if|illustrate|import|inner|input|into|is|join|kill|left|'
+             r'limit|load|ls|map|matches|mkdir|mv|not|null|onschema|or|order|'
+             r'outer|output|parallel|pig|pwd|quit|register|returns|right|rm|'
+             r'rmf|rollup|run|sample|set|ship|split|stderr|stdin|stdout|store|'
+             r'stream|through|union|using|void)\b', Keyword)
+        ],
+        'builtins': [
+            (r'(AVG|BinStorage|cogroup|CONCAT|copyFromLocal|copyToLocal|COUNT|'
+             r'cross|DIFF|MAX|MIN|PigDump|PigStorage|SIZE|SUM|TextLoader|'
+             r'TOKENIZE)\b', Name.Builtin)
+        ],
+        'types': [
+            (r'(bytearray|BIGINTEGER|BIGDECIMAL|chararray|datetime|double|float|'
+             r'int|long|tuple)\b', Keyword.Type)
+        ],
+        'punct': [
+            (r'[;(){}\[\]]', Punctuation),
+        ],
+        'operators': [
+            (r'[#=,./%+\-?]', Operator),
+            (r'(eq|gt|lt|gte|lte|neq|matches)\b', Operator),
+            (r'(==|<=|<|>=|>|!=)', Operator),
         ],
     }
