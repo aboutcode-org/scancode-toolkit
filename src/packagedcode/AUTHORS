@@ -73,8 +73,9 @@ Other contributors, listed alphabetically, are:
 * Brian R. Jackson -- Tea lexer
 * Christian Jann -- ShellSession lexer
 * Dennis Kaarsemaker -- sources.list lexer
-* Alexander Kit -- MaskJS lexer
+* Dmitri Kabak - Inferno Limbo lexer
 * Igor Kalnitsky -- vhdl lexer
+* Alexander Kit -- MaskJS lexer
 * Pekka Klärck -- Robot Framework lexer
 * Eric Knibbe -- Lasso lexer
 * Stepan Koltsov -- Clay lexer
