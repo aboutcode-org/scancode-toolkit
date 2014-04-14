@@ -16,6 +16,7 @@ Other contributors, listed alphabetically, are:
 * Stefan Matthias Aust -- Smalltalk lexer
 * Ben Bangert -- Mako lexers
 * Max Battcher -- Darcs patch lexer
+* Thomas Baruchel -- APL lexer
 * Tim Baumann -- (Literate) Agda lexer
 * Paul Baumgart, 280 North, Inc. -- Objective-J lexer
 * Michael Bayer -- Myghty lexers
@@ -64,6 +65,7 @@ Other contributors, listed alphabetically, are:
 * Rob Hoelz -- Perl 6 lexer
 * Doug Hogan -- Mscgen lexer
 * Ben Hollis -- Mason lexer
+* Max Horn -- GAP lexer
 * Dustin Howett -- Logos lexer
 * Alastair Houghton -- Lexer inheritance facility
 * Tim Howard -- BlitzMax lexer
