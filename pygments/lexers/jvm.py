@@ -819,7 +819,7 @@ class ClojureScriptLexer(ClojureLexer):
     Lexer for `ClojureScript <http://clojure.org/clojurescript>`_
     source code.
 
-    *New in Pygments 1.7.*
+    .. versionadded:: 2.0
     """
     name = 'ClojureScript'
     aliases = ['clojurescript', 'cljs']
