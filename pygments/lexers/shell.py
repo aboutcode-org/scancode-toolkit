@@ -91,6 +91,7 @@ class BashLexer(RegexLexer):
         'math': [
             (r'\)\)', Keyword, '#pop'),
             (r'[-+*/%^|&]|\*\*|\|\|', Operator),
+            (r'\d+#(?! )', Number),
             (r'\d+', Number),
             include('root'),
         ],
