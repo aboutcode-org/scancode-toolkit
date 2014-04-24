@@ -157,6 +157,7 @@ Other contributors, listed alphabetically, are:
 * Pepijn de Vos -- HTML formatter CTags support
 * Whitney Young -- ObjectiveC lexer
 * Matthias Vallentin -- Bro lexer
+* Linh Vu Hong -- RSL lexer
 * Nathan Weizenbaum -- Haml and Sass lexers
 * Dietmar Winkler -- Modelica lexer
 * Nils Winter -- Smalltalk lexer
