@@ -83,6 +83,7 @@ File NomosTestfiles/Apache/Subject.java contains license(s) Apache-2.0
 File NomosTestfiles/Apache/Apache-v1.1 contains license(s) Apache-1.1
 File NomosTestfiles/Apache/DomainList.java contains license(s) Apache-2.0
 File NomosTestfiles/Apache/x.txt contains license(s) Apache-2.0
+File NomosTestfiles/Apache/license.txt contains license(s) Apache-2.0,LGPL-2.0
 File NomosTestfiles/Oracle-Berkeley-DB/Oracle-Berkeley-DB.java contains license(s) Oracle-Berkeley-DB
 File NomosTestfiles/Naumen/Naumen.txt contains license(s) Naumen
 File NomosTestfiles/HPND/HPND.txt contains license(s) HPND

@@ -1,0 +1,74 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Jetty
+Upstream-Contact: Mortbay Consulting
+Source: http://jetty.mortbay.com/
+
+Files: *
+Copyright: 2004-2009, Mortbay Consulting
+License: Apache-2.0
+
+Files: contrib/jboss/src/main/java/org/jboss/jetty/JettyDeployer.java
+Copyright: 2006, Mort Bay Consulting Pty. Ltd.
+License: LGPL-2
+
+Files: contrib/jetty-ant/src/main/java/org/mortbay/jetty/ant/*
+Copyright: 2006-2007, Sabre Holdings
+License: Apache-2.0
+
+Files: examples/test-webapp/src/main/webapp/WEB-INF/tags/panel.tag
+Copyright: 2002, The Apache Software Foundation
+License: Apache-2.0
+
+Files: examples/test-webapp/src/test/java/com/acme/DispatchServletTest.java
+Copyright: 2009, Webtide LLC
+License: Apache-2.0
+
+Files: extras/xbean/*
+Copyright: 2005-2006, The Apache Software Foundation
+License: Apache-2.0
+
+Files: extras/gwt/src/main/java/org/mortbay/gwt/AsyncRemoteServiceServlet.java
+extras/gwt/src/main/java/com/google/gwt/user/server/rpc/OpenRemoteServiceServlet.java
+Copyright: 2006, Google Inc
+2006, Craig Day
+License: Apache-2.0
+
+Files: modules/jetty/src/main/java/org/mortbay/jetty/security/UnixCrypt.java
+Copyright: 1996, Aki Yoshida,
+2001, Iris Van den Broeke, Daniel Deville.
+License: other
+Permission to use, copy, modify and distribute this software
+for non-commercial or commercial purposes and without fee is
+hereby granted provided that this copyright notice appears in
+all copies.
+
+Files: modules/jetty/src/test/java/org/mortbay/jetty/servlet/SessionManagerTest.java
+modules/util/src/main/java/org/mortbay/servlet/ThrottlingFilter.java
+Copyright: 2006, Tim Vernum
+License: Apache-2.0
+
+Files: modules/jetty/src/main/java/org/mortbay/jetty/security/PKCS12Import.java
+Copyright: 1999, Jason Gilbert
+License: Apache-2.0
+
+Files: modules/jetty/src/main/java/org/mortbay/jetty/security/HTAccessHandler.java
+Copyright: 2001, Deville Daniel
+License: other
+Permission to use, copy, modify and distribute this software
+for non-commercial or commercial purposes and without fee is
+hereby granted provided that this copyright notice appears in
+all copies.
+
+Files: debian/*
+Copyright: 2003, Philipp Meier
+2009, Ludovic Claude
+2009, David Yu
+License: Apache-2.0
+
+License: Apache-2.0
+On Debian GNU/Linux system you can find the complete text of the
+Apache 2.0 license in '/usr/share/common-licenses/Apache-2.0'.
+
+License: LGPL-2
+On Debian GNU/Linux system you can find the complete text of the
+LGPL 2 license in '/usr/share/common-licenses/LGPL-2'.
