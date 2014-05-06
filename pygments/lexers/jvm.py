@@ -1263,6 +1263,8 @@ class GoloLexer(RegexLexer):
 class JasminLexer(RegexLexer):
     """
     For `Jasmin <http://jasmin.sourceforge.net/>`_ assembly code.
+
+    .. versionadded:: 2.0
     """
 
     name = 'Jasmin'
@@ -1288,7 +1290,7 @@ class JasminLexer(RegexLexer):
             (r'(\$[-+])?0x-?[\da-fA-F]+%s' % _break, Number.Hex),
             (r'(\$[-+]|\+)?-?\d+%s' % _break, Number.Integer),
             (r'-?(\d+\.\d*|\.\d+)([eE][-+]?\d+)?[fFdD]?'
-             u'[\x00-\x08\x0b\x0c\x0e-\x1f]*%s' % _break, Number.Float),
+             r'[\x00-\x08\x0b\x0c\x0e-\x1f]*%s' % _break, Number.Float),
             (r'\$%s' % _name, Name.Variable),
 
             # Directives
