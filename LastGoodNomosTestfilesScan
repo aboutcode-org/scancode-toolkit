@@ -184,6 +184,7 @@ File NomosTestfiles/Intel/Intel-software-license-emgd-1.16 contains license(s) I
 File NomosTestfiles/Intel/intel-536EP.install contains license(s) Intel-other
 File NomosTestfiles/Intel/INTEL-LICENSE.txt contains license(s) BSD-3-Clause,Intel
 File NomosTestfiles/Intel/intel-wlan-license.txt contains license(s) Intel-WLAN
+File NomosTestfiles/Intel/README.ipw3945 contains license(s) BSD-3-Clause,GPL-2.0,Intel-WLAN
 File NomosTestfiles/Python/hashlib.py contains license(s) Python
 File NomosTestfiles/Python/Python-2.0.txt contains license(s) Python-2.0
 File NomosTestfiles/Python/crtlicense.txt contains license(s) Microsoft,Python
@@ -602,7 +603,6 @@ File NomosTestfiles/UnclassifiedLicense/license.all.html.in contains license(s) 
 File NomosTestfiles/UnclassifiedLicense/LICENSE.fatfs contains license(s) Non-profit!,UnclassifiedLicense
 File NomosTestfiles/UnclassifiedLicense/eula.txt contains license(s) Citrix
 File NomosTestfiles/UnclassifiedLicense/net_phy_def.h contains license(s) UnclassifiedLicense
-File NomosTestfiles/UnclassifiedLicense/Open-CASCADE-Technology-Public-License-6.3 contains license(s) OCCT
 File NomosTestfiles/MX4J/MX4J-1.0 contains license(s) MX4J-1.0
 File NomosTestfiles/Postfix/master_spawn.c contains license(s) Postfix
 File NomosTestfiles/Princeton/adj.dat contains license(s) Princeton
@@ -616,5 +616,7 @@ File NomosTestfiles/ClearSilver/csparse.c contains license(s) ClearSilver
 File NomosTestfiles/ACE/ACE-copying.html contains license(s) ACE
 File NomosTestfiles/FACE/face_license.txt contains license(s) FaCE
 File NomosTestfiles/Tapjoy/Tapjoy.txt contains license(s) Tapjoy
-File NomosTestfiles/OCCT/LICENSE contains license(s) OCCT
-File NomosTestfiles/OCCT/ShapeBuild_ReShape.ixx contains license(s) OCCT
+File NomosTestfiles/OCCT/LICENSE contains license(s) OpenCASCADE-PL
+File NomosTestfiles/OCCT/ShapeBuild_ReShape.ixx contains license(s) OpenCASCADE-PL
+File NomosTestfiles/AML/AML.txt contains license(s) AML
+File NomosTestfiles/OCCT/Open-CASCADE-Technology-Public-License-6.3 contains license(s) OpenCASCADE-PL
