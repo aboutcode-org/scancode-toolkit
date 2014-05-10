@@ -1506,3 +1506,5 @@ class JasminLexer(RegexLexer):
         ]
     }
 
+    def analyse_text(text):
+        return bool(re.search(r'^\s*\.class\s', text, re.MULTILINE))
