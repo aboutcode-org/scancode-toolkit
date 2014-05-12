@@ -1175,8 +1175,8 @@ class GoloLexer(RegexLexer):
             (r'(module|import)(\s+)',
                 bygroups(Keyword.Namespace, Text),
                 'modname'),
-            (r'\b([a-zA-Z_][a-z$A-Z0-9._]*)(::)',  bygroups(Name.Namespace, Punctuation)),
-            (r'\b([a-zA-Z_][a-z$A-Z0-9_]*(?:\.[a-zA-Z_][a-z$A-Z0-9_]*)+)\b', Name.Namespace),
+            (r'\b([a-zA-Z_][\w$.]*)(::)',  bygroups(Name.Namespace, Punctuation)),
+            (r'\b([a-zA-Z_][\w$]*(?:\.[a-zA-Z_][\w$]*)+)\b', Name.Namespace),
 
             (r'(let|var)(\s+)',
                 bygroups(Keyword.Declaration, Text),
@@ -1201,7 +1201,7 @@ class GoloLexer(RegexLexer):
                 bygroups(Name.Builtin, Punctuation)),
             (r'(print|println|readln|raise|fun'
              r'|asInterfaceInstance)\b', Name.Builtin),
-            (r'(`?[a-zA-Z_][a-z$A-Z0-9_]*)(\()',
+            (r'(`?[a-zA-Z_][\w$]*)(\()',
                 bygroups(Name.Function, Punctuation)),
 
             (r'-?[\d_]*\.[\d_]*([eE][+-]?\d[\d_]*)?F?', Number.Float),
@@ -1210,7 +1210,7 @@ class GoloLexer(RegexLexer):
             (r'-?\d[\d_]*L', Number.Integer.Long),
             (r'-?\d[\d_]*', Number.Integer),
 
-            ('`?[a-zA-Z_][a-z$A-Z0-9_]*', Name),
+            ('`?[a-zA-Z_][\w$]*', Name),
 
             (r'"""', String, combined('stringescape', 'triplestring')),
             (r'"', String, combined('stringescape', 'doublestring')),
@@ -1220,16 +1220,16 @@ class GoloLexer(RegexLexer):
         ],
 
         'funcname': [
-            (r'`?[a-zA-Z_][a-z$A-Z0-9_]*', Name.Function, '#pop'),
+            (r'`?[a-zA-Z_][\w$]*', Name.Function, '#pop'),
         ],
         'modname': [
-            (r'[a-zA-Z_][a-z$A-Z0-9._]*\*?', Name.Namespace, '#pop')
+            (r'[a-zA-Z_][\w$.]*\*?', Name.Namespace, '#pop')
         ],
         'structname': [
-            (r'`?[a-zA-Z0-9_.]+\*?', Name.Class, '#pop')
+            (r'`?[\w.]+\*?', Name.Class, '#pop')
         ],
         'varname': [
-            (r'`?[a-zA-Z_][a-z$A-Z0-9_]*', Name.Variable, '#pop'),
+            (r'`?[a-zA-Z_][\w$]*', Name.Variable, '#pop'),
         ],
         'string': [
             (r'[^\\\'"\n]+', String),
