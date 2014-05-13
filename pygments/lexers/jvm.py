@@ -42,9 +42,9 @@ class JavaLexer(RegexLexer):
             (r'//.*?\n', Comment.Single),
             (r'/\*.*?\*/', Comment.Multiline),
             # method names
-            (r'((?:[^\W\d][\w\.\[\]<>]*\s+)+?)' # return arguments
-             r'([^\W\d]\w*)'                        # method name
-             r'(\s*)(\()',                          # signature start
+            (r'((?:(?:[^\W\d]|\$)[\w\.\[\]\$<>]*\s+)+?)' # return arguments
+             r'((?:[^\W\d]|\$)[\w\$]*)'                  # method name
+             r'(\s*)(\()',                               # signature start
              bygroups(using(this), Name.Function, Text, Operator)),
             (r'@[^\W\d][\w\.]*', Name.Decorator),
             (r'(assert|break|case|catch|continue|default|do|else|finally|for|'
@@ -61,8 +61,8 @@ class JavaLexer(RegexLexer):
             (r'(import)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
             (r'"(\\\\|\\"|[^"])*"', String),
             (r"'\\.'|'[^\\]'|'\\u[0-9a-fA-F]{4}'", String.Char),
-            (r'(\.)([^\W\d]\w*)', bygroups(Operator, Name.Attribute)),
-            (r'[^\W\d]\w*:', Name.Label),
+            (r'(\.)((?:[^\W\d]|\$)[\w\$]*)', bygroups(Operator, Name.Attribute)),
+            (r'([^\W\d]|\$)[\w\$]*:', Name.Label),
             (r'([^\W\d]|\$)[\w\$]*', Name),
             (r'[~\^\*!%&\[\]\(\)\{\}<>\|+=:;,./?-]', Operator),
             (r'[0-9][0-9]*\.[0-9]+([eE][0-9]+)?[fd]?', Number.Float),
@@ -71,7 +71,7 @@ class JavaLexer(RegexLexer):
             (r'\n', Text)
         ],
         'class': [
-            (r'[^\W\d]\w*', Name.Class, '#pop')
+            (r'([^\W\d]|\$)[\w\$]*', Name.Class, '#pop')
         ],
         'import': [
             (r'[\w.]+\*?', Name.Namespace, '#pop')
