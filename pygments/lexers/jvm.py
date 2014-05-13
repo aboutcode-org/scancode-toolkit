@@ -41,6 +41,11 @@ class JavaLexer(RegexLexer):
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
             (r'/\*.*?\*/', Comment.Multiline),
+            # method names
+            (r'((?:[^\W\d][\w\.\[\]<>]*\s+)+?)' # return arguments
+             r'([^\W\d]\w*)'                        # method name
+             r'(\s*)(\()',                          # signature start
+             bygroups(using(this), Name.Function, Text, Operator)),
             (r'@[^\W\d][\w\.]*', Name.Decorator),
             (r'(assert|break|case|catch|continue|default|do|else|finally|for|'
              r'if|goto|instanceof|new|return|switch|this|throw|try|while)\b',
@@ -50,11 +55,6 @@ class JavaLexer(RegexLexer):
              r'transient|volatile)\b', Keyword.Declaration),
             (r'(boolean|byte|char|double|float|int|long|short|void)\b',
              Keyword.Type),
-            # method names
-            (r'^(\s*(?:[^\W\d][\w\.\[\]<>]*\s+)+?)' # return arguments
-             r'([^\W\d]\w*)'                        # method name
-             r'(\s*)(\()',                          # signature start
-             bygroups(using(this), Name.Function, Text, Operator)),
             (r'(package)(\s+)', bygroups(Keyword.Namespace, Text)),
             (r'(true|false|null)\b', Keyword.Constant),
             (r'(class|interface)(\s+)', bygroups(Keyword.Declaration, Text), 'class'),
