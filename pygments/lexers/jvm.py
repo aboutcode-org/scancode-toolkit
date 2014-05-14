@@ -1507,12 +1507,13 @@ class JasminLexer(RegexLexer):
     }
 
     def analyse_text(text):
-        if not re.search(r'^\s*\.class\s', text, re.MULTILINE):
-            return 0
+        score = 0
+        if re.search(r'^\s*\.class\s', text, re.MULTILINE):
+            score += 0.5
+            if re.search(r'^\s*[a-z]+_[a-z]+\b', text, re.MULTILINE):
+                score += 0.3
         if re.search(r'^\s*\.(attribute|bytecode|debug|deprecated|enclosing|'
                      r'inner|interface|limit|set|signature|stack)\b', text,
                      re.MULTILINE):
-            return 1
-        if re.search(r'^\s*[a-z]+_[a-z]+\b', text, re.MULTILINE):
-            return 0.8
-        return 0.5
+            score += 0.6
+        return score
