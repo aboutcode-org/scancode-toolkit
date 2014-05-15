@@ -79,7 +79,7 @@ class BashLexer(RegexLexer):
         'curly': [
             (r'}', Keyword, '#pop'),
             (r':-', Keyword),
-            (r'[a-zA-Z0-9_]+', Name.Variable),
+            (r'\w+', Name.Variable),
             (r'[^}:"\'`$]+', Punctuation),
             (r':', Punctuation),
             include('root'),
@@ -314,7 +314,7 @@ class TcshLexer(RegexLexer):
         'curly': [
             (r'}', Keyword, '#pop'),
             (r':-', Keyword),
-            (r'[a-zA-Z0-9_]+', Name.Variable),
+            (r'\w+', Name.Variable),
             (r'[^}:"\'`$]+', Punctuation),
             (r':', Punctuation),
             include('root'),
