@@ -1112,7 +1112,7 @@ class PigLexer(RegexLexer):
             (r'0x[0-9a-f]+', Number.Hex),
             (r'[0-9]+L?', Number.Integer),
             (r'\n', Text),
-            (r'([a-z_][a-z0-9_]*)(\s*)(\()',
+            (r'([a-z_]\w*)(\s*)(\()',
              bygroups(Name.Function, Text, Punctuation)),
             (r'[()#:]', Text),
             (r'[^(:#\'\")\s]+', Text),
