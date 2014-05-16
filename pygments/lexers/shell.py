@@ -390,13 +390,13 @@ class PowerShellLexer(RegexLexer):
             (r'`[\'"$@-]', Punctuation),
             (r'"', String.Double, 'string'),
             (r"'([^']|'')*'", String.Single),
-            (r'(\$|@@|@)((global|script|private|env):)?[a-z0-9_]+',
+            (r'(\$|@@|@)((global|script|private|env):)?\w+',
              Name.Variable),
             (r'(%s)\b' % '|'.join(keywords), Keyword),
             (r'-(%s)\b' % '|'.join(operators), Operator),
-            (r'(%s)-[a-z_][a-z0-9_]*\b' % '|'.join(verbs), Name.Builtin),
-            (r'\[[a-z_\[][a-z0-9_. `,\[\]]*\]', Name.Constant),  # .net [type]s
-            (r'-[a-z_][a-z0-9_]*', Name),
+            (r'(%s)-[a-z_]\w*\b' % '|'.join(verbs), Name.Builtin),
+            (r'\[[a-z_\[][\w. `,\[\]]*\]', Name.Constant),  # .net [type]s
+            (r'-[a-z_]\w*', Name),
             (r'\w+', Name),
             (r'[.,;@{}\[\]$()=+*/\\&%!~?^`|<>-]|::', Punctuation),
         ],
