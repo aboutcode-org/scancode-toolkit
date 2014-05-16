@@ -41,7 +41,7 @@ class JavaLexer(RegexLexer):
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
             (r'/\*.*?\*/', Comment.Multiline),
-            (r'@[a-zA-Z_][a-zA-Z0-9_\.]*', Name.Decorator),
+            (r'@[a-zA-Z_][\w\.]*', Name.Decorator),
             (r'(assert|break|case|catch|continue|default|do|else|finally|for|'
              r'if|goto|instanceof|new|return|switch|this|throw|try|while)\b',
              Keyword),
@@ -51,9 +51,9 @@ class JavaLexer(RegexLexer):
             (r'(boolean|byte|char|double|float|int|long|short|void)\b',
              Keyword.Type),
             # method names
-            (r'^(\s*(?:[a-zA-Z_][a-zA-Z0-9_\.\[\]<>]*\s+)+?)' # return arguments
-             r'([a-zA-Z_][a-zA-Z0-9_]*)'                      # method name
-             r'(\s*)(\()',                                    # signature start
+            (r'^(\s*(?:[a-zA-Z_][\w\.\[\]<>]*\s+)+?)' # return arguments
+             r'([a-zA-Z_]\w*)'                        # method name
+             r'(\s*)(\()',                            # signature start
              bygroups(using(this), Name.Function, Text, Operator)),
             (r'(package)(\s+)', bygroups(Keyword.Namespace, Text)),
             (r'(true|false|null)\b', Keyword.Constant),
@@ -61,9 +61,9 @@ class JavaLexer(RegexLexer):
             (r'(import)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
             (r'"(\\\\|\\"|[^"])*"', String),
             (r"'\\.'|'[^\\]'|'\\u[0-9a-fA-F]{4}'", String.Char),
-            (r'(\.)([a-zA-Z_][a-zA-Z0-9_]*)', bygroups(Operator, Name.Attribute)),
-            (r'[a-zA-Z_][a-zA-Z0-9_]*:', Name.Label),
-            (r'[a-zA-Z_\$][a-zA-Z0-9_]*', Name),
+            (r'(\.)([a-zA-Z_]\w*)', bygroups(Operator, Name.Attribute)),
+            (r'[a-zA-Z_]\w*:', Name.Label),
+            (r'[a-zA-Z_\$]\w*', Name),
             (r'[~\^\*!%&\[\]\(\)\{\}<>\|+=:;,./?-]', Operator),
             (r'[0-9][0-9]*\.[0-9]+([eE][0-9]+)?[fd]?', Number.Float),
             (r'0x[0-9a-fA-F]+', Number.Hex),
@@ -71,10 +71,10 @@ class JavaLexer(RegexLexer):
             (r'\n', Text)
         ],
         'class': [
-            (r'[a-zA-Z_][a-zA-Z0-9_]*', Name.Class, '#pop')
+            (r'[a-zA-Z_]\w*', Name.Class, '#pop')
         ],
         'import': [
-            (r'[a-zA-Z0-9_.]+\*?', Name.Namespace, '#pop')
+            (r'[\w.]+\*?', Name.Namespace, '#pop')
         ],
     }
 
@@ -340,14 +340,14 @@ class GosuLexer(RegexLexer):
     tokens = {
         'root': [
             # method names
-            (r'^(\s*(?:[a-zA-Z_][a-zA-Z0-9_\.\[\]]*\s+)+?)' # modifiers etc.
-             r'([a-zA-Z_][a-zA-Z0-9_]*)'                    # method name
-             r'(\s*)(\()',                                  # signature start
+            (r'^(\s*(?:[a-zA-Z_][\w\.\[\]]*\s+)+?)' # modifiers etc.
+             r'([a-zA-Z_]\w*)'                      # method name
+             r'(\s*)(\()',                          # signature start
              bygroups(using(this), Name.Function, Text, Operator)),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
             (r'/\*.*?\*/', Comment.Multiline),
-            (r'@[a-zA-Z_][a-zA-Z0-9_\.]*', Name.Decorator),
+            (r'@[a-zA-Z_][\w\.]*', Name.Decorator),
             (r'(in|as|typeof|statictypeof|typeis|typeas|if|else|foreach|for|'
              r'index|while|do|continue|break|return|try|catch|finally|this|'
              r'throw|new|switch|case|default|eval|super|outer|classpath|'
@@ -360,16 +360,16 @@ class GosuLexer(RegexLexer):
              Keyword.Type),
             (r'(package)(\s+)', bygroups(Keyword.Namespace, Text)),
             (r'(true|false|null|NaN|Infinity)\b', Keyword.Constant),
-            (r'(class|interface|enhancement|enum)(\s+)([a-zA-Z_][a-zA-Z0-9_]*)',
+            (r'(class|interface|enhancement|enum)(\s+)([a-zA-Z_]\w*)',
              bygroups(Keyword.Declaration, Text, Name.Class)),
-            (r'(uses)(\s+)([a-zA-Z0-9_.]+\*?)',
+            (r'(uses)(\s+)([\w.]+\*?)',
              bygroups(Keyword.Namespace, Text, Name.Namespace)),
             (r'"', String, 'string'),
-            (r'(\??[\.#])([a-zA-Z_][a-zA-Z0-9_]*)',
+            (r'(\??[\.#])([a-zA-Z_]\w*)',
              bygroups(Operator, Name.Attribute)),
-            (r'(:)([a-zA-Z_][a-zA-Z0-9_]*)',
+            (r'(:)([a-zA-Z_]\w*)',
              bygroups(Operator, Name.Attribute)),
-            (r'[a-zA-Z_\$][a-zA-Z0-9_]*', Name),
+            (r'[a-zA-Z_\$]\w*', Name),
             (r'and|or|not|[\\~\^\*!%&\[\]\(\)\{\}<>\|+=:;,./?-]', Operator),
             (r'[0-9][0-9]*\.[0-9]+([eE][0-9]+)?[fd]?', Number.Float),
             (r'[0-9]+', Number.Integer),
@@ -438,14 +438,14 @@ class GroovyLexer(RegexLexer):
     tokens = {
         'root': [
             # method names
-            (r'^(\s*(?:[a-zA-Z_][a-zA-Z0-9_\.\[\]]*\s+)+?)' # return arguments
-             r'([a-zA-Z_][a-zA-Z0-9_]*)'                    # method name
-             r'(\s*)(\()',                                  # signature start
+            (r'^(\s*(?:[a-zA-Z_][\w\.\[\]]*\s+)+?)' # return arguments
+             r'([a-zA-Z_]\w*)'                      # method name
+             r'(\s*)(\()',                          # signature start
              bygroups(using(this), Name.Function, Text, Operator)),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
             (r'/\*.*?\*/', Comment.Multiline),
-            (r'@[a-zA-Z_][a-zA-Z0-9_\.]*', Name.Decorator),
+            (r'@[a-zA-Z_][\w\.]*', Name.Decorator),
             (r'(assert|break|case|catch|continue|default|do|else|finally|for|'
              r'if|goto|instanceof|new|return|switch|this|throw|try|while|in|as)\b',
              Keyword),
@@ -464,9 +464,9 @@ class GroovyLexer(RegexLexer):
             (r'\$/((?!/\$).)*/\$', String),
             (r'/(\\\\|\\"|[^/])*/', String),
             (r"'\\.'|'[^\\]'|'\\u[0-9a-fA-F]{4}'", String.Char),
-            (r'(\.)([a-zA-Z_][a-zA-Z0-9_]*)', bygroups(Operator, Name.Attribute)),
-            (r'[a-zA-Z_][a-zA-Z0-9_]*:', Name.Label),
-            (r'[a-zA-Z_\$][a-zA-Z0-9_]*', Name),
+            (r'(\.)([a-zA-Z_]\w*)', bygroups(Operator, Name.Attribute)),
+            (r'[a-zA-Z_]\w*:', Name.Label),
+            (r'[a-zA-Z_\$]\w*', Name),
             (r'[~\^\*!%&\[\]\(\)\{\}<>\|+=:;,./?-]', Operator),
             (r'[0-9][0-9]*\.[0-9]+([eE][0-9]+)?[fd]?', Number.Float),
             (r'0x[0-9a-fA-F]+', Number.Hex),
@@ -474,10 +474,10 @@ class GroovyLexer(RegexLexer):
             (r'\n', Text)
         ],
         'class': [
-            (r'[a-zA-Z_][a-zA-Z0-9_]*', Name.Class, '#pop')
+            (r'[a-zA-Z_]\w*', Name.Class, '#pop')
         ],
         'import': [
-            (r'[a-zA-Z0-9_.]+\*?', Name.Namespace, '#pop')
+            (r'[\w.]+\*?', Name.Namespace, '#pop')
         ],
     }
 
@@ -550,8 +550,8 @@ class IokeLexer(RegexLexer):
             (r'#r\[', String.Regex, 'squareRegexp'),
 
             #Symbols
-            (r':[a-zA-Z0-9_!:?]+', String.Symbol),
-            (r'[a-zA-Z0-9_!:?]+:(?![a-zA-Z0-9_!?])', String.Other),
+            (r':[\w!:?]+', String.Symbol),
+            (r'[\w!:?]+:(?![\w!?])', String.Other),
             (r':"(\\\\|\\"|[^"])*"', String.Symbol),
 
             #Documentation
@@ -564,10 +564,10 @@ class IokeLexer(RegexLexer):
             (r'#\[', String, 'squareText'),
 
             #Mimic
-            (r'[a-zA-Z0-9_][a-zA-Z0-9!?_:]+(?=\s*=.*mimic\s)', Name.Entity),
+            (r'\w[a-zA-Z0-9!?_:]+(?=\s*=.*mimic\s)', Name.Entity),
 
             #Assignment
-            (r'[a-zA-Z_][a-zA-Z0-9_!:?]*(?=[\s]*[+*/-]?=[^=].*($|\.))',
+            (r'[a-zA-Z_][\w!:?]*(?=[\s]*[+*/-]?=[^=].*($|\.))',
              Name.Variable),
 
             # keywords
@@ -658,17 +658,17 @@ class IokeLexer(RegexLexer):
              r'\+>|!>|<>|&>|%>|#>|\@>|\/>|\*>|\?>|\|>|\^>|~>|\$>|<\->|\->|'
              r'<<|>>|\*\*|\?\||\?&|\|\||>|<|\*|\/|%|\+|\-|&|\^|\||=|\$|!|~|'
              u'\\?|#|\u2260|\u2218|\u2208|\u2209)', Operator),
-            (r'(and|nand|or|xor|nor|return|import)(?![a-zA-Z0-9_!?])',
+            (r'(and|nand|or|xor|nor|return|import)(?![\w!?])',
              Operator),
 
             # Punctuation
             (r'(\`\`|\`|\'\'|\'|\.|\,|@@|@|\[|\]|\(|\)|{|})', Punctuation),
 
             #kinds
-            (r'[A-Z][a-zA-Z0-9_!:?]*', Name.Class),
+            (r'[A-Z][\w!:?]*', Name.Class),
 
             #default cellnames
-            (r'[a-z_][a-zA-Z0-9_!:?]*', Name)
+            (r'[a-z_][\w!:?]*', Name)
         ]
     }
 
@@ -840,14 +840,14 @@ class TeaLangLexer(RegexLexer):
     tokens = {
         'root': [
             # method names
-            (r'^(\s*(?:[a-zA-Z_][a-zA-Z0-9_\.\[\]]*\s+)+?)' # return arguments
-             r'([a-zA-Z_][a-zA-Z0-9_]*)'                    # method name
-             r'(\s*)(\()',                                  # signature start
+            (r'^(\s*(?:[a-zA-Z_][\w\.\[\]]*\s+)+?)' # return arguments
+             r'([a-zA-Z_]\w*)'                      # method name
+             r'(\s*)(\()',                          # signature start
              bygroups(using(this), Name.Function, Text, Operator)),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
             (r'/\*.*?\*/', Comment.Multiline),
-            (r'@[a-zA-Z_][a-zA-Z0-9_\.]*', Name.Decorator),
+            (r'@[a-zA-Z_][\w\.]*', Name.Decorator),
             (r'(and|break|else|foreach|if|in|not|or|reverse)\b',
              Keyword),
             (r'(as|call|define)\b', Keyword.Declaration),
@@ -856,9 +856,9 @@ class TeaLangLexer(RegexLexer):
             (r'(import)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
             (r'"(\\\\|\\"|[^"])*"', String),
             (r'\'(\\\\|\\\'|[^\'])*\'', String),
-            (r'(\.)([a-zA-Z_][a-zA-Z0-9_]*)', bygroups(Operator, Name.Attribute)),
-            (r'[a-zA-Z_][a-zA-Z0-9_]*:', Name.Label),
-            (r'[a-zA-Z_\$][a-zA-Z0-9_]*', Name),
+            (r'(\.)([a-zA-Z_]\w*)', bygroups(Operator, Name.Attribute)),
+            (r'[a-zA-Z_]\w*:', Name.Label),
+            (r'[a-zA-Z_\$]\w*', Name),
             (r'(isa|[.]{3}|[.]{2}|[=#!<>+-/%&;,.\*\\\(\)\[\]\{\}])', Operator),
             (r'[0-9][0-9]*\.[0-9]+([eE][0-9]+)?[fd]?', Number.Float),
             (r'0x[0-9a-fA-F]+', Number.Hex),
@@ -866,10 +866,10 @@ class TeaLangLexer(RegexLexer):
             (r'\n', Text)
         ],
         'template': [
-            (r'[a-zA-Z_][a-zA-Z0-9_]*', Name.Class, '#pop')
+            (r'[a-zA-Z_]\w*', Name.Class, '#pop')
         ],
         'import': [
-            (r'[a-zA-Z0-9_.]+\*?', Name.Namespace, '#pop')
+            (r'[\w.]+\*?', Name.Namespace, '#pop')
         ],
     }
 
@@ -894,9 +894,9 @@ class CeylonLexer(RegexLexer):
     tokens = {
         'root': [
             # method names
-            (r'^(\s*(?:[a-zA-Z_][a-zA-Z0-9_\.\[\]]*\s+)+?)' # return arguments
-             r'([a-zA-Z_][a-zA-Z0-9_]*)'                    # method name
-             r'(\s*)(\()',                                  # signature start
+            (r'^(\s*(?:[a-zA-Z_][\w\.\[\]]*\s+)+?)' # return arguments
+             r'([a-zA-Z_]\w*)'                      # method name
+             r'(\s*)(\()',                          # signature start
              bygroups(using(this), Name.Function, Text, Operator)),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
@@ -919,10 +919,10 @@ class CeylonLexer(RegexLexer):
             (r'"(\\\\|\\"|[^"])*"', String),
             (r"'\\.'|'[^\\]'|'\\\{#[0-9a-fA-F]{4}\}'", String.Char),
             (r'".*``.*``.*"', String.Interpol),
-            (r'(\.)([a-z_][a-zA-Z0-9_]*)',
+            (r'(\.)([a-z_]\w*)',
              bygroups(Operator, Name.Attribute)),
-            (r'[a-zA-Z_][a-zA-Z0-9_]*:', Name.Label),
-            (r'[a-zA-Z_][a-zA-Z0-9_]*', Name),
+            (r'[a-zA-Z_]\w*:', Name.Label),
+            (r'[a-zA-Z_]\w*', Name),
             (r'[~\^\*!%&\[\]\(\)\{\}<>\|+=:;,./?-]', Operator),
             (r'\d{1,3}(_\d{3})+\.\d{1,3}(_\d{3})+[kMGTPmunpf]?', Number.Float),
             (r'\d{1,3}(_\d{3})+\.[0-9]+([eE][+-]?[0-9]+)?[kMGTPmunpf]?',
@@ -939,10 +939,10 @@ class CeylonLexer(RegexLexer):
             (r'\n', Text)
         ],
         'class': [
-            (r'[A-Za-z_][a-zA-Z0-9_]*', Name.Class, '#pop')
+            (r'[A-Za-z_]\w*', Name.Class, '#pop')
         ],
         'import': [
-            (r'[a-z][a-zA-Z0-9_.]*',
+            (r'[a-z][\w.]*',
              Name.Namespace, '#pop')
         ],
         'comment': [
@@ -1034,14 +1034,14 @@ class XtendLexer(RegexLexer):
     tokens = {
         'root': [
             # method names
-            (r'^(\s*(?:[a-zA-Z_][a-zA-Z0-9_\.\[\]]*\s+)+?)' # return arguments
-             r'([a-zA-Z_$][a-zA-Z0-9_$]*)'                    # method name
-             r'(\s*)(\()',                                  # signature start
+            (r'^(\s*(?:[a-zA-Z_][\w\.\[\]]*\s+)+?)' # return arguments
+             r'([a-zA-Z_$][\w$]*)'                  # method name
+             r'(\s*)(\()',                          # signature start
              bygroups(using(this), Name.Function, Text, Operator)),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
             (r'/\*.*?\*/', Comment.Multiline),
-            (r'@[a-zA-Z_][a-zA-Z0-9_\.]*', Name.Decorator),
+            (r'@[a-zA-Z_][\w\.]*', Name.Decorator),
             (r'(assert|break|case|catch|continue|default|do|else|finally|for|'
              r'if|goto|instanceof|new|return|switch|this|throw|try|while|IF|'
              r'ELSE|ELSEIF|ENDIF|FOR|ENDFOR|SEPARATOR|BEFORE|AFTER)\b',
@@ -1060,8 +1060,8 @@ class XtendLexer(RegexLexer):
             (u'(\u00BB)', String, 'template'),
             (r'"(\\\\|\\"|[^"])*"', String),
             (r"'(\\\\|\\'|[^'])*'", String),
-            (r'[a-zA-Z_][a-zA-Z0-9_]*:', Name.Label),
-            (r'[a-zA-Z_\$][a-zA-Z0-9_]*', Name),
+            (r'[a-zA-Z_]\w*:', Name.Label),
+            (r'[a-zA-Z_\$]\w*', Name),
             (r'[~\^\*!%&\[\]\(\)\{\}<>\|+=:;,./?-]', Operator),
             (r'[0-9][0-9]*\.[0-9]+([eE][0-9]+)?[fd]?', Number.Float),
             (r'0x[0-9a-fA-F]+', Number.Hex),
@@ -1069,10 +1069,10 @@ class XtendLexer(RegexLexer):
             (r'\n', Text)
         ],
         'class': [
-            (r'[a-zA-Z_][a-zA-Z0-9_]*', Name.Class, '#pop')
+            (r'[a-zA-Z_]\w*', Name.Class, '#pop')
         ],
         'import': [
-            (r'[a-zA-Z0-9_.]+\*?', Name.Namespace, '#pop')
+            (r'[\w.]+\*?', Name.Namespace, '#pop')
         ],
         'template': [
             (r"'''", String, '#pop'),
@@ -1175,8 +1175,8 @@ class GoloLexer(RegexLexer):
             (r'(module|import)(\s+)',
                 bygroups(Keyword.Namespace, Text),
                 'modname'),
-            (r'\b([a-zA-Z_][a-z$A-Z0-9._]*)(::)',  bygroups(Name.Namespace, Punctuation)),
-            (r'\b([a-zA-Z_][a-z$A-Z0-9_]*(?:\.[a-zA-Z_][a-z$A-Z0-9_]*)+)\b', Name.Namespace),
+            (r'\b([a-zA-Z_][\w$.]*)(::)',  bygroups(Name.Namespace, Punctuation)),
+            (r'\b([a-zA-Z_][\w$]*(?:\.[a-zA-Z_][\w$]*)+)\b', Name.Namespace),
 
             (r'(let|var)(\s+)',
                 bygroups(Keyword.Declaration, Text),
@@ -1201,7 +1201,7 @@ class GoloLexer(RegexLexer):
                 bygroups(Name.Builtin, Punctuation)),
             (r'(print|println|readln|raise|fun'
              r'|asInterfaceInstance)\b', Name.Builtin),
-            (r'(`?[a-zA-Z_][a-z$A-Z0-9_]*)(\()',
+            (r'(`?[a-zA-Z_][\w$]*)(\()',
                 bygroups(Name.Function, Punctuation)),
 
             (r'-?[\d_]*\.[\d_]*([eE][+-]?\d[\d_]*)?F?', Number.Float),
@@ -1210,7 +1210,7 @@ class GoloLexer(RegexLexer):
             (r'-?\d[\d_]*L', Number.Integer.Long),
             (r'-?\d[\d_]*', Number.Integer),
 
-            ('`?[a-zA-Z_][a-z$A-Z0-9_]*', Name),
+            ('`?[a-zA-Z_][\w$]*', Name),
 
             (r'"""', String, combined('stringescape', 'triplestring')),
             (r'"', String, combined('stringescape', 'doublestring')),
@@ -1220,16 +1220,16 @@ class GoloLexer(RegexLexer):
         ],
 
         'funcname': [
-            (r'`?[a-zA-Z_][a-z$A-Z0-9_]*', Name.Function, '#pop'),
+            (r'`?[a-zA-Z_][\w$]*', Name.Function, '#pop'),
         ],
         'modname': [
-            (r'[a-zA-Z_][a-z$A-Z0-9._]*\*?', Name.Namespace, '#pop')
+            (r'[a-zA-Z_][\w$.]*\*?', Name.Namespace, '#pop')
         ],
         'structname': [
-            (r'`?[a-zA-Z0-9_.]+\*?', Name.Class, '#pop')
+            (r'`?[\w.]+\*?', Name.Class, '#pop')
         ],
         'varname': [
-            (r'`?[a-zA-Z_][a-z$A-Z0-9_]*', Name.Variable, '#pop'),
+            (r'`?[a-zA-Z_][\w$]*', Name.Variable, '#pop'),
         ],
         'string': [
             (r'[^\\\'"\n]+', String),
