@@ -122,6 +122,7 @@ Other contributors, listed alphabetically, are:
 * Ronny Pfannschmidt -- BBCode lexer
 * Benjamin Peterson -- Test suite refactoring
 * Dominik Picheta -- Nimrod lexer
+* Andrew Pinkham -- RTF Formatter Refactoring
 * Clément Prévost -- UrbiScript lexer
 * raichoo -- Idris lexer
 * Kashif Rasul -- CUDA lexer
