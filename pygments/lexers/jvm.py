@@ -438,7 +438,7 @@ class GroovyLexer(RegexLexer):
     tokens = {
         'root': [
             # Groovy allows a file to start with a shebang
-            (r'#!(.*?)$', Comment.Preproc),
+            (r'#!(.*?)$', Comment.Preproc, 'base'),
             (r'', Text, 'base'),
         ],
         'base': [
