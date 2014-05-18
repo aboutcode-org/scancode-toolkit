@@ -12,7 +12,7 @@
 import re
 
 from pygments.lexer import Lexer, RegexLexer, include, bygroups, using, \
-     this, combined
+     this, combined, default
 from pygments.token import Text, Comment, Operator, Keyword, Name, String, \
      Number, Punctuation
 from pygments import unistring as uni
@@ -439,7 +439,7 @@ class GroovyLexer(RegexLexer):
         'root': [
             # Groovy allows a file to start with a shebang
             (r'#!(.*?)$', Comment.Preproc, 'base'),
-            (r'', Text, 'base'),
+            default('base'),
         ],
         'base': [
             # method names
@@ -1401,7 +1401,7 @@ class JasminLexer(RegexLexer):
             (r'\n+', Text),
             (r'\.end%s' % _break, Keyword.Reserved, '#pop'),
             include('default'),
-            (r'', Text, ('annotation-items', 'descriptor/no-dots'))
+            default(('annotation-items', 'descriptor/no-dots'))
         ],
         'annotation-items': [
             (r"'", String.Single, 'quote'),
@@ -1447,12 +1447,12 @@ class JasminLexer(RegexLexer):
         ],
         'descriptors/convert-dots': [
             (r'\)', Punctuation, '#pop'),
-            (r'', Text, 'descriptor/convert-dots')
+            default('descriptor/convert-dots')
         ],
         'enclosing-method': [
             (_ws, Text),
             (r'(?=[^%s]*\()' % _separator, Text, ('#pop', 'invocation')),
-            (r'', Text, ('#pop', 'class/convert-dots'))
+            default(('#pop', 'class/convert-dots'))
         ],
         'exception': [
             include('default'),
