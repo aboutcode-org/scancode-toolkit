@@ -940,8 +940,8 @@ class CeylonLexer(RegexLexer):
              Number.Float),
             (r'#([0-9a-fA-F]{4})(_[0-9a-fA-F]{4})+', Number.Hex),
             (r'#[0-9a-fA-F]+', Number.Hex),
-            (r'\$([01]{4})(_[01]{4})+', Number.Integer),
-            (r'\$[01]+', Number.Integer),
+            (r'\$([01]{4})(_[01]{4})+', Number.Bin),
+            (r'\$[01]+', Number.Bin),
             (r'\d{1,3}(_\d{3})+[kMGTP]?', Number.Integer),
             (r'[0-9]+[kMGTP]?', Number.Integer),
             (r'\n', Text)
