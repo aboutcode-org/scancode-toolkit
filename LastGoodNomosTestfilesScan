@@ -550,6 +550,9 @@ File NomosTestfiles/GPL/server_monitor.py contains license(s) GPL-3.0
 File NomosTestfiles/GPL/gwymath.c contains license(s) GPL-2.0+,LGPL-2.1+
 File NomosTestfiles/GPL/Timestamp.cc contains license(s) GPL-3.0+,LGPL-2.1+
 File NomosTestfiles/GPL/gids.c contains license(s) GPL-3.0+,LGPL-3.0+
+File NomosTestfiles/GPL/Address.java contains license(s) GPL-2.0+-with-classpath-exception
+File NomosTestfiles/GPL/stdvga.c contains license(s) GPL-2.1[sic]
+File NomosTestfiles/GPL/gpl21_plus.txt contains license(s) GPL-2.1+[sic]
 File NomosTestfiles/eCos/eCos-2.0.txt contains license(s) GPL-2.0+,eCos-2.0
 File NomosTestfiles/Trademark-ref/53c7xx.c contains license(s) Trademark-ref
 File NomosTestfiles/OCLC/OCLC-2.0.txt contains license(s) OCLC-2.0
@@ -620,3 +623,5 @@ File NomosTestfiles/OpenCASCADE/LICENSE contains license(s) OpenCASCADE-PL
 File NomosTestfiles/OpenCASCADE/ShapeBuild_ReShape.ixx contains license(s) OpenCASCADE-PL
 File NomosTestfiles/OpenCASCADE/Open-CASCADE-Technology-Public-License-6.3 contains license(s) OpenCASCADE-PL
 File NomosTestfiles/AML/AML.txt contains license(s) AML
+File NomosTestfiles/JISP/Maze.h contains license(s) JISP
+File NomosTestfiles/Migemo/Mgemo.txt contains license(s) Migemo
