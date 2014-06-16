@@ -553,6 +553,8 @@ File NomosTestfiles/GPL/gids.c contains license(s) GPL-3.0+,LGPL-3.0+
 File NomosTestfiles/GPL/Address.java contains license(s) GPL-2.0+-with-classpath-exception
 File NomosTestfiles/GPL/stdvga.c contains license(s) GPL-2.1[sic]
 File NomosTestfiles/GPL/gpl21_plus.txt contains license(s) GPL-2.1+[sic]
+File NomosTestfiles/GPL/argparse.c contains license(s) GPL-3.0+
+File NomosTestfiles/GPL/version.c contains license(s) GPL-3.0+
 File NomosTestfiles/eCos/eCos-2.0.txt contains license(s) GPL-2.0+,eCos-2.0
 File NomosTestfiles/Trademark-ref/53c7xx.c contains license(s) Trademark-ref
 File NomosTestfiles/OCLC/OCLC-2.0.txt contains license(s) OCLC-2.0
