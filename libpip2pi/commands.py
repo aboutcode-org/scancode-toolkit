@@ -9,6 +9,7 @@ import functools
 from subprocess import check_call
 import pkg_resources
 import glob
+import optparse
 
 try:
     import wheel as _; _
@@ -135,11 +136,16 @@ def pip_run_command(pip_args):
                        %(res, pip_args))
 
 
-def dir2pi(argv=sys.argv):
-    if len(argv) != 2:
-        print(dedent("""
-            usage: dir2pi PACKAGE_DIR
+class OptionParser(optparse.OptionParser):
+    def format_description(self, formatter):
+        # Parent implementation reformats all the hard line breaks
+        return self.get_description() + "\n"
 
+
+def dir2pi(argv=sys.argv):
+    parser = OptionParser(
+        usage="usage: %prog PACKAGE_DIR",
+        description=dedent("""
             Creates the directory PACKAGE_DIR/simple/ and populates it with the
             directory structure required to use with pip's --index-url.
 
@@ -148,7 +154,7 @@ def dir2pi(argv=sys.argv):
             'foo-bar-1.3rc1.bz2').
 
             This makes the most sense if PACKAGE_DIR is somewhere inside a
-            webserver's inside htdocs directory.
+            webserver's htdocs directory.
 
             For example:
 
@@ -163,7 +169,10 @@ def dir2pi(argv=sys.argv):
                 packages/simple/foo/index.html
                 packages/simple/foo/foo-1.2.tar.gz
         """))
-        return 1
+    option, argv = parser.parse_args(argv)
+    if len(argv) != 2:
+        parser.print_help()
+
     pkgdir = argv[1]
     if not os.path.isdir(pkgdir):
         raise ValueError("no such directory: %r" %(pkgdir, ))
@@ -212,11 +221,9 @@ def globall(globs):
 @maintain_cwd
 def pip2tgz(argv=sys.argv):
     glob_exts = ['*.whl', '*.tgz', '*.gz']
-
-    if len(argv) < 3:
-        print(dedent("""
-            usage: pip2tgz OUTPUT_DIRECTORY PACKAGE_NAME ...
-
+    parser = OptionParser(
+        usage="usage: %prog OUTPUT_DIRECTORY PACKAGE_NAME ...",
+        description=dedent("""
             Where PACKAGE_NAMES are any names accepted by pip (ex, `foo`,
             `foo==1.2`, `-r requirements.txt`).
 
@@ -227,7 +234,9 @@ def pip2tgz(argv=sys.argv):
 
                 $ pip2tgz /var/www/packages/ -r requirements.txt foo==1.2 baz/
         """))
-        return 1
+    option, argv = parser.parse_args(argv)
+    if len(argv) < 3:
+        parser.print_help()
 
     outdir = os.path.abspath(argv[1])
     if not os.path.exists(outdir):
@@ -299,10 +308,9 @@ def handle_new_wheels(outdir, new_wheels):
         ])
 
 def pip2pi(argv=sys.argv):
-    if len(argv) < 3:
-        print(dedent("""
-            usage: pip2pi TARGET PACKAGE_NAME ...
-
+    parser = OptionParser(
+        usage="usage: %prog TARGET PACKAGE_NAME ...",
+        description=dedent("""
             Combines pip2tgz and dir2pi, adding PACKAGE_NAME to package index
             TARGET.
 
@@ -318,7 +326,9 @@ def pip2pi(argv=sys.argv):
 
                 $ pip2pi ~/Sites/packages/ foo==1.2
         """))
-        return 1
+    option, argv = parser.parse_args(argv)
+    if len(argv) < 3:
+        parser.print_help()
 
     target = argv[1]
     pip_packages = argv[2:]
