@@ -136,13 +136,24 @@ def pip_run_command(pip_args):
                        %(res, pip_args))
 
 
+UseSymlink = hasattr(os, "symlink")
+
+
 class OptionParser(optparse.OptionParser):
     def format_description(self, formatter):
         # Parent implementation reformats all the hard line breaks
         return self.get_description() + "\n"
 
+    def add_symlink_option(self, use_symlink):
+        self.add_option('-s', '--symlink', dest="use_symlink",
+                        default=use_symlink, action="store_true",
+                        help="Use symlinks in PACKAGE_DIR/simple/ "
+                             "rather than copying files. Default: %default")
+        self.add_option('-S', '--no-symlink', dest="use_symlink",
+                        action="store_false")
 
-def dir2pi(argv=sys.argv):
+
+def dir2pi(argv=sys.argv, use_symlink=UseSymlink):
     parser = OptionParser(
         usage="usage: %prog PACKAGE_DIR",
         description=dedent("""
@@ -169,9 +180,12 @@ def dir2pi(argv=sys.argv):
                 packages/simple/foo/index.html
                 packages/simple/foo/foo-1.2.tar.gz
         """))
+    parser.add_symlink_option(use_symlink)
+
     option, argv = parser.parse_args(argv)
     if len(argv) != 2:
         parser.print_help()
+        parser.exit()
 
     pkgdir = argv[1]
     if not os.path.isdir(pkgdir):
@@ -197,7 +211,7 @@ def dir2pi(argv=sys.argv):
         pkg_new_basename = "-".join([pkg_name, pkg_rest])
         symlink_target = os.path.join(pkg_dir, pkg_new_basename)
         symlink_source = os.path.join("../../", pkg_basename)
-        if hasattr(os, "symlink"):
+        if option.use_symlink and UseSymlink:
             os.symlink(symlink_source, symlink_target)
         else:
             shutil.copy2(pkg_filepath, symlink_target)
@@ -234,9 +248,11 @@ def pip2tgz(argv=sys.argv):
 
                 $ pip2tgz /var/www/packages/ -r requirements.txt foo==1.2 baz/
         """))
+
     option, argv = parser.parse_args(argv)
     if len(argv) < 3:
         parser.print_help()
+        parser.exit()
 
     outdir = os.path.abspath(argv[1])
     if not os.path.exists(outdir):
@@ -326,9 +342,12 @@ def pip2pi(argv=sys.argv):
 
                 $ pip2pi ~/Sites/packages/ foo==1.2
         """))
+    parser.add_symlink_option(UseSymlink)
+
     option, argv = parser.parse_args(argv)
     if len(argv) < 3:
         parser.print_help()
+        parser.exit()
 
     target = argv[1]
     pip_packages = argv[2:]
@@ -345,7 +364,7 @@ def pip2pi(argv=sys.argv):
         print("pip2tgz returned an error; aborting.")
         return res
 
-    res = dir2pi([argv[0], working_dir])
+    res = dir2pi([argv[0], working_dir], use_symlink=option.use_symlink)
     if res:
         print("dir2pi returned an error; aborting.")
         return res
