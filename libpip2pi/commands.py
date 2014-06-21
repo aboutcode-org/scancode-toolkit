@@ -139,7 +139,7 @@ def pip_run_command(pip_args):
 UseSymlink = hasattr(os, "symlink")
 
 
-class OptionParser(optparse.OptionParser):
+class Pip2PiOptionParser(optparse.OptionParser):
     def format_description(self, formatter):
         # Parent implementation reformats all the hard line breaks
         return self.get_description() + "\n"
@@ -152,9 +152,27 @@ class OptionParser(optparse.OptionParser):
         self.add_option('-S', '--no-symlink', dest="use_symlink",
                         action="store_false")
 
+    def _process_args(self, largs, rargs, values):
+        """
+        An unknown option pass-through implementation of OptionParser.
+
+        When unknown arguments are encountered, bundle with largs and try again,
+        until rargs is depleted.  
+
+        sys.exit(status) will still be called if a known argument is passed
+        incorrectly (e.g. missing arguments or bad argument types, etc.)        
+
+        From http://stackoverflow.com/a/9307174/6364
+        """
+        while rargs:
+            try:
+                optparse.OptionParser._process_args(self, largs, rargs, values)
+            except (optparse.BadOptionError, optparse.AmbiguousOptionError), e:
+                largs.append(e.opt_str)
+
 
 def dir2pi(argv=sys.argv, use_symlink=UseSymlink):
-    parser = OptionParser(
+    parser = Pip2PiOptionParser(
         usage="usage: %prog PACKAGE_DIR",
         description=dedent("""
             Creates the directory PACKAGE_DIR/simple/ and populates it with the
@@ -235,7 +253,7 @@ def globall(globs):
 @maintain_cwd
 def pip2tgz(argv=sys.argv):
     glob_exts = ['*.whl', '*.tgz', '*.gz']
-    parser = OptionParser(
+    parser = Pip2PiOptionParser(
         usage="usage: %prog OUTPUT_DIRECTORY PACKAGE_NAME ...",
         description=dedent("""
             Where PACKAGE_NAMES are any names accepted by pip (ex, `foo`,
@@ -324,7 +342,7 @@ def handle_new_wheels(outdir, new_wheels):
         ])
 
 def pip2pi(argv=sys.argv):
-    parser = OptionParser(
+    parser = Pip2PiOptionParser(
         usage="usage: %prog TARGET PACKAGE_NAME ...",
         description=dedent("""
             Combines pip2tgz and dir2pi, adding PACKAGE_NAME to package index
