@@ -136,7 +136,7 @@ def pip_run_command(pip_args):
                        %(res, pip_args))
 
 
-UseSymlink = hasattr(os, "symlink")
+OS_HAS_SYMLINK = hasattr(os, "symlink")
 
 
 class Pip2PiOptionParser(optparse.OptionParser):
@@ -171,7 +171,7 @@ class Pip2PiOptionParser(optparse.OptionParser):
                 largs.append(e.opt_str)
 
 
-def dir2pi(argv=sys.argv, use_symlink=UseSymlink):
+def dir2pi(argv=sys.argv, use_symlink=OS_HAS_SYMLINK):
     parser = Pip2PiOptionParser(
         usage="usage: %prog PACKAGE_DIR",
         description=dedent("""
@@ -229,7 +229,7 @@ def dir2pi(argv=sys.argv, use_symlink=UseSymlink):
         pkg_new_basename = "-".join([pkg_name, pkg_rest])
         symlink_target = os.path.join(pkg_dir, pkg_new_basename)
         symlink_source = os.path.join("../../", pkg_basename)
-        if option.use_symlink and UseSymlink:
+        if option.use_symlink and OS_HAS_SYMLINK:
             os.symlink(symlink_source, symlink_target)
         else:
             shutil.copy2(pkg_filepath, symlink_target)
@@ -360,7 +360,7 @@ def pip2pi(argv=sys.argv):
 
                 $ pip2pi ~/Sites/packages/ foo==1.2
         """))
-    parser.add_symlink_option(UseSymlink)
+    parser.add_symlink_option(OS_HAS_SYMLINK)
 
     option, argv = parser.parse_args(argv)
     if len(argv) < 3:
