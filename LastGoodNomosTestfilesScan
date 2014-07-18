@@ -120,6 +120,7 @@ File NomosTestfiles/LGPL/defconfig contains license(s) BSD,LGPL
 File NomosTestfiles/LGPL/main.cpp contains license(s) LGPL-2.1+-KDE-exception
 File NomosTestfiles/LGPL/tracker-class.c contains license(s) LGPL-2.1+
 File NomosTestfiles/LGPL/valaprojectgenerator.c contains license(s) GPL-3.0+,LGPL-2.1+
+File NomosTestfiles/LGPL/License.rtf contains license(s) LGPL-2.1
 File NomosTestfiles/Artistic/Artistic-1.0.txt contains license(s) Artistic-1.0
 File NomosTestfiles/Artistic/macos_main.cpp contains license(s) Artistic-1.0
 File NomosTestfiles/Artistic/Hero.java contains license(s) Artistic-1.0
@@ -390,7 +391,8 @@ File NomosTestfiles/NOSL/nosl-1.0 contains license(s) NOSL-1.0
 File NomosTestfiles/Fair/Fair.txt contains license(s) Fair
 File NomosTestfiles/Leptonica/affine_reg.c contains license(s) Leptonica
 File NomosTestfiles/Imlib2/Imlib2.text contains license(s) Imlib2,MIT-style
-File NomosTestfiles/Nvidia-EULA/atom.c contains license(s) Nvidia-EULA
+File NomosTestfiles/Nvidia/atom.c contains license(s) Nvidia-EULA
+File NomosTestfiles/Nvidia/copyright contains license(s) Nvidia
 File NomosTestfiles/Vixie/user.c contains license(s) Vixie-license
 File NomosTestfiles/QPL/QPL-1.0.txt contains license(s) QPL-1.0
 File NomosTestfiles/RCSL/RCSL_v3.0_a.txt contains license(s) RCSL-3.0
@@ -555,6 +557,10 @@ File NomosTestfiles/GPL/stdvga.c contains license(s) GPL-2.1[sic]
 File NomosTestfiles/GPL/gpl21_plus.txt contains license(s) GPL-2.1+[sic]
 File NomosTestfiles/GPL/argparse.c contains license(s) GPL-3.0+
 File NomosTestfiles/GPL/version.c contains license(s) GPL-3.0+
+File NomosTestfiles/GPL/UploadWizardCampaign.php contains license(s) GPL-2.0+
+File NomosTestfiles/GPL/Autoload.php contains license(s) GPL-2.0+
+File NomosTestfiles/GPL/RelParser.cpp contains license(s) GPL-1.0+
+File NomosTestfiles/GPL/StopComponentCommand.java contains license(s) GPL-3.0+-with-classpath-exception
 File NomosTestfiles/eCos/eCos-2.0.txt contains license(s) GPL-2.0+,eCos-2.0
 File NomosTestfiles/Trademark-ref/53c7xx.c contains license(s) Trademark-ref
 File NomosTestfiles/OCLC/OCLC-2.0.txt contains license(s) OCLC-2.0
@@ -628,3 +634,7 @@ File NomosTestfiles/AML/AML.txt contains license(s) AML
 File NomosTestfiles/JISP/Maze.h contains license(s) JISP
 File NomosTestfiles/Migemo/Mgemo.txt contains license(s) Migemo
 File NomosTestfiles/Sendmail/Sendmail contains license(s) Sendmail
+File NomosTestfiles/Giftware/giftware.txt contains license(s) Giftware
+File NomosTestfiles/Logica/logica.txt contains license(s) Logica-OSL-1.0
+File NomosTestfiles/Unidex/unidex.txt contains license(s) Unidex
+File NomosTestfiles/CPOL/CPOL.txt contains license(s) CPOL-1.02,Public-domain
