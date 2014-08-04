@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 import cgi
 import shutil
@@ -77,6 +78,8 @@ def file_to_package(file, basedir=None):
         ('foo', '1.2.3-rc1.tar.gz')
         >>> file_to_package("foo-bar-1.2.tgz")
         ('foo-bar', '1.2.tgz')
+        >>> file_to_package("kafka-quixey-0.8.1-1.tar.gz")
+        ('kafka-quixey', '0.8.1-1.tar.gz')
         >>> file_to_package("foo-bar-1.2-py27-none-any.whl")
         ('foo-bar', '1.2-py27-none-any.whl')
         >>> file_to_package("Cython-0.17.2-cp26-none-linux_x86_64.whl")
@@ -92,7 +95,8 @@ def file_to_package(file, basedir=None):
         split = [bits[0], "-".join(bits[1:])]
         to_safe_name = lambda x: x
     else:
-        split = file.rsplit("-", 1)
+        match = re.search(r"(?P<pkg>.*?)-(?P<rest>\d+.*)", file)
+        split = match.group("pkg"), match.group("rest")
         to_safe_name = pkg_resources.safe_name
 
     if len(split) != 2 or not split[1]:
