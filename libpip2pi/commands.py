@@ -94,9 +94,8 @@ def file_to_package(file, basedir=None):
         split = [bits[0], "-".join(bits[1:])]
         to_safe_name = lambda x: x
     else:
-        pattern = re.compile(r'(?P<pkg>.*?)-(?P<rest>\d+.*)')
-        match = pattern.search(file)
-        split = match.group('pkg'), match.group('rest')
+        match = re.search(r"(?P<pkg>.*?)-(?P<rest>\d+.*)", file)
+        split = match.group("pkg"), match.group("rest")
         to_safe_name = pkg_resources.safe_name
 
     if len(split) != 2 or not split[1]:
