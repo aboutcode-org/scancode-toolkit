@@ -1,0 +1,27 @@
+nformation for distributors
+
+If you're a distributor, you should join the qmaildist mailing list.
+You may distribute copies of qmail-1.00.tar.gz, with MD5 checksum d3033be700fd6f59ac0548c832652dd3.
+
+You may distribute copies of qmail-1.01.tar.gz, with MD5 checksum 1f606d6a5d1caaca6da6b6fa5db500bf.
+
+You may distribute copies of qmail-1.02.tar.gz, with MD5 checksum 01071fe52b5257adb4bb6bcf8149eb16.
+
+You may distribute copies of qmail-1.03.tar.gz, with MD5 checksum 622f65f982e380dbe86e6574f3abcb7c.
+
+Vendors: I'd be interested in hearing about any CDs that include the package, but you don't have to check with me if you don't want to.
+
+If you want to distribute modified versions of qmail (including ports, no matter how minor the changes are) you'll have to get my approval. This does not mean approval of your distribution method, your intentions, your e-mail address, your haircut, or any other irrelevant information. It means a detailed review of the exact package that you want to distribute.
+
+Exception: You are permitted to distribute a precompiled var-qmail package if (1) installing the package produces exactly the same /var/qmail hierarchy as a user would obtain by downloading, compiling, and installing qmail-1.03.tar.gz, fastforward-0.51.tar.gz, and dot-forward-0.71.tar.gz; (2) the package behaves correctly, i.e., the same way as normal qmail+fastforward+dot-forward installations on all other systems; and (3) the package's creator warrants that he has made a good-faith attempt to ensure that the package behaves correctly. It is not acceptable to have qmail working differently on different machines; any variation is a bug. If there's something about a system (compiler, libraries, kernel, hardware, whatever) that changes qmail's behavior, then that platform is not supported, and you are not permitted to distribute binaries.
+
+Notes on compatibility
+
+Each UNIX vendor has made its own incompatible changes to the OS. This fractures the user community, creating separate pockets of knowledge and experience for each system. It dramatically increases the costs of cross-platform support. It turns 300-page books into 1000-page books.
+In short, vendors have thrown away the efficiencies of the mass market. Diehard UNIX fans adapt; most users and sysadmins give up in disgust.
+
+Of course, compatibility with a low-quality product isn't satisfactory. What a disaster it would be if we all had to use Windows NT! But the benefits of change have to be measured against the costs.
+
+In my experience, UNIX vendors pay very little attention to the costs. If they could fork off their own variants of qmail, they would---just as they've done to sendmail. They'd never stop to consider the damage they're doing.
+
+A single version of qmail has climbed past smail into the #2 spot in the market. Practically every site will be happy with the current version until the Internet moves to IPv6. Splitting the community, for the sake of frivolous vendor-specific changes, would be the height of foolishness.
