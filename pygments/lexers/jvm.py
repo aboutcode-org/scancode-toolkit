@@ -1219,6 +1219,7 @@ class GoloLexer(RegexLexer):
             (r'-?\d[\d_]*', Number.Integer),
 
             ('`?[a-zA-Z_][\w$]*', Name),
+            (r'@[a-zA-Z_][\w$._]*', Name.Decorator),
 
             (r'"""', String, combined('stringescape', 'triplestring')),
             (r'"', String, combined('stringescape', 'doublestring')),
