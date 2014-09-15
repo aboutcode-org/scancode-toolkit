@@ -156,7 +156,7 @@ class ui_nomos_diff extends FO_Plugin
       $VLic .= Traceback_uri();
 
       $text = _("Show");
-      $VLic .= "?mod=list_lic_files&napk=$agent_pk&item=$Uploadtree_pk&lic=" . urlencode($row['rf_shortname']) . "' title='$ShowTitle'>$text</a></td>";
+      $VLic .= "?mod=license_list_files&napk=$agent_pk&item=$Uploadtree_pk&lic=" . urlencode($row['rf_shortname']) . "' title='$ShowTitle'>$text</a></td>";
 
       /*  License name  */
       $VLic .= "<td align='left'>";
