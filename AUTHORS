@@ -14,6 +14,7 @@ Other contributors, listed alphabetically, are:
 * Jeffrey Arnold -- R/S, Rd, BUGS, Jags, and Stan lexers
 * Jeremy Ashkenas -- CoffeeScript lexer
 * Stefan Matthias Aust -- Smalltalk lexer
+* Lucas Bajolet -- Nit lexer
 * Ben Bangert -- Mako lexers
 * Max Battcher -- Darcs patch lexer
 * Thomas Baruchel -- APL lexer
