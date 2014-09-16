@@ -413,11 +413,11 @@ class GosuTemplateLexer(Lexer):
     aliases = ['gst']
     filenames = ['*.gst']
     mimetypes = ['text/x-gosu-template']
-    lexer = GosuLexer()
 
     def get_tokens_unprocessed(self, text):
+        lexer = GosuLexer()
         stack = ['templateText']
-        for item in self.lexer.get_tokens_unprocessed(text, stack):
+        for item in lexer.get_tokens_unprocessed(text, stack):
             yield item
 
 
