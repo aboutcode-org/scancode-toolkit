@@ -12,11 +12,11 @@
 import re
 
 from pygments.lexer import Lexer, RegexLexer, include, bygroups, using, \
-     this, combined, default
+    this, combined, default, words
 from pygments.token import Text, Comment, Operator, Keyword, Name, String, \
-     Number, Punctuation
+    Number, Punctuation
+from pygments.util import shebang_matches
 from pygments import unistring as uni
-
 
 __all__ = ['JavaLexer', 'ScalaLexer', 'GosuLexer', 'GosuTemplateLexer',
            'GroovyLexer', 'IokeLexer', 'ClojureLexer', 'ClojureScriptLexer',
@@ -42,9 +42,9 @@ class JavaLexer(RegexLexer):
             (r'//.*?\n', Comment.Single),
             (r'/\*.*?\*/', Comment.Multiline),
             # method names
-            (r'((?:(?:[^\W\d]|\$)[\w\.\[\]\$<>]*\s+)+?)' # return arguments
-             r'((?:[^\W\d]|\$)[\w\$]*)'                  # method name
-             r'(\s*)(\()',                               # signature start
+            (r'((?:(?:[^\W\d]|\$)[\w\.\[\]\$<>]*\s+)+?)'  # return arguments
+             r'((?:[^\W\d]|\$)[\w\$]*)'                   # method name
+             r'(\s*)(\()',                                # signature start
              bygroups(using(this), Name.Function, Text, Operator)),
             (r'@[^\W\d][\w\.]*', Name.Decorator),
             (r'(assert|break|case|catch|continue|default|do|else|finally|for|'
@@ -91,7 +91,7 @@ class AspectJLexer(JavaLexer):
     filenames = ['*.aj']
     mimetypes = ['text/x-aspectj']
 
-    aj_keywords = [
+    aj_keywords = set((
         'aspect', 'pointcut', 'privileged', 'call', 'execution',
         'initialization', 'preinitialization', 'handler', 'get', 'set',
         'staticinitialization', 'target', 'args', 'within', 'withincode',
@@ -101,9 +101,9 @@ class AspectJLexer(JavaLexer):
         'thisJoinPointStaticPart', 'thisEnclosingJoinPointStaticPart',
         'issingleton', 'perthis', 'pertarget', 'percflow', 'percflowbelow',
         'pertypewithin', 'lock', 'unlock', 'thisAspectInstance'
-    ]
-    aj_inter_type = ['parents:', 'warning:', 'error:', 'soft:', 'precedence:']
-    aj_inter_type_annotation = ['@type', '@method', '@constructor', '@field']
+    ))
+    aj_inter_type = set(('parents:', 'warning:', 'error:', 'soft:', 'precedence:'))
+    aj_inter_type_annotation = set(('@type', '@method', '@constructor', '@field'))
 
     def get_tokens_unprocessed(self, text):
         for index, token, value in JavaLexer.get_tokens_unprocessed(self, text):
@@ -268,8 +268,8 @@ class ScalaLexer(RegexLexer):
             (r'""".*?"""(?!")', String),
             (r'"(\\\\|\\"|[^"])*"', String),
             (r"'\\.'|'[^\\]'|'\\u[0-9a-fA-F]{4}'", String.Char),
-#            (ur'(\.)(%s|%s|`[^`]+`)' % (idrest, op), bygroups(Operator,
-#             Name.Attribute)),
+            # (ur'(\.)(%s|%s|`[^`]+`)' % (idrest, op), bygroups(Operator,
+            # Name.Attribute)),
             (idrest, Name),
             (r'`[^`]+`', Name),
             (r'\[', Operator, 'typeparam'),
@@ -340,9 +340,9 @@ class GosuLexer(RegexLexer):
     tokens = {
         'root': [
             # method names
-            (r'^(\s*(?:[a-zA-Z_][\w\.\[\]]*\s+)+?)' # modifiers etc.
-             r'([a-zA-Z_]\w*)'                      # method name
-             r'(\s*)(\()',                          # signature start
+            (r'^(\s*(?:[a-zA-Z_][\w\.\[\]]*\s+)+?)'  # modifiers etc.
+             r'([a-zA-Z_]\w*)'                       # method name
+             r'(\s*)(\()',                           # signature start
              bygroups(using(this), Name.Function, Text, Operator)),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
@@ -376,28 +376,28 @@ class GosuLexer(RegexLexer):
             (r'\n', Text)
         ],
         'templateText': [
-          (r'(\\<)|(\\\$)', String),
-          (r'(<%@\s+)(extends|params)',
-           bygroups(Operator, Name.Decorator), 'stringTemplate'),
-          (r'<%!--.*?--%>', Comment.Multiline),
-          (r'(<%)|(<%=)', Operator, 'stringTemplate'),
-          (r'\$\{', Operator, 'stringTemplateShorthand'),
-          (r'.', String)
+            (r'(\\<)|(\\\$)', String),
+            (r'(<%@\s+)(extends|params)',
+             bygroups(Operator, Name.Decorator), 'stringTemplate'),
+            (r'<%!--.*?--%>', Comment.Multiline),
+            (r'(<%)|(<%=)', Operator, 'stringTemplate'),
+            (r'\$\{', Operator, 'stringTemplateShorthand'),
+            (r'.', String)
         ],
         'string': [
-          (r'"', String, '#pop'),
-          include('templateText')
+            (r'"', String, '#pop'),
+            include('templateText')
         ],
         'stringTemplate': [
-          (r'"', String, 'string'),
-          (r'%>', Operator, '#pop'),
-          include('root')
+            (r'"', String, 'string'),
+            (r'%>', Operator, '#pop'),
+            include('root')
         ],
         'stringTemplateShorthand': [
-          (r'"', String, 'string'),
-          (r'\{', Operator, 'stringTemplateShorthand'),
-          (r'\}', Operator, '#pop'),
-          include('root')
+            (r'"', String, 'string'),
+            (r'\{', Operator, 'stringTemplateShorthand'),
+            (r'\}', Operator, '#pop'),
+            include('root')
         ],
     }
 
@@ -443,9 +443,9 @@ class GroovyLexer(RegexLexer):
         ],
         'base': [
             # method names
-            (r'^(\s*(?:[a-zA-Z_][\w\.\[\]]*\s+)+?)' # return arguments
-             r'([a-zA-Z_]\w*)'                      # method name
-             r'(\s*)(\()',                          # signature start
+            (r'^(\s*(?:[a-zA-Z_][\w\.\[\]]*\s+)+?)'  # return arguments
+             r'([a-zA-Z_]\w*)'                       # method name
+             r'(\s*)(\()',                           # signature start
              bygroups(using(this), Name.Function, Text, Operator)),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
@@ -506,44 +506,44 @@ class IokeLexer(RegexLexer):
             (r'(\\b|\\e|\\t|\\n|\\f|\\r|\\"|\\\\|\\#|\\\Z|\\u[0-9a-fA-F]{1,4}'
              r'|\\[0-3]?[0-7]?[0-7])', String.Escape),
             (r'#{', Punctuation, 'textInterpolationRoot')
-            ],
+        ],
 
         'text': [
             (r'(?<!\\)"', String, '#pop'),
             include('interpolatableText'),
             (r'[^"]', String)
-            ],
+        ],
 
         'documentation': [
             (r'(?<!\\)"', String.Doc, '#pop'),
             include('interpolatableText'),
             (r'[^"]', String.Doc)
-            ],
+        ],
 
         'textInterpolationRoot': [
             (r'}', Punctuation, '#pop'),
             include('root')
-            ],
+        ],
 
         'slashRegexp': [
             (r'(?<!\\)/[oxpniums]*', String.Regex, '#pop'),
             include('interpolatableText'),
             (r'\\/', String.Regex),
             (r'[^/]', String.Regex)
-            ],
+        ],
 
         'squareRegexp': [
             (r'(?<!\\)][oxpniums]*', String.Regex, '#pop'),
             include('interpolatableText'),
             (r'\\]', String.Regex),
             (r'[^\]]', String.Regex)
-            ],
+        ],
 
         'squareText': [
             (r'(?<!\\)]', String, '#pop'),
             include('interpolatableText'),
             (r'[^\]]', String)
-            ],
+        ],
 
         'root': [
             (r'\n', Text),
@@ -553,28 +553,28 @@ class IokeLexer(RegexLexer):
             (r';(.*?)\n', Comment),
             (r'\A#!(.*?)\n', Comment),
 
-            #Regexps
+            # Regexps
             (r'#/', String.Regex, 'slashRegexp'),
             (r'#r\[', String.Regex, 'squareRegexp'),
 
-            #Symbols
+            # Symbols
             (r':[\w!:?]+', String.Symbol),
             (r'[\w!:?]+:(?![\w!?])', String.Other),
             (r':"(\\\\|\\"|[^"])*"', String.Symbol),
 
-            #Documentation
+            # Documentation
             (r'((?<=fn\()|(?<=fnx\()|(?<=method\()|(?<=macro\()|(?<=lecro\()'
              r'|(?<=syntax\()|(?<=dmacro\()|(?<=dlecro\()|(?<=dlecrox\()'
              r'|(?<=dsyntax\())\s*"', String.Doc, 'documentation'),
 
-            #Text
+            # Text
             (r'"', String, 'text'),
             (r'#\[', String, 'squareText'),
 
-            #Mimic
+            # Mimic
             (r'\w[a-zA-Z0-9!?_:]+(?=\s*=.*mimic\s)', Name.Entity),
 
-            #Assignment
+            # Assignment
             (r'[a-zA-Z_][\w!:?]*(?=[\s]*[+*/-]?=[^=].*($|\.))',
              Name.Variable),
 
@@ -594,20 +594,20 @@ class IokeLexer(RegexLexer):
             # Ground
             (r'(stackTraceAsText)(?![a-zA-Z0-9!:_?])', Keyword),
 
-            #DefaultBehaviour Literals
+            # DefaultBehaviour Literals
             (r'(dict|list|message|set)(?![a-zA-Z0-9!:_?])', Keyword.Reserved),
 
-            #DefaultBehaviour Case
+            # DefaultBehaviour Case
             (r'(case|case:and|case:else|case:nand|case:nor|case:not|case:or|'
              r'case:otherwise|case:xor)(?![a-zA-Z0-9!:_?])', Keyword.Reserved),
 
-            #DefaultBehaviour Reflection
+            # DefaultBehaviour Reflection
             (r'(asText|become\!|derive|freeze\!|frozen\?|in\?|is\?|kind\?|'
              r'mimic\!|mimics|mimics\?|prependMimic\!|removeAllMimics\!|'
              r'removeMimic\!|same\?|send|thaw\!|uniqueHexId)'
              r'(?![a-zA-Z0-9!:_?])', Keyword),
 
-            #DefaultBehaviour Aspects
+            # DefaultBehaviour Aspects
             (r'(after|around|before)(?![a-zA-Z0-9!:_?])', Keyword.Reserved),
 
             # DefaultBehaviour
@@ -615,18 +615,18 @@ class IokeLexer(RegexLexer):
              r'(?![a-zA-Z0-9!:_?])', Keyword),
             (r'(use|destructuring)', Keyword.Reserved),
 
-            #DefaultBehavior BaseBehavior
+            # DefaultBehavior BaseBehavior
             (r'(cell\?|cellOwner\?|cellOwner|cellNames|cells|cell|'
              r'documentation|identity|removeCell!|undefineCell)'
              r'(?![a-zA-Z0-9!:_?])', Keyword),
 
-            #DefaultBehavior Internal
+            # DefaultBehavior Internal
             (r'(internal:compositeRegexp|internal:concatenateText|'
              r'internal:createDecimal|internal:createNumber|'
              r'internal:createRegexp|internal:createText)'
              r'(?![a-zA-Z0-9!:_?])', Keyword.Reserved),
 
-            #DefaultBehaviour Conditions
+            # DefaultBehaviour Conditions
             (r'(availableRestarts|bind|error\!|findRestart|handle|'
              r'invokeRestart|rescue|restart|signal\!|warn\!)'
              r'(?![a-zA-Z0-9!:_?])', Keyword.Reserved),
@@ -658,7 +658,7 @@ class IokeLexer(RegexLexer):
 
             (r'#\(', Punctuation),
 
-             # Operators
+            # Operators
             (r'(&&>>|\|\|>>|\*\*>>|:::|::|\.\.\.|===|\*\*>|\*\*=|&&>|&&=|'
              r'\|\|>|\|\|=|\->>|\+>>|!>>|<>>>|<>>|&>>|%>>|#>>|@>>|/>>|\*>>|'
              r'\?>>|\|>>|\^>>|~>>|\$>>|=>>|<<=|>>=|<=>|<\->|=~|!~|=>|\+\+|'
@@ -672,10 +672,10 @@ class IokeLexer(RegexLexer):
             # Punctuation
             (r'(\`\`|\`|\'\'|\'|\.|\,|@@|@|\[|\]|\(|\)|{|})', Punctuation),
 
-            #kinds
+            # kinds
             (r'[A-Z][\w!:?]*', Name.Class),
 
-            #default cellnames
+            # default cellnames
             (r'[a-z_][\w!:?]*', Name)
         ]
     }
@@ -692,19 +692,19 @@ class ClojureLexer(RegexLexer):
     filenames = ['*.clj']
     mimetypes = ['text/x-clojure', 'application/x-clojure']
 
-    special_forms = [
+    special_forms = (
         '.', 'def', 'do', 'fn', 'if', 'let', 'new', 'quote', 'var', 'loop'
-    ]
+    )
 
     # It's safe to consider 'ns' a declaration thing because it defines a new
     # namespace.
-    declarations = [
+    declarations = (
         'def-', 'defn', 'defn-', 'defmacro', 'defmulti', 'defmethod',
         'defstruct', 'defonce', 'declare', 'definline', 'definterface',
         'defprotocol', 'defrecord', 'deftype', 'defproject', 'ns'
-    ]
+    )
 
-    builtins = [
+    builtins = (
         '*', '+', '-', '->', '/', '<', '<=', '=', '==', '>', '>=', '..',
         'accessor', 'agent', 'agent-errors', 'aget', 'alength', 'all-ns',
         'alter', 'and', 'append-child', 'apply', 'array-map', 'aset',
@@ -753,7 +753,7 @@ class ClojureLexer(RegexLexer):
         'val', 'vals', 'var-get', 'var-set', 'var?', 'vector', 'vector-zip',
         'vector?', 'when', 'when-first', 'when-let', 'when-not',
         'with-local-vars', 'with-meta', 'with-open', 'with-out-str',
-        'xml-seq', 'xml-zip', 'zero?', 'zipmap', 'zipper']
+        'xml-seq', 'xml-zip', 'zero?', 'zipmap', 'zipper')
 
     # valid names for identifiers
     # well, names can only not consist fully of numbers
@@ -762,9 +762,6 @@ class ClojureLexer(RegexLexer):
     # TODO / should divide keywords/symbols into namespace/rest
     # but that's hard, so just pretend / is part of the name
     valid_name = r'(?!#)[\w!$%*+<=>?/.#-]+'
-
-    def _multi_escape(entries):
-        return '(%s)' % ('|'.join(re.escape(entry) + ' ' for entry in entries))
 
     tokens = {
         'root': [
@@ -792,17 +789,17 @@ class ClojureLexer(RegexLexer):
             (r'~@|[`\'#^~&@]', Operator),
 
             # highlight the special forms
-            (_multi_escape(special_forms), Keyword),
+            (words(special_forms, suffix=' '), Keyword),
 
             # Technically, only the special forms are 'keywords'. The problem
             # is that only treating them as keywords means that things like
             # 'defn' and 'ns' need to be highlighted as builtins. This is ugly
             # and weird for most styles. So, as a compromise we're going to
             # highlight them as Keyword.Declarations.
-            (_multi_escape(declarations), Keyword.Declaration),
+            (words(declarations, suffix=' '), Keyword.Declaration),
 
             # highlight the builtins
-            (_multi_escape(builtins), Name.Builtin),
+            (words(builtins, suffix=' '), Name.Builtin),
 
             # the remaining functions
             (r'(?<=\()' + valid_name, Name.Function),
@@ -848,9 +845,9 @@ class TeaLangLexer(RegexLexer):
     tokens = {
         'root': [
             # method names
-            (r'^(\s*(?:[a-zA-Z_][\w\.\[\]]*\s+)+?)' # return arguments
-             r'([a-zA-Z_]\w*)'                      # method name
-             r'(\s*)(\()',                          # signature start
+            (r'^(\s*(?:[a-zA-Z_][\w\.\[\]]*\s+)+?)'  # return arguments
+             r'([a-zA-Z_]\w*)'                       # method name
+             r'(\s*)(\()',                           # signature start
              bygroups(using(this), Name.Function, Text, Operator)),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
@@ -902,9 +899,9 @@ class CeylonLexer(RegexLexer):
     tokens = {
         'root': [
             # method names
-            (r'^(\s*(?:[a-zA-Z_][\w\.\[\]]*\s+)+?)' # return arguments
-             r'([a-zA-Z_]\w*)'                      # method name
-             r'(\s*)(\()',                          # signature start
+            (r'^(\s*(?:[a-zA-Z_][\w\.\[\]]*\s+)+?)'  # return arguments
+             r'([a-zA-Z_]\w*)'                       # method name
+             r'(\s*)(\()',                           # signature start
              bygroups(using(this), Name.Function, Text, Operator)),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
@@ -986,7 +983,7 @@ class KotlinLexer(RegexLexer):
         'root': [
             (r'^\s*\[.*?\]', Name.Attribute),
             (r'[^\S\n]+', Text),
-            (r'\\\n', Text), # line continuation
+            (r'\\\n', Text),  # line continuation
             (r'//.*?\n', Comment.Single),
             (r'/[*].*?[*]/', Comment.Multiline),
             (r'\n', Text),
@@ -1042,9 +1039,9 @@ class XtendLexer(RegexLexer):
     tokens = {
         'root': [
             # method names
-            (r'^(\s*(?:[a-zA-Z_][\w\.\[\]]*\s+)+?)' # return arguments
-             r'([a-zA-Z_$][\w$]*)'                  # method name
-             r'(\s*)(\()',                          # signature start
+            (r'^(\s*(?:[a-zA-Z_][\w\.\[\]]*\s+)+?)'  # return arguments
+             r'([a-zA-Z_$][\w$]*)'                   # method name
+             r'(\s*)(\()',                           # signature start
              bygroups(using(this), Name.Function, Text, Operator)),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
@@ -1089,6 +1086,7 @@ class XtendLexer(RegexLexer):
         ],
     }
 
+
 class PigLexer(RegexLexer):
     """
     For `Pig Latin <https://pig.apache.org/>`_ source code.
@@ -1124,7 +1122,7 @@ class PigLexer(RegexLexer):
              bygroups(Name.Function, Text, Punctuation)),
             (r'[()#:]', Text),
             (r'[^(:#\'\")\s]+', Text),
-            (r'\S+\s+', Text) # TODO: make tests pass without \s+
+            (r'\S+\s+', Text)   # TODO: make tests pass without \s+
         ],
         'keywords': [
             (r'(assert|and|any|all|arrange|as|asc|bag|by|cache|CASE|cat|cd|cp|'
@@ -1328,41 +1326,44 @@ class JasminLexer(RegexLexer):
             (r'method%s' % _break, Keyword.Reserved, 'enclosing-method'),
 
             # Instructions
-            (r'(aaload|aastore|aconst_null|aload|aload_0|aload_1|aload_2|'
-             r'aload_3|aload_w|areturn|arraylength|astore|astore_0|astore_1|'
-             r'astore_2|astore_3|astore_w|athrow|baload|bastore|bipush|'
-             r'breakpoint|caload|castore|d2f|d2i|d2l|dadd|daload|dastore|'
-             r'dcmpg|dcmpl|dconst_0|dconst_1|ddiv|dload|dload_0|dload_1|'
-             r'dload_2|dload_3|dload_w|dmul|dneg|drem|dreturn|dstore|dstore_0|'
-             r'dstore_1|dstore_2|dstore_3|dstore_w|dsub|dup|dup2|dup2_x1|'
-             r'dup2_x2|dup_x1|dup_x2|f2d|f2i|f2l|fadd|faload|fastore|fcmpg|'
-             r'fcmpl|fconst_0|fconst_1|fconst_2|fdiv|fload|fload_0|fload_1|'
-             r'fload_2|fload_3|fload_w|fmul|fneg|frem|freturn|fstore|fstore_0|'
-             r'fstore_1|fstore_2|fstore_3|fstore_w|fsub|i2b|i2c|i2d|i2f|i2l|'
-             r'i2s|iadd|iaload|iand|iastore|iconst_0|iconst_1|iconst_2|'
-             r'iconst_3|iconst_4|iconst_5|iconst_m1|idiv|iinc|iinc_w|iload|'
-             r'iload_0|iload_1|iload_2|iload_3|iload_w|imul|ineg|int2byte|'
-             r'int2char|int2short|ior|irem|ireturn|ishl|ishr|istore|istore_0|'
-             r'istore_1|istore_2|istore_3|istore_w|isub|iushr|ixor|l2d|l2f|'
-             r'l2i|ladd|laload|land|lastore|lcmp|lconst_0|lconst_1|ldc2_w|'
-             r'ldiv|lload|lload_0|lload_1|lload_2|lload_3|lload_w|lmul|lneg|'
-             r'lookupswitch|lor|lrem|lreturn|lshl|lshr|lstore|lstore_0|'
-             r'lstore_1|lstore_2|lstore_3|lstore_w|lsub|lushr|lxor|'
-             r'monitorenter|monitorexit|nop|pop|pop2|ret|ret_w|return|saload|'
-             r'sastore|sipush|swap)%s' % _break, Keyword.Reserved),
+            (words((
+                'aaload', 'aastore', 'aconst_null', 'aload', 'aload_0', 'aload_1', 'aload_2',
+                'aload_3', 'aload_w', 'areturn', 'arraylength', 'astore', 'astore_0', 'astore_1',
+                'astore_2', 'astore_3', 'astore_w', 'athrow', 'baload', 'bastore', 'bipush',
+                'breakpoint', 'caload', 'castore', 'd2f', 'd2i', 'd2l', 'dadd', 'daload', 'dastore',
+                'dcmpg', 'dcmpl', 'dconst_0', 'dconst_1', 'ddiv', 'dload', 'dload_0', 'dload_1',
+                'dload_2', 'dload_3', 'dload_w', 'dmul', 'dneg', 'drem', 'dreturn', 'dstore', 'dstore_0',
+                'dstore_1', 'dstore_2', 'dstore_3', 'dstore_w', 'dsub', 'dup', 'dup2', 'dup2_x1',
+                'dup2_x2', 'dup_x1', 'dup_x2', 'f2d', 'f2i', 'f2l', 'fadd', 'faload', 'fastore', 'fcmpg',
+                'fcmpl', 'fconst_0', 'fconst_1', 'fconst_2', 'fdiv', 'fload', 'fload_0', 'fload_1',
+                'fload_2', 'fload_3', 'fload_w', 'fmul', 'fneg', 'frem', 'freturn', 'fstore', 'fstore_0',
+                'fstore_1', 'fstore_2', 'fstore_3', 'fstore_w', 'fsub', 'i2b', 'i2c', 'i2d', 'i2f', 'i2l',
+                'i2s', 'iadd', 'iaload', 'iand', 'iastore', 'iconst_0', 'iconst_1', 'iconst_2',
+                'iconst_3', 'iconst_4', 'iconst_5', 'iconst_m1', 'idiv', 'iinc', 'iinc_w', 'iload',
+                'iload_0', 'iload_1', 'iload_2', 'iload_3', 'iload_w', 'imul', 'ineg', 'int2byte',
+                'int2char', 'int2short', 'ior', 'irem', 'ireturn', 'ishl', 'ishr', 'istore', 'istore_0',
+                'istore_1', 'istore_2', 'istore_3', 'istore_w', 'isub', 'iushr', 'ixor', 'l2d', 'l2f',
+                'l2i', 'ladd', 'laload', 'land', 'lastore', 'lcmp', 'lconst_0', 'lconst_1', 'ldc2_w',
+                'ldiv', 'lload', 'lload_0', 'lload_1', 'lload_2', 'lload_3', 'lload_w', 'lmul', 'lneg',
+                'lookupswitch', 'lor', 'lrem', 'lreturn', 'lshl', 'lshr', 'lstore', 'lstore_0',
+                'lstore_1', 'lstore_2', 'lstore_3', 'lstore_w', 'lsub', 'lushr', 'lxor',
+                'monitorenter', 'monitorexit', 'nop', 'pop', 'pop2', 'ret', 'ret_w', 'return', 'saload',
+                'sastore', 'sipush', 'swap'), suffix=_break), Keyword.Reserved),
             (r'(anewarray|checkcast|instanceof|ldc|ldc_w|new)%s' % _break,
              Keyword.Reserved, 'class/no-dots'),
-            (r'(invokedynamic|invokeinterface|invokenonvirtual|invokespecial|'
-             r'invokestatic|invokevirtual)%s' % _break, Keyword.Reserved,
+            (r'invoke(dynamic|interface|nonvirtual|special|'
+             r'static|virtual)%s' % _break, Keyword.Reserved,
              'invocation'),
             (r'(getfield|putfield)%s' % _break, Keyword.Reserved,
              ('descriptor/no-dots', 'field')),
             (r'(getstatic|putstatic)%s' % _break, Keyword.Reserved,
              ('descriptor/no-dots', 'static')),
-            (r'(goto|goto_w|if_acmpeq|if_acmpne|if_icmpeq|if_icmpge|if_icmpgt|'
-             r'if_icmple|if_icmplt|if_icmpne|ifeq|ifge|ifgt|ifle|iflt|ifne|'
-             r'ifnonnull|ifnull|jsr|jsr_w)%s' % _break, Keyword.Reserved,
-             'label'),
+            (words((
+                'goto', 'goto_w', 'if_acmpeq', 'if_acmpne', 'if_icmpeq',
+                'if_icmpge', 'if_icmpgt', 'if_icmple', 'if_icmplt', 'if_icmpne',
+                'ifeq', 'ifge', 'ifgt', 'ifle', 'iflt', 'ifne', 'ifnonnull',
+                'ifnull', 'jsr', 'jsr_w'), suffix=_break),
+             Keyword.Reserved, 'label'),
             (r'(multianewarray|newarray)%s' % _break, Keyword.Reserved,
              'descriptor/convert-dots'),
             (r'tableswitch%s' % _break, Keyword.Reserved, 'table')
