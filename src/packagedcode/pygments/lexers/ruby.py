@@ -12,7 +12,7 @@
 import re
 
 from pygments.lexer import Lexer, RegexLexer, ExtendedRegexLexer, include, \
-    bygroups, default, LexerContext, do_insertions
+    bygroups, default, LexerContext, do_insertions, words
 from pygments.token import Text, Comment, Operator, Keyword, Name, String, \
     Number, Punctuation, Error, Generic
 from pygments.util import shebang_matches
@@ -186,10 +186,12 @@ class RubyLexer(ExtendedRegexLexer):
             (r'#.*?$', Comment.Single),
             (r'=begin\s.*?\n=end.*?$', Comment.Multiline),
             # keywords
-            (r'(BEGIN|END|alias|begin|break|case|defined\?|'
-             r'do|else|elsif|end|ensure|for|if|in|next|redo|'
-             r'rescue|raise|retry|return|super|then|undef|unless|until|when|'
-             r'while|yield)\b', Keyword),
+            (words((
+                'BEGIN', 'END', 'alias', 'begin', 'break', 'case', 'defined?',
+                'do', 'else', 'elsif', 'end', 'ensure', 'for', 'if', 'in', 'next', 'redo',
+                'rescue', 'raise', 'retry', 'return', 'super', 'then', 'undef',
+                'unless', 'until', 'when', 'while', 'yield'), suffix=r'\b'),
+             Keyword),
             # start of function, class and module names
             (r'(module)(\s+)([a-zA-Z_]\w*'
              r'(?:::[a-zA-Z_]\w*)*)',
@@ -198,37 +200,43 @@ class RubyLexer(ExtendedRegexLexer):
             (r'def(?=[*%&^`~+-/\[<>=])', Keyword, 'funcname'),
             (r'(class)(\s+)', bygroups(Keyword, Text), 'classname'),
             # special methods
-            (r'(initialize|new|loop|include|extend|raise|attr_reader|'
-             r'attr_writer|attr_accessor|attr|catch|throw|private|'
-             r'module_function|public|protected|true|false|nil)\b',
+            (words((
+                'initialize', 'new', 'loop', 'include', 'extend', 'raise', 'attr_reader',
+                'attr_writer', 'attr_accessor', 'attr', 'catch', 'throw', 'private',
+                'module_function', 'public', 'protected', 'true', 'false', 'nil'),
+                suffix=r'\b'),
              Keyword.Pseudo),
             (r'(not|and|or)\b', Operator.Word),
-            (r'(autoload|block_given|const_defined|eql|equal|frozen|include|'
-             r'instance_of|is_a|iterator|kind_of|method_defined|nil|'
-             r'private_method_defined|protected_method_defined|'
-             r'public_method_defined|respond_to|tainted)\?', Name.Builtin),
+            (words((
+                'autoload', 'block_given', 'const_defined', 'eql', 'equal', 'frozen', 'include',
+                'instance_of', 'is_a', 'iterator', 'kind_of', 'method_defined', 'nil',
+                'private_method_defined', 'protected_method_defined',
+                'public_method_defined', 'respond_to', 'tainted'), suffix=r'\?'),
+             Name.Builtin),
             (r'(chomp|chop|exit|gsub|sub)!', Name.Builtin),
-            (r'(?<!\.)(Array|Float|Integer|String|__id__|__send__|abort|'
-             r'ancestors|at_exit|autoload|binding|callcc|caller|'
-             r'catch|chomp|chop|class_eval|class_variables|'
-             r'clone|const_defined\?|const_get|const_missing|const_set|'
-             r'constants|display|dup|eval|exec|exit|extend|fail|fork|'
-             r'format|freeze|getc|gets|global_variables|gsub|'
-             r'hash|id|included_modules|inspect|instance_eval|'
-             r'instance_method|instance_methods|'
-             r'instance_variable_get|instance_variable_set|instance_variables|'
-             r'lambda|load|local_variables|loop|'
-             r'method|method_missing|methods|module_eval|name|'
-             r'object_id|open|p|print|printf|private_class_method|'
-             r'private_instance_methods|'
-             r'private_methods|proc|protected_instance_methods|'
-             r'protected_methods|public_class_method|'
-             r'public_instance_methods|public_methods|'
-             r'putc|puts|raise|rand|readline|readlines|require|'
-             r'scan|select|self|send|set_trace_func|singleton_methods|sleep|'
-             r'split|sprintf|srand|sub|syscall|system|taint|'
-             r'test|throw|to_a|to_s|trace_var|trap|untaint|untrace_var|'
-             r'warn)\b', Name.Builtin),
+            (words((
+                'Array', 'Float', 'Integer', 'String', '__id__', '__send__', 'abort',
+                'ancestors', 'at_exit', 'autoload', 'binding', 'callcc', 'caller',
+                'catch', 'chomp', 'chop', 'class_eval', 'class_variables',
+                'clone', 'const_defined?', 'const_get', 'const_missing', 'const_set',
+                'constants', 'display', 'dup', 'eval', 'exec', 'exit', 'extend', 'fail', 'fork',
+                'format', 'freeze', 'getc', 'gets', 'global_variables', 'gsub',
+                'hash', 'id', 'included_modules', 'inspect', 'instance_eval',
+                'instance_method', 'instance_methods',
+                'instance_variable_get', 'instance_variable_set', 'instance_variables',
+                'lambda', 'load', 'local_variables', 'loop',
+                'method', 'method_missing', 'methods', 'module_eval', 'name',
+                'object_id', 'open', 'p', 'print', 'printf', 'private_class_method',
+                'private_instance_methods',
+                'private_methods', 'proc', 'protected_instance_methods',
+                'protected_methods', 'public_class_method',
+                'public_instance_methods', 'public_methods',
+                'putc', 'puts', 'raise', 'rand', 'readline', 'readlines', 'require',
+                'scan', 'select', 'self', 'send', 'set_trace_func', 'singleton_methods', 'sleep',
+                'split', 'sprintf', 'srand', 'sub', 'syscall', 'system', 'taint',
+                'test', 'throw', 'to_a', 'to_s', 'trace_var', 'trap', 'untaint',
+                'untrace_var', 'warn'), prefix=r'(?<!\.)', suffix=r'\b'),
+             Name.Builtin),
             (r'__(FILE|LINE)__\b', Name.Builtin.Pseudo),
             # normal heredocs
             (r'(?<!\w)(<<-?)(["`\']?)([a-zA-Z_]\w*)(\2)(.*?\n)',
@@ -469,10 +477,12 @@ class FancyLexer(RegexLexer):
             (r'(self|super|nil|false|true)\b', Name.Constant),
             (r'[(){};,/?\|:\\]', Punctuation),
             # names
-            (r'(Object|Array|Hash|Directory|File|Class|String|Number|'
-             r'Enumerable|FancyEnumerable|Block|TrueClass|NilClass|'
-             r'FalseClass|Tuple|Symbol|Stack|Set|FancySpec|Method|Package|'
-             r'Range)\b', Name.Builtin),
+            (words((
+                'Object', 'Array', 'Hash', 'Directory', 'File', 'Class', 'String',
+                'Number', 'Enumerable', 'FancyEnumerable', 'Block', 'TrueClass',
+                'NilClass', 'FalseClass', 'Tuple', 'Symbol', 'Stack', 'Set',
+                'FancySpec', 'Method', 'Package', 'Range'), suffix=r'\b'),
+             Name.Builtin),
             # functions
             (r'[a-zA-Z](\w|[-+?!=*/^><%])*:', Name.Function),
             # operators, must be below functions
