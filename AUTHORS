@@ -79,6 +79,7 @@ Other contributors, listed alphabetically, are:
 * Igor Kalnitsky -- vhdl lexer
 * Alexander Kit -- MaskJS lexer
 * Pekka Klärck -- Robot Framework lexer
+* Gerwin Klein -- Isabelle lexer
 * Eric Knibbe -- Lasso lexer
 * Stepan Koltsov -- Clay lexer
 * Adam Koprowski -- Opa lexer
