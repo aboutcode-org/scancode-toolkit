@@ -1,9 +1,9 @@
 README for Pygments
 ===================
 
-This is the source of Pygments. It is a generic syntax highlighter for general use
-in all kinds of software such as forum systems, wikis or other applications that
-need to prettify source code.
+This is the source of Pygments.  It is a generic syntax highlighter that
+supports over 300 languages and text formats, for use in code hosting, forums,
+wikis or other applications that need to prettify source code.
 
 Installing
 ----------
