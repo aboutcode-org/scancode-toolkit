@@ -134,8 +134,8 @@ class RubyLexer(ExtendedRegexLexer):
                                     ('<', '>', 'ab'):
             states[name+'-intp-string'] = [
                 (r'\\[\\' + lbrace + rbrace + ']', String.Other),
-                (r'(?<!\\)' + lbrace, String.Other, '#push'),
-                (r'(?<!\\)' + rbrace, String.Other, '#pop'),
+                (lbrace, String.Other, '#push'),
+                (rbrace, String.Other, '#pop'),
                 include('string-intp-escaped'),
                 (r'[\\#' + lbrace + rbrace + ']', String.Other),
                 (r'[^\\#' + lbrace + rbrace + ']+', String.Other),
@@ -144,8 +144,8 @@ class RubyLexer(ExtendedRegexLexer):
                                       name+'-intp-string'))
             states[name+'-string'] = [
                 (r'\\[\\' + lbrace + rbrace + ']', String.Other),
-                (r'(?<!\\)' + lbrace, String.Other, '#push'),
-                (r'(?<!\\)' + rbrace, String.Other, '#pop'),
+                (lbrace, String.Other, '#push'),
+                (rbrace, String.Other, '#pop'),
                 (r'[\\#' + lbrace + rbrace + ']', String.Other),
                 (r'[^\\#' + lbrace + rbrace + ']+', String.Other),
             ]
@@ -153,8 +153,8 @@ class RubyLexer(ExtendedRegexLexer):
                                       name+'-string'))
             states[name+'-regex'] = [
                 (r'\\[\\' + lbrace + rbrace + ']', String.Regex),
-                (r'(?<!\\)' + lbrace, String.Regex, '#push'),
-                (r'(?<!\\)' + rbrace + '[mixounse]*', String.Regex, '#pop'),
+                (lbrace, String.Regex, '#push'),
+                (rbrace + '[mixounse]*', String.Regex, '#pop'),
                 include('string-intp'),
                 (r'[\\#' + lbrace + rbrace + ']', String.Regex),
                 (r'[^\\#' + lbrace + rbrace + ']+', String.Regex),

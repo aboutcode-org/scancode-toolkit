@@ -123,3 +123,23 @@ class RubyTest(unittest.TestCase):
         ]
         self.assertEqual(tokens, list(self.lexer.get_tokens(fragment)))
 
+    def testEscapedBracestring(self):
+        fragment = u'str.gsub(%r{\\\\\\\\}, "/")\n'
+        tokens = [
+            (Token.Name, u'str'),
+            (Token.Operator, u'.'),
+            (Token.Name, u'gsub'),
+            (Token.Punctuation, u'('),
+            (Token.Literal.String.Regex, u'%r{'),
+            (Token.Literal.String.Regex, u'\\\\'),
+            (Token.Literal.String.Regex, u'\\\\'),
+            (Token.Literal.String.Regex, u'}'),
+            (Token.Punctuation, u','),
+            (Token.Text, u' '),
+            (Token.Literal.String.Double, u'"'),
+            (Token.Literal.String.Double, u'/'),
+            (Token.Literal.String.Double, u'"'),
+            (Token.Punctuation, u')'),
+            (Token.Text, u'\n'),
+        ]
+        self.assertEqual(tokens, list(self.lexer.get_tokens(fragment)))
