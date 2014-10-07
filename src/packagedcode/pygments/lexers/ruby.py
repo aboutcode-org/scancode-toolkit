@@ -306,7 +306,7 @@ class RubyLexer(ExtendedRegexLexer):
             (r'[A-Z]\w+', Name.Constant),
             # this is needed because ruby attributes can look
             # like keywords (class) or like this: ` ?!?
-            (r'(\.|::)([a-zA-Z_]\w*[\!\?]?|[*%&^`~+-/\[<>=])',
+            (r'(\.|::)([a-zA-Z_]\w*[\!\?]?|[*%&^`~+\-/\[<>=])',
              bygroups(Operator, Name)),
             (r'[a-zA-Z_]\w*[\!\?]?', Name),
             (r'(\[|\]|\*\*|<<?|>>?|>=|<=|<=>|=~|={3}|'
