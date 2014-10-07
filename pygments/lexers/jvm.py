@@ -268,6 +268,8 @@ class ScalaLexer(RegexLexer):
             (r'""".*?"""(?!")', String),
             (r'"(\\\\|\\"|[^"])*"', String),
             (r"'\\.'|'[^\\]'|'\\u[0-9a-fA-F]{4}'", String.Char),
+            (r'[fs]"', String, 'interpstring'),  # interpolated strings
+            (r'raw"(\\\\|\\"|[^"])*"', String),  # raw strings
             # (ur'(\.)(%s|%s|`[^`]+`)' % (idrest, op), bygroups(Operator,
             # Name.Attribute)),
             (idrest, Name),
@@ -320,6 +322,17 @@ class ScalaLexer(RegexLexer):
         'import': [
             (u'(%s|\\.)+' % idrest, Name.Namespace, '#pop')
         ],
+        'interpstring': [
+            (r'[^"$\\]', String),
+            (r'\$\{', String.Interpol, 'interpbrace'),
+            (r'\\.', String),
+            (r'"', String, '#pop'),
+        ],
+        'interpbrace': [
+            (r'\}', String.Interpol, '#pop'),
+            (r'\{', String.Interpol, '#push'),
+            include('root'),
+        ]
     }
 
 
