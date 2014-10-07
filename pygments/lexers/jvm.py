@@ -244,6 +244,7 @@ class ScalaLexer(RegexLexer):
              u'\ua77d-\ua77e\ua780\ua782\ua784\ua786\ua78b\uff21-\uff3a]')
 
     idrest = u'%s(?:%s|[0-9])*(?:(?<=_)%s)?' % (letter, letter, op)
+    letter_letter_digit = u'%s(?:%s|\d)*' % (letter, letter)
 
     tokens = {
         'root': [
@@ -268,6 +269,7 @@ class ScalaLexer(RegexLexer):
             (r'""".*?"""(?!")', String),
             (r'"(\\\\|\\"|[^"])*"', String),
             (r"'\\.'|'[^\\]'|'\\u[0-9a-fA-F]{4}'", String.Char),
+            (r'[fs]"""', String, 'interptriplestring'),  # interpolated strings
             (r'[fs]"', String, 'interpstring'),  # interpolated strings
             (r'raw"(\\\\|\\"|[^"])*"', String),  # raw strings
             # (ur'(\.)(%s|%s|`[^`]+`)' % (idrest, op), bygroups(Operator,
@@ -322,18 +324,27 @@ class ScalaLexer(RegexLexer):
         'import': [
             (u'(%s|\\.)+' % idrest, Name.Namespace, '#pop')
         ],
-        'interpstring': [
-            (r'[^"$\\]', String),
-            (r'\$\{', String.Interpol, 'interpbrace'),
+        'interpstringcommon': [
+            (r'[^"$\\]+', String),
             (r'\$\$', String),
+            (r'\$' + letter_letter_digit, String.Interpol),
+            (r'\$\{', String.Interpol, 'interpbrace'),
             (r'\\.', String),
+        ],
+        'interptriplestring': [
+            (r'"""(?!")', String, '#pop'),
+            (r'"', String),
+            include('interpstringcommon'),
+        ],
+        'interpstring': [
             (r'"', String, '#pop'),
+            include('interpstringcommon'),
         ],
         'interpbrace': [
             (r'\}', String.Interpol, '#pop'),
             (r'\{', String.Interpol, '#push'),
             include('root'),
-        ]
+        ],
     }
 
 
