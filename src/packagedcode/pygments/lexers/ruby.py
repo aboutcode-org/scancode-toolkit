@@ -22,6 +22,11 @@ __all__ = ['RubyLexer', 'RubyConsoleLexer', 'FancyLexer']
 line_re = re.compile('.*?\n')
 
 
+RUBY_OPERATORS = (
+    '*', '**', '-', '+', '-@', '+@', '/', '%', '&', '|', '^', '`', '~',
+    '[]', '[]=', '<<', '>>', '<', '<>', '<=>', '>', '>=', '==', '==='
+)
+
 class RubyLexer(ExtendedRegexLexer):
     """
     For `Ruby <http://www.ruby-lang.org>`_ source code.
@@ -100,8 +105,8 @@ class RubyLexer(ExtendedRegexLexer):
         states = {}
         states['strings'] = [
             # easy ones
-            (r'\:@{0,2}([a-zA-Z_]\w*[\!\?]?|\*\*?|[-+]@?|'
-             r'[/%&|^`~]|\[\]=?|<<|>>|<=?>|>=?|===?)', String.Symbol),
+            (r'\:@{0,2}[a-zA-Z_]\w*[\!\?]?', String.Symbol),
+            (words(RUBY_OPERATORS, prefix=r'\:@{0,2}'), String.Symbol),
             (r":'(\\\\|\\'|[^'])*'", String.Symbol),
             (r"'(\\\\|\\'|[^'])*'", String.Single),
             (r':"', String.Symbol, 'simple-sym'),
@@ -306,6 +311,8 @@ class RubyLexer(ExtendedRegexLexer):
             (r'[A-Z]\w+', Name.Constant),
             # this is needed because ruby attributes can look
             # like keywords (class) or like this: ` ?!?
+            (words(RUBY_OPERATORS, prefix=r'(\.|::)'),
+             bygroups(Operator, Name.Operator)),
             (r'(\.|::)([a-zA-Z_]\w*[\!\?]?|[*%&^`~+\-/\[<>=])',
              bygroups(Operator, Name)),
             (r'[a-zA-Z_]\w*[\!\?]?', Name),

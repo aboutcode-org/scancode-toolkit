@@ -17,6 +17,7 @@ class RubyTest(unittest.TestCase):
 
     def setUp(self):
         self.lexer = RubyLexer()
+        self.maxDiff = None
 
     def testRangeSyntax1(self):
         fragment = u'1..3\n'
@@ -107,6 +108,17 @@ class RubyTest(unittest.TestCase):
             (Token.Literal.String.Double, u'"'),
             (Token.Literal.String.Double, u'Z'),
             (Token.Literal.String.Double, u'"'),
+            (Token.Text, u'\n'),
+        ]
+        self.assertEqual(tokens, list(self.lexer.get_tokens(fragment)))
+
+    def testOperatorMethods(self):
+        fragment = u'x.==4\n'
+        tokens = [
+            (Token.Name, u'x'),
+            (Token.Operator, u'.'),
+            (Token.Name.Operator, u'=='),
+            (Token.Literal.Number.Integer, u'4'),
             (Token.Text, u'\n'),
         ]
         self.assertEqual(tokens, list(self.lexer.get_tokens(fragment)))
