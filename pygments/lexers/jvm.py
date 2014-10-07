@@ -325,6 +325,7 @@ class ScalaLexer(RegexLexer):
         'interpstring': [
             (r'[^"$\\]', String),
             (r'\$\{', String.Interpol, 'interpbrace'),
+            (r'\$\$', String),
             (r'\\.', String),
             (r'"', String, '#pop'),
         ],
