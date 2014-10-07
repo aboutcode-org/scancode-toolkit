@@ -62,7 +62,7 @@ class JavaLexer(RegexLexer):
             (r'"(\\\\|\\"|[^"])*"', String),
             (r"'\\.'|'[^\\]'|'\\u[0-9a-fA-F]{4}'", String.Char),
             (r'(\.)((?:[^\W\d]|\$)[\w\$]*)', bygroups(Operator, Name.Attribute)),
-            (r'([^\W\d]|\$)[\w\$]*:', Name.Label),
+            (r'^\s*([^\W\d]|\$)[\w\$]*:', Name.Label),
             (r'([^\W\d]|\$)[\w\$]*', Name),
             (r'[~\^\*!%&\[\]\(\)\{\}<>\|+=:;,./?-]', Operator),
             (r'[0-9][0-9]*\.[0-9]+([eE][0-9]+)?[fd]?', Number.Float),
