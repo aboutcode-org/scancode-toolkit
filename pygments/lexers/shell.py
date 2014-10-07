@@ -39,11 +39,15 @@ class BashLexer(RegexLexer):
     tokens = {
         'root': [
             include('basic'),
+            (r'`', String.Backtick, 'backticks'),
+            include('interp'),
+            include('data'),
+        ],
+        'interp': [
             (r'\$\(\(', Keyword, 'math'),
             (r'\$\(', Keyword, 'paren'),
-            (r'\${#?', Keyword, 'curly'),
-            (r'`', String.Backtick, 'backticks'),
-            include('data'),
+            (r'\${#?', String.Interpol, 'curly'),
+            (r'\$#?(\w+|.)', Name.Variable),
         ],
         'basic': [
             (r'\b(if|fi|else|while|do|done|for|then|return|function|case|'
@@ -65,7 +69,8 @@ class BashLexer(RegexLexer):
             (r'&&|\|\|', Operator),
         ],
         'data': [
-            (r'(?s)\$?"(\\\\|\\[0-7]+|\\.|[^"\\])*"', String.Double),
+            (r'(?s)\$?"(\\\\|\\[0-7]+|\\.|[^"\\$])*"', String.Double),
+            (r'"', String.Double, 'string'),
             (r"(?s)\$?'(\\\\|\\[0-7]+|\\.|[^'\\])*'", String.Single),
             (r';', Punctuation),
             (r'&', Punctuation),
@@ -73,14 +78,18 @@ class BashLexer(RegexLexer):
             (r'\s+', Text),
             (r'\d+(?= |\Z)', Number),
             (r'[^=\s\[\]{}()$"\'`\\<&|;]+', Text),
-            (r'\$#?(\w+|.)', Name.Variable),
             (r'<', Text),
         ],
+        'string': [
+            (r'"', String.Double, '#pop'),
+            (r'(\\\\|\\[0-7]+|\\[\w\W]|[^"\\$])+', String.Double),
+            include('interp'),
+        ],
         'curly': [
-            (r'}', Keyword, '#pop'),
+            (r'}', String.Interpol, '#pop'),
             (r':-', Keyword),
             (r'\w+', Name.Variable),
-            (r'[^}:"\'`$]+', Punctuation),
+            (r'[^}:"\'`$\\]+', Punctuation),
             (r':', Punctuation),
             include('root'),
         ],
