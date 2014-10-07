@@ -40,8 +40,8 @@ class BashLexer(RegexLexer):
         'root': [
             include('basic'),
             (r'`', String.Backtick, 'backticks'),
-            include('interp'),
             include('data'),
+            include('interp'),
         ],
         'interp': [
             (r'\$\(\(', Keyword, 'math'),
@@ -71,7 +71,8 @@ class BashLexer(RegexLexer):
         'data': [
             (r'(?s)\$?"(\\\\|\\[0-7]+|\\.|[^"\\$])*"', String.Double),
             (r'"', String.Double, 'string'),
-            (r"(?s)\$?'(\\\\|\\[0-7]+|\\.|[^'\\])*'", String.Single),
+            (r"(?s)\$'(\\\\|\\[0-7]+|\\.|[^'\\])*'", String.Single),
+            (r"(?s)'.*?'", String.Single),
             (r';', Punctuation),
             (r'&', Punctuation),
             (r'\|', Punctuation),
@@ -82,7 +83,7 @@ class BashLexer(RegexLexer):
         ],
         'string': [
             (r'"', String.Double, '#pop'),
-            (r'(\\\\|\\[0-7]+|\\[\w\W]|[^"\\$])+', String.Double),
+            (r'(?s)(\\\\|\\[0-7]+|\\.|[^"\\$])+', String.Double),
             include('interp'),
         ],
         'curly': [
