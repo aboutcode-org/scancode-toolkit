@@ -335,7 +335,8 @@ class RubyLexer(ExtendedRegexLexer):
             include('root')
         ],
         'in-intp': [
-            ('}', String.Interpol, '#pop'),
+            (r'{', String.Interpol, '#push'),
+            (r'}', String.Interpol, '#pop'),
             include('root'),
         ],
         'string-intp': [
