@@ -410,6 +410,7 @@ File NomosTestfiles/GFDL/GFDL-1.2.txt contains license(s) GFDL-1.2
 File NomosTestfiles/GFDL/license2.h contains license(s) GFDL-1.3,LGPL-2.1+
 File NomosTestfiles/AGPL/Affero-v1.0 contains license(s) AGPL-1.0
 File NomosTestfiles/AGPL/AGPL-3.0.txt contains license(s) AGPL-3.0
+File NomosTestfiles/AGPL/readme.rst contains license(s) AGPL-3.0+
 File NomosTestfiles/NPL/NPL-1.1 contains license(s) NPL-1.1
 File NomosTestfiles/NPL/NPL-1.0 contains license(s) NPL-1.0
 File NomosTestfiles/CNRI-Python/CNRI-Python-GPL-Compatible.txt contains license(s) CNRI-Python-GPL-Compatible
@@ -417,7 +418,7 @@ File NomosTestfiles/CNRI-Python/CNRI-Python.txt contains license(s) CNRI-Python
 File NomosTestfiles/ErlPL/decode_skip.h contains license(s) ErlPL-1.1
 File NomosTestfiles/ErlPL/ErlPL-1.1.txt contains license(s) ErlPL-1.1
 File NomosTestfiles/Dual-license/004.phpt.GPLv2+-PHP contains license(s) GPL-2.0+,PHP
-File NomosTestfiles/Dual-license/aclocal.m4 contains license(s) NOT-public-domain,GPL-exception
+File NomosTestfiles/Dual-license/aclocal.m4 contains license(s) NOT-public-domain,GPL-2.0-with-autoconf-exception
 File NomosTestfiles/Dual-license/7-zip_GPL-2.1+-unRARrestriction contains license(s) LGPL-2.1+,unRAR restriction
 File NomosTestfiles/Dual-license/aes.h contains license(s) BSD-style,Dual-license,GPL
 File NomosTestfiles/Dual-license/CRYPTOGAMS.txt contains license(s) Cryptogams,Dual-license,GPL
@@ -561,6 +562,7 @@ File NomosTestfiles/GPL/UploadWizardCampaign.php contains license(s) GPL-2.0+
 File NomosTestfiles/GPL/Autoload.php contains license(s) GPL-2.0+
 File NomosTestfiles/GPL/RelParser.cpp contains license(s) GPL-1.0+
 File NomosTestfiles/GPL/StopComponentCommand.java contains license(s) GPL-3.0+-with-classpath-exception
+File NomosTestfiles/GPL/ax_gcc_archflag.m4 contains license(s) GPL-3.0+-with-autoconf-exception
 File NomosTestfiles/eCos/eCos-2.0.txt contains license(s) GPL-2.0+,eCos-2.0
 File NomosTestfiles/Trademark-ref/53c7xx.c contains license(s) Trademark-ref
 File NomosTestfiles/OCLC/OCLC-2.0.txt contains license(s) OCLC-2.0
