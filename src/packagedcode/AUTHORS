@@ -29,7 +29,7 @@ Other contributors, listed alphabetically, are:
 * Pierre Bourdon -- bugfixes
 * Hiram Chirino -- Scaml and Jade lexers
 * Ian Cooper -- VGL lexer
-* David Corbett -- Inform and Jasmin lexers
+* David Corbett -- Inform, Jasmin, and TADS 3 lexers
 * Leaf Corcoran -- MoonScript lexer
 * Christopher Creutzig -- MuPAD lexer
 * Daniël W. Crompton - Pike lexer
