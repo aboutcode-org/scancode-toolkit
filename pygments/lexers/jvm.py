@@ -289,7 +289,7 @@ class ScalaLexer(RegexLexer):
             (u'(%s|%s|`[^`]+`)(\\s*)(\\[)' % (idrest, op),
              bygroups(Name.Class, Text, Operator), 'typeparam'),
             (r'\s+', Text),
-            (r'{', Operator, '#pop'),
+            (r'\{', Operator, '#pop'),
             (r'\(', Operator, '#pop'),
             (r'//.*?\n', Comment.Single, '#pop'),
             (u'%s|%s|`[^`]+`' % (idrest, op), Name.Class, '#pop'),
@@ -530,7 +530,7 @@ class IokeLexer(RegexLexer):
         'interpolatableText': [
             (r'(\\b|\\e|\\t|\\n|\\f|\\r|\\"|\\\\|\\#|\\\Z|\\u[0-9a-fA-F]{1,4}'
              r'|\\[0-3]?[0-7]?[0-7])', String.Escape),
-            (r'#{', Punctuation, 'textInterpolationRoot')
+            (r'#\{', Punctuation, 'textInterpolationRoot')
         ],
 
         'text': [
@@ -546,7 +546,7 @@ class IokeLexer(RegexLexer):
         ],
 
         'textInterpolationRoot': [
-            (r'}', Punctuation, '#pop'),
+            (r'\}', Punctuation, '#pop'),
             include('root')
         ],
 
@@ -695,7 +695,7 @@ class IokeLexer(RegexLexer):
              Operator),
 
             # Punctuation
-            (r'(\`\`|\`|\'\'|\'|\.|\,|@@|@|\[|\]|\(|\)|{|})', Punctuation),
+            (r'(\`\`|\`|\'\'|\'|\.|\,|@@|@|\[|\]|\(|\)|\{|\})', Punctuation),
 
             # kinds
             (r'[A-Z][\w!:?]*', Name.Class),
@@ -1268,7 +1268,7 @@ class GoloLexer(RegexLexer):
             (r'[\'"\\]', String)
         ],
         'stringescape': [
-            (r'\\([\\abfnrtv"\']|\n|N{.*?}|u[a-fA-F0-9]{4}|'
+            (r'\\([\\abfnrtv"\']|\n|N\{.*?\}|u[a-fA-F0-9]{4}|'
              r'U[a-fA-F0-9]{8}|x[a-fA-F0-9]{2}|[0-7]{1,3})', String.Escape)
         ],
         'triplestring': [
