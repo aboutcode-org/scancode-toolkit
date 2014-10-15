@@ -999,9 +999,9 @@ class KotlinLexer(RegexLexer):
 
     flags = re.MULTILINE | re.DOTALL | re.UNICODE
 
-    kt_name = ('@?[_' + uni.Lu + uni.Ll + uni.Lt + uni.Lm + uni.Nl + ']' +
-               '[' + uni.Lu + uni.Ll + uni.Lt + uni.Lm + uni.Nl + uni.Nd +
-               uni.Pc + uni.Cf + uni.Mn + uni.Mc + ']*')
+    kt_name = ('@?[_' + uni.combine('Lu', 'Ll', 'Lt', 'Lm', 'Nl') + ']' +
+               '[' + uni.combine('Lu', 'Ll', 'Lt', 'Lm', 'Nl', 'Nd', 'Pc', 'Cf',
+                                 'Mn', 'Mc') + ']*')
     kt_id = '(' + kt_name + '|`' + kt_name + '`)'
 
     tokens = {
