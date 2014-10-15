@@ -342,12 +342,12 @@ class RubyLexer(ExtendedRegexLexer):
             include('root')
         ],
         'in-intp': [
-            (r'{', String.Interpol, '#push'),
-            (r'}', String.Interpol, '#pop'),
+            (r'\{', String.Interpol, '#push'),
+            (r'\}', String.Interpol, '#pop'),
             include('root'),
         ],
         'string-intp': [
-            (r'#{', String.Interpol, 'in-intp'),
+            (r'#\{', String.Interpol, 'in-intp'),
             (r'#@@?[a-zA-Z_]\w*', String.Interpol),
             (r'#\$[a-zA-Z_]\w*', String.Interpol)
         ],
