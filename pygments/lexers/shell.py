@@ -87,7 +87,7 @@ class BashLexer(RegexLexer):
             include('interp'),
         ],
         'curly': [
-            (r'}', String.Interpol, '#pop'),
+            (r'\}', String.Interpol, '#pop'),
             (r':-', Keyword),
             (r'\w+', Name.Variable),
             (r'[^}:"\'`$\\]+', Punctuation),
@@ -322,7 +322,7 @@ class TcshLexer(RegexLexer):
             (r'\$#?(\w+|.)', Name.Variable),
         ],
         'curly': [
-            (r'}', Keyword, '#pop'),
+            (r'\}', Keyword, '#pop'),
             (r':-', Keyword),
             (r'\w+', Name.Variable),
             (r'[^}:"\'`$]+', Punctuation),
