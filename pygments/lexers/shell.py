@@ -46,7 +46,7 @@ class BashLexer(RegexLexer):
         'interp': [
             (r'\$\(\(', Keyword, 'math'),
             (r'\$\(', Keyword, 'paren'),
-            (r'\${#?', String.Interpol, 'curly'),
+            (r'\$\{#?', String.Interpol, 'curly'),
             (r'\$#?(\w+|.)', Name.Variable),
         ],
         'basic': [
@@ -288,7 +288,7 @@ class TcshLexer(RegexLexer):
         'root': [
             include('basic'),
             (r'\$\(', Keyword, 'paren'),
-            (r'\${#?', Keyword, 'curly'),
+            (r'\$\{#?', Keyword, 'curly'),
             (r'`', String.Backtick, 'backticks'),
             include('data'),
         ],
