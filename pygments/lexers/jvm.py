@@ -1462,7 +1462,8 @@ class JasminLexer(RegexLexer):
             (r'(L)((?:%s[/.])*)(%s?)(;)' % (_unqualified_name, _name),
              bygroups(Keyword.Type, Name.Namespace, Name.Class, Punctuation),
              '#pop'),
-            (r'[^%s\[)L]*' % _separator, Keyword.Type, '#pop')
+            (r'[^%s\[)L]+' % _separator, Keyword.Type, '#pop'),
+            default('#pop')
         ],
         'descriptor/no-dots': [
             include('default'),
@@ -1470,7 +1471,8 @@ class JasminLexer(RegexLexer):
             (r'(L)((?:%s/)*)(%s)(;)' % (_unqualified_name, _name),
              bygroups(Keyword.Type, Name.Namespace, Name.Class, Punctuation),
              '#pop'),
-            (r'[^%s\[)L]*' % _separator, Keyword.Type, '#pop')
+            (r'[^%s\[)L]+' % _separator, Keyword.Type, '#pop'),
+            default('#pop')
         ],
         'descriptors/convert-dots': [
             (r'\)', Punctuation, '#pop'),
