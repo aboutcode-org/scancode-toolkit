@@ -451,7 +451,7 @@ class FancyLexer(RegexLexer):
             (r'/(\\\\|\\/|[^/])*/[egimosx]*', String.Regex, '#pop'),
             (r'!(\\\\|\\!|[^!])*![egimosx]*', String.Regex, '#pop'),
             (r'\\(\\\\|[^\\])*\\[egimosx]*', String.Regex, '#pop'),
-            (r'{(\\\\|\\}|[^}])*}[egimosx]*', String.Regex, '#pop'),
+            (r'\{(\\\\|\\\}|[^}])*\}[egimosx]*', String.Regex, '#pop'),
             (r'<(\\\\|\\>|[^>])*>[egimosx]*', String.Regex, '#pop'),
             (r'\[(\\\\|\\\]|[^\]])*\][egimosx]*', String.Regex, '#pop'),
             (r'\((\\\\|\\\)|[^\)])*\)[egimosx]*', String.Regex, '#pop'),
@@ -463,7 +463,7 @@ class FancyLexer(RegexLexer):
             (r'\s+', Text),
 
             # balanced delimiters (copied from PerlLexer):
-            (r's{(\\\\|\\}|[^}])*}\s*', String.Regex, 'balanced-regex'),
+            (r's\{(\\\\|\\\}|[^}])*\}\s*', String.Regex, 'balanced-regex'),
             (r's<(\\\\|\\>|[^>])*>\s*', String.Regex, 'balanced-regex'),
             (r's\[(\\\\|\\\]|[^\]])*\]\s*', String.Regex, 'balanced-regex'),
             (r's\((\\\\|\\\)|[^\)])*\)\s*', String.Regex, 'balanced-regex'),
