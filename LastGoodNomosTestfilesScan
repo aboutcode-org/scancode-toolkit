@@ -363,6 +363,7 @@ File NomosTestfiles/BSD/bsd-3-3 contains license(s) BSD-3-Clause
 File NomosTestfiles/BSD/bsd.txt contains license(s) BSD-3-Clause
 File NomosTestfiles/BSD/bsd-3.txt contains license(s) BSD-3-Clause
 File NomosTestfiles/BSD/bsd-3-4 contains license(s) BSD-3-Clause
+File NomosTestfiles/BSD/net-snmp-license.txt contains license(s) BSD-3-Clause,Sun(tm)
 File NomosTestfiles/XMLDB/SimpleBinaryResource.java contains license(s) XMLDB-1.0
 File NomosTestfiles/NBPL/NBPL-1.0 contains license(s) NBPL-1.0
 File NomosTestfiles/FTL/freetype.h contains license(s) FTL
