@@ -57,7 +57,7 @@ class JavaLexer(RegexLexer):
              r'transient|volatile)\b', Keyword.Declaration),
             (r'(boolean|byte|char|double|float|int|long|short|void)\b',
              Keyword.Type),
-            (r'(package)(\s+)', bygroups(Keyword.Namespace, Text)),
+            (r'(package)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
             (r'(true|false|null)\b', Keyword.Constant),
             (r'(class|interface)(\s+)', bygroups(Keyword.Declaration, Text), 'class'),
             (r'(import)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
