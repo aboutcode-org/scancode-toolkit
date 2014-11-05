@@ -1,2 +1,2 @@
 #!/bin/bash
-find $1 -type f -not \( -wholename "*svn*" \) -exec ../../agent/nomos -l '{}' +
+find $1 -type f -exec ../../agent/nomos -l '{}' +
