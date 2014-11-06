@@ -421,7 +421,7 @@ class PowerShellLexer(RegexLexer):
             (r'[#&.]', Comment.Multiline),
         ],
         'string': [
-            (r"`[0abfnrtv'\"\$`]", String.Escape),
+            (r"`[0abfnrtv'\"$`]", String.Escape),
             (r'[^$`"]+', String.Double),
             (r'\$\(', Punctuation, 'child'),
             (r'""', String.Double),
