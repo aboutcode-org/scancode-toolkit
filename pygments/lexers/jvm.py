@@ -491,6 +491,8 @@ class GroovyLexer(RegexLexer):
             (r'(class|interface)(\s+)', bygroups(Keyword.Declaration, Text),
              'class'),
             (r'(import)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
+            (r'""".*?"""', String.Double),
+            (r"'''.*?'''", String.Single),
             (r'"(\\\\|\\"|[^"])*"', String.Double),
             (r"'(\\\\|\\'|[^'])*'", String.Single),
             (r'\$/((?!/\$).)*/\$', String),
