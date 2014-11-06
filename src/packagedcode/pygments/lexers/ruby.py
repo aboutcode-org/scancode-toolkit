@@ -27,6 +27,7 @@ RUBY_OPERATORS = (
     '[]', '[]=', '<<', '>>', '<', '<>', '<=>', '>', '>=', '==', '==='
 )
 
+
 class RubyLexer(ExtendedRegexLexer):
     """
     For `Ruby <http://www.ruby-lang.org>`_ source code.
@@ -105,7 +106,7 @@ class RubyLexer(ExtendedRegexLexer):
         states = {}
         states['strings'] = [
             # easy ones
-            (r'\:@{0,2}[a-zA-Z_]\w*[\!\?]?', String.Symbol),
+            (r'\:@{0,2}[a-zA-Z_]\w*[!?]?', String.Symbol),
             (words(RUBY_OPERATORS, prefix=r'\:@{0,2}'), String.Symbol),
             (r":'(\\\\|\\'|[^'])*'", String.Symbol),
             (r"'(\\\\|\\'|[^'])*'", String.Single),
@@ -128,36 +129,37 @@ class RubyLexer(ExtendedRegexLexer):
             ]
 
         # braced quoted strings
-        for lbrace, rbrace, name in ('\\{', '\\}', 'cb'), \
-                                    ('\\[', '\\]', 'sb'), \
-                                    ('\\(', '\\)', 'pa'), \
-                                    ('<', '>', 'ab'):
+        for lbrace, rbrace, bracecc, name in \
+                ('\\{', '\\}', '{}', 'cb'), \
+                ('\\[', '\\]', '\\[\\]', 'sb'), \
+                ('\\(', '\\)', '()', 'pa'), \
+                ('<', '>', '<>', 'ab'):
             states[name+'-intp-string'] = [
-                (r'\\[\\' + lbrace + rbrace + ']', String.Other),
+                (r'\\[\\' + bracecc + ']', String.Other),
                 (lbrace, String.Other, '#push'),
                 (rbrace, String.Other, '#pop'),
                 include('string-intp-escaped'),
-                (r'[\\#' + lbrace + rbrace + ']', String.Other),
-                (r'[^\\#' + lbrace + rbrace + ']+', String.Other),
+                (r'[\\#' + bracecc + ']', String.Other),
+                (r'[^\\#' + bracecc + ']+', String.Other),
             ]
             states['strings'].append((r'%[QWx]?' + lbrace, String.Other,
                                       name+'-intp-string'))
             states[name+'-string'] = [
-                (r'\\[\\' + lbrace + rbrace + ']', String.Other),
+                (r'\\[\\' + bracecc + ']', String.Other),
                 (lbrace, String.Other, '#push'),
                 (rbrace, String.Other, '#pop'),
-                (r'[\\#' + lbrace + rbrace + ']', String.Other),
-                (r'[^\\#' + lbrace + rbrace + ']+', String.Other),
+                (r'[\\#' + bracecc + ']', String.Other),
+                (r'[^\\#' + bracecc + ']+', String.Other),
             ]
             states['strings'].append((r'%[qsw]' + lbrace, String.Other,
                                       name+'-string'))
             states[name+'-regex'] = [
-                (r'\\[\\' + lbrace + rbrace + ']', String.Regex),
+                (r'\\[\\' + bracecc + ']', String.Regex),
                 (lbrace, String.Regex, '#push'),
                 (rbrace + '[mixounse]*', String.Regex, '#pop'),
                 include('string-intp'),
-                (r'[\\#' + lbrace + rbrace + ']', String.Regex),
-                (r'[^\\#' + lbrace + rbrace + ']+', String.Regex),
+                (r'[\\#' + bracecc + ']', String.Regex),
+                (r'[^\\#' + bracecc + ']+', String.Regex),
             ]
             states['strings'].append((r'%r' + lbrace, String.Regex,
                                       name+'-regex'))
@@ -165,11 +167,11 @@ class RubyLexer(ExtendedRegexLexer):
         # these must come after %<brace>!
         states['strings'] += [
             # %r regex
-            (r'(%r([^a-zA-Z0-9]))((?:\\\2|(?!\2).)*)(\2[mixounse]*)',
+            (r'(%r([\W_]))((?:\\\2|(?!\2).)*)(\2[mixounse]*)',
              intp_regex_callback),
             # regular fancy strings with qsw
-            (r'%[qsw]([^a-zA-Z0-9])((?:\\\1|(?!\1).)*)\1', String.Other),
-            (r'(%[QWx]([^a-zA-Z0-9]))((?:\\\2|(?!\2).)*)(\2)',
+            (r'%[qsw]([\W_])((?:\\\1|(?!\1).)*)\1', String.Other),
+            (r'(%[QWx]([\W_]))((?:\\\2|(?!\2).)*)(\2)',
              intp_string_callback),
             # special forms of fancy strings after operators or
             # in method calls with braces
@@ -313,9 +315,9 @@ class RubyLexer(ExtendedRegexLexer):
             # like keywords (class) or like this: ` ?!?
             (words(RUBY_OPERATORS, prefix=r'(\.|::)'),
              bygroups(Operator, Name.Operator)),
-            (r'(\.|::)([a-zA-Z_]\w*[\!\?]?|[*%&^`~+\-/\[<>=])',
+            (r'(\.|::)([a-zA-Z_]\w*[!?]?|[*%&^`~+\-/\[<>=])',
              bygroups(Operator, Name)),
-            (r'[a-zA-Z_]\w*[\!\?]?', Name),
+            (r'[a-zA-Z_]\w*[!?]?', Name),
             (r'(\[|\]|\*\*|<<?|>>?|>=|<=|<=>|=~|={3}|'
              r'!~|&&?|\|\||\.{1,3})', Operator),
             (r'[-+/*%=<>&!^|~]=?', Operator),
@@ -325,7 +327,7 @@ class RubyLexer(ExtendedRegexLexer):
         'funcname': [
             (r'\(', Punctuation, 'defexpr'),
             (r'(?:([a-zA-Z_]\w*)(\.))?'
-             r'([a-zA-Z_]\w*[\!\?]?|\*\*?|[-+]@?|'
+             r'([a-zA-Z_]\w*[!?]?|\*\*?|[-+]@?|'
              r'[/%&|^`~]|\[\]=?|<<|>>|<=?>|>=?|===?)',
              bygroups(Name.Class, Operator, Name.Function), '#pop'),
             default('#pop')
@@ -454,10 +456,10 @@ class FancyLexer(RegexLexer):
             (r'\{(\\\\|\\\}|[^}])*\}[egimosx]*', String.Regex, '#pop'),
             (r'<(\\\\|\\>|[^>])*>[egimosx]*', String.Regex, '#pop'),
             (r'\[(\\\\|\\\]|[^\]])*\][egimosx]*', String.Regex, '#pop'),
-            (r'\((\\\\|\\\)|[^\)])*\)[egimosx]*', String.Regex, '#pop'),
-            (r'@(\\\\|\\\@|[^\@])*@[egimosx]*', String.Regex, '#pop'),
-            (r'%(\\\\|\\\%|[^\%])*%[egimosx]*', String.Regex, '#pop'),
-            (r'\$(\\\\|\\\$|[^\$])*\$[egimosx]*', String.Regex, '#pop'),
+            (r'\((\\\\|\\\)|[^)])*\)[egimosx]*', String.Regex, '#pop'),
+            (r'@(\\\\|\\@|[^@])*@[egimosx]*', String.Regex, '#pop'),
+            (r'%(\\\\|\\%|[^%])*%[egimosx]*', String.Regex, '#pop'),
+            (r'\$(\\\\|\\\$|[^$])*\$[egimosx]*', String.Regex, '#pop'),
         ],
         'root': [
             (r'\s+', Text),
@@ -466,14 +468,14 @@ class FancyLexer(RegexLexer):
             (r's\{(\\\\|\\\}|[^}])*\}\s*', String.Regex, 'balanced-regex'),
             (r's<(\\\\|\\>|[^>])*>\s*', String.Regex, 'balanced-regex'),
             (r's\[(\\\\|\\\]|[^\]])*\]\s*', String.Regex, 'balanced-regex'),
-            (r's\((\\\\|\\\)|[^\)])*\)\s*', String.Regex, 'balanced-regex'),
+            (r's\((\\\\|\\\)|[^)])*\)\s*', String.Regex, 'balanced-regex'),
             (r'm?/(\\\\|\\/|[^/\n])*/[gcimosx]*', String.Regex),
-            (r'm(?=[/!\\{<\[\(@%\$])', String.Regex, 'balanced-regex'),
+            (r'm(?=[/!\\{<\[(@%$])', String.Regex, 'balanced-regex'),
 
             # Comments
             (r'#(.*?)\n', Comment.Single),
             # Symbols
-            (r'\'([^\'\s\[\]\(\)\{\}]+|\[\])', String.Symbol),
+            (r'\'([^\'\s\[\](){}]+|\[\])', String.Symbol),
             # Multi-line DoubleQuotedString
             (r'"""(\\\\|\\"|[^"])*"""', String),
             # DoubleQuotedString
@@ -483,7 +485,7 @@ class FancyLexer(RegexLexer):
              r'case|->|=>)\b', Keyword),
             # constants
             (r'(self|super|nil|false|true)\b', Name.Constant),
-            (r'[(){};,/?\|:\\]', Punctuation),
+            (r'[(){};,/?|:\\]', Punctuation),
             # names
             (words((
                 'Object', 'Array', 'Hash', 'Directory', 'File', 'Class', 'String',
@@ -494,7 +496,7 @@ class FancyLexer(RegexLexer):
             # functions
             (r'[a-zA-Z](\w|[-+?!=*/^><%])*:', Name.Function),
             # operators, must be below functions
-            (r'[-+*/~,<>=&!?%^\[\]\.$]+', Operator),
+            (r'[-+*/~,<>=&!?%^\[\].$]+', Operator),
             ('[A-Z]\w*', Name.Constant),
             ('@[a-zA-Z_]\w*', Name.Variable.Instance),
             ('@@[a-zA-Z_]\w*', Name.Variable.Class),
