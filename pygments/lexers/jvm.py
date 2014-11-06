@@ -298,8 +298,8 @@ class ScalaLexer(RegexLexer):
         ],
         'type': [
             (r'\s+', Text),
-            (u'<[%:]|>:|[#_\u21D2]|forSome|type', Keyword),
-            (r'([,\);}]|=>|=)(\s*)', bygroups(Operator, Text), '#pop'),
+            (u'<[%:]|>:|[#_]|forSome|type', Keyword),
+            (u'([,);}]|=>|=|\u21d2)(\\s*)', bygroups(Operator, Text), '#pop'),
             (r'[\(\{]', Operator, '#push'),
             (u'((?:%s|%s|`[^`]+`)(?:\\.(?:%s|%s|`[^`]+`))*)(\\s*)(\\[)' %
              (idrest, op, idrest, op),
