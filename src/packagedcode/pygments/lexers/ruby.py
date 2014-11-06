@@ -299,7 +299,7 @@ class RubyLexer(ExtendedRegexLexer):
             (r'@@[a-zA-Z_]\w*', Name.Variable.Class),
             (r'@[a-zA-Z_]\w*', Name.Variable.Instance),
             (r'\$\w+', Name.Variable.Global),
-            (r'\$[!@&`\'+~=/\\,;.<>_*$?:"]', Name.Variable.Global),
+            (r'\$[!@&`\'+~=/\\,;.<>_*$?:"^-]', Name.Variable.Global),
             (r'\$-[0adFiIlpvw]', Name.Variable.Global),
             (r'::', Operator),
             include('strings'),
