@@ -4,8 +4,8 @@ File NomosTestfiles/MIT/ImaginationMIT contains license(s) MIT
 File NomosTestfiles/MIT/MIT.txt contains license(s) MIT
 File NomosTestfiles/MIT/perl-Mozilla-LDAP.spec contains license(s) GPL,LGPL,MPL-1.1
 File NomosTestfiles/MIT/edit.c contains license(s) MIT-style
-File NomosTestfiles/MIT/Netizen.cc contains license(s) MIT-style
-File NomosTestfiles/MIT/KhronosMIT contains license(s) MIT-style
+File NomosTestfiles/MIT/Netizen.cc contains license(s) MIT
+File NomosTestfiles/MIT/KhronosMIT contains license(s) MIT
 File NomosTestfiles/MIT/net.c contains license(s) MIT-style
 File NomosTestfiles/MIT/privates.h contains license(s) MIT-style
 File NomosTestfiles/MIT/watch.c contains license(s) MIT-style
@@ -392,7 +392,7 @@ File NomosTestfiles/None-failure/badge_BuckleUp_L.png contains license(s) GPL
 File NomosTestfiles/NOSL/nosl-1.0 contains license(s) NOSL-1.0
 File NomosTestfiles/Fair/Fair.txt contains license(s) Fair
 File NomosTestfiles/Leptonica/affine_reg.c contains license(s) Leptonica
-File NomosTestfiles/Imlib2/Imlib2.text contains license(s) Imlib2,MIT-style
+File NomosTestfiles/Imlib2/Imlib2.text contains license(s) Imlib2
 File NomosTestfiles/Nvidia/atom.c contains license(s) Nvidia-EULA
 File NomosTestfiles/Nvidia/copyright contains license(s) Nvidia
 File NomosTestfiles/Vixie/user.c contains license(s) Vixie-license
