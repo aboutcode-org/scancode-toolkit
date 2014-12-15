@@ -91,6 +91,7 @@ Other contributors, listed alphabetically, are:
 * Gerd Kurzbach -- Modelica lexer
 * Jon Larimer, Google Inc. -- Smali lexer
 * Olov Lassus -- Dart lexer
+* Matt Layman -- TAP lexer
 * Sylvestre Ledru -- Scilab lexer
 * Mark Lee -- Vala lexer
 * Ben Mabey -- Gherkin lexer
