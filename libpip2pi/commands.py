@@ -5,6 +5,7 @@ import cgi
 import shutil
 import atexit
 import tempfile
+import warnings
 import textwrap
 import functools
 from subprocess import check_call
@@ -69,16 +70,9 @@ class InvalidFilePackageName(ValueError):
         super(InvalidFilePackageName, self).__init__(msg)
 
 def egg_to_package(file):
-    """ Extracts the package name from an egg::
-
-        >>> egg_to_package("PyYAML-3.10-py2.7-macosx-10.7-x86_64.egg")
-        ('PyYAML', '3.10-py2.7-macosx-10.7-x86_64.egg')
-        >>> egg_to_package("python_ldap-2.3.9-py2.7-macosx-10.3-fat.egg")
-        ('python-ldap', '2.3.9-py2.7-macosx-10.3-fat.egg')
-    """
-    dist = pkg_resources.Distribution.from_location(None, file)
-    name = dist.project_name
-    return (name, file[len(name)+1:])
+    warnings.warn("egg_to_package is deprecated; use file_to_package.",
+                  stacklevel=1)
+    return file_to_package(file)
 
 def file_to_package(file, basedir=None):
     """ Returns the package name for a given file, or raises an
@@ -95,6 +89,10 @@ def file_to_package(file, basedir=None):
         ('foo-bar', '1.2-py27-none-any.whl')
         >>> file_to_package("Cython-0.17.2-cp26-none-linux_x86_64.whl")
         ('Cython', '0.17.2-cp26-none-linux_x86_64.whl')
+        >>> file_to_package("PyYAML-3.10-py2.7-macosx-10.7-x86_64.egg")
+        ('PyYAML', '3.10-py2.7-macosx-10.7-x86_64.egg')
+        >>> file_to_package("python_ldap-2.3.9-py2.7-macosx-10.3-fat.egg")
+        ('python-ldap', '2.3.9-py2.7-macosx-10.3-fat.egg')
         >>> file_to_package("foo.whl")
         Traceback (most recent call last):
             ...
@@ -107,17 +105,19 @@ def file_to_package(file, basedir=None):
     file = os.path.basename(file)
     file_ext = os.path.splitext(file)[1].lower()
     if file_ext == ".egg":
-        return egg_to_package(file)
-
-    if file_ext == ".whl":
+        dist = pkg_resources.Distribution.from_location(None, file)
+        name = dist.project_name
+        split = (name, file[len(name)+1:])
+        to_safe_name = lambda x: x
+    elif file_ext == ".whl":
         bits = file.rsplit("-", 4)
-        split = [bits[0], "-".join(bits[1:])]
+        split = (bits[0], "-".join(bits[1:]))
         to_safe_name = lambda x: x
     else:
         match = re.search(r"(?P<pkg>.*?)-(?P<rest>\d+.*)", file)
         if not match:
             raise InvalidFilePackageName(file, basedir)
-        split = match.group("pkg"), match.group("rest")
+        split = (match.group("pkg"), match.group("rest"))
         to_safe_name = pkg_resources.safe_name
 
     if len(split) != 2 or not split[1]:
@@ -164,13 +164,30 @@ class Pip2PiOptionParser(optparse.OptionParser):
         # Parent implementation reformats all the hard line breaks
         return self.get_description() + "\n"
 
-    def add_symlink_option(self, use_symlink):
-        self.add_option('-s', '--symlink', dest="use_symlink",
-                        default=use_symlink, action="store_true",
-                        help="Use symlinks in PACKAGE_DIR/simple/ "
-                             "rather than copying files. Default: %default")
-        self.add_option('-S', '--no-symlink', dest="use_symlink",
-                        action="store_false")
+    def add_index_options(self):
+        self.add_option(
+            '-n', '--normalize-package-names', dest="normalize_package_names",
+            default=None, action="store_true",
+            help=dedent("""
+                Normalize package names in simple index.
+                Ex, 'simple/Django/Django-1.7.tar.gz' will be
+                normalized to 'simple/django/Django-1.7.tar.gz'.
+                Non-normalized package names are deprecated and
+                this option will eventually be enabled by default.
+                See also: https://github.com/wolever/pip2pi/issues/37
+            """))
+        self.add_option(
+            '-N', '--no-normalize-package-names', dest="normalize_package_names",
+            action="store_false")
+        self.add_option(
+            '-s', '--symlink', dest="use_symlink",
+            default=OS_HAS_SYMLINK, action="store_true",
+            help=dedent("""
+                Use symlinks in PACKAGE_DIR/simple/ rather than copying files.
+                Default: %default
+            """))
+        self.add_option(
+            '-S', '--no-symlink', dest="use_symlink", action="store_false")
 
     def _process_args(self, largs, rargs, values):
         """
@@ -191,7 +208,7 @@ class Pip2PiOptionParser(optparse.OptionParser):
                 largs.append(e.opt_str)
 
 
-def dir2pi(argv=sys.argv, use_symlink=OS_HAS_SYMLINK):
+def dir2pi(argv=sys.argv, use_symlink=None):
     parser = Pip2PiOptionParser(
         usage="usage: %prog PACKAGE_DIR",
         description=dedent("""
@@ -218,13 +235,19 @@ def dir2pi(argv=sys.argv, use_symlink=OS_HAS_SYMLINK):
                 packages/simple/foo/index.html
                 packages/simple/foo/foo-1.2.tar.gz
         """))
-    parser.add_symlink_option(use_symlink)
+
+    if use_symlink is not None:
+        warnings.warn("dir2pi(use_symlink=...) is deprecated", stacklevel=1)
+
+    parser.add_index_options()
 
     option, argv = parser.parse_args(argv)
     if len(argv) != 2:
         parser.print_help()
         parser.exit()
+    return _dir2pi(option, argv)
 
+def _dir2pi(option, argv):
     pkgdir = argv[1]
     if not os.path.isdir(pkgdir):
         raise ValueError("no such directory: %r" %(pkgdir, ))
@@ -235,6 +258,8 @@ def dir2pi(argv=sys.argv, use_symlink=OS_HAS_SYMLINK):
     pkg_index = ("<html><head><title>Simple Index</title>"
                  "<meta name='api-version' value='2' /></head><body>\n")
 
+    warn_normalized_pkg_names = []
+
     for file in os.listdir(pkgdir):
         pkg_filepath = os.path.join(pkgdir, file)
         if not os.path.isfile(pkg_filepath):
@@ -243,7 +268,14 @@ def dir2pi(argv=sys.argv, use_symlink=OS_HAS_SYMLINK):
         if pkg_basename.startswith("."):
             continue
         pkg_name, pkg_rest = file_to_package(pkg_basename, pkgdir)
-        pkg_dir = pkgdirpath("simple", pkg_name)
+
+        pkg_dir_name = pkg_name
+        if option.normalize_package_names:
+            pkg_dir_name = pkg_dir_name.lower()
+        elif pkg_dir_name != pkg_dir_name.lower():
+            if option.normalize_package_names is None:
+                warn_normalized_pkg_names.append(pkg_name)
+        pkg_dir = pkgdirpath("simple", pkg_dir_name)
         if not os.path.exists(pkg_dir):
             os.mkdir(pkg_dir)
         pkg_new_basename = "-".join([pkg_name, pkg_rest])
@@ -253,15 +285,30 @@ def dir2pi(argv=sys.argv, use_symlink=OS_HAS_SYMLINK):
             os.symlink(symlink_source, symlink_target)
         else:
             shutil.copy2(pkg_filepath, symlink_target)
-        pkg_name_html = cgi.escape(pkg_name)
-        pkg_index += "<a href='{0}/'>{0}</a><br />\n".format(pkg_name_html)
+        pkg_index += "<a href='%s/'>%s</a><br />\n" %(
+            cgi.escape(pkg_dir_name),
+            cgi.escape(pkg_name),
+        )
         with open(os.path.join(pkg_dir, "index.html"), "a") as fp:
-            pkg_new_basename_html = cgi.escape(pkg_new_basename)
-            fp.write("<a href='%s'>%s</a><br />\n"
-                     %(pkg_new_basename_html, pkg_new_basename_html))
+            fp.write("<a href='%(name)s'>%(name)s</a><br />\n" %{
+                "name": cgi.escape(pkg_new_basename),
+            })
     pkg_index += "</body></html>\n"
     with open(pkgdirpath("simple/index.html"), "w") as fp:
         fp.write(pkg_index)
+
+    if warn_normalized_pkg_names:
+        warnings.warn(dedent("""
+            \n
+            WARNING: Non-normalized packages encountered: %s.\n
+            Please consider passing `--normalize-package-names` and verifying
+            that your environment does not break, as package names will
+            eventually be normalized by default. Silence this warning by
+            passing `--no-normalized-package-names`.\n
+            See also: https://github.com/wolever/pip2pi/issues/37\n
+            .
+        """ %(", ".join(warn_normalized_pkg_names), )), stacklevel=0)
+
     return 0
 
 def globall(globs):
@@ -397,7 +444,7 @@ def pip2pi(argv=sys.argv):
                     bar==3.1
 
         """))
-    parser.add_symlink_option(OS_HAS_SYMLINK)
+    parser.add_index_options()
 
     option, argv = parser.parse_args(argv)
     if len(argv) < 3:
@@ -419,7 +466,7 @@ def pip2pi(argv=sys.argv):
         print("pip2tgz returned an error; aborting.")
         return res
 
-    res = dir2pi([argv[0], working_dir], use_symlink=option.use_symlink)
+    res = _dir2pi(option, argv)
     if res:
         print("dir2pi returned an error; aborting.")
         return res
