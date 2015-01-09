@@ -59,6 +59,15 @@ def maintain_cwd(f):
             os.chdir(orig_dir)
     return maintain_cwd_helper
 
+class InvalidFilePackageName(ValueError):
+    def __init__(self, file, basedir=None):
+        msg = "unexpected file name: %r " %(file, )
+        msg += "(not in 'pkg-name-version.xxx' format"
+        if basedir:
+            msg += "; found in directory: %r" %(basedir)
+        msg += ")"
+        super(InvalidFilePackageName, self).__init__(msg)
+
 def egg_to_package(file):
     """ Extracts the package name from an egg::
 
@@ -72,7 +81,9 @@ def egg_to_package(file):
     return (name, file[len(name)+1:])
 
 def file_to_package(file, basedir=None):
-    """ Returns the package name for a given file::
+    """ Returns the package name for a given file, or raises an
+        ``InvalidFilePackageName`` exception if the file name is
+        not valid::
 
         >>> file_to_package("foo-1.2.3_rc1.tar.gz")
         ('foo', '1.2.3-rc1.tar.gz')
@@ -84,6 +95,14 @@ def file_to_package(file, basedir=None):
         ('foo-bar', '1.2-py27-none-any.whl')
         >>> file_to_package("Cython-0.17.2-cp26-none-linux_x86_64.whl")
         ('Cython', '0.17.2-cp26-none-linux_x86_64.whl')
+        >>> file_to_package("foo.whl")
+        Traceback (most recent call last):
+        ...
+        InvalidFilePackageName: ...
+        >>> file_to_package("foo.png")
+        Traceback (most recent call last):
+        ...
+        InvalidFilePackageName: ...
         """
     file = os.path.basename(file)
     file_ext = os.path.splitext(file)[1].lower()
@@ -96,16 +115,13 @@ def file_to_package(file, basedir=None):
         to_safe_name = lambda x: x
     else:
         match = re.search(r"(?P<pkg>.*?)-(?P<rest>\d+.*)", file)
+        if not match:
+            raise InvalidFilePackageName(file, basedir)
         split = match.group("pkg"), match.group("rest")
         to_safe_name = pkg_resources.safe_name
 
     if len(split) != 2 or not split[1]:
-        msg = "unexpected file name: %r " %(file, )
-        msg += "(not in 'pkg-name-version.xxx' format"
-        if basedir:
-            msg += "; found in directory: %r" %(basedir)
-        msg += ")"
-        raise ValueError(msg)
+        raise InvalidFilePackageName(file, basedir)
 
     return (split[0], to_safe_name(split[1]))
 
@@ -258,17 +274,22 @@ def globall(globs):
 def pip2tgz(argv=sys.argv):
     glob_exts = ['*.whl', '*.tgz', '*.gz']
     parser = Pip2PiOptionParser(
-        usage="usage: %prog OUTPUT_DIRECTORY PACKAGE_NAME ...",
+        usage="usage: %prog OUTPUT_DIRECTORY [PIP_OPTIONS] PACKAGES ...",
         description=dedent("""
-            Where PACKAGE_NAMES are any names accepted by pip (ex, `foo`,
-            `foo==1.2`, `-r requirements.txt`).
+            Where PACKAGES are any names accepted by pip (ex, `foo`,
+            `foo==1.2`, `-r requirements.txt`), and [PIP_OPTIONS] can be any
+            options accepted by `pip install -d`.
 
-            pip2tgz will download all packages required to install PACKAGE_NAMES and
+            pip2tgz will download all packages required to install PACKAGES and
             save them to sanely-named tarballs or wheel files in OUTPUT_DIRECTORY.
 
             For example:
 
                 $ pip2tgz /var/www/packages/ -r requirements.txt foo==1.2 baz/
+                $ pip2tgz /var/www/packages/ \\
+                    --no-use-wheel \\
+                    --index-url https://example.com/simple \\
+                    bar==3.1
         """))
 
     option, argv = parser.parse_args(argv)
@@ -347,22 +368,34 @@ def handle_new_wheels(outdir, new_wheels):
 
 def pip2pi(argv=sys.argv):
     parser = Pip2PiOptionParser(
-        usage="usage: %prog TARGET PACKAGE_NAME ...",
+        usage="usage: %prog TARGET [PIP_OPTIONS] PACKAGES ...",
         description=dedent("""
-            Combines pip2tgz and dir2pi, adding PACKAGE_NAME to package index
-            TARGET.
+            Adds packages PACKAGES to PyPI-compatible package index at TARGET.
 
             If TARGET contains ':' it will be treated as a remote path. The
-            package index will be built locally then rsync will be used to copy
+            package index will be built locally and rsync will be used to copy
             it to the remote host.
+
+            PIP_OPTIONS can be any options accepted by `pip install -d`, like
+            `--index-url` or `--no-use-wheel`.
 
             For example, to create a remote index:
 
                 $ pip2pi example.com:/var/www/packages/ -r requirements.txt
 
-            Or to create a local index:
+            To create a local index:
 
                 $ pip2pi ~/Sites/packages/ foo==1.2
+
+            To pass arguments to pip:
+
+                $ pip2pi ~/Sites/packages/ \\
+                    --no-use-wheel \\
+                    --index-url https://example.com/simple \\
+                    -r requirements-base.txt \\
+                    -r requirements-dev.txt \\
+                    bar==3.1
+
         """))
     parser.add_symlink_option(OS_HAS_SYMLINK)
 
