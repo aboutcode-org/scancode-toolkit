@@ -306,7 +306,7 @@ def _dir2pi(option, argv):
             eventually be normalized by default. Silence this warning by
             passing `--no-normalized-package-names`.\n
             See also: https://github.com/wolever/pip2pi/issues/37\n
-            .
+            _
         """ %(", ".join(warn_normalized_pkg_names), )), stacklevel=0)
 
     return 0
