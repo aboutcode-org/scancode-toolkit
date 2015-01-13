@@ -452,7 +452,7 @@ def pip2pi(argv=sys.argv):
         parser.exit()
 
     target = argv[1]
-    pip_packages = argv[2:]
+    pip_argv = argv[2:]
     if ":" in target:
         is_remote = True
         working_dir = tempfile.mkdtemp(prefix="pip2pi-working-dir")
@@ -461,12 +461,13 @@ def pip2pi(argv=sys.argv):
         is_remote = False
         working_dir = os.path.abspath(target)
 
-    res = pip2tgz([argv[0], working_dir] + pip_packages)
+    subcmd_argv = [argv[0], working_dir] + pip_argv
+    res = pip2tgz(subcmd_argv)
     if res:
         print("pip2tgz returned an error; aborting.")
         return res
 
-    res = _dir2pi(option, argv)
+    res = _dir2pi(option, subcmd_argv)
     if res:
         print("dir2pi returned an error; aborting.")
         return res
