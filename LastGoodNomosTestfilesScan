@@ -122,6 +122,7 @@ File NomosTestfiles/LGPL/tracker-class.c contains license(s) LGPL-2.1+
 File NomosTestfiles/LGPL/valaprojectgenerator.c contains license(s) GPL-3.0+,LGPL-2.1+
 File NomosTestfiles/LGPL/License.rtf contains license(s) LGPL-2.1
 File NomosTestfiles/LGPL/LGPL_16487.txt contains license(s) LGPL-2.1
+File NomosTestfiles/LGPL/parsenv2.hxx contains license(s) LGPL-3.0
 File NomosTestfiles/Artistic/Artistic-1.0.txt contains license(s) Artistic-1.0
 File NomosTestfiles/Artistic/macos_main.cpp contains license(s) Artistic-1.0
 File NomosTestfiles/Artistic/Hero.java contains license(s) Artistic-1.0
@@ -246,6 +247,7 @@ File NomosTestfiles/Sun/sissl-1.1 contains license(s) SISSL-1.1
 File NomosTestfiles/Sun/SPL-1.0.txt contains license(s) SPL-1.0
 File NomosTestfiles/CMake/FindRuby.cmake contains license(s) CMake
 File NomosTestfiles/PostgreSQL/PostgreSQL.txt contains license(s) BSD,PostgreSQL
+File NomosTestfiles/PostgreSQL/odbc_fdw.control contains license(s) PostgreSQL
 File NomosTestfiles/IJG/jpeg.LICENSE contains license(s) IJG,JPEG/netpbm
 File NomosTestfiles/IJG/license.html contains license(s) BSD-3-Clause,IJG
 File NomosTestfiles/OSL/OSL-2.0.txt contains license(s) OSL-2.0
@@ -414,6 +416,8 @@ File NomosTestfiles/AGPL/Affero-v1.0 contains license(s) AGPL-1.0
 File NomosTestfiles/AGPL/AGPL-3.0.txt contains license(s) AGPL-3.0
 File NomosTestfiles/AGPL/readme.rst contains license(s) AGPL-3.0+
 File NomosTestfiles/AGPL/JsonMapper.php contains license(s) AGPL
+File NomosTestfiles/AGPL/ampdu.c contains license(s) MIT-style
+File NomosTestfiles/AGPL/apps.js contains license(s) BSD
 File NomosTestfiles/NPL/NPL-1.1 contains license(s) NPL-1.1
 File NomosTestfiles/NPL/NPL-1.0 contains license(s) NPL-1.0
 File NomosTestfiles/CNRI-Python/CNRI-Python-GPL-Compatible.txt contains license(s) CNRI-Python-GPL-Compatible
@@ -541,7 +545,7 @@ File NomosTestfiles/GPL/taskset.c contains license(s) GPL-2.0+
 File NomosTestfiles/GPL/stddef.h contains license(s) GPL-3.0+-with-GCC-exception
 File NomosTestfiles/GPL/GPL-2.0+-not-bison.txt contains license(s) GPL-2.0+
 File NomosTestfiles/GPL/parser.c contains license(s) GPL-2.0+-with-bison-exception
-File NomosTestfiles/GPL/Jersey-LICENSE.txt contains license(s) CDDL-1.1,GPL-2.0,GPL-2.0-with-classpath-exception
+File NomosTestfiles/GPL/Jersey-LICENSE.txt contains license(s) CDDL-1.1,GPL-2.0-with-classpath-exception
 File NomosTestfiles/GPL/InvalidHeaderException.cs contains license(s) GPL-2.0+-with-classpath-exception,Public-domain
 File NomosTestfiles/GPL/Adler32.cs contains license(s) GPL-2.0+-with-classpath-exception
 File NomosTestfiles/GPL/outcommentedMODULE_LICENSE.txt contains license(s) GPL-possibility
@@ -567,6 +571,7 @@ File NomosTestfiles/GPL/Autoload.php contains license(s) GPL-2.0+
 File NomosTestfiles/GPL/RelParser.cpp contains license(s) GPL-1.0+
 File NomosTestfiles/GPL/StopComponentCommand.java contains license(s) GPL-3.0+-with-classpath-exception
 File NomosTestfiles/GPL/ax_gcc_archflag.m4 contains license(s) GPL-3.0+-with-autoconf-exception
+File NomosTestfiles/GPL/abstractwidgetfactory.cpp contains license(s) GPL-2.0-with-trolltech-exception
 File NomosTestfiles/eCos/eCos-2.0.txt contains license(s) GPL-2.0+,eCos-2.0
 File NomosTestfiles/Trademark-ref/53c7xx.c contains license(s) Trademark-ref
 File NomosTestfiles/OCLC/OCLC-2.0.txt contains license(s) OCLC-2.0
