@@ -413,6 +413,12 @@ def handle_new_wheels(outdir, new_wheels):
             pkg_name,
         ])
 
+WINDOWS_PATH_RE = re.compile(r"^[A-Za-z]:\\")
+
+def is_remote_target(target):
+    return ":" in target and not WINDOWS_PATH_RE.match(target)
+
+
 def pip2pi(argv=sys.argv):
     parser = Pip2PiOptionParser(
         usage="usage: %prog TARGET [PIP_OPTIONS] PACKAGES ...",
@@ -453,7 +459,7 @@ def pip2pi(argv=sys.argv):
 
     target = argv[1]
     pip_argv = argv[2:]
-    if ":" in target:
+    if is_remote_target(target):
         is_remote = True
         working_dir = tempfile.mkdtemp(prefix="pip2pi-working-dir")
         atexit.register(lambda: shutil.rmtree(working_dir))
