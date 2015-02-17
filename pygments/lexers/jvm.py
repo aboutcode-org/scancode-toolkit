@@ -935,17 +935,18 @@ class CeylonLexer(RegexLexer):
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
             (r'/\*', Comment.Multiline, 'comment'),
-            (r'(variable|shared|abstract|doc|by|formal|actual|late|native)',
+            (r'(shared|abstract|formal|default|actual|variable|deprecated|small|'
+             r'late|literal|doc|by|see|throws|optional|license|tagged|final|native|'
+             r'annotation|sealed)',
              Name.Decorator),
-            (r'(break|case|catch|continue|default|else|finally|for|in|'
-             r'variable|if|return|switch|this|throw|try|while|is|exists|dynamic|'
-             r'nonempty|then|outer|assert)\b', Keyword),
-            (r'(abstracts|extends|satisfies|adapts|'
-             r'super|given|of|out|assign|'
-             r'transient|volatile)\b', Keyword.Declaration),
-            (r'(function|value|void)\b',
+            (r'(break|case|catch|continue|else|finally|for|in|'
+             r'if|return|switch|this|throw|try|while|is|exists|dynamic|'
+             r'nonempty|then|outer|assert|let)\b', Keyword),
+            (r'(abstracts|extends|satisfies|'
+             r'super|given|of|out|assign)\b', Keyword.Declaration),
+            (r'(function|value|void|new)\b',
              Keyword.Type),
-            (r'(package)(\s+)', bygroups(Keyword.Namespace, Text)),
+            (r'(assembly|module|package)(\s+)', bygroups(Keyword.Namespace, Text)),
             (r'(true|false|null)\b', Keyword.Constant),
             (r'(class|interface|object|alias)(\s+)',
              bygroups(Keyword.Declaration, Text), 'class'),
