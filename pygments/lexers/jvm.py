@@ -937,8 +937,7 @@ class CeylonLexer(RegexLexer):
             (r'/\*', Comment.Multiline, 'comment'),
             (r'(shared|abstract|formal|default|actual|variable|deprecated|small|'
              r'late|literal|doc|by|see|throws|optional|license|tagged|final|native|'
-             r'annotation|sealed)',
-             Name.Decorator),
+             r'annotation|sealed)\b', Name.Decorator),
             (r'(break|case|catch|continue|else|finally|for|in|'
              r'if|return|switch|this|throw|try|while|is|exists|dynamic|'
              r'nonempty|then|outer|assert|let)\b', Keyword),
