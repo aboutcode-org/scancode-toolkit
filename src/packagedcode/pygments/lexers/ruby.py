@@ -36,7 +36,7 @@ class RubyLexer(ExtendedRegexLexer):
     name = 'Ruby'
     aliases = ['rb', 'ruby', 'duby']
     filenames = ['*.rb', '*.rbw', 'Rakefile', '*.rake', '*.gemspec',
-                 '*.rbx', '*.duby']
+                 '*.rbx', '*.duby', 'Gemfile']
     mimetypes = ['text/x-ruby', 'application/x-ruby']
 
     flags = re.DOTALL | re.MULTILINE
