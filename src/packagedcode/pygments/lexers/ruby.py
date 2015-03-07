@@ -190,6 +190,7 @@ class RubyLexer(ExtendedRegexLexer):
 
     tokens = {
         'root': [
+            (r'\A#!.+?$', Comment.Hashbang),
             (r'#.*?$', Comment.Single),
             (r'=begin\s.*?\n=end.*?$', Comment.Multiline),
             # keywords
