@@ -136,6 +136,7 @@ Other contributors, listed alphabetically, are:
 * Andre Roberge -- Tango style
 * Konrad Rudolph -- LaTeX formatter enhancements
 * Mario Ruggier -- Evoque lexers
+* Miikka Salminen -- Lovelace style, lexer enhancements
 * Stou Sandalski -- NumPy, FORTRAN, tcsh and XSLT lexers
 * Matteo Sasso -- Common Lisp lexer
 * Joe Schafer -- Ada lexer
