@@ -180,6 +180,14 @@ class Pip2PiOptionParser(optparse.OptionParser):
             '-N', '--no-normalize-package-names', dest="normalize_package_names",
             action="store_false")
         self.add_option(
+            '-x', '--no-build-html', dest="build_html", action="store_false",
+            default=True, help=dedent("""
+                Don't build index files for each directory, you might want to
+                to disable this if your server dynamically builds index files
+                using something like mod_autoindex and you want to make older
+                package/module versions continue to be available.
+            """))
+        self.add_option(
             '-s', '--symlink', dest="use_symlink",
             default=OS_HAS_SYMLINK, action="store_true",
             help=dedent("""
@@ -194,10 +202,10 @@ class Pip2PiOptionParser(optparse.OptionParser):
         An unknown option pass-through implementation of OptionParser.
 
         When unknown arguments are encountered, bundle with largs and try again,
-        until rargs is depleted.  
+        until rargs is depleted.
 
         sys.exit(status) will still be called if a known argument is passed
-        incorrectly (e.g. missing arguments or bad argument types, etc.)        
+        incorrectly (e.g. missing arguments or bad argument types, etc.)
 
         From http://stackoverflow.com/a/9307174/6364
         """
@@ -289,13 +297,15 @@ def _dir2pi(option, argv):
             cgi.escape(pkg_dir_name),
             cgi.escape(pkg_name),
         )
-        with open(os.path.join(pkg_dir, "index.html"), "a") as fp:
-            fp.write("<a href='%(name)s'>%(name)s</a><br />\n" %{
-                "name": cgi.escape(pkg_new_basename),
-            })
+        if option.build_html:
+            with open(os.path.join(pkg_dir, "index.html"), "a") as fp:
+                fp.write("<a href='%(name)s'>%(name)s</a><br />\n" %{
+                    "name": cgi.escape(pkg_new_basename),
+                })
     pkg_index += "</body></html>\n"
-    with open(pkgdirpath("simple/index.html"), "w") as fp:
-        fp.write(pkg_index)
+    if option.build_html:
+        with open(pkgdirpath("simple/index.html"), "w") as fp:
+            fp.write(pkg_index)
 
     if warn_normalized_pkg_names:
         warnings.warn(dedent("""
