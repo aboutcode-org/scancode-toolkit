@@ -188,6 +188,13 @@ class Pip2PiOptionParser(optparse.OptionParser):
                 package/module versions continue to be available.
             """))
         self.add_option(
+            '-z', '--also-get-source', dest="get_source", action="store_true",
+            default=False, help=dedent("""
+                In addition to downloading wheels, eggs or any other package
+                format also download the source tar.gz files in case the
+                platform using this index does not support the wheel/egg/etc
+            """))
+        self.add_option(
             '-s', '--symlink', dest="use_symlink",
             default=OS_HAS_SYMLINK, action="store_true",
             help=dedent("""
@@ -267,7 +274,7 @@ def _dir2pi(option, argv):
                  "<meta name='api-version' value='2' /></head><body>\n")
 
     warn_normalized_pkg_names = []
-
+    processed_pkg = []
     for file in os.listdir(pkgdir):
         pkg_filepath = os.path.join(pkgdir, file)
         if not os.path.isfile(pkg_filepath):
@@ -293,10 +300,14 @@ def _dir2pi(option, argv):
             os.symlink(symlink_source, symlink_target)
         else:
             shutil.copy2(pkg_filepath, symlink_target)
-        pkg_index += "<a href='%s/'>%s</a><br />\n" %(
-            cgi.escape(pkg_dir_name),
-            cgi.escape(pkg_name),
-        )
+
+        if pkg_name not in processed_pkg:
+            pkg_index += "<a href='%s/'>%s</a><br />\n" %(
+                cgi.escape(pkg_dir_name),
+                cgi.escape(pkg_name),
+            )
+            processed_pkg.append(pkg_name)
+
         if option.build_html:
             with open(os.path.join(pkg_dir, "index.html"), "a") as fp:
                 fp.write("<a href='%(name)s'>%(name)s</a><br />\n" %{
@@ -482,6 +493,13 @@ def pip2pi(argv=sys.argv):
     if res:
         print("pip2tgz returned an error; aborting.")
         return res
+    if option.get_source:
+        subcmd_argv_source = subcmd_argv[:]
+        subcmd_argv_source.insert(2, '--no-use-wheel')
+        res = pip2tgz(subcmd_argv_source)
+        if res:
+            print("pip2tgz returned an error; aborting.")
+            return res
 
     res = _dir2pi(option, subcmd_argv)
     if res:
