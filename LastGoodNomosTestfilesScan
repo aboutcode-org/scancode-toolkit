@@ -9,6 +9,8 @@ File NomosTestfiles/MIT/KhronosMIT contains license(s) MIT
 File NomosTestfiles/MIT/net.c contains license(s) MIT-style
 File NomosTestfiles/MIT/privates.h contains license(s) MIT-style
 File NomosTestfiles/MIT/watch.c contains license(s) MIT-style
+File NomosTestfiles/MIT/bsdormit.txt contains license(s) MIT/BSD
+File NomosTestfiles/MIT/bsdandmit.txt contains license(s) MIT&BSD
 File NomosTestfiles/Bittorrent/bittorrent.nsi contains license(s) BitTorrent-1.0
 File NomosTestfiles/Bittorrent/bittorrent.py contains license(s) BitTorrent-1.1
 File NomosTestfiles/EPL/EPL-1.0.txt contains license(s) EPL-1.0
@@ -84,6 +86,7 @@ File NomosTestfiles/Apache/Apache-v1.1 contains license(s) Apache-1.1
 File NomosTestfiles/Apache/DomainList.java contains license(s) Apache-2.0
 File NomosTestfiles/Apache/x.txt contains license(s) Apache-2.0
 File NomosTestfiles/Apache/license.txt contains license(s) Apache-2.0,LGPL-2.0
+File NomosTestfiles/Apache/Android_SDK_license.txt contains license(s) AndroidSDK-Commercial,Apache-2.0
 File NomosTestfiles/Oracle-Berkeley-DB/Oracle-Berkeley-DB.java contains license(s) Oracle-Berkeley-DB
 File NomosTestfiles/Naumen/Naumen.txt contains license(s) Naumen
 File NomosTestfiles/HPND/HPND.txt contains license(s) HPND
@@ -348,7 +351,7 @@ File NomosTestfiles/BSD/fft4g.c contains license(s) Freeware
 File NomosTestfiles/BSD/s_erf.c contains license(s) Freeware
 File NomosTestfiles/BSD/BSD_style_l.txt contains license(s) BSD-style
 File NomosTestfiles/BSD/endiantest.c.BSD-2 contains license(s) BSD-2-Clause
-File NomosTestfiles/BSD/ibm.php contains license(s) BSD-possibility,PHP-possibility
+File NomosTestfiles/BSD/ibm.php contains license(s) Zend-1.0
 File NomosTestfiles/BSD/BSD_style_z.txt contains license(s) OLDAP-2.3
 File NomosTestfiles/BSD/BSD_style_h.txt contains license(s) BSD
 File NomosTestfiles/BSD/BSD-2-Clause-NetBSD.txt contains license(s) BSD-2-Clause-NetBSD
@@ -448,6 +451,7 @@ File NomosTestfiles/Dual-license/README.hostapd contains license(s) BSD-3-Clause
 File NomosTestfiles/Dual-license/lzf.c contains license(s) BSD-2-Clause,Dual-license,GPL-2.0+
 File NomosTestfiles/Dual-license/Artistic-1.0+GPL_META.yml contains license(s) Artistic-1.0,GPL
 File NomosTestfiles/Dual-license/postgres_lic.txt contains license(s) Artistic-1.0,BSD,BSD-3-Clause,GPL,OpenGroup-style,PostgreSQL,TCL
+File NomosTestfiles/Dual-license/bind.cpp contains license(s) Dual-license,MIT-style,NCSA
 File NomosTestfiles/OFL/OFL-1.0.txt contains license(s) OFL-1.0
 File NomosTestfiles/OFL/OFL-1.1.txt contains license(s) OFL-1.1
 File NomosTestfiles/OFL/font-awesome-ie7.css contains license(s) CC-BY-3.0,MIT-style,OFL-1.1
@@ -572,6 +576,8 @@ File NomosTestfiles/GPL/RelParser.cpp contains license(s) GPL-1.0+
 File NomosTestfiles/GPL/StopComponentCommand.java contains license(s) GPL-3.0+-with-classpath-exception
 File NomosTestfiles/GPL/ax_gcc_archflag.m4 contains license(s) GPL-3.0+-with-autoconf-exception
 File NomosTestfiles/GPL/abstractwidgetfactory.cpp contains license(s) GPL-2.0-with-trolltech-exception
+File NomosTestfiles/GPL/serv_rssclient.c contains license(s) GPL-2.0+&GPL-3.0+
+File NomosTestfiles/GPL/LICENSE contains license(s) GPL-2.0+-with-UPX-exception
 File NomosTestfiles/eCos/eCos-2.0.txt contains license(s) GPL-2.0+,eCos-2.0
 File NomosTestfiles/Trademark-ref/53c7xx.c contains license(s) Trademark-ref
 File NomosTestfiles/OCLC/OCLC-2.0.txt contains license(s) OCLC-2.0
@@ -616,10 +622,11 @@ File NomosTestfiles/See-file/dimoopx.cc contains license(s) See-file
 File NomosTestfiles/See-file/ldapmodule.c contains license(s) See-URL
 File NomosTestfiles/See-file/play.h contains license(s) See-file
 File NomosTestfiles/See-file/revoco.h contains license(s) See-file
+File NomosTestfiles/See-file/seeurl.txt contains license(s) See-URL
 File NomosTestfiles/ISC/ISC.txt contains license(s) ISC
 File NomosTestfiles/UnclassifiedLicense/isc.h contains license(s) Interbase-1.0
 File NomosTestfiles/UnclassifiedLicense/ldapbaseauthenticationprovider.inc.php contains license(s) KnowledgeTree-1.1
-File NomosTestfiles/UnclassifiedLicense/IPA.cpp contains license(s) See-file(LICENSE)
+File NomosTestfiles/UnclassifiedLicense/IPA.cpp contains license(s) NCSA
 File NomosTestfiles/UnclassifiedLicense/config.isc contains license(s) Wash-U-StLouis
 File NomosTestfiles/UnclassifiedLicense/license.all.html.in contains license(s) UnclassifiedLicense
 File NomosTestfiles/UnclassifiedLicense/LICENSE.fatfs contains license(s) Non-profit!,UnclassifiedLicense
@@ -650,3 +657,7 @@ File NomosTestfiles/Logica/logica.txt contains license(s) Logica-OSL-1.0
 File NomosTestfiles/Unidex/unidex.txt contains license(s) Unidex
 File NomosTestfiles/CPOL/CPOL.txt contains license(s) CPOL-1.02
 File NomosTestfiles/Qmail/Qmail.txt contains license(s) Qmail
+File NomosTestfiles/COMMERCIAL/commercial1.txt contains license(s) COMMERCIAL
+File NomosTestfiles/COMMERCIAL/commercial2.txt contains license(s) COMMERCIAL
+File NomosTestfiles/COMMERCIAL/commercial3.txt contains license(s) COMMERCIAL
+File NomosTestfiles/Beerware/hash_md5prime.c contains license(s) Beerware,RSA-Security
