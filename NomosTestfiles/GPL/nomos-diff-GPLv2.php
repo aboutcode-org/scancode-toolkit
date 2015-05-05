@@ -608,7 +608,7 @@ class ui_nomos_diff extends FO_Plugin
       /* Check item1 and item2 upload permissions */
       $Item1Row = GetSingleRec("uploadtree", "WHERE uploadtree_pk = $in_uploadtree_pk1");
       $UploadPerm = GetUploadPerm($Item1Row['upload_fk']);
-      if ($UploadPerm < PERM_READ)
+      if ($UploadPerm < Auth::PERM_READ)
       {
         $text = _("Permission Denied");
         echo "<h2>$text item 1<h2>";
@@ -617,7 +617,7 @@ class ui_nomos_diff extends FO_Plugin
 
       $Item2Row = GetSingleRec("uploadtree", "WHERE uploadtree_pk = $in_uploadtree_pk2");
       $UploadPerm = GetUploadPerm($Item2Row['upload_fk']);
-      if ($UploadPerm < PERM_READ)
+      if ($UploadPerm < Auth::PERM_READ)
       {
         $text = _("Permission Denied");
         echo "<h2>$text item 2<h2>";
