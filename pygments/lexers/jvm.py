@@ -457,7 +457,7 @@ class GroovyLexer(RegexLexer):
 
     name = 'Groovy'
     aliases = ['groovy']
-    filenames = ['*.groovy']
+    filenames = ['*.groovy','*.gradle']
     mimetypes = ['text/x-groovy']
 
     flags = re.MULTILINE | re.DOTALL
