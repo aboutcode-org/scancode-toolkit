@@ -111,21 +111,24 @@ def file_to_package(file, basedir=None):
         name = dist.project_name
         split = (name, file[len(name)+1:])
         to_safe_name = lambda x: x
+        to_safe_rest = lambda x: x
     elif file_ext == ".whl":
         bits = file.rsplit("-", 4)
         split = (bits[0], "-".join(bits[1:]))
-        to_safe_name = lambda x: x
+        to_safe_name = pkg_resources.safe_name
+        to_safe_rest = lambda x: x
     else:
         match = re.search(r"(?P<pkg>.*?)-(?P<rest>\d+.*)", file)
         if not match:
             raise InvalidFilePackageName(file, basedir)
         split = (match.group("pkg"), match.group("rest"))
         to_safe_name = pkg_resources.safe_name
+        to_safe_rest = pkg_resources.safe_name
 
     if len(split) != 2 or not split[1]:
         raise InvalidFilePackageName(file, basedir)
 
-    return (split[0], to_safe_name(split[1]))
+    return (to_safe_name(split[0]), to_safe_rest(split[1]))
 
 def try_int(x):
     try:
