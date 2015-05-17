@@ -121,7 +121,7 @@ Other contributors, listed alphabetically, are:
 * Edward O'Callaghan -- Cryptol lexer
 * David Oliva -- Rebol lexer
 * Pat Pannuto -- nesC lexer
-* Jon Parise -- Protocol buffers lexer
+* Jon Parise -- Protocol buffers and Thrift lexers
 * Ronny Pfannschmidt -- BBCode lexer
 * Benjamin Peterson -- Test suite refactoring
 * Dominik Picheta -- Nimrod lexer
