@@ -19,5 +19,3 @@ be used, copied, reproduced, modified, published, uploaded, posted,
    estoppel or otherwise. Any license under such intellectual property rights
    must be express and approved by Intel in writing. */
 
-%STR% "source code =ANY= of =FEW= (files?|materials?) =ANY= disclosed? =ANY= without =FEW= prior =FEW= written permission"
-
