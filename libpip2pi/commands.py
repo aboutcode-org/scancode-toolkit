@@ -279,7 +279,7 @@ def _dir2pi(option, argv):
                  "<meta name='api-version' value='2' /></head><body>\n")
 
     warn_normalized_pkg_names = []
-    processed_pkg = []
+    processed_pkg = set()
     for file in os.listdir(pkgdir):
         pkg_filepath = os.path.join(pkgdir, file)
         if not os.path.isfile(pkg_filepath):
@@ -311,7 +311,7 @@ def _dir2pi(option, argv):
                 cgi.escape(pkg_dir_name),
                 cgi.escape(pkg_name),
             )
-            processed_pkg.append(pkg_name)
+            processed_pkg.add(pkg_name)
 
         if option.build_html:
             with open(os.path.join(pkg_dir, "index.html"), "a") as fp:
@@ -319,6 +319,7 @@ def _dir2pi(option, argv):
                     "name": cgi.escape(pkg_new_basename),
                 })
     pkg_index += "</body></html>\n"
+
     if option.build_html:
         with open(pkgdirpath("simple/index.html"), "w") as fp:
             fp.write(pkg_index)
