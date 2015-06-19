@@ -18,7 +18,8 @@ from pygments.util import shebang_matches
 
 
 __all__ = ['BashLexer', 'BashSessionLexer', 'TcshLexer', 'BatchLexer',
-           'PowerShellLexer', 'ShellSessionLexer']
+           'MSDOSSessionLexer',
+           'PowerShellLexer', 'ShellSessionLexer', 'PowerShellSessionLexer']
 
 line_re  = re.compile('.*?\n')
 
@@ -273,6 +274,56 @@ class BatchLexer(RegexLexer):
     }
 
 
+class MSDOSSessionLexer(Lexer):
+    """
+    Lexer for simplistic MSDOS sessions.
+
+    .. versionadded:: 2.0
+    """
+
+    name = 'MSDOS Session'
+    aliases = ['doscon']
+    filenames = []
+    mimetypes = []
+
+    def get_tokens_unprocessed(self, text):
+        bashlexer = BatchLexer(**self.options)
+
+        pos = 0
+        curcode = ''
+        insertions = []
+
+        for match in line_re.finditer(text):
+            line = match.group()
+            m = re.match(r'^([^>]+>)(.*\n?)', line)
+            if m:
+                # To support output lexers (say diff output), the output
+                # needs to be broken by prompts whenever the output lexer
+                # changes.
+                if not insertions:
+                    pos = match.start()
+
+                insertions.append((len(curcode),
+                                   [(0, Generic.Prompt, m.group(1))]))
+                curcode += m.group(2)
+            elif line.startswith('More? '):
+                insertions.append((len(curcode),
+                                   [(0, Generic.Prompt, line[:len('More? ')])]))
+                curcode += line[len('More? '):]
+            else:
+                if insertions:
+                    toks = bashlexer.get_tokens_unprocessed(curcode)
+                    for i, t, v in do_insertions(insertions, toks):
+                        yield pos+i, t, v
+                yield match.start(), Generic.Output, line
+                insertions = []
+                curcode = ''
+        if insertions:
+            for i, t, v in do_insertions(insertions,
+                                         bashlexer.get_tokens_unprocessed(curcode)):
+                yield pos+i, t, v
+
+
 class TcshLexer(RegexLexer):
     """
     Lexer for tcsh scripts.
@@ -436,3 +487,53 @@ class PowerShellLexer(RegexLexer):
             (r".", String.Heredoc),
         ]
     }
+
+
+class PowerShellSessionLexer(Lexer):
+    """
+    Lexer for simplistic Windows PowerShell sessions.
+
+    .. versionadded:: 2.0
+    """
+
+    name = 'PowerShell Session'
+    aliases = ['ps1con']
+    filenames = []
+    mimetypes = []
+
+    def get_tokens_unprocessed(self, text):
+        bashlexer = PowerShellLexer(**self.options)
+
+        pos = 0
+        curcode = ''
+        insertions = []
+
+        for match in line_re.finditer(text):
+            line = match.group()
+            m = re.match(r'^(PS [^>]+> )(.*\n?)', line)
+            if m:
+                # To support output lexers (say diff output), the output
+                # needs to be broken by prompts whenever the output lexer
+                # changes.
+                if not insertions:
+                    pos = match.start()
+
+                insertions.append((len(curcode),
+                                   [(0, Generic.Prompt, m.group(1))]))
+                curcode += m.group(2)
+            elif line.startswith('>> '):
+                insertions.append((len(curcode),
+                                   [(0, Generic.Prompt, line[:len('>> ')])]))
+                curcode += line[len('>> '):]
+            else:
+                if insertions:
+                    toks = bashlexer.get_tokens_unprocessed(curcode)
+                    for i, t, v in do_insertions(insertions, toks):
+                        yield pos+i, t, v
+                yield match.start(), Generic.Output, line
+                insertions = []
+                curcode = ''
+        if insertions:
+            for i, t, v in do_insertions(insertions,
+                                         bashlexer.get_tokens_unprocessed(curcode)):
+                yield pos+i, t, v
