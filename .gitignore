@@ -1,0 +1,52 @@
+*.py[co]
+
+# test files that should not be ignored
+!/tests/typecode/data/contenttype/compiled/java/*
+!/tests/typecode/data/contenttype/compiled/python/*
+!/tests/typecode/data/contenttype/compiled/flash/*
+!/tests/typecode/data/contenttype/compiled/linux/*
+!/tests/typecode/data/contenttype/compiled/win/*
+!/tests/typecode/data/contenttype/package/*
+
+# virtualenv and other misc bits
+/src/*.egg-info
+/dist
+/build
+/bin
+/lib
+/scripts
+/Scripts
+/Lib
+/pip-selfcheck.json
+/tmp
+.Python
+/include
+/local
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.coverage.*
+nosetests.xml
+htmlcov
+
+# Translations
+*.mo
+
+# IDEs
+.project
+.pydevproject
+.idea
+
+# Sphinx
+docs/_build
+
+.DS_Store
+*~
+.*.sw[po]
+.build
+.ve
+*.bak
+/.cache/
