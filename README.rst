@@ -70,13 +70,12 @@ Support
 =======
 
 If you have a question, a suggestion or find a bug, enter a ticket at:
-
-    https://github.com/nexB/scancode-toolkit/issues
+https://github.com/nexB/scancode-toolkit/issues
 
 Documentation
 =============
 
-    https://github.com/nexB/scancode-toolkit/wiki
+https://github.com/nexB/scancode-toolkit/wiki
 
 
 Basic Usage
@@ -105,8 +104,8 @@ Make sure Python 2.7 is installed first.
 System Requirements
 -------------------
 
-Hardware:
-    ScanCode will run best with a modern X86 processor and at least 2GB or Ram and 250MB of disk.
+Hardware: 
+ScanCode will run best with a modern X86 processor and at least 2GB or Ram and 250MB of disk.
 
 Supported operating Systems. ScanCode should run:
 
@@ -116,36 +115,34 @@ Supported operating Systems. ScanCode should run:
 
 On Linux:
 
-    Use your package manager to install python2.7.
-    If Python 2.7 is not available from your package manager, you must comile it from sources.
+Use your package manager to install python2.7.
+If Python 2.7 is not available from your package manager, you must compile it from sources.
 
-    For instance, visit https://github.com/dejacode/about-code-tool/wiki/BuildingPython27OnCentos
-    for instruction to compile Python from sources on Centos.
+For instance, visit https://github.com/dejacode/about-code-tool/wiki/BuildingPython27OnCentos
+for instruction to compile Python from sources on Centos.
 
 On Windows:
 
-    ScanCode requires the Python 2.7 (Windows x86 MSI installer) 
-    for X86 regardless of whether you run 32-bit or 64-bit Windows.
-    DO NOT USE Python X86_64 even if you run 64 bit Windows.
-    Download Python from this url:
+ScanCode requires the Python 2.7 (Windows x86 MSI installer) 
+for X86 regardless of whether you run 32-bit or 64-bit Windows.
+DO NOT USE Python X86_64 even if you run 64 bit Windows.
+Download Python from this url:
+https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi
 
-        https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi
-
-    Install Python on the c: drive and use all default installer options.
+Install Python on the c: drive and use all default installer options.
+See the Windows installation section for more installation details.
 
 On Mac:
 
-    Download Python from this url:
-
-        https://www.python.org/ftp/python/2.7.10/python-2.7.10-macosx10.6.pkg
+Download Python from this url:
+https://www.python.org/ftp/python/2.7.10/python-2.7.10-macosx10.6.pkg
 
 
 Installation on Linux and Mac
 -----------------------------
 
-Download and extract the latest ScanCode release from::
-
-    https://github.com/nexB/scancode-toolkit/releases/latest
+Download and extract the latest ScanCode release from:
+https://github.com/nexB/scancode-toolkit/releases/latest
 
 
 Open a terminal in the extracted directory and run::
@@ -174,17 +171,20 @@ https://github.com/nexB/scancode-toolkit/releases/latest
 * In the search box type::
 
         cmd
+
 * Select 'cmd.exe' listed in the search results.
 * A new 'cmd.exe' window pops-up.
 * In this window (aka. a command prompt), type this (this is 'cd' followed by a space)::
 
        cd 
+
 * then right-click in this window and select Paste. This will paste the path where you extracted ScanCode.
 * Press Enter.
 * This will change the current location of your command prompt to the root directory where scancode is installed.
 * Then type::
 
         scancode -h
+
 * Press enter. This will configure your ScanCode installation.
 * Several messages are displayed which will be followed by the scancode command help.
 
@@ -226,7 +226,8 @@ For each scanned file, the result contains:
 
 * its location in the codebase,
 * the detected licenses and copyright statements, and
-* the start and end line numbers identifying where the license or copyright was found in the scanned file, and
+* the start and end line numbers identifying where the license or copyright was found 
+  in the scanned file, and
 * reference information for the detected license.
 
 For archive extraction, ScanCode uses a combination of Python modules, 7zip 
@@ -250,11 +251,11 @@ You need to create a pair of files:
     key: my-license
     name: My License
 
-* the key name can contain only these symbols:
+The key name can contain only these symbols:
 
- - lowercase letters from a to z,
- - numbers from 0 to 9,and
- - dash `-` and `.` period signs. No spaces.
+* lowercase letters from a to z,
+* numbers from 0 to 9,and
+* dash `-` and `.` period signs. No spaces.
 
 Save these two files in the src/licensedcode/data/licenses/ directory.
 
@@ -279,13 +280,13 @@ already a rule with this base name. Do not use spaces or special characters in t
 Then create the rule file in the src/licensedcode/data/rules/ directory using this name replacing 
 `selected_base_name` with the base name you selected::
 
-     selected_base_name.RULE
+    selected_base_name.RULE
 
 Save your rule text in this file.
 
 Then create the YAML data file in the src/licensedcode/data/rules/ directory using this name::
 
-     selected_base_name.yml
+    selected_base_name.yml
 
 For a simple mit and gpl-2.0 detection license keys detection, the content of this file can be
 this YAML snippet::
@@ -308,7 +309,7 @@ More (advanced) rules options:
   You can mark a template region in your rule text using {{ double curly braces }} and up to five words can
   vary and still match this rule. You must add this field to you .yml data file to mark this rule as a `template`::
 
-    template: yes
+      template: yes
 
 * By using a number after the opening braces, more than five words can be skipped. With `{{10 double curly braces }}`
   ten words would be skipped.
