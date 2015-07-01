@@ -1,0 +1,372 @@
+This package was debianized by Takuo KITAME <kitame@debian.org> on
+Mon, 15 Dec 2003 10:36:50 +0900.
+
+The current Debian maintainer is The Debian Evolution Maintainer Team
+<pkg-evolution-maintainers@lists.alioth.debian.org>.
+
+It was downloaded from
+http://ftp.gnome.org/pub/gnome/sources/evolution-data-server/
+
+Authors:
+ <s>Harish Krishnaswamy <kharish@novell.com></s>
+ <s>JP Rosevear <jpr@ximian.com></s>
+ <s>Chris Toshok <toshok@ximian.com></s>
+ <s>Rodrigo Moya <rodrigo@ximian.com></s>
+ <s>Hans Petter Jansson <hpj@ximian.com></s>
+ <s>Sivaiah Nallagatla <snallagatla@novell.com></s>
+ <s>Chenthill Palanisamy <pchenthill@novell.com></s>
+ <s>Jeffrey Stedfast <fejj@ximian.com></s>
+ <s>Nat Friedman <nat@novell.com></s>
+ <s>Federico Mena-Quintero <federico@ximian.com></s>
+ <s>Michael Zucchi <notzed@ximian.com></s>
+ <s>Ettore Perazzoli <ettore@ximian.com></s>
+ <s>Dan Winship <danw@ximian.com></s>
+ <s>Jesse Pavel (jpavel@ximian.com)</s>
+ <s>Jon Trowbridge <trow@ximian.com></s>
+ <s>Christopher James Lahey <clahey@ximian.com></s>
+ <s>Christian Kellner <gicmo@gnome.org> </s>
+ <s>David Trowbridge <trowbrds@cs.colorado.edu></s>
+ <s>Eskil Heyn Olsen <deity@eskil.dk></s>
+ <s>Damon Chaplin <damon@ximian.com></s>
+ <s>Miguel de Icaza <miguel@ximian.com></s>
+ <s>Bertrand Guiheneuf <bertrand@helixcode.com></s>
+ <s>Radek Doulik <rodo@ximian.com></s>
+ <s>Tor Lillqvist <tml@novell.com></s>
+ <s>Parthasarathi Susarla <sparthasarathi@novell.com></s>
+ <s>Jacob Berkman <jacob@ximian.com></s>
+
+Copyright:
+ 1999-2004 <s>Ximian, Inc.</s>
+ 1999-2005 <s>Novell, Inc.</s>
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Library General Public
+License as published by the Free Software Foundation; either
+version 2 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Library General Public License for more details.
+
+You should have received a copy of the GNU Library General Public
+License along with this library; if not, write to the
+Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+Boston, MA  02110-1301, USA.
+
+On Debian systems, the complete text of the GNU Library General Public
+License can be found in /usr/share/common-licenses/LGPL-2. Some of the
+files are licensed under the GNU Lesser General Public License which
+can be found in /usr/share/common-licenses/LGPL-2.1.
+
+---
+
+The source files calendar/backends/contacts/e-cal-backend-contacts.{c,h}
+are copyright 2000-2003 <s>Ximian, Inc.</s>, 2003 <s>Gergõ Érdi</s>
+
+---
+
+The source file calendar/idl/Evolution-DataServer-Calendar.idl is
+copyright 2000 <s>Eskil Heyn Olsen</s>, 2000 <s>Ximian, Inc.</s>
+
+---
+
+The source file calendar/libecal/e-cal-time-util.h is copyright 1998
+<s>The Free Software Foundation</s>, 2000 <s>Ximian, Inc.</s>
+
+---
+
+The source file addressbook/backends/ldap/openldap-extract.h is
+copyright 1998-2005 <s>The OpenLDAP Foundation</s>.
+
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted only as authorized by the OpenLDAP
+ * Public License.
+ *
+ * A copy of this license is available in file LICENSE in the
+ * top-level directory of the distribution or, alternatively, at
+ * <http://www.OpenLDAP.org/license.html>.
+
+The OpenLDAP Public License
+  Version 2.8, 17 August 2003
+
+Redistribution and use of this software and associated documentation
+("Software"), with or without modification, are permitted provided
+that the following conditions are met:
+
+1. Redistributions in source form must retain copyright statements
+   and notices,
+
+2. Redistributions in binary form must reproduce applicable copyright
+   statements and notices, this list of conditions, and the following
+   disclaimer in the documentation and/or other materials provided
+   with the distribution, and
+
+3. Redistributions must contain a verbatim copy of this document.
+
+The OpenLDAP Foundation may revise this license from time to time.
+Each revision is distinguished by a version number.  You may use
+this Software under terms of this license revision or under the
+terms of any subsequent revision of the license.
+
+THIS SOFTWARE IS PROVIDED BY THE OPENLDAP FOUNDATION AND ITS
+CONTRIBUTORS ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT
+SHALL THE OPENLDAP FOUNDATION, ITS CONTRIBUTORS, OR THE AUTHOR(S)
+OR OWNER(S) OF THE SOFTWARE BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+The names of the authors and copyright holders must not be used in
+advertising or otherwise to promote the sale, use or other dealing
+in this Software without specific, written prior permission.  Title
+to copyright in this Software shall at all times remain with copyright
+holders.
+
+OpenLDAP is a registered trademark of the OpenLDAP Foundation.
+
+Copyright 1999-2003 <s>The OpenLDAP Foundation</s>, Redwood City,
+California, USA.  All Rights Reserved.  Permission to copy and
+distribute verbatim copies of this document is granted.
+
+---
+
+LIBICAL (files under calendar/libical/)
+Copyright:
+ 1999-2000 <s>Eric Busboom</s>, <s>The Software Studio (http://www.softwarestudio.org)</s>
+ 2001 <s>Critical Path</s>
+Authors:
+ <s>Eric Busboom</s>
+ <s>John Gray <gray@agora-net.com></s>
+ <s>Andrea Campi <a.campi@inet.it></s>
+
+ The code and datafiles in this distribution are licensed under the
+ Mozilla Public License. See http://www.mozilla.org/NPL/MPL-1.0.html
+ for a copy of the license. Alternately, you may use libical under the
+ terms of the GNU Library General Public License. See
+ http://www.fsf.org/copyleft/lesser.html for a copy of the LGPL.
+
+ This dual license ensures that the library can be incorporated into
+ both proprietary code and GPL'd programs, and will benefit from
+ improvements made by programmers in both realms. I will only accept
+ changes into my version of the library if they are similarly
+ dual-licensed.
+
+ Portions of this distribution are (C) Copyright 1996 <s>Apple Computer</s>,
+ <s>Inc., AT&T Corp.</s>, <s>International Business Machines Corporation</s> and
+ <s>Siemens Rolm Communications Inc.</s> See src/libicalvcal/README.TXT for
+ details.
+
+ Portions of this distribution are Copyright (c) 1997 <s>Theo de
+ Raadt</s>. See the header for src/libical/vsnprintf.c for the full
+ copyright statement.
+
+---
+
+The source files calendar/libical/src/libical/icalattach* are
+copyright 2000 <s>Andrea Campi</s>.
+The source file calendar/libical/src/libicalcap/icalcap_utils.c is
+copyright 2002 <s>Andrea Campi</s>
+The source file calendar/libical/src/libicalcap/Makefile.am is
+copyright 2003 <s>Andrea Campi</s>
+
+This program is free software; you can redistribute it and/or modify
+ it under the terms of either:
+
+    The LGPL as published by the Free Software Foundation, version
+    2.1, available at: http://www.fsf.org/copyleft/lesser.html
+
+  Or:
+
+    The Mozilla Public License Version 1.0. You may obtain a copy of
+    the License at http://www.mozilla.org/MPL/
+
+---
+
+The source file calendar/libical/src/libicalcap/client.c.
+Copyright:
+ 2002 <s>Jonas Borgström <jonas@codefactory.se></s>
+ 2002 <s>Daniel Lundin   <daniel@codefactory.se></s>
+ 2002 <s>CodeFactory AB</s>.  All rights reserved.
+
+ * See the file LICENSE for redistribution information. 
+ * If you have not received a copy of the license, please contact CodeFactory
+ * by email at info@codefactory.se, or on the web at http://www.codefactory.se/
+ * You may also write to: CodeFactory AB, SE-903 47, Umeå, Sweden.
+
+---
+
+The source files
+calendar/libical/src/libicalvcal/vcaltmp.{c,h}
+calendar/libical/src/libicalvcal/vcc.{c,h,y}
+calendar/libical/src/libicalvcal/vobject.{c,h}
+calendar/libical/src/libicalvcal/port.h
+are copyright 1996 <s>Apple Computer, Inc.</s>, <s>AT&T Corp.</s>, <s>International
+Business Machines Corporation</s> and <s>Siemens Rolm Communications Inc.</s>
+
+For purposes of this license notice, the term Licensors shall mean,            
+collectively, Apple Computer, Inc., AT&T Corp., International                  
+Business Machines Corporation and Siemens Rolm Communications Inc.             
+The term Licensor shall mean any of the Licensors.                             
+                                                                               
+Subject to acceptance of the following conditions, permission is hereby        
+granted by Licensors without the need for written agreement and without        
+license or royalty fees, to use, copy, modify and distribute this              
+software for any purpose.                                                      
+                                                                               
+The above copyright notice and the following four paragraphs must be           
+reproduced in all copies of this software and any software including           
+this software.                                                                 
+                                                                               
+THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS AND NO LICENSOR SHALL HAVE       
+ANY OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS OR       
+MODIFICATIONS.                                                                 
+                                                                               
+IN NO EVENT SHALL ANY LICENSOR BE LIABLE TO ANY PARTY FOR DIRECT,              
+INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES OR LOST PROFITS ARISING OUT         
+OF THE USE OF THIS SOFTWARE EVEN IF ADVISED OF THE POSSIBILITY OF SUCH         
+DAMAGE.                                                                        
+                                                                               
+EACH LICENSOR SPECIFICALLY DISCLAIMS ANY WARRANTIES, EXPRESS OR IMPLIED,       
+INCLUDING BUT NOT LIMITED TO ANY WARRANTY OF NONINFRINGEMENT OR THE            
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR             
+PURPOSE.                                                                       
+
+The software is provided with RESTRICTED RIGHTS.  Use, duplication, or         
+disclosure by the government are subject to restrictions set forth in          
+DFARS 252.227-7013 or 48 CFR 52.227-19, as applicable.                         
+
+---
+
+The files calendar/libical/src/libical/{astime.h,caldate.c} are
+copyright 1986-2000 <s>Hiram Clawson</s>. All rights reserved.
+
+ *	Redistribution and use in source and binary forms, with or
+ *	without modification, are permitted provided that the following
+ *	conditions are met:
+ *
+ *		Redistributions of source code must retain the above
+ *		copyright notice, this list of conditions and the
+ *		following disclaimer.
+ *
+ *		Redistributions in binary form must reproduce the
+ *		above copyright notice, this list of conditions and
+ *		the following disclaimer in the documentation and/or
+ *		other materials provided with the distribution.
+ *
+ *		Neither name of The Museum of Hiram nor the names of
+ *		its contributors may be used to endorse or promote products
+ *		derived from this software without specific prior
+ *		written permission. 
+ *
+ *	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+ *	CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ *	INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ *	MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ *	IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ *	INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ *	(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ *	OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ *	HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ *	STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+ *	IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+ *	THE POSSIBILITY OF SUCH DAMAGE. 
+
+---
+
+The file calendar/libical/src/libical/vsnprintf.c is copyright 1997
+<s>Theo de Raadt</s>.
+
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+---
+
+Berkeley DB 4.1.25 (files under libdb/)
+
+/*-
+ * See the file LICENSE for redistribution information.
+ *
+ * Copyright (c) 1996-2002
+ *	<s>Sleepycat Software</s>.  All rights reserved.
+ */
+/*
+ * Copyright (c) 1990, 1993, 1994, 1995, 1996
+ *	<s>Keith Bostic</s>.  All rights reserved.
+ */
+/*
+ * Copyright (c) 1990, 1993, 1994, 1995
+ *	<s>The Regents of the University of California</s>.  All rights reserved.
+ *
+ * This code is derived from software contributed to Berkeley by
+ * Mike Olson.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. Neither the name of the University nor the names of its contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+
+ * This code implements the MD5 message-digest algorithm.
+ * The algorithm is due to <s>Ron Rivest</s>.  This code was
+ * written by <s>Colin Plumb</s> in 1993, no copyright is claimed.
+ * This code is in the public domain; do with it what you wish.
+ *
+ * Equivalent code is available from RSA Data Security, Inc.
+ * This code has been tested against that, and is equivalent,
+ * except that you don't need to include two pages of legalese
+ * with every copy.
+ *
+ * To compute the message digest of a chunk of bytes, declare an
+ * MD5Context structure, pass it to md5_init, call md5_update as
+ * needed on buffers full of bytes, and then call md5_Final, which
+ * will fill a supplied 16-byte array with the digest.
+ */
+
+/* parts of this file are :
+ * Written March 1993 by <s>Branko Lankester</s>
+ * Modified June 1993 by <s>Colin Plumb</s> for altered md5.c.
+ * Modified October 1995 by <s>Erik Troan</s> for RPM
+ */

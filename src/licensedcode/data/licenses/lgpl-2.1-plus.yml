@@ -1,0 +1,18 @@
+key: lgpl-2.1-plus
+short_name: LGPL 2.1 or later
+name: >-
+    GNU Lesser General Public License 2.1 or later
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+spdx_license_key: LGPL-2.1+
+spdx_full_name: >-
+    GNU Lesser General Public License v2.1 or later
+spdx_url: http://spdx.org/licenses/LGPL-2.1+
+spdx_notes: |-
+    This license was released: February 1999.
+    This license is OSI certified.
+text_urls:
+    - http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
+other_urls:
+    - http://www.gnu.org/copyleft/lesser.html

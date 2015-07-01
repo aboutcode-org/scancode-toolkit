@@ -1,0 +1,3 @@
+[('ElectricFence-2.0.5/eftest.c.ewt',
+  'ElectricFence-2.0.5/eftest.c',
+  '--- ElectricFence-2.0.5/eftest.c.ewt\n+++ ElectricFence-2.0.5/eftest.c\n@@ -24,7 +24,7 @@\nextern int\tEF_PROTECT_BELOW;\nextern int\tEF_ALIGNMENT;\n\n-static jmp_buf\tenv;\n+static sigjmp_buf\tenv;\n\n/*\n* There is still too little standardization of the arguments and return\n@@ -40,13 +40,13 @@\n)\n{\nsignal(PAGE_PROTECTION_VIOLATED_SIGNAL, SIG_DFL);\n-\tlongjmp(env, 1);\n+\tsiglongjmp(env, 1);\n}\n\nstatic int\ngotSegmentationFault(int (*test)(void))\n{\n-\tif ( setjmp(env) == 0 ) {\n+\tif ( sigsetjmp(env, 1) == 0 ) {\nint\t\t\tstatus;\n\nsignal(PAGE_PROTECTION_VIOLATED_SIGNAL')]

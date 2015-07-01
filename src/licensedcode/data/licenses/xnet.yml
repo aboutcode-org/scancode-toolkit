@@ -1,0 +1,15 @@
+key: xnet
+short_name: Altera License
+name: Altera License
+category: Attribution
+owner: Altera Corporation
+homepage_url: http://www.opensource.org/licenses/xnet.php
+spdx_license_key: Xnet
+spdx_full_name: X.Net License
+spdx_url: http://spdx.org/licenses/Xnet
+spdx_notes: |-
+    This license is OSI certified.
+    This License has been voluntarily deprecated by its author.
+text_urls:
+    - http://www.opensource.org/licenses/xnet.php
+osi_url: http://www.opensource.org/licenses/xnet.php

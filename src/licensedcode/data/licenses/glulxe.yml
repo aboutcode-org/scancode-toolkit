@@ -1,0 +1,9 @@
+key: glulxe
+short_name: Glulxe License
+name: Glulxe License
+category: Attribution
+owner: Andrew Plotkin
+homepage_url: https://fedoraproject.org/wiki/Licensing/Glulxe
+spdx_license_key: Glulxe
+spdx_full_name: Glulxe License
+spdx_url: http://spdx.org/licenses/Glulxe

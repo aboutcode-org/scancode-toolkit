@@ -1,0 +1,9 @@
+key: lgpl-2.1-rxtx
+short_name: LGPL 2.1 with RXTX exception
+name: >-
+    GNU Lesser General Public License 2.1 with RXTX exception
+category: Copyleft Limited
+owner: RXTX
+homepage_url: http://users.frii.com/jarvi/rxtx/license.html
+other_urls:
+    - http://www.fsf.org/licenses/gpl-faq.html#LinkingOverControlledInterface

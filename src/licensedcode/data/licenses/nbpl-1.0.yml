@@ -1,0 +1,14 @@
+key: nbpl-1.0
+short_name: NBPL-1.0
+name: Net Boolean Public License 1.0
+category: Copyleft Limited
+owner: OpenLDAP Foundation
+homepage_url: http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=37b4b3f6cc4bf34e1d3dec61e69914b9819d8894
+spdx_license_key: NBPL-1.0
+spdx_full_name: Net Boolean Public License v1
+spdx_url: http://spdx.org/licenses/NBPL-1.0
+spdx_notes: |-
+    This license was released 22 August 1998.
+    This license was issued twice, but only with formatting differences.
+text_urls:
+    - http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=37b4b3f6cc4bf34e1d3dec61e69914b9819d8894

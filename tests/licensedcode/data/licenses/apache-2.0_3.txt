@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+<html>
+  <head>
+    <title>EJOE - 
+		EJOE - Überblick</title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/site.css");
+    </style>
+    <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+          <meta name="author" content="
+		EJOE, NIO, Remoting, Framwork, IO, java.nio, ByteBuffer
+		Auf dem java.nio Package basierendes, skalierbares und hochperformantes I/O Framework
+		Michael Manske" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="" id="bannerLeft">
+    
+                                            <img src="../images/ejheader.png" alt="" />
+    
+            </a>
+                        <a href="http://www.sourceforge.net/" id="bannerRight">
+    
+                                    <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=116355&type=2" alt="" />
+    
+            </a>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+            <div class="xleft">
+        Zuletzt Publiziert: 11/17/2007
+                      </div>
+            <div class="xright">      <a href="../index.html">Site in english</a>
+          |
+          <a href="../035/index.html">Dokumentation für 0.3.5</a>
+          |
+          <a href="http://sourceforge.net/project/showfiles.php?group_id=116355">Download</a>
+          |
+          <a href="http://sourceforge.net/forum/forum.php?forum_id=397902">Forum</a>
+          |
+          <a href="http://sourceforge.net/tracker/?group_id=116355">Fehler melden</a>
+          |
+          <a href="http://www.manskes.de/index.php/category/development/ejoe/">Entwickler-Blog</a>
+          
+  
+
+  
+    
+  
+  
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+                   <h5>Übersicht</h5>
+        <ul>
+              
+    <li class="none">
+              <strong>Über EJOE</strong>
+        </li>
+              
+                
+              
+      
+            
+      
+              
+        <li class="collapsed">
+              <a href="status.html">Neuigkeiten and Status</a>
+              </li>
+              
+    <li class="none">
+              <a href="releasepolitic.html">Releasepolitik</a>
+        </li>
+              
+    <li class="none">
+              <a href="license.html">Lizenz</a>
+        </li>
+          </ul>
+          <h5>Dokumentation</h5>
+        <ul>
+              
+    <li class="none">
+              <a href="../035/index.html">Dokumentation für 0.3.5</a>
+        </li>
+              
+    <li class="none">
+              <a href="media/EJOE_Handbuch.pdf">Empfohlen: Einführung u. Referenz (PDF 0.74Mb)</a>
+        </li>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+                  
+      
+            
+      
+            
+      
+                  
+      
+            
+      
+            
+      
+                    
+        <li class="collapsed">
+              <a href="getstarted.html">Aller Anfang ist schwer</a>
+              </li>
+              
+                
+              
+      
+              
+        <li class="collapsed">
+              <a href="advanced.html">Erweiterte Funktionen</a>
+              </li>
+              
+                
+              
+      
+            
+      
+            
+      
+                    
+        <li class="collapsed">
+              <a href="examples.html">Beispiele</a>
+              </li>
+              
+    <li class="none">
+              <a href="../faq.html">FAQ (en)</a>
+        </li>
+              
+    <li class="none">
+              <a href="../apidocs/index.html">JavaDocs</a>
+        </li>
+              
+    <li class="none">
+              <a href="../xref/index.html">Source XRef</a>
+        </li>
+          </ul>
+          <h5>Hilfe benötigt?</h5>
+        <ul>
+              
+    <li class="none">
+              <a href="mail-lists.html">Mailinglist</a>
+        </li>
+              
+    <li class="none">
+              <a href="http://sourceforge.net/forum/?group_id=116355">Forum</a>
+        </li>
+              
+    <li class="none">
+              <a href="http://sourceforge.net/tracker/?group_id=116355">Tracker</a>
+        </li>
+          </ul>
+          <h5>Download</h5>
+        <ul>
+              
+    <li class="none">
+              <a href="http://sourceforge.net/project/showfiles.php?group_id=116355">Distribution</a>
+        </li>
+              
+    <li class="none">
+              <a href="http://sourceforge.net/project/showfiles.php?group_id=116355">Source-Distribution</a>
+        </li>
+          </ul>
+          <h5>Projekt Dokumentation</h5>
+        <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+              <a href="project-info.html">Projekt Information</a>
+              </li>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+              <a href="project-reports.html">Berichte ÃŒber das Projekt</a>
+              </li>
+          </ul>
+                                       <a href="http://maven.apache.org/" title="Erstellt von Maven" id="poweredBy">
+            <img alt="Erstellt von Maven" src="./images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        
+	<keywords></keywords><description></description>
+	
+		<div id="downloadbox">
+			<h5>EJOE 0.4.1</h5>
+			<span style="display: block; text-align: right; font-size: smaller">Released: 17.11.2007</span>
+			<p>
+				<a href="http://sourceforge.net/project/showfiles.php?group_id=116355">
+					<img valign="top" src="../images/folder-open.gif" border="0" alt="" title="download"></img>
+					EJOE 0.4.1
+				</a>
+				<small>(1.9Mb)</small>
+				<span style="font-size: smaller">
+					<br></br>
+					<a href="changes-report.html#0.4.1">Was ist neu?</a>
+					<br></br>
+					<a href="media/EJOE_Handbuch.pdf">EJOE - Einführung und Referenz 1.3</a>
+					<small>(pdf 0.72Mb)</small>
+				</span>
+			</p>
+			<h5>EJOE 0.3.5_01</h5>
+			<span style="display: block; text-align: right; font-size: smaller">Released: 22.03.2006</span>
+			<p>
+				<a href="download.html">
+					<img valign="top" src="../images/folder-open.gif" border="0" alt="" title="download"></img>
+					EJOE 0.3.5_01
+				</a>
+				<small>(670k)</small>
+				<span style="font-size: smaller">
+					<br></br>
+					<a href="../035/index.html">Dokumentation</a>
+				</span>
+			</p>
+		</div>
+		<a name="Überblick"></a><div class="section"><h2>Überblick</h2>
+			<p>
+				<b>Remoting Framework oder Object Request Broker oder IO-Framework, oder...</b>
+			</p>
+			<p>
+				EJOE ist eine zusammenführende Implementierung der durch Java bereitgestellten Netzwerk-,
+				Parallelisierungs- sowie Serialisierungsfunktionalitäten. Es vereint diese Funktionen in einem
+				sogenannten Objektbroker (ORB), welcher das allgemeine Request-Process-Response-Pattern implementiert
+				und jeweils eine fertige Client- bzw. Serverkomponente bereitstellt. EJOE stellt somit ein Remoting-Framework dar und
+				fällt unter anderem im weitesten Sinne in jenen Bereich, der allgemein als Middleware bezeichnet wird.
+			</p>
+			<p>
+				EJOE kann zur Entwicklung von Client/Server-Anwendungen sowie zur Bereitstellung von Remote-Services in
+				bereits bestehenden Anwendungen verwendet werden. Eines der Hauptmerkmale ist die Bereitstellung einer
+				großen Anzahl möglicher Serialisierungsmechanismen, welche die Übertragung von POJOs, Beans sowie
+				komplexen Containern über Netzwerk gewährleisten.
+			</p>
+			<p>
+				<i>
+					<b>
+						EJOE bietet eine einfach anwendbare, vereinheitlichende und skalierbare Architektur um
+						bestehende und neue Anwendungen bei sehr geringen Integrationskosten mit einer zuverlässigen
+						Transportschicht für Client/Server-Architekturen auszustatten.
+					</b>
+				</i>
+			</p>
+			<p>
+				<img src="../images/ejoe.png" border="0" alt="EJOE usage" hspace="25" vspace="25"></img>
+			</p>
+			<a name="Highlights"></a><div class="section"><h3>Highlights</h3>
+				<p>
+					<ol type="1">
+						<li>Open Source unter der Apache License Version 2</li>
+						<li>skalierbar und hochperformant</li>
+						<li>einfach integrierbare Schnittstelle für Client und Server</li>
+						<li>
+							umfangreiche, leicht erweiterbare Unterstützung verschiedenster Serialisierungstechniken,
+							-protokolle und -frameworks
+							<ul>
+								<li>
+									<a href="http://xstream.codehaus.org">XStream</a>
+								</li>
+								<li>
+									<a href="http://castor.codehaus.org">Castor XML</a>
+								</li>
+								<li>
+									<a href="http://www.javolution.org">javolution</a>
+								</li>
+								<li>
+									<a href="http://jsx.org/">JSX</a>
+								</li>
+								<li>
+									<a href="http://www.caucho.com/resin-3.0/protocols/hessian.xtp">Caucho Hessian</a>
+								</li>
+								<li>
+									<a href="http://sojo.sourceforge.net">SOJO</a>
+								</li>
+								<li>
+									<a href="json-lib.sourceforge.net/">json-lib</a>
+								</li>
+								<li>Java Object Serialisation</li>
+								<li>Long Term Persistence for Java Beans</li>
+								<li>
+									<a href="https://jaxb.dev.java.net/">JAXB2</a>
+								</li>
+								<li>...</li>
+							</ul>
+						</li>
+						<li>zuverlässiges, skalierbares, einstellbares Multithreadingverhalten</li>
+						<li>
+							Unterstützung sowohl für non-blocking I/O (java.nio) als auch das streamorientierte blocking
+							I/O (java.io)
+						</li>
+						<li>Unterstützung für WSIF (Web Service Invocation Framework)</li>
+						<li>Unterstützung des Crispy-Frameworks</li>
+						<li>Remote Method Invocation durch Remote Reflection (Remoting Framework)</li>
+						<li>Unterstützung für die Ausführung asynchroner Requests</li>
+						<li>Unterstützung der In-Process Kommunikation innerhalb einer Instanz der Java Virtual Machine</li>
+						<li>partielle HTTP-Unterstützung für Clients hinter Firewalls</li>
+						<li>ohne J2EE einsetzbar</li>
+					</ol>
+				
+			</div>
+			<a name="EJOE ist beispielsweise keine gute Wahl, wenn:"></a><div class="section"><h3>EJOE ist beispielsweise keine gute Wahl, wenn:</h3>
+				
+					<ol type="1">
+						<li>
+							ein anderes Transportprotokoll als das EJOE-Protokoll oder HTTP verwendet oder implementiert
+							werden soll
+						</li>
+						<li>
+							Die Funktionen eines ausgereiften Applicationservers oder Servletcontainers benötigt werden
+						</li>
+						<li>
+							Datenstreaming beispielsweise für die unterbrechungsfreie Übertragung von Audio- oder
+							Videodaten umgesetzt werden soll
+						</li>
+					</ol>
+				
+			</div>
+		</div>
+	
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2005-2007
+    
+          netseeker
+          
+  
+
+  
+    
+  
+  
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

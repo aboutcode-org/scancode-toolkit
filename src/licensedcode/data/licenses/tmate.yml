@@ -1,0 +1,11 @@
+key: tmate
+short_name: TMate Open Source License
+name: TMate Open Source License
+category: Copyleft
+owner: SVNKit (TMate)
+homepage_url: http://svnkit.com/licensing.html
+spdx_license_key: TMate
+spdx_full_name: TMate Open Source License
+spdx_url: http://spdx.org/licenses/TMate
+text_urls:
+    - http://svnkit.com/license.html

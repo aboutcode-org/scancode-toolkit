@@ -1,0 +1,13 @@
+key: nosl-3.0
+short_name: Non-Profit OSL 3.0
+name: Non-Profit Open Software License 3.0
+category: Copyleft
+owner: OSI - Open Source Initiative
+homepage_url: http://www.opensource.org/licenses/NOSL3.0.html
+spdx_license_key: NPOSL-3.0
+spdx_full_name: Non-Profit Open Software License 3.0
+spdx_url: http://spdx.org/licenses/NPOSL-3.0
+spdx_notes: This license is OSI certified.
+text_urls:
+    - http://www.opensource.org/licenses/NOSL3.0.html
+osi_url: http://www.opensource.org/licenses/NOSL3.0.html

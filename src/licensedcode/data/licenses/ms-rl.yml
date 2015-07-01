@@ -1,0 +1,15 @@
+key: ms-rl
+short_name: MS-RL
+name: Microsoft Reciprocal License
+category: Copyleft Limited
+owner: Microsoft
+homepage_url: http://www.microsoft.com/opensource/licenses.mspx#Ms-RL
+spdx_license_key: MS-RL
+spdx_full_name: Microsoft Reciprocal License
+spdx_url: http://spdx.org/licenses/MS-RL
+spdx_notes: This license is OSI certified.
+text_urls:
+    - http://www.microsoft.com/opensource/licenses.mspx#Ms-RL
+osi_url: http://www.opensource.org/licenses/ms-rl.html
+other_urls:
+    - http://www.microsoft.com/en-us/openness/licenses.aspx#MRL

@@ -1,0 +1,10 @@
+--- linux-2.6.23/drivers/i2c/busses/i2c-stm.c.org	2009-11-30 12:01:41.000000000 +0100
++++ linux-2.6.23/drivers/i2c/busses/i2c-stm.c	2009-11-30 12:02:13.000000000 +0100
+@@ -453,6 +453,7 @@
+ 
+ 	case IIC_FSM_DATA_READ:
+ 		dbg_print2("-Read\n");
++		udelay(10);
+ 		/* Clear the RX buffer */
+ 		idx = (ssc_load32(adap, SSC_RX_FSTAT) & SSC_RX_FSTAT_STATUS);
+ 		if (!idx && (ssc_load32(adap, SSC_STA) & SSC_STA_RIR))

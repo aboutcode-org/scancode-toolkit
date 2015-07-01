@@ -1,0 +1,5 @@
+licenses:
+    - westhawk
+notes: >-
+    Initial " * " values removed from the beginning of each line.
+sort: true

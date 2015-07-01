@@ -1,0 +1,32 @@
+licenses:
+    - aes-128-3.0
+    - bsd-new
+    - bsd-original-uc
+    - bsd-simplified
+    - bsla
+    - cryptopp
+    - freetype
+    - gpl-2.0-plus
+    - ietf
+    - ijg
+    - isc
+    - lgpl-2.0
+    - lgpl-2.1
+    - libpng
+    - mit-license-1998
+    - mit-old-style-legal-2
+    - mpl-1.1
+    - openldap-2.8
+    - openssl-ssleay
+    - pcre
+    - public-domain
+    - ruby
+    - ssleay-windows
+    - sun-rpc
+    - tidy
+    - unicode-mappings
+    - unlicense
+    - x11-lucent
+    - zlib
+expected_failure: yes
+sort: true

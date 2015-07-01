@@ -1,0 +1,6 @@
+# This could be handy for archiving the generated documentation or 
+# if some version control system is used.
+
+PROJECT_NUMBER         = "(C) Copyright 2003-2007 Nuance  "
+
+# The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) 

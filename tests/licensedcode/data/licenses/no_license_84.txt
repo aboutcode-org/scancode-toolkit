@@ -1,0 +1,21 @@
+same thing here:
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.6.2
+Created-By: 1.4.2-b28 (Sun Microsystems Inc.)
+Sealed: false
+Specification-Title: DOM Level 2
+Specification-Version: DOM Level 3
+Specification-Vendor: W3C 
+Implementation-Title: DOM Implementation 
+Implementation-Version: Xerces-J_2_5_0
+Implementation-Vendor: Apache Software Foundation
+Implementation-Vendor-Id: org.apache 
+Extension-Name: org.w3c.dom
+
+Manifest-Version: 1.0
+Created-By: Apache Ant 1.5.1
+
+Name: org/apache/log4j/
+Implementation-Title: log4j
+Implementation-Version: 1.2.8
+Implementation-Vendor: "Apache Software Foundation"

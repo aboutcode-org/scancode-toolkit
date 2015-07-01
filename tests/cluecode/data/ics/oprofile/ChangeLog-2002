@@ -1,0 +1,12 @@
+
+2002-05-15  Philippe Elie  <phil.el@wanadoo.fr>
+
+	* libutil++/utility.h: fix a copyright problem, work-around
+	  a (probable) gcc 2.91 bug.
+
+
+2002-05-05  John Levon  <moz@compsoc.man.ac.uk>
+
+	* doc/oprofile.xml: update copyright for 2002
+
+	* doc/xsl/xhtml-chunk.xsl: indent=yes

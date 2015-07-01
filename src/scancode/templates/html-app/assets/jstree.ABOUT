@@ -1,0 +1,13 @@
+about_resource: jstree.min.js
+download_url: https://github.com/vakata/jstree/archive/3.1.1.zip
+
+version: 3.1.1
+name: jsTree
+home_url: http://www.jstree.com/
+owner: Ivan Bozhanov
+copyright: Copyright (c) 2014 Ivan Bozhanov
+
+license_url: https://raw.githubusercontent.com/vakata/jstree/3.1.1/LICENSE-MIT
+dje_license: mit
+license_text_file: jstree.LICENSE
+notes: the files throbber.gif, style.min.css and 32px.png are also from jstree.

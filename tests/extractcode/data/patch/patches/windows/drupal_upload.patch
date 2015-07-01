@@ -1,0 +1,259 @@
+diff -Nup C:\Documents and Settings\Boki\Desktop\head\patches\drupal6/drupal.js C:\Documents and Settings\Boki\Desktop\head\patches\parallel uploads/drupal.js
+--- C:\Documents and Settings\Boki\Desktop\head\patches\drupal6/drupal.js	2007-06-08 14:52:00.000000000 +0200
++++ C:\Documents and Settings\Boki\Desktop\head\patches\parallel uploads/drupal.js	2007-06-16 19:27:20.953125000 +0200
+@@ -162,64 +162,72 @@ Drupal.theme = function(func) {
+  * in a given wrapper. The iframe should contain a call to
+  * window.parent.iframeHandler() after submission.
+  */
+-Drupal.redirectFormButton = function (uri, button, handler) {
++Drupal.redirectFormButton = function (uri, button, handler, base) {
+   // Trap the button
+   button.onmouseover = button.onfocus = function() {
+-    button.onclick = function() {
++    button.onclick = function() { 
++      if(typeof(handlers) != 'object') {
++        action = button.form.action;
++        target = button.form.target;
++        handlers = new Array();
++      }
++      
+       // Create target iframe
+-      Drupal.createIframe();
+-
++      Drupal.createIframe(base, target, action);
++      
+       // Prepare variables for use in anonymous function.
+-      var button = this;
+-      var action = button.form.action;
+-      var target = button.form.target;
+-
++      handlers[base] = handler;
++      
+       // Redirect form submission to iframe
++      
+       this.form.action = uri;
+-      this.form.target = 'redirect-target';
+-
+-      handler.onsubmit();
+ 
+-      // Set iframe handler for later
+-      window.iframeHandler = function () {
+-        var iframe = $('#redirect-target').get(0);
+-        // Restore form submission
+-        button.form.action = action;
+-        button.form.target = target;
+-
+-        // Get response from iframe body
+-        try {
+-          response = (iframe.contentWindow || iframe.contentDocument || iframe).document.body.innerHTML;
+-          // Firefox 1.0.x hack: Remove (corrupted) control characters
+-          response = response.replace(/[\f\n\r\t]/g, ' ');
+-          if (window.opera) {
+-            // Opera-hack: it returns innerHTML sanitized.
+-            response = response.replace(/&quot;/g, '"');
+-          }
+-        }
+-        catch (e) {
+-          response = null;
+-        }
+-
+-        response = Drupal.parseJson(response);
+-        // Check response code
+-        if (response.status == 0) {
+-          handler.onerror(response.data);
+-          return;
+-        }
+-        handler.oncomplete(response.data);
+-
+-        return true;
+-      };
++      this.form.target = 'redirect-target-' + base;
+ 
++      handler.onsubmit();
++      
+       return true;
+-    };
+-  };
++    }
++  }
+   button.onmouseout = button.onblur = function() {
+     button.onclick = null;
+-  };
++  }
+ };
+ 
++// Set iframe handler for later
++Drupal.iframeHandler = function (base, target, action) {
++  var iframe = $('#redirect-target-' + base).get(0);
++        
++  $('#node-form').attr('target', target);
++  $('#node-form').attr('action', action);
++        
++  // Get response from iframe body
++  try {
++    response = (iframe.contentWindow || iframe.contentDocument || iframe).document.body.innerHTML;
++    // Firefox 1.0.x hack: Remove (corrupted) control characters
++    response = response.replace(/[\f\n\r\t]/g, ' ');
++    if (window.opera) {
++       // Opera-hack: it returns innerHTML sanitized.
++      response = response.replace(/&quot;/g, '"');
++    }
++  }
++  catch (e) {
++    response = null;
++  }
++  
++  response = Drupal.parseJson(response);
++        
++  // Check response code
++  if (response.status == 0) {
++    handler.onerror(response.data);
++    return;
++  }
++       
++  handlers[base].oncomplete(response.data, base);
++
++ return true;
++}
++
+ /**
+  * Retrieves the absolute position of an element on the screen
+  */
+@@ -270,21 +278,21 @@ Drupal.parseJson = function (data) {
+ /**
+  * Create an invisible iframe for form submissions.
+  */
+-Drupal.createIframe = function () {
+-  if ($('#redirect-holder').size()) {
++Drupal.createIframe = function (base, target, action) {
++  if ($('#redirect-holder-'+ base).size()) {
+     return;
+   }
+   // Note: some browsers require the literal name/id attributes on the tag,
+   // some want them set through JS. We do both.
+   window.iframeHandler = function () {};
+   var div = document.createElement('div');
+-  div.id = 'redirect-holder';
+-  $(div).html('<iframe name="redirect-target" id="redirect-target" class="redirect" onload="window.iframeHandler();"></iframe>');
++  div.id = 'redirect-holder-' + base;
++  $(div).html('<iframe name="redirect-target-' + base + '" id="redirect-target-' + base + '" class="redirect" onload="Drupal.iframeHandler(\''+base+'\',\''+target+'\',\''+action+'\');"></iframe>');
+   var iframe = div.firstChild;
+   $(iframe)
+     .attr({
+-      name: 'redirect-target',
+-      id: 'redirect-target'
++      name: 'redirect-target-' + base,
++      id: 'redirect-target-' + base
+     })
+     .css({
+       position: 'absolute',
+@@ -298,8 +306,8 @@ Drupal.createIframe = function () {
+ /**
+  * Delete the invisible iframe
+  */
+-Drupal.deleteIframe = function () {
+-  $('#redirect-holder').remove();
++Drupal.deleteIframe = function (base) {
++  $('#redirect-holder-'+base).remove();
+ };
+ 
+ /**
+diff -Nup C:\Documents and Settings\Boki\Desktop\head\patches\drupal6/upload.js C:\Documents and Settings\Boki\Desktop\head\patches\parallel uploads/upload.js
+--- C:\Documents and Settings\Boki\Desktop\head\patches\drupal6/upload.js	2007-06-08 14:52:00.000000000 +0200
++++ C:\Documents and Settings\Boki\Desktop\head\patches\parallel uploads/upload.js	2007-06-16 19:19:32.968750000 +0200
+@@ -4,33 +4,39 @@
+  * Attaches the upload behaviour to the upload form.
+  */
+ Drupal.uploadAutoAttach = function() {
++  var button = new Array();
++  var wrapper = new Array();
++  var hide = new Array;
++  var uploads = new Array();
++
+   $('input.upload').each(function () {
+     var uri = this.value;
+     // Extract the base name from the id (edit-attach-url -> attach).
+     var base = this.id.substring(5, this.id.length - 4);
+-    var button = base + '-button';
+-    var wrapper = base + '-wrapper';
+-    var hide = base + '-hide';
+-    var upload = new Drupal.jsUpload(uri, button, wrapper, hide);
++    button[base] = base + '-button';
++    wrapper[base] = base + '-wrapper';
++    hide[base] = base + '-hide';
++    uploads[base] = new Drupal.jsUpload(uri, button[base], wrapper[base], hide[base], base);
+   });
+ };
+ 
+ /**
+  * JS upload object.
+  */
+-Drupal.jsUpload = function(uri, button, wrapper, hide) {
++Drupal.jsUpload = function(uri, button, wrapper, hide, base) {
+   // Note: these elements are replaced after an upload, so we re-select them
+   // everytime they are needed.
+   this.button = '#'+ button;
+   this.wrapper = '#'+ wrapper;
+   this.hide = '#'+ hide;
+-  Drupal.redirectFormButton(uri, $(this.button).get(0), this);
++  Drupal.redirectFormButton(uri, $(this.button).get(0), this, base);
+ };
+ 
+ /**
+  * Handler for the form redirection submission.
+  */
+ Drupal.jsUpload.prototype.onsubmit = function () {
++  
+   // Insert progressbar and stretch to take the same space.
+   this.progress = new Drupal.progressBar('uploadprogress');
+   this.progress.setProgress(-1, Drupal.t('Uploading file'));
+@@ -54,10 +60,8 @@ Drupal.jsUpload.prototype.onsubmit = fun
+ /**
+  * Handler for the form redirection completion.
+  */
+-Drupal.jsUpload.prototype.oncomplete = function (data) {
+-  // Remove old form
++Drupal.jsUpload.prototype.oncomplete = function (data, base) {
+   Drupal.freezeHeight(); // Avoid unnecessary scrolling
+-  $(this.wrapper).html('');
+ 
+   // Place HTML into temporary div
+   var div = document.createElement('div');
+@@ -67,9 +71,9 @@ Drupal.jsUpload.prototype.oncomplete = f
+   if ($('tr', div).size() == 2) {
+     // Replace form and re-attach behaviour
+     $(div).hide();
++    $(this.wrapper).html('');
+     $(this.wrapper).append(div);
+     $(div).fadeIn('slow');
+-    Drupal.uploadAutoAttach();
+   }
+   // Else fade in only the last table row
+   else {
+@@ -81,16 +85,24 @@ Drupal.jsUpload.prototype.oncomplete = f
+     var hide = this.hide;
+     $('div', div).each(function() {
+       if (('#'+ this.id) == hide) {
++        style = this.style.display;
+         this.style.display = 'none';
+       }
+     });
+ 
+     // Replace form, fade in items and re-attach behaviour
++    $(this.wrapper).html('');
+     $(this.wrapper).append(div);
+     $('table tr:last-of-type td', div).fadeIn('slow');
+-    $(this.hide, div).fadeIn('slow');
+-    Drupal.uploadAutoAttach();
++    
++    $('div', div).each(function() {
++      if (('#'+ this.id) == hide) {
++        this.style.display = style;
++      }
++    });
+   }
++  Drupal.uploadAutoAttach();
++  
+   Drupal.unfreezeHeight();
+ };
+ 

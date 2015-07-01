@@ -1,0 +1,11 @@
+--- libxml2-2.6.31/include/libxml/encoding.h.orig	2008-12-08 14:24:35.000000000 +0900
++++ libxml2-2.6.31/include/libxml/encoding.h	2008-12-08 14:24:47.000000000 +0900
+@@ -25,7 +25,7 @@
+ #include <libxml/xmlversion.h>
+ 
+ #ifdef LIBXML_ICONV_ENABLED
+-#include <iconv.h>
++#include "libiconv/iconv.h"
+ #endif
+ #ifdef __cplusplus
+ extern "C" {

@@ -1,0 +1,42 @@
+===============================================================================
+
+/*
+ *  Copyright (c) 2011 The WebRTC project authors. All Rights Reserved.
+ *
+ *  Use of this source code is governed by a BSD-style license
+===============================================================================
+
+/*
+ * Copyright (C) 2010 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+
+/*
+ * http://www.kurims.kyoto-u.ac.jp/~ooura/fft.html
+ * Copyright Takuya OOURA, 1996-2001
+ *
+ * You may use, copy, modify and distribute this code for any purpose (include
+
+/*
+ * http://www.kurims.kyoto-u.ac.jp/~ooura/fft.html
+ * Copyright Takuya OOURA, 1996-2001
+ *
+ * You may use, copy, modify and distribute this code for any purpose (include
+Software, and to permit third-parties to whom the Software is furnished to
+do so, all subject to the following:
+
+The copyright notices in the Software and this entire statement, including
+the above license grant, this restriction and the following disclaimer,
+must be included in all copies of the Software, in whole or in part, and
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
+FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+
+===============================================================================
+
+//          Copyright Steven J. Ross 2001 - 2009.
+// Distributed under the Boost Software License, Version 1.0.
+//    (See accompanying file LICENSE_1_0.txt or copy at

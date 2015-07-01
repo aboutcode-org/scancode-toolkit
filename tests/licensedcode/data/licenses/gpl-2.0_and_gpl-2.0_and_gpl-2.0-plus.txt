@@ -1,0 +1,93 @@
+This package was debianized by Modestas Vainius <modestas@vainius.eu> on
+Sat, 06 Mar 2009 18:40:13 +0200
+
+It was downloaded from:
+
+   http://code.google.com/p/qtscriptgenerator/downloads/list
+
+The project homepages are:
+
+    http://code.google.com/p/qtscriptgenerator/
+    http://labs.trolltech.com/page/Projects/QtScript/Generator
+
+Upstream Authors:
+
+    <s>Trolltech ASA</s>
+    <s>Roberto Raggi <roberto@kdevelop.org></s>
+
+Debian packaging (debian/*) is:
+Copyright: © 2009 <s>Modestas Vainius <modestas@vainius.eu></s>
+License: GNU General Public License, version 2 or later (GPL-2+)
+  On Debian systems, the complete text of the GNU General Public License
+  version 2 can be found in /usr/share/common-licenses/GPL-2.
+
+Upstream Copyright Holders:
+
+Copyright: © <s>Trolltech ASA</s>. All Rights Reserved.
+Credited: 108 times
+Years: 1992-2008
+Used-Licenses: GPL-2
+Copyrighted-Files-Count: 107
+Copyrighted-Files:
+  generator/*
+  generator/parser/*
+  generator/parser/include/*
+  generator/parser/rpp/*
+  qtbindings/qs_eval/*
+  qtbindings/qtscript_core/*
+  tools/qsexec/src/*
+
+
+Copyright: © <s>Roberto Raggi <roberto@kdevelop.org></s>
+Credited: 54 times
+Years: 2002-2006
+Used-Licenses: GPL-2
+Copyrighted-Files-Count: 54
+Copyrighted-Files:
+  generator/parser/* excluding:
+  - generator/parser/rpp-allocator.h
+  generator/parser/rpp/* excluding:
+  - generator/parser/rpp/builtin-macros.cpp
+  - generator/parser/rpp/preprocessor.cpp
+  - generator/parser/rpp/preprocessor.h
+
+
+Copyright: © <s>Harald Fernengel <harry@kdevelop.org></s>
+Credited: 2 times
+Years: 2005
+Used-Licenses: GPL-2
+Copyrighted-Files-Count: 2
+Copyrighted-Files:
+  generator/parser/rpp/preprocessor.cpp
+  generator/parser/rpp/preprocessor.h
+
+
+License for all components is:
+--
+  GNU General Public License, version 2 (GPL-2)
+
+  |   This file is part of the Qt Script Generator project on Trolltech Labs.
+  |
+  |   This file may be used under the terms of the GNU General Public
+  |   License version 2.0 as published by the Free Software Foundation
+  |   and appearing in the file LICENSE.GPL included in the packaging of
+  |   this file.  Please review the following information to ensure GNU
+  |   General Public Licensing requirements will be met:
+  |   http://www.trolltech.com/products/qt/opensource.html
+  |
+  |   If you are unsure which license is appropriate for your use, please
+  |   review the following information:
+  |   http://www.trolltech.com/products/qt/licensing.html or contact the
+  |   sales department at sales@trolltech.com.
+  |
+  |   This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+  |   WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+  On Debian systems, the complete text of the
+  GNU General Public License version 2 can be found in
+  /usr/share/common-licenses/GPL-2
+--
+
+Plugins at /usr/lib/qt4/plugins/script/* are derivatives of Qt and are
+licensed under the same terms as Qt. See /usr/share/doc/libqtcore4/copyright
+for more information.

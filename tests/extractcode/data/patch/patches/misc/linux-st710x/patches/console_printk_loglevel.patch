@@ -1,0 +1,48 @@
+--- linux-2.6.23/kernel/printk.c~	2009-03-20 09:37:10.000000000 +0100
++++ linux-2.6.23/kernel/printk.c	2009-03-20 10:47:21.000000000 +0100
+@@ -327,8 +327,14 @@
+ 	for (con = console_drivers; con; con = con->next) {
+ 		if ((con->flags & CON_ENABLED) && con->write &&
+ 				(cpu_online(smp_processor_id()) ||
+-				(con->flags & CON_ANYTIME)))
+-			con->write(con, &LOG_BUF(start), end - start);
++				 (con->flags & CON_ANYTIME))) {
++			if (con->flags & CON_LOGLEVEL) {
++				con->write(con, &LOG_BUF(start), end - start);
++			}
++			else {
++				con->write(con, &LOG_BUF(start + 3), end - start - 3);
++			}
++		}
+ 	}
+ }
+ 
+@@ -384,7 +390,6 @@
+ 				LOG_BUF(cur_index + 1) <= '7' &&
+ 				LOG_BUF(cur_index + 2) == '>') {
+ 			msg_level = LOG_BUF(cur_index + 1) - '0';
+-			cur_index += 3;
+ 			start_print = cur_index;
+ 		}
+ 		while (cur_index != end) {
+--- linux-2.6.23/include/linux/console.h~	2007-10-09 22:31:38.000000000 +0200
++++ linux-2.6.23/include/linux/console.h	2009-03-20 10:43:13.000000000 +0100
+@@ -90,6 +90,7 @@
+ #define CON_ENABLED	(4)
+ #define CON_BOOT	(8)
+ #define CON_ANYTIME	(16) /* Safe to call when cpu is offline */
++#define CON_LOGLEVEL	(32)
+ 
+ struct console {
+ 	char	name[16];
+--- linux-2.6.23/drivers/net/netconsole.c~	2009-03-20 09:37:27.000000000 +0100
++++ linux-2.6.23/drivers/net/netconsole.c	2009-03-20 10:44:59.000000000 +0100
+@@ -146,7 +146,7 @@
+ 
+ static struct console netconsole = {
+ 	.name = "netcon",
+-	.flags = CON_ENABLED | CON_PRINTBUFFER,
++	.flags = CON_ENABLED | CON_PRINTBUFFER | CON_LOGLEVEL,
+ 	.write = write_msg
+ };
+ 

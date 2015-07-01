@@ -1,0 +1,74 @@
+diff -uNr eva_orig/vqec_ifclient.c eva/vqec_ifclient.c
+--- eva_orig/vqec_ifclient.c	2009-10-19 13:27:38.000000000 +0800
++++ eva/vqec_ifclient.c	2009-10-19 13:36:03.000000000 +0800
+@@ -67,13 +67,6 @@
+ #define UT_STATIC static
+ #endif
+ 
+-typedef enum vqec_ifclient_state_t_
+-{
+-    VQEC_IFCLIENT_UNINITED = 0,
+-    VQEC_IFCLIENT_INITED = 1,
+-    VQEC_IFCLIENT_STARTED,
+-    VQEC_IFCLIENT_STOPPED,
+-} vqec_ifclient_state_t;
+ static vqec_event_t *s_vqec_keepalive_ev;
+ UT_STATIC vqec_ifclient_state_t s_vqec_ifclient_state;
+ UT_STATIC boolean s_vqec_ifclient_deliver_paks_to_user;
+@@ -785,6 +778,17 @@
+     vqec_lock_unlock(vqec_g_lock);
+ }
+ 
++vqec_ifclient_state_t vqec_ifclient_get_state (void)
++{
++    vqec_ifclient_state_t state;
++
++    vqec_lock_lock(vqec_g_lock);
++    state = s_vqec_ifclient_state;
++    vqec_lock_unlock(vqec_g_lock);
++
++    return state;
++}
++
+ boolean
+ vqec_ifclient_register_cname_ul(char *cname) 
+ {
+diff -uNr eva_orig/vqec_ifclient.h eva/vqec_ifclient.h
+--- eva_orig/vqec_ifclient.h	2009-10-19 13:27:38.000000000 +0800
++++ eva/vqec_ifclient.h	2009-10-19 13:38:46.000000000 +0800
+@@ -27,6 +27,19 @@
+  */
+ const char *vqec_err2str(vqec_error_t err);
+ 
++
++/**---------------------------------------------------------------------------
++ * VQEC state machine.
++ *----------------------------------------------------------------------------
++ */
++typedef enum vqec_ifclient_state_t_
++{
++    VQEC_IFCLIENT_UNINITED = 0,
++    VQEC_IFCLIENT_INITED = 1,
++    VQEC_IFCLIENT_STARTED,
++    VQEC_IFCLIENT_STOPPED,
++} vqec_ifclient_state_t;
++
+ /**
+  * Maximum string length of an RCC abort string representation
+  */
+@@ -917,6 +930,15 @@
+ VQEC_PUBLIC VQEC_SYNCHRONIZED 
+ uint8_t vqec_ifclient_check_tuner_validity_by_name(const char *namestr);
+ 
++/**----------------------------------------------------------------------------
++ * Get the state machine of VQEC. which is usefule for application to operate myself.
++ * 
++ * @param[in] none.
++ * @param[out] the state machine value.
++ *--------------------------------------------------------------------------
++ */ 
++vqec_ifclient_state_t vqec_ifclient_get_state (void);
++
+ /*---------------------------------------------------------------------------
+  * Method to register the new desired RTP CNAME
+  *

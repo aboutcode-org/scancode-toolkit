@@ -1,0 +1,8 @@
+key: ssleay
+short_name: Original SSLeay License
+name: Original SSLeay License
+category: Attribution
+owner: OpenSSL
+homepage_url: http://www.openssl.org/source/license.html
+text_urls:
+    - http://www.openssl.org/source/license.html

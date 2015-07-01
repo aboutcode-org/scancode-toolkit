@@ -1,0 +1,5 @@
+licenses:
+    - bsd-new
+notes: >
+    BSD text corrected for typo in the previous versions
+    See http://code.google.com/p/msinttypes/source/browse/trunk/inttypes.h

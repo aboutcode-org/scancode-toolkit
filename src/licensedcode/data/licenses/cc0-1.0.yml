@@ -1,0 +1,12 @@
+key: cc0-1.0
+short_name: CC0-1.0
+name: Creative Commons CC0 1.0 Universal
+category: Public Domain
+owner: Creative Commons
+homepage_url: http://creativecommons.org/publicdomain/zero/1.0/
+spdx_license_key: CC0-1.0
+spdx_full_name: Creative Commons Zero v1.0 Universal
+spdx_url: http://spdx.org/licenses/CC0-1.0
+text_urls:
+    - http://creativecommons.org/publicdomain/zero/1.0/legalcode
+faq_url: http://wiki.creativecommons.org/CC0_FAQ

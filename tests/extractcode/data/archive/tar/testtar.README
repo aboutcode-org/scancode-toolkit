@@ -1,0 +1,3 @@
+This test file is borrowed from Python codebase and test suite.
+This is a trick Tar with several weird and malformed entries:
+https://hg.python.org/cpython/file/bff88c866886/Lib/test/testtar.tar

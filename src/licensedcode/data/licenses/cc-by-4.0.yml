@@ -1,0 +1,12 @@
+key: cc-by-4.0
+short_name: CC-BY-4.0
+name: >-
+    Creative Commons Attribution 4.0 International Public License
+category: Attribution
+owner: Creative Commons
+homepage_url: http://creativecommons.org/licenses/by/4.0/
+spdx_license_key: CC-BY-4.0
+spdx_full_name: Creative Commons Attribution 4.0
+spdx_url: http://spdx.org/licenses/CC-BY-4.0
+text_urls:
+    - http://creativecommons.org/licenses/by/4.0/legalcode

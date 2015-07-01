@@ -1,0 +1,56 @@
+Index: src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
+===================================================================
+--- src.orig/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
++++ src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
+@@ -783,6 +783,7 @@ void ResourceHandleManager::startJob()
+ 
+     ResourceHandle* job = cacheEntry->firstClient();
+     ResourceHandleInternal* d = job->getInternal();
++    bool CheckProxy = true;
+ 
+     int secureMode = atoi(getenv("http_secure_mode"));
+     if (secureMode > 2) {
+@@ -791,6 +792,17 @@ void ResourceHandleManager::startJob()
+       secureMode = 0;
+     }
+ 
++    HTTPHeaderMap::const_iterator it =
++        job->request().httpHeaderFields().find("transferMode.dlna.org");
++    if (secureMode > 0 && it != job->request().httpHeaderFields().end()) {
++      fprintf(stderr, "Allowing http access for DLNA image\n");
++      secureMode = 0;
++    }
++    if (it != job->request().httpHeaderFields().end()) {
++      fprintf(stderr, "Don't use Proxy for DLNA image\n");
++      CheckProxy = false;
++    }
++
+     // fprintf(stderr, "Set http secure mode to %d\n", secureMode);
+     if (secureMode != 0) {
+       //http_secure_mode: 
+@@ -871,8 +883,9 @@ void ResourceHandleManager::startJob()
+       // https with server side certificate is ok
+       //curl_easy_setopt(cacheEntry->handle(), CURLOPT_SSL_VERIFYPEER, 0);
+     }
+-
+-    setProxy(cacheEntry);
++    if (CheckProxy) {
++      setProxy(cacheEntry);
++    }
+ 
+     KURL cookieUrl;
+     if (d->m_url.isEmpty()) {
+@@ -966,6 +979,13 @@ void ResourceHandleManager::setProxy(con
+       return;
+     }
+ 
++    HTTPHeaderMap::const_iterator it =
++      request.httpHeaderFields().find("transferMode.dlna.org");
++    if (it != request.httpHeaderFields().end()) {
++      fprintf(stderr, "No proxy for http DLNA\n");
++      return;
++    }
++
+     // Curl 7.18.3 doesn't have programatical way to set all the individual
+     // proxy components (username, password etc.) so we have to construct
+     // a proxy string from the components.

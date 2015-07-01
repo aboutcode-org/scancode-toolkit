@@ -1,0 +1,9 @@
+key: json-pd
+short_name: JSON-PD
+name: JSON Public Domain Notice
+category: Public Domain
+owner: JSON.org
+homepage_url: http://www.json.org/js.html
+faq_url: http://www.json.org/js.html
+other_urls:
+    - http://javascript.crockford.com/jsmin.html

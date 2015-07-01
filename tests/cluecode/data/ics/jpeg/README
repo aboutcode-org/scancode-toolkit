@@ -1,0 +1,44 @@
+This file contains the following sections:
+
+OVERVIEW            General description of JPEG and the IJG software.
+LEGAL ISSUES        Copyright, lack of warranty, terms of distribution.
+REFERENCES          Where to learn more about JPEG.
+ARCHIVE LOCATIONS   Where to find newer versions of this software.
+fitness for a particular purpose.  This software is provided "AS IS", and you,
+its user, assume the entire risk as to its quality and accuracy.
+
+This software is copyright (C) 1991-1998, Thomas G. Lane.
+All Rights Reserved except as specified below.
+
+software (or portions thereof) for any purpose, without fee, subject to these
+conditions:
+(1) If any part of the source code for this software is distributed, then this
+README file must be included, with this copyright and no-warranty notice
+unaltered; and any additions, deletions, or changes to the original files
+must be clearly indicated in accompanying documentation.
+
+
+ansi2knr.c is included in this distribution by permission of L. Peter Deutsch,
+sole proprietor of its copyright holder, Aladdin Enterprises of Menlo Park, CA.
+ansi2knr.c is NOT covered by the above copyright and conditions, but instead
+by the usual distribution terms of the Free Software Foundation; principally,
+that you must include source code if you redistribute it.  (See the file
+the foregoing paragraphs do.
+
+The Unix configuration script "configure" was produced with GNU Autoconf.
+It is copyright by the Free Software Foundation but is freely distributable.
+The same holds for its supporting scripts (config.guess, config.sub,
+ltconfig, ltmain.sh).  Another support script, install-sh, is copyright
+by M.I.T. but is also freely distributable.
+
+GIF decoders.
+
+We are required to state that
+    "The Graphics Interchange Format(c) is the Copyright property of
+    CompuServe Incorporated.  GIF(sm) is a Service Mark property of
+    CompuServe Incorporated."
+available at ftp://ftp.uu.net/graphics/jpeg/wallace.ps.gz.  The file (actually
+a preprint for an article that appeared in IEEE Trans. Consumer Electronics)
+omits the sample images that appeared in CACM, but it includes corrections
+and some added material.  Note: the Wallace article is copyright ACM and IEEE,
+and it may not be used for commercial purposes.

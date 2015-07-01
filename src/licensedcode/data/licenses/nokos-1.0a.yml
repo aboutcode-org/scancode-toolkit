@@ -1,0 +1,13 @@
+key: nokos-1.0a
+short_name: NOKOS License 1.0a
+name: Nokia Open Source License 1.0a
+category: Copyleft Limited
+owner: Nokia
+homepage_url: http://www.opensource.org/licenses/nokia.html
+spdx_license_key: Nokia
+spdx_full_name: Nokia Open Source License
+spdx_url: http://spdx.org/licenses/Nokia
+spdx_notes: This license is OSI certified.
+text_urls:
+    - http://www.opensource.org/licenses/nokia.html
+osi_url: http://www.opensource.org/licenses/nokia.html

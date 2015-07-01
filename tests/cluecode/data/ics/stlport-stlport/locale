@@ -1,0 +1,23 @@
+/*
+ * Copyright (c) 1999
+ * Silicon Graphics Computer Systems, Inc.
+ *
+ * Copyright (c) 1999
+ * Boris Fomitchev
+ *
+ * without fee, provided the above notices are retained on all copies.
+ * Permission to modify the code and to distribute modified code is granted,
+ * provided the above notices are retained, and a notice that the code was
+ * modified is included with the above copyright notice.
+ *
+ */
+
+template <class _CharT>
+inline _CharT toupper(_CharT c, const locale& loc)
+{ return (use_facet<ctype<_CharT> >(loc)).toupper(c); }
+
+template <class _CharT>
+inline _CharT tolower(_CharT c, const locale& loc)
+{ return (use_facet<ctype<_CharT> >(loc)).tolower(c); }
+
+_STLP_END_NAMESPACE

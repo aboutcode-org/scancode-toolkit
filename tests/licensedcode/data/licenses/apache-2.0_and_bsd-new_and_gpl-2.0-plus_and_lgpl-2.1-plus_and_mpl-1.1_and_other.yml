@@ -1,0 +1,9 @@
+licenses:
+    - apache-2.0
+    - bsd-new
+    - gpl-2.0-plus
+    - lgpl-2.1-plus
+    - lgpl-2.1-plus
+    - mpl-1.1
+    - ms-pl
+expected_failure: yes

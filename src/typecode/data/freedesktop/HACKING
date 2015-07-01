@@ -1,0 +1,79 @@
+Note: latest version of this file is at:
+http://cgit.freedesktop.org/xdg/shared-mime-info/tree/HACKING
+
+A few ground rules for people interested in adding new mime-types.
+
+* Mime-types used should be IANA registered mime-types when possible
+* When old mime-types become registered, the new definition should
+  include an alias for the old mime-type
+* New entries or modifications should include a test case (see below)
+* Mime-types/file formats proprietary to one application should only
+  be added to a private .xml file and be bundled with the application
+  itself
+* No commits should be done that break the test suite, or the test suite
+  test in question should be amended, and reason for the changes clearly
+  documented in the commit message
+
+Translations
+------------
+
+Translations should go through Transifex.net, and the freedesktop.org team:
+http://www.transifex.net/projects/p/shared-mime-info/
+
+git
+---
+
+Check it out using:
+git clone git://anongit.freedesktop.org/xdg/shared-mime-info
+or if you have a freedesktop account:
+git clone ssh://git.freedesktop.org/git/xdg/shared-mime-info
+
+Web interface is at:
+http://cgit.freedesktop.org/xdg/shared-mime-info/
+
+Filing bugs
+-----------
+
+Bugs can be filed at:
+https://bugs.freedesktop.org/enter_bug.cgi?product=shared-mime-info
+
+Bugs for new mime-types should include:
+- a patch generated against the current git master, with authorship information
+- one or more test files to be added to the test suite
+
+Test suite
+----------
+
+You need to have xdgmime checked out [1] and compile at the same level as
+shared-mime-info. ../xdgmime/src/test-mime-data will be run against
+tests/list.
+
+The format of the file is:
+<testcase filename> <expected mime-type> <expected failures>
+
+The expected failures is whether matching the file with the mime-type would
+fail when matched by file, data or name. "x" indicates expected failure, "o"
+indicates expected success. Trailing "o"s can be omitted.
+
+See the top of the tests/list file for syntax details.
+
+You can also temporarily print the results of test-mime-data by putting your
+test files in the staging-tests/ sub-directory.
+
+[1]: Repository details at:
+http://cgit.freedesktop.org/xdg/xdgmime/
+
+Releasing
+---------
+
+- Run "make update-translations" and "make check-translations" before release
+- Copy the file to ~hadess/public_html on gabe.freedesktop.org
+- Update http://www.freedesktop.org/wiki/Software/shared-mime-info
+
+Updating the spec on the website
+--------------------------------
+
+- update http://cgit.freedesktop.org/xdg/xdg-specs/tree/web-export/specs.idx
+- go to /srv/specifications.freedesktop.org/www on gabe
+- run ../update.py
+

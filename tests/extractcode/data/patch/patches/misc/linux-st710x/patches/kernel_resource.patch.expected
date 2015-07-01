@@ -1,0 +1,3 @@
+[('linux-2.6.23/kernel/resource.c~',
+  'linux-2.6.23/kernel/resource.c',
+  'diff -u /home/jonsv322/motorola/DEV_7105_erik_rulez_2/base/3pp/linux-st710x/linux-2.6.23/kernel/resource.c\\~ /home/jonsv322/motorola/DEV_7105_erik_rulez_2/base/3pp/linux-st710x/linux-2.6.23/kernel/resource.c\n--- linux-2.6.23/kernel/resource.c~\n+++ linux-2.6.23/kernel/resource.c\n@@ -589,10 +589,6 @@\n}\n\nwrite_unlock(&resource_lock);\n-\n-\tprintk(KERN_WARNING "Trying to free nonexistent resource "\n-\t\t"<%016llx-%016llx>\\n", (unsigned long long)start,\n-\t\t(unsigned long long)end);\n}\nEXPORT_SYMBOL(__release_region);\n')]

@@ -1,0 +1,158 @@
+
+v1.4.6. Correctly report key in error message instead of erroring again (jason-o-matic, timhaines).
+
+v1.4.5. Fix missing file in manifest. Add install test to pre-release hook.
+
+v1.4.4. Add memcached_exist function to libmemcached and Memcached#exist to expose it (ccocchi). Make test_all work again without RVM.
+
+v1.4.3. Various convenience methods added to Memcached::Rails (grosser). Retain gemspec. Add Gemfile for convenience.
+
+v1.4.2. Remove race from Marshal.load for any poor saps who have side-effects in their serialization mechanism (jason-o-matic).
+
+v1.4.1. Fix Memcached::Rails#servers bug (tomhughes).
+
+v1.4.0. Update Memcached::Rails compatibility wrapper to play along with Rails 3.2, including support for the horrendous ActiveSupport::Duration (tomhughes).
+
+v1.3.7. Rebuild gem to work around timestamp issue in Gemspec on Rubygems 1.7 (tarcieri).
+
+v1.3.6. Stop autoconf from running (eric). Raise generic Memcached::Error (instead of nil) on unexpected return code (gcampbell). Retry on Memcached::ServerEnd (ChristopherThorpe).
+
+v1.3.5. Fix build again (eric).
+
+v1.3.4. Fix build on RHEL (avsej). Handling snd_timeout and rcv_timeout >= 1 million usec (manju).
+
+v1.3.3. JRuby compatibility. Less aggressive flag clearing in extconf.rb.
+
+v1.3.2 Fix bug in backtrace mode; Rubinius compatibility (evanphx).
+
+v1.3.1 Rescue ConnectionDataExists for cas because Rails shim over Memcached is not supposed to raise anything for legacy reasons
+
+v1.3. Improvements to BSD support; add Memcached#touch method (avsej).
+
+v1.2.7.1 Retry SomeErrorsWereReported exception
+
+v1.2.7. Fix prefix keys on binary (multi)gets. Remove extraneous space from CAS requests.
+
+v1.2.6. Fix build issue on FreeBSD. Fix errno mangling on timeouts during memcached_connect().
+
+v1.2.5. Compile properly on JRuby (but doesn't run yet). Do zero-copy Ruby string allocations to improve performance.
+
+v1.2.3. Don't keep the server strings around forever.
+
+v1.2.2. Work around tcmalloc bug on OS X. Avoid circular reference in memcached_server_by_key().
+
+v1.2.1. Fix large allocation on error bug.
+
+v1.2. Clean up duplicated set_prefix_key API. Pipeline deletes and remove dead replication code. Apply prefix_key to binary protocol properly (tarrall). Add Memcached::Rails#exist? (ssoroka).
+
+v1.1.3. Register new objects to fix leaks around memcached_server_st and other rich structs (tobi).
+
+v1.1.2. Fix memory leak in memcached_mget().
+
+v1.1.1. Speed up multiget. Don't cast types on unmarshalled set.
+
+v1.1. TTL interface requires Fixnums.
+
+v1.0.7. Fix build on BSD (Stew Mckinney). Fix build on Rubinius (brixen).
+
+v1.0.6. Make build step repeatable in the event of failure.
+
+v1.0.5. Fix Manifest.
+
+v1.0.4. Fix server_failure_count mangling in memcached_quit.
+
+v1.0.3. Clearer benchmarking.
+
+v1.0.2. Don't allow compilation with -O3.
+
+v1.0.1. SASL compilation fix (tnzk); Rubinious fix (evanphx); re-SWIG.
+
+v1. Fix empty string return value bug in multiget.
+
+v0.20.1. Better module naming. Oops.
+
+v0.20.0. Add experimental module, with get_len() operator (rgbenson).
+
+v0.19.10. Add no-op hash (MEMCACHED_HASH_NONE) to skip hashing when there is one server (bierbaum). Updated benchmark.
+
+v0.19.8. Support :noreply behavior.
+
+v0.19.7. Add no block prepend and append support for the ASCII protocol (rgbenson).
+
+v0.19.6. Add get_from_last.
+
+v0.19.5. Fix autoconf datestamps.
+
+v0.19.3. Add exception_retry_limit and exceptions_to_retry.
+
+v0.19.2. Regenerate SWIG with better configuration options for Linux.
+
+v0.19.1. Return true in Memcached::Rails#write.
+
+v0.19. Support dynamic setting of the namespace (mhat). Support SASL (seanlynch).
+
+v0.18. Make Memcached::Rails compatible with Rails 2.3.2 (Ian Fung).
+
+v0.17.7. Disable dependency tracking.
+
+v0.17.6. Again.
+
+v0.17.5. Fuss with archflags.
+
+v0.17.4. Don't segfault on invalid keys in get_multi.
+
+v0.17.3. Compile with -Os. Retry once on Memcached::ClientError.
+
+v0.17.2. Fix realloc bug on Linux that got regressed.
+
+v0.17.1. Ruby 1.9 compatibility.
+
+v0.17. Update to libmemcached 0.32. Update Darwin version string for Snow Leopard final. Improve benchmarks. Add Memcached::Rails#append and #prepend, alias all original Memcached methods to _orig, and add set_servers= accessor for compatibility.
+
+v0.16.3. Optimize append/prepend on miss.
+
+v0.16.2. Fix memory leak.
+
+v0.16.1. Use seeded random. Fix realloc bug on Linux.
+
+v0.16. Build properly on OS X Snow Leopard.
+
+v0.15.3. UDP fix. 0-value fix. Enforce server_add response code. Better tests.
+
+v0.15.2. Don't require memcached itself to build. Fix for AUTO_EJECT_HOSTS in random and modulus pools. Support binary protocol.
+
+v0.15.1. Fix build problem.
+
+v0.15. Update to libmemcached 0.31.1. UDP support. Domain socket support (hellvinz). Bugfixes. Bundle libmemcached itself with the gem (antifuchs).
+
+v0.14.4. Re-SWIG.
+
+v0.14.3. Change Rails#get_multi API.
+
+v0.14.2. Update to libmemcached 0.26.2. Return errno description.
+
+v0.14.1. Update to libmemcached 0.26.1. Various bugfixes. Expose memcached_generate_hash_rvalue.
+
+v0.13. Update to libmemcached 0.25. Use new built-in failover. Document fixed timeouts.
+
+v0.12. Update to libmemcached 0.24. Support weights and flags. Default to HASH_WITH_PREFIX behavior. Note, if you use ketama, upgrading will invalidate your entire cache.
+
+v0.11. Update to libmemcached 0.22. Support hostname lookups. Register %freefunc for MemcachedSt and remove destroy() method. Use new built-in behavior for namespacing. Raise on version mismatch. Remove private hash function. Fix bug related to socket size behavior reset when struct is initialized with missing servers (Jeffrey Hardy). Note, if you use a namespace, upgrading will invalidate your entire cache.
+
+v0.10. Update to libmemcached 0.20. Failover support. Close consistent hashing bugs.
+
+v0.9. Update to libmemcached 0.19. Add some failover tests, but we are still waiting on libmemcached's replication branch for them to actually be useful. Fix CAS bug (ktheory).
+
+v0.8.1. Disable NotFound backtraces for speed (Blaine Cook).
+
+v0.8. CAS support. Update to libmemcached 0.16.
+
+v0.7.2. Auto-repair unprintable characters and too-long keys; improve performance of namespacing operation.
+
+v0.7.1. Allow for explicit resetting of the struct on each request, at least until Brian fixes the synchronization problem.
+
+v0.7. Rails compatibility wrapper; real multiget; rescue UnknownReadFailures in order to reset the struct..
+
+v0.6. Better documentation; benchmark suite; improve buffered IO API; remove namespace accessor in favor of generic options hash; patch up extconf.rb to handle unusual library situations; increase test coverage.
+
+v0.5. First release.

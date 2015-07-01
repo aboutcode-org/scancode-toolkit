@@ -1,0 +1,232 @@
+--- src.orig/Browser/WebCore/platform/ekioh/KeyEventEkioh.cpp
++++ src/Browser/WebCore/platform/ekioh/KeyEventEkioh.cpp
+@@ -46,50 +46,185 @@
+ 
+     switch (event.getVirtual())
+     {
+-        case DOM_VK_ALT:           return "Alt";
+-        case DOM_VK_DELETE:        return "U+007F";
+-        case DOM_VK_END:           return "End";
+-        case DOM_VK_RETURN:
+-        case DOM_VK_ENTER:         return "Enter";
+-        case DOM_VK_HOME:          return "Home";
+-        case DOM_VK_INSERT:        return "Insert";
+-        case DOM_VK_PAUSE:         return "Pause";
+-        case DOM_VK_PRINTSCREEN:   return "PrintScreen";
+-        case DOM_VK_SCROLL_LOCK:   return "Scroll";
+-        case DOM_VK_LEFT:          return "Left";
+-        case DOM_VK_RIGHT:         return "Right";
+-        case DOM_VK_UP:            return "Up";
+-        case DOM_VK_DOWN:          return "Down";
+-        case DOM_VK_PAGE_DOWN:     return "PageDown";
+-        case DOM_VK_PAGE_UP:       return "PageUp";
+-        case DOM_VK_F1:            return "F1";
+-        case DOM_VK_F2:            return "F2";
+-        case DOM_VK_F3:            return "F3";
+-        case DOM_VK_F4:            return "F4";
+-        case DOM_VK_F5:            return "F5";
+-        case DOM_VK_F6:            return "F6";
+-        case DOM_VK_F7:            return "F7";
+-        case DOM_VK_F8:            return "F8";
+-        case DOM_VK_F9:            return "F9";
+-        case DOM_VK_F10:           return "F10";
+-        case DOM_VK_F11:           return "F11";
+-        case DOM_VK_F12:           return "F12";
+-        case DOM_VK_F13:           return "F13";
+-        case DOM_VK_F14:           return "F14";
+-        case DOM_VK_F15:           return "F15";
+-        case DOM_VK_F16:           return "F16";
+-        case DOM_VK_F17:           return "F17";
+-        case DOM_VK_F18:           return "F18";
+-        case DOM_VK_F19:           return "F19";
+-        case DOM_VK_F20:           return "F20";
+-        case DOM_VK_F21:           return "F21";
+-        case DOM_VK_F22:           return "F22";
+-        case DOM_VK_F23:           return "F23";
+-        case DOM_VK_F24:           return "F24";
+-                                   //case DOM_VK_BACK_SPACE:    translatedKey = (TranslatedKey) 0x08; break;
+-                                   //case DOM_VK_ESCAPE:        translatedKey = (TranslatedKey) 0x1b; break;
+-                                   //case DOM_VK_TAB:           translatedKey = (TranslatedKey) 0x09; break;
+-        default:                   break;
++        case DOM_VK_CANCEL:     return "U+0018";
++        case DOM_VK_HELP:       return "Help";
++        case DOM_VK_BACK_SPACE: return "U+0008";
++        case DOM_VK_TAB:        return "U+0009";
++        case DOM_VK_CLEAR:      return "U+000c";
++        case DOM_VK_RETURN:     return "Enter";
++        case DOM_VK_ENTER:      return "Enter";
++        case DOM_VK_SHIFT:      return "Shift";
++        case DOM_VK_CONTROL:    return "Control";
++        case DOM_VK_ALT:        return "Alt";
++        case DOM_VK_PAUSE:      return "Pause";
++        case DOM_VK_CAPS_LOCK:  return "CapsLock";
++        case DOM_VK_ESCAPE:     return "U+001B";
++        case DOM_VK_ACCEPT:     return "Accept";
++        case DOM_VK_SPACE:      return "U+0020";
++        case DOM_VK_PAGE_UP:    return "PageUp";
++        case DOM_VK_PAGE_DOWN:  return "PageDown";
++        case DOM_VK_END:        return "End";
++        case DOM_VK_HOME:       return "Home";
++        case DOM_VK_LEFT:       return "Left";
++        case DOM_VK_UP:         return "Up";
++        case DOM_VK_RIGHT:      return "Right";
++        case DOM_VK_DOWN:       return "Down";
++        case DOM_VK_PRINTSCREEN:return "PrintScreen";
++        case DOM_VK_INSERT:     return "Insert";
++        case DOM_VK_DELETE:     return "U+007F";
++        case DOM_VK_0:          return "U+0030";
++        case DOM_VK_1:          return "U+0031";
++        case DOM_VK_2:          return "U+0032";
++        case DOM_VK_3:          return "U+0033";
++        case DOM_VK_4:          return "U+0034";
++        case DOM_VK_5:          return "U+0035";
++        case DOM_VK_6:          return "U+0036";
++        case DOM_VK_7:          return "U+0037";
++        case DOM_VK_8:          return "U+0038";
++        case DOM_VK_9:          return "U+0039";
++        case DOM_VK_A:          return "U+0041";
++        case DOM_VK_B:          return "U+0042";
++        case DOM_VK_C:          return "U+0043";
++        case DOM_VK_D:          return "U+0044";
++        case DOM_VK_E:          return "U+0045";
++        case DOM_VK_F:          return "U+0046";
++        case DOM_VK_G:          return "U+0047";
++        case DOM_VK_H:          return "U+0048";
++        case DOM_VK_I:          return "U+0049";
++        case DOM_VK_J:          return "U+004A";
++        case DOM_VK_K:          return "U+004B";
++        case DOM_VK_L:          return "U+004C";
++        case DOM_VK_M:          return "U+004D";
++        case DOM_VK_N:          return "U+004E";
++        case DOM_VK_O:          return "U+004F";
++        case DOM_VK_P:          return "U+0050";
++        case DOM_VK_Q:          return "U+0051";
++        case DOM_VK_R:          return "U+0052";
++        case DOM_VK_S:          return "U+0053";
++        case DOM_VK_T:          return "U+0054";
++        case DOM_VK_U:          return "U+0055";
++        case DOM_VK_V:          return "U+0056";
++        case DOM_VK_W:          return "U+0057";
++        case DOM_VK_X:          return "U+0058";
++        case DOM_VK_Y:          return "U+0059";
++        case DOM_VK_Z:          return "U+005A";
++        case DOM_VK_F1:         return "F1";
++        case DOM_VK_F2:         return "F2";
++        case DOM_VK_F3:         return "F3";
++        case DOM_VK_F4:         return "F4";
++        case DOM_VK_F5:         return "F5";
++        case DOM_VK_F6:         return "F6";
++        case DOM_VK_F7:         return "F7";
++        case DOM_VK_F8:         return "F8";
++        case DOM_VK_F9:         return "F9";
++        case DOM_VK_F10:        return "F10";
++        case DOM_VK_F11:        return "F11";
++        case DOM_VK_F12:        return "F12";
++        case DOM_VK_F13:        return "F13";
++        case DOM_VK_F14:        return "F14";
++        case DOM_VK_F15:        return "F15";
++        case DOM_VK_F16:        return "F16";
++        case DOM_VK_F17:        return "F17";
++        case DOM_VK_F18:        return "F18";
++        case DOM_VK_F19:        return "F19";
++        case DOM_VK_F20:        return "F20";
++        case DOM_VK_F21:        return "F21";
++        case DOM_VK_F22:        return "F22";
++        case DOM_VK_F23:        return "F23";
++        case DOM_VK_F24:        return "F24";
++        case DOM_VK_NUM_LOCK:   return "NumLock";
++        case DOM_VK_SCROLL_LOCK:return "Scroll";
++
++        case DOM_VK_META:       return "Meta";
++        
++        // Ekioh extended keycodes
++        case DOM_EK_RED:        return "Red";
++        case DOM_EK_GREEN:      return "Green";
++        case DOM_EK_YELLOW:     return "Yellow";
++        case DOM_EK_BLUE:       return "Blue";
++        case DOM_EK_PURPLE:     return "Purple";
++        case DOM_EK_ORANGE:     return "Orange";
++
++        // Media
++        case DOM_EK_MEDIA_PLAY:       return "MediaPlay";
++        case DOM_EK_MEDIA_PAUSE:      return "MediaPause";
++        case DOM_EK_MEDIA_STOP:       return "MediaStop";
++        case DOM_EK_MEDIA_REW:        return "MediaRewind";
++        case DOM_EK_MEDIA_FF:         return "MediaFastForward";
++        case DOM_EK_MEDIA_PREV_TRACK: return "MediaPreviousTrack";
++        case DOM_EK_MEDIA_NEXT_TRACK: return "MediaNextTrack";
++        case DOM_EK_MEDIA_REC:        return "MediaRecord";
++        case DOM_EK_MEDIA_PLAYPAUSE:  return "MediaPlayPause";
++
++        // Navigation
++        case DOM_EK_BACK:         return "BrowserBack";
++        case DOM_EK_FORWARD:      return "BrowserForward";
++        case DOM_EK_RELOAD:       return "BrowserRefresh";
++        case DOM_EK_STOP:         return "BrowserStop";
++
++        case DOM_EK_CHANNEL_UP:   return "ChannelUp";
++        case DOM_EK_CHANNEL_DOWN: return "ChannelDown";
++        case DOM_EK_TV:           return "TV";
++        case DOM_EK_MENU:         return "Menu";
++        case DOM_EK_INFO:         return "Info";
++        case DOM_EK_POWER:        return "Power";
++        case DOM_EK_POWER_ON:     return "PowerOn";
++        case DOM_EK_POWER_OFF:    return "PowerOff";
++        case DOM_EK_MULTI_DIGIT_CHAN_NUM:return "-/--";
++        case DOM_EK_BRAND:        return "Brand";
++        case DOM_EK_YES:          return "Yes";
++        case DOM_EK_NO:           return "No";
++
++        case DOM_EK_MUTE:         return "VolumeMute";
++        case DOM_EK_MUTE_ON:      return "VolumeMuteOn";
++        case DOM_EK_MUTE_OFF:     return "VolumeMuteOff";
++        case DOM_EK_VOLUME_UP:    return "VolumeUp";
++        case DOM_EK_VOLUME_DOWN:  return "VolumeDown";
++
++        // Application switching
++        case DOM_EK_EXIT:         return "Exit";
++        case DOM_EK_EPG:          return "EPG";
++        case DOM_EK_TELETEXT:     return "Teletext";
++        case DOM_EK_VOD:          return "VOD";
++        case DOM_EK_AV:           return "AV";
++        case DOM_EK_RECORD_LIST:  return "RecordList";
++        case DOM_EK_PLAY_LIST:    return "PlayList";
++        case DOM_EK_WEB:          return "Web";
++        case DOM_EK_PORTAL:       return "Portal";
++        case DOM_EK_DVR:          return "DVR";
++        case DOM_EK_CONTENT:      return "Content";
++        case DOM_EK_FAVOURITES:   return "Favourites";
++        case DOM_EK_GAMES:        return "Games";
++        case DOM_EK_MOSAIC:       return "Mosaic";
++        case DOM_EK_SERVICES:     return "Services";
++
++        // Miscellaneous
++        case DOM_EK_LANGUAGE:     return "Language";
++        case DOM_EK_ASPECT_RATIO: return "AspectRatio";
++        case DOM_EK_ZOOM:         return "Zoom";
++
++        // Handset
++        case DOM_EK_DIAL:            return "Dial";
++        case DOM_EK_KEYBOARD_EXTEND: return "KeyboardExtend";
++        case DOM_EK_SLIDER_UP:       return "SliderUp";
++        case DOM_EK_SLIDER_DOWN:     return "SliderDown";
++
++        // Screen
++        case DOM_EK_BACKLIGHT_ON:    return "BacklightOn";
++        case DOM_EK_BACKLIGHT_OFF:   return "BacklightOff";
++        case DOM_EK_BACKLIGHT_TOGGLE:return "BacklightToggle";
++        case DOM_EK_CONTRAST_UP:     return "ContrastUp";
++        case DOM_EK_CONTRAST_DOWN:   return "ContrastDown";
++        case DOM_EK_BRIGHTNESS_UP:   return "BrightnessUp";
++        case DOM_EK_BRIGHTNESS_DOWN: return "BrightnessDown";
++
++        // Dictaphone
++        case DOM_EK_DICTAPHONE_PLAY:   return "DictaphonePlay";
++        case DOM_EK_DICTAPHONE_PAUSE:  return "DictaphonePause";
++        case DOM_EK_DICTAPHONE_STOP:   return "DictaphoneStop";
++        case DOM_EK_DICTAPHONE_RECORD: return "DictaphoneRecord";
++
++        default:                       break;
+     }
+ 
+     //printf("%d %06X\n", event.keysym, toupper(event.keysym));

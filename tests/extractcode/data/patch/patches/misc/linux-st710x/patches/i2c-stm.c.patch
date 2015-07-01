@@ -1,0 +1,55 @@
+--- linux-2.6.23/drivers/i2c/busses/i2c-stm.c.orig	2008-12-12 11:38:34.000000000 +0100
++++ linux-2.6.23/drivers/i2c/busses/i2c-stm.c	2008-12-12 11:38:36.000000000 +0100
+@@ -265,11 +265,15 @@
+ 	     ((status & SSC_STA_ARBL) || !(ssc_load32(adap, SSC_CTL) & SSC_CTL_MS)) ){
+ 		dgb_print2("In SLAVE mode (state %d, status %08x)!\n", trsc->state, status);
+ 		trsc->status_error = IIC_E_ARBL;
+-		ssc_store32(adap, SSC_TBUF, 0x1ff);
+-		ssc_store32(adap, SSC_CLR, 0xdc0);
+-		trsc->waitcondition = 0;
+-		wake_up(&(adap->wait_queue));
+-		return IRQ_HANDLED;
++    clear_lasti2cwas_nostop(adap);
++    ssc_store32(adap, SSC_CLR, 0xdc0);
++    ssc_store32(adap, SSC_TBUF, 0x1ff);
++    trsc->next_state = IIC_FSM_COMPLETE;
++    ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM |
++          SSC_I2C_TXENB | SSC_I2C_STOPG |
++          (SSC_I2C_I2CFSMODE * fast_mode));
++    ssc_store32(adap, SSC_IEN, SSC_IEN_STOPEN | SSC_IEN_ARBLEN);
++    return IRQ_HANDLED;
+ 	}
+ 
+ 	switch (trsc->state) {
+@@ -758,7 +762,7 @@
+ 
+ 	timeout = wait_event_interruptible_timeout(adap->wait_queue,
+ 					(transaction.waitcondition==0),
+-					i2c_adap->timeout *HZ );
++					i2c_adap->timeout);
+ 
+ 	local_irq_save(flag);
+ 
+@@ -778,9 +782,9 @@
+ 				goto iic_xfer_retry;
+ 		} else if (transaction.status_error == IIC_E_ARBL){
+ 			/* Arbitration error */
+-			printk(KERN_ERR "i2c-stm: arbitration error\n");
+-			ssc_store32(adap, SSC_CLR, SSC_CLR_SSCARBL);
+-			ssc_store32(adap, SSC_CTL, ssc_load32(adap, SSC_CTL) | SSC_CTL_MS);
++		  printk("i2c-stm: arbitration error\n");
++			ssc_store32(adap, SSC_CLR, 0xdc0); //reset status register
++			ssc_store32(adap, SSC_CTL, ssc_load32(adap, SSC_CTL) | SSC_CTL_MS); // make sure we still are master
+ 			local_irq_restore(flag);
+ 
+ 			/* Manually issue stop condition on the bus */
+@@ -1064,8 +1068,8 @@
+ i2c_hard_wired:
+ 	pdev->dev.driver_data = i2c_stm;
+ 	i2c_stm->adapter.id = I2C_HW_STM_SSC;
+-	i2c_stm->adapter.timeout = 2;
++	i2c_stm->adapter.timeout = 1000; //1000 jiffies: on ST with HZ=1000 this is 1s.
+ 	i2c_stm->adapter.retries = 0;
+ 	i2c_stm->adapter.class   = I2C_CLASS_ALL;
+ 	sprintf(i2c_stm->adapter.name,"i2c-hw-%d",pdev->id);
+ 	i2c_stm->adapter.nr = pdev->id;

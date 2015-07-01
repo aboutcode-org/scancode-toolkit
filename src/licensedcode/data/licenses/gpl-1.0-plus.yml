@@ -1,0 +1,13 @@
+key: gpl-1.0-plus
+short_name: GPL 1.0 or later
+name: GNU General Public License 1.0 or later
+category: Copyleft
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html
+spdx_license_key: GPL-1.0+
+spdx_full_name: GNU General Public License v1.0 or later
+spdx_url: http://spdx.org/licenses/GPL-1.0+
+spdx_notes: >-
+    This license was released: February 1989.
+text_urls:
+    - http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html

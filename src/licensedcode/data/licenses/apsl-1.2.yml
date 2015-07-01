@@ -1,0 +1,19 @@
+key: apsl-1.2
+short_name: APSL 1.2
+name: Apple Public Source License 1.2
+category: Copyleft Limited
+owner: Apple
+homepage_url: http://www.opensource.apple.com/apsl/1.2.txt
+spdx_license_key: APSL-1.2
+spdx_full_name: Apple Public Source License 1.2
+spdx_url: http://spdx.org/licenses/APSL-1.2
+spdx_notes: "This license was released 4 Jan 2001. \nThis license was OSI certified"
+text_urls:
+    - http://web.archive.org/web/20010302160215/http://www.opensource.apple.com/apsl/
+    - http://www.samurajdata.se/opensource/mirror/licenses/apsl.php
+osi_url: http://web.archive.org/web/20020203232348/http://www.opensource.org/licenses/apsl.html
+faq_url: http://www.gnu.org/philosophy/historical-apsl.html
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/Apple_Public_Source_License_1.2
+    - http://opensource-definition.org/licenses/apsl.html
+    - http://web.archive.org/web/20020203232348/http://www.opensource.org/licenses/apsl.html

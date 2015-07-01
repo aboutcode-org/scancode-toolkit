@@ -1,0 +1,15 @@
+key: ms-pl
+short_name: MS-PL
+name: Microsoft Public License
+category: Attribution
+owner: Microsoft
+homepage_url: http://www.microsoft.com/opensource/licenses.mspx#Ms-PL
+spdx_license_key: MS-PL
+spdx_full_name: Microsoft Public License
+spdx_url: http://spdx.org/licenses/MS-PL
+spdx_notes: This license is OSI certified.
+text_urls:
+    - http://www.microsoft.com/opensource/licenses.mspx#Ms-PL
+osi_url: http://www.opensource.org/licenses/ms-pl.html
+other_urls:
+    - http://www.microsoft.com/en-us/openness/licenses.aspx#MPL

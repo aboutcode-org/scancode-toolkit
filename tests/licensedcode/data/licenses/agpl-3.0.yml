@@ -1,0 +1,4 @@
+licenses:
+    - agpl-3.0
+expected_failure: yes
+sort: true

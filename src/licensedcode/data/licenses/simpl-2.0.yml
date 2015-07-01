@@ -1,0 +1,13 @@
+key: simpl-2.0
+short_name: SimPL 2.0
+name: Simple Public License Version 2.0
+category: Copyleft
+owner: OSI - Open Source Initiative
+homepage_url: http://www.opensource.org/licenses/simpl-2.0.html
+spdx_license_key: SimPL-2.0
+spdx_full_name: Simple Public License 2.0
+spdx_url: http://spdx.org/licenses/SimPL-2.0
+spdx_notes: This license is OSI certified
+text_urls:
+    - Simple Public License
+osi_url: http://www.opensource.org/licenses/simpl-2.0.html

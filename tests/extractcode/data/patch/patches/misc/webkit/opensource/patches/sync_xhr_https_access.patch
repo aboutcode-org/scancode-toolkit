@@ -1,0 +1,92 @@
+Index: src/Browser/WebCore/platform/network/ekioh/ResourceHandleEkioh.cpp
+===================================================================
+--- src.orig/Browser/WebCore/platform/network/ekioh/ResourceHandleEkioh.cpp
++++ src/Browser/WebCore/platform/network/ekioh/ResourceHandleEkioh.cpp
+@@ -35,6 +35,8 @@
+ #include "ResourceHandleClient.h"
+ #include "ResourceHandleInternal.h"
+ #include "ResourceHandleManager.h"
++#include "EKConfigDB.h"
++#include "EKString.h"
+ 
+ #include "NotImplemented.h"
+ #include "EKDebug.h"
+@@ -60,6 +62,9 @@ namespace {
+ 
+   static const char * CA_BUNDLE_FILE = "/etc/tls/webkit/ca-bundle.pem";
+   static const char * CA_PATH = "/etc/tls/webkit/certs/";
++  static const char * CIPHER_LIST  = "TLSv1:SSLv3:-SSLv2:-aNULL:RSA:-EXP:-NULL:+HIGH:-MEDIUM:-LOW:-MD5:-3DES";
++  static const char * CERT_FILE = "/etc/tls/webkit/cert.der";
++  static const char * KEY_FILE = "/etc/tls/webkit/key.der";
+ 
+   static bool isPortAllowed(const WebCore::ResourceRequest& request)
+   {
+@@ -501,6 +506,68 @@ void ResourceHandle::loadResourceSynchro
+         } else {
+             CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_CAPATH, NULL));
+         }
++
++        curl_easy_setopt(curlHandle, CURLOPT_SSL_VERIFYHOST, 0);
++      
++        int secureMode = 0;
++        ekioh::EKString value;
++        if (ekioh::EKConfigDB::instance()->get("browser.http_secure_mode", value)) {
++            const char* cValue = value.toCString();
++            secureMode = atoi(cValue);
++            ekioh::EKString::freeCString(cValue);
++        }
++        if (secureMode > 2) {
++            // Set to the wrong mode?
++            fprintf(stderr, "Wrong http_secure_mode? set it to 0\n");
++            secureMode = 0;
++        }
++        
++        HTTPHeaderMap::const_iterator it = request.httpHeaderFields().find("transferMode.dlna.org");
++        if (secureMode > 0 && it != request.httpHeaderFields().end()) {
++            fprintf(stderr, "Allowing http access for DLNA image\n");
++            secureMode = 0;
++        }
++        
++        // fprintf(stderr, "Set http secure mode to %d\n", secureMode);
++        if (secureMode != 0) {
++            //http_secure_mode: 
++            //0="http and https" 1="https only" 2="https with mutual authentication only"
++            DeprecatedString protocol = request.url().protocol();
++            if (protocol.lower() == "http") {
++                fprintf(stderr, "Http secure mode is set to %d\n", secureMode);
++                fprintf(stderr, "normal http access is not allowed\n");
++                if (cacheEntry) {
++                  cacheEntry->cancel();
++                }
++                return;
++            }
++          
++            if(protocol.lower() == "file") {
++                DBG("Http secure mode is set to %d\n", secureMode);
++                DBG("Allowing non-secure access for local filesystem\n");
++                secureMode = 0;
++            }
++        }
++        
++        if (access(CERT_FILE, R_OK) == 0) {
++            curl_easy_setopt(curlHandle, CURLOPT_SSLCERT, CERT_FILE);
++            curl_easy_setopt(curlHandle, CURLOPT_SSLCERTTYPE, "DER");
++        }
++        if (access(KEY_FILE, R_OK) == 0) {
++            curl_easy_setopt(curlHandle, CURLOPT_SSLKEY, KEY_FILE);
++            curl_easy_setopt(curlHandle, CURLOPT_SSLKEYTYPE, "DER");
++        }
++        if (secureMode == 2) {
++            // https with mutual authentication only
++            curl_easy_setopt(curlHandle, CURLOPT_SSL_CIPHER_LIST, CIPHER_LIST);
++            curl_easy_setopt(curlHandle, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
++            //curl_easy_setopt(curlHandle, CURLOPT_SSL_VERIFYPEER, 1L);
++        }
++        else if (secureMode == 1) {
++            // https with server side certificate is ok
++            //curl_easy_setopt(curlHandle, CURLOPT_SSL_VERIFYPEER, 0);
++        }
++
+         // enable gzip and deflate through Accept-Encoding:
+         CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_ENCODING, ""));
+ 

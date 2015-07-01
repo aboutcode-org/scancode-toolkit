@@ -1,0 +1,10 @@
+key: ibm-jre
+short_name: IBM JRE License
+name: IBM Java Runtime Environment License
+category: Commercial
+owner: IBM
+homepage_url: http://www.ibm.com/developerworks/views/download.jsp?contentid=10947&filename=zip&method=ftp&locale=worldwide
+text_urls:
+    - http://www.ibm.com/developerworks/views/download.jsp?contentid=10947&filename=zip&method=ftp&locale=worldwide
+other_urls:
+    - http://www.ibm.com/developerworks/views/download.jsp?contentid=10947&filename=zip&method=ftp&locale=worldwide

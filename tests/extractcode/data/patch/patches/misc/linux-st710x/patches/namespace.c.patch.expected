@@ -1,0 +1,3 @@
+[('linux-2.6.23-orig/fs/namespace.c',
+  'linux-2.6.23/fs/namespace.c',
+  '--- linux-2.6.23-orig/fs/namespace.c\n+++ linux-2.6.23/fs/namespace.c\n@@ -1827,7 +1827,7 @@\nnr_hash = 1UL << hash_bits;\nhash_mask = nr_hash - 1;\n\n-\tprintk("Mount-cache hash table entries: %d\\n", nr_hash);\n+\tprintk(KERN_DEBUG "Mount-cache hash table entries: %d\\n", nr_hash);\n\n/* And initialize the newly allocated array */\nd = mount_hashtable;')]

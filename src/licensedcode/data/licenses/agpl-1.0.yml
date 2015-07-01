@@ -1,0 +1,12 @@
+key: agpl-1.0
+short_name: AGPL 1.0
+name: GNU Affero General Public License 1.0
+category: Copyleft
+owner: Affero
+homepage_url: http://www.affero.org/oagpl.html
+spdx_license_key: AGPL-1.0
+spdx_full_name: GNU Affero General Public License v1.0
+spdx_url: http://spdx.org/licenses/AGPL-1.0
+text_urls:
+    - http://www.affero.org/oagpl.html
+faq_url: http://www.affero.org/oagf.html

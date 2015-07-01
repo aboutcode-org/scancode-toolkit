@@ -1,0 +1,17 @@
+/*****************************************************************************
+*
+*      Copyright 1999 - 2010
+*
+*      ABC, Broadband Communications Sector
+*      123 ABC Dr.
+*      ABC, ABC 11111
+*
+*      All Rights Reserved.
+*
+*      This program is confidential and proprietary to ABC, Inc. and,
+*      without the express prior written permission of ABC, may not be 
+*      copied, reproduced, disclosed to others, published or used, in whole 
+*      or in part, for any purpose other than that for which it is being 
+*      made available.
+*
+******************************************************************************/

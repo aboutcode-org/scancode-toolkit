@@ -1,0 +1,7 @@
+key: lzma-cpl-exception
+short_name: CPL 1.0 with LZMA exception
+name: >-
+    CPL 1.0 with special exception for LZMA compression module
+category: Copyleft Limited
+owner: NSIS contributors
+homepage_url: http://nsis.sourceforge.net/Docs/AppendixI.html#I.6

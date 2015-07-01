@@ -1,0 +1,25 @@
+#!/bin/sh
+ID=`/usr/bin/id -u`
+if [ $ID != "0" ]
+then
+echo must be root to run makelinks
+exit 1
+fi
+test -d /usr/sbin || mkdir /usr/sbin
+cd /usr/sbin
+ln -fs /usr/philips/mediaadapter/snmp/sbin/snmpd .
+cd /usr/lib
+ln -fs /usr/philips/mediaadapter/snmp/lib/* .
+cd /usr
+test -d share || mkdir share
+cd /usr/share
+ln -fs /usr/philips/mediaadapter/snmp/share/snmp .
+cd /usr/bin
+ln -fs /usr/philips/mediaadapter/snmp/bin/snmpget .
+ln -fs /usr/philips/mediaadapter/snmp/bin/snmpset .
+ln -fs /usr/philips/mediaadapter/snmp/bin/snmptrap .
+test -d /usr/lib && cd /usr/lib && ln -fs /usr/philips/mediaadapter/snmp/lib/* .
+cd $HOME
+test -h .snmp || test -d .snmp || ln -fs /usr/philips/mediaadapter/snmp/share/snmp .snmp
+cd /usr/philips/mediaadapter/snmp
+

@@ -1,0 +1,1738 @@
+--- linux-2.6.23/drivers/i2c/busses/i2c-stm.c.118	2009-02-05 10:54:28.000000000 +0100
++++ linux-2.6.23/drivers/i2c/busses/i2c-stm.c	2009-02-05 10:52:43.000000000 +0100
+@@ -29,29 +29,10 @@
+  *   + Add delay after stop to ensure I2C tBUF satisfied
+  *   + Clear SSC status after reset
+  *   + Reorder TX & I2C config register pokes in prepare to read phase
+- * Version 2.5 (24th Oct 2008)  Carl Shaw <carl.shaw@st.com>
+- *   + Rewrite START state - in case of write it now preloads TX FIFO
+- *                           and it is also shared for REPSTART address
+- *   + Change RX prepare - checks for NACK, reads address and then falls
+- *                         through to read state
+- *   + Change RX state - Use TEEN interrupt to reduce unnecessary interrupt
+- *                       loading.  Previously, RIR was used which generated
+- *                       an interrupt per byte
+- *   + Change TX state - correctly unload RX FIFO (using both FIFO status
+- *                       AND RIR bit)
+- *                     - use TEEN interrupt rather than TIR
+- *   + Change repstart address - just call START state but suppress STARTG
+- *   + Only use PIO recovery as last-ditch effort
+- *   + Fix retry method
+- *   + Add auto retry in case of arbitration problem
+- *   + Allow a PIO mode for clock of push-pull rather than BIDIR.  This
+- *     can help with spurious noise glitches on the SCK line and in the
+- *     case where SCK rise times are marginal due to capacitance on the
+- *     bus.
+  *
+  * --------------------------------------------------------------------
+  *
+- *  Copyright (C) 2006 - 2008 STMicroelectronics
++ *  Copyright (C) 2006, 2007, 2008 : STMicroelectronics
+  *  Author: Francesco Virlinzi     <francesco.virlinzi@st.com>
+  *
+  * May be copied or modified under the terms of the GNU General Public
+@@ -75,70 +56,87 @@
+ #include "./i2c-stm.h"
+ #include <linux/stm/stssc.h>
+ 
+-#undef dbg_print
++#undef dgb_print
+ 
+ #ifdef  CONFIG_I2C_DEBUG_BUS
+-#define dbg_print(fmt, args...)  printk("%s: " fmt, __FUNCTION__ , ## args)
++#define dgb_print(fmt, args...)  printk("%s: " fmt, __FUNCTION__ , ## args)
+ #else
+-#define dbg_print(fmt, args...)
++#define dgb_print(fmt, args...)
+ #endif
+ 
+-#undef dbg_print2
++#undef dgb_print2
+ #ifdef  CONFIG_I2C_DEBUG_ALGO
+-#define dbg_print2(fmt, args...)  printk("%s: " fmt, __FUNCTION__ , ## args)
++#define dgb_print2(fmt, args...)  printk("%s: " fmt, __FUNCTION__ , ## args)
+ #else
+-#define dbg_print2(fmt, args...)
++#define dgb_print2(fmt, args...)
+ #endif
+ 
+ /* --- Defines for I2C --- */
+ /* These values WILL produce physical clocks which are slower */
+-/* Especially if hardware glitch suppression is enabled       */
++/* Especially if hardware glith suppression is enabled        */
+ /* They should probably be made board dependent?              */
+-#define I2C_RATE_NORMAL			100000
++#define I2C_RATE_NORMAL                 100000
+ #define I2C_RATE_FASTMODE		400000
+ 
++
+ #define NANOSEC_PER_SEC			1000000000
+ 
+ /* Standard I2C timings */
+ #define REP_START_HOLD_TIME_NORMAL	4000
+-#define START_HOLD_TIME_NORMAL		4000
+-#define REP_START_SETUP_TIME_NORMAL	4700
+-#define DATA_SETUP_TIME_NORMAL		 250
+-#define STOP_SETUP_TIME_NORMAL		4000
+-#define BUS_FREE_TIME_NORMAL		4700
+-
+ #define REP_START_HOLD_TIME_FAST	 600
++#define START_HOLD_TIME_NORMAL		4000
+ #define START_HOLD_TIME_FAST		 600
++#define REP_START_SETUP_TIME_NORMAL	4700
+ #define REP_START_SETUP_TIME_FAST	 600
++#define DATA_SETUP_TIME_NORMAL		 250
+ #define DATA_SETUP_TIME_FAST		 100
++#define STOP_SETUP_TIME_NORMAL		4000
+ #define STOP_SETUP_TIME_FAST		 600
++#define BUS_FREE_TIME_NORMAL		4700
+ #define BUS_FREE_TIME_FAST		1300
+ 
++/* These values come from hw boys... */
++/*
++#define REP_START_HOLD_TIME_NORMAL	4000
++#define REP_START_HOLD_TIME_FAST	6500
++#define START_HOLD_TIME_NORMAL		4500
++#define START_HOLD_TIME_FAST		800
++#define REP_START_SETUP_TIME_NORMAL	4700
++#define REP_START_SETUP_TIME_FAST	800
++#define DATA_SETUP_TIME_NORMAL		300
++#define DATA_SETUP_TIME_FAST		300
++#define STOP_SETUP_TIME_NORMAL		4200
++#define STOP_SETUP_TIME_FAST		800
++#define BUS_FREE_TIME_NORMAL		5700
++#define BUS_FREE_TIME_FAST		1500
++*/
++
+ /* Define for glitch suppression support */
+ #ifdef CONFIG_I2C_STM_GLITCH_SUPPORT
+-#if CONFIG_GLITCH_CLK_WIDTH > 0
+-#define GLITCH_WIDTH_CLOCK			CONFIG_GLITCH_CLK_WIDTH
++  #if CONFIG_GLITCH_CLK_WIDTH > 0
++    #define GLITCH_WIDTH_CLOCK			CONFIG_GLITCH_CLK_WIDTH
++  #else
++    #define GLITCH_WIDTH_CLOCK			500 /* in nanosecs */
++  #endif
++  #if CONFIG_GLITCH_DATA_WIDTH > 0
++    #define GLITCH_WIDTH_DATA			CONFIG_GLITCH_DATA_WIDTH
++  #else
++    #define GLITCH_WIDTH_DATA			500 /* in nanosecs */
++  #endif
+ #else
+-#define GLITCH_WIDTH_CLOCK			500	/* in nanosecs */
+-#endif
+-#if CONFIG_GLITCH_DATA_WIDTH > 0
+-#define GLITCH_WIDTH_DATA			CONFIG_GLITCH_DATA_WIDTH
+-#else
+-#define GLITCH_WIDTH_DATA			500	/* in nanosecs */
+-#endif
+-#else
+-#define GLITCH_WIDTH_DATA			0
+-#define GLITCH_WIDTH_CLOCK			0
++    #define GLITCH_WIDTH_DATA			0
++    #define GLITCH_WIDTH_CLOCK			0
+ #endif
+ 
+ #ifdef CONFIG_I2C_STM_HW_GLITCH
+-#if CONFIG_HW_GLITCH_WIDTH > 0
+-#define HW_GLITCH_WIDTH			CONFIG_HW_GLITCH_WIDTH
+-#else
+-#define HW_GLITCH_WIDTH			1	/* in microseconds */
+-#endif
++  #if CONFIG_HW_GLITCH_WIDTH > 0
++    #define HW_GLITCH_WIDTH			CONFIG_HW_GLITCH_WIDTH
++  #else
++    #define HW_GLITCH_WIDTH			1 /* in microseconds */
++  #endif
+ #endif
+ 
++
+ /* To manage normal vs fast mode */
+ #define IIC_STM_CONFIG_SPEED_MASK          0x1
+ #define IIC_STM_CONFIG_SPEED_FAST          0x1
+@@ -148,7 +146,6 @@
+ typedef enum _iic_state_machine_e {
+ 	IIC_FSM_VOID = 0,
+ 	IIC_FSM_PREPARE,
+-	IIC_FSM_NOREPSTART,
+ 	IIC_FSM_START,
+ 	IIC_FSM_DATA_WRITE,
+ 	IIC_FSM_PREPARE_2_READ,
+@@ -160,19 +157,11 @@
+ 	IIC_FSM_ABORT
+ } iic_state_machine_e;
+ 
+-#ifdef CONFIG_I2C_DEBUG_ALGO
+-char *statename[] =
+-    { "VOID", "PREPARE", "START", "DATA_WRITE", "PREPARE_2_READ",
+-	"DATA_READ", "STOP", "COMPLETE", "REPSTART", "REPSTART_ADDR", "ABORT"
+-};
+-#endif
+-
+ typedef enum _iic_fsm_error_e {
+ 	IIC_E_NO_ERROR = 0x0,
+ 	IIC_E_RUNNING = 0x1,
+ 	IIC_E_NOTACK = 0x2,
+-	IIC_E_ARBL = 0x4,
+-	IIC_E_BUSY = 0x8
++	IIC_E_ARBL = 0x4
+ } iic_fsm_error_e;
+ 
+ /*
+@@ -187,8 +176,8 @@
+ 	struct i2c_msg *msgs_queue;
+ 	int attempt;
+ 	int queue_length;
+-	int current_msg;	/* the message on going */
+-	int idx_current_msg;	/* the byte in the message */
++	int current_msg;		/* the message on going */
++	int idx_current_msg;		/* the byte in the message */
+ 	iic_fsm_error_e status_error;
+ 	int waitcondition;
+ };
+@@ -205,8 +194,14 @@
+ #define jump_on_fsm_start(x)	{ (x)->state = IIC_FSM_START;	\
+ 				goto be_fsm_start;	}
+ 
+-#define jump_on_fsm_stop(x)	do { (x)->state = IIC_FSM_STOP;    \
+-				goto be_fsm_stop; } while (0)
++#define jump_on_fsm_repstart(x)	{ (x)->state = IIC_FSM_REPSTART; \
++                                goto be_fsm_repstart;	}
++
++#define jump_on_fsm_complete(x)	{ (x)->state = IIC_FSM_COMPLETE; \
++				goto be_fsm_complete;	}
++
++#define jump_on_fsm_stop(x)	{ (x)->state = IIC_FSM_STOP;	\
++                                  goto be_fsm_stop;	}
+ 
+ #define jump_on_fsm_abort(x)	{ (x)->state = IIC_FSM_ABORT;    \
+                                   goto be_fsm_abort;	}
+@@ -221,26 +216,38 @@
+ 
+ #define clear_ready_fastmode(adap) ((adap)->config &= ~IIC_STM_READY_SPEED_FAST)
+ 
+-static void iic_stm_setup_timing(struct iic_ssc *adap, unsigned long rate);
++#if defined(CONFIG_I2C_STM_NOSTOP_API)
++#define LAST_I2C_WAS_NO_STOP                   0x4
++#define LAST_I2C_WAS_NO_STOP_MASK              0x4
++#define check_lasti2cwas_nostop(adap)          (((adap)->config &                      \
++                                                       LAST_I2C_WAS_NO_STOP_MASK) ? 1 : 0 )
++#define set_lasti2cwas_nostop(adap)            ((adap)->config |=  LAST_I2C_WAS_NO_STOP)
++#define clear_lasti2cwas_nostop(adap)          ((adap)->config &= ~LAST_I2C_WAS_NO_STOP_MASK)
++#else
++#define check_lasti2cwas_nostop(adap)          (1==0)
++#define set_lasti2cwas_nostop(adap)            {}
++#define clear_lasti2cwas_nostop(adap)          {}
++#endif
++
++static void iic_stm_setup_timing(struct iic_ssc *adap,unsigned long rate);
+ 
+ static irqreturn_t iic_state_machine(int this_irq, void *data)
+ {
+ 	struct iic_ssc *adap = (struct iic_ssc *)data;
+ 	struct iic_transaction *trsc = adap->trns;
+-	unsigned int status;
+-	unsigned int idx, previntmask, lim, intflags, conflags = 0;
+-#ifdef CONFIG_I2C_DEBUG_ALGO
+-	unsigned int cw;
+-#endif
++	unsigned short status;
++	short tx_fifo_status;
++	unsigned int idx, previntmask;
+ 	unsigned short address;
+ 	struct i2c_msg *pmsg;
+ 	char fast_mode;
+ 	union {
+ 		char bytes[2];
+-		unsigned short word;
++		short word;
+ 	} tmp;
+-	unsigned short txbuff[SSC_TXFIFO_SIZE];
+-	unsigned int txbuffcount;
++	int tmp2=0;
++
++	dgb_print2("\n");
+ 
+ 	fast_mode = check_fastmode(adap);
+ 	pmsg = trsc->msgs_queue + trsc->current_msg;
+@@ -250,334 +257,270 @@
+ 	ssc_store32(adap, SSC_IEN, 0);
+ 
+ 	status = ssc_load32(adap, SSC_STA);
+-	dbg_print2("ISR status = 0x%08x\n", status);
+ 
+-	/* Slave mode detection - this should never happen as we don't support multi-master */
+-	if (trsc->state > IIC_FSM_START && ((status & SSC_STA_ARBL)
+-					    || !(ssc_load32(adap, SSC_CTL) &
+-						 SSC_CTL_MS))) {
+-		dbg_print2("SLAVE mode (state %d, status %08x)\n",
+-			   trsc->state, status);
+-		dbg_print2(" Message [%d of %d] is %s address 0x%02x bus %d\n",
+-			   trsc->current_msg + 1, trsc->queue_length,
+-			   (pmsg->flags & I2C_M_RD) ? "READ from" : "WRITE to",
+-			   pmsg->addr, adap->adapter.nr);
+-		dbg_print2
+-		    ("   data is %d bytes, currently at %d, last 0x%02x\n",
+-		     pmsg->len, trsc->idx_current_msg,
+-		     (trsc->idx_current_msg >
+-		      0) ? pmsg->buf[trsc->idx_current_msg - 1] : 0);
+-		dbg_print2("Prev State: %s Changing to state: %s \n",
+-			   statename[trsc->state], statename[trsc->next_state]);
+-
+-		dbg_print2
+-		    ("Status: 0x%08x SSC_IEN 0x%08x "
+-			"SSC_CTL 0x%08x SSC_I2C 0x%08x\n",
+-		     status, previntmask, ssc_load32(adap, SSC_CTL),
+-		     ssc_load32(adap, SSC_I2C));
++	trsc->state = trsc->next_state;
+ 
++	/* Slave mode detection - this should never happen as we don't support multi-master */
++	if ( trsc->state > IIC_FSM_START &&
++	     ((status & SSC_STA_ARBL) || !(ssc_load32(adap, SSC_CTL) & SSC_CTL_MS)) ){
++		dgb_print2("In SLAVE mode (state %d, status %08x)!\n", trsc->state, status);
+ 		trsc->status_error = IIC_E_ARBL;
+-		ssc_store32(adap, SSC_CLR, 0xdc0);
+-		trsc->waitcondition = 0;
+-		wake_up(&(adap->wait_queue));
+-		return IRQ_HANDLED;
++    clear_lasti2cwas_nostop(adap);
++    ssc_store32(adap, SSC_CLR, 0xdc0);
++    ssc_store32(adap, SSC_TBUF, 0x1ff);
++    trsc->next_state = IIC_FSM_COMPLETE;
++    ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM |
++          SSC_I2C_TXENB | SSC_I2C_STOPG |
++          (SSC_I2C_I2CFSMODE * fast_mode));
++    ssc_store32(adap, SSC_IEN, SSC_IEN_STOPEN | SSC_IEN_ARBLEN);
++    return IRQ_HANDLED;
+ 	}
+ 
+-	trsc->state = trsc->next_state;
+-
+ 	switch (trsc->state) {
+ 	case IIC_FSM_PREPARE:
+-		dbg_print2("-Prepare\n");
++		dgb_print2("-Prepare\n");
++		if (check_lasti2cwas_nostop(adap)) {
++			clear_lasti2cwas_nostop(adap);
++			jump_on_fsm_repstart(trsc);
++		}
+ 		/*
+ 		 * check if the i2c timing register
+ 		 * of ssc are ready to use
+ 		 */
+ 		if ((check_fastmode(adap) && !check_ready_fastmode(adap)) ||
+-		    (!check_fastmode(adap) && check_ready_fastmode(adap)))
++		    (!check_fastmode(adap) && check_ready_fastmode(adap)) )
+ 			iic_stm_setup_timing(adap,
+-					     clk_get_rate(clk_get
+-							  (NULL, "comms_clk")));
+-
+-		trsc->start_state = IIC_FSM_START;
+-
+-		/* Enable RX FIFO, enable clock stretch on TX empty */
+-		ssc_store32(adap, SSC_CTL, SSC_CTL_EN | SSC_CTL_MS |
+-			    SSC_CTL_PO | SSC_CTL_PH | SSC_CTL_HB | 0x8 |
+-			    SSC_CTL_EN_RX_FIFO | SSC_CTL_EN_TX_FIFO);
+-
+-		ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM);
+-
+-		/* NO break! */
++				clk_get_rate(clk_get(NULL,"comms_clk")));
++		jump_on_fsm_start(trsc);
++		break;
+ 
+-	case IIC_FSM_NOREPSTART:
++	case IIC_FSM_START:
++	      be_fsm_start:
++		dgb_print2("-Start address 0x%x\n", pmsg->addr);
++		/* Reset SSC */
++		ssc_store32(adap, SSC_CTL, SSC_CTL_SR | SSC_CTL_EN | SSC_CTL_MS |
++			    SSC_CTL_PO | SSC_CTL_PH | SSC_CTL_HB | 0x8);
+ 		ssc_store32(adap, SSC_CLR, 0xdc0);
+-		trsc->state = IIC_FSM_START;
+-		conflags = SSC_I2C_STRTG;
+ 
+-		if (!check_fastmode(adap))
+-			ndelay(4000);
+-		else
+-			ndelay(700);
++		/* enable RX, TX FIFOs */
++		ssc_store32(adap, SSC_CTL,
++			    SSC_CTL_EN | SSC_CTL_MS |
++			    SSC_CTL_PO | SSC_CTL_PH | SSC_CTL_HB | 0x8 |
++			    SSC_CTL_EN_TX_FIFO | SSC_CTL_EN_RX_FIFO);
+ 
+-		/* NO break! */
++		ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM |
++			    (SSC_I2C_I2CFSMODE * fast_mode));
+ 
+-	case IIC_FSM_START:
+-be_fsm_start:
+-		dbg_print2("-Start address 0x%x\n", pmsg->addr);
+-
+-		trsc->idx_current_msg = 0;
++		trsc->start_state = IIC_FSM_START;
++		trsc->next_state  = IIC_FSM_DATA_WRITE;
+ 
+ 		address = (pmsg->addr << 2) | 0x1;
+-		if (pmsg->flags & I2C_M_RD) {
+-			dbg_print2(" Reading %d bytes\n", pmsg->len);
+-
++		if (pmsg->flags & I2C_M_RD){
+ 			address |= 0x2;
+ 			trsc->next_state = IIC_FSM_PREPARE_2_READ;
+-			intflags =
+-			    SSC_IEN_NACKEN | SSC_IEN_TEEN | SSC_IEN_ARBLEN;
+-
+-			txbuff[0] = address;
+-			txbuffcount = 1;
+-		} else {
+-			trsc->next_state = IIC_FSM_DATA_WRITE;
+-			intflags =
+-			    SSC_IEN_NACKEN | SSC_IEN_TEEN | SSC_IEN_ARBLEN;
+-
+-			dbg_print2("-Writing %d bytes\n", pmsg->len);
+-			txbuff[0] = address;
+-			txbuffcount = 1;
+-			idx = SSC_TXFIFO_SIZE - 1;
+-			dbg_print2(" TX FIFO %d empty slots\n", idx);
+-
+-			/* In the write case, we also preload the TX buffer
+-			 * with some data to reduce the interrupt loading
+-			 */
+-			while (idx && trsc->idx_current_msg < pmsg->len) {
+-				tmp.bytes[0] =
+-				    pmsg->buf[trsc->idx_current_msg++];
+-				txbuff[txbuffcount] = tmp.word << 1 | 0x1;
+-				dbg_print2(" write 0x%02x\n", tmp.bytes[0]);
+-				txbuffcount++;
+-				idx--;
+-			}
+ 		}
++		trsc->idx_current_msg = 0;
+ 
+-		/* drive SDA... */
+-		ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM | SSC_I2C_TXENB);
+-		for (idx = 0; idx < txbuffcount; idx++)
+-			ssc_store32(adap, SSC_TBUF, txbuff[idx]);
+-		ssc_store32(adap, SSC_IEN, intflags);
+-
+-		/* Check for bus busy.  This shouldn't happen but if the RX
+-		 * FIFOs are not empty in the last transaction BEFORE the SSC
+-		 * reset occurs, then we get a BUSY error here...
+-		 */
+-		if (trsc->start_state != IIC_FSM_REPSTART) {
+-			if (ssc_load32(adap, SSC_STA) & SSC_STA_BUSY) {
+-				dbg_print2(" bus BUSY!\n");
+-				trsc->waitcondition = 0;
+-				trsc->status_error = IIC_E_BUSY;
+-			} else {
+-				/* START! */
+-				ssc_store32(adap, SSC_I2C,
+-					    SSC_I2C_I2CM | SSC_I2C_TXENB |
+-					    conflags);
+-			}
++		status = ssc_load32(adap, SSC_STA);
++		if (status & SSC_STA_BUSY){
++			dgb_print2("    bus BUSY!\n");
++			trsc->waitcondition = 0; /* to not sleep */
++			trsc->status_error = IIC_E_RUNNING;	/* to raise the error */
++			return -1;
+ 		}
+ 
++		ssc_store32(adap, SSC_IEN, SSC_IEN_NACKEN | SSC_IEN_TEEN | SSC_IEN_ARBLEN);
++		ssc_store32(adap, SSC_TBUF, address);
++		ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM |
++			    SSC_I2C_STRTG | SSC_I2C_TXENB |
++			    (SSC_I2C_I2CFSMODE * fast_mode));
+ 		break;
+ 
+-	case IIC_FSM_REPSTART_ADDR:
+-		dbg_print2("-Rep Start addr 0x%x\n", pmsg->addr);
+-
+-		/* Clear NACK */
+-		ssc_store32(adap, SSC_CLR, 0xdc0);
+-
+-		trsc->start_state = IIC_FSM_REPSTART;
+-		conflags = 0;
+-
+-		jump_on_fsm_start(trsc);
+-
+-
+ 	case IIC_FSM_PREPARE_2_READ:
+-		dbg_print2("-Prepare to Read...\n");
+-
+-		/* Read address */
+-		ssc_load32(adap, SSC_RBUF);
++		/* Clear the RBUF */
++		while (ssc_load32(adap, SSC_RX_FSTAT)){
++			dgb_print2(".");
++			ssc_load32(adap, SSC_RBUF);
++		}
+ 
+-		/* Check for NACK */
+-		if (status & SSC_STA_NACK) {
+-			dbg_print2(" read: NACK detected\n");
+-			jump_on_fsm_abort(trsc);
++		if (ssc_load32(adap, SSC_TX_FSTAT)){
++			printk(KERN_ERR "i2c-stm: IIC_FSM_PREPARE_2_READ:TX FIFO NOT empty!\n");
+ 		}
+ 
+-		ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM | SSC_I2C_ACKG);
++		status = ssc_load32(adap, SSC_STA);
++		dgb_print2(" Prepare to Read... Status=0x%x\n", status);
++
++		if (status & SSC_STA_NACK)
++			jump_on_fsm_abort(trsc);
+ 
+ 		trsc->next_state = IIC_FSM_DATA_READ;
+ 
+-		/* NO break */
++		switch (pmsg->len) {
++		case 0: dgb_print2("Zero Read\n");
++			jump_on_fsm_stop(trsc);
++
++		case 1:
++			ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM |
++				(SSC_I2C_I2CFSMODE * fast_mode));
++			ssc_store32(adap, SSC_CLR, 0xdc0);
++			ssc_store32(adap, SSC_TBUF, 0x1ff);
++			ssc_store32(adap, SSC_IEN, SSC_IEN_NACKEN | SSC_IEN_ARBLEN);
++		   break;
++		default:
++			ssc_store32(adap, SSC_CLR, 0xdc0);
++			ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM | SSC_I2C_ACKG |
++				(SSC_I2C_I2CFSMODE * fast_mode));
++			/* P.S.: in any case the last byte has to be
++			 *       managed in a different manner
++			 */
++			for ( idx = 0;  idx < SSC_TXFIFO_SIZE &&
++					idx < pmsg->len-1 ;  ++idx )
++				ssc_store32(adap, SSC_TBUF, 0x1ff);
++			ssc_store32(adap, SSC_IEN, SSC_IEN_RIEN | SSC_IEN_TIEN | SSC_IEN_ARBLEN);
++		}
++		break;
+ 
+ 	case IIC_FSM_DATA_READ:
+-		dbg_print2("-Read\n");
+-		/* Clear the RX buffer */
+-		idx = (ssc_load32(adap, SSC_RX_FSTAT) & SSC_RX_FSTAT_STATUS);
+-		if (!idx && (ssc_load32(adap, SSC_STA) & SSC_STA_RIR))
+-			idx = SSC_RXFIFO_SIZE;
++		/* Check for transmit problem */
++		if (!(status & SSC_STA_TE)){
++			ssc_store32(adap, SSC_IEN, previntmask);
++			break;
++		}
++
++		/* Check for unexpected bus STOP condition */
++		if (status & SSC_STA_STOP){
++			ssc_store32(adap, SSC_CLR, 0xdc0);
++			jump_on_fsm_abort(trsc);
++		}
+ 
+-		dbg_print2(" Rx %d bytes in FIFO...\n", idx);
+-		while (idx && trsc->idx_current_msg < pmsg->len) {
++		dgb_print2(" Data Read...Status=0x%x\n",status);
++		/* 1.0 Is it the last byte */
++		if (trsc->idx_current_msg == pmsg->len-1) {
+ 			tmp.word = ssc_load32(adap, SSC_RBUF);
+ 			tmp.word = tmp.word >> 1;
+ 			pmsg->buf[trsc->idx_current_msg++] = tmp.bytes[0];
+-			dbg_print2(" Rx Data 0x%02x\n", tmp.bytes[0] & 0xff);
+-			idx--;
++			dgb_print2(" Rx Data %d-%c\n",tmp.bytes[0], tmp.bytes[0]);
++		} else {
++			/* 1.1 take the bytes from Rx fifo */
++			for (idx = 0 ;  idx < SSC_RXFIFO_SIZE &&
++				trsc->idx_current_msg < pmsg->len-1; ++idx ) {
++					tmp.word = ssc_load32(adap, SSC_RBUF);
++					tmp.word = tmp.word >> 1;
++					pmsg->buf[trsc->idx_current_msg++] = tmp.bytes[0];
++					dgb_print2(" Rx Data %d-%c\n",tmp.bytes[0], tmp.bytes[0]);
++			}
+ 		}
+ 
+-		/* If end of RX, issue STOP or REPSTART */
++		/* 2. Do we finish? */
+ 		if (trsc->idx_current_msg == pmsg->len) {
++			status &= ~SSC_STA_NACK;
+ 			jump_on_fsm_stop(trsc);
+ 		}
+ 
+-		/*    Generate clock for another set of bytes.
+-		 *    We have to process the last byte separately as we need to
+-		 *    NOT generate an ACK
++		/* 3. Ask other 'idx' bytes in fifo mode
++		 *    but we want save the latest [pmsg->len-1]
++		 *    in any case...
++		 *    This will also clear any pending clockstretch
+ 		 */
+-		if (trsc->idx_current_msg == (pmsg->len - 1)) {
+-			/* last byte - disable ACKG */
+-			dbg_print2(" Rx last byte\n");
+-			ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM);
+-			ssc_store32(adap, SSC_IEN,
+-				    SSC_IEN_NACKEN | SSC_IEN_ARBLEN);
++		for (idx=0; idx<SSC_TXFIFO_SIZE &&
++			   (trsc->idx_current_msg+idx)<pmsg->len-1; ++idx)
+ 			ssc_store32(adap, SSC_TBUF, 0x1ff);
+-		} else {
+-#ifdef CONFIG_I2C_DEBUG_ALGO
+-			cw = 0;
+-#endif
+-			idx = SSC_TXFIFO_SIZE;
+-			dbg_print2(" idx=%d status=0x%08x\n", idx,
+-				   ssc_load32(adap, SSC_STA));
+-
+-			while (idx
+-			       && (trsc->idx_current_msg +
+-				   (SSC_TXFIFO_SIZE - idx)) < (pmsg->len - 1)) {
+-				ssc_store32(adap, SSC_TBUF, 0x1ff);
+-#ifdef CONFIG_I2C_DEBUG_ALGO
+-				cw++;
+-#endif
+-				idx--;
+-			}
+-			dbg_print2("Clock writes: %d\n", cw);
+ 
+-			/* only take one interrupt when transmit FIFO empty! */
+-			ssc_store32(adap, SSC_IEN,
+-				    SSC_IEN_ARBLEN | SSC_IEN_TEEN);
+-		}
++		dgb_print2(" Asked %x bytes in fifo mode\n",idx);
++
++		ssc_store32(adap, SSC_IEN, SSC_IEN_RIEN | SSC_IEN_TIEN | SSC_IEN_ARBLEN);
+ 
++		/*Is the next byte the last byte? */
++		if (trsc->idx_current_msg == (pmsg->len - 1)) {
++			dgb_print2(" Asked the last byte\n");
++			ssc_store32(adap, SSC_CLR, 0xdc0);
++			ssc_store32(adap, SSC_TBUF, 0x1ff);
++			ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM |
++					    (SSC_I2C_I2CFSMODE * fast_mode) );
++			ssc_store32(adap, SSC_IEN, SSC_IEN_NACKEN | SSC_IEN_ARBLEN);
++		}
+ 		break;
+ 
+ 	case IIC_FSM_DATA_WRITE:
+-		dbg_print2("-Write\n");
+-		/* Clear RX data from FIFO */
+-
+-		/* It is not clear from the SSC4 datasheet, but the RX_FSTAT
+-		 * register does not tell the whole story...  if RIR is set in
+-		 * the STATUS reg then we need to read 8 words.  RX_FSTAT only
+-		 * notifies us of at most 7 words - hence the extra check below
+-		 */
+-
+-		lim = ssc_load32(adap, SSC_RX_FSTAT) & SSC_RX_FSTAT_STATUS;
+-		if (!lim && (status & SSC_STA_RIR))
+-			lim = 8;
++		/* Check for unexpected bus STOP condition */
++		if (status & SSC_STA_STOP){
++			ssc_store32(adap, SSC_CLR, 0xdc0);
++			jump_on_fsm_abort(trsc);
++		}
+ 
+-		dbg_print2(" clearing %d RX words\n", lim);
+-		for (idx = 0; idx < lim; idx++)
++		/* just to clear some bits in the STATUS register */
++		while (ssc_load32(adap, SSC_RX_FSTAT))
+ 			ssc_load32(adap, SSC_RBUF);
+-
+-		/* Clear status bits EXCEPT NACK */
++/*
++ * Be careful!!!!
++ * Here I don't have to use 0xdc0 for
++ * the SSC_CLR register
++ */
+ 		ssc_store32(adap, SSC_CLR, 0x9c0);
+ 
+-		/* Check for NACK */
+ 		status = ssc_load32(adap, SSC_STA);
+-		dbg_print2("write: status = 0x%08x\n", status);
+-		if (status & SSC_STA_NACK) {
+-			dbg_print2(" NACK detected\n");
++		if (status & SSC_STA_NACK)
+ 			jump_on_fsm_abort(trsc);
++
++		tx_fifo_status = ssc_load32(adap,SSC_TX_FSTAT);
++		if ( tx_fifo_status ) {
++			dgb_print2(" Fifo not empty\n");
++			ssc_store32(adap, SSC_IEN, previntmask);
++			break;
+ 		}
+ 
+-		/* If end of TX, issue STOP or REPSTART */
+-		if (trsc->idx_current_msg == pmsg->len)
++		if (trsc->idx_current_msg == pmsg->len || !(pmsg->len))
+ 			jump_on_fsm_stop(trsc);
+ 
+-		trsc->next_state = IIC_FSM_DATA_WRITE;
++		dgb_print2(" Data Write...Status=0x%x 0x%x-%c\n", status,
++			  pmsg->buf[trsc->idx_current_msg],
++			  pmsg->buf[trsc->idx_current_msg]);
+ 
+-		/* Interrupt when TX buffer empty */
+-		ssc_store32(adap, SSC_IEN,
+-			    SSC_IEN_TEEN | SSC_IEN_NACKEN | SSC_IEN_ARBLEN);
++		ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM | SSC_I2C_TXENB |
++			    (SSC_I2C_I2CFSMODE * fast_mode));
+ 
+-		idx = SSC_TXFIFO_SIZE;
+-		while (idx && trsc->idx_current_msg < pmsg->len) {
++		trsc->next_state = IIC_FSM_DATA_WRITE;
++		ssc_store32(adap, SSC_IEN, SSC_IEN_TEEN | SSC_IEN_NACKEN | SSC_IEN_ARBLEN);
++
++		for (; tx_fifo_status < SSC_TXFIFO_SIZE &&
++			trsc->idx_current_msg < pmsg->len ;++tx_fifo_status )
++		{
+ 			tmp.bytes[0] = pmsg->buf[trsc->idx_current_msg++];
+ 			ssc_store32(adap, SSC_TBUF, tmp.word << 1 | 0x1);
+-			dbg_print2(" Write 0x%02x\n", tmp.bytes[0]);
+-			idx--;
+ 		}
+-
+ 		break;
+ 
+ 	case IIC_FSM_ABORT:
+ 	      be_fsm_abort:
+-		dbg_print2("Abort - issuing STOP\n");
++		dgb_print2(" Abort\n");
+ 		trsc->status_error |= IIC_E_NOTACK;
++		/* Don't ADD the break */
+ 
++	case IIC_FSM_STOP:
++	      be_fsm_stop:
++		if (!(status & SSC_STA_NACK) &&
++		    (++trsc->current_msg < trsc->queue_length)) {
++			jump_on_fsm_repstart(trsc);
++		}
++		if (pmsg->flags & I2C_M_NOSTOP && !(status & SSC_STA_NACK)){    /* NoStop message! */
++			set_lasti2cwas_nostop(adap);
++			dgb_print2(" Stop not done\n");
++			jump_on_fsm_complete(trsc);
++		}
++		clear_lasti2cwas_nostop(adap);
++		dgb_print2(" Stop\n");
+ 		ssc_store32(adap, SSC_CLR, 0xdc0);
+ 		trsc->next_state = IIC_FSM_COMPLETE;
+-
++		ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM |
++			    SSC_I2C_TXENB | SSC_I2C_STOPG |
++			    (SSC_I2C_I2CFSMODE * fast_mode));
+ 		ssc_store32(adap, SSC_IEN, SSC_IEN_STOPEN | SSC_IEN_ARBLEN);
+-		ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM | SSC_I2C_STOPG);
+-		break;
+-
+-	case IIC_FSM_STOP:
+-be_fsm_stop:
+-		dbg_print2("-Stop\n");
+-
+-		if (++trsc->current_msg < trsc->queue_length) {
+-			/* More transactions left... */
+-			if (pmsg->flags & I2C_M_NOREPSTART) {
+-				/* no repstart - stop then start */
+-				dbg_print2(" STOP - STOP\n");
+-				trsc->next_state = IIC_FSM_NOREPSTART;
+-				ssc_store32(adap, SSC_I2C,
+-					    SSC_I2C_I2CM | SSC_I2C_TXENB |
+-					    SSC_I2C_STOPG);
+-				ssc_store32(adap, SSC_IEN,
+-					    SSC_IEN_STOPEN | SSC_IEN_ARBLEN);
+-			} else {
+-				/* repstart */
+-				dbg_print2(" STOP - REPSTART\n");
+-				trsc->next_state = IIC_FSM_REPSTART_ADDR;
+-				ssc_store32(adap, SSC_I2C,
+-					    SSC_I2C_I2CM |
+-					    SSC_I2C_TXENB |
+-					    SSC_I2C_REPSTRTG);
+-				ssc_store32(adap, SSC_IEN,
+-					    SSC_IEN_REPSTRTEN |
+-					    SSC_IEN_ARBLEN);
+-			}
+-		} else {
+-			/* stop */
+-			dbg_print2(" STOP - STOP\n");
+-			trsc->next_state = IIC_FSM_COMPLETE;
+-			ssc_store32(adap, SSC_I2C,
+-				    SSC_I2C_I2CM | SSC_I2C_TXENB |
+-				    SSC_I2C_STOPG);
+-			ssc_store32(adap, SSC_IEN,
+-				    SSC_IEN_STOPEN | SSC_IEN_ARBLEN);
+-		}
+-
+ 		break;
+ 
+ 	case IIC_FSM_COMPLETE:
+-		dbg_print2("-Complete\n");
++	    be_fsm_complete:
++		dgb_print2(" Complete\n");
++		udelay(5);
+ 
+ 		if (!(trsc->status_error & IIC_E_NOTACK))
+ 			trsc->status_error = IIC_E_NO_ERROR;
+@@ -586,6 +529,40 @@
+ 		wake_up(&(adap->wait_queue));
+ 		break;
+ 
++	case IIC_FSM_REPSTART:
++	      be_fsm_repstart:
++		pmsg = trsc->msgs_queue + trsc->current_msg;
++		dgb_print2("-Rep Start (0x%x)\n",pmsg->addr);
++		trsc->start_state = IIC_FSM_REPSTART;
++		trsc->idx_current_msg = 0;
++		trsc->next_state = IIC_FSM_REPSTART_ADDR;
++		ssc_store32(adap, SSC_CLR, 0xdc0);
++		if(ssc_load32(adap,SSC_STA) & SSC_STA_REPSTRT)
++			tmp2=1;
++		ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM | SSC_I2C_TXENB
++			    | SSC_I2C_REPSTRTG | (SSC_I2C_I2CFSMODE *
++						  fast_mode));
++		if(tmp2) /* we was not able to clear the status bit */
++			udelay(5);
++		ssc_store32(adap, SSC_IEN, SSC_IEN_REPSTRTEN | SSC_IEN_ARBLEN);
++		break;
++
++	case IIC_FSM_REPSTART_ADDR:
++		dgb_print2("-Rep Start addr 0x%x\n", pmsg->addr);
++		/* Clear repstart bit */
++		ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM | SSC_I2C_TXENB
++				  | (SSC_I2C_I2CFSMODE * fast_mode));
++
++		ssc_store32(adap, SSC_CLR, 0xdc0);
++		address = (pmsg->addr << 2) | 0x1;
++		trsc->next_state = IIC_FSM_DATA_WRITE;
++		if (pmsg->flags & I2C_M_RD) {
++			address |= 0x2;
++			trsc->next_state = IIC_FSM_PREPARE_2_READ;
++		}
++		ssc_store32(adap, SSC_TBUF, address);
++		ssc_store32(adap, SSC_IEN, SSC_IEN_NACKEN | SSC_IEN_TEEN | SSC_IEN_ARBLEN);
++		break;
+ 	default:
+ 		printk(KERN_ERR "i2c-stm: Error in the FSM\n");
+ 		;
+@@ -594,6 +571,7 @@
+ 	return IRQ_HANDLED;
+ }
+ 
++
+ /*
+  * Wait for stop to be detected on bus
+  */
+@@ -601,65 +579,36 @@
+ {
+ 	unsigned int idx;
+ 
+-	dbg_print("\n");
+-	for (idx = 0; idx < 5; ++idx) {
+-		if (ssc_load32(adap, SSC_STA) & SSC_STA_STOP)
++	dgb_print("\n");
++	for ( idx = 0; idx < 5 ; ++idx ){
++		if (ssc_load32(adap,SSC_STA) & SSC_STA_STOP)
+ 			return 1;
+ 		mdelay(2);
+ 	}
+ 
+-	printk(KERN_ERR "*** iic_wait_stop_condition: TIMED OUT ***\n");
+ 	return 0;
+ }
+ 
+ /*
+- * Reset SSC bus
+- */
+-static void iic_ssc_reset(struct iic_ssc *adap)
+-{
+-	unsigned int lim, status, idx;
+-
+-	/* Ensure RX buffer empty */
+-	status = ssc_load32(adap, SSC_STA);
+-	lim = ssc_load32(adap, SSC_RX_FSTAT) & SSC_RX_FSTAT_STATUS;
+-	if (!lim && (status & SSC_STA_RIR))
+-		lim = 8;
+-
+-	for (idx = 0; idx < lim; idx++)
+-		ssc_load32(adap, SSC_RBUF);
+-
+-	/* Reset SSC */
+-	ssc_store32(adap, SSC_CTL, SSC_CTL_SR | SSC_CTL_EN | SSC_CTL_MS |
+-		    SSC_CTL_PO | SSC_CTL_PH | SSC_CTL_HB | 0x8);
+-
+-	/* enable RX, TX FIFOs - clear SR bit */
+-	ssc_store32(adap, SSC_CTL, SSC_CTL_EN | SSC_CTL_MS |
+-		    SSC_CTL_PO | SSC_CTL_PH | SSC_CTL_HB | 0x8 |
+-		    SSC_CTL_EN_TX_FIFO | SSC_CTL_EN_RX_FIFO);
+-}
+-
+-/*
+  * Wait for bus to become free
+  */
+ static int iic_wait_free_bus(struct iic_ssc *adap)
+ {
+-	unsigned int reg = 0;
+ 	unsigned int idx;
+ 
+-	dbg_print("\n");
++	dgb_print("\n");
+ 
+-	iic_ssc_reset(adap);
++	if (check_lasti2cwas_nostop(adap)){
++		dgb_print("last transaction nostop.  Not waiting for free bus\n");
++		return 1;
++	}
+ 
+-	for (idx = 0; idx < 10; ++idx) {
+-		reg = ssc_load32(adap, SSC_STA);
+-		dbg_print("iic_wait_free_bus: status = 0x%08x\n", reg);
+-		if (!(reg & SSC_STA_BUSY))
++	for ( idx = 0; idx < 5 ; ++idx ) {
++		if (!(ssc_load32(adap,SSC_STA) & SSC_STA_BUSY) )
+ 			return 1;
+ 		mdelay(2);
+ 	}
+ 
+-	printk(KERN_ERR "*** iic_wait_free_bus: TIMED OUT ***\n");
+-
+ 	return 0;
+ }
+ 
+@@ -670,267 +619,169 @@
+ {
+ 	int cnt = 0;
+ 
+-	if (!(adap->pio_info)->clk)
+-		return;		/* ssc hard wired */
++	if(!(adap->pio_info)->clk)
++		return; /* ssc hard wired */
+ 	printk(KERN_WARNING "i2c-stm: doing PIO stop!\n");
+ 
+ 	/* Send STOP */
+ 	stpio_set_pin((adap->pio_info)->clk, 0);
+ 	stpio_set_pin((adap->pio_info)->sdout, 0);
+-	stpio_configure_pin((adap->pio_info)->clk, STPIO_OUT);
++	stpio_configure_pin((adap->pio_info)->clk, STPIO_BIDIR);
+ 	stpio_configure_pin((adap->pio_info)->sdout, STPIO_BIDIR);
+ 	udelay(20);
+ 	stpio_set_pin((adap->pio_info)->clk, 1);
+ 	udelay(20);
+ 	stpio_set_pin((adap->pio_info)->sdout, 1);
+ 	udelay(30);
+-	if ((adap->pio_info)->clk_unidir)
+-		stpio_configure_pin((adap->pio_info)->clk, STPIO_ALT_OUT);
+-	else
+-		stpio_configure_pin((adap->pio_info)->clk, STPIO_ALT_BIDIR);
++	stpio_configure_pin((adap->pio_info)->clk, STPIO_ALT_BIDIR);
+ 	stpio_configure_pin((adap->pio_info)->sdout, STPIO_ALT_BIDIR);
+ 
+ 	/* Reset SSC */
+ 	ssc_store32(adap, SSC_CTL, SSC_CTL_SR | SSC_CTL_EN | SSC_CTL_MS |
+-		    SSC_CTL_PO | SSC_CTL_PH | SSC_CTL_HB | 0x8);
++			    SSC_CTL_PO | SSC_CTL_PH | SSC_CTL_HB | 0x8);
+ 	ssc_store32(adap, SSC_CLR, 0xdc0);
+ 
+ 	/* Make sure SSC thinks the bus is free before continuing */
+-	while (cnt < 10
+-	       && (ssc_load32(adap, SSC_STA) & (SSC_STA_BUSY | SSC_STA_NACK))) {
++	while (cnt < 10 && (ssc_load32(adap,SSC_STA) & (SSC_STA_BUSY | SSC_STA_NACK))){
+ 		mdelay(2);
+-		cnt++;
++		cnt ++;
+ 	}
+ 
+ 	if (cnt == 10)
+-		printk(KERN_ERR
+-		       "i2c-stm:  Cannot recover bus.  Status: 0x%08x\n",
+-		       ssc_load32(adap, SSC_STA));
++		printk(KERN_ERR "i2c-stm:  Cannot recover bus.  Status: 0x%08x\n", ssc_load32(adap,SSC_STA));
+ }
+ 
+ /*
+  * Description: Prepares the controller for a transaction
+  */
+ static int iic_stm_xfer(struct i2c_adapter *i2c_adap,
+-			struct i2c_msg msgs[], int num)
++			     struct i2c_msg msgs[], int num)
+ {
+ 	unsigned int flag;
+ 	int result;
+ 	int timeout;
+-#ifdef CONFIG_I2C_DEBUG_BUS
+-	int i;
+-#endif
+ 	struct iic_ssc *adap =
+-	    (struct iic_ssc *)container_of(i2c_adap, struct iic_ssc, adapter);
++			(struct iic_ssc *)container_of(i2c_adap, struct iic_ssc, adapter);
+ 	struct iic_transaction transaction = {
+-		.msgs_queue = msgs,
+-		.queue_length = num,
+-		.current_msg = 0x0,
+-		.attempt = 0x0,
+-		.status_error = IIC_E_RUNNING,
+-		.next_state = IIC_FSM_PREPARE,
+-		.waitcondition = 1,
+-	};
++			.msgs_queue   = msgs,
++			.queue_length = num,
++			.current_msg  = 0x0,
++			.attempt      = 0x0,
++			.status_error = IIC_E_RUNNING,
++			.next_state   = IIC_FSM_PREPARE,
++			.waitcondition = 1,
++		};
+ 
+-	dbg_print("\n");
++	dgb_print("\n");
+ 
+ 	adap->trns = &transaction;
+ 
+-#ifdef CONFIG_I2C_DEBUG_BUS
+-	for (i = 0; i < num; ++i) {
+-		if (msgs[i].len == 0)
+-			printk(KERN_INFO
+-			       "[%d of %d] ZERO LENGTH TRANSACTION : "
+-			       "%s addr 0x%02x len %d\n",
+-			       i + 1, num,
+-			       (msgs[i].
+-				flags & I2C_M_RD) ? "read from " :
+-				"write to ",
+-				msgs[i].addr, msgs[i].len);
+-		else
+-			printk(KERN_INFO
+-			       "[%d of %d] TRANSACTION : "
+-			       "%s addr 0x%02x len %d\n",
+-			       i + 1, num,
+-			       (msgs[i].
+-				flags & I2C_M_RD) ? "read from " :
+-				"write to ",
+-			       msgs[i].addr, msgs[i].len);
+-	}
+-#endif /* CONFIG_I2C_DEBUG_BUS */
+-
+ iic_xfer_retry:
+ 
+-	/* Wait for bus to become free - do a forced PIO reset if necessary to
+-	 * recover the bus
+-	 */
++	/* Wait for bus to become free - do a forced PIO reset if necessary to */
++	/* recover the bus */
+ 	if (!iic_wait_free_bus(adap))
+ 		iic_pio_stop(adap);
+ 
+ 	iic_state_machine(0, adap);
+ 
+ 	timeout = wait_event_interruptible_timeout(adap->wait_queue,
+-						   (transaction.waitcondition ==
+-						    0), i2c_adap->timeout * HZ);
++					(transaction.waitcondition==0),
++					i2c_adap->timeout);
+ 
+ 	local_irq_save(flag);
+ 
+ 	result = transaction.current_msg;
+ 
+-	if (unlikely
+-	    (transaction.status_error != IIC_E_NO_ERROR || timeout <= 0)) {
+-		dbg_print2(KERN_ERR
+-			   "xfer: ERROR status %d, timeout %d, attempt %d\n",
+-			   transaction.status_error, timeout,
+-			   transaction.attempt);
+-
+-		dbg_print2(KERN_ERR
+-			   "Status: 0x%08x SSC_IEN 0x%08x "
+-			   "SSC_CTL 0x%08x SSC_I2C 0x%08x\n",
+-			   ssc_load32(adap, SSC_STA), ssc_load32(adap, SSC_IEN),
+-			   ssc_load32(adap, SSC_CTL), ssc_load32(adap,
+-								 SSC_I2C));
+-
+-		if (((transaction.status_error & IIC_E_NOTACK)
+-		     && transaction.start_state == IIC_FSM_START)
+-		    || (transaction.status_error & IIC_E_BUSY)) {
+-			if (++transaction.attempt <= adap->adapter.retries) {
+-				dbg_print2("RETRYING operation\n");
++	if (unlikely(transaction.status_error != IIC_E_NO_ERROR || timeout <= 0)) {
++		if ((transaction.status_error & IIC_E_NOTACK) &&
++			transaction.start_state == IIC_FSM_START &&
++			++transaction.attempt <= adap->adapter.retries){
+ 				/* error on the address - automatically retry */
+ 				/* this used to be done in the FSM complete but it was not safe */
+ 				/* there as we need to wait for the bus to not be busy before */
+ 				/* doing another transaction */
++				printk(KERN_ERR "i2c-stm: error on address.  auto retry %d\n", transaction.attempt);
+ 				transaction.status_error = 0;
+-				transaction.next_state = IIC_FSM_START;
+-				transaction.waitcondition = 1;
+ 				local_irq_restore(flag);
+ 				goto iic_xfer_retry;
+-			} else {
+-				local_irq_restore(flag);
+-				if (transaction.status_error & IIC_E_NOTACK) {
+-					dbg_print("Error: Slave NACK\n");
+-					result = -EREMOTEIO;
+-				} else {
+-					dbg_print("Error: Bus BUSY\n");
+-					result = -EBUSY;
+-				}
+-			}
+-		} else if (transaction.status_error == IIC_E_ARBL
+-			   || (ssc_load32(adap, SSC_CTL) & SSC_CTL_MS) == 0) {
++		} else if (transaction.status_error == IIC_E_ARBL){
+ 			/* Arbitration error */
+-			printk(KERN_ERR "i2c-stm: arbitration error\n");
+-
+-			ssc_store32(adap, SSC_CLR, SSC_CLR_SSCARBL);
+-			ssc_store32(adap, SSC_CTL,
+-				    ssc_load32(adap, SSC_CTL) | SSC_CTL_MS);
+-			transaction.status_error = 0;
+-			transaction.next_state = IIC_FSM_START;
+-			transaction.waitcondition = 1;
++		  printk("i2c-stm: arbitration error\n");
++			ssc_store32(adap, SSC_CLR, 0xdc0); //reset status register
++			ssc_store32(adap, SSC_CTL, ssc_load32(adap, SSC_CTL) | SSC_CTL_MS); // make sure we still are master
+ 			local_irq_restore(flag);
+ 
+-			if (!iic_wait_free_bus(adap)) {
+-				/* Last ditch effort */
+-				iic_pio_stop(adap);
+-			}
+-
+-			if (++transaction.attempt <= adap->adapter.retries) {
+-				dbg_print2("RETRYING operation\n");
+-				goto iic_xfer_retry;
+-			}
++			/* Manually issue stop condition on the bus */
++			iic_pio_stop(adap);
+ 		} else {
+ 			/* There was another problem */
+-			if (timeout <= 0) {
++			if(timeout<=0){
+ 				/* There was a timeout or signal.
+ 				   - disable the interrupt
+ 				   - generate a stop condition on the bus
+ 				   all this task are done without interrupt....
+ 				 */
+-				dbg_print
+-				    ("xfer: Wait cnd err %d, status error %d\n",
+-				     timeout, transaction.status_error);
+ 				ssc_store32(adap, SSC_IEN, 0x0);
++				ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM |
++					    SSC_I2C_STOPG | SSC_I2C_TXENB |
++					    (SSC_I2C_I2CFSMODE * check_fastmode(adap)));
++				/* wait until the ssc detects a Stop condition on the bus */
++				/* but before we do that we enable all the interrupts     */
++				local_irq_restore(flag);
+ 
+-				/* Check if bus free */
+-				if (!iic_wait_free_bus(adap)) {
+-					/* No - generate stop condition */
+-					ssc_store32(adap, SSC_I2C,
+-						    SSC_I2C_I2CM | SSC_I2C_STOPG
+-						    | SSC_I2C_TXENB);
+-
+-					local_irq_restore(flag);
+-
+-					if (!iic_wait_stop_condition(adap)) {
+-						/* Reset SSC */
+-						ssc_store32(adap, SSC_CTL,
+-							    SSC_CTL_SR |
+-							    SSC_CTL_EN |
+-							    SSC_CTL_MS |
+-							    SSC_CTL_PO |
+-							    SSC_CTL_PH |
+-							    SSC_CTL_HB | 0x8);
+-						ssc_store32(adap, SSC_CLR,
+-							    0xdc0);
+-
+-						if (!iic_wait_free_bus(adap)) {
+-							/* Last ditch effort */
+-							iic_pio_stop(adap);
+-						}
+-					}
+-				} else {
+-					local_irq_restore(flag);
++				if (!iic_wait_stop_condition(adap)){
++					printk(KERN_ERR "i2c-stm: Error.  Manually stopping transaction.\n");
++					iic_pio_stop(adap);
+ 				}
++				clear_lasti2cwas_nostop(adap);
+ 			} else
+ 				local_irq_restore(flag);
+ 
+-			if (!timeout) {
+-				dbg_print
+-				    ("i2c-stm: Error timeout in the FSM\n");
++			if (!timeout){
++				printk(KERN_ERR
++				       "i2c-stm: Error timeout in the finite state machine\n");
+ 				result = -ETIMEDOUT;
+ 			} else if (timeout < 0) {
+-				dbg_print
+-				    ("i2c-stm: wait event interrupt/error\n");
++				dgb_print("i2c-stm: interrupt or error in wait event\n");
+ 				result = timeout;
+-			} else {
+-				dbg_print("i2c-stm: slave failed to respond\n");
++			} else
+ 				result = -EREMOTEIO;
+-			}
+ 		}
+ 	} else
+ 		local_irq_restore(flag);
+ 
+-#ifdef CONFIG_I2C_DEBUG_BUS
+-	printk(KERN_INFO "i2c-stm: i2c_stm_xfer returned %d\n", result);
+-#endif
+ 	return result;
+ }
+ 
+ #ifdef  CONFIG_I2C_DEBUG_BUS
+ static void iic_stm_timing_trace(struct iic_ssc *adap)
+ {
+-	dbg_print("SSC_BRG  %d\n", ssc_load32(adap, SSC_BRG));
+-	dbg_print("SSC_REP_START_HOLD %d\n",
++	dgb_print("SSC_BRG  %d\n",ssc_load32(adap, SSC_BRG));
++	dgb_print("SSC_REP_START_HOLD %d\n",
+ 		  ssc_load32(adap, SSC_REP_START_HOLD));
+-	dbg_print("SSC_REP_START_SETUP %d\n",
++	dgb_print("SSC_REP_START_SETUP %d\n",
+ 		  ssc_load32(adap, SSC_REP_START_SETUP));
+-	dbg_print("SSC_START_HOLD %d\n", ssc_load32(adap, SSC_START_HOLD));
+-	dbg_print("SSC_DATA_SETUP %d\n", ssc_load32(adap, SSC_DATA_SETUP));
+-	dbg_print("SSC_STOP_SETUP %d\n", ssc_load32(adap, SSC_STOP_SETUP));
+-	dbg_print("SSC_BUS_FREE %d\n", ssc_load32(adap, SSC_BUS_FREE));
+-	dbg_print("SSC_PRE_SCALER_BRG %d\n",
++	dgb_print("SSC_START_HOLD %d\n", ssc_load32(adap, SSC_START_HOLD));
++	dgb_print("SSC_DATA_SETUP %d\n", ssc_load32(adap, SSC_DATA_SETUP));
++	dgb_print("SSC_STOP_SETUP %d\n", ssc_load32(adap, SSC_STOP_SETUP));
++	dgb_print("SSC_BUS_FREE %d\n", ssc_load32(adap, SSC_BUS_FREE));
++	dgb_print("SSC_PRE_SCALER_BRG %d\n",
+ 		  ssc_load32(adap, SSC_PRE_SCALER_BRG));
+-	dbg_print("SSC_NOISE_SUPP_WIDTH %d\n",
+-		  ssc_load32(adap, SSC_NOISE_SUPP_WIDTH));
+-	dbg_print("SSC_PRSCALER %d\n", ssc_load32(adap, SSC_PRSCALER));
+-	dbg_print("SSC_NOISE_SUPP_WIDTH_DATAOUT %d\n",
+-		  ssc_load32(adap, SSC_NOISE_SUPP_WIDTH_DATAOUT));
+-	dbg_print("SSC_PRSCALER_DATAOUT %d\n",
+-		  ssc_load32(adap, SSC_PRSCALER_DATAOUT));
++	dgb_print("SSC_NOISE_SUPP_WIDTH %d\n",
++			ssc_load32(adap, SSC_NOISE_SUPP_WIDTH));
++	dgb_print("SSC_PRSCALER %d\n",
++			ssc_load32(adap, SSC_PRSCALER));
++	dgb_print("SSC_NOISE_SUPP_WIDTH_DATAOUT %d\n",
++			ssc_load32(adap, SSC_NOISE_SUPP_WIDTH_DATAOUT));
++	dgb_print("SSC_PRSCALER_DATAOUT %d\n",
++			ssc_load32(adap, SSC_PRSCALER_DATAOUT));
+ }
+ #endif
+ 
+ static void iic_stm_setup_timing(struct iic_ssc *adap, unsigned long clock)
+ {
+-	unsigned long iic_baudrate;
++	unsigned long  iic_baudrate;
+ 	unsigned short iic_rep_start_hold;
+ 	unsigned short iic_start_hold;
+ 	unsigned short iic_rep_start_setup;
+@@ -941,99 +792,67 @@
+ #ifdef CONFIG_I2C_STM_HW_GLITCH
+ 	unsigned short iic_glitch_width;
+ 	unsigned short iic_glitch_width_dataout;
+-	unsigned char iic_prescaler;
++	unsigned char  iic_prescaler;
+ 	unsigned short iic_prescaler_dataout;
+ #endif
+-	unsigned long ns_per_clk;
++	unsigned long  ns_per_clk;
+ 
+-	dbg_print("Assuming %lu MHz for the Timing Setup\n", clock / 1000000);
++	dgb_print("Assuming %d MHz for the Timing Setup\n",
++		  clock / 1000000);
+ 
+-	clock += 500000;	/* +0.5 Mhz for rounding */
++	clock += 500000; /* +0.5 Mhz for rounding */
+ 	ns_per_clk = NANOSEC_PER_SEC / clock;
+ 
+ 	if (check_fastmode(adap)) {
+ 		set_ready_fastmode(adap);
+ 		iic_baudrate = clock / (2 * I2C_RATE_FASTMODE);
+-		iic_rep_start_hold =
+-		    (REP_START_HOLD_TIME_FAST + GLITCH_WIDTH_DATA) / ns_per_clk;
+-		iic_rep_start_setup =
+-		    (REP_START_SETUP_TIME_FAST +
+-		     GLITCH_WIDTH_CLOCK) / ns_per_clk;
+-		if (GLITCH_WIDTH_DATA < 200)
+-			iic_start_hold =
+-			    (START_HOLD_TIME_FAST +
+-			     GLITCH_WIDTH_DATA) / ns_per_clk;
++		iic_rep_start_hold  =(REP_START_HOLD_TIME_FAST +GLITCH_WIDTH_DATA) /ns_per_clk;
++		iic_rep_start_setup =(REP_START_SETUP_TIME_FAST+GLITCH_WIDTH_CLOCK) /ns_per_clk;
++		if(GLITCH_WIDTH_DATA<200)
++			iic_start_hold =(START_HOLD_TIME_FAST+GLITCH_WIDTH_DATA) /ns_per_clk;
+ 		else
+-			iic_start_hold = (5 * GLITCH_WIDTH_DATA) / ns_per_clk;
+-		iic_data_setup =
+-		    (DATA_SETUP_TIME_FAST + GLITCH_WIDTH_DATA) / ns_per_clk;
+-		iic_stop_setup =
+-		    (STOP_SETUP_TIME_FAST + GLITCH_WIDTH_CLOCK) / ns_per_clk;
+-		iic_bus_free =
+-		    (BUS_FREE_TIME_FAST + GLITCH_WIDTH_DATA) / ns_per_clk;
++			iic_start_hold =(5*GLITCH_WIDTH_DATA) /ns_per_clk;
++		iic_data_setup =(DATA_SETUP_TIME_FAST+GLITCH_WIDTH_DATA) /ns_per_clk;
++		iic_stop_setup =(STOP_SETUP_TIME_FAST+GLITCH_WIDTH_CLOCK) /ns_per_clk;
++		iic_bus_free =(BUS_FREE_TIME_FAST+GLITCH_WIDTH_DATA) /ns_per_clk;
+ 	} else {
+ 		clear_ready_fastmode(adap);
+-		iic_baudrate = clock / (2 * I2C_RATE_NORMAL);
+-		iic_rep_start_hold =
+-		    (REP_START_HOLD_TIME_NORMAL +
+-		     GLITCH_WIDTH_DATA) / ns_per_clk;
+-		iic_rep_start_setup =
+-		    (REP_START_SETUP_TIME_NORMAL +
+-		     GLITCH_WIDTH_CLOCK) / ns_per_clk;
+-		if (GLITCH_WIDTH_DATA < 1200)
+-			iic_start_hold =
+-			    (START_HOLD_TIME_NORMAL +
+-			     GLITCH_WIDTH_DATA) / ns_per_clk;
++		iic_baudrate = clock  / (2 * I2C_RATE_NORMAL);
++		iic_rep_start_hold =( REP_START_HOLD_TIME_NORMAL+GLITCH_WIDTH_DATA) / ns_per_clk;
++		iic_rep_start_setup =( REP_START_SETUP_TIME_NORMAL+GLITCH_WIDTH_CLOCK) / ns_per_clk;
++		if(GLITCH_WIDTH_DATA<1200)
++			iic_start_hold =( START_HOLD_TIME_NORMAL+GLITCH_WIDTH_DATA) / ns_per_clk;
+ 		else
+-			iic_start_hold = (5 * GLITCH_WIDTH_DATA) / ns_per_clk;
+-		iic_data_setup =
+-		    (DATA_SETUP_TIME_NORMAL + GLITCH_WIDTH_DATA) / ns_per_clk;
+-		iic_stop_setup =
+-		    (STOP_SETUP_TIME_NORMAL + GLITCH_WIDTH_CLOCK) / ns_per_clk;
+-		iic_bus_free =
+-		    (BUS_FREE_TIME_NORMAL + GLITCH_WIDTH_DATA) / ns_per_clk;
++			iic_start_hold =( 5*GLITCH_WIDTH_DATA) / ns_per_clk;
++		iic_data_setup =( DATA_SETUP_TIME_NORMAL+GLITCH_WIDTH_DATA) / ns_per_clk;
++		iic_stop_setup =( STOP_SETUP_TIME_NORMAL+GLITCH_WIDTH_CLOCK) / ns_per_clk;
++		iic_bus_free =( BUS_FREE_TIME_NORMAL+GLITCH_WIDTH_DATA) / ns_per_clk;
+ 	}
+ 
+-	/* set baudrate */
+-	ssc_store32(adap, SSC_BRG, iic_baudrate);
+-	ssc_store32(adap, SSC_PRE_SCALER_BRG, iic_pre_scale_baudrate);
+-
+-	/* enable I2C mode */
+-	ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM);
+-
+-	/* set other timings */
+ 	ssc_store32(adap, SSC_REP_START_HOLD, iic_rep_start_hold);
+ 	ssc_store32(adap, SSC_START_HOLD, iic_start_hold);
+ 	ssc_store32(adap, SSC_REP_START_SETUP, iic_rep_start_setup);
+ 	ssc_store32(adap, SSC_DATA_SETUP, iic_data_setup);
+ 	ssc_store32(adap, SSC_STOP_SETUP, iic_stop_setup);
+ 	ssc_store32(adap, SSC_BUS_FREE, iic_bus_free);
++	ssc_store32(adap, SSC_PRE_SCALER_BRG, iic_pre_scale_baudrate);
+ 
+ #ifdef CONFIG_I2C_STM_HW_GLITCH
+ 	/* See DDTS GNBvd40668 */
+ 	iic_prescaler = 1;
+-	iic_glitch_width = HW_GLITCH_WIDTH * clock / 100000000;	/* in uS */
++	iic_glitch_width = HW_GLITCH_WIDTH * clock / 100000000; /* width in uS */
+ 	iic_glitch_width_dataout = 1;
+ 	iic_prescaler_dataout = clock / 10000000;
+ 
+-/*  This should work, but causes lock-up after repstart
+-    iic_prescaler = clock / 10000000;
+-    iic_glitch_width = HW_GLITCH_WIDTH;
+-    iic_glitch_width_dataout = 1;
+-    iic_prescaler_dataout = clock / 10000000;
+-    printk("*** iic_prescaler = %d *** \n", iic_prescaler);
+-*/
+-
+ 	ssc_store32(adap, SSC_PRSCALER, iic_prescaler);
+ 	ssc_store32(adap, SSC_NOISE_SUPP_WIDTH, iic_glitch_width);
+-	ssc_store32(adap, SSC_NOISE_SUPP_WIDTH_DATAOUT,
+-		    iic_glitch_width_dataout);
++	ssc_store32(adap, SSC_NOISE_SUPP_WIDTH_DATAOUT, iic_glitch_width_dataout);
+ 	ssc_store32(adap, SSC_PRSCALER_DATAOUT, iic_prescaler_dataout);
+-#else
+-	/* disable SSC glitch filter */
+-	ssc_store32(adap, SSC_NOISE_SUPP_WIDTH, 0);
+ #endif
+ 
++	ssc_store32(adap, SSC_I2C, SSC_I2C_I2CM);
++	ssc_store32(adap, SSC_BRG, iic_baudrate);
++
+ #ifdef  CONFIG_I2C_DEBUG_BUS
+ 	iic_stm_timing_trace(adap);
+ #endif
+@@ -1041,20 +860,20 @@
+ }
+ 
+ static int iic_stm_control(struct i2c_adapter *adapter,
+-			   unsigned int cmd, unsigned long arg)
++				unsigned int cmd, unsigned long arg)
+ {
+ 	struct iic_ssc *iic_adap =
+ 	    container_of(adapter, struct iic_ssc, adapter);
+ 	switch (cmd) {
+ 	case I2C_STM_IOCTL_FAST:
+-		dbg_print("ioctl fast 0x%lx\n", arg);
++		dgb_print("ioctl fast 0x%x\n",arg);
+ 		iic_adap->config &= ~IIC_STM_CONFIG_SPEED_MASK;
+ 		if (arg)
+-			iic_adap->config |= IIC_STM_CONFIG_SPEED_FAST;
++			iic_adap->config |=
++			    IIC_STM_CONFIG_SPEED_FAST;
+ 		break;
+ 	default:
+-		printk(KERN_WARNING " %s: i2c-ioctl not managed\n",
+-		       __FUNCTION__);
++		printk(KERN_WARNING" %s: i2c-ioctl not managed\n",__FUNCTION__);
+ 	}
+ 	return 0;
+ }
+@@ -1065,138 +884,105 @@
+ }
+ 
+ static struct i2c_algorithm iic_stm_algo = {
+-	.master_xfer = iic_stm_xfer,
++	.master_xfer   = iic_stm_xfer,
+ 	.functionality = iic_stm_func,
+-	.algo_control = iic_stm_control
++	.algo_control  = iic_stm_control
+ };
+ 
+ static ssize_t iic_bus_show_fastmode(struct device *dev,
+-				     struct device_attribute *attr, char *buf)
++				      struct device_attribute *attr, char *buf)
+ {
+-	struct i2c_adapter *adapter =
+-	    container_of(dev, struct i2c_adapter, dev);
+-	struct iic_ssc *iic_stm =
+-	    container_of(adapter, struct iic_ssc, adapter);
+-	return sprintf(buf, "%u\n", check_fastmode(iic_stm));
++	struct i2c_adapter *adapter = container_of(dev, struct i2c_adapter, dev);
++	struct iic_ssc     *iic_stm = container_of(adapter,struct iic_ssc,adapter);
++	return sprintf(buf, "%u\n",check_fastmode(iic_stm));
+ }
+ 
+-static ssize_t iic_bus_store_fastmode(struct device *dev,
+-				      struct device_attribute *attr,
+-				      const char *buf, size_t count)
++static ssize_t iic_bus_store_fastmode(struct device *dev,struct device_attribute *attr,
++			 const char *buf,size_t count)
+ {
+-	struct i2c_adapter *adapter =
+-	    container_of(dev, struct i2c_adapter, dev);
++	struct i2c_adapter *adapter = container_of(dev, struct i2c_adapter, dev);
+ 	unsigned long val = simple_strtoul(buf, NULL, 10);
+ 
+-	iic_stm_control(adapter, I2C_STM_IOCTL_FAST, val);
++	iic_stm_control(adapter,I2C_STM_IOCTL_FAST,val);
+ 
+ 	return count;
+ }
+ 
+ static DEVICE_ATTR(fastmode, S_IRUGO | S_IWUSR, iic_bus_show_fastmode,
+-		   iic_bus_store_fastmode);
++			iic_bus_store_fastmode);
+ 
+ static int __init iic_stm_probe(struct platform_device *pdev)
+ {
+ 	struct ssc_pio_t *pio_info =
+-	    (struct ssc_pio_t *)pdev->dev.platform_data;
++			(struct ssc_pio_t *)pdev->dev.platform_data;
+ 	struct iic_ssc *i2c_stm;
+ 	struct resource *res;
+ 
+-	i2c_stm = devm_kzalloc(&pdev->dev, sizeof(struct iic_ssc), GFP_KERNEL);
++	i2c_stm = devm_kzalloc(&pdev->dev,sizeof(struct iic_ssc), GFP_KERNEL);
+ 
+ 	if (!i2c_stm)
+ 		return -ENOMEM;
+ 
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	if (!res)
++	if (!(res=platform_get_resource(pdev, IORESOURCE_MEM, 0)))
+ 		return -ENODEV;
+-
+-	if (!devm_request_mem_region
+-	    (&pdev->dev, res->start, res->end - res->start, "i2c")) {
+-		printk(KERN_ERR "%s: Request mem 0x%x region not done\n",
+-		       __FUNCTION__, res->start);
++	if (!devm_request_mem_region(&pdev->dev, res->start, res->end - res->start, "i2c")){
++		printk(KERN_ERR "%s: Request mem 0x%x region not done\n",__FUNCTION__,res->start);
+ 		return -ENOMEM;
+ 	}
+ 	if (!(i2c_stm->base =
+-	      devm_ioremap_nocache(&pdev->dev, res->start,
+-				   res->end - res->start))) {
+-		printk(KERN_ERR "%s: Request iomem 0x%x region not done\n",
+-		       __FUNCTION__, (unsigned int)res->start);
++		devm_ioremap_nocache(&pdev->dev, res->start, res->end - res->start))){
++		printk(KERN_ERR "%s: Request iomem 0x%x region not done\n",__FUNCTION__,
++			(unsigned int)res->start);
+ 		return -ENOMEM;
+ 	}
+-
+-	res = platform_get_resource(pdev, IORESOURCE_IRQ, 0);
+-	if (!res) {
+-		printk(KERN_ERR "%s Request irq %d not done\n", __FUNCTION__,
+-		       res->start);
++	if (!(res=platform_get_resource(pdev, IORESOURCE_IRQ, 0))){
++		printk(KERN_ERR "%s Request irq %d not done\n",__FUNCTION__,res->start);
+ 		return -ENODEV;
+ 	}
+-	if (devm_request_irq(&pdev->dev, res->start, iic_state_machine,
+-			     IRQF_DISABLED, "i2c", i2c_stm) < 0) {
+-		printk(KERN_ERR "%s: Request irq not done\n", __FUNCTION__);
++	if(devm_request_irq(&pdev->dev, res->start, iic_state_machine,
++		IRQF_DISABLED, "i2c", i2c_stm)<0){
++		printk(KERN_ERR "%s: Request irq not done\n",__FUNCTION__);
+ 		return -ENODEV;
+ 	}
+ 
+-	/* Check if we use GPIO... */
+-	if (pio_info->pio[0].pio_port == SSC_NO_PIO)
++	if(pio_info->pio[0].pio_port==0xff) /* this means it doesn't use GPIO */
+ 		goto i2c_hard_wired;
+ 
+-	if (pio_info->clk_unidir) {
+-		/* Drive clock rather than using open collector.  Setting to
+-		 * BIDIR can help if there are problems with SCK rise times.
+-		 * It does mean, however, that slaves cannot clock stretch.
+-		 */
+-		pio_info->clk = stpio_request_set_pin(pio_info->pio[0].pio_port,
+-						      pio_info->pio[0].pio_pin,
+-						      "I2C Clock",
+-						      STPIO_ALT_OUT, 1);
+-	} else {
+-		pio_info->clk = stpio_request_set_pin(pio_info->pio[0].pio_port,
+-						      pio_info->pio[0].pio_pin,
+-						      "I2C Clock",
+-						      STPIO_ALT_BIDIR, 1);
+-	}
+-
+-	if (!pio_info->clk) {
+-		printk(KERN_ERR
+-		       "i2c-stm: %s: Failed to get clk pin allocation\n",
+-		       __FUNCTION__);
++	pio_info->clk = stpio_request_set_pin(pio_info->pio[0].pio_port,
++					  pio_info->pio[0].pio_pin,
++				"I2C Clock", STPIO_ALT_BIDIR, 1);
++	if(!pio_info->clk){
++		printk(KERN_ERR "i2c-stm: %s: Failed to get clk pin allocation\n",__FUNCTION__);
+ 		return -ENODEV;
+ 	}
+ 
+ 	pio_info->sdout = stpio_request_set_pin(pio_info->pio[1].pio_port,
+-						pio_info->pio[1].pio_pin,
+-						"I2C Data", STPIO_ALT_BIDIR, 1);
+-	if (!pio_info->sdout) {
+-		printk(KERN_ERR "%s: Faild to sda pin allocation\n",
+-		       __FUNCTION__);
++					    pio_info->pio[1].pio_pin,
++				"I2C Data", STPIO_ALT_BIDIR, 1);
++	if(!pio_info->sdout){
++		printk(KERN_ERR "%s: Faild to sda pin allocation\n",__FUNCTION__);
+ 		return -ENODEV;
+ 	}
+ 
+ i2c_hard_wired:
+ 	pdev->dev.driver_data = i2c_stm;
+ 	i2c_stm->adapter.id = I2C_HW_STM_SSC;
+-	i2c_stm->adapter.timeout = 2;
+-	i2c_stm->adapter.retries = 0;
+-	i2c_stm->adapter.class = I2C_CLASS_ALL;
+-	sprintf(i2c_stm->adapter.name, "i2c-hw-%d", pdev->id);
++	i2c_stm->adapter.timeout = 1000; //1000 jiffies: on ST with HZ=1000 this is 1s.
++	i2c_stm->adapter.class   = I2C_CLASS_ALL;
++	sprintf(i2c_stm->adapter.name,"i2c-hw-%d",pdev->id);
+ 	i2c_stm->adapter.nr = pdev->id;
+ 	i2c_stm->adapter.algo = &iic_stm_algo;
+ 	i2c_stm->adapter.dev.parent = &(pdev->dev);
+-	iic_stm_setup_timing(i2c_stm, clk_get_rate(clk_get(NULL, "comms_clk")));
++	iic_stm_setup_timing(i2c_stm,clk_get_rate(clk_get(NULL,"comms_clk")));
+ 	init_waitqueue_head(&(i2c_stm->wait_queue));
+ 	i2c_stm->pio_info = pio_info;
+ 	if (i2c_add_numbered_adapter(&(i2c_stm->adapter)) < 0) {
+ 		printk(KERN_ERR
+-		       "%s: The I2C Core refuses the i2c/stm adapter\n",
+-		       __FUNCTION__);
++		       "%s: The I2C Core refuses the i2c/stm adapter\n",__FUNCTION__);
+ 		return -ENODEV;
+ 	} else {
+-		if (device_create_file
+-		    (&(i2c_stm->adapter.dev), &dev_attr_fastmode))
+-			printk(KERN_ERR
+-			       "i2c-stm: cannot create fastmode sysfs entry\n");
++		if (device_create_file(&(i2c_stm->adapter.dev), &dev_attr_fastmode))
++			printk(KERN_ERR "i2c-stm: cannot create fastmode sysfs entry\n");
+ 	}
+ 	return 0;
+ 
+@@ -1205,18 +991,18 @@
+ static int iic_stm_remove(struct platform_device *pdev)
+ {
+ 	struct resource *res;
+-	struct iic_ssc *iic_stm = pdev->dev.driver_data;
++	struct iic_ssc *iic_stm = pdev->dev.driver_data ;
+ 	struct ssc_pio_t *pio_info =
+-	    (struct ssc_pio_t *)pdev->dev.platform_data;
++			(struct ssc_pio_t *)pdev->dev.platform_data;
+ 
+ 	i2c_del_adapter(&iic_stm->adapter);
+ 	/* irq */
+-	res = platform_get_resource(pdev, IORESOURCE_IRQ, 0);
++	res=platform_get_resource(pdev, IORESOURCE_IRQ, 0);
+ 	devm_free_irq(&pdev->dev, res->start, iic_stm);
+ 	/* mem */
+ 	devm_iounmap(&pdev->dev, iic_stm->base);
+ 	/* pio */
+-	if (pio_info->clk) {
++	if(pio_info->clk){
+ 		stpio_free_pin(pio_info->clk);
+ 		stpio_free_pin(pio_info->sdout);
+ 	}
+@@ -1226,17 +1012,17 @@
+ }
+ 
+ #ifdef CONFIG_PM
+-static int iic_stm_suspend(struct platform_device *pdev, pm_message_t state)
++static int iic_stm_suspend(struct platform_device *pdev,pm_message_t state)
+ {
+ 	struct iic_ssc *i2c_bus = pdev->dev.driver_data;
+-	ssc_store32(i2c_bus, SSC_IEN, 0);
+-	ssc_store32(i2c_bus, SSC_CTL, 0);
++	ssc_store32(i2c_bus, SSC_IEN,0);
++	ssc_store32(i2c_bus, SSC_CTL,0);
+ 	return 0;
+ }
+ static int iic_stm_resume(struct platform_device *pdev)
+ {
+-	struct iic_ssc *i2c_bus = pdev->dev.driver_data;
+-	iic_stm_setup_timing(i2c_bus, clk_get_rate(clk_get(NULL, "comms_clk")));
++	struct iic_ssc *i2c_bus =pdev->dev.driver_data;
++	iic_stm_setup_timing(i2c_bus, clk_get_rate(clk_get(NULL,"comms_clk")));
+ 	return 0;
+ }
+ #else
+@@ -1245,14 +1031,15 @@
+ #endif
+ 
+ static struct platform_driver i2c_stm_driver = {
+-	.driver.name = "i2c_st",
+-	.driver.owner = THIS_MODULE,
+-	.probe = iic_stm_probe,
++        .driver.name = "i2c_st",
++        .driver.owner = THIS_MODULE,
++        .probe = iic_stm_probe,
+ 	.remove = iic_stm_remove,
+ 	.suspend = iic_stm_suspend,
+-	.resume = iic_stm_resume,
++	.resume  = iic_stm_resume,
+ };
+ 
++
+ static int __init iic_stm_init(void)
+ {
+ 	platform_driver_register(&i2c_stm_driver);
+--- linux-2.6.23/drivers/i2c/busses/Kconfig.118	2009-02-05 10:54:22.000000000 +0100
++++ linux-2.6.23/drivers/i2c/busses/Kconfig	2009-02-05 10:52:42.000000000 +0100
+@@ -711,4 +711,11 @@
+         int "Glitch suppression width in uS"
+         default "1"
+ 
++config  I2C_STM_NOSTOP_API
++	bool "I2C add the NoStop operation API"
++	depends on I2C_ST40_PIO || I2C_STM
++	default n
++	---help---
++	  Enable this option to use the NoStop operation API
++
+ endmenu
+--- linux-2.6.23/drivers/i2c/algos/i2c-algo-bit.c.118	2007-10-09 22:31:38.000000000 +0200
++++ linux-2.6.23/drivers/i2c/algos/i2c-algo-bit.c	2009-02-05 10:52:42.000000000 +0100
+@@ -45,6 +45,18 @@
+ 	do {} while (0)
+ #endif /* DEBUG */
+ 
++#ifdef CONFIG_I2C_STM_NOSTOP_API
++#define LAST_I2C_WAS_NO_STOP                   0x1
++#define check_lasti2cwas_nostop(adap)          (((adap)->config & \
++                                                       LAST_I2C_WAS_NO_STOP) ? 1 : 0)
++#define set_lasti2cwas_nostop(adap)     ((adap)->config |=  LAST_I2C_WAS_NO_STOP)
++#define clear_lasti2cwas_nostop(adap)   ((adap)->config &= ~LAST_I2C_WAS_NO_STOP)
++#else
++#define check_lasti2cwas_nostop(adap)          (1==0)
++#define set_lasti2cwas_nostop(adap)            {}
++#define clear_lasti2cwas_nostop(adap)          {}
++#endif
++
+ /* ----- global variables ---------------------------------------------	*/
+ 
+ static int bit_test;	/* see if the line-setting functions work	*/
+@@ -148,6 +160,7 @@
+ 	sclhi(adap); 
+ 	setsda(adap, 1);
+ 	udelay(adap->udelay);
++	clear_lasti2cwas_nostop(adap);
+ }
+ 
+ 
+@@ -498,8 +511,14 @@
+ 	int i,ret;
+ 	unsigned short nak_ok;
+ 
++	if(check_lasti2cwas_nostop(adap)){
++		bit_dbg(3, &i2c_adap->dev, "emitting repstart condition\n");
++		clear_lasti2cwas_nostop(adap);
++		i2c_repstart(adap);
++	} else {
+ 	bit_dbg(3, &i2c_adap->dev, "emitting start condition\n");
+ 	i2c_start(adap);
++	}
+ 	for (i=0;i<num;i++) {
+ 		pmsg = &msgs[i];
+ 		nak_ok = pmsg->flags & I2C_M_IGNORE_NAK; 
+@@ -544,6 +563,8 @@
+ 	ret = i;
+ 
+ bailout:
++	if ((pmsg->flags & I2C_M_NOSTOP) && ret>=0) /* if !error and last message is NoStop */
++		return ret;
+ 	bit_dbg(3, &i2c_adap->dev, "emitting stop condition\n");
+ 	i2c_stop(adap);
+ 	return ret;
+--- linux-2.6.23/include/linux/i2c-algo-bit.h.118	2007-10-09 22:31:38.000000000 +0200
++++ linux-2.6.23/include/linux/i2c-algo-bit.h	2009-02-05 10:52:42.000000000 +0100
+@@ -43,6 +43,9 @@
+ 				   minimum 5 us for standard-mode I2C and SMBus,
+ 				   maximum 50 us for SMBus */
+ 	int timeout;		/* in jiffies */
++#if defined(CONFIG_I2C_STM_NOSTOP_API)
++	int config;
++#endif
+ };
+ 
+ int i2c_bit_add_bus(struct i2c_adapter *);
+--- linux-2.6.23/include/linux/i2c.h.118	2009-02-05 10:54:28.000000000 +0100
++++ linux-2.6.23/include/linux/i2c.h	2009-02-05 10:52:42.000000000 +0100
+@@ -450,14 +450,14 @@
+ struct i2c_msg {
+ 	__u16 addr;	/* slave address			*/
+ 	__u16 flags;
+-#define I2C_M_RD		0x0001
+-#define I2C_M_TEN		0x0010 /* we have a ten bit chip address */
+-#define I2C_M_RECV_LEN		0x0400 /* length will be first received byte */
+-#define I2C_M_NO_RD_ACK		0x0800
+-#define I2C_M_IGNORE_NAK	0x1000
++#define I2C_M_TEN	0x10	/* we have a ten bit chip address	*/
++#define I2C_M_RD	0x01
++#define I2C_M_NOSTART	0x4000
++#define I2C_M_NOSTOP	0x8000 	/* STMicroelectronics specific to support NoStop */
+ #define I2C_M_REV_DIR_ADDR	0x2000
+-#define I2C_M_NOSTART		0x4000
+-#define I2C_M_NOREPSTART	0x8000
++#define I2C_M_IGNORE_NAK	0x1000
++#define I2C_M_NO_RD_ACK		0x0800
++#define I2C_M_RECV_LEN		0x0400 /* length will be first received byte */
+ 	__u16 len;		/* msg length				*/
+ 	__u8 *buf;		/* pointer to msg data			*/
+ };

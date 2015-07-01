@@ -1,0 +1,20 @@
+This package was debianized by Cameron Patrick <cameron@patrick.wattle.id.au>
+Tue, 13 Jul 2004 15:40:06 +0800.
+Martin F. Krafft <madduck@debian.org> took over on
+Mon, 04 Jun 2006 11:19:25 +0200.
+
+The source code was downloaded from http://www.suspend2.net/downloads/all
+
+Upstream author: <s>Bernard Blackham <bernard@blackham.com.au></s>
+
+Copyright © 2004-2006 <s>Bernard Blackham <bernard@blackham.com.au></s>
+Packaging copyright © 2004-2006 <s>Cameron Patrick <cameron@patrick.wattle.id.au></s>
+Packaging copyright © 2006- <s>Martin F. Krafft <madduck@debian.org></s>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in '/usr/share/common-licenses/GPL'.

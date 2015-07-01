@@ -1,0 +1,4 @@
+licenses:
+    - openssl
+template: yes
+notes: open ssl partial text

@@ -1,0 +1,17 @@
+key: cddl-1.1
+short_name: CDDL 1.1
+name: >-
+    Common Development and Distribution License 1.1
+category: Copyleft Limited
+owner: Oracle Corporation
+homepage_url: http://glassfish.java.net/public/CDDL+GPL_1_1.html
+spdx_license_key: CDDL-1.1
+spdx_full_name: >-
+    Common Development and Distribution License 1.1
+spdx_url: http://spdx.org/licenses/CDDL-1.1
+spdx_notes: >-
+    Same as 1.0, but changes name from Sun to Oracle in section 4.1 and adds patent
+    infringement termination clause (section 6.3)
+text_urls:
+    - http://glassfish.java.net/public/CDDL+GPL_1_1.html
+faq_url: http://glassfish.java.net/public/CDDL+GPL_1_1.html

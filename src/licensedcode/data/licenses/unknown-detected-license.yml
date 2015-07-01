@@ -1,0 +1,5 @@
+key: unknown-detected-license
+short_name: unknown
+name: >-
+    License information detected, but not recognized
+category: Unstated License

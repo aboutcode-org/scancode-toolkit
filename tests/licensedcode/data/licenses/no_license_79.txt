@@ -1,0 +1,264 @@
+
+
+
+dhclient(8)                                           dhclient(8)
+
+
+NNAAMMEE
+       dhclient - Dynamic Host Configuration Protocol Client
+
+SSYYNNOOPPSSIISS
+       ddhhcclliieenntt  [  --pp  _p_o_r_t  ] [ --dd ] [ --DD ] [ --qq ] [ --cc ] [ --llff
+       _l_e_a_s_e_-_f_i_l_e ] [ --ppff _p_i_d_-_f_i_l_e ] [ --ccff  _c_o_n_f_i_g_-_f_i_l_e  ]  [  --ss
+       server ] [ --ww ] [ _i_f_0 [ _._._._i_f_N ] ]
+
+DDEESSCCRRIIPPTTIIOONN
+       The  Internet  Software  Consortium DHCP Client, dhclient,
+       provides a means  for  configuring  one  or  more  network
+       interfaces  using the Dynamic Host Configuration Protocol,
+       BOOTP protocol, or if these protocols fail, by  statically
+       assigning an address.
+
+OOPPEERRAATTIIOONN
+       The  DHCP  protocol  allows  a  host  to contact a central
+       server which maintains a list of IP addresses which may be
+       assigned  on  one  or  more  subnets.    A DHCP client may
+       request an address from this pool, and then use  it  on  a
+       temporary  basis  for communication on network.   The DHCP
+       protocol also provides a mechanism whereby  a  client  can
+       learn  important  details about the network to which it is
+       attached, such as the location of a  default  router,  the
+       location of a name server, and so on.
+
+       On  startup, dhclient reads the _d_h_c_l_i_e_n_t_._c_o_n_f for configu­
+       ration instructions.   It then gets a list of all the net­
+       work interfaces that are configured in the current system.
+       For each interface, it attempts to configure the interface
+       using the DHCP protocol.
+
+       In order to keep track of leases across system reboots and
+       server restarts, dhclient keeps a list of  leases  it  has
+       been   assigned   in  the  dhclient.leases(5)  file.    On
+       startup, after reading the  dhclient.conf  file,  dhclient
+       reads the dhclient.leases file to refresh its memory about
+       what leases it has been assigned.
+
+       When a new lease is acquired, it is appended to the end of
+       the  dhclient.leases  file.   In order to prevent the file
+       from  becoming  arbitrarily  large,  from  time  to   time
+       dhclient  creates  a new dhclient.leases file from its in-
+       core   lease   database.    The   old   version   of   the
+       dhclient.leases   file   is   retained   under   the  name
+       _d_h_c_l_i_e_n_t_._l_e_a_s_e_s_~ until the next time dhclient rewrites the
+       database.
+
+       Old  leases  are  kept  around  in case the DHCP server is
+       unavailable when dhclient is first invoked (generally dur­
+       ing the initial system boot process).   In that event, old
+       leases from the dhclient.leases file which  have  not  yet
+       expired  are  tested,  and  if  they  are determined to be
+       valid, they are used until either they expire or the  DHCP
+
+
+
+                                                                1
+
+
+
+
+
+dhclient(8)                                           dhclient(8)
+
+
+       server becomes available.
+
+       A mobile host which may sometimes need to access a network
+       on which no DHCP server exists may  be  preloaded  with  a
+       lease  for  a  fixed  address  on that network.   When all
+       attempts to contact a DHCP server  have  failed,  dhclient
+       will try to validate the static lease, and if it succeeds,
+       will use that lease until it is restarted.
+
+       A mobile host may also travel to some  networks  on  which
+       DHCP is not available but BOOTP is.   In that case, it may
+       be advantageous to arrange with the network  administrator
+       for  an  entry on the BOOTP database, so that the host can
+       boot quickly on that network rather than  cycling  through
+       the list of old leases.
+
+CCOOMMMMAANNDD LLIINNEE
+       The  names  of the network interfaces that dhclient should
+       attempt to configure may be specified on the command line.
+       If  no  interface  names are specified on the command line
+       dhclient will normally identify  all  network  interfaces,
+       elimininating  non-broadcast  interfaces  if possible, and
+       attempt to configure each interface.
+
+       It is also possible to specify interfaces by name  in  the
+       ddhhcclliieenntt..ccoonnff((55))  file.    If  interfaces are specified in
+       this way, then the client will only  configure  interfaces
+       that  are either specified in the configuration file or on
+       the command line, and will ignore all other interfaces.
+
+       If the DHCP client should listen and transmit  on  a  port
+       other  than  the standard (port 68), the --pp flag may used.
+       It should be followed by the udp port number that dhclient
+       should use.  This is mostly useful for debugging purposes.
+       If a different port is specified for the client to  listen
+       on  and  transmit on, the client will also use a different
+       destination port - one greater than the specified destina­
+       tion port.
+
+       The  DHCP  client normally transmits any protocol messages
+       it   sends   before   acquiring   an   IP   address    to,
+       255.255.255.255,  the  IP limited broadcast address.   For
+       debugging purposes, it may be useful to  have  the  server
+       transmit  these messages to some other address.   This can
+       be specified with the --ss flag, followed by the IP  address
+       or domain name of the destination.
+
+       The  DHCP client will normally run in the foreground until
+       it has configured an interface, and then  will  revert  to
+       running  in  the  background.    To  run force dhclient to
+       always run as a foreground process, the --dd flag should  be
+       specified.  This is useful when running the client under a
+       debugger, or when running it out of inittab  on  System  V
+       systems.
+
+
+
+                                                                2
+
+
+
+
+
+dhclient(8)                                           dhclient(8)
+
+
+       The  client  writes  a  temporary shell script whenever it
+       invokes dhclient-script.   This script is normally deleted
+       after  the  client runs, but it can be helpful when debug­
+       ging the client script to see what the client wrote.   The
+       client  can  be  configured not to delete these scripts by
+       specifying the --DD flag.
+
+       The client normally prints a startup message and  displays
+       the  protocol  sequence  to  the standard error descriptor
+       until it has acquired an address, and then only logs  mes­
+       sages  using  the  ssyysslloogg ((33)) facility.   The --qq flag pre­
+       vents any messages other than errors from being printed to
+       the standard error descriptor.
+
+       The  DHCP  client normally gets its configuration informa­
+       tion from  //eettcc//ddhhcclliieenntt..ccoonnff,,  its  lease  database  from
+       //vvaarr//ddbb//ddhhcclliieenntt..lleeaasseess  and  stores  its  process ID in a
+       file called //vvaarr//rruunn//ddhhcclliieenntt..ppiidd..  To  specify  different
+       names  and/or  locations for these files, use the --ccff,, --llff
+       and --ppff flags, respectively, followed by the name  of  the
+       file.    This  can be particularly useful if, for example,
+       //vvaarr//ddbb or //vvaarr//rruunn has not yet been mounted when the DHCP
+       client is started.
+
+       The  DHCP  client normally exits if it isn't able to iden­
+       tify any network interfaces to configure.   On laptop com­
+       puters  and  other computers with hot-swappable I/O buses,
+       it is possible that a broadcast  interface  may  be  added
+       after  system  startup.   The --ww flag can be used to cause
+       the client not to exit  when  it  doesn't  find  any  such
+       interfaces.    The ddhhccppccccpp ((88)) program can then be used to
+       notify the client when a network interface has been  added
+       or removed, so that the client can configure an IP address
+       on that interface.
+
+CCOONNFFIIGGUURRAATTIIOONN
+       The syntax  of  the  dhclient.conf(8)  file  is  discussed
+       seperately.
+
+FFIILLEESS
+       //eettcc//ddhhcclliieenntt..ccoonnff,,               //vvaarr//ddbb//ddhhcclliieenntt..lleeaasseess,,
+       //vvaarr//rruunn//ddhhcclliieenntt..ppiidd,, //vvaarr//ddbb//ddhhcclliieenntt..lleeaasseess~~..
+
+SSEEEE AALLSSOO
+       dhcpd(8),          dhcrelay(8),          dhclient.conf(5),
+       dhclient.leases(5)
+
+AAUUTTHHOORR
+       ddhhcclliieenntt((88))  has  been  written  for the Internet Software
+       Consortium by Ted Lemon <mellon@fugue.com> in  cooperation
+       with  Vixie Enterprises.  To learn more about the Internet
+       Software Consortium, see hhttttpp::////wwwwww..vviixx..ccoomm//iisscc..  To learn
+       more about Vixie Enterprises, see hhttttpp::////wwwwww..vviixx..ccoomm..
+
+
+
+
+                                                                3
+
+
+
+
+
+dhclient(8)                                           dhclient(8)
+
+
+       This  client  was  substantially  modified and enhanced by
+       Elliot Poger for use on Linux while he was working on  the
+       MosquitoNet project at Stanford.
+
+       The  current  version owes much to Elliot's Linux enhance­
+       ments, but was  substantially  reorganized  and  partially
+       rewritten  by  Ted  Lemon so as to use the same networking
+       framework  that  the  Internet  Software  Consortium  DHCP
+       server uses.   Much system-specific configuration code was
+       moved into a shell script so  that  as  support  for  more
+       operating  systems  is  added, it will not be necessary to
+       port and maintain system-specific  configuration  code  to
+       these  operating  systems  - instead, the shell script can
+       invoke the native tools to accomplish the same purpose.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                4
+
+

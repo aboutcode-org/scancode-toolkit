@@ -1,0 +1,8 @@
+BlueZ D-Bus Audio API description
+*********************************
+
+Copyright (C) 2004-2010  Marcel Holtmann <marcel@holtmann.org>
+Copyright (C) 2005-2007  Johan Hedberg <johan.hedberg@nokia.com>
+Copyright (C) 2005-2006  Brad Midgley <bmidgley@xmission.com>
+
+Audio hierarchy

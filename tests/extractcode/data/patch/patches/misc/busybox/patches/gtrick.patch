@@ -1,0 +1,18 @@
+Index: busybox-1.13.3/editors/awk.c
+===================================================================
+--- busybox-1.13.3.orig/editors/awk.c
++++ busybox-1.13.3/editors/awk.c
+@@ -448,8 +448,13 @@ struct globals2 {
+ 	/* biggest and least used members go last */
+ 	tsplitter fsplitter, rsplitter;
+ };
++#ifdef __BCM74XX__
++struct globals G1;
++struct globals2 G;
++#else
+ #define G1 (ptr_to_globals[-1])
+ #define G (*(struct globals2 *)ptr_to_globals)
++#endif
+ /* For debug. nm --size-sort awk.o | grep -vi ' [tr] ' */
+ /*char G1size[sizeof(G1)]; - 0x74 */
+ /*char Gsize[sizeof(G)]; - 0x1c4 */

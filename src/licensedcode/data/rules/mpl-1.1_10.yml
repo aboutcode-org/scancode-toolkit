@@ -1,0 +1,5 @@
+licenses:
+    - mpl-1.1
+notes: >-
+    No version is provided: the MPL 1.1 is as good a candidate as any other. In contrast
+    with the GPL there is no notion of an MPL without version.

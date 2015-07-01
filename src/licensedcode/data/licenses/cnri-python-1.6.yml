@@ -1,0 +1,16 @@
+key: cnri-python-1.6
+short_name: CNRI Python 1.6
+name: >-
+    CNRI Open Source License Agreement for Python 1.6
+category: Attribution
+owner: CNRI
+homepage_url: http://www.handle.net/python_licenses/python1.6_9-5-00.html
+spdx_license_key: CNRI-Python
+spdx_full_name: CNRI Python License
+spdx_url: http://spdx.org/licenses/CNRI-Python
+spdx_notes: >-
+    CNRI portion of the multi-part Python License (Python-2.0)
+text_urls:
+    - http://www.handle.net/python_licenses/python1.6_9-5-00.html
+other_urls:
+    - http://spdx.org/licenses/CNRI-Python

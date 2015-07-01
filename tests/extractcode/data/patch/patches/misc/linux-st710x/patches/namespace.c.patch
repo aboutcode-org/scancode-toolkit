@@ -1,0 +1,11 @@
+--- linux-2.6.23-orig/fs/namespace.c	2009-05-18 13:59:13.000000000 +0200
++++ linux-2.6.23/fs/namespace.c	2009-05-19 12:40:17.000000000 +0200
+@@ -1827,7 +1827,7 @@
+ 	nr_hash = 1UL << hash_bits;
+ 	hash_mask = nr_hash - 1;
+ 
+-	printk("Mount-cache hash table entries: %d\n", nr_hash);
++	printk(KERN_DEBUG "Mount-cache hash table entries: %d\n", nr_hash);
+ 
+ 	/* And initialize the newly allocated array */
+ 	d = mount_hashtable;

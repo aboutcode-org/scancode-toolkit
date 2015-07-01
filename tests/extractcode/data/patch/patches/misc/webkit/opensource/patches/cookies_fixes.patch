@@ -1,0 +1,46 @@
+Index: src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
+===================================================================
+--- src.orig/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
++++ src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
+@@ -318,6 +318,14 @@ static size_t headerCallback(char* ptr, 
+                 header.left(separatorIndex),
+                 header.substring(separatorIndex + 1).stripWhiteSpace());
+ 
++        KURL cookieUrl;
++        if (d->m_url.isEmpty()) {
++            cookieUrl = job->request().url();
++        }
++        else {
++            cookieUrl = d->m_url.utf8().data();
++        }
++
+         if (strncmp(ptr, "Set-Cookie: ", sizeof("Set-Cookie: ") - 1) == 0) {
+             ekioh::EKString cookieStr(ptr + sizeof("Set-Cookie: ") - 1,
+                                       totalSize - sizeof("Set-Cookie: ") - 1);
+@@ -629,17 +637,18 @@ void ResourceHandleManager::startJob(Res
+ 
+     setProxy(job->request(), d->m_handle);
+ 
+-    String cs = cookies(0, d->m_url);
+-    if (cs.length() > 0) {
+-      curl_easy_setopt(d->m_handle, CURLOPT_COOKIE, cs.deprecatedString().ascii());
++    KURL cookieUrl;
++    if (d->m_url.isEmpty()) {
++        cookieUrl = job->request().url();
++    }
++    else {
++        cookieUrl = d->m_url.utf8().data();
+     }
+ 
+-#if 0
+-    if (m_cookieJarFileName) {
+-        curl_easy_setopt(d->m_handle, CURLOPT_COOKIEFILE, m_cookieJarFileName);
+-        curl_easy_setopt(d->m_handle, CURLOPT_COOKIEJAR, m_cookieJarFileName);
++    String cs = cookies(0, cookieUrl);
++    if (cs.length() > 0) {
++      curl_easy_setopt(d->m_handle, CURLOPT_COOKIE, cs.deprecatedString().ascii());
+     }
+-#endif
+ 
+     if (job->request().httpHeaderFields().size() > 0) {
+         struct curl_slist* headers = 0;

@@ -1,0 +1,8 @@
+key: mpeg-iso
+short_name: MPEG-2 NBC MPEG-4 Audio ISO
+name: MPEG-2 NBC MPEG-4 Audio ISO License
+category: Attribution
+owner: >-
+    ISO - International Organization for Standardization
+text_urls:
+    - http://faac.cvs.sourceforge.net/viewvc/faac/faad/libfaad/config.c

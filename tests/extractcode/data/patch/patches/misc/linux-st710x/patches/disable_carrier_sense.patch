@@ -1,0 +1,109 @@
+From deeb9b091f2561c8839b54d1ddca9615587d4d45 Mon Sep 17 00:00:00 2001
+From: root <root@ubuntu.localdomain>
+Date: Sun, 26 Apr 2009 12:01:21 +0200
+Subject: [PATCH] stmmac: disable CRS during the transmission if fail on loss carrier errors.
+
+Disable carrier sense during the transmission if fail on loss carrier errors.
+See Bugzilla [Bug 6127].
+
+Signed-off-by: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+---
+ drivers/net/stmmac/common.h      |    3 ++-
+ drivers/net/stmmac/gmac.c        |   15 ++++++++++++++-
+ drivers/net/stmmac/mac100.c      |    3 ++-
+ drivers/net/stmmac/stmmac_main.c |    4 ++--
+ 4 files changed, 20 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/net/stmmac/common.h b/drivers/net/stmmac/common.h
+index 5525861..f422af7 100644
+--- a/drivers/net/stmmac/common.h
++++ b/drivers/net/stmmac/common.h
+@@ -235,7 +235,8 @@ struct device_ops {
+ 	int (*get_rx_frame_len) (struct dma_desc *p);
+ 	/* Return the transmit status looking at the TDES1 */
+ 	int (*tx_status) (void *data, struct stmmac_extra_stats *x,
+-			  struct dma_desc *p, unsigned long ioaddr);
++			  struct dma_desc *p, unsigned long ioaddr,
++			  unsigned int duplex);
+ 	/* Return the reception status looking at the RDES1 */
+ 	int (*rx_status) (void *data, struct stmmac_extra_stats *x,
+ 			  struct dma_desc *p);
+diff --git a/drivers/net/stmmac/gmac.c b/drivers/net/stmmac/gmac.c
+index ad7d933..7baa470 100644
+--- a/drivers/net/stmmac/gmac.c
++++ b/drivers/net/stmmac/gmac.c
+@@ -162,8 +162,20 @@ static void gmac_dump_dma_regs(unsigned long ioaddr)
+ 	return;
+ }
+ 
++/* Disable carrier sense during the transmission if fail on loss carrier errors.
++ * this shouldn't happen; any way, it can help us on Half Duplex. */
++static void gmac_disable_crs(unsigned long ioaddr, unsigned int duplex)
++{
++	if (!duplex){
++		u32 value = readl(ioaddr + GMAC_CONTROL);
++		value |= GMAC_CONTROL_DCRS;
++		writel(value, ioaddr + GMAC_CONTROL);
++	}
++}
++
+ static int gmac_get_tx_frame_status(void *data, struct stmmac_extra_stats *x,
+-				    struct dma_desc *p, unsigned long ioaddr)
++				    struct dma_desc *p, unsigned long ioaddr,
++				    unsigned int duplex)
+ {
+ 	int ret = 0;
+ 	struct net_device_stats *stats = (struct net_device_stats *)data;
+@@ -185,6 +197,7 @@ static int gmac_get_tx_frame_status(void *data, struct stmmac_extra_stats *x,
+ 			DBG(KERN_ERR "\tloss_carrier error\n");
+ 			x->tx_losscarrier++;
+ 			stats->tx_carrier_errors++;
++			gmac_disable_crs(ioaddr, duplex);
+ 		}
+ 		if (unlikely(p->des01.etx.no_carrier)) {
+ 			DBG(KERN_ERR "\tno_carrier error\n");
+@@ -203,6 +205,7 @@
+ 			DBG(KERN_ERR "\tno_carrier error\n");
+ 			x->tx_carrier++;
+ 			stats->tx_carrier_errors++;
++			gmac_disable_crs(ioaddr, duplex);
+ 		}
+ 		if (unlikely(p->des01.etx.late_collision)) {
+ 			DBG(KERN_ERR "\tlate_collision error\n");
+diff --git a/drivers/net/stmmac/mac100.c b/drivers/net/stmmac/mac100.c
+index 8032508..a55713b 100644
+--- a/drivers/net/stmmac/mac100.c
++++ b/drivers/net/stmmac/mac100.c
+@@ -173,7 +173,8 @@ static void mac100_dma_diagnostic_fr(void *data, struct stmmac_extra_stats *x,
+ }
+ 
+ static int mac100_get_tx_frame_status(void *data, struct stmmac_extra_stats *x,
+-				      struct dma_desc *p, unsigned long ioaddr)
++				      struct dma_desc *p, unsigned long ioaddr,
++				      unsigned int duplex)
+ {
+ 	int ret = 0;
+ 	struct net_device_stats *stats = (struct net_device_stats *)data;
+diff --git a/drivers/net/stmmac/stmmac_main.c b/drivers/net/stmmac/stmmac_main.c
+index 2b3f917..fa2cb09 100644
+--- a/drivers/net/stmmac/stmmac_main.c
++++ b/drivers/net/stmmac/stmmac_main.c
+@@ -857,6 +857,7 @@
+ static void stmmac_tx(struct net_device *dev)
+ {
+ 	struct stmmac_priv *priv = netdev_priv(dev);
++	struct phy_device *phydev = priv->phydev;
+ 	unsigned int txsize = priv->dma_tx_size;
+ 	unsigned long ioaddr = dev->base_addr;
+ 	unsigned int entry = priv->dirty_tx % txsize;
+@@ -865,8 +865,8 @@ static void stmmac_tx(struct net_device *dev)
+ 		if (likely(last)) {
+ 			int tx_error =
+ 			    priv->mac_type->ops->tx_status(&dev->stats,
+-							   &priv->xstats,
+-							   p, ioaddr);
++					   &priv->xstats, p, ioaddr,
++					   phydev->duplex);
+ 			if (likely(tx_error == 0)) {
+ 				dev->stats.tx_packets++;
+ 				priv->xstats.tx_pkt_n++;

@@ -1,0 +1,55 @@
+Index: linux-2.6.23/arch/sh/kernel/setup.c
+===================================================================
+--- linux-2.6.23.orig/arch/sh/kernel/setup.c
++++ linux-2.6.23/arch/sh/kernel/setup.c
+@@ -136,14 +136,14 @@ static int __init early_parse_mem(char *
+ early_param("systemmemsize", early_parse_mem);
+ 
+ unsigned long stapi_mem_size = CONFIG_VIP19XX_STAPI_MEMORY_SIZE;
++unsigned long vip19xx_vidmem_size = 32768;
+ 
+ static int __init early_parse_vidmem(char *p)
+ {
+-	unsigned long size;
+-	size = memparse(p, &p);
++	vip19xx_vidmem_size = memparse(p, &p);
+ 
+ #ifndef CONFIG_CPU_SUBTYPE_STX7105
+-	if (size > 0x8000) {
++	if (vip19xx_vidmem_size == 65536) {
+                stapi_mem_size = CONFIG_VIP19XX_STAPI_MEMORY_SIZE_64MB;
+ 	}
+ #endif
+Index: linux-2.6.23/arch/sh/kernel/cpu/sh4/setup-stb7100.c
+===================================================================
+--- linux-2.6.23.orig/arch/sh/kernel/cpu/sh4/setup-stb7100.c
++++ linux-2.6.23/arch/sh/kernel/cpu/sh4/setup-stb7100.c
+@@ -25,6 +25,8 @@
+ #include <asm/sci.h>
+ #include <asm/irq-ilc.h>
+ 
++extern unsigned long vip19xx_vidmem_size;
++
+ static unsigned long chip_revision, chip_7109, chip_5202=0;
+ static struct sysconf_field *sys_cfg7_0;
+ 
+@@ -916,6 +918,19 @@ void __init stx7100_early_device_init(vo
+ 		devid = sysconf_read(sc);
+ 		printk(KERN_NOTICE "Chip version %ld.%ld\n", (devid >> 4)+1, devid & 0xf);
+ 		boot_cpu_data.cut_minor = devid & 0xf;
++               if ( (boot_cpu_data.cut_major == 3) &&
++		     (boot_cpu_data.cut_minor == 4) &&
++		     (vip19xx_vidmem_size == 65536) ) {
++		  printk(KERN_NOTICE "Adjusting DDR memory delay for cut 3.4 CPUs with "\
++                         "64 MB video memory\n");
++		  addr = ioremap_nocache(0x19000000, 0x01000000);
++		  // Set LMIPL_VID_DLL2_OFF_CMD=40 (dec) in SYS_CFG21
++		  writel(40<<9, addr + 0x1154);
++		  iounmap(addr);
++		}
++		else {
++		  printk(KERN_NOTICE "Using default DDR memory delay\n");
++		}
+ 	}
+ 
+ 	/* Configure the ST40 RTC to source its clock from clockgenB.

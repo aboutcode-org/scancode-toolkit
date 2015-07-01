@@ -1,0 +1,36 @@
+graft src
+graft etc
+graft thirdparty
+
+prune tests
+recursive-exclude thirdparty/dev *.whl *.LICENSE *.ABOUT
+
+prune src/packagedcode
+prune src/sourcecode
+prune src/samecode
+prune src/scancode_toolkit.egg-info
+prune src/compiledcode
+
+include AUTHORS.rst
+include CHANGELOG.rst
+include README.rst
+include CONTRIBUTING.rst
+include apache-2.0.LICENSE
+include cc0-1.0.LICENSE
+include NOTICE
+include scancode.ABOUT
+include MANIFEST.in
+include setup.py
+include setup.cfg
+include .gitignore
+include configure
+include configure.bat
+include CONTRIBUTING.rst
+include MANIFEST.in
+include NOTICE
+include scancode
+include scancode.bat
+
+include .travis.yml appveyor.yml
+
+global-exclude *.py[co] __pycache__

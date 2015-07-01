@@ -1,0 +1,10 @@
+download_url: http://grapefruit.googlecode.com/files/grapefruit-0.1a3.tar.gz
+notes: grapefruit has no single top-level directory but multiple files
+
+download_url: https://pypi.python.org/packages/source/D/DeferArgs/deferargs-0.4.tar.gz
+notes: deferred has no directories and contains a single file
+
+download_url: https://pypi.python.org/packages/source/b/bitarray/bitarray-0.8.1.tar.gz
+notes:bitarray has permissions, users and groups that may prevent extraction
+
+notes: empty tar contains no file

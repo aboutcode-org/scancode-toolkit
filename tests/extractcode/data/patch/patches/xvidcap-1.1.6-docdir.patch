@@ -1,0 +1,11 @@
+--- xvidcap-1.1.6/Makefile.in.orig	2007-11-18 20:01:15.000000000 +0100
++++ xvidcap-1.1.6/Makefile.in	2007-11-18 20:01:24.000000000 +0100
+@@ -270,7 +270,7 @@
+ 	xvidcap.png \
+     ppm2mpeg.sh
+ 
+-xvidcapdocdir = ${datadir}/doc/xvidcap
++xvidcapdocdir = ${datadir}/doc/packages/xvidcap
+ xvidcapdoc_DATA = \
+ 	README\
+ 	COPYING\

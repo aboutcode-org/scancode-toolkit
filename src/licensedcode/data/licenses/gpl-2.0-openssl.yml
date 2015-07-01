@@ -1,0 +1,12 @@
+key: gpl-2.0-openssl
+short_name: GPL 2.0 with OpenSSL exception
+name: >-
+    GNU General Public License 2.0 with OpenSSL exception
+category: Copyleft Limited
+owner: OpenSSL
+homepage_url: http://www.openssl.org/source/license.html
+text_urls:
+    - http://www.openssl.org/source/license.html
+faq_url: http://people.gnome.org/~markmc/openssl-and-the-gpl.html
+other_urls:
+    - http://people.gnome.org/~markmc/openssl-and-the-gpl.html

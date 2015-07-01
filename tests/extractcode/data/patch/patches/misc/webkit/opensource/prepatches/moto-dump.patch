@@ -1,0 +1,74 @@
+Index: src/3rdParty/webkit/patches/moto-dump.patch
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/patches/moto-dump.patch
+@@ -0,0 +1,57 @@
++diff -ur work.orig/WebCore/page/DOMWindow.cpp work/WebCore/page/DOMWindow.cpp
++--- work.orig/WebCore/page/DOMWindow.cpp	2009-06-09 18:40:50.000000000 +0800
+++++ work/WebCore/page/DOMWindow.cpp	2009-06-09 18:37:44.000000000 +0800
++@@ -312,6 +312,23 @@
++     page->chrome()->runJavaScriptAlert(m_frame, message);
++ }
++ 
+++void DOMWindow::dump(const String& message)
+++{
+++    if (!m_frame)
+++        return;
+++
+++    Document* doc = m_frame->document();
+++    ASSERT(doc);
+++    if (doc)
+++        doc->updateRendering();
+++
+++    Page* page = m_frame->page();
+++    if (!page)
+++        return;
+++
+++    page->chrome()->runJavaScriptAlert(m_frame, message);
+++}
+++
++ bool DOMWindow::confirm(const String& message)
++ {
++     if (!m_frame)
++diff -ur work.orig/WebCore/page/DOMWindow.h work/WebCore/page/DOMWindow.h
++--- work.orig/WebCore/page/DOMWindow.h	2009-06-09 18:41:12.000000000 +0800
+++++ work/WebCore/page/DOMWindow.h	2009-06-09 18:38:23.000000000 +0800
++@@ -81,6 +81,7 @@
++         void stop();
++ 
++         void alert(const String& message);
+++        void dump(const String& message);
++         bool confirm(const String& message);
++         String prompt(const String& message, const String& defaultValue);
++ 
++diff -ur work.orig/WebCore/page/DOMWindow.idl work/WebCore/page/DOMWindow.idl
++--- work.orig/WebCore/page/DOMWindow.idl	2009-06-09 18:41:22.000000000 +0800
+++++ work/WebCore/page/DOMWindow.idl	2009-06-09 18:38:46.000000000 +0800
++@@ -57,6 +57,7 @@
++         void stop();
++ 
++         void alert(in DOMString message);
+++        void dump(in DOMString message);
++         boolean confirm(in DOMString message);
++         [ConvertNullStringTo=Null] DOMString prompt(in DOMString message,
++                                                     in [ConvertUndefinedOrNullToNullString] DOMString defaultValue);
++diff -ur work.orig/WebCore/WebCore.order work/WebCore/WebCore.order
++--- work.orig/WebCore/WebCore.order	2009-06-09 18:40:08.000000000 +0800
+++++ work/WebCore/WebCore.order	2009-06-09 18:37:07.000000000 +0800
++@@ -14110,3 +14110,4 @@
++ __ZN7WebCore24CanvasRenderingContext2D9drawImageEPNS_17HTMLCanvasElementEff
++ __ZN7WebCore16PDFDocumentImageD1Ev
++ __ZNK7WebCore16DeprecatedString5rightEj
+++__ZN7WebCore9DOMWindow4dumpERKNS_6StringE
+Index: src/3rdParty/webkit/patches/series
+===================================================================
+--- src.orig/3rdParty/webkit/patches/series
++++ src/3rdParty/webkit/patches/series
+@@ -20,6 +20,7 @@ webcore-arena-alignment.patch
+ ekioh-png-uclibc.patch
+ webcore-enclosing-int-rect.patch
+ moto-timer.patch
++moto-dump.patch
+ debug-fixes.patch
+ webcore-no-scrollbars.patch
+ newlib-uint32-long.patch

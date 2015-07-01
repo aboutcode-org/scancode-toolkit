@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: ActiveMQ Client
+Description: ActiveMQ C++ library.
+Version: @VERSION@
+Libs: -L${libdir} -l@ACTIVEMQ_LIBRARY_NAME@-@ACTIVEMQ_API_VERSION@ -lpthread -ldl -luuid
+Cflags: -I${includedir}/@ACTIVEMQ_LIBRARY_NAME@-@ACTIVEMQ_API_VERSION@ -I${libdir}/@ACTIVEMQ_LIBRARY_NAME@-@ACTIVEMQ_API_VERSION@/include

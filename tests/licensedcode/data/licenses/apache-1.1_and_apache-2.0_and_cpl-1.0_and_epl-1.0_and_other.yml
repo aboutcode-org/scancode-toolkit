@@ -1,0 +1,8 @@
+licenses:
+    - apache-1.1
+    - apache-2.0
+    - cpl-1.0
+    - epl-1.0
+    - zlib
+expected_failure: yes
+sort: true

@@ -1,0 +1,3 @@
+[('linux-2.6.23/include/linux/phy.h.orig',
+  'linux-2.6.23/include/linux/phy.h',
+  '--- linux-2.6.23/include/linux/phy.h.orig\n+++ linux-2.6.23/include/linux/phy.h\n@@ -63,9 +63,10 @@\n\n\n#define PHY_INIT_TIMEOUT\t100000\n-#define PHY_STATE_TIME\t\t1\n-#define PHY_FORCE_TIMEOUT\t10\n-#define PHY_AN_TIMEOUT\t\t10\n+#define PHY_INIT_TIME           (HZ>>3)\n+#define PHY_STATE_TIME\t\tHZ\n+#define PHY_FORCE_TIMEOUT\t(10<<3)\n+#define PHY_AN_TIMEOUT\t\t(10<<3)\n\n#define PHY_MAX_ADDR\t32\n')]

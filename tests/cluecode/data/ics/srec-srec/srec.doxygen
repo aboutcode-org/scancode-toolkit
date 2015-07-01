@@ -1,0 +1,6 @@
+# General configuration options
+#---------------------------------------------------------------------------
+PROJECT_NAME           = SREC
+PROJECT_NUMBER         = "(C) Copyright 2003 Speechworks International"
+OUTPUT_DIRECTORY       = C:/ESR_DOC/SREC
+OUTPUT_LANGUAGE        = English

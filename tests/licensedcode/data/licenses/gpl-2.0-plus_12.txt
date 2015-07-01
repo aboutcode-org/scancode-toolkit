@@ -1,0 +1,103 @@
+This package was debianized by Jose Carlos Garcia Sogo <jsogo@debian.org> on
+Mon, 17 Jan 2003 20:14:10 +0100.
+
+It was downloaded from ftp://ftp.gnome.org/pub/GNOME/sources/seahorse
+
+Upstream Authors: <s>Jacob Perkins <jap1@users.sourceforge.net></s>
+                  <s>Jose Carlos Garcia Sogo <jsogo@users.sourceforge.net></s>
+                  <s>Jean Schurger <jk24@users.sourceforge.net></s>
+                  <s>Stef Walter <stef@memberwebs.com></s>
+                  <s>Adam Schreiber <sadam@clemson.edu></s>
+
+Copyright © 2004-2007 <s>Stefan Walter</s>
+Copyright © 2004-2006 <s>Adam Schreiber</s>
+Copyright © 2001-2003 <s>Jose Carlos Garcia Sogo</s>
+Copyright © 2002, 2003 <s>Jacob Perkins</s>
+Copyright © 2004, 2006 <s>Nate Nielsen</s>
+Copyright © 2000-2004 <s>Marco Pesenti Gritti</s>
+Copyright © 2003-2006 <s>Christian Persch</s>
+Copyright © 2004, 2006 <s>Jean-François Rameau</s>
+Copyright © 2000, 2001 <s>Eazel, Inc.</s>
+Copyright © 2007, 2008 <s>Jorge González</s>
+Copyright © 2007, 2008 <s>Daniel Nylander</s>
+Copyright © 2004-2005 <s>Shaun McCance</s>
+Copyright © 2007 Milo <s>Casagrande</s>
+Copyright © 2007-2008 <s>Claude Paroz</s>
+Copyright © 2007 <s>GNOME i18n Project for Vietnamese</s>
+Copyright © 2008 <s>Василий Фаронов</s>
+Copyright © 1992-2008 <s>Free Software Foundation, Inc.</s>
+Copyright © 1999 <s>Dave Camp</s>
+Copyright © 2005 <s>Tecsidel S.A.</s>
+Copyright © 2004-2005 <s>Adam Weinberger and the GNOME Foundation</s>
+Copyright © 2007, 2008 <s>The GNOME Project</s>
+Copyright © 2007 <s>Swecha Telugu Localisation Team</s>
+Copyright © 1995-1997 <s>Ulrich Drepper</s>
+Copyright © 2004-2008 <s>Rodney Dawes</s>
+Copyright © 1999, 2000 <s>Anthony Mulcahy</s>
+Copyright © 2007 <s>Ihar Hrachyshka</s>
+Copyright © 2004, 2005 <s>Miloslav Trmac</s>
+Copyright © 2003 <s>Péter Mátó</s>
+Copyright © 2004, 2005 <s>Danijel Studen</s>, <s>Denis Lackovic</s>, <s>Ivan Jankovic</s>
+Copyright © 1994 <s>X Consortium</s>
+Copyright © 2006 <s>Alexander Larsson</s>
+Copyright © 2000-2003 <s>Ximian Inc.</s>
+Copyright © 1995-1997 <s>Peter Mattis</s>, <s>Spencer Kimball</s> and <s>Josh MacDonald</s>
+Copyright © 1999, 2000 <s>Robert Bihlmeyer</s>
+Copyright © <s>Crispin Flowerday</s>
+Copyright © 2008 <s>Frédéric Péters</s>
+Copyright © 2008 <s>Lucas Lommer</s>
+Copyright © 2008 <s>Mario Blättermann</s>
+Copyright © 2001-2004 <s>Red Hat, Inc.</s>
+Copyright © 2004 Scott <s>James Remnant</s>
+
+
+Gaim is the legal property of its developers, whose names are too numerous
+to list here.  Please refer to the COPYRIGHT file distributed with the gaim
+source distribution.
+
+Copyright (C) 1998-2006 by the following:
+
+Dave Ahlswede, Manuel Amador, Matt Amato, Daniel Atallah, Paul Aurich, Patrick Aussems, Anibal Avelar, Alex Badea, John Bailey, Chris Banal, Luca Barbato, Levi Bard, Kevin Barry, Derek Battams, Martin Bayard, Curtis Beattie, Dave Bell, Igor Belyi, Brian Bernas, Paul Betts, Jonas Birmé, Eric Blade, Ethan Blanton, Joshua Blanton, Rainer Blessing, Herman Bloggs, David Blue, Jason Boerner, Graham Booker, Paolo Borelli, Julien Bossart, Craig Boston, Chris Boyle, Derrick J Brashear, Matt Brenneke, Jeremy Brooks, Philip Brown, Sean Burke, Thomas Butter, Andrea Canciani, Damien Carbery, Michael Carlson, Keegan Carruthers-Smith, Steve Cavilia, Julien Cegarra, Cerulean Studios, LLC, Jonathan Champ, Christophe Chapuis, Patrick Cheung, Ka-Hing Cheung, Sadrul Habib Chowdhury, Brian Chu, Arturo Cisneros, Jr., Vincas Ciziunas, Jonathan Clark, Joe Clarke, Eoin Coffey, Jason Cohen, Todd Cohen, Jono Cole, Lorenzo Colitti, Nathan Conrad, Felipe Contreras, Alex Converse, Irving Cordova, Glauber de Oliveira Costa, Adam Cowell, Palmer Cox, Jeramey Crawford, Michael Culbertson, Martijn Dekker, Philip Derrin, Taso N. Devetzis, Balwinder Singh Dheeman, Andrew Dieffenbach, Finlay Dobbie, Mark Doliner, Nuno Donato, Jim Duchek, Alex Duggan, Tom Dyas, Marc E., Andrew Echols, John Eckerdal, Sean Egan <seanegan@gmail.com>, Nelson Elhage, Ignacio J. Elia, Brian Enigma, Mattias Eriksson, Stefan Esser, Steffen Eschenbacher, Marc Etcheverry, Larry Ewing, Gábor Farkas, Jesse Farmer, Gavan Fantom (gavan), David Fiander, Rob Flynn <gaim@robflynn.com>, Rob Foehl (rwf), Alan Ford, Nathan Fredrickson, Chris J. Friesen, Free Software Foundation, Decklin Foster, Francesco Fracassi, Adam Fritzler, Max G., François Gagné, Evgueni V. Gavrilov, Ignacy Gawedzki, Georgi Georgiev, Ike Gingerich, Gustavo Giráldez, Richard Gobeille, Ian Goldberg, Michael Golden, Charlie Gordon, Ryan C. Gordon, Miah Gregory, Christian Hammond, Erick Hamness, Fred Hampton, Casey Harkins, Andy Harrison, Andrew Hart (arhart), G. Sumner Hayes, Michael R. Head, Nick Hebner, Mike Heffner, Benjamin Herrenschmidt, Fernando Herrera, hjheins, Hil, Casey Ho, Iain Holmes, Joshua Honeycutt, Nigel Horne, Juanjo Molinero Horno, Nathanael Hoyle, Greg Hudson, Magnus Hult, Karsten Huneycutt, Kevin Hunter, Rian Hunter, Thomas Huriaux, Scott Jackson, Hans Petter Jansson, Henry Jen, Benjamin Kahn, Anders Kaseorg, Praveen Karadakal, John Kelm, Akuke Kok, Cole Kowalski, Gary Kramlich, Jan Kratochvil, Andrej Krivulčík, Patrik Kullman, Tuomas Kuosmanen, Tero Kuusela, Richard Laager, Scott Lamb, Dennis Lambe Jr., Joe LaPenna, Steve Láposi, Daniel Larsson, Peter Lawler, Ho-seok Lee, Jean-Yves Lefort, Moses Lei, Ambrose C. Li, Nicolas Lichtmaier, Wesley Lin, Artem Litvinovich, Syd Logan, Lokheed, Norberto Lopes, Uli Luckas, Matthew Luckie, Mike Lundy, Jason Lynch, Lucio Maciel, Brian Macke, Paolo Maggi, Willian T. Mahan, Kris Marsh, Fidel Martinez, Lalo Martins, John Matthews, Ryan McCabe, Peter McCurdy, Kurt McKee, Torrey McMahon, Robert McQueen, Robert Mibus, Lars T. Mikkelsen, Benjamin Miller, Kevin Miller, Paul Miller, Arkadiusz Miskiewicz, Andrew Molloy, Benjamin Moody, Tim Mooney, Sergio Moretto, Christian Muise, Richard Nelson, Dennis Nezic, Matthew A. Nicholson, Henning Norén, Szilard Novaki, Novell, Padraig O'Briain, Christopher O'Brien (siege), Jon Oberheide, Ruediger Oertel, Gudmundur Bjarni Olafsson, Bartosz Oler, Shawn Outman, Nathan Owens (pianocomp81), John Oyler, Matt Pandina, Ricardo Fernandez Pascual, Riley Patterson, Havoc Pennington, Ted Percival, Eduardo Pérez, Joao Luís Marques Pinto, Aleksander Piotrowski, Julien Pivotto, Ari Pollak, Robey Pointer, Nathan Poznick, Jory A. Pratt, Brent Priddy, Federicco Mena Quintero, Yosef Radchenko, David Raeman, R. Ramkumar, Mart Raudsepp, Etan Reisner, Kristian Rietveld, Pekka Riikonen, Tim Ringenbach, Dennis Ristuccia, Lee Roach, Rhett Robinson, Luciano Miguel Ferreira Rocha, Andrew Rodland, Miguel Rodríguez (migrax), Jason Roth, Jean-Francois Roy, Sam S., Pradyumna Sampath, Arvind Samptur, Tom Samstag, Neil Sanchala, Laurent Sansonetti, Andrew Sayman, Alceste Scalas, Carsten Schaar, Matteo Settenvini, Colin Seymour, Luke Schierer, Ralph Schmieder, David Schmitt, Mark Schneider, Evan Schoenberg, Federico Schwindt, Torrey Searle, Peter Seebach, Don Seiler, Leonardo Serra, Jim Seymour, Joe Shaw, Scott Shedden, Ettore Simone, John Silvestri, Craig Slusher, Alex Smith, Malcolm Smith, David Smock, Phil Snowberger, Eddie Sohn (tr1sk), Sony Computer Entertainment America, Inc., Mark Spencer, Lex Spoon, Kevin Stange, Richard Stellingwerff, Charlie Stockman, David Stoddard, Sun Microsystems, Mårten Svantesson (fursten), Robert T., Brian Tarricone, Peter Teichman, Philip Tellis, Arun A. Tharuvai, Cestonaro Thilo, Will Thompson, Douglas Thrift (douglaswth), Andrew Tinney, Jeffery To, Warren Togami, Stu Tomlinson, Bill Tompkins, Chris Toshok, Ken Tossell, Tom Tromey, Todd Troxell, Brad Turcotte, Junichi Uekawa, István Váradi, Martijn van Beers, Philip Van Hoof, Kristof Vansant, James Vega, David Vermeille, Sid Vicious, Bjoern Voigt, Wan Hing Wah, Philip Walford, Nathan Walp, Jonty Wareing, Eric Warmenhoven, Adam J. Warrington, Andrew Wellington, Adam Wendt, Dave West, Daniel Westermann-Clark, Andrew Whewell, Simon Wilkinson, Dan Willemsen, Jason Willis, Matt Wilson, Dan Winship, Scott Wolchok, Pui Lam Wong, Justin Wood, Ximian, Ma Xuan, Jared Yanovich, Timmy Yee, Nickolai Zeldovich, Marco Ziech, Piotr Zielinski, Welker Zsombor, Jeroen Zwartepoorte
+
+
+
+Main License (everything except docs):
+
+    This package is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this package; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.
+
+The Debian packaging is Copyright © 2008 <s>Sébastien Bacher</s>, <s>Andreas 
+Moog</s>, <s>Emilio Pozuelo Monfort</s> and <s>Josselin Mouette</s>. It is licensed under 
+the same conditions.
+
+
+License for the documentation:
+
+    Permission is granted to copy, distribute and/or modify this
+    document under the terms of the GNU Free Documentation
+    License (GFDL), Version 1.1 or any later version published
+    by the Free Software Foundation with no Invariant Sections,
+    no Front-Cover Texts, and no Back-Cover Texts.
+
+    This manual is part of a collection of GNOME manuals
+    distributed under the GFDL.  If you want to distribute this
+    manual separately from the collection, you can do so by
+    adding a copy of the license to the manual, as described in
+    section 6 of the license.
+
+On Debian systems, the complete text of the GNU Free Documentation
+License can be found in `/usr/share/common-licenses/GFDL'.

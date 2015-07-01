@@ -1,0 +1,16 @@
+Resource,patch_source_path,patch_target_path
+/srctgt/dropbear_2012.55-1.diff,dropbear-2012.55.orig/debian/changelog,dropbear-2012.55/debian/changelog
+/srctgt/dropbear_2012.55-1.diff,dropbear-2012.55.orig/debian/control,dropbear-2012.55/debian/control
+/srctgt/dropbear_2012.55-1.diff,dropbear-2012.55.orig/debian/dropbear.init,dropbear-2012.55/debian/dropbear.init
+/srctgt/dropbear_2012.55-1.diff,dropbear-2012.55.orig/debian/dropbear.postinst,dropbear-2012.55/debian/dropbear.postinst
+/srctgt/dropbear_2012.55-1.diff,dropbear-2012.55.orig/debian/rules,dropbear-2012.55/debian/rules
+/srctgt/dropbear_2012.55-1.diff,dropbear-2012.55.orig/debian/initramfs/bottom-dropbear,dropbear-2012.55/debian/initramfs/bottom-dropbear
+/srctgt/dropbear_2012.55-1.diff,dropbear-2012.55.orig/debian/initramfs/dropbear-conf,dropbear-2012.55/debian/initramfs/dropbear-conf
+/srctgt/dropbear_2012.55-1.diff,dropbear-2012.55.orig/debian/initramfs/dropbear-hook,dropbear-2012.55/debian/initramfs/dropbear-hook
+/srctgt/dropbear_2012.55-1.diff,dropbear-2012.55.orig/debian/initramfs/premount-devpts,dropbear-2012.55/debian/initramfs/premount-devpts
+/srctgt/dropbear_2012.55-1.diff,dropbear-2012.55.orig/debian/initramfs/premount-dropbear,dropbear-2012.55/debian/initramfs/premount-dropbear
+/srctgt/dropbear_2012.55-1.diff,dropbear-2012.55.orig/debian/diff/0001-dbclient.1-dbclient-uses-compression-if-compiled-with.diff,dropbear-2012.55/debian/diff/0001-dbclient.1-dbclient-uses-compression-if-compiled-with.diff
+/srctgt/dropbear_2012.55-1.diff,dropbear-2012.55.orig/debian/diff/0002-dropbearkey.8-mention-y-option-add-example.diff,dropbear-2012.55/debian/diff/0002-dropbearkey.8-mention-y-option-add-example.diff
+/srctgt/dropbear_2012.55-1.diff,dropbear-2012.55.orig/debian/diff/0003-options.h-use-usr-bin-xauth-instead-of-usr-bin-X11-xa.diff,dropbear-2012.55/debian/diff/0003-options.h-use-usr-bin-xauth-instead-of-usr-bin-X11-xa.diff
+/srctgt/ElectricFence-2.0.5-longjmp.patch,ElectricFence-2.0.5/eftest.c.ewt,ElectricFence-2.0.5/eftest.c
+/srctgt/libmediainfo-0.7.43.diff,MediaInfoLib-0.7.43.orig/Project/GNU/Library/libmediainfo-config.in,MediaInfoLib-0.7.43/Project/GNU/Library/libmediainfo-config.in

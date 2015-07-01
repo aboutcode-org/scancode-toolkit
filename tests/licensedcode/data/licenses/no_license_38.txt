@@ -1,0 +1,66 @@
+
+
+
+dhclient.leases(5)                             dhclient.leases(5)
+
+
+NNAAMMEE
+       dhclient.leases - DHCP client lease database
+
+DDEESSCCRRIIPPTTIIOONN
+       The  Internet Software Consortium DHCP client keeps a per­
+       sistent database of leases that it has acquired  that  are
+       still valid.   The database is a free-form ASCII file con­
+       taining one valid declaration per lease.    If  more  than
+       one declaration appears for a given lease, the last one in
+       the file is used.   The file is written as a log, so  this
+       is not an unusual occurrance.
+
+       The  format  of  the  lease  declarations  is described in
+       ddhhcclliieenntt..ccoonnff((55))..
+
+FFIILLEESS
+       //vvaarr//ddbb//ddhhcclliieenntt..lleeaasseess
+
+SSEEEE AALLSSOO
+       dhclient(8), dhcp-options(5), dhclient.conf(5),  dhcpd(8),
+       dhcpd.conf(5), RFC2132, RFC2131.
+
+AAUUTTHHOORR
+       ddhhcclliieenntt((88))  was  written  by  Ted  Lemon <mellon@vix.com>
+       under a contract with Vixie Labs.   Funding for this  pro­
+       ject  was  provided  by  the Internet Software Consortium.
+       Information about the Internet Software Consortium can  be
+       found at hhttttpp::////wwwwww..iisscc..oorrgg//iisscc..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                1
+
+

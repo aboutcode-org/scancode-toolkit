@@ -1,0 +1,11 @@
+key: clear-bsd
+short_name: Clear BSD License
+name: Clear BSD License
+category: Attribution
+owner: MetaCarta
+homepage_url: http://labs.metacarta.com/license-explanation.html
+spdx_license_key: BSD-3-Clause-Clear
+spdx_full_name: BSD 3-Clause "Clear" License
+spdx_url: http://spdx.org/licenses/BSD-3-Clause-Clear
+text_urls:
+    - http://labs.metacarta.com/license-explanation.html#license

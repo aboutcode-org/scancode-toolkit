@@ -1,0 +1,106 @@
+LICENSE AGREEMENT
+JBOSS(r)
+
+This License Agreement governs the use of the Software Packages and any updates to the Software 
+Packages, regardless of the delivery mechanism.  Each Software Package is a collective work 
+under U.S. Copyright Law.  Subject to the following terms, Red Hat, Inc. ("Red Hat") grants to 
+the user ("Client") a license to the applicable collective work(s) pursuant to the 
+GNU Lesser General Public License v. 2.1 except for the following Software Packages: 
+(a) JBoss Portal Forums and JBoss Transactions JTS, each of which is licensed pursuant to the 
+GNU General Public License v.2; 
+
+(b) JBoss Rules, which is licensed pursuant to the Apache  License v.2.0;
+
+(c) an optional download for JBoss Cache for the Berkeley DB for Java database, which is licensed under the 
+(open source) Sleepycat License (if Client does not wish to use the open source version of this database, 
+it may purchase a license from Sleepycat Software); 
+
+and (d) the BPEL extension for JBoss jBPM, which is licensed under the Common Public License v.1, 
+and, pursuant to the OASIS BPEL4WS standard, requires parties wishing to redistribute to enter various 
+royalty-free patent licenses.  
+
+Each of the foregoing licenses is available at http://www.opensource.org/licenses/index.php.
+
+1.  The Software.  "Software Packages" refer to the various software modules that are created and made available 
+for distribution by the JBoss.org open source community at http://www.jboss.org.   Each of the Software Packages 
+may be comprised of hundreds of software components.  The end user license agreement for each component is located in 
+the component's source code.  With the exception of certain image files identified in Section 2 below, 
+the license terms for the components permit Client to copy, modify, and redistribute the component, 
+in both source code and binary code forms.  This agreement does not limit Client's rights under, 
+or grant Client rights that supersede, the license terms of any particular component.
+
+2.  Intellectual Property Rights.  The Software Packages are owned by Red Hat and others and are protected under copyright 
+and other laws.  Title to the Software Packages and any component, or to any copy, modification, or merged portion shall 
+remain with the aforementioned, subject to the applicable license.  The "JBoss" trademark, "Red Hat" trademark, the 
+individual Software Package trademarks, and the "Shadowman" logo are registered trademarks of Red Hat and its affiliates 
+in the U.S. and other countries.  This agreement permits Client to distribute unmodified copies of the Software Packages 
+using the Red Hat trademarks that Red Hat has inserted in the Software Packages on the condition that Client follows Red Hat's 
+trademark guidelines for those trademarks located at http://www.redhat.com/about/corporate/trademark/.  Client must abide by 
+these trademark guidelines when distributing the Software Packages, regardless of whether the Software Packages have been modified. 
+If Client modifies the Software Packages, then Client must replace all Red Hat trademarks and logos identified at 
+http://www.jboss.com/company/logos, unless a separate agreement with Red Hat is executed or other permission granted.  
+Merely deleting the files containing the Red Hat trademarks may corrupt the Software Packages.  
+
+3.  Limited Warranty.  Except as specifically stated in this Paragraph 3 or a license for a particular 
+component, to the maximum extent permitted under applicable law, the Software Packages and the 
+components are provided and licensed "as is" without warranty of any kind, expressed or implied, 
+including the implied warranties of merchantability, non-infringement or fitness for a particular purpose.  
+Red Hat warrants that the media on which Software Packages may be furnished will be free from defects in 
+materials and manufacture under normal use for a period of 30 days from the date of delivery to Client.  
+Red Hat does not warrant that the functions contained in the Software Packages will meet Client's requirements 
+or that the operation of the Software Packages will be entirely error free or appear precisely as described 
+in the accompanying documentation. This warranty extends only to the party that purchases the Services 
+pertaining to the Software Packages from Red Hat or a Red Hat authorized distributor. 
+
+4.  Limitation of Remedies and Liability. To the maximum extent permitted by applicable law, the remedies 
+described below are accepted by Client as its only remedies.  Red Hat's entire liability, and Client's 
+exclusive remedies, shall be: If the Software media is defective, Client may return it within 30 days of 
+delivery along with a copy of Client's payment receipt and Red Hat, at its option, will replace it or 
+refund the money paid by Client for the Software.  To the maximum extent permitted by applicable law, 
+Red Hat or any Red Hat authorized dealer will not be liable to Client for any incidental or consequential 
+damages, including lost profits or lost savings arising out of the use or inability to use the Software, 
+even if Red Hat or such dealer has been advised of the possibility of such damages.  In no event shall 
+Red Hat's liability under this agreement exceed the amount that Client paid to Red Hat under this 
+Agreement during the twelve months preceding the action.
+
+5.  Export Control.  As required by U.S. law, Client represents and warrants that it: 
+(a) understands that the Software Packages are subject to export controls under the 
+U.S. Commerce Department's Export Administration Regulations ("EAR"); 
+
+(b) is not located in a prohibited destination country under the EAR or U.S. sanctions regulations 
+(currently Cuba, Iran, Iraq, Libya, North Korea, Sudan and Syria); 
+
+(c) will not export, re-export, or transfer the Software Packages to any prohibited destination, entity, 
+or individual without the necessary export license(s) or authorizations(s) from the U.S. Government; 
+
+(d) will not use or transfer the Software Packages for use in any sensitive nuclear, chemical or 
+biological weapons, or missile technology end-uses unless authorized by the U.S. Government by 
+regulation or specific license; 
+
+(e) understands and agrees that if it is in the United States and exports or transfers the Software 
+Packages to eligible end users, it will, as required by EAR Section 740.17(e), submit semi-annual 
+reports to the Commerce Department's Bureau of Industry & Security (BIS), which include the name and 
+address (including country) of each transferee; 
+
+and (f) understands that countries other than the United States may restrict the import, use, or 
+export of encryption products and that it shall be solely responsible for compliance with any such 
+import, use, or export restrictions.
+
+6.  Third Party Programs. Red Hat may distribute third party software programs with the Software Packages 
+that are not part of the Software Packages and which Client must install separately.  These third party 
+programs are subject to their own license terms.  The license terms either accompany the programs or 
+can be viewed at http://www.redhat.com/licenses/.  If Client does not agree to abide by the applicable 
+license terms for such programs, then Client may not install them.  If Client wishes to install the programs 
+on more than one system or transfer the programs to another party, then Client must contact the licensor 
+of the programs.
+
+7.  General.  If any provision of this agreement is held to be unenforceable, that shall not affect the 
+enforceability of the remaining provisions.  This License Agreement shall be governed by the laws of the 
+State of North Carolina and of the United States, without regard to any conflict of laws provisions, 
+except that the United Nations Convention on the International Sale of Goods shall not apply.
+
+Copyright 2006 Red Hat, Inc.  All rights reserved.  
+"JBoss" and the JBoss logo are registered trademarks of Red Hat, Inc.  
+All other trademarks are the property of their respective owners. 
+
+    Page 1 of 1 18 October 2006

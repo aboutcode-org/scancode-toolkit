@@ -1,0 +1,13 @@
+key: zlib-acknowledgement
+short_name: ZLIB License with Acknowledgment
+name: ZLIB License with Acknowledgment
+category: Attribution
+owner: Charlie Poole
+homepage_url: https://fedoraproject.org/wiki/Licensing:ZlibWithAcknowledgement?rd=Licensing/ZlibWithAcknowledgement
+spdx_license_key: zlib-acknowledgement
+spdx_full_name: zlib/libpng License with Acknowledgement
+spdx_url: http://spdx.org/licenses/zlib-acknowledgement
+spdx_notes: "Per Fedora: \nThis license is the same as zlib, except that it requires\
+    \ that an acknowledgement be made in the \"product documentation\". For Fedora,\
+    \ this is our Release notes, so if you have any packages which use this license,\
+    \ you MUST be sure to have the appropriate acknowledgement in the release notes."

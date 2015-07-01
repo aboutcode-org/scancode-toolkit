@@ -1,0 +1,5 @@
+licenses:
+    - gpl-2.0
+    - bsd-new
+license_choice: yes
+notes: Hostapd dual bsd/gpl

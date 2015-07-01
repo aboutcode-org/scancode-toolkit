@@ -1,0 +1,11 @@
+COPYRIGHT AND LICENCE
+
+This application is free software. This code is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. You may freely use, copy and distribute this software as long as all copyright notices, including this notice, remain intact and that you do not try to claim it as your own or try to sell it. You may alter the code as long as you send me any diffs (this will ensure that you have an easier time of it when you upgrade ;).
+
+Parts of this code Copyright (C) 2007 David (Buzz) Bussenschutt. <davidbuzz@gmail.com>
+
+Perl port of this code is Copyright (C) 2001 Mark Bush. <Mark.Bush@bushnet.demon.co.uk>
+
+The code is originally based on fetchmail code which is Copyright (C) 1997 Eric S. Raymond.
+
+Fetchmail uses SMB/Netbios code from samba which is Copyright (C) Andrew Tridgell 1992-1998 with modifications from Jeremy Allison.

@@ -1,0 +1,78 @@
+1. License for Evaluation Purposes. BEA hereby grants you a fully-paid, 
+non-exclusive, non-transferable, worldwide, limited license (without 
+the right to sublicense), under BEA's applicable intellectual property 
+rights to view, download, use and reproduce the Specification only for 
+the purpose of internal evaluation, which shall be understood to 
+include developing applications intended to run on an implementation of 
+the Specification provided that such applications do not themselves 
+implement any portion(s) of the Specification.  
+
+2. License for the Distribution of Compliant Implementations. BEA also 
+grants you a perpetual, non-exclusive, non-transferable, worldwide, 
+fully paid-up, royalty free, limited license (without the right to sub
+license) under  any applicable copyrights or, subject to the provisions 
+of subsection 3 below, patent rights it may have covering the 
+Specification to create and/or distribute an implementation of the 
+Specification that: (a) fully implements the Specification including 
+all its required interfaces and functionality, (b) does not modify, 
+subset, superset or otherwise extend the Sun Name Space, or include any 
+public or protected packages, classes, Java interfaces, fields or 
+methods within the Sun Name Space other than those  required/authorized 
+by the Specification or Specifications being implemented and  (c) 
+passes the Technology Compatibility Kit  for such Specification 
+("Compliant Implementation"). 
+
+
+
+3. Reciprocity Concerning Patent Licenses.  
+
+	a. With respect to any patent claims covered by the license 
+granted under subparagraph 2 above that would be infringed by all 
+technically feasible implementations of the Specification, such license 
+is conditioned upon your offering on fair, reasonable and non-
+discriminatory terms, to any party seeking it from You, a perpetual, 
+non-exclusive, non-transferable, worldwide license under Your patent 
+rights which are or would be infringed by all technically feasible 
+implementations of the Specification to develop, distribute and use a 
+Compliant Implementation. 
+
+
+	b  With respect to any patent claims owned by BEA and covered by 
+the license granted under subparagraph 2, whether or not their 
+infringement can be avoided in a technically feasible manner when 
+implementing the Specification, such license shall terminate with 
+respect to such claims if You initiate a claim against BEA that it has, 
+in the course of performing its responsibilities as the Specification 
+Lead, induced any other entity to infringe Your patent rights.
+
+	c  Also with respect to any patent claims owned by BEA and 
+covered by the license granted under subparagraph, where the 
+infringement of such claims can be avoided in a technically feasible 
+manner when implementing the Specification such license, with respect 
+to such claims, shall terminate if You initiate a claim against BEA 
+that its making, having made, using, offering to sell, selling or 
+importing a Compliant Implementation infringes Your patent rights.
+
+4.  Downstream Licenses for Compliant Implementations.  A Downstream 
+Licensee need not include limitations (a)-(c) from Section 2, above, or 
+any other particular "pass through" requirements in any license the 
+Downstream Licensee grants concerning the use of its Compliant  
+Implementation or products derived from it. However, except with 
+respect to implementations of the Specification (and products derived 
+from them) by the Downstream Licensee's licensee that satisfy 
+requirements (a)-(c) from Section 2, above, the Downstream Licensee may 
+neither:  (a) grant or otherwise pass through to its licensees any 
+licensable copyrights and patent rights of BEA; nor (b) authorize its 
+licensees to make any claims concerning their implementation's 
+compliance with the Specification in question.
+
+5. Definitions. For the purposes of this Agreement: "Technology 
+Compatibility Kit" or "TCK" shall mean the test suite and accompanying 
+documentation provided by BEA which corresponds to the particular 
+version of the Specification being tested; "Sun Name Space" shall mean 
+the public class or interface declarations whose names begin with 
+"java", "javax", "com.sun" or their equivalents in any subsequent 
+naming convention adopted by Sun Microsystems, Inc., through the Java 
+Community Process, or any recognized successors or replacements 
+thereof; "Downstream Licensee" shall mean a company or individual that 
+creates an Compliant Implementation under this Agreement.

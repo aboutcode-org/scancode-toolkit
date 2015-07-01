@@ -1,0 +1,24 @@
+Version 1.0.7.22
+
+Author:          Nigel McNie, Benny Baumann
+Copyright:       © 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+Email:           nigel@geshi.org, BenBE@omorphia.de
+GeSHi Website:   http://qbnz.com/highlighter
+ * php.php
+ * --------
+ * Author: Nigel McNie (nigel@geshi.org)
+ * Copyright: (c) 2004 Nigel McNie (http://qbnz.com/highlighter/)
+ * Release Version: 1.0.2
+ * CVS Revision Version: $Revision: 1196 $
+ * <name-of-language-file.php>
+ * ---------------------------------
+ * Author: <name> (<e-mail address>)
+ * Copyright: (c) 2004 <name> (<website URL>)
+ * Release Version: 1.0.0
+ * CVS Revision Version: $Revision: 1196 $
+
+Everything should remain the same, including $Revision: 1196 $ and $Date: 2008-06-08 17:55:42 +0000 (So, 08. Jun 2008) $ (I know these may look funny but they have their purpose for those of you who don't know about SVN).
+
+Also: I'm not sure about the copyright on a new language file. I'm not a lawyer, could someone contact me about whether the copyright for a new language file should be exclusivly the authors, or joint with me (if included in a GeSHi release)?
+4.3.2: The First Indices
+Top | Contents | Next | Previous

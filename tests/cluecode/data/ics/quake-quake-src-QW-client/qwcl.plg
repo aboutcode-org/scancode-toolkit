@@ -1,0 +1,154 @@
+Creating command line "rc.exe /l 0x409 /fo".\Release/winquake.res" /d "NDEBUG" "D:\Work\quake source\QW\client\winquake.rc"" 
+Performing Custom Build Step on .\sys_wina.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+sys_wina.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\sys_wina.asm
+Performing Custom Build Step on .\surf8.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+surf8.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\surf8.asm
+Performing Custom Build Step on .\surf16.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+surf16.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\surf16.asm
+Performing Custom Build Step on .\snd_mixa.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+snd_mixa.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\snd_mixa.asm
+Performing Custom Build Step on .\r_varsa.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+r_varsa.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\r_varsa.asm
+Performing Custom Build Step on .\r_edgea.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+r_edgea.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\r_edgea.asm
+Performing Custom Build Step on .\r_drawa.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+r_drawa.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\r_drawa.asm
+Performing Custom Build Step on .\r_aliasa.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+r_aliasa.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\r_aliasa.asm
+Performing Custom Build Step on .\r_aclipa.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+r_aclipa.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\r_aclipa.asm
+Performing Custom Build Step on .\math.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+math.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\math.asm
+Performing Custom Build Step on .\d_varsa.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+d_varsa.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\d_varsa.asm
+Performing Custom Build Step on .\d_spr8.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+d_spr8.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\d_spr8.asm
+Performing Custom Build Step on .\d_scana.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+d_scana.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\d_scana.asm
+Performing Custom Build Step on .\d_polysa.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+d_polysa.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\d_polysa.asm
+Performing Custom Build Step on .\d_parta.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+d_parta.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\d_parta.asm
+Performing Custom Build Step on .\d_draw16.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+d_draw16.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\d_draw16.asm
+Performing Custom Build Step on .\d_draw.s
+Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8168 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+d_draw.s
+Microsoft (R) Macro Assembler Version 6.11
+Copyright (C) Microsoft Corp 1981-1993.  All rights reserved.
+
+ Assembling: .\Release\d_draw.asm

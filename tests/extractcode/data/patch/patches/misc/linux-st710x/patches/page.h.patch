@@ -1,0 +1,40 @@
+--- linux-2.6.23/include/asm-sh/page.h_orig	2008-10-24 18:26:32.000000000 +0200
++++ linux-2.6.23/include/asm-sh/page.h	2008-10-24 19:31:06.000000000 +0200
+@@ -104,7 +105,11 @@
+ /*
+  * __MEMORY_START and SIZE are the physical addresses and size of RAM.
+  */
++#ifdef CONFIG_CPU_SUBTYPE_STX7105
+ #define __MEMORY_START		CONFIG_MEMORY_START
++#else
++#define __MEMORY_START		( ((*(volatile unsigned long*)(0xFF000010)&0x10)==0x10) ? (CONFIG_MEMORY_START) : (0x04000000))
++#endif
+ #define __MEMORY_SIZE		CONFIG_MEMORY_SIZE
+ 
+ /*
+@@ -122,8 +123,15 @@
+  * added or subtracted as required.
+  */
+ #ifdef CONFIG_32BIT
++#ifdef CONFIG_CPU_SUBTYPE_STX7105
+ #define __pa(x)			((unsigned long)(x)-PAGE_OFFSET+__MEMORY_START)
+ #define __va(x)			((void *)((unsigned long)(x)+PAGE_OFFSET-__MEMORY_START))
++#else
++#ifndef __ASSEMBLY__
++#define __pa(x)			( ((*(volatile unsigned long*)(0xFF000010)&0x10)==0x10) ? ((unsigned long)(x)-PAGE_OFFSET+CONFIG_MEMORY_START) : ((unsigned long)(x)-PAGE_OFFSET) )
++#define __va(x)			( ((*(volatile unsigned long*)(0xFF000010)&0x10)==0x10) ? ((void *)((unsigned long)(x)+PAGE_OFFSET-CONFIG_MEMORY_START)) : ((void *)((unsigned long)(x)+PAGE_OFFSET)) )
++#endif
++#endif
+ #else
+ #define __pa(x)			((unsigned long)(x)-PAGE_OFFSET)
+ #define __va(x)			((void *)((unsigned long)(x)+PAGE_OFFSET))
+@@ -138,7 +143,9 @@
+  * don't have struct page entries for the portion of address space
+  * between physical address 0 and the start of RAM.
+  */
++#if !defined(__ASSEMBLY__) || defined(CONFIG_CPU_SUBTYPE_STX7105)
+ #define PFN_START		(__MEMORY_START >> PAGE_SHIFT)
++#endif
+ #define ARCH_PFN_OFFSET		(PFN_START)
+ #define virt_to_page(kaddr)	pfn_to_page(__pa(kaddr) >> PAGE_SHIFT)
+ #ifdef CONFIG_FLATMEM

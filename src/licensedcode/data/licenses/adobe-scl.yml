@@ -1,0 +1,13 @@
+key: adobe-scl
+short_name: Adobe Source Code License 2006
+name: >-
+    Adobe Systems Incorporated Source Code License Agreement
+category: Attribution
+owner: Adobe Systems
+homepage_url: http://fedoraproject.org/wiki/Licensing/AdobeLicense
+spdx_license_key: Adobe-2006
+spdx_full_name: >-
+    Adobe Systems Incorporated Source Code License Agreement
+spdx_url: http://spdx.org/licenses/Adobe-2006
+text_urls:
+    - http://fedoraproject.org/wiki/Licensing/AdobeLicense

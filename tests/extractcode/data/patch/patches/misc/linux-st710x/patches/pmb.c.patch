@@ -1,0 +1,32 @@
+--- linux-2.6.23/arch/sh/mm/pmb.c.orig	2008-07-15 23:15:44.000000000 +0200
++++ linux-2.6.23/arch/sh/mm/pmb.c	2008-07-15 23:15:48.000000000 +0200
+@@ -465,16 +465,19 @@
+ 	entry = ram_mapping->entries;
+ 	flags = ram_mapping->flags;
+ 
+-	for (i=0; i<NR_PMB_ENTRIES-1; i++)
+-		__clear_pmb_entry(i);
+-
+-	do {
+-		entry = (struct pmb_entry*)(((unsigned long)entry) + c2uc);
+-		__set_pmb_entry(entry->vpn, entry->ppn,
+-				entry->flags | flags, entry->pos);
+-		entry = entry->next;
+-	} while (entry);
+-
++        entry = (struct pmb_entry*)(((unsigned long)entry) + c2uc); 
++        
++        for (i=0; i<NR_PMB_ENTRIES-1; i++)
++          if (i == entry->pos) {
++            if (entry->vpn != 0) {
++              __set_pmb_entry(entry->vpn, entry->ppn,
++                              entry->flags | flags, entry->pos);
++            }            
++          }
++          else {
++            __clear_pmb_entry(i);
++          }
++        
+ 	/* Flush out the TLB */
+ 	i =  ctrl_inl(MMUCR);
+ 	i |= MMUCR_TI;

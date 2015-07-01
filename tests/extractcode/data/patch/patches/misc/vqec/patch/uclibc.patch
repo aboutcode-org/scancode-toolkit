@@ -1,0 +1,44 @@
+--- eva/vqec_gap_reporter.c.orig	2010-01-08 15:52:43.696579112 +0100
++++ eva/vqec_gap_reporter.c	2010-01-08 15:53:55.305483072 +0100
+@@ -454,7 +454,7 @@
+             VQEC_DEBUG(VQEC_DEBUG_ERROR_REPAIR,
+                        "policed %u of %u repair requests for channel: %s:%d\n",
+                        policed_count, policed_count + repair_count,
+-                       inet_ntoa_r(
++                       inet_ntoa_r2(
+                            chan->cfg.primary_dest_addr,
+                            str, sizeof(str)),
+                        ntohs(chan->cfg.primary_dest_port));
+--- include/utils/vam_util.h.orig	2010-01-08 15:53:30.698454151 +0100
++++ include/utils/vam_util.h	2010-01-08 15:45:54.634891945 +0100
+@@ -75,7 +75,7 @@
+    @return ptr to a dot separated IP address string.
+ */
+ static inline
+-char *inet_ntoa_r(struct in_addr saddr, char *buf, int buf_len)
++char *inet_ntoa_r2(struct in_addr saddr, char *buf, int buf_len)
+ {
+     return ((char *)inet_ntop(AF_INET, &saddr, buf, buf_len));
+ }
+--- rtp/sample/sample_rtp_utils.c.orig	2010-01-08 15:54:37.569579774 +0100
++++ rtp/sample/sample_rtp_utils.c	2010-01-08 15:54:40.345454040 +0100
+@@ -274,7 +274,7 @@
+     char str[INET_ADDRSTRLEN];
+ 
+     RTP_BUGINF("RCVD %s pkt (%u bytes) from %s:%u\n",
+-               protocol, len, inet_ntoa_r(addr, str, sizeof(str)), ntohs(port));
++               protocol, len, inet_ntoa_r2(addr, str, sizeof(str)), ntohs(port));
+     RTP_BUGINF("     at %s:\n",
+                abs_time_to_str(rcv_ts, timebuf, sizeof(timebuf)));
+ }
+--- rtp/sample/sample_sink.c.orig	2010-01-08 15:54:27.952453821 +0100
++++ rtp/sample/sample_sink.c	2010-01-08 15:46:39.432891969 +0100
+@@ -214,7 +214,7 @@
+     struct in_addr in_listen_addr;
+     in_listen_addr.s_addr = listen_addr;
+     printf("Receiving on %s:%d ...\n", 
+-           inet_ntoa_r(in_listen_addr, str, sizeof(str)), ntohs(listen_port));
++           inet_ntoa_r2(in_listen_addr, str, sizeof(str)), ntohs(listen_port));
+ 
+     /* just wait for events */
+     (void)event_dispatch();

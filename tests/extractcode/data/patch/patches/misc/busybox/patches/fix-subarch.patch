@@ -1,0 +1,11 @@
+--- busybox-1.13.3/Makefile.orig	2009-11-30 10:39:09.000000000 +0100
++++ busybox-1.13.3/Makefile	2009-11-30 10:41:14.000000000 +0100
+@@ -177,7 +177,7 @@
+ # SUBARCH is subsequently ignored.
+ 
+ ifneq ($(CROSS_COMPILE),)
+-SUBARCH := $(shell echo $(CROSS_COMPILE) | cut -d- -f1)
++SUBARCH := $(shell echo $(CROSS_COMPILE) | awk -F/ '{print $NF}' | cut -d- -f1)
+ else
+ SUBARCH := $(shell uname -m)
+ endif

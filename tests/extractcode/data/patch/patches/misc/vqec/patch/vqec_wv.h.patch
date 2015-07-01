@@ -1,0 +1,130 @@
+--- /dev/null	2009-07-15 09:00:01.187014401 +0800
++++ eva/vqec_wv.h	2009-07-15 13:19:58.000000000 +0800
+@@ -0,0 +1,127 @@
++/******************************************************************************
++ *
++ * Cisco Systems, Inc.
++ *
++ * Copyright (c) 2006-2009 by Cisco Systems, Inc.
++ * All rights reserved.
++ *
++ ******************************************************************************
++ *
++ * File: vqec_wv.h
++ *
++ * Description: VQEC WideVine workaround API.
++ *
++ * Documents:
++ *
++ *****************************************************************************/
++
++#ifndef __VQEC_WV_H__
++#define __VQEC_WV_H__
++
++#include <stdint.h>
++
++#ifdef __cplusplus
++extern "C" {
++#endif // __cplusplus
++
++#ifndef boolean
++typedef int boolean;
++#endif
++
++#ifndef FALSE
++#define FALSE 0
++#endif
++
++#ifndef TRUE
++#define TRUE 1
++#endif
++
++#ifndef VQEC_WV_MAX_CACHE_SIZE
++#define VQEC_WV_MAX_CACHE_SIZE      64 * 1024 
++#define VQEC_WV_MAX_CACHE_THRESHOLD 1512 * 10
++#define VQEC_WV_MAX_REPLAY          4 
++#endif
++
++#if 1
++#define VQEC_WV_PRINTF(format,...)             \
++    printf("[VQEC_WV]" format "\n", ##__VA_ARGS__);
++#else
++#define VQEC_WV_PRINTF(format,...) 
++#endif
++
++/**
++ * various mpeg constants, definitions
++ */
++#define MPEG_TS_PKT_BYTES 188
++#define MPEG_NULL_PID 0x1FFF
++#define WVCAKREPLAY_MPEGTS_SYNC_BYTE(hdr) (*(uint8_t *)(hdr))
++#define WVCAKREPLAY_MPEGTS_PUSI_BIT(hdr) ( *(((uint8_t *)(hdr)) + 1) & 0x40 )
++#define WVCAKREPLAY_MPEGTS_PID(hdr)                                     \
++    ( (( *(((uint8_t *)(hdr)) + 1) & 0x1F) << 8) | *(((uint8_t *)(hdr)) + 2) )
++#define WVCAKREPLAY_MPEGTS_SC(hdr) (( *(((uint8_t *)(hdr)) + 3) & 0xC0 ) >> 6)
++struct mpeg_ts_packet
++{
++    uint8_t pkt_hdr[4];
++    uint8_t data[MPEG_TS_PKT_BYTES - 4];
++};
++
++/**
++ * Call once on every new channel change, prior to calling other APIs documented
++ * here.  Will reset read and write cache buffer pointers.
++ */
++void vqec_wv_cache_init(void);
++
++/**
++ * Called when data is available from source.  This data has not yet been
++ * touched by the CA agent.  This API should be fed data until it returns TRUE,
++ * only then should the complete data buffer be passed on to the CA agent.
++ *
++ * @param[in] ptr  pointer to data that is to be consumed by the system
++ * @param[in] len  length of the data
++ * @return int  returns 0 if the cache is not full; otherwise returns the size
++ *              of the cache
++ */
++int vqec_wv_cache_data(uint8_t *ptr,
++                       size_t len);
++
++/**
++ * Called after CA element has processed data but before it is sent to hardware.
++ * This API requires that cache has been filled, otherwise no replay will be
++ * attempted.  The audio and video PIDs for current channel change stream should
++ * be provided.
++ *
++ * @param[in/out] data  pointer to data that, on input, has been processed by CA
++ *                      element, and on output, may need to be replayed
++ * @param[in] bytes  length of data
++ * @param[in] videoPid  video PID to look for in cache
++ * @param[in] audioPid  audio PID to look for in cache
++ * @return int  Returns the amount of data needing to be replayed, if any
++ */
++int vqec_wv_replay(uint8_t *data,
++                   size_t bytes,
++                   unsigned short video_pid,
++                   unsigned short audio_pid);
++
++/**
++ *Read from cache data
++ *@param[in] data  pointer to the data buffer
++ *@param[in] bytes  length of data buffer
++ */
++int vqec_wv_cache_replay(uint8_t *data,
++                         size_t bytes);
++
++/**
++ *parameters are same with vqec_wv_replay. do_replay just check whether need to 
++ *send cache data
++ */
++boolean do_replay (uint8_t *post_play_buf, 
++                   uint32_t len, 
++                   uint16_t video_pid, 
++                   uint16_t audio_pid);
++
++
++#ifdef __cplusplus
++}
++#endif // __cplusplus
++ 
++#endif /* __VQEC_WV_H__ */

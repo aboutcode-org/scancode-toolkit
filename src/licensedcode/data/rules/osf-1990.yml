@@ -1,0 +1,5 @@
+licenses:
+    - osf-1990
+notes: >
+    The HP Variant license identified at https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#HP_Variant
+    is actually an instance of osf-1990

@@ -1,0 +1,124 @@
+Index: src/3rdParty/webkit/work/WebCore/loader/FrameLoader.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/loader/FrameLoader.cpp
++++ src/3rdParty/webkit/work/WebCore/loader/FrameLoader.cpp
+@@ -97,6 +97,11 @@
+ #include "SVGViewSpec.h"
+ #endif
+ 
++#include <string>
++#include <fstream>
++#include <sys/stat.h>
++WebCore::FrameLoader::TLocalFileWhiteList WebCore::FrameLoader::m_localFileWhiteList;
++WebCore::FrameLoader::TLocalFileWhiteList WebCore::FrameLoader::m_localDirectoryWhiteList;
+ using KJS::UString;
+ using KJS::JSLock;
+ using KJS::JSValue;
+@@ -264,6 +269,7 @@ FrameLoader::FrameLoader(Frame* frame, F
+     , m_needToSwitchOutLowBandwidthDisplay(false)
+ #endif 
+ {
++  populateLocalFileWhiteList();
+ }
+ 
+ FrameLoader::~FrameLoader()
+@@ -1406,6 +1412,56 @@ bool FrameLoader::isLocationChange(const
+     return false;
+ }
+ 
++void FrameLoader::populateLocalFileWhiteList()
++{
++  m_localFileWhiteList.clear();
++  m_localDirectoryWhiteList.clear();
++
++  std::string line;
++  std::ifstream file("/etc/local_file_access_whitelist", std::ifstream::out);
++
++  if (!file.is_open()) {
++    return;
++  }
++
++  while (std::getline(file, line)) {
++    struct stat st;
++    int result = ::stat(line.c_str(), &st);
++    if (result == 0) {
++      String l = String("file://") + line.c_str();
++      if (S_ISREG(st.st_mode)) {
++        m_localFileWhiteList.push_back(l);
++      }
++      else if (S_ISDIR(st.st_mode)) {
++        if (!l.endsWith("/")) {
++          l.append('/');
++        }
++        m_localDirectoryWhiteList.push_back(l);
++      }
++    }
++  }
++}
++
++bool FrameLoader::allowLocalFile(const String& url)
++{
++  for (TLocalFileWhiteList::const_iterator f = m_localFileWhiteList.begin();
++       f != m_localFileWhiteList.end(); ++f) {
++    if (url == *f) {
++      return true;
++    }
++  }
++  for (TLocalFileWhiteList::const_iterator f =
++         m_localDirectoryWhiteList.begin();
++       f != m_localDirectoryWhiteList.end(); ++f) {
++    KURL k(url.deprecatedString());
++    String u = *f + String(k.lastPathComponent());
++    if (url == u) {
++      return true;
++    }
++  }
++  return false;
++}
++
+ void FrameLoader::scheduleHistoryNavigation(int steps)
+ {
+     // navigation will always be allowed in the 0 steps case, which is OK because
+@@ -4659,7 +4715,7 @@ bool FrameLoader::shouldTreatURLAsLocal(
+         if (s[0] == 'h' && s[1] == 't' && s[2] == 't' && s[3] == 'p' && s[4] == ':')
+             return false;
+         if (s[0] == 'f' && s[1] == 'i' && s[2] == 'l' && s[3] == 'e' && s[4] == ':')
+-            return true;
++            return !allowLocalFile(url);
+     }
+ 
+     int loc = url.find(':');
+Index: src/3rdParty/webkit/work/WebCore/loader/FrameLoader.h
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/loader/FrameLoader.h
++++ src/3rdParty/webkit/work/WebCore/loader/FrameLoader.h
+@@ -47,6 +47,8 @@
+ #include "CachedResourceClient.h"
+ #endif
+ 
++#include <vector>
++
+ namespace KJS {
+     class JSValue;
+ }
+@@ -558,6 +560,9 @@ namespace WebCore {
+ 
+         static bool isLocationChange(const ScheduledRedirection&);
+ 
++        void populateLocalFileWhiteList();
++        static bool allowLocalFile(const String& url);
++
+         Frame* m_frame;
+         FrameLoaderClient* m_client;
+ 
+@@ -641,6 +646,10 @@ namespace WebCore {
+         
+         bool m_didPerformFirstNavigation;
+ 
++        typedef std::vector<String> TLocalFileWhiteList;
++        static TLocalFileWhiteList m_localFileWhiteList;
++        static TLocalFileWhiteList m_localDirectoryWhiteList;
++
+ #ifndef NDEBUG
+         bool m_didDispatchDidCommitLoad;
+ #endif

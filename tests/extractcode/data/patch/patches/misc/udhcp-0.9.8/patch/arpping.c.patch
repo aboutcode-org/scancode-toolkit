@@ -1,0 +1,34 @@
+Index: udhcp-0.9.8/arpping.c
+===================================================================
+--- udhcp-0.9.8.orig/arpping.c
++++ udhcp-0.9.8/arpping.c
+@@ -67,8 +67,11 @@ int arpping(u_int32_t yiaddr, u_int32_t 
+ 	arp.hlen = 6;					/* hardware address length */
+ 	arp.plen = 4;					/* protocol address length */
+ 	arp.operation = htons(ARPOP_REQUEST);		/* ARP op code */
+-	*((u_int *) arp.sInaddr) = ip;			/* source IP address */
++	/* A gratuitous ARP request is an ARP request packet where the source and destination IP are both set to the IP of the machine issuing the packet and the destination MAC is the broadcast address ff:ff:ff:ff:ff:ff. Ordinarily, no reply packet will occur. A gratuitous ARP reply is a reply to which no request has been made. 
++	So setting arp.sInaddr to 0 which differ from arp.tInaddr, then we can get the reply if exist the same IP address. */
++	*((u_int *) arp.sInaddr) = 0;			/* source IP address */
+ 	memcpy(arp.sHaddr, mac, 6);			/* source hardware address */
++	memcpy(arp.tHaddr, MAC_BCAST_ADDR, 6);		/* target hardware address , set the same value of MAC DA*/
+ 	*((u_int *) arp.tInaddr) = yiaddr;		/* target IP address */
+ 	
+ 	memset(&addr, 0, sizeof(addr));
+@@ -95,6 +98,16 @@ int arpping(u_int32_t yiaddr, u_int32_t 
+ 				rv = 0;
+ 				break;
+ 			}
++			// Our stb can send ARP reply, but its message arp.tHaddr equal to arp.sHaddr, 
++			// following condition will fit for this address conflicts.
++			if ((arp.operation == htons(ARPOP_REPLY)) && 
++			    (bcmp(arp.tHaddr, arp.sHaddr, 6) == 0) && 
++			    (*((u_int *) arp.sInaddr) == yiaddr)) {
++				DEBUG(LOG_INFO, "Valid arp reply receved for this address from stb");
++				rv = 0;
++				break;
++			}
++
+ 		}
+ 		timeout -= time(NULL) - prevTime;
+ 		time(&prevTime);

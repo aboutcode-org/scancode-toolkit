@@ -1,0 +1,8 @@
+key: x11-ibm
+short_name: X11-Style (IBM)
+name: X11-Style (IBM)
+category: Copyleft
+owner: IBM
+homepage_url: http://www.xfree86.org/current/LICENSE5.html
+text_urls:
+    - http://www.xfree86.org/current/LICENSE5.html

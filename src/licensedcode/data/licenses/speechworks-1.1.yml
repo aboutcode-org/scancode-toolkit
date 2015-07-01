@@ -1,0 +1,11 @@
+key: speechworks-1.1
+short_name: SpeechWorks Public License 1.1
+name: SpeechWorks Public License v1.1
+category: Attribution
+owner: Nuance Communications
+homepage_url: http://www.speech.cs.cmu.edu/openvxi/OpenVXI_1_4/License.txt
+text_urls:
+    - http://www.speech.cs.cmu.edu/openvxi/OpenVXI_1_4/License.txt
+other_urls:
+    - http://en.wikipedia.org/wiki/Nuance_Communications
+    - http://www.nuance.com/

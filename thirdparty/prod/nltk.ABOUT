@@ -1,0 +1,7 @@
+about_resource: nltk-2.0b4-py2-none-any.whl
+name: NLTK
+version: 2.0b4
+homepage_url:http://www.nltk.org/
+dje_license:apache-2.0
+download_url: http://nltk.googlecode.com/files/nltk-2.0b4.tar.gz
+license_text_file: apache-2.0.LICENSE

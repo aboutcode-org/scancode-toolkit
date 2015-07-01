@@ -1,0 +1,48 @@
+--- linux-2.6.23/drivers/net/phy/smsc.c.org	2009-02-04 16:33:03.000000000 +0100
++++ linux-2.6.23/drivers/net/phy/smsc.c	2009-01-21 11:03:02.000000000 +0100
+@@ -73,27 +73,6 @@
+ }
+ 
+ 
+-static struct phy_driver lan83c185_driver = {
+-	.phy_id		= 0x0007c0a0, /* OUI=0x00800f, Model#=0x0a */
+-	.phy_id_mask	= 0xfffffff0,
+-	.name		= "SMSC LAN83C185",
+-
+-	.features	= (PHY_BASIC_FEATURES | SUPPORTED_Pause
+-				| SUPPORTED_Asym_Pause),
+-	.flags		= PHY_HAS_INTERRUPT | PHY_HAS_MAGICANEG,
+-
+-	/* basic functions */
+-	.config_aneg	= genphy_config_aneg,
+-	.read_status	= genphy_read_status,
+-	.config_init	= smsc_config_init,
+-
+-	/* IRQ related */
+-	.ack_interrupt	= smsc_ack_interrupt,
+-	.config_intr	= smsc_config_intr,
+-
+-	.driver		= { .owner = THIS_MODULE, }
+-};
+-
+ static struct phy_driver lan8700_driver = {
+         .phy_id         = LAN8700_PHY_ID,
+         .phy_id_mask    = 0xfffffff0,
+@@ -116,17 +95,11 @@
+ {
+ 	int retval;
+ 
+-	retval = phy_driver_register (&lan83c185_driver);
+-
+-	if (retval < 0)
+-		return retval;
+-
+ 	return phy_driver_register(&lan8700_driver);
+ }
+ 
+ static void __exit smsc_exit(void)
+ {
+-	phy_driver_unregister (&lan83c185_driver);
+ 	phy_driver_unregister (&lan8700_driver);
+ }
+ 

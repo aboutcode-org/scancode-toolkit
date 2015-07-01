@@ -1,0 +1,22 @@
+key: mpl-2.0
+short_name: MPL 2.0
+name: Mozilla Public License 2.0
+category: Copyleft Limited
+owner: Mozilla
+homepage_url: http://mpl.mozilla.org/2012/01/03/announcing-mpl-2-0/
+spdx_license_key: MPL-2.0
+spdx_full_name: Mozilla Public License 2.0
+spdx_url: http://spdx.org/licenses/MPL-2.0
+spdx_notes: |-
+    http://opensource.org/licenses/MPL-2.0
+    http://spdx.org/licenses/MPL-2.0
+    This license was released in January 2012.
+    This license list entry is for use when the standard MPL 2.0 is used, as indicated by the standard header (Exhibit A but no Exhibit B).
+text_urls:
+    - http://www.mozilla.org/MPL/2.0/index.txt
+    - http://www.mozilla.org/MPL/2.0/
+    - http://www.mozilla.org/MPL/2.0/index.html
+    - http://www.mozilla.com/MPL/2.0/
+faq_url: http://www.mozilla.org/MPL/2.0/FAQ.html
+other_urls:
+    - http://opensource.org/licenses/MPL-2.0

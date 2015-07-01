@@ -1,0 +1,9 @@
+key: json-js-pd
+short_name: JSON-js-PD
+name: JSON-js Public Domain Notice
+category: Public Domain
+owner: JSON.org
+homepage_url: https://github.com/douglascrockford/JSON-js
+text_urls:
+    - https://github.com/douglascrockford/JSON-js
+faq_url: http://www.JSON.org/js.html

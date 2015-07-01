@@ -1,0 +1,152 @@
+This package was debianized by:
+
+    Masayuki Hatta (mhatta) <mhatta@debian.org> on Sun, 22 Mar 2009 18:42:01 +0900
+
+It was downloaded from:
+
+    http://www.abisource.com/download/
+
+Upstream Authors:
+
+    <s>AbiSource, Inc, along with many volunteers</s>
+
+    See AUTHORS for (almost) complete list of contributors.
+
+Copyright:
+
+    Copyright (C) 1998- <s>AbiSource, Inc. & Co.</s>
+
+License:
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 2 of the License, or
+    (at your option) any later version.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+On Debian systems, the complete text of the GNU General Public License
+version 2 can be found in `/usr/share/common-licenses/GPL-2'.  the
+complete text of the GNU General Public License version 3 can be found
+in `/usr/share/common-licenses/GPL-3'.
+
+The Debian packaging is:
+
+    Copyright (C) 2009 <s>Masayuki Hatta (mhatta) <mhatta@debian.org></s>
+    Copyright (C) 2009 <s>Patrik Fimml <patrik@fimml.at></s>
+
+and is licensed under the GPL version 3, see above.
+
+
+o About Trademark
+
+(See also http://www.abisource.com/information/license/tm_guide.phtml)
+
+Trademark Usage Guidelines
+
+AbiSource Trademarks
+
+AbiSource, AbiWord, AbiCalc, AbiFile, AbiSuite, AbiShow and other
+AbiSource graphics, logos and service names are trademarks of Dom
+Lachowicz. These trademarks may not be used in connection with any
+product or service that is not AbiSource's, in any manner that is
+likely to cause confusion among customers, or in any manner that
+disparages or discredits AbiSource.
+
+Trademarks and the GPL
+
+AbiSource software products, such as AbiWord, are copyrighted works
+released under the terms of the GNU General Public License
+(GPL). Verbatim copies of such works may be made and distributed, by
+anyone, in accordance with the terms of the GPL without violating the
+AbiSource trademarks. The GPL also grants you certain rights to make
+and distribute derivative works based on the source code to AbiSource
+products.
+
+The GPL does not grant you any right to use AbiSource trademarks in
+connection with these derivative works. AbiSource trademarks may not
+be used in connection with any such derivative works unless that usage
+is explicitly and specifically licensed, in writing, from Dom
+Lachowicz.
+
+Personal exemption
+
+As a specific exception, AbiSource freely licenses the use of certain
+of its trademarks solely in combination with the suffix "Personal"
+when applied to derivative works based on an AbiSource GPL
+product. Thus, for example, you are free to use the mark "AbiWord
+Personal" in connection with derivative works that are based on
+"AbiWord". To help maintain this distinction, AbiSource releases the
+sources to its GPL products with Personal-based trademarks.
+
+We are not lawyers
+
+Trademark and copyright issues are, at heart, legal matters. We've
+tried to keep this explanation as simple and common-sense as possible,
+but if you have any questions about when and how to use AbiSource
+trademarks, your best bet is to ask a lawyer. We are not lawyers.
+
+We are not evil
+
+Our goal is very simple. We want to make sure our software stays Open
+Source, no matter what. That's why we chose the GPL. We also want
+everyone to know which products are ours. That's why we are so picky
+about our trademarks.
+
+o "AbiWord" vs. "AbiWord Personal" for Debian?
+
+Maybe this is informative for now.
+
+> From: Dom Lachowicz
+> Date: 20 July 2004 22:08:34 BST
+> To: Andy Korvemaker, abiword-dev@abisource.com
+> Subject: Re: Abiword being removed from Debian/unstable?
+>
+>
+> I'm not sure if this is the reason or not, but please
+> see:
+>
+> http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=258918
+>
+> For the record, I've recently acquired the AbiWord
+> trademarks and whatnot. I haven't had a chance to
+> update the TM information on the website.
+>
+> To be expressly clear here for any Debian guys that
+> read this message:
+>
+> Within reason, I don't care if you use "AbiWord" vs.
+> "AbiWord Personal." In fact, I'd prefer it if you used
+> "AbiWord."
+>
+> Within reason, I don't care if you use the "official"
+> artwork or the "personal" artwork. In fact, I'd prefer
+> it if you used the "official" artwork.
+>
+> I do begin to care if you use my trademarks to promote
+> other products, or in ways that disparage my
+> trademarks or products. If you "forked" AbiWord, you
+> couldn't use the trademarks. But you're clearly not
+> going to do that. The USPTO has more info and case law
+> on this sort of thing.
+>
+> Debian and the other distros are clearly distributing
+> AbiWord, and providing a beneficial service to the
+> community. Even though Debian's version might have a
+> few patches against our "mainline" branch, I don't
+> believe it constitutes a "fork." As such, I think that
+> it is fine (if not preferable) for you guys to use the
+> official name and artwork in your distribution.
+>
+> So, you have my blessing to call your AbiWord +
+> patches "AbiWord". You can use the official artwork
+> too.
+>
+> Dom
+>

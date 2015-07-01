@@ -1,0 +1,10 @@
+key: freebsd-boot
+short_name: FreeBSD Boot
+name: FreeBSD Boot
+category: Attribution
+owner: FreeBSD
+homepage_url: http://freebsd.active-venture.com/FreeBSD-srctree/newsrc/boot/i386/boot2/boot2.c.html
+text_urls:
+    - http://freebsd.active-venture.com/FreeBSD-srctree/newsrc/boot/i386/boot2/boot2.c.html
+other_urls:
+    - https://casper.berkeley.edu/svn/trunk/roach/sw/uboot/common/cmd_elf.c

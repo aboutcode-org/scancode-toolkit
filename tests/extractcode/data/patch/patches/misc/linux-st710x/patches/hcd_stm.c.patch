@@ -1,0 +1,80 @@
+--- linux-2.6.23/drivers/usb/host/hcd-stm.c.orig	2009-08-11 12:36:42.000000000 +0200
++++ linux-2.6.23/drivers/usb/host/hcd-stm.c	2009-08-11 12:43:29.000000000 +0200
+@@ -26,6 +26,58 @@
+ #define dgb_print(fmt, args...)
+ #endif
+ 
++#include <linux/notifier.h>
++#include "ohci.h"
++#ifdef CONFIG_CPU_SUBTYPE_STX7105
++#define SYSCONF_BASE		(0xfe001000)
++#define SYSCONF_DEVICEID	(0x000)
++#define UHOST2C_BASE		(0xfe100000)
++#define AHB2STBUS_OHCI_BASE	(0x000ffc00)
++#define AHB2STBUS_EHCI_BASE	(0x000ffe00)
++#else
++#define SYSCONF_BASE		(0x19001000)
++#define SYSCONF_DEVICEID	(0x000)
++#define UHOST2C_BASE		(0x19100000)
++#define AHB2STBUS_OHCI_BASE	(0x000ffc00)
++#define AHB2STBUS_EHCI_BASE	(0x000ffe00)
++#endif
++
++static int hcd_stm_machine_restart_notifier(struct notifier_block *nb, unsigned long val, void *v)
++{
++	// Check if it is a 7109.
++	unsigned long sysconf;
++	int chip_7109;
++	unsigned int *addr;
++	addr = ioremap_nocache(SYSCONF_BASE, 0x100);
++	sysconf = readl(addr + SYSCONF_DEVICEID);
++	iounmap(addr);
++	chip_7109 = (((sysconf >> 12) & 0x3ff) == 0x02c);
++	if (chip_7109) {
++		unsigned long reg;
++		addr = ioremap_nocache(UHOST2C_BASE, 0x100000);
++		reg = readl(addr + AHB2STBUS_OHCI_BASE + 0x04);
++		reg &= OHCI_CTRL_RWC;
++		writel(reg, addr + AHB2STBUS_OHCI_BASE + 0x04);
++		iounmap(addr);
++
++		addr = ioremap_nocache(UHOST2C_BASE, 0x100000);
++		writel(0, addr + AHB2STBUS_EHCI_BASE + 0x18); // intr_enable
++		reg = readl(addr + AHB2STBUS_EHCI_BASE + 0x10); // command
++		reg &= ~(1<<0); // cmd_run
++		writel(reg, addr + AHB2STBUS_EHCI_BASE + 0x10);
++		writel(0, addr + AHB2STBUS_EHCI_BASE + 0x50); // configured_flag
++		iounmap(addr);
++	}
++	return NOTIFY_OK;
++}
++
++static struct notifier_block hcd_stm_notifier_block = {
++	hcd_stm_machine_restart_notifier, NULL, 0
++};
++
++extern int register_machine_restart_notifier(struct notifier_block * nb);
++extern int unregister_machine_restart_notifier(struct notifier_block * nb);
++
+ static int st_usb_boot(struct platform_device *pdev)
+ {
+ 	struct plat_usb_data *pl_data = pdev->dev.platform_data;
+@@ -299,12 +351,17 @@
+ 
+ static int __init st_usb_init(void)
+ {
+-	return platform_driver_register(&st_usb_driver);
++	int retval = platform_driver_register(&st_usb_driver);
++	static int reg = 1;
++	if (reg) register_machine_restart_notifier(&hcd_stm_notifier_block);
++	reg = 0;
++	return retval;
+ }
+ 
+ static void __exit st_usb_exit(void)
+ {
+ 	platform_driver_unregister(&st_usb_driver);
++	unregister_machine_restart_notifier(&hcd_stm_notifier_block);
+ }
+ 
+ MODULE_LICENSE("GPL");

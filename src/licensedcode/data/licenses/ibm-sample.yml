@@ -1,0 +1,7 @@
+key: ibm-sample
+short_name: IBM Sample License
+name: IBM Sample Program License
+category: Attribution
+owner: IBM
+text_urls:
+    - http://www.java-forums.org/swt/9604-swt-2d-unicode-example.html

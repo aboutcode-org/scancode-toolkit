@@ -1,0 +1,17 @@
+This package was debianized by Raphael Hertzog <rhertzog@hrnet.fr> on
+Tue, 29 Dec 1998 12:11:58 +0100.
+
+It was downloaded from http://www.cpan.org/modules/by-module/Locale/gettext-1.05.tar.gz
+
+Upstream Author: <s>Phillip Vandry <vandry@TZoNE.ORG></s>
+
+Copyright:
+
+Locale::gettext is Copyright 1996..2005 by <s>Phillip Vandry
+<vandry@TZoNE.ORG></s>. All rights reserved.
+
+This library is free software; you may distribute under the terms
+of either the GNU General Public License or the Artistic License, as
+specified in the Perl README file.
+
+Check /usr/share/common-licenses/GPL and /usr/share/common-licenses/Artistic.

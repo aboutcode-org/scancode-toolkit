@@ -1,0 +1,59 @@
+--- linux-2.6.23/arch/sh/boards/st/mb442/mach.c.org	2009-02-04 18:26:55.000000000 +0100
++++ linux-2.6.23/arch/sh/boards/st/mb442/mach.c	2009-02-04 18:29:06.000000000 +0100
+@@ -17,6 +17,9 @@
+ #include <asm/machvec.h>
+ #include <asm/irq-stb7100.h>
+ 
++#define SYSCONF_BASE (0x19001000)
++#define SYSCONF_DEVICEID (SYSCONF_BASE + 0x000)
++
+ static void __iomem *mb442_ioport_map(unsigned long port, unsigned int size)
+ {
+ #ifdef CONFIG_BLK_DEV_ST40IDE
+@@ -37,16 +40,45 @@
+ 
+ static void __init mb442_init_irq(void)
+ {
++#ifdef CONFIG_SH_MOTOROLA_VIP19XX
++ 	unsigned long sysconf;
++ 	unsigned long chip_7109;
++	unsigned int *addr = ioremap_nocache(SYSCONF_BASE, 0x100);
++
++	sysconf = readl(addr);
++	chip_7109 = (((sysconf >> 12) & 0x3ff) == 0x02c);
++	iounmap(addr);
++#endif
+ 	/* enable individual interrupt mode for externals */
+ 	plat_irq_setup_pins(IRQ_MODE_IRQ);
+ 
+ 	/* Set the ILC to route external interrupts to the the INTC */
+ 	/* Outputs 0-3 are the interrupt pins, 4-7 are routed to the INTC */
+-	/* Inputs sys-irq2 and 3 are unused (pulled high) */
++	/* Inputs sys-irq2 and 3 are unused (pulled low) */
++#ifndef CONFIG_SH_MOTOROLA_VIP19XX
+ 	ilc_route_external(ILC_EXT_IRQ0, 4, 0);		/* SMC Ethernet */
+ 	ilc_route_external(ILC_EXT_IRQ1, 5, 0);		/* ATA */
+ 	ilc_route_external(ILC_EXT_IRQ2, 6, 0);		/* Unused */
+ 	ilc_route_external(ILC_EXT_MDINT, 7, 0);	/* STe100 PHY */
++#else
++	/* Motorola boards:
++	     ILC_EXT_IRQ0: ETH_IRQ~ (VIP1900 only)
++	     ILC_EXT_IRQ1: NIM_IRQ~ (VIP1900 and VIP1900-9)
++	     ILC_EXT_IRQ2: Not used
++	     ILC_EXT_IRQ3: Not used
++	     ILC_EXT_IRB_WAKEUP: Not used but connected to IR data
++	     ILC_EXT_NMI: Not used
++	     ILC_EXT_MDINT: MDINT~ (VIP1900-9 only)
++	     ILC_EXT_LOWPOWEROUT: Not used
++	*/
++	ilc_route_external(ILC_EXT_IRQ1, 5, 1);
++	if (chip_7109) {
++		ilc_route_external(ILC_EXT_MDINT, 4, 1);
++	}
++	else {
++		ilc_route_external(ILC_EXT_IRQ0, 4, 1);
++	}
++#endif
+ }
+ 
+ void __init mb442_setup(char**);

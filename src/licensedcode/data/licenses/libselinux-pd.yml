@@ -1,0 +1,6 @@
+key: libselinux-pd
+short_name: libselinux License
+name: libselinux License
+category: Public Domain
+owner: SELinux Project
+homepage_url: http://userspace.selinuxproject.org/trac/browser/libselinux/LICENSE

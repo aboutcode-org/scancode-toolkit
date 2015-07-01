@@ -1,0 +1,14 @@
+Index: src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
+===================================================================
+--- src.orig/Browser/WebCore/platform/network/ekioh/ResourceHandleManager.cpp
++++ src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
+@@ -238,7 +238,8 @@ void ResourceHandleManager::setTimeout()
+         m_timer.triggerIn(1);
+     }
+     else if (m_curlTimeout >= 0) {
+-        m_timer.triggerIn(m_curlTimeout / 10); // convert ms to cs
++        // patched: take half of suggested delay
++        m_timer.triggerIn(m_curlTimeout / (10 * 2)); // convert ms to cs
+     }
+     else if (m_runningJobs > 0) {
+         // Bit of a hack to prevent the event loop becoming idle.

@@ -1,0 +1,4 @@
+licenses:
+    - broadcom-bsd
+template: yes
+notes: Broadcom BSD sample, template

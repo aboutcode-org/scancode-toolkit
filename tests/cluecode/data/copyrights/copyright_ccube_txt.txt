@@ -1,0 +1,4 @@
+#  No part of this document may be copied, reproduced, or transmitted in
+# * any form without the prior written consent of C-Cube Microsystems.
+# * Copyright (c) 2001 C-Cube Microsystems. All rights reserved.
+# *    C-Cube Microsystems, Milpitas CA

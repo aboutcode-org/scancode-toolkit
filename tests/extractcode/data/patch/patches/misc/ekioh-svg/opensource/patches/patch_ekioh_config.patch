@@ -1,0 +1,149 @@
+Index: src/3rdParty/SpiderMonkey/patches/ekioh-config.patch
+===================================================================
+--- src.orig/3rdParty/SpiderMonkey/patches/ekioh-config.patch
++++ src/3rdParty/SpiderMonkey/patches/ekioh-config.patch
+@@ -4,7 +4,7 @@ Index: work/js/src/EKjsconfig.h
+ ===================================================================
+ --- /dev/null
+ +++ work/js/src/EKjsconfig.h
+-@@ -0,0 +1,99 @@
++@@ -0,0 +1,224 @@
+ +/*
+ + *  EKjsconfig.h
+ + *  Ekioh
+@@ -16,8 +16,133 @@ Index: work/js/src/EKjsconfig.h
+ +#ifndef EKJSCONFIG_H
+ +#define EKJSCONFIG_H
+ +
+-+#include "EKPlatformDefs.h"
+-+#include "EKCpuDefs.h"
+++#if defined EK_PORT_CPU_DEFS
+++
+++// EKPortDefs.h has taken care of the CPU specific definitions, so suppress
+++// everything here.
+++
+++#elif defined(__powerpc64__)
+++
+++#define EK_BIG_ENDIAN 1
+++#define EK_LITTLE_ENDIAN 0
+++
+++#define EK_BYTES_PER_LONG 8
+++#define EK_BYTES_PER_WORD 8
+++#define EK_BITS_PER_WORD 64
+++#define EK_BITS_PER_WORD_LOG2 6
+++#define EK_ALIGN_OF_POINTER 8
+++
+++#define EK_BYTES_PER_SIZE_T 8
+++
+++
+++
+++#elif defined(__powerpc__) || \
+++      defined(__POWERPC__)
+++
+++#define EK_BIG_ENDIAN 1
+++#define EK_LITTLE_ENDIAN 0
+++
+++#define EK_BYTES_PER_LONG 4
+++#define EK_BYTES_PER_WORD 4
+++#define EK_BITS_PER_WORD 32
+++#define EK_BITS_PER_WORD_LOG2 5
+++#define EK_ALIGN_OF_POINTER 4
+++
+++#define EK_BYTES_PER_SIZE_T 4
+++
+++
+++
+++#elif defined(__x86_64__) || \
+++      defined(__ia64__)   || \
+++      defined(_M_IA64)    || \
+++      defined(_M_X64)
+++
+++#define EK_BIG_ENDIAN 0
+++#define EK_LITTLE_ENDIAN 1
+++
+++#define EK_BYTES_PER_LONG 8
+++#define EK_BYTES_PER_WORD 8
+++#define EK_BITS_PER_WORD 64
+++#define EK_BITS_PER_WORD_LOG2 6
+++#define EK_ALIGN_OF_POINTER 8
+++
+++#define EK_BYTES_PER_SIZE_T 8
+++
+++
+++
+++#elif defined(__i386__) || \
+++      defined(_M_IX86)
+++
+++#define EK_BIG_ENDIAN 0
+++#define EK_LITTLE_ENDIAN 1
+++
+++#define EK_BYTES_PER_LONG 4
+++#define EK_BYTES_PER_WORD 4
+++#define EK_BITS_PER_WORD 32
+++#define EK_BITS_PER_WORD_LOG2 5
+++#define EK_ALIGN_OF_POINTER 4
+++
+++#define EK_BYTES_PER_SIZE_T 4
+++
+++
+++
+++#elif defined(__arm__) || \
+++      defined(__MARM__)
+++
+++#if defined (__ARMEL__)
+++#  define EK_BIG_ENDIAN 0
+++#  define EK_LITTLE_ENDIAN 1
+++#elif defined (__ARMEB__)
+++#  define EK_BIG_ENDIAN 1
+++#  define EK_LITTLE_ENDIAN 0
+++#else
+++#  error "Unknown ARM endian"
+++#endif
+++
+++#define EK_BYTES_PER_LONG 4
+++#define EK_BYTES_PER_WORD 4
+++#define EK_BITS_PER_WORD 32
+++#define EK_BITS_PER_WORD_LOG2 5
+++#define EK_ALIGN_OF_POINTER 4
+++
+++#define EK_BYTES_PER_SIZE_T 4
+++
+++
+++
+++#elif defined(__mips__)
+++
+++#define EK_BIG_ENDIAN 0
+++#define EK_LITTLE_ENDIAN 1
+++
+++#define EK_BYTES_PER_LONG 4
+++#define EK_BYTES_PER_WORD 4
+++#define EK_BITS_PER_WORD 32
+++#define EK_BITS_PER_WORD_LOG2 5
+++#define EK_ALIGN_OF_POINTER 4
+++
+++#define EK_BYTES_PER_SIZE_T 4
+++
+++
+++
+++#elif defined(__sh__)
+++
+++#define EK_BIG_ENDIAN 0
+++#define EK_LITTLE_ENDIAN 1
+++
+++#define EK_BYTES_PER_LONG 4
+++#define EK_BYTES_PER_WORD 4
+++#define EK_BITS_PER_WORD 32
+++#define EK_BITS_PER_WORD_LOG2 5
+++#define EK_ALIGN_OF_POINTER 4
+++
+++#define EK_BYTES_PER_SIZE_T 4
+++
+++#else
+++
+++#error "Unknown CPU architecture"
+++
+++#endif
+++
+ +#include "EKTypes.h"
+ +
+ +#if EK_LITTLE_ENDIAN

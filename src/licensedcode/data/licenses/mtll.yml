@@ -1,0 +1,13 @@
+key: mtll
+short_name: Matrix Template Library License
+name: Matrix Template Library License
+category: Attribution
+owner: Indiana University
+homepage_url: https://fedoraproject.org/wiki/Licensing/Matrix_Template_Library_License
+spdx_license_key: MTLL
+spdx_full_name: Matrix Template Library License
+spdx_url: http://spdx.org/licenses/MTLL
+spdx_notes: >-
+    from Fedora: "This license was found in the Matrix Template Library. It is derived
+    from the Apache Software License v1.1, but it is modified in several ways. It
+    is Free, but GPL-incompatible."

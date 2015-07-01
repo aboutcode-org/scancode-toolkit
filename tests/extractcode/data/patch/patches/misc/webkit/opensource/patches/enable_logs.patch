@@ -1,0 +1,73 @@
+Index: src/3rdParty/webkit/work/WebCore/loader/FrameLoader.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/loader/FrameLoader.cpp
++++ src/3rdParty/webkit/work/WebCore/loader/FrameLoader.cpp
+@@ -2002,7 +2002,8 @@ void FrameLoader::load(const KURL& newUR
+         request.setCachePolicy(ReloadIgnoringCacheData);
+ 
+     ASSERT(newLoadType != FrameLoadTypeSame);
+-
++    fprintf(stderr, "Loading URL: %s\n",
++            newURL.string().latin1().data());
+     NavigationAction action(newURL, newLoadType, isFormSubmission, event);
+ 
+     if (!frameName.isEmpty()) {
+@@ -4416,6 +4417,8 @@ void FrameLoader::setProvisionalHistoryI
+ 
+ void FrameLoader::setMainDocumentError(DocumentLoader* loader, const ResourceError& error)
+ {
++    fprintf(stderr, "Browser: setMainDocumentError: %s (libcurl error %d)\n",
++            error.localizedDescription().latin1().data(), error.errorCode());
+     m_client->setMainDocumentError(loader, error);
+ }
+ 
+@@ -4430,6 +4433,7 @@ void FrameLoader::mainReceivedCompleteEr
+ 
+ void FrameLoader::mainReceivedError(const ResourceError& error, bool isComplete)
+ {
++    fprintf(stderr, "mainReceivedError\n");
+     activeDocumentLoader()->mainReceivedError(error, isComplete);
+ }
+ 
+@@ -4440,16 +4444,19 @@ ResourceError FrameLoader::cancelledErro
+ 
+ ResourceError FrameLoader::blockedError(const ResourceRequest& request) const
+ {
++    fprintf(stderr, "blockedError\n");
+     return m_client->blockedError(request);
+ }
+ 
+ ResourceError FrameLoader::cannotShowURLError(const ResourceRequest& request) const
+ {
++    fprintf(stderr, "cannotShowURLError\n");
+     return m_client->cannotShowURLError(request);
+ }
+ 
+ ResourceError FrameLoader::fileDoesNotExistError(const ResourceResponse& response) const
+ {
++    fprintf(stderr, "fileDoesNotExistError\n");
+     return m_client->fileDoesNotExistError(response);    
+ }
+ 
+Index: src/3rdParty/webkit/work/WebCore/html/HTMLParser.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/html/HTMLParser.cpp
++++ src/3rdParty/webkit/work/WebCore/html/HTMLParser.cpp
+@@ -50,6 +50,7 @@
+ #include "Page.h"
+ #include "Settings.h"
+ #include "Text.h"
++#include "CString.h"
+ 
+ namespace WebCore {
+ 
+@@ -1485,6 +1486,9 @@ void HTMLParser::reportErrorToConsole(HT
+     message.replace("%tag1", tag1);
+     message.replace("%tag2", tag2);
+ 
++    fprintf(stderr, "HTMLParser: Error: %s\n",
++            message.latin1().data());
++
+     page->chrome()->addMessageToConsole(HTMLMessageSource, isWarning(errorCode) ? WarningMessageLevel: ErrorMessageLevel, message, lineNumber, document->url());
+ }
+ 

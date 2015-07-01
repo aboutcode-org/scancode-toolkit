@@ -1,0 +1,11 @@
+key: artistic-clarified
+short_name: Clarified Artistic License
+name: Clarified Artistic License
+category: Copyleft Limited
+owner: Fedora
+homepage_url: https://fedoraproject.org/wiki/Licensing/ArtisticClarified
+spdx_license_key: ClArtistic
+spdx_full_name: Clarified Artistic License
+spdx_url: http://spdx.org/licenses/ClArtistic
+text_urls:
+    - http://www.ncftp.com/ncftp/doc/LICENSE.txt

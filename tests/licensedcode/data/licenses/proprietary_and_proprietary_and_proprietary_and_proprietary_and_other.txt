@@ -1,0 +1,54 @@
+ unknown_license detects the following license with no problem
+
+/*******************************************************************************
+ *******************************************************************************
+ *
+ *      Contains: Sample TNF Kernel initialization code, for base kit and AVC.
+ *
+ * Copyright 251 2000 Apple Computer, Inc.  Any use, reproduction, modification or
+ * distribution of this source code or any derivatives thereof is subject
+ * to the Apple FireWire Reference Platform License.  For more information,
+ * visit http://developer.apple.com/firewire/platform. Patents essential
+ * to the IEEE 1394 digital interface may be licensed from 1394 LA.  For
+ * more information, visit http://www.1394la.com.
+ *
+ * FireWire is a trademark of Apple Computer, Inc. registered in the U.S.
+ * and other countries.  To obtain a license, visit
+ * http://developer.apple.com/mkt/swl/agreements.html#firewire.
+
+However, it fails if combined proprietary license notice
+
+/*****************************************************************************
+*
+*      Copyright 1999 - 2010
+*
+*      ABC, Broadband Communications Sector
+*      123 ABC Dr.
+*      ABC, ABC 11111
+*
+*      All Rights Reserved.
+*
+*      This program is confidential and proprietary to ABC, Inc. and,
+*      without the express prior written permission of ABC, may not be 
+*      copied, reproduced, disclosed to others, published or used, in whole 
+*      or in part, for any purpose other than that for which it is being 
+*      made available.
+*
+******************************************************************************/
+
+
+/*******************************************************************************
+ *******************************************************************************
+ *
+ *      Contains: Sample TNF Kernel initialization code, for base kit and AVC.
+ *
+ * Copyright 251 2000 Apple Computer, Inc.  Any use, reproduction, modification or
+ * distribution of this source code or any derivatives thereof is subject
+ * to the Apple FireWire Reference Platform License.  For more information,
+ * visit http://developer.apple.com/firewire/platform. Patents essential
+ * to the IEEE 1394 digital interface may be licensed from 1394 LA.  For
+ * more information, visit http://www.1394la.com.
+ *
+ * FireWire is a trademark of Apple Computer, Inc. registered in the U.S.
+ * and other countries.  To obtain a license, visit
+ * http://developer.apple.com/mkt/swl/agreements.html#firewire.

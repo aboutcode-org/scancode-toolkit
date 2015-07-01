@@ -1,0 +1,465 @@
+--- linux-2.6.23/drivers/net/phy/marvell.c.orig	2007-10-09 22:31:38.000000000 +0200
++++ linux-2.6.23/drivers/net/phy/marvell.c	2009-04-20 17:56:21.000000000 +0200
+@@ -35,275 +35,240 @@
+ #include <asm/irq.h>
+ #include <asm/uaccess.h>
+ 
+-#define MII_M1011_IEVENT		0x13
+-#define MII_M1011_IEVENT_CLEAR		0x0000
+-
+-#define MII_M1011_IMASK			0x12
+-#define MII_M1011_IMASK_INIT		0x6400
+-#define MII_M1011_IMASK_CLEAR		0x0000
+-
+-#define MII_M1011_PHY_SCR		0x10
+-#define MII_M1011_PHY_SCR_AUTO_CROSS	0x0060
+-
+-#define MII_M1145_PHY_EXT_CR		0x14
+-#define MII_M1145_RGMII_RX_DELAY	0x0080
+-#define MII_M1145_RGMII_TX_DELAY	0x0002
+-
+-#define M1145_DEV_FLAGS_RESISTANCE	0x00000001
+-
+-#define MII_M1111_PHY_LED_CONTROL	0x18
+-#define MII_M1111_PHY_LED_DIRECT	0x4100
+-#define MII_M1111_PHY_LED_COMBINE	0x411c
+-#define MII_M1111_PHY_EXT_CR		0x14
+-#define MII_M1111_RX_DELAY		0x80
+-#define MII_M1111_TX_DELAY		0x2
+-#define MII_M1111_PHY_EXT_SR		0x1b
+-#define MII_M1111_HWCFG_MODE_MASK	0xf
+-#define MII_M1111_HWCFG_MODE_RGMII	0xb
+-#define MII_M1111_HWCFG_MODE_SGMII_NO_CLK	0x4
++#define M3015_INTERRUPT_ENABLE     (18)
++#define M3015_INTERRUPT_STATUS     (19)
++#define M3015_LED_PARALLEL_SELECT  (22)
++#define M3015_MANUAL_LED_OVERRIDE  (25)
++#define M3015_TEST_MODE_SELECT     (29)
++#define M3015_CALIBRATION_OVERRIDE (30)  /* At page 10 */
++#define M3015_REGISTERS            (33)
++
++/* Bits and modes in M3015_TEST_MODE_SELECT */
++#define M3015_TMS_PAGE_MASK (0xffe0)
++#define M3015_TMS_PAGE_10   (0xa)
++#define M3015_TMS_PAGE_11   (0xb)
++
++/* Bits and modes in M3015_INTERRUPT_ENABLE */
++#define M3015_INTEN_NOINTERRUPTS    (0)
++#define M3015_INTEN_SPEEDCHANGE     (1 << 14)
++#define M3015_INTEN_DUPLEXCHANGE    (1 << 13)
++#define M3015_INTEN_LINKCHANGE      (1 << 10)
++#define M3015_INTEN_CROSSOVERCHANGE (1 << 6)
++#define M3015_INTEN_POLARITYCHANGE  (1 << 1)
++
++/* Bits and modes in M3015_LED_PARALLEL_SELECT */
++#define M3015_LPS_LED2_SHIFT     (8)
++#define M3015_LPS_LED2_MASK      (0xf0ff)
++#define M3015_LPS_LED2_INTERRUPT (0xe)
++#define M3015_LPS_LED1_SHIFT     (4)
++#define M3015_LPS_LED1_MASK      (0xff0f)
++#define M3015_LPS_LED1_ACTIVITY  (0xb)
++#define M3015_LPS_LED0_SHIFT     (0)
++#define M3015_LPS_LED0_MASK      (0xfff0)
++#define M3015_LPS_LED0_LINK      (0x5)
++
++/* Bits and modes in M3015_CALIBRATION_OVERRIDE */
++#define M3015_CO_PMOS_SHIFT  (8)
++#define M3015_CO_NMOS_SHIFT  (0)
++#define M3015_CO_LATCH       (1 << 6)
++#define M3015_CO_PMOS_SELECT (1 << 5)
++
++/* Calibration impedances for I/O lines */
++#define M3015_WEAK_PMOS_IMPEDANCE (0x00)
++#define M3015_WEAK_NMOS_IMPEDANCE (0x00)
+ 
+ MODULE_DESCRIPTION("Marvell PHY driver");
+ MODULE_AUTHOR("Andy Fleming");
+ MODULE_LICENSE("GPL");
+ 
+-static int marvell_ack_interrupt(struct phy_device *phydev)
+-{
+-	int err;
+-
+-	/* Clear the interrupts by reading the reg */
+-	err = phy_read(phydev, MII_M1011_IEVENT);
+-
+-	if (err < 0)
+-		return err;
+-
+-	return 0;
+-}
++/* #define MARVELL_DEBUG */
++/* #define CONFIGURE_IMPEDANCE_TARGET_ON_IO_LINES */
+ 
+-static int marvell_config_intr(struct phy_device *phydev)
++#ifdef MARVELL_DEBUG
++static void m3015_register_dump(struct phy_device *phydev)
+ {
+-	int err;
+-
+-	if (phydev->interrupts == PHY_INTERRUPT_ENABLED)
+-		err = phy_write(phydev, MII_M1011_IMASK, MII_M1011_IMASK_INIT);
+-	else
+-		err = phy_write(phydev, MII_M1011_IMASK, MII_M1011_IMASK_CLEAR);
++	int result;
++	int i;
+ 
+-	return err;
++	printk("\nDumping Marvell 88E3015 registers\n");
++	for (i = 0; i < M3015_REGISTERS; ++i) {
++		int reg = i;
++		if (((reg > 8) && (reg < 16))
++		    || (reg == 23)) {
++			/* Register not used */
++			continue;
++		}
++		if (reg > M3015_TEST_MODE_SELECT) {
++			/* Paging mechanism for registers above */
++			reg = M3015_TEST_MODE_SELECT;
++			result = phy_read(phydev, reg);
++			if (result < 0) {
++				printk("Unable to read register %d!\n", reg);
++				continue;
++			}
++			/* Set page 9, 10 or 11 of the next register */
++			result &= M3015_TMS_PAGE_MASK;
++			result |= (9 + i - (reg + 1));
++			result = phy_write(phydev, reg, result);
++			reg = M3015_TEST_MODE_SELECT + 1;
++		}
++		result = phy_read(phydev, reg);
++		if (result < 0) {
++			printk("Unable to dump register %d!\n", reg);
++		}
++		else {
++			if (i > M3015_TEST_MODE_SELECT) {
++				printk("  Register %d_%d: 0x%04x\n",
++				       reg, 9 + i - reg, result);
++			}
++			else {
++				printk("  Register %d: 0x%04x\n", reg, result);
++			}
++		}
++	}
++	printk("Done.\n\n");
+ }
++#endif
+ 
+-static int marvell_config_aneg(struct phy_device *phydev)
++static int m3015_ack_interrupt(struct phy_device *phydev)
+ {
+ 	int err;
+ 
+-	/* The Marvell PHY has an errata which requires
+-	 * that certain registers get written in order
+-	 * to restart autonegotiation */
+-	err = phy_write(phydev, MII_BMCR, BMCR_RESET);
+-
+-	if (err < 0)
+-		return err;
+-
+-	err = phy_write(phydev, 0x1d, 0x1f);
+-	if (err < 0)
+-		return err;
+-
+-	err = phy_write(phydev, 0x1e, 0x200c);
+-	if (err < 0)
+-		return err;
+-
+-	err = phy_write(phydev, 0x1d, 0x5);
+-	if (err < 0)
+-		return err;
+-
+-	err = phy_write(phydev, 0x1e, 0);
+-	if (err < 0)
+-		return err;
+-
+-	err = phy_write(phydev, 0x1e, 0x100);
+-	if (err < 0)
+-		return err;
+-
+-	err = phy_write(phydev, MII_M1011_PHY_SCR,
+-			MII_M1011_PHY_SCR_AUTO_CROSS);
+-	if (err < 0)
+-		return err;
++	/* Clear the interrupts by reading the interrupt status register */
++	err = phy_read(phydev, M3015_INTERRUPT_STATUS);
+ 
+-	err = phy_write(phydev, MII_M1111_PHY_LED_CONTROL,
+-			MII_M1111_PHY_LED_DIRECT);
+ 	if (err < 0)
+ 		return err;
+ 
+-	err = genphy_config_aneg(phydev);
+-
+-	return err;
++	return 0;
+ }
+ 
+-static int m88e1111_config_init(struct phy_device *phydev)
++static int m3015_config_intr(struct phy_device *phydev)
+ {
+ 	int err;
+ 
+-	if ((phydev->interface == PHY_INTERFACE_MODE_RGMII) ||
+-	    (phydev->interface == PHY_INTERFACE_MODE_RGMII_ID)) {
+-		int temp;
+-
+-		if (phydev->interface == PHY_INTERFACE_MODE_RGMII_ID) {
+-			temp = phy_read(phydev, MII_M1111_PHY_EXT_CR);
+-			if (temp < 0)
+-				return temp;
+-
+-			temp |= (MII_M1111_RX_DELAY | MII_M1111_TX_DELAY);
+-
+-			err = phy_write(phydev, MII_M1111_PHY_EXT_CR, temp);
+-			if (err < 0)
+-				return err;
+-		}
+-
+-		temp = phy_read(phydev, MII_M1111_PHY_EXT_SR);
+-		if (temp < 0)
+-			return temp;
+-
+-		temp &= ~(MII_M1111_HWCFG_MODE_MASK);
+-		temp |= MII_M1111_HWCFG_MODE_RGMII;
+-
+-		err = phy_write(phydev, MII_M1111_PHY_EXT_SR, temp);
+-		if (err < 0)
+-			return err;
++	if (phydev->interrupts == PHY_INTERRUPT_ENABLED) {
++		/* Configure interrupts to be generated on speed
++		   changes, duplex changes and link changes. */
++		err = phy_write(phydev, M3015_INTERRUPT_ENABLE,
++				M3015_INTEN_SPEEDCHANGE
++				| M3015_INTEN_DUPLEXCHANGE
++				| M3015_INTEN_LINKCHANGE);
+ 	}
+-
+-	if (phydev->interface == PHY_INTERFACE_MODE_SGMII) {
+-		int temp;
+-
+-		temp = phy_read(phydev, MII_M1111_PHY_EXT_SR);
+-		if (temp < 0)
+-			return temp;
+-
+-		temp &= ~(MII_M1111_HWCFG_MODE_MASK);
+-		temp |= MII_M1111_HWCFG_MODE_SGMII_NO_CLK;
+-
+-		err = phy_write(phydev, MII_M1111_PHY_EXT_SR, temp);
+-		if (err < 0)
+-			return err;
++	else {
++		err = phy_write(phydev, M3015_INTERRUPT_ENABLE,
++				M3015_INTEN_NOINTERRUPTS);
+ 	}
+ 
+-	err = phy_write(phydev, MII_BMCR, BMCR_RESET);
+ 	if (err < 0)
+ 		return err;
+ 
+ 	return 0;
+ }
+ 
+-static int m88e1145_config_init(struct phy_device *phydev)
++#ifdef CONFIGURE_IMPEDANCE_TARGET_ON_IO_LINES
++static int m3015_set_impedance_target(struct phy_device *phydev,
++				      int pmos_target_impedance,
++				      int nmos_target_impedance)
+ {
+-	int err;
++	int value;
++	int result;
+ 
+-	/* Take care of errata E0 & E1 */
+-	err = phy_write(phydev, 0x1d, 0x001b);
+-	if (err < 0)
+-		return err;
++	do {
++		/* Switch to page 10 */
++		result = phy_read(phydev, M3015_TEST_MODE_SELECT);
++		if (result < 0) {
++			break;
++		}
++		result &= M3015_TMS_PAGE_MASK;
++		result |= M3015_TMS_PAGE_10;
++		result = phy_write(phydev, M3015_TEST_MODE_SELECT, result);
++		if (result < 0) {
++			break;
++		}
+ 
+-	err = phy_write(phydev, 0x1e, 0x418f);
+-	if (err < 0)
+-		return err;
++		/* Set new calibration target impedance value */
++		value = (pmos_target_impedance << M3015_CO_PMOS_SHIFT);
++		value |= (nmos_target_impedance << M3015_CO_NMOS_SHIFT);
++		value |= M3015_CO_LATCH;
++		value |= M3015_CO_PMOS_SELECT;  /* Latch PMOS value */
++		result = phy_write(phydev, M3015_CALIBRATION_OVERRIDE, value);
++		if (result < 0) {
++			break;
++		}
++		value &= ~M3015_CO_PMOS_SELECT;  /* Latch NMOS value */
++		result = phy_write(phydev, M3015_CALIBRATION_OVERRIDE, value);
+ 
+-	err = phy_write(phydev, 0x1d, 0x0016);
+-	if (err < 0)
+-		return err;
++	} while (0);
+ 
+-	err = phy_write(phydev, 0x1e, 0xa2da);
+-	if (err < 0)
+-		return err;
++	return result;
++}
++#endif
+ 
+-	if (phydev->interface == PHY_INTERFACE_MODE_RGMII_ID) {
+-		int temp = phy_read(phydev, MII_M1145_PHY_EXT_CR);
+-		if (temp < 0)
+-			return temp;
+-
+-		temp |= (MII_M1145_RGMII_RX_DELAY | MII_M1145_RGMII_TX_DELAY);
+-
+-		err = phy_write(phydev, MII_M1145_PHY_EXT_CR, temp);
+-		if (err < 0)
+-			return err;
+-
+-		if (phydev->dev_flags & M1145_DEV_FLAGS_RESISTANCE) {
+-			err = phy_write(phydev, 0x1d, 0x0012);
+-			if (err < 0)
+-				return err;
+-
+-			temp = phy_read(phydev, 0x1e);
+-			if (temp < 0)
+-				return temp;
+-
+-			temp &= 0xf03f;
+-			temp |= 2 << 9;	/* 36 ohm */
+-			temp |= 2 << 6;	/* 39 ohm */
+-
+-			err = phy_write(phydev, 0x1e, temp);
+-			if (err < 0)
+-				return err;
+-
+-			err = phy_write(phydev, 0x1d, 0x3);
+-			if (err < 0)
+-				return err;
+-
+-			err = phy_write(phydev, 0x1e, 0x8000);
+-			if (err < 0)
+-				return err;
+-		}
++static int m3015_config_init(struct phy_device *phydev)
++{
++	int result;
++
++	do {
++	  /* reset phy */
++	  phy_write(phydev, MII_BMCR, BMCR_RESET);
++
++	  /* restart autonegotation */
++	  phy_write(phydev, MII_BMCR,
++		    BMCR_ANRESTART | BMCR_ANENABLE);
++
++#ifdef CONFIGURE_IMPEDANCE_TARGET_ON_IO_LINES
++		/* Set manual impedance values for the I/0 lines */
++		result = m3015_set_impedance_target(
++			phydev,
++			M3015_WEAK_PMOS_IMPEDANCE,
++			M3015_WEAK_NMOS_IMPEDANCE);
++		if (result < 0)
++			break;
++#endif
++
++		/* Configure the LED2 pin as an interrupt pin */
++		result = phy_read(phydev, M3015_LED_PARALLEL_SELECT);
++		if (result < 0)
++			break;
++		result &= M3015_LPS_LED2_MASK;
++		result |= (M3015_LPS_LED2_INTERRUPT << M3015_LPS_LED2_SHIFT);
++
++		/* Configure the yellow LED on the LED1 pin to show activity */
++		result &= M3015_LPS_LED1_MASK;
++		result |= (M3015_LPS_LED1_ACTIVITY << M3015_LPS_LED1_SHIFT);
++
++		/* Configure the green LED on the LED0 pin for link status */
++		result &= M3015_LPS_LED0_MASK;
++		result |= (M3015_LPS_LED0_LINK << M3015_LPS_LED0_SHIFT);
++		result = phy_write(phydev, M3015_LED_PARALLEL_SELECT, result);
++	} while (0);
++
++	if (result < 0) {
++		printk("Marvell 88E3015: Unable to communicate with the "
++		       "device!\n");
++		return result;
+ 	}
+ 
++#ifdef MARVELL_DEBUG
++	m3015_register_dump(phydev);
++#endif
++
+ 	return 0;
+ }
+ 
+ static struct phy_driver marvell_drivers[] = {
+ 	{
+-		.phy_id = 0x01410c60,
+-		.phy_id_mask = 0xfffffff0,
+-		.name = "Marvell 88E1101",
+-		.features = PHY_GBIT_FEATURES,
+-		.flags = PHY_HAS_INTERRUPT,
+-		.config_aneg = &marvell_config_aneg,
+-		.read_status = &genphy_read_status,
+-		.ack_interrupt = &marvell_ack_interrupt,
+-		.config_intr = &marvell_config_intr,
+-		.driver = {.owner = THIS_MODULE,},
+-	},
+-	{
+-		.phy_id = 0x01410c90,
+-		.phy_id_mask = 0xfffffff0,
+-		.name = "Marvell 88E1112",
+-		.features = PHY_GBIT_FEATURES,
+-		.flags = PHY_HAS_INTERRUPT,
+-		.config_init = &m88e1111_config_init,
+-		.config_aneg = &marvell_config_aneg,
+-		.read_status = &genphy_read_status,
+-		.ack_interrupt = &marvell_ack_interrupt,
+-		.config_intr = &marvell_config_intr,
+-		.driver = {.owner = THIS_MODULE,},
+-	},
+-	{
+-		.phy_id = 0x01410cc0,
+-		.phy_id_mask = 0xfffffff0,
+-		.name = "Marvell 88E1111",
+-		.features = PHY_GBIT_FEATURES,
+-		.flags = PHY_HAS_INTERRUPT,
+-		.config_init = &m88e1111_config_init,
+-		.config_aneg = &marvell_config_aneg,
+-		.read_status = &genphy_read_status,
+-		.ack_interrupt = &marvell_ack_interrupt,
+-		.config_intr = &marvell_config_intr,
+-		.driver = {.owner = THIS_MODULE,},
+-	},
+-	{
+-		.phy_id = 0x01410cd0,
++		.phy_id = 0x01410e20,
+ 		.phy_id_mask = 0xfffffff0,
+-		.name = "Marvell 88E1145",
+-		.features = PHY_GBIT_FEATURES,
++		.name = "Marvell 88E3015",
++		.features = PHY_BASIC_FEATURES | SUPPORTED_Pause,
+ 		.flags = PHY_HAS_INTERRUPT,
+-		.config_init = &m88e1145_config_init,
+-		.config_aneg = &marvell_config_aneg,
++		.config_init = &m3015_config_init,
++		.config_aneg = &genphy_config_aneg,
+ 		.read_status = &genphy_read_status,
+-		.ack_interrupt = &marvell_ack_interrupt,
+-		.config_intr = &marvell_config_intr,
++		.ack_interrupt = &m3015_ack_interrupt,
++		.config_intr = &m3015_config_intr,
+ 		.driver = {.owner = THIS_MODULE,},
+ 	}
+ };

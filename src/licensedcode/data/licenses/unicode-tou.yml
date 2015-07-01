@@ -1,0 +1,9 @@
+key: unicode-tou
+short_name: Unicode Terms of Use
+name: Unicode Terms of Use
+category: Proprietary Free
+owner: Unicode Consortium
+homepage_url: http://www.unicode.org/copyright.html
+spdx_license_key: Unicode-TOU
+spdx_full_name: Unicode Terms of Use
+spdx_url: http://spdx.org/licenses/Unicode-TOU

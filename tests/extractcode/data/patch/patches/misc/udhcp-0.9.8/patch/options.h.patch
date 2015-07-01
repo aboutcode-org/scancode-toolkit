@@ -1,0 +1,20 @@
+--- udhcp-0.9.8.orig/options.h	2002-03-23 08:34:03.000000000 +0800
++++ udhcp-0.9.8/options.h	2009-10-19 16:25:33.000000000 +0800
+@@ -9,6 +9,7 @@
+ enum {
+ 	OPTION_IP=1,
+ 	OPTION_IP_PAIR,
++	OPTION_ROUTE,
+ 	OPTION_STRING,
+ 	OPTION_BOOLEAN,
+ 	OPTION_U8,
+@@ -34,7 +35,9 @@
+ int end_option(unsigned char *optionptr);
+ int add_option_string(unsigned char *optionptr, unsigned char *string);
+ int add_simple_option(unsigned char *optionptr, unsigned char code, u_int32_t data);
++int add_option(unsigned char *optionptr, unsigned char code, u_int8_t* data, u_int8_t datalen);
+ struct option_set *find_option(struct option_set *opt_list, char code);
+ void attach_option(struct option_set **opt_list, struct dhcp_option *option, char *buffer, int length);
++int add_user_class_option(unsigned char *optionptr, unsigned char *data);
+ 
+ #endif

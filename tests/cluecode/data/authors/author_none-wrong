@@ -1,0 +1,34 @@
+invocations of this method having set 'If-Modified-Since' and 'E-tag'
+Modified on:{ts '2008-02-14 20:32:14'}
+Modified on:{ts '2008-02-14 20:32:30'}
+Modified Page Width and Template Preset values for IE
+modified in such a way shall still be considered the Standard Version.
+Modified MouseDown method to not clear the selection when the right mouse button is clicked and the editor control has no PopupMenu attached (could be assigned to the parent control).
+extern PACKAGE System::ResourceString _SColumnModified;
+mkdir dir=${doc.dir}/api/ record name=${log.dir}/javadoc.log action=start loglevel=info emacsmode=${record.emacsmode}/ javadoc destdir=${doc.dir}/api public=true author=false source=1.5 additionalparam=-breakiterator windowtitle=Java API - XXXXXXX - Ag
+Modified BSD for ACME Labs
+Modified BSD for France Telecom
+Modified BSD for JDBCPool
+message. If NULL, the signature isn't verified (for instance, the decoded
+Logo/Author=Powered By
+lms = stream1.headers.get('Last-Modified')
+logger.debug( Setting If-Modified-Since using Last-Modified from server: + lastModifiedSince);
+logger.debug( Warning: Server did not return Last-Modified);
+logger.debug(Server returned 'Last-Modified' header: + lastModifiedSince);
+LastModified := GetHeaderFieldValue(AHeader, AFieldList, 'Last-Modified');
+Last modified: 3.6.2008
+lastmod = stream1.headers.get('Last-Modified')
+Issuer: EMAILADDRESS=walrus@É, CN=Walrus,
+item name=Logo/Author value=Powered By /
+property ShowModified: boolean read FShowModified Write FShowModified;
+RegisterField('Last-Modified');
+SColumnModified = '?X?V?œ??';
+Products derived from this software may not use Indiana University name nor may Indiana University appear in their name, without prior written permission of the Indiana University.
+Predefined PKCS 7 data structures that can be encoded / decoded.
+SColumnModified = '?X?V?œ??';
+SColumnModified = '?X?V?œ??';
+request.add_header('If-Modified-Since',lms)
+Returns TRUE if successfully parsed the input string and encoded
+SColumnModified = '?X?V?œ??';
+status == 304 or Not Modified
+String lastModified = uc.getHeader(Last-Modified); 

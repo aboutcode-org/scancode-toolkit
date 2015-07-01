@@ -1,0 +1,20 @@
+key: lgpl-3.0
+short_name: LGPL 3.0
+name: GNU Lesser General Public License 3.0
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/lgpl-3.0.html
+spdx_license_key: LGPL-3.0
+spdx_full_name: >-
+    GNU Lesser General Public License v3.0 only
+spdx_url: http://spdx.org/licenses/LGPL-3.0
+spdx_notes: |-
+    This license was released: 29 June 2007.
+    This license is OSI Certified.
+text_urls:
+    - http://www.gnu.org/licenses/lgpl-3.0.txt
+    - http://www.gnu.org/licenses/lgpl-3.0-standalone.html
+osi_url: http://www.opensource.org/licenses/lgpl-3.0.html
+other_urls:
+    - http://www.gnu.org/licenses/why-not-lgpl.html
+    - http://www.gnu.org/copyleft/lesser.html

@@ -1,0 +1,6 @@
+BlueZ D-Bus Out Of Band Pairing API description
+===============================================
+
+Copyright (C) 2011  Szymon Janc <szymon.janc@tieto.com> for ST-Ericsson
+
+Service		org.bluez

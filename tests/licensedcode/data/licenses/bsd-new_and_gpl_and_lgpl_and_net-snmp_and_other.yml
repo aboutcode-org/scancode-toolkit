@@ -1,0 +1,7 @@
+licenses:
+    - bsd-new
+    - gpl
+    - lgpl
+    - net-snmp
+expected_failure: yes
+sort: true

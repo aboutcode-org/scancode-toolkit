@@ -1,0 +1,4 @@
+/* <filename.c> -- <comment explaining the purpose of the file>
+* Copyright (c) 1995-1998 Mark Adler
+* For conditions of distribution and use, see copyright notice in zlib.h
+*/

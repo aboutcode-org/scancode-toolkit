@@ -1,0 +1,12 @@
+key: google-analytics-tos
+short_name: Google Analytics Terms of Service
+name: Google Analytics Terms of Service
+category: Proprietary Free
+owner: Google
+homepage_url: http://www.google.com/analytics/terms/us.html
+text_urls:
+    - http://www.google.com/analytics/terms/us.html
+other_urls:
+    - http://www.google.com/analytics
+    - http://www.google.com/privacy.html
+    - http://support.google.com/analytics/bin/answer.py?hl=en&topic=2611283&answer=2700409

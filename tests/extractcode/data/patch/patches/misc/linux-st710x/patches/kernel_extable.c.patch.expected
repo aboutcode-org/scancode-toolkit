@@ -1,0 +1,3 @@
+[('linux-2.6.23/kernel/extable.c~',
+  'linux-2.6.23/kernel/extable.c',
+  '--- linux-2.6.23/kernel/extable.c~\n+++ linux-2.6.23/kernel/extable.c\n@@ -65,3 +65,4 @@\nreturn 1;\nreturn module_text_address(addr) != NULL;\n}\n+EXPORT_SYMBOL(kernel_text_address);')]

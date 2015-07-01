@@ -1,0 +1,6 @@
+licenses:
+    - bsd-new
+template: yes
+notes: >
+    This has a minor variation in the lowercased disclaimer block from the
+    typical bsd-new text. Foudn in the joblib Python library

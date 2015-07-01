@@ -1,0 +1,14 @@
+key: upl-1.0
+short_name: UPL 1.0
+name: Universal Permissive License (UPL) v1.0
+category: Attribution
+owner: Oracle Corporation
+homepage_url: http://opensource.org/licenses/UPL
+spdx_license_key: UPL-1.0
+spdx_full_name: ''
+spdx_url: ''
+spdx_notes: approved for SDPX 2.0 license list
+osi_url: http://opensource.org/licenses/UPL
+other_urls:
+    - https://www.jcp.org/aboutJava/communityprocess/ec-public/materials/2014-04-15/UPL.pdf
+    - http://h30499.www3.hp.com/t5/HP-Software-Solutions-Blog/Use-Oracle-s-UPL-Abandon-Your-Intellectual-Property/ba-p/6485626#.VQsAeWTF8z0

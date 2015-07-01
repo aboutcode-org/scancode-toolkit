@@ -1,0 +1,12 @@
+key: newsletr
+short_name: Newsletr License
+name: Newsletr License
+category: Attribution
+owner: Hunter Goatley
+homepage_url: https://fedoraproject.org/wiki/Licensing/Newsletr
+spdx_license_key: Newsletr
+spdx_full_name: Newsletr License
+spdx_url: http://spdx.org/licenses/Newsletr
+spdx_notes: >-
+    Per Fedora: "This is a zlib variant, less restrictive. It was found on the "newsletr"
+    component of texlive 2010. It is Free and GPL-compatible."

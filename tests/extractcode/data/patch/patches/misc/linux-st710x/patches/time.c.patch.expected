@@ -1,0 +1,3 @@
+[('linux-2.6.23-orig/arch/sh/kernel/time.c',
+  'linux-2.6.23/arch/sh/kernel/time.c',
+  '--- linux-2.6.23-orig/arch/sh/kernel/time.c\n+++ linux-2.6.23/arch/sh/kernel/time.c\n@@ -255,7 +255,7 @@\ninit_sh_clocksource();\n\nif (sh_hpt_frequency)\n-\t\tprintk("Using %lu.%03lu MHz high precision timer.\\n",\n+\t\tprintk(KERN_INFO "Using %lu.%03lu MHz high precision timer.\\n",\n((sh_hpt_frequency + 500) / 1000) / 1000,\n((sh_hpt_frequency + 500) / 1000) % 1000);\n')]

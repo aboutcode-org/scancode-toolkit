@@ -1,0 +1,5 @@
+about_resource: magic2.py
+download_url: https://pypi.python.org/packages/source/p/python-magic/python-magic-0.4.6.tar.gz
+homepage_url: https://github.com/ahupp/python-magic
+license_text_file: python-magic.LICENSE
+notes: this code was derived and heavily modified from python-magic.

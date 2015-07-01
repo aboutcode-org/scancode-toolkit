@@ -1,0 +1,4 @@
+licenses:
+    - pdl
+    - mit
+expected_failure: yes

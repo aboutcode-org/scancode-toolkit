@@ -1,0 +1,28 @@
+--- avahi-0.6.25/avahi-autoipd/main.c	2009-06-04 16:21:14.000000000 +0530
++++ avahi-0.6.25/avahi-autoipd/main.c	2009-06-04 16:27:01.000000000 +0530
+@@ -106,6 +106,12 @@
+ #define ETHER_HDR_SIZE (2+2*ETHER_ADDRLEN)
+ #define ARP_PACKET_SIZE (8+4+4+2*ETHER_ADDRLEN)
+ 
++#ifdef AVAHI_IPDATA_DIR
++#undef AVAHI_IPDATA_DIR
++#endif
++#define AVAHI_IPDATA_DIR "/flash/avahi"
++
++
+ typedef enum ArpOperation {
+     ARP_REQUEST = 1,
+     ARP_RESPONSE = 2
+@@ -1643,10 +1649,12 @@
+             goto finish;
+         }
+ 
++#if 0
+         if (getuid() != 0) {
+             daemon_log(LOG_ERR, "This program is intended to be run as root.");
+             goto finish;
+         }
++#endif
+ 
+         if ((pid = daemon_pid_file_is_running()) >= 0) {
+             daemon_log(LOG_ERR, "Daemon already running on PID %u", pid);

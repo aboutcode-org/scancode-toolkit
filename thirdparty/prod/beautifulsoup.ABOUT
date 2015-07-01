@@ -1,0 +1,7 @@
+about_resource: BeautifulSoup-3.2.1.tar.gz
+version:3.2.1
+name: beautifulsoup
+home_url:http://www.crummy.com/software/BeautifulSoup/
+download_url: https://pypi.python.org/packages/source/B/BeautifulSoup/BeautifulSoup-3.2.1.tar.gz
+license_text: beautifulsoup.LICENSE
+dje_license: bsd-new

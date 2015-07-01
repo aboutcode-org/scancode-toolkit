@@ -1,0 +1,7 @@
+licenses:
+    - apache-1.1
+template: yes
+notes: >-
+    Batik variant of Apache 1.1 with hyphenation.
+    This variant has been formatted with hyphenation breaking some words in multiple
+    words

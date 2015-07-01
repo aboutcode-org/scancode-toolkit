@@ -1,0 +1,7 @@
+key: gpl-2.0-openjdk
+short_name: GPL 2.0 with OpenJDK classpath exception
+name: >-
+    GNU General Public License 2.0 with OpenJDK Classpath exception
+category: Copyleft Limited
+owner: Oracle Corporation
+faq_url: http://openjdk.java.net/legal/exception-modules-2007-05-08.html

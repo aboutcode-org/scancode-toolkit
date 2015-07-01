@@ -1,0 +1,131 @@
+Index: src/3rdParty/webkit/work/WebCore/plugins/npfunctions.h
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/plugins/npfunctions.h
++++ src/3rdParty/webkit/work/WebCore/plugins/npfunctions.h
+@@ -61,6 +61,7 @@ typedef void* (*NPN_GetJavaEnvProcPtr)(v
+ typedef void* (*NPN_GetJavaPeerProcPtr)(NPP instance);
+ typedef void (*NPN_PushPopupsEnabledStateProcPtr)(NPP instance, NPBool enabled);
+ typedef void (*NPN_PopPopupsEnabledStateProcPtr)(NPP instance);
++typedef void (*NPN_PluginThreadAsyncCallProcPtr)(NPP npp, void (*func)(void *), void *userData);
+ 
+ typedef void (*NPN_ReleaseVariantValueProcPtr) (NPVariant *variant);
+ 
+@@ -151,6 +152,7 @@ typedef struct _NPNetscapeFuncs {
+     NPN_PushPopupsEnabledStateProcPtr pushpopupsenabledstate;
+     NPN_PopPopupsEnabledStateProcPtr poppopupsenabledstate;
+     NPN_EnumerateProcPtr enumerate;
++    NPN_PluginThreadAsyncCallProcPtr pluginthreadasynccall;
+ } NPNetscapeFuncs;
+ 
+ typedef struct _NPPluginFuncs {
+Index: src/Browser/WebCore/platform/ekioh/PluginEkioh.cpp
+===================================================================
+--- src.orig/Browser/WebCore/platform/ekioh/PluginEkioh.cpp
++++ src/Browser/WebCore/platform/ekioh/PluginEkioh.cpp
+@@ -41,6 +41,11 @@
+ #include "EKString.h"
+ #include "EKUrl.h"
+ 
++#include "EKCallback.h"
++#include "EKCallbackListener.h"
++
++#include <deque>
++
+ namespace WebCore {
+ 
+ static NPNetscapeFuncs s_browserFuncs;
+@@ -67,6 +72,7 @@ static void invalidateRegion(NPP instanc
+ static void forceRedraw(NPP instance);
+ static void pushPopupsEnabledState(NPP npp, NPBool enabled);
+ static void popPopupsEnabledState(NPP npp);
++static void pluginThreadAsyncCall(NPP npp, void (*func)(void *), void *userData);
+ 
+ #ifdef _WIN32_WCE
+ #define strdup _strdup
+@@ -433,6 +439,7 @@ PluginView::getBrowserFuncs()
+ #endif
+         browserFuncs.pushpopupsenabledstate = &pushPopupsEnabledState;
+         browserFuncs.poppopupsenabledstate = &popPopupsEnabledState;
++        browserFuncs.pluginthreadasynccall = &pluginThreadAsyncCall;
+ 
+ 
+         // NP runtime
+@@ -656,4 +663,78 @@ popPopupsEnabledState(NPP npp)
+ {
+ }
+ 
++namespace {
++    class PluginThreadAsyncCallListener : public ekioh::EKCallbackListener
++    {
++        class Functor
++        {
++            void (*m_func)(void*);
++            void* m_userData;
++
++        public:
++            Functor(void (*func)(void*), void* userData)
++              : m_func(func),
++                m_userData(userData)
++            { }
++
++            void call() const
++            {
++                m_func(m_userData);
++            }
++        };
++
++        typedef std::deque<Functor> FunctorQueue;
++
++        pthread_mutex_t m_mutex;
++        FunctorQueue m_callQueue;
++        FunctorQueue m_tmpCallQueue;
++
++    public:
++        PluginThreadAsyncCallListener()
++        {
++            pthread_mutex_init(&m_mutex, NULL);
++        }
++
++        ~PluginThreadAsyncCallListener()
++        {
++            pthread_mutex_destroy(&m_mutex);
++        }
++
++        void addCall(void (*func)(void*), void* userData)
++        {
++            pthread_mutex_lock(&m_mutex);
++            m_callQueue.push_back(Functor(func, userData));
++            pthread_mutex_unlock(&m_mutex);
++        }
++
++        virtual void callback(const ekioh::EKCallback& callback)
++        {
++            pthread_mutex_lock(&m_mutex);
++            m_tmpCallQueue.assign(m_callQueue.begin(), m_callQueue.end());
++            m_callQueue.clear();
++            pthread_mutex_unlock(&m_mutex);
++
++            for (FunctorQueue::const_iterator it = m_tmpCallQueue.begin();
++                 it != m_tmpCallQueue.end();
++                 ++it)
++            {
++                it->call();
++            }
++        }
++    };
++
++    PluginThreadAsyncCallListener s_pluginThreadAsyncCallListener;
++
++    ekioh::EKCallback
++        s_pluginThreadAsyncCallCallback(s_pluginThreadAsyncCallListener);
++}
++
++void pluginThreadAsyncCall(NPP npp,
++                           void (*func)(void*),
++                           void* userData)
++{
++    s_pluginThreadAsyncCallListener.addCall(func, userData);
++    s_pluginThreadAsyncCallCallback.requestCallback();
++}
++
+ }

@@ -1,0 +1,10 @@
+key: jetty
+short_name: Jetty License
+name: Jetty License
+category: Attribution
+owner: Jetty Project
+homepage_url: http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt
+text_urls:
+    - http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt
+    - http://svn.apache.org/repos/asf/forrest/trunk/tools/jetty/jetty-4.2.19.jar.license.html
+faq_url: http://en.wikipedia.org/wiki/Jetty_(web_server)

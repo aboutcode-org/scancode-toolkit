@@ -1,0 +1,10 @@
+Simple CommandLine Parser
+Copyright (C) 2008  Chris Stoy
+For questions or comments see the article on CodeProject (www.codeproject.com )
+or email me at cstoy at nc.rr.com.
+
+You are free to use this code in all commercial and non-commercial applications
+as long as this copyright message is left intact.
+Use this code at your own risk.  I take no responsibility if it should fail to
+do anything you would expect it to do and it could, at any time, fail to function
+in any manner.  You have the source code, make it do what you want.

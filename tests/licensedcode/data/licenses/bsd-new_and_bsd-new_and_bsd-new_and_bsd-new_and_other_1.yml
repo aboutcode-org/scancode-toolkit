@@ -1,0 +1,12 @@
+licenses:
+    - bsd-new
+    - bsd-new
+    - bsd-new
+    - bsd-new
+    - carnegie-mellon-contributors
+    - gpl-2.0-plus
+    - historical
+    - inner-net-2.0
+    - lgpl-2.1-plus
+expected_failure: yes
+sort: true

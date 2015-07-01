@@ -1,0 +1,15 @@
+key: gpl-2.0-classpath
+short_name: GPL 2.0 with classpath exception
+name: >-
+    GNU General Public License 2.0 with Classpath exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/software/classpath/
+spdx_license_key: GPL-2.0-with-classpath-exception
+spdx_full_name: >-
+    GNU General Public License v2.0 w/Classpath exception
+spdx_url: http://spdx.org/licenses/GPL-2.0-with-classpath-exception
+text_urls:
+    - http://www.gnu.org/software/classpath/license.html
+other_urls:
+    - http://en.wikipedia.org/wiki/GPL_linking_exception

@@ -1,0 +1,13 @@
+--- pngrutil.c.orig	2009-08-19 11:01:06.000000000 +0200
++++ pngrutil.c	2009-08-19 11:01:17.000000000 +0200
+@@ -422,8 +422,8 @@
+       png_crc_finish(png_ptr, length);
+       return;
+    }
+-   else if (png_ptr->mode & PNG_HAVE_PLTE)
+-      png_error(png_ptr, "Duplicate PLTE chunk");
++   //else if (png_ptr->mode & PNG_HAVE_PLTE)
++   //   png_error(png_ptr, "Duplicate PLTE chunk");
+ 
+    png_ptr->mode |= PNG_HAVE_PLTE;
+ 

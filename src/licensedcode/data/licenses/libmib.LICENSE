@@ -1,0 +1,30 @@
+- - - - - - - - - - - - Copyright Notice - - - - - - - - - - - -
+
+Copyright 1998 Forrest J. Cavalier III
+
+See http://www.mibsoftware.com/libmib/ for documentation, original copies, and information on supported, industrial quality (non-experimental) versions appropriate for commercial use. This version is considered experimental.
+
+This software is provided by Forrest J. Cavalier III, d-b-a Mib Software, under the license which follows, which is believed to meet the open-source definition, version 1.0 at http://www.opensource.org
+
+We would appreciate that you notify us of defect discoveries and enhancements so that others can benefit from work on open-source software.
+
+Forrest J. Cavalier III, Mib Software http://www.mibsoftware.com We customize and extend reusable and open software.
+
+- - - - - - - - - - - - - License - - - - - - - - - - - - - - - - -
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software (the "Software"), to deal in the Software without restriction, including the rights to use, copy, modify, merge,publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,subject to the following conditions.
+
+1. The above copyright notice and this permission notice shall be included in the source code of all copies or substantial portions of the Software.
+
+2. Modifications to the Software may be created.
+Unless other licensing agreements are made in writing, these conditions apply when distributing source code.
+
+a) When source code of the Software is distributed, it shall be in its "pristine", unmodified form.
+and
+b) Modifications to the Software which are distributed as source code shall be distributed only as "patch files."
+and
+c) Modified works that are distributed shall be named differently than the original.
+
+Contact the author to arrange other terms.
+
+3. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */

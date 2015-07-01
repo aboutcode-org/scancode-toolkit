@@ -1,0 +1,54 @@
+
+The majority of code is written by Matt Johnston, under the license below.
+
+Portions of the client-mode work are (c) 2004 Mihnea Stoenescu, under the
+same license:
+
+Copyright (c) 2002-2006 Matt Johnston
+Portions copyright (c) 2004 Mihnea Stoenescu
+All rights reserved.
+
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+=====
+
+sshpty.c is taken from OpenSSH 3.5p1, 
+  Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
+                     All rights reserved
+ "As far as I am concerned, the code I have written for this software
+
+loginrec is written primarily by Andre Lucas, atomicio.c by Theo de Raadt.
+
+strlcat() is (c) Todd C. Miller
+
+=====
+Import code in keyimport.c is modified from PuTTY's import.c, licensed as
+follows:
+
+PuTTY is copyright 1997-2003 Simon Tatham.
+
+Portions copyright Robert de Bath, Joris van Rantwijk, Delian
+Delchev, Andreas Schultz, Jeroen Massar, Wez Furlong, Nicolas Barry,
+Justin Bradford, and CORE SDI S.A.
+and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT.  IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION

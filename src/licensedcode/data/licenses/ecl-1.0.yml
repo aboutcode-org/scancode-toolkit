@@ -1,0 +1,13 @@
+key: ecl-1.0
+short_name: ECL 1.0
+name: Educational Community License 1.0
+category: Attribution
+owner: OSI - Open Source Initiative
+homepage_url: http://www.opensource.org/licenses/ecl1.php
+spdx_license_key: ECL-1.0
+spdx_full_name: Educational Community License v1.0
+spdx_url: http://spdx.org/licenses/ECL-1.0
+spdx_notes: This license is OSI certified.
+text_urls:
+    - http://www.opensource.org/licenses/ecl1.php
+osi_url: http://opensource.org/licenses/ecl1.php

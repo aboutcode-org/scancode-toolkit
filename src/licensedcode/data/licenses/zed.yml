@@ -1,0 +1,9 @@
+key: zed
+short_name: Zed License
+name: Zed License
+category: Attribution
+owner: Jim Davies
+homepage_url: https://fedoraproject.org/wiki/Licensing/Zed
+spdx_license_key: Zed
+spdx_full_name: Zed License
+spdx_url: http://spdx.org/licenses/Zed

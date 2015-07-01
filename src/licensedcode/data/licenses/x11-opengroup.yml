@@ -1,0 +1,8 @@
+key: x11-opengroup
+short_name: X11-Style (Open Group)
+name: X11-Style (Open Group)
+category: Attribution
+owner: Open Group
+homepage_url: http://www.xfree86.org/current/LICENSE5.html
+text_urls:
+    - http://www.xfree86.org/current/LICENSE5.html

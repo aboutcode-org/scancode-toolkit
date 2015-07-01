@@ -1,0 +1,239 @@
+Index: linux-2.6.23/drivers/block/Makefile
+===================================================================
+--- linux-2.6.23.orig/drivers/block/Makefile
++++ linux-2.6.23/drivers/block/Makefile
+@@ -32,3 +32,4 @@ obj-$(CONFIG_BLK_DEV_UB)	+= ub.o
+ 
+ obj-$(CONFIG_XEN_BLKDEV_FRONTEND)	+= xen-blkfront.o
+ obj-$(CONFIG_LGUEST_BLOCK)	+= lguest_blk.o
++obj-$(CONFIG_BLK_MOTOROLA_ROOTDISK)	+= rootdisk.o
+Index: linux-2.6.23/drivers/block/Kconfig
+===================================================================
+--- linux-2.6.23.orig/drivers/block/Kconfig
++++ linux-2.6.23/drivers/block/Kconfig
+@@ -327,6 +327,12 @@ config BLK_DEV_UB
+ 
+ 	  If unsure, say N.
+ 
++config BLK_MOTOROLA_ROOTDISK
++       boolean "Motorola rootdisk block device"
++       help
++	  Motorola rootdisk block device is used to mount rootdisk
++	  in ram, specified by cmdline rootdisk=m:<size>@<offset>
++
+ config BLK_DEV_RAM
+ 	tristate "RAM disk support"
+ 	---help---
+Index: linux-2.6.23/drivers/block/rootdisk.c
+===================================================================
+--- /dev/null
++++ linux-2.6.23/drivers/block/rootdisk.c
+@@ -0,0 +1,175 @@
++/*
++ *---------------------------------------------------------------------------
++ *
++ * rootdisk.c
++ *
++ * Linux block device driver for mapping a rootdisk in memory.
++ *
++ * Copyright (c) 2009-2011 Motorola, Inc.
++ * All rights reserved.
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions
++ * are met:
++ * 1. Redistributions of source code must retain the above copyright
++ * notice, this list of conditions and the following disclaimer.
++ * 2. Redistributions in binary form must reproduce the above copyright
++ * notice, this list of conditions and the following disclaimer in the
++ * documentation and/or other materials provided with the distribution.
++ * 3. The name of the author may not be used to endorse or promote products
++ * derived from this software without specific prior written permission.
++ *
++ * Alternatively, this software may be distributed under the terms of the
++ * GNU General Public License ("GPL") version 2 as published by the Free
++ * Software Foundation.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
++ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
++ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
++ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
++ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
++ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
++ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
++ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
++ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++ *
++ *---------------------------------------------------------------------------
++ */
++
++#include <linux/bio.h>
++#include <linux/module.h>
++#include <linux/moduleparam.h>
++#include <linux/init.h>
++#include <linux/pagemap.h>
++#include <linux/blkdev.h>
++#include <linux/genhd.h>
++
++#define ROOTDISK_MAJOR 1
++#define ROOTDISK_MEMORY 'm'
++#define ROOTDISK_FLASH 'f'
++#define ROOTDISK_BLOCK_SIZE 512
++
++unsigned long rootdisk_offset = 0;
++EXPORT_SYMBOL(rootdisk_offset);
++unsigned long rootdisk_size = 0;
++EXPORT_SYMBOL(rootdisk_size);
++char rootdisk_type = ROOTDISK_FLASH;
++EXPORT_SYMBOL(rootdisk_type);
++
++struct rootdisk_dev {
++        int size;
++        u8 *data;
++        short users;
++        spinlock_t lock;
++        struct request_queue *queue;
++        struct gendisk *gd;
++};
++
++struct rootdisk_dev rdev;
++
++static int rootdisk_ioctl (struct inode *inode, struct file *filp,
++                    unsigned int cmd, unsigned long arg)
++{
++        return -ENOTTY; /* unknown command */
++}
++
++static int rootdisk_open(struct inode *inode, struct file *filp)
++{
++
++        filp->private_data = &rdev;
++        spin_lock(&rdev.lock);
++        rdev.users++;
++        spin_unlock(&rdev.lock);
++        return 0;
++}
++
++static void rootdisk_transfer(struct rootdisk_dev *dev, unsigned long sector,
++                              unsigned long nsect, char *buffer, int write)
++{
++        unsigned long offset = sector*ROOTDISK_BLOCK_SIZE;
++        unsigned long nbytes = nsect*ROOTDISK_BLOCK_SIZE;
++        if ((offset + nbytes) > dev->size) {
++                printk (KERN_NOTICE "Beyond-end write (%ld %ld)\n", offset, nbytes);
++                return;
++        }
++
++        if (write)
++                memcpy(dev->data + offset, buffer, nbytes);
++        else
++                memcpy(buffer, dev->data + offset, nbytes);
++}
++
++static void rootdisk_request(struct request_queue *q)
++{
++        struct request *req;
++        while ((req = elv_next_request(q)) != NULL) {
++                struct rootdisk_dev *dev = req->rq_disk->private_data;
++                if (! blk_fs_request(req)) {
++                        printk (KERN_NOTICE "Skip non-fs request\n");
++                        end_request(req, 0);
++                        continue;
++                }
++                rootdisk_transfer(dev, req->sector, req->current_nr_sectors,
++                                  req->buffer, rq_data_dir(req));
++                end_request(req, 1);
++        }
++}
++
++static int __init early_setup_rootdisk(char *str)
++{
++        if (sscanf(str,"%c:0x%lx@0x%lx",
++                   &rootdisk_type, &rootdisk_size, &rootdisk_offset) != 3) {
++                printk(KERN_WARNING "Invalid format of rootdisk parameter, should be [mf]:<size>@<offset>\n");
++        }
++	return 0;
++}
++early_param("rootdisk", early_setup_rootdisk);
++
++static struct block_device_operations rootdisk_bd_op = {
++	.owner =	THIS_MODULE,
++	.open =		rootdisk_open,
++	.ioctl =	rootdisk_ioctl,
++};
++
++static int __init rootdisk_init(void)
++{
++        if (rootdisk_type == 'm') {
++                memset(&rdev, 0, sizeof(struct rootdisk_dev));
++                spin_lock_init(&rdev.lock);
++                rdev.queue = blk_init_queue(rootdisk_request, &rdev.lock);
++                rdev.data = (u8*)rootdisk_offset;
++                rdev.size = rootdisk_size;
++
++                rdev.gd = alloc_disk(1);
++                rdev.gd->major = ROOTDISK_MAJOR;
++                rdev.gd->first_minor = 0;
++                rdev.gd->fops = &rootdisk_bd_op;
++                rdev.gd->queue = rdev.queue;
++                rdev.gd->private_data = &rdev;
++                snprintf (rdev.gd->disk_name, 32, "rootdisk%d", 0);
++                blk_queue_hardsect_size(rdev.queue, ROOTDISK_BLOCK_SIZE);
++                set_capacity(rdev.gd, rootdisk_size / ROOTDISK_BLOCK_SIZE);
++                add_disk(rdev.gd);
++
++                if (register_blkdev(ROOTDISK_MAJOR, "rootdisk")) {
++                        return -EIO;
++                }
++                printk(KERN_DEBUG "Added Motorola rootdisk, %s (0x%08x@0x%p)\n",
++                       rdev.gd->disk_name, rdev.size, rdev.data);
++
++        }
++        return 0;
++}
++
++static int __exit rootdisk_cleanup(void)
++{
++        return 0;
++}
++
++module_init(rootdisk_init);
++module_exit(rootdisk_cleanup);
++
++MODULE_LICENSE("GPL");
++MODULE_AUTHOR("Jonas Widén <wjo022@motorola.com>");
++MODULE_DESCRIPTION("Linux block device driver for mapping a rootdisk in memory");
+Index: linux-2.6.23/arch/sh/kernel/setup.c
+===================================================================
+--- linux-2.6.23.orig/arch/sh/kernel/setup.c
++++ linux-2.6.23/arch/sh/kernel/setup.c
+@@ -96,7 +96,11 @@ EXPORT_SYMBOL(memory_start);
+ unsigned long memory_end;
+ EXPORT_SYMBOL(memory_end);
+ unsigned long ramtopaddress=0;
+-
++#ifdef CONFIG_BLK_MOTOROLA_ROOTDISK
++extern unsigned long rootdisk_offset;
++extern unsigned long rootdisk_size;
++extern char rootdisk_type;
++#endif
+ static int __init early_parse_mem(char *p)
+ {
+ 	unsigned long size;
+@@ -233,6 +237,15 @@ void __init setup_bootmem_allocator(unsi
+ 
+ 	/* Reserve mem for the ST DSP */
+ 	reserve_bootmem(__MEMORY_START, dsp_mem_size);
++#ifdef CONFIG_BLK_MOTOROLA_ROOTDISK
++	if (rootdisk_type == 'm' &&
++	    rootdisk_offset != 0 && rootdisk_size !=0) {
++	  printk(KERN_DEBUG "Reserve memory for Motorola rootdisk\n");
++	  reserve_bootmem(__MEMORY_START +
++			  (rootdisk_offset & ~CONFIG_PAGE_OFFSET),
++			  rootdisk_size + (PAGE_SIZE - (rootdisk_size % PAGE_SIZE)));
++	}
++#endif
+ #ifndef CONFIG_CPU_SUBTYPE_STX7105
+ 	/* Reserve mem for STAPI usage and for the common_data_header
+ 	 * The common data header is 4096 bytes (PAGE_SIZE)

@@ -1,0 +1,3 @@
+[('configure.orign',
+  'configure',
+  '--- configure.orign\n+++ configure\n@@ -22355,7 +22355,7 @@\n\n\ncat >>confdefs.h <<\\_ACEOF\n-#define malloc rpl_malloc\n+//#define malloc rpl_malloc\n_ACEOF\n\nfi')]

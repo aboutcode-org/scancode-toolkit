@@ -1,0 +1,9 @@
+key: agpl-2.0
+short_name: AGPL 2.0
+name: Affero General Public License 2.0
+category: Copyleft
+owner: Affero
+homepage_url: http://www.affero.org/agpl2.html
+text_urls:
+    - http://www.affero.org/agpl2.html
+faq_url: http://www.affero.org/oagf.html

@@ -1,0 +1,21 @@
+--- sqlite-3.6.5/src/os_unix.c~	2008-11-11 19:52:32.000000000 +0100
++++ sqlite-3.6.5/src/os_unix.c	2009-10-01 14:33:55.000000000 +0200
+@@ -89,7 +89,7 @@
+ ** Default permissions when creating a new file
+ */
+ #ifndef SQLITE_DEFAULT_FILE_PERMISSIONS
+-# define SQLITE_DEFAULT_FILE_PERMISSIONS 0644
++# define SQLITE_DEFAULT_FILE_PERMISSIONS 0666
+ #endif
+ 
+ /*
+@@ -2656,7 +2656,9 @@ static int unixOpen(
+   if( isExclusive ) oflags |= (O_EXCL|O_NOFOLLOW);
+   oflags |= (O_LARGEFILE|O_BINARY);
+ 
++  mode_t oldMode = umask(0);
+   fd = open(zName, oflags, isDelete?0600:SQLITE_DEFAULT_FILE_PERMISSIONS);
++  umask(oldMode);
+   if( fd<0 && errno!=EISDIR && isReadWrite && !isExclusive ){
+     /* Failed to open the file for read/write access. Try read-only. */
+     flags &= ~(SQLITE_OPEN_READWRITE|SQLITE_OPEN_CREATE);

@@ -1,0 +1,64 @@
+DirectX Software Development Kit END-USER LICENSE AGREEMENT FOR MICROSOFT SOFTWARE 
+
+IMPORTANT-READ CAREFULLY: This Microsoft End-User License Agreement ("EULA") is a legal agreement between you (either an individual or a single entity) and Microsoft Corporation ("Microsoft") for the Microsoft software product identified above, which includes computer software and may include associated media and printed materials, and "online" or electronic documentation ("SOFTWARE PRODUCT).  The SOFTWARE PRODUCT also includes any updates and supplements to the original SOFTWARE PRODUCT that is associated with a separate end-user license agreement is licensed to you under the terms of that license agreement. By installing, copying, downloading, accessing or otherwise using the SOFTWARE PRODUCT, you agree to be bound by the terms of this EULA.  If you do not agree to the terms of this EULA, do not install or use the SOFTWARE PRODUCT. 
+
+SOFTWARE PRODUCT LICENSE
+
+The SOFTWARE PRODUCT is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties.  The SOFTWARE PRODUCT is licensed, not sold.
+
+1.GRANT OF LICENSE.
+
+This EULA grants you the following limited, non-exclusive rights:
+
+SOFTWARE PRODUCT.  You may install and use the SOFTWARE PRODUCT on an unlimited number of computers, including workstations, terminals or other digital electronic devices ("COMPUTERS") to design, develop, and test software application products for use with Microsoft operating system products including Windows NT Workstation 4.0, Windows NT Server 4.0, Windows 95 and subsequent releases thereto ("Application").  You may install copies of the SOFTWARE PRODUCT on up to ten (10) COMPUTERS provided that you are the only individual using the SOFTWARE PRODUCT on each such COMPUTER.  If you are an entity, Microsoft grants you the right to designate one individual within your organization to have the right to use the SOFTWARE PRODUCT in the manner provided above.
+
+SAMPLE CODE.  You may modify the sample source code located in the SOFTWARE PRODUCT's "MSSDK\Samples\Multimedia" directory ("Sample Code") to design, develop and test your Application.  You may also reproduce and distribute the Sample Code in object code form along with any modifications you make to the Sample Code, provided that you comply with the Distribution Requirements described below.  For purposes of this Section, "modifications" shall mean enhancements to the functionality of the Sample Code.
+
+REDISTRIBUTABLE CODE. Portions of the SOFTWARE PRODUCT are designated as "Redistributable Code". If you choose to distribute the Redistributable Code, you must include all files listed in such "DirectX" redist.txt file located in the directory named \LICENSE. No modifications, additions, or deletions to the Redistributable Code are permitted without written permission from Microsoft Corporation.  Your rights to distribute the Redistributable Code are subject to the Distribution Requirements described below.
+
+DISTRIBUTION REQUIREMENTS.  You may reproduce and distribute an unlimited number of copies of the Sample Code and/or Redistributable Code, (collectively "REDISTRIBUTABLE COMPONENTS")as described above, provided that (a) you distribute the REDISTRIBUTABLE COMPONENTS only as part of, or for use in conjunction with your Application; (b) your Application adds significant and primary functionality to the REDISTRIBUTABLE COMPONENTS; (c) the REDISTRIBUTABLE COMPONENTS only operate in conjunction with Microsoft Windows operating system products including Windows NT Workstation 4.0, Windows NT Server 4.0, Windows 95, and subsequent versions thereof, (d) you distribute your Application containing the REDISTRIBUTABLE COMPONENTS pursuant to an End-User License Agreement (which may be "break-the-seal", "click-wrap", or signed), with terms no less protective than those contained herein; (e) you do not permit further redistribution of the REDISTRIBUTABLE COMPONENTS by your end-user customers; (f) you must use the setup utility included with the REDISTRIBUTABLE COMPONENTS to install the Redistributable Code; (g) you do not use Microsoft's name, logo, or trademarks to market your Application; (h) you include all copyright and trademark notices contained in the REDISTRIBUTABLE COMPONENTS; (i) you include a valid copyright notice on your Application; and (j) you agree to indemnify, hold harmless, and defend Microsoft from any against any claims or lawsuits, including attorneys' feeds, that arise or result from the use or distribution of your Application. 
+
+If you distribute the Redistributable Code separately for use with your Application (such as on your web site or as part of an update to your Application), you must include an end user license agreement in the install program for the Redistributable Code in the form of \license\DirectX End User EULA.txt.
+
+Microsoft reserves all rights not expressly granted to you.
+
+Contact Microsoft for the applicable royalties due and other licensing terms for all other uses and/or distribution of the REDISTRIBUTABLE COMPONENTS.
+
+2.    COPYRIGHT.
+
+All right, title and copyrights in and to the SOFTWARE PRODUCT (including but not limited to any images, photographs, animations, video, audio, music, text and "applets," incorporated into the SOFTWARE PRODUCT), any accompanying printed materials, and any copies of the SOFTWARE PRODUCT, are owned by Microsoft or its suppliers.  All title and intellectual property rights in and to the content which may by accessed through us of the SOFTWARE PRODUCT is the property of the respective content owner and may be protected by applicable copyright or other intellectual property laws and treaties . This EULA grants you no rights to use such content. All rights not expressly granted are reserved by Microsoft. 
+
+3.    DESCRIPTION OF OTHER RIGHTS AND LIMITATIONS.
+
+Limitations on Reverse Engineering, Decompilation and Disassembly.  You may not reverse engineer, decompile, or disassemble the SOFTWARE PRODUCT, except and only to the extent that such activity is expressly permitted by applicable law notwithstanding this limitation.
+
+Rental.  You may not rent, lease or lend the SOFTWARE PRODUCT.
+
+Support Services.  Microsoft may provide you with support services related to the SOFTWARE PRODUCT ("Support Services"). Use of the Support Services is governed by the Microsoft policies and programs described in the user manual, in "on line" documentation and/or other Microsoft-provided materials. Any supplemental software code provided to you as part of the Support Services shall be considered part of the SOFTWARE PRODUCT and subject to the terms and conditions of this EULA. With respect to technical information you provide to Microsoft as part of the Support Services, Microsoft may use such information for its business purposes, including for product support and development. Microsoft will not utilize such technical information in a form that personally identifies you.
+
+Software Transfer.  You may permanently transfer all of your rights under this EULA, provided you retain no copies, you transfer all of the SOFTWARE PRODUCT (including all component parts, the media and printed materials, any upgrades, this EULA and, if applicable, the Certificate of Authenticity), and the recipient agrees to the terms of this EULA.  If the SOFTWARE PRODUCT is an upgrade, any transfer must include all prior versions of the SOFTWARE PRODUCT. 
+
+Termination.  Without prejudice to any other rights, Microsoft may terminate this EULA if you fail to comply with the terms and conditions of this EULA.  In such event, you must cease all use or distribution and destroy all copies of the SOFTWARE PRODUCT and all of its component parts.
+
+4. U.S. GOVERNMENT RESTRICTED RIGHTS.
+
+All SOFTWARE PRODUCT provided to the U.S. Government pursuant to solicitations issued on or after December 1, 1995 is provided with the commercial license rights and restrictions described elsewhere herein. All SOFTWARE PRODUCT provided to the U.S. Government pursuant to solicitations issued prior to December 1, 1995 is provided with "Restricted Rights" as provided for in FAR, 48 CFR 52.227-14 (JUNE 1987) or DFAR, 48 CFR 252.227-7013 (OCT 1988), as applicable.
+
+5.    EXPORT RESTRICTIONS.
+
+Export of the SOFTWARE PRODUCT from the United States is regulated by the Export Administration Regulations (EAR, 15 CFR 730-744) of the U.S. Commerce Department, Bureau of Export Administration (BXA). You agree to comply with the EAR in the export or re-export of the SOFTWARE PRODUCT: (i) to any country to which the U.S. has embargoed or restricted the export of goods or services, which include, but are not necessarily limited to Cuba, Iran, Iraq, Libya, North Korea, Sudan, Syria, and the Federal Republic of Yugoslavia (including Serbia, but not Montenegro), or to any national of any such country, wherever located, who intends to transmit or transport the SOFTWARE PRODUCT back to such country; (ii) to any person or entity who you know or have reason to know will utilize the SOFTWARE PRODUCT or portion thereof in the design, development or production of nuclear, chemical or biological weapons; or (iii) to any person or entity who has been prohibited from participating in the U.S. export transactions by any federal agency of the U.S. government. You warrant and represent that neither the BXA nor any other U.S. federal agency has suspended, revoked or denied your export privileges.
+
+NO WARRANTIES.  
+DISCLAIMER OF WARRANTIES.  TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, MICROSOFT AND ITS SUPPLIERS PROVIDE TO YOU THE SOFTWARE PRODUCT, AND ANY (IF ANY) SUPPORT SERVICES RELATED TO THE SOFTWARE PRODUCT ("SUPPORT SERVICES") AS IS AND WITH ALL FAULTS; AND MICROSOFT AND ITS SUPPLIERS HEREBY DISCLAIM WITH RESPECT TO THE SOFTWARE PRODUCT AND SUPPORT SERVICES ALL WARRANTIES AND CONDITIONS, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, ANY (IF ANY) WARRANTIES OR CONDITIONS OF OR RELATED TO: TITLE, NON-INFRINGMENT, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,LACK OF VIRUSES, ACCURACY OR COMPLETENESS OF RESPONSES, RESULTS, LACK OF NEGLIGENCE OR LACK OF WORKMANLIKE EFFORT, QUIET ENJOYMENT, QUIET POSSESSION, AND CORRESPONDENCE TO DESCRIPTION. THE ENTIRE RISK ARISING OUT OF USE OR PERFORMANCE OF THE SOFTWARE PRODUCT AND ANY SUPPORT SERVICES REMAINS WITH YOU.
+
+EXCULSION OF INCIDENTAL, CONSEQUENTIAL AND CERTAIN OTHER DAMAGES. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL MICROSOFT OR ITS SUPPLIERS BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION,PERSONAL INJURY, LOSS OF PRIVACY, FAILURE TO MEET ANY DUTY (INCLUDING OF GOOD FAITH OR OF REASONABLE CARE), NEGLIGENCE, AND ANY OTHER PECUNIARY OR OTHER LOSS WHATSOEVER) ARISING OUT OF OR IN ANY WAY RELATED TO THE USE OF OR INABILITY TO USE THE SOFTWARE PRODUCT OR THE PROVISION OF OR FAILURE TO PROVIDE SUPPORT SERVICES, EVEN IN THE EVENT OF THE FAULT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, BREACH OF CONTRACT OR BREACH OF WARRANTY OF MICROSOFT OR ANY SUPPLIER, AND EVEN IF MICROSOFT OR ANY SUPPLIER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+LIMITATION OF LIABILITY AND REMEDIES.  NOTWITHSTANDING ANY DAMAGES THAT YOU MIGHT INCUR FOR ANY REASON WHATSOEVER (INCLUDING, WITHOUT LIMITATION, ALL DAMAGES REFERENCED ABOVE AND ALL DIRECT OR GENERAL DAMAGES), THE ENTIRE LIABILITY OF MICROSOFT AND ANY OF ITS SUPPLIERS UNDER ANY PROVISION OF THIS EULA AND YOUR EXCLUSIVE REMEDY FOR ALL OF THE FOREGOING SHALL BE LIMITED TO THE GREATER OF THE AMOUNT ACTUALLY PAID BY YOU FOR THE SOFTWARE PRODUCT OR U.S.$5.00. THE FOREGOING LIMITATIONS, EXCLUSIONS AND DISCLAIMERS SHALL APPLY TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, EVEN IF ANY REMEDY FAILS ITS ESSENTIAL PURPOSE.
+
+If you acquired this product in the United States, this Agreement is governed by the laws of the State of Washington.
+
+If you acquired this product in Canada, this Agreement is governed by the laws of the Province of Ontario, Canada.  Each of the parties hereto irrevocably attorns to the jurisdiction of the courts of the Province of Ontario and further agrees to commence any litigation which may arise hereunder in the courts located in the Judicial District of York, Province of Ontario.
+
+If this product was acquired outside the United States, then local law may apply.
+
+Should you have any questions concerning this Agreement, or if you desire to contact Microsoft for any reason, please contact the Microsoft subsidiary serving your country, or write: Microsoft Customer Sales and Service/One Microsoft Way/Redmond, WA  98052-6399.

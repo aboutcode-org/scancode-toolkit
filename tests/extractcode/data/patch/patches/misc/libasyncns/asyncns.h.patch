@@ -1,0 +1,18 @@
+--- libasyncns.orig/asyncns.h	2009-07-10 11:37:09.000000000 +0800
++++ libasyncns/asyncns.h	2009-07-10 11:37:27.000000000 +0800
+@@ -107,13 +107,13 @@
+  * compatible with the ones of libc's res_query(3). The function returns a new
+  * query object. When the query is completed you may retrieve the results using
+  * asyncns_res_done().  */
+-asyncns_query_t* asyncns_res_query(asyncns_t *asyncns, const char *dname, int class, int type);
++asyncns_query_t* asyncns_res_query(asyncns_t *asyncns, const char *dname, int _class, int type);
+ 
+ /** Issue an resolver query on the specified session. The arguments are
+  * compatible with the ones of libc's res_search(3). The function returns a new
+  * query object. When the query is completed you may retrieve the results using
+  * asyncns_res_done().  */
+-asyncns_query_t* asyncns_res_search(asyncns_t *asyncns, const char *dname, int class, int type);
++asyncns_query_t* asyncns_res_search(asyncns_t *asyncns, const char *dname, int _class, int type);
+ 
+ /** Retrieve the results of a preceding asyncns_res_query() or
+  * asyncns_res_search call.  The query object q is destroyed by this

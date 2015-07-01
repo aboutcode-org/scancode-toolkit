@@ -1,0 +1,2368 @@
+Index: src/Browser/WebCore/platform/network/ekioh/ResourceHandleEkioh.cpp
+===================================================================
+--- src.orig/Browser/WebCore/platform/network/ekioh/ResourceHandleEkioh.cpp
++++ src/Browser/WebCore/platform/network/ekioh/ResourceHandleEkioh.cpp
+@@ -195,7 +195,8 @@ namespace {
+       // Informational - ignore
+       return;
+     }
+-    else if (context.m_responseCode >= 300 && context.m_responseCode < 400) {
++    else if (context.m_responseCode >= 300 && context.m_responseCode < 400 &&
++             context.m_responseCode != 304) {
+       // HTTP Redirect
+       return;
+     }
+@@ -324,101 +325,342 @@ void ResourceHandle::loadResourceSynchro
+ #else
+ // NOTE: Code based on asynchronous implementation in
+ //       Browser/WebCore/platform/network/ekioh/ResourceHandleManager.cpp
+-void ResourceHandle::loadResourceSynchronously(const ResourceRequest& request, ResourceError& e, ResourceResponse& r, Vector<char>& data, Frame* frame)
++void ResourceHandle::loadResourceSynchronously(const ResourceRequest& request,
++                                               ResourceError& e,
++                                               ResourceResponse& r,
++                                               Vector<char>& data,
++                                               Frame* frame)
+ {
+-  static const int invalidURL = 786;
+-  static const int badProtocolOrPort = 770;
+-  static char errorBuffer[CURL_ERROR_SIZE];
+-
+-  if (!request.url().isValid()) {
+-    e = ResourceError("url", invalidURL,
+-                      request.url().deprecatedString(), "Invalid URL");
+-    return;
+-  }
+-
+-  if (!isPortAllowed(request)) {
+-    e = ResourceError("url", badProtocolOrPort,
+-                      request.url().deprecatedString(), "Port not allowed");
+-    return;
+-  }
+-        
+-  CURLcode curlStatus = CURLE_OK;
+-  CURL* curlHandle = curl_easy_init();
+-  CallbackContext context(curlHandle, data, r);
+-  CURLSH* shareHandle = ResourceHandleManager::instance()->getCurlShareHandle();
+-  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_ERRORBUFFER, errorBuffer));
+-  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_WRITEFUNCTION, writeCallback));
+-  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_WRITEDATA, &context));
+-  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_HEADERFUNCTION, headerCallback));
+-  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_HEADERDATA, &context));
+-  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_FOLLOWLOCATION, 1));
+-  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_HTTPAUTH, CURLAUTH_ANY));
+-  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_SHARE, shareHandle));
+-  if (access(CA_BUNDLE_FILE, R_OK) == 0) {
+-    CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_CAINFO, CA_BUNDLE_FILE));
+-  } else {
+-    CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_CAINFO, NULL));
+-  }
+-  if (access(CA_PATH, R_OK) == 0) {
+-    CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_CAPATH, CA_PATH));
+-  } else {
+-    CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_CAPATH, NULL));
+-  }
+-  // enable gzip and deflate through Accept-Encoding:
+-  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_ENCODING, ""));
++    static const int invalidURL = 786;
++    static const int badProtocolOrPort = 770;
++    static char errorBuffer[CURL_ERROR_SIZE];
++
++    if (!request.url().isValid()) {
++        e = ResourceError("url", invalidURL,
++                          request.url().deprecatedString(), "Invalid URL");
++        return;
++    }
+ 
+-  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_URL,
+-                             request.url().deprecatedString().ascii()));
++    if (!isPortAllowed(request)) {
++        e = ResourceError("url", badProtocolOrPort,
++                          request.url().deprecatedString(), "Port not allowed");
++        return;
++    }
+ 
+-  ResourceHandleManager::setProxy(request, curlHandle);
++    CachedResponse* cacheEntry = NULL;
+ 
+-  struct curl_slist* headers = 0;
+-
+-  if (request.httpHeaderFields().size() > 0) {
+-    HTTPHeaderMap customHeaders = request.httpHeaderFields();
+-    HTTPHeaderMap::const_iterator end = customHeaders.end();
+-    for (HTTPHeaderMap::const_iterator it = customHeaders.begin(); it != end; ++it) {
+-      String key = it->first;
+-      String value = it->second;
+-      String headerString = key + ": " + value;
+-      CString headerCString = headerString.latin1();
+-      DBG(" custom header %s\n", headerCString.data());
+-      headers = curl_slist_append(headers, headerCString.data());
++    // Check if a cache purge is forced from client side
++    CacheControl cc;
++    HTTPHeaderMap requestHeaders = request.httpHeaderFields();
++    if (requestHeaders.contains("Cache-Control")) {
++        String ccString = request.httpHeaderFields().get("Cache-Control");
++        networkcache()->parseCacheControl(&cc, ccString.latin1().data());
+     }
+-    CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_HTTPHEADER, headers));
+-  }
+-  CString postData;
+-  if (request.httpMethod() == "GET") {
+-    CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_HTTPGET, true));
+-  }
+-  else if (request.httpMethod() == "POST") {
+-    CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_POST, true));
+-    postData = request.httpBody()->flattenToString().latin1();
+-    DBG(" post data is '%s'\n", postData.data());
+-    CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_POSTFIELDS, postData.data()));
+-    CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_POSTFIELDSIZE, postData.length()));
+-  }
+-  else if ("PUT" == request.httpMethod()) {
+-    DBG("**** UNIMPLEMENTED - PUT ****");
+-    goto cleanup;
+-  }
+-  else if ("HEAD" == request.httpMethod()) {
+-    CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_NOBODY, true));
+-  }
+ 
+-  curlStatus = curl_easy_perform(curlHandle);
+-  if (curlStatus != CURLE_OK) {
+-    e = ResourceError("curl", curlStatus,
+-                      request.url().deprecatedString(), errorBuffer);
+-    goto cleanup;
+-  }
++    // Check for existing cache entry by URL
++    cacheEntry = networkcache()->getEntry(request.url().prettyURL());
+ 
+- cleanup:
+-  curl_slist_free_all(headers);
++    bool shouldCache = true;
++    if (cacheEntry) {
++        // Check cache entry validity to see if the request
++        // should be made conditional
++
++        // If expirationdate < time(NULL)
++        //     If Etag or Last-modified
++        //         Send conditional request
++        //     Else
++        //         Remove entry, new request
++        // If not GET request
++        //     New uncacheable request
++        // If client side nocache
++        //     Remove entry, new uncacheable request
++
++        // Check with cache policy from ResourceRequest as well?
++
++        time_t expirationdate = cacheEntry->response.expirationDate();
++
++        DBG("Cache entry information: \n"
++            "responsedate: %ld\ntime(): %ld\ntime-responsedate: %ld\n"
++            "expirationdate: %ld\nserverdate: %ld\n"
++            "expirationdate-serverdate:%ld\nExpired? %s\n"
++            "Conditional? %s\n",
++            cacheEntry->responseDate(),
++            time(NULL),
++            (time(NULL)-cacheEntry->responseDate()),
++            expirationdate,
++            cacheEntry->serverDate(),
++            (expirationdate-cacheEntry->serverDate()),
++            (time(NULL)-(cacheEntry->responseDate()) >
++             expirationdate-cacheEntry->serverDate()) ? "Yes" : "No",
++            cacheEntry->isConditional() ? "Yes" : "No");
++
++        // Conditional requests from higher level cache needs to be handled.
++        // This code assumes that higher level cache data will never be
++        // more recent than the data in the network cache.
++        if (requestHeaders.contains("If-None-Match")) {
++            if (cacheEntry->response.httpHeaderField("Etag") ==
++                request.httpHeaderField("If-None-Match")) {
++                r.setHTTPStatusCode(304);
++                return;
++            }
++        }
++        else if (requestHeaders.contains("If-Modified-Since")) {
++            if (curl_getdate(request.httpHeaderField(
++                               "If-Modified-Since").latin1().data(), NULL) >=
++                cacheEntry->responseDate()) {
++                r.setHTTPStatusCode(304);
++                return;
++            }
++        }
++
++        if ("GET" != request.httpMethod()) {
++            DBG("Adding new nocache entry even though cache entry exists.\n");
++            // Keep the old entry, but add a new entry to nocache
++            shouldCache = false;
++            cacheEntry = NULL;
++        }
++        else if (((time(NULL) - cacheEntry->responseDate()) >
++                  expirationdate-cacheEntry->serverDate())) {
++            DBG("Entry expired, %s\n", cacheEntry->entryURL().utf8().data());
++            // Cache entry has expired
++            if (cacheEntry->hasClients()) {
++                // Cache entry is already being updated
++                // Start a new separate transfer
++                shouldCache = false;
++                cacheEntry = NULL;
++            } else {
++                if (cacheEntry->response.httpHeaderFields().contains("Etag")) {
++                    cacheEntry->setConditional(true);
++                    String header = "If-None-Match: ";
++                    header +=
++                        cacheEntry->response.httpHeaderField("Etag");
++                    cacheEntry->setConditionalHeader(header);
++                    cacheEntry->setComplete(false);
++                }
++                else if (cacheEntry->response.
++                         httpHeaderFields().contains("Last-Modified")) {
++                    cacheEntry->setConditional(true);
++                    String header = "If-Modified-Since: ";
++                    header +=
++                        cacheEntry->response.httpHeaderField("Last-Modified");
++                    cacheEntry->setConditionalHeader(header);
++                    cacheEntry->setComplete(false);
++                }
++                else {
++                    DBG("Purging expired cache entry. %s\n",
++                        cacheEntry->entryURL().utf8().data());
++                    // Purge entry from cache
++                    cacheEntry->lruRemove();
++                    networkcache()->removeEntry(cacheEntry->entryURL());
++                    cacheEntry = NULL;
++                }
++            }
++        }
++        else if (cc.nocache) {
++            DBG("Purging cache entry due to no-cache directive. %s\n",
++                cacheEntry->entryURL().utf8().data());
++            // Purge entry from cache
++            cacheEntry->lruRemove();
++            networkcache()->removeEntry(cacheEntry->entryURL());
++            shouldCache = false;
++            cacheEntry = NULL;
++        }
++    }
++
++    if (cacheEntry && cacheEntry->complete() && !cacheEntry->isConditional()) {
++        DBG("URL in cache (%p)%s\n", cacheEntry,
++            cacheEntry->entryURL().utf8().data());
++        cacheEntry->lruRemove();
++        cacheEntry->lruAdd();
++        r = cacheEntry->response;
++        DBG("Copying %d bytes of data from (%p).\n",
++            cacheEntry->size(), cacheEntry->data());
++        data.insert(0,cacheEntry->data(), cacheEntry->size());
++        return;
++    }
++    else {
++        CURLcode curlStatus = CURLE_OK;
++        CURL* curlHandle = curl_easy_init();
++        CallbackContext context(curlHandle, data, r);
++        CURLSH* shareHandle = ResourceHandleManager::instance()->getCurlShareHandle();
++        CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_ERRORBUFFER, errorBuffer));
++        CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_WRITEFUNCTION, writeCallback));
++        CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_WRITEDATA, &context));
++        CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_HEADERFUNCTION, headerCallback));
++        CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_HEADERDATA, &context));
++        CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_FOLLOWLOCATION, 1));
++        CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_HTTPAUTH, CURLAUTH_ANY));
++        CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_SHARE, shareHandle));
++        if (access(CA_BUNDLE_FILE, R_OK) == 0) {
++            CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_CAINFO, CA_BUNDLE_FILE));
++        } else {
++            CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_CAINFO, NULL));
++        }
++        if (access(CA_PATH, R_OK) == 0) {
++            CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_CAPATH, CA_PATH));
++        } else {
++            CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_CAPATH, NULL));
++        }
++        // enable gzip and deflate through Accept-Encoding:
++        CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_ENCODING, ""));
++
++        CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_URL,
++                                   request.url().deprecatedString().ascii()));
++
++        ResourceHandleManager::setProxy(request, curlHandle);
++
++
++        struct curl_slist* headers = 0;
++        if (cacheEntry && cacheEntry->isConditional()) {
++            // Add conditional request
++            headers = curl_slist_append(
++                headers, cacheEntry->conditionalHeader().latin1().data());
++        }
++        if (request.httpHeaderFields().size() > 0 ||
++            (cacheEntry && cacheEntry->isConditional())) {
++            HTTPHeaderMap customHeaders = request.httpHeaderFields();
++            HTTPHeaderMap::const_iterator end = customHeaders.end();
++            for (HTTPHeaderMap::const_iterator it = customHeaders.begin();
++                 it != end;
++                 ++it) {
++                String key = it->first;
++                String value = it->second;
++                if ((key == "If-Modified-Since") ||
++                    (key == "If-None-Match")) continue;
++                String headerString = key + ": " + value;
++                CString headerCString = headerString.latin1();
++                DBG(" custom header %s\n", headerCString.data());
++                headers = curl_slist_append(headers, headerCString.data());
++            }
++            CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_HTTPHEADER, headers));
++        }
++        CString postData;
++        if (request.httpMethod() == "GET") {
++            CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_HTTPGET, true));
++        }
++        else if (request.httpMethod() == "POST") {
++            CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_POST, true));
++            postData = request.httpBody()->flattenToString().latin1();
++            DBG(" post data is '%s'\n", postData.data());
++            CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_POSTFIELDS,
++                                       postData.data()));
++            CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_POSTFIELDSIZE,
++                                       postData.length()));
++        }
++        else if ("PUT" == request.httpMethod()) {
++            DBG("**** UNIMPLEMENTED - PUT ****");
++            curl_slist_free_all(headers);
++            return;
++        }
++        else if ("HEAD" == request.httpMethod()) {
++            CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_NOBODY, true));
++        }
++
++        curlStatus = curl_easy_perform(curlHandle);
++        if (curlStatus != CURLE_OK) {
++            e = ResourceError("curl", curlStatus,
++                              request.url().deprecatedString(), errorBuffer);
++        }
++
++        curl_slist_free_all(headers);
++
++        if (cacheEntry) {
++            // Conditional request
++            if (context.m_responseCode == 304) {
++                // Not modified, return cached response/data
++                r = cacheEntry->response;
++                char *cacheData = cacheEntry->data();
++                data.insert(0,cacheEntry->data(), cacheEntry->size());
++                cacheEntry->lruRemove();
++                cacheEntry->lruAdd();
++                cacheEntry->setConditional(false);
++                cacheEntry->setComplete(true);
++                return;
++            } else {
++                // Modified, update cache with response/data
++                cacheEntry->willRevalidate();
++                cacheEntry->lruRemove();
++                cacheEntry->setConditional(false);
++            }
++        } else if (shouldCache) {
++            cacheEntry = new CachedResponse(request.url().prettyURL());
++        }
++
++        if (shouldCache) {
++            String value;
++            cacheEntry->response = r;
++
++            if ((value = r.httpHeaderField("Date")) != "") {
++                cacheEntry->setServerDate(
++                    curl_getdate(value.latin1().data(), NULL));
++                cacheEntry->setResponseDate(time(NULL));
++                if (cacheEntry->cacheControl.maxage > 0)
++                    cacheEntry->response.setExpirationDate(
++                        cacheEntry->serverDate() +
++                        cacheEntry->cacheControl.maxage);
++            }
++
++            // Check for cache directives
++            if ((value = r.httpHeaderField("Cache-Control")) != "") {
++                networkcache()->parseCacheControl(&(cacheEntry->cacheControl),
++                                                  value.latin1().data());
++                if (cacheEntry->cacheControl.nocache) {
++                    // Don't create an entry
++                    delete cacheEntry;
++                    return;
++                }
++                if (cacheEntry->cacheControl.maxage > 0) {
++                    DBG("max age sets expiration date to %d.\n",
++                        cacheEntry->serverDate() +
++                        cacheEntry->cacheControl.maxage);
++                    cacheEntry->response.setExpirationDate(
++                        cacheEntry->serverDate() +
++                        cacheEntry->cacheControl.maxage);
++                }
++            }
++
++            // Don't cache https by default
++            if (!cacheEntry->cacheControl.ispublic &&
++                request.url().protocol() == "https") {
++                // Don't create an entry
++                delete cacheEntry;
++                return;
++            }
++
++            if ((value = r.httpHeaderField("Expires")) != "") {
++                if (cacheEntry->cacheControl.maxage == 0) {
++                    DBG("expires sets expiration date to %d.\n",
++                        curl_getdate(value.latin1().data(), NULL));
++                    cacheEntry->response.setExpirationDate(
++                        curl_getdate(value.latin1().data(), NULL));
++                }
++            }
++
++            if ((value = r.httpHeaderField("Last-Modified")) != "") {
++                cacheEntry->response.setLastModifiedDate(
++                    curl_getdate(value.latin1().data(), NULL));
++            }
++
++            if (cacheEntry->response.expirationDate() < 1) {
++                DBG( "Setting default max age.\n");
++                cacheEntry->response.setExpirationDate(
++                    cacheEntry->serverDate() +
++                    networkcache()->defaultMaxAge());
++            }
++
++            if (!networkcache()->contains(cacheEntry->entryURL()))
++                networkcache()->addEntry(cacheEntry);
++            cacheEntry->lruAdd();
++            DBG( "Adding %d bytes of data from (%p) to %s entry.\n",
++                 data.size(), data.data(),
++                 cacheEntry->entryURL().utf8().data());
++            cacheEntry->addData(data.data(), data.size());
++            cacheEntry->setComplete(true);
++        }
++    }
+ }
+ #endif
+ 
+- 
+ void ResourceHandle::setDefersLoading(bool defers)
+ {
+     notImplemented();
+Index: src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
+===================================================================
+--- src.orig/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
++++ src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
+@@ -55,6 +55,9 @@
+ #include "EKHttpCookie.h"
+ #include "EKHttpCookieDB.h"
+ 
++#include "NetworkCache.h"
++#include "MIMETypeRegistry.h"
++
+ #include <errno.h>
+ 
+ #define USE_CURL_REDIRECT 1
+@@ -77,7 +80,7 @@ static int updateSocketStatusCallback(
+         void *userp,
+         void *socketp);
+ 
+-static void receivedResponse(ResourceHandle* job);
++static void receivedResponse(CachedResponse* cacheEntry);
+ 
+ ResourceHandleManager* ResourceHandleManager::instance()
+ {
+@@ -206,9 +209,6 @@ void ResourceHandleManager::updateSocket
+     TRACE("s=%p fd=%d act=%x", s, sockfd, action);
+     if (s == 0) {
+         s = new CurlSocket(*this, sockfd);
+-        if (s == 0)
+-            return;
+-
+         curl_multi_assign(m_multiHandle, sockfd, s);
+     }
+ 
+@@ -263,19 +263,18 @@ void ResourceHandleManager::setTimeout()
+ // called with data after all headers have been processed via headerCallback
+ static size_t writeCallback(void* ptr, size_t size, size_t nmemb, void* obj)
+ {
+-    ResourceHandle* job = static_cast<ResourceHandle*>(obj);
+-    ResourceHandleInternal* d = job->getInternal();
++    CachedResponse* cacheEntry = static_cast<CachedResponse*>(obj);
+ 
+     size_t totalSize = size * nmemb;
+ 
+     // Get HTTP status code
+     long responseCode;
+-    curl_easy_getinfo(d->m_handle, CURLINFO_RESPONSE_CODE, &responseCode);
++    curl_easy_getinfo(cacheEntry->handle(), CURLINFO_RESPONSE_CODE, &responseCode);
+ 
+-    if (!d->m_response.responseFired()) {
++    if (!cacheEntry->response.responseFired()) {
+         // Can't rely on header reception to trigger response firing, as won't
+         // be any headers for file: urls.
+-        receivedResponse(job);
++        receivedResponse(cacheEntry);
+ 
+         if (responseCode >= 300 && responseCode < 400) {
+             // Discard any body data that arrives after a redirect.
+@@ -283,15 +282,15 @@ static size_t writeCallback(void* ptr, s
+         }
+     }
+ 
+-    DBG("job %p: rec %lu\n", job, nmemb * size);
++    DBG("job %p: rec %lu\n", cacheEntry, nmemb * size);
+ 
+-    if (!d->client())
++    if (!cacheEntry)
+     {
+         DBG("discarding: no client\n");
+     }
+     else
+     {
+-        d->client()->didReceiveData(job, static_cast<char*>(ptr), totalSize, 0);
++		cacheEntry->addData(static_cast<char*>(ptr), totalSize);
+     }
+ 
+     return totalSize;
+@@ -301,10 +300,10 @@ static size_t writeCallback(void* ptr, s
+ // multiple times for a given response.
+ static size_t headerCallback(char* ptr, size_t size, size_t nmemb, void* obj)
+ {
+-    ResourceHandle* job = static_cast<ResourceHandle*>(obj);
+-    ResourceHandleInternal* d = job->getInternal();
+-    DBG("job %p: hdrrec %lu\n", job, nmemb * size);
++    CachedResponse* cacheEntry = static_cast<CachedResponse*>(obj);
+     int totalSize = size * nmemb;
++    ResourceHandle* job = cacheEntry->firstClient();
++    ResourceHandleInternal* d = job->getInternal();
+ 
+     String header(ptr, totalSize);
+     DBG(" %s\n", header.deprecatedString().ascii());
+@@ -312,9 +311,11 @@ static size_t headerCallback(char* ptr, 
+     // The empty line following the headers is delivered to this callback too,
+     // so make sure we've really got a header.
+     int separatorIndex = header.find(':');
++    String name = header.left(separatorIndex);
++    String value = header.substring(separatorIndex + 1).stripWhiteSpace();
+     if (separatorIndex != -1)
+     {
+-        d->m_response.setHTTPHeaderField(
++        cacheEntry->response.setHTTPHeaderField(
+                 header.left(separatorIndex),
+                 header.substring(separatorIndex + 1).stripWhiteSpace());
+ 
+@@ -330,44 +331,123 @@ static size_t headerCallback(char* ptr, 
+             ekioh::EKString cookieStr(ptr + sizeof("Set-Cookie: ") - 1,
+                                       totalSize - sizeof("Set-Cookie: ") - 1);
+ 
+-            ekioh::EKUrl url(d->m_url.utf8().data());
++            ekioh::EKUrl url(cookieUrl.string().utf8().data());
+             ekioh::EKHttpCookie cookie(url);
+             if (cookie.parseString(cookieStr))
+-                ekioh::EKHttpCookieDB::instance().addCookie(cookie);
++                ekioh::EKHttpCookieDB::instance().addCookie(cookie, false);
+         }
+     }
+     else if (header == "\r\n") {
+-        receivedResponse(job);
++        receivedResponse(cacheEntry);
+     }
+ 
++    if (name == "Date") {
++        cacheEntry->setServerDate(curl_getdate(value.latin1().data(), NULL));
++        cacheEntry->setResponseDate(time(NULL));
++        if (cacheEntry->cacheControl.maxage > 0)
++            cacheEntry->response.setExpirationDate(
++                cacheEntry->serverDate()+cacheEntry->cacheControl.maxage);
++    }
++    else if (name == "Cache-Control") {
++        networkcache()->parseCacheControl(&(cacheEntry->cacheControl),
++                                          value.latin1().data());
++        if (cacheEntry->cacheControl.nocache) {
++            // Split into two objects
++            // Note that all clients are viewed as requesting
++            // the URL simultanously so one is picked arbitarily
++            // to represent the first request
++            ResourceHandle* nocacheClient = cacheEntry->firstClient();
++            networkcache()->makeNocacheEntry(nocacheClient,
++                                             cacheEntry);
++
++            // Entries in the nocache list should not be on the LRU list
++            cacheEntry->lruRemove();
++            // Temporarily remove first client
++            cacheEntry->removeClient(nocacheClient);
++
++            ResourceHandleSet* clients = cacheEntry->getClients();
++
++            // Re-add other clients
++            ResourceHandleSet::const_iterator end = clients->end();
++            for (ResourceHandleSet::const_iterator it = clients->begin();
++                it != end;
++                ++it) {
++                    ResourceHandleManager::instance()->add(*it);
++                }
++                // cacheEntry is now in the nocache-list, re-add client
++                cacheEntry->clearClients();
++                cacheEntry->addClient(nocacheClient);
++            }
++            if (cacheEntry->cacheControl.maxage > 0) {
++                cacheEntry->response.setExpirationDate(
++                    cacheEntry->serverDate()+cacheEntry->cacheControl.maxage);
++            }
++            if (cacheEntry->cacheControl.ispublic &&
++                !cacheEntry->cacheControl.nocache &&
++                !networkcache()->contains(cacheEntry->entryURL())) {
++                networkcache()->makeCacheEntry(cacheEntry);
++                cacheEntry->lruAdd();
++            }
++    }
++    else if (name == "Expires") {
++        if (cacheEntry->cacheControl.maxage == 0) {
++            cacheEntry->response.setExpirationDate(
++                    curl_getdate(value.latin1().data(), NULL));
++            }
++       }
++       else if (name == "Last-Modified") {
++            cacheEntry->response.setLastModifiedDate(
++                curl_getdate(value.latin1().data(), NULL));
++       }
++
+     return totalSize;
+ }
+ 
+ // Called once for each request once we know we've got all the headers
+-static void receivedResponse(ResourceHandle* job)
++static void receivedResponse(CachedResponse* cacheEntry)
+ {
+-    ResourceHandleInternal* d = job->getInternal();
+-
+-    ASSERT(!d->m_response.responseFired());
+-
+     double contentLength = 0;
+     String contentType;
+     String encoding;
+ 
+     // Get content length
+-    curl_easy_getinfo(d->m_handle, CURLINFO_CONTENT_LENGTH_DOWNLOAD, &contentLength);
++    curl_easy_getinfo(cacheEntry->handle(), CURLINFO_CONTENT_LENGTH_DOWNLOAD, &contentLength);
+ 
+     // Get content type
+     char *contentTypeCString = NULL;
+-    if (curl_easy_getinfo(d->m_handle, CURLINFO_CONTENT_TYPE, &contentTypeCString) == 0)
++    if (curl_easy_getinfo(cacheEntry->handle(), CURLINFO_CONTENT_TYPE, &contentTypeCString) == 0)
+         contentType = contentTypeCString;
+ 
+     // Get HTTP status code
+     long responseCode;
+-    curl_easy_getinfo(d->m_handle, CURLINFO_RESPONSE_CODE, &responseCode);
++    curl_easy_getinfo(cacheEntry->handle(), CURLINFO_RESPONSE_CODE, &responseCode);
++
++    if (cacheEntry->response.url().isLocalFile()) {
++        // If we get here with a local file, it was found
++        responseCode = 200;
++    }
+ 
+-    DBG("job %p: response %ld url=%s content-length=%lf\n",
+-            job, responseCode, d->m_url.ascii(), contentLength);
++    if (cacheEntry->isConditional()) {
++        if (responseCode == 304) {
++            DBG("Conditional request, not modified. %s\n",
++            cacheEntry->entryURL().utf8().data());
++            // Not modified
++            cacheEntry->didReceiveNotModified();
++            return;
++        }
++        else {
++            DBG("Conditional request, was modified. %s\n",
++            cacheEntry->entryURL().utf8().data());
++            cacheEntry->willRevalidate();
++        }
++    }
++
++    if (!cacheEntry->response.expirationDate()) {
++        cacheEntry->response.setExpirationDate(
++            cacheEntry->serverDate()+networkcache()->defaultMaxAge());
++    }
++
++    cacheEntry->response.setHTTPStatusCode(responseCode);
+ 
+     if (responseCode >= 100 && responseCode < 200) {
+         // Informational - ignore
+@@ -378,48 +458,39 @@ static void receivedResponse(ResourceHan
+         // to tell WebCore about it. CURLINFO_REDIRECT_URL and
+         // CURLINFO_EFFECTIVE_URL don't contain the URL we need at this point,
+         // so construct it ourselves 
+-        String location = d->m_response.httpHeaderField("location");
++		String location = cacheEntry->response.httpHeaderField("location");
+ 
+         if (location.isEmpty())
+             ;
+-        else if (!d->client())
+-            ;
+         else {
+-            KURL newUrl(job->request().url(), location.deprecatedString());
+-            ResourceRequest redirectedRequest = job->request();
+-            redirectedRequest.setURL(newUrl);
+-            DBG("redirected: newUrl=%.*s\n", location.utf8().length(), location.utf8().data());
+-            d->client()->willSendRequest(job, redirectedRequest, d->m_response);
+-        }
+-        return;
+-    }
+-
+-
+-    if (!d->client()) {
+-        DBG(" no client\n");
+-        return;
++ 			cacheEntry->redirect(location);
++ 			networkcache()->makeNocacheEntry(cacheEntry->firstClient(),
++ 											 cacheEntry);
++ 			cacheEntry->lruRemove();
++ 		}
++ 		return;
+     }
+ 
+     char* url = 0;
+-    curl_easy_getinfo(d->m_handle, CURLINFO_EFFECTIVE_URL, &url);
++    curl_easy_getinfo(cacheEntry->handle(), CURLINFO_EFFECTIVE_URL, &url);
+     DBG(" effective-url=%s\n", url);
+-    d->m_response.setUrl(KURL(url));
++    cacheEntry->response.setUrl(KURL(url));
+ 
+-    d->m_response.setHTTPStatusCode(responseCode);
++    cacheEntry->response.setHTTPStatusCode(responseCode);
+ 
+-    d->m_response.setExpectedContentLength((long long) contentLength);
++    cacheEntry->response.setExpectedContentLength((long long) contentLength);
+ 
+-    d->m_response.setMimeType(extractMIMETypeFromMediaType(contentType));
++    cacheEntry->response.setMimeType(
++        extractMIMETypeFromMediaType(contentType));
+ 
+-    d->m_response.setTextEncodingName(
++    cacheEntry->response.setTextEncodingName(
+             extractCharsetFromMediaType(contentType));
+ 
+-    d->m_response.setSuggestedFilename(filenameFromHTTPContentDisposition(
+-                d->m_response.httpHeaderField("Content-Disposition")));
++    cacheEntry->response.setSuggestedFilename(
++        filenameFromHTTPContentDisposition(
++            cacheEntry->response.httpHeaderField("Content-Disposition")));
+ 
+-    d->client()->didReceiveResponse(job, d->m_response);
+-
+-    d->m_response.setResponseFired(true);
++    cacheEntry->didReceiveResponse();
+ }
+ 
+ void ResourceHandleManager::setCurlMethod(CURL* handle, const String& method)
+@@ -543,20 +614,174 @@ void ResourceHandleManager::add(Resource
+         return;
+     }
+ 
+-    if (m_runningJobs < MAX_NUM_JOBS)
+-        startJob(job);
++    CachedResponse* cacheEntry = NULL;
++
++    // Check if a cache purge is forced from client side
++    CacheControl cc;
++    HTTPHeaderMap requestHeaders = job->request().httpHeaderFields();
++    if (requestHeaders.contains("Cache-Control")) {
++        String ccString = job->request().httpHeaderFields().get("Cache-Control");
++        networkcache()->parseCacheControl(&cc, ccString.latin1().data());
++    }
++
++    // Check for existing cache entry by URL
++    cacheEntry = networkcache()->getEntry(job->request().url().prettyURL());
++
++    bool shouldCache = true;
++    if (cacheEntry) {
++        // Check cache entry validity to see if the request
++        // should be made conditional
++
++        // If expirationdate < time(NULL)
++        //     If Etag or Last-modified
++        //         Send conditional request
++        //     Else
++        //         Remove entry, new request
++        // If not GET request
++        //     New uncacheable request
++        // If client side nocache
++        //     Remove entry, new uncacheable request
++
++        // Check with cache policy from ResourceRequest as well?
++
++        time_t expirationdate = cacheEntry->response.expirationDate();
++
++        DBG("Cache entry information: \n"
++            "responsedate: %ld\ntime(): %ld\ntime-responsedate: %ld\n"
++            "expirationdate: %ld\nserverdate: %ld\nexpirationdate-serverdate:%ld\nExpired? %s\n"
++            "Conditional? %s\n",
++            cacheEntry->responseDate(),
++            time(NULL),
++            (time(NULL)-cacheEntry->responseDate()),
++            expirationdate,
++            cacheEntry->serverDate(),
++            (expirationdate-cacheEntry->serverDate()),
++            (time(NULL)-(cacheEntry->responseDate()) > (expirationdate-cacheEntry->serverDate()))?"Yes":"No",
++            cacheEntry->isConditional()?"Yes":"No");
++
++        // Conditional requests from higher level cache needs to be handled.
++        // This code assumes that higher level cache data will never be
++        // more recent than the data in the network cache.
++        if (requestHeaders.contains("If-None-Match")) {
++            if (cacheEntry->response.httpHeaderField("Etag") ==
++                job->request().httpHeaderField("If-None-Match")) {
++                networkcache()->addNotModifiedJob(job);
++                return;
++            }
++        }
++        else if (requestHeaders.contains("If-Modified-Since")) {
++            if (curl_getdate(job->request().httpHeaderField(
++                               "If-Modified-Since").latin1().data(), NULL) >=
++                cacheEntry->responseDate()) {
++                networkcache()->addNotModifiedJob(job);
++                return;
++            }
++        }
++
++        if ("GET" != job->request().httpMethod()) {
++            DBG("Adding new nocache entry even though cache entry exists.\n");
++            // Keep the old entry, but add a new entry to nocache
++            shouldCache = false;
++            cacheEntry = NULL;
++        }
++        else if ((time(NULL)-cacheEntry->responseDate() >
++                  expirationdate-cacheEntry->serverDate()) &&
++                 !cacheEntry->isConditional() && // Waiting for revalidation
++                 cacheEntry->response.responseFired() // Waiting for response
++                 ) {
++            DBG("Entry expired, %s\n", cacheEntry->entryURL().utf8().data());
++            // Cache entry has expired
++            if (cacheEntry->response.httpHeaderFields().contains("Etag")) {
++                cacheEntry->setConditional(true);
++                String header = "If-None-Match: ";
++                header +=
++                    cacheEntry->response.httpHeaderField("Etag");
++                cacheEntry->setConditionalHeader(header);
++                cacheEntry->setComplete(false);
++                m_pendingJobs.append(cacheEntry);
++            }
++            else if (cacheEntry->response.httpHeaderFields().contains("Last-Modified")) {
++                cacheEntry->setConditional(true);
++                String header = "If-Modified-Since: ";
++                header +=
++                    cacheEntry->response.httpHeaderField("Last-Modified");
++                cacheEntry->setConditionalHeader(header);
++                cacheEntry->setComplete(false);
++                m_pendingJobs.append(cacheEntry);
++            }
++            else {
++                DBG("Purging expired cache entry. %s\n",
++                    cacheEntry->entryURL().utf8().data());
++                // Purge entry from cache
++                cacheEntry->lruRemove();
++                networkcache()->removeEntry(cacheEntry->entryURL());
++                cacheEntry = NULL;
++            }
++        }
++        else if (cc.nocache) {
++            DBG("Purging cache entry due to no-cache directive. %s\n",
++                cacheEntry->entryURL().utf8().data());
++            // Purge entry from cache
++            cacheEntry->lruRemove();
++            networkcache()->removeEntry(cacheEntry->entryURL());
++            shouldCache = false;
++            cacheEntry = NULL;
++        }
++    }
++
++    if (!cacheEntry) {
++        // Create a cache entry
++        cacheEntry = new CachedResponse(job->request().url().prettyURL());
++
++        if (!shouldCache ||
++            cc.nocache ||
++            "GET" != job->request().httpMethod() ||
++            job->request().url().protocol() == "https") {
++
++            DBG("URL not in nocache, adding (%p)%s\n", cacheEntry,
++                job->request().url().prettyURL().utf8().data());
++            networkcache()->addNocacheEntry(job,cacheEntry);
++        }
++        else {
++            DBG("URL not in cache, adding (%p)%s\n", cacheEntry,
++                job->request().url().prettyURL().utf8().data());
++            networkcache()->addEntry(cacheEntry);
++            cacheEntry->lruAdd();
++        }
++
++        DBG("Queueing cacheEntry, m_runningJobs is %d, MAX_NUM_JOBS is %d.\n",
++            m_runningJobs, MAX_NUM_JOBS);
++        m_pendingJobs.append(cacheEntry);
++        cacheEntry->addClient(job);
++    }
+     else {
+-        DBG("job %p: queueing %s\n", job, job->request().url().deprecatedString().ascii());
+-        m_pendingJobs.append(job);
++        DBG("URL in cache (%p)%s\n", cacheEntry,
++            cacheEntry->entryURL().utf8().data());
++        cacheEntry->lruRemove();
++        cacheEntry->lruAdd();
++        cacheEntry->addClient(job);
+     }
++
++    startJob();
++
++    //networkcache()->printLRUList();
+ }
+ 
+-void ResourceHandleManager::startJob(ResourceHandle* job)
++void ResourceHandleManager::startJob()
+ {
+     // TODO should we just create a pool of easy handles initially and then
+     // reuse them? Discussions on curl mailing list imply connection cache
+     // is at multi handle level rather than easy handle level when using
+     // multi api, so would this have any benefit?
++    CachedResponse* cacheEntry = m_pendingJobs.getFirst();
++
++    if (!(cacheEntry && (m_runningJobs < MAX_NUM_JOBS))) {
++        return;
++    }
++
++    m_pendingJobs.removeRef(cacheEntry);
++
++    ResourceHandle* job = cacheEntry->firstClient();
+     ResourceHandleInternal* d = job->getInternal();
+ 
+     int secureMode = atoi(getenv("http_secure_mode"));
+@@ -574,68 +799,80 @@ void ResourceHandleManager::startJob(Res
+       if (protocol.lower() == "http") {
+         fprintf(stderr, "Http secure mode is set to %d\n", secureMode);
+         fprintf(stderr, "normal http access is not allowed\n");
+-        job->cancel();
++        cacheEntry->cancel();
+         return;
+       }
+     }
+ 
+-    d->m_handle = curl_easy_init();
+-    curl_easy_setopt(d->m_handle, CURLOPT_PRIVATE, job);
+-    curl_easy_setopt(d->m_handle, CURLOPT_ERRORBUFFER, m_curlErrorBuffer);
+-    curl_easy_setopt(d->m_handle, CURLOPT_WRITEFUNCTION, writeCallback);
+-    curl_easy_setopt(d->m_handle, CURLOPT_WRITEDATA, job);
+-    curl_easy_setopt(d->m_handle, CURLOPT_HEADERFUNCTION, headerCallback);
+-    curl_easy_setopt(d->m_handle, CURLOPT_WRITEHEADER, job);
+-    curl_easy_setopt(d->m_handle, CURLOPT_FOLLOWLOCATION, 1);
+-    curl_easy_setopt(d->m_handle, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+-    curl_easy_setopt(d->m_handle, CURLOPT_SHARE, m_shareHandle);
+-    //curl_easy_setopt(d->m_handle, CURLOPT_SSL_VERIFYPEER, 0);
++    cacheEntry->setHandle(curl_easy_init());
++    curl_easy_setopt(cacheEntry->handle(), CURLOPT_PRIVATE, cacheEntry);
++    curl_easy_setopt(cacheEntry->handle(), CURLOPT_ERRORBUFFER, m_curlErrorBuffer);
++    curl_easy_setopt(cacheEntry->handle(), CURLOPT_WRITEFUNCTION, writeCallback);
++    curl_easy_setopt(cacheEntry->handle(), CURLOPT_WRITEDATA, cacheEntry);
++    curl_easy_setopt(cacheEntry->handle(), CURLOPT_HEADERFUNCTION, headerCallback);
++    curl_easy_setopt(cacheEntry->handle(), CURLOPT_WRITEHEADER, cacheEntry);
++    curl_easy_setopt(cacheEntry->handle(), CURLOPT_FOLLOWLOCATION, 1);
++    curl_easy_setopt(cacheEntry->handle(), CURLOPT_HTTPAUTH, CURLAUTH_ANY);
++    curl_easy_setopt(cacheEntry->handle(), CURLOPT_SHARE, m_shareHandle);
++    //curl_easy_setopt(cacheEntry->handle(), CURLOPT_SSL_VERIFYPEER, 0);
+     if (!m_caFile.isNull())
+-        curl_easy_setopt(d->m_handle, CURLOPT_CAINFO, m_caFile.data());
++        curl_easy_setopt(cacheEntry->handle(), CURLOPT_CAINFO, m_caFile.data());
+     if (!m_caPath.isNull())
+-        curl_easy_setopt(d->m_handle, CURLOPT_CAPATH, m_caPath.data());
++        curl_easy_setopt(cacheEntry->handle(), CURLOPT_CAPATH, m_caPath.data());
+     // enable gzip and deflate through Accept-Encoding:
+-    curl_easy_setopt(d->m_handle, CURLOPT_ENCODING, "");
++    curl_easy_setopt(cacheEntry->handle(), CURLOPT_ENCODING, "");
++
++    DeprecatedString url = cacheEntry->entryURL().deprecatedString();
++    KURL kurl(url);
++
++    if (kurl.isLocalFile()) {
++        DeprecatedString query = kurl.query();
++        // Remove any query part sent to a local file.
++        if (!query.isEmpty())
++          url = url.left(url.find(query));
++        // Determine the MIME type based on the path.
++        d->m_response.setMimeType(MIMETypeRegistry::getMIMETypeForPath(String(url)));
++    }
+ 
+     // url must remain valid through the request
+-    d->m_url = job->request().url().deprecatedString();
+-    curl_easy_setopt(d->m_handle, CURLOPT_URL, d->m_url.ascii());
++    cacheEntry->response.setUrl(url);
++    curl_easy_setopt(cacheEntry->handle(), CURLOPT_URL, url.latin1());
+ 
+     // fprintf(stderr, "Enabling curl verbose (may break logging)\n");
+-    // curl_easy_setopt(d->m_handle, CURLOPT_VERBOSE, 1);
++    // curl_easy_setopt(cacheEntry->handle(), CURLOPT_VERBOSE, 1);
+ 
+     // https setting
+-    curl_easy_setopt(d->m_handle, CURLOPT_SSL_VERIFYHOST, 0);
++    curl_easy_setopt(cacheEntry->handle(), CURLOPT_SSL_VERIFYHOST, 0);
+     if (access(CA_BUNDLE_FILE, R_OK) == 0) {
+-      curl_easy_setopt(d->m_handle, CURLOPT_CAINFO, CA_BUNDLE_FILE);
++      curl_easy_setopt(cacheEntry->handle(), CURLOPT_CAINFO, CA_BUNDLE_FILE);
+     } else {
+-      curl_easy_setopt(d->m_handle, CURLOPT_CAINFO, NULL);
++      curl_easy_setopt(cacheEntry->handle(), CURLOPT_CAINFO, NULL);
+     }
+     if (access(CA_PATH, R_OK) == 0) {
+-      curl_easy_setopt(d->m_handle, CURLOPT_CAPATH, CA_PATH);
++      curl_easy_setopt(cacheEntry->handle(), CURLOPT_CAPATH, CA_PATH);
+     } else {
+-      curl_easy_setopt(d->m_handle, CURLOPT_CAPATH, NULL);
++      curl_easy_setopt(cacheEntry->handle(), CURLOPT_CAPATH, NULL);
+     }
+     if (access(CERT_FILE, R_OK) == 0) {
+-      curl_easy_setopt(d->m_handle, CURLOPT_SSLCERT, CERT_FILE);
+-      curl_easy_setopt(d->m_handle, CURLOPT_SSLCERTTYPE, "DER");
++      curl_easy_setopt(cacheEntry->handle(), CURLOPT_SSLCERT, CERT_FILE);
++      curl_easy_setopt(cacheEntry->handle(), CURLOPT_SSLCERTTYPE, "DER");
+     }
+     if (access(KEY_FILE, R_OK) == 0) {
+-      curl_easy_setopt(d->m_handle, CURLOPT_SSLKEY, KEY_FILE);
+-      curl_easy_setopt(d->m_handle, CURLOPT_SSLKEYTYPE, "DER");
++      curl_easy_setopt(cacheEntry->handle(), CURLOPT_SSLKEY, KEY_FILE);
++      curl_easy_setopt(cacheEntry->handle(), CURLOPT_SSLKEYTYPE, "DER");
+     }
+     if (secureMode == 2) {
+       // https with mutual authentication only
+-      curl_easy_setopt(d->m_handle, CURLOPT_SSL_CIPHER_LIST, CIPHER_LIST);
+-      curl_easy_setopt(d->m_handle, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
+-      //curl_easy_setopt(d->m_handle, CURLOPT_SSL_VERIFYPEER, 1L);
++      curl_easy_setopt(cacheEntry->handle(), CURLOPT_SSL_CIPHER_LIST, CIPHER_LIST);
++      curl_easy_setopt(cacheEntry->handle(), CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
++      //curl_easy_setopt(cacheEntry->handle(), CURLOPT_SSL_VERIFYPEER, 1L);
+     }
+     else if (secureMode == 1) {
+       // https with server side certificate is ok
+-      //curl_easy_setopt(d->m_handle, CURLOPT_SSL_VERIFYPEER, 0);
++      //curl_easy_setopt(cacheEntry->handle(), CURLOPT_SSL_VERIFYPEER, 0);
+     }
+ 
+-    setProxy(job->request(), d->m_handle);
++    setProxy(cacheEntry);
+ 
+     KURL cookieUrl;
+     if (d->m_url.isEmpty()) {
+@@ -647,55 +884,63 @@ void ResourceHandleManager::startJob(Res
+ 
+     String cs = cookies(0, cookieUrl);
+     if (cs.length() > 0) {
+-      curl_easy_setopt(d->m_handle, CURLOPT_COOKIE, cs.deprecatedString().ascii());
++      curl_easy_setopt(cacheEntry->handle(), CURLOPT_COOKIE, cs.deprecatedString().ascii());
+     }
+ 
+-    if (job->request().httpHeaderFields().size() > 0) {
+-        struct curl_slist* headers = 0;
++    struct curl_slist* headers = 0;
++    if (cacheEntry->isConditional()) {
++        // Add conditional request
++        headers = curl_slist_append(headers,
++                                    cacheEntry->conditionalHeader().latin1().data());
++    }
++    if (job->request().httpHeaderFields().size() > 0 ||
++        cacheEntry->isConditional()) {
+         HTTPHeaderMap customHeaders = job->request().httpHeaderFields();
+         HTTPHeaderMap::const_iterator end = customHeaders.end();
+         for (HTTPHeaderMap::const_iterator it = customHeaders.begin(); it != end; ++it) {
+             String key = it->first;
+             String value = it->second;
++            if ((key == "If-Modified-Since") ||
++                (key == "If-None-Match"))
++              continue;
+             String headerString = key + ": " + value;
+             CString headerCString = headerString.latin1();
+             DBG(" custom header %s\n", headerCString.data());
+             headers = curl_slist_append(headers, headerCString.data());
+         }
+-        curl_easy_setopt(d->m_handle, CURLOPT_HTTPHEADER, headers);
++        curl_easy_setopt(cacheEntry->handle(), CURLOPT_HTTPHEADER, headers);
+         d->m_customHeaders = headers;
+     }
+ 
+-    setCurlMethod(d->m_handle, job->request().httpMethod());
++    setCurlMethod(cacheEntry->handle(), job->request().httpMethod());
+ 
+     if ("POST" == job->request().httpMethod()) {
+         DBG("POST %ld items\n", job->request().httpBody()->elements().size());
+         d->m_postData = job->request().httpBody()->flattenToString().latin1();
+         DBG(" data is '%s'\n", d->m_postData.data());
+-        curl_easy_setopt(d->m_handle, CURLOPT_POSTFIELDS, d->m_postData.data());
+-        curl_easy_setopt(d->m_handle, CURLOPT_POSTFIELDSIZE, d->m_postData.length());
+-
++        curl_easy_setopt(cacheEntry->handle(), CURLOPT_POSTFIELDS, d->m_postData.data());
++        curl_easy_setopt(cacheEntry->handle(), CURLOPT_POSTFIELDSIZE, d->m_postData.length());
+     }
+     else if ("PUT" == job->request().httpMethod()) {
+         DBG("**** UNIMPLEMENTED - PUT ****");
+         //setupPUT(job);
+     }
+     else if ("HEAD" == job->request().httpMethod())
+-        curl_easy_setopt(d->m_handle, CURLOPT_NOBODY, TRUE);
++      curl_easy_setopt(cacheEntry->handle(), CURLOPT_NOBODY, TRUE);
+ 
+-    m_runningJobs++;
+-    CURLMcode curlrc = curl_multi_add_handle(m_multiHandle, d->m_handle);
++    CURLMcode curlrc = curl_multi_add_handle(m_multiHandle, cacheEntry->handle());
+     // don't call perform, because events must be async
+     // timeout will occur and do curl_multi_perform
+     if (curlrc != 0 && curlrc != CURLM_CALL_MULTI_PERFORM) {
+-        DBG("Error %d starting job %s\n", curlrc, job->request().url().deprecatedString().ascii());
+-        job->cancel();
++        cacheEntry->cancel();
+         return;
+     }
+ 
+     // As of curl 7.16.3, adding a new easy handle to a multi handle makes curl
+     // request an immediate timeout, which it uses to kick things off.
+     DBG("job %p: started %s, cc=%d\n", job, job->request().url().deprecatedString().ascii(), curlrc);
++
++    m_runningJobs++;
+ }
+ 
+ void ResourceHandleManager::setProxy(const ResourceRequest& request, CURL* curlHandle)
+@@ -749,6 +994,57 @@ void ResourceHandleManager::setProxy(con
+     EKString::freeCString(cProxyString);
+ }
+ 
++void ResourceHandleManager::setProxy(CachedResponse* cacheEntry)
++{
++    using namespace ekioh;
++
++    EKProxyManager* proxyManager = EKPlatformPublic::instance()->getProxyManager();
++    if (proxyManager == 0)
++        return;
++
++    CString urlString(cacheEntry->entryURL().utf8());
++    EKString ekUrlString(urlString.data(), urlString.length());
++
++    EKUrl ekUrl(ekUrlString);
++
++   uint16_t proxyPort;
++   EKString proxyUsername;
++   EKString proxyPassword;
++   EKString proxyHost = proxyManager->getProxy(
++           ekUrl, proxyPort, proxyUsername, proxyPassword);
++
++   if (proxyHost.getLength() == 0) {
++     return;
++   }
++
++   // Curl 7.18.3 doesn't have programatical way to set all the individual
++   // proxy components (username, password etc.) so we have to construct
++   // a proxy string from the components.
++   EKString proxyString;
++   if (proxyUsername.getLength() != 0) {
++       proxyString = proxyUsername;
++   }
++   if (proxyPassword.getLength() != 0) {
++       proxyString = proxyString + ":";
++       proxyString = proxyString + proxyPassword;
++   }
++   if (proxyString.getLength() != 0) {
++       proxyString = proxyString + "@";
++   }
++   proxyString = proxyString + proxyHost;
++   if (proxyPort != 0) {
++       char portString[6];
++       snprintf(portString, sizeof(portString), "%hu", proxyPort);
++       proxyString = proxyString + ":";
++       proxyString = proxyString + EKString(portString);
++   }
++
++    char* cProxyString = proxyString.toCString();
++    fprintf(stderr, "proxy: '%s'\n", cProxyString);
++    curl_easy_setopt(cacheEntry->handle(), CURLOPT_PROXY, cProxyString);
++    EKString::freeCString(cProxyString);
++}
++
+ // Process socket data / timeouts
+ void ResourceHandleManager::socketAction(curl_socket_t sockfd, int ev_mask)
+ {
+@@ -792,36 +1088,57 @@ void ResourceHandleManager::processFinis
+         // find the node which has same d->m_handle as completed transfer
+         CURL* handle = msg->easy_handle;
+         ASSERT(handle);
+-        ResourceHandle* job;
+-        curl_easy_getinfo(handle, CURLINFO_PRIVATE, &job);
+-        ASSERT(job);
+-        if (!job)
++        CachedResponse* cacheEntry;
++        curl_easy_getinfo(handle, CURLINFO_PRIVATE, &cacheEntry);
++        ASSERT(cacheEntry);
++        if (!cacheEntry)
+             continue;
+ 
+-        ResourceHandleInternal* d = job->getInternal();
+-        ASSERT(handle == d->m_handle);
++        ASSERT(handle == cacheEntry->handle());
++
++        if (cacheEntry->cancelled()) {
++            removeFromCache(cacheEntry);
++            continue;
++        }
+ 
+         long responseCode;
+-        curl_easy_getinfo(d->m_handle, CURLINFO_RESPONSE_CODE, &responseCode);
+-        DBG("job %p: response=%ld\n", job, responseCode);
++        curl_easy_getinfo(cacheEntry->handle(), CURLINFO_RESPONSE_CODE, &responseCode);
+ 
+-        if ("POST" == job->request().httpMethod()) {
+-            DBG(" post data was '%s'\n", d->m_postData.data());
+-        }
++//        if ("POST" == job->request().httpMethod()) {
++//            DBG(" post data was '%s'\n", d->m_postData.data());
++//        }
+ 
+-        DBG("job %p: done %s result=%d\n", job, job->request().url().deprecatedString().ascii(), msg->data.result);
++        DBG("job %p: done %s result=%d\n", cacheEntry, cacheEntry->response.url().deprecatedString().ascii(), msg->data.result);
+ 
+         if (CURLE_OK == msg->data.result) {
+-            if (d->client())
+-                d->client()->didFinishLoading(job);
++            DBG("processFinishedJobs(), removing handle(%p), job(%p).\n",
++                cacheEntry->handle(), cacheEntry->firstClient());
++            // Remove from curl
++            if (cacheEntry->handle()) {
++                m_runningJobs--;
++                curl_multi_remove_handle(m_multiHandle,
++                                         cacheEntry->handle());
++                curl_easy_cleanup(cacheEntry->handle());
++                cacheEntry->setHandle(NULL);
++            }
++            cacheEntry->didFinishLoading();
++            removeFromCache(cacheEntry);
+         }
+         else {
+             char* url = 0;
+-            curl_easy_getinfo(d->m_handle, CURLINFO_EFFECTIVE_URL, &url);
++            curl_easy_getinfo(cacheEntry->handle(), CURLINFO_EFFECTIVE_URL, &url);
+             const char* errorMsg = curl_easy_strerror(msg->data.result);
+             DBG("Curl ERROR for url='%s', error: '%s'\n", url, errorMsg);
+-            if (d->client()) 
+-                d->client()->didFail(job, ResourceError("", msg->data.result, url, errorMsg));
++            // Remove from curl
++            if (cacheEntry->handle()) {
++                m_runningJobs--;
++                curl_multi_remove_handle(m_multiHandle,
++                                         cacheEntry->handle());
++                curl_easy_cleanup(cacheEntry->handle());
++                cacheEntry->setHandle(NULL);
++            }
++            cacheEntry->didFail(ResourceError("", msg->data.result, url, errorMsg));
++            removeFromCache(cacheEntry);
+         }
+ 
+         // The callback to the client causes the ResourceHandle to be deleted,
+@@ -829,39 +1146,63 @@ void ResourceHandleManager::processFinis
+         // that here.
+     }
+ 
+-    while (m_runningJobs < MAX_NUM_JOBS)
+-    {
+-        ResourceHandle* job = m_pendingJobs.getFirst();
+-        if (job == 0)
+-            break;
+-
+-        m_pendingJobs.removeFirst();
+-        startJob(job);
+-    }
++    startJob();
+ }
+ 
+ void ResourceHandleManager::cancel(ResourceHandle* job)
+ {
+     DBG("job %p: %s %s jobs=%d\n", job, __func__, job->request().url().deprecatedString().ascii(), m_runningJobs);
+-    if (job->request().url().protocol() == "data")
+-        ;
+-    else if (!m_pendingJobs.removeRef(job))
+-        removeFromCurl(job);
++    if (job->request().url().protocol() != "data") {
++        CachedResponse* cacheEntry = networkcache()->getEntry(job);
++        if (cacheEntry) {
++	    removeFromCache(job, cacheEntry);
++        }
++        else {
++            networkcache()->removeNotModifiedJob(job);
++        }
++    }
+ }
+ 
+-void ResourceHandleManager::removeFromCurl(ResourceHandle* job)
++void ResourceHandleManager::removeFromCache(CachedResponse* cacheEntry)
+ {
+-    ResourceHandleInternal* d = job->getInternal();
+-    DBG("job %p: remove handle=%p numJobs=%d\n", job, d->m_handle, m_runningJobs);
+-    //ASSERT(d->m_handle);
+-    if (!d->m_handle)
+-        return;
+-
+-    curl_multi_remove_handle(m_multiHandle, d->m_handle);
+-    curl_easy_cleanup(d->m_handle);
+-    d->m_handle = 0;
+-    m_runningJobs--;
++    // Get a copy of the resource handle set since removeFromCache may delete
++    // the CachedResponse.
++    ResourceHandleSet handles = *cacheEntry->getClients();
++
++    for (ResourceHandleSet::iterator iter = handles.begin(); iter != handles.end(); ++iter) {
++        removeFromCache((*iter), cacheEntry);
++    }
+ }
+ 
++void ResourceHandleManager::removeFromCache(ResourceHandle* job,
++                                            CachedResponse* cacheEntry)
++{
++    // Remove job from entry
++    cacheEntry->removeClient(job);
++
++    // Check if this was the last client
++    if (!cacheEntry->hasClients()) {
++        if (!m_pendingJobs.removeRef(cacheEntry)) {
++            // If job was started, remove it from curl
++            if (cacheEntry->handle()) {
++                m_runningJobs--;
++                curl_multi_remove_handle(m_multiHandle,
++                                         cacheEntry->handle());
++                curl_easy_cleanup(cacheEntry->handle());
++                cacheEntry->setHandle(NULL);
++            }
++        }
++
++        // If entry was not in cache list, remove entry
++        if (networkcache()->nocacheContains(job)) {
++            networkcache()->removeEntry(job);
++        }
++        else if (!cacheEntry->complete()) {
++            // If job was canceled before transfer completed, remove entry
++            cacheEntry->lruRemove();
++            networkcache()->removeEntry(cacheEntry->entryURL());
++        }
++    }
++}
+ 
+ } // namespace WebCore
+Index: src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager.h
+===================================================================
+--- src.orig/Browser/WebCore/platform/network/ekioh/ResourceHandleManager.h
++++ src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager.h
+@@ -11,6 +11,7 @@
+ 
+ #include "EKSocketCollection.h"
+ #include "EKTimer.h"
++#include "CachedResponse.h"
+ #include "EKTimerListener.h"
+ 
+ namespace ekioh {
+@@ -24,7 +25,6 @@ class CurlSocket;
+ class ResourceHandle;
+ class KURL;
+ class String;
+-class ResourceRequest;
+ 
+ class ResourceHandleManager : public ekioh::EKTimerListener, ekioh::EKSocketClient
+ {
+@@ -53,12 +53,15 @@ private:
+     ~ResourceHandleManager();
+     static void destroy();
+ 
+-    void removeFromCurl(ResourceHandle* job);
++    void removeFromCache(CachedResponse* cacheEntry);
++    void removeFromCache(ResourceHandle* job, CachedResponse* cacheEntry);
+     virtual void timerCallback(const ekioh::EKTimer &timer, uint32_t now);
+-    void startJob(ResourceHandle* job);
++    void startJob();
++    void setProxy(CachedResponse* cacheEntry);
+     void processFinishedJobs();
+     void processDataUrl(ResourceHandle *job);
+ 
++
+ private:
+     static ResourceHandleManager *m_instance;
+ 
+@@ -67,7 +70,7 @@ private:
+     CURLM  *m_multiHandle;
+     CURLSH *m_shareHandle;
+ 
+-    DeprecatedPtrList<ResourceHandle> m_pendingJobs;
++    DeprecatedPtrList<CachedResponse> m_pendingJobs;
+ 
+     CString m_caFile;
+     CString m_caPath;
+Index: src/Browser/WebCore/platform/network/ekioh/CachedResponse.cpp
+===================================================================
+--- /dev/null
++++ src/Browser/WebCore/platform/network/ekioh/CachedResponse.cpp
+@@ -0,0 +1,282 @@
++/* CachedResponse.cpp
++ *
++ * Copyright (c) 2009 Motorola Inc. All rights reserved.
++ *
++ */
++
++#include "NotImplemented.h"
++#include "EKTimer.h"
++#include "EKTimerListener.h"
++
++#include "CachedResponse.h"
++#include "ResourceHandleInternal.h"
++#include "ResourceHandleClient.h"
++#include <cstdio>
++#include <cassert>
++
++namespace WebCore {
++
++static inline bool doCallback(ResourceHandleInternal* d)
++{
++  return (d != NULL) && d->client() && !d->m_cancelled;
++}
++
++CachedResponse::CachedResponse(const String& entryURL)
++: m_data(NULL)
++, m_size(0)
++, m_complete(false)
++, m_conditional(false)
++, m_handle(NULL)
++, lruNext(NULL)
++, lruPrev(NULL)
++, m_entryURL(entryURL)
++, timer(NULL)
++, m_serverDate(0)
++, m_responseDate(0)
++{
++}
++
++CachedResponse::~CachedResponse()
++{
++	delete timer;
++	delete [] m_data;
++}
++
++void CachedResponse::willRevalidate()
++{
++	// Should 'response' contents be cleared?
++	delete [] m_data;
++	m_data = NULL;
++	m_size = 0;
++	m_complete = false;
++	m_conditional = false;
++	response.setResponseFired(false);
++}
++
++void CachedResponse::addData(char *data, size_t size)
++{
++    if (networkcache()->contains(m_entryURL)) {
++        char *newBuffer = new char[m_size+size];
++        // Copy existing data
++		memcpy(newBuffer, m_data, m_size);
++		// Copy added data
++		memcpy(newBuffer+m_size, data, size);
++		delete [] m_data;
++		m_data = newBuffer;
++		m_size += size;
++		// Tell cache about increased size
++		networkcache()->adjustSize(this, size);
++    }
++
++	// Propagate data to clients
++    ResourceHandleSet::const_iterator end = m_clients.end();
++    for (ResourceHandleSet::const_iterator it = m_clients.begin(); it != end; ++it) {
++		if (*it) {
++			ResourceHandleInternal* d = (*it)->getInternal();
++			if (doCallback(d))
++			  d->client()->didReceiveData(*it, data, size, m_size);
++		}
++	}
++}
++
++void CachedResponse::addClient(ResourceHandle* client)
++{
++	if (!m_complete)
++		m_clients.insert(client);
++
++	if (!isConditional()) {
++		if (response.responseFired()) {
++			ResourceHandleInternal* d = client->getInternal();
++			if (d->client()) {
++				d->m_response = response;
++				d->client()->didReceiveResponse(client, d->m_response);
++				if (m_size > 0) {
++					d->client()->didReceiveData(client, m_data, m_size, m_size);
++				}
++				if (m_complete) {
++					m_cachedClients.insert(client);
++				}
++			}
++		}
++
++		if (!m_cachedClients.empty() && !timer)
++			timer = new CachedJob(this);
++	}
++}
++
++void CachedResponse::setExpirationDate(const String& dateString)
++{
++	response.setExpirationDate(curl_getdate(dateString.latin1().data(), NULL));
++}
++
++void CachedResponse::didFinishCached()
++{
++	DBG("%s\n", __func__);
++	while (!m_cachedClients.empty()) {
++		ResourceHandle* client = *(m_cachedClients.begin());
++		ResourceHandleInternal* d = client->getInternal();
++		if (!doCallback(d)) {
++		  //
++		}
++		else {
++			d->client()->didReceiveResponse(client, d->m_response);
++			d->client()->didFinishLoading(client);
++		}
++		m_cachedClients.erase(client);
++	}
++}
++
++void CachedResponse::removeClient(ResourceHandle* client)
++{
++	m_clients.erase(client);
++	m_cachedClients.erase(client);
++}
++
++void CachedResponse::clearClients()
++{
++	m_clients.clear();
++	m_cachedClients.clear();
++}
++
++bool CachedResponse::hasClients()
++{
++	return ((m_clients.size() + m_cachedClients.size()) > 0);
++}
++
++void CachedResponse::lruAdd()
++{
++	CachedResponse *cr = networkcache()->lruFirst();
++	if (cr) {
++		cr->lruNext = this;
++		lruPrev = cr;
++	} else {
++		networkcache()->setLruLast(this);
++		lruPrev = NULL;
++	}
++	networkcache()->setLruFirst(this);
++	lruNext = NULL;
++}
++
++void CachedResponse::lruRemove()
++{
++	// Check if this is the last entry
++	if (lruPrev) {
++		lruPrev->lruNext = lruNext;
++	}
++	else {
++		networkcache()->setLruLast(lruNext);
++	}
++	// Check if this is the first entry
++	if (lruNext) {
++		lruNext->lruPrev = lruPrev;
++	}
++	else {
++		networkcache()->setLruFirst(lruPrev);
++	}
++}
++
++void CachedResponse::didReceiveResponse()
++{
++	response.setResponseFired(true);
++
++	// Propagate response to clients
++	ResourceHandleSet::const_iterator end = m_clients.end();
++	for (ResourceHandleSet::const_iterator it = m_clients.begin(); it != end; ++it) {
++		ResourceHandleInternal* d = (*it)->getInternal();
++		if (doCallback(d)) {
++			d->m_response = response;
++			d->client()->didReceiveResponse(*it, d->m_response);
++		}
++	}
++}
++
++void CachedResponse::didReceiveNotModified()
++{
++	m_complete = true;
++	m_conditional = false;
++
++ 	// Move clients to m_cachedClients list
++ 	ResourceHandleSet::const_iterator end = m_clients.end();
++ 	for (ResourceHandleSet::const_iterator it = m_clients.begin(); it != end; ++it) {
++		ResourceHandleInternal* d = (*it)->getInternal();
++		if (doCallback(d)) {
++			d->m_response = response;
++			d->client()->didReceiveResponse(*it, d->m_response);
++			d->client()->didReceiveData(*it, m_data, m_size, m_size);
++		}
++		m_cachedClients.insert(*it);
++ 	}
++
++	if (!m_cachedClients.empty() && !timer)
++	  timer = new CachedJob(this);
++}
++
++void CachedResponse::didFinishLoading()
++{
++	setComplete(true);
++
++	while (!m_clients.empty()) {
++		ResourceHandle* client = firstClient();
++		ResourceHandleInternal* d = client->getInternal();
++		if(d->client())
++			d->client()->didFinishLoading(client);
++		m_clients.erase(client);
++	}
++}
++
++void CachedResponse::didFail(const ResourceError& error)
++{
++	while (!m_clients.empty()) {
++		ResourceHandle* client = firstClient();
++		ResourceHandleInternal* d = client->getInternal();
++		if (doCallback(d))
++			d->client()->didFail(client, error);
++		m_clients.erase(client);
++	}
++}
++
++void CachedResponse::cancel()
++{
++	while (hasClients()) {
++		ResourceHandle* client = firstClient();
++		client->cancel();
++	}
++}
++
++bool CachedResponse::cancelled()
++{
++	ResourceHandleSet::const_iterator end = m_clients.end();
++	for (ResourceHandleSet::const_iterator it = m_clients.begin(); it != end; ++it) {
++		ResourceHandleInternal* d = (*it)->getInternal();
++		if (!d->m_cancelled) {
++			return false;
++		}
++	}
++	return true;
++}
++
++void CachedResponse::setCancelled(ResourceHandle* client)
++{
++	ResourceHandleInternal* d = client->getInternal();
++	d->m_cancelled = true;
++}
++
++
++void CachedResponse::redirect(String location)
++{
++	ResourceHandleSet::const_iterator end = m_clients.end();
++	for (ResourceHandleSet::const_iterator it = m_clients.begin();
++		 it != end; ++it) {
++		ResourceHandleInternal* d = (*it)->getInternal();
++		if(d->client()) {
++			KURL newUrl((*it)->request().url(),
++						location.deprecatedString());
++			ResourceRequest redirectedRequest = (*it)->request();
++			redirectedRequest.setURL(newUrl);
++			d->client()->willSendRequest(*it, redirectedRequest,
++										 response);
++		}
++	}
++}
++
++} // namespace WebCore
+Index: src/Browser/WebCore/platform/network/ekioh/NetworkCache.cpp
+===================================================================
+--- /dev/null
++++ src/Browser/WebCore/platform/network/ekioh/NetworkCache.cpp
+@@ -0,0 +1,318 @@
++/* NetworkCache.cpp
++ *
++ * Copyright (c) 2009 Motorola Inc. All rights reserved.
++ *
++ */
++
++#include "NotImplemented.h"
++#include "NetworkCache.h"
++#include "ResourceRequest.h"
++#include "CString.h"
++#include <cctype>
++#include <cstdlib>
++
++namespace WebCore
++{
++
++NetworkCache* networkcache()
++{
++    static NetworkCache* staticNetworkCache = new NetworkCache;
++    return staticNetworkCache;
++}
++
++NetworkCache::NetworkCache()
++: m_size(0)
++, m_maxSize(NC_INITIAL_MAX_SIZE)
++, m_defaultMaxAge(NC_INITIAL_DEFAULT_MAX_AGE)
++, m_lruFirst(NULL)
++, m_lruLast(NULL)
++{
++}
++
++NetworkCache::~NetworkCache()
++{
++}
++
++// Fetch cache entry for response, returns NULL if no entry exists
++CachedResponse* NetworkCache::getEntry(const String& url)
++{
++    return m_cache.get(url);
++}
++
++bool NetworkCache::contains(const String& url)
++{
++    return m_cache.contains(url);
++}
++
++bool NetworkCache::nocacheContains(ResourceHandle* client)
++{
++    return m_nocache.contains(client);
++}
++
++// Add cache entry for response
++void NetworkCache::addEntry(CachedResponse* cacheEntry)
++{
++	DBG("NetworkCache::addEntry(), %s\n", cacheEntry->entryURL().utf8().data());
++	DBG("Size now %d, adding %d\n", m_size, cacheEntry->size());
++	if ((m_size+cacheEntry->size()) > m_maxSize) {
++		pruneCache();
++	}
++	m_size += cacheEntry->size();
++    m_cache.set(cacheEntry->entryURL(), cacheEntry);
++	//printLRUList();
++}
++
++CachedResponse* NetworkCache::getEntry(ResourceHandle* client)
++{
++	CachedResponse* entry = m_nocache.get(client);
++	if (!entry)
++		entry = m_cache.get(client->request().url().prettyURL());
++	return entry;
++}
++
++// Add nocache entry for client/response
++void NetworkCache::addNocacheEntry(ResourceHandle* client,
++								   CachedResponse* cacheEntry)
++{
++	DBG("NetworkCache::addNoCacheEntry(), %s\n",
++			cacheEntry->entryURL().utf8().data());
++    m_nocache.set(client, cacheEntry);
++}
++
++// Make a cached entry into a nocache entry for client/response
++void NetworkCache::makeNocacheEntry(ResourceHandle* client,
++									CachedResponse* cacheEntry)
++{
++	DBG("NetworkCache::makeNocacheEntry(), job(%p), handle(%p), url(%s)\n",
++			client,
++			cacheEntry->handle(),
++			cacheEntry->entryURL().utf8().data());
++	// Remove from cache list
++	m_size -= cacheEntry->size();
++    m_cache.remove(cacheEntry->entryURL());
++	// Add to nocache list
++    m_nocache.set(client, cacheEntry);
++}
++
++// Make a nocache entry into a cache entry for client/response
++void NetworkCache::makeCacheEntry(CachedResponse* cacheEntry)
++{
++	DBG("NetworkCache::makeCacheEntry()\n");
++	// Add to nocache list
++    m_nocache.remove(cacheEntry->firstClient());
++	// Add to cache list
++	if ((m_size+cacheEntry->size()) > m_maxSize) {
++		pruneCache();
++	}
++	m_size += cacheEntry->size();
++    m_cache.set(cacheEntry->entryURL(), cacheEntry);
++}
++
++// Remove an entry
++void NetworkCache::removeEntry(const String& url)
++{
++	DBG("NetworkCache::removeEntry(), %s\n", url.utf8().data());
++	if (!m_cache.contains(url))
++	  return;
++	CachedResponse* cacheEntry = m_cache.get(url);
++ 	if (cacheEntry->hasClients()) {
++ 		makeNocacheEntry(cacheEntry->firstClient(), cacheEntry);
++ 	}
++ 	else {
++		m_size -= m_cache.get(url)->size();
++		m_cache.remove(url);
++		delete cacheEntry;
++ 	}
++}
++
++// Remove an entry
++void NetworkCache::removeEntry(ResourceHandle* client)
++{
++	CachedResponse* cacheEntry = m_nocache.get(client);
++	if (cacheEntry) {
++		m_nocache.remove(client);
++		delete cacheEntry;
++	}
++	else {
++		String url = client->request().url().string();
++		m_size -= m_cache.get(url)->size();
++		cacheEntry = m_cache.get(url);
++		if (cacheEntry) {
++			if (cacheEntry->hasClients()) {
++				makeNocacheEntry(cacheEntry->firstClient(), cacheEntry);
++			}
++			else {
++				m_cache.remove(url);
++				delete cacheEntry;
++			}
++		}
++	}
++}
++
++// Prune cache entries according to LRU
++void NetworkCache::pruneCache()
++{
++	DBG("NetworkCache::pruneCache(), cache size: %.02fkB\n",
++		   ((float)size())/1024);
++	CachedResponse* cacheEntry;
++	CachedResponse* cacheEntryNext;
++	cacheEntryNext = lruLast();
++	while (m_size > (m_maxSize*NC_TRIM_PERCENTAGE) &&
++		   cacheEntryNext) {
++	  	cacheEntry = cacheEntryNext;
++		cacheEntryNext = cacheEntry->lruNext;
++		cacheEntry->lruRemove();
++		removeEntry(cacheEntry->entryURL());
++	}
++	DBG("Result after prune, cache size: %.02fkB\n",
++		   ((float)size())/1024);
++	//printLRUList();
++}
++
++void NetworkCache::adjustSize(CachedResponse* cacheEntry,
++							  size_t sizeIncrease)
++{
++	if (m_cache.contains(cacheEntry->entryURL())) {
++		if ((m_size+sizeIncrease) > m_maxSize) {
++			pruneCache();
++		}
++		m_size += sizeIncrease;
++		//printLRUList();
++	}
++}
++
++// Public convenience method for parsing Cache-Control header field
++void NetworkCache::parseCacheControl(struct CacheControl* cc, const char *value)
++{
++	DBG("NetworkCache::parseCacheControl()\n");
++	const char *dl, *du; // Directive lower and upper pointer
++	const char *vl, *vu; // Value lower and upper pointer
++
++	dl = vl = vu = du = value;
++
++	while ( *vu ) { // Check for string end
++		// Tokenize string
++		while ( isblank(*dl) ) dl++; // Find directive start
++		du = dl;
++		while ( !isblank(*du) &&
++				(*du != ',') &&
++				(*du != '=') &&
++				(*du != '\0') ) du++; // Find directive end
++		vl = vu = du;
++		if (*du == '=') {
++			vl++;
++			// Parse value
++			while ( isblank(*vl) ) vl++; // Find value start
++			if ( *vl == '"' ) { // Parse quoted-string
++				vu = ++vl;
++				while ( *vu != '"' &&
++						(*vu != '\0') ) vu++;
++			}
++			else {
++				vu = vl;
++				while ( !isblank(*vu) &&
++						(*vu != ',') &&
++						(*vu != '\0') ) vu++;
++			}
++		}
++
++		// At this stage, dl should point to directive string terminated by du
++		// and vl should point to directive value string terminated by vu
++
++		int dlen = du - dl;
++		// Case sensitive comparisons according to RFC2616, section 4.2
++		// Test order is according to expected occurency
++		if ( !strncmp(dl, "no-cache", dlen) &&
++			 dlen == 8 ) {
++			cc->nocache = true;
++		}
++		else if ( !strncmp(dl, "no-store", dlen) &&
++				  dlen == 8 ) {
++			cc->nostore = true;
++		}
++		else if ( !strncmp(dl, "max-age", dlen) &&
++				  dlen == 7 ) {
++			cc->maxage = 0;
++			// Since strntol doesn't exist in stdlib, this is done manually
++			if (vu-vl > 7) {
++				cc->maxage = 10000000;
++			}
++			else {
++				for (int i = vu-vl-1; i>=0; i--,vl++) {
++					if ( !isdigit(*vl) ) {
++						cc->maxage = 0;
++						break;
++					}
++					switch (i) {
++					case 0:
++					  cc->maxage += (*vl - '0');
++					  break;
++					case 1:
++					  cc->maxage += (*vl - '0')*10;
++					  break;
++					case 2:
++					  cc->maxage += (*vl - '0')*100;
++					  break;
++					case 3:
++					  cc->maxage += (*vl - '0')*1000;
++					  break;
++					case 4:
++					  cc->maxage += (*vl - '0')*10000;
++					  break;
++					case 5:
++					  cc->maxage += (*vl - '0')*100000;
++					  break;
++					case 6:
++					  cc->maxage += (*vl - '0')*1000000;
++					  break;
++					case 7:
++					  cc->maxage += (*vl - '0')*10000000;
++					  break;
++					}
++				}
++			}
++		}
++		else if ( !strncmp(dl, "public", dlen) &&
++				  dlen == 6 ) {
++			cc->ispublic = true;
++		}
++
++		if ( *vu ) {
++			dl = du = vl = ++vu;
++		}
++	}
++
++	return;
++}
++
++void NetworkCache::addNotModifiedJob(ResourceHandle *client)
++{
++	m_notModifiedJobs.set(client, new NotModifiedJob(client));
++}
++
++void NetworkCache::removeNotModifiedJob(ResourceHandle *client)
++{
++	if (m_notModifiedJobs.contains(client)) {
++	  NotModifiedJob* timer = m_notModifiedJobs.get(client);
++	  delete timer;
++	  m_notModifiedJobs.remove(client);
++	}
++}
++
++void NetworkCache::printLRUList()
++{
++ 	CachedResponse* lruprint = lruFirst();
++	int i = 0;
++ 	fprintf(stderr,"==============LRU list===============\n");
++ 	while (lruprint) {
++		i++;
++ 		fprintf(stderr,"(%p)",lruprint);
++		fprintf(stderr,"%s ",lruprint->entryURL().utf8().data());
++		fprintf(stderr,"%s\n",m_cache.contains(lruprint->entryURL())?"(in cache)":"(not in cache)");
++ 		lruprint = lruprint->lruPrev;
++ 	}
++ 	fprintf(stderr,"=====================================\n");
++ 	fprintf(stderr,"Cache size: %.02fkB, LRU count: %d\n", ((float)size())/1024, i);
++}
++
++}
+Index: src/3rdParty/webkit/work/WebCore/platform/network/ekioh/CachedResponse.h
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/work/WebCore/platform/network/ekioh/CachedResponse.h
+@@ -0,0 +1,206 @@
++/* CachedResponse.h
++ *
++ * Copyright (c) 2009 Motorola Inc. All rights reserved.
++ *
++ */
++
++
++#ifndef CachedResponse_h
++#define CachedResponse_h
++
++#include <cstring>
++#include <set>
++#include "HTTPHeaderMap.h"
++#include "NetworkCache.h"
++
++#include "ResourceHandle.h"
++
++#include "EKTimer.h"
++#include "EKTimerListener.h"
++
++#include <curl/curl.h>
++
++namespace WebCore {
++
++struct CacheControl {
++
++	time_t maxage;
++	bool ispublic;
++	bool nocache;
++	bool nostore;
++
++	// These are not used, but are provided for
++	// future RFC2616 compatability
++	time_t smaxage;
++	time_t maxstale;
++	time_t minfresh;
++	bool isprivate;
++	bool notransform;
++	bool onlyifcached;
++	bool mustrevalidate;
++	bool proxyrevalidate;
++	// Cache-control extensions ignored
++
++	CacheControl()
++	  : maxage(0)
++	  , ispublic(false)
++	  , nocache(false)
++	  , nostore(false)
++	  , smaxage(0)
++	  , maxstale(0)
++	  , minfresh(0)
++	  , isprivate(false)
++	  , notransform(false)
++	  , onlyifcached(false)
++	  , mustrevalidate(false)
++	  , proxyrevalidate(false)
++	{};
++};
++
++typedef std::set<ResourceHandle*> ResourceHandleSet;
++
++class CachedJob;
++
++class CachedResponse
++{
++friend class NetworkCache;
++friend class CachedJob;
++
++private:
++    HTTPHeaderMap m_headers;
++    char* m_data;               // Pointer to response content data
++	size_t m_size;
++	bool m_complete;            // Transfer complete
++	bool m_conditional;         // Cache generated conditional request
++	String m_conditionalHeader;
++	CURL* m_handle;
++	ResourceHandleSet m_clients;
++	ResourceHandleSet m_cachedClients;
++	time_t m_serverDate;
++	time_t m_responseDate;
++	String m_entryURL;
++
++	// The timer is used to keep track of when cached
++	// data should be sent to waiting clients
++	void addTimer(CachedJob* timer);
++	void removeTimer(CachedJob* timer);
++
++protected:
++	// Linked list for LRU book keeping
++	CachedResponse* lruNext;
++	CachedResponse* lruPrev;
++	CachedJob* timer;
++
++public:
++	// Stored response from server
++	ResourceResponse response;
++	// Cache control directives from response
++	CacheControl cacheControl;
++
++    CachedResponse(const String& entryURL);
++    ~CachedResponse();
++
++	// Methods for adding and removing ResourceHandle clients
++	void addClient(ResourceHandle* client);
++	void removeClient(ResourceHandle* client);
++	void clearClients();
++
++	// Adds data to cache entry and propagates to clients
++    void addData(char *data, size_t size);
++	// Sends finish to clients receiving cached data
++	void didFinishCached();
++
++	// Propagates request events to clients
++	void didReceiveResponse();
++	void didReceiveHeader();
++	void didReceiveData();
++
++	void didFinishLoading();
++	void didFail(const ResourceError& error);
++
++	void redirect(String location);
++	void didReceiveNotModified();
++	void willRevalidate();
++
++	// Handles cancel request
++	void cancel();
++
++	// Get/set cancelled state.
++	bool cancelled();
++	void setCancelled(ResourceHandle* client);
++
++	// LRU list methods
++	void lruAdd();
++	void lruRemove();
++
++	// Allocated size for cache data
++    size_t size() { return m_size; }
++	// Cache data
++	 char* data() { return m_data; }
++
++	// Access methods for client list
++	ResourceHandleSet* getClients() { return &m_clients; }
++	ResourceHandle* firstClient() { return *(m_clients.begin()); }
++	bool hasClients();
++
++	// Curl handle for request transfer
++    CURL* handle() { return m_handle; }
++    void setHandle(CURL* handle) { m_handle = handle; }
++
++	// Methods for setting up a conditional request
++    void setConditional(bool value) { m_conditional = value; }
++    void setConditionalHeader(String value) { m_conditionalHeader = value; }
++    const String& conditionalHeader() { return m_conditionalHeader; }
++    bool isConditional() { return m_conditional; }
++
++	// Time from Date: header in server response
++	time_t serverDate() { return m_serverDate; }
++	void setServerDate(time_t date) { m_serverDate = date; }
++	// Local time when server response was received
++	time_t responseDate() { return m_responseDate; }
++	void setResponseDate(time_t date) { m_responseDate = date; }
++	// Expiration date for response
++    void setExpirationDate(const String& dateString);
++
++	// Complete means that the curl transfer has finished and succeded
++	bool complete() { return m_complete; }
++	void setComplete(bool val) { m_complete = val; }
++
++	// Stored key URL for the cache entry
++	const String& entryURL() { return m_entryURL; }
++};
++
++// This class schedules the cached response for the ResourceHandle client.
++// This is necessary since, ResourceHandleManager::add() must return before
++// ResourceHandleClient::didReceiveResponse() can be called.
++class CachedJob : public ekioh::EKTimerListener
++{
++public:
++    CachedResponse *m_cacheEntry;
++
++    CachedJob(CachedResponse *cacheEntry)
++        : EKTimerListener()
++        , m_timer(*this)
++		, m_cacheEntry(cacheEntry)
++    {
++        m_timer.triggerIn(0);
++    }
++	void disable()
++	{
++		m_timer.disable();
++	}
++
++private:
++	void timerCallback(const ekioh::EKTimer& timer, uint32_t now)
++    {
++		m_cacheEntry->didFinishCached();
++		m_cacheEntry->timer = NULL;
++		delete this;
++    }
++
++    ekioh::EKTimer m_timer;
++};
++
++}
++
++#endif
+Index: src/3rdParty/webkit/work/WebCore/platform/network/ekioh/NetworkCache.h
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/work/WebCore/platform/network/ekioh/NetworkCache.h
+@@ -0,0 +1,135 @@
++/* NetworkCache.h
++ *
++ * Copyright (c) 2009 Motorola Inc. All rights reserved.
++ *
++ */
++
++#ifndef NetworkCache_h
++#define NetworkCache_h
++
++#include <wtf/HashMap.h>
++#include <cstring>
++#include "ResourceHandle.h"
++#include "CachedResponse.h"
++#include "StringHash.h"
++#include "PlatformString.h"
++#include "ResourceHandleInternal.h"
++#include "ResourceHandleClient.h"
++
++// Set initial max cache size to 128 MB
++#define NC_INITIAL_MAX_SIZE 128*1024*1024 //bytes
++//#define NC_INITIAL_MAX_SIZE 128*1024 // bytes
++#define NC_INITIAL_DEFAULT_MAX_AGE 5*60 //seconds
++//#define NC_DEFAULT_MAX_AGE 5 //seconds
++#define NC_TRIM_PERCENTAGE 0.8f
++
++namespace WebCore
++{
++
++class CachedResponse;
++class NotModifiedJob;
++
++class NetworkCache
++{
++private:
++    HashMap<String, CachedResponse*> m_cache;
++    HashMap<ResourceHandle*, CachedResponse*> m_nocache;
++    HashMap<ResourceHandle*, NotModifiedJob*> m_notModifiedJobs;
++    size_t m_size;   // Currently allocated memory for response data
++	size_t m_maxSize; // Max memory allocated for response data
++	size_t m_defaultMaxAge; // Default expiration time
++	CachedResponse* m_lruFirst; // LRU entry
++	CachedResponse* m_lruLast;  // Entry with oldest use date
++
++public:
++	friend NetworkCache* networkcache();
++    NetworkCache();
++    ~NetworkCache();
++
++	// Get cache entry from cache list
++    CachedResponse* getEntry(const String& url);
++	// This one may also return response from nocache list
++	CachedResponse* getEntry(ResourceHandle* client);
++
++	// Methods for handling cache list
++    void addEntry(CachedResponse *response);
++	void removeEntry(const String& url);
++	void adjustSize(CachedResponse* cacheEntry,
++					size_t sizeIncrease);
++	bool contains(const String& url);
++	size_t size() { return m_size; }
++
++	// Methods for handling nocache list
++    void addNocacheEntry(ResourceHandle* client,
++						 CachedResponse* response);
++    void removeEntry(ResourceHandle* client);
++	bool nocacheContains(ResourceHandle* client);
++
++	// Move clients between cache and nocache
++	void makeNocacheEntry(ResourceHandle* client,
++						  CachedResponse* cacheEntry);
++	void makeCacheEntry(CachedResponse* cacheEntry);
++
++	// Requests from higher level cache that receives 304 responses
++    void addNotModifiedJob(ResourceHandle *client);
++    void removeNotModifiedJob(ResourceHandle *client);
++
++	// Methods for keeping a list of LRU entries
++	CachedResponse* lruFirst() { return m_lruFirst; }
++	void setLruFirst(CachedResponse* newResponse) { m_lruFirst = newResponse; }
++	CachedResponse* lruLast() { return m_lruLast; }
++	void setLruLast(CachedResponse* newResponse) { m_lruLast = newResponse; }
++
++	// Remove items from cache to reduce allocated memory
++    void pruneCache();
++
++	// Convenience method for parsing Cache-Control headers
++	void parseCacheControl(struct CacheControl* cc, const char* value);
++
++	// Parameters for cache behaviour
++	size_t maxSize() { return m_maxSize; }
++	void setMaxSize(size_t maxSize) { m_maxSize = maxSize; }
++	int defaultMaxAge() { return m_defaultMaxAge; }
++	void setDefaultMaxAge(int maxAge) { m_defaultMaxAge = maxAge; }
++
++	// Debug function
++	void printLRUList();
++};
++
++NetworkCache* networkcache();
++
++// This class schedules a 304 not modified response for the ResourceHandle client.
++// This is necessary since, ResourceHandleManager::add() must return before
++// ResourceHandleClient::didReceiveResponse() can be called.
++class NotModifiedJob : public ekioh::EKTimerListener
++{
++public:
++
++	NotModifiedJob(ResourceHandle *job)
++        : EKTimerListener()
++        , m_timer(*this)
++		, job(job)
++    {
++        m_timer.triggerIn(0);
++    }
++	void disable()
++	{
++		m_timer.disable();
++	}
++
++private:
++	void timerCallback(const ekioh::EKTimer& timer,  uint32_t now)
++    {
++	  if (job->client() && job->getInternal()) {
++		  job->getInternal()->m_response.setHTTPStatusCode(304);
++		  job->client()->didReceiveResponse(job, job->getInternal()->m_response);
++	  }
++	  networkcache()->removeNotModifiedJob(job);
++    }
++	ResourceHandle *job;
++    ekioh::EKTimer m_timer;
++};
++
++}
++
++#endif
+Index: src/3rdParty/webkit/work/WebCore/platform/network/ResourceHandleInternal.h
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/platform/network/ResourceHandleInternal.h
++++ src/3rdParty/webkit/work/WebCore/platform/network/ResourceHandleInternal.h
+@@ -102,6 +102,7 @@ namespace WebCore {
+ #if PLATFORM(EKIOH)
+             , m_handle(0)
+             , m_customHeaders(0)
++            , m_cancelled(false)
+ #endif
+ #if USE(CURL)
+             , m_handle(0)
+@@ -165,6 +166,7 @@ namespace WebCore {
+         CString m_postData;
+         struct curl_slist* m_customHeaders;
+         ResourceResponse m_response;
++        bool m_cancelled;
+ #endif
+ #if USE(CURL)
+         CURL* m_handle;

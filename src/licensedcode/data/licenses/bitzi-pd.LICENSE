@@ -1,0 +1,84 @@
+BITZI PUBLIC DOMAIN NOTICES 
+
+UPDATED July 13, 2006 
+
+When we publish our source code, we usually place it in 
+the public domain, whenever possible, to allow the widest 
+possible reuse and benefit. 
+
+We try to include on most such released files a small notice 
+such as: 
+
+/* (PD) 2006 The Bitzi Corporation 
+ * Please see file COPYING or http://bitzi.com/publicdomain 
+ * for more info. 
+ */ 
+
+For major standalone files, or as the "COPYING" file, we 
+include a version of this longer explanation: 
+
+/* (PD) 2006 The Bitzi Corporation 
+ * 
+ * 1. Authorship. This work and others bearing the above 
+ * label were created by, or on behalf of, the Bitzi 
+ * Corporation. Often other public domain material by 
+ * other authors is incorporated; this should be clear 
+ * from notations in the source code. If other non- 
+ * public-domain code or libraries are included, this is 
+ * is done under those works' respective licenses. 
+ * 
+ * 2. Release. The Bitzi Corporation places its portion 
+ * of these labelled works into the public domain, 
+ * disclaiming all rights granted us by copyright law. 
+ * 
+ * Bitzi places no restrictions on your freedom to copy, 
+ * use, redistribute and modify this work, though you 
+ * should be aware of points (3), (4), and (5) below. 
+ * 
+ * 3. Trademark Advisory. The Bitzi Corporation reserves 
+ * all rights with regard to any of its trademarks which 
+ * may appear herein, such as "Bitzi", "Bitcollider", or 
+ * "Bitpedia". Please take care that your uses of this 
+ * work do not infringe on our trademarks or imply our 
+ * endorsement. For example, you should change labels 
+ * and identifier strings in your derivative works where 
+ * appropriate. 
+ * 
+ * 4. Licensed portions. Some code and libraries may be 
+ * incorporated in this work in accordance with the 
+ * licenses offered by their respective rightsholders. 
+ * Further copying, use, redistribution and modification 
+ * of these third-party portions remains subject to 
+ * their original licenses. 
+ * 
+ * 5. Disclaimer. THIS SOFTWARE IS PROVIDED BY THE AUTHOR 
+ * ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+ * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+ * ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE 
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, 
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR 
+ * TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN 
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ * 
+ * Please see http://bitzi.com/publicdomain or write 
+ * info@bitzi.com for more info. 
+ */ 
+  
+We hope you find our public-domain source code useful, 
+but remember that we can provide absolutely no support 
+or assurances about it; your use is entirely at your 
+own risk. 
+
+Thank you. 
+
+- Bitzi 
+- March 3, 2001 
+- updated July 13, 2006 (clarifying that sometimes our 
+- public-domain releases include portions that remain 
+- under original licenses)

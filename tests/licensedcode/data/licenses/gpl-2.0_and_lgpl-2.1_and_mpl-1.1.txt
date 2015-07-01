@@ -1,0 +1,118 @@
+/*
+ *
+ * Open SIP Stack ( OSS ) Library 
+ *
+ * CHANGE HISTORY
+ *
+ * Version: MPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * Jun, 15, 2009 : Joegen :  Implemented event queue rewind for mutexes prone to deadlocks 
+ *
+ * May, 07, 2009 : Joegen :  Modify SendB2BConnect to not insert Record-Route if the dialog type is UAC.  
+ *                           Previous behavior inserts record routes even if the re-Invite came from the callee.
+ *                           we also modified CloneRequestWithinDialog() so that it always removes route and record-route
+ *                           headers.
+ *
+ * May, 01, 2009 : Joegen :  We modified SendB2BConnect() and SendB2BProgress() to rewrite the contact address when the dialog 
+ *                           is already in final state.  This is in reaction to a bug report in OSS Forum that OpenSBC sends
+ *                           the contact address of the remote peer when sending reponses to re-INVITEs.  
+ *
+ * Apr. 28, 2009 : Joegen :  Added SIPSession as a paramater to FindTransactionAndAddEvent() so that SIPTransaction can
+ *                           instantiate a reference to the owning session.  However, we opted not to use it because it 
+ *                           is causing GC resource collision between session and transaction.  We need to find a better
+ *                           way of ensuring that session bypass handler for transaction never outlive the transaction
+ *                           events
+ *
+ * Apr. 18, 2009 : Joegen :  Fixed bug in getting transport interface due to the mask not being used when 
+ *                           querying local addresses.  Fixed IST to always use the interface used by the 
+ *                           inbound request
+ *
+ * Mar. 26, 2009 : Joegen :  Added NAT port forwarding support.  Particularly, we modified contruct 
+ *                           Via class and PIPSocket::Address to acquire and save an external IP for 
+ *                           Future use in constructing SDP/Contact and Via addresses.
+ *
+ * Mar. 05, 2009 : Joegen :  In this revision, I made ICT, NICT, IST and NIST have their own separate 
+ *                           dictionaries as opposed to one central list.  The new dictionaries are
+ *                           guarded by their own separate mutex.  This would result to lesser mutex
+ *                           contention as well as faster transaction lookups.
+ *
+ * Mar. 05, 2009 : Joegen :  Transfered Construct via to SIPUserAgent instead of SIPSession Manager so that 
+ *                           transaction bypass like the new registrar may still be able to call the function.
+ *                           Compatibility with old API is assured.
+ *
+ * Feb. 02, 2009 : Joegen :  In this patch, we finally found the deadlock that was haunting the stack for quite a while.  
+ *                           The culprit functions are FincGCRefBCallId and CreateServerSession of the Session Manager.
+ *                           The remedy was to give the call-id list its own separate mutex so that it doesn't share
+ *                           the same mutex as the session-id based list.  We also guarded create CreateServerSession
+ *                           with it's own function wide mutex so that only one thread at a time can call this function.
+ *                           Finally, we introduced Yields in this method so that sudden influx of INVITE won't deprive
+ *                           existing sessins with CPU time.
+ *
+ * Feb. 02, 2009 : Joegen :  We have seen a need for applications like OpenSBC to handle redirects in a proprietary way.  
+ *                           Because of this, we modified the B2BUA call not to call the default redirect handler from
+ *                           CallSession Object.  We let the application handle its behavior.  Take note that this will
+ *                           not affect UA only projects like ATLSIP.
+ *
+ * Jan. 30, 2009 : Joegen :  During the last few days I have been working on trying to make OpenSIPStack more resilient to DoS.
+ *                           This is typically encountered when application users use the stack for transaction intensive
+ *                           purposes like call center dialers.  Sudden influx of simultaneous INVITEs just 1 or two milliseconds
+ *                           away from each other may put the application to its knees.  To circumvent this, we needed to at
+ *                           least distribute load evenly so as not to overwhelm the stack.  Thus we introduced a new state
+ *                           timer for IST called IST Pending Timer.  When an IST has detected that the previous IST ceation was 
+ *                           just less than 100 ms prior, it enters a pending state using a random wait time from 500 ms to 3 seconds.
+ *                           Only after this timer expires would IST report the event to the TU.
+ *
+ * Jan. 29, 2009 : Joegen :  - Fixed bug in resource counter where average call duration is not computed correctly.
+ *                           - Changed default event queue thread count to 1.
+ *                           - Removed queue size checking from transport.  We will just let the application layer handle it.
+ *
+ * Jan. 16, 2009 : Joegen :  In this revision, we have introduced handling of SDP in ACK for reINVITEs without SDP.
+ *                           We only limit this capability for none media-proxy calls as of the moment. 
+ *
+ * Jan. 16, 2009 : Joegen :  HTTPName space is never locked by a critical section giving window for crashes when the HTTP
+ *                           config and the application subsystem access the resource.  We introduced a new PMutex member to PHTTPNameSpace
+ *                           to be shared by both library and application layer.
+ *
+ * Jan. 09, 2009 : Joegen :  We have eliminated ALL calls to MakeUnique for lists and dictionary members in SIP Parser since it is very unreliable
+ *                           specially across multiple threads.
+ *
+ * Jan. 09, 2009 : Joegen :  Minor bug fix where m_HasLocalAuthorization is not initialized in two of the constructor overrides of SIPSession
+ *                           resulting to blank Authorization heaers being sent in mid-dialog requests.
+ *
+ * Jan. 09, 2009 : Joegen :  Fixed DNS SRV lookup.  We only lookup DNS SRV records if a Host Record is not in cache.
+ *
+ * Jan. 07, 2009 : Joegen :  We have experienced a call scenario where a UA reattempts the failed call using the same call-id 3 seconds 
+ *                           after it has ACKed a 403 response from OpenSBC.  Since OpenSBC would think that this is a new call becasue the 
+ *                           previous connection is already deleted from the active session list, it would still collide with the purgatory
+ *                           where destroyed calls stays before the garbage collector reaps them.  As a fix, we introduced a simple check
+ *                           in B2BUAEndPoint :: CreateB2BUA if the call already exists in purgatory and return NULL.  This will trigger 
+ *                           a 500 Internal Server Error response from OpenSBC.
+ *
+ * Jan. 04, 2009 : Joegen :  Introduced B2BUAConnection::ErrorScrewedUpState to trigger disconnects when receiving out of order BYE request
+ *                           regardless of call-state since nothing good is expected to happen with the call.  We also changed the override method
+ *                           for NIST_OnReceivedBye so that B2BUACall has full control of call-state.  The previous implementation sets the state
+ *                           to StateDisconnected in the CallSession layer.
+ *
+ * Jan. 03, 2009 : Joegen :  Reimplemented DestroyConenction to enqueue a session event instead to avoid further race conditons and dead locks.
+ *                           We also implemented B2BUAConnection::IsSafeReference() to further guaranty the integrity of connection pointers.
+ *
+ * Jan. 01, 2009 : Joegen :  Introduced ACK Timeout as Session Event so that call destruction is only called by the event queue
+ *                           to avoid the possibility of deadlocks.
+ *
+ * Dec. 23, 2008 : Joegen :  Modified ICT so that UACore can set the ACK to be sent for 200 OK retransmission.  
+ *                           This will save the call session from further processing of 200 ok retransmissions.
+ *
+ * Dec. 22, 2008 : Joegen :  Application Timers for Alerting and Connect is causing a deadlock on connection destruction. 
+ *                           To address this issue, we modified opensipstack to take care of the timers in the ICT Layer.
+ *
+ * Dec. 18, 2008 : Joegen :  Changed CID logging from 16 bit hash to 32 bit hash
+ *
+ * Dec. 12, 2008 : Joegen :  Used BOOL to determine if a SIP Message is to be encrypted or not.
+ *                           Previous implementation is using SIP Message internal headers which is slower.
+ *
+ * Dec. 11, 2008 : Joegen :  Added Angel Code Scripting Language support.  This marks version 1.1.12 of the library 
+ *
+ */
+
+
+#define BUILD_INDEX 24

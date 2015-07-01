@@ -1,0 +1,13 @@
+key: fraunhofer-fdk-aac-codec
+short_name: >-
+    Fraunhofer FDK AAC Codec Library for Android
+name: >-
+    Fraunhofer FDK AAC Codec Library for Android
+category: Copyleft Limited
+owner: Fraunhofer-Gesellschaft
+homepage_url: http://opencore-amr.git.sourceforge.net/git/gitweb.cgi?p=opencore-amr/fdk-aac;a=blob;f=NOTICE
+text_urls:
+    - http://opencore-amr.git.sourceforge.net/git/gitweb.cgi?p=opencore-amr/fdk-aac;a=blob;f=NOTICE
+other_urls:
+    - www.iis.fraunhofer.de/amm
+    - amm-info@iis.fraunhofer.de

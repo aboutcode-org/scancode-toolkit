@@ -1,0 +1,14 @@
+key: osl-1.0
+short_name: OSL 1.0
+name: Open Software License 1.0
+category: Copyleft
+owner: Lawrence Rosen
+homepage_url: http://www.opensource.org/licenses/osl-1.0.txt
+spdx_license_key: OSL-1.0
+spdx_full_name: Open Software License 1.0
+spdx_url: http://spdx.org/licenses/OSL-1.0
+spdx_notes: >-
+    This license was OSI certified.  This license has been superseded.
+text_urls:
+    - http://www.opensource.org/licenses/osl-1.0.txt
+osi_url: http://www.opensource.org/licenses/osl-1.0.txt

@@ -1,0 +1,4 @@
+licenses:
+    - gpl-2.0-plus
+template: yes
+notes: In 2006 Pychess used the GPL 2.0. It became GPL 3.0 in 2011

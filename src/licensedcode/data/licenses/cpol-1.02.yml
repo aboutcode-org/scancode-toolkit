@@ -1,0 +1,12 @@
+key: cpol-1.02
+short_name: CPOL 1.02
+name: Code Project Open License (CPOL) 1.02
+category: Attribution Restricted
+owner: Code Project
+homepage_url: http://www.codeproject.com/info/cpol10.aspx
+spdx_license_key: CPOL-1.02
+spdx_full_name: Code Project Open License 1.02
+spdx_url: http://spdx.org/licenses/CPOL-1.02
+text_urls:
+    - http://www.codeproject.com/info/cpol10.aspx
+    - http://www.codeproject.com/info/CPOL.zip

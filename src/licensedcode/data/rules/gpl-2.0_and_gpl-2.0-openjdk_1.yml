@@ -1,0 +1,4 @@
+licenses:
+    - gpl-2.0
+    - gpl-2.0-openjdk
+notes: GPL 2 with classpath expection

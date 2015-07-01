@@ -1,0 +1,4 @@
+licenses:
+    - apache-2.0
+template: yes
+notes: Apache on Debian

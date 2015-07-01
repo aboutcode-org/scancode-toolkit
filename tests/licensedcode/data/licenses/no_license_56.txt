@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.6.2
+Created-By: 1.4.2_03-b02 (Sun Microsystems Inc.)
+Extension-Name: org.apache.commons.daemon
+Specification-Vendor: Apache Software Foundation
+Specification-Version: 1.0
+Implementation-Vendor: Apache Software Foundation
+Implementation-Version: 1.0.1
+

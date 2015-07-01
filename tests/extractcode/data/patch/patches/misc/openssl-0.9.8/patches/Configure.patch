@@ -1,0 +1,15 @@
+--- openssl-0.9.8k/Configure.orig	2009-02-16 16:44:22.000000000 +0800
++++ openssl-0.9.8k/Configure	2009-07-10 16:28:56.000000000 +0800
+@@ -954,9 +954,9 @@
+ my @fields = split(/\s*:\s*/,$table{$target} . ":" x 30 , -1);
+ my $cc = $fields[$idx_cc];
+ # Allow environment CC to override compiler...
+-if($ENV{CC}) {
+-    $cc = $ENV{CC};
+-}
++#if($ENV{CC}) {
++#    $cc = $ENV{CC};
++#}
+ my $cflags = $fields[$idx_cflags];
+ my $unistd = $fields[$idx_unistd];
+ my $thread_cflag = $fields[$idx_thread_cflag];

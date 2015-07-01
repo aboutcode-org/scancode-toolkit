@@ -1,0 +1,12 @@
+#! /bin/sh
+
+# ltconfig - Create a system-specific libtool.
+# Copyright (C) 1996-1998 Free Software Foundation, Inc.
+# Gordon Matzigkeit <gord@gnu.ai.mit.edu>, 1996
+#
+# Generated automatically by $PROGRAM - GNU $PACKAGE $VERSION
+# NOTE: Changes made to this file will be lost: look at ltconfig or ltmain.sh.
+#
+# Copyright (C) 1996-1998 Free Software Foundation, Inc.
+# Gordon Matzigkeit <gord@gnu.ai.mit.edu>, 1996
+#

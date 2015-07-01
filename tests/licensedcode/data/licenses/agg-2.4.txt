@@ -1,0 +1,30 @@
+/*  Metrowerks Standard Library  */
+
+/*  $Date: 2000/10/11 17:55:59 $ 
+ *  $Revision: 1.4 $ 
+ *  $NoKeywords: $ 
+ *
+ *		Portions Copyright ï¿½ 1995-2000 Metrowerks, Inc.
+ *		All rights reserved.
+ */
+
+/*
+ *  Concepts and ideas co-developed on Boost (http://www.boost.org/)
+ *  with help from Steve Cleary, Beman Dawes & John Maddock.  Similar
+ *  "open source" software appears on the Boost site.
+ *  This version of these utilities branched from the Boost development
+ *  mid stream in order to meet the needs of MSL C++.  To the extent that
+ *  this software shares its roots with the software on Boost, the Boost
+ *  copyright also appears here:
+
+//  (C) Copyright Steve Cleary, Beman Dawes, Howard Hinnant & John Maddock 2000.
+//  Permission to copy, use, modify, sell and
+//  distribute this software is granted provided this copyright notice appears
+//  in all copies. This software is provided "as is" without express or implied
+//  warranty, and with no claim as to its suitability for any purpose.
+
+ *  The Boost copyright applies only to those parts of the interface and implementation
+ *  that are common to the software on the Boost site.
+ *
+ *  Finally, a big thanks to Steve Cleary, Beman Dawes & John Maddock.
+*/

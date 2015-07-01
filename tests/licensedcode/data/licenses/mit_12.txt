@@ -1,0 +1,1 @@
+This software is released under the MIT license.

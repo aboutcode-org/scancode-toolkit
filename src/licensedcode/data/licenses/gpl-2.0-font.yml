@@ -1,0 +1,13 @@
+key: gpl-2.0-font
+short_name: GPL 2.0 with font exception
+name: >-
+    GNU General Public License 2.0 with Font exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/gpl-faq.html#FontException
+spdx_license_key: GPL-2.0-with-font-exception
+spdx_full_name: >-
+    GNU General Public License v2.0 w/Font exception
+spdx_url: http://spdx.org/licenses/GPL-2.0-with-font-exception
+text_urls:
+    - http://www.gnu.org/licenses/gpl-faq.html#FontException

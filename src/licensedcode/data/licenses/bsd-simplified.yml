@@ -1,0 +1,16 @@
+key: bsd-simplified
+short_name: BSD-Simplified
+name: BSD-Simplified
+category: Attribution
+owner: Regents of the University of California
+homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+spdx_license_key: BSD-2-Clause
+spdx_full_name: BSD 2-clause "Simplified" License
+spdx_url: http://spdx.org/licenses/BSD-2-Clause
+spdx_notes: This license is OSI certifified.
+text_urls:
+    - http://opensource.org/licenses/bsd-license.php
+osi_url: http://opensource.org/licenses/bsd-license.php
+other_urls:
+    - http://spdx.org/licenses/BSD-2-Clause
+    - http://www.freebsd.org/copyright/copyright.html

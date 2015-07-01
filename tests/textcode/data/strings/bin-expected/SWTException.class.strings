@@ -1,0 +1,45 @@
+org/eclipse/swt/SWTException
+java/lang/RuntimeException
+code
+	throwable
+Ljava/lang/Throwable;
+serialVersionUID
+ConstantValue
+-4197573
+<init>
+Code
+(I)V
+LineNumberTable
+LocalVariableTable
+this
+Lorg/eclipse/swt/SWTException;
+(Ljava/lang/String;)V
+(ILjava/lang/String;)V
+message
+Ljava/lang/String;
+org/eclipse/swt/SWT
+findErrorText
+(I)Ljava/lang/String;
+getCause
+()Ljava/lang/Throwable;	
+getMessage
+()Ljava/lang/String;
+java/lang/StringBuffer
+java/lang/String
+valueOf
+&(Ljava/lang/Object;)Ljava/lang/String;
+append
+,(Ljava/lang/String;)Ljava/lang/StringBuffer;
+java/lang/Throwable
+toString
+printStackTrace
+ org/eclipse/swt/internal/Library
+JAVA_VERSION
+(III)I	
+java/lang/System
+Ljava/io/PrintStream;
+**** Stack trace of contained exception ***
+java/io/PrintStream
+println
+SourceFile
+SWTException.java

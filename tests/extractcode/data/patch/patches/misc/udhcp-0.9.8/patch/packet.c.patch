@@ -1,0 +1,43 @@
+--- udhcp-0.9.8.orig/packet.c	2002-08-28 02:23:14.000000000 +0800
++++ udhcp-0.9.8/packet.c	2009-07-28 13:23:39.000000000 +0800
+@@ -26,6 +26,7 @@
+ 	switch (type) {
+ 	case DHCPDISCOVER:
+ 	case DHCPREQUEST:
++	case DHCPDECLINE:
+ 	case DHCPRELEASE:
+ 	case DHCPINFORM:
+ 		packet->op = BOOTREQUEST;
+@@ -146,18 +147,18 @@
+ 	packet.ip.daddr = dest_ip;
+ 	packet.udp.source = htons(source_port);
+ 	packet.udp.dest = htons(dest_port);
+-	packet.udp.len = htons(sizeof(packet.udp) + sizeof(struct dhcpMessage)); /* cheat on the psuedo-header */
++	packet.udp.len = htons(sizeof(packet.udp) + OUT_MESSAGE_LENGTH); /* cheat on the psuedo-header */
+ 	packet.ip.tot_len = packet.udp.len;
+-	memcpy(&(packet.data), payload, sizeof(struct dhcpMessage));
+-	packet.udp.check = checksum(&packet, sizeof(struct udp_dhcp_packet));
++	memcpy(&(packet.data), payload, OUT_MESSAGE_LENGTH);
++	packet.udp.check = checksum(&packet, OUT_UDP_LENGTH);
+ 	
+-	packet.ip.tot_len = htons(sizeof(struct udp_dhcp_packet));
++	packet.ip.tot_len = htons(OUT_UDP_LENGTH);
+ 	packet.ip.ihl = sizeof(packet.ip) >> 2;
+ 	packet.ip.version = IPVERSION;
+ 	packet.ip.ttl = IPDEFTTL;
+ 	packet.ip.check = checksum(&(packet.ip), sizeof(packet.ip));
+ 
+-	result = sendto(fd, &packet, sizeof(struct udp_dhcp_packet), 0, (struct sockaddr *) &dest, sizeof(dest));
++	result = sendto(fd, &packet, OUT_UDP_LENGTH, 0, (struct sockaddr *) &dest, sizeof(dest));
+ 	if (result <= 0) {
+ 		DEBUG(LOG_ERR, "write on socket failed: %s", strerror(errno));
+ 	}
+@@ -196,7 +197,7 @@
+ 	if (connect(fd, (struct sockaddr *)&client, sizeof(struct sockaddr)) == -1)
+ 		return -1;
+ 
+-	result = write(fd, payload, sizeof(struct dhcpMessage));
++	result = write(fd, payload, OUT_MESSAGE_LENGTH);
+ 	close(fd);
+ 	return result;
+ }	

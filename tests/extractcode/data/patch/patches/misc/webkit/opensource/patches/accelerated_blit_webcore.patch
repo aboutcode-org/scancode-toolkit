@@ -1,0 +1,143 @@
+Index: src/3rdParty/webkit/work/WebCore/loader/loader.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/loader/loader.cpp
++++ src/3rdParty/webkit/work/WebCore/loader/loader.cpp
+@@ -78,6 +78,11 @@ void Loader::servePendingRequests()
+             request.setURL(KURL(origUrl.latin1().data()));
+             request.addHTTPHeaderField("transfermode.dlna.org", "Interactive");
+         }
++        if (origUrl.contains("?com.motorola.gfxmem=true"))
++        {
++            origUrl.truncate(origUrl.find("?com.motorola.gfxmem=true"));
++            request.setURL(KURL(origUrl.latin1().data()));
++        }
+         
+         if (!req->cachedResource()->accept().isEmpty())
+             request.setHTTPAccept(req->cachedResource()->accept());
+Index: src/3rdParty/webkit/work/WebCore/loader/FrameLoader.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/loader/FrameLoader.cpp
++++ src/3rdParty/webkit/work/WebCore/loader/FrameLoader.cpp
+@@ -2111,6 +2111,11 @@ void FrameLoader::load(DocumentLoader* n
+         r.setURL(KURL(origUrl.latin1().data()));
+         r.addHTTPHeaderField("transfermode.dlna.org", "Interactive");
+     }
++    if (origUrl.contains("?com.motorola.gfxmem=true"))
++    {
++        origUrl.truncate(origUrl.find("?com.motorola.gfxmem=true"));
++        r.setURL(KURL(origUrl.latin1().data()));
++    }
+     
+     if (shouldTreatURLAsSameAsCurrent(newDocumentLoader->originalRequest().url())) {
+         r.setCachePolicy(ReloadIgnoringCacheData);
+Index: src/3rdParty/webkit/work/WebCore/loader/CachedImage.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/loader/CachedImage.cpp
++++ src/3rdParty/webkit/work/WebCore/loader/CachedImage.cpp
+@@ -185,7 +185,8 @@ inline void CachedImage::createImage()
+         return;
+     }
+ #endif
+-    m_image = new BitmapImage(this);
++    m_image = new BitmapImage(this, 
++			      url().contains("?com.motorola.gfxmem=true"));
+ }
+ 
+ void CachedImage::data(PassRefPtr<SharedBuffer> data, bool allDataReceived)
+Index: src/3rdParty/webkit/work/WebCore/platform/graphics/BitmapImage.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/platform/graphics/BitmapImage.cpp
++++ src/3rdParty/webkit/work/WebCore/platform/graphics/BitmapImage.cpp
+@@ -41,7 +41,7 @@ namespace WebCore {
+ // one frame at a time.
+ const unsigned cLargeAnimationCutoff = 5242880;
+ 
+-BitmapImage::BitmapImage(ImageObserver* observer)
++BitmapImage::BitmapImage(ImageObserver* observer, bool accelerated)
+     : Image(observer)
+     , m_currentFrame(0)
+     , m_frames(0)
+@@ -55,6 +55,7 @@ BitmapImage::BitmapImage(ImageObserver* 
+     , m_haveSize(false)
+     , m_sizeAvailable(false)
+     , m_decodedSize(0)
++    , m_accelerated(accelerated)
+ {
+     initPlatformData();
+ }
+@@ -93,7 +94,7 @@ void BitmapImage::destroyDecodedData(boo
+             // Reset the image source, since Image I/O has an underlying cache that it uses
+             // while animating that it seems to never clear.
+             m_source.clear();
+-            m_source.setData(m_data.get(), m_allDataReceived);
++            m_source.setData(m_data.get(), m_allDataReceived, m_accelerated);
+         }
+     }
+ }
+@@ -144,7 +145,7 @@ bool BitmapImage::dataChanged(bool allDa
+     
+     // Feed all the data we've seen so far to the image decoder.
+     m_allDataReceived = allDataReceived;
+-    m_source.setData(m_data.get(), allDataReceived);
++    m_source.setData(m_data.get(), allDataReceived, m_accelerated);
+     
+     // Image properties will not be available until the first frame of the file
+     // reaches kCGImageStatusIncomplete.
+Index: src/3rdParty/webkit/work/WebCore/platform/graphics/BitmapImage.h
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/platform/graphics/BitmapImage.h
++++ src/3rdParty/webkit/work/WebCore/platform/graphics/BitmapImage.h
+@@ -93,10 +93,11 @@ public:
+ #if PLATFORM(QT)
+     BitmapImage(const QPixmap &pixmap, ImageObserver* = 0);
+ #endif
+-    BitmapImage(ImageObserver* = 0);
++    BitmapImage(ImageObserver* = 0, bool accelerated = false);
+     ~BitmapImage();
+     
+     virtual IntSize size() const;
++    virtual bool isAccelerated() const { return m_accelerated; }
+ 
+     virtual bool dataChanged(bool allDataReceived);
+ 
+@@ -195,6 +196,7 @@ private:
+     mutable bool m_haveSize; // Whether or not our |m_size| member variable has the final overall image size yet.
+     bool m_sizeAvailable; // Whether or not we can obtain the size of the first image frame yet from ImageIO.
+     unsigned m_decodedSize; // The current size of all decoded frames.
++    bool m_accelerated; // Whether or not the image should be placed in graphics memory.
+ 
+ #if PLATFORM(QT)
+     QPixmap *m_pixmap;
+Index: src/3rdParty/webkit/work/WebCore/platform/graphics/ImageSource.h
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/platform/graphics/ImageSource.h
++++ src/3rdParty/webkit/work/WebCore/platform/graphics/ImageSource.h
+@@ -86,7 +86,7 @@ public:
+ 
+     bool initialized() const;
+     
+-    void setData(SharedBuffer* data, bool allDataReceived);
++    void setData(SharedBuffer* data, bool allDataReceived, bool accelerated);
+ 
+     bool isSizeAvailable();
+     IntSize size() const;
+@@ -103,6 +103,7 @@ public:
+ 
+ private:
+     NativeImageSourcePtr m_decoder;
++    bool m_accelerated;
+ };
+ 
+ }
+Index: src/3rdParty/webkit/work/WebCore/platform/graphics/Image.h
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/platform/graphics/Image.h
++++ src/3rdParty/webkit/work/WebCore/platform/graphics/Image.h
+@@ -79,6 +79,7 @@ public:
+     static bool supportsType(const String&); 
+ 
+     bool isNull() const;
++    virtual bool isAccelerated() const { return false; }
+ 
+     // These are only used for SVGImage right now
+     virtual void setContainerSize(const IntSize&) { }

@@ -1,0 +1,39 @@
+The FreeRTOS.org source code is licensed by the modified GNU General Public 
+License (GPL) text provided below.  The FreeRTOS download also includes 
+demo application source code, some of which is provided by third parties 
+AND IS LICENSED SEPARATELY FROM FREERTOS.ORG.  
+
+For the avoidance of any doubt refer to the comment included at the top
+of each source and header file for license and copyright information.
+
+This is a list of files for which Real Time Engineers Ltd are not the 
+copyright owner and are NOT COVERED BY THE GPL.
+
+1) Various header files provided by silicon manufacturers and tool vendors
+   that define processor specific memory addresses and utility macros.
+   Permission has been granted by the various copyright holders for these
+   files to be included in the FreeRTOS download.  Users must ensure license
+   conditions are adhered to for any use other than compilation of the 
+   FreeRTOS demo applications.
+
+2) The uIP TCP/IP stack the copyright of which is held by Adam Dunkels.
+   Users must ensure the open source license conditions stated at the top 
+   of each uIP source file is understood and adhered to.
+
+3) The lwIP TCP/IP stack the copyright of which is held by the Swedish 
+   Institute of Computer Science.  Users must ensure the open source license 
+   conditions stated at the top  of each lwIP source file is understood and 
+   adhered to.
+
+4) Various peripheral driver source files and binaries provided by silicon
+   manufacturers and tool vendors.  Permission has been granted by the
+   various copyright holders for these files to be included in the FreeRTOS
+   download.  Users must ensure license conditions are adhered to for any
+   use other than compilation of the FreeRTOS demo applications.
+
+5) The files contained within FreeRTOS\Demo\WizNET_DEMO_TERN_186\tern_code,
+   which are slightly modified versions of code provided by and copyright to
+   Tern Inc.
+
+Errors and omissions should be reported to Richard Barry, contact details for
+whom can be obtained from http://www.FreeRTOS.org.

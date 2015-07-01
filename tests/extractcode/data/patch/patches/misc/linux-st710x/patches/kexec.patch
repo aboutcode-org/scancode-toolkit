@@ -1,0 +1,149 @@
+--- linux-2.6.23/arch/sh/kernel/machine_kexec.c.org	2009-01-09 13:32:58.000000000 +0100
++++ linux-2.6.23/arch/sh/kernel/machine_kexec.c	2009-01-09 13:38:00.000000000 +0100
+@@ -19,6 +19,11 @@
+ #include <asm/io.h>
+ #include <asm/cacheflush.h>
+ 
++/* #define PARSE_PAGE_LIST */
++#ifdef PARSE_PAGE_LIST
++  #include <asm/addrspace.h>
++#endif
++
+ typedef NORET_TYPE void (*relocate_new_kernel_t)(
+ 				unsigned long indirection_page,
+ 				unsigned long reboot_code_buffer,
+@@ -99,6 +104,47 @@
+         kexec_info(image);
+ 	flush_cache_all();
+ 
++#ifdef PARSE_PAGE_LIST
++	{
++		unsigned long dst;
++		unsigned long* ind = &page_list;
++		unsigned long cmd = *ind;
++		
++		unsigned long segment = 0;
++		unsigned long sum = 0;
++		unsigned long length = 0;
++		
++		while (1) {
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
++			unsigned long addr = (cmd | 0xa0000000) & 0xfffffff0;
++#else
++			unsigned long addr = P1SEGADDR(cmd) & 0xfffffff0;
++#endif
++			if (cmd & IND_DESTINATION) {
++				dst = addr;
++				++segment;
++				printk("Segment %d located at 0x%x\n",
++				       segment, dst);
++			}
++			else if (cmd & IND_INDIRECTION) {
++				ind = (unsigned long*)addr;
++				printk("New indirection address found: 0x%x\n",
++				       *ind);
++			}
++			else if (cmd & IND_DONE) {
++				printk("Done.\n");
++				break;
++			}
++			else if (cmd & IND_SOURCE) {
++				printk("Copying 4096 bytes from 0x%x to 0x%x...\n",
++				       addr, dst);
++				dst += 4096;
++			}
++			cmd = *ind++;
++		}
++	}
++#endif
++
+ 	/* now call it */
+ 	rnk = (relocate_new_kernel_t) reboot_code_buffer;
+ 	(*rnk)(page_list, reboot_code_buffer, image->start, vbr_reg);
+--- linux-2.6.23/kernel/kexec.c.org	2007-10-09 22:31:38.000000000 +0200
++++ linux-2.6.23/kernel/kexec.c	2009-01-09 13:05:35.000000000 +0100
+@@ -28,6 +28,7 @@
+ #include <asm/io.h>
+ #include <asm/system.h>
+ #include <asm/semaphore.h>
++#include <asm/addrspace.h>
+ 
+ /* Per cpu memory for storing cpu states in case of system crash. */
+ note_buf_t* crash_notes;
+@@ -323,6 +324,19 @@
+ 		unsigned long mstart, mend;
+ 
+ 		mstart = image->segment[i].mem;
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
++		if (((mstart >= 0x90000000) &&
++		     (mstart < 0xA0000000)) ||
++		    (mstart >= 0xB0000000)) {
++			/* Ignore segments that will not be located in RAM */
++			continue;
++		}
++		mstart &= 0x0FFFFFFF;
++#else
++		/* Converting the physical address to the PMB mapped address */
++		start = P1SEGADDR(start);
++		end = P1SEGADDR(end);
++#endif
+ 		mend = mstart + image->segment[i].memsz;
+ 		if ((end > mstart) && (start < mend))
+ 			return 1;
+@@ -1059,9 +1073,7 @@
+ 	locked = xchg(&kexec_lock, 1);
+ 	if (!locked) {
+ 		if (kexec_crash_image) {
+-			struct pt_regs fixed_regs;
+-			crash_setup_regs(&fixed_regs, regs);
+-			machine_crash_shutdown(&fixed_regs);
++			machine_crash_shutdown(regs);
+ 			machine_kexec(kexec_crash_image);
+ 		}
+ 		locked = xchg(&kexec_lock, 0);
+--- linux-2.6.23/arch/sh/kernel/relocate_kernel.S.org	2007-10-09 22:31:38.000000000 +0200
++++ linux-2.6.23/arch/sh/kernel/relocate_kernel.S	2009-01-09 11:36:21.000000000 +0100
+@@ -19,7 +19,12 @@
+ 	/* r7 = vbr_reg            */
+ 
+ 	mov.l	10f,r8	  /* PAGE_SIZE */
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
+ 	mov.l	11f,r9    /* P2SEG */
++#else
++	mov.l	11f,r9    /* P1SEG */
++	mov.l	12f,r10   /* mask: 0x1fffffff */
++#endif
+ 
+ 	/*  stack setting */
+ 	add	r8,r5
+@@ -30,9 +35,16 @@
+ 0:
+ 	mov.l	@r4+,r0	  /* cmd = *ind++ */
+ 
+-1:	/* addr = (cmd | P2SEG) & 0xfffffff0 */
++1:
+ 	mov	r0,r2
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
++	/* addr = (cmd | P2SEG) & 0xfffffff0 */
+ 	or	r9,r2
++#else
++	/* addr = ((cmd & 0x1fffffff) | P1SEG) & 0xfffffff0 */
++	and	r10,r2
++	or	r9,r2	
++#endif
+ 	mov	#-16,r1
+ 	and	r1,r2
+ 
+@@ -90,7 +102,12 @@
+ 10:
+ 	.long	PAGE_SIZE
+ 11:
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
+ 	.long	P2SEG
++#else
++	.long	P1SEG
++12:	.long	0x1fffffff
++#endif
+ 
+ relocate_new_kernel_end:
+ 

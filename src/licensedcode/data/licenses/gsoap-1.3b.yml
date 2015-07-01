@@ -1,0 +1,11 @@
+key: gsoap-1.3b
+short_name: gSOAP Public License v1.3b
+name: gSOAP Public License v1.3b
+category: Copyleft Limited
+owner: Genivia
+homepage_url: http://www.cs.fsu.edu/~engelen/license.html
+spdx_license_key: gSOAP-1.3b
+spdx_full_name: gSOAP Public License v1.b
+spdx_url: http://spdx.org/licenses/gSOAP-1.3b
+text_urls:
+    - http://www.cs.fsu.edu/~engelen/license.html

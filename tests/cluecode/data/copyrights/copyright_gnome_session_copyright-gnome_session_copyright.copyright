@@ -1,0 +1,52 @@
+This package was debianized by Jim Pick jim@jimpick.com on Sat, 14 Mar
+1998 20:12:23 -0800. Taken over by Raphael Hertzog
+<hertzog@debian.org> on Wed, 22 Sep 1999 13:24:34 +0200, and taken
+over again by James LewisMoss on October 26, 1999.
+
+It was downloaded from <http://ftp.gnome.org/pub/GNOME/sources/gnome-session/>.
+
+Upstream Authors:
+
+    <s>Dan Winship <danw@gnome.org></s>
+    <s>Lucas Rocha <lucasr@gnome.org></s>
+    <s>William Jon McCann <jmccann@redhat.com></s>
+
+    <s>Tom Tromey <tromey@cygnus.com></s>
+    <s>Felix Bellaby <felix@pooh.u-net.com></s>
+    <s>Ralph Mor, X Consortium</s>
+
+Copyright:
+
+    Copyright © 1999-2009  <s>Red Hat, Inc.</s>
+    Copyright © 1999-2007  <s>Novell, Inc.</s>
+    Copyright © 2001-2003  <s>George Lebl</s>
+    Copyright © 2001       <s>Queen of England</s>
+    Copyright © 2007-2008  <s>William Jon McCann</s>
+    Copyright © 2006       <s>Ray Strode</s>
+    Copyright © 2008       <s>Lucas Rocha</s>
+    Copyright © 2005       <s>Raffaele Sandrini</s>
+    Copyright © 2006-2007  <s>Vincent Untz</s>
+    Copyright © 1998       <s>Tom Tromey</s>
+    Copyright © 1999       <s>Free Software Foundation, Inc.</s>
+    Copyright © 2003       <s>Sun Microsystems, Inc.</s>
+    
+
+License:
+
+   This package is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   This package is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this package; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL-2'.
+

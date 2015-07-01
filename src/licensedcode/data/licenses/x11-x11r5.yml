@@ -1,0 +1,8 @@
+key: x11-x11r5
+short_name: X11-R5
+name: X11-R5
+category: Attribution
+owner: XFree86 Project, Inc
+homepage_url: http://www.xfree86.org/current/LICENSE5.html
+text_urls:
+    - http://www.xfree86.org/current/LICENSE5.html

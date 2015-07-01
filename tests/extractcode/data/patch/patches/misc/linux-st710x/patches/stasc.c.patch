@@ -1,0 +1,45 @@
+Index: linux-2.6.23/drivers/serial/stasc.c
+===================================================================
+--- linux-2.6.23.orig/drivers/serial/stasc.c
++++ linux-2.6.23/drivers/serial/stasc.c
+@@ -45,6 +45,7 @@ static struct console asc_console;
+ #endif
+ 
+ struct asc_port asc_ports[ASC_MAX_PORTS];
++EXPORT_SYMBOL(asc_ports);
+ 
+ /*---- Forward function declarations---------------------------*/
+ static int  asc_request_irq(struct uart_port *);
+@@ -102,7 +103,7 @@ static inline void asc_disable_rx_interr
+ }
+ 
+ 
+-static inline void asc_enable_rx_interrupts(struct uart_port *port)
++static void asc_enable_rx_interrupts(struct uart_port *port)
+ {
+ 	unsigned long intenable;
+ 
+@@ -111,6 +112,7 @@ static inline void asc_enable_rx_interru
+ 	intenable |= ASC_INTEN_RBE;
+ 	asc_out(port, INTEN, intenable);
+ }
++EXPORT_SYMBOL(asc_enable_rx_interrupts);
+ 
+ /*----------------------------------------------------------------------*/
+ 
+@@ -336,6 +338,7 @@ static void __devinit asc_init_port(stru
+ 
+ 	ascport->platform_flags = data->flags;
+ }
++EXPORT_SYMBOL(asc_init_port);
+ 
+ static struct uart_driver asc_uart_driver = {
+ 	.owner		= THIS_MODULE,
+@@ -675,6 +678,7 @@ asc_set_termios_cflag (struct asc_port *
+ 
+ 	spin_unlock_irqrestore(&port->lock, flags);
+ }
++EXPORT_SYMBOL(asc_set_termios_cflag);
+ 
+ 
+ static inline unsigned asc_hw_txroom(struct uart_port* port)

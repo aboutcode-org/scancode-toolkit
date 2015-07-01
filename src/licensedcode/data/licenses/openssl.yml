@@ -1,0 +1,10 @@
+key: openssl
+short_name: OpenSSL License
+name: OpenSSL License
+category: Attribution
+owner: OpenSSL
+homepage_url: http://www.openssl.org/source/license.html
+notes: This is the OpenSSL license proper, without the SSLEay part.
+text_urls:
+    - http://www.openssl.org/source/license.html
+faq_url: http://www.openssl.org/support/faq.html

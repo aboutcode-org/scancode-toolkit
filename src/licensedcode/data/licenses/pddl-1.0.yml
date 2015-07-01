@@ -1,0 +1,13 @@
+key: pddl-1.0
+short_name: PDDL 1.0
+name: >-
+    Public Domain Dedication & Licence (PDDL)
+category: Public Domain
+owner: Open Data Commons
+homepage_url: http://opendatacommons.org/licenses/pddl/1-0/
+spdx_license_key: PDDL-1.0
+spdx_full_name: >-
+    ODC Public Domain Dedication & License 1.0
+spdx_url: http://spdx.org/licenses/PDDL-1.0
+text_urls:
+    - http://opendatacommons.org/licenses/pddl/1-0/

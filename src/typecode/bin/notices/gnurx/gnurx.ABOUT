@@ -1,0 +1,11 @@
+about_resource: .
+name: libgnurx
+version: 2.5.1
+license_text: gnurx.COPYING.LIB
+notice_file: gnurx.NOTICE
+dje_license: lgpl-2.1
+download_url: 
+    - ftp://ftp.heanet.ie/pub/sourceforge/m/mi/mingw/Other/UserContributed/regex/mingw-regex-2.5.1/mingw-libgnurx-2.5.1-src.tar.gz
+
+description: This is the regex functionality from glibc 2.5 extracted into a
+ separate library, for Win32.

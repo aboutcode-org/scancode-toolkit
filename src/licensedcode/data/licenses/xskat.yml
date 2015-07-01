@@ -1,0 +1,13 @@
+key: xskat
+short_name: XSkat License
+name: XSkat License
+category: Attribution
+owner: XSkat
+homepage_url: https://fedoraproject.org/wiki/Licensing/XSkat_License
+spdx_license_key: XSkat
+spdx_full_name: XSkat License
+spdx_url: http://spdx.org/licenses/XSkat
+spdx_notes: |-
+    Per Fedora: "This license is Free only when clause 2.b is used. It is always GPL-incompatible.
+
+    Packagers using code under this license in Fedora should note that while the RPM changelog is sufficient to meet one requirement of clause 2.b (to "clearly state who last changed the program"), the Release field in the RPM is not enough to meet the other requirement of clause 2.b. Packagers can meet the other requirement by simply adding a .0 to the end of the upstream version in the RPM package. You need to do this, and not simply use the regular NVR to fulfill 2.b, because the license explicitly specifies the versioning schema x.y.z, which is different from how RPM displays it (x.y-z). Just add a dummy .0 to the end of the version then increment the Release field like any other package."

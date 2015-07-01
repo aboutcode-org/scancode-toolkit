@@ -1,0 +1,24 @@
+This package was debianized by Michiel Sikkes <michiel@eyesopened.nl> on
+Mon, 25 Oct 2004 21:49:07 +0200.
+
+It was downloaded from http://archive.ubuntu.com/ubuntu/pool/main/s/software-properties/
+
+Upstream Authors:
+     <s>Michiel Sikkes <michiel@eyesopened.nl></s>
+     <s>Michael Vogt <michael.vogt@ubuntu.com></s>
+     <s>Sebastian Heinlein <glatzor@ubuntu.com></s>
+     <s>Jonathan Riddell <jriddell@ubuntu.com></s>
+
+Copyright:
+     2004-2007 <s>Canonical Ltd.</s>
+     2004-2005 <s>Michiel Sikkes</s>
+     2006 <s>FSF Europe</s>
+
+All code released under the GPL, see /usr/share/common-licenses/GPL
+
+With the exception of
+softwareproperties/gtk/SimpleGladeApp.py
+which is released under the LGPL, see /usr/share/common-licenses/LGPL
+
+The documentation in the help/ directory is released under the
+GNU Free Documentation License, see /usr/share/common-licenses/GFDL-1.2.

@@ -1,0 +1,8 @@
+key: mit-ack
+short_name: MIT Acknowledgment License
+name: MIT Acknowledgment License
+category: Attribution
+homepage_url: https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#feh
+spdx_license_key: MIT-feh
+spdx_full_name: feh License
+spdx_url: http://spdx.org/licenses/MIT-feh

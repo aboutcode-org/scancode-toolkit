@@ -1,0 +1,15 @@
+Index: src/3rdParty/webkit/Rules.mk
+===================================================================
+--- src.orig/3rdParty/webkit/Rules.mk
++++ src/3rdParty/webkit/Rules.mk
+@@ -13,8 +13,8 @@ dir := $(workdir)/WebCore
+ -include $(dir)/Rules.mk
+ 
+ define $(postpatch)
+-(cd $(workdir)/JavaScriptCore && ./make-generated-sources.sh)
+-(cd $(workdir)/WebCore && ./make-generated-sources.sh)
+++(cd $(workdir)/JavaScriptCore && ./make-generated-sources.sh)
+++(cd $(workdir)/WebCore && ./make-generated-sources.sh)
+ endef
+ 
+ ifeq ($(MOTO_ST40_OPTIMISATION_HACKS),Y)

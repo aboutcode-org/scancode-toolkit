@@ -1,0 +1,9 @@
+key: lgpllr
+short_name: LGPLLR
+name: >-
+    Lesser General Public License For Linguistic Resources
+category: Copyleft Limited
+owner: Unitex GramLab
+homepage_url: http://www-igm.univ-mlv.fr/~unitex/lgpllr.html
+text_urls:
+    - https://raw.githubusercontent.com/UnitexGramLab/LGPL-LR/master/LGPL-LR

@@ -1,0 +1,5 @@
+licenses:
+    - openssh
+template: yes
+notes: >-
+    From http://www.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/LICENCE?f=h;rev=1.11

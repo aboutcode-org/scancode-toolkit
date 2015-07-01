@@ -1,0 +1,15 @@
+key: gfdl-1.2
+short_name: GFDL 1.2
+name: GNU Free Documentation License 1.2
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/copyleft/fdl.html
+spdx_license_key: GFDL-1.2
+spdx_full_name: GNU Free Documentation License v1.2
+spdx_url: http://spdx.org/licenses/GFDL-1.2
+spdx_notes: This license was released November 2002
+text_urls:
+    - http://www.gnu.org/licenses/fdl-1.2.txt
+faq_url: http://www.fsf.org/licensing/licenses/fdl.html
+other_urls:
+    - http://www.gnu.org/licenses/old-licenses/fdl-1.2.txt

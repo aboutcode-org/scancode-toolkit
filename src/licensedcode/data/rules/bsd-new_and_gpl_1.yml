@@ -1,0 +1,4 @@
+licenses:
+    - bsd-new
+    - gpl
+notes: Dual BSD/GPL, typical in LKMs MODULE_LICENSE

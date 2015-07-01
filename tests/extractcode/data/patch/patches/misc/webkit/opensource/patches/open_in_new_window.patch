@@ -1,0 +1,42 @@
+Index: src/Browser/WebCoreSupport525/FrameLoaderClientEkioh.cpp
+===================================================================
+--- src.orig/Browser/WebCoreSupport525/FrameLoaderClientEkioh.cpp
++++ src/Browser/WebCoreSupport525/FrameLoaderClientEkioh.cpp
+@@ -175,7 +175,11 @@ void FrameLoaderClientEkioh::dispatchDid
+ 
+ void FrameLoaderClientEkioh::dispatchDidFirstLayout() { notImplemented(); }
+ 
+-Frame* FrameLoaderClientEkioh::dispatchCreatePage() { notImplemented(); return 0; }
++Frame* FrameLoaderClientEkioh::dispatchCreatePage()
++{	//reuse the main frame, since we only have one page
++	return m_webFrame->frame();
++}
++
+ void FrameLoaderClientEkioh::dispatchShow() { notImplemented(); }
+ 
+ void FrameLoaderClientEkioh::dispatchDecidePolicyForMIMEType(FramePolicyFunction policyFunction, const String& mimeType, const ResourceRequest&)
+@@ -187,9 +191,22 @@ void FrameLoaderClientEkioh::dispatchDec
+     (m_webFrame->frame()->loader()->*policyFunction)(PolicyUse);
+ }
+ 
+-void FrameLoaderClientEkioh::dispatchDecidePolicyForNewWindowAction(FramePolicyFunction policyFunction, const NavigationAction&, const ResourceRequest&, const String&)
++void FrameLoaderClientEkioh::dispatchDecidePolicyForNewWindowAction(FramePolicyFunction policyFunction, const NavigationAction&, const ResourceRequest& request, const String&)
+ {
+-    notImplemented();
++    DBG("%s %s\n", __func__, request.url().deprecatedString().ascii());
++    ASSERT(m_webFrame->frame() && policyFunction);
++    if (!m_webFrame->frame() || !policyFunction)
++        return;
++
++    PolicyAction policyAction = PolicyUse;
++    if (m_browserClient != 0) {
++        String url = request.url().string();
++        ekioh::EKString ekUrl(url.utf8().data(), url.utf8().length());
++        if (!m_browserClient->shouldAllowNavigation(ekUrl)) {
++            policyAction = PolicyIgnore;
++        }
++    }
++    (m_webFrame->frame()->loader()->*policyFunction)(policyAction);
+ }
+ 
+ void FrameLoaderClientEkioh::dispatchDecidePolicyForNavigationAction(FramePolicyFunction policyFunction, const NavigationAction&, const ResourceRequest& request)

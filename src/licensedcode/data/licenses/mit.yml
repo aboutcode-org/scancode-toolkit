@@ -1,0 +1,13 @@
+key: mit
+short_name: MIT License
+name: MIT License
+category: Attribution
+owner: MIT
+homepage_url: http://opensource.org/licenses/mit-license.php
+spdx_license_key: MIT
+spdx_full_name: MIT License
+spdx_url: http://spdx.org/licenses/MIT
+spdx_notes: This license is OSI certified.
+text_urls:
+    - http://opensource.org/licenses/mit-license.php
+osi_url: http://www.opensource.org/licenses/MIT

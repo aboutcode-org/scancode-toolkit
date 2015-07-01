@@ -1,0 +1,2 @@
+<th title="Sort by Date Created" class="aglSortable ${orderBy == 'createdTS' ? 'aglCurSort' : ''}" onclick="dojo.event.topic.publish('navurl', '${order_createdTS}')"><div><a class="${orderBy == 'createdTS' && orderDir == 'DESC' ? 'down' : 'up'}" href="#">Date Created</a></div></th>
+<th title="Sort by Date Modified" class="aglSortable ${orderBy == 'modifiedTS' ? 'aglCurSort' : ''}" onclick="dojo.event.topic.publish('navurl', '${order_modifiedTS}')"><div><a class="${orderBy == 'modifiedTS' && orderDir == 'DESC' ? 'down' : 'up'}" href="#">Date Modified</a></div></th>

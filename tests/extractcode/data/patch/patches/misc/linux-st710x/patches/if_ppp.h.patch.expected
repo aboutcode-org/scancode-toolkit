@@ -1,0 +1,3 @@
+[('linux-2.6.23/include/linux/if_ppp.h.orig',
+  'linux-2.6.23/include/linux/if_ppp.h',
+  '--- linux-2.6.23/include/linux/if_ppp.h.orig\n+++ linux-2.6.23/include/linux/if_ppp.h\n@@ -110,6 +110,10 @@\nstruct ppp_comp_stats stats;\n};\n\n+#ifndef aligned_u64\n+#define aligned_u64 unsigned long long __attribute__((aligned(8)))\n+#endif\n+\n/* For PPPIOCGL2TPSTATS */\nstruct pppol2tp_ioc_stats {\n__u16\t\ttunnel_id;\t/* redundant */')]

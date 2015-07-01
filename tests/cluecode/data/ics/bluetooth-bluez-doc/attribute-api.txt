@@ -1,0 +1,6 @@
+BlueZ D-Bus Attribute API description
+*************************************
+
+Copyright (C) 2004-2010  Marcel Holtmann <marcel@holtmann.org>
+
+Service details

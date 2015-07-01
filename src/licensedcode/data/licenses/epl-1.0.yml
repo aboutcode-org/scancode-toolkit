@@ -1,0 +1,16 @@
+key: epl-1.0
+short_name: EPL 1.0
+name: Eclipse Public License 1.0
+category: Copyleft Limited
+owner: Eclipse Foundation
+homepage_url: http://www.eclipse.org/legal/epl-v10.html
+spdx_license_key: EPL-1.0
+spdx_full_name: Eclipse Public License 1.0
+spdx_url: http://spdx.org/licenses/EPL-1.0
+spdx_notes: |-
+    This license is OSI certifified
+    EPL replaced the CPL on 28 June 2005.
+text_urls:
+    - http://www.eclipse.org/legal/epl-v10.html
+osi_url: http://opensource.org/licenses/eclipse-1.0.php
+faq_url: http://eclipse.org/legal/eplfaq.php

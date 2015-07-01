@@ -1,0 +1,7 @@
+key: gpl-2.0-autoopts
+short_name: GPL 2.0 with AutoOpts exception
+name: >-
+    GNU General Public License 2.0 with AutoOpts exception
+category: Copyleft Limited
+owner: Bruce Korb
+homepage_url: http://www.gnu.org/software/autogen/autoopts.html

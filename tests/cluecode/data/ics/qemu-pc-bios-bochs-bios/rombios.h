@@ -1,0 +1,6 @@
+// $Id$
+/////////////////////////////////////////////////////////////////////////
+//
+//  Copyright (C) 2006 Volker Ruppert
+//
+//  This library is free software; you can redistribute it and/or

@@ -1,0 +1,8 @@
+key: sun-rpc
+short_name: Sun RPC License
+name: Sun RPC License
+category: Attribution
+owner: Oracle (Sun)
+homepage_url: http://www.opensource.apple.com/license/sunrpc/
+text_urls:
+    - http://www.opensource.apple.com/license/sunrpc/

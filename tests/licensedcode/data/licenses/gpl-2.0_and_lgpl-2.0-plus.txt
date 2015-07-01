@@ -1,0 +1,177 @@
+This package was debianized by Ana Beatriz Guerrero Lopez <ana@debian.org> on
+Wed, 07 Nov 2007 19:19:14 +0100.
+
+It was downloaded from ftp://ftp.kde.org
+
+Upstream Author: 
+Copyright (c) 1996-2009 <s>The KDE Translation teams <kde-i18n-doc@kde.org></s>
+Every language file is made by the respective translation team. You can find 
+a list of the translation teams and their contact email addresses at:
+http://i18n.kde.org/teams-list.php
+or directly:
+
+ URL                                                Team
+ ------------------------------------------------   --------------------------
+ http://l10n.kde.org/team-infos.php?teamcode=af     Afrikaans (af)
+ http://l10n.kde.org/team-infos.php?teamcode=sq     Albanian (sq)
+ http://l10n.kde.org/team-infos.php?teamcode=ar     Arabic (ar)
+ http://l10n.kde.org/team-infos.php?teamcode=hy     Armenian (hy)
+ http://l10n.kde.org/team-infos.php?teamcode=az     Azerbaijani (az)
+ http://l10n.kde.org/team-infos.php?teamcode=eu     Basque (eu)
+ http://l10n.kde.org/team-infos.php?teamcode=be     Belarusian (be)
+ http://l10n.kde.org/team-infos.php?teamcode=be     Belarusian (be)
+ http://l10n.kde.org/team-infos.php?teamcode=bn     Bengali (bn)
+ http://l10n.kde.org/team-infos.php?teamcode=bs     Bosnian (bs)
+ http://l10n.kde.org/team-infos.php?teamcode=pt_BR  Brazilian Portuguese (pt_BR)
+ http://l10n.kde.org/team-infos.php?teamcode=br     Breton (br)
+ http://l10n.kde.org/team-infos.php?teamcode=en_GB  British English (en_GB)
+ http://l10n.kde.org/team-infos.php?teamcode=bg     Bulgarian (bg)
+ http://l10n.kde.org/team-infos.php?teamcode=ca     Catalan (ca)
+ http://l10n.kde.org/team-infos.php?teamcode=zh_HK  Chinese Hong Kong (zh_HK)
+ http://l10n.kde.org/team-infos.php?teamcode=zh_CN  Chinese Simplified (zh_CN)
+ http://l10n.kde.org/team-infos.php?teamcode=zh_TW  Chinese Traditional (zh_TW)
+ http://l10n.kde.org/team-infos.php?teamcode=crh    Crimean Tatar (Crimean Turkish) (crh)
+ http://l10n.kde.org/team-infos.php?teamcode=hr     Croatian (hr)
+ http://l10n.kde.org/team-infos.php?teamcode=cs     Czech (cs)
+ http://l10n.kde.org/team-infos.php?teamcode=da     Danish (da)
+ http://l10n.kde.org/team-infos.php?teamcode=nl     Dutch (nl)
+ http://l10n.kde.org/team-infos.php?teamcode=dz     Dzongkha (dz)
+ http://l10n.kde.org/team-infos.php?teamcode=eo     Esperanto (eo)
+ http://l10n.kde.org/team-infos.php?teamcode=et     Estonian (et)
+ http://l10n.kde.org/team-infos.php?teamcode=fo     Faroese (fo)
+ http://l10n.kde.org/team-infos.php?teamcode=fa     Farsi (Persian) (fa)
+ http://l10n.kde.org/team-infos.php?teamcode=fi     Finnish (fi)
+ http://l10n.kde.org/team-infos.php?teamcode=fr     French (fr)
+ http://l10n.kde.org/team-infos.php?teamcode=fy     Frisian (fy)
+ http://l10n.kde.org/team-infos.php?teamcode=gl     Galician (gl)
+ http://l10n.kde.org/team-infos.php?teamcode=ka     Georgian (ka)
+ http://l10n.kde.org/team-infos.php?teamcode=de     German (de)
+ http://l10n.kde.org/team-infos.php?teamcode=el     Greek (el)
+ http://l10n.kde.org/team-infos.php?teamcode=gu     Gujarati (gu)
+ http://l10n.kde.org/team-infos.php?teamcode=he     Hebrew (he)
+ http://l10n.kde.org/team-infos.php?teamcode=hi     Hindi (hi)
+ http://l10n.kde.org/team-infos.php?teamcode=hu     Hungarian (hu)
+ http://l10n.kde.org/team-infos.php?teamcode=is     Icelandic (is)
+ http://l10n.kde.org/team-infos.php?teamcode=id     Indonesian (id)
+ http://l10n.kde.org/team-infos.php?teamcode=ga     Irish (ga)
+ http://l10n.kde.org/team-infos.php?teamcode=it     Italian (it)
+ http://l10n.kde.org/team-infos.php?teamcode=ja     Japanese (ja)
+ http://l10n.kde.org/team-infos.php?teamcode=kab    Kabyle (kab)
+ http://l10n.kde.org/team-infos.php?teamcode=kn     Kannada (kn)
+ http://l10n.kde.org/team-infos.php?teamcode=csb    Kashubian (csb)
+ http://l10n.kde.org/team-infos.php?teamcode=kk     Kazakh (kk)
+ http://l10n.kde.org/team-infos.php?teamcode=km     Khmer (km)
+ http://l10n.kde.org/team-infos.php?teamcode=kg     Kikongo (kg)
+ http://l10n.kde.org/team-infos.php?teamcode=rw     Kinyarwanda (rw)
+ http://l10n.kde.org/team-infos.php?teamcode=ky     Kirghiz (ky)
+ http://l10n.kde.org/team-infos.php?teamcode=sw     Kiswahili (sw)
+ http://l10n.kde.org/team-infos.php?teamcode=ko     Korean (ko)
+ http://l10n.kde.org/team-infos.php?teamcode=ku     Kurdish (ku)
+ http://l10n.kde.org/team-infos.php?teamcode=lo     Lao (lo)
+ http://l10n.kde.org/team-infos.php?teamcode=la     Latin (la)
+ http://l10n.kde.org/team-infos.php?teamcode=lv     Latvian (lv)
+ http://l10n.kde.org/team-infos.php?teamcode=lt     Lithuanian (lt)
+ http://l10n.kde.org/team-infos.php?teamcode=nds    Low Saxon (nds)
+ http://l10n.kde.org/team-infos.php?teamcode=lb     Luxembourgish (lb)
+ http://l10n.kde.org/team-infos.php?teamcode=mk     Macedonian (mk)
+ http://l10n.kde.org/team-infos.php?teamcode=mai    Maithili (mai)
+ http://l10n.kde.org/team-infos.php?teamcode=mg     Malagasy (mg)
+ http://l10n.kde.org/team-infos.php?teamcode=ms     Malay (ms)
+ http://l10n.kde.org/team-infos.php?teamcode=ml     മലയാളം | Malayalam (ml)
+ http://l10n.kde.org/team-infos.php?teamcode=mt     Maltese (mt)
+ http://l10n.kde.org/team-infos.php?teamcode=mr     Marathi (mr)
+ http://l10n.kde.org/team-infos.php?teamcode=mn     Mongolian (mn)
+ http://l10n.kde.org/team-infos.php?teamcode=ne     Nepali (ne)
+ http://l10n.kde.org/team-infos.php?teamcode=se     Northern Sami (se)
+ http://l10n.kde.org/team-infos.php?teamcode=nb     Norwegian Bookmal (nb)
+ http://l10n.kde.org/team-infos.php?teamcode=nn     Norwegian Nynorsk (nn)
+ http://l10n.kde.org/team-infos.php?teamcode=oc     Occitan (oc)
+ http://l10n.kde.org/team-infos.php?teamcode=or     Oriya (or)
+ http://l10n.kde.org/team-infos.php?teamcode=ps     Pashto (ps)
+ http://l10n.kde.org/team-infos.php?teamcode=fa     Persian (fa)
+ http://l10n.kde.org/team-infos.php?teamcode=pl     Polish (pl)
+ http://l10n.kde.org/team-infos.php?teamcode=pt     Portuguese (pt)
+ http://l10n.kde.org/team-infos.php?teamcode=pa     Punjabi (pa)
+ http://l10n.kde.org/team-infos.php?teamcode=ro     Romanian (ro)
+ http://l10n.kde.org/team-infos.php?teamcode=ru     Russian (ru)
+ http://l10n.kde.org/team-infos.php?teamcode=sr     Serbian (sr)
+ http://l10n.kde.org/team-infos.php?teamcode=si     Sinhala (si)
+ http://l10n.kde.org/team-infos.php?teamcode=sk     Slovak (sk)
+ http://l10n.kde.org/team-infos.php?teamcode=sl     Slovenian (sl)
+ http://l10n.kde.org/team-infos.php?teamcode=es     Spanish (es)
+ http://l10n.kde.org/team-infos.php?teamcode=ss     Swati (ss)
+ http://l10n.kde.org/team-infos.php?teamcode=sv     Swedish (sv)
+ http://l10n.kde.org/team-infos.php?teamcode=tg     Tajik (tg)
+ http://l10n.kde.org/team-infos.php?teamcode=tmh    Tamashek (tmh)
+ http://l10n.kde.org/team-infos.php?teamcode=ta     Tamil (ta)
+ http://l10n.kde.org/team-infos.php?teamcode=tt     Tatarish (tt)
+ http://l10n.kde.org/team-infos.php?teamcode=te     Telugu (te)
+ http://l10n.kde.org/team-infos.php?teamcode=th     Thai (th)
+ http://l10n.kde.org/team-infos.php?teamcode=bo     Tibetan (bo)
+ http://l10n.kde.org/team-infos.php?teamcode=ti     Tigrinya (ti)
+ http://l10n.kde.org/team-infos.php?teamcode=tr     Turkish (tr)
+ http://l10n.kde.org/team-infos.php?teamcode=uk     Ukrainian (uk)
+ http://l10n.kde.org/team-infos.php?teamcode=hsb    Upper Sorbian (hsb)
+ http://l10n.kde.org/team-infos.php?teamcode=ur     Urdu (ur)
+ http://l10n.kde.org/team-infos.php?teamcode=uz     Uzbek (uz)
+ http://l10n.kde.org/team-infos.php?teamcode=ven    Venda (ven)
+ http://l10n.kde.org/team-infos.php?teamcode=vi     Vietnamese (vi)
+ http://l10n.kde.org/team-infos.php?teamcode=wa     Walloon (wa)
+ http://l10n.kde.org/team-infos.php?teamcode=cy     Welsh (cy)
+ http://l10n.kde.org/team-infos.php?teamcode=xh     Xhosa (xh)
+ http://l10n.kde.org/team-infos.php?teamcode=yo     Yoruba (yo)
+ http://l10n.kde.org/team-infos.php?teamcode=zu     Zulu (zu)
+
+Copyright: 
+The copyright of every file belongs to its translators, you can check it 
+at the top of every file. In case this information is not in the file,
+you can assume it belongs to the language translator team.
+
+License:
+The licence for translations is the same as that of the application or
+library from which they come.  The lowest common denominator is GNU
+GPL 2 only.  Many apps are under GNU GPL 2 or later and libraries
+under GNU LGPL 2 or later.  See the relevant application or library
+for details.
+
+
+    | This program is free software; you can redistribute it and/or modify
+    | it under the terms of the GNU General Public License as published by
+    | the Free Software Foundation; version 2 dated June, 1991.
+    |
+    | This package is distributed in the hope that it will be useful,
+    | but WITHOUT ANY WARRANTY; without even the implied warranty of
+    | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    | GNU General Public License for more details.
+    |
+    | You should have received a copy of the GNU General Public License
+    | along with this program; if not, write to the Free Software Foundation,
+    | Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+
+  The full text of the GNU General Public License version 2 is available on
+  Debian systems in /usr/share/common-licenses/GPL-2 and version 3 in:
+  /usr/share/common-licenses/GPL
+
+
+    | This library is free software; you can redistribute it and/or
+    | modify it under the terms of the GNU Library General Public
+    | License as published by the Free Software Foundation; either
+    | version 2 of the License, or (at your option) any later version.
+
+    | This library is distributed in the hope that it will be useful,
+    | but WITHOUT ANY WARRANTY; without even the implied warranty of
+    | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    | Library General Public License for more details.
+
+    | You should have received a copy of the GNU Library General Public License
+    | along with this library; see the file COPYING.LIB.  If not, write to
+    | the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+    | MA 02110-1301, USA.
+
+  On Debian GNU/Linux systems, the complete text of the GNU Library General
+  Public License can be found in /usr/share/common-licenses/LGPL-2 and version 3
+  in /usr/share/common-licenses/LGPL-3
+
+
+The Debian packaging is (C) <s>2007-2009, Debian Qt/KDE Maintainers</s> and
+is licensed under the GPLv2 or later, see `/usr/share/common-licenses/GPL-2'.

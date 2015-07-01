@@ -1,0 +1,19 @@
+key: cpl-1.0
+short_name: CPL 1.0
+name: Common Public License 1.0
+category: Copyleft Limited
+owner: IBM
+homepage_url: http://www.eclipse.org/legal/cpl-v10.html
+spdx_license_key: CPL-1.0
+spdx_full_name: Common Public License 1.0
+spdx_url: http://spdx.org/licenses/CPL-1.0
+spdx_notes: >-
+    This license was superseded by Eclipse Public License
+text_urls:
+    - http://www.eclipse.org/legal/cpl-v10.html
+osi_url: http://www.opensource.org/licenses/cpl1.0.php
+faq_url: http://web.archive.org/web/20101104092121/http://www.ibm.com/developerworks/library/os-cplfaq.html
+other_urls:
+    - http://www.ibm.com/developerworks/library/os-cpl.html
+    - http://www.padsproj.org/License.html
+    - http://www.ibm.com/developerworks/library/os-cplfaq.html

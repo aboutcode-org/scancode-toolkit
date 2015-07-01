@@ -1,0 +1,157 @@
+Index: linux-2.6.23/arch/sh/kernel/cpu/sh4/setup-stb7100.c
+===================================================================
+--- linux-2.6.23.orig/arch/sh/kernel/cpu/sh4/setup-stb7100.c
++++ linux-2.6.23/arch/sh/kernel/cpu/sh4/setup-stb7100.c
+@@ -25,7 +25,7 @@
+ #include <asm/sci.h>
+ #include <asm/irq-ilc.h>
+ 
+-static unsigned long chip_revision, chip_7109;
++static unsigned long chip_revision, chip_7109, chip_5202=0;
+ static struct sysconf_field *sys_cfg7_0;
+ 
+ static struct plat_sci_port sci_platform_data[] = {
+@@ -103,7 +103,7 @@ void __init stx7100_configure_usb(void)
+ 		pin = stpio_request_pin(5,6, "USBOC", STPIO_OUT);
+ 		stpio_set_pin(pin, 0);
+ 	}
+-
++#ifndef CONFIG_SH_MOTOROLA_VIP19XX
+ 	/*
+ 	 * There have been two changes to the USB power enable signal:
+ 	 *
+@@ -128,7 +128,7 @@ void __init stx7100_configure_usb(void)
+ 	 */
+ 	pin = stpio_request_pin(5,7, "USBPWR", STPIO_OUT);
+ 	stpio_set_pin(pin, 1);
+-
++#endif
+ #ifndef CONFIG_PM
+ 	sc = sysconf_claim(SYS_CFG, 2, 1, 1, "usb");
+ 	reg = sysconf_read(sc);
+@@ -735,7 +735,10 @@ void __init stb7100_configure_asc(const 
+ 		struct platform_device *pdev;
+ 		unsigned int *fdma_requests;
+ 
+-		port = ascs[i] & 0xff;
++		if (chip_5202 && chip_7109)
++			port = 2;
++		else
++			port = ascs[i] & 0xff;
+ 		flags = ascs[i] >> 8;
+ 		pdev = &stm_stasc_devices[port];
+ 
+@@ -815,6 +818,10 @@ void __init stx7100_early_device_init(vo
+ {
+ 	struct sysconf_field *sc;
+ 	unsigned long devid;
++	unsigned char *addr=0;
++	unsigned int value=0;
++	unsigned char *lmi_sys_addr=0;
++	unsigned char *lmi_vid_addr=0;
+ 
+ 	/* Create a PMB mapping so that the ioremap calls these drivers
+ 	 * will make can be satisfied without having to call get_vm_area
+@@ -822,6 +829,66 @@ void __init stx7100_early_device_init(vo
+ 	 * there will be lots of devices in this range.
+ 	 */
+ 	ioremap_nocache(0x18000000, 0x04000000);
++	 
++#ifdef CONFIG_SH_MOTOROLA_VIP19XX
++
++	lmi_sys_addr = ioremap_nocache(0x0f000000, 0x01000000);
++	lmi_vid_addr = ioremap_nocache(0x17000000, 0x01000000);
++
++	if (readl(lmi_vid_addr + 0x30)==0) {
++	  // The 5202 has the same DEVICE_ID as the 7109 (0x02C).
++	  // On the 5202 (VIP800) the LMIVID_SDRA0=0 since this chip has no video memory
++	  chip_5202 = 1; 
++	}
++
++	printk(KERN_NOTICE "LMI SYS setup, fixing blue dots\n");
++	writel(0x00000001, lmi_sys_addr + 0x10);
++	writel(0x00000003, lmi_sys_addr + 0x10);
++	writel(0x00000001, lmi_sys_addr + 0x10);
++	writel(0x00000002, lmi_sys_addr + 0x10);
++	writel(0x00000400, lmi_sys_addr + 0x48);
++	writel(0x00000133, lmi_sys_addr + 0x48);
++	writel(0x00000002, lmi_sys_addr + 0x10);
++	writel(0x00000004, lmi_sys_addr + 0x10);
++	writel(0x00000004, lmi_sys_addr + 0x10);
++	writel(0x00000004, lmi_sys_addr + 0x10);
++	writel(0x00000033, lmi_sys_addr + 0x48);
++	writel(0x00000000, lmi_sys_addr + 0x10);
++
++    if (!chip_5202) {
++		printk(KERN_NOTICE "LMI VID setup, fixing blue dots\n");
++		writel(0x00000001, lmi_vid_addr + 0x10);
++		writel(0x00000003, lmi_vid_addr + 0x10);
++		writel(0x00000001, lmi_vid_addr + 0x10);
++		writel(0x00000002, lmi_vid_addr + 0x10);
++		writel(0x00000400, lmi_vid_addr + 0x48);
++		writel(0x00000133, lmi_vid_addr + 0x48);
++		writel(0x00000002, lmi_vid_addr + 0x10);
++		writel(0x00000004, lmi_vid_addr + 0x10);
++		writel(0x00000004, lmi_vid_addr + 0x10);
++		writel(0x00000004, lmi_vid_addr + 0x10);
++		writel(0x00000033, lmi_vid_addr + 0x48);
++		writel(0x00000000, lmi_vid_addr + 0x10);
++	}
++
++	// Setup memory limiters
++	writel(0x061a025f, lmi_sys_addr + 0x8);
++	writel(0x00000005, lmi_sys_addr + 0xc);
++	writel(0x061a025f, lmi_vid_addr + 0x8);
++	writel(0x00000005, lmi_vid_addr + 0xc);
++
++	// Auto precharge on low prio but not on high prio
++	addr = ioremap_nocache(0x19000000, 0x01000000);
++	value = readl(addr + 0x112C);
++	value |= (1 << 19);
++	value |= (1 << 21);
++	value &= ~(1 << 20);
++	value &= ~(1 << 22);
++	writel(value, addr + 0x112C);
++	iounmap(lmi_sys_addr);
++	iounmap(lmi_vid_addr);
++	iounmap(addr);
++#endif
+ 
+ 	/* Initialise PIO and sysconf drivers */
+ 
+@@ -835,14 +902,19 @@ void __init stx7100_early_device_init(vo
+ 	chip_revision = (devid >> 28) + 1;
+ 	boot_cpu_data.cut_major = chip_revision;
+ 
+-	printk("%s version %ld.x\n",
+-	       chip_7109 ? "STx7109" : "STx7100", chip_revision);
++    if (chip_5202) {
++		printk("STi5202 version %ld.x\n", chip_revision);
++	}
++	else{
++		printk(KERN_NOTICE "%s version %ld.x\n",
++	    	   chip_7109 ? "STx7109" : "STx7100", chip_revision);
++	}
+ 
+ 	if (chip_7109) {
+ 		boot_cpu_data.type = CPU_STB7109;
+ 		sc = sysconf_claim(SYS_STA, 9, 0, 7, "devid");
+ 		devid = sysconf_read(sc);
+-		printk("Chip version %ld.%ld\n", (devid >> 4)+1, devid & 0xf);
++		printk(KERN_NOTICE "Chip version %ld.%ld\n", (devid >> 4)+1, devid & 0xf);
+ 		boot_cpu_data.cut_minor = devid & 0xf;
+ 	}
+ 
+@@ -852,6 +924,12 @@ void __init stx7100_early_device_init(vo
+ 	sc = sysconf_claim(SYS_CFG, 8, 1, 1, "rtc");
+ 	sysconf_write(sc, 1);
+ 
++	/* SCIF_PIO_OUT_EN = 0 */
++	/* Route UART2 and PWM to PIO4 instead of SCIF */
++	sc = sysconf_claim(SYS_CFG, 7, 0, 0, "asc");
++	sysconf_write(sc, 0);
++	sysconf_release(sc);
++
+ 	/* We haven't configured the LPC, so the sleep instruction may
+ 	 * do bad things. Thus we disable it here. */
+ 	disable_hlt();

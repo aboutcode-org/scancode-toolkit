@@ -1,0 +1,5 @@
+licenses:
+    - boost-1.0
+notes: >-
+    Portions of the software are licensed under the Boost Software License 1.0, from
+    http://gse.ufsc.br/~bezerra/disciplinas/SistEmbarcados/Mobile/Nokia/Tools/Carbide_vs/WINSCW/Symbian_Support/MSL/MSL_C++/MSL_Common/Include/msl_utility

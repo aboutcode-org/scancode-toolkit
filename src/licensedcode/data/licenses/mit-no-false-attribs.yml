@@ -1,0 +1,13 @@
+key: mit-no-false-attribs
+short_name: MIT no false attribution License
+name: MIT with no false attribution License
+category: Attribution
+owner: npm Registry
+homepage_url: https://fedoraproject.org/wiki/Licensing/MITNFA
+spdx_license_key: MITNFA
+spdx_full_name: MIT +no-false-attribs license
+spdx_url: http://spdx.org/licenses/MITNFA
+spdx_notes: >-
+    from Fedora: "This license is based on the MIT license, but contains an additional
+    section covering the removal of attributions in certain modification scenarios.
+    It is Free and GPL-compatible. Use License: MITNFA"

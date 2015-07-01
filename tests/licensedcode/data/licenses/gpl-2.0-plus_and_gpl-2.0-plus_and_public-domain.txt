@@ -1,0 +1,89 @@
+Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat
+Upstream-Author: <s>Chris Lawrence <lawrencc@debian.org></s>
+Upstream-Author: <s>Sandro Tosi <morph@debian.org></s>
+Packaged-By: Chris Lawrence <lawrencc@debian.org>
+Packaged-By: Sandro Tosi <morph@debian.org>
+Packaged-Date: Fri, 14 May 1999 01:07:35 -0500
+
+Files: *
+Copyright:
+    © 1999-2006 <s>Chris Lawrence</s>
+    Copyright (C) 2008-2009 <s>Sandro Tosi <morph@debian.org></s>
+License: other
+    # This program is freely distributable per the following license:
+    #
+    #  Permission to use, copy, modify, and distribute this software and its
+    #  documentation for any purpose and without fee is hereby granted,
+    #  provided that the above copyright notice appears in all copies and that
+    #  both that copyright notice and this permission notice appear in
+    #  supporting documentation.
+    #
+    #  I DISCLAIM ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL
+    #  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL I
+    #  BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY
+    #  DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+    #  WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+    #  ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+    #  SOFTWARE.
+
+Files: handle_bugscript
+Copyright:
+    © 1996-2000 <s>Christoph Lameter <clameter@debian.org></s>
+    © 1996-2000 <s>Nicolás Lichtmaier <nick@debian.org></s>
+    © 2000 <s>Chris Lawrence <lawrencc@debian.org></s>
+License: GPL-any
+    # You may freely redistribute, use and modify this software under the terms
+    # of the GNU General Public License.
+    .
+    On Debian systems, the complete text of the GNU General Public License
+    can be found in file "/usr/share/common-licenses/GPL".
+
+Files: Makefile, */module.mk
+Copyright:
+    © 2008 <s>Ben Finney <ben+debian@benfinney.id.au></s>
+License: GPL-2+
+    # This is free software; you may copy, modify and/or distribute this work
+    # under the terms of the GNU General Public License, version 2 or later.
+    # No warranty expressed or implied. See the file LICENSE for details.
+    .
+    On Debian systems, the complete text of the GNU General Public License
+    can be found in file "/usr/share/common-licenses/GPL-2".
+
+Files: test/scaffold.py, test/test_*.py
+Copyright:
+    © 2008 <s>Ben Finney <ben+debian@benfinney.id.au></s>
+License: GPL-2+
+    # This is free software; you may copy, modify and/or distribute this work
+    # under the terms of the GNU General Public License, version 2 or later.
+    # No warranty expressed or implied. See the file LICENSE for details.
+    .
+    On Debian systems, the complete text of the GNU General Public License
+    can be found in file "/usr/share/common-licenses/GPL-2".
+
+Files: checks/compare_pseudo-pkgs_lists.py
+Copyright:
+    © 2008 <s>Sandro Tosi <morph@debian.org></s>
+License: PD
+    checks/compare_pseudo-pkgs_lists.py was placed in public domain by Sandro
+    Tosi <morph@debian.org>
+
+Files: reportbug/ui/gtk2_ui.py
+Copyright:
+    Copyright (C) 2006 <s>Philipp Kern <pkern@debian.org></s>
+    Copyright (C) 2008-2009 <s>Luca Bruno <lethalman88@gmail.com></s>
+License: other
+    # This program is freely distributable per the following license:
+    #
+    ##  Permission to use, copy, modify, and distribute this software and its
+    ##  documentation for any purpose and without fee is hereby granted,
+    ##  provided that the above copyright notice appears in all copies and that
+    ##  both that copyright notice and this permission notice appear in
+    ##  supporting documentation.
+    ##
+    ##  I DISCLAIM ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL
+    ##  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL I
+    ##  BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY
+    ##  DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+    ##  WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+    ##  ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+    ##  SOFTWARE.

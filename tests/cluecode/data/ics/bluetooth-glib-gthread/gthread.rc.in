@@ -1,0 +1,6 @@
+	VALUE "FileDescription", "GThread"
+	VALUE "FileVersion", "@GLIB_VERSION@.0"
+	VALUE "InternalName", "libgthread-2.0-@LT_CURRENT_MINUS_AGE@"
+	VALUE "LegalCopyright", "Copyright © 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald. Copyright © 1998 Sebastian Wilhelmi. Modified by the GLib Team and others 1997-2004."
+	VALUE "OriginalFilename", "libgthread-2.0-@LT_CURRENT_MINUS_AGE@.dll"
+	VALUE "ProductName", "GLib"

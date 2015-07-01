@@ -1,0 +1,11 @@
+key: lbnl-bsd
+short_name: LBNL BSD Variant
+name: >-
+    Lawrence Berkeley National Labs BSD variant license
+category: Attribution
+owner: Regents of the University of California
+homepage_url: https://fedoraproject.org/wiki/Licensing:LBNLBSD?rd=Licensing/LBNLBSD
+spdx_license_key: BSD-3-Clause-LBNL
+spdx_full_name: >-
+    Lawrence Berkeley National Labs BSD variant license
+spdx_url: http://spdx.org/licenses/BSD-3-Clause-LBNL

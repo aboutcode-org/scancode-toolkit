@@ -1,0 +1,14 @@
+	----------------------------------------------------------------------
+	-       Bundlerepository Bundle Notice
+	----------------------------------------------------------------------
+	This product includes the bundlerepository bundle which includes
+	the follwing software:
+
+  OBR related softare developed by the the Oscar Project.
+	  Copyright (c) 2004, Richard S. Hall
+
+	  XML Parser software
+  Copyright (c) 2004, Didier Donsez
+	
+  kxml parser
+	  Copyright (c) 2002,2003, Stefan Haustein, Oberhausen, Rhld., Germany

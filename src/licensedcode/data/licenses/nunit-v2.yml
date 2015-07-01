@@ -1,0 +1,13 @@
+key: nunit-v2
+short_name: NUnit v2 License
+name: NUnit v2 License
+category: Attribution
+owner: Charlie Poole
+homepage_url: https://fedoraproject.org/wiki/Licensing:Nunit?rd=Licensing/Nunit
+spdx_license_key: Nunit
+spdx_full_name: Nunit License
+spdx_url: http://spdx.org/licenses/Nunit
+text_urls:
+    - http://nunit.org/index.php?p=license&r=2.6
+other_urls:
+    - http://nunit.org/

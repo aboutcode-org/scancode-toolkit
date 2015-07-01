@@ -1,0 +1,24 @@
+configure:2190: checking for C compiler version
+configure:2193: gcc --version </dev/null >&5
+gcc (GCC) 4.0.3 (Ubuntu 4.0.3-1ubuntu5)
+Copyright (C) 2006 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+configure:3976: checking for C compiler version
+configure:3979: gcc --version </dev/null >&5
+gcc (GCC) 4.0.3 (Ubuntu 4.0.3-1ubuntu5)
+Copyright (C) 2006 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+configure:4808: checking for C compiler version
+configure:4811: gcc --version </dev/null >&5
+gcc (GCC) 4.0.3 (Ubuntu 4.0.3-1ubuntu5)
+Copyright (C) 2006 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+configure:15516: checking for C++ compiler version
+configure:15519: g++ --version </dev/null >&5
+g++ (GCC) 4.0.3 (Ubuntu 4.0.3-1ubuntu5)
+Copyright (C) 2006 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

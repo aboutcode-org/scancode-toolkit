@@ -1,0 +1,4 @@
+As a special exception to the MySQL Connector/ODBC GPL license, one is
+allowed to use the product with any ODBC manager, even if the ODBC manager
+is not licensed under the GPL. In other words: The ODBC manager itself is
+not affected by the MySQL Connector/ODBC GPL license.

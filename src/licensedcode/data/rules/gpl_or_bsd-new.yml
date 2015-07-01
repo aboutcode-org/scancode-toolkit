@@ -1,0 +1,5 @@
+licenses:
+    - gpl
+    - bsd-new
+license_choice: yes
+notes: LKM with Dual BSD/GPL

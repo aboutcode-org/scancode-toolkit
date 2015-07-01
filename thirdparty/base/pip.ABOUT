@@ -1,0 +1,15 @@
+about_resource: pip-6.1.1-py2.py3-none-any.whl
+version: 6.1.1
+download_url: https://pypi.python.org/packages/py2.py3/p/pip/pip-6.1.1-py2.py3-none-any.whl
+
+name: pip
+owner: The pip developers
+contact: python-virtualenv@groups.google.com
+home_url: http://www.pip-installer.org
+
+author_file: pip.AUTHORS
+dje_license: mit, OTHER TODO
+license_text_file: pip.LICENSE
+
+vcs_tool: git
+vcs_repository: https://github.com/pypa/pip.git

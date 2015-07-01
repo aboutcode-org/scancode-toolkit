@@ -1,0 +1,6 @@
+>ant clean
+
+ __________________________________________________________________________
+       Copyright (C) 2003-2004 Vlad Roubtsov. All rights reserved.
+
+ This program and the accompanying materials are made available under

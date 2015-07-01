@@ -1,0 +1,4 @@
+licenses:
+    - apache-1.1
+template: yes
+notes: Cactus Apache 1.1 variant with some old Apache Group reference

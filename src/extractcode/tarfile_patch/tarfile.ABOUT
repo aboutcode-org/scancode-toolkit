@@ -1,0 +1,35 @@
+about_resource: .
+name: Python tarfile for Python 2.7.x
+version: ad92f9b2fe04
+notes: >
+    derived from these Tar implementatiosn from Python.org
+    (python 2.7 tip) https://hg.python.org/cpython/raw-file/ad92f9b2fe04/Lib/tarfile.py
+    (python 3.x tip) https://hg.python.org/cpython/raw-file/c917ba25c007/Lib/tarfile.py
+
+download_url:
+    - https://hg.python.org/cpython/raw-file/ad92f9b2fe04/Lib/tarfile.py
+    - https://hg.python.org/cpython/raw-file/c917ba25c007/Lib/tarfile.py 
+
+description: >
+    This is a patched version of tarfile.py to fix a bug in handling
+    bzip2 files with multiple streams. This is supported only in Python 3.x
+    The current 2.7.x bz2 module only uncompresses the firt stream in a bz2 file
+    returning a file possibly truncated. The fix for this is to use the bz2file
+    package. Since tarfile import bz2, this patched tarfile imports instead
+    bz2file to correctly handle multiple streams in a tar.bz2 archive.
+    The Python bug is http://bugs.python.org/issue20781
+    This is essentially a backport of Python 3. to Python 2.
+
+home_url: http://python.org/
+
+owner: nexB
+
+dje_license: mit and psf
+
+license_text_file:
+    - PSF.LICENSE
+    - archive.py.LICENSE
+
+copyright: >
+    Copyright (C) 2002 Lars Gustäbel <lars@gustaebel.de>
+    Copyright (c) Python Software Foundation and others

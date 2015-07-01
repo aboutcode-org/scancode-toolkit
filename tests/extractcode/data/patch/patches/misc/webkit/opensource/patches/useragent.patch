@@ -1,0 +1,17 @@
+--- src/Browser/WebCoreSupport525/FrameLoaderClientEkioh.cpp~	2009-06-04 17:06:37.000000000 +0200
++++ src/Browser/WebCoreSupport525/FrameLoaderClientEkioh.cpp	2009-10-20 11:27:09.000000000 +0200
+@@ -375,7 +375,13 @@ void FrameLoaderClientEkioh::setTitle(co
+ 
+ String FrameLoaderClientEkioh::userAgent(const KURL&)
+ {
+-    return "Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/525.27.2 (KHTML, like Gecko)";
++    static const char* useragent = ::getenv("WEBKIT_USERAGENT");
++    if (useragent != NULL) {
++      return useragent;
++    }
++    else {
++        return "Motorola KreaTV STB (Linux)/WebKit";
++    }
+ }
+ 
+ void FrameLoaderClientEkioh::savePlatformDataToCachedPage(CachedPage*) { notImplemented(); }

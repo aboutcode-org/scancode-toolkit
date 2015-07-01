@@ -1,0 +1,326 @@
+/*
+ * Copyright (c) 2009 Source Auditor Inc.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+/*
+ * Note: this software requires a commercial license from BlackduckSoftware 
+ * to be used.
+ */
+package com.nexb.dejacode.blackduckintegration;
+
+import java.io.File;
+
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.widgets.DirectoryDialog;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.FileDialog;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Text;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Button;
+
+/**
+ * @author Gary O'Neall
+ *
+ */
+public class BDInformationDialog {
+	/*
+	 * Copyright (c) 2009 Source Auditor Inc.
+	 * Permission is hereby granted, free of charge, to any person obtaining a copy
+	 * of this software and associated documentation files (the "Software"), to deal
+	 * in the Software without restriction, including without limitation the rights
+	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	 * copies of the Software, and to permit persons to whom the Software is
+	 * furnished to do so, subject to the following conditions:
+	 * 
+	 * The above copyright notice and this permission notice shall be included in
+	 * all copies or substantial portions of the Software.
+	 * 
+	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	 * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+	 * THE SOFTWARE.
+	 */
+	/*
+	 * Note: this software requires a commercial license from BlackduckSoftware 
+	 * to be used.
+	 */
+	public String userName = "";
+	public String password= "";
+	public String project = "";  //  @jve:decl-index=0:
+	public String maxMatchesPerFile = "-1";  //  @jve:decl-index=0:
+	public boolean cancelled = true;
+
+	private Shell sShell = null;  //  @jve:decl-index=0:visual-constraint="10,10"
+	private Label lblUserName = null;
+	private Text tbUserName = null;
+	private Label lblPassword = null;
+	private Text tbPassword = null;
+	private Label lblProjectName = null;
+	private Text tbProject = null;
+	private Composite composite = null;
+	private Button btOK = null;
+	private Button btCancel = null;
+	private Label lblFileName = null;
+	private Text tbSummaryFileName = null;
+	public String summaryFileName = "";
+	private Shell parent;
+	private Label lblBlackDuckURL = null;
+	private Text tbURL = null;
+	public String url = "";
+	private Label lblDetailFile = null;
+	private Text tbDetailFileName = null;
+	public String detailFileName = "";
+	private Button btChooseSummaryFile = null;
+	private Button btChooseDetailFile = null;
+	private Label lblMaxMatchesPerFile = null;
+	private Text tbMaxMatchesPerFile = null;
+	public String patternFileName = "";
+	private Label lblPatternFile = null;
+	private Text tbPatternFileName = null;
+	private Button btChoosePatternFile = null;
+	public String skipPast = "";
+	private Label lblSkipPast = null;
+	private Text tbSkipPast = null;
+
+	public BDInformationDialog(Shell parent) {
+		this.parent = parent;
+	}
+	
+	public BDInformationDialog() {
+		this.parent = null;
+	}
+
+	/**
+	 * This method initializes sShell
+	 */
+	private void createSShell() {
+		GridData gridData14 = new GridData();
+		gridData14.horizontalAlignment = GridData.FILL;
+		gridData14.grabExcessHorizontalSpace = true;
+		gridData14.verticalAlignment = GridData.CENTER;
+		GridData gridData13 = new GridData();
+		gridData13.horizontalAlignment = GridData.FILL;
+		gridData13.grabExcessHorizontalSpace = true;
+		gridData13.verticalAlignment = GridData.CENTER;
+		GridData gridData12 = new GridData();
+		gridData12.widthHint = 60;
+		GridData gridData11 = new GridData();
+		gridData11.horizontalAlignment = GridData.FILL;
+		gridData11.grabExcessHorizontalSpace = true;
+		gridData11.verticalAlignment = GridData.CENTER;
+		GridData gridData8 = new GridData();
+		gridData8.horizontalAlignment = GridData.FILL;
+		gridData8.grabExcessHorizontalSpace = true;
+		gridData8.verticalAlignment = GridData.CENTER;
+		GridData gridData7 = new GridData();
+		gridData7.horizontalAlignment = GridData.FILL;
+		gridData7.grabExcessHorizontalSpace = true;
+		gridData7.verticalAlignment = GridData.CENTER;
+		GridData gridData2 = new GridData();
+		gridData2.horizontalAlignment = GridData.FILL;
+		gridData2.grabExcessHorizontalSpace = true;
+		gridData2.verticalAlignment = GridData.CENTER;
+		GridData gridData1 = new GridData();
+		gridData1.horizontalAlignment = GridData.FILL;
+		gridData1.grabExcessHorizontalSpace = true;
+		gridData1.verticalAlignment = GridData.CENTER;
+		GridData gridData = new GridData();
+		gridData.horizontalAlignment = GridData.FILL;
+		gridData.grabExcessHorizontalSpace = true;
+		gridData.widthHint = 400;
+		gridData.verticalAlignment = GridData.CENTER;
+		GridLayout gridLayout = new GridLayout();
+		gridLayout.numColumns = 3;
+		if (parent == null) {
+			sShell = new Shell();
+		}
+		else {
+			sShell = new Shell(parent);
+		}
+		sShell.setText("Input Black Duck Information");
+		sShell.setLayout(gridLayout);
+		sShell.setSize(new Point(554, 325));
+		lblUserName = new Label(sShell, SWT.NONE);
+		lblUserName.setText("User Name:");
+		tbUserName = new Text(sShell, SWT.BORDER);
+		tbUserName.setLayoutData(gridData);
+		Label filler4 = new Label(sShell, SWT.NONE);
+		lblPassword = new Label(sShell, SWT.NONE);
+		lblPassword.setText("Password:");
+		tbPassword = new Text(sShell, SWT.BORDER | SWT.PASSWORD);
+		tbPassword.setLayoutData(gridData1);
+		Label filler3 = new Label(sShell, SWT.NONE);
+		lblProjectName = new Label(sShell, SWT.NONE);
+		lblProjectName.setText("Project:");
+		tbProject = new Text(sShell, SWT.BORDER);
+		tbProject.setLayoutData(gridData2);
+		Label filler2 = new Label(sShell, SWT.NONE);
+		lblFileName = new Label(sShell, SWT.NONE);
+		lblFileName.setText("Summary File:");
+		tbSummaryFileName = new Text(sShell, SWT.BORDER);
+		tbSummaryFileName.setLayoutData(gridData7);
+		btChooseSummaryFile = new Button(sShell, SWT.NONE);
+		btChooseSummaryFile.setText("...");
+		btChooseSummaryFile
+				.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						FileDialog fd = new FileDialog(sShell);
+						fd.setFileName(tbSummaryFileName.getText());
+						final String fileName = fd.open();
+						if (fileName != null) {
+							tbSummaryFileName.setText(fd.getFilterPath()+File.separator+fd.getFileName());
+						}
+					}
+				});
+		lblDetailFile = new Label(sShell, SWT.NONE);
+		lblDetailFile.setText("Detail File:");
+		tbDetailFileName = new Text(sShell, SWT.BORDER);
+		tbDetailFileName.setLayoutData(gridData11);
+		btChooseDetailFile = new Button(sShell, SWT.NONE);
+		btChooseDetailFile.setText("...");
+		lblPatternFile = new Label(sShell, SWT.NONE);
+		lblPatternFile.setText("Pattern File:");
+		tbPatternFileName = new Text(sShell, SWT.BORDER);
+		tbPatternFileName.setLayoutData(gridData13);
+		btChoosePatternFile = new Button(sShell, SWT.NONE);
+		btChoosePatternFile.setText("...");
+		btChoosePatternFile
+				.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						FileDialog fd = new FileDialog(sShell);
+						fd.setFileName(tbPatternFileName.getText());
+						final String fileName = fd.open();
+						if (fileName != null) {
+							tbPatternFileName.setText(fd.getFilterPath()+File.separator+fd.getFileName());
+						}
+					}
+				});
+		btChooseDetailFile
+				.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+					public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+						FileDialog fd = new FileDialog(sShell);
+						fd.setFileName(tbDetailFileName.getText());
+						final String fileName = fd.open();
+						if (fileName != null) {
+							tbDetailFileName.setText(fd.getFilterPath()+File.separator+fd.getFileName());
+						}
+					}
+				});
+		lblBlackDuckURL = new Label(sShell, SWT.NONE);
+		lblBlackDuckURL.setText("URL:");
+		tbURL = new Text(sShell, SWT.BORDER);
+		tbURL.setLayoutData(gridData8);
+		Label filler = new Label(sShell, SWT.NONE);
+		lblMaxMatchesPerFile = new Label(sShell, SWT.NONE);
+		lblMaxMatchesPerFile.setText("Max Matches/File:");
+		tbMaxMatchesPerFile = new Text(sShell, SWT.BORDER);
+		tbMaxMatchesPerFile.setToolTipText("Maximum number of matches per file (0 or -1 will provide all matches)");
+		tbMaxMatchesPerFile.setLayoutData(gridData12);
+		tbMaxMatchesPerFile.setText("-1");
+		Label filler5 = new Label(sShell, SWT.NONE);
+		lblSkipPast = new Label(sShell, SWT.NONE);
+		lblSkipPast.setText("Skip Past File:");
+		lblSkipPast.setToolTipText("Skip past this black duck file path name (if blank, import all files)");
+		tbSkipPast = new Text(sShell, SWT.BORDER);
+		tbSkipPast.setToolTipText("Skip past this black duck file path name (if blank, import all files)");
+		tbSkipPast.setLayoutData(gridData14);
+		Label filler6 = new Label(sShell, SWT.NONE);
+		createComposite();
+	}
+
+	/**
+	 * This method initializes composite	
+	 *
+	 */
+	private void createComposite() {
+		GridData gridData5 = new GridData();
+		gridData5.horizontalAlignment = GridData.CENTER;
+		gridData5.verticalAlignment = GridData.CENTER;
+		GridData gridData4 = new GridData();
+		gridData4.horizontalAlignment = GridData.CENTER;
+		gridData4.verticalAlignment = GridData.CENTER;
+		GridData gridData3 = new GridData();
+		gridData3.horizontalAlignment = GridData.CENTER;
+		gridData3.grabExcessHorizontalSpace = false;
+		gridData3.horizontalSpan = 3;
+		gridData3.verticalAlignment = GridData.CENTER;
+		GridLayout gridLayout1 = new GridLayout();
+		gridLayout1.numColumns = 2;
+		composite = new Composite(sShell, SWT.NONE);
+		composite.setLayout(gridLayout1);
+		composite.setLayoutData(gridData3);
+		btOK = new Button(composite, SWT.NONE);
+		btOK.setText("OK");
+		btOK.setLayoutData(gridData5);
+		btOK.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				userName = tbUserName.getText();
+				password = tbPassword.getText();
+				project = tbProject.getText();
+				maxMatchesPerFile = tbMaxMatchesPerFile.getText();
+				summaryFileName = tbSummaryFileName.getText();
+				detailFileName = tbDetailFileName.getText();
+				patternFileName = tbPatternFileName.getText();
+				url = tbURL.getText();
+				skipPast = tbSkipPast.getText();
+				cancelled = false;
+				sShell.close();
+			}
+		});
+		btCancel = new Button(composite, SWT.NONE);
+		btCancel.setText("Cancel");
+		btCancel.setLayoutData(gridData4);
+		btCancel.addSelectionListener(new org.eclipse.swt.events.SelectionAdapter() {
+			public void widgetSelected(org.eclipse.swt.events.SelectionEvent e) {
+				cancelled = true;
+				sShell.close();
+			}
+		});
+	}
+	
+	public void open() {
+		createSShell();
+		tbUserName.setText(this.userName);
+		tbProject.setText(this.project);
+		tbMaxMatchesPerFile.setText(this.maxMatchesPerFile);
+		tbSummaryFileName.setText(this.summaryFileName);
+		tbDetailFileName.setText(this.detailFileName);
+		tbPatternFileName.setText(this.patternFileName);
+		tbURL.setText(this.url);
+		tbSkipPast.setText(skipPast);
+		sShell.pack();
+		sShell.open();
+		Display display = sShell.getDisplay();
+		 while (!sShell.isDisposed()) {
+		      if (!display.readAndDispatch()) {
+		        display.sleep();
+		      }
+		 }
+	}
+
+}

@@ -1,0 +1,227 @@
+ELF
+/lib/ld-linux.so.2
+GNU
+SuSESuSE
+gUa
+__gmon_start__
+libc.so.6
+_IO_stdin_used
+fflush
+strcpy
+exit
+fopen
+optind
+ftell
+puts
+realloc
+stdin
+fgets
+memset
+fseek
+getopt
+stdout
+fputc
+fclose
+__strtol_internal
+malloc
+__ctype_b_loc
+optarg
+stderr
+fscanf
+fwrite
+fread
+__libc_start_main
+vfprintf
+free
+GLIBC_2.1
+GLIBC_2.3
+GLIBC_2.0
+PTRh`
+QVh
+WVS
+WVS
+WVS
+WVSQ
+%UUUU)
+%UUUU
+WVS
+WVS
+WVS
+WVS
+WVS
+WVS
+WVS
+WVS
+Usage: shash [-f|-i] [-s size] [[-d|-m matchfile] [-t threshold] files...
+Print Charikar's document similarity hash and compute Hamming distance
+-d	calculate the hamming distance of two document hashes
+-m	calculate the hamming distance between all the hashes in matchfile, and the input files.
+-t	if -m, only return the matches for an hamming distance below the threshold.
+-f	take input files from file. Only one file should be specified
+-i	take input files from stdin. No file should be specified
+-q	be quiet when computing difference
+-s num	specify the size of super-tokens
+-h	this help
+Error: Invalid super-token size
+Error: diff and match modes are incompatible.
+Error: At least two files must be specified.
+Error: Only one file must be specified if the input is read from file.
+No file should be specified if input is read from stdin.
+Can't open file "%s": %m.
+Out of memoru.
+%016llx
+Error reading file "%s": %m.
+Can't close file "%s": %m.
+%016llx %s
+%016llx %d %s
+done
+hidfqt:m:s:
+%016llx
+difference: %d
+GCC: (GNU) 4.2.1 (SUSE Linux)
+GCC: (GNU) 4.2.1 (SUSE Linux)
+GCC: (GNU) 4.2.1 (SUSE Linux)
+GCC: (GNU) 4.2.1 (SUSE Linux)
+GCC: (GNU) 4.2.1 (SUSE Linux)
+GCC: (GNU) 4.2.1 (SUSE Linux)
+GCC: (GNU) 4.2.1 (SUSE Linux)
+GCC: (GNU) 4.2.1 (SUSE Linux)
+GCC: (GNU) 4.2.1 (SUSE Linux)
+GCC: (GNU) 4.2.1 (SUSE Linux)
+_IO_stdin_used
+int
+/usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu/crti.S
+/usr/src/packages/BUILD/glibc-2.6.1/csu
+GNU AS 2.17.50
+/usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu/crtn.S
+/usr/src/packages/BUILD/glibc-2.6.1/csu
+GNU AS 2.17.50
+init.c
+/usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu
+crti.S
+/usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu
+crtn.S
+short int
+short unsigned int
+init.c
+_IO_stdin_used
+long long unsigned int
+GNU C 4.2.1 (SUSE Linux)
+unsigned char
+/usr/src/packages/BUILD/glibc-2.6.1/csu
+long long int
+.symtab
+.strtab
+.shstrtab
+.interp
+.note.ABI-tag
+.note.SuSE
+.gnu.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.eh_frame
+.ctors
+.dtors
+.jcr
+.dynamic
+.got
+.got.plt
+.data
+.bss
+.comment
+.debug_aranges
+.debug_pubnames
+.debug_info
+.debug_abbrev
+.debug_line
+.debug_str
+.debug_ranges
+init.c
+initfini.c
+crtstuff.c
+__CTOR_LIST__
+__DTOR_LIST__
+__JCR_LIST__
+__do_global_dtors_aux
+completed.6049
+frame_dummy
+__CTOR_END__
+__DTOR_END__
+__FRAME_END__
+__JCR_END__
+__do_global_ctors_aux
+shash.c
+simi.c
+meaningful_char
+simiw.c
+lookup3.c
+_GLOBAL_OFFSET_TABLE_
+__init_array_end
+__init_array_start
+_DYNAMIC
+data_start
+__libc_csu_fini
+_start
+__gmon_start__
+_Jv_RegisterClasses
+realloc@@GLIBC_2.0
+_fini
+hashlittle2
+get_file
+hamming_dist
+fgets@@GLIBC_2.0
+memset@@GLIBC_2.0
+__strtol_internal@@GLIBC_2.0
+__libc_start_main@@GLIBC_2.0
+_IO_stdin_used
+free@@GLIBC_2.0
+optind@@GLIBC_2.0
+__data_start
+hashword
+fflush@@GLIBC_2.0
+__ctype_b_loc@@GLIBC_2.3
+fseek@@GLIBC_2.0
+fclose@@GLIBC_2.1
+getopt@@GLIBC_2.0
+stderr@@GLIBC_2.0
+hashlittle
+fopen@@GLIBC_2.1
+do_the_work
+print_help
+__dso_handle
+strcpy@@GLIBC_2.0
+ftell@@GLIBC_2.0
+__libc_csu_init
+printf@@GLIBC_2.0
+fwrite@@GLIBC_2.0
+charikar_hash64
+__bss_start
+malloc@@GLIBC_2.0
+load_matches
+fputc@@GLIBC_2.0
+stdin@@GLIBC_2.0
+_end
+stdout@@GLIBC_2.0
+puts@@GLIBC_2.0
+fscanf@@GLIBC_2.0
+vfprintf@@GLIBC_2.0
+hashword2
+optarg@@GLIBC_2.0
+fread@@GLIBC_2.0
+_edata
+do_match
+charikar_hash64_wide
+hashbig
+exit@@GLIBC_2.0
+die
+__i686.get_pc_thunk.bx
+main
+_init

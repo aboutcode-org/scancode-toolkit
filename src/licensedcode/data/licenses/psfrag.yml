@@ -1,0 +1,12 @@
+key: psfrag
+short_name: psfrag License
+name: psfrag License
+category: Attribution
+owner: Craig Barratt
+homepage_url: https://fedoraproject.org/wiki/Licensing/psfrag
+spdx_license_key: psfrag
+spdx_full_name: psfrag License
+spdx_url: http://spdx.org/licenses/psfrag
+spdx_notes: >-
+    Per Fedora: "This license is considered Free, but GPL-incompatible only when used
+    for TeX files. In all other use cases, this may not be true."

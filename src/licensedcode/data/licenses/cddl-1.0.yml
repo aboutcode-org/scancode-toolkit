@@ -1,0 +1,21 @@
+key: cddl-1.0
+short_name: CDDL 1.0
+name: >-
+    Common Development and Distribution License 1.0
+category: Copyleft Limited
+owner: Oracle Corporation
+homepage_url: http://www.sun.com/cddl/
+spdx_license_key: CDDL-1.0
+spdx_full_name: >-
+    Common Development and Distribution License 1.0
+spdx_url: http://spdx.org/licenses/CDDL-1.0
+spdx_notes: |-
+    This license was released: 24 January 2004.
+    This license is OSI certified.
+text_urls:
+    - http://www.sun.com/cddl/cddl.html
+    - http://www.opensolaris.org/os/licensing/cddllicense.txt
+osi_url: http://www.opensource.org/licenses/cddl1.txt
+faq_url: http://www.opensolaris.org/os/about/faq/licensing_faq/
+other_urls:
+    - https://glassfish.dev.java.net/public/CDDLv1.0.html

@@ -1,0 +1,22 @@
+Licence for libxslt except libexslt
+----------------------------------------------------------------------
+ Copyright (C) 2001-2002 Daniel Veillard.  All Rights Reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+copies of the Software, and to permit persons to whom the Software is fur-
+nished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+
+Licence for libexslt
+----------------------------------------------------------------------
+ Copyright (C) 2001-2002 Thomas Broyer, Charlie Bozeman and Daniel Veillard.
+ All Rights Reserved.
+
+copies of the Software, and to permit persons to whom the Software is fur-
+nished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.

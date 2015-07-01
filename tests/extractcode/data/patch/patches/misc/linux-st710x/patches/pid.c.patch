@@ -1,0 +1,11 @@
+--- linux-2.6.23-orig/kernel/pid.c	2009-05-18 13:59:09.000000000 +0200
++++ linux-2.6.23/kernel/pid.c	2009-05-18 14:44:47.000000000 +0200
+@@ -394,7 +394,7 @@
+ 	pidhash_shift = min(12, pidhash_shift);
+ 	pidhash_size = 1 << pidhash_shift;
+ 
+-	printk("PID hash table entries: %d (order: %d, %Zd bytes)\n",
++	printk(KERN_DEBUG "PID hash table entries: %d (order: %d, %Zd bytes)\n",
+ 		pidhash_size, pidhash_shift,
+ 		pidhash_size * sizeof(struct hlist_head));
+ 

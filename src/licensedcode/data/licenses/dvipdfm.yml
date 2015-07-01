@@ -1,0 +1,11 @@
+key: dvipdfm
+short_name: dvipdfm License
+name: dvipdfm License
+category: Attribution
+homepage_url: https://fedoraproject.org/wiki/Licensing/dvipdfm
+spdx_license_key: dvipdfm
+spdx_full_name: dvipdfm License
+spdx_url: http://spdx.org/licenses/dvipdfm
+spdx_notes: >-
+    per Fedora notes: "should" does not mean "must", and there are implied rights
+    for unlimited copying and distribution rights for unmodified versions.

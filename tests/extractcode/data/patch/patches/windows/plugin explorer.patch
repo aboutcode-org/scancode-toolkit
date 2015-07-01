@@ -1,0 +1,689 @@
+Index: .classpath
+===================================================================
+--- .classpath	(revision 0)
++++ .classpath	(revision 0)
+@@ -0,0 +1,48 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<classpath>
++	<classpathentry kind="src" path="main/plugin-explorer/src"/>
++	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
++	<classpathentry kind="con" path="org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?ivyXmlPath=ivy.xml&amp;confs=*"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/antlr3-maven-plugin-3.1.3-1.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/antlr-3.1.3.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/antlr-runtime-3.1.3.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/aopalliance-1.0.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/asm-3.0.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/aspectjrt-1.5.3.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/commons-beanutils-1.7.0.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/commons-codec-1.3.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/commons-collections-3.2.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/commons-digester-1.6.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/commons-httpclient-3.1.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/commons-io-1.4.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/commons-lang-2.4.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/commons-logging-1.1.1.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/commons-logging-api-1.1.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/commons-validator-1.2.0.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/concurrent-1.3.4.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/FastInfoset-1.2.3.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/gunit-3.1.3.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/htmlparser-1.0.5.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/jaxb-api-2.1.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/jaxb-impl-2.1.9.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/jaxen-1.1.1.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/jcr-1.0.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/jline-0.9.94.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/jsr311-api-1.0.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/junit-4.7.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/log4j-1.2.15.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/maven-gunit-plugin-3.1.3.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/nekohtml-1.9.7.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/servlet-api-2.4.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/stax-api-1.0.1.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/stringtemplate-3.2.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/wsdl4j-1.6.2.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/xercesImpl-2.9.1.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/celad/Mes documents/dependances/xml-apis-1.3.04.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/mmartin/Mes documents/jar_chemistry/chemistry-api-0.5-SNAPSHOT.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/mmartin/Mes documents/jar_chemistry/chemistry-atompub-0.5-SNAPSHOT.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/mmartin/Mes documents/jar_chemistry/chemistry-atompub-client-0.5-SNAPSHOT.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/mmartin/Mes documents/jar_chemistry/chemistry-commons-0.5-SNAPSHOT.jar"/>
++	<classpathentry kind="lib" path="C:/Documents and Settings/mmartin/Mes documents/jar_chemistry/chemistry-shell-0.5-SNAPSHOT.jar"/>
++	<classpathentry kind="output" path="bin"/>
++</classpath>
+Index: .project
+===================================================================
+--- .project	(revision 0)
++++ .project	(revision 0)
+@@ -0,0 +1,23 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<projectDescription>
++	<name>plugin explorer</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>com.atlassw.tools.eclipse.checkstyle.CheckstyleBuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>com.atlassw.tools.eclipse.checkstyle.CheckstyleNature</nature>
++	</natures>
++</projectDescription>
+Index: .settings/org.eclipse.jdt.core.prefs
+===================================================================
+--- .settings/org.eclipse.jdt.core.prefs	(revision 0)
++++ .settings/org.eclipse.jdt.core.prefs	(revision 0)
+@@ -0,0 +1,12 @@
++#Tue Mar 02 11:21:55 CET 2010
++eclipse.preferences.version=1
++org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
++org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.6
++org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
++org.eclipse.jdt.core.compiler.compliance=1.6
++org.eclipse.jdt.core.compiler.debug.lineNumber=generate
++org.eclipse.jdt.core.compiler.debug.localVariable=generate
++org.eclipse.jdt.core.compiler.debug.sourceFile=generate
++org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
++org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
++org.eclipse.jdt.core.compiler.source=1.6
+Index: .checkstyle
+===================================================================
+--- .checkstyle	(revision 0)
++++ .checkstyle	(revision 0)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<fileset-config file-format-version="1.2.0" simple-config="true">
++    <local-check-config name="any-content" location="C:\Documents and Settings\mmartin\Mes documents\eclipse\configuration\AnyContent checkstyle.xml" type="external" description="">
++        <additional-data name="protect-config-file" value="false"/>
++    </local-check-config>
++    <fileset name="tous" enabled="true" check-config-name="any-content" local="true">
++        <file-match-pattern match-pattern="." include-pattern="true"/>
++    </fileset>
++</fileset-config>
+Index: main/plugin-explorer/sitemap.xmap
+===================================================================
+--- main/plugin-explorer/sitemap.xmap	(revision 2900)
++++ main/plugin-explorer/sitemap.xmap	(working copy)
+@@ -19,6 +19,7 @@
+ 	<map:components>
+ 		
+ 		<map:actions>
++			<map:action name="add-cmis-collection" src="org.ametys.plugins.explorer.resources.actions.AddCMISCollectionAction" logger="org.ametys.explorer.actions" />
+ 			<map:action name="add-collection" src="org.ametys.plugins.explorer.resources.actions.AddCollectionAction" logger="org.ametys.explorer.actions" />
+ 			<map:action name="move-object" src="org.ametys.plugins.explorer.resources.actions.MoveObjectAction" logger="org.ametys.explorer.actions"/>
+             <map:action name="rename-object" src="org.ametys.plugins.explorer.resources.actions.RenameObjectAction" logger="org.ametys.explorer.actions"/> 
+@@ -91,6 +92,17 @@
+ 				</map:act>
+ 			</map:match>
+ 			
++			<map:match pattern="add-cmis-collection">
++				<map:act type="add-cmis-collection">
++					<map:generate type="action-result">
++						<map:parameter name="id" value="{id}"/>
++						<map:parameter name="parentID" value="{parentID}"/>
++						<map:parameter name="name" value="{name}"/>
++					</map:generate>
++					<map:serialize type="xml" />
++				</map:act>
++			</map:match>
++			
+ 			<map:match pattern="move-object">
+ 				<map:act type="move-object">
+ 					<map:generate type="action-result">
+Index: main/plugin-explorer/i18n/messages_fr.xml
+===================================================================
+--- main/plugin-explorer/i18n/messages_fr.xml	(revision 2900)
++++ main/plugin-explorer/i18n/messages_fr.xml	(working copy)
+@@ -92,6 +92,13 @@
+ 	<message key="PLUGINS_EXPLORER_VIEW_DETAILS_DESCRIPTION">Passe en mode de vue détaillée</message>
+ 	
+ 	<!-- Actions -->
++	<message key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_TITLE">Ajout des identifiants de connexion</message>
++	<message key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_URL">URL</message>
++	<message key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_USER">Nom utilisateur</message>
++	<message key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_PWD">Mot de passe</message>
++	<message key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_ERROR_TITLE">Paramètres manquants</message>
++	<message key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_ERROR_MESSAGE">Merci de renseigner tous les champs.</message>
++
+ 	<message key="PLUGINS_EXPLORER_FOLDER_HANDLE_ADD">Nouveau dossier</message>
+ 	<message key="PLUGINS_EXPLORER_FOLDER_HANDLE_ADD_NEWNAME">Nouveau dossier</message>
+ 	<message key="PLUGINS_EXPLORER_FOLDER_NAME">Nom</message>
+Index: main/plugin-explorer/i18n/messages_en.xml
+===================================================================
+--- main/plugin-explorer/i18n/messages_en.xml	(revision 2900)
++++ main/plugin-explorer/i18n/messages_en.xml	(working copy)
+@@ -92,6 +92,14 @@
+ 	<message key="PLUGINS_EXPLORER_VIEW_DETAILS_DESCRIPTION">Switchs to detailed view</message>
+ 	
+ 	<!-- Actions -->
++	<message key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_TITLE">Add the connection IDs</message>
++	<message key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_URL">URL</message>
++	<message key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_USER">User</message>
++	<message key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_PWD">Password</message>
++	<message key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_ERROR_TITLE">Missing Parameters</message>
++	<message key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_ERROR_MESSAGE">Please fill in all fields</message>
++	
++	
+ 	<message key="PLUGINS_EXPLORER_FOLDER_HANDLE_ADD">New folder</message>
+ 	<message key="PLUGINS_EXPLORER_FOLDER_HANDLE_ADD_NEWNAME">New folder</message>
+ 	<message key="PLUGINS_EXPLORER_FOLDER_NAME">Name</message>
+Index: main/plugin-explorer/src/org/ametys/plugins/explorer/resources/generators/ResourcesExplorerGenerator.java
+===================================================================
+--- main/plugin-explorer/src/org/ametys/plugins/explorer/resources/generators/ResourcesExplorerGenerator.java	(revision 2900)
++++ main/plugin-explorer/src/org/ametys/plugins/explorer/resources/generators/ResourcesExplorerGenerator.java	(working copy)
+@@ -28,10 +28,12 @@
+ import org.xml.sax.SAXException;
+ 
+ import org.ametys.plugins.explorer.ExplorerNode;
++import org.ametys.plugins.explorer.resources.ModifiableResource;
+ import org.ametys.plugins.explorer.resources.Resource;
+ import org.ametys.plugins.repository.AmetysObject;
+ import org.ametys.plugins.repository.AmetysObjectIterable;
+ import org.ametys.plugins.repository.AmetysObjectResolver;
++import org.ametys.plugins.repository.ModifiableAmetysObject;
+ import org.ametys.plugins.repository.TraversableAmetysObject;
+ import org.ametys.runtime.user.User;
+ import org.ametys.runtime.user.UsersManager;
+@@ -111,6 +113,16 @@
+         childAtts.addCDATAAttribute("name", node.getName());
+         childAtts.addCDATAAttribute("icon", node.getIcon());
+         childAtts.addCDATAAttribute("applicationId", node.getApplicationId());
++             
++        if (node instanceof ModifiableAmetysObject)
++        {
++            childAtts.addCDATAAttribute("isModifiable", "true");
++        }
++        else
++        {
++            childAtts.addCDATAAttribute("isModifiable", "false");
++        }
++
+         
+         boolean hasChildNodes = false;
+         boolean hasResources = false;
+@@ -158,6 +170,16 @@
+         childAtts.addCDATAAttribute("size", String.valueOf(resource.getLength()));
+         childAtts.addCDATAAttribute("author", name);
+         childAtts.addCDATAAttribute("keywords", resource.getKeywordsAsString());
++        
++        if (resource instanceof ModifiableResource)
++        {
++            childAtts.addCDATAAttribute("isModifiable", "true");
++        }
++        else
++        {
++            childAtts.addCDATAAttribute("isModifiable", "false");
++        }
++        
+         XMLUtils.createElement(contentHandler, "Node", childAtts);
+     }
+ }
+Index: main/plugin-explorer/src/org/ametys/plugins/explorer/resources/actions/AddCMISCollectionAction.java
+===================================================================
+--- main/plugin-explorer/src/org/ametys/plugins/explorer/resources/actions/AddCMISCollectionAction.java	(revision 0)
++++ main/plugin-explorer/src/org/ametys/plugins/explorer/resources/actions/AddCMISCollectionAction.java	(revision 0)
+@@ -0,0 +1,106 @@
++package org.ametys.plugins.explorer.resources.actions;
++
++import java.util.HashMap;
++import java.util.Map;
++
++import org.apache.avalon.framework.parameters.Parameters;
++import org.apache.avalon.framework.service.ServiceException;
++import org.apache.avalon.framework.service.ServiceManager;
++import org.apache.cocoon.acting.ServiceableAction;
++import org.apache.cocoon.environment.ObjectModelHelper;
++import org.apache.cocoon.environment.Redirector;
++import org.apache.cocoon.environment.Request;
++import org.apache.cocoon.environment.SourceResolver;
++import org.apache.commons.lang.IllegalClassException;
++import org.apache.jackrabbit.util.Text;
++
++import org.ametys.plugins.explorer.cmis.CMISRootResourcesCollection;
++import org.ametys.plugins.explorer.cmis.CMISTreeFactory;
++import org.ametys.plugins.explorer.observation.ExplorerEvent;
++import org.ametys.plugins.explorer.observation.ExplorerObservationManager;
++import org.ametys.plugins.explorer.observation.ExplorerEvent.EventType;
++import org.ametys.plugins.repository.AmetysObject;
++import org.ametys.plugins.repository.AmetysObjectResolver;
++import org.ametys.plugins.repository.ModifiableTraversableAmetysObject;
++import org.ametys.runtime.user.CurrentUserProvider;
++
++/**
++ * Action for adding a CMIS resource collection.
++ *
++ */
++public class AddCMISCollectionAction extends ServiceableAction
++{
++    private AmetysObjectResolver _resolver;
++    private CurrentUserProvider _userProvider;
++    private ExplorerObservationManager _obsManager;
++    
++    @Override
++    public void service(ServiceManager sManager) throws ServiceException
++    {
++        super.service(sManager);
++        
++        _resolver = (AmetysObjectResolver) sManager.lookup(AmetysObjectResolver.ROLE);
++        _userProvider = (CurrentUserProvider) sManager.lookup(CurrentUserProvider.ROLE);
++        _obsManager = (ExplorerObservationManager) sManager.lookup(ExplorerObservationManager.ROLE);
++    }
++    
++    @Override
++    public Map act(Redirector redirector, SourceResolver resolver, Map objectModel, String source, Parameters parameters) throws Exception
++    {
++        Request request = ObjectModelHelper.getRequest(objectModel);
++        Map<String, String> result = new HashMap<String, String>();
++        
++        String id = request.getParameter("id");
++        String originalName = request.getParameter("name");
++       
++        String url = request.getParameter("url");
++        String user = request.getParameter("user");
++        String password = request.getParameter("pwd");
++
++        boolean renameIfExists = request.getParameter("renameIfExists") == null ? false : Boolean.valueOf(request.getParameter("renameIfExists"));
++        assert id != null; 
++        
++        String legalName = Text.escapeIllegalJcrChars(originalName);
++        
++        AmetysObject object = _resolver.resolveById(id);
++        if (!(object instanceof ModifiableTraversableAmetysObject))
++        {
++            throw new IllegalClassException(ModifiableTraversableAmetysObject.class, object.getClass());
++        }
++        
++        ModifiableTraversableAmetysObject collection = (ModifiableTraversableAmetysObject) object;
++        if (!renameIfExists && collection.hasChild(legalName))
++        {
++            getLogger().warn("The object '" + object.getName() + "' can not be renamed in '" + originalName + "' : a object of same name already exists.");
++            result.put("message", "already-exist");
++            return result;
++        }
++        
++        int index = 1;
++        while (collection.hasChild(legalName))
++        {
++            legalName = Text.escapeIllegalJcrChars(originalName + " (" + index + ")");
++            index++;
++        }
++        
++        CMISRootResourcesCollection child = collection.createChild(legalName, CMISTreeFactory.RESOURCESCOLLECTION_NODETYPE);
++        child.setCMISURL(url);        
++        child.setUser(user);
++        child.setPassword(password);
++        child.saveChanges();
++        
++        result.put("id", child.getId());
++        result.put("parentID", id);
++        result.put("name", legalName);
++        
++        // Notify listeners
++        Map<String, Object> eventParams = new HashMap<String, Object>();
++        eventParams.put("parentID", object.getId());
++        eventParams.put("name", child.getName());
++        eventParams.put("path", child.getPath());
++        _obsManager.notifyEvent(new ExplorerEvent (EventType.COLLECTION_CREATE, _userProvider.getUser(), child.getId(), eventParams));
++        
++        return result;
++    }
++
++}
+Index: main/plugin-explorer/src/org/ametys/plugins/explorer/ExplorerNodeGenerator.java
+===================================================================
+--- main/plugin-explorer/src/org/ametys/plugins/explorer/ExplorerNodeGenerator.java	(revision 2900)
++++ main/plugin-explorer/src/org/ametys/plugins/explorer/ExplorerNodeGenerator.java	(working copy)
+@@ -27,6 +27,7 @@
+ import org.ametys.plugins.explorer.resources.generators.ResourcesExplorerGenerator;
+ import org.ametys.plugins.repository.AmetysObject;
+ import org.ametys.plugins.repository.AmetysObjectIterable;
++import org.ametys.plugins.repository.ModifiableAmetysObject;
+ import org.ametys.plugins.repository.TraversableAmetysObject;
+ 
+ /**
+@@ -86,6 +87,16 @@
+         childAtts.addCDATAAttribute("icon", node.getIcon());
+         childAtts.addCDATAAttribute("applicationId", node.getApplicationId());
+         
++        if (node instanceof ModifiableAmetysObject)
++        {
++            childAtts.addCDATAAttribute("isModifiable", "true");
++        }
++        else
++        {
++            childAtts.addCDATAAttribute("isModifiable", "false");
++        }
++        
++        
+         boolean hasChild = false;
+         
+         for (AmetysObject child : ((TraversableAmetysObject) node).getChildren())
+Index: main/plugin-explorer/plugin.xml
+===================================================================
+--- main/plugin-explorer/plugin.xml	(revision 2900)
++++ main/plugin-explorer/plugin.xml	(working copy)
+@@ -51,6 +51,15 @@
+                 <scheme>resource</scheme>
+                 <nodetype>ametys:resource</nodetype>
+             </extension>
++            
++            <extension point="org.ametys.plugins.repository.AmetysObjectFactoryExtensionPoint" 
++			           id="org.ametys.plugins.explorer.cmis.CMISTreeFactory"
++			           class="org.ametys.plugins.explorer.cmis.CMISTreeFactory">
++                <scheme>cmis-root-collection</scheme>
++                <nodetype>ametys:cmis-root-collection</nodetype>
++                <nodetype-definition>resources_nodetypes.xml</nodetype-definition>
++            </extension> 
++            
+ 		</extensions>
+ 	</feature>
+ 	
+Index: main/plugin-explorer/resources/js/org/ametys/explorer/ResourcesExplorer.i18n.js
+===================================================================
+--- main/plugin-explorer/resources/js/org/ametys/explorer/ResourcesExplorer.i18n.js	(revision 2900)
++++ main/plugin-explorer/resources/js/org/ametys/explorer/ResourcesExplorer.i18n.js	(working copy)
+@@ -554,7 +554,7 @@
+ 		var appId = node.attributes.applicationId;
+ 		if (this._applications[appId])
+ 		{
+-			this._applications[appId].execCommand ('updateToolbar', {'id': node.id});
++			this._applications[appId].execCommand ('updateToolbar', {'id': node.id, 'isModifiable': node.attributes['isModifiable']});
+ 		}
+ 	}
+ }
+@@ -607,7 +607,7 @@
+ 		var appId = node.attributes.applicationId;
+ 		if (this._applications[appId])
+ 		{
+-			this._applications[appId].execCommand ('updateToolbar', {'id': node.id, 'files': records});
++			this._applications[appId].execCommand ('updateToolbar', {'id': node.id, 'files': records, 'isModifiable': node.attributes['isModifiable']});
+ 		}
+ 	}
+ }
+Index: main/plugin-explorer/resources/js/org/ametys/explorer/applications/resources/ResourcesActions.i18n.js
+===================================================================
+--- main/plugin-explorer/resources/js/org/ametys/explorer/applications/resources/ResourcesActions.i18n.js	(revision 2900)
++++ main/plugin-explorer/resources/js/org/ametys/explorer/applications/resources/ResourcesActions.i18n.js	(working copy)
+@@ -15,6 +15,7 @@
+  */
+ 
+ Ext.namespace('org.ametys.explorer.applications.resources');
++Ext.namespace('org.ametys.explorer.applications.resources.Folder.addCMIS');
+ Ext.namespace('org.ametys.explorer.applications.resources.Folder.add');
+ Ext.namespace('org.ametys.explorer.applications.resources.Folder.rename');
+ Ext.namespace('org.ametys.explorer.applications.resources.Folder.remove');
+@@ -29,6 +30,50 @@
+ Ext.namespace('org.ametys.explorer.applications.resources.File.download');
+ /*------------------------------------------------------------------------*/
+ /**
++ * Create a new CMIS server
++ * @param {String} parentID The parent folder id
++ * @param {String} name The new folder name
++ * @param {function} callback The call back function
++ */
++org.ametys.explorer.applications.resources.Folder.addCMIS = function (parentID, name, callback, paramCon)
++{
++    // Appel Ajax
++    var params = {};
++    params.id = parentID;
++    params.name = name;
++    params.renameIfExists = true;
++    params.url = paramCon.url;
++    params.user = paramCon.user;
++    params.pwd = paramCon.pwd;
++   
++    var serverMessage = new org.ametys.servercomm.ServerMessage('explorer', '/add-cmis-collection',
++            params,
++            org.ametys.servercomm.ServerComm.PRIORITY_MAJOR,
++            function (response, args) {
++                org.ametys.explorer.applications.resources.Folder.addCMISCb (response, args, callback);
++            },
++            this,
++            []);
++    org.ametys.servercomm.ServerComm.getInstance().send(serverMessage);
++}
++org.ametys.explorer.applications.resources.Folder.addCMISCb = function (response, args, callback)
++{
++	if (org.ametys.servercomm.ServerComm.handleBadResponse("<i18n:text i18n:key="PLUGINS_EXPLORER_FOLDER_HANDLE_ADD_ERROR"/>", response, "org.ametys.explorer.applications.resources.Folder.add"))
++	{
++		return;
++	}
++	
++	var id = response.selectSingleNode("ActionResult/id")[org.ametys.servercomm.ServerComm.xmlTextContent];
++	var parentID = response.selectSingleNode("ActionResult/parentID")[org.ametys.servercomm.ServerComm.xmlTextContent];
++	var name = response.selectSingleNode("ActionResult/name")[org.ametys.servercomm.ServerComm.xmlTextContent];
++	
++    if (typeof callback == 'function')
++    {
++        callback (parentID, id, name);
++    }
++}
++/*------------------------------------------------------------------------*/
++/**
+  * Create a new folder
+  * @param {String} parentID The parent folder id
+  * @param {String} name The new folder name
+Index: main/plugin-explorer/resources/js/org/ametys/explorer/applications/resources/toolbar/ToolbarActions.i18n.js
+===================================================================
+--- main/plugin-explorer/resources/js/org/ametys/explorer/applications/resources/toolbar/ToolbarActions.i18n.js	(revision 2900)
++++ main/plugin-explorer/resources/js/org/ametys/explorer/applications/resources/toolbar/ToolbarActions.i18n.js	(working copy)
+@@ -15,6 +15,7 @@
+  */
+ 
+ Ext.namespace('org.ametys.explorer.applications.resources.toolbar');
++Ext.namespace('org.ametys.explorer.applications.resources.toolbar.Folder.addCMIS');
+ Ext.namespace('org.ametys.explorer.applications.resources.toolbar.Folder.add');
+ Ext.namespace('org.ametys.explorer.applications.resources.toolbar.Folder.rename');
+ Ext.namespace('org.ametys.explorer.applications.resources.toolbar.Folder.remove');
+@@ -29,6 +30,105 @@
+ 
+ 
+ /*------------------------------------------------------------------------*/
++org.ametys.explorer.applications.resources.toolbar.Folder.addCMIS = function (application)
++{
++	//DialogBox when adding nodes
++	addCMIS = new org.ametys.DialogBox ({
++        
++		title : '<i18n:text i18n:key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_TITLE"/>', 
++       
++        id: 'addCMISRep',
++        cls: 'text-dialog',
++        layout: 'form',
++        labelWidth: 100,
++       
++        width: 420,
++        height: 180,
++        autoScroll: false,
++       
++        items: [
++            new org.ametys.form.TextField ({
++                fieldLabel : '<i18n:text i18n:key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_URL"/>', 
++                 id: 'addCMIS-url',
++                 width: 200,
++                allowBlank: true
++            }),
++            new org.ametys.form.TextField ({
++                fieldLabel : '<i18n:text i18n:key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_USER"/>',
++                id: 'addCMIS-user',
++                 width: 200,
++                allowBlank: true
++            }),
++            new org.ametys.form.PasswordField ({
++                fieldLabel : '<i18n:text i18n:key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_PWD"/>',
++                id: 'addCMIS-password',
++                width: 200,
++               allowBlank: true
++           }),
++        ],
++        closeAction: 'destroy',
++        buttons : [{
++            text : "OK",
++            handler: _okAddCMISRep
++        },{
++            text : "CANCEL",
++            handler: _cancelAddCMISRep
++        }]
++    });
++	
++	Ext.getCmp('addCMISRep').show();
++   
++    function _okAddCMISRep(){
++        
++        var urlCMIS = Ext.getCmp('addCMIS-url');
++        var userCMIS = Ext.getCmp('addCMIS-user');
++        var pwdCMIS = Ext.getCmp('addCMIS-password');
++        var url = urlCMIS.getValue();
++        var user = userCMIS.getValue();
++        var pwd = pwdCMIS.getValue();
++        
++        if(url=="" || user=="" || pwd=="")
++        {
++            Ext.Msg.alert("<i18n:text i18n:key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_ERROR_TITLE"/>",
++            		"<i18n:text i18n:key="PLUGINS_EXPLORER_FOLDER_ADD_CMIS_REP_ERROR_MESSAGE"/>"); 
++        }
++        else{    	
++            var el = Ext.getCmp('addCMISRep');
++            el.destroy();
++            
++            var paramCon = {};
++            paramCon.url = url;
++            paramCon.user = user;
++            paramCon.pwd = pwd;
++            
++            var node = application._explorer.getSelectedNode();
++            if (node == null)
++                 return;
++            
++             // Le noeud parent = id JCR du dossier qui va porter l'arborescence CMIS
++             var parentID = node.id;
++             org.ametys.explorer.applications.resources.Folder.addCMIS (parentID,
++                 "<i18n:text i18n:key="PLUGINS_EXPLORER_FOLDER_HANDLE_ADD_NEWNAME"/>",
++                 function (parentID, id, name) {
++                     org.ametys.explorer.applications.resources.toolbar.Folder._addCMISCb (parentID, id, name, application)
++                 },
++                 paramCon
++               );
++        }
++    }
++   
++    function _cancelAddCMISRep(){
++        var el = Ext.getCmp('addCMISRep');
++        el.destroy();
++    }
++}
++org.ametys.explorer.applications.resources.toolbar.Folder._addCMISCb = function (parentID, id, name, application)
++{
++	// Rafraichi le noeud parent
++    application._explorer._refreshNode (parentID, application._explorer.renameNode, [id]);
++}
++
++/*------------------------------------------------------------------------*/
+ org.ametys.explorer.applications.resources.toolbar.Folder.add = function (application)
+ {
+ 	var node = application._explorer.getSelectedNode();
+Index: main/plugin-explorer/resources/js/org/ametys/explorer/applications/resources/ResourcesApplication.i18n.js
+===================================================================
+--- main/plugin-explorer/resources/js/org/ametys/explorer/applications/resources/ResourcesApplication.i18n.js	(revision 2900)
++++ main/plugin-explorer/resources/js/org/ametys/explorer/applications/resources/ResourcesApplication.i18n.js	(working copy)
+@@ -107,6 +107,17 @@
+ 	this._toolbar = new Ext.Toolbar ({
+ 		region: 'north',
+ 		items : [{
++				     id: 'toolbar-btn-cmis-add',
++				     icon: getPluginResourcesUrl ('explorer') + '/img/resources/folder_new_32.png',
++				     tooltip : "<i18n:text i18n:key="PLUGINS_EXPLORER_CMIS_ADD_DESCRIPTION"/>",
++				     scale: 'large',
++				     application: this,
++				     handler: function () {
++				         org.ametys.explorer.applications.resources.toolbar.CMIS.add (this.application);
++				     },
++				     disabled: true
++				 },
++		         {
+ 					 id: 'toolbar-btn-folder-add',
+ 		        	 icon: getPluginResourcesUrl ('explorer') + '/img/resources/folder_new_32.png',
+ 		        	 tooltip : "<i18n:text i18n:key="PLUGINS_EXPLORER_FOLDER_ADD_DESCRIPTION"/>",
+@@ -225,20 +236,21 @@
+ 	return this._toolbar;
+ }
+ 
+-org.ametys.explorer.applications.resources.ResourcesApplication.prototype._updateToolbar = function (folder, files)
++org.ametys.explorer.applications.resources.ResourcesApplication.prototype._updateToolbar = function (folder, files, isModifiable)
+ {
+ 	var isRoot = this._explorer._tree.getRootNode().id == folder;
+ 	
+-	this._toolbar.get('toolbar-btn-folder-add').setDisabled (folder == null);
+-	this._toolbar.get('toolbar-btn-folder-rename').setDisabled (isRoot || folder == null);
+-	this._toolbar.get('toolbar-btn-folder-delete').setDisabled (isRoot || folder == null);
+-	this._toolbar.get('toolbar-btn-file-add').setDisabled (folder == null);
+-	this._toolbar.get('toolbar-btn-file-rename').setDisabled (files == null || files.length == 0);
+-	this._toolbar.get('toolbar-btn-file-delete').setDisabled (files == null || files.length == 0);
++	this._toolbar.get('toolbar-btn-cmis-add').setDisabled (folder == null || isModifiable == 'false');
++	this._toolbar.get('toolbar-btn-folder-add').setDisabled (folder == null || isModifiable == 'false');
++	this._toolbar.get('toolbar-btn-folder-rename').setDisabled (isRoot || folder == null || isModifiable == 'false');
++	this._toolbar.get('toolbar-btn-folder-delete').setDisabled (isRoot || folder == null || isModifiable == 'false');
++	this._toolbar.get('toolbar-btn-file-add').setDisabled (folder == null || isModifiable == 'false');
++	this._toolbar.get('toolbar-btn-file-rename').setDisabled (files == null || files.length == 0 || isModifiable == 'false');
++	this._toolbar.get('toolbar-btn-file-delete').setDisabled (files == null || files.length == 0 || isModifiable == 'false');
+ 	this._toolbar.get('toolbar-btn-file-download').setDisabled (files == null || files.length == 0);
+-	this._toolbar.get('toolbar-btn-file-history').setDisabled (files == null || files.length == 0);
+-	this._toolbar.get('toolbar-btn-file-cut').setDisabled (files == null || files.length == 0);
+-	this._toolbar.get('toolbar-btn-file-paste').setDisabled (folder == null);
++	this._toolbar.get('toolbar-btn-file-history').setDisabled (files == null || files.length == 0 || isModifiable == 'false');
++	this._toolbar.get('toolbar-btn-file-cut').setDisabled (files == null || files.length == 0 || isModifiable == 'false');
++	this._toolbar.get('toolbar-btn-file-paste').setDisabled (folder == null || isModifiable == 'false');
+ 	
+ }
+ 
+@@ -331,7 +343,7 @@
+ 			break;
+ 			
+ 		case 'updateToolbar':
+-			this._updateToolbar (params.id, params.files);
++			this._updateToolbar (params.id, params.files, params.isModifiable);
+ 			break;
+ 		default:
+ 			throw "The command '" + cmd + "' is unknown";
+Index: main/plugin-explorer/resources/js/org/ametys/explorer/tree/ResourcesXmlLoader.js
+===================================================================
+--- main/plugin-explorer/resources/js/org/ametys/explorer/tree/ResourcesXmlLoader.js	(revision 2900)
++++ main/plugin-explorer/resources/js/org/ametys/explorer/tree/ResourcesXmlLoader.js	(working copy)
+@@ -34,7 +34,7 @@
+  * Override createNode function to always return a AsyncTreeNode
+  */
+ org.ametys.explorer.tree.ResourcesXmlLoader.prototype.createNode = function(node)
+-{
++{	
+ 	var attr = {
+ 		tagName :node.tagName
+ 	};
+Index: main/plugin-explorer/resources_nodetypes.xml
+===================================================================
+--- main/plugin-explorer/resources_nodetypes.xml	(revision 2900)
++++ main/plugin-explorer/resources_nodetypes.xml	(working copy)
+@@ -15,6 +15,15 @@
+    limitations under the License.
+    -->
+ <nodeTypes xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:ametys="http://www.ametys.org/jcr/repository/1.0">
++    <nodeType name="ametys:cmis-root-collection" isMixin="false" hasOrderableChildNodes="false" primaryItemName="">
++        <supertypes>
++            <supertype>nt:folder</supertype>
++            <supertype>ametys:object</supertype>
++        </supertypes>
++        <propertyDefinition name="ametys:url" requiredType="String" autoCreated="false" mandatory="true" onParentVersion="COPY" protected="false" multiple="false"/>
++        <propertyDefinition name="ametys:user" requiredType="String" autoCreated="false" mandatory="false" onParentVersion="COPY" protected="false" multiple="false"/>
++        <propertyDefinition name="ametys:password" requiredType="String" autoCreated="false" mandatory="false" onParentVersion="COPY" protected="false" multiple="false"/>
++    </nodeType>
+     <nodeType name="ametys:resources-collection" isMixin="false" hasOrderableChildNodes="false" primaryItemName="">
+         <supertypes>
+             <supertype>nt:folder</supertype>

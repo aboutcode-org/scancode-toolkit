@@ -1,0 +1,8 @@
+--- linux-2.6.23/drivers/net/smsc_911x/Makefile.orig	2009-09-14 10:09:19.000000000 +0200
++++ linux-2.6.23/drivers/net/smsc_911x/Makefile	2009-09-14 10:09:23.000000000 +0200
+@@ -3,5 +3,4 @@
+ pf-$(CONFIG_CPU_SUBTYPE_ST40)	:= st40.c
+ pf-$(CONFIG_CPU_XSCALE)	:= xscale_linux_2.4.c
+ 
+-CFLAGS_smsc9118.o += -DUSE_DEBUG
+ CFLAGS_smsc9118.o += -DPLATFORM_SOURCE=\"$(pf-y)\"

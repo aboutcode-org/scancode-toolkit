@@ -1,0 +1,13 @@
+key: openldap-1.1
+short_name: OpenLDAP Public License 1.1
+name: OpenLDAP Public License 1.1
+category: Copyleft Limited
+owner: OpenLDAP Foundation
+homepage_url: http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=806557a5ad59804ef3a44d5abfbe91d706b0791f
+spdx_license_key: OLDAP-1.1
+spdx_full_name: Open LDAP Public License v1.1
+spdx_url: http://spdx.org/licenses/OLDAP-1.1
+spdx_notes: >-
+    This license was released 25 August 1998.
+text_urls:
+    - http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=806557a5ad59804ef3a44d5abfbe91d706b0791f

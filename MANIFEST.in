@@ -1,0 +1,15 @@
+graft src
+graft tests
+
+include AUTHORS.rst
+include CHANGELOG.rst
+include README.rst
+include CONTRIBUTING.rst
+include apache-2.0.LICENSE
+include cc0-1.0.LICENSE
+include NOTICE
+include scancode.ABOUT
+
+include tox.ini .travis.yml appveyor.yml
+
+global-exclude *.py[co] __pycache__

@@ -1,0 +1,23 @@
+about_resource: tar.py
+version: 2.7.8
+download_url: https://hg.python.org/cpython/raw-file/ee879c0ffa11/Lib/tarfile.py
+
+name: Python tarfile
+
+description: archive.py borrows snippets of code from the Python tarfile
+ extractall function modified to handle special files and permissions
+ differently.
+
+home_url: http://python.org/
+
+owner: nexB
+
+dje_license: mit and psf
+license_text_file: -
+    PSF.LICENSE
+    archive.py.LICENSE
+
+copyright: 
+    Copyright (C) 2002 Lars Gustäbel <lars@gustaebel.de>
+    Copyright (c) Python Software Foundation and others
+

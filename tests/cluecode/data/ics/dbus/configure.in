@@ -1,0 +1,41 @@
+AM_CONDITIONAL(DBUS_GCOV_ENABLED, test x$enable_gcov = xyes)
+
+# glibc21.m4 serial 3
+dnl Copyright (C) 2000-2002, 2004 Free Software Foundation, Inc.
+dnl This file is free software; the Free Software Foundation
+dnl gives unlimited permission to copy and/or distribute it,
+  AC_DEFINE_UNQUOTED(DBUS_VA_COPY,$dbus_va_copy_func,[A 'va_copy' style function])
+fi
+
+AC_LANG_PUSH(C)
+AC_CACHE_CHECK([whether va_lists can be copied by value],
+	dbus_cv_va_val_copy,
+	[dbus_cv_va_val_copy=no],
+	[dbus_cv_va_val_copy=yes])
+])
+AC_LANG_POP(C)
+
+if test "x$dbus_cv_va_val_copy" = "xno"; then
+# assume getpwnam_r is the posix version
+# it is up to the person cross compiling to change
+# this behavior if desired
+AC_LANG_PUSH(C)
+AC_CACHE_CHECK([for posix getpwnam_r],
+		ac_cv_func_posix_getpwnam_r,
+	[ac_cv_func_posix_getpwnam_r=no],
+        [ac_cv_func_posix_getpwnam_r=yes]
+)])
+AC_LANG_POP(C)
+
+if test "$ac_cv_func_posix_getpwnam_r" = yes; then
+#### Abstract sockets
+
+if test x$enable_abstract_sockets = xauto; then
+AC_LANG_PUSH(C)
+warn_on_xcompile=no
+AC_CACHE_CHECK([abstract socket namespace],
+if test x$warn_on_xcompile = xyes ; then
+  AC_MSG_WARN([Cannot check for abstract sockets when cross-compiling, please use --enable-abstract-sockets])
+fi
+AC_LANG_POP(C)
+fi

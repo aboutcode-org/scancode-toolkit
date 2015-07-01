@@ -1,0 +1,106 @@
+[PHP]
+
+;;;;;;;;;;;;;;;;;;;
+; About php.ini   ;
+;;;;;;;;;;;;;;;;;;;
+; This file controls many aspects of PHP's behavior.  In order for PHP to
+; read it, it must be named 'php.ini'.  PHP looks for it in the current
+; working directory, in the path designated by the environment variable
+; PHPRC, and in the path that was defined in compile time (in that order).
+; Under Windows, the compile-time path is the Windows directory.  The
+; path in which the php.ini file is looked for can be overridden using
+; the -c argument in command line mode.
+;
+; The syntax of the file is extremely simple.  Whitespace and Lines
+; beginning with a semicolon are silently ignored (as you probably guessed).
+; Section headers (e.g. [Foo]) are also silently ignored, even though
+; they might mean something in the future.
+;
+; Directives are specified using the following syntax:
+; directive = value
+; Directive names are *case sensitive* - foo=bar is different from FOO=bar.
+;
+; The value can be a string, a number, a PHP constant (e.g. E_ALL or M_PI), one
+; of the INI constants (On, Off, True, False, Yes, No and None) or an expression
+; (e.g. E_ALL & ~E_NOTICE), or a quoted string ("foo").
+;
+; Expressions in the INI file are limited to bitwise operators and parentheses:
+; |        bitwise OR
+; &        bitwise AND
+; ~        bitwise NOT
+; !        boolean NOT
+;
+; Boolean flags can be turned on using the values 1, On, True or Yes.
+; They can be turned off using the values 0, Off, False or No.
+;
+; An empty string can be denoted by simply not writing anything after the equal
+; sign, or by using the None keyword:
+;
+;  foo =         ; sets foo to an empty string
+;  foo = none    ; sets foo to an empty string
+;  foo = "none"  ; sets foo to the string 'none'
+;
+; If you use constants in your value, and these constants belong to a
+; dynamically loaded extension (either a PHP extension or a Zend extension),
+; you may only use these constants *after* the line that loads the extension.
+; 
+;
+;;;;;;;;;;;;;;;;;;;
+; About this file ;
+;;;;;;;;;;;;;;;;;;;
+; This is the recommended, PHP 5-style version of the php.ini-dist file.  It
+; sets some non standard settings, that make PHP more efficient, more secure,
+; and encourage cleaner coding.
+;
+; The price is that with these settings, PHP may be incompatible with some
+; applications, and sometimes, more difficult to develop with.  Using this
+; file is warmly recommended for production sites.  As all of the changes from
+; the standard settings are thoroughly documented, you can go over each one,
+; and decide whether you want to use it or not.
+;
+; For general information about the php.ini file, please consult the php.ini-dist
+; file, included in your PHP distribution.
+;
+; This file is different from the php.ini-dist file in the fact that it features
+; different values for several directives, in order to improve performance, while
+; possibly breaking compatibility with the standard out-of-the-box behavior of
+; PHP.  Please make sure you read what's different, and modify your scripts
+; accordingly, if you decide to use this file instead.
+;
+; - register_globals = Off         [Security, Performance]
+;     Global variables are no longer registered for input data (POST, GET, cookies,
+;     environment and other server variables).  Instead of using $foo, you must use
+;     you can use $_REQUEST["foo"] (includes any variable that arrives through the
+;     request, namely, POST, GET and cookie variables), or use one of the specific
+;     $_GET["foo"], $_POST["foo"], $_COOKIE["foo"] or $_FILES["foo"], depending
+;     on where the input originates.  Also, you can look at the
+;     import_request_variables() function.
+;     Note that register_globals is going to be depracated (i.e., turned off by
+;     default) in the next version of PHP, because it often leads to security bugs.
+;     Read http://php.net/manual/en/security.registerglobals.php for further
+;     information.
+; - register_long_arrays = Off     [Performance]
+;     Disables registration of the older (and deprecated) long predefined array
+;     variables ($HTTP_*_VARS).  Instead, use the superglobals that were
+;     introduced in PHP 4.1.0
+; - display_errors = Off           [Security]
+;     With this directive set to off, errors that occur during the execution of
+;     scripts will no longer be displayed as a part of the script output, and thus,
+;     will no longer be exposed to remote users.  With some errors, the error message
+;     content may expose information about your script, web server, or database
+;     server that may be exploitable for hacking.  Production sites should have this
+;     directive set to off.
+; - log_errors = On                [Security]
+;     This directive complements the above one.  Any errors that occur during the
+;     execution of your script will be logged (typically, to your server's error log,
+;     but can be configured in several ways).  Along with setting display_errors to off,
+;     this setup gives you the ability to fully understand what may have gone wrong,
+;     without exposing any sensitive information to remote users.
+; - output_buffering = 4096        [Performance]
+;     Set a 4KB output buffer.  Enabling output buffering typically results in less
+;     writes, and sometimes less packets sent on the wire, which can often lead to
+;     better performance.  The gain this directive actually yields greatly depends
+;     on which Web server you're working with, and what kind of scripts you're using.
+; - register_argc_argv = Off       [Performance]
+;     Disables registration of the somewhat redundant $argv and $argc global
+;     variables.

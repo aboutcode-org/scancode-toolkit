@@ -1,0 +1,9 @@
+[('linux-2.6.23/kernel/printk.c~',
+  'linux-2.6.23/kernel/printk.c',
+  "--- linux-2.6.23/kernel/printk.c~\n+++ linux-2.6.23/kernel/printk.c\n@@ -327,8 +327,14 @@\nfor (con = console_drivers; con; con = con->next) {\nif ((con->flags & CON_ENABLED) && con->write &&\n(cpu_online(smp_processor_id()) ||\n-\t\t\t\t(con->flags & CON_ANYTIME)))\n-\t\t\tcon->write(con, &LOG_BUF(start), end - start);\n+\t\t\t\t (con->flags & CON_ANYTIME))) {\n+\t\t\tif (con->flags & CON_LOGLEVEL) {\n+\t\t\t\tcon->write(con, &LOG_BUF(start), end - start);\n+\t\t\t}\n+\t\t\telse {\n+\t\t\t\tcon->write(con, &LOG_BUF(start + 3), end - start - 3);\n+\t\t\t}\n+\t\t}\n}\n}\n\n@@ -384,7 +390,6 @@\nLOG_BUF(cur_index + 1) <= '7' &&\nLOG_BUF(cur_index + 2) == '>') {\nmsg_level = LOG_BUF(cur_index + 1) - '0';\n-\t\t\tcur_index += 3;\nstart_print = cur_index;\n}\nwhile (cur_index != end) {"),
+ ('linux-2.6.23/include/linux/console.h~',
+  'linux-2.6.23/include/linux/console.h',
+  '--- linux-2.6.23/include/linux/console.h~\n+++ linux-2.6.23/include/linux/console.h\n@@ -90,6 +90,7 @@\n#define CON_ENABLED\t(4)\n#define CON_BOOT\t(8)\n#define CON_ANYTIME\t(16) /* Safe to call when cpu is offline */\n+#define CON_LOGLEVEL\t(32)\n\nstruct console {\nchar\tname[16];'),
+ ('linux-2.6.23/drivers/net/netconsole.c~',
+  'linux-2.6.23/drivers/net/netconsole.c',
+  '--- linux-2.6.23/drivers/net/netconsole.c~\n+++ linux-2.6.23/drivers/net/netconsole.c\n@@ -146,7 +146,7 @@\n\nstatic struct console netconsole = {\n.name = "netcon",\n-\t.flags = CON_ENABLED | CON_PRINTBUFFER,\n+\t.flags = CON_ENABLED | CON_PRINTBUFFER | CON_LOGLEVEL,\n.write = write_msg\n};\n')]

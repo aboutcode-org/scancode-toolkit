@@ -1,0 +1,422 @@
+(lp1
+V<project>\u000a
+p2
+aV  <modelVersion>4.0.0</modelVersion>\u000a
+p3
+aV  <groupId>easyconf</groupId>\u000a
+p4
+aV  <artifactId>easyconf</artifactId>\u000a
+p5
+aV  <name>Easyconf library</name>\u000a
+p6
+aV  <version>0.9.0</version>\u000a
+p7
+aV  <description>EasyConf is a library to access configuration of software components and applications. \u000a
+p8
+aV    It defines simple conventions to make it easier to use. It was born in a portlets-based \u000a
+p9
+aV    portal and has several features useful for this and similar environments.</description>\u000a
+p10
+aV  <url>http://easyconf.sourceforge.net</url>\u000a
+p11
+aV  <issueManagement>\u000a
+p12
+aV    <url>https://sourceforge.net/tracker/?group_id=131552&amp;atid=721404</url>\u000a
+p13
+aV  </issueManagement>\u000a
+p14
+aV  <ciManagement>\u000a
+p15
+aV    <notifiers>\u000a
+p16
+aV      <notifier>\u000a
+p17
+aV        <address>easyconf-users@sorceforge.net</address>\u000a
+p18
+aV      </notifier>\u000a
+p19
+aV    </notifiers>\u000a
+p20
+aV  </ciManagement>\u000a
+p21
+aV  <inceptionYear>2005</inceptionYear>\u000a
+p22
+aV  <mailingLists>\u000a
+p23
+aV    <mailingList>\u000a
+p24
+aV      <name>easyconf-users</name>\u000a
+p25
+aV      <subscribe>easyconf-users-subscribe@sourceforge.net</subscribe>\u000a
+p26
+aV      <unsubscribe>easyconf-users-unsubscribe@sourceforge.net</unsubscribe>\u000a
+p27
+aV      <archive>http://sourceforge.net/mailarchive/forum.php?forum=easyconf-users</archive>\u000a
+p28
+aV    </mailingList>\u000a
+p29
+aV  </mailingLists>\u000a
+p30
+aV  <developers>\u000a
+p31
+aV    <developer>\u000a
+p32
+aV      <id>jferrer</id>\u000a
+p33
+aV      <name>Jorge Ferrer</name>\u000a
+p34
+aV      <email>jferrer germinus.com</email>\u000a
+p35
+aV      <organization>Germinus XXI</organization>\u000a
+p36
+aV      <timezone>0</timezone>\u000a
+p37
+aV    </developer>\u000a
+p38
+aV    <developer>\u000a
+p39
+aV      <id>jjaimez</id>\u000a
+p40
+aV      <name>Jesús Jaimez</name>\u000a
+p41
+aV      <timezone>0</timezone>\u000a
+p42
+aV    </developer>\u000a
+p43
+aV    <developer>\u000a
+p44
+aV      <id>ifolmedo</id>\u000a
+p45
+aV      <name>Ismael Ferrer</name>\u000a
+p46
+aV      <email>iferrer germinus.com</email>\u000a
+p47
+aV      <organization>Germinus XXI</organization>\u000a
+p48
+aV      <timezone>0</timezone>\u000a
+p49
+aV    </developer>\u000a
+p50
+aV    <developer>\u000a
+p51
+aV      <id>agonzalez</id>\u000a
+p52
+aV      <name>Ã?lvaro GonzÃ¡lez</name>\u000a
+p53
+aV      <email>agonzalez germinus.com</email>\u000a
+p54
+aV      <organization>Germinus XXI</organization>\u000a
+p55
+aV      <timezone>0</timezone>\u000a
+p56
+aV    </developer>\u000a
+p57
+aV  </developers>\u000a
+p58
+aV  <scm>\u000a
+p59
+aV    <connection>scm:cvs:pserver:anonymous@cvs.sourceforge.net:/cvsroot/easyconf:easyconf</connection>\u000a
+p60
+aV    <developerConnection>scm:cvs:ext:jferrergerminus@cvs.sourceforge.net:/cvsroot/easyconf:easyconf</developerConnection>\u000a
+p61
+aV    <url>http://cvs.sourceforge.net/viewcvs.py/easyconf/</url>\u000a
+p62
+aV  </scm>\u000a
+p63
+aV  <organization>\u000a
+p64
+aV    <name>EasyConf team</name>\u000a
+p65
+aV    <url>http://www.sourceforge.net/projects/easyconf</url>\u000a
+p66
+aV  </organization>\u000a
+p67
+aV  <build>\u000a
+p68
+aV    <sourceDirectory>src/java</sourceDirectory>\u000a
+p69
+aV    <testSourceDirectory>src/test</testSourceDirectory>\u000a
+p70
+aV    <resources>\u000a
+p71
+aV      <resource>\u000a
+p72
+aV        <directory>src/conf</directory>\u000a
+p73
+aV        <includes>\u000a
+p74
+aV          <include>*.properties</include>\u000a
+p75
+aV          <include>*.xml</include>\u000a
+p76
+aV          <include>*.dtd</include>\u000a
+p77
+aV        </includes>\u000a
+p78
+aV      </resource>\u000a
+p79
+aV    </resources>\u000a
+p80
+aV    <testResources>\u000a
+p81
+aV      <testResource>\u000a
+p82
+aV        <directory>src/test</directory>\u000a
+p83
+aV        <includes>\u000a
+p84
+aV          <include>*.properties</include>\u000a
+p85
+aV          <include>*.xml</include>\u000a
+p86
+aV        </includes>\u000a
+p87
+aV      </testResource>\u000a
+p88
+aV    </testResources>\u000a
+p89
+aV    <plugins>\u000a
+p90
+aV      <plugin>\u000a
+p91
+aV        <artifactId>maven-surefire-plugin</artifactId>\u000a
+p92
+aV        <configuration>\u000a
+p93
+aV          <includes>\u000a
+p94
+aV            <include>com/germinus/easyconf/${test.run.type}Tests.java</include>\u000a
+p95
+aV          </includes>\u000a
+p96
+aV        </configuration>\u000a
+p97
+aV      </plugin>\u000a
+p98
+aV      <plugin>\u000a
+p99
+aV        <groupId>xdoclet</groupId>\u000a
+p100
+aV        <artifactId>maven-xdoclet-plugin</artifactId>\u000a
+p101
+aV        <version>1.2.1</version>\u000a
+p102
+aV        <configuration />\u000a
+p103
+aV      </plugin>\u000a
+p104
+aV    </plugins>\u000a
+p105
+aV  </build>\u000a
+p106
+aV  <dependencies>\u000a
+p107
+aV    <dependency>\u000a
+p108
+aV      <groupId>log4j</groupId>\u000a
+p109
+aV      <artifactId>log4j</artifactId>\u000a
+p110
+aV      <version>1.2.8</version>\u000a
+p111
+aV    </dependency>\u000a
+p112
+aV    <dependency>\u000a
+p113
+aV      <groupId>servletapi</groupId>\u000a
+p114
+aV      <artifactId>servletapi</artifactId>\u000a
+p115
+aV      <version>2.3</version>\u000a
+p116
+aV    </dependency>\u000a
+p117
+aV    <dependency>\u000a
+p118
+aV      <groupId>struts</groupId>\u000a
+p119
+aV      <artifactId>struts</artifactId>\u000a
+p120
+aV      <version>1.1</version>\u000a
+p121
+aV    </dependency>\u000a
+p122
+aV    <dependency>\u000a
+p123
+aV      <groupId>commons-configuration</groupId>\u000a
+p124
+aV      <artifactId>commons-configuration</artifactId>\u000a
+p125
+aV      <version>1.1</version>\u000a
+p126
+aV    </dependency>\u000a
+p127
+aV    <dependency>\u000a
+p128
+aV      <groupId>commons-collections</groupId>\u000a
+p129
+aV      <artifactId>commons-collections</artifactId>\u000a
+p130
+aV      <version>3.1</version>\u000a
+p131
+aV    </dependency>\u000a
+p132
+aV    <dependency>\u000a
+p133
+aV      <groupId>commons-lang</groupId>\u000a
+p134
+aV      <artifactId>commons-lang</artifactId>\u000a
+p135
+aV      <version>2.0</version>\u000a
+p136
+aV    </dependency>\u000a
+p137
+aV    <dependency>\u000a
+p138
+aV      <groupId>dom4j</groupId>\u000a
+p139
+aV      <artifactId>dom4j</artifactId>\u000a
+p140
+aV      <version>1.4</version>\u000a
+p141
+aV    </dependency>\u000a
+p142
+aV    <dependency>\u000a
+p143
+aV      <groupId>commons-logging</groupId>\u000a
+p144
+aV      <artifactId>commons-logging</artifactId>\u000a
+p145
+aV      <version>1.0.4</version>\u000a
+p146
+aV    </dependency>\u000a
+p147
+aV    <dependency>\u000a
+p148
+aV      <groupId>commons-digester</groupId>\u000a
+p149
+aV      <artifactId>commons-digester</artifactId>\u000a
+p150
+aV      <version>1.6</version>\u000a
+p151
+aV    </dependency>\u000a
+p152
+aV    <dependency>\u000a
+p153
+aV      <groupId>xerces</groupId>\u000a
+p154
+aV      <artifactId>xerces</artifactId>\u000a
+p155
+aV      <version>2.2.1</version>\u000a
+p156
+aV    </dependency>\u000a
+p157
+aV    <dependency>\u000a
+p158
+aV      <groupId>xml-apis</groupId>\u000a
+p159
+aV      <artifactId>xml-apis</artifactId>\u000a
+p160
+aV      <version>2.0.2</version>\u000a
+p161
+aV    </dependency>\u000a
+p162
+aV    <dependency>\u000a
+p163
+aV      <groupId>xdoclet</groupId>\u000a
+p164
+aV      <artifactId>xdoclet</artifactId>\u000a
+p165
+aV      <version>1.2.1</version>\u000a
+p166
+aV    </dependency>\u000a
+p167
+aV    <dependency>\u000a
+p168
+aV      <groupId>junit</groupId>\u000a
+p169
+aV      <artifactId>junit</artifactId>\u000a
+p170
+aV      <version>3.8.1</version>\u000a
+p171
+aV    </dependency>\u000a
+p172
+aV    <dependency>\u000a
+p173
+aV      <groupId>commons-beanutils</groupId>\u000a
+p174
+aV      <artifactId>commons-beanutils-core</artifactId>\u000a
+p175
+aV      <version>1.7.0</version>\u000a
+p176
+aV    </dependency>\u000a
+p177
+aV    <dependency>\u000a
+p178
+aV      <groupId>commons-beanutils</groupId>\u000a
+p179
+aV      <artifactId>commons-beanutils-bean-collections</artifactId>\u000a
+p180
+aV      <version>1.7.0</version>\u000a
+p181
+aV    </dependency>\u000a
+p182
+aV    <dependency>\u000a
+p183
+aV      <groupId>xdoclet</groupId>\u000a
+p184
+aV      <artifactId>xdoclet-web-module</artifactId>\u000a
+p185
+aV      <version>1.2.1</version>\u000a
+p186
+aV    </dependency>\u000a
+p187
+aV    <dependency>\u000a
+p188
+aV      <groupId>mx4j</groupId>\u000a
+p189
+aV      <artifactId>mx4j-jmx</artifactId>\u000a
+p190
+aV      <version>2.1.1</version>\u000a
+p191
+aV    </dependency>\u000a
+p192
+aV    <dependency>\u000a
+p193
+aV      <groupId>mx4j</groupId>\u000a
+p194
+aV      <artifactId>mx4j-impl</artifactId>\u000a
+p195
+aV      <version>2.1.1</version>\u000a
+p196
+aV    </dependency>\u000a
+p197
+aV  </dependencies>\u000a
+p198
+aV  <distributionManagement>\u000a
+p199
+aV    <repository>\u000a
+p200
+aV      <id>default</id>\u000a
+p201
+aV      <name>Default Repository</name>\u000a
+p202
+aV      <url>file:///www/easyconf/builds/</url>\u000a
+p203
+aV    </repository>\u000a
+p204
+aV    <site>\u000a
+p205
+aV      <id>default</id>\u000a
+p206
+aV      <name>Default Site</name>\u000a
+p207
+aV      <url>scp://shell.sourceforge.net//home/groups/e/ea/easyconf/htdocs</url>\u000a
+p208
+aV    </site>\u000a
+p209
+aV  </distributionManagement>\u000a
+p210
+aV</project>
+p211
+a.

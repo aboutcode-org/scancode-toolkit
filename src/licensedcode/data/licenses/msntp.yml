@@ -1,0 +1,8 @@
+key: msntp
+short_name: MSNTP License
+name: MSNTP software license
+category: Copyleft
+owner: Fedora
+homepage_url: http://fedoraproject.org/wiki/Licensing/MSNTP
+text_urls:
+    - http://fedoraproject.org/wiki/Licensing/MSNTP

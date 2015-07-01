@@ -1,0 +1,10 @@
+licenses:
+    - artistic-2.0
+    - bsd-new
+    - bsd-new
+    - bzip2-libbzip-1.0.5
+    - gpl-1.0-plus
+    - unicode
+    - zlib
+expected_failure: yes
+sort: true

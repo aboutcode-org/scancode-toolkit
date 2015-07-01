@@ -1,0 +1,11 @@
+--- linux-2.6.23-orig/drivers/net/netconsole.c	2009-05-18 13:58:47.000000000 +0200
++++ linux-2.6.23/drivers/net/netconsole.c	2009-05-18 16:27:28.000000000 +0200
+@@ -166,7 +166,7 @@
+ 		option_setup(config);
+ 
+ 	if(!configured) {
+-		printk("netconsole: not configured, aborting\n");
++		printk(KERN_NOTICE "netconsole: not configured\n");
+ 		return 0;
+ 	}
+ 

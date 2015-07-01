@@ -1,0 +1,91 @@
+--- linux-2.6.23/mm/bpa2.c.org	2008-11-12 10:28:12.000000000 +0100
++++ linux-2.6.23/mm/bpa2.c	2008-11-11 18:01:32.000000000 +0100
+@@ -344,25 +344,6 @@
+ }
+ 
+ /*
+- * Create legacy "bigphysarea" partition (if kindly asked ;-)
+- */
+-static int __init bpa2_bigphys_setup(char *str)
+-{
+-	const char *name = "bigphysarea";
+-	int pages;
+-
+-	if (get_option(&str, &pages) != 1) {
+-		printk(KERN_ERR "bpa2: wrong 'bigphysarea' parameter\n");
+-		return -EINVAL;
+-	}
+-
+-	bpa2_add_part(&name, 1, 0, pages << PAGE_SHIFT, BPA2_NORMAL);
+-
+-	return 1;
+-}
+-__setup("bigphysarea=", bpa2_bigphys_setup);
+-
+-/*
+  * Create "bpa2parts"-defined partitions
+  */
+ static int __init bpa2_parts_setup(char *str)
+--- linux-2.6.23/init/main.c.org	2008-11-12 10:05:16.000000000 +0100
++++ linux-2.6.23/init/main.c	2008-11-11 18:40:14.000000000 +0100
+@@ -56,6 +56,9 @@
+ #include <linux/device.h>
+ #include <linux/kthread.h>
+ #include <linux/immediate.h>
++#ifdef CONFIG_BPA2
++#include <linux/bpa2.h>
++#endif
+ 
+ #include <asm/io.h>
+ #include <asm/bugs.h>
+@@ -511,6 +512,40 @@
+ {
+ }
+ 
++unsigned long dvr_bigphysarea_addition __attribute__ ((section (".dvr_bigphysarea_addition"))) = 0;
++unsigned long dvb_bigphysarea_addition __attribute__ ((section (".dvb_bigphysarea_addition"))) = 0;
++unsigned long testapp_bigphysarea_addition __attribute__ ((section (".testapp_bigphysarea_addition"))) = 0;
++
++#ifdef CONFIG_BPA2
++static void __init init_bigphysarea(void)
++{
++	struct bpa2_partition_desc partdesc = {
++		.name   = "bigphysarea",
++		.start  = 0,
++		.size   = 0,
++		.flags  = BPA2_NORMAL,
++		.aka    = NULL,
++	};
++
++	if (dvr_bigphysarea_addition) {
++		printk(KERN_NOTICE "Kernel has DVR version 5 support\n");
++	} else {
++		printk(KERN_NOTICE "Kernel has NOT DVR version 5\n");
++	}
++       if (dvb_bigphysarea_addition) {
++               printk(KERN_NOTICE "Kernel has DVB support\n");
++       } else {
++               printk(KERN_NOTICE "Kernel has NOT DVB support\n");
++       }
++	partdesc.size = (CONFIG_VIP19XX_BIGPHYSAREA_SIZE
++			 + dvr_bigphysarea_addition
++			 + dvb_bigphysarea_addition
++			 + testapp_bigphysarea_addition) << PAGE_SHIFT;
++
++	bpa2_init(&partdesc, 1);
++}
++#endif
++
+ asmlinkage void __init start_kernel(void)
+ {
+ 	char * command_line;
+@@ -564,6 +589,9 @@
+ 	parse_args("Booting kernel", static_command_line, __start___param,
+ 		   __stop___param - __start___param,
+ 		   &unknown_bootoption);
++#ifdef CONFIG_BPA2
++	init_bigphysarea();
++#endif
+ 	if (!irqs_disabled()) {
+ 		printk(KERN_WARNING "start_kernel(): bug: interrupts were "
+ 				"enabled *very* early, fixing it\n");

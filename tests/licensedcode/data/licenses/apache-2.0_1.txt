@@ -1,0 +1,57 @@
+Manifest-Version: 1.0
+Export-Package: org.apache.log4j.net;uses:="org.apache.log4j,org.apach
+ e.log4j.spi,javax.naming,org.apache.log4j.helpers,javax.jms,org.apach
+ e.log4j.xml,javax.mail,javax.mail.internet,org.w3c.dom,javax.jmdns",o
+ rg.apache.log4j.jmx;uses:="org.apache.log4j,javax.management,com.sun.
+ jdmk.comm,org.apache.log4j.helpers,org.apache.log4j.spi",org.apache.l
+ og4j.jdbc;uses:="org.apache.log4j,org.apache.log4j.spi",org.apache.lo
+ g4j.config;uses:="org.apache.log4j.helpers,org.apache.log4j,org.apach
+ e.log4j.spi",org.apache.log4j.helpers;uses:="org.apache.log4j,org.apa
+ che.log4j.spi,org.apache.log4j.pattern",org.apache.log4j;uses:="org.a
+ pache.log4j.spi,org.apache.log4j.helpers,org.apache.log4j.pattern,org
+ .apache.log4j.or,org.apache.log4j.config",org.apache.log4j.or.jms;use
+ s:="org.apache.log4j.helpers,javax.jms,org.apache.log4j.or",org.apach
+ e.log4j.nt;uses:="org.apache.log4j.helpers,org.apache.log4j,org.apach
+ e.log4j.spi",org.apache.log4j.or.sax;uses:="org.apache.log4j.or,org.x
+ ml.sax",org.apache.log4j.pattern;uses:="org.apache.log4j.helpers,org.
+ apache.log4j.spi,org.apache.log4j,org.apache.log4j.or",org.apache.log
+ 4j.spi;uses:="org.apache.log4j,org.apache.log4j.helpers,com.ibm.uvm.t
+ ools,org.apache.log4j.or",org.apache.log4j.or;uses:="org.apache.log4j
+ .helpers,org.apache.log4j.spi,org.apache.log4j",org.apache.log4j.xml;
+ uses:="javax.xml.parsers,org.w3c.dom,org.xml.sax,org.apache.log4j.con
+ fig,org.apache.log4j.helpers,org.apache.log4j,org.apache.log4j.spi,or
+ g.apache.log4j.or",org.apache.log4j.varia;uses:="org.apache.log4j.spi
+ ,org.apache.log4j,org.apache.log4j.helpers"
+Built-By: curta
+Tool: Bnd-0.0.357
+Bundle-Name: Apache Log4j
+Created-By: Apache Maven Bundle Plugin
+Bundle-Vendor: Apache Software Foundation
+Build-Jdk: 1.6.0_16
+Bundle-Version: 1.2.16
+Bnd-LastModified: 1270008983166
+Bundle-ManifestVersion: 2
+Bundle-Description: Apache Log4j 1.2
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-DocURL: http://logging.apache.org/log4j/1.2
+Bundle-SymbolicName: log4j
+Import-Package: com.ibm.uvm.tools;resolution:=optional,com.sun.jdmk.co
+ mm;resolution:=optional,com.sun.jdmk.comm;resolution:=optional,javax.
+ jmdns,javax.jms;resolution:=optional,javax.mail;resolution:=optional,
+ javax.mail.internet;resolution:=optional,javax.management;resolution:
+ =optional,javax.naming;resolution:=optional,javax.swing;resolution:=o
+ ptional,javax.swing.border;resolution:=optional,javax.swing.event;res
+ olution:=optional,javax.swing.table;resolution:=optional,javax.swing.
+ text;resolution:=optional,javax.swing.tree;resolution:=optional,javax
+ .xml.parsers,org.apache.log4j,org.apache.log4j.config,org.apache.log4
+ j.helpers,org.apache.log4j.jdbc,org.apache.log4j.jmx,org.apache.log4j
+ .net,org.apache.log4j.nt,org.apache.log4j.or,org.apache.log4j.or.jms,
+ org.apache.log4j.or.sax,org.apache.log4j.pattern,org.apache.log4j.spi
+ ,org.apache.log4j.varia,org.apache.log4j.xml,org.w3c.dom,org.xml.sax,
+ org.xml.sax.helpers
+
+Name: org.apache.log4j
+Implementation-Vendor: "Apache Software Foundation"
+Implementation-Title: log4j
+Implementation-Version: 1.2.16
+

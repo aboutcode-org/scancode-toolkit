@@ -1,0 +1,9 @@
+key: nrl
+short_name: NRL License
+name: NRL License
+category: Attribution
+owner: NRL
+homepage_url: http://web.mit.edu/network/isakmp/nrllicense.html
+spdx_license_key: NRL
+spdx_full_name: NRL License
+spdx_url: http://spdx.org/licenses/NRL

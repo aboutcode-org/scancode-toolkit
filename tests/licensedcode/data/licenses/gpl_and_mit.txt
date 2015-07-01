@@ -1,0 +1,19 @@
+/**
+ * jQuery-Plugin "preloadCssImages"
+ * by Scott Jehl, scott@filamentgroup.com
+ * http://www.filamentgroup.com
+ * reference article: http://www.filamentgroup.com/lab/update_automatically_preload_images_from_css_with_jquery/
+ * demo page: http://www.filamentgroup.com/examples/preloadImages/index_v2.php
+ * 
+ * Copyright (c) 2008 Filament Group, Inc
+ * Dual licensed under the MIT (filamentgroup.com/examples/mit-license.txt) and GPL (filamentgroup.com/examples/gpl-license.txt) licenses.
+ *
+ * Version: 5.0, 10.31.2008
+ * Changelog:
+ * 	02.20.2008 initial Version 1.0
+ *    06.04.2008 Version 2.0 : removed need for any passed arguments. Images load from any and all directories.
+ *    06.21.2008 Version 3.0 : Added options for loading status. Fixed IE abs image path bug (thanks Sam Pohlenz).
+ *    07.24.2008 Version 4.0 : Added support for @imported CSS (credit: http://marcarea.com/). Fixed support in Opera as well. 
+ *    10.31.2008 Version: 5.0 : Many feature and performance enhancements from trixta
+ * --------------------------------------------------------------------
+ */

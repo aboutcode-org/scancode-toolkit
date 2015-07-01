@@ -1,0 +1,17 @@
+--- linux-2.6.23/drivers/mtd/cmdlinepart.c.orig	2006-06-18 03:49:35.000000000 +0200
++++ linux-2.6.23/drivers/mtd/cmdlinepart.c	2007-01-26 16:34:34.000000000 +0100
+@@ -315,10 +315,14 @@
+ 		{
+ 			for(i = 0, offset = 0; i < part->num_parts; i++)
+ 			{
++#if 0
+ 				if (part->parts[i].offset == OFFSET_CONTINUOUS)
+ 				  part->parts[i].offset = offset;
+ 				else
+ 				  offset = part->parts[i].offset;
++#else
++				offset = part->parts[i].offset;
++#endif
+ 				if (part->parts[i].size == SIZE_REMAINING)
+ 				  part->parts[i].size = master->size - offset;
+ 				if (offset + part->parts[i].size > master->size)

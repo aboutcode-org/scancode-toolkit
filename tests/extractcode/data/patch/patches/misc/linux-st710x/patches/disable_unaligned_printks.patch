@@ -1,0 +1,30 @@
+--- linux-2.6.23/arch/sh/kernel/traps.c.orig	2009-08-11 13:57:36.000000000 +0200
++++ linux-2.6.23/arch/sh/kernel/traps.c	2009-08-11 14:02:40.000000000 +0200
+@@ -655,11 +655,12 @@
+ 			goto uspace_segv;
+ 
+ 		/* shout about userspace fixups */
+-		if ((se_usermode & 1) && !(test_thread_flag (TIF_UAC_NOPRINT)))
++/*		if ((se_usermode & 1) && !(test_thread_flag (TIF_UAC_NOPRINT)))
+ 			printk("Unaligned userspace access "
+ 			       "in \"%s\" pid=%d pc=0x%p ins=0x%04hx\n",
+ 			       current->comm,current->pid,
+ 			       (u16*)regs->pc,instruction);
++*/
+ #endif
+ 
+ 		if (se_usermode & 2)
+@@ -705,11 +706,12 @@
+ 	} else {
+ 		se_sys += 1;
+ 
+-		if (se_kernmode_warn)
++/* 		if (se_kernmode_warn)
+ 			printk("Unaligned kernel access "
+ 			       "on behalf of \"%s\" pid=%d pc=0x%p ins=0x%04hx\n",
+ 			       current->comm,current->pid,(u16*)regs->pc,
+ 			       instruction);
++ */
+ 
+ 		if (regs->pc & 1)
+ 			die("unaligned program counter", regs, error_code);

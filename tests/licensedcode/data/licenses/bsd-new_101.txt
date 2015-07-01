@@ -1,0 +1,246 @@
+.\"	dhcrelay.8
+.\"
+.\" Copyright (c) 1997, 1998 The Internet Software Consortium.
+.\" All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\"
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\" 3. Neither the name of The Internet Software Consortium nor the names
+.\"    of its contributors may be used to endorse or promote products derived
+.\"    from this software without specific prior written permission.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE INTERNET SOFTWARE CONSORTIUM AND
+.\" CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+.\" INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+.\" DISCLAIMED.  IN NO EVENT SHALL THE INTERNET SOFTWARE CONSORTIUM OR
+.\" CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+.\" SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+.\" LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+.\" USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+.\" ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+.\" OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+.\" OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.\" This software has been written for the Internet Software Consortium
+.\" by Ted Lemon in cooperation with Vixie
+.\" Enterprises.  To learn more about the Internet Software Consortium,
+.\" see ``http://www.isc.org/isc''.  To learn more about Vixie
+.\" Enterprises, see ``http://www.vix.com''.
+.TH dhcrelay 8
+.SH NAME
+dhcrelay - Dynamic Host Configuration Protocol Relay Agent
+.SH SYNOPSIS
+.B dhcrelay
+[
+.B -p
+.I port
+]
+[
+.B -d
+]
+[
+.B -q
+]
+[
+.B -i
+.I if0
+[
+.B ...
+.B -i
+.I ifN
+]
+]
+[
+.B -a
+]
+[
+.B -A
+.I length
+]
+[
+.B -D
+]
+[
+.B -m
+.I append
+|
+.I replace
+|
+.I forward
+|
+.I discard
+]
+.I server0
+[
+.I ...serverN
+]
+.SH DESCRIPTION
+The Internet Software Consortium DHCP Relay Agent, dhcrelay, provides a
+means for relaying DHCP and BOOTP requests from a subnet to which
+no DHCP server is directly connected to one or more DHCP servers on other
+subnets.
+.SH OPERATION
+.PP
+The DHCP Relay Agent listens for DHCP and BOOTP queries and responses.
+When a query is received from a client, dhcrelay forwards it to the
+list of DHCP servers specified on the command line.  When a reply is
+received from a server, it is broadcast or unicast (according to the
+relay agent's ability or the client's request) on the network from
+which the original request came.
+.SH COMMAND LINE
+.PP
+The names of the network interfaces that dhcrelay should attempt to
+configure may be specified on the command line using the
+.B -i
+option.  If no interface names
+are specified on the command line dhcrelay will identify all network
+interfaces, elimininating non-broadcast interfaces if possible, and
+attempt to configure each interface.
+.PP
+The
+.B -i
+flag can be used to specify the network interfaces on which the relay
+agent should listen.   In general, it must listen not only on those
+network interfaces to which clients are attached, but also on those
+network interfaces to which the server (or the router that reaches the
+server) is attached.   However, in some cases it may be necessary to
+exclude some networks; in this case, you must list all those network
+interfaces that should \fInot\fR be excluded using the \fB-i\fR flag.
+.PP
+In some cases it
+.I is
+helpful for the relay agent to forward requests from networks on which
+a DHCP server is running to other DHCP servers.   This would be the
+case if two DHCP servers on different networks were being used to
+provide backup service for each other's networks.
+.PP
+If dhcrelay should listen and transmit on a port other than the
+standard (port 67), the
+.B -p
+flag may used.  It should be followed by the udp port number that
+dhcrelay should use.  This is mostly useful for debugging purposes.
+.PP
+Dhcrelay will normally run in the foreground until it has configured
+an interface, and then will revert to running in the background.
+To run force dhcrelay to always run as a foreground process, the
+.B -d
+flag should be specified.  This is useful when running dhcrelay under
+a debugger, or when running it out of inittab on System V systems.
+.PP
+Dhcrelay will normally print its network configuration on startup.
+This can be unhelpful in a system startup script - to disable this
+behaviour, specify the
+.B -q
+flag.
+.SH RELAY AGENT INFORMATION OPTIONS
+If the
+.B -a
+flag is set the relay agent will append an agent option field to each
+request before forwarding it to the server.   Agent option fields in
+responses sent from servers to clients will be stripped before
+forwarding such responses back to the client.
+.PP
+The agent option field will contain two agent options: the Circuit ID
+suboption and the Agent ID suboption.  Currently, the Circuit ID will
+be the printable name of the interface on which the client request was
+received.   The Agent ID will be the value that the relay agent stores
+in the DHCP packet's giaddr field.   The client supports inclusion of
+a Remote ID suboption as well, but this is not used by default.
+.PP
+.I Note:
+The Agent ID suboption is not defined in the current Relay Agent
+Information Option draft (draft-ietf-dhc-agent-options-03.txt), but
+has been proposed for inclusion in the next draft.
+.PP
+Relay Agent options are added to a DHCP packet without the knowledge
+of the DHCP client.   The client may have filled the DHCP packet
+option buffer completely, in which case there theoretically isn't any
+space to add Agent options.   However, the DHCP server may be able to
+handle a much larger packet than most DHCP clients would send.   The
+current Agent Options draft requires that the relay agent use a
+maximum packet size of 576 bytes.   
+.PP
+It is recommended that with the Internet Software Consortium DHCP
+server, the maximum packet size be set to about 1400, allowing plenty
+of extra space in which the relay agent can put the agent option
+field, while still fitting into the Ethernet MTU size.  This can be
+done by specifying the
+.B -A
+flag, followed by the desired maximum packet size (e.g., 1400).
+.PP
+Note that this is reasonably safe to do even if the MTU between the
+server and the client is less than 1500, as long as the hosts on which
+the server and client are running support IP fragmentation (and they
+should).  With some knowledge as to how large the agent options might
+get in a particular configuration, this parameter can be tuned as
+finely as necessary.
+.PP
+It is possible for a relay agent to receive a packet which already
+contains an agent option field.  If this packet does not have a giaddr
+set, the standard requires that the packet be discarded.
+.PP
+If giaddr is set, the server may handle the situation in one of four
+ways: it may
+.I append
+its own set of relay options to the packet, leaving the
+supplied option field intact.   It may
+.I replace
+the existing agent option field.
+It may
+.I forward
+the packet unchanged.   Or, it may
+.I discard
+it.
+.PP
+Which of these behaviours is followed by the Internet Software
+Consortium DHCP Relay Agent may be configured with the
+.B -m
+flag, followed by one of the four keywords specified in
+.I italics
+above.
+.PP
+When the relay agent receives a reply from a server that it's supposed
+to forward to a client, and Relay Agent Information option processing
+is enabled, the relay agent scans the packet for Relay Agent
+Information options and removes them.   As it's scanning, if it finds
+a Relay Agent Information option field containing an Agent ID
+suboption that matches one of its IP addresses, that option is
+recognized as its own.   If no such option is found, the relay agent
+can either drop the packet, or relay it anyway.   If the
+.B -D
+option is specified, all packets that don't contain a match will be
+dropped.
+.SH SPECIFYING DHCP SERVERS
+The name or IP address of at least one DHCP server to which DHCP and
+BOOTP requests should be relayed must be specified on the command
+line.
+.SH SEE ALSO
+dhclient(8), dhcpd(8), RFC2132, RFC2131, draft-ietf-dhc-agent-options-03.txt.
+.SH BUGS
+It should be possible for the user to define the Circuit ID and Remote
+ID values on a per-interface basis.
+.PP
+The relay agent should not relay packets received on a physical
+network to DHCP servers on the same physical network - if they do, the
+server will receive duplicate packets.   In order to fix this,
+however, the relay agent needs to be able to learn about the network
+topology, which requires that it have a configuration file.
+.SH AUTHOR
+.B dhcrelay(8)
+has been written for the Internet Software Consortium
+by Ted Lemon in cooperation with Vixie
+Enterprises.  To learn more about the Internet Software Consortium,
+see
+.B http://www.vix.com.
+To learn more about Vixie
+Enterprises, see
+.B http://www.vix.com.

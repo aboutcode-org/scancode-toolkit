@@ -1,0 +1,15 @@
+key: spl-1.0
+short_name: SPL 1.0
+name: Sun Public License 1.0
+category: Copyleft Limited
+owner: Oracle (Sun)
+homepage_url: http://www.netbeans.org/about/legal/spl.html
+spdx_license_key: SPL-1.0
+spdx_full_name: Sun Public License
+spdx_url: http://spdx.org/licenses/SPL-1.0
+spdx_notes: This license is OSI certified
+text_urls:
+    - http://java.sun.com/spl.html
+    - https://fedoraproject.org/wiki/Licensing/Sun_Public_License
+osi_url: http://opensource.org/licenses/sunpublic.php
+faq_url: http://www.netbeans.org/kb/faqs/license.html

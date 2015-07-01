@@ -1,0 +1,204 @@
+Index: linux-2.6.23/drivers/mtd/maps/Kconfig
+===================================================================
+--- linux-2.6.23.orig/drivers/mtd/maps/Kconfig
++++ linux-2.6.23/drivers/mtd/maps/Kconfig
+@@ -614,5 +614,11 @@ config MTD_PLATRAM
+ 
+ 	  This selection automatically selects the map_ram driver.
+ 
++config MTD_VIP19XX_NOR
++       tristate "Map driver for Motorola VIP19xx board"
++       depends on SH_MOTOROLA_VIP19XX && MTD_CFI_INTELEXT
++       help
++         Map driver for the NOR flash on Motorola VIP19xx boards.
++
+ endmenu
+ 
+Index: linux-2.6.23/drivers/mtd/maps/Makefile
+===================================================================
+--- linux-2.6.23.orig/drivers/mtd/maps/Makefile
++++ linux-2.6.23/drivers/mtd/maps/Makefile
+@@ -71,3 +71,4 @@ obj-$(CONFIG_MTD_PLATRAM)	+= plat-ram.o
+ obj-$(CONFIG_MTD_OMAP_NOR)	+= omap_nor.o
+ obj-$(CONFIG_MTD_MTX1)		+= mtx-1_flash.o
+ obj-$(CONFIG_MTD_TQM834x)	+= tqm834x.o
++obj-$(CONFIG_MTD_VIP19XX_NOR)	+= vip19xx_nor.o
+Index: linux-2.6.23/drivers/mtd/maps/vip19xx_nor.c
+===================================================================
+--- /dev/null
++++ linux-2.6.23/drivers/mtd/maps/vip19xx_nor.c
+@@ -0,0 +1,174 @@
++/*
++ *---------------------------------------------------------------------------
++ *
++ * vip19xx_nor.c
++ *
++ * Copyright (c) 2008-2011 Motorola, Inc.
++ * All rights reserved.
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions
++ * are met:
++ * 1. Redistributions of source code must retain the above copyright
++ * notice, this list of conditions and the following disclaimer.
++ * 2. Redistributions in binary form must reproduce the above copyright
++ * notice, this list of conditions and the following disclaimer in the
++ * documentation and/or other materials provided with the distribution.
++ * 3. The name of the author may not be used to endorse or promote products
++ * derived from this software without specific prior written permission.
++ *
++ * Alternatively, this software may be distributed under the terms of the
++ * GNU General Public License ("GPL") version 2 as published by the Free
++ * Software Foundation.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
++ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
++ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
++ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
++ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
++ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
++ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
++ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
++ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++ *
++ *---------------------------------------------------------------------------
++ */
++
++#include <asm/vip19xx.h>
++#include <linux/module.h>
++#include <linux/kernel.h>
++#include <linux/init.h>
++#include <linux/ioport.h>
++#include <linux/mtd/cfi.h>
++#include <linux/mtd/mtd.h>
++#include <linux/mtd/map.h>
++#include <linux/mtd/physmap.h>
++#include <linux/mtd/partitions.h>
++#include <linux/notifier.h>
++
++int register_machine_restart_notifier(struct notifier_block * nb);
++
++static struct map_info onboard_map = {
++	.name = "Onboard_Flash",
++	.phys = VIP19XX_NOR_FLASH_BASE,
++	.size = VIP19XX_NOR_FLASH_SIZE,
++	.bankwidth = VIP19XX_NOR_FLASH_BANKWIDTH
++};
++
++static struct mtd_partition onboard_partitions[2] = {
++	{
++	 .name = "FFS area",
++	 .size = VIP19XX_NOR_FLASH_FFS_SIZE,
++	 .offset = (VIP19XX_NOR_FLASH_SIZE - VIP19XX_NOR_FLASH_FFS_SIZE),
++	},
++	{
++	 .name = "Raw area",
++	 .size = (VIP19XX_NOR_FLASH_SIZE - VIP19XX_NOR_FLASH_FFS_SIZE),
++	 .offset = 0x00000000,
++	}
++};
++
++static void set_emi_cs(int active)
++{
++	void __iomem *emi = ioremap_nocache(VIP19XX_EMI_CONFIG_BASE, VIP19XX_EMI_CONFIG_SIZE);
++	if (active) {
++		VIP19XX_EMI_ENABLE_CS(emi, VIP19XX_NOR_FLASH_EMI_BANK);
++	}
++	else {
++		VIP19XX_EMI_DISABLE_CS(emi, VIP19XX_NOR_FLASH_EMI_BANK);
++	}
++	iounmap(emi);
++}
++
++/*
++ * Set chip to FL_READY state before restarting
++ * Similar to do_read_onechip (cfi_cmdset_0001.c), minus mutexing.
++ * Enables and disables the Chip select pulse on the EMI.
++ */
++static int machine_restart_notifier(struct notifier_block *nb,
++                                    unsigned long val,
++                                    void *v)
++{
++	struct map_info *map = &onboard_map;
++	struct cfi_private *cfi = map->fldrv_priv;
++
++	set_emi_cs(1);
++	map_write(map, CMD(0xff), 0);
++	set_emi_cs(0);
++	return NOTIFY_OK;
++}
++
++static struct notifier_block restart_notifier_block = {
++	machine_restart_notifier, NULL, 0
++};
++
++static struct mtd_info *onboard_mtd;
++static struct mtd_partition *parsed_parts;
++static const char *probes[] = { "cmdlinepart", NULL };
++
++static int __init init(void)
++{
++	int nr_parts = 0;
++
++	/* Enable writing to Flash */
++	set_emi_cs(1);
++
++	register_machine_restart_notifier(&restart_notifier_block);
++
++	printk(KERN_NOTICE "VIP19xx onboard flash device\n");
++
++	onboard_map.virt =
++		(unsigned long *)ioremap_nocache(onboard_map.phys, onboard_map.size);
++	if (onboard_map.virt == 0) {
++		printk(KERN_ERR "Failed to ioremap onboard flash\n");
++	}
++	else {
++#ifndef CONFIG_MTD_COMPLEX_MAPPINGS
++		simple_map_init(&onboard_map);
++#endif
++		onboard_mtd = do_map_probe("cfi_probe", &onboard_map);
++		if (onboard_mtd != NULL) {
++			onboard_mtd->owner = THIS_MODULE;
++#ifdef CONFIG_MTD_CMDLINE_PARTS
++				nr_parts = parse_mtd_partitions(onboard_mtd, probes,
++								&parsed_parts, 0);
++#endif
++				if (nr_parts <= 0) {
++					add_mtd_partitions(onboard_mtd,
++							   onboard_partitions,
++							   ARRAY_SIZE
++							   (onboard_partitions));
++				}
++				else {
++					add_mtd_partitions(onboard_mtd, parsed_parts,
++							   nr_parts);
++				}
++		}
++		else {
++			iounmap((void *)onboard_map.virt);
++		}
++	}
++
++	return 0;
++}
++
++static void __exit cleanup(void)
++{
++	if (onboard_mtd != NULL) {
++		del_mtd_partitions(onboard_mtd);
++		map_destroy(onboard_mtd);
++	}
++
++	if (onboard_map.virt != 0) {
++		iounmap((void *)onboard_map.virt);
++		onboard_map.virt = 0;
++	}
++}
++
++module_init(init);
++module_exit(cleanup);
++
++MODULE_LICENSE("GPL");
++MODULE_AUTHOR("Erik Johansson <erik.johansson@motorola.com>");
++MODULE_DESCRIPTION("MTD map and partitions for Motorola VIP19xx boards");

@@ -1,0 +1,8 @@
+key: net-snmp
+short_name: Net SNMP License
+name: Net SNMP License
+category: Attribution
+owner: Net-SNMP
+homepage_url: http://net-snmp.sourceforge.net/about/license.html
+text_urls:
+    - http://net-snmp.sourceforge.net/about/license.html

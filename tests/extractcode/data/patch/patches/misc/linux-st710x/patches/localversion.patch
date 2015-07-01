@@ -1,0 +1,6 @@
+diff -u -p /home/jonsv322/motorola/DEV_7105_erik_rulez_2/base/3pp/linux-st710x/linux-2.6.23/localversion-stm\~ /home/jonsv322/motorola/DEV_7105_erik_rulez_2/base/3pp/linux-st710x/linux-2.6.23/localversion-stm
+--- linux-2.6.23/localversion-stm~	2009-04-07 08:01:25.000000000 +0200
++++ linux-2.6.23/localversion-stm	2009-06-09 14:31:03.000000000 +0200
+@@ -1 +1 @@
+-_stm23_A18B
++_stm23_0121

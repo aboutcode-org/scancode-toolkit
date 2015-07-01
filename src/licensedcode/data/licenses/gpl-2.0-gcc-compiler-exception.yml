@@ -1,0 +1,8 @@
+key: gpl-2.0-gcc-compiler-exception
+short_name: GPL 2.0 with GCC compiler exception
+name: >-
+    GNU General Public License 2.0 with GCC compiler exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+other_urls:
+    - http://www.gnu.org/licenses/gpl-2.0.txt

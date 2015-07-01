@@ -1,0 +1,9 @@
+key: caldera
+short_name: Caldera License
+name: Caldera License
+category: Attribution
+owner: Caldera
+homepage_url: http://www.lemis.com/grog/UNIX/ancient-source-all.pdf
+spdx_license_key: Caldera
+spdx_full_name: Caldera License
+spdx_url: http://spdx.org/licenses/Caldera

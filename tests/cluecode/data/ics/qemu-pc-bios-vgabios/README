@@ -1,0 +1,19 @@
+your needs.
+
+
+Copyright and License
+---------------------
+This program has been written by Christophe Bothamy
+The source code contains code ripped from rombios.c of plex86, written
+by Kevin Lawton <kevin2001@yahoo.com>
+
+The source code contains fonts from fntcol16.zip (c) by Joseph Gil avalable at :
+ftp://ftp.simtel.net/pub/simtelnet/msdos/screen/fntcol16.zip
+These fonts are public domain
+  - Christophe
+    . added lfb-mode numbers (patch from mathis)
+    . updated the Makefile
+    . removed display of copyrights.
+    . changed the Copyright string to "LGPL VGABios developers"
+  - Volker
+    . set the cursor shape depending on the current font height

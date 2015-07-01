@@ -1,0 +1,17 @@
+key: artistic-2.0
+short_name: Artistic 2.0
+name: Artistic License 2.0
+category: Copyleft Limited
+owner: Perl Foundation
+homepage_url: http://www.perlfoundation.org/
+spdx_license_key: Artistic-2.0
+spdx_full_name: Artistic License 2.0
+spdx_url: http://spdx.org/licenses/Artistic-2.0
+spdx_notes: |-
+    This version was released: 2006
+    This license is OSI certifified.
+text_urls:
+    - http://www.perlfoundation.org/attachment/legal/artistic-2_0.txt
+    - http://www.perlfoundation.org/artistic_license_2_0
+osi_url: http://www.opensource.org/licenses/artistic-license-2.0.php
+faq_url: http://www.perlfoundation.org/artistic-2-0-notes

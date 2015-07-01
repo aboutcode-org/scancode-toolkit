@@ -1,0 +1,12 @@
+This package was debianized by Rene Engelhard <rene@debian.org> on
+Tue, 24 Sep 2002 18:07:06 +0200.
+
+It was downloaded from http://texpower.sourceforge.net
+
+Upstream Author: <s>Stephan Lehmke <lehmke@ls1.cs.uni-dortmund.de></s>
+
+Copyright:
+
+GPL, on Debian systems you can find the full text of the GPL in
+/usr/share/common-licenses/GPL
+

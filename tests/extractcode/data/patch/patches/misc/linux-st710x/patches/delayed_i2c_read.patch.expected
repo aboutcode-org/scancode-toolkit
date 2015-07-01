@@ -1,0 +1,3 @@
+[('linux-2.6.23/drivers/i2c/busses/i2c-stm.c.org',
+  'linux-2.6.23/drivers/i2c/busses/i2c-stm.c',
+  '--- linux-2.6.23/drivers/i2c/busses/i2c-stm.c.org\n+++ linux-2.6.23/drivers/i2c/busses/i2c-stm.c\n@@ -453,6 +453,7 @@\n\ncase IIC_FSM_DATA_READ:\ndbg_print2("-Read\\n");\n+\t\tudelay(10);\n/* Clear the RX buffer */\nidx = (ssc_load32(adap, SSC_RX_FSTAT) & SSC_RX_FSTAT_STATUS);\nif (!idx && (ssc_load32(adap, SSC_STA) & SSC_STA_RIR))')]

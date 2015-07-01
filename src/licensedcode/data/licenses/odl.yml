@@ -1,0 +1,10 @@
+key: odl
+short_name: Open Directory License
+name: Open Directory License
+category: Attribution
+owner: Open Directory
+homepage_url: http://www.dmoz.org/license.html
+text_urls:
+    - http://www.dmoz.org/license.html
+other_urls:
+    - http://dmoz.org/become_an_editor

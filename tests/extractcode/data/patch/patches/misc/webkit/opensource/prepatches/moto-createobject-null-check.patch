@@ -1,0 +1,30 @@
+Index: src/3rdParty/webkit/patches/moto-createobject-null-check.patch
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/patches/moto-createobject-null-check.patch
+@@ -0,0 +1,14 @@
++diff -ur work.orig/JavaScriptCore/bindings/npruntime.cpp work/JavaScriptCore/bindings/npruntime.cpp
++--- work.orig/JavaScriptCore/bindings/npruntime.cpp	2008-11-26 14:29:07.000000000 +0100
+++++ work/JavaScriptCore/bindings/npruntime.cpp	2009-05-25 14:52:11.000000000 +0200
++@@ -181,6 +181,10 @@
++         else
++             obj = (NPObject*)malloc(sizeof(NPObject));
++
+++        if (obj == NULL) {
+++          return NULL;
+++        }
+++
++         obj->_class = aClass;
++         obj->referenceCount = 1;
++
+Index: src/3rdParty/webkit/patches/series
+===================================================================
+--- src.orig/3rdParty/webkit/patches/series
++++ src/3rdParty/webkit/patches/series
+@@ -27,5 +27,6 @@ webcore-no-scrollbars.patch
+ newlib-uint32-long.patch
+ webcore-sh4-atomicstring-alignment.patch
+ ekioh-gc.patch
++moto-createobject-null-check.patch
+ ekioh-uclibc-stack-base.patch
+ webcore-accept-click.patch

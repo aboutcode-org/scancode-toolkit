@@ -1,0 +1,14 @@
+key: php-3.0
+short_name: PHP License 3.0
+name: PHP License 3.0
+category: Attribution
+owner: PHP Project
+homepage_url: http://www.php.net/license/
+spdx_license_key: PHP-3.0
+spdx_full_name: PHP License v3.0
+spdx_url: http://spdx.org/licenses/PHP-3.0
+spdx_notes: This license is OSI certified.
+text_urls:
+    - http://www.php.net/license/
+osi_url: http://www.opensource.org/licenses/php.html
+faq_url: http://www.php.net/license/index.php#faq-lic

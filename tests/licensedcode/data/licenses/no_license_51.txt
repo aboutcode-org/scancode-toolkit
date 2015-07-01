@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+$COMMENT
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>$TITLE mini-toepassing</title>
+    </head>
+    <body>
+        <h1>$TITLE mini-toepassing</h1>
+        <hr>
+        <applet code="$CLASSFILE" 
+            width=$APPLETWIDTH 
+            height=$APPLETHEIGHT
+            codebase="$CODEBASE"
+            alt="U webblaaier verstaan die &lt;APPLET&gt; merker, maar die mini-toepassing loop om een of ander rede nie."
+        >
+            $PARAMETERS 
+            U webblaaier ignoreer die &lt;APPLET&gt; merker!       
+        </applet>
+        <hr>
+    </body>
+</html>

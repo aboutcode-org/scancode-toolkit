@@ -1,0 +1,23 @@
+--- pngconf.h.orig	2005-09-12 07:31:10.000000000 +0200
++++ pngconf.h	2005-09-12 07:33:34.000000000 +0200
+@@ -17,6 +17,20 @@
+ #ifndef PNGCONF_H
+ #define PNGCONF_H
+ 
++#ifndef PNG_NO_WRITE_SUPPORTED
++#  define PNG_NO_WRITE_SUPPORTED
++#endif
++
++#ifndef PNG_NO_MNG_FEATURES
++#  define PNG_NO_MNG_FEATURES
++#endif
++
++#ifdef __MIPSEL
++#  ifndef PNG_NO_FLOATING_POINT_SUPPORTED
++#    define PNG_NO_FLOATING_POINT_SUPPORTED
++#  endif
++#endif
++
+ #define PNG_1_2_X
+ 
+ /* 

@@ -1,0 +1,16 @@
+--- linux-2.6.23/include/linux/phy.h.orig	2009-02-04 16:33:03.000000000 +0100
++++ linux-2.6.23/include/linux/phy.h	2009-01-20 08:45:48.000000000 +0100
+@@ -63,9 +63,10 @@
+ 
+ 
+ #define PHY_INIT_TIMEOUT	100000
+-#define PHY_STATE_TIME		1
+-#define PHY_FORCE_TIMEOUT	10
+-#define PHY_AN_TIMEOUT		10
++#define PHY_INIT_TIME           (HZ>>3)
++#define PHY_STATE_TIME		HZ
++#define PHY_FORCE_TIMEOUT	(10<<3)
++#define PHY_AN_TIMEOUT		(10<<3)
+ 
+ #define PHY_MAX_ADDR	32
+ 

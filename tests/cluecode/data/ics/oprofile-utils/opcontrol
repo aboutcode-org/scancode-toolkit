@@ -1,0 +1,11 @@
+# opcontrol is a script to control OProfile
+# opcontrol --help and opcontrol --list-events have info
+#
+# Copyright 2002
+# Read the file COPYING
+#
+# Authors: John Levon, Philippe Elie, Will Cohen, Jens Wilke, Daniel Hansel
+#
+# Copyright IBM Corporation 2007
+#
+# NOTE: This script should be as shell independent as possible

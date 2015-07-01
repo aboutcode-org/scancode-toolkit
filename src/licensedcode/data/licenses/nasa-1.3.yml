@@ -1,0 +1,14 @@
+key: nasa-1.3
+short_name: NASA 1.3
+name: NASA Open Source License v1.3
+category: Copyleft Limited
+owner: OSI - Open Source Initiative
+homepage_url: http://opensource.arc.nasa.gov/static/html/NASA_Open_Source_Agreement_1.3.txt
+spdx_license_key: NASA-1.3
+spdx_full_name: NASA Open Source Agreement 1.3
+spdx_url: http://spdx.org/licenses/NASA-1.3
+spdx_notes: This license is OSI certified.
+text_urls:
+    - http://opensource.arc.nasa.gov/static/html/NASA_Open_Source_Agreement_1.3.txt
+other_urls:
+    - http://ti.arc.nasa.gov/opensource/nosa/

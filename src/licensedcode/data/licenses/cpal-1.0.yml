@@ -1,0 +1,13 @@
+key: cpal-1.0
+short_name: CPAL 1.0
+name: Common Public Attribution License 1.0
+category: Copyleft
+owner: OSI - Open Source Initiative
+homepage_url: http://www.opensource.org/licenses/cpal_1.0
+spdx_license_key: CPAL-1.0
+spdx_full_name: Common Public Attribution License 1.0
+spdx_url: http://spdx.org/licenses/CPAL-1.0
+spdx_notes: This license is OSI certifified.
+text_urls:
+    - http://opensource.org/licenses/cpal_1.0
+osi_url: http://opensource.org/licenses/cpal_1.0

@@ -1,0 +1,7 @@
+  /Users/francois/dejacode/trunk/investigations/metrics/cccc/cccc-3.1.4/install:
+  total used in directory 16 available 2149532
+  drwxr-xr-x   5 francois  francois   170 Feb 26 14:33 .
+  drwxr-xr-x  22 francois  francois   748 Feb 26 14:33 ..
+  drwxr-xr-x   9 francois  francois   306 Jun  1 17:25 .svn
+  -rw-r--r--   1 francois  francois  2389 Feb 26 14:33 install.dsp
+  -rw-r--r--   1 francois  francois  1479 Feb 26 14:33 install.mak

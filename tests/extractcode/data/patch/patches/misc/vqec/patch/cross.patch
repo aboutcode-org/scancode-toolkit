@@ -1,0 +1,70 @@
+--- 3rd-party-src/libcli/libcli-1.8.8/Makefile.orig	2007-06-07 22:12:13.000000000 +0200
++++ 3rd-party-src/libcli/libcli-1.8.8/Makefile	2009-03-10 10:31:39.000000000 +0100
+@@ -12,14 +12,14 @@
+ DEBUG = -g
+ OPTIM = -O3
+ CFLAGS += $(DEBUG) $(OPTIM) -Wall -Wformat-security -Wno-format-zero-length
+-LDFLAGS += -shared -Wl,-soname,$(LIB).$(MAJOR).$(MINOR)
++#LDFLAGS += -shared -Wl,-soname,$(LIB).$(MAJOR).$(MINOR)
+ LIBPATH += -L.
+ LIBS = -lcrypt
+ 
+ all: $(LIB) clitest
+ 
+ $(LIB): libcli.o
+-	$(CC) -o $(LIB).$(MAJOR).$(MINOR).$(REVISION) $^ $(LDFLAGS) $(LIBS)
++	$(CC) -o $(LIB).$(MAJOR).$(MINOR).$(REVISION) $^ $(LDFLAGS) -shared -Wl,-soname,$(LIB).$(MAJOR).$(MINOR) $(LIBS)
+ 	-rm -f $(LIB) $(LIB).$(MAJOR).$(MINOR)
+ 	ln -s $(LIB).$(MAJOR).$(MINOR).$(REVISION) $(LIB).$(MAJOR).$(MINOR)
+ 	ln -s $(LIB).$(MAJOR).$(MINOR) $(LIB)
+--- 3rd-party-src/libupnp/libupnp-1.6.6/Makefile.orig	2009-03-10 11:30:51.000000000 +0100
++++ 3rd-party-src/libupnp/libupnp-1.6.6/Makefile	2009-03-10 11:02:30.000000000 +0100
+@@ -14,13 +14,13 @@
+ endif
+ 
+ threadutil: 
+-	$(CC) -g -c $(UPNP_FLAGS) threadutil/src/*.c -I. -Ithreadutil/inc/
++	$(CC) $(CFLAGS) -g -c $(UPNP_FLAGS) threadutil/src/*.c -I. -Ithreadutil/inc/
+ 
+ ixml: 
+-	$(CC) -c -g $(UPNP_FLAGS) ixml/src/*.c -I. -Iixml/inc/ -Iixml/src/inc/
++	$(CC) $(CFLAGS) -c -g $(UPNP_FLAGS) ixml/src/*.c -I. -Iixml/inc/ -Iixml/src/inc/
+ 
+ upnp: 
+-	$(CC) -g -c $(UPNP_FLAGS) -Iupnp/inc/ -Iupnp/src/inc/ -Iixml/inc/ -Ithreadutil/inc/ -I. upnp/src/*.c upnp/src/[^a]*/*.c upnp/src/*/*/*.c upnp/src/*/*/*/*.c upnp/src/api/upnpapi.c
++	$(CC) $(CFLAGS) -g -c $(UPNP_FLAGS) -Iupnp/inc/ -Iupnp/src/inc/ -Iixml/inc/ -Ithreadutil/inc/ -I. upnp/src/*.c upnp/src/[^a]*/*.c upnp/src/*/*/*.c upnp/src/*/*/*/*.c upnp/src/api/upnpapi.c
+ 
+ clean:
+ 	rm -f *.o
+--- vqe_builds.mk.orig	2008-10-06 12:43:33.000000000 +0200
++++ vqe_builds.mk	2008-10-06 12:43:49.000000000 +0200
+@@ -45,7 +45,7 @@
+ MKID = /router/bin/mkid32
+ 
+ LOCAL_CFLAGS	= -O
+-CFLAGS+=        -g -Wall -Werror $(LOCAL_CFLAGS) $(INCLUDES)
++CFLAGS+=        -g -Wall $(LOCAL_CFLAGS) $(INCLUDES)
+ CXXFLAGS+=      $(CFLAGS)
+ 
+ INCLUDES=	-I$(ROOT)/include
+--- vqec_obj/Makefile.orig	2008-12-08 22:45:35.000000000 +0100
++++ vqec_obj/Makefile	2009-03-10 10:31:39.000000000 +0100
+@@ -258,7 +258,8 @@
+ 		else \
+ 			echo "===> entering $$dir"; \
+ 			cd $$dir; \
+-			if ! $(CONFTOOL) CC=$(CC) CXX=$(CXX) AR=$(AR) LD=$(LD) \
++			if ! $(CONFTOOL) CC="$(CC)" CXX="$(CXX)" AR=$(AR) LD=$(LD) \
++				--build=i686-pc-linux-gnu \
+ 				--host=$(AUTOCONF_TARGET) \
+ 				--prefix=$(3RDPARTY_INSTALL_DIR); \
+ 				then exit 1; fi; \
+@@ -277,7 +278,7 @@
+ 	if ! cd $(LIBCLI_SRC_DIR); then exit 1; \
+ 	else \
+ 		cd $(LIBCLI_SRC_DIR); \
+-		if ! $(MAKE) -e CC=$(CC) AR=$(AR); then exit 1; fi; \
++		if ! $(MAKE) -e CC="$(CC)" AR=$(AR); then exit 1; fi; \
+ 	fi
+ 	if ! cd $(LIBUPNP_SRC_DIR); then exit 1; \
+ 	else \

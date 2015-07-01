@@ -1,0 +1,16 @@
+key: entessa-1.0
+short_name: Entessa 1.0
+name: Entessa Public License v1.0
+category: Attribution
+owner: Entessa
+homepage_url: http://openseal.sourceforge.net/epl/index.html
+spdx_license_key: Entessa
+spdx_full_name: Entessa Public License
+spdx_url: http://spdx.org/licenses/Entessa
+spdx_notes: This license is OSI certified
+text_urls:
+    - http://web.archive.org/web/20040518115036/http://openseal.org/epl/index.html
+    - http://openseal.org/epl/index.html
+osi_url: http://opensource.org/licenses/entessa.php
+other_urls:
+    - http://sourceforge.net/softwaremap/?&fq[]=trove%3A397

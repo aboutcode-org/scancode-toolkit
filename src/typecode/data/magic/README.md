@@ -1,0 +1,1 @@
+Mac uses a more recent version of file and therefore uses its own magic BD.

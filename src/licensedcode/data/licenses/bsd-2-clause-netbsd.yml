@@ -1,0 +1,13 @@
+key: bsd-2-clause-netbsd
+short_name: BSD 2-clause "NetBSD"
+name: BSD 2-clause "NetBSD" License
+category: Attribution
+owner: NetBSD
+homepage_url: http://www.netbsd.org/about/redistribution.html#default
+spdx_license_key: BSD-2-Clause-NetBSD
+spdx_full_name: BSD 2-clause "NetBSD" License
+spdx_url: http://spdx.org/licenses/BSD-2-Clause-NetBSD
+spdx_notes: >-
+    NetBSD adopted this 2-clause license in 2008 for code contributed to NetBSD Foundation.
+text_urls:
+    - http://www.netbsd.org/about/redistribution.html#default

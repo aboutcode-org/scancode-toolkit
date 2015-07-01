@@ -1,0 +1,18 @@
+key: efl-2.0
+short_name: EFL 2.0
+name: Eiffel Forum License 2.0
+category: Attribution
+owner: Eiffel NICE
+homepage_url: http://www.eiffel-nice.org/license/
+spdx_license_key: EFL-2.0
+spdx_full_name: Eiffel Forum License v2.0
+spdx_url: http://spdx.org/licenses/EFL-2.0
+spdx_notes: This license is OSI certified
+text_urls:
+    - http://www.opensource-definition.org/licenses/ver2_eiffel.html
+    - http://www.eiffel-nice.org/license/eiffel-forum-license-2.txt
+osi_url: http://www.opensource.org/licenses/ver2_eiffel.php
+faq_url: http://inamidst.com/stuff/eiffel/
+other_urls:
+    - http://en.wikipedia.org/wiki/Eiffel_Forum_License
+    - http://amalasoft.com/downloads/ael/ds/LICENSE.txt

@@ -1,0 +1,30 @@
+
+2008-03-28  Lin Ma  <Lin.Ma@Sun.COM>
+
+	* fen/*.[hc]: still copyright issue. I hate copyright.
+
+2008-03-27  Alexander Larsson  <alexl@redhat.com>
+
+2008-03-27  Lin Ma  <Lin.Ma@Sun.COM>
+
+	* fen/*.[hc]: Updated copyright.
+
+2008-03-20  Lin Ma  <Lin.Ma@Sun.COM>
+	* gio/inotify/ginotifydirectorymonitor.h:
+	* gio/inotify/ginotifyfilemonitor.c:
+	* gio/inotify/ginotifyfilemonitor.h:
+	Add proper copyright information and remove an unused variable
+	in the GInotifyFileMonitor constructor.
+
+2007-11-01  Sebastian Dröge  <slomo@circular-chaos.org>
+
+	* gio/inotify/ginotify*.[ch]:
+	Add missing copyright information.
+
+2007-11-01  Sebastian Dröge  <slomo@circular-chaos.org>
+	* gio/fam/*.[ch]:
+	* gio/*.[ch]:
+	* programs/*.[ch]:
+	Add copyright information to source files.
+
+2007-11-01  Alexander Larsson  <alexl@redhat.com>

@@ -1,0 +1,38 @@
+/* Metrowerks Standard Library
+ * Copyright � 1995-2004 Metrowerks Corporation.  All rights reserved.
+ *
+ * $Date: 2004/06/18 12:38:07 $
+ * $Revision: 1.45.2.4 $
+ */
+
+// msl_utility
+
+/*
+	WARNING - WARNING - WARNING
+
+	This header is NON-STANDARD
+
+	The classes herein are offered as extensions to the C++ standard.
+	They are marked as such by the namespace Metrowerks.
+*/
+
+/*
+ *  Concepts and ideas co-developed on Boost (http://www.boost.org/)
+ *  with help from Steve Cleary, Beman Dawes & John Maddock.  Similar
+ *  "open source" software appears on the Boost site.
+ *  This version of these utilities branched from the Boost development
+ *  mid stream in order to meet the needs of MSL C++.  To the extent that
+ *  this software shares its roots with the software on Boost, the Boost
+ *  copyright also appears here:
+
+//  (C) Copyright Steve Cleary, Beman Dawes, Howard Hinnant & John Maddock 2000.
+//  Permission to copy, use, modify, sell and
+//  distribute this software is granted provided this copyright notice appears
+//  in all copies. This software is provided "as is" without express or implied
+//  warranty, and with no claim as to its suitability for any purpose.
+
+ *  The Boost copyright applies only to those parts of the interface and implementation
+ *  that are common to the software on the Boost site.
+ *
+ *  Finally, a big thanks to Steve Cleary, Beman Dawes & John Maddock.
+*/

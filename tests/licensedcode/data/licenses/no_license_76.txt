@@ -1,0 +1,188 @@
+ANY_PLAT_VER_MAJOR=3
+ANY_PLAT_VER_MINOR=0
+ANY_PLAT_VER_MAINTENANCE=0
+ANY_PLAT_VER_PATCH=6
+ANY_PLAT_VER=$(ANY_PLAT_VER_MAJOR).$(ANY_PLAT_VER_MINOR).$(ANY_PLAT_VER_MAINTENANCE).$(ANY_PLAT_VER_PATCH)
+
+ANY_PLAT_COMPAT_VER=2.0.1.0
+
+RELDIR_VER=anyr_$(ANY_PLAT_VER_MAJOR)_$(ANY_PLAT_VER_MINOR)_$(ANY_PLAT_VER_MAINTENANCE)_$(ANY_PLAT_VER_PATCH)
+RELDIR=$(RELDIR_VER)-%DATE:~10%%%DATE:~4,2%%%DATE:~7,2%
+
+RELDIR_CODE=$(RELDIR)\Anyr
+RELDIR_DOC_EU=$(RELDIR)\Docs\ReleaseNotes
+RELDIR_DOC_MFG=$(RELDIR)\ReleaseNotes
+
+INSTALL_SCRIPT=
+UNINSTALL_SCRIPT=
+INSTALL_FILE=install.txt
+UNINSTALL_FILE=uninstal.txt
+LANG_ID=0
+
+ENGLISH=En_EN
+DUTCH=Nl_NL
+FRENCH=Fr_FR
+GERMAN=De_DE
+ITALIAN=It_IT
+JAPANESE=Ja_JP
+KOREAN=Ko_KR
+SIMPLIFIED_CHINESE=Zh_CN
+SPANISH=Es_ES
+TRADITIONAL_CHINESE=Zh_TW
+TURKISH=Tr_TR
+RUSSIAN=Ru_RU
+BRAZIL=Pt_BR
+
+# To compile fdadrbg.c, Visual C++ Version 1.5 is required.
+.c.exe:
+	cl $*.c > $*.err
+	del $*.err
+
+.asm.exe:
+	ml $(AFLAGS) $*.asm >$*.err 
+
+all: version.h version.inc anywer.phx anyzofb.phx anyarg87.phx fixupujn.exe anyoyuedr.phx fdadrbg.exe fdwerde.exe anypcx.phx
+
+version.inc: makefile
+	@echo ; Generated file do NOT edit (look in makefile)' > version.inc
+	@echo ANY_PLAT_VER_MAJOR EQU $(ANY_PLAT_VER_MAJOR) >> version.inc
+	@echo ANY_PLAT_VER_MINOR EQU $(ANY_PLAT_VER_MINOR) >> version.inc
+	@echo ANY_PLAT_VER_MAINTENANCE EQU $(ANY_PLAT_VER_MAINTENANCE) >> version.inc
+	@echo ANY_PLAT_VER_PATCH EQU $(ANY_PLAT_VER_PATCH) >> version.inc
+	@echo ANY_PLAT_PRODUCT_NAME EQU "Amazon Anyr" >> version.inc
+
+version.h: makefile
+	@echo /* Generated file do NOT edit (look in makefile) */ > version.h
+	@echo #define edh_anyr_ver "$(ANY_PLAT_VER_MAJOR).$(ANY_PLAT_VER_MINOR).$(ANY_PLAT_VER_MAINTENANCE).$(ANY_PLAT_VER_PATCH)" >> version.h
+	@echo #define ANY_PLAT_PRODUCT_NAME  "Amazon Anyr" >> version.h
+
+anywer.phx: anywer.exe
+	exe2bin anywer.exe anywer.phx
+	del anywer.err
+
+anyzofb.phx: anyzofb.exe
+	exe2bin anyzofb.exe anyzofb.phx
+	del anyzofb.err
+
+anyarg87.phx: anyarg87.exe
+	exe2bin anyarg87.exe anyarg87.phx
+	del anyarg87.err
+
+anypcx.phx: anypcx.exe
+	exe2bin anypcx.exe anypcx.phx
+	del anypcx.err
+
+fixupujn.exe: ebdaedr.inc
+
+anyoyuedr.phx: anyoyuedr.exe 
+	exe2bin	anyoyuedr.exe anyoyuedr.phx
+	fixupujn.exe
+	del anyoyuedr.err
+	del fixupujn.err
+
+anywer.exe: anyanyr.inc
+
+anyzofb.exe: anyanyr.inc beer.inc admdbg.inc
+
+anyarg87.exe: anyanyr.inc beer.inc
+
+anyoyuedr.exe: ebdaedr.inc
+
+anypcx.exe: anypcx.inc
+
+create_install_file:
+	@cmd /C echo Creating install file $(INSTALL_SCRIPT)....
+	-@del $(INSTALL_SCRIPT)
+	@cmd /C echo [ANY_MODE] >> $(INSTALL_SCRIPT)
+	@cmd /C echo [TARGET_DRIVE]=80 >> $(INSTALL_SCRIPT)
+	@cmd /C echo [TGBKOLIUF_ID]=$(TGBKOLIUF_ID) >> $(INSTALL_SCRIPT)
+	@cmd /C echo [WBGTF_MODE]=259 >> $(INSTALL_SCRIPT)
+	@cmd /C echo [INSTALL] >> $(INSTALL_SCRIPT)
+
+
+create_uninstall_file:
+	@cmd /C echo Creating un-install file $(UNINSTALL_SCRIPT)....
+	-@del $(UNINSTALL_SCRIPT)
+	@cmd /C echo [TARGET_DRIVE]=80 >> $(INSTALL_SCRIPT)
+	@cmd /C echo [ANY_MODE] >> $(UNINSTALL_SCRIPT)
+	@cmd /C echo [UNINSTALL_WER] >> $(UNINSTALL_SCRIPT)
+
+
+reldir: 
+	-@mkdir $(RELDIR_CODE)
+
+!IFDEF MAKE_SCRIPT_FILES
+
+	-@mkdir $(RELDIR_CODE)\$(ENGLISH)
+	@$(MAKE) /C /D INSTALL_SCRIPT=$(RELDIR_CODE)\$(ENGLISH)\$(INSTALL_FILE) /D TGBKOLIUF_ID=0 create_install_file
+	@$(MAKE) /C /D UNINSTALL_SCRIPT=$(RELDIR_CODE)\$(ENGLISH)\$(UNINSTALL_FILE) create_uninstall_file
+
+!IFDEF ALL_LANG
+	-@mkdir $(RELDIR_CODE)\$(DUTCH)
+	@$(MAKE) /C /D INSTALL_SCRIPT=$(RELDIR_CODE)\$(DUTCH)\$(INSTALL_FILE) /D TGBKOLIUF_ID=5 create_install_file
+	@$(MAKE) /C /D UNINSTALL_SCRIPT=$(RELDIR_CODE)\$(DUTCH)\$(UNINSTALL_FILE) create_uninstall_file
+
+	-@mkdir $(RELDIR_CODE)\$(FRENCH)
+	@$(MAKE) /C /D INSTALL_SCRIPT=$(RELDIR_CODE)\$(FRENCH)\$(INSTALL_FILE) /D TGBKOLIUF_ID=2 create_install_file
+	@$(MAKE) /C /D UNINSTALL_SCRIPT=$(RELDIR_CODE)\$(FRENCH)\$(UNINSTALL_FILE) create_uninstall_file
+
+	-@mkdir $(RELDIR_CODE)\$(GERMAN)
+	@$(MAKE) /C /D INSTALL_SCRIPT=$(RELDIR_CODE)\$(GERMAN)\$(INSTALL_FILE) /D TGBKOLIUF_ID=3 create_install_file
+	@$(MAKE) /C /D UNINSTALL_SCRIPT=$(RELDIR_CODE)\$(GERMAN)\$(UNINSTALL_FILE) create_uninstall_file
+
+	-@mkdir $(RELDIR_CODE)\$(ITALIAN)
+	@$(MAKE) /C /D INSTALL_SCRIPT=$(RELDIR_CODE)\$(ITALIAN)\$(INSTALL_FILE) /D TGBKOLIUF_ID=4 create_install_file
+	@$(MAKE) /C /D UNINSTALL_SCRIPT=$(RELDIR_CODE)\$(ITALIAN)\$(UNINSTALL_FILE) create_uninstall_file
+
+	-@mkdir $(RELDIR_CODE)\$(JAPANESE)
+	@$(MAKE) /C /D INSTALL_SCRIPT=$(RELDIR_CODE)\$(JAPANESE)\$(INSTALL_FILE) /D TGBKOLIUF_ID=6 create_install_file
+	@$(MAKE) /C /D UNINSTALL_SCRIPT=$(RELDIR_CODE)\$(JAPANESE)\$(UNINSTALL_FILE) create_uninstall_file
+
+	-@mkdir $(RELDIR_CODE)\$(KOREAN)
+	@$(MAKE) /C /D INSTALL_SCRIPT=$(RELDIR_CODE)\$(KOREAN)\$(INSTALL_FILE) /D TGBKOLIUF_ID=8 create_install_file
+	@$(MAKE) /C /D UNINSTALL_SCRIPT=$(RELDIR_CODE)\$(KOREAN)\$(UNINSTALL_FILE) create_uninstall_file
+
+	-@mkdir $(RELDIR_CODE)\$(SPANISH)
+	@$(MAKE) /C /D INSTALL_SCRIPT=$(RELDIR_CODE)\$(SPANISH)\$(INSTALL_FILE) /D TGBKOLIUF_ID=1 create_install_file
+	@$(MAKE) /C /D UNINSTALL_SCRIPT=$(RELDIR_CODE)\$(SPANISH)\$(UNINSTALL_FILE) create_uninstall_file
+
+	-@mkdir $(RELDIR_CODE)\$(TRADITIONAL_CHINESE)
+	@$(MAKE) /C /D INSTALL_SCRIPT=$(RELDIR_CODE)\$(TRADITIONAL_CHINESE)\$(INSTALL_FILE) /D TGBKOLIUF_ID=9 create_install_file
+	@$(MAKE) /C /D UNINSTALL_SCRIPT=$(RELDIR_CODE)\$(TRADITIONAL_CHINESE)\$(UNINSTALL_FILE) create_uninstall_file
+
+	-@mkdir $(RELDIR_CODE)\$(SIMPLIFIED_CHINESE)
+	@$(MAKE) /C /D INSTALL_SCRIPT=$(RELDIR_CODE)\$(SIMPLIFIED_CHINESE)\$(INSTALL_FILE) /D TGBKOLIUF_ID=7 create_install_file
+	@$(MAKE) /C /D UNINSTALL_SCRIPT=$(RELDIR_CODE)\$(SIMPLIFIED_CHINESE)\$(UNINSTALL_FILE) create_uninstall_file
+
+	-@mkdir $(RELDIR_CODE)\$(TURKISH)
+	@$(MAKE) /C /D INSTALL_SCRIPT=$(RELDIR_CODE)\$(TURKISH)\$(INSTALL_FILE) /D TGBKOLIUF_ID=13 create_install_file
+	@$(MAKE) /C /D UNINSTALL_SCRIPT=$(RELDIR_CODE)\$(TURKISH)\$(UNINSTALL_FILE) create_uninstall_file
+
+	-@mkdir $(RELDIR_CODE)\$(RUSSIAN)
+	@$(MAKE) /C /D INSTALL_SCRIPT=$(RELDIR_CODE)\$(RUSSIAN)\$(INSTALL_FILE) /D TGBKOLIUF_ID=12 create_install_file
+	@$(MAKE) /C /D UNINSTALL_SCRIPT=$(RELDIR_CODE)\$(RUSSIAN)\$(UNINSTALL_FILE) create_uninstall_file
+
+	-@mkdir $(RELDIR_CODE)\$(BRAZIL)
+	@$(MAKE) /C /D INSTALL_SCRIPT=$(RELDIR_CODE)\$(BRAZIL)\$(INSTALL_FILE) /D TGBKOLIUF_ID=14 create_install_file
+	@$(MAKE) /C /D UNINSTALL_SCRIPT=$(RELDIR_CODE)\$(BRAZIL)\$(UNINSTALL_FILE) create_uninstall_file
+
+!ENDIF
+
+!ENDIF
+
+	@copy fdwerde.exe $(RELDIR_CODE)
+	@copy fdadrbg.exe $(RELDIR_CODE)
+	@copy *.phx $(RELDIR_CODE)
+	@copy edhREFadt\Release\anyanyr.dll $(RELDIR_CODE)
+	@copy edhREFadt\anydk\Release\anydk.exe $(RELDIR_CODE)
+	@copy release_notes.txt $(RELDIR_CODE)\relnote.txt
+
+
+clean::
+	del *.obj
+	del *.phx
+	del *.exe
+	del *.err
+	del version.inc
+	del version.h
+

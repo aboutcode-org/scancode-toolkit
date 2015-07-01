@@ -1,0 +1,15 @@
+about_resource: MarkupSafe-0.23-py2-none-any.whl
+version: 0.23
+download_url: https://pypi.python.org/packages/source/m/MarkupSafe/MarkupSafe-0.23.tar.gz
+
+name: MarkupSafe
+home_url: https://github.com/mitsuhiko/markupsafe
+
+dje_license: bsd-new
+
+vcs_tool: git
+vcs_repository: https://github.com/mitsuhiko/jinja2.git
+license_text_file:MarkupSafe.LICENSE
+
+copyright: Copyright (c) 2010 by Armin Ronacher and contributors.
+owner: Armin Ronacher

@@ -1,0 +1,29 @@
+This package was first debianized by Bernd Eckenfels <ecki@lina.inka.de> on
+Mon, 8 May 2000 02:57:02 +0200.
+
+It was downloaded from http://www.chiark.greenend.org.uk/~ian/adns/
+
+Upstream Author: <s>Ian Jackson / ian@chiark.greenend.org.uk</s>
+
+Copyright:
+
+ adns is Copyright 1997-2000 <s>Ian Jackson</s>, Copyright 1999 <s>Tony Finch</s>, and
+ Copyright (C) 1991 <s>Massachusetts Institute of Technology</s>.
+
+ adns is free software; you can redistribute it and/or modify it under the
+ terms of the GNU General Public License as published by the Free Software
+ Foundation; either version 2 of the License, or (at your option) any later
+ version.
+
+ This program and documentation is distributed in the hope that it will be
+ useful, but without any warranty; without even the implied warranty of
+ merchantability or fitness for a particular purpose. See the GNU General
+ Public License for more details.
+
+ You should have received a copy of the GNU General Public License along
+ with adns, or one should be available above; if not, write to the Free
+ Software Foundation, 59 Temple Place - Suite 330, Boston, MA 02111-1307,
+ USA, or email adns-maint@chiark.greenend.org.uk.
+
+On all Debian systems, a copy of the GNU General Public License (version 2 or
+newer) can be found in `/usr/share/common-licenses/GPL'.

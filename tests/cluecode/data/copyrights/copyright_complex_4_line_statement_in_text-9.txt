@@ -1,0 +1,10 @@
+Copyright:
+ 2002 <s>Jonas Borgstrom <jonas@codefactory.se></s>
+ 2002 <s>Daniel Lundin   <daniel@codefactory.se></s>
+ 2002 <s>CodeFactory AB</s>.  All rights reserved.
+ 
+ blah blah
+ 
+ Copyright (c) 1994
+ *      <s>The Regents of the University of California</s>.  All rights reserved.
+ 

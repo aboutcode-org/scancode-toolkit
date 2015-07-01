@@ -1,0 +1,33 @@
+Index: src/3rdParty/webkit/patches/series
+===================================================================
+--- src.orig/3rdParty/webkit/patches/series
++++ src/3rdParty/webkit/patches/series
+@@ -27,3 +27,4 @@ newlib-uint32-long.patch
+ webcore-sh4-atomicstring-alignment.patch
+ ekioh-gc.patch
+ ekioh-uclibc-stack-base.patch
++webcore-accept-click.patch
+Index: src/3rdParty/webkit/patches/webcore-accept-click.patch
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/patches/webcore-accept-click.patch
+@@ -0,0 +1,19 @@
++*** work/WebCore/html/HTMLAnchorElement.cpp	2008-11-26 20:31:44.000000000 +0100
++--- work/WebCore/html/HTMLAnchorElement.cpp.new	2009-04-29 15:31:11.000000000 +0200
++***************
++*** 174,180 ****
++          }
++  
++          if (k) {
++!             if (k->keyIdentifier() != "Enter") {
++                  HTMLElement::defaultEventHandler(evt);
++                  return;
++              }
++--- 174,180 ----
++          }
++  
++          if (k) {
++!             if (!((k->keyIdentifier() == "Enter") || (k->keyIdentifier() == "Accept"))) {
++                  HTMLElement::defaultEventHandler(evt);
++                  return;
++              }

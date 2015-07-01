@@ -1,0 +1,100 @@
+Oracle Technology Network Early Adopter Development License Agreement
+
+EXPORT CONTROLS
+Export laws and regulations of the United States and any other relevant local export laws and regulations apply to the Oracle Technology.  You agree that such export control laws govern your use of the Oracle Technology (including technical data) and any services deliverables provided under this agreement, and you agree to comply with all such export laws and regulations (including “deemed export” and  “deemed re-export” regulations).  You agree that no data, information, program and/or materials resulting from services (or direct product thereof) will be exported, directly or indirectly, in violation of these laws, or will be used for any purpose prohibited by these laws including, without limitation, nuclear, chemical, or biological weapons proliferation, or development of missile technology.
+
+Accordingly, you confirm:
+
+-You will not download, provide, make available or otherwise export or re-export the Oracle Technology, directly or indirectly, to countries prohibited by applicable laws and regulations nor to citizens, nationals or residents of those countries.
+
+-You are not listed on the United States Department of Treasury lists of Specially Designated Nationals and Blocked Persons, Specially Designated Terrorists, and Specially Designated Narcotic Traffickers, nor are you listed on the United States Department of Commerce Table of Denial Orders.
+
+- You will not download or otherwise export or re-export the Oracle Technology, directly or indirectly, to persons on the above mentioned lists.
+
+- You will not use the Oracle Technology for, and will not allow the Oracle Technology to be used for, any purposes prohibited by applicable law, including, without limitation, for the development, design, manufacture or production of nuclear, chemical or biological weapons of mass destruction.
+
+Oracle Employees: Under no circumstances are Oracle Employees authorized to download software for the purpose of distributing it to customers. Oracle products are available to employees for internal use or demonstration purposes only. In keeping with Oracle's trade compliance obligations under U.S. and applicable multilateral law, failure to comply with this policy could result in disciplinary action up to and including termination.
+
+ 
+
+Note: You are bound by the Oracle Technology Network ("OTN") Early Adopter Development License Agreement (“OTN License Agreement”) terms. The OTN License Agreement terms also apply to all updates You receive under Your Technology Track subscription.
+
+The OTN License Agreement terms below supercede any shrinkwrap license on the OTN Technology Track software CDs and previous OTN License terms (including the Oracle Program License as modified by the OTN Program Use Certificate).
+
+PLEASE READ THE FOLLOWING LICENSE AGREEMENT TERMS AND CONDITIONS CAREFULLY BEFORE ACCESSING, DOWNLOADING, INSTALLING OR USING THE ORACLE TECHNOLOGY. THESE TERMS AND CONDITIONS CONSTITUTE A LEGAL AGREEMENT BETWEEN YOU AND ORACLE .
+
+Oracle Technology Network Early Adopter Development License Agreement
+
+"Oracle,” We," "Us," and "Our" refers to Oracle America, Inc., for and on behalf of itself and its subsidiaries and affiliates under common control. "You" and "Your" refers to the individual or entity, for which you are an authorized representative with full authority to enter into this agreement on behalf of, that wishes to use the Programs. "Programs" refers to the pre-production version of the Oracle software product You wish to access and use or download and use, including program documentation, if any. “Supplemental Programs” refer to any supplemental Oracle production software as may be provided by Oracle for operation of the Programs. If included, Supplemental Programs are listed in Exhibit A to this Agreement. Programs and any Supplemental Programs are collectively “Oracle Technology”. "License" refers to Your right to use the Oracle Technology under the terms of this license agreement. “Oracle Confidential Information” includes the Software, any information related to the Software and Feedback. Oracle Confidential Information shall not include information which: (a) is or becomes a part of the public domain through no act or omission of the other party; or (b) was in the other party’s lawful possession prior to the disclosure and had not been obtained by the other party either directly or indirectly from the disclosing party; or (c) is lawfully disclosed to the other party by a third party without restriction on disclosure; or (d) except for Feedback, is independently developed by You. You agree, both during the term of this Agreement and for a period of three years after termination of this Agreement and of all licenses granted hereunder, to hold Oracle’s Confidential Information in confidence. You agree not to make Oracle’s Confidential Information available in any form to any unauthorized third parties. Company agrees to take all reasonable steps to ensure that Confidential Information is not disclosed or distributed by its employees or agents in violation of the provisions of this Agreement.
+
+This agreement is governed by California law, except for that body of laws related to the conflict of laws. You agree to submit to the exclusive jurisdiction of, and venue in, the courts located in San Francisco or Santa Clara counties in California in any dispute arising out of or relating to this agreement or the Oracle Technology.
+
+In order to use the Oracle Technology, You must first agree to the license terms below by selecting the "Accept License Agreement" (or the equivalent) button below. If You do not or cannot agree to these license terms, You are not permitted to access, download or use the Oracle Technology.
+
+License Rights
+We grant You a revocable, nonexclusive, nontransferable, royalty-free and limited right to (a) use one (1) copy of the binary portions of the Programs and any Supplemental Programs for the sole purpose of internal non-production and non-commercial evaluation and testing of the Programs, including, developing no more than a single prototype of each of Your applications; and (b) if provided by Us at our sole discretion, view the source code portions of the Programs internally for the purposes of evaluation and testing only (collectively, “Authorized Use”).
+
+All rights not expressly granted above are hereby reserved. If You want to use the Oracle Technology for any purpose other than as permitted under this agreement, including but not limited to distribution of the Oracle Technology or the application You develop or any use of the Oracle Technology or the application You develop for Your internal business purposes (other than the Authorized Use), You must obtain a valid Oracle license permitting such use.
+
+You acknowledge that (1) the Programs are not generally available and may have defects, security vulnerabilities, or other deficiencies that may not and/or cannot be corrected by Us and are subject to change at Our sole discretion; and (2) We may not produce a production release version of the Programs and any development efforts undertaken by You are at Your own risk. We may audit Your use of the Oracle Technology.
+
+The Oracle Technology will either be hosted by Oracle or provided to You. In the event that the Oracle Technology are provided to You in a hosted environment, Oracle may provide certain passwords and/or other access information to enable You to access the Oracle Technology. These passwords and/or access information shall be and are Oracle Confidential Information under the terms of this agreement and shall be used solely for the purpose of accessing the Oracle Technology for the evaluation and testing purposes described above. Any hosted instance of the Oracle Technology is provided as is and without warranty. Oracle makes no assurances that any data loaded into the hosted instance will be secured or that such data will remain confidential. Further, Oracle, at its discretion, (a) may access, monitor, and/or review Your activity and data in the hosted instance, and (b) may delete Your files within the hosted instance. Accordingly, Oracle advises You not to place any personal information or other production data into the hosted instance. You agree to take all reasonable steps to prevent improper or unauthorized access to or use of the Oracle Technology.
+
+Collection of Information
+
+The Oracle Technology may collect certain technical information regarding Your use of the Oracle Technology for the purpose of improving the functionality of the Oracle Technology. Except as set forth above with respect to Oracle-hosted instances of the Oracle Technology, Oracle will comply with its Privacy Policy in effect as data collection services are performed, which is available at http://www.oracle.com/us/legal/privacy/index.html.
+
+Ownership and Restrictions
+We retain all ownership and intellectual property rights in the Oracle Technology. The Oracle Technology may be accessed from the hosted environment or if the Oracle Technology are provided to You, the Oracle Technology may be installed on one computer only, and used by Your employees in the operating environment identified by Us. You may make one copy of the Oracle Technology for backup purposes.
+
+The license grant set forth above is subject to the following additional specific agreements and covenants:
+
+(i) You shall not use the Oracle Technology for training, commercial time-sharing or service bureau use;
+
+(ii) You agree that it will not make copies of the Oracle Technology except for backup purposes;
+
+(iii) You agree not to cause or permit the disassembly, reverse compilation, or reverse engineering of the Oracle Technology, except as otherwise specified by law; and
+
+(iv) You shall not remove any product identification, copyright notices, or other notices or proprietary restrictions from the Oracle Technology.
+
+Feedback
+
+”Feedback” shall mean any input provided to Us, in any manner, regarding Oracle’s products, documentation and/or services, including changes or suggested changes to Oracle’s current or future products, documentation, and/or services, and benchmark test results. You grant to Oracle a worldwide, royalty-free, non-exclusive, perpetual, and irrevocable right to use Feedback for any purpose, including but not limited to, incorporation of such Feedback into the Software or other software products without compensation to You. Any Feedback shall be Oracle Confidential Information. Company shall not be identified with Feedback if Oracle provides it to a third party.
+
+Export
+You agree to comply fully with export laws and regulations of the United States and any other applicable export laws ("Export Laws") to assure that neither the Software, Confidential Information nor any direct product thereof are:  (1) exported, directly or indirectly, in violation of this Agreement or Export Laws; or (2) used for any purposes prohibited by the Export Laws, including, without limitation, nuclear, chemical, or biological weapons proliferation, or development of missile technology.  
+
+Disclaimer of Warranty and Exclusive Remedies
+THE ORACLE TECHNOLOGY IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. WE FURTHER DISCLAIM ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, TIMELINESS OR NONINFRINGEMENT.
+
+IN NO EVENT SHALL WE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE OR CONSEQUENTIAL DAMAGES, OR DAMAGES FOR LOSS OF PROFITS, REVENUE, DATA OR DATA USE, INCURRED BY YOU OR ANY THIRD PARTY, WHETHER IN AN ACTION IN CONTRACT OR TORT, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR ENTIRE LIABILITY FOR DAMAGES HEREUNDER SHALL IN NO EVENT EXCEED ONE THOUSAND DOLLARS (U.S. $1,000).
+
+Additional Trial Programs
+We may include additional trial programs with the Programs licensed under this agreement which You download or access in the hosted environment. You will have 30 days from the delivery date or hosted environment access date to evaluate these additional trial programs. Any use of these trial programs after the 30 day trial period requires You to obtain the applicable license. Any additional trial programs are provided "as is" and We do not provide technical support or any warranties for these programs.
+
+No Technical Support
+Our technical support organization will not provide technical support, phone support, or updates to You for the Oracle Technology licensed under this agreement.
+
+End of Agreement
+This agreement, and Your right to use the Programs, will be terminated: (i) automatically upon the general commercial availability of the Programs, or six months from the date You download the Programs, whichever is first to occur, in which case You shall cease using and destroy all copies of the Oracle Technology in Your possession or control; (ii) by You, by ceasing to use and destroying all copies of the Oracle Technology in Your possession or control; or, (iii) by Us if You fail to comply with any of the terms of this agreement, in which case You shall cease using and destroy all copies of the Oracle Technology in Your possession or control.
+
+Relationship Between the Parties
+The relationship between You and Us is that of licensee/licensor. Neither party will represent that it has any authority to assume or create any obligation, express or implied, on behalf of the other party, nor to represent the other party as agent, employee, franchisee, or in any other capacity. Nothing in this agreement shall be construed to limit either party's right to independently develop or distribute software that is functionally similar to the other party's products, so long as proprietary information of the other party is not included in such software.  
+
+Third-Party Technology
+
+The Oracle Technology may be distributed to You with third party technology or derivatives of third party technology (“Third Party Technology”).  Oracle may provide certain notices to You in Oracle Technology documentation, readmes or otherwise in connection with such Third Party Technology. 
+
+Third Party Technology will be licensed to You either under the terms of this agreement, or, if specified in the Oracle Technology documentation, readme files or otherwise, under separate license terms (“Separate Terms”) and not under the terms of this agreement (“Separately Licensed Third Party Technology”).   Your rights to use such Separately Licensed Third Party Technology under the Separate Terms are not restricted or modified in any way by this agreement.
+
+Entire Agreement
+You agree that this agreement is the complete agreement for the Oracle Technology and licenses, and, except as may be expressly set forth in Exhibit A, this agreement supersedes all prior or contemporaneous agreements or representations, including any clickwrap, shrinkwrap or similar licenses. If any term of this agreement is found to be invalid or unenforceable, the remaining provisions will remain effective.
+
+Last updated: 19 April 2013
+
+Should You have any questions concerning this License Agreement, or if You desire to contact Oracle for any reason, please write: 
+Oracle America, Inc. 
+500 Oracle Parkway, 
+Redwood City, CA 94065
+
+Oracle may contact You to ask if You had a satisfactory experience installing and using this software download and/or accessing and using the hosted environment.

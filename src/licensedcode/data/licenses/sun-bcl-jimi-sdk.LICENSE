@@ -1,0 +1,54 @@
+SUN JIMI SDK
+
+JIMI SDK Version 2.0 Sun Microsystems, Inc. Please see the file classes/LICENSE_JIMI.txt
+
+Sun Microsystems, Inc. Binary Code License Agreement
+
+READ THE TERMS OF THIS AGREEMENT AND ANY PROVIDED SUPPLEMENTAL LICENSE TERMS (COLLECTIVELY "AGREEMENT") CAREFULLY BEFORE OPENING THE SOFTWARE MEDIA PACKAGE. BY OPENING THE SOFTWARE MEDIA PACKAGE, YOU AGREE TO THE TERMS OF THIS AGREEMENT. IF YOU ARE ACCESSING THE SOFTWARE ELECTRONICALLY, INDICATE YOUR ACCEPTANCE OF THESE TERMS BY SELECTING THE "ACCEPT" BUTTON AT THE END OF THIS AGREEMENT. IF YOU DO NOT AGREE TO ALL OF THESE TERMS, PROMPTLY RETURN THE UNUSED SOFTWARE TO YOUR PLACE OF PURCHASE FOR A REFUND OR, IF THE SOFTWARE IS ACCESSED ELECTRONICALLY, SELECT THE "DECLINE" BUTTON AT THE END OF THIS AGREEMENT AND THE INSTALLATION PROCESS WILL NOT CONTINUE.
+
+1. License to Use. Sun Microsystems, Inc. ("Sun") grants you a non-exclusive and non- transferable license for the internal use only of the accompanying software, documentation and any error corrections provided by Sun (collectively "Software"), by the number of users and the class of computer hardware for which the corresponding fee has been paid.
+
+2. Restrictions. Software is confidential and copyrighted. Title to Software and all associated intellectual property rights is retained by Sun and/or its licensors. Except as specifically authorized in any Supplemental License Terms, you may not make copies of Software, other than a single copy of Software for archival purposes. Unless enforcement is prohibited by applicable law, you may not modify, decompile, or reverse engineer Software. You acknowledge that Software is not designed, licensed or intended for use in the design, construction, operation or maintenance of any nuclear facility. Sun disclaims any express or implied warranty of fitness for such uses. No right, title or interest in or to any trademark, service mark, logo or trade name of Sun or its licensors is granted under this Agreement.
+
+3. Limited Warranty. Sun warrants to you that for a period of ninety (90) days from the date of purchase, as evidenced by a copy of the receipt, the media on which Software is furnished (if any) will be free of defects in materials and workmanship under normal use. Except for the foregoing, Software is provided "AS IS". Your exclusive remedy and Sun's entire liability under this limited warranty will be at Sun's option to replace Software media or refund the fee paid for Software.
+
+4. DISCLAIMER OF WARRANTY. UNLESS SPECIFIED IN THIS AGREEMENT, ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT ARE DISCLAIMED, EXCEPT TO THE EXTENT THAT THESE DISCLAIMERS ARE HELD TO BE LEGALLY INVALID.
+
+5. LIMITATION OF LIABILITY. TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR ANY LOST REVENUE, PROFIT OR DATA, OR FOR SPECIAL, INDIRECT, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF OR RELATED TO THE USE OF OR INABILITY TO USE SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. In no event will Sun's liability to you, whether in contract, tort (including negligence), or otherwise, exceed the amount paid by you for Software under this Agreement. The foregoing limitations will apply even if the above stated warranty fails of its essential purpose.
+
+6. Termination. This Agreement is effective until terminated. You may terminate this Agreement at any time by destroying all copies of Software. This Agreement will terminate immediately without notice from Sun if you fail to comply with any provision of this Agreement. Upon Termination, you must destroy all copies of Software.
+
+7. Export Regulations. All Software and any technical data delivered under this Agreement are subject to US export control laws and may be subject to export or import regulations in other countries. You agree to comply strictly with all such laws and regulations and acknowledge that you have the responsibility to obtain such licenses to export, re-export, or import as may be required after delivery to you.
+
+8. U.S. Government Restricted Rights. If Software is being acquired by or on behalf of the U.S. Government or by a U.S. Government prime contractor or subcontractor (at any tier), then the Government's rights in Software and accompanying documentation will be only as set forth in this Agreement; this is in accordance with 48 C.F.R. 227.7202-4 (for Department of Defense (DOD) acquisitions) and with 48 C.F.R. 2.101 and 12.212 (for non- DOD acquisitions).
+
+9. Governing Law. Any action related to this Agreement will be governed by California law and controlling U.S. federal law. No choice of law rules of any jurisdiction will apply.
+
+10. Severability. If any provision of this Agreement is held to be unenforceable, this Agreement will remain in effect with the provision omitted, unless omission would frustrate the intent of the parties, in which case this Agreement will immediately terminate.
+
+11. Integration. This Agreement is the entire agreement between you and Sun relating to its subject matter. It supersedes all prior or contemporaneous oral or written communications, proposals, representations and warranties and prevails over any conflicting or additional terms of any quote, order, acknowledgment, or other communication between the parties relating to its subject matter during the term of this Agreement. No modification of this Agreement will be binding, unless in writing and signed by an authorized representative of each party.
+
+For inquiries please contact: Sun Microsystems, Inc. 901 San Antonio Road, Palo Alto, California 94303
+
+JIMI SDK, Version 2.0 SUPPLEMENTAL LICENSE TERMS
+
+These supplemental terms ("Supplement") add to the terms of the Binary Code License Agreement ("Agreement"). Capitalized terms not defined herein shall have the same meanings ascribed toh them in the Agreement. The Supplement terms shall supersede any inconsistent or conflicting terms in the Agreement. 
+
+1. Limited License Grant.
+
+a. Software Development License. Subject to your obligation to indemnify Sun pursuant to Section 3 below, Sun grants to you a non-exclusive, non-transferable limited license to use the Software without fee for evaluation of the Software and for development of Java(TM) applets and applications provided that you may not re-distribute the Software in whole or in part, except as provided in Section 1.b below. The Software may contain source code which is provided for reference purposes only, and may not be modified (except for the purpose of correcting errors) or redistributed.
+
+b. License to Distribute Runtime. Subject to your obligation to indemnify Sun pursuant to Section 3 below, Sun grants to you a non-exclusive, non-transferable limited, royalty-free license to reproduce, distribute offer to sell and sell the Software provided that you: 
+(i)distribute the Software complete and unmodified (except for error corrections), only as part of, and for the sole purpose of running, your Java applet or application ("Program") into which the Software is incorporated; 
+(ii) do not distribute additional software intended to replace any component(s) of the Software; 
+(iii) do not remove or alter any proprietary legends or notices contained in the Software; 
+(iv) only distribute the Program subject to a license agreement that protects Sun's interests consistent with the terms contained herein; and 
+(v) may not create, or authorize your licensees to create additional classes, interfaces, or subpackages that are contained in the "java" or "sun" packages or similar as ! specified by Sun in any class file naming convention.
+
+2. Java Platform Interface. In the event that Licensee creates an additional API(s) which: 
+(i) extends the functionality of a Java Environment; and, 
+(ii) is exposed to third party software developers for the purpose of developing additional software which invokes such additional API, Licensee must promptly publish broadly an accurate specification for such API for free use by all developers.
+
+3.Indemnity to Sun. As a condition precedent to each license grant in this Agreement, you agree to indemnify, hold harmless, and defend Sun and its licensors from and against any and all claims, lawsuits, liabilities, demands and expenses (including attorneys' fees), that arise or result from the use or distribution of the Software or the Program, including without limitation, those brought by Unisys Corporation, its successors and assigns, with respect to U.S. Patent Number 4,558,302 and all foreign counterparts thereto which Unisys Corporation may now have or acquire in the future (the "LZW Patents") relating to your making, using, selling, licensing, importing, offering to sell, or otherwise transferring the GIF encoding and/or decoding feature of the Software or the Program. This Agreement does not grant any rights to you with respect to the LZW Patents.
+
+4. Trademarks and Logos. This Agreement does not authorize you to use any Sun name, trademark or logo. Licensee acknowledges as between it and Sun that Sun owns the Java trademark and all Java-related trademarks, logos and icons including the Coffee Cup and Duke ("Java Marks") and agrees to comply with the Java Trademark Guidelines at http://java.sun.com

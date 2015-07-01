@@ -1,0 +1,16 @@
+Index: src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
+===================================================================
+--- src.orig/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
++++ src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
+@@ -814,6 +814,11 @@ void ResourceHandleManager::startJob()
+         cacheEntry->cancel();
+         return;
+       }
++      if(protocol.lower() == "file") {
++	DBG("Http secure mode is set to %d\n", secureMode);
++	DBG("Allowing non-secure access for local filesystem\n");
++	secureMode = 0;
++      }
+     }
+ 
+     cacheEntry->setHandle(curl_easy_init());

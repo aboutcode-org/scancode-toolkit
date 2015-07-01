@@ -1,0 +1,38 @@
+--- src/Browser/WebCore/platform/graphics/ekioh/ImageSourceEkioh525.cpp	2009-06-04 17:06:37.000000000 +0200
++++ ImageSourceEkioh525.cpp	2009-09-29 19:06:05.000000000 +0200
+@@ -89,7 +89,8 @@ ImageDecoder* createDecoder(const Shared
+ }
+ 
+ ImageSource::ImageSource()
+-  : m_decoder(0)
++  : m_decoder(0),
++    m_accelerated(false)
+ {}
+ 
+ ImageSource::~ImageSource()
+@@ -109,7 +110,7 @@ bool ImageSource::initialized() const
+     return m_decoder;
+ }
+ 
+-void ImageSource::setData(SharedBuffer* data, bool allDataReceived)
++void ImageSource::setData(SharedBuffer* data, bool allDataReceived, bool accelerated)
+ {
+     TRACE("%p sz=%d all=%d m_decoder=%p", this, data->size(), allDataReceived, m_decoder);
+     // Make the decoder by sniffing the bytes.
+@@ -122,6 +123,7 @@ void ImageSource::setData(SharedBuffer* 
+         m_decoder = 0;
+     }
+ 
++    m_accelerated = accelerated;
+     m_decoder = createDecoder(*data);
+     if (!m_decoder)
+         return;
+@@ -180,7 +182,7 @@ NativeImagePtr ImageSource::createFrameA
+         (uint32_t) size().width(),
+         (uint32_t) buffer->height(),
+         //(uint16_t) size().height(),
+-        32);
++        32, m_accelerated);
+ 
+     DBG("w=%d h=%d bh=%d np=%d sz=%d\n",
+             size().width(),

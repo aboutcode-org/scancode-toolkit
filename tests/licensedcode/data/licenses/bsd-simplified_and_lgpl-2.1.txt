@@ -1,0 +1,57 @@
+JOTM: Java Open Transaction Manager
+
+This project was originally developed by the following copyright holders
+and contributors:
+
+- INRIA (www.inria.fr)inside the ObjectWeb Consortium
+(http://www.objectweb.org)
+- Experlog
+(http://www.experlog.org)
+- Bull S.A. as part of the JOnAS application server code released in July 1999
+(www.bull.com)
+
+HISTORY
+
+The project was originally licensed under the GNU LESSER GENERAL PUBLIC LICENSE
+(LGPL)Version 2.1, February 1999.
+
+With the permission of the original copyright holders and contributors and at
+the direction of the ObjectWeb Executive Board, the license was changed
+to the Berkeley Software Distribution style license below.
+-Trent Shue December 05, 2003
+
+-------------------------------------------------------------------------------
+The original code and portions created by INRIA are
+Copyright (c) 2002 INRIA
+All rights reserved.
+
+The original code and portions created by Experlog are
+Copyright (c) 2003 Experlog
+All rights reserved.
+
+The original code and portions created by Bull SA are
+Copyright (c) 1999 BULL SA
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+-Redistributions of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.
+
+-Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation
+and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+-------------------------------------------------------------------------------

@@ -1,0 +1,20 @@
+licenses:
+    - d-zlib
+    - gfdl-1.2
+    - gpl
+    - gpl
+    - gpl-2.0-classpath
+    - gpl-2.0-gcc
+    - gpl-2.0-gcc
+    - gpl-2.0-gcc-compiler-exception
+    - gpl-2.0-glibc
+    - gpl-2.0-plus
+    - gpl-2.0-plus
+    - gpl-2.0-plus-ada
+    - gpl-2.0-plus-linking
+    - gpl-2.0-plus-linking
+    - gpl-2.0-plus-linking
+    - gpl-3.0-plus
+    - lgpl
+    - mit
+sort: true

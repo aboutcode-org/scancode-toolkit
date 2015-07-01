@@ -1,0 +1,60 @@
+@center Version 1.2, November 2002
+
+@display
+Copyright @copyright{} 2000,2001,2002 Free Software Foundation, Inc.
+51 Franklin St, Fifth Floor, Boston, MA  02110-1301, USA
+
+APPLICABILITY AND DEFINITIONS
+
+This License applies to any manual or other work, in any medium, that
+contains a notice placed by the copyright holder saying it can be
+distributed under the terms of this License.  Such a notice grants a
+world-wide, royalty-free license, unlimited in duration, to use that
+refers to any such manual or work.  Any member of the public is a
+licensee, and is addressed as ``you''.  You accept the license if you
+copy, modify or distribute the work in a way requiring permission
+under copyright law.
+
+A ``Modified Version'' of the Document means any work containing the
+
+You may copy and distribute the Document in any medium, either
+commercially or noncommercially, provided that this License, the
+copyright notices, and the license notice saying this License applies
+to the Document are reproduced in all copies, and that you add no other
+conditions whatsoever to those of this License.  You may not use
+Modified Version, as the publisher.
+
+@item
+Preserve all the copyright notices of the Document.
+
+@item
+Add an appropriate copyright notice for your modifications
+adjacent to the other copyright notices.
+
+@item
+Include, immediately after the copyright notices, a license notice
+giving the public permission to use the Modified Version under the
+terms of this License, in the form shown in the Addendum below.
+
+A compilation of the Document or its derivatives with other separate
+and independent documents or works, in or on a volume of a storage or
+distribution medium, is called an ``aggregate'' if the copyright
+resulting from the compilation is not used to limit the legal rights
+of the compilation's users beyond what the individual works permit.
+Translation is considered a kind of modification, so you may
+distribute translations of the Document under the terms of section 4.
+Replacing Invariant Sections with translations requires special
+permission from their copyright holders, but you may include
+translations of some or all Invariant Sections in addition to the
+original versions of these Invariant Sections.  You may include a
+@appendixsubsec ADDENDUM: How to use this License for your documents
+
+To use this License in a document you have written, include a copy of
+the License in the document and put the following copyright and
+license notices just after the title page:
+
+@smallexample
+@group
+  Copyright (C)  @var{year}  @var{your name}.
+  Permission is granted to copy, distribute and/or modify this document
+  under the terms of the GNU Free Documentation License, Version 1.2

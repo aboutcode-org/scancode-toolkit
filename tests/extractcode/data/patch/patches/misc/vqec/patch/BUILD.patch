@@ -1,0 +1,10 @@
+--- eva/BUILD.orig	2009-07-15 13:59:02.000000000 +0800
++++ eva/BUILD	2009-07-15 14:00:46.000000000 +0800
+@@ -32,6 +32,7 @@
+         $(SRCDIR)/vqec_upcall_event.c	\
+ 	$(SRCDIR)/vqec_nat_natproto.c		\
+         $(SRCDIR)/vqec_cli_interface.c            \
++        $(SRCDIR)/vqec_wv.c            \
+ 
+ ifeq ($(HAVE_FCC), 1)
+  VQEC_SRC += $(SRCDIR)/vqec_ifclient_fcc.c

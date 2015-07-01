@@ -1,0 +1,4 @@
+licenses:
+    - gpl-3.0
+template: yes
+notes: debian packaging gpl v3

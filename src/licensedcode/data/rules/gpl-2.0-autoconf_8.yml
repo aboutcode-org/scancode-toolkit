@@ -1,0 +1,3 @@
+licenses:
+    - gpl-2.0-autoconf
+notes: The text is the same as for autoconf with autoconf replaced by libtool

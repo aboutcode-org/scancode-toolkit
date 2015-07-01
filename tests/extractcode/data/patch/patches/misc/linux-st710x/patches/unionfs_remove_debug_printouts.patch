@@ -1,0 +1,22 @@
+--- linux-2.6.23/fs/unionfs/dentry.c~	2009-04-16 19:27:08.000000000 +0200
++++ linux-2.6.23/fs/unionfs/dentry.c	2009-04-21 08:06:08.000000000 +0200
+@@ -273,9 +273,6 @@
+ 					      &lower_inode->i_mtime) < 0)) {
+ 			if ((lower_inode->i_mtime.tv_sec -
+ 			     inode->i_mtime.tv_sec) > UNIONFS_MIN_CC_TIME) {
+-				pr_info("unionfs: new lower inode mtime "
+-					"(bindex=%d, name=%s)\n", bindex,
+-					dentry->d_name.name);
+ 				show_dinode_times(dentry);
+ 			}
+ 			return true;
+@@ -284,9 +281,6 @@
+ 					      &lower_inode->i_ctime) < 0)) {
+ 			if ((lower_inode->i_ctime.tv_sec -
+ 			     inode->i_ctime.tv_sec) > UNIONFS_MIN_CC_TIME) {
+-				pr_info("unionfs: new lower inode ctime "
+-					"(bindex=%d, name=%s)\n", bindex,
+-					dentry->d_name.name);
+ 				show_dinode_times(dentry);
+ 			}
+ 			return true;

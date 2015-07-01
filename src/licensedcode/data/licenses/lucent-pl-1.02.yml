@@ -1,0 +1,12 @@
+key: lucent-pl-1.02
+short_name: Lucent Public License 1.02
+name: Lucent Public License 1.02
+category: Copyleft Limited
+owner: Alcatel-Lucent
+homepage_url: http://plan9.bell-labs.com/plan9/license.html
+spdx_license_key: LPL-1.02
+spdx_full_name: Lucent Public License v1.02 (Plan9)
+spdx_url: http://spdx.org/licenses/LPL-1.02
+spdx_notes: This license is OSI certified.
+text_urls:
+    - http://plan9.bell-labs.com/plan9/license.html

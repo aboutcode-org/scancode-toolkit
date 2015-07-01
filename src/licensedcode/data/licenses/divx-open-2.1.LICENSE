@@ -1,0 +1,51 @@
+"OpenDivX" is licensed under the DivX Open License.
+
+DivX Open License
+=================
+Version 2.1
+
+This version of the DivX Open License supercedes any prior versions.
+
+Copyright (C) 2001 Project Mayo. Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
+
+Provided below is our open source license agreement ("License") under which we provide the Codec (defined below) to you free of charge. Please read it carefully.
+
+BY USING, COPYING, MODIFYING, OR DISTRIBUTING THE CODEC OR A LARGER WORK (DEFINED BELOW), YOU INDICATE YOUR ACCEPTANCE OF THIS LICENSE TO DO SO, AND ALL ITS TERMS AND CONDITIONS.
+
+For purposes of this Agreement, the "Codec" shall mean the OpenDivX compression/decompression software provided to you by Project Mayo ("Project Mayo") and any derivative work thereof, that is to say, a work containing the Codec or a portion of it, either verbatim or with modifications and/or translated into another language. A "Larger Work" shall mean any work including or integrating the Codec as an object file or linked library. "Encoded Content" shall mean any multimedia content encoded as output of the Codec, even if that Codec is integrated into a Larger Work.
+
+Permission is granted to you to use the Codec for any purpose, and to copy it, alter it and redistribute it, subject to the following:
+
+1. You may modify your copy or copies of the Codec or any portion of it, provided that you cause the modified files to carry prominent notices stating that you changed the files and the date of any such change.
+
+2. You may copy, distribute, display and transmit the Codec's source code, in any medium, subject to the following:
+
+a. You must conspicuously and appropriately publish on each copy an appropriate copyright notice and disclaimer of warranty; keep intact all the notices that refer to this License and to the absence of any warranty; and give any other recipients of the Codec a copy of this License along with the Codec.
+
+b. You must cause any Codec that you distribute or publish to be licensed as a whole at no charge to all third parties under the terms of this License. However, you may charge a fee for the physical act of transferring a copy of the Codec, and you may at your option offer warranty protection in exchange for a fee.
+
+c. In each instance in which you attribute ownership or authorship of the Codec you will include an acknowledgement in a location viewable to users of the Codec as follows: "This product includes software developed by or derived from software developed by Project Mayo." In any event, the origin of the Codec must not be misrepresented; you must not claim sole authorship in the Codec.
+
+d. Each time you redistribute the Codec, the recipient automatically receives a license from Project Mayo to copy, distribute or modify the Codec subject to these terms and conditions. You may not impose any further restrictions on the recipients' exercise of the rights granted herein.
+
+3. You may copy and distribute the Codec in object code or executable form under the terms of Section 2, provided that you also accompany it with the complete machine-readable source code, or make such source-code freely and publicly available.
+
+4. You may incorporate the Codec into a Larger Work and distribute that Larger Work under terms of your choice, provided that:
+
+a. The terms permit modification of the work for the customer's own use and reverse engineering for debugging such modifications.
+
+b. You include an acknowledgement in a location viewable to users of a distribution of a Larger Work as follows: "This product includes software developed by or derived from software developed by Project Mayo."
+
+5. Any Codec or Larger Works created by you must conform to the MPEG-4 Video Standard, however modules of the Codec that do not derive from MoMuSys can be used and incorporated into a non-MPEG-4 conforming work that otherwise complies with this license.
+
+6. Except as provided in section 7 below, you must receive prior express written permission from Project Mayo before you use the names "DivX;-)" or "DivX" (or any names incorporating those names) or the file extensions ".divx" or ".div" to promote or endorse any products derived from the Codec, including, but not limited to Larger Works.
+
+7. You must use the ".divx" file extension in any Encoded Content, when tools for this purpose are readily available. For Encoded Content used for a commercial purpose, you must prominently display the "Encoded in DivX" logo on the package of any Encoded Content in a manner immediately visible to viewers and you must include the "Encoded in DivX" video logo at the beginning of any Encoded Content when the means for such display are reasonably available.
+
+8. The Codec contains copyrighted materials that are proprietary to Project Mayo, and no rights are granted to you except as expressly provided herein. You may not copy, modify, sublicense, display, distribute or transmit the Codec except as expressly provided under this License. Any act or attempt to copy, modify, sublicense, display, distribute or transmit the Codec other than as permitted herein will automatically terminate your rights under this License. However, parties who have received copies from you under this License will not have their licenses terminated so long as such parties remain in full compliance.
+
+THIS CODEC IS PROVIDED BY PROJECT MAYO AND ITS CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE DISCLAIMED. IN NO EVENT SHALL PROJECT MAYO OR ITS CONTRIBUTORS BE HELD LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES, LOSS OF USE, DATA OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+Want to start or contribute to a project? Read this. 
+ 
+* * *

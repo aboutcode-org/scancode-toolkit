@@ -1,0 +1,59 @@
+This package was debianized by Nicolas Boullis <nboullis@debian.org>.
+
+It was downloaded from ftp://ftp.gnu.org/gnu/libcdio/
+
+Upstream Authors: <s>Rocky Bernstein <rocky@panix.com></s>
+                  <s>Herbert Valerio Riedel <hvr@gnu.org></s>
+
+Copyright:
+
+  Copyright (C) 1999, 2002, 2003, 2004, 2005, 2006, 2007, 2008 <s>Rocky Bernstein <rocky@gnu.org></s>
+  Copyright (C) 2000, 2001, 2003, 2004, 2005, 2008 <s>Herbert Valerio Riedel</s>
+  Copyright (C) 1996, 1997, 1998 <s>Gerd Knorr <kraxel@bytesex.org></s>
+  Copyright (C) 2001 <s>Xiph.org</s>
+  Copyright (C) 1994, 1995, 1996, 1997, 1998, 2001 <s>Heiko Eißfeldt <heiko@escape.colossus.de></s>
+  Copyright (C) 1998, 1999, 2001 <s>Monty <xiphmont@mit.edu></s>
+  Copyright (C) 2008 <s>Robert W. Fuller <hydrologiccycle@gmail.com></s>
+  Copyright (C) 2006, 2008 <s>Burkhard Plaum <plaum@ipf.uni-stuttgart.de></s>
+  Copyright (C) 2001, 2002 <s>Ben Fennema <bfennema@falcon.csc.calpoly.edu></s>
+  Copyright (C) 2001, 2002 <s>Scott Long <scottl@freebsd.org></s>
+  Copyright (C) 1993 <s>Yggdrasil Computing, Incorporated</s>
+  Copyright (C) 1999, 2000 <s>J. Schilling</s>
+  Copyright (C) 2001 <s>Sven Ottemann <ac-logic@freenet.de></s>
+  Copyright (C) 2003 <s>Svend Sanjay Sorensen <ssorensen@fastmail.fm></s>
+  Copyright (C) 1985, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1996, 1997, 1998, 1999, 2000 <s>Free Software Foundation, Inc.</s>
+  Copyright (C) 2003 <s>Matthias Drochner</s>
+  Copyright (C) 1998-2001 <s>VideoLAN </s>(<s>Johan Bilien <jobi@via.ecp.fr></s> and <s>Gildas Bazin <gbazin@netcourrier.com></s>)
+  Copyright (C) 1992, 1993 <s>Eric Youngdale</s>
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+On Debian systems, the complete text of the GNU General Public
+License can be found in /usr/share/common-licenses/GPL
+
+
+The documentation's copyright is:
+
+   Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008 <s>Rocky Bernstein and Herbert Valerio Riedel</s>.
+
+     Permission is granted to copy, distribute and/or modify this
+     document under the terms of the GNU Free Documentation License,
+     Version 1.2 or any later version published by the Free Software
+     Foundation; with no Invariant Sections, with no Front-Cover Texts,
+     and with no Back-Cover Texts.  A copy of the license is included
+     in the section entitled "GNU Free Documentation License".
+
+On Debian systems, the complete text of the GNU Free Documentation
+License can be found in /usr/share/common-licenses/GFDL
+

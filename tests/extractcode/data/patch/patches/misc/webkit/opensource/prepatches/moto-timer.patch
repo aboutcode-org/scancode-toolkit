@@ -1,0 +1,77 @@
+Index: src/3rdParty/webkit/patches/moto-timer.patch
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/patches/moto-timer.patch
+@@ -0,0 +1,60 @@
++diff -ur work/WebCore/platform/Timer.cpp work/WebCore/platform/Timer.cpp
++--- work/WebCore/platform/Timer.cpp	2009-06-03 11:07:39.000000000 +0200
+++++ work/WebCore/platform/Timer.cpp	2009-06-03 11:08:14.000000000 +0200
++@@ -50,6 +50,8 @@
++ static bool deferringTimers;
++ static Vector<TimerBase*>* timerHeap;
++ static HashSet<const TimerBase*>* timersReadyToFire;
+++static double MaxValue = (long long)1 << 32;
+++static double LastFireTime;
++ 
++ // ----------------
++ 
++@@ -317,8 +319,18 @@
++     checkConsistency();
++ }
++ 
+++inline double TimerBase::getNextFireTime()
+++{
+++    return m_nextFireTime;
+++}
+++
++ void TimerBase::collectFiringTimers(double fireTime, Vector<TimerBase*>& firingTimers)
++ {
+++    if (LastFireTime > fireTime) {
+++        for (uint32_t index = 0; index < timerHeap->size(); index++) {
+++            (*timerHeap)[index]->setNextFireTime(((*timerHeap)[index]->getNextFireTime() * 100 - MaxValue) / 100);
+++        }
+++    }
++     while (!timerHeap->isEmpty() && timerHeap->first()->m_nextFireTime <= fireTime) {
++         TimerBase* timer = timerHeap->first();
++         firingTimers.append(timer);
++@@ -326,6 +338,7 @@
++         timer->m_nextFireTime = 0;
++         timer->heapDeleteMin();
++     }
+++    LastFireTime = fireTime;
++ }
++ 
++ void TimerBase::fireTimers(double fireTime, const Vector<TimerBase*>& firingTimers)
++diff -ur work/WebCore/platform/Timer.h work/WebCore/platform/Timer.h
++--- work/WebCore/platform/Timer.h	2008-11-26 17:49:55.000000000 +0100
+++++ work/WebCore/platform/Timer.h	2009-06-03 11:08:14.000000000 +0200
++@@ -54,6 +54,8 @@
++     void augmentRepeatInterval(double delta) { setNextFireTime(m_nextFireTime + delta); m_repeatInterval += delta; }
++ 
++     static void fireTimersInNestedEventLoop();
+++    void setNextFireTime(double);
+++    double getNextFireTime();
++ 
++ private:
++     virtual void fired() = 0;
++@@ -61,8 +63,6 @@
++     void checkConsistency() const;
++     void checkHeapIndex() const;
++ 
++-    void setNextFireTime(double);
++-
++     bool inHeap() const { return m_heapIndex != -1; }
++ 
++     void heapDecreaseKey();
+Index: src/3rdParty/webkit/patches/series
+===================================================================
+--- src.orig/3rdParty/webkit/patches/series
++++ src/3rdParty/webkit/patches/series
+@@ -19,6 +19,7 @@ jscore-vector-alignment.patch
+ webcore-arena-alignment.patch
+ ekioh-png-uclibc.patch
+ webcore-enclosing-int-rect.patch
++moto-timer.patch
+ debug-fixes.patch
+ webcore-no-scrollbars.patch
+ newlib-uint32-long.patch

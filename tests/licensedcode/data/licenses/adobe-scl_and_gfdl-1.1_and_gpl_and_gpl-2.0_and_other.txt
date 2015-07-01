@@ -1,0 +1,393 @@
+This package was debianized by Sebastien Bacher <seb128@debian.org> on
+Mon, 10 Jan 2005 13:23:55 +0100.
+
+It was downloaded from ftp://ftp.gnome.org/pub/gnome/sources/evince/
+
+The upstream authors are <s>Bryan Clark</s>, <s>Carlos García Campos</s>, <s>David Malcolm</s>,
+<s>James Bowes</s>, <s>Jonathan Blandford</s>, <s>Kristian Høgsberg</s>, <s>Martin Kretzschmar</s>
+and <s>Nickolay V. Shmyrev</s>. See http://live.gnome.org/Evince/Team for more
+information on the team behind evince.
+
+Due to the huge number of supported file formats, evince's copyright situation
+is a bit complex. Please refer to the following table or the source package
+for more information. The used shortcuts are explained after the table:
+
+File                                                 | License | Copyright Holder
+-----------------------------------------------------+---------+-----------------
+backend/comics/comics-document.c                     | GPLv2h  | <s>Teemu Tervo <teemu.tervo@gmx.net></s>
+backend/comics/comics-document.h                     | GPLv2h  | <s>Teemu Tervo <teemu.tervo@gmx.net></s>
+backend/djvu/djvu-document.c                         | GPLv2h  | <s>Nickolay V. Shmyrev <nshmyrev@yandex.ru></s>
+backend/djvu/djvu-document.h                         | GPLv2h  | <s>Nickolay V. Shmyrev <nshmyrev@yandex.ru></s>
+backend/djvu/djvu-document-private.h                 | GPLv2h  | <s>Michael Hofmann <mh21@piware.de></s>
+backend/djvu/djvu-links.c                            | GPLv2h  | <s>Pauli Virtanen <pav@iki.fi></s>
+backend/djvu/djvu-links.h                            | GPLv2h  | <s>Pauli Virtanen <pav@iki.fi></s>
+backend/djvu/djvu-text.c                             | GPLv2h  | <s>Michael Hofmann <mh21@piware.de></s>
+backend/djvu/djvu-text.h                             | GPLv2h  | <s>Michael Hofmann <mh21@piware.de></s>
+backend/djvu/djvu-text-page.c                        | GPLv2h  | <s>Michael Hofmann <mh21@piware.de></s>
+backend/djvu/djvu-text-page.h                        | GPLv2h  | <s>Michael Hofmann <mh21@piware.de></s>
+backend/dvi/dvi-document.c                           | GPLv2h  | <s>Nickolay V. Shmyrev <nshmyrev@yandex.ru></s>
+backend/dvi/dvi-document.h                           | GPLv2h  | <s>Nickolay V. Shmyrev <nshmyrev@yandex.ru></s>
+backend/dvi/fonts.c                                  | unspec  | unspec
+backend/dvi/fonts.h                                  | unspec  | unspec
+backend/dvi/mdvi-lib/afmparse.c                      | Adobe   | <s>Adobe Systems Incorporated.</s>
+backend/dvi/mdvi-lib/afmparse.h                      | Adobe   | <s>Adobe Systems Incorporated.</s>
+backend/dvi/mdvi-lib/bitmap.c                        | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/bitmap.h                        | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/color.c                         | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/color.h                         | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/common.c                        | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/common.h                        | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/defaults.h                      | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/dviopcodes.h                    | unspec  | unspec
+backend/dvi/mdvi-lib/dviread.c                       | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/files.c                         | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/font.c                          | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/fontmap.c                       | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/fontmap.h                       | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/fontsrch.c                      | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/gf.c                            | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/hash.c                          | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/hash.h                          | unspec  | unspec
+backend/dvi/mdvi-lib/list.c                          | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/mdvi.h                          | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/pagesel.c                       | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/paper.c                         | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/paper.h                         | unspec  | unspec
+backend/dvi/mdvi-lib/pk.c                            | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/private.h                       | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/setup.c                         | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/special.c                       | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/sp-epsf.c                       | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/sysdeps.h                       | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/t1.c                            | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/tfm.c                           | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/tfmfile.c                       | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/tt.c                            | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/util.c                          | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/mdvi-lib/vf.c                            | GPLv2h  | <s>Matias Atria</s>
+backend/dvi/pixbuf-device.c                          | unspec  | unspec
+backend/dvi/pixbuf-device.h                          | unspec  | unspec
+backend/impress/common.h                             | GPL     | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/impress/document.c                           | GPL     | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/impress/f_oasis.c                            | GPL     | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/impress/f_oo13.c                             | GPL     | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/impress/iksemel.c                            | LGPLv2h | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/impress/iksemel.h                            | LGPLv2h | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/impress/imposter.h                           | GPL     | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/impress/impress-document.c                   | GPLv2h  | <s>Jonathan Blandford <jrb@gnome.org></s>, <s>Bastien Nocera <hadess@hadess.net></s>
+backend/impress/impress-document.h                   | GPLv2h  | <s>Jonathan Blandford <jrb@gnome.org></s>
+backend/impress/internal.h                           | GPL     | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/impress/r_back.c                             | GPL     | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/impress/r_draw.c                             | GPL     | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/impress/render.c                             | GPL     | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/impress/r_geometry.c                         | GPL     | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/impress/r_gradient.c                         | GPL     | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/impress/r_style.c                            | GPL     | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/impress/r_text.c                             | GPL     | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/impress/zip.c                                | GPL     | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/impress/zip.h                                | GPL     | <s>Gurer Ozen <madcat@e-kolay.net></s>
+backend/pdf/ev-poppler.cc                            | GPLv2h  | <s>Red Hat, Inc.</s>
+backend/pdf/ev-poppler.h                             | GPLv2h  | <s>Red Hat, Inc.</s>
+backend/pixbuf/pixbuf-document.c                     | GPLv2h  | <s>Anders Carlsson <andersca@gnome.org></s>
+backend/pixbuf/pixbuf-document.h                     | GPLv2h  | <s>Anders Carlsson <andersca@gnome.org></s>
+backend/ps/gsdefaults.c                              | GPLv2h  | <s>The Free Software Foundation</s>
+backend/ps/gsdefaults.h                              | GPLv2h  | <s>The Free Software Foundation</s>
+backend/ps/gsio.c                                    | GPLv2h  | <s>The Free Software Foundation</s>
+backend/ps/gsio.h                                    | GPLv2h  | <s>The Free Software Foundation</s>
+backend/ps/gstypes.h                                 | LGPLv2h | <s>The Free Software Foundation</s>
+backend/ps/ps.c                                      | GPLv2h  | <s>Timothy O. Theisen</s> 
+backend/ps/ps-document.c                             | LGPLv2h | <s>The Free Software Foundation</s>
+backend/ps/ps-document.h                             | LGPLv2h | <s>The Free Software Foundation</s>
+backend/ps/ps.h                                      | GPLv2h  | <s>Timothy O. Theisen</s>
+backend/ps/ps-interpreter.c                          | GPLv2h  | <s>Free Software Foundation</s>, <s>Carlos Garcia Campos <carlosgc@gnome.org></s>
+backend/ps/ps-interpreter.h                          | GPLv2h  | <s>Carlos Garcia Campos <carlosgc@gnome.org></s>
+backend/tiff/tiff2ps.c                               | SGI     | <s>Sam Leffler</s>, <s>Silicon Graphics, Inc.</s>
+backend/tiff/tiff2ps.h                               | GPLv2h  | <s>rpath, Inc.</s>
+backend/tiff/tiff-document.c                         | GPLv2h  | <s>Jonathan Blandford <jrb@gnome.org></s>
+backend/tiff/tiff-document.h                         | GPLv2h  | <s>Jonathan Blandford <jrb@gnome.org></s>
+cut-n-paste/recent-files/egg-recent-item.c           | GPLv2h  | <s>James Willcox <jwillcox@cs.indiana.edu></s>
+cut-n-paste/recent-files/egg-recent-item.h           | unspec  | unspec
+cut-n-paste/recent-files/egg-recent-model.c          | GPLv2h  | <s>James Willcox <jwillcox@cs.indiana.edu></s>
+cut-n-paste/recent-files/egg-recent-model.h          | unspec  | unspec
+cut-n-paste/recent-files/egg-recent-util.c           | unspec  | unspec
+cut-n-paste/recent-files/egg-recent-util.h           | unspec  | unspec
+cut-n-paste/recent-files/egg-recent-view.c           | GPLv2h  | <s>James Willcox <jwillcox@cs.indiana.edu></s>
+cut-n-paste/recent-files/egg-recent-view.h           | unspec  | unspec
+cut-n-paste/recent-files/egg-recent-view-uimanager.c | GPLv2h  | <s>James Willcox <jwillcox@cs.indiana.edu></s>, <s>Paolo Bacchilega <paobac@cvs.gnome.org></s>
+cut-n-paste/recent-files/egg-recent-view-uimanager.h | unspec  | unspec
+cut-n-paste/toolbar-editor/egg-editable-toolbar.c    | GPLv2h  | <s>Marco Pesenti Gritti</s>, <s>Christia</s>
+cut-n-paste/toolbar-editor/egg-editable-toolbar.h    | GPLv2h  | <s>Marco Pesenti Gritti</s>, <s>Christian Persch</s>
+cut-n-paste/toolbar-editor/eggmarshalers.c           | unspec  | unspec
+cut-n-paste/toolbar-editor/eggmarshalers.h           | unspec  | unspec
+cut-n-paste/toolbar-editor/egg-toolbar-editor.c      | GPLv2h  | <s>Marco Pesenti Gritti</s>
+cut-n-paste/toolbar-editor/egg-toolbar-editor.h      | GPLv2h  | <s>Marco Pesenti Gritti</s>
+cut-n-paste/toolbar-editor/egg-toolbars-model.c      | GPLv2h  | <s>Marco Pesenti Gritti</s>, <s>Christian Persch</s>
+cut-n-paste/toolbar-editor/egg-toolbars-model.h      | GPLv2h  | <s>Marco Pesenti Gritti</s>, <s>Christian Persch</s>
+cut-n-paste/toolbar-editor/eggtypebuiltins.c         | unspec  | unspec
+cut-n-paste/toolbar-editor/eggtypebuiltins.h         | unspec  | unspec
+cut-n-paste/totem-screensaver/totem-scrsaver.c       | GPLv2h  | <s>Bastien Nocera <hadess@hadess.net></s>
+cut-n-paste/totem-screensaver/totem-scrsaver.h       | GPLv2h  | <s>Bastien Nocera <hadess@hadess.net></s>
+cut-n-paste/zoom-control/ephy-zoom-action.c          | GPLv2h  | <s>Marco Pesenti Gritti</s>, <s>Christian Persch</s>
+cut-n-paste/zoom-control/ephy-zoom-action.h          | GPLv2h  | <s>Marco Pesenti Gritti</s>, <s>Christian Persch</s>
+cut-n-paste/zoom-control/ephy-zoom.c                 | GPLv2h  | <s>Christian Persch</s>
+cut-n-paste/zoom-control/ephy-zoom-control.c         | GPLv2h  | <s>Christian Persch</s>
+cut-n-paste/zoom-control/ephy-zoom-control.h         | GPLv2h  | <s>Christian Persch</s>
+cut-n-paste/zoom-control/ephy-zoom.h                 | GPLv2h  | <s>Christian Persch</s>
+help/bg/evince.xml                                   | GFDL1.1 | unspec
+help/ca/evince.xml                                   | GFDL1.1 | <s>Sun Microsystems</s>, <s>Nickolay V. Shmyrev</s>
+help/C/evince.xml                                    | GFDL1.1 | <s>Sun Microsystems</s>, <s>Nickolay V. Shmyrev</s>
+help/el/evince.xml                                   | GFDL1.1 | unspec
+help/en_GB/evince.xml                                | GFDL1.1 | <s>David Lodge (dave@cirt.net)</s>
+help/es/evince.xml                                   | GFDL1.1 | <s>Francisco Javier F. Serrador</s>, <s>Jorge Gonzalez Gonzalez</s>
+help/fi/evince.xml                                   | GFDL1.1 | <s>Tommi Vainikainen</s>, <s>Flammie Pirinen</s>
+help/fr/evince.xml                                   | GFDL1.1 | <s>Jonathan Ernst</s>, <s>Claude Paroz</s>
+help/it/evince.xml                                   | GFDL1.1 | <s>Ubuntu Italian Translators</s>, <s>Luca Ferretti</s>
+help/nl/evince.xml                                   | GFDL1.1 | unspec
+help/ru/evince.xml                                   | GFDL1.1 | unspec
+help/sr/evince.xml                                   | GFDL1.1 | unspec
+help/sv/evince.xml                                   | GFDL1.1 | <s>Daniel Nylander</s>
+help/uk/evince.xml                                   | GFDL1.1 | unspec
+libdocument/ev-async-renderer.c                      | GPLv2h  | <s>Marco Pesenti Gritti</s>
+libdocument/ev-async-renderer.h                      | GPLv2h  | <s>Marco Pesenti Gritti</s>
+libdocument/ev-attachment.c                          | GPLv2h  | <s>Carlos Garcia Campos <carlosgc@gnome.org></s>
+libdocument/ev-attachment.h                          | GPLv2h  | <s>Carlos Garcia Campos <carlosgc@gnome.org></s>
+libdocument/ev-backend-marshal.c                     | unspec  | unspec
+libdocument/ev-backend-marshalers.h                  | unspec  | unspec
+libdocument/ev-document.c                            | GPLv2h  | <s>Marco Pesenti Gritti</s>
+libdocument/ev-document-factory.c                    | GPLv2h  | <s>Red Hat, Inc</s>
+libdocument/ev-document-factory.h                    | GPLv2h  | <s>Red Hat, Inc</s>
+libdocument/ev-document-find.c                       | GPLv2h  | <s>Red Hat, Inc</s>
+libdocument/ev-document-find.h                       | GPLv2h  | <s>Red Hat, Inc</s>
+libdocument/ev-document-fonts.c                      | GPLv2h  | <s>Red Hat, Inc</s>
+libdocument/ev-document-fonts.h                      | GPLv2h  | <s>Red Hat, Inc</s>
+libdocument/ev-document.h                            | GPLv2h  | <s>Marco Pesenti Gritti</s>
+libdocument/ev-document-images.c                     | GPLv2h  | 2006 <s>Carlos Garcia Campos <carlosgc@gnome.org></s>
+libdocument/ev-document-images.h                     | GPLv2h  | 2006 <s>Carlos Garcia Campos <carlosgc@gnome.org></s>
+libdocument/ev-document-info.h                       | GPLv2h  | <s>Marco Pesenti Gritti</s>
+libdocument/ev-document-links.c                      | GPLv2h  | <s>Red Hat, Inc</s>
+libdocument/ev-document-links.h                      | GPLv2h  | <s>Red Hat, Inc</s>
+libdocument/ev-document-misc.c                       | unspec  | <s>Marco Pesenti Gritti</s>
+libdocument/ev-document-misc.h                       | GPLv2h  | <s>Marco Pesenti Gritti</s>
+libdocument/ev-document-security.c                   | GPLv2h  | <s>Red Hat, Inc</s>
+libdocument/ev-document-security.h                   | GPLv2h  | <s>Red Hat, Inc</s>
+libdocument/ev-document-thumbnails.c                 | GPLv2h  | <s>Anders Carlsson <andersca@gnome.org></s>
+libdocument/ev-document-thumbnails.h                 | GPLv2h  | <s>Anders Carlsson <andersca@gnome.org></s>
+libdocument/ev-document-transition.c                 | GPLv2h  | 2006 <s>Carlos Garcia Campos <carlosgc@gnome.org></s>
+libdocument/ev-document-transition.h                 | GPLv2h  | 2006 <s>Carlos Garcia Campos <carlosgc@gnome.org></s>
+libdocument/ev-file-exporter.c                       | GPLv2h  | 2004 <s>Martin Kretzschmar <martink@gnome.org></s>
+libdocument/ev-file-exporter.h                       | GPLv2h  | 2004 <s>Martin Kretzschmar <martink@gnome.org></s>
+libdocument/ev-file-helpers.c                        | GPLv2h  | <s>Jorn Baayen</s>
+libdocument/ev-file-helpers.h                        | GPLv2h  | <s>Jorn Baayen</s>
+libdocument/ev-image.c                               | GPLv2h  | 2006 <s>Carlos Garcia Campos <carlosgc@gnome.org></s>
+libdocument/ev-image.h                               | GPLv2h  | 2006 <s>Carlos Garcia Campos <carlosgc@gnome.org>>/s>
+libdocument/ev-link-action.c                         | GPLv2h  | <s>Red Hat, Inc.</s>, <s>Carlos Garcia Campos <carlosgc@gnome.org></s>
+libdocument/ev-link-action.h                         | GPLv2h  | <s>Red Hat, Inc.</s>, <s>Carlos Garcia Campos <carlosgc@gnome.org></s>
+libdocument/ev-link.c                                | GPLv2h  | <s>Red Hat, Inc.</s>
+libdocument/ev-link-dest.c                           | GPLv2h  | <s>Red Hat, Inc.</s>, </s>Carlos Garcia Campos <carlosgc@gnome.org></s>
+libdocument/ev-link-dest.h                           | GPLv2h  | <s>Red Hat, Inc.</s>, <s>Carlos Garcia Campos <carlosgc@gnome.org></s>
+libdocument/ev-link.h                                | GPLv2h  | <s>Red Hat, Inc.</s>
+libdocument/ev-render-context.c                      | unspec  | unspec
+libdocument/ev-render-context.h                      | GPLv2h  | unspec
+libdocument/ev-selection.c                           | GPLv2h  | <s>Red Hat, Inc.</s>
+libdocument/ev-selection.h                           | GPLv2h  | <s>Marco Pesenti Gritti</s>
+po/ar.po                                             | GPLv2h  | 2006 <s>Yousef Raffah <yousef@raffah.com></s>, 2006, 2007 <s>Khaled Hosny <khaledhosny@eglug.org></s>
+po/be.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/bg.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/bn_IN.po                                          | GPLv2h  | <s>Evince maintainers</s>
+po/bn.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/br.po                                             | GPLv2   | <s>Free Software Foundation</s>
+po/ca.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/cs.po                                             | GPLv2h  | <s>Miloslav Trmac <mitr@volny.cz></s>
+po/cy.po                                             | GPLv2h  | <s>Gareth Bowker</s>
+po/da.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/de.po                                             | GPLv2h  | <s>Martin Kretzschmar</s>
+po/dz.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/el.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/en_CA.po                                          | GPLv2h  | <s>Adam Weinberger</s> and the <s>GNOME Foundation</s>
+po/en_GB.po                                          | GPLv2h  | <s>The Gnome Foundation</s>
+po/es.po                                             | GPLv2h  | <s>Spanish translation for Evince</s>
+po/et.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/eu.po                                             | GPLv2h  | <s>Mikel Olasagasti</s>
+po/fa.po                                             | GPLv2h  | <s>Sharif FarsiWeb, Inc.</s>
+po/fi.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/fr.po                                             | GPLv2   | <s>Free Software Foundation</s>
+po/gl.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/gu.po                                             | unspec  | unspec
+po/he.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/hi.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/hu.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/id.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/it.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/ja.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/ka.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/ko.po                                             | unspec  | unspec
+po/ku.po                                             | GPLv2h  | </s>Canonical Ltd</s>, and <s>Rosetta Contributors</s> 2005
+po/lt.po                                             | GPLv2h  | <s>The Gnome Foundation</s>
+po/lv.po                                             | GPLv2h  | <s>Gnome i18n Project for Latvian</s>
+po/mg.po                                             | GPLv2h  | 2006 <s>Fano Rajaonarisoa <fano@isvtec.com></s>, 2007 <s>Thierry Randrianiriana <thierry@isvtec.com></s>
+po/mk.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/ml.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/mr.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/nb.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/ne.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/nl.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/nn.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/or.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/pa.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/pl.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/pt_BR.po                                          | GPLv2h  | <s>Free Software Foundation</s>
+po/pt.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/ro.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/ru.po                                             | GPLv2   | <s>Free Software Foundation</s>
+po/rw.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/sk.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/sl.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/sq.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/sr@Latn.po                                        | GPLv2h  | <s>Evince maintainers</s>
+po/sr.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/sv.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/ta.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/th.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/tr.po                                             | GPLv2h  | <s>The Gnome Foundation</s>
+po/uk.po                                             | GPLv2h  | <s>Free Software Foundation</s>
+po/vi.po                                             | GPLv2h  | <s>Gnome i18n Project for Vietnamese</s>
+po/wa.po                                             | GPLv2h  | <s>Evince maintainers</s>
+po/zh_CN.po                                          | GPLv2h  | <s>Evince maintainers</s>
+po/zh_HK.po                                          | GPLv2h  | <s>Free Software Foundation</s>
+po/zh_TW.po                                          | GPLv2h  | <s>Free Software Foundation</s>
+properties/ev-properties-main.c                      | GPLv2.1h| <s>Eazel Inc.</s>, <s>Andrew Sobala <aes@gnome.org></s>, <s>Bastien Nocera <hadess@hadess.net></s>
+properties/ev-properties-view.c                      | GPLv2h  | <s>Red Hat, Inc</s>
+properties/ev-properties-view.h                      | GPLv2h  | <s>Red Hat, Inc</s>
+shell/eggfindbar.c                                   | GPLv2h  | <s>Red Hat, Inc.</s>
+shell/eggfindbar.h                                   | GPLv2h  | <s>Red Hat, Inc.</s>
+shell/ev-application.c                               | GPLv2h  | <s>Martin Kretzschma</s>
+shell/ev-application.h                               | GPLv2h  | <s>Martin Kretzschma</s>
+shell/ev-history.c                                   | GPLv2h  | 2005 <s>Marco Pesenti Gritti</s>
+shell/ev-history.h                                   | GPLv2h  | 2005 <s>Marco Pesenti Gritti</s>
+shell/ev-job-queue.c                                 | unspec  | unspec
+shell/ev-job-queue.h                                 | GPLv2h  | <s>Red Hat, Inc</s>
+shell/ev-jobs.c                                      | unspec  | unspec
+shell/ev-jobs.h                                      | GPLv2h  | <s>Red Hat, Inc</s>
+shell/ev-marshal.c                                   | unspec  | unspec
+shell/ev-marshal.h                                   | unspec  | unspec
+shell/ev-metadata-manager.c                          | GPLv2h  | <s>Paolo Maggi</s>
+shell/ev-metadata-manager.h                          | GPLv2h  | <s>Paolo Maggi</s>
+shell/ev-navigation-action.c                         | GPLv2h  | 2003, 2004 <s>Marco Pesenti Gritti</s>, 2003, 2004 <s>Christian Persch</s>
+shell/ev-navigation-action.h                         | GPLv2h  | 2003, 2004 <s>Marco Pesenti Gritti</s>, 2003, 2004 <s>Christian Persch</s>
+shell/ev-navigation-action-widget.c                  | GPLv2h  | 2003, 2004 <s>Marco Pesenti Gritti</s>, 2003, 2004 <s>Christian Persch</s>
+shell/ev-navigation-action-widget.h                  | GPLv2h  | 2003, 2004 <s>Marco Pesenti Gritti</s>, 2003, 2004 <s>Christian Persch</s>
+shell/ev-page-action.c                               | GPLv2h  | <s>Marco Pesenti Gritti</s>, <s>Christian Persch</s>
+shell/ev-page-action.h                               | GPLv2h  | <s>Marco Pesenti Gritti</s>, <s>Christian Persch</s>
+shell/ev-page-action-widget.c                        | GPLv2h  | 2003, 2004 <s>Marco Pesenti Gritti</s>, 2003, 2004 <s>Christian Persch</s>
+shell/ev-page-action-widget.h                        | GPLv2h  | 2003, 2004 <s>Marco Pesenti Gritti</s>, 2003, 2004 <s>Christian Persch</s>
+shell/ev-page-cache.c                                | unspec  | unspec
+shell/ev-page-cache.h                                | GPLv2h  | <s>Red Hat, Inc</s>
+shell/ev-password.c                                  | GPLv2h  | <s>Red Hat, Inc</s>
+shell/ev-password.h                                  | GPLv2h  | <s>Red Hat, Inc</s>
+shell/ev-password-view.c                             | GPLv2h  | <s>Red Hat, Inc</s>
+shell/ev-password-view.h                             | GPLv2h  | <s>Red Hat, Inc</s>
+shell/ev-pixbuf-cache.c                              | unspec  | unspec
+shell/ev-pixbuf-cache.h                              | GPLv2h  | <s>Red Hat, Inc</s>
+shell/ev-print-job.c                                 | GPLv2h  | <s>Martin Kretzschmar</s>
+shell/ev-print-job.h                                 | GPLv2h  | <s>Martin Kretzschmar</s>
+shell/ev-properties-dialog.c                         | GPLv2h  | <s>Red Hat, Inc</s>
+shell/ev-properties-dialog.h                         | GPLv2h  | <s>Red Hat, Inc</s>
+shell/ev-properties-fonts.c                          | GPLv2h  | <s>Red Hat, Inc</s>
+shell/ev-properties-fonts.h                          | GPLv2h  | <s>Red Hat, Inc</s>
+shell/ev-sidebar-attachments.c                       | GPLv2h  | <s>Carlos Garcia Campos <carlosgc@gnome.org></s>
+shell/ev-sidebar-attachments.h                       | GPLv2h  | <s>Carlos Garcia Campos <carlosgc@gnome.org></s>
+shell/ev-sidebar.c                                   | GPLv2h  | <s>Red Hat, Inc.</s>
+shell/ev-sidebar.h                                   | GPLv2h  | <s>Red Hat, Inc.</s>
+shell/ev-sidebar-links.c                             | GPLv2h  | <s>Red Hat, Inc.</s>
+shell/ev-sidebar-links.h                             | GPLv2h  | <s>Red Hat, Inc.</s>
+shell/ev-sidebar-page.c                              | GPLv2h  | <s>Marco Pesenti Gritti</s>
+shell/ev-sidebar-page.h                              | GPLv2h  | <s>Marco Pesenti Gritti</s> 
+shell/ev-sidebar-thumbnails.c                        | GPLv2h  | <s>Red Hat, Inc.</s>, <s>Anders Carlsson <andersca@gnome.org</s>
+shell/ev-sidebar-thumbnails.h                        | GPLv2h  | <s>Red Hat, Inc.</s>
+shell/ev-stock-icons.c                               | GPLv2h  | <s>Martin Kretzschmar</s>
+shell/ev-stock-icons.h                               | GPLv2h  | <s>Martin Kretzschmar</s>
+shell/ev-tooltip.c                                   | GPLv2h  | <s>Red Hat, Inc.</s>
+shell/ev-tooltip.h                                   | GPLv2h  | <s>Red Hat, Inc.</s>
+shell/ev-utils.c                                     | GPLv2h  | <s>Anders Carlsson <andersca@gnome.org></s>
+shell/ev-utils.h                                     | GPLv2h  | <s>Anders Carlsson <andersca@gnome.org></s>
+shell/ev-view-accessible.c                           | GPLv2h  | <s>Red Hat, Inc.</s>
+shell/ev-view-accessible.h                           | GPLv2h  | <s>Red Hat, Inc.</s>
+shell/ev-view.c                                      | GPLv2h  | <s>Red Hat, Inc.</s>
+shell/ev-view.h                                      | GPLv2h  | <s>Red Hat, Inc.</s>
+shell/ev-view-private.h                              | GPLv2h  | <s>Red Hat, Inc.</s>
+shell/ev-window.c                                    | GPLv2h  | <s>Martin Kretzschmar</s>, <s>Red Hat, Inc.</s>, <s>Marco Pesenti Gritti</s>, <s>Christian Persch</s>
+shell/ev-window.h                                    | GPLv2h  | <s>Martin Kretzschmar</s>
+shell/ev-window-title.c                              | GPLv2h  | <s>Red Hat, Inc.</s>
+shell/ev-window-title.h                              | GPLv2h  | <s>Red Hat, Inc.</s>
+shell/main.c                                         | GPLv2h  | <s>Marco Pesenti Gritti</s>
+shell/xdg-user-dir-lookup.c                          | MIT     | 2007 <s>Red Hat, Inc.</s>
+thumbnailer/evince-thumbnailer.c                     | GPLv2h  | <s>Fernando Herrera <fherrera@onirica.com></s>
+
+Shortcuts:
+ - "unspec":    The file contains no specific copyright/license notice. This
+                means that the copyright holder is the Evince Team (as
+                listed above) and the license is GPL2 or higher, unless
+                specified otherwise.
+ - "GPL":       The GNU General Public License, without versioning constraints.
+ - "GPLv2":     The GNU General Public License, version 2.
+ - "GPLv2h":    The GNU General Public License, version 2 or (at your
+                option) higher.
+ - "LGPLv2h":   The Lesser (or Library) GNU General Public License, version
+                2 or (at your option).
+ - "GFDL1.1":   The GNU Free Documentation License, version 1.1 or (at your
+                option) higher. The listed documents use the GFDL with no
+                Invariant Sections, no Front-Cover Texts, and no Back-Cover 
+                Texts.
+ - "Adobe":     The following licensing terms need to be respected:
+    | This file may be freely copied and redistributed as long as:
+    |   1) This entire notice continues to be included in the file,
+    |   2) If the file has been modified in any way, a notice of such
+    |      modification is conspicuously indicated.
+    |
+    | PostScript, Display PostScript, and Adobe are registered trademarks of
+    | Adobe Systems Incorporated.
+    |
+    | ************************************************************************
+    | THE INFORMATION BELOW IS FURNISHED AS IS, IS SUBJECT TO CHANGE WITHOUT
+    | NOTICE, AND SHOULD NOT BE CONSTRUED AS A COMMITMENT BY ADOBE SYSTEMS
+    | INCORPORATED. ADOBE SYSTEMS INCORPORATED ASSUMES NO RESPONSIBILITY OR
+    | LIABILITY FOR ANY ERRORS OR INACCURACIES, MAKES NO WARRANTY OF ANY
+    | KIND (EXPRESS, IMPLIED OR STATUTORY) WITH RESPECT TO THIS INFORMATION,
+    | AND EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES OF MERCHANTABILITY,
+    | FITNESS FOR PARTICULAR PURPOSES AND NONINFRINGEMENT OF THIRD PARTY RIGHTS.
+    | ************************************************************************
+ - "SGI":       The following licensing terms need to be respected:
+    | Permission to use, copy, modify, distribute, and sell this software and
+    | its documentation for any purpose is hereby granted without fee, provided
+    | that (i) the above copyright notices and this permission notice appear in
+    | all copies of the software and related documentation, and (ii) the names of
+    | Sam Leffler and Silicon Graphics may not be used in any advertising or
+    | publicity relating to the software without the specific, prior written
+    | permission of Sam Leffler and Silicon Graphics.
+ - "MIT":       The following licensing terms need to be respected: 
+    | Permission is hereby granted, free of charge, to any person
+    | obtaining a copy of this software and associated documentation files
+    | (the "Software"), to deal in the Software without restriction,
+    | including without limitation the rights to use, copy, modify, merge,
+    | publish, distribute, sublicense, and/or sell copies of the Software,
+    | and to permit persons to whom the Software is furnished to do so,
+    | subject to the following conditions: 
+    |
+    | The above copyright notice and this permission notice shall be
+    | included in all copies or substantial portions of the Software. 
+    |
+    | THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    | EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    | MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    | NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+    | BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+    | ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    | CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+
+
+On Debian systems, you can find the complete textes for the GNU (Lesser)
+General licenses:
+  - GPL:      /usr/share/common-licenses/GPL
+  - GPLv2:    /usr/share/common-licenses/GPL-2
+  - LGPLv2:   /usr/share/common-licenses/LGPL-2
+  - GFDL:     /usr/share/common-licenses/GFDL

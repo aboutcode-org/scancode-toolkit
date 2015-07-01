@@ -1,0 +1,11 @@
+key: openldap-2.8
+short_name: OpenLDAP Public License 2.8
+name: OpenLDAP Public License 2.8
+category: Attribution
+owner: OpenLDAP Foundation
+homepage_url: http://www.openldap.org/software/release/license.html
+spdx_license_key: OLDAP-2.8
+spdx_full_name: OpenLDAP Public License v2.8
+spdx_url: http://spdx.org/licenses/OLDAP-2.8
+text_urls:
+    - http://www.openldap.org/software/release/license.html

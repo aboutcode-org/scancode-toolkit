@@ -1,0 +1,279 @@
+--- /dev/null	2009-07-15 09:00:01.187014401 +0800
++++ eva/vqec_wv.c	2009-07-15 13:19:58.000000000 +0800
+@@ -0,0 +1,276 @@
++/******************************************************************************
++ *
++ * Cisco Systems, Inc.
++ *
++ * Copyright (c) 2007-2009 by Cisco Systems, Inc.
++ * All rights reserved.
++ *
++ ******************************************************************************
++ *
++ * File: vqec_wv.c
++ *
++ * Description: VQEC WideVine workaround functions.
++ *
++ * Documents:
++ *
++ *****************************************************************************/
++ 
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include "vqec_wv.h"
++
++static uint8_t *cache_head, *wr_ptr, *rd_ptr;
++static uint8_t cache[VQEC_WV_MAX_CACHE_SIZE];
++static uint8_t replay_check_count;
++
++/**
++ * Call once on every new channel change, prior to calling other APIs documented
++ * here.  Will reset read and write cache buffer pointers.
++ */
++void vqec_wv_cache_init (void)
++{
++    VQEC_WV_PRINTF("vqec_wv_cache_init entered\n");
++
++    cache_head = &cache[0];
++    wr_ptr = cache_head;
++    rd_ptr = cache_head;
++    replay_check_count = 0;
++
++    VQEC_WV_PRINTF("vqec_wv_cache_init exited\n");
++}
++
++/**
++ * Called when data is available from source.  This data has not yet been
++ * touched by the CA agent.  This API should be fed data until it returns TRUE,
++ * only then should the complete data buffer be passed on to the CA agent.
++ *
++ * @param[in] ptr  pointer to data that is to be consumed by the system
++ * @param[in] len  length of the data
++ * @return int  returns 0 if the cache is not full; otherwise returns the size
++ *              of the cache
++ */
++int vqec_wv_cache_data (uint8_t *ptr, size_t len)
++{
++    int copy_len = 0;
++    int ret = VQEC_WV_MAX_CACHE_SIZE;
++
++
++    if (replay_check_count == 0) {
++
++        if ((len != 0) &&
++            (ptr != NULL) &&
++            (wr_ptr != (cache_head + VQEC_WV_MAX_CACHE_SIZE))) {
++
++            /* copy data pointed to by ptr into cache buffer, up to VQEC_WV_MAX_CACHE_SIZE and update wr_ptr */
++            copy_len = (cache_head + VQEC_WV_MAX_CACHE_SIZE) - wr_ptr;
++            if (copy_len > len) {
++                copy_len = len;
++            }
++
++            memcpy(wr_ptr, ptr, copy_len);
++            wr_ptr += copy_len;
++        }
++
++        if (wr_ptr < (cache_head + VQEC_WV_MAX_CACHE_THRESHOLD)) {
++            ret = 0;
++        }
++
++        VQEC_WV_PRINTF("vqec_wv_cache_data: ptr=%p, len=0x%x, ret=0x%x, wr_ptr=%p, rd_ptr=%p, copy_len=0x%x\n",
++                        ptr, (int)len, ret, wr_ptr, rd_ptr, copy_len);
++
++    }
++
++    return(ret);
++}
++
++/**
++ * Determines if the original cached data has any scrambled
++ * TS packets. This may be used to bypass the widevine precheck
++ * in case it continues to overwrite the video pid on successive
++ * replay attempts.
++ *
++ * @return bool Returns true if the cached block has scrambled
++ * TS packets, false otherwise.
++ */ 
++static boolean is_transport_scrambled (void)
++{
++    struct mpeg_ts_packet *pkt;
++    boolean ret = FALSE;
++
++    pkt = (struct mpeg_ts_packet *)rd_ptr;
++    while ((uint8_t *)(pkt + 1) <= (rd_ptr + (wr_ptr - rd_ptr))) {
++        if (WVCAKREPLAY_MPEGTS_SC(pkt->pkt_hdr) != 0) {
++            ret = TRUE;
++            break;
++        }
++        pkt++;
++    }
++
++    VQEC_WV_PRINTF("is_transport_scrambled: ret=%d\n", (int)ret);
++    
++    return (ret);
++}
++
++
++/**
++ * Compares the cached data block to the data-block after it has been
++ * played by the cam object. It will return true if the two copies are 
++ * semantically the same, i.e., no need to replay the block. It will return
++ * false otherwise.
++ *
++ * @param[in] post_play_buf Input block after it has been handled by the cam.
++ * @param[in] len Input block length.
++ * @param[in] video_pid Video pid for the cached block.
++ * @param[in] audio_pid Audio pid for the cached block.
++ * @return boolean Returns true if the cached block should be replayed,
++ * false otherwise. There are certain error conditions in which the method 
++ * will return false since no comparison basis can be established:
++ *    (a) If there isn't any cached block in the object, or if the lengths
++ *    are mismatched in which case no correlation can be established.
++ *    (b) If both the audio and video pids are null.
++ */ 
++boolean do_replay (uint8_t *post_play_buf, uint32_t len, 
++                          uint16_t video_pid, uint16_t audio_pid)
++{
++    struct mpeg_ts_packet *pkt, *post_pkt;
++    boolean ret = FALSE;
++
++    if (!(wr_ptr - rd_ptr) || 
++        !len ||
++        !post_play_buf || 
++        len != (wr_ptr - rd_ptr)) {
++
++        VQEC_WV_PRINTF("do_replay error: buf=%p, len=0x%x, "
++                       "video_pid=%d, audio_pid=%d,wr_ptr=%p, rd_ptr=%p\n",
++                       post_play_buf, len, video_pid, audio_pid, wr_ptr, rd_ptr);
++        return(ret);
++    }
++
++    pkt = (struct mpeg_ts_packet *)rd_ptr;
++    post_pkt = (struct mpeg_ts_packet *)post_play_buf;
++    while ((uint8_t *)(pkt + 1) <= (rd_ptr + len)) {
++        if (WVCAKREPLAY_MPEGTS_PUSI_BIT(pkt->pkt_hdr) != 0) {
++            if ((video_pid != MPEG_NULL_PID) &&
++                (WVCAKREPLAY_MPEGTS_PID(pkt->pkt_hdr) == video_pid) &&
++                (WVCAKREPLAY_MPEGTS_PID(post_pkt->pkt_hdr) != video_pid)) {
++                ret = TRUE;
++                break;
++            } else if ((audio_pid != MPEG_NULL_PID) &&
++                       (WVCAKREPLAY_MPEGTS_PID(pkt->pkt_hdr) == audio_pid) &&
++                       (WVCAKREPLAY_MPEGTS_PID(post_pkt->pkt_hdr) != audio_pid)) {
++                ret = TRUE;
++                break;
++            }
++        }
++        pkt++;
++        post_pkt++;
++    }
++
++    VQEC_WV_PRINTF("do_replay: ret=%d\n", ret);
++
++    return (ret);
++}
++
++
++/**
++ * Called after CA element has processed data but before it is sent to hardware.
++ * This API requires that cache has been filled, otherwise no replay will be
++ * attempted.  The audio and video PIDs for current channel change stream should
++ * be provided.
++ *
++ * @param[in/out] data  pointer to data that, on input, has been processed by CA
++ *                      element, and on output, may need to be replayed
++ * @param[in] bytes  length of data
++ * @param[in] videoPid  video PID to look for in cache
++ * @param[in] audioPid  audio PID to look for in cache
++ * @return int  Returns the amount of data needing to be replayed, if any
++ */
++int vqec_wv_replay (uint8_t *data,
++                    size_t bytes,
++                    unsigned short video_pid,
++                    unsigned short audio_pid)
++{
++    int copy_len = 0;
++    boolean replayed = FALSE;
++
++
++    if ((replay_check_count < VQEC_WV_MAX_REPLAY) 
++        && (wr_ptr >= (cache_head + VQEC_WV_MAX_CACHE_THRESHOLD))) {
++
++        VQEC_WV_PRINTF("vqec_wv_replay entered: data=%p, bytes=0x%x, video_pid=%d, audio_pid=%d\n",
++                       data, bytes, audio_pid, video_pid);
++
++        if (do_replay(data, bytes, video_pid, audio_pid) == TRUE) {
++            /* 
++             * Only replay last attempt if stream not scrambled
++             */
++            if ((replay_check_count < (VQEC_WV_MAX_REPLAY-1))
++                || (is_transport_scrambled() == FALSE)) {
++
++                /* copy cache data into data */
++                copy_len = wr_ptr - rd_ptr;
++                if (copy_len > bytes) {
++                    copy_len = bytes;
++                }
++                memcpy(data, rd_ptr, copy_len);
++
++                replayed = TRUE;
++            }
++        } 
++
++        /* If not replayed then we are done */
++        if (replayed == TRUE) {
++            replay_check_count++;
++        } else {
++            replay_check_count = VQEC_WV_MAX_REPLAY;
++        }
++
++        VQEC_WV_PRINTF("vqec_wv_replay exited: copy_len=0x%x, replayed=%d, count=%d",
++                       copy_len, (int)replayed, replay_check_count);
++
++    }
++
++    return (copy_len);
++}
++
++
++int vqec_wv_cache_replay (uint8_t *data,
++                    size_t bytes)
++{
++    int copy_len = 0;
++    boolean replayed = FALSE;
++
++    if ((replay_check_count < VQEC_WV_MAX_REPLAY) 
++        && (wr_ptr >= (cache_head + VQEC_WV_MAX_CACHE_THRESHOLD))) {
++
++	/* 
++	 * Only replay last attempt if stream not scrambled
++	 */
++	if ((replay_check_count < (VQEC_WV_MAX_REPLAY-1))
++	    || (is_transport_scrambled() == FALSE)) {
++
++	    /* copy cache data into data */
++	    copy_len = wr_ptr - rd_ptr;
++	    if (copy_len > bytes) {
++		copy_len = bytes;
++	    }
++	    memcpy(data, rd_ptr, copy_len);
++
++	    replayed = TRUE;
++	}
++
++        /* If not replayed then we are done */
++        if (replayed == TRUE) {
++            replay_check_count++;
++        } else {
++            replay_check_count = VQEC_WV_MAX_REPLAY;
++        }
++
++        VQEC_WV_PRINTF("vqec_wv_replay exited: copy_len=0x%x, replayed=%d, count=%d",
++                       copy_len, (int)replayed, replay_check_count);
++
++    }
++
++    return (copy_len);
++}

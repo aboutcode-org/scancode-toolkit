@@ -1,0 +1,344 @@
+#
+# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# http://nexb.com and https://github.com/nexB/scancode-toolkit/
+# The ScanCode software is licensed under the Apache License version 2.0.
+# Data generated with ScanCode require an acknowledgment.
+# ScanCode is a trademark of nexB Inc.
+#
+# You may not use this software except in compliance with the License.
+# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software distributed
+# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+# CONDITIONS OF ANY KIND, either express or implied. See the License for the
+# specific language governing permissions and limitations under the License.
+#
+# When you publish or redistribute any data created with ScanCode or any ScanCode
+# derivative work, you must accompany this data with the following acknowledgment:
+#
+#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
+#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
+#  ScanCode should be considered or used as legal advice. Consult an Attorney
+#  for any legal advice.
+#  ScanCode is a free software code scanning tool from nexB Inc. and others.
+#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+
+from __future__ import print_function, absolute_import
+
+import codecs
+import logging
+import os
+import re
+
+from commoncode  import command
+from commoncode.system import on_windows
+import extractcode
+from extractcode import ExtractErrorFailedToExtract
+from extractcode import ExtractWarningIncorrectEntry
+from _collections import defaultdict
+
+logger = logging.getLogger('extractcode')
+# logging.basicConfig(level=logging.DEBUG)
+
+root_dir = os.path.join(os.path.dirname(__file__), 'bin')
+
+
+"""
+Low level support for p/7zip-based archive extraction.
+"""
+
+
+sevenzip_errors = [
+    ('unsupported method', 'Unsupported archive or broken archive'),
+    ('wrong password', 'Password protected archive, unable to extract'),
+    # not being able to open an archive is not an error condition for now
+    ('can not open file as archive', None),
+    ]
+
+
+def get_7z_errors(stdout):
+    """
+    Return error messages extracted from a 7zip command output stdout string.
+    This maps errors found in stdout to error message.
+    """
+    # FIXME: we should use only one pass over stdout for errors and warnings
+    if not stdout or not stdout.strip():
+        return
+
+    find_7z_errors = re.compile('^Error:(.*)$',
+                                re.MULTILINE | re.DOTALL).findall
+
+    stdlow = stdout.lower()
+    for err, msg in sevenzip_errors:
+        if err in stdlow:
+            return msg
+
+    file_errors = find_7z_errors(stdout)
+    if file_errors:
+        return ' '.join(file_errors).strip()
+
+
+def get_7z_warnings(stdout):
+    """
+    Return a dict path->warning_message of 7zip warnings extracted from a
+    stdout text.
+    """
+    # FIXME: we should use only one pass over stdout for errors and warnings
+    cannot_open = 'can not open output file'
+    msg_len = len(cannot_open) + 1
+    warnings = defaultdict(list)
+    for line in stdout.splitlines(False):
+        if cannot_open in line.lower():
+            path = line[msg_len:]
+            warnings[path].append(cannot_open)
+
+    # collect warnings
+    warning_messages = {}
+    for pathname, messages in warnings.items():
+        warning_messages[pathname] = '\n'.join(messages)
+    return warning_messages 
+
+
+def list_extracted_7z_files(stdout):
+    """
+    List all files extracted by 7zip based on the stdout analysis.
+    Based on 7zip Client7z.cpp:
+        static const char *kExtractingString =  "Extracting  ";
+    """
+    # FIXME: handle Unicode paths with 7zip command line flags
+    get_file_list = re.compile('Extracting  ' + '(.*)$', re.M).findall
+    return get_file_list(stdout)
+
+
+def extract(location, target_dir, arch_type='*'):
+    """
+    Extract all files from a 7zip-supported archive file at location in the
+    target_dir directory. Return a mapping of path->warning_message.
+    Raise exception on errors.
+
+    Use the -t* 7z cli type option or the provided arch_type 7z type (can be
+    None).
+    """
+    assert location
+    assert target_dir
+
+    # note: there are issues with the extraction of debian .deb ar files
+    # see sevenzip bug http://sourceforge.net/p/sevenzip/bugs/1472/
+
+    # 7z arguments
+    extract = 'x'
+    yes_to_all = '-y'
+
+    # NB: we use t* to ensure that all archive types are honored
+    if not arch_type:
+        arch_type = ''
+    else:
+        arch_type = '-t' + arch_type
+
+    # pass an empty password  so that extraction with passwords WILL fail
+    password = '-p'
+
+    auto_rename_dupe_names = '-aou'
+
+    # these do not work well with p7zip
+    # ensure that we treat the FS as case insensitive even if it is
+    # this ensure we have consistent names across OSes
+    # case_insensitive = '-ssc-'
+    # force any console output to be UTF-8 encoded
+
+    # TODO: add this may be for a UTF output on Windows only
+    # output_as_utf = '-sccUTF-8'
+    # working_tmp_dir = '-w<path>'
+
+    # NB: we force running in the GMT timezone, because 7z is unable to set
+    # the TZ correctly when the archive does not contain TZ info. This does
+    # not work on Windows, because 7z is not using the TZ env var there.
+    timezone = os.environ.update({'TZ': 'GMT'})
+
+    # Note: 7z does extract in the current directory so we cwd to target_dir
+    args = [extract, yes_to_all, auto_rename_dupe_names,
+            arch_type, password, location]
+    rc, stdout, _stderr = command.execute(cmd='7z',
+                                          args=args,
+                                          cwd=target_dir,
+                                          env=timezone,
+                                          root_dir=root_dir)
+    if rc != 0:
+        error = get_7z_errors(stdout) or 'No error returned'
+        raise ExtractErrorFailedToExtract(error)
+
+    extractcode.remove_backslashes(target_dir)
+    return get_7z_warnings(stdout)
+
+
+def list_entries(location, arch_type='*'):
+    """
+    List entries from a 7zip-supported archive file at location.
+    Yield Entry tuples.
+    Use the -t* 7z cli type option or the provided arch_type 7z type (can be
+    None).
+    """
+    assert location
+    # 7z arguments
+    listing = 'l'
+
+    # NB: we use t* to ensure that all archive types are honored
+    if not arch_type:
+        arch_type = ''
+    else:
+        arch_type = '-t' + arch_type
+
+    # pass an empty password  so that extraction with passwords WILL fail
+    password = '-p'
+    tech_info = '-slt'
+
+    output_as_utf = ''
+    if on_windows:
+        output_as_utf = '-sccUTF-8'
+
+    # NB: we force running in the GMT timezone, because 7z is unable to set
+    # the TZ correctly when the archive does not contain TZ info. This does
+    # not work on Windows, because 7z is not using the TZ env var there.
+    timezone = os.environ.update({'TZ': 'GMT'})
+
+    # Note: 7z does listing in the current directory so we cwd to target_dir
+    args = [listing, tech_info, arch_type, output_as_utf, password, location]
+    rc, stdout, _stderr = command.execute(cmd='7z',
+                                          args=args,
+                                          env=timezone,
+                                          root_dir=root_dir,
+                                          to_files=True)
+    if rc != 0:
+        _error = get_7z_errors(stdout) or 'No error returned'
+        # still try to get the listing?
+        # print(Exception(error))
+        pass
+
+    # the listing was produced as UTF on windows to avoid damaging binary
+    # paths in console outputs
+    utf = bool(output_as_utf)
+
+    return parse_7z_listing(stdout, utf)
+
+
+def as_entry(infos):
+    """
+    Return an Entry built from 7zip path data
+    """
+    e = extractcode.Entry()
+    e.path = infos.get('Path')
+    e.size = infos.get('Size', 0)
+    e.packed_size = infos.get('Packed Size', 0)
+    e.date = infos.get('Modified', 0)
+    e.is_dir = infos.get('Folder', False) == '+'
+    e.is_file = not e.is_dir
+    e.is_broken_link = False
+    e.mode = infos.get('Mode', '')
+    e.user = infos.get('User')
+    e.group = infos.get('Group')
+    e.is_special = False
+    e.is_hardlink = False
+    sl = infos.get('Symbolic Link')
+    if sl:
+        e.is_symlink = True
+        e.link_target = sl
+    hl = infos.get('Hard Link')
+    if hl:
+        e.is_hardlink = True
+        e.link_target = hl
+    if sl and hl:
+        raise ExtractWarningIncorrectEntry('A Symlink cannot be a hardlink too')
+    e.linkcount = infos.get('Links', 0)
+    e.host = infos.get('Host OS')
+    e.comment = infos.get('Comment')
+    e.encrypted = infos.get('Encrypted')
+    return e
+
+
+def parse_7z_listing(location, utf=False):
+    """
+    Parse a long format 7zip listing and return an iterable of entry. 
+
+    The 7zip -slt format is:
+    - copyright and version details
+    - '--' line
+        - archive header info, varying based on the archive types and subtype
+              - lines of key=value pairs
+              - Errors: followed by one or more message lines
+              - Warnings: followed by one or more message lines
+              - Open Warning: : followed by one or more message lines
+        - sometimes a '---' line
+    - blank line
+    - '----------' line
+    - for each archive member:
+      - lines of either
+          - key = value pairs
+          - Errors: followed by one or more message lines
+          - Warnings: followed by one or more message lines
+          - Open Warning: : followed by one or more message lines
+      - blank line
+    - two blank lines
+    - footer sometimes with lines with summary stats
+        such as Warnings: 1 Errors: 1
+    - a line with two or more dashes or an empty line
+    """
+    if utf:
+        text = codecs.open(location, encoding='UTF-8').read()
+        text = text.replace(u'\r\n', u'\n')
+    else:
+        text = open(location, 'rb').read()
+
+    header_tail = re.split('\n----------\n', text, flags=re.MULTILINE)
+    if len(header_tail) != 2:
+        # we more than one a header, confusion entails.
+        raise ExtractWarningIncorrectEntry('Incorrect 7zip listing with multiple headers')
+
+    if len(header_tail) == 1:
+        # we have only a header, likely an error condition or an empty archive
+        return []
+
+    _header, body = header_tail
+    body_and_footer = re.split('\n\n\n', body, flags=re.MULTILINE)
+    no_footer = len(body_and_footer) == 1
+    multiple_footers = len(body_and_footer) > 2
+    _footer = ''
+    if no_footer:
+        body = body_and_footer[0]
+    elif multiple_footers:
+        raise ExtractWarningIncorrectEntry('Incorrect 7zip listing with multiple footers')
+    else:
+        body, _footer == body_and_footer
+
+    # FIXME: do something with header and footer?
+
+    entries = []
+    paths = re.split('\n\n', body, flags=re.MULTILINE)
+    for path in paths:
+        is_err = False
+        errors = []
+        infos = {}
+        lines = path.splitlines(False)
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue
+            if line.startswith(('Open Warning:', 'Errors:', 'Warnings:')):
+                is_err = True
+                messages = line.split(':', 1)
+                errors.append(messages)
+                continue
+            if '=' not in line and is_err:
+                # not a key = value line, an error message
+                errors.append(line)
+                continue
+            parts = line.split('=', 1)
+            if len(parts) != 2:
+                raise ExtractWarningIncorrectEntry('Incorrect 7zip listing line with no key=value')
+            is_err = False
+            key, value = parts
+            assert key not in infos, 'Duplicate keys in 7zip listing'
+            infos[key.strip()] = value.strip() or ''
+        if infos:
+            entries.append(as_entry(infos))
+
+    return entries
+

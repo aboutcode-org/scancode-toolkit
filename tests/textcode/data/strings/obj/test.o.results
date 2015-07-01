@@ -1,0 +1,3119 @@
+ELF
+GNU C++ 4.1.2 20071124 (Red Hat 4.1.2-42)
+test.cpp
+/home/pombredanne
+__gnu_debug
+__gnu_debug_def
+long int
+size_t
+std
+Oim#
+OpX$
+Oqp$
+nothrow_t
+allocator<char>
+float_denorm_style
+denorm_indeterminate
+denorm_absent
+denorm_present
+basic_string<char,std::char_traits<char>,std::allocator<char> >
+reverse_iterator<__gnu_cxx::__normal_iterator<const char*, std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >
+reverse_iterator<__gnu_cxx::__normal_iterator<char*, std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >
+_Ios_Fmtflags
+_S_boolalpha
+_S_dec
+_S_fixed
+_S_hex
+_S_internal
+_S_left
+_S_oct
+_S_right
+_S_scientific
+_S_showbase
+_S_showpoint
+_S_showpos
+_S_skipws
+_S_unitbuf
+_S_uppercase
+_S_adjustfield
+_S_basefield
+_S_floatfield
+_S_ios_fmtflags_end
+_Ios_Openmode
+_S_app
+_S_ate
+_S_bin
+_S_out
+_S_trunc
+_S_ios_openmode_end
+_Ios_Iostate
+_S_goodbit
+_S_badbit
+_S_eofbit
+_S_failbit
+_S_ios_iostate_end
+_Ios_Seekdir
+_S_beg
+_S_cur
+_S_end
+_S_ios_seekdir_end
+ios_base
+Init
+_ZNSt8ios_base4Init11_S_refcountE
+_S_synced_with_stdio
+_ZNSt8ios_base4Init20_S_synced_with_stdioE
+Init
+~Init
+zSFW
+zenW
+money_base
+pattern
+field
+basic_ostream<char,std::char_traits<char> >
+nothrow
+cout
+__ioinit
+size_t
+short unsigned int
+int
+char
+strcoll
+strxfrm
+strtok
+strerror
+memchr
+unsigned char
+unsigned int
+signed char
+short int
+__int32_t
+__off_t
+__off64_t
+__clock_t
+__time_t
+FILE
+_IO_FILE
+_flags
+_IO_read_ptr
+_IO_read_end
+_IO_read_base
+_IO_write_base
+_IO_write_ptr
+_IO_write_end
+_IO_buf_base
+_IO_buf_end
+_IO_save_base
+_IO_backup_base
+_IO_save_end
+_markers
+_chain
+_fileno
+_flags2
+_old_offset
+_cur_column
+_vtable_offset
+_shortbuf
+_lock
+_offset
+__pad1
+__pad2
+__pad3
+__pad4
+__pad5
+_mode
+_unused2
+__FILE
+P+__wch
++__wchb
+,__count
+,__value
+,__pos
+,__state
+__va_list_tag
+,gp_offset
+,fp_offset
+,overflow_arg_area
+,reg_save_area
+/_IO_lock_t
+_IO_marker
+,_next
+,_sbuf
+,_pos
+fpos_t
+clearerr
+fclose
+feof
+ferror
+fflush
+fgetc
+fgetpos
+fgets
+fopen
+fread
+freopen
+fseek
+fsetpos
+ftell
+getc
+getchar
+gets
+perror
+putc
+remove
+rename
+rewind
+setbuf
+setvbuf
+tmpfile
+tmpnam
+ungetc
+snprintf
+vfscanf
+vscanf
+vsnprintf
+vsscanf
+lconv
+`!5,decimal_point
+,thousands_sep
+,grouping
+,int_curr_symbol
+,currency_symbol
+# ,mon_decimal_point
+#(,mon_thousands_sep
+#0,mon_grouping
+#8,positive_sign
+#@,negative_sign
+#H,int_frac_digits
+#P,frac_digits
+#Q,p_cs_precedes
+#R,p_sep_by_space
+#S,n_cs_precedes
+#T,n_sep_by_space
+#U,p_sign_posn
+#V,n_sign_posn
+#W,int_p_cs_precedes
+#X,int_p_sep_by_space
+#Y,int_n_cs_precedes
+#Z,int_n_sep_by_space
+#[,int_p_sign_posn
+#\,int_n_sign_posn
+setlocale
+localeconv
+clock_t
+time_t
+,tm_sec
+,tm_min
+,tm_hour
+,tm_mday
+,tm_mon
+,tm_year
+,tm_wday
+,tm_yday
+,tm_isdst
+# ,tm_gmtoff
+#(,tm_zone
+long long unsigned int
+long long int
+pthread_once_t
+__gthread_once_t
+clock_t
+time_t
+clock
+difftime
+double
+mktime
+time
+asctime
+ctime
+gmtime
+localtime
+strftime
+mbstate_t
+btowc
+fgetwc
+fgetws
+wchar_t
+fputwc
+fputws
+fwide
+fwprintf
+fwscanf
+getwc
+getwchar
+mbrlen
+mbrtowc
+mbsinit
+mbsrtowcs
+putwc
+putwchar
+swprintf
+swscanf
+ungetwc
+vfwprintf
+vfwscanf
+vswprintf
+vswscanf
+vwprintf
+vwscanf
+wcrtomb
+wcscat
+wcscmp
+wcscoll
+wcscpy
+wcscspn
+wcsftime
+wcslen
+wcsncat
+wcsncmp
+wcsncpy
+wcsrtombs
+wcsspn
+wcstod
+wcstof
+float
+wcstok
+wcstol
+wcstoul
+wcsxfrm
+wctob
+wmemcmp
+wmemcpy
+wmemmove
+wmemset
+wprintf
+wscanf
+wcschr
+wcspbrk
+wcsrchr
+wcsstr
+wmemchr
+__gnu_cxx
+abs
+_ZN9__gnu_cxx3absEx
+div
+_ZN9__gnu_cxx3divExx
+new_allocator<char>
+__normal_iterator<char*,std::basic_string<char, std::char_traits<char>, std::allocator<char> > >
+__normal_iterator<const char*,std::basic_string<char, std::char_traits<char>, std::allocator<char> > >
+wcstold
+long double
+wcstoll
+wcstoull
+Pc,quot
+,rem
+Pk,quot
+,rem
+Pw,quot
+PxN
+,rem
+PyN
+4__compar_fn_t
+atexit
+atof
+atoi
+atol
+bsearch
+div
+free
+getenv
+ldiv
+mblen
+mbstowcs
+mbtowc
+qsort
+rand
+realloc
+srand
+strtod
+strtol
+strtoul
+system
+wcstombs
+wctomb
+lldiv
+atoll
+strtoll
+strtoull
+strtof
+strtold
+_Exit
+llabs
+bool
+_Atomic_word
+~new_allocator
+address
+hK_ZNK9__gnu_cxx13new_allocatorIcE7addressERc
+address
+hN_ZNK9__gnu_cxx13new_allocatorIcE7addressERKc
+allocate
+hS_ZN9__gnu_cxx13new_allocatorIcE8allocateEmPKv
+deallocate
+h]_ZN9__gnu_cxx13new_allocatorIcE10deallocateEPcm
+ha_ZNK9__gnu_cxx13new_allocatorIcE8max_sizeEv
+construct
+hg_ZN9__gnu_cxx13new_allocatorIcE9constructEPcRKc
+destroy
+hk_ZN9__gnu_cxx13new_allocatorIcE7destroyEPc
+~allocator
+<8Anpos
+B_M_dataplus
+_Rep_base
+_Rep
+_M_data
+_ZNKSs7_M_dataEv
+_M_data
+_ZNSs7_M_dataEPc
+_M_rep
+_ZNKSs6_M_repEv
+_M_ibegin
+_ZNKSs9_M_ibeginEv
+_M_iend
+_ZNKSs7_M_iendEv
+_M_leak
+_ZNSs7_M_leakEv
+_M_check
+_ZNKSs8_M_checkEmPKc
+_M_check_length
+_ZNKSs15_M_check_lengthEmmPKc
+_M_limit
+_ZNKSs8_M_limitEmm
+_M_disjunct
+_ZNKSs11_M_disjunctEPKc
+_M_copy
+_ZNSs7_M_copyEPcPKcm
+_M_move
+_ZNSs7_M_moveEPcPKcm
+_M_assign
+_ZNSs9_M_assignEPcmc
+_ZNSs13_S_copy_charsEPcN9__gnu_cxx17__normal_iteratorIS_SsEES2_
+_ZNSs13_S_copy_charsEPcN9__gnu_cxx17__normal_iteratorIPKcSsEES4_
+_ZNSs13_S_copy_charsEPcS_S_
+_ZNSs13_S_copy_charsEPcPKcS1_
+_M_mutate
+_ZNSs9_M_mutateEmmm
+_M_leak_hard
+_ZNSs12_M_leak_hardEv
+_ZNSs12_S_empty_repEv
+~basic_string
+_ZNSsaSERKSs
+_ZNSsaSEPKc
+_ZNSsaSEc
+begin
+_ZNSs5beginEv
+begin
+_ZNKSs5beginEv
+end
+_ZNSs3endEv
+end
+_ZNKSs3endEv
+rbegin
+_ZNSs6rbeginEv
+rbegin
+_ZNKSs6rbeginEv
+rend
+_ZNSs4rendEv
+rend
+_ZNKSs4rendEv
+size
+_ZNKSs4sizeEv
+length
+_ZNKSs6lengthEv
+_ZNKSs8max_sizeEv
+resize
+_ZNSs6resizeEmc
+resize
+_ZNSs6resizeEm
+capacity
+_ZNKSs8capacityEv
+reserve
+_ZNSs7reserveEm
+clear
+_ZNSs5clearEv
+empty
+_ZNKSs5emptyEv
+_ZNKSsixEm
+_ZNSsixEm
+_ZNKSs2atEm
+_ZNSs2atEm
+_ZNSspLERKSs
+_ZNSspLEPKc
+_ZNSspLEc
+_ZNSs6appendERKSs
+_ZNSs6appendERKSsmm
+_ZNSs6appendEPKcm
+_ZNSs6appendEPKc
+_ZNSs6appendEmc
+push_back
+_ZNSs9push_backEc
+_ZNSs6assignERKSs
+_ZNSs6assignERKSsmm
+_ZNSs6assignEPKcm
+_ZNSs6assignEPKc
+_ZNSs6assignEmc
+_ZNSs6insertEN9__gnu_cxx17__normal_iteratorIPcSsEEmc
+_ZNSs6insertEmRKSs
+_ZNSs6insertEmRKSsmm
+_ZNSs6insertEmPKcm
+_ZNSs6insertEmPKc
+_ZNSs6insertEmmc
+_ZNSs6insertEN9__gnu_cxx17__normal_iteratorIPcSsEEc
+erase
+_ZNSs5eraseEmm
+erase
+_ZNSs5eraseEN9__gnu_cxx17__normal_iteratorIPcSsEE
+erase
+_ZNSs5eraseEN9__gnu_cxx17__normal_iteratorIPcSsEES2_
+_ZNSs7replaceEmmRKSs
+_ZNSs7replaceEmmRKSsmm
+_ZNSs7replaceEmmPKcm
+_ZNSs7replaceEmmPKc
+_ZNSs7replaceEmmmc
+_ZNSs7replaceEN9__gnu_cxx17__normal_iteratorIPcSsEES2_RKSs
+_ZNSs7replaceEN9__gnu_cxx17__normal_iteratorIPcSsEES2_PKcm
+_ZNSs7replaceEN9__gnu_cxx17__normal_iteratorIPcSsEES2_PKc
+_ZNSs7replaceEN9__gnu_cxx17__normal_iteratorIPcSsEES2_mc
+_ZNSs7replaceEN9__gnu_cxx17__normal_iteratorIPcSsEES2_S1_S1_
+_ZNSs7replaceEN9__gnu_cxx17__normal_iteratorIPcSsEES2_PKcS4_
+_ZNSs7replaceEN9__gnu_cxx17__normal_iteratorIPcSsEES2_S2_S2_
+_ZNSs7replaceEN9__gnu_cxx17__normal_iteratorIPcSsEES2_NS0_IPKcSsEES5_
+_M_replace_aux
+_ZNSs14_M_replace_auxEmmmc
+_M_replace_safe
+_ZNSs15_M_replace_safeEmmPKcm
+_S_construct
+_ZNSs12_S_constructEmcRKSaIcE
+copy
+_ZNKSs4copyEPcmm
+swap
+_ZNSs4swapERSs
+c_str
+_ZNKSs5c_strEv
+data
+_ZNKSs4dataEv
+get_allocator
+_ZNKSs13get_allocatorEv
+find
+_ZNKSs4findEPKcmm
+find
+_ZNKSs4findERKSsm
+IlA
+find
+_ZNKSs4findEPKcm
+find
+_ZNKSs4findEcm
+_ZNKSs5rfindERKSsm
+_ZNKSs5rfindEPKcmm
+HEB
+_ZNKSs5rfindEPKcm
+HxB
+_ZNKSs5rfindEcm
+_ZNKSs13find_first_ofERKSsm
+_ZNKSs13find_first_ofEPKcmm
+_ZNKSs13find_first_ofEPKcm
+HuC
+_ZNKSs13find_first_ofEcm
+_ZNKSs12find_last_ofERKSsm
+_ZNKSs12find_last_ofEPKcmm
+_ZNKSs12find_last_ofEPKcm
+HnD
+_ZNKSs12find_last_ofEcm
+_ZNKSs17find_first_not_ofERKSsm
+_ZNKSs17find_first_not_ofEPKcmm
+_ZNKSs17find_first_not_ofEPKcm
+_ZNKSs17find_first_not_ofEcm
+_ZNKSs16find_last_not_ofERKSsm
+_ZNKSs16find_last_not_ofEPKcmm
+HEF
+_ZNKSs16find_last_not_ofEPKcm
+_ZNKSs16find_last_not_ofEcm
+substr
+_ZNKSs6substrEmm
+_ZNKSs7compareERKSs
+_ZNKSs7compareEmmRKSs
+HuG
+_ZNKSs7compareEmmRKSsmm
+_ZNKSs7compareEPKc
+_ZNKSs7compareEmmPKc
+_ZNKSs7compareEmmPKcm
+,_M_length
+,_M_capacity
+P_S_empty_rep_storage
+tP_ZNSs4_Rep20_S_empty_rep_storageE
+_ZNSs4_Rep12_S_empty_repEv
+_M_is_leaked
+_ZNKSs4_Rep12_M_is_leakedEv
+_M_is_shared
+_ZNKSs4_Rep12_M_is_sharedEv
+_M_set_leaked
+_ZNSs4_Rep13_M_set_leakedEv
+_M_set_sharable
+_ZNSs4_Rep15_M_set_sharableEv
+_M_set_length_and_sharable
+_ZNSs4_Rep26_M_set_length_and_sharableEm
+_M_refdata
+_ZNSs4_Rep10_M_refdataEv
+_M_grab
+_ZNSs4_Rep7_M_grabERKSaIcES2_
+ICK
+_S_create
+_ZNSs4_Rep9_S_createEmmRKSaIcE
+_M_dispose
+_ZNSs4_Rep10_M_disposeERKSaIcE
+_M_destroy
+_ZNSs4_Rep10_M_destroyERKSaIcE
+_M_refcopy
+_ZNSs4_Rep10_M_refcopyEv
+_M_clone
+_ZNSs4_Rep8_M_cloneERKSaIcEm
+cDSnone
+ci_ZNSt6locale4noneE
+Tctype
+Tnumeric
+Tcollate
+Ttime
+Sall
+cq_ZNSt6locale3allE
+B_M_impl
+_S_classic
+_ZNSt6locale10_S_classicE
+_S_global
+_ZNSt6locale9_S_globalE
+_S_once
+_ZNSt6locale7_S_onceE
+facet
+~locale
+_ZNSt6localeaSERKS_
+string
+name
+_ZNKSt6locale4nameEv
+operator==
+_ZNKSt6localeeqERKS_
+operator!=
+_ZNKSt6localeneERKS_
+global
+_ZNSt6locale6globalERKS_
+classic
+_ZNSt6locale7classicEv
+_S_initialize
+_ZNSt6locale13_S_initializeEv
+_S_initialize_once
+_ZNSt6locale18_S_initialize_onceEv
+_S_normalize_category
+_ZNSt6locale21_S_normalize_categoryEi
+_M_coalesce
+_ZNSt6locale11_M_coalesceERKS_S1_i
+B_M_index
+_ZNSt6locale2id11_S_refcountE
+_ZNSt6locale2idaSERKS0_
+_ZNKSt6locale2id5_M_idEv
+B_M_facets
+B_M_facets_size
+B_M_caches
+B_M_names
+DpS
+_M_add_reference
+_ZNSt6locale5_Impl16_M_add_referenceEv
+_M_remove_reference
+_ZNSt6locale5_Impl19_M_remove_referenceEv
+~_Impl
+YUT
+_ZNSt6locale5_ImplaSERKS0_
+_M_check_same_name
+_ZNSt6locale5_Impl18_M_check_same_nameEv
+_M_replace_categories
+_ZNSt6locale5_Impl21_M_replace_categoriesEPKS0_i
+_M_replace_category
+_ZNSt6locale5_Impl19_M_replace_categoryEPKS0_PKPKNS_2idE
+_M_replace_facet
+_ZNSt6locale5_Impl16_M_replace_facetEPKS0_PKNS_2idE
+DrV
+_M_install_facet
+_ZNSt6locale5_Impl16_M_install_facetEPKNS_2idEPKNS_5facetE
+_M_install_cache
+_ZNSt6locale5_Impl16_M_install_cacheEPKNS_5facetEm
+wctrans_t
+iswctype
+towctrans
+wctrans
+wctype
+_S_construct_pattern
+_ZNSt10money_base20_S_construct_patternEccc
+B_M_current
+operator*
+_ZNK9__gnu_cxx17__normal_iteratorIPcSsEdeEv
+IAY
+operator->
+_ZNK9__gnu_cxx17__normal_iteratorIPcSsEptEv
+_ZN9__gnu_cxx17__normal_iteratorIPcSsEppEv
+_ZN9__gnu_cxx17__normal_iteratorIPcSsEppEi
+_ZN9__gnu_cxx17__normal_iteratorIPcSsEmmEv
+_ZN9__gnu_cxx17__normal_iteratorIPcSsEmmEi
+_ZNK9__gnu_cxx17__normal_iteratorIPcSsEixERKl
+_ZN9__gnu_cxx17__normal_iteratorIPcSsEpLERKl
+operator+
+_ZNK9__gnu_cxx17__normal_iteratorIPcSsEplERKl
+operator-=
+_ZN9__gnu_cxx17__normal_iteratorIPcSsEmIERKl
+operator-
+_ZNK9__gnu_cxx17__normal_iteratorIPcSsEmiERKl
+base
+_ZNK9__gnu_cxx17__normal_iteratorIPcSsE4baseEv
+MurmurHashNeutral2
+_Z18MurmurHashNeutral2PKvij
+ckey
+Hclen
+Dcseed
+Tdr
+Xdh
+\ddata
+__static_initialization_and_destruction_0
+c__initialize_p
+lc__priority
+g_GLOBAL__I_main
+__tcf_0
+main
+j__dso_handle
+nothrow
+ostream
+cout
+ldigits
+_ZNSt14numeric_limitsImE6digitsE
+_ZNSt14numeric_limitsIfE12has_infinityE
+_ZNSt14numeric_limitsIfE13has_quiet_NaNE
+_ZNSt14numeric_limitsIfE10has_denormE
+_ZNSt14numeric_limitsIdE12has_infinityE
+_ZNSt14numeric_limitsIdE13has_quiet_NaNE
+_ZNSt14numeric_limitsIdE10has_denormE
+_ZNSt14numeric_limitsIeE12has_infinityE
+_ZNSt14numeric_limitsIeE13has_quiet_NaNE
+_ZNSt14numeric_limitsIeE10has_denormE
+nnpos
+onpos
+_ZNSbIwSt11char_traitsIwESaIwEE4nposE
+t?_ZNSbIwSt11char_traitsIwESaIwEE4_Rep11_S_max_sizeE
+tD_ZNSbIwSt11char_traitsIwESaIwEE4_Rep11_S_terminalE
+Tctype
+Tnumeric
+Tcollate
+Ttime
+rdec
+rfixed
+rhex
+rleft
+roct
+@rright
+tshowpos
+tskipws
+tunitbuf
+rbadbit
+reofbit
+rfailbit
+rgoodbit
+rin
+rout
+rcur
+uupper
+|3_ZNSt10ctype_base5upperE
+ulower
+|4_ZNSt10ctype_base5lowerE
+ualpha
+|5_ZNSt10ctype_base5alphaE
+udigit
+|6_ZNSt10ctype_base5digitE
+uxdigit
+|7_ZNSt10ctype_base6xdigitE
+uspace
+|8_ZNSt10ctype_base5spaceE
+uprint
+|9_ZNSt10ctype_base5printE
+@ugraph
+|:_ZNSt10ctype_base5graphE
+Scntrl
+|;_ZNSt10ctype_base5cntrlE
+Spunct
+|<_ZNSt10ctype_base5punctE
+ualnum
+|=_ZNSt10ctype_base5alnumE
+o_S_atoms_out
+_ZNSt10__num_base12_S_atoms_outE
+o_S_atoms_in
+_ZNSt10__num_base11_S_atoms_inE
+_ZNSt10moneypunctIcLb1EE4intlE
+_ZNSt10moneypunctIcLb0EE4intlE
+_ZNSt10moneypunctIwLb1EE4intlE
+_ZNSt10moneypunctIwLb0EE4intlE
+_ZNSt17moneypunct_bynameIcLb0EE4intlE
+_ZNSt17moneypunct_bynameIcLb1EE4intlE
+_ZNSt17moneypunct_bynameIwLb0EE4intlE
+_ZNSt17moneypunct_bynameIwLb1EE4intlE
+/usr/lib/gcc/x86_64-redhat-linux/4.1.2/../../../../include/c++/4.1.2
+/usr/lib/gcc/x86_64-redhat-linux/4.1.2/../../../../include/c++/4.1.2/x86_64-redhat-linux/bits
+/usr/include/bits
+/usr/include
+/usr/include/sys
+/usr/include/gnu
+/usr/lib/gcc/x86_64-redhat-linux/4.1.2/include
+/usr/lib/gcc/x86_64-redhat-linux/4.1.2/../../../../include/c++/4.1.2/bits
+/usr/include/linux
+/usr/lib/gcc/x86_64-redhat-linux/4.1.2/../../../../include/c++/4.1.2/debug
+/usr/lib/gcc/x86_64-redhat-linux/4.1.2/../../../../include/c++/4.1.2/ext
+test.cpp
+iostream
+c++config.h
+wordsize.h
+os_defines.h
+features.h
+cdefs.h
+stubs.h
+stubs-64.h
+cpu_defines.h
+ostream
+ios
+iosfwd
+c++locale.h
+cstring
+cstddef
+stddef.h
+string.h
+xlocale.h
+cstdio
+stdio.h
+types.h
+typesizes.h
+libio.h
+_G_config.h
+wchar.h
+wchar.h
+gconv.h
+stdarg.h
+stdio_lim.h
+sys_errlist.h
+clocale
+locale.h
+locale.h
+langinfo.h
+nl_types.h
+iconv.h
+libintl.h
+gthr.h
+gthr-default.h
+pthread.h
+sched.h
+time.h
+sched.h
+time.h
+signal.h
+sigset.h
+pthreadtypes.h
+setjmp.h
+unistd.h
+posix_opt.h
+environments.h
+confname.h
+getopt.h
+cctype
+ctype.h
+endian.h
+endian.h
+stringfwd.h
+postypes.h
+cwchar
+ctime
+stdint.h
+functexcept.h
+exception_defines.h
+exception
+char_traits.h
+stl_algobase.h
+climits
+limits.h
+syslimits.h
+limits.h
+posix1_lim.h
+local_lim.h
+limits.h
+posix2_lim.h
+xopen_lim.h
+cstdlib
+stdlib.h
+waitflags.h
+waitstatus.h
+types.h
+select.h
+select.h
+sysmacros.h
+alloca.h
+stl_pair.h
+cpp_type_traits.h
+stl_iterator_base_types.h
+stl_iterator_base_funcs.h
+concept_check.h
+stl_iterator.h
+debug.h
+localefwd.h
+ios_base.h
+atomicity.h
+atomic_word.h
+locale_classes.h
+string
+memory
+allocator.h
+c++allocator.h
+new_allocator.h
+new
+stl_construct.h
+stl_uninitialized.h
+stl_raw_storage_iter.h
+limits
+stl_function.h
+basic_string.h
+algorithm
+stl_algo.h
+stl_heap.h
+stl_tempbuf.h
+basic_string.tcc
+streambuf
+streambuf.tcc
+basic_ios.h
+streambuf_iterator.h
+locale_facets.h
+cwctype
+wctype.h
+ctype_base.h
+ctype_inline.h
+codecvt.h
+time_members.h
+messages_members.h
+basic_ios.tcc
+ostream.tcc
+locale
+locale_facets.tcc
+typeinfo
+istream
+istream.tcc
+<built-in>
+__STDC__ 1
+__cplusplus 1
+__STDC_HOSTED__ 1
+__GNUC__ 4
+__GNUG__ 4
+__GNUC_MINOR__ 1
+__GNUC_PATCHLEVEL__ 2
+__GNUC_RH_RELEASE__ 42
+__SIZE_TYPE__ long unsigned int
+__PTRDIFF_TYPE__ long int
+__WCHAR_TYPE__ int
+__WINT_TYPE__ unsigned int
+__INTMAX_TYPE__ long int
+__UINTMAX_TYPE__ long unsigned int
+__GXX_WEAK__ 1
+__DEPRECATED 1
+__EXCEPTIONS 1
+__GXX_ABI_VERSION 1002
+__SCHAR_MAX__ 127
+__SHRT_MAX__ 32767
+__INT_MAX__ 2147483647
+__LONG_MAX__ 9223372036854775807L
+__LONG_LONG_MAX__ 9223372036854775807LL
+__WCHAR_MAX__ 2147483647
+__CHAR_BIT__ 8
+__INTMAX_MAX__ 9223372036854775807L
+__FLT_EVAL_METHOD__ 0
+__FLT_RADIX__ 2
+__FLT_MANT_DIG__ 24
+__FLT_DIG__ 6
+__FLT_MIN_EXP__ (-125)
+__FLT_MIN_10_EXP__ (-37)
+__FLT_MAX_EXP__ 128
+__FLT_MAX_10_EXP__ 38
+__FLT_MAX__ 3.40282347e+38F
+__FLT_MIN__ 1.17549435e-38F
+__FLT_EPSILON__ 1.19209290e-7F
+__FLT_DENORM_MIN__ 1.40129846e-45F
+__FLT_HAS_INFINITY__ 1
+__FLT_HAS_QUIET_NAN__ 1
+__DBL_MANT_DIG__ 53
+__DBL_DIG__ 15
+__DBL_MIN_EXP__ (-1021)
+__DBL_MIN_10_EXP__ (-307)
+__DBL_MAX_EXP__ 1024
+__DBL_MAX_10_EXP__ 308
+__DBL_MAX__ 1.7976931348623157e+308
+__DBL_MIN__ 2.2250738585072014e-308
+__DBL_EPSILON__ 2.2204460492503131e-16
+__DBL_DENORM_MIN__ 4.9406564584124654e-324
+__DBL_HAS_INFINITY__ 1
+__DBL_HAS_QUIET_NAN__ 1
+__LDBL_MANT_DIG__ 64
+__LDBL_DIG__ 18
+__LDBL_MIN_EXP__ (-16381)
+__LDBL_MIN_10_EXP__ (-4931)
+__LDBL_MAX_EXP__ 16384
+__LDBL_MAX_10_EXP__ 4932
+__DECIMAL_DIG__ 21
+__LDBL_MAX__ 1.18973149535723176502e+4932L
+__LDBL_MIN__ 3.36210314311209350626e-4932L
+__LDBL_EPSILON__ 1.08420217248550443401e-19L
+__LDBL_DENORM_MIN__ 3.64519953188247460253e-4951L
+__LDBL_HAS_INFINITY__ 1
+__LDBL_HAS_QUIET_NAN__ 1
+__REGISTER_PREFIX__
+__USER_LABEL_PREFIX__
+__VERSION__ "4.1.2 20071124 (Red Hat 4.1.2-42)"
+__GNUC_GNU_INLINE__ 1
+__NO_INLINE__ 1
+__FINITE_MATH_ONLY__ 0
+__amd64 1
+__amd64__ 1
+__MMX__ 1
+__SSE__ 1
+__SSE2__ 1
+__SSE_MATH__ 1
+__SSE2_MATH__ 1
+__gnu_linux__ 1
+__linux 1
+__linux__ 1
+linux 1
+__unix 1
+__unix__ 1
+unix 1
+__ELF__ 1
+_GNU_SOURCE 1
+'_GLIBCXX_IOSTREAM 1
+_CPP_CPPCONFIG_WRAPPER 1
+__WORDSIZE 64
+__WORDSIZE_COMPAT32 1
+_CXXCONFIG 1
+_GLIBCXX_OS_DEFINES 1
+%__NO_CTYPE 1
+_FEATURES_H 1
+]__USE_ISOC99
+^__USE_POSIX
+___USE_POSIX2
+`__USE_POSIX199309
+a__USE_POSIX199506
+b__USE_XOPEN
+c__USE_XOPEN_EXTENDED
+d__USE_UNIX98
+e__USE_XOPEN2K
+f__USE_LARGEFILE
+g__USE_LARGEFILE64
+h__USE_FILE_OFFSET64
+i__USE_BSD
+j__USE_SVID
+k__USE_MISC
+l__USE_ATFILE
+m__USE_GNU
+n__USE_REENTRANT
+o__USE_FORTIFY_LEVEL
+p__FAVOR_BSD
+q__KERNEL_STRICT_NAMES
+v__KERNEL_STRICT_NAMES
+z__USE_ANSI 1
+__GNUC_PREREQ(maj,min) ((__GNUC__ << 16) + __GNUC_MINOR__ >= ((maj) << 16) + (min))
+_ISOC99_SOURCE
+_ISOC99_SOURCE 1
+_POSIX_SOURCE
+_POSIX_SOURCE 1
+_POSIX_C_SOURCE
+_POSIX_C_SOURCE 200112L
+_XOPEN_SOURCE
+_XOPEN_SOURCE 600
+_XOPEN_SOURCE_EXTENDED
+_XOPEN_SOURCE_EXTENDED 1
+_LARGEFILE64_SOURCE
+_LARGEFILE64_SOURCE 1
+_BSD_SOURCE
+_BSD_SOURCE 1
+_SVID_SOURCE
+_SVID_SOURCE 1
+_ATFILE_SOURCE
+_ATFILE_SOURCE 1
+__USE_ISOC99 1
+__USE_POSIX 1
+__USE_POSIX2 1
+__USE_POSIX199309 1
+__USE_POSIX199506 1
+__USE_XOPEN2K 1
+__USE_XOPEN 1
+__USE_XOPEN_EXTENDED 1
+__USE_UNIX98 1
+_LARGEFILE_SOURCE
+_LARGEFILE_SOURCE 1
+__USE_XOPEN2K 1
+__USE_ISOC99
+__USE_ISOC99 1
+__USE_LARGEFILE 1
+__USE_LARGEFILE64 1
+__USE_MISC 1
+__USE_BSD 1
+__USE_SVID 1
+__USE_ATFILE 1
+__USE_GNU 1
+__USE_FORTIFY_LEVEL 0
+__STDC_IEC_559__ 1
+__STDC_IEC_559_COMPLEX__ 1
+__STDC_ISO_10646__ 200009L
+__GNU_LIBRARY__
+__GNU_LIBRARY__ 6
+__GLIBC__ 2
+__GLIBC_MINOR__ 5
+__GLIBC_PREREQ(maj,min) ((__GLIBC__ << 16) + __GLIBC_MINOR__ >= ((maj) << 16) + (min))
+__GLIBC_HAVE_LONG_LONG 1
+_SYS_CDEFS_H 1
+%__PMT
+3__THROW throw ()
+4__NTH(fct) fct throw ()
+J__P(args) args
+K__PMT(args) args
+P__CONCAT(x,y) x ## y
+Q__STRING(x) #x
+T__ptr_t void *
+U__long_double_t long double
+Z__BEGIN_DECLS extern "C" {
+[__END_DECLS }
+r__BEGIN_NAMESPACE_STD
+s__END_NAMESPACE_STD
+t__USING_NAMESPACE_STD(name)
+u__BEGIN_NAMESPACE_C99
+v__END_NAMESPACE_C99
+w__USING_NAMESPACE_C99(name)
+}__bounded
+~__unbounded
+__ptrvalue
+__bos(ptr) __builtin_object_size (ptr, __USE_FORTIFY_LEVEL > 1)
+__bos0(ptr) __builtin_object_size (ptr, 0)
+__warndecl(name,msg) extern void name (void)
+__flexarr []
+__REDIRECT(name,proto,alias) name proto __asm__ (__ASMNAME (#alias))
+__REDIRECT_NTH(name,proto,alias) name proto __THROW __asm__ (__ASMNAME (#alias))
+__ASMNAME(cname) __ASMNAME2 (__USER_LABEL_PREFIX__, cname)
+__ASMNAME2(prefix,cname) __STRING (prefix) cname
+__attribute_malloc__ __attribute__ ((__malloc__))
+__attribute_pure__ __attribute__ ((__pure__))
+__attribute_used__ __attribute__ ((__used__))
+__attribute_noinline__ __attribute__ ((__noinline__))
+__attribute_deprecated__ __attribute__ ((__deprecated__))
+__attribute_format_arg__(x) __attribute__ ((__format_arg__ (x)))
+__attribute_format_strfmon__(a,b) __attribute__ ((__format__ (__strfmon__, a, b)))
+__nonnull(params) __attribute__ ((__nonnull__ params))
+__attribute_warn_unused_result__ __attribute__ ((__warn_unused_result__))
+__wur
+__always_inline __inline __attribute__ ((__always_inline__))
+__restrict_arr
+__WORDSIZE 64
+__WORDSIZE_COMPAT32 1
+__LDBL_REDIR1(name,proto,alias) name proto
+__LDBL_REDIR(name,proto) name proto
+__LDBL_REDIR1_NTH(name,proto,alias) name proto __THROW
+__LDBL_REDIR_NTH(name,proto) name proto __THROW
+__LDBL_REDIR_DECL(name)
+__WORDSIZE 64
+__WORDSIZE_COMPAT32 1
+__stub___kernel_cosl
+__stub___kernel_rem_pio2l
+__stub___kernel_sinl
+__stub___kernel_tanl
+__stub_bdflush
+__stub_chflags
+__stub_fattach
+__stub_fchflags
+__stub_fdetach
+__stub_feupdateenv
+__stub_getmsg
+__stub_gtty
+__stub_lchmod
+__stub_lutimes
+__stub_putmsg
+__stub_revoke
+__stub_setlogin
+__stub_sigreturn
+__stub_sstk
+__stub_stty
++__NO_STRING_INLINES
+_GLIBCXX_CPU_DEFINES 1
+_GLIBCXX_STD std
+_GLIBCXX_LONG_DOUBLE_COMPAT
+_GLIBCXX_LDBL_NAMESPACE
+_GLIBCXX_BEGIN_LDBL_NAMESPACE
+_GLIBCXX_END_LDBL_NAMESPACE
+_GLIBCXX_EXTERN_TEMPLATE 1
+_GLIBCXX_WEAK_DEFINITION
+_GLIBCXX_FAST_MATH 0
+__N(msgid) (msgid)
+__GLIBCXX__ 20071124
+_GLIBCXX_HAVE_ACOSF 1
+_GLIBCXX_HAVE_ACOSL 1
+_GLIBCXX_HAVE_ASINF 1
+_GLIBCXX_HAVE_ASINL 1
+_GLIBCXX_HAVE_ATAN2F 1
+_GLIBCXX_HAVE_ATAN2L 1
+_GLIBCXX_HAVE_ATANF 1
+_GLIBCXX_HAVE_ATANL 1
+_GLIBCXX_HAVE_CEILF 1
+_GLIBCXX_HAVE_CEILL 1
+_GLIBCXX_HAVE_COMPLEX_H 1
+_GLIBCXX_HAVE_COPYSIGN 1
+_GLIBCXX_HAVE_COPYSIGNF 1
+_GLIBCXX_HAVE_COPYSIGNL 1
+_GLIBCXX_HAVE_COSF 1
+_GLIBCXX_HAVE_COSHF 1
+_GLIBCXX_HAVE_COSHL 1
+_GLIBCXX_HAVE_COSL 1
+_GLIBCXX_HAVE_ENDIAN_H 1
+_GLIBCXX_HAVE_EXPF 1
+_GLIBCXX_HAVE_EXPL 1
+_GLIBCXX_HAVE_FABSF 1
+_GLIBCXX_HAVE_FABSL 1
+_GLIBCXX_HAVE_FINITE 1
+_GLIBCXX_HAVE_FINITEF 1
+_GLIBCXX_HAVE_FINITEL 1
+_GLIBCXX_HAVE_FLOAT_H 1
+_GLIBCXX_HAVE_FLOORF 1
+_GLIBCXX_HAVE_FLOORL 1
+_GLIBCXX_HAVE_FMODF 1
+_GLIBCXX_HAVE_FMODL 1
+_GLIBCXX_HAVE_FREXPF 1
+_GLIBCXX_HAVE_FREXPL 1
+_GLIBCXX_HAVE_GCONV_H 1
+_GLIBCXX_HAVE_GETPAGESIZE 1
+_GLIBCXX_HAVE_GTHR_DEFAULT 1
+_GLIBCXX_HAVE_HYPOT 1
+_GLIBCXX_HAVE_HYPOTF 1
+_GLIBCXX_HAVE_HYPOTL 1
+_GLIBCXX_HAVE_ICONV 1
+_GLIBCXX_HAVE_ICONV_CLOSE 1
+_GLIBCXX_HAVE_ICONV_OPEN 1
+_GLIBCXX_HAVE_INT64_T 1
+_GLIBCXX_HAVE_INTTYPES_H 1
+_GLIBCXX_HAVE_ISINF 1
+_GLIBCXX_HAVE_ISINFF 1
+_GLIBCXX_HAVE_ISINFL 1
+_GLIBCXX_HAVE_ISNAN 1
+_GLIBCXX_HAVE_ISNANF 1
+_GLIBCXX_HAVE_ISNANL 1
+_GLIBCXX_HAVE_ISWBLANK 1
+_GLIBCXX_HAVE_LC_MESSAGES 1
+_GLIBCXX_HAVE_LDEXPF 1
+_GLIBCXX_HAVE_LDEXPL 1
+_GLIBCXX_HAVE_LIBINTL_H 1
+_GLIBCXX_HAVE_LIBM 1
+_GLIBCXX_HAVE_LIMIT_AS 1
+_GLIBCXX_HAVE_LIMIT_DATA 1
+_GLIBCXX_HAVE_LIMIT_FSIZE 1
+_GLIBCXX_HAVE_LIMIT_RSS 1
+_GLIBCXX_HAVE_LIMIT_VMEM 0
+_GLIBCXX_HAVE_LOCALE_H 1
+_GLIBCXX_HAVE_LOG10F 1
+_GLIBCXX_HAVE_LOG10L 1
+_GLIBCXX_HAVE_LOGF 1
+_GLIBCXX_HAVE_LOGL 1
+_GLIBCXX_HAVE_MBSTATE_T 1
+_GLIBCXX_HAVE_MEMORY_H 1
+_GLIBCXX_HAVE_MMAP 1
+_GLIBCXX_HAVE_MODF 1
+_GLIBCXX_HAVE_MODFF 1
+_GLIBCXX_HAVE_MODFL 1
+_GLIBCXX_HAVE_NL_LANGINFO 1
+_GLIBCXX_HAVE_POLL 1
+_GLIBCXX_HAVE_POWF 1
+_GLIBCXX_HAVE_POWL 1
+_GLIBCXX_HAVE_SETENV 1
+_GLIBCXX_HAVE_SIGSETJMP 1
+_GLIBCXX_HAVE_SINCOS 1
+_GLIBCXX_HAVE_SINCOSF 1
+_GLIBCXX_HAVE_SINCOSL 1
+_GLIBCXX_HAVE_SINF 1
+_GLIBCXX_HAVE_SINHF 1
+_GLIBCXX_HAVE_SINHL 1
+_GLIBCXX_HAVE_SINL 1
+_GLIBCXX_HAVE_SQRTF 1
+_GLIBCXX_HAVE_SQRTL 1
+_GLIBCXX_HAVE_STDINT_H 1
+_GLIBCXX_HAVE_STDLIB_H 1
+_GLIBCXX_HAVE_STRINGS_H 1
+_GLIBCXX_HAVE_STRING_H 1
+_GLIBCXX_HAVE_STRTOF 1
+_GLIBCXX_HAVE_STRTOLD 1
+_GLIBCXX_HAVE_SYS_IOCTL_H 1
+_GLIBCXX_HAVE_SYS_IPC_H 1
+_GLIBCXX_HAVE_SYS_RESOURCE_H 1
+_GLIBCXX_HAVE_SYS_SEM_H 1
+_GLIBCXX_HAVE_SYS_STAT_H 1
+_GLIBCXX_HAVE_SYS_TIME_H 1
+_GLIBCXX_HAVE_SYS_TYPES_H 1
+_GLIBCXX_HAVE_SYS_UIO_H 1
+_GLIBCXX_HAVE_S_ISREG 1
+_GLIBCXX_HAVE_TANF 1
+_GLIBCXX_HAVE_TANHF 1
+_GLIBCXX_HAVE_TANHL 1
+_GLIBCXX_HAVE_TANL 1
+_GLIBCXX_HAVE_TLS 1
+_GLIBCXX_HAVE_UNISTD_H 1
+_GLIBCXX_HAVE_VFWSCANF 1
+_GLIBCXX_HAVE_VSWSCANF 1
+_GLIBCXX_HAVE_VWSCANF 1
+_GLIBCXX_HAVE_WCHAR_H 1
+_GLIBCXX_HAVE_WCSTOF 1
+_GLIBCXX_HAVE_WCTYPE_H 1
+_GLIBCXX_HAVE_WRITEV 1
+_GLIBCXX_HAVE___BUILTIN_ABS 1
+_GLIBCXX_HAVE___BUILTIN_COS 1
+_GLIBCXX_HAVE___BUILTIN_COSF 1
+_GLIBCXX_HAVE___BUILTIN_COSL 1
+_GLIBCXX_HAVE___BUILTIN_FABS 1
+_GLIBCXX_HAVE___BUILTIN_FABSF 1
+_GLIBCXX_HAVE___BUILTIN_FABSL 1
+_GLIBCXX_HAVE___BUILTIN_LABS 1
+_GLIBCXX_HAVE___BUILTIN_SIN 1
+_GLIBCXX_HAVE___BUILTIN_SINF 1
+_GLIBCXX_HAVE___BUILTIN_SINL 1
+_GLIBCXX_HAVE___BUILTIN_SQRT 1
+_GLIBCXX_HAVE___BUILTIN_SQRTF 1
+_GLIBCXX_HAVE___BUILTIN_SQRTL 1
+_GLIBCXX_HAVE___SIGNBIT 1
+_GLIBCXX_HAVE___SIGNBITF 1
+_GLIBCXX_HAVE___SIGNBITL 1
+_GLIBCXX_PACKAGE_BUGREPORT ""
+_GLIBCXX_PACKAGE_NAME "package-unused"
+_GLIBCXX_PACKAGE_STRING "package-unused version-unused"
+_GLIBCXX_PACKAGE_TARNAME "libstdc++"
+_GLIBCXX_PACKAGE__GLIBCXX_VERSION "version-unused"
+STDC_HEADERS 1
+_GLIBCXX_HOSTED 1
+_GLIBCXX_RES_LIMITS 1
+_GLIBCXX_SYMVER 1
+_GLIBCXX_USE_C99 1
+_GLIBCXX_USE_C99_COMPLEX 1
+_GLIBCXX_USE_C99_MATH 1
+_GLIBCXX_USE_ICONV 1
+_GLIBCXX_USE_LFS 1
+_GLIBCXX_USE_LONG_LONG 1
+_GLIBCXX_USE_NLS 1
+_GLIBCXX_USE_WCHAR_T 1
+(_GLIBCXX_OSTREAM 1
+'_GLIBCXX_IOS 1
+(_GLIBCXX_IOSFWD 1
+%_C_LOCALE_H 1
+._GLIBCXX_CSTRING 1
+._GLIBCXX_CSTDDEF 1
++_STDDEF_H
+,_STDDEF_H_
+._ANSI_STDDEF_H
+0__STDDEF_H__
+_PTRDIFF_T
+_T_PTRDIFF_
+_T_PTRDIFF
+__PTRDIFF_T
+_PTRDIFF_T_
+_BSD_PTRDIFF_T_
+___int_ptrdiff_t_h
+_GCC_PTRDIFF_T
+__need_ptrdiff_t
+__size_t__
+__SIZE_T__
+_SIZE_T
+_SYS_SIZE_T_H
+_T_SIZE_
+_T_SIZE
+__SIZE_T
+_SIZE_T_
+_BSD_SIZE_T_
+_SIZE_T_DEFINED_
+_SIZE_T_DEFINED
+_BSD_SIZE_T_DEFINED_
+_SIZE_T_DECLARED
+___int_size_t_h
+_GCC_SIZE_T
+_SIZET_
+__size_t
+__need_size_t
+__wchar_t__
+__WCHAR_T__
+_WCHAR_T
+_T_WCHAR_
+_T_WCHAR
+__WCHAR_T
+_WCHAR_T_
+_BSD_WCHAR_T_
+_WCHAR_T_DEFINED_
+_WCHAR_T_DEFINED
+_WCHAR_T_H
+___int_wchar_t_h
+__INT_WCHAR_T_H
+_GCC_WCHAR_T
+_WCHAR_T_DECLARED
+_BSD_WCHAR_T_
+__need_wchar_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+_STRING_H 1
+__need_size_t
+__need_NULL
+__need_ptrdiff_t
+__need_size_t
+__need_wchar_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+_XLOCALE_H 1
+strdupa(s) (__extension__ ({ __const char *__old = (s); size_t __len = strlen (__old) + 1; char *__new = (char *) __builtin_alloca (__len); (char *) memcpy (__new, __old, __len); }))
+strndupa(s,n) (__extension__ ({ __const char *__old = (s); size_t __len = strnlen (__old, (n)); char *__new = (char *) __builtin_alloca (__len + 1); __new[__len] = '\0'; (char *) memcpy (__new, __old, __len); }))
+7memcpy
+8memmove
+9strcpy
+:strncpy
+;strcat
+<strncat
+=memcmp
+>strcmp
+?strcoll
+@strncmp
+Astrxfrm
+Bmemchr
+Cstrchr
+Dstrcspn
+Estrpbrk
+Fstrrchr
+Gstrspn
+Hstrstr
+Istrtok
+Jmemset
+Kstrerror
+Lstrlen
+._GLIBCXX_CSTDIO 1
+_STDIO_H 1
+__need_size_t
+!__need_NULL
+__need_ptrdiff_t
+__need_size_t
+__need_wchar_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+_BITS_TYPES_H 1
+__WORDSIZE 64
+__WORDSIZE_COMPAT32 1
+__need_size_t
+__need_ptrdiff_t
+__need_size_t
+__need_wchar_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+f__S16_TYPE short int
+g__U16_TYPE unsigned short int
+h__S32_TYPE int
+i__U32_TYPE unsigned int
+j__SLONGWORD_TYPE long int
+k__ULONGWORD_TYPE unsigned long int
+y__SQUAD_TYPE long int
+z__UQUAD_TYPE unsigned long int
+{__SWORD_TYPE long int
+|__UWORD_TYPE unsigned long int
+}__SLONG32_TYPE int
+~__ULONG32_TYPE unsigned int
+__S64_TYPE long int
+__U64_TYPE unsigned long int
+__STD_TYPE typedef
+_BITS_TYPESIZES_H 1
+__DEV_T_TYPE __UQUAD_TYPE
+__UID_T_TYPE __U32_TYPE
+__GID_T_TYPE __U32_TYPE
+!__INO_T_TYPE __ULONGWORD_TYPE
+"__INO64_T_TYPE __UQUAD_TYPE
+#__MODE_T_TYPE __U32_TYPE
+$__NLINK_T_TYPE __UWORD_TYPE
+%__OFF_T_TYPE __SLONGWORD_TYPE
+&__OFF64_T_TYPE __SQUAD_TYPE
+'__PID_T_TYPE __S32_TYPE
+(__RLIM_T_TYPE __ULONGWORD_TYPE
+)__RLIM64_T_TYPE __UQUAD_TYPE
+*__BLKCNT_T_TYPE __SLONGWORD_TYPE
++__BLKCNT64_T_TYPE __SQUAD_TYPE
+,__FSBLKCNT_T_TYPE __ULONGWORD_TYPE
+-__FSBLKCNT64_T_TYPE __UQUAD_TYPE
+.__FSFILCNT_T_TYPE __ULONGWORD_TYPE
+/__FSFILCNT64_T_TYPE __UQUAD_TYPE
+0__ID_T_TYPE __U32_TYPE
+1__CLOCK_T_TYPE __SLONGWORD_TYPE
+2__TIME_T_TYPE __SLONGWORD_TYPE
+3__USECONDS_T_TYPE __U32_TYPE
+4__SUSECONDS_T_TYPE __SLONGWORD_TYPE
+5__DADDR_T_TYPE __S32_TYPE
+6__SWBLK_T_TYPE __SLONGWORD_TYPE
+7__KEY_T_TYPE __S32_TYPE
+8__CLOCKID_T_TYPE __S32_TYPE
+9__TIMER_T_TYPE void *
+:__BLKSIZE_T_TYPE __SLONGWORD_TYPE
+;__FSID_T_TYPE struct { int __val[2]; }
+<__SSIZE_T_TYPE __SWORD_TYPE
+?__FD_SETSIZE 1024
+__STD_TYPE
+%__need_FILE
+&__need___FILE
+6__FILE_defined 1
+8__need_FILE
+@____FILE_defined 1
+B__need___FILE
+F_STDIO_USES_IOSTREAM
+_IO_STDIO_H
+_G_config_h 1
+__need_size_t
+__need_wchar_t
+__need_wint_t
+__need_NULL
+__need_ptrdiff_t
+__need_size_t
+__need_wchar_t
+_WINT_T
+__need_wint_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+__need_mbstate_t
+/__need_wint_t
+__need_ptrdiff_t
+__need_size_t
+__need_wchar_t
+__need_wint_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+_BITS_WCHAR_H 1
+__WCHAR_MIN (-2147483647 - 1)
+__WCHAR_MAX (2147483647)
+J__mbstate_t_defined 1
+V__need_mbstate_t
+_G_size_t size_t
+$_G_ssize_t __ssize_t
+%_G_off_t __off_t
+&_G_off64_t __off64_t
+'_G_pid_t __pid_t
+(_G_uid_t __uid_t
+)_G_wchar_t wchar_t
+*_G_wint_t wint_t
++_G_stat64 stat64
+_GCONV_H 1
+__need_mbstate_t
+/__need_wint_t
+__need_ptrdiff_t
+__need_size_t
+__need_wchar_t
+__need_wint_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+V__need_mbstate_t
+__need_size_t
+__need_wchar_t
+__need_ptrdiff_t
+__need_size_t
+__need_wchar_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+"__UNKNOWN_10646_CHAR ((wchar_t) 0xfffd)
+<_G_HAVE_BOOL 1
+@_G_HAVE_ATEXIT 1
+A_G_HAVE_SYS_CDEFS 1
+B_G_HAVE_SYS_WAIT 1
+C_G_NEED_STDARG_H 1
+D_G_va_list __gnuc_va_list
+F_G_HAVE_PRINTF_FP 1
+G_G_HAVE_MMAP 1
+H_G_HAVE_MREMAP 1
+I_G_HAVE_LONG_DOUBLE_IO 1
+J_G_HAVE_IO_FILE_OPEN 1
+K_G_HAVE_IO_GETLINE_INFO 1
+M_G_IO_IO_FILE_VERSION 0x20001
+O_G_OPEN64 __open64
+P_G_LSEEK64 __lseek64
+Q_G_MMAP64 __mmap64
+R_G_FSTAT64(fd,buf) __fxstat64 (_STAT_VER, fd, buf)
+U_G_HAVE_ST_BLKSIZE defined (_STATBUF_ST_BLKSIZE)
+W_G_BUFSIZ 8192
+Z_G_NAMES_HAVE_UNDERSCORE 0
+[_G_VTABLE_LABEL_HAS_LENGTH 1
+\_G_USING_THUNKS 1
+]_G_VTABLE_LABEL_PREFIX "__vt_"
+^_G_VTABLE_LABEL_PREFIX_ID __vt_
+b_G_ARGS(ARGLIST) ARGLIST
+"_IO_pos_t _G_fpos_t
+#_IO_fpos_t _G_fpos_t
+$_IO_fpos64_t _G_fpos64_t
+%_IO_size_t _G_size_t
+&_IO_ssize_t _G_ssize_t
+'_IO_off_t _G_off_t
+(_IO_off64_t _G_off64_t
+)_IO_pid_t _G_pid_t
+*_IO_uid_t _G_uid_t
++_IO_iconv_t _G_iconv_t
+,_IO_HAVE_SYS_WAIT _G_HAVE_SYS_WAIT
+-_IO_HAVE_ST_BLKSIZE _G_HAVE_ST_BLKSIZE
+._IO_BUFSIZ _G_BUFSIZ
+/_IO_va_list _G_va_list
+0_IO_wint_t _G_wint_t
+4__need___va_list
+%__need___va_list
+*__GNUC_VA_LIST
+7_IO_va_list
+8_IO_va_list __gnuc_va_list
+L_PARAMS(protos) __P(protos)
+T_IO_UNIFIED_JUMPTABLES 1
+ZEOF (-1)
+i_IOS_INPUT 1
+j_IOS_OUTPUT 2
+k_IOS_ATEND 4
+l_IOS_APPEND 8
+m_IOS_TRUNC 16
+n_IOS_NOCREATE 32
+o_IOS_NOREPLACE 64
+p_IOS_BIN 128
+x_IO_MAGIC 0xFBAD0000
+y_OLD_STDIO_MAGIC 0xFABC0000
+z_IO_MAGIC_MASK 0xFFFF0000
+{_IO_USER_BUF 1
+|_IO_UNBUFFERED 2
+}_IO_NO_READS 4
+~_IO_NO_WRITES 8
+_IO_EOF_SEEN 0x10
+_IO_ERR_SEEN 0x20
+_IO_DELETE_DONT_CLOSE 0x40
+_IO_LINKED 0x80
+_IO_IN_BACKUP 0x100
+_IO_LINE_BUF 0x200
+_IO_TIED_PUT_GET 0x400
+_IO_CURRENTLY_PUTTING 0x800
+_IO_IS_APPENDING 0x1000
+_IO_IS_FILEBUF 0x2000
+_IO_BAD_SEEN 0x4000
+_IO_USER_LOCK 0x8000
+_IO_FLAGS2_MMAP 1
+_IO_FLAGS2_NOTCANCEL 2
+_IO_FLAGS2_USER_WBUF 8
+_IO_SKIPWS 01
+_IO_LEFT 02
+_IO_RIGHT 04
+_IO_INTERNAL 010
+_IO_DEC 020
+_IO_OCT 040
+_IO_HEX 0100
+_IO_SHOWBASE 0200
+_IO_SHOWPOINT 0400
+_IO_UPPERCASE 01000
+_IO_SHOWPOS 02000
+_IO_SCIENTIFIC 04000
+_IO_FIXED 010000
+_IO_UNITBUF 020000
+_IO_STDIO 040000
+_IO_DONT_CLOSE 0100000
+_IO_BOOLALPHA 0200000
+_IO_file_flags _flags
+__HAVE_COLUMN
+_IO_stdin ((_IO_FILE*)(&_IO_2_1_stdin_))
+_IO_stdout ((_IO_FILE*)(&_IO_2_1_stdout_))
+_IO_stderr ((_IO_FILE*)(&_IO_2_1_stderr_))
+_IO_BE(expr,res) __builtin_expect ((expr), res)
+_IO_getc_unlocked(_fp) (_IO_BE ((_fp)->_IO_read_ptr >= (_fp)->_IO_read_end, 0) ? __uflow (_fp) : *(unsigned char *) (_fp)->_IO_read_ptr++)
+_IO_peekc_unlocked(_fp) (_IO_BE ((_fp)->_IO_read_ptr >= (_fp)->_IO_read_end, 0) && __underflow (_fp) == EOF ? EOF : *(unsigned char *) (_fp)->_IO_read_ptr)
+_IO_putc_unlocked(_ch,_fp) (_IO_BE ((_fp)->_IO_write_ptr >= (_fp)->_IO_write_end, 0) ? __overflow (_fp, (unsigned char) (_ch)) : (unsigned char) (*(_fp)->_IO_write_ptr++ = (_ch)))
+_IO_getwc_unlocked(_fp) (_IO_BE ((_fp)->_wide_data->_IO_read_ptr >= (_fp)->_wide_data->_IO_read_end, 0) ? __wuflow (_fp) : (_IO_wint_t) *(_fp)->_wide_data->_IO_read_ptr++)
+_IO_putwc_unlocked(_wch,_fp) (_IO_BE ((_fp)->_wide_data->_IO_write_ptr >= (_fp)->_wide_data->_IO_write_end, 0) ? __woverflow (_fp, _wch) : (_IO_wint_t) (*(_fp)->_wide_data->_IO_write_ptr++ = (_wch)))
+_IO_feof_unlocked(__fp) (((__fp)->_flags & _IO_EOF_SEEN) != 0)
+_IO_ferror_unlocked(__fp) (((__fp)->_flags & _IO_ERR_SEEN) != 0)
+_IO_PENDING_OUTPUT_COUNT(_fp) ((_fp)->_IO_write_ptr - (_fp)->_IO_write_base)
+_IO_peekc(_fp) _IO_peekc_unlocked (_fp)
+_IO_flockfile(_fp)
+_IO_funlockfile(_fp)
+_IO_ftrylockfile(_fp)
+_IO_cleanup_region_start(_fct,_fp)
+_IO_cleanup_region_end(_Doit)
+N_VA_LIST_DEFINED
+b_IOFBF 0
+c_IOLBF 1
+d_IONBF 2
+iBUFSIZ _IO_BUFSIZ
+vSEEK_SET 0
+wSEEK_CUR 1
+xSEEK_END 2
+}P_tmpdir "/tmp"
+L_tmpnam 20
+TMP_MAX 238328
+FILENAME_MAX 4096
+L_ctermid 9
+L_cuserid 9
+#FOPEN_MAX
+$FOPEN_MAX 16
+stdin stdin
+stdout stdout
+stderr stderr
+getc(_fp) _IO_getc (_fp)
+putc(_ch,_fp) _IO_putc (_ch, _fp)
+8clearerr
+9fclose
+:feof
+;ferror
+<fflush
+=fgetc
+>fgetpos
+?fgets
+@fopen
+Afprintf
+Bfputc
+Cfputs
+Dfread
+Efreopen
+Ffscanf
+Gfseek
+Hfsetpos
+Iftell
+Jfwrite
+Kgetc
+Lgetchar
+Mgets
+Nperror
+Oprintf
+Pputc
+Qputchar
+Rputs
+Sremove
+Trename
+Urewind
+Vscanf
+Wsetbuf
+Xsetvbuf
+Ysprintf
+Zsscanf
+[tmpfile
+\tmpnam
+]ungetc
+^vfprintf
+_vprintf
+`vsprintf
+snprintf
+vfscanf
+vscanf
+vsnprintf
+vsscanf
+._GLIBCXX_CLOCALE 1
+_LOCALE_H 1
+__need_NULL
+__need_ptrdiff_t
+__need_size_t
+__need_wchar_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+_BITS_LOCALE_H 1
+$LC_CTYPE __LC_CTYPE
+%LC_NUMERIC __LC_NUMERIC
+&LC_TIME __LC_TIME
+'LC_COLLATE __LC_COLLATE
+(LC_MONETARY __LC_MONETARY
+)LC_MESSAGES __LC_MESSAGES
+*LC_ALL __LC_ALL
++LC_PAPER __LC_PAPER
+,LC_NAME __LC_NAME
+-LC_ADDRESS __LC_ADDRESS
+.LC_TELEPHONE __LC_TELEPHONE
+/LC_MEASUREMENT __LC_MEASUREMENT
+0LC_IDENTIFICATION __LC_IDENTIFICATION
+LC_CTYPE_MASK (1 << __LC_CTYPE)
+LC_NUMERIC_MASK (1 << __LC_NUMERIC)
+LC_TIME_MASK (1 << __LC_TIME)
+LC_COLLATE_MASK (1 << __LC_COLLATE)
+LC_MONETARY_MASK (1 << __LC_MONETARY)
+LC_MESSAGES_MASK (1 << __LC_MESSAGES)
+LC_PAPER_MASK (1 << __LC_PAPER)
+LC_NAME_MASK (1 << __LC_NAME)
+LC_ADDRESS_MASK (1 << __LC_ADDRESS)
+LC_TELEPHONE_MASK (1 << __LC_TELEPHONE)
+LC_MEASUREMENT_MASK (1 << __LC_MEASUREMENT)
+LC_IDENTIFICATION_MASK (1 << __LC_IDENTIFICATION)
+LC_ALL_MASK (LC_CTYPE_MASK | LC_NUMERIC_MASK | LC_TIME_MASK | LC_COLLATE_MASK | LC_MONETARY_MASK | LC_MESSAGES_MASK | LC_PAPER_MASK | LC_NAME_MASK | LC_ADDRESS_MASK | LC_TELEPHONE_MASK | LC_MEASUREMENT_MASK | LC_IDENTIFICATION_MASK )
+LC_GLOBAL_LOCALE ((__locale_t) -1L)
+5setlocale
+6localeconv
+_LANGINFO_H 1
+_NL_TYPES_H 1
+NL_SETD 1
+NL_CAT_LOCALE 1
+#_NL_ITEM(category,index) (((category) << 16) | (index))
+&_NL_ITEM_CATEGORY(item) ((int) (item) >> 16)
+'_NL_ITEM_INDEX(item) ((int) (item) & 0xffff)
+0ABDAY_1 ABDAY_1
+2ABDAY_2 ABDAY_2
+4ABDAY_3 ABDAY_3
+6ABDAY_4 ABDAY_4
+8ABDAY_5 ABDAY_5
+:ABDAY_6 ABDAY_6
+<ABDAY_7 ABDAY_7
+@DAY_1 DAY_1
+BDAY_2 DAY_2
+DDAY_3 DAY_3
+FDAY_4 DAY_4
+HDAY_5 DAY_5
+JDAY_6 DAY_6
+LDAY_7 DAY_7
+PABMON_1 ABMON_1
+RABMON_2 ABMON_2
+TABMON_3 ABMON_3
+VABMON_4 ABMON_4
+XABMON_5 ABMON_5
+ZABMON_6 ABMON_6
+\ABMON_7 ABMON_7
+^ABMON_8 ABMON_8
+`ABMON_9 ABMON_9
+bABMON_10 ABMON_10
+dABMON_11 ABMON_11
+fABMON_12 ABMON_12
+jMON_1 MON_1
+lMON_2 MON_2
+nMON_3 MON_3
+pMON_4 MON_4
+rMON_5 MON_5
+tMON_6 MON_6
+vMON_7 MON_7
+xMON_8 MON_8
+zMON_9 MON_9
+|MON_10 MON_10
+~MON_11 MON_11
+MON_12 MON_12
+AM_STR AM_STR
+PM_STR PM_STR
+D_T_FMT D_T_FMT
+D_FMT D_FMT
+T_FMT T_FMT
+T_FMT_AMPM T_FMT_AMPM
+ERA ERA
+ERA_YEAR __ERA_YEAR
+ERA_D_FMT ERA_D_FMT
+ALT_DIGITS ALT_DIGITS
+ERA_D_T_FMT ERA_D_T_FMT
+ERA_T_FMT ERA_T_FMT
+_DATE_FMT _DATE_FMT
+CODESET CODESET
+INT_CURR_SYMBOL __INT_CURR_SYMBOL
+CURRENCY_SYMBOL __CURRENCY_SYMBOL
+MON_DECIMAL_POINT __MON_DECIMAL_POINT
+MON_THOUSANDS_SEP __MON_THOUSANDS_SEP
+MON_GROUPING __MON_GROUPING
+POSITIVE_SIGN __POSITIVE_SIGN
+NEGATIVE_SIGN __NEGATIVE_SIGN
+INT_FRAC_DIGITS __INT_FRAC_DIGITS
+FRAC_DIGITS __FRAC_DIGITS
+P_CS_PRECEDES __P_CS_PRECEDES
+P_SEP_BY_SPACE __P_SEP_BY_SPACE
+N_CS_PRECEDES __N_CS_PRECEDES
+N_SEP_BY_SPACE __N_SEP_BY_SPACE
+P_SIGN_POSN __P_SIGN_POSN
+N_SIGN_POSN __N_SIGN_POSN
+CRNCYSTR _NL_MONETARY_CRNCYSTR
+INT_P_CS_PRECEDES __INT_P_CS_PRECEDES
+INT_P_SEP_BY_SPACE __INT_P_SEP_BY_SPACE
+INT_N_CS_PRECEDES __INT_N_CS_PRECEDES
+INT_N_SEP_BY_SPACE __INT_N_SEP_BY_SPACE
+INT_P_SIGN_POSN __INT_P_SIGN_POSN
+INT_N_SIGN_POSN __INT_N_SIGN_POSN
+DECIMAL_POINT __DECIMAL_POINT
+RADIXCHAR RADIXCHAR
+THOUSANDS_SEP __THOUSANDS_SEP
+THOUSEP THOUSEP
+GROUPING __GROUPING
+YESEXPR __YESEXPR
+NOEXPR __NOEXPR
+YESSTR __YESSTR
+NOSTR __NOSTR
+_NL_LOCALE_NAME(category) _NL_ITEM ((category), -1)
+NL_LOCALE_NAME(category) _NL_LOCALE_NAME (category)
+_ICONV_H 1
+__need_size_t
+__need_ptrdiff_t
+__need_size_t
+__need_wchar_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+_LIBINTL_H 1
+__USE_GNU_GETTEXT 1
+__GNU_GETTEXT_SUPPORTED_REVISION(major) ((major) == 0 ? 1 : -1)
+0_GLIBCXX_C_LOCALE_GNU 1
+2_GLIBCXX_NUM_CATEGORIES 6
+"_C_IO_STDIO_H 1
+_GLIBCXX_GCC_GTHR_H
+_GLIBCXX_GTHREAD_USE_WEAK 1
+_GLIBCXX_GCC_GTHR_POSIX_H
+$__GTHREADS 1
+_PTHREAD_H 1
+_SCHED_H 1
+__need_timespec
+D__need_clock_t
+T__need_time_t
+`__clockid_time_t
+l__need_timer_t
+s__timespec_defined 1
+__need_timespec
+SCHED_OTHER 0
+SCHED_FIFO 1
+SCHED_RR 2
+!SCHED_BATCH 3
+&CSIGNAL 0x000000ff
+'CLONE_VM 0x00000100
+(CLONE_FS 0x00000200
+)CLONE_FILES 0x00000400
+*CLONE_SIGHAND 0x00000800
++CLONE_PTRACE 0x00002000
+,CLONE_VFORK 0x00004000
+.CLONE_PARENT 0x00008000
+0CLONE_THREAD 0x00010000
+1CLONE_NEWNS 0x00020000
+2CLONE_SYSVSEM 0x00040000
+3CLONE_SETTLS 0x00080000
+4CLONE_PARENT_SETTID 0x00100000
+6CLONE_CHILD_CLEARTID 0x00200000
+8CLONE_DETACHED 0x00400000
+9CLONE_UNTRACED 0x00800000
+;CLONE_CHILD_SETTID 0x01000000
+=CLONE_STOPPED 0x02000000
+W__defined_schedparam 1
+]__need_schedparam
+b__cpu_set_t_defined
+d__CPU_SETSIZE 1024
+e__NCPUBITS (8 * sizeof (__cpu_mask))
+k__CPUELT(cpu) ((cpu) / __NCPUBITS)
+l__CPUMASK(cpu) ((__cpu_mask) 1 << ((cpu) % __NCPUBITS))
+u__CPU_ZERO(cpusetp) do { unsigned int __i; cpu_set_t *__arr = (cpusetp); for (__i = 0; __i < sizeof (cpu_set_t) / sizeof (__cpu_mask); ++__i) __arr->__bits[__i] = 0; } while (0)
+|__CPU_SET(cpu,cpusetp) ((cpusetp)->__bits[__CPUELT (cpu)] |= __CPUMASK (cpu))
+~__CPU_CLR(cpu,cpusetp) ((cpusetp)->__bits[__CPUELT (cpu)] &= ~__CPUMASK (cpu))
+__CPU_ISSET(cpu,cpusetp) (((cpusetp)->__bits[__CPUELT (cpu)] & __CPUMASK (cpu)) != 0)
+"sched_priority __sched_priority
+DCPU_SETSIZE __CPU_SETSIZE
+ECPU_SET(cpu,cpusetp) __CPU_SET (cpu, cpusetp)
+FCPU_CLR(cpu,cpusetp) __CPU_CLR (cpu, cpusetp)
+GCPU_ISSET(cpu,cpusetp) __CPU_ISSET (cpu, cpusetp)
+HCPU_ZERO(cpusetp) __CPU_ZERO (cpusetp)
+_TIME_H 1
+%__need_size_t
+&__need_NULL
+__need_ptrdiff_t
+__need_size_t
+__need_wchar_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+_BITS_TIME_H 1
+"CLOCKS_PER_SEC 1000000l
+.CLOCK_REALTIME 0
+0CLOCK_MONOTONIC 1
+2CLOCK_PROCESS_CPUTIME_ID 2
+4CLOCK_THREAD_CPUTIME_ID 3
+7TIMER_ABSTIME 1
+7__clock_t_defined 1
+D__need_clock_t
+G__time_t_defined 1
+T__need_time_t
+X__clockid_t_defined 1
+`__clockid_time_t
+d__timer_t_defined 1
+l__need_timer_t
+__need_timespec
+__pid_t_defined
+__isleap(year) ((year) % 4 == 0 && ((year) % 100 != 0 || (year) % 400 == 0))
+__need_sigset_t
+_SIGSET_H_types 1
+_SIGSET_NWORDS (1024 / (8 * sizeof (unsigned long int)))
+1__sigset_t_defined
+4__need_sigset_t
+_BITS_PTHREADTYPES_H 1
+__WORDSIZE 64
+__WORDSIZE_COMPAT32 1
+__SIZEOF_PTHREAD_ATTR_T 56
+__SIZEOF_PTHREAD_MUTEX_T 40
+__SIZEOF_PTHREAD_MUTEXATTR_T 4
+__SIZEOF_PTHREAD_COND_T 48
+__SIZEOF_PTHREAD_CONDATTR_T 4
+__SIZEOF_PTHREAD_RWLOCK_T 56
+__SIZEOF_PTHREAD_RWLOCKATTR_T 8
+!__SIZEOF_PTHREAD_BARRIER_T 32
+"__SIZEOF_PTHREAD_BARRIERATTR_T 4
+\__PTHREAD_MUTEX_HAVE_PREV 1
+_BITS_SETJMP_H 1
+__WORDSIZE 64
+__WORDSIZE_COMPAT32 1
+__WORDSIZE 64
+__WORDSIZE_COMPAT32 1
+%PTHREAD_CREATE_JOINABLE PTHREAD_CREATE_JOINABLE
+'PTHREAD_CREATE_DETACHED PTHREAD_CREATE_DETACHED
+WPTHREAD_MUTEX_INITIALIZER { { 0, 0, 0, 0, 0, 0, { 0, 0 } } }
+ZPTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP { { 0, 0, 0, 0, PTHREAD_MUTEX_RECURSIVE_NP, 0, { 0, 0 } } }
+\PTHREAD_ERRORCHECK_MUTEX_INITIALIZER_NP { { 0, 0, 0, 0, PTHREAD_MUTEX_ERRORCHECK_NP, 0, { 0, 0 } } }
+^PTHREAD_ADAPTIVE_MUTEX_INITIALIZER_NP { { 0, 0, 0, 0, PTHREAD_MUTEX_ADAPTIVE_NP, 0, { 0, 0 } } }
+{PTHREAD_RWLOCK_INITIALIZER { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } }
+PTHREAD_RWLOCK_WRITER_NONRECURSIVE_INITIALIZER_NP { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, PTHREAD_RWLOCK_PREFER_WRITER_NONRECURSIVE_NP } }
+PTHREAD_INHERIT_SCHED PTHREAD_INHERIT_SCHED
+PTHREAD_EXPLICIT_SCHED PTHREAD_EXPLICIT_SCHED
+PTHREAD_SCOPE_SYSTEM PTHREAD_SCOPE_SYSTEM
+PTHREAD_SCOPE_PROCESS PTHREAD_SCOPE_PROCESS
+PTHREAD_PROCESS_PRIVATE PTHREAD_PROCESS_PRIVATE
+PTHREAD_PROCESS_SHARED PTHREAD_PROCESS_SHARED
+PTHREAD_COND_INITIALIZER { { 0, 0, 0, 0, 0, (void *) 0, 0, 0 } }
+PTHREAD_CANCEL_ENABLE PTHREAD_CANCEL_ENABLE
+PTHREAD_CANCEL_DISABLE PTHREAD_CANCEL_DISABLE
+PTHREAD_CANCEL_DEFERRED PTHREAD_CANCEL_DEFERRED
+PTHREAD_CANCEL_ASYNCHRONOUS PTHREAD_CANCEL_ASYNCHRONOUS
+PTHREAD_CANCELED ((void *) -1)
+PTHREAD_ONCE_INIT 0
+PTHREAD_BARRIER_SERIAL_THREAD -1
+__cleanup_fct_attribute
+pthread_cleanup_push(routine,arg) do { __pthread_cleanup_class __clframe (routine, arg)
+pthread_cleanup_pop(execute) __clframe.__setdoit (execute); } while (0)
+pthread_cleanup_push_defer_np(routine,arg) do { __pthread_cleanup_class __clframe (routine, arg); __clframe.__defer ()
+pthread_cleanup_pop_restore_np(execute) __clframe.__restore (); __clframe.__setdoit (execute); } while (0)
+_UNISTD_H 1
+"_POSIX_VERSION 200112L
+(_POSIX2_VERSION 200112L
+,_POSIX2_C_BIND 200112L
+0_POSIX2_C_DEV 200112L
+4_POSIX2_SW_DEV 200112L
+8_POSIX2_LOCALEDEF 200112L
+<_XOPEN_VERSION 600
+D_XOPEN_XCU_VERSION 4
+G_XOPEN_XPG2 1
+H_XOPEN_XPG3 1
+I_XOPEN_XPG4 1
+L_XOPEN_UNIX 1
+O_XOPEN_CRYPT 1
+S_XOPEN_ENH_I18N 1
+V_XOPEN_LEGACY 1
+_POSIX_OPT_H 1
+_POSIX_JOB_CONTROL 1
+_POSIX_SAVED_IDS 1
+_POSIX_PRIORITY_SCHEDULING 200112L
+!_POSIX_SYNCHRONIZED_IO 200112L
+$_POSIX_FSYNC 200112L
+'_POSIX_MAPPED_FILES 200112L
+*_POSIX_MEMLOCK 200112L
+-_POSIX_MEMLOCK_RANGE 200112L
+0_POSIX_MEMORY_PROTECTION 200112L
+3_POSIX_CHOWN_RESTRICTED 1
+7_POSIX_VDISABLE '\0'
+:_POSIX_NO_TRUNC 1
+=_XOPEN_REALTIME 1
+@_XOPEN_REALTIME_THREADS 1
+C_XOPEN_SHM 1
+F_POSIX_THREADS 200112L
+I_POSIX_REENTRANT_FUNCTIONS 1
+J_POSIX_THREAD_SAFE_FUNCTIONS 200112L
+M_POSIX_THREAD_PRIORITY_SCHEDULING 200112L
+P_POSIX_THREAD_ATTR_STACKSIZE 200112L
+S_POSIX_THREAD_ATTR_STACKADDR 200112L
+V_POSIX_THREAD_PRIO_INHERIT 200112L
+Z_POSIX_THREAD_PRIO_PROTECT 200112L
+]_POSIX_SEMAPHORES 200112L
+`_POSIX_REALTIME_SIGNALS 200112L
+c_POSIX_ASYNCHRONOUS_IO 200112L
+d_POSIX_ASYNC_IO 1
+f_LFS_ASYNCHRONOUS_IO 1
+h_POSIX_PRIORITIZED_IO 200112L
+k_LFS64_ASYNCHRONOUS_IO 1
+n_LFS_LARGEFILE 1
+o_LFS64_LARGEFILE 1
+p_LFS64_STDIO 1
+s_POSIX_SHARED_MEMORY_OBJECTS 200112L
+v_POSIX_CPUTIME 0
+y_POSIX_THREAD_CPUTIME 0
+|_POSIX_REGEXP 1
+_POSIX_READER_WRITER_LOCKS 200112L
+_POSIX_SHELL 1
+_POSIX_TIMEOUTS 200112L
+_POSIX_SPIN_LOCKS 200112L
+_POSIX_SPAWN 200112L
+_POSIX_TIMERS 200112L
+_POSIX_BARRIERS 200112L
+_POSIX_MESSAGE_PASSING 200112L
+_POSIX_THREAD_PROCESS_SHARED 200112L
+_POSIX_MONOTONIC_CLOCK 0
+_POSIX_CLOCK_SELECTION 200112L
+_POSIX_ADVISORY_INFO 200112L
+_POSIX_IPV6 200112L
+_POSIX_RAW_SOCKETS 200112L
+_POSIX2_CHAR_TERM 200112L
+_POSIX_SPORADIC_SERVER -1
+_POSIX_THREAD_SPORADIC_SERVER -1
+_POSIX_TRACE -1
+_POSIX_TRACE_EVENT_FILTER -1
+_POSIX_TRACE_INHERIT -1
+_POSIX_TRACE_LOG -1
+_POSIX_TYPED_MEMORY_OBJECTS -1
+__WORDSIZE 64
+__WORDSIZE_COMPAT32 1
+5_POSIX_V6_LPBIG_OFFBIG -1
+6_XBS5_LPBIG_OFFBIG -1
+9_POSIX_V6_LP64_OFF64 1
+:_XBS5_LP64_OFF64 1
+R__ILP32_OFF32_CFLAGS "-m32"
+S__ILP32_OFFBIG_CFLAGS "-m32 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64"
+T__ILP32_OFF32_LDFLAGS "-m32"
+U__ILP32_OFFBIG_LDFLAGS "-m32"
+V__LP64_OFF64_CFLAGS "-m64"
+W__LP64_OFF64_LDFLAGS "-m64"
+STDIN_FILENO 0
+STDOUT_FILENO 1
+STDERR_FILENO 2
+__ssize_t_defined
+__need_size_t
+__need_NULL
+__need_ptrdiff_t
+__need_size_t
+__need_wchar_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+__gid_t_defined
+__uid_t_defined
+__off_t_defined
+__off64_t_defined
+__useconds_t_defined
+__intptr_t_defined
+__socklen_t_defined
+L_SET SEEK_SET
+L_INCR SEEK_CUR
+L_XTND SEEK_END
+_PC_LINK_MAX _PC_LINK_MAX
+_PC_MAX_CANON _PC_MAX_CANON
+!_PC_MAX_INPUT _PC_MAX_INPUT
+#_PC_NAME_MAX _PC_NAME_MAX
+%_PC_PATH_MAX _PC_PATH_MAX
+'_PC_PIPE_BUF _PC_PIPE_BUF
+)_PC_CHOWN_RESTRICTED _PC_CHOWN_RESTRICTED
++_PC_NO_TRUNC _PC_NO_TRUNC
+-_PC_VDISABLE _PC_VDISABLE
+/_PC_SYNC_IO _PC_SYNC_IO
+1_PC_ASYNC_IO _PC_ASYNC_IO
+3_PC_PRIO_IO _PC_PRIO_IO
+5_PC_SOCK_MAXBUF _PC_SOCK_MAXBUF
+7_PC_FILESIZEBITS _PC_FILESIZEBITS
+9_PC_REC_INCR_XFER_SIZE _PC_REC_INCR_XFER_SIZE
+;_PC_REC_MAX_XFER_SIZE _PC_REC_MAX_XFER_SIZE
+=_PC_REC_MIN_XFER_SIZE _PC_REC_MIN_XFER_SIZE
+?_PC_REC_XFER_ALIGN _PC_REC_XFER_ALIGN
+A_PC_ALLOC_SIZE_MIN _PC_ALLOC_SIZE_MIN
+C_PC_SYMLINK_MAX _PC_SYMLINK_MAX
+E_PC_2_SYMLINKS _PC_2_SYMLINKS
+L_SC_ARG_MAX _SC_ARG_MAX
+N_SC_CHILD_MAX _SC_CHILD_MAX
+P_SC_CLK_TCK _SC_CLK_TCK
+R_SC_NGROUPS_MAX _SC_NGROUPS_MAX
+T_SC_OPEN_MAX _SC_OPEN_MAX
+V_SC_STREAM_MAX _SC_STREAM_MAX
+X_SC_TZNAME_MAX _SC_TZNAME_MAX
+Z_SC_JOB_CONTROL _SC_JOB_CONTROL
+\_SC_SAVED_IDS _SC_SAVED_IDS
+^_SC_REALTIME_SIGNALS _SC_REALTIME_SIGNALS
+`_SC_PRIORITY_SCHEDULING _SC_PRIORITY_SCHEDULING
+b_SC_TIMERS _SC_TIMERS
+d_SC_ASYNCHRONOUS_IO _SC_ASYNCHRONOUS_IO
+f_SC_PRIORITIZED_IO _SC_PRIORITIZED_IO
+h_SC_SYNCHRONIZED_IO _SC_SYNCHRONIZED_IO
+j_SC_FSYNC _SC_FSYNC
+l_SC_MAPPED_FILES _SC_MAPPED_FILES
+n_SC_MEMLOCK _SC_MEMLOCK
+p_SC_MEMLOCK_RANGE _SC_MEMLOCK_RANGE
+r_SC_MEMORY_PROTECTION _SC_MEMORY_PROTECTION
+t_SC_MESSAGE_PASSING _SC_MESSAGE_PASSING
+v_SC_SEMAPHORES _SC_SEMAPHORES
+x_SC_SHARED_MEMORY_OBJECTS _SC_SHARED_MEMORY_OBJECTS
+z_SC_AIO_LISTIO_MAX _SC_AIO_LISTIO_MAX
+|_SC_AIO_MAX _SC_AIO_MAX
+~_SC_AIO_PRIO_DELTA_MAX _SC_AIO_PRIO_DELTA_MAX
+_SC_DELAYTIMER_MAX _SC_DELAYTIMER_MAX
+_SC_MQ_OPEN_MAX _SC_MQ_OPEN_MAX
+_SC_MQ_PRIO_MAX _SC_MQ_PRIO_MAX
+_SC_VERSION _SC_VERSION
+_SC_PAGESIZE _SC_PAGESIZE
+_SC_PAGE_SIZE _SC_PAGESIZE
+_SC_RTSIG_MAX _SC_RTSIG_MAX
+_SC_SEM_NSEMS_MAX _SC_SEM_NSEMS_MAX
+_SC_SEM_VALUE_MAX _SC_SEM_VALUE_MAX
+_SC_SIGQUEUE_MAX _SC_SIGQUEUE_MAX
+_SC_TIMER_MAX _SC_TIMER_MAX
+_SC_BC_BASE_MAX _SC_BC_BASE_MAX
+_SC_BC_DIM_MAX _SC_BC_DIM_MAX
+_SC_BC_SCALE_MAX _SC_BC_SCALE_MAX
+_SC_BC_STRING_MAX _SC_BC_STRING_MAX
+_SC_COLL_WEIGHTS_MAX _SC_COLL_WEIGHTS_MAX
+_SC_EQUIV_CLASS_MAX _SC_EQUIV_CLASS_MAX
+_SC_EXPR_NEST_MAX _SC_EXPR_NEST_MAX
+_SC_LINE_MAX _SC_LINE_MAX
+_SC_RE_DUP_MAX _SC_RE_DUP_MAX
+_SC_CHARCLASS_NAME_MAX _SC_CHARCLASS_NAME_MAX
+_SC_2_VERSION _SC_2_VERSION
+_SC_2_C_BIND _SC_2_C_BIND
+_SC_2_C_DEV _SC_2_C_DEV
+_SC_2_FORT_DEV _SC_2_FORT_DEV
+_SC_2_FORT_RUN _SC_2_FORT_RUN
+_SC_2_SW_DEV _SC_2_SW_DEV
+_SC_2_LOCALEDEF _SC_2_LOCALEDEF
+_SC_PII _SC_PII
+_SC_PII_XTI _SC_PII_XTI
+_SC_PII_SOCKET _SC_PII_SOCKET
+_SC_PII_INTERNET _SC_PII_INTERNET
+_SC_PII_OSI _SC_PII_OSI
+_SC_POLL _SC_POLL
+_SC_SELECT _SC_SELECT
+_SC_UIO_MAXIOV _SC_UIO_MAXIOV
+_SC_IOV_MAX _SC_IOV_MAX
+_SC_PII_INTERNET_STREAM _SC_PII_INTERNET_STREAM
+_SC_PII_INTERNET_DGRAM _SC_PII_INTERNET_DGRAM
+_SC_PII_OSI_COTS _SC_PII_OSI_COTS
+_SC_PII_OSI_CLTS _SC_PII_OSI_CLTS
+_SC_PII_OSI_M _SC_PII_OSI_M
+_SC_T_IOV_MAX _SC_T_IOV_MAX
+_SC_THREADS _SC_THREADS
+_SC_THREAD_SAFE_FUNCTIONS _SC_THREAD_SAFE_FUNCTIONS
+_SC_GETGR_R_SIZE_MAX _SC_GETGR_R_SIZE_MAX
+_SC_GETPW_R_SIZE_MAX _SC_GETPW_R_SIZE_MAX
+_SC_LOGIN_NAME_MAX _SC_LOGIN_NAME_MAX
+_SC_TTY_NAME_MAX _SC_TTY_NAME_MAX
+_SC_THREAD_DESTRUCTOR_ITERATIONS _SC_THREAD_DESTRUCTOR_ITERATIONS
+_SC_THREAD_KEYS_MAX _SC_THREAD_KEYS_MAX
+_SC_THREAD_STACK_MIN _SC_THREAD_STACK_MIN
+_SC_THREAD_THREADS_MAX _SC_THREAD_THREADS_MAX
+_SC_THREAD_ATTR_STACKADDR _SC_THREAD_ATTR_STACKADDR
+_SC_THREAD_ATTR_STACKSIZE _SC_THREAD_ATTR_STACKSIZE
+_SC_THREAD_PRIORITY_SCHEDULING _SC_THREAD_PRIORITY_SCHEDULING
+_SC_THREAD_PRIO_INHERIT _SC_THREAD_PRIO_INHERIT
+_SC_THREAD_PRIO_PROTECT _SC_THREAD_PRIO_PROTECT
+_SC_THREAD_PROCESS_SHARED _SC_THREAD_PROCESS_SHARED
+_SC_NPROCESSORS_CONF _SC_NPROCESSORS_CONF
+_SC_NPROCESSORS_ONLN _SC_NPROCESSORS_ONLN
+_SC_PHYS_PAGES _SC_PHYS_PAGES
+_SC_AVPHYS_PAGES _SC_AVPHYS_PAGES
+_SC_ATEXIT_MAX _SC_ATEXIT_MAX
+_SC_PASS_MAX _SC_PASS_MAX
+_SC_XOPEN_VERSION _SC_XOPEN_VERSION
+_SC_XOPEN_XCU_VERSION _SC_XOPEN_XCU_VERSION
+_SC_XOPEN_UNIX _SC_XOPEN_UNIX
+_SC_XOPEN_CRYPT _SC_XOPEN_CRYPT
+_SC_XOPEN_ENH_I18N _SC_XOPEN_ENH_I18N
+_SC_XOPEN_SHM _SC_XOPEN_SHM
+_SC_2_CHAR_TERM _SC_2_CHAR_TERM
+_SC_2_C_VERSION _SC_2_C_VERSION
+_SC_2_UPE _SC_2_UPE
+_SC_XOPEN_XPG2 _SC_XOPEN_XPG2
+_SC_XOPEN_XPG3 _SC_XOPEN_XPG3
+_SC_XOPEN_XPG4 _SC_XOPEN_XPG4
+_SC_CHAR_BIT _SC_CHAR_BIT
+_SC_CHAR_MAX _SC_CHAR_MAX
+_SC_CHAR_MIN _SC_CHAR_MIN
+_SC_INT_MAX _SC_INT_MAX
+_SC_INT_MIN _SC_INT_MIN
+_SC_LONG_BIT _SC_LONG_BIT
+_SC_WORD_BIT _SC_WORD_BIT
+_SC_MB_LEN_MAX _SC_MB_LEN_MAX
+_SC_NZERO _SC_NZERO
+_SC_SSIZE_MAX _SC_SSIZE_MAX
+_SC_SCHAR_MAX _SC_SCHAR_MAX
+_SC_SCHAR_MIN _SC_SCHAR_MIN
+_SC_SHRT_MAX _SC_SHRT_MAX
+_SC_SHRT_MIN _SC_SHRT_MIN
+_SC_UCHAR_MAX _SC_UCHAR_MAX
+_SC_UINT_MAX _SC_UINT_MAX
+_SC_ULONG_MAX _SC_ULONG_MAX
+_SC_USHRT_MAX _SC_USHRT_MAX
+_SC_NL_ARGMAX _SC_NL_ARGMAX
+_SC_NL_LANGMAX _SC_NL_LANGMAX
+_SC_NL_MSGMAX _SC_NL_MSGMAX
+_SC_NL_NMAX _SC_NL_NMAX
+_SC_NL_SETMAX _SC_NL_SETMAX
+_SC_NL_TEXTMAX _SC_NL_TEXTMAX
+_SC_XBS5_ILP32_OFF32 _SC_XBS5_ILP32_OFF32
+_SC_XBS5_ILP32_OFFBIG _SC_XBS5_ILP32_OFFBIG
+_SC_XBS5_LP64_OFF64 _SC_XBS5_LP64_OFF64
+_SC_XBS5_LPBIG_OFFBIG _SC_XBS5_LPBIG_OFFBIG
+_SC_XOPEN_LEGACY _SC_XOPEN_LEGACY
+_SC_XOPEN_REALTIME _SC_XOPEN_REALTIME
+_SC_XOPEN_REALTIME_THREADS _SC_XOPEN_REALTIME_THREADS
+_SC_ADVISORY_INFO _SC_ADVISORY_INFO
+_SC_BARRIERS _SC_BARRIERS
+_SC_BASE _SC_BASE
+_SC_C_LANG_SUPPORT _SC_C_LANG_SUPPORT
+_SC_C_LANG_SUPPORT_R _SC_C_LANG_SUPPORT_R
+_SC_CLOCK_SELECTION _SC_CLOCK_SELECTION
+_SC_CPUTIME _SC_CPUTIME
+_SC_THREAD_CPUTIME _SC_THREAD_CPUTIME
+_SC_DEVICE_IO _SC_DEVICE_IO
+_SC_DEVICE_SPECIFIC _SC_DEVICE_SPECIFIC
+_SC_DEVICE_SPECIFIC_R _SC_DEVICE_SPECIFIC_R
+_SC_FD_MGMT _SC_FD_MGMT
+_SC_FIFO _SC_FIFO
+_SC_PIPE _SC_PIPE
+_SC_FILE_ATTRIBUTES _SC_FILE_ATTRIBUTES
+_SC_FILE_LOCKING _SC_FILE_LOCKING
+_SC_FILE_SYSTEM _SC_FILE_SYSTEM
+_SC_MONOTONIC_CLOCK _SC_MONOTONIC_CLOCK
+_SC_MULTI_PROCESS _SC_MULTI_PROCESS
+_SC_SINGLE_PROCESS _SC_SINGLE_PROCESS
+_SC_NETWORKING _SC_NETWORKING
+_SC_READER_WRITER_LOCKS _SC_READER_WRITER_LOCKS
+_SC_SPIN_LOCKS _SC_SPIN_LOCKS
+_SC_REGEXP _SC_REGEXP
+_SC_REGEX_VERSION _SC_REGEX_VERSION
+_SC_SHELL _SC_SHELL
+_SC_SIGNALS _SC_SIGNALS
+_SC_SPAWN _SC_SPAWN
+_SC_SPORADIC_SERVER _SC_SPORADIC_SERVER
+_SC_THREAD_SPORADIC_SERVER _SC_THREAD_SPORADIC_SERVER
+_SC_SYSTEM_DATABASE _SC_SYSTEM_DATABASE
+_SC_SYSTEM_DATABASE_R _SC_SYSTEM_DATABASE_R
+_SC_TIMEOUTS _SC_TIMEOUTS
+_SC_TYPED_MEMORY_OBJECTS _SC_TYPED_MEMORY_OBJECTS
+_SC_USER_GROUPS _SC_USER_GROUPS
+_SC_USER_GROUPS_R _SC_USER_GROUPS_R
+_SC_2_PBS _SC_2_PBS
+_SC_2_PBS_ACCOUNTING _SC_2_PBS_ACCOUNTING
+_SC_2_PBS_LOCATE _SC_2_PBS_LOCATE
+_SC_2_PBS_MESSAGE _SC_2_PBS_MESSAGE
+_SC_2_PBS_TRACK _SC_2_PBS_TRACK
+_SC_SYMLOOP_MAX _SC_SYMLOOP_MAX
+_SC_STREAMS _SC_STREAMS
+_SC_2_PBS_CHECKPOINT _SC_2_PBS_CHECKPOINT
+_SC_V6_ILP32_OFF32 _SC_V6_ILP32_OFF32
+_SC_V6_ILP32_OFFBIG _SC_V6_ILP32_OFFBIG
+_SC_V6_LP64_OFF64 _SC_V6_LP64_OFF64
+_SC_V6_LPBIG_OFFBIG _SC_V6_LPBIG_OFFBIG
+_SC_HOST_NAME_MAX _SC_HOST_NAME_MAX
+_SC_TRACE _SC_TRACE
+_SC_TRACE_EVENT_FILTER _SC_TRACE_EVENT_FILTER
+_SC_TRACE_INHERIT _SC_TRACE_INHERIT
+_SC_TRACE_LOG _SC_TRACE_LOG
+_SC_LEVEL1_ICACHE_SIZE _SC_LEVEL1_ICACHE_SIZE
+_SC_LEVEL1_ICACHE_ASSOC _SC_LEVEL1_ICACHE_ASSOC
+_SC_LEVEL1_ICACHE_LINESIZE _SC_LEVEL1_ICACHE_LINESIZE
+_SC_LEVEL1_DCACHE_SIZE _SC_LEVEL1_DCACHE_SIZE
+_SC_LEVEL1_DCACHE_ASSOC _SC_LEVEL1_DCACHE_ASSOC
+_SC_LEVEL1_DCACHE_LINESIZE _SC_LEVEL1_DCACHE_LINESIZE
+_SC_LEVEL2_CACHE_SIZE _SC_LEVEL2_CACHE_SIZE
+_SC_LEVEL2_CACHE_ASSOC _SC_LEVEL2_CACHE_ASSOC
+_SC_LEVEL2_CACHE_LINESIZE _SC_LEVEL2_CACHE_LINESIZE
+_SC_LEVEL3_CACHE_SIZE _SC_LEVEL3_CACHE_SIZE
+_SC_LEVEL3_CACHE_ASSOC _SC_LEVEL3_CACHE_ASSOC
+_SC_LEVEL3_CACHE_LINESIZE _SC_LEVEL3_CACHE_LINESIZE
+_SC_LEVEL4_CACHE_SIZE _SC_LEVEL4_CACHE_SIZE
+_SC_LEVEL4_CACHE_ASSOC _SC_LEVEL4_CACHE_ASSOC
+_SC_LEVEL4_CACHE_LINESIZE _SC_LEVEL4_CACHE_LINESIZE
+_SC_IPV6 _SC_IPV6
+_SC_RAW_SOCKETS _SC_RAW_SOCKETS
+_CS_PATH _CS_PATH
+_CS_V6_WIDTH_RESTRICTED_ENVS _CS_V6_WIDTH_RESTRICTED_ENVS
+_CS_GNU_LIBC_VERSION _CS_GNU_LIBC_VERSION
+_CS_GNU_LIBPTHREAD_VERSION _CS_GNU_LIBPTHREAD_VERSION
+_CS_LFS_CFLAGS _CS_LFS_CFLAGS
+_CS_LFS_LDFLAGS _CS_LFS_LDFLAGS
+_CS_LFS_LIBS _CS_LFS_LIBS
+_CS_LFS_LINTFLAGS _CS_LFS_LINTFLAGS
+_CS_LFS64_CFLAGS _CS_LFS64_CFLAGS
+_CS_LFS64_LDFLAGS _CS_LFS64_LDFLAGS
+_CS_LFS64_LIBS _CS_LFS64_LIBS
+_CS_LFS64_LINTFLAGS _CS_LFS64_LINTFLAGS
+_CS_XBS5_ILP32_OFF32_CFLAGS _CS_XBS5_ILP32_OFF32_CFLAGS
+_CS_XBS5_ILP32_OFF32_LDFLAGS _CS_XBS5_ILP32_OFF32_LDFLAGS
+_CS_XBS5_ILP32_OFF32_LIBS _CS_XBS5_ILP32_OFF32_LIBS
+_CS_XBS5_ILP32_OFF32_LINTFLAGS _CS_XBS5_ILP32_OFF32_LINTFLAGS
+_CS_XBS5_ILP32_OFFBIG_CFLAGS _CS_XBS5_ILP32_OFFBIG_CFLAGS
+_CS_XBS5_ILP32_OFFBIG_LDFLAGS _CS_XBS5_ILP32_OFFBIG_LDFLAGS
+_CS_XBS5_ILP32_OFFBIG_LIBS _CS_XBS5_ILP32_OFFBIG_LIBS
+_CS_XBS5_ILP32_OFFBIG_LINTFLAGS _CS_XBS5_ILP32_OFFBIG_LINTFLAGS
+_CS_XBS5_LP64_OFF64_CFLAGS _CS_XBS5_LP64_OFF64_CFLAGS
+_CS_XBS5_LP64_OFF64_LDFLAGS _CS_XBS5_LP64_OFF64_LDFLAGS
+_CS_XBS5_LP64_OFF64_LIBS _CS_XBS5_LP64_OFF64_LIBS
+_CS_XBS5_LP64_OFF64_LINTFLAGS _CS_XBS5_LP64_OFF64_LINTFLAGS
+_CS_XBS5_LPBIG_OFFBIG_CFLAGS _CS_XBS5_LPBIG_OFFBIG_CFLAGS
+_CS_XBS5_LPBIG_OFFBIG_LDFLAGS _CS_XBS5_LPBIG_OFFBIG_LDFLAGS
+_CS_XBS5_LPBIG_OFFBIG_LIBS _CS_XBS5_LPBIG_OFFBIG_LIBS
+_CS_XBS5_LPBIG_OFFBIG_LINTFLAGS _CS_XBS5_LPBIG_OFFBIG_LINTFLAGS
+_CS_POSIX_V6_ILP32_OFF32_CFLAGS _CS_POSIX_V6_ILP32_OFF32_CFLAGS
+_CS_POSIX_V6_ILP32_OFF32_LDFLAGS _CS_POSIX_V6_ILP32_OFF32_LDFLAGS
+_CS_POSIX_V6_ILP32_OFF32_LIBS _CS_POSIX_V6_ILP32_OFF32_LIBS
+_CS_POSIX_V6_ILP32_OFF32_LINTFLAGS _CS_POSIX_V6_ILP32_OFF32_LINTFLAGS
+_CS_POSIX_V6_ILP32_OFFBIG_CFLAGS _CS_POSIX_V6_ILP32_OFFBIG_CFLAGS
+_CS_POSIX_V6_ILP32_OFFBIG_LDFLAGS _CS_POSIX_V6_ILP32_OFFBIG_LDFLAGS
+_CS_POSIX_V6_ILP32_OFFBIG_LIBS _CS_POSIX_V6_ILP32_OFFBIG_LIBS
+_CS_POSIX_V6_ILP32_OFFBIG_LINTFLAGS _CS_POSIX_V6_ILP32_OFFBIG_LINTFLAGS
+_CS_POSIX_V6_LP64_OFF64_CFLAGS _CS_POSIX_V6_LP64_OFF64_CFLAGS
+_CS_POSIX_V6_LP64_OFF64_LDFLAGS _CS_POSIX_V6_LP64_OFF64_LDFLAGS
+_CS_POSIX_V6_LP64_OFF64_LIBS _CS_POSIX_V6_LP64_OFF64_LIBS
+_CS_POSIX_V6_LP64_OFF64_LINTFLAGS _CS_POSIX_V6_LP64_OFF64_LINTFLAGS
+_CS_POSIX_V6_LPBIG_OFFBIG_CFLAGS _CS_POSIX_V6_LPBIG_OFFBIG_CFLAGS
+_CS_POSIX_V6_LPBIG_OFFBIG_LDFLAGS _CS_POSIX_V6_LPBIG_OFFBIG_LDFLAGS
+_CS_POSIX_V6_LPBIG_OFFBIG_LIBS _CS_POSIX_V6_LPBIG_OFFBIG_LIBS
+_CS_POSIX_V6_LPBIG_OFFBIG_LINTFLAGS _CS_POSIX_V6_LPBIG_OFFBIG_LINTFLAGS
+__need_getopt
+__need_getopt
+F_ULOCK 0
+F_LOCK 1
+F_TLOCK 2
+F_TEST 3
+TEMP_FAILURE_RETRY(expression) (__extension__ ({ long int __result; do __result = (long int) (expression); while (__result == -1L && errno == EINTR); __result; }))
+6__GTHREAD_HAS_COND 1
+8__GTHREAD_MUTEX_INIT PTHREAD_MUTEX_INITIALIZER
+9__GTHREAD_ONCE_INIT PTHREAD_ONCE_INIT
+=__GTHREAD_RECURSIVE_MUTEX_INIT PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP
+A__GTHREAD_COND_INIT PTHREAD_COND_INITIALIZER
+E__gthrw_pragma(pragma)
+G__gthrw2(name,name2,type) extern __typeof(type) name __attribute__ ((__weakref__(#name2))); __gthrw_pragma(weak type)
+J__gthrw_(name) __gthrw_ ## name
+Q__gthrw(name) __gthrw2(__gthrw_ ## name,name,name)
+._GLIBCXX_CCTYPE 1
+_CTYPE_H 1
+_ENDIAN_H 1
+__LITTLE_ENDIAN 1234
+!__BIG_ENDIAN 4321
+"__PDP_ENDIAN 3412
+__BYTE_ORDER __LITTLE_ENDIAN
+*__FLOAT_WORD_ORDER __BYTE_ORDER
+.LITTLE_ENDIAN __LITTLE_ENDIAN
+/BIG_ENDIAN __BIG_ENDIAN
+0PDP_ENDIAN __PDP_ENDIAN
+1BYTE_ORDER __BYTE_ORDER
+5__LONG_LONG_PAIR(HI,LO) LO, HI
+-_ISbit(bit) ((bit) < 8 ? ((1 << (bit)) << 8) : ((1 << (bit)) >> 8))
+X__isctype(c,type) ((*__ctype_b_loc ())[(int) (c)] & (unsigned short int) type)
+[__isascii(c) (((c) & ~0x7f) == 0)
+\__toascii(c) ((c) & 0x7f)
+^__exctype(name) extern int name (int) __THROW
+__tobody(c,f,a,args) (__extension__ ({ int __res; if (sizeof (c) > 1) { if (__builtin_constant_p (c)) { int __c = (c); __res = __c < -128 || __c > 255 ? __c : (a)[__c]; } else __res = f args; } else __res = (a)[(int) (c)]; __res; }))
+__isctype_l(c,type,locale) ((locale)->__ctype_b[(int) (c)] & (unsigned short int) type)
+__exctype_l(name) extern int name (int, __locale_t) __THROW
+6isalnum
+7isalpha
+8iscntrl
+9isdigit
+:isgraph
+;islower
+<isprint
+=ispunct
+>isspace
+?isupper
+@isxdigit
+Atolower
+Btoupper
+(_STRINGFWD_H 1
+*_GLIBCXX_POSTYPES_H 1
+._GLIBCXX_CWCHAR 1
+._GLIBCXX_CTIME 1
+7clock
+8difftime
+9mktime
+:time
+;asctime
+<ctime
+=gmtime
+>localtime
+?strftime
+_WCHAR_H 1
+!__need___FILE
+#__need_FILE
+'__need___va_list
+%__need___va_list
++__need_size_t
+,__need_wchar_t
+-__need_NULL
+/__need_wint_t
+__need_ptrdiff_t
+__need_size_t
+__need_wchar_t
+__need_wint_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+V__need_mbstate_t
+gWCHAR_MIN __WCHAR_MIN
+hWCHAR_MAX __WCHAR_MAX
+lWEOF (0xffffffffu)
+Lbtowc
+Mfgetwc
+Nfgetws
+Ofputwc
+Pfputws
+Qfwide
+Rfwprintf
+Sfwscanf
+Tgetwc
+Ugetwchar
+Vmbrlen
+Wmbrtowc
+Xmbsinit
+Ymbsrtowcs
+Zputwc
+[putwchar
+\swprintf
+]swscanf
+^ungetwc
+_vfwprintf
+avfwscanf
+cvswprintf
+evswscanf
+gvwprintf
+ivwscanf
+kwcrtomb
+lwcscat
+mwcschr
+nwcscmp
+owcscoll
+pwcscpy
+qwcscspn
+rwcsftime
+swcslen
+twcsncat
+uwcsncmp
+vwcsncpy
+wwcspbrk
+xwcsrchr
+ywcsrtombs
+zwcsspn
+{wcsstr
+|wcstod
+~wcstof
+wcstok
+wcstol
+wcstoul
+wcsxfrm
+wctob
+wmemchr
+wmemcmp
+wmemcpy
+wmemmove
+wmemset
+wprintf
+wscanf
+wcstold
+wcstoll
+wcstoull
+_STDINT_H 1
+__WORDSIZE 64
+__WORDSIZE_COMPAT32 1
+$__int8_t_defined
+5__uint32_t_defined
+'_FUNCTEXCEPT_H 1
+#_EXCEPTION_DEFINES_H 1
+,__throw_exception_again throw
+&__EXCEPTION__
+)_CHAR_TRAITS_H 1
+>_ALGOBASE_H 1
+._GLIBCXX_CLIMITS 1
+_GCC_LIMITS_H_
+_GCC_NEXT_LIMITS_H
+_LIBC_LIMITS_H_ 1
+!MB_LEN_MAX 16
+LLONG_MIN (-LLONG_MAX-1)
+LLONG_MAX __LONG_LONG_MAX__
+ULLONG_MAX (LLONG_MAX * 2ULL + 1)
+_BITS_POSIX1_LIM_H 1
+_POSIX_AIO_LISTIO_MAX 2
+#_POSIX_AIO_MAX 1
+&_POSIX_ARG_MAX 4096
+*_POSIX_CHILD_MAX 25
+0_POSIX_DELAYTIMER_MAX 32
+4_POSIX_HOST_NAME_MAX 255
+7_POSIX_LINK_MAX 8
+:_POSIX_LOGIN_NAME_MAX 9
+=_POSIX_MAX_CANON 255
+A_POSIX_MAX_INPUT 255
+D_POSIX_MQ_OPEN_MAX 8
+G_POSIX_MQ_PRIO_MAX 32
+J_POSIX_NAME_MAX 14
+N_POSIX_NGROUPS_MAX 8
+U_POSIX_OPEN_MAX 20
+\_POSIX_FD_SETSIZE _POSIX_OPEN_MAX
+__POSIX_PATH_MAX 256
+b_POSIX_PIPE_BUF 512
+f_POSIX_RE_DUP_MAX 255
+i_POSIX_RTSIG_MAX 8
+l_POSIX_SEM_NSEMS_MAX 256
+o_POSIX_SEM_VALUE_MAX 32767
+r_POSIX_SIGQUEUE_MAX 32
+u_POSIX_SSIZE_MAX 32767
+x_POSIX_STREAM_MAX 8
+{_POSIX_SYMLINK_MAX 255
+_POSIX_SYMLOOP_MAX 8
+_POSIX_TIMER_MAX 32
+_POSIX_TTY_NAME_MAX 9
+_POSIX_TZNAME_MAX 6
+_POSIX_QLIMIT 1
+_POSIX_HIWAT _POSIX_PIPE_BUF
+_POSIX_UIO_MAXIOV 16
+_POSIX_CLOCKRES_MIN 20000000
+__undef_NR_OPEN
+__undef_LINK_MAX
+__undef_OPEN_MAX
+_LINUX_LIMITS_H
+NR_OPEN 1024
+NGROUPS_MAX 65536
+ARG_MAX 131072
+CHILD_MAX 999
+OPEN_MAX 256
+LINK_MAX 127
+MAX_CANON 255
+MAX_INPUT 255
+NAME_MAX 255
+PATH_MAX 4096
+PIPE_BUF 4096
+XATTR_NAME_MAX 255
+XATTR_SIZE_MAX 65536
+XATTR_LIST_MAX 65536
+RTSIG_MAX 32
+(NR_OPEN
+)__undef_NR_OPEN
+-LINK_MAX
+.__undef_LINK_MAX
+2OPEN_MAX
+3__undef_OPEN_MAX
+7_POSIX_THREAD_KEYS_MAX 128
+9PTHREAD_KEYS_MAX 1024
+<_POSIX_THREAD_DESTRUCTOR_ITERATIONS 4
+>PTHREAD_DESTRUCTOR_ITERATIONS _POSIX_THREAD_DESTRUCTOR_ITERATIONS
+A_POSIX_THREAD_THREADS_MAX 64
+CPTHREAD_THREADS_MAX
+GAIO_PRIO_DELTA_MAX 20
+JPTHREAD_STACK_MIN 16384
+MDELAYTIMER_MAX 2147483647
+PTTY_NAME_MAX 32
+SLOGIN_NAME_MAX 256
+VHOST_NAME_MAX 64
+YMQ_PRIO_MAX 32768
+SSIZE_MAX LONG_MAX
+_BITS_POSIX2_LIM_H 1
+_POSIX2_BC_BASE_MAX 99
+_POSIX2_BC_DIM_MAX 2048
+"_POSIX2_BC_SCALE_MAX 99
+%_POSIX2_BC_STRING_MAX 1000
+)_POSIX2_COLL_WEIGHTS_MAX 2
+-_POSIX2_EXPR_NEST_MAX 32
+0_POSIX2_LINE_MAX 2048
+4_POSIX2_RE_DUP_MAX 255
+8_POSIX2_CHARCLASS_NAME_MAX 14
+@BC_BASE_MAX _POSIX2_BC_BASE_MAX
+CBC_DIM_MAX _POSIX2_BC_DIM_MAX
+FBC_SCALE_MAX _POSIX2_BC_SCALE_MAX
+IBC_STRING_MAX _POSIX2_BC_STRING_MAX
+LCOLL_WEIGHTS_MAX 255
+OEXPR_NEST_MAX _POSIX2_EXPR_NEST_MAX
+RLINE_MAX _POSIX2_LINE_MAX
+UCHARCLASS_NAME_MAX 2048
+YRE_DUP_MAX (0x7fff)
+_XOPEN_LIM_H 1
+!__need_IOV_MAX
+L_tmpnam 20
+TMP_MAX 238328
+FILENAME_MAX 4096
+L_ctermid 9
+L_cuserid 9
+#FOPEN_MAX
+$FOPEN_MAX 16
+(IOV_MAX 1024
+B_XOPEN_IOV_MAX _POSIX_UIO_MAXIOV
+GNL_ARGMAX _POSIX_ARG_MAX
+JNL_LANGMAX _POSIX2_LINE_MAX
+MNL_MSGMAX INT_MAX
+QNL_NMAX INT_MAX
+TNL_SETMAX INT_MAX
+WNL_TEXTMAX INT_MAX
+ZNZERO 20
+nWORD_BIT 32
+LONG_BIT 64
+_GCC_NEXT_LIMITS_H
+_LIMITS_H___
+CHAR_BIT
+CHAR_BIT __CHAR_BIT__
+SCHAR_MIN
+SCHAR_MIN (-SCHAR_MAX - 1)
+SCHAR_MAX
+SCHAR_MAX __SCHAR_MAX__
+UCHAR_MAX
+$UCHAR_MAX (SCHAR_MAX * 2 + 1)
+2CHAR_MIN
+3CHAR_MIN SCHAR_MIN
+4CHAR_MAX
+5CHAR_MAX SCHAR_MAX
+9SHRT_MIN
+:SHRT_MIN (-SHRT_MAX - 1)
+;SHRT_MAX
+<SHRT_MAX __SHRT_MAX__
+?USHRT_MAX
+CUSHRT_MAX (SHRT_MAX * 2 + 1)
+GINT_MIN
+HINT_MIN (-INT_MAX - 1)
+IINT_MAX
+JINT_MAX __INT_MAX__
+MUINT_MAX
+NUINT_MAX (INT_MAX * 2U + 1U)
+RLONG_MIN
+SLONG_MIN (-LONG_MAX - 1L)
+TLONG_MAX
+ULONG_MAX __LONG_MAX__
+XULONG_MAX
+YULONG_MAX (LONG_MAX * 2UL + 1UL)
+iLONG_LONG_MIN
+jLONG_LONG_MIN (-LONG_LONG_MAX - 1LL)
+kLONG_LONG_MAX
+lLONG_LONG_MAX __LONG_LONG_MAX__
+oULONG_LONG_MAX
+pULONG_LONG_MAX (LONG_LONG_MAX * 2ULL + 1ULL)
+._GLIBCXX_CSTDLIB 1
+__need_size_t
+__need_wchar_t
+__need_NULL
+__need_ptrdiff_t
+__need_size_t
+__need_wchar_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+&_STDLIB_H 1
+WNOHANG 1
+WUNTRACED 2
+WSTOPPED 2
+WEXITED 4
+WCONTINUED 8
+!WNOWAIT 0x01000000
+#__WNOTHREAD 0x20000000
+%__WALL 0x40000000
+&__WCLONE 0x80000000
+__WEXITSTATUS(status) (((status) & 0xff00) >> 8)
+__WTERMSIG(status) ((status) & 0x7f)
+#__WSTOPSIG(status) __WEXITSTATUS(status)
+&__WIFEXITED(status) (__WTERMSIG(status) == 0)
+)__WIFSIGNALED(status) (((signed char) (((status) & 0x7f) + 1) >> 1) > 0)
+-__WIFSTOPPED(status) (((status) & 0xff) == 0x7f)
+2__WIFCONTINUED(status) ((status) == __W_CONTINUED)
+6__WCOREDUMP(status) ((status) & __WCOREFLAG)
+9__W_EXITCODE(ret,sig) ((ret) << 8 | (sig))
+:__W_STOPCODE(sig) ((sig) << 8 | 0x7f)
+;__W_CONTINUED 0xffff
+<__WCOREFLAG 0x80
+dw_termsig __wait_terminated.__w_termsig
+ew_coredump __wait_terminated.__w_coredump
+fw_retcode __wait_terminated.__w_retcode
+gw_stopsig __wait_stopped.__w_stopsig
+hw_stopval __wait_stopped.__w_stopval
+7__WAIT_INT(status) (*(int *) &(status))
+@__WAIT_STATUS void *
+A__WAIT_STATUS_DEFN void *
+UWEXITSTATUS(status) __WEXITSTATUS(__WAIT_INT(status))
+VWTERMSIG(status) __WTERMSIG(__WAIT_INT(status))
+WWSTOPSIG(status) __WSTOPSIG(__WAIT_INT(status))
+XWIFEXITED(status) __WIFEXITED(__WAIT_INT(status))
+YWIFSIGNALED(status) __WIFSIGNALED(__WAIT_INT(status))
+ZWIFSTOPPED(status) __WIFSTOPPED(__WAIT_INT(status))
+\WIFCONTINUED(status) __WIFCONTINUED(__WAIT_INT(status))
+o__ldiv_t_defined 1
+{__lldiv_t_defined 1
+RAND_MAX 2147483647
+EXIT_FAILURE 1
+EXIT_SUCCESS 0
+MB_CUR_MAX (__ctype_get_mb_cur_max ())
+__strtol_internal_defined 1
+__strtoul_internal_defined 1
+__strtoll_internal_defined 1
+__strtoull_internal_defined 1
+_SYS_TYPES_H 1
+*__u_char_defined
+6__ino_t_defined
+:__ino64_t_defined
+?__dev_t_defined
+I__mode_t_defined
+N__nlink_t_defined
+j__id_t_defined
+v__daddr_t_defined
+|__key_t_defined
+__need_clock_t
+__need_time_t
+__need_timer_t
+__need_clockid_t
+__suseconds_t_defined
+__need_size_t
+__need_ptrdiff_t
+__need_size_t
+__need_wchar_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+__intN_t(N,MODE) typedef int int ##N ##_t __attribute__ ((__mode__ (MODE)))
+__u_intN_t(N,MODE) typedef unsigned int u_int ##N ##_t __attribute__ ((__mode__ (MODE)))
+__BIT_TYPES_DEFINED__ 1
+_SYS_SELECT_H 1
+__FD_ZERO(s) do { unsigned int __i; fd_set *__arr = (s); for (__i = 0; __i < sizeof (fd_set) / sizeof (__fd_mask); ++__i) __FDS_BITS (__arr)[__i] = 0; } while (0)
+!__FD_SET(d,s) (__FDS_BITS (s)[__FDELT(d)] |= __FDMASK(d))
+"__FD_CLR(d,s) (__FDS_BITS (s)[__FDELT(d)] &= ~__FDMASK(d))
+#__FD_ISSET(d,s) ((__FDS_BITS (s)[__FDELT(d)] & __FDMASK(d)) != 0)
+*__need_time_t
++__need_timespec
+-__need_timeval
+>__need_timeval
+@_STRUCT_TIMEVAL 1
+:__NFDBITS
+;__FDELT
+<__FDMASK
+>__NFDBITS (8 * sizeof (__fd_mask))
+?__FDELT(d) ((d) / __NFDBITS)
+@__FDMASK(d) ((__fd_mask) 1 << ((d) % __NFDBITS))
+I__FDS_BITS(set) ((set)->fds_bits)
+QFD_SETSIZE __FD_SETSIZE
+XNFDBITS __NFDBITS
+]FD_SET(fd,fdsetp) __FD_SET (fd, fdsetp)
+^FD_CLR(fd,fdsetp) __FD_CLR (fd, fdsetp)
+_FD_ISSET(fd,fdsetp) __FD_ISSET (fd, fdsetp)
+`FD_ZERO(fdsetp) __FD_ZERO (fdsetp)
+_SYS_SYSMACROS_H 1
+@major(dev) gnu_dev_major (dev)
+Aminor(dev) gnu_dev_minor (dev)
+Bmakedev(maj,min) gnu_dev_makedev (maj, min)
+__blksize_t_defined
+__blkcnt_t_defined
+__fsblkcnt_t_defined
+__fsfilcnt_t_defined
+__malloc_and_calloc_defined
+_ALLOCA_H 1
+__need_size_t
+__need_ptrdiff_t
+__need_size_t
+__need_wchar_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+alloca
+$alloca(size) __builtin_alloca (size)
+__COMPAR_FN_T
+__need_malloc_and_calloc
+Jabort
+Kabs
+Latexit
+Matof
+Natoi
+Oatol
+Pbsearch
+Qcalloc
+Rdiv
+Sexit
+Tfree
+Ugetenv
+Vlabs
+Wldiv
+Xmalloc
+Ymblen
+Zmbstowcs
+[mbtowc
+\qsort
+]rand
+^realloc
+_srand
+`strtod
+astrtol
+bstrtoul
+csystem
+dwcstombs
+ewctomb
+_Exit
+llabs
+lldiv
+atoll
+strtoll
+strtoull
+strtof
+strtold
+>_PAIR_H 1
+'_CPP_TYPE_TRAITS_H 1
+A_ITERATOR_BASE_TYPES_H 1
+A_ITERATOR_BASE_FUNCS_H 1
+$_CONCEPT_CHECK_H 1
+4__glibcxx_function_requires(...)
+5__glibcxx_class_requires(_a,_b)
+6__glibcxx_class_requires2(_a,_b,_c)
+7__glibcxx_class_requires3(_a,_b,_c,_d)
+8__glibcxx_class_requires4(_a,_b,_c,_d,_e)
+B_ITERATOR_H 1
+_GLIBCXX_DEBUG_DEBUG_H 1
+d_GLIBCXX_DEBUG_ASSERT(_Condition)
+e_GLIBCXX_DEBUG_PEDASSERT(_Condition)
+f__glibcxx_requires_cond(_Cond,_Msg)
+g__glibcxx_requires_valid_range(_First,_Last)
+h__glibcxx_requires_sorted(_First,_Last)
+i__glibcxx_requires_sorted_pred(_First,_Last,_Pred)
+j__glibcxx_requires_partitioned(_First,_Last,_Value)
+k__glibcxx_requires_partitioned_pred(_First,_Last,_Value,_Pred)
+l__glibcxx_requires_heap(_First,_Last)
+m__glibcxx_requires_heap_pred(_First,_Last,_Pred)
+n__glibcxx_requires_nonempty()
+o__glibcxx_requires_string(_String)
+p__glibcxx_requires_string_len(_String,_Len)
+q__glibcxx_requires_subscript(_N)
+min
+max
+)_LOCALE_FWD_H 1
+)_IOS_BASE_H 1
+$_GLIBCXX_ATOMICITY_H 1
+_GLIBCXX_ATOMIC_WORD_H 1
+6_GLIBCXX_READ_MEM_BARRIER __asm __volatile ("":::"memory")
+9_GLIBCXX_WRITE_MEM_BARRIER __asm __volatile ("":::"memory")
+)_LOCALE_CLASSES_H 1
+(_GLIBCXX_STRING 1
+1_GLIBCXX_MEMORY 1
+1_ALLOCATOR_H 1
+_CXX_ALLOCATOR_H 1
+#_NEW_ALLOCATOR_H 1
+'_NEW
+#__glibcxx_base_allocator __gnu_cxx::new_allocator
+__glibcxx_base_allocator
+>_STL_CONSTRUCT_H 1
+>_STL_UNINITIALIZED_H 1
+>_STL_RAW_STORAGE_ITERATOR_H 1
++_GLIBCXX_NUMERIC_LIMITS 1
+U__glibcxx_integral_traps true
+^__glibcxx_float_has_denorm_loss false
+a__glibcxx_float_traps false
+d__glibcxx_float_tinyness_before false
+l__glibcxx_double_has_denorm_loss false
+o__glibcxx_double_traps false
+r__glibcxx_double_tinyness_before false
+z__glibcxx_long_double_has_denorm_loss false
+}__glibcxx_long_double_traps false
+__glibcxx_long_double_tinyness_before false
+__glibcxx_signed(T) ((T)(-1) < 0)
+__glibcxx_min(T) (__glibcxx_signed (T) ? (T)1 << __glibcxx_digits (T) : (T)0)
+__glibcxx_max(T) (__glibcxx_signed (T) ? ((T)1 << __glibcxx_digits (T)) - 1 : ~(T)0)
+__glibcxx_digits(T) (sizeof(T) * __CHAR_BIT__ - __glibcxx_signed (T))
+__glibcxx_digits10(T) (__glibcxx_digits (T) * 643 / 2136)
+__glibcxx_float_has_denorm_loss
+__glibcxx_float_traps
+__glibcxx_float_tinyness_before
+__glibcxx_double_has_denorm_loss
+__glibcxx_double_traps
+__glibcxx_double_tinyness_before
+__glibcxx_long_double_has_denorm_loss
+__glibcxx_long_double_traps
+__glibcxx_long_double_tinyness_before
+__glibcxx_signed
+__glibcxx_min
+__glibcxx_max
+__glibcxx_digits
+__glibcxx_digits10
+>_FUNCTION_H 1
+)_BASIC_STRING_H 1
+=_GLIBCXX_ALGORITHM 1
+?_ALGO_H 1
+=_STL_HEAP_H 1
+>_TEMPBUF_H 1
+,_BASIC_STRING_TCC 1
+(_GLIBXX_STREAMBUF 1
+)_STREAMBUF_TCC 1
+%_BASIC_IOS_H 1
+%_STREAMBUF_ITERATOR_H 1
+)_LOCALE_FACETS_H 1
+._GLIBCXX_CWCTYPE 1
+_WCTYPE_H 1
+"__need_wint_t
+__need_ptrdiff_t
+__need_size_t
+__need_wchar_t
+__need_wint_t
+NULL
+NULL __null
+__need_NULL
+offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+7__need_iswxxx
+=__iswxxx_defined 1
+N_ISwbit(bit) ((bit) < 8 ? (int) ((1UL << (bit)) << 24) : ((bit) < 16 ? (int) ((1UL << (bit)) << 8) : ((bit) < 24 ? (int) ((1UL << (bit)) >> 8) : (int) ((1UL << (bit)) >> 24))))
+9iswalnum
+:iswalpha
+<iswblank
+>iswcntrl
+?iswctype
+@iswdigit
+Aiswgraph
+Biswlower
+Ciswprint
+Diswpunct
+Eiswspace
+Fiswupper
+Giswxdigit
+Htowctrans
+Itowlower
+Jtowupper
+Kwctrans
+Lwctype
+7_GLIBCXX_NUM_FACETS 28
++_CODECVT_H 1
+$_BASIC_IOS_TCC 1
+)_OSTREAM_TCC 1
+'_GLIBCXX_LOCALE 1
+%_LOCALE_FACETS_TCC 1
+$_TYPEINFO
+7__GXX_MERGED_TYPEINFO_NAMES 1
+(_GLIBCXX_ISTREAM 1
+)_ISTREAM_TCC 1
+!!!Hello World!!!
+zPR
+MurmurHashNeutral2
+main
+find_first_of
+operator--
+new_allocator
+_ZNSt6locale5_Impl11_S_id_ctypeE
+find_last_of
+_S_id_numeric
+basefield
+allocator
+_M_refcount
+max_size
+_Alloc_hider
+_S_id_time
+_ZNSt8ios_base3curE
+insert
+replace
+_ZNSt6locale7collateE
+_S_empty_rep
+intl
+has_denorm
+_ZNSt10money_base18_S_default_patternE
+assign
+scientific
+_ZNSt6locale13_S_categoriesE
+_ZNSt8ios_base7showposE
+floatfield
+_ZNSt8ios_base3outE
+_ZNSs4_Rep11_S_terminalE
+operator[]
+_ZNSt8ios_base5rightE
+_ZNSt10money_base8_S_atomsE
+_S_id_collate
+_ZNSt8ios_base6badbitE
+_S_id_ctype
+_ZNSt6locale8messagesE
+_ZNSt8ios_base3octE
+rfind
+wctype_t
+_S_max_size
+find_last_not_of
+_S_terminal
+locale
+boolalpha
+has_quiet_NaN
+_ZNSt6locale7numericE
+_ZNSs4nposE
+_ZNSt8ios_base4leftE
+operator=
+_ZNSt8ios_base7unitbufE
+_ZNSt6locale5ctypeE
+append
+_ZNSt8ios_base8showbaseE
+ptrdiff_t
+_ZNSs4_Rep11_S_max_sizeE
+_ZNSt6locale8monetaryE
+_S_facet_categories
+showpoint
+_ZNSt8ios_base10scientificE
+_ZNSt8ios_base7failbitE
+_ZSt4cout
+_ZNSt8ios_base8internalE
+messages
+_ZNSt8ios_base9showpointE
+long unsigned int
+_S_categories
+_ZSt7nothrow
+operator++
+_ZNSt6locale5_Impl14_S_id_messagesE
+_Impl
+_ZNSt8ios_base3hexE
+_S_refcount
+operator+=
+_S_id_monetary
+_ZNSt8ios_base6skipwsE
+_ZNSt8ios_base2inE
+_ZNSt8ios_base11adjustfieldE
+_S_copy_chars
+_S_c_name
+_ZNSt8ios_base9uppercaseE
+_S_atoms
+_ZNSt8ios_base3decE
+_ZNSt8ios_base6eofbitE
+_ZNSt8ios_base9boolalphaE
+_ZNSt8ios_base9basefieldE
+showbase
+find_first_not_of
+uppercase
+internal
+_ZNSt6locale5facet9_S_c_nameE
+_ZNSt6locale5_Impl14_S_id_monetaryE
+_ZNSt8ios_base10floatfieldE
+basic_string
+_S_default_pattern
+_ZNSt6locale4timeE
+compare
+adjustfield
+_ZNSt8ios_base5fixedE
+_ZNSt6locale5_Impl13_S_id_collateE
+__normal_iterator
+_ZNSt6locale5_Impl19_S_facet_categoriesE
+has_infinity
+_ZNSt6locale5_Impl10_S_id_timeE
+_ZNSt6locale5_Impl13_S_id_numericE
+_S_id_messages
+_ZNSt8ios_base7goodbitE
+monetary
+wint_t
+GCC: (GNU) 4.1.2 20071124 (Red Hat 4.1.2-42)
+.symtab
+.strtab
+.shstrtab
+.rela.text
+.data
+.bss
+.debug_abbrev
+.rela.debug_info
+.rela.debug_line
+.debug_macinfo
+.rela.ctors
+.rodata
+.rela.debug_frame
+.rela.eh_frame
+.debug_loc
+.rela.debug_pubnames
+.rela.debug_aranges
+.debug_str
+.comment
+.note.GNU-stack
+test.cpp
+_GLOBAL__I_main
+_Z41__static_initialization_and_destruction_0ii
+_ZSt8__ioinit
+__tcf_0
+_Z18MurmurHashNeutral2PKvij
+__gxx_personality_v0
+_ZNSt8ios_base4InitC1Ev
+__dso_handle
+__cxa_atexit
+_ZNSt8ios_base4InitD1Ev
+main
+_ZSt4cout
+_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+_ZNSolsEPFRSoS_E

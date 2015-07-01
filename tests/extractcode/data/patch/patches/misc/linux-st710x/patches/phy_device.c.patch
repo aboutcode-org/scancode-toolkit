@@ -1,0 +1,38 @@
+--- linux-2.6.23/drivers/net/phy/phy_device.c.orig	2009-02-04 16:33:05.000000000 +0100
++++ linux-2.6.23/drivers/net/phy/phy_device.c	2009-02-04 16:58:56.000000000 +0100
+@@ -161,10 +161,20 @@
+ 
+ 	phy_prepare_link(phydev, handler);
+ 
++	/* Make sure higher levels (i.e. Ethtool) returns link
++	   down before the PHY has been properly initialized. */
++	netif_carrier_off(phydev->attached_dev);
++
+ 	phy_start_machine(phydev, NULL);
+ 
+ 	if (phydev->irq > 0)
+ 		phy_start_interrupts(phydev);
++	else
++		/* Make sure phy interrupts are used. Please verify
++		   that a correct interrupt number is specified in
++		   the setup functions of the board if this BUG has
++		   been triggered. */
++		BUG();
+ 
+ 	return phydev;
+ }
+@@ -671,8 +681,13 @@
+ 	phydev->drv = phydrv;
+ 
+ 	/* Disable the interrupt if the PHY doesn't support it */
+-	if (!(phydrv->flags & PHY_HAS_INTERRUPT))
++	if (!(phydrv->flags & PHY_HAS_INTERRUPT)) {
++		/* Make sure phy interrupts are used. Please verify
++		   that the phy is registered before the MAC if this
++		   BUG has been triggered. */
++		BUG();
+ 		phydev->irq = PHY_POLL;
++	}
+ 
+ 	spin_lock_bh(&phydev->lock);
+ 

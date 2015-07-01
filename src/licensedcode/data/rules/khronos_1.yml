@@ -1,0 +1,5 @@
+licenses:
+    - khronos
+notes: >
+    Sample MIT from Khronos
+    http://www.khronos.org/registry/omxal/api/1.0/OpenMAXAL_Platform.h

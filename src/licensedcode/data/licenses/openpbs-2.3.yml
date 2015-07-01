@@ -1,0 +1,10 @@
+key: openpbs-2.3
+short_name: OpenPBS 2.3
+name: OpenPBS Software License v2.3
+category: Copyleft Limited
+owner: Fedora
+homepage_url: http://fedoraproject.org/wiki/Licensing/OpenPBS
+text_urls:
+    - http://fedoraproject.org/wiki/Licensing/OpenPBS
+other_urls:
+    - www.OpenPBS.org

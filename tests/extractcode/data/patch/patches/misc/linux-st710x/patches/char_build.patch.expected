@@ -1,0 +1,6 @@
+[('linux-2.6.23.orig/drivers/char/Makefile',
+  'linux-2.6.23/drivers/char/Makefile',
+  'Index: linux-2.6.23/drivers/char/Makefile\n===================================================================\n--- linux-2.6.23.orig/drivers/char/Makefile\n+++ linux-2.6.23/drivers/char/Makefile\n@@ -107,6 +107,8 @@ obj-$(CONFIG_DRM)\t\t+= drm/\nobj-$(CONFIG_PCMCIA)\t\t+= pcmcia/\nobj-$(CONFIG_IPMI_HANDLER)\t+= ipmi/\n\n+obj-$(CONFIG_KBOX_DEVICE)       += kboxdev.o\n+\nobj-$(CONFIG_HANGCHECK_TIMER)\t+= hangcheck-timer.o\nobj-$(CONFIG_TCG_TPM)\t\t+= tpm/\n'),
+ ('linux-2.6.23.orig/drivers/char/Kconfig',
+  'linux-2.6.23/drivers/char/Kconfig',
+  'Index: linux-2.6.23/drivers/char/Kconfig\n===================================================================\n--- linux-2.6.23.orig/drivers/char/Kconfig\n+++ linux-2.6.23/drivers/char/Kconfig\n@@ -1072,5 +1072,10 @@ config KPROBE_EXAMPLE\ndepends on KPROBES\n#KPROBE-SH\n\n+config KBOX_DEVICE\n+\tboolean "Kbox device"\n+\thelp\n+\t  The Kbox device is used by hal to access the HW.\n+\nendmenu\n')]

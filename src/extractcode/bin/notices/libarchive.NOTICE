@@ -1,0 +1,138 @@
+The libarchive distribution as a whole is Copyright by Tim Kientzle
+and is subject to the copyright notice reproduced at the bottom of
+this file.
+
+Each individual file in this distribution should have a clear
+copyright/licensing statement at the beginning of the file.  If any do
+not, please let me know and I will rectify it.  The following is
+intended to summarize the copyright status of the individual files;
+the actual statements in the files are controlling.
+
+* Except as listed below, all C sources (including .c and .h files)
+  and documentation files are subject to the copyright notice reproduced
+  at the bottom of this file.
+
+* The following source files are also subject in whole or in part to
+  a 3-clause UC Regents copyright; please read the individual source
+  files for details:
+   libarchive/archive_entry.c
+   libarchive/archive_read_support_filter_compress.c
+   libarchive/archive_write_set_filter_compress.c
+   libarchive/mtree.5
+   tar/matching.c
+
+* The following source files are in the public domain:
+   tar/getdate.c
+
+* The build files---including Makefiles, configure scripts,
+  and auxiliary scripts used as part of the compile process---have
+  widely varying licensing terms.  Please check individual files before
+  distributing them to see if those restrictions apply to you.
+
+I intend for all new source code to use the license below and hope over
+time to replace code with other licenses with new implementations that
+do use the license below.  The varying licensing of the build scripts
+seems to be an unavoidable mess.
+
+
+Copyright (c) 2003-2009 <author(s)>
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer
+   in this position and unchanged.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR(S) ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE AUTHOR(S) BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+Copyright (c) 2003-2007 Tim Kientzle
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR(S) ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE AUTHOR(S) BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Some code in libarchive/archive_entry.c is modified from UC Berkeley 
+sources. Code libarchive/archive_read_support_filter_compress.c 
+and libarchive/archive_write_add_filter_compress.c 
+borrows heavily from "compress" source code, which is protected 
+by the following copyright.  (Clause 3 dropped by request of the Regents.).
+This code is derived from software contributed to Berkeley by
+Diomidis Spinellis and James A. Woods, derived from original
+work by Spencer Thomas and Joseph Orost.
+Code in libarchive/mtree.5 is modified from UC Berkeley sources.
+
+Copyright (c) 1985-1993 The Regents of the University of California.  All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. Neither the name of the University nor the names of its contributors
+   may be used to endorse or promote products derived from this software
+   without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+
+Code in libarchive/archive_getdate.c is in the public domain and has no copyright.
+This is a plain C recursive-descent translation of an old
+public-domain YACC grammar that has been used for parsing dates in
+very many open-source projects.
+Since the original authors were generous enough to donate their
+work to the public domain, I feel compelled to match their
+generosity. Tim Kientzle, February 2009.
+Header comment from original getdate.y:
+ Originally written by Steven M. Bellovin <smb@research.att.com> while
+ at the University of North Carolina at Chapel Hill.  Later tweaked by
+ a couple of people on Usenet.  Completely overhauled by Rich $alz
+ <rsalz@bbn.com> and Jim Berets <jberets@bbn.com> in August, 1990;
+ This grammar has 10 shift/reduce conflicts.
+ This code is in the public domain and has no copyright.

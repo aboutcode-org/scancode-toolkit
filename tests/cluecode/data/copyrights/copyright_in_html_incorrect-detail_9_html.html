@@ -1,0 +1,241 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+<link href="detail84529_files/html.css" type="text/css" rel="stylesheet">
+<link href="detail84529_files/style.css" type="text/css" rel="stylesheet">
+<title>systemactive 一套很好的系统挂钩控件包，可以轻易的做出WIN98风格的目录选取框， 对话框等！。 ComboBox 组合框  70万源代码下载- www.pudn.com</title>
+<script language="javascript" src="detail84529_files/ad_show.js"></script>
+<script language="JavaScript">
+function checkinput()
+{
+	if (document.form1.keyword.value=="")
+	 {
+		alert("请输入想查询的内容！");
+		document.form1.keyword.focus();
+		return false;
+	 }
+	 return true;
+}
+function openwin(keyword, se_type)
+{
+if(se_type =='pudn')
+  window.open('/search_db.asp?keyword=' + keyword, 'search');
+else
+  window.open('http://www.google.cn/custom?domains=pudn.com&q=' + keyword +'&sitesearch=pudn.com&client=pub-8055710228382273&forid=1&ie=GB2312&oe=GB2312&safe=active&cof=GALT%3A%23008000%3BGL%3A1%3BDIV%3A%23336699%3BVLC%3A663399%3BAH%3Acenter%3BBGC%3AFFFFFF%3BLBGC%3A336699%3BALC%3A0000FF%3BLC%3A0000FF%3BT%3A000000%3BGFNT%3A0000FF%3BGIMP%3A0000FF%3BFORID%3A1&hl=zh-CN', 'search');
+}
+function favor_add(t, id, n)
+{
+  window.open('/favor_add.asp?e=' + id +'&t=' + t +'&n=' + n, '添加收藏');
+}
+function fcomment_q(id, grade)
+{
+  window.open('/fcomment_q.asp?id=' + id + '&grade=' + grade, '评论');
+}
+function SetIFrameHeight(iframe_id, add_y)
+{
+  var bobo=document.getElementById(iframe_id);
+   if (bobo && !window.opera)
+   {
+    if (bobo.contentDocument && bobo.contentDocument.body.offsetHeight){
+     bobo.height = bobo.contentDocument.body.offsetHeight+add_y;
+    }else if(bobo.Document && bobo.Document.body.scrollHeight){
+     bobo.height = bobo.Document.body.scrollHeight+add_y;
+    }
+   }
+}
+down_id=84529;
+type_id=68;
+</script>
+</head><body style="overflow-x: hidden;">
+<div class="wrapper">
+<script language="JavaScript" type="text/javascript" src="detail84529_files/set_lang.js"></script><div style="display: none;" id="div_lang"><div id="set_lang">Please select your language:&nbsp;&nbsp;&nbsp;<a href="#" onclick="skip_to_lang(0);return false;">中文</a>&nbsp;&nbsp;<a href="#" onclick="skip_to_lang(1);return false;">English</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="close_lang_div();return false;"><img src="detail84529_files/close.jpg" border="0" align="middle"></a></div></div>
+
+    <div class="header">
+      <div id="logo"><a href="http://www.pudn.com/"><img src="detail84529_files/pudn2.gif" alt="程序员联合开发网：最大的源码下载网站" border="0"></a> </div>
+	  <div class="member">
+	     <a href="http://www.pudn.com/login.asp">登录</a>| <a href="http://www.pudn.com/reg.asp" target="_blank">注册会员</a>| <a href="http://www.pudn.com/help.asp" target="_blank">帮助</a>| <a href="mailto:programsalon@hotmail.com">联系站长</a><br>
+	     [<a href="http://en.pudn.com/downloads26/sourcecode/windows/control/combobox/detail84529_en.html" target="_blank">English Version]</a>
+	  </div>
+	  <div class="nav">
+	    <ul>
+		 <li><a href="http://www.pudn.com/">首页</a></li>
+		 <li><a href="http://www.pudn.com/download_types.asp" target="_blank">目录</a></li>
+		 <li><a href="http://www.pudn.com/download1.html">下载</a></li>
+		 <li><a href="http://www.pudn.com/upload_new.asp" target="_blank">上传</a></li>
+		 <li><a href="http://www.pudn.com/vip.asp" target="_blank">VIP会员</a></li>
+		 <li><a href="http://www.pudn.com/search_db.asp">搜索</a></li>
+		 <li><a href="http://read.pudn.com/" target="_blank">阅读</a></li>
+		 <li><a href="http://www.pudn.com/comment.asp?type_id=1010" title="有问题，请留言" target="_blank">留言薄</a></li>
+		</ul>
+	  </div>
+<script language="JavaScript">
+show_ad("ad_detail_a");
+</script>
+<form style="margin: 0px;" method="get" action="/search_db.asp">
+	  <div class="nav1">
+<div class="navpos"><a href="http://www.pudn.com/"><font color="#ff0080">P</font><font color="#8000ff">u</font><font color="#ff0080">d</font><font color="#8000ff">n</font>.com</a> &gt; <a href="http://www.pudn.com/download1.html">Downloads</a> &gt; <a href="http://www.pudn.com/sourcecode/download2.html">源码/资料</a> &gt; <a href="http://www.pudn.com/sourcecode/windows/download5.html">Windows编程</a> &gt; <a href="http://www.pudn.com/sourcecode/windows/GUI-Control/download6.html">界面编程</a> &gt; <a href="http://www.pudn.com/sourcecode/windows/GUI-Control/ComboBox/download68.html">ComboBox</a> &gt; <b>systemactive</b></div>
+         <div class="navsearch"><input name="keyword" size="20" type="text">&nbsp;<input value="搜 索" type="submit">&nbsp;</div>
+	  </div>
+	  </form>
+   </div>
+   <div class="pagebody2">
+    <div id="detail_fname">
+      &nbsp;文件名称: <b>systemactive</b><a href="http://www.pudn.com/dl.asp?id=84529" target="_blank"><img src="detail84529_files/d_download.gif" border="0">下载</a>
+&nbsp; <a href="#" onclick="javascript:favor_add('3', '84529', 'systemactive - 一套很好的系统挂钩控件包，可以轻易的做出WIN98风格的目录选取框，目录对话框等！。');">收藏√</a>&nbsp; [<a href="#" onclick="javascript:fcomment_q('84529', '100');"><img src="detail84529_files/thumbs_up.gif" alt="投票：非常好" border="0" align="middle"></a>
+&nbsp;<a href="#" onclick="javascript:fcomment_q('84529', '100');" title="投票：非常好">5</a> &nbsp;<a href="#" onclick="javascript:fcomment_q('84529', '85');" title="投票：还不错">4</a> &nbsp;<a href="#" onclick="javascript:fcomment_q('84529', '75');" title="投票：一般，勉强可用">3</a> &nbsp;<a href="#" onclick="javascript:fcomment_q('84529', '50');" title="投票：很一般">2</a> &nbsp;<a href="#" onclick="javascript:fcomment_q('84529', '3');" title="投票：太差了">1</a>&nbsp;<a href="#" onclick="javascript:fcomment_q('84529', '3');"><img src="detail84529_files/thumbs_down.gif" alt="投票：太差了" border="0" align="middle"></a>]    </div>
+    <div id="detail_info">
+      <div id="detail_gg">
+<script language="JavaScript">
+show_ad("ad_detail_b");
+</script><script type="text/javascript">
+<!--
+google_ad_client = "pub-8055710228382273";
+/* 300x250, 09-6-30 */
+google_ad_slot = "3054703309";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="detail84529_files/show_ads.js">
+</script><script src="detail84529_files/expansion_embed.js"></script><script src="detail84529_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 250px; position: relative; visibility: visible; width: 300px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 250px; position: relative; visibility: visible; width: 300px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="detail84529_files/ads.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="300" frameborder="0" height="250" scrolling="no"></iframe></ins></ins>
+
+      </div>
+      <div id="detail_list">
+        <div class="detail_listnamevalue">
+        &nbsp;&nbsp;所属分类: <a href="http://www.pudn.com/sourcecode/windows/GUI-Control/ComboBox/download68.html"><b>ComboBox</b></a>
+        </div>
+        <div class="detail_listnamevalue">
+        &nbsp;&nbsp;开发工具: <b>Delphi</b>
+        </div>
+        <div class="detail_listnamevalue">
+        &nbsp;&nbsp;文件大小: 756 KB
+        </div>
+        <div class="detail_listnamevalue">
+        &nbsp;&nbsp;上传时间: 2005-04-25
+        </div>
+        <div class="detail_listnamevalue">
+        &nbsp;&nbsp;下载次数: 1
+        </div>
+        <div class="detail_listnamevalue">
+        &nbsp;&nbsp;提 供 者: <a href="http://s.pudn.com/upload_log.asp?e=234428" target="_blank">森林</a>
+        </div>
+      </div>
+    </div>
+    <div class="detail_line">
+&nbsp;详细说明：<b>一
+套很好的系统挂钩控件包，可以轻易的做出WIN98风格的目录选取框，目录对话框等！。-a good system linking
+controls package can easily make WIN98 Shuaqukuang style directory,
+directory dialog so! .</b><div id="clogin">  [<a href="http://www.pudn.com/reg.asp" target="_blank">上载源码成为会员下载此源码</a>] [<a href="http://www.pudn.com/vip.asp" target="_blank">成为VIP会员下载此源码...</a>]</div>
+    </div>
+<form name="frm_search2" action="/search_db.asp" method="get">
+    <div class="detail_line">
+&nbsp;输入关键字，在本站70万海量源码库中尽情搜索：<input maxlength="50" size="20" name="keyword">
+<input value="搜 索" name="_search2" type="submit">&nbsp;<a href="http://www.pudn.com/search_help.htm" target="_blank">帮助</a>
+    </div>
+</form>
+    <div class="detail_line">
+&nbsp;[<a href="http://www.pudn.com/downloads26/sourcecode/windows/network/detail84596.html" target="_blank">UpLoadClass208.rar</a>] - 风声无组件上传类2.0B版 + 2.08 Beta 1<br>
+&nbsp;[<a href="http://www.pudn.com/downloads26/ebook/detail84494.html" target="_blank">(PDF) SUN - SL-315 JavaServer Pages Technology.zip</a>] - SUN SCJP经典认证系列：(PDF) SUN - SL-315 JavaServer Pages Technology.zip<br>
+&nbsp;[<a href="http://www.pudn.com/downloads40/sourcecode/others/detail139150.html" target="_blank">Dream.rar</a>] - 网站制作教程，很容易的
+
+
+
+欢迎大家使用<br>
+<script language="JavaScript">
+show_ad('ad_detail_c');
+</script>&nbsp;
+<script type="text/javascript">
+<!--
+google_ad_client = "pub-8055710228382273";
+/* 468x60, 08-3-18 */
+google_ad_slot = "7711310975";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript" src="detail84529_files/show_ads.js">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 60px; position: relative; visibility: visible; width: 468px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 60px; position: relative; visibility: visible; width: 468px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame2" marginheight="0" marginwidth="0" name="google_ads_frame" src="detail84529_files/ads_002.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="468" frameborder="0" height="60" scrolling="no"></iframe></ins></ins>
+
+<br>
+    </div>
+    <div class="detail_line">
+      <b>文件列表</b>(点击判断是否您需要的文件，如果是垃圾请在下面评价投诉): <br>
+&nbsp;&nbsp;systemactive<br>&nbsp;&nbsp;............\fixole2.exe<br>&nbsp;&nbsp;............\Help<br>&nbsp;&nbsp;............\....\PTShCtrl.hlp<br>&nbsp;&nbsp;............\....\PTShCtrl.kwf<br>&nbsp;&nbsp;............\....\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Help/PTShCtrl.toc__.htm" target="_blank">PTShCtrl.toc</a><br>&nbsp;&nbsp;............\INSTALL.LOG<br>&nbsp;&nbsp;............\ReadMe.txt<br>&nbsp;&nbsp;............\Src<br>&nbsp;&nbsp;............\...\FPTAbout.dcu<br>&nbsp;&nbsp;............\...\FPTAbout.dfm<br>&nbsp;&nbsp;............\...\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/FPTAbout.pas__.htm" target="_blank">FPTAbout.pas</a><br>&nbsp;&nbsp;............\...\FPTFolderBrowseDlg.dcu<br>&nbsp;&nbsp;............\...\FPTFolderBrowseDlg.dfm<br>&nbsp;&nbsp;............\...\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/FPTFolderBrowseDlg.pas__.htm" target="_blank">FPTFolderBrowseDlg.pas</a><br>&nbsp;&nbsp;............\...\FPTOpenDlg.dcu<br>&nbsp;&nbsp;............\...\FPTOpenDlg.dfm<br>&nbsp;&nbsp;............\...\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/FPTOpenDlg.pas__.htm" target="_blank">FPTOpenDlg.pas</a><br>&nbsp;&nbsp;............\...\FPTShellLocatorEditor.dcu<br>&nbsp;&nbsp;............\...\FPTShellLocatorEditor.dfm<br>&nbsp;&nbsp;............\...\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/FPTShellLocatorEditor.pas__.htm" target="_blank">FPTShellLocatorEditor.pas</a><br>&nbsp;&nbsp;............\...\Lang<br>&nbsp;&nbsp;............\...\....\Czech<br>&nbsp;&nbsp;............\...\....\.....\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Czech/PTShConsts.csv__.htm" target="_blank">PTShConsts.csv</a><br>&nbsp;&nbsp;............\...\....\.....\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Czech/PTShConstsD2.rc__.htm" target="_blank">PTShConstsD2.rc</a><br>&nbsp;&nbsp;............\...\....\.....\PTShConstsD2.RES<br>&nbsp;&nbsp;............\...\....\.....\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Czech/PTShConstsD3.inc__.htm" target="_blank">PTShConstsD3.inc</a><br>&nbsp;&nbsp;............\...\....\Danish<br>&nbsp;&nbsp;............\...\....\......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Danish/PTShConsts.csv__.htm" target="_blank">PTShConsts.csv</a><br>&nbsp;&nbsp;............\...\....\......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Danish/PTShConstsD2.rc__.htm" target="_blank">PTShConstsD2.rc</a><br>&nbsp;&nbsp;............\...\....\......\PTShConstsD2.RES<br>&nbsp;&nbsp;............\...\....\......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Danish/PTShConstsD3.inc__.htm" target="_blank">PTShConstsD3.inc</a><br>&nbsp;&nbsp;............\...\....\Dutch<br>&nbsp;&nbsp;............\...\....\.....\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Dutch/PTShConsts.csv__.htm" target="_blank">PTShConsts.csv</a><br>&nbsp;&nbsp;............\...\....\.....\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Dutch/PTShConstsD2.rc__.htm" target="_blank">PTShConstsD2.rc</a><br>&nbsp;&nbsp;............\...\....\.....\PTShConstsD2.RES<br>&nbsp;&nbsp;............\...\....\.....\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Dutch/PTShConstsD3.inc__.htm" target="_blank">PTShConstsD3.inc</a><br>&nbsp;&nbsp;............\...\....\English<br>&nbsp;&nbsp;............\...\....\.......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/English/PTShConsts.csv__.htm" target="_blank">PTShConsts.csv</a><br>&nbsp;&nbsp;............\...\....\.......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/English/PTShConstsD2.rc__.htm" target="_blank">PTShConstsD2.rc</a><br>&nbsp;&nbsp;............\...\....\.......\PTShConstsD2.RES<br>&nbsp;&nbsp;............\...\....\.......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/English/PTShConstsD3.inc__.htm" target="_blank">PTShConstsD3.inc</a><br>&nbsp;&nbsp;............\...\....\Finnish<br>&nbsp;&nbsp;............\...\....\.......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Finnish/PTShConsts.csv__.htm" target="_blank">PTShConsts.csv</a><br>&nbsp;&nbsp;............\...\....\.......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Finnish/PTShConstsD2.rc__.htm" target="_blank">PTShConstsD2.rc</a><br>&nbsp;&nbsp;............\...\....\.......\PTShConstsD2.RES<br>&nbsp;&nbsp;............\...\....\.......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Finnish/PTShConstsD3.inc__.htm" target="_blank">PTShConstsD3.inc</a><br>&nbsp;&nbsp;............\...\....\French<br>&nbsp;&nbsp;............\...\....\......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/French/PTShConsts.csv__.htm" target="_blank">PTShConsts.csv</a><br>&nbsp;&nbsp;............\...\....\......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/French/PTShConstsD2.rc__.htm" target="_blank">PTShConstsD2.rc</a><br>&nbsp;&nbsp;............\...\....\......\PTShConstsD2.RES<br>&nbsp;&nbsp;............\...\....\......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/French/PTShConstsD3.inc__.htm" target="_blank">PTShConstsD3.inc</a><br>&nbsp;&nbsp;............\...\....\German<br>&nbsp;&nbsp;............\...\....\......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/German/PTShConsts.csv__.htm" target="_blank">PTShConsts.csv</a><br>&nbsp;&nbsp;............\...\....\......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/German/PTShConstsD2.rc__.htm" target="_blank">PTShConstsD2.rc</a><br>&nbsp;&nbsp;............\...\....\......\PTShConstsD2.RES<br>&nbsp;&nbsp;............\...\....\......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/German/PTShConstsD3.inc__.htm" target="_blank">PTShConstsD3.inc</a><br>&nbsp;&nbsp;............\...\....\Hungarian<br>&nbsp;&nbsp;............\...\....\.........\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Hungarian/PTShConsts.csv__.htm" target="_blank">PTShConsts.csv</a><br>&nbsp;&nbsp;............\...\....\.........\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Hungarian/PTShConstsD2.rc__.htm" target="_blank">PTShConstsD2.rc</a><br>&nbsp;&nbsp;............\...\....\.........\PTShConstsD2.RES<br>&nbsp;&nbsp;............\...\....\.........\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Hungarian/PTShConstsD3.inc__.htm" target="_blank">PTShConstsD3.inc</a><br>&nbsp;&nbsp;............\...\....\Italian<br>&nbsp;&nbsp;............\...\....\.......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Italian/PTShConsts.csv__.htm" target="_blank">PTShConsts.csv</a><br>&nbsp;&nbsp;............\...\....\.......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Italian/PTShConstsD2.rc__.htm" target="_blank">PTShConstsD2.rc</a><br>&nbsp;&nbsp;............\...\....\.......\PTShConstsD2.RES<br>&nbsp;&nbsp;............\...\....\.......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Italian/PTShConstsD3.inc__.htm" target="_blank">PTShConstsD3.inc</a><br>&nbsp;&nbsp;............\...\....\Japanese<br>&nbsp;&nbsp;............\...\....\........\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Japanese/PTShConsts.csv__.htm" target="_blank">PTShConsts.csv</a><br>&nbsp;&nbsp;............\...\....\........\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Japanese/PTShConstsD2.inc__.htm" target="_blank">PTShConstsD2.inc</a><br>&nbsp;&nbsp;............\...\....\........\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Japanese/PTShConstsD2.rc__.htm" target="_blank">PTShConstsD2.rc</a><br>&nbsp;&nbsp;............\...\....\........\PTShConstsD2.RES<br>&nbsp;&nbsp;............\...\....\........\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Japanese/PTShConstsD3.inc__.htm" target="_blank">PTShConstsD3.inc</a><br>&nbsp;&nbsp;............\...\....\makeres.bat<br>&nbsp;&nbsp;............\...\....\Norwegian<br>&nbsp;&nbsp;............\...\....\.........\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Norwegian/PTShConsts.csv__.htm" target="_blank">PTShConsts.csv</a><br>&nbsp;&nbsp;............\...\....\.........\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Norwegian/PTShConstsD2.rc__.htm" target="_blank">PTShConstsD2.rc</a><br>&nbsp;&nbsp;............\...\....\.........\PTShConstsD2.RES<br>&nbsp;&nbsp;............\...\....\.........\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Norwegian/PTShConstsD3.inc__.htm" target="_blank">PTShConstsD3.inc</a><br>&nbsp;&nbsp;............\...\....\Polish<br>&nbsp;&nbsp;............\...\....\......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Polish/PTShConsts.csv__.htm" target="_blank">PTShConsts.csv</a><br>&nbsp;&nbsp;............\...\....\......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Polish/PTShConstsD2.rc__.htm" target="_blank">PTShConstsD2.rc</a><br>&nbsp;&nbsp;............\...\....\......\PTShConstsD2.RES<br>&nbsp;&nbsp;............\...\....\......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Polish/PTShConstsD3.inc__.htm" target="_blank">PTShConstsD3.inc</a><br>&nbsp;&nbsp;............\...\....\Portuguese_Brazil<br>&nbsp;&nbsp;............\...\....\.................\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Portuguese_Brazil/PTShConsts.csv__.htm" target="_blank">PTShConsts.csv</a><br>&nbsp;&nbsp;............\...\....\.................\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Portuguese_Brazil/PTShConstsD2.rc__.htm" target="_blank">PTShConstsD2.rc</a><br>&nbsp;&nbsp;............\...\....\.................\PTShConstsD2.RES<br>&nbsp;&nbsp;............\...\....\.................\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Portuguese_Brazil/PTShConstsD3.inc__.htm" target="_blank">PTShConstsD3.inc</a><br>&nbsp;&nbsp;............\...\....\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/PTShConstsD2.inc__.htm" target="_blank">PTShConstsD2.inc</a><br>&nbsp;&nbsp;............\...\....\Russian<br>&nbsp;&nbsp;............\...\....\.......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Russian/PTShConsts.csv__.htm" target="_blank">PTShConsts.csv</a><br>&nbsp;&nbsp;............\...\....\.......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Russian/PTShConstsD2.rc__.htm" target="_blank">PTShConstsD2.rc</a><br>&nbsp;&nbsp;............\...\....\.......\PTShConstsD2.RES<br>&nbsp;&nbsp;............\...\....\.......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Russian/PTShConstsD3.inc__.htm" target="_blank">PTShConstsD3.inc</a><br>&nbsp;&nbsp;............\...\....\Spanish<br>&nbsp;&nbsp;............\...\....\.......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Spanish/PTShConsts.csv__.htm" target="_blank">PTShConsts.csv</a><br>&nbsp;&nbsp;............\...\....\.......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Spanish/PTShConstsD2.rc__.htm" target="_blank">PTShConstsD2.rc</a><br>&nbsp;&nbsp;............\...\....\.......\PTShConstsD2.RES<br>&nbsp;&nbsp;............\...\....\.......\<a class="tblink" href="http://read.pudn.com/downloads26/sourcecode/windows/control/combobox/84529/systemactive/Src/Lang/Spanish/PTShConstsD3.inc__.htm" target="_blank">PTShConstsD3.inc</a><br>    </div>
+    <div id="detail_line">
+<script language="JavaScript" type="text/javascript" src="detail84529_files/fcomment.js"></script><iframe id="if_dcomment" src="detail84529_files/fcomment_i.html" width="100%" frameborder="0" height="100" scrolling="no"></iframe>
+    </div>
+<script language="JavaScript">
+show_ad("ad_detail_f");
+</script>
+  </div>
+<div id="rightSideBar">
+<div id="tagLogin">
+<form method="post" action="/login_do.asp" target="_blank">
+<table>
+<tbody><tr><td><h2><img src="detail84529_files/2.gif" align="middle">请登录</h2><hr></td></tr>
+<tr><td>帐 号：<input size="14" name="id" type="text">&nbsp; <a href="http://www.pudn.com/reg.asp" target="_blank">注册帐号</a></td></tr>
+<tr><td>密 码：<input size="14" name="password" type="password">&nbsp; <a href="http://www.pudn.com/find_pass.asp" target="_blank">找回密码</a></td></tr>
+<tr><td align="center" height="30"><input value="登 录" type="submit"></td></tr>
+</tbody></table>
+</form>
+</div>
+<script language="JavaScript">
+show_ad("ad_detail_d");
+</script>
+<div class="dirList">
+<table border="0" bgcolor="#f9f9f9" width="175" cellpadding="1" cellspacing="0">
+<tbody>
+<tr bgcolor="#d0d0d0"><td colspan="2" height="1"></td></tr>
+<tr bgcolor="#f0f0f0"><td colspan="2" height="22"><div class="malign"><img src="detail84529_files/folderopen.gif"> ComboBox</div></td></tr>
+<tr bgcolor="#d0d0d0"><td colspan="2" height="1"></td></tr>
+<tr bgcolor="#d0d0d0"><td colspan="2" height="1"></td></tr>
+<tr bgcolor="#f0f0f0"><td colspan="2" height="22"><div class="malign"><img src="detail84529_files/folderopen.gif"> 相关类别</div></td></tr>
+<tr bgcolor="#d0d0d0"><td colspan="2" height="1"></td></tr>
+</tbody></table>
+</div>
+<script language="JavaScript">
+show_ad("ad_detail_e");
+</script>
+<div class="sidebar">
+<p>
+·<a href="http://www.pudn.com/downloads175/sourcecode/windows/control/combobox/detail814853.html" target="_blank">实现了gridctrl的组合框控件，gridc</a><br>
+·<a href="http://www.pudn.com/downloads174/sourcecode/windows/control/combobox/detail809894.html" target="_blank">Implementing OnMouseOver for Item</a><br>
+·<a href="http://www.pudn.com/downloads172/sourcecode/windows/control/combobox/detail799013.html" target="_blank">模仿Windows字体对话框，使用了多个</a><br>
+·<a href="http://www.pudn.com/downloads172/sourcecode/windows/control/combobox/detail797388.html" target="_blank">juego con recorset de datos</a><br>
+·<a href="http://www.pudn.com/downloads172/sourcecode/windows/control/combobox/detail796586.html" target="_blank">带组合框的工具栏，对你可能有一定</a><br>
+·<a href="http://www.pudn.com/downloads172/sourcecode/windows/control/combobox/detail796584.html" target="_blank">该代码提供了一个基础组合框控件的</a><br>
+·<a href="http://www.pudn.com/downloads172/sourcecode/windows/control/combobox/detail796581.html" target="_blank">该代码提供了带有系统磁盘选择的下</a><br>
+·<a href="http://www.pudn.com/downloads170/sourcecode/windows/control/combobox/detail787851.html" target="_blank">c# .net 具有tab控件的多文档界面框</a><br>
+·<a href="http://www.pudn.com/downloads178/sourcecode/windows/control/combobox/detail825754.html" target="_blank">支持颜色显示的组合框（ComboBox）</a><br>
+·<a href="http://www.pudn.com/downloads178/sourcecode/windows/control/combobox/detail825753.html" target="_blank">支持字体显示的组合框（ComboBox）</a><br>
+·<a href="http://www.pudn.com/downloads178/sourcecode/windows/control/combobox/detail825751.html" target="_blank">支持多选（CheckBoxList效果的）的</a><br>
+·<a href="http://www.pudn.com/downloads177/sourcecode/windows/control/combobox/detail822050.html" target="_blank">NotifyWindow控件的使用，可以在任</a><br>
+·<a href="http://www.pudn.com/downloads175/sourcecode/windows/csharp/detail815624.html" target="_blank">Custom combobox with drawing feat</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail195.html" target="_blank">边框自定义的复选框</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail192.html" target="_blank">驱动器选择框</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail188.html" target="_blank">颜色选择框</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail198.html" target="_blank">有多行(每行可以是控件)的复选框</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail193.html" target="_blank">平坦的复选框</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail200.html" target="_blank">第三个多行复选框</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail203.html" target="_blank">另一个在DropDown和DropList类型之</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail201.html" target="_blank">当复选框的选择框内有太多项时可以</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail196.html" target="_blank">图标选择框</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail186.html" target="_blank">自动弹出选择框并自动选择的复选框</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail191.html" target="_blank">方便的存储和获取对应每项的数据的</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail185.html" target="_blank">另一个自动选择框</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail199.html" target="_blank">另一个多行复选框</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail190.html" target="_blank">带文字的颜色选择框</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail202.html" target="_blank">提供在DropDown和DropList类型之间</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail2040.html" target="_blank">选项含有检查框(checkbox)的可多项</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail2033.html" target="_blank">在列表框中使用水平滚动条的例子</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail2042.html" target="_blank">列表框中的为一个数形控件(TreeCtrl</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail2046.html" target="_blank">选项为ICON图标的复选框控件</a><br>
+·<a href="http://www.pudn.com/downloads/sourcecode/windows/control/combobox/detail2034.html" target="_blank">选择项带图形的组合框</a><br>
+
+</p>
+</div></div>
+<div class="footer" align="center">
+<a href="mailto:programsalon@hotmail.com">联系站长</a> · <a href="http://studio.pudn.com/" target="_blank">软件工厂</a> · <a href="http://www.pudn.com/comment.asp?type_id=1010" target="_blank">版权投诉</a> · <a href="http://www.pudn.com/comment.asp?type_id=1010" target="_blank">网站修改建议</a><br>
+  &#169; 2004-2009 <a href="http://www.pudn.com/"><font color="red">pudn.com</font></a> 湘ICP备07000446<br>
+<script src="detail84529_files/stat.html" language="JavaScript" charset="gb2312"></script><a href="http://www.cnzz.com/stat/website.php?web_id=1236358" target="_blank" title="站长统计"><img src="detail84529_files/pic.gif" border="0" vspace="0" hspace="0"></a><img src="detail84529_files/stat_002.html" border="0" width="0" height="0">
+<script src="detail84529_files/tail.js" language="JavaScript"></script>
+</div></div></body></html>

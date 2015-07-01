@@ -1,0 +1,6 @@
+      VALUE "FileDescription", "STLport\0"
+      VALUE "FileVersion", VERSION_STR
+      VALUE "InternalName", "STLPORT.DLL\0"
+      VALUE "LegalCopyright", "Copyright (C) Boris Fomitchev\0"
+#if !defined (BUILD)
+      VALUE "OriginalFilename", DLLNAME

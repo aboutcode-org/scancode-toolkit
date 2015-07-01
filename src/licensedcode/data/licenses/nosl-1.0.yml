@@ -1,0 +1,11 @@
+key: nosl-1.0
+short_name: NOSL 1.0
+name: Netizen Open Source License 1.0
+category: Copyleft Limited
+owner: Netizen
+homepage_url: http://bits.netizen.com.au/licenses/NOSL/
+spdx_license_key: NOSL
+spdx_full_name: Netizen Open Source License
+spdx_url: http://spdx.org/licenses/NOSL
+text_urls:
+    - http://bits.netizen.com.au/licenses/NOSL/nosl.txt

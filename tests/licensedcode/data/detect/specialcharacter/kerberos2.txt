@@ -1,0 +1,1 @@
+The implementation of the AES encryption algorithm in src/lib/crypto/aes has the following copyright: Copyright (c) 2001, Dr Brian Gladman <brg@@gladman.uk.net>, Worcester, UK. All rights reserved. LICENSE TERMS

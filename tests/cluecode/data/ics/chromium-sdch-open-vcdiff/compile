@@ -1,0 +1,6 @@
+
+# Wrapper for compilers which do not understand `-c -o'.
+
+# Copyright 1999, 2000 Free Software Foundation, Inc.
+# Written by Tom Tromey <tromey@cygnus.com>.
+#

@@ -1,0 +1,12 @@
+key: quin-street
+short_name: QuinStreet License
+name: QuinStreet License
+category: Proprietary Free
+owner: QuinStreet
+homepage_url: http://www.codeguru.com/licensing.html
+text_urls:
+    - http://www.codeguru.com/licensing.html
+    - http://www.freevbcode.com/licensing
+other_urls:
+    - http://www.codeguru.com/submission-guidelines.php#permission
+    - http://www.codeguru.com/cpp/controls/listview/article.php/c4189/Creating-a-CListCtrl-Class-with-Item-Style-Features-CListCtrlStyled-Class.htm

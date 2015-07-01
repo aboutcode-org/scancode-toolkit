@@ -1,0 +1,11 @@
+key: bsd-2-clause-freebsd
+short_name: BSD 2-clause "FreeBSD"
+name: BSD 2-clause "FreeBSD" License
+category: Attribution
+owner: FreeBSD
+homepage_url: http://www.freebsd.org/copyright/freebsd-license.html
+spdx_license_key: BSD-2-Clause-FreeBSD
+spdx_full_name: BSD 2-clause "FreeBSD" License
+spdx_url: http://spdx.org/licenses/BSD-2-Clause-FreeBSD
+text_urls:
+    - http://www.freebsd.org/copyright/freebsd-license.html

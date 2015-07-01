@@ -1,0 +1,6 @@
+# Extract all examples from the manual source.            -*- AWK -*-
+
+# This file is part of GNU Bison
+# Copyright 1992, 2000, 2001, 2005, 2006 Free Software Foundation, Inc.
+#
+# This program is free software; you can redistribute it and/or modify

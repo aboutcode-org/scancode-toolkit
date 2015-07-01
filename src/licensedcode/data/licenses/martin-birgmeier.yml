@@ -1,0 +1,8 @@
+key: martin-birgmeier
+short_name: Martin Bergmeier License
+name: Martin Bergmeier License
+category: Attribution
+owner: Martin Bergmeier
+homepage_url: https://chromium.googlesource.com/native_client/nacl-newlib/+/590b76526a1ff92504bf20234610043fd45ae034/newlib/libc/stdlib/rand48.h
+text_urls:
+    - https://chromium.googlesource.com/native_client/nacl-newlib/+/590b76526a1ff92504bf20234610043fd45ae034/newlib/libc/stdlib/rand48.h

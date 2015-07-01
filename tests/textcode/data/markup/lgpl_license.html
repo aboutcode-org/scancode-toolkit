@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<link href="/css/ooo.css" rel="stylesheet" type="text/css">
+
+<title>Historical OpenOffice Licenses </title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30193653-1']);
+    _gaq.push(['_setDomainName', 'openoffice.org']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+  
+
+ 
+<script type="text/javascript">
+/*!
+ * Entourage 1.1.2 - Automatic Download Tracking for Asynchronous Google Analytics
+ *
+ * Copyright (c) 2011 by Tian Valdemar Davis (http://techoctave.com/c7)
+ * Licensed under the MIT (http://en.wikipedia.org/wiki/MIT_License) license.
+ *
+ * Learn More: http://techoctave.com/c7/posts/58-entourage-js-automatic-download-tracking-for-asynchronous-google-analytics
+ * 
+ * 2012-04-24 Mod by robweir to whitelist additional file extensions as used in AOO project
+ * 2012-04-25 Mod by robweir to remove trailing "/download" from SourceForge file names, a hack we can hopefully remove someday
+ */
+
+/*jshint strict:false */
+
+(function() {
+var entourage = new (function() {
+	var version = "1.1.2";
+	var whitelist = /\.pdf$|\.zip$|\.gz$|\.gz\/download$|\.bz2$|\.bz2\/download$|\.od*|\.doc*|\.xls*|\.ppt*|\.exe$|\.exe\/download$|\.dmg$|\.dmg\/download$|\.mov$|\.avi$|\.mp3$/i;
+	
+	//Get true FileName from link pathname
+	var getFileName = function(pathname) {
+		//Remove the anchor at the end (if one exists)
+		pathname = pathname.substring(0, (pathname.indexOf("#") === -1) ? pathname.length : pathname.indexOf("#"));
+
+		//Removes the query after the file pathname (if one exists)
+		pathname = pathname.substring(0, (pathname.indexOf("?") === -1) ? pathname.length : pathname.indexOf("?"));
+      
+        //Remove trailing /download
+		if (/\/download$/.test(pathname))
+			pathname = pathname.substring(0, pathname.length-"/download".length);
+
+		//Removes everything before the last slash in the path
+		pathname = pathname.substring(pathname.lastIndexOf("/") + 1, pathname.length);
+
+		return pathname;
+	};
+
+	var autograph = function() {
+		var fileName, associate;
+
+		//Get the file name
+		fileName = getFileName(this.pathname); //The link object is now available in "this"
+
+		//Add file to the Google Analytics Queue
+		associate = '/download/' + fileName;
+		
+		//Track download using Asynchronous Google Analytics
+		_gaq.push(['_trackPageview', associate]);
+    };
+
+	var initialize = function() {
+		var links = document.links;
+		
+		for (var i = 0, l = links.length; i < l; i++) {
+			//Compare the fileType to the whitelist
+			var match = links[i].pathname.match(whitelist);
+			
+			//If the link is for a file download . . .
+			if (typeof match !== "undefined" && match !== null) {
+				//Call Entourage whenever the link is clicked
+				links[i].onclick = autograph;
+			}
+		}
+    };
+
+	return {
+		version: version,
+		initialize: initialize
+	};
+})(); //Entourage.js
+
+//Add entourage to the global namespace
+window.entourage = entourage;
+
+//Execute entourage onload - ensuring links are present in the DOM
+window.onload = entourage.initialize;
+})();
+</script>
+</head>
+<body>
+  <div id="bannera">
+  <div id="languagesdiv">
+  	English:
+  	<select id="selectlanguage" onchange="javascript:location.href=location.protocol+'//'+location.host+'/'+this.value;">
+  	<!-- Asturian --><option value="ast">Asturianu (ast)</option>
+  	<!-- Czech --><option value="cs">Čeština (cs)</option>
+  	<!-- Danish --><option value="da">Dansk (da)</option>
+  	<!-- German --><option value="de">Deutsch (de)</option>
+  	<!-- English [British]<option value="en-gb">English [British] (en-gb)</option> -->
+  	<!-- English [US] --><option value="?redirect=soft" selected="selected">English (en)</option>
+  	<!-- Spanish --><option value="es">Español (es)</option>
+  	<!-- Basque --><option value="eu">Euskara (eu)</option>
+  	<!-- Finnish --><option value="fi">Suomi (fi)</option>
+  	<!-- French --><option value="fr">Français (fr)</option>
+  	<!-- Scottish --><option value="gd">Gàidhlig (gd)</option>
+  	<!-- Galician --><option value="gl">Galego (gl)</option>
+  	<!-- Italian --><option value="it">Italiano (it)</option>
+  	<!-- Lithuanian --><option value="lt">Lietuvių (lt)</option>
+  	<!-- Hungarian --><option value="hu">Magyar (hu)</option>
+  	<!-- Dutch --><option value="nl">Nederlands (nl)</option>
+  	<!-- Norwegian [Bokmål] --><option value="no">Norsk [Bokmål] (nb)</option>
+  	<!-- Norwegian [Nynorsk] --><option value="no">Norsk [Nynorsk] (no)</option>
+	<!-- Polish --><option value="pl">Polski (pl)</option>
+  	<!-- Portuguese [Brazilian] --><option value="pt-br">Português [do Brasil] (pt-br)</option>
+  	<!-- Portuguese [European] --><option value="pt">Português [Europeu] (pt)</option>
+  	<!-- Slovak --><option value="sk">slovenčina (sk)</option>
+  	<!-- Slovenian --><option value="sl">slovenščina (sl)</option>
+  	<!-- Swidish --><option value="sv">Svenska (sv)</option>
+  	<!-- Turkish  --><option value="tr">Türkçe (tr)</option>
+  	<!-- Vietnamese --><option value="vi">Tiếng Việt (vi)</option>
+  	<!-- Greek --><option value="el">Ελληνικά (el)</option>
+  	<!-- Bulgarian --><option value="bg">български език (bg)</option>
+  	<!-- Russian --><option value="ru">Русский (ru)</option>
+  	<!-- Serbian [Cyrillic] --><option value="sr">Cрпски [ћирилицом] (sr)</option>
+ 	<!-- Arabic <option value="ar">العربية (ar)</option> -->
+  	<!-- Hebrew --><option value="he">עברית (he)</option>
+  	<!-- Hindi --><option value="hi">हिन्दी (hi)</option>
+  	<!-- Khmer --><option value="km">ភាសាខ្មែរ (km)</option>
+  	<!-- Tamil --><option value="ta">தமிழ் (ta)</option>
+  	<!-- Thai --><option value="th">ภาษาไทย (th)</option>
+  	<!-- Chinese [simplified] --><option value="zh-cn">简体中文 (zh-cn)</option>
+  	<!-- Chinese [traditional] --><option value="zh-tw">正體中文 (zh-tw)</option>
+  	<!-- Japanese --><option value="ja">日本語 (ja)</option>
+  	<!-- Korean --><option value="ko">한국어 (ko)</option>
+	</select>
+	<script>
+	  var lang = "en";
+	  var dropdown = document.getElementById('selectlanguage');
+	  var options = dropdown.options;
+	  for( var i = 0; i < dropdown.options.length; i++ ) {
+	    if( dropdown.options[ i ].value == lang ) {
+	      dropdown.selectedIndex = i;
+	      break;
+	    }
+	  }
+	</script>
+  </div>
+  <div id="bannerleft"><a title="Apache OpenOffice" href="/"><img id="ooo-logo" alt="Apache OpenOffice" src="/images/AOO_logos/100MillAOO100px.png"/></a></div>
+    <div id="bannerright">        
+      <div id="searchdiv">
+	<form id="cse-search-box-header" action="http://www.google.com/search" method="get">
+	  <div>
+	    <input type="hidden" name="domains" value="www.openoffice.org"/>
+	    <input type="hidden" name="sitesearch" value="www.openoffice.org"/>
+	  </div>
+	  <div class="topsrchbox">
+	    <input name="resultsPerPage" value="40" type="hidden"/> 
+	    <input name="q" id="query" type="text" title="search query"/>
+	    <input name="Button" value="search" type="submit" class="topsrchbutton"/>
+	  </div>
+	</form>
+      </div>
+    </div>
+    <div id="bannercenter"><br/>The Free and Open Productivity Suite</div>
+  </div>
+  <div id="announce"><a href="https://cwiki.apache.org/confluence/display/OOOUSERS/AOO+4.1.1+Release+Notes" title="New: Apache OpenOffice 4.1.1 released!">New: Apache OpenOffice 4.1.1 released!</a></div>
+
+  <div id="topbara">
+    <div id="topnava"><ul>
+<li><a href="/product/index.html" title="Apache OpenOffice product description">Product</a></li>
+<li><a href="/download/index.html" title="Download OpenOffice">Download</a></li>
+<li><a href="/support/index.html" title="Find Support for OpenOffice">Support</a></li>
+<li><a href="http://blogs.apache.org/ooo/" title="Apache OpenOffice Blog">Blog</a></li>
+<li><a href="/extensions/index.html" title="Extensions and Templates for OpenOffice">Extend</a></li>
+<li><a href="http://openoffice.apache.org/get-involved.html" title="Get involved in Apache OpenOffice">Develop</a></li>
+<li><a href="/projects/accepted.html" title="Apache OpenOffice development focus areas">Focus Areas</a></li>
+<li><a href="/projects/native-lang.html" title="Apache OpenOffice in your Native Language">Native Language</a></li>
+</ul></div>
+
+    <div id="breadcrumbsa"><a href="/">home</a>&nbsp;&raquo;&nbsp;<a href="/licenses/">licenses</a></div>
+  </div>
+  <div id="clear"></div>
+  
+  
+  <div id="content">
+    
+    <h1 class="title">Historical OpenOffice Licenses </h1>
+    <p>The OpenOffice product has been published under various licenses since it was
+first made available as open source in 2000. <a href="http://www.gnu.org/licenses/lgpl.html">LGPLv3</a>
+was used for OpenOffice.org 3.0 beta through OpenOffice 3.4 beta.  Currently 
+<a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License 2.0</a> is used, 
+since Apache OpenOffice 3.4.0.</p>
+<p>A more detailed review of the history and pointers to current and historical 
+licenses for OpenOffice code and documentation can be found <a href="http://www.openoffice.org/license.html">here</a>.</p>
+  </div>
+  <div id="footera">
+    <!-- Add a banner logo and link to announce an event and to show it in the footer on the left.
+    <div id="asfbanner">
+      <p>
+        <a href="http://apachecon.com/">
+          <img src="http://www.openoffice.org/images/2014-eu-234x60.png" alt="Logo ApacheCon Europe 2014" />
+        </a>
+      </p>
+    </div>
+    -->
+    <div id="poweredbya">
+      <p>
+        <a href="http://www.apache.org/">
+          <img src="/images/feather-small.gif" alt="Apache Feather" />
+        </a>
+      </p>
+    </div>
+    <div id="copyrighta">
+      <p style="text-align:center;">
+        <a href="/license.html">Copyright &amp; License</a> |
+        <a href="/privacy.html">Privacy</a> |
+        <a href="http://survey.openoffice.org/index.php/833861/lang-en">Website Feedback</a> |
+        <a href="/contact_us.html">Contact Us</a> |
+        <a href="/donations.html">Donate</a> |
+        <a href="http://www.apache.org/foundation/thanks.html">Thanks</a>
+      </p>
+      <p>
+        Apache, the Apache feather logo, and OpenOffice are trademarks of The Apache Software Foundation.
+        OpenOffice.org and the seagull logo are registered trademarks of The Apache Software Foundation.
+        Other names appearing on the site may be trademarks of their respective owners.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

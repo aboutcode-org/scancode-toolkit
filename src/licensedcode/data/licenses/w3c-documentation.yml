@@ -1,0 +1,8 @@
+key: w3c-documentation
+short_name: W3C Documentation License
+name: W3C Documentation License
+category: Attribution Restricted
+owner: W3C - World Wide Web Consortium
+homepage_url: http://www.w3.org/TR/REC-DOM-Level-1/copyright-notice.html
+text_urls:
+    - http://www.w3.org/TR/REC-DOM-Level-1/copyright-notice.html

@@ -1,0 +1,9 @@
+key: vim
+short_name: VIM License
+name: VIM License
+category: Copyleft
+owner: VIM
+homepage_url: http://vimdoc.sourceforge.net/htmldoc/uganda.html
+spdx_license_key: Vim
+spdx_full_name: Vim License
+spdx_url: http://spdx.org/licenses/Vim

@@ -1,0 +1,4 @@
+# po2tbl.sed - Convert Uniforum style .po file to lookup table for catgets
+# Copyright (C) 1995 Free Software Foundation, Inc.
+# Ulrich Drepper <drepper@gnu.ai.mit.edu>, 1995.
+#

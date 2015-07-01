@@ -1,0 +1,37 @@
+--- udhcp-0.9.8.orig/dhcpc.h	2002-09-21 04:36:15.000000000 +0800
++++ udhcp-0.9.8/dhcpc.h	2009-07-20 14:43:12.000000000 +0800
+@@ -1,3 +1,4 @@
++/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
+ /* dhcpc.h */
+ #ifndef _DHCPC_H
+ #define _DHCPC_H
+@@ -12,19 +13,28 @@
+ #define INIT_REBOOT	5
+ #define RENEW_REQUESTED 6
+ #define RELEASED	7
+-
++#define INIT_REBOOTING  8
+ 
+ struct client_config_t {
+ 	char foreground;		/* Do not fork */
+ 	char quit_after_lease;		/* Quit after obtaining lease */
+ 	char abort_if_no_lease;		/* Abort if no lease */
++        char abort_if_failed_request;   /* Abort if request was not answered */
++        char abort_if_expired_lease;    /* Abort if lease expires */
++        char no_deconfig_on_expire;     /* Do not run deconfig script when lease expires */
++        char process_zero_source_packet; /* Process ACKs with zero source, this exists for compatibility with certain DHCP relay agents, but is disabled by default, since it makes DoS attacks easier. */
+ 	char background_if_no_lease;	/* Fork to background if no lease */
+ 	char *interface;		/* The name of the interface to use */
+ 	char *pidfile;			/* Optionally store the process ID */
+ 	char *script;			/* User script to run at dhcp events */
+ 	unsigned char *clientid;	/* Optional client id to use */
++        unsigned char *userclientid;	/* Optional user client id to use */
+ 	unsigned char *hostname;	/* Optional hostname to use */
+ 	int ifindex;			/* Index number of the interface to use */
++        char start_init_reboot;         /* Start in INIT-REBOOT state */
++        char start_renew;               /* Renew instead of discover when starting */
++        int address_renewal_behaviour;  /* Release/discover instead of renew */
++        unsigned int leasetime;         /* The requested lease time if > 0 */
+ 	unsigned char arp[6];		/* Our arp address */
+ };
+ 

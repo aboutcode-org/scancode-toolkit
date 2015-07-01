@@ -1,0 +1,14 @@
+key: sun-sissl-1.1
+short_name: >-
+    Sun Industry Standards Source License 1.1
+name: >-
+    Sun Industry Standards Source License 1.1
+category: Proprietary Free
+owner: Oracle (Sun)
+homepage_url: http://www.openoffice.org/licenses/sissl_license.html
+spdx_license_key: SISSL
+spdx_full_name: >-
+    Sun Industry Standards Source License v1.1
+spdx_url: http://spdx.org/licenses/SISSL
+text_urls:
+    - http://www.openoffice.org/licenses/sissl_license.html

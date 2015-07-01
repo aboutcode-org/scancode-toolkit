@@ -1,0 +1,255 @@
+diff -Nup C:\Documents and Settings\Boki\Desktop\head\patches\imagefield/imagefield.install C:\Documents and Settings\Boki\Desktop\head\patches\thumbnails support/imagefield.install
+--- C:\Documents and Settings\Boki\Desktop\head\patches\imagefield/imagefield.install	2007-05-22 21:06:43.156250000 +0200
++++ C:\Documents and Settings\Boki\Desktop\head\patches\thumbnails support/imagefield.install	2007-06-16 18:04:05.843750000 +0200
+@@ -36,9 +36,6 @@ function imagefield_update_1() {
+ }
+ 
+ 
+-
+-
+-
+ /**
+  * Schema change to enable alt and title tags.
+  */
+@@ -73,4 +70,40 @@ function imagefield_update_2() {
+   return $ret;
+ }
+ 
++/**
++ * Schema change to enable thumbnail support
++ */
++
++function imagefield_update_3() {
++  $ret = array();
++
++  include_once(drupal_get_path('module', 'content') .'/content.module');
++  include_once(drupal_get_path('module', 'content') .'/content_admin.inc');
++
++  $fields = content_fields();
++
++  foreach ($fields as $field) {
++    switch ($field['type']) {
++      case 'image':
++        $oldcolumns = array(
++          'fid' => array('type' => 'int', 'not null' => TRUE, 'default' => '0'),
++          'title' => array('type' => 'varchar', 'length' => 255, 'not null' => TRUE, 'default' => "''", 'sortable' => TRUE),
++          'alt' => array('type' => 'varchar', 'length' => 255, 'not null' => TRUE, 'default' => "''", 'sortable' => TRUE),
++        );
++        $newcolumns = array(
++          'fid' => array('type' => 'int', 'not null' => TRUE, 'default' => '0'),
++          'title' => array('type' => 'varchar', 'length' => 255, 'not null' => TRUE, 'default' => "''", 'sortable' => TRUE),
++          'alt' => array('type' => 'varchar', 'length' => 255, 'not null' => TRUE, 'default' => "''", 'sortable' => TRUE),
++          'thumbpath' => array('type' => 'varchar', 'length' => 255, 'not null' => TRUE, 'default' => "''", 'sortable' => TRUE),
++        );
++        content_alter_db_field($field, $oldcolumns, $field, $newcolumns);
++        break;
++    }
++    drupal_set_message('altered: <br /><pre>'. print_r($field, true) .'</pre>');
++  }
++
++
++  db_query('DELETE FROM {cache}');
++  return $ret;
++}
+ 
+diff -Nup C:\Documents and Settings\Boki\Desktop\head\patches\imagefield/imagefield.module C:\Documents and Settings\Boki\Desktop\head\patches\thumbnails support/imagefield.module
+--- C:\Documents and Settings\Boki\Desktop\head\patches\imagefield/imagefield.module	2007-06-16 14:25:37.062500000 +0200
++++ C:\Documents and Settings\Boki\Desktop\head\patches\thumbnails support/imagefield.module	2007-06-16 18:30:44.156250000 +0200
+@@ -60,8 +60,14 @@ function _imagefield_preview($filepath) 
+   foreach ($_SESSION['imagefield'] as $fieldname => $files) {
+     foreach ($files as $delta => $file) {
+       if ($file['preview'] == $filepath) {
++        if($file['preview_thumbnail'] == TRUE) {
++          file_transfer($file['thumbpath'], array('Content-Type: '. mime_header_encode($file['filemime']),
++                                                 'Content-Length: '. $file['thumbsize']));  
++        }
++        else {
+         file_transfer($file['filepath'], array('Content-Type: '. mime_header_encode($file['filemime']),
+                                                'Content-Length: '. $file['filesize']));
++        }
+         exit();
+       }
+     }
+@@ -99,6 +105,7 @@ function imagefield_field_settings($op, 
+         'fid' => array('type' => 'int', 'not null' => TRUE, 'default' => '0'),
+         'title' => array('type' => 'varchar', length => 255, 'not null' => TRUE, 'default' => "''", 'sortable' => TRUE),
+         'alt' => array('type' => 'varchar', length => 255, 'not null' => TRUE, 'default' => "''", 'sortable' => TRUE),
++        'thumbpath' => array('type' => 'varchar', length => 255, 'not null' => TRUE, 'default' => "''", 'sortable' => TRUE),
+       );
+       return $columns;
+   }
+@@ -109,6 +116,7 @@ function imagefield_default_item() {
+     'fid' => 0,
+     'title' => '',
+     'alt' => '',
++    'thumbpath' => '',
+   );
+ }
+ 
+@@ -136,6 +144,18 @@ function imagefield_file_insert($node, &
+ 
+   if (imagefield_check_directory($widget_image_path) && $file = file_save_upload((object)$file, $filepath)) {
+     $file = (array)$file;
++    
++    $thumbpath = file_create_path($widget_image_path) . '/' . _imagefield_create_thumbname($file['filename']);
++        
++    // Move the thumbnail from the temp folder to the images folder.
++    if(is_file($file['thumbpath'])) {
++      file_move($file['thumbpath'], $thumbpath);
++      $file['thumbpath'] = $thumbpath;
++    }
++    else {
++      $file['thumbpath'] = '';  
++    }
++    
+     $file['fid'] = db_next_id('{files}_fid');
+     db_query("INSERT into {files} (fid, nid, filename, filepath, filemime, filesize)
+              VALUES (%d, %d, '%s','%s','%s',%d)",
+@@ -278,6 +298,15 @@ function imagefield_widget_settings($op,
+         '#description' => 
+         t('The maximum allowed image size expressed as WIDTHxHEIGHT (e.g. 640x480). Set to 0 for no restriction.')
+       );
++      $form['thumbnail_resolution'] = array (
++        '#type' => 'textfield', 
++        '#title' => t('Maximum resolution for thumbnails'), 
++        '#default_value' => $widget['thumbnail_resolution'] ? $widget['thumbnail_resolution'] : '120x120',
++        '#size' => 15, 
++        '#maxlength' => 10, 
++        '#description' => 
++        t('The maximum thumbnails size resolution expressed as WIDTHxHEIGHT (e.g. 100x50).')
++      );
+       $form['image_path'] = array(
+         '#type' => 'textfield', 
+         '#title' => t('Image path'), 
+@@ -353,7 +382,7 @@ function imagefield_widget_settings($op,
+       break;
+ 
+     case 'save':
+-      return array('max_resolution', 'image_path', 'file_extensions', 'custom_alt', 'custom_title', 'use_default_image', 'default_image');
++      return array('max_resolution', 'thumbnail_resolution', 'image_path', 'file_extensions', 'custom_alt', 'custom_title', 'use_default_image', 'default_image');
+   }
+ }
+ 
+@@ -431,6 +460,9 @@ function imagefield_clear_field_session(
+       if (is_file($file['filepath'])) {
+         file_delete($file['filepath']);
+       }
++      if (is_file($file['thumbpath'])) {
++	  file_delete($file['thumbpath']);
++      }
+     }
+     unset($_SESSION['imagefield'][$fieldname]);
+   }
+@@ -443,6 +475,7 @@ function _imagefield_file_delete($file, 
+   else {
+     unset($_SESSION['imagefield'][$fieldname][$file['sessionid']]);
+   }
++  file_delete($file['thumbpath']);
+   return file_delete($file['filepath']);
+ }
+ 
+@@ -486,19 +519,52 @@ function _imagefield_widget_prepare_form
+ 
+     if ($valid_image) { 
+       $file = _imagefield_scale_image($file, $field['widget']['max_resolution']);
++      
++      $file['preview_thumbnail'] = TRUE;
++      $file['thumbpath'] = $file['filepath'] . '_thumb';
+ 
+-      // Create the filepath for the image preview
++      // Create the filepath and thumbpath for the image preview
+       if (function_exists('token_replace')) {
+         // use tokenized paths if token module is installed.
+         global $user;
+-        $filepath = file_create_filename($file['filename'], file_create_path(token_replace($field['widget']['image_path'], 'user', $user)));
++        $path = file_create_path(token_replace($field['widget']['image_path'], 'user', $user));
+       }
+       else {
+-        $filepath = file_create_filename($file['filename'], file_create_path($field['widget']['image_path']));
++        $path = file_create_path($field['widget']['image_path']);
++      }
++      
++      $filepath = file_create_filename($file['filename'], $path);
++      $thumbpath = file_create_filename(_imagefield_create_thumbname($file['filename']), $path);
++      
++      // Sometimes thumbnail_resolution is empty, if after module update the field settings aren't resaved
++      $thumbnail_resolution = $field['widget']['thumbnail_resolution'] ? $field['widget']['thumbnail_resolution'] : '120x120';
++      list($twidth, $theight) = explode('x', str_replace('X', 'x', $thumbnail_resolution));
++      list($width, $height, $type, $image_attributes) = @getimagesize($file['filepath']);
++      
++       // only attempt to create the thumb if the image is bigger than the thumb size
++      if($twidth < $width && $theight < $height) {
++        // Create the thumbnail and place it in the temp folder
++        if(!image_scale($file['filepath'], $file['thumbpath'], $twidth, $theight)) {
++          drupal_set_message('The thumbnail for ' . $file['filename'] . ' could not be created.', 'error');
++        }
++        else {
++          $file['thumbsize'] = filesize($file['thumbpath']);
++        }
++      }
++      
++      if(!is_file($file['thumbpath'])) {
++        $file['preview_thumbnail'] = FALSE;
++        unset($file['thumbpath']);
+       }
+ 
+       $file['fid'] = 'upload';
+-      $file['preview'] = $filepath;
++      
++      if($file['preview_thumbnail'] == TRUE) {
++        $file['preview'] = $thumbpath;
++      }
++      else {
++        $file['preview'] = $filepath;
++      }
+           
+       // If a single field, mark any other images for deletion and delete files in session
+       if (!$field['multiple']) {
+@@ -668,6 +734,7 @@ function _imagefield_widget_form($node, 
+       $form[$fieldname][$delta]['filepath'] = array('#type' => 'value',  '#value' => $file['filepath']);
+       $form[$fieldname][$delta]['filemime'] = array('#type' => 'value',  '#value' => $file['filemime']);
+       $form[$fieldname][$delta]['filesize'] = array('#type' => 'value',  '#value' => $file['filesize']);
++      $form[$fieldname][$delta]['thumbpath'] = array('#type' => 'value',  '#value' => $file['thumbpath']);
+       $form[$fieldname][$delta]['fid'] = array('#type' => 'value',  '#value' => $file['fid']);
+     }
+   }
+@@ -816,7 +883,28 @@ function theme_imagefield_edit_image_row
+ 
+ function theme_imagefield_image($file, $alt = '', $title = '', $attributes = NULL, $getsize = TRUE) {
+   $file = (array)$file;
+-  if (is_file($file['filepath']) && (!$getsize || (list($width, $height, $type, $image_attributes) = @getimagesize($file['filepath'])))) {
++  
++  if (is_file($file['thumbpath']) && (!$getsize || (list($width, $height, $type, $image_attributes) = @getimagesize($file['thumbpath'])))) {
++     // strings to be added before and after the image tag
++    $prefix = '';
++    $sufix = '';
++  
++    if($file['fid'] != 'upload') {
++      $big_image_url = file_create_url($file['filepath']);
++      $prefix = '<a href="' . $big_image_url . '">';
++      $sufix = '</a>';
++    }
++    
++    $attributes = drupal_attributes($attributes);
++
++    $path = $file['fid'] == 'upload' ? $file['preview'] : $file['thumbpath'];
++    $alt = empty($alt) ? $file['alt'] : $alt;
++    $title = empty($title) ? $file['title'] : $title;
++    
++    $url = file_create_url($path);
++    return $prefix . '<img src="'. check_url($url) .'" alt="'.
++        check_plain($alt) .'" title="'. check_plain($title) .'" '. $image_attributes . $attributes .' />' . $sufix;
++  } else if (is_file($file['filepath']) && (!$getsize || (list($width, $height, $type, $image_attributes) = @getimagesize($file['filepath'])))) {
+     $attributes = drupal_attributes($attributes);
+     
+     $path = $file['fid'] == 'upload' ? $file['preview'] : $file['filepath'];
+@@ -932,4 +1020,8 @@ function imagefield_js() {
+   print drupal_to_js(array('status' => TRUE, 'data' => $output));
+   exit;
+ 
++}
++
++function _imagefield_create_thumbname($filename) {
++  return preg_replace('/(.+)\.([a-zA-Z]+)/','${1}_thumbnail.${2}',$filename);
+ }
+\ No newline at end of file

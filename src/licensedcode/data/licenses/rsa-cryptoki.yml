@@ -1,0 +1,8 @@
+key: rsa-cryptoki
+short_name: RSA Cryptoki License
+name: RSA Cryptoki License
+category: Attribution
+owner: RSA (the Security Division of EMC)
+homepage_url: http://www.rsa.com/rsalabs/node.asp?id=2133
+text_urls:
+    - http://www.rsa.com/rsalabs/node.asp?id=2133

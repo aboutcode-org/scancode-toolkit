@@ -1,0 +1,3 @@
+[('pngconf.h.orig',
+  'pngconf.h',
+  '--- pngconf.h.orig\n+++ pngconf.h\n@@ -17,6 +17,20 @@\n#ifndef PNGCONF_H\n#define PNGCONF_H\n\n+#ifndef PNG_NO_WRITE_SUPPORTED\n+#  define PNG_NO_WRITE_SUPPORTED\n+#endif\n+\n+#ifndef PNG_NO_MNG_FEATURES\n+#  define PNG_NO_MNG_FEATURES\n+#endif\n+\n+#ifdef __MIPSEL\n+#  ifndef PNG_NO_FLOATING_POINT_SUPPORTED\n+#    define PNG_NO_FLOATING_POINT_SUPPORTED\n+#  endif\n+#endif\n+\n#define PNG_1_2_X\n\n/*')]

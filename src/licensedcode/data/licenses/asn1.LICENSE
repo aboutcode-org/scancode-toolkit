@@ -1,0 +1,15 @@
+ASN.1 Object Dumping Code License
+
+ASN.1 object dumping code, copyright Peter Gutmann <pgut001@cs.auckland.ac.nz>, based on ASN.1 dump program by David Kemp <dpkemp@missi.ncsc.mil>, with contributions from various people including Matthew Hamrick <hamrick@rsa.com>, Bruno Couillard <bcouillard@chrysalis-its.com>, Hallvard Furuseth <h.b.furuseth@usit.uio.no>, Geoff Thorpe <geoff@raas.co.nz>, David Boyce <d.boyce@isode.com>, John Hughes <john.hughes@entegrity.com>, Life is hard, and then you die <ronald@trustpoint.com>, Hans-Olof Hermansson <hans-olof.hermansson@postnet.se>, Tor Rustad <Tor.Rustad@bbs.no>, Kjetil Barvik <kjetil.barvik@bbs.no>, James Sweeny <jsweeny@us.ibm.com>, Chris Ridd <chris.ridd@isode.com>, and several other people whose names I've misplaced (a number of those email addresses probably no longer work, since this code has been around for awhile).
+
+Available from http://www.cs.auckland.ac.nz/~pgut001/dumpasn1.c Last updated 7 January 2009 (version 20090107, if you prefer it that way). To build under Windows, use 'cl /MD dumpasn1.c'. To build on OS390 or z/OS, use '/bin/c89 -D OS390 -o dumpasn1 dumpasn1.c'.
+
+This code grew slowly over time without much design or planning, and with extra features being tacked on as required. It's not representative of my normal coding style.
+
+This version of dumpasn1 requires a config file dumpasn1.cfg to be present in the same location as the program itself or in a standard directory where binaries live (it will run without it but will display a warning message, you can configure the path either by hardcoding it in or using an environment variable as explained further down). The config file is available from http://www.cs.auckland.ac.nz/~pgut001/dumpasn1.cfg
+
+This code assumes that the input data is binary, having come from a MIME-aware mailer or been piped through a decoding utility if the original format used base64 encoding. If you need to decode it, it's recommended that you use a utility like uudeview, which will strip virtually any kind of encoding (MIME, PEM, PGP, whatever) to recover the binary original.
+
+You can use this code in whatever way you want, as long as you don't try to claim you wrote it.
+
+Editing notes: Tabs to 4, phasers to stun (and in case anyone wants to complain about that, see "Program Indentation and Comprehensiblity", Richard Miara, Joyce Musselman, Juan Navarro, and Ben Shneiderman, Communications of the ACM, Vol.26, No.11 (November 1983), p.861)

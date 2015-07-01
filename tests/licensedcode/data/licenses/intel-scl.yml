@@ -1,0 +1,5 @@
+licenses:
+    - intel-scl
+notes: >-
+    From http://software.intel.com/en-us/articles/intel-64-architecture-processor-topology-enumeration
+sort: true

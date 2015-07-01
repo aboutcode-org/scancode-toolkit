@@ -1,0 +1,37 @@
+Index: linux-2.6.23/drivers/i2c/algos/i2c-algo-bit.c
+===================================================================
+--- linux-2.6.23.orig/drivers/i2c/algos/i2c-algo-bit.c
++++ linux-2.6.23/drivers/i2c/algos/i2c-algo-bit.c
+@@ -18,7 +18,7 @@
+     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.		     */
+ /* ------------------------------------------------------------------------- */
+ 
+-/* With some changes from Frodo Looijaard <frodol@dds.nl>, Kyösti Mälkki
++/* With some changes from Frodo Looijaard <frodol@dds.nl>, Kyï¿½sti Mï¿½lkki
+    <kmalkki@cc.hut.fi> and Jean Delvare <khali@linux-fr.org> */
+ 
+ #include <linux/kernel.h>
+@@ -33,12 +33,11 @@
+ 
+ 
+ /* ----- global defines ----------------------------------------------- */
+-
+ #ifdef DEBUG
+ #define bit_dbg(level, dev, format, args...) \
+ 	do { \
+ 		if (i2c_debug >= level) \
+-			dev_dbg(dev, format, ##args); \
++		dev_dbg(dev, format, ##args); \
+ 	} while (0)
+ #else
+ #define bit_dbg(level, dev, format, args...) \
+@@ -568,6 +567,9 @@ bailout:
+ 		bit_dbg(3, &i2c_adap->dev, "emitting stop condition\n");
+ 		i2c_stop(adap);
+ 	}
++	if (pmsg->flags & I2C_M_NOSTOP) {
++		set_lasti2cwas_nostop(adap);
++	}
+ 	return ret;
+ }
+ 

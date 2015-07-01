@@ -1,0 +1,8 @@
+BlueZ D-Bus Adapter API description
+***********************************
+
+Copyright (C) 2004-2010  Marcel Holtmann <marcel@holtmann.org>
+Copyright (C) 2005-2006  Johan Hedberg <johan.hedberg@nokia.com>
+Copyright (C) 2005-2006  Claudio Takahasi <claudio.takahasi@indt.org.br>
+Copyright (C) 2006-2007  Luiz von Dentz <luiz.dentz@indt.org.br>
+

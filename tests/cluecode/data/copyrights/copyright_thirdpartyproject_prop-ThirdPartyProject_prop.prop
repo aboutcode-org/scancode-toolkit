@@ -1,0 +1,9 @@
+# Copyright 2010 Google Inc. All Rights Reserved.
+#Fri Jul 16 10:03:08 PDT 2010
+currentVersion=Unknown
+version=main repo in andorid open source
+isNative=true
+name=astl
+keywords=astl
+onDevice=true
+homepage=http\://source.android.com

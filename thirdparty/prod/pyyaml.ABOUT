@@ -1,0 +1,16 @@
+about_resource: PyYAML-3.11-py2.py3-none-any.whl
+download_url: https://pypi.python.org/packages/source/P/PyYAML/PyYAML-3.11.tar.gz#md5=f50e08ef0fe55178479d3a618efe21db
+version: 3.11
+
+name: PyYAML
+
+homepage: http://pyyaml.org/wiki/PyYAML
+copyright: Copyright (c) 2006 Kirill Simonov
+owner: Kirill Simonov
+contact: xi@resolvent.net
+
+license: mit
+license_file: pyyaml.LICENSE
+
+description: YAML parser and emitter for Python
+

@@ -1,0 +1,11 @@
+--- libdaemon-0.13/configure	2008-07-29 04:05:33.000000000 +0530
++++ libdaemon-0.13/configure	2009-05-06 12:42:24.000000000 +0530
+@@ -22133,7 +22133,7 @@
+ if test "${ac_cv_func_setpgrp_void+set}" = set; then
+   $as_echo_n "(cached) " >&6
+ else
+-  if test "$cross_compiling" = yes; then
++  if test "$cross_compiling_no" = yes; then
+   { { $as_echo "$as_me:$LINENO: error: cannot check setpgrp when cross compiling" >&5
+ $as_echo "$as_me: error: cannot check setpgrp when cross compiling" >&2;}
+    { (exit 1); exit 1; }; }

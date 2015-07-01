@@ -1,0 +1,6 @@
+            VALUE "FileDescription", "SDL\0"
+            VALUE "FileVersion", "1, 2, 12, 0\0"
+            VALUE "InternalName", "SDL\0"
+            VALUE "LegalCopyright", "Copyright © 2007 Sam Lantinga\0"
+            VALUE "OriginalFilename", "SDL.dll\0"
+            VALUE "ProductName", "Simple DirectMedia Layer\0"

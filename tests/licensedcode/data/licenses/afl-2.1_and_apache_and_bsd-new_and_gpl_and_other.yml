@@ -1,0 +1,8 @@
+licenses:
+    - afl-2.1
+    - apache
+    - bsd-new
+    - gpl
+    - lgpl
+    - mpl
+sort: true

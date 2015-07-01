@@ -1,0 +1,15 @@
+key: opengroup
+short_name: Open Group Test Suite License
+name: Open Group Test Suite License
+category: Copyleft Limited
+owner: Open Group
+homepage_url: http://opensource.org/licenses/opengroup.php
+spdx_license_key: OGTSL
+spdx_full_name: Open Group Test Suite License
+spdx_url: http://spdx.org/licenses/OGTSL
+spdx_notes: This license is OSI certified.
+text_urls:
+    - http://opensource.org/licenses/opengroup.php
+osi_url: http://opensource.org/licenses/opengroup.php
+other_urls:
+    - http://www.opengroup.org/testing/downloads/The_Open_Group_TSL.txt

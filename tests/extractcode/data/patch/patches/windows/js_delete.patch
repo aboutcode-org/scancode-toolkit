@@ -1,0 +1,334 @@
+diff -Nup C:\Documents and Settings\Boki\Desktop\head\patches\imagefield/imagefield.css C:\Documents and Settings\Boki\Desktop\head\patches\js delete/imagefield.css
+--- C:\Documents and Settings\Boki\Desktop\head\patches\imagefield/imagefield.css	2007-05-22 21:06:14.078125000 +0200
++++ C:\Documents and Settings\Boki\Desktop\head\patches\js delete/imagefield.css	2007-06-16 20:56:48.812500000 +0200
+@@ -28,3 +28,11 @@ div.imagefield-edit-image-detail {
+ div.imagefield-edit-image-flags div.form-item {
+ 	float: right;
+ }
++
++.delete-button {
++  visibility: hidden;
++}
++
++html.js .delete-button {
++  visibility: visible;
++}
+diff -Nup C:\Documents and Settings\Boki\Desktop\head\patches\imagefield/imagefield.module C:\Documents and Settings\Boki\Desktop\head\patches\js delete/imagefield.module
+--- C:\Documents and Settings\Boki\Desktop\head\patches\imagefield/imagefield.module	2007-06-16 14:25:37.062500000 +0200
++++ C:\Documents and Settings\Boki\Desktop\head\patches\js delete/imagefield.module	2007-06-16 21:41:18.953125000 +0200
+@@ -540,6 +540,7 @@ function _imagefield_widget_prepare_form
+ function _imagefield_widget_form($node, $field, &$items) {
+   drupal_add_js('misc/progress.js');
+   drupal_add_js('misc/upload.js');
++  drupal_add_js(drupal_get_path('module', 'imagefield') . '/imagefield_delete.js');
+ 
+   $fieldname = $field['field_name'];
+   drupal_add_css(drupal_get_path('module', 'imagefield') .'/imagefield.css');
+@@ -586,6 +587,7 @@ function _imagefield_widget_form($node, 
+   // @todo split following if block into its own function.
+   // Store the file data object to be carried on.
+   if (is_array($items) && count($items)) {
++    $displayed_entries = 0;
+     foreach($items as $delta => $file) {
+       if ($file['filepath'] && !$file['flags']['delete']) {
+         $form[$fieldname][$delta] = array (
+@@ -597,19 +599,12 @@ function _imagefield_widget_form($node, 
+           '#title' => t('Delete'),
+           '#default_value' => 0,
+         );
+-       
+-        if (function_exists('token_replace')) { 
+-          global $user;
+-          $filename = $file['fid'] == 'upload' ? file_create_filename($file['filename'], file_create_path(token_replace($field['widget']['image_path'], 'user', $user))) : $file['filepath'];
+-        } else {
+-          $filename = $file['fid'] == 'upload' ? file_create_filename($file['filename'], file_create_path($field['widget']['image_path'])) : $file['filepath'];
+-        }
+         
+         $form[$fieldname][$delta]['preview'] = array(
+           '#type' => 'markup',
+-          '#value' => theme('imagefield_image', $file, $file['alt'], $file['title'], array('width' => '150'), FALSE),
++          '#value' => theme('imagefield_image', $file, $file['alt'], $file['title'], array(/*'width' => '150'*/), FALSE, TRUE),
+         );
+-        
++
+         $form[$fieldname][$delta]['description'] = array(
+           '#type' => 'markup',
+           '#value' => '<strong>' . t('Filename: ') . '</strong>' . $file['filename'],
+@@ -630,7 +625,7 @@ function _imagefield_widget_form($node, 
+             '#size' => 10,
+           );
+         }
+-        
++
+         $form[$fieldname][$delta]['title'] = array(
+           '#type' => 'hidden',
+           '#value' => $file['filename'],
+@@ -646,7 +641,7 @@ function _imagefield_widget_form($node, 
+             '#size' => 10,
+           );
+         }
+-        
++
+         // Special handling for single value fields
+         if (!$field['multiple']) {
+           $form[$fieldname][$delta]['replace'] = array(
+@@ -654,22 +649,47 @@ function _imagefield_widget_form($node, 
+             '#value' => t('If a new image is chosen, the current image will be replaced upon submitting the form.'),
+           );
+         }
++        
++        $displayed_entries++;
+       }
+       elseif ($file['filepath'] && $file['flags']['delete']) {
+         // Hide all the form values if this item is marked for deletion
+-        $form[$fieldname][$delta]['flags']['delete'] = array('#type' => 'value', '#value' => $file['flags']['delete']);
+-        $form[$fieldname][$delta]['title'] = array('#type' => 'value', '#value' => $file['title']);
+-        $form[$fieldname][$delta]['alt'] = array('#type' => 'value', '#value' => $file['alt']);
++        $form[$fieldname][$delta]['flags']['delete'] = array('#type' => 'hidden', '#value' => $file['flags']['delete']);
++        $form[$fieldname][$delta]['title'] = array('#type' => 'hidden', '#value' => $file['title']);
++        $form[$fieldname][$delta]['alt'] = array('#type' => 'hidden', '#value' => $file['alt']);
+       }
+       if (isset($file['sessionid'])) {
+         $form[$fieldname][$delta]['sessionid'] = array('#type' => 'value',  '#value' => $file['sessionid']);
+       }
++    
+       $form[$fieldname][$delta]['filename'] = array('#type' => 'value',  '#value' => $file['filename']);
+       $form[$fieldname][$delta]['filepath'] = array('#type' => 'value',  '#value' => $file['filepath']);
+       $form[$fieldname][$delta]['filemime'] = array('#type' => 'value',  '#value' => $file['filemime']);
+       $form[$fieldname][$delta]['filesize'] = array('#type' => 'value',  '#value' => $file['filesize']);
+       $form[$fieldname][$delta]['fid'] = array('#type' => 'value',  '#value' => $file['fid']);
+     }
++    
++    if($displayed_entries > 0) {
++      $form[$fieldname]['delete'] = array(
++         '#tree' => FALSE,
++        '#prefix' => '<div id="'. form_clean_id($fieldname .'-delete-hide') .'" style="float:right; padding-bottom:50px;">',
++        '#suffix' => '</div>',
++        '#weight' => 41
++        );
++  
++      $form[$fieldname]['delete']['delete'] = array(
++        '#type' => 'button',
++        '#value' => t('Delete selected images.'),
++        '#name' => 'cck_imagefield_'.$fieldname.'_op',
++        '#id' => form_clean_id($fieldname .'-delete-button'),
++        '#tree' => FALSE,
++        '#weight' => 40,
++        '#attributes' => array('class' => 'delete-button')
++       );
++        
++      // The class triggers the js delete behaviour.
++      $form[$fieldname .'-delete-url'] = array('#type' => 'hidden', '#value' => url('imagefield/js/delete', NULL, NULL, TRUE), '#attributes' => array('class' => 'delete'));
++    }
+   }
+ 
+   // The class triggers the js upload behaviour.
+@@ -932,4 +952,81 @@ function imagefield_js() {
+   print drupal_to_js(array('status' => TRUE, 'data' => $output));
+   exit;
+ 
++}
++
++/**
++ * Menu-callback for JavaScript-based delete operations.
++ */
++function imagefield_js_delete() {
++  // Parse fieldname from submit button.
++  $matches = array();
++  foreach(array_keys($_POST) as $key) {
++    if (preg_match('/cck_imagefield_(.*)_op/', $key, $matches)) {
++      break;
++    }
++  }
++  $fieldname = $matches[1];
++
++  $node = (object)$_POST;
++  // Load field data.
++  $field = content_fields($fieldname, $node->type);
++  // Load fid's stored by content.module
++  $items = array();
++  $values  = content_field('load', $node, $field, $items, FALSE, FALSE);
++  $items = $values[$fieldname];
++
++  // Load additional field data
++  imagefield_field('load', $node, $field, $items, FALSE, FALSE);
++  _imagefield_widget_prepare_form_values($node, $field, $items);
++
++  foreach($node->{$fieldname} as $key => $image) {
++    if($image['flags']['delete'] == TRUE) {
++      // Delete the image
++      _imagefield_file_delete($items[$key], $fieldname);
++      
++      // Remove the image from the CCK table.
++      if (is_numeric($items[$key]['fid'])) {
++        $db_info = content_database_info($field);
++        $table_name = $db_info['table'];
++        
++        $fid_name = $fieldname . '_fid';
++        $title_name = $fieldname . '_title';
++        $alt_name = $fieldname . '_alt';
++        $thumbpath_name = $fieldname . '_thumbpath';
++        
++        if(strpos($table_name, 'content_field') !== false) {
++          db_query('DELETE FROM {' . $table_name . '} WHERE ' . $fid_name . ' = %d', $items[$key]['fid']);
++        }
++        else if(strpos($table_name, 'content_type') !== false) {
++          db_query('UPDATE {' . $table_name . '} SET ' . $fid_name . ' = "", ' . $title_name . ' = "", ' . $alt_name . ' = "", ' . $thumbpath_name . ' = "" WHERE nid = %d', array($node->nid));  
++        }
++      }
++      
++      // Remove it from the $items array so it doesn't get displayed in the form.
++      unset($items[$key]);  
++    }
++    // Set the alt and title from POST
++    $items[$key]['alt'] = $image['alt'];
++    $items[$key]['title'] = $image['title'];
++  }
++  
++  // Clear the cache
++  cache_clear_all('content:'. $node->nid .':'. $node->vid, 'cache');
++  cache_clear_all('content:'. $node->nid .':'. $node->vid, 'cache_content');
++    
++  // Get our new form baby, yeah tiger, get em!
++  $form = _imagefield_widget_form($node, $field, $items);
++
++  foreach (module_implements('form_alter') as $module) {
++    $function = $module .'_form_alter';
++    $function('imagefield_js_delete', $form);
++  }
++  $form = form_builder('imagefield_js_delete', $form);
++
++  $output =  theme('status_messages') . drupal_render($form);
++
++  // We send the updated file attachments form.
++  print drupal_to_js(array('status' => TRUE, 'data' => $output));
++
++  exit;
+ }
+\ No newline at end of file
+diff -Nup C:\Documents and Settings\Boki\Desktop\head\patches\imagefield/imagefield_delete.js C:\Documents and Settings\Boki\Desktop\head\patches\js delete/imagefield_delete.js
+--- C:\Documents and Settings\Boki\Desktop\head\patches\imagefield/imagefield_delete.js	1970-01-01 01:00:00.000000000 +0100
++++ C:\Documents and Settings\Boki\Desktop\head\patches\js delete/imagefield_delete.js	2007-06-05 01:37:01.906250000 +0200
+@@ -0,0 +1,121 @@
++/**
++ * Extend jsUpload.oncomplete from upload.js to attach the needed behaviour.
++ */
++Drupal.jsUpload.prototype.jsUploadCompleteOriginal = Drupal.jsUpload.prototype.oncomplete;
++
++Drupal.jsUpload.prototype.oncomplete = function (data) {
++  this.jsUploadCompleteOriginal(data);
++  Drupal.deleteAutoAttach();
++}
++
++
++/**
++ * Attaches the delete behaviour to the delete form.
++ */
++Drupal.deleteAutoAttach = function() {
++  var button = new Array();
++  var wrapper = new Array();
++  var hide = new Array;
++  var deletes = new Array();
++
++  $('input.delete').each(function () {
++    var uri = this.value;
++
++    // Extract the base name from the id (edit-attach-url -> attach).
++    var base = this.id.substring(5, this.id.length - 11);
++
++    button[base] = base + '-delete-button';
++    wrapper[base] = base + '-attach-wrapper';
++    hide[base] = base + '-delete-hide';
++    
++    if($('#' + button[base]).get(0)) { // bugfix for FF, see if the button exists
++        deletes[base] = new Drupal.jsDelete(uri, button[base], wrapper[base], hide[base], base);
++    }
++  });
++}
++
++/**
++ * JS delete object.
++ */
++Drupal.jsDelete = function(uri, button, wrapper, hide, base) {
++  // Note: these elements are replaced after an delete, so we re-select them
++  // everytime they are needed.
++  this.button = '#'+ button;
++  this.wrapper = '#'+ wrapper;
++  this.hide = '#'+ hide;
++  Drupal.redirectFormButton(uri, $(this.button).get(0), this, base);
++}
++
++/**
++ * Handler for the form redirection submission.
++ */
++Drupal.jsDelete.prototype.onsubmit = function () {
++  // Insert progressbar and stretch to take the same space.
++  this.progress = new Drupal.progressBar('deleteprogress');
++  this.progress.setProgress(-1, 'Deleting...');
++
++  var hide = this.hide;
++  var el = this.progress.element;
++  var offset = $(hide).get(0).offsetHeight;
++  $(el).css({
++    width: '10em',
++    height: offset +'px',
++    paddingTop: '10px',
++    display: 'none',
++    float: 'right'
++  })
++  
++  positions = Drupal.absolutePosition($(this.hide).get(0));
++  
++  $(hide).css({
++    position: 'absolute',
++    left: positions.x+'px',
++    top: positions.y+'px'
++  });
++
++  $(hide).after(el);
++  $(hide).fadeOut('slow');
++  $(el).fadeIn('slow');
++}
++
++/**
++ * Handler for the form redirection completion.
++ */
++Drupal.jsDelete.prototype.oncomplete = function (data, base) {
++  Drupal.freezeHeight(); // Avoid unnecessary scrolling
++  
++  // Place HTML into temporary div
++  var div = document.createElement('div');
++  $(div).html(data);
++  
++  // Replace form and re-attach behaviour
++  $(div).hide();
++  $(this.wrapper).html('');
++  $(this.wrapper).append(div);
++  $(div).fadeIn('slow');
++  Drupal.deleteAutoAttach();
++  Drupal.uploadAutoAttach();
++
++  Drupal.unfreezeHeight();
++}
++
++/**
++ * Handler for the form redirection error.
++ */
++Drupal.jsDelete.prototype.onerror = function (error) {
++  alert('An error occurred:\n\n'+ error);
++  // Remove progressbar
++  $(this.progress.element).remove();
++  this.progress = null;
++  // Undo hide
++  $(this.hide).css({
++    position: 'static',
++    left: '0px'
++  });
++}
++
++
++// Global killswitch
++if (Drupal.jsEnabled) {
++  $(document).ready(Drupal.deleteAutoAttach);
++}
+\ No newline at end of file

@@ -1,0 +1,14 @@
+key: lppl-1.3c
+short_name: LPPL 1.3c
+name: LaTeX Project Public License v1.3c
+category: Copyleft
+owner: LaTeX
+homepage_url: http://www.latex-project.org/lppl/lppl-1-3c.txt
+spdx_license_key: LPPL-1.3c
+spdx_full_name: LaTeX Project Public License v1.3c
+spdx_url: http://spdx.org/licenses/LPPL-1.3c
+spdx_notes: |-
+    This license was released: 4 May 2008
+    This license is OSI certified.
+text_urls:
+    - http://www.latex-project.org/lppl/lppl-1-3c.txt

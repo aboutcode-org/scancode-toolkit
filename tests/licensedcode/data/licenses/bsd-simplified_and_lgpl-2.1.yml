@@ -1,0 +1,5 @@
+licenses:
+    - bsd-simplified
+    - lgpl-2.1
+expected_failure: yes
+sort: true

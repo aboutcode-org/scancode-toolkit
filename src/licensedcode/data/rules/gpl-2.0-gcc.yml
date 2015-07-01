@@ -1,0 +1,6 @@
+licenses:
+    - gpl-2.0-gcc
+template: yes
+notes: >-
+    A GPL with GCC exception, Apple variant. 
+    from http://www.opensource.apple.com/source/gcc_os/gcc_os-1671/libiberty/dyn-string.c

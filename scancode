@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# Copyright (c) 2015 nexB Inc. http://www.nexb.com/ - All rights reserved.
+#
+
+# A minimal shell wrapper to the CLI entry point
+
+SCANCODE_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$SCANCODE_ROOT_DIR"
+
+SCANCODE_CONFIGURED_PYTHON=$SCANCODE_ROOT_DIR/bin/python
+if [ ! -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
+    echo "* Configuring ScanCode ..."
+    CONFIGURE_QUIET=1 $SCANCODE_ROOT_DIR/configure etc/conf
+fi
+
+$SCANCODE_ROOT_DIR/bin/scancode "$@"

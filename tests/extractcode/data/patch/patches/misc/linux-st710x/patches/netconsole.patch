@@ -1,0 +1,104 @@
+--- linux-2.6.23/drivers/net/netconsole.c.orig	2009-02-27 14:23:52.000000000 +0100
++++ linux-2.6.23/drivers/net/netconsole.c	2009-02-27 14:23:14.000000000 +0100
+@@ -62,24 +62,83 @@
+ 	.remote_mac = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff},
+ };
+ static int configured = 0;
++static char *message_buffer = NULL;
++static unsigned int message_buffer_length = 0;
++static unsigned int packet_number = 1;
+ 
+-#define MAX_PRINT_CHUNK 1000
++static void queue_message(const char *message, unsigned int length)
++{
++	if (!message_buffer) {
++		/* Allocate space for the new buffer but also first add
++		   add a header containing packet number and time stamp
++		   (secs, usecs). Also reserve space for a NULL termination
++		   at the end. */
++		unsigned int tmp = 0;
++		unsigned long long current_time =
++			(unsigned long long)jiffies * (1000000000 / HZ);
++		unsigned long usecs = do_div(current_time, 1000000000) / 1000;
++		message_buffer_length = 3 * sizeof(unsigned int) + length + 1;
++		message_buffer = kmalloc(message_buffer_length, GFP_KERNEL);
++		tmp = htonl(packet_number++);
++		memcpy(message_buffer, &tmp, sizeof(unsigned int));
++		tmp = htonl(current_time);
++		memcpy(message_buffer + sizeof(unsigned int), &tmp,
++		       sizeof(unsigned int));
++		tmp = htonl(usecs);
++		memcpy(message_buffer + 2 * sizeof(unsigned int), &tmp,
++		       sizeof(unsigned int));
++		memcpy(message_buffer + 3 * sizeof(unsigned int), message,
++		       length);
++	}
++	else {
++		/* Reallocate space for the new message, remove the
++		   NULL termination at the end of the old message queue,
++		   copy the new message to the end and include a new
++		   NULL termination again. */
++		char *tmp = kmalloc(message_buffer_length - 1, GFP_KERNEL);
++		memcpy(tmp, message_buffer, message_buffer_length - 1);
++		kfree(message_buffer);
++		message_buffer = kmalloc(message_buffer_length + length,
++					 GFP_KERNEL);
++		memcpy(message_buffer, tmp, message_buffer_length - 1);
++		memcpy(message_buffer + message_buffer_length - 1, message,
++		       length);
++		message_buffer_length += length;
++		kfree(tmp);
++	}
++
++	/* Note: The NULL termination is included inside the message_buffer */
++	message_buffer[message_buffer_length - 1] = '\0';
++}
+ 
+ static void write_msg(struct console *con, const char *msg, unsigned int len)
+ {
+-	int frag, left;
+ 	unsigned long flags;
++	unsigned int pos = 0;
++	unsigned int new_starting_point = 0;
+ 
+ 	if (!np.dev)
+ 		return;
+ 
+ 	local_irq_save(flags);
+ 
+-	for(left = len; left; ) {
+-		frag = min(left, MAX_PRINT_CHUNK);
+-		netpoll_send_udp(&np, msg, frag);
+-		msg += frag;
+-		left -= frag;
++	/* Queue messages up to the next new line */
++	while (pos < len) {
++		if (msg[pos] == '\n') {
++			queue_message(msg + new_starting_point,
++				      pos - new_starting_point);
++			netpoll_send_udp(&np, message_buffer,
++					 message_buffer_length);
++			kfree(message_buffer);
++			message_buffer = NULL;
++			message_buffer_length = 0;
++			new_starting_point = pos + 1;
++		}
++		++pos;
++	}
++	if (new_starting_point < len) {
++		queue_message(msg + new_starting_point,
++			      len - new_starting_point);
+ 	}
+ 
+ 	local_irq_restore(flags);
+--- linux-2.6.23/net/core/netpoll.c.orig	2009-02-24 16:26:49.000000000 +0100
++++ linux-2.6.23/net/core/netpoll.c	2009-02-24 18:29:55.000000000 +0100
+@@ -710,7 +710,7 @@
+ 				       np->name);
+ 				break;
+ 			}
+-			cond_resched();
++			schedule();
+ 		}
+ 
+ 		/* If carrier appears to come up instantly, we don't

@@ -1,0 +1,9 @@
+key: gnuplot
+short_name: gnuplot License
+name: gnuplot License
+category: Copyleft Limited
+owner: gnuplot Project
+homepage_url: https://fedoraproject.org/wiki/Licensing:Gnuplot?rd=Licensing/Gnuplot
+spdx_license_key: gnuplot
+spdx_full_name: gnuplot License
+spdx_url: http://spdx.org/licenses/gnuplot

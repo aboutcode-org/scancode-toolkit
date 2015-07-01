@@ -1,0 +1,15 @@
+key: afl-3.0
+short_name: AFL 3.0
+name: Academic Free License 3.0
+category: Attribution
+owner: Lawrence Rosen
+homepage_url: http://opensource.org/licenses/afl-3.0.php
+spdx_license_key: AFL-3.0
+spdx_full_name: Academic Free License v3.0
+spdx_url: http://spdx.org/licenses/AFL-3.0
+spdx_notes: This license is OSI certified.
+text_urls:
+    - http://www.rosenlaw.com/AFL3.0.htm
+    - http://www.opensource.org/licenses/afl-3.0.php
+osi_url: http://opensource.org/licenses/afl-3.0.php
+faq_url: http://www.rosenlaw.com/OSL3.0-explained.pdf

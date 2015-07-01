@@ -1,0 +1,127 @@
+Java Servlet Implementation Classes
+Version 2.1.1
+Binary Code License
+
+This binary code license ("License") contains rights and restrictions 
+associated with use of the accompanying Java Servlet Implementation Classes 
+software and documentation ("Software").  Read the License carefully before 
+using the Software.  By using the Software you agree to the terms and 
+conditions of this License.
+
+ 1. Limited License Grant.  By agreeing to this License, Sun grants to you 
+    ("Licensee") a non-exclusive, nontransferable limited license to use the 
+    Software without fee for evaluation of the Software and for development 
+    of applications which utilize the Software.  Licensee may make one archival 
+    copy of the Software and may redistribute complete, unmodified copies of 
+    the Software to software developers within the Licensee's organization to 
+    avoid unnecessary download time provided that this License conspicuously 
+    appear with all copies of the Software.  Except for the foregoing and the 
+    distribution rights authorized for the Servlet Classes specified below, 
+    Licensee may not redistribute the Software in whole or in part, either 
+    separately or included with a product.
+
+ 2. License to Distribute Servlet Classes.  Licensee is granted a royalty-free 
+    right to reproduce and distribute the binary code form of the servlet 
+    classes contained in the Software in the archive file "servlet.jar" 
+    ("Servlet Classes"), provided that Licensee: (i) distributes the Servlet 
+    Classes complete and unmodified in their original Java Archive file, and 
+    only as a part of Licensee's application that incorporates the Servlet 
+    Classes ("Program"); (ii) does not distribute additional software intended 
+    to replace any components of the Servlet Classes; (iii) agrees to 
+    incorporate the most current version of the Servlet Classes that was 
+    available from Sun no later than 180 days prior to each production release 
+    of Program; (iv) does not remove or alter any proprietary legends or 
+    notices contained in the Servlet Classes; (v) includes the provisions of 
+    Sections 3, 4, 6, 8, and 9 in Licensee's license agreement for the Program;
+    and (vi) agrees to indemnify, hold harmless, and defend Sun and its 
+    licensors from and against any claims or lawsuits, including attorneys' 
+    fees, that arise or result from the use or distribution of the Software.
+
+ 3. Java Platform Interface.  Licensee may not modify the Java Platform 
+    Interface (JPI, identified as classes contained within the javax package 
+    or any subpackages of the javax package), by creating additional classes 
+    within the JPI or otherwise causing the addition to or modification of 
+    the classes in the JPI.  In the event that Licensee creates any 
+    Java-related API and distribute such API to others for applet or 
+    application development, you must promptly publish broadly, an accurate 
+    specification for such API for free use by all developers of Java-based 
+    software.  
+
+  4. Restrictions.  Software is confidential copyrighted information of Sun and 
+     title to all copies is retained by Sun and/or its licensors.  Licensee 
+     shall not modify, decompile, disassemble, decrypt, extract, or otherwise 
+     reverse engineer Software.  Software may not be leased, assigned, or 
+     sublicensed, in whole or in part.  Software is not designed or intended 
+     for use in on-line control of aircraft, air traffic, aircraft navigation 
+     or aircraft communications; or in the design, construction, operation or 
+     maintenance of any nuclear facility.  Licensee warrants that it will not 
+     use or redistribute the Software for such purposes.
+
+  5. Trademarks and Logos.  This License does not authorize Licensee to use any 
+     Sun name,    trademark or logo.  Licensee acknowledges that Sun owns the 
+     Java trademark and all Java- related trademarks, logos and icons including
+     the Coffee Cup and Duke ("Java Marks") and agrees to: (i) to comply with 
+     the Java Trademark Guidelines at http://java.sun.com/ trademarks.html; 
+     (ii) not do anything harmful to or inconsistent with Sun's rights in the 
+     Java Marks; and (iii) assist Sun in protecting those rights, including 
+     assigning to Sun any rights acquired by Licensee in any Java Mark.  
+
+  6. Disclaimer of Warranty.  Software is provided "AS IS," without a warranty 
+     of any kind.    ALL EXPRESS OR IMPLIED REPRESENTATIONS AND WARRANTIES, 
+     INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A 
+     PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY EXCLUDED.  
+
+  7. Limitation of Liability.  SUN AND ITS LICENSORS SHALL NOT BE LIABLE FOR 
+     ANY DAMAGES SUFFERED BY LICENSEE OR ANY THIRD PARTY AS A RESULT OF USING 
+     OR DISTRIBUTING SOFTWARE.  IN NO EVENT WILL SUN OR ITS LICENSORS BE 
+     LIABLE FOR ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, 
+     SPECIAL, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED 
+     AND REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR 
+     INABILITY TO USE SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE POSSIBILITY 
+     OF SUCH DAMAGES.
+
+  8. Termination.  This License is effective until terminated.  Licensee may 
+     terminate this License at any time by destroying all copies of Software.  
+     This License will terminate immediately without notice from Sun if Licensee
+     fails to comply with any provision of this License.  Upon such termination,
+     Licensee must destroy all copies of Software.
+
+  9. Export Regulations.  Software, including technical data, is subject to U.S.
+     export control laws, including the U.S.  Export Administration Act and its
+     associated regulations, and may be subject to export or import regulations
+     in other countries.  Licensee agrees to comply strictly with all such 
+     regulations and acknowledges that it has the responsibility to obtain 
+     licenses to export, re-export, or import Software.  Software may not be 
+     downloaded, or otherwise exported or re-exported (i) into, or to a national
+     or resident of, Cuba, Iraq, Iran, North Korea, Libya, Sudan, Syria or any 
+     country to which the U.S. has embargoed goods; or (ii) to anyone on the 
+     U.S. Treasury Department's list of Specially Designated Nations or the U.S.
+     Commerce Department's Table of Denial Orders.
+
+  10. Restricted Rights.  Use, duplication or disclosure by the United States 
+     government is subject to the restrictions as set forth in the Rights in 
+     Technical Data and Computer Software Clauses in DFARS 252.227-7013(c) 
+     (1) (ii) and FAR 52.227-19(c) (2) as applicable.
+
+  11. Governing Law.  Any action related to this License will be governed by 
+     California law and controlling U.S. federal law.  No choice of law rules 
+     of any jurisdiction will apply.  
+
+  12. Severability.  If any of the above provisions are held to be in 
+     violation of applicable law, void, or unenforceable in any jurisdiction, 
+     then such provisions are herewith waived to the extent necessary for the 
+     License to be otherwise enforceable in such jurisdiction.  However, if in 
+     Sun's opinion deletion of any provisions of the License by operation of 
+     this paragraph unreasonably compromises the rights or increase the 
+     liabilities of Sun or its licensors, Sun reserves the right to terminate 
+     the License and refund the fee paid by Licensee, if any, as Licensee's 
+     sole and exclusive remedy. 
+
+  13. Integration. This Agreement is the entire agreement between Licensee and 
+     Sun relating to its subject matter.  It supersedes all prior or 
+     contemporaneous oral or written communications, proposals, representations
+     and warranties and prevails over any conflicting or additional terms of 
+     any quote, order, acknowledgment, or other communication between the 
+     parties relating to its subject matter during the term of this Agreement. 
+     No modification of this Agreement will be binding, unless in writing and 
+     signed by an authorized representative of each party.

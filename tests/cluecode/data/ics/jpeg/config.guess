@@ -1,0 +1,5 @@
+#! /bin/sh
+# Attempt to guess a canonical system name.
+#   Copyright (C) 1992, 93, 94, 95, 96, 1997 Free Software Foundation, Inc.
+#
+# This file is free software; you can redistribute it and/or modify it

@@ -1,0 +1,13 @@
+key: eu-datagrid
+short_name: EU DataGrid Software License
+name: EU DataGrid Software License
+category: Attribution
+owner: DataGrid Project
+homepage_url: http://eu-datagrid.web.cern.ch/eu-datagrid/license.html
+spdx_license_key: EUDatagrid
+spdx_full_name: EU DataGrid Software License
+spdx_url: http://spdx.org/licenses/EUDatagrid
+spdx_notes: This license is OSI certified
+text_urls:
+    - http://eu-datagrid.web.cern.ch/eu-datagrid/license.html
+osi_url: http://www.opensource.org/licenses/eudatagrid.php

@@ -1,0 +1,43 @@
+home_url: http://www.darwinsys.com/file/
+version: 5.22
+name fine free file
+owner: Ian Darwin
+download_url: ftp://ftp.astron.com/pub/file/file-5.22.tar.gz
+home_url: http://www.darwinsys.com/file/
+
+copyright: Copyright (c) 1986-1995 Ian F. Darwin
+ Software written by Ian F. Darwin and others.
+ maintained 1994- Christos Zoulas.
+
+license: bsd-simplified
+
+license-text_file: file.COPYING
+
+
+
+notes: to build:
+ On Mac, using brew:
+  * brew instal libmagic
+  * The built dylib is under /usr/local/Cellar/libmagic/5.22_1/lib/
+  * or fetch the tarball then ./configure and make
+ 
+ On Linux:
+  * extract the tarball, configure then make
+  * the build .so in under src/.libs/ and the build magic.mgc under magic
+ 
+ On Windows:
+ * Install a full mingw with mingw-get.
+
+ * Install extra mingw packages:
+    mingw-get install msys-zlib
+
+ * zlib: fetch and extract the tarball, then:
+   make -f win32/Makefile.gcc
+  * copy the zlib1.dll to the vendored bin directory
+
+ * gnurx: fetch and extract the tarball, then configure, make, make install
+  * copy the libgnurx-0.dll to the vendored bin directory
+
+ * gcc runtime: From your installed Minwg directory/bin:
+  * copy the libgcc_s_dw2-1.dll to the vendored bin directory
+

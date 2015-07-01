@@ -1,0 +1,126 @@
+/*
+ * Copyright (c) 1993-1995 Regents of the University of California.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. All advertising materials mentioning features or use of this software
+ *    must display the following acknowledgement:
+ *	This product includes software developed by the Network Research
+ *	Group at Lawrence Berkeley National Laboratory.
+ * 4. Neither the name of the University nor of the Laboratory may be used
+ *    to endorse or promote products derived from this software without
+ *    specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+/*
+ * This code is derived from the P64 software implementation by the
+ * Stanford PVRG group:
+ * 
+ * Copyright (C) 1990, 1991, 1993 Andy C. Hung, all rights reserved.
+ * PUBLIC DOMAIN LICENSE: Stanford University Portable Video Research
+ * Group. If you use this software, you agree to the following: This
+ * program package is purely experimental, and is licensed "as is".
+ * Permission is granted to use, modify, and distribute this program
+ * without charge for any purpose, provided this license/ disclaimer
+ * notice appears in the copies.  No warranty or maintenance is given,
+ * either expressed or implied.  In no event shall the author(s) be
+ * liable to you or a third party for any special, incidental,
+ * consequential, or other damages, arising out of the use or inability
+ * to use the program for any purpose (or the loss of data), even if we
+ * have been advised of such possibilities.  Any public reference or
+ * advertisement of this source code should refer to it as the Portable
+ * Video Research Group (PVRG) code, and not by any author(s) (or
+ * Stanford University) name.
+ */
+
+/************ Change log
+ *
+ * $Log$
+ * Revision 1.1  2006/06/26 03:03:19  joegenbaclor
+ * I have decided to include the latest development realease  of OPAL tagged Deimos Devel 1 (June 8 2006) as inegrated classes to opensipstack to avoid future version conflicts due to the fast pace in OPAL development.   This move is also aimed to reduce the size of projects using OPAL componets such as the soon to be relased OpenSIPPhone.
+ *
+ * Revision 2.7  2006/01/12 17:56:37  dsandras
+ * Added initialization as in Mimas branch of openh323.
+ *
+ * Revision 2.6  2005/11/25 00:14:29  csoutheren
+ * Applied patch #1303543 from Hannes Friederich
+ * Added guard to weird conditions in H261 codec
+ *
+ * Revision 2.5  2005/10/12 21:20:25  dsandras
+ * Added check for buffLen to prevent potential crash thanks to Hannes Friederich.
+ *
+ * Revision 2.4  2005/09/15 18:00:38  dsandras
+ * Make sure qv_ is initialized when being used.
+ *
+ * Revision 2.3  2005/08/31 13:16:02  rjongbloed
+ * Ported video fast update from OpenH323
+ *
+ * Revision 2.2  2005/08/15 01:47:27  csoutheren
+ * Fixed compile problem on 64 bit
+ *
+ * Revision 2.1  2003/03/15 23:43:00  robertj
+ * Update to OpenH323 v1.11.7
+ *
+ * Revision 1.13  2005/02/25 01:21:12  dominance
+ * fixed building on amd64 with gcc-4.0 according to
+ * http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=287864
+ *
+ * Thanks fly to Andreas Jochens <aj@andaco.de>.
+ *
+ * Revision 1.12  2003/03/14 07:25:55  robertj
+ * Removed $header keyword so is not different on alternate repositories
+ *
+ * Revision 1.11  2002/10/10 05:40:29  robertj
+ * VxWorks port, thanks Martijn Roest
+ *
+ * Revision 1.10  2002/04/26 04:57:41  dereks
+ * Add Walter Whitlocks fixes, based on Victor Ivashim's suggestions to
+ * improve the quality with Netmeeting. Thanks guys!!!!
+ *
+ * Revision 1.9  2001/05/10 05:25:44  robertj
+ * Removed need for VIC code to use ptlib.
+ *
+ * Revision 1.8  2001/05/08 14:53:29  yurik
+ * Fixed misshap with removing non Wince def!
+ *
+ * Revision 1.7  2001/05/08 05:26:24  yurik
+ * No ifdef _WIN32_WCE anymore - 3+ version of  SDK allows it
+ *
+ * Revision 1.6  2001/01/30 06:39:44  yurik
+ * Modification submitted by Dave Cassel, dcassel@cyberfone.com.
+ *
+ * Revision 1.5  2000/12/19 22:22:34  dereks
+ * Remove connection to grabber-OS.cxx files. grabber-OS.cxx files no longer used.
+ * Video data is now read from a video channel, using the pwlib classes.
+ *
+ * Revision 1.4  2000/08/25 03:18:50  dereks
+ * Add change log facility (Thanks Robert for the info on implementation)
+ *
+ *
+ *
+ ********/
+
+
+#include <stdarg.h>
+#include <stdio.h>
+#include <string.h>
+
+#include "config.h"

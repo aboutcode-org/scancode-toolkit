@@ -1,0 +1,10 @@
+key: x11-tiff
+short_name: X11-Style (Tiff)
+name: X11-Style (Tiff)
+category: Attribution
+owner: SGI - Silicon Graphics
+spdx_license_key: libtiff
+spdx_full_name: libtiff License
+spdx_url: http://spdx.org/licenses/libtiff
+text_urls:
+    - https://fedoraproject.org/wiki/Licensing/libtiff

@@ -1,0 +1,11 @@
+# /*                                                                             */
+# /* RESERVED ERROR CODES: 72 to 99                                              */
+# /*                                                                             */
+# /* Please look at structure MGB_DMS_ERROR_INDICATION in mgmicdsp.h             */
+# /*                                                                             */
+# /*                                                                             */
+# /* These are special error codes which will be used the ECOs directly to       */
+# /* indicate eco specific error messages to the Micro                           */
+# /*                                                                             */
+# /* Please keep this section synched up with mgmicdsp.h  ECO specific Error code*/
+# /* comment section, created for ease of error code search/access  

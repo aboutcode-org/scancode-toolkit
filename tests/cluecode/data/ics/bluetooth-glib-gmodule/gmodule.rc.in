@@ -1,0 +1,6 @@
+	VALUE "FileDescription", "GModule"
+	VALUE "FileVersion", "@GLIB_VERSION@.0"
+	VALUE "InternalName", "libgmodule-2.0-@LT_CURRENT_MINUS_AGE@"
+	VALUE "LegalCopyright", "Copyright © 1998-2000 Tim Janik. Modified by the GLib Team and others 1998-2004."
+	VALUE "OriginalFilename", "libgmodule-2.0-@LT_CURRENT_MINUS_AGE@.dll"
+	VALUE "ProductName", "GLib"

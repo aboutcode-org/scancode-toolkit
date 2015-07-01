@@ -1,0 +1,17 @@
+key: python
+short_name: Python License 2.0
+name: Python Software Foundation License v2
+category: Attribution
+owner: Python Software Foundation (PSF)
+homepage_url: http://docs.python.org/license.html
+spdx_license_key: Python-2.0
+spdx_full_name: Python License 2.0
+spdx_url: http://spdx.org/licenses/Python-2.0
+spdx_notes: |-
+    http://www.opensource.org/licenses/Python-2.0
+    overall Python license
+text_urls:
+    - http://spdx.org/licenses/Python-2.0
+osi_url: http://www.opensource.org/licenses/Python-2.0
+other_urls:
+    - http://opensource.org/licenses/PythonSoftFoundation.php

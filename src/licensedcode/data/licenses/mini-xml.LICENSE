@@ -1,0 +1,17 @@
+This library is free software; you can redistribute it and/or modify it under the terms of the GNU Library General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Library General Public License for more details.
+
+You should have received a copy of the GNU Library General Public License along with this library; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+
+Mini-XML License (LGPL 2.0 with Exception)
+
+The Mini-XML library and included programs are provided under the terms of the GNU Library General Public License (LGPL) with the following exceptions:
+
+1.	Static linking of applications to the Mini-XML library does not constitute a derivative work and does not require the author to provide source code for the application, use the shared Mini-XML libraries, or link their applications against a user-supplied version of Mini-XML. 
+If you link the application to a modified version of Mini-XML, then the changes to Mini-XML must be provided under the terms of the LGPL in sections 1, 2, and 4.
+
+2.	You do not have to provide a copy of the Mini-XML license with programs that are linked to the Mini-XML library, nor do you have to identify the Mini-XML license in your program or documentation as required by section 6 of the LGPL.
+
+GNU Library General Public License (LGPL 2.0)
+http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html - TOC1

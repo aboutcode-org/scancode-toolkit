@@ -1,0 +1,15 @@
+key: apache-1.1
+short_name: Apache 1.1
+name: Apache License 1.1
+category: Attribution
+owner: Apache Software Foundation
+homepage_url: http://www.apache.org/licenses/
+spdx_license_key: Apache-1.1
+spdx_full_name: Apache License 1.1
+spdx_url: http://spdx.org/licenses/Apache-1.1
+spdx_notes: |-
+    This license is OSI certified.
+    This license has been superseded by Apache 2.0
+text_urls:
+    - http://apache.org/licenses/LICENSE-1.1
+faq_url: http://www.apache.org/foundation/license-faq.html

@@ -1,0 +1,12 @@
+Index: linux-2.6.23/fs/Makefile
+===================================================================
+--- linux-2.6.23.orig/fs/Makefile
++++ linux-2.6.23/fs/Makefile
+@@ -72,7 +72,6 @@ obj-$(CONFIG_JBD)		+= jbd/
+ obj-$(CONFIG_JBD2)		+= jbd2/
+ obj-$(CONFIG_EXT2_FS)		+= ext2/
+ obj-$(CONFIG_CRAMFS)		+= cramfs/
+-obj-$(CONFIG_SQUASHFS)		+= squashfs/
+ obj-$(CONFIG_RAMFS)		+= ramfs/
+ obj-$(CONFIG_HUGETLBFS)		+= hugetlbfs/
+ obj-$(CONFIG_CODA_FS)		+= coda/

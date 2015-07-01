@@ -1,0 +1,9 @@
+key: edl-1.0
+short_name: EDL 1.0
+name: Eclipse Distribution License 1.0
+category: Attribution
+owner: Eclipse Foundation
+homepage_url: http://www.eclipse.org/org/documents/edl-v10.php
+text_urls:
+    - http://www.eclipse.org/org/documents/edl-v10.php
+    - http://www.eclipse.org/org/documents/edl-v10.html

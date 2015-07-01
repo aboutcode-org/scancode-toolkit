@@ -1,0 +1,8 @@
+key: not-a-license
+short_name: Not a license
+name: Not a license
+category: 
+owner: nexB
+notes: >
+    this is a special license used only to create rules when a
+    license should not be detected..

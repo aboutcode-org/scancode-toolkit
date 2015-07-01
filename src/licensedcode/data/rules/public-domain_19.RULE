@@ -1,0 +1,17 @@
+This opening book is in the public domain. It was put together and
+cleaned up by <s>Stuart Cracraft <cracraft@earthlink.net></s> and <s>Simon
+Waters <simon@wretched.demon.co.uk></s>. Stuart wrote the following in
+email, when asked about copyright.
+
+  I personally built the GNU Chess book from a large set of FREE
+  game collections from the University of Pittsburgh chess server.
+  These are NOT copyrighted and are PUBLIC. I also wrote the code
+  for the GNU Chess book without any reference at all to any other
+  author.
+
+  It is GNU Chess code and PUBLIC book that is non-copyrightable.
+
+  --Stuart
+
+Note that all the code is in gnuchess, so this package itself is
+purely public domain.

@@ -1,0 +1,11 @@
+licenses:
+    - lgpl
+    - mpl-1.1
+    - bsd-new
+license_choice: yes
+notes: >
+    LGPL, MPL or BSD license for Wireless tools
+    This is used in wireless tools and has a typo in the original)
+    Because of the date of the snippets (2002) the MPL license that applies should
+    be the MPL 1.1. Unlike the GPL, the MPL does not allow to select any version
+    when no version is stated

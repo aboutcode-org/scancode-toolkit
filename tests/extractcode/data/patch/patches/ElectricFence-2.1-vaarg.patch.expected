@@ -1,0 +1,3 @@
+[('ElectricFence-2.1/print.c.jj',
+  'ElectricFence-2.1/print.c',
+  "--- ElectricFence-2.1/print.c.jj\n+++ ElectricFence-2.1/print.c\n@@ -99,7 +99,7 @@ vprint(const char * pattern, va_list arg\nbreak;\ncase 'c':\n{\n-\t\t\t\t\tchar\tc = va_arg(args, char);\n+\t\t\t\t\tchar\tc = va_arg(args, int);\n\n(void) write(2, &c, 1);\n}")]

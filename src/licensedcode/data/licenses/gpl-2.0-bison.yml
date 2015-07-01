@@ -1,0 +1,10 @@
+key: gpl-2.0-bison
+short_name: GPL 2.0 with Bison exception
+name: >-
+    GNU General Public License 2.0 with Bison exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+spdx_license_key: GPL-2.0-with-bison-exception
+spdx_full_name: >-
+    GNU General Public License v2.0 w/Bison exception
+spdx_url: http://spdx.org/licenses/GPL-2.0-with-bison-exception

@@ -1,0 +1,330 @@
+
+
+
+dhcp-contrib(5)                                   dhcp-contrib(5)
+
+
+NNAAMMEE
+       Contributing to the Internet Software Consortium DHCP Dis­
+       tribution
+
+EEXXHHOORRTTAATTIIOONN
+       The Internet Software  Consortium  DHCP  Distribution  has
+       historically  been  funded through the donation of various
+       charitable and non-charitable organizations, as well as by
+       individual contributions.  To some degree, support for the
+       distribution has been done on a volunteer  basis,  but  by
+       and  large  the  reason that you have this distribution in
+       your hands right now is because people like you have  pro­
+       vided funding for it.
+
+       We would like to encourage you to continue to provide such
+       support, or to begin providing it if you have not  in  the
+       past.    You  are in no way obliged to provide us with any
+       support at all, and this message is not intended to guilt-
+       trip  you  about providing support.   If you choose not to
+       provide support, for whatever reason, you aren't going  to
+       be  treated  differently  on  the  mailing lists, and your
+       requests for features aren't going to be  prioritized  any
+       differently.    If you want to be treated differently, you
+       can buy a formal support contract,  of  course,  but  this
+       document is about contributions, not support contracts.
+
+FFRREEQQUUEENNTTLLYY AASSKKEEDD QQUUEESSTTIIOONNSS
+       Q: So if I won't be treated differently, why contribute?
+
+       A:  The  obvious  answer  is  self-interest.   If you con­
+       tribute, it means that the author will have time  to  work
+       on  stuff that's not of the utmost high priority.   People
+       are constantly asking for things that we would really like
+       to provide, but for which we have no time.   By contribut­
+       ing, you are literally giving us time to do these  things.
+       The  amount  of  time  varies  with  the  contribution, of
+       course, but if everybody contributes a little bit, it  can
+       add up to a lot.
+
+       Q: But everybody isn't required to contribute.   If I con­
+       tribute and nobody else does, doesn't that make me kind of
+       a sucker?
+
+       A:  Obviously, we don't think so, but think about this: if
+       you contribute, then we can point out to others that we've
+       received  contributions,  and  this  will make the idea of
+       contributing seem more legitimate to them, making it  more
+       likely  that  they will contribute.   So your contribution
+       has more value than just the money you provide -  it  also
+       helps us to raise funds from others.
+
+       Q: If I contribute, I want a say in what work gets done.
+
+       A:  We  do  sell  support  contracts,  and we will also do
+
+
+
+                                                                1
+
+
+
+
+
+dhcp-contrib(5)                                   dhcp-contrib(5)
+
+
+       development work on specification if we feel it  is  rele­
+       vant  (although  you  won't  get to own it).   This can be
+       quite expensive, though - much more than even the  maximum
+       we'd  expect  you to donate.   So no, contributing doesn't
+       buy you a say in what work gets done.
+
+       Q: I work for a charity that feeds the homeless.    Should
+       my charity contribute?
+
+       A: Absolutely not!   The idea here is not to take food out
+       of the mouths of poor people.   If donating  to  us  would
+       mean that somebody in need that you could have helped will
+       go without help, keep the money.  It's not worth it to us.
+       This  goes  for  providing shelter, psychiatric aid, legal
+       assistance, and any other similar charity work.
+
+       Q: Cool!   I work for a university, helping  students  who
+       are  in  need of an education, so we shouldn't contribute,
+       right?
+
+       A: No, that's not quite what we mean.  Sure, if  you  work
+       for  an organization that provides free education to needy
+       people, at whatever level, then we'd rather you  did  that
+       than  support us.  But if your university has a big budget
+       for running the computer center, can afford to plant  nice
+       gardens  and  maintain  nice  lawns, and maybe has all its
+       dorms wired for ethernet, then even if you  qualify  as  a
+       nonprofit  under federal law (or the law in your own coun­
+       try) you should still contribute.  DHCP is just as much  a
+       part of your infrastructure as your campus wiring.
+
+       Q:  This  software came on a CD that I bought.   Haven't I
+       already contributed?
+
+       A: If you're seeing this notice,  and  you  didn't  see  a
+       notice  saying  that  the people who sold you your CD con­
+       tributed to us, then no, you haven't already  contributed.
+       In  general,  we encourage people to include this software
+       on their distributions if they feel it  would  be  useful,
+       and  we  do not require them to contribute in exchange for
+       that privilege.
+
+       Q: I've contributed to the development of this software by
+       submitting  bug  reports  and patches.   Why should I also
+       contribute money?
+
+       A: When you contributed these bug reports and patches, was
+       there  zero effort involved on our part in integrating the
+       patches or figuring out what  was  wrong?   Probably  not.
+       Bug  reports and patches can be extremely valuable, and we
+       can't say that in no event do they qualify you to get  out
+       of contributing - after all, we're leaving that up to your
+       judgement anyway, aren't we?  But unless your contribution
+       was  pretty massive, and is actually in this distribution,
+
+
+
+                                                                2
+
+
+
+
+
+dhcp-contrib(5)                                   dhcp-contrib(5)
+
+
+       we aren't likely to agree with you about this.
+
+       Q: Software should be free.   You have no right to ask for
+       money to support this effort.
+
+       A:  You  are  entitled  to  that opinion, but please don't
+       raise it on the mailing list, as it will tend to get  peo­
+       ple  excited.  Please remember that while copying software
+       is generally a very cheap process,  creating  it  is  not.
+       The  amount of work that's gone into this software package
+       is quite significant, and there's plenty more work to  do.
+       If  you  happen  to  be  in  college,  working toward your
+       degree, and have no social life (and yes, I've been  there
+       and done that) then it can seem like there's no additional
+       cost to hacking on software - after all, it's  fun,  isn't
+       it?  While this is true, it is also true that you're a lot
+       better off with this software than  you  would  have  been
+       with the software I wrote in college.  Enough said?
+
+       Q: Can't I contribute work instead of software?
+
+       A:  We'd  like  to  encourage that to some extent, and are
+       indeed trying to bring some developers into the fold,  but
+       you  shouldn't  expect  that  your  willingness to do this
+       translates directly into an opportunity.  For example, you
+       may  want  very  much to work for [insert the name of your
+       favorite commercial Linux vendor  here],  but  unless  you
+       have  the appropriate skills, they like you, they're will­
+       ing to pay what you need, and they have work that's appro­
+       priate  to  your  skills,  you're  not  going to get hired
+       there.
+
+       Q: I don't contribute to the Free  Software  Foundation  -
+       why do you rate?
+
+       A:  You  should contribute to the Free Software Foundation
+       too!
+
+       Q: I don't contribute to [insert name of your  local  food
+       bank here].  Why do you rate?
+
+       A:  If  you  feel  bad about not contributing to the local
+       food bank, this is a very easy problem to  solve,  and  we
+       encourage you to do so.
+
+       Q: Once I've contributed once, am I done?
+
+       A:  We'd  like to encourage you to contribute once a year.
+       If you want, we can send you a reminder notice on the year
+       anniversary  of  your original contribution.  If you don't
+       specifically ask for this, we won't force it on  you.   No
+       salesperson  will  call.   No spam will be sent.  We defi­
+       nitely won't try to convince you that  it's  been  a  year
+       since you last contributed when it hasn't been a year yet.
+
+
+
+                                                                3
+
+
+
+
+
+dhcp-contrib(5)                                   dhcp-contrib(5)
+
+
+       Q: I don't have you in my budget this year.
+
+       A: Fine, put us in your budget for next year!
+
+       Q: It's really hard to do charitable contributions  at  my
+       organization.
+
+       A:  We'd  be  happy to sell you a product instead.  If you
+       choose to go down this route, what  we'l  sell  you  is  a
+       license  for some number of clients and a CD.  Just let us
+       know how many DHCP clients you have,  and  we'll  use  the
+       following  schedule  to figure out how much to invoice you
+       (shipping is included on orders of $100 or more).  Even if
+       you can do charitable contributions, you might want to use
+       this schedule as a guideline for figuring out how much  to
+       donate.   It  is  only  a  guideline,  of  course - if the
+       amounts listed feel like too much or too little to you, do
+       what seems appropriate.
+
+               $10k for businesses supporting >10k nodes
+               $5k for charities supporting >10k nodes
+               $2.5k for businesses supporting >1k nodes
+               $1k for charities supporting >1k nodes
+               $500 for businesses with >500 nodes
+               $250 for charities with >500 nodes
+               $200 for businesses with >150 nodes
+               $100 for charities with >150 nodes
+               $100 for businesses with <150 nodes
+               $50 for charities with <150 nodes
+               $25 for home use, client or server
+               $0.10 to $1 per client for businesses that are reselling the
+                       client, depending on volume.
+
+       Q:  Are  you  nuts?    I live in [insert your country name
+       here] and the typical annual salary for  a  programmer  is
+       less than what you're asking me to contribute!
+
+       A:  We  leave  the  choice of how much to contribute up to
+       you.   Really.  We aren't kidding.
+
+       Q: Can I contribute with my credit card?
+
+       A: Yes.   The details haven't  been  ironed  out  at  this
+       writing,   but   if   you   send  mail  to  dhcp-contribu­
+       tions@isc.org, we'll work it out.   By the time  you  read
+       this,  we may have a web interface set up - if so, it will
+       be linked in at http://www.isc.org/dhcp-contrib.html.
+
+SSEEEE AALLSSOO
+       dhcpd.conf(5),     dhcpd.leases(5),      dhclient.conf(5),
+       dhcpd(8), dhclient(8), RFC2132, RFC2131.
+
+AAUUTTHHOORR
+       The  Internet  Software  Consortium  DHCP Distribution was
+
+
+
+                                                                4
+
+
+
+
+
+dhcp-contrib(5)                                   dhcp-contrib(5)
+
+
+       written by Ted Lemon  <mellon@isc.org>  under  a  contract
+       with  Vixie  Labs.   Funding for this project was provided
+       through the  Internet  Software  Consortium.   Information
+       about  the  Internet  Software  Consortium can be found at
+       hhttttpp::////wwwwww..iisscc..oorrgg//iisscc..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                5
+
+

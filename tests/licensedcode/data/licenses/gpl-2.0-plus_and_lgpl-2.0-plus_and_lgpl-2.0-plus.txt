@@ -1,0 +1,64 @@
+Upstream-Contact: <s>David Howells <dhowells@redhat.com></s>
+Upstream-Homepage: http://people.redhat.com/~dhowells/keyutils/
+Maintainer-Contact: <s>Daniel Baumann <daniel@lists.debian-maintainers.org></s>
+Maintainer-Homepage: http://daniel.debian-maintainers.org/
+
+Files: keyctl*, request-key*
+Copyright: (C) 2005 <s>Red Hat</s> <http://www.redhat.com/>
+License: GPL-2+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License
+ as published by the Free Software Foundation; either version 2
+ of the License, or (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ can be found in /usr/share/common-licenses/GPL-2 file.
+
+Files: keyutils.*
+Copyright: (C) 2005 <s>Red Hat</s> <http://www.redhat.com/>
+License: LGPL-2+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ Library General Public License for more details.
+ .
+ You should have received a copy of the GNU Library General Public
+ License along with this library; if not, write to the Free
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+ .
+ On Debian systems, the complete text of the GNU Library General Public License
+ can be found in /usr/share/common-licenses/LGPL-2 file.
+
+Files: debian/*
+Copyright: (C) 2006-2009 <s>Daniel Baumann</s> <daniel@debian.org>
+License: LGPL-2+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ Library General Public License for more details.
+ .
+ You should have received a copy of the GNU Library General Public
+ License along with this library; if not, write to the Free
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+ .
+ On Debian systems, the complete text of the GNU Library General Public License
+ can be found in /usr/share/common-licenses/LGPL-2 file.

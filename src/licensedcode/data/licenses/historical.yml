@@ -1,0 +1,18 @@
+key: historical
+short_name: >-
+    Historical Permission Notice and Disclaimer
+name: >-
+    Historical Permission Notice and Disclaimer
+category: Attribution
+owner: OSI - Open Source Initiative
+homepage_url: http://www.opensource.org/licenses/historical.php
+spdx_license_key: HPND
+spdx_full_name: >-
+    Historic Permission Notice and Disclaimer
+spdx_url: http://spdx.org/licenses/HPND
+spdx_notes: |-
+    This license is OSI certified.
+    This license has been voluntarily deprecated by its author.
+text_urls:
+    - http://www.opensource.org/licenses/historical.php
+osi_url: http://www.opensource.org/licenses/historical.php

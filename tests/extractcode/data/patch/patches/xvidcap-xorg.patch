@@ -1,0 +1,12 @@
+diff -Nur xvidcap-1.1.7-orig/src/capture.c xvidcap-1.1.7/src/capture.c
+--- xvidcap-1.1.7-orig/src/capture.c	2010-07-02 09:10:00.236948817 +0200
++++ xvidcap-1.1.7/src/capture.c	2010-07-02 09:14:21.418947354 +0200
+@@ -65,7 +65,7 @@
+ #include <sys/ipc.h>
+ #include <sys/shm.h>
+ #include <X11/extensions/XShm.h>
+-#include <X11/extensions/shmstr.h>
++#include <X11/extensions/shmproto.h>
+ #ifndef SOLARIS
+ #include <X11/extensions/extutil.h>
+ #endif     // SOLARIS

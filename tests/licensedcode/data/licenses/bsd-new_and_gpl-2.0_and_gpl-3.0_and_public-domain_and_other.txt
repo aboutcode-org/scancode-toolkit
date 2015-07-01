@@ -1,0 +1,521 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'>
+
+<html>
+  <head>
+    <meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
+    <title>BusyBox</title>
+    <style type="text/css">
+     body {
+      background-color: #DEE2DE;
+      color: #000000;
+      font-family: lucida, helvetica, arial;
+      font-size: 100%;
+     }
+     :link { color: #660000 }
+     :visited { color: #660000 }
+     :active { color: #660000 }
+     td.c2 {font-family: arial, helvetica, sans-serif; font-size: 80%}
+     td.c1 {font-family: lucida, helvetica; font-size: 248%}
+    </style>
+  </head>
+
+  <body>
+    <!--basefont face="lucida, helvetica, arial" size="3"-->
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+    <div class="c3">
+      <table border="0" cellspacing="1" cellpadding="2">
+        <tr>
+          <td class="c1">BUSYBOX</td>
+        </tr>
+      </table>
+    </div>
+
+  <a href="/"><img src="images/busybox1.png" alt="BusyBox" border="0" /></a><br>
+</td>
+</tr>
+
+<tr>
+
+<td valign="top" style="white-space:nowrap;">
+    <b>About</b>
+    <ul>
+        <li><a href="about.html">About BusyBox</a></li>
+        <li><a href="screenshot.html">Screenshot</a></li>
+        <li><a href="news.html">Announcements</a></li>
+    </ul>
+    <b>Documentation</b>
+    <ul>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="downloads/BusyBox.html">Command Help</a></li>
+    </ul>
+    <b>Get BusyBox</b>
+    <ul>
+        <li><a href="downloads/">Download Source</a></li>
+        <li><a href="license.html">License</a></li>
+        <li><a href="products.html">Products</a></li>
+    </ul>
+    <b>Development</b>
+    <ul>
+        <li><a href="http://git.busybox.net/busybox/">Browse Source</a></li>
+        <li><a href="source.html">Source Control</a></li>
+        <!--li><a href="/downloads/patches/recent.html">Recent Changes</a></li-->
+        <li><a href="lists.html">Mailing Lists</a></li>
+        <li><a href="https://bugs.busybox.net/">Bug Tracking</a></li>
+        <li><a href="developer.html">Contributing</a></li>
+    </ul>
+    <p><b>Links</b>
+    <ul>
+        <li><a href="links.html">Related Sites</a></li>
+        <li><a href="tinyutils.html">Tiny Utilities</a></li>
+        <li><a href="sponsors.html">Sponsors</a></li>
+    </ul>
+    <p><b>Developer Pages</b>
+    <ul>
+        <li><a href="http://busybox.net/~landley/">Rob</a></li>
+        <li><a href="http://busybox.net/~aldot/">Bernhard</a></li>
+	<li><a href="http://busybox.net/~vda/">Denys</a>
+	 <br>- <a href="http://busybox.net/~vda/resume/denys_vlasenko.htm">resume</a>
+	 <br>- <a href="http://busybox.net/~vda/k-sections/">kernel size</a>
+	 <br>- <a href="http://busybox.net/~vda/mboot/">mboot</a>
+	 <br>- <a href="http://busybox.net/~vda/linld/">linld</a>
+	 <br>- <a href="http://busybox.net/~vda/init_vs_runsv.html">init must die</a>
+	 <br>- <a href="http://busybox.net/~vda/no_ifup.txt">no ifup</a>
+	 <br>- <a href="http://busybox.net/~vda/unscd/">unscd</a>
+	</li>
+    </ul>
+</td>
+
+<td valign="top">
+
+
+
+<h3><a name="license">BusyBox is licensed under the GNU General Public License, version 2</a></h3>
+
+<p>BusyBox is licensed under <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">
+the GNU General Public License version 2</a>, which is often abbreviated as GPLv2.
+(This is the same license the Linux kernel is under, so you may be somewhat
+familiar with it by now.)</p>
+
+<p>A complete copy of the license text is included in the file LICENSE in
+the BusyBox source code.</p>
+
+<p><a href="products.html">Anyone thinking of shipping BusyBox as part of a
+product</a> should be familiar with the licensing terms under which they are
+allowed to use and distribute BusyBox.  Read the full text of the GPL (either
+through the above link, or in the file LICENSE in the BusyBox tarball), and
+also read the <a href="http://www.gnu.org/licenses/gpl-faq.html">Frequently
+Asked Questions about the GPL</a>.</p>
+
+<p>If you distribute GPL-licensed software the license requires that you also
+distribute the source code to that GPL-licensed software.  If you distribute
+BusyBox without making the source code to the version you distribute available,
+you violate the license terms, and thus infringe on the copyrights of BusyBox.
+This requirement applies whether or not you modified BusyBox; either way the
+license terms still apply to you.</p>
+
+<h3><a name="enforce">License enforcement</a></h3>
+
+<p>BusyBox's copyrights are enforced by the <a href="http://www.softwarefreedom.org/">Software Freedom Law Center</a>
+(you can contact them at gpl@busybox.net), which
+"accepts primary responsibility for enforcement of US copyrights on the
+software... and coordinates international copyright enforcement efforts for
+such works as necessary."  If you distribute BusyBox in a way that doesn't
+comply with the terms of the license BusyBox is distributed under, expect to
+hear from these guys.  Their entire reason for existing is to do pro-bono
+legal work for free/open source software projects.  We used to list people who
+violate the BusyBox license in <a href="shame.html">The Hall of Shame</a>,
+but these days we find it much more effective to hand them over to the
+lawyers.</p>
+
+<p>Our enforcement efforts are aimed at bringing people into compliance with
+the BusyBox license.  Open source software is under a different license from
+proprietary software, but if you violate that license you're still a software
+pirate and the law gives the vendor (us) some big sticks to play with.  We
+don't want monetary awards, injunctions, or to generate bad PR for a company,
+unless that's the only way to get somebody that repeatedly ignores us to comply
+with the license on our code.</p>
+
+
+<h3>My company wants to include BusyBox into a product.
+What do we need to do in order to comply with BusyBox's license?</h3>
+
+<p>First: DON'T PANIC. Complying with BusyBox's license is easy.
+Complying with BusyBox's license doesn't cost any money.
+If, after reading the license and this document something is not clear
+to you, please send emails with your questions to the BusyBox mailing lists.
+We will expand this document to cover them.
+
+<p>If you are distributing the BusyBox binary, you also have to distribute
+the corresponding source code. If you modified the source, you have to
+distribute the modified source.
+
+<p>The text of the license obliges you to provide source code for binaries you
+distribute, and gives you exactly three options for providing source code.
+These options are spelled out in section 3 of the LICENSE file in the BusyBox
+source tarball:
+
+<p>3A) bundle the complete corresponding source with the binary.
+
+<p>3B) bundle a written offer good for three years to provide source upon request
+(these days this is often a URL).
+
+<p>3C) point you users at the upstream source (i.e. pass along somebody else's 3B
+offer).
+
+<p>Using option 3A, that is, putting exact BusyBox source and .config file
+you used to build the binary on the same medium which you use to ship
+the binary, is the most bullet-proof approach to license compliance.
+If you do that, you can stop reading, your license obligations
+have been satisfied.
+
+<p>Option 3B makes sense if you do not distribute BusyBox binaries on a medium
+like CD-ROM, but instead ship them in a device's firmware.
+Storing the source there might be an unacceptable waste of space.
+In this case, add a note to the device's documentation that it uses
+open-source components and that their source can be downloaded
+from the company's website. Give exact URL to the page where it can be downloaded.
+
+<p>Regardless of whether you use option 3A or 3B, please make sure
+you distribute the <em>exact</em> same source tree you used to build the binary.
+It doesn't have to be a single archive. Indeed, most people distribute modified
+sources in the form of unmodified busybox-N.N.N.tar.bz2 archive
+and a set of patches which add features or fix problems.
+
+<p>If you added an applet, or an option to one of the applets in BusyBox,
+or fixed a bug, and the source tree lacks this addition or fix,
+then you are not fulfilling GPLv2 requirements.
+
+<p>You can avoid having to distribute source by taking option 3C.
+However, option 3C has some restrictions, and if your company wants to be
+paranoid and be 100% sure everything is crystal clear about complying with
+the license, perhaps it should use options 3A or 3B.
+
+
+<h3>Option 3C: using unmodified source</h3>
+
+<p>Option 3C is what most open source people use, and it's so lenient lots of
+developers don't even think about it. Technically 3C is also full of
+restrictions (it's "allowed only for noncommercial distribution", and it only
+applies if you're redistributing a binary you didn't build yourself) intended
+to push people to use 3A or 3B, but the BusyBox project has generally let
+those restrictions slide (as has most of the rest of the open source world)
+when dealing with people who are acting in good faith.
+
+<p>Using option 3C means identifying the specific version of the public source
+you used, where to get it from, and confirming that your binary was built from
+unmodified "vanilla" sources.
+
+<p>So if you built an unmodified BusyBox release and you point people at the URL
+to the SPECIFIC source tarball on busybox.net you built it from and truthfully
+say "that's it, no patches", we've accepted that as compliance even from
+commercial companies. (We're not really interested in forcing random strangers
+to mirror stuff we've already got. OSUOSL provides very nice high bandwidth
+hosting for us, and if they didn't there's always sourceforge and savannah and
+ibiblio and kernel.org and...)
+
+<p>Note that you must do all three parts: what version did you use, where can we
+get it from, and explicitly state that you did not modify it.  Don't skip
+steps.
+
+<p>If you don't specify your version, we can't tell if you used some random git
+snapshot out of the development branch that was close to a release version but
+not quite.
+
+<p>If you don't explicitly say you didn't modify it, we could spend weeks combing
+through an assembly dump of your binary, or trying to find the exact cross-compiler
+version you used to produce a byte-for-byte identical file, but the
+license says we shouldn't have to. Proving a negative is a lot of work, and
+making us do this work would be shirking your obligations under GPLv2.
+
+<p>Even if you just backported changes out of the development branch, that's not
+a vanilla unmodified release.  The component parts may already be public, but
+you have to give us enough information to understand what you did, and the
+opportunity to produce an equivalent binary from that source, or you're not
+complying with 3C.
+
+<p>The above is a fairly lenient interpretation of GPLv2 that works a bit like
+the BSD license's "advertising clause": that one required you to thank the
+University of California, this one requires you to identify the specific source
+code of the GPL binaries you distributed. The GPL actually allows us to be
+more draconian than this (for starters, clause 3C doesn't have to apply to
+commercial companies at all), but as long as everybody's acting in good faith
+most projects seem happy with just identifying the specific source for binaries
+built from an unmodified upstream version.
+
+<p>Most open source developers are lenient in this way because we actually prefer
+a good 3C compliance to a bad 3A compliance.  We've all received tarballs of
+who knows what old version, with who knows what changes, and wasted an
+afternoon proving that "this is basically source control commit number BLAH,
+plus backports of commits blah, blah, blah, blah, and blah, plus they
+commented out these five lines, changed two default values that they could have
+overridden from the command line anyway, and added some debug statements."
+I.E. we just wasted three hours confirming there's nothing remotely interesting
+here that we didn't already know.
+
+<p>Obviously if you did modify the source to the binary you distributed, and you
+don't think you need to at least provide us a <em>patch</em>, you've missed the point
+of GPLv2 entirely. This is another incentive to get your patch merged, so you
+can ship a vanilla upstream version and not have to host your patch on your
+own website for 3 years after you stop distributing your product.
+
+<p>The next paragraph right after 3C essentially says you're supposed to give us
+your .config file as well, and sometimes we've asked for that as long as we're
+contacting people anyway. But to be honest, if we don't need to contact you to
+get the other stuff anyway, we seldom bother. (We can generally figure that one
+out for ourselves. I note that Linux kernel .configs are harder to reverse
+engineer, for that you'll probably need to provide a .config for to make the
+developers happy, but they put in a /proc/config.gz option to make it easy. :)
+
+
+<h3>My company was distributing BusyBox binary without the source.
+We are contacted by users asking for the source, and we don't have it.
+Are we in trouble?</h3>
+
+<p>Not yet. But please stop doing that, and start distributing the source.
+
+<p>The above is what happens when people are acting in good faith.  I note
+that the GPL imposes upon you the obligation to provide source code
+<em>when you distribute</em>.  Whether you're using 3A, 3B, or 3C, they all
+start "Accompany it with", meaning source goes with binary at time of
+distribution.  So if we get the binary from you and there's no <em>mention</em> of
+source code, your distribution of that binary didn't comply with the terms of
+the license.  At that point, you're already in breach of the license terms,
+and it's now about <em>fixing</em> it.  So if we have to approach you after the fact
+to get this information, we have the option to be really nasty about it.
+
+<p>We're not <em>required</em> to be nasty, and we prefer not to.  An honest mistake
+that a company is willing to fix is understandable, and as far as I know
+we've always started out with "excuse me, could you fix this please" and not
+made a fuss.  Most of the time, it doesn't go beyond that, we get back an
+email "oh, sorry, it's version blah, and here's the three line patch we used
+to change a default value", and we're happy.
+
+<p>And some companies are disorganized but honest about it, and go "um, we lost
+track of this information and the guy who did it left the company, can you
+give us some time to dig it out of the archives?"  And if they're making an
+honest effort, we're polite about that too.
+
+
+<h3>My company was distributing BusyBox binary without the source.
+We are contacted by <em>your lawyers</em>. Are we in trouble?</h3>
+
+<p>Yes, but it is not too bad yet. Stop being disorganized and fix
+your licensing situation before it gets really nasty.
+As I already mentioned, DON'T PANIC. Complying with BusyBox's license is easy.
+Get your act together, fight with internal inertia inside your company
+and it will be okay.
+If you do not understand something, please send emails with your
+questions to the BusyBox mailing lists, or privately to maintainers
+if you want to keep it private. We will expand this document to cover them.
+
+<p>However, you really cannot afford to be careless about complying with
+the license anymore.
+
+<p>Some companies ignore the polite requests entirely, and go all deer in the
+headlights on us, or maybe hope that if they ignore us long enough we'll go
+away.  Those are the ones that the SFLC sends <em>impolite</em> requests to, asking
+for far more than the original request did back when they were being nice.
+
+<p>For starters, if the SFLC has to actually sue someone to get their attention,
+they bill them for expenses.  (They have an office in New York City, you
+<em>really</em> don't want to go there).  Also, they usually make the company appoint
+an "open source compliance officer" and deliver quarterly reports.  And make
+them try to contact the old customers they shipped product to without source
+and let them know where the source is.  All this is the lawyerly equivalent
+of "raising your voice to be heard".  I've only seem them take the gloves off
+once.  They've only <em>needed</em> to once.
+
+<p>Some companies get in trouble because although they use an upstream
+vanilla source tarball, they don't say what version it was, or they don't
+explicitly say it wasn't modified.  Then when we approach them for more
+information, they don't understand what we could possibly want, and panic.
+(Panicing bad.  Please don't panic, this is actually pretty easy to get
+right.  Ignoring repeated polite requests is not going to end well.  Please
+be polite <em>back</em>.  Ask for clarification if you don't understand something,
+it's not an admission of weakness.  If you ignore us until we stop knocking,
+these days it may mean we're getting the battering ram.  This is not an
+improvement for anyone concerned.)
+
+<p>Another common failure mode is companies that redistribute some vendor board
+support package they bought, and when we ask them they brush us off with "we
+got it from a vendor, go bug our vendor, not our problem".  Dude, you're
+copying and distributing GPL code too.  If the license is the only thing that
+gives you permission to do that, then that license applies to you too.
+Really.  If your vendor complied with the license terms but you didn't,
+you're not off the hook.  This is not a scavenger hunt, nor is it the episode
+of M*A*S*H about getting tomato juice to Colonel Potter.  We asked <em>you</em>, and
+you have an obligation to provide this information.  If you don't even know
+what it <em>is</em> when we ask, something is <em>wrong</em>.  If you'd reprinted somebody
+else's documentation and stripped out BSD advertising clause notices, do you
+think you could then say "but the original PDF we got from our vendor had the
+notice in it, so we're ok, don't bother us"?  Or would going "oops, here's
+one with the right data" be <em>your</em> responsibility?  Fixing this is not <em>our</em>
+job.  "We ask, you answer" is us being <em>lenient</em>, the license technically
+says we shouldn't have had to ask in the first place, you were supposed to
+provide this info when you shipped.  And even if we're letting you delegate
+the implementation, you can't delegate the <em>responsibility</em>.  Don't make me
+look up how to spell "fiduciary".  (And delegating it to <em>nobody</em> really
+isn't a solution.  Asking us to track down an ex-employee of a defunct
+Taiwanese company where nobody spoke English just <em>doesn't go over well</em>...)
+
+<p>Sorry about that.  Scars from the "hall of shame" days.  We have lawyers now.
+They're very nice.  Where was I?
+
+<p>A company that wants to be legally paranoid will make a source CD for the GPL
+portions of their entire product (build scripts, cross compiler toolchains,
+and all), and either include the CD in the box with the product (clause 3A)
+or put the ISO up on the web and mention the URL to it in their product's
+documentation (clause 3B).  They don't need our say-so to be satisfied with
+that, even a strict reading of GPLv2 says that complies with the license
+terms.  (You can probably even email the SFLC guys about what exactly should
+go on the CD, gpl@busybox.net)  This is the "make it go away" preemptive
+nuclear strike approach, and probably a good idea for Fortune 500 companies
+that have their own legal department to do <em>anyway</em>.
+
+
+<h3><a name="good">A Good Example</a></h3>
+
+<p>These days, <a href="http://www.linksys.com/">Linksys</a> is
+doing a good job at complying with the GPL, they get to be an
+example of how to do things right.  Please take a moment and
+check out what they do with
+<!-- old link: http://www.linksys.com/servlet/Satellite?c=L_Content_C1&amp;childpagename=US%2FLayout&amp;cid=1115416836002&amp;pagename=Linksys%2FCommon%2FVisitorWrapper" -->
+<a href="http://www.linksysbycisco.com/gpl">
+distributing the firmware for their WRT54G Router.</a>
+Following their example would be a fine way to ensure that you
+have also fulfilled your licensing obligations.
+
+
+<h3>Add yourself to the Products page</h3>
+
+<p>We (BusyBox developers) would be happy to add the information about your
+product which uses BusyBox to our Products page. In order to be added there,
+post a message to the BusyBox mailing list when the product ships.
+While at it, the following information would cover the GPL licensing questions
+about the product:
+
+<p>A) a description of the product (including the build environment: processor
+type, libc version, kernel version).
+
+<p>B) identify the specific version of BusyBox it uses.
+
+<p>C) identify any modifications made to that version (either by linking to a
+nicely broken up series of "diff -u" patches on the web, or attaching the
+patches to the message, or explicitly saying it isn't modified).
+
+<p>D) attach (or give URL to) the .config file you used to build the BusyBox binary.
+
+<p>E) A link to your website.
+
+<p>This is the "being nice to the developers" approach, which acts as a sort of
+free advertising within the developer community.
+
+<p>You really can't go wrong with either approach: you can obey the letter of the
+license according to a strict reading, or you can make the developers as
+happy as possible so they not only have no reason to make trouble, but
+actually like you.  (Heck, we won't complain if you do both. :)
+
+
+<h3><a name="version">Developer's note: GPL versions</a></h3>
+
+<p>Version 2 of the GPL is the only version of the GPL which current versions
+of BusyBox may be distributed under.  New code added to the tree is licensed
+GPL version 2, and the project's license is GPL version 2.</p>
+
+<p>If you are a developer and you want to use a small part of BusyBox
+source code in your project, please check the header comments of the source file(s)
+you are taking code from. Even though BusyBox code, as a whole, can only be used
+under GPL version 2, some individual files may have more permissive licenses:
+"GPL version 2 or later" - meaning that you can also reuse the code from this source file
+for a project which is distributed under GPLv3, and "Public domain" -
+the code in these files have no licensing restrictions whatsoever.</p>
+
+<p>Historical details:</p>
+
+<p>Older versions of BusyBox (versions 1.2.2 and earlier, up through about svn
+16112) included variants of the recommended
+"GPL version 2 or (at your option) later versions" boilerplate
+permission grant.  Ancient versions of BusyBox
+(before svn 49) did not specify any version at all, and section 9 of GPLv2
+(the most recent version at that time) says those old versions may be
+redistributed under any version of GPL (including the obsolete V1).  This was
+conceptually similar to a dual license, except that the different licenses were
+different versions of the GPL.</p>
+
+<p>However, BusyBox has apparently always contained chunks of code that were
+licensed under GPL version 2 only.  Examples include applets written by Linus
+Torvalds (util-linux/mkfs_minix.c and util_linux/mkswap.c) which stated they
+"may be redistributed as per the Linux copyright" (which Linus
+clarified in the
+2.4.0-pre8 release announcement in 2000 was GPLv2 only), and Linux kernel code
+copied into libbb/loop.c (after Linus's announcement).  There are probably
+more, because all we used to check was that the code was GPL, not which
+version.  (Before the GPLv3 draft proceedings in 2006, it was a purely
+theoretical issue that didn't come up much.)</p>
+
+<p>To summarize: every version of BusyBox may be distributed under the terms of
+GPL version 2.  New versions (after 1.2.2), as a whole, may <b>only</b>
+be distributed under GPLv2, not under other versions of the GPL.
+Older versions of BusyBox might (or might not) be distributable under
+other versions of the GPL.  If you want to use a GPL version other than 2,
+you should start with one of the old versions such as release 1.2.2 or svn 16112,
+and do your own homework to identify and remove any code that can't be
+licensed under the GPL version you want to use.
+New development is all GPLv2.</p>
+
+
+<!-- Footer -->
+
+
+    </td>
+    </tr>
+    </table>
+
+<hr />
+
+
+    <table width="100%">
+	<tr>
+	    <td width="60%">
+	    	<font face="arial, helvetica, sans-serif" size="-1">
+		<!--div style="font-family: arial, helvetica, sans-serif; font-size: 80%;" -->
+		    <a href="/copyright.txt">Copyright &copy; 1999-2008 Erik Andersen</a>
+		    <br>
+		    Mail all comments, insults, suggestions and bribes to
+		    <br>
+		    Denys Vlasenko <a href="mailto:vda.linux@googlemail.com">vda.linux@googlemail.com</a><br>
+		</font>
+		<!--/div-->
+	    </td>
+
+	    <td>
+		<a href="http://www.vim.org/"><img border="0"
+		width="88" height="31"
+		src="images/written.in.vi.png"
+		alt="This site created with the vi editor" /></a>
+	    </td>
+
+	    <td>
+		<a href="http://osuosl.org/"><img border="0"
+		width="114" height="63"
+		src="images/osuosl.png"
+		alt="This site is kindly hosted by OSL" /></a>
+	    </td>
+<!--
+	    <td>
+		<a href="http://validator.w3.org/check?uri=referer"><img
+		border="0" height="31" width="88"
+		src="images/valid-html401.png"
+		alt="Valid HTML" /></a>
+	    </td>
+-->
+	</tr>
+    </table>
+
+  </body>
+</html>
+
+

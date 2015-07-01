@@ -1,0 +1,13 @@
+about_resource: bootstrap.min.css
+download_url: https://github.com/twbs/bootstrap/tree/v3.3.4/dist
+version: 3.3.4
+
+name: Bootstrap
+description: pytest: Sleek, intuitive, and powerful front-end framework for faster and easier web development.
+home_url: http://twitter.github.com/bootstrap/
+owner: Twitter, Inc.
+contact: https://twitter.com/about/contact
+dje_license: mit
+license_text_file: bootstrap.LICENSE
+copyright: Copyright (c) 2011-2015 Twitter, Inc
+notes: Bootstrap files are also included in /fonts directory.

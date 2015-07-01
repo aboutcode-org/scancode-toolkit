@@ -1,0 +1,22 @@
+about_resource:py2_ipaddress-2.0-py2-none-any.whl
+download_url:https://pypi.python.org/packages/source/p/py2-ipaddress/py2-ipaddress-2.0.tar.gz
+name: py2-ipaddress
+version: 2.0
+
+dje_license: psf
+license_text_file: PSF.LICENSE
+
+note: This is a Python 2.7 backport of the Python 3.3 ipaddress module.
+ the license is PSF, even though the authors reports an Apache Software 
+ License. See https://bitbucket.org/kwi/py2-ipaddress/issue/1/license
+
+copyright: Copyright 2007 Google Inc.
+
+owner: Soren Lovborg
+author_email: kwi@kwi.dk
+home_url: https://bitbucket.org/kwi/py2-ipaddress/
+
+vcs_tool: hg
+vcs_repository: https://bitbucket.org/kwi/py2-ipaddress/
+
+checksum_md5: ec4ba4c52c4c2684a5e73d8439260d8b

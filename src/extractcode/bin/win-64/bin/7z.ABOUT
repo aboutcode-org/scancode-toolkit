@@ -1,0 +1,18 @@
+about_resource: 
+    - 7z.exe
+    - 7z.dll
+
+version: 9.20
+name: 7zip
+
+home_url:
+    - http://www.7-zip.org/
+    - http://sourceforge.net/projects/sevenzip/
+
+download_url:
+    - http://master.dl.sourceforge.net/project/sevenzip/7-Zip/9.20/7z920.tar.bz2
+
+license: lgpl-2.1 and unrar and brian-gladman-3-clause
+
+notice_file: 7zip.NOTICE
+license_file: lgpl-2.1.LICENSE

@@ -1,0 +1,8 @@
+key: openssh
+short_name: OpenSSH License
+name: OpenSSH License
+category: Attribution
+owner: OpenBSD Project
+homepage_url: http://www.openssh.org/
+text_urls:
+    - http://www.openbsd.org/cgi-bin/cvsweb/~checkout~/src/usr.bin/ssh/LICENCE

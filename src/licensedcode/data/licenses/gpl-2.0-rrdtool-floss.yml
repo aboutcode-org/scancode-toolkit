@@ -1,0 +1,7 @@
+key: gpl-2.0-rrdtool-floss
+short_name: GPL 2.0 with RRDtool FLOSS Exception
+name: >-
+    GPL 2.0 with RRDtool FLOSS License Exception
+category: Copyleft Limited
+owner: RRDtool Project
+homepage_url: https://raw.github.com/oetiker/rrdtool-1.x/master/COPYRIGHT

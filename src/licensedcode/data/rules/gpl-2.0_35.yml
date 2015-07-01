@@ -1,0 +1,5 @@
+licenses:
+    - gpl-2.0
+notes: >-
+    license=GPL Linux MODULE_LICENSE binary tag and other mentions.
+    Default to a GPL 2.0 when no version is listed

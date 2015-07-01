@@ -1,0 +1,10 @@
+/*
+ * abc 123    S O F T W A R E
+ * Copyright 1988-2004 by abc 123 Software, Inc.
+ *
+ * This software is proprietary and is the property of abc 123
+ * Software, Inc.  Software is furnished under a license agreement and
+ * is not to be disclosed to others except by the written permission
+ * of the President of abc 123 Software, Inc.
+ * -------------------------------------------------------------------
+ */

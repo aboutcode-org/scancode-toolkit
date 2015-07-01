@@ -1,0 +1,11 @@
+--- linux-2.6.23-orig/arch/sh/kernel/time.c	2009-05-18 13:59:25.000000000 +0200
++++ linux-2.6.23/arch/sh/kernel/time.c	2009-05-18 14:51:20.000000000 +0200
+@@ -255,7 +255,7 @@
+ 	init_sh_clocksource();
+ 
+ 	if (sh_hpt_frequency)
+-		printk("Using %lu.%03lu MHz high precision timer.\n",
++		printk(KERN_INFO "Using %lu.%03lu MHz high precision timer.\n",
+ 		       ((sh_hpt_frequency + 500) / 1000) / 1000,
+ 		       ((sh_hpt_frequency + 500) / 1000) % 1000);
+ 

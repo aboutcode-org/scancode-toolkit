@@ -1,0 +1,29 @@
+/*
+2	 * $Id$
+3	 * PyGres, version 2.2 A Python interface for PostgreSQL database. Written by
+4	 * D'Arcy J.M. Cain, (darcy@druid.net).  Based heavily on code written by
+5	 * Pascal Andre, andre@chimay.via.ecp.fr. Copyright (c) 1995, Pascal Andre
+6	 * (andre@via.ecp.fr).
+7	 *
+8	 * Permission to use, copy, modify, and distribute this software and its
+9	 * documentation for any purpose, without fee, and without a written
+10	 * agreement is hereby granted, provided that the above copyright notice and
+11	 * this paragraph and the following two paragraphs appear in all copies or in
+12	 * any new file that contains a substantial portion of this file.
+13	 *
+14	 * IN NO EVENT SHALL THE AUTHOR BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT,
+15	 * SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS,
+16	 * ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF THE
+17	 * AUTHOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+18	 *
+19	 * THE AUTHOR SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT LIMITED
+20	 * TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+21	 * PURPOSE.  THE SOFTWARE PROVIDED HEREUNDER IS ON AN "AS IS" BASIS, AND THE
+22	 * AUTHOR HAS NO OBLIGATIONS TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,
+23	 * ENHANCEMENTS, OR MODIFICATIONS.
+24	 *
+25	 * Further modifications copyright 1997, 1998, 1999 by D'Arcy J.M. Cain
+26	 * (darcy@druid.net) subject to the same terms and conditions as above.
+27	 *
+28	 */
+29	

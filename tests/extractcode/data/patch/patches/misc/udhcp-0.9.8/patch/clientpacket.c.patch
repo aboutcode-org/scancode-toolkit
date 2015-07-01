@@ -1,0 +1,479 @@
+Index: udhcp-0.9.8/clientpacket.c
+===================================================================
+--- udhcp-0.9.8.orig/clientpacket.c
++++ udhcp-0.9.8/clientpacket.c
+@@ -18,7 +18,8 @@
+  * along with this program; if not, write to the Free Software
+  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  */
+- 
++
++#include <stdio.h>
+ #include <string.h>
+ #include <sys/socket.h>
+ #include <features.h>
+@@ -39,7 +40,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+-
++#include <libgen.h>
+ 
+ #include "dhcpd.h"
+ #include "packet.h"
+@@ -47,6 +48,26 @@
+ #include "dhcpc.h"
+ #include "debug.h"
+ 
++#include "clientpacket.h"
++
++#define DEVICE_SN TESTDIR "/proc/usp/3"
++#define GATEWAY_MANUFACTURER TESTDIR "/flash/common/gwmanufactureroui"
++#define GATEWAY_SERIALNUMBER TESTDIR "/flash/common/gwserialnumber"
++#define GATEWAY_PRODUCTCLASS TESTDIR "/flash/common/gwproductclass"
++
++#define SUBOPT_DEVICE_MANUFACTURER_OUI 1
++#define SUBOPT_DEVICE_SERIAL_NUMBER 2
++#define SUBOPT_DEVICE_PRODUCT_CLASS 3
++#define SUBOPT_GATEWAY_MANUFACTURER_OUI 4
++#define SUBOPT_GATEWAY_SERIAL_NUMBER 5
++#define SUBOPT_GATEWAY_PRODUCT_CLASS 6
++
++#define SUBOPT_CODE 0
++#define SUBOPT_LEN 1
++#define SUBOPT_DATA 2
++#define SUBOPT_HDRLEN 2
++
++#define ENTERPRISE_ADSL_FORUM 3561
+ 
+ /* Create a random xid */
+ unsigned long random_xid(void)
+@@ -65,7 +86,7 @@ unsigned long random_xid(void)
+ 		if (fd >= 0) close(fd);
+ 		srand(seed);
+ 		initialized++;
+-	}
++	}	
+ 	return rand();
+ }
+ 
+@@ -73,18 +94,43 @@ unsigned long random_xid(void)
+ /* initialize a packet with the proper defaults */
+ static void init_packet(struct dhcpMessage *packet, char type)
+ {
+-	struct vendor  {
+-		char vendor, length;
+-		char str[sizeof("udhcp "VERSION)];
+-	} vendor_id = { DHCP_VENDOR,  sizeof("udhcp "VERSION) - 1, "udhcp "VERSION};
+-	
+ 	init_header(packet, type);
+ 	memcpy(packet->chaddr, client_config.arp, 6);
+ 	add_option_string(packet->options, client_config.clientid);
++	if (client_config.userclientid) add_user_class_option(packet->options, client_config.userclientid);
+ 	if (client_config.hostname) add_option_string(packet->options, client_config.hostname);
+-	add_option_string(packet->options, (unsigned char *) &vendor_id);
+ }
+ 
++void sort_request_route_option(u_int8_t *reqOptions, int reqOptionsLen)
++{
++	// The Classless Static Routes option code MUST appear in the parameter
++  // request list prior to both the Router option code and the Static
++  // Routes option code, if present.[RFC 3442]
++	int rp, srp, crp, i;
++	u_int8_t temp;
++
++	rp = srp = crp = -1;
++	for (i = 0; i<reqOptionsLen; i++)
++	{	
++		if (reqOptions[i] == 0x3)
++			rp = i;
++		if (reqOptions[i] == 0x21)
++			srp = i;
++		if (reqOptions[i] == 0x79)
++			crp = i;
++	}
++	
++	if((rp >= 0) && (crp >= 0)) {
++		temp = reqOptions[rp];
++    reqOptions[rp] = reqOptions[crp];
++    reqOptions[crp] = temp;
++	}
++	else if((srp >= 0) && (crp >= 0)) {
++		temp = reqOptions[srp];
++    reqOptions[srp] = reqOptions[crp];
++    reqOptions[crp] = temp;
++	}	
++}
+ 
+ /* Add a paramater request list for stubborn DHCP servers. Pull the data
+  * from the struct in options.c. Don't do bounds checking here because it
+@@ -98,21 +144,27 @@ static void add_requests(struct dhcpMess
+ 	for (i = 0; options[i].code; i++)
+ 		if (options[i].flags & OPTION_REQ)
+ 			packet->options[end + OPT_DATA + len++] = options[i].code;
++	sort_request_route_option((u_int8_t *)(packet->options + end + OPT_DATA), len);
+ 	packet->options[end + OPT_LEN] = len;
+ 	packet->options[end + OPT_DATA + len] = DHCP_END;
+ 
+ }
+ 
+-
+ /* Broadcast a DHCP discover packet to the network, with an optionally requested IP */
+ int send_discover(unsigned long xid, unsigned long requested)
+ {
+ 	struct dhcpMessage packet;
+-
++	
+ 	init_packet(&packet, DHCPDISCOVER);
+ 	packet.xid = xid;
+ 	if (requested)
+ 		add_simple_option(packet.options, DHCP_REQUESTED_IP, requested);
++	if (client_config.leasetime) {
++	  add_simple_option(packet.options, DHCP_LEASE_TIME, 
++			    client_config.leasetime);
++	}
++        add_simple_option(packet.options, DHCP_MAX_SIZE, htons(sizeof(struct udp_dhcp_packet)));
++        add_deviceidentity(&packet);
+ 
+ 	add_requests(&packet);
+ 	LOG(LOG_DEBUG, "Sending discover...");
+@@ -132,6 +184,12 @@ int send_selecting(unsigned long xid, un
+ 
+ 	add_simple_option(packet.options, DHCP_REQUESTED_IP, requested);
+ 	add_simple_option(packet.options, DHCP_SERVER_ID, server);
++	if (client_config.leasetime) {
++	  add_simple_option(packet.options, DHCP_LEASE_TIME, 
++			    client_config.leasetime);
++	}	
++        add_simple_option(packet.options, DHCP_MAX_SIZE, htons(sizeof(struct udp_dhcp_packet)));
++        add_deviceidentity(&packet);	
+ 	
+ 	add_requests(&packet);
+ 	addr.s_addr = requested;
+@@ -140,6 +198,36 @@ int send_selecting(unsigned long xid, un
+ 				SERVER_PORT, MAC_BCAST_ADDR, client_config.ifindex);
+ }
+ 
++/* Broadcasts a DHCP decline message */
++int send_decline(unsigned long xid, unsigned long server, unsigned long requested)
++{
++	struct dhcpMessage packet;
++	struct in_addr addr;
++
++        /* as decline message doesn't need user class, vender id and other options,
++           just init header and end */
++        init_header(&packet, DHCPDECLINE);
++        memcpy(packet.chaddr, client_config.arp, 6);
++        if (client_config.hostname) add_option_string(packet.options, client_config.hostname);
++	packet.xid = xid;
++
++	add_simple_option(packet.options, DHCP_REQUESTED_IP, requested);
++	add_simple_option(packet.options, DHCP_SERVER_ID, server);
++
++        int end = end_option(packet.options);
++        int i, len = 0;
++        for (i = 0; options[i].code; i++)
++                if (options[i].flags & OPTION_REQ)
++                        packet.options[end + OPT_DATA + len++] = options[i].code;
++        sort_request_route_option((u_int8_t *)(packet.options + end + OPT_DATA), len);
++        packet.options[end + OPT_LEN] = len;
++        packet.options[end + OPT_DATA + len] = DHCP_END;
++
++	addr.s_addr = requested;
++	LOG(LOG_DEBUG, "Sending decline for %s...", inet_ntoa(addr));
++	return raw_packet(&packet, INADDR_ANY, CLIENT_PORT, INADDR_BROADCAST, 
++				SERVER_PORT, MAC_BCAST_ADDR, client_config.ifindex);
++}
+ 
+ /* Unicasts or broadcasts a DHCP renew message */
+ int send_renew(unsigned long xid, unsigned long server, unsigned long ciaddr)
+@@ -151,6 +239,9 @@ int send_renew(unsigned long xid, unsign
+ 	packet.xid = xid;
+ 	packet.ciaddr = ciaddr;
+ 
++        add_simple_option(packet.options, DHCP_MAX_SIZE, htons(sizeof(struct udp_dhcp_packet)));
++        add_deviceidentity(&packet);
++
+ 	add_requests(&packet);
+ 	LOG(LOG_DEBUG, "Sending renew...");
+ 	if (server) 
+@@ -219,7 +310,7 @@ int get_raw_packet(struct dhcpMessage *p
+ 	/* check IP checksum */
+ 	check = packet.ip.check;
+ 	packet.ip.check = 0;
+-	if (check != checksum(&(packet.ip), sizeof(packet.ip))) {
++	if (check && check != checksum(&(packet.ip), sizeof(packet.ip))) {
+ 		DEBUG(LOG_INFO, "bad IP header checksum, ignoring");
+ 		return -1;
+ 	}
+@@ -251,3 +342,270 @@ int get_raw_packet(struct dhcpMessage *p
+ 	
+ }
+ 
++int add_suboption(unsigned char* buffer, u_int8_t code, u_int8_t len, u_int8_t* data)
++{
++  buffer[SUBOPT_CODE] = code;
++  buffer[SUBOPT_LEN] = len;
++  memcpy(buffer + SUBOPT_DATA, data, len);
++  return len + 2;
++} 
++
++int add_enterprise_number(unsigned char* buffer, u_int32_t number)
++{
++  buffer[0] = (number >> 24) & 0xff;
++  buffer[1] = (number >> 16) & 0xff;
++  buffer[2] = (number >> 8) & 0xff;
++  buffer[3] = number & 0xff;
++  return 4;
++} 
++
++void stbid_set_manufactureroui(STBIdentity* stbid, const char* value)
++{
++  if (stbid->ManufacturerOUI != NULL) {
++    free(stbid->ManufacturerOUI);
++  }
++  if (value != NULL) {
++    stbid->ManufacturerOUI = strdup(value);
++  }
++}
++
++void stbid_init(STBIdentity* stbid)
++{
++  stbid->SerialNumber = NULL;
++  stbid->ProductClass = NULL;
++  stbid->ManufacturerOUI = NULL;
++}
++
++void stbid_set_productclass(STBIdentity* stbid, const char* value)
++{
++  if (stbid->ProductClass != NULL) {
++    free(stbid->ProductClass);
++  }
++  stbid->ProductClass = strdup(value);
++}
++
++void stbid_set_serialnumber(STBIdentity* stbid, const char* value)
++{
++  if (stbid->SerialNumber != NULL) {
++    free(stbid->SerialNumber);
++  }
++  stbid->SerialNumber = strdup(value);
++}
++
++void stbid_free(STBIdentity* stbid)
++{
++  if (stbid->SerialNumber != NULL) {
++    free(stbid->SerialNumber);
++    stbid->SerialNumber = NULL;
++  }
++  if (stbid->ProductClass != NULL) {
++    free(stbid->ProductClass);
++    stbid->ProductClass = NULL;
++  }
++  if (stbid->ManufacturerOUI != NULL) {
++    free(stbid->ManufacturerOUI);
++    stbid->ManufacturerOUI = NULL;
++  }
++}
++
++void add_deviceidentity(struct dhcpMessage *packet)
++{
++  STBIdentity devIdentity;
++  stbid_init(&devIdentity);
++  get_deviceidentity(&devIdentity);
++
++  u_int8_t buffer[1024];
++  int pos = 0;
++  pos += add_enterprise_number(buffer, ENTERPRISE_ADSL_FORUM);
++  int lenPos = pos;
++  pos += 1; // space for data length
++  int dataPos = pos;
++  pos += add_suboption(buffer + pos, 
++                       SUBOPT_DEVICE_MANUFACTURER_OUI,
++                       strlen(devIdentity.ManufacturerOUI),
++                       (u_int8_t*)devIdentity.ManufacturerOUI);
++  pos += add_suboption(buffer + pos, 
++                       SUBOPT_DEVICE_SERIAL_NUMBER,
++                       strlen(devIdentity.SerialNumber),
++                       (u_int8_t*)devIdentity.SerialNumber);
++  pos += add_suboption(buffer + pos, 
++                       SUBOPT_DEVICE_PRODUCT_CLASS,
++                       strlen(devIdentity.ProductClass),
++                       (u_int8_t*)devIdentity.ProductClass);
++  buffer[lenPos] = pos - dataPos;
++  int totalLen = pos;
++
++  add_option(packet->options, DHCP_VENDOR_SPECIFIC, buffer, totalLen);
++  return;
++}
++
++int parse_enterprise_number(unsigned char* buffer, u_int32_t* value)
++{
++  *value = (buffer[0] << 24) + (buffer[1] << 16) + (buffer[2] << 8) + buffer[3];
++  return 4;
++} 
++
++int parse_suboption(unsigned char* buffer, u_int8_t* code, u_int8_t** data, u_int8_t* dataLen)
++{
++  *code = buffer[SUBOPT_CODE];
++  int len = buffer[SUBOPT_LEN];
++  *data = xmalloc(len);
++  memcpy(*data, buffer + SUBOPT_DATA, len);
++  *dataLen = len;
++  return len + SUBOPT_HDRLEN;
++}
++
++char *makestring(u_int8_t* data, size_t n)
++{
++  char *buf = xmalloc(n+1);
++  memcpy(buf, data, n);
++  buf[n] = '\0';
++  return buf;
++}
++
++void parse_gatewayidentity(unsigned char *buffer)
++{
++  int pos = 0;
++  u_int32_t enterpriseNumber;
++  pos += parse_enterprise_number(buffer + pos, &enterpriseNumber);
++
++  if(enterpriseNumber != ENTERPRISE_ADSL_FORUM){
++    DEBUG(LOG_ERR,
++          "This option 125 is not defined by ADSL forum (!= %d)",
++          ENTERPRISE_ADSL_FORUM);
++    return;
++  }
++  int totalLen = buffer[pos];
++  pos += 1; // total length
++
++  STBIdentity gatewayIdentity;
++  stbid_init(&gatewayIdentity);
++  stbid_set_manufactureroui(&gatewayIdentity, "");
++  stbid_set_serialnumber(&gatewayIdentity, "");
++  stbid_set_productclass(&gatewayIdentity, "");
++
++  int dataPos = pos;
++  while((pos - dataPos) < totalLen) {
++    u_int8_t* data;
++    u_int8_t code;
++    u_int8_t dataLen;
++    int len = parse_suboption(buffer + pos, &code, &data, &dataLen);
++    pos += len;
++    char* value = makestring(data, dataLen);
++    switch(code) {
++    case SUBOPT_GATEWAY_MANUFACTURER_OUI: 
++      stbid_set_manufactureroui(&gatewayIdentity, value);
++      break;
++    case SUBOPT_GATEWAY_SERIAL_NUMBER: 
++      stbid_set_serialnumber(&gatewayIdentity, value);
++      break;
++    case SUBOPT_GATEWAY_PRODUCT_CLASS: 
++      stbid_set_productclass(&gatewayIdentity, value);
++      break;
++    default:
++      DEBUG(LOG_ERR, "Unknown suboption code from gateway: %d", code);
++    }
++    free(value);
++  }
++
++  if (0 == strcmp("", gatewayIdentity.ManufacturerOUI)) {
++    DEBUG(LOG_WARNING, "Missing ManufacturerOUI from gateway");
++  }
++
++  if (0 == strcmp("", gatewayIdentity.SerialNumber)) {
++    DEBUG(LOG_WARNING, "Missing SerialNumber from gateway");
++  }
++
++  if (0 == strcmp("", gatewayIdentity.ProductClass)) {
++    DEBUG(LOG_WARNING, "Missing ProductClass from gateway");
++  }
++
++  set_gatewayidentity(&gatewayIdentity);
++
++  stbid_free(&gatewayIdentity);
++}
++
++int get_deviceidentity(STBIdentity* devIdentity)
++{
++  // ManufacturerOUI should be read from infoservice (const.oui)
++  stbid_set_manufactureroui(devIdentity, "0024A1");
++  stbid_set_productclass(devIdentity, "STBFTTH");
++  stbid_set_serialnumber(devIdentity, "");
++
++  FILE *fp = NULL;
++
++  const int MAXCHAR=512;
++  char buf[MAXCHAR];
++  if ((fp = fopen(DEVICE_SN, "r+")) == NULL) {
++    DEBUG(LOG_ERR, "Device serial number does not exist (\"%s\").", DEVICE_SN);
++    return -1;
++  }
++  else {
++    if(fgets(buf,MAXCHAR,fp) == NULL) {
++      fclose(fp);
++      return -1;
++    }
++    fclose(fp);
++
++    // Only use first line if several lines
++    char* newline = strchr(buf, '\n');
++    if (newline != NULL) {
++      *newline = '\0';
++    }
++    stbid_set_serialnumber(devIdentity, buf);
++  }
++  return 0;
++}
++
++static int CheckAndCreateDir(char * filePath)
++{
++  int returnValue = 0;
++  char * filePathCopy = strdup(filePath);
++  char * dirPath = dirname(filePathCopy);
++
++  if (access(dirPath, F_OK) != 0) {
++    if (mkdir(dirPath, 0777) != 0) {
++      DEBUG(LOG_ERR, "Failed to create \"%s\", %s", dirPath, strerror(errno));
++      returnValue = -1;
++    }
++  }
++
++  free(filePathCopy);
++  return returnValue;
++}
++
++static int SaveToFlash(char* filepath, char* filedata)
++{
++  if (CheckAndCreateDir(filepath) != 0) {
++    return -1;
++  }
++
++  FILE *fp;
++   if ((fp = fopen(filepath, "w+")) == NULL) {
++     DEBUG(LOG_ERR, "Failed to open \"%s\", check that the directory exists",
++           filepath);
++    return -1;
++  }
++  else {
++    if(fputs(filedata,fp) == EOF) {
++      DEBUG(LOG_WARNING,"Fail to write to flash file (\"%s\")",
++            filepath);
++      fclose(fp);
++      return -1;
++    }
++  }
++  fclose(fp);
++  return 0;	
++}
++
++int set_gatewayidentity(STBIdentity* gwIdentity)
++{
++  int result=0;
++  result += SaveToFlash(GATEWAY_MANUFACTURER,gwIdentity->ManufacturerOUI);
++  result += SaveToFlash(GATEWAY_SERIALNUMBER,gwIdentity->SerialNumber);
++  result += SaveToFlash(GATEWAY_PRODUCTCLASS,gwIdentity->ProductClass);
++#if !defined(__TARGET__) || __TARGET__ != VIPHOST
++  sync();
++#endif
++  return result;
++}

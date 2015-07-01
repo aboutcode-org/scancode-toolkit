@@ -1,0 +1,6 @@
+configure:2411: checking for C compiler version
+configure:2414: gcc --version </dev/null >&5
+gcc (GCC) 4.0.3 (Ubuntu 4.0.3-1ubuntu5)
+Copyright (C) 2006 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

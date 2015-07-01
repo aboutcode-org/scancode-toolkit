@@ -1,0 +1,13 @@
+key: motosoto-0.9.1
+short_name: Motosoto 0.9.1
+name: Motosoto Open Source License v0.9.1
+category: Copyleft
+owner: OSI - Open Source Initiative
+homepage_url: http://opensource.org/licenses/motosoto.php
+spdx_license_key: Motosoto
+spdx_full_name: Motosoto License
+spdx_url: http://spdx.org/licenses/Motosoto
+spdx_notes: This license is OSI certified.
+text_urls:
+    - http://opensource.org/licenses/motosoto.php
+osi_url: http://opensource.org/licenses/motosoto.php

@@ -1,0 +1,565 @@
+--- dropbear-2012.55.orig/debian/changelog
++++ dropbear-2012.55/debian/changelog
+@@ -1,38 +1,126 @@
+-dropbear (2012.55-0.1) unstable; urgency=low
++dropbear (2012.55-1) unstable; urgency=high
+ 
+   * New upstream release.
++    * Fix use-after-free bug that could be triggered if command="..."
++      authorized_keys restrictions are used.  Could allow arbitrary
++      code execution or bypass of the command="..." restriction to an
++      authenticated user.  This bug affects releases 0.52 onwards.
++      Ref CVE-2012-0920 (closes: #661150).  Thanks to Danny Fullerton
++      of Mantor Organization for reporting the bug.
+ 
+- -- Matt Johnston <matt@ucc.asn.au>  Wed, 22 Feb 2012 22:54:00 +0800
++ -- Gerrit Pape <pape@smarden.org>  Mon, 27 Feb 2012 14:18:53 +0000
+ 
+-dropbear (2011.54-0.1) unstable; urgency=low
++dropbear (2011.54-1) unstable; urgency=low
+ 
+-  * New upstream release.
++  [ Matt Johnston ]
++  * new upstream release.
++    * Added ALLOW_BLANK_PASSWORD option. Dropbear also now allows public
++      key logins to accounts with a blank password. Thanks to Rob
++      Landley (closes: #555889).
++    * Bind to sockets with IPV6_V6ONLY so that it works properly on
++      systems regardless of the system-wide setting (closes: #636696).
++
++  [ Gerrit Pape ]
++  * debian/control: Standards-Version: 3.9.2.0.
+ 
+- -- Matt Johnston <matt@ucc.asn.au>  Tues, 8 Nov 2011 22:54:00 +0800
++ -- Gerrit Pape <pape@smarden.org>  Wed, 16 Nov 2011 12:36:03 +0000
+ 
+-dropbear (0.53.1-0.1) unstable; urgency=low
++dropbear (0.53.1-1) unstable; urgency=low
+ 
++  [ Matt Johnston ]
+   * New upstream release.
++    * SSH_ORIGINAL_COMMAND environment variable is set by the server
++      when an authorized_keys command is specified (closes: #604524).
+ 
+- -- Matt Johnston <matt@ucc.asn.au>  Wed, 2 Mar 2011 22:54:00 +0900
++  [ Gerrit Pape ]
++  * debian/rules: add --enable-bundled-libtom option to ./configure.
++  * debian/rules: remove -DXAUTH_COMMAND="/usr/bin/X11/xauth -q from
++    CFLAGS (workaround ./configure stupidity; closes: #625192).
++  * debian/diff/0003-options.h-use-usr-bin-xauth-instead-of...diff: new;
++    use /usr/bin/xauth instead of /usr/bin/X11/xauth for XAUTH_COMMAND
++    (closes: #614355).
+ 
+-dropbear (0.53-0.1) unstable; urgency=low
++ -- Gerrit Pape <pape@smarden.org>  Mon, 02 May 2011 16:35:14 +0000
+ 
+-  * New upstream release.
++dropbear (0.52-5) unstable; urgency=low
++
++  [ debian@x.ray.net ]
++  * debian/dropbear.postinst: initramfs-tools uses a conf-hooks.d/
++    directory for mkinitramfs ('compiletime') configuration, so to be
++    sure to read the whole/correct config we need to source the files
++    in there too, additionally to initramfs.conf (closes: #575504).
++  * debian/initramfs/dropbear-conf: set UMASK=0077 (closes: #578117).
++
++  [ Gerrit Pape ]
++  * debian/control: Standards-Version: 3.8.4.0.
++
++ -- Gerrit Pape <pape@smarden.org>  Sun, 18 Apr 2010 23:04:36 +0000
++
++dropbear (0.52-4) unstable; urgency=low
++
++  * debian/initramfs/dropbear-hook: allow more than one public key in
++    initramfs (thx Chris for the patch; closes: #548309).
+ 
+- -- Matt Johnston <matt@ucc.asn.au>  Thu, 24 Feb 2011 22:54:00 +0900
++ -- Gerrit Pape <pape@smarden.org>  Tue, 06 Oct 2009 01:51:42 +0000
+ 
+-dropbear (0.52-0.1) unstable; urgency=low
++dropbear (0.52-3) unstable; urgency=low
+ 
++  * debian/rules: configure: add XAUTH_COMMAND="/usr/bin/X11/xauth -q"
++    to CFLAGS (thx Axel Beckert, Colin Watson; closes: #532900).
++  * debian/dropbear.init: Improve abort messages due to
++    /etc/default/dropbear::NO_START (thx Jari Aalto for the patch;
++    closes: #541432).
++  * debian/control: Provides: ssh-server (thx Steffen Moeller; closes:
++    #543174)
++  * debian/control: Suggests: xauth (thx Francis Russell; closes:
++    #508233).
++
++ -- Gerrit Pape <pape@smarden.org>  Thu, 24 Sep 2009 14:37:17 +0000
++
++dropbear (0.52-2) unstable; urgency=medium
++
++  * debian/initramfs/premount-dropbear: run configure_networking in the
++    background (thx debian@x.ray.net, closes: #514213, #524728).
++  * debian/control: Standards-Version: 3.8.2.0.
++
++ -- Gerrit Pape <pape@smarden.org>  Sun, 28 Jun 2009 23:22:39 +0000
++
++dropbear (0.52-1) unstable; urgency=low
++
++  [ Matt Johnston ]
+   * New upstream release.
++    * dbclient.1: mention optional 'command' argument (closes: #495823).
++
++  [ Gerrit Pape ]
++  * debian/diff/0001-dbclient.1-dbclient-uses-compression-if...diff:
++    new; dbclient.1: dbclient uses compression if compiled with zlib
++    support (thx Luca Capello, closes: #495825).
++  * debian/initramfs/*: new; cryptroot remote unlocking on boot feature
++    (thx debian@x.ray.net).
++  * debian/rules: install debian/initramfs/* (thx debian@x.ray.net).
++  * debian/control: Suggests: udev (for cryptroot support, thx
++    debian@x.ray.net).
++  * debian/dropbear.postinst: conditionally run update-initramfs -u
++    (for cryptroot support, thx debian@x.ray.net. closes: #465903).
++  * debian/diff/0002-dropbearkey.8-mention-y-option-add-example.diff:
++    new; mention -y option, add example (thx debian@x.ray.net).
+ 
+- -- Matt Johnston <matt@ucc.asn.au>  Wed, 12 Nov 2008 22:54:00 +0900
++ -- Gerrit Pape <pape@smarden.org>  Wed, 19 Nov 2008 20:58:59 +0000
+ 
+-dropbear (0.51-0.1) unstable; urgency=low
++dropbear (0.51-1) unstable; urgency=low
+ 
++  [ Matt Johnston ]
+   * New upstream release.
++    - Wait until a process exits before the server closes a connection,
++      so that an exit code can be sent. This fixes problems with exit
++      codes not being returned, which could cause scp to fail (closes:
++      #448397, #472483).
++  
++  [ Gerrit Pape ]
++  * debian/dropbear.postinst: don't print an error message if the
++    update-service program is not installed (thx Matt).
+ 
+- -- Matt Johnston <matt@ucc.asn.au>  Thu, 27 Mar 2008 19:14:00 +0900
++ -- Gerrit Pape <pape@smarden.org>  Thu, 27 Mar 2008 20:08:06 +0000
+ 
+ dropbear (0.50-4) unstable; urgency=low
+ 
+--- dropbear-2012.55.orig/debian/control
++++ dropbear-2012.55/debian/control
+@@ -3,12 +3,13 @@
+ Priority: optional
+ Maintainer: Gerrit Pape <pape@smarden.org>
+ Build-Depends: libz-dev
+-Standards-Version: 3.7.3.0
++Standards-Version: 3.9.2.0
+ 
+ Package: dropbear
+ Architecture: any
+ Depends: ${shlibs:Depends}
+-Suggests: openssh-client, runit
++Suggests: openssh-client, udev, runit, xauth
++Provides: ssh-server
+ Description: lightweight SSH2 server and client
+  dropbear is a SSH 2 server and client designed to be small enough to
+  be used in small memory environments, while still being functional and
+--- dropbear-2012.55.orig/debian/dropbear.init
++++ dropbear-2012.55/debian/dropbear.init
+@@ -14,6 +14,7 @@
+ DAEMON=/usr/sbin/dropbear
+ NAME=dropbear
+ DESC="Dropbear SSH server"
++DEFAULTCFG=/etc/default/dropbear
+ 
+ DROPBEAR_PORT=22
+ DROPBEAR_EXTRA_ARGS=
+@@ -22,7 +23,7 @@
+ set -e
+ 
+ cancel() { echo "$1" >&2; exit 0; };
+-test ! -r /etc/default/dropbear || . /etc/default/dropbear
++test ! -r $DEFAULTCFG || . $DEFAULTCFG
+ test -x "$DAEMON" || cancel "$DAEMON does not exist or is not executable."
+ test ! -x /usr/sbin/update-service || ! update-service --check dropbear ||
+   cancel 'The dropbear service is controlled through runit, use the sv(8) program'
+@@ -38,7 +39,9 @@
+ 
+ case "$1" in
+   start)
+-	test "$NO_START" = "0" || cancel 'NO_START is not set to zero.'
++	test "$NO_START" = "0" ||
++	cancel "Starting $DESC: [abort] NO_START is not set to zero in $DEFAULTCFG"
++
+ 	echo -n "Starting $DESC: "
+ 	start-stop-daemon --start --quiet --pidfile /var/run/"$NAME".pid \
+ 	  --exec "$DAEMON" -- -d "$DROPBEAR_DSSKEY" -r "$DROPBEAR_RSAKEY" \
+@@ -51,7 +54,9 @@
+ 	echo "$NAME."
+ 	;;
+   restart|force-reload)
+-	test "$NO_START" = "0" || cancel 'NO_START is not set to zero.'
++	test "$NO_START" = "0" ||
++	cancel "Restarting $DESC: [abort] NO_START is not set to zero in $DEFAULTCFG"
++
+ 	echo -n "Restarting $DESC: "
+ 	start-stop-daemon --stop --quiet --oknodo --pidfile /var/run/"$NAME".pid
+ 	sleep 1
+--- dropbear-2012.55.orig/debian/dropbear.postinst
++++ dropbear-2012.55/debian/dropbear.postinst
+@@ -61,6 +61,30 @@
+ EOT
+ fi
+ 
++# cryptroot support (debian@x.ray.net)
++#   if dropbear is to be installed to initramfs, we have to update initramfs.
++if ( test -r /etc/initramfs-tools/initramfs.conf || test -r /usr/share/initramfs-tools/conf-hooks.d/* ) &&
++   test -x /usr/sbin/update-initramfs; then
++  for i in /etc/initramfs-tools/initramfs.conf /usr/share/initramfs-tools/conf-hooks.d/*; do
++    if [ -e "${i}" ]; then
++      . "${i}"
++    fi
++  done
++  if test "${DROPBEAR}" = "y" || test -r "/etc/crypttab"; then
++    # here we could read the configured network-config, and use it for
++    # default values for prompting the user for the initramfs-network-
++    # config (subsequently writing it to menu.lst:# kopt= or lilo.conf),
++    # instead of just printing the reminder below.
++    update-initramfs -u
++    cat <<-\EOT
++	Dropbear has been added to the initramfs. Don't forget to check
++	your "ip=" kernel bootparameter to match your desired initramfs
++	ip configuration.
++	
++	EOT
++  fi
++fi
++
+ if test -x /etc/init.d/dropbear; then
+   update-rc.d dropbear defaults >/dev/null
+   if test -x /usr/sbin/invoke-rc.d; then
+--- dropbear-2012.55.orig/debian/rules
++++ dropbear-2012.55/debian/rules
+@@ -34,9 +34,10 @@
+ 
+ config.status: patch-stamp configure
+ 	CC='$(CC)' \
+-	CFLAGS='$(CFLAGS)'' -DSFTPSERVER_PATH="\"/usr/lib/sftp-server\""' \
++	CFLAGS='$(CFLAGS) -DSFTPSERVER_PATH="\"/usr/lib/sftp-server\""' \
+ 	  ./configure --host='$(DEB_HOST_GNU_TYPE)' \
+ 	    --build='$(DEB_BUILD_GNU_TYPE)' --prefix=/usr \
++	    --enable-bundled-libtom \
+ 	    --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info \
+ 	    $(CONFFLAGS)
+ 
+@@ -77,6 +78,23 @@
+ 	install -d -m0755 '$(DIR)'/etc/dropbear/log
+ 	install -m0755 debian/service/log '$(DIR)'/etc/dropbear/log/run
+ 	ln -s /var/log/dropbear '$(DIR)'/etc/dropbear/log/main
++	# cryptroot support (debian@x.ray.net)
++	install -d -m0755 '$(DIR)'/usr/share/initramfs-tools/hooks
++	install -m0755 debian/initramfs/dropbear-hook \
++	  '$(DIR)'/usr/share/initramfs-tools/hooks/dropbear
++	install -d -m0755 \
++	  '$(DIR)'/usr/share/initramfs-tools/scripts/init-premount
++	install -m0755 debian/initramfs/premount-devpts \
++	  '$(DIR)'/usr/share/initramfs-tools/scripts/init-premount/devpts
++	install -m0755 debian/initramfs/premount-dropbear \
++	  '$(DIR)'/usr/share/initramfs-tools/scripts/init-premount/dropbear
++	install -d -m0755 \
++	  '$(DIR)'/usr/share/initramfs-tools/scripts/init-bottom
++	install -m0755 debian/initramfs/bottom-dropbear \
++	  '$(DIR)'/usr/share/initramfs-tools/scripts/init-bottom/dropbear
++	install -d -m0755 '$(DIR)'/usr/share/initramfs-tools/conf-hooks.d
++	install -m0644 debian/initramfs/dropbear-conf \
++	  '$(DIR)'/usr/share/initramfs-tools/conf-hooks.d/dropbear
+ 	# man pages
+ 	install -d -m0755 '$(DIR)'/usr/share/man/man8
+ 	for i in dropbear.8 dropbearkey.8; do \
+--- dropbear-2012.55.orig/debian/initramfs/bottom-dropbear
++++ dropbear-2012.55/debian/initramfs/bottom-dropbear
+@@ -0,0 +1,23 @@
++#!/bin/sh
++
++PREREQ=""
++
++prereqs() {
++	echo "$PREREQ"
++}
++
++case "$1" in
++	prereqs)
++		prereqs
++		exit 0
++	;;
++esac
++
++. /scripts/functions
++
++[ -r /var/run/dropbear.pid ] || exit 0
++
++log_begin_msg "Stopping dropbear"
++
++kill `cat /var/run/dropbear.pid`
++
+--- dropbear-2012.55.orig/debian/initramfs/dropbear-conf
++++ dropbear-2012.55/debian/initramfs/dropbear-conf
+@@ -0,0 +1,17 @@
++#
++# DROPBEAR: [ y | n ]
++#
++# Use dropbear if available. If not specified, dropbear will be used - if
++# possible - in case of cryptroot.
++#
++
++#DROPBEAR=y
++
++#
++# UMASK: [ 4-DIGIT OCTAL UMASK ]
++#
++# umask to use when creating an initramfs
++#
++
++UMASK=0077
++
+--- dropbear-2012.55.orig/debian/initramfs/dropbear-hook
++++ dropbear-2012.55/debian/initramfs/dropbear-hook
+@@ -0,0 +1,52 @@
++#!/bin/sh
++
++PREREQ=""
++
++prereqs() {
++	echo "$PREREQ"
++}
++
++case "$1" in
++	prereqs)
++		prereqs
++		exit 0
++	;;
++esac
++
++. "${CONFDIR}/initramfs.conf"
++. /usr/share/initramfs-tools/hook-functions
++
++# Install dropbear if explicitly enabled, or in case of a cryptroot setup if not explicitly disabled
++if [ "${DROPBEAR}" = "y" ] || ( [ "${DROPBEAR}" != "n" ] && [ -r "/etc/crypttab" ] ); then
++	if [ ! -x "/usr/sbin/dropbear" ]; then
++		if [ "${DROPBEAR}" = "y" ]; then
++			echo "dropbear: FAILURE: Dropbear not found!"
++		else
++			echo "dropbear: WARNING: Dropbear not found, remote unlocking of cryptroot via ssh won't work!"
++		fi
++	else
++		rm -f "${DESTDIR}/sbin/dropbear"
++		copy_exec "/usr/sbin/dropbear" "/sbin/"
++		cp /lib/libnss_* "${DESTDIR}/lib/"
++		echo "root:x:0:0:root:/root:/bin/sh" > "${DESTDIR}/etc/passwd"
++		for keytype in "dss" "rsa"; do
++			if [ ! -f "/etc/initramfs-tools/etc/dropbear/dropbear_${keytype}_host_key" ]; then
++				mkdir -p "/etc/initramfs-tools/etc/dropbear"
++				dropbearkey -t "${keytype}" -f "/etc/initramfs-tools/etc/dropbear/dropbear_${keytype}_host_key"
++			fi
++		done
++		cp -R /etc/initramfs-tools/etc/dropbear "${DESTDIR}/etc/"
++		if [ ! -f "/etc/initramfs-tools/root/.ssh/authorized_keys" ]; then
++			mkdir -p "/etc/initramfs-tools/root/.ssh"
++			if [ ! -f "/etc/initramfs-tools/root/.ssh/id_rsa.pub" ]; then
++				dropbearkey -t rsa -f /etc/initramfs-tools/root/.ssh/id_rsa.dropbear
++				/usr/lib/dropbear/dropbearconvert dropbear openssh /etc/initramfs-tools/root/.ssh/id_rsa.dropbear /etc/initramfs-tools/root/.ssh/id_rsa
++				dropbearkey -y -f /etc/initramfs-tools/root/.ssh/id_rsa.dropbear | grep "^ssh-rsa " > /etc/initramfs-tools/root/.ssh/id_rsa.pub
++			fi
++			cat /etc/initramfs-tools/root/.ssh/id_rsa.pub >> /etc/initramfs-tools/root/.ssh/authorized_keys
++		fi
++		mkdir -p "${DESTDIR}/root/.ssh"
++		cp /etc/initramfs-tools/root/.ssh/authorized_keys "${DESTDIR}/root/.ssh/"
++	fi
++fi
++
+--- dropbear-2012.55.orig/debian/initramfs/premount-devpts
++++ dropbear-2012.55/debian/initramfs/premount-devpts
+@@ -0,0 +1,24 @@
++#!/bin/sh
++
++PREREQ="udev"
++
++prereqs() {
++	echo "$PREREQ"
++}
++
++case "$1" in
++	prereqs)
++		prereqs
++		exit 0
++	;;
++esac
++
++. /scripts/functions
++
++grep -E "[[:space:]]+devpts$" /proc/filesystems >/dev/null 2>&1 || exit 0
++
++log_begin_msg "Mounting devpts"
++
++mkdir -p /dev/pts
++mount -t devpts none /dev/pts
++
+--- dropbear-2012.55.orig/debian/initramfs/premount-dropbear
++++ dropbear-2012.55/debian/initramfs/premount-dropbear
+@@ -0,0 +1,36 @@
++#!/bin/sh
++
++PREREQ="udev devpts"
++
++prereqs() {
++	echo "$PREREQ"
++}
++
++case "$1" in
++	prereqs)
++		prereqs
++		exit 0
++	;;
++esac
++
++. /scripts/functions
++
++[ -x /sbin/dropbear ] || exit 0
++
++log_begin_msg "Starting dropbear"
++
++. /conf/initramfs.conf
++
++for x in $(cat /proc/cmdline); do
++	case "$x" in
++		ip=*)
++			IPOPTS="${x#ip=}"
++			;;
++	esac
++done
++
++configure_networking &
++
++mkdir -p /var/run
++/sbin/dropbear
++
+--- dropbear-2012.55.orig/debian/diff/0001-dbclient.1-dbclient-uses-compression-if-compiled-with.diff
++++ dropbear-2012.55/debian/diff/0001-dbclient.1-dbclient-uses-compression-if-compiled-with.diff
+@@ -0,0 +1,47 @@
++From 468cd0ac91b11f6319b2eb46c076bf158e548c2d Mon Sep 17 00:00:00 2001
++From: Gerrit Pape <pape@smarden.org>
++Date: Wed, 19 Nov 2008 20:00:53 +0000
++Subject: [PATCH 1/3] dbclient.1: dbclient uses compression if compiled with
++ zlib support
++
++On Fri, Sep 26, 2008 at 03:40:57PM +0200, Luca Capello wrote:
++> On Tue, 23 Sep 2008 16:24:25 +0200, Matt Johnston wrote:
++> > On Wed, Aug 20, 2008 at 07:43:58PM +0200, Luca Capello wrote:
++> >> Could you please clarify if dbclient really support compression or not?
++> >> If yes, could you please explain in the manpage how to enable it?
++> >
++> > As long as Dropbear was compiled with zlib support (which I
++> > assume is the case for Debian)
++>
++> It seems so, at least the source build-depends on libz-dev and the
++> binary depends on zlib1g.
++>
++> > dbclient will always use compression if the server supports it. There
++> > isn't any option to disable it at the moment.
++>
++> Is there a way to test that compression is used?  I'm sorry, but I'm
++> really not an expert about these stuff.
++>
++> Could the following patch against version 0.51 be applied to the
++> dbclient manpage?
++---
++ dbclient.1 |    3 +++
++ 1 files changed, 3 insertions(+), 0 deletions(-)
++
++diff --git a/dbclient.1 b/dbclient.1
++index 73d5aaf..3532b7a 100644
++--- a/dbclient.1
+++++ b/dbclient.1
++@@ -21,6 +21,9 @@ dbclient \- lightweight SSH2 client
++ .B dbclient
++ is a SSH 2 client designed to be small enough to be used in small memory
++ environments, while still being functional and secure enough for general use.
+++.P
+++If compiled with zlib support and if the server supports it, dbclient will
+++always use compression.
++ .SH OPTIONS
++ .TP
++ .B \-p \fIport
++-- 
++1.7.9.1
++
+--- dropbear-2012.55.orig/debian/diff/0002-dropbearkey.8-mention-y-option-add-example.diff
++++ dropbear-2012.55/debian/diff/0002-dropbearkey.8-mention-y-option-add-example.diff
+@@ -0,0 +1,43 @@
++From 78c6dbae235b6ad7f5fbf94a2d511ce9177ab8a1 Mon Sep 17 00:00:00 2001
++From: Gerrit Pape <pape@smarden.org>
++Date: Wed, 19 Nov 2008 20:57:36 +0000
++Subject: [PATCH 2/3] dropbearkey.8: mention -y option, add example
++
++Patch from debian@x.ray.net through
++ http://bugs.debian.org/465903
++---
++ dropbearkey.8 |    9 +++++++++
++ 1 files changed, 9 insertions(+), 0 deletions(-)
++
++diff --git a/dropbearkey.8 b/dropbearkey.8
++index b5745dd..d6632d2 100644
++--- a/dropbearkey.8
+++++ b/dropbearkey.8
++@@ -9,6 +9,7 @@ dropbearkey \- create private keys for the use with dropbear(8)
++ .I file
++ [\-s
++ .IR bits ]
+++[\-y]
++ .SH DESCRIPTION
++ .B dropbearkey
++ generates a
++@@ -38,8 +39,16 @@ Write the secret key to the file
++ Set the key size to
++ .I bits
++ bits, should be multiple of 8 (optional).
+++.TP
+++.B \-y
+++Just print the publickey and fingerprint for the private key in
+++.IR file .
++ .SH EXAMPLE
+++generate a host-key:
++  # dropbearkey -t rsa -f /etc/dropbear/dropbear_rsa_host_key
+++
+++extract a public key suitable for authorized_keys from private key:
+++ # dropbearkey -y -f id_rsa | grep "^ssh-rsa " >> authorized_keys
++ .SH AUTHOR
++ Matt Johnston (matt@ucc.asn.au).
++ .br
++-- 
++1.7.9.1
++
+--- dropbear-2012.55.orig/debian/diff/0003-options.h-use-usr-bin-xauth-instead-of-usr-bin-X11-xa.diff
++++ dropbear-2012.55/debian/diff/0003-options.h-use-usr-bin-xauth-instead-of-usr-bin-X11-xa.diff
+@@ -0,0 +1,26 @@
++From 4dbf404cf92452b67e70c46ec026b86bd698a29b Mon Sep 17 00:00:00 2001
++From: Gerrit Pape <pape@smarden.org>
++Date: Mon, 2 May 2011 16:29:45 +0000
++Subject: [PATCH 3/3] options.h: use /usr/bin/xauth instead of
++ /usr/bin/X11/xauth for XAUTH_COMMAND
++
++---
++ options.h |    2 +-
++ 1 files changed, 1 insertions(+), 1 deletions(-)
++
++diff --git a/options.h b/options.h
++index 73689ad..e5de261 100644
++--- a/options.h
+++++ b/options.h
++@@ -243,7 +243,7 @@ much traffic. */
++ /* The command to invoke for xauth when using X11 forwarding.
++  * "-q" for quiet */
++ #ifndef XAUTH_COMMAND
++-#define XAUTH_COMMAND "/usr/bin/X11/xauth -q"
+++#define XAUTH_COMMAND "/usr/bin/xauth -q"
++ #endif
++ 
++ /* if you want to enable running an sftp server (such as the one included with
++-- 
++1.7.9.1
++

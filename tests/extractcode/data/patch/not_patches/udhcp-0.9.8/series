@@ -1,0 +1,40 @@
+# Many fixes: set client id option, set lease time option, set max size option,
+# only do IP checksum check if the checksum != 0
+clientpacket.c.patch
+clientpacket.h.patch
+
+# Move debug logs to stderr
+debug.h.patch
+
+# Many fixes: TODO
+dhcpc.c.patch
+dhcpc.h.patch
+dhcpd.h.patch
+
+# Fix cross compiler support and set some defines
+Makefile.patch
+
+# Add a bunch of options
+# Increase maximum size of incoming dhcp message.
+options.c.patch
+options.h.patch
+
+# Increase maximum size of dhcp message
+packet.h.patch
+
+# Handle option 43 and more
+script.c.patch
+
+# Use minimal size of outgoing packets to avoid problems with some network equipment
+packet.c.patch
+
+# Add support for routing information (options 33 and 121) (needs testing)
+#route.patch1
+
+# Add support for t1/t2 setting (options 58 and 59) (needs testing)
+t1t2.patch1
+
+
+# Add support for our stb and linux pc address conflict.
+arpping.c.patch
+

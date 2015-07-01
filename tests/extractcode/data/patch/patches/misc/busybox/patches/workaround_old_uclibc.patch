@@ -1,0 +1,27 @@
+--- busybox-1.13.3/coreutils/id.c.orig	2009-06-17 15:56:02.000000000 +0200
++++ busybox-1.13.3/coreutils/id.c	2009-06-17 16:02:46.000000000 +0200
+@@ -20,7 +20,8 @@
+ #if !ENABLE_USE_BB_PWD_GRP
+ #if defined(__UCLIBC_MAJOR__) && (__UCLIBC_MAJOR__ == 0)
+ #if (__UCLIBC_MINOR__ < 9) || (__UCLIBC_MINOR__ == 9 &&  __UCLIBC_SUBLEVEL__ < 30)
+-#error "Sorry, you need at least uClibc version 0.9.30 for id applet to build"
++#warning "Warning: you need at least uClibc version 0.9.30 for id applet to build properly. getgrouplist won't be used now. how this will work is not certain"
++#define DONT_USE_GETGROUPLIST 1
+ #endif
+ #endif
+ #endif
+@@ -86,7 +87,14 @@
+ 		/* If the user is a member of more than
+ 		 * *n groups, then -1 is returned. Otherwise >= 0.
+ 		 * (and no defined way of detecting errors?!) */
++#ifndef DONT_USE_GETGROUPLIST
+ 		m = getgrouplist(username, rgid, groups, n);
++#else
++		int nn = getgroups(*n, groups);
++		/* 0: nn <= *n, groups[] was big enough; -1 otherwise */
++		m = - (nn > *n);
++		*n = nn;
++#endif
+ 		/* I guess *n < 0 might indicate error. Anyway,
+ 		 * malloc'ing -1 bytes won't be good, so: */
+ 		//if (*n < 0)

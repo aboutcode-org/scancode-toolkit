@@ -1,0 +1,6 @@
+/*
+ * dump.c --- dump the contents of an inode out to a file
+ * 
+ * Copyright (C) 1994 Theodore Ts'o.  This file may be redistributed
+ * under the terms of the GNU Public License.
+ */

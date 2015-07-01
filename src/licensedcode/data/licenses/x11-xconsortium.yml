@@ -1,0 +1,13 @@
+key: x11-xconsortium
+short_name: X11-Style (X Consortium)
+name: X11-Style (X Consortium)
+category: Attribution
+owner: X Consortium
+homepage_url: http://www.xfree86.org/current/LICENSE5.html
+spdx_license_key: X11
+spdx_full_name: X11 License
+spdx_url: http://spdx.org/licenses/X11
+text_urls:
+    - http://www.xfree86.org/current/LICENSE5.html
+other_urls:
+    - http://www.xfree86.org/3.3.6/COPYRIGHT2.html#3

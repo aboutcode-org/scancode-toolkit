@@ -1,0 +1,2 @@
+/* Gnu GPL is what governs this work */
+

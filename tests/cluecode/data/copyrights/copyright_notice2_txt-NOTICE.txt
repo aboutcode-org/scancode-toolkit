@@ -1,0 +1,53 @@
+----------------------------------------------------------------------
+-	Bundlerepository Bundle Notice
+----------------------------------------------------------------------
+This product includes the bundlerepository bundle which includes
+the follwing software:
+
+  OBR related softare developed by the the Oscar Project.
+  Copyright (c) 2004, Richard S. Hall
+
+  XML Parser software
+
+  kxml parser
+  Copyright (c) 2002,2003, Stefan Haustein, Oberhausen, Rhld., Germany
+
+
+----------------------------------------------------------------------
+-	JUnit Bundle Notice
+----------------------------------------------------------------------
+This product includes the junit bundles which includes
+software developed by the JUnit project released under a Common Public
+License, Version 1.0
+http://junit.sourceforge.net/
+
+----------------------------------------------------------------------
+-	kSOAP Bundle Notice
+----------------------------------------------------------------------
+This product includes the ksoap-osgi bundles which includes software
+developed by the kSOAP project.
+http://www.ksoap.org
+
+Copyright (c) 2002,2004, Stefan Haustein, Oberhausen, Rhld., Germany
+x
+----------------------------------------------------------------------
+-	kxml Bundle Notice
+----------------------------------------------------------------------
+This product includes the kxml bundle which includes software
+developed by Stefan Haustein provided under a BSD style license.
+http://kxml.sourceforge.net
+
+Copyright (c) 2002,2003, Stefan Haustein, Oberhausen, Rhld., Germany
+
+----------------------------------------------------------------------
+-	Oscar Shell API Bundle Notice
+----------------------------------------------------------------------
+This product includes the oscar-shell  bundle which includes
+
+----------------------------------------------------------------------
+-	Serial port Bundles
+----------------------------------------------------------------------
+This product includes RXTX serial library which is licensed under
+LGPL and Suns javax.comm library licensed under Suns Binary Code
+License Agreement. See osgi/bundles_opt/serial/readme.txt for more
+information.

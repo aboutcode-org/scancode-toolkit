@@ -1,0 +1,3 @@
+licenses:
+    - not-a-license
+notes: Curl doc on licensing, nothing should be detected there

@@ -1,0 +1,27 @@
+This package was debianized by J.H.M. Dassen (Ray) <jdassen@debian.org> on
+Sat,  5 Mar 2005 12:14:32 +0100.
+
+It was downloaded from ftp://ftp.gnome.org/pub/GNOME/sources/goffice
+
+Upstream Authors: <s>Jody Goldberg <jody@gnome.org></s> e.a.
+
+Contributors to goffice are listed in the file 'AUTHORS'.
+
+Copyright:
+
+Copyright (C) 2003-2008 <s>Jody Goldberg (jody@gnome.org)</s> and others.
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of version 2 of the GNU General Public License as published
+by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+more details.
+
+You should have received a copy of the GNU General Public License version 2
+with your Debian system, in /usr/share/common-licenses/GPL-2, or with the
+goffice source package as the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+02110-1301  USA.

@@ -1,0 +1,8 @@
+key: csla
+short_name: CSLA License
+name: CSLA .NET License
+category: Attribution Restricted
+owner: Marimer, LLC
+homepage_url: https://github.com/MarimerLLC/csla/blob/master/license.txt
+text_urls:
+    - https://github.com/MarimerLLC/csla/blob/master/license.txt

@@ -1,0 +1,11 @@
+key: ypl-1.0
+short_name: YPL 1.0
+name: Yahoo! Public License v1.0
+category: Copyleft Limited
+owner: Yahoo
+homepage_url: http://www.zimbra.com/license/yahoo_public_license_1.0.html
+spdx_license_key: YPL-1.0
+spdx_full_name: Yahoo! Public License v1.0
+spdx_url: http://spdx.org/licenses/YPL-1.0
+text_urls:
+    - http://www.zimbra.com/license/yahoo_public_license_1.0.html

@@ -1,0 +1,14 @@
+key: gpl-3.0-gcc
+short_name: GCC Runtime Library Exception 3.1
+name: >-
+    GCC Runtime Library Exception Version 3.1
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/gcc-exception-3.1.html
+spdx_license_key: GPL-3.0-with-GCC-exception
+spdx_full_name: >-
+    GNU General Public License v3.0 w/GCC Runtime Library exception
+spdx_url: http://spdx.org/licenses/GPL-3.0-with-GCC-exception
+text_urls:
+    - http://www.gnu.org/licenses/gcc-exception-3.1.html
+faq_url: http://www.gnu.org/licenses/gcc-exception-3.1-faq.html

@@ -1,0 +1,85 @@
+Index: C:/Documents and Settings/gec/workspace/trunks-users/xwiki/core/src/main/java/com/xpn/xwiki/xmlrpc/ConfluenceRpcHandler.java
+===================================================================
+--- C:/Documents and Settings/gec/workspace/trunks-users/xwiki/core/src/main/java/com/xpn/xwiki/xmlrpc/ConfluenceRpcHandler.java	(revision 1952)
++++ C:/Documents and Settings/gec/workspace/trunks-users/xwiki/core/src/main/java/com/xpn/xwiki/xmlrpc/ConfluenceRpcHandler.java	(working copy)
+@@ -379,6 +379,35 @@
+ 
+     public void addUserToGroup(String token, String username, String groupname) {
+     }
++    
++    public Map addSpace(String token, Map pageht) throws XWikiException {
++        try {
++            Space space = new Space(new Hashtable(pageht));
++            
++            XWikiContext context = null;
++            context = getXWikiContext();
++            XWiki xwiki = context.getWiki();
++            context.setAction("save");
++           
++            // Verify authentication token
++            checkToken(token, context);
++
++            // Create a new document and store it
++            XWikiDocument document = new XWikiDocument(space.getKey(), "WebHome");
++            document.setAuthor(context.getUser());
++            
++            context.getWiki().saveDocument(document, context);
++      
++            // Set space settings
++            space.setUrl(document.getURL("view", context));
++            space.setHomepage( new Long(document.getId()).toString());
++
++            return space.getHashtable();
++            } catch (XWikiException e) {
++                e.printStackTrace();
++                throw e;
++            }    	
++    }
+ 
+     protected String handleException(Throwable e, XWikiContext context) {
+ 
+Index: C:/Documents and Settings/gec/workspace/trunks-users/xwiki/core/src/main/java/com/xpn/xwiki/xmlrpc/ConfluenceRpcInterface.java
+===================================================================
+--- C:/Documents and Settings/gec/workspace/trunks-users/xwiki/core/src/main/java/com/xpn/xwiki/xmlrpc/ConfluenceRpcInterface.java	(revision 1952)
++++ C:/Documents and Settings/gec/workspace/trunks-users/xwiki/core/src/main/java/com/xpn/xwiki/xmlrpc/ConfluenceRpcInterface.java	(working copy)
+@@ -41,4 +41,6 @@
+ 	public Object[] getUserGroups(String token, String username);
+ 
+ 	public void addUserToGroup(String token, String username, String groupname);
++	
++	public Map addSpace(String token, Map pageht) throws XWikiException;
+ }
+Index: C:/Documents and Settings/gec/workspace/trunks-users/xwiki/core/src/main/java/com/xpn/xwiki/xmlrpc/Space.java
+===================================================================
+--- C:/Documents and Settings/gec/workspace/trunks-users/xwiki/core/src/main/java/com/xpn/xwiki/xmlrpc/Space.java	(revision 1952)
++++ C:/Documents and Settings/gec/workspace/trunks-users/xwiki/core/src/main/java/com/xpn/xwiki/xmlrpc/Space.java	(working copy)
+@@ -33,6 +33,12 @@
+         this.setHomepage(homepage);
+     }
+ 
++    public Space(Hashtable pageht) {
++        super(pageht);
++        this.setDescription(((String)pageht.get("description")));
++        this.setHomepage(((String)pageht.get("homepage")));
++    }    
++    
+     public Hashtable getHashtable() {
+         Hashtable ht = super.getHashtable();
+         ht.put("description", getDescription());
+Index: C:/Documents and Settings/gec/workspace/trunks-users/xwiki/core/src/main/java/com/xpn/xwiki/xmlrpc/SpaceSummary.java
+===================================================================
+--- C:/Documents and Settings/gec/workspace/trunks-users/xwiki/core/src/main/java/com/xpn/xwiki/xmlrpc/SpaceSummary.java	(revision 1952)
++++ C:/Documents and Settings/gec/workspace/trunks-users/xwiki/core/src/main/java/com/xpn/xwiki/xmlrpc/SpaceSummary.java	(working copy)
+@@ -34,6 +34,12 @@
+         this.setUrl(url);
+     }
+ 
++    public SpaceSummary(Hashtable pageht) {
++        this.setKey((String)pageht.get("key"));
++        this.setName((String)pageht.get("name"));
++        this.setUrl((String)pageht.get("url"));
++    }    
++    
+     public Hashtable getHashtable() {
+         Hashtable ht = new Hashtable();
+         ht.put("key", getKey());

@@ -1,0 +1,9 @@
+key: gpl-2.0-javascript
+short_name: GPL 2.0 with Javascript exception
+name: >-
+    GNU General Public License 2.0 with Javascript exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+text_urls:
+    - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html

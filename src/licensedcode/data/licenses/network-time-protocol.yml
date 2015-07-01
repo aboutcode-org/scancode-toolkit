@@ -1,0 +1,8 @@
+key: network-time-protocol
+short_name: Network Time Protocol License
+name: Network Time Protocol License
+category: Attribution
+owner: University of Delaware
+homepage_url: http://www.eecis.udel.edu/~mills/ntp/html/copyright.html
+text_urls:
+    - http://www.eecis.udel.edu/~mills/ntp/html/copyright.html

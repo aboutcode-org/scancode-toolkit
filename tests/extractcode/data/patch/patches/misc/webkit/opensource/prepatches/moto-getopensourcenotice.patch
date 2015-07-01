@@ -1,0 +1,77 @@
+Index: src/3rdParty/webkit/patches/moto-getopensourcenotice.patch
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/patches/moto-getopensourcenotice.patch
+@@ -0,0 +1,63 @@
++diff -urN work.orig/WebCore/page/DOMWindow.cpp work/WebCore/page/DOMWindow.cpp
++--- work.orig/WebCore/page/DOMWindow.cpp	2010-08-03 14:13:29.219372478 +0800
+++++ work/WebCore/page/DOMWindow.cpp	2010-08-03 14:14:20.838435656 +0800
++@@ -49,7 +49,9 @@
++ #include "Screen.h"
++ #include <algorithm>
++ #include <wtf/MathExtras.h>
++-
+++#include <fstream>
+++#include <string>
+++#define OPENSOURCENOTICE "/usr/share/license/opensourcenotice"
++ #if ENABLE(DATABASE)
++ #include "Database.h"
++ #endif
++@@ -759,5 +761,19 @@
++ {
++     gcController().garbageCollectSoon();
++ }
+++String DOMWindow::getOpenSourceNotice() const
+++{
+++    std::ifstream file;
+++    std::string notice;
+++
+++    file.open(OPENSOURCENOTICE);
+++    if (!file.is_open())
+++      return String();
+++
+++    while (file.good())
+++      notice += file.get();
+++    file.close();
++
+++    return String(notice.c_str());
+++}
++ } // namespace WebCore
++diff -urN work.orig/WebCore/page/DOMWindow.h work/WebCore/page/DOMWindow.h
++--- work.orig/WebCore/page/DOMWindow.h	2010-08-03 14:13:29.222372196 +0800
+++++ work/WebCore/page/DOMWindow.h	2010-08-03 14:14:07.273373467 +0800
++@@ -158,7 +158,7 @@
++         void resizeTo(float width, float height) const;
++
++         void gc();
++-
+++        String getOpenSourceNotice() const;
++     private:
++         Frame* m_frame;
++         mutable RefPtr<Screen> m_screen;
++diff -urN work.orig/WebCore/page/DOMWindow.idl work/WebCore/page/DOMWindow.idl
++--- work.orig/WebCore/page/DOMWindow.idl	2010-08-03 14:13:29.219372478 +0800
+++++ work/WebCore/page/DOMWindow.idl	2010-08-03 14:14:14.503374068 +0800
++@@ -62,6 +62,7 @@
++         [ConvertNullStringTo=Null] DOMString prompt(in DOMString message,
++                                                     in [ConvertUndefinedOrNullToNullString] DOMString defaultValue);
++
+++         DOMString getOpenSourceNotice();
++         boolean find(in DOMString string,
++                      in boolean caseSensitive,
++                      in boolean backwards,
++diff -urN work.orig/WebCore/WebCore.order work/WebCore/WebCore.order
++--- work.orig/WebCore/WebCore.order	2010-08-03 14:13:29.263437024 +0800
+++++ work/WebCore/WebCore.order	2010-08-03 14:13:51.133373321 +0800e16PDFDocumentImageD1Ev
++ __ZNK7WebCore16DeprecatedString5rightEj
++ __ZN7WebCore9DOMWindow4dumpERKNS_6StringE
+++__ZNk7WebCore9DOMWindow19getOpenSourceNoticeEv
+Index: src/3rdParty/webkit/patches/series
+===================================================================
+--- src.orig/3rdParty/webkit/patches/series
++++ src/3rdParty/webkit/patches/series
+@@ -31,3 +31,4 @@ moto-createobject-null-check.patch
+ ekioh-uclibc-stack-base.patch
+ webcore-accept-click.patch
+ webcore-videoplane.patch
++moto-getopensourcenotice.patch

@@ -1,0 +1,40 @@
+
+   This Internet-Draft will expire on August 30, 2004.
+
+Copyright Notice
+
+   Copyright (C) The Internet Society (2004). All Rights Reserved.
+
+Abstract
+   5.7 Event/Security Block (experimental)  . . . . . . . . . . . . . 25
+   6.  Conclusions  . . . . . . . . . . . . . . . . . . . . . . . . . 27
+   7.  Most important open issues . . . . . . . . . . . . . . . . . . 28
+       Intellectual Property and Copyright Statements . . . . . . . . 29
+
+
+   be obtained from the IETF Secretariat.
+
+   The IETF invites any interested party to bring to its attention any
+   copyrights, patents or patent applications, or other proprietary
+   rights which may cover technology that may be required to practice
+   this standard. Please address the information to the IETF Executive
+   Director.
+
+
+Full Copyright Statement
+
+   Copyright (C) The Internet Society (2004). All Rights Reserved.
+
+   This document and translations of it may be copied and furnished to
+   others, and derivative works that comment on or otherwise explain it
+   or assist in its implementation may be prepared, copied, published
+   and distributed, in whole or in part, without restriction of any
+   kind, provided that the above copyright notice and this paragraph are
+   included on all such copies and derivative works. However, this
+   document itself may not be modified in any way, such as by removing
+   the copyright notice or references to the Internet Society or other
+   Internet organizations, except as needed for the purpose of
+   developing Internet standards in which case the procedures for
+   copyrights defined in the Internet Standards process must be
+   followed, or as required to translate it into languages other than
+   English.

@@ -1,0 +1,14 @@
+key: sfl-license
+short_name: SFL License Agreement
+name: SFL License Agreement
+category: Attribution
+owner: iMatix
+homepage_url: http://legacy.imatix.com/html/sfl/sfl4.htm
+spdx_license_key: iMatix
+spdx_full_name: >-
+    iMatix Standard Function Library Agreement
+spdx_url: http://spdx.org/licenses/iMatix
+text_urls:
+    - http://legacy.imatix.com/html/sfl/sfl4.htm
+other_urls:
+    - http://www.imatix.com

@@ -1,0 +1,523 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  
+  
+
+
+  
+
+  
+    <title>
+          #816 (Some errors in tests)
+     –
+      Exmaple  – Trac
+    </title>
+        <link rel="search" href="https://somesite.com/trac/instance/search">
+        <link rel="prev" href="https://somesite.com/trac/instance/ticket/815" title="Ticket #815">
+        <link rel="last" href="https://somesite.com/trac/instance/ticket/1679" title="Ticket #1679">
+        <link rel="help" href="https://somesite.com/trac/instance/wiki/TracGuide">
+        <link rel="alternate" href="https://somesite.com/trac/instance/ticket/816?format=csv" type="text/csv" class="csv" title="Comma-delimited Text"><link rel="alternate" href="https://somesite.com/trac/instance/ticket/816?format=tab" type="text/tab-separated-values" class="tab" title="Tab-delimited Text"><link rel="alternate" href="https://somesite.com/trac/instance/ticket/816?format=rss" type="application/rss+xml" class="rss" title="RSS Feed">
+        <link rel="next" href="https://somesite.com/trac/instance/ticket/817" title="Ticket #817">
+        <link rel="start" href="https://somesite.com/trac/instance/wiki">
+        <link rel="stylesheet" href="816_files/trac.css" type="text/css"><link rel="stylesheet" href="816_files/ticket.css" type="text/css"><link rel="stylesheet" href="816_files/wysiwyg.css" type="text/css">
+        <link rel="first" href="https://somesite.com/trac/instance/ticket/1" title="Ticket #1">
+        <link rel="shortcut icon" href="https://somesite.com/trac/instance/chrome/common/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="https://somesite.com/trac/instance/chrome/common/favicon.ico" type="image/x-icon">
+      <link type="application/opensearchdescription+xml" rel="search" href="https://somesite.com/trac/instance/search/opensearch" title="Search Example">
+    <script type="text/javascript" src="816_files/jquery.js"></script><script type="text/javascript" src="816_files/trac.js"></script><script type="text/javascript" src="816_files/search.js"></script><script type="text/javascript" src="816_files/wysiwyg.js"></script><script type="text/javascript" src="816_files/wysiwyg-load.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/somesite/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="816_files/wikitoolbar.js"></script><script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor("Link to this section");
+        $("#changelog h3.change").addAnchor("Link to this change");
+        /* only enable control elements for the currently selected action */
+        var actions = $("#action input[name='action']");
+        function updateActionFields() {
+          actions.each(function () {
+            $(this).siblings().find("*[@id]").enable($(this).checked());
+            $(this).siblings().filter("*[@id]").enable($(this).checked());
+          });
+        }
+        actions.click(updateActionFields);
+        updateActionFields();
+      });
+    </script>
+  </head><body><div style="position: absolute; left: -1000px; top: -1000px; z-index: 1000;" class="wysiwyg-menu"><ul class="menu"><li><a id="wt-insert-row-before" href="#" onmousedown="return false" tabindex="400">Insert row before</a></li><li><a id="wt-insert-row-after" href="#" onmousedown="return false" tabindex="400">Insert row after</a></li><li><a id="wt-insert-col-before" href="#" onmousedown="return false" tabindex="400">Insert column before</a></li><li><a id="wt-insert-col-after" href="#" onmousedown="return false" tabindex="400">Insert column after</a></li><li><a id="wt-delete-row" href="#" onmousedown="return false" tabindex="400">Delete row</a></li><li><a id="wt-delete-col" href="#" onmousedown="return false" tabindex="400">Delete column</a></li></ul></div><div style="position: absolute; left: -1000px; top: -1000px; z-index: 1000;" class="wysiwyg-menu"><ul class="menu"><li><a id="wt-strike" href="#" onmousedown="return false" tabindex="400">Strike through</a></li><li><a id="wt-sup" href="#" onmousedown="return false" tabindex="400">Superscript</a></li><li><a id="wt-sub" href="#" onmousedown="return false" tabindex="400">Subscript</a></li></ul></div><div style="position: absolute; left: -1000px; top: -1000px; z-index: 1000;" class="wysiwyg-menu"><p><a id="wt-paragraph" href="#" onmousedown="return false" tabindex="400">Normal</a></p><h1><a id="wt-heading1" href="#" onmousedown="return false" tabindex="400">Header 1</a></h1><h2><a id="wt-heading2" href="#" onmousedown="return false" tabindex="400">Header 2</a></h2><h3><a id="wt-heading3" href="#" onmousedown="return false" tabindex="400">Header 3</a></h3><h4><a id="wt-heading4" href="#" onmousedown="return false" tabindex="400">Header 4</a></h4><h5><a id="wt-heading5" href="#" onmousedown="return false" tabindex="400">Header 5</a></h5><h6><a id="wt-heading6" href="#" onmousedown="return false" tabindex="400">Header 6</a></h6><pre class="wiki"><a id="wt-code" href="#" onmousedown="return false" tabindex="400">Code block</a></pre><blockquote class="citation"><a id="wt-quote" href="#" onmousedown="return false" tabindex="400">Quote</a></blockquote></div><div style="position: absolute; left: -1000px; top: -1000px; z-index: 1000;" class="wysiwyg-menu"><ul class="menu"><li><a id="wt-insert-row-before" href="#" onmousedown="return false" tabindex="400">Insert row before</a></li><li><a id="wt-insert-row-after" href="#" onmousedown="return false" tabindex="400">Insert row after</a></li><li><a id="wt-insert-col-before" href="#" onmousedown="return false" tabindex="400">Insert column before</a></li><li><a id="wt-insert-col-after" href="#" onmousedown="return false" tabindex="400">Insert column after</a></li><li><a id="wt-delete-row" href="#" onmousedown="return false" tabindex="400">Delete row</a></li><li><a id="wt-delete-col" href="#" onmousedown="return false" tabindex="400">Delete column</a></li></ul></div><div style="position: absolute; left: -1000px; top: -1000px; z-index: 1000;" class="wysiwyg-menu"><ul class="menu"><li><a id="wt-strike" href="#" onmousedown="return false" tabindex="400">Strike through</a></li><li><a id="wt-sup" href="#" onmousedown="return false" tabindex="400">Superscript</a></li><li><a id="wt-sub" href="#" onmousedown="return false" tabindex="400">Subscript</a></li></ul></div><div style="position: absolute; left: -1000px; top: -1000px; z-index: 1000;" class="wysiwyg-menu"><p><a id="wt-paragraph" href="#" onmousedown="return false" tabindex="400">Normal</a></p><h1><a id="wt-heading1" href="#" onmousedown="return false" tabindex="400">Header 1</a></h1><h2><a id="wt-heading2" href="#" onmousedown="return false" tabindex="400">Header 2</a></h2><h3><a id="wt-heading3" href="#" onmousedown="return false" tabindex="400">Header 3</a></h3><h4><a id="wt-heading4" href="#" onmousedown="return false" tabindex="400">Header 4</a></h4><h5><a id="wt-heading5" href="#" onmousedown="return false" tabindex="400">Header 5</a></h5><h6><a id="wt-heading6" href="#" onmousedown="return false" tabindex="400">Header 6</a></h6><pre class="wiki"><a id="wt-code" href="#" onmousedown="return false" tabindex="400">Code block</a></pre><blockquote class="citation"><a id="wt-quote" href="#" onmousedown="return false" tabindex="400">Quote</a></blockquote></div>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="http://company.com/"><img src="816_files/index.gif" alt=""></a>
+      </div>
+      <form id="search" action="/trac/somesite/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input id="proj-search" name="q" size="18" accesskey="f" type="text">
+          <input value="Search" type="submit">
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as john</li><li><a href="https://somesite.com/trac/instance/logout">Logout</a></li><li><a accesskey="6" href="https://somesite.com/trac/instance/wiki/TracGuide">Help/Guide</a></li><li><a href="https://somesite.com/trac/instance/about">About Trac</a></li><li class="last"><a href="https://somesite.com/trac/instance/prefs">Preferences</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a accesskey="1" href="https://somesite.com/trac/instance/wiki">Wiki</a></li><li><a accesskey="2" href="https://somesite.com/trac/instance/timeline">Timeline</a></li><li><a accesskey="3" href="https://somesite.com/trac/instance/roadmap">Roadmap</a></li><li><a href="https://somesite.com/trac/instance/browser">Browse Source</a></li><li class="active"><a href="https://somesite.com/trac/instance/report">View Tickets</a></li><li><a accesskey="7" href="https://somesite.com/trac/instance/newticket">New Ticket</a></li><li><a accesskey="4" href="https://somesite.com/trac/instance/search">Search</a></li><li><a href="https://somesite.com/trac/instance/admin" title="Administration">Admin</a></li><li><a href="https://somesite.com/trac/instance/importer">Import</a></li><li class="last"><a href="https://somesite.com/trac/instance/build" accesskey="5">Build Status</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>? <a class="prev" href="https://somesite.com/trac/instance/ticket/815" title="Ticket #815">Previous Ticket</a></span></li><li class="last"><span><a class="next" href="https://somesite.com/trac/instance/ticket/817" title="Ticket #817">Next Ticket</a> ?</span></li>
+          </ul>
+        <hr>
+      </div>
+    <div id="content" class="ticket">
+      <h1>
+              Ticket #816
+          <span class="status">(new defect)</span>
+      </h1>
+      <!-- Do not show the ticket (pre)view when the user first comes to the "New Ticket" page.
+           Wait until they hit preview. -->
+        <!-- Ticket Box (ticket fields along with description) -->
+        <div id="ticket">
+          <div class="date">
+            <p>Opened <a class="timeline" href="https://somesite.com/trac/instance/timeline?from=2009-04-28T18%3A46%3A08Z-0700&amp;precision=second" title="2009-04-28T18:46:08Z-0700 in Timeline">5 months</a> ago</p>
+            <p>Last modified <a class="timeline" href="https://somesite.com/trac/instance/timeline?from=2009-09-21T16%3A26%3A19Z-0700&amp;precision=second" title="2009-09-21T16:26:19Z-0700 in Timeline">3 days</a> ago</p>
+          </div>
+          <!-- use a placeholder if it's a new ticket -->
+          <h2 class="summary searchable">Some errors in capturing urls</h2>
+          <table class="properties">
+            <tbody><tr>
+              <th id="h_reporter">Reported by:</th>
+              <td headers="h_reporter" class="searchable">john</td>
+              <th id="h_owner">Owned by:</th>
+              <td headers="h_owner">john
+              </td>
+            </tr>
+            <tr>
+                <th id="h_priority">
+                  Priority:
+                </th>
+                <td headers="h_priority">
+                      should have
+                </td>
+            </tr><tr>
+                <th id="h_component">
+                  Component:
+                </th>
+                <td headers="h_component">
+                      Toolkit
+                </td>
+                <th id="h_keywords">
+                  Keywords:
+                </th>
+                <td headers="h_keywords" class="searchable">
+                </td>
+            </tr><tr>
+                <th id="h_cc">
+                  Cc:
+                </th>
+                <td headers="h_cc" class="searchable">
+                </td>
+                <th id="h_burndown">
+                  Estimate to complete (burndown):
+                </th>
+                <td headers="h_burndown">
+                </td>
+            </tr>
+          </tbody></table>
+            <div class="description">
+              <h3 id="comment:description">
+                Description
+              <a title="Link to this section" href="#comment:description" class="anchor"> ¶</a></h3>
+              <form name="addreply" method="get" action="#comment">
+                <div class="inlinebuttons">
+                  <input name="replyto" value="description" type="hidden">
+                  <input name="reply" value="Reply" title="Reply, quoting this description" type="submit">
+                </div>
+              </form>
+              <div class="searchable">
+                <p>
+The following urls have been captured with extraneous characters at the end:<br>
+</p>
+<p>
+http://alaphalinu.org'). <br>http://alaphalinu.org/bridge. <br>       http://alaphalinu.org. <br>       http://alaphalinu.org''. <br>   http://alaphalinu.org', <br>  http://alaphalinu.org&gt;<br>  http://alaphalinu.org&gt;;<br>   http://alaphalinu.org&gt;.<br>   http://alaphalinu.org/. <br>   http://alaphalinu.org/&gt;<br> http://alaphalinu.org/) <br> http://alaphalinu.org/&gt;)<br>http://alaphalinu.org/&gt;),<br> http://alaphalinu.org/tst.htm] <br>http://alaphalinu.org/tst.html. <br>http://alaphalinu.org/isc\fR. <br>http://alaphalinu.org/isc.txt, <br>   http://alaphalinu.org/isc.html\n <br>http://alaphalinu.org/somedir/\n <br> http://kernelnewbies.org/&lt;/ulink&gt;).
+</p>
+
+              </div>
+            </div>
+        </div>
+          <h2>Attachments</h2>
+          <div id="attachments">
+    <form method="get" action="/trac/somesite/attachment/ticket/816/" id="attachfile">
+      <div>
+        <input name="action" value="new" type="hidden">
+        <input name="attachfilebutton" value="Attach file" type="submit">
+      </div>
+    </form>
+          </div>
+          <h2>Change History</h2>
+          <div id="changelog">
+            <form method="get" action="#comment" class="printableform">
+              <div class="change">
+                <h3 class="change" id="comment:1">
+                  Changed <a class="timeline" href="https://somesite.com/trac/instance/timeline?from=2009-04-28T18%3A46%3A50Z-0700&amp;precision=second" title="2009-04-28T18:46:50Z-0700 in Timeline">5 months</a> ago by john
+                <a title="Link to this change" href="#comment:1" class="anchor"> ¶</a></h3>
+                <div class="inlinebuttons">
+                  <input name="replyto" value="1" type="hidden">
+                  <input value="Reply" title="Reply to comment 1" type="submit">
+                </div>
+      <div class="comment searchable">
+        
+      </div>
+              </div>
+            </form><form method="get" action="#comment" class="printableform">
+              <div class="change">
+                <h3 class="change" id="comment:2">
+                  Changed <a class="timeline" href="https://somesite.com/trac/instance/timeline?from=2009-08-02T23%3A48%3A27Z-0700&amp;precision=second" title="2009-08-02T23:48:27Z-0700 in Timeline">8 weeks</a> ago by john
+                <a title="Link to this change" href="#comment:2" class="anchor"> ¶</a></h3>
+                <div class="inlinebuttons">
+                  <input name="replyto" value="2" type="hidden">
+                  <input value="Reply" title="Reply to comment 2" type="submit">
+                </div>
+      <ul class="changes">
+      </ul>
+      <div class="comment searchable">
+      </div>
+              </div>
+            </form><form method="get" action="#comment" class="printableform">
+              <div class="change">
+                <h3 class="change" id="comment:3">
+                  Changed <a class="timeline" href="https://somesite.com/trac/instance/timeline?from=2009-08-03T21%3A13%3A02Z-0700&amp;precision=second" title="2009-08-03T21:13:02Z-0700 in Timeline">7 weeks</a> ago by john
+                <a title="Link to this change" href="#comment:3" class="anchor"> ¶</a></h3>
+                <div class="inlinebuttons">
+                  <input name="replyto" value="3" type="hidden">
+                  <input value="Reply" title="Reply to comment 3" type="submit">
+                </div>
+      <div class="comment searchable">
+        <p>
+This snippet fixes the issues:
+</p>
+<pre class="wiki">&gt;&gt;&gt; from pprint import pprint
+&gt;&gt;&gt; import re
+&gt;&gt;&gt; URLS_REGEX=re.compile('''((?:(?:ht|f)tp[s]?://(?:[0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})(?::\d{1,4})?[-\w\/#~:.?+=&amp;%@~]*[-\w\/#~:?+=&amp;%@~]{1})''')
+&gt;&gt;&gt; u='''http://alaphalinu.org').
+... http://alaphalinu.org/bridge.
+... http://alaphalinu.org.
+... http://alaphalinu.org''.
+... http://alaphalinu.org',
+... http://alaphalinu.org&gt;
+... http://alaphalinu.org&gt;;
+... http://alaphalinu.org&gt;.
+... http://alaphalinu.org/.
+... http://alaphalinu.org/&gt;
+... http://alaphalinu.org/)
+... http://alaphalinu.org/&gt;)
+... http://alaphalinu.org/&gt;),
+... http://alaphalinu.org/tst.htm]
+... http://alaphalinu.org/tst.html.
+... http://alaphalinu.org/isc\fR.
+... http://alaphalinu.org/isc.txt,
+... http://alaphalinu.org/isc.html\n
+... http://alaphalinu.org/somedir/\n
+... http://kernelnewbies.org/&lt;/ulink&gt;).'''
+&gt;&gt;&gt; [pprint(x) for x in URLS_REGEX.findall(u)]
+'http://alaphalinu.org'
+'http://alaphalinu.org/bridge'
+'http://alaphalinu.org'
+'http://alaphalinu.org'
+'http://alaphalinu.org'
+'http://alaphalinu.org'
+'http://alaphalinu.org'
+'http://alaphalinu.org'
+'http://alaphalinu.org/'
+'http://alaphalinu.org/'
+'http://alaphalinu.org/'
+'http://alaphalinu.org/'
+'http://alaphalinu.org/'
+'http://alaphalinu.org/tst.htm'
+'http://alaphalinu.org/tst.html'
+'http://alaphalinu.org/isc'
+'http://alaphalinu.org/isc.txt'
+'http://alaphalinu.org/isc.html'
+'http://alaphalinu.org/somedir/'
+'http://kernelnewbies.org/'
+[None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+</pre>
+      </div>
+              </div>
+            </form><form method="get" action="#comment" class="printableform">
+              <div class="change">
+                <h3 class="change" id="comment:4">
+                  Changed <a class="timeline" href="https://somesite.com/trac/instance/timeline?from=2009-09-15T14%3A58%3A31Z-0700&amp;precision=second" title="2009-09-15T14:58:31Z-0700 in Timeline">9 days</a> ago by john
+                <a title="Link to this change" href="#comment:4" class="anchor"> ¶</a></h3>
+                <div class="inlinebuttons">
+                  <input name="replyto" value="4" type="hidden">
+                  <input value="Reply" title="Reply to comment 4" type="submit">
+                </div>
+      <ul class="changes">
+        <li>
+          <strong>owner</strong>
+            set to <em>john</em>
+        </li>
+      </ul>
+      <div class="comment searchable">
+        
+      </div>
+              </div>
+            </form><form method="get" action="#comment" class="printableform">
+              <div class="change">
+                <h3 class="change" id="comment:5">
+                  Changed <a class="timeline" href="https://somesite.com/trac/instance/timeline?from=2009-09-15T14%3A58%3A44Z-0700&amp;precision=second" title="2009-09-15T14:58:44Z-0700 in Timeline">9 days</a> ago by john
+                <a title="Link to this change" href="#comment:5" class="anchor"> ¶</a></h3>
+                <div class="inlinebuttons">
+                  <input name="replyto" value="5" type="hidden">
+                  <input value="Reply" title="Reply to comment 5" type="submit">
+                </div>
+      <ul class="changes">
+        <li>
+        </li>
+      </ul>
+      <div class="comment searchable">
+        
+      </div>
+              </div>
+            </form><form method="get" action="#comment" class="printableform">
+              <div class="change">
+                <h3 class="change" id="comment:6">
+                  Changed <a class="timeline" href="https://somesite.com/trac/instance/timeline?from=2009-09-18T15%3A22%3A56Z-0700&amp;precision=second" title="2009-09-18T15:22:56Z-0700 in Timeline">6 days</a> ago by john
+                <a title="Link to this change" href="#comment:6" class="anchor"> ¶</a></h3>
+                <div class="inlinebuttons">
+                  <input name="replyto" value="6" type="hidden">
+                  <input value="Reply" title="Reply to comment 6" type="submit">
+                </div>
+      <ul class="changes">
+        <li>
+          <strong>owner</strong>
+            changed from <em>john</em> to <em>john</em>
+        </li><li>
+          <strong>status</strong>
+              changed from <em>new</em> to <em>review</em>
+        </li><li>
+          <strong>resolution</strong>
+              set to <em>fixed</em>
+        </li>
+      </ul>
+      <div class="comment searchable">
+        <p>
+Fixed @ <a class="changeset" href="https://somesite.com/trac/instance/changeset/3115" title="Fix for better url parsing">r1215</a>&nbsp;
+</p>
+
+      </div>
+              </div>
+            </form><form method="get" action="#comment" class="printableform">
+              <div class="change">
+                <h3 class="change" id="comment:7">
+                  Changed <a class="timeline" href="https://somesite.com/trac/instance/timeline?from=2009-09-21T16%3A26%3A08Z-0700&amp;precision=second" title="2009-09-21T16:26:08Z-0700 in Timeline">3 days</a> ago by john
+                <a title="Link to this change" href="#comment:7" class="anchor"> ¶</a></h3>
+                <div class="inlinebuttons">
+                  <input name="replyto" value="7" type="hidden">
+                  <input value="Reply" title="Reply to comment 7" type="submit">
+                </div>
+      <ul class="changes">
+        <li>
+          <strong>status</strong>
+              changed from <em>review</em> to <em>reopened</em>
+        </li><li>
+          <strong>resolution</strong>
+            deleted
+        </li>
+      </ul>
+      <div class="comment searchable">
+        <p>
+It has a big improvement, but from <a class="changeset" href="https://somesite.com/trac/instance/changeset/3119" title="Fix for don't extract archives  ..."></a>, 
+</p>
+<pre class="wiki">/test/1.txt,http://alaphalinu.org/isc\fR
+/test/1.txt,http://alaphalinu.org/isc.html\n
+/test/1.txt,http://alaphalinu.org/somedir/\n
+</pre>
+      </div>
+              </div>
+            </form><form method="get" action="#comment" class="printableform">
+              <div class="change">
+                <h3 class="change" id="comment:8">
+                  Changed <a class="timeline" href="https://somesite.com/trac/instance/timeline?from=2009-09-21T16%3A26%3A19Z-0700&amp;precision=second" title="2009-09-21T16:26:19Z-0700 in Timeline">3 days</a> ago by john
+                <a title="Link to this change" href="#comment:8" class="anchor"> ¶</a></h3>
+                <div class="inlinebuttons">
+                  <input name="replyto" value="8" type="hidden">
+                  <input value="Reply" title="Reply to comment 8" type="submit">
+                </div>
+      <div class="comment searchable">
+        
+      </div>
+              </div>
+            </form>
+          </div>
+      <form action="/trac/somesite/ticket/816" method="post" name="propform" id="propertyform"><div><input name="__FORM_TOKEN" value="a4d374a7aee55232628b1a78" type="hidden"></div>
+        <h3><a id="edit" onfocus="$('#comment').get(0).focus()">
+            Add/Change #816 (Some errors in capturing urls)</a></h3>
+        <div class="field">
+          <fieldset class="iefix">
+            <label for="comment">Comment (you may use
+              <a tabindex="42" href="https://somesite.com/trac/instance/wiki/WikiFormatting">WikiFormatting</a>
+              here):
+            </label><br>
+            <p><div class="editor-toggle"><label for="editor-autolink-1" title="Links as you type (Ctrl-L)"><input id="editor-autolink-1" checked="checked" type="checkbox">autolink </label><label for="editor-wysiwyg-1"><input name="__EDITOR__1" value="wysiwyg" id="editor-wysiwyg-1" checked="checked" type="radio">wysiwyg</label> <label for="editor-textarea-1"><input name="__EDITOR__1" value="textarea" id="editor-textarea-1" type="radio">textarea</label> &nbsp; </div><div style="position: absolute; left: -9999px; top: -9999px;" class="wikitoolbar"><a tabindex="400" title="Bold text: '''Example'''" id="strong" href="#"></a><a tabindex="400" title="Italic text: ''Example''" id="em" href="#"></a><a tabindex="400" title="Heading: == Example ==" id="heading" href="#"></a><a tabindex="400" title="Link: [http://www.somesite.com/ Example]" id="link" href="#"></a><a tabindex="400" title="Code block: {{{ somesite }}}" id="code" href="#"></a><a tabindex="400" title="Horizontal rule: ----" id="hr" href="#"></a><a tabindex="400" title="New paragraph" id="np" href="#"></a><a tabindex="400" title="Line break: [[BR]]" id="br" href="#"></a><a tabindex="400" title="Image: [[Image()]]" id="img" href="#"></a></div><textarea style="position: absolute; left: -9999px; top: 2343px;" id="comment" name="comment" class="wikitext" rows="10" cols="78"></textarea><div style="position: static; left: -9999px; top: -9999px;" class="wysiwyg-toolbar"><ul><li class="wysiwyg-menu-style" title="Style"><a id="wt-style" href="#" onmousedown="return false" tabindex="400"><span class="wysiwyg-menu-style">Style</span><span class="wysiwyg-menu-paragraph">Normal</span><span class="wysiwyg-menu-heading1">Header 1</span><span class="wysiwyg-menu-heading2">Header 2</span><span class="wysiwyg-menu-heading3">Header 3</span><span class="wysiwyg-menu-heading4">Header 4</span><span class="wysiwyg-menu-heading5">Header 5</span><span class="wysiwyg-menu-heading6">Header 6</span><span class="wysiwyg-menu-code">Code block</span><span class="wysiwyg-menu-quote">Quote</span></a></li><li title="Bold (Ctrl+B)"><a id="wt-strong" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Italic (Ctrl+I)"><a id="wt-em" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Underline (Ctrl+U)"><a id="wt-underline" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Monospace"><a id="wt-monospace" href="#" onmousedown="return false" tabindex="400"></a></li><li><a id="wt-decorationmenu" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Remove format"><a id="wt-remove" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Link"><a id="wt-link" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Unlink"><a id="wt-unlink" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Ordered list"><a id="wt-ol" href="#" onmousedown="return false" tabindex="400"></a></li><li title="List"><a id="wt-ul" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Outdent"><a id="wt-outdent" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Indent"><a id="wt-indent" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Table"><a id="wt-table" href="#" onmousedown="return false" tabindex="400"></a></li><li><a id="wt-tablemenu" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Horizontal rule"><a id="wt-hr" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Line break (Shift+Enter)"><a id="wt-br" href="#" onmousedown="return false" tabindex="400"></a></li></ul></div><iframe style="position: static; left: -9999px; top: -9999px;" class="wysiwyg" src="javascript:''" marginwidth="0" marginheight="0" frameborder="0" height="169" width="100%"></iframe></p>
+          </fieldset>
+        </div>
+        <fieldset id="properties">
+          <legend>Change Properties</legend>
+          <table>
+            <tbody><tr>
+              <th><label for="field-summary">Summary:</label></th>
+              <td class="fullrow" colspan="3">
+                <input id="field-summary" name="field_summary" value="Some errors in capturing urls " size="70" type="text">
+              </td>
+            </tr>
+              <tr>
+                <th><label for="field-reporter">Reporter:</label></th>
+                <td class="fullrow" colspan="3">
+                  <input id="field-reporter" name="field_reporter" value="john" size="70" type="text">
+                </td>
+              </tr>
+              <tr>
+                <th><label for="field-description">Description:</label></th>
+                <td class="fullrow" colspan="3">
+                  <div class="editor-toggle"><label for="editor-autolink-2" title="Links as you type (Ctrl-L)"><input id="editor-autolink-2" checked="checked" type="checkbox">autolink </label><label for="editor-wysiwyg-2"><input name="__EDITOR__2" value="wysiwyg" id="editor-wysiwyg-2" checked="checked" type="radio">wysiwyg</label> <label for="editor-textarea-2"><input name="__EDITOR__2" value="textarea" id="editor-textarea-2" type="radio">textarea</label> &nbsp; </div><div style="position: absolute; left: -9999px; top: -9999px;" class="wikitoolbar"><a tabindex="400" title="Bold text: '''Example'''" id="strong" href="#"></a><a tabindex="400" title="Italic text: ''Example''" id="em" href="#"></a><a tabindex="400" title="Heading: == Example ==" id="heading" href="#"></a><a tabindex="400" title="Link: [http://www.somesite.com/ Example]" id="link" href="#"></a><a tabindex="400" title="Code block: {{{ somesite }}}" id="code" href="#"></a><a tabindex="400" title="Horizontal rule: ----" id="hr" href="#"></a><a tabindex="400" title="New paragraph" id="np" href="#"></a><a tabindex="400" title="Line break: [[BR]]" id="br" href="#"></a><a tabindex="400" title="Image: [[Image()]]" id="img" href="#"></a></div><textarea style="position: absolute; left: -9999px; top: 2636px;" id="field-description" name="field_description" class="wikitext" rows="10" cols="68">The
+following urls have been captured with extraneous characters at the
+end:[[BR]]
+!http://alaphalinu.org'). [[BR]]!http://alaphalinu.org/bridge. [[BR]]
+!http://alaphalinu.org. [[BR]] !http://alaphalinu.org!''. [[BR]]
+!http://alaphalinu.org', [[BR]] !http://alaphalinu.org&gt;[[BR]]
+!http://alaphalinu.org&gt;;[[BR]] !http://alaphalinu.org&gt;.[[BR]]
+!http://alaphalinu.org/. [[BR]] !http://alaphalinu.org/&gt;[[BR]]
+!http://alaphalinu.org/) [[BR]]
+!http://alaphalinu.org/&gt;)[[BR]]!http://alaphalinu.org/&gt;),[[BR]]
+!http://alaphalinu.org/tst.htm] [[BR]]!http://alaphalinu.org/tst.html.
+[[BR]]!http://alaphalinu.org/isc\fR.
+[[BR]]!http://alaphalinu.org/isc.txt, [[BR]]
+!http://alaphalinu.org/isc.html\n
+[[BR]]!http://alaphalinu.org/somedir/\n [[BR]]
+!http://kernelnewbies.org/&lt;/ulink&gt;).</textarea><div style="position: static; left: -9999px; top: -9999px;" class="wysiwyg-toolbar"><ul><li class="wysiwyg-menu-style" title="Style"><a id="wt-style" href="#" onmousedown="return false" tabindex="400"><span class="wysiwyg-menu-style">Style</span><span class="wysiwyg-menu-paragraph">Normal</span><span class="wysiwyg-menu-heading1">Header 1</span><span class="wysiwyg-menu-heading2">Header 2</span><span class="wysiwyg-menu-heading3">Header 3</span><span class="wysiwyg-menu-heading4">Header 4</span><span class="wysiwyg-menu-heading5">Header 5</span><span class="wysiwyg-menu-heading6">Header 6</span><span class="wysiwyg-menu-code">Code block</span><span class="wysiwyg-menu-quote">Quote</span></a></li><li title="Bold (Ctrl+B)"><a id="wt-strong" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Italic (Ctrl+I)"><a id="wt-em" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Underline (Ctrl+U)"><a id="wt-underline" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Monospace"><a id="wt-monospace" href="#" onmousedown="return false" tabindex="400"></a></li><li><a id="wt-decorationmenu" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Remove format"><a id="wt-remove" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Link"><a id="wt-link" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Unlink"><a id="wt-unlink" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Ordered list"><a id="wt-ol" href="#" onmousedown="return false" tabindex="400"></a></li><li title="List"><a id="wt-ul" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Outdent"><a id="wt-outdent" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Indent"><a id="wt-indent" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Table"><a id="wt-table" href="#" onmousedown="return false" tabindex="400"></a></li><li><a id="wt-tablemenu" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Horizontal rule"><a id="wt-hr" href="#" onmousedown="return false" tabindex="400"></a></li><li title="Line break (Shift+Enter)"><a id="wt-br" href="#" onmousedown="return false" tabindex="400"></a></li></ul></div><iframe style="position: static; left: -9999px; top: -9999px;" class="wysiwyg" src="javascript:''" marginwidth="0" marginheight="0" frameborder="0" height="169" width="100%"></iframe>
+                </td>
+              </tr>
+            <tr>
+                <th class="col1">
+                  <label for="field-type">Type:</label>
+                </th>
+                <td class="col1">
+                    <select id="field-type" name="field_type">
+                      <option>requirement</option><option selected="selected">defect</option><option>enhancement</option><option>task</option>
+                    </select>
+                </td>
+                <th class="col2">
+                  <label for="field-priority">Priority:</label>
+                </th>
+                <td class="col2">
+                    <select id="field-priority" name="field_priority">
+                      <option>blocker</option><option>must have</option><option selected="selected">should have</option><option>nice to have</option><option>cosmetic</option><option>don't know</option>
+                    </select>
+                </td>
+            </tr><tr>
+                <th class="col1">
+                  <label for="field-milestone">Milestone:</label>
+                </th>
+                <td class="col1">
+                    <select id="field-milestone" name="field_milestone">
+                      <option></option>
+                    </select>
+                </td>
+                <th class="col2">
+                  <label for="field-component">Component:</label>
+                </th>
+                <td class="col2">
+                </td>
+            </tr><tr>
+                <th class="col1">
+                  <label for="field-keywords">Keywords:</label>
+                </th>
+                <td class="col1">
+                        <input id="field-keywords" name="field_keywords" type="text">
+                </td>
+                <th class="col2">
+                  <label for="field-cc">Cc:</label>
+                </th>
+                <td class="col2">
+                        <span>
+                          <input id="field-cc" title="Space or comma delimited email addresses and usernames are accepted." name="field_cc" type="text">
+                        </span>
+                </td>
+            </tr><tr>
+                <th class="col1">
+                  <label for="field-burndown">Estimate to complete (burndown):</label>
+                </th>
+                <td class="col1">
+                        <input id="field-burndown" name="field_burndown" type="text">
+                </td>
+                <th class="col2">
+                </th>
+                <td class="col2">
+                </td>
+            </tr>
+          </tbody></table>
+        </fieldset>
+          <fieldset id="action">
+            <legend>Action</legend>
+            <div>
+              <input id="action_leave" name="action" value="leave" checked="checked" type="radio">
+                <label for="action_leave">leave</label>
+                as new
+                <span class="hint"></span>
+            </div><div>
+              <input id="action_resolve" name="action" value="resolve" type="radio">
+                <label for="action_resolve">resolve</label>
+                as <select disabled="disabled" name="action_resolve_resolve_resolution" id="action_resolve_resolve_resolution"><option selected="selected">fixed</option><option>invalid</option><option>wontfix</option><option>duplicate</option><option>worksforme</option></select>
+                <span class="hint">The owner will change to john. The resolution will be set. Next status will be 'review'</span>
+            </div><div>
+              <input id="action_accept" name="action" value="accept" type="radio">
+                <label for="action_accept">accept</label>
+                <span class="hint">Next status will be 'assigned'</span>
+            </div>
+          </fieldset>
+        <div class="buttons">
+            <input name="ts" value="2009-09-21 23:26:19+00:00" type="hidden">
+            <input name="replyto" type="hidden">
+            <input name="cnum" value="9" type="hidden">
+          <input name="preview" value="Preview" accesskey="r" type="submit">&nbsp;
+          <input name="submit" value="Submit changes" type="submit">
+        </div>
+      </form>
+      <div id="help">
+        <strong>Note:</strong> See
+        <a href="https://somesite.com/trac/instance/wiki/TracTickets">TracTickets</a> for help on using
+        tickets.
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="https://somesite.com/trac/instance/ticket/816?format=csv" class="csv">Comma-delimited Text</a>
+        </li><li>
+          <a rel="nofollow" href="https://somesite.com/trac/instance/ticket/816?format=tab" class="tab">Tab-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="https://somesite.com/trac/instance/ticket/816?format=rss" class="rss">RSS Feed</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" xml:lang="en" lang="en"><hr>
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="816_files/trac_logo_mini.png" alt="Trac Powered" height="30" width="107"></a>
+      <p class="left">
+        Powered by <a href="https://somesite.com/trac/instance/about"><strong>Trac 0.11</strong></a><br>
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the CompanY.com at<br><a href="http://company.com/">http://company.com/</a></p>
+    </div>
+  </body></html>

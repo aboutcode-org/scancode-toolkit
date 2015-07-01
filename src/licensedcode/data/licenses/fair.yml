@@ -1,0 +1,13 @@
+key: fair
+short_name: Fair License
+name: Fair License
+category: Attribution
+owner: OSI - Open Source Initiative
+homepage_url: http://opensource.org/licenses/fair.php
+spdx_license_key: Fair
+spdx_full_name: Fair License
+spdx_url: http://spdx.org/licenses/Fair
+spdx_notes: This license is OSI certified
+text_urls:
+    - http://opensource.org/licenses/fair.php
+osi_url: http://opensource.org/licenses/fair.php

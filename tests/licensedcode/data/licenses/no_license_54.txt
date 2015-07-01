@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.6.2
+Created-By: 1.2.2 (Sun Microsystems Inc.)
+Extension-Name: org.apache.commons.logging
+Specification-Title: Jakarta Commons Logging
+Specification-Vendor: Apache Software Foundation
+Specification-Version: 1.0
+Implementation-Title: Jakarta Commons Logging
+Implementation-Vendor-Id: org.apache
+Implementation-Vendor: Apache Software Foundation
+Implementation-Version: 1.1
+

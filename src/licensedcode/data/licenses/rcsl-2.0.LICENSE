@@ -1,0 +1,192 @@
+REALNETWORKS COMMUNITY SOURCE LICENSE
+ RESEARCH AND DEVELOPMENT USE
+(RCSL R&D)
+Version 2.0 (Rev. Date: February 8, 2005)
+
+RECITALS
+
+Original Contributor has developed Specifications, Source Code implementations and Executables of the Helix DNA Code, and an associated TCK; and
+
+Original Contributor desires to license the Helix DNA Code to a large community to facilitate research, innovation and product development while maintaining compatibility of such products with the Helix DNA Code as delivered by Original Contributor;
+
+Therefore, Original Contributor makes available the Helix DNA Code, the Specifications, and the TCK available under for Research and Development Use only under the following terms:
+
+LICENSE
+
+1. Introduction.
+
+The RealNetworks Community Source License Research and Development Use ( RCSL R&D or License) is a license to use the Source Code of certain portions of the Helix DNA Code, Specifications, and the TCK for research and development use only. You accept the terms of this License by downloading or using the Helix DNA Code, the Specifications, or the TCK.
+
+This License does not include a license to access or modify the Source Code of the Real Format Code. If you desire the right to receive access to the Source Code of the Real Format Code for the purposes of porting and optimization, You and Original Contributor may elect to execute a Real Format Source Code Porting Agreement.
+
+This License does not include a license to make Commercial Use of the Helix DNA Code or Real Format Code. If You desire a license for Commercial Use of the Helix DNA Code or Real Format Code, You and Original Contributor may desire to execute the RealNetworks Community Source License - Commercial Use ( RCSL Commercial ) for the version of the Helix DNA Code and/or Real Format Code You would like to make Commercial Use of. Once executed by You and Original Contributor, the RCSL Commercial would supersede the terms of this License.
+
+Capitalized terms used in this License are defined in the Glossary attached to the end of this License.
+
+2. License Grants.
+
+2.1 Original Contributor Grant to use Covered Code, Specifications, and TCK.
+
+Subject to Your compliance with the terms of this License, Original Contributor grants to You a worldwide, royalty-free, non-exclusive license, to the extent of Original Contributor's Intellectual Property Rights covering the Covered Code, Specifications, and TCK to do the following:
+
+(a) Research Use License:
+
+(i) use, reproduce and modify the Covered Code and Specifications to create Modifications and Reformatted Specifications for Research Use by You;
+
+(ii) publish and display Covered Code and Specifications with, or as part of Modifications, as permitted under Section 3.1(b) below;
+
+(iii) reproduce and distribute copies of Covered Code to Licensees and students for Research Use by You;
+
+(iv) compile, reproduce and distribute Covered Code in Executable form, and Reformatted Specifications to anyone for Research Use by You; and
+
+(v) use the TCK to develop and test Covered Code.
+
+(b) Other than the licenses expressly granted in this License, Original Contributor retains all right, title, and interest in Covered Code, Specifications and TCK.
+
+(c) TCK Use Restrictions.
+
+You may not create derivative works of the TCK or use the TCK to test any implementation of the Specification except for the purpose of creating Compliant Covered Code. You may not publish Your test results or make claims of comparative compatibility with respect to other implementations of the Specification. You may not develop Your own tests that are intended to validate conformation with the Specification.
+
+2.2 Your Grants.
+
+(a) To Other Licensees. You hereby grant to each Licensee a license to Your Error Corrections and Shared Modifications, of the same scope and extent as Original Contributor's licenses under Section 2.1 (a) above relative to Research Use.
+
+(b) To Original Contributor. You hereby grant to Original Contributor a worldwide, royalty-free, non-exclusive, perpetual and irrevocable license, to the extent of Your Intellectual Property Rights covering Your Error Corrections, Shared Modifications and Reformatted Specifications, to use, reproduce, modify, display and distribute Your Error Corrections, Shared Modifications and Reformatted Specifications, in any form, including the right to sublicense such rights through multiple tiers of distribution.
+
+(c) Other than the licenses expressly granted in Sections 2.2(a) and (b) above, and the restrictions set forth in Section 3.1 below, You retain all right, title, and interest in Your Error Corrections, Shared Modifications and Reformatted Specifications.
+
+2.3 Contributor Modifications.
+
+You may use, reproduce, modify, display and distribute Contributor Error Corrections, Shared Modifications and Reformatted Specifications, obtained by You under this License, to the same scope and extent as with Original Code, Upgraded Code and Specifications.
+
+2.4 Subcontracting.
+
+You may deliver the Source Code of Covered Code to other Licensees for the sole purpose of furnishing development services to You in connection with Your rights granted in this License, provided that You do not enter a separate agreement with such Licensee that contains provisions inconsistent with the ownership and licensing requirements set forth in this License.
+
+3. Requirements and Responsibilities.
+
+3.1 Research Use License.
+
+As a condition of exercising the rights granted under Section 2.1(a) above, You must comply with the following:
+
+(a) Your Contributions. All Error Corrections and Shared Modifications which You create are automatically subject to the licenses granted under Section 2.2 above. You are encouraged to license all of Your other Modifications under Section 2.2 as Shared Modifications, but are not required to do so. You must notify Original Contributor of any errors in the Specification.
+
+(b) Source Code Availability. You must provide all Your Error Corrections to Original Contributor as soon as reasonably practicable and, in any event, no later than when You share such Error Corrections with any other Licensee. Original Contributor may, at its discretion, post Source Code for Your Error Corrections and Shared Modifications at www.helixcommunity.org.
+
+(c) Notices. All Error Corrections and Shared Modifications You create or contribute to must include a file documenting the additions and changes You made and the date of such additions and changes. You must also include the notice set forth in Attachment A-1 in the file header. If it is not possible to put the notice in a particular Source Code file due to its structure, then You must include the notice in a location (such as a relevant directory file), where a recipient would be most likely to look for such a notice.
+
+(d) Redistribution.
+
+(i) Source. Covered Code may be distributed in Source Code form only to another Licensee (except for students as provided below). You may not offer or impose any terms on any Covered Code that alter the rights, requirements, or responsibilities of such Licensee. You may distribute Covered Code to students for use in connection with their course work and research projects undertaken at accredited educational institutions. Such students need not be Licensees, but must be given a copy of the notice set forth in Attachment A-3 and such notice must also be included in a file header or prominent location in the Source Code made available to such students.
+
+(ii) Executable. You may distribute Executable version(s) of Covered Code to Licensees and other third parties only for the purpose of evaluation and comment in connection with Research Use by You and under a license of Your choice, but which limits use of such Executable version(s) of Covered Code only to that purpose.
+
+(iii) Modified Class, Interface and Package Naming. In connection with Research Use by You only, You may use Original Contributor's class, Interface and package names only to accurately reference or invoke the Source Code files You modify. Original Contributor grants to You a limited license to the extent necessary for such purposes.
+
+(e) Extensions.
+
+(i) You may not include any Source Code of Community Code in any Extensions. You may include the compiled Header Files of Community Code in an Extension provided that Your use of the Covered Code, including Header Files, complies with the TCK and all other terms of this License.
+
+(ii) Open. You must refrain from enforcing any Intellectual Property Rights You may have covering any interface(s) of Your Extension, which would prevent the implementation of such interface(s) by Original Contributor or any Licensee. This obligation does not prevent You from enforcing any Intellectual Property Right You have that would otherwise be infringed by an implementation of Your Extension.
+
+(iii) Interface Modifications and Naming. You may not modify or add to the GUID space "xxxxxxxx-0901-11d1-8B06-00A024406D59" or any other GUID space designated by Original Contributor. You may not modify any Interface prefix provided with the Covered Code or any other prefix designated by Original Contributor.
+
+(f) Any Specifications provided to You by Original Contributor are confidential and proprietary information of Original Contributor. You must maintain the confidentiality of the Specifications and may not disclose them to any third party without Original Contributor s prior written consent. You may only use the Specifications under the terms of this License and only for the purpose of implementing the terms of this License with respect to Community Code. You may not use, copy or distribute any such Specifications except as provided in writing by Original Contributor.
+
+3.2. No Commercial Use.
+
+You may not make Commercial Use of any Covered Code unless You and Original Contributor have executed a copy of the RCSL - Commercial available at www.helixcommunity.org.
+
+4. Versions of the License.
+
+4.1 License Versions.
+
+Original Contributor may publish revised versions of the RCSL - R&D from time to time. Each version will be given a distinguishing version number. No one other than Original Contributor has the right to promulgate RCSL R&D versions.
+
+4.2 Effect of New License Versions.
+
+(a) Once a particular version of Covered Code has been provided under a version of the RCSL R&D, You may always continue to use such Covered Code under the terms of that version of the RCSL R&D. You may also choose to use such Covered Code under the terms of any subsequent version of the RCSL R&D, but not under a prior version of the RCSL R&D. (For example, if a version of Covered Code has been provided under RCSL R&D 2.1, You may not use such Covered Code under RCSL R&D 2.0.)
+
+(b) Version 2.0 of this RCSL R&D (and all subsequent versions) supercedes versions 1.0, 1.1, and 1.2 of RCSL plus Attachments A-C.
+
+4.3 Multiple-Licensed Code.
+
+Original Contributor may designate portions of the Covered Code as Multiple-Licensed. Multiple-Licensed means that the Original Contributor permits You to utilize those designated portions of the Covered Code under Your choice of this License or the alternative license(s), if any, specified by the Original Contributor at www.helixcommunity.org or in Header Files for the applicable Covered Code.
+
+5. Disclaimer of Warranty.
+
+COVERED CODE IS PROVIDED UNDER THIS LICENSE "AS IS," WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE COVERED CODE IS FREE OF DEFECTS, MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. YOU BEAR THE ENTIRE RISK IN CONNECTION WITH YOUR USE AND DISTRIBUTION OF COVERED CODE UNDER THIS LICENSE. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY COVERED CODE IS AUTHORIZED HEREUNDER EXCEPT SUBJECT TO THIS DISCLAIMER.
+
+6. Termination.
+
+6.1 By You.
+
+You may terminate this License at anytime by providing written notice to Original Contributor.
+
+6.2 By Original Contributor.
+
+This License and the rights granted hereunder will terminate:
+
+(i) automatically if You fail to comply with the terms of this License and fail to cure such breach within 30 days of receipt of written notice of the breach;
+
+(ii) immediately in the event of circumstances specified in Sections 7.1 and 8.4; or
+
+(iii) at Original Contributor's discretion upon any action initiated by You (including by cross-claim or counter claim) alleging that use or distribution by Original Contributor or any Licensee, of any Covered Code, the TCK or Specifications infringe a patent owned or controlled by You.
+
+6.3 Effective of Termination.
+
+Upon termination, You must discontinue use of and destroy all copies of Covered Code in Your possession. All sublicenses to the Covered Code which You have properly granted shall survive any termination of this License. Provisions that, by their nature, should remain in effect beyond the termination of this License shall survive including, without limitation, Sections 2.2, 3, 5, 7 and 8.
+
+6.4 No Compensation.
+
+Each party waives and releases the other from any claim to compensation or indemnity for permitted or lawful termination of the business relationship established by this License.
+
+7. Liability.
+
+7.1 Infringement. Should any of the Covered Code, TCK or Specifications ("Materials") become the subject of a claim of infringement, Original Contributor may, at its sole option, (i) attempt to procure the rights necessary for You to continue using the Materials, (ii) modify the Materials so that they are no longer infringing, or (iii) terminate Your right to use the Materials, immediately upon written notice.
+
+7.2 LIMITATION OF LIABILITY. TO THE FULL EXTENT ALLOWED BY APPLICABLE LAW, ORIGINAL CONTRIBUTOR'S LIABILITY TO YOU FOR CLAIMS RELATING TO THIS LICENSE, WHETHER FOR BREACH OR IN TORT, SHALL BE LIMITED TO ONE HUNDRED PERCENT (100%) OF THE AMOUNT HAVING THEN ACTUALLY BEEN PAID BY YOU TO ORIGINAL CONTRIBUTOR FOR ALL COPIES LICENSED HEREUNDER OF THE PARTICULAR ITEMS GIVING RISE TO SUCH CLAIM, IF ANY, DURING THE TWELVE MONTHS PRECEDING THE CLAIMED BREACH. IN NO EVENT WILL YOU (RELATIVE TO YOUR SHARED MODIFICATIONS OR ERROR CORRECTIONS) OR ORIGINAL CONTRIBUTOR BE LIABLE FOR ANY INDIRECT, PUNITIVE, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES IN CONNECTION WITH OR ARISING OUT OF THIS LICENSE (INCLUDING, WITHOUT LIMITATION, LOSS OF PROFITS, USE, DATA, OR OTHER ECONOMIC ADVANTAGE), HOWEVER IT ARISES AND ON ANY THEORY OF LIABILITY, WHETHER IN AN ACTION FOR CONTRACT, STRICT LIABILITY OR TORT (INCLUDING NEGLIGENCE) OR OTHERWISE, WHETHER OR NOT YOU OR ORIGINAL CONTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE AND NOTWITHSTANDING THE FAILURE OF ESSENTIAL PURPOSE OF ANY REMEDY.
+
+8. Miscellaneous.
+
+8.1 No Trademark License.
+
+You are granted no right, title or license to, or any interest in, any trademarks of Original Contributor hereunder.
+
+8.2 Integration.
+
+This License represents the complete agreement concerning the subject matter hereof.
+
+8.3 Assignment.
+
+Original Contributor may assign this License, and its rights and obligations hereunder, in its sole discretion. You may assign Your rights and obligations under this the License to a third party upon prior written notice to Original Contributor.
+
+8.4 Severability.
+
+If any provision of this License is held to be unenforceable, such provision shall be reformed only to the extent necessary to make it enforceable. Notwithstanding the foregoing, if You are prohibited by law from fully and specifically complying with Sections 2.2 or 3, this License will immediately terminate and You must immediately discontinue any use of the Materials.
+
+8.5 Governing Law.
+
+This License shall be governed by the laws of the United States and the State of Washington, as applied to contracts entered into and to be performed in Washington between Washington residents. The application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded. The state and federal courts located in Seattle, Washington have exclusive jurisdiction over any claim relating to the License, including contract and tort claims.
+
+8.6 Construction.
+
+Any law or regulation, which provides that the language of a contract shall be construed against the drafter, shall not apply to this License.
+
+8.7 U.S. Government End Users.
+
+The Covered Code is a "commercial item," as that term is defined in 48 C.F.R. 2.101 (Oct. 1995), consisting of "commercial computer software" and "commercial computer software documentation," as such terms are used in 48 C.F.R. 12.212 (Sept. 1995). Consistent with 48 C.F.R. 12.212 and 48 C.F.R. 227.7202-1 through 227.7202-4 (June 1995), all U.S. Government End Users acquire Covered Code with only those rights set forth herein.
+
+8.8 Press Announcements.
+
+You may make press announcements or other public statements regarding this License without the prior written consent of the Original Contributor, if Your statement is limited to announcing the licensing of the Covered Code. All other public announcements regarding this License require the prior written consent of the Original Contributor. Consent requests are welcome at press@helixcommunity.org.
+
+8.9 International Use.
+
+a) Export/Import laws. Covered Code is subject to U.S. export control laws and may be subject to export or import regulations in other countries. You must comply strictly with all such laws and regulations and must obtain any necessary licenses to export, re-export, or import as may be permitted under this Agreement.
+
+b) Intellectual Property Protection. Due to limited intellectual property protection and enforcement in certain countries, this License does not permit the redistribution of the Covered Code, TCK and Specifications to any country on the list of restricted countries at www.helixcommunity.org.
+
+8.10 Language.
+
+This License is in the English language only, which language shall be controlling in all respects, and all versions of this License in any other language shall be for accommodation only and shall not be binding on the parties to this License. All communications and notices made or given pursuant to this License, and all documentation and support to be provided, unless otherwise noted, shall be in the English language.

@@ -1,0 +1,4 @@
+licenses:
+    - ssleay-windows
+template: yes
+notes: SSLEAY windows Variant with typos

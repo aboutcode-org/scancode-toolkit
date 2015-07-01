@@ -1,0 +1,115 @@
+Index: src/3rdParty/webkit/patches/series
+===================================================================
+--- src.orig/3rdParty/webkit/patches/series
++++ src/3rdParty/webkit/patches/series
+@@ -30,3 +30,4 @@ ekioh-gc.patch
+ moto-createobject-null-check.patch
+ ekioh-uclibc-stack-base.patch
+ webcore-accept-click.patch
++webcore-videoplane.patch
+Index: src/3rdParty/webkit/patches/webcore-videoplane.patch
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/patches/webcore-videoplane.patch
+@@ -0,0 +1,101 @@
++Index: work/WebCore/DerivedSources.make
++===================================================================
++--- work.orig/WebCore/DerivedSources.make
+++++ work/WebCore/DerivedSources.make
++@@ -412,6 +412,7 @@ all : \
++     JSHTMLTitleElement.h \
++     JSHTMLUListElement.h \
++     JSHTMLVideoElement.h \
+++    JSHTMLVideoPlaneElement.h \
++     JSHistory.h \
++     JSKeyboardEvent.h \
++     JSLocation.lut.h \
++Index: work/WebCore/DerivedSources/Rules.mk
++===================================================================
++--- work.orig/WebCore/DerivedSources/Rules.mk
+++++ work/WebCore/DerivedSources/Rules.mk
++@@ -104,6 +104,7 @@ $(eval $(call add_objs, \
++  JSHTMLTextAreaElement \
++  JSHTMLTitleElement \
++  JSHTMLUListElement \
+++ JSHTMLVideoPlaneElement \
++  JSKeyboardEvent \
++  JSMediaList \
++  JSMouseEvent \
++Index: work/WebCore/html/HTMLTagNames.in
++===================================================================
++--- work.orig/WebCore/html/HTMLTagNames.in
+++++ work/WebCore/html/HTMLTagNames.in
++@@ -103,5 +103,6 @@ u
++ ul
++ var
++ video
+++videoplane
++ wbr
++ xmp
++Index: work/WebCore/html/HTMLVideoPlaneElement.idl
++===================================================================
++--- /dev/null
+++++ work/WebCore/html/HTMLVideoPlaneElement.idl
++@@ -0,0 +1,46 @@
+++/*
+++ * Copyright (C) 2009 Motorola, Inc.
+++ *
+++ * This library is free software; you can redistribute it and/or
+++ * modify it under the terms of the GNU Library General Public
+++ * License as published by the Free Software Foundation; either
+++ * version 2 of the License, or (at your option) any later version.
+++ *
+++ * This library is distributed in the hope that it will be useful,
+++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+++ * Library General Public License for more details.
+++ *
+++ * You should have received a copy of the GNU Library General Public License
+++ * along with this library; see the file COPYING.LIB.  If not, write to
+++ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+++ * Boston, MA 02110-1301, USA.
+++ */
+++
+++module html {
+++
+++    interface [GenerateConstructor, Conditional=VIDEOPLANE] HTMLVideoPlaneElement : HTMLElement {
+++      attribute long height;
+++      attribute long width;
+++
+++      // Extensions
+++      readonly attribute long x;
+++      readonly attribute long y;
+++      readonly attribute long index;
+++
+++      readonly attribute long clipX;
+++      readonly attribute long clipY;
+++      readonly attribute long clipWidth;
+++      readonly attribute long clipHeight;
+++
+++      readonly attribute long transformX;
+++      readonly attribute long transformY;
+++      readonly attribute long transformWidth;
+++      readonly attribute long transformHeight;
+++
+++      attribute boolean subtitles;
+++
+++      void setVideoClip(in long x, in long y, in long width, in long height);
+++      void setVideoTransform(in long x, in long y, in long width, in long height);
+++    };
+++}
++Index: work/WebCore/page/DOMWindow.idl
++===================================================================
++--- work.orig/WebCore/page/DOMWindow.idl
+++++ work/WebCore/page/DOMWindow.idl
++@@ -293,6 +293,10 @@ module window {
++         attribute MediaErrorConstructor MediaError;
++ #endif
++ 
+++#if defined(ENABLE_VIDEOPLANE)
+++        attribute HTMLVideoPlaneElementConstructor HTMLVideoPlaneElement;
+++#endif
+++
++ #if defined(ENABLE_XPATH)
++         attribute XPathEvaluatorConstructor XPathEvaluator;
++         attribute XPathResultConstructor XPathResult;

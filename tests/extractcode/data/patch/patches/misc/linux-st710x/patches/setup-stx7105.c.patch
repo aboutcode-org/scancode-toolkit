@@ -1,0 +1,89 @@
+--- linux-2.6.23/arch/sh/kernel/cpu/sh4/setup-stx7105.c.orig	2009-09-08 14:18:20.000000000 +0200
++++ linux-2.6.23/arch/sh/kernel/cpu/sh4/setup-stx7105.c	2009-09-08 14:18:55.000000000 +0200
+@@ -562,6 +562,23 @@
+ 
+ 	/* Pin configuration... */
+ 
++	stx7105_pio_sysconf(9, 5, 1, "eth");
++	if (!rmii_mode) {
++		/* MIIPHYCLK
++		   Note: Must be configured before enabling the PHY.
++		   The timing is not that critical as long as the
++		   MIIPHYCLK is enabled before the PHY. */
++
++		/* MIIPHYCLK */
++		/* Not implemented in cut 1 (DDTS GNBvd69906) - clock never output */
++		/* In cut 2 PIO direction used to control input or output. */
++		pin = stpio_request_pin(9, 5, "eth",
++					ext_clk ? STPIO_IN : STPIO_ALT_OUT);
++	} else {
++		/* RMIIREF_CLK */
++		pin = stpio_request_pin(9, 5, "eth", STPIO_ALT_BIDIR);
++	}
++
+ 	/* MIIRX_DV / RMIICRS_DV */
+ 	stx7105_pio_sysconf(7, 4, 1, "eth");
+ 	pin = stpio_request_pin(7, 4, "eth", STPIO_IN);
+@@ -636,18 +653,6 @@
+ 		pin = stpio_request_pin(9, 4, "eth", STPIO_IN);
+ 	}
+ 
+-	stx7105_pio_sysconf(9, 5, 1, "eth");
+-	if (!rmii_mode) {
+-		/* MIIPHYCLK */
+-		/* Not implemented in cut 1 (DDTS GNBvd69906) - clock never output */
+-		/* In cut 2 PIO direction used to control input or output. */
+-		pin = stpio_request_pin(9, 5, "eth",
+-					ext_clk ? STPIO_IN : STPIO_ALT_OUT);
+-	} else {
+-		/* RMIIREF_CLK */
+-		pin = stpio_request_pin(9, 5, "eth", STPIO_ALT_BIDIR);
+-	}
+-
+ 	/* MIIMDINT */
+ 	stx7105_pio_sysconf(9, 6, 1, "eth");
+ 	pin = stpio_request_pin(9, 6, "eth", STPIO_IN);
+@@ -749,7 +754,6 @@
+ 			int alt  = pwm_pios[pwm][r].alt;
+ 
+ 			stx7105_pio_sysconf(port, pin, alt, "pwm");
+-			stpio_request_pin(port, pin, "pwm", STPIO_ALT_OUT);
+ 		}
+ 	}
+ 
+@@ -830,6 +834,15 @@
+ 		pdev = &stm_stasc_devices[port];
+ 		uart_data = pdev->dev.platform_data;
+ 
++		if (flags & STASC_FLAG_NORXTX) {
++			struct stasc_uart_data old;
++			memcpy(&old, uart_data, sizeof(old));
++			uart_data->pios[0].pio_direction =
++				uart_data->pios[1].pio_direction;
++			uart_data->pios[1].pio_direction =
++				old.pios[0].pio_direction;
++		}
++
+ 		/* Tx */
+ 		stx7105_pio_sysconf(uart_data->pios[0].pio_port,
+ 				uart_data->pios[0].pio_pin,
+@@ -1008,8 +1021,10 @@
+ #define PCI_PME_IN_ENABLE		(1<<0)
+ 
+ 
++#ifdef CONFIG_PCI
+ static struct platform_device pci_device =
+ 	PCI_DEVICE(0xfe400000, 0xfe560000, PCI_WINDOW_START, PCI_WINDOW_SIZE, evt2irq(0x1280), ILC_IRQ(25));
++#endif
+ 
+ void __init stx7105_configure_pci(struct pci_config_data *pci_conf)
+ {
+@@ -1135,7 +1150,7 @@
+ 
+ 	STPIO_DEVICE(7, 0xfe010000, -1),
+ 	STPIO_DEVICE(8, 0xfe011000, -1),
+-	STPIO_DEVICE(9, 0xfe012000, -1),
++	STPIO_DEVICE(9, 0xfe012000, evt2irq(0xb40)),
+ 	STPIO_DEVICE(10, 0xfe013000, -1),
+ 	STPIO_DEVICE(11, 0xfe014000, -1),
+ 	STPIO_DEVICE(12, 0xfe015000, -1),

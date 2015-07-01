@@ -1,0 +1,52 @@
+/*
+   Class 1 PCA
+
+   VERISIGN, INC. LICENSE AGREEMENT
+
+  IMPORTANT - READ CAREFULLY BEFORE DOWNLOADING OR INSTALLING
+
+  This file lists the VeriSign, Inc. ("VeriSign") Class 1 Certification
+  Authority Distinguished Name and Public Key information (the "Information").
+  BY DOWNLOADING OR INSTALLING THE INFORMATION, YOU INDICATE YOUR ACCEPTANCE
+  OF THIS LICENSE.  IF YOU DO NOT AGREE TO ALL OF THE TERMS OF THIS LICENSE,
+  DO NOT DOWNLOAD OR USE THE INFORMATION.
+
+  1.   License and Limitations.  VeriSign grants you a royalty-free license to
+  use, copy and distribute the Information or any compiled derivative of it,
+  subject to the terms of this License.  You must reproduce and include this
+  entire License and VeriSign's copyright notices and trademarks on each copy
+  of the Information and compiled derivative of it.  VeriSign retains all
+  ownership of the Information and all intellectual property rights therein.
+
+  2.   No Warranty.  VeriSign provides the Information "AS IS" and makes no
+  warranties, expressed or implied, about the Information or the use thereof.
+  WITHOUT LIMITATION, VERISIGN DISCLAIMS ANY IMPLIED WARRANTIES OF
+  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF
+  THIRD PARTY RIGHTS.
+
+  3.   Limitation of Liability.  VeriSign's entire liability to you under this
+  License shall be limited to a maximum of $10.00.  IN NO EVENT SHALL VERISIGN
+  BE LIABLE TO YOU OR TO ANY OTHER PERSON FOR ANY SPECIAL, INCIDENTAL OR
+  CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE
+  INFORMATION.
+
+  4.   General.  This License is governed by the laws of the State of California
+  and is the complete and exclusive statement of your agreement with VeriSign
+  with respect to the Information.  You acknowledge that the Information is
+  being provided to you without charge and that this is reflected in the
+  absence of warranties and limitations of liability in this License.
+
+  5.   NOTICE: THE USE OF THIS VERISIGN CERTIFICATE IS SUBJECT TO THE
+  VERISIGN CERTIFICATION PRACTICE STATEMENT LOCATED AT
+       http://www.verisign.com/repository/CPS 
+  OR AVAILABLE FROM:
+     VeriSign, Inc.
+     2593 Coast Ave.
+     Mountain View, CA 94043
+     (415) 961-7500
+
+  Code Fragments and ASN.1 discussion are taken from the PKCS standards
+  published by RSA Data Security, Inc.
+  
+  Copyright 1995 VeriSign, Inc. All Rights Reserved.
+*/

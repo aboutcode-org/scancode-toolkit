@@ -1,0 +1,7 @@
+.BR readprofile(1),
+.BR "CPU vendor architecture manuals"
+
+.SH COPYRIGHT
+oprofile is Copyright (C) 1998-2004 University of Manchester, UK, John Levon,
+and others.
+OProfile is released under the GNU General Public License, Version 2,

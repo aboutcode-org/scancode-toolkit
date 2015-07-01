@@ -1,0 +1,10 @@
+/* This is part of libio/iostream, providing -*- C++ -*- input/output.
+Copyright (C) 2000 Free Software Foundation
+
+This file is part of the GNU IO Library.  This library is free
+	      delete[] stream;
+	      stream = new_stream;
+	      stringbuf_sync(gptr()-eback(), pptr()-pbase());
+	      sputc(c);
+	      res = c;
+	    }

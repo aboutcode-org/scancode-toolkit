@@ -1,0 +1,124 @@
+END USER LICENSE AGREEMENT
+RED HAT® ENTERPRISE LINUX® AND RED HAT APPLICATIONS
+
+This end user license agreement (“EULA”) governs the use of any of the versions
+of Red Hat Enterprise Linux, any Red Hat Applications (as set forth at
+www.redhat.com/licenses/products), and any related updates, source code,
+appearance, structure and organization (the “Programs”), regardless of the
+delivery mechanism.
+
+
+1.  License Grant.  Subject to the following terms, Red Hat, Inc. (“Red Hat”)
+    grants to you (“User”) a perpetual, worldwide license to the Programs
+    pursuant to the GNU General Public License v.2.  The Programs are either a
+    modular operating system or an application consisting of hundreds of
+    software components.  With the exception of certain image files identified
+    in Section 2 below, the license agreement for each software component is
+    located in the software component's source code and permits User to run,
+    copy, modify, and redistribute (subject to certain obligations in some
+    cases) the software component, in both source code and binary code forms.
+    This EULA pertains solely to the Programs and does not limit User's rights
+    under, or grant User rights that supersede, the license terms of any
+    particular component.
+
+2.  Intellectual Property Rights.  The Programs and each of their components are
+    owned by Red Hat and others and are protected under copyright law and under
+    other laws as applicable. Title to the Programs and any component, or to any
+    copy, modification, or merged portion shall remain with the aforementioned,
+    subject to the applicable license.  The “Red Hat” trademark and the
+    “Shadowman” logo are registered trademarks of Red Hat in the U.S. and other
+    countries.  This EULA does not permit User to distribute the Programs or
+    their components using Red Hat's trademarks, regardless of whether the copy
+    has been modified.  User should read the information found at
+    http://www.redhat.com/about/corporate/trademark/ before distributing a copy
+    of the Programs.  User may make a commercial redistribution of the Programs
+    only if, (a) a separate agreement with Red Hat authorizing such commercial
+    redistribution is executed or other written permission is granted by Red Hat
+    or (b) User modifies any files identified as “REDHAT-LOGOS” to remove and
+    replace all images containing the “Red Hat” trademark or the “Shadowman”
+    logo.  Merely deleting these files may corrupt the Programs.
+
+3.  Limited Warranty.  Except as specifically stated in this Section 3, a
+    separate agreement with Red Hat, or a license for a particular component, to
+    the maximum extent permitted under applicable law, the Programs and the
+    components are provided and licensed “as is” without warranty of any kind,
+    expressed or implied, including the implied warranties of merchantability,
+    non-infringement or fitness for a particular purpose.  Red Hat warrants that
+    the media on which the Programs and the components are furnished will be
+    free from defects in materials and manufacture under normal use for a period
+    of 30 days from the date of delivery to User.  Red Hat does not warrant that
+    the functions contained in the Programs will meet User's requirements or
+    that the operation of the Programs will be entirely error free, appear
+    precisely as described in the accompanying documentation, or comply with
+    regulatory requirements. This warranty extends only to the party that
+    purchases services pertaining to the Programs from Red Hat or a Red Hat
+    authorized distributor.
+
+4.  Limitation of Remedies and Liability. To the maximum extent permitted by
+    applicable law, User's exclusive remedy under this EULA is to return any
+    defective media within 30 days of delivery along with a copy of User's
+    payment receipt and Red Hat, at its option, will replace it or refund the
+    money paid by User for the media.  To the maximum extent permitted under
+    applicable law, neither Red Hat, any Red Hat authorized distributor, nor the
+    licensor of any component provided to User under this EULA will be liable to
+    User for any incidental or consequential damages, including lost profits or
+    lost savings arising out of the use or inability to use the Programs or any
+    component, even if Red Hat, such authorized distributor or licensor has been
+    advised of the possibility of such damages.  In no event shall Red Hat's
+    liability, an authorized distributor’s liability or the liability of the
+    licensor of a component provided to User under this EULA exceed the amount
+    that User paid to Red Hat under this EULA during the twelve months preceding
+    the action.
+
+5.  Export Control.  As required by the laws of the United States and other
+    countries, User represents and warrants that it: (a) understands that the
+    Programs and their components may be subject to export controls under the
+    U.S. Commerce Department’s Export Administration Regulations (“EAR”); (b) is
+    not located in a prohibited destination country under the EAR or
+    U.S. sanctions regulations (currently Cuba, Iran, Iraq, North Korea, Sudan
+    and Syria, subject to change as posted by the United States government); (c)
+    will not export, re-export, or transfer the Programs to any prohibited
+    destination or persons or entities on the U.S. Bureau of Industry and
+    Security Denied Parties List or Entity List, or the U.S. Office of Foreign
+    Assets Control list of Specially Designated Nationals and Blocked Persons,
+    or any similar lists maintained by other countries, without the necessary
+    export license(s) or authorizations(s); (d) will not use or transfer the
+    Programs for use in connection with any nuclear, chemical or biological
+    weapons, missile technology, or military end-uses where prohibited by an
+    applicable arms embargo, unless authorized by the relevant government agency
+    by regulation or specific license; (e) understands and agrees that if it is
+    in the United States and exports or transfers the Programs to eligible end
+    users, it will, to the extent required by EAR Section 740.17(e), submit
+    semi-annual reports to the Commerce Department’s Bureau of Industry and
+    Security, which include the name and address (including country) of each
+    transferee; and (f) understands that countries including the United States
+    may restrict the import, use, or export of encryption products (which may
+    include the Programs and the components) and agrees that it shall be solely
+    responsible for compliance with any such import, use, or export
+    restrictions.
+
+6.  Third Party Programs. Red Hat may distribute third party software programs
+    with the Programs that are not part of the Programs.  These third party
+    programs are not required to run the Programs, are provided as a convenience
+    to User, and are subject to their own license terms.  The license terms
+    either accompany the third party software programs or can be viewed at
+    http://www.redhat.com/licenses/thirdparty/eula.html.  If User does not agree
+    to abide by the applicable license terms for the third party software
+    programs, then User may not install them.  If User wishes to install the
+    third party software programs on more than one system or transfer the third
+    party software programs to another party, then User must contact the
+    licensor of the applicable third party software programs.
+
+7.  General.  In the case of a discrepancy between the Spanish version and the
+    English version of this EULA, the English version shall prevail. If any
+    provision of this agreement is held to be unenforceable, that shall not
+    affect the enforceability of the remaining provisions.  This agreement shall
+    be governed by the laws of the State of New York and of the United States,
+    without regard to any conflict of laws provisions. The rights and
+    obligations of the parties to this EULA shall not be governed by the United
+    Nations Convention on the International Sale of Goods.
+
+Copyright © 2007 Red Hat, Inc.  All rights reserved.  "Red Hat" and the Red Hat
+"Shadowman" logo are registered trademarks of Red Hat, Inc.  "Linux" is a
+registered trademark of Linus Torvalds. All other trademarks are the property of
+their respective owners.

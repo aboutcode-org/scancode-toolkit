@@ -1,0 +1,3 @@
+[('linux-2.6.23/include/asm-sh/mmu_context.h.orig',
+  'linux-2.6.23/include/asm-sh/mmu_context.h',
+  '--- linux-2.6.23/include/asm-sh/mmu_context.h.orig\n+++ linux-2.6.23/include/asm-sh/mmu_context.h\n@@ -191,7 +191,9 @@\n\n/* Enable MMU */\n#ifdef CONFIG_32BIT\n-\tif (1) /* SH4-202 and SE */\n+#ifndef CONFIG_CPU_SUBTYPE_STX7105\n+\tif ((ctrl_inl(MMUCR)&MMUCR_SE)==MMUCR_SE) /* SH4-202 and SE */\n+#endif\nmmucr_init |= MMUCR_SE;\n#endif\n')]

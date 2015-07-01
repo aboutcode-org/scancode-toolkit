@@ -1,0 +1,11 @@
+gPlayaBlanca = NULL;
+}
+
+if (NULL != gNotPlayaBlanca) {
+FREE(gNotPlayaBlanca);
+gNotPlayaBlanca = NULL;
+}
+
+/* see gPlateSpinner definition at bottom of file */
+gPlateSpinner.transformed = 0;
+

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.itextpdf</groupId>
+	<artifactId>itextpdf</artifactId>
+	<packaging>jar</packaging>
+	<name>iText, a Free Java-PDF library</name>
+	<version>releasenumber</version>
+	<description>iText, a free Java-PDF library</description>
+	<url>http://www.itextpdf.com/</url>
+	<mailingLists>
+		<mailingList>
+			<name>iText Questions</name>
+			<subscribe>
+				http://lists.sourceforge.net/lists/listinfo/itext-questions
+			</subscribe>
+			<post>itext-questions@lists.sourceforge.net</post>
+			<archive>
+				http://news.gmane.org/gmane.comp.java.lib.itext.general
+			</archive>
+			<otherArchives>
+				<otherArchive>http://itext-general.2136553.n4.nabble.com/</otherArchive>
+				<otherArchive>http://www.junlu.com/2.html</otherArchive>
+				<otherArchive>http://sourceforge.net/mailarchive/forum.php?forum_id=3273</otherArchive>
+				<otherArchive>http://www.mail-archive.com/itext-questions%40lists.sourceforge.net/</otherArchive>
+			</otherArchives>
+		</mailingList>
+	</mailingLists>
+	<developers>
+		<developer>
+			<id>blowagie</id>
+			<name>Bruno Lowagie</name>
+			<email>bruno@lowagie.com</email>
+			<url>http://www.lowagie.com</url>
+		</developer>
+		<developer>
+			<id>psoares33</id>
+			<name>Paulo Soares</name>
+			<email>psoares33@users.sourceforge.net</email>
+		</developer>
+		<developer>
+			<id>mstorer</id>
+			<name>Mark Storer</name>
+			<email>mstorer3772@gmail.com</email>
+		</developer>
+		<developer>
+			<id>trumpetinc</id>
+			<name>Kevin Day</name>
+			<email>kevin@trumpetinc.com</email>
+		</developer>
+		<developer>
+			<id>xlv</id>
+			<name>Xavier Le Vourch</name>
+			<email>xavier.levourch@xlv-labs.com</email>
+			<url>http://www.xlv-labs.com</url>
+		</developer>
+	</developers>
+	<licenses>
+		<license>
+			<name>GNU Affero General Public License v3</name>
+			<url>http://www.fsf.org/licensing/licenses/agpl-3.0.html</url>
+		</license>
+	</licenses>
+	<scm>
+		<connection>scm:svn:http://itext.svn.sourceforge.net/svnroot/itext</connection>
+		<url>http://itext.svn.sourceforge.net/viewvc/itext</url>
+	</scm>
+	<dependencies>
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcmail-bc.jdk</artifactId>
+			<version>1.bc.version</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-bc.jdk</artifactId>
+			<version>1.bc.version</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bctsp-bc.jdk</artifactId>
+			<version>1.bc.version</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive />
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

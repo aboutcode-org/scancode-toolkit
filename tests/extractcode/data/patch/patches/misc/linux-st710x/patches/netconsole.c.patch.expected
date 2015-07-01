@@ -1,0 +1,3 @@
+[('linux-2.6.23-orig/drivers/net/netconsole.c',
+  'linux-2.6.23/drivers/net/netconsole.c',
+  '--- linux-2.6.23-orig/drivers/net/netconsole.c\n+++ linux-2.6.23/drivers/net/netconsole.c\n@@ -166,7 +166,7 @@\noption_setup(config);\n\nif(!configured) {\n-\t\tprintk("netconsole: not configured, aborting\\n");\n+\t\tprintk(KERN_NOTICE "netconsole: not configured\\n");\nreturn 0;\n}\n')]

@@ -1,0 +1,21 @@
+key: bsd-original-uc
+short_name: BSD-Original-UC
+name: BSD-Original-UC
+category: Attribution
+owner: Regents of the University of California
+homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
+spdx_license_key: BSD-4-Clause-UC
+spdx_full_name: >-
+    BSD-4-Clause (University of California-Specific)
+spdx_url: http://spdx.org/licenses/BSD-4-Clause-UC
+spdx_notes: >-
+    This is the same license as the BSD-4-Clause, but with a copyright notice for
+    the Regents of the University of California. Captures the retroactive deletion
+    of the third (advertising) clause of the Original BSD license for BSD-licensed
+    code developed by UC Berkeley and its contributors (see ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change)
+text_urls:
+    - http://www.xfree86.org/3.3.6/COPYRIGHT2.html
+faq_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
+other_urls:
+    - http://www.fsf.org/licensing/essays/bsd.html
+    - http://www.gnu.org/philosophy/bsd.html

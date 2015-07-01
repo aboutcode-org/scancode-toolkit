@@ -1,0 +1,10 @@
+key: libpbm
+short_name: PBM Library License
+name: PBM Library License
+category: Attribution
+owner: ACME Labs
+homepage_url: http://web.mit.edu/tex/fontutil/fontutils-0.6/pbm/libpbm1.c
+text_urls:
+    - http://web.mit.edu/tex/fontutil/fontutils-0.6/pbm/libpbm1.c
+other_urls:
+    - http://sourceforge.net/p/netpbm/code/HEAD/tree/trunk/doc/COPYRIGHT.PATENT

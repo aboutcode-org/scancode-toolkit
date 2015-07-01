@@ -1,0 +1,5 @@
+licenses:
+    - mpl-1.1
+    - gpl-2.0-plus
+sort: yes
+notes: Pascal literal are problematic

@@ -1,0 +1,22 @@
+--- linux-2.6.23-orig/net/ipv4/ipconfig.c	2009-05-18 13:59:10.000000000 +0200
++++ linux-2.6.23/net/ipv4/ipconfig.c	2009-05-19 12:52:59.000000000 +0200
+@@ -1371,14 +1371,14 @@
+ 	/*
+ 	 * Clue in the operator.
+ 	 */
+-	printk("IP-Config: Complete:");
+-	printk("\n      device=%s", ic_dev->name);
++	printk(KERN_NOTICE "IP-Config: Complete: \n");
++	printk(KERN_NOTICE "      device=%s", ic_dev->name);
+ 	printk(", addr=%u.%u.%u.%u", NIPQUAD(ic_myaddr));
+ 	printk(", mask=%u.%u.%u.%u", NIPQUAD(ic_netmask));
+-	printk(", gw=%u.%u.%u.%u", NIPQUAD(ic_gateway));
+-	printk(",\n     host=%s, domain=%s, nis-domain=%s",
++	printk(", gw=%u.%u.%u.%u,\n", NIPQUAD(ic_gateway));
++	printk(KERN_NOTICE "     host=%s, domain=%s, nis-domain=%s,\n",
+ 	       utsname()->nodename, ic_domain, utsname()->domainname);
+-	printk(",\n     bootserver=%u.%u.%u.%u", NIPQUAD(ic_servaddr));
++	printk(KERN_NOTICE "     bootserver=%u.%u.%u.%u", NIPQUAD(ic_servaddr));
+ 	printk(", rootserver=%u.%u.%u.%u", NIPQUAD(root_server_addr));
+ 	printk(", rootpath=%s", root_server_path);
+ 	printk("\n");

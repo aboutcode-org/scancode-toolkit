@@ -1,0 +1,61 @@
+--- linux-orig/arch/sh/kernel/cpu/sh4/setup-stb7100.c	2007-12-06 10:57:14.000000000 +0100
++++ linux/arch/sh/kernel/cpu/sh4/setup-stb7100.c	2007-12-07 13:16:02.000000000 +0100
+@@ -193,7 +193,7 @@
+ 		pin = stpio_request_pin(5,6, "USBOC", STPIO_OUT);
+ 		stpio_set_pin(pin, 0);
+ 	}
+-
++#ifndef CONFIG_SH_MOTOROLA_VIP19XX
+ 	/*
+ 	 * There have been two changes to the USB power enable signal:
+ 	 *
+@@ -218,6 +218,6 @@
+ 	 */
+ 	pin = stpio_request_pin(5,7, "USBPWR", STPIO_OUT);
+ 	stpio_set_pin(pin, 1);
+-
++#endif
+ 	sc = sysconf_claim(SYS_CFG, 2, 1, 1, "usb");
+ 	reg = sysconf_read(sc);
+@@ -1082,6 +1115,41 @@
+ 	struct sysconf_field *sc;
+ 	unsigned long devid;
+ 
++/*
++        unsigned int value;
++        // Stop TX and RX DMA since if they are up and running they
++        // can cause memory overwrites in i.e. tmpfs.
++        printk("stmmac: Stop RX and TX DMA\n");
++        value = (unsigned int)readl(0xf8111018);
++        value &= ~0x00002000;
++        value &= ~0x00000002;
++        writel(value, 0xf8111018);
++        
++        // Setup memory limiters
++        ctrl_outl(0x061a025f, 0xef000008);
++        ctrl_outl(0x00000005, 0xef00000c);
++        ctrl_outl(0x061a025f, 0xf7000008);
++        ctrl_outl(0x00000005, 0xf700000c);
++        
++        // Auto precharge on low prio but not on high prio
++	sc = sysconf_claim(SYS_CFG, 11, 19, 22, "precharge");
++	sysconf_write(sc, 5);
++
++        // STBUS priorities
++        ctrl_outl(1, 0xf9216200);
++        ctrl_outl(5, 0xf9216204);
++        ctrl_outl(3, 0xf9216208);
++        ctrl_outl(2, 0xf921620c);
++        ctrl_outl(4, 0xf9216210);
++        ctrl_outl(4, 0xf9243000);
++        ctrl_outl(3, 0xf9243004);
++        ctrl_outl(2, 0xf9243008);
++        ctrl_outl(1, 0xf924300c);
++        ctrl_outl(5, 0xf9243010);
++        
++*/
++
++        
+ 	/* Create a PMB mapping so that the ioremap calls these drivers
+ 	 * will make can be satisfied without having to call get_vm_area
+ 	 * or cause a fault. Its probably also a good for efficiency as

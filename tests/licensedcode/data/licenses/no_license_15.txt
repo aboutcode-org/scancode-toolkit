@@ -1,0 +1,675 @@
+/**************************************************************/
+/* Hardware Function Library                                  */
+/*                                                            */
+/*                                  ver 1.0  Oct. 15 1996     */
+/*                                      1.1  Nov. 24 1996     */
+/*                                      1.2  Dec. 24 1996     */
+/*                                                            */
+/*                                    developed by N.Hayashi  */
+/*                                  ver.1.3  Nov. 26 1997     */
+/*                                  ver.1.4  Jan. 13 1998     */
+/*                                  ver.2.0  Jan. 17 1998     */
+/*                                  ver.2.1  Feb. 18 1998     */
+/*                                  ver.2.2  Mar. 30 1998     */
+/**************************************************************/
+#include <stdlib.h>
+#include <ctype.h>
+#include "iodef.h"
+#include "duscc.h"
+#include "mirx68k.h"
+
+/* interrupt vector EDL EDL *///ADDED FOR TESTING PURPOSES
+#define BTN_INT_VCT      3
+#define USS_INT_VCT     72
+#define IRS_INT_VCT     74
+#define TS_INT_VCT      76
+
+#define DUTY_MAX (128-1)
+#define CW        0
+#define CCW       1
+#define PWM_R     PADR1
+#define PWM_L     PBDR1
+
+static int _led[LED_NO],_red,_green;
+/* rotary encoder and touch sensor data type */
+typedef struct {
+	int r;
+	int l;
+	int ts;
+}RE_TS_DATA;
+
+int EDL; //ADDED FOR TESTING PURPOSES
+/* led */
+#define GREEN   0x01
+#define RED     0x02
+#define OFF     0
+
+/* infrared sensor functions --------------------------------------- */
+void            irs_init(int);          /* initialize                */
+void            irs_disable_int();      /* interrupt disable         */
+void            irs_enable_int();       /* interrupt enable          */
+int             irs_data();             /* read infrared sensor data */
+/* rotary encoder and ouch sensor functions ------------------------ */
+void            re_ts_init();           /* initialize                */
+void            re_counter_reset();     /* RE counter reset          */
+RE_TS_DATA      re_ts_data();           /* read RE and TS data       */
+int             ts_data();              /* read touch sensor data    */
+void            ts_disable_int();       /* interrupt disable         */
+void            ts_enable_int();        /* interrupt enable          */
+/* ultra sonic sensor functions ------------------------------------ */
+void            uss_init();             /* initialize                */
+void            uss_start(int);         /* sending sonic             */
+void            uss_stop();             /* stop waitting interrupt   */
+int             uss_data();             /* calculate distans         */
+int             uss_chk_int();          /* check interrupt type      */
+int             uss_chk_conect();       /* check conect sensor       */
+/* pwm functions --------------------------------------------------- */
+void            pwm_init();             /* initialize                */
+void            pwm_data(int,int);              /* output data to pwm        */
+/* mmi functions --------------------------------------------------- */
+int             dipsw_data();           /* read dip switch           */
+void            mmi_init();             /* initialize                */
+void            led_set(int,int);       /* set data to 7seg. and LED */
+void            led_on(int);            /* green and red led on      */
+void            btn_disable_int();      /* interrupt disable         */
+void            btn_enable_int();       /* interrupt enable          */
+int             pow_chk();              /* check power               */
+void            led_set_all(int);
+void            led_set_3(int);
+int             inportb();
+int             outportb();
+int             outportl();
+/*      RS-232C Drivers         */
+void            rs_init();
+void            rs_snd();
+void            iprint(int,int);
+void            uprint(unsigned,int,int);
+void            print_space(int);
+int             digit_length();
+interrupt void  rs_get();
+
+extern  void    rtc_clr();/* defined in mirx68k.c */
+void pit1_clk_init();
+
+
+static char buffer[255];
+void rs_putc(char);
+void rs_rcv();
+int recvi();
+float recvf();
+void    skipspace();
+int power(int,int);
+static char getbuf[255];
+static char *end_get = getbuf;/*pointer which points end of
+ received data*/
+char    crflg = !ACTIVE;/*      CR flag for communication */
+
+static int pit1=0;
+
+void pit1_clk_init()
+{
+	outportb(TCR1,0x00);            /* clear TCR1  */
+	outportl(CPR1,0x000001);        /* TOUT 125kHz */
+	/* 0x01 = (1/125kHz)/2 /(1/8MHz)/32 prescaler */
+	outportb(TCR1,0x41);            /* square wave */
+}
+
+/* Infrared sensor functions */
+void irs_init(tn)
+int tn;/* task number */
+{
+	if(pit1!=1)
+	{
+		pit1_clk_init();
+		pit1=1;
+	}
+	outportb(PGCR2,0x38);
+	outportb(PSRR2,0x1c);
+	outportb(PBCR2,0xA0);   /* submode 10  */
+	outportb(PBDDR2,0x00);  /* all input   */
+	outportb(PBCR2,0xAA);   /* submode 0 , H3int enable   */
+	sys5(tn,0,IRS_INT_VCT,0,0);
+	outportb(PIVR2,IRS_INT_VCT);
+	/* infrared ray sensor interrupt causes by H3 */
+	irs_disable_int();
+}
+
+void irs_disable_int()
+{
+	sys10(1);
+	outportb(PSR2,0x04);/* clear H3S   */
+	outportb(PBCR2,0xA0);   /* int disable */
+}
+
+void irs_enable_int()
+{
+	sys11(1);
+	outportb(PBCR2,0xAA);   /* int enable */
+}
+
+int irs_data()
+{
+	return(inportb(PBDR2)&0xff);
+}
+
+/* Rotary encoder and Touch sensor functions */
+void re_ts_init()
+{
+	re_counter_reset();
+}
+
+void re_counter_reset()
+{
+	outportb(CRST,0x03);            /* counter reset */
+}
+
+int ts_data()
+{
+	return((inportb(EDRH)&0xf0)/16);
+}
+
+RE_TS_DATA re_ts_data()
+{
+	unsigned _data_rl,_data_rh,_data_ll,_data_lh,data_r,data_l;
+	RE_TS_DATA _data;
+	_data_rl = inportb(EDRL) & 0xff;/* read count data */
+	_data_rh = inportb(EDRH) & 0xff;
+	_data_ll = inportb(EDLL) & 0xff;
+	_data_lh = inportb(EDLH) & 0x0f;
+	re_counter_reset();
+	_data.ts =( _data_rh & 0x70)/16;
+	_data_rh = _data_rh & 0x0f;
+	data_r  = ( _data_rh << 8 ) + _data_rl;
+	if ((data_r & 0x0800) != 0) _data.r = -(0x0fff - data_r);
+	else _data.r = (int)data_r;
+	data_l  = ( _data_lh << 8 ) + _data_ll;
+	if ((data_l & 0x0800) != 0) _data.l = (0x0fff - data_l);
+	else _data.l = -(int)data_l;
+	return(_data);
+}
+
+void ts_enable_int()
+{
+	outportb(TSIE,0x01);            /* touch sensor interrupt enable */
+	sys11(4);                       /* IRQ4 enable */
+}
+
+void ts_disable_int()
+{
+	sys10(4);                       /* IRQ4 disable */
+	outportb(TSIE,0x00);            /* touch sensor interrupt disable */
+}
+
+/* Ultra sonic sensor functions */
+void uss_init()
+{
+	outportb(PACR2,0x20);           /* submode 00 ,int disable */
+	outportb(PADDR2,0x03);
+	outportb(PGCR2,0x38);           /* mode 0 and H1,H3 enable */
+	outportb(TCR2,0x00);            /* clear TCR2              */
+	outportl(CPR2,USS_LIMIT);
+	
+	/* count for us-wave to go & return 3 meter        */
+	outportb(TCR2,0xB2);            /* device watchdog         */
+	outportb(PIVR2,72+0);           /* uss interrupt caused by H1   */
+	outportb(TIVR2,72+0);           /* uss interrupt caused by tout */
+}
+void uss_start(int _sensor_ch)
+{
+	sys11(1);
+	outportb(TCR2,0xB3);            /* Timer enable  */
+	outportb(PADR2,_sensor_ch);     /* sensor select */
+	outportb(PACR2,0x28);           /* H2 asert      */
+	outportb(PACR2,0x22);           /* H2 negate and H1 interrupt enable */
+}
+
+void uss_stop()
+{
+	sys10(1);
+	outportb(TCR2,0xB2);            /* Timer Halt      */
+	outportb(PACR2,0x20);           /* interrupt disable */
+}
+int uss_data()
+{
+	int _h,_m,_l;
+	
+	_h = inportb(CNTR2 +2) & 0xff;  /* read count data */
+	_m = inportb(CNTR2 +4) & 0xff;
+	_l = inportb(CNTR2 +6) & 0xff;
+	return((USS_LIMIT -
+			( (_h<<16) + (_m<<8) +_l ) )
+		   * 32/(float)80000 * 340 /2);
+}
+
+int uss_chk_int()                       /* interrupt type check (under flow) */
+{
+	return(inportb(PSR2) & 0x01);
+}
+
+int uss_chk_conect()
+{
+	return((inportb(PADR2) & 0x04)>>2);
+}
+
+/* PWM functions */
+void pwm_init()
+{
+	if (pit1 !=1)
+	{
+		pit1_clk_init();
+		pit1 = 1;
+	}
+	outportb(PGCR1,0x00);           /*      clear PGCR1     */
+	outportb(PSRR1,0x00);
+	outportb(PACR1,0x80);           /*      submode 1x      */
+	outportb(PADDR1,0xff);          /*      all output      */
+	outportb(PBCR1,0x80);           /*      submode 1x      */
+	outportb(PBDDR1,0xff);          /*      all output      */
+	outportb(PGCR1,0x00);           /*      mode 0          */
+}
+
+void pwm_data(int _duty_l,int _duty_r)
+{/* for Shwarz */
+	int _dir_r,_dir_l;
+	if(_duty_r > 100)_duty_r=100;
+	if(_duty_l > 100)_duty_l=100;
+	if(_duty_r < -100)_duty_r=-100;
+	if(_duty_l < -100)_duty_l=-100;
+	_dir_r = _dir_l = CW;           /* set direction of rotation */
+	if(_duty_r < 0)
+	{
+		_dir_r   = CCW;
+		_duty_r *= -1;
+	}
+	if(_duty_l < 0)
+	{
+		_dir_l   = CCW;
+		_duty_l *= -1;
+	}
+	outportb(PWM_R,(((_duty_r * DUTY_MAX / 100) << 1) + _dir_r));
+	outportb(PWM_L,(((_duty_l * DUTY_MAX / 100) << 1) + _dir_l));
+}
+
+/* MMI functions */
+int dipsw_data()
+{
+	return(inportb(PBDR0)&0xf);
+}
+void mmi_init()
+{
+	outportb(PGCR0,0x00);           /*      clear PGCR0     */
+	outportb(PSRR0,0x1e);
+	outportb(PACR0,0xa0);           /*      submode 1x      */
+	outportb(PADDR0,0xff);          /*      all output      */
+	outportb(PBCR0,0x80);           /*      submode 1x      */
+	outportb(PBDDR0,0x10);
+	outportb(PGCR0,0x22);           /*      mode 0          */
+	outportb(TCR0,0x00);            /*      clear TCR0      */
+	outportl(CPR0,0x00003f);        /*      TOUT 2kHz       */
+	/*      0x3f = (1/2000)/2 sec /(1/8MHz) /32 prescaler   */
+	outportb(TCR0,0x41);            /*      square wave     */
+	led_set(0,0);
+	led_set(1,0);
+	led_set(2,0);
+	led_set(3,0);
+	led_on(OFF);
+}
+
+void led_set(int _led_no,int _data)
+{
+	if(((_data >=0) && (_data <=9))&&((_led_no >=0) && (_led_no <= 3)))
+	{
+		_led[_led_no] = _data;
+		outportb(PADR0,_green*0x80+_red*0x40+_led_no*0x10+_data);
+		outportb(PACR0,0xa0);   /*making latch enable pulse*/
+		outportb(PACR0,0xa8);
+		outportb(PACR0,0xa0);
+	}
+}
+
+void led_on(int _data)
+{
+	int num;
+	_green=_red=0;
+	if((_data & GREEN)!=0)
+	{
+		_green=1;
+	}
+	if((_data & RED)!=0)
+	{
+		_red=1;
+	}
+	for(num=0;num<LED_NO;num++){
+		outportb(PADR0,_green*0x80+_red*0x40+num*0x10+_led[num]);
+		outportb(PACR0,0xa0);   /*making latch enable pulse*/
+		outportb(PACR0,0xa8);
+		outportb(PACR0,0xa0);
+	}
+}
+
+void btn_disable_int()
+{
+	outportb(PBCR0, 0x80);
+}
+
+void btn_enable_int()
+{
+	outportb(PSR0, 0x08);
+	outportb(PBCR0, 0x84);
+}
+
+int pow_chk()
+{
+	return((inportb(PBDR0)&0x40)>>6);
+}
+
+void led_set_all(int data)
+{
+	int d3,d2,d1,d0;
+	
+	if(data<0)data*=-1;
+	data%=10000;
+	d3 = data/1000;
+	data %= 1000;
+	d2 = data/100;
+	data %= 100;
+	d1 = data/10;
+	d0 = data%10;
+	led_set(3,d3);
+	led_set(2,d2);
+	led_set(1,d1);
+	led_set(0,d0);
+}
+
+void led_set_3(int data)
+{
+	int d2,d1,d0;
+	
+	if(data<0)data*=-1;
+	data%=1000;
+	d2 = data/100;
+	data %= 100;
+	d1 = data/10;
+	d0 = data%10;
+	led_set(2,d2);
+	led_set(1,d1);
+	led_set(0,d0);
+}
+
+int inportb(port)
+char *port;
+{/* Input byte data from a port */
+	int data;
+	data = 0;
+#ifndef SIMULATOR
+	data =(int)*port;
+#endif
+	return(data);
+}
+
+int outportb(port,data)
+char *port;
+int data;
+{/* Output byte data to a port */
+#ifndef SIMULATOR
+	*port = data;
+#endif
+	return(data);
+}
+
+int outportl(port,data)
+char *port;
+int data;
+{/* Output long word data to a port */
+	unsigned char tbyte,hbyte,mbyte,lbyte;
+#ifndef SIMULATOR
+	tbyte = (unsigned char)((data&0xff000000)>>24);
+	hbyte = (unsigned char)((data&0x00ff0000)>>16);
+	mbyte = (unsigned char)((data&0x0000ff00)>>8);
+	lbyte = (unsigned char)(data&0x000000ff);
+	*port = tbyte;
+	*(port + 0x02) = hbyte;
+	*(port + 0x04) = mbyte;
+	*(port + 0x06) = lbyte;
+#endif
+	return(data);
+}
+
+
+void    rs_init()
+{/*     RS-232C control function ---- initialize        */
+	outportb(CCR,RST_Tx);
+	outportb(CCR,RST_TxCRC);
+	outportb(CCR,RST_Rx);
+	
+	outportb(CMR1,0x07);
+	/*asynchronous mode with non parity     */
+	outportb(CMR2,0x38);
+	outportb(PCR,0x20);
+	
+	outportb(TPR,0x77);     /* 1stop bit Tx 8bit */
+	outportb(TTR,0x3d);     /* bit rate 9600 bps    */
+	
+	outportb(RPR,0x1b);
+	/*receiver parameter(character length 8 bit)    */
+	outportb(RTR,0x2d);     /*      bit rate 9600 bps       */
+	outportb(RS_OMR,0xf3);
+	/*      TxRDY is active when TxFIFO is empty*/
+	/*      RxRDY is active when RxFIFO is not empty        */
+	asm(
+        "       MOVE.L          #$100,A0",
+        "       MOVE.L          #_rs_get,(A0)"
+        );
+	outportb(IVR,VCT);
+	outportb(IER,0x10);     /*      interrupts cause by RxRDY*/
+	outportb(ICR,0x02);     /*      vector is fixed */
+	
+	outportb(CCR,EBL_Tx);
+	outportb(CCR,EBL_Rx);
+}
+
+void rs_putc( char ch)
+{/* @1 ¶   o Í @*/
+	if ( ((inportb(GSR) & 0x02)>>1) == ACTIVE )
+		outportb(TxFIFO,ch);
+}
+
+void    rs_snd( send_str )
+char *send_str;
+{/* @ ¶   ñ Ì o Í @RS-232C control function -- send        */
+	char *cur_put;
+	
+	cur_put =send_str;
+	while( *cur_put != 0x00) {
+		if ( ((inportb(GSR) & 0x02)>>1) == ACTIVE )
+			outportb(TxFIFO,*cur_put++);
+	}
+}
+
+
+void iprint(value,len)
+int value;
+int len;
+{/* @ ®   Ì \ ¦ @*/
+	static char *cp;
+	int len1,l;
+	
+	itoa(value,cp);
+	len1=digit_length(cp);
+	
+	if(l=len-len1>0)
+		print_space(l);
+	rs_snd(cp);
+}
+
+void uprint(value,base,len)
+unsigned value;
+int base;
+int len;
+{/* @     È µ ®   Ì \ ¦ @*/
+	static char *cp;
+	int len1,l;
+	
+	itostr(value,cp,base);
+	len1=digit_length(cp);
+	
+	if(l=len-len1>0)
+		print_space(l);
+	rs_snd(cp);
+}
+
+void fprint(value,len)
+float value;
+int len;/*  ¬   _ È º Ì     */
+{/*  P ¸ x À   Ì \ ¦ @*/
+	int idata;/*  ®     ª*/
+	int fdata;/*  ¬   È º Ì l */
+	static char *cp;
+	int l;
+	
+	idata = (int)value;
+	itoa(idata,cp);
+	l = digit_length(cp);
+	iprint(idata,l);rs_putc('.');
+	fdata = (int)((value - (float)idata)*(float)power(10,len));
+	itoa(fdata,cp);
+	l = digit_length(cp);
+	iprint(fdata,l);
+}
+
+int power(base,n)
+int base;
+int n;
+{
+	int i,p;
+	
+	if(n<0) return(-1);
+	p=1;
+	for(i=1;i<=n;i++)
+		p*=base;
+	return(p);
+}
+
+void print_space(len)
+int len;
+{/* @ X y [ X Ì \ ¦ @*/
+	int i;
+	for(i=0;i<len;i++)
+	/*rs_snd(" ");*/
+		rs_putc(' ');
+}
+
+int digit_length(cp)
+char *cp;
+{/* @     Ì     @*/
+	int cnt;
+	static char *buf;
+	
+	cp=buf;
+	cnt=0;
+	while(isdigit(*cp++))
+		cnt++;
+	return(cnt);
+}
+
+void    rs_rcv( str_buf )
+char *str_buf;
+{/* @ ¶   ñ Ì ü Í @RS-232C control function --receive     */
+	char    *p = str_buf;
+	char    *cur_get = getbuf;
+	char    ch;
+	
+	ch = *cur_get;
+	while ( ch != 0x00) {
+		ch = *cur_get++;
+		*p++ = ch;
+	}
+	*p = 0x00;
+	end_get = getbuf;
+}
+void    skipspace()
+{/*     delete  spaces before string    */
+	char *p;
+	
+	p = buffer;
+	while ( (*p != 0x00) && (isspace(*p) != 0) ) p++;
+	strcpy(buffer,p);
+}
+
+int recvi()
+{/* @ ®   l Ì æ ¾ @*/
+	char    *p,*q;
+	int     indata,sign;
+	
+	while ((crflg != ACTIVE));
+	crflg = !ACTIVE;
+	
+	rs_rcv(buffer);
+	q = p = buffer;
+	sign=1;
+	if(*p=='-'){
+		sign=-1;
+		p++;
+		q++;
+	}
+	/*skipspace();
+	 p = buffer;*/
+	indata = 0;
+	
+	while ( (*p != 0x00) && (indata != NON) ) {
+		if ( !isdigit(*p) )
+			indata = NON;
+		p++;
+	}
+	if ( indata != NON ) indata = atoi(q)*sign;
+	return(indata);
+}
+
+float recvf()
+{/* @ P ¸ x À   l Ì æ ¾ @*/
+	char    *p,*q;
+	float   indata,sign,inflag;
+	
+	while ((crflg != ACTIVE));
+	crflg = !ACTIVE;
+	
+	rs_rcv(buffer);
+	q = p = buffer;
+	sign=1.;
+	if(*p=='-'){
+		sign=-1.;
+		p++;
+		q++;
+	}
+	indata = 0.;
+	inflag = 0;
+	
+	while ( (*p != 0x00) && (inflag != NON) ) {
+		if ( !isdigit(*p) )
+			inflag = NON;
+		p++;
+	}
+	if ( inflag != NON ) indata = (float)atof(q)*sign;
+	return(indata);
+}
+
+interrupt void  rs_get()
+{/* @1 ¶   ü Í @RS-232C control function ----
+ key input interrupt    */
+	char    c;
+	
+	c = (char)inportb(RxFIFO);
+	rs_putc(c);
+	switch ( c ) {
+		case ESC:
+			exit(1);
+		case CR:
+			*end_get = 0x00;
+			crflg = ACTIVE;
+			break;
+		default:
+			*end_get = c;
+			break;
+	}
+	end_get++;
+}

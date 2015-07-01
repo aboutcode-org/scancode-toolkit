@@ -1,0 +1,13 @@
+key: cc-by-nc-sa-2.5
+short_name: CC-BY-NC-SA-2.5
+name: >-
+    Creative Commons Attribution Non-Commercial Share Alike License 2.5
+category: Attribution Restricted
+owner: Creative Commons
+homepage_url: http://creativecommons.org/licenses/by-nc-sa/2.5/
+spdx_license_key: CC-BY-NC-SA-2.5
+spdx_full_name: >-
+    Creative Commons Attribution Non Commercial Share Alike 2.5
+spdx_url: http://spdx.org/licenses/CC-BY-NC-SA-2.5
+text_urls:
+    - http://creativecommons.org/licenses/by-nc-sa/2.5/legalcode

@@ -1,0 +1,92 @@
+/*  xblock.cpp
+
+    Xbase64 project source code
+    written at 35000 feet on SWA
+   
+    This file contains the implementation of the xbLock.
+
+    This file conatains a header file for the xbLock virtual objects which
+    is used for controlling file and record locking.  Record and file
+    locking has been rewritten in version 3.
+
+    Copyright (C) 1997,2003  Gary A Kunkel
+    
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+
+    Contact:
+    
+     Email:
+    
+      xdb-devel@lists.sourceforge.net
+      xdb-users@lists.sourceforge.net
+      
+      
+     Regular Mail:
+     
+       XBase Support
+       149C South Main St
+       Keller Texas, 76248     
+       USA
+*/
+
+#ifdef __GNU_LesserG__
+  #pragma implementation "xblock.h"
+#endif
+
+#ifdef __WIN32__
+#include <xbase64/xbwincfg.h>
+#else
+#include <xbase64/xbconfig.h>
+#endif
+
+#include <xbase64/xbase64.h>
+
+#ifdef HAVE_IO_H     // windows locking
+#include <io.h>
+#endif
+
+#ifdef HAVE_DOS_H    // _sleep
+#include <dos.h>
+#endif
+
+//#include <stdio.h>
+//#include <stdlib.h>
+
+/*! \file xblock.cpp
+*/
+#ifdef XB_LOCKING_ON
+
+//! Constructor
+/*!
+  \param pdbf
+*/
+
+/*************************************************************************/
+xbLock::xbLock(xbDbf * pdbf)
+{
+  dbf          = pdbf;
+  HdrLockCnt   = 0;
+  TableLockCnt = 0;
+  MemoLockCnt  = 0;
+  IndexLockCnt = 0;
+  std::cout << "xbLock constructor" << std::cout;
+}
+/*************************************************************************/
+xbLock::~xbLock()
+{
+  std::cout << "xbLock destructor" << std::endl;
+}
+/*************************************************************************/

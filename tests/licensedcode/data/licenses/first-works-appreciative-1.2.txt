@@ -1,0 +1,124 @@
+First Works Appreciative License
+
+Version 1.2
+July 7, 2005
+Copyright (c) 2005
+Jonathan Michael Davis
+<jond_123@hotmail.com>
+<jon@jondavis.net>
+
+All Rights Reserved
+
+
+This First Works Appreciative License (the "License") applies to any original
+work of authorship (the "Original Work") under whose owner (the "Licensor") has
+included and clearly referenced this license as part of the Original work, or
+has placed the following notice immediately following or accompanying the
+copyright notice for the Original Work:
+
+       "Licensed under the First Works Appreciative License version 1.2"
+
+The recipient and/or of Original Work (the "Licensee") is hereby granted this
+License.
+
+1) GRANT OF LICENSE. Licensor hereby grants to the Licensee a worldwide,
+   non-exclusive, perpetual license to exercise the following activities:
+
+        a) to reproduce the Original Work in its original state;
+       
+        b) to prepare cooperative works in conjunction with the Original Work
+           that extend the functionality or usefulness of Original Work;
+       
+        c) to modify the Original Work (the "Modified Work") for personal use
+           or limited distribution, with the provision that copies of the
+           Modified Work shall conform to the obligations set forth by the
+           sections of this license entitled Conditions Of Redistribution
+           (section 2) and Limitations Of Derivative Work (section 3);
+       
+        d) to distribute copies of the Original Work and associated works to
+           the public, with the provision that copies of the Original Work
+           shall conform to the obligations set forth by the sections of this
+           license entitled Conditions Of Redistribution (section 2) and
+           Limitations Of Derivative Work (section 3);
+           
+        e) to perform the Original Work publicly or privately;
+       
+        f) to display the Original Work publicly or privately.
+
+2) CONDITIONS OF REDISTRIBUTION. The grant of copyright license for
+   redistribution is limited to the following conditions:
+
+        a) Original authorship recognition shall be retained with all copies of
+           Original Work and Modified Work insomuch as was reflected by the
+           Original Work. Modified Work may assign new logos and other artwork
+           and designs to override Original Work, provided it does not negate
+           communication of original authorship or Licensor and identifies the
+           name and/or title of the Original Work.
+           
+        b) Distribution of Original Work may not directly profit, including
+           profitable sale of the Original Work, without permission from the
+           Licensor, whether accompanied with this License or provided to
+           Licensee as a separate exchange of communication or agreement. This
+           limitation DOES NOT hinder Licensee from bundling Original Work with
+           other work of value for profit, provided that the bundle is not
+           identified, labeled, described, or otherwise marketed with the
+           bundled work being the primary product associated with the bundle.
+
+        c) Distribution of Modified Work may directly profit, including
+           profitable sale of the Modified Work, provided that the Licensee has
+           made a reasonable effort to obtain prior permission to perform the
+           work. Licensor reserves the right to deny permission if contacted.
+           However, the requirement of permission is dependent upon the
+           Licensor's accessibility, such as having a valid address. If the
+           Licensee can reasonably evidence that contact could not be made
+           with the Licensor to obtain permission within 60 days of reasonable
+           effort, obtainment of permission is not required, provided
+           subsection "d" is retained.
+
+        d) Distribution of Modified Work shall not be granted unless either:
+       
+                1.  The modifications are reasonably minor, and the product is
+                    clearly identified as modified, but the product otherwise
+                    retains all identifications of the Original Work, with the
+                    original author and Licensor retained.
+
+                ii. The modifications are reasonably significant, and the
+                    Modified Work has insignificant (less than 50%) dependence
+                    upon the Original Work to maintain value or usefulness.
+                    Ratio of dependence shall not be construed to assume
+                    measurement based upon file size, lines of code, visual
+                    exposure, or otherwise, but shall be measured fairly on a
+                    case by case basis in a court of law or by a third party
+                    mediator.
+
+3) LIMITATIONS OF DERIVATIVE WORK. Source code is provided freely for personal
+   use on the local machine, and for modifying Original Work to create Modified
+   Work for use on a personal basis on a local machine, or to distribute
+   according to the Conditions of Redistribution (section 2). Source code may
+   also be used for business use, but not for commercial use except as outlined
+   in Conditions of Redistribution (section 2). Source code is also provided
+   for unlimited educational use, provided that the Licensee is or represents
+   an established educational organization, and original authorship notations
+   and recognitions are retained.
+
+4) NO WARRANTY. Except as expressly set forth in this or any superseding
+   agreement, the Original Work is provided on an "as is" basis, without
+   warranties or conditions of any kind, either express or implied including,
+   without limitation, any warranties or conditions of title, non-infringement,
+   merchantability or fitness for a particular purpose. Each Recipient is
+   solely responsible for determining the appropriateness of using and
+   distributing the Original Work (or Modified Work) and assumes all risks
+   associated with its exercise of rights under this License, including but not
+   limited to the risks and costs of software errors, compliance with
+   applicable laws, damage to or loss of data, software or hardware, and
+   unavailability or interruption of operations.
+
+5) DISCLAIMER OF LIABILITY. Except as expressly set forth in this or any
+   superseding agreement, neither Licensee nor Licensor, nor any contributors
+   to Modified Works, shall have any liability for any direct, indirect,
+   incidental, special, exemplary, or consequential damages (including without
+   limitation lost profits), however caused and on any theory of liability,
+   whether in contract, strict liability, or tort (including negligence or
+   otherwise) arising in any way out of the use or distribution of the Original
+   Work or the exercise of any rights granted hereunder, even if advised of
+   the possibility of such damages.

@@ -1,0 +1,36 @@
+How to Torture Your Own File Systems:
+
+1) Find a machine that you are willing to crash.
+
+2) On that machine, find a filesystem that you are willing to newfs.
+
+3) Get a copy of torture.pl and a Perl 4.10 or better.
+
+4) Get a copy of the patched gnu diff.
+
+5) cd into the sacrificial filesystem, and create a directory to put
+the restored image in. (If you are testing numerous programs, you may
+want to keep multiple restore directories, each named after the
+program being tested.)
+
+6) Run torture.pl; it will create a DumpTestDir directory and put the
+directory from Hell into it. When it finishes, it will prompt you for
+a command. The command should be the full archive and restore through
+a pipe pair, relative to ., so that for SunOS tar it would read:
+	tar -cf - DumpTestDir | (cd SunOS-tar; tar -xf -)
+(Running in verbose mode is more reassuring, but very verbose.)
+torture.pl should be run as a normal user unless you are very
+confident, and very willing to newfs the file system, since as root it
+tends to hard link directories.
+
+7) Once torture.pl completes, run "gnudiff -r -b -Q -X DumpTestDir
+SunOS-tar" (replacing the directory names as appropriate. You will get
+a quite exhaustive list of the differences.
+
+8) Mail me the results, please.
+
+Many programs fail in step 6; once you have run torture.pl, you can
+simply run the archive program from the command line, unless you
+really want the active tests. Figuring out exactly what causes the
+program to fail is something of an art form.
+

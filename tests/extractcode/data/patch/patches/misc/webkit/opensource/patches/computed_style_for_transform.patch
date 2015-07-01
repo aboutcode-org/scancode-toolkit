@@ -1,0 +1,92 @@
+--- smurF/src/3rdParty/webkit/work/WebCore/css/CSSComputedStyleDeclaration.cpp	2008-11-26 14:30:08.000000000 +0100
++++ CSSComputedStyleDeclaration.cpp	2009-08-25 12:38:44.000000000 +0200
+@@ -293,6 +293,23 @@ static IntRect sizingBox(RenderObject* r
+     return renderer->style()->boxSizing() == CONTENT_BOX ? renderer->contentBox() : renderer->borderBox();
+ }
+ 
++static PassRefPtr<CSSPrimitiveValue> computedTransform(RenderObject* renderer, const RenderStyle* style)
++{
++  if (!renderer) // || style->transform().operations().isEmpty())
++    return new CSSPrimitiveValue(CSS_VAL_NONE);
++  
++  IntRect box = sizingBox(renderer);
++  
++  AffineTransform transform;
++  //renderer->style()->applyTransform(transform, box.size());
++  style->applyTransform(transform, box.size(), true);
++  String string = ("matrix(");
++  string += String::number(transform.a()) + "," + String::number(transform.b()) + "," + String::number(transform.c()) + ",";
++  string += String::number(transform.d()) + "," + String::number(transform.e()) + "," + String::number(transform.f()) + ")";
++
++  return new CSSPrimitiveValue(string, CSSPrimitiveValue::CSS_STRING);
++}
++
+ CSSComputedStyleDeclaration::CSSComputedStyleDeclaration(PassRefPtr<Node> n)
+     : m_node(n)
+ {
+@@ -846,6 +863,8 @@ PassRefPtr<CSSValue> CSSComputedStyleDec
+             return getBorderRadiusCornerValue(style->borderTopLeftRadius());
+         case CSS_PROP__WEBKIT_BORDER_TOP_RIGHT_RADIUS:
+             return getBorderRadiusCornerValue(style->borderTopRightRadius());
++        case CSS_PROP__WEBKIT_TRANSFORM:
++	  return computedTransform(renderer, style);
+         case CSS_PROP_BACKGROUND:
+         case CSS_PROP_BORDER:
+         case CSS_PROP_BORDER_BOTTOM:
+@@ -904,7 +923,6 @@ PassRefPtr<CSSValue> CSSComputedStyleDec
+         case CSS_PROP__WEBKIT_MARQUEE_SPEED:
+         case CSS_PROP__WEBKIT_PADDING_START:
+         case CSS_PROP__WEBKIT_TEXT_STROKE:
+-        case CSS_PROP__WEBKIT_TRANSFORM:
+         case CSS_PROP__WEBKIT_TRANSFORM_ORIGIN:
+         case CSS_PROP__WEBKIT_TRANSFORM_ORIGIN_X:
+         case CSS_PROP__WEBKIT_TRANSFORM_ORIGIN_Y:
+--- smurF/src/3rdParty/webkit/work/WebCore/css/CSSStyleSelector.cpp	2008-11-26 14:30:09.000000000 +0100
++++ CSSStyleSelector.cpp	2009-08-25 12:38:53.000000000 +0200
+@@ -4546,8 +4546,7 @@ void CSSStyleSelector::applyProperty(int
+                                         angleY = rad2deg(angle);
+                                     else if (secondValue->primitiveType() == CSSPrimitiveValue::CSS_GRAD)
+                                         angleY = grad2deg(angle);
+-                                } else
+-                                    angleY = angleX;
++                                }
+                             }
+                         }
+                         
+--- smurF/src/3rdParty/webkit/work/WebCore/rendering/RenderStyle.h	2008-11-26 20:46:18.000000000 +0100
++++ RenderStyle.h	2009-08-25 12:38:59.000000000 +0200
+@@ -1817,7 +1817,7 @@ public:
+     Length transformOriginX() const { return rareNonInheritedData->m_transform->m_x; }
+     Length transformOriginY() const { return rareNonInheritedData->m_transform->m_y; }
+     bool hasTransform() const { return !rareNonInheritedData->m_transform->m_operations.isEmpty(); }
+-    void applyTransform(AffineTransform&, const IntSize& borderBoxSize) const;
++    void applyTransform(AffineTransform&, const IntSize& borderBoxSize, bool excludeTransformOrigin = false) const;
+     // End CSS3 Getters
+ 
+     // Apple-specific property getter methods
+--- smurF/src/3rdParty/webkit/work/WebCore/rendering/RenderStyle.cpp	2008-11-26 14:30:12.000000000 +0100
++++ RenderStyle.cpp	2009-08-25 12:39:01.000000000 +0200
+@@ -1518,7 +1518,7 @@ void ContentData::clear()
+     }
+ }
+ 
+-void RenderStyle::applyTransform(AffineTransform& transform, const IntSize& borderBoxSize) const
++void RenderStyle::applyTransform(AffineTransform& transform, const IntSize& borderBoxSize, bool excludeTransformOrigin) const
+ {
+     // transform-origin brackets the transform with translate operations.
+     // Optimize for the case where the only transform is a translation, since the transform-origin is irrelevant
+@@ -1526,12 +1526,14 @@ void RenderStyle::applyTransform(AffineT
+     bool applyTransformOrigin = false;
+     unsigned s = rareNonInheritedData->m_transform->m_operations.size();
+     unsigned i;
++    if (!excludeTransformOrigin) {
+     for (i = 0; i < s; i++) {
+         if (!rareNonInheritedData->m_transform->m_operations[i]->isTranslateOperation()) {
+             applyTransformOrigin = true;
+             break;
+         }
+     }
++    }
+     
+     if (applyTransformOrigin)
+         transform.translate(transformOriginX().calcValue(borderBoxSize.width()), transformOriginY().calcValue(borderBoxSize.height()));

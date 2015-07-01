@@ -1,0 +1,21 @@
+key: lgpl-2.0
+short_name: LGPL 2.0
+name: GNU Library General Public License 2.0
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
+spdx_license_key: LGPL-2.0
+spdx_full_name: >-
+    GNU Library General Public License v2 only
+spdx_url: http://spdx.org/licenses/LGPL-2.0
+spdx_notes: |-
+    This license was released: June 1991.
+    This license has been superseded by LGPL v2.1
+text_urls:
+    - http://www.gnu.org/licenses/old-licenses/library.txt
+    - http://www.gnu.org/licenses/old-licenses/lgpl-2.0.txt
+    - http://www.gnu.org/licenses/lgpl-2.0.html
+    - http://www.gnu.org/licenses/lgpl-2.0.txt
+other_urls:
+    - http://www.gnu.org/licenses/old-licenses/library.html
+    - http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html

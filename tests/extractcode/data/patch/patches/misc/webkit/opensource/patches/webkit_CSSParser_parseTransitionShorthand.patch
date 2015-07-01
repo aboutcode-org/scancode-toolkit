@@ -1,0 +1,29 @@
+--- ekioh_src_motorola_20090310_r2971/src/3rdParty/webkit/work/WebCore/css/CSSParser.cpp.orig	2008-11-26 21:30:09.000000000 +0800
++++ ekioh_src_motorola_20090310_r2971/src/3rdParty/webkit/work/WebCore/css/CSSParser.cpp	2009-07-25 11:15:26.000000000 +0800
+@@ -1688,12 +1688,16 @@
+         Value* val = valueList->current();
+         if (val->unit == Value::Operator && val->iValue == ',') {
+             // We hit the end.  Fill in all remaining values with the initial value.
++            // And add the properties.
+             valueList->next();
+             for (i = 0; i < numProperties; ++i) {
+                 if (!parsedProperty[i])
+                     addTransitionValue(values[i], new CSSInitialValue(true));
+                 parsedProperty[i] = false;
+             }
++            for (i = 0; i < numProperties; ++i) {
++                addProperty(properties[i], values[i].release(), important);
++            }
+             if (!valueList->current())
+                 break;
+         }
+@@ -2228,7 +2232,7 @@
+             return new CSSPrimitiveValue(cAnimateAll);
+         if (str == "none")
+             return new CSSPrimitiveValue(cAnimateNone);
+-        CString propertyName = str.utf8();
++	CString propertyName = str.utf8();
+         int result = getPropertyID(propertyName.data(), propertyName.length());
+         if (result)
+             return new CSSPrimitiveValue(result);
+

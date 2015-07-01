@@ -1,0 +1,7 @@
+key: ms-directx-sdk-eula
+short_name: MS DirectX SDK EULA
+name: Microsoft DirectX SDK EULA
+category: Proprietary Free
+owner: Microsoft
+text_urls:
+    - ftp://ftp.physik.hu-berlin.de/pub/useful/dx7asdk/DXF/license/directx%20sdk%20eula.txt

@@ -1,0 +1,100 @@
+--- linux-2.6.23/arch/sh/boards/st/mb442/setup.c.orig	2009-02-04 16:33:05.000000000 +0100
++++ linux-2.6.23/arch/sh/boards/st/mb442/setup.c	2009-02-04 17:09:47.000000000 +0100
+@@ -23,18 +23,26 @@
+ #include <linux/lirc.h>
+ #include <asm/irl.h>
+ 
+-static int ascs[2] __initdata = { 2, 3 };
++static int ascs[2] __initdata = { 1 | (STASC_FLAG_NORTSCTS << 8), 2 | (STASC_FLAG_NORTSCTS << 8) };
+ 
+ void __init mb442_setup(char** cmdline_p)
+ {
++#ifndef CONFIG_SH_MOTOROLA_VIP19XX
+ 	printk("STMicroelectronics STb7100 Reference board initialisation\n");
++#else
++ 	printk(KERN_DEBUG "Motorola VIP19xx board initialisation\n");
++#endif
+ 
+ 	stx7100_early_device_init();
+ 	stb7100_configure_asc(ascs, 2, 0);
+ }
+ 
+ static struct plat_stm_pwm_data pwm_private_info = {
+-	.flags		= PLAT_STM_PWM_OUT1,
++#ifndef CONFIG_SH_MOTOROLA_VIP19XX
++	.flags		= PLAT_STM_PWM_OUT0,
++#else
++	.flags		= 0,
++#endif
+ };
+ 
+ static struct plat_ssc_data ssc_private_info = {
+@@ -57,6 +65,38 @@
+ 	},
+ };
+ 
++static struct platform_device smsc_lan9117 = {
++	.name		= "smc911x",
++	.id		= -1,
++	.num_resources	= 4,
++	.resource	= (struct resource []) {
++		{
++			.flags = IORESOURCE_MEM,
++			.start = 0x02000300,
++			.end   = 0x02000300 + 0xff,
++		},
++		{
++			.flags = IORESOURCE_IRQ,
++			.start = IRL0_IRQ,
++			.end   = IRL0_IRQ,
++		},
++		/* See end of "drivers/net/smsc_911x/smsc9118.c" file
++		 * for description of two following resources. */
++		{
++			.flags = IORESOURCE_IRQ,
++			.name  = "polarity",
++			.start = 0,
++			.end   = 0,
++		},
++		{
++			.flags = IORESOURCE_IRQ,
++			.name  = "type",
++			.start = 1,
++			.end   = 1,
++		},
++	},
++};
++
+ static struct platform_device smc91x_device = {
+ 	.name		= "smc91x",
+ 	.id		= 0,
+@@ -124,8 +164,8 @@
+ 
+ static struct plat_stmmacphy_data phy_private_data = {
+ 	.bus_id = 0,
+-	.phy_addr = 14,
+-	.phy_mask = 1,
++	.phy_addr = 31,
++	.phy_mask = 0,
+ 	.interface = PHY_INTERFACE_MODE_MII,
+ 	.phy_reset = &mb442_phy_reset,
+ };
+@@ -137,8 +177,8 @@
+ 	.resource	= (struct resource[]) {
+                 {
+ 			.name	= "phyirq",
+-			.start	= IRL3_IRQ,
+-			.end	= IRL3_IRQ,
++			.start	= IRL0_IRQ,
++			.end	= IRL0_IRQ,
+ 			.flags	= IORESOURCE_IRQ,
+ 		},
+ 	},
+@@ -148,6 +188,7 @@
+ };
+ 
+ static struct platform_device *mb442_devices[] __initdata = {
++	&smsc_lan9117,
+ 	&smc91x_device,
+ 	&physmap_flash,
+ 	&mb442_phy_device,

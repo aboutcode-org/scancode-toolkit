@@ -1,0 +1,10 @@
+key: swig
+short_name: SWIG Library License
+name: SWIG Library License
+category: Attribution
+owner: SWIG
+homepage_url: http://www.swig.org/
+text_urls:
+    - http://www.swig.org/Release/LICENSE
+other_urls:
+    - http://www.swig.org/Release/COPYRIGHT

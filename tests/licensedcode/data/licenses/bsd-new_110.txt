@@ -1,0 +1,907 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>refclock_palisade.c</title>
+<style type="text/css">
+.enscript-comment { font-style: italic; color: rgb(178,34,34); }
+.enscript-function-name { font-weight: bold; color: rgb(0,0,255); }
+.enscript-variable-name { font-weight: bold; color: rgb(184,134,11); }
+.enscript-keyword { font-weight: bold; color: rgb(160,32,240); }
+.enscript-reference { font-weight: bold; color: rgb(95,158,160); }
+.enscript-string { font-weight: bold; color: rgb(188,143,143); }
+.enscript-builtin { font-weight: bold; color: rgb(218,112,214); }
+.enscript-type { font-weight: bold; color: rgb(34,139,34); }
+.enscript-highlight { text-decoration: underline; color: 0; }
+</style>
+</head>
+<body id="top">
+<h1 style="margin:8px;" id="f1">refclock_palisade.c&nbsp;&nbsp;&nbsp;<span style="font-weight: normal; font-size: 0.5em;">[<a href="http://opensource.apple.com/source/ntp/ntp-12/ntp/ntpd/refclock_palisade.c?txt">plain text</a>]</span></h1>
+<hr>
+<div></div>
+<pre><span class="enscript-comment">/*
+ * This software was developed by the Software and Component Technologies
+ * group of Trimble Navigation, Ltd.
+ *
+ * Copyright (c) 1997, 1998, 1999 Trimble Navigation Ltd.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. All advertising materials mentioning features or use of this software
+ *    must display the following acknowledgement:
+ *    This product includes software developed by Trimble Navigation, Ltd.
+ * 4. The name of Trimble Navigation Ltd. may not be used to endorse or
+ *    promote products derived from this software without specific prior
+ *    written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY TRIMBLE NAVIGATION LTD. ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL TRIMBLE NAVIGATION LTD. BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */</span>
+
+<span class="enscript-comment">/*
+ * refclock_palisade - clock driver for the Trimble Palisade GPS
+ * timing receiver
+ *
+ * For detailed information on this program, please refer to the html 
+ * Refclock 29 page accompanying the NTP distribution.
+ *
+ * for questions / bugs / comments, contact:
+ * <a href="mailto:sven_dietrich@trimble.com">sven_dietrich@trimble.com</a>
+ *
+ * Sven-Thorsten Dietrich
+ * 645 North Mary Avenue
+ * Post Office Box 3642
+ * Sunnyvale, CA 94088-3642
+ *
+ * Version 2.45; July 14, 1999
+ *
+ */</span>
+
+#<span class="enscript-reference">include</span> <span class="enscript-string">&lt;errno.h&gt;</span>
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">HAVE_CONFIG_H</span>
+#<span class="enscript-reference">include</span> <span class="enscript-string">"config.h"</span>
+#<span class="enscript-reference">endif</span>
+
+#<span class="enscript-reference">if</span> <span class="enscript-reference">defined</span>(<span class="enscript-variable-name">REFCLOCK</span>) &amp;&amp; (<span class="enscript-reference">defined</span>(<span class="enscript-variable-name">PALISADE</span>) || <span class="enscript-reference">defined</span>(<span class="enscript-variable-name">CLOCK_PALISADE</span>))
+
+#<span class="enscript-reference">include</span> <span class="enscript-string">"refclock_palisade.h"</span>
+<span class="enscript-comment">/* Table to get from month to day of the year */</span>
+<span class="enscript-type">const</span> <span class="enscript-type">int</span> days_of_year [12] = {
+	0,  31,  59,  90, 120, 151, 181, 212, 243, 273, 304, 334
+};
+
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+<span class="enscript-type">const</span> <span class="enscript-type">char</span> * Tracking_Status[15][15] = { 
+        	{ <span class="enscript-string">"Doing Fixes\0"</span> }, { <span class="enscript-string">"Good 1SV\0"</span> }, { <span class="enscript-string">"Approx. 1SV\0"</span> },
+        	{<span class="enscript-string">"Need Time\0"</span> }, { <span class="enscript-string">"Need INIT\0"</span> }, { <span class="enscript-string">"PDOP too High\0"</span> },
+        	{ <span class="enscript-string">"Bad 1SV\0"</span> }, { <span class="enscript-string">"0SV Usable\0"</span> }, { <span class="enscript-string">"1SV Usable\0"</span> },
+        	{ <span class="enscript-string">"2SV Usable\0"</span> }, { <span class="enscript-string">"3SV Usable\0"</span> }, { <span class="enscript-string">"No Integrity\0"</span> },
+        	{ <span class="enscript-string">"Diff Corr\0"</span> }, { <span class="enscript-string">"Overdet Clock\0"</span> }, { <span class="enscript-string">"Invalid\0"</span> } };
+#<span class="enscript-reference">endif</span>
+
+<span class="enscript-comment">/*
+ * Transfer vector
+ */</span>
+<span class="enscript-type">struct</span> refclock refclock_palisade = {
+	palisade_start,		<span class="enscript-comment">/* start up driver */</span>
+	palisade_shutdown,	<span class="enscript-comment">/* shut down driver */</span>
+	palisade_poll,		<span class="enscript-comment">/* transmit poll message */</span>
+	noentry,		<span class="enscript-comment">/* not used  */</span>
+	noentry,		<span class="enscript-comment">/* initialize driver (not used) */</span>
+	noentry,		<span class="enscript-comment">/* not used */</span>
+	NOFLAGS			<span class="enscript-comment">/* not used */</span>
+};
+
+
+<span class="enscript-comment">/*
+ * palisade_start - open the devices and initialize data for processing
+ */</span>
+<span class="enscript-type">static</span> <span class="enscript-type">int</span>
+<span class="enscript-function-name">palisade_start</span> (
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">PALISADE</span>
+	unit, peer
+	)
+	<span class="enscript-type">int</span> unit;
+	<span class="enscript-type">struct</span> peer *peer;
+#<span class="enscript-reference">else</span> <span class="enscript-comment">/* ANSI */</span>
+	<span class="enscript-type">int</span> unit,
+	<span class="enscript-type">struct</span> peer *peer
+	)
+#<span class="enscript-reference">endif</span>
+{
+	<span class="enscript-type">struct</span> palisade_unit *up;
+	<span class="enscript-type">struct</span> refclockproc *pp;
+	<span class="enscript-type">int</span> fd;
+	<span class="enscript-type">char</span> gpsdev[20];
+
+	<span class="enscript-type">struct</span> termios tio;
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">SYS_WINNT</span>
+	(<span class="enscript-type">void</span>) sprintf(gpsdev, <span class="enscript-string">"COM%d:"</span>, unit);
+#<span class="enscript-reference">else</span>	
+	(<span class="enscript-type">void</span>) sprintf(gpsdev, DEVICE, unit);
+#<span class="enscript-reference">endif</span>
+	<span class="enscript-comment">/*
+	 * Open serial port. 
+	 */</span>
+#<span class="enscript-reference">if</span> <span class="enscript-variable-name">defined</span> <span class="enscript-variable-name">PALISADE</span>
+	 fd = open(gpsdev, O_RDWR
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">O_NONBLOCK</span>
+                  | O_NONBLOCK
+#<span class="enscript-reference">endif</span>
+                  );
+#<span class="enscript-reference">else</span> <span class="enscript-comment">/* NTP 4.x */</span>
+	fd = refclock_open(gpsdev, SPEED232, LDISC_RAW);
+#<span class="enscript-reference">endif</span>
+	<span class="enscript-keyword">if</span> (fd &lt;= 0) {
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+		printf(<span class="enscript-string">"Palisade(%d) start: open %s failed\n"</span>, unit, gpsdev);
+#<span class="enscript-reference">endif</span>
+		<span class="enscript-keyword">return</span> 0;
+	}
+
+	msyslog(LOG_NOTICE, <span class="enscript-string">"Palisade(%d) fd: %d dev: %s"</span>, unit, fd,
+		gpsdev);
+
+#<span class="enscript-reference">if</span> <span class="enscript-variable-name">defined</span> <span class="enscript-variable-name">PALISADE</span> 
+        tio.c_cflag = (CS8|CLOCAL|CREAD|PARENB|PARODD);
+        tio.c_iflag = (IGNBRK);
+        tio.c_oflag = (0);
+        tio.c_lflag = (0);
+
+        <span class="enscript-keyword">if</span> (cfsetispeed(&amp;tio, SPEED232) == -1) {
+                msyslog(LOG_ERR,<span class="enscript-string">"Palisade(%d) cfsetispeed(fd, &amp;tio): %m"</span>,unit);
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+                printf(<span class="enscript-string">"Palisade(%d) cfsetispeed(fd, &amp;tio)\n"</span>,unit);
+#<span class="enscript-reference">endif</span>
+                <span class="enscript-keyword">return</span> 0;
+        }
+        <span class="enscript-keyword">if</span> (cfsetospeed(&amp;tio, SPEED232) == -1) {
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+                printf(<span class="enscript-string">"Palisade(%d) cfsetospeed(fd, &amp;tio)\n"</span>,unit);
+#<span class="enscript-reference">endif</span>
+                msyslog(LOG_ERR,<span class="enscript-string">"Palisade(%d) cfsetospeed(fd, &amp;tio): %m"</span>,unit);
+                <span class="enscript-keyword">return</span> 0;
+        }
+#<span class="enscript-reference">else</span> <span class="enscript-comment">/* NTP 4.x */</span>
+        <span class="enscript-keyword">if</span> (tcgetattr(fd, &amp;tio) &lt; 0) {
+                msyslog(LOG_ERR, 
+			<span class="enscript-string">"Palisade(%d) tcgetattr(fd, &amp;tio): %m"</span>,unit);
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+                printf(<span class="enscript-string">"Palisade(%d) tcgetattr(fd, &amp;tio)\n"</span>,unit);
+#<span class="enscript-reference">endif</span>
+                <span class="enscript-keyword">return</span> (0);
+        }
+
+        tio.c_cflag |= (PARENB|PARODD);
+        tio.c_iflag &amp;= ~ICRNL;
+#<span class="enscript-reference">endif</span> <span class="enscript-comment">/*  NTP 4.x */</span>
+
+	<span class="enscript-keyword">if</span> (tcsetattr(fd, TCSANOW, &amp;tio) == -1) {
+                msyslog(LOG_ERR, <span class="enscript-string">"Palisade(%d) tcsetattr(fd, &amp;tio): %m"</span>,unit);
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+                printf(<span class="enscript-string">"Palisade(%d) tcsetattr(fd, &amp;tio)\n"</span>,unit);
+#<span class="enscript-reference">endif</span>
+                <span class="enscript-keyword">return</span> 0;
+        }
+
+	<span class="enscript-comment">/*
+	 * Allocate and initialize unit structure
+	 */</span>
+	up = (<span class="enscript-type">struct</span> palisade_unit *) emalloc(<span class="enscript-keyword">sizeof</span>(<span class="enscript-type">struct</span> palisade_unit));
+	      
+	<span class="enscript-keyword">if</span> (!(up)) {
+                msyslog(LOG_ERR, <span class="enscript-string">"Palisade(%d) emalloc: %m"</span>,unit);
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+                printf(<span class="enscript-string">"Palisade(%d) emalloc\n"</span>,unit);
+#<span class="enscript-reference">endif</span>
+		(<span class="enscript-type">void</span>) close(fd);
+		<span class="enscript-keyword">return</span> (0);
+	}
+
+	memset((<span class="enscript-type">char</span> *)up, 0, <span class="enscript-keyword">sizeof</span>(<span class="enscript-type">struct</span> palisade_unit));
+
+	pp = peer-&gt;procptr;
+	pp-&gt;io.clock_recv = palisade_io;
+	pp-&gt;io.srcclock = (caddr_t)peer;
+	pp-&gt;io.datalen = 0;
+	pp-&gt;io.fd = fd;
+	pp-&gt;nstages = 1;
+#<span class="enscript-reference">ifndef</span> <span class="enscript-variable-name">PALISADE</span>
+	pp-&gt;nskeep = 1;
+#<span class="enscript-reference">endif</span>
+
+	<span class="enscript-keyword">if</span> (!io_addclock(&amp;pp-&gt;io)) {
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+                printf(<span class="enscript-string">"Palisade(%d) io_addclock\n"</span>,unit);
+#<span class="enscript-reference">endif</span>
+		(<span class="enscript-type">void</span>) close(fd);
+		free(up);
+		<span class="enscript-keyword">return</span> (0);
+	}
+
+	<span class="enscript-comment">/*
+	 * Initialize miscellaneous variables
+	 */</span>
+	pp-&gt;unitptr = (caddr_t)up;
+	pp-&gt;clockdesc = DESCRIPTION;
+
+	peer-&gt;precision = PRECISION;
+	peer-&gt;sstclktype = CTL_SST_TS_UHF;
+	peer-&gt;minpoll = TRMB_MINPOLL;
+	peer-&gt;maxpoll = TRMB_MAXPOLL;
+	memcpy((<span class="enscript-type">char</span> *)&amp;pp-&gt;refid, REFID, 4);
+	
+	up-&gt;leap_status = 0;
+	up-&gt;unit = (<span class="enscript-type">short</span>) unit;
+	up-&gt;rpt_status = TSIP_PARSED_EMPTY;
+    	up-&gt;rpt_cnt = 0;
+
+	<span class="enscript-keyword">return</span> 1;
+}
+
+
+<span class="enscript-comment">/*
+ * palisade_shutdown - shut down the clock
+ */</span>
+<span class="enscript-type">static</span> <span class="enscript-type">void</span>
+<span class="enscript-function-name">palisade_shutdown</span> (
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">PALISADE</span>
+	unit, peer
+	)
+	<span class="enscript-type">int</span> unit;
+	<span class="enscript-type">struct</span> peer *peer;
+#<span class="enscript-reference">else</span> <span class="enscript-comment">/* ANSI */</span>
+	<span class="enscript-type">int</span> unit,
+	<span class="enscript-type">struct</span> peer *peer
+	)
+#<span class="enscript-reference">endif</span>
+{
+	<span class="enscript-type">struct</span> palisade_unit *up;
+	<span class="enscript-type">struct</span> refclockproc *pp;
+	pp = peer-&gt;procptr;
+	up = (<span class="enscript-type">struct</span> palisade_unit *)pp-&gt;unitptr;
+	io_closeclock(&amp;pp-&gt;io);
+	free(up);
+}
+
+
+
+<span class="enscript-comment">/* 
+ * unpack_date - get day and year from date
+ */</span>
+<span class="enscript-type">int</span>
+<span class="enscript-function-name">day_of_year</span> (
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">PALISADE</span>
+	dt
+	)
+	<span class="enscript-type">char</span> * dt;
+#<span class="enscript-reference">else</span>
+	<span class="enscript-type">char</span> * dt
+	)
+#<span class="enscript-reference">endif</span>
+{
+	<span class="enscript-type">int</span> day, mon, year;
+
+	mon = dt[1];
+       <span class="enscript-comment">/* Check month is inside array bounds */</span>
+       <span class="enscript-keyword">if</span> ((mon &lt; 1) || (mon &gt; 12)) 
+		<span class="enscript-keyword">return</span> -1;
+
+	day = dt[0] + days_of_year[mon - 1];
+	year = getint((u_char *) (dt + 2)); 
+
+	<span class="enscript-keyword">if</span> ( !(year % 4) &amp;&amp; ((year % 100) || 
+		(!(year % 100) &amp;&amp; !(year%400)))
+			&amp;&amp;(mon &gt; 2))
+			day ++; <span class="enscript-comment">/* leap year and March or later */</span>
+
+	<span class="enscript-keyword">return</span> day;
+}
+
+
+<span class="enscript-comment">/* 
+ * TSIP_decode - decode the TSIP data packets 
+ */</span>
+<span class="enscript-type">int</span>
+<span class="enscript-function-name">TSIP_decode</span> (
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">PALISADE</span>
+	peer
+	)
+	<span class="enscript-type">struct</span> peer *peer;
+#<span class="enscript-reference">else</span>
+	<span class="enscript-type">struct</span> peer *peer
+	)
+#<span class="enscript-reference">endif</span>
+{
+	<span class="enscript-type">int</span> st;
+	<span class="enscript-type">long</span>   secint;
+	<span class="enscript-type">double</span> secs;
+	<span class="enscript-type">double</span> secfrac;
+	<span class="enscript-type">unsigned</span> <span class="enscript-type">short</span> event = 0;
+
+	<span class="enscript-type">struct</span> palisade_unit *up;
+	<span class="enscript-type">struct</span> refclockproc *pp;
+
+	pp = peer-&gt;procptr;
+	up = (<span class="enscript-type">struct</span> palisade_unit *)pp-&gt;unitptr;
+
+	<span class="enscript-comment">/*
+	 * Check the time packet, decode its contents. 
+	 * If the timecode has invalid length or is not in
+	 * proper format, declare bad format and exit.
+	 */</span>
+
+	<span class="enscript-keyword">if</span> ((up-&gt;rpt_buf[0] == (<span class="enscript-type">char</span>) 0x41) ||
+		(up-&gt;rpt_buf[0] == (<span class="enscript-type">char</span>) 0x46) ||
+		(up-&gt;rpt_buf[0] == (<span class="enscript-type">char</span>) 0x54) ||
+		(up-&gt;rpt_buf[0] == (<span class="enscript-type">char</span>) 0x4B) ||
+		(up-&gt;rpt_buf[0] == (<span class="enscript-type">char</span>) 0x6D)) {
+
+	<span class="enscript-comment">/* standard time packet - GPS time and GPS week number */</span>
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+			printf(<span class="enscript-string">"Palisade Port B packets detected. Connect to Port A\n"</span>);
+#<span class="enscript-reference">endif</span>
+
+		<span class="enscript-keyword">return</span> 0;	
+	}
+
+	<span class="enscript-keyword">if</span> (up-&gt;rpt_buf[0] == (<span class="enscript-type">char</span>) 0x8f) {
+	<span class="enscript-comment">/* 
+	 * Superpackets
+	 */</span>
+	   event = (<span class="enscript-type">unsigned</span> <span class="enscript-type">short</span>) (getint((u_char *) &amp;mb(1)) &amp; 0xffff);
+	   <span class="enscript-keyword">if</span> (!((pp-&gt;sloppyclockflag &amp; CLK_FLAG2) || event)) 
+		<span class="enscript-comment">/* Ignore Packet */</span>
+			<span class="enscript-keyword">return</span> 0;	   
+	
+	   <span class="enscript-keyword">switch</span> (mb(0) &amp; 0xff) {
+	     <span class="enscript-type">int</span> GPS_UTC_Offset;
+	     <span class="enscript-keyword">case</span> <span class="enscript-reference">PACKET_8F0B</span>: 
+
+		<span class="enscript-keyword">if</span> (up-&gt;polled &lt;= 0)
+			<span class="enscript-keyword">return</span> 0;
+
+		<span class="enscript-keyword">if</span> (up-&gt;rpt_cnt != LENCODE_8F0B)  <span class="enscript-comment">/* check length */</span>
+			<span class="enscript-keyword">break</span>;
+		
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+<span class="enscript-function-name">if</span> (debug &gt; 1) {
+		<span class="enscript-type">int</span> ts;
+		<span class="enscript-type">double</span> lat, lon, alt;
+		lat = getdbl((u_char *) &amp;mb(42)) * R2D;
+		lon = getdbl((u_char *) &amp;mb(50)) * R2D;
+		alt = getdbl((u_char *) &amp;mb(58));
+
+  		printf(<span class="enscript-string">"TSIP_decode: unit %d: Latitude: %03.4f Longitude: %03.4f Alt: %05.2f m\n"</span>,
+				up-&gt;unit, lat,lon,alt);
+  		printf(<span class="enscript-string">"TSIP_decode: unit %d: Sats:"</span>, up-&gt;unit);
+		<span class="enscript-keyword">for</span> (st = 66, ts = 0; st &lt;= 73; st++) <span class="enscript-keyword">if</span> (mb(st)) {
+			<span class="enscript-keyword">if</span> (mb(st) &gt; 0) ts++;
+			printf(<span class="enscript-string">" %02d"</span>, mb(st));
+		}
+		printf(<span class="enscript-string">" : Tracking %d\n"</span>, ts); 
+	}
+#<span class="enscript-reference">endif</span>
+
+		GPS_UTC_Offset = getint((u_char *) &amp;mb(16));  
+		<span class="enscript-keyword">if</span> (GPS_UTC_Offset == 0) { <span class="enscript-comment">/* Check UTC offset */</span> 
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+			 printf(<span class="enscript-string">"TSIP_decode: UTC Offset Unknown\n"</span>);
+#<span class="enscript-reference">endif</span>
+			<span class="enscript-keyword">break</span>;
+		}
+
+		secs = getdbl((u_char *) &amp;mb(3));
+		secint = (<span class="enscript-type">long</span>) secs;
+		secfrac = secs - secint; <span class="enscript-comment">/* 0.0 &lt;= secfrac &lt; 1.0 */</span>
+
+		pp-&gt;usec = (<span class="enscript-type">long</span>) (secfrac * 1000000); 
+
+		secint %= 86400;    <span class="enscript-comment">/* Only care about today */</span>
+		pp-&gt;hour = secint / 3600;
+		secint %= 3600;
+		pp-&gt;minute = secint / 60;
+		secint %= 60;
+		pp-&gt;second = secint % 60;
+		
+		<span class="enscript-keyword">if</span> ((pp-&gt;day = day_of_year(&amp;mb(11))) &lt; 0) <span class="enscript-keyword">break</span>;
+
+		pp-&gt;year = getint((u_char *) &amp;mb(13)); 
+
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+	<span class="enscript-keyword">if</span> (debug &gt; 1)
+		printf(<span class="enscript-string">"TSIP_decode: unit %d: %02X #%d %02d:%02d:%02d.%06ld %02d/%02d/%04d UTC %02d\n"</span>,
+ 			up-&gt;unit, mb(0) &amp; 0xff, event, pp-&gt;hour, pp-&gt;minute, 
+			pp-&gt;second, pp-&gt;usec, mb(12), mb(11), pp-&gt;year, GPS_UTC_Offset);
+#<span class="enscript-reference">endif</span>
+		<span class="enscript-comment">/* Only use this packet when no
+		 * 8F-AD's are being received
+		 */</span>
+
+		<span class="enscript-keyword">if</span> (up-&gt;leap_status) {
+			up-&gt;leap_status = 0;
+			<span class="enscript-keyword">return</span> 0;
+		}
+
+		<span class="enscript-keyword">return</span> 2;
+		<span class="enscript-keyword">break</span>;
+
+	  <span class="enscript-keyword">case</span> <span class="enscript-reference">PACKET_NTP</span>:
+		<span class="enscript-comment">/* Palisade-NTP Packet */</span>
+
+		<span class="enscript-keyword">if</span> (up-&gt;rpt_cnt != LENCODE_NTP) <span class="enscript-comment">/* check length */</span>
+			<span class="enscript-keyword">break</span>;
+	
+		up-&gt;leap_status = mb(19);
+
+		<span class="enscript-keyword">if</span> (up-&gt;polled  &lt;= 0) 
+			<span class="enscript-keyword">return</span> 0;
+				
+		<span class="enscript-comment">/* Check Tracking Status */</span>
+		st = mb(18);
+		<span class="enscript-keyword">if</span> (st &lt; 0 || st &gt; 14) st = 14;
+		<span class="enscript-keyword">if</span> ((st &gt;= 2 &amp;&amp; st &lt;= 7) || st == 11 || st == 12) {
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+		 printf(<span class="enscript-string">"TSIP_decode: Not Tracking Sats : %s\n"</span>,
+				*Tracking_Status[st]);
+#<span class="enscript-reference">endif</span>
+			refclock_report(peer, CEVNT_BADTIME);
+			up-&gt;polled = -1;
+			<span class="enscript-keyword">return</span> 0;
+			<span class="enscript-keyword">break</span>;
+		}
+
+		<span class="enscript-keyword">if</span> (up-&gt;leap_status &amp; PALISADE_LEAP_PENDING) {
+			<span class="enscript-keyword">if</span> (up-&gt;leap_status &amp; PALISADE_UTC_TIME)  
+				pp-&gt;leap = LEAP_ADDSECOND;
+			<span class="enscript-keyword">else</span>
+				pp-&gt;leap = LEAP_DELSECOND;
+		}
+		<span class="enscript-keyword">else</span> <span class="enscript-keyword">if</span> (up-&gt;leap_status)
+			pp-&gt;leap = LEAP_NOWARNING;
+		
+		<span class="enscript-keyword">else</span> {  <span class="enscript-comment">/* UTC flag is not set:
+			 * Receiver may have been reset, and lost
+			 * its UTC almanac data */</span>
+			pp-&gt;leap = LEAP_NOTINSYNC;
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+			 printf(<span class="enscript-string">"TSIP_decode: UTC Almanac unavailable: %d\n"</span>,
+				mb(19));	
+#<span class="enscript-reference">endif</span>
+			refclock_report(peer, CEVNT_BADTIME);
+			up-&gt;polled = -1;
+			<span class="enscript-keyword">return</span> 0;
+		}
+
+		pp-&gt;usec = (<span class="enscript-type">long</span>) (getdbl((u_char *) &amp;mb(3)) * 1000000);
+
+		<span class="enscript-keyword">if</span> ((pp-&gt;day = day_of_year(&amp;mb(14))) &lt; 0) 
+			<span class="enscript-keyword">break</span>;
+		pp-&gt;year = getint((u_char *) &amp;mb(16)); 
+		pp-&gt;hour = mb(11);
+		pp-&gt;minute = mb(12);
+		pp-&gt;second = mb(13);
+
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+	<span class="enscript-keyword">if</span> (debug &gt; 1)
+<span class="enscript-function-name">printf</span>(<span class="enscript-string">"TSIP_decode: unit %d: %02X #%d %02d:%02d:%02d.%06ld %02d/%02d/%04d UTC %02x %s\n"</span>,
+ 			up-&gt;unit, mb(0) &amp; 0xff, event, pp-&gt;hour, pp-&gt;minute, 
+			pp-&gt;second, pp-&gt;usec, mb(15), mb(14), pp-&gt;year,
+			mb(19), *Tracking_Status[st]);
+#<span class="enscript-reference">endif</span>
+		<span class="enscript-keyword">return</span> 1;
+		<span class="enscript-keyword">break</span>;
+
+	  <span class="enscript-reference">default</span>: 	
+		<span class="enscript-comment">/* Ignore Packet */</span>
+		<span class="enscript-keyword">return</span> 0;
+	  } <span class="enscript-comment">/* switch */</span>
+	}<span class="enscript-comment">/* if 8F packets */</span>	
+
+	refclock_report(peer, CEVNT_BADREPLY);
+	up-&gt;polled = -1;
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+	printf(<span class="enscript-string">"TSIP_decode: unit %d: bad packet %02x-%02x event %d len %d\n"</span>, 
+		   up-&gt;unit, up-&gt;rpt_buf[0] &amp; 0xff, mb(0) &amp; 0xff, 
+			event, up-&gt;rpt_cnt);
+#<span class="enscript-reference">endif</span>
+	<span class="enscript-keyword">return</span> 0;
+}
+
+<span class="enscript-comment">/*
+ * palisade__receive - receive data from the serial interface
+ */</span>
+
+<span class="enscript-type">static</span> <span class="enscript-type">void</span>
+<span class="enscript-function-name">palisade_receive</span> (
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">PALISADE</span>
+	peer
+	)
+	<span class="enscript-type">struct</span> peer * peer;
+#<span class="enscript-reference">else</span> <span class="enscript-comment">/* ANSI */</span>
+	<span class="enscript-type">struct</span> peer * peer
+	)
+#<span class="enscript-reference">endif</span>
+{
+	<span class="enscript-type">struct</span> palisade_unit *up;
+	<span class="enscript-type">struct</span> refclockproc *pp;
+
+	<span class="enscript-comment">/*
+	 * Initialize pointers and read the timecode and timestamp.
+	 */</span>
+	pp = peer-&gt;procptr;
+	up = (<span class="enscript-type">struct</span> palisade_unit *)pp-&gt;unitptr;
+		
+	<span class="enscript-keyword">if</span> (! TSIP_decode(peer)) <span class="enscript-keyword">return</span>;
+	
+	<span class="enscript-keyword">if</span> (up-&gt;polled &lt;= 0) 
+	    <span class="enscript-keyword">return</span>;   <span class="enscript-comment">/* no poll pending, already received or timeout */</span>
+
+	up-&gt;polled = 0;  <span class="enscript-comment">/* Poll reply received */</span>
+	pp-&gt;lencode = 0; <span class="enscript-comment">/* clear time code */</span>
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+	<span class="enscript-keyword">if</span> (debug) 
+		printf(
+	<span class="enscript-string">"palisade_receive: unit %d: %4d %03d %02d:%02d:%02d.%06ld\n"</span>,
+			up-&gt;unit, pp-&gt;year, pp-&gt;day, pp-&gt;hour, pp-&gt;minute, 
+			pp-&gt;second, pp-&gt;usec);
+#<span class="enscript-reference">endif</span>
+
+	<span class="enscript-comment">/*
+	 * Process the sample
+	 * Generate timecode: YYYY DoY HH:MM:SS.microsec 
+	 * report and process 
+	 */</span>
+
+	(<span class="enscript-type">void</span>) sprintf(pp-&gt;a_lastcode,<span class="enscript-string">"%4d %03d %02d:%02d:%02d.%06ld"</span>,
+		   pp-&gt;year,pp-&gt;day,pp-&gt;hour,pp-&gt;minute, pp-&gt;second,pp-&gt;usec); 
+	pp-&gt;lencode = 24;
+
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">PALISADE</span>
+    	pp-&gt;lasttime = current_time;
+#<span class="enscript-reference">endif</span>
+	<span class="enscript-keyword">if</span> (!refclock_process(pp
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">PALISADE</span>
+		, PALISADE_SAMPLES, PALISADE_SAMPLES * 3 / 5
+#<span class="enscript-reference">endif</span>
+		)) {
+		refclock_report(peer, CEVNT_BADTIME);
+
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+		printf(<span class="enscript-string">"palisade_receive: unit %d: refclock_process failed!\n"</span>,
+			up-&gt;unit);
+#<span class="enscript-reference">endif</span>
+		<span class="enscript-keyword">return</span>;
+	}
+
+	record_clock_stats(&amp;peer-&gt;srcadr, pp-&gt;a_lastcode); 
+
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+	<span class="enscript-keyword">if</span> (debug)
+	    printf(<span class="enscript-string">"palisade_receive: unit %d: %s\n"</span>,
+		   up-&gt;unit, prettydate(&amp;pp-&gt;lastrec));
+#<span class="enscript-reference">endif</span>
+
+	refclock_receive(peer
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">PALISADE</span>
+		, &amp;pp-&gt;offset, 0, pp-&gt;dispersion,
+              &amp;pp-&gt;lastrec, &amp;pp-&gt;lastrec, pp-&gt;leap		
+#<span class="enscript-reference">endif</span>		
+		);
+}
+
+
+<span class="enscript-comment">/*
+ * palisade_poll - called by the transmit procedure
+ *
+ */</span>
+<span class="enscript-type">static</span> <span class="enscript-type">void</span>
+<span class="enscript-function-name">palisade_poll</span> (
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">PALISADE</span>
+	unit, peer
+	)
+	<span class="enscript-type">int</span> unit;
+	<span class="enscript-type">struct</span> peer *peer;
+#<span class="enscript-reference">else</span>
+	<span class="enscript-type">int</span> unit,
+	<span class="enscript-type">struct</span> peer *peer
+	)
+#<span class="enscript-reference">endif</span>
+{
+	<span class="enscript-type">struct</span> palisade_unit *up;
+	<span class="enscript-type">struct</span> refclockproc *pp;
+	
+	pp = peer-&gt;procptr;
+	up = (<span class="enscript-type">struct</span> palisade_unit *)pp-&gt;unitptr;
+
+	pp-&gt;polls++;
+	<span class="enscript-keyword">if</span> (up-&gt;polled &gt; 0) <span class="enscript-comment">/* last reply never arrived or error */</span> 
+	    refclock_report(peer, CEVNT_TIMEOUT);
+
+	up-&gt;polled = 2; <span class="enscript-comment">/* synchronous packet + 1 event */</span>
+	
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+	<span class="enscript-keyword">if</span> (debug)
+	    printf(<span class="enscript-string">"palisade_poll: unit %d: polling %s\n"</span>, unit,
+		   (pp-&gt;sloppyclockflag &amp; CLK_FLAG2) ? 
+			<span class="enscript-string">"synchronous packet"</span> : <span class="enscript-string">"event"</span>);
+#<span class="enscript-reference">endif</span> 
+
+	<span class="enscript-keyword">if</span> (pp-&gt;sloppyclockflag &amp; CLK_FLAG2) 
+	    <span class="enscript-keyword">return</span>;  <span class="enscript-comment">/* using synchronous packet input */</span>
+
+	<span class="enscript-keyword">if</span> (HW_poll(pp) &lt; 0) 
+	    refclock_report(peer, CEVNT_FAULT); 
+}
+
+
+<span class="enscript-type">static</span> <span class="enscript-type">void</span>
+<span class="enscript-function-name">palisade_io</span> (
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">PALISADE</span>
+	rbufp
+	)
+	<span class="enscript-type">struct</span> recvbuf *rbufp;
+#<span class="enscript-reference">else</span> <span class="enscript-comment">/* ANSI */</span>
+	<span class="enscript-type">struct</span> recvbuf *rbufp
+	)
+#<span class="enscript-reference">endif</span>
+{
+	<span class="enscript-comment">/*
+	 * Initialize pointers and read the timecode and timestamp.
+	 */</span>
+	<span class="enscript-type">struct</span> palisade_unit *up;
+	<span class="enscript-type">struct</span> refclockproc *pp;
+	<span class="enscript-type">struct</span> peer *peer;
+
+	<span class="enscript-type">char</span> * c, * d;
+
+	peer = (<span class="enscript-type">struct</span> peer *)rbufp-&gt;recv_srcclock;
+	pp = peer-&gt;procptr;
+	up = (<span class="enscript-type">struct</span> palisade_unit *)pp-&gt;unitptr;
+
+	c = (<span class="enscript-type">char</span> *) &amp;rbufp-&gt;recv_space;
+	d = c + rbufp-&gt;recv_length;
+		
+	<span class="enscript-keyword">while</span> (c != d) {
+
+		<span class="enscript-comment">/* Build time packet */</span>
+		<span class="enscript-keyword">switch</span> (up-&gt;rpt_status) {
+
+		    <span class="enscript-keyword">case</span> <span class="enscript-reference">TSIP_PARSED_DLE_1</span>:
+			<span class="enscript-keyword">switch</span> (*c)
+			{
+			    <span class="enscript-keyword">case</span> <span class="enscript-reference">0</span>:
+			    <span class="enscript-keyword">case</span> <span class="enscript-reference">DLE</span>:
+			    <span class="enscript-keyword">case</span> <span class="enscript-reference">ETX</span>:
+				up-&gt;rpt_status = TSIP_PARSED_EMPTY;
+				<span class="enscript-keyword">break</span>;
+
+			    <span class="enscript-reference">default</span>:
+				up-&gt;rpt_status = TSIP_PARSED_DATA;
+				<span class="enscript-comment">/* save packet ID */</span>
+				up-&gt;rpt_buf[0] = *c;
+				<span class="enscript-keyword">break</span>;
+			}
+			<span class="enscript-keyword">break</span>;
+
+		    <span class="enscript-keyword">case</span> <span class="enscript-reference">TSIP_PARSED_DATA</span>:
+			<span class="enscript-keyword">if</span> (*c == DLE)
+			    up-&gt;rpt_status = TSIP_PARSED_DLE_2;
+			<span class="enscript-keyword">else</span> 
+			    mb(up-&gt;rpt_cnt++) = *c;
+			<span class="enscript-keyword">break</span>;
+
+		    <span class="enscript-keyword">case</span> <span class="enscript-reference">TSIP_PARSED_DLE_2</span>:
+			<span class="enscript-keyword">if</span> (*c == DLE) {
+				up-&gt;rpt_status = TSIP_PARSED_DATA;
+				mb(up-&gt;rpt_cnt++) = 
+						*c;
+			}       
+			<span class="enscript-keyword">else</span> <span class="enscript-keyword">if</span> (*c == ETX) 
+				    up-&gt;rpt_status = TSIP_PARSED_FULL;
+			<span class="enscript-keyword">else</span> 	{
+                        	<span class="enscript-comment">/* error: start new report packet */</span>
+				up-&gt;rpt_status = TSIP_PARSED_DLE_1;
+				up-&gt;rpt_buf[0] = *c;
+			}
+			<span class="enscript-keyword">break</span>;
+
+		    <span class="enscript-keyword">case</span> <span class="enscript-reference">TSIP_PARSED_FULL</span>:
+		    <span class="enscript-keyword">case</span> <span class="enscript-reference">TSIP_PARSED_EMPTY</span>:
+		    <span class="enscript-reference">default</span>:
+		        <span class="enscript-keyword">if</span> ( *c != DLE)
+                          up-&gt;rpt_status = TSIP_PARSED_EMPTY;
+                <span class="enscript-keyword">else</span> 
+                          up-&gt;rpt_status = TSIP_PARSED_DLE_1;
+                        <span class="enscript-keyword">break</span>;
+		}
+		
+		c++;
+
+		<span class="enscript-keyword">if</span> (up-&gt;rpt_status == TSIP_PARSED_DLE_1) {
+		    up-&gt;rpt_cnt = 0;
+			<span class="enscript-keyword">if</span> (pp-&gt;sloppyclockflag &amp; CLK_FLAG2) 
+                		<span class="enscript-comment">/* stamp it */</span>
+                       	get_systime(&amp;pp-&gt;lastrec);
+		}
+		<span class="enscript-keyword">else</span> <span class="enscript-keyword">if</span> (up-&gt;rpt_status == TSIP_PARSED_EMPTY)
+		    	up-&gt;rpt_cnt = 0;
+
+		<span class="enscript-keyword">else</span> <span class="enscript-keyword">if</span> (up-&gt;rpt_cnt &gt; BMAX) 
+			up-&gt;rpt_status =TSIP_PARSED_EMPTY;
+
+		<span class="enscript-keyword">if</span> (up-&gt;rpt_status == TSIP_PARSED_FULL) 
+			palisade_receive(peer);
+
+	} <span class="enscript-comment">/* while chars in buffer */</span>
+}
+
+
+<span class="enscript-comment">/*
+ * Trigger the Palisade's event input, which is driven off the RTS
+ *
+ * Take a system time stamp to match the GPS time stamp.
+ *
+ */</span>
+<span class="enscript-type">long</span>
+<span class="enscript-function-name">HW_poll</span> (
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">PALISADE</span>
+	pp 	<span class="enscript-comment">/* pointer to unit structure */</span>
+	)
+	<span class="enscript-type">struct</span> refclockproc * pp;	<span class="enscript-comment">/* pointer to unit structure */</span>
+#<span class="enscript-reference">else</span>
+	<span class="enscript-type">struct</span> refclockproc * pp 	<span class="enscript-comment">/* pointer to unit structure */</span>
+	)
+#<span class="enscript-reference">endif</span>
+{	
+	<span class="enscript-type">int</span> x;	<span class="enscript-comment">/* state before &amp; after RTS set */</span>
+	<span class="enscript-type">struct</span> palisade_unit *up;
+
+	up = (<span class="enscript-type">struct</span> palisade_unit *) pp-&gt;unitptr;
+
+	<span class="enscript-comment">/* read the current status, so we put things back right */</span>
+	<span class="enscript-keyword">if</span> (ioctl(pp-&gt;io.fd, TIOCMGET, &amp;x) &lt; 0) {
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+	<span class="enscript-keyword">if</span> (debug)
+	    printf(<span class="enscript-string">"Palisade HW_poll: unit %d: GET %s\n"</span>, up-&gt;unit, strerror(errno));
+#<span class="enscript-reference">endif</span>
+		msyslog(LOG_ERR, <span class="enscript-string">"Palisade(%d) HW_poll: ioctl(fd,GET): %m"</span>, 
+			up-&gt;unit);
+		<span class="enscript-keyword">return</span> -1;
+	}
+  
+	x |= TIOCM_RTS;        <span class="enscript-comment">/* turn on RTS  */</span>
+	<span class="enscript-comment">/* poll timestamp */</span>
+	get_systime(&amp;pp-&gt;lastrec);
+
+	<span class="enscript-comment">/* Leading edge trigger */</span>
+	<span class="enscript-keyword">if</span> (ioctl(pp-&gt;io.fd, TIOCMSET, &amp;x) &lt; 0) { 
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+	<span class="enscript-keyword">if</span> (debug)
+	    printf(<span class="enscript-string">"Palisade HW_poll: unit %d: SET \n"</span>, up-&gt;unit);
+#<span class="enscript-reference">endif</span>
+		msyslog(LOG_ERR,
+			<span class="enscript-string">"Palisade(%d) HW_poll: ioctl(fd, SET, RTS_on): %m"</span>, 
+			up-&gt;unit);
+		<span class="enscript-keyword">return</span> -1;
+	}
+
+	x &amp;= ~TIOCM_RTS;        <span class="enscript-comment">/* turn off RTS  */</span>
+	<span class="enscript-keyword">if</span> (ioctl(pp-&gt;io.fd, TIOCMSET, &amp;x) == -1) {
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">DEBUG</span>
+	<span class="enscript-keyword">if</span> (debug)
+	    printf(<span class="enscript-string">"Palisade HW_poll: unit %d: UNSET \n"</span>, up-&gt;unit);
+#<span class="enscript-reference">endif</span>
+		msyslog(LOG_ERR,
+			<span class="enscript-string">"Palisade(%d) HW_poll: ioctl(fd, UNSET, RTS_off): %m"</span>, 
+			up-&gt;unit);
+		<span class="enscript-keyword">return</span> -1;
+	}
+
+	<span class="enscript-keyword">return</span> 0;
+}
+
+#<span class="enscript-reference">if</span> 0 <span class="enscript-comment">/* unused */</span>
+<span class="enscript-comment">/*
+ * this 'casts' a character array into a float
+ */</span>
+<span class="enscript-type">float</span>
+<span class="enscript-function-name">getfloat</span> (
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">PALISADE</span>
+	bp
+	)
+	u_char *bp;
+#<span class="enscript-reference">else</span>
+	u_char *bp
+	)
+#<span class="enscript-reference">endif</span>
+{
+	<span class="enscript-type">float</span> sval;
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">WORDS_BIGENDIAN</span> 
+	((<span class="enscript-type">char</span> *) &amp;sval)[0] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;sval)[1] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;sval)[2] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;sval)[3] = *bp++;
+#<span class="enscript-reference">else</span>
+	((<span class="enscript-type">char</span> *) &amp;sval)[3] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;sval)[2] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;sval)[1] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;sval)[0] = *bp;
+#<span class="enscript-reference">endif</span>  <span class="enscript-comment">/* ! XNTP_BIG_ENDIAN */</span> 
+	<span class="enscript-keyword">return</span> sval;
+}
+#<span class="enscript-reference">endif</span>
+
+<span class="enscript-comment">/*
+ * this 'casts' a character array into a double
+ */</span>
+<span class="enscript-type">double</span>
+<span class="enscript-function-name">getdbl</span> (
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">PALISADE</span>
+	bp
+	)
+	u_char *bp;
+#<span class="enscript-reference">else</span>
+	u_char *bp
+	)
+#<span class="enscript-reference">endif</span>
+{
+	<span class="enscript-type">double</span> dval;
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">WORDS_BIGENDIAN</span> 
+	((<span class="enscript-type">char</span> *) &amp;dval)[0] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;dval)[1] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;dval)[2] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;dval)[3] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;dval)[4] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;dval)[5] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;dval)[6] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;dval)[7] = *bp;
+#<span class="enscript-reference">else</span>
+	((<span class="enscript-type">char</span> *) &amp;dval)[7] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;dval)[6] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;dval)[5] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;dval)[4] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;dval)[3] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;dval)[2] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;dval)[1] = *bp++;
+	((<span class="enscript-type">char</span> *) &amp;dval)[0] = *bp;
+#<span class="enscript-reference">endif</span>  <span class="enscript-comment">/* ! XNTP_BIG_ENDIAN */</span> 
+	<span class="enscript-keyword">return</span> dval;
+}
+
+<span class="enscript-comment">/*
+ * cast a 16 bit character array into a short (16 bit) int
+ */</span>
+<span class="enscript-type">short</span>
+<span class="enscript-function-name">getint</span> (
+#<span class="enscript-reference">ifdef</span> <span class="enscript-variable-name">PALISADE</span>
+	bp
+	)
+	u_char *bp;
+#<span class="enscript-reference">else</span>
+	u_char *bp
+	)
+#<span class="enscript-reference">endif</span>
+{
+<span class="enscript-function-name">return</span> (<span class="enscript-type">short</span>) (bp[1] + (bp[0] &lt;&lt; 8));
+}
+
+#<span class="enscript-reference">endif</span> <span class="enscript-comment">/* REFCLOCK */</span>
+</pre>
+<hr>
+</body></html>

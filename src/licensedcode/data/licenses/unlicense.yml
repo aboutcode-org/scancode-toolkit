@@ -1,0 +1,13 @@
+key: unlicense
+short_name: Unlicense
+name: Unlicense
+category: Public Domain
+owner: Unlicense
+homepage_url: http://unlicense.org/
+spdx_license_key: Unlicense
+spdx_full_name: The Unlicense
+spdx_url: http://spdx.org/licenses/Unlicense
+spdx_notes: This is a public domain dedication
+text_urls:
+    - http://unlicense.org/
+faq_url: http://unlicense.org/

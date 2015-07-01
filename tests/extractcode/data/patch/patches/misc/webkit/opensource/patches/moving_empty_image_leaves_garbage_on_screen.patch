@@ -1,0 +1,21 @@
+Index: src/Browser/WebCore/platform/graphics/ekioh/GraphicsContextEkioh525.cpp
+===================================================================
+--- src.orig/Browser/WebCore/platform/graphics/ekioh/GraphicsContextEkioh.cpp
++++ src/Browser/WebCore/platform/graphics/ekioh/GraphicsContextEkioh525.cpp
+@@ -310,6 +310,7 @@ void GraphicsContext::drawRect(const Int
+     EKGPathF path;
+     path.rectangle(rect);
+ 
++    m_data->context()->setStrokeThickness(strokeThickness());
+     m_data->context()->setStrokeStyle(ekiohStrokeStyle(*this));
+ 
+     m_data->context()->drawPath(path);
+@@ -591,7 +592,7 @@ void GraphicsContext::clip(const IntRect
+     if (paintingDisabled())
+         return;
+ 
+-    TRACE("%d %d %d %d", rect.x(), rect.y(), rect.width(), rect.height());
++    TRACE("%f %f %f %f", rect.x(), rect.y(), rect.width(), rect.height());
+     ekioh::EKRect<int32_t> clipRect = makeEKRect<int32_t>(rect, m_data->context()->getTransform());
+     m_data->context()->setClip(clipRect);
+ }

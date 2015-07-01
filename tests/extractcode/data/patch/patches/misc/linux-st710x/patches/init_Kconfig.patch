@@ -1,0 +1,17 @@
+Index: linux-2.6.23/init/Kconfig
+===================================================================
+--- linux-2.6.23.orig/init/Kconfig
++++ linux-2.6.23/init/Kconfig
+@@ -62,6 +62,12 @@ config INIT_ENV_ARG_LIMIT
+ 	  variables passed to init from the kernel command line.
+ 
+ 
++config KREATV_FIRMWARE
++	bool "Configure for use with KreaTV firmware"
++        default n
++	help
++	  This option will configure the kernel with patches for firmware.
++
+ config LOCALVERSION
+ 	string "Local version - append to kernel release"
+ 	help

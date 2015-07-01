@@ -1,0 +1,51 @@
+Aptana Public License - 1.0
+
+THE PROGRAM (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS APTANA PUBLIC LICENSE ("LICENSE"). THE PROGRAM IS PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW. BY EXERCISING ANY RIGHTS TO THE PROGRAM PROVIDED HERE, YOU ACCEPT AND AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE.
+
+THIS LICENSE GRANTS PERMISSIONS ONLY FOR YOUR INTERNAL USE (AS DEFINED BELOW). IF YOU WISH TO DISTRIBUTE OR MAKE OTHER USES OF THE PROGRAM, PLEASE CONTACT APTANA.
+
+1. Definitions. When used in this License:
+
+"Aptana" means Aptana, Inc.
+
+"Internal Use" means use by You for Your personal or internal business purposes only, specifically excluding any use, distribution, or communication of the Program or any derivative work of the Program in any way such that the Program or any derivative work of the Program may be used by anyone other than You, whether those works are distributed or communicated to those persons or otherwise made available for use over a network.
+
+"Program" means the code and documentation owned by Aptana and distributed under this License by Aptana. In case of any doubt as to whether any code or documentation is part of the Program covered by this license, the notices placed by Aptana in the source code or documentation will govern
+
+"You" means an individual or a legal entity exercising rights under, and complying with all of the terms of, this License. For legal entities, You includes any entity which controls, is controlled by, or is under common control with You. For purposes of this definition, control means (a) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (b) ownership of more than fifty percent (50%) of the outstanding shares or beneficial ownership of such entity.
+
+2. License Grants
+
+a) Subject to the terms and conditions of this License, Aptana hereby grants to You a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare derivative works of, install, and execute the Program in source code and object code form, in each case solely for Your Internal Use.
+
+b) Subject to the terms and conditions of this License, Aptana hereby grants to You a worldwide, non-exclusive, royalty-free, patent license under Aptana's Licensed Patent Claims to make and use the Program in source code and object code form, in each case solely for Your Internal Use. As used herein, "Licensed Patent Claims" means only those patent claims owned by Aptana that are necessarily infringed by Your making and using the Program for Your Internal Use. Notwithstanding this Section 2.1(b), no patent license is granted: (i) for code that You delete from the Program or (ii) for infringements caused by: (1) the modification of the Program or (2) the combination of the Program with other software or devices.
+
+3. Certain Limitations and Conditions
+
+You are not licensed under this License to distribute the Program or derivative works thereof, or to make any use other than Internal Use of the Program or derivative works thereof.
+
+You may not remove or alter any copyright or other proprietary rights notices, or other means of attribution, contained within the Program.
+
+4. No Warranty
+
+Aptana represents that to its knowledge as of the date of first publication of the Program under this License, it has sufficient copyright rights in the Program, to grant the copyright license set forth in this License.
+
+EXCEPT AS EXPRESSLY SET FORTH IN THIS SECTION 4, THE PROGRAM IS PROVIDED "AS IS", WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using and reproducing the Program and assume any and all risks associated with its exercise of rights under this License, including but not limited to the risks and costs of program errors, compliance with applicable laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.
+
+Without limiting the foregoing, Aptana provides no assurances that the Program does not infringe the patent or other intellectual property rights of any third party. Aptana disclaims any liability for claims based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, You hereby assume sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow You to use the Program, it is Your responsibility to acquire that license before using the Program.
+
+5. Limitation of Liability
+
+To the maximum extent permissible by applicable law, in no event and under no legal theory, whether in tort (including negligence and strict liability), contract, or otherwise, shall Aptana be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Program (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if Aptana has been advised of the possibility of such damages.
+
+6. General
+
+This License represents the complete agreement concerning subject matter hereof. If any provision of this License is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this License, and without further action by the parties hereto, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.
+
+Except as expressly stated in Section 2 above, You receive no rights or licenses to the intellectual property of Aptana under this License, whether expressly, by implication, estoppel or otherwise. In particular, without limitation, this License does not grant permission to use the trade names, trademarks, service marks, or product names of Aptana. All rights in the Program not expressly granted under this License are reserved.
+
+If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Program constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Program shall terminate as of the date such litigation is filed.
+
+All Your rights under this License shall terminate if You fail to comply with any of the terms or conditions of this License and do not cure such failure in a reasonable period of time after becoming aware of such noncompliance. If all Your rights under this License terminate, You agree to cease use of the Program as soon as reasonably practicable. However, Your obligations under this License, and this Section 6, shall continue and survive.
+
+This Agreement is governed by the laws of the State of California and the intellectual property laws of the United States of America, without reference to conflicts of laws principles that would require the application of the laws of any other jurisdiction. The United Nations Convention on Contracts for the International Sale of Goods is expressly excluded. No party to this License will bring a legal action under this License more than one year after the cause of action arose. Any law or regulation which provides that the language of a contract shall be construed against the drafter shall not apply to this License. You agree that You alone are responsible for compliance with the United States export administration regulations (and the export control laws and regulation of any other countries) when You exercise rights under this License.

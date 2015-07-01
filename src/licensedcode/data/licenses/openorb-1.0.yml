@@ -1,0 +1,9 @@
+key: openorb-1.0
+short_name: OpenORB Community License 1.0
+name: >-
+    OpenORB Community Software License Version 1.0
+category: Attribution
+owner: OpenORB Project
+homepage_url: http://openorb.sourceforge.net/license.txt
+text_urls:
+    - http://openorb.sourceforge.net/license.txt

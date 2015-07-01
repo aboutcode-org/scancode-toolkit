@@ -1,0 +1,23 @@
+/*
+  This library was downloaded from: http://www.mike95.com
+
+  This library is copyright.  It may freely be used for personal purposes 
+  if the restriction listed below is adhered to.
+      Author: Michael Olivero
+      Email:  mike95@mike95.com
+
+  //===============================
+  //Start of Restriction Definition
+  //===============================
+  Anyone can have full use of the library provided they keep this complete comment
+  with the source.  Also I would like to ask if any changes are made to the
+  code for efficiency reasons, please let me know so I may look into your change and
+  likewise incorporate it into library.  If a suggestion makes it into the library,
+  your credits will be added to this information.
+
+  Authors of Computer related books are welcome to include this source code as part
+  of their publishing, provided credit the Author and make note of where the source
+  code was obtained from: http://www.mike95.com
+  //=============================
+  //End of Restriction Definition
+  //=============================

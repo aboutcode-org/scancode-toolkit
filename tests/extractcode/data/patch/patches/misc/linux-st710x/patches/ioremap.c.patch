@@ -1,0 +1,77 @@
+Index: linux-2.6.23/arch/sh/mm/ioremap.c
+===================================================================
+--- linux-2.6.23.orig/arch/sh/mm/ioremap.c
++++ linux-2.6.23/arch/sh/mm/ioremap.c
+@@ -24,6 +24,9 @@
+ #include <asm/tlbflush.h>
+ #include <asm/mmu.h>
+ 
++#define MMUCR		0xFF000010	/* MMU Control Register */
++#define MMUCR_SE		(1<<4)
++
+ /*
+  * Remap an arbitrary physical address space into the kernel virtual
+  * address space.
+@@ -60,13 +63,13 @@ void __iomem *__ioremap_prot(unsigned lo
+ 				return NULL;
+ 	}
+ 
+-#ifndef CONFIG_32BIT
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
+ 	/*
+ 	 * For physical mappings <29 bits, with simple cached or uncached
+ 	 * protections, this is trivial, as everything is already mapped
+ 	 * through P1 and P2.
+ 	 */
+-	if (likely(IS_29BIT(phys_addr) && simple)) {
++	if (likely(IS_29BIT(phys_addr) && simple) && ((ctrl_inl(MMUCR)&MMUCR_SE)!=MMUCR_SE)) {
+ 		if (cached)
+ 			return (void __iomem *)P1SEGADDR(phys_addr);
+ 
+@@ -78,9 +81,9 @@ void __iomem *__ioremap_prot(unsigned lo
+ 	if ((PXSEG(phys_addr) == P4SEG) && simple && !cached)
+ 		return (void __iomem *)phys_addr;
+ 
+-#ifndef CONFIG_32BIT
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
+ 	/* Prevent mapping P1/2 addresses, to improve portability */
+-	if (unlikely(!IS_29BIT(phys_addr)))
++	if (unlikely(!IS_29BIT(phys_addr)) && ((ctrl_inl(MMUCR)&MMUCR_SE)!=MMUCR_SE))
+ 		return (void __iomem *)0;
+ #endif
+ 
+@@ -94,6 +97,11 @@ void __iomem *__ioremap_prot(unsigned lo
+ 	size = PAGE_ALIGN(last_addr+1) - phys_addr;
+ 
+ #ifdef CONFIG_32BIT
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
++    if ((ctrl_inl(MMUCR)&MMUCR_SE)!=MMUCR_SE)
++      addr = 0;
++    else
++#endif
+ 	addr = pmb_remap(phys_addr, size, cached ? _PAGE_CACHABLE : 0);
+ #else
+ 	addr = 0;
+@@ -141,15 +149,20 @@ void __iounmap(void __iomem *addr)
+ 	if (PXSEG(vaddr) == P4SEG)
+ 		return;
+ 
+-#ifndef CONFIG_32BIT
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
++    if ((ctrl_inl(MMUCR)&MMUCR_SE)!=MMUCR_SE) {
+ 	if (PXSEG(vaddr) < P3SEG)
+ 		return;
++    }
++    else {
+ #endif
+-
+ #ifdef CONFIG_32BIT
+ 	if(pmb_unmap(vaddr))
+ 	  return;
+ #endif
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
++    }
++#endif
+ 
+ 	p = remove_vm_area((void *)(vaddr & PAGE_MASK));
+ 	if (!p) {

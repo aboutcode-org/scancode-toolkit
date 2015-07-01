@@ -1,0 +1,14 @@
+key: postgresql
+short_name: PostgreSQL License
+name: PostgreSQL License
+category: Attribution
+owner: PostgreSQL
+homepage_url: http://www.postgresql.org/about/licence
+spdx_license_key: PostgreSQL
+spdx_full_name: PostgreSQL License
+spdx_url: http://spdx.org/licenses/PostgreSQL
+spdx_notes: This license is OSI certified.
+text_urls:
+    - http://www.opensource.org/licenses/postgresql
+    - http://www.postgresql.org/about/licence
+osi_url: http://www.opensource.org/licenses/postgresql

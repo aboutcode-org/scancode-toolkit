@@ -1,0 +1,48 @@
+--- scripts/makefile.linux.orig	2004-12-03 01:14:31.000000000 +0100
++++ scripts/makefile.linux	2010-01-12 13:17:28.594415539 +0100
+@@ -8,7 +8,7 @@
+ PNGMIN = 1.2.8
+ PNGVER = $(PNGMAJ).$(PNGMIN)
+ 
+-CC=gcc
++#CC=gcc
+ 
+ # where "make install" puts libpng12.a, libpng12.so*,
+ # libpng12/png.h and libpng12/pngconf.h
+@@ -18,8 +18,8 @@
+ # Where the zlib library and include files are located.
+ #ZLIBLIB=/usr/local/lib
+ #ZLIBINC=/usr/local/include
+-ZLIBLIB=../zlib
+-ZLIBINC=../zlib
++#ZLIBLIB=../zlib
++#ZLIBINC=../zlib
+ 
+ ALIGN=
+ # for i386:
+@@ -31,13 +31,13 @@
+ 
+ # for pgcc version 2.95.1, -O3 is buggy; don't use it.
+ 
+-CFLAGS=-I$(ZLIBINC) -Wall -O3 -funroll-loops \
+-	$(ALIGN) # $(WARNMORE) -g -DPNG_DEBUG=5
++#CFLAGS=-I$(ZLIBINC) -Wall -O3 -funroll-loops \
++#	$(ALIGN) # $(WARNMORE) -g -DPNG_DEBUG=5
+ 
+ LDFLAGS=-L. -Wl,-rpath,. -L$(ZLIBLIB) -Wl,-rpath,$(ZLIBLIB) -lpng12 -lz -lm
+ LDFLAGS_A=-L$(ZLIBLIB) -Wl,-rpath,$(ZLIBLIB) libpng.a -lz -lm
+ 
+-RANLIB=ranlib
++#RANLIB=ranlib
+ #RANLIB=echo
+ 
+ INCPATH=$(prefix)/include
+@@ -102,7 +102,7 @@
+ 	$(OBJSDLL)
+ 
+ libpng.so.3.$(PNGMIN): $(OBJSDLL)
+-	$(CC) -shared -Wl,-soname,libpng.so.3 \
++	$(CC) -shared -Wl,-soname,libpng.so.3 $(ZLIBFLAGS) \
+ 	-o libpng.so.3.$(PNGMIN) \
+ 	$(OBJSDLL)
+ 

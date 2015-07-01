@@ -1,0 +1,46 @@
+This package was debianized by Josselin Mouette <joss@debian.org> on
+Sat, 21 Jun 2003 16:49:04 +0200.
+
+It was downloaded from http://art.gnome.org/
+		       http://ftp.ximian.com/pub/xd2/redhat-9-i386/source/
+		       http://www.73lab.com/
+		       http://debblue.debian.net/
+		       http://gnome-look.org/
+
+Upstream Authors: <s>Alex Fraser <alex@phatcore.com></s>
+		  <s>Everaldo Coelho <everaldo@everaldo.com></s>
+		  <s>Niek van der Maas <n.v.d.maas@hccnet.nl></s>
+		  <s>Johannes Rebhan <waldgeist@gomp.net></s>
+		  <s>Burcin Donmez <bdonmez@cisunix.unh.edu></s>
+		  <s>"J3TBibi" <cstbb568@icqmail.com></s>
+		  <s>"Hantzley" <hantzley@intnet.mu></s>
+		  <s>Jakub Steiner <jimmac@ximian.com></s>
+		  <s>Mariano Viola <webanetwork@libero.it></s>
+		  <s>Alexis Younes <73lab@free.fr></s>
+		  <s>Jaap Haitsma <jaap@haitsma.org></s>
+		  <s>Mostafa Afgani <m.afgani@gmail.com></s>
+		  <s>"e0n" <e0n@alexandria.cc></s>
+		  <s>Étienne Alaurent <etienne.alaurent@free.fr></s>
+		  <s>Tuomas Kuosmanen <tigert@novell.com></s>
+		  <s>Henrique Lhamas <henrique.lhamas@gmail.com></s>
+		  <s>Lars Wohlfahrt (yoda)</s>
+                  <s>Eric Hewitt <endersshadow@politicalcrossfire.com></s>
+
+Copyright:
+
+   This package is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; version 2 dated June, 1991.
+ 
+   This package is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+ 
+   You should have received a copy of the GNU General Public License
+   along with this package; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+   02110-1301, USA.
+ 
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.

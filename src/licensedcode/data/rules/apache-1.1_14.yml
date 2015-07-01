@@ -1,0 +1,5 @@
+licenses:
+    - apache-1.1
+template: yes
+notes: >-
+    A variant a Apache 1.1 with typos as found in http://archive.apache.org/dist/jakarta/cactus/source/jakarta-cactus-src-1.7.1.zip

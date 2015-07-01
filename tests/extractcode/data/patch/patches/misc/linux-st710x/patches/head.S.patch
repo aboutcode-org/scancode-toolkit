@@ -1,0 +1,952 @@
+--- linux-2.6.23/arch/sh/kernel/head.S_org	2008-10-24 18:26:38.000000000 +0200
++++ linux-2.6.23/arch/sh/kernel/head.S	2008-11-21 09:20:10.000000000 +0100
+@@ -14,33 +14,59 @@
+ #include <asm/thread_info.h>
+ 
+ #ifdef CONFIG_CPU_SH4A
+-#define SYNCO()		synco
++#define SYNCO()                synco
+ 
+-#define PREFI(label, reg)	\
+-	mov.l	label, reg;	\
+-	prefi	@reg
++#define PREFI(label, reg) \
++        mov.l        label, reg; \
++        prefi        @reg
+ #else
+ #define SYNCO()
+ #define PREFI(label, reg)
+ #endif
+ 
+-	.section	.empty_zero_page, "aw"
++#ifdef CONFIG_32BIT
++.macro  SEND_UART_CHAR val
++1:      mov.w        @(0x10,r13), r0 ! Wait for UART to finish
++        tst          #0x02,r0
++        bt           1b
++        mov          #(\val &0x00FF), r0 ! Send val
++        mov.w        r0, @(0x00,r13)
++.endm
++
++.macro  SEND_UART_BUFFER addr
++        mov.l        (\addr), r0
++        mov          r0,r1
++1:      mov.w        @(0x10,r13), r0 ! Wait for UART to finish
++        tst          #0x02,r0
++        bt           1b
++        mov.b        @r1,r0
++        tst          #0xff,r0
++        bt           2f
++        mov.b        r0, @(0x00,r13)
++        add          #1,r1
++        bra 1b
++        nop
++2:
++.endm
++#endif
++
++        .section        .empty_zero_page, "aw"
+ ENTRY(empty_zero_page)
+-	.long	1		/* MOUNT_ROOT_RDONLY */
+-	.long	0		/* RAMDISK_FLAGS */
+-	.long	0x0200		/* ORIG_ROOT_DEV */
+-	.long	1		/* LOADER_TYPE */
+-	.long	0x00000000	/* INITRD_START */
+-	.long	0x00000000	/* INITRD_SIZE */
++        .long        1                      /* MOUNT_ROOT_RDONLY */
++        .long        0                      /* RAMDISK_FLAGS */
++        .long        0x0200                 /* ORIG_ROOT_DEV */
++        .long        1                      /* LOADER_TYPE */
++        .long        0x00000000             /* INITRD_START */
++        .long        0x00000000             /* INITRD_SIZE */
+ #ifdef CONFIG_32BIT
+-	.long	0x53453f00 + 32	/* "SE?" = 32 bit */
++        .long        0x53453f00 + 32        /* "SE?" = 32 bit */
+ #else
+-	.long	0x53453f00 + 29	/* "SE?" = 29 bit */
++        .long        0x53453f00 + 29        /* "SE?" = 29 bit */
+ #endif
+ 1:
+-	.skip	PAGE_SIZE - empty_zero_page - 1b
++        .skip        PAGE_SIZE - empty_zero_page - 1b
+ 
+-	.section	.text.head, "ax"
++        .section     .text.head, "ax"
+ 
+ /*
+  * Condition at the entry of _stext:
+@@ -54,6 +80,853 @@
+  *
+  */
+ ENTRY(_stext)
++#ifndef JTAG_DEBUGGING
++#if defined(CONFIG_32BIT) && !defined(CONFIG_CPU_SUBTYPE_STX7105)
++
++
++/*
++Normally the setup of 32 bit memory is done when executing in flash which would
++be done at the very first steps in the RBL. But since we already manufactured
++units which used 29 bit adressing in RBL and DBL we have to handle this swich
++while running in RAM before we can execute the new 32 bit Linux. Note that it
++is not possible to change the RBL on units in the field since it is sometimes
++locked in OTP and we shouldn't change the RBL anyway since the units will be
++destroyed if we get a power loss during programming.
++
++The code below swithes from 29 bit adressing mode to 32 bit addressing while
++running in RAM. On a CPU with MES enabled we are facing the following problems:
++1) The memory will be scrambled when changing the mem base addr due to the MES
++2) The PC will not be valid after the base addr change
++3) The Linux kernel must be moved up 64 MB to be valid after the addr change
++
++The solution is to use the video memory as a temporary execution point and
++storage during the base addr change as described in step A - V below.
++
++A STi5202 cannot use the steps A - V below since it does not have a video mem.
++Instead we use the execution cache as a temporary memory during the base addr
++change. The code below uses this mode for non MES versions of the STi7109 since
++this is much faster and the picture will only be black for 100 ms instead of 1
++sec. For non MES STi7109 and STi5202 the steps taken are A,B,P,H,F,G,Q,R,U.
++ 
++The procedure to change to 32 bit mode while running in RAM would be:
++A.Initialize the PMB array
++  Before the Space Enhanced mode bit can be turned on we need to setup the PBM
++  otherwise the CPU will reboot. The PMB (Priviliged Mapping Buffer) is the new
++  translation table which translates the 32 bit addresses in into physical memory
++
++B.Stop GDP1 and GDP3
++  The graphic engine is using the memory and will crach if it is turned on while
++  changing the memory base address so we need to turn this off during the
++  transition. This will make the picture black for 1 second.
++  
++C.Setup the MES for the whole address space
++  This is needed on system with the MES turned on, like the Conax version.
++ 
++D.Copy the code below to video memory
++  In order to change the base address of the system memory we need to be
++  executing in the video memory. This step copies the code to the upper part
++  of the video memory.
++  
++E.Jump to the code in video memory
++  Start executing in the video memory
++  
++F.Modify the UBA value of the system LMI register to be valid in the 32 bit
++  memory layout.The LMI registers must be modifed to be valid in the new system
++  memory layout
++  
++G.Move system memory to the new memory layout
++  Now it's time to change the actual base address for the system memory
++  
++H.Enter Space Enhanced Mode
++  Now we can finally turn on the Space Enhanced mode which is the new 32 bit
++  mode which uses the PMB
++  
++I.Copy video mem (32 MB) to sys mem (sys new location)
++  Make a copy of the whole video memory into a temporary location in the system
++  memory. This is needed on systems with the MES turned on (Like the Conax CPU)
++  since the memory is encrypted with an address dependent XOR value the memory
++  content will be scambled when chaning the base address. The wolution is to
++  copy the mem content back and forth between the system mem and the video mem.
++  
++J.Move back system memory to the old memory layout
++  We need to temporary change back to the old base address (0x04000000) to be
++  able to make a backup of Linux and Ramtopaddress due to the MES
++  
++K.Backup ramtopaddress area from sys mem to video mem
++  Make a backup of ramtopaddress due to the MES
++
++M.Backup the first 6 MB (Linux kernel) to video memory
++  Make a backup of Linux due to the MES
++
++N.Move system memory to the new memory layout (again!)
++  Now we can set the system memory back to its final location (0x40000000)
++  
++O.Copy back ramtopaddress area from video mem to sys mem
++  Copy back the ramtopaddress due to the MES
++
++P.Copy back the linux kernel from video mem to sys mem (new location). This is
++  where we will execute in 32 bit mode Copy back the Linux kernel due to the
++  MES. This is actually also needed due to the fact that Linux will move
++  64 MB up in the memory. The old memory starts at 0x84000000 but the new
++  memory starts at 0x80000000 and since the Linux code is linked to 0x84000000
++  (to be compatible with 29 bit addressing too) we need to copy Linux to
++  0x84000000 before we can start executing the code as intended by the linker.
++
++Q.Continue in System memory (Where the linker put it)
++  Now the memory is back where it should be in the system memory and we can
++  start executing from there
++
++R.Fixup the GAM_GDP1_NVN/GAM_GDP3_NVN for the new memory layout
++  Since the system memory now is back in it's final position we can turn on
++  the graphics again
++  
++S.Modify the UBA value of the system LMI register to be valid in the 32 bit
++  memory layout. We need to adjust the LMI registers for the video memory too
++  
++T.Move video memory to the new memory layout
++  Change the base address of the video memory
++  
++U.Modify the PMB because video memory move
++  We need to modify the PMB so that the code below can access it now when the
++  video memory has changed to its new location (0x60000000)
++  
++V.Copy back the video mem from system memory
++  
++
++An other feature of the code below is the automatic detection of the CPU type.
++Since the STb7100 CPU does not support the Space Enhanced mode we just start
++executing Linux anyway. This works since Linux is compiled for the base address
++0x84000000 which is valid for both 29 bit and 32 bit addressing modes. All
++differences between the 29 bit addressing and 29 bit addressing must be handled
++in run time in the Linux kernel too to make this work. All units which are
++alredy running 32 bit mode when entering this code will just start this code
++and start Linux normally. This is what we should use on all new model.
++
++For further details on this 29 to 32 bit mode swithing code please contact:
++Tomas Franzon, tomas.franzon@motorola.com
++
++*/
++        mov.l        MMUCR, r12
++        mov.l        @r12, r0
++        tst          #0x10,r0
++        bf           RUNNING_32BIT
++        nop
++
++        mov.l        DEVICE_ID, r12
++        mov.l        @r12, r0
++        shlr2        r0
++        shlr2        r0
++        shlr8        r0
++        mov.l        DEVICE_ID_MASK, r13
++        and          r13,r0
++        cmp/eq       #0x24,r0
++        bt           RUNNING_29BIT_7100
++        nop
++
++        bra          SE_START
++        nop
++
++RUNNING_29BIT_7100:
++! The CPU is already running 32 bit mode 
++        mov.l        UART_REG, r13
++! Message: Running 29 bit Mode        
++        SEND_UART_BUFFER(mess_29_bit_7100)
++
++        bra          SE_END
++        nop
++
++RUNNING_32BIT:
++! The CPU is already running 32 bit mode 
++        mov.l        UART_REG, r13
++! Message: Running 32 bit Mode
++        SEND_UART_BUFFER(mess_32_bit)
++        bra          SE_END
++        nop
++
++SE_START:
++! Setup UART
++        mov.l        UART_REG, r13
++
++! Message: Entering Space Enhanced Mode (32 bit)
++        SEND_UART_BUFFER(mess_enter_se)
++
++        ! Set-up cache
++        mov.l        CCR, r1
++        mov.l        CCR_val, r5
++        mov.l        r5, @r1
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++
++! Turn off the Ethernet DMA.
++! This is a bug workaround for 7109 boards with old Firmware
++! We need to do this as early as possible beacuse if an ethernet packet
++! arrives we the box might crach
++		mov          #0,r0
++        mov.l        ETH_DMA_CTRL, r1
++        mov.l        r0,@r1
++! Disable video mem MES
++        mov.l        MES_ENCRYPT_ALL_VID, r1
++        mov.l        r0, @(0x08,r1)
++
++! Stop GDP1 and GDP3
++        mov.l        MIX1, r2
++        mov.l        @r2, r1         ! r1 is assigned to gdb_original_state later
++        ! Store original gdp (gdp1) status (the way firmware left it)
++        mova         mix1_original_state, r0
++        mov.l        r1, @r0
++        mov          #0, r3
++        mov.l        r3,@r2
++        mov.l        MIX2, r2
++
++        mov.l        @r2, r1
++        mova         mix2_original_state, r0
++        mov.l        r1, @r0
++
++        mov.l        r3,@r2
++
++! Wait enough time for the GDPs to be stopped (~50ms)
++        mov.l        MIX_D_LOOP, r2
++2:      add          #-1,r2
++        mov          #0, r3
++        cmp/eq       r3,r2
++        bf           2b
++        nop
++
++! Initialize the PMB array
++        mov          #0, r1
++        mov.l        PMB_DATA_ARRAY, r7
++        mov.l        PMB_ADDR_ARRAY, r8
++        mova         PMB_DATA_ARRAY_val, r0
++        mov          r0,r9
++        mova         PMB_ADDR_ARRAY_val, r0
++        mov          r0,r4
++1:      mov          r1,r0
++        shll2        r0
++        mov.l        @(r0,r9),r5
++        mov.l        @(r0,r4),r3
++        mov          r1,r0
++        shll8        r0
++        mov.l        r3, @(r0,r8)
++        mov.l        r5, @(r0,r7)
++        add          #1, r1
++        mov          #16, r0
++        cmp/eq       r1, r0
++        bf           1b
++! PMB init end
++
++! Check if CPU is STi5202 by checking if LMIVID=0
++        mov.l        LMIVID_SDRA, r12
++        mov.l        @(0x00,r12), r0
++        cmp/eq       #0, r0
++        bt           SwitchUsingCache
++        nop
++        
++
++! Check if MES exists by writing to video mem (disabled above)
++! and reading the ENCRYPT_ALL_ERR bit
++        mov.l        VID_ADDR_NO_CACHE, r3
++        mov.l        @r3,r0 ! Try to read from Video mem
++
++        mov.l        MES_ENCRYPT_ALL_VID_STATUS, r3
++        mov.l        @(0x00,r3),r0
++        tst          #0x40,r0  ! Check if ENCRYPT_ALL_ERR occured
++        bt           SwitchUsingCache
++        nop
++! Setup the MES for the whole address space
++        mov          #0x00000000, r0
++        mov          #0xFFFFFFFF, r2
++        mov.l        MES_ENCRYPT_ALL_SYS, r1
++        mov.l        r0, @(0x04,r1)
++        mov.l        r2, @(0x08,r1)
++        mov.l        MES_ENCRYPT_ALL_VID, r1
++        mov.l        r0, @(0x04,r1)
++        mov.l        r2, @(0x08,r1)
++! MES updated
++        
++        bra          SwitchUsingVideoMem
++        nop
++        
++SwitchUsingCache:
++
++! Copy the first 6 MB (Linux kernel) 64 MB up in sys memory
++        mov.l        SYS_ADDR_OLD, r8
++        mov.l        SYS_ADDR_NEW, r7
++        mov.l        SYS_COPY_SIZE, r9
++1:      dt           r9
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        bf           1b
++        nop
++! 6MB copy end
++        
++! Switch to A4xxxxxx address
++        mova         RunInA4Addr,r0
++        mov.l        A4_ADDR_MASK, r1
++        or           r1,r0
++        jmp          @r0
++        nop
++
++        .balign      4
++RunInA4Addr:
++! Switch end
++
++! Setup registers to be used after MMUCR.SE
++        mov.l        SYS_CFG36, r8
++        mov.l        SYS_CFG36_VID, r9
++        mov.l        LMISYS_SDRA, r10
++        mov.l        @(0x00,r10),r12
++        mov.l        LMI_UBA_MASK, r0
++        and          r0,r12
++        mov.l        LMISYS_SDRA_UBA, r0
++        or           r0,r12
++        mov.l        SYSTEM_MEM_CODE_label, r0
++        mov          r0,r7
++
++! Enter Space Enhanced Mode
++        mov.l        CCN_MMUCR, r1
++        mov          #0x10, r0
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        mov.l        r0, @r1
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++
++! Modify the UBA value of the system LMI register to be valid in the 32 bit memory layout
++!        SEND_UART_CHAR ('a')
++!        SEND_UART_CHAR ('b')
++        mov.l        r12, @(0x00,r10)
++        mov.l        r12, @(0x08,r10)
++
++! Move system memory to the new memory layout
++        mov.l        r9, @r8
++! Move end
++        mov          #1, r12 ! 1=5202/7109 using cache
++
++! Continue in memory (Where the linker put it)
++        mov          r7,r0
++        jmp          @r0
++        nop
++
++        .balign 4
++mess_29_bit_7100:    .long      mess_29_bit_7100_val
++mess_32_bit:         .long      mess_32_bit_val
++mess_enter_se:       .long      mess_enter_se_val
++
++
++SwitchUsingVideoMem:
++
++! Copy the code below to video memory
++        mov.l        VID_ADDR, r7
++        mova         VIDEO_MEM_CODE, r0
++        mov          r0,r8
++        mova         COPY_END, r0
++        mov          r0,r9
++        sub          r8,r9
++
++        shlr2        r9
++        add          #4,r9
++1:        
++        dt           r9
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        bf           1b
++        nop
++! copy end
++
++! Jump to the code in video memory
++        mov.l        VID_ADDR, r0
++        jmp          @r0
++        nop
++
++        .balign 4
++ENTRY(VIDEO_MEM_CODE)
++
++! Modify the UBA value of the system LMI register to be valid in the 32 bit memory layout
++        mov.l        LMISYS_SDRA, r10
++        mov.l        @(0x00,r10),r2
++        mov          r2,r6
++        mov.l        LMI_UBA_MASK, r0
++        and          r0,r2
++        mov.l        LMISYS_SDRA_UBA, r0
++        or           r0,r2
++        mov.l        r2, @(0x00,r10)
++        mov.l        r2, @(0x08,r10)
++        mov          r2,r12
++
++! Move system memory to the new memory layout
++        mov.l        SYS_CFG36, r3
++        mov.l        SYS_CFG36_SYS, r2
++        mov.l        @r3, r4 ! r4 = old layout
++        mov.l        r2, @r3
++! Move end
++
++! Enter Space Enhanced Mode
++        mov.l        CCN_MMUCR, r1
++        mov          #0x10, r0
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        mov.l        r0, @r1
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++
++! Copy video mem (32 MB) to sys mem (sys new location)
++        mov.l        VID_ADDR, r8
++        mov.l        SYS_ADDR_VIDEO_COPY_SE, r7
++        mov.l        VID_COPY_SIZE, r9        
++1:      dt           r9
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        bf           1b
++        nop
++! 16MB copy end
++
++! Move back system memory to the old memory layout
++        mov.l        r4, @r3
++        mov.l        r6, @(0x00,r10)
++        mov.l        r6, @(0x08,r10)
++! Move end
++
++! Backup ramtopaddress area from sys mem to video mem
++        mov.l        SYS_RAMTOPADDRESS_ADDR29, r8
++        mov.l        VID_ADDR_RAMTOPADDRESS_BACKUP, r7
++        mov.l        RAMTOPADDRESS_COPY_SIZE, r9
++1:      dt           r9
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        bf           1b
++        nop
++! 10MB copy end
++
++! Backup the first 6 MB (Linux kernel) to video memory
++        mov.l        SYS_ADDR_OLD29, r8
++        mov.l        VID_ADDR_LINUX_BACKUP, r7
++        mov.l        SYS_COPY_SIZE, r9
++1:      dt           r9
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        bf           1b
++        nop
++! 6MB copy end
++
++! Move system memory to the new memory layout (again!)
++        mov.l        r2, @r3
++        mov.l        r12, @(0x00,r10)
++        mov.l        r12, @(0x08,r10)
++! Move end
++
++! Copy back ramtopaddress area from video mem to sys mem
++        mov.l        VID_ADDR_RAMTOPADDRESS_BACKUP, r8
++        mov.l        SYS_RAMTOPADDRESS_ADDR2, r7
++        mov.l        RAMTOPADDRESS_COPY_SIZE, r9
++1:      dt           r9
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        bf           1b
++        nop
++! 10MB copy end
++
++! Copy back the linux kernel from video mem to sys mem (new location). This is where we will execute in 32 bit mode
++        mov.l        VID_ADDR_LINUX_BACKUP, r8
++        mov.l        SYS_ADDR_OLD, r7
++        mov.l        SYS_COPY_SIZE, r9
++1:      dt           r9
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        bf           1b
++        nop
++! 16MB copy end
++
++! Continue in System memory (Where the linker put it)
++        mov          #2, r12 ! 2=7109 with MES
++        mov.l        SYSTEM_MEM_CODE_label, r0
++        jmp          @r0
++        nop
++
++        .balign      4
++SYSTEM_MEM_CODE:
++
++        ! Turn off cache
++        mov.l        CCR, r1
++        mov          #0, r5
++        mov.l        r5, @r1
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++
++! Wait before starting the GDPs (~ 1 - 2 sec)
++        mov.l        MIX_D_LOOP2, r2
++2:      add          #-1,r2
++        mov          #0, r3
++        cmp/eq       r3,r2
++        bf           2b
++        nop
++
++! Fixup the GAM_GDP1_NVN/GAM_GDP3_NVN for the new memory layout
++
++        mov.l        NVN_MEM_DIFF, r2
++        mov.l        GAM_MEM_BASE,r6
++!    Reenable GDP1 (main output) 
++        mov.l        GAM_GDP1_NVN, r4
++        mov.l        @r4, r0
++        cmp/eq       #0, r0
++        bt           1f
++        nop
++        add          r2,r0
++        mov.l        r0, @r4
++        add          r6, r0
++        mov.l        @(0x14,r0),r3
++        add          r2,r3
++        mov.l        r3,@(0x14,r0)
++        mov.l        @(0x24,r0),r3
++        add          r2,r3
++        mov.l        r3,@(0x24,r0)
++1:
++!    Reenable GDP3 (aux output)
++        mov.l        GAM_GDP3_NVN, r4
++        mov.l        NVN_MEM_DIFF, r2
++        mov.l        @r4, r0
++        cmp/eq       #0, r0
++        bt           1f
++        nop
++        add          r2,r0
++        mov.l        r0, @r4
++        add          r6, r0
++        mov.l        @(0x14,r0),r3
++        add          r2,r3
++        mov.l        r3,@(0x14,r0)
++        mov.l        @(0x38,r0),r3
++        add          r2,r3
++        mov.l        r3,@(0x38,r0)
++        mov.l        @(0x24,r0),r3
++        add          r2,r3
++        mov.l        r3,@(0x24,r0)
++        mov          r3,r0
++        mov.l        @(0x14,r0),r3
++        add          r2,r3
++        mov.l        r3,@(0x14,r0)
++        mov.l        @(0x38,r0),r3
++        add          r2,r3
++        mov.l        r3,@(0x38,r0)
++        mov.l        @(0x24,r0),r3
++        add          r2,r3
++        mov.l        r3,@(0x24,r0)
++
++! Turn the GDP1 and GDP3 back on
++        mov.l        mix1_original_state, r3
++        mov.l        MIX1,r4
++        mov.l        r3,@r4
++        mov.l        mix2_original_state, r3
++        mov.l        MIX2,r4
++        mov.l        r3,@r4
++1:
++!!!
++
++! Check if CPU is STi5202 by checking if LMIVID=0
++        mov.l        LMIVID_SDRA, r1
++        mov.l        @(0x00,r1), r0
++        cmp/eq       #0, r0
++        bt           SE_END_PART
++        nop
++
++MODIFY_VID_MEM:
++! Modify the UBA value of the system LMI register to be valid in the 32 bit memory layout
++        mov.l        LMIVID_SDRA, r1
++        mov.l        @(0x00,r1),r2
++        mov.l        LMI_UBA_MASK, r0
++        and          r0,r2
++        mov.l        LMIVID_SDRA_UBA, r0
++        or           r0,r2
++        mov.l        r2, @(0x00,r1)
++        mov.l        r2, @(0x08,r1)
++
++! Check if we executed video mem
++        mov          r12,r0
++        cmp/eq       #0x02,r0
++        bf           SE_END_PART
++        nop
++
++! Move video memory to the new memory layout
++        mov.l        SYS_CFG36, r1
++        mov.l        SYS_CFG36_VID, r0
++        mov.l        r0, @r1
++
++! Modify the PMB because video memory move
++        mov.l        PMB_DATA_ARRAY2, r1
++        mov.l        PMB_DATA_ARRAY_VID, r0
++        mov.l        r0, @r1
++
++! Set-up cache (again!)
++        mov.l        CCR, r1
++        mov.l        CCR_val, r5
++        mov.l        r5, @r1
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++
++! Copy back the video mem from system memory
++        mov.l        SYS_ADDR_VIDEO_COPY_SE, r8
++        mov.l        VID_ADDR, r7
++        mov.l        VID_COPY_SIZE, r9
++1:      dt           r9
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        mov.l        @r8+,r5
++        mov.l        r5, @r7
++        add          #4,r7
++        bf           1b
++        nop
++! 16MB copy end
++
++SE_END_PART:
++        mov.l        UART_REG, r13
++! Message: Running 32 bit Mode        
++        SEND_UART_BUFFER(mess_32_bit2)
++
++! Clear the PMB array. Leave only sys mem for Linux
++        mov          #0, r1
++        mov          #0, r5
++        mov.l        PMB_DATA_ARRAY2, r7
++1:      mov          r1,r0
++        shll8        r0
++        mov.l        r5, @(r0,r7)
++        add          #1, r1
++        mov          #15, r0
++        cmp/eq       r1, r0
++        bf           1b
++        nop
++! PMB init end
++
++!Setup cache suitable for Linux
++        mov.l        CCR, r1
++        mov.l        CCR_LINUX, r5
++        mov.l        r5, @r1
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++        nop
++!cache end
++
++        bra SE_END
++        nop
++
++        .balign 4
++MMUCR:               .long        0xFF000010
++ETH_DMA_CTRL:        .long        0xB8111018
++DEVICE_ID:           .long        0xb9001000
++DEVICE_ID_MASK:      .long        0x000003FF
++LMISYS_SDRA:         .long        0xAF000030
++LMIVID_SDRA:         .long        0xB7000030
++LMISYS_SDRA_UBA:     .long        0x50000000
++LMIVID_SDRA_UBA:     .long        0x64000000
++LMI_UBA_MASK:        .long        0x001FFFFF
++UART_REG:            .long        0xB8031004
++GAM_GDP1_NVN:        .long        0xB920A124
++GAM_GDP3_NVN:        .long        0xB920A324
++NVN_MEM_DIFF:        .long        0x40000000 - 0x04000000
++GAM_MEM_BASE:        .long        0x40000000
++MIX1:                .long        0xb920ac00
++MIX2:                .long        0xb920ad00
++VID_ADDR:            .long        0x90000000
++VID_ADDR_NO_CACHE:   .long        0xB0000000
++MIX_D_LOOP:          .long        0x00250000 ! ~50ms
++MIX_D_LOOP2:         .long        0x00020000 ! ~100ms
++MES_ENCRYPT_ALL_SYS: .long        0xB9500050
++MES_ENCRYPT_ALL_VID: .long        0xB9508050
++MES_ENCRYPT_ALL_VID_STATUS: .long 0xB9508004
++CCR:                 .long        0xFF00001C
++CCR_val:             .long        0x8000010B
++CCR_LINUX:           .long        0x80000105
++mix1_original_state: .long        0
++mix2_original_state: .long        0
++
++PMB_DATA_ARRAY:      .long        0xF7100000
++PMB_ADDR_ARRAY:      .long        0xF6100000
++
++PMB_ADDR_ARRAY_val:
++                     .long        0x80000000
++                     .long        0x90000000
++                     .long        0xB8000000
++                     .long        0xAF000000
++                     .long        0xB7000000
++                     .long        0xA4000000
++                     .long        0xA8000000
++                     .long        0x00000000
++                     .long        0x00000000
++                     .long        0x00000000
++                     .long        0x00000000
++                     .long        0x00000000
++                     .long        0x00000000
++                     .long        0x00000000
++                     .long        0x00000000
++                     .long        0x00000000
++                     .long        0x00000000
++PMB_DATA_ARRAY_val:
++                     .long        0x40000189
++                     .long        0x10000119
++                     .long        0x18000110
++                     .long        0x0F000100
++                     .long        0x17000100
++                     .long        0x04000119
++                     .long        0x08000119
++                     .long        0x00000000
++                     .long        0x00000000
++                     .long        0x00000000
++                     .long        0x00000000
++                     .long        0x00000000
++                     .long        0x00000000
++                     .long        0x00000000
++                     .long        0x00000000
++                     .long        0x00000000
++
++PMB_DATA_ARRAY_VID:
++                     .long        0x60000118
++
++CCN_MMUCR:           .long        0xFF000010
++SYS_ADDR_OLD:        .long        (0x80000000 + CONFIG_ZERO_PAGE_OFFSET)
++SYS_ADDR_NEW:        .long        (0x84000000 + CONFIG_ZERO_PAGE_OFFSET)
++SYS_COPY_SIZE:       .long        0x00060000 ! 6 MB (note: devided by 16)
++SYS_CFG36:           .long        0xB9001190
++SYS_CFG36_SYS:       .long        0x00100040
++SYS_CFG36_VID:       .long        0x00600040
++A4_ADDR_MASK:        .long        0xA0000000
++SYS_ADDR_OLD29:      .long        (0xA0000000 + CONFIG_ZERO_PAGE_OFFSET)
++VID_COPY_SIZE:       .long        0x00200000 ! 32 MB (note: devided by 16)
++PMB_DATA_ARRAY2:     .long        0xF7100100
++
++SYS_ADDR_VIDEO_COPY_SE:        .long        0x81000000
++
++SYS_RAMTOPADDRESS_ADDR29:      .long        0xAB600000
++SYS_RAMTOPADDRESS_ADDR2:       .long        0x87600000
++VID_ADDR_RAMTOPADDRESS_BACKUP: .long        0x90600000
++VID_ADDR_LINUX_BACKUP:         .long        0x91000000
++RAMTOPADDRESS_COPY_SIZE:       .long        0x000A0000 ! 10 MB (note: devided by 16)
++SYSTEM_MEM_CODE_label:         .long        SYSTEM_MEM_CODE
++dummy:        .long        0
++ENTRY(COPY_END)
++mess_32_bit2:         .long       mess_32_bit_val
++        .balign 4
++mess_29_bit_7100_val:.string      "Running 29 bit Mode (STb7100)\r\n"
++        .balign 4
++mess_32_bit_val:     .string      "Running 32 bit Mode\r\n"
++        .balign 4
++mess_enter_se_val:   .string      "Entering Space Enhanced Mode (32 bit)\r\n"
++        .balign 4
++
++ENTRY(SE_END)
++#endif
++#endif
+ 	!			Initialize Status Register
+ 	mov.l	1f, r0		! MD=1, RB=0, BL=0, IMASK=0xF
+ 	ldc	r0, sr
+@@ -91,11 +964,14 @@
+ 	mov.l	3f, r1
+ 	add	#4, r1
+ 	mov.l	4f, r2
++9:
+ 	mov	#0, r0
+-9:	cmp/hs	r2, r1
++	cmp/hs	r2, r1
+ 	bf/s	9b		! while (r1 < r2)
+ 	 mov.l	r0,@-r2
+ 
++! End of clear bss
++
+ 10:		
+ 	!			Additional CPU initialization
+ 	mov.l	6f, r0
+@@ -123,3 +999,4 @@
+ 5:	.long	start_kernel
+ 6:	.long	sh_cpu_init
+ 7:	.long	init_thread_union
++8:	.long	linux_banner

@@ -1,0 +1,21 @@
+All source code located in this directory may fall under GPL or LGPL license.  
+OpenSIPStack core library does not rely on any of the code/library found in 
+this directory.  If an application uses any of the library found here, the 
+application should be published under GPL or LGPL accordingly.
+
+List of GPL Libraries
+
+1.  IPRoute2 - Application developers may use this code to get the best 
+interface to be used for sending SIP messages using kernel level netlink
+calls.   This is only available in Linux.
+
+2.  XBase64 - Xbase64 is an xbase (i.e. dBase, FoxPro, etc.) compatible C++ class library 
+originally by Gary Kunkel and others (see the opensipstack/include/xbase64/AUTHORS file).
+
+Xbase64 is useful for accessing data in legacy dBase 3 and 4 database files as
+well as a general light-weight database engine.  It includes support for
+DBF (dBase version 3 and 4) data files, NDX and NTX indexes, and DBT 
+(dBase version 3 and 4).  It supports file and record locking under *nix
+and Windows.
+
+See opensipstack/include/xbase64/README for details

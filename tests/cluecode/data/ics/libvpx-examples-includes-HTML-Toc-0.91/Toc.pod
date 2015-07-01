@@ -1,0 +1,8 @@
+
+Freddy Vulto E<lt>L<"fvu@fvu.myweb.nl">E<gt>
+
+=head1 COPYRIGHT
+
+Copyright (c) 2001 Freddy Vulto.  All rights reserved.
+
+This library is free software; you can redistribute it and/or

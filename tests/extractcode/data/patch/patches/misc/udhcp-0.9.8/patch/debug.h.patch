@@ -1,0 +1,29 @@
+--- udhcp-0.9.8/debug.h.orig	2009-05-20 12:56:45.000000000 +0200
++++ udhcp-0.9.8/debug.h	2009-05-20 12:58:28.000000000 +0200
+@@ -16,16 +16,16 @@
+ # define OPEN_LOG(name) openlog(name, 0, 0)
+ #define CLOSE_LOG() closelog()
+ #else
+-# define LOG_EMERG	"EMERGENCY!"
+-# define LOG_ALERT	"ALERT!"
+-# define LOG_CRIT	"critical!"
+-# define LOG_WARNING	"warning"
+-# define LOG_ERR	"error"
+-# define LOG_INFO	"info"
+-# define LOG_DEBUG	"debug"
+-# define LOG(level, str, args...) do { printf("%s, ", level); \
+-				printf(str, ## args); \
+-				printf("\n"); } while(0)
++# define LOG_EMERG	"<F>"
++# define LOG_ALERT	"<E>"
++# define LOG_CRIT	"<F>"
++# define LOG_WARNING	"<W>"
++# define LOG_ERR	"<E>"
++# define LOG_INFO	"<N>"
++# define LOG_DEBUG	"<D>"
++# define LOG(level, str, args...) do { fprintf(stderr, "%sudhcp: ", level); \
++				fprintf(stderr, str, ## args); \
++				fprintf(stderr, "\n"); } while(0)
+ # define OPEN_LOG(name) do {;} while(0)
+ #define CLOSE_LOG() do {;} while(0)
+ #endif

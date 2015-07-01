@@ -1,0 +1,36 @@
+This is the Debian Linux prepackaged version of sox, a comprehensive sound
+conversion tool.
+
+This package was put together by Guenter Geiger <geiger@debian.org> with sources
+obtained from:
+          http://home.sprynet.com/sprynet/cbagwell/projects.html
+
+The following copyright applied to this software:
+
+  Copyright 1991 <s>Lance Norskog</s> And <s>Sundry Contributors</s>
+  This source code is freely redistributable and may be used for
+  any purpose.  This copyright notice must be maintained. 
+  Lance Norskog And Sundry Contributors are not responsible for 
+  the consequences of using this software.
+
+Version 12.16 and above of sox is available from http://sox.sourceforge.net.
+
+sox.c, and thus SoX-the user application, is distributed under the GPL.
+
+The remaining files that make up libst are licensed under the less
+restrictive license LGPL.
+
+There is currently only one exception to this.  The files FFT.c and
+FFT.h are original from the Audacity program and fall under its
+license of GPL.  The noise profiling and noise reduction effects
+both make use of this FFT code and would need to be removed from
+any program that requires LGPL only software.
+
+On Debian systems, the complete text of the GNU General Public License
+can be found in the '/usr/share/common-licenses/GPL-2' file.
+The complete text of the GNU Lesser General Public License can be found in the 
+'/usr/share/common-licenses/LGPL-2' file.
+
+The original copyright owner was Lance Norskog.
+Current upstream development is being made by Chris Bagwell and others.
+

@@ -1,0 +1,2 @@
+date-retrieved:2011-09-07 10:59:23+02:00
+wget:http://repo.opengeo.org/commons-beanutils/commons-beanutils/1.6/commons-beanutils-1.6.pom

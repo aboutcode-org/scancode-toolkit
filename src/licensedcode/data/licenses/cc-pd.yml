@@ -1,0 +1,9 @@
+key: cc-pd
+short_name: CC-PD
+name: >-
+    Creative Commons Public Domain Certification
+category: Public Domain
+owner: Creative Commons
+homepage_url: http://creativecommons.org/publicdomain/
+text_urls:
+    - http://creativecommons.org/licenses/publicdomain/

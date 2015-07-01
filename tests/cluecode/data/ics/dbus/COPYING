@@ -1,0 +1,167 @@
+Both licenses are included here. Some of the standalone binaries are
+under the GPL only; in particular, but not limited to,
+tools/dbus-cleanup-sockets.c and test/decode-gcov.c. Each source code
+file is marked with the proper copyright information - if you find a
+file that isn't marked please bring it to our attention.
+
+The Academic Free License
+v. 2.1
+
+This Academic Free License (the "License") applies to any original work of authorship (the "Original Work") whose owner (the "Licensor") has placed the following notice immediately following the copyright notice for the Original Work:
+
+Licensed under the Academic Free License version 2.1
+
+1) Grant of Copyright License. Licensor hereby grants You a
+world-wide, royalty-free, non-exclusive, perpetual, sublicenseable
+license to do the following:
+inexpensive and convenient access by You for as long as Licensor
+continues to distribute the Original Work, and by publishing the
+address of that information repository in a notice immediately
+following the copyright notice that applies to the Original Work.
+
+4) Exclusions From License Grant. Neither the names of Licensor, nor
+trademarks or service marks, may be used to endorse or promote
+products derived from this Original Work without express prior written
+permission of the Licensor. Nothing in this License shall be deemed to
+grant any rights to trademarks, copyrights, patents, trade secrets or
+any other intellectual property of Licensor except as expressly stated
+herein. No patent license is granted to make, use, sell or offer to
+5) This section intentionally omitted.
+
+6) Attribution Rights. You must retain, in the Source Code of any
+Derivative Works that You create, all copyright, patent or trademark
+notices from the Source Code of the Original Work, as well as any
+notices of licensing and any descriptive text identified therein as an
+modified the Original Work.
+
+7) Warranty of Provenance and Disclaimer of Warranty. Licensor
+warrants that the copyright in and to the Original Work and the patent
+rights granted herein by Licensor are owned by the Licensor or are
+sublicensed to You under the terms of this License with the permission
+of the contributor(s) of those copyrights and patent rights. Except as
+expressly stated in the immediately proceeding sentence, the Original
+Work is provided under this License on an "AS IS" BASIS and WITHOUT
+any of the rights granted in Section 1 herein, and any attempt to do
+so except under the terms of this License (or another written
+agreement between Licensor and You) is expressly prohibited by
+U.S. copyright law, the equivalent laws of other countries, and by
+international treaty. Therefore, by exercising any of the rights
+granted to You in Section 1 herein, You indicate Your acceptance of
+Convention on Contracts for the International Sale of Goods is
+expressly excluded. Any use of the Original Work outside the scope of
+this License or after its termination shall be subject to the
+requirements and penalties of the U.S. Copyright Act, 17 U.S.C. Â§ 101
+et seq., the equivalent laws of other countries, and international
+treaty. This section shall survive the termination of this License.
+Licensor promises not to interfere with or be responsible for such
+uses by You.
+
+This license is Copyright (C) 2003-2004 Lawrence E. Rosen. All rights
+reserved. Permission is hereby granted to copy and distribute this
+license without modification. This license may not be modified without
+the express written permission of its copyright owner.
+
+
+those licenses.
+    
+* The AFL is written so as to make it clear what software is being 
+licensed (by the inclusion of a statement following the copyright notice 
+in the software). This way, the license functions better than a template 
+license. The BSD, MIT and UoI/NCSA licenses apply to unidentified software.
+    
+* The AFL contains a complete copyright grant to the software. The BSD 
+and Apache licenses are vague and incomplete in that respect.
+    
+BSD, MIT and UoI/NCSA licenses do not.
+    
+* The AFL includes the warranty by the licensor that it either owns the 
+copyright or that it is distributing the software under a license. None of 
+the other licenses contain that warranty. All other warranties are disclaimed, 
+as is the case for the other licenses.
+
+* The AFL is itself copyrighted (with the right granted to copy and distribute 
+without modification). This ensures that the owner of the copyright to the 
+license will control changes. The Apache license contains a copyright notice, 
+but the BSD, MIT and UoI/NCSA licenses do not. 
+--
+		    GNU GENERAL PUBLIC LICENSE
+		       Version 2, June 1991
+
+ Copyright (C) 1989, 1991 Free Software Foundation, Inc.
+ 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+
+source code.  And you must show them these terms so they know their
+rights.
+
+  We protect your rights with two steps: (1) copyright the software, and
+(2) offer you this license which gives you legal permission to copy,
+distribute and/or modify the software.
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+  0. This License applies to any program or other work which contains
+a notice placed by the copyright holder saying it may be distributed
+under the terms of this General Public License.  The "Program", below,
+refers to any such program or work, and a "work based on the Program"
+means either the Program or any derivative work under copyright law:
+that is to say, a work containing the Program or a portion of it,
+either verbatim or with modifications and/or translated into another
+  1. You may copy and distribute verbatim copies of the Program's
+source code as you receive it, in any medium, provided that you
+conspicuously and appropriately publish on each copy an appropriate
+copyright notice and disclaimer of warranty; keep intact all the
+notices that refer to this License and to the absence of any warranty;
+and give any other recipients of the Program a copy of this License
+    c) If the modified program normally reads commands interactively
+    when run, you must cause it, when started running for such
+    interactive use in the most ordinary way, to print or display an
+    announcement including an appropriate copyright notice and a
+    notice that there is no warranty (or else, saying that you provide
+    a warranty) and that users may redistribute the program under
+be a consequence of the rest of this License.
+
+  8. If the distribution and/or use of the Program is restricted in
+certain countries either by patents or by copyrighted interfaces, the
+original copyright holder who places the Program under this License
+may add an explicit geographical distribution limitation excluding
+those countries, so that distribution is permitted only in or among
+
+  10. If you wish to incorporate parts of the Program into other free
+programs whose distribution conditions are different, write to the author
+to ask for permission.  For software which is copyrighted by the Free
+Software Foundation, write to the Free Software Foundation; we sometimes
+make exceptions for this.  Our decision will be guided by the two goals
+
+  11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
+FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN
+OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
+PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
+OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+REPAIR OR CORRECTION.
+
+  12. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
+REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,
+INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING
+  To do so, attach the following notices to the program.  It is safest
+to attach them to the start of each source file to most effectively
+convey the exclusion of warranty; and each file should have at least
+the "copyright" line and a pointer to where the full notice is found.
+
+    <one line to give the program's name and a brief idea of what it does.>
+    Copyright (C) <year>  <name of author>
+
+    This program is free software; you can redistribute it and/or modify
+If the program is interactive, make it output a short notice like this
+when it starts in an interactive mode:
+
+    Gnomovision version 69, Copyright (C) year name of author
+    Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+    This is free software, and you are welcome to redistribute it
+mouse-clicks or menu items--whatever suits your program.
+
+You should also get your employer (if you work as a programmer) or your
+school, if any, to sign a "copyright disclaimer" for the program, if
+necessary.  Here is a sample; alter the names:
+
+  Yoyodyne, Inc., hereby disclaims all copyright interest in the program
+  `Gnomovision' (which makes passes at compilers) written by James Hacker.

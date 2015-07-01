@@ -1,0 +1,9 @@
+key: colt
+short_name: Colt License Agreement
+name: Colt License Agreement
+category: Attribution Restricted
+owner: >-
+    CERN - European Organization for Nuclear Research
+homepage_url: http://acs.lbl.gov/software/colt/license.html
+text_urls:
+    - http://acs.lbl.gov/software/colt/license.html

@@ -1,0 +1,16 @@
+url: http://www.freedesktop.org/wiki/Software/shared-mime-info
+url: http://www.freedesktop.org/wiki/Specifications/shared-mime-info-spec
+tracker: https://bugs.freedesktop.org/buglist.cgi?query_format=specific&order=relevance+desc&bug_status=__open__&product=shared-mime-info&content=
+
+donwload_url: http://people.freedesktop.org/~hadess/shared-mime-info-1.4.tar.xz
+
+notes: This folder is created by running the following:
+ tar -xJf shared-mime-info-1.4.tar.xz
+ cd shared-mime-info-1.4
+ mkdir /tmp/shared-mime-info/share
+ ./configure --prefix=/tmp/shared-mime-info
+ make
+ make install
+ cp -r /tmp/shared-mime-info/share/mime mimetype
+
+dje_license: gpl-2.0

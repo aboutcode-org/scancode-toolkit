@@ -1,0 +1,6 @@
+==============================================================
+ Jetty JBoss Integration
+ Copyright 1995-2006 Mort Bay Consulting Pty Ltd
+==============================================================
+This optional package contains code licensed under the
+Apache 2 license, and some code licensed under the LGPL.

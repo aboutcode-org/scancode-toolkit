@@ -1,0 +1,21 @@
+diff -Naur linux-2.6.23/fs/yaffs2/yaffs_guts.c linux-2.6.23-yaffs2-yaffs_guts.c.patch/fs/yaffs2/yaffs_guts.c
+--- linux-2.6.23/fs/yaffs2/yaffs_guts.c	2009-06-01 17:17:58.000000000 +0200
++++ linux-2.6.23-yaffs2-yaffs_guts.c.patch/fs/yaffs2/yaffs_guts.c	2009-06-01 17:16:04.000000000 +0200
+@@ -4831,7 +4831,7 @@
+ 
+ 			nToWriteBack =
+ 			    (nBytesRead >
+-			     (start + n)) ? nBytesRead : (start + n);
++			     ((int)start + n)) ? nBytesRead : (start + n);
+ 
+ 		} else {
+ 			nToCopy = dev->nDataBytesPerChunk - start;
+@@ -5501,7 +5501,7 @@
+ 		   state, sequenceNumber));
+ 
+ 		if (state == YAFFS_BLOCK_STATE_DEAD) {
+-			T(YAFFS_TRACE_BAD_BLOCKS,
++			T(YAFFS_TRACE_SCAN_DEBUG,
+ 			  (TSTR("block %d is bad" TENDSTR), blk));
+ 		} else if (state == YAFFS_BLOCK_STATE_EMPTY) {
+ 			T(YAFFS_TRACE_SCAN_DEBUG,

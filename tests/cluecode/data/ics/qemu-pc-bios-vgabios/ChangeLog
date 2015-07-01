@@ -1,0 +1,25 @@
+
+	- added PCI data structure for the Cirrus VGABIOS images
+	- added support for the PCI data structure in biossums
+	- updated year in copyright
+
+2008-01-26 11:46  vruppert
+
+	* vbe.c (1.40):
+
+	updated my email address + put vgabios url in the bios copyright string
+	(instead of my old email address)
+
+
+	  - LFB flag now stored in the register VBE_DISPI_INDEX_ENABLE -
+	  release date in Changelog fixed - release date of VBE BIOS 0.6
+	  was the same as VGA BIOS 0.3b - year changed in copyright
+	  messages
+
+	* ChangeLog (1.16), Makefile (1.7, v0_3b), vbe.c (1.22, v0_3b),
+	  vgabios.c (1.18), vgabios.h (1.3, v0_4b, v0_4a, v0_3b):
+
+	  - updated the Makefile - removed display of copyrights.  -
+	  changed the Copyright string to "LGPL VGABios developers"
+
+2002-09-08 21:14  vruppert

@@ -1,0 +1,27 @@
+--- linux-2.6.23/include/asm-sh/pgtable.h.orig	2008-10-22 16:08:10.000000000 +0200
++++ linux-2.6.23/include/asm-sh/pgtable.h	2008-10-22 15:04:47.000000000 +0200
+@@ -53,7 +53,11 @@
+ #define FIRST_USER_ADDRESS	0
+ 
+ #ifdef CONFIG_32BIT
++#ifdef CONFIG_CPU_SUBTYPE_STX7105
+ #define PHYS_ADDR_MASK		0xffffffff
++#else
++#define PHYS_ADDR_MASK		( ((ctrl_inl(MMUCR)&MMUCR_SE)==MMUCR_SE) ? 0xffffffff : 0x1fffffff )
++#endif
+ #else
+ #define PHYS_ADDR_MASK		0x1fffffff
+ #endif
+@@ -171,8 +171,11 @@
+ #define _PAGE_CLEAR_FLAGS	(_PAGE_PROTNONE | _PAGE_ACCESSED | _PAGE_FILE)
+ #endif
+ 
++#if defined(__ASSEMBLY__) && !defined(CONFIG_CPU_SUBTYPE_STX7105)
++#define _PAGE_FLAGS_HARDWARE_MASK	(~(_PAGE_CLEAR_FLAGS))
++#else
+ #define _PAGE_FLAGS_HARDWARE_MASK	(PHYS_ADDR_MASK & ~(_PAGE_CLEAR_FLAGS))
+-
++#endif
+ /* Hardware flags, page size encoding */
+ #if defined(CONFIG_X2TLB)
+ # if defined(CONFIG_PAGE_SIZE_4KB)

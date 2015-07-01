@@ -1,0 +1,21 @@
+about_resource: patches.zip
+notes: various patches obtained from multiple origins
+ http://ftp.de.debian.org/debian/pool/main/d/dnsmasq/dnsmasq_2.63-1.diff.gz
+ http://ftp.de.debian.org/debian/pool/main/d/dropbear/dropbear_2012.55-1.diff.gz
+ http://dfn.dl.sourceforge.net/project/vip19x0.motorola/ST40/KreaTV%204.1.1/kreatv-kit-oss_4.1.1_st40.tgz
+ ftp://ftp.pbone.net/mirror/packman.iu-bremen.de/suse/openSUSE_11.2/Multimedia/src/xvidcap-1.1.7-5.2.src.rpm
+ ftp://ftp.pbone.net/mirror/packman.iu-bremen.de/fedora/16/SRPMS/libmediainfo-0.7.56-0.20120416.1.fc16.src.rpm
+ ftp://ftp.pbone.net/mirror/dag.wieers.com/source/postgrey-1.30-2.rf.src.rpm
+ ftp://ftp.pbone.net/mirror/archive.fedoraproject.org/fedora/linux/core/6/source/SRPMS/ElectricFence-2.2.2-20.2.2.src.rpm
+ http://java.net/attachments/lists/opensso/code-review/2006-06/23/OpenSSO.patch
+ http://www.chrismansley.com/patches/sift.patch
+ https://issues.ametys.org/secure/attachment/10594/plugin%20explorer.patch
+ https://hibernate.onjira.com/secure/attachment/12809/resolveentity32.patch
+ http://drupal.org/files/issues/js_delete.patch
+ http://jira.xwiki.org/secure/attachment/10621/xml_rpc_addSpace.patch
+ http://drupal.org/files/issues/thumbnail_support_0.patch
+ http://drupal.org/files/issues/thumbnail_support_0.patch
+ http://lkml.indiana.edu/hypermail/linux/kernel/1001.1/01952/ether_patch_1.patch
+ http://drupal.org/files/issues/drupal_upload.patch
+ http://drupal.org/files/issues/webform-3.0-conditional_constructor_0.patch
+ 

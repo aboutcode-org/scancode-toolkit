@@ -1,0 +1,183 @@
+======================================================================
+=		Knopflerfish Notice file		    
+======================================================================
+
+Knopflerfish OSGi
+Copyright 2003-2010 The Knopflerfish Project
+http://www.knopflerfish.org
+
+This product includes software developed by the Knopflerfish Project
+as well as from other parties. Content not originating from the
+Knopflerfish Project is marked as such and belongs to respective
+copyright owners.   
+
+
+======================================================================
+=	General Notices
+======================================================================
+
+----------------------------------------------------------------------
+-	OSGi Alliance Notice
+----------------------------------------------------------------------
+This product includes the OSGi Service Platform API code from the OSGi
+Alliance provided under an Apache 2 license.
+http://www.osgi.org
+
+Copyright (c) OSGi Alliance (2000, 2009). All Rights Reserved.
+
+
+----------------------------------------------------------------------
+-	Tango base icon theme Notice
+----------------------------------------------------------------------
+This product uses icons developed by the Tango Desktop Project and 
+released to the Public Domain.
+http://tango.freedesktop.org/Tango_Desktop_Project
+
+
+----------------------------------------------------------------------
+-	ASM Notice
+----------------------------------------------------------------------
+This product includes the ASM byte code manipulation library from
+INRIA (BSD Style License)
+http://asm.ow2.org/
+
+Copyright (c) 2000-2005 INRIA, France Telecom
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holders nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+THE POSSIBILITY OF SUCH DAMAGE.
+
+
+======================================================================
+=	Bundle Specific Notices
+======================================================================
+
+----------------------------------------------------------------------
+-	Axis Bundle Notice
+----------------------------------------------------------------------
+This product includes the axis bundle which includes software
+developed by the Apache Axis project released under Apache Software
+License, Version 1.1. (c) 1999-2003.
+
+----------------------------------------------------------------------
+-	Axis 2 Bundle Notice
+----------------------------------------------------------------------
+This product includes the axis2 bundle which includes software
+developed by the Apache Axis project released under Apache Software
+License, Version 2.0. (c) 2001-2004
+
+http://ws.apache.org/axis2/
+
+----------------------------------------------------------------------
+-	Bundlerepository Bundle Notice
+----------------------------------------------------------------------
+This product includes the bundlerepository bundle which includes
+the follwing software:
+
+  OBR related softare developed by the the Oscar Project.
+
+  XML Parser software
+  Copyright (c) 2004, Didier Donsez
+
+  kxml parser
+
+----------------------------------------------------------------------
+-	Commons Loggin Bundle Notice
+----------------------------------------------------------------------
+This product includes the commons_logging bundle which includes
+software developed by the Apache Commons Logging project released
+under Apache Software License, Version 2.0. (c) 2001-2004
+http://commons.apache.org/logging/
+
+----------------------------------------------------------------------
+-	Crimson Bundle Notice
+----------------------------------------------------------------------
+This product includes the xerces bundle which includes software
+developed by the Apache Crimson project released under Apache Software
+License, Version 1.1 (c) 1999-2003.
+http://xml.apache.org/dist/LICENSE.txt
+
+----------------------------------------------------------------------
+-	JSDK Bundle Notice
+----------------------------------------------------------------------
+This product includes the jsdk bundle which includes
+software developed by the Apache Geronimo project released
+under Apache Software License, Version 2.0. (c) 2001-2004
+
+----------------------------------------------------------------------
+-	JUnit Bundle Notice
+----------------------------------------------------------------------
+This product includes the junit bundles which includes
+software developed by the JUnit project released under a Common Public
+License, Version 1.0
+http://junit.sourceforge.net/
+
+----------------------------------------------------------------------
+-	kSOAP Bundle Notice
+----------------------------------------------------------------------
+This product includes the ksoap-osgi bundles which includes software
+developed by the kSOAP project.
+http://www.ksoap.org
+
+----------------------------------------------------------------------
+-	kxml Bundle Notice
+----------------------------------------------------------------------
+This product includes the kxml bundle which includes software
+developed by Stefan Haustein provided under a BSD style license.
+http://kxml.sourceforge.net
+
+
+----------------------------------------------------------------------
+-	Oscar Shell API Bundle Notice
+----------------------------------------------------------------------
+This product includes the oscar-shell  bundle which includes
+software developed by the Oscar project.
+Copyright (c) 2004, Richard S. Hall
+
+----------------------------------------------------------------------
+-	Serial port Bundles
+----------------------------------------------------------------------
+This product includes RXTX serial library which is licensed under
+LGPL and Suns javax.comm library licensed under Suns Binary Code
+License Agreement. See osgi/bundles_opt/serial/readme.txt for more
+information.
+
+----------------------------------------------------------------------
+-	Xalan Bundle Notice
+----------------------------------------------------------------------
+This product includes the xerces bundle which includes software
+developed by the Apache Xalan project released under Apache Software
+License, Version 2.0. (c) 2001-2004
+http://xml.apache.org/xalan-j/
+
+----------------------------------------------------------------------
+-	Xerces Bundle Notice
+----------------------------------------------------------------------
+This product includes the xerces bundle which includes software
+developed by the Apache Xerces project released under Apache Software
+License, Version 2.0. (c) 2001-2004
+http://xerces.apache.org/

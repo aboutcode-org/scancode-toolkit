@@ -1,0 +1,264 @@
+
+
+
+dhcrelay(8)                                           dhcrelay(8)
+
+
+NNAAMMEE
+       dhcrelay - Dynamic Host Configuration Protocol Relay Agent
+
+SSYYNNOOPPSSIISS
+       ddhhccrreellaayy [ --pp _p_o_r_t ] [ --dd ] [ --qq ] [ --ii _i_f_0 [ ......  --ii  _i_f_N
+       ]  ]  [  --aa ] [ --AA _l_e_n_g_t_h ] [ --DD ] [ --mm _a_p_p_e_n_d | _r_e_p_l_a_c_e |
+       _f_o_r_w_a_r_d | _d_i_s_c_a_r_d ] _s_e_r_v_e_r_0 [ _._._._s_e_r_v_e_r_N ]
+
+DDEESSCCRRIIPPTTIIOONN
+       The Internet Software Consortium DHCP Relay Agent,  dhcre­
+       lay, provides a means for relaying DHCP and BOOTP requests
+       from a subnet to which no DHCP  server  is  directly  con­
+       nected to one or more DHCP servers on other subnets.
+
+OOPPEERRAATTIIOONN
+       The  DHCP  Relay  Agent listens for DHCP and BOOTP queries
+       and responses.  When a query is received  from  a  client,
+       dhcrelay forwards it to the list of DHCP servers specified
+       on the command line.  When a  reply  is  received  from  a
+       server, it is broadcast or unicast (according to the relay
+       agent's ability or the client's request)  on  the  network
+       from which the original request came.
+
+CCOOMMMMAANNDD LLIINNEE
+       The  names  of the network interfaces that dhcrelay should
+       attempt to configure may be specified on the command  line
+       using  the --ii option.  If no interface names are specified
+       on the command line dhcrelay  will  identify  all  network
+       interfaces, elimininating non-broadcast interfaces if pos­
+       sible, and attempt to configure each interface.
+
+       If a relay agent is running on a system that is  connected
+       to  one or more networks on which no DHCP servers are pre­
+       sent, and is also connected to one  or  more  networks  on
+       which DHCP servers _a_r_e connected, it is may not be helpful
+       for the relay agent to relay requests from those  networks
+       on  which  a  DHCP server already exists.  To avoid such a
+       situation, the interfaces on which the relay agent  should
+       listen should be specified with the --ii flag.
+
+       Note  that in some cases it _i_s helpful for the relay agent
+       to forward requests from networks on which a  DHCP  server
+       is running to other DHCP servers.   This would be the case
+       if two DHCP servers on different networks were being  used
+       to provide backup service for each other's networks.
+
+       If  dhcrelay  should  listen  and transmit on a port other
+       than the standard (port 67), the --pp  flag  may  used.   It
+       should  be  followed  by the udp port number that dhcrelay
+       should use.  This is mostly useful for debugging purposes.
+
+       Dhcrelay  will normally run in the foreground until it has
+       configured an interface, and then will revert  to  running
+       in the background.  To run force dhcrelay to always run as
+
+
+
+                                                                1
+
+
+
+
+
+dhcrelay(8)                                           dhcrelay(8)
+
+
+       a foreground process, the --dd  flag  should  be  specified.
+       This  is useful when running dhcrelay under a debugger, or
+       when running it out of inittab on System V systems.
+
+       Dhcrelay will normally print its network configuration  on
+       startup.   This can be annoying in a system startup script
+       - to disable this behaviour, specify the --qq flag.
+
+RREELLAAYY AAGGEENNTT IINNFFOORRMMAATTIIOONN OOPPTTIIOONNSS
+       If the --aa flag is set the relay agent will append an agent
+       option  field  to each request before forwarding it to the
+       server.   Agent  option  fields  in  responses  sent  from
+       servers to clients will be stripped before forwarding such
+       responses back to the client.
+
+       The agent option field will contain two agent options: the
+       Circuit  ID  suboption  and  the Agent ID suboption.  Cur­
+       rently, the Circuit ID will be the printable name  of  the
+       interface  on which the client request was received.   The
+       Agent ID will be the value that the relay agent stores  in
+       the  DHCP  packet's  giaddr  field.    The client supports
+       inclusion of a Remote ID suboption as well,  but  this  is
+       not used by default.
+
+       _N_o_t_e_: The Agent ID suboption is not defined in the current
+       Relay  Agent  Information  Option  draft  (draft-ietf-dhc-
+       agent-options-03.txt), but has been proposed for inclusion
+       in the next draft.
+
+       Relay Agent options are added to a DHCP packet without the
+       knowledge of the DHCP client.   The client may have filled
+       the DHCP packet option buffer completely,  in  which  case
+       there  theoretically isn't any space to add Agent options.
+       However, the DHCP server may be  able  to  handle  a  much
+       larger  packet  than  most  DHCP clients would send.   The
+       current Agent Options draft requires that the relay  agent
+       use a maximum packet size of 576 bytes.
+
+       It  is recommended that with the Internet Software Consor­
+       tium DHCP server, the maximum packet size be set to  about
+       1400,  allowing  plenty  of extra space in which the relay
+       agent can put the agent option field, while still  fitting
+       into  the Ethernet MTU size.  This can be done by specify­
+       ing the --AA flag, followed by the  desired  maximum  packet
+       size (e.g., 1400).
+
+       Note  that  this  is reasonably safe to do even if the MTU
+       between the server and the client is less  than  1500,  as
+       long  as the hosts on which the server and client are run­
+       ning support IP fragmentation  (and  they  should).   With
+       some knowledge as to how large the agent options might get
+       in a particular configuration, this parameter can be tuned
+       as finely as necessary.
+
+
+
+
+                                                                2
+
+
+
+
+
+dhcrelay(8)                                           dhcrelay(8)
+
+
+       It is possible for a relay agent to receive a packet which
+       already contains an agent option field.   If  this  packet
+       does not have a giaddr set, the standard requires that the
+       packet be discarded.
+
+       If giaddr is set, the server may handle the  situation  in
+       one  of  four  ways:  it  may  _a_p_p_e_n_d its own set of relay
+       options to the packet, leaving the supplied  option  field
+       intact.    It may _r_e_p_l_a_c_e the existing agent option field.
+       It may _f_o_r_w_a_r_d the packet unchanged.   Or, it may  _d_i_s_c_a_r_d
+       it.
+
+       Which  of  these  behaviours  is  followed by the Internet
+       Software Consortium DHCP Relay  Agent  may  be  configured
+       with  the  --mm  flag,  followed by one of the four keywords
+       specified in _i_t_a_l_i_c_s above.
+
+       When the relay agent receives a reply from a  server  that
+       it's  supposed  to  forward  to  a client, and Relay Agent
+       Information option processing is enabled, the relay  agent
+       scans  the  packet for Relay Agent Information options and
+       removes them.   As it's scanning,  if  it  finds  a  Relay
+       Agent Information option field containing an Agent ID sub­
+       option that matches one of its IP addresses,  that  option
+       is  recognized  as  its own.   If no such option is found,
+       the relay agent can either drop the packet,  or  relay  it
+       anyway.    If the --DD option is specified, all packets that
+       don't contain a match will be dropped.
+
+SSPPEECCIIFFYYIINNGG DDHHCCPP SSEERRVVEERRSS
+       The name or IP address of at  least  one  DHCP  server  to
+       which  DHCP  and  BOOTP requests should be relayed must be
+       specified on the command line.
+
+SSEEEE AALLSSOO
+       dhclient(8), dhcpd(8), RFC2132,  RFC2131,  draft-ietf-dhc-
+       agent-options-03.txt.
+
+BBUUGGSS
+       It  should  be possible for the user to define the Circuit
+       ID and Remote ID values on a per-interface basis.
+
+       The relay agent should not relay  packets  received  on  a
+       physical network to DHCP servers on the same physical net­
+       work - if they do, the server will receive duplicate pack­
+       ets.    In  order  to  fix  this, however, the relay agent
+       needs to be able to  learn  about  the  network  topology,
+       which requires that it have a configuration file.
+
+AAUUTTHHOORR
+       ddhhccrreellaayy((88))  has  been  written  for the Internet Software
+       Consortium by Ted Lemon <mellon@fugue.com> in  cooperation
+       with  Vixie Enterprises.  To learn more about the Internet
+       Software Consortium, see hhttttpp::////wwwwww..vviixx..ccoomm//iisscc..  To learn
+
+
+
+                                                                3
+
+
+
+
+
+dhcrelay(8)                                           dhcrelay(8)
+
+
+       more about Vixie Enterprises, see hhttttpp::////wwwwww..vviixx..ccoomm..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                4
+
+

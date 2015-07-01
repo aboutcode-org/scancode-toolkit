@@ -1,0 +1,6 @@
+      VALUE "OriginalFilename",	"zlib.dll\0"
+      VALUE "ProductName",	"ZLib.DLL\0"
+      VALUE "Comments","DLL support by Alessandro Iacopetti & Gilles Vollant\0"
+      VALUE "LegalCopyright", "(C) 1995-2010 Jean-loup Gailly & Mark Adler\0"
+    END
+  END

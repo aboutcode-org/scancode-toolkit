@@ -1,0 +1,14 @@
+key: sun-sissl-1.2
+short_name: >-
+    Sun Industry Standards Source License 1.2
+name: >-
+    Sun Industry Standards Source License 1.2
+category: Proprietary Free
+owner: Oracle (Sun)
+homepage_url: http://gridscheduler.sourceforge.net/Gridengine_SISSL_license.html
+spdx_license_key: SISSL-1.2
+spdx_full_name: >-
+    Sun Industry Standards Source License v1.2
+spdx_url: http://spdx.org/licenses/SISSL-1.2
+text_urls:
+    - http://gridscheduler.sourceforge.net/Gridengine_SISSL_license.html

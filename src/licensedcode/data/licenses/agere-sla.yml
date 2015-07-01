@@ -1,0 +1,8 @@
+key: agere-sla
+short_name: Agere WindModem EULA
+name: Agere Systems WinModem EULA
+category: Proprietary Free
+owner: LSI Corporation
+homepage_url: http://fedoraproject.org/wiki/Licensing/Agere_LT_Modem_Driver_License
+text_urls:
+    - http://fedoraproject.org/wiki/Licensing/Agere_LT_Modem_Driver_License

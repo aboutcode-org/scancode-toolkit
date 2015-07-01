@@ -1,0 +1,7 @@
+key: jboss-eula
+short_name: JBoss EULA
+name: JBoss EULA
+category: Proprietary Free
+owner: JBoss Community
+text_urls:
+    - http://repository.jboss.org/licenses/jbossorg-eula.txt

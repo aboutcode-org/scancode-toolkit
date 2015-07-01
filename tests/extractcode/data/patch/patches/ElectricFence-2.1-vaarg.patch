@@ -1,0 +1,11 @@
+--- ElectricFence-2.1/print.c.jj	Thu Jan 19 23:54:26 1995
++++ ElectricFence-2.1/print.c	Tue May 16 07:43:45 2000
+@@ -99,7 +99,7 @@ vprint(const char * pattern, va_list arg
+ 				break;
+ 			case 'c':
+ 				{
+-					char	c = va_arg(args, char);
++					char	c = va_arg(args, int);
+ 					
+ 					(void) write(2, &c, 1);
+ 				}

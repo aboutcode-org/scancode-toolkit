@@ -1,0 +1,722 @@
+Index: udhcp-0.9.8/dhcpc.c
+===================================================================
+--- udhcp-0.9.8.orig/dhcpc.c
++++ udhcp-0.9.8/dhcpc.c
+@@ -1,3 +1,4 @@
++/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
+ /* dhcpc.c
+  *
+  * udhcp DHCP client
+@@ -23,6 +24,7 @@
+ #include <sys/time.h>
+ #include <sys/types.h>
+ #include <sys/file.h>
++#include <sys/sysinfo.h>
+ #include <unistd.h>
+ #include <getopt.h>
+ #include <stdlib.h>
+@@ -35,6 +37,8 @@
+ #include <sys/ioctl.h>
+ #include <net/if.h>
+ #include <errno.h>
++#include <netdb.h>
++#include <arpa/inet.h>
+ 
+ #include "dhcpd.h"
+ #include "dhcpc.h"
+@@ -45,9 +49,10 @@
+ #include "socket.h"
+ #include "debug.h"
+ #include "pidfile.h"
++#include "arpping.h"
+ 
+ static int state;
+-static unsigned long requested_ip; /* = 0 */
++static unsigned long requested_ip = 0;
+ static unsigned long server_addr;
+ static unsigned long timeout;
+ static int packet_num; /* = 0 */
+@@ -59,11 +64,19 @@ static int signal_pipe[2];
+ #define LISTEN_RAW 2
+ static int listen_mode;
+ 
+-#define DEFAULT_SCRIPT	"/usr/share/udhcpc/default.script"
++#define DEFAULT_SCRIPT	"/etc/udhcpc.script"
++
++#define EXIT_CODE_FAILED_DISCOVER 100
++#define EXIT_CODE_FAILED_REQUEST 101
++#define EXIT_CODE_EXPIRED_LEASE 102
+ 
+ struct client_config_t client_config = {
+ 	/* Default options. */
+ 	abort_if_no_lease: 0,
++        abort_if_failed_request: 0,
++        abort_if_expired_lease: 0,
++        no_deconfig_on_expire: 0,
++        process_zero_source_packet: 0,
+ 	foreground: 0,
+ 	quit_after_lease: 0,
+ 	background_if_no_lease: 0,
+@@ -71,36 +84,63 @@ struct client_config_t client_config = {
+ 	pidfile: NULL,
+ 	script: DEFAULT_SCRIPT,
+ 	clientid: NULL,
++        userclientid: NULL,
+ 	hostname: NULL,
+ 	ifindex: 0,
++        start_init_reboot: 0,
++        start_renew: 0,
++        address_renewal_behaviour: 0,
++        leasetime: 0,
+ 	arp: "\0\0\0\0\0\0",		/* appease gcc-3.0 */
+ };
+ 
+ #ifndef BB_VER
+ static void show_usage(void)
+ {
+-	printf(
++	fprintf(stdout,
+ "Usage: udhcpc [OPTIONS]\n\n"
+-"  -c, --clientid=CLIENTID         Client identifier\n"
+-"  -H, --hostname=HOSTNAME         Client hostname\n"
+-"  -h                              Alias for -H\n"
+-"  -f, --foreground                Do not fork after getting lease\n"
+-"  -b, --background                Fork to background if lease cannot be\n"
+-"                                  immediately negotiated.\n"
+-"  -i, --interface=INTERFACE       Interface to use (default: eth0)\n"
+-"  -n, --now                       Exit with failure if lease cannot be\n"
+-"                                  immediately negotiated.\n"
+-"  -p, --pidfile=file              Store process ID of daemon in file\n"
+-"  -q, --quit                      Quit after obtaining lease\n"
+-"  -r, --request=IP                IP address to request (default: none)\n"
+-"  -s, --script=file               Run file at dhcp events (default:\n"
+-"                                  " DEFAULT_SCRIPT ")\n"
+-"  -v, --version                   Display version\n"
+-	);
++"  -c, --clientid=CLIENTID          Client identifier\n"
++"  -u, --userclientid=USER_ID       User Class identifier\n"
++"  -H, --hostname=HOSTNAME          Client hostname\n"
++"  -h                               Alias for -H\n"
++"  -f, --foreground                 Do not fork after getting lease\n"
++"  -b, --background                 Fork to background if lease cannot be\n"
++"                                   immediately negotiated.\n"
++"  -i, --interface=INTERFACE        Interface to use (default: eth0)\n"
++"  -n, --exit-on-failed-discover    Exit with failure code %d if lease cannot\n"
++"                                   be immediately negotiated.\n"
++"  -p, --pidfile=file               Store process ID of daemon in file\n"
++"  -q, --quit                       Quit after obtaining lease\n"
++"  -r, --request=IP                 IP address to request (default: none)\n"
++"  -l, --leasetime=TIME             IP address to request (default: none)\n"
++"  -s, --script=file                Run file at dhcp events (default:\n"
++"                                   " DEFAULT_SCRIPT ")\n"
++"  -v, --version                    Display version\n"
++"  -e                               Start in INIT-REBOOT state\n"
++"  -w, --renew=DHCPSERVER           Start with renewing lease, instead of\n"
++"                                   discover\n"
++"                                   Requires IP address of DHCP server\n"
++"      --exit-on-failed-request     Exit with failure code %d if request fails\n"
++"      --exit-on-expired-lease      Exit with failure code %d if lease expires\n"
++"      --no-deconfig-on-expire      Do not run deconfig script when lease\n"
++"                                   expires\n"
++"      --process-zero-source-packet Process ACKs with zero source IP-address.\n"
++"                                   This is a compatibility option for certain\n"
++"                                   DHCP relay agents, and is disabled by\n"
++"                                   default because it makes DoS attacks\n"
++"                                   easier.\n",
++                EXIT_CODE_FAILED_DISCOVER, EXIT_CODE_FAILED_REQUEST,
++                EXIT_CODE_EXPIRED_LEASE);
+ 	exit(0);
+ }
+ #endif
+ 
++long uptime(void)
++{
++        struct sysinfo info;
++        sysinfo(&info);
++        return info.uptime;
++}
+ 
+ /* just a little helper */
+ static void change_mode(int new_mode)
+@@ -132,6 +172,7 @@ static void perform_renew(void)
+ 		state = INIT_SELECTING;
+ 		break;
+ 	case INIT_SELECTING:
++                break;
+ 	}
+ 
+ 	/* start things over */
+@@ -155,7 +196,10 @@ static void perform_release(void)
+ 		temp_addr.s_addr = requested_ip;
+ 		LOG(LOG_INFO, "Unicasting a release of %s to %s", 
+ 				inet_ntoa(temp_addr), buffer);
+-		send_release(server_addr, requested_ip); /* unicast */
++                if (send_release(server_addr, requested_ip) == -1) { /* unicast */
++                        LOG(LOG_WARNING, "Unable to send DHCPRELEASE - %s",
++                            strerror(errno));
++                }
+ 		run_script(NULL, "deconfig");
+ 	}
+ 	LOG(LOG_INFO, "Entering released state");
+@@ -169,6 +213,7 @@ static void perform_release(void)
+ /* Exit and cleanup */
+ static void exit_client(int retval)
+ {
++        LOG(LOG_INFO, "Exiting with code %d", retval);
+ 	pidfile_delete(client_config.pidfile);
+ 	CLOSE_LOG();
+ 	exit(retval);
+@@ -199,7 +244,6 @@ static void background(void)
+ 	pidfile_write_release(pid_fd);
+ }
+ 
+-
+ #ifdef COMBINED_BINARY
+ int udhcpc_main(int argc, char *argv[])
+ #else
+@@ -208,7 +252,7 @@ int main(int argc, char *argv[])
+ {
+ 	unsigned char *temp, *message;
+ 	unsigned long t1 = 0, t2 = 0, xid = 0;
+-	unsigned long start = 0, lease;
++	unsigned long start = 0, lease = 0;
+ 	fd_set rfds;
+ 	int retval;
+ 	struct timeval tv;
+@@ -216,23 +260,33 @@ int main(int argc, char *argv[])
+ 	struct dhcpMessage packet;
+ 	struct in_addr temp_addr;
+ 	int pid_fd;
+-	time_t now;
++	long now;
+ 	int max_fd;
+ 	int sig;
++       int numOfDiscoverMsg = 0;
++	int arpret;
+ 
+ 	static struct option arg_options[] = {
+ 		{"clientid",	required_argument,	0, 'c'},
++		{"userclientid", required_argument,	0, 'u'},
+ 		{"foreground",	no_argument,		0, 'f'},
+ 		{"background",	no_argument,		0, 'b'},
+ 		{"hostname",	required_argument,	0, 'H'},
+ 		{"hostname",    required_argument,      0, 'h'},
+ 		{"interface",	required_argument,	0, 'i'},
+-		{"now", 	no_argument,		0, 'n'},
++		{"exit-on-failed-discover", no_argument,0, 'n'},
+ 		{"pidfile",	required_argument,	0, 'p'},
+ 		{"quit",	no_argument,		0, 'q'},
+ 		{"request",	required_argument,	0, 'r'},
++                {"leasetime",	required_argument,	0, 'l'},
+ 		{"script",	required_argument,	0, 's'},
+ 		{"version",	no_argument,		0, 'v'},
++                {"init-reboot",	no_argument,		0, 'e'},      
++		{"renew",	required_argument,	0, 'w'},
++                {"exit-on-failed-request", no_argument, 0, 10},
++                {"exit-on-expired-lease", no_argument,  0, 11},
++                {"no-deconfig-on-expire", no_argument,  0, 12},
++                {"process-zero-source-packet", no_argument,  0, 13},
+ 		{"help",	no_argument,		0, '?'},
+ 		{0, 0, 0, 0}
+ 	};
+@@ -240,19 +294,47 @@ int main(int argc, char *argv[])
+ 	/* get options */
+ 	while (1) {
+ 		int option_index = 0;
+-		c = getopt_long(argc, argv, "c:fbH:h:i:np:qr:s:v", arg_options, &option_index);
++                c = getopt_long(argc, argv, "c:u:fbH:h:i:l:np:qr:s:vew:z", arg_options, &option_index);
+ 		if (c == -1) break;
+ 		
+ 		switch (c) {
++                case 10:
++                        LOG(LOG_INFO, "Will abort if request fails.");
++                        client_config.abort_if_failed_request = 1;
++                        break;
++                case 11:
++                        LOG(LOG_INFO, "Will abort if lease expires.");
++                        client_config.abort_if_expired_lease = 1;
++                        break;
++                case 12:
++                        LOG(LOG_INFO, "Will not run deconfig script when lease expires.");
++                        client_config.no_deconfig_on_expire = 1;
++                        break;
++                case 13:
++                        LOG(LOG_INFO, "WARNING: Will process zero source packets!");
++                        client_config.process_zero_source_packet = 1;
++                        break;
+ 		case 'c':
+ 			len = strlen(optarg) > 255 ? 255 : strlen(optarg);
+ 			if (client_config.clientid) free(client_config.clientid);
+ 			client_config.clientid = xmalloc(len + 2);
++#ifdef KBOX
++			client_config.clientid[OPT_CODE] = DHCP_VENDOR;
++#else
+ 			client_config.clientid[OPT_CODE] = DHCP_CLIENT_ID;
++#endif
+ 			client_config.clientid[OPT_LEN] = len;
+ 			client_config.clientid[OPT_DATA] = '\0';
+ 			strncpy(client_config.clientid + OPT_DATA, optarg, len);
+ 			break;
++		case 'u':
++			len = strlen(optarg) > 255 ? 255 : strlen(optarg);
++			if (client_config.userclientid) free(client_config.userclientid);
++			client_config.userclientid = xmalloc(len + 2);
++			client_config.userclientid[OPT_CODE] = DHCP_USER_CLASS_ID;
++			client_config.userclientid[OPT_LEN] = len;
++			strncpy(client_config.userclientid + OPT_DATA, optarg, len);
++			break;
+ 		case 'f':
+ 			client_config.foreground = 1;
+ 			break;
+@@ -272,6 +354,7 @@ int main(int argc, char *argv[])
+ 			client_config.interface =  optarg;
+ 			break;
+ 		case 'n':
++                        LOG(LOG_INFO, "Will abort if discover fails.");
+ 			client_config.abort_if_no_lease = 1;
+ 			break;
+ 		case 'p':
+@@ -283,6 +366,9 @@ int main(int argc, char *argv[])
+ 		case 'r':
+ 			requested_ip = inet_addr(optarg);
+ 			break;
++                case 'l':
++			client_config.leasetime = htonl(atoi(optarg));
++			break;
+ 		case 's':
+ 			client_config.script = optarg;
+ 			break;
+@@ -290,6 +376,27 @@ int main(int argc, char *argv[])
+ 			printf("udhcpcd, version %s\n\n", VERSION);
+ 			exit_client(0);
+ 			break;
++                case 'e':
++                        client_config.start_init_reboot = 1;
++                        break;
++                case 'w':
++                        {
++                                server_addr = inet_addr(optarg);
++                                DEBUG(LOG_DEBUG, "Server address: %s (%lx)", optarg, server_addr);
++                                if (server_addr == INADDR_NONE) {
++                                        LOG(LOG_WARNING, "Unable to parse DHCP server address.");
++                                        server_addr = 0;
++                                }
++                                else if (server_addr == 0) {
++                                        client_config.start_renew = 1;
++                                        LOG(LOG_INFO, "Server address zero. Going to renew state, but broadcast instead of unicast.");
++                                }
++                                else {
++                                        client_config.start_renew = 1;
++                                        LOG(LOG_INFO, "Using DHCP server %s", optarg);
++                                }
++                        }
++                        break;
+ 		default:
+ 			show_usage();
+ 		}
+@@ -301,8 +408,16 @@ int main(int argc, char *argv[])
+ 	pid_fd = pidfile_acquire(client_config.pidfile);
+ 	pidfile_write_release(pid_fd);
+ 
++        unsigned long* addr = NULL;
++        
++#ifdef KBOX
++        // Leaving this for now
++        if (requested_ip == 0) {
++          addr = &requested_ip;
++        }
++#endif  // KBOX
+ 	if (read_interface(client_config.interface, &client_config.ifindex, 
+-			   NULL, client_config.arp) < 0)
++			   &addr, client_config.arp) < 0)
+ 		exit_client(1);
+ 		
+ 	if (!client_config.clientid) {
+@@ -317,15 +432,54 @@ int main(int argc, char *argv[])
+ 	socketpair(AF_UNIX, SOCK_STREAM, 0, signal_pipe);
+ 	signal(SIGUSR1, signal_handler);
+ 	signal(SIGUSR2, signal_handler);
++#ifdef KBOX
++	signal(SIGHUP, signal_handler);
++#endif
+ 	signal(SIGTERM, signal_handler);
+ 	
+-	state = INIT_SELECTING;
+-	run_script(NULL, "deconfig");
+-	change_mode(LISTEN_RAW);
++        if (client_config.start_init_reboot && client_config.start_renew) {
++                LOG(LOG_ERR, "Can not use both -e and -w at the same time");
++                exit_client(0);
++        }
++        
++        if (client_config.start_init_reboot || client_config.start_renew) {
++                char hostname[128];
++                gethostname(hostname, sizeof(hostname));
++                struct hostent* he = gethostbyname(hostname);
++                struct in_addr* ia = (struct in_addr*)he->h_addr;
++                requested_ip = ia->s_addr;
++        }
++
++        if (client_config.start_renew) {
++                state = RENEWING;
++                xid = random_xid();
++                lease = 60;
++                start = uptime();
++                t1 = lease / 2;
++                t2 = (lease * 0x7) >> 3;
++                DEBUG(LOG_DEBUG, "Setting state RENEWING. xid=%lx", xid);
++                if (client_config.process_zero_source_packet) {
++                        change_mode(LISTEN_RAW);
++                } else {
++                        change_mode(LISTEN_KERNEL);
++                }
++                run_script(NULL, "prerenew");
++        }
++        else if (client_config.start_init_reboot) {
++                state = INIT_REBOOTING;
++                change_mode(LISTEN_RAW);
++                LOG(LOG_INFO, "Setting state INIT_REBOOTING.");
++        }
++        else {
++                state = INIT_SELECTING;
++                change_mode(LISTEN_RAW);
++        }
++
++        timeout = uptime() - 10;
+ 
+ 	for (;;) {
+ 
+-		tv.tv_sec = timeout - time(0);
++		tv.tv_sec = timeout - uptime();
+ 		tv.tv_usec = 0;
+ 		FD_ZERO(&rfds);
+ 
+@@ -348,10 +502,33 @@ int main(int argc, char *argv[])
+ 			retval = select(max_fd + 1, &rfds, NULL, NULL, &tv);
+ 		} else retval = 0; /* If we already timed out, fall through */
+ 
+-		now = time(0);
++		now = uptime();
+ 		if (retval == 0) {
+ 			/* timeout dropped to zero */
+ 			switch (state) {
++                        case INIT_REBOOTING:
++                                if (packet_num < 3) {
++                                        if (packet_num == 0)
++                                                xid = random_xid();
++                                        
++                                        /* send request packet */
++                                        send_selecting(xid, 0, requested_ip); /* broadcast */
++                                        LOG(LOG_DEBUG, "DHCP: Sent renew from INIT-REBOOT (%d/3)", packet_num + 1);
++                                        timeout = now + ((packet_num == 2) ? 10 : 2);
++                                        packet_num++;
++                                } else {
++                                        /* timed out. exit or go to init state? */
++                                        if (client_config.abort_if_failed_request) {
++                                                LOG(LOG_INFO, "No lease after %d request attempts, exiting.", packet_num);
++                                                exit_client(EXIT_CODE_FAILED_REQUEST);
++                                        }
++                                        /* go back to init state */
++                                        state = INIT_SELECTING;
++                                        timeout = now;
++                                        packet_num = 0;
++                                        change_mode(LISTEN_RAW);
++                                }
++                                break;
+ 			case INIT_SELECTING:
+ 				if (packet_num < 3) {
+ 					if (packet_num == 0)
+@@ -359,17 +536,25 @@ int main(int argc, char *argv[])
+ 
+ 					/* send discover packet */
+ 					send_discover(xid, requested_ip); /* broadcast */
++                                        LOG(LOG_DEBUG, "DHCP: Sent discover (%d/3)", packet_num + 1);
+ 					
+ 					timeout = now + ((packet_num == 2) ? 4 : 2);
+ 					packet_num++;
++          if(numOfDiscoverMsg >= 0)
++            numOfDiscoverMsg++;
+ 				} else {
+ 					if (client_config.background_if_no_lease) {
+-						LOG(LOG_INFO, "No lease, forking to background.");
++						LOG(LOG_INFO, "No lease after %d discover attempts, forking to background.", packet_num);
+ 						background();
+ 					} else if (client_config.abort_if_no_lease) {
+-						LOG(LOG_INFO, "No lease, failing.");
+-						exit_client(1);
++                                                LOG(LOG_INFO, "No lease after %d discover attempts, exiting.", packet_num);
++						exit_client(EXIT_CODE_FAILED_DISCOVER);
+ 				  	}
++          if(numOfDiscoverMsg >= 3){
++            run_script(NULL, "deconfig");
++            numOfDiscoverMsg = -1;
++          }
++          
+ 					/* wait to try again */
+ 					packet_num = 0;
+ 					timeout = now + 60;
+@@ -378,15 +563,24 @@ int main(int argc, char *argv[])
+ 			case RENEW_REQUESTED:
+ 			case REQUESTING:
+ 				if (packet_num < 3) {
+-					/* send request packet */
+-					if (state == RENEW_REQUESTED)
++                                        /* send request packet */
++					if (state == RENEW_REQUESTED) {
+ 						send_renew(xid, server_addr, requested_ip); /* unicast */
+-					else send_selecting(xid, server_addr, requested_ip); /* broadcast */
++                                                LOG(LOG_DEBUG, "DHCP: Sent renew (%d/3)", packet_num + 1);
++                                        } else {
++                                                send_selecting(xid, server_addr, requested_ip); /* broadcast */
++                                                LOG(LOG_DEBUG, "DHCP: Sent request (%d/3)", packet_num + 1);
++                                        }
+ 					
+ 					timeout = now + ((packet_num == 2) ? 10 : 2);
+ 					packet_num++;
+ 				} else {
+-					/* timed out, go back to init state */
++                                        /* timed out. exit or go to init state? */
++                                        if (client_config.abort_if_failed_request) {
++                                                LOG(LOG_INFO, "No lease after %d request attempts, exiting.", packet_num);
++                                                exit_client(EXIT_CODE_FAILED_REQUEST);
++                                        }
++					/* go back to init state */
+ 					if (state == RENEW_REQUESTED) run_script(NULL, "deconfig");
+ 					state = INIT_SELECTING;
+ 					timeout = now;
+@@ -397,37 +591,62 @@ int main(int argc, char *argv[])
+ 			case BOUND:
+ 				/* Lease is starting to run out, time to enter renewing state */
+ 				state = RENEWING;
+-				change_mode(LISTEN_KERNEL);
++                                if (client_config.process_zero_source_packet) {
++                                        change_mode(LISTEN_RAW);
++                                } else {
++                                        change_mode(LISTEN_KERNEL);
++                                }                                
+ 				DEBUG(LOG_INFO, "Entering renew state");
+ 				/* fall right through */
+ 			case RENEWING:
+-				/* Either set a new T1, or enter REBINDING state */
+-				if ((t2 - t1) <= (lease / 14400 + 1)) {
+-					/* timed out, enter rebinding state */
+-					state = REBINDING;
+-					timeout = now + (t2 - t1);
+-					DEBUG(LOG_INFO, "Entering rebinding state");
+-				} else {
+-					/* send a request packet */
+-					send_renew(xid, server_addr, requested_ip); /* unicast */
+-					
+-					t1 = (t2 - t1) / 2 + t1;
+-					timeout = t1 + start;
++                                run_script(NULL, "prerenew");
++                                if (client_config.address_renewal_behaviour) {
++                                        LOG(LOG_DEBUG, "Sending DHCPRELEASE now since MYRIO.address_renewal_behaviour = 1");
++                                        perform_release();
++                                        run_script(NULL, "deconfig");
++					state = INIT_SELECTING;
++					timeout = now;
++					requested_ip = 0;
++					packet_num = 0;
++					change_mode(LISTEN_RAW);
++					sleep(3); /* avoid excessive network traffic */
++                                } else {
++                                        /* Either set a new T1, or enter REBINDING state */
++                                        if ((t2 - t1) <= (lease / 14400 + 1)) {
++                                                /* timed out, enter rebinding state */
++                                                state = REBINDING;
++                                                timeout = now + (t2 - t1);
++                                                DEBUG(LOG_INFO, "Entering rebinding state");
++                                        } else {
++                                                /* send a request packet */
++                                                send_renew(xid, server_addr, requested_ip); /* unicast */
++                                                LOG(LOG_DEBUG, "DHCP: Sent unicast renew");
++                                                                                                
++                                                t1 = (t2 - t1) / 2 + t1;
++                                                timeout = t1 + start;
++                                        }
+ 				}
+ 				break;
+ 			case REBINDING:
+ 				/* Either set a new T2, or enter INIT state */
+ 				if ((lease - t2) <= (lease / 14400 + 1)) {
+-					/* timed out, enter init state */
+-					state = INIT_SELECTING;
+-					LOG(LOG_INFO, "Lease lost, entering init state");
+-					run_script(NULL, "deconfig");
+-					timeout = now;
++                                        if (!client_config.no_deconfig_on_expire) {
++                                                run_script(NULL, "deconfig");
++                                        }
++                                        if (client_config.abort_if_expired_lease) {
++                                                LOG(LOG_INFO, "Lease lost, exiting.");
++                                                exit_client(EXIT_CODE_EXPIRED_LEASE);
++                                        }
++                                        /* timed out, enter init state */
++                                        state = INIT_SELECTING;
++                                        LOG(LOG_INFO, "Lease lost, entering init state");
++                                        timeout = now;
+ 					packet_num = 0;
+ 					change_mode(LISTEN_RAW);
+ 				} else {
+ 					/* send a request packet */
+ 					send_renew(xid, 0, requested_ip); /* broadcast */
++                                        LOG(LOG_DEBUG, "DHCP: Sent broadcast renew");
+ 
+ 					t2 = (lease - t2) / 2 + t2;
+ 					timeout = t2 + start;
+@@ -468,6 +687,8 @@ int main(int argc, char *argv[])
+ 				if (*message == DHCPOFFER) {
+ 					if ((temp = get_option(&packet, DHCP_SERVER_ID))) {
+ 						memcpy(&server_addr, temp, 4);
++                                                temp_addr.s_addr = server_addr;
++                                                DEBUG(LOG_INFO, "Server ID %s retrieved from DHCPOFFER", inet_ntoa(temp_addr));
+ 						xid = packet.xid;
+ 						requested_ip = packet.yiaddr;
+ 						
+@@ -476,15 +697,45 @@ int main(int argc, char *argv[])
+ 						timeout = now;
+ 						packet_num = 0;
+ 					} else {
+-						DEBUG(LOG_ERR, "No server ID in message");
++						DEBUG(LOG_ERR, "No server ID in DHCPOFFER");
++					}
++					unsigned char* option125= get_option(&packet, DHCP_VENDOR_SPECIFIC);
++					if(option125){
++						parse_gatewayidentity(option125);
+ 					}
+ 				}
+ 				break;
++                        case INIT_REBOOTING:
+ 			case RENEW_REQUESTED:
+ 			case REQUESTING:
+ 			case RENEWING:
+ 			case REBINDING:
+ 				if (*message == DHCPACK) {
++                                        unsigned char* option43 = get_option(&packet, DHCP_VENDOR_INFORMATION);
++                                        if (option43) {
++                                                int i = 0;
++                                                // This operation is safe since get_option returns (unsigned char*) p + 2.
++                                                int option43_len = *(option43-1); 
++                                                if ((*(option43) >= '0') &&
++                                                    (*(option43) <= '9')) {
++                                                        // This is a IP-address. Classic style DHCP.
++                                                        option43_len = 0;
++                                                }
++                                                unsigned char *foo = xmalloc(option43_len + 1);
++                                                memset(foo, 0, option43_len);
++                                                strncpy(foo, option43, option43_len);
++                                                i = 0;
++                                                while (i < option43_len) {
++                                                        if (*(option43 + i) == 100) { /* As in hw/common.h. */
++                                                                client_config.address_renewal_behaviour = *(option43 + i + 2);
++                                                                LOG(LOG_INFO, "address_renewal_behaviour = %d", 
++                                                                      client_config.address_renewal_behaviour);
++                                                                break;
++                                                        } else {
++                                                                i += *(option43 + 1 + i) + 2;
++                                                        }
++                                                }
++                                        }
+ 					if (!(temp = get_option(&packet, DHCP_LEASE_TIME))) {
+ 						LOG(LOG_ERR, "No lease time with ACK, using 1 hour lease");
+ 						lease = 60 * 60;
+@@ -492,9 +743,17 @@ int main(int argc, char *argv[])
+ 						memcpy(&lease, temp, 4);
+ 						lease = ntohl(lease);
+ 					}
++
++					unsigned char* option125= get_option(&packet, DHCP_VENDOR_SPECIFIC);
++					if(option125){
++						parse_gatewayidentity(option125);
++					}
+ 						
+ 					/* enter bound state */
+ 					t1 = lease / 2;
++                                        if (client_config.leasetime > 0) {
++                                                client_config.leasetime = htonl(lease);
++                                        }
+ 					
+ 					/* little fixed point for n * .875 */
+ 					t2 = (lease * 0x7) >> 3;
+@@ -506,43 +765,74 @@ int main(int argc, char *argv[])
+ 					requested_ip = packet.yiaddr;
+ 					run_script(&packet,
+ 						   ((state == RENEWING || state == REBINDING) ? "renew" : "bound"));
++                                        run_script(NULL, "postrenew");
+ 
+ 					state = BOUND;
+-					change_mode(LISTEN_NONE);
++                                        change_mode(LISTEN_KERNEL);
+ 					if (client_config.quit_after_lease) 
+ 						exit_client(0);
+ 					if (!client_config.foreground)
+ 						background();
+ 
++					// After the client receives a lease from the DHCP server, it will send an ARP for
++					// the IP address it has been assigned. If any other client replies to that ARP,
++					// the address is already in use. In this case,the client will issue a DHCP DECLINE to the DHCP server.
++					arpret = arpping(requested_ip, requested_ip, client_config.arp, client_config.interface);
++					LOG(LOG_INFO, "arpping, req ip:%s, ret:%d", inet_ntoa(temp_addr), arpret);//liuhf
++					if(arpret == 0){
++						send_decline(packet.xid, server_addr, requested_ip);
++						LOG(LOG_INFO, "send_decline, xid:%ld", packet.xid);//liuhf
++						run_script(NULL, "deconfig");
++						state = INIT_SELECTING;
++						timeout = now;
++						requested_ip = 0;
++						packet_num = 0;
++						change_mode(LISTEN_RAW);
++						sleep(10); /* The client should wait a
++      minimum of ten seconds before restarting the configuration process
++      to avoid excessive network traffic in case of looping. see RFC 1531 */
++					}
+ 				} else if (*message == DHCPNAK) {
+ 					/* return to init state */
+ 					LOG(LOG_INFO, "Received DHCP NAK");
+ 					run_script(&packet, "nak");
+-					if (state != REQUESTING)
+-						run_script(NULL, "deconfig");
++					run_script(NULL, "deconfig");
+ 					state = INIT_SELECTING;
+ 					timeout = now;
+ 					requested_ip = 0;
+ 					packet_num = 0;
+ 					change_mode(LISTEN_RAW);
+ 					sleep(3); /* avoid excessive network traffic */
+-				}
++				} 
++                        case BOUND:
++                                if (*message == DHCPFORCERENEW) {
++                                        LOG(LOG_INFO, "Received DHCP FORCERENEW");
++                                        run_script(NULL, "prerenew");
++                                        perform_renew();
++                                }
+ 				break;
+-			/* case BOUND, RELEASED: - ignore all packets */
++			/* case RELEASED: - ignore all packets */
+ 			}	
+ 		} else if (retval > 0 && FD_ISSET(signal_pipe[0], &rfds)) {
+-			if (read(signal_pipe[0], &sig, sizeof(signal)) < 0) {
++			if (read(signal_pipe[0], &sig, sizeof(sig)) < 0) {
+ 				DEBUG(LOG_ERR, "Could not read signal: %s", 
+ 					strerror(errno));
+ 				continue; /* probably just EINTR */
+ 			}
+ 			switch (sig) {
+ 			case SIGUSR1: 
++                                run_script(NULL, "prerenew");
+ 				perform_renew();
+ 				break;
+ 			case SIGUSR2:
+ 				perform_release();
+ 				break;
++#ifdef KBOX
++			case SIGHUP:
++				LOG(LOG_INFO, "Received SIGHUP");
++				exit_client(0);
++				break;
++#endif
+ 			case SIGTERM:
+ 				LOG(LOG_INFO, "Received SIGTERM");
+ 				exit_client(0);

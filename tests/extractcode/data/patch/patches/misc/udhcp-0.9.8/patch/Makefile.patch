@@ -1,0 +1,56 @@
+--- udhcp-0.9.8.orig/Makefile	2002-11-01 02:46:43.000000000 +0800
++++ udhcp-0.9.8/Makefile	2009-07-28 13:23:40.000000000 +0800
+@@ -14,11 +14,11 @@
+ #DEBUG=1
+ 
+ # Uncomment this to output messages to syslog, otherwise, messages go to stdout
+-CFLAGS += -DSYSLOG
++#CFLAGS += -DSYSLOG
+ 
+ #CROSS_COMPILE=arm-uclibc-
+-CC = $(CROSS_COMPILE)gcc
+-LD = $(CROSS_COMPILE)gcc
++#CC = $(CROSS_COMPILE)gcc
++#LD = $(CROSS_COMPILE)gcc
+ INSTALL = install
+ 
+ VER := 0.9.8
+@@ -26,7 +26,8 @@
+ 
+ OBJS_SHARED = options.o socket.o packet.o pidfile.o
+ DHCPD_OBJS = dhcpd.o arpping.o files.o leases.o serverpacket.o
+-DHCPC_OBJS = dhcpc.o clientpacket.o script.o
++DHCPC_OBJS = dhcpc.o clientpacket.o script.o arpping.o
++CFLAGS += -DKBOX
+ 
+ ifdef COMBINED_BINARY
+ EXEC1 = udhcpd
+@@ -58,7 +59,7 @@
+ STRIP=true
+ else
+ CFLAGS += -Os -fomit-frame-pointer
+-STRIP=$(CROSS_COMPILE)strip
++STRIP=true
+ endif
+ 
+ all: $(EXEC1) $(EXEC2) $(EXEC3)
+@@ -69,15 +70,15 @@
+ 
+ .c.o:
+ 	$(CC) -c $(CFLAGS) $<
+-	
++
+ $(EXEC1): $(OBJS1)
+-	$(LD) $(LDFLAGS) $(OBJS1) -o $(EXEC1)
++	$(CC) $(LDFLAGS) $(OBJS1) -o $(EXEC1)
+ 
+ $(EXEC2): $(OBJS2)
+-	$(LD) $(LDFLAGS) $(OBJS2) -o $(EXEC2)
++	$(CC) $(LDFLAGS) $(OBJS2) -o $(EXEC2)
+ 
+ $(EXEC3): $(OBJS3)
+-	$(LD) $(LDFLAGS) $(OBJS3) -o $(EXEC3)
++	$(CC) $(LDFLAGS) $(OBJS3) -o $(EXEC3)
+ 
+ 
+ install: all

@@ -1,0 +1,8 @@
+key: itunes
+short_name: Apple iTunes License
+name: Apple iTunes License
+category: Proprietary Free
+owner: Apple
+homepage_url: http://images.apple.com/legal/sla/docs/itunes.pdf
+text_urls:
+    - http://images.apple.com/legal/sla/docs/itunes.pdf

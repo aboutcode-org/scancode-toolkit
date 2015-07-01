@@ -1,0 +1,9 @@
+# Base configuration tools
+certifi
+setuptools
+wheel
+pip
+wincertstore
+
+# Self
+-e .

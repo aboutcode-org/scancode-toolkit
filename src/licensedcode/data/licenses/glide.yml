@@ -1,0 +1,12 @@
+key: glide
+short_name: 3DFX GLIDE
+name: >-
+    3DFX GLIDE Source Code General Public License
+category: Copyleft
+owner: NVIDIA
+homepage_url: http://www.users.on.net/~triforce/glidexp/COPYING.txt
+spdx_license_key: Glide
+spdx_full_name: 3dfx Glide License
+spdx_url: http://spdx.org/licenses/Glide
+text_urls:
+    - http://www.users.on.net/~triforce/glidexp/COPYING.txt

@@ -1,0 +1,4 @@
+licenses:
+    - ms-limited-public
+expected_failure: yes
+sort: true

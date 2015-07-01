@@ -1,0 +1,12 @@
+key: openldap-2.5
+short_name: OpenLDAP Public License 2.5
+name: OpenLDAP Public License 2.5
+category: Attribution
+owner: OpenLDAP Foundation
+homepage_url: http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=6852b9d90022e8593c98205413380536b1b5a7cf
+spdx_license_key: OLDAP-2.5
+spdx_full_name: Open LDAP Public License v2.5
+spdx_url: http://spdx.org/licenses/OLDAP-2.5
+spdx_notes: This license was released 11 May 2001.
+text_urls:
+    - http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=6852b9d90022e8593c98205413380536b1b5a7cf

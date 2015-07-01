@@ -1,0 +1,116 @@
+.TH BLKIOMON 8 "July 17, 2008" "" ""
+
+
+.SH NAME
+blkiomon \- monitor block device I/O based o blktrace data
+
+
+.SH SYNOPSIS
+.B blkiomon \-I \fIinterval\fR [ \-h \fIfile\fR ] [ \-b \fIfile\fR ]
+[ \-D \fIfile\fR ] [ \-Q \fIpath_name\fR
+\-q \fImsg_queue_id\fR \-m \fImsg_id\fR ] [ \-V ]
+.br
+
+
+.SH DESCRIPTION
+blkiomon is a block device I/O monitor. It periodically generates per-device
+request size and request latency statistics from blktrace data. It provides
+histograms as well as data that can be used to calculate min, max, average
+and variance. For this purpose, it consumes D and C traces read from stdin.
+
+There are options for binary output and human-readable output to files and
+stdout. Output to a message queue is supported as well.
+
+There is no need to use blkparse with blkiomon. blkiomon is capable of
+consuming binary output written to stdout by blktrace.
+
+
+.SH OPTIONS
+
+\-I \fIinterval\fR
+.br
+\-\-interval=\fIinterval\fR
+.RS
+Set sample interval
+.RE
+
+\-h \fIfile\fR
+.br
+\-\-human\-readable=\fIfile\fR
+.RS
+Human-readable output file. Use '\-' for stdout.
+.RE
+
+\-b \fIfile\fR
+.br
+\-\-binary=\fIfile\fR
+.RS
+Binary output file. Use '\-' for stdout.
+.RE
+
+\-D \fIfile\fR
+.br
+\-\-debug=\fIfile\fR
+.RS
+Output file for debugging data. Use '\-' for stdout.
+.RE
+
+\-Q \fIpath_name\fR
+.br
+\-\-msg\-queue=\fIpath_name\fR
+.RS
+Sets \fIpath_name\fR as path name for existing message queue to be used
+for binary output.
+.RE
+
+\-q \fImsg_queue_id\fR
+.br
+\-\-msg\-queue\-id=\fImsg_queue_id\fR
+.RS
+Sets \fImsg_queue_id\fR as ID for an existing message queue to be used
+for binary output.
+.RE
+
+\-m \fImsg_id\fR
+.br
+\-\-msg\-id=\fImsg_id\fR
+.RS
+Sets \fImsg_id\fR as message identifier to be used for binary output
+messages written to an existing message queue.
+.RE
+
+\-V
+.br
+\-\-version
+.RS
+Print program version.
+.RE
+
+
+.SH EXAMPLES
+To get I/O statistics for /dev/sdw every 10 seconds for a period of one hour,
+use the following command:
+
+    % blktrace /dev/sdw -a issue -a complete -w 3600 -o - | blkiomon -I 10 -h -
+
+
+.SH AUTHORS
+blkiomon and this man page were written by Martin Peschke.
+
+
+.SH "REPORTING BUGS"
+Report bugs to <linux\-btrace@vger.kernel.org>
+
+
+.SH COPYRIGHT
+Copyright \(co 2008 IBM Corp.
+.br
+This is free software.  You may redistribute copies of it under the terms of
+the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
+There is NO WARRANTY, to the extent permitted by law.
+
+
+.SH "SEE ALSO"
+btrace (8), blktrace (8), blkparse (1), verify_blkparse (1), blkrawverify (1),
+btt (1)
+

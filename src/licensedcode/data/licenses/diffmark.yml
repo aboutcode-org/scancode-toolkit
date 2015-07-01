@@ -1,0 +1,16 @@
+key: diffmark
+short_name: diffmark License
+name: diffmark License
+category: Public Domain
+homepage_url: https://fedoraproject.org/wiki/Licensing/diffmark
+spdx_license_key: diffmark
+spdx_full_name: diffmark license
+spdx_url: http://spdx.org/licenses/diffmark
+spdx_notes: >-
+    Per Fedora link: This extremely minimal and permissive license was found in diffmark
+    (0.08). While poorly written, our interpretation of the text permits use, modification,
+    and distribution. It also permits wearing it as a hat or eating it for lunch,
+    although neither of those cases are recommended. This would perhaps be considered
+    "Copyright only", except that no requirement of retention of copyright is present,
+    and the copyright holder is disclaiming liability (albeit, poorly). This license
+    is Free, and GPL compatible.

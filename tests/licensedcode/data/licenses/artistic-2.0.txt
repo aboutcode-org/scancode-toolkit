@@ -1,0 +1,16 @@
+This package was debianized by Kenneth Pronovici <pronovic@debian.org> on
+Mon, 23 Sep 2002 20:45:27 -0500.
+
+It was downloaded from CPAN, http://www.cpan.org/modules/by-module/Log/
+
+Upstream Author: <s>Ed Avis <epa98@doc.ic.ac.uk></s>
+
+Copyright:
+
+This is free software and you may distribute it under the same terms
+as perl itself.  There is no warranty.
+
+-- <s>Ed Avis, epa98@doc.ic.ac.uk</s>, 2000-10-15
+
+On Debian systems, the complete text of the Artistic License can
+be found in `/usr/share/common-licenses/Artistic'.

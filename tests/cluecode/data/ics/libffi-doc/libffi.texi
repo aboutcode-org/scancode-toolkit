@@ -1,0 +1,6 @@
+This manual is for Libffi, a portable foreign-function interface
+library.
+
+Copyright @copyright{} 2008 Red Hat, Inc.
+
+@quotation

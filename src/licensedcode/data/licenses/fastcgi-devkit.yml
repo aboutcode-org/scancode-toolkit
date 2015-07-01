@@ -1,0 +1,16 @@
+key: fastcgi-devkit
+short_name: FastCGI DevKit
+name: FastCGI DevKit
+category: Attribution
+owner: OpenMarket
+homepage_url: http://www.fastcgi.com/devkit/LICENSE.TERMS
+spdx_license_key: OML
+spdx_full_name: Open Market License
+spdx_url: http://spdx.org/licenses/OML
+spdx_notes: >-
+    Per Fedora: "This license is based on MIT, but contains additional clauses which
+    make it more than a simple MIT variant, notably, the requirement of statement
+    of new terms of contributions under a different license. For that reason, this
+    license is Free, but GPL-incompatible."
+text_urls:
+    - https://fedoraproject.org/wiki/Licensing/Open_Market_License

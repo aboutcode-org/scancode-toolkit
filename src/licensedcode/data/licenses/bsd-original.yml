@@ -1,0 +1,17 @@
+key: bsd-original
+short_name: BSD-Original
+name: BSD-Original
+category: Attribution
+owner: Regents of the University of California
+homepage_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
+spdx_license_key: BSD-4-Clause
+spdx_full_name: BSD 4-clause "Original" or "Old" License
+spdx_url: http://spdx.org/licenses/BSD-4-Clause
+spdx_notes: >-
+    This license was rescinded by the author on 22 July 1999.
+text_urls:
+    - http://www.xfree86.org/3.3.6/COPYRIGHT2.html#6
+osi_url: http://www.opensource.org/licenses/bsd-license.php
+other_urls:
+    - http://www.fsf.org/licensing/essays/bsd.html
+    - http://www.gnu.org/philosophy/bsd.html

@@ -1,0 +1,14 @@
+key: zpl-2.0
+short_name: ZPL 2.0
+name: Zope Public License 2.0
+category: Attribution
+owner: Zope Community
+homepage_url: http://www.zope.org/Resources/License/
+spdx_license_key: ZPL-2.0
+spdx_full_name: Zope Public License 2.0
+spdx_url: http://www.zope.org/Resources/License/ZPL-2.0http://www.opensource.org/licenses/zpl.php
+spdx_notes: This license is OSI certified
+text_urls:
+    - http://www.zope.org/Resources/License/
+other_urls:
+    - http://www.zope.com/Marks

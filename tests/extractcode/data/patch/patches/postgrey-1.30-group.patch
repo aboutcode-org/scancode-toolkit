@@ -1,0 +1,20 @@
+--- postgrey-1.30/postgrey.group	2007-08-02 11:46:44.000000000 +0200
++++ postgrey-1.30/postgrey	2007-08-06 17:04:21.932846608 +0200
+@@ -522,7 +522,7 @@
+             port             => [ $opt{inet} ? $opt{inet} : $opt{unix}."|unix" ],
+             proto            => $opt{inet} ? 'tcp' : 'unix',
+             user             => $opt{user} || 'postgrey',
+-            group            => $opt{group} || 'nogroup',
++            group            => $opt{group} || 'postgrey',
+             dbdir            => $opt{dbdir} || $DEFAULT_DBDIR,
+             setsid           => $opt{daemonize} ? 1 : undef,
+             pid_file         => $opt{daemonize} ? $opt{pidfile} : undef,
+@@ -700,7 +700,7 @@
+  -d, --daemonize         run in the background
+      --pidfile=PATH      put daemon pid into this file
+      --user=USER         run as USER (default: postgrey)
+-     --group=GROUP       run as group GROUP (default: nogroup)
++     --group=GROUP       run as group GROUP (default: postgrey)
+      --dbdir=PATH        put db files in PATH (default: /var/spool/postfix/postgrey)
+      --delay=N           greylist for N seconds (default: 300)
+      --max-age=N         delete entries older than N days since the last time

@@ -1,0 +1,101 @@
+<project name="XXXX xxxmon Build Targets" default="help" xxxxxxx=".">
+<!-- Note that you'll need ant 1.7 for this xxxxx, as 1.6.5 doesn't have xxxprehensive filelist support -->
+
+	<!-- default configuration -->
+	<!-- xxxxxxxx or xxxxx -->
+    <property name="xxx.provider" value="xxxxxxxx"/>
+    <property name="xxxxribution.xxx.name" value="xxxXXXX"/>
+    <property name="xxx.app.name" value="xxx.xxxxxxxxxx.XXXX.xxx.XXXXxxxxxxxxxxx"/>
+    <property name="xxxxx" value="true"/>
+    <property name="xxxxxlevel" value="lines,vars,source"/>
+    <property name="lib.xxx" value="lib"/>
+    <property name="xxxxxxxx.lib.xxx" value="xxxxxxxx\\lib"/>
+    <property name="xxxx.xxx" value="xxx\\xxxx\\xxxx"/>
+    <property name="conf.xxx" value="conf\\"/>
+    <property name="xxxxx.xxx" value="xxxxx"/>
+    <property name="xxx.xxxxxxx.xxx" value="${xxxxx.xxx}/xxx"/>
+    <property name="xxxxxes.xxx" value="${xxx.xxxxxxx.xxx}/WEB-INF/xxxxxes"/>
+    <property name="xxxx.xxx" value="${xxxxx.xxx}/xxxx"/>
+    <property name="xxx.xxx" value="${xxxxx.xxx}/xxx"/>
+    <property name="xxx.xxxxxxx.xxx" value="${xxxxx.xxx}/www"/>
+
+	<!-- xxxxxxs to be removed over time. They are "required" for now, but no need to change anything below here -->
+	<!-- required properties for XXXX client. these two are not used currently -->
+	<property name="XXXX.xxxx.xxx" value="http://localhost:8080/XXXX/"/>
+	<property name="XXXX.xxxx.xxx" value="x_xxxxx_xxxxxxxx_xxxxx"/>
+	<!-- Generic xxxxxxs -->
+	<property name="xxxxxx.xxxxxx" value="true"/>
+	<property name="xxxxxx.xxxxxx" value="false"/>
+	<property name="xxxxxx.xxxxxx" value="true"/>
+	<property name="xxxxxx.xxxxxx" value="true"/>
+	<property name="xxxxxx.xxxxxxx.xxxx" value="true"/>
+	<property name="xxxxxx.xxxx.xxxx.xxxx" value="localhost"/>
+	<property name="xxxxxx.xxxx.xxxx.xxxx" value="23"/>
+	<property name="xxxxxx.xxxxx.caching" value="false"/>
+	<property name="xxxxxx.xxxxx.cache.max.entries" value="50"/>
+	<property name="xxxxxx.xxxx.xxxxx.preload" value="false"/>
+	<property name="xxxxxx.xxxx.xxxxx.xxxxx.threads" value="25"/>
+	<property name="xxxxxx.xxxxxxxx.banner.xxxx" value="xxxxxxxxxxxx"/>
+	<property name="xxxxxx.xxxxxxxx.banner.xxxx" value="xxxx-xxxxxxxxxxxx"/>
+
+	<!-- Ozonification xxxxxxs -->
+	<property name="xxxxxx.ozone" value="false"/>
+	<!-- deny these xxxxxxxs to these xxxxxxxs takes xxxxxxxxx xxxxxxx:xxxxxxx,...,xxxxxxx:xxxxxxx -->
+	<property name="ozone.deny.xxxxxxxs" value=""/>
+	<!-- allow these xxxxxxxs ONLY (exclusive) to these xxxxxxxs takes xxxxxxxxx xxxxxxx:xxxxxxx,...,xxxxxxx:xxxxxxx -->
+	<property name="ozone.allow.xxxxxxxs" value=""/>
+	
+
+	<!-- This logs xxxectory entry actually isn't xxxxxxxxxxxxx, xxxxxx make use if it or xxxxx it. -->
+    <property name="logs.xxx" value="logs"/>
+	
+	<!-- Pull in properties -->
+	<property file="xxxxx.properties" />
+
+	<path id="xxxxxpath">
+		<fileset xxx="${lib.xxx}">
+			<include name="**/*.xxx"/>
+		</fileset>
+       <fileset  xxx="${xxxxxxxx.lib.xxx}">
+           <include name="**/*.xxx"/>
+        </fileset>        
+		<fileset xxx="${xxxx.xxx}" />
+		<!--
+		<fileset xxx="${xxxx.xxx}/client" />
+		<fileset xxx="${xxxx.xxx}/xxxmon" />
+		<fileset xxx="${xxxx.xxx}/server" />
+		-->
+	</path>
+
+    <path id="htools">
+       <fileset  xxx="${xxxxxxxx.lib.xxx}">
+           <include name="**/*.xxx"/>
+        </fileset>
+    </path>
+
+	<target name="help">
+	</target>
+	
+	<target name="clean" description="Delete and recreate all xxxxx xxxectories">
+		<delete xxx="${xxxxx.xxx}"/>
+		<delete xxx="${xxxx.xxx}"/>
+		<delete xxx="${xxx.xxxxxxx.xxx}"/>
+        <delete xxx="${xxx.xxxxxxx.xxx}"/>
+		<mkxxx xxx="${xxxxx.xxx}"/>
+	</target>
+	
+	<target name="init" description="Clean all xxxxx xxxectories" depends="clean">
+		<tstamp/>
+		<echo> Building ${ant.project.name} with Ant Version ${ant.version}</echo>
+	</target>
+	
+	<target name="xxxxxxx" depends="init" description="Generate xxxxxxx">
+		<echo>Generating xxxxxxx</echo>
+		<xxxxxxx 
+			sourcepath="${xxx.xxx}"
+			destxxx="${xxx.xxx}/xxx" >
+			<xxxxxpath refid="xxxxxpath"/>
+		</xxxxxxx>
+	</target>
+	
+</project>

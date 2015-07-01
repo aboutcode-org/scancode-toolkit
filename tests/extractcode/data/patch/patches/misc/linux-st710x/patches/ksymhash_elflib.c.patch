@@ -1,0 +1,13 @@
+--- linux-2.6.23/scripts/ksymhash/elflib.c~	2009-02-11 10:50:37.000000000 +0100
++++ linux-2.6.23/scripts/ksymhash/elflib.c	2009-02-11 11:23:33.000000000 +0100
+@@ -80,8 +80,8 @@
+ 	}
+ 
+ 	/* Check if it is the vmlinux or lkm */
+-	lkm_suffix = strstr(filename, ".ko");
+-	if (lkm_suffix && (strlen(lkm_suffix) == 3))
++	lkm_suffix = strncmp(filename + strlen(filename) - 3, ".ko", 3);
++	if (lkm_suffix == 0)
+ 		/* Likely this is a lkm */
+ 		info->is_lkm = 1;
+ 	else {

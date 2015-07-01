@@ -1,0 +1,3 @@
+licenses:
+    - pygres-2.2
+notes: from http://shell.vex.net/viewvc.cgi/pygresql/trunk/module/pgmodule.c?view=markup&pathrev=431

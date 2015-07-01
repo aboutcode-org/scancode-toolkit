@@ -1,0 +1,7 @@
+key: bsd-export
+short_name: BSD-Export
+name: BSD-Export
+category: Attribution
+owner: Cavium
+text_urls:
+    - https://download.juniper.net/disclosure/attributions/junos/10.4R1.9/disclosures.txt

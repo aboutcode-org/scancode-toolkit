@@ -1,0 +1,10 @@
+--- linux-2.6.23/include/linux/stm/soc.h.orig	2009-09-08 14:26:48.000000000 +0200
++++ linux-2.6.23/include/linux/stm/soc.h	2009-09-08 14:26:54.000000000 +0200
+@@ -420,6 +420,7 @@
+ };
+ 
+ #define STASC_FLAG_NORTSCTS	1
++#define STASC_FLAG_NORXTX	2
+ 
+ extern int stasc_console_device;
+ extern struct platform_device *stasc_configured_devices[];

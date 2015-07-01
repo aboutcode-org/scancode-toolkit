@@ -1,0 +1,13 @@
+key: brian-gladman-dual
+short_name: Brian Gladman Dual BSD-GPL
+name: Brian Gladman Dual BSD-GPL
+category: Attribution
+owner: Brian Gladman
+homepage_url: http://www.gladman.me.uk/
+text_urls:
+    - https://github.com/basho/skerl/blob/master/c_src/brg_types.h
+other_urls:
+    - http://fp.gladman.plus.com/
+    - http://brgladman.org/
+    - https://launchpad.net/ubuntu/oneiric/+source/silc-server/+copyright
+    - http://www.ecrypt.eu.org/stream/svn/viewcvs.cgi/ecrypt/trunk/benchmarks/aes-ctr/aes-128/gladman/aes.h?diff_format=s&rev=190&view=auto

@@ -1,0 +1,3 @@
+/* PCU :: SPI_CTRL :: CPOL [06:06] */
+#define BCHP_PCU_SPI_CTRL_CPOL_MASK                                0x00000040
+#define BCHP_PCU_SPI_CTRL_CPOL_SHIFT                               6

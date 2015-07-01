@@ -1,0 +1,48 @@
+ Copyright (c) 1995-2004 RealNetworks, Inc. All Rights Reserved.  
+        
+ The contents of this directory, and (except where otherwise
+ indicated) the directories included within this directory, are
+ subject to the current version of the RealNetworks Public Source
+ License (the "RPSL") available at RPSL.txt in this directory, unless
+ you have licensed the directory under the current version of the
+ RealNetworks Community Source License (the "RCSL") available at
+ RCSL.txt in this directory, in which case the RCSL will apply. You
+ may also obtain the license terms directly from RealNetworks.  You
+ may not use the files in this directory except in compliance with the
+ RPSL or, if you have a valid RCSL with RealNetworks applicable to
+ this directory, the RCSL.  Please see the applicable RPSL or RCSL for
+ the rights, obligations and limitations governing use of the contents
+ of the directory.
+
+ Alternatively, the contents of this directory may be used under the 
+ terms of the GNU General Public License Version 2 or later (the 
+ "GPL") in which case the provisions of the GPL are applicable 
+ instead of those above. If you wish to allow use of your version of 
+ this directory only under the terms of the GPL, and not to allow 
+ others to use your version of this file under the terms of the RPSL 
+ or RCSL, indicate your decision by deleting the provisions above 
+ and replace them with the notice and other provisions required by 
+ the GPL. If you do not delete the provisions above, a recipient may 
+ use your version of this directory under the terms of any one of the 
+ RPSL, the RCSL or the GPL.
+
+ While you as a licensee have the right to remove the RPSL and RCSL
+ headers, we respectfully request that you leave the RPSL and RCSL 
+ headers on the code.  This will ensure the maximum mutual use of 
+ these changes among all developers, ensuring all users of Helix will 
+ benefit from future enhancements.
+
+ This directory is part of the Helix DNA Technology. RealNetworks is
+ the developer of the Original Code and owns the copyrights in the
+ portions it created.
+   
+ This directory, and the directories included with this directory, are
+ distributed and made available on an 'AS IS' basis, WITHOUT WARRANTY
+ OF ANY KIND, EITHER EXPRESS OR IMPLIED, AND REALNETWORKS HEREBY
+ DISCLAIMS ALL SUCH WARRANTIES, INCLUDING WITHOUT LIMITATION, ANY
+ WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+ QUIET ENJOYMENT OR NON-INFRINGEMENT.
+  
+ Technology Compatibility Kit Test Suite(s) Location:  
+    http://www.helixcommunity.org/content/tck  
+

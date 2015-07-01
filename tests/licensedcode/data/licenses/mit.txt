@@ -1,0 +1,2 @@
+
+In particular, note that the MIT licence is compatible with the GNU GPL.  

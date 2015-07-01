@@ -1,0 +1,54 @@
+/* An abstract string datatype.
+   Copyright (C) 1998, 1999, 2000, 2002 Free Software Foundation, Inc.
+   Contributed by Mark Mitchell (mark@markmitchell.com).
+
+This file is part of GNU CC.
+   
+GNU CC is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+In addition to the permissions in the GNU General Public License, the
+Free Software Foundation gives you unlimited permission to link the
+compiled version of this file into combinations with other programs,
+and to distribute those combinations without any restriction coming
+from the use of this file.  (The General Public License restrictions
+do apply in other respects; for example, they cover modification of
+the file, and distribution when not linked into a combined
+executable.)
+
+GNU CC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with GNU CC; see the file COPYING.  If not, write to
+the Free Software Foundation, 59 Temple Place - Suite 330,
+Boston, MA 02111-1307, USA.  */
+
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
+#include <stdio.h>
+
+#ifdef HAVE_STRING_H
+#include <string.h>
+#endif
+
+#ifdef HAVE_STDLIB_H
+#include <stdlib.h>
+#endif
+
+#include "libiberty.h"
+#include "dyn-string.h"
+
+/* If this file is being compiled for inclusion in the C++ runtime
+   library, as part of the demangler implementation, we don't want to
+   abort if an allocation fails.  Instead, percolate an error code up
+   through the call chain.  */
+
+#if defined(IN_LIBGCC2) || defined(IN_GLIBCPP_V3)
+#define RETURN_ON_ALLOCATION_FAILURE

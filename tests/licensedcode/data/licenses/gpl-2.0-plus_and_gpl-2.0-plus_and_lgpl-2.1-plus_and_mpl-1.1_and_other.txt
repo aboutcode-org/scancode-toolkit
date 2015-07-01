@@ -1,0 +1,80 @@
+This package was debianized by Edd Dumbill on 14 Feb 2003.
+
+It was downloaded from <http://ftp.gnome.org/pub/gnome/sources/epiphany>
+
+Upstream authors:
+    <s>Marco Pesenti Gritti <marco@gnome.org></s>
+    <s>Xan Lopez <xan@gnome.org></s>
+    <s>Christian Persch <chpe@gnome.org></s>
+    <s>Adam Hooper <adamh@cvs.gnome.org></s>
+    <s>Jean-François Rameau <jframeau@cvs.gnome.org></s>
+    <s>Crispin Flowerday <crispin@flowerday.cx></s>
+
+License:
+
+    This package is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+ 
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+ 
+    You should have received a copy of the GNU General Public License
+    along with this package; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.
+
+'flashblock.tar' was checked out on Friday April 4th at 18:36 UTC with the
+following command: 'cvs -d :pserver:guest@mozdev.org:/cvs co flashblock/source'
+(having previous logged in with the password 'guest'.  The following license
+statement was taken from <http://flashblock.mozdev.org/licences.html>:
+
+    ***** BEGIN LICENSE BLOCK *****
+    Version: MPL 1.1/GPL 2.0/LGPL 2.1
+
+    The contents of this collection are subject to the Mozilla Public License Version 
+    1.1 (the "License"); you may not use this file except in compliance with 
+    the License. You may obtain a copy of the License at 
+    http://www.mozilla.org/MPL/
+
+    Software distributed under the License is distributed on an "AS IS" basis,
+    WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+    for the specific language governing rights and limitations under the
+    License.
+
+    The Original Code is the "Flashblock" extension for Mozilla and Firefox.
+
+    The Initial Developer of the Original Code is
+    Ted Mielczarek <luser_mozdev@perilith.com>.
+
+    Portions created by the Initial Developer are Copyright (C) 2004
+    the Initial Developer. All Rights Reserved.
+
+    Contributor(s):
+      <s>Ted Drake</s>
+      <s>Przemyslaw Bialik</s>
+      <s>Lorenzo Colitti</s>
+      <s>Philip Chee <philip.chee@gmail.com></s>
+
+    Alternatively, the contents of this file may be used under the terms of
+    either the GNU General Public License Version 2 or later (the "GPL"), or
+    the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+    in which case the provisions of the GPL or the LGPL are applicable instead
+    of those above. If you wish to allow use of your version of this file only
+    under the terms of either the GPL or the LGPL, and not to allow others to
+    use your version of this file under the terms of the MPL, indicate your
+    decision by deleting the provisions above and replace them with the notice
+    and other provisions required by the GPL or the LGPL. If you do not delete
+    the provisions above, a recipient may use your version of this file under
+    the terms of any one of the MPL, the GPL or the LGPL.
+
+    ***** END LICENSE BLOCK *****
+
+The Debian packaging is (C) 2003-2007, <s>the Debian GNOME team</s> 
+<pkg-gnome-maintainers@lists.alioth.debian.org> and
+is licensed under the GPL, see above.

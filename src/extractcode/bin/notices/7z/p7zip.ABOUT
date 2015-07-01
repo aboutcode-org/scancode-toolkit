@@ -1,0 +1,20 @@
+about_resource: 
+    - Codecs/Rar29.so
+    - 7z
+    - 7z.so
+
+version: 9.20.1
+name: p7zip
+
+home_url: http://sourceforge.net/projects/p7zip/
+
+download_url:
+    - http://master.dl.sourceforge.net/project/p7zip/p7zip/9.20.1/p7zip_9.20.1_src_all.tar.bz2
+
+license: lgpl-2.1 and unrar and brian-gladman-3-clause
+
+notice_file: 7zip.NOTICE
+
+license_file:
+    - lgpl-2.1.LICENSE
+    - unRarLicense.LICENSE

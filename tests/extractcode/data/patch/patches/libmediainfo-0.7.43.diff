@@ -1,0 +1,23 @@
+diff -Naur MediaInfoLib-0.7.43.orig/Project/GNU/Library/libmediainfo-config.in MediaInfoLib-0.7.43/Project/GNU/Library/libmediainfo-config.in
+--- MediaInfoLib-0.7.43.orig/Project/GNU/Library/libmediainfo-config.in	2010-09-16 18:36:36.000000000 +0200
++++ MediaInfoLib-0.7.43/Project/GNU/Library/libmediainfo-config.in	2011-04-15 10:55:00.931847415 +0200
+@@ -1,14 +1,15 @@
++#!/bin/sh
+ if test "$1" = "CXXFLAGS"; then
+-echo @MediaInfoLib_CXXFLAGS@
++/usr/bin/pkg-config --cflags libmediainfo
+ fi
+ if test "$1" = "LIBS"; then
+-echo @MediaInfoLib_LIBS@
++/usr/bin/pkg-config --libs libmediainfo
+ fi
+ if test "$1" = "LIBS_Static"; then
+-echo @MediaInfoLib_LIBS_Static@
++/usr/bin/pkg-config --variable=Libs_Static libmediainfo
+ fi
+ if test "$1" = "Unicode"; then
+-echo @MediaInfoLib_Unicode@
++/usr/bin/pkg-config --variable=Unicode libmediainfo
+ fi
+ if test "$1" = "Exists"; then
+ echo yes

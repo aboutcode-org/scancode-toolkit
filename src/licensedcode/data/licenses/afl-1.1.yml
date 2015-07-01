@@ -1,0 +1,18 @@
+key: afl-1.1
+short_name: AFL 1.1
+name: Academic Free License 1.1
+category: Attribution
+owner: Lawrence Rosen
+homepage_url: http://open2.mirrors-r-us.net/licenses/afl-1.1.txt
+spdx_license_key: AFL-1.1
+spdx_full_name: Academic Free License v1.1
+spdx_url: http://spdx.org/licenses/AFL-1.1
+spdx_notes: >-
+    This license has been superseded by later versions.
+text_urls:
+    - http://web.archive.org/web/20060924134536/http://www.opensource.org/licenses/afl-1.1.txt
+    - http://www.opensource.org/licenses/afl-1.1.txt
+    - http://open2.mirrors-r-us.net/licenses/afl-1.1.txt
+    - http://opensource.linux-mirror.org/licenses/afl-1.1.txt
+    - http://spdx.org/licenses/AFL-1.1
+osi_url: http://web.archive.org/web/20060924134536/http://www.opensource.org/licenses/afl-1.1.txt

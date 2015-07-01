@@ -1,0 +1,54 @@
+This package was debianized by Ove Kaaven <ovek@arcticnet.no> on
+Tue,  6 Feb 2001 13:06:57 +0100.
+
+It was downloaded from ftp://ftp.simgear.org/pub/simgear/
+
+Upstream Authors: <s>Curtis L. Olson <curt@flightgear.org></s>
+and the rest of the FlightGear team.
+
+The official license is:
+
+Copyright (C) 1999-2000 <s>Curtis L. Olson <curt@flightgear.org></s>
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Library General Public
+License as published by the Free Software Foundation; either
+version 2 of the License, or (at your option) any later version.
+
+On Debian systems, the complete text of the GNU Library General Public
+License can be found in /usr/share/common-licenses/LGPL-2 file.
+
+
+However, many parts of this library are licensed differently:
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the
+License, or (at your option) any later version.
+
+On Debian systems, the complete text of the GNU General Public
+License can be found in /usr/share/common-licenses/GPL-2 file.
+
+
+The RenderTexture code is licensed this way:
+
+Copyright (c) 2002-2004 <s>Mark J. Harris</s>
+
+This software is provided 'as-is', without any express or implied
+warranty. In no event will the authors be held liable for any
+damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any
+purpose, including commercial applications, and to alter it and
+redistribute it freely, subject to the following restrictions:
+
+1. The origin of this software must not be misrepresented; you
+   must not claim that you wrote the original software. If you use
+   this software in a product, an acknowledgment in the product
+   documentation would be appreciated but is not required.
+
+2. Altered source versions must be plainly marked as such, and
+   must not be misrepresented as being the original software.
+
+3. This notice may not be removed or altered from any source
+   distribution.

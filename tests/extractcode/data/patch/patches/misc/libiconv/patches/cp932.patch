@@ -1,0 +1,146 @@
+diff -cr libiconv-1.11_ORG/NEWS libiconv-1.11_NEW/NEWS
+--- libiconv-1.11_ORG/NEWS	2006-05-18 21:43:55.000000000 +0900
++++ libiconv-1.11_NEW/NEWS	2009-06-09 12:02:50.000000000 +0900
+@@ -1,3 +1,6 @@
++New in cp932.patch:
++* Changed CP932 converter to use mapping table based on CP932.TXT.
++
+ New in 1.11:
+ * The iconv program has new options --unicode-subst, --byte-subst,
+   --widechar-subst that allow to specify substitutions for characters that
+diff -cr libiconv-1.11_ORG/lib/cp932.h libiconv-1.11_NEW/lib/cp--- libiconv-1.11_ORG/lib/cp932.h	2005-12-15 21:25:52.000000000 +0900
++++ libiconv-1.11_NEW/lib/cp932.h	2009-06-09 18:03:53.000000000 +0900
+@@ -41,11 +41,7 @@
+  *    0x8192  0x00A3 # POUND SIGN            0xFFE1 # FULLWIDTH POUND SIGN
+  *    0x81CA  0x00AC # NOT SIGN              0xFFE2 # FULLWIDTH NOT SIGN
+  *
+- *    We don't implement the latter 6 of these changes, only the first one.
+- *    SHIFTJIS.TXT makes more sense. However, as a compromise with user
+- *    expectation, we implement the middle 5 of these changes in the
+- *    Unicode to CP932 direction. We don't implement the last one at all,
+- *    because it would collide with the mapping of 0xFA54.
++ *    We implement these changes.
+  *
+  * 3. A few new rows. See cp932ext.h.
+  *
+@@ -100,7 +96,25 @@
+       if (n < 2)
+         return RET_TOOFEW(0);
+       s2 = s[1];
+-      if ((s2 >= 0x40 && s2 <= 0x7e) || (s2 >= 0x80 && s2 <= 0xfc)) {
++      if (s1 == 0x81 && s2 == 0x60) {        /* 0x8160 -> U+FF5E */
++        *pwc = 0xff5e;
++        return 2;
++      } else if (s1 == 0x81 && s2 == 0x61) { /* 0x8161 -> U+2225 */
++        *pwc = 0x2225;
++        return 2;
++      } else if (s1 == 0x81 && s2 == 0x7c) { /* 0x817C -> U+FF0D */
++        *pwc = 0xff0d;
++        return 2;
++      } else if (s1 == 0x81 && s2 == 0x91) { /* 0x8191 -> U+FFE0 */
++        *pwc = 0xffe0;
++        return 2;
++      } else if (s1 == 0x81 && s2 == 0x92) { /* 0x8192 -> U+FFE1 */
++        *pwc = 0xffe1;
++        return 2;
++      } else if (s1 == 0x81 && s2 == 0xca) { /* 0x81CA -> U+FFE2 */
++        *pwc = 0xffe2;
++        return 2;
++      } else if ((s2 >= 0x40 && s2 <= 0x7e) || (s2 >= 0x80 && s2 <= 0xfc)) {
+         unsigned char t1 = (s1 < 0xe0 ? s1-0x81 : s1-0xc1);
+         unsigned char t2 = (s2 < 0x80 ? s2-0x40 : s2-0x41);
+         unsigned char buf[2];
+@@ -199,7 +213,7 @@
+     return 2;
+   }
+ 
+-  /* Irreversible mappings.  */
++  /* cp932.txt mappings.  */
+   if (wc == 0xff5e) {
+     if (n < 2)
+       return RET_TOOSMALL;
+@@ -235,6 +249,13 @@
+     r[1] = 0x92;
+     return 2;
+   }
++  if (wc == 0xffe2) {
++    if (n < 2)
++      return RET_TOOSMALL;
++    r[0] = 0x81;
++    r[1] = 0xca;
++    return 2;
++  }
+ 
+   return RET_ILUNI;
+ }
+diff -cr libiconv-1.11_ORG/lib/cp932ext.h libiconv-1.11_NEW/lib/cp932e--- libiconv-1.11_ORG/lib/cp932ext.h	2005-05-20 01:16:55.000000000 +0900
++++ libiconv-1.11_NEW/lib/cp932ext.h	2009-06-09 18:00:30.000000000 +0900
+@@ -650,7 +650,7 @@
+   {  453, 0x0084 }, {  455, 0x0000 }, {  455, 0x0000 }, {  455, 0x0000 },
+   {  455, 0x0000 }, {  455, 0x0000 }, {  455, 0x0000 }, {  455, 0x0000 },
+   {  455, 0x0000 }, {  455, 0x0000 }, {  455, 0x0000 }, {  455, 0x0000 },
+-  {  455, 0x0000 }, {  455, 0x0000 }, {  455, 0x0014 },
++  {  455, 0x0000 }, {  455, 0x0000 }, {  455, 0x0010 },
+ };
+ 
+ static int
+diff -cr libiconv-1.11_ORG/tests/CP932.IRREVERSIBLE.TXT libiconv-1.11_NEW--- libiconv-1.11_ORG/tests/CP932.IRREVERSIBLE.TXT	2005-12-14 21:04:40.000000000 +0900
++++ libiconv-1.11_NEW/tests/CP932.IRREVERSIBLE.TXT	2009-06-09 12:03:11.000000000 +0900
+@@ -1,8 +1,9 @@
+-0x8160	0xFF5E
+-0x8161	0x2225
+-0x817C	0xFF0D
+-0x8191	0xFFE0
+-0x8192	0xFFE1
++0x8160	0x301C
++0x8161	0x2016
++0x817C	0x2212
++0x8191	0x00A2
++0x8192	0x00A3
++0x81CA	0x00AC
+ 0x8754	0x2160
+ 0x8755	0x2161
+ 0x8756	0x2162
+diff -cr libiconv-1.11_ORG/tests/CP932.TXT libiconv-1.11_NEW/tests/CP932.TXT
+--- libiconv-1.11_ORG/tests/CP932.TXT	2001-06-27 00:08:13.000000000 +0900
++++ libiconv-1.11_NEW/tests/CP932.TXT	2009-06-09 12:03:11.000000000 +0900
+@@ -158,8 +158,8 @@
+ 0x815D	0x2010
+ 0x815E	0xFF0F
+ 0x815F	0xFF3C
+-0x8160	0x301C
+-0x8161	0x2016
++0x8160	0xFFE5
++0x8161	0x2225
+ 0x8162	0xFF5C
+ 0x8163	0x2026
+ 0x8164	0x2025
+@@ -186,7 +186,7 @@
+ 0x8179	0x3010
+ 0x817A	0x3011
+ 0x817B	0xFF0B
+-0x817C	0x2212
++0x817C	0xFF0D
+ 0x817D	0x00B1
+ 0x817E	0x00D7
+ 0x8180	0x00F7
+@@ -206,8 +206,8 @@
+ 0x818E	0x2103
+ 0x818F	0xFFE5
+ 0x8190	0xFF04
+-0x8191	0x00A2
+-0x8192	0x00A3
++0x8191	0xFFE0
++0x8192	0xFFE1
+ 0x8193	0xFF05
+ 0x8194	0xFF03
+ 0x8195	0xFF06
+@@ -244,7 +244,7 @@
+ 0x81BF	0x2229
+ 0x81C8	0x2227
+ 0x81C9	0x2228
+-0x81CA	0x00AC
++0x81CA	0xFFE2
+ 0x81CB	0x21D2
+ 0x81CC	0x21D4
+ 0x81CD	0x2200

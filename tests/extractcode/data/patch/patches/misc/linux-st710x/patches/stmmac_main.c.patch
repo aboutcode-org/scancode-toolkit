@@ -1,0 +1,219 @@
+--- linux-2.6.23/drivers/net/stmmac/stmmac_main.c.orig	2010-01-18 17:18:09.000000000 +0100
++++ linux-2.6.23/drivers/net/stmmac/stmmac_main.c	2010-01-18 17:19:12.000000000 +0100
+@@ -34,11 +34,20 @@
+ #include <linux/phy.h>
+ #include <linux/stm/soc.h>
+ #include <linux/dma-mapping.h>
++#include <linux/reboot.h>
++#include <linux/notifier.h>
+ #include "stmmac.h"
+ 
+ #define STMMAC_RESOURCE_NAME	"stmmaceth"
+ #define PHY_RESOURCE_NAME	"stmmacphy"
+ 
++/*
++   Define a callback for enabling network packet handling outside of the IP-stack.
++*/
++typedef int (K_FILTER)(struct sk_buff*);
++K_FILTER *kfilter_7109;
++EXPORT_SYMBOL(kfilter_7109);
++
+ #undef STMMAC_DEBUG
+ /*#define STMMAC_DEBUG*/
+ #ifdef STMMAC_DEBUG
+@@ -1069,6 +1078,7 @@
+ 	struct stmmac_priv *priv = netdev_priv(dev);
+ 	unsigned long ioaddr = dev->base_addr;
+ 	int ret;
++	unsigned int value;
+ 
+ 	/* Check that the MAC address is valid.  If its not, refuse
+ 	 * to bring the device up. The user must specify an
+@@ -1089,6 +1099,12 @@
+ 		return -ENODEV;
+ 	}
+ 
++	/* Disable tx and rx and clear any pending interrupts */
++	stmmac_mac_disable_tx(dev);
++	stmmac_mac_disable_rx(dev);
++	value = (unsigned int)readl(ioaddr + DMA_STATUS);
++	writel((value & 0x1ffff), ioaddr + DMA_STATUS);
++
+ 	/* Request the IRQ lines */
+ 	ret = request_irq(dev->irq, &stmmac_interrupt,
+ 			  IRQF_SHARED, dev->name, dev);
+@@ -1188,41 +1204,7 @@
+  */
+ static int stmmac_release(struct net_device *dev)
+ {
+-	struct stmmac_priv *priv = netdev_priv(dev);
+-
+-	/* Stop and disconnect the PHY */
+-	if (priv->phydev) {
+-		phy_stop(priv->phydev);
+-		phy_disconnect(priv->phydev);
+-		priv->phydev = NULL;
+-	}
+-
+-	netif_stop_queue(dev);
+-	tasklet_kill(&priv->tx_task);
+-
+-#ifdef CONFIG_STMMAC_TIMER
+-	/* Stop and release the timer */
+-	stmmac_close_hw_timer();
+-	if (priv->tm != NULL)
+-		kfree(priv->tm);
+-#endif
+-
+-	/* Free the IRQ lines */
+-	free_irq(dev->irq, dev);
+-
+-	/* Stop TX/RX DMA and clear the descriptors */
+-	stmmac_dma_stop_tx(dev->base_addr);
+-	stmmac_dma_stop_rx(dev->base_addr);
+-
+-	/* Release and free the Rx/Tx resources */
+-	free_dma_desc_resources(dev);
+-
+-	/* Disable the MAC core */
+-	stmmac_mac_disable_tx(dev);
+-	stmmac_mac_disable_rx(dev);
+-
+-	netif_carrier_off(dev);
+-
++	if (dev) {};
+ 	return 0;
+ }
+ 
+@@ -1512,7 +1494,15 @@
+ 				priv->xstats.rx_vlan++;
+ 			} /*FIXME*/
+ #endif
+-			netif_receive_skb(skb);
++ 			// Support for the kreatel UDP filter module
++                        if (kfilter_7109) {
++				if (kfilter_7109(skb)) {
++					netif_receive_skb(skb);
++				}
++			}
++			else {
++				netif_receive_skb(skb);
++			}
+ 
+ 			dev->stats.rx_packets++;
+ 			dev->stats.rx_bytes += frame_len;
+@@ -1843,8 +1833,8 @@
+ 	priv->mac_type->ops->get_umac_addr(dev->base_addr, dev->dev_addr, 0);
+ 
+ 	if (!is_valid_ether_addr(dev->dev_addr)) {
+-		printk(KERN_WARNING "\tno valid MAC address; "
+-		       "please, set using ifconfig or nwhwconfig!\n");
++		printk(KERN_NOTICE "No valid MAC address yet; "
++		       "it will be set from the console later.\n");
+ 	}
+ 
+ 	ret = register_netdev(dev);
+@@ -1962,6 +1952,13 @@
+ 	return 1;		/* forces exit of driver_for_each_device() */
+ }
+ 
++static int stmmac_notify_sys(struct notifier_block *this,
++			     unsigned long code, void *unused);
++
++static struct notifier_block stmmac_notifier = {
++	.notifier_call = stmmac_notify_sys
++};
++
+ /**
+  * stmmac_dvr_probe
+  * @pdev: platform device pointer
+@@ -1978,13 +1975,14 @@
+ 	struct stmmac_priv *priv;
+ 	struct plat_stmmacenet_data *plat_dat;
+ 
+-	printk(KERN_DEBUG "STMMAC driver:\n\tplatform registration... ");
++	printk(KERN_DEBUG "STMMAC driver:\n");
++	printk(KERN_DEBUG "\tplatform registration... ");
+ 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	if (!res) {
+ 		ret = -ENODEV;
+ 		goto out;
+ 	}
+-	printk(KERN_DEBUG "done!\n");
++	printk("done!\n");
+ 
+ 	if (!request_mem_region(res->start, (res->end - res->start),
+ 				pdev->name)) {
+@@ -2064,6 +2062,9 @@
+ 		goto out;
+ 	printk(KERN_DEBUG "\tMDIO bus registered!\n");
+ 
++	/* Register a reboot notifier that will cleanup the driver */
++	register_reboot_notifier(&stmmac_notifier); 
++
+ out:
+ 	if (ret < 0) {
+ 		platform_set_drvdata(pdev, NULL);
+@@ -2085,16 +2086,34 @@
+ static int stmmac_dvr_remove(struct platform_device *pdev)
+ {
+ 	struct net_device *ndev = platform_get_drvdata(pdev);
++	struct stmmac_priv *priv = netdev_priv(ndev);
+ 	struct resource *res;
+ 
+-	printk(KERN_INFO "%s:\n\tremoving driver", __FUNCTION__);
++	/* Free the IRQ lines */
++	free_irq(ndev->irq, ndev);
+ 
+ 	stmmac_dma_stop_rx(ndev->base_addr);
+ 	stmmac_dma_stop_tx(ndev->base_addr);
+ 
++	if (priv->phydev) {
++		/* Stop and disconnect the PHY */
++		phy_stop(priv->phydev);
++		phy_disconnect(priv->phydev);
++		priv->phydev = NULL;
++	}
++	netif_stop_queue(ndev);
++	tasklet_kill(&priv->tx_task);
++
+ 	stmmac_mac_disable_rx(ndev);
+ 	stmmac_mac_disable_tx(ndev);
+ 
++#ifdef CONFIG_STMMAC_TIMER
++	/* Stop and release the timer */
++	stmmac_close_hw_timer();
++	if (priv->tm != NULL)
++		kfree(priv->tm);
++#endif
++
+ 	netif_carrier_off(ndev);
+ 
+ 	stmmac_mdio_unregister(ndev);
+@@ -2102,6 +2121,9 @@
+ 	platform_set_drvdata(pdev, NULL);
+ 	unregister_netdev(ndev);
+ 
++	/* Release and free the Rx/Tx resources */
++	free_dma_desc_resources(ndev);
++
+ 	iounmap((void *)ndev->base_addr);
+ 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	release_mem_region(res->start, (res->end - res->start));
+@@ -2292,6 +2314,16 @@
+ 	return 0;
+ }
+ 
++static int stmmac_notify_sys(struct notifier_block *this,
++			     unsigned long code, void *unused)
++{
++	if (code == SYS_DOWN || code == SYS_HALT) {
++		platform_driver_unregister(&stmmac_driver);
++	}
++	
++	return NOTIFY_DONE;
++}
++
+ __setup("stmmaceth=", stmmac_cmdline_opt);
+ #endif
+ 

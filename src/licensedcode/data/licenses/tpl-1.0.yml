@@ -1,0 +1,11 @@
+key: tpl-1.0
+short_name: TPL 1.0
+name: Terracotta Public License 1.0
+category: Copyleft Limited
+owner: Terracotta
+homepage_url: http://terracotta.org/legal/terracotta-public-license
+text_urls:
+    - http://terracotta.org/legal/terracotta-public-license
+faq_url: http://terracotta.org/legal/licensing-faq
+other_urls:
+    - http://terracotta.org/legal/licensing-overview

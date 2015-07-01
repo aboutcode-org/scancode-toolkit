@@ -1,0 +1,5 @@
+licenses:
+    - lgpl-2.1-plus
+notes: >
+    This was used by Kaboom and is an LGPL 2.1 with some mistake and disclaimer taken from GPL
+    http://git.debian.org/?p=pkg-kde/kaboom.git;a=summary

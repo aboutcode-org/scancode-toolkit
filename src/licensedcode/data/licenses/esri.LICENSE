@@ -1,0 +1,569 @@
+IMPORTANT—READ CAREFULLY
+ 
+Unless superseded by a signed license agreement between you and Esri, Esri is willing to license Products to you only if you accept all terms and conditions contained in this License Agreement. Please read the terms and conditions carefully. You may not use the Products until you have agreed to the terms and conditions of the License Agreement. If you do not agree to the terms and conditions as stated, click "I do not accept the license agreement" below; you may then request a refund of applicable fees paid.
+ 
+LICENSE AGREEMENT
+(E204 06/13/2014)
+ 
+This License Agreement is between you ("Licensee") and Environmental Systems Research Institute, Inc. ("Esri"), a California corporation with a place of business at 380 New York Street, Redlands, California 92373-8100 USA.
+ 
+GENERAL LICENSE TERMS AND CONDITIONS
+ 
+ARTICLE 1—DEFINITIONS
+ 
+Definitions. The terms used are defined as follows:
+ 
+a.     "Authorization Code(s)" means any key, authorization number, enablement code, login credential, activation code, token, account user name and password, or other mechanism required for use of a Product.
+b.     "Beta" means any alpha, beta, or prerelease Product.
+c.     "Commercial Application Service Provider Use" or "Commercial ASP Use" means generating revenue by providing access to Software or Online Services through a Value-Added Application, for example, by charging a subscription fee, service fee, or any other form of transaction fee or by generating more than incidental advertising revenue.
+d.     "Content" has the meaning provided in Addendum 3.
+e.     "Data" means any Esri or third-party digital dataset(s) including, but not limited to, geographic vector data, raster data reports, or associated tabular attributes, whether bundled with Software and Online Services or delivered independently.
+f.     "Deployment License" means a license that allows Licensee to sublicense select Software and associated Authorization Codes to third parties.
+g.     "Documentation" means all user reference documentation that is delivered with the Software.
+h.     "Online Services" means any Internet-based geospatial system, including applications and associated APIs, but excluding Data or Content, hosted by Esri or its licensors, for storing, managing, publishing, and using maps, data, and other information.
+i.      "Ordering Document(s)" means a sales quotation, purchase order, or other document identifying the Products that Licensee orders.
+j.      "Perpetual License" means a license to use a version of a Product for which applicable license fees have been paid, indefinitely, unless terminated by Esri or Licensee as authorized under this Agreement.
+k.     "Product(s)" means Software, Data, Online Services, and Documentation licensed under the terms of this License Agreement.
+l.      "Sample(s)" means sample code, sample applications, add-ons, or sample extensions of Products.
+m.   "Service Credit(s)" means a unit of exchange that is allocated with an Online Services subscription in an amount specified in the Ordering Document. Each Service Credit entitles Licensee to consume a set amount of Online Services, the amount varying depending on the Online Services being consumed. As Online Services are consumed, Service Credits are automatically debited from Licensee's account, up to the maximum number of Service Credits available. Additional Service Credits can be purchased as described in Addendum 3 (also available at http://www.esri.com/legal).
+n.     "Software" means all or any portion of Esri's proprietary software technology, excluding Data, accessed or downloaded from an Esri-authorized website or delivered on any media in any format including backups, updates, service packs, patches, hot fixes, or permitted merged copies.
+o.     "Term License" means a license or access provided for use of a Product for a limited time period ("Term") or on a subscription or transaction basis.
+p.     "Value-Added Application" means an application developed by Licensee for use in conjunction with the authorized use of any Software, Data, or Online Services.
+ 
+ARTICLE 2—INTELLECTUAL PROPERTY RIGHTS AND RESERVATION OF OWNERSHIP
+ 
+Products are licensed, not sold. Esri and its licensors own Products and all copies, which are protected by United States and applicable international laws, treaties, and conventions regarding intellectual property and proprietary rights including trade secrets. Licensee agrees to use reasonable means to protect Products from unauthorized use, reproduction, distribution, or publication. Esri and its third-party licensors reserve all rights not specifically granted in this License Agreement including the right to change and improve Products.
+ 
+ARTICLE 3—GRANT OF LICENSE
+ 
+3.1 Grant of License. Esri grants to Licensee a personal, nonexclusive, nontransferable license solely to use the Products as set forth in the applicable Ordering Documents (i) for which the applicable license fees have been paid; (ii) in accordance with this License Agreement and the configuration ordered by Licensee or as authorized by Esri or its authorized distributor; and (iii) for the applicable Term or, if no Term is applicable or identified, until terminated in accordance with Article 5. In addition to the Scope of Use in Article 4, Exhibit 1—Scope of Use (E300) applies to specific Products. Addendum 1, Addendum 2, Addendum 3, and Addendum 4 collectively comprise Exhibit 1—Scope of Use (E300) and are also available at http://www.esri.com/legal/software-license. Addendums only apply to Products specifically identified within an Addendum. Exhibit 1—Scope of Use (E300) includes Addendums for the following Product types, which are incorporated by reference:
+ 
+a.     Software. Terms of use for specific Software products are set forth in Addendum 1.
+b.     Data. Data terms of use are set forth in Addendum 2.
+c.     Online Services. Terms of use for Online Services are set forth in Addendum 3.
+d.     Limited Use Programs. Terms of use for noncommercial, nonprofit, educational, or other limited-use programs are set forth in Addendum 4.
+ 
+3.2 Evaluation and Beta Licenses. Products acquired under an evaluation license or under a Beta program are intended for evaluation and testing purposes only and not for commercial use. Any such use is at Licensee's own risk, and the Products do not qualify for Esri or distributor maintenance.
+ 
+ARTICLE 4—SCOPE OF USE
+ 
+4.1 Permitted Uses
+ 
+a.     For Products delivered to Licensee, Licensee may
+ 
+1.     Install and store Products on electronic storage device(s);
+2.     Make archival copies and routine computer backups;
+3.     Install and use a newer version of Software concurrently with the version to be replaced during a reasonable transition period not to exceed six (6) months, provided that the deployment of either version does not exceed Licensee's licensed quantity; thereafter, Licensee shall not use more Software in the aggregate than Licensee's total licensed quantity;
+4.     Move the Software in the licensed configuration to a replacement computer; and
+5.     Distribute to third parties Software and any associated Authorization Codes required for use of a Deployment License.
+ 
+b.     Commercial Application Service Provider Use. Licensee may use the Product for Commercial ASP Use provided that Licensee (i) acquires a Commercial ASP Use license, or (ii) is a governmental or not-for-profit organization that operates a website or offers an Internet service on a cost recovery basis and not for profit.
+c.     Licensee may customize Software using any (i) macro or scripting language, (ii) published application programming interface (API), or (iii) source or object code libraries, but only to the extent that such customization is described in Documentation.
+d.     Licensee may use, copy, or prepare derivative works of Documentation supplied in digital format and thereafter reproduce, display, and distribute the customized documentation only for Licensee's own internal use. Portions of Documentation supplied in digital format merged with other software and printed or digital documentation are subject to this License Agreement. Licensee shall include the following copyright attribution notice acknowledging the proprietary rights of Esri and its licensors: "Portions of this document include intellectual property of Esri and its licensors and are used herein under license. Copyright © [Licensee will insert the actual copyright date(s) from the source materials] Esri and its licensors. All rights reserved."
+e.     Font Components. All fonts provided with a Product may be used with the authorized use of any Products. Esri fonts may also be separately used to print any output created by Products. Additional use restrictions for third-party fonts included with a Product are set forth in the font file itself.
+f.     Consultant or Contractor Access. Subject to Section 3.1, Esri grants Licensee the right to permit Licensee's consultants or contractors to use the Products exclusively for Licensee's benefit. Licensee shall be solely responsible for compliance by consultants and contractors with this License Agreement and shall ensure that the consultant or contractor discontinues Product use upon completion of work for Licensee. Access to or use of Products by consultants or contractors not exclusively for Licensee's benefit is prohibited.
+g.     Licensee may use, copy, reproduce, publish, publicly display, or redistribute map images and reports containing map images derived from the use of Esri Product(s) in hard copy or static, electronic formats (e.g., PDF, GIF, JPEG) to third parties subject to restrictions set forth in this License Agreement, provided that Licensee affixes an attribution statement to the map images acknowledging Esri and/or its applicable licensor(s) as the source of the portion(s) of the Data used for the map images. For avoidance of doubt, any data that is supplied or used by Licensee in its use of the Product(s) that is not Data shall be and remain the property of Licensee or its third-party licensor(s).
+ 
+4.2 Uses Not Permitted. Except to the extent that applicable law prohibits or overrides these restrictions, or as provided herein, Licensee shall not
+ 
+a.     Sell, rent, lease, sublicense, lend, time-share, assign, or use Products for Commercial ASP Use or service bureau purposes;
+b.     Provide third parties with direct access to Products so that the third parties may use the Product directly, develop their own GIS applications, or create their own solutions in conjunction with the Product;
+c.     Distribute Software, Data, or Online Services to third parties, in whole or in part, including, but not limited to, extensions, components, or DLLs;
+d.     Distribute Authorization Codes to third parties;
+e.     Reverse engineer, decompile, or disassemble Products;
+f.     Make any attempt to circumvent the technological measure(s) that controls access to or use of Products;
+g.     Store, cache, use, upload, distribute, or sublicense Content or otherwise use Products in violation of Esri's or a third party's rights, including intellectual property rights, privacy rights, nondiscrimination laws, or any other applicable law or government regulation;
+h.     Remove or obscure any Esri (or its licensors') patent, copyright, trademark, proprietary rights notices, and/or legends contained in or affixed to any Product, Product output, metadata file, or online and/or hard-copy attribution page of any Data or Documentation delivered hereunder;
+i.      Unbundle or independently use individual or component parts of Software, Online Services, or Data;
+j.      Incorporate any portion of the Product into a product or service that competes with any Product;
+k.     Publish or in any other way communicate the results of benchmark tests run on Beta without the prior written permission of Esri and its licensors; or
+l.      Use, incorporate, modify, distribute, provide access to, or combine any computer code provided with any Product in a manner that would subject such code or any part of the Product to open source license terms, which includes any license terms that require computer code to be (i) disclosed in source code form to third parties, (ii) licensed to third parties for the purpose of making derivative works, or (iii) redistributable to third parties at no charge.
+ 
+ARTICLE 5—TERM AND TERMINATION
+ 
+This License Agreement is effective upon acceptance. Licensee may terminate this License Agreement or any Product license at any time upon written notice to Esri. Either party may terminate this License Agreement or any license for a material breach that is not cured within thirty (30) days of written notice to the breaching party, except that termination is immediate for a material breach that is impossible to cure. Upon termination of the License Agreement, all licenses granted hereunder terminate as well. Upon termination of a license or the License Agreement, Licensee will (i) stop accessing and using affected Product(s); (ii) clear any client-side data cache derived from Online Services; and (iii) uninstall, remove, and destroy all copies of affected Product(s) in Licensee's possession or control, including any modified or merged portions thereof, in any form, and execute and deliver evidence of such actions to Esri or its authorized distributor.
+ 
+ARTICLE 6—LIMITED WARRANTIES AND DISCLAIMERS
+ 
+6.1 Limited Warranties. Except as otherwise provided in this Article 6, Esri warrants for a period of ninety (90) days from the date Esri issues the Authorization Code enabling use of Software and Online Services that (i) the unmodified Software and Online Services will substantially conform to the published Documentation under normal use and service and (ii) media on which Software is provided will be free from defects in materials and workmanship.
+ 
+6.2 Special Disclaimer. CONTENT, DATA, SAMPLES, HOT FIXES, PATCHES, UPDATES, ONLINE SERVICES PROVIDED ON A NO-FEE BASIS, AND EVALUATION AND BETA SOFTWARE ARE DELIVERED "AS IS" WITHOUT WARRANTY OF ANY KIND.
+ 
+6.3 Internet Disclaimer. THE PARTIES EXPRESSLY ACKNOWLEDGE AND AGREE THAT THE INTERNET IS A NETWORK OF PRIVATE AND PUBLIC NETWORKS AND THAT (i) THE INTERNET IS NOT A SECURE INFRASTRUCTURE, (ii) THE PARTIES HAVE NO CONTROL OVER THE INTERNET, AND (iii) NONE OF THE PARTIES SHALL BE LIABLE FOR DAMAGES UNDER ANY THEORY OF LAW RELATED TO THE PERFORMANCE OR DISCONTINUANCE OF OPERATION OF ANY PORTION OF THE INTERNET OR POSSIBLE REGULATION OF THE INTERNET THAT MIGHT RESTRICT OR PROHIBIT THE OPERATION OF ONLINE SERVICES.
+ 
+6.4 General Disclaimer. EXCEPT FOR THE ABOVE EXPRESS LIMITED WARRANTIES, ESRI DISCLAIMS ALL OTHER WARRANTIES OR CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OR CONDITIONS OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, SYSTEM INTEGRATION, AND NONINFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS. ESRI DOES NOT WARRANT THAT PRODUCTS WILL MEET LICENSEE'S NEEDS; THAT LICENSEE'S OPERATION OF THE SAME WILL BE UNINTERRUPTED, ERROR FREE, FAULT-TOLERANT, OR FAIL-SAFE; OR THAT ALL NONCONFORMITIES CAN OR WILL BE CORRECTED. PRODUCTS ARE NOT DESIGNED, MANUFACTURED, OR INTENDED FOR USE IN ENVIRONMENTS OR APPLICATIONS THAT MAY LEAD TO DEATH, PERSONAL INJURY, OR PHYSICAL PROPERTY/ENVIRONMENTAL DAMAGE. LICENSEE SHOULD NOT FOLLOW ANY ROUTE SUGGESTIONS THAT APPEAR TO BE HAZARDOUS, UNSAFE, OR ILLEGAL. ANY SUCH USES SHALL BE AT LICENSEE'S OWN RISK AND COST.
+ 
+6.5 Exclusive Remedy. Licensee's exclusive remedy and Esri's entire liability for breach of the limited warranties set forth in this Article 6 shall be limited, at Esri's sole discretion, to (i) replacement of any defective media; (ii) repair, correction, or a workaround for Software or Online Services subject to the Esri Maintenance Program or Licensee's authorized distributor's maintenance program, as applicable; or (iii) return of the license fees paid by Licensee for Software or Online Services that do not meet Esri's limited warranty, provided that Licensee uninstalls, removes, and destroys all copies of Software or Documentation; ceases using Online Services; and executes and delivers evidence of such actions to Esri or its authorized distributor.
+ 
+ARTICLE 7—LIMITATION OF LIABILITY
+ 
+7.1 Disclaimer of Certain Types of Liability. ESRI, ITS AUTHORIZED DISTRIBUTOR, AND ITS LICENSORS SHALL NOT BE LIABLE TO LICENSEE FOR COSTS OF PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOST PROFITS, LOST SALES, OR BUSINESS EXPENDITURES; INVESTMENTS; BUSINESS COMMITMENTS; LOSS OF ANY GOODWILL; OR ANY INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR RELATED TO THIS LICENSE AGREEMENT OR USE OF PRODUCTS, HOWEVER CAUSED ON ANY THEORY OF LIABILITY, WHETHER OR NOT ESRI, ITS AUTHORIZED DISTRIBUTOR, OR ITS LICENSORS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. THESE LIMITATIONS SHALL APPLY NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY.
+ 
+7.2 General Limitation of Liability. EXCEPT AS PROVIDED IN ARTICLE 8—INFRINGEMENT INDEMNITY, THE TOTAL CUMULATIVE LIABILITY OF ESRI AND ITS AUTHORIZED DISTRIBUTOR HEREUNDER, FROM ALL CAUSES OF ACTION OF ANY KIND, INCLUDING, BUT NOT LIMITED TO, CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, BREACH OF WARRANTY, MISREPRESENTATION, OR OTHERWISE, SHALL NOT EXCEED THE AMOUNTS PAID BY LICENSEE FOR THE PRODUCTS THAT GIVE RISE TO THE CAUSE OF ACTION.
+ 
+7.3 Applicability of Disclaimers and Limitations. The limitations of liability and disclaimers set forth in this License Agreement will apply regardless of whether Licensee has accepted Products or any other product or service delivered by Esri or its authorized distributor. The parties agree that Esri or its authorized distributor has set its fees and entered into this License Agreement in reliance on the disclaimers and limitations set forth herein, that the same reflect an allocation of risk between the parties, and that the same form an essential basis of the bargain between the parties. THESE LIMITATIONS SHALL APPLY NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY.
+ 
+THE FOREGOING WARRANTIES, LIMITATIONS, AND EXCLUSIONS MAY NOT BE VALID IN SOME JURISDICTIONS AND APPLY ONLY TO THE EXTENT PERMITTED BY APPLICABLE LAW IN LICENSEE'S JURISDICTION. LICENSEE MAY HAVE ADDITIONAL RIGHTS UNDER LAW THAT MAY NOT BE WAIVED OR DISCLAIMED. ESRI DOES NOT SEEK TO LIMIT LICENSEE'S WARRANTY OR REMEDIES TO ANY EXTENT NOT PERMITTED BY LAW.
+ 
+ARTICLE 8—INFRINGEMENT INDEMNITY
+ 
+8.1 Esri shall defend, indemnify as described below, and hold Licensee harmless from and against any loss, liability, cost, or expense, including reasonable attorneys' fees, arising out of any claims, actions, or demands by a third party alleging that Licensee's licensed use of Software or Online Services infringe a US patent, copyright, or trademark, provided
+ 
+a.     Licensee promptly notifies Esri in writing of the claim;
+b.     Licensee provides documents describing the allegations of infringement;
+c.     Esri has sole control of the defense of any action and negotiation related to the defense or settlement of any claim; and
+d.     Licensee reasonably cooperates in the defense of the claim at Esri's request and expense.
+ 
+8.2 If Software or Online Services are found to infringe a US patent, copyright, or trademark, Esri, at its own expense, may either (i) obtain rights for Licensee to continue using the Software or Online Services or (ii) modify the allegedly infringing elements of Software or Online Services while maintaining substantially similar functionality. If neither alternative is commercially reasonable, the license shall terminate, and Licensee shall cease accessing infringing Online Services and shall uninstall and return to Esri or its authorized distributor any infringing item(s). Esri's entire liability shall then be to indemnify Licensee pursuant to Section 8.1 and (i) refund the Perpetual License fees paid by Licensee to Esri or its authorized distributor for the infringing items, prorated on a five (5)-year, straight-line depreciation basis beginning from the initial date of delivery, and (ii) for Term Licenses and maintenance, refund the unused portion of the fees paid.
+ 
+8.3 Esri shall have no obligation to defend Licensee or to pay any resultant costs, damages, or attorneys' fees for any claims or demands alleging direct or contributory infringement to the extent arising out of (i) the combination or integration of Software or Online Services with a product, process, or system not supplied by Esri or specified by Esri in its Documentation; (ii) material alteration of Software or Online Services by anyone other than Esri or its subcontractors; or (iii) use of Software or Online Services after modifications have been provided by Esri for avoiding infringement or use after a return is ordered by Esri under Section 8.2.
+ 
+8.4 THE FOREGOING STATES THE ENTIRE OBLIGATION OF ESRI AND ITS AUTHORIZED DISTRIBUTOR WITH RESPECT TO INFRINGEMENT OR ALLEGATION OF INFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS OF ANY THIRD PARTY.
+ 
+ARTICLE 9—GENERAL PROVISIONS
+ 
+9.1 Future Updates. Use of Products licensed under this License Agreement is covered by the terms and conditions contained herein. New or updated Products may require additional or revised terms of use under the then-current Esri License Agreement. Esri will make new or revised terms of use available at http://www.esri.com/legal/software-license or provide notice of new or revised terms to Licensee.
+ 
+9.2 Export Control Regulations. Licensee expressly acknowledges and agrees that Licensee shall not export, reexport, import, transfer, release, or provide access to Products, Content, Licensee's Content, or Value-Added Applications to (i) any US embargoed country; (ii) any person on the US Treasury Department's list of Specially Designated Nationals; (iii) any person or entity on the US Commerce Department's Denied Persons List, Entity List, or Unverified List; or (iv) any person or entity or into any country where such export, reexport, access, or import violates any US, local, or other applicable import/export control laws or regulations including, but not limited to, the terms of any import/export license or license exemption and any amendments and supplemental additions to those import/export laws as they may occur from time to time.
+ 
+9.3 Taxes and Fees, Shipping Charges. License fees quoted to Licensee are exclusive of any and all applicable taxes or fees, including, but not limited to, sales tax, use tax, value-added tax (VAT), customs, duties, or tariffs, and shipping and handling charges.
+ 
+9.4 No Implied Waivers. The failure of either party to enforce any provision of this License Agreement shall not be deemed a waiver of the provisions or of the right of such party thereafter to enforce that or any other provision.
+ 
+9.5 Severability. The parties agree that if any provision of this License Agreement is held to be unenforceable for any reason, such provision shall be reformed only to the extent necessary to make the intent of the language enforceable.
+ 
+9.6 Successor and Assigns. Licensee shall not assign, sublicense, or transfer Licensee's rights or delegate Licensee's obligations under this License Agreement without Esri's and its authorized distributor's prior written consent, and any attempt to do so without consent shall be void. This License Agreement shall be binding on the respective successors and assigns of the parties to this License Agreement. Notwithstanding, a government contractor under contract to the government to deliver Products may assign this License Agreement and Products acquired for delivery to its government customer upon written notice to Esri, provided the government customer assents to the terms of this License Agreement.
+ 
+9.7 Survival of Terms. The provisions of Articles 2, 5, 6, 7, 8, and 9 of this License Agreement shall survive the expiration or termination of this License Agreement.
+ 
+9.8 Equitable Relief. Licensee agrees that any breach of this License Agreement by Licensee may cause irreparable damage and that, in the event of such breach, in addition to any and all remedies at law, Esri or its authorized distributor shall have the right to seek an injunction, specific performance, or other equitable relief in any court of competent jurisdiction without the requirement of posting a bond or proving injury as a condition for relief.
+ 
+9.9 US Government Licensee. The Products are commercial items, developed at private expense, provided to Licensee under this License Agreement. If Licensee is a US government entity or US government contractor, Esri licenses Products to Licensee in accordance with this License Agreement under FAR Subparts 12.211/12.212 or DFARS Subpart 227.7202. Esri Data and Online Services are licensed under the same DFARS Subpart 227.7202 policy as commercial computer software for acquisitions made under DFARS. Products are subject to restrictions, and this License Agreement strictly governs Licensee's use, modification, performance, reproduction, release, display, or disclosure of Products. License provisions that are inconsistent with federal law will not apply. A US government Licensee may transfer Software to any of its facilities to which it transfers the computer(s) on which such Software is installed. If any court, arbitrator, or board holds that Licensee has greater rights to any portion of Products under applicable public procurement law, such rights shall extend only to the portions affected.
+ 
+9.10 Governing Law, Arbitration
+ 
+a.     Licensees in the United States of America, Its Territories, and Outlying Areas. This License Agreement shall be governed by and construed in accordance with the laws of the State of California without reference to conflict of laws principles, except that US federal law shall govern in matters of intellectual property and for US government agency use. Except as provided in Section 9.8, any dispute arising out of or relating to this License Agreement or the breach thereof that cannot be settled through negotiation shall be finally settled by arbitration administered by the American Arbitration Association under its Commercial Arbitration Rules. Judgment on the award rendered by the arbitrator may be entered in a court of competent jurisdiction. If Licensee is a US government agency, this License Agreement is subject to the Contract Disputes Act of 1978, as amended (41 USC 601–613), in lieu of the arbitration provisions of this clause. This License Agreement shall not be governed by the United Nations Convention on Contracts for the International Sale of Goods, the application of which is expressly excluded.
+b.     All Other Licensees. Except as provided in Section 9.8, any dispute arising out of or relating to this License Agreement or the breach thereof that cannot be settled through negotiation shall be finally settled under the Rules of Arbitration of the International Chamber of Commerce by one (1) arbitrator appointed in accordance with said rules. The language of the arbitration shall be English. The place of the arbitration shall be at an agreed-upon location. This License Agreement shall not be governed by the United Nations Convention on Contracts for the International Sale of Goods, the application of which is expressly excluded. Either party shall, at the request of the other, make available documents or witnesses relevant to the major aspects of the dispute.
+ 
+9.11 Maintenance. Maintenance for qualifying Products consists of updates and other benefits, such as access to technical support, specified in Esri's or its distributor's current applicable maintenance policy.
+ 
+9.12 Feedback. Esri may freely use any feedback, suggestions, or requests for Product improvements that Licensee provides to Esri.
+ 
+9.13 Patents. Licensee may not seek, and may not permit any other user to seek, a patent or similar right worldwide that is based on or incorporates any Esri technology or services. This express prohibition on patenting shall not apply to Licensee's software and technology except to the extent that Esri technology or services, or any portion thereof, are a part of any claim or preferred embodiment in a patent application or a similar application.
+ 
+9.14 Entire Agreement. This License Agreement, including its incorporated documents, constitutes the sole and entire agreement of the parties as to the subject matter set forth herein and supersedes any previous license agreements, understandings, and arrangements between the parties relating to such subject matter. Additional or conflicting terms set forth in any purchase orders, invoices, or other standard form documents exchanged during the ordering process, other than product descriptions, quantities, pricing, and delivery instructions, are void and of no effect. Any modification(s) or amendment(s) to this License Agreement must be in writing and signed by each party.
+ 
+EXHIBIT 1
+SCOPE OF USE
+(E300 02/25/2015)
+ 
+ADDENDUM 1
+SOFTWARE TERMS OF USE
+(E300-1)
+ 
+This Software Terms of Use Addendum ("Addendum 1") sets forth the terms of Licensee's use of Software and includes the Licensee's existing master license agreement, if any, or the License Agreement found at http://www.esri.com/legal/software-license (as applicable, the "License Agreement"), which is incorporated by reference. This Addendum 1 takes precedence over conflicting General License Terms and Conditions of the License Agreement.
+ 
+SECTION 1—DEFINITIONS
+ 
+Software may be offered under the following license types as set forth in the applicable sales quotation, purchase order, or other document identifying the Products that Licensee orders:
+ 
+1.     "Concurrent Use License" means a license to install and use the Product on computer(s) on a network, but the number of simultaneous users may not exceed the number of licenses acquired. A Concurrent Use License includes the right to run passive failover instances of Concurrent Use License management software in a separate operating system environment for temporary failover support.
+2.     "Deployment Server License" means a full use license that authorizes Licensee to install and use the Software for all uses permitted in the License Agreement and as described in the Documentation.
+3.     "Development Server License" means a license that authorizes Licensee to install and use the Software to build and test Value-Added Applications as described in the Documentation.
+4.     "Esri Client Software" means ArcGIS Runtime apps, ArcGIS for Desktop, and ArcGIS API for Flex apps.
+5.     "Esri Content Package" means a digital file containing ArcGIS Online basemap content (e.g., raster map tiles, images, vector data) extracted from the ArcGIS Online Basemap Services.
+6.     "Single Use License" means a license that allows Licensee to permit a single authorized end user to install and use the Product on a single computer for use by that end user on the computer on which the Product is installed. Licensee may permit the single authorized end user to install a second copy for end user's exclusive use on a second computer as long as only one (1) copy of Product is in use at any time. No other end user may use Product under the same license at the same time for any other purpose.
+7.     "Staging Server License" means a license that authorizes Licensee to install and use the Software for the following purposes: building and testing Value-Added Applications and map caches; conducting user acceptance testing, performance testing, and load testing of other third-party software; staging new commercial data updates; and training activities as described in the Documentation. Value-Added Applications and map caches can be used with Development and Deployment Servers.
+8.     "Term License" means a license or access provided for use of a Product for a limited time period ("Term") or on a subscription or transaction basis.
+9.     "Perpetual License" means a license to use a version of the Product, for which applicable license fees have been paid, indefinitely, unless terminated by Esri or Licensee as authorized under this Agreement.
+ 
+SECTION 2—TERMS OF USE FOR SPECIFIC SOFTWARE
+ 
+The following table is a list of Esri Products that have specific terms of use in addition to the general terms of use as set forth in the General License Terms and Conditions of the License Agreement. Additional terms of use are listed immediately below this table and are referenced by number(s), shown in parentheses, immediately following each Product name in the following table (in some cases, the additional terms of use referenced may be found in a separate Addendum, as noted):
+ 
+Desktop Products
+▪    ArcGIS for Desktop (Advanced, Standard, or Basic) (26; Addendum 2, Note 1; Addendum 2, Note 6)
+▪    ArcGIS Explorer Desktop (20; Addendum 2, Note 1)
+▪    ArcGIS for AutoCAD (20)
+▪    ArcPad (12; 13; Addendum 2, Note 1; Addendum 2, Note 2)
+▪    ArcReader (20; Addendum 2, Note 1)
+▪    Esri Business Analyst (Addendum 2, Note 1; Addendum 2, Note 4)
+▪    ArcGIS for Windows Mobile (15; 54; Addendum 2, Note 1)
+▪    ArcGIS for iOS; ArcGIS for Windows Phone; ArcGIS for Android (Addendum 2, Note 1)
+ 
+Server Products
+▪    ArcGIS for Server
+–    Workgroup (28; 29; 30; 32; 38; 39; Addendum 2, Note 1; Addendum 2, Note 6)
+–    Enterprise (31; 38; 39; Addendum 2, Note 1; Addendum 2, Note 6)
+–    with Virtual Cloud Infrastructure (10; Addendum 3—Common Terms)
+▪    ArcGIS for Server Extension
+–    ArcGIS for INSPIRE (Addendum 2, Note 1)
+▪    Esri Business Analyst for Server
+–    Workgroup (28; 29; 30; 31; 39; Addendum 2, Note 1; Addendum 2, Note 4)
+–    Enterprise (31; 39; Addendum 2, Note 1; Addendum 2, Note 4)
+▪    Portal for ArcGIS (31; Addendum 2, Note 1)
+▪    Esri Tracking Server (31)
+Developer Tools
+▪    ArcGIS Runtime SDK for Android, iOS, Java, Mac OS X, Microsoft .NET Framework (Windows [desktop], Windows Phone, Windows Store), Qt, or WPF (16; 19; Addendum 2, Note 1)
+▪    ArcGIS Runtime Standard Level for Android, iOS, Java, Mac OS X, Microsoft .NET Framework (Windows [desktop], Windows Phone, Windows Store), Qt, or WPF (15; 18; Addendum 2, Note 1)
+▪    ArcGIS Engine Developer Kit and Extensions (16, 19; 22, 26)
+▪    ArcGIS Engine for Windows/Linux and Extensions (15; 22; 26; Addendum 2, Note 1; Addendum 2, Note 6)
+▪    ArcGIS Web Mapping (including ArcGIS API for JavaScript/HTML5, ArcGIS API for Flex, ArcGIS API for Microsoft Silverlight) (15; 16; 64; 66; Addendum 2, Note 1)
+▪    Esri Business Analyst Server Developer (Addendum 2, Note 1; Addendum 2, Note 4)
+▪    Esri Developer Network (EDN) Software and Data (24; 26; Addendum 2, Note 6)
+▪    Esri File Geodatabase API (47)
+ 
+Bundled Products
+▪    ArcGIS for Transportation Analytics (1; Addendum 2, Note 1; Addendum 2, Note 2; Addendum 2, Note 11)
+ 
+Notes:
+ 
+▪      If you do not license any of the Products in the table above, these additional terms of use do not apply to you.
+▪      Additional terms of use for Products ONLY APPLY to the Products that reference them by number in the table above.
+▪      Unless otherwise noted in the applicable Ordering Document, extensions to Software follow the same scope of use as that granted for the corresponding Software.
+ 
+Additional Terms of Use for Products listed above:
+ 
+1.   Licensee may use the Software, Data, and Online Services included in ArcGIS for Transportation Analytics solely for direct support of fleet operations. No other use of ArcGIS for Transportation Analytics or the individual components that are part of ArcGIS for Transportation Analytics is permitted. This restriction does not apply to the ArcGIS Online for Organizations account included with ArcGIS for Transportation Analytics. The ArcGIS Online for Organizations account can be used for any purpose subject to the terms of this License Agreement.
+      2–9.  Reserved.
+10.  Licensee will provide information or other materials related to its content (including copies of any client-side applications) as reasonably requested to verify Licensee's compliance with this License Agreement. Esri may monitor the external interfaces (e.g., ports) of Licensee's content to verify Licensee's compliance with this License Agreement. Licensee will not block or interfere with such monitoring, but Licensee may use encryption technology or firewalls to help keep its content confidential. Licensee will reasonably cooperate with Esri to identify the source of any problem with the ArcGIS for Server with Virtual Cloud Infrastructure services that may reasonably be attributed to Licensee's content or any end-user materials that Licensee controls.
+11.  Reserved.
+12.  Software is licensed for navigational use only when used in conjunction with ArcLogistics.
+13.  "Dual Use License" means the Software may be installed on a desktop computer and used simultaneously with either a personal digital assistant (PDA) or handheld mobile computer as long as the Software is only used by a single individual at any one (1) time.
+14.  Reserved.
+15.  Licensed as a Deployment License, subject to Article 3, Section 3.1 of the General License Terms and Conditions.
+16.  Licensee may use the SDKs or APIs to create Value-Added Applications and distribute and license those Value-Added Applications to its end users to use the Value-Added Applications anywhere not prohibited under export regulation subject to Article 3, Section 3.1 of the General License Terms and Conditions.
+17.  Reserved.
+18.  The Deployment License is per Value-Added Application per computer.
+19.  License may not be used to develop Internet or server-based Value-Added Applications.
+20.  Licensee may reproduce and distribute the Software provided all the following occur:
+ 
+a.     The Software is reproduced and distributed in its entirety;
+b.     A license agreement accompanies each copy of the Software that protects the Software to the same extent as this License Agreement, and the recipient agrees to be bound by the terms and conditions of the license agreement;
+c.     All copyright and trademark attributions/notices are reproduced; and
+d.     There is no charge or fee attributable to the use of the Software.
+ 
+21.  Reserved.
+22.  a.     An end user must license either ArcGIS Engine for Windows/Linux Software or other ArcGIS for Desktop Software (Basic, Standard, or Advanced) to obtain the right to run an ArcGIS Engine application on one (1) computer; and
+b.     The ArcGIS Engine for Windows/Linux extensions shall not be used in combination with ArcGIS for Desktop Software to run ArcGIS Engine Value-Added Applications. A single user can have multiple ArcGIS Engine Value-Added Applications installed on one (1) computer for use only by that end user.
+23.  Reserved.
+24.  EDN Software may be used only for the purposes of development, testing, and demonstration of a prototype Value-Added Application and creating map caches. Value-Added Applications and map caches can be used with Staging and Deployment Servers. EDN server Software and Data may be installed on multiple computers for use by any Licensee EDN developer; all other EDN Software is licensed as a Single Use License.
+25.  Reserved.
+26.  An ArcSDE Personal Edition geodatabase is restricted to ten (10) gigabytes of Licensee's data.
+27.  Reserved.
+28.  Use is limited to ten (10) concurrent end users of applications other than ArcGIS for Server applications. This restriction includes use of ArcGIS for Desktop Software, ArcGIS Engine Software, and third-party applications that connect directly to any ArcGIS for Server geodatabase. There are no limitations on the number of connections from web applications.
+29.  Software can only be used with a supported version of SQL Server Express. Supported versions are listed with the system requirements for the product on the Esri website.
+30.  Use is restricted to a maximum of ten (10) gigabytes of Licensee's data.
+31.  Licensee may have redundant Esri Server Software installation(s) for failover operations, but the redundant Software can only be operational during the period the primary site is nonoperational. The redundant Software installation(s) shall remain dormant, except for system maintenance and updating of databases, while the primary site or any other redundant site is operational.
+32.  Redundant Software installation for failover operations is not permitted.
+ 33–37.  Reserved.
+38.  The ArcGIS 3D Analyst for Server extension included with ArcGIS for Server Standard (Workgroup or Enterprise) may be used only for generating globe data cache(s) or publishing a globe document as an ArcGIS Globe Service. No other use of the ArcGIS 3D Analyst for Server extension Software is permitted with ArcGIS for Server Standard.
+39.  Any editing functionality included with ArcGIS for Server is not permitted for use with ArcGIS for Server Basic (Workgroup or Enterprise).
+ 40–46.  Reserved.
+47.  Licensee may develop and distribute Value-Added Applications that use Esri File Geodatabase API to Licensee's end users.
+ 48–53.  Reserved.
+54.  ArcGIS for Windows Mobile Deployments are licensed for use with ArcGIS for Server Enterprise (Advanced or Standard), ArcGIS for Server Workgroup (Advanced), ArcGIS for Desktop (Advanced, Standard, Basic), and ArcGIS Engine Value-Added Applications.
+ 55–63.  Reserved.
+64.  Value-Added Application(s) for web deployment must be used in conjunction with other Esri Product(s). Third-party technologies may also be used in conjunction with Value-Added Application(s) as long as the Value-Added Application(s) is always used in conjunction with other Esri Product(s).
+65.  Reserved.
+66.  For desktop applications, each license is per organization. For the purposes of this license, organization is equivalent to a principal registered unique domain identifier. Domain is the Internet domain name registered with a domain name registrar. For instance, in example.com, example.com is the registered unique domain identifier. Similarly, in example.com.xx, where xx is a registered country code, example.com.xx is the registered unique domain identifier. Desktop applications can be used by any employee of the organization with the principal registered unique domain identifier. There is no limit to the number of applications that can be built and deployed within an organization.
+ 
+ADDENDUM 2
+DATA TERMS OF USE
+(E300-2)
+ 
+This Data Terms of Use Addendum ("Addendum 2") sets forth the terms of Licensee's use of Data and includes Licensee's existing master license agreement, if any, or the License Agreement found at http://www.esri.com/legal/software-license (as applicable, the "License Agreement"), which is incorporated by reference. This Addendum 2 takes precedence over conflicting General License Terms and Conditions of the License Agreement. Esri reserves the right to modify the Data terms of use referenced below at any time. For Data licensed through a subscription, Licensee may cancel the subscription upon written notice to Esri or discontinue use of the Data, as applicable. If Licensee continues to use the Data, Licensee will be deemed to have accepted the modification. Data terms of use are set forth in the notes referenced below:
+ 
+SECTION 1—GENERAL RESTRICTIONS ON USE OF DATA
+ 
+In addition to the restrictions set forth in Article 4.2 of the License Agreement, the following restrictions apply to use of Data by Licensee and Licensee's end users (collectively, "Users"). Any use of Data that is not expressly authorized in Section 2 or elsewhere in the License Agreement is strictly prohibited. Without limiting the generality of the foregoing, Licensee shall ensure Users are prohibited from (i) cobranding Data, (ii) using the Data in any unauthorized service or product, or (iii) offering Data through or on behalf of any third party.
+ 
+SECTION 2—SPECIFIC TERMS OF USE FOR DATA
+ 
+The following table is a list of Esri Products that have specific terms of use in addition to the general terms of use as set forth in the General License Terms and Conditions of the License Agreement. Additional terms of use are listed immediately below this table and are referenced by number(s), shown in parenthesis, immediately following each Product name in the following table:
+ 
+▪    ArcGIS Online Data (1)
+▪    StreetMap Premium for ArcGIS (2)
+▪    StreetMap for Windows Mobile (2)
+▪    StreetMap for ArcPad (2)
+▪    StreetMap Premium for ArcGIS for Transportation Analytics (2; Addendum 1, Note 1)
+▪    HERE Traffic Data (11; Addendum 1, Note 1)
+▪    Data Appliance for ArcGIS (3)
+▪    Business Analyst Data (4, 10)
+▪    Demographic, Consumer, and Business Data ("Esri Data") (5, 10)
+▪    Data and Maps for ArcGIS (6)
+▪    Esri MapStudio Data (9)
+ 
+Notes:
+ 
+▪      If you do not license any of the Products in the table above, these additional terms of use do not apply to you.
+▪      Additional terms of use for Products ONLY APPLY to the Products that reference them, by number, in the table above.
+ 
+Additional Terms of Use for Products listed above:
+ 
+1.     ArcGIS Online Data: Software and Online Services that reference this note enable access to ArcGIS Online Data. ArcGIS Online Data is provided for use solely in conjunction with Licensee's authorized use of Esri Software and Online Services. Use of ArcGIS Online Data that is accessible through non-fee-based ArcGIS Online accounts may be subject to usage limits.
+ 
+ArcGIS Online Basemap Data:
+ 
+a.     ArcGIS Online basemap data can be taken offline through Esri Content Packages and subsequently delivered (transferred) to any device for use exclusively with licensed Esri Client Software.
+b.     ArcGIS Online basemap data is subject to an aggregate limit of fifty million (50,000,000) transactions during any twelve (12)-month period. Transactions include both basemap and geosearch Transactions. "Transaction" is defined in the Documentation at ArcGIS Resources at http://links.esri.com/agol/transactiondef.
+ 
+        Licensee may use Data accessed through ArcGIS Online as permitted under the terms of the URLs referenced below:
+ 
+a.     HERE data is subject to the terms of use at http://www.esri.com/supplierterms-HERE.
+b.     Tele Atlas/TomTom data is subject to the terms of use at http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/j9792-teleatlas_use_data.pdf.
+c.     Data from i-cubed is subject to the terms of use at http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/j9946-icubed.pdf.
+d.     Microsoft Bing Maps data is subject to the terms of use at http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/e-802-bing-mapsvcs.pdf.
+e.     BODC bathymetry data is subject to the terms of use found at http://www.esri.com/terms-of-use-bodc.
+f.     MB-Research GmbH (MBR) Data: Users are prohibited from (i) using MBR Data, including, without limitation, European demographic data, consumer demand data, and postal and geographic boundaries, for the purpose of compiling, enhancing, verifying, supplementing, adding to, or deleting from any database or other compilation of information that is sold, rented, published, furnished, or in any manner provided to a third party or (ii) modifying or otherwise altering MBR Data without MBR's prior written consent, such consent to be granted or withheld at MBR's sole discretion.
+g.     D&B Data: May not be used for direct mailing or direct marketing purposes.
+ 
+2.     StreetMap Premium for ArcGIS: StreetMap for ArcGIS for Windows Mobile; StreetMap for ArcPad; StreetMap Premium for ArcGIS for Transportation Analytics: These Products, collectively referred to as "StreetMap Data," may be used for mapping, geocoding, and point-to-point routing purposes but are not licensed for dynamic, real-time routing guidance. For instance, StreetMap Data may not be used to alert a user about upcoming maneuvers (such as warning of an upcoming turn) or to calculate an alternate route if a turn is missed. StreetMap Data may not be used to perform synchronized multivehicle routing or route optimization. StreetMap Data acquired for use with ArcGIS for Desktop, ArcGIS for Server, ArcPad, or ArcGIS for Transportation Analytics may only be used with the Product for which the StreetMap Data was acquired, and may not be used with any other Product. StreetMap for Windows Mobile Data is licensed for use solely on mobile devices or in conjunction with ArcGIS for Mobile applications. StreetMap Data may include data from either of the following sources:
+ 
+a.     HERE data is subject to the terms of use at http://www.esri.com/supplierterms-HERE. HERE data, when licensed for use in StreetMap Premium for ArcGIS for Transportation Analytics, permits tracking, synchronized multivehicle routing, and route optimization.
+b.     Tele Atlas/TomTom data is subject to the terms of use at http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/j9792-teleatlas_use_data.pdf.
+ 
+3.     Data Appliance for ArcGIS: Data provided with Data Appliance is subject to the following additional terms of use:
+ 
+a.     HERE data is subject to the terms of use at http://www.esri.com/supplierterms-HERE.
+b.     Tele Atlas/TomTom data is subject to the terms of use at http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/j9792-teleatlas_use_data.pdf.
+c.     Data from i-cubed is subject to the terms of use at http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/j9946-icubed.pdf.
+d.     BODC bathymetry data is subject to the terms of use found at http://www.esri.com/terms-of-use-bodc.
+ 
+4.     Business Analyst Data: Business Analyst Data is provided with Esri Business Analyst (Server, Desktop). The Data is subject to the following additional terms of use:
+ 
+a.     The Data is provided for Licensee's internal business use solely in connection with Licensee's authorized use of Software. Subject to Addendum 2, Note 10, Business Analyst Data, including derivative products (e.g., geocodes), are restricted for use only in conjunction with the respective Business Analyst extension. If Licensee orders a license for Esri Business Analyst or Business Analyst (Canadian Edition) with a subset of the national dataset (i.e., Region, State, Local), Licensee may use only the licensed subset, not any other portion of the national dataset.
+b.     Business Analyst Data provided with Business Analyst for Server may not be cached or downloaded by client applications and devices.
+c.     Infogroup data is subject to the following terms of use: "Users" means end users of Esri Software. Any use of the Infogroup database not expressly authorized in this License Agreement is strictly prohibited. Without limiting the generality of the foregoing, Users are expressly prohibited from (i) sublicensing or reselling the Infogroup database; (ii) using or allowing third parties to use the Infogroup database for the purpose of compiling, enhancing, verifying, supplementing, adding to, or deleting from any mailing list, geographic or trade directories, business directories, classified directories, classified advertising, or other compilation of information that is sold, rented, published, furnished, or in any manner provided to a third party; (iii) using the Infogroup database in any service or product not specifically authorized in this License Agreement or offering it through any third party; (iv) disassembling, decompiling, reverse engineering, modifying, or otherwise altering the Infogroup database or any part thereof without Infogroup's prior written consent, such consent to be granted or withheld at Infogroup's sole discretion; or (v) using the Infogroup database for any direct marketing purposes.
+d.     HERE data is subject to the terms of use at http://www.esri.com/supplierterms-HERE.
+e.     Tele Atlas/TomTom data is subject to the terms of use at http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/j9792-teleatlas_use_data.pdf.
+f.     MBR Data: Users are prohibited from (i) using MBR Data, including, without limitation, European demographic data, consumer demand data, and postal and geographic boundaries, for the purpose of compiling, enhancing, verifying, supplementing, adding to, or deleting from any database or other compilation of information that is sold, rented, published, furnished, or in any manner provided to a third party or (ii) modifying, or otherwise altering MBR Data without MBR's prior written consent, such consent to be granted or withheld at MBR's sole discretion.
+g.     D&B Data: May not be used for direct mailing or direct marketing purposes.
+ 
+5.     Demographic, Consumer, and Business Data ("Esri Data"): This Data category includes the Updated Demographic Database, Census Data, American Community Survey (ACS) Data, Consumer Spending, Business, Retail MarketPlace, Tapestry Segmentation, Market Potential, Crime Index, Major Shopping Center, Traffic Count, and Banking datasets. Esri Data may be used independently of Software or Online Services. Each dataset is available under one or more of the following license types:
+ 
+▪      Single Use: Permits access by a single user to access the data for development or internal use on a desktop computer or server. No Internet access is permitted.
+▪      Internal Site/Server—Known User: Permits access by named (known) users for Licensee's internal use. Web access by those named users is permitted.
+▪      Public website (noncommercial)—Constituent-Served Model: Permits a municipal government Licensee to use the Data in an externally facing Value-Added Application serving a defined population, provided Licensee does not generate revenue from such use.
+▪      Public website (commercial) Known User: Permits Licensee to use the Data in an externally facing Value-Added Application for use by named users and to generate revenue from such Value-Added Application.
+▪      Public website (commercial) Anonymous User: Permits Licensee to use the Data in an externally facing Value-Added Application for general use and to generate revenue from such Value-Added Application.
+ 
+6.     Data and Maps for ArcGIS: The Data is available to licensed users of ArcGIS for Desktop, ArcGIS for Server, and ArcGIS Online. Data and Maps for ArcGIS is provided for use solely in conjunction with authorized use of ArcGIS for Desktop, ArcGIS for Server, and ArcGIS Online.
+ 
+a.     Licensee may redistribute the Data as described in the Redistribution Rights Matrix available at http://www.esri.com/legal/redistribution-rights, in the Help system, or in supporting metadata files, subject to the specific attribution descriptions and requirements for the dataset accessed.
+b.     StreetMap Data may be used for mapping, geocoding, and routing purposes but is not licensed for dynamic routing purposes. For instance, StreetMap USA may not be used to alert a user about upcoming maneuvers (such as warning of an upcoming turn) or to calculate an alternate route if a turn is missed.
+ 
+7.     Reserved.
+8.     Reserved.
+9.     MapStudio Data: Use of this Data is subject to the following terms and conditions:
+ 
+a.     HERE data is subject to the terms of use at http://www.esri.com/supplierterms-HERE.
+b.     Tele Atlas/TomTom data is subject to the terms of use at http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/j9792-teleatlas_use_data.pdf.
+c.     Data from i-cubed is subject to the terms of use at http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/j9946-icubed.pdf.
+d.     D&B Data: May not be used for direct mailing or direct marketing purposes.
+ 
+10.  Licensee may include Data in hard-copy or read-only format ("Outputs") in presentation packages, marketing studies, or other reports or documents prepared for third parties. Licensee shall not resell or otherwise externally distribute Outputs in stand-alone form.
+11.  ArcGIS for Transportation Analytics—HERE traffic data option: This online data service is available as an option for use exclusively with ArcGIS for Transportation Analytics. Use of this data is subject to the following terms and conditions:
+ 
+a.     HERE traffic data is subject to the terms of use at http://www.esri.com/supplierterms-HERE.
+b.     No automatic routing or rerouting based on traffic conditions is permitted without the Navigation add-on.
+c.     HERE traffic data may not be archived and may be delivered only for end users' personal, near-term use, not to exceed one (1) twenty-four (24)-hour period.
+d.     HERE traffic data may not be used to display or broadcast in any FM/AM/HD radio broadcast or television broadcast or through any RDS delivery method.
+e.     HERE traffic data may not be used with or incorporated into any traffic system that provides voice traffic reports to inbound callers.
+f.     HERE traffic data may not be used to develop or commercially make available a text-to-voice e-mail alert or message or voice mail application using any portion of HERE traffic data.
+ 
+ADDENDUM 3
+ONLINE SERVICES ADDENDUM
+(E300-3)
+ 
+This Online Services Addendum ("Addendum 3") sets forth the terms of Licensee's use of Online Services and includes the Licensee's existing master license agreement, if any, or the License Agreement found at http://www.esri.com/legal/software-license (as applicable, the "License Agreement"), which is incorporated by reference. This Addendum 3 takes precedence over conflicting General License Terms and Conditions of the License Agreement. Esri reserves the right to update the terms from time to time. Section 1 of this Addendum 3 contains terms applicable to all Online Services; Section 2 contains common terms applicable to specific Online Services.
+ 
+SECTION 1—COMMON TERMS OF USE OF ONLINE SERVICES
+ 
+ARTICLE 1—DEFINITIONS
+ 
+In addition to the definitions provided in the License Agreement, the following definitions apply to this Addendum 3:
+ 
+a.     "Anonymous Users" refers to anyone who has public access to any part of the Licensee's Content or Value-Added Applications, which Licensee has published through the use of the Sharing Tools, included with Licensee's licensed use of the Software or Online Services, as further described in Section 2 of this Addendum.
+b.     "API" means application programming interface.
+c.     "App Login Credential" means a system-generated application login and associated password, provided by registering a Value-Added Application with ArcGIS Online, which can be embedded in a Value-Added Application to enable the Value-Added Application to access and use Online Services.
+d.     "ArcGIS Website" means http://www.arcgis.com and any related or successor websites.
+e.     "Content" means data, images, photographs, animations, video, audio, text, maps, databases, data models, spreadsheets, user interfaces, software applications, and Developer Tools.
+f.     "Developer Tools" means software development kits (SDKs), APIs, software libraries, code samples, and other resources.
+g.     "Licensee's Content" means any Content that Licensee, a Licensee's Named User, or any other user submits to Esri in connection with Licensee's use of the Online Services, any results derived from the use of Licensee's Content with Online Services, and any Value-Added Applications Licensee builds with Developer Tools and deploys with Online Services. Licensee's Content excludes any feedback, suggestions, or requests for Product improvements that Licensee provides to Esri.
+h.     "Named User(s)" means individuals to whom Licensee specifically enables private access to Online Services and Value-Added Applications through Licensee's Online Services account. Named Users can be anyone whom Licensee authorizes to access Online Services, but only for the exclusive benefit of Licensee, for example, Licensee's employees, agents, consultants, or contractors. For Education Plan accounts, Named Users may include registered students. No other third parties may be Named Users. Named Users have private access to features of Online Services that are not publicly accessible to Anonymous Users. Named Users have unique, individual login credentials.
+i.      "Online Content" means Content hosted or provided by Esri as part of Online Services, including any Map Services, Task Services, Image Services, and Developer Tools and excluding Content provided by third parties that Licensee accesses through Online Services.
+j.      "Service Components" means each of the following: Online Services, Online Content, ArcGIS Website, Developer Tools, Documentation, or related materials.
+k.     "Sharing Tools" means publishing capabilities included with Online Services and ArcGIS Website that allow Licensee to make Licensee's Content and Value-Added Applications available to third parties and/or Anonymous Users.
+l.      "Value-Added Application" means an application developed by Licensee for use in conjunction with the authorized use of any Software, Data, or Online Services.
+m.   "Web Services" as used under Licensee's existing signed license agreement, if any, means Online Services and any Content delivered by such Online Services.
+ 
+ARTICLE 2—USE OF ONLINE SERVICES
+ 
+2.1 License to Online Services. Esri grants Licensee a personal, nonexclusive, nontransferable, worldwide license to access and use Online Services as set forth in the applicable Ordering Documents (i) for which the applicable license fees have been paid (if required), (ii) for Licensee's own internal use by Licensee and Licensee's Named Users or Anonymous Users (if applicable), and (iii) in accordance with this License Agreement and the licensed configuration on file as authorized by Esri.
+ 
+2.2 Provision of Subscription Online Services. For subscription Online Services, Esri will
+ 
+a.     Provide Online Services to Licensee in accordance with the Documentation;
+b.     Provide customer support in accordance with Esri's standard customer support policies and any additional support Licensee may purchase; and
+c.     Use commercially reasonable efforts to ensure that Online Services will not transmit to Licensee any Malicious Code, provided Esri is not responsible for Malicious Code that was introduced to Online Services through Licensee's account or through third-party Content.
+ 
+2.3 Licensee's Responsibilities.
+ 
+a.     Licensee shall be responsible for Named Users' compliance with this Agreement. Licensee and Licensee's Named Users or Anonymous Users (if applicable) are the only persons authorized to access Online Services through Licensee's accounts. Named Users' login credentials are for designated Named Users only and may not be shared among multiple individuals. Named Users' login credentials may be reassigned to new Named Users if the former users no longer require access to Online Services.
+b.     Licensee and Licensee's Named Users are responsible for maintaining the confidentiality of Authorization Codes, Access Codes, Named Users' login credentials, or any other method that is provided that enables access to Online Services and for ensuring that unauthorized third parties do not access Licensee's account. Licensee will immediately notify Esri if Licensee becomes aware of any unauthorized use of Licensee's account or any other breach of security.
+c.     Licensee is solely responsible for the development and operation of Licensee's Content and Value-Added Applications and the manner in which it chooses to allow or provide use, access, transfer, transmission, maintenance, or processing ability to or by others, including any use and access to Products, and any subsequent end user, end use, and destination restrictions issued by the US government and other governments.
+ 
+2.4 Prohibited Uses of the Online Services. In addition to the prohibited uses or except as provided under the License Agreement, Licensee shall not (i) attempt to gain unauthorized access to the Online Services or assist others to do so; (ii) use Online Services for spamming, to transmit junk e-mail or offensive or defamatory material, or for stalking or making threats of physical harm; (iii) use Online Services to store or transmit software viruses, worms, time bombs, Trojan horses, or any other computer code, files, or programs designed to interrupt, destroy, or limit the functionality of any computer software, hardware, or telecommunications equipment ("Malicious Code"); (iv) mirror, reformat, or display Online Services in an attempt to mirror and/or make commercial use of Online Services except to the degree that Online Services directly enable such functionality; (v) share the client-side data cache derived from Online Content with other licensed end users or third parties; (vi) distribute the client-side data cache derived from Online Services to third parties; (vii) manually or systematically collect or scrape (screen or web scraping) Content from Online Services; (viii) use ArcGIS Online Map Services, Geocoding Services, or Routing Services in communication with any in-vehicle navigation system installed in a vehicle (this does not include portable navigation devices) or that provides real-time, dynamic routing to any device (for instance, these services may not be used to alert a user about upcoming maneuvers such as warning of an upcoming turn or to calculate an alternate route if a turn is missed); or (ix) incorporate any portion of Online Services into a commercial product or service unless the commercial product adds material functionality to Online Services. Licensee shall not use Online Services to (a) infringe or misappropriate any third-party proprietary rights or privacy rights; (b) process, store, transmit, or enable access to any information, data, or technology controlled for export under the International Traffic in Arms (ITAR) regulations; (c) violate any export law; or (d) store or process Content online that is unclassified controlled technical information (UCTI) under DFARS 204.73, or is protected health information (PHI) under the Health Insurance Portability and Accountability Act (HIPAA). Licensee shall not attempt to (a) probe, scan, or test the vulnerability of the Online Services or to breach any security or authentication measures used by the Online Services; or (b) benchmark the availability, performance, or functionality of Online Services for competitive purposes. Licensee is responsible for any fines, penalties, or claims against Esri, including reasonable attorneys' fees, arising out of Licensee's noncompliance with any of the foregoing prohibitions.
+ 
+2.5 Evaluations. Esri may provide licenses to use certain Services for Licensee's internal evaluation purposes. Such licenses continue until the stated evaluation period expires or until Licensee purchases a subscription, whichever occurs first. IF LICENSEE DOES NOT CONVERT LICENSEE'S EVALUATION LICENSE TO A SUBSCRIPTION PRIOR TO EXPIRATION OF THE EVALUATION TERM, ANY CONTENT AND CUSTOMIZATIONS THAT LICENSEE UPLOADED OR MADE DURING THE EVALUATION TERM WILL BE PERMANENTLY LOST. IF LICENSEE DOES NOT WISH TO PURCHASE A SUBSCRIPTION, LICENSEE MUST EXPORT SUCH CONTENT BEFORE THE END OF LICENSEE'S EVALUATION PERIOD.
+ 
+2.6 Modifications of Online Services. Esri reserves the right to alter or modify Online Service(s) and related APIs at any time. If reasonable under the circumstances, Esri will provide thirty (30) days' prior notice of any material alterations.
+ 
+2.7 Discontinuation or Deprecation of Online Services. Esri reserves the right to discontinue or deprecate an Online Service(s) and related API(s) at any time. If reasonable under the circumstances, Esri will provide ninety (90) days' prior notice of any Online Service discontinuation or deprecation. Esri will attempt to support any deprecated APIs for up to six (6) months, unless there are legal, financial, or technological reasons not to support them.
+ 
+2.8 If any modification, discontinuation, or deprecation of Online Service(s) causes a material, adverse impact to Licensee's operations, Esri may at its sole discretion attempt to repair, correct, or provide a workaround for Online Services. If a viable solution is not commercially reasonable, Licensee may cancel its subscription to Online Services, and Esri will issue a prorated refund.
+ 
+2.9 Attributions. Licensee is not permitted to remove any Esri or Esri's licensors' logos or other attribution associated with any use of ArcGIS Online Services.
+ 
+ARTICLE 3—TERM AND TERMINATION
+ 
+The following supplements Article 5—Term and Termination of the License Agreement:
+ 
+3.1 Term of Subscriptions. The term of any subscription will be provided in the Ordering Document under which it is purchased or in the Online Services description referenced therein.
+ 
+3.2 Subscription Rate Changes. Monthly subscription rates may be increased upon thirty (30) days' notice. Esri may increase rates for subscriptions with a term greater than one (1) month by notifying Licensee at least sixty (60) days prior to expiration of the then-current subscription term.
+ 
+3.3 Service Interruption. Licensee's access (including access on behalf of Licensee's customers) to and use of Online Service(s) may be temporarily unavailable, without prior notice, for any unanticipated or unscheduled downtime or unavailability of all or any portion of Online Services, including system failure or other events beyond the reasonable control of Esri.
+ 
+3.4 Service Suspension. Esri shall be entitled, without any liability to Licensee, to suspend access to any portion or all of Online Services at any time on a service-wide basis (a) if Licensee breaches the License Agreement; (b) if Licensee exceeds usage limits and fails to purchase additional license capacity sufficient to support Licensee's continued use of Online Services as described in Article 5 of this Addendum; (c) if there is reason to believe that Licensee's use of Online Service(s) will adversely affect the integrity, functionality, or usability of the Online Service(s); (d) if Esri and its licensors may incur liability by not suspending Licensee's account; (e) for scheduled downtime to conduct maintenance or make modifications to Online Service(s); (f) in the event of a threat or attack on Online Service(s) (including a denial-of-service attack) or other event that may create a risk to the applicable part of Online Services; or (g) in the event that Esri determines that Online Services (or portions thereof) are prohibited by law or otherwise that it is necessary or prudent to do so for legal or regulatory reasons. If feasible under these circumstances, Licensee will be notified of any Service Suspension beforehand and allowed reasonable opportunity to take remedial action.
+ 
+3.5 Esri is not responsible for any damage, liabilities, losses (including any loss of data or profits), or any other consequences that Licensee or any Licensee customer may incur as a result of any Service Interruption or Service Suspension.
+ 
+ARTICLE 4—LICENSEE'S CONTENT, FEEDBACK
+ 
+4.1 Licensee's Content. Licensee retains all right, title, and interest in Licensee's Content. Licensee hereby grants Esri and Esri's licensors a nonexclusive, nontransferable, worldwide right to host, run, and reproduce Licensee's Content solely for the purpose of enabling Licensee's use of Online Services. Without Licensee's permission, Esri will not access, use, or disclose Licensee's Content except as reasonably necessary to support Licensee's use of Online Services, respond to Licensee's requests for customer support, or troubleshoot Licensee's account or for any other purpose authorized by Licensee in writing. If Licensee accesses Online Services with an application provided by a third party, Esri may disclose Licensee's Content to such third party as necessary to enable interoperation between the application, Online Services, and Licensee's Content. Esri may disclose Licensee's Content if required to do so by law or pursuant to the order of a court or other government body, in which case Esri will reasonably attempt to limit the scope of disclosure. It is Licensee's sole responsibility to ensure that Licensee's Content is suitable for use with Online Services and for maintaining regular offline backups using the Online Services export and download capabilities.
+ 
+4.2 Removal of Licensee's Content. Licensee will provide information and/or other materials related to Licensee's Content as reasonably requested by Esri to verify Licensee's compliance with this License Agreement. Esri may remove or delete any portions of Licensee's Content if there is reason to believe that uploading it to, or using it with, Online Services violates this License Agreement. If reasonable under these circumstances, Esri will notify Licensee before Licensee's Content is removed. Esri will respond to any Digital Millennium Copyright Act take-down notices in accordance with Esri's Copyright Policy, available at http://www.esri.com/legal/dmca_policy.
+ 
+4.3 Sharing Licensee's Content. If Licensee elects to share Licensee's Content using Sharing Tools, then Licensee acknowledges that it has enabled third parties to use, store, cache, copy, reproduce, (re)distribute, and (re)transmit Licensee's Content through Online Services. ESRI IS NOT RESPONSIBLE FOR ANY LOSS, DELETION, MODIFICATION, OR DISCLOSURE OF LICENSEE'S CONTENT RESULTING FROM USE OR MISUSE OF SHARING TOOLS OR ANY OTHER SERVICE COMPONENTS. LICENSEE'S USE OF SHARING TOOLS IS AT LICENSEE'S SOLE RISK.
+ 
+4.4 Retrieving Licensee's Content upon Termination. Upon termination of the License Agreement or any trial, evaluation, or subscription, Esri will make Licensee's Content available to Licensee for download for a period of thirty (30) days unless Licensee requests a shorter window of availability or Esri is legally prohibited from doing so. Thereafter, Licensee's right to access or use Licensee's Content with Online Services will end, and Esri will have no further obligations to store or return Licensee's Content.
+ 
+ARTICLE 5—LIMITS ON USE OF ONLINE SERVICES; SERVICE CREDITS
+ 
+Esri may establish limits on the Online Services available to Licensee. These limits may be controlled through Service Credits. Service Credits are used to measure the consumption of ArcGIS Online services made available through Licensee's account. The maximum Service Credits provided with Licensee's ArcGIS Online account will be addressed in the applicable Ordering Document. Esri will notify Licensee's account administrator when Licensee's Service Credit consumption reaches approximately seventy-five percent (75%) of the Service Credits allocated to Licensee through Licensee's subscription. Esri will notify Licensee's account administrator if Licensee's Service Credit consumption reaches or exceeds one hundred percent (100%). If Licensee's account exceeds one hundred percent (100%) of the available Service Credits, Licensee may continue to access its account; however, Licensee's access to services that consume Service Credits will be suspended. Licensee's access to the services that consume Service Credits will be restored immediately upon the completion of Licensee's purchase of additional Service Credits.
+ 
+ARTICLE 6—ONLINE CONTENT; THIRD-PARTY CONTENT AND WEBSITES
+ 
+6.1 Online Content. ArcGIS Online Data is included as a component of Online Services and is licensed under the terms of the License Agreement.
+ 
+6.2 Third-Party Content and Websites. Online Services and ArcGIS Website may reference or link to third-party websites or enable Licensee to access, view, use, and download third-party Content. This Agreement does not address Licensee's use of third-party Content, and Licensee may be required to agree to different or additional terms in order to use third-party Content. Esri does not control these websites and is not responsible for their operation, content, or availability; Licensee's use of any third-party websites and third-party Content is as is, without warranty, and at Licensee's sole risk. The presence of any links or references in Online Services to third-party websites and resources does not imply an endorsement, affiliation, or sponsorship of any kind.
+ 
+SECTION 2—TERMS OF USE FOR SPECIFIC ONLINE SERVICES
+ 
+The following table is a list of Esri Products that have specific terms of use in addition to the general terms of use as set forth in the General License Terms and Conditions of the License Agreement. Additional terms of use are listed immediately below this table and are referenced by number(s), shown in parentheses, immediately following each Product name in the following table (in some cases, the additional terms of use referenced may be found in a separate Addendum, as noted):
+ 
+▪    ArcGIS Online (1; 2; Addendum 2, Note 1; Addendum 2, Note 6)
+▪    Esri Business Analyst Online (3; Addendum 2, Note 1)
+▪    Esri Business Analyst Online Mobile (3; Addendum 2, Note 1)
+▪    Esri Community Analyst (3; Addendum 2, Note 1)
+▪    Esri Redistricting Online (Addendum 2, Note 1)
+▪    Esri MapStudio (4; Addendum 2, Note 1; Addendum 2, Note 9)
+ 
+Notes:
+ 
+▪      If you do not license any of the Products in the table above, these additional terms of use do not apply to you.
+▪      Additional terms of use for Products ONLY APPLY to the Products that reference them by number in the table above.
+ 
+Additional Terms of Use for Products listed above:
+ 
+1.     In addition to the common terms of use of Online Services:
+ 
+a.     Licensee may use Licensee's Esri Online Services account to build a Value-Added Application(s) for Licensee's internal use.
+ 
+b.     Licensee may also provide access to Licensee's Value-Added Application(s) to third parties, subject to the following terms:
+ 
+i.      Licensee may allow Anonymous Users to access Licensee's Value-Added Application(s).
+ii.     Licensee shall not add third parties as Named Users to Licensee's ArcGIS Online account for the purpose of allowing third parties to access Licensee's Value-Added Application(s). This restriction does not apply to third parties included within the definition of Named Users.
+iii.    Licensee shall not provide a third party with access to ArcGIS Online Services enabled through Licensee's ArcGIS Online account other than through Licensee's Value-Added Application(s). This restriction does not apply to third parties included within the definition of Named Users.
+iv.    Licensee is responsible for any fees accrued through the use of Licensee's ArcGIS Online account by third parties accessing Licensee's Value-Added Application(s). This includes Service Credits required to support third-party Online Services usage and any additional subscription fees for Online Services as required.
+v.     Licensee is solely responsible for providing technical support for Licensee's Value-Added Application(s).
+vi.    Licensee will restrict third-party use of Online Services as required by the terms of this Agreement.
+vii.   Licensee may not remove or obscure any trademarks or logos that would normally be displayed through the use of the Online Services without written permission. Licensee must include attribution acknowledging that its application is using Online Services provided by Esri, if attribution is not automatically displayed through the use of Online Services. Guidelines are provided in the Documentation.
+viii. Licensee may not embed a Named User credential into a Value-Added Application. For ArcGIS Online for Organizations, Education, and Nongovernmental Organization/Nonprofit Organization (NGO/NPO) Plan accounts, an App Login Credential may only be embedded into Value-Added Applications that are used to provide public, anonymous access to ArcGIS Online. Licensee may not embed or use ArcGIS Online App Login Credentials in Value-Added Applications for internal use. Value-Added Applications used internally require Named User login credentials.
+ 
+c.     For ArcGIS Online ELA, ArcGIS Online for Organizations, and paid Developer Plan accounts:
+ 
+i.      Licensee is also permitted to
+ 
+(1)   Charge an additional fee to third parties to access Licensee's Value-Added Application(s), subject to the terms of this License Agreement; and
+(2)   Transfer Licensee's Value-Added Application(s) to a third party's ArcGIS Online account, subject to the following:
+ 
+(a)   Licensee may charge third parties a fee for Licensee's Value-Added Application(s).
+(b)   Licensee is not obligated to provide technical support for the third party's general use of its ArcGIS Online account not related to Licensee's Value-Added Application(s).
+(c)   Licensee is not responsible for any fees accrued through the third party's use of Licensee's Value-Added Application(s) that have been transferred to or implemented on the third party's ArcGIS Online account.
+(d)   Licensee is not permitted to invite licensees of an ArcGIS Online Public Plan to participate in private groups. This restriction also applies to licensees of Education Plan accounts and NGO/NPO Plan accounts.
+ 
+d.     For ArcGIS Online Public Plan accounts, Development and Testing Plan accounts, Education Plan accounts, and NGO/NPO use of ArcGIS Online for Organizations accounts: Licensee is not permitted to charge an additional fee to third parties to access Licensee's Value-Added Application(s) or generate more than incidental advertising revenue as a consequence of the deployment or use of the Value-Added Application(s). Charging a fee to access Licensee's Value-Added Application(s) or generating more than incidental advertising revenue requires an ArcGIS Online ELA, ArcGIS Online for Organizations, or paid Developer Plan account.
+ 
+e.     For ArcGIS Online Public Plan accounts:
+ 
+i.      Public Plan accounts are licensed for the personal use of an individual. Any use of Public Plan accounts by an individual for the benefit of a for-profit business or a government agency is prohibited.
+ 
+▪      This restriction does not apply to educational institutions when used for teaching purposes only, qualified NGO/NPO organizations, and press or media organizations. Individuals affiliated with these specific types of organization are permitted to use ArcGIS Online Public Plan accounts for the benefit of their affiliated organization(s).
+ 
+ii.     Public Plan account Licensees are not permitted to create private groups or participate in any private group created by licensees of ArcGIS Online for Organizations, Education, NGO/NPO, or ELA Plans.
+ 
+f.     For ArcGIS Online Development and Testing Plan accounts:
+ 
+i.      Subject to the terms of this License Agreement, Licensee is permitted to
+ 
+(1)   Allow third parties to access Licensee's Value-Added Application(s) powered by their Development and Testing Plan account, but only if the Value-Added Application(s) is published for public access and is not used for the benefit of a for-profit business or government agency.
+ 
+▪      This restriction does not apply to educational institutions when used for teaching purposes only, qualified NGO/NPO organizations, and press or media organizations. Individuals affiliated with these specific types of organizations are permitted to use ArcGIS Online Development and Testing Plan accounts for the benefit of their affiliated organization(s).
+ 
+ii.     Development and Testing Plan account licensees are not permitted to create private groups or participate in any private group created by licensees of ArcGIS Online for Organizations, Education, NGO/NPO, or ELA Plans.
+ 
+g.     For ArcGIS Online paid Developer Plan accounts or Development and Testing Plan accounts:
+ 
+i.      Licensee is limited to one million (1,000,000) basemap and one million (1,000,000) geosearch Transactions per month in conjunction with Licensee's account. "Transaction" is defined in the Documentation at ArcGIS Resources at http://links.esri.com/agol/transactiondef.
+ 
+h.     Licensee is not permitted to be the licensee of an ArcGIS Online account for or on behalf of a third party.
+ 
+▪      This restriction does not apply to education institutions that are permitted to be licensees of ArcGIS Online Public Plan accounts on behalf of registered students of the education institution for teaching purposes only. Education institutions are also permitted to provide access to a single ArcGIS Online Public Plan account to more than one (1) registered student when used for teaching purposes only.
+ 
+i.      The terms "Online ELA account," "Organizations Plan account," "Developer Plan account," "Public Plan account," "Development and Testing Plan account," and "Education Plan account" refer to different types of ArcGIS Online accounts.
+ 
+2.     Terms of Use for ArcGIS Online Services:
+ 
+a.     World Geocoding Service: Licensee may not store the geocoded results generated by the service without an ArcGIS Online account.
+b.     Infographics Service: Licensee may use the data accessible through this service for display purposes only. Licensee is prohibited from saving any data accessible through this service.
+ 
+3.     Licensee may not display or post any combination of more than one hundred (100) Esri Business Analyst Online or Esri Community Analyst Reports and maps on Licensee's external websites.
+4.     Licensee may create, publicly display, and distribute maps in hard copy and static electronic format for news-reporting purposes, subject to any restrictions for ArcGIS Online Data set forth in Addendum 2, Note 1.
+ 
+ADDENDUM 4
+LIMITED USE PROGRAMS
+(E300-4)
+ 
+This Limited Use Programs Addendum ("Addendum 4") applies to any Licensee that has been qualified by Esri or its authorized distributor to participate in any of the programs described herein. This Addendum 4 includes the Licensee's existing master license agreement, if any, or the License Agreement found at http://www.esri.com/legal/software-license (as applicable, the "License Agreement"), which is incorporated by reference. This Addendum 4 takes precedence over conflicting terms of the License Agreement. Esri reserves the right to update the terms from time to time.
+ 
+▪    Educational Programs (1)
+▪    Grant Programs (2)
+▪    Home Use Program (3)
+▪    Other Esri Limited Use Programs (4)
+ 
+Notes
+ 
+1.     Educational Programs: Licensee agrees to use Products solely for educational purposes during the educational use Term. Licensee shall not use Products for any Administrative Use unless Licensee has acquired an Administrative Use Term License. "Administrative Use" means administrative activities that are not directly related to instruction or education, such as asset mapping, facilities management, demographic analysis, routing, campus safety, and accessibility analysis. Licensee shall not use Products for revenue-generating or for-profit purposes.
+2.     Grant Programs: Licensee may use Products only for Noncommercial purposes. Except for cost recovery of using and operating the Products, Licensee shall not use Products for revenue-generating or for-profit purposes.
+3.     ArcGIS for Home Use Program:
+ 
+a.     All ArcGIS for Home Use Program Products are provided as Term Licenses and are identified on Esri's Home Use Program website found at http://www.esri.com/software/arcgis/arcgis-for-home or Licensee's authorized distributor's website.
+b.     Esri grants to Licensee a personal, nonexclusive, nontransferable, Single Use License, without the authorization to install or use a second copy, solely to use the Products provided under the ArcGIS for Home Use Program as set forth in the applicable Ordering Documents (i) for which the applicable license fees have been paid, (ii) for Licensee's own Noncommercial internal use, (iii) in accordance with this License Agreement and the configuration ordered by Licensee or as authorized by Esri or its authorized distributor, and (iv) for a period of twelve (12) months unless terminated earlier in accordance with the License Agreement. "Noncommercial" means use in a personal or individual capacity that (i) is not compensated in any fashion; (ii) is not intended to produce any works for commercial use or compensation; (iii) is not intended to provide a commercial service; and (iv) is neither conducted nor funded by any person or entity engaged in the commercial use, application, or exploitation of works similar to the licensed Products.
+c.     Installation Support. Installation Support for a period of ninety (90) days is included with ArcGIS for Home Use. As discussed further on the Esri or authorized distributor's website, Esri provides technical support in response to specific inquiries. Installation Support will apply only to unmodified Software. Software is provided only for standard hardware platforms and operating systems supported by Esri as described in the Software Documentation. Esri is not responsible for making or arranging for updates to interfaces for nonstandard devices or custom applications.
+ 
+Esri Installation Support will be provided in compliance with the Esri ArcGIS for Home Use Installation Support document on the Esri website at http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/home-use-installation-support.pdf. Esri supports users solely with the installation of Esri Software. Esri's Support website is at http://support.esri.com/en/support. Support provided by an authorized distributor will be in accordance with the distributor's technical support program terms and conditions.
+ 
+4.     Other Esri Limited Use Programs: If Licensee acquires Products under any limited use program not listed above, Licensee's use of the Products may be subject to the terms set forth in the applicable launching page or enrollment form or as described on Esri's website in addition to the nonconflicting terms of this Addendum 4. All such program terms are incorporated herein by reference.

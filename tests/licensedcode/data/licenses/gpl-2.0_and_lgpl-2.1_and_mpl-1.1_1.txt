@@ -1,0 +1,33 @@
+/*
+ *
+ * Open Session Border Controller (OpenSBC)
+ *
+ * CHANGE HISTORY
+ *
+ * Version: MPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * Jun 15, 2009 : Joegen :  Marking Event rewind on deadlock opensipstack changes
+ *
+ */
+
+
+#ifndef SBC_VERSION_H
+#define SBC_VERSION_H
+
+
+
+/* WARNING: You MUST NOT add any comments to the #defines which follow
+   or add extra commented out #defines as this will confuse the parser
+   which extracts the version numbers
+ */
+
+#define SBC_MAJOR_VERSION 1
+#define SBC_MINOR_VERSION 1
+#define SBC_BUILD_NUMBER 5
+#define SBC_REVISION_NUMBER 108
+#define SBC_BUILD_TYPE    ReleaseCode
+
+#endif  // SBC_VERSION_H
+
+
+// End of File ///////////////////////////////////////////////////////////////

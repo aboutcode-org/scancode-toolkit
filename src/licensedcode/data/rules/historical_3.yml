@@ -1,0 +1,4 @@
+licenses:
+    - historical
+template: yes
+notes: Often found in the C++ standard library, Historical HP variant

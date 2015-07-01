@@ -1,0 +1,205 @@
+Microsoft Remote NDIS USB Kit EULA
+MICROSOFT REMOTE NDIS USB KIT
+END-USER LICENSE AGREEMENT FOR MICROSOFT SOFTWARE
+
+IMPORTANT-READ CAREFULLY: This End-User License Agreement ("EULA") is a
+legal agreement between you (either an individual or a single entity) and Microsoft
+Corporation for the Microsoft software that accompanies this EULA, which includes
+computer software and may include associated media, printed materials, "online" or
+electronic documentation, and Internet-based services ("Software"). An amendment or
+addendum to this EULA may accompany the Software. YOU AGREE TO BE BOUND
+BY THE TERMS OF THIS EULA BY INSTALLING, COPYING, OR OTHERWISE
+USING THE SOFTWARE. IF YOU DO NOT AGREE, DO NOT INSTALL, COPY, OR
+USE THE SOFTWARE; YOU MAY RETURN IT TO YOUR PLACE OF PURCHASE (IF
+APPLICABLE) FOR A FULL REFUND.
+
+1.	GRANT OF LICENSE. Microsoft grants you the following rights provided that you
+comply with all terms and conditions of this EULA: a nonexclusive, worldwide, royalty
+free right and license to use an unlimited number of copies of the Software on
+computers, including workstations, terminals, or other devices and redistribute the
+Software in object code only provided that each copy is a true and complete copy of the
+Software including the license.txt file.
+
+2.	ADDITIONAL LICENSE RIGHTS -- REDISTRIBUTABLE CODE. In addition to the
+rights granted in Section 1, certain portions of the Software, as described in this Section
+2, are provided to you with additional license rights. These additional license rights are
+conditioned upon your compliance with the distribution requirements and license
+restrictions described in Section 3.
+
+2.1	Redistributable Code--General. Microsoft grants you a nonexclusive, royalty-free
+right to reproduce and distribute the object code form of any portion of the Software
+listed in REDIST.TXT ("Redistributable Code"). For general redistribution requirements
+for Redistributable Code, see Section 3.1, below.
+
+3.	LICENSE RESTRICTIONS -- DISTRIBUTION REQUIREMENTS. If you choose to
+exercise your rights under Section 2, any redistribution by you is subject to your
+compliance with the following terms.
+
+3.1	If you are authorized and choose to redistribute Redistributable Code as described
+in Section 2, you agree: (i) to distribute the Software only in object code form and only
+in conjunction with and as a part of your hardware products ("Licensee Product") which
+are designed to operate in conjunction with Microsoft Windows 2000 operating systems;
+(ii) to distribute the Licensee Product containing the Redistributable Code pursuant to
+an end user license agreement (which may be "break-the-seal", "click-wrap" or signed),
+with terms no less protective than those contained in this EULA; (iii) not to use
+Microsoft's name, logo, or trademarks to market the Licensee Product; (iv) to display
+your own valid copyright notice which shall be sufficient to protect Microsoft's copyright
+in the Software; (v) not to remove or obscure any copyright, trademark or patent notices
+that appear on the Software as delivered to you; (vi) to indemnify, hold harmless, and
+defend Microsoft from and against any claims or lawsuits, including attorney's fees, that
+arise or result from the use or distribution of the Licensee Product; (vii) otherwise
+comply with the terms of this EULA; and (viii) agree that Microsoft reserves all rights not
+expressly granted.
+You also agree not to permit further distribution of the Redistributable Code by your end
+users except you may permit further redistribution of the Redistributable Code by your
+distributors to your end-user customers if your distributors only distribute the
+Redistributable Code in conjunction with, and as part of, the Licensee Product and you
+and your distributors comply with all other terms of this EULA.
+
+3.2	If you use the Redistributable Code, then in addition to your compliance with the
+applicable distribution requirements described for the Redistributable Code, the
+following also applies. Your license rights to the Redistributable Code are conditioned
+upon your not (i) creating derivative works of the Redistributable Code in any manner
+that would cause the Redistributable Code in whole or in part to become subject to any
+of the terms of an Excluded License; or (ii) distributing the Redistributable Code (or
+derivative works thereof) in any manner that would cause the Redistributable Code to
+become subject to any of the terms of an Excluded License. An "Excluded License" is
+any license that requires as a condition of use, modification and/or distribution of
+software subject to the Excluded License, that such software or other software
+combined and/or distributed with such software be (x) disclosed or distributed in source
+code form; (y) licensed for the purpose of making derivative works; or (z) redistributable
+at no charge.
+
+4.	RESERVATION OF RIGHTS AND OWNERSHIP. Microsoft reserves all rights not
+expressly granted to you in this EULA. The Software is protected by copyright and other
+intellectual property laws and treaties. Microsoft or its suppliers own the title, copyright,
+and other intellectual property rights in the Software. The Software is licensed, not
+sold.
+
+5.	LIMITATIONS ON REVERSE ENGINEERING, DECOMPILATION, AND
+DISASSEMBLY. You may not reverse engineer, decompile, or disassemble the
+Software, except and only to the extent that such activity is expressly permitted by
+applicable law notwithstanding this limitation.
+
+6. NO RENTAL/COMMERCIAL HOSTING. You may not rent, lease, lend or provide
+commercial hosting services with the Software.
+
+7.	CONSENT TO USE OF DATA. You agree that Microsoft and its affiliates may
+collect and use technical information gathered as part of the product support services
+provided to you, if any, related to the Software. Microsoft may use this information solely
+to improve our products or to provide customized services or technologies to you and
+will not disclose this information in a form that personally identifies you.
+
+8.	LINKS TO THIRD PARTY SITES. You may link to third party sites through the use
+of the Software. The third party sites are not under the control of Microsoft, and
+Microsoft is not responsible for the contents of any third party sites, any links contained
+in third party sites, or any changes or updates to third party sites. Microsoft is not
+responsible for webcasting or any other form of transmission received from any third
+party sites. Microsoft is providing these links to third party sites to you only as a
+convenience, and the inclusion of any link does not imply an endorsement by Microsoft
+of the third party site.
+
+9.	ADDITIONAL SOFTWARE/SERVICES. This EULA applies to updates,
+supplements, add-on components, or Internet-based services components, of the
+Software that Microsoft may provide to you or make available to you after the date you
+obtain your initial copy of the Software, unless we provide other terms along with the
+update, supplement, add-on component, or Internet-based services component.
+Microsoft reserves the right to discontinue any Internet-based services provided to you
+or made available to you through the use of the Software.
+
+10.	U.S. GOVERNMENT LICENSE RIGHTS. All Software provided to the U.S.
+Government pursuant to solicitations issued on or after December 1, 1995 is provided
+with the commercial license rights and restrictions described elsewhere herein. All
+Software provided to the U.S. Government pursuant to solicitations issued prior to
+December 1, 1995 is provided with "Restricted Rights" as provided for in FAR, 48 CFR
+52.227-14 (JUNE 1987) or DFAR, 48 CFR 252.227-7013 (OCT 1988), as applicable.
+
+11.	EXPORT RESTRICTIONS. You acknowledge that the Software is subject to U.S.
+export jurisdiction. You agree to comply with all applicable international and national
+laws that apply to the Software, including the U.S. Export Administration Regulations, as
+well as end-user, end-use, and destination restrictions issued by U.S. and other
+governments. For additional information see http://www.microsoft.com/exporting/.
+
+12.	SOFTWARE TRANSFER. The initial user of the Software may make a one-time
+permanent transfer of this EULA and Software to another end user, provided the initial
+user retains no copies of the Software. The transfer may not be an indirect transfer,
+such as a consignment. Prior to the transfer, the end user receiving the Software must
+agree to all the EULA terms.
+
+13.	TERMINATION. Without prejudice to any other rights, Microsoft may terminate this
+EULA if you fail to comply with the terms and conditions of this EULA. In such event,
+you must destroy all copies of the Software and all of its component parts.
+
+14.	DISCLAIMER OF WARRANTIES. TO THE MAXIMUM EXTENT PERMITTED BY
+APPLICABLE LAW, MICROSOFT AND ITS SUPPLIERS PROVIDE THE SOFTWARE,
+AND SUPPORT SERVICES (IF ANY) AS IS AND WITH ALL FAULTS, AND
+MICROSOFT AND ITS SUPPLIERS HEREBY DISCLAIM ALL OTHER WARRANTIES
+AND CONDITIONS, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING,
+BUT NOT LIMITED TO, ANY (IF ANY) IMPLIED WARRANTIES, DUTIES OR
+CONDITIONS OF MERCHANTABILITY, OF FITNESS FOR A PARTICULAR
+PURPOSE, OF RELIABILITY OR AVAILABILITY, OF ACCURACY OR
+COMPLETENESS OF RESPONSES, OF RESULTS, OF WORKMANLIKE EFFORT,
+OF LACK OF VIRUSES, AND OF LACK OF NEGLIGENCE, ALL WITH REGARD TO
+THE SOFTWARE, AND THE PROVISION OF OR FAILURE TO PROVIDE SUPPORT
+OR OTHER SERVICES, INFORMATION, SOFTWARE, AND RELATED CONTENT
+THROUGH THE SOFTWARE OR OTHERWISE ARISING OUT OF THE USE OF THE
+SOFTWARE. ALSO, THERE IS NO WARRANTY OR CONDITION OF TITLE, QUIET
+ENJOYMENT, QUIET POSSESSION, CORRESPONDENCE TO DESCRIPTION OR
+NON-INFRINGEMENT WITH REGARD TO THE SOFTWARE. THE ENTIRE RISK AS
+TO THE QUALITY, OR ARISING OUT OF THE USE OR PERFORMANCE OF THE
+SOFTWARE AND ANY SUPPORT SERVICES, REMAINS WITH YOU.
+
+15.	EXCLUSION OF INCIDENTAL, CONSEQUENTIAL AND CERTAIN OTHER
+DAMAGES. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO
+EVENT SHALL MICROSOFT OR ITS SUPPLIERS BE LIABLE FOR ANY SPECIAL,
+INCIDENTAL, PUNITIVE, INDIRECT, OR CONSEQUENTIAL DAMAGES
+WHATSOEVER (INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF
+PROFITS OR CONFIDENTIAL OR OTHER INFORMATION, FOR BUSINESS
+INTERRUPTION, FOR PERSONAL INJURY, FOR LOSS OF PRIVACY, FOR FAILURE
+TO MEET ANY DUTY INCLUDING OF GOOD FAITH OR OF REASONABLE CARE,
+FOR NEGLIGENCE, AND FOR ANY OTHER PECUNIARY OR OTHER LOSS
+WHATSOEVER) ARISING OUT OF OR IN ANY WAY RELATED TO THE USE OF OR
+INABILITY TO USE THE SOFTWARE, THE PROVISION OF OR FAILURE TO
+PROVIDE SUPPORT OR OTHER SERVICES, INFORMATION, SOFTWARE, AND
+RELATED CONTENT THROUGH THE SOFTWARE OR OTHERWISE ARISING OUT
+OF THE USE OF THE SOFTWARE, OR OTHERWISE UNDER OR IN CONNECTION
+WITH ANY PROVISION OF THIS EULA, EVEN IN THE EVENT OF THE FAULT, TORT
+(INCLUDING NEGLIGENCE), MISREPRESENTATION, STRICT LIABILITY, BREACH
+OF CONTRACT OR BREACH OF WARRANTY OF MICROSOFT OR ANY SUPPLIER,
+AND EVEN IF MICROSOFT OR ANY SUPPLIER HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES. BECAUSE SOME STATES/JURISDICTIONS DO
+NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR
+CONSEQUENTIAL OR INCIDENTAL DAMAGES, THE ABOVE LIMITATION MAY NOT
+APPLY TO YOU.
+
+16.	LIMITATION OF LIABILITY AND REMEDIES. NOTWITHSTANDING ANY
+DAMAGES THAT YOU MIGHT INCUR FOR ANY REASON WHATSOEVER
+(INCLUDING, WITHOUT LIMITATION, ALL DAMAGES REFERENCED HEREIN AND
+ALL DIRECT OR GENERAL DAMAGES IN CONTRACT OR ANYTHING ELSE), THE
+ENTIRE LIABILITY OF MICROSOFT AND ANY OF ITS SUPPLIERS UNDER ANY
+PROVISION OF THIS EULA AND YOUR EXCLUSIVE REMEDY HEREUNDER SHALL
+BE LIMITED TO THE GREATER OF THE ACTUAL DAMAGES YOU INCUR IN
+REASONABLE RELIANCE ON THE SOFTWARE UP TO THE AMOUNT ACTUALLY
+PAID BY YOU FOR THE SOFTWARE OR US$5.00. THE FOREGOING LIMITATIONS,
+EXCLUSIONS AND DISCLAIMERS SHALL APPLY TO THE MAXIMUM EXTENT
+PERMITTED BY APPLICABLE LAW, EVEN IF ANY REMEDY FAILS ITS ESSENTIAL
+PURPOSE.
+
+17.	APPLICABLE LAW. If you acquired this Software in the United States, this EULA
+is governed by the laws of the State of Washington. If you acquired this Software in
+Canada, unless expressly prohibited by local law, this EULA is governed by the laws in
+force in the Province of Ontario, Canada; and, in respect of any dispute which may arise
+hereunder, you consent to the jurisdiction of the federal and provincial courts sitting in
+Toronto, Ontario. If you acquired this Software in the European Union, Iceland, Norway,
+or Switzerland, then local law applies. If you acquired this Software in any other country,
+then local law may apply.
+
+18.	ENTIRE AGREEMENT; SEVERABILITY. This EULA (including any addendum or
+amendment to this EULA which is included with the Software) are the entire agreement
+between you and Microsoft relating to the Software and the support services (if any) and
+they supersede all prior or contemporaneous oral or written communications, proposals
+and representations with respect to the Software or any other subject matter covered by
+this EULA. To the extent the terms of any Microsoft policies or programs for support
+services conflict with the terms of this EULA, the terms of this EULA shall control. If any
+provision of this EULA is held to be void, invalid, unenforceable or illegal, the other
+provisions shall continue in full force and effect.

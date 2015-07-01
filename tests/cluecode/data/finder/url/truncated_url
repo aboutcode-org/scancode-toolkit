@@ -1,0 +1,7 @@
+
+
+logging.info('contacting fm @ http://%s:%s/%s' % (host,port,url))
+
+also on "http://*/*)"
+
+also on "http://$myvariable:$myport"

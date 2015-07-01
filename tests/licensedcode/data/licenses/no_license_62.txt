@@ -1,0 +1,1188 @@
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+NNAAMMEE
+       dhcp-options - Dynamic Host Configuration Protocol options
+
+DDEESSCCRRIIPPTTIIOONN
+       The Dynamic Host Configuration protocol allows the  client
+       to  receive  ooppttiioonnss  from  the DHCP server describing the
+       network configuration and various services that are avail­
+       able  on  the  network.    When  configuring  ddhhccppdd((88))  or
+       ddhhcclliieenntt((88)) ,, options must often be declared.   The syntax
+       for  declaring  options,  and the names and formats of the
+       options that can be declared, are documented here.
+
+RREEFFEERREENNCCEE:: OOPPTTIIOONN SSTTAATTEEMMEENNTTSS
+       DHCP _o_p_t_i_o_n statements always start with the  _o_p_t_i_o_n  key­
+       word, followed by an option name, followed by option data.
+       The option names and data  formats  are  described  below.
+       It  is  not  necessary  to  exhaustively  specify all DHCP
+       options - only those options which are needed  by  clients
+       must be specified.
+
+       Option  data  comes  in  a  variety of formats, as defined
+       below:
+
+       The iipp--aaddddrreessss data type  can  be  entered  either  as  an
+       explicit  IP address (e.g., 239.254.197.10) or as a domain
+       name (e.g., haagen.isc.org).  When entering a domain name,
+       be  sure  that  that  domain  name resolves to a single IP
+       address.
+
+       The iinntt3322 data type specifies  a  signed  32-bit  integer.
+       The uuiinntt3322 data type specifies an unsigned 32-bit integer.
+       The  iinntt1166  and  uuiinntt1166  data  types  specify  signed  and
+       unsigned  16-bit integers.   The iinntt88 and uuiinntt88 data types
+       specify signed  and  unsigned  8-bit  integers.   Unsigned
+       8-bit integers are also sometimes referred to as octets.
+
+       The  tteexxtt  data  type specifies an NVT ASCII string, which
+       must be enclosed in double quotes - for example, to  spec­
+       ify a domain-name option, the syntax would be
+
+       option domain-name "isc.org";
+
+       The  ffllaagg  data type specifies a boolean value.   Booleans
+       can be either true or false (or on or off, if  that  makes
+       more sense to you).
+
+       The  ssttrriinngg data type specifies either an NVT ASCII string
+       enclosed in double quotes, or a series of octets specified
+       in hexadecimal, seperated by colons.   For example:
+
+         option dhcp-client-identifier "CLIENT-FOO";
+       or
+         option dhcp-client-identifier 43:4c:49:45:54:2d:46:4f:4f;
+
+
+
+
+                                                                1
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+       The  documentation for the various options mentioned below
+       is taken from the  latest  IETF  draft  document  on  DHCP
+       options.    Options  which  are  not listed by name may be
+       defined by the name option-_n_n_n, where _n_n_n is  the  decimal
+       number of the option code.   These options may be followed
+       either by a string, enclosed in quotes, or by a series  of
+       octets,  expressed as two-digit hexadecimal numbers seper­
+       ated by colons.   For example:
+
+       option option-133 "my-option-133-text";
+       option option-129 1:54:c9:2b:47;
+
+       Because dhcpd does not know the format of these  undefined
+       option  codes,  no checking is done to ensure the correct­
+       ness of the entered data.
+
+       The standard options are:
+
+       ooppttiioonn aallll--ssuubbnneettss--llooccaall _f_l_a_g;;
+
+          This option specifies whether or  not  the  client  may
+          assume  that all subnets of the IP network to which the
+          client is connected use the same MTU as the  subnet  of
+          that network to which the client is directly connected.
+          A value of true indicates that all  subnets  share  the
+          same  MTU.   A  value  of  false  means that the client
+          should assume that some subnets of  the  directly  con­
+          nected network may have smaller MTUs.
+
+       ooppttiioonn aarrpp--ccaacchhee--ttiimmeeoouutt _u_i_n_t_3_2;;
+
+          This  option  specifies  the timeout in seconds for ARP
+          cache entries.
+
+       ooppttiioonn bboooottffiillee--nnaammee _t_e_x_t;;
+
+          This option is used to identify a bootstrap  file.   If
+          supported by the client, it should have the same effect
+          as  the  ffiilleennaammee  declaration.   BOOTP   clients   are
+          unlikely  to  support  this  option.  Some DHCP clients
+          will support it, and others actually require it.
+
+       ooppttiioonn bboooott--ssiizzee _u_i_n_t_1_6;;
+
+          This option specifies the length in 512-octet blocks of
+          the default boot image for the client.
+
+       ooppttiioonn bbrrooaaddccaasstt--aaddddrreessss _i_p_-_a_d_d_r_e_s_s;;
+
+          This  option  specifies the broadcast address in use on
+          the  client's  subnet.   Legal  values  for   broadcast
+          addresses  are  specified  in  section 3.2.1.3 of STD 3
+          (RFC1122).
+
+
+
+
+                                                                2
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+       ooppttiioonn ccooookkiiee--sseerrvveerrss _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s...  ];;
+
+          The cookie server option specifies a list  of  RFC  865
+          cookie servers available to the client.  Servers should
+          be listed in order of preference.
+
+       ooppttiioonn ddeeffaauulltt--iipp--ttttll _u_i_n_t_8_;
+
+          This option specifies the default time-to-live that the
+          client should use on outgoing datagrams.
+
+       ooppttiioonn ddeeffaauulltt--ttccpp--ttttll _u_i_n_t_8;;
+
+          This  option  specifies the default TTL that the client
+          should use when  sending  TCP  segments.   The  minimum
+          value is 1.
+
+       ooppttiioonn ddhhccpp--cclliieenntt--iiddeennttiiffiieerr _s_t_r_i_n_g;;
+
+          This  option  can  be used to specify the a DHCP client
+          identifier in a host declaration,  so  that  dhcpd  can
+          find  the  host  record  by matching against the client
+          identifier.
+
+       ooppttiioonn ddhhccpp--mmaaxx--mmeessssaaggee--ssiizzee _u_i_n_t_1_6;;
+
+          This option, when sent by  the  client,  specifies  the
+          maximum  size  of any response that the server sends to
+          the client.   When specified  on  the  server,  if  the
+          client did not send a dhcp-max-message-size option, the
+          size specified on the server is used.   This works  for
+          BOOTP as well as DHCP responses.
+
+       ooppttiioonn ddhhccpp--ppaarraammeetteerr--rreeqquueesstt--lliisstt _u_i_n_t_1_6;;
+
+          This  option,  when sent by the client, specifies which
+          options the client wishes the server to return.    Nor­
+          mally,  in  the ISC DHCP client, this is done using the
+          _r_e_q_u_e_s_t statement.   If this option is not specified by
+          the  client, the DHCP server will normally return every
+          option that is valid in scope and that  fits  into  the
+          reply.    When  this option is specified on the server,
+          the server returns the specified options.   This can be
+          used  to  force a client to take options that it hasn't
+          requested, and it  can  also  be  used  to  tailor  the
+          response of the DHCP server for clients that may need a
+          more limited set of options than those the server would
+          normally return.
+
+       ooppttiioonn ddoommaaiinn--nnaammee _t_e_x_t;;
+
+          This  option  specifies  the  domain  name  that client
+          should use when resolving hostnames via the Domain Name
+          System.
+
+
+
+                                                                3
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+       ooppttiioonn ddoommaaiinn--nnaammee--sseerrvveerrss _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s...  ];;
+
+          The domain-name-servers  option  specifies  a  list  of
+          Domain  Name  System  (STD  13,  RFC 1035) name servers
+          available to the client.  Servers should be  listed  in
+          order of preference.
+
+       ooppttiioonn eexxtteennssiioonnss--ppaatthh--nnaammee _t_e_x_t;;
+
+          This  option  specifies  the  name of a file containing
+          additional options to be interpreted according  to  the
+          DHCP option format as specified in RFC2132.
+
+       ooppttiioonn ffiinnggeerr--sseerrvveerr _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s... ];;
+
+          The  Finger  server  option  specifies a list of Finger
+          available to the client.  Servers should be  listed  in
+          order of preference.
+
+       ooppttiioonn ffoonntt--sseerrvveerrss _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s...  ];;
+
+          This  option  specifies  a list of X Window System Font
+          servers available to  the  client.  Servers  should  be
+          listed in order of preference.
+
+       ooppttiioonn hhoosstt--nnaammee _s_t_r_i_n_g;;
+
+          This option specifies the name of the client.  The name
+          may or may not be qualified with the local domain  name
+          (it  is  preferable  to  use  the domain-name option to
+          specify the domain name).  See RFC 1035  for  character
+          set restrictions.
+
+       ooppttiioonn iieeeeee880022--33--eennccaappssuullaattiioonn _f_l_a_g;;
+
+          This  option specifies whether or not the client should
+          use Ethernet Version 2 (RFC 894)  or  IEEE  802.3  (RFC
+          1042) encapsulation if the interface is an Ethernet.  A
+          value of false indicates that the client should use RFC
+          894  encapsulation.   A  value  of  true means that the
+          client should use RFC 1042 encapsulation.
+
+       ooppttiioonn iieenn111166--nnaammee--sseerrvveerrss _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s...  ];
+
+          The  ien116-name-servers option specifies a list of IEN
+          116 name servers  available  to  the  client.   Servers
+          should be listed in order of preference.
+
+       ooppttiioonn iimmpprreessss--sseerrvveerrss _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s...  ];;
+
+          The  impress-server  option  specifies a list of Imagen
+          Impress  servers  available  to  the  client.   Servers
+          should be listed in order of preference.
+
+
+
+
+                                                                4
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+       ooppttiioonn iinntteerrffaaccee--mmttuu _u_i_n_t_1_6;;
+
+          This option specifies the MTU to use on this interface.
+          The minimum legal value for the MTU is 68.
+
+       ooppttiioonn iipp--ffoorrwwaarrddiinngg _f_l_a_g;;
+
+          This option specifies whether the client should config­
+          ure  its  IP  layer  for packet forwarding.  A value of
+          false means disable IP forwarding, and a value of  true
+          means enable IP forwarding.
+
+       ooppttiioonn iirrcc--sseerrvveerr _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s... ];;
+
+          The IRC server option specifies a list of IRC available
+          to the client.  Servers should be listed  in  order  of
+          preference.
+
+       ooppttiioonn lloogg--sseerrvveerrss _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s...  ];;
+
+          The  log-server  option specifies a list of MIT-LCS UDP
+          log servers available to the client.  Servers should be
+          listed in order of preference.
+
+       ooppttiioonn llpprr--sseerrvveerrss _i_p_-_a_d_d_r_e_s_s  [,, _i_p_-_a_d_d_r_e_s_s...  ];;
+
+          The LPR server option specifies a list of RFC 1179 line
+          printer  servers  available  to  the  client.   Servers
+          should be listed in order of preference.
+
+       ooppttiioonn mmaasskk--ssuupppplliieerr _f_l_a_g;;
+
+          This  option specifies whether or not the client should
+          respond to subnet mask requests using ICMP.  A value of
+          false  indicates that the client should not respond.  A
+          value of true means that the client should respond.
+
+       ooppttiioonn mmaaxx--ddggrraamm--rreeaasssseemmbbllyy _u_i_n_t_1_6;;
+
+          This option specifies the maximum  size  datagram  that
+          the client should be prepared to reassemble.  The mini­
+          mum value legal value is 576.
+
+       ooppttiioonn mmeerriitt--dduummpp _t_e_x_t;;
+
+          This option specifies the path-name of a file to  which
+          the  client's  core image should be dumped in the event
+          the client crashes.  The path is formatted as a charac­
+          ter  string consisting of characters from the NVT ASCII
+          character set.
+
+       ooppttiioonn mmoobbiillee--iipp--hhoommee--aaggeenntt _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s... ];;
+
+          This option specifies a list of IP addresses indicating
+
+
+
+                                                                5
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+          mobile IP home agents available to the client.   Agents
+          should  be listed in order of preference, although nor­
+          mally there will be only one such agent.
+
+       ooppttiioonn nnddss--ccoonntteexxtt _s_t_r_i_n_g;;
+
+          The nds-context option specifies the name of  the  ini­
+          tial Netware Directory Service for an NDS client.
+
+       ooppttiioonn nnddss--sseerrvveerrss _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s... ];;
+
+          The nds-servers option specifies a list of IP addresses
+          of NDS servers.
+
+       ooppttiioonn nnddss--ttrreeee--nnaammee _s_t_r_i_n_g;;
+
+          The nds-context option specifies NDS tree name that the
+          NDS client should use.
+
+       ooppttiioonn nneettbbiiooss--dddd--sseerrvveerr _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s...  ];;
+
+          The  NetBIOS datagram distribution server (NBDD) option
+          specifies a list of RFC 1001/1002 NBDD  servers  listed
+          in order of preference.
+
+       ooppttiioonn nneettbbiiooss--nnaammee--sseerrvveerrss _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s...];;
+
+          The  NetBIOS name server (NBNS) option specifies a list
+          of RFC 1001/1002 NBNS name servers listed in  order  of
+          preference.    NetBIOS  Name  Service is currently more
+          commonly referred to as WINS.    WINS  servers  can  be
+          specified using the netbios-name-servers option.
+
+       ooppttiioonn nneettbbiiooss--nnooddee--ttyyppee _u_i_n_t_8;;
+
+          The NetBIOS node type option allows NetBIOS over TCP/IP
+          clients which are  configurable  to  be  configured  as
+          described  in RFC 1001/1002.  The value is specified as
+          a single octet which identifies the client type.
+
+          Possible node types are:
+
+
+          _1    B-node: Broadcast - no WINS
+
+          _2    P-node: Peer - WINS only.
+
+          _4    M-node: Mixed - broadcast, then WINS
+
+          _8    H-node: Hybrid - WINS, then broadcast
+
+       ooppttiioonn nneettbbiiooss--ssccooppee _s_t_r_i_n_g;;
+
+          The NetBIOS scope option  specifies  the  NetBIOS  over
+
+
+
+                                                                6
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+          TCP/IP  scope  parameter for the client as specified in
+          RFC 1001/1002. See RFC1001, RFC1002,  and  RFC1035  for
+          character-set restrictions.
+
+       ooppttiioonn nnwwiipp--ddoommaaiinn _s_t_r_i_n_g;;
+
+          The  name  of  the  NetWare/IP domain that a NetWare/IP
+          client should use.
+
+       ooppttiioonn nnwwiipp--ssuubbooppttiioonnss _s_t_r_i_n_g;;
+
+          A sequence of suboptions for NetWare/IP clients  -  see
+          RFC2242  for  details.   Normally this option is set by
+          specifying specific NetWare/IP  suboptions  -  see  the
+          NETWARE/IP SUBOPTIONS section for more information.
+
+       ooppttiioonn nniiss--ddoommaaiinn _t_e_x_t;;
+
+          This option specifies the name of the client's NIS (Sun
+          Network Information Services) domain.   The  domain  is
+          formatted  as  a character string consisting of charac­
+          ters from the NVT ASCII character set.
+
+       ooppttiioonn nniiss--sseerrvveerrss _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s...  ];;
+
+          This option specifies a list of IP addresses indicating
+          NIS servers available to the client.  Servers should be
+          listed in order of preference.
+
+       ooppttiioonn nniisspplluuss--ddoommaaiinn _t_e_x_t;;
+
+          This option specifies the name  of  the  client's  NIS+
+          domain.   The domain is formatted as a character string
+          consisting of characters from the NVT  ASCII  character
+          set.
+
+       ooppttiioonn nniisspplluuss--sseerrvveerrss _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s...  ];;
+
+          This option specifies a list of IP addresses indicating
+          NIS+ servers available to the client.   Servers  should
+          be listed in order of preference.
+
+       ooppttiioonn nnnnttpp--sseerrvveerr _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s... ];;
+
+          The  NNTP server option specifies a list of NNTP avail­
+          able to the client.  Servers should be listed in  order
+          of preference.
+
+       ooppttiioonn nnoonn--llooccaall--ssoouurrccee--rroouuttiinngg _f_l_a_g;;
+
+          This option specifies whether the client should config­
+          ure its IP layer to allow forwarding of datagrams  with
+          non-local source routes (see Section 3.3.5 of [4] for a
+          discussion of this topic).  A value of 0 means disallow
+
+
+
+                                                                7
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+          forwarding of such datagrams, and a value of true means
+          allow forwarding.
+
+       ooppttiioonn nnttpp--sseerrvveerrss _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s...  ];;
+
+          This option specifies a list of IP addresses indicating
+          NTP   (RFC  1035)  servers  available  to  the  client.
+          Servers should be listed in order of preference.
+
+       ooppttiioonn ppaatthh--mmttuu--aaggiinngg--ttiimmeeoouutt _u_i_n_t_3_2;;
+
+          This option specifies the timeout (in seconds)  to  use
+          when  aging Path MTU values discovered by the mechanism
+          defined in RFC 1191.
+
+       ooppttiioonn ppaatthh--mmttuu--ppllaatteeaauu--ttaabbllee _u_i_n_t_1_6 [,, _u_i_n_t_1_6...  ];;
+
+          This option specifies a table of MTU sizes to use  when
+          performing  Path  MTU Discovery as defined in RFC 1191.
+          The table is formatted as a  list  of  16-bit  unsigned
+          integers,  ordered from smallest to largest.  The mini­
+          mum MTU value cannot be smaller than 68.
+
+       ooppttiioonn ppeerrffoorrmm--mmaasskk--ddiissccoovveerryy _f_l_a_g;;
+
+          This option specifies whether or not the client  should
+          perform  subnet  mask discovery using ICMP.  A value of
+          false indicates that the client should not perform mask
+          discovery.   A  value  of  true  means  that the client
+          should perform mask discovery.
+
+       ooppttiioonn ppoolliiccyy--ffiilltteerr _i_p_-_a_d_d_r_e_s_s _i_p_-_a_d_d_r_e_s_s
+                         [,, _i_p_-_a_d_d_r_e_s_s _i_p_-_a_d_d_r_e_s_s...];;
+
+          This option  specifies  policy  filters  for  non-local
+          source  routing.   The  filters consist of a list of IP
+          addresses  and  masks  which  specify  destination/mask
+          pairs with which to filter incoming source routes.
+
+          Any  source routed datagram whose next-hop address does
+          not match one of the filters should be discarded by the
+          client.
+
+          See STD 3 (RFC1122) for further information.
+
+       ooppttiioonn ppoopp--sseerrvveerr _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s... ];;
+
+          The  POP3 server option specifies a list of POP3 avail­
+          able to the client.  Servers should be listed in  order
+          of preference.
+
+       ooppttiioonn rreessoouurrccee--llooccaattiioonn--sseerrvveerrss _i_p_-_a_d_d_r_e_s_s
+                                     [,, _i_p_-_a_d_d_r_e_s_s...];;
+
+
+
+
+                                                                8
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+          This  option specifies a list of RFC 887 Resource Loca­
+          tion servers available to the client.   Servers  should
+          be listed in order of preference.
+
+       ooppttiioonn rroooott--ppaatthh _t_e_x_t;;
+
+          This  option  specifies the path-name that contains the
+          client's root disk.  The path is formatted as a charac­
+          ter  string consisting of characters from the NVT ASCII
+          character set.
+
+       ooppttiioonn rroouutteerr--ddiissccoovveerryy _f_l_a_g;;
+
+          This option specifies whether or not the client  should
+          solicit  routers  using  the Router Discovery mechanism
+          defined in RFC 1256.  A value of false  indicates  that
+          the  client  should  not  perform  router discovery.  A
+          value of true means  that  the  client  should  perform
+          router discovery.
+
+       ooppttiioonn rroouutteerr--ssoolliicciittaattiioonn--aaddddrreessss _i_p_-_a_d_d_r_e_s_s;;
+
+          This  option  specifies the address to which the client
+          should transmit router solicitation requests.
+
+       ooppttiioonn rroouutteerrss _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s...  ];;
+
+          The routers option specifies a list of IP addresses for
+          routers  on  the  client's  subnet.   Routers should be
+          listed in order of preference.
+
+       ooppttiioonn ssmmttpp--sseerrvveerr _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s... ];;
+
+          The SMTP server option specifies a list of SMTP servers
+          available  to  the client.  Servers should be listed in
+          order of preference.
+
+       ooppttiioonn ssttaattiicc--rroouutteess _i_p_-_a_d_d_r_e_s_s _i_p_-_a_d_d_r_e_s_s
+                         [,, _i_p_-_a_d_d_r_e_s_s _i_p_-_a_d_d_r_e_s_s...];;
+
+          This option specifies a list of static routes that  the
+          client  should install in its routing cache.  If multi­
+          ple routes to the same destination are specified,  they
+          are listed in descending order of priority.
+
+          The  routes consist of a list of IP address pairs.  The
+          first address is the destination address, and the  sec­
+          ond address is the router for the destination.
+
+          The  default  route (0.0.0.0) is an illegal destination
+          for a static route.  To specify the default route,  use
+          the  rroouutteerrss  option.    Also,  please  note  that this
+          option is not intended for classless IP  routing  -  it
+          does  not  include  a subnet mask.   Since classless IP
+
+
+
+                                                                9
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+          routing is now the most widely deployed  routing  stan­
+          dard,  this  option  is  virtually  useless, and is not
+          implemented by any of the  popular  DHCP  clients,  for
+          example the Microsoft DHCP client.
+
+       ooppttiioonn ssttrreeeettttaallkk--ddiirreeccttoorryy--aassssiissttaannccee--sseerrvveerr _i_p_-_a_d_d_r_e_s_s
+                                                  [,, _i_p_-_a_d_d_r_e_s_s...];;
+
+          The   StreetTalk  Directory  Assistance  (STDA)  server
+          option specifies a list of STDA  servers  available  to
+          the client.  Servers should be listed in order of pref­
+          erence.
+
+       ooppttiioonn ssttrreeeettttaallkk--sseerrvveerr _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s... ];;
+
+          The  StreetTalk  server  option  specifies  a  list  of
+          StreetTalk  servers  available  to the client.  Servers
+          should be listed in order of preference.
+
+       ooppttiioonn ssuubbnneett--mmaasskk _i_p_-_a_d_d_r_e_s_s;;
+
+          The subnet mask option specifies  the  client's  subnet
+          mask  as per RFC 950.  If no subnet mask option is pro­
+          vided anywhere in scope, as a last  resort  dhcpd  will
+          use the subnet mask from the subnet declaration for the
+          network on which an address is  being  assigned.   How­
+          ever,  _a_n_y  subnet-mask  option  declaration that is in
+          scope for the address being assigned will override  the
+          subnet mask specified in the subnet declaration.
+
+       ooppttiioonn sswwaapp--sseerrvveerr _i_p_-_a_d_d_r_e_s_s;;
+
+          This  specifies  the  IP  address  of the client's swap
+          server.
+
+       ooppttiioonn ttccpp--kkeeeeppaalliivvee--ggaarrbbaaggee _f_l_a_g;;
+
+          This option specifies the whether  or  not  the  client
+          should  send  TCP  keepalive  messages  with a octet of
+          garbage for compatibility with  older  implementations.
+          A  value of false indicates that a garbage octet should
+          not be sent. A value of true indicates that  a  garbage
+          octet should be sent.
+
+       ooppttiioonn ttccpp--kkeeeeppaalliivvee--iinntteerrvvaall _u_i_n_t_3_2;;
+
+          This  option  specifies  the interval (in seconds) that
+          the client TCP should wait before sending  a  keepalive
+          message  on a TCP connection.  The time is specified as
+          a 32-bit unsigned integer.  A value of  zero  indicates
+          that  the client should not generate keepalive messages
+          on connections  unless  specifically  requested  by  an
+          application.
+
+
+
+
+                                                               10
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+       ooppttiioonn ttffttpp--sseerrvveerr--nnaammee _t_e_x_t;;
+
+          This  option  is used to identify a TFTP server and, if
+          supported by the client, should have the same effect as
+          the   sseerrvveerr--nnaammee   declaration.    BOOTP  clients  are
+          unlikely to support this  option.   Some  DHCP  clients
+          will support it, and others actually require it.
+
+       ooppttiioonn ttiimmee--ooffffsseett _i_n_t_3_2;;
+
+          The  time-offset  option  specifies  the  offset of the
+          client's subnet in seconds from  Coordinated  Universal
+          Time (UTC).
+
+       ooppttiioonn ttiimmee--sseerrvveerrss _i_p_-_a_d_d_r_e_s_s [, _i_p_-_a_d_d_r_e_s_s...  ];;
+
+          The time-server option specifies a list of RFC 868 time
+          servers available to the  client.   Servers  should  be
+          listed in order of preference.
+
+       ooppttiioonn ttrraaiilleerr--eennccaappssuullaattiioonn _f_l_a_g;;
+
+          This  option specifies whether or not the client should
+          negotiate the use of trailers (RFC 893 [14]) when using
+          the  ARP  protocol.   A  value  of 0 indicates that the
+          client should not attempt to use trailers.  A value  of
+          true means that the client should attempt to use trail­
+          ers.
+
+       ooppttiioonn uuaapp--sseerrvveerrss _t_e_x_t;;
+
+          This option specifies a list of URLs, each pointing  to
+          a  user  authentication service that is capable of pro­
+          cessing authentication  requests  encapsulated  in  the
+          User  Authentication  Protocol  (UAP).  UAP servers can
+          accept either HTTP 1.1 or SSLv3  connections.   If  the
+          list includes a URL that does not contain a port compo­
+          nent, the normal default port is assumed (i.e., port 80
+          for http and port 443 for https).  If the list includes
+          a URL that does not contain a path component, the  path
+          /uap is assumed.   If more than one URL is specified in
+          this list, the URLs are seperated by spaces.
+
+       ooppttiioonn vveennddoorr--ccllaassss--iiddeennttiiffiieerr _s_t_r_i_n_g;;
+
+          This option is used by some DHCP  clients  to  identify
+          the  vendor  type  and  possibly the configuration of a
+          DHCP client.  The information  is  a  string  of  bytes
+          whose  contents  are specific to the vendor and are not
+          specified in a standard.   To  see  what  vendor  class
+          identifier  a  clients  are  sending, you can write the
+          following in your DHCP server configuration file:
+
+          set vendor-class option vendor-class-identifier;
+
+
+
+                                                               11
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+          This will result in all  entries  in  the  DHCP  server
+          lease database file for clients that sent vendor-class-
+          identifier options having a set  statement  that  looks
+          something like this:
+
+          set vendor-class "SUNW.Ultra-5_10";
+
+          The  vendor-class-identifier option is normally used by
+          the DHCP server  to  determine  the  options  that  are
+          returned  in  the  vveennddoorr--eennccaappssuullaatteedd--ooppttiioonnss  option.
+          Please see the VENDOR ENCAPSULATED OPTIONS  section  of
+          the dhcpd.conf manual page for further information.
+
+       ooppttiioonn vveennddoorr--eennccaappssuullaatteedd--ooppttiioonnss _s_t_r_i_n_g;;
+
+          The   vveennddoorr--eennccaappssuullaatteedd--ooppttiioonnss  option  can  contain
+          either a single vendor-specific value or  one  or  more
+          vendor-specific  suboptions.    This option is not nor­
+          mally specified in the DHCP server configuration file -
+          instead,  a  vendor  class  is defined for each vendor,
+          vendor class suboptions are defined, values  for  those
+          suboptions  are defined, and the DHCP server makes up a
+          response on that basis.
+
+          Some default behaviours for well-known DHCP client ven­
+          dors   (currently,  the  Microsoft  Windows  2000  DHCP
+          client) are  configured  automatically,  but  otherwise
+          this  must  be  configured  manually  -  see the VENDOR
+          ENCAPSULATED OPTIONS section of the  _d_h_c_p_d_._c_o_n_f  _m_a_n_u_a_l
+          _p_a_g_e _f_o_r _d_e_t_a_i_l_s_.
+
+       ooppttiioonn xx--ddiissppllaayy--mmaannaaggeerr _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s...  ];;
+
+          This  option  specifies a list of systems that are run­
+          ning the X Window System Display Manager and are avail­
+          able  to  the  client.   Addresses  should be listed in
+          order of preference.
+
+       ooppttiioonn wwwwww--sseerrvveerr _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s... ];;
+
+          The WWW server option specifies a list of WWW available
+          to  the  client.   Servers should be listed in order of
+          preference.
+
+RREELLAAYY AAGGEENNTT IINNFFOORRMMAATTIIOONN OOPPTTIIOONN
+       An   IETF   draft,    draft-ietf-dhc-agent-options-03.txt,
+       defines  a  series  of  encapsulated  options that a relay
+       agent can add to a DHCP packet when  relaying  it  to  the
+       DHCP server.   The server can then make address allocation
+       decisions (or whatever other decisions it wants) based  on
+       these  options.   The server also returns these options in
+       any replies it sends through the relay agent, so that  the
+       relay  agent  can use the information in these options for
+       delivery or accounting purposes.
+
+
+
+                                                               12
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+       The current draft  defines  two  options.    To  reference
+       these options in the dhcp server, specify the option space
+       name, "agent", followed  by  a  period,  followed  by  the
+       option name.   It isn't useful to specify these options to
+       be sent, nor is it useful to reference them at all in  the
+       client.
+
+       ooppttiioonn aaggeenntt..cciirrccuuiitt--iidd _s_t_r_i_n_g;;
+
+          The circuit-id suboption encodes an agent-local identi­
+          fier of the circuit from which a DHCP  client-to-server
+          packet  was received.  It is intended for use by agents
+          in relaying DHCP responses back to the proper  circuit.
+          The  format  of  this option is currently defined to be
+          vendor-dependent, and will probably  remain  that  way,
+          although the current draft allows for for the possibil­
+          ity of standardizing the format in the future.
+
+       ooppttiioonn aaggeenntt..rreemmoottee--iidd _s_t_r_i_n_g;;
+
+          The remote-id suboption encodes information  about  the
+          remote  host  end  of  a circuit.   Examples of what it
+          might contain include caller ID  information,  username
+          information,  remote  ATM  address, cable modem ID, and
+          similar things.   In  principal,  the  meaning  is  not
+          well-specified,  and  it should generally be assumed to
+          be an opaque object that is administratively guaranteed
+          to be unique to a particular remote end of a circuit.
+
+TTHHEE NNEETTWWAARREE//IIPP SSUUBBOOPPTTIIOONNSS
+       RFC2242  defines  a set of encapsulated options for Novell
+       NetWare/IP clients.  To use  these  options  in  the  dhcp
+       server, specify the option space name, "nwip", followed by
+       a period, followed by  the  option  name.   The  following
+       options can be specified:
+
+       ooppttiioonn nnwwiipp..nnssqq--bbrrooaaddccaasstt _f_l_a_g;;
+
+          If  true,  the  client  should  use the NetWare Nearest
+          Server Query  to  locate  a  NetWare/IP  server.    The
+          behaviour  of  the  Novell  client if this suboption is
+          false, or is not present, is not specified.
+
+       ooppttiioonn nnwwiipp..pprreeffeerrrreedd--ddssss _i_p_-_a_d_d_r_e_s_s [,, _i_p_-_a_d_d_r_e_s_s... ];;
+
+          This suboption specifies  a  list  of  up  to  five  IP
+          addresses,  each of which should be the IP address of a
+          NetWare Domain SAP/RIP server (DSS).
+
+       ooppttiioonn nnwwiipp..nneeaarreesstt--nnwwiipp--sseerrvveerr _i_p_-_a_d_d_r_e_s_s
+                                    [,, _i_p_-_a_d_d_r_e_s_s...];;
+
+          This suboption specifies  a  list  of  up  to  five  IP
+          addresses,  each of which should be the IP address of a
+
+
+
+                                                               13
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+          Nearest NetWare IP server.
+
+       ooppttiioonn nnwwiipp..aauuttoorreettrriieess _u_i_n_t_8;;
+
+          Specifies the number of times that a NetWare/IP  client
+          should  attempt  to communicate with a given DSS server
+          at startup.
+
+       ooppttiioonn nnwwiipp..aauuttoorreettrryy--sseeccss _u_i_n_t_8;;
+
+          Specifies the  number  of  seconds  that  a  Netware/IP
+          client  should  wait between retries when attempting to
+          establish communications with a DSS server at  startup.
+
+       ooppttiioonn nnwwiipp..nnwwiipp--11--11 _u_i_n_t_8;;
+
+          If  true,  the  NetWare/IP  client  should support Net­
+          Ware/IP  version  1.1  compatibility.    This  is  only
+          needed if the client will be contacting Netware/IP ver­
+          sion 1.1 servers.
+
+       ooppttiioonn nnwwiipp..pprriimmaarryy--ddssss _i_p_-_a_d_d_r_e_s_s;;
+
+          Specifies the IP address of the Primary Domain  SAP/RIP
+          Service  server (DSS) for this NetWare/IP domain.   The
+          NetWare/IP administration utility uses  this  value  as
+          Primary  DSS  server  when  configuring a secondary DSS
+          server.
+
+DDEEFFIINNIINNGG NNEEWW OOPPTTIIOONNSS
+       The Internet Software Consortium DHCP  client  and  server
+       provide  the capability to define new options.   Each DHCP
+       option has a name, a code, and a structure.   The name  is
+       used  by  you to refer to the option.   The code is a num­
+       ber, used by the DHCP server and client  to  refer  to  an
+       option.    The structure describes what the contents of an
+       option looks like.
+
+       To define a new option, you need to choose a name  for  it
+       that  is  not  in use for some other option - for example,
+       you  can't  use  "host-name"  because  the  DHCP  protocol
+       already  defines  a  host-name option, which is documented
+       earlier in this manual page.   If an option  name  doesn't
+       appear in this manual page, you can use it, but it's prob­
+       ably a good idea to put some kind of unique string at  the
+       beginning  so  you  can  be sure that future options don't
+       take your name.   For example, you might define an option,
+       "local-host-name",  feeling  some confidence that no offi­
+       cial DHCP option name will ever start with "local".
+
+       Once you have chosen a name, you must choose a code.   For
+       site-local  options,  all  codes  between  128 and 254 are
+       reserved for DHCP options, so you  can  pick  any  one  of
+       these.   In  practice,  some  vendors have interpreted the
+
+
+
+                                                               14
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+       protocol rather loosely and have used option  code  values
+       greater  than  128  themselves.    There's  no real way to
+       avoid this problem, but it's not likely to cause too  much
+       trouble in practice.
+
+       The  structure  of an option is simply the format in which
+       the option data appears.   The ISC DHCP  server  currently
+       supports  a  few  simple  types,  like integers, booleans,
+       strings and IP addresses, and it also supports the ability
+       to  define  arrays  of  single  types  or  arrays of fixed
+       sequences of types.
+
+       New options are declared as follows:
+
+       ooppttiioonn _n_e_w_-_n_a_m_e ccooddee _n_e_w_-_c_o_d_e == _d_e_f_i_n_i_t_i_o_n ;;
+
+       The values of _n_e_w_-_n_a_m_e and _n_e_w_-_c_o_d_e should be the name you
+       have  chosen for the new option and the code you have cho­
+       sen.   The _d_e_f_i_n_i_t_i_o_n should  be  the  definition  of  the
+       structure of the option.
+
+       The  following  simple  option  type  definitions are sup­
+       ported:
+
+       BBOOOOLLEEAANN
+
+       ooppttiioonn _n_e_w_-_n_a_m_e ccooddee _n_e_w_-_c_o_d_e == bboooolleeaann ;;
+
+       An option of type boolean is a flag with a value of either
+       on  or  off (or true or false).   So an example use of the
+       boolean type would be:
+
+       option use-zephyr code 180 = boolean;
+       option use-zephyr on;
+
+       IINNTTEEGGEERR
+
+       ooppttiioonn _n_e_w_-_n_a_m_e ccooddee _n_e_w_-_c_o_d_e == _s_i_g_n iinntteeggeerr _w_i_d_t_h ;;
+
+       The _s_i_g_n token should either be blank, _u_n_s_i_g_n_e_d or _s_i_g_n_e_d.
+       The  width  can  be  either 8, 16 or 32, and refers to the
+       number of bits in the integer.   So for example, the  fol­
+       lowing  two lines show a definition of the sql-connection-
+       max option and its use:
+
+       option sql-connection-max code 192 = unsigned integer 16;
+       option sql-connection-max 1536;
+
+       IIPP--AADDDDRREESSSS
+
+       ooppttiioonn _n_e_w_-_n_a_m_e ccooddee _n_e_w_-_c_o_d_e == iipp--aaddddrreessss ;;
+
+       An  option  whose  structure  is  an  IP  address  can  be
+       expressed either as a domain name or as a dotted quad.  So
+
+
+
+                                                               15
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+       the following is an example use of the ip-address type:
+
+       option sql-server-address code 193 = ip-address;
+       option sql-server-address sql.example.com;
+
+
+       TTEEXXTT
+
+       ooppttiioonn _n_e_w_-_n_a_m_e ccooddee _n_e_w_-_c_o_d_e == tteexxtt ;;
+
+       An option whose type is text will  encode  an  ASCII  text
+       string.   For example:
+
+       option sql-default-connection-name code 194 = text;
+       option sql-default-connection-name "PRODZA";
+
+
+       DDAATTAA SSTTRRIINNGG
+
+       ooppttiioonn _n_e_w_-_n_a_m_e ccooddee _n_e_w_-_c_o_d_e == ssttrriinngg ;;
+
+       An  option whose type is a data string is essentially just
+       a collection of bytes, and  can  be  specified  either  as
+       quoted text, like the text type, or as a list of hexadeci­
+       mal contents seperated by  colons  whose  values  must  be
+       between 0 and FF.   For example:
+
+       option sql-identification-token code 195 = string;
+       option sql-identification-token 17:23:19:a6:42:ea:99:7c:22;
+
+
+       AARRRRAAYYSS
+
+       Options  can  contain  arrays  of  any  of the above types
+       except for the text and data string  types,  which  aren't
+       currently  supported  in  arrays.   An example of an array
+       definition is as follows:
+
+       option kerberos-servers code 200 = array of ip-address;
+       option kerberos-servers 10.20.10.1, 10.20.11.1;
+
+       RREECCOORRDDSS
+
+       Options can also contain data structures consisting  of  a
+       sequence of data types, which is sometimes called a record
+       type.   For example:
+
+       option contrived-001 code 201 = { boolean, integer 32, text };
+       option contrived-001 on 1772 "contrivance";
+
+       It's also possible to have  options  that  are  arrays  of
+       records, for example:
+
+       option new-static-routes code 201 = array of {
+
+
+
+                                                               16
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+            ip-address, ip-address, ip-address, integer 8 };
+       option static-routes
+            10.0.0.0 255.255.255.0 net-0-rtr.example.com 1,
+            10.0.1.0 255.255.255.0 net-1-rtr.example.com 1,
+            10.2.0.0 255.255.224.0 net-2-0-rtr.example.com 3;
+
+
+VVEENNDDOORR EENNCCAAPPSSUULLAATTEEDD OOPPTTIIOONNSS
+       The DHCP protocol defines the  vveennddoorr--eennccaappssuullaatteedd--ooppttiioonnss
+       option, which allows vendors to define their  own  options
+       that  will be sent encapsulated in a standard DHCP option.
+       The format of the  vveennddoorr--eennccaappssuullaatteedd--ooppttiioonnss  option  is
+       either a series of bytes whose format is not specified, or
+       a sequence of options, each of which consists of a single-
+       byte  vendor-specific  option  code, followed by a single-
+       byte length, followed by as many  bytes  of  data  as  are
+       specified  in  the  length  (the  length  does not include
+       itself or the option code).
+
+       The value of this option can be set in one  of  two  ways.
+       The  first  way  is  to  simply specify the data directly,
+       using a text string or a colon-seperated list of hexadeci­
+       mal values.   For example:
+
+       option vendor-encapsulated-options
+           2:4:AC:11:41:1:
+           3:12:73:75:6e:64:68:63:70:2d:73:65:72:76:65:72:31:37:2d:31:
+           4:12:2f:65:78:70:6f:72:74:2f:72:6f:6f:74:2f:69:38:36:70:63;
+
+       The  second  way of setting the value of this option is to
+       have the DHCP server  generate  a  vendor-specific  option
+       buffer.    To  do this, you must do four things: define an
+       option space, define some options in  that  option  space,
+       provide  values  for  them,  and  specify that that option
+       space should be used to generate the  vveennddoorr--eennccaappssuullaatteedd--
+       ooppttiioonnss option.
+
+       To  define  a new option space in which vendor options can
+       be stored, use the option space statement:
+
+       ooppttiioonn ssppaaccee _n_a_m_e ;;
+
+       The name can  then  be  used  in  option  definitions,  as
+       described earlier in this document.   For example:
+
+       option space SUNW;
+       option SUNW.server-address code 2 = ip-address;
+       option SUNW.server-name code 3 = text;
+       option SUNW.root-path code 4 = text;
+
+       Once  you  have  defined an option space and the format of
+       some options, you can set up scopes that define values for
+       those  options,  and  you  can say when to use them.   For
+       example, suppose you want to handle two different  classes
+
+
+
+                                                               17
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+       of  clients.    Using the option space definition shown in
+       the previous example, you can send different option values
+       to  different clients based on the vendor-class-identifier
+       option that the clients send, as follows:
+
+       class "vendor-classes" {
+         match option vendor-class-identifier;
+       }
+
+       option SUNW.server-address 172.17.65.1;
+       option SUNW.server-name "sundhcp-server17-1";
+
+       subclass "vendor-classes" "SUNW.Ultra-5_10" {
+         vendor-option-space SUNW;
+         option SUNW.root-path "/export/root/sparc";
+       }
+
+       subclass "vendor-classes" "SUNW.i86pc" {
+         vendor-option-space SUNW;
+         option SUNW.root-path "/export/root/i86pc";
+       }
+
+       As you can see in the preceding example,  regular  scoping
+       rules  apply,  so you can define values that are global in
+       the global scope, and only define values that are specific
+       to  a  particular  class in the local scope.   The vveennddoorr--
+       ooppttiioonn--ssppaaccee declaration tells  the  DHCP  server  to  use
+       options  in the SUNW option space to construct the vveennddoorr--
+       eennccaappssuullaatteedd--ooppttiioonnss option.
+
+SSEEEE AALLSSOO
+       dhcpd.conf(5),  dhcpd.leases(5),  dhclient.conf(5),  dhcp-
+       eval(5),  dhcpd(8),  dhclient(8), RFC2132, RFC2131, draft-
+       ietf-dhc-agent-options-??.txt.
+
+AAUUTTHHOORR
+       The Internet Software  Consortium  DHCP  Distribution  was
+       written  by  Ted  Lemon  <mellon@isc.org> under a contract
+       with Vixie Labs.  Funding for this  project  was  provided
+       through  the  Internet  Software  Consortium.  Information
+       about the Internet Software Consortium  can  be  found  at
+       hhttttpp::////wwwwww..iisscc..oorrgg//iisscc..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                               18
+
+

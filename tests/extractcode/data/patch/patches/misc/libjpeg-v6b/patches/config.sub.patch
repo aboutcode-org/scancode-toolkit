@@ -1,0 +1,29 @@
+--- jpeg-6b/config.sub_org	2005-11-14 13:08:04.000000000 +0100
++++ jpeg-6b/config.sub	2005-11-14 13:08:23.000000000 +0100
+@@ -153,7 +153,7 @@
+ 		| arme[lb] | pyramid | mn10200 | mn10300 \
+ 		| tron | a29k | 580 | i960 | h8300 | hppa | hppa1.0 | hppa1.1 \
+ 		| alpha | alphaev5 | alphaev56 | we32k | ns16k | clipper \
+-		| i370 | sh | powerpc | powerpcle | 1750a | dsp16xx | pdp11 \
++		| i370 | sh | sh4 | powerpc | powerpcle | 1750a | dsp16xx | pdp11 \
+ 		| mips64 | mipsel | mips64el | mips64orion | mips64orionel \
+ 		| mipstx39 | mipstx39el \
+ 		| sparc | sparclet | sparclite | sparc64 | v850)
+@@ -178,7 +178,7 @@
+ 	      | xmp-* | ymp-* | hppa-* | hppa1.0-* | hppa1.1-* \
+ 	      | alpha-* | alphaev5-* | alphaev56-* | we32k-* | cydra-* \
+ 	      | ns16k-* | pn-* | np1-* | xps100-* | clipper-* | orion-* \
+-	      | sparclite-* | pdp11-* | sh-* | powerpc-* | powerpcle-* \
++	      | sparclite-* | pdp11-* | sh-* | sh4-*| powerpc-* | powerpcle-* \
+ 	      | sparc64-* | mips64-* | mipsel-* \
+ 	      | mips64el-* | mips64orion-* | mips64orionel-*  \
+ 	      | mipstx39-* | mipstx39el-* \
+@@ -516,7 +516,7 @@
+ 	sequent)
+ 		basic_machine=i386-sequent
+ 		;;
+-	sh)
++	sh | sh4)
+ 		basic_machine=sh-hitachi
+ 		os=-hms
+ 		;;

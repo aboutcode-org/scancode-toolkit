@@ -1,0 +1,16 @@
+about_resource: bzip2-1.0.6-4-mingw32-src.tar.lzma
+name: bzip2
+version: 1.0.6
+download:
+    - http://bzip.org/1.0.6/bzip2-1.0.6.tar.gz
+    - http://prdownloads.sourceforge.net/mingw/bzip2-1.0.6-4-mingw32-bin.tar.lzma?download
+    - http://prdownloads.sourceforge.net/mingw/bzip2-1.0.6-4-mingw32-doc.tar.lzma?download
+    - http://prdownloads.sourceforge.net/mingw/bzip2-1.0.6-4-mingw32-lic.tar.lzma?download
+    - http://prdownloads.sourceforge.net/mingw/bzip2-1.0.6-4-mingw32-man.tar.lzma?download
+    - http://prdownloads.sourceforge.net/mingw/bzip2-1.0.6-4-mingw32-dev.tar.lzma?download
+
+notes: bzip2 packaged for a MinGW build.
+homepage: http://bzip.org/
+copyright: Copyright (c) 1996 - 2015 julian@bzip.org
+license_file: bzip2.LICENSE
+license: bzip2-libbzip-2010

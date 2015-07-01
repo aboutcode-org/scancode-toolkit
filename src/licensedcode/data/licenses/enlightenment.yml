@@ -1,0 +1,18 @@
+key: enlightenment
+short_name: EFL MIT-Style License
+name: Enlightenment (EFL) MIT-Style License
+category: Attribution
+owner: Enlightenment
+homepage_url: http://www.enlightenment.org/
+spdx_license_key: MIT-advertising
+spdx_full_name: Enlightenment License (e16)
+spdx_url: http://spdx.org/licenses/MIT-advertising
+spdx_notes: >-
+    from Fedora notes: This license is a modified version of the common MIT license,
+    with an additional advertising clause that makes it GPL-incompatible. It was originally
+    found at: http://www.enlightenment.org/viewvc/e16/e/COPYING?revision=1.10 , but
+    that URL is gone (they seem to have moved source control systems). The latest
+    available copy from enlightment.org (http://trac.enlightenment.org/e/browser/trunk/E16/e/COPYING)
+    has been preserved here for reference.
+text_urls:
+    - https://fedoraproject.org/wiki/Licensing/MIT_With_Advertising

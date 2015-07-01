@@ -1,0 +1,229 @@
+Index: linux-2.6.23/arch/sh/Makefile
+===================================================================
+--- linux-2.6.23.orig/arch/sh/Makefile
++++ linux-2.6.23/arch/sh/Makefile
+@@ -154,6 +154,7 @@ machdir-$(CONFIG_SH_ST_MB628)			+= st/mb
+ machdir-$(CONFIG_SH_ST_MB671)			+= st/mb671 st/common
+ machdir-$(CONFIG_SH_ST_MB680)			+= st/mb680 st/common
+ machdir-$(CONFIG_SH_ST_MB704)			+= st/mb704
++machdir-$(CONFIG_SH_ST_VIP19X3)                        += st/vip19x3 st/common
+ machdir-$(CONFIG_SH_ST_PDK7105)			+= st/pdk7105
+ machdir-$(CONFIG_SH_ST_MB839)			+= st/mb839
+ 
+Index: linux-2.6.23/arch/sh/boards/st/vip19x3/Makefile
+===================================================================
+--- /dev/null
++++ linux-2.6.23/arch/sh/boards/st/vip19x3/Makefile
+@@ -0,0 +1,5 @@
++#
++# Makefile for Motorola VIP19x3 board
++#
++
++obj-y := setup.o
+Index: linux-2.6.23/arch/sh/boards/st/vip19x3/setup.c
+===================================================================
+--- /dev/null
++++ linux-2.6.23/arch/sh/boards/st/vip19x3/setup.c
+@@ -0,0 +1,202 @@
++/*
++ * arch/sh/boards/st/vip19x3/setup.c
++ *
++ * Copyright (C) 2008 STMicroelectronics Limited
++ * Author: Stuart Menefy (stuart.menefy@st.com)
++ *
++ * May be copied or modified under the terms of the GNU General Public
++ * License.  See linux/COPYING for more information.
++ *
++ * Copyright (C) 2008 Motorola, Inc.
++ * Motorola VIP19x3 board support.
++ */
++
++#include <linux/init.h>
++#include <linux/platform_device.h>
++#include <linux/leds.h>
++#include <linux/stm/pio.h>
++#include <linux/stm/soc.h>
++#include <linux/stm/emi.h>
++#include <linux/stm/pio.h>
++#include <linux/mtd/mtd.h>
++#include <linux/mtd/nand.h>
++#include <linux/stm/nand.h>
++#include <linux/stm/soc_init.h>
++#include <linux/mtd/physmap.h>
++#include <linux/mtd/partitions.h>
++#include <linux/phy.h>
++#include <linux/gpio_keys.h>
++#include <linux/input.h>
++#include <asm/irq-ilc.h>
++#include <asm/irl.h>
++#include <asm/io.h>
++#include <asm/setup.h>
++#include "../common/common.h"
++
++static int ascs[2] __initdata = { 1 | (STASC_FLAG_NORTSCTS << 8),
++				  2 | (STASC_FLAG_NORTSCTS << 8) };
++
++static void __init vip19x3_setup(char** cmdline_p)
++{
++	char command_line[COMMAND_LINE_SIZE+1];
++
++	printk("Motorola VIP19x3 board initialisation\n");
++
++	memcpy(command_line, *cmdline_p, COMMAND_LINE_SIZE);
++	command_line[COMMAND_LINE_SIZE] = '\0';
++	if (NULL != strstr(command_line, "rbl_mode=2")) {
++		ascs[0] |= (STASC_FLAG_NORXTX << 8);
++	}
++
++	stx7105_early_device_init();
++	stx7105_configure_asc(ascs, 2, 0);
++}
++
++static struct plat_stm_pwm_data pwm_private_info = {
++	.flags		= PLAT_STM_PWM_OUT0,
++	.routing	= PWM_OUT0_PIO4_4,
++};
++
++static struct plat_ssc_data ssc_private_info = {
++	.capability  =
++		ssc0_has(SSC_I2C_CAPABILITY) |
++		ssc1_has(SSC_UNCONFIGURED) |
++		ssc2_has(SSC_UNCONFIGURED) |
++		ssc3_has(SSC_I2C_CAPABILITY),
++	.routing =
++		SSC3_SCLK_PIO3_6 | SSC3_MTSR_PIO3_7 | SSC3_MRST_PIO3_7,
++};
++
++static struct usb_init_data usb_init[2] __initdata = {
++	{
++		.oc_en = 1,
++		.oc_actlow = 0,
++		.oc_pinsel = USB0_OC_PIO12_5,
++		.pwr_en = 0,
++		.pwr_pinsel = USB0_PWR_PIO12_6,
++	}, {
++		.oc_en = 1,
++		.oc_actlow = 0,
++		.oc_pinsel = USB1_OC_PIO14_6,
++		.pwr_en = 0,
++		.pwr_pinsel = USB1_PWR_PIO14_7,
++	}
++};
++
++static struct mtd_partition nand_partitions[] = {
++	{
++		.name	= "NAND home",
++		.offset	= 0,
++		.size	= MTDPART_SIZ_FULL
++	},
++};
++
++static struct plat_stmnand_data nand_config = {
++	/* STM_NAND_EMI data */
++	.emi_withinbankoffset	= 0,
++	.rbn_port		= -1,
++	.rbn_pin		= -1,
++
++	.timing_data = &(struct nand_timing_data) {
++		.sig_setup	= 50,		/* times in ns */
++		.sig_hold	= 50,
++		.CE_deassert	= 0,
++		.WE_to_RBn	= 100,
++		.wr_on		= 10,
++		.wr_off		= 40,
++		.rd_on		= 10,
++		.rd_off		= 40,
++		.chip_delay	= 30,		/* in us */
++	},
++	.flex_rbn_connected	= 1,
++};
++
++/* Platform data for STM_NAND_EMI/FLEX/AFM. (bank# may be updated later) */
++static struct platform_device nand_device =
++	STM_NAND_DEVICE("stm-nand-flex", 1, &nand_config,
++			nand_partitions, ARRAY_SIZE(nand_partitions), NAND_USE_FLASH_BBT);
++
++static struct plat_stmmacphy_data phy_private_data = {
++	/* Marvell 88E3015 on Motorola VIP1903 */
++	.bus_id = 0,
++	.phy_addr = 0,
++	.phy_mask = 0,
++	.interface = PHY_INTERFACE_MODE_MII,
++};
++
++static struct platform_device vip19x3_phy_device = {
++	.name		= "stmmacphy",
++	.id		= 0,
++	.num_resources	= 1,
++	.resource	= (struct resource[]) {
++		{
++			.name	= "phyirq",
++			.start	= ILC_EXT_IRQ(6),
++			.end	= ILC_EXT_IRQ(6),
++			.flags	= IORESOURCE_IRQ,
++		},
++	},
++	.dev = {
++		.platform_data = &phy_private_data,
++	}
++};
++
++static struct platform_device *vip19x3_devices[] __initdata = {
++	&vip19x3_phy_device,
++};
++
++/* Configuration based on Futarque-RC signals train. */
++lirc_scd_t lirc_scd = {
++	.code = 0x3FFFC028,
++	.codelen = 0x1e,
++	.alt_codelen = 0,
++	.nomtime = 0x1f4,
++	.noiserecov = 0,
++};
++
++static int __init device_init(void)
++{
++       struct stpio_pin *pin;
++
++	stx7105_configure_sata();
++	stx7105_configure_pwm(&pwm_private_info);
++	stx7105_configure_ssc(&ssc_private_info);
++
++	stx7105_configure_usb(0, &usb_init[0]);
++	stx7105_configure_usb(1, &usb_init[1]);
++	stx7105_configure_ethernet(0, 0, 0, 0, 1, 0);
++	stx7105_configure_lirc(&lirc_scd);
++	stx7105_configure_audio_pins(0,1,0);
++	stx7105_configure_nand(&nand_device);
++
++	/* Enable the PHY */
++	pin = stpio_request_pin(14, 4, "phyreset", STPIO_OUT);
++	stpio_set_pin(pin, 0);
++
++	return platform_add_devices(vip19x3_devices, ARRAY_SIZE(vip19x3_devices));
++}
++arch_initcall(device_init);
++
++static void __iomem *vip19x3_ioport_map(unsigned long port, unsigned int size)
++{
++	/* However picking somewhere safe isn't as easy as you might think.
++	 * I used to use external ROM, but that can cause problems if you are
++	 * in the middle of updating Flash. So I'm now using the processor core
++	 * version register, which is guaranted to be available, and non-writable.
++	 */
++	return (void __iomem *)CCN_PVR;
++}
++
++static void __init vip19x3_init_irq(void)
++{
++	/* Configure PHY interrupt as active low. */
++	set_irq_type(ILC_EXT_IRQ(6), IRQ_TYPE_LEVEL_LOW);
++}
++
++struct sh_machine_vector mv_vip19x3 __initmv = {
++	.mv_name		= "vip19x3",
++	.mv_setup		= vip19x3_setup,
++	.mv_nr_irqs		= NR_IRQS,
++	.mv_init_irq		= vip19x3_init_irq,
++	.mv_ioport_map		= vip19x3_ioport_map,
++};

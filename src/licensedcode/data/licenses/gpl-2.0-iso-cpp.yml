@@ -1,0 +1,9 @@
+key: gpl-2.0-iso-cpp
+short_name: GPL 2.0 with ISO C++ Library exception
+name: >-
+    GNU General Public License 2.0 with ISO C++ Library exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+text_urls:
+    - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html

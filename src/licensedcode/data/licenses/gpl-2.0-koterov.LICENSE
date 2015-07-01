@@ -1,0 +1,23 @@
+This library is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this library; see the file COPYING.  If not, write to the Free Software Foundation, 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+ADDITIONAL LICENSE TERMS
+
+In addition to the standard GPL 2.0 license, here are some 
+conditions I'd like clarify.
+
+0. If you modify this product, you MUST publish your changes. Period.
+
+1. If you re-write this product in other language (e.g. C++) and 
+   "intently view" the product's Perl sources while coding, you must 
+   also license your results as GPL 2.0.
+
+2. The author of this product (Dmitry Koterov, http://dmitry.moikrug.ru) may 
+   change the product's license type and any of license conditions.
+   He is also permitted to make private modifications and do not publish them.
+
+If you have questions, fill free to contact the author:
+dmitry.koterov@gmail.com

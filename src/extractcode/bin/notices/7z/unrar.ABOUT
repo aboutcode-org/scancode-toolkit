@@ -1,0 +1,13 @@
+http://www.rarlab.com/rar_add.htm
+version:3.8.5
+How to build:
+ tar -xzf unrarsrc-3.8.5.tar.gz
+ cd unrar/
+ *on linux/and *nix:
+ cp makefile.unix makefile
+ make
+ cp unrar ~/dist/scripts-7974/trunk/scripts/bin/Linux-s390x/bin/
+ *on Windows:
+ Copy "makefile.xxx" to makefile for your OS when compiling on each platform. 
+ on win32, copy makefile.msc makefile, then nmake.
+ copy then the unrar bin

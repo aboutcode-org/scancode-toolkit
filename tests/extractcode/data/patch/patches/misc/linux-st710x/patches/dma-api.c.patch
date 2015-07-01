@@ -1,0 +1,30 @@
+--- linux-orig/arch/sh/drivers/dma/dma-api.c	2007-12-06 10:57:14.000000000 +0100
++++ linux/arch/sh/drivers/dma/dma-api.c	2007-12-06 11:21:31.000000000 +0100
+@@ -388,8 +388,10 @@
+ 			chan->flags |= DMA_TEI_CAPABLE;
+ 
+ 		init_waitqueue_head(&chan->wait_queue);
++#ifdef CONFIG_SYSFS
+ 		dma_create_sysfs_files(chan, info);
+-	}
++#endif
++        }
+ 
+ 	list_add(&info->list, &registered_dmac_list);
+ 
+@@ -399,12 +401,14 @@
+ 
+ void unregister_dmac(struct dma_info *info)
+ {
++#ifdef CONFIG_SYSFS
+ 	unsigned int i;
+ 
+ 	for (i = 0; i < info->nr_channels; i++)
+ 		dma_remove_sysfs_files(info->channels + i, info);
++#endif
+ 
+-	if (!(info->flags & DMAC_CHANNELS_CONFIGURED))
++        if (!(info->flags & DMAC_CHANNELS_CONFIGURED))
+ 		kfree(info->channels);
+ 
+ 	list_del(&info->list);

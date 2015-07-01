@@ -1,0 +1,54 @@
+--- ElectricFence-2.2.2/page.c.jj	1999-04-11 17:45:26.000000000 -0400
++++ ElectricFence-2.2.2/page.c	2004-10-16 12:30:10.000000000 -0400
+@@ -160,8 +160,9 @@ Page_DenyAccess(void * address, size_t s
+ void
+ Page_Delete(void * address, size_t size)
+ {
+-	if ( munmap((caddr_t)address, size) < 0 )
+-		Page_DenyAccess(address, size);
++	Page_DenyAccess(address, size);
++	/* Tell the kernel we will never need it again.  */
++	madvise(address, size, MADV_DONTNEED);
+ }
+ 
+ #if defined(_SC_PAGESIZE)
+--- ElectricFence-2.2.2/efence.c.jj	1999-04-12 21:00:49.000000000 -0400
++++ ElectricFence-2.2.2/efence.c	2004-10-16 13:11:30.000000000 -0400
+@@ -626,10 +626,7 @@ memalign(size_t alignment, size_t userSi
+ 		address += internalSize - bytesPerPage;
+ 
+ 		/* Set up the "dead" page. */
+-		if ( EF_PROTECT_FREE )
+-			Page_Delete(address, bytesPerPage);
+-		else
+-			Page_DenyAccess(address, bytesPerPage);
++		Page_Delete(address, bytesPerPage);
+ 
+ 		/* Figure out what address to give the user. */
+ 		address -= userSize;
+@@ -643,11 +640,8 @@ memalign(size_t alignment, size_t userSi
+ 		address = (char *)fullSlot->internalAddress;
+ 
+ 		/* Set up the "dead" page. */
+-		if ( EF_PROTECT_FREE )
+-			Page_Delete(address, bytesPerPage);
+-		else
+-			Page_DenyAccess(address, bytesPerPage);
+-			
++		Page_Delete(address, bytesPerPage);
++
+ 		address += bytesPerPage;
+ 
+ 		/* Set up the "live" page. */
+@@ -777,10 +771,7 @@ free(void * address)
+ 	 * in the hope that the swap space attached to those pages will be
+ 	 * released as well.
+ 	 */
+-	if ( EF_PROTECT_FREE )
+-	    Page_Delete(slot->internalAddress, slot->internalSize);
+-	else
+-	    Page_DenyAccess(slot->internalAddress, slot->internalSize);
++	Page_Delete(slot->internalAddress, slot->internalSize);
+ 
+ 	previousSlot = slotForInternalAddressPreviousTo(slot->internalAddress);
+ 	nextSlot = slotForInternalAddress(

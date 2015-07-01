@@ -1,0 +1,13 @@
+key: gfdl-1.3
+short_name: GFDL 1.3
+name: GNU Free Documentation License 1.3
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/fdl-1.3.txt
+spdx_license_key: GFDL-1.3
+spdx_full_name: GNU Free Documentation License 1.3
+spdx_url: http://spdx.org/licenses/GFDL-1.3
+spdx_notes: >-
+    This license was released 3 November 2008.
+text_urls:
+    - http://www.gnu.org/licenses/fdl-1.3.txt

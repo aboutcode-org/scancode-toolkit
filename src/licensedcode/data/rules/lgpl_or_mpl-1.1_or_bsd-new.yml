@@ -1,0 +1,6 @@
+licenses:
+    - lgpl
+    - mpl-1.1
+    - bsd-new
+license_choice: yes
+notes: tri license

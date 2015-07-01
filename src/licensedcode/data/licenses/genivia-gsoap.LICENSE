@@ -1,0 +1,23 @@
+Commercial Licensing and Support Contracting
+
+Our software products are developed with great care and passed numerous industry evaluations. Our software is used by the US government and military.
+
+Returning customers looking for online payment of invoices, please contact us.
+
+Licensing Options
+
+There are three licensing options.
+
+Standard Open Source Edition: The open source edition offers basic functionality without the use of the wsdl2h tool (no WSDL/schemas to code generation), no webserver, no UDDI support, and no sample applications to use as basis for your projects. The limited edition is licensed under the gSOAP public license free of charge for commercial use. The gSOAP public license requires a notice (Exhibit B) in the project documentation and in the third-party license list of the product.
+
+Standard Commercial Edition: The standard edition of the gSOAP toolset for commercial use. This edition is identical to the standard open source edition, but allows the use of the wsdl2h and soapcpp2 tools for commercial code and document generation. This licens does not have the limitations of the open-source GPL and gSOAP public licenses. The standard commercial edition is licensed with limited warranties.
+
+Enterprise Edition: The enterprise edition of the gSOAP toolset provides the gold standard toolset for your enterprise. The enterprise edition is best suited for organizations that require high reliability, security, and extensive support for WSDL, SOAP, XML, and WS-* protocols. Warranties, software maintenance and support are included.
+
+To determine the applicable license or to inquire about license and support cost information please send a request with a project description from your official company e-mail address to sales@genivia.com.
+
+Download standard open source edition
+
+Resellers
+
+Please contact sales@genivia.com for pricing of the standard edition with or without the software support/maintenance option.

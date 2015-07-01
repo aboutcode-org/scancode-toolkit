@@ -1,0 +1,28 @@
+Index: udhcp-0.9.8/clientpacket.h
+===================================================================
+--- udhcp-0.9.8.orig/clientpacket.h
++++ udhcp-0.9.8/clientpacket.h
+@@ -1,12 +1,23 @@
+ #ifndef _CLIENTPACKET_H
+ #define _CLIENTPACKET_H
+ 
++typedef struct _STBIdentity {
++  char *ManufacturerOUI;
++  char *SerialNumber;
++  char *ProductClass;
++}STBIdentity;
++
+ unsigned long random_xid(void);
+ int send_discover(unsigned long xid, unsigned long requested);
+ int send_selecting(unsigned long xid, unsigned long server, unsigned long requested);
++int send_decline(unsigned long xid, unsigned long server, unsigned long requested);
+ int send_renew(unsigned long xid, unsigned long server, unsigned long ciaddr);
+ int send_renew(unsigned long xid, unsigned long server, unsigned long ciaddr);
+ int send_release(unsigned long server, unsigned long ciaddr);
+ int get_raw_packet(struct dhcpMessage *payload, int fd);
+ 
++void add_deviceidentity(struct dhcpMessage *packet);
++void parse_gatewayidentity(unsigned char *option125);
++int get_deviceidentity(STBIdentity* devIdentity);
++int set_gatewayidentity(STBIdentity* gwIdentity);
+ #endif

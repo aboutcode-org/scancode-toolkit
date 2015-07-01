@@ -1,0 +1,11 @@
+key: cnri-python-1.6.1
+short_name: CNRI Python 1.6.1
+name: >-
+    CNRI Open Source License Agreement for Python 1.6.1
+category: Attribution
+owner: CNRI
+homepage_url: http://www.python.org/download/releases/1.6.1/download_win/
+spdx_license_key: CNRI-Python-GPL-Compatible
+spdx_full_name: >-
+    CNRI Python Open Source GPL Compatible License Agreement
+spdx_url: http://spdx.org/licenses/CNRI-Python-GPL-Compatible

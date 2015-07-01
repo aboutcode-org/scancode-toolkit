@@ -1,0 +1,11 @@
+key: apache-due-credit
+short_name: Apache Due Credit Variant
+name: Apache Due Credit Variant
+category: Attribution
+owner: Codehaus
+other_urls:
+    - http://openorb.sourceforge.net/license.txt
+    - https://fedoraproject.org/wiki/Licensing:BSD?rd=Licensing/BSD#jCharts_Variant
+    - http://opensource.dell.com/releases/Dell_Active_System_Manager/1.0.0/license_text/DOM4J-2005-BSD-Style.pdf
+    - http://www.oracle.com/technetwork/java/javaee/portalpack2-149804.txt
+    - https://confluence.sakaiproject.org/plugins/viewsource/viewpagesrc.action?pageId=28442642

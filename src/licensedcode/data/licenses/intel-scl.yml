@@ -1,0 +1,7 @@
+key: intel-scl
+short_name: Intel Source Code License Agreement
+name: Intel Source Code License Agreement
+category: Proprietary Free
+owner: Intel Corporation
+other_urls:
+    - http://software.intel.com/en-us/articles/intel-64-architecture-processor-topology-enumeration

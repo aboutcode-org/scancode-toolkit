@@ -1,0 +1,58 @@
+--- linux-2.6.23/fs/nfs/nfsroot.c.orig	2007-10-09 22:31:38.000000000 +0200
++++ linux-2.6.23/fs/nfs/nfsroot.c	2009-04-13 11:39:41.000000000 +0200
+@@ -86,9 +86,11 @@
+ #include <linux/root_dev.h>
+ #include <net/ipconfig.h>
+ #include <linux/parser.h>
++#include <linux/delay.h>
+ 
+ /* Define this to allow debugging output */
+-#undef NFSROOT_DEBUG
++//#undef NFSROOT_DEBUG
++#define NFSROOT_DEBUG
+ #define NFSDBG_FACILITY NFSDBG_ROOT
+ 
+ /* Default path we try to mount. "%s" gets replaced by our IP address */
+@@ -459,6 +461,30 @@
+ 	proto = (nfs_data.flags & NFS_MOUNT_TCP) ? IPPROTO_TCP : IPPROTO_UDP;
+ 
+ 	if (nfs_port < 0) {
++		port = -1;
++		while (port < 0) {
++			port = root_nfs_getport(NFS_PROGRAM, nfsd_ver, proto);
++			if (port < 0) {
++				printk(KERN_ERR "Root-NFS: Unable to get nfsd port number from server, trying again...\n");
++				msleep(1000);
++			}
++		}
++		printk(KERN_DEBUG "Root-NFS: Portmapper on server returned %d as nfsd port\n", port);
++		nfs_port = port;
++	}
++	port = -1;
++	while (port < 0) {
++		port = root_nfs_getport(NFS_MNT_PROGRAM, mountd_ver, proto);
++		if (port < 0) {
++			printk(KERN_ERR "Root-NFS: Unable to get mountd port number from server, trying again...\n");
++			msleep(1000);
++		}
++	}
++	mount_port = port;
++	printk(KERN_DEBUG "Root-NFS: mountd port is %d\n", port);
++	return 0;		
++	
++	if (nfs_port < 0) {
+ 		if ((port = root_nfs_getport(NFS_PROGRAM, nfsd_ver, proto)) < 0) {
+ 			printk(KERN_ERR "Root-NFS: Unable to get nfsd port "
+ 					"number from server, using default\n");
+--- linux-2.6.23/init/do_mounts.c.orig	2007-10-09 22:31:38.000000000 +0200
++++ linux-2.6.23/init/do_mounts.c	2009-04-13 11:36:06.000000000 +0200
+@@ -394,6 +394,9 @@
+ {
+ #ifdef CONFIG_ROOT_NFS
+ 	if (MAJOR(ROOT_DEV) == UNNAMED_MAJOR) {
++		while(!mount_nfs_root())
++			msleep(1000);
++		return;
+ 		if (mount_nfs_root())
+ 			return;
+ 

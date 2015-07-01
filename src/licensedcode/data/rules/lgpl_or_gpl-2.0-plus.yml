@@ -1,0 +1,5 @@
+licenses:
+    - lgpl
+    - gpl-2.0-plus
+license_choice: yes
+notes: From snprintf in ftp://ftp.gnu.org/gnu/inetutils/inetutils-1.4.0.tar.gz

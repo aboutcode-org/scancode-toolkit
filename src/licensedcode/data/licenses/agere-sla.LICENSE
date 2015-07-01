@@ -1,0 +1,112 @@
+Agere Systems WinModem End User SOFTWARE LICENSE AGREEMENT
+
+
+YOU SHOULD READ THE TERMS AND CONDITIONS OF THIS AGREEMENT BEFORE 
+YOU DOWNLOAD AND USE THE AGERE SYSTEMS WINMODEM LICENSED SOFTWARE.  
+ONCE YOU HAVE READ THIS LICENSE AGREEMENT AND AGREE TO ITS TERMS, 
+YOU MAY DOWNLOAD AND USE THE AGERE SYSTEMS WINMODEM LICENSED SOFTWARE.  
+DOWNLOADING OR USING THE AGERE SYSTEMS WINMODEM LICENSED SOFTWARE SHOWS 
+YOUR ACCEPTANCE OF THE TERMS OF THIS LICENSE AGREEMENT.  
+
+The terms and conditions of this Agreement will apply to the Agere 
+Systems WinModem Software (hereafter "Software") supplied under this Agreement 
+and any derivatives obtained therefrom, including any copy.  The term Software 
+includes programs and related documentation supplied herewith.
+
+The following file is made available under the standard Linux license, 
+a copy of which may be found at .
+serial.c
+serial24.c
+ 
+These additional files are not derived from any Linux open source content, 
+and are subject to the following restrictions.
+ltmodem.c
+linuxif.h
+ltmdmobj.o
+Makefile
+ltinst
+ltuninst
+readme.txt
+
+1.0  TITLE AND LICENSE GRANT
+
+	1.1	The Software is copyrighted and/or contains proprietary 
+                information protected by law.  All Software and all copies 
+                thereof are and will remain the sole property of Agere Systems or 
+                its suppliers.  Agere Systems hereby grants you a non-exclusive right 
+                to use the Software, in whatever form recorded, which is furnished to 
+                you under or in contemplation of this Agreement, in an Agere Systems 
+                winmodem.  Any other use of the Software or removal of the Software from 
+                a country in which use is licensed shall automatically terminate this license.
+
+	1.2	You agree to use your best efforts to see that any user of the Software 
+                licensed hereunder complies with the terms and conditions of this Agreement.
+
+
+2.0  SOFTWARE USE
+
+	2.1	You are permitted to make copies of the Software provided that any such copy 
+                shall contain the same copyright notice and proprietary marking included on 
+                the original Software.
+
+	2.2	You agree not to merge or combine any portion of the Software with any other 
+                software, other than the Linux operating system, unless expressly permitted by 
+                the laws of the jurisdiction where you are located.  Any portion of the Software 
+                merged or combined with the other software will continue to be the subject of the 
+                terms and conditions of this Agreement and you agree to reproduce on the merged 
+                or combined portion of the Software the copyright and other proprietary rights 
+                notices included in the original Software.
+
+       2.3      Redistribution and Usage
+                Agere permits use and limited redistribution of this Licensed Software in source and 
+                binary forms, with or without modification, subject to the following terms and conditions, 
+                in addition to the terms mentioned in this agreement. 
+                
+                2.3.1 	Agere Systems reserves the right not to allow a third party to reuse or 
+                        redistribute the software, at its sole discretion.
+                
+                2.3.2	User hereby agrees not to remove or alter any copyright, trademark, credits 
+                        and other proprietary notices contained within or associated with the Licensed 
+                        Software, and shall include all such unaltered copyright, trademark, credits and 
+                        other proprietary notices on or in every copy of the Software.
+
+                2.3.3	Notwithstanding any other provisions in this Agreement to the contrary, any 
+                        modifications or alterations made to the Licensed Software shall cause any 
+                        warranties and intellectual property indemnifications to become null and 
+                        void and of no further effect.
+
+3.0  DISCLAIMER OF WARRANTY
+
+	3.1  You understand and acknowledge that the Software may contain errors, bugs or other 
+             defects.  The Software is provided on AS-IS basis, without warranty of any kind.
+
+	3.2  Agere Systems has used reasonable efforts to minimize defects or errors in the Software.  
+             HOWEVER, YOU ASSUME THE RISK OF ANY AND ALL DAMAGE OR LOSS FROM USE OR INABILITY TO USE 
+             THE SOFTWARE.  Specifically, but not in limitation of the foregoing disclaimers, Agere 
+             Systems does not warrant that the functions of the Software will meet your requirements 
+             or that the Software operation will be error-free or uninterrupted.
+
+	3.3  Agere Systems bears no responsibility for supplying assistance for fixing or for 
+             communicating known errors to you pertaining to the Software supplied hereunder.
+
+	3.4  YOU UNDERSTAND THAT AGERE SYSTEMS, ITS AFFILIATES, CONTRACTORS, SUPPLIERS, AND AGENTS 
+             MAKE NO WARRANTIES, EXPRESS OR IMPLIED, AND SPECIFICALLY DISCLAIM ANY WARRANTY OF 
+             MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+4.0  EXCLUSIVE REMEDIES AND LIMITATION OF LIABILITIES
+
+	4.1  Regardless of any other provisions of this Agreement, neither Agere Systems nor its 
+             affiliates, contractors, suppliers, or agents shall be liable for any indirect, incidental, 
+             or consequential damages (including lost profits) sustained or incurred in connection with 
+             the use, operation, or inability to use the Software or for damages due to causes beyond 
+             the reasonable control of Agere Systems, its affiliates, contractors, suppliers, and agents 
+             attributable to any service, products, or action of any other person.
+
+	4.2  This Agreement shall be construed in accordance with and governed by the laws of the 
+             State of New York.
+
+YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT AND UNDERSTAND IT, AND THAT BY DOWNLOADING OR USING 
+THE SOFTWARE, YOU AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS.  YOU FURTHER AGREE THAT THIS AGREEMENT 
+IS THE COMPLETE AND EXCLUSIVE STATEMENT OF THE RIGHTS AND LIABILITIES OF THE PARTIES.  THIS AGREEMENT 
+SUPERCEDES ALL PRIOR ORAL AGREEMENTS, PROPOSALS OR UNDERSTANDINGS, AND ANY OTHER COMMUNICATIONS BETWEEN 
+US RELATING TO THE SUBJECT MATTER OF THIS AGREEMENT.

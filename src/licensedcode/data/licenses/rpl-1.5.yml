@@ -1,0 +1,15 @@
+key: rpl-1.5
+short_name: RPL 1.5
+name: Reciprocal Public License 1.5
+category: Copyleft Limited
+owner: OSI - Open Source Initiative
+homepage_url: http://www.opensource.org/licenses/rpl1.5.txt
+spdx_license_key: RPL-1.5
+spdx_full_name: Reciprocal Public License 1.5
+spdx_url: http://spdx.org/licenses/RPL-1.5
+spdx_notes: |-
+    This license was released: 15 July 2007
+    This license is OSI certified.
+text_urls:
+    - http://www.opensource.org/licenses/rpl1.5.txt
+osi_url: http://www.opensource.org/licenses/rpl1.5.txt

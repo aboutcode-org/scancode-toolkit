@@ -1,0 +1,10 @@
+--- linux-2.6.23-orig/include/asm-sh/bugs.h	2009-05-18 13:59:03.000000000 +0200
++++ linux-2.6.23/include/asm-sh/bugs.h	2009-05-19 12:47:35.000000000 +0200
+@@ -54,7 +54,6 @@
+ 		break;
+ 	}
+ 
+-	printk("CPU: %s\n", get_cpu_subtype(&current_cpu_data));
+ 
+ #ifndef __LITTLE_ENDIAN__
+ 	/* 'eb' means 'Endian Big' */

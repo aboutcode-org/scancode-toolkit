@@ -1,0 +1,17 @@
+key: ruby
+short_name: Ruby License
+name: Ruby License
+category: Copyleft Limited
+owner: Ruby
+homepage_url: http://www.ruby-lang.org/en/LICENSE.txt
+spdx_license_key: Ruby
+spdx_full_name: Ruby License
+spdx_url: http://spdx.org/licenses/Ruby
+spdx_notes: >-
+    Ruby is disjunctively licensed project that allows the choice of this license
+    and another. The other license choice has changed over time (from GPL originally,
+    to BSD-2-Clause currently), so one needs to be aware of that change. The Ruby
+    License itself is un-versioned, but has varied a bit over the years, the last
+    substantive variation being in 2002.
+text_urls:
+    - http://www.ruby-lang.org/en/LICENSE.txt

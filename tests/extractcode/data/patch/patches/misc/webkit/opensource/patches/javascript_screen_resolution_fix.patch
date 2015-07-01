@@ -1,0 +1,31 @@
+Index: src/Browser/WebCore/platform/ekioh/ScreenEkioh.cpp
+===================================================================
+--- src.orig/Browser/WebCore/platform/ekioh/ScreenEkioh.cpp
++++ src/Browser/WebCore/platform/ekioh/ScreenEkioh.cpp
+@@ -24,7 +24,7 @@
+  */
+ 
+ #include "Screen.h"
+-
++#include "ScrollView.h"
+ #include "FloatRect.h"
+ #include "Widget.h"
+ 
+@@ -46,9 +46,14 @@ static MONITORINFOEX monitorInfoForWidge
+ 
+ FloatRect screenRect(Widget* widget)
+ {
+-    notImplemented();
+-    //return monitorInfoForWidget(widget).rcMonitor;
+-    return FloatRect(0, 0, 800, 600);
++  ASSERT(widget != 0);
++  ScrollView* parent = widget->parent();
++  for(; widget->parent(); parent = widget->parent());
++  if (parent == NULL) {
++    IntRect rect = widget->frameGeometry();
++    return FloatRect(rect.x(), rect.y(), rect.width(), rect.height());
++  }
++  return FloatRect(parent->x(), parent->y(), parent->width(), parent->height());
+ }
+ 
+ FloatRect screenAvailableRect(Widget* widget)

@@ -1,0 +1,9 @@
+/*********************************************************************
+*  #### Twitter Post Fetcher v10.0 ####
+*  Coded by Jason Mayes 2013. A present to all the developers out there.
+*  www.jasonmayes.com
+*  Please keep this disclaimer with my code if you use it. Thanks. :)
+*  Got feedback or questions, ask here: 
+*  http://www.jasonmayes.com/projects/twitterApi/
+*  Updates will be posted to this site.
+*********************************************************************/

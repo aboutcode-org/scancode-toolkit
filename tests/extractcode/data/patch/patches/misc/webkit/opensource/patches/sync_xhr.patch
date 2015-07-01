@@ -1,0 +1,406 @@
+Index: src/Browser/WebCore/platform/network/ekioh/ResourceHandleEkioh.cpp
+===================================================================
+--- src.orig/Browser/WebCore/platform/network/ekioh/ResourceHandleEkioh.cpp
++++ src/Browser/WebCore/platform/network/ekioh/ResourceHandleEkioh.cpp
+
+@@ -38,6 +38,227 @@
+ 
+ #include "NotImplemented.h"
+ #include "EKDebug.h"
++#include "KURL.h"
++#include "HTTPParsers.h"
++
++#include <cstdlib>
++#include <string>
++#include <set>
++
++
++#define CURL_CALL(x)                                                    \
++  do {                                                                  \
++  CURLcode code = (x);                                                  \
++  if (code != CURLE_OK) {                                               \
++    ::fprintf(stderr, "%s:%i: curl call %s failed with code=%i",        \
++              __FILE__, __LINE__, #x, code);                            \
++    ::abort();                                                          \
++  }                                                                     \
++  } while (false)
++
++namespace {
++  static bool isPortAllowed(const WebCore::ResourceRequest& request)
++  {
++    // List from: http://www.mozilla.org/projects/netlib/PortBanning.html
++    static const unsigned short blockedArray[] = {
++      1,     // tcpmux
++      7,     // echo
++      9,     // discard
++      11,    // systat
++      13,    // daytime
++      15,    // netstat
++      17,    // qotd
++      19,    // chargen
++      20,    // ftp data
++      21,    // ftp control
++      22,    // ssh
++      23,    // telnet
++      25,    // smtp
++      37,    // time
++      42,    // name
++      43,    // nicname
++      53,    // domain
++      77,    // priv-rjs
++      79,    // finger
++      87,    // ttylink
++      95,    // supdup
++      101,   // hostriame
++      102,   // iso-tsap
++      103,   // gppitnp
++      104,   // acr-nema
++      109,   // POP2
++      110,   // POP3
++      111,   // sunrpc
++      113,   // auth
++      115,   // sftp
++      117,   // uucp-path
++      119,   // NNTP
++      123,   // NTP
++      135,   // loc-srv / epmap
++      139,   // netbios
++      143,   // IMAP2
++      179,   // BGP
++      389,   // LDAP
++      465,   // SMTP+SSL
++      512,   // print / exec
++      513,   // login
++      514,   // shell
++      515,   // printer
++      526,   // tempo
++      530,   // courier
++      531,   // chat
++      532,   // netnews
++      540,   // uucp
++      556,   // remotefs
++      563,   // NNTP+SSL
++      587,   // submission
++      601,   // syslog
++      636,   // LDAP+SSL
++      993,   // IMAP+SSL
++      995,   // POP3+SSL
++      2049,  // nfs
++      4045,  // lockd
++      6000   // X11
++    };
++
++    static const std::set<unsigned short>
++      blockedSet(blockedArray, blockedArray + (sizeof(blockedArray) /
++                                               sizeof(blockedArray[0])));
++
++    unsigned short port = request.url().port();
++
++    if (port == 0) {
++      return true;
++    }
++
++    if ((port == 21 || port == 22) && request.url().deprecatedString().startsWith("ftp:", false)) {
++      return true;
++    }
++
++    if (request.url().deprecatedString().startsWith("file:", false)) {
++      return true;
++    }
++
++    return blockedSet.find(port) == blockedSet.end();
++  }
++
++  struct CallbackContext
++  {
++    CURL* m_curlHandle;
++    Vector<char>& m_data;
++    WebCore::ResourceResponse& m_response;
++    long m_responseCode;
++  
++    CallbackContext(CURL* curlHandle,
++                    Vector<char>& data,
++                    WebCore::ResourceResponse& response)
++      : m_curlHandle(curlHandle),
++        m_data(data),
++        m_response(response),
++        m_responseCode(0)
++    { }
++  };
++
++  // NOTE: Code based on asynchronous implementation in
++  //       Browser/WebCore/platform/network/ekioh/ResourceHandleManager.cpp
++  static void receivedResponse(CallbackContext& context)
++  {
++    double contentLength = 0;
++    WebCore::String contentType;
++    WebCore::String encoding;
++
++    // Get content length
++    curl_easy_getinfo(context.m_curlHandle, CURLINFO_CONTENT_LENGTH_DOWNLOAD, &contentLength);
++
++    // Get content type
++    char *contentTypeCString = NULL;
++    if (curl_easy_getinfo(context.m_curlHandle,
++                          CURLINFO_CONTENT_TYPE,
++                          &contentTypeCString) == CURLE_OK) {
++      contentType = contentTypeCString;
++    }
++
++    // Get content type
++    char *urlCString = NULL;
++    CURL_CALL(curl_easy_getinfo(context.m_curlHandle,
++                                CURLINFO_EFFECTIVE_URL,
++                                &urlCString));
++
++    // Get HTTP status code
++    curl_easy_getinfo(context.m_curlHandle, CURLINFO_RESPONSE_CODE, &context.m_responseCode);
++    
++    if (context.m_responseCode >= 100 && context.m_responseCode < 200) {
++      // Informational - ignore
++      return;
++    }
++    else if (context.m_responseCode >= 300 && context.m_responseCode < 400) {
++      // HTTP Redirect
++      return;
++    }
++
++    context.m_response.setUrl(WebCore::KURL(urlCString));
++
++    context.m_response.setHTTPStatusCode(context.m_responseCode);
++
++    context.m_response.setExpectedContentLength((long long) contentLength);
++
++    context.m_response.setMimeType(extractMIMETypeFromMediaType(contentType));
++
++    context.m_response.setTextEncodingName
++      (extractCharsetFromMediaType(contentType));
++    
++    context.m_response.setSuggestedFilename
++      (filenameFromHTTPContentDisposition(context.m_response.httpHeaderField("Content-Disposition")));
++
++    context.m_response.setResponseFired(true);
++  }
++
++  // NOTE: Code based on asynchronous implementation in
++  //       Browser/WebCore/platform/network/ekioh/ResourceHandleManager.cpp
++  // called with data after all headers have been processed via headerCallback
++  static size_t writeCallback(void* ptr, size_t size, size_t nmemb, void* obj)
++  {
++    CallbackContext& context = *static_cast<CallbackContext*>(obj);
++    size_t totalSize = size * nmemb;
++
++    if (!context.m_response.responseFired()) {
++      // Can't rely on header reception to trigger response processing, as there won't
++      // be any headers for file: urls.
++      receivedResponse(context);
++      if (context.m_responseCode >= 300 && context.m_responseCode < 400) {
++        // Discard any body data that arrives after a redirect.
++        return totalSize;
++      }
++    }
++
++    context.m_data.append(static_cast<char*>(ptr), totalSize);  
++    return totalSize;
++  }
++
++  // NOTE: Code based on asynchronous implementation in
++  //       Browser/WebCore/platform/network/ekioh/ResourceHandleManager.cpp
++  // This is being called for each HTTP header in the response so it'll be called
++  // multiple times for a given response.
++  static size_t headerCallback(char* ptr, size_t size, size_t nmemb, void* obj)
++  {
++    CallbackContext& context = *static_cast<CallbackContext*>(obj);
++    size_t totalSize = size * nmemb;
++    WebCore::String header(ptr, totalSize);
++
++    // The empty line following the headers is delivered to this callback too,
++    // so make sure we've really got a header.
++    int separatorIndex = header.find(':');
++    if (separatorIndex != -1) {
++      context.m_response.setHTTPHeaderField(header.left(separatorIndex),
++                                            header.substring(separatorIndex + 1).stripWhiteSpace());
++    }
++    else if (header == "\r\n") {
++      receivedResponse(context);
++    }
++
++    return totalSize;
++  }
++}
+
+ namespace WebCore {
+
+@@ -97,9 +318,90 @@ void ResourceHandle::loadResourceSynchro
+     notImplemented();
+ }
+ #else
++// NOTE: Code based on asynchronous implementation in
++//       Browser/WebCore/platform/network/ekioh/ResourceHandleManager.cpp
+ void ResourceHandle::loadResourceSynchronously(const ResourceRequest& request, ResourceError& e, ResourceResponse& r, Vector<char>& data, Frame* frame)
+ {
+-    notImplemented();
++  static const int invalidURL = 786;
++  static const int badProtocolOrPort = 770;
++  static char errorBuffer[CURL_ERROR_SIZE];
++
++  if (!request.url().isValid()) {
++    e = ResourceError("url", invalidURL,
++                      request.url().deprecatedString(), "Invalid URL");
++    return;
++  }
++
++  if (!isPortAllowed(request)) {
++    e = ResourceError("url", badProtocolOrPort,
++                      request.url().deprecatedString(), "Port not allowed");
++    return;
++  }
++        
++  CURLcode curlStatus = CURLE_OK;
++  CURL* curlHandle = curl_easy_init();
++  CallbackContext context(curlHandle, data, r);
++  CURLSH* shareHandle = ResourceHandleManager::instance()->getCurlShareHandle();
++  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_ERRORBUFFER, errorBuffer));
++  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_WRITEFUNCTION, writeCallback));
++  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_WRITEDATA, &context));
++  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_HEADERFUNCTION, headerCallback));
++  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_HEADERDATA, &context));
++  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_FOLLOWLOCATION, 1));
++  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_HTTPAUTH, CURLAUTH_ANY));
++  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_SHARE, shareHandle));
++  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_CAINFO, "ca-bundle.crt"));
++  // enable gzip and deflate through Accept-Encoding:
++  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_ENCODING, ""));
++
++  CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_URL,
++                             request.url().deprecatedString().ascii()));
++
++  ResourceHandleManager::setProxy(request, curlHandle);
++
++  struct curl_slist* headers = 0;
++
++  if (request.httpHeaderFields().size() > 0) {
++    HTTPHeaderMap customHeaders = request.httpHeaderFields();
++    HTTPHeaderMap::const_iterator end = customHeaders.end();
++    for (HTTPHeaderMap::const_iterator it = customHeaders.begin(); it != end; ++it) {
++      String key = it->first;
++      String value = it->second;
++      String headerString = key + ": " + value;
++      CString headerCString = headerString.latin1();
++      DBG(" custom header %s\n", headerCString.data());
++      headers = curl_slist_append(headers, headerCString.data());
++    }
++    CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_HTTPHEADER, headers));
++  }
++  CString postData;
++  if (request.httpMethod() == "GET") {
++    CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_HTTPGET, true));
++  }
++  else if (request.httpMethod() == "POST") {
++    CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_POST, true));
++    postData = request.httpBody()->flattenToString().latin1();
++    DBG(" post data is '%s'\n", postData.data());
++    CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_POSTFIELDS, postData.data()));
++    CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_POSTFIELDSIZE, postData.length()));
++  }
++  else if ("PUT" == request.httpMethod()) {
++    DBG("**** UNIMPLEMENTED - PUT ****");
++    goto cleanup;
++  }
++  else if ("HEAD" == request.httpMethod()) {
++    CURL_CALL(curl_easy_setopt(curlHandle, CURLOPT_NOBODY, true));
++  }
++
++  curlStatus = curl_easy_perform(curlHandle);
++  if (curlStatus != CURLE_OK) {
++    e = ResourceError("curl", curlStatus,
++                      request.url().deprecatedString(), errorBuffer);
++    goto cleanup;
++  }
++
++ cleanup:
++  curl_slist_free_all(headers);
+ }
+ #endif
+ 
+Index: src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
+===================================================================
+--- src.orig/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
++++ src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
+@@ -416,6 +416,10 @@ void ResourceHandleManager::setCurlMetho
+         curl_easy_setopt(handle, CURLOPT_POST, true);
+ }
+ 
++CURLSH* ResourceHandleManager::getCurlShareHandle()
++{
++  return m_shareHandle;
++}
+ 
+ class DataUrlJob : public ekioh::EKTimerListener
+ {
+@@ -562,7 +566,7 @@ void ResourceHandleManager::startJob(Res
+     d->m_url = job->request().url().deprecatedString();
+     curl_easy_setopt(d->m_handle, CURLOPT_URL, d->m_url.ascii());
+ 
+-    setProxy(job);
++    setProxy(job->request(), d->m_handle);
+ 
+     String cs = cookies(0, d->m_url);
+     if (cs.length() > 0) {
+@@ -624,7 +628,7 @@ void ResourceHandleManager::startJob(Res
+     DBG("job %p: started %s, cc=%d\n", job, job->request().url().deprecatedString().ascii(), curlrc);
+ }
+ 
+-void ResourceHandleManager::setProxy(ResourceHandle* job)
++void ResourceHandleManager::setProxy(const ResourceRequest& request, CURL* curlHandle)
+ {
+     using namespace ekioh;
+ 
+@@ -632,7 +636,7 @@ void ResourceHandleManager::setProxy(Res
+     if (proxyManager == 0)
+         return;
+ 
+-    CString urlString(job->request().url().string().utf8());
++    CString urlString(request.url().string().utf8());
+     EKString ekUrlString(urlString.data(), urlString.length());
+ 
+     EKUrl ekUrl(ekUrlString);
+@@ -670,7 +674,7 @@ void ResourceHandleManager::setProxy(Res
+     }
+ 
+     char* cProxyString = proxyString.toCString();
+-    curl_easy_setopt(job->getInternal()->m_handle, CURLOPT_PROXY, cProxyString);
++    curl_easy_setopt(curlHandle, CURLOPT_PROXY, cProxyString);
+     EKString::freeCString(cProxyString);
+ }
+ 
+Index: src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager.h
+===================================================================
+--- src.orig/Browser/WebCore/platform/network/ekioh/ResourceHandleManager.h
++++ src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager.h
+@@ -24,6 +24,7 @@ class CurlSocket;
+ class ResourceHandle;
+ class KURL;
+ class String;
++class ResourceRequest;
+ 
+ class ResourceHandleManager : public ekioh::EKTimerListener, ekioh::EKSocketClient
+ {
+@@ -43,6 +44,9 @@ public:
+     void add(ResourceHandle* job);
+     void cancel(ResourceHandle* job);
+     void setCurlMethod(CURL* handle, const String& method);
++    CURLSH* getCurlShareHandle();
++
++    static void setProxy(const ResourceRequest& request, CURL* curlHandle);
+ 
+ private:
+     ResourceHandleManager();
+@@ -52,7 +56,6 @@ private:
+     void removeFromCurl(ResourceHandle* job);
+     virtual void timerCallback(const ekioh::EKTimer &timer, uint32_t now);
+     void startJob(ResourceHandle* job);
+-    void setProxy(ResourceHandle* job);
+     void processFinishedJobs();
+     void processDataUrl(ResourceHandle *job);
+ 

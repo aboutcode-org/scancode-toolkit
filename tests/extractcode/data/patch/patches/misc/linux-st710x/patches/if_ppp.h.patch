@@ -1,0 +1,13 @@
+--- linux-2.6.23/include/linux/if_ppp.h.orig	2008-12-11 17:16:25.000000000 +0100
++++ linux-2.6.23/include/linux/if_ppp.h	2008-12-11 17:27:43.000000000 +0100
+@@ -110,6 +110,10 @@
+ 	struct ppp_comp_stats stats;
+ };
+ 
++#ifndef aligned_u64
++#define aligned_u64 unsigned long long __attribute__((aligned(8)))
++#endif
++
+ /* For PPPIOCGL2TPSTATS */
+ struct pppol2tp_ioc_stats {
+ 	__u16		tunnel_id;	/* redundant */

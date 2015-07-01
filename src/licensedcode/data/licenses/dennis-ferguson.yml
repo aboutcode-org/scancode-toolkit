@@ -1,0 +1,8 @@
+key: dennis-ferguson
+short_name: Dennis Ferguson License
+name: Dennis Ferguson License
+category: Attribution Restricted
+owner: Dennis Ferguson
+text_urls:
+    - http://web.mit.edu/jhawk/mnt/spo/netbsd/src/domestic/dist/krb5/src/lib/des425/pcbc_encrypt.c
+    - http://web.mit.edu/jhawk/mnt/spo/netbsd/src/domestic/dist/krb5/src/lib/crypto/des/f_cbc.c

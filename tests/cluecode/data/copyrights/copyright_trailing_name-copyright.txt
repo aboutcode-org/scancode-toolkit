@@ -1,0 +1,4 @@
+Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd
+                               and Clark Cooper
+
+Permission is hereby granted, free of charge, to any person obtaining

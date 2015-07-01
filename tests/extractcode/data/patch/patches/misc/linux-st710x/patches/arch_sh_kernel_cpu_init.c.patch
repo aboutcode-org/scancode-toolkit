@@ -1,0 +1,12 @@
+--- linux-2.6.23/arch/sh/kernel/cpu/init.c.orig	2008-10-22 16:08:08.000000000 +0200
++++ linux-2.6.23/arch/sh/kernel/cpu/init.c	2008-10-19 11:12:39.000000000 +0200
+@@ -229,6 +229,9 @@
+ 		panic("Unknown CPU");
+ 
+ #ifdef CONFIG_32BIT
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
++  if ((ctrl_inl(MMUCR)&MMUCR_SE)==MMUCR_SE)
++#endif
+ 	pmb_init();
+ #endif
+ 

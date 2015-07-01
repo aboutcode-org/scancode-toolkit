@@ -1,0 +1,8 @@
+key: pcre
+short_name: PCRE License
+name: PCRE License
+category: Attribution
+owner: University of Cambridge
+homepage_url: http://www.pcre.org/licence.txt
+text_urls:
+    - http://www.pcre.org/licence.txt

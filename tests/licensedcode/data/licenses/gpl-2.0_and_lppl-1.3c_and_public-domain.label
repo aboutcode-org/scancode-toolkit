@@ -1,0 +1,793 @@
+Copyright information for the texlive bundle
+
+Table of contents:
+
+1. Copyright and License of the debian-specific adaptions
+2. License of the TeX live distribution as a compilation work
+3. Licenses of individual parts
+3.1 Explanation of the format of the following information
+3.2 Packages with license problems
+3.3 Individual license texts
+3.4 (Incomplete) list of licenses of individual parts
+
+
+1. Copyright and License of the debian-specific adaptions
+
+Debian adaptions for these packages are licensed under the GNU General
+Public License, version 2, and are under Copyright by:
+
+   <s>Norbert Preining <preining@logic.at></s> (2005-)
+   <s>Frank Küster <frank@kuesterei.ch></s> (2006-)
+
+All code generated for the Debian adaptions is under the GNU General
+Public License.
+
+--------
+
+2. License of the TeX live distribution as a compilation work
+
+COPYING CONDITIONS FOR TeX Live:
+
+To the best of our knowledge, all software in this distribution is
+freely redistributable (libre, that is, not necessarily gratis), within
+the Free Software Foundation's definition and Debian Free Software
+Guidelines.  If you find any non-free files included, please contact us
+(references given below).
+
+That said, TeX Live has neither a single copyright holder nor a single
+license covering its entire contents, since it is a collection of many
+disparate packages.  Therefore, you may copy, modify, and/or
+redistribute software from TeX Live only if you comply with the
+requirements placed thereon by the owners of the respective packages.
+
+To most easily learn these requirements, we suggest checking the TeX
+Catalogue at: http://www.ctan.org/tex-archive/help/Catalogue/ (or any
+CTAN mirror).  The Catalogue is also included in TeX Live in
+./texmf/doc/html/catalogue/, but the online version will have updates.
+Of course the legal statements within the packages themselves are the
+final authority.
+
+In some cases, TeX Live is distributed with a snapshot of the CTAN
+archive, which is entirely independent of and separable from TeX Live
+itself.  (The "live" DVD in the TeX Collection is one example of this.)
+Please be aware that the CTAN snapshot contains many files which are
+*not* freely redistributable; see LICENSE.CTAN for more information.
+
+
+GUIDELINES FOR REDISTRIBUTION:
+
+In general, you may redistribute TeX Live, with or without modification,
+for profit or not, according to the usual free software tenets.  Here
+are some general guidelines for doing this:
+
+- If you make any changes to the TeX Live distribution or any
+package it contains, besides complying with any licensing requirements,
+you must prominently mention such changes in your modified distribution
+so that users do not take your work for ours, and know to contact you,
+not us, in case of questions or problems.  A new top-level
+README.<yourwork> file is a good place to describe the general situation.
+
+- Especially (but not necessarily) if changes or additions are made, we
+recommend a clearly different title, such as "<your work> demo CD",
+based on TeX Live YYYY demo (with updates)", where YYYY is the year of
+TeX Live you are publishing.  This credits both our work and yours.
+
+- You absolutely may *not* place your own copyright on the entire
+distribution, since it is not your work (as stated above, TeX Live is
+not created by any single person or entity).  Statements such as "all
+rights reserved" and "may not be reproduced" are especially
+reprehensible, since they are antithetical to the free software
+principles under which TeX Live is produced.
+
+- You may use any cover or media label designs that you wish.  Such
+packaging and marketing details are not covered by any TeX Live license.
+
+- Finally, we make the following requests (not legal requirements):
+
+a) Acknowledging that TeX Live is developed as a joint effort by all TeX
+   user groups, and encouraging the user/reader to join their user group
+   of choice.
+   
+   The web page http://www.tug.org/usergroups.html may be referenced as
+   a list of TeX user groups.  We also appreciate your explicitly
+   listing all the user groups as given on that page, space permitting.
+
+b) Referencing the TeX Live home page: http://www.tug.org/tex-live/.
+
+c) Crediting the editor of the original TeX Live: Sebastian Rahtz.
+
+Such credits may be placed on the label of your media, your cover,
+and/or in accompanying text (for instance, in the acknowledgements
+section of a book).
+
+Finally, although it is certainly not a requirement, we'd like to invite
+any redistributors to make a donation to the project, whether cash or
+in-kind, for example via https://www.tug.org/donate.html.  Thanks.
+
+
+If you have any questions or comments, *please* contact us.  In general,
+we appreciate being given the chance to review any TeX Live-related
+material in advance of publication, simply to avoid mistakes.  It is
+much better to correct text on a CD label or in a book before thousands
+of copies are made!
+
+We are also happy to keep anyone planning a publication informed as to
+our deadlines and progress.  Just let us know.  However, you should be
+aware that TeX Live is produced entirely by volunteers, and no dates can
+be guaranteed.
+
+
+LICENSING FOR NEW PACKAGES:
+
+Finally, we are often asked what license to use for new work.  To be
+considered for inclusion on TeX Live, a package must use a free software
+license, such as the LaTeX Project Public License, the GNU Public
+License, the X Window System license, the modified BSD license, etc., or
+be put into the public domain.  Please see the url's below for more
+discussion of this.
+
+Thanks for your interest in TeX.
+
+- Sebastian Rahtz, editor, for the TeX Live team
+
+
+TeX Live mailing list: texlive@tug.org
+TeX Live home page: http://www.tug.org/tex-live/
+
+The FSF's free software definition: http://www.gnu.org/philosophy/free-sw.html
+Debian Free Software Guidelines:    http://www.debian.org/intro/free
+FSF commentary on existing licenses:
+  http://www.gnu.org/licenses/license-list.html
+
+LPPL: http://latex-project.org/lppl.html or texmf/doc/latex/base/lppl.txt
+LPPL rationale: texmf/doc/latex/base/modguide.pdf
+
+-------------
+
+3. Reference to an (incomplete) list of licenses of individual parts
+
+Individual parts of this distribution have their own copyright and
+license.
+
+3.1 Explanation of the format of the following information
+
+Since most packages use standard licenses, we have separated the list
+of license texts and the list of packages and individual files with
+their licenses.  In section 3.3 we provide the license texts and their
+abbreviations used in in the file list.  The file list itself is
+generated automatically from the TeX Catalogue and can be found, for
+each binary package, in /usr/share/doc/texlive-<name>/Licenses.
+
+The information in the TeX Catalogue is checked by the Debian TeX
+maintainers and the CTAN maintainers.  If you find any contradiction
+in the listing with the reality please inform us.
+
+In the case of gpl and lppl, the string without a number means that
+the license statement contains a "or any later version" statement.  In
+the list in Licenses, each package has a header line like this:
+
+% ccfonts: lppl (verification data:1.1:1.1:2006-03-14:frank:readme)
+
+indicating that the package ccfonts is under LPPL, exists in version
+1.1, the license has been checked in version 1.1 on 2006-03-14 by
+"frank" (the username among the Catalogue developers, actually Frank
+Küster), and the license information is in a file "readme".  After
+that follows the list of files, 
+
+ tex/latex/ccfonts/t1ccr.fd
+ tex/latex/ccfonts/ccfonts.sty
+ tex/latex/ccfonts/ts1ccr.fd
+ doc/latex/ccfonts/*
+
+where the * indicates that all ordinary files in that directory belong
+to that package (but not necessarily subdirectories and files
+therein).
+
+3.2 TODO: Packages with licensing problems
+
+[ this is copied over from teTeX, and some problems might already be
+solved ]
+
+3.2.1 Serious problems
+
+- euler: LPPL according changelog, but no indication in file.
+
+- adrconv: No license at all for the documentation
+
+- antp: PD according to catalogue, no statement in the files, no
+  sources; contacted upstream
+
+- bbm: no license statement at all, bug filed
+
+- cite:  chapterbib.sty is missing a license statement in the header
+
+- Problematic files by Donald Arseneau:
+
+  * chapterbib.sty: no license information
+  * tabls.sty: no license information
+  * import.sty: "this software is free of any restrictions"
+  * relsize.sty: "public domain", nothing else
+  * shapepar.sty: noncommercial
+  * version.sty: no license information, not only by D.A.
+  * selectp.sty: no license information
+  *./source/latex/shapepar/README.shapepar
+   ./source/latex/shapepar/shapepar.sty
+   ./source/latex/shapepar/shapepar.ltx
+   ./source/latex/hyphenat/hyphenat.dtx: no license information
+
+
+- citesort.sty: no license statement
+
+- index.doc: no license statement - probably unused
+
+- dinbrief: lppl 1.1+, but with additional restrictions which are non-free
+
+- eepic: The style files are public domain, but all the documentation
+  has no license at all.
+
+- extsizes: extsizes.sty, extarticle.cls and extreport.cls, and the
+  size*.clo files have a correct LPPL notice, the others have none.
+  The author seems to be active on Wikipedia, tried to contact him
+
+- beamericon*: no license statement. beamerexample-seminar: just like
+  seminar, which has not been investigated yet.  Filed bug against beamer.
+
+- one file in the psnfss directory with unclear license:
+
+    tex/latex/psnfss/8r.sty
+
+3.2.2 Normal :-) problems
+
+- listings: LPPL, plus: 
+
+,----
+| *Modification*advice* 
+| 
+| Permission is granted to modify the listings package as well as
+| lstdrvrs.dtx. You are not allowed to distribute a modified version of
+| the listings package or lstdrvrs.dtx unless you change the file names
+| and provide the original files. In any case it is better to contact
+| the address below; other users will welcome removed bugs, new
+| features, and additional programming languages.
+
+This is more restrictive than LPPL 1.3 (6.a and 6.d.2). The title is advice... 
+
+- ae: Just a formal problem, the GPL is included, but nowhere is it
+      explicitly stated that this license applies to the package.
+
+      contacted upstream
+
+- antt: gust font license, unclear which files % contacted upstream
+
+
+3.3 Individual license texts
+
+The actual text of the licenses can either be found in
+/usr/share/common-licenses (for artistic,bsd,gpl) or in "3.2 Text of
+the licenses" below.  For BSD-like licenses that just exchange the
+name of the copyright holder, we do not list the license text.
+
+A. gpl (GNU General Public License)
+
+The full text of the GPL is given in /usr/share/common-licenses/GPL.
+
+B. lppl (LaTeX Project Public License)
+
+The LaTeX Project Public License
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+LPPL Version 1.3c  2006-05-20
+
+Copyright 1999 2002-2006 <s>LaTeX3 Project</s>
+    Everyone is allowed to distribute verbatim copies of this
+    license document, but modification of it is not allowed.
+
+
+PREAMBLE
+========
+
+The LaTeX Project Public License (LPPL) is the primary license under
+which the the LaTeX kernel and the base LaTeX packages are distributed.
+
+You may use this license for any work of which you hold the copyright
+and which you wish to distribute.  This license may be particularly
+suitable if your work is TeX-related (such as a LaTeX package), but 
+it is written in such a way that you can use it even if your work is 
+unrelated to TeX.
+
+The section `WHETHER AND HOW TO DISTRIBUTE WORKS UNDER THIS LICENSE',
+below, gives instructions, examples, and recommendations for authors
+who are considering distributing their works under this license.
+
+This license gives conditions under which a work may be distributed
+and modified, as well as conditions under which modified versions of
+that work may be distributed.
+
+We, the LaTeX3 Project, believe that the conditions below give you
+the freedom to make and distribute modified versions of your work
+that conform with whatever technical specifications you wish while
+maintaining the availability, integrity, and reliability of
+that work.  If you do not see how to achieve your goal while
+meeting these conditions, then read the document `cfgguide.tex'
+and `modguide.tex' in the base LaTeX distribution for suggestions.
+
+
+DEFINITIONS
+===========
+
+In this license document the following terms are used:
+
+   `Work'
+    Any work being distributed under this License.
+    
+   `Derived Work'
+    Any work that under any applicable law is derived from the Work.
+
+   `Modification' 
+    Any procedure that produces a Derived Work under any applicable
+    law -- for example, the production of a file containing an
+    original file associated with the Work or a significant portion of
+    such a file, either verbatim or with modifications and/or
+    translated into another language.
+
+   `Modify'
+    To apply any procedure that produces a Derived Work under any
+    applicable law.
+    
+   `Distribution'
+    Making copies of the Work available from one person to another, in
+    whole or in part.  Distribution includes (but is not limited to)
+    making any electronic components of the Work accessible by
+    file transfer protocols such as FTP or HTTP or by shared file
+    systems such as Sun's Network File System (NFS).
+
+   `Compiled Work'
+    A version of the Work that has been processed into a form where it
+    is directly usable on a computer system.  This processing may
+    include using installation facilities provided by the Work,
+    transformations of the Work, copying of components of the Work, or
+    other activities.  Note that modification of any installation
+    facilities provided by the Work constitutes modification of the Work.
+
+   `Current Maintainer'
+    A person or persons nominated as such within the Work.  If there is
+    no such explicit nomination then it is the `Copyright Holder' under
+    any applicable law.
+
+   `Base Interpreter' 
+    A program or process that is normally needed for running or
+    interpreting a part or the whole of the Work.    
+
+    A Base Interpreter may depend on external components but these
+    are not considered part of the Base Interpreter provided that each
+    external component clearly identifies itself whenever it is used
+    interactively.  Unless explicitly specified when applying the
+    license to the Work, the only applicable Base Interpreter is a
+    `LaTeX-Format' or in the case of files belonging to the 
+    `LaTeX-format' a program implementing the `TeX language'.
+
+
+
+CONDITIONS ON DISTRIBUTION AND MODIFICATION
+===========================================
+
+1.  Activities other than distribution and/or modification of the Work
+are not covered by this license; they are outside its scope.  In
+particular, the act of running the Work is not restricted and no
+requirements are made concerning any offers of support for the Work.
+
+2.  You may distribute a complete, unmodified copy of the Work as you
+received it.  Distribution of only part of the Work is considered
+modification of the Work, and no right to distribute such a Derived
+Work may be assumed under the terms of this clause.
+
+3.  You may distribute a Compiled Work that has been generated from a
+complete, unmodified copy of the Work as distributed under Clause 2
+above, as long as that Compiled Work is distributed in such a way that
+the recipients may install the Compiled Work on their system exactly
+as it would have been installed if they generated a Compiled Work
+directly from the Work.
+
+4.  If you are the Current Maintainer of the Work, you may, without
+restriction, modify the Work, thus creating a Derived Work.  You may
+also distribute the Derived Work without restriction, including
+Compiled Works generated from the Derived Work.  Derived Works
+distributed in this manner by the Current Maintainer are considered to
+be updated versions of the Work.
+
+5.  If you are not the Current Maintainer of the Work, you may modify
+your copy of the Work, thus creating a Derived Work based on the Work,
+and compile this Derived Work, thus creating a Compiled Work based on
+the Derived Work.
+
+6.  If you are not the Current Maintainer of the Work, you may
+distribute a Derived Work provided the following conditions are met
+for every component of the Work unless that component clearly states
+in the copyright notice that it is exempt from that condition.  Only
+the Current Maintainer is allowed to add such statements of exemption 
+to a component of the Work. 
+
+  a. If a component of this Derived Work can be a direct replacement
+     for a component of the Work when that component is used with the
+     Base Interpreter, then, wherever this component of the Work
+     identifies itself to the user when used interactively with that
+     Base Interpreter, the replacement component of this Derived Work
+     clearly and unambiguously identifies itself as a modified version
+     of this component to the user when used interactively with that
+     Base Interpreter.
+     
+  b. Every component of the Derived Work contains prominent notices
+     detailing the nature of the changes to that component, or a
+     prominent reference to another file that is distributed as part
+     of the Derived Work and that contains a complete and accurate log
+     of the changes.
+  
+  c. No information in the Derived Work implies that any persons,
+     including (but not limited to) the authors of the original version
+     of the Work, provide any support, including (but not limited to)
+     the reporting and handling of errors, to recipients of the
+     Derived Work unless those persons have stated explicitly that
+     they do provide such support for the Derived Work.
+
+  d. You distribute at least one of the following with the Derived Work:
+
+       1. A complete, unmodified copy of the Work; 
+          if your distribution of a modified component is made by
+          offering access to copy the modified component from a
+          designated place, then offering equivalent access to copy
+          the Work from the same or some similar place meets this
+          condition, even though third parties are not compelled to
+          copy the Work along with the modified component;
+
+       2. Information that is sufficient to obtain a complete,
+          unmodified copy of the Work.
+
+7.  If you are not the Current Maintainer of the Work, you may
+distribute a Compiled Work generated from a Derived Work, as long as
+the Derived Work is distributed to all recipients of the Compiled
+Work, and as long as the conditions of Clause 6, above, are met with
+regard to the Derived Work.
+
+8.  The conditions above are not intended to prohibit, and hence do not
+apply to, the modification, by any method, of any component so that it
+becomes identical to an updated version of that component of the Work as
+it is distributed by the Current Maintainer under Clause 4, above.
+
+9.  Distribution of the Work or any Derived Work in an alternative
+format, where the Work or that Derived Work (in whole or in part) is
+then produced by applying some process to that format, does not relax or
+nullify any sections of this license as they pertain to the results of
+applying that process.
+     
+10. a. A Derived Work may be distributed under a different license
+       provided that license itself honors the conditions listed in
+       Clause 6 above, in regard to the Work, though it does not have
+       to honor the rest of the conditions in this license.
+      
+    b. If a Derived Work is distributed under a different license, that
+       Derived Work must provide sufficient documentation as part of
+       itself to allow each recipient of that Derived Work to honor the 
+       restrictions in Clause 6 above, concerning changes from the Work.
+
+11. This license places no restrictions on works that are unrelated to
+the Work, nor does this license place any restrictions on aggregating
+such works with the Work by any means.
+
+12.  Nothing in this license is intended to, or may be used to, prevent
+complete compliance by all parties with all applicable laws.
+
+
+NO WARRANTY
+===========
+
+There is no warranty for the Work.  Except when otherwise stated in
+writing, the Copyright Holder provides the Work `as is', without
+warranty of any kind, either expressed or implied, including, but not
+limited to, the implied warranties of merchantability and fitness for a
+particular purpose.  The entire risk as to the quality and performance
+of the Work is with you.  Should the Work prove defective, you assume
+the cost of all necessary servicing, repair, or correction.
+
+In no event unless required by applicable law or agreed to in writing
+will The Copyright Holder, or any author named in the components of the
+Work, or any other party who may distribute and/or modify the Work as
+permitted above, be liable to you for damages, including any general,
+special, incidental or consequential damages arising out of any use of
+the Work or out of inability to use the Work (including, but not limited
+to, loss of data, data being rendered inaccurate, or losses sustained by
+anyone as a result of any failure of the Work to operate with any other
+programs), even if the Copyright Holder or said author or said other
+party has been advised of the possibility of such damages.
+
+
+MAINTENANCE OF THE WORK
+=======================
+
+The Work has the status `author-maintained' if the Copyright Holder
+explicitly and prominently states near the primary copyright notice in
+the Work that the Work can only be maintained by the Copyright Holder
+or simply that it is `author-maintained'.
+
+The Work has the status `maintained' if there is a Current Maintainer
+who has indicated in the Work that they are willing to receive error
+reports for the Work (for example, by supplying a valid e-mail
+address). It is not required for the Current Maintainer to acknowledge
+or act upon these error reports.
+
+The Work changes from status `maintained' to `unmaintained' if there
+is no Current Maintainer, or the person stated to be Current
+Maintainer of the work cannot be reached through the indicated means
+of communication for a period of six months, and there are no other
+significant signs of active maintenance.
+
+You can become the Current Maintainer of the Work by agreement with
+any existing Current Maintainer to take over this role.
+
+If the Work is unmaintained, you can become the Current Maintainer of
+the Work through the following steps:
+
+ 1.  Make a reasonable attempt to trace the Current Maintainer (and
+     the Copyright Holder, if the two differ) through the means of
+     an Internet or similar search.
+
+ 2.  If this search is successful, then enquire whether the Work
+     is still maintained.
+
+  a. If it is being maintained, then ask the Current Maintainer
+     to update their communication data within one month.
+     
+  b. If the search is unsuccessful or no action to resume active
+     maintenance is taken by the Current Maintainer, then announce
+     within the pertinent community your intention to take over
+     maintenance.  (If the Work is a LaTeX work, this could be
+     done, for example, by posting to comp.text.tex.)
+
+ 3a. If the Current Maintainer is reachable and agrees to pass
+     maintenance of the Work to you, then this takes effect
+     immediately upon announcement.
+     
+  b. If the Current Maintainer is not reachable and the Copyright
+     Holder agrees that maintenance of the Work be passed to you,
+     then this takes effect immediately upon announcement.  
+    
+ 4.  If you make an `intention announcement' as described in 2b. above
+     and after three months your intention is challenged neither by
+     the Current Maintainer nor by the Copyright Holder nor by other
+     people, then you may arrange for the Work to be changed so as
+     to name you as the (new) Current Maintainer.
+     
+ 5.  If the previously unreachable Current Maintainer becomes
+     reachable once more within three months of a change completed
+     under the terms of 3b) or 4), then that Current Maintainer must
+     become or remain the Current Maintainer upon request provided
+     they then update their communication data within one month.
+
+A change in the Current Maintainer does not, of itself, alter the fact
+that the Work is distributed under the LPPL license.
+
+If you become the Current Maintainer of the Work, you should
+immediately provide, within the Work, a prominent and unambiguous
+statement of your status as Current Maintainer.  You should also
+announce your new status to the same pertinent community as
+in 2b) above.
+
+
+WHETHER AND HOW TO DISTRIBUTE WORKS UNDER THIS LICENSE
+======================================================
+
+This section contains important instructions, examples, and
+recommendations for authors who are considering distributing their
+works under this license.  These authors are addressed as `you' in
+this section.
+
+Choosing This License or Another License
+----------------------------------------
+
+If for any part of your work you want or need to use *distribution*
+conditions that differ significantly from those in this license, then
+do not refer to this license anywhere in your work but, instead,
+distribute your work under a different license.  You may use the text
+of this license as a model for your own license, but your license
+should not refer to the LPPL or otherwise give the impression that
+your work is distributed under the LPPL.
+
+The document `modguide.tex' in the base LaTeX distribution explains
+the motivation behind the conditions of this license.  It explains,
+for example, why distributing LaTeX under the GNU General Public
+License (GPL) was considered inappropriate.  Even if your work is
+unrelated to LaTeX, the discussion in `modguide.tex' may still be
+relevant, and authors intending to distribute their works under any
+license are encouraged to read it.
+
+A Recommendation on Modification Without Distribution
+-----------------------------------------------------
+
+It is wise never to modify a component of the Work, even for your own
+personal use, without also meeting the above conditions for
+distributing the modified component.  While you might intend that such
+modifications will never be distributed, often this will happen by
+accident -- you may forget that you have modified that component; or
+it may not occur to you when allowing others to access the modified
+version that you are thus distributing it and violating the conditions
+of this license in ways that could have legal implications and, worse,
+cause problems for the community.  It is therefore usually in your
+best interest to keep your copy of the Work identical with the public
+one.  Many works provide ways to control the behavior of that work
+without altering any of its licensed components.
+
+How to Use This License
+-----------------------
+
+To use this license, place in each of the components of your work both
+an explicit copyright notice including your name and the year the work
+was authored and/or last substantially modified.  Include also a
+statement that the distribution and/or modification of that
+component is constrained by the conditions in this license.
+
+Here is an example of such a notice and statement:
+
+  %% pig.dtx
+  %% Copyright 2005 M. Y. Name
+  %
+  % This work may be distributed and/or modified under the
+  % conditions of the LaTeX Project Public License, either version 1.3
+  % of this license or (at your option) any later version.
+  % The latest version of this license is in
+  %   http://www.latex-project.org/lppl.txt
+  % and version 1.3 or later is part of all distributions of LaTeX
+  % version 2005/12/01 or later.
+  %
+  % This work has the LPPL maintenance status `maintained'.
+  % 
+  % The Current Maintainer of this work is M. Y. Name.
+  %
+  % This work consists of the files pig.dtx and pig.ins
+  % and the derived file pig.sty.
+
+Given such a notice and statement in a file, the conditions
+given in this license document would apply, with the `Work' referring
+to the three files `pig.dtx', `pig.ins', and `pig.sty' (the last being
+generated from `pig.dtx' using `pig.ins'), the `Base Interpreter'
+referring to any `LaTeX-Format', and both `Copyright Holder' and
+`Current Maintainer' referring to the person `M. Y. Name'.
+
+If you do not want the Maintenance section of LPPL to apply to your
+Work, change `maintained' above into `author-maintained'.  
+However, we recommend that you use `maintained', as the Maintenance
+section was added in order to ensure that your Work remains useful to
+the community even when you can no longer maintain and support it
+yourself.
+
+Derived Works That Are Not Replacements
+---------------------------------------
+
+Several clauses of the LPPL specify means to provide reliability and
+stability for the user community. They therefore concern themselves
+with the case that a Derived Work is intended to be used as a
+(compatible or incompatible) replacement of the original Work. If
+this is not the case (e.g., if a few lines of code are reused for a
+completely different task), then clauses 6b and 6d shall not apply.
+
+
+Important Recommendations
+-------------------------
+
+ Defining What Constitutes the Work
+
+   The LPPL requires that distributions of the Work contain all the
+   files of the Work.  It is therefore important that you provide a
+   way for the licensee to determine which files constitute the Work.
+   This could, for example, be achieved by explicitly listing all the
+   files of the Work near the copyright notice of each file or by
+   using a line such as:
+
+    % This work consists of all files listed in manifest.txt.
+   
+   in that place.  In the absence of an unequivocal list it might be
+   impossible for the licensee to determine what is considered by you
+   to comprise the Work and, in such a case, the licensee would be
+   entitled to make reasonable conjectures as to which files comprise
+   the Work.
+
+
+
+
+C. Artistic
+D. PD (Public domain):
+
+The file or package contains a statement equivalent to 
+
+"This file is in the public domain. You may freely use, modify and
+distribute it".
+
+E. Non-standard licenses, by package name:
+
+(1) eepic.sty, eepicemu.sty:
+    The macros are in public domain.
+    You may distribute or modify it in any ways you like.
+    epic.sty:
+    You may use this file in whatever way you wish. You are requested to 
+    leave this notice intact, and report any bugs, enhancements, comments,
+    suggestions, etc. to:
+    ...
+
+(2) The Computer Modern fonts by Donald E. Knuth have a special
+    license; essentially, they are public domain, but no modified
+    version may use the same name, and the names "TeX" and "MetaFont"
+    for the resulting programs, unless they pass the TRIP and TRAP
+    tests.  The complete license statement can be found in a text at
+    http://www.tug.org/TUGboat/Articles/tb11-4/tb30knut.pdf, and the
+    relevant parts are:
+
+   ,----
+   | My work on developing TEX, METAFONT, and Computer
+   | Modern has come to an end. I willmake no further
+   | changes except to correct extremely serious bugs.
+   | 
+   | I have put these systems into the public domain so that
+   | people everywhere can use the ideas freely if they wish.
+   | 
+   | [...]
+   | As stated on the copyright pages of Volumes B, D, and
+   | E, anybody can make use of my programs in whatever
+   | way they wish, as long as they do not use the names
+   | TEX, METAFONT, or Computer Modern. In particular,
+   | any person or group who wants to produce a program
+   | superior to mine is free to do so. However, nobody is
+   | allowed to call a system TEX or METAFONT unless that
+   | system conforms 100% to my own programs, as I have
+   | specified in the manuals for the TRIP and TRAP tests.
+   | And nobody is allowed to use the names of the Computer
+   | Modern fonts in Volume E for any fonts that do not
+   | produce identical tfm files. This prohibition applies to
+   | all people or machines, whether appointed by TUG or
+   | by any other organization. I do not intend to delegate the
+   | responsibility formaintainance of TEX, METAFONT, or
+   | Computer Modern to anybody else, ever.
+   `----
+
+   For those who believe more in texts written on paper, we reproduce
+   here the copyright page of Volume $of "Computers and Typesetting"
+   by Donald E. Knuth, which present the commented code for the 
+   Computer Modern fonts:
+
+   ,----
+   | The quotations on pages 7 and 351 have been excerpted [...].
+   | 
+   | METAFONT is a trademark of th Addison Wesley Publishing Company.
+   | 
+   | TeX is a trademark of the American Mathematical Society.
+   | 
+   | The programs for computer Modern are in the public domain, and readers
+   | may freely generate and hand-tune their own fonts using the algorithms
+   | of this book.  However, use of the names is restricted:  Any fonts
+   | whose names cmr10 or cmbx12 or ... are identical to the standard font
+   | names of this book should be fully compatible with the fonts defined
+   | here; i.e., fonts with the same names are supposed to have precisely
+   | the same character coding schemes and precisely the same font metric
+   | files. 
+   `----
+
+
+
+   *****
+
+F. Individual files, not belonging to any package: 
+
+%  cahyph.tex: LPPL 1+
+%  gahyph.tex: GPL 2+
+%  icehyph.tex: LPPL 1.2+
+%  ruhyphas.tex: LPPL 1.2+
+%  ruhyphzn.tex: LPPL 1.2+
+%  sehyph.tex: LPPL 1.2+
+
+
+
+3.4 Reference to an (incomplete) list of licenses of individual parts
+
+The file list for each binary package has the format explained above
+and can be found, for each binary package, in
+
+/usr/share/doc/texlive-<name>/Licenses.
+
+$Id: copyright 3478 2008-07-22 11:07:21Z preining $

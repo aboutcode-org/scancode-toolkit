@@ -1,0 +1,97 @@
+<?xml version="xxxxxxxxx"?>
+<beans xmlns="xxxxxxxxx"
+  xmlns:util="xxxxxxxxx"
+  xmlns:context="xxxxxxxxx"
+  xsi:schemaLocation="
+    http://www.xxxx.xsd
+    http://www.xxxx.xsd
+    http://www.xxxx.xsd
+    http://www.xxxx">
+<!-- SINGLETONS -->
+
+  <context:property-placeholder location="xxxxxxxxx" />
+
+
+  <bean id="xxxxxxxxx"
+    abstract="xxxxxxxxx" />
+
+  <bean id="xxxxxxxxx"
+    abstract="xxxxxxxxx" />
+<!--
+  <bean id="xxxxxxxxx">
+     <property name="xxxxxxxxx"/>            
+  </bean> 
+  
+  <bean id="xxxxxxxxx">
+    <constructor-arg>
+      <value>20</value>
+    </constructor-arg>
+    <property name="xxxxxxxxx" />
+  </bean>
+-->
+   <bean id="xxxxxxxxx">
+      <property name="xxxxxxxxx">
+        <bean class="xxxxxxxxx">
+          <property name="xxxxxxxxx">
+            <value>${broker.url}</value>
+          </property>
+        </bean>
+      </property>
+      <property name="xxxxxxxxx"/>
+   </bean>
+
+  <bean id="xxxxxxxxx">
+    <constructor-arg value="xxxxxxxxx" />
+  </bean>
+
+  <bean id="xxxxxxxxx">
+    <property name="xxxxxxxxx" />
+    <property name="xxxxxxxxx" />
+  </bean>
+
+  <bean id="xxxxxxxxx"
+    class="xxxxxxxxx"
+    abstract="xxxxxxxxx">
+    <property name="xxxxxxxxx" />
+    <property name="xxxxxxxxx" />
+    <property name="xxxxxxxxx" />
+    <property name="xxxxxxxxx" />
+    <property name="xxxxxxxxx" />
+  </bean>
+
+  <!-- xxxS -->
+
+  <bean id="xxxxxxxxx"
+    scope="xxxxxxxxx">
+    <!-- core pool size -->
+    <constructor-arg index="xxxxxxxxx" />
+    <!-- max pool size -->
+    <constructor-arg index="xxxxxxxxx" />
+    <!-- keep alive time -->
+    <constructor-arg index="xxxxxxxxx" />
+    <!-- time unit for keep alive -->
+    <constructor-arg index="xxxxxxxxx"
+      value="xxxxxxxxx" />
+    <!-- blocking xxx impl-->
+    <constructor-arg index="xxxxxxxxx">
+      <bean class="xxxxxxxxx">
+        <constructor-arg type="xxxxxxxxx" />
+      </bean>
+    </constructor-arg>
+    <!-- thread factory impl -->
+    <constructor-arg index="xxxxxxxxx">
+      <bean class="xxxxxxxxx" />
+    </constructor-arg>
+    <!-- rejected execution handler -->
+    <constructor-arg index="xxxxxxxxx">
+      <bean class="xxxxxxxxx" />
+    </constructor-arg>
+  </bean>
+
+  <bean id="xxxxxxxxx"
+    class="xxxxxxxxx"
+    scope="xxxxxxxxx">
+    <property name="xxxxxxxxx" />
+  </bean>
+
+</beans>

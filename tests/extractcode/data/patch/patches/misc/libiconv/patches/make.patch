@@ -1,0 +1,12 @@
+--- libiconv-1.11.orig/Makefile.in	2006-07-14 22:14:17.000000000 +0900
++++ libiconv-1.11/Makefile.in	2008-11-21 16:09:09.000000000 +0900
+@@ -29,6 +29,9 @@
+ 
+ SHELL = /bin/sh
+ 
++libiconv.so : lib/localcharset.h force
++	cd lib && $(MAKE) all
++
+ all : lib/localcharset.h force
+ 	cd lib && $(MAKE) all
+ 	cd srclib && $(MAKE) all

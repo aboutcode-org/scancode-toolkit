@@ -1,0 +1,18 @@
+key: w3c
+short_name: W3C Software Notice and License
+name: W3C Software Notice and License
+category: Attribution
+owner: W3C - World Wide Web Consortium
+homepage_url: http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
+spdx_license_key: W3C
+spdx_full_name: W3C Software Notice and License
+spdx_url: http://spdx.org/licenses/W3C
+spdx_notes: |-
+    This license was released: 13 December 2002.
+    This license is OSI certified.
+text_urls:
+    - http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
+    - http://www.open-xchange.com/fileadmin/downloads/W3C_SOFTWARE_NOTICE_AND_LICENSE.pdf
+other_urls:
+    - >-
+        http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231.html http://www.opensource.org/licenses/W3C.php

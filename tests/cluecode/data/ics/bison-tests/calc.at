@@ -1,0 +1,17 @@
+# Simple calculator.                         -*- Autotest -*-
+
+# Copyright (C) 2000, 2001, 2002, 2003, 2004, 2005, 2006 Free Software
+# Foundation, Inc.
+
+      sign = -1;
+    }
+
+  while (isdigit (c))
+    {
+      n = 10 * n + (c - '0');
+    }
+
+  /* process numbers   */
+  if (c == '.' || isdigit (c))
+    {
+      unget_char (]AT_LEX_PRE_ARGS[ c);

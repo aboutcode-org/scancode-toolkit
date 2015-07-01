@@ -1,0 +1,11 @@
+key: unbuntu-font-1.0
+short_name: Ubuntu Font 1.0
+name: Ubuntu Font Licence v1.0
+category: Attribution Restricted
+owner: Ubuntu Font Family
+homepage_url: http://font.ubuntu.com/licence/
+text_urls:
+    - http://font.ubuntu.com/ufl/ubuntu-font-licence-1.0.txt
+faq_url: http://font.ubuntu.com/ufl/FAQ.html
+other_urls:
+    - http://font.ubuntu.com/ufl/copyright.txt

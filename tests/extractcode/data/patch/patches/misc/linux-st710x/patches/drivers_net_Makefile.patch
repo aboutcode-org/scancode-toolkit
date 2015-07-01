@@ -1,0 +1,18 @@
+--- linux-2.6.23/drivers/net/Makefile.orig	2009-02-04 15:50:03.000000000 +0100
++++ linux-2.6.23/drivers/net/Makefile	2009-01-19 19:06:26.000000000 +0100
+@@ -2,6 +2,7 @@
+ # Makefile for the Linux network (ethercard) device drivers.
+ #
+ 
++obj-$(CONFIG_PHYLIB) += phy/
+ obj-$(CONFIG_E1000) += e1000/
+ obj-$(CONFIG_IBM_EMAC) += ibm_emac/
+ obj-$(CONFIG_IXGB) += ixgb/
+@@ -79,7 +80,6 @@
+ #
+ 
+ obj-$(CONFIG_MII) += mii.o
+-obj-$(CONFIG_PHYLIB) += phy/
+ 
+ obj-$(CONFIG_SUNDANCE) += sundance.o
+ obj-$(CONFIG_HAMACHI) += hamachi.o

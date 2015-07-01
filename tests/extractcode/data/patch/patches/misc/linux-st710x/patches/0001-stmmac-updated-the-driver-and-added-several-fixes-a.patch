@@ -1,0 +1,238 @@
+>From df42a30a40c84d890a9372d1316cae1b63d04b3f Mon Sep 17 00:00:00 2001
+From: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+Date: Wed, 3 Mar 2010 15:21:03 +0100
+Subject: [PATCH] stmmac: updated the driver and added several fixes and enhancements
+
+This patch updates the driver to the latest stable version and adds the following:
+
+1) There was a problem behind the logic used for understanding if
+   there is pending work to do in case of transmission.
+   We looked at the OWN bit instead of looking at ring pointers status
+   (as the clean process does).
+2) fix the PM while resuming from another device
+3) statically fix the default coalescence parameters
+4) generate a random MAC address when invalid
+5) add a parameter to make the Magic Frame the default
+   If the device can wake-up the system adding the option below the
+   Magic Frame will be automatically turned-on (it is disable by
+   default). stmmaceth=wol:1
+
+Signed-off-by: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+---
+ drivers/net/stmmac/stmmac_ethtool.c |    2 +-
+ drivers/net/stmmac/stmmac_main.c    |  102 +++++++++++++++++++++++++++--------
+ 2 files changed, 81 insertions(+), 23 deletions(-)
+
+diff --git a/drivers/net/stmmac/stmmac_ethtool.c b/drivers/net/stmmac/stmmac_ethtool.c
+index 71202b8..918bca9 100644
+--- a/drivers/net/stmmac/stmmac_ethtool.c
++++ b/drivers/net/stmmac/stmmac_ethtool.c
+@@ -64,7 +64,7 @@ int stmmac_ethtool_getsettings(struct net_device *dev, struct ethtool_cmd *cmd)
+ 
+ int stmmac_ethtool_setsettings(struct net_device *dev, struct ethtool_cmd *cmd)
+ {
+-	struct stmmac_priv *priv = dev->priv;
++	struct stmmac_priv *priv = netdev_priv(dev);
+ 	struct phy_device *phy = priv->phydev;
+ 	int rc;
+ 
+diff --git a/drivers/net/stmmac/stmmac_main.c b/drivers/net/stmmac/stmmac_main.c
+index dae50a4..cc3f95b 100644
+--- a/drivers/net/stmmac/stmmac_main.c
++++ b/drivers/net/stmmac/stmmac_main.c
+@@ -110,24 +110,23 @@ static int tc = TC_DEFAULT;
+ module_param(tc, int, S_IRUGO | S_IWUSR);
+ MODULE_PARM_DESC(tc, "DMA threshold control value");
+ 
+-/*
+- * These values have been set based on testing data as well as attempting
+- * to minimize response time while increasing bulk throughput. */
+-#if defined(CONFIG_STMMAC_TIMER)
+-#define RX_COALESCE	32
+-#define TX_COALESCE	64
+-#else
+-#define RX_COALESCE	1	/* Always interrupt on completion */
+-#define TX_COALESCE	-1	/* No moderation by default */
++#ifdef CONFIG_PM
++/* By deafult, WoL is off and can be turned-on by ethtool */
++static int wol;
++module_param(wol, int, S_IRUGO | S_IWUSR);
++MODULE_PARM_DESC(wol, "Enable WoL throgh Magic-Frame only");
+ #endif
+ 
++#define RX_NO_COALESCE	1	/* Always interrupt on completion */
++#define TX_NO_COALESCE	-1	/* No moderation by default */
++
+ /* It makes sense to combine interrupt coalescence when the timer is enabled
+  * to avoid adverse effects on timing and make safe the TCP traffic.*/
+-static int rx_coalesce = RX_COALESCE;
++static int rx_coalesce = RX_NO_COALESCE;
+ module_param(rx_coalesce, int, S_IRUGO | S_IWUSR);
+ MODULE_PARM_DESC(rx_coalesce, "Rx irq coalescence parameter");
+ 
+-static int tx_coalesce = TX_COALESCE;
++static int tx_coalesce = TX_NO_COALESCE;
+ module_param(tx_coalesce, int, S_IRUGO | S_IWUSR);
+ MODULE_PARM_DESC(tx_coalesce, "Tx irq coalescence parameter");
+ 
+@@ -163,10 +162,46 @@ static int stmmac_rx(struct net_device *dev, int limit);
+ extern struct ethtool_ops stmmac_ethtool_ops;
+ 
+ /**
++ * stmmac_init_coalescence - init the coalescence parameters
++ * Description: initialises the coalescence parameters statically when
++ *		use Timer optimisation.
++ * These values have been set based on testing data as well as attempting
++ * to minimize response time while increasing bulk throughput.
++ * These parameters can also be tuned via sys and new values can be
++ * used after reopening the interface (via ifconfig for example).
++ * TODO: tunes these dynamically..
++ */
++static void stmmac_init_coalescence(int gmac, int mtu)
++{
++#ifdef CONFIG_STMMAC_TIMER
++	/* maybe, params passed through cmdline?!? Do not use the defaults
++	 * values. */
++	if ((rx_coalesce != RX_NO_COALESCE) ||
++	    (tx_coalesce != TX_NO_COALESCE))
++		return;
++
++	if (gmac) {
++		rx_coalesce = 32;
++		tx_coalesce = 64;
++
++		if (unlikely(mtu > ETH_DATA_LEN)) {
++			/* Tests on Jumbo showed that it's better to
++			 * reduce the coalescence. */
++			rx_coalesce = 4;
++			tx_coalesce = 4;
++		}
++	} else {
++		rx_coalesce = 16;
++		tx_coalesce = 32;
++	}
++#endif
++}
++
++/**
+  * stmmac_verify_args - Check work parameters passed to the driver
+  * Description: wrong parameters are replaced with the default values
+  */
+-static __inline__ void stmmac_verify_args(void)
++static void stmmac_verify_args(void)
+ {
+ 	if (watchdog < 0)
+ 		watchdog = TX_TIMEO;
+@@ -175,9 +210,9 @@ static __inline__ void stmmac_verify_args(void)
+ 	if (dma_txsize < 0)
+ 		dma_txsize = DMA_TX_SIZE;
+ 	if (tx_coalesce >= (dma_txsize))
+-		tx_coalesce = TX_COALESCE;
++		tx_coalesce = TX_NO_COALESCE;
+ 	if (rx_coalesce > (dma_rxsize))
+-		rx_coalesce = RX_COALESCE;
++		rx_coalesce = RX_NO_COALESCE;
+ 	if ((buf_sz < DMA_BUFFER_SIZE) || (buf_sz > BUF_SIZE_16KiB))
+ 		buf_sz = DMA_BUFFER_SIZE;
+ 	if (flow_ctrl > 1)
+@@ -901,8 +936,7 @@ void stmmac_timer_work(struct net_device *dev)
+ 	struct stmmac_priv *priv = netdev_priv(dev);
+ 
+ 	unsigned int rxentry = priv->cur_rx % priv->dma_rx_size;
+-	unsigned int txentry = priv->dirty_tx % priv->dma_tx_size;
+-	int rxret, txret;
++	int rxret, txret = 0;
+ 
+ 	/* Look at if there is pending work to do; otherwise, do not spend
+ 	   any other time here. */
+@@ -910,12 +944,13 @@ void stmmac_timer_work(struct net_device *dev)
+ 	if (likely(rxret == 0))
+ 		stmmac_schedule_rx(dev);
+ 
+-	txret = priv->mac_type->ops->get_tx_owner(priv->dma_rx + txentry);
+-	if (likely(txret == 0))
++	if (priv->dirty_tx != priv->cur_tx) {
++		txret = 1;
+ 		tasklet_schedule(&priv->tx_task);
++	}
+ 
+ 	/* Timer will be re-started later. */
+-	if (likely(rxret == 0) || (rxret == 0))
++	if (likely(!rxret) || (txret))
+ 		priv->tm->timer_stop();
+ 
+ 	return;
+@@ -1085,8 +1120,12 @@ static int stmmac_open(struct net_device *dev)
+ 	 * address using the following linux command:
+ 	 *      ifconfig eth0 hw ether xx:xx:xx:xx:xx:xx  */
+ 	if (!is_valid_ether_addr(dev->dev_addr)) {
+-		printk(KERN_ERR "%s: no valid eth hw addr\n", __FUNCTION__);
+-		return -EINVAL;
++		random_ether_addr(dev->dev_addr);
++		printk(KERN_WARNING "%s: generated random MAC address "
++			"%.2x:%.2x:%.2x:%.2x:%.2x:%.2x.\n", dev->name,
++			dev->dev_addr[0], dev->dev_addr[1],
++			dev->dev_addr[2], dev->dev_addr[3],
++			dev->dev_addr[4], dev->dev_addr[5]);
+ 	}
+ 
+ 	stmmac_verify_args();
+@@ -1192,6 +1231,11 @@ static int stmmac_open(struct net_device *dev)
+ 	if (priv->phydev)
+ 		phy_start(priv->phydev);
+ 
++#ifdef CONFIG_PM
++	/* This could be done by using ethtool too*/
++	if ((priv->wolenabled == PMT_SUPPORTED) && (wol != 0))
++		priv->wolopts = WAKE_MAGIC;
++#endif
+ 	netif_start_queue(dev);
+ 	return 0;
+ }
+@@ -1865,6 +1909,7 @@ static int stmmac_probe(struct net_device *dev)
+ 
+ 	/* Get the MAC address */
+ 	priv->mac_type->ops->get_umac_addr(dev->base_addr, dev->dev_addr, 0);
++	stmmac_init_coalescence(priv->is_gmac, dev->mtu);
+ 
+ 	if (!is_valid_ether_addr(dev->dev_addr)) {
+ 		printk(KERN_NOTICE "No valid MAC address yet; "
+@@ -2065,7 +2110,7 @@ static int stmmac_dvr_probe(struct platform_device *pdev)
+ 	/* Set the I/O base addr */
+ 	ndev->base_addr = (unsigned long)addr;
+ 
+-	/* MAC HW revice detection */
++	/* MAC HW device detection */
+ 	stmmac_mac_device_setup(ndev);
+ 
+ 	/* Network Device Registration */
+@@ -2228,6 +2273,15 @@ static int stmmac_resume(struct platform_device *pdev)
+ 		goto out_resume;
+ 	}
+ 
++	/* Power Down bit, into the PM register, is cleared
++	 * automatically as soon as a magic packet or a Wake-up frame
++	 * is received. Anyway, it's better to manually clear
++	 * this bit because it can generate problems while resuming
++	 * from another devices (e.g. serial console). */
++	if (device_may_wakeup(&(pdev->dev)))
++		if (priv->wolenabled == PMT_SUPPORTED)
++			priv->mac_type->ops->pmt(dev->base_addr, 0);
++
+ 	netif_device_attach(dev);
+ 
+ 	/* Enable the MAC and DMA */
+@@ -2326,6 +2380,10 @@ static int __init stmmac_cmdline_opt(char *str)
+ 			tx_coalesce = simple_strtoul(opt + 12, NULL, 0);
+ 		} else if (!strncmp(opt, "rx_coalesce:", 12)) {
+ 			rx_coalesce = simple_strtoul(opt + 12, NULL, 0);
++#ifdef CONFIG_PM
++		} else if (!strncmp(opt, "wol:", 4)) {
++			wol = simple_strtoul(opt + 4, NULL, 0);
++#endif
+ #ifdef CONFIG_STMMAC_TIMER
+ 		} else if (!strncmp(opt, "tmrate:", 7)) {
+ 			tmrate = simple_strtoul(opt + 7, NULL, 0);
+-- 
+1.6.0.4
+

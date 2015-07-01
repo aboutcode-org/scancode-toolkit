@@ -1,0 +1,585 @@
+Portable Windows Library Modification History
+=============================================
+
+current code
+------------
+	Complete Mac OS X (using Darwin 1.2) port.
+
+Release 1.1pl19
+---------------
+	More bullet proofing of PER decoder, could crash if given garbage data
+	to decode.
+
+	Fixed problem in ASN parser with BER encoding of ASN with optional 
+	fields.
+
+	Fixed missing immediate expiry date on string and file HTTP Service 
+	classes HTTP resources.
+
+	Added macro to do server side includes of signed or unsigned chunks of
+	HTML in HTTP Service classes.
+
+	Added flag to globally ignore HTML signatures in HTTP Service classes
+	(useful for develeopment).
+
+	Improved the HTTP form management classes.
+
+	Added RFC822 aware channel class for doing internet mail via existing
+	POP3 and SMTP classes, includes content transfer encoding and automatic 
+	base64 translation.
+
+	Fixed crash if used PBase64::ProcessEncoding() with zero length.
+
+	Fixed bug in base64 encoder, overwriting memory buffer.
+
+	Added certificate and private key classes to OpenSSL interface.
+
+	Fixed problem with propagation of the error text through to indirect
+	channel.
+
+	Fixed compiler ambiguities in PTimeInterval constructor.
+
+	Added static function to create a new thread class and automatically
+	run a function on another class in the context of that thread.
+
+	Added function to change auto delete flag on a thread.
+
+	Added assert when get nested mutex.
+
+	Fixed problem with PSemaphore::WillBlock actually locking semaphore.
+
+	Fixed bug un Linux version where HTML macros didn't work correctly in
+	PHTTPService applications.
+
+	Improved PString sprintf functions so no longer limited to 1000 characters.
+
+	Fixed bug in unix version where subsequent config file opening uses first
+	opened filename.
+
+	Changed PConfig to allow writing of config files whilst config file is open.
+
+	Changed unix config file code to allow writing of config files whilst
+	config file is open.
+
+	Fixed problem in unix thrading where thread that uses PThread::Current()
+	in destructor crashes.
+
+	Various fixes for Motif and Qt build.
+
+	Various fixes for BeOS build.
+
+	Various fixes for BSD build.
+
+
+Release 1.1pl18
+------------
+	Added ability to change the persistent connection parameters (timeout
+	etc) in HTTP server class.
+
+	Fixed bug in HTTP form updating SELECT fields from registry.
+
+	Fixed OpenSSL support so can operate as a server channel.
+
+	SSL channel changes, added error functions, removed need to have
+	openssl include directory in app.
+
+	Added mechanism by which a service can get at new HTTP connections, 
+	eg to add SSL.
+
+	Fixed resize of multi-line edit box windows, again.
+
+	Fixed problem with no control value update if press "Enter" to close dialog.
+
+	Added ability to have multiple lines with the same key in PConfig.
+
+	Removed assert for empty key name so can set registry default key for 
+	a section.
+
+	Removed PAssert with registry access denied error, changed to PTRACE.
+
+	Fixed subtle difference between Unix and Win32 section names (ignore 
+	trailing backslash) in PConfig files.
+
+	Fixed silly mistake in runtime_malloc() function, should return a 
+	pointer!
+
+	Improved multithreaded reliability of the timers under stress.
+
+	Fixed problem with no new lines in trace output to stderr.
+
+	Added Windows 2000 to operating system reporting.
+
+	Fixed problem with bothnoshared target in makefile
+
+
+Release 1.1pl17
+------------
+	AIX port, thanks Wolfgang Platzer (wolfgang.platzer@infonova.at).
+
+	Start of Nucleus++ port.
+
+	Fixed bug in setting current value of options in select form fields.
+
+	Added ability to get at the PTraceStream without timestamps etc, 
+	use UINT_MAX trace level.
+
+	Added more guards for NULL PStrings in PConfigArg handling.
+
+	Removed some warnings on compiling colour icons in PWRC.
+
+	Fixed problems in decompile of .ICO file with multiple icons in PWRC.
+
+	Added ability to append resources to existing file in PWRC.
+
+	Fixed bug that causes crash when gettng cursor/selection position in
+	a PEditBox.
+
+	Added flags for controlling file sharing.
+
+	Added start of video I/O abstraction classes.
+	
+	Added runtime_malloc() function for cases where memory check code must
+	be bypassed.
+
+	Fixed bug when PWaveFormat is assigned to itself.
+
+	Fixed shutdown issues with buffers in use in PSoundChannel.
+
+	Fixed potential race condition in OSS initialise (Unix sound).
+
+	Fixed BSD compatibility for OSS sound usage.
+
+
+Release 1.1pl16
+------------
+	Added PConfigArgs class so can save program arguments to config files.
+
+	Removed static global ojects that require construction as they cause
+	phantom memory leaks when using the GNU compiler.
+
+	Added microseconds to string output of PTime.
+
+	Added strcasecmp macro, BSDish version of stricmp.
+
+	Added mutex to PSoundChannel buffer structure to avoid rare but quite
+	possible multi-threading crashes.
+
+	Added tcp.h to get TCP_NODELAY for setsockopt call to pmachdep.h.
+
+	Fixed missing default on PTopLevelWindow::Show() function.
+
+	Fixed support for older FreeBSD (location of sysctrl program).
+
+	Added variables for standard programs ar and ranlib, plus making the
+	use of ranlib optional according to another variable.
+
+	Fixed bug in restarting free running timers, would not always happen.
+
+	Fixed problem with stream output width in PTimeInterval.
+
+	Fixed uninitialised microseconds on some PTime constructors.
+
+	Added display of thread name in SystemLog.
+
+	Fixed problem where lastReadCount was not zeroed if no read occurred
+	in a PChannel.
+
+	Added OSS unix implementation for PlayFile command.
+
+	Fixed race condition causing asserts in ballon help.
+
+	Added directory search path argument for external DEF files in 
+	MergeSym. This allows correct building of DLLs that use ptlib.dll.
+
+	Fixed bug for symbols in external DEF file actively removed from 
+	merged DEF file in MergeSym.
+
+	Fixed production error for ValueSet in asn parser.
+
+
+Release 1.1pl15
+------------
+	Added option to rename imported module names in ASN parser, allows
+	generated code #include filename matching to what would be generated
+	elsewhere by the applications make system.
+
+	Added ability to remove optional field in ASN sequence.
+
+	Added simple static play functions for sound files.
+
+	Added constructor to do PString conversion to PTimeInterval parsing
+	the string as for stream I/O.
+
+	Added microseconds field to PTime class.
+
+	Added parameter so get/setsockopt can have other levels to SOL_SOCKET.
+
+	Fixed error in check for SIOCGHWADDR define. Caused compile errors on
+	Solaris 2.6 systems (but not 2.5 or 2.7!)
+
+	Fixed problem with connect() call not timing out according to the
+	readTimeout value of the channel.
+
+	Removed ptclib/proto directory. Its purpose was lost in time and causes
+	more problems now than it is worth.
+
+	Added named threads to tracing function.
+
+	Fixed handling of NULL pointer on current thread in PTRACE output.
+
+	Fixed infinite recursion on PProcess::Current() = NULL assertion.
+
+	Added function to determine if PProcess instance has been initialised
+	yet for use by static objects etc.
+
+	Fixed problem with asserts generating continuous output when input is 
+	redirected and especially when EOF is read.
+
+	Added the ability to get a stack dump on assert on unix systems by
+	calling gdb on the fly.
+
+	Changes to build system to make GUI selection under Unix systems
+	easier.
+
+	Changed DEBUG build to always be static libraries, an opt build will
+	use the shared libraries.
+
+	Add support for OpenBSD.
+
+	Some BeOS port changes.
+
+	Some VxWorks port changes, still not complete.
+
+	Add some Mac OS X port changes, still not complete.
+
+	Add support for NetBSD.
+
+Release 1.14
+------------
+	Added new improved random number generator. Mainly due to discovered
+	inadaquacies in the MSVC run time version of rand().
+
+	Added support for producing shared libraries.
+
+	Added optimisation to array comparisons if referencing same array.
+
+	Fixed problem with changing size of referenced objects, reference needed
+	to be broken and wasn't invalidating other references causing crashes.
+
+	Updated OpenSSL support.
+
+	Improved FreeBSD support (later versions, OSS sound etc).
+
+	Fixed some minor BeOS issues.
+
+	Added support for power PC Linux variant.
+
+	Fixed ASN PER encoder boundary condition error for constrained integer 
+	encoding (values 1, 256 etc).
+
+	Fixed ASN parsing of multiple IMPORTS and OID's in IMPORTS section.
+
+
+
+Release 1.13
+------------
+	Fixed alignment problem in debug memory check code (especially with
+	sparc architecture).
+
+	Fixed problem in timers startup condition in short duration (< 10 second)
+	timers, timing out immediately.
+
+	Improved some of the documentation especially the root web page.
+
+
+Release 1.12
+------------
+	Made static form of ConvertOSError public scope.
+
+	Added override of new functions for MSVC memory check code.
+
+	Added functions to get current trace options and level.
+
+	Fixed display of decimals in milliseconds when precision other than 3.
+
+	Fixed problem, assuring millisecond accuracy in timestamp of trace
+	output.
+
+	Improved portability of copy from host_info struct to IP address.
+
+	Created PCustomListBox to allow native Motif code PStringListBox
+	implementation.
+
+	Fixed problem with PSemaphore::Wait consuming 100% CPU under unix.
+
+	Changed semaphore.h inclusion to be dependent upon P_HAS_SEMAPHORE
+	under unix.
+
+	Added pipe to thread to allow asynchronous abort of socket operations
+	under unix.
+
+	Added define to only include semaphore libraries on Linux platform
+
+	Changed semantics of OnClose() to be the same as PTitledWindow in Win32.
+
+	Fixed problems with creating/deleting dialogs from background threads in
+	Win32.
+
+	Fixed possible crash accessing IP addresses from SNMP tables in Win32.
+
+	Fixed bug in GetErrorText() occasionally returning incorrect empty
+	string in Win32.
+
+	Fixed bug in SetDimensions() to allow for a window with a menu in Win32.
+
+	Added missing GetLength function for PComboBoxes in Win32.
+
+
+Release 1.11
+------------
+	Fixed error display for sound channels.
+
+	Added Windows version of PIPSocket::GetInterfaceTable() function.
+
+	Changed PTRACE so will output to system log in PServiceProcess 
+	applications.
+
+	Fixed name space problem with PSYSTEMLOG() macro.
+
+	Allowed some Win32 only access to custom wave format in sound channel.
+
+	Changed PSemaphore to use Posix semaphores.
+
+	ASN Parser: Optimised CreateObject() switch statements, collapsing 
+	common cases.
+
+	ASN Parser: Fixed failure to put "using namespace" in every 
+	generated .cxx file.
+
+
+Release 1.10
+------------
+	Fixed usage of inlines in optimised version. Was not inlined.
+
+	Added ASN compiler #defines for backward support of pre GCC 2.9
+	compilers.
+
+	Added ASN compiler #defines to reduce its memory footprint.
+
+	Added comparison operation to base ASN classes and compiled ASN
+	code.
+
+	Added support for ANY type in ASN parser.
+
+	Fixed anomaly to always include non-optional extensions in
+	PER encodings of the ASN parser generated code.
+
+	Fixed ASN PER encoding problems for large integer values.
+
+	Fixed incorrect encoding of unknown extensions in ASN PER.
+
+	Fixed incorrect size of ASN PER OID if zero length encoded.
+
+	Added ability to get the host/port of the the last packet
+	read/written to UDP socket.
+
+	Added ability to listen to specific interfaces for IP sockets.
+
+	Added operator>> for PIPSocket::Address class.
+
+	Fixed problem with creating windows in background threads, not
+	happening until have a message sent.
+
+	Fixed problem with calling modal dialog from a background thread.
+
+	Fixed problem with GUI menu item stopping working on calling
+	SetString().
+
+	Changes to aid in breaking I/O locks on thread termination. Still
+	needs more work especially in BSD!
+
+	Fixed problem with destroying PMutex that is already locked.
+
+	Fixed termination hang up problem with memory check code under unix
+	pthreads.
+
+	Added mutex in memory check detection code.
+
+	Added missing operator on smart pointer to return the pointer!
+	Cleaned up the smart pointer code (macros).
+
+	Added concatenation function to "base type" arrays.
+
+	Added "NoWin" option to prevent display of window in command
+	line commands of "Service Process" applications.
+
+	Added audio loopback psuedo-device (thanks Philip Edelbrock)
+
+	Fixed bug in display of PTimeIntervals larger than 24 hours.
+
+	Added missing unix paths include (esp. for VARRUN in svcproc)
+
+	Added support for libc5 and libc6 compiles under Linux (libc6
+	uses pthreads).
+
+	Fixed problem with EINTR causing sound channel reads and write
+	to fail, thanks to phil@netroedge.com!
+
+
+Release 1.09
+------------
+
+	Fixed bug when assigning negative number to a cosntrained
+	PASN_Integer.
+
+	Fixed bug in encoding/decoding OID greater than 2.39 in PER and
+	BER ASN.
+
+	Changed PASN_Choice cast operators in ASN generated code so no
+	longer "break" const-ness of object.
+
+	Fixed bug in encoding sequence of constrained primitive type in
+	ASN generated code, constraint not set.
+
+	Fixed bug in not emitting namespace use clause in ASN generated code.
+
+	Added "normalisation" of separate sequence of <base type> to be
+	single class in ASN generated code.
+
+	Fixed some 64 bit compatibility issues.
+
+	Fixed being able to cast an unsigned to a PTimeInterval.
+
+	Improved resolution of PTimer::Tick() to be millisecond accurate.
+
+	Rewite to compensate for linux OSS sensitivity to ioctl order.
+	Added code to allow full duplex audio.
+
+	Fixed build problems with not including oss.cxx in library if
+	OSTYPE not "linux"
+
+	Fixed bug in PFile::Copy, does not write last chunk of data to
+	new file.
+
+	Fixed bug when breaking block by closing the PSoundChannel in
+	other thread.
+
+	Fixed bug in PThread::IsSuspended(), returned exactly the
+	opposite state!
+
+	Fixed bug in PFilePath::SetType finding dots outside of file
+	name in path.
+
+	Portability issues, especially n BeOS (thanks Yuri!)
+
+
+Release 1.08
+------------
+
+	Fixed bug causing crashes on pass through of unknown extensions in
+	PER encoding.
+
+	Fixed race condition on indirect channel close, mutex needed in
+	PIndirectChannel.
+
+	Fixed core dump problem with SIGINT/SIGTERM terminating process.
+
+	Fixed bug in not returning correct default recorder (waveIn) device
+	under MS Windows.
+
+Release 1.07
+------------
+
+	Improved tracing yet again. Now has options for adding timestamps,
+	thread ID etc to the trace output as well as the file/line number.
+
+	Fixed bug in the output code in ASN compiler for string constraints
+	under PER. They were not being set on the correct object causing
+	decode failures (usually via assert).
+
+	Added PConsoleChannel class to allow access to stdin/stdout/stderr
+	as a PWLib channel. Primarily this is for allow read from stdin to
+	not block the cooperative multithreading.
+
+	Fixed bug in printing PTimeInterval objects, would leave fll char
+	set to '0'. Also ignored stream width parameter.
+
+
+Release 1.06
+------------
+
+	Added better User Interface to make files.
+
+	Major ASN Parser enhancements for parameterised types etc.
+
+	Fixed problems with decoding of extensions (signed/unsigned bug) 
+	in ASN PER.
+
+	Fixed date parsing to be forgiving of rubbish at end of date string.
+	Fixed problem with not stopping date parse at end of line.
+	Fixed PTime::GetHour() etc to not crash on time=-1.
+
+	Fixed ugly little bug in the cooperative multithreading that meant 
+	that threads blocked on timers didn't always get rescheduled.
+
+	Changed channel output flush to remove double Write() call. This caused
+	problems on TCP/IP stuff getting a packet for the first byte and then
+	another pacet for the rest of the buffer.
+
+	Added retries to DNS lookup if get temporary error.
+
+	Fixed race condition in doing Select() on closed sockets. Could go 
+	into infinite wait.
+
+	Added ability to open file as standard input, output and error streams.
+
+	Added function to get default audio device.
+
+	Added initialisers to string containers (list, sorted list and set).
+
+
+Release 1.05
+------------
+
+	Changed build to allow for 64 bit processors (Alpha port).
+
+	Minor changes to support egcs compiler.
+
+	Added SIGHUP and SIGWINCH handlers to increase and decrease the log
+	level respectively in a service (daemon) application.
+
+Release 1.04
+------------
+
+	Large numbers of changes to support automated documentation system
+	doc++.
+
+	Utilised full grammar parsing for dates.
+
+	Simultaneous MSVC 6 and MSVC 5 compatibility.
+
+	Improved trace facility adding trace levels and #define to remove all
+	trace code.
+
+	Various BeOS port modifications.
+
+	Fixed bug in IP access control lists compatibility with unix
+	hosts.allow and hosts.deny files.
+
+	Added support for UDP in SOCKS 5 classes.
+
+	Added [] operator PIPSocket::Address to get the bytes out of an IP
+	address.
+
+	Fixed ability to have PMEMORY_CHECK on/off on both debug/release
+	versions.
+
+	Sound driver interface implementation to Linux OSS specification.
+
+
+Release 1.03
+------------
+
+Very slack in not producing histories for earlier versions.
+
+------------------------------------------------------------------------------

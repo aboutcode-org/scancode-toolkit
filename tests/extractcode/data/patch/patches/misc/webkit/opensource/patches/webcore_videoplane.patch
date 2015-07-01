@@ -1,0 +1,954 @@
+Index: src/3rdParty/webkit/work/WebCore/bindings/js/JSHTMLElementWrapperFactory.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/bindings/js/JSHTMLElementWrapperFactory.cpp
++++ src/3rdParty/webkit/work/WebCore/bindings/js/JSHTMLElementWrapperFactory.cpp
+@@ -78,6 +78,7 @@
+ #include "HTMLTitleElement.h"
+ #include "HTMLUListElement.h"
+ #include "HTMLVideoElement.h"
++#include "HTMLVideoPlaneElement.h"
+ 
+ #include "HTMLNames.h"
+ 
+@@ -144,6 +145,10 @@
+ #include "JSHTMLVideoElement.h"
+ #endif
+ 
++#if ENABLE(VIDEOPLANE)
++#include "JSHTMLVideoPlaneElement.h"
++#endif
++
+ #include "kjs_html.h"
+ 
+ using namespace KJS;
+@@ -234,9 +239,15 @@ static JSNode* create##name##Wrapper(Exe
+     return new JSHTML##name##Element(JSHTML##name##ElementPrototype::self(exec), static_cast<HTML##name##Element*>(element.get())); \
+ }
+ FOR_EACH_TAG(CREATE_WRAPPER_FUNCTION)
++
+ #if ENABLE(VIDEO)
+-    FOR_EACH_MEDIA_TAG(CREATE_MEDIA_WRAPPER_FUNCTION)
++FOR_EACH_MEDIA_TAG(CREATE_MEDIA_WRAPPER_FUNCTION)
+ #endif
++
++#if ENABLE(VIDEOPLANE)
++    CREATE_WRAPPER_FUNCTION(videoplane, VideoPlane)
++#endif
++
+ #undef CREATE_WRAPPER_FUNCTION
+ 
+ JSNode* createJSHTMLWrapper(ExecState* exec, PassRefPtr<HTMLElement> element)
+@@ -245,9 +256,16 @@ JSNode* createJSHTMLWrapper(ExecState* e
+     if (map.isEmpty()) {
+ #define ADD_TO_HASH_MAP(tag, name) map.set(tag##Tag.localName().impl(), create##name##Wrapper);
+ FOR_EACH_TAG(ADD_TO_HASH_MAP)
++
+ #if ENABLE(VIDEO)
+ FOR_EACH_MEDIA_TAG(ADD_TO_HASH_MAP)
+ #endif
++
++#if ENABLE(VIDEOPLANE)
++    ADD_TO_HASH_MAP(videoplane, VideoPlane)
++#endif
++
++
+ #undef ADD_TO_HASH_MAP
+         map.set(colgroupTag.localName().impl(), createTableColWrapper);
+         map.set(h2Tag.localName().impl(), createHeadingWrapper);
+Index: src/3rdParty/webkit/work/WebCore/build/Makefile
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/build/Makefile
++++ src/3rdParty/webkit/work/WebCore/build/Makefile
+@@ -22,6 +22,11 @@ CXXF_ALL := -fno-rtti
+ CF_ALL += -fno-exceptions
+ CF_ALL += -D_GNU_SOURCE -DEKIOH
+ 
++ifeq ($(ENABLE_VIDEOPLANE),1)
++# Include the videoplane tag
++CF_ALL +=-DENABLE_VIDEOPLANE
++endif
++
+ rulesdir := $(topdir)
+ topdir_save := $(topdir)
+ topdir := $(EKIOHDIR)
+Index: src/3rdParty/webkit/work/WebCore/html/HTMLElement.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/html/HTMLElement.cpp
++++ src/3rdParty/webkit/work/WebCore/html/HTMLElement.cpp
+@@ -801,6 +801,7 @@ HashSet<AtomicStringImpl*>* inlineTagLis
+         tagList.add(wbrTag.localName().impl());
+         tagList.add(audioTag.localName().impl());
+         tagList.add(videoTag.localName().impl());
++        tagList.add(videoplaneTag.localName().impl());
+     }
+     return &tagList;
+ }
+Index: src/3rdParty/webkit/work/WebCore/html/HTMLElementFactory.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/html/HTMLElementFactory.cpp
++++ src/3rdParty/webkit/work/WebCore/html/HTMLElementFactory.cpp
+@@ -84,6 +84,7 @@
+ #include "HTMLTitleElement.h"
+ #include "HTMLUListElement.h"
+ #include "HTMLVideoElement.h"
++#include "HTMLVideoPlaneElement.h"
+ 
+ namespace WebCore {
+ 
+@@ -406,6 +407,13 @@ static PassRefPtr<HTMLElement> sourceCon
+ }
+ #endif
+ 
++#if ENABLE(VIDEOPLANE)
++static PassRefPtr<HTMLElement> videoplaneConstructor(const AtomicString& tagName, Document* doc, HTMLFormElement*, bool)
++{
++    return new HTMLVideoPlaneElement(doc);
++}
++#endif
++
+ static void addTag(const QualifiedName& tag, ConstructorFunc func)
+ {
+     gFunctionMap->set(tag.localName().impl(), func);
+@@ -492,6 +500,10 @@ static void createFunctionMap()
+     addTag(sourceTag, sourceConstructor);
+     addTag(videoTag, videoConstructor);
+ #endif
++
++#if ENABLE(VIDEOPLANE)
++    addTag(videoplaneTag, videoplaneConstructor);
++#endif
+ }
+ 
+ PassRefPtr<HTMLElement> HTMLElementFactory::createHTMLElement(const AtomicString& tagName, Document* doc, HTMLFormElement* form, bool createdByParser)
+Index: src/3rdParty/webkit/work/WebCore/html/HTMLVideoPlaneElement.cpp
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/work/WebCore/html/HTMLVideoPlaneElement.cpp
+@@ -0,0 +1,234 @@
++/*
++ * Copyright (C) 2009 Motorola Inc. All rights reserved.
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Library General Public
++ * License as published by the Free Software Foundation; either
++ * version 2 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Library General Public License for more details.
++ *
++ * You should have received a copy of the GNU Library General Public License
++ * along with this library; see the file COPYING.LIB.  If not, write to
++ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
++ * Boston, MA 02110-1301, USA.
++ */
++
++#include "config.h"
++
++#if ENABLE(VIDEOPLANE)
++
++#include "HTMLVideoPlaneElement.h"
++
++#include "Event.h"
++#include "EventNames.h"
++#include "ExceptionCode.h"
++#include "HTMLNames.h"
++#include "HTMLDocument.h"
++#include "RenderVideoPlane.h"
++#include "CSSPropertyNames.h"
++
++
++using namespace std;
++
++namespace WebCore {
++
++using namespace EventNames;
++using namespace HTMLNames;
++
++HTMLVideoPlaneElement::HTMLVideoPlaneElement(Document* doc)
++  : HTMLElement(videoplaneTag, doc),
++    m_index(0)
++{
++    document()->registerForCacheCallbacks(this);
++}
++
++HTMLVideoPlaneElement::~HTMLVideoPlaneElement()
++{
++    document()->unregisterForCacheCallbacks(this);
++}
++
++bool HTMLVideoPlaneElement::rendererIsNeeded(RenderStyle* style)
++{
++    return true;
++}
++
++RenderObject* HTMLVideoPlaneElement::createRenderer(RenderArena* arena,
++                                                    RenderStyle* style)
++{
++  return new (arena) RenderVideoPlane(this, m_index);
++}
++
++void HTMLVideoPlaneElement::attach()
++{
++    HTMLElement::attach();
++    renderer();
++}
++
++void HTMLVideoPlaneElement::detach()
++{
++    HTMLElement::detach();
++}
++
++void HTMLVideoPlaneElement::insertedIntoDocument()
++{
++    HTMLElement::insertedIntoDocument();
++}
++
++void HTMLVideoPlaneElement::removedFromDocument()
++{
++    HTMLElement::removedFromDocument();
++}
++
++
++void HTMLVideoPlaneElement::parseMappedAttribute(MappedAttribute *attr)
++{
++    const QualifiedName& attrName = attr->name();
++
++    if (attrName == widthAttr) {
++        addCSSLength(attr, CSS_PROP_WIDTH, attr->value());
++    } else if (attrName == heightAttr) {
++        addCSSLength(attr, CSS_PROP_HEIGHT, attr->value());
++    } else if (attrName == "index") {
++        bool ok;
++        m_index = attr->value().toInt(&ok);
++        if (!ok) {
++            fprintf(stderr, "Failed to convert index attr to an integer."
++                    "Defaulting to 0\n");
++            m_index = 0;
++        }
++    } else {
++        HTMLElement::parseMappedAttribute(attr);
++    }
++}
++
++int HTMLVideoPlaneElement::width() const
++{
++    bool ok;
++    int width = getAttribute(widthAttr).toInt(&ok);
++    if (ok)
++	return width;
++
++    return 0;
++}
++
++int HTMLVideoPlaneElement::height() const
++{
++    bool ok;
++    int height = getAttribute(heightAttr).toInt(&ok);
++    if (ok)
++	return height;
++
++    return 0;
++}
++
++void HTMLVideoPlaneElement::setHeight(int value)
++{
++    setAttribute(heightAttr, String::number(value));
++}
++
++void HTMLVideoPlaneElement::setWidth(int value)
++{
++    setAttribute(widthAttr, String::number(value));
++}
++
++int HTMLVideoPlaneElement::x() const
++{
++    RenderObject* r = renderer();
++    if (!r)
++        return 0;
++    int x, y;
++    r->absolutePosition(x, y);
++    return x;
++}
++
++int HTMLVideoPlaneElement::y() const
++{
++    RenderObject* r = renderer();
++    if (!r)
++        return 0;
++    int x, y;
++    r->absolutePosition(x, y);
++    return y;
++}
++
++int HTMLVideoPlaneElement::index() const
++{
++    return m_index;
++}
++
++int HTMLVideoPlaneElement::clipX() const
++{
++  return m_clipRect.x();
++}
++
++int HTMLVideoPlaneElement::clipY() const
++{
++  return m_clipRect.y();
++}
++
++int HTMLVideoPlaneElement::clipWidth() const
++{
++  return m_clipRect.width();
++}
++
++int HTMLVideoPlaneElement::clipHeight() const
++{
++  return m_clipRect.height();
++}
++
++int HTMLVideoPlaneElement::transformX() const
++{
++  return m_transformRect.x();
++}
++
++int HTMLVideoPlaneElement::transformY() const
++{
++  return m_transformRect.y();
++}
++
++int HTMLVideoPlaneElement::transformWidth() const
++{
++  return m_transformRect.width();
++}
++
++int HTMLVideoPlaneElement::transformHeight() const
++{
++  return m_transformRect.height();
++}
++
++bool HTMLVideoPlaneElement::subtitles() const
++{
++    return m_subtitles;
++}
++
++void HTMLVideoPlaneElement::setSubtitles(bool show)
++{
++  m_subtitles = show;
++  RenderVideoPlane* r = static_cast<RenderVideoPlane*>(renderer());
++  if (r)
++    r->setSubtitles(show);
++}
++
++void HTMLVideoPlaneElement::setVideoClip(int x, int y, int width, int height)
++{
++  m_clipRect = IntRect(x, y, width, height);
++  RenderVideoPlane* r = static_cast<RenderVideoPlane*>(renderer());
++  if (r)
++    r->setVideoClip(x, y, width, height);
++}
++
++void HTMLVideoPlaneElement::setVideoTransform(int x, int y, int width, int height)
++{
++  m_transformRect = IntRect(x, y, width, height);
++  RenderVideoPlane* r = static_cast<RenderVideoPlane*>(renderer());
++  if (r)
++    r->setVideoTransform(x, y, width, height);
++}
++
++}
++
++#endif // ENABLE(VIDEOPLANE)
+Index: src/3rdParty/webkit/work/WebCore/html/HTMLVideoPlaneElement.h
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/work/WebCore/html/HTMLVideoPlaneElement.h
+@@ -0,0 +1,82 @@
++/*
++ * Copyright (C) 2009 Motorola, Inc.
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Library General Public
++ * License as published by the Free Software Foundation; either
++ * version 2 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Library General Public License for more details.
++ *
++ * You should have received a copy of the GNU Library General Public License
++ * along with this library; see the file COPYING.LIB.  If not, write to
++ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
++ * Boston, MA 02110-1301, USA.
++ *
++ */
++
++#ifndef HTMLVideoPlaneElement_h
++#define HTMLVideoPlaneElement_h
++
++#if ENABLE(VIDEOPLANE)
++
++#include "HTMLElement.h"
++#include "IntRect.h"
++
++namespace WebCore {
++
++  class HTMLVideoPlaneElement : public HTMLElement {
++  public:
++    HTMLVideoPlaneElement(Document*);
++    ~HTMLVideoPlaneElement();
++
++    virtual bool rendererIsNeeded(RenderStyle* style);
++    virtual RenderObject* createRenderer(RenderArena*, RenderStyle*);
++
++    virtual void attach();
++    virtual void detach();
++    virtual void parseMappedAttribute(MappedAttribute *attr);
++    virtual void insertedIntoDocument();
++    virtual void removedFromDocument();
++
++    int width() const;
++    int height() const;
++
++    void setHeight(int);
++    void setWidth(int);
++
++    int x() const;
++    int y() const;
++    int index() const;
++
++    int clipX() const;
++    int clipY() const;
++    int clipWidth() const;
++    int clipHeight() const;
++
++    int transformX() const;
++    int transformY() const;
++    int transformWidth() const;
++    int transformHeight() const;
++
++    bool subtitles() const;
++
++    void setSubtitles(bool show);
++
++    void setVideoClip(int x, int y, int width, int height);
++    void setVideoTransform(int x, int y, int width, int height);
++    void videoChange();
++
++  private:
++    int m_index;
++    IntRect m_clipRect;
++    IntRect m_transformRect;
++    bool m_subtitles : 1;
++  };
++} //namespace
++
++#endif // ENABLE(VIDEOPLANE)
++#endif
+Index: src/3rdParty/webkit/work/WebCore/html/Rules.mk
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/html/Rules.mk
++++ src/3rdParty/webkit/work/WebCore/html/Rules.mk
+@@ -83,6 +83,7 @@ $(eval $(call add_objs, \
+  HTMLTokenizer \
+  HTMLUListElement \
+  HTMLViewSourceDocument \
++ HTMLVideoPlaneElement \
+ ))
+ 
+ # Local rules
+Index: src/3rdParty/webkit/work/WebCore/page/DOMWindow.idl
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/page/DOMWindow.idl
++++ src/3rdParty/webkit/work/WebCore/page/DOMWindow.idl
+@@ -298,6 +298,10 @@ module window {
+         attribute HTMLVideoPlaneElementConstructor HTMLVideoPlaneElement;
+ #endif
+ 
++#if defined(ENABLE_VIDEOPLANE)
++        attribute HTMLVideoPlaneElementConstructor HTMLVideoPlaneElement;
++#endif
++
+ #if defined(ENABLE_XPATH)
+         attribute XPathEvaluatorConstructor XPathEvaluator;
+         attribute XPathResultConstructor XPathResult;
+Index: src/3rdParty/webkit/work/WebCore/platform/graphics/Rules.mk
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/platform/graphics/Rules.mk
++++ src/3rdParty/webkit/work/WebCore/platform/graphics/Rules.mk
+@@ -1,6 +1,8 @@
+ include $(rulesdir)/Rules.head.mk
+ 
+ # Subdirectories, in random order
++dir     := $(d)/ekioh
++include         $(dir)/Rules.mk
+ 
+ # Local variables
+ $(eval $(call add_objs, \
+@@ -27,6 +29,7 @@ $(eval $(call add_objs, \
+  SegmentedFontData \
+  SimpleFontData \
+  StringTruncator \
++ VideoPlane \
+ ))
+ 
+ include $(rulesdir)/Rules.tail.mk
+Index: src/3rdParty/webkit/work/WebCore/platform/graphics/VideoPlane.cpp
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/work/WebCore/platform/graphics/VideoPlane.cpp
+@@ -0,0 +1,77 @@
++/*
++ * Copyright (C) 2009 Motorola Inc. All rights reserved.
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Library General Public
++ * License as published by the Free Software Foundation; either
++ * version 2 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Library General Public License for more details.
++ *
++ * You should have received a copy of the GNU Library General Public License
++ * along with this library; see the file COPYING.LIB.  If not, write to
++ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
++ * Boston, MA 02110-1301, USA.
++ *
++ */
++
++#include "config.h"
++
++#if ENABLE(VIDEOPLANE)
++#include "VideoPlane.h"
++
++#if PLATFORM(EKIOH)
++#include "VideoPlanePrivateEkioh.h"
++#else
++#error "No support for your platform"
++#endif
++
++namespace WebCore {
++
++  VideoPlane::VideoPlane(int index)
++    : VideoPlanePrivatePointer(
++        new VideoPlanePrivate(index))
++  {
++    m_subtitlesEnabled = false;
++  }
++
++  VideoPlane::~VideoPlane()
++  {
++    if (true == m_subtitlesEnabled){
++        VideoPlanePrivatePointer->SetSubtitles(false);
++    }
++    delete VideoPlanePrivatePointer;
++  }
++
++  void VideoPlane::UpdateVideoWindow(int tx, int ty, int contentWidth, int contentHeight)
++  {
++    VideoPlanePrivatePointer->UpdateVideoWindow(tx, ty, contentWidth, contentHeight);
++  }
++
++  void VideoPlane::HideVideoWindow()
++  {
++    VideoPlanePrivatePointer->HideVideoWindow();
++  }
++
++  void VideoPlane::SetVideoClip(int x, int y, int width, int height)
++  {
++    VideoPlanePrivatePointer->SetVideoClip(x, y, width, height);
++  }
++
++  void VideoPlane::SetVideoTransform(int x, int y, int width, int height)
++  {
++    VideoPlanePrivatePointer->SetVideoTransform(x, y, width, height);
++  }
++
++  void VideoPlane::SetSubtitles(bool show)
++  {
++    m_subtitlesEnabled = show;
++    VideoPlanePrivatePointer->SetSubtitles(show);
++  }
++
++}
++
++#endif // ENABLE(VIDEOPLANE)
+Index: src/3rdParty/webkit/work/WebCore/platform/graphics/VideoPlane.h
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/work/WebCore/platform/graphics/VideoPlane.h
+@@ -0,0 +1,51 @@
++/*
++ * Copyright (C) 2009 Motorola Inc. All rights reserved.
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Library General Public
++ * License as published by the Free Software Foundation; either
++ * version 2 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Library General Public License for more details.
++ *
++ * You should have received a copy of the GNU Library General Public License
++ * along with this library; see the file COPYING.LIB.  If not, write to
++ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
++ * Boston, MA 02110-1301, USA.
++ *
++ */
++
++#ifndef VIDEOPLANE_H
++#define VIDEOPLANE_H
++
++#if ENABLE(VIDEOPLANE)
++
++namespace WebCore {
++  class VideoPlanePrivate;
++  class VideoPlane
++  {
++  public:
++    VideoPlane(int index);
++    ~VideoPlane();
++
++    void UpdateVideoWindow(int tx,
++                           int ty,
++                           int contentWidth,
++                           int contentHeight);
++    void HideVideoWindow();
++    void SetVideoClip(int x, int y, int width, int height);
++    void SetVideoTransform(int x, int y, int width, int height);
++    void SetSubtitles(bool show);
++
++  private:
++    VideoPlanePrivate* VideoPlanePrivatePointer;
++    bool m_subtitlesEnabled;
++  };
++}
++
++#endif // ENABLE(VIDEOPLANE)
++
++#endif // VIDEOPLANE_H
+Index: src/3rdParty/webkit/work/WebCore/platform/graphics/ekioh/Rules.mk
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/work/WebCore/platform/graphics/ekioh/Rules.mk
+@@ -0,0 +1,10 @@
++include $(rulesdir)/Rules.head.mk
++
++# Subdirectories, in random order
++
++# Local variables
++$(eval $(call add_objs, \
++ VideoPlanePrivateEkioh \
++))
++
++include $(rulesdir)/Rules.tail.mk
+Index: src/3rdParty/webkit/work/WebCore/platform/graphics/ekioh/VideoPlanePrivateEkioh.cpp
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/work/WebCore/platform/graphics/ekioh/VideoPlanePrivateEkioh.cpp
+@@ -0,0 +1,78 @@
++/*
++ * Copyright (C) 2009 Motorola Inc. All rights reserved.
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Library General Public
++ * License as published by the Free Software Foundation; either
++ * version 2 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Library General Public License for more details.
++ *
++ * You should have received a copy of the GNU Library General Public License
++ * along with this library; see the file COPYING.LIB.  If not, write to
++ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
++ * Boston, MA 02110-1301, USA.
++ *
++ */
++
++#include <stdio.h>
++
++#include "config.h"
++
++#if ENABLE(VIDEOPLANE)
++
++#include "VideoPlanePrivateEkioh.h"
++
++
++namespace WebCore {
++
++  VideoPlanePrivate::VideoPlanePrivate(int index)
++    : m_index(index)
++  {
++    m_plane = ekioh::EKIndexedVideoDisplay::instance();
++    if (m_plane == 0) {
++      fprintf(stderr, "No instace of EKPlatform in VideoPlanePrivate "
++              "constructor\n");
++      ::abort();
++    }
++  }
++
++  VideoPlanePrivate::~VideoPlanePrivate()
++  {
++    m_plane->hideVideo(m_index);
++  }
++
++  void VideoPlanePrivate::UpdateVideoWindow(int tx, int ty, int contentWidth,
++                                            int contentHeight)
++  {
++    m_plane->updateVideoWindow(tx, ty, contentWidth,
++                                          contentHeight, m_index);
++  }
++
++  void VideoPlanePrivate::HideVideoWindow()
++  {
++    m_plane->hideVideo(m_index);
++  }
++
++  void VideoPlanePrivate::SetVideoClip(int x, int y, int width, int height)
++  {
++    m_plane->setVideoClip(x, y, width, height, m_index);
++  }
++
++  void VideoPlanePrivate::SetVideoTransform(int x, int y,
++                                            int width, int height)
++  {
++    m_plane->setVideoTransform(x, y, width, height, m_index);
++  }
++
++  void VideoPlanePrivate::SetSubtitles(bool show)
++  {
++    m_plane->setSubtitles(show);
++  }
++}
++
++#endif // ENABLE(VIDEOPLANE)
++
+Index: src/3rdParty/webkit/work/WebCore/platform/graphics/ekioh/VideoPlanePrivateEkioh.h
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/work/WebCore/platform/graphics/ekioh/VideoPlanePrivateEkioh.h
+@@ -0,0 +1,50 @@
++/*
++ * Copyright (C) 2009 Motorola Inc. All rights reserved.
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Library General Public
++ * License as published by the Free Software Foundation; either
++ * version 2 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Library General Public License for more details.
++ *
++ * You should have received a copy of the GNU Library General Public License
++ * along with this library; see the file COPYING.LIB.  If not, write to
++ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
++ * Boston, MA 02110-1301, USA.
++ *
++ */
++
++#ifndef VIDEOPLANEPRIVATE_H
++#define VIDEOPLANEPRIVATE_H
++
++#if ENABLE(VIDEOPLANE)
++
++#include "Media/EKIndexedVideoDisplay.h"
++
++namespace WebCore {
++  class VideoPlanePrivate
++  {
++  public:
++    VideoPlanePrivate(int index);
++    ~VideoPlanePrivate();
++
++    void UpdateVideoWindow(int tx, int ty, int contentWidth,
++                           int contentHeight);
++    void HideVideoWindow();
++    void SetVideoClip(int x, int y, int width, int height);
++    void SetVideoTransform(int x, int y, int width, int height);
++
++    void SetSubtitles(bool show);
++
++  private:
++    ekioh::EKIndexedVideoDisplay* m_plane;
++    int m_index;
++  };
++}
++
++#endif // ENABLE(VIDEOPLANE)
++#endif // VIDEOPLANEPRIVATE_H
+Index: src/3rdParty/webkit/work/WebCore/rendering/RenderVideoPlane.cpp
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/work/WebCore/rendering/RenderVideoPlane.cpp
+@@ -0,0 +1,88 @@
++/**
++ * This file is part of the DOM implementation for KDE.
++ *
++ * Copyright (C) 2003, 2004, 2005, 2006 Apple Computer, Inc.
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Library General Public
++ * License as published by the Free Software Foundation; either
++ * version 2 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Library General Public License for more details.
++ *
++ * You should have received a copy of the GNU Library General Public License
++ * along with this library; see the file COPYING.LIB.  If not, write to
++ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
++ * Boston, MA 02110-1301, USA.
++ *
++ */
++
++#include "config.h"
++
++#if ENABLE(VIDEOPLANE)
++
++#include "RenderVideoPlane.h"
++#include "HTMLVideoPlaneElement.h"
++
++#include "BitmapImage.h"
++#include "Document.h"
++#include "GraphicsContext.h"
++#include "HTMLImageElement.h"
++#include "HTMLInputElement.h"
++#include "HTMLMapElement.h"
++#include "HTMLNames.h"
++#include "HitTestResult.h"
++#include "Page.h"
++#include "RenderView.h"
++
++using namespace std;
++
++namespace WebCore {
++
++  using namespace HTMLNames;
++
++  RenderVideoPlane::RenderVideoPlane(Node* node, int index)
++    : RenderReplaced(node, IntSize(0, 0)),
++      m_videoPlane(index)
++  {
++    // Empty
++  }
++
++  RenderVideoPlane::~RenderVideoPlane()
++  {
++  }
++
++  void RenderVideoPlane::paint(PaintInfo& paintInfo, int tx, int ty)
++  {
++      if (style()->visibility() != VISIBLE || style()->display() == NONE) {
++        m_videoPlane.HideVideoWindow();
++      }
++      RenderReplaced::paint(paintInfo, tx, ty);
++  }
++
++  void RenderVideoPlane::paintReplaced(PaintInfo& paintInfo, int tx, int ty)
++  {
++      m_videoPlane.UpdateVideoWindow(tx, ty, contentWidth(), contentHeight());
++  }
++
++  void RenderVideoPlane::setVideoClip(int x, int y, int width, int height)
++  {
++      m_videoPlane.SetVideoClip(x, y, width, height);
++  }
++
++  void RenderVideoPlane::setVideoTransform(int x, int y, int width, int height)
++  {
++      m_videoPlane.SetVideoTransform(x, y, width, height);
++  }
++
++  void RenderVideoPlane::setSubtitles(bool show)
++  {
++      m_videoPlane.SetSubtitles(show);
++  }
++
++} // namespace WebCore
++
++#endif // ENABLE(VIDEOPLANE)
+Index: src/3rdParty/webkit/work/WebCore/rendering/RenderVideoPlane.h
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/work/WebCore/rendering/RenderVideoPlane.h
+@@ -0,0 +1,57 @@
++/*
++ * Copyright (C) 2009 Motorola Inc. All rights reserved.
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Library General Public
++ * License as published by the Free Software Foundation; either
++ * version 2 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Library General Public License for more details.
++ *
++ * You should have received a copy of the GNU Library General Public License
++ * along with this library; see the file COPYING.LIB.  If not, write to
++ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
++ * Boston, MA 02110-1301, USA.
++ *
++ */
++
++#ifndef RenderVideoPlane_h
++#define RenderVideoPlane_h
++
++#if ENABLE(VIDEOPLANE)
++
++#include "RenderReplaced.h"
++#include "VideoPlane.h"
++
++namespace ekioh {
++  class EKMediaListener;
++};
++
++namespace WebCore {
++
++  class RenderVideoPlane : public RenderReplaced {
++  public:
++    RenderVideoPlane(Node*, int index);
++    virtual ~RenderVideoPlane();
++
++    virtual const char* renderName() const { return "RenderVideoPlane"; }
++
++    virtual void paint(PaintInfo& paintInfo, int tx, int ty);
++    virtual void paintReplaced(PaintInfo& paintInfo, int tx, int ty);
++
++    virtual void setVideoClip(int x, int y, int width, int height);
++    virtual void setVideoTransform(int x, int y, int width, int height);
++
++    virtual void setSubtitles(bool show);
++
++  private:
++    VideoPlane m_videoPlane;
++  };
++
++} // namespace WebCore
++
++#endif // ENABLE(VIDEOPLANE)
++#endif // RenderVideoPlane_h
+Index: src/3rdParty/webkit/work/WebCore/rendering/Rules.mk
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/rendering/Rules.mk
++++ src/3rdParty/webkit/work/WebCore/rendering/Rules.mk
+@@ -53,6 +53,7 @@ $(eval $(call add_objs, \
+  RenderTextFragment \
+  RenderTheme \
+  RenderTreeAsText \
++ RenderVideoPlane \
+  RenderView \
+  RenderWidget \
+  RenderWordBreak \

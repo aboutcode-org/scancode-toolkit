@@ -1,0 +1,22 @@
+--- C:/Documents and Settings/jkosin/My Documents/junk/kernel/Copy of linux-2.6.31.5/drivers/net/arm/at91_ether.c	Thu Oct 22 18:57:56 2009
++++ C:/Documents and Settings/jkosin/My Documents/junk/kernel/linux-2.6.31.5/drivers/net/arm/at91_ether.c	Wed Jan 13 12:05:39 2010
+@@ -925,9 +925,6 @@
+ 	   It is automatically cleared once read. */
+ 	intstatus = at91_emac_read(AT91_EMAC_ISR);
+ 
+-	if (intstatus & AT91_EMAC_RCOM)		/* Receive complete */
+-		at91ether_rx(dev);
+-
+ 	if (intstatus & AT91_EMAC_TCOM) {	/* Transmit complete */
+ 		/* The TCOM bit is set even if the transmission failed. */
+ 		if (intstatus & (AT91_EMAC_TUND | AT91_EMAC_RTRY))
+@@ -940,6 +937,9 @@
+ 		}
+ 		netif_wake_queue(dev);
+ 	}
++
++	if (intstatus & AT91_EMAC_RCOM)		/* Receive complete */
++		at91ether_rx(dev);
+ 
+ 	/* Work-around for Errata #11 */
+ 	if (intstatus & AT91_EMAC_RBNA) {

@@ -1,0 +1,6 @@
+|		Copyright (C) Motorola, Inc. 1990
+|			All Rights Reserved
+|
+|	THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF MOTOROLA 
+|	The copyright notice above does not evidence any  
+|	actual or intended publication of such source code.

@@ -1,0 +1,5 @@
+/* attrs.c -- recognize HTML attributes
+  
+  (c) 1998-2000 (W3C) MIT, INRIA, Keio University
+  See tidy.c for the copyright notice.
+*/

@@ -1,0 +1,14 @@
+key: osl-2.0
+short_name: OSL 2.0
+name: Open Software License 2.0
+category: Copyleft
+owner: Lawrence Rosen
+homepage_url: http://www.nexb.com/license/LICENSE-OSL-2.0.html
+spdx_license_key: OSL-2.0
+spdx_full_name: Open Software License 2.0
+spdx_url: http://spdx.org/licenses/OSL-2.0
+text_urls:
+    - http://www.nexb.com/license/LICENSE-OSL-2.0.html
+osi_url: http://www.opensource.org/licenses/osl-2.0.php
+other_urls:
+    - http://web.archive.org/web/20041020171434/http://www.rosenlaw.com/osl2.0.html

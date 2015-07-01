@@ -1,0 +1,17 @@
+#
+# iptables-apply -- a safer way to update iptables remotely
+#
+# Copyright © Martin F. Krafft <madduck@madduck.net>
+# Released under the terms of the Artistic Licence 2.0
+#
+	_eof
+}
+
+function copyright()
+{
+	cat <<-_eof
+{
+	blurb
+	echo
+	copyright
+}

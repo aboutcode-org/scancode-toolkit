@@ -1,0 +1,172 @@
+--- linux-2.6.23-orig/mm/page_alloc.c	2009-05-18 13:59:39.000000000 +0200
++++ linux-2.6.23/mm/page_alloc.c	2009-05-18 14:04:37.000000000 +0200
+@@ -1520,7 +1520,7 @@
+ static inline void show_node(struct zone *zone)
+ {
+ 	if (NUMA_BUILD)
+-		printk("Node %d ", zone_to_nid(zone));
++		printk(KERN_DEBUG "Node %d ", zone_to_nid(zone));
+ }
+ 
+ void si_meminfo(struct sysinfo *val)
+@@ -1572,14 +1572,14 @@
+ 			continue;
+ 
+ 		show_node(zone);
+-		printk("%s per-cpu:\n", zone->name);
++		printk(KERN_DEBUG "%s per-cpu:\n", zone->name);
+ 
+ 		for_each_online_cpu(cpu) {
+ 			struct per_cpu_pageset *pageset;
+ 
+ 			pageset = zone_pcp(zone, cpu);
+ 
+-			printk("CPU %4d: Hot: hi:%5d, btch:%4d usd:%4d   "
++			printk(KERN_DEBUG "CPU %4d: Hot: hi:%5d, btch:%4d usd:%4d   "
+ 			       "Cold: hi:%5d, btch:%4d usd:%4d\n",
+ 			       cpu, pageset->pcp[0].high,
+ 			       pageset->pcp[0].batch, pageset->pcp[0].count,
+@@ -1588,8 +1588,8 @@
+ 		}
+ 	}
+ 
+-	printk("Active:%lu inactive:%lu dirty:%lu writeback:%lu unstable:%lu\n"
+-		" free:%lu slab:%lu mapped:%lu pagetables:%lu bounce:%lu\n",
++	printk(KERN_DEBUG "Active:%lu inactive:%lu dirty:%lu writeback:%lu unstable:%lu\n"
++               " free:%lu slab:%lu mapped:%lu pagetables:%lu bounce:%lu\n",
+ 		global_page_state(NR_ACTIVE),
+ 		global_page_state(NR_INACTIVE),
+ 		global_page_state(NR_FILE_DIRTY),
+@@ -1609,32 +1609,32 @@
+ 			continue;
+ 
+ 		show_node(zone);
+-		printk("%s"
+-			" free:%lukB"
+-			" min:%lukB"
+-			" low:%lukB"
+-			" high:%lukB"
+-			" active:%lukB"
+-			" inactive:%lukB"
+-			" present:%lukB"
+-			" pages_scanned:%lu"
+-			" all_unreclaimable? %s"
+-			"\n",
+-			zone->name,
+-			K(zone_page_state(zone, NR_FREE_PAGES)),
+-			K(zone->pages_min),
+-			K(zone->pages_low),
+-			K(zone->pages_high),
+-			K(zone_page_state(zone, NR_ACTIVE)),
+-			K(zone_page_state(zone, NR_INACTIVE)),
+-			K(zone->present_pages),
+-			zone->pages_scanned,
+-			(zone->all_unreclaimable ? "yes" : "no")
+-			);
+-		printk("lowmem_reserve[]:");
++		printk(KERN_DEBUG "%s"
++                       " free:%lukB"
++                       " min:%lukB"
++                       " low:%lukB"
++                       " high:%lukB"
++                       " active:%lukB"
++                       " inactive:%lukB"
++                       " present:%lukB"
++                       " pages_scanned:%lu"
++                       " all_unreclaimable? %s"
++                       "\n",
++                       zone->name,
++                       K(zone_page_state(zone, NR_FREE_PAGES)),
++                       K(zone->pages_min),
++                       K(zone->pages_low),
++                       K(zone->pages_high),
++                       K(zone_page_state(zone, NR_ACTIVE)),
++                       K(zone_page_state(zone, NR_INACTIVE)),
++                       K(zone->present_pages),
++                       zone->pages_scanned,
++                       (zone->all_unreclaimable ? "yes" : "no")
++                       );
++		printk(KERN_DEBUG "lowmem_reserve[]:");
+ 		for (i = 0; i < MAX_NR_ZONES; i++)
+-			printk(" %lu", zone->lowmem_reserve[i]);
+-		printk("\n");
++			printk(KERN_DEBUG " %lu", zone->lowmem_reserve[i]);
++		printk("\n");
+ 	}
+ 
+ 	for_each_zone(zone) {
+@@ -1644,7 +1644,7 @@
+ 			continue;
+ 
+ 		show_node(zone);
+-		printk("%s: ", zone->name);
++		printk(KERN_DEBUG "%s: ", zone->name);
+ 
+ 		spin_lock_irqsave(&zone->lock, flags);
+ 		for (order = 0; order < MAX_ORDER; order++) {
+@@ -1653,8 +1653,8 @@
+ 		}
+ 		spin_unlock_irqrestore(&zone->lock, flags);
+ 		for (order = 0; order < MAX_ORDER; order++)
+-			printk("%lu*%lukB ", nr[order], K(1UL) << order);
+-		printk("= %lukB\n", K(total));
++			printk(KERN_DEBUG "%lu*%lukB ", nr[order], K(1UL) << order);
++		printk(KERN_DEBUG "= %lukB\n", K(total));
+ 	}
+ 
+ 	show_swap_cache_info();
+@@ -2132,12 +2132,12 @@
+ 		/* cpuset refresh routine should be here */
+ 	}
+ 	vm_total_pages = nr_free_pagecache_pages();
+-	printk("Built %i zonelists in %s order.  Total pages: %ld\n",
+-			num_online_nodes(),
+-			zonelist_order_name[current_zonelist_order],
+-			vm_total_pages);
++	printk(KERN_DEBUG "Built %i zonelists in %s order.  Total pages: %ld\n",
++               num_online_nodes(),
++               zonelist_order_name[current_zonelist_order],
++               vm_total_pages);
+ #ifdef CONFIG_NUMA
+-	printk("Policy zone: %s\n", zone_names[policy_zone]);
++	printk(KERN_DEBUG "Policy zone: %s\n", zone_names[policy_zone]);
+ #endif
+ }
+ 
+@@ -3466,27 +3466,27 @@
+ 	find_zone_movable_pfns_for_nodes(zone_movable_pfn);
+ 
+ 	/* Print out the zone ranges */
+-	printk("Zone PFN ranges:\n");
++	printk(KERN_DEBUG "Zone PFN ranges:\n");
+ 	for (i = 0; i < MAX_NR_ZONES; i++) {
+ 		if (i == ZONE_MOVABLE)
+ 			continue;
+-		printk("  %-8s %8lu -> %8lu\n",
+-				zone_names[i],
+-				arch_zone_lowest_possible_pfn[i],
+-				arch_zone_highest_possible_pfn[i]);
++		printk(KERN_DEBUG "  %-8s %8lu -> %8lu\n",
++                       zone_names[i],
++                       arch_zone_lowest_possible_pfn[i],
++                       arch_zone_highest_possible_pfn[i]);
+ 	}
+ 
+ 	/* Print out the PFNs ZONE_MOVABLE begins at in each node */
+-	printk("Movable zone start PFN for each node\n");
++	printk(KERN_DEBUG "Movable zone start PFN for each node\n");
+ 	for (i = 0; i < MAX_NUMNODES; i++) {
+ 		if (zone_movable_pfn[i])
+-			printk("  Node %d: %lu\n", i, zone_movable_pfn[i]);
++			printk(KERN_DEBUG "  Node %d: %lu\n", i, zone_movable_pfn[i]);
+ 	}
+ 
+ 	/* Print out the early_node_map[] */
+-	printk("early_node_map[%d] active PFN ranges\n", nr_nodemap_entries);
++	printk(KERN_DEBUG "early_node_map[%d] active PFN ranges\n", nr_nodemap_entries);
+ 	for (i = 0; i < nr_nodemap_entries; i++)
+-		printk("  %3d: %8lu -> %8lu\n", early_node_map[i].nid,
++		printk(KERN_DEBUG "  %3d: %8lu -> %8lu\n", early_node_map[i].nid,
+ 						early_node_map[i].start_pfn,
+ 						early_node_map[i].end_pfn);
+ 

@@ -1,0 +1,226 @@
+
+2006-05-13  Paul Eggert  <eggert@cs.ucla.edu>
+
+	* data/c.m4 (b4_copyright): Put the special exception for Bison
+	skeletons here, so we don't have to put it in each skeleton.  All
+	uses changed.  Suggested by Akim Demaille.  Also, wrap the
+	copyright notice, in case it is longer than 80 columns.  Replace
+	comma by newline after title.
+
+2006-05-08  Paul Eggert  <eggert@cs.ucla.edu>
+
+	* data/glr.c: Switch to Bison 2.2 special-exception language in
+	the copyright notice.  Use more-regular format for titles and
+	copyright notices.
+	* data/glr.cc: Likewise.
+	* data/location.cc: Likewise.
+	* doc/FAQ: Remove ancient Y2K FAQ, replacing it with "secure"
+	and "POSIX".  Use more-modern syntax for URLs.  Mention C++
+	and ask for Java.  Don't hardwire OS version numbers.  Add
+	copyright notice.
+	* m4/.cvsignore: Add unistd_h.m4, for latest gnulib.
+	* src/conflicts.c (solved_conflicts_obstack): Now static.
+	* lib/timevar.c: Likewise.
+	* src/system.h: Likewise.
+	* data/yacc.c (YYSTYPE): Don't generate trailing spaces in output.
+	* djgpp/Makefile.maint: Add copyright notice.
+	* djgpp/README.in: Likewise.
+	* djgpp/config.bat: Likewise.
+	* djgpp/config.site: Likewise.
+	* djgpp/config_h.sed: Likewise.
+	* djgpp/djunpack.bat: Likewise.
+	* djgpp/config.sed: Fix copyright notice to match standard format.
+	* djgpp/subpipe.h: Likewise.
+	* lib/bitsetv-print.c: Likewise.
+	(sc_useless_cpp_parens): New rule.
+	(news-date-check): Look for version or today's date.
+	(changelog-check): Don't require version number near head.
+	(copyright-check): Use current year instead of hardwiring 2005.
+	(my-distcheck): Depend on $(release_archive_dir)/$(prev-tgz).
+	(announcement): Add --gpg-key-ID.
+
+	* djgpp/config.sed: Add copyright notice, and replace "filesystem"
+	with "file system".
+
+
+2006-01-08  Joel E. Denny  <jdenny@ces.clemson.edu>
+
+	* tests/glr-regression.at: Update copyright year to 2006.
+
+2006-01-06  Joel E. Denny  <jdenny@ces.clemson.edu>
+
+	* ChangeLog, data/c.m4, data/glr.c, data/glr.cc, data/location.cc:
+	* data/yacc.c, src/getargs.c, src/output.c, tests/cxx-type.at:
+	Update copyright year to 2006.
+
+2006-01-03  Akim Demaille  <akim@epita.fr>
+	(sc_space_tab, sc_error_exit_success, sc_changelog):
+	(sc_system_h_headers, sc_sun_os_names, sc_unmarked_diagnostics):
+	(makefile-check, po-check, author_mark_check):
+	(makefile_path_separator_check, copyright-check):
+	Use grep -n, to make it easier to find violations.
+	Use CVS_LIST and CVS_LIST_EXCEPT.
+
+2005-05-21  Paul Eggert  <eggert@cs.ucla.edu>
+
+	* data/glr.c, data/lalr1.cc: Update copyright date.
+
+	Fix a destructor bug reported by Wolfgang Spraul in
+2005-01-01  Paul Eggert  <eggert@cs.ucla.edu>
+
+	* src/getargs.c (version): Happy new year; update overall
+	program copyright date from 2004 to 2005.
+
+	* src/scan-skel.l ("@output ".*\n): Don't close standard output.
+	stdint_h.m4, uintmax_t.m4, ulonglong.m4.
+	* src/.cvsignore: Add *.output.
+
+	* src/parse-gram.y: Put copyright notice inside %{ %} so it
+	gets copied to the output file.
+
+
+2004-03-30  Paul Eggert  <eggert@twinsun.com>
+
+	* src/getargs.c (version): Update copyright year to 2004.
+
+	* data/c.m4 (b4_int_type): Use 'short int' rather than
+	Remove Sequent/Pyramid discussion (nobody uses them any more).
+	Merge VMS and MS-DOS discussion; these ports may well be dead
+	but let's keep mentioning them for now.  Put <> around email
+	addresses.  Add copyright notice.
+
+2003-02-24  Paul Eggert  <eggert@twinsun.com>
+	* configure.ac (GXX): Rename as...
+	(CXX): this, to keep the original Autoconf semantics.
+	Require 2.57.
+	* data/lalr1.cc: Fix b4_copyright invocations.
+	If YYDEBUG is not defined, don't depend upon name_ being defined.
+	(location.hh): Include string and iostream.
+	* tests/glr-regr1.at: Rename to ...
+	* tests/glr-regression.at: Add new regression test for the problems
+	described above (adapted from S. Eken).
+	Update copyright notice.
+	* tests/testsuite.at: Rename glr-regr1.at to glr-regression.at.
+	* tests/Makefile.am: Ditto.
+	that the warning is enabled if the number of conflicts changes
+	(not necessarily increases).
+
+	* src/getargs.c (version): Update copyright year.
+
+2003-01-09  Akim Demaille  <akim@epita.fr>
+	(handle_dollar, handle_at): Complain in invalid contexts.
+
+	* NEWS, doc/bison.texinfo: Document the above.
+	* NEWS: Fix years and program names in copyright notice.
+
+2002-12-17  Paul Eggert  <eggert@twinsun.com>
+	__ofile__, to avoid unexpected expansions.  Similarly, use @output
+	rather than #output.
+
+	* data/c.m4 (b4_copyright): Omit file name from comment, since
+	the file name could contain "*/".
+	(b4_synclines_flag): Don't quote the 2nd argument; it should already
+	This is for the SunOS 4.1.4 porting bug reported by Peter Klein in
+	<http://lists.gnu.org/archive/html/bug-bison/2002-10/msg00016.html>.
+
+	* lib/timevar.c: Update copyright date and clarify comments.
+	(get_time) [IN_GCC]: Keep the GCC version for reference.
+
+	* lib/timevar.c, lib/timevar.h, lib/timevar.def: Import
+	GCC version as of today, then merge Bison's changes.
+	Change "GCC" to "Bison" in copyright notice.  timevar.def's
+	author is Akim, so change that too.
+
+
+2002-09-06  Akim Demaille  <akim@epita.fr>
+
+	* data/c.m4 (b4_copyright): Move the GPL exception comment from
+	here to...
+	* data/yacc.c: here.
+
+2002-07-09  Akim Demaille  <akim@epita.fr>
+
+	* data/yacc.c: Output the copyright notive in the header.
+
+2002-07-03  Akim Demaille  <akim@epita.fr>
+
+2002-06-28  Akim Demaille  <akim@epita.fr>
+
+	* data/c.m4 (b4_copyright, b4_sint_type, b4_uint_type, b4_token_define)
+	(b4_token_enum, b4_token_defines): New, factored from...
+	* data/lalr1.cc, data/yacc.c, glr.c: here.
+
+2002-04-04  Paul Eggert  <eggert@twinsun.com>
+
+	* doc/bison.texinfo: Update copyright date.
+	(Rpcalc Lexer, Symbols, Token Decl): Don't assume ASCII.
+	(Symbols): Warn about running Bison in one character set,
+
+2002-02-28  Robert Anisko  <robert@lrde.epita.fr>
+
+	* data/bison.c++: Merge the two generated headers.  Insert a copyright
+	notice in each output file.
+
+
+	* src/getargs.c (version): Give the name of the authors, and use a
+	translator friendly scheme for the bgr
+	copyright notice.
+
+2002-02-25  Akim Demaille  <akim@epita.fr>
+2002-02-11  Robert Anisko  <robert@lrde.epita.fr>
+
+	* data/bison.c++ (YYDEBUG, YYERROR_VERBOSE): After the prologue.
+	(Copyright notice): Update.
+
+2002-02-11  Akim Demaille  <akim@epita.fr>
+
+2000-11-07  Akim Demaille  <akim@epita.fr>
+
+	* src: s/Copyright (C)/Copyright/g.
+
+2000-11-07  Akim Demaille  <akim@epita.fr>
+
+2000-09-18  Akim Demaille  <akim@epita.fr>
+
+	* doc/bison.texinfo: Update the copyright.
+	ANSIfy and GNUify the examples.
+	Remove the old menu.
+
+	* src/bison.s1: Formatting and cosmetics changes.
+	* src/reader.c: Likewise.
+	Update the Copyright notice.
+
+2000-03-17  Akim Demaille  <akim@epita.fr>
+
+	* src/output.c (output_rule_data): Output the documentation of
+	some of the tables.
+	(Copyright notice): Update.
+	Formatting changes.
+
+
+1998-12-30  Jesse Thilo  <jthilo@gnu.org>
+
+	* src/reader.c: Update copyright date.
+
+	* src/main.c:
+1994-09-15  Richard Stallman  <rms@gnu.org>
+
+	* src/bison.s1:
+	Update copyright notice and GPL version.
+
+1994-09-15  Richard Stallman  <rms@gnu.org>
+
+	* bison.simple:
+	Update copyright notice and GPL version.
+
+1994-07-12  Richard Stallman  <rms@gnu.org>
+
+	-----
+
+	Copyright (C) 1987, 1988, 1991, 1992, 1993, 1994, 1995, 1996,
+	1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006 Free
+	Software Foundation, Inc.
+
+	Copying and distribution of this file, with or without
+	modification, are permitted provided the copyright notice and this
+	notice are preserved.

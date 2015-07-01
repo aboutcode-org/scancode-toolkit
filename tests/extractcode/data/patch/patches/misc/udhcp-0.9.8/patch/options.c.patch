@@ -1,0 +1,146 @@
+Index: udhcp-0.9.8/options.c
+===================================================================
+--- udhcp-0.9.8.orig/options.c
++++ udhcp-0.9.8/options.c
+@@ -30,19 +30,34 @@ struct dhcp_option options[] = {
+ 	{"bootsize",	OPTION_U16,				0x0d},
+ 	{"domain",	OPTION_STRING | OPTION_REQ,		0x0f},
+ 	{"swapsvr",	OPTION_IP,				0x10},
+-	{"rootpath",	OPTION_STRING,				0x11},
++	{"rootpath",	OPTION_STRING | OPTION_REQ,				0x11},
+ 	{"ipttl",	OPTION_U8,				0x17},
+ 	{"mtu",		OPTION_U16,				0x1a},
+ 	{"broadcast",	OPTION_IP | OPTION_REQ,			0x1c},
++	{"sroutes",	OPTION_IP_PAIR | OPTION_LIST | OPTION_REQ, 0x21},
+ 	{"ntpsrv",	OPTION_IP | OPTION_LIST,		0x2a},
++	{"vciopt",	OPTION_STRING | OPTION_REQ,	        0x2b},
+ 	{"wins",	OPTION_IP | OPTION_LIST,		0x2c},
+ 	{"requestip",	OPTION_IP,				0x32},
+ 	{"lease",	OPTION_U32,				0x33},
+ 	{"dhcptype",	OPTION_U8,				0x35},
+ 	{"serverid",	OPTION_IP,				0x36},
+ 	{"message",	OPTION_STRING,				0x38},
++    {"maxsize",   OPTION_U16,         0x39},
++    {"dhcp_t1",   OPTION_U32 | OPTION_REQ,         0x3a},
++    {"dhcp_t2",   OPTION_U32 | OPTION_REQ,         0x3b},
++    {"nisplusd",  OPTION_STRING | OPTION_REQ, 0x40},
+ 	{"tftp",	OPTION_STRING,				0x42},
+ 	{"bootfile",	OPTION_STRING,				0x43},
++	{"uciopt",	OPTION_STRING,	                        0x4d},
++	{"timezone",	OPTION_STRING | OPTION_REQ,		0x58},
++	{"sroutes",     OPTION_ROUTE | OPTION_LIST | OPTION_REQ, 0x79},
++	{"infocast",	OPTION_STRING | OPTION_REQ,		0x80},
++	{"vivendor",	OPTION_STRING | OPTION_REQ, 		0x7d},
++	{"option240",   OPTION_STRING | OPTION_REQ,             240},
++	{"option241",   OPTION_STRING | OPTION_REQ,             241},
++	{"option242",   OPTION_STRING | OPTION_REQ,             242},
++	{"option243",   OPTION_STRING | OPTION_REQ,             243},
+ 	{"",		0x00,				0x00}
+ };
+ 
+@@ -50,6 +65,7 @@ struct dhcp_option options[] = {
+ int option_lengths[] = {
+ 	[OPTION_IP] =		4,
+ 	[OPTION_IP_PAIR] =	8,
++	[OPTION_ROUTE] =	5,
+ 	[OPTION_BOOLEAN] =	1,
+ 	[OPTION_STRING] =	1,
+ 	[OPTION_U8] =		1,
+@@ -69,7 +85,7 @@ unsigned char *get_option(struct dhcpMes
+ 	
+ 	optionptr = packet->options;
+ 	i = 0;
+-	length = 308;
++	length = IN_OPTIONS_LENGTH;
+ 	while (!done) {
+ 		if (i >= length) {
+ 			LOG(LOG_WARNING, "bogus packet, option fields too long.");
+@@ -135,7 +151,7 @@ int add_option_string(unsigned char *opt
+ 	int end = end_option(optionptr);
+ 	
+ 	/* end position + string length + option code/length + end option */
+-	if (end + string[OPT_LEN] + 2 + 1 >= 308) {
++	if (end + string[OPT_LEN] + 2 + 1 >= OUT_OPTIONS_LENGTH) {
+ 		LOG(LOG_ERR, "Option 0x%02x did not fit into the packet!", string[OPT_CODE]);
+ 		return 0;
+ 	}
+@@ -145,6 +161,79 @@ int add_option_string(unsigned char *opt
+ 	return string[OPT_LEN] + 2;
+ }
+ 
++int add_user_class_option(unsigned char *optionptr, unsigned char *data)
++{
++	int option_value_len = 0;
++	unsigned char *user_class_value = NULL;
++	char *tokenPtr = NULL;
++	int end = end_option(optionptr);
++  unsigned char *option_value_ptr = optionptr + end + OPT_DATA;
++
++	//strtok places a NULL terminator in front of the token, 
++	//we must backup the orignal user class option data.
++  user_class_value = (unsigned char*) xmalloc(data[OPT_LEN]+1);
++  if (user_class_value == NULL) {
++    return 0;
++  }
++	memcpy(user_class_value, data + OPT_DATA, data[OPT_LEN]);
++	user_class_value[data[OPT_LEN]] = '\0';
++
++	/* end position + string length + option code/length+miniLen + end option */
++	if (end + data[OPT_LEN] + 2 + 2 + 1 >= OUT_OPTIONS_LENGTH) {
++		LOG(LOG_ERR, "User class option 0x%02x did not fit into the packet!", data[OPT_CODE]);
++		free(user_class_value);
++		return 0;
++	}
++	DEBUG(LOG_INFO, "Adding user class option 0x%02x\noptionvalue:%s\n", data[OPT_CODE],user_class_value);
++
++	tokenPtr = strtok((char*)user_class_value,",");
++	if(tokenPtr == NULL){ 
++	  //If any instances of User Class Data are present, the minimum value of 
++	  //Len is two (Len = UC_Len_1 + 1 = 1 + 1 = 2)
++		option_value_ptr[option_value_len] = 1;
++		option_value_len ++;
++		option_value_ptr[option_value_len] = 0;
++		option_value_len ++;
++	}	
++	while(tokenPtr!=NULL)
++	{
++    //The length of the option as specified in Len must be the sum of 
++		//the lengths of each of the class names plus m: 
++		//Len= UC_Len_1 + UC_Len_2 + ... + UC_Len_m + m
++		option_value_ptr[option_value_len] = strlen(tokenPtr);
++		option_value_len ++;
++		memcpy(option_value_ptr + option_value_len, tokenPtr, strlen(tokenPtr));
++		option_value_len += strlen(tokenPtr);
++		DEBUG(LOG_INFO, "totalLen:%d sub option Len:%d  value:%s\n", option_value_len, strlen(tokenPtr),tokenPtr);
++
++		tokenPtr=strtok(NULL,",");
++	}
++	DEBUG(LOG_INFO, "totalLen:%d\n", option_value_len);
++	optionptr[end + OPT_CODE] = data[OPT_CODE];
++	optionptr[end + OPT_LEN] = option_value_len;
++	optionptr[end + option_value_len + 2] = DHCP_END;
++	free(user_class_value);
++	return option_value_len + 2;
++}
++
++/* add an option to a packet */
++int add_option(unsigned char *optionptr, unsigned char code, u_int8_t* data, u_int8_t datalen)
++{
++	unsigned char *option;
++	int result = 0;
++        option = (unsigned char*) xmalloc(datalen+2);
++        if (option == NULL) {
++          return 0;
++        }
++	option[OPT_CODE] = code;
++	option[OPT_LEN] = datalen;
++
++	memcpy(option + OPT_DATA, data, datalen);
++	result = add_option_string(optionptr, option);
++        free(option);
++        return result;
++}
++
+ 
+ /* add a one to four byte option to a packet */
+ int add_simple_option(unsigned char *optionptr, unsigned char code, u_int32_t data)

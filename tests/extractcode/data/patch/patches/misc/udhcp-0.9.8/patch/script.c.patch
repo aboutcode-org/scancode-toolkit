@@ -1,0 +1,168 @@
+Index: udhcp-0.9.8/script.c
+===================================================================
+--- udhcp-0.9.8.orig/script.c
++++ udhcp-0.9.8/script.c
+@@ -41,6 +41,7 @@
+ static int max_option_length[] = {
+ 	[OPTION_IP] =		sizeof("255.255.255.255 "),
+ 	[OPTION_IP_PAIR] =	sizeof("255.255.255.255 ") * 2,
++	[OPTION_ROUTE] =	sizeof("255.255.255.255 ") * 3,
+ 	[OPTION_STRING] =	1,
+ 	[OPTION_BOOLEAN] =	sizeof("yes "),
+ 	[OPTION_U8] =		sizeof("255 "),
+@@ -59,7 +60,32 @@ static int upper_length(int length, stru
+ 
+ 
+ static int sprintip(char *dest, char *pre, unsigned char *ip) {
+-	return sprintf(dest, "%s%d.%d.%d.%d ", pre, ip[0], ip[1], ip[2], ip[3]);
++	return sprintf(dest, "%s%d.%d.%d.%d", pre, ip[0], ip[1], ip[2], ip[3]);
++}
++
++
++static int sprintroute(char *dest, unsigned char *route) {
++ 	int dest_length = (route[0] >> 3) + !!(route[0] & 7);
++ 	unsigned char* router = route + dest_length + 1;
++ 	unsigned char ip[4];
++ 	unsigned char netmask[4];
++ 	unsigned int* temp = (unsigned int*)netmask;
++ 	int i;
++ 	for (i = 0; i < 4; ++i) {
++ 		if (i < dest_length) {
++ 			ip[i] = route[i + 1];
++ 		} else {
++ 			ip[i] = 0;
++ 		}
++ 		netmask[i] = 0;
++ 	}
++ 	for (i = 0; i < route[0]; ++i) {
++ 		*temp |= (1L << i);
++ 	}
++ 	return sprintf(dest, "%d.%d.%d.%d/%d.%d.%d.%d/%d.%d.%d.%d ",
++ 		       ip[0], ip[1], ip[2], ip[3],
++ 		       router[0], router[1], router[2], router[3],
++ 		       netmask[0], netmask[1], netmask[2], netmask[3]);
+ }
+ 
+ 
+@@ -83,9 +109,15 @@ static void fill_options(char *dest, uns
+ 			dest += sprintip(dest, "", option);
+ 			*(dest++) = '/';
+ 			option += 4;
++			len -= 4;
+ 			optlen = 4;
+ 		case OPTION_IP:	/* Works regardless of host byte order. */
+ 			dest += sprintip(dest, "", option);
++			*(dest++) = ' ';
++ 			break;
++		case OPTION_ROUTE:
++			dest += sprintroute(dest, option);
++			optlen = 1 + (option[0] >> 3) + !!(option[0] & 7) + 4;
+  			break;
+ 		case OPTION_BOOLEAN:
+ 			dest += sprintf(dest, *option ? "yes " : "no ");
+@@ -118,6 +150,8 @@ static void fill_options(char *dest, uns
+ 		len -= optlen;
+ 		if (len <= 0) break;
+ 	}
++	/* Remove last space */
++	*(dest - 1) = '\0';
+ }
+ 
+ 
+@@ -147,9 +181,27 @@ static char **fill_envp(struct dhcpMessa
+ 	if (packet == NULL)
+ 		num_options = 0;
+ 	else {
+-		for (i = 0; options[i].code; i++)
+-			if (get_option(packet, options[i].code))
+-				num_options++;
++		for (i = 0; options[i].code; i++) {
++                        if ((temp = get_option(packet, options[i].code))) {
++                                if (options[i].code == 43) {
++                                        u_int8_t total_length = *(temp - 1);
++                                        while (total_length > 0) {
++                                                temp++;
++                                                u_int8_t option_length = *temp++;
++                                                if (option_length > total_length) {
++                                                        LOG(LOG_WARNING, "option 43 field too long.");
++                                                        break;
++                                                }
++                                                total_length -= option_length + 2;
++                                                temp += option_length;
++                                                num_options++;
++                                        }
++                                }
++                                else {
++                                        num_options++;
++                                }
++                        }
++                }
+ 		if (packet->siaddr) num_options++;
+ 		if ((temp = get_option(packet, DHCP_OPTION_OVER)))
+ 			over = *temp;
+@@ -157,24 +209,57 @@ static char **fill_envp(struct dhcpMessa
+ 		if (!(over & SNAME_FIELD) && packet->sname[0]) num_options++;		
+ 	}
+ 	
+-	envp = xmalloc((num_options + 5) * sizeof(char *));
++	envp = xmalloc((num_options + 6) * sizeof(char *));
+ 	envp[0] = xmalloc(sizeof("interface=") + strlen(client_config.interface));
+ 	sprintf(envp[0], "interface=%s", client_config.interface);
+ 	envp[1] = find_env("PATH", "PATH=/bin:/usr/bin:/sbin:/usr/sbin");
+ 	envp[2] = find_env("HOME", "HOME=/");
+ 
++	j = 3;
++	if (client_config.address_renewal_behaviour) {
++	  envp[j] = xmalloc(sizeof("address_renewal_behaviour=0"));
++	  sprintf(envp[j++], "address_renewal_behaviour=%d", client_config.address_renewal_behaviour);
++	}
++
+ 	if (packet == NULL) {
+-		envp[3] = NULL;
++		envp[j] = NULL;
+ 		return envp;
+ 	}
+ 
+-	envp[3] = xmalloc(sizeof("ip=255.255.255.255"));
+-	sprintip(envp[3], "ip=", (unsigned char *) &packet->yiaddr);
+-	for (i = 0, j = 4; options[i].code; i++) {
++	envp[j] = xmalloc(sizeof("ip=255.255.255.255"));
++	sprintip(envp[j++], "ip=", (unsigned char *) &packet->yiaddr);
++	for (i = 0; options[i].code; i++) {
+ 		if ((temp = get_option(packet, options[i].code))) {
+-			envp[j] = xmalloc(upper_length(temp[OPT_LEN - 2], &options[i]) + strlen(options[i].name) + 2);
+-			fill_options(envp[j], temp, &options[i]);
+-			j++;
++                        if (options[i].code == 43) {
++                                u_int8_t total_length = *(temp - 1);
++                                while (total_length > 0) {
++                                        u_int8_t code = *temp++;
++                                        u_int8_t option_length = *temp++;
++                                        if (option_length > total_length) {
++                                                LOG(LOG_WARNING, "option 43 field too long.");
++                                                break;
++                                        }
++                                        envp[j] = xmalloc(13 + option_length + 1);
++                                        char* dest = envp[j];
++                                        dest += sprintf(dest, "option43_%03u=", code);
++                                        memcpy(dest, temp, option_length);
++                                        dest[option_length] = '\0';
++                                        temp += option_length;
++                                        total_length -= option_length + 2;
++                                        j++;
++                                }
++                        }
++                        else if (options[i].code == 125) {
++                          // skip exporting this to env. Already
++                          // parsed in parse_gatewayidentity in clientpacket.c
++                          // j++; // Fixed BUGZ:12095, should not increase j for skip exporting.
++                        }
++                        else {
++                                envp[j] = xmalloc(upper_length(temp[OPT_LEN - 2],
++                                                               &options[i]) + strlen(options[i].name) + 2);
++                                fill_options(envp[j], temp, &options[i]);
++                                j++;
++                        }
+ 		}
+ 	}
+ 	if (packet->siaddr) {

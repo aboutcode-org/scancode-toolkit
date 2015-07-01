@@ -1,0 +1,14 @@
+about_resource: certifi-2015.04.28-py2.py3-none-any.whl
+version: 2015.04.28
+description: Python package for providing Mozilla's CA Bundle.
+
+download_url: https://pypi.python.org/packages/2.7/c/certifi/certifi-2015.04.28-py2.py3-none-any.whl#md5=4b0d6599c8297becffeb369c0b3ef47b
+
+owner: Kenneth Reitz
+contact: me@kennethreitz.com
+home_url: http://certifi.io/
+name: certifi
+
+dje_license: mpl-2.0
+license_text_file: mpl-2.0.LICENSE
+notice_file: certifi.NOTICE

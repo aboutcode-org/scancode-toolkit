@@ -1,0 +1,9 @@
+key: oswego-concurrent
+short_name: Oswego Concurrent License
+name: Oswego Concurrent License
+category: Attribution
+homepage_url: http://g.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/concurrent/intro.html
+text_urls:
+    - http://g.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/concurrent/intro.html
+    - http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/sun-u.c.license.pdf
+faq_url: http://g.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/concurrent/intro.html

@@ -1,0 +1,161 @@
+JGRAPH GENERAL LICENSE STATEMENT AND LIMITED WARRANTY
+IMPORTANT - READ CAREFULLY
+
+This license statement and limited warranty constitutes a legal agreement 
+("License Agreement") between you (either as an individual or a single entity) 
+and JGraph Ltd. for the software product ("Software") identified above, 
+including any software, media, and accompanying on-line or printed 
+documentation.
+
+BY INSTALLING, COPYING, OR OTHERWISE USING THE SOFTWARE, YOU AGREE TO BE BOUND 
+BY ALL OF THE TERMS AND CONDITIONS OF THE LICENSE AGREEMENT.
+
+Upon your acceptance of the terms and conditions of the License Agreement, 
+JGraph Ltd. grants you the right to use the Software in the manner provided 
+below.
+
+This Software is owned by JGraph Ltd. and is protected by copyright law and 
+international copyright treaty. Therefore, you must treat this Software like 
+any other copyrighted material (e.g., a book), except that you may either make 
+one copy of the Software solely for backup or archival purposes or transfer the 
+Software to a single hard disk provided you keep the original solely for backup 
+or archival purposes.
+
+You may transfer the Software and documentation on a permanent basis provided 
+you retain no copies and the recipient agrees to the terms of the License 
+Agreement. Except as provided in the License Agreement, you may not transfer, 
+rent, lease, lend, copy, modify, translate, sublicense, time-share or 
+electronically transmit or receive the Software, media or documentation.
+
+If you are not in receipt of the source code of the Software, you acknowledge
+that the Software is a confidential trade secret of JGraph Ltd. and therefore
+you agree not to reverse engineer, decompile, or disassemble the Software.
+
+ADDITIONAL LICENSE TERMS FOR SOFTWARE
+
+JGraph Ltd. grants to you as an individual, a personal, nonexclusive license 
+to install and use the Software for the sole purposes of designing, developing, 
+testing, and deploying application programs which you create. You may install 
+copies of the Software on computers in a manner consistent with the type of 
+license purchased. A Single Developer License may be installed on a computer 
+and be freely moved from one computer to another, providing that you have 
+purchased a number of Single Developer Licenses equivalent to the maximum 
+possible number of developers using that Software concurrently. A Site 
+Developer License may be installed on any number of computers and be used by 
+any number of developers at any time at one geographical location. A 
+geographical location is defined as a building or site occupied by the 
+employees of one company or organization.
+If you are an entity, JGraph Ltd. grants you the right to designate 
+one individual within your organization ("Named User") to have the right to use 
+the Software in the manner provided above, in the case of the Single Developer 
+License.
+
+GENERAL TERMS THAT APPLY TO COMPILED PROGRAMS AND REDISTRIBUTION
+
+You may write and compile (including byte-code compile) your own application 
+programs using the Software, including any libraries and source code included 
+for such purpose with the Software. You may reproduce and distribute, in 
+executable form only, programs which you create using the Software and 
+accompanying Software libraries without additional license or fees, subject to 
+all of the conditions in this License Agreement.
+
+ADDITIONAL REDISTRIBUTION TERMS FOR SOFTWARE
+
+You may not distribute any program or file which includes, is created from, or 
+otherwise incorporates portions of the Software if such program or file is a 
+general purpose development tool, library, and/or component, or is otherwise 
+generally competitive with or a substitute for any JGraph Ltd. product.
+
+SOURCE CODE
+
+In addition to the license and rights granted, JGraph Ltd. grants you the
+right to use and modify the SOFTWARE source provided you purchased source code.
+
+You may not distribute the SOFTWARE source code, or any modified version or 
+derivative work of the SOFTWARE source code, in source code form.
+
+The source code contained herein and in related files is provided to the 
+registered developer for the purposes of education and troubleshooting. Under 
+no circumstances may any portion of the source code be distributed, disclosed 
+or otherwise made available to any third party without the express written 
+consent of JGraph Ltd. 
+
+Under no circumstances may the source code be used in whole or in part, as the 
+basis for creating a product that provides the same, or substantially the same, 
+functionality as any JGraph Ltd. product.
+
+The registered developer acknowledges that this source code contains valuable 
+and proprietary trade secrets of JGraph Ltd. The registered developer agrees 
+to expend every effort to insure its confidentiality.
+
+SOURCE CODE IS SOLD AS IS. JGRAPH LTD. DOES NOT PROVIDE ANY TECHNICAL SUPPORT 
+FOR SOURCE CODE.
+
+MARKETING
+
+JGraph Ltd is permitted to reference you as a user of the Software in customer 
+lists on the JGraph web-site, in presentations to clients and at trade events.
+
+LIMITED WARRANTY
+
+JGraph Ltd. warrants that the Software, as updated and when properly used, 
+will perform substantially in accordance with the accompanying documentation, 
+and the Software media will be free from defects in materials and workmanship, 
+for a period of ninety (90) days from the date of receipt. Any implied 
+warranties on the Software are limited to ninety (90) days. Some 
+states/jurisdictions do not allow limitations on duration of an implied 
+warranty, so the above limitation may not apply to you.
+
+This Limited Warranty is void if failure of the Software has resulted from 
+accident, abuse, or misapplication. Any replacement Software will be warranted 
+for the remainder of the original warranty period or thirty (30) days, 
+whichever is longer. 
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, JGRAPH LTD. AND ITS 
+SUPPLIERS DISCLAIM ALL OTHER WARRANTIES AND CONDITIONS, EITHER EXPRESS OR 
+IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT, WITH REGARD TO 
+THE SOFTWARE, AND THE PROVISION OF OR FAILURE TO PROVIDE SUPPORT SERVICES. THIS 
+LIMITED WARRANTY GIVES YOU SPECIFIC LEGAL RIGHTS. YOU MAY HAVE OTHERS, WHICH 
+VARY FROM STATE/JURISDICTION TO STATE/JURISDICTION.
+
+LIMITATION OF LIABILITY TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN 
+NO EVENT SHALL JGRAPH LTD. OR ITS SUPPLIERS BE LIABLE FOR ANY SPECIAL, 
+INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT 
+LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS 
+OF BUSINESS INFORMATION, OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OF 
+OR INABILITY TO USE THE SOFTWARE PRODUCT OR THE PROVISION OF OR FAILURE TO 
+PROVIDE SUPPORT SERVICES, EVEN IF JGRAPH LTD. HAS BEEN ADVISED OF THE 
+POSSIBILITY OF SUCH DAMAGES. BECAUSE SOME STATES AND JURISDICTIONS DO NOT 
+ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY, THE ABOVE LIMITATION MAY NOT 
+APPLY TO YOU.
+
+HIGH RISK ACTIVITIES
+
+The Software is not fault-tolerant and is not designed, manufactured or 
+intended for use or resale as on-line control equipment in hazardous 
+environments requiring fail-safe performance, such as in the operation of 
+nuclear facilities, aircraft navigation or communication systems, air traffic 
+control, direct life support machines, or weapons systems, in which the failure 
+of the Software could lead directly to death, personal injury, or severe 
+physical or environmental damage ("High Risk Activities"). JGraph Ltd. and
+its suppliers specifically disclaim any express or implied warranty of fitness 
+for High Risk Activities.
+
+GENERAL PROVISIONS
+
+This License Agreement may only be modified in writing signed by you and
+JGraph Ltd. If any provision of this License Agreement is found void or 
+unenforceable, the remainder will remain valid and enforceable according to its
+terms. If any remedy provided is determined to have failed for its essential
+purpose, all limitations of liability and exclusions of damages set forth in 
+the Limited Warranty shall remain in effect.
+
+GOVERNING LAW AND JURISDICTION
+
+This Agreement shall be subject to and governed by the _Law of England and 
+Wales_. Any dispute arising out of or in connection with this Agreement shall 
+be exclusively dealt with by the courts of England and Wales. This License 
+Agreement gives you specific legal rights; you may have others which vary from 
+state to state and from country to country. JGraph Ltd. reserves all rights not 
+specifically granted in this License Agreement.

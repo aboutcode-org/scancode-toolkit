@@ -1,0 +1,9 @@
+key: qhull
+short_name: Qhull License
+name: Qhull License
+category: Copyleft Limited
+owner: Geometry Center
+homepage_url: https://fedoraproject.org/wiki/Licensing:Qhull?rd=Licensing/Qhull
+spdx_license_key: Qhull
+spdx_full_name: Qhull License
+spdx_url: http://spdx.org/licenses/Qhull

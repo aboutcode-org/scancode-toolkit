@@ -1,0 +1,3 @@
+[('libiconv-1.11.orig/Makefile.in',
+  'libiconv-1.11/Makefile.in',
+  '--- libiconv-1.11.orig/Makefile.in\n+++ libiconv-1.11/Makefile.in\n@@ -29,6 +29,9 @@\n\nSHELL = /bin/sh\n\n+libiconv.so : lib/localcharset.h force\n+\tcd lib && $(MAKE) all\n+\nall : lib/localcharset.h force\ncd lib && $(MAKE) all\ncd srclib && $(MAKE) all')]

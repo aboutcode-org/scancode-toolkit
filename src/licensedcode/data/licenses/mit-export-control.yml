@@ -1,0 +1,12 @@
+key: mit-export-control
+short_name: MIT with Export Control
+name: MIT with Export Control
+category: Attribution
+owner: Xerox PARC
+homepage_url: https://fedoraproject.org/wiki/Licensing:Xerox?rd=Licensing/Xerox
+spdx_license_key: Xerox
+spdx_full_name: Xerox License
+spdx_url: http://spdx.org/licenses/Xerox
+spdx_notes: >-
+    Per Fedora: "This license is very similar to MIT, except that it requires that
+    US Export Control laws be followed, which makes it GPL-Incompatible."

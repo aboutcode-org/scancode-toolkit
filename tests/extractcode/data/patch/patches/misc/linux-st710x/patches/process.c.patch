@@ -1,0 +1,70 @@
+--- linux-2.6.23/arch/sh/kernel/process.c.orig	2009-09-26 10:47:37.000000000 +0200
++++ linux-2.6.23/arch/sh/kernel/process.c	2009-09-26 10:48:50.000000000 +0200
+@@ -20,6 +20,7 @@
+ #include <linux/reboot.h>
+ #include <linux/fs.h>
+ #include <linux/preempt.h>
++#include <linux/notifier.h>
+ #include <asm/uaccess.h>
+ #include <asm/mmu_context.h>
+ #include <asm/pgalloc.h>
+@@ -28,6 +29,7 @@
+ #include <asm/watchdog.h>
+ 
+ static int hlt_counter;
++static ATOMIC_NOTIFIER_HEAD(restart_notifier_list);
+ int ubc_usercnt = 0;
+ 
+ void (*pm_idle)(void);
+@@ -98,20 +100,47 @@
+ 	}
+ }
+ 
+-static void watchdog_trigger_immediate(void)
++int register_machine_restart_notifier(struct notifier_block * nb)
+ {
+-	sh_wdt_write_cnt(0xFF);
+-	sh_wdt_write_csr(0xC2);
++	return atomic_notifier_chain_register(&restart_notifier_list, nb);
++}
++int unregister_machine_restart_notifier(struct notifier_block * nb)
++{
++	return atomic_notifier_chain_unregister(&restart_notifier_list, nb);
+ }
++EXPORT_SYMBOL(register_machine_restart_notifier);
++EXPORT_SYMBOL(unregister_machine_restart_notifier);
+ 
+ void machine_restart(char *__unused)
+ {
++	__u8 csr;
++	atomic_notifier_call_chain(&restart_notifier_list, 0, NULL);
++	printk("Watchdog reset!\n");
+ 	/* Use watchdog timer to trigger reset */
+ 	local_irq_disable();
+-	watchdog_trigger_immediate();
++	csr = sh_wdt_read_csr();
++	csr &= ~WTCSR_CKS_4096;
++	csr &= ~WTCSR_TME;
++#ifdef CONFIG_CPU_SUBTYPE_STX7105
++#define WTCSR2 0xFFC0001C
++	csr |= WTCSR_WT | WTCSR_CKS_1024;
++	sh_wdt_write_csr(csr);
++	ctrl_outw(0xAA01,WTCSR2);
++	sh_wdt_write_cnt(0xFF);
++#else
++	csr |= WTCSR_WT | WTCSR_CKS_4096;
++	sh_wdt_write_csr(csr);
++	sh_wdt_write_cnt(0);
++#endif
++	csr = sh_wdt_read_csr();
++	csr |= WTCSR_TME;
++	csr &= ~WTCSR_RSTS;
++	sh_wdt_write_csr(csr);
+ 	while (1) {};
+ }
+ 
++EXPORT_SYMBOL(machine_restart);
++
+ void machine_halt(void)
+ {
+ 	local_irq_disable();

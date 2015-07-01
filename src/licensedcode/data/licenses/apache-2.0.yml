@@ -1,0 +1,16 @@
+key: apache-2.0
+short_name: Apache 2.0
+name: Apache License 2.0
+category: Attribution
+owner: Apache Software Foundation
+homepage_url: http://www.apache.org/licenses/
+spdx_license_key: Apache-2.0
+spdx_full_name: Apache License 2.0
+spdx_url: http://spdx.org/licenses/Apache-2.0
+spdx_notes: |-
+    This version was released: January 2004
+    This license is OSI certified
+text_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+osi_url: http://opensource.org/licenses/apache2.0.php
+faq_url: http://www.apache.org/foundation/licence-FAQ.html

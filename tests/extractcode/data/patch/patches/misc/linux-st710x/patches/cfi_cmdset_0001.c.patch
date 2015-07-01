@@ -1,0 +1,75 @@
+--- linux-2.6.23/drivers/mtd/chips/cfi_cmdset_0001.c.orig	2009-02-11 13:09:32.000000000 +0100
++++ linux-2.6.23/drivers/mtd/chips/cfi_cmdset_0001.c	2009-02-11 13:05:21.000000000 +0100
+@@ -39,11 +39,15 @@
+ #include <linux/mtd/compatmac.h>
+ #include <linux/mtd/cfi.h>
+ 
++#ifdef CONFIG_SH_MOTOROLA_VIP19XX
++#include <asm/vip19xx.h>
++#endif
++
+ /* #define CMDSET0001_DISABLE_ERASE_SUSPEND_ON_WRITE */
+ /* #define CMDSET0001_DISABLE_WRITE_SUSPEND */
+ 
+ // debugging, turns off buffer write mode if set to 1
+-#define FORCE_WORD_WRITE 0
++#define FORCE_WORD_WRITE 1
+ 
+ #define MANUFACTURER_INTEL	0x0089
+ #define I82802AB	0x00ad
+@@ -103,7 +107,7 @@
+ };
+ 
+ #undef DEBUG_LOCK_BITS
+-#define DEBUG_CFI_FEATURES
++#undef DEBUG_CFI_FEATURES
+ 
+ #ifdef DEBUG_CFI_FEATURES
+ static void cfi_tell_features(struct cfi_pri_intelext *extp)
+@@ -656,6 +660,9 @@
+ 	map_word status, status_OK = CMD(0x80), status_PWS = CMD(0x01);
+ 	unsigned long timeo;
+ 	struct cfi_pri_intelext *cfip = cfi->cmdset_priv;
++#ifdef CONFIG_SH_MOTOROLA_VIP19XX
++	void __iomem *emi;
++#endif
+ 
+  resettime:
+ 	timeo = jiffies + HZ;
+@@ -716,6 +723,13 @@
+ 		spin_unlock(&shared->lock);
+ 	}
+ 
++#ifdef CONFIG_SH_MOTOROLA_VIP19XX
++	/* Enable chip select on the EMI */
++	emi = ioremap_nocache(VIP19XX_EMI_CONFIG_BASE, VIP19XX_EMI_CONFIG_SIZE);
++	VIP19XX_EMI_ENABLE_CS(emi, VIP19XX_NOR_FLASH_EMI_BANK);
++	iounmap(emi);
++#endif
++
+ 	switch (chip->state) {
+ 
+ 	case FL_STATUS:
+@@ -820,6 +834,9 @@
+ static void put_chip(struct map_info *map, struct flchip *chip, unsigned long adr)
+ {
+ 	struct cfi_private *cfi = map->fldrv_priv;
++#ifdef CONFIG_SH_MOTOROLA_VIP19XX
++	void __iomem *emi;
++#endif
+ 
+ 	if (chip->priv) {
+ 		struct flchip_shared *shared = chip->priv;
+@@ -888,6 +905,12 @@
+ 	default:
+ 		printk(KERN_ERR "%s: put_chip() called with oldstate %d!!\n", map->name, chip->oldstate);
+ 	}
++#ifdef CONFIG_SH_MOTOROLA_VIP19XX
++	/* Disable chip select on the EMI */
++	emi = ioremap_nocache(VIP19XX_EMI_CONFIG_BASE, VIP19XX_EMI_CONFIG_SIZE);
++	VIP19XX_EMI_DISABLE_CS(emi, VIP19XX_NOR_FLASH_EMI_BANK);
++	iounmap(emi);
++#endif
+ 	wake_up(&chip->wq);
+ }
+ 

@@ -1,0 +1,4 @@
+This product includes RXTX serial library which is licensed under
+LGPL and Suns javax.comm library licensed under Suns Binary Code
+License Agreement. See osgi/bundles_opt/serial/readme.txt for more
+information.

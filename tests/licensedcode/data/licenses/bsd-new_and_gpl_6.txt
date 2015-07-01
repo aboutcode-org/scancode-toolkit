@@ -1,0 +1,4 @@
+
+#ifdef MODULE_LICENSE
+MODULE_LICENSE("Dual BSD/GPL");
+#endif

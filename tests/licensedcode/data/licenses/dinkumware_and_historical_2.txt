@@ -1,0 +1,49 @@
+// list standard header
+
+#if     _MSC_VER > 1000
+#pragma once
+#endif
+
+/* This file is for use only in conjunction with a valid license for
+Microsoft Visual C++ V5.0. Microsoft Corporation is in no way involved
+with the production or release of this file. The file is offered on an
+``as is'' basis.
+
+DINKUMWARE, LTD. AND P.J. PLAUGER MAKE NO REPRESENTATIONS OR WARRANTIES
+ABOUT THE SUITABILITY OF THIS FILE, EITHER EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. DINKUMWARE, LTD.
+AND P.J. PLAUGER SHALL NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY
+LICENSEE AS A RESULT OF USING THIS FILE.
+
+For additional information, contact Dinkumware, Ltd. (+1-888-4DINKUM or
+support@dinkumware.com).
+ */
+
+#ifndef _LIST_
+#define _LIST_
+#include <cstddef>
+
+#endif /* _LIST_ */
+
+/*
+ * Copyright (c) 1995 by P.J. Plauger.  ALL RIGHTS RESERVED. 
+ * Consult your license regarding permissions and restrictions.
+ */
+
+/*
+ * This file is derived from software bearing the following
+ * restrictions:
+ *
+ * Copyright (c) 1994
+ * Hewlett-Packard Company
+ *
+ * Permission to use, copy, modify, distribute and sell this
+ * software and its documentation for any purpose is hereby
+ * granted without fee, provided that the above copyright notice
+ * appear in all copies and that both that copyright notice and
+ * this permission notice appear in supporting documentation.
+ * Hewlett-Packard Company makes no representations about the
+ * suitability of this software for any purpose. It is provided
+ * "as is" without express or implied warranty.
+ */

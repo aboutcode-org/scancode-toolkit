@@ -1,0 +1,13 @@
+key: cc-by-sa-2.5
+short_name: CC-BY-SA-2.5
+name: >-
+    Creative Commons Attribution Share Alike License 2.5
+category: Copyleft Limited
+owner: Creative Commons
+homepage_url: http://creativecommons.org/licenses/by-sa/2.5/
+spdx_license_key: CC-BY-SA-2.5
+spdx_full_name: >-
+    Creative Commons Attribution Share Alike 2.5
+spdx_url: http://spdx.org/licenses/CC-BY-SA-2.5
+text_urls:
+    - http://creativecommons.org/licenses/by-sa/2.5/legalcode

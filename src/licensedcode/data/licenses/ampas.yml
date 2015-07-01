@@ -1,0 +1,13 @@
+key: ampas
+short_name: AMPAS BSD-Style License
+name: >-
+    Academy of Motion Picture Arts and Sciences BSD-Style
+category: Attribution
+owner: AMPAS
+homepage_url: https://fedoraproject.org/wiki/Licensing/BSD#AMPASBSD
+spdx_license_key: AMPAS
+spdx_full_name: >-
+    Academy of Motion Picture Arts and Sciences BSD
+spdx_url: http://spdx.org/licenses/AMPAS
+text_urls:
+    - https://fedoraproject.org/wiki/Licensing/BSD#AMPASBSD

@@ -1,0 +1,92 @@
+--- C:\Documents and Settings\Administrator\Desktop\siftDemoV4_old\defs.h	Thu Jul 07 21:54:12 2005
++++ C:\Documents and Settings\Administrator\Desktop\siftDemoV4\defs.h	Mon Dec 19 16:29:52 2005
+@@ -58,3 +58,4 @@
+ void DrawLine(Image image, int r1, int c1, int r2, int c2);
+ Keypoint ReadKeyFile(char *filename);
+ Keypoint ReadKeys(FILE *fp);
++FILE *OpenOutputFile(char *filename);
+--- C:\Documents and Settings\Administrator\Desktop\siftDemoV4_old\match.c	Thu Jul 07 21:54:12 2005
++++ C:\Documents and Settings\Administrator\Desktop\siftDemoV4\match.c	Mon Dec 19 16:25:28 2005
+@@ -12,7 +12,7 @@
+ 
+ /* -------------------- Local function prototypes ------------------------ */
+ 
+-void FindMatches(Image im1, Keypoint keys1, Image im2, Keypoint keys2);
++void FindMatches(Image im1, Keypoint keys1, Image im2, Keypoint keys2, FILE *fp);
+ Keypoint CheckForMatch(Keypoint key, Keypoint klist);
+ int DistSquared(Keypoint k1, Keypoint k2);
+ Image CombineImagesVertically(Image im1, Image im2);
+@@ -28,6 +28,7 @@
+     int arg = 0;
+     Image im1 = NULL, im2 = NULL;
+     Keypoint k1 = NULL, k2 = NULL;
++	FILE *fp = NULL;
+ 
+     /* Parse command line arguments and read given files.  The command
+        line must specify two input images and two files of keypoints
+@@ -43,13 +44,15 @@
+ 	k1 = ReadKeyFile(argv[++arg]);
+       else if (! strcmp(argv[arg], "-k2"))
+ 	k2 = ReadKeyFile(argv[++arg]);
+-      else
++      else if (! strcmp(argv[arg], "-o"))
++	fp = OpenOutputFile(argv[++arg]);
++	  else
+ 	FatalError("Invalid command line argument: %s", argv[arg]);
+     }
+-    if (im1 == NULL || im2 == NULL || k1 == NULL || k2 == NULL)
+-      FatalError("Command line does not specify all images and keys.");
++    if (im1 == NULL || im2 == NULL || k1 == NULL || k2 == NULL || fp == NULL)
++      FatalError("Command line does not specify all images, keys or output");
+ 
+-    FindMatches(im1, k1, im2, k2);
++    FindMatches(im1, k1, im2, k2, fp);
+     exit(0);
+ }
+ 
+@@ -58,7 +61,7 @@
+    from one image and find its closest match in the second set of
+    keypoints.  Then write the result to a file.
+ */
+-void FindMatches(Image im1, Keypoint keys1, Image im2, Keypoint keys2)
++void FindMatches(Image im1, Keypoint keys1, Image im2, Keypoint keys2, FILE *fp)
+ {
+     Keypoint k, match;
+     Image result;
+@@ -84,7 +87,7 @@
+     }
+ 
+     /* Write result image to standard output. */
+-    WritePGM(stdout, result);
++    WritePGM(fp, result);
+     fprintf(stderr,"Found %d matches.\n", count);
+ }
+ 
+--- C:\Documents and Settings\Administrator\Desktop\siftDemoV4_old\util.c	Thu Jul 07 21:54:12 2005
++++ C:\Documents and Settings\Administrator\Desktop\siftDemoV4\util.c	Mon Dec 19 16:25:17 2005
+@@ -78,6 +78,25 @@
+     return (m);
+ }
+ 
++/*----------------- Open output PGM file ------------------------*/
++
++
++/* This opens a PGM file from a given filename and returns the file pointer
++*/
++FILE *OpenOutputFile(char *filename)
++{
++    FILE *file;
++
++    /* The "b" option is for binary input, which is needed if this is
++       compiled under Windows.  It has no effect in Linux.
++    */
++    file = fopen (filename, "wb");
++    if (! file)
++	FatalError("Could not open file: %s", filename);
++
++    return file;
++}
++
+ 
+ /*----------------- Read and write PGM files ------------------------*/
+ 

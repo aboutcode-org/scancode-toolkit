@@ -1,0 +1,12 @@
+about_resource: execnet-1.3.0-py2.py3-none-any.whl
+download_url: https://pypi.python.org/packages/source/e/execnet/execnet-1.3.0.tar.gz
+version: 1.3.0
+
+name: execnet
+description: execnet: rapid multi-Python deployment
+home_url: http://codespeak.net/execnet
+owner: holger krekel and others
+contact: holger at merlinux.eu
+dje_license: mit
+license_text_file: execnet.LICENSE
+copyright: Copyright Holger Krekel and others, 2004-2014

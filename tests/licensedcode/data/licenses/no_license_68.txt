@@ -1,0 +1,568 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+  
+  
+  
+
+
+<html>
+  <head>
+    
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Hello World Using Java - Closure Templates - Google Code</title>
+<script type="text/javascript"><!--
+(function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
+
+var _tocPath_ = '_toc.ezt';
+var codesite_token = '051f4fbd3dccd322a65321510313b425';
+var logged_in_user_email = 'savino.sguera@gmail.com';
+//--></script>
+<link href="/css/codesite.pack.04102009.css" type="text/css" rel="stylesheet">
+<script src="/js/codesite_head.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('bhs');</script>
+<link rel="search" type="application/opensearchdescription+xml" title="Google Code" href="/osd.xml">
+
+<!--[if IE]><link rel="stylesheet" type="text/css" href="/css/iehacks.css"><![endif]-->
+
+    <link href="/css/semantic_headers.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="gc-documentation">
+
+    
+    
+    <div id="gb">
+ <span>
+  
+   
+    <b>savino.sguera@gmail.com</b>
+    |
+   
+    <a href="/u/savino.sguera/"
+       id="projects-dropdown" onclick="return false;"
+       ><span style="text-decoration:underline">My favorites</span> <span style="font-size:.75em;">&#9660;</span></a>
+    |
+  
+    <a id="lang-dropdown" class="dropdown" href="/" onclick="return false;"><img width="13" height="13" class="globeicon" src="/images/globe2_small.png"
+     ><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
+  
+   
+    | <a href="http://www.google.com/accounts/Logout?continue=http%3A%2F%2Fcode.google.com%2Fintl%2Fit-IT%2Fclosure%2Ftemplates%2Fdocs%2Fhelloworld_java.html" onclick="CODESITE_click('/gb/sc/signout');"><span style="text-decoration:underline">Sign out</span></a>
+   
+  
+ </span>
+</div>
+
+<div class="gbh" style="left:0px;"></div>
+<div class="gbh" style="right:0px;"></div>
+
+<div id="gc-container" class="labs">
+<a id="top"></a>
+<div id="skipto">
+  <a href="#gc-pagecontent">Skip to page content</a>
+  <a href="#gc-toc">Skip to main navigation</a>
+</div>
+
+<div id="gc-header">
+  <div id="logo"><a href="/">
+  
+  
+     <img src="/images/code_labs_logo.gif" height="43" width="161" alt="Google Code Labs" style="border:0;">
+  
+  
+  </a></div>
+  <div id="search">
+    <div id="searchForm" class="searchForm">
+      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" class="gsc-search-box" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
+      <noscript>
+      <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml">
+      </noscript>
+      <div id="gsc-search-box">
+        <input id="gsearchInput" type="text" name="q" maxlength="2048" class="gsc-input" autocomplete="off" title="Google Code Search" style="width:345px">
+        <div id="cs-searchresults" onclick="event.cancelBubble = true;"></div>
+        <input title="Search" id="gsearchButton" class="gsc-search-button" name="sa" value="Search" type="submit">
+        <div class="greytext">e.g. "ajax apis" or "open source"</div>
+      </div>
+      </form>
+    </div> <!-- end searchForm -->
+  </div> <!-- end search -->
+
+
+
+
+</div> <!-- end gc-header -->
+
+
+<div id="codesiteContent">
+
+<a id="gc-topnav-anchor"></a>
+<div id="gc-topnav">
+  <h1>Closure Templates (<a href="/labs/">Labs</a>)</h1>
+  <ul id="docs" class="gc-topnav-tabs">
+
+    <li id="home_link">
+      <a href="/closure/templates/index.html" title="Closure Templates home page">Home</a>
+    </li>
+  
+    <li id="docs_link">
+      <a href="/closure/templates/docs/overview.html" class="selected" title="Official Closure Templates documentation">Docs</a>
+    </li>
+  
+    <li id="faq_link">
+      <a href="/closure/templates/faq.html" title="Answers to frequently asked questions about Closure Templates">FAQ</a>
+    </li>
+  
+    <li>
+      <a href="/closure/templates/community.html" title="Community home for Closure Templates">Community</a>
+    </li>
+  
+
+  </ul>
+</div> <!-- end gc-topnav -->
+
+    <div class="g-section g-tpl-170">
+
+      <div class="g-unit g-first" id="gc-toc">
+        <ul>
+  <li><h2><a href="overview.html">Documentation</a></h2>
+    <ul>
+        <li><a href="helloworld_js.html">Hello World Using JavaScript</a></li>
+        <li><a href="helloworld_java.html">Hello World Using Java</a></li>
+        <li><a href="concepts.html">Concepts</a></li>
+        <li><a href="commands.html">Commands</a></li>
+        <li><a href="javascript_usage.html">JavaScript Usage</a></li>
+        <li><a href="java_usage.html">Java Usage</a></li>
+        <li><a href="translation.html">Translation</a></li>
+        <li><a href="bidi_support.html">Bidi Support</a></li>
+        <li><a href="plugins.html">Plugins</a></li>
+    </ul>
+  </li>
+  <li><a href="/closure/">Closure Tools Home</a></li> 
+</ul>
+
+        <a class="hidden" href="#gc-topnav-anchor">More Closure Templates resource links</a>
+      </div>
+
+      <div class="g-unit" id="gc-pagecontent">
+        <h1 class="page_title">Hello World Using Java</h1>
+
+
+
+<ol class="toc">
+  <li><a href="#helloworld">Hello World</a></li>
+  <li><a href="#hellonames">Hello Name and Hello Names</a></li>
+  <li><a href="#guice">Using Guice</a></li>
+  <li><a href="#soyparseinfogenerator">Using SoyParseInfoGenerator</a></li>
+</ol>
+
+<h2 id="helloworld">Hello World</h2>
+
+<p>Follow these steps to create a simple Hello World template and use it in Java:</p>
+
+<ol>
+<li><p>Download <a href="http://closure-templates.googlecode.com/files/closure-templates-for-java-latest.zip"><code>closure-templates-for-java-latest.zip</code></a> from the Closure Templates project hosting site.
+</p>
+<p>This archive contains the following files:</p>
+
+<ul>
+<li><code>soy-20100426.jar</code> &mdash; A standalone jar file that contains all the Closure Templates classes and their dependencies.</li>
+<li><code>SoyParseInfoGenerator.jar</code> &mdash; A standalone executable jar that parses Soy files and generates Java classes that contain information such as template and parameter names. You will use this file later in the <a href="#soyparseinfogenerator">Using SoyParseInfoGenerator</a> section. </li>
+</ul>
+
+</li>
+
+
+<li><p>Put these files in your working directory, for example in:</p>
+
+<pre>
+~/helloworld_java/
+</pre> </li>
+
+<li><p>All files that contain Closure Templates end with the <code>.soy</code> file extension and are called Soy files. Create a file in this directory called <code>simple.soy</code> and copy this line to the file:</p>
+
+<pre>
+{namespace examples.simple}
+</pre>
+
+  <p>This line declares a namespace for all the templates that you define in this file.</p> </li>
+
+<li><p>Copy the following basic template to the file, making sure that it appears <b>after</b> the namespace declaration:</p>
+<pre>
+/**
+ * Says hello to the world.
+ */
+{template .helloWorld}
+  Hello world!
+{/template}
+
+</pre>
+
+<p>This template simply outputs the text "<code>Hello world!</code>".  It has the partial name <code>.helloWorld</code>, which, when combined with the namespace, forms the fully qualified template name <code>examples.simple.helloWorld</code>.
+</p>
+
+</li>
+
+<li><p>In the same directory as <code>simple.soy</code>, create a file called <code>HelloWorld.java</code> and copy the following contents into the file:</p>
+
+<pre class="prettyprint">
+import com.google.template.soy.SoyFileSet;
+import com.google.template.soy.data.SoyMapData;
+import com.google.template.soy.tofu.SoyTofu;
+
+import java.io.File;
+
+public class HelloWorld {
+
+  public static void main (String[] args) {
+
+    // Bundle the Soy files for your project into a SoyFileSet.
+    SoyFileSet sfs = (new SoyFileSet.Builder()).add(new File("simple.soy")).build();
+
+    // Compile the template into a SoyTofu object.
+    // SoyTofu has a render method that can render all the templates in the SoyFileSet.
+    SoyTofu tofu = sfs.compileToJavaObj();
+
+    // Call the template with no data.
+    System.out.println(tofu.render("examples.simple.helloWorld", (SoyMapData) null, null));
+  }
+
+}
+</pre>
+<p>This example bundles the template files that you specify (in this case, just <code>simple.soy</code>) into a <code>SoyFileSet</code> object, then compiles the bundle into a <code>SoyTofu</code> object form with a call to <code>compileToJavaObj()</code>.  The final line of code calls the template, using the template's fully qualified name <code>examples.simple.helloWorld</code>, and renders its output to standard out.
+</p>
+
+ </li>
+
+<li><p>To try out this example, you'll need to have Java Development Kit (JDK) version 6 installed, with the executables <code>java</code> and <code>javac</code> on your path. Compile the <code>HelloWorld</code> class:</p>
+<pre>
+~/helloworld_java$ javac -classpath soy-20100426.jar HelloWorld.java
+</pre>
+
+</li>
+
+
+<li><p>Run this command to see the rendered template:</p>
+<pre>
+~/helloworld_java$ java -classpath .:soy-20100426.jar HelloWorld
+</pre>
+
+<p>In this example, <code>classpath</code> contains the current directory (for <code>HelloWorld.class</code>) as well as <code>soy-20100426.jar</code> for the <code>HelloWorld</code> class's dependencies.</p>
+
+<p class="note"><b>Note</b>: On Windows, use a semicolon instead of a colon as the path separator.</p>
+<p class="note"><b>Note</b>: On some systems, you might need to use single quotes to delimit your classpath string.</p>
+
+<p>You should see this message at standard out:
+</p>
+<pre>
+Hello world!
+</pre>
+</li>
+
+<p>That's it!  Now that you've created a simple Hello World template and used it in Java, you can try more exercises in the next section.</p>
+
+<h2 id="hellonames">Hello Name and Hello Names</h2>
+
+<li><p>Add the following second template, called <code>.helloName</code>, to <code>simple.soy</code>. Note that <code>.helloName</code> takes a required parameter called <code>name</code>, which is declared by <code>@param</code>.  It also takes an optional parameter <code>greetingWord</code>, which is declared by <code>@param?</code>. These parameters are referenced in the template body using the expressions <code>$name</code> and <code>$greetingWord</code>, respectively.  This template also demonstrates that you can conditionally include content in templates via the <code>if-else</code> commands. You can put this template before or after the <code>.helloWorld</code> template, just as long as it's after the <code>namespace</code> declaration.</p>
+
+<pre>
+/**
+ * Greets a person using "Hello" by default.
+ * @param name The name of the person.
+ * @param? greetingWord Optional greeting word to use instead of "Hello".
+ */
+{template .helloName}
+  {if not $greetingWord}
+    Hello {$name}!
+  {else}
+    {$greetingWord} {$name}!
+  {/if}
+{/template}
+</pre> </li>
+
+<li><p>Add a third template to the file.  This template, <code>helloNames</code>, demonstrates a <code>foreach</code> loop with an <code>ifempty</code> command. It also shows how to call other templates and insert their output using the <code>call</code> command.  Note that the <code>data="all"</code> attribute in the <code>call</code> command passes all of the caller's template data to the callee template.
+<pre>
+/**
+ * Greets a person and optionally a list of other people.
+ * @param name The name of the person.
+ * @param additionalNames The additional names to greet. May be an empty list.
+ */
+{template .helloNames}
+  // Greet the person.
+  {call .helloName data="all" /}&lt;br&gt;
+  // Greet the additional people.
+  {foreach $additionalName in $additionalNames}
+    {call .helloName}
+      {param name: $additionalName /}
+    {/call}
+    {if not isLast($additionalName)}
+      &lt;br&gt;  // break after every line except the last
+    {/if}
+  {ifempty}
+    No additional people to greet.
+  {/foreach}
+{/template}
+</pre>
+
+<p><b>Note:</b> Make sure that you've added the new templates <b>after</b> the namespace declaration.</p>
+</li>
+
+
+<li><p>Now edit <code>HelloWorld.java</code> and add the lines of bolded code below (note the new import), which call the new templates and exercise them with data:</p>
+
+<pre class="prettyprint">
+import com.google.template.soy.SoyFileSet;
+<b>import com.google.template.soy.data.SoyListData;</b>
+import com.google.template.soy.data.SoyMapData;
+import com.google.template.soy.tofu.SoyTofu;
+
+import java.io.File;
+
+public class HelloWorld {
+
+  public static void main (String[] args) {
+
+    // Bundle the Soy files for your project into a SoyFileSet.
+    SoyFileSet sfs = (new SoyFileSet.Builder()).add(new File("simple.soy")).build();
+
+    // Compile the template into a SoyTofu object.
+    // SoyTofu has a render method that can render all the templates in the SoyFileSet.
+    SoyTofu tofu = sfs.compileToJavaObj();
+
+    // Call the template with no data.
+    System.out.println(tofu.render("examples.simple.helloWorld", (SoyMapData) null, null));
+
+<b>    // For convenience, create another SoyTofu object that has a namespace specified,
+    // so you can pass partial template names to the render() method.
+    SoyTofu simpleTofu = tofu.forNamespace("examples.simple");
+
+    // Hello Name example
+    System.out.println("-----------------");
+    // Map the parameter "name" to the string "Ana"
+    System.out.println(simpleTofu.render(".helloName", new SoyMapData("name", "Ana"), null));
+
+    // Hello Names example
+    System.out.println("-----------------");
+    System.out.println(
+        simpleTofu.render(".helloNames",
+            new SoyMapData("name", "Ana",
+                           "additionalNames", new SoyListData("Bob", "Cid", "Dee")),
+            null));</b>
+  }
+
+}
+</pre>
+<p>This example exercises the <code>.helloName</code> template with a <code>SoyMapData</code> object in which the parameter <code>"name"</code> is mapped to the string <code>"Ana"</code>. For the <code>.helloNames</code> template, the example maps the parameter <code>"additionalNames"</code> to a list of strings <code>"Bob", "Cid", "Dee"</code>.</p>
+</li>
+
+<li><p>Now that you've added in new templates and updated the example to call them, re-compile and run them.  You should see these messages at standard out:</p>
+<pre>
+~/helloworld_java$ javac -classpath soy-20100426.jar HelloWorld.java
+~/helloworld_java$ java -classpath .:soy-20100426.jar HelloWorld
+Hello world!
+-----------------
+Hello Ana!
+-----------------
+Hello Ana!&lt;br&gt;Hello Bob!&lt;br&gt;Hello Cid!&lt;br&gt;Hello Dee!
+</pre>
+</li>
+</ol>
+
+
+<h2 id="guice">Using Guice</h2>
+
+<p>If your application uses <a href="http://code.google.com/p/google-guice/">Guice</a>, you can inject Soy classes such as <code>SoyFileSet.Builder</code> instead of constructing them yourself.  Your Guice injector must contain <code>SoyModule</code>, and if your application needs localization, you should also include the appropriate message plugin module such as <code>XliffMsgPluginModule</code>.</p>
+
+<p>For example, if you used Guice, the Hello World example from the previous section would start like this (with three additional import lines not shown): </p>
+
+<pre class="prettyprint">
+    <b>// Create a Guice injector that contains the SoyModule and use it get a SoyFileSet.Builder.
+    Injector injector = Guice.createInjector(new SoyModule());
+    SoyFileSet.Builder sfsBuilder = injector.getInstance(SoyFileSet.Builder.class);</b>
+
+    // Bundle the Soy files for your project into a SoyFileSet.
+    <b>SoyFileSet sfs = sfsBuilder.add(new File("simple.soy")).build();</b>
+</pre>
+
+
+<h2 id="soyparseinfogenerator">Using SoyParseInfoGenerator</h2>
+
+<p>You might find it error-prone to type hard-coded strings for template names and template parameters.  If so, you can use <code>SoyParseInfoGenerator</code> to generate Java constants for the template and parameter names in your templates.  Follow the steps below to use <code>SoyParseInfoGenerator</code> with the Hello World example:
+</p>
+
+<ol>
+<li><p>Recall that you downloaded <code>SoyParseInfoGenerator.jar</code> in an earlier step and placed the file in <code>~/helloworld_java/</code>. This file is a standalone executable jar that parses Soy files and generates Java classes that contain information such as template and parameter names.
+</p>
+
+<p>Run <code>SoyParseInfoGenerator</code> with the following command-line flags: </p>
+
+<pre>
+~/helloworld_java$ java -jar SoyParseInfoGenerator.jar --outputDirectory generated --javaPackage generated --javaClassNameSource filename simple.soy
+</pre>
+
+<p>This step creates the directory <code>~/helloworld/generated</code> and generates a file in it called <code>SimpleSoyInfo.java</code>.  This file contains mappings between the generated constants and their corresponding strings.</p>
+
+<p>Open <code>SimpleSoyInfo.java</code> and take a look at the constants that <code>SoyParseInfoGenerator</code> generated for each of the templates and their parameters.  For example, the Java constant <code>HELLO_NAME</code> maps to a <code>SoyTemplateInfo</code> object that represents the <code>.helloName</code> template, and the constant <code>HELLO_NAME.NAME</code> maps to the <code>.helloName</code> template's parameter <code>"name"</code>.</p>
+
+</li>
+
+
+<li><p>Edit <code>HelloWorld.java</code> and replace the contents of the file with the code below. Note that the differences between this file and the original are bolded.</p>
+
+<pre class="prettyprint">
+<b>import static generated.SimpleSoyInfo.HELLO_NAME;
+import static generated.SimpleSoyInfo.HELLO_NAMES;
+import static generated.SimpleSoyInfo.HELLO_WORLD;
+</b>
+import com.google.template.soy.SoyFileSet;
+import com.google.template.soy.data.SoyMapData;
+import com.google.template.soy.tofu.SoyTofu;
+import com.google.template.soy.data.SoyListData;
+
+import java.io.File;
+
+public class HelloWorld {
+
+  public static void main (String[] args) {
+
+    SoyFileSet sfs = (new SoyFileSet.Builder()).add(new File("simple.soy")).build();
+
+    SoyTofu tofu = sfs.compileToJavaObj();
+    System.out.println(tofu.render(<b>HELLO_WORLD</b>, (SoyMapData) null, null));
+
+    System.out.println("-----------------");
+    System.out.println(tofu.render(<b>HELLO_NAME</b>, new SoyMapData(<b>HELLO_NAME.NAME</b>, "Ana"), null));
+
+    System.out.println("-----------------");
+    System.out.println(
+        tofu.render(<b>HELLO_NAMES</b>,
+            new SoyMapData(<b>HELLO_NAMES.NAME</b>, "Ana",
+                           <b>HELLO_NAMES.ADDITIONAL_NAMES</b>, new SoyListData("Bob", "Cid", "Dee")),
+            null));
+  }
+
+}
+</pre> </li>
+
+<li><p>Compile the <code>HelloWorld</code> and <code>SimpleSoyInfo</code> classes:
+</p>
+<pre>
+~/helloworld_java$ javac -classpath soy-20100426.jar HelloWorld.java generated/SimpleSoyInfo.java
+</pre> </li>
+
+<li><p>Finally, re-run the example and you should see the same output as before:</p>
+
+<pre>
+~/helloworld_java$ java -classpath .:soy-20100426.jar HelloWorld
+Hello world!
+-----------------
+Hello Ana!
+-----------------
+Hello Ana!&lt;br&gt;Hello Bob!&lt;br&gt;Hello Cid!&lt;br&gt;Hello Dee!
+</pre>
+
+</li>
+
+
+
+<p>You've just completed the Hello World of Closure Templates using Java. Where should you go next?
+
+<ul>
+<li>To use the same templates from this chapter in JavaScript, try the <a href="helloworld_js.html">Hello World Using JavaScript</a> examples.</li>
+<li>To read more about Closure Templates concepts, take a look at the <a href="concepts.html">Concepts</a> chapter.</li>
+</ul>
+</p>
+
+
+
+
+
+      </div><!-- end gc-pagecontent -->
+   </div><!-- end gooey wrapper -->
+
+    </div> <!-- end codesite content -->
+
+
+<div id="gc-footer" dir="ltr">
+  <div class="text">
+    
+    &copy;2010 Google -
+    <a href="/">Code Home</a> -
+    <a href="/terms.html">Terms of Service</a> -
+    <a href="/privacy.html">Privacy Policy</a> -
+    <a href="/more/">Site Directory</a>
+    <br> <br>
+    Google Code offered in:
+    <a href="/intl/en/">English</a> -
+    <a href="/intl/es/">Español</a> -
+    <a href="/intl/ja/">日本語</a> -
+    <a href="/intl/ko/">한국어</a> -
+    <a href="/intl/pt-BR/">Português</a> -
+    <a href="/intl/ru/">Pусский</a> -
+    <a href="/intl/zh-CN/">中文(简体)</a> -
+    <a href="/intl/zh-TW/">中文(繁體)</a>
+  </div>
+</div><!-- end gc-footer -->
+
+</div><!-- end gc-container -->
+
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
+<script src="/js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(
+
+
+    ['projectTracker._setAccount', 'YT-10763712-3'],
+    ['projectTracker._setDomainName', 'code.google.com'],
+    ['projectTracker._setCookiePath', window.location.pathname.substring(0,
+        window.location.pathname.lastIndexOf('/') + 1)],
+    ['projectTracker._trackPageview'],
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
+        window.location.pathname.lastIndexOf('/') + 1)],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = 'http://www.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+
+
+  </body>
+</html>
+

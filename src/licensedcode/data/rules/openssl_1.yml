@@ -1,0 +1,4 @@
+licenses:
+    - openssl
+template: yes
+notes: openssl long variant

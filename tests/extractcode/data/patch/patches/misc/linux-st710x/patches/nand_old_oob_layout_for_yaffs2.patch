@@ -1,0 +1,51 @@
+--- linux-2.6.23/drivers/mtd/nand/nand_base.c	2007-10-09 22:31:38.000000000 +0200
++++ nand_bbt_fix/nand_base.c	2008-10-10 17:50:43.000000000 +0200
+@@ -65,10 +65,9 @@
+ 
+ static struct nand_ecclayout nand_oob_16 = {
+ 	.eccbytes = 6,
+-	.eccpos = {0, 1, 2, 3, 6, 7},
+-	.oobfree = {
+-		{.offset = 8,
+-		 . length = 8}}
++	.eccpos = { 8, 9, 10, 13, 14, 15 },
++	.oobavail = 9,
++	.oobfree = { { 0, 4 }, { 6, 2 }, { 11, 2 }, { 4, 1 } }
+ };
+ 
+ static struct nand_ecclayout nand_oob_64 = {
+@@ -2382,7 +2382,7 @@
+ 	type = nand_get_flash_type(mtd, chip, busw, &nand_maf_id);
+ 
+ 	if (IS_ERR(type)) {
+-		printk(KERN_WARNING "No NAND device found!!!\n");
++		printk(KERN_INFO "No NAND device found!!!\n");
+ 		chip->select_chip(mtd, -1);
+ 		return PTR_ERR(type);
+ 	}
+--- linux-2.6.23/drivers/mtd/nand/nand_bbt.c	2010-02-03 15:04:23.000000000 +0100
++++ nand_bbt_fix/nand_bbt.c	2010-02-03 15:05:21.000000000 +0100
+@@ -1119,9 +1119,9 @@
+ static struct nand_bbt_descr bbt_main_descr = {
+ 	.options = NAND_BBT_LASTBLOCK | NAND_BBT_CREATE | NAND_BBT_WRITE
+ 		| NAND_BBT_2BIT | NAND_BBT_VERSION | NAND_BBT_PERCHIP,
+-	.offs =	8,
++	.offs =	0,
+ 	.len = 4,
+-	.veroffs = 12,
++	.veroffs = 5,
+ 	.maxblocks = 4,
+ 	.pattern = bbt_pattern
+ };
+@@ -1129,9 +1129,9 @@
+ static struct nand_bbt_descr bbt_mirror_descr = {
+ 	.options = NAND_BBT_LASTBLOCK | NAND_BBT_CREATE | NAND_BBT_WRITE
+ 		| NAND_BBT_2BIT | NAND_BBT_VERSION | NAND_BBT_PERCHIP,
+-	.offs =	8,
++	.offs =	0,
+ 	.len = 4,
+-	.veroffs = 12,
++	.veroffs = 5,
+ 	.maxblocks = 4,
+ 	.pattern = mirror_pattern
+ };

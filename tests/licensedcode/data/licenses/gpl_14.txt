@@ -1,0 +1,9 @@
+3Com EtherLink 10/100 PCI (3C90x) Linux Network Driver, Copyright (c) 199
+3Com Corporation. All rights reserved.
+3Com Linux Network Driver software is distributed as is, without any warranty
+of any kind, either express or implied as further specified in the GNU Public
+License. This software may be used and distributed according to the terms of
+the GNU Public License, located in the file LICENSE.
+
+3Com and EtherLink are registered trademarks of 3Com Corporation. Linux is a
+registered trademarks of Linus Torvalds.

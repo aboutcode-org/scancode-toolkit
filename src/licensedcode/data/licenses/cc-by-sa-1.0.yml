@@ -1,0 +1,13 @@
+key: cc-by-sa-1.0
+short_name: CC-BY-SA-1.0
+name: >-
+    Creative Commons Attribution Share Alike License 1.0
+category: Attribution
+owner: Creative Commons
+homepage_url: http://creativecommons.org/licenses/by-sa/1.0/
+spdx_license_key: CC-BY-SA-1.0
+spdx_full_name: >-
+    Creative Commons Attribution Share Alike 1.0
+spdx_url: http://spdx.org/licenses/CC-BY-SA-1.0
+text_urls:
+    - http://creativecommons.org/licenses/by-sa/1.0/legalcode

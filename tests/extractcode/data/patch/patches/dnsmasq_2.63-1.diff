@@ -1,0 +1,1995 @@
+--- dnsmasq-2.63.orig/debian/changelog
++++ dnsmasq-2.63/debian/changelog
+@@ -0,0 +1,1054 @@
++dnsmasq (2.63-1) unstable; urgency=low
++
++   * New upstream.
++   * Move /etc/dbus-1/system.d/dnsmasq.conf from dnsmasq to dnsmasq-base.
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Mon, 11 Jun 2012 21:55:35 +0000
++
++dnsmasq (2.62-3) unstable; urgency=low
++
++   * Do resolvconf and /etc/default startup logic when
++     starting with systemd. (closes: #675854)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Mon, 11 Jun 2012 21:50:11 +0000
++
++dnsmasq (2.62-2) unstable; urgency=low
++
++   * Pass LDFLAGS to make to get hardening in linker.
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thu, 7 Jun 2012 09:53:43 +0000
++
++dnsmasq (2.62-1) unstable; urgency=low
++
++   * New upstream.
++   * Use dpkg-buildflags. (Enables hardening).
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 12 May 2012 15:25:23 +0000
++
++dnsmasq (2.61-1) unstable; urgency=low
++
++   * New upstream.
++   * Provide "dump-stats" initscript method. (closes: #654656)
++   * Add (empty) build-indep and build-arch rules targets.
++   * Bump standards-version to 3.9.3
++   * Add port option to example dnsmasq.conf (closes: #668386)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tue, 6 Mar 2012 19:45:43 +0000
++
++dnsmasq (2.60-2) unstable; urgency=high
++
++   * Fix DHCPv4 segfault. (closes: #665008)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri, 23 Mar 2012 09:37:23 +0000
++
++dnsmasq (2.60-1) unstable; urgency=low
++
++   * New upstream.
++   * Bump standards-version to 3.9.2
++   * Fix typo in example config file. (closes: #654897)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thu, 1 Dec 2011 15:49:33 +0000
++
++dnsmasq (2.59-4) unstable; urgency=low
++
++   * Supply /etc/insserv.conf.d/dnsmasq (closes: #650540)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thu, 1 Dec 2011 11:35:13 +0000
++
++dnsmasq (2.59-3) unstable; urgency=low
++
++   * Stop daemon at runlevels 0, 1 and 6. (closes: #647726)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 26 Nov 2011 15:28:33 +0000
++
++dnsmasq (2.59-2) unstable; urgency=low
++
++   * Fix reported version number.
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Wed, 19 Oct 2011 09:25:53 +0000
++
++dnsmasq (2.59-1) unstable; urgency=low
++
++   * New upstream.
++   * Fix IPv6 bind problem (closes: #644345)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 8 Oct 2011 16:34:13 +0000
++
++dnsmasq (2.58-3) unstable; urgency=low
++
++   * Fix resolvconf script location. (closes: #641717)
++   * Update systemd service file. (closes: #640095)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thu, 15 Sep 2011 16:33:23 +0000
++
++dnsmasq (2.58-2) unstable; urgency=low
++
++   * Fix resolvconf script. (closes: #639963)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thu, 1 Sep 2011 10:05:23 +0000
++
++dnsmasq (2.58-1) unstable; urgency=low
++
++   * New upstream.
++   * Add noconntrack DEB_BUILD_OPTIONS flag.
++   * Improve error message when tag:xxx appears
++     in --dhcp-host (closes: #627986)
++   * Add /usr/lib/resolvconf/packaging-event.d/dnsmasq (closes: #628003)
++   * Update resolvconf hook script to sleep only
++     when necessary. (closes: #627789)
++   * Tweak behaviour of --domain-needed to avoid problems with recursive
++     nameservers _downstream_ of dnsmasq. (closes: #630637)
++   * Allow processes running as uid dnsmasq to send messages on the DBus,
++     so that dnsmasq can return errors. (closes: #635017)
++   * Add /lib/systemd/system/dnsmasq.service (closes: #635753)
++   * New binary package, dnsmasq-utils, containing dhcp_release and
++     dhcp_lease_time from contrib/wrt. Note that these are Linux-specific
++     so this package is Architecture: linux-any (closes: #638136)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Mon, 22 Aug 2011 14:57:03 +0000
++
++dnsmasq (2.57-1) unstable; urgency=low
++
++   * New upstream.
++   * Fix typos in example config file. (closes: #606615)
++   * Bump standards-version to 3.9.1
++   * Add noidn DEB_BUILD_OPTIONS flag.
++   * Don't complain about extra command line arguments if
++     they are empty, as this breaks libvirt. (closes: #613915)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri, 18 Feb 2011 09:54:13 +0000
++
++dnsmasq (2.56-1) unstable; urgency=low
++
++   * New upstream.
++   * Die if non-option args present on the command-line. (closes: #589885)
++   * Tighten up use of IGNORE_RESOLVCONF in initscript. (closes: #575345)
++   * Update URL of ISC's explanation of dhcp-authoritative in the example
++     configuration file. (closes: #604870)
++   * Cosmetic changes to dnsmasq.conf.example. (closes: #598790)
++   * More dnsmasq.conf.example fixes. (closes: #606615)
++   * Add other resolv.conf locations to FILES section of the manual
++     page. (closes: #603505)
++   * Clarify configuration for static IP addresses in the absence of
++     resolvconf in the Debian readme file. (closes: #604035)
++   * Fix handling of obsolete DNSMASQ_INTERFACE and DNSMASQ_EXCEPT
++     variables in /etc/default/dnsmasq. (LP: #691329)
++   * Provide debian/source/format.
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri, 17 Dec 2010 13:17:33 +0000
++
++dnsmasq (2.55-2) unstable; urgency=high
++
++   * Fix crash on double free. (closes: #597205)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 19 Sep 2010 21:45:33 +0000
++
++dnsmasq (2.55-1) unstable; urgency=low
++
++   * New upstream.
++   * Fix crash when /etc/ethers in use. (closes: #584754)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 6 Jun 2010 20:33:13 +0000
++
++dnsmasq (2.53-1) unstable; urgency=low
++
++   * New upstream.
++   * Fix FTBFS on kFreeBSD. (closes: #566334)
++   * Teach initscript to check the config file syntax before
++     restarting dnsmasq. An error will leave the old dnsmasq still
++     running, rather than killing the old daemon and then failing to start
++     a new one.
++   * Tweak DHCP behaviour when a physical interface has two addresses on
++     the same subnet. (closes: #581064)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thu, 20 May 2010 11:41:23 +0000
++
++dnsmasq (2.52-1) unstable; urgency=low
++
++   * New upstream.
++   * Be more conservative with "A for A" processing. (closes: #553337)
++   * Add README file in /etc/dnsmasq.d to explain what's going on.
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thu, 14 Jan 2010 09:53:13 +0000
++
++dnsmasq (2.51-1) unstable; urgency=low
++
++   * New upstream.
++   * Bump standards-version to 3.8.2 (no changes needed).
++   * Ignore files named *.dpkg-old, *.dpkg-new and *.dpkg-dist 
++     in /etc/dnsmasq.d
++   * Provide a facility in /etc/default/dnsmasq to disable dnsmasq's
++     interaction with the resolvconf package. This is needed because
++     setting "resolv-file" in /etc/dnsmasq.conf won't override a
++     file given on the command line from resolvconf. (closes: #528762)
++   * Check for duplicate names/addresses in /etc/ethers. (closes: #523787)
++   * Set the system locale in the environment before invoking dnsmasq,
++     so that translated messages work, and IDN uses the correct charset.
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri, 4 Oct 2009 14:01:14 +0000
++
++
++dnsmasq (2.50-1) unstable; urgency=high
++   
++   * New upstream, fixes remote vulns in TFTP server.
++     Bugtraq id: 36120,36121 CVE: 2009-2957,2009-2958	
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri, 21 Aug 2009 10:25:13 +0000
++
++	
++dnsmasq (2.49-1) unstable; urgency=low
++   
++   * New upstream.
++   * Log TFTP "file not found" errors. (closes: #532201)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Mon, 8 Jun 2009 22:03:23 +0000
++	
++dnsmasq (2.48-2) unstable; urgency=low
++   
++   * Change dnsmasq -> dnsmasq-base dependency to >= to allow binNMU,
++     fixes Lintian error.
++   * Bump standards-version to 3.8.1
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri, 5 Jun 2009 10:58:33 +0000
++
++dnsmasq (2.48-1) unstable; urgency=low
++
++   * New upstream.
++   * Detect and ignore duplicate configuration files. (closes: #516234)
++   * Add 2 second sleep between stop and start during initscript restart.
++   * Make dependency on dnsmasq-base in dnsmasq package versioned, so that
++     installing the latest dnsmasq will install the latest dnsmasq-base
++     too. (closes: #523955)
++   * Add nodhcp DEB_BUILD_OPTIONS option.
++		
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri, 29 May 2009 10:20:23 +0000
++
++dnsmasq (2.47-3) unstable; urgency=low
++
++   * Fix bashism in init script. (closes: #514397)
++   * Tweak logging in init script.
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 7 Feb 2009 19:25:23 +0000
++
++dnsmasq (2.47-2) unstable; urgency=low
++
++   * Check that /etc/init.d/dnsmasq is executable in postinst in case
++     the daemon has been  disabled that way. (closes: #514314)
++   * Ensure that /var/run/dnsmasq exists and has the right permissions
++     before running dnsmasq. On some systems /var/run is cleared over 
++     reboot. (closes: #514317)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri, 6 Feb 2009 09:38:21 +0000
++	
++dnsmasq (2.47-1) unstable; urgency=low
++
++   * New upstream.
++   * Handle the "ENABLED" flag in the init script a bit more 
++     intelligently. The "stop" and "status" functions continue
++     to work even when disabled, but a failed "stop" becomes 
++     silent and returns zero exit code.
++   * Don't explicitly kill dnsmasq at system shutdown, rely on the 
++     sendsigs script instead which is quicker. (closes: #506734)
++   * Store the PID-file in /var/run/dnsmasq. This directory is owned by
++     user "dnsmasq", so that dnsmasq can delete the PID-file on
++     shutdown. This ensures that the the PID-file goes even when dnsmasq 
++     is stopped by sendsigs. (closes: #508560) 
++   * Bump standards-version to 3.8.0 (no changes required.)
++   * /usr/sbin/adduser -> adduser in postinst. Lintian fix.
++   * Handle IPv6 addresses in "tentative" state better. (closes: #507646) 
++   * Add DBus introspection support. (closes: #508774)
++   * Fix Dbus configuration. (closes: #510649)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Mon, 2 Feb 2009 13:39:11 +0000
++
++dnsmasq (2.46-1) unstable; urgency=low
++
++   * New upstream. (closes: #499162) (closes: #499007)
++   * Remove from init script start-stop-daemon call to kill
++     child processes. This is not needed since dnsmasq is 
++     carefully written to kill child processes, and it interacts
++     badly with "private" instances of dnsmasq. (closes: #505523)
++   * Provide /etc/dnsmasq.d and alter the installed /etc/default/dnsmasq
++     so that /etc/dnsmasq.d is read. This provides a drop-directory where
++     libvirt can add options to make the system dnsmasq automatically 
++     play nice with libvirt's private instances. (closes: #505522)
++	        
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thu, 13 Nov 2008 20:15:31 +0000
++
++dnsmasq (2.45-1) unstable; urgency=high
++
++   * New upstream - fixes regression when min-port not set.
++	        
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 20 Jul 2008 19:27:11 +0000
++	
++dnsmasq (2.44-1) unstable; urgency=high
++
++   * New upstream - bugfix release for 2.43.
++   * Fix crash in netlink code. (closes: #491289)
++        
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri, 11 Jul 2008 19:39:10 +0000
++
++dnsmasq (2.43-1) unstable; urgency=high
++
++   * New upstream.
++   * Implement source-port randomisation and better random
++     number generator as defence against CVE-2008-1447 (closes: #490123)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tue, 17 Jun 2008 11:55:38 +0000
++
++dnsmasq (2.42-4) unstable; urgency=low
++
++   * Fix botch in postinst introduced in 2.42-2. (closes: #486616)
++        
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tue, 17 Jun 2008 11:39:10 +0000
++
++dnsmasq (2.42-3) unstable; urgency=low
++
++   * Fix thinko in init script, breaks status command. (closes: #486455)
++        
++ -- Simon Kelley <simon@thekelleys.org.uk>  Mon, 16 Jun 2008 11:26:20 +0000
++
++dnsmasq (2.42-2) unstable; urgency=low
++
++   * Error check in postinst file (closes: #485645)
++        
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tue, 10 Jun 2008 20:25:10 +0000
++
++dnsmasq (2.42-1) unstable; urgency=low
++
++   * New upstream.
++   * Fix manpage typos. (closes: #468762)
++   * Use LSB log_*_msg rather than echo in init script. (closes: #473117)
++   * Fix agent-id echo problem. (closes: #473015)
++   * Fixup changing /usr/share/doc/dnsmasq to symlink. (closes: #468763)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Wed, 27 Feb 2008 21:15:28 +0000
++
++dnsmasq (2.41-2) unstable; urgency=low
++
++   * Fix rules to build binary-arch and binary-indep correctly.
++        
++ -- Simon Kelley <simon@thekelleys.org.uk>  Wed, 27 Feb 2008 19:57:10 +0000
++
++dnsmasq (2.41-1) unstable; urgency=low
++
++   * New upstream.
++   * Fix typo. (closes: #448038)
++   * Fix DHCP problem interoperating with Sony Ericsson K610i (closes: #451871)
++   * Split binary packages into dnsmasq and dnsmasq-base (closes: #463407)
++   * Add warnings about bad effects of --filterwin2k to default config
++     file. (closes: #464357) 
++   * Don't declare Provides: $named in LSB header. (closes: #464512)
++   * Remove conflict with pdnsd. (closes: #464691)
++   * Add ability to disable dnsmasq in /etc/default/dnsmasq. (closes: #465062)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thu, 31 Jan 2008 20:25:28 +0000
++
++dnsmasq (2.40-1) unstable; urgency=low
++
++   * New upstream.
++   * Fix manpage typo. (closes: #429412)
++   * Fix dnsmasq.conf typos (closes: #429929)
++   * Handle DEB_BUILD_OPTIONS nostrip and noopt (closes: #436784)
++   * Add DEB_BUILD_OPTIONS for nodocs, notftp, noipv6, 
++     nodbus, noi18n and nortc.
++   * Create DEBIAN/md5sums file in package.
++   * Add status function to init script. (closes: #439316)
++			
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thu, 9 Aug 2007 10:24:18 +0000
++
++dnsmasq (2.39-1) unstable; urgency=low
++
++   * New upstream.
++   * Provide example config file in /usr/share/doc/dnsmasq/examples
++     as well as /etc/dnsmasq.conf, so it's available for reference.
++			
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thu, 13 Feb 2007 10:02:38 +0000
++
++dnsmasq (2.38-1) unstable; urgency=low
++
++   * New upstream (closes: #410185)
++			
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tue, 6 Feb 2007 21:14:58 +0000
++
++dnsmasq (2.37-1) unstable; urgency=low
++
++   * New upstream.
++			
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thu, 25 Jan 2007 10:44:18 +0000
++
++dnsmasq (2.36-1) unstable; urgency=low
++
++   * New upstream. (closes: #400037)
++   * Don't fail to purge if deluser command is not available.
++   * Add one second sleep to resolvconf script. (closes: #398961)
++   * Fix dnsmasq.conf typo (closes: #405314) 
++			
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tue, 31 Oct 2006 10:24:58 +0000
++
++dnsmasq (2.35-1) unstable; urgency=low
++
++   * New upstream.
++				
++ -- Simon Kelley <simon@thekelleys.org.uk>  Wed, 18 Oct 2006 09:23:28 +0000
++
++dnsmasq (2.34-1) unstable; urgency=low
++
++   * New upstream.
++   * Includes --clear-on-reload flag. (loses: #391654)
++   * Don't any longer set the "domain-needed" and "bogus-priv" flags in the
++   * the default-installed dnsmasq.conf. These can generate puzzling 
++   * behaviour for people who get them without asking.
++				
++ -- Simon Kelley <simon@thekelleys.org.uk>  Wed, 9 Aug 2006 09:23:28 +0000
++
++dnsmasq (2.33-1) unstable; urgency=low
++
++   * New upstream.
++   * Remove bashism from Makefile (closes: #375409)
++   * Added Provides: $named to LSB header in init script.
++   * Add --dns-forward-max flag. (closes: #377506)
++				
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 25 June 2006 18:03:13 +0000
++
++dnsmasq (2.32-2) unstable; urgency=low
++
++   * Added LSB tags to init.d startup script. (closes: #374650)
++				
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 25 June 2006 17:55:11 +0000
++
++dnsmasq (2.32-1) unstable; urgency=low
++
++   * New upstream.
++				
++ -- Simon Kelley <simon@thekelleys.org.uk>  Mon, 8 May 2006 09:23:28 +0000
++
++dnsmasq (2.31-1) unstable; urgency=high
++
++   * New upstream. (closes: #364800)
++   * Compile in Dbus support now that suitable Dbus packages exist.
++   * Don't stop an old dnsmasq process, until a new one is ready, 
++     when upgrading. (closes: #366224)
++   * Move to standards-version 3.7.2 (no changes needed).
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 6 May 2006 11:58:22 +0000
++
++dnsmasq (2.30-1) unstable; urgency=low
++
++   * New upstream, fixes crash with DHCP broadcast replies.
++				
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 23 Apr 2006 14:58:22 +0000
++
++dnsmasq (2.29-1) unstable; urgency=low
++
++   * New upstream. (closes: #363244) (closes: #363340)
++   * Made config options clearer in src/config.h and 
++     clarify ISC integration status in Debian readme. (closes: #364250)
++			
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tue, 18 Apr 2006 10:26:12 +0000
++
++dnsmasq (2.28-1) unstable; urgency=low
++
++   * New upstream. (closes: #359956) (closes: #362499)
++   * Added firestarter info to FAQ. (closes: #359139)
++		
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tue, 14 Mar 2006 19:20:12 +0000
++
++dnsmasq (2.27-1) unstable; urgency=low
++
++   * New upstream.
++   * Workaround buggy Microsoft DHCP clients. (closes: #355008)
++		
++ -- Simon Kelley <simon@thekelleys.org.uk>  Wed, 1 Feb 2006 17:05:12 +0000
++
++dnsmasq (2.26-1) unstable; urgency=high
++
++   * New upstream. (Fixes possible crash in 2.25, hence urgency).
++		
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 22 Jan 2006 11:05:22 +0000
++
++dnsmasq (2.25-1) unstable; urgency=low
++
++   * Remove bashisms in postinst and prerm scripts.
++   * Remove misconcieved dependency on locales.	
++   * Depend on adduser.
++		
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thu, 01 Dec 2005 21:02:12 +0000
++
++dnsmasq (2.24-1) unstable; urgency=low
++
++   * New upstream. (closes: #330422)
++   * Fix typo and clean up dnsmasq.conf (closes: #326057) (closes: #304446)
++   * Add build support for I18N and gettext.
++   * Fixed manpage typos. (closes: #336413)
++   * Create a dnsmasq-unique userid for the daemon to run as. (closes: #338353)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 03 Sep 2005 20:02:32 +0000
++
++dnsmasq (2.23-1) unstable; urgency=low
++
++   * New upstream. (closes: #302501) (closes: #315794)
++   * Fix manpage typos. (closes: #304984)
++   * Add support for DNSMASQ_EXCEPT in /etc/defaults/dnsmasq.
++     putting "lo" in this also disables resolvconf support.
++   * No longer delete pre-existing /etc/init.d symlinks. The 
++     change in default runlevels which neccesitated this 
++     is now ancient history and anyway the startup script now 
++     behaves when called twice. (closes: #312111)
++   * Tightened config-file parser. (closes: #317030)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tue, 02 Aug 2005 13:17:22 +0000
++
++dnsmasq (2.22-2) unstable; urgency=low
++
++   * Make the resolv.conf polling code resistant to 
++     backwards-moving system clocks. (closes: #306117) (closes: #300694)
++        
++ -- Simon Kelley <simon@thekelleys.org.uk>  Wed, 04 May 2005 13:25:23 +0000
++
++dnsmasq (2.22-1) unstable; urgency=low
++
++   * New upstream.
++   * Fixed broken-ness when read /etc/ethers. (closes: #301999)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thur, 24 Mar 2005 17:10:13 +0000
++
++dnsmasq (2.21-1) unstable; urgency=low
++
++   * New upstream.
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 29 Jan 2005 16:05:13 +0000
++
++dnsmasq (2.20-1) unstable; urgency=low
++
++   * New upstream.
++   * Fix shadowed CNAME-target problem. (closes: #286654)
++   * Add --localise-queries option. (closes: #291367)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri, 17 Dec 2004 17:35:23 +0000
++
++dnsmasq (2.19-1) unstable; urgency=high
++
++   * New upstream.
++   * Fix another IPv6 interface enumeration problem. (closes: #285182)
++   * Uploading at high priority since 285182 is really RC.
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 11 Dec 2004 20:39:33 +0000
++
++dnsmasq (2.18-2) unstable; urgency=low
++
++   * Revert startup to not start from rcS. Starting in rcS
++   * causes problems if interfaces are not available at that
++   * point. Users who need this facility should  manually 
++   * make rcS.d symlinks. (closes: #283239)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 27 Nov 2004 16:33:12 +0000
++	
++dnsmasq (2.18-1) unstable; urgency=low
++
++   * New upstream.
++   * Reset cache statistics when clearing the cache. (closes: #281817)
++   * Fix problems with bind-interfaces and IPv6. (closes: #282192)
++   * Fix problems upgrading when restarting dnsmasq fails.
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tue, 16 Nov 2004 17:33:32 +0000
++
++dnsmasq (2.17-1) unstable; urgency=high
++
++   * New upstream - fixes crash, hence high urgency. 
++   * Clarified log message when a record in /etc/hosts 
++     and a DHCP name clash. (closes: #275420)
++   * Start dnsmasq just before portmap and nfs mounts from rcS.d
++     DNS is required at this stage to use the net. (closes: #280434)
++   * Make "bind-interfaces" apply to IPv6 interfaces. (closes: #278492)
++   * Allow a list if interfaces as arg to the --interface and
++     --except-interface options. (closes: #279063) 
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tue, 26 Oct 2004 20:39:33 +0000
++
++dnsmasq (2.16-2) unstable; urgency=high
++
++   * Rename variable in cache.c which clashes with C headers
++     under gcc-3.4 (closes: #277893)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Mon, 25 Oct 2004 16:03:24 +0000
++
++dnsmasq (2.16-1) unstable; urgency=high
++
++   * New upstream.
++   * Fixes interaction with Linux 2.4.x and 2.6.x not-quite-POSIX
++     select behavior, which can cause hangs when receiving UDP
++     packets with bad checksum.
++   * Fix bad interaction with polipo. (closes: #275754)
++   * Cache CNAMEs better. (closes: #276289)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Mon, 04 Oct 2004 15:25:44 +0000
++
++dnsmasq (2.15-1) unstable; urgency=low
++
++   * New upstream.
++   * Fix NXDOMAIN/NODATA confusion for locally known names. (closes: #271564)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Wed, 15 Sep 2004 15:01:44 +0000
++
++dnsmasq (2.14-1) unstable; urgency=low
++
++   * New upstream.
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 28 Aug 2004 20:39:33 +0000
++
++dnsmasq (2.13-1) unstable; urgency=high
++
++   * New upstream - fixes crash. (closes #265313)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thur, 12 Aug 2004 12:45:23 +0000
++
++dnsmasq (2.12-1) unstable; urgency=low
++
++   * New upstream.
++   * Log types of incoming queries (closes: #230123).
++   * Don't set "filterwin2k" by default in the included
++     config file - it breaks SRV lookups and Kerberos.
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 8 Aug 2004 19:58:13 +0000
++
++dnsmasq (2.11-1) unstable; urgency=low
++
++   * New upstream.
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Wed, 28 July 2004 21:59:33 +0000
++
++dnsmasq (2.10-1) unstable; urgency=low
++
++   * New upstream.
++   * Allow query-port less than 1024 (closes: #236586)
++   * Change behaviour of --bogus-priv (closes: #254711)
++   * Match existing leases by MAC address when a client stops
++     using client-id or they get suppressed by dnsmasq. (closes: #258519)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thur, 24 June 2004 20:55:42 +0000
++
++dnsmasq (2.9-2) unstable; urgency=low
++
++   * Fix typo in debian/control (closes: #255762)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Wed, 23 Jun 2004 20:40:13 +0000
++
++dnsmasq (2.9-1) unstable; urgency=low
++
++   * New upstream.
++   * New version has improved server selection logic (closes: #251097)
++   * Improved initscript (closes: #252229)
++   * Conflict with old resolvconf versions to maintain compatibility.
++   * Updated README.debian (closes: #253429)
++   * Changed startup message to mention DHCP as well as DNS.
++   * New resolvconf update script (closes: #254765)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Wed, 26 May 2004 12:35:23 +0000
++
++dnsmasq (2.8-1) unstable; urgency=low
++
++   * New upstream.
++   * Fixes problem with zero-length hostnames which can lose
++     DHCP leases over a restart. (closes: #248829)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thur, 13 May 2004 18:40:12 +0000
++	
++dnsmasq (2.7-2) unstable; urgency=low
++
++   * New version of resolvconf script from Thomas Hood with the 
++     following changes: (closes: #247695)
++   * Doesn't include nameservers listed in the lo.inet or lo.inet6 interface
++     records created by "ifup lo"
++   * Lists addresses in a specified order (by interface name)
++   * Eliminates duplicate nameserver addresses
++   * Updates /var/run/dnsmasq/resolv.conf atomically
++   * Doesn't generate empty lines
++        
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tue, 11 May 2004 22:35:12 +0000
++
++dnsmasq (2.7-1) unstable; urgency=low
++
++   * New upstream.
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 18 Apr 2004 20:00:23 +0000
++
++dnsmasq (2.6-3) unstable; urgency=low
++
++   * Removed reload command from start script and moved force-reload
++     to be equivalent to restart. This is needed to be policy compliant
++     since SIHGUP doesn't cause dnsmasq to reload its configuration file,
++     only the /etc/hosts, /etc/resolv.conf etc. (closes: #244208)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 18 Apr 2004 14:40:51 +0000
++
++dnsmasq (2.6-2) unstable; urgency=low
++
++   * Added Conflict with pdnsd (closes: #242731).
++     Rationale: dnsmasq used to conflict with all the DNS servers
++     in Debian, but that was removed because some people wished
++     to run with dnsmasq listening on one interface and another DNS
++     server listening on another interface. However AFAIK it is not
++     possible to make pdnsd listen on a subset of a hosts interfaces,
++     so there is no scenario where running pdnsd and dnsmasq on the same
++     host would be useful, hence the conflict goes back.
++   * Added note about the --bind-interfaces option to
++     readme.Debian (closes: #241700)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tues, 13 Apr 2004 18:37:55 +0000
++      
++dnsmasq (2.6-1) unstable; urgency=low
++
++   * New upstream.
++   * New version adds back ability to read ISC dhcpd lease files
++     for backwards compatibility. (closes: #229684) (closes: #236421)
++   * Fix parsing of # characters in options file. (closes: #241199)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 21 Mar 2004 19:59:25 +0000
++      
++dnsmasq (2.5-1) unstable; urgency=low
++
++   * New upstream, includes fix for IP-alias related 
++     problem. (closes: #238268)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 14 Mar 2004 08:32:43 +0000
++
++dnsmasq (2.4-3) unstable; urgency=low
++
++   * Fixed "bind-interfaces" option, even when
++     an "interface" option is given also.
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri, 12 Mar 2004 08:14:23 +0000
++
++dnsmasq (2.4-2) unstable; urgency=low
++
++   * Fixed "bind-interfaces" option (closes: #237543).
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri, 12 Mar 2004 07:30:25 +0000
++
++dnsmasq (2.4-1) unstable; urgency=low
++
++   * New upstream.
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thurs, 11 Mar 2004 07:59:55 +0000
++
++dnsmasq (2.3-1) unstable; urgency=low
++
++   * New upstream.
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tues, 03 Feb 2004 20:33:10 +0000
++
++dnsmasq (2.2-1) unstable; urgency=low
++
++   * New upstream. (fixes no DHCP with IPv6 problem)
++   * Restart (old) daemon on abort-upgrade. (closes: #230286)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri, 30 Jan 2004 10:23:00 +0000
++
++dnsmasq (2.1-1) unstable; urgency=low
++
++   * New upstream.
++   * Allow addresses in /etc/hosts to be used for 
++     DHCP leases (closes: #229681)
++   * Fix lease time processing. (closes: #229682) (closes: #229687)
++   * Fix example conf file. (closes: #229683) (closes: #229701)
++   * Allow address 0.0.0.0 to mean "self" in dhcp-option. (closes: #229685)
++   * Cope with ENODEV return from bind of 
++     IPv6 server socket (closes: #229607) 
++   * Document the strict-order option in dnsmasq.conf (closes: #229272)
++   * Fix local-only domain setting. (closes: #229846)
++   * Updates Debian readme to mention resolvconf and point at the
++     local copy of RFC2132.
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri,  23 Jan 2004 14:38:29 +0000
++
++dnsmasq (2.0-1) unstable; urgency=low
++
++   * New upstream: This removes the ability to read the 
++     the leases file of ISC DHCP and replaces it with a built-in 
++     DHCP server. Apologies in advance for breaking backwards 
++     compatibilty, but this replaces a bit of a hack (the ISC stuff)
++     with a nicely engineered and much more apropriate solution.
++     Wearing my upstream-maintainer hat, I want to lose the hack now,
++     rather than have to support it into Sarge.
++   * New upstream closes some bugs since they become 
++     irrelevant. (closes: #197295)
++   * Ensure that /var/run and /var/lib/misc exist.
++   * Remove sed dependency, which was a mistake.
++   * Remove extraneous "build" file. (closes: #226994)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun,  16 Jan 2004 19:35:49 +0000
++
++dnsmasq (1.18-2) unstable; urgency=low
++        
++   * Fixed manpage typo (closes: #220961)
++   * Added dependency for sed. (closes: #222401)
++   * Check for complete resolvconf installation before 
++     calling it. (closes: #223442)
++   * Added Links section to doc.html
++        
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 27 Dec 2003 20:21:15 +0000
++   
++dnsmasq (1.18-1) unstable; urgency=low
++
++   * New upstream which does round-robin. (closes: #215460)
++   * Removed conflicts with other dns servers since it is now
++     possible to control exactly where dnsmasq listens on multi-homed 
++     hosts, making co-existance with another nameserver 
++     a viable proposition. (closes #176163)
++   * New upstream allows _ in hostnames and check for illegal
++     names in /etc/hosts. (closes: #218842)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri, 17 Oct 2003 16:23:14 +0000
++
++dnsmasq (1.17-1) unstable; urgency=high
++
++   * New upstream (closes: #212680)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Wed,  8 Oct 2003 14:38:29 +0000
++
++dnsmasq (1.16-1) unstable; urgency=low
++  
++   * New upstream.
++   * Renamed Debian README to the standard README.Debian. (closes: #211577)
++   * Updated the installed /etc/dnsmasq.conf to reflect new options.
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tues, 16 Sep 2003 23:18:59 +0000
++
++dnsmasq (1.15-1) unstable; urgency=low
++  
++   * New upstream.
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tues, 16 Sep 2003 21:48:49 +0000
++
++dnsmasq (1.14-1) unstable; urgency=low
++  
++   * New upstream.
++   * Use invoke-rc.d in postinst and prerm scripts when available.
++   * Stop dnsmasq later (at priority 85). (closes: #200625)
++   * Updated /etc/resolvconf/update.d/dnsmasq. (closes: #202609)
++   * Suggest resolvconf. (closes: #208093)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tues,  2 Sep 2003 16:43:29 +0000
++
++dnsmasq (1.13-4) unstable; urgency=high
++  
++   * Ignore failures in stopping existing dnsmasq 
++     processes. (closes: #204127) (closes: #204129)
++   * Added download source to copyright. (closes: #206647)
++	
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tues, 2 Sep 2003 15:28:28 +0000
++
++dnsmasq (1.13-3) unstable; urgency=low
++  
++   * Moved /etc/resolvconf/update.d/dnsmasq script into this package.
++   * Don't call resolvconf from /etc/init.d/dnsmasq if dnsmasq fails
++     to start. (Patch from Thomas Hood.)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Mon,  7 Jul 2003 20:55:29 +0000
++
++dnsmasq (1.13-2) unstable; urgency=low
++  
++   * Added support for the resolvconf nameserver configuration package.
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 22 Jun 2003 20:30:19 +0000
++
++dnsmasq (1.13-1) unstable; urgency=low
++
++   * New upstream.
++   * Added new options to the default dnsmasq.conf.
++   * Default config now reads /var/lib/dhcp/dhcp.leases (closes: #195185)
++   * Added option to disable negative caching. (closes: #194274)
++   * Added David Coe's query port patch. (closes: #196578)
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 31 May 2003 18:10:29 +0000
++
++dnsmasq (1.12-1) unstable; urgency=low
++
++   * New upstream.
++   * Added examples of "local" and "address" options to dnsmasq.conf.
++   * Remove /usr/doc symlink code.
++   * Remove period from end of description field.
++  
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 8 Mar 2003 12:16:09 +0000
++
++dnsmasq (1.11-2) unstable; urgency=low
++
++   * Fixed thinko in example dnsmasq.conf. (closes: #180410)
++  
++ -- Simon Kelley <simon@thekelleys.org.uk>  Mon, 24 Feb 2003 20:06:19 +0000
++
++dnsmasq (1.11-1) unstable; urgency=low
++
++   * New uptream.
++  
++ -- Simon Kelley <simon@thekelleys.org.uk>  Tues, 12 Jan 2003 22:25:17 -0100
++
++dnsmasq (1.10-1) unstable; urgency=low
++
++   * New uptream.
++   * Force service to stop in postinst before restarting. I don't
++     understand the circumstances under which it would still be running at
++     this point, but this is the correct fix anyway. (closes: #169718) 
++   * Add /etc/dnsmasq.conf as a conffile and add a comment to 
++     /etc/default/dnsmasq deprecating its use and recommending 
++     /etc/dnsmasq.conf instead, since upstream now supports this.
++  
++ -- Simon Kelley <simon@thekelleys.org.uk>  Mon, 9 Oct 2002 19:05:34 -0100
++
++dnsmasq (1.9-1) unstable; urgency=low
++
++   * New uptream.
++  
++ -- Simon Kelley <simon@thekelleys.org.uk>  Mon, 23 Sept 2002 21:35:07 -0100
++
++dnsmasq (1.8-1) unstable; urgency=low
++  
++   * New upstream.
++    
++ -- Simon Kelley <simon@thekelleys.org.uk>  Mon, 12 Aug 2002 21:56:17 -0100
++
++dnsmasq (1.7-1) unstable; urgency=low
++  
++   * New upstream including better group-id manipulation. (closes: #152212)
++   * Conflict with bind9 (closes: #151812)
++   * Added more options to startup script. (closes: #148535)
++    
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 14 July 2002 20:23:14 -0100
++
++dnsmasq (1.6-1) unstable; urgency=low
++  
++   * New upstream.
++   * Fixed documentation typos. (closes: #144637)
++   * Fixed failure to remove package if daemon not running. (closes: #147083)
++   * Changed upload to tarball-and-diff. (closes: #144638)
++  
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 19 May 2002 22:30:17 -0100
++
++dnsmasq (1.5-1) unstable; urgency=medium
++  
++   * New upstream (includes hotmail.com fix).
++   * Fixed DHCP lease file bug. (closes: #143778)
++   * Fixed failure of "reload" command in startup script (closes: #141021)
++   * Allow more than one interface name in the DNSMASQ_INTERFACE variable.
++  
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 14 Apr 2002 16:39:13 -0100
++  
++dnsmasq (1.4-2) unstable; urgency=low
++  
++    * Fixed snafu in startup script (closes: #139760)
++  
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sun, 24 Mar 2002 23:06:18 +0000
++  
++dnsmasq (1.4-1) unstable; urgency=low
++  
++  * New upstream
++  
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thurs, 7 Mar 2002 21:02:05 +0000
++  
++dnsmasq (1.3-1) unstable; urgency=low
++  
++  * New upstream
++
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri, 15 Feb 2002 20:45:01 +0000
++  
++dnsmasq (1.2-4) unstable; urgency=low
++  
++  * Updated standards-version.
++  * More aggressive strip of binaries.
++  * Added depends: netbase.
++  * distribution->unstable for upload.
++  * Updated readme.Debian since config in /etc/default/dnsmasq now.
++  * Updated readme.Debian to reflect fact that this package is official now!
++ 
++ -- Simon Kelley <simon@thekelleys.org.uk>  Fri, 15 Feb 2002 20:45:01 +0000
++  
++dnsmasq (1.2-3) stable; urgency=low
++  
++  * Added Suggests: and Conflicts: fields to control file.
++  
++ -- Simon Kelley <simon@thekelleys.org.uk>  Thurs, 14 Feb 2002 20:33:47 +0000
++  
++dnsmasq (1.2-2) stable; urgency=low
++ 
++  * Many packaging fixes, to please lintian
++  * Added extended description.
++  * Fixed copyright file.
++  * Compressed everything in /usr/share/doc/dnsmasq.
++  * Added code to remove /usr/doc/dnsmasq to prerm script.
++  * Moved configuration from /etc/init.d/dnsmasq to /etc/default/dnsmasq
++  
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 02 Feb 2002 18:54:37 +0000
++  
++dnsmasq (1.2-1) stable; urgency=low
++ 
++  * New upstream
++  * Added more options to startup script
++  
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 20 Dec 2001 21:15:07 +0000
++
++dnsmasq (1.1-2) stable; urgency=low
++ 
++  * New upstream
++  * Strip binary
++  * Moved manpage from section 1 to section 8
++  
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 21 Oct 2001 17:32:04 -0100
++
++dnsmasq (1.0-1) unstable; urgency=low
++ 
++  * New upstream
++  
++ -- Simon Kelley <simon@thekelleys.org.uk>  Sat, 10 Oct 2001 15:52:06 -0100
++  
++dnsmasq (0.996-1) unstable; urgency=low
++  
++  * New upstream
++  
++ -- Simon Kelley <simon@thkelleys.org.uk>  Fri, 26 Oct 2001 10:32:06 -0100
++
++dnsmasq (0.995-1) unstable; urgency=low
++  
++  * New upstream
++  
++ -- Simon Kelley <simon@thkelleys.org.uk>  Tue, 09 Oct 2001 16:39:07 -0100
++
++dnsmasq (0.994-1) unstable; urgency=low
++  
++  * New upstream
++  
++ -- Simon Kelley <simon@thkelleys.org.uk>  Sat, 07 Oct 2001 15:45:04 -0100
++
++dnsmasq (0.992-1) unstable; urgency=low
++
++  * New upstream
++
++ -- Simon Kelley <simon@thkelleys.org.uk>  Fri, 31 Aug 2001 16:17:00 -0100
++
++dnsmasq (0.98-1) unstable; urgency=low
++
++  * New upstream
++
++ -- Simon Kelley <simon@thkelleys.org.uk>  Wed, 11 Jul 2001 11:31:00 -0100
++
++dnsmasq (0.96-1) unstable; urgency=low
++
++  * Fixed thinko in cache code..
++
++ -- Simon Kelley <simon@thkelleys.org.uk>  Sat, 07 Jul 2001 18:52:00 -0100
++
++dnsmasq (0.95-1) unstable; urgency=low
++
++  * Initial Release.
++
++ -- Simon Kelley <simon@thkelleys.org.uk>  Sat, 29 Aug 1998 20:27:27 -0400
++
++
++  
++  
++  
++  
++  
++  
++  
++  
+--- dnsmasq-2.63.orig/debian/conffiles
++++ dnsmasq-2.63/debian/conffiles
+@@ -0,0 +1,5 @@
++/etc/init.d/dnsmasq
++/etc/default/dnsmasq
++/etc/dnsmasq.conf
++/etc/resolvconf/update.d/dnsmasq
++/etc/insserv.conf.d/dnsmasq
+--- dnsmasq-2.63.orig/debian/control
++++ dnsmasq-2.63/debian/control
+@@ -0,0 +1,42 @@
++Source: dnsmasq
++Section: net
++Priority: optional
++Build-depends: gettext, libnetfilter-conntrack-dev [linux-any], libidn11-dev, libdbus-1-dev (>=0.61)
++Maintainer: Simon Kelley <simon@thekelleys.org.uk>
++Standards-Version: 3.9.3
++
++Package: dnsmasq
++Architecture: all
++Depends: netbase, adduser, dnsmasq-base(>= ${source:Version})
++Suggests: resolvconf
++Conflicts: resolvconf (<<1.15)
++Description: Small caching DNS proxy and DHCP/TFTP server
++ Dnsmasq is a lightweight, easy to configure, DNS forwarder and DHCP
++ server. It is designed to provide DNS and optionally, DHCP, to a 
++ small network. It can serve the names of local machines which are 
++ not in the global DNS. The DHCP server integrates with the DNS 
++ server and allows machines with DHCP-allocated addresses
++ to appear in the DNS with names configured either in each host or
++ in a central configuration file. Dnsmasq supports static and dynamic 
++ DHCP leases and BOOTP/TFTP for network booting of diskless machines.
++
++Package: dnsmasq-base
++Architecture: any
++Depends: ${shlibs:Depends}
++Breaks: dnsmasq (<< 2.62-3)
++Replaces: dnsmasq (<< 2.62-3)
++Description: Small caching DNS proxy and DHCP/TFTP server
++ This package contains the dnsmasq executable and documentation, but
++ not the infrastructure required to run it as a system daemon. For
++ that, install the dnsmasq package.
++
++Package: dnsmasq-utils
++Architecture: linux-any
++Depends: ${shlibs:Depends}
++Conflicts: dnsmasq (<<2.40)
++Description: Utilities for manipulating DHCP leases
++ Small utilities to query a DHCP server's lease database and
++ remove leases from it. These programs are distributed with dnsmasq
++ and may not work correctly with other DHCP servers.
++
++ 
+--- dnsmasq-2.63.orig/debian/copyright
++++ dnsmasq-2.63/debian/copyright
+@@ -0,0 +1,21 @@
++dnsmasq is Copyright (c) 2000-2012 Simon Kelley
++
++It was downloaded from: http://www.thekelleys.org.uk/dnsmasq/
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; version 2 dated June, 1991, or
++   (at your option) version 3 dated 29 June, 2007.
++ 
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++On Debian GNU/Linux systems, the text of the GNU general public license is 
++available in the file /usr/share/common-licenses/GPL-2 or 
++/usr/share/common-licenses/GPL-3
++
++The Debian package of dnsmasq was created by Simon Kelley with assistance 
++from Lars Bahner.
++
+--- dnsmasq-2.63.orig/debian/dbus.conf
++++ dnsmasq-2.63/debian/dbus.conf
+@@ -0,0 +1,18 @@
++<!DOCTYPE busconfig PUBLIC
++ "-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN"
++ "http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">
++<busconfig>
++	<policy user="root">
++		<allow own="uk.org.thekelleys.dnsmasq"/>
++		<allow send_destination="uk.org.thekelleys.dnsmasq"/>
++	</policy>
++        <policy user="dnsmasq">
++                <allow own="uk.org.thekelleys.dnsmasq"/>
++                <allow send_destination="uk.org.thekelleys.dnsmasq"/>
++        </policy>
++	<policy context="default">
++                <deny own="uk.org.thekelleys.dnsmasq"/>
++                <deny send_destination="uk.org.thekelleys.dnsmasq"/>
++        </policy>
++</busconfig>
++
+--- dnsmasq-2.63.orig/debian/default
++++ dnsmasq-2.63/debian/default
+@@ -0,0 +1,33 @@
++# This file has five functions: 
++# 1) to completely disable starting dnsmasq, 
++# 2) to set DOMAIN_SUFFIX by running `dnsdomainname` 
++# 3) to select an alternative config file
++#    by setting DNSMASQ_OPTS to --conf-file=<file>
++# 4) to tell dnsmasq to read the files in /etc/dnsmasq.d for
++#    more configuration variables.
++# 5) to stop the resolvconf package from controlling dnsmasq's
++#    idea of which upstream nameservers to use.
++# For upgraders from very old versions, all the shell variables set 
++# here in previous versions are still honored by the init script
++# so if you just keep your old version of this file nothing will break.
++
++#DOMAIN_SUFFIX=`dnsdomainname`
++#DNSMASQ_OPTS="--conf-file=/etc/dnsmasq.alt"
++
++# Whether or not to run the dnsmasq daemon; set to 0 to disable.
++ENABLED=1
++
++# By default search this drop directory for configuration options.
++# Libvirt leaves a file here to make the system dnsmasq play nice.
++# Comment out this line if you don't want this. The dpkg-* are file
++# endings which cause dnsmasq to skip that file. This avoids pulling
++# in backups made by dpkg.
++CONFIG_DIR=/etc/dnsmasq.d,.dpkg-dist,.dpkg-old,.dpkg-new
++
++# If the resolvconf package is installed, dnsmasq will use its output 
++# rather than the contents of /etc/resolv.conf to find upstream 
++# nameservers. Uncommenting this line inhibits this behaviour.
++# Not that including a "resolv-file=<filename>" line in 
++# /etc/dnsmasq.conf is not enough to override resolvconf if it is
++# installed: the line below must be uncommented.
++#IGNORE_RESOLVCONF=yes
+--- dnsmasq-2.63.orig/debian/dnsmasq-base.conffiles
++++ dnsmasq-2.63/debian/dnsmasq-base.conffiles
+@@ -0,0 +1 @@
++/etc/dbus-1/system.d/dnsmasq.conf
+--- dnsmasq-2.63.orig/debian/init
++++ dnsmasq-2.63/debian/init
+@@ -0,0 +1,290 @@
++#!/bin/sh
++### BEGIN INIT INFO
++# Provides:       dnsmasq
++# Required-Start: $network $remote_fs $syslog
++# Required-Stop:  $network $remote_fs $syslog
++# Default-Start:  2 3 4 5
++# Default-Stop:   0 1 6
++# Description:    DHCP and DNS server
++### END INIT INFO
++
++set +e   # Don't exit on error status
++
++PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
++DAEMON=/usr/sbin/dnsmasq
++NAME=dnsmasq
++DESC="DNS forwarder and DHCP server"
++
++# Most configuration options in /etc/default/dnsmasq are deprecated
++# but still honoured.
++ENABLED=1
++if [ -r /etc/default/$NAME ]; then
++	. /etc/default/$NAME
++fi
++
++# Get the system locale, so that messages are in the correct language, and the 
++# charset for IDN is correct
++if [ -r /etc/default/locale ]; then
++        . /etc/default/locale
++        export LANG
++fi
++
++test -x $DAEMON || exit 0
++
++# Provide skeleton LSB log functions for backports which don't have LSB functions.
++if [ -f /lib/lsb/init-functions ]; then
++         . /lib/lsb/init-functions
++else
++         log_warning_msg () {
++            echo "${@}."
++         }
++
++         log_success_msg () {
++            echo "${@}."
++         }
++
++         log_daemon_msg () {
++            echo -n "${1}: $2"
++         }
++
++	 log_end_msg () {
++            if [ $1 -eq 0 ]; then
++              echo "."
++            elif [ $1 -eq 255 ]; then
++              /bin/echo -e " (warning)."
++            else
++              /bin/echo -e " failed!"
++            fi
++         }
++fi
++
++# RESOLV_CONF:
++# If the resolvconf package is installed then use the resolv conf file
++# that it provides as the default.  Otherwise use /etc/resolv.conf as
++# the default.
++#
++# If IGNORE_RESOLVCONF is set in /etc/default/dnsmasq or an explicit
++# filename is set there then this inhibits the use of the resolvconf-provided
++# information.
++#
++# Note that if the resolvconf package is installed it is not possible to 
++# override it just by configuration in /etc/dnsmasq.conf, it is necessary
++# to set IGNORE_RESOLVCONF=yes in /etc/default/dnsmasq.
++
++if [ ! "$RESOLV_CONF" ] &&
++   [ "$IGNORE_RESOLVCONF" != "yes" ] &&
++   [ -x /sbin/resolvconf ]
++then
++	RESOLV_CONF=/var/run/dnsmasq/resolv.conf
++fi
++
++for INTERFACE in $DNSMASQ_INTERFACE; do
++	DNSMASQ_INTERFACES="$DNSMASQ_INTERFACES -i $INTERFACE"
++done
++
++for INTERFACE in $DNSMASQ_EXCEPT; do
++	DNSMASQ_INTERFACES="$DNSMASQ_INTERFACES -I $INTERFACE"
++done
++
++if [ ! "$DNSMASQ_USER" ]; then
++   DNSMASQ_USER="dnsmasq"
++fi
++
++start()
++{
++        # Return
++	#   0 if daemon has been started
++	#   1 if daemon was already running
++	#   2 if daemon could not be started
++
++        # /var/run may be volatile, so we need to ensure that
++        # /var/run/dnsmasq exists here as well as in postinst
++        if [ ! -d /var/run/dnsmasq ]; then
++           mkdir /var/run/dnsmasq || return 2
++           chown dnsmasq:nogroup /var/run/dnsmasq || return 2
++        fi
++
++	start-stop-daemon --start --quiet --pidfile /var/run/dnsmasq/$NAME.pid --exec $DAEMON --test > /dev/null || return 1
++	start-stop-daemon --start --quiet --pidfile /var/run/dnsmasq/$NAME.pid --exec $DAEMON -- \
++		-x /var/run/dnsmasq/$NAME.pid \
++	        ${MAILHOSTNAME:+ -m $MAILHOSTNAME} \
++		${MAILTARGET:+ -t $MAILTARGET} \
++		${DNSMASQ_USER:+ -u $DNSMASQ_USER} \
++		${DNSMASQ_INTERFACES:+ $DNSMASQ_INTERFACES} \
++		${DHCP_LEASE:+ -l $DHCP_LEASE} \
++		${DOMAIN_SUFFIX:+ -s $DOMAIN_SUFFIX} \
++		${RESOLV_CONF:+ -r $RESOLV_CONF} \
++		${CACHESIZE:+ -c $CACHESIZE} \
++	        ${CONFIG_DIR:+ -7 $CONFIG_DIR} \
++		${DNSMASQ_OPTS:+ $DNSMASQ_OPTS} \
++		|| return 2
++}
++
++start_resolvconf()
++{
++# If interface "lo" is explicitly disabled in /etc/default/dnsmasq
++# Then dnsmasq won't be providing local DNS, so don't add it to
++# the resolvconf server set.
++	for interface in $DNSMASQ_EXCEPT
++	do
++		[ $interface = lo ] && return
++	done
++
++        if [ -x /sbin/resolvconf ] ; then
++		echo "nameserver 127.0.0.1" | /sbin/resolvconf -a lo.$NAME
++	fi
++	return 0
++}
++
++stop()
++{
++	# Return
++	#   0 if daemon has been stopped
++	#   1 if daemon was already stopped
++	#   2 if daemon could not be stopped
++	#   other if a failure occurred
++	start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 --pidfile /var/run/dnsmasq/$NAME.pid --name $NAME
++	RETVAL="$?"
++	[ "$RETVAL" = 2 ] && return 2
++	return "$RETVAL"
++}
++
++stop_resolvconf()
++{
++	if [ -x /sbin/resolvconf ] ; then
++		/sbin/resolvconf -d lo.$NAME
++	fi
++	return 0
++}
++
++status()
++{
++	# Return
++	#   0 if daemon is running
++	#   1 if daemon is dead and pid file exists
++	#   3 if daemon is not running
++	#   4 if daemon status is unknown
++	start-stop-daemon --start --quiet --pidfile /var/run/dnsmasq/$NAME.pid --exec $DAEMON --test > /dev/null
++	case "$?" in
++		0) [ -e "/var/run/dnsmasq/$NAME.pid" ] && return 1 ; return 3 ;;
++		1) return 0 ;;
++		*) return 4 ;;
++	esac
++}
++
++case "$1" in
++  start)
++	test "$ENABLED" != "0" || exit 0
++	log_daemon_msg "Starting $DESC" "$NAME"
++	start
++	case "$?" in
++		0)
++			log_end_msg 0
++			start_resolvconf
++			exit 0
++			;;
++		1)
++			log_success_msg "(already running)"
++			exit 0
++			;;
++		*)
++			log_end_msg 1
++			exit 1
++			;;
++	esac
++	;;
++  stop)
++	stop_resolvconf
++	if [ "$ENABLED" != "0" ]; then
++             log_daemon_msg "Stopping $DESC" "$NAME"
++	fi
++	stop
++        RETVAL="$?"
++	if [ "$ENABLED" = "0" ]; then
++	    case "$RETVAL" in
++	       0) log_daemon_msg "Stopping $DESC" "$NAME"; log_end_msg 0 ;;
++            esac 
++	    exit 0
++	fi
++	case "$RETVAL" in
++		0) log_end_msg 0 ; exit 0 ;;
++		1) log_warning_msg "(not running)" ; exit 0 ;;
++		*) log_end_msg 1; exit 1 ;;
++	esac
++	;;
++  restart|force-reload)
++	test "$ENABLED" != "0" || exit 1
++	$DAEMON --test ${CONFIG_DIR:+ -7 $CONFIG_DIR} ${DNSMASQ_OPTS:+ $DNSMASQ_OPTS} >/dev/null 2>&1
++	if [ $? -ne 0 ]; then
++	    NAME="configuration syntax check"
++	    RETVAL="2"
++	else   
++	    stop_resolvconf
++	    stop
++	    RETVAL="$?"
++        fi
++	log_daemon_msg "Restarting $DESC" "$NAME"
++	case "$RETVAL" in
++		0|1)
++		        sleep 2
++			start
++			case "$?" in
++				0)
++					log_end_msg 0
++					start_resolvconf
++					exit 0
++					;;
++			        *)
++					log_end_msg 1
++					exit 1
++					;;
++			esac
++			;;
++		*)
++			log_end_msg 1
++			exit 1
++			;;
++	esac
++	;;
++  status)
++	log_daemon_msg "Checking $DESC" "$NAME"
++	status
++	case "$?" in
++		0) log_success_msg "(running)" ; exit 0 ;;
++		1) log_success_msg "(dead, pid file exists)" ; exit 1 ;;
++		3) log_success_msg "(not running)" ; exit 3 ;;
++		*) log_success_msg "(unknown)" ; exit 4 ;;
++	esac
++	;;
++  dump-stats)
++        kill -s USR1 `cat /var/run/dnsmasq/$NAME.pid`
++	;;
++  systemd-start-resolvconf)
++	start_resolvconf
++	;;
++  systemd-stop-resolvconf)
++	stop_resolvconf
++	;;
++  systemd-exec)
++#  --pid-file without argument disables writing a PIDfile, we don't need one with sytemd.
++# Enable DBus by default because we use DBus activation with systemd.
++	exec $DAEMON --keep-in-foreground --pid-file --enable-dbus \
++	    ${MAILHOSTNAME:+ -m $MAILHOSTNAME} \
++	    ${MAILTARGET:+ -t $MAILTARGET} \
++	    ${DNSMASQ_USER:+ -u $DNSMASQ_USER} \
++	    ${DNSMASQ_INTERFACES:+ $DNSMASQ_INTERFACES} \
++	    ${DHCP_LEASE:+ -l $DHCP_LEASE} \
++	    ${DOMAIN_SUFFIX:+ -s $DOMAIN_SUFFIX} \
++	    ${RESOLV_CONF:+ -r $RESOLV_CONF} \
++	    ${CACHESIZE:+ -c $CACHESIZE} \
++	    ${CONFIG_DIR:+ -7 $CONFIG_DIR} \
++	    ${DNSMASQ_OPTS:+ $DNSMASQ_OPTS} 
++	;;
++  *)
++	echo "Usage: /etc/init.d/$NAME {start|stop|restart|force-reload|dump-stats|status}" >&2
++	exit 3
++	;;
++esac
++
++exit 0
++
+--- dnsmasq-2.63.orig/debian/insserv
++++ dnsmasq-2.63/debian/insserv
+@@ -0,0 +1 @@
++$named dnsmasq
+--- dnsmasq-2.63.orig/debian/postinst
++++ dnsmasq-2.63/debian/postinst
+@@ -0,0 +1,49 @@
++#!/bin/sh
++set -e
++
++# create a user to run as (code stolen from dovecot-common)
++if [ "$1" = "configure" ]; then
++  if [ -z "`id -u dnsmasq 2> /dev/null`" ]; then
++    adduser --system  --home /var/lib/misc --gecos "dnsmasq" \
++            --no-create-home --disabled-password \
++            --quiet dnsmasq || true
++  fi
++
++  # Make the directory where we keep the pid file - this
++  # has to be owned by "dnsmasq" do that the file can be unlinked.
++  if [ ! -d /var/run/dnsmasq ]; then
++    mkdir /var/run/dnsmasq
++    chown dnsmasq:nogroup /var/run/dnsmasq
++  fi
++
++  # handle new location of pidfile during an upgrade
++  if [ -e /var/run/dnsmasq.pid ]; then
++      mv /var/run/dnsmasq.pid /var/run/dnsmasq
++  fi
++fi
++
++if [ -x /etc/init.d/dnsmasq ]; then
++   update-rc.d dnsmasq defaults 15 85 >/dev/null
++
++   if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ]; then
++      if [ -e /var/run/dnsmasq/dnsmasq.pid ]; then
++          ACTION=restart
++      else
++          ACTION=start
++      fi
++
++      if [ -x /usr/sbin/invoke-rc.d ] ; then
++         invoke-rc.d dnsmasq $ACTION || true
++      else
++         /etc/init.d/dnsmasq $ACTION || true
++      fi
++   fi
++fi
++
++# dpkg can botch the change of /usr/share/doc/dnsmasq from
++# directory to symlink. Fix up here.
++if [ ! -h /usr/share/doc/dnsmasq ] && { rmdir /usr/share/doc/dnsmasq; }; then
++   cd /usr/share/doc/
++   ln -s /usr/share/doc/dnsmasq-base dnsmasq
++fi
++
+--- dnsmasq-2.63.orig/debian/postrm
++++ dnsmasq-2.63/debian/postrm
+@@ -0,0 +1,12 @@
++#!/bin/sh
++set -e
++
++if [ purge = "$1" ]; then
++   update-rc.d dnsmasq remove >/dev/null
++   if [ -x "$(command -v deluser)" ]; then
++     deluser --quiet --system dnsmasq > /dev/null || true
++  else
++     echo >&2 "not removing dnsmasq system account because deluser command was not found"
++  fi
++  rm -rf /var/run/dnsmasq
++fi
+--- dnsmasq-2.63.orig/debian/prerm
++++ dnsmasq-2.63/debian/prerm
+@@ -0,0 +1,14 @@
++#!/bin/sh
++set -e
++
++if [ "$1" = "remove" ]; then
++  if [ -x /usr/sbin/invoke-rc.d ] ; then
++      invoke-rc.d dnsmasq stop || true
++  else
++      /etc/init.d/dnsmasq stop || true
++  fi
++fi
++
++exit 0
++
++
+--- dnsmasq-2.63.orig/debian/readme
++++ dnsmasq-2.63/debian/readme
+@@ -0,0 +1,76 @@
++Notes on configuring dnsmasq as packaged for Debian.
++
++(1) To configure dnsmasq edit /etc/dnsmasq.conf. The file is well
++    commented; see also the dnsmasq.8 man page for explanation of
++    the options. The file /etc/default/dnsmasq also exists but it
++    shouldn't need to be touched in most cases. To set up DHCP
++    options you might need to refer to a copy of RFC 2132. This is 
++    available on Debian systems in the package doc-rfc-std as the file
++    /usr/share/doc/RFC/draft-standard/rfc2132.txt.gz .
++
++(2) Installing the dnsmasq package also creates the directory
++    /etc/dnsmasq.d which is searched by dnsmasq for configuration file
++    fragments. This behaviour can be disabled by editing 
++    /etc/default/dnsmasq.
++
++(3) If the Debian resolvconf package is installed then, regardless
++    of what interface configuration daemons are employed, the list of
++    nameservers to which dnsmasq should forward queries can be found
++    in /var/run/dnsmasq/resolv.conf; also, 127.0.0.1 is listed as the
++    first nameserver address in /etc/resolv.conf. This works using the
++    default configurations of resolvconf and dnsmasq.
++
++(4) In the absence of resolvconf, if you are using dhcpcd then
++    dnsmasq should read the list of nameservers from the automatically
++    generated file /etc/dhcpc/resolv.conf.  You should list 127.0.0.1
++    as the first nameserver address in /etc/resolv.conf.
++
++(5) In the absence of resolvconf, if you are using pppd then
++    dnsmasq should read the list of nameservers from the automatically
++    generated file /etc/ppp/resolv.conf.  You should list 127.0.0.1
++    as the first nameserver address in /etc/resolv.conf.
++
++(6) In the absence of resolvconf, dns-nameservers lines in 
++    /etc/network/interfaces are ignored. If you do do not use
++    resolvconf, list 127.0.0.1 as the first nameserver address
++    in /etc/resolv.conf and configure your nameservers using
++    "server=<IP-address>" lines in /etc/dnsmasq.conf.
++
++(7) If you run multiple DNS servers on a single machine, each
++    listening on a different interface, then it is necessary to use 
++    the bind-interfaces option by uncommenting "bind-interfaces" in 
++    /etc/dnsmasq.conf. This option stops dnsmasq from binding the 
++    wildcard address and allows servers listening on port 53 on
++    interfaces not in use by dnsmasq to work. The Debian 
++    libvirt package will add a configuration file in /etc/dnsmasq.d
++    which does this so that the "system" dnsmasq and "private" dnsmasq
++    instances started by libvirt do not clash.
++
++(8) The following options are supported in DEB_BUILD_OPTIONS
++      noopt       : compile without optimisation.
++      nostrip     : don't remove symbols from binary. 
++      nodocs      : omit documentation.
++      notftp      : omit TFTP support.
++      nodhcp      : omit DHCP support.
++      nodhcp6     : omit DHCPv6 support.
++      noscript    : omit lease-change script support.
++      use_lua     : provide support for lease-change scripts written
++                    in Lua.
++      noipv6      : omit IPv6 support.
++      nodbus      : omit DBus support.
++      noconntrack : omit connection tracking support. 
++      nortc       : compile alternate mode suitable for systems without an RTC.
++      noi18n      : omit translations and internationalisation support.
++      noidn       : omit international domain name support, must be
++                    combined with noi18n to be effective.
++      
++
++(9) Dnsmasq comes as three packages - dnsmasq-utils, dnsmasq-base and
++    dnsmasq. Dnsmasq-base provides the dnsmasq executable and
++    documentation (including this file). Dnsmasq, which depends on
++    dnsmasq-base, provides the init script and configuration
++    infrastructure. This file assumes that both are installed. It is
++    possible to install only dnsmasq-base and use dnsmasq as a
++    non-"system" daemon. Libvirt, for instance, does this.
++    Dnsmasq-utils provides the utilities dhcp_release and 
++    dhcp_lease_time.
+--- dnsmasq-2.63.orig/debian/readme.dnsmasq.d
++++ dnsmasq-2.63/debian/readme.dnsmasq.d
+@@ -0,0 +1,7 @@
++# All files in this directory will be read by dnsmasq as 
++# configuration files, except if their names end in 
++# ".dpkg-dist",".dpkg-old" or ".dpkg-new"
++#
++# This can be changed by editing /etc/default/dnsmasq
++
++
+--- dnsmasq-2.63.orig/debian/resolvconf
++++ dnsmasq-2.63/debian/resolvconf
+@@ -0,0 +1,70 @@
++#!/bin/bash
++#
++# Script to update the resolver list for dnsmasq
++#
++# N.B. Resolvconf may run us even if dnsmasq is not running.
++# If dnsmasq is installed then we go ahead and update
++# the resolver list in case dnsmasq is started later.
++#
++# Assumption: On entry, PWD contains the resolv.conf-type files
++#
++# Requires bash because it uses a non-POSIX printf extension.
++#
++# Licensed under the GNU GPL.  See /usr/share/common-licenses/GPL.
++#
++
++set -e
++
++RUN_DIR="/var/run/dnsmasq"
++RSLVRLIST_FILE="${RUN_DIR}/resolv.conf"
++TMP_FILE="${RSLVRLIST_FILE}_new.$$"
++
++[ -x /usr/sbin/dnsmasq ] || exit 0
++[ -x /lib/resolvconf/list-records ] || exit 1
++
++PATH=/bin:/sbin
++
++report_err() { echo "$0: Error: $*" >&2 ; }
++
++# Stores arguments (minus duplicates) in RSLT, separated by spaces
++# Doesn't work properly if an argument itself contain whitespace
++uniquify()
++{
++	RSLT=""
++	while [ "$1" ] ; do
++		for E in $RSLT ; do
++			[ "$1" = "$E" ] && { shift ; continue 2 ; }
++		done
++		RSLT="${RSLT:+$RSLT }$1"
++		shift
++	done
++}
++
++if [ ! -d "$RUN_DIR" ] && ! mkdir --parents --mode=0755 "$RUN_DIR" ; then
++	report_err "Failed trying to create directory $RUN_DIR"
++	exit 1
++fi
++
++RSLVCNFFILES="$(/lib/resolvconf/list-records | sed -e '/^lo.dnsmasq$/d')"
++
++NMSRVRS=""
++if [ "$RSLVCNFFILES" ] ; then
++	uniquify $(sed -n -e 's/^[[:space:]]*nameserver[[:space:]]\+//p' $RSLVCNFFILES)
++	NMSRVRS="$RSLT"
++fi
++
++# Dnsmasq uses the mtime of $RSLVRLIST_FILE, with a resolution of one second,
++# to detect changes in the file. This means that if a resolvconf update occurs
++# within one second of the previous one then dnsmasq may fail to notice the
++# more recent change.  To work around this problem we sleep here to ensure
++# that the new mtime is different.
++if [ -f "$RSLVRLIST_FILE" ] && [ "$(ls -go --time-style='+%s' "$RSLVRLIST_FILE" | { read p h s t n ; echo "$t" ; })" = "$(date +%s)" ] ; then
++	sleep 1
++fi
++
++clean_up() { rm -f "$TMP_FILE" ; }
++trap clean_up EXIT
++: >| "$TMP_FILE"
++for N in $NMSRVRS ; do echo "nameserver $N" >> "$TMP_FILE" ; done
++mv -f "$TMP_FILE" "$RSLVRLIST_FILE"
++
+--- dnsmasq-2.63.orig/debian/resolvconf-package
++++ dnsmasq-2.63/debian/resolvconf-package
+@@ -0,0 +1,13 @@
++#!/bin/sh
++# Resolvconf packaging event hook script for the dnsmasq package
++restart_dnsmasq() {
++    if which invoke-rc.d >/dev/null 2>&1 ; then
++        invoke-rc.d dnsmasq restart
++    elif [ -x /etc/init.d/dnsmasq ] ; then
++        /etc/init.d/dnsmasq restart
++    fi
++}
++
++case "$1" in
++  install) restart_dnsmasq ;;
++esac
+--- dnsmasq-2.63.orig/debian/rules
++++ dnsmasq-2.63/debian/rules
+@@ -0,0 +1,198 @@
++#!/usr/bin/make -f
++# debian/rules file - for dnsmasq.
++# Copyright 2001-2011 by Simon Kelley
++# Based on the sample in the debian hello package which carries the following:
++# Copyright 1994,1995 by Ian Jackson.
++# I hereby give you perpetual unlimited permission to copy,
++# modify and relicense this file, provided that you do not remove
++# my name from the file itself.  (I assert my moral right of
++# paternity under the Copyright, Designs and Patents Act 1988.)
++# This file may have to be extensively modified
++
++package=dnsmasq-base
++
++CFLAGS = $(shell export DEB_BUILD_OPTIONS=$(DEB_BUILD_OPTIONS); dpkg-buildflags --get CFLAGS)
++CFLAGS += $(shell dpkg-buildflags --get CPPFLAGS)
++CFLAGS += -Wall -W
++
++LDFLAGS = $(shell dpkg-buildflags --get LDFLAGS)
++
++COPTS = 
++
++TARGET = install-i18n
++
++DEB_BUILD_ARCH_OS := $(shell dpkg-architecture -qDEB_BUILD_ARCH_OS)
++
++ifeq (,$(filter nodbus,$(DEB_BUILD_OPTIONS)))
++     COPTS += -DHAVE_DBUS
++endif
++
++ifeq (,$(filter noconntrack,$(DEB_BUILD_OPTIONS)))
++ifeq ($(DEB_BUILD_ARCH_OS),linux)
++     COPTS += -DHAVE_CONNTRACK
++endif
++endif
++
++ifneq (,$(filter nodhcp6,$(DEB_BUILD_OPTIONS)))
++     COPTS += -DNO_DHCP6
++endif
++
++ifneq (,$(filter noipv6,$(DEB_BUILD_OPTIONS)))
++     COPTS += -DNO_IPV6
++endif
++
++ifneq (,$(filter notftp,$(DEB_BUILD_OPTIONS)))
++     COPTS += -DNO_TFTP
++endif
++
++ifneq (,$(filter nodhcp,$(DEB_BUILD_OPTIONS)))
++     COPTS += -DNO_DHCP
++endif
++
++ifneq (,$(filter noscript,$(DEB_BUILD_OPTIONS)))
++     COPTS += -DNO_SCRIPT
++endif
++
++ifneq (,$(filter nortc,$(DEB_BUILD_OPTIONS)))
++     COPTS += -DHAVE_BROKEN_RTC
++endif
++
++ifneq (,$(filter noi18n,$(DEB_BUILD_OPTIONS)))
++     TARGET = install
++     ifeq (,$(filter noidn, $(DEB_BUILD_OPTIONS)))
++	COPTS += -DHAVE_IDN
++     endif	
++endif
++
++ifneq (,$(filter uselua,$(DEB_BUILD_OPTIONS)))
++     COPTS += -DHAVE_LUASCRIPT
++endif
++
++clean:
++	$(checkdir)
++	rm -rf debian/daemon debian/base debian/utils debian/*~ debian/files debian/substvars debian/utils-substvars
++	make clean
++	make -C contrib/wrt clean
++
++binary-indep:	checkroot
++	$(checkdir)
++	rm -rf debian/daemon
++	install -m 755 \
++	        -d debian/daemon/DEBIAN \
++		-d debian/daemon/usr/share/doc \
++	        -d debian/daemon/etc/init.d \
++		-d debian/daemon/etc/dnsmasq.d \
++	        -d debian/daemon/etc/resolvconf/update.d \
++		-d debian/daemon/usr/lib/resolvconf/dpkg-event.d \
++	        -d debian/daemon/etc/default \
++		-d debian/daemon/lib/systemd/system \
++                -d debian/daemon/etc/insserv.conf.d
++	install -m 644 debian/conffiles debian/daemon/DEBIAN
++	install -m 755 debian/postinst debian/postrm debian/prerm debian/daemon/DEBIAN
++	install -m 755 debian/init debian/daemon/etc/init.d/dnsmasq
++	install -m 755 debian/resolvconf debian/daemon/etc/resolvconf/update.d/dnsmasq
++	install -m 755 debian/resolvconf-package debian/daemon/usr/lib/resolvconf/dpkg-event.d/dnsmasq
++	install -m 644 debian/default debian/daemon/etc/default/dnsmasq
++	install -m 644 dnsmasq.conf.example debian/daemon/etc/dnsmasq.conf
++	install -m 644 debian/readme.dnsmasq.d debian/daemon/etc/dnsmasq.d/README
++	install -m 644 debian/systemd.service debian/daemon/lib/systemd/system/dnsmasq.service
++	install -m 644 debian/insserv debian/daemon/etc/insserv.conf.d/dnsmasq
++	ln -s $(package) debian/daemon/usr/share/doc/dnsmasq
++	cd debian/daemon && find . -type f ! -regex '.*DEBIAN/.*' -printf '%P\0' | xargs -r0 md5sum > DEBIAN/md5sums	
++	dpkg-gencontrol -pdnsmasq -Pdebian/daemon
++	chown -R root.root debian/daemon
++	chmod -R g-ws debian/daemon
++	dpkg --build debian/daemon ..
++
++binary-arch:	checkroot 
++	$(checkdir)
++	rm -rf debian/base
++	install -m 755 \
++		-d debian/base/DEBIAN \
++		-d debian/base/etc/dbus-1/system.d \
++	        -d debian/base/usr/share/doc/$(package) \
++		-d debian/base/usr/share/doc/$(package)/examples \
++	        -d debian/base/var/run \
++	        -d debian/base/var/lib/misc
++	make $(TARGET) PREFIX=/usr DESTDIR=`pwd`/debian/base CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" COPTS="$(COPTS)" CC=gcc
++ifeq (,$(findstring nodocs,$(DEB_BUILD_OPTIONS)))
++	install -m 644 doc.html debian/base/usr/share/doc/$(package)/.
++	install -m 644 setup.html debian/base/usr/share/doc/$(package)/.
++	install -m 644 dnsmasq.conf.example debian/base/usr/share/doc/$(package)/examples/.
++	install -m 644 FAQ debian/base/usr/share/doc/$(package)/.
++	gzip -9 debian/base/usr/share/doc/$(package)/FAQ
++	install -m 644 CHANGELOG debian/base/usr/share/doc/$(package)/changelog
++	gzip -9 debian/base/usr/share/doc/$(package)/changelog
++	install -m 644 CHANGELOG.archive debian/base/usr/share/doc/$(package)/changelog.archive
++	gzip -9 debian/base/usr/share/doc/$(package)/changelog.archive
++	install -m 644 dbus/DBus-interface debian/base/usr/share/doc/$(package)/.
++	gzip -9 debian/base/usr/share/doc/$(package)/DBus-interface	
++endif
++	install -m 644 debian/dnsmasq-base.conffiles debian/base/DEBIAN/conffiles
++	install -m 644 debian/changelog debian/base/usr/share/doc/$(package)/changelog.Debian
++	gzip -9 debian/base/usr/share/doc/$(package)/changelog.Debian
++	install -m 644 debian/readme debian/base/usr/share/doc/$(package)/README.Debian
++	install -m 644 debian/copyright debian/base/usr/share/doc/$(package)/copyright
++	install -m 644 debian/dbus.conf debian/base/etc/dbus-1/system.d/dnsmasq.conf
++	gzip -9 debian/base/usr/share/man/man8/dnsmasq.8
++	for f in debian/base/usr/share/man/*; do \
++		if [ -f $$f/man8/dnsmasq.8 ]; then \
++                       gzip -9 $$f/man8/dnsmasq.8 ; \
++                fi \
++	done
++ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
++	strip -R .note -R .comment debian/base/usr/sbin/dnsmasq
++endif
++	cd debian/base && find . -type f ! -regex '.*DEBIAN/.*' -printf '%P\0' | xargs -r0 md5sum > DEBIAN/md5sums
++	dpkg-shlibdeps debian/base/usr/sbin/dnsmasq
++	dpkg-gencontrol -pdnsmasq-base -Pdebian/base
++	chown -R root.root debian/base
++	chmod -R g-ws debian/base 
++	dpkg --build debian/base ..
++
++ifeq ($(DEB_BUILD_ARCH_OS),linux)
++	rm -rf debian/utils
++	install -m 755 -d debian/utils/DEBIAN \
++                       -d debian/utils/usr/share/man/man1 \
++	               -d debian/utils/usr/bin \
++                       -d debian/utils/usr/share/doc/dnsmasq-utils
++	make -C contrib/wrt PREFIX=/usr DESTDIR=`pwd`/debian/utils CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" COPTS="$(COPTS)" CC=gcc
++	install -m 755 contrib/wrt/dhcp_release debian/utils/usr/bin/dhcp_release
++	install -m 644 contrib/wrt/dhcp_release.1 debian/utils/usr/share/man/man1/dhcp_release.1
++	gzip -9 debian/utils/usr/share/man/man1/dhcp_release.1
++	install -m 755 contrib/wrt/dhcp_lease_time debian/utils/usr/bin/dhcp_lease_time
++	install -m 644 contrib/wrt/dhcp_lease_time.1 debian/utils/usr/share/man/man1/dhcp_lease_time.1
++	install -m 644 debian/copyright debian/utils/usr/share/doc/dnsmasq-utils/copyright
++	install -m 644 debian/changelog debian/utils/usr/share/doc/dnsmasq-utils/changelog.Debian
++	gzip -9 debian/utils/usr/share/doc/dnsmasq-utils/changelog.Debian
++	gzip -9 debian/utils/usr/share/man/man1/dhcp_lease_time.1
++ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
++	strip -R .note -R .comment debian/utils/usr/bin/dhcp_release
++	strip -R .note -R .comment debian/utils/usr/bin/dhcp_lease_time
++endif	
++	cd debian/utils && find . -type f ! -regex '.*DEBIAN/.*' -printf '%P\0' | xargs -r0 md5sum > DEBIAN/md5sums
++	dpkg-shlibdeps -Tdebian/utils-substvars debian/utils/usr/bin/dhcp_release debian/utils/usr/bin/dhcp_lease_time
++	dpkg-gencontrol -Tdebian/utils-substvars -pdnsmasq-utils -Pdebian/utils
++	chown -R root.root debian/utils
++	chmod -R g-ws debian/utils 
++	dpkg --build debian/utils ..
++endif
++
++define checkdir
++	test -f Makefile -a -f debian/rules
++endef
++
++# Below here is fairly generic really
++
++binary:		binary-arch binary-indep
++
++build:		
++build-arch:
++build-indep:
++
++checkroot:
++	test root = "`whoami`"
++
++.PHONY: binary binary-arch binary-indep clean checkroot
++
++
+--- dnsmasq-2.63.orig/debian/systemd.service
++++ dnsmasq-2.63/debian/systemd.service
+@@ -0,0 +1,33 @@
++[Unit]
++Description=A lightweight DHCP and caching DNS server
++
++[Service]
++Type=dbus
++BusName=uk.org.thekelleys.dnsmasq
++
++# Test the config file and refuse starting if it is not valid.
++ExecStartPre=/usr/sbin/dnsmasq --test
++
++# We run dnsmasq via the /etc/init.d/dnsmasq script which acts as a
++# wrapper picking up extra configuration files and then execs dnsmasq
++# itself, when called with the "systemd-exec" function.
++#
++# It also adds the command-line flags
++#    --keep-in-foreground --pid-file --enable-dbus 
++# to disable writing a pid-file (not needed with systemd) and 
++# enable DBus by default because we use DBus activation.
++#
++ExecStart=/etc/init.d/dnsmasq systemd-exec
++
++# The systemd-*-resolvconf functions configure (and deconfigure)
++# resolvconf to work with the dnsmasq DNS server. They're called liek
++# this to get correct error handling (ie don't start-resolvconf if the 
++# dnsmasq daemon fails to start.
++ExecStartPost=/etc/init.d/dnsmasq systemd-start-resolvconf
++ExecStop=/etc/init.d/dnsmasq systemd-stop-resolvconf
++
++
++ExecReload=/bin/kill -HUP $MAINPID
++
++[Install]
++WantedBy=multi-user.target
+--- dnsmasq-2.63.orig/debian/source/format
++++ dnsmasq-2.63/debian/source/format
+@@ -0,0 +1 @@
++1.0

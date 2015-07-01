@@ -1,0 +1,9 @@
+key: rh-eula
+short_name: Red Hat EULA
+name: >-
+    Red Hat EULA for Enterprise Linux and Applications
+category: Copyleft
+owner: Red Hat
+homepage_url: http://www.redhat.com/en/about/red-hat-end-user-license-agreements
+text_urls:
+    - http://www.redhat.com/f/pdf/licenses/GLOBAL_EULA_RHEL_English_20101110.pdf

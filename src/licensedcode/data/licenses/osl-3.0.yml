@@ -1,0 +1,15 @@
+key: osl-3.0
+short_name: OSL 3.0
+name: Open Software License 3.0
+category: Copyleft
+owner: Lawrence Rosen
+homepage_url: http://www.opensource.org/licenses/osl-3.0.php
+spdx_license_key: OSL-3.0
+spdx_full_name: Open Software License 3.0
+spdx_url: http://spdx.org/licenses/OSL-3.0
+spdx_notes: This license is OSI certified.
+text_urls:
+    - http://www.opensource.org/licenses/osl-3.0.php
+osi_url: http://opensource.org/licenses/osl-3.0.php
+other_urls:
+    - http://www.rosenlaw.com/OSL3.0.htm

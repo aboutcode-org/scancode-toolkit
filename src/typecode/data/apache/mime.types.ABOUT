@@ -1,0 +1,11 @@
+about_resource: mime.types
+name: Apache mime types definitions
+download_url: http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types#896223
+note: there are several sources for mime.types files. Python mimetypes module
+ rely on this file.  The files are unfortunately different on each OS.
+ While Ubuntu, Centos/RHEL/Fedora, Cygwin and Mac seem to be quite close
+ to what Apache provides (though heavily customized), Suse diverges
+ significantly on some common file types, such as eps. Suse choices are not
+ bad per se, they are not consistent with other OSes. Furthermore, Windows
+ does not provide a mime.types file. To avoid inconsistencies of mimetype
+ detection across OSes we use the Apache-provided file everywhere.

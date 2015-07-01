@@ -1,0 +1,11 @@
+key: imlib2
+short_name: Imlib2 License
+name: Imlib2 License
+category: Copyleft Limited
+owner: Enlightenment
+homepage_url: http://trac.enlightenment.org/e/browser/trunk/imlib2/COPYING
+spdx_license_key: MIT-enna
+spdx_full_name: enna License
+spdx_url: http://spdx.org/licenses/MIT-enna
+text_urls:
+    - https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#enna

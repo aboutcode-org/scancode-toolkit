@@ -1,0 +1,2 @@
+/* My work is under the GPL license */
+

@@ -1,0 +1,14 @@
+key: gpl-3.0-plus
+short_name: GPL 3.0 or later
+name: GNU General Public License 3.0 or later
+category: Copyleft
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+spdx_license_key: GPL-3.0+
+spdx_full_name: GNU General Public License v3.0 or later
+spdx_url: http://spdx.org/licenses/GPL-3.0+
+spdx_notes: |-
+    This license was released: 29 June 2007
+    This license is OSI certified.
+text_urls:
+    - http://www.gnu.org/licenses/gpl-3.0-standalone.html

@@ -1,0 +1,19 @@
+diff -ur src/3rdParty/webkit/work/WebCore/page/EventHandler.cpp src/3rdParty/webkit/work/WebCore/page/EventHandler.cpp~
+--- src/3rdParty/webkit/work/WebCore/page/EventHandler.cpp	2009-12-08 14:32:54.461258995 +0800
++++ src/3rdParty/webkit/work/WebCore/page/EventHandler.cpp~	2009-12-08 14:32:54.425258494 +0800
+@@ -1592,7 +1592,13 @@
+             defaultTabEventHandler(event);
+    }
+    if (event->type() == keypressEvent) {
+-        m_frame->editor()->handleKeyboardEvent(event);
++        //filter out TAB key press event to prevent input TAB in text field, because it should be handled as advance focus
++        if (event->charCode() != 9 /* TAB's ASCII value */) {
++            m_frame->editor()->handleKeyboardEvent(event);
++        }
++        else {
++            event->setDefaultHandled();
++        }
+         if (event->defaultHandled())
+             return;
+    }
+

@@ -1,0 +1,11 @@
+key: dsdp
+short_name: DSDP License
+name: DSDP License
+category: Attribution
+owner: University of Chicago
+homepage_url: https://fedoraproject.org/wiki/Licensing/DSDP
+spdx_license_key: DSDP
+spdx_full_name: DSDP License
+spdx_url: http://spdx.org/licenses/DSDP
+text_urls:
+    - http://www.mcs.anl.gov/hs/software/DSDP/Copyright.txt

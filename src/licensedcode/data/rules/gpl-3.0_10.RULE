@@ -1,0 +1,6 @@
+The Debian packaging is:
+{{ 25
+    Copyright (C) 2009 <s>Masayuki Hatta (mhatta) <mhatta@debian.org></s>
+    Copyright (C) 2009 <s>Patrik Fimml <patrik@fimml.at></s>
+}}
+and is licensed under the GPL version 3.

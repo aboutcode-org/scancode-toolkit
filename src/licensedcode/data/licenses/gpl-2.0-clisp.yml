@@ -1,0 +1,9 @@
+key: gpl-2.0-clisp
+short_name: GPL 2.0 with CLISP exception
+name: >-
+    GNU General Public License 2.0 with CLISP exception
+category: Copyleft Limited
+owner: Clisp
+homepage_url: http://clisp.hg.sourceforge.net/hgweb/clisp/clisp/raw-file/tip/COPYRIGHT
+text_urls:
+    - http://clisp.hg.sourceforge.net/hgweb/clisp/clisp/raw-file/tip/COPYRIGHT

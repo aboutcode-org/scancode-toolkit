@@ -1,0 +1,210 @@
+Index: linux-2.6.23/fs/Kconfig
+===================================================================
+--- linux-2.6.23.orig/fs/Kconfig
++++ linux-2.6.23/fs/Kconfig
+@@ -986,6 +986,18 @@ config TMPFS_POSIX_ACL
+ 
+ 	  If you don't know what Access Control Lists are, say N.
+ 
++config EARLYUSERSPACE_ON_TMPFS
++	bool "Unpack the early userspace onto tmpfs"
++	depends TMPFS
++	default y
++	help
++	  Use this to have your early userspace placed (decompressed)
++	  onto tmpfs as opposed ramfs. This will allow you to
++	  restrict the size of your root-filesystem and it will also
++	  be swappable.
++   
++	  If unsure, say Y.
++
+ config HUGETLBFS
+ 	bool "HugeTLB file system support"
+ 	depends on X86 || IA64 || PPC64 || SPARC64 || (SUPERH && MMU) || BROKEN
+Index: linux-2.6.23/init/initramfs.c
+===================================================================
+--- linux-2.6.23.orig/init/initramfs.c
++++ linux-2.6.23/init/initramfs.c
+@@ -6,6 +6,9 @@
+ #include <linux/delay.h>
+ #include <linux/string.h>
+ #include <linux/syscalls.h>
++#include <asm/uaccess.h>
++#define MMUCR		0xFF000010	/* MMU Control Register */
++#define MMUCR_SE		(1<<4)
+ 
+ static __initdata char *message;
+ static void __init error(char *x)
+@@ -502,6 +505,48 @@ static int __init retain_initrd_param(ch
+ }
+ __setup("retain_initrd", retain_initrd_param);
+ 
++/* If we want the rootfs on initramfs so we mount initramfs over the
++ * rootfs before we unpack it. The little dance we do by creating a
++ * pivot point and moving the root to that is in fact necessary
++ * because lookups of "." don't resolve mountpoints.
++ */
++static inline void __init overmount_rootfs(void)
++   {
++#ifdef CONFIG_EARLYUSERSPACE_ON_TMPFS
++    int init_tmpfs(void);
++    int (*initfunc)(void) = init_tmpfs;
++    char pivot[] = "/pivot";
++    mm_segment_t oldfs =get_fs();
++   
++    /* Explicitly go and init the overmount fs early (long-term
++     * the need for this will probably go away. */
++   
++    if (initfunc())
++    goto err;
++   
++    set_fs(KERNEL_DS);
++   
++    if (sys_mkdir(pivot, 0700) < 0)
++    goto err;
++    if (sys_mount("tmpfs", pivot, "tmpfs", 0, "size=90%"))
++    goto err;
++   
++    /* Below here errors are unlikely and icky to deal with. */
++    sys_chdir(pivot);
++    sys_mount(".", "/", NULL, MS_MOVE, NULL);
++    sys_chdir(".");
++    sys_chroot(".");
++    printk(KERN_INFO "Overmounted tmpfs\n");
++    goto out;
++   
++    err:
++    printk(KERN_ERR "Overmount error\n");
++   
++    out:
++    set_fs(oldfs);
++#endif /* CONFIG_EARLYUSERSPACE_ON_TMPFS */
++}
++
+ extern char __initramfs_start[], __initramfs_end[];
+ #ifdef CONFIG_BLK_DEV_INITRD
+ #include <linux/initrd.h>
+@@ -549,6 +594,31 @@ static int __init populate_rootfs(void)
+ 		panic(err);
+ #ifdef CONFIG_BLK_DEV_INITRD
+ 	if (initrd_start) {
++		int initrd_in_videomem = 1;
++		if (!(((initrd_start >= 0x90000000) &&
++		       (initrd_start < 0xA0000000)) ||
++		      (initrd_start >= 0xB0000000))) {
++			initrd_in_videomem = 0;
++		}
++#ifdef CONFIG_32BIT
++		if (initrd_in_videomem) {
++			uint32_t vid_mem_start;
++			uint32_t size = 0;
++#ifdef CONFIG_CPU_SUBTYPE_STX7105
++			vid_mem_start = 0x60000000;
++#else
++			if ((ctrl_inl(MMUCR)&MMUCR_SE)==MMUCR_SE)
++				vid_mem_start = 0x60000000;
++			else
++				vid_mem_start = 0x10000000;
++#endif
++			size = initrd_end - initrd_start;
++			initrd_start = (initrd_start & ~0xf0000000) | vid_mem_start;
++			initrd_end = (initrd_end & ~0xf0000000) | vid_mem_start;
++			initrd_start = (uint32_t) ioremap_nocache(initrd_start, size);
++			initrd_end = initrd_start + size;
++		}
++#endif
+ #ifdef CONFIG_BLK_DEV_RAM
+ 		int fd;
+ 		printk(KERN_INFO "checking if image is initramfs...");
+@@ -556,9 +626,19 @@ static int __init populate_rootfs(void)
+ 			initrd_end - initrd_start, 1);
+ 		if (!err) {
+ 			printk(" it is\n");
++#ifdef CONFIG_EARLYUSERSPACE_ON_TMPFS
++                         overmount_rootfs();
++#endif /* CONFIG_EARLYUSERSPACE_ON_TMPFS */
+ 			unpack_to_rootfs((char *)initrd_start,
+ 				initrd_end - initrd_start, 0);
+-			free_initrd();
++			if (!initrd_in_videomem) {
++				free_initrd();
++ 			}
++#ifdef CONFIG_32BIT
++			if (initrd_in_videomem) {
++				iounmap((void*)initrd_start);
++			}
++#endif
+ 			return 0;
+ 		}
+ 		printk("it isn't (%s); looks like an initrd\n", err);
+@@ -570,13 +650,23 @@ static int __init populate_rootfs(void)
+ 			free_initrd();
+ 		}
+ #else
+-		printk(KERN_INFO "Unpacking initramfs...");
++		printk(KERN_INFO "Unpacking initramfs...\n");
++#ifdef CONFIG_EARLYUSERSPACE_ON_TMPFS
++                         overmount_rootfs();
++#endif /* CONFIG_EARLYUSERSPACE_ON_TMPFS */
+ 		err = unpack_to_rootfs((char *)initrd_start,
+ 			initrd_end - initrd_start, 0);
+ 		if (err)
+ 			panic(err);
+-		printk(" done\n");
+-		free_initrd();
++		printk(KERN_INFO " done\n");
++			if (!initrd_in_videomem) {
++				free_initrd();
++ 			}
++#ifdef CONFIG_32BIT
++			if (initrd_in_videomem) {
++				iounmap((void*)initrd_start);
++			}
++#endif
+ #endif
+ 	}
+ #endif
+Index: linux-2.6.23/mm/shmem.c
+===================================================================
+--- linux-2.6.23.orig/mm/shmem.c
++++ linux-2.6.23/mm/shmem.c
+@@ -2454,7 +2454,7 @@ static struct file_system_type tmpfs_fs_
+ };
+ static struct vfsmount *shm_mnt;
+ 
+-static int __init init_tmpfs(void)
++int __init init_tmpfs(void)
+ {
+ 	int error;
+ 
+@@ -2485,7 +2485,12 @@ out3:
+ 	shm_mnt = ERR_PTR(error);
+ 	return error;
+ }
++/* Don't do this if we are calling it early explicity */
++#ifndef CONFIG_EARLYUSERSPACE_ON_TMPFS
++/* If CONFIG_EARLYUSERSPACE_ON_TMPFS is set then we will interpose
++ * ramfs so this will get called explicitly and early */
+ module_init(init_tmpfs)
++#endif /* !CONFIG_EARLYUSERSPACE_ON_TMPFS */
+ 
+ /*
+  * shmem_file_setup - get an unlinked file living in tmpfs
+Index: linux-2.6.23/init/main.c
+===================================================================
+--- linux-2.6.23.orig/init/main.c
++++ linux-2.6.23/init/main.c
+@@ -854,6 +854,13 @@ static int __init kernel_init(void * unu
+ 	if (sys_access((const char __user *) ramdisk_execute_command, 0) != 0) {
+ 		ramdisk_execute_command = NULL;
+ 		prepare_namespace();
++#ifdef CONFIG_EARLYUSERSPACE_ON_TMPFS
++ 		{
++ 			int init_tmpfs(void);
++ 			int (*initfunc)(void) = init_tmpfs;
++ 			initfunc();
++ 		}
++#endif /* CONFIG_EARLYUSERSPACE_ON_TMPFS */
+ 	}
+ 
+ 	/*

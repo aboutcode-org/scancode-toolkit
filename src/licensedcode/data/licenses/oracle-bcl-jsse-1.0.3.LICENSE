@@ -1,0 +1,186 @@
+Oracle Binary Code License Agreement for Java Secure Sockets Extension 1.0.3
+for Connected Device Configuration 1.0.2
+
+ORACLE AMERICA, INC. ("ORACLE"), FOR AND ON BEHALF OF ITSELF AND ITS
+SUBSIDIARIES AND AFFILIATES UNDER COMMON CONTROL, IS WILLING TO LICENSE THE
+SOFTWARE TO YOU ONLY UPON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS
+CONTAINED IN THIS BINARY CODE LICENSE AGREEMENT AND SUPPLEMENTAL LICENSE
+TERMS (COLLECTIVELY "AGREEMENT"). PLEASE READ THE AGREEMENT CAREFULLY. BY
+SELECTING THE "ACCEPT LICENSE AGREEMENT" (OR THE EQUIVALENT) BUTTON AND/OR BY
+USING THE SOFTWARE YOU ACKNOWLEDGE THAT YOU HAVE READ THE TERMS AND AGREE TO
+THEM. IF YOU ARE AGREEING TO THESE TERMS ON BEHALF OF A COMPANY OR OTHER
+LEGAL ENTITY, YOU REPRESENT THAT YOU HAVE THE LEGAL AUTHORITY TO BIND THE
+LEGAL ENTITY TO THESE TERMS. IF YOU DO NOT HAVE SUCH AUTHORITY, OR IF YOU DO
+NOT WISH TO BE BOUND BY THE TERMS, THEN SELECT THE "DECLINE LICENSE
+AGREEMENT" (OR THE EQUIVALENT) BUTTON AND YOU MUST NOT USE THE SOFTWARE ON
+THIS SITE OR ANY OTHER MEDIA ON WHICH THE SOFTWARE IS CONTAINED.
+
+1. DEFINITIONS. "Software" means the software identified above in binary
+form that you selected for download, install or use (in the version You
+selected for download, install or use) from Oracle or its authorized
+licensees, any other machine readable materials (including, but not limited
+to, libraries, source files, header files, and data files), any updates
+or error corrections provided by Oracle, and any user manuals, programming
+guides and other documentation provided to you by Oracle under this
+Agreement. "Programs" means Java technology applets and applications
+intended to run on the Java Platform, Micro Edition platform. “README File”
+means the README file for the Software set forth in the Software or otherwise
+available from Oracle.
+
+2. LICENSE TO USE. Subject to the terms and conditions of this Agreement
+including, but not limited to, the Java Technology Restrictions of the
+Supplemental License Terms, Oracle grants you a non-exclusive, nontransferable,
+limited license without license fees to reproduce and use
+internally the Software complete and unmodified for the sole purpose of
+running Programs.
+
+3. RESTRICTIONS. Software is copyrighted. Title to Software and all
+associated intellectual property rights is retained by Oracle and/or its
+licensors. Unless enforcement is prohibited by applicable law, you may not
+modify, decompile, or reverse engineer Software. You acknowledge that the
+Software is developed for general use in a variety of information management
+applications; it is not developed or intended for use in any inherently
+dangerous applications, including applications that may create a risk of
+personal injury. If you use the Software in dangerous applications, then you
+shall be responsible to take all appropriate fail-safe, backup, redundancy,
+and other measures to ensure its safe use. Oracle disclaims any express or
+implied warranty of fitness for such uses. No right, title or interest in or
+to any trademark, service mark, logo or trade name of Oracle or its licensors
+is granted under this Agreement. Additional restrictions for developers are
+set forth in the Supplemental License Terms.
+
+4. DISCLAIMER OF WARRANTY. THE SOFTWARE IS PROVIDED "AS IS" WITHOUT
+WARRANTY OF ANY KIND. ORACLE FURTHER DISCLAIMS ALL WARRANTIES, EXPRESS AND
+IMPLIED, INCLUDING WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+
+5. LIMITATION OF LIABILITY. IN NO EVENT SHALL ORACLE BE LIABLE FOR ANY
+INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE OR CONSEQUENTIAL DAMAGES, OR DAMAGES
+FOR LOSS OF PROFITS, REVENUE, DATA OR DATA USE, INCURRED BY YOU OR ANY THIRD
+PARTY, WHETHER IN AN ACTION IN CONTRACT OR TORT, EVEN IF ORACLE HAS BEEN
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. ORACLE'S ENTIRE LIABILITY FOR
+DAMAGES HEREUNDER SHALL IN NO EVENT EXCEED ONE THOUSAND DOLLARS (U.S.
+$1,000).
+
+6. TERMINATION. This Agreement is effective until terminated. You may
+terminate this Agreement at any time by destroying all copies of Software.
+This Agreement will terminate immediately without notice from Oracle if you
+fail to comply with any provision of this Agreement. Either party may
+terminate this Agreement immediately should any Software become, or in either
+party's opinion be likely to become, the subject of a claim of infringement
+of any intellectual property right. Upon termination, you must destroy all
+copies of Software.
+
+7. EXPORT REGULATIONS. You agree that U.S. export control laws and other
+applicable export and import laws govern your use of the Software, including
+technical data; additional information can be found on Oracle's Global Trade
+Compliance web site (http://www.oracle.com/products/export). You agree that
+neither the Software nor any direct product thereof will be exported,
+directly, or indirectly, in violation of these laws, or will be used for any
+purpose prohibited by these laws including, without limitation, nuclear,
+chemical, or biological weapons proliferation.
+
+8. TRADEMARKS AND LOGOS. You acknowledge and agree as between you and
+Oracle that Oracle owns the ORACLE and JAVA trademarks and all ORACLE- and
+JAVA-related trademarks, service marks, logos and other brand designations
+("Oracle Marks"), and you agree to comply with the Third Party Usage
+Guidelines for Oracle Trademarks currently located at
+http://www.oracle.com/us/legal/third-party-trademarks/index.html. Any
+use you make of the Oracle Marks inures to Oracle's benefit.
+
+9. U.S. GOVERNMENT LICENSE RIGHTS. If Software is being acquired by or on
+behalf of the U.S. Government or by a U.S. Government prime contractor or
+subcontractor (at any tier), then the Government's rights in Software and
+accompanying documentation shall be only those set forth in this Agreement.
+
+10. GOVERNING LAW. This agreement is governed by the substantive and
+procedural laws of California. You and Oracle agree to submit to the
+exclusive jurisdiction of, and venue in, the courts of San Francisco, or
+Santa Clara counties in California in any dispute arising out of or relating
+to this agreement.
+
+11. SEVERABILITY. If any provision of this Agreement is held to be
+unenforceable, this Agreement will remain in effect with the provision
+omitted, unless omission would frustrate the intent of the parties, in which
+case this Agreement will immediately terminate.
+
+12. INTEGRATION. This Agreement is the entire agreement between you and
+Oracle relating to its subject matter. It supersedes all prior or
+contemporaneous oral or written communications, proposals, representations
+and warranties and prevails over any conflicting or additional terms of any
+quote, order, acknowledgment, or other communication between the parties
+relating to its subject matter during the term of this Agreement. No 
+modification of this Agreement will be binding, unless in writing and signed
+by an authorized representative of each party.
+
+SUPPLEMENTAL LICENSE TERMS
+These Supplemental License Terms add to or modify the terms of the Binary
+Code License Agreement. Capitalized terms not defined in these Supplemental
+Terms shall have the same meanings ascribed to them in the Binary Code
+License Agreement. These Supplemental Terms shall supersede any inconsistent
+or conflicting terms in the Binary Code License Agreement, or in any license
+contained within the Software.
+
+A. SOFTWARE INTERNAL USE FOR DEVELOPMENT LICENSE GRANT. Subject to the
+terms and conditions of this Agreement and restrictions and exceptions set
+forth in the README File incorporated herein by reference, including, but not
+limited to the Java Technology Restrictions of these Supplemental Terms,
+Oracle grants you a non-exclusive, non-transferable, limited license without
+fees to reproduce internally and use internally the Software complete and
+unmodified for the purpose of designing, developing, and testing your
+Programs.
+
+B. LICENSE TO DISTRIBUTE SOFTWARE. Subject to the terms and conditions of
+this Agreement and restrictions and exceptions set forth in the README File,
+including, but not limited to the Java Technology Restrictions of these
+Supplemental Terms, Oracle grants you a non-exclusive, non-transferable,
+limited license without fees to reproduce and distribute the Software,
+provided that (i) you distribute the Software complete and unmodified and
+only bundled as part of, and for the sole purpose of running, your Programs,
+(ii) the Programs add significant and primary functionality to the Software,
+(iii) you do not distribute additional software intended to replace any
+component(s) of the Software, (iv) you do not remove or alter any proprietary
+legends or notices contained in the Software, (v) you only distribute the
+Software subject to a license agreement that protects Oracle's interests
+consistent with the terms contained in this Agreement, (vi) you only
+distribute the Software tightly integrated and configured to run with your
+implementation of JSR 36 (Connected Device Configuration) and JSR 46
+Foundation Profile; (vii) you have a valid license from Oracle for JSR 36
+(Connected Device Configuration) and JSR 46 Foundation Profile, and (viii)
+you agree to defend and indemnify Oracle and its licensors from and against
+any damages, costs, liabilities, settlement amounts and/or expenses
+(including attorneys' fees) incurred in connection with any claim, lawsuit
+or action by any third party that arises or results from the use or
+distribution of any and all Programs and/or Software.
+
+C. JAVA TECHNOLOGY RESTRICTIONS. You may not create, modify, or change the
+behavior of, or authorize your licensees to create, modify, or change the
+behavior of, classes, interfaces, or subpackages that are in any way
+identified as "java", "javax", "javafx", “javaee”, "sun", “oracle” or
+similar convention as specified by Oracle in any naming convention
+designation.
+
+D. SOURCE CODE. Software may contain source code that, unless expressly
+licensed for other purposes, is provided solely for reference purposes
+pursuant to the terms of this Agreement. Source code may not be
+redistributed unless expressly provided for in this Agreement.
+
+E. THIRD PARTY CODE. Additional copyright notices and license terms
+applicable to portions of the Software are set forth in the
+THIRDPARTYLICENSEREADME file set forth in the Software or otherwise available
+from Oracle. In addition to any terms and conditions of any third party
+opensource/freeware license identified in the THIRDPARTYLICENSEREADME file,
+the disclaimer of warranty and limitation of liability provisions in
+paragraphs 4 and 5 of the Binary Code License Agreement shall apply to all
+Software in this distribution.
+
+F. TERMINATION FOR INFRINGEMENT. Either party may terminate this Agreement
+immediately should any Software become, or in either party's opinion be
+likely to become, the subject of a claim of infringement of any intellectual
+property right.
+
+For inquiries please contact: Oracle America, Inc., 500 Oracle Parkway,
+Redwood Shores, California 94065, USA.
+
+License for Archived Java Secure Sockets Extension 1.0.3 for Connected Device
+Configuration 1.0.2; Last updated 9 March 2012

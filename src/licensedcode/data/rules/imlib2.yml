@@ -1,0 +1,4 @@
+licenses:
+    - imlib2
+template: yes
+notes: IMLIB 2

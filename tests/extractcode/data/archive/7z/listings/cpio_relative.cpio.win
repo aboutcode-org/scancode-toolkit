@@ -1,0 +1,68 @@
+
+7-Zip 9.38 beta  Copyright (c) 1999-2014 Igor Pavlov  2015-01-03
+
+Listing archive: tests\data\archive\cpio\cpio_relative.cpio
+
+--
+Path = tests\data\archive\cpio\cpio_relative.cpio
+Type = Cpio
+Physical Size = 512
+SubType = Binary LE
+
+----------
+Path = ..\..
+Folder = +
+Size = 0
+Modified = 2009-08-20 09:33:07
+Mode = drwxr-xr-x
+Links = 3
+
+Path = ..\..\2folder
+Folder = +
+Size = 0
+Modified = 2009-08-20 09:33:14
+Mode = drwxr-xr-x
+Links = 3
+
+Path = ..\..\2folder\3folder
+Folder = +
+Size = 0
+Modified = 2009-08-20 09:34:57
+Mode = drwxr-xr-x
+Links = 2
+
+Path = ..\..\2folder\3folder\cpio_relative.cpio
+Folder = -
+Size = 0
+Modified = 2009-08-20 09:34:57
+Mode = -rw-r--r--
+Links = 1
+
+Path = ..\..\2folder\3folder\relative_file
+Folder = -
+Size = 14
+Modified = 2009-08-20 09:17:04
+Mode = -rw-r--r--
+Links = 1
+
+Path = ..\..\2folder\3folder\relative_file~
+Folder = -
+Size = 14
+Modified = 2009-08-20 09:17:03
+Mode = -rw-r--r--
+Links = 1
+
+Path = ..\..\2folder\relative_file
+Folder = -
+Size = 14
+Modified = 2009-08-20 09:17:04
+Mode = -rw-r--r--
+Links = 1
+
+Path = ..\..\relative_file
+Folder = -
+Size = 14
+Modified = 2009-08-20 09:17:04
+Mode = -rw-r--r--
+Links = 1
+

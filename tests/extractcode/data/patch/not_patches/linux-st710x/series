@@ -1,0 +1,260 @@
+### Motorola patches
+
+# Add common defines for VIP19xx
+vip19xx.h.patch
+
+# Protect flash by disable chip select when not accessing flash.
+# In some cases flash has been overwritten by random data.
+cfi_cmdset_0001.c.patch
+
+# Add kboxdevice to drivers/char/Makefile and Kconfig
+char_build.patch
+
+# Change MTD command line parsing
+cmdlinepart.c.patch
+
+# Remove sysfs calls when not using sysfs.
+dma-api.c.patch
+
+# Kreatel board specific setup and various memory related fixups, in
+# particular "blue dots" problem.
+setup-stb7100.c.patch
+
+# Unpack initial root to tmpfs
+inittmpfs.patch
+
+# Add Motorola specific kconfig settings for memory sizes etc.
+motorola_make.patch
+
+# Add VIP19xx NOR flash support
+vip19xx_nor.patch
+
+# Add VIP19xx NAND flash support
+vip19xx_nand.patch
+
+# NAND OOB layout adjusted to use the older-style format for yaffs2
+nand_old_oob_layout_for_yaffs2.patch
+#
+# Enable Flash based BBT to improve boot time
+nand_flash_based_bbt.patch
+
+# Setup IRQ routing for the Kreatel board.
+mach.c.patch
+
+# Add machine restart in 7109 OHCI code to avoid lock at reboot.
+# Add machine restart in 7109 EHCI code to avoid problems with network
+# at reboot.
+hcd_stm.c.patch
+
+# Allow registration of machine restart notifiers.
+process.c.patch
+
+# Handle memory and initrd setup
+# and patch for somewhat configurable stapi memory
+sh_kernel_setup.c.patch
+
+# Use the correct ASC for console and configure other Motorola board
+# specific parameters.
+mb442_setup.c.patch
+
+# Export symbols used by front_panel
+stasc.c.patch
+
+# Switch to 32-bit mode in head.S
+head.S.patch
+
+# Change the way that the PMB-table is cleared in 32-bit mode
+pmb.c.patch
+
+# Fix bug 8247, IGMP packet is not send when ip setting are
+# configured from scratch
+devinet.c.patch
+
+# Initialize the size for the bigphysarea feature as well as
+# remove the command line parameter handling support
+bigphysarea.patch
+
+# Adds udpfiler support for stmmac.
+# Disables tx and rx and clears pending interrupts before enabling the
+# interrupt handler. Fixes problem with booting boxes with old firmware.
+# Also registers a reboot notifier that disables DMA and cleans up
+# the driver upon reboot.
+stmmac_main.c.patch
+
+# Fixed half duplex problem for gmac on vip19x3, this one
+# will be included in later STLinux kernel releases.
+disable_carrier_sense.patch
+
+# Patch kernel to enable compilation with gcc 4.1.1
+sh_ksyms.c.patch
+
+# Removes all other PHYs except the LAN8700.
+smsc.c.patch
+
+# Define aligned_u64 in if_ppp.h since __KERNEL_STRICT_NAMES is defined
+# and aligned_u64 is then excluded in linux/types.h
+if_ppp.h.patch
+
+# Disables debug mode in the SMSC network driver.
+smsc_makefile.patch
+
+# Added support for the 88e3015 phy
+marvell_88e3015.patch
+
+# Changes the link order of PHY drivers so Linux will register
+# PHY devices prior to register MAC devices. It is necessary
+# for the MAC to know its PHY during initialization.
+drivers_net_Makefile.patch
+
+# Adds a new timer value for the PHY state machine to increase the speed
+# during PHY initialization and autonegotiation. Also only constantly read
+# link status if not interrupts are supported by the PHY.
+phy.c.patch
+phy.h.patch
+
+# Makes sure higher levels such as Ethtool returns link down before the
+# PHY has been properly initialized. Also adds a couple of BUG statements
+# if the PHY doesn't seem to support interrupts (all Motorola boards should
+# support interrupts!).
+phy_device.c.patch
+
+# Patches to make it possible to run in 29 bit and 32 bit on the
+# same bootimage. I.e. 7100 will run 29 bit and 7109 will run 32 bit
+addrspace.h.patch
+arch_sh_kernel_cpu_init.c.patch
+ioremap.c.patch
+mmu_context.h.patch
+page.h.patch
+pgtable.h.patch
+
+# Enabled -m4-300-nofpu for 7105 based chip
+arch_sh_Makefile.patch
+
+# Fix IRQ for PIO9 PIN 7 and GMAC Ethernet
+setup-stx7105.c.patch
+
+# Fixes regarding i2c arbitration errors.
+# The driver will now abort, wait for stop and complete with error
+# instead of timing out.
+#i2c-stm.c.patch
+i2c-stm.c.patch2
+
+# Add Motorola VIP19x3 board support
+vip19x3_board.patch
+
+# Adds serial console definition
+soc.h.patch
+
+# Export symbol, kernel_text_address, needed by oprofile
+kernel_extable.c.patch
+
+# Fixed check for lkm or vmlinux
+ksymhash_elflib.c.patch
+
+# Remove Unaligned userspace access prinks"
+disable_unaligned_printks.patch
+
+# Splits kernel messages at every new line and adds a specific header used by
+# the firmware log client before using netconsole to send the strings as UDP
+# packets on the net.
+netconsole.patch
+
+# Update scheduler (CFS)
+sched-cfs-v2.6.23.12-v24.1.mod.patch
+
+# unionfs-2.5.1 support
+unionfs-2.5.1_for_2.6.23.17.diff
+unionfs_remove_debug_printouts.patch
+
+# yaffs2-2008.07.15 support
+yaffs2-2008.07.15_for_2.6.23.17.patch
+yaffs2-2008.07.15_for_2.6.23.17-yaffs_guts.c.patch
+
+# Add support for device node less rootdisk for vip1903.
+# All devices nodes except /dev/console can and will be added by the new
+# init process.
+init_main.c.patch
+
+# Add Motorola rootdisk block device, used for mounting squashfs images
+# stored in ram.
+motorola_rootdisk.c.patch
+
+# Add support print out loglevel for specific consoles.
+# netconsole default to printout loglevels.
+console_printk_loglevel.patch
+
+# ST bug 2640, stlinux bug 5931
+# Accept PIO ports with no interrupt assigned.
+pio-irq.patch
+
+# nfsroot mount retries forever
+nfsroot.patch
+
+# patches for log levels
+page_alloc.c.patch
+pid.c.patch
+time.c.patch
+vt.c.patch
+cache-sh4.c.patch
+netconsole.c.patch
+cfi_util.c.patch
+arch_sh_mm_init.c.patch
+namespace.c.patch
+bugs.h.patch
+ipconfig.c.patch
+do_mounts.c.patch
+
+# Remove annoying printouts in kernel/resource.c
+kernel_resource.patch
+
+# Change the frequency of the I2C_RATE_NORMAL to 80kHz
+# STI2C (in adaptive baud rate) does only support RATE_NORMAL and
+# RATE_FASTMODE. Custom baudrate is not supported.
+# Fixes bug #9116.
+i2c_rate_normal.patch
+
+# Changed localversion to _stm_XXXX
+# Keep this format for new kernel releases since
+# STSEC drivers are depented on this.
+localversion.patch
+
+# Vip19x3 (with NXP chip for HDMI) needs an additional
+# delay (approx. one I2C clock-period) between the ACKs and the
+# bytes in multi-byte transfers over I2C to end up with the same
+# timing as Vip19x0. This is probably explained by faster IRQ handling,
+# but can also be related to how the NXP chip converts SDA/SCL on the DDC-pins.
+# See bug #11550
+delayed_i2c_read.patch
+
+# This patch adds a fix for i2c no-stop read/writes
+# to the bit-banging driver.
+i2c_nostop_for_bitbanging.patch
+
+squashfs3.3_revert.patch
+squashfs3.4.patch
+
+# Video DDR memory delay adjusted for VIP19x0 cut 3.4 CPU's with 256/64 MB memory setup.
+# See bug #12408
+vip19x0_vidmem.patch
+
+# Update from Peppe Cavallaro:
+# ---------------------
+# with the patch applied the network seems to be more stable and the I can
+# work without any problems with the Half Duplex Link. Indeed, I was able
+# to reproduce the problem with the original Kernel on this VIP1903.
+# You will find more details within the patch itself.
+0001-stmmac-updated-the-driver-and-added-several-fixes-a.patch
+
+# BEGIN - Added from firmware kernel
+
+# Add firmware configuration option
+init_Kconfig.patch
+kexec.patch
+fan_ctrl.patch
+
+# END - Added from firmware kernel
+
+# Adds a proc file (/proc/igmp_suppress_igmp_report_listening) to make report
+# listening configurable in runtime. Some (faulty) igmp equipment does not
+# work if this hack is not enabled...
+suppress_igmp_report_listening.patch

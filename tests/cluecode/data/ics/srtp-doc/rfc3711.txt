@@ -1,0 +1,28 @@
+   Official Protocol Standards" (STD 1) for the standardization state
+   and status of this protocol.  Distribution of this memo is unlimited.
+
+Copyright Notice
+
+   Copyright (C) The Internet Society (2004).  All Rights Reserved.
+
+Abstract
+       B.2.  AES-CM Test Vectors. . . . . . . . . . . . . . . . . . . 52
+       B.3.  Key Derivation Test Vectors. . . . . . . . . . . . . . . 53
+   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 55
+   Full Copyright Statement . . . . . . . . . . . . . . . . . . . . . 56
+
+1.  Introduction
+RFC 3711                          SRTP                        March 2004
+
+
+Full Copyright Statement
+
+   Copyright (C) The Internet Society (2004).  This document is subject
+   to the rights, licenses and restrictions contained in BCP 78 and
+   except as set forth therein, the authors retain all their rights.
+   http://www.ietf.org/ipr.
+
+   The IETF invites any interested party to bring to its attention any
+   copyrights, patents or patent applications, or other proprietary
+   rights that may cover technology that may be required to implement
+   this standard.  Please address the information to the IETF at ietf-

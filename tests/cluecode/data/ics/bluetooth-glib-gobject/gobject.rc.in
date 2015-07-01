@@ -1,0 +1,6 @@
+	VALUE "FileDescription", "GObject"
+	VALUE "FileVersion", "@GLIB_VERSION@.0"
+	VALUE "InternalName", "libgobject-2.0-@LT_CURRENT_MINUS_AGE@"
+	VALUE "LegalCopyright", "Copyright © 1998-2004 Tim Janik and Red Hat, Inc."
+	VALUE "OriginalFilename", "libgobject-2.0-@LT_CURRENT_MINUS_AGE@.dll"
+	VALUE "ProductName", "GLib"

@@ -1,0 +1,6 @@
+key: nist-pd
+short_name: NIST Public Domain Notice
+name: NIST Public Domain Notice
+category: Public Domain
+owner: NIST
+homepage_url: https://java.net/projects/jsip/sources/svn/content/trunk/src/gov/nist/javax/sdp/MediaDescriptionImpl.java?rev=2364

@@ -1,0 +1,13 @@
+key: cc-by-nd-2.5
+short_name: CC-BY-ND-2.5
+name: >-
+    Creative Commons Attribution No Derivatives License 2.5
+category: Attribution Restricted
+owner: Creative Commons
+homepage_url: http://creativecommons.org/licenses/by-nd/2.5/
+spdx_license_key: CC-BY-ND-2.5
+spdx_full_name: >-
+    Creative Commons Attribution No Derivatives 2.5
+spdx_url: http://spdx.org/licenses/CC-BY-ND-2.5
+text_urls:
+    - http://creativecommons.org/licenses/by-nd/2.5/legalcode

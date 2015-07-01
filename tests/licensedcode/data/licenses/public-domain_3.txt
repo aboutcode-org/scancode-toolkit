@@ -1,0 +1,5 @@
+/*
+**  This grammar has 10 shift/reduce conflicts.
+**
+**  This code is in the public domain and has no copyright.
+*/

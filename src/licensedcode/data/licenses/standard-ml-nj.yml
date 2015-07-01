@@ -1,0 +1,21 @@
+key: standard-ml-nj
+short_name: Standard ML of New Jersey
+name: Standard ML of New Jersey
+category: Attribution
+owner: Alcatel-Lucent
+homepage_url: http://www.smlnj.org//license.html
+spdx_license_key: StandardML-NJ
+spdx_full_name: Standard ML of New Jersey License
+spdx_url: http://spdx.org/licenses/StandardML-NJ
+spdx_notes: >-
+    SPDX ended up with this license on the license list twice: once as of v1.17 with
+    the short identifier: SMLNJ and then added (again) as of v1.20 with the short
+    identifier: StandardML-NJ.  The former list entry has been deprecated.
+text_urls:
+    - http://directory.fsf.org/wiki/License:StandardMLofNJ
+    - http://www.smlnj.org//license.html
+    - https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#Standard_ML_of_New_Jersey_Variant
+faq_url: http://www.gnu.org/licenses/license-list.html#StandardMLofNJ
+other_urls:
+    - http://www.gnu.org/licenses/license-list.html#StandardMLofNJ
+    - http://www2.cs.tum.edu/projects/cup/

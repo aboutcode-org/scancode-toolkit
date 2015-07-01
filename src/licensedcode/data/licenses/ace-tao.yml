@@ -1,0 +1,11 @@
+key: ace-tao
+short_name: ACE TAO License
+name: ACE TAO License
+category: Attribution
+owner: Douglas Schmidt
+homepage_url: http://www.cs.wustl.edu/~schmidt/
+spdx_license_key: DOC
+spdx_full_name: DOC License
+spdx_url: http://spdx.org/licenses/DOC
+text_urls:
+    - http://www.cs.wustl.edu/~schmidt/ACE-copying.html

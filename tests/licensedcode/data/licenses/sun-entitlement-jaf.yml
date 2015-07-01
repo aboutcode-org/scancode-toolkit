@@ -1,0 +1,4 @@
+licenses:
+    - sun-entitlement-jaf
+expected_failure: yes
+sort: true

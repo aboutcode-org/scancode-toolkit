@@ -1,0 +1,10 @@
+/* versioninfo.rc.in - for dbus
+ * Copyright (C) 2005 g10 Code GmbH
+ * 
+ * This file is free software; as a special exception the author gives
+            VALUE "FileDescription", "dbus - FreeDesktop message bus system\0"
+            VALUE "FileVersion", "@DBUS_VERSION@\0"
+            VALUE "InternalName", "dbus\0"
+            VALUE "LegalCopyright", "Copyright © 2009 FreeDesktop.org\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "dbus-1.dll\0"

@@ -1,0 +1,15 @@
+key: mup
+short_name: Mup License
+name: Mup License
+category: Attribution
+owner: Arkkra Enterprises
+homepage_url: http://www.arkkra.com/doc/license.html
+spdx_license_key: Mup
+spdx_full_name: Mup License
+spdx_url: http://spdx.org/licenses/Mup
+spdx_notes: >-
+    per Fedora: "This is a BSD derived Free license, but clause 3 makes it GPL-incompatible,
+    due to the need to include "the reasons for the changes". A copy of this license
+    was taken from http://www.arkkra.com/doc/license.html on 2013-02-15."
+text_urls:
+    - https://fedoraproject.org/wiki/Licensing/Mup

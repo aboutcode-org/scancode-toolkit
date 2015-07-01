@@ -1,0 +1,26 @@
+--- src/3rdParty/webkit/work/WebCore/page/AnimationController.cpp	2008-11-26 14:30:11.000000000 +0100
++++ ../tmp/AnimationController.cpp	2009-08-13 16:10:27.000000000 +0200
+@@ -318,6 +318,7 @@
+     if ((m_property == cAnimateAll && !animation->hasAnimationForProperty(prop)) || m_property == prop) { \
+         if (m_fromStyle->getter() != m_toStyle->getter()) {\
+             m_finished = false; \
++            if (progress() == 1.0) m_finished = true; \
+             if (!animatedStyle) \
+                 animatedStyle = new (renderer->renderArena()) RenderStyle(*targetStyle); \
+             animatedStyle->setter(blendFunc(m_fromStyle->getter(), m_toStyle->getter(), progress()));\
+@@ -339,6 +340,7 @@
+             toColor = m_toStyle->color(); \
+         if (fromColor != toColor) {\
+             m_finished = false; \
++            if (progress() == 1.0) m_finished = true; \
+             if (!animatedStyle) \
+                 animatedStyle = new (renderer->renderArena()) RenderStyle(*targetStyle); \
+             animatedStyle->setter(blendFunc(fromColor, toColor, progress()));\
+@@ -354,6 +356,7 @@
+     if ((m_property == cAnimateAll && !animation->hasAnimationForProperty(prop)) || m_property == prop) { \
+         if (m_fromStyle->getter() && m_toStyle->getter() && *m_fromStyle->getter() != *m_toStyle->getter()) {\
+             m_finished = false; \
++            if (progress() == 1.0) m_finished = true; \
+             if (!animatedStyle) \
+                 animatedStyle = new (renderer->renderArena()) RenderStyle(*targetStyle); \
+             animatedStyle->setter(blendFunc(m_fromStyle->getter(), m_toStyle->getter(), progress()));\

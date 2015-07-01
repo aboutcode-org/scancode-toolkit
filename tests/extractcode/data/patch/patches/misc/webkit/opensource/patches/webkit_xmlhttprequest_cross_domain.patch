@@ -1,0 +1,23 @@
+--- src/3rdParty/webkit/work/WebCore/xml/XMLHttpRequest.cpp	2008-11-26 14:30:13.000000000 +0100
++++ ../tmp/XMLHttpRequest.cpp	2009-08-13 14:20:50.000000000 +0200
+@@ -310,18 +310,8 @@
+ 
+ bool XMLHttpRequest::urlMatchesDocumentDomain(const KURL& url) const
+ {
+-    // a local file can load anything
+-    if (m_doc->isAllowedToLoadLocalResources())
+-        return true;
+-
+-    // but a remote document can only load from the same port on the server
+-    KURL documentURL = m_doc->url();
+-    if (documentURL.protocol().lower() == url.protocol().lower()
+-            && documentURL.host().lower() == url.host().lower()
+-            && documentURL.port() == url.port())
+-        return true;
+-
+-    return false;
++    // always allow loading remote documents
++    return true;
+ }
+ 
+ void XMLHttpRequest::open(const String& method, const KURL& url, bool async, ExceptionCode& ec)

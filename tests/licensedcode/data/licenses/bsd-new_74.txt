@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>net.java.dev.javacc</groupId>
+  <artifactId>javacc</artifactId>
+  <version>5.0</version>
+  <packaging>jar</packaging>
+
+  <name>JavaCC</name>
+  <description>JavaCC is a parser/scanner generator for Java.</description>
+  <url>https://javacc.dev.java.net/</url>
+  <inceptionYear>1996</inceptionYear>
+  <organization>
+    <name>java.net</name>
+    <url>http://www.java.net/</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>Berkeley Software Distribution (BSD) License</name>
+      <url>http://www.opensource.org/licenses/bsd-license.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Sreenivasa Viswanadha</name>
+      <id>sreeni</id>
+      <email>sreeni At dev.java.net</email>
+      <roles>
+        <role>Owner</role>
+      </roles>
+      <timezone>0</timezone>
+      <organization>java.net</organization>
+      <organizationUrl>http://www.java.net/</organizationUrl>
+    </developer>
+    <developer>
+      <name>Tim Pizey</name>
+      <id>timp</id>
+      <email>timp AT paneris.org</email>
+      <roles>
+        <role>Maven maven</role>
+        <role>Developer</role>
+      </roles>
+      <timezone>0</timezone>
+      <url>http://paneris.org/~timp</url>
+      <organization>Context Computing</organization>
+      <organizationUrl>http://www.context-computing.co.uk/</organizationUrl>
+    </developer>
+  </developers>
+
+  <mailingLists>
+    <mailingList>
+      <name>Announce</name>
+      <archive>https://javacc.dev.java.net/servlets/SummarizeList?listName=announce</archive>
+    </mailingList>
+    <mailingList>
+      <name>Users</name>
+      <archive>https://javacc.dev.java.net/servlets/SummarizeList?listName=users</archive>
+    </mailingList>
+    <mailingList>
+      <name>Developers</name>
+      <archive>https://javacc.dev.java.net/servlets/SummarizeList?listName=dev</archive>
+    </mailingList>
+    <mailingList>
+      <name>CVS</name>
+      <archive>https://javacc.dev.java.net/servlets/SummarizeList?listName=cvs</archive>
+    </mailingList>
+    <mailingList>
+      <name>Issues</name>
+      <archive>https://javacc.dev.java.net/servlets/SummarizeList?listName=issues</archive>
+    </mailingList>
+  </mailingLists>
+
+  <scm>
+    <connection>scm:cvs:pserver:user@cvs.dev.java.net:/cvs:javacc</connection>
+    <developerConnection>scm:cvs:ext:user@cvs.dev.java.net:/cvs:javacc</developerConnection>
+    <url>https://javacc.dev.java.net/source/browse/javacc/</url>
+  </scm>
+  <issueManagement>
+    <system>java.dev</system>
+    <url>https://javacc.dev.java.net/servlets/ProjectIssues</url>
+  </issueManagement>
+</project>

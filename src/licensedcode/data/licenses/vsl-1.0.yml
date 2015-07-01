@@ -1,0 +1,15 @@
+key: vsl-1.0
+short_name: Vovida Software License 1.0
+name: Vovida Software License v. 1.0
+category: Attribution
+owner: Vovida
+homepage_url: http://www.vovida.org/About/license.html
+spdx_license_key: VSL-1.0
+spdx_full_name: Vovida Software License v1.0
+spdx_url: http://spdx.org/licenses/VSL-1.0
+spdx_notes: This license is OSI certified
+text_urls:
+    - http://www.vovida.org/About/license.html
+osi_url: http://opensource.org/licenses/vovidapl.php
+other_urls:
+    - http://www.vovida.org

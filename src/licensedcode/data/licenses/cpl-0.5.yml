@@ -1,0 +1,11 @@
+key: cpl-0.5
+short_name: CPL 0.5
+name: Common Public License 0.5
+category: Copyleft Limited
+owner: IBM
+homepage_url: http://www.eclipse.org/legal/cpl-v05.html
+text_urls:
+    - http://www.eclipse.org/legal/cpl-v05.html
+faq_url: http://web.archive.org/web/20101104092121/http://www.ibm.com/developerworks/library/os-cplfaq.html
+other_urls:
+    - http://www.ibm.com/developerworks/library/os-cplfaq.html

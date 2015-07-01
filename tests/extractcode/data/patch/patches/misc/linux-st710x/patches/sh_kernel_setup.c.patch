@@ -1,0 +1,183 @@
+Index: linux-2.6.23/arch/sh/kernel/setup.c
+===================================================================
+--- linux-2.6.23.orig/arch/sh/kernel/setup.c
++++ linux-2.6.23/arch/sh/kernel/setup.c
+@@ -95,13 +95,21 @@ EXPORT_SYMBOL(memory_start);
+ 
+ unsigned long memory_end;
+ EXPORT_SYMBOL(memory_end);
++unsigned long ramtopaddress=0;
+ 
+ static int __init early_parse_mem(char *p)
+ {
+ 	unsigned long size;
+ 
+ #ifdef CONFIG_32BIT
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
++  if ((ctrl_inl(MMUCR)&MMUCR_SE)==MMUCR_SE)
++#endif
+ 	memory_start = (unsigned long)PAGE_OFFSET;
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
++  else
++	memory_start = (unsigned long)PAGE_OFFSET+__MEMORY_START;
++#endif
+ #else
+ 	memory_start = (unsigned long)PAGE_OFFSET+__MEMORY_START;
+ #endif
+@@ -117,11 +125,44 @@ static int __init early_parse_mem(char *
+ 		return 0;
+ 	}
+ 
+-	memory_end = memory_start + size;
++	memory_end = memory_start + size*1024;
++
++	return 0;
++}
++early_param("systemmemsize", early_parse_mem);
++
++unsigned long stapi_mem_size = CONFIG_VIP19XX_STAPI_MEMORY_SIZE;
+ 
++static int __init early_parse_vidmem(char *p)
++{
++	unsigned long size;
++	size = memparse(p, &p);
++
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
++	if (size > 0x8000) {
++               stapi_mem_size = CONFIG_VIP19XX_STAPI_MEMORY_SIZE_64MB;
++	}
++#endif
++
++	return 0;
++}
++early_param("videomemsize", early_parse_vidmem);
++
++static int __init early_parse_ramtopaddress(char *p)
++{
++	if (sscanf(p,"0x%lx",&ramtopaddress) == 1)
++	{
++		// Convert the 29 bit cached address from firmware to an offset
++		ramtopaddress = (ramtopaddress & 0x1fffffff) - 0x04000000;
++		ramtopaddress = ramtopaddress + __MEMORY_START;
++	}
++	 
+ 	return 0;
+ }
+-early_param("mem", early_parse_mem);
++
++early_param("ramtopaddress", early_parse_ramtopaddress);
++unsigned long stapi_mem_start;
++unsigned long gfx_mem_size __attribute__ ((section (".gfx_mem_size"))) = CONFIG_VIP19XX_GFX_MEMORY_SIZE;
+ 
+ /*
+  * Register fully available low RAM pages with the bootmem allocator.
+@@ -150,6 +191,21 @@ static void __init register_bootmem_low_
+ void __init setup_bootmem_allocator(unsigned long free_pfn)
+ {
+ 	unsigned long bootmap_size;
++	unsigned long config_zero_page_offset;
++	unsigned long dsp_mem_size;
++
++#if defined(CONFIG_32BIT) && !defined(CONFIG_CPU_SUBTYPE_STX7105)
++	if ((ctrl_inl(MMUCR)&MMUCR_SE)==MMUCR_SE) {
++		config_zero_page_offset = (unsigned long)CONFIG_ZERO_PAGE_OFFSET;
++	}
++	else {
++		config_zero_page_offset = (unsigned long)CONFIG_ZERO_PAGE_OFFSET-__MEMORY_START;
++	}
++	dsp_mem_size = CONFIG_ZERO_PAGE_OFFSET-0x04000000;
++#else
++	config_zero_page_offset = (unsigned long)CONFIG_ZERO_PAGE_OFFSET;
++	dsp_mem_size = CONFIG_ZERO_PAGE_OFFSET;
++#endif
+ 
+ 	/*
+ 	 * Find a proper area for the bootmem bitmap. After this
+@@ -171,20 +227,40 @@ void __init setup_bootmem_allocator(unsi
+ 	 * case of us accidentally initializing the bootmem allocator with
+ 	 * an invalid RAM area.
+ 	 */
+-	reserve_bootmem(__MEMORY_START + CONFIG_ZERO_PAGE_OFFSET,
++	reserve_bootmem(__MEMORY_START + config_zero_page_offset,
+ 			(PFN_PHYS(free_pfn) + bootmap_size + PAGE_SIZE - 1) -
+-			(__MEMORY_START + CONFIG_ZERO_PAGE_OFFSET));
++			(__MEMORY_START + config_zero_page_offset));
+ 
+-	/*
+-	 * Reserve physical pages below CONFIG_ZERO_PAGE_OFFSET.
++	/* Reserve mem for the ST DSP */
++	reserve_bootmem(__MEMORY_START, dsp_mem_size);
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
++	/* Reserve mem for STAPI usage and for the common_data_header
++	 * The common data header is 4096 bytes (PAGE_SIZE)
+ 	 */
+-	if (CONFIG_ZERO_PAGE_OFFSET != 0)
+-		reserve_bootmem(__MEMORY_START, CONFIG_ZERO_PAGE_OFFSET);
+-
++	stapi_mem_size += gfx_mem_size;
++	stapi_mem_start = ramtopaddress - stapi_mem_size - PAGE_SIZE;
++	reserve_bootmem(stapi_mem_start, stapi_mem_size + PAGE_SIZE);
++#else
++	stapi_mem_size += gfx_mem_size;
++	stapi_mem_start = __MEMORY_START + __MEMORY_SIZE - stapi_mem_size;
++	reserve_bootmem(__MEMORY_START + __MEMORY_SIZE - stapi_mem_size, stapi_mem_size);
++#endif
++	printk(KERN_NOTICE "Reserve %lu KiB for STAVMEM (%lu KiB for graphics)\n",
++	       stapi_mem_size / 1024, gfx_mem_size/1024);
+ 	sparse_memory_present_with_active_regions(0);
+ 
+ #ifdef CONFIG_BLK_DEV_INITRD
+-	if (LOADER_TYPE && INITRD_START) {
++ 	/*
++ 	 * Don't reserve any memory if the initrd is located
++ 	 * in the video memory. Just point it out.
++ 	 */
++ 	if (((INITRD_START+0x84000000 >= 0x90000000) &&
++ 	     (INITRD_START+0x84000000 < 0xA0000000)) ||
++ 	    (INITRD_START+0x84000000 >= 0xB0000000)) {
++		initrd_start = INITRD_START + 0x84000000;
++ 	        initrd_end = initrd_start + INITRD_SIZE;
++ 	}
++ 	else	if (LOADER_TYPE && INITRD_START) {
+ 		/* INITRD_START is the offset from the start of RAM */
+ 
+ 		unsigned long initrd_start_phys = INITRD_START;
+@@ -261,11 +337,24 @@ void __init setup_arch(char **cmdline_p)
+ 	init_mm.brk = (unsigned long) _end;
+ 
+ #ifdef CONFIG_32BIT
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
++  if ((ctrl_inl(MMUCR)&MMUCR_SE)==MMUCR_SE)
++#endif
+ 	memory_start = (unsigned long)PAGE_OFFSET;
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
++  else
++	memory_start = (unsigned long)PAGE_OFFSET+__MEMORY_START;
++#endif
+ #else
+ 	memory_start = (unsigned long)PAGE_OFFSET+__MEMORY_START;
+ #endif
+-	memory_end = memory_start + __MEMORY_SIZE;
++	// Default to 128MB of RAM if systemmemsize is not set by
++	// firmware, 256MB for 7105.
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
++	memory_end = memory_start + 0x08000000;
++#else
++       memory_end = memory_start + 0x10000000;
++#endif
+ 
+ #ifdef CONFIG_CMDLINE_OVERWRITE
+ 	strlcpy(command_line, CONFIG_CMDLINE, sizeof(command_line));
+@@ -280,9 +369,10 @@ void __init setup_arch(char **cmdline_p)
+ 	/* Save unparsed command line copy for /proc/cmdline */
+ 	memcpy(boot_command_line, command_line, COMMAND_LINE_SIZE);
+ 	*cmdline_p = command_line;
+-
+ 	parse_early_param();
+-
++	if (ramtopaddress == 0) {
++		ramtopaddress = 0x08000000 + __MEMORY_START;
++	}
+ 	request_standard_resources();
+ 
+ 	sh_mv_setup();

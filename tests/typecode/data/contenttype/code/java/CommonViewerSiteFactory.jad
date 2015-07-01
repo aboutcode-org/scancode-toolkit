@@ -1,0 +1,44 @@
+// Decompiled by Jad v1.5.8c. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.geocities.com/kpdus/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   CommonViewerSiteFactory.java
+
+package org.eclipse.ui.navigator;
+
+import org.eclipse.jface.viewers.ISelectionProvider;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.IEditorSite;
+import org.eclipse.ui.IViewSite;
+import org.eclipse.ui.internal.navigator.*;
+import org.eclipse.ui.part.IPageSite;
+
+// Referenced classes of package org.eclipse.ui.navigator:
+//            ICommonViewerWorkbenchSite, ICommonViewerSite
+
+public final class CommonViewerSiteFactory
+{
+
+    public CommonViewerSiteFactory()
+    {
+    }
+
+    public static ICommonViewerWorkbenchSite createCommonViewerSite(IViewSite aViewSite)
+    {
+        return new CommonViewerSiteIViewSiteDelegate(aViewSite);
+    }
+
+    public static ICommonViewerWorkbenchSite createCommonViewerSite(IEditorSite aEditorSite)
+    {
+        return new CommonViewerSiteIEditorPartSiteDelegate(aEditorSite);
+    }
+
+    public static ICommonViewerSite createCommonViewerSite(String anId, ISelectionProvider aSelectionProvider, Shell aShell)
+    {
+        return new CommonViewerSiteDelegate(anId, aSelectionProvider, aShell);
+    }
+
+    public static ICommonViewerSite createCommonViewerSite(String anId, IPageSite aPageSite)
+    {
+        return new CommonViewerSiteIPageSiteDelegate(anId, aPageSite);
+    }
+}

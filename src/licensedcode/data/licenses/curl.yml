@@ -1,0 +1,12 @@
+key: curl
+short_name: Curl License
+name: Curl License
+category: Attribution
+owner: cURL
+homepage_url: http://curl.haxx.se/
+text_urls:
+    - http://curl.haxx.se/docs/copyright.html
+    - http://www.focuseek.com/manuals/License/curl-license.html
+faq_url: http://curl.haxx.se/docs/faq.html
+other_urls:
+    - http://curl.haxx.se/legal/licmix.html

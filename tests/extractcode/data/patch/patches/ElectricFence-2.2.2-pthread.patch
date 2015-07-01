@@ -1,0 +1,70 @@
+--- ElectricFence-2.2.2/efence.c.jj	1999-04-12 21:00:49.000000000 -0400
++++ ElectricFence-2.2.2/efence.c	2003-02-03 11:20:18.000000000 -0500
+@@ -174,6 +174,15 @@ static int		internalUse = 0;
+ static int		noAllocationListProtection = 0;
+ 
+ #ifdef USE_SEMAPHORE
++
++#include <stdbool.h>
++
++#pragma weak sem_init
++#pragma weak sem_post
++#pragma weak sem_wait
++
++static int		pthread_initialization = 0;
++
+ /*
+  * EF_sem is a semaphore used to allow one thread at a time into
+  * these routines.
+@@ -274,7 +283,7 @@ initialize(void)
+ 	EF_Print(version);
+ 
+ #ifdef USE_SEMAPHORE
+-	if (sem_init(&EF_sem, 0, 1) >= 0) {
++	if (sem_init != NULL && !pthread_initialization && sem_init(&EF_sem, 0, 1) >= 0) {
+ 		semEnabled = 1;
+ 	}
+ #endif
+@@ -397,6 +406,21 @@ initialize(void)
+ 	release();
+ }
+ 
++#ifdef USE_SEMAPHORE
++void
++__libc_malloc_pthread_startup (bool first_time)
++{
++	if (first_time) {
++		pthread_initialization = 1;
++		initialize ();
++	} else {
++		pthread_initialization = 0;
++		if (!semEnabled && sem_init != NULL && sem_init(&EF_sem, 0, 1) >= 0)
++			semEnabled = 1;
++	}
++}
++#endif
++
+ /*
+  * allocateMoreSlots is called when there are only enough slot structures
+  * left to support the allocation of a single malloc buffer.
+--- ElectricFence-2.2.2/Makefile.jj	1999-04-13 13:22:49.000000000 -0400
++++ ElectricFence-2.2.2/Makefile	2003-02-03 11:27:06.000000000 -0500
+@@ -1,6 +1,6 @@
+ PIC= -fPIC
+ CFLAGS= -g -DUSE_SEMAPHORE $(PIC)
+-LIBS= -lpthread
++LIBS=
+ 
+ prefix=/usr
+ BIN_INSTALL_DIR= $(prefix)/bin
+@@ -54,8 +54,8 @@ libefence.a: $(OBJECTS)
+ 	$(AR) crv libefence.a $(OBJECTS)
+ 
+ libefence.so.0.0: $(OBJECTS)
+-	gcc -g -shared -Wl,-soname,libefence.so.0 -o libefence.so.0.0 \
+-		$(OBJECTS) -lpthread -lc 
++	gcc -shared -Wl,-soname,libefence.so.0 -o libefence.so.0.0 \
++		$(CFLAGS) $(OBJECTS) 
+ 
+ tstheap: libefence.a tstheap.o
+ 	- rm -f tstheap

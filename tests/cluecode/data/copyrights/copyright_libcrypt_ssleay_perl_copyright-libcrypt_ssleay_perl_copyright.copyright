@@ -1,0 +1,30 @@
+This package was debianized by
+Javier Fernandez-Sanguino Pen~a <jfs@computer.org>  Mon,  9 Apr 2001 12:13:56 +0200
+Stephen Zander <gibreel@debian.org>  Mon, 24 Feb 2003 06:33:56 -0800
+Noèl Köthe <noel@debian.org>  Sun, 07 Nov 2004 01:34:18 +0100
+
+It was downloaded from http://search.cpan.org/dist/Crypt-SSLeay/
+
+From the README:
+
+COPYRIGHT
+     Copyright (c) 1999-2003 <s>Joshua Chamas</s>.
+     Copyright (c) 1998 <s>Gisle Aas</s>.
+
+    This program is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
+Perl is distributed under either the Artistic licence or the GPL.
+
+The full text of the GPL is available on Debian systems in
+/usr/share/common-licenses/GPL
+
+The full text of the Artistic Licence is available on Debian systems in
+/usr/share/common-licenses/Artistic.
+
+This package has been through multiple maintainers (for a list see
+/usr/share/doc/libcrypt-ssleay-perl/changelog.Debian.gz).
+
+Current Debian specific changes are copyright (c) 2003
+<s>Stephen Zander <gibreel@debian.org></s>
+

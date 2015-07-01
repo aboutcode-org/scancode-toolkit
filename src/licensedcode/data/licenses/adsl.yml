@@ -1,0 +1,9 @@
+key: adsl
+short_name: Amazon Digital Services License
+name: Amazon Digital Services License
+category: Attribution
+owner: Amazon Web Services
+homepage_url: https://fedoraproject.org/wiki/Licensing/AmazonDigitalServicesLicense
+spdx_license_key: ADSL
+spdx_full_name: Amazon Digital Services License
+spdx_url: http://spdx.org/licenses/ADSL

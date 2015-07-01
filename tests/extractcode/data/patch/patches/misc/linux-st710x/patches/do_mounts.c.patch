@@ -1,0 +1,35 @@
+--- linux-2.6.23-orig/init/do_mounts.c	2009-05-18 13:59:06.000000000 +0200
++++ linux-2.6.23/init/do_mounts.c	2009-05-19 12:59:21.000000000 +0200
+@@ -287,7 +287,7 @@
+ 
+ 	sys_chdir("/root");
+ 	ROOT_DEV = current->fs->pwdmnt->mnt_sb->s_dev;
+-	printk("VFS: Mounted root (%s filesystem)%s.\n",
++	printk(KERN_DEBUG "VFS: Mounted root (%s filesystem)%s.\n",
+ 	       current->fs->pwdmnt->mnt_sb->s_type->name,
+ 	       current->fs->pwdmnt->mnt_sb->s_flags & MS_RDONLY ? 
+ 	       " readonly" : "");
+@@ -325,17 +325,17 @@
+ #ifdef CONFIG_BLOCK
+ 		__bdevname(ROOT_DEV, b);
+ #endif
+-		printk("VFS: Cannot open root device \"%s\" or %s\n",
+-				root_device_name, b);
+-		printk("Please append a correct \"root=\" boot option; here are the available partitions:\n");
++		printk(KERN_DEBUG "VFS: Cannot open root device \"%s\" or %s\n",
++                       root_device_name, b);
++		printk(KERN_DEBUG "Please append a correct \"root=\" boot option; here are the available partitions:\n");
+ 
+ 		printk_all_partitions();
+-		panic("VFS: Unable to mount root fs on %s", b);
++		panic(KERN_DEBUG "VFS: Unable to mount root fs on %s", b);
+ 	}
+ 
+-	printk("List of all partitions:\n");
++	printk(KERN_DEBUG "List of all partitions:\n");
+ 	printk_all_partitions();
+-	printk("No filesystem could mount root, tried: ");
++	printk(KERN_DEBUG "No filesystem could mount root, tried: ");
+ 	for (p = fs_names; *p; p += strlen(p)+1)
+ 		printk(" %s", p);
+ 	printk("\n");

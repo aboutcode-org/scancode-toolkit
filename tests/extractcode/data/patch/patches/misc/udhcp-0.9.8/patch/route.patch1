@@ -1,0 +1,92 @@
+diff -ur udhcp-0.9.8.orig/options.c udhcp-0.9.8/options.c
+--- udhcp-0.9.8.orig/options.c	Mon Jun  7 11:17:15 2004
++++ udhcp-0.9.8/options.c	Mon Jun  7 11:14:09 2004
+@@ -34,6 +34,7 @@
+ 	{"ipttl",	OPTION_U8,				0x17},
+ 	{"mtu",		OPTION_U16,				0x1a},
+ 	{"broadcast",	OPTION_IP | OPTION_REQ,			0x1c},
++	{"sroutes",	OPTION_IP_PAIR | OPTION_LIST | OPTION_REQ, 0x21},
+ 	{"ntpsrv",	OPTION_IP | OPTION_LIST,		0x2a},
+ 	{"wins",	OPTION_IP | OPTION_LIST,		0x2c},
+ 	{"requestip",	OPTION_IP,				0x32},
+@@ -47,6 +48,7 @@
+         {"loghost",     OPTION_STRING | OPTION_REQ,             0x81},
+         {"logport",     OPTION_STRING | OPTION_REQ,             0x82},
+         {"tcplog",      OPTION_STRING | OPTION_REQ,             0x96},
++ 	{"sroutes",     OPTION_ROUTE | OPTION_LIST | OPTION_REQ, 0x79},
+ 	{"",		0x00,				0x00}
+ };
+ 
+@@ -54,6 +56,7 @@
+ int option_lengths[] = {
+ 	[OPTION_IP] =		4,
+ 	[OPTION_IP_PAIR] =	8,
++	[OPTION_ROUTE] =	5,
+ 	[OPTION_BOOLEAN] =	1,
+ 	[OPTION_STRING] =	1,
+ 	[OPTION_U8] =		1,
+diff -ur udhcp-0.9.8.orig/options.h udhcp-0.9.8/options.h
+--- udhcp-0.9.8.orig/options.h	Sat Mar 23 01:34:03 2002
++++ udhcp-0.9.8/options.h	Mon Jun  7 11:12:09 2004
+@@ -9,6 +9,7 @@
+ enum {
+ 	OPTION_IP=1,
+ 	OPTION_IP_PAIR,
++	OPTION_ROUTE,
+ 	OPTION_STRING,
+ 	OPTION_BOOLEAN,
+ 	OPTION_U8,
+diff -ur udhcp-0.9.8.orig/script.c udhcp-0.9.8/script.c
+--- udhcp-0.9.8.orig/script.c	Mon Jun  7 11:17:19 2004
++++ udhcp-0.9.8/script.c	Mon Jun  7 11:13:44 2004
+@@ -41,6 +41,7 @@
+ static int max_option_length[] = {
+ 	[OPTION_IP] =		sizeof("255.255.255.255 "),
+ 	[OPTION_IP_PAIR] =	sizeof("255.255.255.255 ") * 2,
++	[OPTION_ROUTE] =	sizeof("255.255.255.255 ") * 3,
+ 	[OPTION_STRING] =	1,
+ 	[OPTION_BOOLEAN] =	sizeof("yes "),
+ 	[OPTION_U8] =		sizeof("255 "),
+@@ -63,6 +64,31 @@
+ }
+ 
+ 
++static int sprintroute(char *dest, unsigned char *route) {
++ 	int dest_length = (route[0] >> 3) + !!(route[0] & 7);
++ 	unsigned char* router = route + dest_length + 1;
++ 	unsigned char ip[4];
++ 	unsigned char netmask[4];
++ 	unsigned int* temp = (unsigned int*)netmask;
++ 	int i;
++ 	for (i = 0; i < 4; ++i) {
++ 		if (i < dest_length) {
++ 			ip[i] = route[i + 1];
++ 		} else {
++ 			ip[i] = 0;
++ 		}
++ 		netmask[i] = 0;
++ 	}
++ 	for (i = 0; i < route[0]; ++i) {
++ 		*temp |= (1L << i);
++ 	}
++ 	return sprintf(dest, "%d.%d.%d.%d/%d.%d.%d.%d/%d.%d.%d.%d ",
++ 		       ip[0], ip[1], ip[2], ip[3],
++ 		       netmask[0], netmask[1], netmask[2], netmask[3],
++ 		       router[0], router[1], router[2], router[3]);
++}
++
++
+ /* Fill dest with the text of option 'option'. */
+ static void fill_options(char *dest, unsigned char *option, struct dhcp_option *type_p)
+ {
+@@ -89,6 +115,10 @@
+ 			dest += sprintip(dest, "", option);
+ 			*(dest++) = ' ';
+  			break;
++		case OPTION_ROUTE:
++			dest += sprintroute(dest, option);
++			optlen = 1 + (option[0] >> 3) + !!(option[0] & 7) + 4;
++ 			break;
+ 		case OPTION_BOOLEAN:
+ 			dest += sprintf(dest, *option ? "yes " : "no ");
+ 			break;

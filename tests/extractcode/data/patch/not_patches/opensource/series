@@ -1,0 +1,10 @@
+moto-timer.patch
+moto-dump.patch
+webcore_accept_click.patch
+moto-jsvalue-equal.patch
+moto-createobject-null-check.patch
+webcore_videoplane.patch
+
+# Support -jX make flag when generating code from IDL files.
+support_parallel_idl_gen.patch
+moto-getopensourcenotice.patch

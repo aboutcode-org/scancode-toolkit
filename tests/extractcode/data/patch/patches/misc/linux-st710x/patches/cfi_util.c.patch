@@ -1,0 +1,11 @@
+--- linux-2.6.23-orig/drivers/mtd/chips/cfi_util.c	2009-05-18 16:32:46.000000000 +0200
++++ linux-2.6.23/drivers/mtd/chips/cfi_util.c	2009-05-18 16:33:16.000000000 +0200
+@@ -36,7 +36,7 @@
+ 	int i;
+ 	struct cfi_extquery *extp = NULL;
+ 
+-	printk(" %s Extended Query Table at 0x%4.4X\n", name, adr);
++	printk(KERN_DEBUG " %s Extended Query Table at 0x%4.4X\n", name, adr);
+ 	if (!adr)
+ 		goto out;
+ 

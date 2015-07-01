@@ -1,0 +1,5 @@
+licenses:
+    - gpl-2.0
+    - intel-bsd-special
+license_choice: yes
+notes: Intel bsd or GPL

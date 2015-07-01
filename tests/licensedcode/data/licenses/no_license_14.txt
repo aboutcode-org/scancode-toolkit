@@ -1,0 +1,4 @@
+date-retrieved:2010-06-20 10:47:42+02:00
+svn:http://freebase-gridworks.googlecode.com/svn/trunk/LICENSE.txt#863
+date-retrieved:2010-06-20 10:48:12+02:00
+svn:http://freebase-gridworks.googlecode.com/svn/trunk/licenses/#813

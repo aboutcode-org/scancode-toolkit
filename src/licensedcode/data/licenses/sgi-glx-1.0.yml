@@ -1,0 +1,8 @@
+key: sgi-glx-1.0
+short_name: SGI GLX Public License 1.0
+name: SGI GLX Public License v1.0
+category: Attribution
+owner: SGI - Silicon Graphics
+homepage_url: http://www.sgi.com/products/software/opensource/glx/glxlicense.txt
+text_urls:
+    - http://velib.kyb.mpg.de/docu/GLX.html

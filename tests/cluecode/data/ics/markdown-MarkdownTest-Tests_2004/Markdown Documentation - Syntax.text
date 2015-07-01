@@ -1,0 +1,6 @@
+an HTML entity, it remains unchanged; otherwise it will be translated
+into `&amp;`.
+
+So, if you want to include a copyright symbol in your article, you can write:
+
+    &copy;

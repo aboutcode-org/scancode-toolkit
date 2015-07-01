@@ -1,0 +1,7 @@
+licenses:
+    - apache
+    - bsd-simplified
+    - lgpl
+    - mit
+expected_failure: yes
+sort: true

@@ -1,0 +1,12 @@
+key: gpl-2.0-gcc
+short_name: GPL 2.0 with GCC exception
+name: >-
+    GNU General Public License 2.0 with GCC Runtime Library exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+spdx_license_key: GPL-2.0-with-GCC-exception
+spdx_full_name: >-
+    GNU General Public License v2.0 w/GCC Runtime Library exception
+spdx_url: http://spdx.org/licenses/GPL-2.0-with-GCC-exception
+other_urls:
+    - http://www.gnu.org/licenses/gpl-2.0.txt

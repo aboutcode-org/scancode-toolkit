@@ -1,0 +1,25 @@
+--- udhcp-0.9.8/packet.h	2002-04-03 00:49:33.000000000 +0200
++++ sh4-kreatel-linux-gnu/bigpacket/udhcp-0.9.8/packet.h	2007-03-30 13:34:59.000000000 +0200
+@@ -4,6 +4,13 @@
+ #include <netinet/udp.h>
+ #include <netinet/ip.h>
+ 
++#define MIN_OPTIONS_LENGTH 308
++#define MAX_OPTIONS_LENGTH 1232
++#define OUT_OPTIONS_LENGTH MIN_OPTIONS_LENGTH
++#define IN_OPTIONS_LENGTH MAX_OPTIONS_LENGTH
++#define OUT_MESSAGE_LENGTH (sizeof(struct dhcpMessage) - MAX_OPTIONS_LENGTH + MIN_OPTIONS_LENGTH)
++#define OUT_UDP_LENGTH (sizeof(struct udp_dhcp_packet) - MAX_OPTIONS_LENGTH + MIN_OPTIONS_LENGTH)
++
+ struct dhcpMessage {
+ 	u_int8_t op;
+ 	u_int8_t htype;
+@@ -20,7 +27,7 @@
+ 	u_int8_t sname[64];
+ 	u_int8_t file[128];
+ 	u_int32_t cookie;
+-	u_int8_t options[308]; /* 312 - cookie */ 
++	u_int8_t options[MAX_OPTIONS_LENGTH];
+ };
+ 
+ struct udp_dhcp_packet {

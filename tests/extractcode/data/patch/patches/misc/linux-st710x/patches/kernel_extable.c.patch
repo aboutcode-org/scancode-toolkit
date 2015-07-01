@@ -1,0 +1,7 @@
+--- linux-2.6.23/kernel/extable.c~	2007-10-09 22:31:38.000000000 +0200
++++ linux-2.6.23/kernel/extable.c	2008-12-13 15:43:36.000000000 +0100
+@@ -65,3 +65,4 @@
+ 		return 1;
+ 	return module_text_address(addr) != NULL;
+ }
++EXPORT_SYMBOL(kernel_text_address);

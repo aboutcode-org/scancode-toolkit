@@ -1,0 +1,17 @@
+key: ecl-2.0
+short_name: ECL 2.0
+name: Educational Community License 2.0
+category: Attribution
+owner: OSI - Open Source Initiative
+homepage_url: http://www.opensource.org/licenses/ecl2.php
+spdx_license_key: ECL-2.0
+spdx_full_name: Educational Community License v2.0
+spdx_url: http://spdx.org/licenses/ECL-2.0
+spdx_notes: |-
+    This license is OSI certifified.
+    The Educational Community License version 2.0 ("ECL") consists of the Apache 2.0 license, modified to change the scope of the patent grant in section 3 to be specific to the needs of the education communities using this license.
+
+    The url included in the boilerplate notice does not work. (15/10/10)
+text_urls:
+    - http://www.opensource.org/licenses/ecl2.php
+osi_url: http://opensource.org/licenses/ecl2.php

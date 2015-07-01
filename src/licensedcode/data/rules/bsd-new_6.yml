@@ -1,0 +1,5 @@
+licenses:
+    - bsd-new
+notes: >
+    This weird version contains a mistake (corrected later by the author)
+    allowing to use the author name in endorsements.

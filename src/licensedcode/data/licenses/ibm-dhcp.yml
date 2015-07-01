@@ -1,0 +1,7 @@
+key: ibm-dhcp
+short_name: IBM DHCP License
+name: IBM DHCP License
+category: Attribution
+owner: IBM
+other_urls:
+    - http://svn.opendnssec.org/trunk/OpenDNSSEC/common/b64_pton.c

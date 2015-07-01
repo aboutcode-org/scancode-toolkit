@@ -1,0 +1,10 @@
+--- linux-2.6.23/net/ipv4/devinet.c~	2008-07-16 16:07:42.000000000 +0200
++++ linux-2.6.23/net/ipv4/devinet.c	2008-07-16 17:25:47.000000000 +0200
+@@ -761,6 +761,7 @@
+ 			inet_del_ifa(in_dev, ifap, 0);
+ 			ifa->ifa_broadcast = 0;
+ 			ifa->ifa_anycast = 0;
++			ifa->ifa_scope = 0;
+ 		}
+ 
+ 		ifa->ifa_address = ifa->ifa_local = sin->sin_addr.s_addr;

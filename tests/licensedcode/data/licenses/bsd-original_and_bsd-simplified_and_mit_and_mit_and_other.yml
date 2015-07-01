@@ -1,0 +1,9 @@
+licenses:
+    - bsd-original
+    - bsd-simplified
+    - mit
+    - mit
+    - x11-opengroup
+    - x11-opengroup
+expected_failure: yes
+sort: true

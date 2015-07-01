@@ -1,0 +1,3 @@
+[('xvidcap-1.1.7-orig/src/capture.c',
+  'xvidcap-1.1.7/src/capture.c',
+  'diff -Nur xvidcap-1.1.7-orig/src/capture.c xvidcap-1.1.7/src/capture.c\n--- xvidcap-1.1.7-orig/src/capture.c\n+++ xvidcap-1.1.7/src/capture.c\n@@ -65,7 +65,7 @@\n#include <sys/ipc.h>\n#include <sys/shm.h>\n#include <X11/extensions/XShm.h>\n-#include <X11/extensions/shmstr.h>\n+#include <X11/extensions/shmproto.h>\n#ifndef SOLARIS\n#include <X11/extensions/extutil.h>\n#endif     // SOLARIS')]

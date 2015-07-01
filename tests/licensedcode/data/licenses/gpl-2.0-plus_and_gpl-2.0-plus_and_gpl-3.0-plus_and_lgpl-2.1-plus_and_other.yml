@@ -1,0 +1,9 @@
+licenses:
+    - gpl-2.0-plus
+    - gpl-2.0-plus
+    - gpl-3.0-plus
+    - lgpl-2.1-plus
+    - lgpl-2.1-plus
+    - lgpl-2.1-plus
+expected_failure: yes
+sort: true

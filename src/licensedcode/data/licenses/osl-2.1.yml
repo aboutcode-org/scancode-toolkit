@@ -1,0 +1,16 @@
+key: osl-2.1
+short_name: OSL 2.1
+name: Open Software License 2.1
+category: Copyleft
+owner: Lawrence Rosen
+homepage_url: http://www.nexb.com/license/LICENSE-OSL-2.1.html
+spdx_license_key: OSL-2.1
+spdx_full_name: Open Software License 2.1
+spdx_url: http://spdx.org/licenses/OSL-2.1
+spdx_notes: >-
+    Same as version 2.0 of this license except with changes to section 10
+text_urls:
+    - http://web.archive.org/web/20050212003940/http://www.rosenlaw.com/osl21.htm
+osi_url: http://www.opensource.org/licenses/osl-2.1.php
+other_urls:
+    - http://www.nexb.com/license/LICENSE-OSL-2.1.html

@@ -1,0 +1,24 @@
+This package was debianized by Marek Habersack <grendel@debian.org> on
+Mon,  7 May 2001 18:03:17 +0200.
+
+The tarball was extracted from Subversion by running:
+svn export svn://svn.samba.org/samba/tags/TDB_1_1_0 tdb-1.1.0
+cd tdb-1.1.0 && ./autogen.sh && cd ..
+tar cvz tdb-1.1.0 > tdb-1.1.0.tar.gz
+
+Upstream Author: <s>Andrew Tridgell <tridge@samba.org></s>
+
+Copyright:
+  Copyright (c) <s>Andrew Tridgell</s>        1999-2004
+  Copyright (c) <s>Paul `Rusty' Russell</s>   2000
+  Copyright (c) <s>Jeremy Allison</s>	       2000-2003
+  
+License:
+
+The binary utilities in this package are distributed under the terms 
+of the GNU General Public License. The text of the license is available
+on Debian systems in the /usr/share/common-licenses/GPL file.
+
+The shared library in this package is distributed under the terms
+of the GNU Lesser General Public License. The text of the license is
+available on Debian systems in the /usr/share/common-licenses/LGPL file.

@@ -1,0 +1,13 @@
+platform/network/ekioh/ResourceHandleManager.cpp
+Index: src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
+===================================================================
+--- src.orig/Browser/WebCore/platform/network/ekioh/ResourceHandleManager.cpp
++++ src/Browser/WebCore/platform/network/ekioh/ResourceHandleManager525.cpp
+@@ -674,6 +674,7 @@ void ResourceHandleManager::setProxy(con
+     }
+ 
+     char* cProxyString = proxyString.toCString();
++    fprintf(stderr, "proxy: '%s'\n", cProxyString);
+     curl_easy_setopt(curlHandle, CURLOPT_PROXY, cProxyString);
+     EKString::freeCString(cProxyString);
+ }

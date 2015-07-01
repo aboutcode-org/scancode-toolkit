@@ -1,0 +1,139 @@
+#include <stdlibx.h>
+
+/*  A Bison parser, made from ..\..\common\getdate.y with Bison version GNU Bison version 1.24
+  */
+
+#define YYBISON 1  /* Identify Bison output.  */
+
+#define	tAGO	258
+#define	tDAY	259
+#define	tDAYZONE	260
+#define	tID	261
+#define	tMERIDIAN	262
+#define	tMINUTE_UNIT	263
+#define	tMONTH	264
+#define	tMONTH_UNIT	265
+#define	tSEC_UNIT	266
+#define	tSNUMBER	267
+#define	tUNUMBER	268
+#define	tZONE	269
+#define	tDST	270
+
+#ifdef _MSC_VER
+#pragma warning(disable:4131 4701 4129 4146 4307 4018)
+#define STDAPICALLTYPE __stdcall
+#define MSDOS
+#else
+#define STDAPICALLTYPE
+#endif
+
+#line 3 "..\..\common\getdate.y"
+
+/*
+**  Originally written by Steven M. Bellovin <smb@research.att.com> while
+**  at the University of North Carolina at Chapel Hill.  Later tweaked by
+**  a couple of people on Usenet.  Completely overhauled by Rich $alz
+**  <rsalz@bbn.com> and Jim Berets <jberets@bbn.com> in August, 1990;
+**
+**  Major hack to coerce it into use with the Equivalence Portable
+**  Windows Library.
+**
+**  This grammar has 10 shift/reduce conflicts.
+**
+**  This code is in the public domain and has no copyright.
+*/
+/* SUPPRESS 287 on yaccpar_sccsid *//* Unused static variable */
+/* SUPPRESS 288 on yyerrlab *//* Label unused */
+
+
+#include <time.h>
+#include <string.h>
+#include <ctype.h>
+
+/* -*-C-*-  Note some compilers choke on comments on `#line' lines.  */
+#line 3 "bison.simple"
+
+/* Skeleton output parser for bison,
+   Copyright (C) 1984, 1989, 1990 Free Software Foundation, Inc.
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2, or (at your option)
+   any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+
+/* As a special exception, when this file is copied by Bison into a
+   Bison output file, you may use that output file without restriction.
+   This special exception was added by the Free Software Foundation
+   in version 1.24 of Bison.  */
+
+#ifdef __GNUC__
+#define alloca __builtin_alloca
+#else /* not __GNUC__ */
+#if HAVE_ALLOCA_H
+#include <alloca.h>
+#else /* not HAVE_ALLOCA_H */
+#ifdef _AIX
+ #pragma alloca
+#else /* not _AIX */
+char *alloca ();
+#endif /* not _AIX */
+#endif /* not HAVE_ALLOCA_H */
+#endif /* not __GNUC__ */
+
+extern int yylex(YYSTYPE *, void *);
+extern void yyerror(const char*);
+
+#ifndef alloca
+#ifdef __GNUC__
+#define alloca __builtin_alloca
+#else /* not GNU C.  */
+#if (!defined (__STDC__) && defined (sparc)) || defined (__sparc__) || defined (__sparc) || defined (__sgi)
+#include <alloca.h>
+#else /* not sparc */
+#if defined (MSDOS) && !defined (__TURBOC__)
+#include <malloc.h>
+#else /* not MSDOS, or __TURBOC__ */
+#if defined(_AIX)
+#include <malloc.h>
+ #pragma alloca
+#else /* not MSDOS, __TURBOC__, or _AIX */
+#ifdef __hpux
+#ifdef __cplusplus
+extern "C" {
+void *alloca (unsigned int);
+};
+#else /* not __cplusplus */
+void *alloca ();
+#endif /* not __cplusplus */
+#endif /* __hpux */
+#endif /* not _AIX */
+#endif /* not MSDOS, or __TURBOC__ */
+#endif /* not sparc.  */
+#endif /* not GNU C.  */
+#endif /* alloca not defined.  */
+
+/* This is the parser code that is written into each bison parser
+  when the %semantic_parser declaration is not specified in the grammar.
+  It was written by Richard Stallman by simplifying the hairy parser
+  used when %semantic_parser is specified.  */
+
+/* Note: there must be only one dollar sign in this file.
+   It is replaced by the list of actions, each action
+   as one case of the switch.  */
+
+#define yyerrok		(yyerrstatus = 0)
+#define yyclearin	(yychar = YYEMPTY)
+#define YYEMPTY		-2
+#define YYEOF		0
+#define YYACCEPT	return(0)
+#define YYABORT 	return(1)
+#define YYERROR		goto yyerrlab1

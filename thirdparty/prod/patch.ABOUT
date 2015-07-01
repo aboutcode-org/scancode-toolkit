@@ -1,0 +1,14 @@
+about_resource: patch-1.14.2-py2-none-any.whl
+date: 2013-01-23
+name: python-patch
+version: 1.14.2
+download_url: https://pypi.python.org/packages/source/p/patch/patch-1.14.2.zip
+vcs_tool: git
+vcs_repository: https://github.com/techtonik/python-patch/
+
+dje_license: mit
+license_text_file: pythonpath.LICENSE
+
+homepage_url: https://github.com/techtonik/python-patch/
+copyright: Copyright (c) 2008-2015 anatoly techtonik
+author: anatoly techtonik <techtonik@gmail.com>

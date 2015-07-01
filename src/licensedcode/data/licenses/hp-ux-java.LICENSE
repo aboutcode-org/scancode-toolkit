@@ -1,0 +1,199 @@
+HP-UX Runtime Environment, for the Java(tm) 2 Platform
+
+ATTENTION:  USE OF THE SOFTWARE IS SUBJECT TO THE HP SOFTWARE LICENSE TERMS
+AND SUPPLEMENTAL RESTRICTIONS SET FORTH BELOW, THIRD PARTY SOFTWARE LICENSE
+TERMS FOUND IN THE THIRDPARTYLICENSEREADME.TXT FILE AND THE WARRANTY
+DISCLAIMER ATTACHED.  IF YOU DO NOT ACCEPT THESE TERMS FULLY, YOU MAY NOT
+INSTALL OR OTHERWISE USE THE SOFTWARE.  NOTWITHSTANDING ANYTHING TO THE
+CONTRARY IN THIS NOTICE, INSTALLING OR OTHERWISE USING THE SOFTWARE INDICATES
+YOUR ACCEPTANCE OF THESE LICENSE TERMS.
+
+HP SOFTWARE LICENSE TERMS
+
+The following terms govern your use of the Software unless you have a separate
+written agreement with HP.  HP has the right to change these terms and
+conditions at any time, with or without notice.
+
+
+License Grant
+
+HP grants you a license to Use one copy of the Software.  "Use" means storing,
+loading, installing, executing or displaying the Software.  You may not modify
+the Software or disable any licensing or control features of the Software.  If
+the Software is licensed for "concurrent use", you may not allow more than the
+maximum number of authorized users to Use the Software concurrently.
+
+Ownership
+
+The Software is owned and copyrighted by HP or its third party suppliers.
+Your license confers no title or ownership in the Software and is not a sale
+of any rights in the Software.  HPs third party suppliers may protect their
+rights in the event of any violation of these License Terms.
+
+Third Party Code
+
+Some third-party code embedded or bundled with the Software is licensed to you
+under different terms and conditions as set forth in the
+THIRDPARTYLICENSEREADME.txt file.  In addition to any terms and conditions of
+any third party license identified in the THIRDPARTYLICENSEREADME.txt file,
+the disclaimer of warranty and limitation of liability provisions in this
+license shall apply to all code distributed as part of or bundled with the
+Software.
+
+Source Code
+
+Software may contain source code that, unless expressly licensed for other
+purposes, is provided solely for reference purposes pursuant to the terms of
+this license.  Source code may not be redistributed unless expressly provided
+for in these License Terms.
+
+Copies and Adaptations
+
+You may only make copies or adaptations of the Software for archival purposes
+or when copying or adaptation is an essential step in the authorized Use of
+the Software.  You must reproduce all copyright notices in the original
+Software on all copies or adaptations.  You may not copy the Software onto any
+bulletin board or similar system.
+
+No Disassembly or Decryption
+
+You may not disassemble or decompile the Software unless HPs prior written
+consent is obtained.  In some jurisdictions, HPs consent may not be required
+for disassembly or decompilation.  Upon request, you will provide HP with
+reasonably detailed information regarding any disassembly or decompilation.
+You may not decrypt the Software unless decryption is a necessary part of the
+operation of the Software.
+
+Transfer
+
+Your license will automatically terminate upon any transfer of the Software.
+Upon transfer, you must deliver the Software, including any copies and related
+documentation, to the transferee.  The transferee must accept these License
+Terms as a condition to the transfer.
+
+Termination
+
+HP may terminate your license upon notice for failure to comply with any of
+these License Terms.  Upon termination, you must immediately destroy the
+Software, together with all copies, adaptations and merged portions in any
+form.
+
+Export Requirements
+
+You may not export or re-export the Software or any copy or adaptation in
+violation of any applicable laws or regulations.
+
+This software or any copy or adaptation may not be exported, reexported or
+transferred to or within countries under U.S.  economic embargo including the
+following countries:  Afghanistan (Taliban-controlled areas), Cuba, Iran,
+Iraq, Libya, North Korea, Serbia, Sudan and Syria.  This list is subject to
+change.
+
+This software or any copy or adaptation may not be exported, reexported or
+transferred to persons or entities listed on the U.S.  Department of Commerce
+Denied Parties List or on any U.S.  Treasury Department Designated Nationals
+exclusion list, or to any party directly or indirectly involved in the
+development or production of nuclear, chemical, biological weapons or related
+missile technology programs as specified in the U.S.  Export Administration
+Regulations (15 CFR 730).
+
+U.S. Government Contracts
+
+If the Software is licensed for use in the performance of a U.S. government
+prime contract or subcontract, you agree that, consistent with FAR 12.211 and
+12.212, commercial computer Software, computer Software documentation and
+technical data for commercial items are licensed under HPs standard
+commercial license.
+
+SUPPLEMENTAL RESTRICTIONS
+
+You acknowledge the Software is not designed or intended for use in on-line
+control of aircraft, air traffic, aircraft navigation, or aircraft
+communications; or in the design, construction, operation or maintenance of
+any nuclear facility.  HP disclaims any express or implied warranty of fitness
+for such uses.
+
+ADDITIONAL SUPPLEMENTAL RESTRICTIONS FOR HP-UX RUNTIME ENVIRONMENT,
+FOR THE JAVA(TM) 2 PLATFORM
+
+* License to Distribute HP-UX Runtime Environment, for the Java(tm) 2
+  Platform.  You are granted a royalty-free right to reproduce and distribute
+  the HP-UX Runtime Environment, for Java provided that you distribute the
+  HP-UX Runtime Environment, for the Java 2 Platform complete and unmodified,
+  only as a part of, and for the sole purpose of running your Java compatible
+  applet or application ("Program") into which the HP-UX Runtime Environment,
+  for the Java 2 Platform is incorporated.
+
+* Java Platform Interface.  Licensee may not modify the Java Platform
+  Interface ("JPI", identified as classes contained within the "java" package
+  or any subpackages of the "java" package), by creating additional classes
+  within the JPI or otherwise causing the addition to or modification of the
+  classes in the JPI.  In the event that Licensee creates any Java-related API
+  and distributes such API to others for applet or application development,
+  Licensee must promptly publish broadly, an accurate specification for such
+  API for free use by all developers of Java-based software.
+
+* You may make the HP-UX Runtime Environment, for the Java 2 Platform
+  accessible to application programs developed by you provided that the
+  programs allow such access only through the Invocation Interface specified
+  and provided that you shall not expose or document other interfaces that
+  permit access to such HP-UX Runtime Environment, for the Java 2 Platform.
+  You shall not be restricted hereunder from exposing or documenting
+  interfaces to software components that use or access the HP-UX Runtime
+  Environment, for the Java 2 Platform.
+
+
+HP WARRANTY STATEMENT
+
+DURATION OF LIMITED WARRANTY: 90 DAYS
+
+HP warrants to you, the end customer, that HP hardware, accessories, and
+supplies will be free from defects in materials and workmanship after the date
+of purchase for the period specified above.  If HP receives notice of such
+defects during the warranty period, HP will, at its option, either repair or
+replace products which prove to be defective.  Replacement products may be
+either new or equivalent in performance to new.
+
+HP warrants to you that HP Software will not fail to execute its programming
+instructions after the date of purchase, for the period specified above, due
+to defects in materials and workmanship when properly installed and used.  If
+HP receives notice of such defects during the warranty period, HP will replace
+Software which does not execute its programming instructions due to such
+defects.
+
+HP does not warrant that the operation of HP products will be uninterrupted or
+error free.  If HP is unable, within a reasonable time, to repair or replace
+any product to a condition warranted, you will be entitled to a refund of the
+purchase price upon prompt return of the product.  Alternatively, in the case
+of HP Software, you will be entitled to a refund of the purchase price upon
+prompt delivery to HP of written notice from you confirming destruction of the
+HP Software, together with all copies, adaptations, and merged portions in any
+form.
+
+HP products may contain remanufactured parts equivalent to new in performance
+or may have been subject to incidental use.
+
+Warranty does not apply to defects resulting from: (a) improper or inadequate
+maintenance or calibration; (b) software, interfacing, parts or supplies not
+supplied by HP, (c) unauthorized modification or misuse; (d) operation outside
+of the published environmental specifications for the product, (e) improper
+site preparation or maintenance, or (f) the presence of code from HP suppliers
+embedded in or bundled with any HP product.
+
+TO THE EXTENT ALLOWED BY LOCAL LAW, THE ABOVE WARRANTIES ARE EXCLUSIVE AND NO
+OTHER WARRANTY OR CONDITION, WHETHER WRITTEN OR ORAL, IS EXPRESSED OR IMPLIED
+AND HP SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OR CONDITIONS OF
+MERCHANTABILITY, SATISFACTORY QUALITY, AND FITNESS FOR A PARTICULAR PURPOSE.
+Some countries, states, or provinces do not allow limitations on the duration
+of an implied warranty, so the above limitation or exclusion may not apply to
+you.  This warranty gives you specific legal rights and you might also have
+other rights that vary from country to country, state to state, or province to
+province.
+
+TO THE EXTENT ALLOWED BY LOCAL LAW, THE REMEDIES IN THIS WARRANTY STATEMENT
+ARE YOUR SOLE AND EXCLUSIVE REMEDIES.  EXCEPT AS INDICATED ABOVE, IN NO EVENT
+WILL HP OR ITS SUPPLIERS BE LIABLE FOR LOSS OF DATA OR FOR DIRECT, SPECIAL,
+INCIDENTAL, CONSEQUENTIAL (INCLUDING LOST PROFIT OR DATA), OR OTHER DAMAGE,
+WHETHER BASED IN CONTRACT, TORT, OR OTHERWISE.  Some countries, states, or
+provinces do not allow the exclusion or limitation of incidental or
+consequential damages, so the above limitation may not apply to you.

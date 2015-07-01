@@ -1,0 +1,43 @@
+Index: udhcp-0.9.8/dhcpc.c
+===================================================================
+--- udhcp-0.9.8.orig/dhcpc.c
++++ udhcp-0.9.8/dhcpc.c
+@@ -754,19 +754,33 @@ int main(int argc, char *argv[])
+ 					}
+ 						
+ 					/* enter bound state */
+-					t1 = lease / 2;
++                                        if (!(temp = get_option(&packet, DHCP_T1))) {
++                                                t1 = lease / 2;
++                                        } else {
++                                                memcpy(&t1, temp, 4);
++                                                t1 = ntohl(t1);
++                                        }
+                                         if (client_config.leasetime > 0) {
+                                                 client_config.leasetime = htonl(lease);
+                                         }
+ 					
+-					/* little fixed point for n * .875 */
+-					t2 = (lease * 0x7) >> 3;
++
++                                        if (!(temp = get_option(&packet, DHCP_T2))) {
++                                                /* little fixed point for n * .875 */
++                                                t2 = (lease * 0x7) >> 3;
++                                        } else {
++                                                memcpy(&t2, temp, 4);
++                                                t2 = ntohl(t2);
++                                        }
++
++
+ 					temp_addr.s_addr = packet.yiaddr;
+-					LOG(LOG_INFO, "Lease of %s obtained, lease time %ld", 
+-						inet_ntoa(temp_addr), lease);
++					LOG(LOG_INFO, "Lease of %s obtained, lease time %ld, T1 %ld, T2 %ld", 
++						inet_ntoa(temp_addr), lease, t1, t2);
+ 					start = now;
+ 					timeout = t1 + start;
+ 					requested_ip = packet.yiaddr;
++                                        LOG(LOG_INFO, "Calling script: %s", (state == RENEWING || state == REBINDING) ? "renew" : "bound");
+ 					run_script(&packet,
+ 						   ((state == RENEWING || state == REBINDING) ? "renew" : "bound"));
+                                         run_script(NULL, "postrenew");

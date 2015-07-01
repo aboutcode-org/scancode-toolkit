@@ -1,0 +1,12 @@
+[('eva/vqec_gap_reporter.c.orig',
+  'eva/vqec_gap_reporter.c',
+  '--- eva/vqec_gap_reporter.c.orig\n+++ eva/vqec_gap_reporter.c\n@@ -454,7 +454,7 @@\nVQEC_DEBUG(VQEC_DEBUG_ERROR_REPAIR,\n"policed %u of %u repair requests for channel: %s:%d\\n",\npoliced_count, policed_count + repair_count,\n-                       inet_ntoa_r(\n+                       inet_ntoa_r2(\nchan->cfg.primary_dest_addr,\nstr, sizeof(str)),\nntohs(chan->cfg.primary_dest_port));'),
+ ('include/utils/vam_util.h.orig',
+  'include/utils/vam_util.h',
+  '--- include/utils/vam_util.h.orig\n+++ include/utils/vam_util.h\n@@ -75,7 +75,7 @@\n@return ptr to a dot separated IP address string.\n*/\nstatic inline\n-char *inet_ntoa_r(struct in_addr saddr, char *buf, int buf_len)\n+char *inet_ntoa_r2(struct in_addr saddr, char *buf, int buf_len)\n{\nreturn ((char *)inet_ntop(AF_INET, &saddr, buf, buf_len));\n}'),
+ ('rtp/sample/sample_rtp_utils.c.orig',
+  'rtp/sample/sample_rtp_utils.c',
+  '--- rtp/sample/sample_rtp_utils.c.orig\n+++ rtp/sample/sample_rtp_utils.c\n@@ -274,7 +274,7 @@\nchar str[INET_ADDRSTRLEN];\n\nRTP_BUGINF("RCVD %s pkt (%u bytes) from %s:%u\\n",\n-               protocol, len, inet_ntoa_r(addr, str, sizeof(str)), ntohs(port));\n+               protocol, len, inet_ntoa_r2(addr, str, sizeof(str)), ntohs(port));\nRTP_BUGINF("     at %s:\\n",\nabs_time_to_str(rcv_ts, timebuf, sizeof(timebuf)));\n}'),
+ ('rtp/sample/sample_sink.c.orig',
+  'rtp/sample/sample_sink.c',
+  '--- rtp/sample/sample_sink.c.orig\n+++ rtp/sample/sample_sink.c\n@@ -214,7 +214,7 @@\nstruct in_addr in_listen_addr;\nin_listen_addr.s_addr = listen_addr;\nprintf("Receiving on %s:%d ...\\n",\n-           inet_ntoa_r(in_listen_addr, str, sizeof(str)), ntohs(listen_port));\n+           inet_ntoa_r2(in_listen_addr, str, sizeof(str)), ntohs(listen_port));\n\n/* just wait for events */\n(void)event_dispatch();')]

@@ -1,0 +1,11 @@
+key: scilab
+short_name: Scilab License
+name: Scilab License
+category: Copyleft Limited
+owner: Scilab Consortium (Digiteo)
+homepage_url: http://www.scilab.org/legal/license.html
+text_urls:
+    - http://www.scilab.org/legal/license.html
+faq_url: http://www.scilab.org/products/scilab/license
+other_urls:
+    - http://www.cecill.info

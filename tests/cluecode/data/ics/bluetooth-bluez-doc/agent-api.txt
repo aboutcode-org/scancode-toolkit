@@ -1,0 +1,6 @@
+BlueZ D-Bus Agent API description
+**********************************
+
+Copyright (C) 2004-2010  Marcel Holtmann <marcel@holtmann.org>
+Copyright (C) 2005-2006  Johan Hedberg <johan.hedberg@nokia.com>
+

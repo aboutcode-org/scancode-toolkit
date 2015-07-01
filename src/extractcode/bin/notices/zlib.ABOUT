@@ -1,0 +1,8 @@
+name: zlib
+description: zlib data compression library
+version: 1.2.8
+download_url: http://zlib.net/zlib-1.2.8.tar.gz
+dje_license: zlib
+license_text_file: zlib.LICENSE
+owner: Jean-loup Gailly and Mark Adler
+copyright: Copyright (C) 1995-2013 Jean-loup Gailly and Mark Adler

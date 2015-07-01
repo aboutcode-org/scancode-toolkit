@@ -1,0 +1,2 @@
+date-retrieved:2012-06-27 10:55:12+02:00
+wget:http://svn.apache.org/repos/asf/archiva/trunk/pom.xml

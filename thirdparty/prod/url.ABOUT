@@ -1,0 +1,14 @@
+about_resource: url-0.1.4.3-py2.py3-none-any.whl
+name: url
+version: url-0.1.4.3
+
+download_url: https://github.com/pombredanne/url-py/archive/v0.1.4.3.tar.gz
+notes: this is an advanced patched version for patches submitted upstream
+
+home_url: https://github.com/seomoz/url-py/
+vcs_revision: c98b1a69243dbd128c12ea031072040dc83b995e
+vcs_tool: git
+
+owner: SEOmoz, Inc.
+dje_license: mit
+license_text_file:url.LICENSE

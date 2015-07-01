@@ -1,0 +1,6 @@
+licenses:
+    - cpl-1.0
+    - gpl-2.0
+    - bsd-new
+license_choice: yes
+notes: Tripple CPL/BSD/GPL

@@ -1,0 +1,13 @@
+key: gpl-3.0-autoconf
+short_name: GPL 3.0 with autoconf exception
+name: >-
+    GNU General Public License 3.0 with Autoconf exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/autoconf-exception-3.0.html
+spdx_license_key: GPL-3.0-with-autoconf-exception
+spdx_full_name: >-
+    GNU General Public License v3.0 w/Autoconf exception
+spdx_url: http://spdx.org/licenses/GPL-3.0-with-autoconf-exception
+text_urls:
+    - http://www.gnu.org/licenses/autoconf-exception-3.0.html

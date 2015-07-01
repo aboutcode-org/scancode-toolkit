@@ -1,0 +1,7 @@
+licenses:
+    - zlib
+notes: >
+    Zlib with german translation by Wolfgang Ehrhardt
+    Found in copying_we.tx in http://www.wolfgang-ehrhardt.de/aes_2013-01-07.zip
+    It is not clear if the Greman translation is exactly the same as the zlib license
+    but the file contains both side by side

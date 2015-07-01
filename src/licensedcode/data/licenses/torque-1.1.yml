@@ -1,0 +1,21 @@
+key: torque-1.1
+short_name: TORQUE 1.1
+name: TORQUE v2.5+ Software License v1.1
+category: Copyleft Limited
+owner: Adaptive Computing Enterprises
+homepage_url: https://fedoraproject.org/wiki/Licensing/TORQUEv1.1
+spdx_license_key: TORQUE-1.1
+spdx_full_name: TORQUE v2.5+ Software License v1.1
+spdx_url: http://spdx.org/licenses/TORQUE-1.1
+spdx_notes: "Per Fedora: \nWhen the licensing for TORQUE 2.4 expired, the TORQUE upstream\
+    \ drafted a new license with updated contact information. The intention was to\
+    \ have a lawyer retain the same functionality as the older licensing, but because\
+    \ part of it was misread or accidentally ignored, v1.0 of the TORQUE v2.5+ Software\
+    \ License contained commercial use restrictions which made it non-free. After\
+    \ this issue was raised on the TORQUE mailing lists, the TORQUE upstream revised\
+    \ the license to remove the commercial use restrictions in v1.1.\n\nThe TORQUE\
+    \ v2.5+ Software License v1.1 is Free, but GPL incompatible because of the advertising\
+    \ clause.\n\nAlso noteworthy is that this license references the fact that much\
+    \ of the TORQUE v2.5 code is derived from OpenPBS's code, so the TORQUE v2.5+\
+    \ software is properly dual licensed TORQUEv1.1 and OpenPBS. This also means that\
+    \ this license is not useful for other codebases without removing Note #1."

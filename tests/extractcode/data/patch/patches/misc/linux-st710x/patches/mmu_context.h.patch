@@ -1,0 +1,13 @@
+--- linux-2.6.23/include/asm-sh/mmu_context.h.orig	2008-10-22 16:08:03.000000000 +0200
++++ linux-2.6.23/include/asm-sh/mmu_context.h	2008-10-22 15:04:40.000000000 +0200
+@@ -191,7 +191,9 @@
+ 
+ 	/* Enable MMU */
+ #ifdef CONFIG_32BIT
+-	if (1) /* SH4-202 and SE */
++#ifndef CONFIG_CPU_SUBTYPE_STX7105
++	if ((ctrl_inl(MMUCR)&MMUCR_SE)==MMUCR_SE) /* SH4-202 and SE */
++#endif
+ 		mmucr_init |= MMUCR_SE;
+ #endif
+ 

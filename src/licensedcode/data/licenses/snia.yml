@@ -1,0 +1,30 @@
+key: snia
+short_name: SNIA Public License 1.1
+name: SNIA Public License 1.1
+category: Copyleft
+owner: SNIA
+homepage_url: https://fedoraproject.org/wiki/Licensing/SNIA_Public_License
+spdx_license_key: SNIA
+spdx_full_name: SNIA Public License 1.1
+spdx_url: http://spdx.org/licenses/SNIA
+spdx_notes: "Per Fedora: MPL 1.1 derived license with a few distinct changes:\n\n\
+    \    They typoed the version number in Exhibit A (it says it is 1.0, which confused\
+    \ me at first, when I came across code using that attribution in its headers but\
+    \ could not find a 1.0 license text)\n    Section 8.2 (b) has been removed entirely.\n\
+    \    The following text block has been removed from Section 11: \n\n\"With respect\
+    \ to disputes in which at least one party is a citizen of, or an entity chartered\
+    \ or registered \nto do business in the United States of America, any litigation\
+    \ relating to this License shall be subject to the \njurisdiction of the Federal\
+    \ Courts of the Northern District of California, with venue lying in Santa Clara\
+    \ \nCounty, California, with the losing party responsible for costs, including\
+    \ without limitation, court costs and \nreasonable attorneys' fees and expenses.\"\
+    \n\n    The following text block has been removed from Exhibit A: \n\n\"Alternatively,\
+    \ the contents of this file may be used under the terms of the _____ license (the\
+    \  \"[___] \nLicense\"), in which case the provisions of [______] License are\
+    \ applicable instead of those above.  If you wish \nto allow use of your version\
+    \ of this file only under the terms of the [____] License and not to allow others\
+    \ to \nuse your version of this file under the MPL, indicate your decision by\
+    \ deleting the provisions above and replace \nthem with the notice and other provisions\
+    \ required by the [___] License.  If you do not delete the provisions \nabove,\
+    \ a recipient may use your version of this file under either the MPL or the [___]\
+    \ License.\""

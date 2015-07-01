@@ -1,0 +1,72 @@
+--- linux-2.6.23/net/ipv4/igmp.c.orig	2011-01-14 16:21:07.563761977 +0100
++++ linux-2.6.23/net/ipv4/igmp.c	2011-01-14 16:23:04.555806608 +0100
+@@ -922,6 +922,8 @@
+ 	read_unlock(&in_dev->mc_list_lock);
+ }
+ 
++static char supress_report_listening = 0;
++
+ int igmp_rcv(struct sk_buff *skb)
+ {
+ 	/* This basically follows the spec line by line -- see RFC1112 */
+@@ -960,9 +962,11 @@
+ 		if (((struct rtable*)skb->dst)->fl.iif == 0)
+ 			break;
+ 		/* don't rely on MC router hearing unicast reports */
+-		if (skb->pkt_type == PACKET_MULTICAST ||
+-		    skb->pkt_type == PACKET_BROADCAST)
+-			igmp_heard_report(in_dev, ih->group);
++                if (!supress_report_listening) {
++                  if (skb->pkt_type == PACKET_MULTICAST ||
++                      skb->pkt_type == PACKET_BROADCAST)
++                    igmp_heard_report(in_dev, ih->group);
++                }
+ 		break;
+ 	case IGMP_PIM:
+ #ifdef CONFIG_IP_PIMSM_V1
+@@ -2611,10 +2615,45 @@
+ 	.release	=	seq_release_private,
+ };
+ 
++static int proc_read_supress_report_listening(char *page, char **start,
++			    off_t off, int count,
++			    int *eof, void *data) {
++  int len;
++  char *supress_report_listening = (char*)data;
++
++  len = sprintf(page, "%d\n", *supress_report_listening);
++
++  return len;
++}
++
++static int proc_write_supress_report_listening(struct file *file,
++			     const char *buffer,
++			     unsigned long count,
++			     void *data)
++{
++	char *supress_report_listening = (char*)data;
++
++	if(count == 0 || copy_from_user(supress_report_listening, buffer, 1))
++          return -EFAULT;
++
++       *supress_report_listening = *supress_report_listening == '0' ? 0 : 1;
++
++	return count;
++}
++
++
+ int __init igmp_mc_proc_init(void)
+ {
++
++  struct proc_dir_entry *supress_report_listening_proc;
+ 	proc_net_fops_create("igmp", S_IRUGO, &igmp_mc_seq_fops);
+ 	proc_net_fops_create("mcfilter", S_IRUGO, &igmp_mcf_seq_fops);
++	supress_report_listening_proc = create_proc_entry("igmp_supress_report_listening", S_IWUGO, NULL);
++
++        supress_report_listening_proc->owner = THIS_MODULE;
++        supress_report_listening_proc->data = &supress_report_listening;
++        supress_report_listening_proc->read_proc = proc_read_supress_report_listening;
++        supress_report_listening_proc->write_proc = proc_write_supress_report_listening;
+ 	return 0;
+ }
+ #endif

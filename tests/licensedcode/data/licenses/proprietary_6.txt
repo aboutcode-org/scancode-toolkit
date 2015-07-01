@@ -1,0 +1,13 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// HyperLink.cpp : implementation file
+//
+// HyperLink static control.
+//
+// Copyright (C) 1997, 1998 Giancarlo Iovino (giancarlo@saria.com)
+// All rights reserved. May not be sold for profit.
+//
+// This code is based on CHyperlink by Chris Maunder.
+// "GotoURL" function by Stuart Patterson appeared in the Aug, 1997
+// Windows Developer's Journal.
+// "Default hand cursor" from Paul DiLascia's Jan 1998 MSJ article.

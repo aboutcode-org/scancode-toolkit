@@ -1,0 +1,18 @@
+key: cecill-b
+short_name: CeCILL-B License
+name: CeCILL-B Free Software License Agreement
+category: Copyleft
+owner: CeCILL
+homepage_url: http://www.cecill.info/licences/Licence_CeCILL-B_V1-fr.html
+spdx_license_key: CECILL-B
+spdx_full_name: CeCILL-B Free Software License Agreement
+spdx_url: http://spdx.org/licenses/CECILL-B
+spdx_notes: >-
+    English translation can be found here:  http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.html
+text_urls:
+    - http://www.cecill.info/licences/Licence_CeCILL-B_V1-fr.html
+    - http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.html
+faq_url: http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.html
+other_urls:
+    - http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.html
+    - http://www.cecill.info/licences.en.html

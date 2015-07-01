@@ -1,0 +1,73 @@
+Index: linux-2.6.23/arch/sh/Kconfig
+===================================================================
+--- linux-2.6.23.orig/arch/sh/Kconfig
++++ linux-2.6.23/arch/sh/Kconfig
+@@ -652,6 +652,16 @@ config SH_ST_MB839
+ 	  Select MB839 if configuring for an
+ 	  STMicroelectronics STi7105 MB839 Reference Board.
+ 
++config SH_ST_VIP19X3
++       bool "Motorola VIP19x3 board"
++       depends on CPU_SUBTYPE_STX7105
++       select SH_MOTOROLA_VIP19XX
++       help
++         Select VIP19x3 if configuring for an
++         STMicroelectronics VIP19x3 Motorola Board.
++         More information at:
++         <http://www.motorola.com>
++
+ comment "ST Peripheral Boards"
+ 
+ config SH_ST_DB641
+@@ -731,6 +741,51 @@ config SH_ST_MB705_FPBUTTON
+ 	  Select this option to enable a simple driver for the front
+ 	  pannel button on the mb705.
+ 
++menu "Motorola VIP19xx Options"
++
++config SH_MOTOROLA_VIP19XX
++	bool "VIP19xx Motorola board"
++	depends on SH_ST_MB442 || SH_ST_MB680 || SH_ST_VIP19X3
++	help
++	  Select VIP19xx Motorola if configuring for an
++	  STMicroelectronics VIP19xx Motorola Board.
++	  This is sometimes referred to as the perfect board.
++	  More information at:
++	  <http://www.motorola.com>
++
++config VIP19XX_RAMTOPADDRESS
++	hex "VIP19xx RAMTOPADDRESS"
++	depends on SH_MOTOROLA_VIP19XX && SH_ST_MB442
++	default "0x48000000" if 32BIT
++	default "0xac000000"
++
++config VIP19XX_VIDEOMEMADDRESS
++	hex "VIP19xx Video Memory Address"
++	depends on SH_MOTOROLA_VIP19XX && SH_ST_MB442
++	default "0x60000000" if 32BIT
++	default "0xb0000000"
++
++config VIP19XX_STAPI_MEMORY_SIZE
++	hex "Memory reserved for STAPI" if !MEMORY_SET || MEMORY_OVERRIDE
++	depends on SH_MOTOROLA_VIP19XX
++	default "0x01c00000"
++
++config VIP19XX_STAPI_MEMORY_SIZE_64MB
++	hex "Memory reserved for STAPI (64MiB video memory)"
++	depends on SH_MOTOROLA_VIP19XX && SH_ST_MB442
++	default "0x01c00000"
++
++config VIP19XX_GFX_MEMORY_SIZE
++	hex "Memory reserved graphics"
++	depends on SH_MOTOROLA_VIP19XX
++	default "0x01c00000"
++
++config VIP19XX_BIGPHYSAREA_SIZE
++	int "Memory reserved for the bigphysarea feature in page size blocks (4096 bytes)"
++	depends on SH_MOTOROLA_VIP19XX
++	default 319
++
++endmenu
+ endmenu
+ 
+ source "arch/sh/boards/renesas/hs7751rvoip/Kconfig"

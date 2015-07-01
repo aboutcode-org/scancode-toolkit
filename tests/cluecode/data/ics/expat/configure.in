@@ -1,0 +1,6 @@
+dnl   configuration script for expat
+dnl   Process this file with autoconf to produce a configure script.
+dnl
+dnl   Copyright 2000 Clark Cooper
+dnl
+dnl   This file is part of EXPAT.

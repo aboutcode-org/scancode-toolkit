@@ -1,0 +1,3 @@
+Standard Commercial Edition: The standard edition of the gSOAP toolset for commercial use. This edition is identical to the standard open source edition, but allows the use of the wsdl2h and soapcpp2 tools for commercial code and document generation. This licens does not have the limitations of the open-source GPL and gSOAP public licenses. The standard commercial edition is licensed with limited warranties.
+
+Enterprise Edition: The enterprise edition of the gSOAP toolset provides the gold standard toolset for your enterprise. The enterprise edition is best suited for organizations that require high reliability, security, and extensive support for WSDL, SOAP, XML, and WS-* protocols. Warranties, software maintenance and support are included.

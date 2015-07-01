@@ -1,0 +1,27 @@
+--- ElectricFence-2.0.5/eftest.c.ewt	Tue Jun  2 09:25:10 1998
++++ ElectricFence-2.0.5/eftest.c	Tue Jun  2 09:24:58 1998
+@@ -24,7 +24,7 @@
+ extern int	EF_PROTECT_BELOW;
+ extern int	EF_ALIGNMENT;
+ 
+-static jmp_buf	env;
++static sigjmp_buf	env;
+ 
+ /*
+  * There is still too little standardization of the arguments and return
+@@ -40,13 +40,13 @@
+ )
+  {
+ 	signal(PAGE_PROTECTION_VIOLATED_SIGNAL, SIG_DFL);
+-	longjmp(env, 1);
++	siglongjmp(env, 1);
+ }
+ 
+ static int
+ gotSegmentationFault(int (*test)(void))
+ {
+-	if ( setjmp(env) == 0 ) {
++	if ( sigsetjmp(env, 1) == 0 ) {
+ 		int			status;
+ 
+ 		signal(PAGE_PROTECTION_VIOLATED_SIGNAL

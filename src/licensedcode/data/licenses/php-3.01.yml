@@ -1,0 +1,18 @@
+key: php-3.01
+short_name: PHP License 3.01
+name: PHP License 3.01
+category: Attribution
+owner: PHP Project
+homepage_url: http://www.php.net/license/3_01.txt
+spdx_license_key: PHP-3.01
+spdx_full_name: PHP LIcense v3.01
+spdx_url: http://spdx.org/licenses/PHP-3.01
+spdx_notes: |-
+    The PHP License v3.01 is essentially the same as v3.0, with the exceoption of a couple word differences and updated url in section 6.
+
+    v3.01 came into use with PHP version 4 and onward.
+text_urls:
+    - http://www.php.net/license/3_01.txt
+other_urls:
+    - http://www.php.net/software/
+    - http://www.zend.com

@@ -1,0 +1,15 @@
+key: mpl-2.0-no-copyleft-exception
+short_name: MPL 2.0 with no copyleft exception
+name: >-
+    Mozilla Public License 2.0 (no copyleft exception)
+category: Copyleft Limited
+owner: Mozilla
+homepage_url: http://www.mozilla.org/MPL/2.0/
+spdx_license_key: MPL-2.0-no-copyleft-exception
+spdx_full_name: >-
+    Mozilla Public License 2.0 (no copyleft exception)
+spdx_url: http://spdx.org/licenses/MPL-2.0-no-copyleft-exception
+spdx_notes: |-
+    This license was released in January 2012.
+    This license list entry is for use when the MPL's Exhibit B, which removes the Sec 3.3 copyleft exception.
+osi_url: http://opensource.org/licenses/MPL-2.0

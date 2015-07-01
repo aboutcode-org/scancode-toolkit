@@ -1,0 +1,241 @@
+CONTRAT DE LICENCE DE LOGICIEL LIBRE CeCILL
+
+Avertissement
+
+Ce contrat est une licence de logiciel libre issue d'une concertation entre ses auteurs afin que le respect de deux grands principes pr�side � sa r�daction:
+
+d'une part, le respect des principes de diffusion des logiciels libres: acc�s au code source, droits �tendus conf�r�s aux utilisateurs,
+d'autre part, la d�signation d'un droit applicable, le droit fran�ais, auquel elle est conforme, tant au regard du droit de la responsabilit� civile que du droit de la propri�t� intellectuelle et de la protection qu'il offre aux auteurs et titulaires des droits patrimoniaux sur un logiciel.
+Les auteurs de la licence CeCILL1 sont:
+
+Commissariat � l'Energie Atomique - CEA, �tablissement public de recherche � caract�re scientifique, technique et industriel, dont le si�ge est situ� 25 rue Leblanc, immeuble Le Ponant D, 75015 Paris.
+
+Centre National de la Recherche Scientifique - CNRS, �tablissement public � caract�re scientifique et technologique, dont le si�ge est situ� 3 rue Michel-Ange, 75794 Paris cedex 16.
+
+Institut National de Recherche en Informatique et en Automatique - INRIA, �tablissement public � caract�re scientifique et technologique, dont le si�ge est situ� Domaine de Voluceau, Rocquencourt, BP 105, 78153 Le Chesnay cedex.
+
+Pr�ambule
+
+Ce contrat est une licence de logiciel libre dont l'objectif est de conf�rer aux utilisateurs la libert� de modification et de redistribution du logiciel r�gi par cette licence dans le cadre d'un mod�le de diffusion en logiciel libre.
+
+L'exercice de ces libert�s est assorti de certains devoirs � la charge des utilisateurs afin de pr�server ce statut au cours des redistributions ult�rieures.
+
+L'accessibilit� au code source et les droits de copie, de modification et de redistribution qui en d�coulent ont pour contrepartie de n'offrir aux utilisateurs qu'une garantie limit�e et de ne faire peser sur l'auteur du logiciel, le titulaire des droits patrimoniaux et les conc�dants successifs qu'une responsabilit� restreinte.
+
+A cet �gard l'attention de l'utilisateur est attir�e sur les risques associ�s au chargement, � l'utilisation, � la modification et/ou au d�veloppement et � la reproduction du logiciel par l'utilisateur �tant donn� sa sp�cificit� de logiciel libre, qui peut le rendre complexe � manipuler et qui le r�serve donc � des d�veloppeurs ou des professionnels avertis poss�dant des connaissances informatiques approfondies. Les utilisateurs sont donc invit�s � charger et tester l'ad�quation du logiciel � leurs besoins dans des conditions permettant d'assurer la s�curit� de leurs syst�mes et/ou de leurs donn�es et, plus g�n�ralement, � l'utiliser et l'exploiter dans les m�mes conditions de s�curit�. Ce contrat peut �tre reproduit et diffus� librement, sous r�serve de le conserver en l'�tat, sans ajout ni suppression de clauses.
+
+Ce contrat est susceptible de s'appliquer � tout logiciel dont le titulaire des droits patrimoniaux d�cide de soumettre l'exploitation aux dispositions qu'il contient.
+
+Article 1 - DEFINITIONS
+
+Dans ce contrat, les termes suivants, lorsqu'ils seront �crits avec une lettre capitale, auront la signification suivante:
+
+Contrat: d�signe le pr�sent contrat de licence, ses �ventuelles versions post�rieures et annexes.
+
+Logiciel: d�signe le logiciel sous sa forme de Code Objet et/ou de Code Source et le cas �ch�ant sa documentation, dans leur �tat au moment de l'acceptation du Contrat par le Licenci�.
+
+Logiciel Initial: d�signe le Logiciel sous sa forme de Code Source et �ventuellement de Code Objet et le cas �ch�ant sa documentation, dans leur �tat au moment de leur premi�re diffusion sous les termes du Contrat.
+
+Logiciel Modifi�: d�signe le Logiciel modifi� par au moins une Contribution.
+
+Code Source: d�signe l'ensemble des instructions et des lignes de programme du Logiciel et auquel l'acc�s est n�cessaire en vue de modifier le Logiciel.
+
+Code Objet: d�signe les fichiers binaires issus de la compilation du Code Source.
+
+Titulaire: d�signe le ou les d�tenteurs des droits patrimoniaux d'auteur sur le Logiciel Initial.
+
+Licenci�: d�signe le ou les utilisateurs du Logiciel ayant accept� le Contrat.
+
+Contributeur: d�signe le Licenci� auteur d'au moins une Contribution.
+
+Conc�dant: d�signe le Titulaire ou toute personne physique ou morale distribuant le Logiciel sous le Contrat.
+
+Contribution: d�signe l'ensemble des modifications, corrections, traductions, adaptations et/ou nouvelles fonctionnalit�s int�gr�es dans le Logiciel par tout Contributeur, ainsi que tout Module Interne.
+
+Module: d�signe un ensemble de fichiers sources y compris leur documentation qui permet de r�aliser des fonctionnalit�s ou services suppl�mentaires � ceux fournis par le Logiciel.
+
+Module Externe: d�signe tout Module, non d�riv� du Logiciel, tel que ce Module et le Logiciel s'ex�cutent dans des espaces d'adressage diff�rents, l'un appelant l'autre au moment de leur ex�cution.
+
+Module Interne: d�signe tout Module li� au Logiciel de telle sorte qu'ils s'ex�cutent dans le m�me espace d'adressage.
+
+GNU GPL: d�signe la GNU General Public License dans sa version 2 ou toute version ult�rieure, telle que publi�e par Free Software Foundation Inc.
+
+Parties: d�signe collectivement le Licenci� et le Conc�dant.
+
+Ces termes s'entendent au singulier comme au pluriel.
+
+Article 2 - OBJET
+
+Le Contrat a pour objet la concession par le Conc�dant au Licenci� d'une licence non exclusive, cessible et mondiale du Logiciel telle que d�finie ci-apr�s � l'article 5 pour toute la dur�e de protection des droits portant sur ce Logiciel.
+
+Article 3 - ACCEPTATION
+
+3.1 L'acceptation par le Licenci� des termes du Contrat est r�put�e acquise du fait du premier des faits suivants:
+
+(i) le chargement du Logiciel par tout moyen notamment par t�l�chargement � partir d'un serveur distant ou par chargement � partir d'un support physique;
+(ii) le premier exercice par le Licenci� de l'un quelconque des droits conc�d�s par le Contrat.
+3.2 Un exemplaire du Contrat, contenant notamment un avertissement relatif aux sp�cificit�s du Logiciel, � la restriction de garantie et � la limitation � un usage par des utilisateurs exp�riment�s a �t� mis � disposition du Licenci� pr�alablement � son acceptation telle que d�finie � l'article 3.1 ci dessus et le Licenci� reconna�t en avoir pris connaissance.
+
+Article 4 - ENTREE EN VIGUEUR ET DUREE
+
+4.1 ENTREE EN VIGUEUR
+
+Le Contrat entre en vigueur � la date de son acceptation par le Licenci� telle que d�finie en 3.1.
+
+4.2 DUREE
+
+Le Contrat produira ses effets pendant toute la dur�e l�gale de protection des droits patrimoniaux portant sur le Logiciel.
+
+Article 5 - ETENDUE DES DROITS CONCEDES
+
+Le Conc�dant conc�de au Licenci�, qui accepte, les droits suivants sur le Logiciel pour toutes destinations et pour la dur�e du Contrat dans les conditions ci-apr�s d�taill�es.
+
+Par ailleurs, si le Conc�dant d�tient ou venait � d�tenir un ou plusieurs brevets d'invention prot�geant tout ou partie des fonctionnalit�s du Logiciel ou de ses composants, il s'engage � ne pas opposer les �ventuels droits conf�r�s par ces brevets aux Licenci�s successifs qui utiliseraient, exploiteraient ou modifieraient le Logiciel. En cas de cession de ces brevets, le Conc�dant s'engage � faire reprendre les obligations du pr�sent alin�a aux cessionnaires.
+
+5.1 DROIT D'UTILISATION
+
+Le Licenci� est autoris� � utiliser le Logiciel, sans restriction quant aux domaines d'application, �tant ci-apr�s pr�cis� que cela comporte:
+
+la reproduction permanente ou provisoire du Logiciel en tout ou partie par tout moyen et sous toute forme.
+
+le chargement, l'affichage, l'ex�cution, ou le stockage du Logiciel sur tout support.
+
+la possibilit� d'en observer, d'en �tudier, ou d'en tester le fonctionnement afin de d�terminer les id�es et principes qui sont � la base de n'importe quel �l�ment de ce Logiciel; et ceci, lorsque le Licenci� effectue toute op�ration de chargement, d'affichage, d'ex�cution, de transmission ou de stockage du Logiciel qu'il est en droit d'effectuer en vertu du Contrat.
+
+5.2 DROIT D'APPORTER DES CONTRIBUTIONS
+
+Le droit d'apporter des Contributions comporte le droit de traduire, d'adapter, d'arranger ou d'apporter toute autre modification au Logiciel et le droit de reproduire le logiciel en r�sultant.
+
+Le Licenci� est autoris� � apporter toute Contribution au Logiciel sous r�serve de mentionner, de fa�on explicite, son nom en tant qu'auteur de cette Contribution et la date de cr�ation de celle-ci.
+
+5.3 DROIT DE DISTRIBUTION
+
+Le droit de distribution comporte notamment le droit de diffuser, de transmettre et de communiquer le Logiciel au public sur tout support et par tout moyen ainsi que le droit de mettre sur le march� � titre on�reux ou gratuit, un ou des exemplaires du Logiciel par tout proc�d�.
+
+Le Licenci� est autoris� � distribuer des copies du Logiciel, modifi� ou non, � des tiers dans les conditions ci-apr�s d�taill�es.
+
+5.3.1 DISTRIBUTION DU LOGICIEL SANS MODIFICATION
+
+Le Licenci� est autoris� � distribuer des copies conformes du Logiciel, sous forme de Code Source ou de Code Objet, � condition que cette distribution respecte les dispositions du Contrat dans leur totalit� et soit accompagn�e:
+
+d'un exemplaire du Contrat,
+
+d'un avertissement relatif � la restriction de garantie et de responsabilit� du Conc�dant telle que pr�vue aux articles 8 et 9,
+
+et que, dans le cas o� seul le Code Objet du Logiciel est redistribu�, le Licenci� permette aux futurs Licenci�s d'acc�der facilement au Code Source complet du Logiciel en indiquant les modalit�s d'acc�s, �tant entendu que le co�t additionnel d'acquisition du Code Source ne devra pas exc�der le simple co�t de transfert des donn�es.
+
+5.3.2 DISTRIBUTION DU LOGICIEL MODIFIE
+
+Lorsque le Licenci� apporte une Contribution au Logiciel, les conditions de distribution du Logiciel Modifi� en r�sultant sont alors soumises � l'int�gralit� des dispositions du Contrat.
+
+Le Licenci� est autoris� � distribuer le Logiciel Modifi�, sous forme de code source ou de code objet, � condition que cette distribution respecte les dispositions du Contrat dans leur totalit� et soit accompagn�e:
+
+d'un exemplaire du Contrat,
+
+d'un avertissement relatif � la restriction de garantie et de responsabilit� du Conc�dant telle que pr�vue aux articles 8 et 9,
+
+et que, dans le cas o� seul le code objet du Logiciel Modifi� est redistribu�, le Licenci� permette aux futurs Licenci�s d'acc�der facilement au code source complet du Logiciel Modifi� en indiquant les modalit�s d'acc�s, �tant entendu que le co�t additionnel d'acquisition du code source ne devra pas exc�der le simple co�t de transfert des donn�es.
+
+5.3.3 DISTRIBUTION DES MODULES EXTERNES
+
+Lorsque le Licenci� a d�velopp� un Module Externe les conditions du Contrat ne s'appliquent pas � ce Module Externe, qui peut �tre distribu� sous un contrat de licence diff�rent.
+
+5.3.4 COMPATIBILITE AVEC LA LICENCE GNU GPL
+
+Le Licenci� peut inclure un code soumis aux dispositions d'une des versions de la licence GNU GPL dans le Logiciel modifi� ou non et distribuer l'ensemble sous les conditions de la m�me version de la licence GNU GPL.
+
+Le Licenci� peut inclure le Logiciel modifi� ou non dans un code soumis aux dispositions d'une des versions de la licence GNU GPL et distribuer l'ensemble sous les conditions de la m�me version de la licence GNU GPL.
+
+Article 6 - PROPRIETE INTELLECTUELLE
+
+6.1 SUR LE LOGICIEL INITIAL
+
+Le Titulaire est d�tenteur des droits patrimoniaux sur le Logiciel Initial. Toute utilisation du Logiciel Initial est soumise au respect des conditions dans lesquelles le Titulaire a choisi de diffuser son oeuvre et nul autre n'a la facult� de modifier les conditions de diffusion de ce Logiciel Initial.
+
+Le Titulaire s'engage � ce que le Logiciel Initial reste au moins r�gi par le Contrat et ce, pour la dur�e vis�e � l'article 4.2.
+
+6.2 SUR LES CONTRIBUTIONS
+
+Le Licenci� qui a d�velopp� une Contribution est titulaire sur celle-ci des droits de propri�t� intellectuelle dans les conditions d�finies par la l�gislation applicable.
+
+6.3 SUR LES MODULES EXTERNES
+
+Le Licenci� qui a d�velopp� un Module Externe est titulaire sur celui-ci des droits de propri�t� intellectuelle dans les conditions d�finies par la l�gislation applicable et reste libre du choix du contrat r�gissant sa diffusion.
+
+6.4 DISPOSITIONS COMMUNES
+
+Le Licenci� s'engage express�ment:
+
+� ne pas supprimer ou modifier de quelque mani�re que ce soit les mentions de propri�t� intellectuelle appos�es sur le Logiciel;
+
+� reproduire � l'identique lesdites mentions de propri�t� intellectuelle sur les copies du Logiciel modifi� ou non.
+
+Le Licenci� s'engage � ne pas porter atteinte, directement ou indirectement, aux droits de propri�t� intellectuelle du Titulaire et/ou des Contributeurs sur le Logiciel et � prendre, le cas �ch�ant, � l'�gard de son personnel toutes les mesures n�cessaires pour assurer le respect des dits droits de propri�t� intellectuelle du Titulaire et/ou des Contributeurs.
+
+Article 7 - SERVICES ASSOCIES
+
+7.1 Le Contrat n'oblige en aucun cas le Conc�dant � la r�alisation de prestations d'assistance technique ou de maintenance du Logiciel.
+
+Cependant le Conc�dant reste libre de proposer ce type de services. Les termes et conditions d'une telle assistance technique et/ou d'une telle maintenance seront alors d�termin�s dans un acte s�par�. Ces actes de maintenance et/ou assistance technique n'engageront que la seule responsabilit� du Conc�dant qui les propose.
+
+7.2 De m�me, tout Conc�dant est libre de proposer, sous sa seule responsabilit�, � ses licenci�s une garantie, qui n'engagera que lui, lors de la redistribution du Logiciel et/ou du Logiciel Modifi� et ce, dans les conditions qu'il souhaite. Cette garantie et les modalit�s financi�res de son application feront l'objet d'un acte s�par� entre le Conc�dant et le Licenci�.
+
+Article 8 - RESPONSABILITE
+
+8.1 Sous r�serve des dispositions de l'article 8.2, le Licenci� a la facult�, sous r�serve de prouver la faute du Conc�dant concern�, de solliciter la r�paration du pr�judice direct qu'il subirait du fait du Logiciel et dont il apportera la preuve.
+
+8.2 La responsabilit� du Conc�dant est limit�e aux engagements pris en application du Contrat et ne saurait �tre engag�e en raison notamment: (i) des dommages dus � l'inex�cution, totale ou partielle, de ses obligations par le Licenci�, (ii) des dommages directs ou indirects d�coulant de l'utilisation ou des performances du Logiciel subis par le Licenci� et (iii) plus g�n�ralement d'un quelconque dommage indirect. En particulier, les Parties conviennent express�ment que tout pr�judice financier ou commercial (par exemple perte de donn�es, perte de b�n�fices, perte d'exploitation, perte de client�le ou de commandes, manque � gagner, trouble commercial quelconque) ou toute action dirig�e contre le Licenci� par un tiers, constitue un dommage indirect et n'ouvre pas droit � r�paration par le Conc�dant.
+
+Article 9 - GARANTIE
+
+9.1 Le Licenci� reconna�t que l'�tat actuel des connaissances scientifiques et techniques au moment de la mise en circulation du Logiciel ne permet pas d'en tester et d'en v�rifier toutes les utilisations ni de d�tecter l'existence d'�ventuels d�fauts. L'attention du Licenci� a �t� attir�e sur ce point sur les risques associ�s au chargement, � l'utilisation, la modification et/ou au d�veloppement et � la reproduction du Logiciel qui sont r�serv�s � des utilisateurs avertis.
+
+Il rel�ve de la responsabilit� du Licenci� de contr�ler, par tous moyens, l'ad�quation du produit � ses besoins, son bon fonctionnement et de s'assurer qu'il ne causera pas de dommages aux personnes et aux biens.
+
+9.2 Le Conc�dant d�clare de bonne foi �tre en droit de conc�der l'ensemble des droits attach�s au Logiciel (comprenant notamment les droits vis�s � l'article 5).
+
+9.3 Le Licenci� reconna�t que le Logiciel est fourni "en l'�tat" par le Conc�dant sans autre garantie, expresse ou tacite, que celle pr�vue � l'article 9.2 et notamment sans aucune garantie sur sa valeur commerciale, son caract�re s�curis�, innovant ou pertinent.
+
+En particulier, le Conc�dant ne garantit pas que le Logiciel est exempt d'erreur, qu'il fonctionnera sans interruption, qu'il sera compatible avec l'�quipement du Licenci� et sa configuration logicielle ni qu'il remplira les besoins du Licenci�.
+
+9.4 Le Conc�dant ne garantit pas, de mani�re expresse ou tacite, que le Logiciel ne porte pas atteinte � un quelconque droit de propri�t� intellectuelle d'un tiers portant sur un brevet, un logiciel ou sur tout autre droit de propri�t�. Ainsi, le Conc�dant exclut toute garantie au profit du Licenci� contre les actions en contrefa�on qui pourraient �tre diligent�es au titre de l'utilisation, de la modification, et de la redistribution du Logiciel. N�anmoins, si de telles actions sont exerc�es contre le Licenci�, le Conc�dant lui apportera son aide technique et juridique pour sa d�fense. Cette aide technique et juridique est d�termin�e au cas par cas entre le Conc�dant concern� et le Licenci� dans le cadre d'un protocole d'accord. Le Conc�dant d�gage toute responsabilit� quant � l'utilisation de la d�nomination du Logiciel par le Licenci�. Aucune garantie n'est apport�e quant � l'existence de droits ant�rieurs sur le nom du Logiciel et sur l'existence d'une marque.
+
+Article 10 - RESILIATION
+
+10.1 En cas de manquement par le Licenci� aux obligations mises � sa charge par le Contrat, le Conc�dant pourra r�silier de plein droit le Contrat trente (30) jours apr�s notification adress�e au Licenci� et rest�e sans effet.
+
+10.2 Le Licenci� dont le Contrat est r�sili� n'est plus autoris� � utiliser, modifier ou distribuer le Logiciel. Cependant, toutes les licences qu'il aura conc�d�es ant�rieurement � la r�siliation du Contrat resteront valides sous r�serve qu'elles aient �t� effectu�es en conformit� avec le Contrat.
+
+Article 11 - DISPOSITIONS DIVERSES
+
+11.1 CAUSE EXTERIEURE
+
+Aucune des Parties ne sera responsable d'un retard ou d'une d�faillance d'ex�cution du Contrat qui serait d� � un cas de force majeure, un cas fortuit ou une cause ext�rieure, telle que, notamment, le mauvais fonctionnement ou les interruptions du r�seau �lectrique ou de t�l�communication, la paralysie du r�seau li�e � une attaque informatique, l'intervention des autorit�s gouvernementales, les catastrophes naturelles, les d�g�ts des eaux, les tremblements de terre, le feu, les explosions, les gr�ves et les conflits sociaux, l'�tat de guerre...
+
+11.2 Le fait, par l'une ou l'autre des Parties, d'omettre en une ou plusieurs occasions de se pr�valoir d'une ou plusieurs dispositions du Contrat, ne pourra en aucun cas impliquer renonciation par la Partie int�ress�e � s'en pr�valoir ult�rieurement.
+
+11.3 Le Contrat annule et remplace toute convention ant�rieure, �crite ou orale, entre les Parties sur le m�me objet et constitue l'accord entier entre les Parties sur cet objet. Aucune addition ou modification aux termes du Contrat n'aura d'effet � l'�gard des Parties � moins d'�tre faite par �crit et sign�e par leurs repr�sentants d�ment habilit�s.
+
+11.4 Dans l'hypoth�se o� une ou plusieurs des dispositions du Contrat s'av�rerait contraire � une loi ou � un texte applicable, existants ou futurs, cette loi ou ce texte pr�vaudrait, et les Parties feraient les amendements n�cessaires pour se conformer � cette loi ou � ce texte. Toutes les autres dispositions resteront en vigueur. De m�me, la nullit�, pour quelque raison que ce soit, d'une des dispositions du Contrat ne saurait entra�ner la nullit� de l'ensemble du Contrat.
+
+11.5 LANGUE
+
+Le Contrat est r�dig� en langue fran�aise et en langue anglaise, ces deux versions faisant �galement foi.
+
+Article 12 - NOUVELLES VERSIONS DU CONTRAT
+
+12.1 Toute personne est autoris�e � copier et distribuer des copies de ce Contrat.
+
+12.2 Afin d'en pr�server la coh�rence, le texte du Contrat est prot�g� et ne peut �tre modifi� que par les auteurs de la licence, lesquels se r�servent le droit de publier p�riodiquement des mises � jour ou de nouvelles versions du Contrat, qui poss�deront chacune un num�ro distinct. Ces versions ult�rieures seront susceptibles de prendre en compte de nouvelles probl�matiques rencontr�es par les logiciels libres.
+
+12.3 Tout Logiciel diffus� sous une version donn�e du Contrat ne pourra faire l'objet d'une diffusion ult�rieure que sous la m�me version du Contrat ou une version post�rieure, sous r�serve des dispositions de l'article 5.3.4.
+
+Article 13 - LOI APPLICABLE ET COMPETENCE TERRITORIALE
+
+13.1 Le Contrat est r�gi par la loi fran�aise. Les Parties conviennent de tenter de r�gler � l'amiable les diff�rends ou litiges qui viendraient � se produire par suite ou � l'occasion du Contrat.
+
+13.2 A d�faut d'accord amiable dans un d�lai de deux (2) mois � compter de leur survenance et sauf situation relevant d'une proc�dure d'urgence, les diff�rends ou litiges seront port�s par la Partie la plus diligente devant les Tribunaux comp�tents de Paris.
+
+1 CeCILL est pour Ce(a) C(nrs) I(nria) L(ogiciel) L(ibre)
+
+Version 2.0 du 2006-09-05.

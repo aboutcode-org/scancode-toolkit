@@ -1,0 +1,5 @@
+licenses:
+    - nvidia-cuda
+notes: >-
+    From http://docs.nvidia.com/cuda/cuda-samples/index.html
+sort: true

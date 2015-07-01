@@ -1,0 +1,119 @@
+--- src.original/Browser/WebCore/platform/graphics/ekioh/ImageEkioh.cpp	2009-12-04 10:48:46.702697729 +0100
++++ src/Browser/WebCore/platform/graphics/ekioh/ImageEkioh525.cpp	2009-12-04 10:51:31.041817014 +0100
+@@ -289,7 +289,8 @@ void Image::drawPattern(GraphicsContext*
+         " sS=(%d,%d)\n"
+         " tR=(%.1f,%.1f,%.1f,%.1f)\n"
+         " phase=(%.1f,%.1f)\n"
+-        " dR=(%.1f,%.1f,%.1f,%.1f)\n",
++        " dR=(%.1f,%.1f,%.1f,%.1f)\n"
++        " aT=(%.1f,%.1f,%.1f,%.1f)\n",
+         width(),
+         height(),
+         tileRect.x(),
+@@ -301,76 +302,47 @@ void Image::drawPattern(GraphicsContext*
+         destRect.x(),
+         destRect.y(),
+         destRect.width(),
+-        destRect.height()
++        destRect.height(),
++        patternTransform.a(),
++        patternTransform.b(),
++        patternTransform.c(),
++        patternTransform.d()
+         );
+ 
+     // Phase is where you'd start drawing the entire src image in dst coords.
++    context->save();
++    context->clip(IntRect(destRect.x(), destRect.y(), 
++                          destRect.width(), destRect.height()));
++    context->translate(phase.x(), phase.y());
++    context->concatCTM(patternTransform);
++    
++    float currentX = 0;
++    float currentY = 0;
+ 
+-    float fillEndX = destRect.right();
+-    float fillEndY = destRect.bottom();
+-    FloatRect srcRect;
+-    FloatRect dstRect;
+-
+-    float dstTileX;
+-    float dstTileY = phase.y();
+-    float tileWidth = tileRect.width();
++    float tileWidth  = tileRect.width();
+     float tileHeight = tileRect.height();
+ 
+-
+-    dstRect.setY(destRect.y());
++    FloatRect srcRect(0, 0, tileWidth, tileHeight);
++    DBG("srcRect: ( %f %f | %f x %f )\n",
++        srcRect.x(), srcRect.y(), srcRect.width(), srcRect.height());
+ 
+     AffineTransform inverse(patternTransform.inverse());
++    float dstWidth  = (destRect.right()  - phase.x()) * inverse.a();
++    float dstHeight = (destRect.bottom() - phase.y()) * inverse.d();
++ 
++    while (currentY < dstHeight) {
++        while (currentX < dstWidth) {
++          FloatRect dstRect(currentX, currentY, tileWidth, tileHeight);
++          DBG("dstRect: ( %f %f | %f x %f )\n",
++              dstRect.x(), dstRect.y(), dstRect.width(), dstRect.height());
+ 
+-    // Could optimise by doing one row and then replicating that?
+-
+-    // Vertical
+-    while (dstRect.y() < fillEndY)
+-    {
+-        float dstY = dstRect.y();
+-        float srcY = (dstY - dstTileY) * inverse.d();
+-        srcRect.setY(srcY);
+-
+-        float height = tileHeight - (srcY - tileRect.y());
+-        if (dstY + height > fillEndY)
+-        {
+-            // Could avoid this by setting clip rect?
+-            height = fillEndY - dstY;
++          context->drawImage(this, dstRect, srcRect, op);
++          currentX += tileWidth;
+         }
+-        float scaledHeight = height * patternTransform.d();
+-        srcRect.setHeight(height);
+-        dstRect.setHeight(scaledHeight);
+-
+-        dstRect.setX(destRect.x());
+-        dstTileX = phase.x();
+-
+-        // Horizontal
+-        while (dstRect.x() < fillEndX)
+-        {
+-            float dstX = dstRect.x();
+-            float srcX = (dstX - dstTileX) * inverse.a();
+-            srcRect.setX(srcX);
+-
+-            float width = tileWidth - (srcX - tileRect.x());
+-            if (dstX + width > fillEndX)
+-            {
+-                // Could avoid this by setting clip rect?
+-                width = fillEndX - dstX;
+-            }
+-            float scaledWidth = width * patternTransform.a();
+-            srcRect.setWidth(width);
+-            dstRect.setWidth(scaledWidth);
+-
+-            DBG(" dX=%f dtX=%f sX=%f w=%f sw=%f\n",
+-                    dstX, dstTileX, srcX, width, scaledWidth);
+-            context->drawImage(this, dstRect, srcRect, op);
+-
+-            dstTileX += tileWidth;
+-            dstRect.setX(dstX + scaledWidth);
+-        }
+-
+-        dstTileY += tileHeight;
+-        dstRect.setY(dstY + scaledHeight);
++        currentY += tileHeight;
++        currentX  = 0;
+     }
++    context->restore();
+ }
+ 
+ 

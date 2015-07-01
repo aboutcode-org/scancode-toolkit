@@ -1,0 +1,13 @@
+key: zpl-1.1
+short_name: ZPL 1.1
+name: Zope Public License 1.1
+category: Attribution
+owner: Zope Community
+homepage_url: http://www.zope.org/Resources/License/
+spdx_license_key: ZPL-1.1
+spdx_full_name: Zope Public License 1.1
+spdx_url: http://www.zope.org/Resources/License/ZPL-1.1
+text_urls:
+    - http://www.zope.org/Resources/License/
+other_urls:
+    - http://www.zope.com/

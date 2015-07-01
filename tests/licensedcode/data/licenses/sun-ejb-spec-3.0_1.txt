@@ -1,0 +1,165 @@
+BEA SYSTEMS, INC. ("BEA") IS WILLING TO LICENSE THIS SPECIFICATION TO 
+YOU ONLY UPON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS CONTAINED 
+IN THIS LICENSE AGREEMENT ("AGREEMENT").  PLEASE READ THE TERMS AND 
+CONDITIONS OF THIS AGREEMENT CAREFULLY. BY DOWNLOADING THIS 
+SPECIFICATION, YOU ACCEPT THE TERMS AND CONDITIONS OF THE AGREEMENT. IF 
+YOU ARE NOT WILLING TO BE BOUND BY IT, SELECT THE "DECLINE" BUTTON AT 
+THE BOTTOM OF THIS PAGE AND THE DOWNLOADING PROCESS WILL NOT CONTINUE. 
+
+Streaming API for XML (JSR-173) for JavaTM Specification ("Specification") 
+Version: 1.0 
+Status: FCS 
+Release: 22 March 2004
+Copyright 2002, 2003 BEA Systems, Inc. 
+2315 North First Street, San Jose CA, 95131
+All rights reserved. 
+
+NOTICE; LIMITED LICENSE GRANTS
+
+1. License for Evaluation Purposes. BEA hereby grants you a fully-paid, 
+non-exclusive, non-transferable, worldwide, limited license (without 
+the right to sublicense), under BEA's applicable intellectual property 
+rights to view, download, use and reproduce the Specification only for 
+the purpose of internal evaluation, which shall be understood to 
+include developing applications intended to run on an implementation of 
+the Specification provided that such applications do not themselves 
+implement any portion(s) of the Specification.  
+
+2. License for the Distribution of Compliant Implementations. BEA also 
+grants you a perpetual, non-exclusive, non-transferable, worldwide, 
+fully paid-up, royalty free, limited license (without the right to sub
+license) under  any applicable copyrights or, subject to the provisions 
+of subsection 3 below, patent rights it may have covering the 
+Specification to create and/or distribute an implementation of the 
+Specification that: (a) fully implements the Specification including 
+all its required interfaces and functionality, (b) does not modify, 
+subset, superset or otherwise extend the Sun Name Space, or include any 
+public or protected packages, classes, Java interfaces, fields or 
+methods within the Sun Name Space other than those  required/authorized 
+by the Specification or Specifications being implemented and  (c) 
+passes the Technology Compatibility Kit  for such Specification 
+("Compliant Implementation"). 
+
+
+
+3. Reciprocity Concerning Patent Licenses.  
+
+	a. With respect to any patent claims covered by the license 
+granted under subparagraph 2 above that would be infringed by all 
+technically feasible implementations of the Specification, such license 
+is conditioned upon your offering on fair, reasonable and non-
+discriminatory terms, to any party seeking it from You, a perpetual, 
+non-exclusive, non-transferable, worldwide license under Your patent 
+rights which are or would be infringed by all technically feasible 
+implementations of the Specification to develop, distribute and use a 
+Compliant Implementation. 
+
+
+	b  With respect to any patent claims owned by BEA and covered by 
+the license granted under subparagraph 2, whether or not their 
+infringement can be avoided in a technically feasible manner when 
+implementing the Specification, such license shall terminate with 
+respect to such claims if You initiate a claim against BEA that it has, 
+in the course of performing its responsibilities as the Specification 
+Lead, induced any other entity to infringe Your patent rights.
+
+	c  Also with respect to any patent claims owned by BEA and 
+covered by the license granted under subparagraph, where the 
+infringement of such claims can be avoided in a technically feasible 
+manner when implementing the Specification such license, with respect 
+to such claims, shall terminate if You initiate a claim against BEA 
+that its making, having made, using, offering to sell, selling or 
+importing a Compliant Implementation infringes Your patent rights.
+
+4.  Downstream Licenses for Compliant Implementations.  A Downstream 
+Licensee need not include limitations (a)-(c) from Section 2, above, or 
+any other particular "pass through" requirements in any license the 
+Downstream Licensee grants concerning the use of its Compliant  
+Implementation or products derived from it. However, except with 
+respect to implementations of the Specification (and products derived 
+from them) by the Downstream Licensee's licensee that satisfy 
+requirements (a)-(c) from Section 2, above, the Downstream Licensee may 
+neither:  (a) grant or otherwise pass through to its licensees any 
+licensable copyrights and patent rights of BEA; nor (b) authorize its 
+licensees to make any claims concerning their implementation's 
+compliance with the Specification in question.
+
+5. Definitions. For the purposes of this Agreement: "Technology 
+Compatibility Kit" or "TCK" shall mean the test suite and accompanying 
+documentation provided by BEA which corresponds to the particular 
+version of the Specification being tested; "Sun Name Space" shall mean 
+the public class or interface declarations whose names begin with 
+"java", "javax", "com.sun" or their equivalents in any subsequent 
+naming convention adopted by Sun Microsystems, Inc., through the Java 
+Community Process, or any recognized successors or replacements 
+thereof; "Downstream Licensee" shall mean a company or individual that 
+creates an Compliant Implementation under this Agreement.
+
+BEA shall have the right to terminate this Agreement immediately notice 
+if you fail to comply with any material provision of or act outside the 
+scope of the licenses granted above.
+
+
+
+TRADEMARKS
+
+No right, title, or interest in or to any trademarks, service marks, or 
+trade names of BEA or BEA's licensors is granted hereunder. Java is a 
+registered trademark of Sun Microsystems, Inc. in the United States and 
+other countries.
+
+DISCLAIMER OF WARRANTIES 
+THE SPECIFICATION IS PROVIDED "AS IS".  BEA MAKES NO REPRESENTATIONS OR 
+WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, 
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-
+INFRINGEMENT (INCLUDING AS A CONSEQUENCE OF ANY PRACTICE OR 
+IMPLEMENTATION OF THE SPECIFICATION), OR THAT THE CONTENTS OF THE 
+SPECIFICATION ARE SUITABLE FOR ANY PURPOSE. 
+
+THE SPECIFICATION COULD INCLUDE TECHNICAL INACCURACIES OR TYPOGRAPHICAL 
+ERRORS.  CHANGES ARE PERIODICALLY ADDED TO THE INFORMATION THEREIN; 
+THESE CHANGES WILL BE INCORPORATED INTO NEW VERSIONS OF THE 
+SPECIFICATION, IF ANY.  BEA MAY MAKE IMPROVEMENTS AND/OR CHANGES TO THE 
+PRODUCT(S) AND/OR THE PROGRAM(S) DESCRIBED IN THE SPECIFICATION AT ANY 
+TIME.  Any use of such changes in the Specification will be governed by 
+the then-current license for the applicable version of the 
+Specification. 
+
+LIMITATION OF LIABILITY 
+TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT WILL BEA OR ITS BEAS 
+BE LIABLE FOR ANY DAMAGES, INCLUDING WITHOUT LIMITATION, LOST REVENUE, 
+PROFITS OR DATA, OR FOR SPECIAL, INDIRECT, CONSEQUENTIAL, INCIDENTAL OR 
+PUNITIVE DAMAGES, HOWEVER CAUSED AND REGARDLESS OF THE THEORY OF 
+LIABILITY, ARISING OUT OF OR RELATED TO ANY FURNISHING, PRACTICING, 
+MODIFYING OR ANY USE OF THE SPECIFICATION, EVEN IF BEA AND/OR ITS BEAS 
+HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. 
+
+You will indemnify, hold harmless, and defend BEA and its licensors 
+from any claims arising or resulting from: (i) your use of the 
+Specification; (ii) the use or distribution of your application or 
+applet written to and/or Your implementation of the Specification; 
+and/or (iii) any claims that later versions or releases of any 
+Specification furnished to you are incompatible with the Specification 
+provided to you under this license. 
+
+RESTRICTED RIGHTS LEGEND 
+U.S. Government:  If this Specification is being acquired by or on 
+behalf of the U.S. Government or by a U.S. Government prime contractor 
+or subcontractor (at any tier), then the Government's rights in the 
+Software and accompanying documentation shall be only as set forth in 
+this license; this is in accordance with 48 C.F.R. 227.7201 through 
+227.7202-4 (for Department of Defense (DoD) acquisitions) and with 48 
+C.F.R. 2.101 and 12.212 (for non-DoD acquisitions). 
+
+REPORT 
+You may wish to report any ambiguities, inconsistencies or inaccuracies 
+you may find in connection with your use of the Specification 
+("Feedback"). To the extent that you provide BEA with any Feedback, you 
+hereby: (i) agree that such Feedback is provided on a non-proprietary 
+and non-confidential basis, and (ii) grant BEA a perpetual, non-
+exclusive, worldwide, fully paid-up, irrevocable copyright license, 
+with the right to sublicense through multiple levels of sublicensees, 
+to incorporate, disclose, and use without limitation the Feedback for 
+any purpose related to the Specification and future versions, 
+implementations, and test suites thereof.
+

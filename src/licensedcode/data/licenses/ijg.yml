@@ -1,0 +1,14 @@
+key: ijg
+short_name: JPEG License
+name: Independent JPEG Group License
+category: Attribution
+owner: IJG - Independent JPEG Group
+homepage_url: http://fedoraproject.org/wiki/Licensing/IJG
+spdx_license_key: IJG
+spdx_full_name: Independent JPEG Group License
+spdx_url: http://spdx.org/licenses/IJG
+text_urls:
+    - http://fedoraproject.org/wiki/Licensing/IJG
+other_urls:
+    - http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses
+    - http://dev.w3.org/cvsweb/Amaya/libjpeg/Attic/README?rev=1.2

@@ -1,0 +1,19 @@
+"CLASSPATH" EXCEPTION TO THE GPL VERSION 2
+
+Certain source files distributed by Sun Microsystems, Inc. are subject to the following clarification and special exception to the GPL Version 2, but only where Sun has expressly included in the particular source file's header the words
+
+"Sun designates this particular file as subject to the "Classpath" exception as provided by Sun in the License file that accompanied this code."
+
+Linking this library statically or dynamically with other modules is making a combined work based on this library. Thus, the terms and conditions of the GNU General Public License Version 2 cover the whole combination.
+
+As a special exception, the copyright holders of this library give you permission to link this library with independent modules to produce an executable, regardless of the license terms of these independent modules, and to copy and distribute the resulting executable under terms of your choice, provided that you also meet, for each linked independent module, the terms and conditions of the license of that module. An independent module is a module which is not derived from or based on this library. If you modify this library, you may extend this exception to your version of the library,  but you are not obligated to do so. If you do not wish to do so, delete this exception statement from your version. 
+
+OPENJDK ASSEMBLY EXCEPTION
+
+The OpenJDK source code made available openjdk.dev.java.net ("OpenJDK Code") is distributed under the terms of the GNU General Public License <http://www.gnu.org/copyleft/gpl.html> version 2 only ("GPL2"), with the following clarification and special exception.
+
+Linking this OpenJDK Code statically or dynamically with other code is making a combined work based on this library. Thus, the terms and conditions of GPL2 cover the whole combination.
+
+As a special exception, Sun gives you permission to link this OpenJDK Code with certain code licensed by Sun as indicated at http://openjdk.java.net/legal/exception-modules-2007-05-08.html ("Designated Exception Modules") to produce an executable, regardless of the license terms of the Designated Exception Modules, and to copy and distribute the resulting executable under GPL2, provided that the Designated Exception Modules continue to be governed by the licenses under which they were offered by Sun.
+
+As such, it allows licensees and sublicensees of Sun's GPL2 OpenJDK Code to build an executable that includes those portions of necessary code that Sun could not provide under GPL2 (or that Sun has provided under GPL2 with the Classpath exception). If you modify or add to the OpenJDK code, that new GPL2 code may still be combined with Designated Exception Modules if the new code is made subject to this exception by its copyright holder.

@@ -1,0 +1,7 @@
+licenses:
+    - artistic-1.0
+    - artistic-clarified
+    - jetty
+    - opengroup
+expected_failure: yes
+sort: true

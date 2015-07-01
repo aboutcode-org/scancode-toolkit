@@ -1,0 +1,10 @@
+key: nicta-psl
+short_name: NICTA Public Software Licence 1.0
+name: NICTA Public Software Licence 1.0
+category: Attribution
+owner: NICTA
+homepage_url: http://www.opensource.apple.com/source/mDNSResponder/mDNSResponder-320.10/mDNSPosix/nss_ReadMe.txt
+text_urls:
+    - http://www.opensource.apple.com/source/mDNSResponder/mDNSResponder-320.10/mDNSPosix/nss_ReadMe.txt
+other_urls:
+    - http://www.nicta.com.au/

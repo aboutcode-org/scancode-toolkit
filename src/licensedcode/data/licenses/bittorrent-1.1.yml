@@ -1,0 +1,22 @@
+key: bittorrent-1.1
+short_name: BitTorrent 1.1
+name: BitTorrent Open Source License 1.1
+category: Copyleft
+owner: BitTorrent, Inc.
+homepage_url: http://www.bittorrent.com/legal/bittorrent-open-source-license
+spdx_license_key: BitTorrent-1.1
+spdx_full_name: BitTorrent Open Source License v1.1
+notes: >
+    The link http://www.bittorrent.com/license/ is dead, so there is no 
+    live text containing the license terms except at
+    http://web.archive.org/web/20090609222926/http://www.bittorrent.com/legal/bittorrent-open-source-license
+
+spdx_url: https://spdx.org/licenses/BitTorrent-1.1.html
+
+text_urls:
+    - http://www.bittorrent.com/legal/bittorrent-open-source-license
+    - http://web.archive.org/web/20090609222926/http://www.bittorrent.com/legal/bittorrent-open-source-license
+    - https://spdx.org/licenses/BitTorrent-1.1.html
+
+other_urls:
+    - http://directory.fsf.org/wiki/License:BitTorrentOSL1.1

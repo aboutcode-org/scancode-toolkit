@@ -1,0 +1,60 @@
+--- linux-2.6.23-orig/drivers/char/vt.c	2009-05-18 13:58:53.000000000 +0200
++++ linux-2.6.23/drivers/char/vt.c	2009-05-18 15:58:09.000000000 +0200
+@@ -2036,7 +2036,7 @@
+ 	    static int error = 0;
+ 	    if (!error) {
+ 		error = 1;
+-		printk("con_write: tty %d not allocated\n", currcons+1);
++		printk(KERN_WARNING "con_write: tty %d not allocated\n", currcons+1);
+ 	    }
+ 	    release_console_sem();
+ 	    return 0;
+@@ -2804,11 +2804,11 @@
+ 	gotoxy(vc, vc->vc_x, vc->vc_y);
+ 	csi_J(vc, 0);
+ 	update_screen(vc);
+-	printk("Console: %s %s %dx%d",
++	printk(KERN_DEBUG "Console: %s %s %dx%d",
+ 		vc->vc_can_do_color ? "colour" : "mono",
+ 		display_desc, vc->vc_cols, vc->vc_rows);
+ 	printable = 1;
+-	printk("\n");
++	printk(KERN_DEBUG "\n");
+ 
+ 	release_console_sem();
+ 
+@@ -2946,13 +2946,13 @@
+ 			clear_buffer_attributes(vc);
+ 	}
+ 
+-	printk("Console: switching ");
++	printk(KERN_DEBUG "Console: switching ");
+ 	if (!deflt)
+-		printk("consoles %d-%d ", first+1, last+1);
++		printk(KERN_DEBUG "consoles %d-%d ", first+1, last+1);
+ 	if (j >= 0) {
+ 		struct vc_data *vc = vc_cons[j].d;
+ 
+-		printk("to %s %s %dx%d\n",
++		printk(KERN_DEBUG "to %s %s %dx%d\n",
+ 		       vc->vc_can_do_color ? "colour" : "mono",
+ 		       desc, vc->vc_cols, vc->vc_rows);
+ 
+@@ -2961,7 +2961,7 @@
+ 			update_screen(vc);
+ 		}
+ 	} else
+-		printk("to %s\n", desc);
++		printk(KERN_DEBUG "to %s\n", desc);
+ 
+ 	retval = 0;
+ err:
+@@ -3570,7 +3570,7 @@
+ 		return;
+ 	if (!vc_cons_allocated(fg_console)) {
+ 		/* impossible */
+-		printk("unblank_screen: tty %d not allocated ??\n", fg_console+1);
++		printk(KERN_WARNING "unblank_screen: tty %d not allocated ??\n", fg_console+1);
+ 		return;
+ 	}
+ 	vc = vc_cons[fg_console].d;

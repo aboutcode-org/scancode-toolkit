@@ -1,0 +1,15 @@
+key: artistic-1.0-cl8
+short_name: Artistic 1.0 w/clause 8
+name: Artistic License 1.0 w/clause 8
+category: Copyleft Limited
+owner: OSI - Open Source Initiative
+homepage_url: http://spdx.org/licenses/Artistic-1.0-cl8
+spdx_license_key: Artistic-1.0-cl8
+spdx_full_name: Artistic License 1.0 w/clause 8
+spdx_url: http://spdx.org/licenses/Artistic-1.0-cl8
+spdx_notes: |-
+    This license was superseded by v2.0
+    This is Artistic License 1.0 as found on OSI site, including clause 8.
+text_urls:
+    - http://spdx.org/licenses/Artistic-1.0-cl8
+osi_url: http://opensource.org/licenses/Artistic-1.0

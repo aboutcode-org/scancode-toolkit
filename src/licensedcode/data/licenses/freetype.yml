@@ -1,0 +1,16 @@
+key: freetype
+short_name: FreeType Project License
+name: FreeType Project License
+category: Attribution
+owner: FreeType Project
+homepage_url: http://www.freetype.org/license.html
+spdx_license_key: FTL
+spdx_full_name: Freetype Project License
+spdx_url: http://spdx.org/licenses/FTL
+spdx_notes: This license was released 27 Jan 2006
+text_urls:
+    - http://www.freetype.org/FTL.TXT
+other_urls:
+    - http://www.freetype.org/
+    - http://freetype.org/patents.html
+    - http://freetype.fis.uniroma2.it/FTL.TXT

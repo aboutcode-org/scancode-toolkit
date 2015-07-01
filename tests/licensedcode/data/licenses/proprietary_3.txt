@@ -1,0 +1,19 @@
+Copyright MyCo
+    This code is strictly confidential and the receiver is obliged to use it
+    exclusively for his or her own purposes. No part of MyCo code may be
+    reproduced or transmitted in any form or by any means, electronic or
+    mechanical, including photocopying, recording, or by any information
+    storage and retrieval system, without permission in writing from MyCo.
+    The information in this code is subject to change without notice. MyCo
+    does not warrant that this code is error free. If you find any problems
+    with this code or wish to make comments, please report them to MyCo.
+
+    Trademarks
+    MyCo is a registered trademark of MyCo ® in USA and/or other
+    countries. All other product and company names mentioned herein are the
+    trademarks of their respective owners.
+    MyCo may hold patents, patent applications, trademarks, copyrights
+    or other intellectual property rights over the code hereafter. Unless
+    expressly specified otherwise in a MyCo written license agreement, the
+    delivery of this code does not imply the concession of any license over
+    these patents, trademarks, copyrights or other intellectual property.

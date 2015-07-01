@@ -1,0 +1,259 @@
+Index: linux-2.6.23/drivers/Kconfig
+===================================================================
+--- linux-2.6.23.orig/drivers/Kconfig
++++ linux-2.6.23/drivers/Kconfig
+@@ -94,4 +94,6 @@ source "drivers/lguest/Kconfig"
+ 
+ source "drivers/stm/Kconfig"
+ 
++source "drivers/kreatv/Kconfig"
++
+ endmenu
+Index: linux-2.6.23/drivers/Makefile
+===================================================================
+--- linux-2.6.23.orig/drivers/Makefile
++++ linux-2.6.23/drivers/Makefile
+@@ -89,3 +89,4 @@ obj-$(CONFIG_HID)		+= hid/
+ obj-$(CONFIG_PPC_PS3)		+= ps3/
+ obj-$(CONFIG_OF)		+= of/
+ obj-$(CONFIG_STM_DRIVERS)	+= stm/
++obj-$(CONFIG_KREATV_SUPPORT)    += kreatv/
+Index: linux-2.6.23/drivers/kreatv/Kconfig
+===================================================================
+--- /dev/null
++++ linux-2.6.23/drivers/kreatv/Kconfig
+@@ -0,0 +1,23 @@
++#
++# KreaTV Specific Options
++#
++
++menu "KreaTV Specific Options"
++
++config KREATV_SUPPORT
++	bool "KreaTV Support"
++	default n
++	help
++	  Enables KreaTV specific drivers.
++
++config KREATV_FIRMWARE_FAN_CTRL
++	bool "KreaTV Firmware fan control"
++	depends on KREATV_SUPPORT
++	default y
++	help
++	  Support for controling the fan on KreaTV boards from within
++	  the KreaTV Firmware.
++
++	  Should always be enabled when building the KreaTV Firmware.
++
++endmenu
+Index: linux-2.6.23/drivers/kreatv/Makefile
+===================================================================
+--- /dev/null
++++ linux-2.6.23/drivers/kreatv/Makefile
+@@ -0,0 +1,5 @@
++#
++# Makefile for KreaTV specific options.
++#
++
++obj-$(CONFIG_KREATV_FIRMWARE_FAN_CTRL) += fan_ctrl.o
+Index: linux-2.6.23/drivers/kreatv/fan_ctrl.c
+===================================================================
+--- /dev/null
++++ linux-2.6.23/drivers/kreatv/fan_ctrl.c
+@@ -0,0 +1,174 @@
++/*
++ *---------------------------------------------------------------------------
++ *
++ * fan_ctrl.c
++ *
++ * Copyright (c) 2008-2011 Motorola, Inc.
++ * All rights reserved.
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions
++ * are met:
++ * 1. Redistributions of source code must retain the above copyright
++ * notice, this list of conditions and the following disclaimer.
++ * 2. Redistributions in binary form must reproduce the above copyright
++ * notice, this list of conditions and the following disclaimer in the
++ * documentation and/or other materials provided with the distribution.
++ * 3. The name of the author may not be used to endorse or promote products
++ * derived from this software without specific prior written permission.
++ *
++ * Alternatively, this software may be distributed under the terms of the
++ * GNU General Public License ("GPL") version 2 as published by the Free
++ * Software Foundation.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
++ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
++ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
++ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
++ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
++ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
++ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
++ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
++ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++ *
++ *---------------------------------------------------------------------------
++ */
++
++#include <linux/version.h>
++#include <linux/module.h>
++#include <linux/stm/pio.h>
++#include <linux/timer.h>
++#include <asm/io.h>
++
++MODULE_AUTHOR ("Motorola IPVS");
++MODULE_DESCRIPTION ("Firmware driver for the system fan in VIP19xx");
++MODULE_LICENSE ("GPL");
++
++#define INITIAL_FAN_SPEED 30  // Initial fan speed in percent
++#define MAXIMUM_FAN_SPEED 80  // Fan speed in percent after the timeout
++#define TIMEOUT_VALUE     10  // Timeout in minutes
++
++static void timeout_handler(unsigned long ignored);
++static int timeout_timer_active = 0;
++static struct timer_list timeout_timer =
++  TIMER_INITIALIZER(timeout_handler, 0, 0);
++
++// PWM-timer registry summary
++#define PWMTimerBaseAddress (0xB8010000)
++#define PWM0_VAL            (PWMTimerBaseAddress+0x00)  // PWM 0 reload value
++#define PWM_CTRL            (PWMTimerBaseAddress+0x50)  // PWM control
++
++// Values for PWM_CTRL
++#define PWM_CTRL_PWM_EN         (1<<0x9)           // Enabled PWM-module
++#define PWM_CTRL_PWM_CLOCK_MASK (0xffff87f0)
++
++// PWM pin assignment
++static struct stpio_pin *stpio_pwm_out0 = NULL;         // PIO4[6]
++
++
++/* PWM_CTRL
++ *
++ * bits    value
++ * ------  -----------------
++ *   0-3    PWM_CLK_VAL (LO)
++ *   4-8    CPT_CLK_VAL
++ *     9    PWM_EN
++ *    10    CPT_EN
++ * 14-11    PWM_CLK_VAL (HI) 
++ * 15-31    reserved
++ */
++
++inline static void pwm_ctrl_pwm_en(u8 set)
++{
++  int reg = ctrl_inl(PWM_CTRL);
++  if (set) {
++    ctrl_outl(reg | PWM_CTRL_PWM_EN, PWM_CTRL);
++  }
++  else {
++    ctrl_outl(reg & ~PWM_CTRL_PWM_EN, PWM_CTRL);
++  }
++};
++
++inline static void pwm_ctrl_set_clock(int value)
++{
++  int reg = ctrl_inl(PWM_CTRL) & PWM_CTRL_PWM_CLOCK_MASK;
++  reg |= (value & 0x0f0) << 7;
++  reg |= value & 0x0f;
++  ctrl_outl(reg, PWM_CTRL);
++}
++
++/* PWMx_VAL 
++ *
++ *   Bits     Description
++ * ---------  -----------------------------------------------------------------
++ *   0-7      PWMx_OUT will be high for this value plus one clock cycle
++ *   8-31     reserved
++ */
++
++static void set_pwm0_val(int value)
++{
++  uint8_t temp; 
++  if (value >= 100) {
++    stpio_configure_pin(stpio_pwm_out0, STPIO_OUT);
++    stpio_set_pin(stpio_pwm_out0, 1);
++    ctrl_outl(255, PWM0_VAL);
++    pwm_ctrl_pwm_en(1);
++  }
++  else {
++    if (value > 0) {
++      stpio_configure_pin(stpio_pwm_out0, STPIO_ALT_OUT);
++      pwm_ctrl_pwm_en(1);
++    }
++    else {
++      stpio_configure_pin(stpio_pwm_out0, STPIO_OUT);
++      stpio_set_pin(stpio_pwm_out0, 0);
++      pwm_ctrl_pwm_en(0);
++    }
++    temp = (value<<8)/100;
++    if ( ((temp*100)>>8) < value)
++      temp++;
++    ctrl_outl(temp, PWM0_VAL);
++  }
++}
++
++static void timeout_handler(unsigned long ignored)
++{
++  printk("fan_ctrl: Timeout - Increasing fan speed\n");
++  set_pwm0_val(MAXIMUM_FAN_SPEED);
++  timeout_timer_active = 0;
++}
++
++static int __init fan_ctrl_init(void)
++{
++  printk("fan_ctrl: Activating fan monitoring\n");
++
++  stpio_pwm_out0 = stpio_request_set_pin(4, 6, "PWM_OUT0", STPIO_OUT, 0);
++  if (stpio_pwm_out0 == NULL) {
++    printk(KERN_ERR "fan_ctrl: error setting up stpio4[6] for output.\n");
++    return -EIO;
++  }
++  pwm_ctrl_set_clock(0);
++  set_pwm0_val(INITIAL_FAN_SPEED);
++
++  mod_timer(&timeout_timer, jiffies + TIMEOUT_VALUE*60*HZ);
++  timeout_timer_active = 1;
++
++  return 0;
++}
++
++module_init(fan_ctrl_init);
++
++static void __exit fan_ctrl_exit(void)
++{  
++  if (stpio_pwm_out0 != NULL) {
++    set_pwm0_val(0);
++    stpio_free_pin(stpio_pwm_out0);
++  }
++
++  if (timeout_timer_active) {
++    del_timer(&timeout_timer);
++  }
++}
++
++module_exit(fan_ctrl_exit);
+Index: linux-2.6.23/include/asm-sh/io.h
+===================================================================
+--- linux-2.6.23.orig/include/asm-sh/io.h
++++ linux-2.6.23/include/asm-sh/io.h
+@@ -249,7 +249,7 @@ static inline unsigned short ctrl_inw(un
+ 
+ static inline unsigned int ctrl_inl(unsigned long addr)
+ {
+-	CTRL_ADDR_CHECK(addr);
++	//CTRL_ADDR_CHECK(addr);
+ 	return *(volatile unsigned long*)addr;
+ }
+ 
+@@ -267,7 +267,7 @@ static inline void ctrl_outw(unsigned sh
+ 
+ static inline void ctrl_outl(unsigned int b, unsigned long addr)
+ {
+-	CTRL_ADDR_CHECK(addr);
++	//CTRL_ADDR_CHECK(addr);
+         *(volatile unsigned long*)addr = b;
+ }
+ 

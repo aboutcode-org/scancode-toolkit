@@ -1,0 +1,5 @@
+Please note that
+# even though the core GnuTLS library is released under LGPL, this extra
+# library uses GPL and as such, the terms of GPL apply to the combination
+# of wpa_supplicant and GnuTLS if this option is enabled. BSD license may not
+# apply for distribution of the resulting binary.

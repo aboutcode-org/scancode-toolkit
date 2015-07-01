@@ -1,0 +1,2 @@
+date-retrieved:2010-06-16 16:20:33+02:00
+svn:https://test.kuali.org/svn/kc_project/trunk/licenses/#8489

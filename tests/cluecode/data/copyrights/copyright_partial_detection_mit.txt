@@ -1,0 +1,15 @@
+Copyright 1991 by the <s>Massachusetts Institute of Technology</s>
+Copyright (c) 2001  <s>AT&T</s>
+Copyright (c) 2004-2006 by <s>Henrique de Moraes Holschuh <hmh@debian.org></s>
+Copyright 2005-2007 <s>Christopher Montgomery</s>, <s>Jean-Marc Valin</s>, <s>Timothy Terriberry</s>, <s>CSIRO</s>, and other contributors
+Copyright (c) 2007 <s>James Newton-King</s>
+Copyright (c) 2006, <s>SHIMODA Hiroshi <piro@p.club.ne.jp></s>
+Copyright (c) 2006, <s>FUJITA Yuji <yuji@webmasters.gr.jp></s>
+Copyright: (c) 2002-2009 <s>ooo-build/Go-OO Team</s>
+Copyright: Copyright (C) 2002-2009 <s>Software in the Public Interest, Inc.</s>
+Copyright (c) 2004 by the <s>Perl 5 Porters</s>.  All rights reserved.
+Copyright (c) 2006 Academy of Motion Picture Arts and Sciences
+Copyright (c) 1995-2000 Corporation for National Research Initiatives
+Copyright (c) 2001 EU DataGrid
+Copyright (c) 2000. OCLC Research
+Copyright (C) 1999 Trolltech AS, Norway

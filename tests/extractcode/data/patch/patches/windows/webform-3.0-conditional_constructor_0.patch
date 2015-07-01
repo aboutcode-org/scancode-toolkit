@@ -1,0 +1,1581 @@
+Left base folder: C:\Documents and Settings\Olga\My Documents\Downloads\webform-6.x-3.0-beta5(2)\webform
+Right base folder: C:\xampp\htdocs\ogorun\sites\all\modules\webform
+--- webform.module	2010-04-11 09:13:52.000000000 +-0300
++++ webform.module	2010-06-02 00:49:28.000000000 +-0300
+@@ -1338,18 +1338,46 @@
+ 
+     // Shorten up our variable names.
+     $component_tree = $form_state['webform']['component_tree'];
+     $page_count = $form_state['webform']['page_count'];
+     $page_num = $form_state['webform']['page_num'];
+ 
++    // Start gathering JS settings for conditional fields engine
++    $settings = array(
++      'objects' => array(),
++      'mandatory' => array(),
++      'previousPagesFields' => array(),
++      'nid' => $node->nid
++    );
++
+     // Recursively add components to the form.
+     foreach ($component_tree['children'] as $cid => $component) {
+-      $component_value = isset($form_state['values']['submitted'][$component['form_key']]) ? $form_state['values']['submitted'][$component['form_key']] : NULL;
+-      if (_webform_client_form_rule_check($node, $component, $page_num, $form_state)) {
+-        _webform_client_form_add_component($component, $component_value, $form['submitted'], $form, $submission, 'form', $page_num, $filter);
+-      }
++        if (isset($form_state['values']['submitted'][$component['form_key']])) {
++           $component_value = $form_state['values']['submitted'][$component['form_key']];
++        }
++        elseif (isset($form_state['storage']['submitted'][$component['form_key']])) {
++            $component_value = $form_state['storage']['submitted'][$component['form_key']];
++        }
++        else {
++            $component_value = null;
++        }
++        _webform_client_form_add_component($component, $component_value, $form['submitted'], $form, $settings, $submission, 'form', $page_num, $filter);
++    }
++
++    $form['webform_conditional_mandatory']=array(
++      '#type' => 'hidden',
++      '#default_value' => implode('|',$settings['mandatory']),
++    );
++
++    if (empty($_POST)) {
++        $path = drupal_get_path('module','webform');
++        drupal_add_js($path . '/le/jquery.json-2.2.min.js');
++        drupal_add_js($path . '/le/le.conditionsConstructor.js');
++        drupal_add_js($path . '/le/le.conditionalFormFields.js');
++        drupal_add_js(array('webformConditional' => $settings), 'setting');
++        drupal_add_js($path . '/js/webform_conditional.js');
+     }
+ 
+     // These form details help managing data upon submission.
+     $form['details']['nid'] = array(
+       '#type' => 'value',
+       '#value' => $node->nid,
+@@ -1421,79 +1449,12 @@
+     }
+   }
+ 
+   return $form;
+ }
+ 
+-/**
+- * Check if a component should be displayed on the current page.
+- */
+-function _webform_client_form_rule_check($node, $component, $page_num, $form_state = NULL, $submission = NULL) {
+-  $conditional_values = isset($component['extra']['conditional_values']) ? $component['extra']['conditional_values'] : NULL;
+-  $conditional_component = isset($component['extra']['conditional_component']) && isset($node->webform['components'][$component['extra']['conditional_component']]) ? $node->webform['components'][$component['extra']['conditional_component']] : NULL;
+-
+-  // Check the rules for this entire page. Note individual page breaks are
+-  // checked down below in the individual component rule checks.
+-  $show_page = TRUE;
+-  if ($component['page_num'] > 1 && $component['type'] != 'pagebreak') {
+-    foreach ($node->webform['components'] as $cid => $page_component) {
+-      if ($page_component['type'] == 'pagebreak' && $page_component['page_num'] == $page_num) {
+-        $show_page = _webform_client_form_rule_check($node, $page_component, $page_num, $form_state, $submission);
+-        break;
+-      }
+-    }
+-  }
+-
+-  // Check any parents' visibility rules.
+-  $show_parent = $show_page;
+-  if ($show_parent && $component['pid'] && isset($node->webform['components'][$component['pid']])) {
+-    $parent_component = $node->webform['components'][$component['pid']];
+-    $show_parent = _webform_client_form_rule_check($node, $parent_component, $page_num, $form_state, $submission);
+-  }
+-
+-  // Check the individual component rules.
+-  $show_component = $show_parent;
+-  if ($show_component && $component['page_num'] == $page_num && $conditional_component && strlen(trim($conditional_values))) {
+-    $input_values = array();
+-    if (isset($form_state)) {
+-      $parents = webform_component_parent_keys($node, $conditional_component);
+-      $input_value = isset($form_state['values']['submitted']) ? $form_state['values']['submitted'] : array();
+-      foreach ($parents as $parent) {
+-        if (isset($input_value[$parent])) {
+-          $input_value = $input_value[$parent];
+-        }
+-        else {
+-          $input_value = NULL;
+-          break;
+-        }
+-      }
+-      $input_values = is_array($input_value) ? array_keys($input_value) : array($input_value);
+-    }
+-    elseif (isset($submission)) {
+-      $input_values = $submission->data[$conditional_component['cid']]['value'];
+-    }
+-
+-    $test_values = array_map('trim', explode("\n", $conditional_values));
+-    if (empty($input_values) && !empty($test_values)) {
+-      $show_component = FALSE;
+-    }
+-    else {
+-      foreach ($input_values as $input_value) {
+-        if ($show_component = in_array($input_value, $test_values)) {
+-          break;
+-        }
+-      }
+-    }
+-
+-    if ($component['extra']['conditional_operator'] == '!=') {
+-      $show_component = !$show_component;
+-    }
+-  }
+-
+-  return $show_component;
+-}
+ 
+ /**
+  * Add a component to a renderable array. Called recursively for fieldsets.
+  *
+  * This function assists in the building of the client form, as well as the
+  * display of results, and the text of e-mails.
+@@ -1519,13 +1480,13 @@
+  *   Whether the form element properties should be filtered. Only set to FALSE
+  *   if needing the raw properties for editing.
+  *
+  * @see webform_client_form
+  * @see webform_submission_render
+  */
+-function _webform_client_form_add_component($component, $component_value, &$parent_fieldset, &$form, $submission, $format = 'form', $page_num = 0, $filter = TRUE) {
++function _webform_client_form_add_component($component, $component_value, &$parent_fieldset, &$form, &$js_settings, $submission, $format = 'form', $page_num = 0, $filter = TRUE) {
+   $cid = $component['cid'];
+ 
+   // Load with submission information if necessary.
+   if ($format != 'form') {
+     // This component is display only.
+     $data = empty($submission->data[$cid]['value']) ? NULL : $submission->data[$cid]['value'];
+@@ -1540,12 +1501,15 @@
+       if (!isset($display_element['#id'])) {
+         $display_element['#id'] = form_clean_id('edit-' . implode('-', $display_element['#parents']));
+       }
+       $parent_fieldset[$component['form_key']] = $display_element;
+     }
+   }
++  elseif ($component['page_num'] < $page_num) {
++    $js_settings['previousPagesFields'][$component['form_key']] = !is_null($component_value) ? $component_value[0] : $data;
++  }
+   elseif ($component['page_num'] == $page_num) {
+     // Add this user-defined field to the form (with all the values that are always available).
+     $data = isset($submission->data[$cid]['value']) ? $submission->data[$cid]['value'] : NULL;
+     if ($element = webform_component_invoke($component['type'], 'render', $component, $data, $filter)) {
+       $parent_fieldset[$component['form_key']] = $element;
+ 
+@@ -1555,12 +1519,28 @@
+         if (is_array($component_value)) {
+           foreach ($component_value as $key => $value) {
+             if (isset($parent_fieldset[$component['form_key']][$key])) {
+               $parent_fieldset[$component['form_key']][$key]['#default_value'] = $value;
+             }
+           }
++        }
++      }
++
++
++      if(!empty($component['extra']['condition'])){
++        $condition = json_decode($component['extra']['condition']);
++        if (!empty($condition->optype)) {
++          $js_settings['objects'][$component['form_key']] = array(
++            'type' => $component['type'],
++            'fieldsetId' => !empty($component['#parent_fieldsets']) ? implode('_', $component['#parent_fieldsets']) : '', // array_slice($parent_fieldset, 0, -1)),
++            'expression' => $condition,
++            'mandatory' => (bool)$component['extra']['conditional_mandatory'],
++          );
++        }
++        if($component['extra']['conditional_mandatory']){
++          $js_settings['mandatory'][] = $component['form_key'];
+         }
+       }
+     }
+     else {
+       drupal_set_message(t('The webform component @type is not able to be displayed', array('@type' => $component['type'])));
+     }
+@@ -1573,13 +1553,16 @@
+     $parent_fieldset[$component['form_key']]['#webform_validated'] = FALSE;
+   }
+ 
+   if (isset($component['children']) && is_array($component['children'])) {
+     foreach ($component['children'] as $scid => $subcomponent) {
+       $subcomponent_value = isset($component_value[$subcomponent['form_key']]) ? $component_value[$subcomponent['form_key']] : NULL;
+-      _webform_client_form_add_component($subcomponent, $subcomponent_value, $parent_fieldset[$component['form_key']], $form, $submission, $format, $page_num, $filter);
++      $fieldsets = !empty($component['#parent_fieldsets']) ? $component['#parent_fieldsets'] : array();
++      $fieldsets[] = $component['form_key'];
++      $subcomponent['#parent_fieldsets'] = $fieldsets;
++      _webform_client_form_add_component($subcomponent, $subcomponent_value, $parent_fieldset[$component['form_key']], $form, $js_settings, $submission, $format, $page_num, $filter);
+     }
+   }
+ }
+ 
+ function webform_client_form_validate($form, &$form_state) {
+   $node = node_load($form_state['values']['details']['nid']);
+@@ -1595,15 +1578,59 @@
+       $error = theme('webform_view_messages', $node, 0, 1, 0, $limit_exceeded, array_keys(user_roles()));
+       form_set_error('', $error);
+       return;
+     }
+   }
+ 
++  // Check conditional mandatory fields
++  _webform_client_form_conditional_mandatory_validate($form, $form_state);
++
+   // Run all #element_validate and #required checks. These are skipped initially
+   // by setting #validated = TRUE on all components when they are added.
+   _webform_client_form_validate($form, $form_state);
++}
++
++/**
++ * Check conditional mandatory fields - fields that should be filled in in case they are visible
++ *
++ * To avoid duplication in condition evaluation all calculation is done only on client side
++ * and pass fields that should be considered not mandatory with hidden field 'webform_conditional_mandatory'
++ *
++ * @param array $form
++ * @param array $form_state
++ */
++function _webform_client_form_conditional_mandatory_validate($form, $form_state) {
++  if (!empty($form_state['values']['webform_conditional_mandatory'])) {
++    $mandatory = explode('|', $form_state['values']['webform_conditional_mandatory']);
++    $values = _webform_flattern_submitted_tree($form_state['values']['submitted']);
++    foreach($mandatory as $name) {
++      if ($values[$name]['value'] == '') {
++        form_set_error('submitted][' . implode('][', $values[$name]['parents']) . $name, t('Field !name is required', array('!name' => $name)));
++      }
++    }
++  }
++}
++
++function _webform_flattern_submitted_tree($submitted, $parents = array()) {
++    $values = array();
++    if (!empty($submitted)) {
++        foreach ($submitted as $field => $val) {
++            if (is_array($val)) {
++                $next_parents = $parents;
++                array_push($next_parents, $field);
++                $values = array_merge($values, _webform_flattern_submitted_tree($val, $next_parents));
++            }
++            else {
++                $values[$field]['value'] = $val;
++                $values[$field]['parents'] = $parents;
++            }
++        }
++    }
++
++    return $values;
++
+ }
+ 
+ /**
+  * Recursive validation function to trigger normal Drupal validation.
+  *
+  * This function imitates _form_validate in Drupal's form.inc, only it sets
+
+  
+Left base folder: C:\Documents and Settings\Olga\My Documents\Downloads\webform-6.x-3.0-beta5(2)\webform
+Right base folder: C:\xampp\htdocs\ogorun\sites\all\modules\webform
+--- includes\webform.components.inc	2010-06-02 00:54:12.000000000 +-0300
++++ includes\webform.components.inc	2010-06-02 00:53:26.000000000 +-0300
+@@ -420,72 +420,74 @@
+     '#description' => t('Optional. In the menu, the heavier items will sink and the lighter items will be positioned nearer the top.'),
+     '#weight' => 4,
+   );
+ 
+   // Add conditional fields.
+   $conditional_components = array();
+-  $counter = 0;
+   $last_pagebreak_slice = 0;
+   foreach ($node->webform['components'] as $cid => $test_component) {
+     // Only components before the pagebreak can be considered.
+-    if ($test_component['type'] == 'pagebreak') {
+-      $last_pagebreak_slice = $counter;
+-    }
+-    if (isset($component['cid']) && $cid == $component['cid']) {
++    if (isset($component['cid']) && $cid == $component['cid']) {
+       break;
+     }
+     if (webform_component_feature($test_component['type'], 'conditional')) {
+-      $conditional_components[$cid] = $test_component;
++      $conditional_components[$test_component['form_key']] = $test_component['name'];
+     }
+-    $counter++;
+   }
+-  if ($component['type'] != 'pagebreak') {
+-    $fieldset_description = t('Create a rule to control whether or not to skip this page.');
+-  }
+-  else {
+-    $fieldset_description = t('Create a rule to control whether or not to show this form element.');
+-  }
+-  $conditional_components = array_slice($conditional_components, 0, $last_pagebreak_slice, TRUE);
+   $form['conditional'] = array(
+     '#weight' => 10,
+     '#type' => 'fieldset',
+     '#title' => t('Conditional rules'),
+     '#collapsible' => TRUE,
+-    '#collapsed' => TRUE,
++    '#collapsed' => !$component['extra']['condition'],
+     '#description' => t('Create a rule to control whether or not to show this form element.'),
+     '#tree' => FALSE,
+   );
+   $form['conditional']['extra'] = array(
+     '#tree' => TRUE,
+   );
+-  $form['conditional']['extra']['conditional_component'] = array(
+-    '#type' => 'select',
+-    '#title' => t('Component'),
+-    '#options' => webform_component_list($node, $conditional_components, FALSE, TRUE),
+-    '#description' => t('Select another component to decide whether to show or hide this component. You can only select components occurring before the most recent pagebreak.'),
+-    '#default_value' => $component['extra']['conditional_component'],
++
++  $form['conditional']['extra']['condition'] = array(
++    '#type' => 'hidden',
++    '#default_value' => $component['extra']['condition']
+   );
+-  $form['conditional']['extra']['conditional_operator'] = array(
+-    '#type' => 'select',
+-    '#title' => t('Operator'),
+-    '#options' => array(
+-      '=' => t('Is one of'),
+-      '!=' => t('Is not one of')
+-    ),
+-    '#description' => t('Determines whether the list below is inclusive or exclusive.'),
+-    '#default_value' => $component['extra']['conditional_operator'],
++
++  $form['conditional']['extra']['conditional_mandatory'] = array(
++    '#type' => 'checkbox',
++    '#title' => t('Conditional mandatory'),
++    '#default_value' => $component['extra']['conditional_mandatory']
+   );
+-  $form['conditional']['extra']['conditional_values'] = array(
+-    '#type' => 'textarea',
+-    '#title' => t('Values'),
+-    '#description' => t('List values, one per line, that will trigger this action. If you leave this blank, this component will always display.'),
+-    '#default_value' => $component['extra']['conditional_values'],
++
++  $form['conditional']['extra']['constructor'] = array(
++     '#type' => 'markup',
++     '#value' => '<div id="webform-conditions-constructor"></div>'
+   );
+ 
+   if (empty($conditional_components)) {
+     $form['conditional']['#access'] = FALSE;
++  }
++  else {
++    $settings = array(
++      'webformConditionalSettings' => array(
++        'currentConditions' => $component['extra']['condition'] ? json_decode($component['extra']['condition']) : new StdClass(),
++        'lOperandFormElement' => 'select',
++        'availableLOperands' => $conditional_components,
++        'buttonFlags' => array(
++          'addElement' => true,
++          'addAndGroup' => true,
++          'addOrGroup' => true,
++          'showExpression' => true
++        ),
++      )
++    );
++    drupal_add_js($settings, 'setting');
++    $path = drupal_get_path('module','webform');
++    drupal_add_js($path . '/js/webform_conditional.js');
++    drupal_add_js($path . '/le/jquery.json-2.2.min.js');
++    drupal_add_js($path . '/le/le.conditionsConstructor.js');
++    drupal_add_css($path . '/le/conditions_constructor.css');
+   }
+ 
+   // Add the fields specific to this component type:
+   $additional_form_elements = (array) webform_component_invoke($component['type'], 'edit', $component);
+   if (empty($additional_form_elements)) {
+     drupal_set_message(t('The webform component of type @type does not have an edit function defined.', array('@type' => $component['type'])));
+
+
+Left base folder: C:\Documents and Settings\Olga\My Documents\Downloads\webform-6.x-3.0-beta5(2)\webform
+Right base folder: C:\xampp\htdocs\ogorun\sites\all\modules\webform
+--- includes\webform.submissions.inc	2010-03-26 03:50:36.000000000 +-0300
++++ includes\webform.submissions.inc	2010-06-02 00:48:00.000000000 +-0300
+@@ -223,13 +223,13 @@
+   $excluded_components = isset($email) ? $email['excluded_components'] : array();
+ 
+   _webform_components_tree_build($node->webform['components'], $component_tree, 0, $page_count);
+ 
+   // Recursively add components to the form.
+   foreach ($component_tree['children'] as $cid => $component) {
+-    if (!in_array($cid, $excluded_components) && _webform_client_form_rule_check($node, $component, $component['page_num'], NULL, $submission)) {
++    if (!in_array($cid, $excluded_components)) {
+       _webform_client_form_add_component($component, NULL, $renderable, $renderable, $submission, $format);
+     }
+   }
+ 
+   return drupal_render($renderable);
+ }
+
+
+Left base folder: C:\Documents and Settings\Olga\My Documents\Downloads\webform-6.x-3.0-beta5(2)\webform
+Right base folder: C:\xampp\htdocs\ogorun\sites\all\modules\webform
+--- 
++++ js\webform_conditional.js	2010-05-29 17:23:20.000000000 +-0300
+@@ -0,0 +1,97 @@
++Drupal.behaviors.webformCond = function(context) {
++  if (typeof Drupal.settings['webformConditional'] != 'undefined' && Drupal.settings['webformConditional']['objects']) {
++    var options = {
++      mandatoryFieldSelector: '#edit-webform-conditional-mandatory',
++      objectByName: function(name) {
++        return $('[name*="['+name+']"]');
++      },
++      feldsetByName: function(name) {
++        return $('#webform-component-' + name);
++      },
++      getWrapper: function(name,info) {
++        if(info['type']=='fieldset' || info['type']=='markup'){
++          return $('#webform-component-' + name);
++        }
++        var cssName = name.replace(/_/g,"-");
++        if(info['fieldsetId']!=''){
++          cssName = info['fieldsetId'].replace(/_/g,"-") + "-" + cssName;
++        }
++
++        if (info['type'] == 'grid') {
++          return $('[name*=\"['+name+']\"]').parent('.form-item').parents('.form-item');
++        }
++        var cssId = "#edit-submitted-" + cssName + "-wrapper";
++        if($(cssId).length==0) {
++          cssId = "#edit-submitted-" + cssName + "-1-wrapper";
++          return $(cssId).parent().parent();
++        } else {
++          return $(cssId);
++        }
++      },
++      expression: $.le.defaultOptions.conditionalForm.expression
++    };
++		
++
++    options.setMandatoryLikeView = function(name, info) {
++      var wrap = options.getWrapper(name, info).parent();
++      if (!wrap.find('label span.form-required').length) {
++        $('<span title="This field is required." class="form-required">*</span>').appendTo(wrap.find('label'));
++      }
++    };
++
++    options.expression.operandHandler.left = function (val) {
++      var obj = options.objectByName(val);
++      if (obj.length) {
++          if(obj.filter('input:checked').length == 1) {
++            return obj.filter('input:checked').val();
++          } else if(obj.filter('input:checkbox,input:radio').length) {
++            return false;
++          } else if(obj.filter('option:selected').length == 1) {
++            return obj.filter('option:selected').val();
++          } else {
++            return obj.val();
++          }
++      }
++      else if (Drupal.settings.webformConditional.previousPagesFields[val]) {
++          return Drupal.settings.webformConditional.previousPagesFields[val];
++      }
++      else {
++          return false;
++      }
++
++    };
++
++    $.extend(options, Drupal.settings.webformConditional);
++		
++    $('form.webform-client-form').leConditionalForm(options);
++  }
++};
++
++Drupal.behaviors.webformCondSettings = function(context) {
++	
++    $('#webform-conditions-constructor:not(.webformCondSettings-processed)', context)
++    .addClass('webformCondSettings-processed')
++    .each(function() {
++    	var domObj = this;
++    	var $this = $(this);
++    	var options = Drupal.settings.webformConditionalSettings;
++    	options.defaultNewElement = function () {
++    		var el;
++    		for (el in options.availableLOperands) {
++    			break;
++    		}
++			return {
++				optype: 'el',
++				left: el,
++				op:  'opEqual',
++				right: '',
++				neg: false							
++			};
++		}	
++    	var conditions = $this.leConstructor(Drupal.settings.webformConditionalSettings.currentConditions, options);
++    	
++    	$('#webform-component-edit-form').submit(function () {
++    		$('#edit-extra-condition').val(domObj.le.expression.getSerialised());
++    	});
++    });
++};
+
+
+Left base folder: C:\Documents and Settings\Olga\My Documents\Downloads\webform-6.x-3.0-beta5(2)\webform
+Right base folder: C:\xampp\htdocs\ogorun\sites\all\modules\webform
+--- 
++++ le\conditions_constructor.css	2010-05-22 21:33:56.000000000 +-0300
+@@ -0,0 +1,47 @@
++@CHARSET "UTF-8";
++.constructor ul, .constructor ul li{	
++	list-style-image:url("icons/condition.png");
++	list-style-type:square;
++	background: none;
++/*	padding-left: 15px;*/
++}
++
++.constructor-group {
++	padding: 10px 20px;
++	border: 1px solid #DDE5EA;
++}
++
++.constructor ul.constructor-admin-links {
++	display: inline; 
++	list-style-type:none;
++}
++
++.constructor .constructor-admin-links li {
++	 display: inline; 
++	 padding: 0px 7px;
++	/* background: white url("icons/add.png") no-repeat; */
++}
++
++.conditions-constructor ul, .conditions-constructor ul li{	
++	list-style-image:url("icons/condition.png");
++	list-style-type:square;
++	background: none;
++	padding-left: 15px;
++}
++
++.conditions-constructor-group {
++	padding: 10px 20px;
++	border: 1px solid #DDE5EA;
++}
++
++.conditions-constructor ul.conditions-constructor-admin-links {
++	display: inline; 
++	list-style-image:url("icons/add.png");
++	list-style-type:square;
++}
++
++.conditions-constructor .conditions-constructor-admin-links li {
++	 display: inline; 
++	 padding: 0px 7px;
++	/* background: white url("icons/add.png") no-repeat; */
++}
+\ No newline at end of file
+
+
+Left base folder: C:\Documents and Settings\Olga\My Documents\Downloads\webform-6.x-3.0-beta5(2)\webform
+Right base folder: C:\xampp\htdocs\ogorun\sites\all\modules\webform
+--- 
++++ le\jquery.json-2.2.min.js	2010-05-13 09:50:38.000000000 +-0300
+@@ -0,0 +1,31 @@
++
++(function($){$.toJSON=function(o)
++{if(typeof(JSON)=='object'&&JSON.stringify)
++return JSON.stringify(o);var type=typeof(o);if(o===null)
++return"null";if(type=="undefined")
++return undefined;if(type=="number"||type=="boolean")
++return o+"";if(type=="string")
++return $.quoteString(o);if(type=='object')
++{if(typeof o.toJSON=="function")
++return $.toJSON(o.toJSON());if(o.constructor===Date)
++{var month=o.getUTCMonth()+1;if(month<10)month='0'+month;var day=o.getUTCDate();if(day<10)day='0'+day;var year=o.getUTCFullYear();var hours=o.getUTCHours();if(hours<10)hours='0'+hours;var minutes=o.getUTCMinutes();if(minutes<10)minutes='0'+minutes;var seconds=o.getUTCSeconds();if(seconds<10)seconds='0'+seconds;var milli=o.getUTCMilliseconds();if(milli<100)milli='0'+milli;if(milli<10)milli='0'+milli;return'"'+year+'-'+month+'-'+day+'T'+
++hours+':'+minutes+':'+seconds+'.'+milli+'Z"';}
++if(o.constructor===Array)
++{var ret=[];for(var i=0;i<o.length;i++)
++ret.push($.toJSON(o[i])||"null");return"["+ret.join(",")+"]";}
++var pairs=[];for(var k in o){var name;var type=typeof k;if(type=="number")
++name='"'+k+'"';else if(type=="string")
++name=$.quoteString(k);else
++continue;if(typeof o[k]=="function")
++continue;var val=$.toJSON(o[k]);pairs.push(name+":"+val);}
++return"{"+pairs.join(", ")+"}";}};$.evalJSON=function(src)
++{if(typeof(JSON)=='object'&&JSON.parse)
++return JSON.parse(src);return eval("("+src+")");};$.secureEvalJSON=function(src)
++{if(typeof(JSON)=='object'&&JSON.parse)
++return JSON.parse(src);var filtered=src;filtered=filtered.replace(/\\["\\\/bfnrtu]/g,'@');filtered=filtered.replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g,']');filtered=filtered.replace(/(?:^|:|,)(?:\s*\[)+/g,'');if(/^[\],:{}\s]*$/.test(filtered))
++return eval("("+src+")");else
++throw new SyntaxError("Error parsing JSON, source is not valid.");};$.quoteString=function(string)
++{if(string.match(_escapeable))
++{return'"'+string.replace(_escapeable,function(a)
++{var c=_meta[a];if(typeof c==='string')return c;c=a.charCodeAt();return'\\u00'+Math.floor(c/16).toString(16)+(c%16).toString(16);})+'"';}
++return'"'+string+'"';};var _escapeable=/["\\\x00-\x1f\x7f-\x9f]/g;var _meta={'\b':'\\b','\t':'\\t','\n':'\\n','\f':'\\f','\r':'\\r','"':'\\"','\\':'\\\\'};})(jQuery);
+\ No newline at end of file
+
+
+Left base folder: C:\Documents and Settings\Olga\My Documents\Downloads\webform-6.x-3.0-beta5(2)\webform
+Right base folder: C:\xampp\htdocs\ogorun\sites\all\modules\webform
+--- 
++++ le\le.conditionalFormFields.js	2010-05-29 17:09:14.000000000 +-0300
+@@ -0,0 +1,220 @@
++(function($) {
++    // setup a namespace for us
++    var nsp = 'le';
++	$[nsp].conditionalForm = function(form, o){
++		
++		this.formDomObj = form[0];
++		var that = this;
++		var _ = {
++			dependencies: function(expression) {
++				var result = [];
++				
++				if (typeof expression['optype'] != 'undefined') {
++					switch (expression['optype']) {
++						case 'expr':
++							$.each(expression.operands, function(key, operand) {
++								result = $.unique(result.concat(_.dependencies(operand)));
++							});
++							break;
++						case 'el':
++							result = [expression.left];
++							break;
++					}
++				}
++				
++				return result;
++			},
++			
++			buildDependencies: function (formFields) {
++				var dependents = {};
++				
++				$.each(formFields, function(dependentField, dependentInfo) {
++                                    var fieldObj = o.objectByName(dependentField);
++                                    if (fieldObj.length) {
++					var fields = _.dependencies(dependentInfo.expression);
++					$.each(fields, function(key, field) {
++						if (typeof dependents[field] == 'undefined') {
++							dependents[field] = [dependentField];
++						}
++						else {
++							dependents[field].push(dependentField);
++						}
++					});
++                                    }
++				});
++				
++				return dependents;			
++			},
++			
++			changeFunction: function (name, info, mandatory) {
++				//var o = that.formDomObj[nsp].options;
++				var obj = o.objectByName(name);
++				var wrap = o.getWrapper(name, info);
++				if(obj[0][nsp].expression.evaluate()) {
++					// show the hidden div
++					wrap.show("slow");
++					_.updateDependent(name, false, mandatory);
++				}
++				else {
++					// otherwise, hide it
++					_.clearDependent(name, info, mandatory);
++					wrap.css("display", "none"); // hide() doesn't work if element is in hidden container
++				}					
++			},
++			
++			updateDependent: function(field, exclude, mandatoryList) {
++				//var o = that.formDomObj[nsp].options;
++				
++				if (!o.mandatoryFieldSelector || !$(o.mandatoryFieldSelector, form).length) {
++					return;
++				}
++				
++				if ($.inArray(field, mandatoryList) >  -1) {
++					var mandatory = $(o.mandatoryFieldSelector).val();
++					mandatory = mandatory ? mandatory.split('|') : [];
++					var index = $.inArray(field, mandatory);
++					if (index > -1 && exclude) { // add
++						mandatory.splice(index, 1);
++					}
++					else if (index == -1 && !exclude) { // remove
++						mandatory[mandatory.length] = field;
++					}
++					
++					$(o.mandatoryFieldSelector).val(mandatory.join('|'));
++				}
++			},
++			
++			clearDependent: function(dependentField,dependentInfo, mandatory) {
++				_.updateDependent(dependentField, true, mandatory);
++				
++			    if(dependentInfo['type']=='fieldset'){
++				  // when hidding a fieldset clear all components inside it
++			    	var fieldset = o.fieldsetByName(name);
++					$('input[type=text], select, textarea', fieldset).val('').trigger('change');				
++					$('input[type=checkbox],input[type=radio]', fieldset).attr('checked', false).trigger('change');
++					return;
++				 }
++			    
++				var component = o.objectByName(dependentField);
++				 
++				 //make sure there are actually components - could be just markup
++				if(component.length > 0){
++					 if((component[0].nodeName == 'INPUT' && component.attr('type') == 'text' )
++					 	|| component[0].nodeName == 'SELECT'
++					 	|| component[0].nodeName == 'TEXTAREA') {
++						 component.val('').trigger('change');
++					 }else if(component[0].nodeName == 'INPUT' &&
++							(component.attr('type') == 'radio' || component.attr('type') == 'checkbox'  ) ){
++						 component.attr('checked', false).trigger('change');
++					 }
++				 }
++			}
++		};
++		
++		if (o.mandatoryFieldSelector && $(o.mandatoryFieldSelector, form).length) {
++			$(o.mandatoryFieldSelector, form).val('');
++		}
++		var dependents = _.buildDependencies(o.objects);
++		var expressionOpts = o.expression ? o.expression : {};
++		
++		$.each(o.objects, function(dependentField, dependentInfo) {
++			var fieldObj = o.objectByName(dependentField);
++			if (fieldObj.length) {
++				fieldObj[0][nsp] = {
++						expression: new $[nsp].expression(dependentInfo.expression, expressionOpts)
++					};
++					
++				var formItemWrapper = o.getWrapper(dependentField,dependentInfo);
++				if (formItemWrapper.length) {
++					formItemWrapper.css("display", "none");
++				}
++				if (dependentInfo['mandatory']) {
++					o.setMandatoryLikeView(dependentField, dependentInfo);
++				}
++				_.changeFunction(dependentField, dependentInfo, o.mandatory);
++			}
++		});
++		
++		$.each(dependents, function(field, dependentFieldNames) {	
++			var components = o.objectByName(field);
++                        if (components.length) {
++			  if(components.attr('type')=='radio' || components.attr('type')=='checkbox'){
++				components.click(changeFunction);
++			  }else{
++				components.change(changeFunction);
++			  }
++			  components.change(changeFunction);
++                        }
++			
++			function changeFunction() {
++				$.each(dependentFieldNames, function(key, name) {
++					_.changeFunction(name, o.objects[name], o.mandatory);
++				});
++			};			
++		});	
++	};
++	
++    $[nsp].defaultOptions.conditionalForm = {
++    	expression: {
++			operandHandler: {
++				left: function (val) {
++					var obj = $('[name="'+val+'"]');
++					if(obj.filter('input:checked').length == 1){
++						return obj.filter('input:checked').val();
++					}else if(obj.filter('option:selected').length == 1){
++						return obj.filter('option:selected').val();
++					}else {
++						return obj.val();
++					}
++				},
++				right: function (val) {
++					return val;
++				}
++    		}
++    	},
++    	mandatoryFieldSelector: null,
++    	objectByName: function(name) {
++    		return $('[name="'+name+'"]');
++    	},
++    	feldsetByName: function(name) {
++    		// suppose name stands for ID in case of fieldset
++    		return $('#' + name);
++    	},
++    	getWrapper: function(name,info) {
++    		return $('[name="'+name+'"]').parent();
++    	},
++    	setMandatoryLikeView: function(name, info) {
++    		var wrap = $('[name="'+name+'"').parent();
++    		if (!wrap.find('label span.form-required').length) {
++    			$('<span title="This field is required." class="form-required">*</span>').appendTo(wrap.find('label'));
++    		}
++    	}
++    };
++    
++    $.fn[nsp+'ConditionalForm'] = function(opts) {
++        var localOpts = $.extend( 
++           {}, 
++           $[nsp].defaultOptions.conditionalForm, 
++           opts
++        );   	
++        
++        function conditionalForm() {
++	        // $this to access the jQuery object
++	        var $this = $(this);
++			
++	         // lets you override the options
++	        // inside the dom objects class property
++	        // requires the jQuery metadata plugin
++	        // <div class="hello {color: 'red'}">ddd</div>
++			var metaOpts = $.meta ? $.extend({}, localOpts, $this.data()) : localOpts;
++			if (!this[nsp]) {
++				this[nsp] = {};
++			}
++			this[nsp].options = metaOpts;
++	        $[nsp].conditionalForm($this, this[nsp].options);
++        };
++        
++        // run the action for each matching node
++        return this.each(conditionalForm);
++    };
++})(jQuery);
+\ No newline at end of file
+
+
+Left base folder: C:\Documents and Settings\Olga\My Documents\Downloads\webform-6.x-3.0-beta5(2)\webform
+Right base folder: C:\xampp\htdocs\ogorun\sites\all\modules\webform
+--- 
++++ le\le.conditionsConstructor.js	2010-05-25 00:18:48.000000000 +-0300
+@@ -0,0 +1,737 @@
++/* *********************************************************************
++jQuery Plugin: logicalExpression
++
++Conditions constructor is jquery plugin with two main purposes:
++ - Provide API for creation/changing/evaluation of arbitrary complicity logical expression 
++ - Provide GUI for such expression building
++
++  @author Olga Gorun <ogorun@gmail.com>
++  
++  TODO:
++  ======
++  *) Improve error handling
++  *) Make expression.obj - private field
++ ** **********************************************************************/
++;(function($) {
++    // setup a namespace for us
++    var nsp = 'le';
++
++   // Public Static Variables and Methods
++    $[nsp] = {
++	
++		//$.le.defaultOptions
++		defaultOptions: {
++		},
++	
++		// $.le.expression
++		// Base component class representing expression and its API
++		expression: function (expr, options) {
++
++			/**
++			 * @var obj 
++			 *   - expression tree object
++			 *
++			 *   obj = <expr>
++			 * 
++			 *   <expr> = <el> | <group>
++			 *
++			 *   <el> = {
++			 *       optype: 'el',
++			 *       left: <left operand value>,
++			 *       op: <operator name>,
++			 *       right: <right operand value>,
++			 *       neg: <negated flag>
++			 *  };
++			 *
++			 * <group> = {
++			 *       optype: 'expr',
++			 *       type: 'AND' | 'OR',
++			 *       neg: <negated flag>
++			 *       operands: [<expr1>, <expr2>, ...]
++			 *  };
++			 **/
++			this.obj = expr ? expr : null;
++			
++			/**
++			 * @var o 
++			 *  - options
++			 **/
++			this.o = $.extend({}, $[nsp].defaultOptions.expression, options);
++			
++			////////////////////////////// API methods /////////////////////////////////
++			
++			/**
++			 * Return expression object
++			 **/
++			this.getExpression =  function() {
++				return this.obj;
++			};
++			
++			/**
++			 * Returns serialized expression
++			 **/
++			this.getSerialised = function() {
++				return $.isFunction($.toJSON) ? $.toJSON(this.obj) : $.param(this.obj);
++			};
++			
++			/**
++			 * Add simple element to expression
++			 *
++			 * @var level
++			 *    - Array containing 'path' to parent element
++			 * @var left
++			 *   - Left operand
++			 * @var op
++			 *  - Operator name
++			 * @var right
++			 *  - Right operand
++			 * @var negated
++			 *  - Negated flag
++			 **/
++			this.addElement = function(level, left, op, right, negated) {
++				var el = {
++					optype: 'el',
++					left: left,
++					op: op,
++					right: right,
++					neg: (negated ? true : false)
++				};
++				
++				return _.addElement(level, el);
++			};
++			
++			/**
++			 * Add new expression (group)  to expression.
++			 * AND or OR expression without operands
++			 *
++			 * @var level
++			 *    - Array containing 'path' to parent element
++			 * @var type
++			 *   - AND|OR
++			 * @var negated
++			 *  - Negated flag
++			 **/			
++			this.addNewGroup = function(level, type, negated) {
++				var el = {
++					optype: 'expr',
++					type: type,
++					neg: (negated ? true : false),
++					operands: []
++				};
++				
++				return _.addElement(level, el);
++			};
++
++			/**
++			 * Add expression given by object to expression.
++			 *
++			 * @var level
++			 *    - Array containing 'path' to parent element
++			 * @var expr
++			 *   - $.le.expression class object
++			 **/				
++			this.addExpression = function(level, expr) {
++				return _.addElement(level, expr.getExpression());
++			};
++			
++			/**
++			  * Change expression element property
++			 *
++			 * @var level
++			 *    - Array containing 'path' to element
++			 * @var key
++			 *   - property name
++			 * @var val
++			 *   - property value
++			  **/
++			this.changeElement = function(level, key, val) {
++				var el = _.findExpressionElement(level);
++				if (!el) {
++					return false;
++				}
++				
++				el[key] = val;
++				return true;
++			};
++			
++			/**
++			 * Delete element from expression
++			 *
++			 * @var level
++			 *    - Array containing 'path' to element
++			 **/
++			this.deleteElement = function(level) {
++				if (level.length > 1) {
++					var parentLevel = level.slice(0, -1);
++					var parent = _.findExpressionElement(parentLevel);
++					if (!parent) {
++						return false;
++					}
++					if (parent.operands.length >= level[level.length -1]) {
++						parent.operands.splice(level[level.length -1] - 1, 1);
++					}
++				}
++				else {
++					this.obj = null;
++				}
++				
++				return true;
++			};
++			
++			/**
++			 * Evaluates expression
++			 **/			
++			this.evaluate = function() {
++				return _.evaluate(this.obj);
++			};
++			////////////////////////////// End of API methods /////////////////////////////////
++			
++			var that = this;
++			var _ = {
++				findExpressionElement: function(levelArr) {
++					var i;
++						
++					var test = that.obj;
++					if (levelArr.length > 1) {
++						for (i = 1; i < levelArr.length; i++)
++						{
++							if (typeof test == 'object' && typeof test['optype'] == 'string') {
++								switch (test.optype) {
++									case 'expr':
++										test = test.operands[levelArr[i] - 1];
++										break;
++									case 'el':
++										if (i < levelArr.length - 1) {
++											return null;
++										}
++								}
++							}
++						}
++					}
++						
++					return test;
++				},
++				
++				addElement: function (parentLevel, el) {
++					var parent;				
++					
++					if (parentLevel[0] == '0') {
++						// add to root as last element
++						if (that.obj == null || typeof that.obj['optype'] != 'string') {
++							//   1. empty tree
++							that.obj = el;
++						}
++						else {
++							// not empty tree. 
++							// Rebuild it with new root AND expression with two operands:
++							// - Previous root is first one
++							// - New element is last one
++							
++							var temp = that.o.defaultNewExpr();
++							temp.operands[0] = that.obj;
++							temp.operands[1] = el;
++							that.obj = temp;
++						}
++					}
++					else {
++						// add to group element with default properties
++						parent = _.findExpressionElement(parentLevel);
++						if (typeof parent['operands'] == 'undefined') {
++							return false;
++						}
++						parent.operands[parent.operands.length] = el;
++					}
++
++					return true;
++				},
++				
++				evaluate : function(e) {
++					var result = true;
++		
++					if (typeof e['optype'] != 'undefined') {
++						switch (e['optype']) {
++							case 'expr':
++								if (e['type'] == 'AND') {
++									$.each(e['operands'], function(key, operand) {
++										result = result && _.evaluate(operand);
++										if (!result) { // optimization break in case of FALSE
++											return false;
++										}
++									});
++								}
++								else {
++									// type == OR
++									result = false;
++									$.each(e['operands'], function(key, operand) {
++										result = result || _.evaluate(operand);
++										if (result) { // optimization break in case of TRUE
++											return false;
++										}
++									});			
++								}
++								break;
++							case 'el':
++								result = _.match(e.left, e.right, e.op);
++								break;
++						}
++			
++						if (e.neg) {
++							result = !result;
++						}
++					}
++		
++					return result;
++				},
++				
++				match: function(left, right, op) {
++					var result = false;
++					var l = that.o.operandHandler.left(left);
++					var r = that.o.operandHandler.right(right);
++					if ($.isFunction(that.o.ops[op]))
++					{
++						result = that.o.ops[op](l, r);
++					}
++					else
++					{
++						result = that.o.ops['opEqual'](l, r);
++					}
++					
++					return result;
++				}
++			};
++			
++		}
++	};
++
++	var _ = {};
++	
++	// $.le.defaultOptions.expression
++	$[nsp].defaultOptions.expression = {
++		ops: {
++			opEqual: function(val, sample) {
++				return val == sample;
++			},
++				
++			opLess: function(val, sample) {
++				return parseFloat(val) < parseFloat(sample);
++			},
++				
++			opLessOrEqual: function(val, sample) {
++				return parseFloat(val) <= parseFloat(sample);
++			},
++				
++			opGreater: function(val, sample) {
++				return parseFloat(val) > parseFloat(sample);
++			},
++				
++			opGreaterOrEqual: function(val, sample) {
++				return parseFloat(val) >= parseFloat(sample);
++			},
++				
++			opOneOf: function(val, sample) {
++				var pattern = new RegExp('^' + sample + '$');
++				return pattern.test(val);
++			},
++				
++			opStartsFrom: function(val, sample) {
++				var pattern = new RegExp('^' + sample);
++				return pattern.test(val);
++			},
++				
++			opEndsWith: function(val, sample) {
++				var pattern = new RegExp(sample + '$');
++				return pattern.test(val);
++			},
++
++			opContains: function(val, sample) {
++				var pattern = new RegExp(sample);
++				return pattern.test(val);
++			},
++
++			opEmpty: function(val, sample) {
++				return !val;
++			}		
++		},
++		operandHandler: {
++			left: function (val) {
++				return val;
++			},
++			right: function (val) {
++				return val;
++			}
++		},	
++		defaultNewExpr: function() {
++			return {
++				optype: 'expr',
++				type: 'AND',
++				neg: false,
++				operands: []
++			};
++		}
++	};
++	// end of $[nsp].expression class
++	
++	// $le.constructor
++	$[nsp].constructor = function(container, expr, options){
++		
++		this.renderElement = function(el, level, o) {		
++			var left, right, operator, negated;
++			
++			if (o.lOperandFormElement == 'select') {
++				left = _.form.select('constructor_el_l_' + _.utils.classToNameDecorate(level), el.left, o.availableLOperands);
++			}
++			else {
++				left = _.form.input('constructor_el_l_' + _.utils.classToNameDecorate(level), el.left);
++			}
++			
++			if (o.rOperandFormElement == 'select') {
++				right = _.form.select('constructor_el_r_' + _.utils.classToNameDecorate(level), el.right, o.availableROperands);
++			}
++			else {
++				right = _.form.input('constructor_el_r_' + _.utils.classToNameDecorate(level), el.right);
++			}
++			
++			operator = _.form.select('constructor_el_op_' + _.utils.classToNameDecorate(level), el.op, o.availableOperators);
++			negated = _.form.checkbox('constructor_el_neg_' + _.utils.classToNameDecorate(level), 'Negated', el.neg);
++				
++			return '<div class="constructor-el level-' + level + '">' + 
++						' <span class="constructor-el-l">' + left + '</span>' +
++						' <span class="constructor-el-op">' + operator + '</span>' +
++						' <span class="constructor-el-r">' + right + '</span>' +
++						' <em class="constructor-el-negated">' + negated + '</em>' +
++						' <span><ul class="constructor-admin-links">' +
++							'<li><a href="" class="constructor-admin-delete-el level-' + level + '">Delete</a></li>' +
++						'</ul></span>' +
++					'</div>';
++		};
++		
++		this.renderGroup = function(el, level, o) {
++			var operands, negated, i;
++			
++			negated = _.form.checkbox('constructor_group_neg_' + _.utils.classToNameDecorate(level), 'Negated', el.neg);
++			
++			operands = '';
++			if (el.operands.length)	{
++				operands = '<ul>';
++				for (i = 0; i < el.operands.length; i++) {
++					operands += '<li>' + _.renderTree(el.operands[i], level + '-' + (i+1), o) + '</li>';
++				}
++				operands += '</ul>';
++			}
++			
++			return '<div class="constructor-group type-' + el.type + ' level-' + level + '">' +
++						'<span class="constructor-group-label type-' + el.type + '">' + el.type + '</span>' +
++						' <em class="constructor-group-negated">' + negated + '</em>' +
++						  operands +
++						'<ul class="constructor-admin-links">' +
++							'<li><a href="" class="level-' + level + ' constructor-admin-delete-group">Delete expression</a></li>' +
++							'<li><a href="" class="level-' + level + ' constructor-admin-add-el">Add element</a></li>' +
++							'<li><a href="" class="level-' + level + ' constructor-admin-add-and-group">Add <em>AND</em> expression</a></li>' +
++							'<li><a href="" class="level-' + level + ' constructor-admin-add-or-group">Add <em>OR</em> expression</a></li>' +
++						'</ul>' +
++					'</div>';
++		};
++		
++		var that = this;		
++		var _ = {
++			that: this,
++			utils: {
++				classToNameDecorate: function(str) {
++					str= new String(str);
++					return str.replace(/-/g, '_');
++				},
++		
++				getLevelFromName: function(name) {
++					var test = name.match(/^[^0-9]+([0-9]+(_[0-9]+)*)$/);
++					if (test) {
++						level = test[1].split('_');
++						return level;
++					}
++					
++					return null;
++				},
++			
++				getLevelFromClass: function(className) {
++					var test = className.match(/[^0-9]+([0-9]+(-[0-9]+)*)/);
++					if (test) {
++						level = test[1].split('-');
++						return level;
++					}
++					
++					return null;
++				},
++			},
++		
++			form: {
++				select: function(name, value, options) {
++					var elementOptions = '';
++					for (i in options) {
++						elementOptions += '<option value="' + i + '"' + (value == i ? ' selected' : '') + '>' + options[i] + '</option>';
++					}
++					return  '<select name="' + name + '">' + elementOptions + '</select>';
++				},
++			
++				input: function(name, value) {
++					return '<input type="text" name="' + name + '" value="' + value + '" />';
++				},
++				
++				checkbox: function(name, label, checked) {
++					return '<label for="' + name + '">' + label + '</label>' +
++					'<input type="checkbox" name="' + name + '"' + (checked ? ' checked' : '') + ' />';
++				}
++			},
++		
++			renderTree: function(el, level, o) {				
++				var content = '';
++				
++				if (el == null) {
++					return null;
++				}
++				
++				switch (el['optype']) {
++					case 'expr':
++						content = that.renderGroup(el, level, o);
++						break;
++					case 'el':
++						content = that.renderElement(el, level, o);
++						break;
++				}
++				
++				return '<ul>' + content + '</ul>';
++			},
++						
++			buildConstructor: function(container) {
++				var expr = container[nsp].expression;
++				var o = container[nsp].options;
++				var content = _.renderTree(expr.getExpression(), '1', o);
++				
++				var links = [];
++				if (o.buttonFlags['addElement']) {
++					links[links.length] = '<a href="" class="constructor-admin-add-el level-0">Add element</a>';
++				}
++				if (o.buttonFlags['addAndGroup']) {
++					links[links.length] = '<a href="" class="constructor-admin-add-and-group level-0">Add <em>AND</em> expression</a>';
++				}
++				if (o.buttonFlags['addOrGroup']) {
++					links[links.length] = '<a href="" class="constructor-admin-add-or-group level-0">Add <em>OR</em> expression</a>';
++				}
++				if (o.buttonFlags['showExpression']) {
++					links[links.length] = '<a href="" class="constructor-admin-show-expression level-0">Show expression</a>';
++				}
++				if (o.buttonFlags['evaluate']) {
++					links[links.length] = '<a href="" class="constructor-admin-evaluate level-0">Evaluate</a>';
++				}
++				if (typeof o.buttons == 'array') {
++					for(var i = 0; i < o.buttons.length; i++) {
++						links[links.length] = o.buttons[i];
++					}
++				}
++				content = (content ? content : '<span>No conditiotions found</span>') +
++				' <ul class="constructor-admin-links">' +
++					(links.length ? '<li>' + links.join('</li><li>') + '</li>' : '') +
++				'</ul>';
++			
++				var obj = $(container);
++				obj.empty();
++				$(content).appendTo(obj);
++				_.appendHandlers(obj);				
++			},
++		
++			handlers: {
++				changeElement: function(domObj, name, key, val) {
++					var level = _.utils.getLevelFromName(name);
++					domObj[nsp].expression.changeElement(level, key, val);
++				},
++			
++				addElement: function(domObj, link, type) {
++					var parentLevel = _.utils.getLevelFromClass(link.attr('class'));
++					var parent;
++					var newObj;
++				
++					switch(type) {
++						case 'el':
++							newObj = domObj[nsp].options.defaultNewElement();
++							break;
++						case 'and_expr':
++							newObj = domObj[nsp].options.defaultNewANDExpr();
++							break;
++						case 'or_expr':
++							newObj = domObj[nsp].options.defaultNewORExpr();
++							break;
++					}
++				
++					domObj[nsp].expression.addExpression(level, new $[nsp].expression(newObj));				
++					_.buildConstructor(domObj);			
++				},
++			
++				deleteElement: function(domObj, link) {
++					var level = _.utils.getLevelFromClass(link.attr('class'));
++					domObj[nsp].expression.deleteElement(level);				
++					_.buildConstructor(domObj);			
++				}
++			},
++		
++			appendHandlers: function(obj) {
++		
++				// Show Expression
++				$('.constructor-admin-show-expression', obj).click(function() {
++					//alert(getSerialisedExpression());
++					alert(obj[0][nsp].expression.getSerialised());
++					return false;
++				});
++				
++				// Evaluate Expression
++				$('.constructor-admin-evaluate', obj).click(function() {
++					alert(obj[0][nsp].expression.evaluate());
++					return false;
++				});
++				
++				// Update status (update currentConditions object in memory)
++					//negate element, group 
++					$('.constructor-el-negated input:checkbox, .constructor-group-negated input:checkbox', obj).click(function() {
++						_.handlers.changeElement(obj[0], this.name, 'neg', this.checked);
++					});
++				
++					//change left element
++					$('.constructor-el-l input, .constructor-el-l select', obj).change(function() {
++						_.handlers.changeElement(obj[0], this.name, 'left', $(this).val());
++					});
++					
++					//change operator
++					$('.constructor-el-op select', obj).change(function() {
++						_.handlers.changeElement(obj[0], this.name, 'op', $(this).val());
++					});
++					
++					//change right element
++					$('.constructor-el-r input, .constructor-el-r select', obj).change(function() {
++						_.handlers.changeElement(obj[0], this.name, 'right', $(this).val());
++					});
++								
++				// Change tree
++					// add element to group, tree
++					$('.constructor-admin-add-el').click(function() {
++						_.handlers.addElement(obj[0], $(this), 'el');
++						return false;
++					});
++					
++					// group, tree add AND group
++					$('.constructor-admin-add-and-group').click(function() {
++						_.handlers.addElement(obj[0], $(this), 'and_expr');
++						return false;
++					});
++					
++					// group, tree add OR group
++					$('.constructor-admin-add-or-group').click(function() {
++						_.handlers.addElement(obj[0], $(this), 'or_expr');
++						return false;
++					});
++					
++					// delete el, group
++					$('.constructor-admin-delete-el, .constructor-admin-delete-group').click(function() {
++						_.handlers.deleteElement(obj[0], $(this));
++						return false;
++					});
++			}			
++		};
++
++		if (!$(container).is('constructor')) {
++			$(container).addClass('constructor');
++		}
++		
++		_.buildConstructor(container);
++    };
++
++	// _.getObjectFirstKey
++	_.getObjectFirstKey =  function (data) {
++		for (var prop in data)
++			return prop;
++	};
++	
++    $[nsp].defaultOptions.constructor = {
++		lOperandFormElement : 'input',
++		rOperandFormElement : 'input',
++		availableLOperands: null,
++		availableROperands: null,
++		availableOperators: {
++		    opEqual: '=', 
++		    opLess: '&lt;', 
++		    opLessOrEqual: '&lt;=', 
++		    opGreater: '&gt;', 
++		    opGreaterOrEqual: '&gt;=', 
++		    opStartsFrom: 'starts from', 
++		    opEndsWith: 'ends with', 
++		    opContains: 'contains', 
++		    opEmpty: 'empty',
++		    opOneOf: 'one of'				
++		},
++		buttonFlags: {
++			addElement: true,
++			addAndGroup: true,
++			addOrGroup: true,
++			showExpression: true,
++			evaluate: true
++		},
++		buttons: null,
++		expression : null,
++        defaultNewElement: function () {
++			return {
++			    optype: 'el',
++			    left: '',
++			    op:  _.getObjectFirstKey($[nsp].defaultOptions.constructor.availableOperators),
++			    right: '',
++			    neg: false							
++			};
++		},
++		defaultNewANDExpr: function () { 
++			return {
++				optype: 'expr',
++				type: 'AND',
++				neg: false,
++				operands: []
++			};
++		},
++		defaultNewORExpr: function () { 
++			return {
++				optype: 'expr',
++				type: 'OR',
++				neg: false,
++				operands: []
++			};
++		}
++    };
++	// end of $[nsp].constructor class
++
++
++    // $(x).leConstructor(....)
++    $.fn[nsp+'Constructor'] = function(expression,opts) {
++        var localOpts = $.extend( 
++            {}, 
++            $[nsp].defaultOptions.constructor, 
++            opts
++        );
++        		
++        function constructor() {
++	        // $this to access the jQuery object
++	        var $this = $(this);
++			
++	         // lets you override the options
++	        // inside the dom objects class property
++	        // requires the jQuery metadata plugin
++	        // <div class="hello {color: 'red'}">ddd</div>
++			var metaOpts = $.meta ? $.extend({}, localOpts, $this.data()) : localOpts;
++			var expressionOpts = metaOpts.expression ? metaOpts.expression : {};
++			
++	       // per dom node context data
++			if (!this[nsp]) {
++				this[nsp] = {};
++			}
++	        this[nsp].expression = new $[nsp].expression(expression, expressionOpts);
++			this[nsp].options = metaOpts;
++			
++	        $[nsp].constructor(this, this[nsp].expression, this[nsp].options);
++        };
++        // run the action for each matching node
++        return this.each(constructor);
++    };
++
++})(jQuery);
+ 

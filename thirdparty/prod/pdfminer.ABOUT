@@ -1,0 +1,31 @@
+about_resource: pdfminer-20140328.tar.gz
+name: pdfminer
+version: 20140328
+home_url: http://www.unixuser.org/~euske/python/pdfminer/index.html
+download_url: https://pypi.python.org/packages/source/p/pdfminer/pdfminer-20140328.tar.gz#md5=dfe3eb1b7b7017ab514aad6751a7c2ea
+owner: Yusuke Shinyama
+copyright: Copyright (c) 2004-2013 Yusuke Shinyama <yusuke at cs dot nyu dot edu>
+
+notes: This component cannot be wheeled for now.
+ the cmapsrc directory contains Adobe files:
+  This directory contains Adobe CMap resources. CMaps are required 
+  to decode text data written in CJK (Chinese, Japanese, Korean) language.
+  CMap resources are now available freely from Adobe web site:
+  http://opensource.adobe.com/wiki/display/cmap/CMap+Resources
+ 
+  The follwing files were extracted from the downloadable tarballs:
+  cid2code_Adobe_CNS1.txt:
+    http://download.macromedia.com/pub/opensource/cmap/cmapresources_cns1-6.tar.z
+  cid2code_Adobe_GB1.txt:
+    http://download.macromedia.com/pub/opensource/cmap/cmapresources_gb1-5.tar.z
+  cid2code_Adobe_Japan1.txt:
+    http://download.macromedia.com/pub/opensource/cmap/cmapresources_japan1-6.tar.z
+  cid2code_Adobe_Korea1.txt:
+    http://download.macromedia.com/pub/opensource/cmap/cmapresources_korean1-2.tar.z
+
+
+vcs_tool: git
+vcs_repository: https://github.com/euske/pdfminer/
+
+dje_license: mit, bsd
+license_text_file: pdfminer.LICENSE

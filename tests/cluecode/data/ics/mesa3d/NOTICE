@@ -1,0 +1,35 @@
+   ==  NOTICE file for the Mesa 3-D graphics library                      ==
+   =========================================================================
+
+Copyright © 1999-2008 Brian Paul   All Rights Reserved.
+Copyright © 2008-1010 Intel Corporation
+Copyright © 2007-2010 VMware, Inc.   All Rights Reserved.
+Copyright © 2010 Luca Barbieri
+
+Permission is hereby granted, free of charge, to any person obtaining a
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+   ==  NOTICE file for include/c99/stdint.h and include/c99/inttypes.h    ==
+   =========================================================================
+
+Copyright (c) 2006 Alexander Chemeris
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+  1. Redistributions of source code must retain the above copyright notice,
+     this list of conditions and the following disclaimer.
+
+  2. Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+   ==  NOTICE file for pixelflinger2                                      ==
+   =========================================================================
+
+Copyright 2007,2010,2011 The Android Open Source Project
+
+Licensed under the Apache License, Version 2.0 (the "License");

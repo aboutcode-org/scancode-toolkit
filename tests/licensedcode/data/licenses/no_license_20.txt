@@ -1,0 +1,61 @@
+Manifest-Version: 1.0
+Created-By: 1.3.1 (IBM Corporation)
+Ant-Version: Apache Ant version 1.5 compiled on July 9 2002
+
+Name: org/apache/xerces/impl/Version.class
+Comment: Xerces-J 2.6.2 
+Implementation-Title: org.apache.xerces.impl.Version
+Implementation-Version: 2.6.2
+Implementation-Vendor: Apache Software Foundation
+Implementation-URL: http://xml.apache.org/xerces2-j/
+
+Name: org/xml/sax/
+Comment: based on xml-commons external 1.2.01
+Specification-Title: Simple API for XML
+Specification-Vendor: David Megginson
+Specification-Version: 2.0.1
+Implementation-Title: org.xml.sax
+Implementation-Version: 2.0.1
+Implementation-Vendor: David Megginson
+Implementation-URL: http://www.saxproject.org/
+
+Name: org/w3c/dom/
+Comment: based on xml-commons external 1.2.01
+Specification-Title: Document Object Model, Level 2 Core
+Specification-Vendor: World Wide Web Consortium
+Specification-Version: 1.0
+Implementation-Title: org.w3c.dom
+Implementation-Version: 1.0
+Implementation-Vendor: World Wide Web Consortium
+Implementation-URL: http://www.w3c.org/DOM/
+
+Name: javax/xml/parsers/
+Comment: based on xml-commons external 1.2.01
+Specification-Title: Java API for XML Processing
+Specification-Version: 1.2
+Specification-Vendor: Sun Microsystems Inc.
+Implementation-Title: javax.xml.parsers
+Implementation-Version: 1.2.01
+Implementation-Vendor: Sun Microsystems Inc.
+Implementation-URL: http://java.sun.com/xml/jaxp.html
+
+Name: javax/xml/transform/
+Comment: based on xml-commons external 1.2.01
+Specification-Title: Java API for XML Processing
+Specification-Version: 1.2
+Specification-Vendor: Sun Microsystems Inc.
+Implementation-Title: javax.xml.transform
+Implementation-Version: 1.2.01
+Implementation-Vendor: Sun Microsystems Inc.
+Implementation-URL: http://java.sun.com/xml/jaxp.html
+
+Name: org/apache/xerces/xni/
+Comment: Xerces Native Interface
+Specification-Title: Xerces Native Interface
+Specification-Version: 1.1
+Specification-Vendor: Apache Software Foundation
+Implementation-Title: org.apache.xerces.xni
+Implementation-Version: 1.1
+Implementation-Vendor: Apache Software Foundation
+Implementation-URL: http://xml.apache.org/xerces2-j/
+

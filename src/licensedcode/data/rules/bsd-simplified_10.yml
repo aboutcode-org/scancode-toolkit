@@ -1,0 +1,4 @@
+licenses:
+    - bsd-simplified
+template: yes
+notes: text of a netbsd license, as a template

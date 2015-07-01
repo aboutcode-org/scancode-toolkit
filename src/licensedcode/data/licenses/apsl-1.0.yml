@@ -1,0 +1,14 @@
+key: apsl-1.0
+short_name: APSL 1.0
+name: Apple Public Source License 1.0
+category: Copyleft Limited
+owner: Apple
+homepage_url: http://www.opensource.apple.com/source/architecture/architecture-229/APPLE_LICENSE?f=text
+spdx_license_key: APSL-1.0
+spdx_full_name: Apple Public Source License 1.0
+spdx_url: http://spdx.org/licenses/APSL-1.0
+spdx_notes: This license was released 16 March 1999.
+text_urls:
+    - http://www.opensource.apple.com/source/architecture/architecture-229/APPLE_LICENSE?f=text
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/Apple_Public_Source_License_1.0

@@ -1,0 +1,12 @@
+key: ssleay-windows
+short_name: >-
+    Original SSLeay License with Windows exception
+name: >-
+    Original SSLeay License with Windows exception
+category: Attribution
+owner: OpenSSL
+homepage_url: http://h71000.www7.hp.com/doc/83final/ba554_90007/apcs02.html
+text_urls:
+    - http://www.openssl.org/source/license.html
+other_urls:
+    - http://h71000.www7.hp.com/doc/83final/ba554_90007/apcs02.html

@@ -1,0 +1,12 @@
+diff -u /home/jonsv322/motorola/DEV_7105_erik_rulez_2/base/3pp/linux-st710x/linux-2.6.23/drivers/i2c/busses/i2c-stm.c\~ /home/jonsv322/motorola/DEV_7105_erik_rulez_2/base/3pp/linux-st710x/linux-2.6.23/drivers/i2c/busses/i2c-stm.c
+--- linux-2.6.23/drivers/i2c/busses/i2c-stm.c~	2009-04-07 08:01:15.000000000 +0200
++++ linux-2.6.23/drivers/i2c/busses/i2c-stm.c	2009-04-28 07:42:55.000000000 +0200
+@@ -94,7 +94,7 @@
+ /* These values WILL produce physical clocks which are slower */
+ /* Especially if hardware glitch suppression is enabled       */
+ /* They should probably be made board dependent?              */
+-#define I2C_RATE_NORMAL			100000
++#define I2C_RATE_NORMAL			80000
+ #define I2C_RATE_FASTMODE		400000
+ 
+ #define NANOSEC_PER_SEC			1000000000

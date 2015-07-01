@@ -1,0 +1,13 @@
+key: indiana-extreme-1.2
+short_name: Indiana Extreme License 1.2
+name: >-
+    Indiana University Extreme! Lab Software License Version 1.2
+category: Attribution
+owner: Indiana University
+homepage_url: http://www.extreme.indiana.edu/license.txt
+spdx_license_key: xpp
+spdx_full_name: XPP License
+spdx_url: http://spdx.org/licenses/xpp
+text_urls:
+    - http://www.extreme.indiana.edu/license.txt
+    - https://fedoraproject.org/wiki/Licensing/xpp

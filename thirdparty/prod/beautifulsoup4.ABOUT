@@ -1,0 +1,8 @@
+about_resource: beautifulsoup4-4.3.2-py2-none-any.whl
+version:4.3.2
+name: beautifulsoup4
+home_url:http://www.crummy.com/software/BeautifulSoup/bs4
+download_url: https://pypi.python.org/packages/source/b/beautifulsoup4/beautifulsoup4-4.3.2.tar.gz
+owner: Leonard Richardson
+dje_icense: mit
+license_text: beautifulsoup4.LICENSE

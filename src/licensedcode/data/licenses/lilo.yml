@@ -1,0 +1,8 @@
+key: lilo
+short_name: LILO License
+name: LILO License
+category: Attribution
+homepage_url: http://www.ingate.com/files/422/fwmanual-en/xx12671.html
+text_urls:
+    - http://www.ingate.com/files/422/fwmanual-en/xx12671.html
+    - https://launchpad.net/ubuntu/oneiric/+source/rxtx/+copyright

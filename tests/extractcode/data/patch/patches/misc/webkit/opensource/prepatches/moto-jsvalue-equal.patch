@@ -1,0 +1,82 @@
+Index: src/3rdParty/webkit/patches/moto-jsvalue-equal.patch
+===================================================================
+--- /dev/null
++++ src/3rdParty/webkit/patches/moto-jsvalue-equal.patch
+@@ -0,0 +1,65 @@
++diff -urN work.orig/JavaScriptCore/bindings/runtime_object.h work/JavaScriptCore/bindings/runtime_object.h
++--- work.orig/JavaScriptCore/bindings/runtime_object.h
+++++ work/JavaScriptCore/bindings/runtime_object.h
++@@ -28,7 +28,7 @@
++ 
++ #include "runtime.h"
++ #include "object.h"
++-
+++#include "operations.h"
++ #include <wtf/Noncopyable.h>
++ 
++ namespace KJS {
++@@ -50,6 +50,15 @@
++ 
++     virtual void invalidate();
++     Bindings::Instance *getInternalInstance() const { return instance.get(); }
+++
+++    virtual bool compare(ExecState* exec, JSObject *obj) { 
+++      if (obj == NULL) return false;
+++      if (className() == obj->className()) {
+++         RuntimeObjectImp *robj = (RuntimeObjectImp *)obj;
+++         return equal(exec, getInternalInstance()->valueOf(), robj->getInternalInstance()->valueOf());
+++      }
+++      return (this==obj);
+++    }
++     
++     static JSObject* throwInvalidAccessError(ExecState*);
++     
++diff -urN work.orig/JavaScriptCore/kjs/object.h work/JavaScriptCore/kjs/object.h
++--- work.orig/JavaScriptCore/kjs/object.h
+++++ work/JavaScriptCore/kjs/object.h
++@@ -114,7 +114,7 @@
++     
++     virtual void mark();
++     virtual JSType type() const;
++-
+++    virtual bool compare(ExecState* exec, JSObject *obj) { return this == obj; }
++     /**
++      * A pointer to a ClassInfo struct for this class. This provides a basic
++      * facility for run-time type information, and can be used to check an
++diff -urN work.orig/JavaScriptCore/kjs/operations.cpp work/JavaScriptCore/kjs/operations.cpp
++--- work.orig/JavaScriptCore/kjs/operations.cpp
+++++ work/JavaScriptCore/kjs/operations.cpp
++@@ -95,6 +95,10 @@
++         return v1->toBoolean(exec) == v2->toBoolean(exec);
++     
++     // types are Object
+++    JSObject *o1 = v1 ? v1->getObject() : NULL;
+++    JSObject *o2 = v2 ? v2->getObject() : NULL;
+++    if (o1 != NULL && o2 != NULL && v1 != v2) 
+++      return o1->compare(exec, o2);
++     return v1 == v2;
++ }
++ 
++@@ -118,6 +122,10 @@
++     else if (t2 == BooleanType)
++         return v1->toBoolean(exec) == v2->toBoolean(exec);
++     
+++    JSObject *o1 = v1 ? v1->getObject() : NULL;
+++    JSObject *o2 = v2 ? v2->getObject() : NULL;
+++    if (o1 != NULL && o2 != NULL && v1 != v2) 
+++      return o1->compare(exec, o2);
++     if (v1 == v2)
++         return true;
++     /* TODO: joined objects */
+Index: src/3rdParty/webkit/patches/series
+===================================================================
+--- src.orig/3rdParty/webkit/patches/series
++++ src/3rdParty/webkit/patches/series
+@@ -19,6 +19,7 @@ jscore-vector-alignment.patch
+ webcore-arena-alignment.patch
+ ekioh-png-uclibc.patch
+ webcore-enclosing-int-rect.patch
++moto-jsvalue-equal.patch
+ moto-timer.patch
+ moto-dump.patch
+ debug-fixes.patch

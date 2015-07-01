@@ -1,0 +1,15 @@
+key: efl-1.0
+short_name: EFL 1.0
+name: Eiffel Forum License 1.0
+category: Attribution
+owner: Eiffel NICE
+homepage_url: http://www.eiffel-nice.org/license/
+spdx_license_key: EFL-1.0
+spdx_full_name: Eiffel Forum License v1.0
+spdx_url: http://spdx.org/licenses/EFL-1.0
+spdx_notes: >-
+    This license was OSI certified.  This license has been superseded by v2.0
+text_urls:
+    - https://fedoraproject.org/wiki/Licensing/Eiffel_Forum_License_V1
+    - http://www.eiffel-nice.org/license/forum.txt
+osi_url: http://www.opensource.org/licenses/ver1_eiffel.php

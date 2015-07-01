@@ -1,0 +1,44 @@
+OpenSBC is published under
+the MPL, GPL, LGPL tripple license. &nbsp;The default active license is
+MPL. &nbsp;However, because of the inherent incompatibility between MPL
+and GNU licenses, we decided to explicitly publish OpenSBC using GPL
+and LGP as alternative licenses. &nbsp;The full text of the license is
+as follows</big><br>
+</small></div>
+<small><br>
+</small>
+<div style="margin-left: 40px;"><small>&nbsp;* Copyright (c) opensipstack.org.<br>
+&nbsp;*<br>
+&nbsp;* The contents of this file are subject to the Mozilla Public License<br>
+&nbsp;* Version 1.0 (the "License"); you may not use this file except in<br>
+&nbsp;* compliance with the License. You may obtain a copy of the License at<br>
+&nbsp;* http://www.mozilla.org/MPL/<br>
+&nbsp;* <br>
+&nbsp;* Software distributed under the License is distributed on an "AS IS"<br>
+&nbsp;* basis, WITHOUT WARRANTY OF ANY KIND, either expressed or implied. See<br>
+&nbsp;* the License for the specific language governing rights and limitations<br>
+&nbsp;* under the License.<br>
+&nbsp;*<br>
+&nbsp;* The Original Code is OpenSIPStack.<br>
+&nbsp;*<br>
+&nbsp;* The Initial Developer of the Original Code is opensipstack.org.<br>
+&nbsp;*<br>
+&nbsp;* The author of this code is Joegen E. Baclor<br>
+&nbsp;*<br>
+&nbsp;* Alternatively, the contents of this file may be used under the terms of<br>
+&nbsp;* either the GNU General Public License Version 2 or later (the "GPL"), or<br>
+&nbsp;* the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),<br>
+&nbsp;* in which case the provisions of the GPL or the LGPL are applicable instead<br>
+&nbsp;* of those above. If you wish to allow use of your version of this file only<br>
+&nbsp;* under the terms of either the GPL or the LGPL, and not to allow others to<br>
+&nbsp;* use your version of this file under the terms of the MPL, indicate your<br>
+&nbsp;* decision by deleting the provisions above and replace them with the notice<br>
+&nbsp;* and other provisions required by the GPL or the LGPL. If you do not delete<br>
+&nbsp;* the provisions above, a recipient may use your version of this file under<br>
+&nbsp;* the terms of any one of the MPL, the GPL or the LGPL.<br>
+&nbsp;*<br>
+&nbsp;* The OpenSIPStack Library includes some GPL/LGPL code libraries that MAY be <br>
+&nbsp;* enabled at compile time using the --enable-gpllibs configure switch.&nbsp; If<br>
+&nbsp;* enabled, the content of this file is published under the terms of GNU <br>
+&nbsp;* General Public License Version 2.&nbsp; For a detailed list of the available<br>
+&nbsp;* GPL code, see $(opensipstack)/gnu/README file.

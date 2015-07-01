@@ -1,0 +1,6 @@
+licenses:
+    - hs-regexp
+    - proprietary
+    - x11-opengroup
+expected_failure: yes
+sort: true

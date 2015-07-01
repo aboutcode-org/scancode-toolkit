@@ -1,0 +1,14 @@
+key: npl-1.0
+short_name: NPL 1.0
+name: Netscape Public License 1.0
+category: Copyleft Limited
+owner: Mozilla
+homepage_url: http://www.mozilla.org/MPL/NPL-1.0.html
+spdx_license_key: NPL-1.0
+spdx_full_name: Netscape Public License v1.0
+spdx_url: http://spdx.org/licenses/NPL-1.0
+text_urls:
+    - http://www.mozilla.org/MPL/NPL-1.0.html
+other_urls:
+    - http://www.mozilla.org/NPL/
+    - http://www.mozilla.org/MPL/NPL/1.0/

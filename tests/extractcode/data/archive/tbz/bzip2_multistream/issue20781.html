@@ -1,0 +1,610 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>
+Issue 20781: BZ2File doesn't decompress some .bz2 files correctly - Python tracker
+
+</title>
+<link rel="shortcut icon" href="@@file/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="@@file/main.css" />
+<link rel="stylesheet" type="text/css" href="@@file/style.css" />
+<link rel="search" type="application/opensearchdescription+xml" href="@@file/osd.xml" title="Python bug tracker search" />
+<meta http-equiv="Content-Type"
+      content="text/html; charset=utf-8" />
+
+<script type="text/javascript">
+submitted = false;
+function submit_once() {
+    if (submitted) {
+        alert("Your request is being processed.\nPlease be patient.");
+        event.returnValue = 0;    // work-around for IE
+        return 0;
+    }
+    submitted = true;
+    return 1;
+}
+
+function help_window(helpurl, width, height) {
+    HelpWin = window.open('http://bugs.python.org/' + helpurl, 'RoundupHelpWindow', 'scrollbars=yes,resizable=yes,toolbar=no,height='+height+',width='+width);
+}
+</script>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.js"></script>
+<script type="text/javascript" src="@@file/issue.item.js"></script>
+<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/smoothness/jquery-ui.css" />
+
+
+</head>
+<body>
+  <!--  Logo  -->
+  <h1 id="logoheader">
+    <a accesskey="1" href="." id="logolink">
+       <img src="@@file/python-logo.gif" alt="homepage" border="0" id="logo" /></a>
+  </h1>
+
+<div id="utility-menu">
+<!-- Search Box -->
+<div id="searchbox">
+    <form name="searchform" method="get" action="issue" id="searchform">
+      <div id="search">
+       <input type="hidden" name="@columns"
+              value="id,activity,title,creator,assignee,status,type" />
+       <input type="hidden" name="@sort" value="-activity" />
+       <input type="hidden" name="@filter" value="status" />
+       <input type="hidden" name="@action" value="searchid" />
+       <input type="hidden" name="ignore" value="file:content" />
+       <input class="input-text" id="search-text"
+              name="@search_text" size="10" />
+       <input type="submit" id="submit" value="search" name="submit" class="input-button" />
+       <input type="radio" name="status"
+              id="status_notresolved" value="-1,1,3" />
+       <label for="status_notresolved">open</label>
+       <input type="radio" name="status" checked="checked"
+              id="status_all" value="-1,1,2,3" />
+       <label for="status_all">all</label>
+      </div>
+     </form>
+</div>
+</div>
+
+
+<div id="left-hand-navigation">
+<!--  Main Menu NEED LEVEL TWO HEADER AND FOOTER -->
+<div id="menu">
+  <ul class="level-one">
+    <li><a href="http://python.org/" title="Go to the Python homepage">Python Home</a></li>
+    <li><a href="http://python.org/about" title="About The Python Language">About</a></li>
+    <li><a href="http://python.org/news" title="">News</a></li>
+    <li><a href="http://python.org/doc" title="">Documentation</a></li>
+    <li><a href="http://python.org/download" title="">Download</a></li>
+    <li><a href="http://python.org/community" title="">Community</a></li>
+    <li><a href="http://python.org/psf" title="Python Software Foundation">Foundation</a></li>
+    <li><a href="http://docs.python.org/devguide/" title="Python Core Language Development">Core Development</a></li>
+    <li class="selected"><a href="." class="selected" title="Python Issue Tracker">Issue Tracker</a>
+      <ul class="level-two">
+        <li>
+          <strong>Issues</strong>
+          <ul class="level-three">
+            
+            <li><a href="issue?@template=search&amp;status=1">Search</a></li>
+            <li><a href="issue?@action=random">Random Issue</a></li>
+            <li>
+              <form method="post" action="#">
+                <input type="submit" class="form-small"
+                       value="Show issue:" />
+                <input class="form-small" size="4" type="text" name="@number" />
+                <input type="hidden" name="@type" value="issue" />
+                <input type="hidden" name="@action" value="show" />
+              </form>
+            </li>
+          </ul>
+        </li>
+
+
+        <li>
+          <strong>Summaries</strong>
+          <ul class="level-three">
+            
+
+            
+
+            
+
+            <li>
+              <a href="issue?status=1&amp;@sort=-activity&amp;@columns=id,activity,title,creator,status&amp;@dispname=Issues with patch&amp;@startwith=0&amp;@group=priority&amp;keywords=2&amp;@action=search&amp;@filter=&amp;@pagesize=50">Issues with patch</a>
+            </li>
+
+            <li>
+              <a href="issue?status=1&amp;@sort=-activity&amp;@columns=id,activity,title,creator,status&amp;@dispname=Easy issues&amp;@startwith=0&amp;@group=priority&amp;keywords=6&amp;@action=search&amp;@filter=&amp;@pagesize=50">Easy issues</a>
+            </li>
+
+            <li>
+              <a href="issue?@template=stats">Stats</a>
+            </li>
+
+          </ul>
+        </li>
+
+
+        <li>
+          <strong>User</strong>
+          <form method="post" action="issue20781">
+          <ul class="level-three">
+            <li>
+                Login&nbsp;(OpenID&nbsp;possible)<br />
+                <a style="display:inline;width:0;margin:0"
+                   href="issue20781?@action=openid_login&amp;provider=Google">
+                  <img hspace="0" vspace="0" width="16"
+                       height="16"
+                       src="https://www.google.com/favicon.ico"
+                       alt="Google" title="Google" /></a>
+                <a style="display:inline;width:0;margin:0"
+                   href="issue20781?@action=openid_login&amp;provider=Launchpad">
+                  <img hspace="0" vspace="0" width="16"
+                       height="16"
+                       src="https://launchpad.net/favicon.ico"
+                       alt="Launchpad" title="Launchpad" /></a>
+                <input size="10" name="openid_identifier" style="background:url(@@file/openid-16x16.gif)
+                  center left no-repeat;padding-left:16px" /><br />
+                <input size="10" type="password" name="__login_password" /><br />
+                <input type="hidden" name="@action" value="Login" />
+                <input type="checkbox" name="remember" id="remember" />
+                <label for="remember">Remember me?</label><br />
+                <input class="form-small" type="submit"
+                       value="Login" /><br />
+                <input type="hidden" name="__came_from"
+                       value="issue20781" />
+                <input type="hidden" name="@sort" value=""/>
+<input type="hidden" name="@group" value=""/>
+<input type="hidden" name="@pagesize" value="50"/>
+<input type="hidden" name="@startwith" value="0"/>
+            </li>
+            <li>
+                <a href="user?@template=register">Register</a>
+            </li>
+            <li><a href="user?@template=forgotten">Lost&nbsp;your&nbsp;login?</a></li>
+          </ul>
+          </form>
+        </li>
+
+        
+
+        
+
+        
+
+        <li>
+          <strong>Help</strong>
+          <ul class="level-three">
+            <li><a href="http://docs.python.org/devguide/triaging.html">
+                Tracker Documentation</a></li>
+            <li><a href="http://wiki.python.org/moin/TrackerDevelopment">
+                Tracker Development</a></li>
+            <li><a href="http://psf.upfronthosting.co.za/roundup/meta">
+                Report Tracker Problem</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
+  </ul>
+</div> <!-- menu -->
+</div> <!-- left-hand-navigation -->
+
+<div id="content-body">
+<div id="body-main">
+<div id="content">
+<div id="breadcrumb">
+ 
+ 
+ Issue20781
+ 
+</div>
+ 
+ 
+
+
+
+
+
+<div>
+
+<form method="post" name="itemSynopsis"
+      onsubmit="return submit_once()"
+      enctype="multipart/form-data" action="issue20781">
+
+<fieldset><legend>classification</legend>
+<table class="form">
+<tr>
+ <th class="required"><a href="http://docs.python.org/devguide/triaging.html#title" target="_blank">Title</a>:</th>
+ 
+ <td colspan="3">
+  <span>BZ2File doesn't decompress some .bz2 files correctly</span>
+  <input type="hidden" name="title"
+         value="BZ2File doesn't decompress some .bz2 files correctly">
+ </td>
+</tr>
+
+<tr>
+ <th class="required"><a href="http://docs.python.org/devguide/triaging.html#type" target="_blank">Type</a>:</th>
+ <td></td>
+ <th><a href="http://docs.python.org/devguide/triaging.html#stage" target="_blank">Stage</a>:</th>
+ <td>resolved</td>
+</tr>
+
+<tr>
+ <th><a href="http://docs.python.org/devguide/triaging.html#components" target="_blank">Components</a>:</th>
+ <td>IO</td>
+ <th><a href="http://docs.python.org/devguide/triaging.html#versions" target="_blank">Versions</a>:</th>
+ <td>Python 2.7</td>
+</tr>
+</table>
+</fieldset>
+
+<fieldset><legend>process</legend>
+<table class="form">
+<tr>
+  <th><a href="http://docs.python.org/devguide/triaging.html#status" target="_blank">Status</a>:</th>
+  <td>closed</td>
+  <th><a href="http://docs.python.org/devguide/triaging.html#resolution" target="_blank">Resolution</a>:</th>
+  <td>not a bug</td>
+</tr>
+
+<tr>
+ <th>
+    <a href="http://docs.python.org/devguide/triaging.html#dependencies"
+       target="_blank">Dependencies</a>:
+ </th>
+ <td>
+  
+  
+ </td>
+ <th><a href="http://docs.python.org/devguide/triaging.html#superseder" target="_blank">Superseder</a>:</th>
+ <td>
+  
+ 
+ </td>
+ </tr>
+ <tr>
+ <th>
+   <a href="http://docs.python.org/devguide/triaging.html#assigned-to"
+      target="_blank">Assigned To</a>:
+ </th>
+ 
+ <td>
+  
+ </td>
+ <th>
+   <a href="http://docs.python.org/devguide/triaging.html#nosy-list"
+      target="_blank">Nosy List</a><!--
+        <span tal:condition="context/nosy_count" tal:replace="python: ' (%d)' % context.nosy_count" /> -->:
+  
+ </th>
+ <td>
+     James.Dominy, nadeem.vawda, serhiy.storchaka
+     
+ </td>
+</tr>
+<tr>
+ <th>
+   <a href="http://docs.python.org/devguide/triaging.html#priority"
+      target="_blank">Priority</a>:
+ </th>
+ <td>normal</td>
+ <th>
+    <a href="http://docs.python.org/devguide/triaging.html#keywords"
+       target="_blank">Keywords</a>:
+ </th>
+ <td></td>
+
+
+</tr>
+
+
+
+
+
+
+
+</table>
+</fieldset>
+<table class="form">
+
+</table>
+</form>
+
+<p>Created on <strong>2014-02-26 11:59</strong> by <strong>James.Dominy</strong>, last changed <strong>2014-02-28 08:14</strong> by <strong>James.Dominy</strong>. This issue is now <strong style="color:#00F; background-color:inherit;">closed</strong>.</p>
+
+<table class="files">
+ <tr><th colspan="5" class="header">Files</th></tr>
+ <tr>
+  <th>File name</th>
+  <th>Uploaded</th>
+  <th>Description</th>
+  <th>Edit</th>
+ </tr>
+ <tr>
+  <td>
+   <a href="file34230/example-file.csv.bz2">example-file.csv.bz2</a>
+  </td>
+  <td>
+   <span>James.Dominy</span>,
+   <span>2014-02-26 11:59</span>
+  </td>
+  <td>Sample data file which causes bz2 to break</td>
+  <td>
+      
+      
+      
+  </td>
+ </tr>
+</table>
+
+
+
+
+
+<table class="messages">
+ <tr><th colspan="4" class="header">Messages (9)</th></tr>
+ 
+  <tr>
+    <th>
+     <a href="#msg212250" id="msg212250">msg212250</a> - <a
+    href="msg212250">(view)</a></th>
+   <th>Author: James Dominy (James.Dominy)</th>
+   <th>Date: 2014-02-26 11:59</th>
+  </tr>
+  <tr>
+   <td colspan="4" class="content">
+    
+    <pre>bz2.BZ2File does not decompress a file (see attached) correctly. This file can be decompressed and compressed via stadard unix tools (bzip2 and bunzip2) without change.
+
+Consider ...
+
+$ python
+Python 2.7.6 (default, Dec  7 2013, 22:49:16) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; import bz2
+&gt;&gt;&gt; import hashlib
+&gt;&gt;&gt; len(bz2.BZ2File("example-file.csv.bz2", "r", 0).read())
+900000
+&gt;&gt;&gt; hashlib.md5(bz2.BZ2File("example-file.csv.bz2", "r", 0).read()).hexdigest()
+'e2d4ce212a040c879cb256f88c9faab9'
+&gt;&gt;&gt; len(bz2.BZ2File("example-file.csv.bz2", "rb", 0).read())
+900000
+&gt;&gt;&gt; hashlib.md5(bz2.BZ2File("example-file.csv.bz2", "rb", 0).read()).hexdigest()
+'e2d4ce212a040c879cb256f88c9faab9'
+&gt;&gt;&gt; 
+
+It looks like bz2 is not dealing with the second block. This is not the first file I've come across that has this problem, and initially I thought it was the file not the module. I've attached a copy of the file.
+
+I use gentoo on a 64bit intel core i5.</pre>
+   </td>
+  </tr>
+ 
+ 
+  <tr>
+    <th>
+     <a href="#msg212251" id="msg212251">msg212251</a> - <a
+    href="msg212251">(view)</a></th>
+   <th>Author: James Dominy (James.Dominy)</th>
+   <th>Date: 2014-02-26 12:02</th>
+  </tr>
+  <tr>
+   <td colspan="4" class="content">
+    
+    <pre>Whoops, forget to add the output from the standard binutils
+
+$ bzcat example-file.csv.bz2 | wc -c
+909602
+$ bzcat example-file.csv.bz2 | md5sum
+48f4b69b2b8bb0b171ebc36313eb6616  -
+
+As you can see file sizes and hashes do not match</pre>
+   </td>
+  </tr>
+ 
+ 
+  <tr>
+    <th>
+     <a href="#msg212299" id="msg212299">msg212299</a> - <a
+    href="msg212299">(view)</a></th>
+   <th>Author: Serhiy Storchaka (serhiy.storchaka) <span title="Contributor form received">*</span> <img src="@@file/committer.png" title="Python committer" alt="(Python committer)" /></th>
+   <th>Date: 2014-02-26 20:25</th>
+  </tr>
+  <tr>
+   <td colspan="4" class="content">
+    
+    <pre>All works on 3.4, but on 3.3 and 2.7 it looks hanged.</pre>
+   </td>
+  </tr>
+ 
+ 
+  <tr>
+    <th>
+     <a href="#msg212301" id="msg212301">msg212301</a> - <a
+    href="msg212301">(view)</a></th>
+   <th>Author: Serhiy Storchaka (serhiy.storchaka) <span title="Contributor form received">*</span> <img src="@@file/committer.png" title="Python committer" alt="(Python committer)" /></th>
+   <th>Date: 2014-02-26 20:48</th>
+  </tr>
+  <tr>
+   <td colspan="4" class="content">
+    
+    <pre>Oh, no, I just not pressed &lt;Enter&gt; after copying long testing command line. ;)
+
+All works on 3.3 too, but on 2.7 I got incomplete result.
+
+$ ./python -c 'import bz2, hashlib; d = bz2.BZ2File("../example-file.csv.bz2").read(); print len(d), hashlib.md5(d).hexdigest()'
+900000 e2d4ce212a040c879cb256f88c9faab9</pre>
+   </td>
+  </tr>
+ 
+ 
+  <tr>
+    <th>
+     <a href="#msg212306" id="msg212306">msg212306</a> - <a
+    href="msg212306">(view)</a></th>
+   <th>Author: Serhiy Storchaka (serhiy.storchaka) <span title="Contributor form received">*</span> <img src="@@file/committer.png" title="Python committer" alt="(Python committer)" /></th>
+   <th>Date: 2014-02-26 20:58</th>
+  </tr>
+  <tr>
+   <td colspan="4" class="content">
+    
+    <pre>Actually this file is composed of two bzip2 streams. Python 2.7 doesn't support decompressing of multi-stream inputs, this feature was added in 3.3. So this is not a bug.</pre>
+   </td>
+  </tr>
+ 
+ 
+  <tr>
+    <th>
+     <a href="#msg212307" id="msg212307">msg212307</a> - <a
+    href="msg212307">(view)</a></th>
+   <th>Author: Nadeem Vawda (nadeem.vawda) <span title="Contributor form received">*</span> <img src="@@file/committer.png" title="Python committer" alt="(Python committer)" /></th>
+   <th>Date: 2014-02-26 21:17</th>
+  </tr>
+  <tr>
+   <td colspan="4" class="content">
+    
+    <pre>As Serhiy said, multi-stream support was only added to the bz2 module in 3.3,
+and there is no plan to backport functionality this to 2.7.
+
+However, the bz2file package on PyPI [1] does support multi-stream inputs,
+and you can use its BZ2File class as a drop-in replacement for the built-in
+one on 2.7.
+
+[1] <a href="https://pypi.python.org/pypi/bz2file">https://pypi.python.org/pypi/bz2file</a></pre>
+   </td>
+  </tr>
+ 
+ 
+  <tr>
+    <th>
+     <a href="#msg212339" id="msg212339">msg212339</a> - <a
+    href="msg212339">(view)</a></th>
+   <th>Author: James Dominy (James.Dominy)</th>
+   <th>Date: 2014-02-27 08:22</th>
+  </tr>
+  <tr>
+   <td colspan="4" class="content">
+    
+    <pre>How does one create a multi-stream bzip2 file in the first place? And how do I tell it's multi-stream.</pre>
+   </td>
+  </tr>
+ 
+ 
+  <tr>
+    <th>
+     <a href="#msg212342" id="msg212342">msg212342</a> - <a
+    href="msg212342">(view)</a></th>
+   <th>Author: Nadeem Vawda (nadeem.vawda) <span title="Contributor form received">*</span> <img src="@@file/committer.png" title="Python committer" alt="(Python committer)" /></th>
+   <th>Date: 2014-02-27 09:24</th>
+  </tr>
+  <tr>
+   <td colspan="4" class="content">
+    
+    <pre>&gt; How does one create a multi-stream bzip2 file in the first place?
+
+If you didn't do so deliberately, I would guess that you used a parallel
+compression tool like pbzip2 or lbzip2 to create your bz2 file. These tools work
+by splitting the input into chunks, compressing each chunk as a separate stream,
+and then concatenating these streams afterward.
+
+Another possibility is that you just concatenated two existing bz2 files, e.g.:
+
+    $ cat first.bz2 second.bz2 &gt;multi.bz2
+
+
+&gt; And how do I tell it's multi-stream.
+
+I don't know of any pre-existing tools to do this, but you can write a script
+for it yourself, by feeding the file's data through a BZ2Decompressor. When the
+decompress() method raises EOFError, you're at the end of the first stream. If
+the decompressor's unused_data attribute is non-empty, or there is data that has
+not yet been read from the input file, then it is either (a) a multi-stream bz2
+file or (b) a bz2 file with other metadata tacked on to the end.
+
+To distinguish between cases (a) and (b), take unused_data + rest_of_input_file
+and feed it into a new BZ2Decompressor. If don't get an IOError, then you've got
+a multi-stream bz2 file.
+
+(If you *do* get an IOError, then that's case (b) - someone's appended non-bz2
+ data to the end of a bz2 file. For example, Gentoo and Sabayon Linux packages
+ are bz2 files with package metadata appended, according to <a class="closed" title="[closed] bz2: regression wrt supporting files with trailing garbage after EOF" href="issue19839">issue 19839</a>.)</pre>
+   </td>
+  </tr>
+ 
+ 
+  <tr>
+    <th>
+     <a href="#msg212413" id="msg212413">msg212413</a> - <a
+    href="msg212413">(view)</a></th>
+   <th>Author: James Dominy (James.Dominy)</th>
+   <th>Date: 2014-02-28 08:14</th>
+  </tr>
+  <tr>
+   <td colspan="4" class="content">
+    
+    <pre>Ah, I did some digging. It turns out pbzip2 is installed on the system in question, and more annoyingly, /usr/bin/bzip2 is a symlink to pbzip2. I didn't realise the file was compressed by pbzip2.
+
+Thanks for the help.</pre>
+   </td>
+  </tr>
+ 
+</table>
+
+<table class="history table table-condensed table-striped"><tr><th colspan="4" class="header">
+History
+</th></tr><tr>
+<th>Date</th>
+<th>User</th>
+<th>Action</th>
+<th>Args</th>
+</tr>
+<tr><td>2014-02-28&nbsp;08:14:37</td><td>James.Dominy</td><td>set</td><td>messages:
+  + <a rel="nofollow" href="msg212413">msg212413</a></td></tr>
+<tr><td>2014-02-27&nbsp;09:24:06</td><td>nadeem.vawda</td><td>set</td><td>messages:
+  + <a rel="nofollow" href="msg212342">msg212342</a></td></tr>
+<tr><td>2014-02-27&nbsp;08:22:18</td><td>James.Dominy</td><td>set</td><td>messages:
+  + <a rel="nofollow" href="msg212339">msg212339</a></td></tr>
+<tr><td>2014-02-26&nbsp;21:17:02</td><td>nadeem.vawda</td><td>set</td><td>messages:
+  + <a rel="nofollow" href="msg212307">msg212307</a></td></tr>
+<tr><td>2014-02-26&nbsp;20:58:18</td><td>serhiy.storchaka</td><td>set</td><td>status: open -> closed<br />resolution: not a bug<br />messages:
+  + <a rel="nofollow" href="msg212306">msg212306</a><br /><br />stage: resolved</td></tr>
+<tr><td>2014-02-26&nbsp;20:48:08</td><td>serhiy.storchaka</td><td>set</td><td>messages:
+  + <a rel="nofollow" href="msg212301">msg212301</a></td></tr>
+<tr><td>2014-02-26&nbsp;20:25:18</td><td>serhiy.storchaka</td><td>set</td><td>messages:
+  + <a rel="nofollow" href="msg212299">msg212299</a></td></tr>
+<tr><td>2014-02-26&nbsp;20:07:05</td><td>serhiy.storchaka</td><td>set</td><td>nosy:
+  + <a rel="nofollow" href="user4348">nadeem.vawda</a>, <a rel="nofollow" href="user15623">serhiy.storchaka</a><br /></td></tr>
+<tr><td>2014-02-26&nbsp;12:02:13</td><td>James.Dominy</td><td>set</td><td>messages:
+  + <a rel="nofollow" href="msg212251">msg212251</a></td></tr>
+<tr><td>2014-02-26&nbsp;11:59:44</td><td>James.Dominy</td><td>set</td><td>title: BZ2File does decompress some .bz2 files correctly -> BZ2File doesn't decompress some .bz2 files correctly</td></tr>
+<tr><td>2014-02-26&nbsp;11:59:20</td><td>James.Dominy</td><td>create</td><td></td></tr>
+</table>
+
+</div>
+
+
+</div> <!-- content-body -->
+<div id="footer">
+<div id="credits">
+<a href="http://www.python.org/about/website">Website maintained by the Python community</a><br />
+
+<a href="http://www.upfrontsystems.co.za/" title="issue tracker hosting provided by Upfront Systems, South Africa">hosting by Upfront Systems</a> /
+  <a href="http://roundup.sf.net" title="Powered by the Roundup Issue Tracker">powered by Roundup</a>
+</div> <!-- credits -->
+Copyright &copy; 1990-2013, <a href="http://python.org/psf">Python Software Foundation</a><br />
+<a href="http://python.org/about/legal">Legal Statements</a>
+</div> <!-- footer -->
+</div> <!-- body-main -->
+</div> <!-- content -->
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+Index: src/3rdParty/webkit/work/WebCore/dom/Document.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/dom/Document.cpp
++++ src/3rdParty/webkit/work/WebCore/dom/Document.cpp
+@@ -77,6 +77,7 @@
+ #include "MouseEventWithHitTestResults.h"
+ #include "MutationEvent.h"
+ #include "NameNodeList.h"
++#include "NetworkCache.h"
+ #include "NodeFilter.h"
+ #include "NodeIterator.h"
+ #include "OverflowEvent.h"
+@@ -1876,6 +1877,9 @@ void Document::processHttpEquiv(const St
+         // FIXME: make setCookie work on XML documents too; e.g. in case of <html:meta .....>
+         if (isHTMLDocument())
+             static_cast<HTMLDocument*>(this)->setCookie(content);
++    } else if (equalIgnoringCase(equiv, "expires")) {
++		CachedResponse *cacheEntry = networkcache()->getEntry(url());
++		cacheEntry->setExpirationDate(content);
+     } else if (equalIgnoringCase(equiv, "content-language"))
+         setContentLanguage(content);
+ }
+Index: src/3rdParty/webkit/work/WebCore/loader/DocLoader.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/loader/DocLoader.cpp
++++ src/3rdParty/webkit/work/WebCore/loader/DocLoader.cpp
+@@ -153,7 +153,7 @@ CachedResource* DocLoader::requestResour
+     }
+                                                           
+     if (m_frame && m_frame->loader()->isReloading())
+-        setCachePolicy(CachePolicyReload);
++        setCachePolicy(CachePolicyVerify);
+ 
+     checkForReload(fullURL);
+ 

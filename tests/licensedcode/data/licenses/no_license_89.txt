@@ -1,0 +1,1 @@
+# NOTE: We must use c++ and not g++ to avoid GPL contamination

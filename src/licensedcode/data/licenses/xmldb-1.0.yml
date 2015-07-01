@@ -1,0 +1,11 @@
+key: xmldb-1.0
+short_name: XML:DB Initiative Software License 1.0
+name: XML:DB Initiative Software License 1.0
+category: Attribution
+owner: XMLDB
+homepage_url: http://xmldb-org.sourceforge.net/index.html
+text_urls:
+    - http://xmldb-org.sourceforge.net/legal.html
+faq_url: http://xmldb-org.sourceforge.net/faqs.html
+other_urls:
+    - http://www.xmldb.org/

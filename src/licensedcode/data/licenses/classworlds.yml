@@ -1,0 +1,14 @@
+key: classworlds
+short_name: Classworlds License
+name: Classworlds License
+category: Attribution
+owner: Codehaus
+homepage_url: http://classworlds.codehaus.org/license.html
+spdx_license_key: Plexus
+spdx_full_name: Plexus Classworlds License
+spdx_url: http://spdx.org/licenses/Plexus
+spdx_notes: >-
+    Per Fedora: "This is an Apache 1.1 derived license. Unfortunately, clause 4 is
+    too broad, making it Free but GPL-incompatible."
+text_urls:
+    - https://fedoraproject.org/wiki/Licensing/Plexus_Classworlds_License

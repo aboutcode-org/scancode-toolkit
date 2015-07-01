@@ -1,0 +1,15 @@
+key: qpl-1.0
+short_name: QPL 1.0
+name: Q Public License Version 1.0
+category: Copyleft Limited
+owner: Trolltech
+homepage_url: http://doc.trolltech.com/4.0/qpl.html
+spdx_license_key: QPL-1.0
+spdx_full_name: Q Public License 1.0
+spdx_url: http://spdx.org/licenses/QPL-1.0
+spdx_notes: This license is OSI certified.
+text_urls:
+    - http://doc.trolltech.com/4.0/qpl.html
+other_urls:
+    - http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses
+    - http://doc.qt.nokia.com/3.3/license.html

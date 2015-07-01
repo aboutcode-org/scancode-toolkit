@@ -1,0 +1,46 @@
+Index: src/3rdParty/webkit/work/WebCore/loader/FrameLoader.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/loader/FrameLoader.cpp
++++ src/3rdParty/webkit/work/WebCore/loader/FrameLoader.cpp
+@@ -2104,6 +2104,14 @@ void FrameLoader::load(DocumentLoader* n
+     addExtraFieldsToRequest(r, true, false);
+     FrameLoadType type;
+ 
++    String origUrl = newDocumentLoader->originalURL().string();
++    if (origUrl.contains("?com.motorola.dlna=true"))
++    {
++        origUrl.truncate(origUrl.find("?com.motorola.dlna=true"));
++        r.setURL(KURL(origUrl.latin1().data()));
++        r.addHTTPHeaderField("transfermode.dlna.org", "Interactive");
++    }
++    
+     if (shouldTreatURLAsSameAsCurrent(newDocumentLoader->originalRequest().url())) {
+         r.setCachePolicy(ReloadIgnoringCacheData);
+         type = FrameLoadTypeSame;
+Index: src/3rdParty/webkit/work/WebCore/loader/loader.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/loader/loader.cpp
++++ src/3rdParty/webkit/work/WebCore/loader/loader.cpp
+@@ -24,6 +24,7 @@
+ #include "config.h"
+ #include "loader.h"
+ 
++#include "CString.h"
+ #include "Cache.h"
+ #include "CachedImage.h"
+ #include "CachedResource.h"
+@@ -70,6 +71,14 @@ void Loader::servePendingRequests()
+ 
+         ResourceRequest request(req->cachedResource()->url());
+ 
++        String origUrl = req->cachedResource()->url();
++        if (origUrl.contains("?com.motorola.dlna=true"))
++        {
++            origUrl.truncate(origUrl.find("?com.motorola.dlna=true"));
++            request.setURL(KURL(origUrl.latin1().data()));
++            request.addHTTPHeaderField("transfermode.dlna.org", "Interactive");
++        }
++        
+         if (!req->cachedResource()->accept().isEmpty())
+             request.setHTTPAccept(req->cachedResource()->accept());
+ 

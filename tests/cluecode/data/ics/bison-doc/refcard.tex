@@ -1,0 +1,48 @@
+\def\finalout{\overfullrule=0pt}
+%\finalout
+
+% Copyright (c) 1998, 2001  Free Software Foundation, Inc.
+%
+% This file is part of Bison.
+\def\year{2001}                            % year
+\def\version{\month\ \year, Bison Refcard Version \refcardversion}
+
+% for copyright notices
+\def\small{\smallfont\textfont2=\smallsy\baselineskip=.8\baselineskip}
+\def\medium{\mediumfont\textfont2=\mediumsy\baselineskip=.8\baselineskip}
+
+\def\copyrightnotice{
+\vskip .15ex plus .25 fill
+\begingroup\medium
+\centerline{Copyright \copyright\ \year\ Free Software Foundation, Inc.}
+\vskip .2\baselineskip
+\centerline{\version}
+\centerline{for Bison \bisonversion}
+
+Permission is granted to make and distribute copies of this card
+provided the copyright notice and this permission notice
+are preserved on all copies.
+\vskip .2\baselineskip
+\centerline{Boston, MA 02110-1301 USA}
+\endgroup}
+
+%%%% smallcopyrightnotice for two column printing on one page.
+\def\smallcopyrightnotice{
+\vskip .15ex plus .25 fill
+\begingroup\small
+\centerline{Copyright \copyright\ \year\ Free Software Foundation, Inc.}
+\vskip .2\baselineskip
+\centerline{\version}
+\centerline{for Bison \bisonversion}
+
+Permission is granted to make and distribute copies of this card
+provided the copyright notice and this permission notice
+are preserved on all copies.
+\vskip .2\baselineskip
+
+\vskip \baselineskip
+\if 1\ncolumns
+\copyrightnotice
+\else
+\smallcopyrightnotice
+\fi

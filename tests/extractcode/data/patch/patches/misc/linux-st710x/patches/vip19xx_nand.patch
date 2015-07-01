@@ -1,0 +1,366 @@
+Index: linux-2.6.23/drivers/mtd/nand/Kconfig
+===================================================================
+--- linux-2.6.23.orig/drivers/mtd/nand/Kconfig
++++ linux-2.6.23/drivers/mtd/nand/Kconfig
+@@ -264,6 +264,11 @@ config MTD_NAND_CM_X270
+ 	tristate "Support for NAND Flash on CM-X270 modules"
+ 	depends on MTD_NAND && MACH_ARMCORE
+ 
++config MTD_NAND_VIP19XX
++       tristate "Support for NAND flash device on Motorola VIP19xx boards"
++       depends on SH_MOTOROLA_VIP19XX && MTD_NAND
++       help
++         Driver for the NAND flash on Motorola VIP19xx boards.
+ 
+ config MTD_NAND_NANDSIM
+ 	tristate "Support for NAND Flash Simulator"
+Index: linux-2.6.23/drivers/mtd/nand/Makefile
+===================================================================
+--- linux-2.6.23.orig/drivers/mtd/nand/Makefile
++++ linux-2.6.23/drivers/mtd/nand/Makefile
+@@ -27,6 +27,7 @@ obj-$(CONFIG_MTD_NAND_AT91)		+= at91_nan
+ obj-$(CONFIG_MTD_NAND_CM_X270)		+= cmx270_nand.o
+ obj-$(CONFIG_MTD_NAND_BASLER_EXCITE)	+= excite_nandflash.o
+ obj-$(CONFIG_MTD_NAND_PLATFORM)		+= plat_nand.o
++obj-$(CONFIG_MTD_NAND_VIP19XX)		+= vip19xx_nand.o
+ obj-$(CONFIG_MTD_NAND_STM_EMI)		+= stm_nand_emi.o
+ obj-$(CONFIG_MTD_NAND_STM_FLEX)		+= stm_nand_flex.o stm_nand_ecc.o
+ 
+Index: linux-2.6.23/drivers/mtd/nand/vip19xx_nand.c
+===================================================================
+--- /dev/null
++++ linux-2.6.23/drivers/mtd/nand/vip19xx_nand.c
+@@ -0,0 +1,333 @@
++/*
++ *---------------------------------------------------------------------------
++ *
++ * vip19xx_nand.c
++ *
++ * Copyright (c) 2008-2011 Motorola, Inc.
++ * All rights reserved.
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions
++ * are met:
++ * 1. Redistributions of source code must retain the above copyright
++ * notice, this list of conditions and the following disclaimer.
++ * 2. Redistributions in binary form must reproduce the above copyright
++ * notice, this list of conditions and the following disclaimer in the
++ * documentation and/or other materials provided with the distribution.
++ * 3. The name of the author may not be used to endorse or promote products
++ * derived from this software without specific prior written permission.
++ *
++ * Alternatively, this software may be distributed under the terms of the
++ * GNU General Public License ("GPL") version 2 as published by the Free
++ * Software Foundation.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
++ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
++ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
++ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
++ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
++ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
++ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
++ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
++ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++ *
++ *---------------------------------------------------------------------------
++ */
++
++#include <linux/kernel.h>
++#include <linux/init.h>
++#include <linux/slab.h>
++#include <linux/module.h>
++#include <linux/mtd/mtd.h>
++#include <linux/mtd/nand.h>
++#include <linux/mtd/partitions.h>
++#include <asm/io.h>
++#include <asm/vip19xx.h>
++
++#include <linux/stm/pio.h>
++
++#define NAME "vip19xx_nand"
++
++static struct mtd_info *nand_mtd = NULL;
++static int nand_cs = 0;
++
++/* PIO structs */
++static struct stpio_pin *nand_cle = NULL;
++static struct stpio_pin *nand_ale = NULL;
++static struct stpio_pin *nand_rbusy = NULL;
++
++static int nand_port = 2;
++static int cle_pin = 2;
++static int ale_pin = 3;
++static int rbusy_pin = 5;
++
++DECLARE_WAIT_QUEUE_HEAD(rbusy_wait);
++
++/*
++ * Define partitions for flash device
++ */
++static struct mtd_partition partition_info[] = {
++	{
++		.name	= "VIP19xx NANDflash partition",
++		.offset	= 0,
++		.size	= 32 * 1024 * 1024
++	}
++};
++
++static inline u16 WriteConversion(uint8_t data)
++{
++	return 
++		((data & 0x01)<<9) | // bit 0
++		((data & 0x02)<<1) | // bit 1
++		((data & 0x14)<<8) | // bit 2, 4
++		 (data & 0x28)     | // bit 3, 5
++		((data & 0x40)<<7) | // bit 6
++		((data & 0x80)>>1);
++}
++
++static inline uint8_t ReadConversion(u16 data)
++{
++	return
++		((data & 0x0200)>>9) | // bit 0
++		((data & 0x0004)>>1) | // bit 1
++		((data & 0x1400)>>8) | // bit 2, 4
++		 (data & 0x0028)     | // bit 3, 5
++		((data & 0x2000)>>7) | // bit 6
++		((data & 0x0040)<<1);
++}
++
++static uint8_t read_byte(struct mtd_info *mtd)
++{
++	struct nand_chip *this = mtd->priv;
++	return ReadConversion(cpu_to_le16(readw(this->IO_ADDR_R)));
++}
++
++/**
++ * Write data from the buffer to the chip
++ */
++static void write_buf(struct mtd_info *mtd, const uint8_t *buf, int len)
++{
++	int i;
++	struct nand_chip *this = mtd->priv;
++	
++	for (i = 0; i < len; i++) {
++		writew(WriteConversion(buf[i]), this->IO_ADDR_W);
++	}
++}
++
++/**
++ * Read data from the chip into the buffer
++ */
++static void read_buf(struct mtd_info *mtd, uint8_t *buf, int len)
++{
++	int i;
++	struct nand_chip *this = mtd->priv;
++
++	for (i = 0; i < len; i++) {
++		buf[i] = ReadConversion(readw(this->IO_ADDR_R));
++	}
++}
++
++/**
++ * Verify buffer contents against the chip data
++ */
++static int verify_buf(struct mtd_info *mtd, const uint8_t *buf, int len)
++{
++	int i;
++	struct nand_chip *this = mtd->priv;
++
++	for (i = 0; i < len; i++) {
++		if (buf[i] != ReadConversion(readw(this->IO_ADDR_R))) {
++			return -EFAULT;
++		}
++	}
++
++	return 0;
++}
++
++/* 
++ * Hardwarespecific funtion for controlling ALE/CLE/nCE. Also used to write
++ * command and address.
++ */
++static void cmd_ctrl(struct mtd_info *mtd, int dat, unsigned int ctrl)
++{
++	struct nand_chip *this = mtd->priv;
++
++	if (ctrl & NAND_CTRL_CHANGE) {
++		int value;
++
++		value = (ctrl & NAND_NCE) ? 1 : 0;
++		if (value != nand_cs) {
++			if (value) {
++				VIP19XX_EMI_ENABLE_CS(this->priv,
++						      VIP19XX_NAND_FLASH_EMI_BANK);
++			}
++			else {
++				VIP19XX_EMI_DISABLE_CS(this->priv,
++						       VIP19XX_NAND_FLASH_EMI_BANK);
++			}
++			nand_cs = value;
++		}
++
++		value = (ctrl & NAND_CLE) ? 1 : 0;
++		stpio_set_pin(nand_cle, value);
++
++		value = (ctrl & NAND_ALE) ? 1 : 0;
++		stpio_set_pin(nand_ale, value);
++	}
++
++	if (dat != NAND_CMD_NONE) {
++		uint8_t tmp = dat;
++		this->write_buf(mtd, &tmp, 1);
++	}
++}
++
++/* 
++ * Hardware specific wait function for wait on ready.
++ */
++static int waitfunc(struct mtd_info *mtd, struct nand_chip *this)
++{
++	this->cmdfunc(mtd, NAND_CMD_STATUS, -1, -1);
++
++	/*
++	 * Chip busy, wait for ready
++	 * Using stpio with IRQ doesn't seem to work correctly. We get stuck
++	 * after Schedule() is called (see wait_event_interrupible in
++	 * linux/wait.h). Using busy-wait for now.
++	 */
++	while (stpio_get_pin(nand_rbusy) != 1);
++
++	return (int)this->read_byte(mtd);
++}
++
++/* Returns 0 if the nand is busy, 1 if it is ready */
++static int dev_ready(struct mtd_info *mtd)
++{
++        return stpio_get_pin(nand_rbusy);
++}
++
++static int __init init(void)
++{
++	struct nand_chip *this;
++	int err = 0;
++
++	/* Request PIO pins */
++	nand_cle = stpio_request_pin(nand_port, 
++				     cle_pin, "NAND IO", STPIO_OUT);
++	nand_ale = stpio_request_pin(nand_port, 
++				     ale_pin, "NAND IO", STPIO_OUT);
++	nand_rbusy = stpio_request_pin(nand_port, 
++				       rbusy_pin, "NAND IO", STPIO_IN);
++
++	if (nand_cle == NULL || nand_ale == NULL || nand_rbusy == NULL) {
++		printk(KERN_ERR NAME ": failed to allocate PIO pins\n");
++		err = -EIO;
++		goto out;
++	}
++
++	/* Allocate memory for MTD device structure and private data */
++	nand_mtd = kmalloc(sizeof(struct mtd_info) + sizeof (struct nand_chip),
++			   GFP_KERNEL);
++	if (!nand_mtd) {
++		printk(KERN_ERR NAME ": unable to allocate VIP19xx NAND MTD "
++		       "device structure\n");
++		err = -ENOMEM;
++		goto out_pio;
++	}
++
++	/* Get pointer to private data */
++	this = (struct nand_chip *)(&nand_mtd[1]);
++
++	/* Initialize structures */
++	memset(nand_mtd, 0, sizeof(struct mtd_info));
++	memset(this, 0, sizeof(struct nand_chip));
++
++	nand_mtd->owner = THIS_MODULE;
++
++	/* Link the private data with the MTD structure */
++	nand_mtd->priv = this;
++	
++	/* Set address of NAND IO lines */
++	this->IO_ADDR_R = ioremap_nocache(VIP19XX_NAND_FLASH_BASE,
++					  VIP19XX_NAND_FLASH_SIZE);
++	this->IO_ADDR_W = this->IO_ADDR_R;
++
++	/* Set address of hardware control function */
++	this->cmd_ctrl = cmd_ctrl;
++	/* 15 us command delay time */
++	this->chip_delay = 15;		
++	/* Software ECC */
++	this->ecc.mode = NAND_ECC_SOFT;		
++	
++	this->waitfunc = waitfunc;
++	this->dev_ready = dev_ready;
++
++	// Map the EMI config memory
++	this->priv = ioremap_nocache(VIP19XX_EMI_CONFIG_BASE, VIP19XX_EMI_CONFIG_SIZE);
++
++	/* Scan to find existence of the device */
++	if (nand_scan(nand_mtd, 1)) {
++		/* Early 19xx boards had another NAND flash with different pin
++		 * layout. The code below is only used for that old flash. */
++
++		/* Setup the EMIbus in 16 bit mode */
++		unsigned long size;
++		size = readl(VIP19XX_EMI_CFG_DATA0(this->priv, VIP19XX_NAND_FLASH_EMI_BANK));
++		size &= ~VIP19XX_EMI_CFG_PORTSIZE_MASK;
++		size |= VIP19XX_EMI_CFG_PORTSIZE_16;
++		writel(size, VIP19XX_EMI_CFG_DATA0(this->priv, VIP19XX_NAND_FLASH_EMI_BANK));
++
++		this->read_byte = read_byte;
++		this->write_buf = write_buf;
++		this->read_buf = read_buf;
++		this->verify_buf = verify_buf;
++
++		if (nand_scan(nand_mtd, 1)) {
++			err = -ENXIO;
++			goto out_mtd;
++		}
++	}
++
++	/* Register the partitions */
++	partition_info[0].size = nand_mtd->size;
++	add_mtd_partitions(nand_mtd, partition_info,
++			   ARRAY_SIZE(partition_info));
++
++	goto out;
++
++out_mtd:
++	iounmap(this->priv);
++	kfree(nand_mtd);
++out_pio:
++	stpio_free_pin(nand_cle);
++	stpio_free_pin(nand_ale);
++	stpio_free_pin(nand_rbusy);	
++out:
++	return err;
++}
++module_init(init);
++
++/* Clean up routine */
++static void __exit cleanup(void)
++{
++	struct nand_chip *this = nand_mtd->priv;
++
++	stpio_free_pin(nand_cle);
++	stpio_free_pin(nand_ale);
++	stpio_free_pin(nand_rbusy);
++
++	iounmap(this->IO_ADDR_R);
++	iounmap(this->priv);
++
++	/* Release resources, unregister device */
++	nand_release(nand_mtd);
++
++	/* Free the MTD device structure */
++	kfree(nand_mtd);
++}
++module_exit(cleanup);
++
++MODULE_LICENSE("GPL");
++MODULE_AUTHOR("Erik Johansson <erik.johansson@motorola.com>");
++MODULE_DESCRIPTION("Motorola VIP19xx STB NAND flash driver");

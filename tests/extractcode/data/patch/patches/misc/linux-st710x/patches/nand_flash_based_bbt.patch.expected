@@ -1,0 +1,3 @@
+[('linux-2.6.23/drivers/mtd/nand/stm_nand_flex.c',
+  'nand_bbt_fix/stm_nand_flex.c',
+  '--- linux-2.6.23/drivers/mtd/nand/stm_nand_flex.c\n+++ nand_bbt_fix/stm_nand_flex.c\n@@ -883,10 +883,9 @@\ndata->chip.options |= NAND_NO_SUBPAGE_WRITE; /* Not tested, disable */\ndata->chip.options |= NAND_NO_AUTOINCR;      /* Not tested, disable */\n\n-#ifdef CONFIG_STM_NAND_FLEX_BOOTMODESUPPORT\n-\t/* Force use of BBT when BOOTMODESUPPORT enabled */\n+\t/* We use Flash based BBT to save boot time */\ndata->chip.options |= NAND_USE_FLASH_BBT;\n-#endif\n+\n/* Callbacks for FLEX mode operation */\ndata->chip.cmd_ctrl = flex_cmd_ctrl;\ndata->chip.select_chip = flex_select_chip;')]

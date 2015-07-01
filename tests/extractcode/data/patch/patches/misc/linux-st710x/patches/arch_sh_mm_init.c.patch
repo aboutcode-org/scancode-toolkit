@@ -1,0 +1,29 @@
+--- linux-2.6.23-orig/arch/sh/mm/init.c	2009-05-18 13:59:28.000000000 +0200
++++ linux-2.6.23/arch/sh/mm/init.c	2009-05-19 13:03:27.000000000 +0200
+@@ -206,7 +206,7 @@
+ 		if (max_zone_pfns[ZONE_NORMAL] < low)
+ 			max_zone_pfns[ZONE_NORMAL] = low;
+ 
+-		printk("Node %u: start_pfn = 0x%lx, low = 0x%lx\n",
++		printk(KERN_DEBUG "Node %u: start_pfn = 0x%lx, low = 0x%lx\n",
+ 		       nid, start_pfn, low);
+ 	}
+ 
+@@ -293,7 +293,7 @@
+ 		free_page(addr);
+ 		totalram_pages++;
+ 	}
+-	printk("Freeing unused kernel memory: %ldk freed\n",
++	printk(KERN_INFO "Freeing unused kernel memory: %ldk freed\n",
+ 	       ((unsigned long)&__init_end -
+ 	        (unsigned long)&__init_begin) >> 10);
+ }
+@@ -308,7 +308,7 @@
+ 		free_page(p);
+ 		totalram_pages++;
+ 	}
+-	printk("Freeing initrd memory: %ldk freed\n", (end - start) >> 10);
++	printk(KERN_INFO "Freeing initrd memory: %ldk freed\n", (end - start) >> 10);
+ }
+ #endif
+ 

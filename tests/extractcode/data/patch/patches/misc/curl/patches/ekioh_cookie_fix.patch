@@ -1,0 +1,22 @@
+Index: curl-7.19.5/lib/http.c
+===================================================================
+--- curl-7.19.5.orig/lib/http.c
++++ curl-7.19.5/lib/http.c
+@@ -2537,11 +2537,15 @@ CURLcode Curl_http(struct connectdata *c
+             if(result)
+               break;
+           }
+-          result = add_bufferf(req_buffer,
++          //As Ekioh will manage the cookies itself, disable lib curl's from adding
++          //cookies in the HTTP request. Otherwise duplicate cookies will be present
++          //in the HTTP request and possibly with wrong values as the Javascript may
++          //have changed the cookie values.
++          /*result = add_bufferf(req_buffer,
+                                "%s%s=%s", count?"; ":"",
+                                co->name, co->value);
+           if(result)
+-            break;
++            break;*/
+           count++;
+         }
+         co = co->next; /* next cookie please */

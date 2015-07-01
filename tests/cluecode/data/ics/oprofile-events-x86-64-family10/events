@@ -1,0 +1,6 @@
+# AMD Family 10 processor performance events
+#
+# Copyright OProfile authors
+# Copyright (c) 2006-2008 Advanced Micro Devices
+# Contributed by Ray Bryant <raybry at amd.com>,
+#		Jason Yeh <jason.yeh at amd.com>

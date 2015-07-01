@@ -1,0 +1,6 @@
+licenses:
+    - openssh
+template: yes
+notes: >
+    Open SSH with variable UC Regents parts 
+    from http://www.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/LICENCE?rev=1.10.2.2;content-type=text%2Fplain;f=h

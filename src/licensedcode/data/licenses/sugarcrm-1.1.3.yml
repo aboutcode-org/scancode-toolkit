@@ -1,0 +1,11 @@
+key: sugarcrm-1.1.3
+short_name: SugarCRM Public License 1.1.3
+name: SugarCRM Public License v1.1.3
+category: Copyleft
+owner: SugarCRM
+homepage_url: http://www.sugarcrm.com/crm/SPL
+spdx_license_key: SugarCRM-1.1.3
+spdx_full_name: SugarCRM Public License v1.1.3
+spdx_url: http://spdx.org/licenses/SugarCRM-1.1.3
+text_urls:
+    - http://www.sugarcrm.com/crm/SPL

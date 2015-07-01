@@ -1,0 +1,28 @@
+--- udhcp-0.9.8.orig/dhcpd.h	2002-09-21 04:36:15.000000000 +0800
++++ udhcp-0.9.8/dhcpd.h	2009-07-20 14:43:13.000000000 +0800
+@@ -48,6 +48,7 @@
+ #define DHCP_MTU		0x1a
+ #define DHCP_BROADCAST		0x1c
+ #define DHCP_NTP_SERVER		0x2a
++#define DHCP_VENDOR_INFORMATION 0x2b
+ #define DHCP_WINS_SERVER	0x2c
+ #define DHCP_REQUESTED_IP	0x32
+ #define DHCP_LEASE_TIME		0x33
+@@ -61,6 +62,9 @@
+ #define DHCP_T2			0x3b
+ #define DHCP_VENDOR		0x3c
+ #define DHCP_CLIENT_ID		0x3d
++#define DHCP_NISPLUS_DOMAIN  0x40
++#define DHCP_USER_CLASS_ID	0x4d
++#define DHCP_VENDOR_SPECIFIC 0x7d
+ 
+ #define DHCP_END		0xFF
+ 
+@@ -79,6 +83,7 @@
+ #define DHCPNAK			6
+ #define DHCPRELEASE		7
+ #define DHCPINFORM		8
++#define DHCPFORCERENEW          9
+ 
+ #define BROADCAST_FLAG		0x8000
+ 

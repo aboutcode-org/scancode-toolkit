@@ -1,0 +1,5 @@
+.\"
+.\" dbus-daemon manual page.
+.\" Copyright (C) 2003,2008 Red Hat, Inc.
+.\"
+.TH dbus-daemon 1

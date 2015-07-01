@@ -1,0 +1,10 @@
+key: bugsense-sdk
+short_name: BugSense SDK License
+name: BugSense SDK License
+category: Proprietary Free
+owner: BugSense
+homepage_url: https://www.bugsense.com/sdklicense
+text_urls:
+    - https://www.bugsense.com/sdklicense
+other_urls:
+    - https://www.bugsense.com/termsofuse

@@ -1,0 +1,15 @@
+--- Makefile.in.orig	2005-05-13 14:45:30.000000000 +0200
++++ Makefile.in	2005-05-13 15:16:39.000000000 +0200
+@@ -88,6 +88,12 @@
+ 	  fi ; \
+ 	done
+ 
++uuid_libs:
++	(cd lib/uuid && $(MAKE) elfshared && $(MAKE) libuuid.so.1.2)
++
++blkid_libs:
++	(cd lib/blkid && $(MAKE) elfshared && $(MAKE) libblkid.so.1.0)
++
+ mostlyclean: mostlyclean-recursive mostlyclean-local
+ 
+ clean: clean-recursive clean-local clean-doc

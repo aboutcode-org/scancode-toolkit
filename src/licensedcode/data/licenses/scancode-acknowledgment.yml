@@ -1,0 +1,7 @@
+key: scancode-acknowledgment
+short_name: ScanCode acknowledgment
+name: ScanCode generated data acknowledgment
+category: Attribution
+owner: nexB Inc.
+homepage_url: https://github.com/nexB/scancode-toolkit/
+

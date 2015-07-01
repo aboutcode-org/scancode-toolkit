@@ -1,0 +1,22 @@
+# Checking GLR Parsing.                         -*- Autotest -*-
+# Copyright (C) 2002, 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
+
+# This program is free software; you can redistribute it and/or modify
+  while (1)
+    {
+      c = getchar ();
+      switch (c)
+	{
+	case EOF:
+	    yylloc.first_line = yylloc.last_line = lineNum;
+	    yylloc.first_column = colNum;
+#endif
+	    if (isalpha (c))
+	      {
+		i = 0;
+		      abort ();
+		    c = getchar ();
+		  }
+		while (isalnum (c) || c == '_');
+
+		ungetc (c, stdin);

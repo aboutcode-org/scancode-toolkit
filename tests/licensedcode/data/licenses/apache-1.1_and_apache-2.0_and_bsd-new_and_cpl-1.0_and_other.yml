@@ -1,0 +1,10 @@
+licenses:
+    - apache-1.1
+    - apache-2.0
+    - bsd-new
+    - cpl-1.0
+    - lgpl
+    - public-domain
+    - sun-bcl-11-06
+expected_failure: yes
+sort: true

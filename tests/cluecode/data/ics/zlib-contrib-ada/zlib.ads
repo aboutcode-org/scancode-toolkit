@@ -1,0 +1,6 @@
+------------------------------------------------------------------------------
+--                      ZLib for Ada thick binding.                         --
+--                                                                          --
+--              Copyright (C) 2002-2004 Dmitriy Anisimkov                   --
+--                                                                          --
+--  This library is free software; you can redistribute it and/or modify    --

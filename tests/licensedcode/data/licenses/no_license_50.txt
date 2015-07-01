@@ -1,0 +1,462 @@
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+NNAAMMEE
+       dhcp-conditionals - ISC DHCP conditional evaluation
+
+DDEESSCCRRIIPPTTIIOONN
+       The  Internet  Software  Consortium DHCP client and server
+       both provide the ability to perform  conditional  behavior
+       depending  on  the contents of packets they receive.   The
+       syntax for specifying this conditional behaviour is  docu­
+       mented here.
+
+RREEFFEERREENNCCEE:: CCOONNDDIITTIIOONNAALL BBEEHHAAVVIIOOUURR
+       Conditional  behaviour is specified using the if statement
+       and the else or elsif statements.   A  conditional  state­
+       ment  can  appear anywhere that a regular statement (e.g.,
+       an option statement) can appear, and can  enclose  one  or
+       more such statements.   A typical conditional statement in
+       a server might be:
+
+       if option dhcp-user-class = "accounting" {
+         max-lease-time 17600;
+         option domain-name "accounting.example.org";
+         option domain-name-servers ns1.accounting.example.org,
+                           ns2.accounting.example.org;
+       } elsif option dhcp-user-class = "sales" {
+         max-lease-time 17600;
+         option domain-name "sales.example.org";
+         option domain-name-servers ns1.sales.example.org,
+                           ns2.sales.example.org;
+       } elsif option dhcp-user-class = "engineering" {
+         max-lease-time 17600;
+         option domain-name "engineering.example.org";
+         option domain-name-servers ns1.engineering.example.org,
+                           ns2.engineering.example.org;
+       } else {
+         max-lease-time 600;
+         option domain-name "misc.example.org";
+         option domain-name-servers ns1.misc.example.org,
+                           ns2.misc.example.org;
+       }
+
+       On the client side, an example of  conditional  evaluation
+       might be:
+
+       # example.org filters DNS at its firewall, so we have to use their DNS
+       # servers when we connect to their network.   If we are not at
+       # example.org, prefer our own DNS server.
+       if not option domain-name = "example.org" {
+         prepend domain-name-servers 127.0.0.1;
+       }
+
+       The iiff statement and the eellssiiff continuation statement both
+       take boolean expressions as their  arguments.    That  is,
+       they  take  expressions  that,  when  evaluated, produce a
+       boolean result.   If the  expression  evaluates  to  true,
+
+
+
+                                                                1
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+       then  the  statements  enclosed in braces following the iiff
+       statement are executed, and all subsequent eellssiiff and  eellssee
+       clauses  are  skipped.    Otherwise, each subsequent eellssiiff
+       clause's expression is checked, until an elsif  clause  is
+       encountered  whose  test  evaluates  to  true.   If such a
+       clause is found, the statements in braces following it are
+       executed,  and  then any subsequent eellssiiff and eellssee clauses
+       are skipped.   If all the iiff and eellssiiff clauses are checked
+       but none of their expressions evaluate true, then if there
+       is an eellssee clause, the statements enclosed in braces  fol­
+       lowing  the eellssee are evaluated.   Boolean expressions that
+       evaluate to null are treated as false in conditionals.
+
+BBOOOOLLEEAANN EEXXPPRREESSSSIIOONNSS
+       The following is the current list of  boolean  expressions
+       that are supported by the DHCP distribution.
+
+       cchheecckk _c_l_a_s_s_-_n_a_m_e
+
+          The  check  operator returns a true value if the packet
+          being considered comes from a client  that  falls  into
+          the  specified class.  _C_l_a_s_s_-_n_a_m_e must be a string that
+          corresponds to the name of a  defined  class.   Classes
+          are only supported in the DHCP server.
+
+       _d_a_t_a_-_e_x_p_r_e_s_s_i_o_n_-_1 == _d_a_t_a_-_e_x_p_r_e_s_s_i_o_n_-_2
+
+          The  == operator compares the values of two data expres­
+          sions, returning true if they are the  same,  false  if
+          they  are  not.    If  either the left-hand side or the
+          right-hand side are null, the result is also null.
+
+       _b_o_o_l_e_a_n_-_e_x_p_r_e_s_s_i_o_n_-_1 aanndd _b_o_o_l_e_a_n_-_e_x_p_r_e_s_s_i_o_n_-_2
+
+          The aanndd operator  evaluates  to  true  if  the  boolean
+          expression  on  the  left-hand  side  and  the  boolean
+          expression on the  right-hand  side  both  evaluate  to
+          true.  Otherwise, it evaluates to false.  If either the
+          expression on the left-hand side or the  expression  on
+          the right-hand side are null, the result is null.
+
+       _b_o_o_l_e_a_n_-_e_x_p_r_e_s_s_i_o_n_-_1 oorr _b_o_o_l_e_a_n_-_e_x_p_r_e_s_s_i_o_n_-_2
+
+          The oorr operator evaluates to true if either the boolean
+          expression on the left-hand side or the boolean expres­
+          sion  on  the right-hand side evaluate to true.  Other­
+          wise, it evaluates to false.  If either the  expression
+          on  the  left-hand side or the expression on the right-
+          hand side are null, the result is null.
+
+       nnoott _b_o_o_l_e_a_n_-_e_x_p_r_e_s_s_i_o_n
+
+          The nnoott operator evaluates to true  if  _b_o_o_l_e_a_n_-_e_x_p_r_e_s_­
+          _s_i_o_n  evaluates to false, and returns false if _b_o_o_l_e_a_n_-
+
+
+
+                                                                2
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+          _e_x_p_r_e_s_s_i_o_n evaluates to true.    If  _b_o_o_l_e_a_n_-_e_x_p_r_e_s_s_i_o_n
+          evaluates to null, the result is also null.
+
+       eexxiissttss _o_p_t_i_o_n_-_n_a_m_e
+
+          The  eexxiissttss  expression  returns  true if the specified
+          option exists in the incoming DHCP  packet  being  pro­
+          cessed.
+       kknnoowwnn
+
+          The  kknnoowwnn  expression returns true if the client whose
+          request is currently being processed is  known  -  that
+          is, if there's a host declaration for it.
+       ssttaattiicc
+
+          The   ssttaattiicc  expression  returns  true  if  the  lease
+          assigned to the client whose request is currently being
+          processed  is derived from a static address assignment.
+
+DDAATTAA EEXXPPRREESSSSIIOONNSS
+       Several of the boolean expressions  above  depend  on  the
+       results  of evaluating data expressions.   A list of these
+       expressions is provided here.
+
+       ssuubbssttrriinngg ((_d_a_t_a_-_e_x_p_r,, _o_f_f_s_e_t,, _l_e_n_g_t_h))
+
+          The ssuubbssttrriinngg operator evaluates  the  data  expression
+          and returns the substring of the result of that evalua­
+          tion that starts _o_f_f_s_e_t bytes from the beginning,  con­
+          tinuing  for  _l_e_n_g_t_h bytes.  _O_f_f_s_e_t and _l_e_n_g_t_h are both
+          numeric expressions.  If _d_a_t_a_-_e_x_p_r,  _o_f_f_s_e_t  or  _l_e_n_g_t_h
+          evaluate  to  null,  then  the result is also null.  If
+          _o_f_f_s_e_t is greater than or equal to the  length  of  the
+          evaluated  data,  then  a  zero-length  data  string is
+          returned.  If _l_e_n_g_t_h  _i_s  _g_r_e_a_t_e_r  _t_h_e_n  _t_h_e  _r_e_m_a_i_n_i_n_g
+          _l_e_n_g_t_h  _o_f _t_h_e _e_v_a_l_u_a_t_e_d _d_a_t_a _a_f_t_e_r _o_f_f_s_e_t, then a data
+          string containing all data from _o_f_f_s_e_t to  the  end  of
+          the evaluated data is returned.
+
+       ssuuffffiixx ((_d_a_t_a_-_e_x_p_r,, _l_e_n_g_t_h))
+
+          The ssuuffffiixx operator evaluates _d_a_t_a_-_e_x_p_r and returns the
+          last _l_e_n_g_t_h bytes of the  result  of  that  evaluation.
+          _L_e_n_g_t_h is a numeric expression.  If _d_a_t_a_-_e_x_p_r or _l_e_n_g_t_h
+          evaluate to null, then the result  is  also  null.   If
+          _s_u_f_f_i_x evaluates to a number greater than the length of
+          the  evaluated  data,  then  the  evaluated   data   is
+          returned.
+
+       ooppttiioonn _o_p_t_i_o_n_-_n_a_m_e
+
+          The  ooppttiioonn operator returns the contents of the speci­
+          fied option in  the  packet  to  which  the  server  is
+          responding.
+
+
+
+                                                                3
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+       hhaarrddwwaarree
+
+          The hhaarrddwwaarree operator returns a data string whose first
+          element is the type of network interface  indicated  in
+          packet  being considered, and whose subsequent elements
+          are client's  link-layer  address.    If  there  is  no
+          packet,  or  if the RFC2131 _h_l_e_n field is invalid, then
+          the result is null.   Hardware types  include  ethernet
+          (1), token-ring (6), and fddi (8).   Hardware types are
+          specified by the IETF, and details on how the type num­
+          bers  are  defined  can be found in RFC2131 (in the ISC
+          DHCP distribution, this is included in the doc/  subdi­
+          rectory).
+
+       ppaacckkeett ((_o_f_f_s_e_t,, _l_e_n_g_t_h))
+
+          The  ppaacckkeett  operator  returns the specified portion of
+          the packet being considered, or null in contexts  where
+          no  packet is being considered.   _O_f_f_s_e_t and _l_e_n_g_t_h are
+          applied to the contents  packet  as  in  the  ssuubbssttrriinngg
+          operator.
+
+       _s_t_r_i_n_g
+
+          A  string,  enclosed  in  quotes, may be specified as a
+          data expression,  and  returns  the  text  between  the
+          quotes, encoded in ASCII.
+
+       _c_o_l_o_n_-_s_e_p_e_r_a_t_e_d _h_e_x_a_d_e_c_i_m_a_l _l_i_s_t
+
+          A  list  of  hexadecimal  octet  values,  seperated  by
+          colons, may be specified as a data expression.
+
+       ccoonnccaatt ((_d_a_t_a_-_e_x_p_r_1,, ......,, _d_a_t_a_-_e_x_p_r_N))
+          The expressions are evaluated, and the results of  each
+          evaluation  are  concatenated  in the sequence that the
+          subexpressions are listed.   If any subexpression eval­
+          uates to null, the result of the concatenation is null.
+
+       rreevveerrssee ((_n_u_m_e_r_i_c_-_e_x_p_r_1,, _d_a_t_a_-_e_x_p_r_2))
+          The two expressions are evaluated, and then the  result
+          of evaluating the data expression is reversed in place,
+          using hunks  of  the  size  specified  in  the  numeric
+          expression.    For  example,  if the numeric expression
+          evaluates to four, and the data expression evaluates to
+          twelve  bytes of data, then the reverse expression will
+          evaluate to twelve bytes of  data,  consisting  of  the
+          last  four bytes of the the input data, followed by the
+          middle four bytes, followed by the first four bytes.
+
+       lleeaasseedd--aaddddrreessss
+          In any context where the client whose request is  being
+          processed  has  been  assigned an IP address, this data
+          expression returns that IP address.
+
+
+
+                                                                4
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+       bbiinnaarryy--ttoo--aasscciiii ((_n_u_m_e_r_i_c_-_e_x_p_r_1,, _n_u_m_e_r_i_c_-_e_x_p_r_2,, _d_a_t_a_-_e_x_p_r_1,,
+       _d_a_t_a_-_e_x_p_r_2))
+          Converts  the  result  of  evaluating data-expr2 into a
+          text string containing one number for each  element  of
+          the  result  of evaluating data-expr2.   Each number is
+          seperated from the other by the  result  of  evaluating
+          data-expr1.    The  result  of evaluating numeric-expr1
+          specifies the base (2 through 16) into which  the  num­
+          bers  should  be  converted.   The result of evaluating
+          numeric-expr2 specifies the width in bits of each  num­
+          ber, which may be either 8, 16 or 32.
+
+          As  an  example of the preceding three types of expres­
+          sions, to produce the name of a PTR record for  the  IP
+          address being assigned to a client, one could write the
+          following expression:
+
+               concat (binary-to-ascii (10, 8, ".",
+                                        reverse (1, leased-address)),
+                       ".in-addr.arpa.");
+
+
+       eennccooddee--iinntt ((_n_u_m_e_r_i_c_-_e_x_p_r,, _w_i_d_t_h))
+          Numeric-expr is evaluated and encoded as a data  string
+          of  the  specified  width,  in network byte order (most
+          significant byte first).   If  the  numeric  expression
+          evaluates to the null value, the result is also null.
+
+          ppiicckk--ffiirrsstt--vvaalluuee ((_d_a_t_a_-_e_x_p_r_1 [ ... _e_x_p_rn ] ))
+            The  pick-first-value  function  takes  any number of
+            data expressions as its arguments.   Each  expression
+            is  evaluated,  starting  with the first in the list,
+            until an expression is found that does  not  evaluate
+            to  a  null value.   That expression is returned, and
+            none of the  subsequent  expressions  are  evaluated.
+            If all expressions evaluate to a null value, the null
+            value is returned.
+
+          hhoosstt--ddeeccll--nnaammee
+            The host-decl-name function returns the name  of  the
+            host   declaration  that  matched  the  client  whose
+            request is currently being processed, if any.   If no
+            host  declaration  matched,  the  result  is the null
+            value.
+
+NNUUMMEERRIICC EEXXPPRREESSSSIIOONNSS
+       Numeric expressions are expressions that  evaluate  to  an
+       integer.   In general, the maximum size of such an integer
+       should not be assumed to be representable in fewer than 32
+       bits,  but the precision of such integers may be more than
+       32 bits.
+
+       eexxttrraacctt--iinntt ((_d_a_t_a_-_e_x_p_r,, _w_i_d_t_h))
+
+
+
+
+                                                                5
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+          The eexxttrraacctt--iinntt operator extracts an integer  value  in
+          network  byte  order  from the result of evaluating the
+          specified data expression.   Width is the width in bits
+          of  the  integer  to extract.  Currently, the only sup­
+          ported widths are 8, 16 and 32.   If the evaluation  of
+          the  data expression doesn't provide sufficient bits to
+          extract an integer of  the  specified  size,  the  null
+          value is returned.
+
+       lleeaassee--ttiimmee
+
+          The  duration  of the current lease - that is, the dif­
+          ference between the current time and the time that  the
+          lease expires.
+
+       _n_u_m_b_e_r
+
+          Any  number  between zero and the maximum representable
+          size may be specified as a numeric expression.
+
+RREEFFEERREENNCCEE:: DDYYNNAAMMIICC DDNNSS UUPPDDAATTEESS
+       The DHCP client and server have the ability to dynamically
+       update  the  Domain Name System.  Within the configuration
+       files, you can define how you want the Domain Name  System
+       to  be  updated.   These updates are RFC 2136 compliant so
+       any DNS server supporting  RFC  2136  should  be  able  to
+       accept updates from the DHCP server.
+
+SSEECCUURRIITTYY
+       Support  for  TSIG  and DNSSEC is not yet available.  When
+       you set your DNS server up to allow updates from the  DHCP
+       server  or  client, you may be exposing it to unauthorized
+       updates.  To avoid this, the best you can do right now  is
+       to  use IP address-based packet filtering to prevent unau­
+       thorized hosts from  submitting  update  requests.   Obvi­
+       ously,  there  is currently no way to provide security for
+       client updates - this will require TSIG or DNSSEC, neither
+       of which is yet available in the DHCP distribution.
+
+       Dynamic DNS (DDNS) updates are performed by using the ddnnss--
+       uuppddaattee expression.  The ddnnss--uuppddaattee expression is a boolean
+       expression that takes four parameters.  If the update suc­
+       ceeds, the result is true.  If it  fails,  the  result  is
+       false.   The  four  parameters  that  the are the resource
+       record type (RR), the left hand side of the RR, the  right
+       hand  side of the RR and the ttl that should be applied to
+       the record.  The simplest example of the use of the  func­
+       tion  can  be  found  in  the  reference  section  of  the
+       dhcpd.conf file, where  events  are  described.   In  this
+       example  several  statements  are  being  used to make the
+       arguments to the ddnnss--uuppddaatteeRR..
+
+       In the example, the first  argument  to  the  first  Bdns-
+       update  expression  is a data expression that evaluates to
+
+
+
+                                                                6
+
+
+
+
+
+dhcpd-options(5)                                 dhcpd-options(5)
+
+
+       the A RR type.  The second argument is constructed by con­
+       catenating  the  DHCP  host-name option with a text string
+       containing the  local  domain,  in  this  case  "ssd.exam­
+       ple.net".  The third argument is constructed by converting
+       the address the client has been  assigned  from  a  32-bit
+       number  into an ascii string with each byte separated by a
+       ".".  The fourth argument, the TTL, specifies  the  amount
+       of  time  remaining  in  the  lease  (note that this isn't
+       really correct, since the DNS server will  pass  this  TTL
+       out  whenever  a  request comes in, even if that is only a
+       few seconds before the lease expires).
+
+       If the first ddnnss--uuppddaattee statement succeeds, it is followed
+       up  with a second update to install a PTR RR.  The instal­
+       lation of a PTR record is similar to installing  an  A  RR
+       except that the left hand side of the record is the leased
+       address, reversed, with ".in-addr.arpa" concatenated.  The
+       right  hand side is the fully qualified domain name of the
+       client to which the address is being leased.
+
+SSEEEE AALLSSOO
+       dhcpd.conf(5),  dhcpd.leases(5),  dhclient.conf(5),  dhcp-
+       eval(5), dhcpd(8), dhclient(8), RFC2132, RFC2131.
+
+AAUUTTHHOORR
+       The  Internet  Software  Consortium  DHCP Distribution was
+       written by Ted Lemon  <mellon@isc.org>  under  a  contract
+       with  Vixie  Labs.   Funding for this project was provided
+       through the  Internet  Software  Consortium.   Information
+       about  the  Internet  Software  Consortium can be found at
+       hhttttpp::////wwwwww..iisscc..oorrgg//iisscc..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                7
+
+

@@ -1,0 +1,13 @@
+about_resource: .
+name: libarchive
+version: 3.1.2
+notice_file: libarchive.NOTICE
+
+download_url: http://libarchive.org/downloads/libarchive-3.1.2.tar.gz
+homepage: http://libarchive.org
+notes: >
+    To build use the build.sh script.
+    You need one of each of these to build:
+    * a MacOSX box with the either the xcode-express tools or a gcc compiler
+    * a Debian Linux 32 and 64 box
+    * a Windows box with MinGW and mingw-get 

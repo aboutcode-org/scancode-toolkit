@@ -1,0 +1,15 @@
+key: rpsl-1.0
+short_name: RealNetworks Public Source License 1.0
+name: RealNetworks Public Source License v1.0
+category: Copyleft Limited
+owner: RealNetworks
+homepage_url: http://opensource.org/licenses/real.php
+spdx_license_key: RPSL-1.0
+spdx_full_name: RealNetworks Public Source License v1.0
+spdx_url: http://spdx.org/licenses/RPSL-1.0
+spdx_notes: This license is OSI certified
+text_urls:
+    - http://opensource.org/licenses/real.php
+osi_url: http://opensource.org/licenses/real.php
+other_urls:
+    - https://helixcommunity.org/content/rpsl

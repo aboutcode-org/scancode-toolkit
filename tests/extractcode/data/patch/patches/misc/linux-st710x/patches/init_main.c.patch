@@ -1,0 +1,32 @@
+--- linux-2.6.23/init/main.c~	2009-03-12 07:39:14.000000000 +0100
++++ linux-2.6.23/init/main.c	2009-03-16 08:03:40.000000000 +0100
+@@ -287,8 +287,7 @@ static int __init unknown_bootoption(cha
+ 	}
+ 
+ 	/* Handle obsolete-style parameters */
+-	if (obsolete_checksetup(param))
+-		return 0;
++	obsolete_checksetup(param);
+ 
+ 	/*
+ 	 * Preemptive maintenance for "why didn't my mispelled command
+@@ -809,6 +809,9 @@
+ 	system_state = SYSTEM_RUNNING;
+ 	numa_default_policy();
+ 
++#ifdef CONFIG_SH_ST_VIP19X3
++	sys_mknod((const char __user *) "/dev/console", S_IFCHR | 0644, 5 << 8 | 1);
++#endif
+ 	if (sys_open((const char __user *) "/dev/console", O_RDWR, 0) < 0)
+ 		printk(KERN_WARNING "Warning: unable to open an initial console.\n");
+ 
+@@ -832,6 +833,9 @@
+ 		printk(KERN_WARNING "Failed to execute %s.  Attempting "
+ 					"defaults...\n", execute_command);
+ 	}
++#ifdef CONFIG_SH_ST_VIP19X3
++	run_init_process("/init");
++#endif
+ 	run_init_process("/sbin/init");
+ 	run_init_process("/etc/init");
+ 	run_init_process("/bin/init");

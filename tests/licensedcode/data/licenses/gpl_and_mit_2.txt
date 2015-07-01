@@ -1,0 +1,10 @@
+description: Masonry layout engine (converted from jQuery Masonry)
+
+license: mooMasonry is dual-licensed under GPL and MIT, just like jQuery Masonry itself. You can use it for both personal and commercial applications.
+
+authors:
+- David DeSandro
+- Olivier Refalo
+
+requires:
+- core/1.2.4:'*'

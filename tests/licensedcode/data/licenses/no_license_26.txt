@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Created-By: Apache Ant 1.5
+Extension-Name: org.apache.commons.discovery
+Specification-Vendor: Apache Software Foundation
+Specification-Version: 1.0
+Implementation-Vendor: Apache Software Foundation
+Implementation-Version: 0.2
+

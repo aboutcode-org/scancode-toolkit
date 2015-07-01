@@ -1,0 +1,10 @@
+The test archives were downloaded on May 15, 2012 from these locations:
+http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/desktop-file-utils-0.19.tar.xz
+http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/dnsmasq-2.57.tar.lzma
+http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/texlive-core-patches-20.tar.xz
+http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/bdsup2sub-4.0.0.tar.xz
+http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/binutils-2.22.52.0.3-patches-1.0.tar.xz
+http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/coreutils-8.5-patches-1.tar.lzma
+http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/cromwell-2.40-r3-cvs-fixes.patch.lzma
+http://orionsocket.googlecode.com/files/orionsocket-1.0.9.tar.lzma
+http://jaist.dl.sourceforge.net/project/mingw/OldFiles/MinGW%205.1.6/MinGW-5.1.6.exe-src.tar.lzma

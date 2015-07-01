@@ -1,0 +1,10 @@
+key: intel-bsd-export-control
+short_name: Intel BSD - Export Control
+name: Intel BSD - Export Control
+category: Attribution
+owner: Intel Corporation
+homepage_url: http://opensource.org/licenses/intel-open-source-license.html
+spdx_license_key: Intel
+spdx_full_name: Intel Open Source License
+spdx_url: http://spdx.org/licenses/Intel
+osi_url: http://www.opensource.org/licenses/intel-open-source-license.html

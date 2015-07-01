@@ -1,0 +1,461 @@
+Index: src/3rdParty/webkit/work/JavaScriptCore/wtf/Platform.h
+===================================================================
+--- src.orig/3rdParty/webkit/work/JavaScriptCore/wtf/Platform.h
++++ src/3rdParty/webkit/work/JavaScriptCore/wtf/Platform.h
+@@ -246,7 +246,6 @@
+ 
+ #if PLATFORM(EKIOH)
+ #define ENABLE_ICONDATABASE 0
+-#define ENABLE_DATABASE 0
+ #define ENABLE_FTPDIR 0
+ #if PLATFORM(WIN_OS)
+ // FastMalloc / TC stuff seems to rely on Cygwin on WIN32 builds,
+@@ -259,10 +258,6 @@
+ #define ENABLE_ICONDATABASE 1
+ #endif
+ 
+-#if !defined(ENABLE_DATABASE)
+-#define ENABLE_DATABASE 1
+-#endif
+-
+ #if !defined(ENABLE_FTPDIR)
+ #define ENABLE_FTPDIR 1
+ #endif
+Index: src/3rdParty/webkit/work/JavaScriptCore/wtf/TCSystemAlloc.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/JavaScriptCore/wtf/TCSystemAlloc.cpp
++++ src/3rdParty/webkit/work/JavaScriptCore/wtf/TCSystemAlloc.cpp
+@@ -170,7 +170,7 @@ static void* TryMmap(size_t size, size_t
+     extra = alignment - pagesize;
+   }
+   void* result = mmap(NULL, size + extra,
+-                      PROT_READ|PROT_WRITE,
++                      PROT_READ | PROT_WRITE,
+                       MAP_PRIVATE|MAP_ANONYMOUS,
+                       -1, 0);
+   if (result == reinterpret_cast<void*>(MAP_FAILED)) {
+@@ -302,7 +302,7 @@ static void* TryDevMem(size_t size, size
+     devmem_failure = true;
+     return NULL;
+   }
+-  void *result = mmap(0, size + extra, PROT_WRITE|PROT_READ,
++  void *result = mmap(0, size + extra, PROT_READ | PROT_WRITE,
+                       MAP_SHARED, physmem_fd, physmem_base);
+   if (result == reinterpret_cast<void*>(MAP_FAILED)) {
+     devmem_failure = true;
+@@ -383,8 +383,6 @@ void* TCMalloc_SystemAlloc(size_t size, 
+ 
+ void TCMalloc_SystemRelease(void* start, size_t length)
+ {
+-  UNUSED_PARAM(start);
+-  UNUSED_PARAM(length);
+ #if HAVE(MADV_DONTNEED)
+   if (FLAGS_malloc_devmem_start) {
+     // It's not safe to use MADV_DONTNEED if we've been mapping
+@@ -421,10 +419,20 @@ void TCMalloc_SystemRelease(void* start,
+ #endif
+ 
+ #if HAVE(MMAP)
+-  void *newAddress = mmap(start, length, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_FIXED, -1, 0);
+-  UNUSED_PARAM(newAddress);
++  void* newAddress = mmap(start, length, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS | MAP_FIXED, -1, 0);
+   // If the mmap failed then that's ok, we just won't return the memory to the system.
+-  ASSERT(newAddress == start || newAddress == reinterpret_cast<void*>(MAP_FAILED));
++  ASSERT_UNUSED(newAddress, newAddress == start || newAddress == reinterpret_cast<void*>(MAP_FAILED));
+   return;
+ #endif
++
++#if !HAVE(MADV_DONTNEED) && !HAVE(MMAP)
++  UNUSED_PARAM(start);
++  UNUSED_PARAM(length);
++#endif
+ }
++
++#if HAVE(VIRTUALALLOC)
++void TCMalloc_SystemCommit(void*, size_t)
++{
++}
++#endif
+Index: src/3rdParty/webkit/work/JavaScriptCore/wtf/Assertions.h
+===================================================================
+--- src.orig/3rdParty/webkit/work/JavaScriptCore/wtf/Assertions.h
++++ src/3rdParty/webkit/work/JavaScriptCore/wtf/Assertions.h
+@@ -121,11 +121,22 @@ void WTFLogVerbose(const char* file, int
+ /* CRASH -- gets us into the debugger or the crash reporter -- signals are ignored by the crash reporter so we must do better */
+ 
+ #ifndef CRASH
+-#define CRASH() *(int *)(uintptr_t)0xbbadbeef = 0
++#define CRASH() do { \
++    *(int *)(uintptr_t)0xbbadbeef = 0; \
++    ((void(*)())0)(); /* More reliable, but doesn't say BBADBEEF */ \
++} while(false)
+ #endif
+ 
+ /* ASSERT, ASSERT_WITH_MESSAGE, ASSERT_NOT_REACHED */
+ 
++#if PLATFORM(WIN_CE)
++/* FIXME: We include this here only to avoid a conflict with the ASSERT macro. */
++#include <windows.h>
++#undef min
++#undef max
++#undef ERROR
++#endif
++
+ #if PLATFORM(WIN_OS)
+ /* FIXME: Change to use something other than ASSERT to avoid this conflict with win32. */
+ #undef ASSERT
+@@ -136,6 +147,7 @@ void WTFLogVerbose(const char* file, int
+ #define ASSERT(assertion) ((void)0)
+ #define ASSERT_WITH_MESSAGE(assertion, ...) ((void)0)
+ #define ASSERT_NOT_REACHED() ((void)0)
++#define ASSERT_UNUSED(variable, assertion) ((void)variable)
+ 
+ #else
+ 
+@@ -154,12 +166,14 @@ while (0)
+         CRASH(); \
+     } \
+ while (0)
+-#endif // COMPILER(MSVC7)
++#endif /* COMPILER(MSVC7) */
+ #define ASSERT_NOT_REACHED() do { \
+     WTFReportAssertionFailure(__FILE__, __LINE__, WTF_PRETTY_FUNCTION, 0); \
+     CRASH(); \
+ } while (0)
+ 
++#define ASSERT_UNUSED(variable, assertion) ASSERT(assertion)
++
+ #endif
+ 
+ /* ASSERT_ARG */
+Index: src/3rdParty/webkit/work/JavaScriptCore/kjs/AllInOneFile.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/JavaScriptCore/kjs/AllInOneFile.cpp
++++ src/3rdParty/webkit/work/JavaScriptCore/kjs/AllInOneFile.cpp
+@@ -72,5 +72,5 @@
+ #include "value.cpp"
+ #include "wtf/FastMalloc.cpp"
+ #if !defined(USE_SYSTEM_MALLOC)
+-#include "wtf/TCSystemAlloc.cpp"
++#include "wtf/TCSystemAlloc.h"
+ #endif
+Index: src/3rdParty/webkit/work/WebCore/bindings/scripts/generate-bindings.pl
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/bindings/scripts/generate-bindings.pl
++++ src/3rdParty/webkit/work/WebCore/bindings/scripts/generate-bindings.pl
+@@ -58,6 +58,7 @@ die('Must specify input file.') unless d
+ die('Must specify output directory.') unless defined($outputDirectory);
+ die('Must specify defines') unless defined($defines);
+ 
++$defines .=" ENABLE_DATABASE";
+ $defines =~ s/^\s+|\s+$//g; # trim whitespace
+ 
+ # Parse the given IDL file.
+Index: src/3rdParty/webkit/work/WebCore/page/Settings.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/page/Settings.cpp
++++ src/3rdParty/webkit/work/WebCore/page/Settings.cpp
+@@ -55,6 +55,8 @@ Settings::Settings(Page* page)
+     , m_loadsImagesAutomatically(false)
+     , m_privateBrowsingEnabled(false)
+     , m_arePluginsEnabled(false)
++    , m_databasesEnabled(true)
++    , m_localStorageEnabled(false)
+     , m_isJavaScriptEnabled(false)
+     , m_javaScriptCanOpenWindowsAutomatically(false)
+     , m_shouldPrintBackgrounds(false)
+@@ -188,6 +190,15 @@ void Settings::setPluginsEnabled(bool ar
+     m_arePluginsEnabled = arePluginsEnabled;
+ }
+ 
++void Settings::setDatabasesEnabled(bool databasesEnabled)
++{
++    m_databasesEnabled = databasesEnabled;
++}
++
++void Settings::setLocalStorageEnabled(bool localStorageEnabled)
++{
++    m_localStorageEnabled = localStorageEnabled;
++}
+ void Settings::setPrivateBrowsingEnabled(bool privateBrowsingEnabled)
+ {
+     m_privateBrowsingEnabled = privateBrowsingEnabled;
+Index: src/3rdParty/webkit/work/WebCore/page/Settings.h
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/page/Settings.h
++++ src/3rdParty/webkit/work/WebCore/page/Settings.h
+@@ -93,6 +93,11 @@ namespace WebCore {
+         void setPluginsEnabled(bool);
+         bool arePluginsEnabled() const { return m_arePluginsEnabled; }
+ 
++        void setDatabasesEnabled(bool);
++        bool databasesEnabled() const { return m_databasesEnabled; }
++
++        void setLocalStorageEnabled(bool);
++        bool localStorageEnabled() const { return m_localStorageEnabled; }
+         void setPrivateBrowsingEnabled(bool);
+         bool privateBrowsingEnabled() const { return m_privateBrowsingEnabled; }
+         
+@@ -173,6 +178,8 @@ namespace WebCore {
+         bool m_loadsImagesAutomatically : 1;
+         bool m_privateBrowsingEnabled : 1;
+         bool m_arePluginsEnabled : 1;
++        bool m_databasesEnabled : 1;
++        bool m_localStorageEnabled : 1;
+         bool m_isJavaScriptEnabled : 1;
+         bool m_javaScriptCanOpenWindowsAutomatically : 1;
+         bool m_shouldPrintBackgrounds : 1;
+Index: src/3rdParty/webkit/work/WebCore/platform/cf/FileSystemCF.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/platform/cf/FileSystemCF.cpp
++++ src/3rdParty/webkit/work/WebCore/platform/cf/FileSystemCF.cpp
+@@ -30,12 +30,14 @@
+ 
+ #import "CString.h"
+ #import "PlatformString.h"
+-#import <wtf/RetainPtr.h>
++//#import <wtf/RetainPtr.h>
+ 
+ namespace WebCore {
+ 
+ CString fileSystemRepresentation(const String& path)
+ {
++    return path.utf8();
++/*
+     RetainPtr<CFStringRef> cfString(AdoptCF, path.createCFString());
+ 
+     if (!cfString)
+@@ -52,6 +54,7 @@ CString fileSystemRepresentation(const S
+     }
+ 
+     return string;
++*/
+ }
+ 
+ } // namespace WebCore
+Index: src/3rdParty/webkit/work/WebCore/platform/SecurityOrigin.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/platform/SecurityOrigin.cpp
++++ src/3rdParty/webkit/work/WebCore/platform/SecurityOrigin.cpp
+@@ -234,7 +234,7 @@ PassRefPtr<SecurityOrigin> SecurityOrigi
+ String SecurityOrigin::stringIdentifier() const 
+ {
+     static String separatorString = String(&SeparatorCharacter, 1);
+-    return m_protocol + separatorString + m_host + separatorString + String::number(m_port); 
++    return "dbroot"; 
+ }
+ 
+ } // namespace WebCore
+Index: src/3rdParty/webkit/work/WebCore/storage/DatabaseThread.h
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/storage/DatabaseThread.h
++++ src/3rdParty/webkit/work/WebCore/storage/DatabaseThread.h
+@@ -34,6 +34,7 @@
+ #include <wtf/HashSet.h>
+ #include <wtf/Deque.h>
+ #include <wtf/RefPtr.h>
++#include "Threading.h"
+ 
+ namespace WebCore {
+ 
+@@ -59,6 +60,7 @@ private:
+     static void* databaseThreadStart(void*);
+     void* databaseThread();
+ 
++    Mutex m_threadCreationMutex;
+     ThreadIdentifier m_threadID;
+     RefPtr<DatabaseThread> m_selfRef;
+ 
+Index: src/3rdParty/webkit/work/WebCore/storage/DatabaseTracker.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/storage/DatabaseTracker.cpp
++++ src/3rdParty/webkit/work/WebCore/storage/DatabaseTracker.cpp
+@@ -64,6 +64,7 @@ DatabaseTracker::DatabaseTracker()
+ #ifndef NDEBUG
+     , m_thread(currentThread())
+ #endif
++    , m_databaseDirectoryPath("/flash/databases/webkit/")
+ {
+ }
+ 
+@@ -155,7 +156,13 @@ bool DatabaseTracker::canEstablishDataba
+     m_proposedDatabase = 0;
+ 
+     // If the database will fit now, allow its creation.
+-    return requirement <= quotaForOrigin(origin);
++    if(quotaForOrigin(origin) == 0) {
++      //not set, then treat it unconstrained
++      return true;
++    }
++    else {
++        return requirement <= quotaForOrigin(origin);
++    }
+ }
+ 
+ bool DatabaseTracker::hasEntryForOrigin(SecurityOrigin* origin)
+@@ -206,7 +213,7 @@ String DatabaseTracker::fullPathForDatab
+         return String();
+     
+     // See if we have a path for this database yet
+-    openTrackerDatabase(false);
++    openTrackerDatabase(createIfNotExists);
+     if (!m_database.isOpen())
+         return String();
+     SQLiteStatement statement(m_database, "SELECT path FROM Databases WHERE origin=? AND name=?;");
+@@ -276,7 +283,7 @@ void DatabaseTracker::populateOrigins()
+     m_quotaMap.set(new QuotaMap);
+     m_quotaManager.set(new OriginQuotaManager);
+ 
+-    openTrackerDatabase(false);
++    openTrackerDatabase(true);
+     if (!m_database.isOpen())
+         return;
+ 
+Index: src/3rdParty/webkit/work/WebCore/storage/Database.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/storage/Database.cpp
++++ src/3rdParty/webkit/work/WebCore/storage/Database.cpp
+@@ -172,6 +172,8 @@ Database::~Database()
+ 
+ bool Database::openAndVerifyVersion(ExceptionCode& e)
+ {
++    if (!m_document->databaseThread())
++        return false;
+     m_databaseAuthorizer = new DatabaseAuthorizer();
+ 
+     RefPtr<DatabaseOpenTask> task = new DatabaseOpenTask(this);
+@@ -272,7 +274,7 @@ bool Database::versionMatchesExpected() 
+ 
+ void Database::markAsDeletedAndClose()
+ {
+-    if (m_deleted)
++    if (m_deleted || !m_document->databaseThread())
+         return;
+ 
+     LOG(StorageAPI, "Marking %s (%p) as deleted", stringIdentifier().ascii().data(), this);
+@@ -552,6 +554,8 @@ void Database::deliverPendingCallback(vo
+ 
+ Vector<String> Database::tableNames()
+ {
++    if (!m_document->databaseThread())
++        return Vector<String>();
+     RefPtr<DatabaseTableNamesTask> task = new DatabaseTableNamesTask(this);
+ 
+     task->lockForSynchronousScheduling();
+Index: src/3rdParty/webkit/work/WebCore/storage/DatabaseThread.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/storage/DatabaseThread.cpp
++++ src/3rdParty/webkit/work/WebCore/storage/DatabaseThread.cpp
+@@ -48,9 +48,11 @@ DatabaseThread::~DatabaseThread()
+ 
+ bool DatabaseThread::start()
+ {
++    MutexLocker lock(m_threadCreationMutex);
++
+     if (m_threadID)
+         return true;
+-
++  
+     m_threadID = createThread(DatabaseThread::databaseThreadStart, this);
+ 
+     return m_threadID;
+@@ -64,7 +66,7 @@ void DatabaseThread::requestTermination(
+ 
+ bool DatabaseThread::terminationRequested() const
+ {
+-    return m_queue.killed();
++    return m_queue.killed(); 
+ }
+ 
+ void* DatabaseThread::databaseThreadStart(void* vDatabaseThread)
+@@ -75,7 +77,11 @@ void* DatabaseThread::databaseThreadStar
+ 
+ void* DatabaseThread::databaseThread()
+ {
+-    LOG(StorageAPI, "Starting DatabaseThread %p", this);
++    {
++        // Wait for DatabaseThread::start() to complete.
++        MutexLocker lock(m_threadCreationMutex);
++        LOG(StorageAPI, "Started DatabaseThread %p", this);
++    }
+ 
+     AutodrainedPool pool;
+     while (true) {
+Index: src/3rdParty/webkit/work/WebCore/platform/posix/FileSystemPOSIX.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/platform/posix/FileSystemPOSIX.cpp
++++ src/3rdParty/webkit/work/WebCore/platform/posix/FileSystemPOSIX.cpp
+@@ -117,10 +117,13 @@ String pathByAppendingComponent(const St
+ 
+ bool makeAllDirectories(const String& path)
+ {
++    struct stat buf;
+     CString fullPath = fileSystemRepresentation(path);
+-    if (!access(fullPath.data(), F_OK))
++    if ((stat(fullPath.data(), &buf) != -1)
++        && (S_ISDIR(buf.st_mode)))
++    {
+         return true;
+-
++    }
+     char* p = fullPath.mutableData() + 1;
+     int length = fullPath.length();
+ 
+@@ -129,15 +132,25 @@ bool makeAllDirectories(const String& pa
+     for (; *p; ++p)
+         if (*p == '/') {
+             *p = '\0';
+-            if (access(fullPath.data(), F_OK))
+-                if (mkdir(fullPath.data(), S_IRWXU))
++            if ((stat(fullPath.data(), &buf) == -1)
++                || (!S_ISDIR(buf.st_mode)))
++            {
++                if (mkdir(fullPath.data(), S_IRWXU|S_IRWXG|S_IRWXO))
++                {
+                     return false;
++                }
++            }
+             *p = '/';
+         }
+-    if (access(fullPath.data(), F_OK))
+-        if (mkdir(fullPath.data(), S_IRWXU))
+-            return false;
+ 
++    if ((stat(fullPath.data(), &buf) == -1)
++                || (!S_ISDIR(buf.st_mode)))
++	{
++        if (mkdir(fullPath.data(), S_IRWXU|S_IRWXG|S_IRWXO))
++		{
++            return false;
++		}
++	}
+     return true;
+ }
+ 
+Index: src/3rdParty/webkit/work/WebCore/platform/pthreads/ThreadingPthreads.cpp
+===================================================================
+--- src.orig/3rdParty/webkit/work/WebCore/platform/pthreads/ThreadingPthreads.cpp
++++ src/3rdParty/webkit/work/WebCore/platform/pthreads/ThreadingPthreads.cpp
+@@ -34,6 +34,10 @@
+ 
+ #include <errno.h>
+ 
++namespace ekioh {
++    void callOnMainThread(WebCore::MainThreadFunction function, void* context);
++}
++
+ namespace WebCore {
+ 
+ static Mutex& threadMapMutex()
+@@ -134,6 +138,11 @@ ThreadIdentifier currentThread()
+     return establishIdentifierForPthreadHandle(currentThread);
+ }
+ 
++void callOnMainThread(MainThreadFunction* function, void* context)
++{
++    ekioh::callOnMainThread(function, context);
++}
++
+ Mutex::Mutex()
+ {
+     pthread_mutex_init(&m_mutex, NULL);

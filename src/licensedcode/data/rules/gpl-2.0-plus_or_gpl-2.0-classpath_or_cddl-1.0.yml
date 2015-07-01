@@ -1,0 +1,6 @@
+licenses:
+    - gpl-2.0-plus
+    - gpl-2.0-classpath
+    - cddl-1.0
+license_choice: yes
+notes: weird format for cddl + gpl + classpath

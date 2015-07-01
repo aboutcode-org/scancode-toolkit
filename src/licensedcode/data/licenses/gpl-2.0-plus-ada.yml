@@ -1,0 +1,8 @@
+key: gpl-2.0-plus-ada
+short_name: GPL 2.0 or later with Ada exception
+name: >-
+    GNU General Public License 2.0 or later with Ada exception
+category: Copyleft Limited
+owner: Dmitriy Anisimkov
+other_urls:
+    - http://zlib-ada.sourceforge.net/

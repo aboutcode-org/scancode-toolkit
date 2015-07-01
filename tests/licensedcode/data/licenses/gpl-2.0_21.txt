@@ -1,0 +1,12 @@
+This package was debianized by Changwoo Ryu <cwryu@debian.org> on
+Sun, 28 Sep 2003 00:51:34 +0900.
+
+It was downloaded from http://kldp.net/project/unfonts
+
+Upstream Author:  <s>Park, Won-kyu <wkpark@chem.skku.ac.kr></s>
+
+Copyright:
+
+Released under the terms of the GNU General Public License version 2.
+
+See /usr/share/common-licenses/GPL for the full license.
