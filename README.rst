@@ -108,11 +108,11 @@ System Requirements
 Hardware:
     ScanCode will run best with a modern X86 processor and at least 2GB or Ram and 250MB of disk.
 
-Operating System:
-    ScanCode should run:
-     * on most recent 64-bit Linux distributions (32-bit distros are not supported for now),
-     * on recent Mac OSX (10.6.8 and up),
-     * and on Windows 7 and up (32- or 64-bit) using a 32-bit Python.
+Supported operating Systems. ScanCode should run:
+
+* on most recent 64-bit Linux distributions (32-bit distros are not supported for now),
+* on recent Mac OSX (10.6.8 and up),
+* and on Windows 7 and up (32- or 64-bit) using a 32-bit Python.
 
 On Linux:
 
@@ -134,6 +134,7 @@ On Windows:
     Install Python on the c: drive and use all default installer options.
 
 On Mac:
+
     Download Python from this url:
 
         https://www.python.org/ftp/python/2.7.10/python-2.7.10-macosx10.6.pkg
@@ -251,9 +252,9 @@ You need to create a pair of files:
 
 * the key name can contain only these symbols:
 
- * lowercase letters from a to z,
- * numbers from 0 to 9,and
- * dash `-` and `.` period signs. No spaces.
+ - lowercase letters from a to z,
+ - numbers from 0 to 9,and
+ - dash `-` and `.` period signs. No spaces.
 
 Save these two files in the src/licensedcode/data/licenses/ directory.
 
@@ -265,6 +266,7 @@ See the src/licensedcode/data/licenses/ directory for examples.
 How to add a new license detection rule?
 ========================================
 A license detection rule is a pair of files:
+
  * a plain text rule file that is typically a variant of a license text, notice or license mention.
  * a small text data file (in YAML format) documenting which license(s) should be detected for 
    the rule text. 
