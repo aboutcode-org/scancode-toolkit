@@ -1,0 +1,14 @@
+name: Open Definition Licenses data
+home_url: http://licenses.opendefinition.org
+download_url:
+    - http://licenses.opendefinition.org/licenses/groups/all.json
+    - https://raw.githubusercontent.com/okfn/licenses/ad1512841f8a1c409ff97202920f1c053bde3b93/licenses/groups/all.json
+notes: >
+    downloaded circa June 2012
+    newer versions available since at http://licenses.opendefinition.org/licenses/groups/all.json
+    This dataset is itself licensed... as it should.
+
+license: pddl-1.0
+license_file: pddl-1.0.LICENSE
+vcs_tool: git
+vcs_repository: https://github.com/okfn/licenses.git
