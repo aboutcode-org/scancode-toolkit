@@ -39,7 +39,6 @@ from scancode.api import get_copyrights
 from scancode.api import get_licenses
 from scancode.api import HtmlAppAssetCopyWarning
 from scancode.api import HtmlAppAssetCopyError
-import textwrap
 
 
 info_text = '''
@@ -187,19 +186,32 @@ files are saved to the 'myscan_files' directory:
 '''
 
 
+short_help = '''Usage: scancode [OPTIONS] <input> <output_file>
+Try 'scancode --help' for more information.'''
+
+
 formats = ['json', 'html', 'html-app']
+
 
 class ScanCommand(click.Command):
     """
     Workaround click 4.0 bug https://github.com/mitsuhiko/click/issues/365
     """
     def get_usage(self, ctx):
-        formatted = '''Usage: scancode [OPTIONS] <input> <output_file>
-Try 'scancode --help' for more information'''
-        return formatted
+        return short_help
+
+
+def validate_extract(ctx, param, value):
+    if not value or ctx.resilient_parsing:
+        return
+    click.echo(ctx.params)
+    ctx.fail('''The '--extract' option cannot be combined with other scanning options.
+Use '--extract' alone to extract, then run a scan on the extracted files.''')
+    ctx.exit()
 
 
 @click.command(name='scancode', epilog=epilog_text, cls=ScanCommand)
+@click.pass_context
 @click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True))
 @click.argument('output_file', default='-', metavar='<output_file>', type=click.File('wb'))
 @click.option('-c', '--copyright', is_flag=True, default=False, help='Scan <input> for copyrights. [default]')
@@ -218,23 +230,30 @@ Try 'scancode --help' for more information'''
 @click.option('--verbose', is_flag=True, default=False, help='Show verbose scan progress messages.')
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version,
               help=('Show the version and exit.'))
-def scancode(input, output_file, extract, copyright, license, format, verbose, *args, **kwargs):
+def scancode(ctx, input, output_file, extract, copyright, license, format, verbose, *args, **kwargs):
     """scan the <input> file or directory for origin and license and save results to the <output_file>.
 
     The scan results are printed on terminal if <output_file> is not provided.
     """
+    scans = [copyright, license]
     if extract:
+        if any(scans):
+            # exclusive, ignoring other options.
+            # FIXME: this should turned into  a sub-command
+            ctx.fail('''The '--extract' option cannot be combined with other scanning options.
+Use '--extract' alone to extract <input>, then run a scan on the extracted files.''')
+            ctx.exit(1)
+
         click.secho('Extracting archives...', fg='green')
         extract_errors = get_extract(input)
         if extract_errors:
             # FIXME: Provide a better way to report errors and we need to report progress
             click.secho('\n'.join(extract_errors), fg='red')
         click.secho('Extracting done.', fg='green')
-        # exclusive, ignoring other options.
         return
 
     # Default scan when no options is provided
-    if not any((copyright, license)):
+    if not any(scans):
         copyright = True
         license = True
 
