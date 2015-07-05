@@ -22,7 +22,6 @@ https://github.com/nexB/scancode-toolkit/wiki/Roadmap
 .. image:: samples/screenshot.png
 
 
-
 Quick Start
 ===========
 
@@ -49,6 +48,7 @@ See more command examples::
 
     ./scancode --examples
 
+
 Source code
 ===========
 
@@ -71,6 +71,7 @@ Support
 
 If you have a question, a suggestion or find a bug, enter a ticket at:
 https://github.com/nexB/scancode-toolkit/issues
+
 
 Documentation
 =============
@@ -96,6 +97,24 @@ To run a scan on sample data, run this::
 Then open samples.html in your web browser.
 
 
+Build and tests status
+======================
+
+master branch: Linux and Window: 
+
+.. image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=master
+   :target: https://travis-ci.org/nexB/scancode-toolkit
+.. image:: https://ci.appveyor.com/api/projects/status/o3wl8mu4x18nropv/branch/master?png=true
+   :target: https://ci.appveyor.com/project/nexB/scancode-toolkit
+
+develop branch: Linux and Windows:
+
+.. image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=develop
+   :target: https://travis-ci.org/nexB/scancode-toolkit
+.. image:: https://ci.appveyor.com/api/projects/status/o3wl8mu4x18nropv/branch/develop?png=true
+   :target: https://ci.appveyor.com/project/nexB/scancode-toolkit
+
+
 Comprehensive Installation
 ==========================
 ScanCode requires Python 2.7.x and is tested on Linux, Mac, and Windows. 
@@ -104,38 +123,44 @@ Make sure Python 2.7 is installed first.
 System Requirements
 -------------------
 
-Hardware: 
+**Hardware** : 
 ScanCode will run best with a modern X86 processor and at least 2GB or Ram and 250MB of disk.
 
-Supported operating Systems. ScanCode should run:
+**Supported operating systems** : ScanCode should run on these OSes:
 
-* on most recent 64-bit Linux distributions (32-bit distros are not supported for now),
-* on recent Mac OSX (10.6.8 and up),
-* and on Windows 7 and up (32- or 64-bit) using a 32-bit Python.
+* Linux: on most recent 64-bit Linux distributions (32-bit distros are not supported for now),
+* Mac: on recent Mac OSX (10.6.8 and up),
+* Windows: on Windows 7 and up (32- or 64-bit) using a 32-bit Python.
 
-On Linux:
+Prerequisites
+-------------
 
-Use your package manager to install python2.7.
-If Python 2.7 is not available from your package manager, you must compile it from sources.
+ScanCode needs a Python 2.7 interpreter.
+ 
+- **On Linux**:
 
-For instance, visit https://github.com/dejacode/about-code-tool/wiki/BuildingPython27OnCentos
-for instruction to compile Python from sources on Centos.
+  Use your package manager to install `python2.7`.
+  If Python 2.7 is not available from your package manager, you must compile it from sources.
 
-On Windows:
+  For instance, visit https://github.com/dejacode/about-code-tool/wiki/BuildingPython27OnCentos
+  for instruction to compile Python from sources on Centos.
 
-ScanCode requires the Python 2.7 (Windows x86 MSI installer) 
-for X86 regardless of whether you run 32-bit or 64-bit Windows.
-DO NOT USE Python X86_64 even if you run 64 bit Windows.
-Download Python from this url:
-https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi
+- **On Windows**:
 
-Install Python on the c: drive and use all default installer options.
-See the Windows installation section for more installation details.
+  Use the Python 2.7 (Windows x86 MSI installer) for X86 regardless of whether you run Windows
+  on 32-bit or 64-bit. DO NOT USE Python X86_64 even if you run 64 bit Windows.
 
-On Mac:
+  Download Python from this url:
+  https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi
 
-Download Python from this url:
-https://www.python.org/ftp/python/2.7.10/python-2.7.10-macosx10.6.pkg
+  Install Python on the c: drive and use all default installer options.
+  See the Windows installation section for more installation details.
+
+
+- **On Mac**:
+
+  Download and install Python from this url:
+  https://www.python.org/ftp/python/2.7.10/python-2.7.10-macosx10.6.pkg
 
 
 Installation on Linux and Mac
@@ -151,11 +176,9 @@ Open a terminal in the extracted directory and run::
 
 This will configure ScanCode and display the command line help.
 
-You can continue to the Usage section.
 
-
-Windows Installation
---------------------
+Installation on Windows
+-----------------------
 
 Download the latest ScanCode release zip file from:
 https://github.com/nexB/scancode-toolkit/releases/latest
@@ -186,14 +209,16 @@ https://github.com/nexB/scancode-toolkit/releases/latest
         scancode -h
 
 * Press enter. This will configure your ScanCode installation.
-* Several messages are displayed which will be followed by the scancode command help.
+* Several messages are displayed followed by the scancode command help.
+* The installation is complete.
 
 
 ===
 FAQ
 ===
+
 Why ScanCode?
-==================
+=============
 
 We could not find an existing tool (open source or commercial) meeting our needs:
 
@@ -316,6 +341,7 @@ More (advanced) rules options:
 * To mark a rule as detecting a choice of licenses, add this field in your .yml file::
 
       license_choice: yes
+
 
 How to get started with development?
 ====================================
