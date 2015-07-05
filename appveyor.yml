@@ -1,0 +1,9 @@
+version: '{build}'
+
+install:
+    - configure
+
+build: off
+
+test_script:
+    - py.test -n 2 -vs src tests/commoncode tests/extractcode tests/textcode tests/typecode tests/cluecode tests/scancode tests/licensedcode/test_detect.py tests/licensedcode/test_index.py tests/licensedcode/test_legal.py tests/licensedcode/test_models.py
