@@ -1,3 +1,19 @@
-[('linux-2.6.23-orig/kernel/pid.c',
-  'linux-2.6.23/kernel/pid.c',
-  '--- linux-2.6.23-orig/kernel/pid.c\n+++ linux-2.6.23/kernel/pid.c\n@@ -394,7 +394,7 @@\npidhash_shift = min(12, pidhash_shift);\npidhash_size = 1 << pidhash_shift;\n\n-\tprintk("PID hash table entries: %d (order: %d, %Zd bytes)\\n",\n+\tprintk(KERN_DEBUG "PID hash table entries: %d (order: %d, %Zd bytes)\\n",\npidhash_size, pidhash_shift,\npidhash_size * sizeof(struct hlist_head));\n')]
+[
+  [
+    "linux-2.6.23-orig/kernel/pid.c", 
+    "linux-2.6.23/kernel/pid.c", 
+    [
+      "--- linux-2.6.23-orig/kernel/pid.c", 
+      "+++ linux-2.6.23/kernel/pid.c", 
+      "@@ -394,7 +394,7 @@", 
+      "pidhash_shift = min(12, pidhash_shift);", 
+      "pidhash_size = 1 << pidhash_shift;", 
+      "", 
+      "-\tprintk(\"PID hash table entries: %d (order: %d, %Zd bytes)\\n\",", 
+      "+\tprintk(KERN_DEBUG \"PID hash table entries: %d (order: %d, %Zd bytes)\\n\",", 
+      "pidhash_size, pidhash_shift,", 
+      "pidhash_size * sizeof(struct hlist_head));", 
+      ""
+    ]
+  ]
+]

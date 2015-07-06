@@ -1,3 +1,38 @@
-[('linux-2.6.23/arch/sh/kernel/traps.c.orig',
-  'linux-2.6.23/arch/sh/kernel/traps.c',
-  '--- linux-2.6.23/arch/sh/kernel/traps.c.orig\n+++ linux-2.6.23/arch/sh/kernel/traps.c\n@@ -655,11 +655,12 @@\ngoto uspace_segv;\n\n/* shout about userspace fixups */\n-\t\tif ((se_usermode & 1) && !(test_thread_flag (TIF_UAC_NOPRINT)))\n+/*\t\tif ((se_usermode & 1) && !(test_thread_flag (TIF_UAC_NOPRINT)))\nprintk("Unaligned userspace access "\n"in \\"%s\\" pid=%d pc=0x%p ins=0x%04hx\\n",\ncurrent->comm,current->pid,\n(u16*)regs->pc,instruction);\n+*/\n#endif\n\nif (se_usermode & 2)\n@@ -705,11 +706,12 @@\n} else {\nse_sys += 1;\n\n-\t\tif (se_kernmode_warn)\n+/* \t\tif (se_kernmode_warn)\nprintk("Unaligned kernel access "\n"on behalf of \\"%s\\" pid=%d pc=0x%p ins=0x%04hx\\n",\ncurrent->comm,current->pid,(u16*)regs->pc,\ninstruction);\n+ */\n\nif (regs->pc & 1)\ndie("unaligned program counter", regs, error_code);')]
+[
+  [
+    "linux-2.6.23/arch/sh/kernel/traps.c.orig", 
+    "linux-2.6.23/arch/sh/kernel/traps.c", 
+    [
+      "--- linux-2.6.23/arch/sh/kernel/traps.c.orig", 
+      "+++ linux-2.6.23/arch/sh/kernel/traps.c", 
+      "@@ -655,11 +655,12 @@", 
+      "goto uspace_segv;", 
+      "", 
+      "/* shout about userspace fixups */", 
+      "-\t\tif ((se_usermode & 1) && !(test_thread_flag (TIF_UAC_NOPRINT)))", 
+      "+/*\t\tif ((se_usermode & 1) && !(test_thread_flag (TIF_UAC_NOPRINT)))", 
+      "printk(\"Unaligned userspace access \"", 
+      "\"in \\\"%s\\\" pid=%d pc=0x%p ins=0x%04hx\\n\",", 
+      "current->comm,current->pid,", 
+      "(u16*)regs->pc,instruction);", 
+      "+*/", 
+      "#endif", 
+      "", 
+      "if (se_usermode & 2)", 
+      "@@ -705,11 +706,12 @@", 
+      "} else {", 
+      "se_sys += 1;", 
+      "", 
+      "-\t\tif (se_kernmode_warn)", 
+      "+/* \t\tif (se_kernmode_warn)", 
+      "printk(\"Unaligned kernel access \"", 
+      "\"on behalf of \\\"%s\\\" pid=%d pc=0x%p ins=0x%04hx\\n\",", 
+      "current->comm,current->pid,(u16*)regs->pc,", 
+      "instruction);", 
+      "+ */", 
+      "", 
+      "if (regs->pc & 1)", 
+      "die(\"unaligned program counter\", regs, error_code);"
+    ]
+  ]
+]

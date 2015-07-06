@@ -1,3 +1,18 @@
-[('linux-2.6.23/net/ipv4/devinet.c~',
-  'linux-2.6.23/net/ipv4/devinet.c',
-  '--- linux-2.6.23/net/ipv4/devinet.c~\n+++ linux-2.6.23/net/ipv4/devinet.c\n@@ -761,6 +761,7 @@\ninet_del_ifa(in_dev, ifap, 0);\nifa->ifa_broadcast = 0;\nifa->ifa_anycast = 0;\n+\t\t\tifa->ifa_scope = 0;\n}\n\nifa->ifa_address = ifa->ifa_local = sin->sin_addr.s_addr;')]
+[
+  [
+    "linux-2.6.23/net/ipv4/devinet.c~", 
+    "linux-2.6.23/net/ipv4/devinet.c", 
+    [
+      "--- linux-2.6.23/net/ipv4/devinet.c~", 
+      "+++ linux-2.6.23/net/ipv4/devinet.c", 
+      "@@ -761,6 +761,7 @@", 
+      "inet_del_ifa(in_dev, ifap, 0);", 
+      "ifa->ifa_broadcast = 0;", 
+      "ifa->ifa_anycast = 0;", 
+      "+\t\t\tifa->ifa_scope = 0;", 
+      "}", 
+      "", 
+      "ifa->ifa_address = ifa->ifa_local = sin->sin_addr.s_addr;"
+    ]
+  ]
+]

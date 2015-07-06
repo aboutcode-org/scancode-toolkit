@@ -1,3 +1,18 @@
-[('linux-2.6.23/include/linux/stm/soc.h.orig',
-  'linux-2.6.23/include/linux/stm/soc.h',
-  '--- linux-2.6.23/include/linux/stm/soc.h.orig\n+++ linux-2.6.23/include/linux/stm/soc.h\n@@ -420,6 +420,7 @@\n};\n\n#define STASC_FLAG_NORTSCTS\t1\n+#define STASC_FLAG_NORXTX\t2\n\nextern int stasc_console_device;\nextern struct platform_device *stasc_configured_devices[];')]
+[
+  [
+    "linux-2.6.23/include/linux/stm/soc.h.orig", 
+    "linux-2.6.23/include/linux/stm/soc.h", 
+    [
+      "--- linux-2.6.23/include/linux/stm/soc.h.orig", 
+      "+++ linux-2.6.23/include/linux/stm/soc.h", 
+      "@@ -420,6 +420,7 @@", 
+      "};", 
+      "", 
+      "#define STASC_FLAG_NORTSCTS\t1", 
+      "+#define STASC_FLAG_NORXTX\t2", 
+      "", 
+      "extern int stasc_console_device;", 
+      "extern struct platform_device *stasc_configured_devices[];"
+    ]
+  ]
+]

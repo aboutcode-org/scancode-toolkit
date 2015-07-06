@@ -1,3 +1,26 @@
-[('linux-2.6.23/drivers/net/Makefile.orig',
-  'linux-2.6.23/drivers/net/Makefile',
-  '--- linux-2.6.23/drivers/net/Makefile.orig\n+++ linux-2.6.23/drivers/net/Makefile\n@@ -2,6 +2,7 @@\n# Makefile for the Linux network (ethercard) device drivers.\n#\n\n+obj-$(CONFIG_PHYLIB) += phy/\nobj-$(CONFIG_E1000) += e1000/\nobj-$(CONFIG_IBM_EMAC) += ibm_emac/\nobj-$(CONFIG_IXGB) += ixgb/\n@@ -79,7 +80,6 @@\n#\n\nobj-$(CONFIG_MII) += mii.o\n-obj-$(CONFIG_PHYLIB) += phy/\n\nobj-$(CONFIG_SUNDANCE) += sundance.o\nobj-$(CONFIG_HAMACHI) += hamachi.o')]
+[
+  [
+    "linux-2.6.23/drivers/net/Makefile.orig", 
+    "linux-2.6.23/drivers/net/Makefile", 
+    [
+      "--- linux-2.6.23/drivers/net/Makefile.orig", 
+      "+++ linux-2.6.23/drivers/net/Makefile", 
+      "@@ -2,6 +2,7 @@", 
+      "# Makefile for the Linux network (ethercard) device drivers.", 
+      "#", 
+      "", 
+      "+obj-$(CONFIG_PHYLIB) += phy/", 
+      "obj-$(CONFIG_E1000) += e1000/", 
+      "obj-$(CONFIG_IBM_EMAC) += ibm_emac/", 
+      "obj-$(CONFIG_IXGB) += ixgb/", 
+      "@@ -79,7 +80,6 @@", 
+      "#", 
+      "", 
+      "obj-$(CONFIG_MII) += mii.o", 
+      "-obj-$(CONFIG_PHYLIB) += phy/", 
+      "", 
+      "obj-$(CONFIG_SUNDANCE) += sundance.o", 
+      "obj-$(CONFIG_HAMACHI) += hamachi.o"
+    ]
+  ]
+]

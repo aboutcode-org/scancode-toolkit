@@ -1,3 +1,19 @@
-[('xvidcap-1.1.6/Makefile.in.orig',
-  'xvidcap-1.1.6/Makefile.in',
-  '--- xvidcap-1.1.6/Makefile.in.orig\n+++ xvidcap-1.1.6/Makefile.in\n@@ -270,7 +270,7 @@\nxvidcap.png \\\nppm2mpeg.sh\n\n-xvidcapdocdir = ${datadir}/doc/xvidcap\n+xvidcapdocdir = ${datadir}/doc/packages/xvidcap\nxvidcapdoc_DATA = \\\nREADME\\\nCOPYING\\')]
+[
+  [
+    "xvidcap-1.1.6/Makefile.in.orig", 
+    "xvidcap-1.1.6/Makefile.in", 
+    [
+      "--- xvidcap-1.1.6/Makefile.in.orig", 
+      "+++ xvidcap-1.1.6/Makefile.in", 
+      "@@ -270,7 +270,7 @@", 
+      "xvidcap.png \\", 
+      "ppm2mpeg.sh", 
+      "", 
+      "-xvidcapdocdir = ${datadir}/doc/xvidcap", 
+      "+xvidcapdocdir = ${datadir}/doc/packages/xvidcap", 
+      "xvidcapdoc_DATA = \\", 
+      "README\\", 
+      "COPYING\\"
+    ]
+  ]
+]

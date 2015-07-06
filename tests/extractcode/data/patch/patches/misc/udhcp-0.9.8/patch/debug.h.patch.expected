@@ -1,3 +1,37 @@
-[('udhcp-0.9.8/debug.h.orig',
-  'udhcp-0.9.8/debug.h',
-  '--- udhcp-0.9.8/debug.h.orig\n+++ udhcp-0.9.8/debug.h\n@@ -16,16 +16,16 @@\n# define OPEN_LOG(name) openlog(name, 0, 0)\n#define CLOSE_LOG() closelog()\n#else\n-# define LOG_EMERG\t"EMERGENCY!"\n-# define LOG_ALERT\t"ALERT!"\n-# define LOG_CRIT\t"critical!"\n-# define LOG_WARNING\t"warning"\n-# define LOG_ERR\t"error"\n-# define LOG_INFO\t"info"\n-# define LOG_DEBUG\t"debug"\n-# define LOG(level, str, args...) do { printf("%s, ", level); \\\n-\t\t\t\tprintf(str, ## args); \\\n-\t\t\t\tprintf("\\n"); } while(0)\n+# define LOG_EMERG\t"<F>"\n+# define LOG_ALERT\t"<E>"\n+# define LOG_CRIT\t"<F>"\n+# define LOG_WARNING\t"<W>"\n+# define LOG_ERR\t"<E>"\n+# define LOG_INFO\t"<N>"\n+# define LOG_DEBUG\t"<D>"\n+# define LOG(level, str, args...) do { fprintf(stderr, "%sudhcp: ", level); \\\n+\t\t\t\tfprintf(stderr, str, ## args); \\\n+\t\t\t\tfprintf(stderr, "\\n"); } while(0)\n# define OPEN_LOG(name) do {;} while(0)\n#define CLOSE_LOG() do {;} while(0)\n#endif')]
+[
+  [
+    "udhcp-0.9.8/debug.h.orig", 
+    "udhcp-0.9.8/debug.h", 
+    [
+      "--- udhcp-0.9.8/debug.h.orig", 
+      "+++ udhcp-0.9.8/debug.h", 
+      "@@ -16,16 +16,16 @@", 
+      "# define OPEN_LOG(name) openlog(name, 0, 0)", 
+      "#define CLOSE_LOG() closelog()", 
+      "#else", 
+      "-# define LOG_EMERG\t\"EMERGENCY!\"", 
+      "-# define LOG_ALERT\t\"ALERT!\"", 
+      "-# define LOG_CRIT\t\"critical!\"", 
+      "-# define LOG_WARNING\t\"warning\"", 
+      "-# define LOG_ERR\t\"error\"", 
+      "-# define LOG_INFO\t\"info\"", 
+      "-# define LOG_DEBUG\t\"debug\"", 
+      "-# define LOG(level, str, args...) do { printf(\"%s, \", level); \\", 
+      "-\t\t\t\tprintf(str, ## args); \\", 
+      "-\t\t\t\tprintf(\"\\n\"); } while(0)", 
+      "+# define LOG_EMERG\t\"<F>\"", 
+      "+# define LOG_ALERT\t\"<E>\"", 
+      "+# define LOG_CRIT\t\"<F>\"", 
+      "+# define LOG_WARNING\t\"<W>\"", 
+      "+# define LOG_ERR\t\"<E>\"", 
+      "+# define LOG_INFO\t\"<N>\"", 
+      "+# define LOG_DEBUG\t\"<D>\"", 
+      "+# define LOG(level, str, args...) do { fprintf(stderr, \"%sudhcp: \", level); \\", 
+      "+\t\t\t\tfprintf(stderr, str, ## args); \\", 
+      "+\t\t\t\tfprintf(stderr, \"\\n\"); } while(0)", 
+      "# define OPEN_LOG(name) do {;} while(0)", 
+      "#define CLOSE_LOG() do {;} while(0)", 
+      "#endif"
+    ]
+  ]
+]

@@ -1,3 +1,23 @@
-[('src.orig/3rdParty/webkit/Rules.mk',
-  'src/3rdParty/webkit/Rules.mk',
-  'Index: src/3rdParty/webkit/Rules.mk\n===================================================================\n--- src.orig/3rdParty/webkit/Rules.mk\n+++ src/3rdParty/webkit/Rules.mk\n@@ -13,8 +13,8 @@ dir := $(workdir)/WebCore\n-include $(dir)/Rules.mk\n\ndefine $(postpatch)\n-(cd $(workdir)/JavaScriptCore && ./make-generated-sources.sh)\n-(cd $(workdir)/WebCore && ./make-generated-sources.sh)\n++(cd $(workdir)/JavaScriptCore && ./make-generated-sources.sh)\n++(cd $(workdir)/WebCore && ./make-generated-sources.sh)\nendef\n\nifeq ($(MOTO_ST40_OPTIMISATION_HACKS),Y)')]
+[
+  [
+    "src.orig/3rdParty/webkit/Rules.mk", 
+    "src/3rdParty/webkit/Rules.mk", 
+    [
+      "Index: src/3rdParty/webkit/Rules.mk", 
+      "===================================================================", 
+      "--- src.orig/3rdParty/webkit/Rules.mk", 
+      "+++ src/3rdParty/webkit/Rules.mk", 
+      "@@ -13,8 +13,8 @@ dir := $(workdir)/WebCore", 
+      "-include $(dir)/Rules.mk", 
+      "", 
+      "define $(postpatch)", 
+      "-(cd $(workdir)/JavaScriptCore && ./make-generated-sources.sh)", 
+      "-(cd $(workdir)/WebCore && ./make-generated-sources.sh)", 
+      "++(cd $(workdir)/JavaScriptCore && ./make-generated-sources.sh)", 
+      "++(cd $(workdir)/WebCore && ./make-generated-sources.sh)", 
+      "endef", 
+      "", 
+      "ifeq ($(MOTO_ST40_OPTIMISATION_HACKS),Y)"
+    ]
+  ]
+]

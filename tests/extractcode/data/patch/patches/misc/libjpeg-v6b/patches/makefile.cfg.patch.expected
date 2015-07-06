@@ -1,3 +1,19 @@
-[('jpeg-6b.orig/makefile.cfg',
-  'jpeg-6b/makefile.cfg',
-  '--- jpeg-6b.orig/makefile.cfg\n+++ jpeg-6b/makefile.cfg\n@@ -168,7 +168,7 @@\n\n# with libtool:\nlibjpeg.la: @A2K_DEPS@ $(LIBOBJECTS)\n-\t$(LIBTOOL) --mode=link $(CC) -o libjpeg.la $(LIBOBJECTS) \\\n+\t$(LIBTOOL) --mode=link "$(CC)" -o libjpeg.la $(LIBOBJECTS) \\\n-rpath $(libdir) -version-info $(JPEG_LIB_VERSION)\n\n# sample programs:')]
+[
+  [
+    "jpeg-6b.orig/makefile.cfg", 
+    "jpeg-6b/makefile.cfg", 
+    [
+      "--- jpeg-6b.orig/makefile.cfg", 
+      "+++ jpeg-6b/makefile.cfg", 
+      "@@ -168,7 +168,7 @@", 
+      "", 
+      "# with libtool:", 
+      "libjpeg.la: @A2K_DEPS@ $(LIBOBJECTS)", 
+      "-\t$(LIBTOOL) --mode=link $(CC) -o libjpeg.la $(LIBOBJECTS) \\", 
+      "+\t$(LIBTOOL) --mode=link \"$(CC)\" -o libjpeg.la $(LIBOBJECTS) \\", 
+      "-rpath $(libdir) -version-info $(JPEG_LIB_VERSION)", 
+      "", 
+      "# sample programs:"
+    ]
+  ]
+]
