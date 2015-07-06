@@ -1,3 +1,14 @@
-[('linux-2.6.23/localversion-stm~',
-  'linux-2.6.23/localversion-stm',
-  'diff -u -p /home/jonsv322/motorola/DEV_7105_erik_rulez_2/base/3pp/linux-st710x/linux-2.6.23/localversion-stm\\~ /home/jonsv322/motorola/DEV_7105_erik_rulez_2/base/3pp/linux-st710x/linux-2.6.23/localversion-stm\n--- linux-2.6.23/localversion-stm~\n+++ linux-2.6.23/localversion-stm\n@@ -1,1 +1,1 @@\n-_stm23_A18B\n+_stm23_0121')]
+[
+  [
+    "linux-2.6.23/localversion-stm~", 
+    "linux-2.6.23/localversion-stm", 
+    [
+      "diff -u -p /home/jonsv322/motorola/DEV_7105_erik_rulez_2/base/3pp/linux-st710x/linux-2.6.23/localversion-stm\\~ /home/jonsv322/motorola/DEV_7105_erik_rulez_2/base/3pp/linux-st710x/linux-2.6.23/localversion-stm", 
+      "--- linux-2.6.23/localversion-stm~", 
+      "+++ linux-2.6.23/localversion-stm", 
+      "@@ -1,1 +1,1 @@", 
+      "-_stm23_A18B", 
+      "+_stm23_0121"
+    ]
+  ]
+]

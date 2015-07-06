@@ -1,3 +1,31 @@
-[('MediaInfoLib-0.7.43.orig/Project/GNU/Library/libmediainfo-config.in',
-  'MediaInfoLib-0.7.43/Project/GNU/Library/libmediainfo-config.in',
-  'diff -Naur MediaInfoLib-0.7.43.orig/Project/GNU/Library/libmediainfo-config.in MediaInfoLib-0.7.43/Project/GNU/Library/libmediainfo-config.in\n--- MediaInfoLib-0.7.43.orig/Project/GNU/Library/libmediainfo-config.in\n+++ MediaInfoLib-0.7.43/Project/GNU/Library/libmediainfo-config.in\n@@ -1,14 +1,15 @@\n+#!/bin/sh\nif test "$1" = "CXXFLAGS"; then\n-echo @MediaInfoLib_CXXFLAGS@\n+/usr/bin/pkg-config --cflags libmediainfo\nfi\nif test "$1" = "LIBS"; then\n-echo @MediaInfoLib_LIBS@\n+/usr/bin/pkg-config --libs libmediainfo\nfi\nif test "$1" = "LIBS_Static"; then\n-echo @MediaInfoLib_LIBS_Static@\n+/usr/bin/pkg-config --variable=Libs_Static libmediainfo\nfi\nif test "$1" = "Unicode"; then\n-echo @MediaInfoLib_Unicode@\n+/usr/bin/pkg-config --variable=Unicode libmediainfo\nfi\nif test "$1" = "Exists"; then\necho yes')]
+[
+  [
+    "MediaInfoLib-0.7.43.orig/Project/GNU/Library/libmediainfo-config.in", 
+    "MediaInfoLib-0.7.43/Project/GNU/Library/libmediainfo-config.in", 
+    [
+      "diff -Naur MediaInfoLib-0.7.43.orig/Project/GNU/Library/libmediainfo-config.in MediaInfoLib-0.7.43/Project/GNU/Library/libmediainfo-config.in", 
+      "--- MediaInfoLib-0.7.43.orig/Project/GNU/Library/libmediainfo-config.in", 
+      "+++ MediaInfoLib-0.7.43/Project/GNU/Library/libmediainfo-config.in", 
+      "@@ -1,14 +1,15 @@", 
+      "+#!/bin/sh", 
+      "if test \"$1\" = \"CXXFLAGS\"; then", 
+      "-echo @MediaInfoLib_CXXFLAGS@", 
+      "+/usr/bin/pkg-config --cflags libmediainfo", 
+      "fi", 
+      "if test \"$1\" = \"LIBS\"; then", 
+      "-echo @MediaInfoLib_LIBS@", 
+      "+/usr/bin/pkg-config --libs libmediainfo", 
+      "fi", 
+      "if test \"$1\" = \"LIBS_Static\"; then", 
+      "-echo @MediaInfoLib_LIBS_Static@", 
+      "+/usr/bin/pkg-config --variable=Libs_Static libmediainfo", 
+      "fi", 
+      "if test \"$1\" = \"Unicode\"; then", 
+      "-echo @MediaInfoLib_Unicode@", 
+      "+/usr/bin/pkg-config --variable=Unicode libmediainfo", 
+      "fi", 
+      "if test \"$1\" = \"Exists\"; then", 
+      "echo yes"
+    ]
+  ]
+]

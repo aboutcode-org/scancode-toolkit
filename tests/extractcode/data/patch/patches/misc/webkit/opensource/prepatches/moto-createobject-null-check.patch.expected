@@ -1,6 +1,44 @@
-[('dev/null',
-  'src/3rdParty/webkit/patches/moto-createobject-null-check.patch',
-  'Index: src/3rdParty/webkit/patches/moto-createobject-null-check.patch\n===================================================================\n--- dev/null\n+++ src/3rdParty/webkit/patches/moto-createobject-null-check.patch\n@@ -0,0 +1,14 @@\n+diff -ur work.orig/JavaScriptCore/bindings/npruntime.cpp work/JavaScriptCore/bindings/npruntime.cpp\n+--- work.orig/JavaScriptCore/bindings/npruntime.cpp\t2008-11-26 14:29:07.000000000 +0100\n++++ work/JavaScriptCore/bindings/npruntime.cpp\t2009-05-25 14:52:11.000000000 +0200\n+@@ -181,6 +181,10 @@\n+         else\n+             obj = (NPObject*)malloc(sizeof(NPObject));\n+\n++        if (obj == NULL) {\n++          return NULL;\n++        }\n++\n+         obj->_class = aClass;\n+         obj->referenceCount = 1;\n+'),
- ('src.orig/3rdParty/webkit/patches/series',
-  'src/3rdParty/webkit/patches/series',
-  'Index: src/3rdParty/webkit/patches/series\n===================================================================\n--- src.orig/3rdParty/webkit/patches/series\n+++ src/3rdParty/webkit/patches/series\n@@ -27,5 +27,6 @@ webcore-no-scrollbars.patch\nnewlib-uint32-long.patch\nwebcore-sh4-atomicstring-alignment.patch\nekioh-gc.patch\n+moto-createobject-null-check.patch\nekioh-uclibc-stack-base.patch\nwebcore-accept-click.patch')]
+[
+  [
+    "dev/null", 
+    "src/3rdParty/webkit/patches/moto-createobject-null-check.patch", 
+    [
+      "Index: src/3rdParty/webkit/patches/moto-createobject-null-check.patch", 
+      "===================================================================", 
+      "--- dev/null", 
+      "+++ src/3rdParty/webkit/patches/moto-createobject-null-check.patch", 
+      "@@ -0,0 +1,14 @@", 
+      "+diff -ur work.orig/JavaScriptCore/bindings/npruntime.cpp work/JavaScriptCore/bindings/npruntime.cpp", 
+      "+--- work.orig/JavaScriptCore/bindings/npruntime.cpp\t2008-11-26 14:29:07.000000000 +0100", 
+      "++++ work/JavaScriptCore/bindings/npruntime.cpp\t2009-05-25 14:52:11.000000000 +0200", 
+      "+@@ -181,6 +181,10 @@", 
+      "+         else", 
+      "+             obj = (NPObject*)malloc(sizeof(NPObject));", 
+      "+", 
+      "++        if (obj == NULL) {", 
+      "++          return NULL;", 
+      "++        }", 
+      "++", 
+      "+         obj->_class = aClass;", 
+      "+         obj->referenceCount = 1;", 
+      "+"
+    ]
+  ], 
+  [
+    "src.orig/3rdParty/webkit/patches/series", 
+    "src/3rdParty/webkit/patches/series", 
+    [
+      "Index: src/3rdParty/webkit/patches/series", 
+      "===================================================================", 
+      "--- src.orig/3rdParty/webkit/patches/series", 
+      "+++ src/3rdParty/webkit/patches/series", 
+      "@@ -27,5 +27,6 @@ webcore-no-scrollbars.patch", 
+      "newlib-uint32-long.patch", 
+      "webcore-sh4-atomicstring-alignment.patch", 
+      "ekioh-gc.patch", 
+      "+moto-createobject-null-check.patch", 
+      "ekioh-uclibc-stack-base.patch", 
+      "webcore-accept-click.patch"
+    ]
+  ]
+]

@@ -1,3 +1,20 @@
-[('linux-2.6.23.orig/fs/squashfs/Makefile',
-  'dev/null',
-  'Index: linux-2.6.23/fs/squashfs/Makefile\n===================================================================\n--- linux-2.6.23.orig/fs/squashfs/Makefile\n+++ dev/null\n@@ -1,7 +0,0 @@\n-#\n-# Makefile for the linux squashfs routines.\n-#\n-\n-obj-$(CONFIG_SQUASHFS) += squashfs.o\n-squashfs-y += inode.o\n-squashfs-y += squashfs2_0.o')]
+[
+  [
+    "linux-2.6.23.orig/fs/squashfs/Makefile", 
+    "dev/null", 
+    [
+      "Index: linux-2.6.23/fs/squashfs/Makefile", 
+      "===================================================================", 
+      "--- linux-2.6.23.orig/fs/squashfs/Makefile", 
+      "+++ dev/null", 
+      "@@ -1,7 +0,0 @@", 
+      "-#", 
+      "-# Makefile for the linux squashfs routines.", 
+      "-#", 
+      "-", 
+      "-obj-$(CONFIG_SQUASHFS) += squashfs.o", 
+      "-squashfs-y += inode.o", 
+      "-squashfs-y += squashfs2_0.o"
+    ]
+  ]
+]

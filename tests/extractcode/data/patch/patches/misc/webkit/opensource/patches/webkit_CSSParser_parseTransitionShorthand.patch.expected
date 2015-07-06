@@ -1,3 +1,36 @@
-[('ekioh_src_motorola_20090310_r2971/src/3rdParty/webkit/work/WebCore/css/CSSParser.cpp.orig',
-  'ekioh_src_motorola_20090310_r2971/src/3rdParty/webkit/work/WebCore/css/CSSParser.cpp',
-  '--- ekioh_src_motorola_20090310_r2971/src/3rdParty/webkit/work/WebCore/css/CSSParser.cpp.orig\n+++ ekioh_src_motorola_20090310_r2971/src/3rdParty/webkit/work/WebCore/css/CSSParser.cpp\n@@ -1688,12 +1688,16 @@\nValue* val = valueList->current();\nif (val->unit == Value::Operator && val->iValue == \',\') {\n// We hit the end.  Fill in all remaining values with the initial value.\n+            // And add the properties.\nvalueList->next();\nfor (i = 0; i < numProperties; ++i) {\nif (!parsedProperty[i])\naddTransitionValue(values[i], new CSSInitialValue(true));\nparsedProperty[i] = false;\n}\n+            for (i = 0; i < numProperties; ++i) {\n+                addProperty(properties[i], values[i].release(), important);\n+            }\nif (!valueList->current())\nbreak;\n}\n@@ -2228,7 +2232,7 @@\nreturn new CSSPrimitiveValue(cAnimateAll);\nif (str == "none")\nreturn new CSSPrimitiveValue(cAnimateNone);\n-        CString propertyName = str.utf8();\n+\tCString propertyName = str.utf8();\nint result = getPropertyID(propertyName.data(), propertyName.length());\nif (result)\nreturn new CSSPrimitiveValue(result);')]
+[
+  [
+    "ekioh_src_motorola_20090310_r2971/src/3rdParty/webkit/work/WebCore/css/CSSParser.cpp.orig", 
+    "ekioh_src_motorola_20090310_r2971/src/3rdParty/webkit/work/WebCore/css/CSSParser.cpp", 
+    [
+      "--- ekioh_src_motorola_20090310_r2971/src/3rdParty/webkit/work/WebCore/css/CSSParser.cpp.orig", 
+      "+++ ekioh_src_motorola_20090310_r2971/src/3rdParty/webkit/work/WebCore/css/CSSParser.cpp", 
+      "@@ -1688,12 +1688,16 @@", 
+      "Value* val = valueList->current();", 
+      "if (val->unit == Value::Operator && val->iValue == ',') {", 
+      "// We hit the end.  Fill in all remaining values with the initial value.", 
+      "+            // And add the properties.", 
+      "valueList->next();", 
+      "for (i = 0; i < numProperties; ++i) {", 
+      "if (!parsedProperty[i])", 
+      "addTransitionValue(values[i], new CSSInitialValue(true));", 
+      "parsedProperty[i] = false;", 
+      "}", 
+      "+            for (i = 0; i < numProperties; ++i) {", 
+      "+                addProperty(properties[i], values[i].release(), important);", 
+      "+            }", 
+      "if (!valueList->current())", 
+      "break;", 
+      "}", 
+      "@@ -2228,7 +2232,7 @@", 
+      "return new CSSPrimitiveValue(cAnimateAll);", 
+      "if (str == \"none\")", 
+      "return new CSSPrimitiveValue(cAnimateNone);", 
+      "-        CString propertyName = str.utf8();", 
+      "+\tCString propertyName = str.utf8();", 
+      "int result = getPropertyID(propertyName.data(), propertyName.length());", 
+      "if (result)", 
+      "return new CSSPrimitiveValue(result);"
+    ]
+  ]
+]

@@ -1,3 +1,29 @@
-[('linux-2.6.23/fs/yaffs2/yaffs_guts.c',
-  'linux-2.6.23-yaffs2-yaffs_guts.c.patch/fs/yaffs2/yaffs_guts.c',
-  'diff -Naur linux-2.6.23/fs/yaffs2/yaffs_guts.c linux-2.6.23-yaffs2-yaffs_guts.c.patch/fs/yaffs2/yaffs_guts.c\n--- linux-2.6.23/fs/yaffs2/yaffs_guts.c\n+++ linux-2.6.23-yaffs2-yaffs_guts.c.patch/fs/yaffs2/yaffs_guts.c\n@@ -4831,7 +4831,7 @@\n\nnToWriteBack =\n(nBytesRead >\n-\t\t\t     (start + n)) ? nBytesRead : (start + n);\n+\t\t\t     ((int)start + n)) ? nBytesRead : (start + n);\n\n} else {\nnToCopy = dev->nDataBytesPerChunk - start;\n@@ -5501,7 +5501,7 @@\nstate, sequenceNumber));\n\nif (state == YAFFS_BLOCK_STATE_DEAD) {\n-\t\t\tT(YAFFS_TRACE_BAD_BLOCKS,\n+\t\t\tT(YAFFS_TRACE_SCAN_DEBUG,\n(TSTR("block %d is bad" TENDSTR), blk));\n} else if (state == YAFFS_BLOCK_STATE_EMPTY) {\nT(YAFFS_TRACE_SCAN_DEBUG,')]
+[
+  [
+    "linux-2.6.23/fs/yaffs2/yaffs_guts.c", 
+    "linux-2.6.23-yaffs2-yaffs_guts.c.patch/fs/yaffs2/yaffs_guts.c", 
+    [
+      "diff -Naur linux-2.6.23/fs/yaffs2/yaffs_guts.c linux-2.6.23-yaffs2-yaffs_guts.c.patch/fs/yaffs2/yaffs_guts.c", 
+      "--- linux-2.6.23/fs/yaffs2/yaffs_guts.c", 
+      "+++ linux-2.6.23-yaffs2-yaffs_guts.c.patch/fs/yaffs2/yaffs_guts.c", 
+      "@@ -4831,7 +4831,7 @@", 
+      "", 
+      "nToWriteBack =", 
+      "(nBytesRead >", 
+      "-\t\t\t     (start + n)) ? nBytesRead : (start + n);", 
+      "+\t\t\t     ((int)start + n)) ? nBytesRead : (start + n);", 
+      "", 
+      "} else {", 
+      "nToCopy = dev->nDataBytesPerChunk - start;", 
+      "@@ -5501,7 +5501,7 @@", 
+      "state, sequenceNumber));", 
+      "", 
+      "if (state == YAFFS_BLOCK_STATE_DEAD) {", 
+      "-\t\t\tT(YAFFS_TRACE_BAD_BLOCKS,", 
+      "+\t\t\tT(YAFFS_TRACE_SCAN_DEBUG,", 
+      "(TSTR(\"block %d is bad\" TENDSTR), blk));", 
+      "} else if (state == YAFFS_BLOCK_STATE_EMPTY) {", 
+      "T(YAFFS_TRACE_SCAN_DEBUG,"
+    ]
+  ]
+]

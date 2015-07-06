@@ -59,8 +59,7 @@ def extract(location, target_dir):
     This treats a patch file as if it were an archive containing one file for
     each patch applied to a file to be patched.
     """
-    pi = patch_info(location)
-    for source, target, text in pi:
+    for source, target, text in patch_info(location):
         # prefer the target path for writing the patch text to a subfile
         # unless target is /dev/null (a deletion)
         if '/dev/null' in target:
@@ -90,7 +89,7 @@ def extract(location, target_dir):
         # recursive extraction
         subfile_path = base_subfile_path + extractcode.EXTRACT_SUFFIX
         with open(subfile_path, 'wb') as subfile:
-            subfile.write(text)
+            subfile.write(u'\n'.join(text))
 
 
 def is_patch(location, include_extracted=False):
@@ -136,8 +135,8 @@ def patch_info(location):
     """
     Return a list of tuples of (src_path, target_path, patch_text) for each
     patch segment of a patch file at location. 
-    
-    Return an empty list if the file is not a patch file or cannot be parsed.
+
+    Raise an exception if the file is not a patch file or cannot be parsed.
     """
     patchset = pythonpatch.fromfile(location)
     if not patchset:
@@ -147,5 +146,6 @@ def patch_info(location):
     for ptch in patchset.items:
         src = fileutils.as_posixpath(ptch.source.strip())
         tgt = fileutils.as_posixpath(ptch.target.strip())
-        text = '\n'.join((l.strip() for l in patch_text(ptch) if l))
+        text = [unicode(l.strip(), encoding='utf-8', errors='replace')
+                for l in patch_text(ptch) if l]
         yield src, tgt, text

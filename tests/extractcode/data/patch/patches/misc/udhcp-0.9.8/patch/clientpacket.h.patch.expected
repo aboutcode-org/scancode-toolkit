@@ -1,3 +1,36 @@
-[('udhcp-0.9.8.orig/clientpacket.h',
-  'udhcp-0.9.8/clientpacket.h',
-  'Index: udhcp-0.9.8/clientpacket.h\n===================================================================\n--- udhcp-0.9.8.orig/clientpacket.h\n+++ udhcp-0.9.8/clientpacket.h\n@@ -1,12 +1,23 @@\n#ifndef _CLIENTPACKET_H\n#define _CLIENTPACKET_H\n\n+typedef struct _STBIdentity {\n+  char *ManufacturerOUI;\n+  char *SerialNumber;\n+  char *ProductClass;\n+}STBIdentity;\n+\nunsigned long random_xid(void);\nint send_discover(unsigned long xid, unsigned long requested);\nint send_selecting(unsigned long xid, unsigned long server, unsigned long requested);\n+int send_decline(unsigned long xid, unsigned long server, unsigned long requested);\nint send_renew(unsigned long xid, unsigned long server, unsigned long ciaddr);\nint send_renew(unsigned long xid, unsigned long server, unsigned long ciaddr);\nint send_release(unsigned long server, unsigned long ciaddr);\nint get_raw_packet(struct dhcpMessage *payload, int fd);\n\n+void add_deviceidentity(struct dhcpMessage *packet);\n+void parse_gatewayidentity(unsigned char *option125);\n+int get_deviceidentity(STBIdentity* devIdentity);\n+int set_gatewayidentity(STBIdentity* gwIdentity);\n#endif')]
+[
+  [
+    "udhcp-0.9.8.orig/clientpacket.h", 
+    "udhcp-0.9.8/clientpacket.h", 
+    [
+      "Index: udhcp-0.9.8/clientpacket.h", 
+      "===================================================================", 
+      "--- udhcp-0.9.8.orig/clientpacket.h", 
+      "+++ udhcp-0.9.8/clientpacket.h", 
+      "@@ -1,12 +1,23 @@", 
+      "#ifndef _CLIENTPACKET_H", 
+      "#define _CLIENTPACKET_H", 
+      "", 
+      "+typedef struct _STBIdentity {", 
+      "+  char *ManufacturerOUI;", 
+      "+  char *SerialNumber;", 
+      "+  char *ProductClass;", 
+      "+}STBIdentity;", 
+      "+", 
+      "unsigned long random_xid(void);", 
+      "int send_discover(unsigned long xid, unsigned long requested);", 
+      "int send_selecting(unsigned long xid, unsigned long server, unsigned long requested);", 
+      "+int send_decline(unsigned long xid, unsigned long server, unsigned long requested);", 
+      "int send_renew(unsigned long xid, unsigned long server, unsigned long ciaddr);", 
+      "int send_renew(unsigned long xid, unsigned long server, unsigned long ciaddr);", 
+      "int send_release(unsigned long server, unsigned long ciaddr);", 
+      "int get_raw_packet(struct dhcpMessage *payload, int fd);", 
+      "", 
+      "+void add_deviceidentity(struct dhcpMessage *packet);", 
+      "+void parse_gatewayidentity(unsigned char *option125);", 
+      "+int get_deviceidentity(STBIdentity* devIdentity);", 
+      "+int set_gatewayidentity(STBIdentity* gwIdentity);", 
+      "#endif"
+    ]
+  ]
+]
