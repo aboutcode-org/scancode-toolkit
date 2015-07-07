@@ -250,7 +250,7 @@ Scan results are provided in various formats:
 For each scanned file, the result contains:
 
 * its location in the codebase,
-* the detected licenses and copyright statements, and
+* the detected licenses and copyright statements,
 * the start and end line numbers identifying where the license or copyright was found 
   in the scanned file, and
 * reference information for the detected license.
@@ -264,7 +264,7 @@ detection.
 
 How to add a new license for detection?
 =======================================
-To add new license, you need to select a new and unique license key (mit and gpl-2.0
+To add new license, you first need to select a new and unique license key (mit and gpl-2.0
 are some of the existing license keys). All licenses are stored as plain text files in
 the src/licensedcode/data/licenses directory using their key as part of the file names.
 
@@ -282,7 +282,7 @@ The key name can contain only these symbols:
 * numbers from 0 to 9,and
 * dash `-` and `.` period signs. No spaces.
 
-Save these two files in the src/licensedcode/data/licenses/ directory.
+Save these two files in the ``src/licensedcode/data/licenses/`` directory.
 
 `Done!`
 
@@ -327,12 +327,12 @@ See the src/licensedcode/data/rules/ directory for examples.
 
 More (advanced) rules options:
 
-* you can use a `notes:` text field to  document this rule.
+* you can use a ``notes:`` text field to  document this rule.
 * if no license should be detected for your .RULE text, do not add a list of license keys, just add a note.
-  You can also use the special `not-a-license` license key as a single `licenses:` item.
+  You can also use the special ``not-a-license`` license key as a single `licenses:` item.
 * .RULE text can contain special text regions that can be ignored when scanning for licenses. 
-  You can mark a template region in your rule text using {{ double curly braces }} and up to five words can
-  vary and still match this rule. You must add this field to you .yml data file to mark this rule as a `template`::
+  You can mark a template region in your rule text using {{double curly braces}} and up to five words can
+  vary and still match this rule. You must add this field in your .yml data file to mark this rule as a `template`::
 
       template: yes
 
@@ -362,8 +362,8 @@ On Windows open a command prompt, cd to the clone directory and run instead::
     configure
 
 The configure script creates an isolated Python virtual environment ready for
-development usage. Rerun `configure` or `source bin/activate` when opening
-a new terminal. Rerun `configure` after a pull or a branch merge.
+development usage. Rerun ``configure`` or ``source bin/activate`` when opening
+a new terminal. Rerun ``configure`` after a pull or a branch merge.
 
 To run the all tests run this command. Be patient: there are thousands of tests! ::
 
@@ -382,8 +382,8 @@ More info:
 * Third-party components are vendored in the /thirdparty/ directory.
   ScanCode is self contained and should not require network access for installation or configuration 
   of third-part libraries.
-* Additional pre-compiled vendored binaries are in bin/ sub-directories or /src/ with
+* Additional pre-compiled vendored binaries are stored in bin/ sub-directories of the /src/ directory with
   their sources in this repo: https://github.com/nexB/scancode-thirdparty-src/
 * Porting ScanCode to other  OS (FreeBSD, etc.) is possible. Enter an issue for help.
 * Bugs and pull requests are welcomed.
-* See CONTRIBUTING.rst for more info.
+* See the wiki and CONTRIBUTING.rst for more info.
