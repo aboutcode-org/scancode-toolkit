@@ -39,9 +39,9 @@ def get_extract(location=None):
     formatted errors if any.
     """
     from extractcode.extract import extract
-    from extractcode import basic_kinds
+    from extractcode import default_kinds
 
-    results = extract(location, kinds=basic_kinds, recurse=True)
+    results = extract(location, kinds=default_kinds, recurse=True)
     return ['Archive extraction warning: {}: {}'.format(job.src, str(job.errors))
             for job in results if job.errors]
 
