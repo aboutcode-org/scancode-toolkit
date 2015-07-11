@@ -303,7 +303,7 @@ class TestFileUtils(FileBasedTesting):
         assert 'f.a' == fileutils.resource_name('f.a')
 
     def test_os_walk_with_unicode_path(self):
-        test_dir = self.extract_test_zip('fileutils/unicode.zip')
+        test_dir = self.extract_test_zip('fileutils/walk/unicode.zip')
         test_dir = join(test_dir, 'unicode')
 
         test_dir = unicode(test_dir)
@@ -314,8 +314,20 @@ class TestFileUtils(FileBasedTesting):
         ]
         assert expected == result
 
+    def test_fileutils_walk(self):
+        test_dir = self.get_test_loc('fileutils/walk')
+        base = self.get_test_loc('fileutils')
+        result = [(t.replace(base, ''), d, f,) for t, d, f in fileutils.walk(test_dir)]
+        expected = [
+            ('/walk', ['d1'], ['f', 'unicode.zip']),
+            ('/walk/d1', ['d2'], ['f1']),
+            ('/walk/d1/d2', ['d3'], ['f2']),
+            ('/walk/d1/d2/d3', [], ['f3'])
+        ]
+        assert expected == result
+
     def test_fileutils_walk_with_unicode_path(self):
-        test_dir = self.extract_test_zip('fileutils/unicode.zip')
+        test_dir = self.extract_test_zip('fileutils/walk/unicode.zip')
         test_dir = join(test_dir, 'unicode')
 
         test_dir = unicode(test_dir)
@@ -327,11 +339,44 @@ class TestFileUtils(FileBasedTesting):
         assert expected == result
 
     def test_fileutils_walk_can_walk_a_single_file(self):
-        test_file = self.get_test_loc('fileutils/unicode.zip')
+        test_file = self.get_test_loc('fileutils/walk/f')
         result = list(fileutils.walk(test_file))
         expected = [
-            (fileutils.parent_directory(test_file), [], ['unicode.zip'])
+            (fileutils.parent_directory(test_file), [], ['f'])
         ]
+        assert expected == result
+
+    def test_fileutils_walk_can_walk_an_empty_dir(self):
+        test_dir = self.get_temp_dir()
+        result = list(fileutils.walk(test_dir))
+        expected = [
+            (test_dir, [], [])
+        ]
+        assert expected == result
+
+    def test_file_iter(self):
+        test_dir = self.get_test_loc('fileutils/walk')
+        base = self.get_test_loc('fileutils')
+        result = [f.replace(base, '') for f in fileutils.file_iter(test_dir)]
+        expected = [
+            '/walk/f',
+            '/walk/unicode.zip',
+            '/walk/d1/f1',
+            '/walk/d1/d2/f2',
+            '/walk/d1/d2/d3/f3'
+        ]
+        assert expected == result
+
+    def test_file_iter_can_iterate_a_single_file(self):
+        test_file = self.get_test_loc('fileutils/walk/f')
+        result = list(fileutils.file_iter(test_file))
+        expected = [test_file]
+        assert expected == result
+
+    def test_file_iter_can_walk_an_empty_dir(self):
+        test_dir = self.get_temp_dir()
+        result = list(fileutils.file_iter(test_dir))
+        expected = []
         assert expected == result
 
 
