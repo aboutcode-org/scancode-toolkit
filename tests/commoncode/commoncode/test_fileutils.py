@@ -314,6 +314,26 @@ class TestFileUtils(FileBasedTesting):
         ]
         assert expected == result
 
+    def test_fileutils_walk_with_unicode_path(self):
+        test_dir = self.extract_test_zip('fileutils/unicode.zip')
+        test_dir = join(test_dir, 'unicode')
+
+        test_dir = unicode(test_dir)
+        result = list(fileutils.walk(test_dir))
+        expected = [
+            (unicode(test_dir), ['a'], [u'2.csv']),
+            (unicode(test_dir) + sep + 'a', [], [u'gru\u0308n.png'])
+        ]
+        assert expected == result
+
+    def test_fileutils_walk_can_walk_a_single_file(self):
+        test_file = self.get_test_loc('fileutils/unicode.zip')
+        result = list(fileutils.walk(test_file))
+        expected = [
+            (fileutils.parent_directory(test_file), [], ['unicode.zip'])
+        ]
+        assert expected == result
+
 
 class TestName(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
