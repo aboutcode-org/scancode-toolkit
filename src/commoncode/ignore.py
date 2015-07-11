@@ -30,8 +30,21 @@ from itertools import chain
 from commoncode import fileutils
 
 """
-Handle .ignore-like files.
+Support for ignoring some file patterns such as .git or .svn directories, used
+typically when walking file systems.
+Also handle .ignore-like file and provide common default ignores.
 """
+
+
+def is_ignored(location, ignores, unignores, skip_special=True):
+    """
+    Return a tuple of (pattern , message) if a file at location is ignored
+    or False otherwise.
+    `ignores` and `unignores` are mappings of patterns to a reason.
+    """
+    if skip_special and filetype.is_special(location):
+        return True
+    return fileset.match(location, includes=ignores, excludes=unignores)
 
 
 def is_ignore_file(location):
@@ -56,17 +69,6 @@ def get_ignores(location, include_defaults=True):
     ignores.update(ign)
     unignores.update(uni)
     return ignores, unignores
-
-
-def is_ignored(location, ignores, unignores, skip_special=True):
-    """
-    Return a tuple of (pattern , message) if a file at location is ignored 
-    or False otherwise.
-    """
-    if skip_special and filetype.is_special(location):
-        return True
-    return fileset.match(location, ignores, unignores)
-
 
 #
 # Default ignores
@@ -196,7 +198,6 @@ ignores_VCS = {
     '*/_MTN': 'Default ignore: Monotone artifact',
     '*/_darcs': 'Default ignore: Darcs artifact',
     '*/{arch}': 'Default ignore: GNU Arch artifact',
-
 }
 
 ignores_Medias = {
@@ -290,7 +291,9 @@ ignores_Misc = {
     '/.ssh': 'Default ignore: SSH configuration',
 }
 
+
 default_ignores = {}
+
 default_ignores.update(chain(*[d.items() for d in [
     ignores_MacOSX,
     ignores_Windows,
