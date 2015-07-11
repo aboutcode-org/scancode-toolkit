@@ -285,7 +285,7 @@ def walk(location, ignored=ignore_nothing):
             # pass
 
 
-def file_walk(location, ignored=ignore_nothing):
+def file_iter(location, ignored=ignore_nothing):
     """
     Return an iterable of files at `location` recursively.
 
