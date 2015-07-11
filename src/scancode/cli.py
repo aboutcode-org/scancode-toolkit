@@ -28,7 +28,7 @@ import json
 
 import click
 
-from commoncode.fileutils import file_walk
+from commoncode.fileutils import file_iter
 
 from scancode import __version__ as version
 from scancode.api import as_html
@@ -254,11 +254,11 @@ Use '--extract' alone to extract <input>, then run a scan on the extracted files
 
         if not verbose:
             # only display a progress bar
-            with click.progressbar(file_walk(input), show_pos=True) as files:
+            with click.progressbar(file_iter(input), show_pos=True) as files:
                 for input_file in files:
                     results.append(scan_one(input_file,copyright, license, verbose))
         else:
-            for input_file in file_walk(input):
+            for input_file in file_iter(input):
                 results.append(scan_one(input_file, copyright, license, verbose))
 
         if format == 'html':
