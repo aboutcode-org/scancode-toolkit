@@ -61,15 +61,13 @@ kind_labels = {
 }
 
 # note: do not include special_package in all by default
-all_kinds = (regular, regular_nested, package, file_system, docs, patches)
-default_kinds = (regular, regular_nested, patches,)
-basic_kinds = (regular, regular_nested, patches, package, file_system,)
+all_kinds = (regular, regular_nested, package, file_system, docs, patches, special_package)
+default_kinds = (regular, regular_nested, package)
 
 # map user-visible extract types to tuples of "kinds"
 extract_types = {
-    'default': (regular, regular_nested, patches,),
+    'default': (regular, regular_nested, package,),
     'all': all_kinds,
-    'basic': basic_kinds,
     'package': (package,),
     'filesystem': (file_system,),
     'doc': (docs,),
