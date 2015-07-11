@@ -242,58 +242,61 @@ def splitext(path):
 #
 # DIRECTORY WALKING
 #
-# TODO: rename ignorer to ignore
-def walk(location, ignorer=None):
+ignore_nothing = lambda _: False
+
+def walk(location, ignored=ignore_nothing):
     """
     Walk location returning the same tuples as os.walk but with a different
     behavior:
      - always walk top-down, breadth-first.
-     - always ignore and never follow symlinks.
+     - always ignore and never follow symlinks, .
      - always ignore special files (FIFOs, etc.)
-     - optionally ignore files and directories by invoking the `ignorer`
-       callable on files and directories.
+     - optionally ignore files and directories by invoking the `ignored`
+       callable on files and directories returning True if it should be ignored.
+     - location is a directory or a file: for a file, the file is returned.
     """
-    assert filetype.is_dir(location)
+    if not ignored(location):
+        if filetype.is_file(location) :
+            yield parent_directory(location), [], [file_name(location)]
+        elif filetype.is_dir(location):
+            dirs = []
+            files = []
+            # TODO: consider using scandir
+            for name in os.listdir(location):
+                loc = os.path.join(location, name)
+                if filetype.is_special(loc) or ignored(loc):
+                    continue
 
-    if not ignorer:
-        # never ignore if we do not have an ignorer
-        ignorer = lambda _: False
+                if filetype.is_dir(loc):
+                    dirs.append(name)
+                elif filetype.is_file(loc):
+                    files.append(name)
+                # else:
+                    # special files and symlinks are always ignored
+                    # pass
+            yield location, dirs, files
 
-    dirs = []
-    files = []
+            for dr in dirs:
+                for tripple in walk(os.path.join(location, dr), ignored):
+                    yield tripple
 
-    # TODO: consider using scandir
-    for name in os.listdir(location):
-        loc = os.path.join(location, name)
-        if ignorer(loc):
-            continue
-        if filetype.is_dir(loc):
-            dirs.append(name)
-        elif filetype.is_file(loc):
-            files.append(name)
-        # else: pass: special files and symlinks are always ignored
-    yield location, dirs, files
-
-    for dr in dirs:
-        to_walk = os.path.join(location, dr)
-        if not filetype.is_special(location):
-            for t, d, f in walk(to_walk, ignorer):
-                yield t, d, f
+        # else:
+            # special files and symlinks are always ignored
+            # pass
 
 
-def file_walk(location):
+def file_walk(location, ignored=ignore_nothing):
     """
-    Return the files at location recursively.
+    Return an iterable of files at `location` recursively.
 
-    :param location: can be a file or a directory
-    :return: file paths
+    :param location: a file or a directory.
+    :param ignored: a callable accepting a location argument and returning True
+                    if the location should be ignored.
+    :return: an iterable of file locations.
     """
-    if is_file(location):
-        yield location
-    else:
-        for root, _dirs, files in walk(location):
-            for f in files:
-                yield os.path.join(root, f)
+    for root, _dirs, files in walk(location, ignored):
+        for f in files:
+            yield os.path.join(root, f)
 
 #
 #
