@@ -99,8 +99,8 @@ extract_nsis = sevenzip.extract
 extract_ishield = sevenzip.extract
 extract_Z = sevenzip.extract
 
-
-logger = logging.getLogger('extractcode')
+DEBUG = False
+logger = logging.getLogger(__name__)
 # import sys
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 # logger.setLevel(logging.DEBUG)
@@ -158,15 +158,14 @@ def get_extractors(location, kinds=all_kinds):
     Return a list of extractors that can extract the file at
     location or an empty list.
     """
-    assert location
-    assert kinds
-
     if filetype.is_file(location):
         handlers = get_handlers(location)
-        candidates = score_handlers(handlers)
-        best = pick_best_handler(candidates, kinds)
-        if best:
-            return best.extractors
+        if handlers:
+            candidates = score_handlers(handlers)
+        if candidates:
+            best = pick_best_handler(candidates, kinds)
+            if best:
+                return best.extractors
     return []
 
 
@@ -175,10 +174,9 @@ def get_handlers(location):
     Return an iterable of (handler, type_matched, mime_matched,
     extension_matched,) for this `location`.
     """
-    assert location
-
-    logger.debug('get_handlers: is_file: %(location)s ' % locals()
-                 + repr(filetype.is_file(location)))
+    if DEBUG:
+        logger.debug('get_handlers: is_file: %(location)s ' % locals()
+                     + repr(filetype.is_file(location)))
     if filetype.is_file(location):
 
         T = typecode.contenttype.get_type(location)
@@ -213,8 +211,6 @@ def score_handlers(handlers):
     """
     Score candidate handlers. Higher score is better.
     """
-    assert handlers
-
     for handler, type_matched, mime_matched, extension_matched in handlers:
         score = 0
         # increment kind value: higher kinds numerical values are more
@@ -224,18 +220,22 @@ def score_handlers(handlers):
         # increment score based on matched criteria
         if type_matched and mime_matched and extension_matched:
             # bump for matching all criteria
-            score += 4
-
-        if extension_matched:
-            # extensions have more power
-            score += 4
+            score += 10
 
         if type_matched:
             # type is more specific than mime
-            score += 3
+            score += 8
 
         if mime_matched:
+            score += 6
+
+        if extension_matched:
+            # extensions have little power
             score += 2
+
+        if extension_matched and not (type_matched or mime_matched):
+            # extension matched alone should not be extracted
+            score -= 100
 
         # increment using the number of extractors: higher score means that we
         # have some kind of nested archive that we can extract in one
@@ -245,7 +245,8 @@ def score_handlers(handlers):
         # later extracting the plain tar in a second operation
         score += len(handler.extractors)
 
-        yield score, handler, extension_matched
+        if score > 0:
+            yield score, handler, extension_matched
 
 
 def pick_best_handler(candidates, kinds):
@@ -257,8 +258,6 @@ def pick_best_handler(candidates, kinds):
     - OR the handler that has matched extensions,
     - OR finally the first handler in the list.
     """
-    assert candidates
-    assert kinds
     # sort by increasing scores
     scored = sorted(candidates, reverse=True)
     if not scored:
@@ -298,7 +297,6 @@ def pick_best_handler(candidates, kinds):
     return top if top.kind in kinds else None
 
 
-
 def extract_twice(location, target_dir, extractor1, extractor2):
     """
     Extract a nested compressed archive at `location` to `target_dir` using
@@ -310,9 +308,6 @@ def extract_twice(location, target_dir, extractor1, extractor2):
     Typical nested archives include compressed tarballs and RPMs (containing a
     compressed cpio).
     """
-    assert location
-    assert target_dir
-
     # extract first the intermediate payload to a temp dir
     temp_target = fileutils.get_temp_dir('extract')
     warnings = extractor1(location, temp_target)
@@ -332,10 +327,6 @@ def extract_twice(location, target_dir, extractor1, extractor2):
 """
 List of archive handlers.
 """
-
-
-
-
 
 archive_handlers = [
     Handler(name='Tar',
