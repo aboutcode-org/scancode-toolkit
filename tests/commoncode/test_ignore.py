@@ -176,3 +176,10 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
             ('/vcs/vssver.scc', 'Default ignore: Visual Source Safe artifact'),
         ]
         assert sorted(expected) == sorted(result)
+
+    def test_default_ignore_does_not_skip_one_char_names(self):
+        # use fileset directly to work on strings not locations
+        from commoncode import fileset
+        tests = [c for c in 'HFS+ Private Data'] + 'HFS+ Private Data'.split()
+        for test in tests:
+            assert False == fileset.match(test, includes=ignore.default_ignores, excludes={})
