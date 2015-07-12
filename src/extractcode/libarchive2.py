@@ -123,25 +123,6 @@ def extract(location, target_dir):
     return warning_messages
 
 
-# def extract(location, target_dir):
-#     """
-#     Extract archive file at `location` in `target_dir`.
-#     Yield extracted paths.
-#     """
-#     assert os.path.exists(location)
-#     assert os.path.isfile(location)
-# 
-#     assert target_dir
-#     target_dir = target_dir.strip('\\/')
-#     target_dir = fileutils.as_posixpath(target_dir)
-#     assert os.path.exists(target_dir)
-#     assert os.path.isdir(target_dir)
-#     # TODO: harden error handling
-#     with Archive(location) as archive:
-#         for entry in archive:
-#             yield entry.write(target_dir)
-
-
 def list_entries(location):
     """
     Return a list entries of archive file at `location`.
