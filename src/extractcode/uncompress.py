@@ -35,11 +35,11 @@ from bz2file import BZ2File
 
 from extractcode import EXTRACT_SUFFIX
 
-DEBUG = True
-logger = logging.getLogger(__file__)
-import sys
-logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-logger.setLevel(logging.DEBUG)
+DEBUG = False
+logger = logging.getLogger(__name__)
+# import sys
+# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+# logger.setLevel(logging.DEBUG)
 
 
 def uncompress(location, target_dir, decompressor, suffix=EXTRACT_SUFFIX):
