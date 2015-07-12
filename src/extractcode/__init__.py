@@ -37,8 +37,6 @@ root_dir = os.path.join(os.path.dirname(__file__), 'bin')
 # Suffix added to extracted target_dir paths
 EXTRACT_SUFFIX = r'-extract'
 
-EXTRACT_SUFFIX_DIR = EXTRACT_SUFFIX + '/'
-
 
 # high level archive "kinds"
 docs = 1
@@ -80,8 +78,7 @@ def is_extraction_path(path):
     """
     Return True is the path points to an extraction path.
     """
-    if path:
-        return path.rstrip('\\/').endswith(EXTRACT_SUFFIX)
+    return path and path.rstrip('\\/').endswith(EXTRACT_SUFFIX)
 
 
 def is_extracted(location):
@@ -89,8 +86,7 @@ def is_extracted(location):
     Return True is the location is already extracted to the corresponding
     extraction location.
     """
-    if location:
-        return os.path.exists(get_extraction_path(location))
+    return location and os.path.exists(get_extraction_path(location))
 
 
 def get_extraction_path(path):
