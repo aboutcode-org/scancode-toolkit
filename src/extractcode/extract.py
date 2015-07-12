@@ -24,49 +24,45 @@
 
 from __future__ import print_function, absolute_import
 
-from collections import namedtuple
 from collections import defaultdict
+from collections import namedtuple
+from functools import partial
 import logging
-import os
-import shutil
-import time
+from os.path import join
 
-from commoncode import filetype
 from commoncode import fileutils
-from commoncode import fileset
 from commoncode import ignore
-
 import extractcode
 from extractcode import archive
-from extractcode import is_extraction_path
 
-logger = logging.getLogger('extractcode.extract')
+logger = logging.getLogger(__name__)
+DEBUG = False
 # import sys
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 # logger.setLevel(logging.DEBUG)
 
 
 """
-Extract archives and compressed files to get the file content available for
-further processing. This the high level extraction entry point and includes
-recursive extractions an.
+Extract archives and compressed files recursively to get the file content available for
+further processing. This the high level extraction entry point.
 
 This is NOT a general purpose un-archiver. The code tries hard to do the right
 thing, BUT the extracted files are not meant to be something that can be
-faithfully re-archived to get an equivalent set of files. The purpose here is
+faithfully re-archived to get an equivalent archive. The purpose instead is
 to extract the content of the archives as faithfully and safely as possible to
-make this content available for scanning.
+make this content available for scanning: some paths may be altered. Some files
+may be altered or skipped entirely.
 
 In particular:
 
- - Permissions and owners stored in archives are ignored entirely: The
-   extracted content is always owned and readable by the user who ran the
-   extraction.
+ - Permissions and owners stored in archives are ignored entirely: The extracted
+   content is always owned and readable by the user who ran the extraction.
+
  - Special files are never extracted (such as FIFO, character devices, etc)
 
- - Symlinks may be replaced by plain file copies as if they were regular
-   files. Hardlinks are recreated as regular files, not as hardlinks to the
-   original file.
+ - Symlinks may be replaced by plain file copies as if they were regular files.
+   Hardlinks may be recreated as regular files, not as hardlinks to the original
+   file.
 
  - Files and directories may be renamed when their name is a duplicate. And a
    name may be considered a duplicate ignore upper and lower case mixes even
@@ -75,149 +71,116 @@ In particular:
    files names, even though using a regular tool for extraction would have
    overwritten previous paths with the last path.
 
- - Paths may be converted to a safe ASCII alternative that is portable across OSes.
+ - Paths may be converted to a safe ASCII alternative that is portable across
+   OSes.
 
  - Symlinks, relative paths and absolute paths pointing outside of the archive
    are replaced and renamed in such a way that all the extract content of an
    archive exist under a single target extraction directory. This process
-   includes eventually creating "synthetic" or dummy paths that did not exist
-   in the original archive.
+   includes eventually creating "synthetic" or dummy paths that did not exist in
+   the original archive.
 """
 
+
 """
-A job is a unit of work to extract a source file location to a target dir.
+An ExtractEvent contains data about an archive extraction progress:
+ - `source` is the location of the archive being extracted
+ - `target` is the target location where things are extracted
+ - `done` is a boolean set to True when the extraction is done (even if failed).
+ - `warnings` is a mapping of extracted paths to a list of warning messages.
+ - `errors` is a list of error messages.
 """
-ExtractJob = namedtuple('ExtractJob', 'src tgt kinds recurse warnings errors')
+ExtractEvent = namedtuple('ExtractEvent', 'source target done warnings errors')
 
 
-def extract(location, kinds=extractcode.all_kinds, recurse=False):
+def extract(location, kinds=extractcode.default_kinds, recurse=False):
     """
-    Extract archives `kinds` at `location` recursively if `recurse`.
+    Walk and extract any archives found at `location` (either a file or
+    directory). Extract only archives of a kind listed in the `kinds` kind tuple.
+
+    Return an iterable of ExtractEvent tuples for each extracted archive. This
+    can be used to track extraction progress:
+
+     - one event is emitted just before extracting an archive. The ExtractEvent
+       warnings and errors are empty. The `done` flag is False.
+
+     - one event is emitted right after extracting an archive. The ExtractEvent
+       warnings and errors contains warnings and errors if any. The `done` flag
+       is True.
+
+    If `recurse` is True, extract recursively archives nested inside other
+    archives If `recurse` is false, then do not extract further an already
+    extracted archive identified by the corresponding extract suffix location.
+
+    Note that while the original file system is walked top-down, breadth-first,
+    if recurse and a nested archive is found, it is extracted to full depth
+    first before resuming the file system walk.
     """
-    start = time.time()
-    logger.debug('extract(%(location)r, %(kinds)r, %(recurse)r\n' % locals())
-    results = []
-    top_jobs = get_jobs(location, kinds, recurse)
-    process(top_jobs, results)
-    dur = time.time() - start
-    cnt = len(results)
-    logger.debug('extract %(location)r: %(dur)ds, %(cnt)d jobs\n' % locals())
-    return results
+    ignored = partial(ignore.is_ignored, ignores=ignore.default_ignores, unignores={})
+    if DEBUG:
+        logger.debug('extract:start:' + location + ' recurse:' + repr(recurse) + '\n')
+
+    for top, dirs, files in fileutils.walk(location, ignored):
+        if DEBUG:
+            logger.debug('extract:walk: top:' + top + ' dirs:' + repr(dirs) + ' files:' + repr(files))
+
+        if not recurse:
+            if DEBUG:
+                drs = set(dirs)
+            for d in dirs[:]:
+                if extractcode.is_extraction_path(d):
+                    dirs.remove(d)
+            if DEBUG:
+                logger.debug('XXXXXXXXXXXXXXXXXXX extract:walk: not recurse: removed dirs:' + repr(drs.symmetric_difference(set(dirs))))
+                logger.debug('XXXXXXXXXXXXXXXXXXX extract:walk: not recurse: new dirs:' + repr(dirs))
+        for f in files:
+            loc = join(top, f)
+            if not recurse and extractcode.is_extraction_path(loc):
+                if DEBUG:
+                    logger.debug('extract:walk not recurse: skipped  file:' + loc)
+                continue
+            if not archive.should_extract(loc, kinds):
+                if DEBUG:
+                    logger.debug('extract:walk: skipped file: not should_extract:' + loc)
+                continue
+
+            target = join(top, extractcode.get_extraction_path(loc))
+            for xevent in extract_file(loc, target, kinds):
+                if DEBUG:
+                    logger.debug('extract:walk:extraction event:' + repr(xevent))
+                yield xevent
+
+            if recurse:
+                if DEBUG:
+                    logger.debug('extract:walk: recursing on:' + target)
+                for xevent in extract(target, kinds, recurse):
+                    if DEBUG:
+                        logger.debug('extract:walk:recurse:extraction event:' + repr(xevent))
+                    yield xevent
 
 
-def job_messages(job):
+
+def extract_file(location, target, kinds=extractcode.default_kinds):
     """
-    Return a list of message strings for an ExtractJob.
+    Extract a single archive at `location` in the `target` directory if it is
+    of a kind supported in the `kinds` kind tuple.
     """
-    src = job.src
-    tgt = job.tgt
-    recurse = 'recursively ' if job.recurse else 'shallow '
-
-    kinds = []
-    for k in job.kinds:
-        lab = extractcode.kind_labels[k]
-        if lab not in kinds:
-            kinds.append(lab)
-    kinds = ','.join(kinds)
-
-    warnings = ['Warning: %r: %r' % (k, v,) for k, v in job.warnings.items()]
-    errors = job.errors
-    msg = 'Extracted %(recurse)s: %(src)r to: %(tgt)r for %(kinds)s' % locals()
-    return [msg] + errors + warnings
-
-
-def get_jobs(location, kinds, recurse):
-    """
-    Yield `ExtractJob` objects based on `location`, `recurse` and  `kinds`. If
-    `location` is a directory, walks the directory and yield `ExtractJob` for
-    extractible files. If `location` is a file, yield an `ExtractJob` if
-    extractible.
-    """
-    logger.debug('get_jobs(%(location)r, %(kinds)r, %(recurse)r)\n' % locals())
-    if not filetype.is_special(location) and not is_vcs(location):
-        if filetype.is_file(location):
-            logger.debug('get_jobs: %(location)r is_file.\n' % locals())
-            yield get_job(location, kinds, recurse)
-        else:
-            logger.debug('get_jobs: %(location)r is_dir\n' % locals())
-            # NOTE: never recurse in VCS files
-            for top, dirs, files in fileutils.walk(location, ignorer=is_vcs):
-                logger.debug('get_jobs: top:%(top)s' % locals())
-                if not recurse:
-                    if is_extraction_path(top):
-                        logger.debug('get_jobs: breaking:%(top)s' % locals())
-                        break
-                    drs = dirs[:]
-                    for d in dirs:
-                        if is_extraction_path(d):
-                            dirs.remove(d)
-
-                for l in dirs + files:
-                    loc = os.path.join(top, l)
-                    logger.debug('get_jobs: loc:%(loc)s' % locals())
-                    for job in get_jobs(loc, kinds, recurse):
-                        yield job
-
-
-def process(jobs, results):
-    """
-    Process the `jobs` iterable of ExtractJob and put the results in the
-    results list. Recurse as needed, proceeding top-down, depth-first.
-    """
-    for job in jobs:
-        if not job:
-            continue
-        logger.debug('Executing job: %(job)r...\n' % locals())
-        if extractcode.is_extracted(job.src):
-            logger.debug('Already extracted: %(job)r...\n' % locals())
-        else:
-            # do not re-extract for now.
-            try:
-                extractor = archive.get_extractor(job.src, job.kinds)
-                tmp_tgt = fileutils.get_temp_dir('extract')
-                job.warnings.update(extractor(job.src, tmp_tgt))
-                tgt_parent= os.path.dirname(job.tgt)
-                fileutils.create_dir(tgt_parent)
-                shutil.move(tmp_tgt, job.tgt)
-            except Exception, e:
-                msg = ('run_job: ERROR: %(job)r.\n' % locals())
-                logger.debug(msg)
-                job.errors.append(str(e))
-                job.errors.append('Extracted files were removed.')
-#                 if os.path.exists(tmp_tgt):
-#                     fileutils.delete(tmp_tgt)
-#                 if os.path.exists(job.tgt):
-#                     fileutils.delete(job.tgt)
-            finally:
-                # we have no errors at this stage.
-                logger.debug('run_job: DONE: %(job)r.\n' % locals())
-                results.append(job)
-
-        # get and process more jobs if recurse
-        if job.recurse:
-            logger.debug('run_job: RECURSE: %(job)r.\n' % locals())
-            process(get_jobs(job.tgt, job.kinds, job.recurse), results)
-
-
-def is_vcs(location):
-    return fileset.match(location, includes=ignore.ignores_VCS, excludes={})
-
-
-def get_job(location, kinds, recurse):
-    """
-    Return an `ExtractJob` if `location` is extractible, or None.
-    """
-    is_extractible = (filetype.is_file(location)
-        and archive.can_extract(location)
-        and archive.should_extract(location, kinds)
-    )
-
-    if is_extractible and not is_vcs(location):
-        target = extractcode.get_extraction_path(location)
-        warnings = defaultdict(list)
-        errors = []
-        job = ExtractJob(location, target, kinds, recurse, warnings, errors)
-        logger.debug('get_job: Building: %(job)r.\n' % locals())
-        return job
-    else:
-        logger.debug('get_job: %(location)r is not extractible.\n' % locals())
+    warnings = defaultdict(list)
+    errors = []
+    extractor = archive.get_extractor(location, kinds)
+    if extractor:
+        yield ExtractEvent(location, target, done=False, warnings={}, errors=[])
+        try:
+            # extract first to a temp directory.
+            # if there is an error,  the extracted files will not be moved
+            # to target
+            tmp_tgt = fileutils.get_temp_dir('extract')
+            warnings.update(extractor(location, tmp_tgt))
+            fileutils.copytree(tmp_tgt, target)
+            fileutils.delete(tmp_tgt)
+        except Exception, e:
+            if DEBUG:
+                logger.debug('extract_file: ERROR: %(errors)r, %(e)r.\n' % locals())
+            errors=[str(e)]
+        finally:
+            yield ExtractEvent(location, target, done=True, warnings=warnings, errors=errors)

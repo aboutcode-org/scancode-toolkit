@@ -24,21 +24,50 @@
 
 from __future__ import absolute_import, print_function
 
+from collections import defaultdict
 import os
+from unittest.case import expectedFailure
 
 from commoncode.testcase import FileBasedTesting
-from extractcode_assert_utils import check_files
-from extractcode_assert_utils import check_no_error
+from commoncode import fileutils
 
 import extractcode
+from extractcode_assert_utils import check_files
+from extractcode_assert_utils import check_no_error
 from extractcode import extract
-from unittest.case import expectedFailure
 
 
 class TestExtract(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_extract_file_non_nested(self):
+    def test_extract_file_function(self):
+        test_file = self.get_test_loc('extract/basic_non_nested.tar.gz', copy=True)
+        base = fileutils.parent_directory(test_file)
+        expected = ['a/b/a.txt', 'a/b/b.txt', 'a/c/c.txt']
+        cleaned_test_file = test_file.replace(base, '')
+        expected_event = [
+            extract.ExtractEvent(
+                source=cleaned_test_file,
+                target=extractcode.get_extraction_path(cleaned_test_file),
+                done=False, warnings=defaultdict(list), errors=[]
+            ),
+            extract.ExtractEvent(
+                source=cleaned_test_file,
+                target=extractcode.get_extraction_path(cleaned_test_file),
+                done=True, warnings=defaultdict(list), errors=[]
+            )
+        ]
+
+        target = extractcode.get_extraction_path(test_file)
+        result = list(extract.extract_file(test_file, target))
+        result = [r._replace(
+                    source=cleaned_test_file,
+                    target=extractcode.get_extraction_path(cleaned_test_file))
+                  for r in result]
+        assert expected_event == result
+        check_files(target, expected)
+
+    def test_extract_archive_non_nested(self):
         test_dir = self.get_test_loc('extract/basic_non_nested.tar.gz', copy=True)
         expected = (
             'a/b/a.txt',
@@ -53,7 +82,7 @@ class TestExtract(FileBasedTesting):
         check_no_error(result)
         check_files(extractcode.get_extraction_path(test_dir), expected)
 
-    def test_extract_file_shallow_with_readonly_inside(self):
+    def test_extract_archive_shallow_with_readonly_inside(self):
         test_file = self.get_test_loc('extract/readonly/read_only.tar.gz', copy=True)
         """
         This test file was created with:
@@ -68,7 +97,7 @@ class TestExtract(FileBasedTesting):
                 tarinfo.uname = 'johndoe'
                 tarinfo.gname = 'fake'
                 tarinfo.type = tarfile.REGTYPE
-                tarinfo.mode = 0 # this is the readonly part 
+                tarinfo.mode = 0 # this is the readonly part
                 tarinfo.mtime = time.mktime(datetime.datetime.now().timetuple())
                 file = StringIO.StringIO()
                 file.write(TEXT)
@@ -77,7 +106,7 @@ class TestExtract(FileBasedTesting):
                 tar.addfile(tarinfo, file)
             tar.close()
         """
-        result = extract.extract(test_file, recurse=False)
+        result = list(extract.extract(test_file, recurse=False))
         check_no_error(result)
 
         expected = (
@@ -89,7 +118,7 @@ class TestExtract(FileBasedTesting):
 
     def test_extract_dir_shallow_with_readonly_inside(self):
         test_dir = self.get_test_loc('extract/readonly', copy=True)
-        result = extract.extract(test_dir, recurse=False)
+        result = list(extract.extract(test_dir, recurse=False))
         check_no_error(result)
         expected = [
             'read_only.tar.gz',
@@ -98,7 +127,7 @@ class TestExtract(FileBasedTesting):
         ]
         check_files(test_dir, expected)
 
-    def test_extract_tree_shallow(self):
+    def test_extract_tree_shallow_only(self):
         expected = (
             'a/a.tar.gz',
             'a/a.txt',
@@ -112,6 +141,7 @@ class TestExtract(FileBasedTesting):
             'b/b.tar.gz-extract/b/.svn/entries',
             'b/b.tar.gz-extract/b/.svn/format',
             'b/b.tar.gz-extract/b/a/a.tar.gz',
+
             'b/b.tar.gz-extract/b/a/a.txt',
             'b/b.tar.gz-extract/b/a/.svn/all-wcprops',
             'b/b.tar.gz-extract/b/a/.svn/entries',
@@ -140,11 +170,11 @@ class TestExtract(FileBasedTesting):
             'c/a.tar.gz-extract/a/c/c.txt',
         )
         test_dir = self.get_test_loc('extract/tree', copy=True)
-        result = extract.extract(test_dir, recurse=False)
+        result = list(extract.extract(test_dir, recurse=False))
         check_no_error(result)
         check_files(test_dir, expected)
         # extract again
-        result = extract.extract(test_dir, recurse=False)
+        result = list(extract.extract(test_dir, recurse=False))
         check_no_error(result)
         check_files(test_dir, expected)
 
@@ -194,11 +224,11 @@ class TestExtract(FileBasedTesting):
             'c/a.tar.gz-extract/a/c/c.txt',
         )
         test_dir = self.get_test_loc('extract/tree', copy=True)
-        result = extract.extract(test_dir, recurse=True)
+        result = list(extract.extract(test_dir, recurse=True))
         check_no_error(result)
         check_files(test_dir, expected)
         # again
-        result = extract.extract(test_dir, recurse=True)
+        result = list(extract.extract(test_dir, recurse=True))
         check_no_error(result)
         check_files(test_dir, expected)
 
@@ -289,11 +319,11 @@ class TestExtract(FileBasedTesting):
         )
 
         test_dir = self.get_test_loc('extract/tree', copy=True)
-        result = extract.extract(test_dir, recurse=False)
+        result = list(extract.extract(test_dir, recurse=False))
         check_no_error(result)
         check_files(test_dir, shallow)
 
-        result = extract.extract(test_dir, recurse=True)
+        result = list(extract.extract(test_dir, recurse=True))
         check_no_error(result)
         check_files(test_dir, recursed)
 
@@ -302,12 +332,11 @@ class TestExtract(FileBasedTesting):
             'a.tar.gz',
         )
         test_dir = self.get_test_loc('extract/corrupted', copy=True)
-        result = extract.extract(test_dir, recurse=False)
+        result = list(extract.extract(test_dir, recurse=False))
         check_files(test_dir, expected)
-        assert len(result) == 1
-        result = result[0]
-        errs = ['Error -3 while decompressing: invalid code lengths set',
-                'Extracted files were removed.']
+        assert len(result) == 2
+        result = result[1]
+        errs = ['Error -3 while decompressing: invalid code lengths set']
         assert errs == result.errors
         assert not result.warnings
 
@@ -316,23 +345,23 @@ class TestExtract(FileBasedTesting):
             'empty_small.zip',
             'empty_small.zip-extract/empty_dirs_and_small_files/small_files/small_file.txt',)
         test_dir = self.get_test_loc('extract/small', copy=True)
-        result = extract.extract(test_dir, recurse=True)
+        result = list(extract.extract(test_dir, recurse=True))
         check_no_error(result)
         check_files(test_dir, expected)
 
     def test_extract_tar_with_broken_links(self):
         test_dir = self.get_test_loc('extract/broken_link', copy=True)
-        result = extract.extract(test_dir, recurse=True)
+        result = list(extract.extract(test_dir, recurse=True))
         expected = (
             'broken-link.tar.bz2',
             'broken-link.tar.bz2-extract/openssl/test/Makefile',
         )
         check_files(test_dir, expected)
-        expected_warning = [["Skipping broken link to: 'openssl/test/../fips/aes/fips_aes_data'"]]
+        expected_warning = [[], ["Skipping broken link to: 'openssl/test/../fips/aes/fips_aes_data'"]]
         warns = [r.warnings.values() for r in result]
         assert expected_warning == warns
 
-    def test_extract_nested_tar_file(self):
+    def test_extract_nested_tar_file_recurse_only(self):
         test_file = self.get_test_loc('extract/nested/nested_tars.tar.gz', copy=True)
         expected = [
             'nested_tars.tar.gz',
@@ -367,11 +396,11 @@ class TestExtract(FileBasedTesting):
             'nested_tars.tar.gz-extract/b/c/a.tar.gz-extract/a/c/c.txt',
             'nested_tars.tar.gz-extract/b/c/a.txt'
         ]
-        result = extract.extract(test_file, recurse=True)
+        result = list(extract.extract(test_file, recurse=True))
         check_no_error(result)
         check_files(test_file, expected)
 
-    def test_extract_nested_tar_file_shallow(self):
+    def test_extract_nested_tar_file_shallow_only(self):
         test_dir = self.get_test_loc('extract/nested/nested_tars.tar.gz', copy=True)
         expected = [
             'nested_tars.tar.gz',
@@ -400,7 +429,7 @@ class TestExtract(FileBasedTesting):
             'nested_tars.tar.gz-extract/b/c/a.tar.gz',
             'nested_tars.tar.gz-extract/b/c/a.txt'
         ]
-        result1 = extract.extract(test_dir, recurse=False)
+        result1 = list(extract.extract(test_dir, recurse=False))
         check_no_error(result1)
         check_files(test_dir, expected)
 
@@ -439,8 +468,8 @@ class TestExtract(FileBasedTesting):
             'nested_tars.tar.gz-extract/b/c/a.tar.gz-extract/a/c/c.txt',
             'nested_tars.tar.gz-extract/b/c/a.txt'
         ]
-        result1 = extract.extract(test_file, recurse=False)
-        result2 = extract.extract(test_file, recurse=True)
+        result1 = list(extract.extract(test_file, recurse=False))
+        result2 = list(extract.extract(test_file, recurse=True))
         check_no_error(result1)
         check_no_error(result2)
         check_files(test_file, expected)
@@ -480,8 +509,8 @@ class TestExtract(FileBasedTesting):
             'nested_tars.tar.gz-extract/b/c/a.tar.gz-extract/a/c/c.txt',
             'nested_tars.tar.gz-extract/b/c/a.txt'
         ]
-        result1 = extract.extract(test_dir, recurse=False)
-        result2 = extract.extract(test_dir, recurse=True)
+        result1 = list(extract.extract(test_dir, recurse=False))
+        result2 = list(extract.extract(test_dir, recurse=True))
         check_no_error(result1)
         check_no_error(result2)
         check_files(test_dir, expected)
@@ -492,7 +521,7 @@ class TestExtract(FileBasedTesting):
             'with spaces in name.zip',
             'with spaces in name.zip-extract/empty_dirs_and_small_files/small_files/small_file.txt'
         )
-        result = extract.extract(test_dir, recurse=True)
+        result = list(extract.extract(test_dir, recurse=True))
         check_no_error(result)
         check_files(test_dir, expected)
 
@@ -504,7 +533,7 @@ class TestExtract(FileBasedTesting):
             'with spaces in name.tar.gz-extract/a/b/b.txt',
             'with spaces in name.tar.gz-extract/a/c/c.txt',
         )
-        result = extract.extract(test_dir, recurse=True)
+        result = list(extract.extract(test_dir, recurse=True))
         check_no_error(result)
         check_files(test_dir, expected)
 
@@ -519,7 +548,7 @@ class TestExtract(FileBasedTesting):
             't.tgz-extract/S-SPARSE',
             't.tgz-extract/S-SPARSE-WITH-NULLS',
         ]
-        result = extract.extract(test_dir, recurse=True)
+        result = list(extract.extract(test_dir, recurse=True))
         check_files(test_dir, expected)
 
         errs = [r.errors for r in result if r.errors]
@@ -542,7 +571,7 @@ class TestExtract(FileBasedTesting):
     def test_extract_directory_of_windows_ar_archives(self):
         # this does not pass yet with libarchive and fails too with 7z
         test_dir = self.get_test_loc('extract/ar_tree/winlib', copy=True)
-        result = extract.extract(test_dir, recurse=True)
+        result = list(extract.extract(test_dir, recurse=True))
         expected = [
             'freetype.lib',
             'freetype.lib-extract/1.txt',
@@ -795,3 +824,55 @@ class TestExtract(FileBasedTesting):
         ]
         check_files(test_dir, expected)
         check_no_error(result)
+
+    def test_extract_nested_arch_with_corrupted_compressed_should_extract_inner_archives_only_once(self):
+        test_file = self.get_test_loc('extract/nested_not_compressed/nested_with_not_compressed_gz_file.tgz', copy=True)
+        expected = [
+            'nested_with_not_compressed_gz_file.tgz',
+            'nested_with_not_compressed_gz_file.tgz-extract/top/file',
+            'nested_with_not_compressed_gz_file.tgz-extract/top/notcompressed.gz'
+        ]
+        result = list(extract.extract(test_file, recurse=True))
+        print(list(result))
+        check_no_error(result)
+        check_files(test_file, expected)
+
+    def touch(self, location):
+        with open(location, 'wb') as f:
+            f.write('\n')
+
+    def fake_extract(self, location):
+        extracted = os.path.join(location + 'extract')
+        os.mkdir(extracted)
+        self.touch(os.path.join(extracted, 'extracted_file'))
+        return extracted
+
+    def extract_walker(self, test_dir):
+        for top, dirs, files in os.walk(test_dir, topdown=True):
+            for f in files:
+                if not f.endswith('-extract') and f.endswith('.gz'):
+                    extracted = self.fake_extract(os.path.join(top, f))
+                    for x in self.extract_walker(os.path.join(top, extracted)):
+                        yield x
+            yield top, dirs, files
+
+    def test_walk_can_be_extended_while_walking(self):
+        test_dir = self.get_temp_dir()
+        self.touch(os.path.join(test_dir, 'file'))
+        self.touch(os.path.join(test_dir, 'arch.gz'))
+        os.mkdir(os.path.join(test_dir, 'dir'))
+        self.touch(os.path.join(test_dir, 'dir', 'otherarch.gz'))
+        allpaths = []
+        for top, dirs, files in self.extract_walker(test_dir):
+            allpaths.extend([os.path.join(top, d).replace(test_dir, '') for d in dirs + files])
+
+        expected = [
+            '/arch.gzextract/extracted_file',
+            '/dir',
+            '/arch.gz',
+            '/file',
+            '/dir/otherarch.gzextract/extracted_file',
+            '/dir/otherarch.gz'
+        ]
+
+        assert expected == allpaths
