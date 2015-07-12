@@ -77,7 +77,7 @@ class TestPermissions(FileBasedTesting):
             if on_posix:
                 assert filetype.is_executable(test_dir2)
         finally:
-            fileutils.chmod(test_dir, fileutils.RW)
+            fileutils.chmod(test_dir, fileutils.RW, recurse=True)
 
     def test_chmod_read_write_non_recursively_on_dir(self):
         test_dir = self.get_test_loc('fileutils/executable', copy=True)
@@ -107,7 +107,7 @@ class TestPermissions(FileBasedTesting):
                 # windows is different
                 assert filetype.is_writable(test_dir)
         finally:
-            fileutils.chmod(test_dir, fileutils.RW)
+            fileutils.chmod(test_dir, fileutils.RW, recurse=True)
 
     def test_chmod_read_write_file(self):
         test_dir = self.get_test_loc('fileutils/executable', copy=True)
@@ -121,7 +121,7 @@ class TestPermissions(FileBasedTesting):
             assert filetype.is_readable(test_file)
             assert filetype.is_writable(test_file)
         finally:
-            fileutils.chmod(test_dir, fileutils.RW)
+            fileutils.chmod(test_dir, fileutils.RW, recurse=True)
 
     def test_chmod_read_write_exec_dir(self):
         test_dir = self.get_test_loc('fileutils/executable', copy=True)
@@ -133,13 +133,13 @@ class TestPermissions(FileBasedTesting):
                 assert not filetype.is_executable(test_file)
             make_non_writable(test_dir)
 
-            fileutils.chmod(test_dir, fileutils.RWX)
+            fileutils.chmod(test_dir, fileutils.RWX, recurse=True)
             assert filetype.is_readable(test_file)
             assert filetype.is_writable(test_file)
             if on_posix:
                 assert filetype.is_executable(test_file)
         finally:
-            fileutils.chmod(test_dir, fileutils.RW)
+            fileutils.chmod(test_dir, fileutils.RW, recurse=True)
 
     def test_copyfile_does_not_keep_permissions(self):
         src_file = self.get_temp_file()
@@ -155,8 +155,8 @@ class TestPermissions(FileBasedTesting):
             dest_file = join(dest, os.listdir(dest)[0])
             assert filetype.is_readable(dest_file)
         finally:
-            fileutils.chmod(src_file, fileutils.RW)
-            fileutils.chmod(dest, fileutils.RW)
+            fileutils.chmod(src_file, fileutils.RW, recurse=True)
+            fileutils.chmod(dest, fileutils.RW, recurse=True)
 
     def test_copytree_does_not_keep_non_writable_permissions(self):
         src = self.get_test_loc('fileutils/exec', copy=True)
@@ -184,8 +184,8 @@ class TestPermissions(FileBasedTesting):
             assert os.path.exists(dest_dir2)
             assert filetype.is_writable(dest_dir)
         finally:
-            fileutils.chmod(src, fileutils.RW)
-            fileutils.chmod(dst, fileutils.RW)
+            fileutils.chmod(src, fileutils.RW, recurse=True)
+            fileutils.chmod(dst, fileutils.RW, recurse=True)
 
     def test_copytree_copies_unreadable_files(self):
         src = self.get_test_loc('fileutils/exec', copy=True)
@@ -216,8 +216,8 @@ class TestPermissions(FileBasedTesting):
             assert filetype.is_readable(dest_file2)
 
         finally:
-            fileutils.chmod(src, fileutils.RW)
-            fileutils.chmod(dst, fileutils.RW)
+            fileutils.chmod(src, fileutils.RW, recurse=True)
+            fileutils.chmod(dst, fileutils.RW, recurse=True)
 
     def test_delete_unwritable_directory_and_files(self):
         base_dir = self.get_test_loc('fileutils/readwrite', copy=True)
@@ -237,7 +237,7 @@ class TestPermissions(FileBasedTesting):
             fileutils.delete(test_dir)
             assert not os.path.exists(test_dir)
         finally:
-            fileutils.chmod(base_dir, fileutils.RW)
+            fileutils.chmod(base_dir, fileutils.RW, recurse=True)
 
 
 class TestFileUtils(FileBasedTesting):
