@@ -63,6 +63,7 @@ from contextlib import closing
 # This is a patched tarfile using a Python2 backport for bz2file from Python3
 # Because of http://bugs.python.org/issue20781
 from extractcode.tarfile_patch import tarfile
+from commoncode.paths import resolve
 
 logger = logging.getLogger('extractcode')
 # logging.basicConfig(level=logging.DEBUG)
@@ -72,32 +73,6 @@ logger = logging.getLogger('extractcode')
 Low level support for tar-based archive extraction using Python built-in tar
 support.
 """
-
-
-def clean_path(path):
-    """
-    Return a clean path ensuring it does not refer to a parent dir or an
-    absolute dir. 
-
-    For parent dirs, do not use os.path.normpath to be portable on all OSes.
-    This adds an arbitrary ROOT segment to absolute paths and PARENT segment
-    for parent references.
-    """
-    assert path
-    root_dir = 'ROOT'
-    parent_dir = 'PARENT'
-    if os.path.isabs(path):
-        path = root_dir + '/' + path
-    # while at it, also ensure it's unicode...
-    try:
-        path = unicode(path, 'utf-8')
-    except:
-        try:
-            path = unicode(path, 'cp1252')
-        except:
-            pass  # will fail later
-
-    return path.replace('../', parent_dir + '/')
 
 
 def list_entries(location):
@@ -201,8 +176,7 @@ def extract(location, target_dir):
 
             tinfo = copy.copy(tinfo)
             # ensure we do stay always under the target dir
-            # FIXME: use the same path resolution as in libarchive.py
-            tinfo.name = clean_path(tinfo.name)
+            tinfo.name = resolve(tinfo.name)
             # Extract all files with a safe mode
             # FIXME: use the current user mask
             tinfo.mode = 0700

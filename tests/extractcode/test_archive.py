@@ -136,13 +136,13 @@ class TestSmokeTest(FileBasedTesting):
 
     def test_score_handlers(self):
         test_data = [
-            ('archive/deb/adduser_3.112ubuntu1_all.deb', [(18, 'Debian package')]),
-            ('archive/rpm/elfinfo-1.0-1.fc9.src.rpm', [(19, 'RPM package')]),
-            ('archive/ar/liby.a', [(18, 'Static Library'), (8, 'ar archive'), (7, 'Debian package')]),
-            ('archive/tar/tarred.tar', [(16, 'Tar'), (10, 'Ruby Gem package')]),
-            ('archive/tbz/tarred_bzipped.tar.bz2', [(17, 'Tar bzip2'), (16, 'bzip2')]),
-            ('archive/tbz/tarred_bzipped.bz', [(16, 'bzip2'), (9, 'Tar bzip2')]),
-            ('archive/tgz/tarred_gzipped.gz', [(16, 'Gzip'), (9, 'Tar gzip'), (7, 'Dia diagram doc')]),
+            ('archive/deb/adduser_3.112ubuntu1_all.deb', [(31, 'Debian package')]),
+            ('archive/rpm/elfinfo-1.0-1.fc9.src.rpm', [(32, 'RPM package')]),
+            ('archive/ar/liby.a', [(31, 'Static Library'), (17, 'ar archive'), (11, 'Debian package')]),
+            ('archive/tar/tarred.tar', [(29, 'Tar'), (19, 'Ruby Gem package')]),
+            ('archive/tbz/tarred_bzipped.tar.bz2', [(30, 'Tar bzip2'), (29, 'bzip2')]),
+            ('archive/tbz/tarred_bzipped.bz', [(29, 'bzip2'), (18, 'Tar bzip2')]),
+            ('archive/tgz/tarred_gzipped.gz', [(29, 'Gzip'), (18, 'Tar gzip'), (16, 'Dia diagram doc')]),
         ]
 
         for test_file, expected in test_data:
@@ -237,7 +237,7 @@ class TestTarGzip(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/tgz/absolute_path.tar.gz')
         archive.extract_tar(test_file, test_dir)
         assert not os.path.exists(non_result)
-        result = os.path.join(test_dir, 'ROOT/tmp/subdir/a.txt')
+        result = os.path.join(test_dir, 'tmp/subdir/a.txt')
         assert os.path.exists(result)
 
     def test_extract_targz_with_relative_path(self):
@@ -258,9 +258,9 @@ class TestTarGzip(BaseArchiveTestCase):
         assert not os.path.exists(non_result)
 
         expected = [
-            'PARENT/PARENT/another_folder/b_two_root.txt',
-            'PARENT/a_parent_folder.txt',
-            'PARENT/folder/subfolder/b_subfolder.txt'
+            'dotdot/dotdot/another_folder/b_two_root.txt',
+            'dotdot/a_parent_folder.txt',
+            'dotdot/folder/subfolder/b_subfolder.txt'
         ]
         check_files(test_dir, expected)
 
@@ -404,7 +404,7 @@ class TestTarBz2(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/tbz/absolute_path.tar.bz2')
         archive.extract_tar(test_file, test_dir)
         assert not os.path.exists('/tmp/subdir')
-        result = os.path.join(test_dir, 'ROOT/tmp/subdir/a.txt')
+        result = os.path.join(test_dir, 'tmp/subdir/a.txt')
         assert os.path.exists(result)
 
     def test_extract_tar_bz2_relative_path(self):
@@ -424,9 +424,9 @@ class TestTarBz2(BaseArchiveTestCase):
         non_result = os.path.join(test_dir, '../a_parent_folder.txt')
         assert not os.path.exists(non_result)
 
-        result = os.path.join(test_dir, 'PARENT/folder/subfolder/b_subfolder.txt')
+        result = os.path.join(test_dir, 'dotdot/folder/subfolder/b_subfolder.txt')
         assert os.path.exists(result)
-        result = os.path.join(test_dir, 'PARENT', 'a_parent_folder.txt')
+        result = os.path.join(test_dir, 'dotdot', 'a_parent_folder.txt')
         assert os.path.exists(result)
 
     def test_extract_tar_bz2_iproute(self):
@@ -761,7 +761,7 @@ class TestTar(BaseArchiveTestCase):
         archive.extract_tar(test_file, test_dir)
 
         assert not os.path.exists('/tmp/subdir')
-        result = os.path.join(test_dir, 'ROOT/tmp/subdir/a.txt')
+        result = os.path.join(test_dir, 'tmp/subdir/a.txt')
         assert os.path.exists(result)
 
     def test_extract_tar_with_relative_path(self):
@@ -781,16 +781,16 @@ class TestTar(BaseArchiveTestCase):
         assert not os.path.exists(non_result)
         extracted = self.collect_extracted_path(test_dir)
         expected = [
-            '/PARENT/',
-            '/PARENT/PARENT/',
-            '/PARENT/PARENT/another_folder/',
-            '/PARENT/PARENT/another_folder/b_two_root.txt',
-            '/PARENT/a_parent_folder.txt',
-            '/PARENT/folder/',
-            '/PARENT/folder/subfolder/',
-            '/PARENT/folder/subfolder/b_subfolder.txt'
+            '/dotdot/',
+            '/dotdot/dotdot/',
+            '/dotdot/a_parent_folder.txt',
+            '/dotdot/dotdot/another_folder/',
+            '/dotdot/dotdot/another_folder/b_two_root.txt',
+            '/dotdot/folder/',
+            '/dotdot/folder/subfolder/',
+            '/dotdot/folder/subfolder/b_subfolder.txt'
         ]
-        assert expected == extracted
+        assert sorted(expected) == sorted(extracted)
 
     def test_extract_tar_archive_with_special_files(self):
         test_file = self.get_test_loc('archive/tar/special.tar')
