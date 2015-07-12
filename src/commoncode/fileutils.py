@@ -35,11 +35,10 @@ import stat
 import tempfile
 
 from commoncode import system
-from commoncode import filetype
 from commoncode import text
-from commoncode.system import on_windows
+from commoncode import filetype
 from commoncode.filetype import is_rwx
-from commoncode.filetype import is_file
+
 
 # this exception is not available on posix
 try:
@@ -47,6 +46,7 @@ try:
 except NameError:
     WindowsError = None  # @ReservedAssignment
 
+DEBUG = False
 logger = logging.getLogger(__name__)
 
 """
@@ -74,7 +74,7 @@ def create_dir(location):
 
         try:
             os.makedirs(location)
-            chmod(location, RW)
+            chmod(location, RW, recurse=False)
 
         # avoid multi-process TOCTOU conditions when creating dirs
         # the directory may have been created since the exist check
@@ -159,13 +159,13 @@ def read_text_file(location, universal_new_lines=True):
     return text
 
 #
-# PATHS AND NAMES
+# PATHS AND NAMES MANIPULATIONS
 #
 
 def as_posixpath(location):
     """
     Return a posix-like path using posix path separators (slash or "/") for a
-    path. This also converts Windows paths to look like posix paths that
+    `location` path. This converts Windows paths to look like posix paths that
     Python accepts gracefully on Windows for path handling.
     """
     return location.replace(ntpath.sep, posixpath.sep)
@@ -217,9 +217,10 @@ def file_extension(path):
 
 def splitext(path):
     """
-    Return a tuple of (basename, extension) for a path. The basename is the
-    file name minus its extension. Return an empty extension string for a
-    directory. Not the same as os.path.splitext.
+    Return a tuple of strings (basename, extension) for a path. The basename is
+    the file name minus its extension. Return an empty extension string for a
+    directory. A directory is identified by ending with a path separator. Not
+    the same as os.path.splitext.
     """
     base_name = ''
     extension = ''
@@ -240,9 +241,11 @@ def splitext(path):
     return base_name or '', extension or ''
 
 #
-# DIRECTORY WALKING
+# DIRECTORY AND FILES WALKING/ITERATION
 #
+
 ignore_nothing = lambda _: False
+
 
 def walk(location, ignored=ignore_nothing):
     """
@@ -255,6 +258,9 @@ def walk(location, ignored=ignore_nothing):
        callable on files and directories returning True if it should be ignored.
      - location is a directory or a file: for a file, the file is returned.
     """
+    if DEBUG:
+        ign = ignored(location)
+        logger.debug('walk: ignored:', location, ign)
     if not ignored(location):
         if filetype.is_file(location) :
             yield parent_directory(location), [], [file_name(location)]
@@ -265,24 +271,20 @@ def walk(location, ignored=ignore_nothing):
             for name in os.listdir(location):
                 loc = os.path.join(location, name)
                 if filetype.is_special(loc) or ignored(loc):
+                    if DEBUG:
+                        ign = ignored(loc)
+                        logger.debug('walk: ignored:', loc, ign)
                     continue
-
+                # special files and symlinks are always ignored
                 if filetype.is_dir(loc):
                     dirs.append(name)
                 elif filetype.is_file(loc):
                     files.append(name)
-                # else:
-                    # special files and symlinks are always ignored
-                    # pass
             yield location, dirs, files
 
             for dr in dirs:
                 for tripple in walk(os.path.join(location, dr), ignored):
                     yield tripple
-
-        # else:
-            # special files and symlinks are always ignored
-            # pass
 
 
 def file_iter(location, ignored=ignore_nothing):
@@ -294,70 +296,54 @@ def file_iter(location, ignored=ignore_nothing):
                     if the location should be ignored.
     :return: an iterable of file locations.
     """
-    for root, _dirs, files in walk(location, ignored):
+    for top, _dirs, files in walk(location, ignored):
         for f in files:
-            yield os.path.join(root, f)
+            yield os.path.join(top, f)
 
-#
 #
 # COPY
 #
 
-def copytree(src, dst, symlinks=False, ignore=None):
+def copytree(src, dst):
     """
-    Copy recursively the `src` directory to a non-existing `dst` directory.
-    Preserves:
-     - timestamps.
-     - symlinks if the optional `symlinks` argument is True.
-
+    Copy recursively the `src` directory to the `dst` directory. If `dst` is an
+    existing directory, files in `dst` may be overwritten during the copy.
+    Preserve timestamps.
     Ignores:
      -`src` permissions: `dst` files are created with the default permissions.
-     - all special files such as FIFO or character devices
+     - all special files such as FIFO or character devices and symlinks.
 
     Raise an shutil.Error with a list of reasons.
 
-    The optional `ignore` argument is a callable called once for each copied
-    directory with src and names arguments. `src` is the current directory and
-    `names` is the list of `src` names as returned by os.listdir(). It must
-    return a list of names in the `src` directory that should be ignored from
-    the copy::
-        callable(src, names) -> ignored_names
-
-    Similar to and derived from Python shutil module. See fileutils.py.ABOUT
-    for details.
+    This function is similar to and derived from the Python shutil.copytree
+    function. See fileutils.py.ABOUT for details.
     """
     if not filetype.is_readable(src):
         chmod(src, R, recurse=False)
 
     names = os.listdir(src)
-    ignored_names = set()
 
-    if ignore is not None:
-        ignored_names = ignore(src, names) or ignored_names
+    if not os.path.exists(dst):
+        os.makedirs(dst)
 
-    os.makedirs(dst)
     errors = []
     errors.extend(copytime(src, dst))
 
     for name in names:
-        if name in ignored_names:
-            continue
         srcname = os.path.join(src, name)
         dstname = os.path.join(dst, name)
+
+        # skip anything that is not a regular file, dir or link
+        if not filetype.is_regular(srcname):
+            continue
 
         if not filetype.is_readable(srcname):
             chmod(srcname, R, recurse=False)
         try:
-            if not on_windows and symlinks and os.path.islink(srcname):
-                linkto = os.readlink(srcname)  # @UndefinedVariable
-                os.symlink(linkto, dstname)  # @UndefinedVariable
-            elif os.path.isdir(srcname):
-                copytree(srcname, dstname, symlinks, ignore)
+            if os.path.isdir(srcname):
+                copytree(srcname, dstname)
             elif filetype.is_file(srcname):
                 copyfile(srcname, dstname)
-            else:
-                # skip anything that is not a regular file, dir or link
-                pass
         # catch the Error from the recursive copytree so that we can
         # continue with other files
         except shutil.Error, err:
@@ -379,10 +365,10 @@ def copyfile(src, dst):
     """
     if not filetype.is_regular(src):
         return
-    if os.path.isdir(dst):
-        dst = os.path.join(dst, os.path.basename(src))
     if not filetype.is_readable(src):
         chmod(src, R, recurse=False)
+    if os.path.isdir(dst):
+        dst = os.path.join(dst, os.path.basename(src))
     shutil.copyfile(src, dst)
     copytime(src, dst)
 
@@ -418,11 +404,12 @@ RX = stat.S_IRUSR | stat.S_IXUSR
 RWX = stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR
 
 
-def chmod(location, flags, recurse=True):
+# FIXME: This was an expensive operation that used to recurse of the parent directory
+def chmod(location, flags, recurse=False):
     """
-    Update permissions for `location` with with `flags`.
-    `flags` is one of R, RW, RX or RWX with the same meaning as in chmod.
-    Update is done recursively if `recurse`.
+    Update permissions for `location` with with `flags`. `flags` is one of R,
+    RW, RX or RWX with the same semantics as in the chmod command. Update is
+    done recursively if `recurse`.
     """
     if not location or not os.path.exists(location):
         return
@@ -435,6 +422,8 @@ def chmod(location, flags, recurse=True):
         # and to be writable so we can change perms of files inside
         new_flags = RWX
 
+    # FIXME: do we really need to change the parent directory perms?
+    # FIXME: may just check them instead?
     parent = os.path.dirname(location)
     current_stat = stat.S_IMODE(os.stat(parent).st_mode)
     if not is_rwx(parent):
@@ -457,7 +446,7 @@ def chmod_tree(location, flags):
             for d in dirs:
                 chmod(os.path.join(top, d), flags, recurse=False)
             for f in files:
-                chmod(os.path.join(top, f), flags)
+                chmod(os.path.join(top, f), flags, recurse=False)
 
 #
 # DELETION
@@ -470,7 +459,7 @@ def _rm_handler(function, path, excinfo):  # @UnusedVariable
     """
     if function == os.rmdir:
         try:
-            chmod(path, RW)
+            chmod(path, RW, recurse=True)
             shutil.rmtree(path, True)
         except Exception:
             pass
@@ -497,7 +486,7 @@ def delete(location, _err_handler=_rm_handler):
         return
 
     if os.path.exists(location) or filetype.is_broken_link(location):
-        chmod(os.path.dirname(location), RW)
+        chmod(os.path.dirname(location), RW, recurse=False)
         if filetype.is_dir(location):
             shutil.rmtree(location, False, _rm_handler)
         else:
