@@ -88,7 +88,7 @@ ignores_MacOSX = {
     '.journal': 'Default ignore: MacOSX DMG/HFS+ artifact',
     '.journal_info_block': 'Default ignore: MacOSX DMG/HFS+ artifact',
     '.Trashes': 'Default ignore: MacOSX DMG/HFS+ artifact',
-    '[HFS+ Private Data]': 'Default ignore: MacOSX DMG/HFS+ artifact',
+    '\[HFS+ Private Data\]': 'Default ignore: MacOSX DMG/HFS+ artifact private data',
 }
 
 ignores_Windows = {
