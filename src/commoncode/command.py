@@ -197,14 +197,14 @@ def get_bin_lib_dirs(base_dir):
     bin_dir = os.path.join(base_dir, 'bin')
 
     if os.path.exists(bin_dir):
-        fileutils.chmod(bin_dir, fileutils.RX)
+        fileutils.chmod(bin_dir, fileutils.RX, recurse=True)
     else:
         bin_dir = None
 
     lib_dir = os.path.join(base_dir, 'lib')
 
     if os.path.exists(lib_dir):
-        fileutils.chmod(bin_dir, fileutils.RX)
+        fileutils.chmod(bin_dir, fileutils.RX, recurse=True)
     else:
         # default to bin for lib if it exists
         lib_dir = bin_dir or None
@@ -264,7 +264,7 @@ def get_locations(cmd, root_dir,
             bin_dir, lib_dir = get_bin_lib_dirs(base_dir)
             cmd_loc = os.path.join(bin_dir, cmd)
             if os.path.exists(cmd_loc):
-                fileutils.chmod(cmd_loc, fileutils.RX)
+                fileutils.chmod(cmd_loc, fileutils.RX, recurse=False)
                 return cmd_loc, bin_dir, lib_dir
     else:
         # we just care for getting the dirs and grab the first one
