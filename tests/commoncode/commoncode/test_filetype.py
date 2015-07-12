@@ -96,7 +96,7 @@ class TypeTest(commoncode.testcase.FileBasedTesting):
             make_non_writable(test_file)
             assert not filetype.is_writable(test_file)
         finally:
-            fileutils.chmod(base_dir, fileutils.RW)
+            fileutils.chmod(base_dir, fileutils.RW, recurse=True)
 
     def test_is_readable_is_writeable_dir(self):
         base_dir = self.get_test_loc('filetype/readwrite', copy=True)
@@ -120,7 +120,7 @@ class TypeTest(commoncode.testcase.FileBasedTesting):
                 assert filetype.is_writable(test_dir)
             # finally
         finally:
-            fileutils.chmod(base_dir, fileutils.RW)
+            fileutils.chmod(base_dir, fileutils.RW, recurse=True)
 
 
 class CountTest(FileBasedTesting):
