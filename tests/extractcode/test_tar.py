@@ -30,7 +30,6 @@ from unittest.case import skipIf
 
 import commoncode
 from extractcode_assert_utils import check_files
-from extractcode import archive
 from extractcode import tar
 
 from test_archive import BaseArchiveTestCase
@@ -105,16 +104,16 @@ class TestTarGzip(BaseArchiveTestCase):
     def test_extract_targz_with_mixed_case_and_symlink(self):
         test_file = self.get_test_loc('archive/tgz/mixed_case_and_symlink.tgz')
         test_dir = self.get_temp_dir()
-        expected = {
-            'skinenigmang/hqlogos/Disney Channel.xpm': 'Skipping duplicate file name.',
-            'skinenigmang/hqlogos/EuroNews.xpm': 'Skipping duplicate file name.',
-            'skinenigmang/hqlogos/Jetix.xpm': 'Skipping duplicate file name.',
-            'skinenigmang/hqlogos/MTV France.xpm': "Skipping link to special file: 'skinenigmang/hqlogos/MTV F.xpm'",
-            'skinenigmang/hqlogos/MTV Hits.xpm': 'Skipping duplicate file name.',
-            'skinenigmang/hqlogos/arte.xpm': 'Skipping duplicate file name.'
-        }
+        expected = [
+            'skinenigmang/hqlogos/arte.xpm: Skipping duplicate file name.',
+            'skinenigmang/hqlogos/MTV Hits.xpm: Skipping duplicate file name.',
+            'skinenigmang/hqlogos/Disney Channel.xpm: Skipping duplicate file name.',
+            'skinenigmang/hqlogos/EuroNews.xpm: Skipping duplicate file name.',
+            'skinenigmang/hqlogos/Jetix.xpm: Skipping duplicate file name.',
+            "skinenigmang/hqlogos/MTV France.xpm: Skipping link to special file: 'skinenigmang/hqlogos/MTV F.xpm'"
+        ]
         result = tar.extract(test_file, test_dir)
-        result = dict((k.replace(test_dir, '').strip('\\/'), v) for k, v in result.items())
+        result = [m.replace(test_dir, '').strip('\\/') for m in result]
         assert expected == result
 #         expected_files = []
 #         check_files(test_dir, expected_files)
@@ -135,7 +134,7 @@ class TestTarGzip(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/tgz/commons-logging-1.1.2-src.tar.gz')
         test_dir = self.get_temp_dir()
         result = tar.extract(test_file, test_dir)
-        assert {} == result
+        assert [] == result
         assert os.listdir(test_dir)
 
 
@@ -295,12 +294,12 @@ class TestTar(BaseArchiveTestCase):
         ]
         check_files(test_dir, expected)
 
-        expected_warnings = [
-            "Skipping broken link to: 'testtar/0-REGTYPE'",
-            'Skipping special file.',
-            'Skipping special file.'
+        expected_warnings =  [
+            "2-SYMTYPE: Skipping broken link to: 'testtar/0-REGTYPE'",
+            '3-CHRTYPE: Skipping special file.',
+            '6-FIFOTYPE: Skipping special file.'
         ]
-        assert sorted(expected_warnings) == sorted(result.values())
+        assert sorted(expected_warnings) == sorted(result)
 
     @skipIf(True, 'Unicode tar paths are not handled well yet')
     def test_extract_python_testtar_tar_archive_with_special_files(self):
@@ -309,13 +308,13 @@ class TestTar(BaseArchiveTestCase):
         # https://hg.python.org/cpython/raw-file/bff88c866886/Lib/test/testtar.tar
         test_dir = self.get_temp_dir()
         result = tar.extract(test_file, test_dir)
+        expected_warnings = []
+#             "Skipping broken link to: 'testtar/0-REGTYPE'",
+#             'Skipping special file.',
+#             'Skipping special file.'
+#         ]
+        assert sorted(expected_warnings) == sorted(result)
         expected = [
         ]
         check_files(test_dir, expected)
 
-        expected_warnings = [
-            "Skipping broken link to: 'testtar/0-REGTYPE'",
-            'Skipping special file.',
-            'Skipping special file.'
-        ]
-        assert sorted(expected_warnings) == sorted(result.values())

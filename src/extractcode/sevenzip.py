@@ -25,6 +25,7 @@
 from __future__ import print_function, absolute_import
 
 import codecs
+from collections import defaultdict
 import logging
 import os
 import re
@@ -34,7 +35,6 @@ from commoncode.system import on_windows
 import extractcode
 from extractcode import ExtractErrorFailedToExtract
 from extractcode import ExtractWarningIncorrectEntry
-from _collections import defaultdict
 
 logger = logging.getLogger('extractcode')
 # logging.basicConfig(level=logging.DEBUG)
@@ -74,7 +74,7 @@ def get_7z_errors(stdout):
 
     file_errors = find_7z_errors(stdout)
     if file_errors:
-        return ' '.join(file_errors).strip()
+        return ' '.join(file_errors.strip('"\' ')).strip()
 
 
 def get_7z_warnings(stdout):
@@ -89,13 +89,16 @@ def get_7z_warnings(stdout):
     for line in stdout.splitlines(False):
         if cannot_open in line.lower():
             path = line[msg_len:]
-            warnings[path].append(cannot_open)
+            if cannot_open not in warnings[path]:
+                warnings[path].append(cannot_open)
 
     # collect warnings
-    warning_messages = {}
+    warning_messages = []
     for pathname, messages in warnings.items():
-        warning_messages[pathname] = '\n'.join(messages)
-    return warning_messages 
+        msg = pathname + ': ' + '\n'.join(messages.strip('\' "'))
+        if msg not in warning_messages:
+            warning_messages.append(msg)
+    return warning_messages
 
 
 def list_extracted_7z_files(stdout):
@@ -112,16 +115,16 @@ def list_extracted_7z_files(stdout):
 def extract(location, target_dir, arch_type='*'):
     """
     Extract all files from a 7zip-supported archive file at location in the
-    target_dir directory. Return a mapping of path->warning_message.
+    target_dir directory. Return a list of warning messages.
     Raise exception on errors.
 
-    Use the -t* 7z cli type option or the provided arch_type 7z type (can be
-    None).
+    `arch_type` is the type of 7zip archive passed to the -t 7zip option. Can be
+    None.
     """
     assert location
     assert target_dir
 
-    # note: there are issues with the extraction of debian .deb ar files
+    # note: there are some issues with the extraction of debian .deb ar files
     # see sevenzip bug http://sourceforge.net/p/sevenzip/bugs/1472/
 
     # 7z arguments
@@ -256,7 +259,7 @@ def as_entry(infos):
 
 def parse_7z_listing(location, utf=False):
     """
-    Parse a long format 7zip listing and return an iterable of entry. 
+    Parse a long format 7zip listing and return an iterable of entry.
 
     The 7zip -slt format is:
     - copyright and version details

@@ -47,7 +47,7 @@ def uncompress(location, target_dir, decompressor, suffix=EXTRACT_SUFFIX):
     Uncompress a compressed file at location in the target_dir using the
     `decompressor` object. The uncompressed file is named after the original
     archive with a `suffix` added.
-    Return a warnings mapping of path->warning if any.
+    Return a list of warning messages. Raise Exceptions on errors.
     """
     # FIXME: do not create a sub-directory and instead strip the "compression"
     # extension such gz, etc. or introspect the archive header to get the file
@@ -58,14 +58,14 @@ def uncompress(location, target_dir, decompressor, suffix=EXTRACT_SUFFIX):
 
     if DEBUG:
         logger.debug('uncompress: ' + location)
-    warnings = {}
+    warnings = []
     target_location = os.path.join(target_dir, os.path.basename(location) + suffix)
     with decompressor(location, 'rb') as compressed:
         with open(target_location, 'wb') as uncompressed:
             chunk = compressed.read()
             uncompressed.write(chunk)
         if getattr(decompressor, 'has_trailing_garbage', False):
-            warnings[location] = 'Trailing garbage found and ignored.'
+            warnings.append(location +': Trailing garbage found and ignored.')
     return warnings
 
 

@@ -52,12 +52,14 @@ LOG = logging.getLogger(__name__)
 
 def extract(location, target_dir):
     """
-    Extract each patch of a patch file at location as files in a target_dir
-    directory tree that mimics the directory in which the patches would be
+    Extract each patch of a patch file at `location` as files in a target_dir
+    directory tree mimicking the directory in which the patches would be
     applied with the patch command.
 
     This treats a patch file as if it were an archive containing one file for
     each patch applied to a file to be patched.
+
+    Return a list of warning messages. Raise Exceptionon errors.
     """
     for source, target, text in patch_info(location):
         # prefer the target path for writing the patch text to a subfile
@@ -90,6 +92,8 @@ def extract(location, target_dir):
         subfile_path = base_subfile_path + extractcode.EXTRACT_SUFFIX
         with open(subfile_path, 'wb') as subfile:
             subfile.write(u'\n'.join(text))
+
+        return []
 
 
 def is_patch(location, include_extracted=False):
@@ -134,7 +138,7 @@ def patch_text(ptch):
 def patch_info(location):
     """
     Return a list of tuples of (src_path, target_path, patch_text) for each
-    patch segment of a patch file at location. 
+    patch segment of a patch file at location.
 
     Raise an exception if the file is not a patch file or cannot be parsed.
     """

@@ -24,7 +24,6 @@
 
 from __future__ import absolute_import, print_function
 
-from collections import defaultdict
 import os
 from unittest.case import expectedFailure
 
@@ -49,12 +48,12 @@ class TestExtract(FileBasedTesting):
             extract.ExtractEvent(
                 source=cleaned_test_file,
                 target=extractcode.get_extraction_path(cleaned_test_file),
-                done=False, warnings=defaultdict(list), errors=[]
+                done=False, warnings=[], errors=[]
             ),
             extract.ExtractEvent(
                 source=cleaned_test_file,
                 target=extractcode.get_extraction_path(cleaned_test_file),
-                done=True, warnings=defaultdict(list), errors=[]
+                done=True, warnings=[], errors=[]
             )
         ]
 
@@ -336,7 +335,7 @@ class TestExtract(FileBasedTesting):
         check_files(test_dir, expected)
         assert len(result) == 2
         result = result[1]
-        errs = ['Error -3 while decompressing: invalid code lengths set']
+        errs = ['gzip decompression failed']
         assert errs == result.errors
         assert not result.warnings
 
@@ -357,8 +356,8 @@ class TestExtract(FileBasedTesting):
             'broken-link.tar.bz2-extract/openssl/test/Makefile',
         )
         check_files(test_dir, expected)
-        expected_warning = [[], ["Skipping broken link to: 'openssl/test/../fips/aes/fips_aes_data'"]]
-        warns = [r.warnings.values() for r in result]
+        expected_warning = [[], []]
+        warns = [r.warnings for r in result]
         assert expected_warning == warns
 
     def test_extract_nested_tar_file_recurse_only(self):
@@ -544,7 +543,6 @@ class TestExtract(FileBasedTesting):
             't.tgz-extract/0-REGTYPE',
             't.tgz-extract/0-REGTYPE-TEXT',
             't.tgz-extract/0-REGTYPE-VEEEERY_LONG_NAME_____________________________________________________________________________________________________________________155',
-            't.tgz-extract/1-LNKTYPE',
             't.tgz-extract/S-SPARSE',
             't.tgz-extract/S-SPARSE-WITH-NULLS',
         ]
@@ -554,12 +552,8 @@ class TestExtract(FileBasedTesting):
         errs = [r.errors for r in result if r.errors]
         assert [] == errs
 
-        warns = [r.warnings.values() for r in result if r.warnings][0]
-        expected_warnings = [
-            "Skipping broken link to: 'testtar/0-REGTYPE'",
-            'Skipping special file.',
-            'Skipping special file.'
-        ]
+        warns = [r.warnings for r in result]
+        expected_warnings = [[], []]
         assert sorted(expected_warnings) == sorted(warns)
 
     # FIXME: create test
@@ -833,7 +827,6 @@ class TestExtract(FileBasedTesting):
             'nested_with_not_compressed_gz_file.tgz-extract/top/notcompressed.gz'
         ]
         result = list(extract.extract(test_file, recurse=True))
-        print(list(result))
         check_no_error(result)
         check_files(test_file, expected)
 

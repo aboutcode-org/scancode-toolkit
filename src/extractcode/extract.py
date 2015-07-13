@@ -24,7 +24,6 @@
 
 from __future__ import print_function, absolute_import
 
-from collections import defaultdict
 from collections import namedtuple
 from functools import partial
 import logging
@@ -131,8 +130,7 @@ def extract(location, kinds=extractcode.default_kinds, recurse=False):
                 if extractcode.is_extraction_path(d):
                     dirs.remove(d)
             if DEBUG:
-                logger.debug('XXXXXXXXXXXXXXXXXXX extract:walk: not recurse: removed dirs:' + repr(drs.symmetric_difference(set(dirs))))
-                logger.debug('XXXXXXXXXXXXXXXXXXX extract:walk: not recurse: new dirs:' + repr(dirs))
+                logger.debug('extract:walk: not recurse: removed dirs:' + repr(drs.symmetric_difference(set(dirs))))
         for f in files:
             loc = join(top, f)
             if not recurse and extractcode.is_extraction_path(loc):
@@ -165,22 +163,22 @@ def extract_file(location, target, kinds=extractcode.default_kinds):
     Extract a single archive at `location` in the `target` directory if it is
     of a kind supported in the `kinds` kind tuple.
     """
-    warnings = defaultdict(list)
+    warnings = []
     errors = []
     extractor = archive.get_extractor(location, kinds)
     if extractor:
-        yield ExtractEvent(location, target, done=False, warnings={}, errors=[])
+        yield ExtractEvent(location, target, done=False, warnings=[], errors=[])
         try:
             # extract first to a temp directory.
             # if there is an error,  the extracted files will not be moved
             # to target
             tmp_tgt = fileutils.get_temp_dir('extract')
-            warnings.update(extractor(location, tmp_tgt))
+            warnings.extend(extractor(location, tmp_tgt))
             fileutils.copytree(tmp_tgt, target)
             fileutils.delete(tmp_tgt)
         except Exception, e:
             if DEBUG:
                 logger.debug('extract_file: ERROR: %(errors)r, %(e)r.\n' % locals())
-            errors=[str(e)]
+            errors=[str(e).strip(' \'"')]
         finally:
             yield ExtractEvent(location, target, done=True, warnings=warnings, errors=errors)

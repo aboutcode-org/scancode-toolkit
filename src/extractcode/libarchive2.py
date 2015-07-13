@@ -30,7 +30,6 @@ import locale
 import posixpath
 import os
 
-from collections import defaultdict
 import ctypes
 from ctypes import c_char_p, c_wchar_p
 from ctypes import c_int, c_longlong
@@ -96,31 +95,26 @@ libarchive = load_lib()
 def extract(location, target_dir):
     """
     Extract files from a libarchive-supported archive file at location in the
-    target_dir. Return a mapping of path->warning_message.
+    target_dir.
+    Return a list of warning messages if any.
+    Raise Exceptions on errors.
     """
     assert location
     assert target_dir
 
-    warnings = defaultdict(list)
+    warnings = []
 
     for entry in list_entries(location):
         if not (entry.isdir or entry.isfile):
             continue
-        try:
-            _path = entry.write(target_dir, transform_path=paths.resolve)
-            for w in entry.warnings:
-                if w and w not in warnings[entry.path]:
-                    warnings[entry.path].append(w)
-        except Exception, e:
-            msg = str(e)
-            if msg and msg not in warnings[entry.path]:
-                warnings[entry.path].append(msg)
-
-    # collect warnings
-    warning_messages = {}
-    for path, messages in warnings.items():
-        warning_messages[path] = '\n'.join(messages)
-    return warning_messages
+        _target_path = entry.write(target_dir, transform_path=paths.resolve)
+        if entry.warnings:
+            msgs = [w.strip('"\' ') for w in entry.warnings if w.strip('"\' ')]
+            msgs = msgs or ['No message provided']
+            formatted = entry.path + ': ' + '\n'.join(msgs)
+            if formatted not in warnings:
+                warnings.append(formatted)
+    return warnings
 
 
 def list_entries(location):
@@ -192,8 +186,7 @@ class Archive(object):
             self.archive_struct = None
 
     def iter(self):
-        assert self.archive_struct, (
-            'Archive must be used as a context manager.')
+        assert self.archive_struct, 'Archive must be used as a context manager.'
         entry_struct = new_entry()
         try:
             while True:
@@ -260,8 +253,8 @@ class Entry(object):
 
     def _path_bytes(self, func, func_w):
         """
-        Call path functions `func` then `func_w` if `func` does not yield path
-        and return a path converting to UTF-8-encoded bytes if this is
+        Call path function `func` then call `func_w` if `func` does not provide
+        a path. Return a path converted to UTF-8-encoded bytes if this is
         unicode.
         """
         path = func(self.entry_struct)
@@ -281,24 +274,26 @@ class Entry(object):
         """
         if not self.archive.archive_struct:
             raise ArchiveErrorIllegalOperationOnClosedArchive()
-        # for now skip links and special files
+        # skip links and special files
         if not (self.isfile or self.isdir):
             return
-        try:
-            # TODO: return some warning when original path has been transformed
-            path = transform_path(self.path)
-            dir_path = posixpath.join(target_dir, path)
-            if self.isfile:
-                dir_path = posixpath.dirname(dir_path)
 
-            # TODO: also rename directories, segment by segment?
+        # TODO: return some warning when original path has been transformed
+        clean_path = transform_path(self.path)
+        if self.isdir:
+            dir_path = posixpath.join(target_dir, clean_path)
             fileutils.create_dir(dir_path)
+            return dir_path
 
-            if self.isdir:
-                return dir_path
+        # isfile
+        try:
+            # create parent directories if needed
+            # TODO: also rename directories, segment by segment?
+            target_path = os.path.join(target_dir, clean_path)
+            parent_path = posixpath.dirname(target_path)
+            fileutils.create_dir(parent_path)
 
-            target_path = os.path.join(target_dir, path)
-            # TODO: return some warning when original path has been renamed
+            # TODO: return some warning when original path has been renamed?
             unique_path = extractcode.new_name(target_path, is_dir=False)
 
             chunk_len = 10240
@@ -313,23 +308,21 @@ class Entry(object):
             os.utime(unique_path, (self.time, self.time))
             return target_path
 
-        except ArchiveWarning, ae:
-            if (ae.msg
-                and ae.msg.startswith('Incorrect file header signature')
-                and ae.msg not in self.warnings):
-                self.warnings.append(ae.msg)
-                return target_path
-            else:
-                raise
+        except ArchiveWarning, aw:
+            msg = str(aw).strip('\'" ') or 'No message provided.'
+            if msg not in self.warnings:
+                self.warnings.append(msg)
+            return target_path
 
-        except ArchiveError, ae:
-            if ae.msg and ae.msg.startswith('Encrypted file is unsupported'):
-                raise ArchiveErrorPasswordProtected(root_ex=ae)
-            else:
-                raise
-
-        except Exception, e:
-            raise ArchiveError(root_ex=e)
+#         except ArchiveError, ae:
+#             if ae.msg and ae.msg.startswith('Encrypted file is unsupported'):
+#                 raise ArchiveErrorPasswordProtected(root_ex=ae)
+#             else:
+#                 raise
+# 
+#         except Exception, e:
+#             raise
+#             raise ArchiveError(root_ex=e)
 
     def __repr__(self):
         return ('Entry('
@@ -345,17 +338,17 @@ class Entry(object):
 
 class ArchiveException(ExtractError):
     def __init__(self, rc=None, archive_struct=None, archive_func=None,
-                 root_ex=None,):
+                 root_ex=None):
         self.root_ex = root_ex
         if root_ex and isinstance(root_ex, ArchiveException):
             self.rc = root_ex.rc
             self.errno = root_ex.errno
-            self.msg = root_ex.msg
+            self.msg = str(root_ex).strip('\'" ')
             self.func = root_ex.func
         else:
             self.rc = rc
             self.errno = errno(archive_struct) if archive_struct else None
-            self.msg = err_msg(archive_struct) if archive_struct else None
+            self.msg = err_msg(archive_struct).strip('\'" ') if archive_struct else None
             self.func = archive_func.__name__ if archive_func else None
 
     def __str__(self):
@@ -369,7 +362,7 @@ class ArchiveException(ExtractError):
 class ArchiveWarning(ArchiveException):
     pass
 
-class ArchiveErrorRetriable(ArchiveException):
+class ArchiveErrorRetryable(ArchiveException):
     pass
 
 class ArchiveError(ArchiveException):
@@ -409,7 +402,7 @@ def errcheck(rc, archive_func, args, null=False):
 
     archive_struct = args[0]
     if rc == ARCHIVE_RETRY:
-        raise ArchiveErrorRetriable(rc, archive_struct, archive_func)
+        raise ArchiveErrorRetryable(rc, archive_struct, archive_func)
 
     if rc == ARCHIVE_WARN:
         raise ArchiveWarning(rc, archive_struct, archive_func)
@@ -444,7 +437,8 @@ AE_IFIFO = 0o0010000
 ##########################
 # C functions declarations
 ##########################
-# NOTE: rather verbose on purpose to help with debugging and understanding
+# NOTE: these are verbose on purpose to help with debugging and tracing lower
+# level errors and issues
 
 # archive level functions
 ##########################
@@ -555,7 +549,6 @@ free_archive.restype = c_int
 free_archive.errcheck = errcheck
 
 
-#######################
 # entry level functions
 #######################
 """

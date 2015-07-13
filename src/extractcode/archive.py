@@ -44,7 +44,6 @@ from extractcode import patches
 from extractcode import special_package
 
 from extractcode import patch
-from extractcode import tar
 from extractcode import sevenzip
 from extractcode import libarchive2
 from extractcode.uncompress import uncompress_gzip
@@ -78,7 +77,7 @@ For background on archive and compressed file formats see:
 """
 
 # high level aliases to lower level extraction functions
-extract_tar = tar.extract
+extract_tar = libarchive2.extract
 extract_patch = patch.extract
 
 extract_deb = libarchive2.extract
@@ -315,9 +314,9 @@ def extract_twice(location, target_dir, extractor1, extractor2):
     # extract this intermediate payload to the final target_dir
     try:
         for extracted1_loc in extractcode.extracted_files(temp_target):
-            warnings.update(extractor2(extracted1_loc, target_dir))
+            warnings.extend(extractor2(extracted1_loc, target_dir))
         else:
-            warnings[location] = 'No files found in archive.'
+            warnings.append(location+ ': No files found in archive.')
     finally:
         # cleanup the temporary output from extractor1
         fileutils.delete(temp_target)
