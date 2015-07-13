@@ -44,7 +44,6 @@ from extractcode import patches
 from extractcode import special_package
 
 from extractcode import patch
-from extractcode import tar
 from extractcode import sevenzip
 from extractcode import libarchive2
 from extractcode.uncompress import uncompress_gzip
@@ -78,7 +77,7 @@ For background on archive and compressed file formats see:
 """
 
 # high level aliases to lower level extraction functions
-extract_tar = tar.extract
+extract_tar = libarchive2.extract
 extract_patch = patch.extract
 
 extract_deb = libarchive2.extract
@@ -99,8 +98,8 @@ extract_nsis = sevenzip.extract
 extract_ishield = sevenzip.extract
 extract_Z = sevenzip.extract
 
-
-logger = logging.getLogger('extractcode')
+DEBUG = False
+logger = logging.getLogger(__name__)
 # import sys
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 # logger.setLevel(logging.DEBUG)
@@ -158,15 +157,14 @@ def get_extractors(location, kinds=all_kinds):
     Return a list of extractors that can extract the file at
     location or an empty list.
     """
-    assert location
-    assert kinds
-
     if filetype.is_file(location):
         handlers = get_handlers(location)
-        candidates = score_handlers(handlers)
-        best = pick_best_handler(candidates, kinds)
-        if best:
-            return best.extractors
+        if handlers:
+            candidates = score_handlers(handlers)
+        if candidates:
+            best = pick_best_handler(candidates, kinds)
+            if best:
+                return best.extractors
     return []
 
 
@@ -175,10 +173,9 @@ def get_handlers(location):
     Return an iterable of (handler, type_matched, mime_matched,
     extension_matched,) for this `location`.
     """
-    assert location
-
-    logger.debug('get_handlers: is_file: %(location)s ' % locals()
-                 + repr(filetype.is_file(location)))
+    if DEBUG:
+        logger.debug('get_handlers: is_file: %(location)s ' % locals()
+                     + repr(filetype.is_file(location)))
     if filetype.is_file(location):
 
         T = typecode.contenttype.get_type(location)
@@ -213,8 +210,6 @@ def score_handlers(handlers):
     """
     Score candidate handlers. Higher score is better.
     """
-    assert handlers
-
     for handler, type_matched, mime_matched, extension_matched in handlers:
         score = 0
         # increment kind value: higher kinds numerical values are more
@@ -224,18 +219,22 @@ def score_handlers(handlers):
         # increment score based on matched criteria
         if type_matched and mime_matched and extension_matched:
             # bump for matching all criteria
-            score += 4
-
-        if extension_matched:
-            # extensions have more power
-            score += 4
+            score += 10
 
         if type_matched:
             # type is more specific than mime
-            score += 3
+            score += 8
 
         if mime_matched:
+            score += 6
+
+        if extension_matched:
+            # extensions have little power
             score += 2
+
+        if extension_matched and not (type_matched or mime_matched):
+            # extension matched alone should not be extracted
+            score -= 100
 
         # increment using the number of extractors: higher score means that we
         # have some kind of nested archive that we can extract in one
@@ -245,7 +244,8 @@ def score_handlers(handlers):
         # later extracting the plain tar in a second operation
         score += len(handler.extractors)
 
-        yield score, handler, extension_matched
+        if score > 0:
+            yield score, handler, extension_matched
 
 
 def pick_best_handler(candidates, kinds):
@@ -257,8 +257,6 @@ def pick_best_handler(candidates, kinds):
     - OR the handler that has matched extensions,
     - OR finally the first handler in the list.
     """
-    assert candidates
-    assert kinds
     # sort by increasing scores
     scored = sorted(candidates, reverse=True)
     if not scored:
@@ -298,7 +296,6 @@ def pick_best_handler(candidates, kinds):
     return top if top.kind in kinds else None
 
 
-
 def extract_twice(location, target_dir, extractor1, extractor2):
     """
     Extract a nested compressed archive at `location` to `target_dir` using
@@ -310,9 +307,6 @@ def extract_twice(location, target_dir, extractor1, extractor2):
     Typical nested archives include compressed tarballs and RPMs (containing a
     compressed cpio).
     """
-    assert location
-    assert target_dir
-
     # extract first the intermediate payload to a temp dir
     temp_target = fileutils.get_temp_dir('extract')
     warnings = extractor1(location, temp_target)
@@ -320,9 +314,9 @@ def extract_twice(location, target_dir, extractor1, extractor2):
     # extract this intermediate payload to the final target_dir
     try:
         for extracted1_loc in extractcode.extracted_files(temp_target):
-            warnings.update(extractor2(extracted1_loc, target_dir))
+            warnings.extend(extractor2(extracted1_loc, target_dir))
         else:
-            warnings[location] = 'No files found in archive.'
+            warnings.append(location+ ': No files found in archive.')
     finally:
         # cleanup the temporary output from extractor1
         fileutils.delete(temp_target)
@@ -333,17 +327,13 @@ def extract_twice(location, target_dir, extractor1, extractor2):
 List of archive handlers.
 """
 
-
-
-
-
 archive_handlers = [
     Handler(name='Tar',
         types=('.tar', 'tar archive',),
         mimes=('application/x-tar',),
         exts=('.tar',),
         kind=regular,
-        extractors=[tar.extract]
+        extractors=[extract_tar]
     ),
 
     Handler(name='Ruby Gem package',
@@ -351,7 +341,7 @@ archive_handlers = [
         mimes=('application/x-tar',),
         exts=('.gem',),
         kind=package,
-        extractors=[tar.extract]
+        extractors=[extract_tar]
     ),
 
     Handler(name='Zip',
@@ -486,7 +476,7 @@ archive_handlers = [
         mimes=('application/x-xz',) ,
         exts=('.tar.xz', '.txz', '.tarxz',),
         kind=regular_nested,
-        extractors=[extract_xz, tar.extract]
+        extractors=[extract_xz, extract_tar]
     ),
 
     Handler(name='Tar lzma',
@@ -494,7 +484,7 @@ archive_handlers = [
         mimes=('application/x-lzma',) ,
         exts=('tar.lzma', '.tlz', '.tarlz', '.tarlzma'),
         kind=regular_nested,
-        extractors=[extract_lzma, tar.extract]
+        extractors=[extract_lzma, extract_tar]
     ),
 
     Handler(name='Tar gzip',
@@ -503,7 +493,7 @@ archive_handlers = [
         exts=('.tgz', '.tar.gz', '.tar.gzip', '.targz',
               '.targzip', '.tgzip',),
         kind=regular_nested,
-        extractors=[tar.extract]
+        extractors=[extract_tar]
     ),
 
     Handler(name='Gzip',
@@ -536,7 +526,7 @@ archive_handlers = [
         exts=('.tar.bz2', '.tar.bz', '.tar.bzip', '.tar.bzip2',
               '.tbz', '.tbz2', '.tb2', '.tarbz2',),
         kind=regular_nested,
-        extractors=[tar.extract]
+        extractors=[extract_tar]
     ),
 
     Handler(name='RAR',
@@ -626,7 +616,7 @@ archive_handlers = [
         mimes=('application/x-7z-compressed',),
         exts=('.tar.7z', '.tar.7zip', '.t7z',),
         kind=regular_nested,
-        extractors=[extract_7z, tar.extract]
+        extractors=[extract_7z, extract_tar]
     ),
 
     Handler(name='shar shell archive',
@@ -658,7 +648,7 @@ archive_handlers = [
         mimes=('application/x-compress',),
         exts=('.tz', '.tar.z', '.tarz',),
         kind=regular_nested,
-        extractors=[extract_Z, tar.extract]
+        extractors=[extract_Z, extract_tar]
     ),
 
     Handler(name='Apple dmg',

@@ -37,8 +37,6 @@ root_dir = os.path.join(os.path.dirname(__file__), 'bin')
 # Suffix added to extracted target_dir paths
 EXTRACT_SUFFIX = r'-extract'
 
-EXTRACT_SUFFIX_DIR = EXTRACT_SUFFIX + '/'
-
 
 # high level archive "kinds"
 docs = 1
@@ -61,15 +59,13 @@ kind_labels = {
 }
 
 # note: do not include special_package in all by default
-all_kinds = (regular, regular_nested, package, file_system, docs, patches)
-default_kinds = (regular, regular_nested, patches,)
-basic_kinds = (regular, regular_nested, patches, package, file_system,)
+all_kinds = (regular, regular_nested, package, file_system, docs, patches, special_package)
+default_kinds = (regular, regular_nested, package)
 
 # map user-visible extract types to tuples of "kinds"
 extract_types = {
-    'default': (regular, regular_nested, patches,),
+    'default': (regular, regular_nested, package,),
     'all': all_kinds,
-    'basic': basic_kinds,
     'package': (package,),
     'filesystem': (file_system,),
     'doc': (docs,),
@@ -82,8 +78,7 @@ def is_extraction_path(path):
     """
     Return True is the path points to an extraction path.
     """
-    if path:
-        return path.rstrip('\\/').endswith(EXTRACT_SUFFIX)
+    return path and path.rstrip('\\/').endswith(EXTRACT_SUFFIX)
 
 
 def is_extracted(location):
@@ -91,8 +86,7 @@ def is_extracted(location):
     Return True is the location is already extracted to the corresponding
     extraction location.
     """
-    if location:
-        return os.path.exists(get_extraction_path(location))
+    return location and os.path.exists(get_extraction_path(location))
 
 
 def get_extraction_path(path):
@@ -160,17 +154,19 @@ def new_name(location, is_dir=False):
     """
     assert location
     location = location.rstrip('\\/')
-    parent = fileutils.parent_directory(location)
-    name = fileutils.file_name(location)
+    name = fileutils.file_name(location).strip()
+    if not name or name == '.':
+        name = 'file'
 
+    parent = fileutils.parent_directory(location)
     # all existing files or directory as lower case
     siblings_lower = set(s.lower() for s in os.listdir(parent))
 
     if name.lower() not in siblings_lower:
-        return location
+        return posixpath.join(parent, name)
 
-    ext = fileutils.file_extension(location)
-    base_name = fileutils.file_base_name(location)
+    ext = fileutils.file_extension(name)
+    base_name = fileutils.file_base_name(name)
     if is_dir:
         # directories have no extension
         ext = ''

@@ -31,10 +31,11 @@ import os
 from commoncode import fileutils
 from commoncode import paths
 
-LOG = logging.getLogger(__name__)
+DEBUG = False
+logger = logging.getLogger(__name__)
 # import sys
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-# LOG.setLevel(logging.DEBUG)
+# logger.setLevel(logging.DEBUG)
 
 """
 Match files and directories paths based on inclusion and exclusion glob-style
@@ -47,7 +48,7 @@ The pattern syntax is the same as fnmatch(5) as implemented in Python.
 
 Patterns are applied to a path this way:
  - Paths are converted to POSIX paths before matching.
- - Patterns are NOT case-sensitive. 
+ - Patterns are NOT case-sensitive.
  - Leading slashes are ignored.
  - If the pattern contains a /, then the whole path must be matched;
    otherwise, the pattern matches if any path segment matches.
@@ -68,7 +69,7 @@ Patterns may include glob wildcards such as:
  - [seq] : matches any character in seq
  - [!seq] :matches any character not in seq
 For a literal match, wrap the meta-characters in brackets. For example, '[?]'
-matches the character '?'. 
+matches the character '?'.
 """
 
 
@@ -80,7 +81,7 @@ def match(path, includes, excludes):
     matched and associated message. The message explains why a path is
     included when matched. The message is always a string (possibly empty).
 
-    `includes` and `excludes` are maps of (fnmtch pattern -> message). 
+    `includes` and `excludes` are maps of (fnmtch pattern -> message).
     The order of the includes and excludes items does not matter. If one is
     empty, it is not used for matching. If the `path` is empty, return False.
     """
@@ -92,8 +93,9 @@ def match(path, includes, excludes):
 
     included = _match(path, includes)
     excluded = _match(path, excludes)
-    LOG.debug('in_fileset: path: %(path)r included:%(included)r, '
-              'excluded:%(excluded)r .' % locals())
+    if DEBUG:
+        logger.debug('in_fileset: path: %(path)r included:%(included)r, '
+                     'excluded:%(excluded)r .' % locals())
     if excluded:
         return False
     elif included:
@@ -115,7 +117,8 @@ def _match(path, patterns):
     if not pathstripped:
         return False
     segments = paths.split(pathstripped)
-    LOG.debug('_match: path: %(path)r patterns:%(patterns)r.' % locals())
+    if DEBUG:
+        logger.debug('_match: path: %(path)r patterns:%(patterns)r.' % locals())
     mtch = False
     for pat, msg in patterns.items():
         if not pat and not pat.strip():
@@ -131,7 +134,8 @@ def _match(path, patterns):
               or fnmatch.fnmatchcase(pathstripped, pat)):
             mtch = msg
             break
-    LOG.debug('_match: match is %(mtch)r' % locals())
+    if DEBUG:
+        logger.debug('_match: match is %(mtch)r' % locals())
     return mtch
 
 

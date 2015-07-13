@@ -79,3 +79,27 @@ class TestNewName(FileBasedTesting):
         assert not exists(renamed)
         result = fileutils.file_name(renamed)
         assert 'teST.txt_2' == result
+
+    def test_new_name_with_empties(self):
+        test_dir = self.get_temp_dir()
+        self.assertRaises(AssertionError,new_name, '', is_dir=False)
+
+        renamed = new_name(join(test_dir, '/'), is_dir=False)
+        assert not exists(renamed)
+        result = fileutils.file_name(renamed)
+        assert 'file' == result
+
+        renamed = new_name(join(test_dir, '.'), is_dir=False)
+        assert not exists(renamed)
+        result = fileutils.file_name(renamed)
+        assert 'file' == result
+
+        renamed = new_name(join(test_dir, '/'), is_dir=True)
+        assert not exists(renamed)
+        result = fileutils.file_name(renamed)
+        assert 'file' == result
+
+        renamed = new_name(join(test_dir, '.'), is_dir=True)
+        assert not exists(renamed)
+        result = fileutils.file_name(renamed)
+        assert 'file' == result
