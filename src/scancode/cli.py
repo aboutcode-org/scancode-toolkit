@@ -34,7 +34,7 @@ from scancode import __version__ as version
 from scancode.api import as_html
 from scancode.api import as_html_app
 from scancode.api import create_html_app_assets
-from scancode.api import get_extract
+from scancode.api import extract_archives
 from scancode.api import get_copyrights
 from scancode.api import get_licenses
 from scancode.api import HtmlAppAssetCopyWarning
@@ -115,7 +115,7 @@ Public Domain Dedication: http://creativecommons.org/publicdomain/zero/1.0/
 def print_about(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
-    click.echo(info_text + notice_text + acknowledgment_text +extra_notice_text)
+    click.echo(info_text + notice_text + acknowledgment_text + extra_notice_text)
     ctx.exit()
 
 
@@ -236,10 +236,7 @@ Use '--extract' alone to extract <input>, then run a scan on the extracted files
             ctx.exit(1)
 
         click.secho('Extracting archives...', fg='green')
-        extract_errors = get_extract(input)
-        if extract_errors:
-            # FIXME: Provide a better way to report errors and we need to report progress
-            click.secho('\n'.join(extract_errors), fg='red')
+        extract_with_progress(input, verbose)
         click.secho('Extracting done.', fg='green')
         return
 
@@ -256,7 +253,7 @@ Use '--extract' alone to extract <input>, then run a scan on the extracted files
             # only display a progress bar
             with click.progressbar(file_iter(input), show_pos=True) as files:
                 for input_file in files:
-                    results.append(scan_one(input_file,copyright, license, verbose))
+                    results.append(scan_one(input_file, copyright, license, verbose))
         else:
             for input_file in file_iter(input):
                 results.append(scan_one(input_file, copyright, license, verbose))
@@ -305,3 +302,37 @@ def scan_one(input_file, copyright, license, verbose=False):
     if verbose:
         click.secho('', nl=True)
     return data
+
+
+def extract_with_progress(input, verbose=False):
+    """
+    Extract archives and display progress.
+    """
+    if not verbose:
+        extract_results = []
+        # only display a progress bar
+        with click.progressbar(extract_archives(input, verbose=verbose), show_pos=True) as extractions:
+            for xevent in extractions:
+                extract_results.append(xevent)
+        # display warnings/errors at the end
+        for xev in extract_results:
+            if xev.warnings or xev.errors:
+                click.secho('Extraction errors or warnings for: ' + xev.source, fg='yellow')
+                display_extract_event(xev)
+    else:
+        for xev in extract_archives(input, verbose=verbose):
+            if not xev.done:
+                click.secho('Extracting: ' + xev.source + ': ', nl=False, fg='green')
+            else:
+                if xev.warnings or xev.errors:
+                    click.secho('done.', fg='red')
+                    display_extract_event(xev)
+                else:
+                    click.secho('done.', fg='green')
+
+
+def display_extract_event(xev):
+    for e in xev.errors:
+        click.secho('  ERROR: ' + e, fg='red')
+    for warn in xev.warnings.values():
+        click.secho('  WARNING: ' + warn, fg='yellow')
