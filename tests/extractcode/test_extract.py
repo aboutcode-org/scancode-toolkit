@@ -868,4 +868,4 @@ class TestExtract(FileBasedTesting):
             '/dir/otherarch.gz'
         ]
 
-        assert expected == allpaths
+        assert sorted(expected) == sorted(allpaths)
