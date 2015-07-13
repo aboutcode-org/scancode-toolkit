@@ -154,17 +154,19 @@ def new_name(location, is_dir=False):
     """
     assert location
     location = location.rstrip('\\/')
-    parent = fileutils.parent_directory(location)
-    name = fileutils.file_name(location)
+    name = fileutils.file_name(location).strip()
+    if not name or name == '.':
+        name = 'file'
 
+    parent = fileutils.parent_directory(location)
     # all existing files or directory as lower case
     siblings_lower = set(s.lower() for s in os.listdir(parent))
 
     if name.lower() not in siblings_lower:
-        return location
+        return posixpath.join(parent, name)
 
-    ext = fileutils.file_extension(location)
-    base_name = fileutils.file_base_name(location)
+    ext = fileutils.file_extension(name)
+    base_name = fileutils.file_base_name(name)
     if is_dir:
         # directories have no extension
         ext = ''
