@@ -2,6 +2,15 @@
 Changelog
 =========
 
+1.2.0 (2015-07-13)
+------------------
+
+* Major bug fixes.
+
+ * Fixed issue #26: Slow --extract
+ * Added support for progress during extraction (#27)
+
+
 1.1.0 (2015-07-06)
 ------------------
 
