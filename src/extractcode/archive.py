@@ -334,7 +334,7 @@ archive_handlers = [
         mimes=('application/x-tar',),
         exts=('.tar',),
         kind=regular,
-        extractors=[tar.extract]
+        extractors=[extract_tar]
     ),
 
     Handler(name='Ruby Gem package',
@@ -342,7 +342,7 @@ archive_handlers = [
         mimes=('application/x-tar',),
         exts=('.gem',),
         kind=package,
-        extractors=[tar.extract]
+        extractors=[extract_tar]
     ),
 
     Handler(name='Zip',
@@ -477,7 +477,7 @@ archive_handlers = [
         mimes=('application/x-xz',) ,
         exts=('.tar.xz', '.txz', '.tarxz',),
         kind=regular_nested,
-        extractors=[extract_xz, tar.extract]
+        extractors=[extract_xz, extract_tar]
     ),
 
     Handler(name='Tar lzma',
@@ -485,7 +485,7 @@ archive_handlers = [
         mimes=('application/x-lzma',) ,
         exts=('tar.lzma', '.tlz', '.tarlz', '.tarlzma'),
         kind=regular_nested,
-        extractors=[extract_lzma, tar.extract]
+        extractors=[extract_lzma, extract_tar]
     ),
 
     Handler(name='Tar gzip',
@@ -494,7 +494,7 @@ archive_handlers = [
         exts=('.tgz', '.tar.gz', '.tar.gzip', '.targz',
               '.targzip', '.tgzip',),
         kind=regular_nested,
-        extractors=[tar.extract]
+        extractors=[extract_tar]
     ),
 
     Handler(name='Gzip',
@@ -527,7 +527,7 @@ archive_handlers = [
         exts=('.tar.bz2', '.tar.bz', '.tar.bzip', '.tar.bzip2',
               '.tbz', '.tbz2', '.tb2', '.tarbz2',),
         kind=regular_nested,
-        extractors=[tar.extract]
+        extractors=[extract_tar]
     ),
 
     Handler(name='RAR',
@@ -617,7 +617,7 @@ archive_handlers = [
         mimes=('application/x-7z-compressed',),
         exts=('.tar.7z', '.tar.7zip', '.t7z',),
         kind=regular_nested,
-        extractors=[extract_7z, tar.extract]
+        extractors=[extract_7z, extract_tar]
     ),
 
     Handler(name='shar shell archive',
@@ -649,7 +649,7 @@ archive_handlers = [
         mimes=('application/x-compress',),
         exts=('.tz', '.tar.z', '.tarz',),
         kind=regular_nested,
-        extractors=[extract_Z, tar.extract]
+        extractors=[extract_Z, extract_tar]
     ),
 
     Handler(name='Apple dmg',
