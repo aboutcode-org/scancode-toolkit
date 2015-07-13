@@ -23,10 +23,10 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 # Contains code derived from Python tarfile.extractall.
-# 
+#
 # Copyright (C) 2002 Lars Gustabel <lars@gustaebel.de>
 # All rights reserved.
-# 
+#
 # Permission  is  hereby granted,  free  of charge,  to  any person
 # obtaining a  copy of  this software  and associated documentation
 # files  (the  "Software"),  to   deal  in  the  Software   without
@@ -35,10 +35,10 @@
 # copies  of  the  Software,  and to  permit  persons  to  whom the
 # Software  is  furnished  to  do  so,  subject  to  the  following
 # conditions:
-# 
+#
 # The above copyright  notice and this  permission notice shall  be
 # included in all copies or substantial portions of the Software.
-# 
+#
 # THE SOFTWARE IS PROVIDED "AS  IS", WITHOUT WARRANTY OF ANY  KIND,
 # EXPRESS OR IMPLIED, INCLUDING  BUT NOT LIMITED TO  THE WARRANTIES
 # OF  MERCHANTABILITY,  FITNESS   FOR  A  PARTICULAR   PURPOSE  AND
@@ -47,7 +47,7 @@
 # WHETHER  IN AN  ACTION OF  CONTRACT, TORT  OR OTHERWISE,  ARISING
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 # OTHER DEALINGS IN THE SOFTWARE.
-# 
+#
 # Credits: Gustavo Niemeyer, Niels Gustabel, Richard Townsend.
 
 
@@ -63,6 +63,8 @@ from contextlib import closing
 # This is a patched tarfile using a Python2 backport for bz2file from Python3
 # Because of http://bugs.python.org/issue20781
 from extractcode.tarfile_patch import tarfile
+from commoncode.paths import resolve
+from extractcode import ExtractError
 
 logger = logging.getLogger('extractcode')
 # logging.basicConfig(level=logging.DEBUG)
@@ -72,32 +74,6 @@ logger = logging.getLogger('extractcode')
 Low level support for tar-based archive extraction using Python built-in tar
 support.
 """
-
-
-def clean_path(path):
-    """
-    Return a clean path ensuring it does not refer to a parent dir or an
-    absolute dir. 
-
-    For parent dirs, do not use os.path.normpath to be portable on all OSes.
-    This adds an arbitrary ROOT segment to absolute paths and PARENT segment
-    for parent references.
-    """
-    assert path
-    root_dir = 'ROOT'
-    parent_dir = 'PARENT'
-    if os.path.isabs(path):
-        path = root_dir + '/' + path
-    # while at it, also ensure it's unicode...
-    try:
-        path = unicode(path, 'utf-8')
-    except:
-        try:
-            path = unicode(path, 'cp1252')
-        except:
-            pass  # will fail later
-
-    return path.replace('../', parent_dir + '/')
 
 
 def list_entries(location):
@@ -112,7 +88,7 @@ def extract(location, target_dir):
     Extract all files from the tar archive file at `location` in the
     `target_dir`. Plain tars and tars compressed with gzip and bzip2 are
     supported transparently. Other compressions such as xz or lzma are handled
-    in two steps. Return a warnings mapping of path->warning.
+    in two steps. Return a list of warnings messages. Raise Exceptions on errors.
 
     Skip special files. Contains code derived from Python tarfile.extractall.
 
@@ -201,8 +177,7 @@ def extract(location, target_dir):
 
             tinfo = copy.copy(tinfo)
             # ensure we do stay always under the target dir
-            # FIXME: use the same path resolution as in libarchive.py
-            tinfo.name = clean_path(tinfo.name)
+            tinfo.name = resolve(tinfo.name)
             # Extract all files with a safe mode
             # FIXME: use the current user mask
             tinfo.mode = 0700
@@ -212,7 +187,7 @@ def extract(location, target_dir):
             try:
                 tar.extract(tinfo, target_dir)
             except Exception, e:
-                warnings[tinfo.name].append(str(e))
+                raise ExtractError()
 
         # Set correct mtime on directories, starting from the bottom of the
         # tree
@@ -227,9 +202,11 @@ def extract(location, target_dir):
                 warnings[tinfo.name].append(str(e))
 
     # collect warnings
-    warning_messages = {}
+    warning_messages = []
     for pathname, messages in warnings.items():
-        warning_messages[pathname] = '\n'.join(messages).replace(target_dir, '.')
+        msg = pathname + ': ' + '\n'.join(messages).replace(target_dir, '.')
+        if msg not in warning_messages:
+            warning_messages.append(msg)
 
     return warning_messages
 

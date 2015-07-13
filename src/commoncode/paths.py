@@ -47,22 +47,28 @@ def resolve(path):
     be further resolved by "escaping" the provided path tree, it is replaced
     by the string 'dotdot'.
     """
-    slash, dot = (u'/', u'.') if isinstance(path, unicode) else ('/', '.')
+    slash, dot, dotdot = '/', '.', 'dotdot'
+    if isinstance(path, unicode):
+        slash, dot, dotdot = u'/', u'.', u'dotdot'
+
+    if not path:
+        return dot
+
     path = path.strip()
     if not path:
         return dot
 
     path = fileutils.as_posixpath(path)
-    path = path.strip('/')
-    segments = [s.strip() for s in path.split('/')]
+    path = path.strip(slash)
+    segments = [s.strip() for s in path.split(slash)]
     # remove empty (// or ///) or blank (space only) or single dot segments
     segments = [s for s in segments if s and s != '.']
     path = slash.join(segments)
     # resolves ..
     path = posixpath.normpath(path)
     # replace .. with literal dotdot
-    segments = path.split('/')
-    segments = ['dotdot' if s == '..'  else s for s in segments]
+    segments = path.split(slash)
+    segments = [dotdot if s == '..' else s for s in segments]
     path = slash.join(segments)
     return path
 

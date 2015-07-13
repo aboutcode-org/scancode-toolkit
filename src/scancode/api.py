@@ -33,17 +33,23 @@ from os.path import join
 from commoncode import fileutils
 
 
-def get_extract(location=None):
+def extract_archives(location=None, verbose=False):
     """
-    Extraction recursively any archives found at location and return a list of
-    formatted errors if any.
+    Extract recursively any archives found at location and yield an iterable of
+    ExtractEvents.
+    If verbose is False, only the "done" event is returned at extraction
+    completion.
+    If verbose is True, both "start" and "done" events are returned.
     """
     from extractcode.extract import extract
-    from extractcode import basic_kinds
+    from extractcode import default_kinds
 
-    results = extract(location, kinds=basic_kinds, recurse=True)
-    return ['Archive extraction warning: {}: {}'.format(job.src, str(job.errors))
-            for job in results if job.errors]
+    for xevent in extract(location, kinds=default_kinds, recurse=True):
+        if xevent.done:
+            yield xevent
+        else:
+            if verbose and not xevent.done:
+                yield xevent
 
 
 def get_copyrights(location=None):

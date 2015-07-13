@@ -43,7 +43,6 @@ from commoncode.system import on_posix
 from commoncode import filetype
 
 
-
 class EnhancedAssertions(TestCaseClass):
     """
     Common new new assertions made better or simpler.
@@ -194,7 +193,7 @@ class FileBasedTesting(EnhancedAssertions):
                     for vcsroot, vcsdirs, vcsfiles in os.walk(test_dir):
                         for vcsfile in vcsdirs + vcsfiles:
                             vfile = os.path.join(vcsroot, vcsfile)
-                            fileutils.chmod(vfile, fileutils.RW)
+                            fileutils.chmod(vfile, fileutils.RW, recurse=False)
                     shutil.rmtree(os.path.join(root, vcs_dir), False)
 
             # editors temp file leftovers
@@ -275,7 +274,7 @@ def extract_tar(location, target_dir, verbatim=False):
 def tar_can_extract(tarinfo, verbatim):
     """
     Return True if a tar member can be extracted to handle OS specifics.
-    If verbatim is True, always return True. 
+    If verbatim is True, always return True.
     """
     if tarinfo.ischr():
         # never extract char devices

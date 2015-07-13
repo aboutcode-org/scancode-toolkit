@@ -24,6 +24,7 @@
 
 from __future__ import print_function, absolute_import
 
+import logging
 import os
 import gzip
 
@@ -34,13 +35,19 @@ from bz2file import BZ2File
 
 from extractcode import EXTRACT_SUFFIX
 
+DEBUG = False
+logger = logging.getLogger(__name__)
+# import sys
+# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+# logger.setLevel(logging.DEBUG)
+
 
 def uncompress(location, target_dir, decompressor, suffix=EXTRACT_SUFFIX):
     """
     Uncompress a compressed file at location in the target_dir using the
-    decompressor object. The uncompressed file is named after the original
-    archive with an EXTRACT_SUFFIX added. Return a warnings mapping of
-    path->warning if any.
+    `decompressor` object. The uncompressed file is named after the original
+    archive with a `suffix` added.
+    Return a list of warning messages. Raise Exceptions on errors.
     """
     # FIXME: do not create a sub-directory and instead strip the "compression"
     # extension such gz, etc. or introspect the archive header to get the file
@@ -49,14 +56,16 @@ def uncompress(location, target_dir, decompressor, suffix=EXTRACT_SUFFIX):
     assert target_dir
     assert decompressor
 
-    warnings = {}
+    if DEBUG:
+        logger.debug('uncompress: ' + location)
+    warnings = []
     target_location = os.path.join(target_dir, os.path.basename(location) + suffix)
     with decompressor(location, 'rb') as compressed:
         with open(target_location, 'wb') as uncompressed:
             chunk = compressed.read()
             uncompressed.write(chunk)
         if getattr(decompressor, 'has_trailing_garbage', False):
-            warnings[location] = 'Trailing garbage found and ignored.'
+            warnings.append(location +': Trailing garbage found and ignored.')
     return warnings
 
 

@@ -70,7 +70,7 @@ def check_files(test_dir, expected):
 
 def check_no_error(result):
     """
-    Check that every ExtractJob in the `result` list has no error or warning.
+    Check that every ExtractEvent in the `result` list has no error or warning.
     """
     for r in result:
         assert not r.errors
