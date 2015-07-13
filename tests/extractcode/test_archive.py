@@ -28,7 +28,6 @@ from __future__ import absolute_import, print_function
 import codecs
 import os
 import posixpath
-from unittest.case import skipIf
 from unittest.case import expectedFailure
 
 import commoncode.date
@@ -43,6 +42,8 @@ from extractcode import archive
 from extractcode import libarchive2
 from extractcode import sevenzip
 from extractcode import ExtractErrorFailedToExtract
+from extractcode import default_kinds
+from extractcode import all_kinds
 
 
 """
@@ -152,6 +153,14 @@ class TestSmokeTest(FileBasedTesting):
             handlers = archive.get_handlers(test_loc)
             scored = archive.score_handlers(handlers)
             assert expected == sorted([(h[0], h[1].name) for h in scored], reverse=True)
+
+    @expectedFailure
+    def test_no_handler_is_selected_for_a_non_archive(self):
+        test_loc = self.get_test_loc('archive/not_archive/hashfile')
+        assert [] == list(archive.get_handlers(test_loc))
+        assert None == archive.get_extractor(test_loc)
+        assert None == archive.get_extractor(test_loc, kinds=all_kinds)
+        assert not archive.should_extract(test_loc, kinds=default_kinds)
 
 
 class BaseArchiveTestCase(FileBasedTesting):

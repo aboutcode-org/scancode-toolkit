@@ -173,9 +173,6 @@ def get_handlers(location):
     Return an iterable of (handler, type_matched, mime_matched,
     extension_matched,) for this `location`.
     """
-    if DEBUG:
-        logger.debug('get_handlers: is_file: %(location)s ' % locals()
-                     + repr(filetype.is_file(location)))
     if filetype.is_file(location):
 
         T = typecode.contenttype.get_type(location)
@@ -202,7 +199,15 @@ def get_handlers(location):
             if handler.exts:
                 extension_matched = location.lower().endswith(handler.exts)
 
+            if DEBUG:
+                logger.debug('get_handlers: %(location)s: ftype: %(ftype)s, mtype: %(mtype)s ' % locals())
+                logger.debug('get_handlers: %(location)s: matched type: %(type_matched)s, mime: %(mime_matched)s, ext: %(extension_matched)s' % locals())
+
+
             if type_matched or mime_matched or extension_matched:
+                if DEBUG:
+                    logger.debug('get_handlers: %(location)s: matched type: %(type_matched)s, mime: %(mime_matched)s, ext: %(extension_matched)s' % locals())
+                    logger.debug('get_handlers: %(location)s: handler: %(handler)r' % locals())
                 yield handler, type_matched, mime_matched, extension_matched
 
 

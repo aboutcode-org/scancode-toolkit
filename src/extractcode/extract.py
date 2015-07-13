@@ -137,6 +137,7 @@ def extract(location, kinds=extractcode.default_kinds, recurse=False):
                 if DEBUG:
                     logger.debug('extract:walk not recurse: skipped  file:' + loc)
                 continue
+
             if not archive.should_extract(loc, kinds):
                 if DEBUG:
                     logger.debug('extract:walk: skipped file: not should_extract:' + loc)
@@ -157,7 +158,6 @@ def extract(location, kinds=extractcode.default_kinds, recurse=False):
                     yield xevent
 
 
-
 def extract_file(location, target, kinds=extractcode.default_kinds):
     """
     Extract a single archive at `location` in the `target` directory if it is
@@ -166,6 +166,11 @@ def extract_file(location, target, kinds=extractcode.default_kinds):
     warnings = []
     errors = []
     extractor = archive.get_extractor(location, kinds)
+    if DEBUG:
+        logger.debug('extract_file: extractor: for:' + location
+                     + ' with kinds: ' + repr(kinds) + ': '
+                     + getattr(extractor, '__module__', '')
+                     + '.' + getattr(extractor, '__name__', ''))
     if extractor:
         yield ExtractEvent(location, target, done=False, warnings=[], errors=[])
         try:
@@ -179,6 +184,6 @@ def extract_file(location, target, kinds=extractcode.default_kinds):
         except Exception, e:
             if DEBUG:
                 logger.debug('extract_file: ERROR: %(errors)r, %(e)r.\n' % locals())
-            errors=[str(e).strip(' \'"')]
+            errors = [str(e).strip(' \'"')]
         finally:
             yield ExtractEvent(location, target, done=True, warnings=warnings, errors=errors)
