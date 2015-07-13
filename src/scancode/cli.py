@@ -325,7 +325,7 @@ def extract_with_progress(input, verbose=False):
                 click.secho('Extracting: ' + xev.source + ': ', nl=False, fg='green')
             else:
                 if xev.warnings or xev.errors:
-                    click.secho('done.', fg='red')
+                    click.secho('done.', fg='red' if xev.errors else 'yellow')
                     display_extract_event(xev)
                 else:
                     click.secho('done.', fg='green')
@@ -334,5 +334,5 @@ def extract_with_progress(input, verbose=False):
 def display_extract_event(xev):
     for e in xev.errors:
         click.secho('  ERROR: ' + e, fg='red')
-    for warn in xev.warnings.values():
+    for warn in xev.warnings:
         click.secho('  WARNING: ' + warn, fg='yellow')

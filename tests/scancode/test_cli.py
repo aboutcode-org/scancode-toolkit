@@ -67,6 +67,8 @@ class TestCommandLine(FileBasedTesting):
         result = runner.invoke(cli.scancode, ['--extract', test_dir])
         assert result.exit_code == 0
         assert 'Extracting done' in result.output
+        assert 'ERROR: Unrecognized archive format' in result.output
+        assert 'Extraction errors or warnings' in result.output
         assert os.path.exists(os.path.join(test_dir, 'some.tar.gz-extract'))
 
     def test_copyright_option_detects_copyrights(self):
