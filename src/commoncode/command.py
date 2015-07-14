@@ -48,16 +48,14 @@ While this could seem contrived at first this approach ensures that:
  - a distributed scancode package is self-contained
  - a non technical user does not have any extra installation to do, in
    particular there is no compilation needed at installation time.
-
  - we have few dependencies on the OS.
-
- - that we control closely the version of these executables and how they were
+ - we control closely the version of these executables and how they were
    built to ensure sanity, especially on Linux where several different
    (oftentimes older) version may exist in the path for a given distro.
    For instance this applies to tools such as 7z, binutils and file.
 """
 
-LOG = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 # current directory is the root dir of this library
 curr_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -93,9 +91,9 @@ def execute(cmd, args, root_dir=None, cwd=None, env=None, to_files=False):
     # though we can execute command that just happen to be in the path
     shell = True if on_windows else False
 
-    LOG.debug('Executing command %(cmd)r as %(full_cmd)r with: env=%(env)r, '
-              'shell=%(shell)r, cwd=%(cwd)r, stdout=%(sop)r, stderr=%(sep)r.'
-              % locals())
+    logger.debug('Executing command %(cmd)r as %(full_cmd)r with: env=%(env)r, '
+                 'shell=%(shell)r, cwd=%(cwd)r, stdout=%(sop)r, stderr=%(sep)r.'
+                 % locals())
 
     proc = None
     try:
