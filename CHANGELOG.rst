@@ -2,6 +2,22 @@
 Changelog
 =========
 
+1.2.2 (2015-07-14)
+------------------
+
+* Minor bug fixes.
+
+ * Support relative path when doing extract.
+
+
+1.2.1 (2015-07-13)
+------------------
+
+* Minor bug fixes.
+
+ * Improper extract warning handling
+
+
 1.2.0 (2015-07-13)
 ------------------
 
