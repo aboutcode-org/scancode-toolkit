@@ -27,6 +27,8 @@ from __future__ import print_function, absolute_import
 from collections import namedtuple
 from functools import partial
 import logging
+from os.path import abspath
+from os.path import expanduser
 from os.path import join
 
 from commoncode import fileutils
@@ -117,11 +119,11 @@ def extract(location, kinds=extractcode.default_kinds, recurse=False):
     """
     ignored = partial(ignore.is_ignored, ignores=ignore.default_ignores, unignores={})
     if DEBUG:
-        logger.debug('extract:start:' + location + ' recurse:' + repr(recurse) + '\n')
-
-    for top, dirs, files in fileutils.walk(location, ignored):
+        logger.debug('extract:start: %(location)r  recurse: %(recurse)r\n' % locals())
+    abs_location = abspath(expanduser(location))
+    for top, dirs, files in fileutils.walk(abs_location, ignored):
         if DEBUG:
-            logger.debug('extract:walk: top:' + top + ' dirs:' + repr(dirs) + ' files:' + repr(files))
+            logger.debug('extract:walk: top:  %(top)r dirs: %(dirs)r files: r(files)r' % locals())
 
         if not recurse:
             if DEBUG:
@@ -135,26 +137,28 @@ def extract(location, kinds=extractcode.default_kinds, recurse=False):
             loc = join(top, f)
             if not recurse and extractcode.is_extraction_path(loc):
                 if DEBUG:
-                    logger.debug('extract:walk not recurse: skipped  file:' + loc)
+                    logger.debug('extract:walk not recurse: skipped  file: %(loc)r' % locals())
                 continue
 
             if not archive.should_extract(loc, kinds):
                 if DEBUG:
-                    logger.debug('extract:walk: skipped file: not should_extract:' + loc)
+                    logger.debug('extract:walk: skipped file: not should_extract: %(loc)r' % locals())
                 continue
 
-            target = join(top, extractcode.get_extraction_path(loc))
+            target = join(abspath(top), extractcode.get_extraction_path(loc))
+            if DEBUG:
+                logger.debug('extract:target: %(target)r' % locals())
             for xevent in extract_file(loc, target, kinds):
                 if DEBUG:
-                    logger.debug('extract:walk:extraction event:' + repr(xevent))
+                    logger.debug('extract:walk:extraction event: %(xevent)r' % locals())
                 yield xevent
 
             if recurse:
                 if DEBUG:
-                    logger.debug('extract:walk: recursing on:' + target)
+                    logger.debug('extract:walk: recursing on target: %(target)r' % locals())
                 for xevent in extract(target, kinds, recurse):
                     if DEBUG:
-                        logger.debug('extract:walk:recurse:extraction event:' + repr(xevent))
+                        logger.debug('extract:walk:recurse:extraction event: %(xevent)r' % locals())
                     yield xevent
 
 
@@ -167,8 +171,7 @@ def extract_file(location, target, kinds=extractcode.default_kinds):
     errors = []
     extractor = archive.get_extractor(location, kinds)
     if DEBUG:
-        logger.debug('extract_file: extractor: for:' + location
-                     + ' with kinds: ' + repr(kinds) + ': '
+        logger.debug('extract_file: extractor: for: %(location)r with kinds: r(kinds)r : ' % locals()
                      + getattr(extractor, '__module__', '')
                      + '.' + getattr(extractor, '__name__', ''))
     if extractor:
@@ -178,12 +181,13 @@ def extract_file(location, target, kinds=extractcode.default_kinds):
             # if there is an error,  the extracted files will not be moved
             # to target
             tmp_tgt = fileutils.get_temp_dir('extract')
-            warnings.extend(extractor(location, tmp_tgt))
+            abs_location= abspath(expanduser(location))
+            warnings.extend(extractor(abs_location, tmp_tgt))
             fileutils.copytree(tmp_tgt, target)
             fileutils.delete(tmp_tgt)
         except Exception, e:
             if DEBUG:
-                logger.debug('extract_file: ERROR: %(errors)r, %(e)r.\n' % locals())
+                logger.debug('extract_file: ERROR: %(location)r: %(errors)r, %(e)r.\n' % locals())
             errors = [str(e).strip(' \'"')]
         finally:
             yield ExtractEvent(location, target, done=True, warnings=warnings, errors=errors)

@@ -162,6 +162,52 @@ class TestSmokeTest(FileBasedTesting):
         assert None == archive.get_extractor(test_loc, kinds=all_kinds)
         assert not archive.should_extract(test_loc, kinds=default_kinds)
 
+    def test_7zip_extract_can_extract_to_relative_paths(self):
+        # The setup is a tad complex because we want to have a relative dir
+        # to the base dir where we run tests from, ie the scancode-toolkit/ dir
+        # To use relative paths, we use our tmp dir at the root of the code
+        from os.path import dirname, join, abspath
+        import tempfile
+        import shutil
+        from extractcode.sevenzip import extract
+
+        test_file = self.get_test_loc('archive/relative_path/basic.zip')
+        scancode_root = dirname(dirname(dirname(__file__)))
+        scancode_tmp = join(scancode_root, 'tmp')
+        fileutils.create_dir(scancode_tmp)
+        scancode_root_abs = abspath(scancode_root)
+        test_src_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs, '').strip('\\/')
+        test_tgt_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs, '').strip('\\/')
+        shutil.copy(test_file, test_src_dir)
+        test_src_file = join(test_src_dir, 'basic.zip')
+        result = list(extract(test_src_file, test_tgt_dir))
+        assert [] == result
+        expected = ['c/a/a.txt', 'c/b/a.txt', 'c/c/a.txt']
+        check_files(test_tgt_dir, expected)
+
+    def test_libarchive_extract_can_extract_to_relative_paths(self):
+        # The setup is a tad complex because we want to have a relative dir
+        # to the base dir where we run tests from, ie the scancode-toolkit/ dir
+        # To use relative paths, we use our tmp dir at the root of the code
+        from os.path import dirname, join, abspath
+        import tempfile
+        import shutil
+        from extractcode.libarchive2 import extract
+
+        test_file = self.get_test_loc('archive/relative_path/basic.zip')
+        scancode_root = dirname(dirname(dirname(__file__)))
+        scancode_tmp = join(scancode_root, 'tmp')
+        fileutils.create_dir(scancode_tmp)
+        scancode_root_abs = abspath(scancode_root)
+        test_src_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs, '').strip('\\/')
+        test_tgt_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs, '').strip('\\/')
+        shutil.copy(test_file, test_src_dir)
+        test_src_file = join(test_src_dir, 'basic.zip')
+        result = list(extract(test_src_file, test_tgt_dir))
+        assert [] == result
+        expected = ['c/a/a.txt', 'c/b/a.txt', 'c/c/a.txt']
+        check_files(test_tgt_dir, expected)
+
 
 class BaseArchiveTestCase(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -498,13 +544,15 @@ class TestBz2(BaseArchiveTestCase):
         expected_result = open(result, 'rb').read()
         assert  expected_extracted == expected_result
 
+
 class TestZip(BaseArchiveTestCase):
     def test_extract_zip_basic(self):
         test_file = self.get_test_loc('archive/zip/basic.zip')
         test_dir = self.get_temp_dir()
-        archive.extract_zip(test_file, test_dir)
-        result = os.path.join(test_dir, 'c/b/a.txt')
-        assert os.path.exists(result)
+        result = archive.extract_zip(test_file, test_dir)
+        assert [] == result
+        expected = ['c/a/a.txt', 'c/b/a.txt', 'c/c/a.txt']
+        check_files(test_dir, expected)
 
     def test_extract_zip_broken(self):
         test_file = self.get_test_loc('archive/zip/zip_broken.zip')
@@ -1232,6 +1280,111 @@ class TestRpm(BaseArchiveTestCase):
                                   test_file, test_dir)
 
 
+class TestExtractTwice(BaseArchiveTestCase):
+    def test_extract_twice_with_rpm_with_xz_compressed_cpio(self):
+        test_file = self.get_test_loc('archive/rpm/xz-compressed-cpio.rpm')
+        test_dir = self.get_temp_dir()
+        # this will return an extractor that extracts twice
+        extractor = archive.get_extractor(test_file)
+        result = list(extractor(test_file, test_dir))
+        assert [] == result
+        expected = [
+            'etc/abrt/abrt-action-save-package-data.conf',
+            'etc/abrt/abrt.conf',
+            'etc/abrt/gpg_keys',
+            'etc/dbus-1/system.d/dbus-abrt.conf',
+            'etc/libreport/events.d/abrt_event.conf',
+            'etc/libreport/events.d/smart_event.conf',
+            'etc/rc.d/init.d/abrtd',
+            'usr/bin/abrt-action-save-package-data',
+            'usr/bin/abrt-handle-upload',
+            'usr/libexec/abrt-handle-event',
+            'usr/libexec/abrt1-to-abrt2',
+            'usr/sbin/abrt-dbus',
+            'usr/sbin/abrt-server',
+            'usr/sbin/abrtd',
+            'usr/share/dbus-1/system-services/com.redhat.abrt.service',
+            'usr/share/doc/abrt-2.0.8/COPYING',
+            'usr/share/doc/abrt-2.0.8/README',
+            'usr/share/locale/ar/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/as/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/ast/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/bg/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/bn_IN/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/ca/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/cs/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/da/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/de/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/el/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/en_GB/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/es/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/fa/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/fi/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/fr/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/gu/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/he/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/hi/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/hu/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/id/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/it/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/ja/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/kn/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/ko/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/ml/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/mr/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/nb/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/nl/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/or/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/pa/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/pl/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/pt/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/pt_BR/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/ru/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/sk/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/sr/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/sr@latin/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/sv/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/ta/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/te/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/uk/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/zh_CN/LC_MESSAGES/abrt.mo',
+            'usr/share/locale/zh_TW/LC_MESSAGES/abrt.mo',
+            'usr/share/man/man1/abrt-action-save-package-data.1.gz',
+            'usr/share/man/man1/abrt-handle-upload.1.gz',
+            'usr/share/man/man1/abrt-server.1.gz',
+            'usr/share/man/man5/abrt-action-save-package-data.conf.5.gz',
+            'usr/share/man/man5/abrt.conf.5.gz',
+            'usr/share/man/man8/abrt-dbus.8.gz',
+            'usr/share/man/man8/abrtd.8.gz'
+        ]
+        check_files(test_dir, expected)
+
+    def test_extract_twice_can_extract_to_relative_paths(self):
+        # The setup is a tad complex because we want to have a relative dir
+        # to the base dir where we run tests from, ie the scancode-toolkit/ dir
+        # To use relative paths, we use our tmp dir at the root of the code
+        from os.path import dirname, join, abspath, exists
+        import shutil
+        import tempfile
+
+        test_file = self.get_test_loc('archive/rpm/xz-compressed-cpio.rpm')
+        # this will return an extractor that extracts twice
+        extractor = archive.get_extractor(test_file)
+
+        scancode_root = dirname(dirname(dirname(__file__)))
+        scancode_tmp = join(scancode_root, 'tmp')
+        fileutils.create_dir(scancode_tmp)
+        scancode_root_abs = abspath(scancode_root)
+        test_src_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs, '').strip('\\/')
+        test_tgt_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs, '').strip('\\/')
+        shutil.copy(test_file, test_src_dir)
+        test_src_file = join(test_src_dir, 'xz-compressed-cpio.rpm')
+
+        result = list(extractor(test_src_file, test_tgt_dir))
+        assert [] == result
+        assert exists(join(test_tgt_dir, 'usr/sbin/abrt-dbus'))
+
+
 class TestRar(BaseArchiveTestCase):
     def test_extract_rar_basic(self):
         test_file = self.get_test_loc('archive/rar/basic.rar')
@@ -1259,8 +1412,7 @@ class TestRar(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/rar/broken.rar')
         test_dir = self.get_temp_dir()
         expected = Exception('No error returned')
-        self.assertRaisesInstance(expected, archive.extract_rar,
-                                  test_file, test_dir)
+        self.assertRaisesInstance(expected, archive.extract_rar, test_file, test_dir)
 
     def test_extract_rar_with_relative_path(self):
         # FIXME: this file may not have relative paths

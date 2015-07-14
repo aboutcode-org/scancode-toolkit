@@ -71,6 +71,36 @@ class TestCommandLine(FileBasedTesting):
         assert 'Extraction errors or warnings' in result.output
         assert os.path.exists(os.path.join(test_dir, 'some.tar.gz-extract'))
 
+    def test_extract_option_works_with_relative_paths(self):
+        # The setup is a tad complex because we want to have a relative dir
+        # to the base dir where we run tests from, ie the scancode-toolkit/ dir
+        # To use relative paths, we use our tmp dir at the root of the code
+        from os.path import dirname, join, abspath
+        from  commoncode import fileutils
+        import extractcode
+        import tempfile
+        import shutil
+
+        scancode_root = dirname(dirname(dirname(__file__)))
+        scancode_tmp = join(scancode_root, 'tmp')
+        fileutils.create_dir(scancode_tmp)
+        scancode_root_abs = abspath(scancode_root)
+        test_src_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs,  '').strip('\\/')
+        test_file = self.get_test_loc('extract_relative_path/basic.zip')
+        shutil.copy(test_file, test_src_dir)
+        test_src_file = join(test_src_dir, 'basic.zip')
+        test_tgt_dir = join(scancode_root, test_src_file) + extractcode.EXTRACT_SUFFIX
+
+        runner = CliRunner()
+        result = runner.invoke(cli.scancode, ['--extract', test_src_file])
+        assert result.exit_code == 0
+        assert 'Extracting done' in result.output
+        assert not 'WARNING' in result.output
+        assert not 'ERROR' in result.output
+        expected = ['/c/a/a.txt', '/c/b/a.txt', '/c/c/a.txt']
+        file_result  = [f.replace(test_tgt_dir, '') for f in fileutils.file_iter(test_tgt_dir)]
+        assert sorted(expected)==sorted(file_result)
+
     def test_copyright_option_detects_copyrights(self):
         test_dir = self.get_test_loc('copyright', copy=True)
         runner = CliRunner()

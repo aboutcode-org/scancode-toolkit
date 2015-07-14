@@ -869,3 +869,26 @@ class TestExtract(FileBasedTesting):
         ]
 
         assert sorted(expected) == sorted(allpaths)
+
+    def test_extract_can_extract_to_relative_paths(self):
+        # The setup is a tad complex because we want to have a relative dir
+        # to the base dir where we run tests from, ie the scancode-toolkit/ dir
+        # To use relative paths, we use our tmp dir at the root of the code
+        from os.path import dirname, join, abspath
+        scancode_root = dirname(dirname(dirname(__file__)))
+        scancode_tmp = join(scancode_root, 'tmp')
+        fileutils.create_dir(scancode_tmp)
+        scancode_root_abs = abspath(scancode_root)
+        import tempfile
+        test_src_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs,  '').strip('\\/')
+        test_file = self.get_test_loc('extract/relative_path/basic.zip')
+        import shutil
+        shutil.copy(test_file, test_src_dir)
+        test_src_file = join(test_src_dir, 'basic.zip')
+        test_tgt_dir = join(scancode_root, test_src_file) + extractcode.EXTRACT_SUFFIX
+        result = list(extract.extract(test_src_file))
+        expected = ['c/a/a.txt', 'c/b/a.txt', 'c/c/a.txt']
+        check_files(test_tgt_dir, expected)
+        for r in result:
+            assert [] == r.warnings
+            assert [] == r.errors
