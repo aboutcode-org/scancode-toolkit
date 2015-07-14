@@ -24,12 +24,20 @@
 
 from __future__ import print_function, absolute_import
 
+import logging
 import os
 import posixpath
 import re
 import shutil
 
 from commoncode import fileutils
+
+
+logger = logging.getLogger(__name__)
+DEBUG = False
+# import sys
+# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+# logger.setLevel(logging.DEBUG)
 
 
 root_dir = os.path.join(os.path.dirname(__file__), 'bin')
@@ -134,9 +142,8 @@ def extracted_files(location):
     Yield the locations of extracted files in a directory location.
     """
     assert location
-    for top, _dirs, files in os.walk(location, topdown=True):
-        for f in files:
-            yield os.path.join(top, f)
+    logger.debug('extracted_files for: %(location)r' % locals())
+    return fileutils.file_iter(location)
 
 
 def new_name(location, is_dir=False):

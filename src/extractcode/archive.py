@@ -27,12 +27,11 @@ from __future__ import print_function, absolute_import
 from collections import namedtuple
 import functools
 import logging
+import os
 
 from commoncode import fileutils
 from commoncode import filetype
 import typecode
-
-import extractcode
 
 from extractcode import all_kinds
 from extractcode import regular
@@ -46,8 +45,18 @@ from extractcode import special_package
 from extractcode import patch
 from extractcode import sevenzip
 from extractcode import libarchive2
+from extractcode import extracted_files
 from extractcode.uncompress import uncompress_gzip
 from extractcode.uncompress import uncompress_bzip2
+
+
+logger = logging.getLogger(__name__)
+DEBUG = True
+DEBUG_DEEP = False
+# import sys
+# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+# logger.setLevel(logging.DEBUG)
+
 
 
 """
@@ -98,12 +107,6 @@ extract_nsis = sevenzip.extract
 extract_ishield = sevenzip.extract
 extract_Z = sevenzip.extract
 
-DEBUG = False
-logger = logging.getLogger(__name__)
-# import sys
-# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-# logger.setLevel(logging.DEBUG)
-
 
 Handler = namedtuple('Handler', ['name', 'types', 'mimes', 'exts', 'kind', 'extractors'])
 
@@ -112,7 +115,6 @@ def can_extract(location):
     """
     Return True if this location can be extracted by some handler.
     """
-    assert location
     handlers = list(get_handlers(location))
     if handlers:
         return True
@@ -123,8 +125,7 @@ def should_extract(location, kinds):
     Return True if this location should be extracted based on the provided
     kinds
     """
-    assert location
-    assert kinds
+    location = os.path.abspath(os.path.expanduser(location))
     if get_extractor(location, kinds):
         return True
 
@@ -135,7 +136,7 @@ def get_extractor(location, kinds=all_kinds):
     an None if no extract function is found.
     """
     assert location
-    assert kinds
+    location = os.path.abspath(os.path.expanduser(location))
     extractors = get_extractors(location, kinds)
     if not extractors:
         return None
@@ -157,14 +158,15 @@ def get_extractors(location, kinds=all_kinds):
     Return a list of extractors that can extract the file at
     location or an empty list.
     """
+    location = os.path.abspath(os.path.expanduser(location))
     if filetype.is_file(location):
-        handlers = get_handlers(location)
+        handlers = list(get_handlers(location))
         if handlers:
             candidates = score_handlers(handlers)
-        if candidates:
-            best = pick_best_handler(candidates, kinds)
-            if best:
-                return best.extractors
+            if candidates:
+                best = pick_best_handler(candidates, kinds)
+                if best:
+                    return best.extractors
     return []
 
 
@@ -174,7 +176,6 @@ def get_handlers(location):
     extension_matched,) for this `location`.
     """
     if filetype.is_file(location):
-
         T = typecode.contenttype.get_type(location)
         ftype = T.filetype_file.lower()
         mtype = T.mimetype_file
@@ -199,13 +200,13 @@ def get_handlers(location):
             if handler.exts:
                 extension_matched = location.lower().endswith(handler.exts)
 
-            if DEBUG:
+            if DEBUG_DEEP:
                 logger.debug('get_handlers: %(location)s: ftype: %(ftype)s, mtype: %(mtype)s ' % locals())
                 logger.debug('get_handlers: %(location)s: matched type: %(type_matched)s, mime: %(mime_matched)s, ext: %(extension_matched)s' % locals())
 
 
             if type_matched or mime_matched or extension_matched:
-                if DEBUG:
+                if DEBUG_DEEP:
                     logger.debug('get_handlers: %(location)s: matched type: %(type_matched)s, mime: %(mime_matched)s, ext: %(extension_matched)s' % locals())
                     logger.debug('get_handlers: %(location)s: handler: %(handler)r' % locals())
                 yield handler, type_matched, mime_matched, extension_matched
@@ -307,21 +308,33 @@ def extract_twice(location, target_dir, extractor1, extractor2):
     the `extractor1` function to a temporary directory then the `extractor2`
     function on the extracted payload of `extractor1`.
 
-    Return a mapping of path->warning_message.
+    Return a list of warning messages. Raise exceptions on errors.
 
     Typical nested archives include compressed tarballs and RPMs (containing a
     compressed cpio).
+
+    Note: it would be easy to support deeper extractor chains, but this gets
+    hard to trace and debug very quickly. A depth of two is simple and sane and
+    covers most common cases.
     """
+    abs_location = os.path.abspath(os.path.expanduser(location))
+    abs_target_dir = os.path.abspath(os.path.expanduser(target_dir))
     # extract first the intermediate payload to a temp dir
     temp_target = fileutils.get_temp_dir('extract')
-    warnings = extractor1(location, temp_target)
+    warnings = extractor1(abs_location, temp_target)
+    if DEBUG:
+        logger.debug('extract_twice: temp_target: %(temp_target)r' % locals())
 
     # extract this intermediate payload to the final target_dir
     try:
-        for extracted1_loc in extractcode.extracted_files(temp_target):
-            warnings.extend(extractor2(extracted1_loc, target_dir))
+        inner_archives = list(extracted_files(temp_target))
+        if not inner_archives:
+            warnings.append(location + ': No files found in archive.')
         else:
-            warnings.append(location+ ': No files found in archive.')
+            for extracted1_loc in inner_archives:
+                if DEBUG:
+                    logger.debug('extract_twice: extractor2: %(extracted1_loc)r' % locals())
+                warnings.extend(extractor2(extracted1_loc, target_dir))
     finally:
         # cleanup the temporary output from extractor1
         fileutils.delete(temp_target)

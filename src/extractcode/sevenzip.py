@@ -39,7 +39,7 @@ from extractcode import ExtractWarningIncorrectEntry
 logger = logging.getLogger('extractcode')
 # logging.basicConfig(level=logging.DEBUG)
 
-root_dir = os.path.join(os.path.dirname(__file__), 'bin')
+root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), 'bin'))
 
 
 """
@@ -123,6 +123,8 @@ def extract(location, target_dir, arch_type='*'):
     """
     assert location
     assert target_dir
+    abs_location = os.path.abspath(os.path.expanduser(location))
+    abs_target_dir = os.path.abspath(os.path.expanduser(target_dir))
 
     # note: there are some issues with the extraction of debian .deb ar files
     # see sevenzip bug http://sourceforge.net/p/sevenzip/bugs/1472/
@@ -159,17 +161,17 @@ def extract(location, target_dir, arch_type='*'):
 
     # Note: 7z does extract in the current directory so we cwd to target_dir
     args = [extract, yes_to_all, auto_rename_dupe_names,
-            arch_type, password, location]
+            arch_type, password, abs_location]
     rc, stdout, _stderr = command.execute(cmd='7z',
                                           args=args,
-                                          cwd=target_dir,
+                                          cwd=abs_target_dir,
                                           env=timezone,
                                           root_dir=root_dir)
     if rc != 0:
         error = get_7z_errors(stdout) or 'No error returned'
         raise ExtractErrorFailedToExtract(error)
 
-    extractcode.remove_backslashes(target_dir)
+    extractcode.remove_backslashes(abs_target_dir)
     return get_7z_warnings(stdout)
 
 
@@ -181,6 +183,7 @@ def list_entries(location, arch_type='*'):
     None).
     """
     assert location
+    abs_location = os.path.abspath(os.path.expanduser(location))
     # 7z arguments
     listing = 'l'
 
@@ -203,8 +206,7 @@ def list_entries(location, arch_type='*'):
     # not work on Windows, because 7z is not using the TZ env var there.
     timezone = os.environ.update({'TZ': 'GMT'})
 
-    # Note: 7z does listing in the current directory so we cwd to target_dir
-    args = [listing, tech_info, arch_type, output_as_utf, password, location]
+    args = [listing, tech_info, arch_type, output_as_utf, password, abs_location]
     rc, stdout, _stderr = command.execute(cmd='7z',
                                           args=args,
                                           env=timezone,
@@ -344,4 +346,3 @@ def parse_7z_listing(location, utf=False):
             entries.append(as_entry(infos))
 
     return entries
-

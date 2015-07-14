@@ -101,13 +101,14 @@ def extract(location, target_dir):
     """
     assert location
     assert target_dir
-
+    abs_location = os.path.abspath(os.path.expanduser(location))
+    abs_target_dir = os.path.abspath(os.path.expanduser(target_dir))
     warnings = []
 
-    for entry in list_entries(location):
+    for entry in list_entries(abs_location):
         if not (entry.isdir or entry.isfile):
             continue
-        _target_path = entry.write(target_dir, transform_path=paths.resolve)
+        _target_path = entry.write(abs_target_dir, transform_path=paths.resolve)
         if entry.warnings:
             msgs = [w.strip('"\' ') for w in entry.warnings if w.strip('"\' ')]
             msgs = msgs or ['No message provided']
@@ -121,10 +122,12 @@ def list_entries(location):
     """
     Return a list entries of archive file at `location`.
     """
-    assert os.path.exists(location)
-    assert os.path.isfile(location)
+    assert location
+    abs_location = os.path.abspath(os.path.expanduser(location))
+    assert os.path.isfile(abs_location)
+
     # TODO: harden error handling
-    with Archive(location) as archive:
+    with Archive(abs_location) as archive:
         for entry in archive:
             yield entry
 
@@ -313,16 +316,6 @@ class Entry(object):
             if msg not in self.warnings:
                 self.warnings.append(msg)
             return target_path
-
-#         except ArchiveError, ae:
-#             if ae.msg and ae.msg.startswith('Encrypted file is unsupported'):
-#                 raise ArchiveErrorPasswordProtected(root_ex=ae)
-#             else:
-#                 raise
-# 
-#         except Exception, e:
-#             raise
-#             raise ArchiveError(root_ex=e)
 
     def __repr__(self):
         return ('Entry('
