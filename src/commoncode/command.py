@@ -56,6 +56,9 @@ While this could seem contrived at first this approach ensures that:
 """
 
 logger = logging.getLogger(__name__)
+# import sys
+# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+# logger.setLevel(logging.DEBUG)
 
 # current directory is the root dir of this library
 curr_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
