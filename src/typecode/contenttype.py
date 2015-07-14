@@ -92,11 +92,12 @@ def get_type(location):
     """
     Return a Type object for location.
     """
+    abs_loc = os.path.abspath(location)
     try:
-        return _registry[location]
+        return _registry[abs_loc]
     except KeyError:
-        t = Type(location)
-        _registry[location] = t
+        t = Type(abs_loc)
+        _registry[abs_loc] = t
         return t
 
 
