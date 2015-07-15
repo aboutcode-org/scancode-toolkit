@@ -29,10 +29,12 @@ import codecs
 import os
 import posixpath
 from unittest.case import expectedFailure
+from unittest.case import skipIf
 
 import commoncode.date
 from commoncode.testcase import FileBasedTesting
 from commoncode import fileutils
+from commoncode.system import on_windows
 import typecode.contenttype
 
 from extractcode_assert_utils import check_files
@@ -868,7 +870,7 @@ class TestTar(BaseArchiveTestCase):
         check_files(test_dir, expected)
         assert [] == result
 
-    # @skipIf(True, 'Unicode tar paths are not handled well yet')
+    @skipIf(on_windows, 'Long paths are not handled well yet on windows')
     def test_extract_python_testtar_tar_archive_with_special_files(self):
         test_file = self.get_test_loc('archive/tar/testtar.tar')
         # this is from:
