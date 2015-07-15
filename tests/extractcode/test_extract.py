@@ -29,6 +29,7 @@ from unittest.case import expectedFailure
 
 from commoncode.testcase import FileBasedTesting
 from commoncode import fileutils
+from commoncode.fileutils import as_posixpath
 
 import extractcode
 from extractcode_assert_utils import check_files
@@ -857,7 +858,7 @@ class TestExtract(FileBasedTesting):
         self.touch(os.path.join(test_dir, 'dir', 'otherarch.gz'))
         allpaths = []
         for top, dirs, files in self.extract_walker(test_dir):
-            allpaths.extend([os.path.join(top, d).replace(test_dir, '') for d in dirs + files])
+            allpaths.extend([as_posixpath(os.path.join(top, d).replace(test_dir, '')) for d in dirs + files])
 
         expected = [
             '/arch.gzextract/extracted_file',

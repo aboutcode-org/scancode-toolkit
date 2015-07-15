@@ -38,6 +38,7 @@ from commoncode.testcase import make_non_executable
 
 from commoncode import filetype
 from commoncode import fileutils
+from commoncode.fileutils import as_posixpath
 
 
 class TestPermissions(FileBasedTesting):
@@ -317,7 +318,7 @@ class TestFileUtils(FileBasedTesting):
     def test_fileutils_walk(self):
         test_dir = self.get_test_loc('fileutils/walk')
         base = self.get_test_loc('fileutils')
-        result = [(t.replace(base, ''), d, f,) for t, d, f in fileutils.walk(test_dir)]
+        result = [(as_posixpath(t.replace(base, '')), d, f,) for t, d, f in fileutils.walk(test_dir)]
         expected = [
             ('/walk', ['d1'], ['f', 'unicode.zip']),
             ('/walk/d1', ['d2'], ['f1']),
@@ -357,7 +358,7 @@ class TestFileUtils(FileBasedTesting):
     def test_file_iter(self):
         test_dir = self.get_test_loc('fileutils/walk')
         base = self.get_test_loc('fileutils')
-        result = [f.replace(base, '') for f in fileutils.file_iter(test_dir)]
+        result = [as_posixpath(f.replace(base, '')) for f in fileutils.file_iter(test_dir)]
         expected = [
             '/walk/f',
             '/walk/unicode.zip',
@@ -369,7 +370,7 @@ class TestFileUtils(FileBasedTesting):
 
     def test_file_iter_can_iterate_a_single_file(self):
         test_file = self.get_test_loc('fileutils/walk/f')
-        result = list(fileutils.file_iter(test_file))
+        result = [as_posixpath(f) for f in fileutils.file_iter(test_file)]
         expected = [test_file]
         assert expected == result
 

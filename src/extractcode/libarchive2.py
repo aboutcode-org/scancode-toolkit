@@ -280,11 +280,11 @@ class Entry(object):
         # skip links and special files
         if not (self.isfile or self.isdir):
             return
-
+        abs_target_dir = os.path.abspath(os.path.expanduser(target_dir))
         # TODO: return some warning when original path has been transformed
         clean_path = transform_path(self.path)
         if self.isdir:
-            dir_path = posixpath.join(target_dir, clean_path)
+            dir_path = posixpath.join(abs_target_dir, clean_path)
             fileutils.create_dir(dir_path)
             return dir_path
 
@@ -292,7 +292,7 @@ class Entry(object):
         try:
             # create parent directories if needed
             # TODO: also rename directories, segment by segment?
-            target_path = os.path.join(target_dir, clean_path)
+            target_path = os.path.join(abs_target_dir, clean_path)
             parent_path = posixpath.dirname(target_path)
             fileutils.create_dir(parent_path)
 

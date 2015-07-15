@@ -30,6 +30,7 @@ from click.testing import CliRunner
 
 from commoncode.testcase import FileBasedTesting
 from scancode import cli
+from commoncode.fileutils import as_posixpath
 
 
 class TestCommandLine(FileBasedTesting):
@@ -97,7 +98,7 @@ class TestCommandLine(FileBasedTesting):
         assert not 'WARNING' in result.output
         assert not 'ERROR' in result.output
         expected = ['/c/a/a.txt', '/c/b/a.txt', '/c/c/a.txt']
-        file_result  = [f.replace(test_tgt_dir, '') for f in fileutils.file_iter(test_tgt_dir)]
+        file_result  = [as_posixpath(f.replace(test_tgt_dir, '')) for f in fileutils.file_iter(test_tgt_dir)]
         assert sorted(expected)==sorted(file_result)
 
     def test_copyright_option_detects_copyrights(self):
