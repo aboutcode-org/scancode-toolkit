@@ -54,7 +54,6 @@ logger = logging.getLogger('extractcode')
 # logging.basicConfig(level=logging.DEBUG)
 
 
-
 """
 libarchive2 is a minimal and specialized wrapper around a vendored libarchive
 archive extraction library. It is inspired from several libarchive bindings
@@ -284,7 +283,7 @@ class Entry(object):
         # TODO: return some warning when original path has been transformed
         clean_path = transform_path(self.path)
         if self.isdir:
-            dir_path = posixpath.join(abs_target_dir, clean_path)
+            dir_path = os.path.join(abs_target_dir, clean_path)
             fileutils.create_dir(dir_path)
             return dir_path
 
@@ -293,7 +292,7 @@ class Entry(object):
             # create parent directories if needed
             # TODO: also rename directories, segment by segment?
             target_path = os.path.join(abs_target_dir, clean_path)
-            parent_path = posixpath.dirname(target_path)
+            parent_path = os.path.dirname(target_path)
             fileutils.create_dir(parent_path)
 
             # TODO: return some warning when original path has been renamed?

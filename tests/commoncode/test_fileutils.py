@@ -371,7 +371,7 @@ class TestFileUtils(FileBasedTesting):
     def test_file_iter_can_iterate_a_single_file(self):
         test_file = self.get_test_loc('fileutils/walk/f')
         result = [as_posixpath(f) for f in fileutils.file_iter(test_file)]
-        expected = [test_file]
+        expected = [as_posixpath(test_file)]
         assert expected == result
 
     def test_file_iter_can_walk_an_empty_dir(self):
