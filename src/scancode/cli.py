@@ -82,6 +82,7 @@ acknowledgment_text_json = acknowledgment_text.strip().replace('  ', '')
 
 
 extra_notice_text = '''
+
 Third-party software licenses
 =============================
 
@@ -122,37 +123,48 @@ def print_about(ctx, param, value):
 examples_text = '''
 Scancode command lines examples:
 
-(Note for Windows: use '\' backward slashes instead of '/' forward slashes.)
+(Note for Windows: use '\\' back slash instead of '/' forward slash for paths.)
 
-Scan a directory for licenses and copyrights. Save scan results to an HTML app
-file for interactive scan results navigation. Additional app files are saved in
-the directory 'scancode_result_files':
-    scancode --format html-app mydir/ scancode_result.html
+Scan the 'samples' directory for licenses and copyrights. Save scan results to
+an HTML app file for interactive scan results navigation. When the scan is done,
+open 'scancode_result.html' in your web browser. Note that additional app files
+are saved in a directory named 'scancode_result_files':
 
-Scan a directory for licenses and copyrights (default). Save scan results to an
+    scancode --format html-app samples/ scancode_result.html
+
+Scan a directory for licenses and copyrights. Save scan results to an
 HTML file:
-    scancode --format html mydir/ scancode_result.html
+
+    scancode --format html samples/zlib scancode_result.html
 
 Scan a single file for copyrights. Print scan results on terminal as JSON:
-    scancode -copyright myfile.c
 
-Scan a directory for licenses and copyrights. Redirect scan results to a file:
-    scancode -f json code-dir > scan.json
+    scancode --copyright samples/zlib/zlib.h
 
-Scan a single file for licenses. Save scan to a JSON file:
-    scancode -l myfile.c licenses.json
+Scan a single file for licenses, print verbose progress on terminal as each file
+is scanned. Save scan to a JSON file:
 
-Extract all archives found in the 'mydir' directory tree.
-    scancode --extract mydir
-Note: The extraction is recursive: if an archive contains other archives, all
-will be extracted. Extraction is performed directly in 'mydir', side-by-side
-with each archive. Files are extracted in a directory named after the archive
-with an '-extract' suffix added. This directory is created side-by-side with
-each archive file.
+    scancode --license --verbose samples/zlib/zlib.h licenses.json
+
+Scan a directory explicitly for licenses and copyrights. Redirect JSON scan
+results to a file:
+
+    scancode -f json -l -c samples/zlib/ > scan.json
+
+Extract all archives found in the 'samples' directory tree:
+
+    scancode --extract samples
+
+Note: If an archive contains other archives, all contained archives will be
+extracted recursively. Extraction is done directly in the 'samples' directory,
+side-by-side with each archive. Files are extracted in a directory named after
+the archive with an '-extract' suffix added to its name, created side-by-side
+with the corresponding archive file.
 
 Extract a single archive. Files are extracted in the directory
-'mydir/zlib-1.2.8.tar.gz-extract/':
-    scancode --extract mydir/zlib-1.2.8.tar.gz
+'samples/arch/zlib.tar.gz-extract/':
+
+    scancode --extract samples/arch/zlib.tar.gz
 '''
 
 
@@ -173,21 +185,25 @@ def print_version(ctx, param, value):
 epilog_text = '''\b\bExamples (use --examples for more):
 
 \b
-Scan 'mydir' directory for licenses and copyrights. Save scan results to a JSON file:
+Scan the 'samples' directory for licenses and copyrights.
+Save scan results to a JSON file:
 
-    scancode --format json mydir scancode_result.json
+    scancode --format json samples scancode_result.json
 
 \b
-Scan 'mydir' directory for licenses and copyrights. Save scan results to an
-HTML app file for interactive web browser results navigation. Additional app
+Scan the 'samples' directory for licenses and copyrights. Save scan results to
+an HTML app file for interactive web browser results navigation. Additional app
 files are saved to the 'myscan_files' directory:
 
-    scancode --format html-app mydir myscan.html
+    scancode --format html-app samples myscan.html
+
+Note: when you run scancode, a progress bar is displayed with a counter of the
+number of files processed. Use --verbose to display file-by-file progress.
 '''
 
 
 short_help = '''Usage: scancode [OPTIONS] <input> <output_file>
-Try 'scancode --help' for more information.'''
+Try 'scancode --help' for help on options and arguments.'''
 
 
 formats = ['json', 'html', 'html-app']
@@ -209,16 +225,16 @@ class ScanCommand(click.Command):
 @click.option('-l', '--license', is_flag=True, default=False, help='Scan <input> for licenses. [default]')
 @click.option('-f', '--format', metavar='<style>', type=click.Choice(formats),
               default='json', show_default=True,
-              help='Set format <style> to one of: %s' % '|'.join(formats),
+              help='Set <output_file> format <style> to one of: %s' % ' or '.join(formats),
               )
 @click.option('-e', '--extract', is_flag=True, default=False, is_eager=True,
-              help=('Extract archives found in <input> recursively, ignoring other options.'))
+              help=('Extract archives found in <input>, ignoring other scan options.'))
+@click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.')
 @click.help_option('-h', '--help')
 @click.option('--examples', is_flag=True, is_eager=True, callback=print_examples,
               help=('Show command examples and exit.'))
 @click.option('--about', is_flag=True, is_eager=True, callback=print_about,
-              help=('Show ScanCode and licensing information and exit.'))
-@click.option('--verbose', is_flag=True, default=False, help='Show verbose scan progress messages.')
+              help=('Show information about ScanCode and licensing and exit.'))
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version,
               help=('Show the version and exit.'))
 def scancode(ctx, input, output_file, extract, copyright, license, format, verbose, *args, **kwargs):
@@ -232,7 +248,8 @@ def scancode(ctx, input, output_file, extract, copyright, license, format, verbo
             # exclusive, ignoring other options.
             # FIXME: this should turned into  a sub-command
             ctx.fail('''The '--extract' option cannot be combined with other scanning options.
-Use '--extract' alone to extract <input>, then run a scan on the extracted files.''')
+Use the '--extract' option alone to extract archives found in  <input>.
+then run scancode again to scan the extracted files.''')
             ctx.exit(1)
 
         click.secho('Extracting archives...', fg='green')
@@ -266,7 +283,8 @@ Use '--extract' alone to extract <input>, then run a scan on the extracted files
             try:
                 create_html_app_assets(output_file)
             except HtmlAppAssetCopyWarning:
-                click.secho('\nHTML app creation skipped when printing to terminal.', fg='yellow')
+                click.secho('\nHTML app creation skipped when printing to terminal.',
+                            fg='yellow')
             except HtmlAppAssetCopyError:
                 click.secho('\nFailed to create HTML app.', fg='red')
 
@@ -308,18 +326,7 @@ def extract_with_progress(input, verbose=False):
     """
     Extract archives and display progress.
     """
-    if not verbose:
-        extract_results = []
-        # only display a progress bar
-        with click.progressbar(extract_archives(input, verbose=verbose), show_pos=True) as extractions:
-            for xevent in extractions:
-                extract_results.append(xevent)
-        # display warnings/errors at the end
-        for xev in extract_results:
-            if xev.warnings or xev.errors:
-                click.secho('Extraction errors or warnings for: ' + xev.source, fg='yellow')
-                display_extract_event(xev)
-    else:
+    if verbose:
         for xev in extract_archives(input, verbose=verbose):
             if not xev.done:
                 click.secho('Extracting: ' + xev.source + ': ', nl=False, fg='green')
@@ -329,6 +336,19 @@ def extract_with_progress(input, verbose=False):
                     display_extract_event(xev)
                 else:
                     click.secho('done.', fg='green')
+    else:
+        extract_results = []
+        # only display a progress bar
+        with click.progressbar(extract_archives(input, verbose=verbose), show_pos=True) as extractions:
+            for xevent in extractions:
+                extract_results.append(xevent)
+        # display warnings/errors at the end
+        for xev in extract_results:
+            if xev.warnings or xev.errors:
+                if xev.warnings or xev.errors:
+                    click.secho('Extracting: ' + xev.source + ': ', nl=False, fg='green')
+                    click.secho('done.', fg='red' if xev.errors else 'yellow')
+                    display_extract_event(xev)
 
 
 def display_extract_event(xev):
