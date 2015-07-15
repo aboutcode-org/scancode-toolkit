@@ -156,6 +156,7 @@ class TestSmokeTest(FileBasedTesting):
 
     @expectedFailure
     def test_no_handler_is_selected_for_a_non_archive(self):
+        # fails because of libmagic bug: http://bugs.gw.com/view.php?id=467
         test_loc = self.get_test_loc('archive/not_archive/hashfile')
         assert [] == list(archive.get_handlers(test_loc))
         assert None == archive.get_extractor(test_loc)
