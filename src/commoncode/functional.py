@@ -62,18 +62,90 @@ def flatten(seq):
 
 def memoize(fun):
     """
-    Decorate fun function args and cache return values. Arguments must be
+    Decorate fun function and cache return values. Arguments must be
     hashable. kwargs are not handled. Used to speed up some often executed
     functions.
+    Usage example::
+
+    >>> @memoize
+    ... def expensive(*args, **kwargs):
+    ...     print('Calling expensive with', args, kwargs)
+    ...     return 'value expensive to compute' + repr(args)
+    >>> expensive(1, 2)
+    Calling expensive with (1, 2) {}
+    'value expensive to compute(1, 2)'
+    >>> expensive(1, 2)
+    'value expensive to compute(1, 2)'
+    >>> expensive(1, 2, a=0)
+    Calling expensive with (1, 2) {'a': 0}
+    'value expensive to compute(1, 2)'
+    >>> expensive(1, 2, a=0)
+    Calling expensive with (1, 2) {'a': 0}
+    'value expensive to compute(1, 2)'
+    >>> expensive(1, 2)
+    'value expensive to compute(1, 2)'
+    >>> expensive(1, 2, 5)
+    Calling expensive with (1, 2, 5) {}
+    'value expensive to compute(1, 2, 5)'
+
+    The expensive function returned value will be cached based for each args
+    values and computed only once in its life. Call with kwargs are not cached
     """
     memos = {}
+
     @functools.wraps(fun)
-    def memoized(*args):
-        args = tuple(tuple(arg) if isinstance(arg, ListType)
-                     else arg for arg in args)
+    def memoized(*args, **kwargs):
+        # calls with kwargs are not handled and not cached
+        if kwargs:
+            return fun(*args, **kwargs)
+        # convert any list arg to a tuple
+        args = tuple(tuple(arg) if isinstance(arg, ListType) else arg
+                     for arg in args)
         try:
             return memos[args]
         except KeyError:
             memos[args] = fun(*args)
             return memos[args]
+
     return functools.update_wrapper(memoized, fun)
+
+
+def memoize_to_attribute(attr_name, _test=False):
+    """
+    Decorate a method and cache return values in attr_name of the parent object.
+    Used to speed up some often called methods that cache their values in
+    instance variables.
+    Usage example::
+
+    >>> class Obj(object):
+    ...     def __init__(self):
+    ...         self._expensive = None
+    ...     @property
+    ...     @memoize_to_attribute('_expensive')
+    ...     def expensive(self):
+    ...         print('Calling expensive')
+    ...         return 'value expensive to compute'
+    >>> o=Obj()
+    >>> o.expensive
+    Calling expensive
+    'value expensive to compute'
+    >>> o.expensive
+    'value expensive to compute'
+    >>> o.expensive
+    'value expensive to compute'
+
+    The Obj().expensive property value will be cached to attr_name
+    self._expensive and computed only once in the life of the Obj instance.
+    """
+    def memoized_to_attr(meth):
+        @functools.wraps(meth)
+        def wrapper(self, *args, **kwargs):
+            if getattr(self, attr_name) is None:
+                res = meth(self, *args, **kwargs)
+                setattr(self, attr_name, res)
+            else:
+                res = getattr(self, attr_name)
+            return res
+        return wrapper
+
+    return memoized_to_attr
