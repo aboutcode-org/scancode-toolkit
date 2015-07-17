@@ -37,7 +37,7 @@ from os.path import join
 from licensedcode import saneyaml
 
 from commoncode import fileutils
-from licensedcode import licenses_data_dir, rules_data_dir
+from licensedcode import licenses_data_dir, rules_data_dir, rules_cache_dir
 from licensedcode import index
 from textcode import analysis
 
@@ -255,17 +255,33 @@ def get_rules_from_license_texts(licenses_list=None):
 
 text_tknzr, template_tknzr, _ = index.tokenizers()
 
-def get_tokens(location, template):
+import cPickle as pickle
+def get_tokens(location, template, _use_cache=False):
     """
     Return a list of tokens from a from a file at location using the tokenizer
     function.
     """
+    location = os.path.abspath(location)
     if not exists(location):
-        lines = []
-    else:
+        return []
+
+    if not _use_cache:
         tokenizr = template_tknzr if template else text_tknzr
-        lines = list(analysis.unicode_text_lines(location))
-    return list(tokenizr(lines))
+        lines = analysis.unicode_text_lines(location)
+        return list(tokenizr(lines))
+    else:
+        cache_key = fileutils.file_name(location)
+        cache_loc = join(rules_cache_dir, cache_key)
+        if exists(cache_loc):
+            with open(cache_loc, 'rb') as inf:
+                return pickle.load(inf)
+        else:
+            tokenizr = template_tknzr if template else text_tknzr
+            lines = analysis.unicode_text_lines(location)
+            tokens = list(tokenizr(lines))
+            with open(cache_loc, 'wb') as of:
+                pickle.dump(tokens, of, protocol=pickle.HIGHEST_PROTOCOL)
+            return tokens
 
 
 class Rule(object):
@@ -287,10 +303,6 @@ class Rule(object):
             self.load()
 
         self.text_file = text_file
-
-        self.tokenizer = text_tknzr
-        if self.template:
-            self.tokenizer = template_tknzr
 
         self.tokens = None  # a list
         self.tokens_count = 0
@@ -397,14 +409,27 @@ def load_rules(rule_dir=rules_data_dir):
     return rules
 
 
-def get_all_rules():
+def get_all_rules(_use_cache=False):
     """
     Return an iterable of all unique rules loaded from licenses and rules files.
     """
-    rules = chain(get_rules_from_license_texts(), load_rules())
-    unique = unique_rules(rules)
-    verify_rules_license(unique)
-    return unique
+    if not _use_cache:
+        rules = chain(get_rules_from_license_texts(), load_rules())
+        unique = unique_rules(rules)
+        verify_rules_license(unique)
+        return unique
+    else:
+        cache_loc = join(rules_cache_dir, '__all_rules__')
+        if exists(cache_loc):
+            with open(cache_loc, 'rb') as inf:
+                return pickle.load(inf)
+        else:
+            rules = chain(get_rules_from_license_texts(), load_rules())
+            unique = unique_rules(rules)
+            verify_rules_license(unique)
+            with open(cache_loc, 'wb') as of:
+                pickle.dump(unique, of, protocol=pickle.HIGHEST_PROTOCOL)
+            return unique
 
 
 class MissingLicense(Exception):
@@ -456,4 +481,4 @@ def rule_identifier(rule):
     comparable.append(repr(rule.license_choice))
     comparable.append(repr(rule.template))
     comparable.extend(sorted(rule.licenses))
-    return u''.join(t for t in comparable if t)
+    return u''.join([t for t in comparable if t])
