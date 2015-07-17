@@ -81,4 +81,60 @@ class TestIndexingPerformance(FileBasedTesting):
         print()
         print()
         print()
-        p.print_stats()
+        #p.print_stats()
+
+
+class TestTokenzingPerformance(FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    # Comment the skip decorator to run this test
+    @skip('Use only for local profiling')
+    def test_get_tokens_performance_timing(self):
+        from timeit import timeit
+        setup='''
+from licensedcode.models import get_tokens
+from commoncode.fileutils import file_iter
+from licensedcode import rules_data_dir
+import os
+rule_files = [os.path.join(rules_data_dir, f) for f in os.listdir(rules_data_dir) if f.endswith('.RULE')]
+'''
+        test= '''
+for f in rule_files:
+    get_tokens(f, template=False)
+'''
+        print()
+        print('WITHOUT CACHE')
+        print(timeit(stmt=test, setup=setup,number=10))
+
+        setup_cache='''
+from licensedcode.models import get_tokens
+from commoncode.fileutils import file_iter
+from licensedcode import rules_data_dir
+import os
+rule_files = [os.path.join(rules_data_dir, f) for f in os.listdir(rules_data_dir) if f.endswith('.RULE')]
+# preload cache
+for f in rule_files:
+    get_tokens(f, template=False, _use_cache=True)
+'''
+
+        test_cache = '''
+for f in rule_files:
+    get_tokens(f, template=False, _use_cache=True)
+'''
+
+        print()
+        print('WITH CACHE')
+        print(timeit(stmt=test_cache, setup=setup_cache,number=10))
+
+
+    # Comment the skip decorator to run this test
+    @skip('Use only for local profiling')
+    def test_get_all_rules_performance_timing(self):
+        from timeit import timeit
+        print()
+        print('WITHOUT CACHE')
+        print(timeit(stmt='from licensedcode.models import get_all_rules;get_all_rules()',number=10))
+
+        print()
+        print('WITH CACHE')
+        print(timeit(stmt='from licensedcode.models import get_all_rules;get_all_rules(True)',number=10))
