@@ -79,7 +79,7 @@ class TestRule(FileBasedTesting):
             Token(start=0, start_line=0, start_char=0, end_line=0, end_char=8, end=2, gap=5, value=(u'a', u'one', u'a')),
             Token(start=3, start_line=0, start_char=13, end_line=0, end_char=25, end=5, gap=0, value=(u'two', u'a', u'three'))
         ]
-        self.assertEqual(toks, list(ttr.get_tokens()))
+        assert toks == list(ttr.get_tokens())
         for i in range(len(toks)):
             self.assertEqual(toks[i], ttr.tokens[i])
 
