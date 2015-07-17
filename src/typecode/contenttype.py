@@ -142,10 +142,15 @@ class Type(object):
         self._is_text = None
         self._is_binary = None
 
+    def __repr__(self):
+        return ('Type(ftf=%r, mtf=%r, ftpyg=%r, mtpy=%r)'
+                % (self.filetype_file, self.mimetype_file,
+                   self.filetype_pygment, self.mimetype_python))
+
     @property
     def size(self):
         """
-        Return the size of a file ro directory
+        Return the size of a file or directory
         """
         if self._size is None:
             self._size = 0
