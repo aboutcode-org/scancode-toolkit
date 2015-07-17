@@ -59,10 +59,16 @@ elf_type = lambda l: get_type(l).elf_type
 get_link_target = lambda l: get_type(l).link_target
 is_link = lambda l: get_type(l).is_link
 is_broken_link = lambda l: get_type(l).is_broken_link
+size = lambda l: get_type(l).size
 
 
 class TestContentType(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_size(self):
+        test_dir = self.get_test_loc('contenttype/size')
+        result = size(test_dir)
+        assert 18 == result
 
     def test_filetype_file_on_unicode_file_name(self):
         test_zip = self.extract_test_zip('contenttype/unicode/unicode.zip')
@@ -119,6 +125,7 @@ class TestContentType(FileBasedTesting):
         assert is_broken_link(os.path.join(test_dir, 'prunedirs/targets/simlink_to_missing_dir'))
         assert '../sources/temp.txt' == get_link_target(os.path.join(test_dir, 'prunedirs/targets/simlink_to_missing_file'))
         assert '../sources/tempdir' == get_link_target(os.path.join(test_dir, 'prunedirs/targets/simlink_to_missing_dir'))
+
 
     @skipIf(not on_windows, 'Hangs for now, for mysterious reasons.')
     @skipIf(on_windows, 'Windows does not have fifos.')
