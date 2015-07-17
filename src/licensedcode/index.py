@@ -251,7 +251,7 @@ class Index(object):
     def align_matches(self, cur_ipos, cur_qpos, matches):
         """
         Given a first match and subsequent potential matches, try to find a
-        longer match skipping eventual gaps. to yield the best alignment.
+        longer match skipping eventual gaps to yield the best alignment.
 
         This how ngrams are handled with ngram_len of 3:
         -----------------------------------------------
@@ -326,16 +326,15 @@ class Index(object):
             if prev_ipos.start < cur_ipos.start <= prev_ipos.end + 1:
 
                 if DEBUG_ALIGN:
-                    print('Index.aligned match: '
-                              'possible contiguous tokens')
+                    print('Index.aligned match: possible contiguous tokens')
 
                 # we are contiguous in ipos: are we contiguous in qpos?
                 if prev_qpos.start + 1 == cur_qpos.start:
 
                     if DEBUG_ALIGN:
                         print('Index.aligned match: Keeping contiguous '
-                                  'tokens: prev_qpos.start + 1 '
-                                  '== cur_qpos.start\n')
+                              'tokens: prev_qpos.start + 1 '
+                              '== cur_qpos.start\n')
 
                     matched.append((cur_ipos, cur_qpos,))
                     continue
@@ -345,9 +344,9 @@ class Index(object):
 
                     if DEBUG_ALIGN:
                         print('Index.aligned match: '
-                                  'prev_qpos.start:%d < cur_qpos.start:%d '
-                                  '<= prev_qpos.start + 1 + cumulative_gap '
-                                  '+ self.ngram_len: %d' %
+                              'prev_qpos.start:%d < cur_qpos.start:%d '
+                              '<= prev_qpos.start + 1 + cumulative_gap '
+                              '+ self.ngram_len: %d' %
                               (prev_qpos.start, cur_qpos.start,
                                prev_qpos.start + cumulative_gap
                                + self.ngram_len,))
@@ -358,7 +357,7 @@ class Index(object):
 
                         if DEBUG_ALIGN:
                             print('Index.aligned match: '
-                                      'Keeping gap-wise contiguous tokens\n')
+                                  'Keeping gap-wise contiguous tokens\n')
 
                         matched.append((cur_ipos, cur_qpos,))
                     continue
@@ -395,7 +394,7 @@ class Index(object):
             if DEBUG_CANDIDATES:
                 print('  Index.candidates: processing\n   %(qtoken)r' % locals())
 
-            # query the proper inverted indexes for the value len
+            # query the proper inverted index for the value len, aka the ngram length
             matches = self.indexes[len(qtoken.value)].get(qtoken.value)
             if not matches:
                 continue

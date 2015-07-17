@@ -158,7 +158,6 @@ class LicenseIndex(object):
             rule = self.rules_by_id[rule_id]
             for match in matched_pos:
                 ipos, qpos = match
-                # TODO: scoring!! for approximate matches
                 lmatch = LicenseMatch(rule, qpos, ipos, score=100)
                 license_matches.append(lmatch)
         return filter_matches(license_matches)
@@ -226,6 +225,7 @@ class LicenseMatch(object):
         """
         Return True if this match points to a real license (and not a non-
         license text).
+        This is based on the magic 'not-a-license' license key
         """
         return self.rule.licenses != [models.not_a_license_key]
 
