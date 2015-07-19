@@ -98,20 +98,23 @@ patterns = [
     # TODO: this needs to be simplified:
     # TODO: in NLTK 3.0 this will fail because of this bug:
     # https://github.com/nltk/nltk/issues/1025
+
     # JUNK are things to ignore
     # All Rights Reserved. should be a terminator/delimiter.
     (r'^([Aa]ll [Rr]ights? [Rr]eserved|ALL RIGHTS? RESERVED|[Aa]ll||ALL)$', 'JUNK'),
+
     # found in crypto certificates and LDAP
     (r'^(O=|OU=|OU|XML)$', 'JUNK'),
-    (r'^(Parser|Dual|Crypto|NO|PART|Originally|Representations?\.?)$', 'JUNK'),
-    (r'^(Filename:?|Description:?|Holder?s|HOLDER?S|Original|[Pp]rocedures?|You|Everyone)$', 'JUNK'),
+    (r'^(Parser|Dual|Crypto|NO|PART|[Oo]riginall?y?|[Rr]epresentations?\.?)$', 'JUNK'),
+    (r'^(Refer|Agreement|Files?|Filename:?|Description:?|Holder?s|HOLDER?S|[Pp]rocedures?|You|Everyone)$', 'JUNK'),
     (r'^(Rights?|Unless|rant|Subject|Acknowledgements?|Special)$', 'JUNK'),
-    (r'^(Derivative|Work|[Ll]icensable|[Ss]ince|[Ll]icen[cs]e[\.d]?|[Ll]icen[cs]or|under|COPYING)$', 'JUNK'),
-    (r'^(TCK|Use|[Rr]estrictions?|Introduction)$', 'JUNK'),
-    (r'^(includes?|voluntary|contributions?)$', 'JUNK'),
-    (r'^(CONTRIBUTORS?|OTHERS?|Contributor\(s\):)$', 'JUNK'),
-    (r'^(Company:|For|File|Last|[Rr]elease|[Cc]opyrighting|)$', 'JUNK'),
+    (r'^(Derivative|Work|[Ll]icensable|[Ss]ince|[Ll]icen[cs]e[\.d]?|[Ll]icen[cs]ors?|under|COPYING)$', 'JUNK'),
+    (r'^(TCK|Use|[Rr]estrictions?|[Ii]ntroduction)$', 'JUNK'),
+    (r'^([Ii]ncludes?|[Vv]oluntary|[Cc]ontributions?|[Mm]odifications?)$', 'JUNK'),
+    (r'^(CONTRIBUTORS?|OTHERS?|Contributors?\:)$', 'JUNK'),
+    (r'^(Company:|For|File|Last|[Rr]elease|[Cc]opyrighting)$', 'JUNK'),
     (r'^Authori.*$', 'JUNK'),
+    (r'^[Bb]uild$', 'JUNK'),
 
     # Bare C char is COPYRIGHT SIGN
     # (r'^C$', 'COPY'),
@@ -128,13 +131,17 @@ patterns = [
     (r'.?(@?([Cc]opyright)s?:?|[(][Cc][)]|(COPYRIGHT)S?:?)', 'COPY'),
 
     # company suffix
-    (r'^([iI]nc[.]?|[I]ncorporated|[Cc]ompany).?$', 'COMP'),
+    (r'^([Ii]nc[.]?|[I]ncorporated|[Cc]ompany|Limited|LIMITED).?$', 'COMP'),
     # company suffix
     (r'^(INC(ORPORATED|[.])?|CORP(ORATION|[.])?|FOUNDATION|GROUP|COMPANY|[(]tm[)]).?$|[Ff]orum.?', 'COMP'),
     # company suffix
     (r'^([cC]orp(oration|[.])?|[fF]oundation|[Aa]lliance|Working|[Gg]roup|[Tt]echnolog(y|ies)|[Cc]ommunit(y|ies)|[Mm]icrosystems.?|[Pp]roject|[Tt]eams?|[Tt]ech).?$', 'COMP'),
-    # company suffix
-    (r'^(llc|LLC|Llc|ltd|Ltd|LTD|llp|Llp|LLP|S\.?A\.?S?|Sas|sas|A[GBS]|Labs?|[Cc][Oo]\.|Research|INRIA).?$', 'COMP'),
+    # company suffix : LLC, LTD, LLP followed by one extra char
+    (r'^([Ll][Ll][CcPp]|[Ll][Tt][Dd])\.,$', 'COMP'),
+    (r'^([Ll][Ll][CcPp]|[Ll][Tt][Dd])\.?,?$', 'COMP'),
+    (r'^([Ll][Ll][CcPp]|[Ll][Tt][Dd])\.$', 'COMP'),
+    # company suffix : SA, SAS, AG, AB, AS, CO, labs followed by a dot
+    (r'^(S\.?A\.?S?|Sas|sas|A[GBS]|Labs?|[Cc][Oo]\.|Research|INRIA).?$', 'COMP'),
     # (german) company suffix
     (r'^[Gg][Mm][Bb][Hh].?$', 'COMP'),
     # university
@@ -143,8 +150,12 @@ patterns = [
     (r'^[Ii]nstitut(s|o|os|e|es|et|a|at|as|u|i)?$', 'NNP'),
     # "holders" is considered as a common noun
     (r'^([Hh]olders?|HOLDERS?|[Rr]espective)$', 'NN'),
+
+    #(r'^[Cc]ontributors?\.?', 'NN'),
     # "authors" or "contributors" is interesting, and so a tag of its own
-    (r'[Aa]uthors?|[Cc]ontribut(ors?|ing)', 'AUTH'),
+    (r'^[Aa]uthors?$', 'AUTH'),
+    (r'^[Aa]uthor\(s\)$', 'AUTH'),
+    (r'^[Cc]ontribut(ors?|ing)\.?$', 'AUTH'),
 
     # commiters is interesting, and so a tag of its own
     (r'[Cc]ommitters?', 'COMMIT'),
@@ -160,13 +171,17 @@ patterns = [
     (r'^by$', 'BY'),
     # conjunction: and
     (r'^([Aa]nd|&)$', 'CC'),
+    # conjunction: or. Even though or is not conjunctive ....
+    #(r'^or$', 'CC'),
+    # conjunction: or. Even though or is not conjunctive ....
+    #(r'^,$', 'CC'),
     # ie. in things like "Copyright (c) 2012 John Li and others"
     (r'^others$', 'OTH'),
     # in year ranges: dash, or 'to': "1990-1995", "1990/1995" or "1990 to 1995"
     (r'^([-/]|to)$', 'DASH'),
 
     # explicitly ignoring these words: FIXME: WHY?
-    (r'^([Tt]his|THIS|[Pp]ermission|PERMISSION|All)$', 'NN'),
+    (r'^([Tt]his|THIS|[Pp]ermissions?|PERMISSIONS?|All)$', 'NN'),
 
     # in dutch/german names, like Marco van Basten, or Klemens von Metternich
     # and Spanish/French Da Siva and De Gaulle
@@ -190,22 +205,34 @@ patterns = [
     (r"^[A-Z][a-z]+[']s$", 'NNP'),
     # dotted name, ie. P.
     (r"^([A-Z][.]?|[A-Z]+[\.])$", 'PN'),
-    # proper noun
-    (r"^[A-Z]+[.][A-Z][a-z]+$", 'NNP'),
+    # proper noun with some separator and trailing comma
+    (r"^[A-Z]+[.][A-Z][a-z]+[,]?$", 'NNP'),
+
     # proper noun with apostrophe ': D'Orleans, D'Arcy
     # FIXME: we do not catch T'so: adding ? after second cap
     (r"^[A-Z]['][A-Z]?[a-z]+[,]?$", 'NNP'),
-    # all caps word, such as MIT
+
+    # all CAPS word, at least 1 char long such as MIT, including an optional trailing comma or dot
     (r'^[A-Z0-9]+[,]?$', 'CAPS'),
-    # proper noun
+    # all caps word 3 chars and more, enclosed in parens
+    (r'^\([A-Z0-9]{2,}\)$', 'CAPS'),
+
+    # proper noun:first CAP, including optional trailing comma
     (r'^[A-Z][a-zA-Z0-9]+[,]?$', 'NNP'),
+
     # email
-    (r'[<(]?[a-zA-Z0-9+_\-\.]+@[0-9a-zA-Z][.-0-9a-zA-Z]*\.[a-zA-Z]+[>)]?', 'EMAIL'),
-    # things such as copyright ibm.com
+    (r'[a-zA-Z0-9\+_\-\.\%]+@[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]*\.[a-zA-Z]{2,5}?', 'EMAIL'),
+
+    # email eventually in parens or brackets. The closing > or ) is optional
+    (r'[\<\(][a-zA-Z0-9\+_\-\.\%]+@[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]*\.[a-zA-Z]{2,5}?[\>\)]?', 'EMAIL'),
+
+    # URLS such as ibm.com
     # TODO: add more extensions?
     (r'[a-z0-9A-Z]+\.(com|net|info|org|us|io|edu|co\.[a-z][a-z]|eu|biz)', 'URL'),
     # AT&T (the company), needed special handling
     (r'^AT&T$', 'ATT'),
+    # comma as a conjunction
+    (r'^,$', 'CC'),
     # nouns (default)
     (r'.+', 'NN'),
 ]
@@ -220,6 +247,20 @@ grammar = """
 
     NAME: {<NNP> <VAN|OF> <NN*> <NNP>}
     NAME: {<NNP> <PN> <VAN> <NNP>}
+
+# the Regents of the University of California
+    COMPANY: {<BY>? <NN> <NNP> <OF> <NN> <UNI> <OF> <COMPANY|NAME|NAME2|NAME3><COMP>?}
+
+
+# "And" some name
+    ANDCO: {<CC>+ <NN> <NNP>+<UNI|COMP>?}
+    ANDCO: {<CC>+ <NNP> <NNP>+<UNI|COMP>?}
+    ANDCO: {<CC>+ <COMPANY|NAME|NAME2|NAME3>+<UNI|COMP>?}
+    COMPANY: {<COMPANY|NAME|NAME2|NAME3> <ANDCO>+}
+
+
+# rare "Software in the public interest, Inc."
+    COMPANY: {<NNP> <IN><NN> <NNP> <NNP>+<COMP>?}
 
     COMPANY: {<NNP> <CC> <NNP> <COMP>}
     COMPANY: {<NNP|CAPS> <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <COMP> <COMP>?}
@@ -236,6 +277,8 @@ grammar = """
     NAME: {<NNP> <PN|VAN>? <PN|VAN>? <NNP>}
     NAME: {<NNP> <NN> <NNP>}
     NAME: {<NNP> <COMMIT>}
+    NAME: {<NN> <NNP> <ANDCO>}
+    NAME: {<NN>? <NNP> <CC> <NAME>}
     NAME: {<NN>? <NNP> <OF> <NN>? <NNP> <NNP>?}
     NAME: {<NAME> <CC> <NAME>}
     COMPANY: {<NNP> <IN> <NN>? <COMPANY>}
@@ -255,6 +298,7 @@ grammar = """
 
     NAME: {<NNP|CAPS>+ <AUTH>}
 
+
 # Companies
     COMPANY: {<NAME|NAME2|NAME3|NNP>+ <OF> <NN>? <COMPANY|COMP>}
     COMPANY: {<NNP> <COMP> <COMP>}
@@ -266,6 +310,11 @@ grammar = """
 
 # Trailing Authors
     COMPANY: {<NAME|NAME2|NAME3|NNP>+ <AUTH>}
+
+# "And" some name
+    ANDCO: {<CC> <NNP> <NNP>+}
+    ANDCO: {<CC> <COMPANY|NAME|NAME2|NAME3>+}
+    COMPANY: {<COMPANY|NAME|NAME2|NAME3> <ANDCO>+}
 
 # Various forms of copyright statements
     COPYRIGHT: {<COPY> <NAME> <COPY> <YR-RANGE>}
@@ -305,6 +354,9 @@ grammar = """
     COPYRIGHT: {<COPY> <YR-RANGE|NNP> <CAPS|BY>? <NNP|YR-RANGE|NAME>+}
 
     COPYRIGHT: {<COPY> <COPY> <NNP>+}
+
+    # Copyright (c) 1995, 1996 The President and Fellows of Harvard University
+    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <NN> <NNP> <ANDCO>}
 
     COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <NN> <AUTH>}
 
@@ -379,8 +431,19 @@ def strip_some_punct(s):
     """
     if s:
         s = s.strip(''','"};''')
+        s = s.lstrip(')')
+        s = s.rstrip('&(-_')
     return s
 
+
+
+def fix_trailing_space_dot(s):
+    """
+    Return a string stripped from some leading and trailing punctuations.
+    """
+    if s and s.endswith(' .'):
+        s = s[:-2]+'.'
+    return s
 
 def refine_copyright(c):
     """
@@ -388,7 +451,7 @@ def refine_copyright(c):
     FIXME: the grammar should not allow this to happen.
     """
     c = strip_some_punct(c)
-    c = c.lstrip(')')
+    c = fix_trailing_space_dot(c)
     # FIXME in grammar
     c = c.replace('Copyright Copyright', 'Copyright')
     c = c.replace('Copyright copyright', 'Copyright')
@@ -397,7 +460,8 @@ def refine_copyright(c):
     s = c.split()
     if s[-1] in ('Parts', 'Any',):
         s = s[:-1]
-    return u' '.join(s)
+    s = u' '.join(s)
+    return s.strip()
 
 
 def refine_author(c):

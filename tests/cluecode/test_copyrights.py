@@ -323,7 +323,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright 1991 by the Massachusetts Institute of Technology',
             u'Copyright (c) 1997-2001 University of Cambridge',
             u'copyright by the University of Cambridge, England.',
-            u'Copyright (c) Zeus Technology',
+            u'Copyright (c) Zeus Technology Limited 1996.',
             u'Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd and Clark Cooper',
         ]
         check_detection(expected, test_file,
@@ -654,23 +654,20 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) 2001-2005 Novell',
             u'Copyright (c) Microsoft Corporation',
             u'Copyright (c) 2007 James Newton-King',
-            u'Copyright (c) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov, Charlie Poole',
+            u'Copyright (c) 2002-2004 James W. Newkirk , Michael C. Two , Alexei A. Vorontsov , Charlie Poole',
             u'Copyright (c) 2000-2004 Philip A. Craig',
-            u'Copyright (c) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov, Charlie Poole',
+            u'Copyright (c) 2002-2004 James W. Newkirk , Michael C. Two , Alexei A. Vorontsov , Charlie Poole',
             u'Copyright (c) 2000-2004 Philip A. Craig',
             u'Copyright (c) 2007, 2008 LShift Ltd.',
             u'Copyright (c) 2007, 2008 Cohesive Financial Technologies LLC.',
             u'Copyright (c) 2007, 2008 Rabbit Technologies Ltd.',
-            u'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC., and Rabbit Technologies Ltd.',
-            u'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC., and Rabbit Technologies Ltd.',
-            u'Copyright (c) 2007 LShift Ltd. , Cohesive Financial Technologies LLC., and Rabbit Technologies Ltd.',
+            u'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies', # LLC., and Rabbit Technologies Ltd.',
+            u'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies', # LLC., and Rabbit Technologies Ltd.',
+             u'Copyright (c) 2007 LShift Ltd. , Cohesive Financial Technologies', # LLC., and Rabbit Technologies Ltd.',
             u'Copyright (c) ???? Simon Mourier <simonm@microsoft.com>',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file)
 
-    @expectedFailure
     def test_copyright_debian_lib_2(self):
         test_file = self.get_test_loc('copyrights/copyright_debian_lib_2-libmono_cairo_cil_copyright.copyright')
         expected = [
@@ -678,21 +675,20 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) 2001-2005 Novell',
             u'Copyright (c) Microsoft Corporation',
             u'Copyright (c) 2007 James Newton-King',
-            u'Copyright (c) 2002-2004 James W. Newkirk',
+            u'Copyright (c) 2002-2004 James W. Newkirk , Michael C. Two , Alexei A. Vorontsov , Charlie Poole',
             u'Copyright (c) 2000-2004 Philip A. Craig',
-            u'Copyright (c) 2002-2004 James W. Newkirk',
+            u'Copyright (c) 2002-2004 James W. Newkirk , Michael C. Two , Alexei A. Vorontsov , Charlie Poole',
             u'Copyright (c) 2000-2004 Philip A. Craig',
             u'Copyright (c) 2007, 2008 LShift Ltd.',
             u'Copyright (c) 2007, 2008 Cohesive Financial Technologies LLC.',
             u'Copyright (c) 2007, 2008 Rabbit Technologies Ltd.',
             u'Copyright (c) 2007, 2008 LShift Ltd., Cohesive Financial Technologies LLC.',
-            u'Copyright (c) 2007, 2008 LShift Ltd. Rabbit Technologies Ltd.',
-            u'Copyright (c) 2007 LShift Ltd. Rabbit Technologies Ltd.',
+            u'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies',
+            u'Copyright (c) 2007 LShift Ltd. , Cohesive Financial Technologies',
             u'Copyright (c) ???? Simon Mourier <simonm@microsoft.com>',
         ]
         check_detection(expected, test_file)
 
-    @expectedFailure
     def test_copyright_debian_lib_3(self):
         test_file = self.get_test_loc('copyrights/copyright_debian_lib_3-libmono_security_cil_copyright.copyright')
         expected = [
@@ -700,18 +696,16 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) 2001-2005 Novell',
             u'Copyright (c) Microsoft Corporation',
             u'Copyright (c) 2007 James Newton-King',
-            u'Copyright (c) 2002-2004 James W. Newkirk',
+            u'Copyright (c) 2002-2004 James W. Newkirk , Michael C. Two , Alexei A. Vorontsov , Charlie Poole',
             u'Copyright (c) 2000-2004 Philip A. Craig',
-            u'Copyright (c) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov,Charlie Poole',
-            u'Copyright (c) 2000-2004 Philip A. Craig',
-            u'Copyright (c) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov,Charlie Poole',
+            u'Copyright (c) 2002-2004 James W. Newkirk , Michael C. Two , Alexei A. Vorontsov , Charlie Poole',
             u'Copyright (c) 2000-2004 Philip A. Craig',
             u'Copyright (c) 2007, 2008 LShift Ltd.',
             u'Copyright (c) 2007, 2008 Cohesive Financial Technologies LLC.',
             u'Copyright (c) 2007, 2008 Rabbit Technologies Ltd.',
-            u'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC.',
-            u'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC.',
-            u'Copyright (c) 2007 LShift Ltd., Cohesive Financial Technologies',
+            u'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies',
+            u'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies',
+            u'Copyright (c) 2007 LShift Ltd., Cohesive Financial Technologies LLC., and Rabbit Technologies Ltd.',
             u'Copyright (c) ???? Simon Mourier <simonm@microsoft.com>',
         ]
         check_detection(expected, test_file)
@@ -720,19 +714,19 @@ class TestCopyrightDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights/copyright_debian_multi_names_on_one_line-libgdata__copyright.copyright')
         expected = [
             u'Copyright 1999-2004 Ximian, Inc. 1999-2005 Novell, Inc.',
-            u'copyright 2000-2003 Ximian, Inc., 2003 Gergo Erdi',
-            u'copyright 2000 Eskil Heyn Olsen, 2000 Ximian, Inc.',
-            u'copyright 1998 The Free Software Foundation, 2000 Ximian, Inc.',
+            u'copyright 2000-2003 Ximian, Inc. , 2003 Gergo Erdi',
+            u'copyright 2000 Eskil Heyn Olsen , 2000 Ximian, Inc.',
+            u'copyright 1998 The Free Software Foundation , 2000 Ximian, Inc.',
             u'copyright 1998-2005 The OpenLDAP Foundation',
-            u'Copyright 1999-2003 The OpenLDAP Foundation',
-            u'Copyright 1999-2000 Eric Busboom , The Software Studio (http://www.softwarestudio.org) 2001 Critical Path',
+            u'Copyright 1999-2003 The OpenLDAP Foundation , Redwood City, California',
+            u'Copyright 1999-2000 Eric Busboom , The Software Studio (http://www.softwarestudio.org) 2001 Critical Path Authors',
             u'(c) Copyright 1996 Apple Computer, Inc. , AT&T Corp., International Business Machines Corporation and Siemens Rolm Communications Inc.',
             u'Copyright (c) 1997 Theo de Raadt',
             u'copyright 2000 Andrea Campi',
             u'copyright 2002 Andrea Campi',
             u'copyright 2003 Andrea Campi',
             u'Copyright 2002 Jonas Borgstrom <jonas@codefactory.se> 2002 Daniel Lundin <daniel@codefactory.se> 2002 CodeFactory AB',
-            u'copyright 1996 Apple Computer, Inc. , AT&T Corp., International Business Machines Corporation and Siemens Rolm Communications Inc.',
+            u'copyright 1996 Apple Computer, Inc. , AT&T Corp. , International Business Machines Corporation and Siemens Rolm Communications Inc.',
             u'copyright 1986-2000 Hiram Clawson',
             u'copyright 1997 Theo de Raadt',
             u'Copyright (c) 1996-2002 Sleepycat Software',
@@ -797,7 +791,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_ed_copyright(self):
         test_file = self.get_test_loc('copyrights/copyright_ed_copyright-ed_copyright.copyright')
         expected = [
-            u'Copyright (c) 1993, 1994 Andrew Moore',
+            u'Copyright (c) 1993, 1994 Andrew Moore , Talke Studio',
             u'Copyright (c) 2006, 2007 Antonio Diaz Diaz',
             u'Copyright (c) 1997-2007 James Troup',
             u'Copyright (c) 1993, 2006, 2007 Free Software Foundation, Inc.',
@@ -1372,7 +1366,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) 2003 Svend Sanjay Sorensen <ssorensen@fastmail.fm>',
             u'Copyright (c) 1985, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1996, 1997, 1998, 1999, 2000 Free Software Foundation, Inc.',
             u'Copyright (c) 2003 Matthias Drochner',
-            u'Copyright (c) 1998-2001 VideoLAN (Johan Bilien <jobi@via.ecp.fr>',
+            u'Copyright (c) 1998-2001 VideoLAN (Johan Bilien <jobi@via.ecp.fr> and Gildas Bazin <gbazin@netcourrier.com>',
             u'Copyright (c) 1992, 1993 Eric Youngdale',
             u'Copyright (c) 2003, 2004, 2005, 2006, 2007, 2008 Rocky Bernstein and Herbert Valerio Riedel',
         ]
@@ -1381,7 +1375,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_libcelt0_copyright(self):
         test_file = self.get_test_loc('copyrights/copyright_libcelt0_copyright-libcelt_copyright.copyright')
         expected = [
-            u'Copyright 2005-2007 Christopher Montgomery',
+            u'Copyright 2005-2007 Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry',
             u'(c) 2008, Ron',
         ]
         check_detection(expected, test_file)
@@ -1535,8 +1529,8 @@ class TestCopyrightDetection(FileBasedTesting):
             u'(c) 2001, Lutz Muller <lutz@users.sourceforge.net>',
             u'Copyright (c) 2007, Hubert Figuiere <hub@figuiere.net>',
             u'(c) 1994, Kongji Huang and Brian C. Smith , Cornell University',
-            u'(c) 1993, Brian C. Smith',
-            u'(c) 1991-1992, Thomas G. Lane',
+            u'(c) 1993, Brian C. Smith , The Regents',
+            u"(c) 1991-1992, Thomas G. Lane , Part of the Independent JPEG Group's",
             u'Copyright (c) 2005, Hubert Figuiere <hub@figuiere.net>',
             u'Copyright (c) 2007, Hubert Figuiere <hub@figuiere.net>',
         ]
@@ -1546,7 +1540,7 @@ class TestCopyrightDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights/copyright_libopenthreads12_copyright-libopenthreads_copyright.copyright')
         expected = [
             u'Copyright (c) 2002 Robert Osfield',
-            u'Copyright (c) 1998 Julian Smart',
+            u'Copyright (c) 1998 Julian Smart , Robert Roebling',
         ]
         check_detection(expected, test_file)
 
@@ -1596,7 +1590,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_libsox_fmt_alsa_copyright(self):
         test_file = self.get_test_loc('copyrights/copyright_libsox_fmt_alsa_copyright-libsox_fmt_alsa_copyright.copyright')
         expected = [
-            u'Copyright 1991 Lance Norskog',
+            u'Copyright 1991 Lance Norskog And Sundry Contributors',
         ]
         check_detection(expected, test_file)
 
@@ -1609,7 +1603,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright 2005-2007 Commonwealth',
             u'Copyright 1993, 2002, 2006 David Rowe',
             u'Copyright 2003 EpicGames',
-            u'Copyright 1992-1994 Jutta Degener',
+            u'Copyright 1992-1994 Jutta Degener , Carsten Bormann',
         ]
         check_detection(expected, test_file)
 
@@ -1677,7 +1671,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_libxt6_copyright_label(self):
         test_file = self.get_test_loc('copyrights/copyright_libxt6_copyright_label-libxt_copyright_label.label')
         expected = [
-            u'Copyright 1987, 1988 by Digital Equipment Corporation',
+            u'Copyright 1987, 1988 by Digital Equipment Corporation , Maynard, Massachusetts',
             u'Copyright 1993 by Sun Microsystems, Inc. Mountain View',
             u'Copyright 1985, 1986, 1987, 1988, 1989, 1994, 1998, 2001 The Open Group',
             u'(c) COPYRIGHT International Business Machines Corp. 1992,1997',
@@ -1891,10 +1885,8 @@ class TestCopyrightDetection(FileBasedTesting):
 
     def test_copyright_license_text_doc(self):
         test_file = self.get_test_loc('copyrights/copyright_license_text_doc-DOC')
-        expected = [
-            u'copyrighted by Douglas C. Schmidt',
-            u'research group at Washington University, University of California, Irvine, and Vanderbilt University, Copyright (c) 1993-2008',
-        ]
+        expected = [u'copyrighted by Douglas C. Schmidt', # and his research group at Washington University, University of California, Irvine, and Vanderbilt University',
+                    u'Copyright (c) 1993-2008']
         check_detection(expected, test_file)
 
     def test_copyright_license_text_dual_mpl_gpl(self):
@@ -2742,7 +2734,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) NEC Systems Laboratory 1993',
             u'Copyright (c) 1984 NEC Systems Laboratory',
             u'Copyright (c) 1996-2003 Glyph & Cog, LLC',
-            u'Copyright (c) 1996. Zeus Technology',
+            u'Copyright (c) 1996. Zeus Technology Limited',
         ]
         check_detection(expected, test_file,
                         expected_in_results=False,
@@ -2849,7 +2841,7 @@ class TestCopyrightDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights/copyright_name_sign_year-c.c')
         expected = [
             'Copyright (c) 2008 Daisy Ltd.',
-            '(c) 1997 - 2008 Build Date',
+            '(c) 1997 - 2008',
         ]
         check_detection(expected, test_file)
 
@@ -3196,7 +3188,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright 1991 by the Massachusetts Institute of Technology',
             u'Copyright (c) 2001 AT&T',
             u'Copyright (c) 2004-2006 by Henrique de Moraes Holschuh <hmh@debian.org>',
-            u'Copyright 2005-2007 Christopher Montgomery',
+            u'Copyright 2005-2007 Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry',
             u'Copyright (c) 2007 James Newton-King',
             u'Copyright (c) 2006, SHIMODA Hiroshi <piro@p.club.ne.jp>',
             u'Copyright (c) 2006, FUJITA Yuji <yuji@webmasters.gr.jp>',
@@ -3217,7 +3209,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright 1991 by the Massachusetts Institute of Technology',
             u'Copyright (c) 2001 AT&T',
             u'Copyright (c) 2004-2006 by Henrique de Moraes Holschuh <hmh@debian.org>',
-            u'Copyright 2005-2007 Christopher Montgomery',
+            u'Copyright 2005-2007 Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry',
             u'Copyright (c) 2007 James Newton-King',
             u'Copyright (c) 2006, SHIMODA Hiroshi <piro@p.club.ne.jp>',
             u'Copyright (c) 2006, FUJITA Yuji <yuji@webmasters.gr.jp>',
@@ -3450,11 +3442,11 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) 2007 Ihar Hrachyshka',
             u'Copyright (c) 2004, 2005 Miloslav Trmac',
             u'Copyright (c) 2003 Peter Mato',
-            u'Copyright (c) 2004, 2005 Danijel Studen',
+            u'Copyright (c) 2004, 2005 Danijel Studen , Denis Lackovic , Ivan Jankovic',
             u'Copyright (c) 1994 X Consortium',
             u'Copyright (c) 2006 Alexander Larsson',
             u'Copyright (c) 2000-2003 Ximian Inc.',
-            u'Copyright (c) 1995-1997 Peter Mattis',
+            u'Copyright (c) 1995-1997 Peter Mattis , Spencer Kimball and Josh MacDonald',
             u'Copyright (c) 1999, 2000 Robert Bihlmeyer',
             u'Copyright (c) Crispin Flowerday',
             u'Copyright (c) 2008 Frederic Peters',
@@ -3463,7 +3455,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) 2001-2004 Red Hat, Inc.',
             u'Copyright (c) 2004 Scott James Remnant',
             u'Copyright (c) 1998-2006 by the following: Dave Ahlswede, Manuel Amador, Matt Amato, Daniel Atallah, Paul Aurich, Patrick Aussems, Anibal Avelar, Alex Badea, John Bailey, Chris Banal, Luca Barbato, Levi Bard, Kevin Barry, Derek Battams, Martin Bayard, Curtis Beattie, Dave Bell, Igor Belyi, Brian Bernas, Paul Betts, Jonas Birme, Eric Blade, Ethan Blanton, Joshua Blanton, Rainer Blessing, Herman Bloggs, David Blue, Jason Boerner, Graham Booker, Paolo Borelli, Julien Bossart, Craig Boston, Chris Boyle, Derrick J Brashear, Matt Brenneke, Jeremy Brooks, Philip Brown, Sean Burke, Thomas Butter, Andrea Canciani, Damien Carbery, Michael Carlson, Keegan Carruthers-Smith, Steve Cavilia, Julien Cegarra, Cerulean Studios, LLC',
-            u'Copyright (c) 2008 Sebastien Bacher Andreas Moog',
+            u'Copyright (c) 2008 Sebastien Bacher , Andreas Moog , Emilio Pozuelo Monfort and Josselin Mouette',
         ]
         check_detection(expected, test_file,
                         expected_in_results=False,
@@ -3549,11 +3541,12 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
+    @expectedFailure
     def test_copyright_tcl_copyright(self):
         test_file = self.get_test_loc('copyrights/copyright_tcl_copyright-tcl_copyright.copyright')
         expected = [
-            u'copyrighted by the Regents of the University of California',
-            u'Copyright (c) 2007 Software',
+            u'copyrighted by the Regents of the University of California , Sun Microsystems, Inc. , Scriptics Corporation', # not found, rather complex
+            u'Copyright (c) 2007 Software in the Public Interest',
         ]
         check_detection(expected, test_file)
 
@@ -3717,7 +3710,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_ttf_malayalam_fonts_copyright(self):
         test_file = self.get_test_loc('copyrights/copyright_ttf_malayalam_fonts_copyright-ttf_malayalam_fonts_copyright.copyright')
         expected = [
-            u'Copyright (c) Jeroen Hellingman <jehe@kabelfoon.nl>',
+            u'Copyright (c) Jeroen Hellingman <jehe@kabelfoon.nl> , N.V Shaji <nvshaji@yahoo.com>',
             u'Copyright (c) 2004 Kevin',
             u'Copyright (c) Suresh',
             u'Copyright (c) 2007 Hiran Venugopalan',

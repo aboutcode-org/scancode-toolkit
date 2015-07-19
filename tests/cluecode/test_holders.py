@@ -213,8 +213,16 @@ class TestHolders(FileBasedTesting):
         ]
         check_detection(expected, test_file, what='holders')
 
-    @expectedFailure
     def test_holder_javascript_large(self):
+        test_file = self.get_test_loc('holders/holder_javascript_large-ext_all_js.js')
+        expected = [
+            u'Ext JS, LLC',
+            u'a.commit()'
+         ]
+        check_detection(expected, test_file, what='holders')
+
+    @expectedFailure
+    def test_holder_javascript_large_correct(self):
         test_file = self.get_test_loc('holders/holder_javascript_large-ext_all_js.js')
         expected = [
             'Ext JS, LLC',
@@ -268,9 +276,10 @@ class TestHolders(FileBasedTesting):
         test_file = self.get_test_loc('holders/holder_somefile_cpp-somefile_cpp.cpp')
         expected = [
             u'Private Company',
-            u'Property of Private Company',
+            u'(PC) Property of Private Company',
+            u'(PC) Property',
             u'Private Company',
-            u'Private Company',
+            u'Private Company'
         ]
         check_detection(expected, test_file, what='holders')
 

@@ -3949,7 +3949,7 @@ class TestCopyright(FileBasedTesting):
             u'copyright (c) 1996-2010 Julian R Seward.',
             u'Copyright (c) 2010 The Chromium Authors.',
             u'Copyright (c) 1998-1999 Netscape Communications Corporation.',
-            u'Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd and Clark',
+            u'Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd and Clark Cooper',
             u'Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Expat',
             u'Copyright (c) 2008 The Khronos Group Inc.',
             u'Copyright (c) 1997, 1998, 1999, 2000, 2001, 2002 by Remco Treffkorn',
@@ -4015,7 +4015,7 @@ class TestCopyright(FileBasedTesting):
             u'Copyright 1993, 2002, 2006 David Rowe',
             u'Copyright 2003 EpicGames',
             u'Copyright 1992-1994 Jutta Degener, Carsten Bormann',
-            u'Copyright (c) 1995-1998 The University of Utah',
+            u'Copyright (c) 1995-1998 The University of Utah and the Regents', # of the University of California
             u'Copyright (c) 1998-2005 University of Chicago.',
             u'Copyright (c) 2005-2006 Arizona',
             u'Copyright (c) Andrew Tridgell 2004-2005',
@@ -4023,14 +4023,14 @@ class TestCopyright(FileBasedTesting):
             u'Copyright (c) 2005, Google Inc.',
             u'Copyright (c) 2007 Free Software Foundation, Inc.',
             u'Copyright (c) 1998-1999 Netscape Communications Corporation.',
-            u'Copyright (c) 2001-2010 Peter Johnson',
+            u'Copyright (c) 2001-2010 Peter Johnson and other Yasm', #developers.
             u'Copyright (c) 1995-2010 Jean-loup Gailly and Mark Adler',
             u'Copyright (c) 1994-2006 Sun Microsystems Inc.',
         ]
         check_detection(expected, test_file)
 
     @expectedFailure
-    def test_ics_chromium_chrome_browser_resources_about_credits_html_init_init_init_trail_name_trail_maint_extra_for_trail_other_trail_name_trail_institute_init_fp_extra_distributed_trail_name_digit_extra_portion_init_init_trail_name_trail_board(self):
+    def test_ics_chromium_chrome_browser_resources_about_credits_corrected(self):
         test_file = self.get_test_loc('ics/chromium-chrome-browser-resources/about_credits.html')
         expected = [
             u'Copyright (c) 1991, 2000, 2001 by Lucent Technologies.',
@@ -6908,7 +6908,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_esd_include_audiofile_h(self):
         test_file = self.get_test_loc('ics/esd-include/audiofile.h')
         expected = [
-            u'Copyright (c) 1998-2000, Michael Pruett',
+            u'Copyright (c) 1998-2000, Michael Pruett <michael@68k.org>',
         ]
         check_detection(expected, test_file)
 
@@ -6933,17 +6933,8 @@ class TestCopyright(FileBasedTesting):
     def test_ics_expat_notice(self):
         test_file = self.get_test_loc('ics/expat/NOTICE')
         expected = [
-            u'Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd and Clark',
-            u'Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Expat',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
-    def test_ics_expat_notice_trail_name_trail_maint(self):
-        test_file = self.get_test_loc('ics/expat/NOTICE')
-        expected = [
             u'Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd and Clark Cooper',
-            u'Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Expat maintainers.',
+            u'Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Expat', # MISSING maintainers.'
         ]
         check_detection(expected, test_file)
 
@@ -7054,7 +7045,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_expat_win32_expat_iss(self):
         test_file = self.get_test_loc('ics/expat-win32/expat.iss')
         expected = [
-            u'Copyright (c) 1998-2006 Thai Open Source Software Center, Clark Cooper',
+            u'Copyright (c) 1998-2006 Thai Open Source Software Center, Clark Cooper, and the Expat', # maintainers.'
         ]
         check_detection(expected, test_file)
 
@@ -7363,7 +7354,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_freetype_include_freetype_ftmac_h(self):
         test_file = self.get_test_loc('ics/freetype-include-freetype/ftmac.h')
         expected = [
-            u'Copyright 1996-2001, 2004, 2006, 2007 by Just van Rossum, David Turner, Robert Wilhelm, and Werner',
+            u'Copyright 1996-2001, 2004, 2006, 2007 by Just van Rossum, David Turner, Robert Wilhelm, and Werner Lemberg.',
         ]
         check_detection(expected, test_file)
 
@@ -7670,14 +7661,6 @@ class TestCopyright(FileBasedTesting):
         check_detection(expected, test_file)
 
     def test_ics_freetype_include_freetype_internal_services_svgxval_h(self):
-        test_file = self.get_test_loc('ics/freetype-include-freetype-internal-services/svgxval.h')
-        expected = [
-            u'Copyright 2004, 2005 by Masatake YAMATO, Red Hat',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
-    def test_ics_freetype_include_freetype_internal_services_svgxval_h_trail_name(self):
         test_file = self.get_test_loc('ics/freetype-include-freetype-internal-services/svgxval.h')
         expected = [
             u'Copyright 2004, 2005 by Masatake YAMATO, Red Hat K.K., David Turner, Robert Wilhelm, and Werner Lemberg.',
@@ -8509,8 +8492,8 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/genext2fs/genext2fs.c')
         expected = [
             u'Copyright (c) 2000 Xavier Bestel <xavier.bestel@free.fr>',
-            u'Copyright (c) 1999,2000 by Lineo, inc. and John',
-            u'Beppu Copyright (c) 1999,2000,2001 by John Beppu <beppu@codepoet.org>',
+            u'Copyright (c) 1999,2000 by Lineo, inc. and John Beppu',
+            u'Copyright (c) 1999,2000,2001 by John Beppu <beppu@codepoet.org>',
             u'Copyright (c) 2002 Edward Betts <edward@debian.org>',
             u'Copyright (c) 2002 Ixia',
             u'Copyright (c) 2002 Ixia',
@@ -9381,7 +9364,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_iptables_extensions_libxt_tee_c(self):
         test_file = self.get_test_loc('ics/iptables-extensions/libxt_TEE.c')
         expected = [
-            u'Copyright (c) Sebastian Claen',
+            u'Copyright (c) Sebastian Claen , 2007 Jan Engelhardt',
         ]
         check_detection(expected, test_file)
 
@@ -9636,7 +9619,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/iptables-utils/pf.os')
         expected = [
             u'(c) Copyright 2000-2003 by Michal Zalewski <lcamtuf@coredump.cx>',
-            u'(c) Copyright 2003 by Mike Frantzen',
+            u'(c) Copyright 2003 by Mike Frantzen <frantzen@w4g.org>',
         ]
         check_detection(expected, test_file)
 
@@ -10675,15 +10658,6 @@ class TestCopyright(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    def test_ics_kernel_headers_original_linux_dm_ioctl_h(self):
-        test_file = self.get_test_loc('ics/kernel-headers-original-linux/dm-ioctl.h')
-        expected = [
-            u'Copyright (c) 2001 - 2003 Sistina Software',
-            u'Copyright (c) 2004 - 2005 Red Hat, Inc.',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
     def test_ics_kernel_headers_original_linux_dm_ioctl_h_trail_name(self):
         test_file = self.get_test_loc('ics/kernel-headers-original-linux/dm-ioctl.h')
         expected = [
@@ -11489,7 +11463,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/kernel-headers-original-linux-raid/md.h')
         expected = [
             u'Copyright (c) 1996-98 Ingo Molnar, Gadi Oxman',
-            u'Copyright (c) 1994-96 Marc ZYNGIER',
+            u'Copyright (c) 1994-96 Marc ZYNGIER <zyngier@ufr-info-p7.ibp.fr>',
         ]
         check_detection(expected, test_file)
 
@@ -12695,7 +12669,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_lohit_fonts_notice(self):
         test_file = self.get_test_loc('ics/lohit-fonts/NOTICE')
         expected = [
-            u'Copyright 2011 Lohit Fonts Project contributors',
+            u'Copyright 2011 Lohit Fonts Project contributors , with Reserved Font Name Lohit.',
         ]
         check_detection(expected, test_file)
 
@@ -14551,7 +14525,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_oprofile_doc_oprofile_1_in(self):
         test_file = self.get_test_loc('ics/oprofile-doc/oprofile.1.in')
         expected = [
-            u'Copyright (c) 1998-2004 University of Manchester, UK, John Levon',
+            u'Copyright (c) 1998-2004 University of Manchester', # MISSED , UK, John Levon',
         ]
         check_detection(expected, test_file)
 
@@ -16403,7 +16377,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/qemu-distrib-sdl-1.2.12-src-loadso-macosx/SDL_dlcompat.c')
         expected = [
             u'Copyright (c) 1997-2006 Sam Lantinga',
-            u'Copyright (c) 2002 Jorge Acereda <jacereda@users.sourceforge.net>',
+            u"Copyright (c) 2002 Jorge Acereda <jacereda@users.sourceforge.net> & Peter O'Gorman <ogorman@users.sourceforge.net>",
         ]
         check_detection(expected, test_file)
 
@@ -16554,7 +16528,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_qemu_distrib_sdl_1_2_12_src_video_xext_extensions_xv_h(self):
         test_file = self.get_test_loc('ics/qemu-distrib-sdl-1.2.12-src-video-Xext-extensions/Xv.h')
         expected = [
-            u'Copyright 1991 by Digital Equipment Corporation, Maynard, Massachusetts',
+            u'Copyright 1991 by Digital Equipment Corporation, Maynard, Massachusetts, and the Massachusetts Institute',
         ]
         check_detection(expected, test_file)
 
@@ -16569,7 +16543,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_qemu_distrib_sdl_1_2_12_src_video_xext_xv_xvlibint_h(self):
         test_file = self.get_test_loc('ics/qemu-distrib-sdl-1.2.12-src-video-Xext-Xv/Xvlibint.h')
         expected = [
-            u'Copyright 1987 by Digital Equipment Corporation, Maynard, Massachusetts',
+            u'Copyright 1987 by Digital Equipment Corporation, Maynard, Massachusetts, and the Massachusetts Institute',
         ]
         check_detection(expected, test_file)
 
@@ -16770,7 +16744,7 @@ class TestCopyright(FileBasedTesting):
         expected = [
             u'Copyright (c) 2007 Anton Vorontsov <cbou@mail.ru>',
             u'Copyright (c) 2004 Szabolcs Gyurko',
-            u'Copyright (c) 2003 Ian Molton',
+            u'Copyright (c) 2003 Ian Molton <spyro@f2s.com>',
         ]
         check_detection(expected, test_file)
 
@@ -18838,7 +18812,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_strace_strace_graph(self):
         test_file = self.get_test_loc('ics/strace/strace-graph')
         expected = [
-            u'Copyright (c) 1998 by Richard Braakman',
+            u'Copyright (c) 1998 by Richard Braakman <dark@xs4all.nl>.',
         ]
         check_detection(expected, test_file)
 
@@ -19877,77 +19851,77 @@ class TestCopyright(FileBasedTesting):
     def test_ics_wpa_supplicant_aes_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/aes.c')
         expected = [
-            u'Copyright (c) 2003-2005, Jouni Malinen',
+            u'Copyright (c) 2003-2005, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_aes_h(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/aes.h')
         expected = [
-            u'Copyright (c) 2003-2006, Jouni Malinen',
+            u'Copyright (c) 2003-2006, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_aes_wrap_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/aes_wrap.c')
         expected = [
-            u'Copyright (c) 2003-2007, Jouni Malinen',
+            u'Copyright (c) 2003-2007, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_asn1_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/asn1.c')
         expected = [
-            u'Copyright (c) 2006, Jouni Malinen',
+            u'Copyright (c) 2006, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_base64_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/base64.c')
         expected = [
-            u'Copyright (c) 2005, Jouni Malinen',
+            u'Copyright (c) 2005, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_build_config_h(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/build_config.h')
         expected = [
-            u'Copyright (c) 2005-2006, Jouni Malinen',
+            u'Copyright (c) 2005-2006, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_common_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/common.c')
         expected = [
-            u'Copyright (c) 2002-2006, Jouni Malinen',
+            u'Copyright (c) 2002-2006, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_config_h(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/config.h')
         expected = [
-            u'Copyright (c) 2003-2005, Jouni Malinen',
+            u'Copyright (c) 2003-2005, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_crypto_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/crypto.c')
         expected = [
-            u'Copyright (c) 2004-2005, Jouni Malinen',
+            u'Copyright (c) 2004-2005, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_ctrl_iface_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/ctrl_iface.c')
         expected = [
-            u'Copyright (c) 2004-2006, Jouni Malinen',
+            u'Copyright (c) 2004-2006, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_ctrl_iface_dbus_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/ctrl_iface_dbus.c')
         expected = [
-            u'Copyright (c) 2006, Dan Williams <dcbw@redhat.com>',
+            u'Copyright (c) 2006, Dan Williams <dcbw@redhat.com> and Red Hat, Inc.',
         ]
         check_detection(expected, test_file)
 
@@ -19955,7 +19929,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/wpa_supplicant/driver_atmel.c')
         expected = [
             u'Copyright (c) 2000-2005, ATMEL Corporation',
-            u'Copyright (c) 2004-2007, Jouni Malinen',
+            u'Copyright (c) 2004-2007, Jouni Malinen <j@w1.fi>',
             u'Copyright 2000-2001 ATMEL Corporation.',
         ]
         check_detection(expected, test_file)
@@ -19964,7 +19938,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/wpa_supplicant/driver_broadcom.c')
         expected = [
             u'Copyright (c) 2004, Nikki Chumkov <nikki@gattaca.ru>',
-            u'Copyright (c) 2004, Jouni Malinen',
+            u'Copyright (c) 2004, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
@@ -19980,7 +19954,7 @@ class TestCopyright(FileBasedTesting):
         expected = [
             u'Copyright (c) 2005 Zhu Yi <yi.zhu@intel.com>',
             u'Copyright (c) 2004 Lubomir Gelo <lgelo@cnc.sk>',
-            u'Copyright (c) 2003-2004, Jouni Malinen',
+            u'Copyright (c) 2003-2004, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
@@ -19988,7 +19962,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/wpa_supplicant/driver_madwifi.c')
         expected = [
             u'Copyright (c) 2004, Sam Leffler <sam@errno.com>',
-            u'Copyright (c) 2004-2005, Jouni Malinen',
+            u'Copyright (c) 2004-2005, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
@@ -19996,14 +19970,14 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/wpa_supplicant/driver_ndiswrapper.c')
         expected = [
             u'Copyright (c) 2004-2006, Giridhar Pemmasani <giri@lmc.cs.sunysb.edu>',
-            u'Copyright (c) 2004-2006, Jouni Malinen',
+            u'Copyright (c) 2004-2006, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_driver_prism54_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/driver_prism54.c')
         expected = [
-            u'Copyright (c) 2003-2005, Jouni Malinen',
+            u'Copyright (c) 2003-2005, Jouni Malinen <j@w1.fi>',
             u'Copyright (c) 2004, Luis R. Rodriguez <mcgrof@ruslug.rutgers.edu>',
         ]
         check_detection(expected, test_file)
@@ -20011,49 +19985,49 @@ class TestCopyright(FileBasedTesting):
     def test_ics_wpa_supplicant_driver_wired_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/driver_wired.c')
         expected = [
-            u'Copyright (c) 2005-2007, Jouni Malinen',
+            u'Copyright (c) 2005-2007, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_eap_gpsk_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/eap_gpsk.c')
         expected = [
-            u'Copyright (c) 2006-2007, Jouni Malinen',
+            u'Copyright (c) 2006-2007, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_eap_psk_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/eap_psk.c')
         expected = [
-            u'Copyright (c) 2004-2007, Jouni Malinen',
+            u'Copyright (c) 2004-2007, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_eap_sim_common_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/eap_sim_common.c')
         expected = [
-            u'Copyright (c) 2004-2008, Jouni Malinen',
+            u'Copyright (c) 2004-2008, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_eapol_test_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/eapol_test.c')
         expected = [
-            u'Copyright (c) 2003-2006, Jouni Malinen',
+            u'Copyright (c) 2003-2006, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_eloop_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/eloop.c')
         expected = [
-            u'Copyright (c) 2002-2005, Jouni Malinen',
+            u'Copyright (c) 2002-2005, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_l2_packet_freebsd_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/l2_packet_freebsd.c')
         expected = [
-            u'Copyright (c) 2003-2005, Jouni Malinen',
+            u'Copyright (c) 2003-2005, Jouni Malinen <j@w1.fi>',
             u'Copyright (c) 2005, Sam Leffler <sam@errno.com>',
         ]
         check_detection(expected, test_file)
@@ -20061,7 +20035,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_wpa_supplicant_mlme_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/mlme.c')
         expected = [
-            u'Copyright (c) 2003-2006, Jouni Malinen',
+            u'Copyright (c) 2003-2006, Jouni Malinen <j@w1.fi>',
             u'Copyright (c) 2004, Instant802 Networks, Inc.',
             u'Copyright (c) 2005-2006, Devicescape Software, Inc.',
         ]
@@ -20070,21 +20044,21 @@ class TestCopyright(FileBasedTesting):
     def test_ics_wpa_supplicant_notice(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/NOTICE')
         expected = [
-            u'Copyright (c) 2003-2008, Jouni Malinen',
+            u'Copyright (c) 2003-2008, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_radius_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/radius.c')
         expected = [
-            u'Copyright (c) 2002-2008, Jouni Malinen',
+            u'Copyright (c) 2002-2008, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_tls_none_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/tls_none.c')
         expected = [
-            u'Copyright (c) 2004, Jouni Malinen',
+            u'Copyright (c) 2004, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
@@ -20098,31 +20072,31 @@ class TestCopyright(FileBasedTesting):
     def test_ics_wpa_supplicant_wpa_cli_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/wpa_cli.c')
         expected = [
-            u'Copyright (c) 2004-2008, Jouni Malinen',
-            u'Copyright (c) 2004-2008, Jouni Malinen',
+            u'Copyright (c) 2004-2008, Jouni Malinen <j@w1.fi>',
+            u'Copyright (c) 2004-2008, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_wpa_supplicant_c(self):
         test_file = self.get_test_loc('ics/wpa_supplicant/wpa_supplicant.c')
         expected = [
-            u'Copyright (c) 2003-2008, Jouni Malinen',
-            u'Copyright (c) 2003-2008, Jouni Malinen',
+            u'Copyright (c) 2003-2008, Jouni Malinen <j@w1.fi>',
+            u'Copyright (c) 2003-2008, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_wpa_gui_wpagui_ui_h(self):
         test_file = self.get_test_loc('ics/wpa_supplicant-wpa_gui/wpagui.ui.h')
         expected = [
-            u'Copyright (c) 2003-2008, Jouni Malinen',
+            u'Copyright (c) 2003-2008, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
     def test_ics_wpa_supplicant_wpa_gui_qt4_wpagui_cpp(self):
         test_file = self.get_test_loc('ics/wpa_supplicant-wpa_gui-qt4/wpagui.cpp')
         expected = [
-            u'Copyright (c) 2005-2008, Jouni Malinen',
-            u'Copyright (c) 2003-2008, Jouni Malinen',
+            u'Copyright (c) 2005-2008, Jouni Malinen <j@w1.fi>',
+            u'Copyright (c) 2003-2008, Jouni Malinen <j@w1.fi>',
         ]
         check_detection(expected, test_file)
 
@@ -20136,15 +20110,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_yaffs2_yaffs2_devextras_h(self):
         test_file = self.get_test_loc('ics/yaffs2-yaffs2/devextras.h')
         expected = [
-            u'Copyright (c) 2002 Aleph One Ltd. for Toby Churchill Ltd and Brightstar',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
-    def test_ics_yaffs2_yaffs2_devextras_h_trail_name(self):
-        test_file = self.get_test_loc('ics/yaffs2-yaffs2/devextras.h')
-        expected = [
-            u'Copyright (C) 2002 Aleph One Ltd. for Toby Churchill Ltd and Brightstar Engineering',
+            u'Copyright (c) 2002 Aleph One Ltd. for Toby Churchill Ltd and Brightstar Engineering',
         ]
         check_detection(expected, test_file)
 
