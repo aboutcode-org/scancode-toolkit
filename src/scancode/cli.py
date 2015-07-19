@@ -39,6 +39,7 @@ from scancode.api import get_copyrights
 from scancode.api import get_licenses
 from scancode.api import HtmlAppAssetCopyWarning
 from scancode.api import HtmlAppAssetCopyError
+import os
 
 
 info_text = '''
@@ -242,6 +243,7 @@ def scancode(ctx, input, output_file, extract, copyright, license, format, verbo
 
     The scan results are printed on terminal if <output_file> is not provided.
     """
+    abs_input = os.path.abspath(os.path.expanduser(input))
     scans = [copyright, license]
     if extract:
         if any(scans):
@@ -253,7 +255,7 @@ then run scancode again to scan the extracted files.''')
             ctx.exit(1)
 
         click.secho('Extracting archives...', fg='green')
-        extract_with_progress(input, verbose)
+        extract_with_progress(abs_input, verbose)
         click.secho('Extracting done.', fg='green')
         return
 
@@ -268,11 +270,11 @@ then run scancode again to scan the extracted files.''')
 
         if not verbose:
             # only display a progress bar
-            with click.progressbar(file_iter(input), show_pos=True) as files:
+            with click.progressbar(file_iter(abs_input), show_pos=True) as files:
                 for input_file in files:
                     results.append(scan_one(input_file, copyright, license, verbose))
         else:
-            for input_file in file_iter(input):
+            for input_file in file_iter(abs_input):
                 results.append(scan_one(input_file, copyright, license, verbose))
 
         if format == 'html':
