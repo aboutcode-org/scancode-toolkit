@@ -35,7 +35,10 @@ from licensedcode import index
 from licensedcode.models import get_all_rules
 from licensedcode import models
 
-LOG = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
+# import sys
+# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+# logger.setLevel(logging.DEBUG)
 
 # install pympler and set this to true to collect memory usage and other stats
 DEBUG = False
@@ -116,7 +119,7 @@ class LicenseIndex(object):
         """
         self.license_index = index.Index()
 
-        if DEBUG:
+        if DEBUG_PERF:
             start = time.time()
             print('LicenseIndex: Starting building index.')
 

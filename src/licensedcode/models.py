@@ -46,7 +46,11 @@ from textcode import analysis
 Model objects for license and rule persisted as YAML and text files.
 """
 
-LOG = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
+# import sys
+# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+# logger.setLevel(logging.DEBUG)
+
 
 # special magic key for rules pointing to non-license text
 not_a_license_key = 'not-a-license'

@@ -32,7 +32,10 @@ from textcode import analysis
 from textcode .analysis import Token
 
 
-LOG = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
+# import sys
+# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+# logger.setLevel(logging.DEBUG)
 
 
 DEBUG = False
