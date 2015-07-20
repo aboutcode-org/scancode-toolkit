@@ -51,7 +51,7 @@ class Token(object):
     """
     A Token has position info and a value.
     A position tracks:
-        * the absolute unigram position (start,end) that can overlap if tokens
+        * the absolute unigram position (start, end) that can overlap if tokens
           were ngrammed
         * the start line and start character on this start line
         * the end line and end character on this end line.
