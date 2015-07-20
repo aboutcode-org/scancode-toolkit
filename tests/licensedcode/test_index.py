@@ -74,13 +74,65 @@ class TestIndexBasedDetection(FileBasedTesting):
         idx._index_many(test_docs)
         unigrams_index = idx.indexes[1]
 
-        assert 212 == idx.get_tokens_count('bsd-new')
-        assert 233 == idx.get_tokens_count('bsd-no-mod')
+        assert 213 == idx.get_tokens_count('bsd-new')
+        assert 234 == idx.get_tokens_count('bsd-no-mod')
         assert 138 == len(unigrams_index)
 
         pos = Token(start=61, end=61, start_line=8, start_char=52, end_line=8, end_char=59, value=(u'minimum',))
         expected_posting = ('bsd-no-mod', [pos],)
         assert expected_posting == unigrams_index[('minimum',)].items()[0]
+
+    def test_get_tokens_count(self):
+        base = self.get_test_loc('index/tokens_count', copy=True)
+        docids = os.listdir(base)
+        idx = index.Index(ngram_len=3)
+        for docid in docids:
+            doc = text_lines(location=os.path.join(base, docid))
+            template = docid.startswith('tmpl')
+            idx.index_one(docid, doc, template=template)
+        indexes = [
+            (idx.indexes[1], set([('all',),
+                                  ('redistribution',),
+                                  ('for',),
+                                  ('is',)
+                                 ]),),
+            (idx.indexes[2], set([('is', 'allowed',),
+                                  ('all', 'and',),
+                                  ('redistribution', 'is',),
+                                  ('allowed', 'for',),
+                                 ]),),
+            (idx.indexes[3], set([('for', 'all', 'and',),
+                                  ('and', 'any', 'thing',),
+                                  ('is', 'allowed', 'for',),
+                                  ('all', 'and', 'any',),
+                                  ('redistribution', 'is', 'allowed',),
+                                  ('allowed', 'for', 'all',),
+                                 ]),)
+        ]
+
+        for idxi, expected_keys in indexes:
+            assert expected_keys == set(idxi.keys())
+
+        expected = {
+            'plain1': 1,
+            'plain2': 2,
+            'plain3': 3,
+            'plain4': 4,
+            'plain5': 5,
+            'tmpl10': 10,
+            'tmpl2': 2,
+            'tmpl3': 3,
+            'tmpl4': 4,
+            'tmpl5': 5,
+            'tmpl5_2': 5,
+            'tmpl6': 6,
+            'tmpl7': 7,
+            'tmpl8': 8,
+            'tmpl9': 9
+        }
+
+        result = {docid: idx.get_tokens_count(docid) for docid in docids}
+        assert expected == result
 
     def test_Index_index_one_unigrams(self):
         test_docs = self.get_test_docs('index/bsd', ['bsd-new', 'bsd-no-mod'])
@@ -89,12 +141,11 @@ class TestIndexBasedDetection(FileBasedTesting):
             idx.index_one(docid, doc)
         unigrams_index = idx.indexes[1]
 
-        assert 212 == idx.get_tokens_count('bsd-new')
-        assert 233 == idx.get_tokens_count('bsd-no-mod')
+        assert 213 == idx.get_tokens_count('bsd-new')
+        assert 234 == idx.get_tokens_count('bsd-no-mod')
         assert 138 == len(unigrams_index)
 
-        pos = Token(start=61, end=61, start_line=8, start_char=52,
-                    end_line=8, end_char=59, value=(u'minimum',))
+        pos = Token(start=61, end=61, start_line=8, start_char=52, end_line=8, end_char=59, value=(u'minimum',))
         expected_posting = ('bsd-no-mod', [pos],)
         assert expected_posting == unigrams_index[('minimum',)].items()[0]
 
@@ -111,8 +162,8 @@ class TestIndexBasedDetection(FileBasedTesting):
         for idxi, expected_len in indexes:
             assert expected_len == len(idxi)
 
-        assert 212 == idx.get_tokens_count('bsd-new')
-        assert 233 == idx.get_tokens_count('bsd-no-mod')
+        assert 213 == idx.get_tokens_count('bsd-new')
+        assert 234 == idx.get_tokens_count('bsd-no-mod')
 
     def test_Index_index_one_trigrams_with_templates(self):
         test_docs = self.get_test_docs('index/bsd_templates2')
@@ -128,8 +179,8 @@ class TestIndexBasedDetection(FileBasedTesting):
         for idxi, expected_len in indexes:
             assert expected_len == len(idxi)
 
-        assert 210 == idx.get_tokens_count('bsd-new')
-        assert 231 == idx.get_tokens_count('bsd-no-mod')
+        assert 211 == idx.get_tokens_count('bsd-new')
+        assert 232 == idx.get_tokens_count('bsd-no-mod')
 
     def get_test_index(self, docs, ngram_len=3, template=False):
         idx = index.Index(ngram_len)

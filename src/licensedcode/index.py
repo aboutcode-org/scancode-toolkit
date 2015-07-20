@@ -29,7 +29,7 @@ from functools import partial
 import logging
 
 from textcode import analysis
-from textcode .analysis import Token
+from textcode.analysis import Token
 
 
 logger = logging.getLogger(__name__)
@@ -171,9 +171,14 @@ class Index(object):
         for token in tokens:
             # token.value is a tuple of words, hence len(token.value) gets us
             # the index to populate for a certain ngram length
-            idx_for_ngramlen = len(token.value)
-            self.indexes[idx_for_ngramlen][token.value][docid].append(token)
-            self.set_tokens_count(docid, token.end)
+            token_ngramlen = len(token.value)
+            idx_for_ngramlen = self.indexes[token_ngramlen]
+            idx_for_ngramlen[token.value][docid].append(token)
+        # FIXME: this will  repeatedly reset the tokens count
+        # and this is likely incorrect or wasteful
+        # set the tokens count for a doc to the end of the last token
+        # the token start/end is zero-based. So we increment the count by one
+        self.set_tokens_count(docid, token.end + 1)
 
     def _index_many(self, docs, template=False):
         """
@@ -431,7 +436,8 @@ class Index(object):
                 tok_cnt = self.get_tokens_count(docid)
                 for ipos, qpos in matches:
                     # perfect matches length must match the idoc token count
-                    if tok_cnt == ipos.end:
+                    # the token count is 1-based, the end is zero-based
+                    if tok_cnt == ipos.end + 1:
                         kept_results[docid].append((ipos, qpos))
             return kept_results
 
