@@ -662,3 +662,5 @@ File NomosTestfiles/COMMERCIAL/commercial2.txt contains license(s) Intel(Commerc
 File NomosTestfiles/COMMERCIAL/commercial3.txt contains license(s) AndroidFraunhofer(Commercial)
 File NomosTestfiles/Beerware/hash_md5prime.c contains license(s) Beerware,RSA-Security
 File NomosTestfiles/TrueCrypt/truecrypt.txt contains license(s) TrueCrypt-3.0
+File NomosTestfiles/UnclassifiedLicense/README.win64.txt contains license(s) UnclassifiedLicense
+File NomosTestfiles/No_license_found/utf-8-bom.html contains license(s) No_license_found
