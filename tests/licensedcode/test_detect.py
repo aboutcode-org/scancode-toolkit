@@ -489,13 +489,13 @@ class TestDetectLicenseRuleTemplate(FileBasedTesting):
         # in this template text there are only 2 tokens between the two
         # templates: this is smaller than the ngram_len of 3 and can never be
         # caught by this length
-        tf1_text = '''Redistributions in binary form must
+        tf1_text = u'''Redistributions in binary form must
         {{}} reproduce the {{}}above copyright notice'''
         ttr = Rule(text_file=self.create_test_file(tf1_text), licenses=['mylicense'], template=True)
         index = detect.LicenseIndex([ttr])  # default to ngram_len=3
 
         # test
-        tf2 = '''Redistributions in binary form must nexB company
+        tf2 = u'''Redistributions in binary form must nexB company
         reproduce the word for word above copyright notice.'''.splitlines()
         matches = index.match(tf2)
         expected = Token(start=0, start_line=1, start_char=0, end_line=2, end_char=58, end=14)
@@ -505,13 +505,13 @@ class TestDetectLicenseRuleTemplate(FileBasedTesting):
     def test_detection_template_with_inter_gap_equal_to_ngram_len(self):
         # in this template there are 3 tokens between the two templates: len is
         # same as ngram_len of 3
-        tf1_text = '''Redistributions in binary form must
+        tf1_text = u'''Redistributions in binary form must
         {{}} reproduce the stipulated {{}}above copyright notice'''
         ttr = Rule(text_file=self.create_test_file(tf1_text), licenses=['mylicense'], template=True)
         index = detect.LicenseIndex([ttr])  # default to ngram_len=3
 
         # test
-        tf2_text = ('''Redistributions in binary form must nexB company
+        tf2_text = (u'''Redistributions in binary form must nexB company
         reproduce the stipulated word for word above copyright notice.'''
         .splitlines())
         matches = index.match(tf2_text)
@@ -522,13 +522,13 @@ class TestDetectLicenseRuleTemplate(FileBasedTesting):
     def test_detection_template_with_inter_gap_bigger_than_ngram_len(self):
         # setup in this template there are only 4 tokens between the two
         # templates: this is bigger than the ngram_len of 3
-        tf1_text = '''Redistributions in binary form must
+        tf1_text = u'''Redistributions in binary form must
         {{}} reproduce as is stipulated {{}}above copyright notice'''
         ttr = Rule(text_file=self.create_test_file(tf1_text), licenses=['mylicense'], template=True)
         index = detect.LicenseIndex([ttr])  # default to ngram_len=3
 
         # test
-        tf2_text = ('''Redistributions in binary form must nexB company
+        tf2_text = (u'''Redistributions in binary form must nexB company
         reproduce as is stipulated the word for word above copyright notice.'''
         .splitlines())
         matches = index.match(tf2_text)
@@ -562,7 +562,7 @@ class TestDetectLicenseRuleTemplate(FileBasedTesting):
         # test the index
         four_grams_index = index.license_index.indexes[3]
         self.assertEqual(211, len(four_grams_index))
-        self.assertTrue(('software', 'without', 'prior',) in four_grams_index)
+        self.assertTrue((u'software', u'without', u'prior',) in four_grams_index)
 
         # test
         tf8 = self.get_test_loc('detect/templates/license8.txt')

@@ -190,11 +190,11 @@ class TestIndexBasedDetection(FileBasedTesting):
     def test_Index_match_simple(self):
         test_docs = self.get_test_docs('index/bsd')
         idx = self.get_test_index(test_docs, ngram_len=1)
-        test_doc = self.get_test_loc('index/querysimple')
+        test_qdoc = self.get_test_loc('index/querysimple')
         expected = {
             'bsd-new':
-                [(Token(start=0, start_line=0, start_char=0, end_line=6, end_char=753, end=211),
-                  Token(start=0, start_line=4, start_char=0, end_line=12, end_char=607, end=211))
+                [(Token(start=0, start_line=0, start_char=0, end_line=6, end_char=753, end=212),
+                  Token(start=0, start_line=4, start_char=0, end_line=12, end_char=607, end=212))
                 ],
             'bsd-no-mod':
                 [(Token(start=0, start_line=0, start_char=0, end_line=0, end_char=49, end=7),
@@ -230,7 +230,7 @@ class TestIndexBasedDetection(FileBasedTesting):
                  ]
         }
 
-        test = dict(idx.match(test_doc, perfect=False))
+        test = dict(idx.match(text_lines(test_qdoc), perfect=True))
         for k, val in test.items():
             assert expected[k] == val
 
@@ -261,11 +261,11 @@ class TestIndexBasedDetection(FileBasedTesting):
             assert expected == tst
 
     def test_Index_match_ngrams_perfect_minimalist(self):
-        idoc = ['name is joker, name is joker']
+        idoc = [u'name is joker, name is joker']
         idx = index.Index(ngram_len=3)
         idx.index_one('tst', text_lines(idoc), template=False)
 
-        qdoc = ['Hi my name is joker, name is joker yes.']
+        qdoc = [u'Hi my name is joker, name is joker yes.']
         expected = {
             'tst': [
                 (Token(start=0, start_line=0, start_char=0, end_line=0, end_char=28, end=5),
@@ -291,16 +291,16 @@ class TestIndexBasedDetection(FileBasedTesting):
         }
         test = dict(idx.match(text_lines(test_qdoc), perfect=True))
 
-        self.assertNotEqual({}, test)
+        assert {} != test
         for k, val in test.items():
             assert expected[k] == val
 
     def test_Index_match_ngrams_templates_perfect_minimalist(self):
-        idoc = ['name is joker, {{}} name is joker']
+        idoc = [u'name is joker, {{}} name is joker']
         idx = index.Index(ngram_len=3)
         idx.index_one('tst', text_lines(idoc), template=True)
 
-        qdoc = ['Hi my name is joker the joker name is joker yes.']
+        qdoc = [u'Hi my name is joker the joker name is joker yes.']
         expected = {
             'tst': [
                 (Token(start=0, start_line=0, start_char=0, end_line=0, end_char=33, end=5),
