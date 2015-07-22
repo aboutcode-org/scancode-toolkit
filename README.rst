@@ -215,9 +215,9 @@ https://github.com/nexB/scancode-toolkit/releases/latest
 
 Un-installation
 ===============
-*Delete the directory in which you extracted ScanCode.
-*Delete any temporary files created in your system temp directory under a 
- scancode_<xxx> directory.
+* Delete the directory in which you extracted ScanCode.
+* Delete any temporary files created in your system temp directory under a
+  scancode_<xxx> directory.
 
 
 
