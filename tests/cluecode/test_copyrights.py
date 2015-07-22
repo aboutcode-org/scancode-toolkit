@@ -254,6 +254,14 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
+    def test_copyright_apostrophe_in_name(self):
+        test_file = self.get_test_loc('copyrights/copyright_with_apos.txt')
+        expected = [
+            u"Copyright Marco d'Itri <md@Linux.IT>",
+            u"Copyright Marco d'Itri",
+        ]
+        check_detection(expected, test_file)
+
     def test_copyright_adler_inflate_c(self):
         test_file = self.get_test_loc('copyrights/copyright_adler_inflate_c-inflate_c.c')
         expected = [

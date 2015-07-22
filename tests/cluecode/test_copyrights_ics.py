@@ -10913,14 +10913,6 @@ class TestCopyright(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    def test_ics_kernel_headers_original_linux_loop_h(self):
-        test_file = self.get_test_loc('ics/kernel-headers-original-linux/loop.h')
-        expected = [
-            u'Copyright 1993 by Theodore',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
     def test_ics_kernel_headers_original_linux_loop_h_trail_name(self):
         test_file = self.get_test_loc('ics/kernel-headers-original-linux/loop.h')
         expected = [
@@ -11169,18 +11161,10 @@ class TestCopyright(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    def test_ics_kernel_headers_original_linux_serial_reg_h(self):
-        test_file = self.get_test_loc('ics/kernel-headers-original-linux/serial_reg.h')
-        expected = [
-            u'Copyright (c) 1992, 1994 by Theodore',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
     def test_ics_kernel_headers_original_linux_serial_reg_h_trail_name(self):
         test_file = self.get_test_loc('ics/kernel-headers-original-linux/serial_reg.h')
         expected = [
-            u"Copyright (c) 1992, 1994 by Theodore T'so",
+            u"Copyright (c) 1992, 1994 by Theodore Ts'o.",
         ]
         check_detection(expected, test_file)
 
@@ -15236,15 +15220,6 @@ class TestCopyright(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    def test_ics_ppp_pppd_plugins_rp_pppoe_pppoe_discovery_c(self):
-        test_file = self.get_test_loc('ics/ppp-pppd-plugins-rp-pppoe/pppoe-discovery.c')
-        expected = [
-            u'Copyright (c) 2000-2001 by Roaring Penguin Software Inc.',
-            u'Copyright (c) 2004 Marco',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
     def test_ics_ppp_pppd_plugins_rp_pppoe_pppoe_discovery_c_trail_name(self):
         test_file = self.get_test_loc('ics/ppp-pppd-plugins-rp-pppoe/pppoe-discovery.c')
         expected = [

@@ -39,9 +39,9 @@ from cluecode import copyrights_hint
 
 
 logger = logging.getLogger(__name__)
-# import sys
-# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-# logger.setLevel(logging.DEBUG)
+import sys
+logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+logger.setLevel(logging.DEBUG)
 
 
 """
@@ -208,9 +208,11 @@ patterns = [
     # proper noun with some separator and trailing comma
     (r"^[A-Z]+[.][A-Z][a-z]+[,]?$", 'NNP'),
 
-    # proper noun with apostrophe ': D'Orleans, D'Arcy
-    # FIXME: we do not catch T'so: adding ? after second cap
-    (r"^[A-Z]['][A-Z]?[a-z]+[,]?$", 'NNP'),
+    # proper noun with apostrophe ': D'Orleans, D'Arcy, T'so, Ts'o
+    (r"^[A-Z][[a-z]?['][A-Z]?[a-z]+[,.]?$", 'NNP'),
+
+    # proper noun with apostrophe ': d'Itri
+    (r"^[a-z]['][A-Z]?[a-z]+[,\.]?$", 'NNP'),
 
     # all CAPS word, at least 1 char long such as MIT, including an optional trailing comma or dot
     (r'^[A-Z0-9]+[,]?$', 'CAPS'),
@@ -274,6 +276,7 @@ grammar = """
     NAME: {<NNP|PN>+ <NNP>+}
     NAME: {<NNP> <PN>? <NNP>+}
     NAME: {<NNP> <NNP>}
+    NAME: {<NNP> <NN> <EMAIL>}
     NAME: {<NNP> <PN|VAN>? <PN|VAN>? <NNP>}
     NAME: {<NNP> <NN> <NNP>}
     NAME: {<NNP> <COMMIT>}
@@ -412,6 +415,9 @@ grammar = """
     AUTHOR: {<NAME2>+}
     AUTHOR: {<AUTHOR> <CC> <NN>? <AUTH>}
     AUTHOR: {<BY> <EMAIL>}
+
+    # found in some rare cases with a long list of authors.
+    COPYRIGHT: {<COPY> <BY> <AUTHOR>+ <YR-RANGE>*}
     """
 
 
