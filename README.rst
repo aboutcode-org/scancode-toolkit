@@ -293,9 +293,9 @@ How to add a new license detection rule?
 ========================================
 A license detection rule is a pair of files:
 
- * a plain text rule file that is typically a variant of a license text, notice or license mention.
- * a small text data file (in YAML format) documenting which license(s) should be detected for 
-   the rule text. 
+* a plain text rule file that is typically a variant of a license text, notice or license mention.
+* a small text data file (in YAML format) documenting which license(s) should be detected for 
+  the rule text. 
 
 To add new rule, you need to pick a unique base file name. As a convention we like to include
 the license key(s) that should be detected in that name to make it more descriptive.
