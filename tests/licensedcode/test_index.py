@@ -190,7 +190,7 @@ class TestIndexBasedDetection(FileBasedTesting):
     def test_Index_match_simple(self):
         test_docs = self.get_test_docs('index/bsd')
         idx = self.get_test_index(test_docs, ngram_len=1)
-        test_qdoc = self.get_test_loc('index/querysimple')
+        test_query_doc = self.get_test_loc('index/querysimple')
         expected = {
             'bsd-new':
                 [(Token(start=0, start_line=0, start_char=0, end_line=6, end_char=753, end=212),
@@ -230,14 +230,14 @@ class TestIndexBasedDetection(FileBasedTesting):
                  ]
         }
 
-        test = dict(idx.match(text_lines(test_qdoc), perfect=True))
+        test = dict(idx.match(text_lines(test_query_doc), perfect=True))
         for k, val in test.items():
             assert expected[k] == val
 
     def test_Index_match_unigrams_perfect(self):
         test_docs = self.get_test_docs('index/bsd')
         idx = self.get_test_index(test_docs, ngram_len=1, template=False)
-        test_qdoc = self.get_test_loc('index/queryperfect')
+        test_query_doc = self.get_test_loc('index/queryperfect')
 
         expected = {
             'bsd-new': [
@@ -246,42 +246,42 @@ class TestIndexBasedDetection(FileBasedTesting):
             ]
         }
 
-        test = dict(idx.match(text_lines(test_qdoc), perfect=True))
+        test = dict(idx.match(text_lines(test_query_doc), perfect=True))
 
         self.assertNotEqual({}, test)
         for k, val in test.items():
             assert expected[k] == val
 
-        with codecs.open(test_qdoc, encoding='utf-8') as td:
+        with codecs.open(test_query_doc, encoding='utf-8') as td:
             actual = td.read().splitlines(True)
             expected = u''.join(actual[5:-2])[:-2]
             query_match_pos = test['bsd-new'][0][-1]
-            tst = analysis.doc_subset(text_lines(location=test_qdoc), query_match_pos)
+            tst = analysis.doc_subset(text_lines(location=test_query_doc), query_match_pos)
             tst = u''.join(tst)
             assert expected == tst
 
     def test_Index_match_ngrams_perfect_minimalist(self):
-        idoc = [u'name is joker, name is joker']
+        index_doc = [u'name is joker, name is joker']
         idx = index.Index(ngram_len=3)
-        idx.index_one('tst', text_lines(idoc), template=False)
+        idx.index_one('tst', text_lines(index_doc), template=False)
 
-        qdoc = [u'Hi my name is joker, name is joker yes.']
+        query_doc = [u'Hi my name is joker, name is joker yes.']
         expected = {
             'tst': [
                 (Token(start=0, start_line=0, start_char=0, end_line=0, end_char=28, end=5),
                  Token(start=2, start_line=0, start_char=6, end_line=0, end_char=34, end=7))
             ]
         }
-        test = dict(idx.match(qdoc, perfect=True))
+        test = dict(idx.match(query_doc, perfect=True))
 
         self.assertNotEqual({}, test)
         for k, val in test.items():
             assert expected[k] == val
 
-    def test_Index_match_ngrams_perfect_single_idoc_in_index_minimal(self):
+    def test_Index_match_ngrams_perfect_single_index_doc_in_index_minimal(self):
         test_docs = self.get_test_docs('index/mini')
         idx = self.get_test_index(test_docs, ngram_len=3, template=False)
-        test_qdoc = self.get_test_loc('index/queryperfect-mini')
+        test_query_doc = self.get_test_loc('index/queryperfect-mini')
 
         expected = {
             'bsd-new': [
@@ -289,34 +289,34 @@ class TestIndexBasedDetection(FileBasedTesting):
                  Token(start=1, start_line=2, start_char=0, end_line=2, end_char=94, end=14))
             ]
         }
-        test = dict(idx.match(text_lines(test_qdoc), perfect=True))
+        test = dict(idx.match(text_lines(test_query_doc), perfect=True))
 
         assert {} != test
         for k, val in test.items():
             assert expected[k] == val
 
     def test_Index_match_ngrams_templates_perfect_minimalist(self):
-        idoc = [u'name is joker, {{}} name is joker']
+        index_doc = [u'name is joker, {{}} name is joker']
         idx = index.Index(ngram_len=3)
-        idx.index_one('tst', text_lines(idoc), template=True)
+        idx.index_one('tst', text_lines(index_doc), template=True)
 
-        qdoc = [u'Hi my name is joker the joker name is joker yes.']
+        query_doc = [u'Hi my name is joker the joker name is joker yes.']
         expected = {
             'tst': [
                 (Token(start=0, start_line=0, start_char=0, end_line=0, end_char=33, end=5),
                  Token(start=2, start_line=0, start_char=6, end_line=0, end_char=43, end=9))
             ]
         }
-        test = dict(idx.match(text_lines(qdoc), perfect=True))
+        test = dict(idx.match(text_lines(query_doc), perfect=True))
 
         self.assertNotEqual({}, test)
         for k, val in test.items():
             assert expected[k] == val
 
-    def test_Index_match_ngrams_template_perfect_multi_idoc_in_index(self):
+    def test_Index_match_ngrams_template_perfect_multi_index_doc_in_index(self):
         test_docs = self.get_test_docs('index/bsd_templates')
         idx = self.get_test_index(test_docs, ngram_len=3, template=True)
-        test_qdoc = self.get_test_loc('index/queryperfect_single_template')
+        test_query_doc = self.get_test_loc('index/queryperfect_single_template')
 
         expected = {
             'bsd-new':[
@@ -325,7 +325,7 @@ class TestIndexBasedDetection(FileBasedTesting):
             ]
         }
 
-        test = dict(idx.match(text_lines(test_qdoc), perfect=True))
+        test = dict(idx.match(text_lines(test_query_doc), perfect=True))
 
         self.assertNotEqual({}, test)
         for k, val in test.items():

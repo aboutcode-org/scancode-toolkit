@@ -69,8 +69,8 @@ def detect_license(location=None, perfect=True):
         # yielding the default license if provided
         for detected_license in match.rule.licenses:
             yield (detected_license,
-                   match.qpos.start_line, match.qpos.end_line,
-                   match.qpos.start_char, match.qpos.end_char,
+                   match.query_position.start_line, match.query_position.end_line,
+                   match.query_position.start_char, match.query_position.end_char,
                    match.rule.identifier,
                    match.score,)
 
@@ -160,8 +160,8 @@ class LicenseIndex(object):
         for rule_id, matched_pos in matches.items():
             rule = self.rules_by_id[rule_id]
             for match in matched_pos:
-                ipos, qpos = match
-                lmatch = LicenseMatch(rule, qpos, ipos, score=100)
+                index_position, query_position = match
+                lmatch = LicenseMatch(rule, query_position, index_position, score=100)
                 license_matches.append(lmatch)
         return filter_matches(license_matches)
 
@@ -185,20 +185,20 @@ class LicenseMatch(object):
      - the span of the matched region: start and end positions of the analyzed
        text where the rule was matched.
 
-     - ipos and qpos: the detailed position Token of the match and matched to texts
+     - index_position and query_position: the detailed position Token of the match and matched to texts
      - score: a float normalized between 0 and 100. Higher means better.
        Exact match score is always 100.
     """
 
-    def __init__(self, rule, qpos, ipos=None, score=0):
+    def __init__(self, rule, query_position, index_position=None, score=0):
         self.rule = rule
 
         # pos matched, for reference (such as displaying matches)
-        self.ipos = increment_line_numbers(ipos)
-        self.qpos = increment_line_numbers(qpos)
+        self.index_position = increment_line_numbers(index_position)
+        self.query_position = increment_line_numbers(query_position)
 
         # position span
-        self.span = Span(qpos.start, qpos.end)
+        self.span = Span(query_position.start, query_position.end)
         self.score = score
 
     def __repr__(self):

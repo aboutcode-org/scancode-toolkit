@@ -45,103 +45,103 @@ class TestLicenseMatch(FileBasedTesting):
 
     def test_single_contained_matche_is_filtered(self):
         r1 = Rule(licenses=['apache-2.0', 'gpl'])
-        m1 = LicenseMatch(rule=r1, qpos=analysis.Token(start=0, end=5))
-        contained = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=4))
-        m5 = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=6))
+        m1 = LicenseMatch(rule=r1, query_position=analysis.Token(start=0, end=5))
+        contained = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=4))
+        m5 = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=6))
 
         test = detect.filter_matches([m1, contained, m5])
         self.assertEqual([m1, m5], test)
 
     def test_multiple_contained_matches_are_filtered(self):
         r1 = Rule(licenses=['apache-2.0', 'gpl'])
-        m1 = LicenseMatch(rule=r1, qpos=analysis.Token(start=0, end=5))
-        contained1 = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=2))
-        contained2 = LicenseMatch(rule=r1, qpos=analysis.Token(start=3, end=4))
-        m5 = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=6))
+        m1 = LicenseMatch(rule=r1, query_position=analysis.Token(start=0, end=5))
+        contained1 = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=2))
+        contained2 = LicenseMatch(rule=r1, query_position=analysis.Token(start=3, end=4))
+        m5 = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=6))
 
         test = detect.filter_matches([m1, contained1, contained2, m5])
         self.assertEqual([m1, m5], test)
 
     def test_multiple_nested_contained_matches_are_filtered(self):
         r1 = Rule(licenses=['apache-2.0', 'gpl'])
-        m1 = LicenseMatch(rule=r1, qpos=analysis.Token(start=0, end=5))
-        contained = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=4))
-        in_contained = LicenseMatch(rule=r1, qpos=analysis.Token(start=2, end=3))
-        m5 = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=6))
+        m1 = LicenseMatch(rule=r1, query_position=analysis.Token(start=0, end=5))
+        contained = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=4))
+        in_contained = LicenseMatch(rule=r1, query_position=analysis.Token(start=2, end=3))
+        m5 = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=6))
 
         test = detect.filter_matches([m1, contained, in_contained, m5])
         self.assertEqual([m1, m5], test)
 
     def test_overlapping_matches_are_filtered(self):
         r1 = Rule(licenses=['apache-2.0', 'gpl'])
-        m1 = LicenseMatch(rule=r1, qpos=analysis.Token(start=0, end=5))
-        same_span = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=6))
-        same_span_too = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=6))
+        m1 = LicenseMatch(rule=r1, query_position=analysis.Token(start=0, end=5))
+        same_span = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=6))
+        same_span_too = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=6))
 
         test = detect.filter_matches([m1, same_span, same_span_too])
         self.assertEqual([m1, same_span], test)
 
     def test_contiguous_non_overlapping_matches_are_not_filtered(self):
         r1 = Rule(licenses=['apache-2.0', 'gpl'])
-        m1 = LicenseMatch(rule=r1, qpos=analysis.Token(start=0, end=2))
-        m2 = LicenseMatch(rule=r1, qpos=analysis.Token(start=3, end=6))
-        m5 = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=6))
+        m1 = LicenseMatch(rule=r1, query_position=analysis.Token(start=0, end=2))
+        m2 = LicenseMatch(rule=r1, query_position=analysis.Token(start=3, end=6))
+        m5 = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=6))
 
         self.assertEqual([m1, m5], detect.filter_matches([m1, m2, m5]))
 
     def test_non_contiguous_matches_are_not_filtered(self):
         r1 = Rule(licenses=['apache-2.0', 'gpl'])
-        m1 = LicenseMatch(rule=r1, qpos=analysis.Token(start=0, end=2))
-        m2 = LicenseMatch(rule=r1, qpos=analysis.Token(start=4, end=6))
-        m5 = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=6))
+        m1 = LicenseMatch(rule=r1, query_position=analysis.Token(start=0, end=2))
+        m2 = LicenseMatch(rule=r1, query_position=analysis.Token(start=4, end=6))
+        m5 = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=6))
 
         self.assertEqual([m1, m5], detect.filter_matches([m1, m2, m5]))
 
     def test_non_contiguous_or_overlapping_contained_matches_are_filtered(self):
         r1 = Rule(licenses=['apache-2.0', 'gpl'])
-        m1 = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=2))
-        m2 = LicenseMatch(rule=r1, qpos=analysis.Token(start=3, end=6))
-        m3 = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=6))
-        m4 = LicenseMatch(rule=r1, qpos=analysis.Token(start=0, end=7))
-        m5 = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=6))
+        m1 = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=2))
+        m2 = LicenseMatch(rule=r1, query_position=analysis.Token(start=3, end=6))
+        m3 = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=6))
+        m4 = LicenseMatch(rule=r1, query_position=analysis.Token(start=0, end=7))
+        m5 = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=6))
 
         self.assertEqual([m4], detect.filter_matches([m1, m2, m3, m4, m5]))
 
     def test_non_contiguous_or_overlapping_contained_matches_touching_boundaries_are_filtered(self):
         r1 = Rule(licenses=['apache-2.0', 'gpl'])
-        m1 = LicenseMatch(rule=r1, qpos=analysis.Token(start=0, end=2))
-        m2 = LicenseMatch(rule=r1, qpos=analysis.Token(start=3, end=7))
-        m3 = LicenseMatch(rule=r1, qpos=analysis.Token(start=0, end=6))
-        m6 = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=7))
-        m4 = LicenseMatch(rule=r1, qpos=analysis.Token(start=0, end=7))
-        m5 = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=6))
+        m1 = LicenseMatch(rule=r1, query_position=analysis.Token(start=0, end=2))
+        m2 = LicenseMatch(rule=r1, query_position=analysis.Token(start=3, end=7))
+        m3 = LicenseMatch(rule=r1, query_position=analysis.Token(start=0, end=6))
+        m6 = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=7))
+        m4 = LicenseMatch(rule=r1, query_position=analysis.Token(start=0, end=7))
+        m5 = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=6))
 
         self.assertEqual([m4], detect.filter_matches([m1, m2, m3, m4, m5, m6]))
 
     def test_matches_with_same_span_are_kept_if_licenses_are_different(self):
         r1 = Rule(licenses=['apache-2.0'])
-        m1 = LicenseMatch(rule=r1, qpos=analysis.Token(start=0, end=2))
+        m1 = LicenseMatch(rule=r1, query_position=analysis.Token(start=0, end=2))
         r2 = Rule(licenses=['apache-1.1'])
-        m2 = LicenseMatch(rule=r2, qpos=analysis.Token(start=0, end=2))
-        m5 = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=6))
+        m2 = LicenseMatch(rule=r2, query_position=analysis.Token(start=0, end=2))
+        m5 = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=6))
 
         self.assertEqual([m1, m2, m5], detect.filter_matches([m1, m2, m5]))
 
     def test_matches_with_same_span_are_filtered_if_licenses_are_the_same(self):
         r1 = Rule(licenses=['apache-2.0'])
-        m1 = LicenseMatch(rule=r1, qpos=analysis.Token(start=0, end=2))
+        m1 = LicenseMatch(rule=r1, query_position=analysis.Token(start=0, end=2))
         r2 = Rule(licenses=['apache-2.0'])
-        m2 = LicenseMatch(rule=r2, qpos=analysis.Token(start=0, end=2))
-        m5 = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=6))
+        m2 = LicenseMatch(rule=r2, query_position=analysis.Token(start=0, end=2))
+        m5 = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=6))
 
         self.assertEqual([m1, m5], detect.filter_matches([m1, m2, m5]))
 
     def test_matches_with_same_span_are_filtered_if_licenses_are_the_same2(self):
         r1 = Rule(licenses=['apache-2.0', 'gpl'])
-        m1 = LicenseMatch(rule=r1, qpos=analysis.Token(start=0, end=2))
+        m1 = LicenseMatch(rule=r1, query_position=analysis.Token(start=0, end=2))
         r2 = Rule(licenses=['gpl', 'apache-2.0'])
-        m2 = LicenseMatch(rule=r2, qpos=analysis.Token(start=0, end=2))
-        m5 = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=6))
+        m2 = LicenseMatch(rule=r2, query_position=analysis.Token(start=0, end=2))
+        m5 = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=6))
 
         self.assertEqual([m1, m5], detect.filter_matches([m1, m2, m5]))
 
@@ -149,39 +149,39 @@ class TestLicenseMatch(FileBasedTesting):
         r1 = Rule(licenses=['apache-1.1'])
         r2 = Rule(licenses=['gpl', 'apache-2.0'])
 
-        m1 = LicenseMatch(rule=r1, qpos=analysis.Token(start=0, end=10))
-        m2 = LicenseMatch(rule=r1, qpos=analysis.Token(start=1, end=6))
+        m1 = LicenseMatch(rule=r1, query_position=analysis.Token(start=0, end=10))
+        m2 = LicenseMatch(rule=r1, query_position=analysis.Token(start=1, end=6))
 
-        m3 = LicenseMatch(rule=r2, qpos=analysis.Token(start=5, end=15))
+        m3 = LicenseMatch(rule=r2, query_position=analysis.Token(start=5, end=15))
 
         self.assertEqual([m1, m3], detect.filter_matches([m1, m2, m3]))
 
     def test_match_is_same(self):
         r1 = Rule(licenses=['apache-2.0', 'gpl'])
-        m1 = LicenseMatch(rule=r1, qpos=analysis.Token(start=0, end=2))
+        m1 = LicenseMatch(rule=r1, query_position=analysis.Token(start=0, end=2))
         r2 = Rule(licenses=['gpl', 'apache-2.0'])
-        m2 = LicenseMatch(rule=r2, qpos=analysis.Token(start=0, end=2))
+        m2 = LicenseMatch(rule=r2, query_position=analysis.Token(start=0, end=2))
 
         self.assertTrue(m1.is_same(m2))
         self.assertTrue(m2.is_same(m1))
 
     def test_match_is_not_same(self):
         r1 = Rule(licenses=['apache-1.0', 'gpl'])
-        m1 = LicenseMatch(rule=r1, qpos=analysis.Token(start=0, end=2))
+        m1 = LicenseMatch(rule=r1, query_position=analysis.Token(start=0, end=2))
         r2 = Rule(licenses=['gpl', 'apache-2.0'])
-        m2 = LicenseMatch(rule=r2, qpos=analysis.Token(start=0, end=2))
+        m2 = LicenseMatch(rule=r2, query_position=analysis.Token(start=0, end=2))
 
         self.assertFalse(m1.is_same(m2))
         self.assertFalse(m2.is_same(m1))
 
         r3 = Rule(licenses=['apache-1.0', 'gpl'])
-        m3 = LicenseMatch(rule=r3, qpos=analysis.Token(start=0, end=2))
+        m3 = LicenseMatch(rule=r3, query_position=analysis.Token(start=0, end=2))
 
         self.assertTrue(m1.is_same(m3))
         self.assertTrue(m3.is_same(m1))
 
         r4 = Rule(licenses=['apache-1.0', 'gpl'])
-        m4 = LicenseMatch(rule=r4, qpos=analysis.Token(start=1, end=2))
+        m4 = LicenseMatch(rule=r4, query_position=analysis.Token(start=1, end=2))
 
         self.assertFalse(m1.is_same(m4))
         self.assertFalse(m4.is_same(m1))
@@ -223,8 +223,8 @@ class TestDetectLicenseRule(FileBasedTesting):
         matches = index.match([doc1[1]])
         self.assertEqual(1, len(matches))
 
-        self.assertEqual(11, matches[0].qpos.start_char)
-        self.assertEqual(32, matches[0].qpos.end_char)
+        self.assertEqual(11, matches[0].query_position.start_char)
+        self.assertEqual(32, matches[0].query_position.end_char)
 
     def test_simple_detection_against_same_text(self):
         tf1 = self.get_test_loc('detect/mit/mit.c')
@@ -296,7 +296,7 @@ class TestDetectLicenseRule(FileBasedTesting):
             self.assertEqual(expect_mlen, len(matches))
             for i, m in enumerate(matches):
                 expected_pos = expect_matches_posits[i]
-                assert expected_pos == m.qpos
+                assert expected_pos == m.query_position
 
     def test_bsd_rule_detection(self):
         tf1 = self.get_test_loc('detect/mit/t1.txt')
@@ -307,7 +307,7 @@ class TestDetectLicenseRule(FileBasedTesting):
         matches = index.match(test_doc)
         self.assertEqual(1, len(matches))
         expected = Token(start=0, start_line=1, start_char=0, end_line=27, end_char=59, end=241)
-        self.assertEqual(expected, matches[0].qpos)
+        self.assertEqual(expected, matches[0].query_position)
 
     def check_detection(self, doc_file, rule_file, expected_matches):
         test_rule = self.get_test_loc(rule_file)
@@ -317,7 +317,7 @@ class TestDetectLicenseRule(FileBasedTesting):
         test_doc = self.get_test_loc(doc_file)
         matches = index.match(test_doc)
         self.assertEqual(1, len(matches))
-        self.assertEqual(expected_matches, matches[0].qpos)
+        self.assertEqual(expected_matches, matches[0].query_position)
 
     def test_comment_format_1(self):
         expected = Token(start=0, start_line=1, start_char=2, end_line=9, end_char=52, end=86)
@@ -428,7 +428,7 @@ class TestDetectLicenseRule(FileBasedTesting):
         matches = index.match(test_doc)
         self.assertEqual(1, len(matches))
         expected = Token(start=1, start_line=1, start_char=7, end_line=4, end_char=67, end=42)
-        self.assertEqual(expected, matches[0].qpos)
+        self.assertEqual(expected, matches[0].query_position)
 
 
 class TestDetectLicenseRuleTemplate(FileBasedTesting):
@@ -483,7 +483,7 @@ class TestDetectLicenseRuleTemplate(FileBasedTesting):
         doc = self.get_test_loc('detect/simple_detection/x11-xconsortium_text.txt')
         matches = index.match(doc)
         expected = Token(start=0, start_line=1, start_char=0, end_line=13, end_char=51, end=216)
-        self.assertEqual(expected, matches[0].qpos)
+        self.assertEqual(expected, matches[0].query_position)
 
     def test_detection_template_with_inter_gap_smaller_than_ngram_len(self):
         # in this template text there are only 2 tokens between the two
@@ -500,7 +500,7 @@ class TestDetectLicenseRuleTemplate(FileBasedTesting):
         matches = index.match(tf2)
         expected = Token(start=0, start_line=1, start_char=0, end_line=2, end_char=58, end=14)
         self.assertEqual(1, len(matches))
-        self.assertEqual(expected, matches[0].qpos)
+        self.assertEqual(expected, matches[0].query_position)
 
     def test_detection_template_with_inter_gap_equal_to_ngram_len(self):
         # in this template there are 3 tokens between the two templates: len is
@@ -517,7 +517,7 @@ class TestDetectLicenseRuleTemplate(FileBasedTesting):
         matches = index.match(tf2_text)
         expected = Token(start=0, start_line=1, start_char=0, end_line=2, end_char=69, end=15)
         self.assertEqual(1, len(matches))
-        self.assertEqual(expected, matches[0].qpos)
+        self.assertEqual(expected, matches[0].query_position)
 
     def test_detection_template_with_inter_gap_bigger_than_ngram_len(self):
         # setup in this template there are only 4 tokens between the two
@@ -534,7 +534,7 @@ class TestDetectLicenseRuleTemplate(FileBasedTesting):
         matches = index.match(tf2_text)
         expected = Token(start=0, start_line=1, start_char=0, end_line=2, end_char=75, end=17)
         self.assertEqual(1, len(matches))
-        self.assertEqual(expected, matches[0].qpos)
+        self.assertEqual(expected, matches[0].query_position)
 
     def test_template_detection_publicdomain(self):
         # setup
@@ -547,7 +547,7 @@ class TestDetectLicenseRuleTemplate(FileBasedTesting):
         matches = index.match(tf6)
         self.assertEqual(1, len(matches))
         expected = Token(start=82, start_line=16, start_char=0, end_line=18, end_char=67, end=118)
-        self.assertEqual(expected, matches[0].qpos)
+        self.assertEqual(expected, matches[0].query_position)
 
     def test_template_detection_with_short_tokens_around_gaps(self):
         # failed when a gapped token starts at a beginning of rule and at a
@@ -569,7 +569,7 @@ class TestDetectLicenseRuleTemplate(FileBasedTesting):
         matches = index.match(tf8)
         self.assertEqual(1, len(matches))
         expected = Token(start=0, start_line=1, start_char=0, end_line=40, end_char=34, end=276)
-        self.assertEqual(expected, matches[0].qpos)
+        self.assertEqual(expected, matches[0].query_position)
 
     def test_template_detection_works_for_sun_bcl(self):
         # setup

@@ -61,16 +61,16 @@ def build_empty_indexes(ngram_len):
     1. The unigrams index is in indexes[1] with this structure:
     {1:
      {
-      u1: {idocid1: [posting_list1], idocid2: [posting_list2]},
-      u2: {idocid1: [posting_list3], idocid3: [posting_list4]}
+      u1: {index_docid1: [posting_list1], index_docid2: [posting_list2]},
+      u2: {index_docid1: [posting_list3], index_docid3: [posting_list4]}
      }
     }
 
     2. The bigrams index is in indexes[2] with this structure:
     {2:
      {
-      u3, u4: {idocid1: [posting_list7], idocid2: [posting_list6]},
-      u5, u6: {idocid1: [posting_list5], idocid3: [posting_list8]}
+      u3, u4: {index_docid1: [posting_list7], index_docid2: [posting_list6]},
+      u5, u6: {index_docid1: [posting_list5], index_docid3: [posting_list8]}
      }
     }
     and so on, until ngram_len
@@ -98,13 +98,13 @@ class Index(object):
     against these reference documents.
 
     Terms used here:
-     - idoc: indexed document
-     - idocid: indexed document ID
-     - qdoc: query document
-     - qdocid: query document ID
+     - index_doc: indexed document
+     - index_docid: indexed document ID
+     - query_doc: query document
+     - query_docid: query document ID
 
     We use several inverted indexes mapping a Token value to a list of
-    per Token positions for each indexed document ID (idocid): There is one
+    per Token positions for each indexed document ID (index_docid): There is one
     index for every ngram length from one up to ngram_len.
 
     These multiple indexes handle cases where the a query document text to
@@ -122,15 +122,15 @@ class Index(object):
     lengths.
 
     These cases are supported:
-     - small idoc or qdoc with fewer tokens than ngram length.
+     - small index_doc or query_doc with fewer tokens than ngram length.
 
      - small regions of text between two template regions with fewer tokens
        than an ngram length.
 
-     - small regions of text at the beginning of an idoc just before a
+     - small regions of text at the beginning of an index_doc just before a
        template region and with fewer tokens than an ngram length.
 
-     - small regions of text at the end of an idoc and just after a template
+     - small regions of text at the end of an index_doc and just after a template
        region and with fewer tokens than an ngram length.
     """
 
@@ -141,14 +141,14 @@ class Index(object):
         # the nested indexes structure
         self.indexes = build_empty_indexes(ngram_len)
 
-        # a mapping of docid to a count of Tokens in an idoc
-        self.tokens_count_per_idoc = {}
+        # a mapping of docid to a count of Tokens in an index_doc
+        self.tokens_count_per_index_doc = {}
 
-    def get_tokens_count(self, idocid):
-        return self.tokens_count_per_idoc[idocid]
+    def get_tokens_count(self, index_docid):
+        return self.tokens_count_per_index_doc[index_docid]
 
-    def set_tokens_count(self, idocid, val):
-        self.tokens_count_per_idoc[idocid] = val
+    def set_tokens_count(self, index_docid, val):
+        self.tokens_count_per_index_doc[index_docid] = val
 
     def index_one(self, docid, doc, template=False):
         """
@@ -210,30 +210,30 @@ class Index(object):
 
         all_results = defaultdict(list)
 
-        by_ipos_start = lambda x: x[0].start
+        by_index_position_start = lambda x: x[0].start
 
         # first find contiguous matches
         for docid, matches in candidate_matches.items():
-            for idx, match in enumerate(sorted(matches, key=by_ipos_start)):
-                ipos, qpos = match
-                # perfect contiguous matches must start at ipos 0
-                if ipos.start != 0:
+            for idx, match in enumerate(sorted(matches, key=by_index_position_start)):
+                index_position, query_position = match
+                # perfect contiguous matches must start at index_position 0
+                if index_position.start != 0:
                     break
                 else:
                     # TODO: "if not perfect " if we are not starting at 0
                     # collect partial matches
                     pass
-                # start of a possible full match at ipos 0
+                # start of a possible full match at index_position 0
                 subset = matches[idx + 1:]
 
                 if DEBUG:
                     lsub = len(subset) + 1
                     print('     Index.match: about to align %(lsub)r '
                           'candidate matches for %(docid)r:\n'
-                          'ipos: %(ipos)r\nqpos: %(qpos)r\n'
+                          'index_position: %(index_position)r\nquery_position: %(query_position)r\n'
                           % locals())
 
-                matched_positions = self.align_matches(ipos, qpos, subset)
+                matched_positions = self.align_matches(index_position, query_position, subset)
 
                 if DEBUG:
                     lmp = len(matched_positions)
@@ -256,18 +256,18 @@ class Index(object):
         filtered = self.filter_matches(all_results, perfect)
         return filtered
 
-    def align_matches(self, cur_ipos, cur_qpos, matches):
+    def align_matches(self, cur_index_position, cur_query_position, matches):
         """
         Given a first match and subsequent potential matches, try to find a
         longer match skipping eventual gaps to yield the best alignment.
 
         This how ngrams are handled with ngram_len of 3:
         -----------------------------------------------
-        With this idoc and this qdoc:
-        idoc:   name is joker, name is joker
+        With this index_doc and this query_doc:
+        index_doc:   name is joker, name is joker
         ngrams: name is joker, is joker name, joker name is, name is joker
                 0              1              2              3
-        qdoc: Hi my name is joker, name is joker yes.
+        query_doc: Hi my name is joker, name is joker yes.
         ngrams: hi my name, my name is, name is joker, is joker name, joker name is, name is joker, is joker yes
                 0           1           2              3              4              5              6
         will yield these candidates:
@@ -280,10 +280,10 @@ class Index(object):
 
         And this how gaps are handled:
         ------------------------------
-        With this  idoc and this qdoc::
-        idoc: my name is {{2 Joe}} the joker
+        With this  index_doc and this query_doc::
+        index_doc: my name is {{2 Joe}} the joker
               i0 i1   i2-g2        i3  i4
-        qdoc: Yet, my name is Jane Heinz the joker.
+        query_doc: Yet, my name is Jane Heinz the joker.
               q0   q1 q2   q3 q4   q5    q6  q7
         will yield these candidates:
             i0, q1
@@ -291,8 +291,8 @@ class Index(object):
             i2-g2, q3
             i3, q6 : here q6 <= q3 + 1 + g2
             i4, q7
-        With the same idoc and this qdoc:
-        qdoc: Yet, my name is Jane the joker.
+        With the same index_doc and this query_doc:
+        query_doc: Yet, my name is Jane the joker.
               q0   q1 q2   q3 q4   q5  q6
         will yet these candidates:
             i0, q1
@@ -303,48 +303,48 @@ class Index(object):
         """
 
         # add first match
-        matched = [(cur_ipos, cur_qpos,)]
+        matched = [(cur_index_position, cur_query_position,)]
         cumulative_gap = 0
 
         if DEBUG_ALIGN:
             print()
 
         for match in iter(matches):
-            prev_ipos, prev_qpos = matched[-1]
-            cumulative_gap += prev_ipos.gap
-            cur_ipos, cur_qpos = match
+            prev_index_position, prev_query_position = matched[-1]
+            cumulative_gap += prev_index_position.gap
+            cur_index_position, cur_query_position = match
 
             if DEBUG_ALIGN:
                 print(''.join(['Index.aligned match: positions \n',
-                      '  prev_ipos: %(start)r %(end)r %(value)r\n'
-                      % prev_ipos._asdict(),
-                      '   cur_ipos : %(start)r %(end)r %(value)r\n'
-                      % cur_ipos._asdict(),
-                      '  prev_qpos: %(start)r %(end)r %(value)r\n'
-                      % prev_qpos._asdict(),
-                      '   cur_qpos : %(start)r %(end)r %(value)r'
-                      % cur_qpos._asdict(),
+                      '  prev_index_position: %(start)r %(end)r %(value)r\n'
+                      % prev_index_position._asdict(),
+                      '   cur_index_position : %(start)r %(end)r %(value)r\n'
+                      % cur_index_position._asdict(),
+                      '  prev_query_position: %(start)r %(end)r %(value)r\n'
+                      % prev_query_position._asdict(),
+                      '   cur_query_position : %(start)r %(end)r %(value)r'
+                      % cur_query_position._asdict(),
                       ]))
 
-                print('Index.aligned match: prev_ipos.start:%d < '
-                          'cur_ipos.start:%d <= prev_ipos.end + 1:%d'
-                          % (prev_ipos.start, cur_ipos.start,
-                             prev_ipos.end + 1,))
+                print('Index.aligned match: prev_index_position.start:%d < '
+                          'cur_index_position.start:%d <= prev_index_position.end + 1:%d'
+                          % (prev_index_position.start, cur_index_position.start,
+                             prev_index_position.end + 1,))
 
-            if prev_ipos.start < cur_ipos.start <= prev_ipos.end + 1:
+            if prev_index_position.start < cur_index_position.start <= prev_index_position.end + 1:
 
                 if DEBUG_ALIGN:
                     print('Index.aligned match: possible contiguous tokens')
 
-                # we are contiguous in ipos: are we contiguous in qpos?
-                if prev_qpos.start + 1 == cur_qpos.start:
+                # we are contiguous in index_position: are we contiguous in query_position?
+                if prev_query_position.start + 1 == cur_query_position.start:
 
                     if DEBUG_ALIGN:
                         print('Index.aligned match: Keeping contiguous '
-                              'tokens: prev_qpos.start + 1 '
-                              '== cur_qpos.start\n')
+                              'tokens: prev_query_position.start + 1 '
+                              '== cur_query_position.start\n')
 
-                    matched.append((cur_ipos, cur_qpos,))
+                    matched.append((cur_index_position, cur_query_position,))
                     continue
                 else:
                     # we are not contiguous, but could we be when gaps are
@@ -352,22 +352,22 @@ class Index(object):
 
                     if DEBUG_ALIGN:
                         print('Index.aligned match: '
-                              'prev_qpos.start:%d < cur_qpos.start:%d '
-                              '<= prev_qpos.start + 1 + cumulative_gap '
+                              'prev_query_position.start:%d < cur_query_position.start:%d '
+                              '<= prev_query_position.start + 1 + cumulative_gap '
                               '+ self.ngram_len: %d' %
-                              (prev_qpos.start, cur_qpos.start,
-                               prev_qpos.start + cumulative_gap
+                              (prev_query_position.start, cur_query_position.start,
+                               prev_query_position.start + cumulative_gap
                                + self.ngram_len,))
 
-                    if (prev_qpos.start < cur_qpos.start and
-                        cur_qpos.start <= (prev_qpos.start + cumulative_gap + self.ngram_len)):
+                    if (prev_query_position.start < cur_query_position.start and
+                        cur_query_position.start <= (prev_query_position.start + cumulative_gap + self.ngram_len)):
                         # we are contiguous gap-wise, keep this match
 
                         if DEBUG_ALIGN:
                             print('Index.aligned match: '
                                   'Keeping gap-wise contiguous tokens\n')
 
-                        matched.append((cur_ipos, cur_qpos,))
+                        matched.append((cur_index_position, cur_query_position,))
                     continue
             else:
                 if DEBUG_ALIGN:
@@ -392,11 +392,11 @@ class Index(object):
                       % len(query_doc))
             print(u''.join(query_doc))
             print()
-            qdoc = iter(query_doc)
+            query_doc = iter(query_doc)
 
-        # map idocid -> sorted set of tuples (ipos, qpos)
+        # map index_docid -> sorted set of tuples (index_position, query_position)
         candidate_matches = defaultdict(list)
-        # iterate over qdoc tokens using query_tknzr
+        # iterate over query_doc tokens using query_tknzr
         for qtoken in self.query_tknzr(query_doc):
 
             if DEBUG_CANDIDATES:
@@ -434,22 +434,22 @@ class Index(object):
             kept_results = defaultdict(list)
             for docid, matches in all_matches.iteritems():
                 tok_cnt = self.get_tokens_count(docid)
-                for ipos, qpos in matches:
-                    # perfect matches length must match the idoc token count
+                for index_position, query_position in matches:
+                    # perfect matches length must match the index_doc token count
                     # the token count is 1-based, the end is zero-based
-                    if tok_cnt == ipos.end + 1:
-                        kept_results[docid].append((ipos, qpos))
+                    if tok_cnt == index_position.end + 1:
+                        kept_results[docid].append((index_position, query_position))
             return kept_results
 
 
 def merge_aligned_positions(positions):
     """
-    Given a sequence of tuples of (idoc, qdoc) Token positions, return a single
-    tuple of new (idoc, qdoc) Token positions representing the merged positions
-    from every ipos and every qpos.
+    Given a sequence of tuples of (index_doc, query_doc) Token positions, return a single
+    tuple of new (index_doc, query_doc) Token positions representing the merged positions
+    from every index_position and every query_position.
     """
-    idocs, qdocs = zip(*positions)
-    return merge_positions(idocs), merge_positions(qdocs)
+    index_docs, query_docs = zip(*positions)
+    return merge_positions(index_docs), merge_positions(query_docs)
 
 
 def merge_positions(positions):

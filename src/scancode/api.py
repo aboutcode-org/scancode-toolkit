@@ -94,8 +94,8 @@ def get_licenses(location=None):
                 'dejacode_url': DEJACODE_LICENSE_URL.format(license.key),
                 'spdx_license_key': license.spdx_license_key,
                 'spdx_url': license.spdx_url,
-                'start_line': match.qpos.start_line,
-                'end_line': match.qpos.end_line,
+                'start_line': match.query_position.start_line,
+                'end_line': match.query_position.end_line,
             }
 
 
