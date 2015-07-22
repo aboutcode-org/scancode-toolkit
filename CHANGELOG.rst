@@ -2,6 +2,24 @@
 Changelog
 =========
 
+1.2.4 (2015-07-22)
+------------------
+
+* Minor bug fixes.
+
+ * Improved copyright detections.
+ * can scan a single file located in the installation directoy
+ * other minor improvements and minor bug fixes.
+
+
+1.2.3 (2015-07-16)
+------------------
+
+* Major bug fixes on Windows
+ * This is a major bug fix release for Windows. 
+   The -extract option was not working on Windows in previous 1.2.x pre-releases
+
+
 1.2.2 (2015-07-14)
 ------------------
 
