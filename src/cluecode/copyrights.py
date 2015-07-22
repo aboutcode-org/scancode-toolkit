@@ -39,9 +39,9 @@ from cluecode import copyrights_hint
 
 
 logger = logging.getLogger(__name__)
-import sys
-logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-logger.setLevel(logging.DEBUG)
+# import sys
+# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+# logger.setLevel(logging.DEBUG)
 
 
 """
