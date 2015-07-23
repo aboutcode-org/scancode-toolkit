@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2015 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -434,6 +435,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/bison-build-aux/config.rpath')
         expected = [
             u'Copyright 1996-2006 Free Software Foundation, Inc.',
+            u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>, 1996',
         ]
         check_detection(expected, test_file)
 
@@ -959,6 +961,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/bison-lib/strverscmp.c')
         expected = [
             u'Copyright (c) 1997, 2000, 2002, 2004 Free Software Foundation, Inc.',
+            u'Jean-Francois Bignolles <bignolle@ecoledoc.ibp.fr>, 1997.'
         ]
         check_detection(expected, test_file)
 
@@ -1732,6 +1735,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/blktrace/strverscmp.c')
         expected = [
             u'Copyright (c) 1997, 2002, 2005 Free Software Foundation, Inc.',
+            u'Jean-Francois Bignolles <bignolle@ecoledoc.ibp.fr>, 1997.'
         ]
         check_detection(expected, test_file)
 
@@ -4015,7 +4019,7 @@ class TestCopyright(FileBasedTesting):
             u'Copyright 1993, 2002, 2006 David Rowe',
             u'Copyright 2003 EpicGames',
             u'Copyright 1992-1994 Jutta Degener, Carsten Bormann',
-            u'Copyright (c) 1995-1998 The University of Utah and the Regents', # of the University of California
+            u'Copyright (c) 1995-1998 The University of Utah and the Regents',  # of the University of California
             u'Copyright (c) 1998-2005 University of Chicago.',
             u'Copyright (c) 2005-2006 Arizona',
             u'Copyright (c) Andrew Tridgell 2004-2005',
@@ -4023,7 +4027,7 @@ class TestCopyright(FileBasedTesting):
             u'Copyright (c) 2005, Google Inc.',
             u'Copyright (c) 2007 Free Software Foundation, Inc.',
             u'Copyright (c) 1998-1999 Netscape Communications Corporation.',
-            u'Copyright (c) 2001-2010 Peter Johnson and other Yasm', #developers.
+            u'Copyright (c) 2001-2010 Peter Johnson and other Yasm',  # developers.
             u'Copyright (c) 1995-2010 Jean-loup Gailly and Mark Adler',
             u'Copyright (c) 1994-2006 Sun Microsystems Inc.',
         ]
@@ -4673,6 +4677,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/chromium-sdch-open-vcdiff/ltmain.sh')
         expected = [
             u'Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.',
+            u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>, 1996',
             u'Copyright (c) 2008 Free Software Foundation, Inc.',
         ]
         check_detection(expected, test_file)
@@ -6918,6 +6923,7 @@ class TestCopyright(FileBasedTesting):
             u'Copyright (c) 2003 Free Software Foundation, Inc.',
             u'Copyright (c) 2003 Free Software Foundation, Inc.',
             u'Copyright 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005 Free Software Foundation, Inc.',
+            u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>, 1996',
             u'Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001 Free Software Foundation, Inc.',
             u'Copyright (c) 2003 Free Software Foundation, Inc.',
         ]
@@ -6934,7 +6940,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/expat/NOTICE')
         expected = [
             u'Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd and Clark Cooper',
-            u'Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Expat', # MISSING maintainers.'
+            u'Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Expat',  # MISSING maintainers.'
         ]
         check_detection(expected, test_file)
 
@@ -6957,6 +6963,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/expat-conftools/libtool.m4')
         expected = [
             u'Copyright 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005 Free Software Foundation, Inc.',
+            u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>, 1996',
             u'Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001 Free Software Foundation, Inc.',
         ]
         check_detection(expected, test_file)
@@ -6965,6 +6972,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/expat-conftools/ltmain.sh')
         expected = [
             u'Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005 Free Software Foundation, Inc.',
+            u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>, 1996',
             u'Copyright (c) 2005 Free Software Foundation, Inc.',
         ]
         check_detection(expected, test_file)
@@ -7045,7 +7053,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_expat_win32_expat_iss(self):
         test_file = self.get_test_loc('ics/expat-win32/expat.iss')
         expected = [
-            u'Copyright (c) 1998-2006 Thai Open Source Software Center, Clark Cooper, and the Expat', # maintainers.'
+            u'Copyright (c) 1998-2006 Thai Open Source Software Center, Clark Cooper, and the Expat',  # maintainers.'
         ]
         check_detection(expected, test_file)
 
@@ -11564,6 +11572,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/libffi/ltcf-c.sh')
         expected = [
             u'Copyright (c) 1996-2000, 2001 Free Software Foundation, Inc.',
+            u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>, 1996',
         ]
         check_detection(expected, test_file)
 
@@ -11571,6 +11580,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/libffi/ltcf-cxx.sh')
         expected = [
             u'Copyright (c) 1996-1999, 2000, 2001, 2003 Free Software Foundation, Inc.',
+            u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>, 1996',
         ]
         check_detection(expected, test_file)
 
@@ -11578,7 +11588,9 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/libffi/ltconfig')
         expected = [
             u'Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001 Free Software Foundation, Inc.',
+            u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>, 1996',
             u'Copyright (c) 1996-2000 Free Software Foundation, Inc.',
+            u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>, 1996',
             u'Copyright (c) 1999-2000 Free Software Foundation, Inc.',
         ]
         check_detection(expected, test_file)
@@ -11587,6 +11599,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/libffi/ltmain.sh')
         expected = [
             u'Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.',
+            u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>, 1996',
             u'Copyright (c) 2007 Free Software Foundation, Inc.',
         ]
         check_detection(expected, test_file)
@@ -12209,7 +12222,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_libpcap_pcap_3(self):
         test_file = self.get_test_loc('ics/libpcap/pcap.3')
         expected = [
-            u'Copyright (c) 1994, 1996, 1997 .\\ The',
+            u'Copyright (c) 1994, 1996, 1997',
         ]
         check_detection(expected, test_file)
 
@@ -12217,7 +12230,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_libpcap_pcap_3_trail_name(self):
         test_file = self.get_test_loc('ics/libpcap/pcap.3')
         expected = [
-            u'Copyright (c) 1994, 1996, 1997 The Regents of the University of California.  All rights reserved.',
+            u'Copyright (c) 1994, 1996, 1997 The Regents of the University of California.',
         ]
         check_detection(expected, test_file)
 
@@ -12653,7 +12666,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_lohit_fonts_notice(self):
         test_file = self.get_test_loc('ics/lohit-fonts/NOTICE')
         expected = [
-            u'Copyright 2011 Lohit Fonts Project contributors , with Reserved Font Name Lohit.',
+            u'Copyright 2011 Lohit Fonts Project contributors',
         ]
         check_detection(expected, test_file)
 
@@ -12661,7 +12674,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_lohit_fonts_notice_trail_url(self):
         test_file = self.get_test_loc('ics/lohit-fonts/NOTICE')
         expected = [
-            u'Copyright 2011 Lohit Fonts Project contributors  <http://fedorahosted.org/lohit>',
+            u'Copyright 2011 Lohit Fonts Project contributors <http://fedorahosted.org/lohit>',
         ]
         check_detection(expected, test_file)
 
@@ -12676,7 +12689,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_lohit_fonts_lohit_bengali_ttf_copyright_trail_url(self):
         test_file = self.get_test_loc('ics/lohit-fonts-lohit-bengali-ttf/COPYRIGHT')
         expected = [
-            u'Copyright 2011 Lohit Fonts Project contributors.  <http://fedorahosted.org/lohit>',
+            u'Copyright 2011 Lohit Fonts Project contributors. <http://fedorahosted.org/lohit>',
         ]
         check_detection(expected, test_file)
 
@@ -14509,7 +14522,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_oprofile_doc_oprofile_1_in(self):
         test_file = self.get_test_loc('ics/oprofile-doc/oprofile.1.in')
         expected = [
-            u'Copyright (c) 1998-2004 University of Manchester', # MISSED , UK, John Levon',
+            u'Copyright (c) 1998-2004 University of Manchester',  # MISSED , UK, John Levon',
         ]
         check_detection(expected, test_file)
 
@@ -15033,14 +15046,6 @@ class TestCopyright(FileBasedTesting):
         check_detection(expected, test_file)
 
     def test_ics_ppp_pppd_plugins_pppoatm_pppoatm_c(self):
-        test_file = self.get_test_loc('ics/ppp-pppd-plugins-pppoatm/pppoatm.c')
-        expected = [
-            u'Copyright 2000 Mitchell Blank Jr. Based',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
-    def test_ics_ppp_pppd_plugins_pppoatm_pppoatm_c_extra_based(self):
         test_file = self.get_test_loc('ics/ppp-pppd-plugins-pppoatm/pppoatm.c')
         expected = [
             u'Copyright 2000 Mitchell Blank Jr.',
@@ -16307,7 +16312,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_qemu_distrib_sdl_1_2_12_src_cdrom_osf_sdl_syscdrom_c(self):
         test_file = self.get_test_loc('ics/qemu-distrib-sdl-1.2.12-src-cdrom-osf/SDL_syscdrom.c')
         expected = [
-            u'Copyright (c) 2003',
+            u'DirectMedia Layer) Copyright (c) 2003',
         ]
         check_detection(expected, test_file)
 
@@ -16908,17 +16913,8 @@ class TestCopyright(FileBasedTesting):
     def test_ics_qemu_slirp_copyright(self):
         test_file = self.get_test_loc('ics/qemu-slirp/COPYRIGHT')
         expected = [
-            u'Copyright (c), 1995,1996',
-            u'Copyright (c) 1995,1996 Danny Gasparovski.',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
-    def test_ics_qemu_slirp_copyright_lead_name(self):
-        test_file = self.get_test_loc('ics/qemu-slirp/COPYRIGHT')
-        expected = [
             u'Danny Gasparovski. Copyright (c), 1995,1996',
-            u'Copyright (c) 1995,1996 Danny Gasparovski.',
+            u'Copyright (c) 1995,1996 Danny Gasparovski.'
         ]
         check_detection(expected, test_file)
 
@@ -19528,7 +19524,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/tcpdump/print-snmp.c')
         expected = [
             u'Copyright (c) 1990, 1991, 1993, 1994, 1995, 1996, 1997 John Robert',
-            u'Copyright (c) 1999.',
+            u'J. Schoenwaelder, Copyright (c) 1999.',
             u'Copyright (c) 1990, 1991, 1993, 1994, 1995, 1996, 1997 this software was produced',
         ]
         check_detection(expected, test_file)
@@ -19647,7 +19643,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_tcpdump_tcpdump_1(self):
         test_file = self.get_test_loc('ics/tcpdump/tcpdump.1')
         expected = [
-            u'Copyright (c) 1987, 1988, 1989, 1990, 1991, 1992, 1994, 1995, 1996, 1997 .\\ The',
+            u'Copyright (c) 1987, 1988, 1989, 1990, 1991, 1992, 1994, 1995, 1996, 1997',
         ]
         check_detection(expected, test_file)
 

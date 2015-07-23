@@ -161,10 +161,10 @@ class TestAuthors(FileBasedTesting):
 
     def test_author_russ_c(self):
         test_file = self.get_test_loc('authors/author_russ_c-c.c')
-        expected = [
-            u'Russ Dill <Russ.Dill@asu.edu>',
-            u'Vladimir Oleynik <dzo@simtreas.ru>',
-        ]
+        # these are detected as copyrights, not authors
+        # u'Russ Dill <Russ.Dill@asu.edu>',
+        # u'Vladimir Oleynik <dzo@simtreas.ru>',
+        expected = []
         check_detection(expected, test_file, what='authors')
 
     def test_author_sample(self):
@@ -207,10 +207,10 @@ class TestAuthors(FileBasedTesting):
 
     def test_author_var_route_c(self):
         test_file = self.get_test_loc('authors/author_var_route_c-var_route_c.c')
-        expected = [
-            u'Erik Schoenfelder (schoenfr@ibr.cs.tu-bs.de)',
-            u'Simon Leinen (simon@switch.ch)',
-        ]
+        # these are detected as copyrights, not authors
+        # u'Erik Schoenfelder (schoenfr@ibr.cs.tu-bs.de)',
+        # u'Simon Leinen (simon@switch.ch)',
+        expected = []
         check_detection(expected, test_file, what='authors')
 
     def test_author_vs(self):

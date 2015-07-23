@@ -319,6 +319,8 @@ class TestHolders(FileBasedTesting):
         expected = [
             u'Carnegie Mellon University',
             u'TGV, Incorporated',
+            u'Erik Schoenfelder',
+            u'Simon Leinen'
         ]
         check_detection(expected, test_file, what='holders')
 

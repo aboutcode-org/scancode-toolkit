@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2015 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -242,7 +243,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_activefieldattribute_cs(self):
         test_file = self.get_test_loc('copyrights/copyright_activefieldattribute_cs-ActiveFieldAttribute_cs.cs')
         expected = [
-            u'Copyright 2009 - Thomas Hansen thomas@ra-ajax.org.',
+            u'Web Applications Copyright 2009 - Thomas Hansen thomas@ra-ajax.org.',
         ]
         check_detection(expected, test_file)
 
@@ -669,9 +670,9 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) 2007, 2008 LShift Ltd.',
             u'Copyright (c) 2007, 2008 Cohesive Financial Technologies LLC.',
             u'Copyright (c) 2007, 2008 Rabbit Technologies Ltd.',
-            u'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies', # LLC., and Rabbit Technologies Ltd.',
-            u'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies', # LLC., and Rabbit Technologies Ltd.',
-             u'Copyright (c) 2007 LShift Ltd. , Cohesive Financial Technologies', # LLC., and Rabbit Technologies Ltd.',
+            u'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies',  # LLC., and Rabbit Technologies Ltd.',
+            u'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies',  # LLC., and Rabbit Technologies Ltd.',
+             u'Copyright (c) 2007 LShift Ltd. , Cohesive Financial Technologies',  # LLC., and Rabbit Technologies Ltd.',
             u'Copyright (c) ???? Simon Mourier <simonm@microsoft.com>',
         ]
         check_detection(expected, test_file)
@@ -1010,7 +1011,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_hansen_cs(self):
         test_file = self.get_test_loc('copyrights/copyright_hansen_cs-cs.cs')
         expected = [
-            u'Copyright 2009 - Thomas Hansen thomas@ra-ajax.org.',
+            u'Web Applications Copyright 2009 - Thomas Hansen thomas@ra-ajax.org.',
         ]
         check_detection(expected, test_file)
 
@@ -1893,8 +1894,9 @@ class TestCopyrightDetection(FileBasedTesting):
 
     def test_copyright_license_text_doc(self):
         test_file = self.get_test_loc('copyrights/copyright_license_text_doc-DOC')
-        expected = [u'copyrighted by Douglas C. Schmidt', # and his research group at Washington University, University of California, Irvine, and Vanderbilt University',
-                    u'Copyright (c) 1993-2008']
+        expected = [u'copyrighted by Douglas C. Schmidt',
+                    # and his research group at Washington University, University of California, Irvine, and Vanderbilt University',
+                    u'research group at Washington University, University of California, Irvine, and Vanderbilt University, Copyright (c) 1993-2008']
         check_detection(expected, test_file)
 
     def test_copyright_license_text_dual_mpl_gpl(self):
@@ -2835,26 +2837,15 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    @expectedFailure
     def test_copyright_name_before_copyright_c(self):
         test_file = self.get_test_loc('copyrights/copyright_name_before_copyright_c-c.c')
         expected = [
-            u'Vladimir Oleynik <dzo@simtreas.ru> (c) 2003',
-        ]
-        check_detection(expected, test_file,
-                        expected_in_results=True,
-                        results_in_expected=False)
-
-    def test_copyright_name_sign_year(self):
-        test_file = self.get_test_loc('copyrights/copyright_name_sign_year-c.c')
-        expected = [
-            'Copyright (c) 2008 Daisy Ltd.',
-            '(c) 1997 - 2008',
+            u'Russ Dill <Russ.Dill@asu.edu> 2001-2003',
+            u'Vladimir Oleynik <dzo@simtreas.ru> (c) 2003'
         ]
         check_detection(expected, test_file)
 
-    @expectedFailure
-    def test_copyright_name_sign_year_correct(self):
+    def test_copyright_name_sign_year(self):
         test_file = self.get_test_loc('copyrights/copyright_name_sign_year_correct-c.c')
         expected = [
             'Copyright (c) 2008 Daisy Ltd.',
@@ -2880,6 +2871,13 @@ class TestCopyrightDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights/copyright_nederlof.txt')
         expected = [
             u'(c) 2005 - Peter Nederlof',
+        ]
+        check_detection(expected, test_file)
+
+    def test_copyright_trailing_copyleft(self):
+        test_file = self.get_test_loc('copyrights/copyright_trailing_copyleft.txt')
+        expected = [
+            u'Copyright (c) 1992 Ronald S. Karr',
         ]
         check_detection(expected, test_file)
 
@@ -3436,8 +3434,9 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) 2004-2005 Shaun McCance',
             u'Copyright (c) 2007 Milo Casagrande',
             u'Copyright (c) 2007-2008 Claude Paroz',
-            u'Copyright (c) 2007 GNOME i18n Project',
-            u'Copyright (c) 2008',
+            u'Copyright (c) 2007 GNOME',
+            # Copyright © 2008 <s>Василий Фаронов</s>
+            u'i18n Project for Vietnamese Copyright (c) 2008',
             u'Copyright (c) 1992-2008 Free Software Foundation, Inc.',
             u'Copyright (c) 1999 Dave Camp',
             u'Copyright (c) 2005 Tecsidel S.A.',
@@ -3553,7 +3552,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_tcl_copyright(self):
         test_file = self.get_test_loc('copyrights/copyright_tcl_copyright-tcl_copyright.copyright')
         expected = [
-            u'copyrighted by the Regents of the University of California , Sun Microsystems, Inc. , Scriptics Corporation', # not found, rather complex
+            u'copyrighted by the Regents of the University of California , Sun Microsystems, Inc. , Scriptics Corporation',  # not found, rather complex
             u'Copyright (c) 2007 Software in the Public Interest',
         ]
         check_detection(expected, test_file)
@@ -3766,6 +3765,8 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             u'Copyright 1988, 1989 by Carnegie Mellon University',
             u'Copyright 1989 TGV, Incorporated',
+            u'Erik Schoenfelder (schoenfr@ibr.cs.tu-bs.de) 1994/1995.',
+            u'Simon Leinen (simon@switch.ch) 1997',
         ]
         check_detection(expected, test_file)
 

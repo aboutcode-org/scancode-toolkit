@@ -101,12 +101,13 @@ patterns = [
 
     # JUNK are things to ignore
     # All Rights Reserved. should be a terminator/delimiter.
-    (r'^([Aa]ll [Rr]ights? [Rr]eserved|ALL RIGHTS? RESERVED|[Aa]ll||ALL)$', 'JUNK'),
+    (r'^([Aa]ll [Rr]ights? [Rr]eserved|ALL RIGHTS? RESERVED|[Aa]ll|ALL)$', 'JUNK'),
+    (r'^([Rr]eserved|RESERVED)[,]?$', 'JUNK'),
 
     # found in crypto certificates and LDAP
     (r'^(O=|OU=|OU|XML)$', 'JUNK'),
     (r'^(Parser|Dual|Crypto|NO|PART|[Oo]riginall?y?|[Rr]epresentations?\.?)$', 'JUNK'),
-    (r'^(Refer|Agreement|Files?|Filename:?|Description:?|Holder?s|HOLDER?S|[Pp]rocedures?|You|Everyone)$', 'JUNK'),
+    (r'^(Refer|Agreement|Copyleft|Usage|Please|Based|Upstream|Files?|Filename:?|Description:?|Holder?s|HOLDER?S|[Pp]rocedures?|You|Everyone)$', 'JUNK'),
     (r'^(Rights?|Unless|rant|Subject|Acknowledgements?|Special)$', 'JUNK'),
     (r'^(Derivative|Work|[Ll]icensable|[Ss]ince|[Ll]icen[cs]e[\.d]?|[Ll]icen[cs]ors?|under|COPYING)$', 'JUNK'),
     (r'^(TCK|Use|[Rr]estrictions?|[Ii]ntroduction)$', 'JUNK'),
@@ -151,7 +152,7 @@ patterns = [
     # "holders" is considered as a common noun
     (r'^([Hh]olders?|HOLDERS?|[Rr]espective)$', 'NN'),
 
-    #(r'^[Cc]ontributors?\.?', 'NN'),
+    # (r'^[Cc]ontributors?\.?', 'NN'),
     # "authors" or "contributors" is interesting, and so a tag of its own
     (r'^[Aa]uthors?$', 'AUTH'),
     (r'^[Aa]uthor\(s\)$', 'AUTH'),
@@ -172,9 +173,9 @@ patterns = [
     # conjunction: and
     (r'^([Aa]nd|&)$', 'CC'),
     # conjunction: or. Even though or is not conjunctive ....
-    #(r'^or$', 'CC'),
+    # (r'^or$', 'CC'),
     # conjunction: or. Even though or is not conjunctive ....
-    #(r'^,$', 'CC'),
+    # (r'^,$', 'CC'),
     # ie. in things like "Copyright (c) 2012 John Li and others"
     (r'^others$', 'OTH'),
     # in year ranges: dash, or 'to': "1990-1995", "1990/1995" or "1990 to 1995"
@@ -235,6 +236,9 @@ patterns = [
     (r'^AT&T$', 'ATT'),
     # comma as a conjunction
     (r'^,$', 'CC'),
+    # .\ is not a noun
+    (r'^\.\\$', 'JUNK'),
+
     # nouns (default)
     (r'.+', 'NN'),
 ]
@@ -389,6 +393,8 @@ grammar = """
     COPYRIGHT2: {<COPY> <COPY> <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <DASH> <COMPANY>}
     COPYRIGHT2: {<COPY> <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <DASH> <COMPANY>}
 
+    COPYRIGHT2: {<NNP|NAME|COMPANY> <COPYRIGHT2>}
+
     COPYRIGHT: {<COPYRIGHT> <NN> <COMPANY>}
 
     COPYRIGHT: {<COPY> <COPY> <BY>? <NN> <COMPANY>}
@@ -398,6 +404,7 @@ grammar = """
     COPYRIGHT: {<COPYRIGHT2> <COMP> <COMPANY>}
     COPYRIGHT: {<COMPANY> <NN> <COPYRIGHT2>}
     COPYRIGHT: {<COPYRIGHT2> <NNP> <CC> <COMPANY>}
+
 
 # copyrights in the style of Scilab/INRIA
     COPYRIGHT: {<NNP> <NN> <COPY> <NNP>}
@@ -416,9 +423,13 @@ grammar = """
     AUTHOR: {<AUTHOR> <CC> <NN>? <AUTH>}
     AUTHOR: {<BY> <EMAIL>}
 
+# Compounded statements usings authors
     # found in some rare cases with a long list of authors.
     COPYRIGHT: {<COPY> <BY> <AUTHOR>+ <YR-RANGE>*}
-    """
+
+    COPYRIGHT: {<AUTHOR> <COPYRIGHT2>}
+    COPYRIGHT: {<AUTHOR> <YR-RANGE>}
+"""
 
 
 def strip_numbers(s):
@@ -442,14 +453,14 @@ def strip_some_punct(s):
     return s
 
 
-
 def fix_trailing_space_dot(s):
     """
     Return a string stripped from some leading and trailing punctuations.
     """
     if s and s.endswith(' .'):
-        s = s[:-2]+'.'
+        s = s[:-2] + '.'
     return s
+
 
 def refine_copyright(c):
     """
@@ -515,12 +526,12 @@ def is_junk(c):
         'copyright notices, authorship',
         'copyright holder means the original author(s)',
         "copyright notice. timevar.def's author",
-        
+
         "copyright holder or simply that it is author-maintained'.",
         "copyright holder or simply that is author-maintained'.",
         '(c) if you bring a patent claim against any contributor',
         'copyright-check writable-files m4-check author_mark_check',
-        #'copyrighting it yourself or claiming authorship'
+        # 'copyrighting it yourself or claiming authorship'
     ])
     return c.lower() in junk
 
@@ -669,10 +680,11 @@ def candidate_lines(lines):
     (line number,  line text).
 
     A candidate line is a line of text that may contain copyright statements.
-    The lines before and after a candidate line are also included.
+    A few lines before and after a candidate line are also included.
     """
     candidates = deque()
     previous = None
+    # used as a state and line counter
     in_copyright = 0
     for line_number, line in enumerate(lines):
         # the first line number is ONE, not zero

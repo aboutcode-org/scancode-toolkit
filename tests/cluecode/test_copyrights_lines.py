@@ -154,7 +154,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
 
     def test_copyright_activefieldattribute_cs(self):
         test_file = self.get_test_loc('copyrights/copyright_activefieldattribute_cs-ActiveFieldAttribute_cs.cs')
-        expected = [([u'Copyright 2009 - Thomas Hansen thomas@ra-ajax.org.'], 2, 5)]
+        expected = [([u'Web Applications Copyright 2009 - Thomas Hansen thomas@ra-ajax.org.'], 2, 5)]
         check_detection(expected, test_file)
 
     def test_copyright_addr_c(self):
