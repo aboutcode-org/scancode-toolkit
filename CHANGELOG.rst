@@ -2,13 +2,24 @@
 Changelog
 =========
 
+1.3.0 (2015-07-24)
+------------------
+
+* New features and bug fixes
+
+ * scancode now ignores version control directories by default (.svn, .git, etc)
+ * Improved copyright and license detections (new rules, etc.)
+ * other minor improvements and minor bug fixes.
+ * experimental and unsupported inclusion of Linux-32 bits pre-built binaries
+
+
 1.2.4 (2015-07-22)
 ------------------
 
 * Minor bug fixes.
 
  * Improved copyright detections.
- * can scan a single file located in the installation directoy
+ * can scan a single file located in the installation directory
  * other minor improvements and minor bug fixes.
 
 
