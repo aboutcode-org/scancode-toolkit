@@ -231,7 +231,7 @@ class ScanCommand(click.Command):
               help='Set <output_file> format <style> to one of: %s' % ' or '.join(formats),
               )
 @click.option('-e', '--extract', is_flag=True, default=False, is_eager=True,
-              help=('Extract archives found in <input>, ignoring other scan options.'))
+              help=('Extract any archives and compressed files found in <input> recursively, in-place, ignoring other scan options. Use this before scanning proper, as an <input> preparation step.'))
 @click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.')
 @click.help_option('-h', '--help')
 @click.option('--examples', is_flag=True, is_eager=True, callback=print_examples,
