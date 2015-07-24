@@ -133,4 +133,5 @@ class TestCommandLine(FileBasedTesting):
             scan_result = json.load(res)
         # a single test.tst file that is not a VCS file should be listed
         assert 1 == scan_result['count']
-        assert scan_result['results'][0]['location'].endswith('vcs.tgz/vcs/test.txt')
+        scan_loc = as_posixpath(scan_result['results'][0]['location'])
+        assert scan_loc.endswith('vcs.tgz/vcs/test.txt')
