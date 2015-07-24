@@ -142,7 +142,7 @@ ScanCode needs a Python 2.7 interpreter.
   Use your package manager to install `python2.7`.
   If Python 2.7 is not available from your package manager, you must compile it from sources.
 
-  For instance, visit https://github.com/dejacode/about-code-tool/wiki/BuildingPython27OnCentos
+  For instance, visit https://github.com/dejacode/about-code-tool/wiki/BuildingPython27OnCentos6
   for instruction to compile Python from sources on Centos.
 
 - **On Windows**:
