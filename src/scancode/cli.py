@@ -24,11 +24,14 @@
 
 from __future__ import print_function, absolute_import
 
+import os
+from functools import partial
 import json
 
 import click
 
 from commoncode.fileutils import file_iter
+from commoncode import ignore
 
 from scancode import __version__ as version
 from scancode.api import as_html
@@ -39,7 +42,6 @@ from scancode.api import get_copyrights
 from scancode.api import get_licenses
 from scancode.api import HtmlAppAssetCopyWarning
 from scancode.api import HtmlAppAssetCopyError
-import os
 
 
 info_text = '''
@@ -268,13 +270,16 @@ then run scancode again to scan the extracted files.''')
         click.secho('Scanning files...', fg='green')
         results = []
 
+        ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
+        files = file_iter(abs_input, ignored=ignored)
+
         if not verbose:
             # only display a progress bar
-            with click.progressbar(file_iter(abs_input), show_pos=True) as files:
+            with click.progressbar(files, show_pos=True) as files:
                 for input_file in files:
                     results.append(scan_one(input_file, copyright, license, verbose))
         else:
-            for input_file in file_iter(abs_input):
+            for input_file in file_iter(files):
                 results.append(scan_one(input_file, copyright, license, verbose))
 
         if format == 'html':

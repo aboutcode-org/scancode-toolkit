@@ -25,12 +25,14 @@
 from __future__ import absolute_import, print_function
 
 import os
+import json
 
 from click.testing import CliRunner
 
 from commoncode.testcase import FileBasedTesting
-from scancode import cli
 from commoncode.fileutils import as_posixpath
+
+from scancode import cli
 
 
 class TestCommandLine(FileBasedTesting):
@@ -85,7 +87,7 @@ class TestCommandLine(FileBasedTesting):
         scancode_tmp = join(scancode_root, 'tmp')
         fileutils.create_dir(scancode_tmp)
         scancode_root_abs = abspath(scancode_root)
-        test_src_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs,  '').strip('\\/')
+        test_src_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs, '').strip('\\/')
         test_file = self.get_test_loc('extract_relative_path/basic.zip')
         shutil.copy(test_file, test_src_dir)
         test_src_file = join(test_src_dir, 'basic.zip')
@@ -98,8 +100,8 @@ class TestCommandLine(FileBasedTesting):
         assert not 'WARNING' in result.output
         assert not 'ERROR' in result.output
         expected = ['/c/a/a.txt', '/c/b/a.txt', '/c/c/a.txt']
-        file_result  = [as_posixpath(f.replace(test_tgt_dir, '')) for f in fileutils.file_iter(test_tgt_dir)]
-        assert sorted(expected)==sorted(file_result)
+        file_result = [as_posixpath(f.replace(test_tgt_dir, '')) for f in fileutils.file_iter(test_tgt_dir)]
+        assert sorted(expected) == sorted(file_result)
 
     def test_copyright_option_detects_copyrights(self):
         test_dir = self.get_test_loc('copyright', copy=True)
@@ -120,3 +122,15 @@ class TestCommandLine(FileBasedTesting):
         assert 'Scanning done' in result.output
         assert os.path.exists(output_json)
         assert len(open(output_json).read()) > 10
+
+    def test_scancode_skip_vcs_files_and_dirs_by_default(self):
+        test_dir = self.extract_test_tar('ignore/vcs.tgz')
+        runner = CliRunner()
+        output_json = self.get_temp_file('json')
+        result = runner.invoke(cli.scancode, ['--copyright', test_dir, output_json])
+        assert result.exit_code == 0
+        with open(output_json) as res:
+            scan_result = json.load(res)
+        # a single test.tst file that is not a VCS file should be listed
+        assert 1 == scan_result['count']
+        assert scan_result['results'][0]['location'].endswith('vcs.tgz/vcs/test.txt')
