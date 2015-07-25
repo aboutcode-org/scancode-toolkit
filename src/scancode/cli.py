@@ -205,7 +205,7 @@ number of files processed. Use --verbose to display file-by-file progress.
 '''
 
 
-short_help = '''Usage: scancode [OPTIONS] <input> <output_file>
+short_help = '''
 Try 'scancode --help' for help on options and arguments.'''
 
 
@@ -213,11 +213,21 @@ formats = ['json', 'html', 'html-app']
 
 
 class ScanCommand(click.Command):
-    """
-    Workaround click 4.0 bug https://github.com/mitsuhiko/click/issues/365
-    """
     def get_usage(self, ctx):
-        return short_help
+        """
+        Ensure that usage points to the --help option explicitly.
+        Workaround click issue https://github.com/mitsuhiko/click/issues/393
+        """
+        return click.Command.get_usage(self, ctx) + short_help
+
+    def main(self, args=None, prog_name=None, complete_var=None,
+             standalone_mode=True, **extra):
+        """
+        Workaround click 4.0 bug https://github.com/mitsuhiko/click/issues/365
+        """
+        return click.Command.main(self, args=args, prog_name=self.name,
+                                  complete_var=complete_var,
+                                  standalone_mode=standalone_mode, **extra)
 
 
 @click.command(name='scancode', epilog=epilog_text, cls=ScanCommand)
@@ -240,7 +250,7 @@ class ScanCommand(click.Command):
               help=('Show information about ScanCode and licensing and exit.'))
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version,
               help=('Show the version and exit.'))
-def scancode(ctx, input, output_file, extract, copyright, license, format, verbose, *args, **kwargs):
+def scancode(ctx, input, output_file, extract, copyright, license, format, verbose, *args, **kwargs):  # @ReservedAssignment
     """scan the <input> file or directory for origin and license and save results to the <output_file>.
 
     The scan results are printed on terminal if <output_file> is not provided.
@@ -263,8 +273,8 @@ then run scancode again to scan the extracted files.''')
 
     # Default scan when no options is provided
     if not any(scans):
-        copyright = True
-        license = True
+        copyright = True  # @ReservedAssignment
+        license = True  # @ReservedAssignment
 
     if copyright or license:
         click.secho('Scanning files...', fg='green')
@@ -309,7 +319,7 @@ then run scancode again to scan the extracted files.''')
         click.secho('Scanning done.', fg='green')
 
 
-def scan_one(input_file, copyright, license, verbose=False):
+def scan_one(input_file, copyright, license, verbose=False):  # @ReservedAssignment
     """
     Scan one file and return scanned data.
     """
@@ -329,7 +339,7 @@ def scan_one(input_file, copyright, license, verbose=False):
     return data
 
 
-def extract_with_progress(input, verbose=False):
+def extract_with_progress(input, verbose=False):  # @ReservedAssignment
     """
     Extract archives and display progress.
     """
