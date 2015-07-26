@@ -26,11 +26,10 @@ from __future__ import absolute_import, print_function
 
 from collections import deque
 import logging
+import os
 import re
 
-# consider a lazy of import NLTK: it can take a full second to load
 import nltk
-
 nltk3 = nltk.__version__.startswith('3')
 
 import commoncode
@@ -39,9 +38,10 @@ from cluecode import copyrights_hint
 
 
 logger = logging.getLogger(__name__)
-# import sys
-# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-# logger.setLevel(logging.DEBUG)
+if os.environ.get('SC_COPYRIGHT_DEBUG'):
+    import sys
+    logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
 
 
 """
@@ -107,7 +107,7 @@ patterns = [
     # found in crypto certificates and LDAP
     (r'^(O=|OU=|OU|XML)$', 'JUNK'),
     (r'^(Parser|Dual|Crypto|NO|PART|[Oo]riginall?y?|[Rr]epresentations?\.?)$', 'JUNK'),
-    (r'^(Refer|Agreement|Copyleft|Usage|Please|Based|Upstream|Files?|Filename:?|Description:?|Holder?s|HOLDER?S|[Pp]rocedures?|You|Everyone)$', 'JUNK'),
+    (r'^(Refer|Apt|Agreement|Usage|Please|Based|Upstream|Files?|Filename:?|Description:?|Holder?s|HOLDER?S|[Pp]rocedures?|You|Everyone)$', 'JUNK'),
     (r'^(Rights?|Unless|rant|Subject|Acknowledgements?|Special)$', 'JUNK'),
     (r'^(Derivative|Work|[Ll]icensable|[Ss]ince|[Ll]icen[cs]e[\.d]?|[Ll]icen[cs]ors?|under|COPYING)$', 'JUNK'),
     (r'^(TCK|Use|[Rr]estrictions?|[Ii]ntroduction)$', 'JUNK'),
@@ -116,6 +116,9 @@ patterns = [
     (r'^(Company:|For|File|Last|[Rr]elease|[Cc]opyrighting)$', 'JUNK'),
     (r'^Authori.*$', 'JUNK'),
     (r'^[Bb]uild$', 'JUNK'),
+    #
+    (r'^Copyleft|LegalCopyright|AssemblyCopyright|Distributed$', 'JUNK'),
+
 
     # Bare C char is COPYRIGHT SIGN
     # (r'^C$', 'COPY'),
@@ -130,6 +133,9 @@ patterns = [
     # copyright word or symbol
     # note the leading @ .... this may be a source of problems
     (r'.?(@?([Cc]opyright)s?:?|[(][Cc][)]|(COPYRIGHT)S?:?)', 'COPY'),
+
+    # copyright in markup, until we strip markup: apache'>Copyright
+    (r'[A-Za-z0-9]+[\'">]+[Cc]opyright', 'COPY'),
 
     # company suffix
     (r'^([Ii]nc[.]?|[I]ncorporated|[Cc]ompany|Limited|LIMITED).?$', 'COMP'),
@@ -231,7 +237,13 @@ patterns = [
 
     # URLS such as ibm.com
     # TODO: add more extensions?
-    (r'[a-z0-9A-Z]+\.(com|net|info|org|us|io|edu|co\.[a-z][a-z]|eu|biz)', 'URL'),
+    (r'<?a?.(href)?.[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|io|edu|co\.[a-z][a-z]|eu|biz)', 'URL'),
+    # derived from regex in cluecode.finder
+    (r'<?a?.(href)?.('
+     r'(?:http|ftp|sftp)s?://[^\s<>\[\]"]+'
+     r'|(?:www|ftp)\.[^\s<>\[\]"]+'
+     r')', 'URL'),
+
     # AT&T (the company), needed special handling
     (r'^AT&T$', 'ATT'),
     # comma as a conjunction
@@ -266,6 +278,7 @@ grammar = """
 
 
 # rare "Software in the public interest, Inc."
+    COMPANY: {<COMP> <CD> <COMP>}
     COMPANY: {<NNP> <IN><NN> <NNP> <NNP>+<COMP>?}
 
     COMPANY: {<NNP> <CC> <NNP> <COMP>}
@@ -275,6 +288,7 @@ grammar = """
     COMPANY: {<COMPANY> <CC> <COMPANY>}
     COMPANY: {<ATT> <COMP>?}
     COMPANY: {<COMPANY> <CC> <NNP>}
+    # Group 42, Inc
 
 # Typical names
     NAME: {<NNP|PN>+ <NNP>+}
@@ -322,6 +336,8 @@ grammar = """
     ANDCO: {<CC> <NNP> <NNP>+}
     ANDCO: {<CC> <COMPANY|NAME|NAME2|NAME3>+}
     COMPANY: {<COMPANY|NAME|NAME2|NAME3> <ANDCO>+}
+
+    NAME: {<BY> <NN> <AUTH>}
 
 # Various forms of copyright statements
     COPYRIGHT: {<COPY> <NAME> <COPY> <YR-RANGE>}
@@ -422,6 +438,8 @@ grammar = """
     AUTHOR: {<NAME2>+}
     AUTHOR: {<AUTHOR> <CC> <NN>? <AUTH>}
     AUTHOR: {<BY> <EMAIL>}
+    ANDAUTH: {<CC> <AUTH|NAME>+}
+    AUTHOR: {<AUTHOR> <ANDAUTH>+}
 
 # Compounded statements usings authors
     # found in some rare cases with a long list of authors.
@@ -462,21 +480,102 @@ def fix_trailing_space_dot(s):
     return s
 
 
+def strip_unbalanced_parens(s, parens='()'):
+    """
+    Return a string where unbalanced parenthesis are replaced with a space.
+    `paren` is a pair of characters to balance  such as (), <>, [] , {}.
+
+    For instance:
+    >>> strip_unbalanced_parens('This is a super string', '()')
+    'This is a super string'
+
+    >>> strip_unbalanced_parens('This is a super(c) string', '()')
+    'This is a super(c) string'
+
+    >>> strip_unbalanced_parens('This ((is a super(c) string))', '()')
+    'This ((is a super(c) string))'
+
+    >>> strip_unbalanced_parens('This )(is a super(c) string)(', '()')
+    'This  (is a super(c) string) '
+
+    >>> strip_unbalanced_parens(u'This )(is a super(c) string)(', '()')
+    u'This  (is a super(c) string) '
+
+    >>> strip_unbalanced_parens('This )(is a super(c) string)(', '()')
+    'This  (is a super(c) string) '
+
+    >>> strip_unbalanced_parens('This )((is a super(c) string)((', '()')
+    'This   (is a super(c) string)  '
+
+    >>> strip_unbalanced_parens('This ) is', '()')
+    'This   is'
+
+    >>> strip_unbalanced_parens('This ( is', '()')
+    'This   is'
+
+    >>> strip_unbalanced_parens('This )) is', '()')
+    'This    is'
+
+    >>> strip_unbalanced_parens('This (( is', '()')
+    'This    is'
+
+    >>> strip_unbalanced_parens('(', '()')
+    ' '
+
+    >>> strip_unbalanced_parens(')', '()')
+    ' '
+    """
+    start, end = parens
+    if not start in s and not end in s:
+        return s
+    unbalanced = []
+    stack = []
+    for i, c in enumerate(s):
+        if c == start:
+            stack.append((i, c,))
+        elif c == end:
+            try:
+                stack.pop()
+            except IndexError:
+                unbalanced.append((i, c,))
+
+    unbalanced.extend(stack)
+    pos_to_del = set([i for i, c in unbalanced])
+    cleaned = [c if i not in pos_to_del else ' ' for i, c in enumerate(s)]
+    return type(s)('').join(cleaned)
+
+
 def refine_copyright(c):
     """
-    Refine a detected copyright.
+    Refine a detected copyright string.
     FIXME: the grammar should not allow this to happen.
     """
     c = strip_some_punct(c)
     c = fix_trailing_space_dot(c)
-    # FIXME in grammar
+    c = strip_unbalanced_parens(c, '()')
+    c = strip_unbalanced_parens(c, '<>')
+    c = strip_unbalanced_parens(c, '[]')
+    c = strip_unbalanced_parens(c, '{}')
+    # FIXME: this should be in the grammar, but is hard to get there right
+    # these are often artifacts of markup
     c = c.replace('Copyright Copyright', 'Copyright')
     c = c.replace('Copyright copyright', 'Copyright')
     c = c.replace('copyright copyright', 'Copyright')
     c = c.replace('copyright Copyright', 'Copyright')
+    c = c.replace('copyright\'Copyright', 'Copyright')
+    c = c.replace('copyright"Copyright', 'Copyright')
+    c = c.replace('copyright\' Copyright', 'Copyright')
+    c = c.replace('copyright" Copyright', 'Copyright')
     s = c.split()
+
+    # fix traliing garbage, captured by the grammar
     if s[-1] in ('Parts', 'Any',):
         s = s[:-1]
+    # this is hard to catch otherwise, unless we split the author
+    # vs copyright grammar in two. Note that AUTHOR and Authors should be kept
+    if s[-1] == 'Author':
+        s = s[:-1]
+
     s = u' '.join(s)
     return s.strip()
 
@@ -488,7 +587,16 @@ def refine_author(c):
     """
     c = strip_some_punct(c)
     c = strip_numbers(c)
-    return c
+    c = strip_unbalanced_parens(c, '()')
+    c = strip_unbalanced_parens(c, '<>')
+    c = strip_unbalanced_parens(c, '[]')
+    c = strip_unbalanced_parens(c, '{}')
+    c = c.split()
+    # this is hard to catch otherwise, unless we split the author vs copyright grammar in two
+    if c[0].lower() == 'author':
+        c = c[1:]
+    c = u' '.join(c)
+    return c.strip()
 
 
 def refine_date(c):

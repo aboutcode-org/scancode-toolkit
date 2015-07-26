@@ -866,7 +866,6 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    @expectedFailure
     def test_copyright_ext_all_js(self):
         test_file = self.get_test_loc('copyrights/copyright_ext_all_js-ext_all_js.js')
         expected = [
@@ -945,12 +944,10 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             u'Copyright (c) 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.',
             u'copyright Free Software Foundation',
-            u'Copyright (c) 2004-2005 by Digital Mars',
+            u'Copyright (c) 2004-2005 by Digital Mars , www.digitalmars.com',
             u'Copyright (c) 1996-2003 Red Hat, Inc.',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file)
 
     def test_copyright_google_closure_templates_java_html(self):
         test_file = self.get_test_loc('copyrights/copyright_google_closure_templates_java_html-html.html')
@@ -1375,7 +1372,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) 2003 Svend Sanjay Sorensen <ssorensen@fastmail.fm>',
             u'Copyright (c) 1985, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1996, 1997, 1998, 1999, 2000 Free Software Foundation, Inc.',
             u'Copyright (c) 2003 Matthias Drochner',
-            u'Copyright (c) 1998-2001 VideoLAN (Johan Bilien <jobi@via.ecp.fr> and Gildas Bazin <gbazin@netcourrier.com>',
+            u'Copyright (c) 1998-2001 VideoLAN Johan Bilien <jobi@via.ecp.fr> and Gildas Bazin <gbazin@netcourrier.com>',
             u'Copyright (c) 1992, 1993 Eric Youngdale',
             u'Copyright (c) 2003, 2004, 2005, 2006, 2007, 2008 Rocky Bernstein and Herbert Valerio Riedel',
         ]
@@ -1433,7 +1430,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_libfltk1_1_copyright(self):
         test_file = self.get_test_loc('copyrights/copyright_libfltk1_1_copyright-libfltk_copyright.copyright')
         expected = [
-            u'Copyright (c) 1998-2009 Bill Spitzak (spitzak@users.sourceforge.net',
+            u'Copyright (c) 1998-2009 Bill Spitzak spitzak@users.sourceforge.net',
         ]
         check_detection(expected, test_file)
 
@@ -1974,7 +1971,7 @@ class TestCopyrightDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights/copyright_license_text_freetype-FreeType')
         expected = [
             u'Copyright 1996-2002, 2006 by David Turner, Robert Wilhelm, and Werner Lemberg',
-            u'copyright (c) The FreeType Project',
+            u'copyright (c) The FreeType Project (www.freetype.org).',
             u'copyright (c) 1996-2000 by David Turner, Robert Wilhelm, and Werner Lemberg.',
         ]
         check_detection(expected, test_file)
@@ -2356,7 +2353,7 @@ class TestCopyrightDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights/copyright_license_text_nethack-Nethack')
         expected = [
             u'Copyright (c) 1989 M. Stephenson',
-            u'copyright 1988 Richard M. Stallman)',
+            u'copyright 1988 Richard M. Stallman',
         ]
         check_detection(expected, test_file)
 

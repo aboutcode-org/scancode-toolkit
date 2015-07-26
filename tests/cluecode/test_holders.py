@@ -217,16 +217,7 @@ class TestHolders(FileBasedTesting):
         test_file = self.get_test_loc('holders/holder_javascript_large-ext_all_js.js')
         expected = [
             u'Ext JS, LLC',
-            u'a.commit()'
          ]
-        check_detection(expected, test_file, what='holders')
-
-    @expectedFailure
-    def test_holder_javascript_large_correct(self):
-        test_file = self.get_test_loc('holders/holder_javascript_large-ext_all_js.js')
-        expected = [
-            'Ext JS, LLC',
-        ]
         check_detection(expected, test_file, what='holders')
 
     def test_holder_mergesort_java(self):

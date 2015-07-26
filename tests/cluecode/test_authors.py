@@ -36,23 +36,23 @@ class TestAuthors(FileBasedTesting):
     def test_author_addr_c(self):
         test_file = self.get_test_loc('authors/author_addr_c-addr_c.c')
         expected = [
-            u'Author John Doe',
+            u'John Doe',
         ]
         check_detection(expected, test_file, what='authors')
 
     def test_author_avinash(self):
         test_file = self.get_test_loc('authors/author_avinash-BitVector_py.py')
         expected = [
-            u'author Avinash Kak (kak@purdue.edu)',
-            u'Author Avinash Kak (kak@purdue.edu)',
+            u'Avinash Kak (kak@purdue.edu)',
+            u'Avinash Kak (kak@purdue.edu)',
         ]
         check_detection(expected, test_file, what='authors')
 
     def test_author_avinash_kak(self):
         test_file = self.get_test_loc('authors/author_avinash_kak-BitVector_py.py')
         expected = [
-            u'author Avinash Kak (kak@purdue.edu)',
-            u'Author Avinash Kak (kak@purdue.edu)',
+            u'Avinash Kak (kak@purdue.edu)',
+            u'Avinash Kak (kak@purdue.edu)',
         ]
         check_detection(expected, test_file, what='authors')
 
@@ -81,7 +81,7 @@ class TestAuthors(FileBasedTesting):
     def test_author_gary(self):
         test_file = self.get_test_loc('authors/author_gary-ProjectInfo_java.java')
         expected = [
-            "author Gary O'Neall",
+            "Gary O'Neall",
         ]
         check_detection(expected, test_file, what='authors')
 
@@ -96,14 +96,14 @@ class TestAuthors(FileBasedTesting):
     def test_author_in_java(self):
         test_file = self.get_test_loc('authors/author_in_java-MergeSort_java.java')
         expected = [
-            u'author Scott Violet',
+            u'Scott Violet',
         ]
         check_detection(expected, test_file, what='authors')
 
     def test_author_in_java_tag(self):
         test_file = self.get_test_loc('authors/author_in_java_tag-java.java')
         expected = [
-            u'author Apple Banana Car',
+            u'Apple Banana Car',
         ]
         check_detection(expected, test_file, what='authors')
 
@@ -192,7 +192,7 @@ class TestAuthors(FileBasedTesting):
     def test_author_treetablemodeladapter_java(self):
         test_file = self.get_test_loc('authors/author_treetablemodeladapter_java-TreeTableModelAdapter_java.java')
         expected = [
-            u'author Philip Milne author Scott Violet',
+            u'Philip Milne author Scott Violet',
         ]
         check_detection(expected, test_file, what='authors')
 
