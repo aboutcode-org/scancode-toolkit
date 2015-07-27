@@ -145,6 +145,9 @@ ScanCode needs a Python 2.7 interpreter.
   For instance, visit https://github.com/dejacode/about-code-tool/wiki/BuildingPython27OnCentos6
   for instruction to compile Python from sources on Centos.
 
+  * On Debian/Ubuntu distros, you may need to install these packages: `libbz2 xzutils zlib1g`.
+  * On RPM-based distros, you may need to install these packages: `zlib bzip2-libs xz-libs`.
+
 - **On Windows**:
 
   Use the Python 2.7 (Windows x86 MSI installer) for X86 regardless of whether you run Windows
