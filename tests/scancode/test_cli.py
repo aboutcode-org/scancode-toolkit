@@ -113,6 +113,17 @@ class TestCommandLine(FileBasedTesting):
         assert os.path.exists(output_json)
         assert len(open(output_json).read()) > 10
 
+    def test_verbose_copyrights(self):
+        test_dir = self.get_test_loc('copyright', copy=True)
+        runner = CliRunner()
+        output_json = self.get_temp_file('json')
+        result = runner.invoke(cli.scancode, ['--copyright', '--verbose', test_dir, output_json])
+        assert result.exit_code == 0
+        assert 'Scanning done' in result.output
+        assert 'copyright_acme_c-c.c' in result.output
+        assert os.path.exists(output_json)
+        assert len(open(output_json).read()) > 10
+
     def test_license_option_detects_licenses(self):
         test_dir = self.get_test_loc('license', copy=True)
         runner = CliRunner()

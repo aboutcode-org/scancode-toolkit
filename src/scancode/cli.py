@@ -289,7 +289,7 @@ then run scancode again to scan the extracted files.''')
                 for input_file in files:
                     results.append(scan_one(input_file, copyright, license, verbose))
         else:
-            for input_file in file_iter(files):
+            for input_file in files:
                 results.append(scan_one(input_file, copyright, license, verbose))
 
         if format == 'html':
