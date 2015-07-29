@@ -1,0 +1,11 @@
+key: facebook-software-license
+short_name: Facebook Software License
+name: Facebook Software License
+category: Attribution Restricted
+owner: Facebook
+notes: license found in several Facebook SDKs
+text_urls:
+    - https://github.com/facebook/facebook-android-sdk/blob/752ea7b77a1779ed8b784dbd55a886cc00aeb8a6/LICENSE.txt
+    - https://github.com/facebook/facebook-ios-sdk/blob/master/LICENSE
+    - https://github.com/facebook/facebook-android-sdk/blob/master/LICENSE.txt
+faq_url: http://developers.facebook.com/policy/

@@ -1,0 +1,11 @@
+key: cognitive-web-osl-1.1
+short_name: CognitiveWeb Open Source License 1.1
+name: CognitiveWeb Open Source License 1.1
+category: Copyleft Limited
+owner: CognitiveWeb Project
+homepage_url: http://www.cognitiveweb.org/legal/license/
+text_urls:
+    - http://www.cognitiveweb.org/legal/license/CognitiveWebOpenSourceLicense-1.1.txt
+    - http://www.cognitiveweb.org/legal/license/CognitiveWebOpenSourceLicense-1.1.html
+    - http://www.cognitiveweb.org/legal/license/CognitiveWebOpenSourceLicense-1.1-signed.pdf
+notes: derived from the Jabber Open Source License
