@@ -34,6 +34,7 @@ from unittest.case import expectedFailure
 from commoncode import fileutils
 from commoncode.testcase import FileBasedTesting
 from commoncode import text
+
 from licensedcode import saneyaml
 from licensedcode import detect
 
@@ -52,7 +53,8 @@ class LicenseTest(object):
     correctly
 
     It consists of two files with the same base name: a .yml file with test data
-    and a test file with any other extension that needs to be tested for detection
+    and a test file with any other extension that needs to be tested for
+    detection
 
     The following data are loaded from the .yml file:
      - a test file to scan for licenses,
