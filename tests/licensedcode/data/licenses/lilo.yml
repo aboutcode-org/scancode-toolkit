@@ -1,4 +1,10 @@
 licenses:
     - lilo
-expected_failure: yes
+    - vsl-1.0
+    - vsl-1.0
+    - lilo
+    - lilo
+    - bzip2-libbzip-1.0.5
+    - bzip2-libbzip-1.0.5
+
 sort: true
