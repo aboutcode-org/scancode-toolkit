@@ -1,0 +1,197 @@
+{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.", 
+  "scancode_version": "1.3.1", 
+  "resource_count": 10, 
+  "results": [
+    {
+      "location": "main.c", 
+      "infos": {
+        "type": "file", 
+        "name": "main.c", 
+        "extension": ".c", 
+        "date": "2015-06-19", 
+        "size": "1940", 
+        "sha1": "35017ed9762bdc9d16054a40ceefdda8b362083a", 
+        "files_count": "", 
+        "type_details": {
+          "mime_type": "text/x-c", 
+          "file_type": "C source, ASCII text", 
+          "programming_language": "C", 
+          "is_binary": false, 
+          "is_text": true, 
+          "is_archive": false, 
+          "is_media": false, 
+          "is_source": true, 
+          "is_script": false
+        }
+      }
+    }, 
+    {
+      "location": "dbase.fdt", 
+      "infos": {
+        "type": "file", 
+        "name": "dbase.fdt", 
+        "extension": ".fdt", 
+        "date": "2015-06-19", 
+        "size": "183", 
+        "sha1": "94f059d6478d5f460e79b6b948a7fa9849d4dfdc", 
+        "files_count": "", 
+        "type_details": {
+          "mime_type": "application/octet-stream", 
+          "file_type": "data", 
+          "programming_language": "", 
+          "is_binary": true, 
+          "is_text": false, 
+          "is_archive": false, 
+          "is_media": false, 
+          "is_source": false, 
+          "is_script": false
+        }
+      }
+    }, 
+    {
+      "location": "dir2", 
+      "infos": {
+        "type": "directory", 
+        "name": "dir2", 
+        "extension": "", 
+        "date": "", 
+        "size": "36457", 
+        "sha1": "", 
+        "files_count": 2, 
+        "type_details": {}
+      }
+    }, 
+    {
+      "location": "dir", 
+      "infos": {
+        "type": "directory", 
+        "name": "dir", 
+        "extension": "", 
+        "date": "", 
+        "size": "18486", 
+        "sha1": "", 
+        "files_count": 2, 
+        "type_details": {}
+      }
+    }, 
+    {
+      "location": "dir2/subdir", 
+      "infos": {
+        "type": "directory", 
+        "name": "subdir", 
+        "extension": "", 
+        "date": "", 
+        "size": "36457", 
+        "sha1": "", 
+        "files_count": 2, 
+        "type_details": {}
+      }
+    }, 
+    {
+      "location": "dir2/subdir/bcopy.s", 
+      "infos": {
+        "type": "file", 
+        "name": "bcopy.s", 
+        "extension": ".s", 
+        "date": "2015-06-19", 
+        "size": "32452", 
+        "sha1": "99f20eafc7b7e1c8e21bced55c8cdd05339bec77", 
+        "files_count": "", 
+        "type_details": {
+          "mime_type": "text/x-c", 
+          "file_type": "C source, ASCII text, with CRLF line terminators", 
+          "programming_language": "GAS", 
+          "is_binary": false, 
+          "is_text": true, 
+          "is_archive": false, 
+          "is_media": false, 
+          "is_source": true, 
+          "is_script": false
+        }
+      }
+    }, 
+    {
+      "location": "dir2/subdir/config.conf", 
+      "infos": {
+        "type": "file", 
+        "name": "config.conf", 
+        "extension": ".conf", 
+        "date": "2015-06-19", 
+        "size": "4005", 
+        "sha1": "4d567dc15d2117445389edfb64ced872329bceaa", 
+        "files_count": "", 
+        "type_details": {
+          "mime_type": "text/plain", 
+          "file_type": "ASCII text, with CRLF line terminators", 
+          "programming_language": "", 
+          "is_binary": false, 
+          "is_text": true, 
+          "is_archive": false, 
+          "is_media": false, 
+          "is_source": false, 
+          "is_script": false
+        }
+      }
+    }, 
+    {
+      "location": "dir/e.tar", 
+      "infos": {
+        "type": "file", 
+        "name": "e.tar", 
+        "extension": ".tar", 
+        "date": "2015-06-19", 
+        "size": "10240", 
+        "sha1": "b655d4fc48e19910b9ab7a7102a8c051a39818f1", 
+        "files_count": "", 
+        "type_details": {
+          "mime_type": "application/x-tar", 
+          "file_type": "POSIX tar archive (GNU)", 
+          "programming_language": "", 
+          "is_binary": true, 
+          "is_text": false, 
+          "is_archive": true, 
+          "is_media": false, 
+          "is_source": false, 
+          "is_script": false
+        }
+      }
+    }, 
+    {
+      "location": "dir/subdir", 
+      "infos": {
+        "type": "directory", 
+        "name": "subdir", 
+        "extension": "", 
+        "date": "", 
+        "size": "8246", 
+        "sha1": "", 
+        "files_count": 1, 
+        "type_details": {}
+      }
+    }, 
+    {
+      "location": "dir/subdir/a.aif", 
+      "infos": {
+        "type": "file", 
+        "name": "a.aif", 
+        "extension": ".aif", 
+        "date": "2015-06-19", 
+        "size": "8246", 
+        "sha1": "03cfd28bb49d1dab105dcce1663630be1ddd821a", 
+        "files_count": "", 
+        "type_details": {
+          "mime_type": "audio/x-aiff", 
+          "file_type": "IFF data, AIFF audio", 
+          "programming_language": "", 
+          "is_binary": true, 
+          "is_text": false, 
+          "is_archive": false, 
+          "is_media": true, 
+          "is_source": false, 
+          "is_script": false
+        }
+      }
+    }
+  ]
+}
