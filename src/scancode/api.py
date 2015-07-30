@@ -62,11 +62,11 @@ def get_copyrights(location=None):
     for copyrights, _, _, _, start_line, end_line in detect_copyrights(location):
         if not copyrights:
             continue
-        yield {
-            'statements': copyrights,
-            'start_line': start_line,
-            'end_line': end_line,
-        }
+        result = OrderedDict()
+        result['statements']= copyrights
+        result['start_line']= start_line
+        result['end_line']= end_line
+        yield result
 
 
 DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/license_library/Demo/{}/'
@@ -82,24 +82,23 @@ def get_licenses(location=None):
 
     for match in get_license_matches(location):
         for license_key in match.rule.licenses:
-            license = get_license(license_key)
+            lic = get_license(license_key)
+            result = OrderedDict()
+            result['key'] = lic.key
+            result['short_name'] = lic.short_name
+            result['category'] = lic.category
+            result['owner'] = lic.owner
+            result['homepage_url'] = lic.homepage_url
+            result['text_url'] = lic.text_urls[0] if lic.text_urls else ''
+            result['dejacode_url'] = DEJACODE_LICENSE_URL.format(lic.key)
+            result['spdx_license_key'] = lic.spdx_license_key
+            result['spdx_url'] = lic.spdx_url
+            result['start_line'] = match.query_position.start_line
+            result['end_line'] = match.query_position.end_line
+            yield result
 
-            yield {
-                'key': license.key,
-                'short_name': license.short_name,
-                'category': license.category,
-                'owner': license.owner,
-                'homepage_url': license.homepage_url,
-                'text_url': license.text_urls[0] if license.text_urls else '',
-                'dejacode_url': DEJACODE_LICENSE_URL.format(license.key),
-                'spdx_license_key': license.spdx_license_key,
-                'spdx_url': license.spdx_url,
-                'start_line': match.query_position.start_line,
-                'end_line': match.query_position.end_line,
-            }
 
-
-def get_html_template(format):
+def get_html_template(format):  # @ReservedAssignment
     """
     Given a format string corresponding to a template directory, load and return
     the template.html file found in that directory.
@@ -111,7 +110,7 @@ def get_html_template(format):
     return template
 
 
-def get_template_dir(format):
+def get_template_dir(format):  # @ReservedAssignment
     """
     Given a format string return the corresponding template directory.
     """
@@ -128,8 +127,8 @@ def as_html_app(detected_data, scanned_path, output_file):
     if html_dirs:
         _, assets_dir = html_dirs
     else:
-        assets_dir= ''
-    return template.render(results=json.dumps(detected_data), 
+        assets_dir = ''
+    return template.render(results=json.dumps(detected_data),
                            assets_dir=assets_dir,
                            scanned_path=scanned_path)
 
@@ -220,3 +219,43 @@ def as_html(detected_data):
         licenses = OrderedDict(sorted(licenses.items()))
 
     return template.render(results=converted, licenses=licenses)
+
+
+def get_file_infos(location=None):
+    """
+    Return a nested dictionary of informations collected from the file or
+    directory at location or None.
+    """
+    from commoncode import filetype
+    from commoncode.hash import sha1
+    from typecode import contenttype
+
+    if not location:
+        return {}
+
+    T = contenttype.get_type(location)
+    is_file = T.is_file
+    is_dir = T.is_dir
+    infos = OrderedDict()
+    infos['type'] = filetype.get_type(location, short=False)
+    infos['name'] = fileutils.file_name(location)
+    infos['extension'] = is_file and fileutils.file_extension(location) or ''
+    infos['date'] = is_file and filetype.get_last_modified_date(location) or ''
+    infos['size'] = str(T.size)
+    infos['sha1'] = is_file and sha1(location) or ''
+    infos['files_count'] = is_dir and filetype.get_file_count(location) or ''
+
+    details = OrderedDict()
+    infos['type_details'] = details
+    if is_file:
+        details['mime_type'] = is_file and T.mimetype_file or ''
+        details['file_type'] = is_file and T.filetype_file or ''
+        details['programming_language'] = is_file and T.programming_language or ''
+        details['is_binary'] = T.is_binary
+        details['is_text'] = T.is_text
+        details['is_archive'] = T.is_archive
+        details['is_media'] = T.is_media
+        details['is_source'] = T.is_source
+        details['is_script'] = T.is_script
+
+    return infos

@@ -33,6 +33,7 @@ from commoncode.testcase import FileBasedTesting
 from commoncode.fileutils import as_posixpath
 
 from scancode import cli
+import codecs
 
 
 class TestCommandLine(FileBasedTesting):
@@ -106,46 +107,59 @@ class TestCommandLine(FileBasedTesting):
     def test_copyright_option_detects_copyrights(self):
         test_dir = self.get_test_loc('copyright', copy=True)
         runner = CliRunner()
-        output_json = self.get_temp_file('json')
-        result = runner.invoke(cli.scancode, ['--copyright', test_dir, output_json])
+        result_file = self.get_temp_file('json')
+        result = runner.invoke(cli.scancode, ['--copyright', test_dir, result_file])
         assert result.exit_code == 0
         assert 'Scanning done' in result.output
-        assert os.path.exists(output_json)
-        assert len(open(output_json).read()) > 10
+        assert os.path.exists(result_file)
+        assert len(open(result_file).read()) > 10
 
     def test_verbose_copyrights(self):
         test_dir = self.get_test_loc('copyright', copy=True)
         runner = CliRunner()
-        output_json = self.get_temp_file('json')
-        result = runner.invoke(cli.scancode, ['--copyright', '--verbose', test_dir, output_json])
+        result_file = self.get_temp_file('json')
+        result = runner.invoke(cli.scancode, ['--copyright', '--verbose', test_dir, result_file])
         assert result.exit_code == 0
         assert 'Scanning done' in result.output
         assert 'copyright_acme_c-c.c' in result.output
-        assert os.path.exists(output_json)
-        assert len(open(output_json).read()) > 10
+        assert os.path.exists(result_file)
+        assert len(open(result_file).read()) > 10
 
     def test_license_option_detects_licenses(self):
         test_dir = self.get_test_loc('license', copy=True)
         runner = CliRunner()
-        output_json = self.get_temp_file('json')
-        result = runner.invoke(cli.scancode, ['--license', test_dir, output_json])
+        result_file = self.get_temp_file('json')
+        result = runner.invoke(cli.scancode, ['--license', test_dir, result_file])
         assert result.exit_code == 0
         assert 'Scanning done' in result.output
-        assert os.path.exists(output_json)
-        assert len(open(output_json).read()) > 10
+        assert os.path.exists(result_file)
+        assert len(open(result_file).read()) > 10
 
     def test_scancode_skip_vcs_files_and_dirs_by_default(self):
         test_dir = self.extract_test_tar('ignore/vcs.tgz')
         runner = CliRunner()
-        output_json = self.get_temp_file('json')
-        result = runner.invoke(cli.scancode, ['--copyright', test_dir, output_json])
+        result_file = self.get_temp_file('json')
+        result = runner.invoke(cli.scancode, ['--copyright', test_dir, result_file])
         assert result.exit_code == 0
-        with open(output_json) as res:
+        scan_result = self.load_json_result(result_file, test_dir)
+        # a single test.tst file and its directory that is not a VCS file should be listed
+        assert 2 == scan_result['resource_count']
+        scan_locs = [x['location'] for x in scan_result['results']]
+        assert [u'vcs', u'vcs/test.txt'] == scan_locs
+
+    def load_json_result(self, result_file, test_dir):
+        """
+        Load the result file as utf-8 JSON and strip test_dir prefix from
+        locations.
+        """
+        test_dir = as_posixpath(test_dir)
+        with codecs.open(result_file, encoding='utf-8') as res:
             scan_result = json.load(res)
-        # a single test.tst file that is not a VCS file should be listed
-        assert 1 == scan_result['count']
-        scan_loc = as_posixpath(scan_result['results'][0]['location'])
-        assert scan_loc.endswith('vcs.tgz/vcs/test.txt')
+            for result in scan_result['results']:
+                loc = result['location']
+                loc = as_posixpath(loc).replace(test_dir, '').strip('/')
+                result['location'] = loc
+            return scan_result
 
     def test_usage_and_help_return_a_correct_script_name_on_all_platforms(self):
         runner = CliRunner()
@@ -162,3 +176,25 @@ class TestCommandLine(FileBasedTesting):
         result = runner.invoke(cli.scancode, ['-xyz'])
         # this was showing up on Windows
         assert 'scancode-script.py' not in result.output
+
+    def test_info_collect_infos(self):
+        test_dir = self.get_test_loc('info/basic', copy=True)
+        runner = CliRunner()
+        result_file = self.get_temp_file('json')
+        result = runner.invoke(cli.scancode, ['--info', test_dir, result_file])
+        assert result.exit_code == 0
+        assert 'Scanning done' in result.output
+        expected = self.load_json_result(self.get_test_loc('info/basic.expected.json'), test_dir)
+        loaded_result = self.load_json_result(result_file, test_dir)
+        assert expected == loaded_result
+
+    def test_info_license_copyrights(self):
+        test_dir = self.get_test_loc('info/basic', copy=True)
+        runner = CliRunner()
+        result_file = self.get_temp_file('json')
+        result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright', test_dir, result_file])
+        assert result.exit_code == 0
+        assert 'Scanning done' in result.output
+        expected = self.load_json_result(self.get_test_loc('info/all.expected.json'), test_dir)
+        loaded_result = self.load_json_result(result_file, test_dir)
+        assert expected == loaded_result

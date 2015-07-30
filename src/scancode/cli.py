@@ -24,14 +24,15 @@
 
 from __future__ import print_function, absolute_import
 
-import os
+from collections import OrderedDict
 from functools import partial
 import json
+import os
 
 import click
 
-from commoncode.fileutils import file_iter
 from commoncode import ignore
+from commoncode.fileutils import resource_iter
 
 from scancode import __version__ as version
 from scancode.api import as_html
@@ -42,6 +43,7 @@ from scancode.api import get_copyrights
 from scancode.api import get_licenses
 from scancode.api import HtmlAppAssetCopyWarning
 from scancode.api import HtmlAppAssetCopyError
+from scancode.api import get_file_infos
 
 
 info_text = '''
@@ -236,6 +238,7 @@ class ScanCommand(click.Command):
 @click.argument('output_file', default='-', metavar='<output_file>', type=click.File('wb'))
 @click.option('-c', '--copyright', is_flag=True, default=False, help='Scan <input> for copyrights. [default]')
 @click.option('-l', '--license', is_flag=True, default=False, help='Scan <input> for licenses. [default]')
+@click.option('-i', '--info', is_flag=True, default=False, help='Collect files information from  <input>.')
 @click.option('-f', '--format', metavar='<style>', type=click.Choice(formats),
               default='json', show_default=True,
               help='Set <output_file> format <style> to one of: %s' % ' or '.join(formats),
@@ -250,13 +253,13 @@ class ScanCommand(click.Command):
               help=('Show information about ScanCode and licensing and exit.'))
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version,
               help=('Show the version and exit.'))
-def scancode(ctx, input, output_file, extract, copyright, license, format, verbose, *args, **kwargs):  # @ReservedAssignment
+def scancode(ctx, input, output_file, extract, copyright, license, info, format, verbose, *args, **kwargs):  # @ReservedAssignment
     """scan the <input> file or directory for origin and license and save results to the <output_file>.
 
     The scan results are printed on terminal if <output_file> is not provided.
     """
     abs_input = os.path.abspath(os.path.expanduser(input))
-    scans = [copyright, license]
+    scans = [copyright, license, info]
     if extract:
         if any(scans):
             # exclusive, ignoring other options.
@@ -276,21 +279,21 @@ then run scancode again to scan the extracted files.''')
         copyright = True  # @ReservedAssignment
         license = True  # @ReservedAssignment
 
-    if copyright or license:
+    if copyright or license or info:
         click.secho('Scanning files...', fg='green')
         results = []
 
         ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
-        files = file_iter(abs_input, ignored=ignored)
-
+        files = resource_iter(abs_input, ignored=ignored)
+ 
         if not verbose:
             # only display a progress bar
             with click.progressbar(files, show_pos=True) as files:
                 for input_file in files:
-                    results.append(scan_one(input_file, copyright, license, verbose))
+                    results.append(scan_one(input_file, copyright, license, info, verbose))
         else:
             for input_file in files:
-                results.append(scan_one(input_file, copyright, license, verbose))
+                results.append(scan_one(input_file, copyright, license, info, verbose))
 
         if format == 'html':
             output_file.write(as_html(results))
@@ -306,26 +309,26 @@ then run scancode again to scan the extracted files.''')
                 click.secho('\nFailed to create HTML app.', fg='red')
 
         elif format == 'json':
-            meta = {
-                'count': len(results),
-                'notice': acknowledgment_text_json,
-                'results': results,
-                'version': version,
-            }
-            output_file.write(json.dumps(meta, indent=2, sort_keys=True))
+            meta = OrderedDict()
+            meta['scancode_notice'] = acknowledgment_text_json
+            meta['scancode_version'] = version
+            meta['resource_count'] = len(results)
+            meta['results'] = results
+            output_file.write(json.dumps(meta, indent=2))
         else:
             # This should never happen by construction
             raise Exception('Unknown format: ' + repr(format))
         click.secho('Scanning done.', fg='green')
 
 
-def scan_one(input_file, copyright, license, verbose=False):  # @ReservedAssignment
+def scan_one(input_file, copyright, license, info, verbose=False):  # @ReservedAssignment
     """
     Scan one file and return scanned data.
     """
     if verbose:
         click.secho('Scanning: %(input_file)s: ' % locals(), nl=False, fg='blue')
-    data = {'location': input_file}
+    data = OrderedDict()
+    data['location'] = input_file
     if copyright:
         if verbose:
             click.secho('copyrights. ', nl=False, fg='green')
@@ -334,6 +337,11 @@ def scan_one(input_file, copyright, license, verbose=False):  # @ReservedAssignm
         if verbose:
             click.secho('licenses. ', nl=False, fg='green')
         data['licenses'] = list(get_licenses(input_file))
+    if info:
+        if verbose:
+            click.secho('infos. ', nl=False, fg='green')
+        data['infos'] = get_file_infos(input_file)
+
     if verbose:
         click.secho('', nl=True)
     return data
