@@ -180,7 +180,7 @@ class TestCommandLine(FileBasedTesting):
         assert 'scancode-script.py' not in result.output
 
     def test_info_collect_infos(self):
-        test_dir = self.get_test_loc('info/basic', copy=True)
+        test_dir = self.extract_test_tar('info/basic.tgz')
         runner = CliRunner()
         result_file = self.get_temp_file('json')
         result = runner.invoke(cli.scancode, ['--info', test_dir, result_file])
@@ -191,7 +191,7 @@ class TestCommandLine(FileBasedTesting):
         assert expected == loaded_result
 
     def test_info_license_copyrights(self):
-        test_dir = self.get_test_loc('info/basic', copy=True)
+        test_dir = self.extract_test_tar('info/basic.tgz')
         runner = CliRunner()
         result_file = self.get_temp_file('json')
         result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright', test_dir, result_file])
