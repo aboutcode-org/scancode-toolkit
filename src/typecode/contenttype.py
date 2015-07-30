@@ -50,7 +50,6 @@ from typecode import magic2
 LOG = logging.getLogger(__name__)
 
 
-
 # Python mimetypes path setup using Apache mimetypes DB
 os.environ['XDG_DATA_DIRS'] = os.path.join(typecode.data_dir, 'apache')
 os.environ['XDG_DATA_HOME'] = os.environ['XDG_DATA_DIRS']
