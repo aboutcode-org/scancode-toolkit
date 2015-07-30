@@ -954,6 +954,8 @@ def prepare_text_line(line):
     line = re.sub('^dnl ', ' ', line)
     # un common comment line prefix in man pages
     line = re.sub('^\.\\"', ' ', line)
+    # un common pipe chars in some ascii art
+    line = line.replace('|', ' ')
 
     # normalize copyright signs and spacing aournd them
     line = line.replace('(C)', ' (c) ')
