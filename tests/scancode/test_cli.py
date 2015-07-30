@@ -151,6 +151,7 @@ class TestCommandLine(FileBasedTesting):
         """
         Load the result file as utf-8 JSON and strip test_dir prefix from
         locations.
+        Sort the results by location.
         """
         test_dir = as_posixpath(test_dir)
         with codecs.open(result_file, encoding='utf-8') as res:
@@ -159,7 +160,8 @@ class TestCommandLine(FileBasedTesting):
                 loc = result['location']
                 loc = as_posixpath(loc).replace(test_dir, '').strip('/')
                 result['location'] = loc
-            return scan_result
+        scan_result['results'].sort(key=lambda x: x['location'])
+        return scan_result
 
     def test_usage_and_help_return_a_correct_script_name_on_all_platforms(self):
         runner = CliRunner()
