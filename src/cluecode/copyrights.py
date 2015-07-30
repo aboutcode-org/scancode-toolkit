@@ -336,6 +336,7 @@ grammar = """
     ANDCO: {<CC> <NNP> <NNP>+}
     ANDCO: {<CC> <COMPANY|NAME|NAME2|NAME3>+}
     COMPANY: {<COMPANY|NAME|NAME2|NAME3> <ANDCO>+}
+    NAME: {<NNP> <ANDCO>+}
 
     NAME: {<BY> <NN> <AUTH>}
 

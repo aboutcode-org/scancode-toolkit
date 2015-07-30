@@ -3869,3 +3869,11 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
         ]
         check_detection(expected, test_file)
+
+    def test_copyright_name_and_co(self):
+        test_file = self.get_test_loc('copyrights/copyright_nnp_and_co.txt')
+        expected = [
+            u'Copyright (c) 2001, Sandra and Klaus Rennecke.',
+        ]
+        check_detection(expected, test_file)
+
