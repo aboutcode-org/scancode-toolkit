@@ -102,22 +102,23 @@ def get_link_target(location):
 
 # Map of type checker function -> short type code
 # The order of types check matters: link -> file -> directory -> special
-TYPES = OrderedDict([(is_link, 'l'),
-                     (is_file, 'f'),
-                     (is_dir, 'd'),
-                     (is_special, 's')])
+TYPES = OrderedDict([(is_link, ('l', 'link',)),
+                     (is_file, ('f', 'file',)),
+                     (is_dir, ('d', 'directory',)),
+                     (is_special, ('s', 'special',))])
 
 
-def get_type(location):
+def get_type(location, short=True):
     """
     Return the type of the `location` or None if it does not exist.
+    Return the short form (single character) or long form if short=False
     """
     if location:
         for type_checker in TYPES:
             tc = type_checker(location)
             if tc:
-                return TYPES[type_checker]
-
+                short_form, long_form = TYPES[type_checker]
+                return short and short_form or long_form
 
 def is_readable(location):
     """

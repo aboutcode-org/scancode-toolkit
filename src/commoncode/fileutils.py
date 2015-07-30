@@ -296,9 +296,25 @@ def file_iter(location, ignored=ignore_nothing):
                     if the location should be ignored.
     :return: an iterable of file locations.
     """
-    for top, _dirs, files in walk(location, ignored):
+    return resource_iter(location, ignored, with_dirs=False)
+
+
+def resource_iter(location, ignored=ignore_nothing, with_dirs=True):
+    """
+    Return an iterable of resource at `location` recursively.
+
+    :param location: a file or a directory.
+    :param ignored: a callable accepting a location argument and returning True
+                    if the location should be ignored.
+    :param with_dirs: If True, include the directory together with files.
+    :return: an iterable of file and directory locations.
+    """
+    for top, dirs, files in walk(location, ignored):
         for f in files:
             yield os.path.join(top, f)
+        if with_dirs:
+            for d in dirs:
+                yield os.path.join(top, d)
 
 #
 # COPY
