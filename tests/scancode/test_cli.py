@@ -180,7 +180,7 @@ class TestCommandLine(FileBasedTesting):
         assert 'scancode-script.py' not in result.output
 
     def test_info_collect_infos(self):
-        test_dir = self.get_test_loc('info/basic', copy=True)
+        test_dir = self.extract_test_tar('info/basic.tgz')
         runner = CliRunner()
         result_file = self.get_temp_file('json')
         result = runner.invoke(cli.scancode, ['--info', test_dir, result_file])
@@ -191,7 +191,7 @@ class TestCommandLine(FileBasedTesting):
         assert expected == loaded_result
 
     def test_info_license_copyrights(self):
-        test_dir = self.get_test_loc('info/basic', copy=True)
+        test_dir = self.extract_test_tar('info/basic.tgz')
         runner = CliRunner()
         result_file = self.get_temp_file('json')
         result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright', test_dir, result_file])
@@ -200,3 +200,12 @@ class TestCommandLine(FileBasedTesting):
         expected = self.load_json_result(self.get_test_loc('info/all.expected.json'), test_dir)
         loaded_result = self.load_json_result(result_file, test_dir)
         assert expected == loaded_result
+
+    def est_html_app_paths_are_posix_paths(self):
+        test_dir = self.extract_test_tar('info/basic.tgz')
+        runner = CliRunner()
+        result_file = self.get_temp_file('html')
+        result = runner.invoke(cli.scancode, ['--format', 'html-app', test_dir, result_file])
+        assert result.exit_code == 0
+        assert 'Scanning done' in result.output
+        assert 'basic.tgz/basic/dir2/subdir/bcopy.s' in open(result_file).read()
