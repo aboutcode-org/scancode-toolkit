@@ -3877,3 +3877,10 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
+    def test_copyright_with_ascii_art(self):
+        test_file = self.get_test_loc('copyrights/copyright_with_ascii_art.txt')
+        expected = [
+            u'Copyright (c) 1996. The Regents of the University of California.',
+        ]
+        check_detection(expected, test_file)
+
