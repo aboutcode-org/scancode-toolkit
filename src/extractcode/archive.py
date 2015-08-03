@@ -345,359 +345,445 @@ def extract_twice(location, target_dir, extractor1, extractor2):
 List of archive handlers.
 """
 
-archive_handlers = [
-    Handler(name='Tar',
-        types=('.tar', 'tar archive',),
-        mimes=('application/x-tar',),
-        exts=('.tar',),
-        kind=regular,
-        extractors=[extract_tar]
-    ),
+TarHandler = Handler(
+    name='Tar',
+    types=('.tar', 'tar archive',),
+    mimes=('application/x-tar',),
+    exts=('.tar',),
+    kind=regular,
+    extractors=[extract_tar]
+)
 
-    Handler(name='Ruby Gem package',
-        types=('.tar', 'tar archive',),
-        mimes=('application/x-tar',),
-        exts=('.gem',),
-        kind=package,
-        extractors=[extract_tar]
-    ),
+RubyGemHandler = Handler(
+    name='Ruby Gem package',
+    types=('.tar', 'tar archive',),
+    mimes=('application/x-tar',),
+    exts=('.gem',),
+    kind=package,
+    extractors=[extract_tar]
+)
 
-    Handler(name='Zip',
-        types=('zip archive',),
-        mimes=('application/zip',),
-        exts=('.zip', '.zipx'),
-        kind=regular,
-        extractors=[extract_zip]
-    ),
+ZipHandler = Handler(
+    name='Zip',
+    types=('zip archive',),
+    mimes=('application/zip',),
+    exts=('.zip', '.zipx'),
+    kind=regular,
+    extractors=[extract_zip]
+)
 
-    Handler(name='Office doc',
-        types=('zip archive',),
-        mimes=('application/zip', 'application/vnd.openxmlformats',),
-        # Extensions of office documents that are zip files too
-        exts=(
-            # ms doc
-            '.docx', '.dotx', '.docm',
-            # ms xls
-            '.xlsx', '.xltx', '.xlsm', '.xltm',
-            # ms ppt
-            '.pptx', '.ppsx', '.potx', '.pptm', '.potm', '.ppsm',
-            # oo write
-            '.odt', '.odf', '.sxw', '.stw',
-            # oo calc
-            '.ods', '.ots', '.sxc', '.stc',
-            # oo pres and draw
-            '.odp', '.otp', '.odg', '.otg', '.sxi', '.sti', '.sxd',
-            '.sxg', '.std',
-            # star office
-            '.sdc', '.sda', '.sdd', '.smf', '.sdw', '.sxm', '.stw',
-            '.oxt', '.sldx',
+OfficeDocHandler = Handler(
+    name='Office doc',
+    types=('zip archive',),
+    mimes=('application/zip', 'application/vnd.openxmlformats',),
+    # Extensions of office documents that are zip files too
+    exts=(
+        # ms doc
+        '.docx', '.dotx', '.docm',
+        # ms xls
+        '.xlsx', '.xltx', '.xlsm', '.xltm',
+        # ms ppt
+        '.pptx', '.ppsx', '.potx', '.pptm', '.potm', '.ppsm',
+        # oo write
+        '.odt', '.odf', '.sxw', '.stw',
+        # oo calc
+        '.ods', '.ots', '.sxc', '.stc',
+        # oo pres and draw
+        '.odp', '.otp', '.odg', '.otg', '.sxi', '.sti', '.sxd',
+        '.sxg', '.std',
+        # star office
+        '.sdc', '.sda', '.sdd', '.smf', '.sdw', '.sxm', '.stw',
+        '.oxt', '.sldx',
 
-            '.epub',
-        ),
-        kind=docs,
-        extractors=[extract_zip]
+        '.epub',
     ),
+    kind=docs,
+    extractors=[extract_zip]
+)
 
-    Handler(name='Android app',
-        types=('zip archive',),
-        mimes=('application/zip',),
-        exts=('.apk',),
-        kind=package,
-        extractors=[extract_zip]
-    ),
+AndroidAppHandler = Handler(
+    name='Android app',
+    types=('zip archive',),
+    mimes=('application/zip',),
+    exts=('.apk',),
+    kind=package,
+    extractors=[extract_zip]
+)
 
     # see http://tools.android.com/tech-docs/new-build-system/aar-formats
-    Handler(name='Android library',
-        types=('zip archive',),
-        mimes=('application/zip',),
-        # note: Apache Axis also uses AAR extensions for plain Jars
-        exts=('.aar',),
-        kind=package,
-        extractors=[extract_zip]
-    ),
+AndroidLibHandler = Handler(
+    name='Android library',
+    types=('zip archive',),
+    mimes=('application/zip',),
+    # note: Apache Axis also uses AAR extensions for plain Jars
+    exts=('.aar',),
+    kind=package,
+    extractors=[extract_zip]
+)
 
-    Handler(name='Mozilla extension',
-        types=('zip archive',),
-        mimes=('application/zip',),
-        exts=('.xpi',),
-        kind=package,
-        extractors=[extract_zip]
-    ),
+MozillaExtHandler = Handler(
+    name='Mozilla extension',
+    types=('zip archive',),
+    mimes=('application/zip',),
+    exts=('.xpi',),
+    kind=package,
+    extractors=[extract_zip]
+)
 
 # see https://developer.chrome.com/extensions/crx
-#    Handler(name='Chrome extension',
-#        types=('data',),
-#        mimes=('application/octet-stream',),
-#        exts=('.crx',),
-#        kind=package,
-#        extractors=[extract_7z]
-#    ),
+# not supported for now
+ChromeExtHandler = Handler(
+    name='Chrome extension',
+    types=('data',),
+    mimes=('application/octet-stream',),
+    exts=('.crx',),
+    kind=package,
+    extractors=[extract_7z]
+)
 
-    Handler(name='iOS app',
-        types=('zip archive',),
-        mimes=('application/zip',),
-        exts=('.ipa',),
-        kind=package,
-        extractors=[extract_zip]
-    ),
+IosAppHandler = Handler(
+    name='iOS app',
+    types=('zip archive',),
+    mimes=('application/zip',),
+    exts=('.ipa',),
+    kind=package,
+    extractors=[extract_zip]
+)
 
-    Handler(name='Java Jar package',
-        types=('java archive',),
-        mimes=('application/java-archive',),
-        exts=('.jar', '.zip',),
-        kind=package,
-        extractors=[extract_zip]
-    ),
+JavaJarHandler = Handler(
+    name='Java Jar package',
+    types=('java archive',),
+    mimes=('application/java-archive',),
+    exts=('.jar', '.zip',),
+    kind=package,
+    extractors=[extract_zip]
+)
 
-    Handler(name='Java Jar package',
-        types=('zip archive',),
-        mimes=('application/zip',),
-        exts=('.jar',),
-        kind=package,
-        extractors=[extract_zip]
-    ),
+JavaJarZipHandler = Handler(
+    name='Java Jar package',
+    types=('zip archive',),
+    mimes=('application/zip',),
+    exts=('.jar',),
+    kind=package,
+    extractors=[extract_zip]
+)
 
-    Handler(name='Java archive',
-        types=('zip archive',),
-        mimes=('application/zip', 'application/java-archive',),
-        exts=('.war', '.sar', '.ear',),
-        kind=regular,
-        extractors=[extract_zip]
-    ),
+JavaWebHandler = Handler(
+    name='Java archive',
+    types=('zip archive',),
+    mimes=('application/zip', 'application/java-archive',),
+    exts=('.war', '.sar', '.ear',),
+    kind=regular,
+    extractors=[extract_zip]
+)
 
-    Handler(name='Python package',
-        types=('zip archive',),
-        mimes=('application/zip',),
-        exts=('.egg', '.whl', '.pyz', '.pex',),
-        kind=package,
-        extractors=[extract_zip]
-    ),
+PythonHandler = Handler(
+    name='Python package',
+    types=('zip archive',),
+    mimes=('application/zip',),
+    exts=('.egg', '.whl', '.pyz', '.pex',),
+    kind=package,
+    extractors=[extract_zip]
+)
 
-    Handler(name='xz',
-        types=('xz compressed',),
-        mimes=('application/x-xz',) ,
-        exts=('.xz',),
-        kind=regular,
-        extractors=[extract_xz]
-    ),
+XzHandler = Handler(
+    name='xz',
+    types=('xz compressed',),
+    mimes=('application/x-xz',) ,
+    exts=('.xz',),
+    kind=regular,
+    extractors=[extract_xz]
+)
 
-    Handler(name='lzma',
-        types=('lzma compressed',),
-        mimes=('application/x-xz',) ,
-        exts=('.lzma',),
-        kind=regular,
-        extractors=[extract_lzma]
-    ),
+LzmaHandler = Handler(
+    name='lzma',
+    types=('lzma compressed',),
+    mimes=('application/x-xz',) ,
+    exts=('.lzma',),
+    kind=regular,
+    extractors=[extract_lzma]
+)
 
-    Handler(name='Tar xz',
-        types=('xz compressed',),
-        mimes=('application/x-xz',) ,
-        exts=('.tar.xz', '.txz', '.tarxz',),
-        kind=regular_nested,
-        extractors=[extract_xz, extract_tar]
-    ),
+TarXzHandler = Handler(
+    name='Tar xz',
+    types=('xz compressed',),
+    mimes=('application/x-xz',) ,
+    exts=('.tar.xz', '.txz', '.tarxz',),
+    kind=regular_nested,
+    extractors=[extract_xz, extract_tar]
+)
 
-    Handler(name='Tar lzma',
-        types=('lzma compressed',),
-        mimes=('application/x-lzma',) ,
-        exts=('tar.lzma', '.tlz', '.tarlz', '.tarlzma'),
-        kind=regular_nested,
-        extractors=[extract_lzma, extract_tar]
-    ),
+TarLzmaHandler = Handler(
+    name='Tar lzma',
+    types=('lzma compressed',),
+    mimes=('application/x-lzma',) ,
+    exts=('tar.lzma', '.tlz', '.tarlz', '.tarlzma'),
+    kind=regular_nested,
+    extractors=[extract_lzma, extract_tar]
+)
 
-    Handler(name='Tar gzip',
-        types=('gzip compressed',),
-        mimes=('application/x-gzip',),
-        exts=('.tgz', '.tar.gz', '.tar.gzip', '.targz',
-              '.targzip', '.tgzip',),
-        kind=regular_nested,
-        extractors=[extract_tar]
-    ),
+TarGzipHandler = Handler(
+    name='Tar gzip',
+    types=('gzip compressed',),
+    mimes=('application/x-gzip',),
+    exts=('.tgz', '.tar.gz', '.tar.gzip', '.targz',
+          '.targzip', '.tgzip',),
+    kind=regular_nested,
+    extractors=[extract_tar]
+)
 
-    Handler(name='Gzip',
-        types=('gzip compressed',),
-        mimes=('application/x-gzip',),
-        exts=('.gz', '.gzip',),
-        kind=regular,
-        extractors=[uncompress_gzip]
-    ),
+GzipHandler = Handler(
+    name='Gzip',
+    types=('gzip compressed',),
+    mimes=('application/x-gzip',),
+    exts=('.gz', '.gzip',),
+    kind=regular,
+    extractors=[uncompress_gzip]
+)
 
-    Handler(name='Dia diagram doc',
-        types=('gzip compressed',),
-        mimes=('application/x-gzip',),
-        exts=('.dia',),
-        kind=docs,
-        extractors=[uncompress_gzip]
-    ),
+DiaDocHandler = Handler(
+    name='Dia diagram doc',
+    types=('gzip compressed',),
+    mimes=('application/x-gzip',),
+    exts=('.dia',),
+    kind=docs,
+    extractors=[uncompress_gzip]
+)
 
-    Handler(name='bzip2',
-        types=('bzip2 compressed',),
-        mimes=('application/x-bzip2',),
-        exts=('.bz', '.bz2', 'bzip2',),
-        kind=regular,
-        extractors=[uncompress_bzip2]
-    ),
+BzipHandler = Handler(
+    name='bzip2',
+    types=('bzip2 compressed',),
+    mimes=('application/x-bzip2',),
+    exts=('.bz', '.bz2', 'bzip2',),
+    kind=regular,
+    extractors=[uncompress_bzip2]
+)
 
-    Handler(name='Tar bzip2',
-        types=('bzip2 compressed',),
-        mimes=('application/x-bzip2',),
-        exts=('.tar.bz2', '.tar.bz', '.tar.bzip', '.tar.bzip2',
-              '.tbz', '.tbz2', '.tb2', '.tarbz2',),
-        kind=regular_nested,
-        extractors=[extract_tar]
-    ),
+TarBzipHandler = Handler(
+    name='Tar bzip2',
+    types=('bzip2 compressed',),
+    mimes=('application/x-bzip2',),
+    exts=('.tar.bz2', '.tar.bz', '.tar.bzip', '.tar.bzip2',
+          '.tbz', '.tbz2', '.tb2', '.tarbz2',),
+    kind=regular_nested,
+    extractors=[extract_tar]
+)
 
-    Handler(name='RAR',
-        types=('rar archive',),
-        mimes=('application/x-rar',),
-        exts=('.rar',),
-        kind=regular,
-        extractors=[extract_rar]
-    ),
+RarHandler = Handler(
+    name='RAR',
+    types=('rar archive',),
+    mimes=('application/x-rar',),
+    exts=('.rar',),
+    kind=regular,
+    extractors=[extract_rar]
+)
 
-    Handler(name='Microsoft cab',
-        types=('microsoft cabinet',),
-        mimes=('application/vnd.ms-cab-compressed',),
-        exts=('.cab',),
-        kind=package,
-        extractors=[extract_cab]
-    ),
+CabHandler = Handler(
+    name='Microsoft cab',
+    types=('microsoft cabinet',),
+    mimes=('application/vnd.ms-cab-compressed',),
+    exts=('.cab',),
+    kind=package,
+    extractors=[extract_cab]
+)
 
-    Handler(name='Microsoft MSI Installer',
-        types=('msi installer',),
-        mimes=('application/x-msi',),
-        exts=('.msi',),
-        kind=package,
-        extractors=[extract_msi]
-    ),
+MsiInstallerHandler = Handler(
+    name='Microsoft MSI Installer',
+    types=('msi installer',),
+    mimes=('application/x-msi',),
+    exts=('.msi',),
+    kind=package,
+    extractors=[extract_msi]
+)
 
+# notes: this catches all  exe and fails often
+InstallShieldHandler = Handler(
+    name='InstallShield Installer',
+    types=('installshield',),
+    mimes=('application/x-dosexec',),
+    exts=('.exe',),
+    kind=special_package,
+    extractors=[extract_ishield]
+)
+
+NSISInstallerHandler = Handler(
+    name='Nullsoft Installer',
+    types=('nullsoft installer',),
+    mimes=('application/x-dosexec',),
+    exts=('.exe',),
+    kind=special_package,
+    extractors=[extract_nsis]
+)
+
+ArHandler = Handler(
+    name='ar archive',
+    types=('current ar archive',),
+    mimes=('application/x-archive',),
+    exts=('.ar',),
+    kind=regular,
+    extractors=[extract_ar]
+)
+
+StaticLibHandler = Handler(
+    name='Static Library',
+    types=('current ar archive', 'current ar archive random library',),
+    mimes=('application/x-archive',),
+    exts=('.a', '.lib', '.out', '.ka'),
+    kind=package,
+    extractors=[extract_ar]
+)
+
+DebHandler = Handler(
+    name='Debian package',
+    types=('debian binary package',),
+    mimes=('application/x-archive', 'application/vnd.debian.binary-package',),
+    exts=('.deb',),
+    kind=package,
+    extractors=[extract_deb]
+)
+
+RpmHandler = Handler(
+    name='RPM package',
+    types=('rpm ',),
+    mimes=('application/x-rpm',),
+    exts=('.rpm', '.srpm', '.mvl', '.vip',),
+    kind=package,
+    extractors=[extract_rpm, extract_cpio]
+)
+
+SevenZipHandler = Handler(
+    name='7zip',
+    types=('7-zip archive',),
+    mimes=('application/x-7z-compressed',),
+    exts=('.7z',),
+    kind=regular,
+    extractors=[extract_7z]
+)
+
+TarSevenZipHandler = Handler(
+    name='Tar 7zip',
+    types=('7-zip archive',),
+    mimes=('application/x-7z-compressed',),
+    exts=('.tar.7z', '.tar.7zip', '.t7z',),
+    kind=regular_nested,
+    extractors=[extract_7z, extract_tar]
+)
+
+SharHandler = Handler(
+    name='shar shell archive',
+    types=('posix shell script',),
+    mimes=('text/x-shellscript',),
+    exts=('.sha', '.shar', '.bin'),
+    kind=special_package,
+    extractors=[]
+)
+
+CpioHandler = Handler(
+    name='cpio',
+    types=('cpio archive',),
+    mimes=('application/x-cpio',),
+    exts=('.cpio',),
+    kind=regular,
+    extractors=[extract_cpio]
+)
+
+ZHandler = Handler(
+    name='Z',
+    types=("compress'd data",),
+    mimes=('application/x-compress',),
+    exts=('.z',),
+    kind=regular,
+    extractors=[extract_Z]
+)
+
+TarZHandler = Handler(
+    name='Tar Z',
+    types=("compress'd data",),
+    mimes=('application/x-compress',),
+    exts=('.tz', '.tar.z', '.tarz',),
+    kind=regular_nested,
+    extractors=[extract_Z, extract_tar]
+)
+
+AppleDmgHandler = Handler(
+    name='Apple dmg',
+    types=('zlib compressed',),
+    mimes=('application/zlib',),
+    exts=('.dmg', '.sparseimage',),
+    kind=package,
+    extractors=[extract_iso]
+)
+
+IsoImageHandler = Handler(
+    name='ISO CD image',
+    types=('iso 9660 cd-rom', 'high sierra cd-rom'),
+    mimes=('application/x-iso9660-image',),
+    exts=('.iso', '.udf', '.img'),
+    kind=file_system,
+    extractors=[extract_iso]
+)
+
+SquashfsHandler = Handler(
+    name='squashfs FS',
+    types=('squashfs',),
+    mimes=(),
+    exts=(),
+    kind=file_system,
+    extractors=[extract_squashfs]
+)
+
+PatchHandler = Handler(
+    name='Patch',
+    types=('diff', 'patch',),
+    mimes=('text/x-diff',),
+    exts=('.diff', '.patch',),
+    kind=patches,
+    extractors=[extract_patch]
+)
+
+
+archive_handlers = [
+    TarHandler,
+    RubyGemHandler,
+    ZipHandler,
+    OfficeDocHandler,
+    AndroidAppHandler,
+    AndroidLibHandler,
+    MozillaExtHandler,
+    # not supported for now
+    # ChromeExtHandler,
+    IosAppHandler,
+    JavaJarHandler,
+    JavaJarZipHandler,
+    JavaWebHandler,
+    PythonHandler,
+    XzHandler,
+    LzmaHandler,
+    TarXzHandler,
+    TarLzmaHandler,
+    TarGzipHandler,
+    GzipHandler,
+    DiaDocHandler,
+    BzipHandler,
+    TarBzipHandler,
+    RarHandler,
+    CabHandler,
+    MsiInstallerHandler,
     # notes: this catches all  exe and fails often
-    Handler(name='InstallShield Installer',
-        types=('installshield',),
-        mimes=('application/x-dosexec',),
-        exts=('.exe',),
-        kind=special_package,
-        extractors=[extract_ishield]
-    ),
-
-    Handler(name='Nullsoft Installer',
-        types=('nullsoft installer',),
-        mimes=('application/x-dosexec',),
-        exts=('.exe',),
-        kind=special_package,
-        extractors=[extract_nsis]
-    ),
-
-    Handler(name='ar archive',
-        types=('current ar archive',),
-        mimes=('application/x-archive',),
-        exts=('.ar',),
-        kind=regular,
-        extractors=[extract_ar]
-    ),
-
-    Handler(name='Static Library',
-        types=('current ar archive', 'current ar archive random library',),
-        mimes=('application/x-archive',),
-        exts=('.a', '.lib', '.out', '.ka'),
-        kind=package,
-        extractors=[extract_ar]
-    ),
-
-    Handler(name='Debian package',
-        types=('debian binary package',),
-        mimes=('application/x-archive',
-               'application/vnd.debian.binary-package',),
-        exts=('.deb',),
-        kind=package,
-        extractors=[extract_deb]
-    ),
-
-    Handler(name='RPM package',
-        types=('rpm ',),
-        mimes=('application/x-rpm',),
-        exts=('.rpm', '.srpm', '.mvl', '.vip',),
-        kind=package,
-        extractors=[extract_rpm, extract_cpio]
-    ),
-
-    Handler(name='7zip',
-        types=('7-zip archive',),
-        mimes=('application/x-7z-compressed',),
-        exts=('.7z',),
-        kind=regular,
-        extractors=[extract_7z]
-    ),
-
-    Handler(name='Tar 7zip',
-        types=('7-zip archive',),
-        mimes=('application/x-7z-compressed',),
-        exts=('.tar.7z', '.tar.7zip', '.t7z',),
-        kind=regular_nested,
-        extractors=[extract_7z, extract_tar]
-    ),
-
-    Handler(name='shar shell archive',
-        types=('posix shell script',),
-        mimes=('text/x-shellscript',),
-        exts=('.sha', '.shar', '.bin'),
-        kind=special_package,
-        extractors=[]
-    ),
-
-    Handler(name='cpio',
-        types=('cpio archive',),
-        mimes=('application/x-cpio',),
-        exts=('.cpio',),
-        kind=regular,
-        extractors=[extract_cpio]
-    ),
-
-    Handler(name='Z',
-        types=("compress'd data",),
-        mimes=('application/x-compress',),
-        exts=('.z',),
-        kind=regular,
-        extractors=[extract_Z]
-    ),
-
-    Handler(name='Tar Z',
-        types=("compress'd data",),
-        mimes=('application/x-compress',),
-        exts=('.tz', '.tar.z', '.tarz',),
-        kind=regular_nested,
-        extractors=[extract_Z, extract_tar]
-    ),
-
-    Handler(name='Apple dmg',
-        types=('zlib compressed',),
-        mimes=('application/zlib',),
-        exts=('.dmg', '.sparseimage',),
-        kind=package,
-        extractors=[extract_iso]
-    ),
-
-    Handler(name='ISO CD image',
-        types=('iso 9660 cd-rom', 'high sierra cd-rom'),
-        mimes=('application/x-iso9660-image',),
-        exts=('.iso', '.udf', '.img'),
-        kind=file_system,
-        extractors=[extract_iso]
-    ),
-
-    Handler(name='squashfs FS',
-        types=('squashfs',),
-        mimes=(),
-        exts=(),
-        kind=file_system,
-        extractors=[extract_squashfs]
-    ),
-
-    Handler(name='Patch',
-        types=('diff', 'patch',),
-        mimes=('text/x-diff',),
-        exts=('.diff', '.patch',),
-        kind=patches,
-        extractors=[extract_patch]
-    ),
+    InstallShieldHandler,
+    NSISInstallerHandler,
+    ArHandler,
+    StaticLibHandler,
+    DebHandler,
+    RpmHandler,
+    SevenZipHandler,
+    TarSevenZipHandler,
+    SharHandler,
+    CpioHandler,
+    ZHandler,
+    TarZHandler,
+    AppleDmgHandler,
+    IsoImageHandler,
+    SquashfsHandler,
+    PatchHandler
 ]
