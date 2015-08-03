@@ -32,6 +32,7 @@ import os
 import click
 
 from commoncode import ignore
+from commoncode import fileutils
 from commoncode.fileutils import resource_iter
 
 from scancode import __version__ as version
@@ -259,6 +260,7 @@ def scancode(ctx, input, output_file, extract, copyright, license, info, format,
     The scan results are printed on terminal if <output_file> is not provided.
     """
     abs_input = os.path.abspath(os.path.expanduser(input))
+    abs_input = fileutils.as_posixpath(abs_input)
     scans = [copyright, license, info]
     if extract:
         if any(scans):
@@ -290,9 +292,11 @@ then run scancode again to scan the extracted files.''')
             # only display a progress bar
             with click.progressbar(files, show_pos=True) as files:
                 for input_file in files:
+                    input_file = fileutils.as_posixpath(input_file)
                     results.append(scan_one(input_file, copyright, license, info, verbose))
         else:
             for input_file in files:
+                input_file = fileutils.as_posixpath(input_file)
                 results.append(scan_one(input_file, copyright, license, info, verbose))
 
         if format == 'html':
