@@ -192,18 +192,6 @@ class TestCommandLine(FileBasedTesting):
         loaded_result = self.load_json_result(result_file, test_dir)
         assert expected == loaded_result
 
-    def test_info_collect_infos_ticket_45(self):
-        test_dir = self.extract_test_tar('info/basic.tgz')
-        test_dir = test_dir.replace(posixpath.sep, ntpath.sep)
-        runner = CliRunner()
-        result_file = self.get_temp_file('json')
-        result = runner.invoke(cli.scancode, ['--info', test_dir, result_file])
-        assert result.exit_code == 0
-        assert 'Scanning done' in result.output
-        expected = self.load_json_result(self.get_test_loc('info/basic.expected.json'), test_dir)
-        loaded_result = self.load_json_result(result_file, test_dir)
-        assert expected == loaded_result
-
     def test_info_license_copyrights(self):
         test_dir = self.extract_test_tar('info/basic.tgz')
         runner = CliRunner()
