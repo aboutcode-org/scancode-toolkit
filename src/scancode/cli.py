@@ -259,7 +259,7 @@ def scancode(ctx, input, output_file, extract, copyright, license, info, format,
 
     The scan results are printed on terminal if <output_file> is not provided.
     """
-    abs_input = os.path.abspath(os.path.expanduser(input))
+    abs_input = os.path.abspath(os.path.expanduser(fileutils.as_posixpath(input)))
     abs_input = fileutils.as_posixpath(abs_input)
     scans = [copyright, license, info]
     if extract:
@@ -303,7 +303,7 @@ then run scancode again to scan the extracted files.''')
             output_file.write(as_html(results))
 
         elif format == 'html-app':
-            output_file.write(as_html_app(results, input, output_file))
+            output_file.write(as_html_app(results, fileutils.as_posixpath(input), output_file))
             try:
                 create_html_app_assets(output_file)
             except HtmlAppAssetCopyWarning:
