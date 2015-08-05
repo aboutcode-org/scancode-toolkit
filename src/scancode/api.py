@@ -224,12 +224,51 @@ def as_html(detected_data):
 def get_file_infos(location=None):
     """
     Return a nested dictionary of informations collected from the file or
-    directory at location or None.
+    directory at location or or an empty dict.
     """
     from commoncode import filetype
     from commoncode.hash import sha1
     from typecode import contenttype
 
+    if not location:
+        return {}
+
+    T = contenttype.get_type(location)
+    is_file = T.is_file
+    is_dir = T.is_dir
+    infos = OrderedDict()
+    infos['type'] = filetype.get_type(location, short=False)
+    infos['name'] = fileutils.file_name(location)
+    infos['extension'] = is_file and fileutils.file_extension(location) or ''
+    infos['date'] = is_file and filetype.get_last_modified_date(location) or ''
+    infos['size'] = str(T.size)
+    infos['sha1'] = is_file and sha1(location) or ''
+    infos['files_count'] = is_dir and filetype.get_file_count(location) or ''
+
+    details = OrderedDict()
+    infos['type_details'] = details
+    if is_file:
+        details['mime_type'] = is_file and T.mimetype_file or ''
+        details['file_type'] = is_file and T.filetype_file or ''
+        details['programming_language'] = is_file and T.programming_language or ''
+        details['is_binary'] = T.is_binary
+        details['is_text'] = T.is_text
+        details['is_archive'] = T.is_archive
+        details['is_media'] = T.is_media
+        details['is_source'] = T.is_source
+        details['is_script'] = T.is_script
+
+    return infos
+
+
+def get_package_infos(location=None):
+    """
+    Return a nested dictionary of package informations collected from the file or
+    directory at location or an empty dict.
+    """
+    from commoncode import filetype
+    from typecode import contenttype
+    from packagedcode.recognize import ArchiveRecognizer
     if not location:
         return {}
 
