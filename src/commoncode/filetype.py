@@ -120,6 +120,7 @@ def get_type(location, short=True):
                 short_form, long_form = TYPES[type_checker]
                 return short and short_form or long_form
 
+
 def is_readable(location):
     """
     Return True if the file at location has readable permission set.
