@@ -40,12 +40,14 @@ import typecode.contenttype
 from extractcode_assert_utils import check_files
 from extractcode_assert_utils import check_size
 
+from extractcode import all_kinds
 from extractcode import archive
 from extractcode import libarchive2
 from extractcode import sevenzip
-from extractcode import ExtractErrorFailedToExtract
 from extractcode import default_kinds
-from extractcode import all_kinds
+from extractcode import ExtractErrorFailedToExtract
+from extractcode.archive import get_best_handler
+
 from commoncode.system import on_mac
 
 
@@ -772,6 +774,21 @@ class TestZip(BaseArchiveTestCase):
         result = os.path.join(test_dir, 'src/Boo.Lang.Compiler'
                                 '/TypeSystem/InternalCallableType.cs')
         assert os.path.exists(result)
+
+    def test_get_best_handler_nuget_is_selected_over_zip(self):
+        test_file = self.get_test_loc('archive/zip/moq.4.2.1507.118.nupkg')
+        handler = get_best_handler(test_file)
+        assert archive.NugetHandler == handler
+
+    def test_get_best_handler_nuget_is_selected_over_zip2(self):
+        test_file = self.get_test_loc('archive/zip/exceptionhero.javascript.1.0.5.nupkg')
+        handler = get_best_handler(test_file)
+        assert archive.NugetHandler == handler
+
+    def test_get_best_handler_nuget_is_selected_over_zip3(self):
+        test_file = self.get_test_loc('archive/zip/javascript-fastclass.1.1.729.121805.nupkg')
+        handler = get_best_handler(test_file)
+        assert archive.NugetHandler == handler
 
 
 class TestLibarch(BaseArchiveTestCase):
