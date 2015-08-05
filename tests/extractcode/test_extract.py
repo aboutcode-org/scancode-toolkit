@@ -554,7 +554,7 @@ class TestExtract(FileBasedTesting):
         assert [] == errs
 
         warns = [r.warnings for r in result]
-        expected_warnings = [[], []]
+        expected_warnings = [[], [], [], [], [], []]
         assert sorted(expected_warnings) == sorted(warns)
 
     # FIXME: create test
