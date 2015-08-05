@@ -1465,8 +1465,8 @@ class TestRar(BaseArchiveTestCase):
         self.assertRaisesInstance(expected, archive.extract_rar, test_file, test_dir)
 
     def test_extract_rar_with_relative_path(self):
-        # FIXME: this file may not have relative paths
-        test_file = self.get_test_loc('archive/rar/rar_relative.rar')
+        # FIXME: this file may not have a real relative path
+        test_file = self.get_test_loc('archive/rar/rar_relative.rar', copy=True)
         test_dir = self.get_temp_dir()
         archive.extract_rar(test_file, test_dir)
         result = os.path.abspath(test_file + '/../a_parent_folder.txt')
@@ -1479,9 +1479,9 @@ class TestRar(BaseArchiveTestCase):
         assert os.path.exists(result)
 
     def test_extract_rar_with_absolute_path(self):
-        # FIXME: this file may not have absolute paths
+        # FIXME: this file may not have a real absolute path
         assert not os.path.exists('/home/li/Desktop/zip_folder')
-        test_file = self.get_test_loc('archive/rar/rar_absolute.rar')
+        test_file = self.get_test_loc('archive/rar/rar_absolute.rar', copy=True)
         test_dir = self.get_temp_dir()
         archive.extract_rar(test_file, test_dir)
         assert not os.path.exists('/home/li/Desktop/absolute_folder')
