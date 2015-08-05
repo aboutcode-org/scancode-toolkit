@@ -51,7 +51,7 @@ from extractcode.uncompress import uncompress_bzip2
 
 
 logger = logging.getLogger(__name__)
-DEBUG = True
+DEBUG = False
 DEBUG_DEEP = False
 # import sys
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
@@ -158,16 +158,22 @@ def get_extractors(location, kinds=all_kinds):
     Return a list of extractors that can extract the file at
     location or an empty list.
     """
+    handler = get_best_handler(location, kinds)
+    return handler and handler.extractors or []
+
+
+def get_best_handler(location, kinds=all_kinds):
+    """
+    Return the best handler of None for the file at location.
+    """
     location = os.path.abspath(os.path.expanduser(location))
-    if filetype.is_file(location):
-        handlers = list(get_handlers(location))
-        if handlers:
-            candidates = score_handlers(handlers)
-            if candidates:
-                best = pick_best_handler(candidates, kinds)
-                if best:
-                    return best.extractors
-    return []
+    if not filetype.is_file(location):
+        return
+    handlers = list(get_handlers(location))
+    if handlers:
+        candidates = score_handlers(handlers)
+        return candidates and pick_best_handler(candidates, kinds)
+
 
 
 def get_handlers(location):
@@ -597,6 +603,19 @@ InstallShieldHandler = Handler(
     extractors=[extract_ishield]
 )
 
+NugetHandler = Handler(
+    name='Nuget',
+    # weirdly enough the detection by libmagic is sometimes wrong
+    # TODO file a bug upstream
+    # this is due to this: https://en.wikipedia.org/wiki/Open_Packaging_Conventions#File_formats_using_the_OPC
+    # being recognized by libmagic as an OOXML file
+    filetypes=('zip archive','microsoft ooxml'),
+    mimetypes=('application/zip','application/octet-stream'),
+    extensions=('.nupkg',),
+    kind=package,
+    extractors=[extract_zip]
+)
+
 NSISInstallerHandler = Handler(
     name='Nullsoft Installer',
     filetypes=('nullsoft installer',),
@@ -760,9 +779,10 @@ archive_handlers = [
     RarHandler,
     CabHandler,
     MsiInstallerHandler,
-    # notes: this catches all  exe and fails often
+    # notes: this may catch all exe and fails too often
     InstallShieldHandler,
     NSISInstallerHandler,
+    NugetHandler,
     ArHandler,
     StaticLibHandler,
     DebHandler,
