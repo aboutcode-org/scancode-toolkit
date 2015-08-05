@@ -709,11 +709,25 @@ class TestZip(BaseArchiveTestCase):
     def test_extract_zip_java_jar(self):
         test_file = self.get_test_loc('archive/zip/jar/simple.jar')
         test_dir = self.get_temp_dir()
-
         archive.extract_zip(test_file, test_dir)
-        result = os.path.join(test_dir,
-            'org/jvnet/glassfish/comms/sipagent/transport/SocketTransportListenerManager.class')
-        assert os.path.exists(result)
+        extracted = self.collect_extracted_path(test_dir)
+        expected = [
+            '/META-INF/',
+            '/META-INF/MANIFEST.MF',
+            '/org/',
+            '/org/jvnet/',
+            '/org/jvnet/glassfish/',
+            '/org/jvnet/glassfish/comms/',
+            '/org/jvnet/glassfish/comms/sipagent/',
+            '/org/jvnet/glassfish/comms/sipagent/actions/',
+            '/org/jvnet/glassfish/comms/sipagent/actions/Bundle.properties',
+            '/org/jvnet/glassfish/comms/sipagent/actions/SipAgentCookieAction.class',
+            '/org/jvnet/glassfish/comms/sipagent/actions/bd.png',
+            '/org/jvnet/glassfish/comms/sipagent/actions/bd24.png',
+            '/org/jvnet/glassfish/comms/sipagent/org-jvnet-glassfish-comms-sipagent-actions-SipAgentCookieAction.instance',
+            '/org/jvnet/glassfish/comms/sipagent/org-jvnet-glassfish-comms-sipagent-actions-SipAgentCookieAction_1.instance'
+        ]
+        assert sorted(expected) == sorted(extracted)
 
     def test_extract_zip_with_duplicated_lowercase_paths(self):
         test_file = self.get_test_loc('archive/zip/dup_names.zip')
