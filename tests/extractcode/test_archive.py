@@ -1598,13 +1598,18 @@ class TestSevenZip(BaseArchiveTestCase):
 
 class TestIso(BaseArchiveTestCase):
     def test_extract_iso_basic(self):
-        test_file = self.get_test_loc('archive/iso/fdbasecd.iso')
+        test_file = self.get_test_loc('archive/iso/small.iso')
         test_dir = self.get_temp_dir()
         archive.extract_iso(test_file, test_dir)
-        result = os.path.join(test_dir, 'autorun.inf')
-        assert os.path.exists(result)
-        result = os.path.join(test_dir, 'freedos/packages/base.end')
-        assert os.path.exists(result)
+        extracted = self.collect_extracted_path(test_dir)
+        expected = [
+            '/ChangeLog', 
+            '/ChangeLog (copy)', 
+            '/freebase.ABOUT', 
+            '/this/', 
+            '/this/that'
+        ]
+        assert sorted(expected) == sorted(extracted)
 
     def test_get_extractor_not_iso_text_is_not_mistaken_for_an_iso_image(self):
         test_file = self.get_test_loc('archive/iso/ChangeLog')
