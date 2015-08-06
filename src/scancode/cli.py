@@ -31,7 +31,7 @@ import os
 
 import click
 
-from commoncode import ignore
+from commoncode import ignore, fileutils
 from commoncode.fileutils import resource_iter
 
 from scancode import __version__ as version
@@ -290,9 +290,11 @@ then run scancode again to scan the extracted files.''')
             # only display a progress bar
             with click.progressbar(files, show_pos=True) as files:
                 for input_file in files:
+                    input_file = fileutils.as_posixpath(input_file)
                     results.append(scan_one(input_file, copyright, license, info, verbose))
         else:
             for input_file in files:
+                input_file = fileutils.as_posixpath(input_file)
                 results.append(scan_one(input_file, copyright, license, info, verbose))
 
         if format == 'html':
