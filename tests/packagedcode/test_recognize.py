@@ -29,60 +29,53 @@ import os.path
 from commoncode.testcase import FileBasedTesting
 
 from packagedcode import models
-from packagedcode.recognize import packaged_archive
-from packagedcode.recognize import ArchiveRecognizer
+from packagedcode.recognize import recognize_packaged_archives
 
 
 class TestRecognize(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_packaged_archive_deb(self):
+    def test_recognize_packaged_archives_deb(self):
         test_file = self.get_test_loc('archives/adduser_3.112ubuntu1_all.deb')
-        package = packaged_archive(test_file)
+        package = recognize_packaged_archives(test_file)
         assert isinstance(package, models.DebianPackage)
 
-    def test_packaged_archive_rpm(self):
+    def test_recognize_packaged_archives_rpm(self):
         test_file = self.get_test_loc('archives/alfandega-2.2-2.rh80.src.rpm')
-        package = packaged_archive(test_file)
+        package = recognize_packaged_archives(test_file)
         assert isinstance(package, models.RpmPackage)
 
-    def test_packaged_archive_cab(self):
+    def test_recognize_packaged_archives_cab(self):
         test_file = self.get_test_loc('archives/basic.cab')
-        package = packaged_archive(test_file)
+        package = recognize_packaged_archives(test_file)
         assert isinstance(package, models.CabPackage)
 
-    def test_packaged_archive_rar(self):
+    def test_recognize_packaged_archives_rar(self):
         test_file = self.get_test_loc('archives/basic.rar')
-        package = packaged_archive(test_file)
+        package = recognize_packaged_archives(test_file)
         assert isinstance(package, models.RarPackage)
 
-    def test_packaged_archive_zip(self):
+    def test_recognize_packaged_archives_zip(self):
         test_file = self.get_test_loc('archives/myarch-2.3.0.7z')
-        package = packaged_archive(test_file)
+        package = recognize_packaged_archives(test_file)
         assert isinstance(package, models.ZipPackage)
 
-    def test_packaged_archive_gem(self):
+    def test_recognize_packaged_archives_gem(self):
         test_file = self.get_test_loc('archives/mysmallidea-address_standardization-0.4.1.gem')
-        package = packaged_archive(test_file)
+        package = recognize_packaged_archives(test_file)
         assert isinstance(package, models.RubyGemPackage)
 
-    def test_packaged_archive_jar(self):
+    def test_recognize_packaged_archives_jar(self):
         test_file = self.get_test_loc('archives/simple.jar')
-        package = packaged_archive(test_file)
+        package = recognize_packaged_archives(test_file)
         assert isinstance(package, models.JarPackage)
 
-    def test_packaged_archive_iso(self):
+    def test_recognize_packaged_archives_iso(self):
         test_file = self.get_test_loc('archives/small.iso')
-        package = packaged_archive(test_file)
+        package = recognize_packaged_archives(test_file)
         assert isinstance(package, models.IsoImagePackage)
 
-    def test_packaged_archive_tarball(self):
+    def test_recognize_packaged_archives_tarball(self):
         test_file = self.get_test_loc('archives/tarred_bzipped.tar.bz2')
-        package = packaged_archive(test_file)
+        package = recognize_packaged_archives(test_file)
         assert isinstance(package, models.TarPackage)
-
-    def test_recognize_archive(self):
-        test_dir = self.get_test_loc('archives')
-        packages = list(ArchiveRecognizer().recon(test_dir))
-        assert 9 == len(packages)
-        assert all(isinstance(p, models.Package) for p in packages)
