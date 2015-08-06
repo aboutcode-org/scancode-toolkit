@@ -36,6 +36,9 @@ class TestModels(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_model_creation_and_dump(self):
-        aap= models.AndroidAppPackage()
-        expected = OrderedDict([('type', 'Android app'), ('packaging', 'archive'), ('primary_language', 'Java')])
-        assert expected == aap.as_dict()
+        aap = models.AndroidAppPackage()
+        result = aap.as_dict()
+        expected = OrderedDict([('type', 'Android app'),
+                                ('packaging', 'archive'),
+                                ('primary_language', 'Java')])
+        assert expected == result
