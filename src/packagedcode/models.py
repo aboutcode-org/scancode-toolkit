@@ -184,9 +184,10 @@ class Package(object):
             package['type'] = self.type
             package['packaging'] = self.packaging
             package['primary_language'] = self.primary_language
-            # package['extracted_to'] = self.extracted_to
             return package
         else:
+            # package['location'] = self.location
+            # package['extracted_to'] = self.extracted_to
             raise NotImplementedError()
 
 
