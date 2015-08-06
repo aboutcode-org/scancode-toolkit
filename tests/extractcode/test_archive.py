@@ -130,11 +130,11 @@ class TestSmokeTest(FileBasedTesting):
         test_data = [
             ('archive/deb/adduser_3.112ubuntu1_all.deb', ['Debian package']),
             ('archive/rpm/elfinfo-1.0-1.fc9.src.rpm', ['RPM package']),
-            ('archive/ar/liby.a', ['ar archive', 'Static Library', 'Debian package']),
+            ('archive/ar/liby.a', ['ar archive', 'Static Library']),
             ('archive/tar/tarred.tar', ['Tar', 'Ruby Gem package']),
             ('archive/tbz/tarred_bzipped.tar.bz2', ['bzip2', 'Tar bzip2']),
             ('archive/tbz/tarred_bzipped.bz', ['bzip2', 'Tar bzip2']),
-            ('archive/tgz/tarred_gzipped.gz', ['Tar gzip', 'Gzip', 'Dia diagram doc']),
+            ('archive/tgz/tarred_gzipped.gz', ['Tar gzip', 'Gzip']),
         ]
 
         for test_file, expected in test_data:
@@ -146,11 +146,11 @@ class TestSmokeTest(FileBasedTesting):
         test_data = [
             ('archive/deb/adduser_3.112ubuntu1_all.deb', [(31, 'Debian package')]),
             ('archive/rpm/elfinfo-1.0-1.fc9.src.rpm', [(32, 'RPM package')]),
-            ('archive/ar/liby.a', [(31, 'Static Library'), (17, 'ar archive'), (11, 'Debian package')]),
+            ('archive/ar/liby.a', [(31, 'Static Library'), (17, 'ar archive')]),
             ('archive/tar/tarred.tar', [(29, 'Tar'), (19, 'Ruby Gem package')]),
             ('archive/tbz/tarred_bzipped.tar.bz2', [(30, 'Tar bzip2'), (29, 'bzip2')]),
             ('archive/tbz/tarred_bzipped.bz', [(29, 'bzip2'), (18, 'Tar bzip2')]),
-            ('archive/tgz/tarred_gzipped.gz', [(29, 'Gzip'), (18, 'Tar gzip'), (16, 'Dia diagram doc')]),
+            ('archive/tgz/tarred_gzipped.gz', [(29, 'Gzip'), (18, 'Tar gzip')]),
         ]
 
         for test_file, expected in test_data:

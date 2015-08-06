@@ -553,9 +553,8 @@ class TestExtract(FileBasedTesting):
         errs = [r.errors for r in result if r.errors]
         assert [] == errs
 
-        warns = [r.warnings for r in result]
-        expected_warnings = [[], [], [], [], [], []]
-        assert sorted(expected_warnings) == sorted(warns)
+        warns = [r.warnings for r in result if r.warnings]
+        assert [] == warns
 
     # FIXME: create test
     @expectedFailure
