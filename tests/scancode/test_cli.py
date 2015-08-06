@@ -201,8 +201,7 @@ class TestCommandLine(FileBasedTesting):
         loaded_result = self.load_json_result(result_file, test_dir)
         assert expected == loaded_result
 
-
-    def test_tree_structure(self):
+    def result_file(self):
         test_dir = self.extract_test_tar('info/basic.tgz')
         runner = CliRunner()
         result_file = self.get_temp_file('html')
