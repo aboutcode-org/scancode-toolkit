@@ -260,7 +260,6 @@ def scancode(ctx, input, output_file, extract, copyright, license, info, format,
     The scan results are printed on terminal if <output_file> is not provided.
     """
     abs_input = os.path.abspath(os.path.expanduser(input))
-    abs_input = fileutils.as_posixpath(abs_input)
     scans = [copyright, license, info]
     if extract:
         if any(scans):
@@ -287,7 +286,7 @@ then run scancode again to scan the extracted files.''')
 
         ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
         files = resource_iter(abs_input, ignored=ignored)
- 
+
         if not verbose:
             # only display a progress bar
             with click.progressbar(files, show_pos=True) as files:
