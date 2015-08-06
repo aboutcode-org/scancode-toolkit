@@ -810,6 +810,7 @@ class TestContentType(FileBasedTesting):
     def test_text_iso_text_changelog_is_not_iso_cdrom(self):
         assert 'Non-ISO extended-ASCII text' == get_filetype_file(self.get_test_loc('contenttype/text/ChangeLog'))
 
+    @expectedFailure
     def test_text_rsync_text_text_file_is_not_octet_stream(self):
         # this is a libmagic bug: http://bugs.gw.com/view.php?id=473
         assert 'data' != get_filetype_file(self.get_test_loc('contenttype/text/wildtest.txt'))
