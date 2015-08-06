@@ -175,7 +175,6 @@ def get_best_handler(location, kinds=all_kinds):
         return candidates and pick_best_handler(candidates, kinds)
 
 
-
 def get_handlers(location):
     """
     Return an iterable of (handler, type_matched, mime_matched,
@@ -194,9 +193,10 @@ def get_handlers(location):
             if extractor_count > 2:
                 raise Exception('Maximum level of archive nesting is two.')
 
-            type_matched = handler.filetypes and any(t in ftype for t in handler.filetypes) or None
-            mime_matched = handler.mimetypes and any(m in mtype for m in handler.mimetypes) or None
-            extension_matched = handler.extensions and location.lower().endswith(handler.extensions) or None
+            # default to False
+            type_matched = handler.filetypes and any(t in ftype for t in handler.filetypes)
+            mime_matched = handler.mimetypes and any(m in mtype for m in handler.mimetypes)
+            extension_matched = handler.extensions and location.lower().endswith(handler.extensions)
 
             if DEBUG_DEEP:
                 logger.debug('get_handlers: %(location)s: ftype: %(ftype)s, mtype: %(mtype)s ' % locals())
@@ -364,7 +364,7 @@ ZipHandler = Handler(
     name='Zip',
     filetypes=('zip archive',),
     mimetypes=('application/zip',),
-    extensions=('.zip', '.zipx'),
+    extensions=('.zip', '.zipx',),
     kind=regular,
     extractors=[extract_zip]
 )
@@ -514,7 +514,7 @@ TarLzmaHandler = Handler(
     name='Tar lzma',
     filetypes=('lzma compressed',),
     mimetypes=('application/x-lzma',) ,
-    extensions=('tar.lzma', '.tlz', '.tarlz', '.tarlzma'),
+    extensions=('tar.lzma', '.tlz', '.tarlz', '.tarlzma',),
     kind=regular_nested,
     extractors=[extract_lzma, extract_tar]
 )
@@ -609,8 +609,8 @@ NugetHandler = Handler(
     # TODO file a bug upstream
     # this is due to this: https://en.wikipedia.org/wiki/Open_Packaging_Conventions#File_formats_using_the_OPC
     # being recognized by libmagic as an OOXML file
-    filetypes=('zip archive','microsoft ooxml'),
-    mimetypes=('application/zip','application/octet-stream'),
+    filetypes=('zip archive', 'microsoft ooxml',),
+    mimetypes=('application/zip', 'application/octet-stream',),
     extensions=('.nupkg',),
     kind=package,
     extractors=[extract_zip]
@@ -638,7 +638,7 @@ StaticLibHandler = Handler(
     name='Static Library',
     filetypes=('current ar archive', 'current ar archive random library',),
     mimetypes=('application/x-archive',),
-    extensions=('.a', '.lib', '.out', '.ka'),
+    extensions=('.a', '.lib', '.out', '.ka',),
     kind=package,
     extractors=[extract_ar]
 )
@@ -683,7 +683,7 @@ SharHandler = Handler(
     name='shar shell archive',
     filetypes=('posix shell script',),
     mimetypes=('text/x-shellscript',),
-    extensions=('.sha', '.shar', '.bin'),
+    extensions=('.sha', '.shar', '.bin',),
     kind=special_package,
     extractors=[]
 )
@@ -726,9 +726,9 @@ AppleDmgHandler = Handler(
 
 IsoImageHandler = Handler(
     name='ISO CD image',
-    filetypes=('iso 9660 cd-rom', 'high sierra cd-rom'),
+    filetypes=('iso 9660 cd-rom', 'high sierra cd-rom',),
     mimetypes=('application/x-iso9660-image',),
-    extensions=('.iso', '.udf', '.img'),
+    extensions=('.iso', '.udf', '.img',),
     kind=file_system,
     extractors=[extract_iso]
 )
@@ -789,7 +789,8 @@ archive_handlers = [
     RpmHandler,
     SevenZipHandler,
     TarSevenZipHandler,
-    SharHandler,
+    # not supported for now
+    # SharHandler,
     CpioHandler,
     ZHandler,
     TarZHandler,

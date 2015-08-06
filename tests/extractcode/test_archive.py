@@ -168,6 +168,21 @@ class TestSmokeTest(FileBasedTesting):
         assert None == archive.get_extractor(test_loc, kinds=all_kinds)
         assert not archive.should_extract(test_loc, kinds=default_kinds)
 
+    def test_no_handler_is_selected_for_a_non_archive2(self):
+        # FWIW there is a related libmagic bug: http://bugs.gw.com/view.php?id=473
+        test_loc = self.get_test_loc('archive/not_archive/wildtest.txt')
+        assert [] == list(archive.get_handlers(test_loc))
+        assert None == archive.get_extractor(test_loc)
+        assert None == archive.get_extractor(test_loc, kinds=all_kinds)
+        assert not archive.should_extract(test_loc, kinds=default_kinds)
+
+    def test_no_handler_is_selected_for_a_non_archive3(self):
+        test_loc = self.get_test_loc('archive/not_archive/savetransfer.c')
+        assert [] == list(archive.get_handlers(test_loc))
+        assert None == archive.get_extractor(test_loc)
+        assert None == archive.get_extractor(test_loc, kinds=all_kinds)
+        assert not archive.should_extract(test_loc, kinds=default_kinds)
+
     def test_7zip_extract_can_extract_to_relative_paths(self):
         # The setup is a tad complex because we want to have a relative dir
         # to the base dir where we run tests from, ie the scancode-toolkit/ dir
