@@ -201,7 +201,7 @@ class TestCommandLine(FileBasedTesting):
         loaded_result = self.load_json_result(result_file, test_dir)
         assert expected == loaded_result
 
-    def result_file(self):
+    def est_html_app_paths_are_posix_paths(self):
         test_dir = self.extract_test_tar('info/basic.tgz')
         runner = CliRunner()
         result_file = self.get_temp_file('html')
