@@ -108,7 +108,8 @@ extract_ishield = sevenzip.extract
 extract_Z = sevenzip.extract
 
 
-Handler = namedtuple('Handler', ['name', 'filetypes', 'mimetypes', 'extensions', 'kind', 'extractors'])
+# if strict, all hanlders criteria must be matched for it to be selected
+Handler = namedtuple('Handler', ['name', 'filetypes', 'mimetypes', 'extensions', 'kind', 'extractors', 'strict'])
 
 
 def can_extract(location):
@@ -201,6 +202,9 @@ def get_handlers(location):
             if DEBUG_DEEP:
                 logger.debug('get_handlers: %(location)s: ftype: %(ftype)s, mtype: %(mtype)s ' % locals())
                 logger.debug('get_handlers: %(location)s: matched type: %(type_matched)s, mime: %(mime_matched)s, ext: %(extension_matched)s' % locals())
+
+            if handler.strict and not all([type_matched, mime_matched, extension_matched]):
+                continue
 
             if type_matched or mime_matched or extension_matched:
                 if DEBUG_DEEP:
@@ -348,7 +352,8 @@ TarHandler = Handler(
     mimetypes=('application/x-tar',),
     extensions=('.tar',),
     kind=regular,
-    extractors=[extract_tar]
+    extractors=[extract_tar],
+    strict=False
 )
 
 RubyGemHandler = Handler(
@@ -357,7 +362,8 @@ RubyGemHandler = Handler(
     mimetypes=('application/x-tar',),
     extensions=('.gem',),
     kind=package,
-    extractors=[extract_tar]
+    extractors=[extract_tar],
+    strict=False
 )
 
 ZipHandler = Handler(
@@ -366,7 +372,8 @@ ZipHandler = Handler(
     mimetypes=('application/zip',),
     extensions=('.zip', '.zipx',),
     kind=regular,
-    extractors=[extract_zip]
+    extractors=[extract_zip],
+    strict=False
 )
 
 OfficeDocHandler = Handler(
@@ -395,7 +402,8 @@ OfficeDocHandler = Handler(
         '.epub',
     ),
     kind=docs,
-    extractors=[extract_zip]
+    extractors=[extract_zip],
+    strict=True
 )
 
 AndroidAppHandler = Handler(
@@ -404,7 +412,8 @@ AndroidAppHandler = Handler(
     mimetypes=('application/zip',),
     extensions=('.apk',),
     kind=package,
-    extractors=[extract_zip]
+    extractors=[extract_zip],
+    strict=True
 )
 
     # see http://tools.android.com/tech-docs/new-build-system/aar-formats
@@ -415,7 +424,8 @@ AndroidLibHandler = Handler(
     # note: Apache Axis also uses AAR extensions for plain Jars
     extensions=('.aar',),
     kind=package,
-    extractors=[extract_zip]
+    extractors=[extract_zip],
+    strict=True
 )
 
 MozillaExtHandler = Handler(
@@ -424,7 +434,8 @@ MozillaExtHandler = Handler(
     mimetypes=('application/zip',),
     extensions=('.xpi',),
     kind=package,
-    extractors=[extract_zip]
+    extractors=[extract_zip],
+    strict=True
 )
 
 # see https://developer.chrome.com/extensions/crx
@@ -435,7 +446,8 @@ ChromeExtHandler = Handler(
     mimetypes=('application/octet-stream',),
     extensions=('.crx',),
     kind=package,
-    extractors=[extract_7z]
+    extractors=[extract_7z],
+    strict=True
 )
 
 IosAppHandler = Handler(
@@ -444,7 +456,8 @@ IosAppHandler = Handler(
     mimetypes=('application/zip',),
     extensions=('.ipa',),
     kind=package,
-    extractors=[extract_zip]
+    extractors=[extract_zip],
+    strict=True
 )
 
 JavaJarHandler = Handler(
@@ -453,7 +466,8 @@ JavaJarHandler = Handler(
     mimetypes=('application/java-archive',),
     extensions=('.jar', '.zip',),
     kind=package,
-    extractors=[extract_zip]
+    extractors=[extract_zip],
+    strict=False
 )
 
 JavaJarZipHandler = Handler(
@@ -462,7 +476,8 @@ JavaJarZipHandler = Handler(
     mimetypes=('application/zip',),
     extensions=('.jar',),
     kind=package,
-    extractors=[extract_zip]
+    extractors=[extract_zip],
+    strict=False
 )
 
 JavaWebHandler = Handler(
@@ -471,7 +486,8 @@ JavaWebHandler = Handler(
     mimetypes=('application/zip', 'application/java-archive',),
     extensions=('.war', '.sar', '.ear',),
     kind=regular,
-    extractors=[extract_zip]
+    extractors=[extract_zip],
+    strict=True
 )
 
 PythonHandler = Handler(
@@ -480,7 +496,8 @@ PythonHandler = Handler(
     mimetypes=('application/zip',),
     extensions=('.egg', '.whl', '.pyz', '.pex',),
     kind=package,
-    extractors=[extract_zip]
+    extractors=[extract_zip],
+    strict=True
 )
 
 XzHandler = Handler(
@@ -489,7 +506,8 @@ XzHandler = Handler(
     mimetypes=('application/x-xz',) ,
     extensions=('.xz',),
     kind=regular,
-    extractors=[extract_xz]
+    extractors=[extract_xz],
+    strict=False
 )
 
 LzmaHandler = Handler(
@@ -498,7 +516,8 @@ LzmaHandler = Handler(
     mimetypes=('application/x-xz',) ,
     extensions=('.lzma',),
     kind=regular,
-    extractors=[extract_lzma]
+    extractors=[extract_lzma],
+    strict=False
 )
 
 TarXzHandler = Handler(
@@ -507,7 +526,8 @@ TarXzHandler = Handler(
     mimetypes=('application/x-xz',) ,
     extensions=('.tar.xz', '.txz', '.tarxz',),
     kind=regular_nested,
-    extractors=[extract_xz, extract_tar]
+    extractors=[extract_xz, extract_tar],
+    strict=False
 )
 
 TarLzmaHandler = Handler(
@@ -516,7 +536,8 @@ TarLzmaHandler = Handler(
     mimetypes=('application/x-lzma',) ,
     extensions=('tar.lzma', '.tlz', '.tarlz', '.tarlzma',),
     kind=regular_nested,
-    extractors=[extract_lzma, extract_tar]
+    extractors=[extract_lzma, extract_tar],
+    strict=False
 )
 
 TarGzipHandler = Handler(
@@ -526,7 +547,8 @@ TarGzipHandler = Handler(
     extensions=('.tgz', '.tar.gz', '.tar.gzip', '.targz',
           '.targzip', '.tgzip',),
     kind=regular_nested,
-    extractors=[extract_tar]
+    extractors=[extract_tar],
+    strict=False
 )
 
 GzipHandler = Handler(
@@ -535,7 +557,8 @@ GzipHandler = Handler(
     mimetypes=('application/x-gzip',),
     extensions=('.gz', '.gzip',),
     kind=regular,
-    extractors=[uncompress_gzip]
+    extractors=[uncompress_gzip],
+    strict=False
 )
 
 DiaDocHandler = Handler(
@@ -544,7 +567,8 @@ DiaDocHandler = Handler(
     mimetypes=('application/x-gzip',),
     extensions=('.dia',),
     kind=docs,
-    extractors=[uncompress_gzip]
+    extractors=[uncompress_gzip],
+    strict=True
 )
 
 BzipHandler = Handler(
@@ -553,7 +577,8 @@ BzipHandler = Handler(
     mimetypes=('application/x-bzip2',),
     extensions=('.bz', '.bz2', 'bzip2',),
     kind=regular,
-    extractors=[uncompress_bzip2]
+    extractors=[uncompress_bzip2],
+    strict=False
 )
 
 TarBzipHandler = Handler(
@@ -563,7 +588,8 @@ TarBzipHandler = Handler(
     extensions=('.tar.bz2', '.tar.bz', '.tar.bzip', '.tar.bzip2',
           '.tbz', '.tbz2', '.tb2', '.tarbz2',),
     kind=regular_nested,
-    extractors=[extract_tar]
+    extractors=[extract_tar],
+    strict=False
 )
 
 RarHandler = Handler(
@@ -572,7 +598,8 @@ RarHandler = Handler(
     mimetypes=('application/x-rar',),
     extensions=('.rar',),
     kind=regular,
-    extractors=[extract_rar]
+    extractors=[extract_rar],
+    strict=False
 )
 
 CabHandler = Handler(
@@ -581,7 +608,8 @@ CabHandler = Handler(
     mimetypes=('application/vnd.ms-cab-compressed',),
     extensions=('.cab',),
     kind=package,
-    extractors=[extract_cab]
+    extractors=[extract_cab],
+    strict=True
 )
 
 MsiInstallerHandler = Handler(
@@ -590,17 +618,18 @@ MsiInstallerHandler = Handler(
     mimetypes=('application/x-msi',),
     extensions=('.msi',),
     kind=package,
-    extractors=[extract_msi]
+    extractors=[extract_msi],
+    strict=True
 )
 
-# notes: this catches all  exe and fails often
 InstallShieldHandler = Handler(
     name='InstallShield Installer',
     filetypes=('installshield',),
     mimetypes=('application/x-dosexec',),
     extensions=('.exe',),
     kind=special_package,
-    extractors=[extract_ishield]
+    extractors=[extract_ishield],
+    strict=True
 )
 
 NugetHandler = Handler(
@@ -613,7 +642,8 @@ NugetHandler = Handler(
     mimetypes=('application/zip', 'application/octet-stream',),
     extensions=('.nupkg',),
     kind=package,
-    extractors=[extract_zip]
+    extractors=[extract_zip],
+    strict=True
 )
 
 NSISInstallerHandler = Handler(
@@ -622,7 +652,8 @@ NSISInstallerHandler = Handler(
     mimetypes=('application/x-dosexec',),
     extensions=('.exe',),
     kind=special_package,
-    extractors=[extract_nsis]
+    extractors=[extract_nsis],
+    strict=True
 )
 
 ArHandler = Handler(
@@ -631,7 +662,8 @@ ArHandler = Handler(
     mimetypes=('application/x-archive',),
     extensions=('.ar',),
     kind=regular,
-    extractors=[extract_ar]
+    extractors=[extract_ar],
+    strict=False
 )
 
 StaticLibHandler = Handler(
@@ -640,7 +672,8 @@ StaticLibHandler = Handler(
     mimetypes=('application/x-archive',),
     extensions=('.a', '.lib', '.out', '.ka',),
     kind=package,
-    extractors=[extract_ar]
+    extractors=[extract_ar],
+    strict=True
 )
 
 DebHandler = Handler(
@@ -649,7 +682,8 @@ DebHandler = Handler(
     mimetypes=('application/x-archive', 'application/vnd.debian.binary-package',),
     extensions=('.deb',),
     kind=package,
-    extractors=[extract_deb]
+    extractors=[extract_deb],
+    strict=True
 )
 
 RpmHandler = Handler(
@@ -658,7 +692,8 @@ RpmHandler = Handler(
     mimetypes=('application/x-rpm',),
     extensions=('.rpm', '.srpm', '.mvl', '.vip',),
     kind=package,
-    extractors=[extract_rpm, extract_cpio]
+    extractors=[extract_rpm, extract_cpio],
+    strict=False
 )
 
 SevenZipHandler = Handler(
@@ -667,7 +702,8 @@ SevenZipHandler = Handler(
     mimetypes=('application/x-7z-compressed',),
     extensions=('.7z',),
     kind=regular,
-    extractors=[extract_7z]
+    extractors=[extract_7z],
+    strict=False
 )
 
 TarSevenZipHandler = Handler(
@@ -676,7 +712,8 @@ TarSevenZipHandler = Handler(
     mimetypes=('application/x-7z-compressed',),
     extensions=('.tar.7z', '.tar.7zip', '.t7z',),
     kind=regular_nested,
-    extractors=[extract_7z, extract_tar]
+    extractors=[extract_7z, extract_tar],
+    strict=True
 )
 
 SharHandler = Handler(
@@ -685,7 +722,8 @@ SharHandler = Handler(
     mimetypes=('text/x-shellscript',),
     extensions=('.sha', '.shar', '.bin',),
     kind=special_package,
-    extractors=[]
+    extractors=[],
+    strict=True
 )
 
 CpioHandler = Handler(
@@ -694,7 +732,8 @@ CpioHandler = Handler(
     mimetypes=('application/x-cpio',),
     extensions=('.cpio',),
     kind=regular,
-    extractors=[extract_cpio]
+    extractors=[extract_cpio],
+    strict=False
 )
 
 ZHandler = Handler(
@@ -703,7 +742,8 @@ ZHandler = Handler(
     mimetypes=('application/x-compress',),
     extensions=('.z',),
     kind=regular,
-    extractors=[extract_Z]
+    extractors=[extract_Z],
+    strict=False
 )
 
 TarZHandler = Handler(
@@ -712,7 +752,8 @@ TarZHandler = Handler(
     mimetypes=('application/x-compress',),
     extensions=('.tz', '.tar.z', '.tarz',),
     kind=regular_nested,
-    extractors=[extract_Z, extract_tar]
+    extractors=[extract_Z, extract_tar],
+    strict=False
 )
 
 AppleDmgHandler = Handler(
@@ -721,7 +762,8 @@ AppleDmgHandler = Handler(
     mimetypes=('application/zlib',),
     extensions=('.dmg', '.sparseimage',),
     kind=package,
-    extractors=[extract_iso]
+    extractors=[extract_iso],
+    strict=True
 )
 
 IsoImageHandler = Handler(
@@ -730,7 +772,8 @@ IsoImageHandler = Handler(
     mimetypes=('application/x-iso9660-image',),
     extensions=('.iso', '.udf', '.img',),
     kind=file_system,
-    extractors=[extract_iso]
+    extractors=[extract_iso],
+    strict=True
 )
 
 SquashfsHandler = Handler(
@@ -739,7 +782,8 @@ SquashfsHandler = Handler(
     mimetypes=(),
     extensions=(),
     kind=file_system,
-    extractors=[extract_squashfs]
+    extractors=[extract_squashfs],
+    strict=False
 )
 
 PatchHandler = Handler(
@@ -748,7 +792,8 @@ PatchHandler = Handler(
     mimetypes=('text/x-diff',),
     extensions=('.diff', '.patch',),
     kind=patches,
-    extractors=[extract_patch]
+    extractors=[extract_patch],
+    strict=True
 )
 
 
