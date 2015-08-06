@@ -34,8 +34,6 @@ from commoncode.fileutils import as_posixpath
 
 from scancode import cli
 import codecs
-import ntpath
-import posixpath
 
 
 class TestCommandLine(FileBasedTesting):
@@ -202,3 +200,13 @@ class TestCommandLine(FileBasedTesting):
         expected = self.load_json_result(self.get_test_loc('info/all.expected.json'), test_dir)
         loaded_result = self.load_json_result(result_file, test_dir)
         assert expected == loaded_result
+
+
+    def test_tree_structure(self):
+        test_dir = self.extract_test_tar('info/basic.tgz')
+        runner = CliRunner()
+        result_file = self.get_temp_file('html')
+        result = runner.invoke(cli.scancode, ['--format', 'html-app', test_dir, result_file])
+        assert result.exit_code == 0
+        assert 'Scanning done' in result.output
+        assert 'basic.tgz/basic/dir2/subdir/bcopy.s' in open(result_file).read()
