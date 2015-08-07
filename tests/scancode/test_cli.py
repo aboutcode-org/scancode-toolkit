@@ -201,11 +201,29 @@ class TestCommandLine(FileBasedTesting):
         loaded_result = self.load_json_result(result_file, test_dir)
         assert expected == loaded_result
 
-    def test_html_app_paths_are_posix_paths(self):
-        test_dir = self.extract_test_tar('info/basic.tgz')
+    def test_html_app_paths_are_posix_paths_html_app_format(self):
+        test_dir = self.get_test_loc('ticket45', copy=True)
         runner = CliRunner()
         result_file = self.get_temp_file('html')
-        result = runner.invoke(cli.scancode, ['--format', 'html-app', test_dir, result_file])
+        result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html-app', test_dir, result_file])
         assert result.exit_code == 0
         assert 'Scanning done' in result.output
-        assert 'basic.tgz/basic/dir2/subdir/bcopy.s' in open(result_file).read()
+        assert '/ticket45/copyright_acme_c-c.c' in open(result_file).read()
+
+    def test_html_app_paths_are_posix_paths_html_format(self):
+        test_dir = self.get_test_loc('ticket45', copy=True)
+        runner = CliRunner()
+        result_file = self.get_temp_file('html')
+        result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html', test_dir, result_file])
+        assert result.exit_code == 0
+        assert 'Scanning done' in result.output
+        assert '/ticket45/copyright_acme_c-c.c' in open(result_file).read()
+
+    def test_html_app_paths_are_posix_paths_json_format(self):
+        test_dir = self.get_test_loc('ticket45', copy=True)
+        runner = CliRunner()
+        result_file = self.get_temp_file('json')
+        result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'json', test_dir, result_file])
+        assert result.exit_code == 0
+        assert 'Scanning done' in result.output
+        assert '/ticket45/copyright_acme_c-c.c' in open(result_file).read()
