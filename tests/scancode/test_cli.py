@@ -200,3 +200,30 @@ class TestCommandLine(FileBasedTesting):
         expected = self.load_json_result(self.get_test_loc('info/all.expected.json'), test_dir)
         loaded_result = self.load_json_result(result_file, test_dir)
         assert expected == loaded_result
+
+    def test_paths_are_posix_in_html_app_format_output(self):
+        test_dir = self.get_test_loc('posix_path', copy=True)
+        runner = CliRunner()
+        result_file = self.get_temp_file('html')
+        result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html-app', test_dir, result_file])
+        assert result.exit_code == 0
+        assert 'Scanning done' in result.output
+        assert '/posix_path/copyright_acme_c-c.c' in open(result_file).read()
+
+    def test_paths_are_posix_in_html_format_output(self):
+        test_dir = self.get_test_loc('posix_path', copy=True)
+        runner = CliRunner()
+        result_file = self.get_temp_file('html')
+        result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html', test_dir, result_file])
+        assert result.exit_code == 0
+        assert 'Scanning done' in result.output
+        assert '/posix_path/copyright_acme_c-c.c' in open(result_file).read()
+
+    def test_paths_are_posix_in_json_format_output(self):
+        test_dir = self.get_test_loc('posix_path', copy=True)
+        runner = CliRunner()
+        result_file = self.get_temp_file('json')
+        result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'json', test_dir, result_file])
+        assert result.exit_code == 0
+        assert 'Scanning done' in result.output
+        assert '/posix_path/copyright_acme_c-c.c' in open(result_file).read()
