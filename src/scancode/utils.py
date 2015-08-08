@@ -24,17 +24,23 @@
 
 from __future__ import print_function, absolute_import
 
-
 import click
-from click._compat import _default_text_stdout
-from click._compat import isatty
+from click._termui_impl import ProgressBar
 from click.utils import echo
-from click._compat import PY2
+
+
+"""
+Various CLI UI utilities, mostly related to Click and progress reporting.
+"""
 
 
 class BaseCommand(click.Command):
-    # override with a command-specific message such as
-    #Try 'scancode --help' for help on options and arguments.
+    """
+    An enhanced click Command working around some Click quirk.
+    """
+
+    # override this in sub-classes with a command-specific message such as
+    # "Try 'scancode --help' for help on options and arguments."
     short_usage_help = ''
 
     def get_usage(self, ctx):
@@ -54,152 +60,143 @@ class BaseCommand(click.Command):
                                   standalone_mode=standalone_mode, **extra)
 
 
-
-"""
-ProgressLogger is derived from Click progressbar code.
-Copyright (c) 2014 by Armin Ronacher.
-Some rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are
-met:
-
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-
-    * Redistributions in binary form must reproduce the above
-      copyright notice, this list of conditions and the following
-      disclaimer in the documentation and/or other materials provided
-      with the distribution.
-
-    * The names of the contributors may not be used to endorse or
-      promote products derived from this software without specific
-      prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    :copyright: (c) 2014 by Armin Ronacher.
-    :license: BSD, see LICENSE for more details.
-
-"""
-
-def progresslogger(iterable, label_first=None, label_last=None,
-                   item_show_func=None, file=None, color=None):  # @ReservedAssignment
-    """This function creates an iterable context manager that can be used
-    to iterate over something while showing a progress log. While iteration
-    happens, this function will print a progress log to the given `file`
-    (defaults to stdout). By default, this progress log will not be rendered if
-    the file is not a terminal.
-
-    The context manager creates the progress log.  When the context manager is
-    entered the progress log is already displayed.  With every iteration over
-    the progress log, the iterable passed to the logger is advanced and the log
-    is updated.  When the context manager exits, a newline is printed and the
-    progress log is finalized on screen.
-
-    No printing must happen or the progress bar will be unintentionally
-    destroyed.
-
-    Example usage::
-
-        with progresslog(items) as bar:
-            for item in bar:
-                do_something_with(item)
-
-    :param iterable: an iterable to iterate over.
-    :param label_first: the label to show as the first line of the progress log.
-    :param label_last: the label to show as the last line of the progress log.
-    :param item_show_func: a function called with the current item which
-                           can return a string to show the current item
-                           in the progress log.  Note that the current
-                           item can be `None`!
-    :param file: the file to write to.  If this is not a terminal then
-                 only the label_first is printed.
-    :param color: controls if the terminal supports ANSI colors or not.  The
-                  default is autodetection.  This is only needed if ANSI
-                  codes are included anywhere in the progress log output
-                  which is not the case by default.
+class EnhancedProgressBar(ProgressBar):
     """
-    return ProgressLogger(iterable=iterable, label_first=label_first,
-                          label=label_last, item_show_func=item_show_func,
-                          file=file, color=color)
-
-
-class ProgressLogger(object):
-    def __init__(self, iterable, label_first=None, label_last=None,
-                 item_show_func=None, file=None, color=None):  # @ReservedAssignment
-        self.iter = iter(iterable)
-
-        self.label_first = label_first or ''
-        self.label_last = label_last or ''
-        self.item_show_func = item_show_func
-        if file is None:
-            file = _default_text_stdout()  # @ReservedAssignment
-        self.file = file
-        self.color = color
-
-        self.finished = False
-        self.entered = False
-        self.current_item = None
-        self.is_hidden = not isatty(self.file)
+    Enhanced Click progressbar adding custom first and last messages on enter
+    and exit.
+    """
+    def __init__(self, iterable, length=None, fill_char='#', empty_char=' ',
+        bar_template='%(bar)s', info_sep='  ', show_eta=True,
+        show_percent=None, show_pos=False, item_show_func=None,
+        label=None, file=None, color=None, width=30,  # @ReservedAssignment
+        start_show_func=None, finish_show_func=None):
+        """
+        New parameters added on top of ProgressBar: start_show_func and
+        finish_show_func to drive some display at the start and finish of a
+        progression.
+        """
+        ProgressBar.__init__(self, iterable, length=length, fill_char=fill_char,
+                             empty_char=empty_char, bar_template=bar_template,
+                             info_sep=info_sep, show_eta=show_eta,
+                             show_percent=show_percent, show_pos=show_pos,
+                             item_show_func=item_show_func, label=label,
+                             file=file, color=color, width=width)
+        self.start_show_func = start_show_func
+        self.finish_show_func = finish_show_func
 
     def __enter__(self):
-        self.render_log()
-        return self
+        self.render_start()
+        return ProgressBar.__enter__(self)
 
-    def __exit__(self, exc_type, exc_value, tb):
-        self.render_log()
-
-    def __iter__(self):
-        if not self.entered:
-            raise RuntimeError('You need to use progress loggers in a with block.')
-        self.render_log()
-        return self
-
-    def render_log(self):
+    def render_start(self):
         if self.is_hidden:
             return
+        if self.start_show_func is not None:
+            text = self.start_show_func()
+            if text:
+                echo(text, file=self.file, color=self.color)
+                self.file.flush()
 
-        if self.entered and not self.current_item:
-            self.file.write('\n')
-            msg = self.label_first
-        elif self.finished:
-            msg = self.label_last
-        else:
-            if self.item_show_func is not None:
-                msg = self.item_show_func(self.current_item)
-            else:
-                # this needs to be something printable
-                msg = repr(self.current_item)
-        echo(msg.rstrip(), file=self.file, nl=True, color=self.color)
-        self.file.flush()
-
-    def update(self):
-        self.render_log()
-
-    def next(self):
+    def render_finish(self):
         if self.is_hidden:
-            return next(self.iter)
-        try:
-            rv = next(self.iter)
-            self.current_item = rv
-        except StopIteration:
-            self.finish()
-            self.render_log()
-            raise StopIteration()
-        else:
-            self.update()
-            return rv
+            return
+        super(EnhancedProgressBar, self).render_finish()
+        self.show_finish()
 
-    if not PY2:
-        __next__ = next
-        del next
+    def show_finish(self):
+        if self.finish_show_func is not None:
+            text = self.finish_show_func()
+            if text:
+                echo(text, file=self.file, color=self.color)
+                self.file.flush()
+
+    def render_progress(self):
+        if not self.is_hidden:
+            return ProgressBar.render_progress(self)
+
+
+class ProgressLogger(EnhancedProgressBar):
+    """
+    A subclass of Click ProgressBar providing a simpler and more verbose line-
+    by-line progress reporting.
+
+    In contrast with the progressbar the label, percent, ETA, pos, bar_template
+    and other formatting options are ignored.
+
+    Progress information are printed as-is and no LF is added. The caller must
+    provide an intem_show_func to display some content and this must terminated
+    with a line feed if needed.
+
+    If no item_show_func is provided a simple dot is printed for each event.
+    """
+
+    def render_progress(self):
+        if self.is_hidden:
+            return
+        line = self.format_progress_line()
+        if line:
+            # only add new lines if there is an item_show_func
+            nl = bool(self.item_show_func)
+            echo(line, file=self.file, nl=nl, color=self.color)
+            self.file.flush()
+
+    def format_progress_line(self):
+        if self.item_show_func:
+            item_info = self.item_show_func(self.current_item)
+        else:
+            item_info = '.'
+        if item_info:
+            return item_info
+
+    def render_finish(self):
+        if self.is_hidden:
+            return
+        # display a new line after the 'dots' IFF we do not have a show func
+        nl = not bool(self.item_show_func)
+        echo(None, file=self.file, nl=nl, color=self.color)
+        self.show_finish()
+
+
+class NoOpProgressBar(EnhancedProgressBar):
+    """
+    A ProgressBar-like object that does not show any progress.
+    """
+    def __init__(self, *args, **kwargs):
+        ProgressBar.__init__(self, *args, **kwargs)
+        self.is_hidden =True
+
+
+def progressmanager(iterable=None, length=None, label=None, show_eta=True, 
+                    show_percent=None, show_pos=False, item_show_func=None,
+                    fill_char='#', empty_char='-', bar_template=None,
+                    info_sep='  ', width=36, file=None, color=None,  # @ReservedAssignment
+                    verbose=False, start_show_func=None, finish_show_func=None):
+
+    """This function creates an iterable context manager showing progress as a
+    bar (default) or line-by-line log (if verbose is True) while iterating.
+
+    Its arguments are similar to Click.termui.progressbar with
+    these new arguments added at the end of the signature:
+
+    :param verbose: if False, display a progress bar, otherwise a progress log
+    :param start_show_func: a function called at the start of iteration that
+                            can return a string to display as an
+                            introduction text before the progress.
+    :param finish_show_func: a function called at the end of iteration that
+                             can return a string to display after the
+                             progress.
+    """
+    if verbose:
+        progress_class = ProgressLogger
+    else:
+        progress_class = EnhancedProgressBar
+        bar_template = '%(label)s  [%(bar)s]  %(info)s' if bar_template is None else bar_template
+
+    return progress_class(iterable=iterable, length=length, show_eta=show_eta,
+                          show_percent=show_percent, show_pos=show_pos,
+                          item_show_func=item_show_func, fill_char=fill_char,
+                          empty_char=empty_char, bar_template=bar_template,
+                          info_sep=info_sep, file=file, label=label,
+                          width=width, color=color,
+                          start_show_func=start_show_func,
+                          finish_show_func=finish_show_func)
