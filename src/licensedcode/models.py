@@ -352,7 +352,7 @@ class Rule(object):
 
     def load(self, load_notes=False):
         """
-        Load self from a YAML file stored in of src_dir.
+        Load self from a .RULE YAML file stored in self.data_file.
         Does not load the rule text file.
         """
         with codecs.open(self.data_file, encoding='utf-8') as f:
