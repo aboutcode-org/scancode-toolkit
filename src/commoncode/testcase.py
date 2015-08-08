@@ -114,10 +114,11 @@ def get_test_loc(test_path, test_data_dir):
     return test_loc
 
 
-class FileBasedTesting(EnhancedAssertions):
+class FileDrivenTesting(object):
     """
     Add support for handling test files and directories, including managing
     temporary test resources and doing file-based assertions.
+    This can be used as a standalone object if needed.
     """
     test_data_dir = None
 
@@ -199,6 +200,9 @@ class FileBasedTesting(EnhancedAssertions):
             # editors temp file leftovers
             map(os.remove, [os.path.join(root, file_loc)
                             for file_loc in files if file_loc.endswith('~')])
+
+
+class FileBasedTesting(EnhancedAssertions, FileDrivenTesting):
 
     def as_line_list(self, list_or_file, sort=False, skip_firstline=False):
         """
