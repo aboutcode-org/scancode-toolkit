@@ -76,26 +76,13 @@ Try 'extractcode --help' for help on options and arguments.'''
 
 @click.command(name='extractcode', epilog=epilog_text, cls=ExtractCommand)
 @click.pass_context
-@click.argument('input', metavar='<input>',
-type=click.Path(exists=True, readable=True)
-)
 
-@click.option(
-    '--verbose', is_flag=True, default=False,
-    help='Print verbose file-by-file progress messages.'
-)
+@click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True))
 
+@click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.')
 @click.help_option('-h', '--help')
-
-@click.option('--about',
-    is_flag=True, is_eager=True, callback=print_about,
-    help='Show information about ScanCode and licensing and exit.'
-)
-
-@click.option('--version',
-    is_flag=True, is_eager=True, callback=print_version,
-    help='Show the version and exit.'
-)
+@click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.')
+@click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
 
 def extractcode(ctx, input, verbose, *args, **kwargs):  # @ReservedAssignment
     """extract archives and compressed files found in the <input> file or directory tree.
