@@ -115,6 +115,7 @@ setup(
     entry_points={
         'console_scripts': [
             'scancode = scancode.cli:scancode',
+            'extractcode = scancode.extract_cli:extractcode',
         ],
     },
 )
