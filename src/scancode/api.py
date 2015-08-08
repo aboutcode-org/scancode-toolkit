@@ -32,7 +32,7 @@ Main scanning functions.
 Note: this API is unstable and still evolving.
 """
 
-def extract_archives(location=None, verbose=False):
+def extract_archives(location):
     """
     Extract recursively any archives found at location and yield an iterable of
     ExtractEvents.
@@ -44,14 +44,10 @@ def extract_archives(location=None, verbose=False):
     from extractcode import default_kinds
 
     for xevent in extract(location, kinds=default_kinds, recurse=True):
-        if xevent.done:
-            yield xevent
-        else:
-            if verbose and not xevent.done:
-                yield xevent
+        yield xevent
 
 
-def get_copyrights(location=None):
+def get_copyrights(location):
     """
     Yield an iterable of dictionaries of copyright data detected in the file at
     location. Each item contains a list of copyright statements and a start and
@@ -72,7 +68,7 @@ def get_copyrights(location=None):
 DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/license_library/Demo/{}/'
 
 
-def get_licenses(location=None):
+def get_licenses(location):
     """
     Yield an iterable of dictionaries of license data detected in the file at
     location for each detected license.
@@ -98,7 +94,7 @@ def get_licenses(location=None):
             yield result
 
 
-def get_file_infos(location=None):
+def get_file_infos(location):
     """
     Return a nested dictionary of informations collected from the file or
     directory at location or or an empty dict.
@@ -139,14 +135,14 @@ def get_file_infos(location=None):
     return infos
 
 
-def get_package_infos(location=None):
+def get_package_infos(location):
     """
     Return a dictionary of package information
     collected from the location or an empty dictionary.
     """
     from packagedcode.recognize import recognize_packaged_archives
-    p = recognize_packaged_archives(location)
-    if not p:
+    package = recognize_packaged_archives(location)
+    if not package:
         return {}
-    return p.as_dict(simple=True)
+    return package.as_dict(simple=True)
 
