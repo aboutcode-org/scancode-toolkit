@@ -66,10 +66,10 @@ class EnhancedProgressBar(ProgressBar):
     and exit.
     """
     def __init__(self, iterable, length=None, fill_char='#', empty_char=' ',
-        bar_template='%(bar)s', info_sep='  ', show_eta=True,
-        show_percent=None, show_pos=False, item_show_func=None,
-        label=None, file=None, color=None, width=30,  # @ReservedAssignment
-        start_show_func=None, finish_show_func=None):
+                 bar_template='%(bar)s', info_sep='  ', show_eta=True,
+                 show_percent=None, show_pos=False, item_show_func=None,
+                 label=None, file=None, color=None, width=30,  # @ReservedAssignment
+                 start_show_func=None, finish_show_func=None):
         """
         New parameters added on top of ProgressBar: start_show_func and
         finish_show_func to drive some display at the start and finish of a
@@ -190,7 +190,8 @@ def progressmanager(iterable=None, length=None, label=None, show_eta=True,
         progress_class = ProgressLogger
     else:
         progress_class = EnhancedProgressBar
-        bar_template = '%(label)s  [%(bar)s]  %(info)s' if bar_template is None else bar_template
+        bar_template = ('%(label)s  [%(bar)s]  %(info)s' 
+                        if bar_template is None else bar_template)
 
     return progress_class(iterable=iterable, length=length, show_eta=show_eta,
                           show_percent=show_percent, show_pos=show_pos,
