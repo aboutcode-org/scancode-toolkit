@@ -159,9 +159,9 @@ class TestSmokeTest(FileBasedTesting):
             scored = archive.score_handlers(handlers)
             assert expected == sorted([(h[0], h[1].name) for h in scored], reverse=True)
 
-    @expectedFailure
     def test_no_handler_is_selected_for_a_non_archive(self):
-        # fails because of libmagic bug: http://bugs.gw.com/view.php?id=467
+        # failed because of libmagic bug: http://bugs.gw.com/view.php?id=467
+        # passing by introducing strict flag for handlers
         test_loc = self.get_test_loc('archive/not_archive/hashfile')
         assert [] == list(archive.get_handlers(test_loc))
         assert None == archive.get_extractor(test_loc)
