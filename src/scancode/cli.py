@@ -28,22 +28,28 @@ from collections import OrderedDict
 from functools import partial
 import json
 import os
+from types import GeneratorType
 
 import click
+from click.termui import style
 
-from commoncode import ignore, fileutils
+from commoncode import ignore
 from commoncode.fileutils import resource_iter
+from commoncode import fileutils
 
 from scancode import __version__ as version
-from scancode.api import as_html
-from scancode.api import as_html_app
-from scancode.api import create_html_app_assets
-from scancode.api import extract_archives
+from scancode import utils
+
+from scancode.format import as_html
+from scancode.format import as_html_app
+from scancode.format import create_html_app_assets
+from scancode.format import HtmlAppAssetCopyWarning
+from scancode.format import HtmlAppAssetCopyError
+
 from scancode.api import get_copyrights
 from scancode.api import get_licenses
-from scancode.api import HtmlAppAssetCopyWarning
-from scancode.api import HtmlAppAssetCopyError
 from scancode.api import get_file_infos
+from scancode.api import get_package_infos
 
 
 info_text = '''
@@ -156,20 +162,7 @@ results to a file:
 
     scancode -f json -l -c samples/zlib/ > scan.json
 
-Extract all archives found in the 'samples' directory tree:
-
-    scancode --extract samples
-
-Note: If an archive contains other archives, all contained archives will be
-extracted recursively. Extraction is done directly in the 'samples' directory,
-side-by-side with each archive. Files are extracted in a directory named after
-the archive with an '-extract' suffix added to its name, created side-by-side
-with the corresponding archive file.
-
-Extract a single archive. Files are extracted in the directory
-'samples/arch/zlib.tar.gz-extract/':
-
-    scancode --extract samples/arch/zlib.tar.gz
+To extract archives, see the 'extractcode' command instead.
 '''
 
 
@@ -207,179 +200,146 @@ number of files processed. Use --verbose to display file-by-file progress.
 '''
 
 
-short_help = '''
+class ScanCommand(utils.BaseCommand):
+    short_usage_help = '''
 Try 'scancode --help' for help on options and arguments.'''
 
 
 formats = ['json', 'html', 'html-app']
 
 
-class ScanCommand(click.Command):
-    def get_usage(self, ctx):
-        """
-        Ensure that usage points to the --help option explicitly.
-        Workaround click issue https://github.com/mitsuhiko/click/issues/393
-        """
-        return click.Command.get_usage(self, ctx) + short_help
-
-    def main(self, args=None, prog_name=None, complete_var=None,
-             standalone_mode=True, **extra):
-        """
-        Workaround click 4.0 bug https://github.com/mitsuhiko/click/issues/365
-        """
-        return click.Command.main(self, args=args, prog_name=self.name,
-                                  complete_var=complete_var,
-                                  standalone_mode=standalone_mode, **extra)
-
-
 @click.command(name='scancode', epilog=epilog_text, cls=ScanCommand)
 @click.pass_context
+
 @click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True))
 @click.argument('output_file', default='-', metavar='<output_file>', type=click.File('wb'))
+
 @click.option('-c', '--copyright', is_flag=True, default=False, help='Scan <input> for copyrights. [default]')
 @click.option('-l', '--license', is_flag=True, default=False, help='Scan <input> for licenses. [default]')
-@click.option('-i', '--info', is_flag=True, default=False, help='Collect files information from  <input>.')
-@click.option('-f', '--format', metavar='<style>', type=click.Choice(formats),
-              default='json', show_default=True,
-              help='Set <output_file> format <style> to one of: %s' % ' or '.join(formats),
-              )
-@click.option('-e', '--extract', is_flag=True, default=False, is_eager=True,
-              help=('Extract any archives and compressed files found in <input> recursively, in-place, ignoring other scan options. Use this before scanning proper, as an <input> preparation step.'))
+@click.option('-p', '--package', is_flag=True, default=False, help='Scan <input> for packages. [default]')
+@click.option('-i', '--info', is_flag=True, default=False, help='Scan <input> for files information.')
+
+@click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>', type=click.Choice(formats),
+              help='Set <output_file> format <style> to one of: %s' % ' or '.join(formats),)
 @click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.')
+
 @click.help_option('-h', '--help')
-@click.option('--examples', is_flag=True, is_eager=True, callback=print_examples,
-              help=('Show command examples and exit.'))
-@click.option('--about', is_flag=True, is_eager=True, callback=print_about,
-              help=('Show information about ScanCode and licensing and exit.'))
-@click.option('--version', is_flag=True, is_eager=True, callback=print_version,
-              help=('Show the version and exit.'))
-def scancode(ctx, input, output_file, extract, copyright, license, info, format, verbose, *args, **kwargs):  # @ReservedAssignment
+@click.option('--examples', is_flag=True, is_eager=True, callback=print_examples, help=('Show command examples and exit.'))
+@click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.')
+@click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
+
+def scancode(ctx, input, output_file, copyright, license, package,  # @ReservedAssignment
+             info, format, verbose, *args, **kwargs):  # @ReservedAssignment
     """scan the <input> file or directory for origin and license and save results to the <output_file>.
 
     The scan results are printed on terminal if <output_file> is not provided.
     """
-    abs_input = os.path.abspath(os.path.expanduser(input))
-    scans = [copyright, license, info]
-    if extract:
-        if any(scans):
-            # exclusive, ignoring other options.
-            # FIXME: this should turned into  a sub-command
-            ctx.fail('''The '--extract' option cannot be combined with other scanning options.
-Use the '--extract' option alone to extract archives found in  <input>.
-then run scancode again to scan the extracted files.''')
-            ctx.exit(1)
 
-        click.secho('Extracting archives...', fg='green')
-        extract_with_progress(abs_input, verbose)
-        click.secho('Extracting done.', fg='green')
-        return
+    abs_input = os.path.abspath(os.path.expanduser(input))
+    scans = [copyright, license, package, info]
 
     # Default scan when no options is provided
     if not any(scans):
         copyright = True  # @ReservedAssignment
         license = True  # @ReservedAssignment
+        package = True
 
-    if copyright or license or info:
-        click.secho('Scanning files...', fg='green')
-        results = []
+    # note: "flag and function" expressions return the function if flag is True
+    scans = {
+        'copyrights': copyright and get_copyrights,
+        'licenses': license and get_licenses,
+        'packages': package and get_package_infos,
+        'infos': info and get_file_infos,
+    }
 
-        ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
-        files = resource_iter(abs_input, ignored=ignored)
+    results = []
 
-        if not verbose:
-            # only display a progress bar
-            with click.progressbar(files, show_pos=True) as files:
-                for input_file in files:
-                    input_file = fileutils.as_posixpath(input_file)
-                    results.append(scan_one(input_file, copyright, license, info, verbose))
-        else:
-            for input_file in files:
-                input_file = fileutils.as_posixpath(input_file)
-                results.append(scan_one(input_file, copyright, license, info, verbose))
+    # note: we inline progress display functions to close on some args
 
-        if format == 'html':
-            output_file.write(as_html(results))
-
-        elif format == 'html-app':
-            output_file.write(as_html_app(results, input, output_file))
-            try:
-                create_html_app_assets(output_file)
-            except HtmlAppAssetCopyWarning:
-                click.secho('\nHTML app creation skipped when printing to terminal.',
-                            fg='yellow')
-            except HtmlAppAssetCopyError:
-                click.secho('\nFailed to create HTML app.', fg='red')
-
-        elif format == 'json':
-            meta = OrderedDict()
-            meta['scancode_notice'] = acknowledgment_text_json
-            meta['scancode_version'] = version
-            meta['resource_count'] = len(results)
-            meta['results'] = results
-            output_file.write(json.dumps(meta, indent=2))
-        else:
-            # This should never happen by construction
-            raise Exception('Unknown format: ' + repr(format))
-        click.secho('Scanning done.', fg='green')
+    def scan_start():
+        """Progress event displayed at start of scan"""
+        return style('Scanning files...', fg='green')
 
 
-def scan_one(input_file, copyright, license, info, verbose=False):  # @ReservedAssignment
+    def scan_event(item):
+        """Progress event displayed each time a file is scanned"""
+        if item:
+            line = verbose and item or fileutils.file_name(item) or ''
+            return 'Scanning: %(line)s' % locals()
+
+
+    def scan_end():
+        """Progress event displayed at end of scan"""
+        has_warnings = False
+        has_errors = False
+        summary = []
+        summary_color = 'green'
+        summary_color = has_warnings and 'yellow' or summary_color
+        summary_color = has_errors and 'red' or summary_color
+        summary.append(style('Scanning done.', fg=summary_color, reset=True))
+        return '\n'.join(summary)
+
+
+    ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
+    resources = resource_iter(abs_input, ignored=ignored)
+
+    with utils.progressmanager(resources,
+                               item_show_func=scan_event,
+                               start_show_func=scan_start,
+                               finish_show_func=scan_end,
+                               verbose=verbose,
+                               show_pos=True,
+                               ) as progressive_resources:
+
+        for resource in progressive_resources:
+            res = fileutils.as_posixpath(resource)
+            results.append(scan_one(res, scans))
+
+    # TODO: eventually merge scans for the same resource location...
+    # TODO: fix absolute paths as relative to original input argument...
+
+    save_results(results, format, input, output_file)
+
+
+def scan_one(input_file, scans):
     """
-    Scan one file and return scanned data.
+    Scan one file or directory and return scanned data, calling every scan in
+    the scans mapping of (scan name -> scan function).
     """
-    if verbose:
-        click.secho('Scanning: %(input_file)s: ' % locals(), nl=False, fg='blue')
     data = OrderedDict()
     data['location'] = input_file
-    if copyright:
-        if verbose:
-            click.secho('copyrights. ', nl=False, fg='green')
-        data['copyrights'] = list(get_copyrights(input_file))
-    if license:
-        if verbose:
-            click.secho('licenses. ', nl=False, fg='green')
-        data['licenses'] = list(get_licenses(input_file))
-    if info:
-        if verbose:
-            click.secho('infos. ', nl=False, fg='green')
-        data['infos'] = get_file_infos(input_file)
-
-    if verbose:
-        click.secho('', nl=True)
+    for scan_name, scan_func in scans.items():
+        if scan_func:
+            scan = scan_func(input_file)
+            if isinstance(scan, GeneratorType):
+                scan = list(scan)
+            data[scan_name] = scan
     return data
 
 
-def extract_with_progress(input, verbose=False):  # @ReservedAssignment
+def save_results(results, format, input, output_file):  # @ReservedAssignment
     """
-    Extract archives and display progress.
+    Save results to file or screen.
     """
-    if verbose:
-        for xev in extract_archives(input, verbose=verbose):
-            if not xev.done:
-                click.secho('Extracting: ' + xev.source + ': ', nl=False, fg='green')
-            else:
-                if xev.warnings or xev.errors:
-                    click.secho('done.', fg='red' if xev.errors else 'yellow')
-                    display_extract_event(xev)
-                else:
-                    click.secho('done.', fg='green')
-    else:
-        extract_results = []
-        # only display a progress bar
-        with click.progressbar(extract_archives(input, verbose=verbose), show_pos=True) as extractions:
-            for xevent in extractions:
-                extract_results.append(xevent)
-        # display warnings/errors at the end
-        for xev in extract_results:
-            if xev.warnings or xev.errors:
-                if xev.warnings or xev.errors:
-                    click.secho('Extracting: ' + xev.source + ': ', nl=False, fg='green')
-                    click.secho('done.', fg='red' if xev.errors else 'yellow')
-                    display_extract_event(xev)
+    assert format in formats
+    if format == 'html':
+        output_file.write(as_html(results))
 
+    elif format == 'html-app':
+        output_file.write(as_html_app(results, input, output_file))
+        try:
+            create_html_app_assets(output_file)
+        except HtmlAppAssetCopyWarning:
+            click.secho('\nHTML app creation skipped when printing to terminal.',
+                       err=True, fg='yellow')
+        except HtmlAppAssetCopyError:
+            click.secho('\nFailed to create HTML app.', err=True, fg='red')
 
-def display_extract_event(xev):
-    for e in xev.errors:
-        click.secho('  ERROR: ' + e, fg='red')
-    for warn in xev.warnings:
-        click.secho('  WARNING: ' + warn, fg='yellow')
+    elif format == 'json':
+        meta = OrderedDict()
+        meta['scancode_notice'] = acknowledgment_text_json
+        meta['scancode_version'] = version
+        meta['resource_count'] = len(results)
+        # TODO: add scanning options to meta
+        meta['results'] = results
+        output_file.write(json.dumps(meta, indent=2))
