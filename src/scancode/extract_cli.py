@@ -115,7 +115,7 @@ def extract_with_progress(input, verbose=False):  # @ReservedAssignment
         if verbose:
             if item.done:
                 return ''
-            line = item.source or ''
+            line = as_posixpath(item.source) or ''
         else:
             line = fileutils.file_name(item.source) or ''
         return 'Extracting: %(line)s' % locals()
@@ -131,7 +131,7 @@ def extract_with_progress(input, verbose=False):  # @ReservedAssignment
         for xev in extract_results:
             has_errors = has_errors or bool(xev.errors)
             has_warnings = has_warnings or bool(xev.warnings)
-            source = xev.source
+            source = as_posixpath(xev.source)
             for e in xev.errors:
                 summary.append(style('ERROR extracting: %(source)s: %(e)r' % locals(), fg='red', reset=False))
             for warn in xev.warnings:
