@@ -124,11 +124,11 @@ def as_html(detected_data):
     licenses = {}
 
     # Create a dict keyed by location
-    for resource in detected_data:
-        location = resource['location']
+    for scan_result in detected_data:
+        location = scan_result['location']
         results = []
-        if 'copyrights' in resource:
-            for entry in resource['copyrights']:
+        if 'copyrights' in scan_result:
+            for entry in scan_result['copyrights']:
                 results.append({
                     'start': entry['start_line'],
                     'end': entry['end_line'],
@@ -136,8 +136,8 @@ def as_html(detected_data):
                     # NOTE: we display one statement per line.
                     'value': '\n'.join(entry['statements']),
                 })
-        if 'licenses' in resource:
-            for entry in resource['licenses']:
+        if 'licenses' in scan_result:
+            for entry in scan_result['licenses']:
                 results.append({
                     'start': entry['start_line'],
                     'end': entry['end_line'],
