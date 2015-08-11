@@ -163,10 +163,10 @@ class NoOpProgressBar(EnhancedProgressBar):
     """
     def __init__(self, *args, **kwargs):
         ProgressBar.__init__(self, *args, **kwargs)
-        self.is_hidden =True
+        self.is_hidden = True
 
 
-def progressmanager(iterable=None, length=None, label=None, show_eta=True, 
+def progressmanager(iterable=None, length=None, label=None, show_eta=True,
                     show_percent=None, show_pos=False, item_show_func=None,
                     fill_char='#', empty_char='-', bar_template=None,
                     info_sep='  ', width=36, file=None, color=None,  # @ReservedAssignment
@@ -190,7 +190,7 @@ def progressmanager(iterable=None, length=None, label=None, show_eta=True,
         progress_class = ProgressLogger
     else:
         progress_class = EnhancedProgressBar
-        bar_template = ('%(label)s  [%(bar)s]  %(info)s' 
+        bar_template = ('%(label)s  [%(bar)s]  %(info)s'
                         if bar_template is None else bar_template)
 
     return progress_class(iterable=iterable, length=length, show_eta=show_eta,
