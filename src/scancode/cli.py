@@ -34,7 +34,6 @@ import click
 from click.termui import style
 
 from commoncode import ignore
-from commoncode.fileutils import resource_iter
 from commoncode import fileutils
 
 from scancode import __version__ as version
@@ -234,8 +233,9 @@ def scancode(ctx, input, output_file, copyright, license, package,  # @ReservedA
 
     The scan results are printed on terminal if <output_file> is not provided.
     """
-
-    abs_input = os.path.abspath(os.path.expanduser(input))
+    # save paths to report paths relative to the original input
+    original_input = fileutils.as_posixpath(input)
+    abs_input = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(input)))
     scans = [copyright, license, package, info]
 
     # Default scan when no options is provided
@@ -281,7 +281,7 @@ def scancode(ctx, input, output_file, copyright, license, package,  # @ReservedA
 
 
     ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
-    resources = resource_iter(abs_input, ignored=ignored)
+    resources = fileutils.resource_iter(abs_input, ignored=ignored)
 
     with utils.progressmanager(resources,
                                item_show_func=scan_event,
@@ -293,7 +293,11 @@ def scancode(ctx, input, output_file, copyright, license, package,  # @ReservedA
 
         for resource in progressive_resources:
             res = fileutils.as_posixpath(resource)
-            results.append(scan_one(res, scans))
+            # keep the location as relative to the original input
+            relative_path = utils.get_relative_path(original_input, abs_input, res)
+            scan_result = OrderedDict(location=relative_path)
+            scan_result.update(scan_one(res, scans))
+            results.append(scan_result)
 
     # TODO: eventually merge scans for the same resource location...
     # TODO: fix absolute paths as relative to original input argument...
@@ -307,7 +311,6 @@ def scan_one(input_file, scans):
     the scans mapping of (scan name -> scan function).
     """
     data = OrderedDict()
-    data['location'] = input_file
     for scan_name, scan_func in scans.items():
         if scan_func:
             scan = scan_func(input_file)
