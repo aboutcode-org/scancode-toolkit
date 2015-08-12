@@ -27,10 +27,11 @@ from __future__ import print_function, absolute_import
 import click
 from click._termui_impl import ProgressBar
 from click.utils import echo
+import posixpath
 
 
 """
-Various CLI UI utilities, mostly related to Click and progress reporting.
+Various CLI UI utilities, many related to Click and progress reporting.
 """
 
 
@@ -201,3 +202,15 @@ def progressmanager(iterable=None, length=None, label=None, show_eta=True,
                           width=width, color=color,
                           start_show_func=start_show_func,
                           finish_show_func=finish_show_func)
+
+
+def get_relative_path(base, base_resolved, path):
+    """
+    Compute a new posix path based on 'path' relative to the base in original
+    format or a fully resolved posix format.
+    """
+    # this takes care of a single file or a top level directory
+    if base_resolved == path:
+        return base
+    relative = posixpath.join(base, path[len(base_resolved):].lstrip('/'))
+    return relative

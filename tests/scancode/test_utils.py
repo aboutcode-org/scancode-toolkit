@@ -26,27 +26,26 @@ from __future__ import absolute_import, print_function
 
 import os
 
+import click
 from click.testing import CliRunner
+from click.termui import progressbar
 
 from commoncode.testcase import FileBasedTesting
-from commoncode.fileutils import as_posixpath
 
-from scancode import cli
-import codecs
-import click
-from click.termui import progressbar
+from scancode import utils
 
 
 class TestUtils(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_click_progressbar_with_labels(self):
+        # test related to https://github.com/mitsuhiko/click/issues/406
         @click.command()
         def mycli():
             """Sample cmd with progress bar"""
             click.echo('Start')
             with progressbar(range(10), label='xyz') as it:
-                for i in it:
+                for _ in it:
                     pass
             click.echo('End')
 
@@ -58,5 +57,13 @@ xyz
 xyz
 End
 '''
-
         assert expected == result.output
+
+    def test_get_relative_path(self):
+        assert '.' == utils.get_relative_path(base='.', base_resolved='/', path='/')
+        assert 'file' == utils.get_relative_path(base='file', base_resolved='/file', path='/file')
+        assert 'this/file/that' == utils.get_relative_path(base='this/file/', base_resolved='/this/file/', path='/this/file/that')
+        assert 'this/file/that' == utils.get_relative_path(base='this/file/', base_resolved='/this/file/', path='/this/file/that')
+        assert 'this/file/that' == utils.get_relative_path(base='this/file/', base_resolved='/foo/this/file/', path='/foo//this/file/that')
+        assert 'this/file/that' == utils.get_relative_path(base='this/file', base_resolved='/foo/this/file/', path='/foo//this/file/that')
+        assert 'this/file/that' == utils.get_relative_path(base='this/file', base_resolved='/foo/this/file/', path='/foo/this/file/that')
