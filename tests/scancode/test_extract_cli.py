@@ -33,6 +33,7 @@ from commoncode.fileutils import as_posixpath
 
 from scancode import extract_cli
 from commoncode.testcase import FileDrivenTesting
+from commoncode.system import on_windows
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -118,6 +119,41 @@ def test_extractcode_command_works_with_relative_paths(monkeypatch):
     finally:
         fileutils.delete(test_src_dir)
 
+
+def test_extractcode_command_works_with_relative_paths_verbose(monkeypatch):
+    # The setup is a tad complex because we want to have a relative dir
+    # to the base dir where we run tests from, ie the scancode-toolkit/ dir
+    # To use relative paths, we use our tmp dir at the root of the code tree
+    from os.path import dirname, join, abspath
+    from  commoncode import fileutils
+    import tempfile
+    import shutil
+
+    try:
+        scancode_root = dirname(dirname(dirname(__file__)))
+        scancode_tmp = join(scancode_root, 'tmp')
+        fileutils.create_dir(scancode_tmp)
+        scancode_root_abs = abspath(scancode_root)
+        test_src_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs, '').strip('\\/')
+        test_file = test_env.get_test_loc('extract_relative_path/basic.zip')
+        shutil.copy(test_file, test_src_dir)
+        test_src_file = join(test_src_dir, 'basic.zip')
+        runner = CliRunner()
+        monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+        result = runner.invoke(extract_cli.extractcode, ['--verbose',test_src_file])
+        assert result.exit_code == 0
+        # extract the path from the second line of the output
+        # check that the path is relative and not absolute
+        lines = result.output.splitlines(False)
+        line = lines[1]
+        line_path = line.split(':', 1)[-1].strip()
+        if on_windows:
+            drive = test_file[:2]
+            assert not line_path.startswith(drive)
+        else:
+            assert not line_path.startswith('/')
+    finally:
+        fileutils.delete(test_src_dir)
 
 def test_usage_and_help_return_a_correct_script_name_on_all_platforms(monkeypatch):
     runner = CliRunner()
