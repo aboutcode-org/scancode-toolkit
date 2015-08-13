@@ -9,7 +9,7 @@ Check that we run a supported OS and architecture.
 def unsupported():
     print('Unsupported OS/platform.')
     print('See https://github.com/nexB/scancode-toolkit/ for supported OS/platforms.')
-    print('Enter a ticket https://github.com/nexB/scancode-toolkit/issues asking for your OS/platform combo.')
+    print('Enter a ticket https://github.com/nexB/scancode-toolkit/issues asking for support of your OS/platform combo.')
     sys.exit(1)
 
 if sys.maxsize > 2 ** 32:
