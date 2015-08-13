@@ -28,6 +28,9 @@ goto scancode
  echo * Configuring ScanCode ...
  set CONFIGURE_QUIET=1
  call %SCANCODE_ROOT_DIR%\configure etc/conf
+ if %errorlevel% neq 0 (
+    exit /b %errorlevel%
+ )
 
 :scancode
 %SCANCODE_ROOT_DIR%\bin\extractcode %SCANCODE_CMD_LINE_ARGS%
