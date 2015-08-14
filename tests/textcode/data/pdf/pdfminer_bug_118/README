@@ -1,0 +1,8 @@
+This test file was created this way:
+ wget https://www.broadcom.com/collateral/pg/5756M-PG101-R.pdf
+ pdfseparate -f 1 -l 1 5756M-PG101-R.pdf  5756M-PG101-R-p1.pdf
+This keeps only the first page of the faulty document
+This is a test for: https://github.com/euske/pdfminer/issues/118
+
+This document is Copyright (c) Broadcom and used only as a small excerpt for bug testing
+purpose

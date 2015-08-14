@@ -27,30 +27,35 @@ from __future__ import absolute_import, print_function, unicode_literals
 import contextlib
 from StringIO import StringIO
 
+from pdfminer.converter import TextConverter
+from pdfminer.layout import LAParams
+from pdfminer.pdfdocument import PDFDocument
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfparser import PDFParser
-from pdfminer.pdfdocument import PDFDocument
-from pdfminer.converter import TextConverter
-from pdfminer.layout import LAParams
+from pdfminer.pdftypes import PDFException
 
-"""
-Extracts text from a pdf file.
-"""
+
 
 def get_text_lines(location):
+    """
+    Return a list of text lines extracted from a pdf file at location.
+    """
     extracted_text = StringIO()
     laparams = LAParams()
     with open(location, 'rb') as pdf_file:
-        with contextlib.closing(PDFParser(pdf_file)) as parser:
-            document = PDFDocument(parser)
-            manager = PDFResourceManager()
-            with contextlib.closing(TextConverter(manager, extracted_text,
-                                                  laparams=laparams)) as extractor:
-                interpreter = PDFPageInterpreter(manager, extractor)
-                pages = PDFPage.create_pages(document)
-                for page in pages:
-                    interpreter.process_page(page)
-                extracted_text.seek(0)
-                lines = extracted_text.readlines()
+        try:
+            with contextlib.closing(PDFParser(pdf_file)) as parser:
+                document = PDFDocument(parser)
+                manager = PDFResourceManager()
+                with contextlib.closing(TextConverter(manager, extracted_text,
+                                                      laparams=laparams)) as extractor:
+                    interpreter = PDFPageInterpreter(manager, extractor)
+                    pages = PDFPage.create_pages(document)
+                    for page in pages:
+                        interpreter.process_page(page)
+                    extracted_text.seek(0)
+                    lines = extracted_text.readlines()
+        except PDFException:
+            return []
     return lines

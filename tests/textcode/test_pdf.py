@@ -64,3 +64,23 @@ Page 1
 \x0c'''.splitlines(True)
 
         self.assertEqual(expected, result)
+
+    def test_pdfminer_cant_parse_faulty_broadcom_doc(self):
+        # test for https://github.com/euske/pdfminer/issues/118
+        test_file = self.get_test_loc('pdf/pdfminer_bug_118/faulty.pdf')
+        from pdfminer.pdfparser import PDFParser
+        from pdfminer.pdfdocument import PDFDocument
+        from pdfminer.pdfdocument import PDFEncryptionError
+        with open(test_file,'rb') as inputfile:
+            parser=PDFParser(inputfile)
+            try:
+                PDFDocument(parser)
+            except PDFEncryptionError:
+                #this should not fail of course, and will when upstream is fixed
+                pass
+
+    def test_get_text_lines_skip_parse_faulty_broadcom_doc(self):
+        # test for 
+        test_file = self.get_test_loc('pdf/pdfminer_bug_118/faulty.pdf')
+        result = pdf.get_text_lines(test_file)
+        assert [] == result
