@@ -15,6 +15,7 @@ set TPP_DIR_DEV=thirdparty/dev
 set CONF_DEFAULT="etc/conf/dev"
 @rem #################################
 
+set SCANCODE_ROOT_DIR=%~dp0
 set SCANCODE_CLI_ARGS= 
 @rem Collect/Slurp all command line arguments in a variable
 :collectarg
@@ -53,12 +54,12 @@ if not exist "c:\python27\python.exe" (
     exit /b 1
 )
 
-call c:\python27\python.exe etc/configure.py %SCANCODE_CLI_ARGS%
+call c:\python27\python.exe %SCANCODE_ROOT_DIR%etc\configure.py %SCANCODE_CLI_ARGS%
 if %errorlevel% neq 0 (
     exit /b %errorlevel%
 )
-if exist bin\activate (
-    bin\activate
+if exist %SCANCODE_ROOT_DIR%bin\activate (
+    %SCANCODE_ROOT_DIR%bin\activate
 )
 goto EOS
 
