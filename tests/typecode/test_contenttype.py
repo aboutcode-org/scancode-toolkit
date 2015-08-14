@@ -77,7 +77,7 @@ class TestContentType(FileBasedTesting):
         test_file = os.path.join(test_dir, f)
         assert os.path.exists(test_file)
 
-        expected ='PNG image data, 16 x 12, 8-bit/color RGBA, interlaced'
+        expected = 'PNG image data, 16 x 12, 8-bit/color RGBA, interlaced'
         if on_windows:
             # FIXME: this is a very short png file though
             expected = 'Non-ISO extended-ASCII text'
@@ -91,12 +91,12 @@ class TestContentType(FileBasedTesting):
 
     @expectedFailure
     def test_filetype_file_on_unicode_file_name2(self):
-        test_dir= self.get_test_loc('contenttype/unicode/')
+        test_dir = self.get_test_loc('contenttype/unicode/')
         f = [f for f in os.listdir(test_dir) if f.startswith('g')][0]
         test_file = os.path.join(test_dir, f)
         assert os.path.exists(test_file)
 
-        expected ='PNG image data, 16 x 12, 8-bit/color RGBA, interlaced'
+        expected = 'PNG image data, 16 x 12, 8-bit/color RGBA, interlaced'
         if on_windows:
             # FIXME: this is a very short png file though
             expected = 'Non-ISO extended-ASCII text'
@@ -811,7 +811,14 @@ class TestContentType(FileBasedTesting):
         assert 'Non-ISO extended-ASCII text' == get_filetype_file(self.get_test_loc('contenttype/text/ChangeLog'))
 
     @expectedFailure
-    def test_text_rsync_text_text_file_is_not_octet_stream(self):
+    def test_text_rsync_file_is_not_octet_stream(self):
         # this is a libmagic bug: http://bugs.gw.com/view.php?id=473
         assert 'data' != get_filetype_file(self.get_test_loc('contenttype/text/wildtest.txt'))
         assert 'octet' not in get_mimetype_file(self.get_test_loc('contenttype/text/wildtest.txt'))
+
+    @expectedFailure
+    def test_rgb_stream_is_binary(self):
+        # this is a binaryornot bug: https://github.com/audreyr/binaryornot/issues/10
+        assert 'data' == get_filetype_file(self.get_test_loc('contenttype/binary/pixelstream.rgb'))
+        assert 'application/octet-stream' == get_mimetype_file(self.get_test_loc('contenttype/binary/pixelstream.rgb'))
+        assert is_binary(self.get_test_loc('contenttype/binary/pixelstream.rgb'))
