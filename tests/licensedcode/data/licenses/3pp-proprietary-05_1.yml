@@ -1,5 +1,3 @@
 licenses:
     - 3pp-proprietary-05
-notes: >-
-    Common for old Motorola code, such as MetroWerks and FreeScale-related code
-sort: true
+notes: Common for old Motorola code, such as MetroWerks and FreeScale-related code

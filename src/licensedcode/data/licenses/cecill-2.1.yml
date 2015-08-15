@@ -1,0 +1,11 @@
+key: cecill-2.1
+short_name: CeCILL 2.1
+name: CeCILL Free Software License Agreement v2.1
+category: Copyleft Limited
+owner: CeCILL
+homepage_url: http://www.cecill.info/licences/
+text_urls:
+    - http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.txt
+    - http://www.cecill.info/licences/Licence_CeCILL_V2.1-fr.html
+    - http://www.cecill.info/licences/Licence_CeCILL_V2.1-fr.txt
+    - http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.html

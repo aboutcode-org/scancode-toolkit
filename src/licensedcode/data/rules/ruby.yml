@@ -1,3 +1,4 @@
 licenses:
     - ruby
+template: yes
 notes: from http://curb.rubyforge.org/files/LICENSE.html
