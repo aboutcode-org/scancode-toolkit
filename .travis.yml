@@ -5,7 +5,8 @@ os:
   - linux 
 
 env:
-  - TEST_SUITE: src tests/commoncode tests/extractcode tests/textcode tests/typecode tests/cluecode tests/scancode
+  - TEST_SUITE: src tests/commoncode tests/extractcode tests/textcode tests/typecode tests/scancode
+  - TEST_SUITE: tests/cluecode
   - TEST_SUITE: tests/licensedcode/test_detect.py tests/licensedcode/test_index.py tests/licensedcode/test_legal.py tests/licensedcode/test_models.py
   - TEST_SUITE: tests/licensedcode/test_detection_datadriven.py
   - TEST_SUITE: tests/licensedcode/test_detection_validate.py
