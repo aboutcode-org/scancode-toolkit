@@ -49,6 +49,24 @@ See more command examples::
     ./scancode --examples
 
 
+Build and tests status
+======================
+
+master branch: Linux and MacOSX (Travis) and Windows (Appveyor): 
+
+.. image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=master
+   :target: https://travis-ci.org/nexB/scancode-toolkit
+.. image:: https://ci.appveyor.com/api/projects/status/o3wl8mu4x18nropv/branch/master?png=true
+   :target: https://ci.appveyor.com/project/nexB/scancode-toolkit
+
+develop branch: Linux and MacOSX (Travis) and Windows (Appveyor): 
+
+.. image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=develop
+   :target: https://travis-ci.org/nexB/scancode-toolkit
+.. image:: https://ci.appveyor.com/api/projects/status/o3wl8mu4x18nropv/branch/develop?png=true
+   :target: https://ci.appveyor.com/project/nexB/scancode-toolkit
+
+
 Source code
 ===========
 
@@ -96,23 +114,6 @@ To run a scan on sample data, run this::
 
 Then open samples.html in your web browser.
 
-
-Build and tests status
-======================
-
-master branch: Linux and Window: 
-
-.. image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=master
-   :target: https://travis-ci.org/nexB/scancode-toolkit
-.. image:: https://ci.appveyor.com/api/projects/status/o3wl8mu4x18nropv/branch/master?png=true
-   :target: https://ci.appveyor.com/project/nexB/scancode-toolkit
-
-develop branch: Linux and Windows:
-
-.. image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=develop
-   :target: https://travis-ci.org/nexB/scancode-toolkit
-.. image:: https://ci.appveyor.com/api/projects/status/o3wl8mu4x18nropv/branch/develop?png=true
-   :target: https://ci.appveyor.com/project/nexB/scancode-toolkit
 
 
 Comprehensive Installation
