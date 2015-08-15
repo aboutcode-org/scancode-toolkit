@@ -1,13 +1,8 @@
-language: python
+language: cpp
 
 os: 
   - osx
   - linux 
-
-
-
-python:
-    - "2.7"
 
 install:
     - source configure
