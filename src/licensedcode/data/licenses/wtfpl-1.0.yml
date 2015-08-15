@@ -2,9 +2,29 @@ key: wtfpl-1.0
 short_name: WTFPL 1.0
 name: WTFPL 1.0
 category: Public Domain
-owner: Sam Hocevar
-homepage_url: http://hg.windowmaker.info/wmaker/file/0a3a3e370483/COPYING.WTFPL
+owner: Banlu Kemiyatorn
+homepage_url: http://windowmaker.org/
 text_urls:
     - http://hg.windowmaker.info/wmaker/file/0a3a3e370483/COPYING.WTFPL
+    - http://repo.or.cz/w/wmaker-crm.git/blob/HEAD:/COPYING.WTFPL
 other_urls:
     - http://cvs.windowmaker.org/co.php/wm/COPYING.WTFPL
+notes: >
+    This license is found in the Windowmaker project with this mention in the
+    COPYING.WTFPL file
+    The following artwork were created by Banlu Kemiyatorn and
+    are distributed through the license in this file:
+    GNUstepGlow.tiff
+    [... long list of files]
+    do What The Fuck you want to Public License
+    
+    Version 1.0, March 2000
+    Copyright (C) 2000 Banlu Kemiyatorn (]d).
+    136 Nives 7 Jangwattana 14 Laksi Bangkok
+    Everyone is permitted to copy and distribute verbatim copies
+    of this license document, but changing it is not allowed.
+    
+    Ok, the purpose of this license is simple
+    and you just
+
+    DO WHAT THE FUCK YOU WANT TO.
