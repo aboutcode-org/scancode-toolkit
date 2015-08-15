@@ -16,5 +16,5 @@ install:
     - source configure
 
 script:
-    - py.test -n 4 -vvs $TEST_SUITE
+    - py.test -n 2 -vvs $TEST_SUITE
 
