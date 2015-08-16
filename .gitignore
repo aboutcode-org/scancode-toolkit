@@ -21,6 +21,7 @@
 /tmp
 .Python
 /include
+/Include
 /local
 
 # Installer logs
