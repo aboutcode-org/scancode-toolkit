@@ -100,7 +100,7 @@ def file_strings(location, buff_size=1024 * 1024):
     file_size = os.path.getsize(location)
     count = 0
     with open(location, 'rb') as f:
-        while True:
+        while 1:
             start = f.tell()
             buf = f.read(buff_size)
             count += 1
