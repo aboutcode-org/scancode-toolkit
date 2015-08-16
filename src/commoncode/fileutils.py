@@ -123,7 +123,7 @@ def file_chunks(file_object, chunk_size=1024):
     """
     Yield a file piece by piece. Default chunk size: 1k.
     """
-    while True:
+    while 1:
         data = file_object.read(chunk_size)
         if data:
             yield data

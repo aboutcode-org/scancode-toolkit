@@ -183,7 +183,7 @@ def new_name(location, is_dir=False):
         base_name = name
 
     counter = 1
-    while True:
+    while 1:
         new_name = base_name + '_' + str(counter) + ext
         if new_name.lower() not in siblings_lower:
             break
