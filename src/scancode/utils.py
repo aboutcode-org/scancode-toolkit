@@ -171,7 +171,8 @@ def progressmanager(iterable=None, length=None, label=None, show_eta=True,
                     show_percent=None, show_pos=False, item_show_func=None,
                     fill_char='#', empty_char='-', bar_template=None,
                     info_sep='  ', width=36, file=None, color=None,  # @ReservedAssignment
-                    verbose=False, start_show_func=None, finish_show_func=None):
+                    verbose=False, start_show_func=None, finish_show_func=None,
+                    quiet=False):
 
     """This function creates an iterable context manager showing progress as a
     bar (default) or line-by-line log (if verbose is True) while iterating.
@@ -179,15 +180,18 @@ def progressmanager(iterable=None, length=None, label=None, show_eta=True,
     Its arguments are similar to Click.termui.progressbar with
     these new arguments added at the end of the signature:
 
-    :param verbose: if False, display a progress bar, otherwise a progress log
-    :param start_show_func: a function called at the start of iteration that
-                            can return a string to display as an
-                            introduction text before the progress.
+    :param verbose:          if False, display a progress bar, otherwise a progress log
+    :param start_show_func:  a function called at the start of iteration that
+                             can return a string to display as an
+                             introduction text before the progress.
     :param finish_show_func: a function called at the end of iteration that
                              can return a string to display after the
                              progress.
+    :param quiet:            If True, do not display any progress message.
     """
-    if verbose:
+    if quiet:
+        progress_class = NoOpProgressBar
+    elif verbose:
         progress_class = ProgressLogger
     else:
         progress_class = EnhancedProgressBar
