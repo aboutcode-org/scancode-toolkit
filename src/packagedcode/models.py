@@ -116,6 +116,8 @@ class Package(object):
     # i.e. RubyGems are primarily ruby, etc
     primary_language = None
 
+    repo_types = []
+
     # one of PACKAGINGS
     packaging = None
 
@@ -129,9 +131,11 @@ class Package(object):
     dep_test = 'test'
     dep_build = 'build'
     dep_optional = 'optional'
+    dep_bundled = 'optional'
     dep_ci = 'continuous integration'
 
-    DEPENDENCY_GROUPS = (dep_runtime, dep_dev, dep_optional, dep_test, dep_build, dep_ci)
+    DEPENDENCY_GROUPS = (dep_runtime, dep_dev, dep_optional, dep_test,
+                         dep_build, dep_ci, dep_bundled)
 
     def __init__(self, location=None):
         # path to a file or directory
@@ -141,38 +145,91 @@ class Package(object):
         self.extracted_to = None
 
         # the id of the package
-        self.id = ''
-        self.version = ''
-        self.name = ''
-        self.summary = ''
-        self.description = ''
+        self.id = None
+        self.version = None
+        self.name = None
+        # this is a "short" description.
+        self.summary = None
+        # this is a "long" description, often several pages of text.
+        self.description = None
 
-        # paths to metadata files for this package.
+        # list of Parties: authors, packager, maintainers, contributors, distributor, vendor, etc
+        self.authors = []
+        self.maintainers = []
+        self.contributors = []
+        self.owners = []
+        self.packagers = []
+        self.distributors = []
+        self.vendors = []
+
+        # keywords or tags
+        self.keywords = []
+        # url to a reference documentation for keywords or tags (such as a Pypi or SF.net Trove map)
+        self.keywords_doc_url = None
+
+        # paths to metadata files for this package, if any
         # can be the same as the package location (e.g. RPMs)
         self.metafile_locations = []
 
-        self.homepage_url = ''
-        self.notes = ''
+        # URLs to metadata files for this package.
+        self.metafile_urls = []
 
-        # list of Party: authors, packager, distributor, vendor, etc
-        self.parties = []
+        self.homepage_url = None
+        self.notes = None
 
-        self.copyright = ''
+        # one or more direct download urls, possibly in SPDX vcs url form
+        # the first one is considered to be the primary
+        self.download_urls = []
+
+        # checksums for the download
+        self.download_sha1 = None
+        self.download_sha256 = None
+        self.download_md5 = None
+
+        # issue or bug tracker
+        self.bug_tracking_url = None
+
+        # strings (such as email, urls, etc)
+        self.support_contacts = []
+
+        # a URL where the code can be browsed online
+        self.code_view_url = None
+
+        # one of git, svn, hg, etc
+        self.vcs_tool = None
+        # a URL in the SPDX form of:
+        # git+https://github.com/nexb/scancode-toolkit.git
+        self.vcs_repository = None
+        # a revision, branch, tag reference, etc (can also be included in the URL
+        self.vcs_revision = None
+
+        # a top level copyright often asserted in metadata
+        self.copyright_top_level = ''
+        # effective copyrights as detected and eventually summarized
+        self.copyrights = []
 
         # as asserted licensing information
-        self.asserted_licensing = ''
+        # either a string or tuple of string, url
+        self.asserted_license = None
 
-        # list of legal files locations (such as COPYING, etc)
+        # list of legal files locations (such as COPYING, NOTICE, LICENSE, README, etc.)
         self.legal_file_locations = []
 
         # resolved or detected license expressions
-        self.license_expression = ''
-        self.license_text = ''
-        self.notice_text = ''
+        self.license_expression = None
+        self.license_text = None
+        self.notice_text = None
 
-        # map of dependency group to a list of dependencies for each
-        # DEPENDENCY_GROUPS
+        # map of dependency group to a list of dependencies for each DEPENDENCY_GROUPS
         self.dependencies = OrderedDict()
+
+    @property
+    def qualified_name(self):
+        """
+        Name prefixed with the package type (creating a namespace for unicity.)
+        or None
+        """
+        return self.name and self.type + ' ' + self.name or None
 
     def as_dict(self, simple=True):
         """
@@ -203,48 +260,56 @@ class Party(object):
 
     PARTY_TYPES = (party_person, party_project, party_org,)
 
-    def __init__(self, name, type=None, emails=None, urls=None,  # @ReservedAssignment
-                 city=None, country=None, notes=None):
+    def __init__(self, name=None, type=None, email=None, url=None,  # @ReservedAssignment
+                 notes=None):
         self.name = name
         # one of PARTY_TYPES
         self.type = type
-        self.emails = emails or []
-        self.urls = urls or []
-        self.city = city
-        self.country = country
-        self.notes = notes
+        self.email = email
+        self.url = url
 
     def as_dict(self):
         party = OrderedDict()
         party['name'] = self.name
         party['type'] = self.type
         party['email'] = self.email
-        party['urls'] = self.urls
-        party['country'] = self.country
-        party['notes'] = self.notes
+        party['url'] = self.url
         return party
 
 
 class Dependency(object):
     """
-    A dependency points to a Package via a package id and a list of version
-    constraints (such as ">= 3.4"). The version is the effective  version that
+    A dependency points to a Package via a package id and version, and jhas a version
+    constraint  (such as ">= 3.4"). The version is the effective version that
     has been picked and resolved.
     """
-    def __init__(self, id, version_constraints=None, version=None):  # @ReservedAssignment
+    def __init__(self, id, version_constraint=None, version=None):  # @ReservedAssignment
         self.id = id
-        # the effective or concrete version
+        # the effective or concrete resolved and used version
         self.version = version
-        self.version_constraints = version_constraints or []
+
+        # the potential constraints for this dep.
+        # this is package format specific
+        self.version_constraint = version_constraint
+
+        # a normalized list of version constraints for this dep.
+        # this is package indepdenent
+        self.normalized_version_constraints = []
+
+        # is the dep up to date and the latest available?
+        self.is_latest = False
 
     def as_dict(self):
         dep = OrderedDict()
         dep['id'] = self.package_id
         dep['version'] = self.urls
-        dep['version_constraints'] = self.version_constraints
+        dep['version_constraint'] = self.version_constraint
         return dep
 
-    def resolve(self):
+    def resolve_and_normalize(self):
+        """
+        Compute the concrete version and normalized_version_constraints
+        """
         pass
 
 
@@ -256,30 +321,32 @@ class Repository(object):
     repo_type_debian = 'Debian'
     repo_type_maven = 'Maven'
     repo_type_ivy = 'IVY'
-    repo_type_artifactory = 'Artifactory'
     repo_type_python = 'Pypi'
     repo_type_gems = 'Rubygems'
     repo_type_npm = 'NPM'
+    repo_type_cpan = 'CPAN'
+    repo_type_nuget = 'Nuget'
 
     REPO_TYPES = (
         repo_type_yum,
         repo_type_debian,
         repo_type_maven,
         repo_type_ivy,
-        repo_type_artifactory,
         repo_type_python,
         repo_type_gems,
         repo_type_npm,
+        repo_type_cpan,
+        repo_type_nuget,
     )
 
-    def __init__(self, type, url, public=False, mirror_urls=None, name=None):  # @ReservedAssignment
+    def __init__(self, type, url=None, public=False, mirror_urls=None, name=None):  # @ReservedAssignment
         # one of REPO_TYPES
         self.type = type
         self.url = url
         self.public = public
         self.mirror_urls = mirror_urls or []
         # optional: used for well known "named" public repos such as:
-        # Maven Central, Pypi, RubyGems, npm.org
+        # Maven Central, Pypi, RubyGems, npmjs.org
         self.name = name
 
 
@@ -297,6 +364,7 @@ class RpmPackage(Package):
     filetypes = ('rpm ',)
     mimetypes = ('application/x-rpm',)
     packaging = Package.as_archive
+    repo_types = [Repository.repo_type_yum]
 
 
 class DebianPackage(Package):
@@ -307,6 +375,7 @@ class DebianPackage(Package):
     mimetypes = ('application/x-archive',
                  'application/vnd.debian.binary-package',)
     packaging = Package.as_archive
+    repo_types = [Repository.repo_type_debian]
 
 
 class JarPackage(Package):
@@ -317,6 +386,7 @@ class JarPackage(Package):
     mimetypes = ('application/java-archive', 'application/zip',)
     primary_language = 'Java'
     packaging = Package.as_archive
+    repo_types = [Repository.repo_type_maven, Repository.repo_type_ivy]
 
 
 class JarAppPackage(Package):
@@ -327,29 +397,27 @@ class JarAppPackage(Package):
     mimetypes = ('application/java-archive', 'application/zip')
     primary_language = 'Java'
     packaging = Package.as_archive
+    repo_types = [Repository.repo_type_maven, Repository.repo_type_ivy]
 
 
 class MavenPackage(JarPackage, JarAppPackage):
     type = 'Maven'
     metafiles = ['META-INF/**/*.pom', 'pom.xml']
-
-
-class NpmPackage(Package):
-    type = 'NPM'
-    metafiles = ['package.json']
-    primary_language = 'JavaScript'
+    repo_types = [Repository.repo_type_maven]
 
 
 class BowerPackage(Package):
     type = 'Bower'
     metafiles = ['bower.json']
     primary_language = 'JavaScript'
+    repo_types = []
 
 
 class MeteorPackage(Package):
     type = 'Meteor'
     metafiles = ['package.js']
     primary_language = 'JavaScript'
+    repo_types = []
 
 
 class CpanModule(Package):
@@ -358,6 +426,7 @@ class CpanModule(Package):
                  'MANIFEST',
                  'META.yml']
     primary_language = 'Perl'
+    repo_types = [Repository.repo_type_cpan]
 
 
 class RubyGemPackage(Package):
@@ -367,6 +436,7 @@ class RubyGemPackage(Package):
     extensions = ('.gem',)
     primary_language = 'Ruby'
     packaging = Package.as_archive
+    repo_types = [Repository.repo_type_gems]
 
 
 class AndroidAppPackage(Package):
@@ -376,6 +446,7 @@ class AndroidAppPackage(Package):
     extensions = ('.apk',)
     primary_language = 'Java'
     packaging = Package.as_archive
+    repo_types = []
 
 
     # see http://tools.android.com/tech-docs/new-build-system/aar-formats
@@ -388,6 +459,7 @@ class AndroidLibPackage(Package):
     extensions = ('.aar',)
     primary_language = 'Java'
     packaging = Package.as_archive
+    repo_types = []
 
 
 class MozillaExtPackage(Package):
@@ -397,6 +469,7 @@ class MozillaExtPackage(Package):
     extensions = ('.xpi',)
     primary_language = 'JavaScript'
     packaging = Package.as_archive
+    repo_types = []
 
 
 class ChromeExtPackage(Package):
@@ -406,6 +479,7 @@ class ChromeExtPackage(Package):
     extensions = ('.crx',)
     primary_language = 'JavaScript'
     packaging = Package.as_archive
+    repo_types = []
 
 
 class IosAppPackage(Package):
@@ -415,6 +489,7 @@ class IosAppPackage(Package):
     extensions = ('.ipa',)
     primary_language = 'Objective-C'
     packaging = Package.as_archive
+    repo_types = []
 
 
 class PythonPackage(Package):
@@ -424,6 +499,7 @@ class PythonPackage(Package):
     extensions = ('.egg', '.whl', '.pyz', '.pex',)
     primary_language = 'Python'
     packaging = Package.as_archive
+    repo_types = [Repository.repo_type_python]
 
 
 class CabPackage(Package):
@@ -432,6 +508,7 @@ class CabPackage(Package):
     mimetypes = ('application/vnd.ms-cab-compressed',)
     extensions = ('.cab',)
     packaging = Package.as_archive
+    repo_types = []
 
 
 class MsiInstallerPackage(Package):
@@ -440,6 +517,7 @@ class MsiInstallerPackage(Package):
     mimetypes = ('application/x-msi',)
     extensions = ('.msi',)
     packaging = Package.as_archive
+    repo_types = []
 
 
 # notes: this catches all  exe and fails often
@@ -449,6 +527,7 @@ class InstallShieldPackage(Package):
     mimetypes = ('application/x-dosexec',)
     extensions = ('.exe',)
     packaging = Package.as_archive
+    repo_types = []
 
 
 class NugetPackage(Package):
@@ -458,6 +537,7 @@ class NugetPackage(Package):
     mimetypes = ('application/zip', 'application/octet-stream')
     extensions = ('.nupkg',)
     packaging = Package.as_archive
+    repo_types = [Repository.repo_type_nuget]
 
 
 class NSISInstallerPackage(Package):
@@ -466,6 +546,7 @@ class NSISInstallerPackage(Package):
     mimetypes = ('application/x-dosexec',)
     extensions = ('.exe',)
     packaging = Package.as_archive
+    repo_types = []
 
 
 class SharPackage(Package):
@@ -474,6 +555,7 @@ class SharPackage(Package):
     mimetypes = ('text/x-shellscript',)
     extensions = ('.sha', '.shar', '.bin')
     packaging = Package.as_archive
+    repo_types = []
 
 
 class AppleDmgPackage(Package):
@@ -482,6 +564,7 @@ class AppleDmgPackage(Package):
     mimetypes = ('application/zlib',)
     extensions = ('.dmg', '.sparseimage',)
     packaging = Package.as_archive
+    repo_types = []
 
 
 class IsoImagePackage(Package):
@@ -490,12 +573,15 @@ class IsoImagePackage(Package):
     mimetypes = ('application/x-iso9660-image',)
     extensions = ('.iso', '.udf', '.img')
     packaging = Package.as_archive
+    repo_types = []
 
 
 class SquashfsPackage(Package):
     type = 'squashfs FS'
     filetypes = ('squashfs',)
+    mimetypes = tuple()
     packaging = Package.as_archive
+    repo_types = []
 
 #
 # these very generic archives must come last
@@ -507,6 +593,7 @@ class RarPackage(Package):
     mimetypes = ('application/x-rar',)
     extensions = ('.rar',)
     packaging = Package.as_archive
+    repo_types = []
 
 
 class TarPackage(Package):
@@ -551,36 +638,3 @@ class ZipPackage(Package):
 # TODO: Add VM images formats(VMDK, OVA, OVF, VDI, etc) and Docker/other containers
 
 
-# Note: the order matters: from the most to the least specific
-PACKAGE_TYPES = [
-    RpmPackage,
-    DebianPackage,
-    JarPackage,
-    JarAppPackage,
-    # TODO: add support for these
-    # MavenPackage
-    NpmPackage,
-    BowerPackage,
-    MeteorPackage,
-    CpanModule,
-    RubyGemPackage,
-    AndroidAppPackage,
-    AndroidLibPackage,
-    MozillaExtPackage,
-    ChromeExtPackage,
-    IosAppPackage,
-    PythonPackage,
-    RarPackage,
-    CabPackage,
-    MsiInstallerPackage,
-    InstallShieldPackage,
-    NSISInstallerPackage,
-    NugetPackage,
-    SharPackage,
-    AppleDmgPackage,
-    IsoImagePackage,
-    SquashfsPackage,
-    # these should always come last
-    TarPackage,
-    ZipPackage,
-    ]
