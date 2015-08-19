@@ -25,13 +25,12 @@
 from __future__ import absolute_import, print_function
 
 import logging
-import os
-from os.path import join
 
 from commoncode import filetype
 import typecode.contenttype
 
 from packagedcode import models
+from packagedcode import PACKAGE_TYPES
 
 
 logger = logging.getLogger(__name__)
@@ -53,7 +52,7 @@ def recognize_packaged_archives(location):
     ftype = T.filetype_file.lower()
     mtype = T.mimetype_file
 
-    for package in models.PACKAGE_TYPES:
+    for package in PACKAGE_TYPES:
         if not package.packaging == models.Package.as_archive:
             continue
 
