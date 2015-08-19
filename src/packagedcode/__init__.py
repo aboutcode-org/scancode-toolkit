@@ -22,3 +22,40 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
+from packagedcode import models
+from packagedcode import npm
+
+
+# Note: the order matters: from the most to the least specific
+PACKAGE_TYPES = [
+    models.RpmPackage,
+    models.DebianPackage,
+    models.JarPackage,
+    models.JarAppPackage,
+    # TODO: add support for these
+    # MavenPackage
+    npm.NpmPackage,
+    models.BowerPackage,
+    models.MeteorPackage,
+    models.CpanModule,
+    models.RubyGemPackage,
+    models.AndroidAppPackage,
+    models.AndroidLibPackage,
+    models.MozillaExtPackage,
+    models.ChromeExtPackage,
+    models.IosAppPackage,
+    models.PythonPackage,
+    models.RarPackage,
+    models.CabPackage,
+    models.MsiInstallerPackage,
+    models.InstallShieldPackage,
+    models.NSISInstallerPackage,
+    models.NugetPackage,
+    models.SharPackage,
+    models.AppleDmgPackage,
+    models.IsoImagePackage,
+    models.SquashfsPackage,
+    # these should always come last
+    models.TarPackage,
+    models.ZipPackage,
+    ]
