@@ -53,7 +53,6 @@ from commoncode import system
 from commoncode import command
 
 import typecode
-from commoncode.system import on_mac
 
 """
 magic2 is minimal and specialized wrapper around a vendored libmagic file
