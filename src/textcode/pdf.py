@@ -36,7 +36,6 @@ from pdfminer.pdfparser import PDFParser
 from pdfminer.pdftypes import PDFException
 
 
-
 def get_text_lines(location):
     """
     Return a list of text lines extracted from a pdf file at location.
