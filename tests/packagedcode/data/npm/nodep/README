@@ -1,0 +1,2 @@
+date-retrieved:2014-10-18 12:19:46+02:00
+wget:-O package.json-no-dep https://raw.githubusercontent.com/coreos/etcd/v0.1.2/mod/dashboard/package.json
