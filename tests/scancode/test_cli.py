@@ -35,7 +35,6 @@ from commoncode.fileutils import as_posixpath
 from commoncode.testcase import FileDrivenTesting
 
 from scancode import cli
-from collections import OrderedDict
 
 
 test_env = FileDrivenTesting()
@@ -47,7 +46,14 @@ These CLI tests are dependent on py.test monkeypatch to  ensure we are testing
 the actual command outputs as if using a TTY or not.
 """
 
-def load_json_result(result_file, test_dir):
+
+def check_scan_json(expected_file, result_file, test_dir):
+    result = _load_json_result(expected_file, test_dir)
+    expected = _load_json_result(result_file, test_dir)
+    assert expected == result
+
+
+def _load_json_result(result_file, test_dir):
     """
     Load the result file as utf-8 JSON and strip test_dir prefix from
     locations.
@@ -56,10 +62,11 @@ def load_json_result(result_file, test_dir):
     test_dir = as_posixpath(test_dir)
     with codecs.open(result_file, encoding='utf-8') as res:
         scan_result = json.load(res)
-        for result in scan_result['results']:
-            loc = result['location']
-            loc = as_posixpath(loc).replace(test_dir, '').strip('/')
-            result['location'] = loc
+    for result in scan_result['results']:
+        loc = result['location']
+        loc = as_posixpath(loc).replace(test_dir, '').strip('/')
+        result['location'] = loc
+    del scan_result['scancode_version']
     scan_result['results'].sort(key=lambda x: x['location'])
     return scan_result
 
@@ -108,7 +115,7 @@ def test_scancode_skip_vcs_files_and_dirs_by_default(monkeypatch):
     result_file = test_env.get_temp_file('json')
     result = runner.invoke(cli.scancode, ['--copyright', test_dir, result_file])
     assert result.exit_code == 0
-    scan_result = load_json_result(result_file, test_dir)
+    scan_result = _load_json_result(result_file, test_dir)
     # a single test.tst file and its directory that is not a VCS file should be listed
     assert 2 == scan_result['resource_count']
     scan_locs = [x['location'] for x in scan_result['results']]
@@ -141,12 +148,9 @@ def test_info_collect_infos(monkeypatch):
     result = runner.invoke(cli.scancode, ['--info', test_dir, result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-
-    #     with codecs.open(test_env.get_test_loc('info/basic.expected.json'), 'wb', encoding='utf-8') as ex:
-    #         ex.write(json.dumps(json.loads(open(result_file).read(), object_pairs_hook=OrderedDict), indent=2))
-    expected = load_json_result(test_env.get_test_loc('info/basic.expected.json'), test_dir)
-    loaded_result = load_json_result(result_file, test_dir)
-    assert expected == loaded_result
+    check_scan_json(test_env.get_test_loc('info/basic.expected.json'), 
+                    result_file,
+                    test_dir)
 
 
 def test_info_license_copyrights(monkeypatch):
@@ -157,11 +161,9 @@ def test_info_license_copyrights(monkeypatch):
     result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright', test_dir, result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    #     with codecs.open(test_env.get_test_loc('info/all.expected.json'), 'wb', encoding='utf-8') as ex:
-    #         ex.write(json.dumps(json.loads(open(result_file).read(), object_pairs_hook=OrderedDict), indent=2))
-    expected = load_json_result(test_env.get_test_loc('info/all.expected.json'), test_dir)
-    loaded_result = load_json_result(result_file, test_dir)
-    assert expected == loaded_result
+    check_scan_json(test_env.get_test_loc('info/all.expected.json'), 
+                    result_file,
+                    test_dir)
 
 
 def test_paths_are_posix_in_html_app_format_output(monkeypatch):
