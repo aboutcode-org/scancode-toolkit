@@ -35,6 +35,7 @@ from commoncode.fileutils import as_posixpath
 from commoncode.testcase import FileDrivenTesting
 
 from scancode import cli
+from collections import OrderedDict
 
 
 test_env = FileDrivenTesting()
@@ -140,6 +141,9 @@ def test_info_collect_infos(monkeypatch):
     result = runner.invoke(cli.scancode, ['--info', test_dir, result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
+
+    #     with codecs.open(test_env.get_test_loc('info/basic.expected.json'), 'wb', encoding='utf-8') as ex:
+    #         ex.write(json.dumps(json.loads(open(result_file).read(), object_pairs_hook=OrderedDict), indent=2))
     expected = load_json_result(test_env.get_test_loc('info/basic.expected.json'), test_dir)
     loaded_result = load_json_result(result_file, test_dir)
     assert expected == loaded_result
@@ -153,6 +157,8 @@ def test_info_license_copyrights(monkeypatch):
     result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright', test_dir, result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
+    #     with codecs.open(test_env.get_test_loc('info/all.expected.json'), 'wb', encoding='utf-8') as ex:
+    #         ex.write(json.dumps(json.loads(open(result_file).read(), object_pairs_hook=OrderedDict), indent=2))
     expected = load_json_result(test_env.get_test_loc('info/all.expected.json'), test_dir)
     loaded_result = load_json_result(result_file, test_dir)
     assert expected == loaded_result

@@ -59,6 +59,7 @@ def get_copyrights(location):
         if not copyrights:
             continue
         result = OrderedDict()
+        # FIXME: we should call this copyright instead, and yield one item per statement
         result['statements'] = copyrights
         result['start_line'] = start_line
         result['end_line'] = end_line
@@ -96,17 +97,13 @@ def get_licenses(location):
 
 def get_file_infos(location):
     """
-    Return a nested dictionary of informations collected from the file or
-    directory at location or or an empty dict.
+    Return a list of dictionaries of informations collected from the file or
+    directory at location.
     """
     from commoncode import fileutils
     from commoncode import filetype
     from commoncode.hash import sha1
     from typecode import contenttype
-
-    if not location:
-        return {}
-
     T = contenttype.get_type(location)
     is_file = T.is_file
     is_dir = T.is_dir
@@ -114,35 +111,30 @@ def get_file_infos(location):
     infos['type'] = filetype.get_type(location, short=False)
     infos['name'] = fileutils.file_name(location)
     infos['extension'] = is_file and fileutils.file_extension(location) or ''
-    infos['date'] = is_file and filetype.get_last_modified_date(location) or ''
-    infos['size'] = str(T.size)
-    infos['sha1'] = is_file and sha1(location) or ''
-    infos['files_count'] = is_dir and filetype.get_file_count(location) or ''
-
-    details = OrderedDict()
-    infos['type_details'] = details
-    if is_file:
-        details['mime_type'] = is_file and T.mimetype_file or ''
-        details['file_type'] = is_file and T.filetype_file or ''
-        details['programming_language'] = is_file and T.programming_language or ''
-        details['is_binary'] = T.is_binary
-        details['is_text'] = T.is_text
-        details['is_archive'] = T.is_archive
-        details['is_media'] = T.is_media
-        details['is_source'] = T.is_source
-        details['is_script'] = T.is_script
-
-    return infos
+    infos['date'] = is_file and filetype.get_last_modified_date(location) or None
+    infos['size'] = T.size
+    infos['sha1'] = is_file and sha1(location) or None
+    infos['files_count'] = is_dir and filetype.get_file_count(location) or None
+    infos['mime_type'] = is_file and T.mimetype_file or None
+    infos['file_type'] = is_file and T.filetype_file or None
+    infos['programming_language'] = is_file and T.programming_language or None
+    infos['is_binary'] = is_file and T.is_binary or None
+    infos['is_text'] = is_file and T.is_text or None
+    infos['is_archive'] = is_file and T.is_archive or None
+    infos['is_media'] = is_file and T.is_media or None
+    infos['is_source'] = is_file and T.is_source or None
+    infos['is_script'] = is_file and T.is_script or None
+    return [infos]
 
 
 def get_package_infos(location):
     """
-    Return a dictionary of package information
-    collected from the location or an empty dictionary.
+    Return a list of dictionaries of package information
+    collected from the location or an empty list.
     """
     from packagedcode.recognize import recognize_packaged_archives
     package = recognize_packaged_archives(location)
     if not package:
-        return {}
-    return package.as_dict(simple=True)
+        return []
+    return [package.as_dict(simple=True)]
 
