@@ -124,18 +124,22 @@ class TestNpm(FileBasedTesting):
             ('packaging', None),
             ('primary_language', 'JavaScript'),
             ('metafile_location', 'package.json'),
-            ('id', u'npm'), ('name', u'npm'),
+            ('id', u'npm'),
+            ('name', u'npm'),
             ('qualified_name', u'npm npm'),
             ('version', u'2.13.5'),
             ('summary', u'a package manager for JavaScript'),
+            ('asserted_licenses', [OrderedDict([('license', u'Artistic-2.0'),
+                                      ('text', None),
+                                      ('notice', None),
+                                      ('url', None)])]),
             ('author', u'Isaac Z. Schlueter'),
             ('author_email', u'i@izs.me'),
             ('author_url', u'http://blog.izs.me'),
             ('homepage_url', u'https://docs.npmjs.com/'),
-            ('download_urls', []),
+            ('download_url', u'https://registry.npmjs.org/npm/-/npm-2.13.5.tgz'),
             ('vcs_tool', u'git'),
-            ('vcs_repository', u'https://github.com/npm/npm'),
-            ('asserted_license', u'Artistic-2.0')
+            ('vcs_repository', u'https://github.com/npm/npm')
         ])
 
         assert expected == self.relative_locations(package.get_info())
@@ -154,14 +158,14 @@ class TestNpm(FileBasedTesting):
             ('qualified_name', u'npm cookie-signature'),
             ('version', u'1.0.3'),
             ('summary', u'Sign and unsign cookies'),
+            ('asserted_licenses', []),
             ('author', u'TJ Holowaychuk'),
             ('author_email', u'tj@learnboost.com'),
             ('author_url', None),
             ('homepage_url', None),
-            ('download_urls', []),
+            ('download_url', u'https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz'),
             ('vcs_tool', u'git'),
             ('vcs_repository', u'https://github.com/visionmedia/node-cookie-signature.git'),
-            ('asserted_license', None)
         ])
         assert expected == result
 
@@ -179,14 +183,14 @@ class TestNpm(FileBasedTesting):
             ('qualified_name', u'npm npm'),
             ('version', u'2.13.5'),
             ('summary', u'a package manager for JavaScript'),
+            ('asserted_licenses', [OrderedDict([('license', u'Artistic-2.0'), ('text', None), ('notice', None), ('url', None)])]),
             ('author', u'Isaac Z. Schlueter'),
             ('author_email', u'i@izs.me'),
             ('author_url', u'http://blog.izs.me'),
             ('homepage_url', u'https://docs.npmjs.com/'),
-            ('download_urls', [u'http://registry.npmjs.org/npm/-/npm-2.13.5.tgz']),
+            ('download_url', u'http://registry.npmjs.org/npm/-/npm-2.13.5.tgz'),
             ('vcs_tool', u'git'),
             ('vcs_repository', u'git+https://github.com/npm/npm.git'),
-            ('asserted_license', u'Artistic-2.0')
         ])
         assert expected == result
 
@@ -204,14 +208,14 @@ class TestNpm(FileBasedTesting):
             ('qualified_name', u'npm npm'),
             ('version', u'2.13.5'),
             ('summary', u'a package manager for JavaScript'),
+            ('asserted_licenses', [OrderedDict([('license', u'Artistic-2.0'), ('text', None), ('notice', None), ('url', None)])]),
             ('author', u'Isaac Z. Schlueter'),
             ('author_email', u'i@izs.me'),
             ('author_url', u'http://blog.izs.me'),
             ('homepage_url', u'https://docs.npmjs.com/'),
-            ('download_urls', [u'http://registry.npmjs.org/npm/-/npm-2.13.5.tgz']),
+            ('download_url', u'http://registry.npmjs.org/npm/-/npm-2.13.5.tgz'),
             ('vcs_tool', u'git'),
             ('vcs_repository', u'git+https://github.com/npm/npm.git'),
-            ('asserted_license', u'Artistic-2.0')
         ])
         assert expected == result
 

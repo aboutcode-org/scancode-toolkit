@@ -34,6 +34,7 @@ import re
 from commoncode import filetype
 from commoncode import fileutils
 
+from packagedcode.models import AssertedLicense
 from packagedcode.models import Dependency
 from packagedcode.models import Package
 from packagedcode.models import Party
@@ -86,16 +87,18 @@ class NpmPackage(Package):
         package['qualified_name'] = self.qualified_name
         package['version'] = self.version
         package['summary'] = self.summary
+        package['asserted_licenses'] = [l.as_dict() for l in self.asserted_licenses]
+
         # take the first of authors if any
         package['author'] = self.authors and self.authors[0].name
         package['author_email'] = self.authors and self.authors[0].email
         package['author_url'] = self.authors and self.authors[0].url
         package['homepage_url'] = self.homepage_url
         package['summary'] = self.summary
-        package['download_urls'] = self.download_urls
+        # take the first of authors if any
+        package['download_url'] = self.download_urls and self.download_urls[0]
         package['vcs_tool'] = self.vcs_tool
         package['vcs_repository'] = self.vcs_repository
-        package['asserted_license'] = self.asserted_license
         return package
 
 
@@ -123,6 +126,9 @@ def parse(location):
         if source_value:
             func(source_value, package)
 
+    package.download_urls.append(public_download_url(package.name, 
+                                                     package.version))
+    package.metafile_locations.append(location)
     return package
 
 
@@ -138,9 +144,11 @@ def licensing_mapper(licenses, package):
      - "SEE LICENSE IN <filename>"
     - (Deprecated) an array or a list of arrays of type, url.
     """
+    if not licenses:
+        return package
+
     if isinstance(licenses, basestring):
-        # TODO: handle SPDX
-        package.asserted_license = licenses
+        package.asserted_licenses.append(AssertedLicense(license=licenses))
 
     elif isinstance(licenses, dict):
         """
@@ -149,8 +157,8 @@ def licensing_mapper(licenses, package):
             "url": "http://github.com/kriskowal/q/raw/master/LICENSE"
           }
         """
-        # TODO: handle URLs
-        pass
+        package.asserted_licenses.append(AssertedLicense(license=licenses.get('type'),
+                                                         url=licenses.get('url')))
 
     elif isinstance(licenses, list):
         """
@@ -162,16 +170,18 @@ def licensing_mapper(licenses, package):
         # TODO: handle multiple values
         for lic in licenses:
             if isinstance(lic, basestring):
-                pass
+                package.asserted_licenses.append(AssertedLicense(license=lic))
             elif isinstance(lic, dict):
-                pass
+                package.asserted_licenses.append(AssertedLicense(license=lic.get('type'),
+                                                                 url=lic.get('url')))
             else:
                 # use the bare repr
-                pass
+                if lic:
+                    package.asserted_licenses.append(AssertedLicense(license=repr(lic)))
 
     else:
         # use the bare repr
-        pass
+        package.asserted_licenses.append(AssertedLicense(license=repr(licenses)))
 
     return package
 

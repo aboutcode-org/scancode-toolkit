@@ -137,9 +137,9 @@ class Package(object):
     DEPENDENCY_GROUPS = (dep_runtime, dep_dev, dep_optional, dep_test,
                          dep_build, dep_ci, dep_bundled)
 
-    def __init__(self, location=None):
+    def __init__(self, **kwargs):
         # path to a file or directory
-        self.location = location
+        self.location = None
 
         # path to where a package archive has been extracted
         self.extracted_to = None
@@ -204,24 +204,30 @@ class Package(object):
         self.vcs_revision = None
 
         # a top level copyright often asserted in metadata
-        self.copyright_top_level = ''
+        self.copyright_top_level = None
         # effective copyrights as detected and eventually summarized
         self.copyrights = []
 
         # as asserted licensing information
-        # either a string or tuple of string, url
-        self.asserted_license = None
+        # a list of AssertLicense objects
+        self.asserted_licenses = []
 
         # list of legal files locations (such as COPYING, NOTICE, LICENSE, README, etc.)
         self.legal_file_locations = []
 
         # resolved or detected license expressions
         self.license_expression = None
-        self.license_text = None
-        self.notice_text = None
+        # a list of license texts
+        self.license_texts = []
+
+        # a list of notices texts
+        self.notice_texts = []
 
         # map of dependency group to a list of dependencies for each DEPENDENCY_GROUPS
         self.dependencies = OrderedDict()
+
+        for k, v in kwargs.items():
+            setattr(self, k, v)
 
     @property
     def qualified_name(self):
@@ -246,6 +252,27 @@ class Package(object):
             # package['location'] = self.location
             # package['extracted_to'] = self.extracted_to
             raise NotImplementedError()
+
+
+class AssertedLicense(object):
+    """
+    As asserted in a package
+    """
+    def __init__(self, license=None, text=None, notice=None, url=None):  # @ReservedAssignment
+        # this is not well defined and is package dependent
+        # can be a license name, text, formal or free expression
+        self.license = license
+        self.text = text
+        self.notice = notice
+        self.url = url
+
+    def as_dict(self):
+        license = OrderedDict()  # @ReservedAssignment
+        license['license'] = self.license
+        license['text'] = self.text
+        license['notice'] = self.notice
+        license['url'] = self.url
+        return license
 
 
 class Party(object):
