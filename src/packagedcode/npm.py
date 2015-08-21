@@ -108,26 +108,64 @@ def parse(location):
     """
     if not is_package_json(location):
         return
+
+    # mapping of top level package.json items to the Package object field name
+    plain_fields = OrderedDict([
+        ('name', 'name'),
+        ('version', 'version'),
+        ('description', 'summary'),
+        ('keywords', 'keywords'),
+        ('homepage', 'homepage_url'),
+    ])
+
+    # mapping of top level package.json items to a function accepting as arguments:
+    # - the package.json element value and a Package Object to update
+    field_mappers = OrderedDict([
+        ('author', author_mapper),
+        ('bugs', bugs_mapper),
+        ('contributors', contributors_mapper),
+        ('maintainers', maintainers_mapper),
+        ('license', licensing_mapper),
+        ('licenses', licensing_mapper),
+        ('dependencies', dependencies_mapper),
+        ('devDependencies', dev_dependencies_mapper),
+        ('peerDependencies', peer_dependencies_mapper),
+        ('optionalDependencies', optional_dependencies_mapper),
+        ('url', url_mapper),
+        ('dist', dist_mapper),
+        ('repository', repository_mapper),
+    ])
+
+    with codecs.open(location, encoding='utf-8') as loc:
+        data = json.load(loc, object_pairs_hook=OrderedDict)
+
+    if not data.get('name') or not data.get('version'):
+        # a package.json without name and version is not a usable NPM package
+        return
+
     # a package.json is at the root of an NPM package
     base_dir = fileutils.parent_directory(location)
     package = NpmPackage(location=base_dir)
     package.metafile_locations = [location]
 
-    with codecs.open(location, encoding='utf-8') as loc:
-        data = json.load(loc, object_pairs_hook=OrderedDict)
-
     for source, target in plain_fields.items():
         value = data.get(source)
-        setattr(package, target, value)
+        if value:
+            if isinstance(value, basestring):
+                value = value.strip()
+            if value:
+                setattr(package, target, value)
 
     for source, func in field_mappers.items():
         logger.debug('parse: %(source)r, %(func)r' % locals())
-        source_value = data.get(source)
-        if source_value:
-            func(source_value, package)
+        value = data.get(source)
+        if value:
+            if isinstance(value, basestring):
+                value = value.strip()
+            if value:
+                func(value, package)
 
-    package.download_urls.append(public_download_url(package.name, 
-                                                     package.version))
+    package.download_urls.append(public_download_url(package.name, package.version))
     package.metafile_locations.append(location)
     return package
 
@@ -162,10 +200,10 @@ def licensing_mapper(licenses, package):
 
     elif isinstance(licenses, list):
         """
-        "licenses" :    [ { "type" :  "Apache License, Version 2.0",
-                            "url" :   "http://www.apache.org/licenses/LICENSE-2.0" } ]
+        "licenses": ["type": "Apache License, Version 2.0",
+                      "url": "http://www.apache.org/licenses/LICENSE-2.0" } ]
         or
-        "licenses"      : ["MIT"],
+        "licenses": ["MIT"],
         """
         # TODO: handle multiple values
         for lic in licenses:
@@ -288,7 +326,7 @@ def repository_mapper(repo, package):
       }
     """
     if not repo:
-        return
+        return package
     if isinstance(repo, basestring):
         package.vcs_repository = parse_repo_url(repo)
     elif isinstance(repo, dict):
@@ -297,34 +335,74 @@ def repository_mapper(repo, package):
     return package
 
 
+VCS_URLS = (
+    'https://',
+    'http://',
+    'git://',
+    'git+git://',
+    'hg+https://',
+    'hg+http://',
+    'git+https://',
+    'git+http://',
+    'svn+https://',
+    'svn+http://',
+    'svn://',
+)
+
+
 def parse_repo_url(repo_url):
     """
     https://docs.npmjs.com/files/package.json#repository
     Validate a repo_ulr and handle shortcuts for GitHub, GitHub gist,
     Bitbucket, or GitLab repositories (same syntax as npm install):
-    "repository": "npm/npm"
-    "repository": "gist:11081aaa281"
-    "repository": "bitbucket:example/repo"
-    "repository": "gitlab:another/repo"
-    """
-    # TODO: implement me!
-    return repo_url
+    This is done here: https://github.com/npm/npm/blob/d3c858ce4cfb3aee515bb299eb034fe1b5e44344/node_modules/hosted-git-info/git-host-info.js
 
-    is_vcs_url = repo_url.startswith(('https://', 'http://', 'git@'))
+    These should be resolved:
+        npm/npm
+        gist:11081aaa281
+        bitbucket:example/repo
+        gitlab:another/repo
+        expressjs/serve-static
+        git://github.com/angular/di.js.git
+        git://github.com/hapijs/boom
+        git@github.com:balderdashy/waterline-criteria.git
+        http://github.com/ariya/esprima.git
+        http://github.com/isaacs/nopt
+        https://github.com/chaijs/chai
+        https://github.com/christkv/kerberos.git
+        https://gitlab.com/foo/private.git
+        git@gitlab.com:foo/private.git
+    """
+
+    # TODO: Improve this and use outside of NPMs
+    is_vcs_url = repo_url.startswith(VCS_URLS)
     if is_vcs_url:
+        # TODO: ensure the .git suffix is present if needed
         return repo_url
-    # todo implement me
+
+    if repo_url.startswith('git@'):
+        left, right = repo_url.split('@', 1)
+        host, repo = right.split(':', 1)
+        # may be we should
+        if any(h in host for h in ['github', 'bitbucket', 'gitlab']):
+            return 'https://%(host)s/%(repo)s' % locals()
+        else:
+            return repo_url
+
     if repo_url.startswith('gist:'):
-        pass
-    elif repo_url.startswith('bitbucket:'):
-        pass
-    elif repo_url.startswith('gitlab:'):
-        pass
-    elif repo_url.startswith('github:'):
-        pass
-    else:
-        # github
-        pass
+        return repo_url
+
+    elif repo_url.startswith(('bitbucket:', 'gitlab:', 'github:')):
+        hoster_urls = {
+            'bitbucket:': 'https://bitbucket.org/%(repo)s',
+            'github:': 'https://github.com/%(repo)s',
+            'gitlab:': 'https://gitlab.com/%(repo)s',
+        }
+        hoster, repo = repo_url.split(':', 1)
+        return hoster_urls[hoster] % locals()
+    elif len(repo_url.split('/')) == 2:
+        # implicit github
+        return 'https://github.com/%(repo_url)s' % locals()
     return repo_url
 
 
@@ -439,36 +517,6 @@ def parse_person(person):
         raise Exception('Incorrect NPM package.json person: %(person)r' % locals())
 
     return name and name.strip(), email and email.strip('<> '), url and url.strip('() ')
-
-
-
-# mapping of top level package.json items to the Package object field name
-plain_fields = OrderedDict([
-    ('name', 'name'),
-    ('version', 'version'),
-    ('description', 'summary'),
-    ('keywords', 'keywords'),
-    ('homepage', 'homepage_url'),
-])
-
-
-# mapping of top level package.json items to a function accepting as arguments:
-# - the package.json element value and a Package Object to update
-field_mappers = OrderedDict([
-    ('author', author_mapper),
-    ('bugs', bugs_mapper),
-    ('contributors', contributors_mapper),
-    ('maintainers', maintainers_mapper),
-    ('license', licensing_mapper),
-    ('licenses', licensing_mapper),
-    ('dependencies', dependencies_mapper),
-    ('devDependencies', dev_dependencies_mapper),
-    ('peerDependencies', peer_dependencies_mapper),
-    ('optionalDependencies', optional_dependencies_mapper),
-    ('url', url_mapper),
-    ('dist', dist_mapper),
-    ('repository', repository_mapper),
-])
 
 
 def public_download_url(name, version, registry='https://registry.npmjs.org'):
