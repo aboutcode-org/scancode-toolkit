@@ -102,8 +102,9 @@ def get_file_infos(location):
     """
     from commoncode import fileutils
     from commoncode import filetype
-    from commoncode.hash import sha1
+    from commoncode.hash import sha1, md5
     from typecode import contenttype
+
     T = contenttype.get_type(location)
     is_file = T.is_file
     is_dir = T.is_dir
@@ -114,6 +115,7 @@ def get_file_infos(location):
     infos['date'] = is_file and filetype.get_last_modified_date(location) or None
     infos['size'] = T.size
     infos['sha1'] = is_file and sha1(location) or None
+    infos['md5'] = is_file and md5(location) or None
     infos['files_count'] = is_dir and filetype.get_file_count(location) or None
     infos['mime_type'] = is_file and T.mimetype_file or None
     infos['file_type'] = is_file and T.filetype_file or None
