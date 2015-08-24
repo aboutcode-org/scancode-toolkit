@@ -78,7 +78,7 @@ class LicenseTest(object):
 
         self.licenses = data.get('licenses', [])
         self.notes = data.get('notes')
-        self.sort = data.get('sort')
+        self.sort = data.get('sort', False)
         self.expected_failure = data.get('expected_failure', False)
 
     def asdict(self):
@@ -87,7 +87,7 @@ class LicenseTest(object):
             dct['licenses'] = self.licenses
         if self.expected_failure:
             dct['expected_failure'] = self.expected_failure
-        if self.sort:
+        if self.sort and self.licenses and len(self.licenses) > 1:
             dct['sort'] = self.sort
         if self.notes:
             dct['notes'] = self.notes
@@ -124,7 +124,7 @@ def load_license_tests(test_dir=test_data_dir):
                 test_files[base_name] = file_path
 
     # ensure that each data file has a corresponding test file
-    diff =  set(data_files.keys()).symmetric_difference(set(test_files.keys()))
+    diff = set(data_files.keys()).symmetric_difference(set(test_files.keys()))
     assert not diff
 
     # second, create pairs of a data_file and the corresponding test file
@@ -141,8 +141,8 @@ def build_tests(license_tests, clazz):
     """
     for test in license_tests:
         # path relative to the data directory
-        tfn = 'licenses/'+ test.test_file_name
-        test_name = 'test_detection_%(tfn)s'% locals()
+        tfn = 'licenses/' + test.test_file_name
+        test_name = 'test_detection_%(tfn)s' % locals()
         test_name = text.python_safe_name(test_name)
         # closure on the test params
         test_method = make_test_function(test.licenses, tfn, test_name, sort=test.sort)
@@ -170,10 +170,11 @@ def make_test_function(expected_licenses, test_file, test_name, sort=False):
         except:
             # on failure, we compare against the full results to get
             # additional failure details, including the test_file
+
             if sort:
-                assert sorted(expected_licenses) == ['test file: '+ test_file] + sorted(license_result)
+                assert sorted(expected_licenses) == ['test file: ' + test_file] + sorted(result)
             else:
-                assert expected_licenses == ['test file: '+ test_file] + result
+                assert expected_licenses == ['test file: ' + test_file] + result
 
     data_driven_test_function.__name__ = test_name
     data_driven_test_function.funcname = test_name
