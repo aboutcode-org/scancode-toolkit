@@ -3,4 +3,4 @@ licenses:
     - bsd-new
     - bsd-original
 expected_failure: yes
-sort: true
+sort: yes

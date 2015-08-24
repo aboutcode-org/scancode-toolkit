@@ -2,4 +2,4 @@ licenses:
     - henry-spencer-1999
     - postgresql
     - tcl
-sort: true
+sort: yes

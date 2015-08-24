@@ -2,4 +2,4 @@ licenses:
     - gpl-2.0-plus
     - mit
 expected_failure: yes
-sort: true
+sort: yes

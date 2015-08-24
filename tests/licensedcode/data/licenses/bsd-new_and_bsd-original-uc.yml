@@ -2,4 +2,4 @@ licenses:
     - bsd-new
     - bsd-original-uc
 expected_failure: yes
-sort: true
+sort: yes

@@ -2,4 +2,4 @@ licenses:
     - apache
     - apache-1.1
 expected_failure: yes
-sort: true
+sort: yes

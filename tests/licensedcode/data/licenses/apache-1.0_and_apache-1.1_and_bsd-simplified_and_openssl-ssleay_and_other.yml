@@ -5,4 +5,4 @@ licenses:
     - openssl-ssleay
     - public-domain
 expected_failure: yes
-sort: true
+sort: yes

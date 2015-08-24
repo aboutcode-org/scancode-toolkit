@@ -3,4 +3,4 @@ licenses:
     - cddl-1.0
     - cpl-1.0
 expected_failure: yes
-sort: true
+sort: yes

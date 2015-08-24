@@ -1,7 +1,6 @@
 licenses:
     - bsd-new
     - unicode
-notes: >-
-    Several complex intertwined license mentions
 expected_failure: yes
-sort: true
+sort: yes
+notes: Several complex intertwined license mentions

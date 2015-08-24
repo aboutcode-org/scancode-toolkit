@@ -1,4 +1,3 @@
 licenses:
     - gpl-2.0-gcc
 notes: http://www.opensource.apple.com/source/gcc_os/gcc_os-1671/libiberty/dyn-string.c
-sort: true

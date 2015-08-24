@@ -1,7 +1,7 @@
 licenses:
     - gpl
     - mit
-notes: >-
-    The licenses are http://filamentgroup.com/examples/gpl-license.txt and http://filamentgroup.com/examples/mit-license.txt
 expected_failure: yes
-sort: true
+sort: yes
+notes: 
+    The licenses are http://filamentgroup.com/examples/gpl-license.txt and http://filamentgroup.com/examples/mit-license.txt

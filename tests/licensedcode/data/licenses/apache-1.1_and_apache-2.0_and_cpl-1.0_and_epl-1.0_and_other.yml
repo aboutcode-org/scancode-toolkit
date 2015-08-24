@@ -5,4 +5,4 @@ licenses:
     - epl-1.0
     - zlib
 expected_failure: yes
-sort: true
+sort: yes

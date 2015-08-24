@@ -3,4 +3,4 @@ licenses:
     - gpl-1.0-plus
     - zlib
 expected_failure: yes
-sort: true
+sort: yes

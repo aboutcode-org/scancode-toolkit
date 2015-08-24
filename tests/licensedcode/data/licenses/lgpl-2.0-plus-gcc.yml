@@ -2,4 +2,3 @@ licenses:
     - lgpl-2.0-plus-gcc
 notes: "From http://www.opensource.apple.com/source/libcppabi/libcppabi-26/include/demangle.h\r\
     \n"
-sort: true

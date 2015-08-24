@@ -9,4 +9,4 @@ licenses:
     - inner-net-2.0
     - lgpl-2.1-plus
 expected_failure: yes
-sort: true
+sort: yes

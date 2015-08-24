@@ -6,4 +6,4 @@ licenses:
     - mpl-1.0
     - openldap-2.8
     - public-domain
-sort: true
+sort: yes

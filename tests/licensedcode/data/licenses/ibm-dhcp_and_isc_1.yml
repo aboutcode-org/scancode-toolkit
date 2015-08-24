@@ -1,4 +1,4 @@
 licenses:
     - ibm-dhcp
     - isc
-sort: true
+sort: yes
