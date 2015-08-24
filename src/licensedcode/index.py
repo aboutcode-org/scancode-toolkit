@@ -266,25 +266,25 @@ class Index(object):
         With this index_doc and this query_doc:
         index_doc:   name is joker, name is joker
         ngrams: name is joker, is joker name, joker name is, name is joker
-                0              1              2              3
+                i0             i1             i2             i3
         query_doc: Hi my name is joker, name is joker yes.
         ngrams: hi my name, my name is, name is joker, is joker name, joker name is, name is joker, is joker yes
-                0           1           2              3              4              5              6
+                q0          q1          q2             q3             q4             q5             q6
         will yield these candidates:
-            i0, q2
-            i0, q5 ==> this should be skipped because q5 does not follow q2
-            i1, q3
-            i2, q4
-            i3, q2 ==> this should be skipped because q2 does not follow q4
-            i3, q5
+            i0, q2 (name is joker)
+            i0, q5 (name is joker) ==> this should be skipped because q5 does not follow q2
+            i1, q3 (is joker name)
+            i2, q4 (joker name is)
+            i3, q2 (name is joker) ==> this should be skipped because q2 does not follow q4
+            i3, q5 (name is joker)
 
-        And this how gaps are handled:
-        ------------------------------
+        And this how gaps are handled, abstracting ngrams:
+        --------------------------------------------------
         With this  index_doc and this query_doc::
         index_doc: my name is {{2 Joe}} the joker
-              i0 i1   i2-g2        i3  i4
+                   i0 i1   i2-g2        i3  i4
         query_doc: Yet, my name is Jane Heinz the joker.
-              q0   q1 q2   q3 q4   q5    q6  q7
+                   q0   q1 q2   q3 q4   q5    q6  q7
         will yield these candidates:
             i0, q1
             i1, q2
@@ -293,7 +293,7 @@ class Index(object):
             i4, q7
         With the same index_doc and this query_doc:
         query_doc: Yet, my name is Jane the joker.
-              q0   q1 q2   q3 q4   q5  q6
+                   q0   q1 q2   q3 q4   q5  q6
         will yet these candidates:
             i0, q1
             i1, q2
