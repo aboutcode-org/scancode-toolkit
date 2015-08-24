@@ -1,4 +1,3 @@
 licenses:
     - cddl-1.1
 expected_failure: yes
-sort: true

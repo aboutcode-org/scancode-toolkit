@@ -4,4 +4,4 @@ licenses:
     - jetty
     - opengroup
 expected_failure: yes
-sort: true
+sort: yes

@@ -3,4 +3,4 @@ licenses:
     - proprietary
     - x11-opengroup
 expected_failure: yes
-sort: true
+sort: yes

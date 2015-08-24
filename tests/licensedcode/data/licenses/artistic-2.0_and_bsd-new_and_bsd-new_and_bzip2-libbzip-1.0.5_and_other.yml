@@ -7,4 +7,4 @@ licenses:
     - unicode
     - zlib
 expected_failure: yes
-sort: true
+sort: yes

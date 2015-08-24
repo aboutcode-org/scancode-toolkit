@@ -1,4 +1,3 @@
 licenses:
     - apache-2.0
 notes: https://github.com/spdx-tools/fossology-spdx/blob/master/src/spdx/ui/output_module/spdx_main_output_tag.php
-sort: true

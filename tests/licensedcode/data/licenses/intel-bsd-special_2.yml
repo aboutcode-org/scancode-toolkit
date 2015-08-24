@@ -1,5 +1,3 @@
 licenses:
     - intel-bsd-special
-notes: >-
-    From ftp://ftp.support.acer-euro.com/gpl/AS1800/linux-2.4.27/drivers/acpi/namespace/nswalk.c
-sort: true
+notes: From ftp://ftp.support.acer-euro.com/gpl/AS1800/linux-2.4.27/drivers/acpi/namespace/nswalk.c

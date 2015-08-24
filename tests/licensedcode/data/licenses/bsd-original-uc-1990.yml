@@ -1,4 +1,3 @@
 licenses:
     - bsd-original-uc-1990
 expected_failure: yes
-sort: true

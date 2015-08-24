@@ -19,4 +19,4 @@ licenses:
     - sun-sissl-1.1
     - x11
 expected_failure: yes
-sort: true
+sort: yes

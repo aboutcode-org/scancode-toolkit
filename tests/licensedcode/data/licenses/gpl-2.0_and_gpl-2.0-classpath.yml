@@ -1,5 +1,5 @@
 licenses:
     - gpl-2.0
     - gpl-2.0-classpath
+sort: yes
 notes: http://hg.openjdk.java.net/jdk6/jdk6/jdk/raw-file/2d585507a41b/src/share/classes/java/net/URLDecoder.java
-sort: true

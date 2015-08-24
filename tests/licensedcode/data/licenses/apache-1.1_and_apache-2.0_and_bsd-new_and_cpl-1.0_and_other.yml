@@ -7,4 +7,4 @@ licenses:
     - public-domain
     - sun-bcl-11-06
 expected_failure: yes
-sort: true
+sort: yes

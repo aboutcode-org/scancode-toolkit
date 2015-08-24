@@ -22,6 +22,4 @@ licenses:
     - mit
     - apache-2.0
 expected_failure: yes
-notes: >-
-    this contains several variants of old MIT that would need to be corrected and
-    added as licenses first
+notes: this contains several variants of old MIT that would need to be corrected and added as licenses first
