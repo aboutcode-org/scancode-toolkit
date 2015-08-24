@@ -1,6 +1,6 @@
 GNU Lesser General Public License
 Version 2.1, February 1999
-Copyright (C) 1991, 1999 Free Software Foundation, Inc. 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
+Copyright (C) 1991, 1999 Free Software Foundation, Inc. {{50 59 Temple Place, Suite 330, Boston, MA 02111-1307}} USA Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
 This is the first released version of the Lesser GPL. It also counts as the successor of the GNU Library Public License, version 2, hence the version number 2.1.
 Preamble
 The licenses for most software are designed to take away your freedom to share and change it. By contrast, the GNU General Public Licenses are intended to guarantee your freedom to share and change free software--to make sure the software is free for all its users.
@@ -78,7 +78,7 @@ To apply these terms, attach the following notices to the library. It is safest 
 <one line to give the library's name and an idea of what it does.> Copyright (C) <year> <name of author>
 This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
 This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
-You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc.,{{50 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA}} 
 Also add information on how to contact you by electronic and paper mail.
 You should also get your employer (if you work as a programmer) or your school, if any, to sign a "copyright disclaimer" for the library, if necessary. Here is a sample; alter the names:
 Yoyodyne, Inc., hereby disclaims all copyright interest in the library `Frob' (a library for tweaking knobs) written by James Random Hacker.
