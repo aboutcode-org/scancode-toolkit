@@ -466,7 +466,7 @@ def strip_some_punct(s):
     Return a string stripped from some leading and trailing punctuations.
     """
     if s:
-        s = s.strip(''','"};''')
+        s = s.strip(''','"}:;''')
         s = s.lstrip(')')
         s = s.rstrip('&(-_')
     return s
