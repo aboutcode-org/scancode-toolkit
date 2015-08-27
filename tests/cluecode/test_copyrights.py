@@ -3890,3 +3890,8 @@ class TestCopyrightDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights/copyright_pixelstream.rgb')
         expected = []
         check_detection(expected, test_file)
+
+    def test_copyright_should_not_contain_leading_or_trailing_colon(self):
+        test_file = self.get_test_loc('copyrights/copyright_with_colon')
+        expected = ['copyright (c) 2013 by Armin Ronacher.']
+        check_detection(expected, test_file)
