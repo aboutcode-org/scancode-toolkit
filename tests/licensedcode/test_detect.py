@@ -446,25 +446,25 @@ class TestDetectLicenseRuleTemplate(FileBasedTesting):
         expected = {
             1: {},
             2: {},
-            3: {
-                (u'a', u'one', u'a'):
-                  {0: [Token(start=0, start_line=0, start_char=0, end_line=0, end_char=8, end=2, gap=5, value=(u'a', u'one', u'a'))]},
-                 (u'two', u'a', u'three'):
-                  {0: [Token(start=3, start_line=0, start_char=13, end_line=0, end_char=25, end=5, gap=0, value=(u'two', u'a', u'three'))]}
-            }
+            3: {u'two a three':
+                   {0: [Token(start=3, start_line=0, start_char=13, end_line=0, end_char=25, end=5, gap=0, value=u'two a three', length=3)]
+                   },
+               u'a one a':
+                   {0: [Token(start=0, start_line=0, start_char=0, end_line=0, end_char=8, end=2, gap=5, value=u'a one a', length=3)]}},
+            4: {},
         }
-        self.assertEqual(expected, index.license_index.indexes)
+        assert expected == index.license_index.indexes
 
     def test_index_template2(self):
         ttr = Rule(text_file=self.create_test_file(u'A one. A {{10}}two. A three.'), template=True)
         index = detect.LicenseIndex([ttr])
         expected = {
-            (u'a', u'one', u'a'):
-                {0: [Token(start=0, start_line=0, start_char=0, end_line=0, end_char=8, end=2, gap=10, value=(u'a', u'one', u'a'))]},
-            (u'two', u'a', u'three'):
-                {0: [Token(start=3, start_line=0, start_char=15, end_line=0, end_char=27, end=5, gap=0, value=(u'two', u'a', u'three'))]}
+            u'a one a':
+                {0: [Token(start=0, start_line=0, start_char=0, end_line=0, end_char=8, end=2, gap=10, value=u'a one a')]},
+            u'two a three':
+                {0: [Token(start=3, start_line=0, start_char=15, end_line=0, end_char=27, end=5, gap=0, value=u'two a three')]}
         }
-        self.assertEqual(expected, index.license_index.indexes[3])
+        assert expected == index.license_index.indexes[3]
 
     def test_simple_detection_xcon_crlf_template(self):
         # setup
@@ -556,13 +556,13 @@ class TestDetectLicenseRuleTemplate(FileBasedTesting):
         tf7 = self.get_test_loc('detect/templates/license7.txt')
         ttr = Rule(text_file=tf7, template=True)
 
-        # use trigrams by default
+        # use quadri grams by default
         index = detect.LicenseIndex([ttr])
 
         # test the index
-        four_grams_index = index.license_index.indexes[3]
-        self.assertEqual(211, len(four_grams_index))
-        self.assertTrue((u'software', u'without', u'prior',) in four_grams_index)
+        quad_grams_index = index.license_index.indexes[4]
+        self.assertEqual(205, len(quad_grams_index))
+        self.assertTrue(u'software without prior written' in quad_grams_index)
 
         # test
         tf8 = self.get_test_loc('detect/templates/license8.txt')
