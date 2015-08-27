@@ -78,9 +78,9 @@ class TestIndexBasedDetection(FileBasedTesting):
         assert 234 == idx.get_tokens_count('bsd-no-mod')
         assert 138 == len(unigrams_index)
 
-        pos = Token(start=61, end=61, start_line=8, start_char=52, end_line=8, end_char=59, value=(u'minimum',))
+        pos = Token(start=61, end=61, start_line=8, start_char=52, end_line=8, end_char=59, value=u'minimum')
         expected_posting = ('bsd-no-mod', [pos],)
-        assert expected_posting == unigrams_index[('minimum',)].items()[0]
+        assert expected_posting == unigrams_index['minimum'].items()[0]
 
     def test_get_tokens_count(self):
         base = self.get_test_loc('index/tokens_count', copy=True)
@@ -91,22 +91,22 @@ class TestIndexBasedDetection(FileBasedTesting):
             template = docid.startswith('tmpl')
             idx.index_one(docid, doc, template=template)
         indexes = [
-            (idx.indexes[1], set([('all',),
-                                  ('redistribution',),
-                                  ('for',),
-                                  ('is',)
+            (idx.indexes[1], set(['all',
+                                  'redistribution',
+                                  'for',
+                                  'is'
                                  ]),),
-            (idx.indexes[2], set([('is', 'allowed',),
-                                  ('all', 'and',),
-                                  ('redistribution', 'is',),
-                                  ('allowed', 'for',),
+            (idx.indexes[2], set(['is allowed',
+                                  'all and',
+                                  'redistribution is',
+                                  'allowed for',
                                  ]),),
-            (idx.indexes[3], set([('for', 'all', 'and',),
-                                  ('and', 'any', 'thing',),
-                                  ('is', 'allowed', 'for',),
-                                  ('all', 'and', 'any',),
-                                  ('redistribution', 'is', 'allowed',),
-                                  ('allowed', 'for', 'all',),
+            (idx.indexes[3], set(['for all and',
+                                  'and any thing',
+                                  'is allowed for',
+                                  'all and any',
+                                  'redistribution is allowed',
+                                  'allowed for all',
                                  ]),)
         ]
 
@@ -145,9 +145,9 @@ class TestIndexBasedDetection(FileBasedTesting):
         assert 234 == idx.get_tokens_count('bsd-no-mod')
         assert 138 == len(unigrams_index)
 
-        pos = Token(start=61, end=61, start_line=8, start_char=52, end_line=8, end_char=59, value=(u'minimum',))
+        pos = Token(start=61, end=61, start_line=8, start_char=52, end_line=8, end_char=59, value=u'minimum')
         expected_posting = ('bsd-no-mod', [pos],)
-        assert expected_posting == unigrams_index[('minimum',)].items()[0]
+        assert expected_posting == unigrams_index['minimum'].items()[0]
 
     def test_Index_index_one_trigrams_no_templates(self):
         test_docs = self.get_test_docs('index/bsd', ['bsd-new', 'bsd-no-mod'])

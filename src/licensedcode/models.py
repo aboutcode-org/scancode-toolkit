@@ -40,6 +40,9 @@ from commoncode import fileutils
 from licensedcode import licenses_data_dir, rules_data_dir
 from licensedcode import index
 from textcode import analysis
+from textcode.analysis import Token
+from os.path import dirname
+from licensedcode import src_dir
 
 
 """
@@ -259,7 +262,14 @@ def get_rules_from_license_texts(licenses_list=None):
 
 text_tknzr, template_tknzr, _ = index.tokenizers()
 
-def get_tokens(location, template):
+
+# token caching
+cache_dir = join(dirname(dirname(src_dir)), '.cache', 'license_tokens')
+if not os.path.exists(cache_dir):
+    fileutils.create_dir(cache_dir)
+
+
+def get_tokens(location, template, use_cache=False):
     """
     Return a list of tokens from a from a file at location using the tokenizer
     function.
@@ -268,9 +278,38 @@ def get_tokens(location, template):
     if not exists(location):
         return []
 
-    tokenizr = template_tknzr if template else text_tknzr
-    lines = analysis.unicode_text_lines(location)
-    return list(tokenizr(lines))
+    file_name = fileutils.file_name(location)
+    cached_tokens  = os.path.join(cache_dir,file_name)
+    if use_cache and os.path.exists(cached_tokens):
+        # TODO: improve cache check
+        tokens = list(load_tokens(cached_tokens))
+    else:
+        tokenizr = template and template_tknzr or text_tknzr
+        lines = analysis.unicode_text_lines(location)
+        tokens = list(tokenizr(lines))
+        if use_cache:
+            dump_tokens(cached_tokens, tokens)
+    return tokens
+
+
+def dump_tokens(location, tokens):
+    """
+    Dump a list of tokens to a file location
+    """
+    location = os.path.abspath(location)
+    with codecs.open(location, 'wb', encoding='utf-8') as loc:
+        loc.writelines([tok.dumps() for tok in tokens])
+
+
+def load_tokens(location):
+    """
+    Return a list of tokens loaded from a file location
+    """
+    location = os.path.abspath(location)
+    with codecs.open(location, 'rb', encoding='utf-8') as loc:
+        loaded = loc.read().splitlines(False)
+        for l in loaded:
+            yield Token.loads(l)
 
 
 class Rule(object):

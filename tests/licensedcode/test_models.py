@@ -76,8 +76,8 @@ class TestRule(FileBasedTesting):
     def test_create_template_rule(self):
         ttr = models.Rule(text_file=self.create_test_file(u'A one. A {{}}two. A three.'), template=True)
         toks = [
-            Token(start=0, start_line=0, start_char=0, end_line=0, end_char=8, end=2, gap=5, value=(u'a', u'one', u'a')),
-            Token(start=3, start_line=0, start_char=13, end_line=0, end_char=25, end=5, gap=0, value=(u'two', u'a', u'three'))
+            Token(start=0, start_line=0, start_char=0, end_line=0, end_char=8, end=2, gap=5, value=u'a one a', length=3),
+            Token(start=3, start_line=0, start_char=13, end_line=0, end_char=25, end=5, gap=0, value=u'two a three', length=3)
         ]
         assert toks == list(ttr.get_tokens())
         for i in range(len(toks)):
@@ -86,10 +86,9 @@ class TestRule(FileBasedTesting):
     def test_create_plain_rule(self):
         ftr = models.Rule(text_file=self.create_test_file('A one. A two. A three.'))
         toks = [
-            Token(start=0, start_line=0, start_char=0, end_line=0, end_char=8, end=2, gap=0, value=(u'a', u'one', u'a')),
-            Token(start=1, start_line=0, start_char=2, end_line=0, end_char=12, end=3, gap=0, value=(u'one', u'a', u'two')),
-            Token(start=2, start_line=0, start_char=7, end_line=0, end_char=15, end=4, gap=0, value=(u'a', u'two', u'a')),
-            Token(start=3, start_line=0, start_char=9, end_line=0, end_char=21, end=5, gap=0, value=(u'two', u'a', u'three'))
+            Token(start=0, start_line=0, start_char=0, end_line=0, end_char=12, end=3, gap=0, value=u'a one a two', length=4),
+            Token(start=1, start_line=0, start_char=2, end_line=0, end_char=15, end=4, gap=0, value=u'one a two a', length=4),
+            Token(start=2, start_line=0, start_char=7, end_line=0, end_char=21, end=5, gap=0, value=u'a two a three', length=4),
         ]
         self.assertEqual(toks, list(ftr.get_tokens()))
         for i in range(len(toks)):

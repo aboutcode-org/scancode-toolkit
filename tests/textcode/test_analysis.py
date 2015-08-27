@@ -643,9 +643,9 @@ class TestTemplates(FileBasedTesting):
         result_dicts = [t._asdict() for t in result]
         regen = False
         if regen:
-            with codecs.open(et, 'w', encoding='utf-8') as out:
+            with open(et, 'wb') as out:
                 json.dump(result_dicts, out, indent=2)
-        with codecs.open(et, encoding='utf-8') as inp:
+        with open(et, 'rb') as inp:
             expected = json.load(inp)
         assert expected == result_dicts
 
@@ -927,9 +927,9 @@ class TestNgrams(FileBasedTesting):
         ngrams_tuples = tokens_ngram_processor(templated, ngram_len=ngram_len)
         result = list(ngram_to_token(ngrams_tuples))
         expected = [
-            Token(start_line=0, start_char=0, end_line=0, end_char=13, gap=ngram_len, value=(u'my', u'old', u'tailor')),
-            Token(start_line=0, start_char=29, end_line=0, end_char=42, gap=0, value=(u'is', u'quite', u'very')),
-            Token(start_line=0, start_char=32, end_line=0, end_char=47, gap=0, value=(u'quite', u'very', u'rich')),
+            Token(start_line=0, start_char=0, end_line=0, end_char=13, gap=ngram_len, value=u'my old tailor'),
+            Token(start_line=0, start_char=29, end_line=0, end_char=42, gap=0, value=u'is quite very'),
+            Token(start_line=0, start_char=32, end_line=0, end_char=47, gap=0, value=u'quite very rich'),
         ]
         assert expected == result
 
@@ -941,9 +941,9 @@ class TestNgrams(FileBasedTesting):
         ngrams_tuples = tokens_ngram_processor(templated, ngram_len=ngram_len)
         result = list(ngram_to_token(ngrams_tuples))
         expected = [
-            Token(start=0, start_line=0, start_char=0, end_line=0, end_char=2, end=0, gap=3, value=(u'my',)),
-            Token(start=0, start_line=0, start_char=20, end_line=0, end_char=28, end=0, gap=5, value=(u'is', u'quite')),
-            Token(start=0, start_line=0, start_char=48, end_line=0, end_char=57, end=0, gap=0, value=(u'very', u'rich'))
+            Token(start=0, start_line=0, start_char=0, end_line=0, end_char=2, end=0, gap=3, value=u'my'),
+            Token(start=0, start_line=0, start_char=20, end_line=0, end_char=28, end=0, gap=5, value=u'is quite'),
+            Token(start=0, start_line=0, start_char=48, end_line=0, end_char=57, end=0, gap=0, value=u'very rich')
         ]
         assert expected == result
 
@@ -955,10 +955,10 @@ class TestNgrams(FileBasedTesting):
         ngrams_tuples = tokens_ngram_processor(templated, ngram_len=ngram_len)
         result = list(ngram_to_token(ngrams_tuples))
         expected = [
-            Token(start=0, start_line=0, start_char=0, end_line=0, end_char=2, end=0, gap=3, value=(u'my',)),
-            Token(start=0, start_line=0, start_char=20, end_line=0, end_char=28, end=0, gap=5, value=(u'is', u'quite')),
-            Token(start=0, start_line=0, start_char=48, end_line=0, end_char=64, end=0, gap=0, value=(u'very', u'rich', u'really')),
-            Token(start=0, start_line=0, start_char=53, end_line=0, end_char=69, end=0, gap=0, value=(u'rich', u'really', u'rich'))
+            Token(start=0, start_line=0, start_char=0, end_line=0, end_char=2, end=0, gap=3, value=u'my'),
+            Token(start=0, start_line=0, start_char=20, end_line=0, end_char=28, end=0, gap=5, value=u'is quite'),
+            Token(start=0, start_line=0, start_char=48, end_line=0, end_char=64, end=0, gap=0, value=u'very rich really'),
+            Token(start=0, start_line=0, start_char=53, end_line=0, end_char=69, end=0, gap=0, value=u'rich really rich')
         ]
         assert expected == result
 
@@ -970,8 +970,8 @@ class TestNgrams(FileBasedTesting):
         ngrams_tuples = tokens_ngram_processor(templated, ngram_len=ngram_len)
         result = list(ngram_to_token(ngrams_tuples))
         expected = [
-            Token(start=0, start_line=0, start_char=0, end_line=0, end_char=2, end=0, gap=3, value=(u'my',)),
-            Token(start=0, start_line=0, start_char=20, end_line=0, end_char=28, end=0, gap=5, value=(u'is', u'quite'))
+            Token(start=0, start_line=0, start_char=0, end_line=0, end_char=2, end=0, gap=3, value=u'my'),
+            Token(start=0, start_line=0, start_char=20, end_line=0, end_char=28, end=0, gap=5, value=u'is quite')
         ]
         assert expected == result
 
@@ -995,17 +995,17 @@ class TestNgrams(FileBasedTesting):
                 materials provided with the distribution.'''.splitlines()
         result = list(ngram_tokenizer(iter(lines), ngram_len=3, template=True))
         expected = [
-            Token(start=0, start_line=0, start_char=0, end_line=0, end_char=16, end=2, gap=0, value=(u'neither', u'the', u'name')),
-            Token(start=1, start_line=0, start_char=8, end_line=0, end_char=19, end=3, gap=10, value=(u'the', u'name', u'of')),
-            Token(start=4, start_line=0, start_char=44, end_line=0, end_char=47, end=4, gap=5, value=(u'nor',)),
-            Token(start=5, start_line=0, start_char=52, end_line=0, end_char=61, end=6, gap=5, value=(u'the', u'names')),
-            Token(start=7, start_line=0, start_char=66, end_line=0, end_char=85, end=9, gap=0, value=(u'of', u'its', u'contributors')),
-            Token(start=8, start_line=0, start_char=69, end_line=0, end_char=89, end=10, gap=0, value=(u'its', u'contributors', u'may')),
-            Token(start=9, start_line=0, start_char=73, end_line=1, end_char=25, end=11, gap=0, value=(u'contributors', u'may', u'materials')),
-            Token(start=10, start_line=0, start_char=86, end_line=1, end_char=34, end=12, gap=0, value=(u'may', u'materials', u'provided')),
-            Token(start=11, start_line=1, start_char=16, end_line=1, end_char=39, end=13, gap=0, value=(u'materials', u'provided', u'with')),
-            Token(start=12, start_line=1, start_char=26, end_line=1, end_char=43, end=14, gap=0, value=(u'provided', u'with', u'the')),
-            Token(start=13, start_line=1, start_char=35, end_line=1, end_char=56, end=15, gap=0, value=(u'with', u'the', u'distribution'))
+            Token(start=0, start_line=0, start_char=0, end_line=0, end_char=16, end=2, gap=0, value=u'neither the name'),
+            Token(start=1, start_line=0, start_char=8, end_line=0, end_char=19, end=3, gap=10, value=u'the name of'),
+            Token(start=4, start_line=0, start_char=44, end_line=0, end_char=47, end=4, gap=5, value=u'nor',),
+            Token(start=5, start_line=0, start_char=52, end_line=0, end_char=61, end=6, gap=5, value=u'the names'),
+            Token(start=7, start_line=0, start_char=66, end_line=0, end_char=85, end=9, gap=0, value=u'of its contributors'),
+            Token(start=8, start_line=0, start_char=69, end_line=0, end_char=89, end=10, gap=0, value=u'its contributors may'),
+            Token(start=9, start_line=0, start_char=73, end_line=1, end_char=25, end=11, gap=0, value=u'contributors may materials'),
+            Token(start=10, start_line=0, start_char=86, end_line=1, end_char=34, end=12, gap=0, value=u'may materials provided'),
+            Token(start=11, start_line=1, start_char=16, end_line=1, end_char=39, end=13, gap=0, value=u'materials provided with'),
+            Token(start=12, start_line=1, start_char=26, end_line=1, end_char=43, end=14, gap=0, value=u'provided with the'),
+            Token(start=13, start_line=1, start_char=35, end_line=1, end_char=56, end=15, gap=0, value=u'with the distribution')
         ]
         assert expected == result
 
@@ -1137,9 +1137,9 @@ class TestNgrams(FileBasedTesting):
         ngram_len = 2
         result = list(ngram_tokenizer(lines, ngram_len, template=True))
         expected = [
-            Token(start=0, start_line=0, start_char=0, end_line=0, end_char=11, end=1, gap=0, value=(u'neither', u'the')),
-            Token(start=1, start_line=0, start_char=8, end_line=0, end_char=16, end=2, gap=0, value=(u'the', u'name')),
-            Token(start=2, start_line=0, start_char=12, end_line=0, end_char=19, end=3, gap=10, value=(u'name', u'of'))
+            Token(start=0, start_line=0, start_char=0, end_line=0, end_char=11, end=1, gap=0, value=u'neither the'),
+            Token(start=1, start_line=0, start_char=8, end_line=0, end_char=16, end=2, gap=0, value=u'the name'),
+            Token(start=2, start_line=0, start_char=12, end_line=0, end_char=19, end=3, gap=10, value=u'name of')
         ]
         assert expected == result
 
@@ -1149,7 +1149,7 @@ class TestNgrams(FileBasedTesting):
         result = list(ngram_tokenizer(lines, ngram_len))
         assert lines == list(doc_subset(lines, result[0]))
 
-        expected = [Token(start=0, start_line=0, start_char=0, end_line=0, end_char=11, end=1, gap=0, value=(u'x11', u'license'))]
+        expected = [Token(start=0, start_line=0, start_char=0, end_line=0, end_char=11, end=1, gap=0, value=u'x11 license')]
         assert expected == result
 
     def test_ngram_tokenizer_returns_correct_offsets_n1(self):
@@ -1157,8 +1157,8 @@ class TestNgrams(FileBasedTesting):
         ngram_len = 1
         result = list(ngram_tokenizer(lines, ngram_len))
         expected = [
-            Token(start=0, start_line=0, start_char=0, end_line=0, end_char=3, end=0, gap=0, value=(u'x11',)),
-            Token(start=1, start_line=0, start_char=4, end_line=0, end_char=11, end=1, gap=0, value=(u'license',)),
+            Token(start=0, start_line=0, start_char=0, end_line=0, end_char=3, end=0, gap=0, value=u'x11'),
+            Token(start=1, start_line=0, start_char=4, end_line=0, end_char=11, end=1, gap=0, value=u'license'),
         ]
         assert expected == result
 
@@ -1168,7 +1168,7 @@ class TestNgrams(FileBasedTesting):
         result = list(ngram_tokenizer(lines, ngram_len, template=True))
         assert lines == list(doc_subset(lines, result[0]))
 
-        expected = [Token(start=0, start_line=0, start_char=0, end_line=0, end_char=11, end=1, gap=0, value=(u'x11', u'license'))]
+        expected = [Token(start=0, start_line=0, start_char=0, end_line=0, end_char=11, end=1, gap=0, value=u'x11 license')]
         assert expected == result
 
     def test_unicode_text_lines_handles_weird_xml_encodings(self):
