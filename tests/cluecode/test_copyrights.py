@@ -3895,3 +3895,9 @@ class TestCopyrightDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights/copyright_with_colon')
         expected = ['copyright (c) 2013 by Armin Ronacher.']
         check_detection(expected, test_file)
+
+    @expectedFailure
+    def test_copyright_in_markup_should_not_be_truncated(self):
+        test_file = self.get_test_loc('copyrights/copyright_in_html.html')
+        expected = [u'(c) Copyright 2010 by the WTForms Team']
+        check_detection(expected, test_file)
