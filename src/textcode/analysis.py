@@ -408,39 +408,39 @@ def multigrams_processor(unigrams, ngram_len):
     For example, with these tokens [1, 2, 3, 4, 5] and ngram_len 3, these tokens
     are returned::
 
-    >>> unigrams = [Token(value=x) for x in [1, 2, 3, 4, 5]]
+    >>> unigrams = [Token(value=x) for x in [u'1', u'2', u'3', u'4', u'5']]
     >>> from pprint import pprint
     >>> pprint(list(t.value for t in multigrams_processor(unigrams, 3)))
-    [(1,),
-     (1, 2),
-     (1, 2, 3),
-     (2,),
-     (2, 3),
-     (2, 3, 4),
-     (3,),
-     (3, 4),
-     (3, 4, 5),
-     (4,),
-     (4, 5),
-     (5,)]
+    [u'1',
+     u'1 2',
+     u'1 2 3',
+     u'2',
+     u'2 3',
+     u'2 3 4',
+     u'3',
+     u'3 4',
+     u'3 4 5',
+     u'4',
+     u'4 5',
+     u'5']
 
     And with ngram_len 4, these tokens are returned::
 
     >>> pprint(list(t.value for t in multigrams_processor(unigrams, 4)))
-    [(1,),
-     (1, 2),
-     (1, 2, 3),
-     (1, 2, 3, 4),
-     (2,),
-     (2, 3),
-     (2, 3, 4),
-     (2, 3, 4, 5),
-     (3,),
-     (3, 4),
-     (3, 4, 5),
-     (4,),
-     (4, 5),
-     (5,)]
+    [u'1',
+     u'1 2',
+     u'1 2 3',
+     u'1 2 3 4',
+     u'2',
+     u'2 3',
+     u'2 3 4',
+     u'2 3 4 5',
+     u'3',
+     u'3 4',
+     u'3 4 5',
+     u'4',
+     u'4 5',
+     u'5']
     """
 
     tokens = []
