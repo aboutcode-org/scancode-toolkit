@@ -33,6 +33,7 @@ import logging
 import os
 from os.path import exists
 from os.path import join
+import sys
 
 from licensedcode import saneyaml
 
@@ -179,9 +180,21 @@ class License(object):
         Populate license data from a YAML file stored in of src_dir.
         Does not load text files.
         """
-        with codecs.open(join(src_dir, self.data_file), encoding='utf-8') as f:
-            data = f.read()
-        for k, v in saneyaml.load(data).items():
+        data_file = join(src_dir, self.data_file)
+        try:
+            with codecs.open(data_file, encoding='utf-8') as f:
+                data = saneyaml.load(f.read())
+        except Exception, e:
+            print()
+            print('#############################')
+            print('INVALID LICENSE FILE:', data_file)
+            print('#############################')
+            print(e)
+            print('#############################')
+            # this is a rare case, but yes we abruptly exit globally
+            sys.exit(1)
+
+        for k, v in data.items():
             setattr(self, k, v)
 
     def _read_text(self, location):
@@ -394,8 +407,19 @@ class Rule(object):
         Load self from a .RULE YAML file stored in self.data_file.
         Does not load the rule text file.
         """
-        with codecs.open(self.data_file, encoding='utf-8') as f:
-            data = saneyaml.load(f.read())
+        try:
+            with codecs.open(self.data_file, encoding='utf-8') as f:
+                data = saneyaml.load(f.read())
+        except Exception, e:
+            print()
+            print('#############################')
+            print('INVALID LICENSE RULE FILE:', self.data_file)
+            print('#############################')
+            print(e)
+            print('#############################')
+            # this is a rare case, but yes we abruptly exit globally
+            sys.exit(1)
+
         self.licenses = data.get('licenses', [])
         self.license_choice = data.get('license_choice', False)
         self.template = data.get('template', False)
