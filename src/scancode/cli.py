@@ -340,11 +340,10 @@ def save_results(results, format, input, output_file):  # @ReservedAssignment
     assert format in formats
     if format == 'html':
         output_file.write(as_html(results))
-
     elif format == 'html-app':
-        output_file.write(as_html_app(results, input, output_file))
+        output_file.write(as_html_app(input, output_file))
         try:
-            create_html_app_assets(output_file)
+            create_html_app_assets(results, output_file)
         except HtmlAppAssetCopyWarning:
             click.secho('\nHTML app creation skipped when printing to terminal.',
                        err=True, fg='yellow')
