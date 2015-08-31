@@ -113,6 +113,7 @@
   <script src="{{ assets_dir }}/jquery.min.js"></script>
   <script src="{{ assets_dir }}/jstree.min.js"></script>
   <script src="{{ assets_dir }}/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="{{ assets_dir }}/data.json"></script>
   <script type="text/javascript">
       var icon_file        = "glyphicon glyphicon-file";
       var icon_dir_close   = "glyphicon glyphicon-folder-close";
@@ -130,7 +131,7 @@
 
       // Prepare data for tree and table
       $( document ).ready(function() {
-          var dataArray = {{results|safe}};
+          var dataArray = data;
           var jsTreeData = toJSTreeFormat(dataArray);
           var dtData = toDataTableFormat(dataArray);
           renderTree(jsTreeData.reverse());
