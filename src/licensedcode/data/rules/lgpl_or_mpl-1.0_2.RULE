@@ -1,0 +1,11 @@
+The code and datafiles in this distribution are licensed under the
+Mozilla Public License. See http://www.mozilla.org/NPL/MPL-1.0.html
+for a copy of the license. Alternately, you may use {{libical}} under the
+terms of the GNU Library General Public License. See
+http://www.fsf.org/copyleft/lesser.html for a copy of the LGPL.
+
+This dual license ensures that the library can be incorporated into
+both proprietary code and GPL'd programs, and will benefit from
+improvements made by programmers in both realms. I will only accept
+changes into my version of the library if they are similarly
+dual-licensed.
