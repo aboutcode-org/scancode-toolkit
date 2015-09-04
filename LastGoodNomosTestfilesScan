@@ -664,3 +664,8 @@ File NomosTestfiles/Beerware/hash_md5prime.c contains license(s) Beerware,RSA-Se
 File NomosTestfiles/TrueCrypt/truecrypt.txt contains license(s) TrueCrypt-3.0
 File NomosTestfiles/UnclassifiedLicense/README.win64.txt contains license(s) UnclassifiedLicense
 File NomosTestfiles/No_license_found/utf-8-bom.html contains license(s) No_license_found
+File NomosTestfiles/Artistic-1.0-cl8/Artistic-1.0-cl8.txt contains license(s) Artistic-1.0-cl8
+File NomosTestfiles/Artistic-1.0-Perl/Artistic-1.0-Perl.txt contains license(s) Artistic-1.0-Perl
+File NomosTestfiles/D-FSL-1.0/D-FSL-1.0.txt contains license(s) D-FSL-1.0,GPL
+File NomosTestfiles/SISSL-1.2/SISSL-1.2.txt contains license(s) SISSL-1.2
+File NomosTestfiles/YPL-1.0/YPL-1.0.txt contains license(s) YPL-1.0
