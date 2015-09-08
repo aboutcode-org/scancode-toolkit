@@ -9958,14 +9958,6 @@ class TestCopyright(FileBasedTesting):
     def test_ics_jsr305_ri_src_main_java_javax_annotation_concurrent_guardedby_java(self):
         test_file = self.get_test_loc('ics/jsr305-ri-src-main-java-javax-annotation-concurrent/GuardedBy.java')
         expected = [
-            u'Copyright (c) 2005 Brian Goetz Released',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
-    def test_ics_jsr305_ri_src_main_java_javax_annotation_concurrent_guardedby_java_extra_release(self):
-        test_file = self.get_test_loc('ics/jsr305-ri-src-main-java-javax-annotation-concurrent/GuardedBy.java')
-        expected = [
             u'Copyright (c) 2005 Brian Goetz',
         ]
         check_detection(expected, test_file)
@@ -11130,14 +11122,6 @@ class TestCopyright(FileBasedTesting):
         check_detection(expected, test_file)
 
     def test_ics_kernel_headers_original_linux_spinlock_api_smp_h(self):
-        test_file = self.get_test_loc('ics/kernel-headers-original-linux/spinlock_api_smp.h')
-        expected = [
-            u'Copyright 2005, Red Hat, Inc., Ingo Molnar Released',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
-    def test_ics_kernel_headers_original_linux_spinlock_api_smp_h_extra_release(self):
         test_file = self.get_test_loc('ics/kernel-headers-original-linux/spinlock_api_smp.h')
         expected = [
             u'Copyright 2005, Red Hat, Inc., Ingo Molnar',

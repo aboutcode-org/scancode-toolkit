@@ -113,7 +113,7 @@ patterns = [
     (r'^(TCK|Use|[Rr]estrictions?|[Ii]ntroduction)$', 'JUNK'),
     (r'^([Ii]ncludes?|[Vv]oluntary|[Cc]ontributions?|[Mm]odifications?)$', 'JUNK'),
     (r'^(CONTRIBUTORS?|OTHERS?|Contributors?\:)$', 'JUNK'),
-    (r'^(Company:|For|File|Last|[Rr]elease|[Cc]opyrighting)$', 'JUNK'),
+    (r'^(Company:|For|File|Last|[Rr]eleased?|[Cc]opyrighting)$', 'JUNK'),
     (r'^Authori.*$', 'JUNK'),
     (r'^[Bb]uild$', 'JUNK'),
     #
