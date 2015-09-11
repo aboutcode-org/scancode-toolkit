@@ -32,6 +32,7 @@ import shutil
 import sys
 
 from commoncode import fileutils
+from commoncode.text import toascii
 
 
 logger = logging.getLogger(__name__)
@@ -154,6 +155,8 @@ def new_name(location, is_dir=False):
     parent directory, ignoring the case of the name.
     The case of the name is ignored to ensure that similar results are returned
     across case sensitive (*nix) and case insensitive file systems.
+    Some characters illegal for us in file names on some OS are replaced with _
+    such as a colon ":" on Windows.
 
     To find a new unique name:
      * pad a directory name with _X where X is an incremented number.
@@ -173,15 +176,17 @@ def new_name(location, is_dir=False):
     # all existing files or directory as lower case
     siblings_lower = set(s.lower() for s in os.listdir(parent))
 
-    if name.lower() not in siblings_lower:
-        return posixpath.join(parent, name)
+    portable_name = name.replace(':', '')
 
-    ext = fileutils.file_extension(name)
-    base_name = fileutils.file_base_name(name)
+    if portable_name.lower() not in siblings_lower:
+        return posixpath.join(parent, portable_name)
+
+    ext = fileutils.file_extension(portable_name)
+    base_name = fileutils.file_base_name(portable_name)
     if is_dir:
         # directories have no extension
         ext = ''
-        base_name = name
+        base_name = portable_name
 
     counter = 1
     while 1:
@@ -235,11 +240,10 @@ def portable_new_name(filename):
 
         :param filename: the filename to secure
         """
-        if isinstance(filename, text_type):
+        toascii
+        if isinstance(filename, unicode):
             from unicodedata import normalize
             filename = normalize('NFKD', filename).encode('ascii', 'ignore')
-            if not PY2:
-                filename = filename.decode('ascii')
         for sep in os.path.sep, os.path.altsep:
             if sep:
                 filename = filename.replace(sep, ' ')

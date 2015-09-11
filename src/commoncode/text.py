@@ -1,4 +1,4 @@
-# -*- coding: iso-8859-15 -*-
+# -*- coding: utf-8 -*-
 # NOTE: the iso-8859-15 charset is not a mistake.
 #
 # Copyright (c) 2015 nexB Inc. and others. All rights reserved.
@@ -24,7 +24,8 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import re
 import logging
@@ -91,7 +92,7 @@ def nopunctuation(text):
     Warning: this also drops line endings.
 
     For example:
-    >>> t = '''This problem is about sequence-bunching, %^$^%**^&*Â©Â©^(*&(*()()_+)_!@@#:><>>?/./,.,';][{}{]just'''
+    >>> t = '''This problem is about sequence-bunching, %^$^%**^&*Ã‚Â©Ã‚Â©^(*&(*()()_+)_!@@#:><>>?/./,.,';][{}{]just'''
     >>> nopunctuation(t).split()
     ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'just']
     >>> t = r'''This problem is about: sequence-bunching
@@ -137,25 +138,29 @@ def nolinesep(text):
 
 
 # additional non standard normalizations but quite common sense
-unicode_translation_table = {u'Ø˜': u'O', u'ø': u'o', u'¸': u'z', u'´˜': u'Z'}
+unicode_translation_table = {
+    u'Ã˜': u'O', 
+    u'Ã¸': u'o', 
+    u'Å¾': u'z', 
+    u'Å½': u'Z',
+    u'Â¢': u'c',
+    u'ï¿ ': u'c',
+    u'â‚¡': u'c',
+    u'â‚µ': u'c',
+    # does not preserve offsets
+    u'Ã¦': u'ae',
+    u'Ã†': u'AE',
 
-# Other candidates
-{
-    u'¢': u'c',
-    # not space preserving
-    u'æ': u'a',
-    u'Æ†': u'A',
+    u'Å“': u'oe',
+    u'Å’': u'OE',
 
-    u'“½': u'o',
-    u'¼': u'O',
+    u'Â©': u'(c)',
+    u'Â®': u'(r)',
 
-    u'“©': u'(c)',
-    u'®': u'(r)',
-
-    # see http://en.wikipedia.org/wiki/ÃŸ
-    u'ßŸ': u'ss',
-    u'\u1e9e': u'SS'
+    u'ÃŸ': u'ss',
+    u'áºž': u'ss',
 }
+
 
 
 def toascii(s):
@@ -171,16 +176,16 @@ def toascii(s):
     http://code.activestate.com/recipes/251871/#c10 by Aaron Bentley.
 
     For example:
-    >>> acc =   u"ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝàáâãäåçèéêëìíîïñòóôõöøùúûüýÿ"
+    >>> acc =   u"Ã€ÃÃ‚ÃƒÃ„Ã…Ã‡ÃˆÃ‰ÃŠÃ‹ÃŒÃÃŽÃÃ‘Ã’Ã“Ã”Ã•Ã–Ã˜Ã™ÃšÃ›ÃœÃÃ Ã¡Ã¢Ã£Ã¤Ã¥Ã§Ã¨Ã©ÃªÃ«Ã¬Ã­Ã®Ã¯Ã±Ã²Ã³Ã´ÃµÃ¶Ã¸Ã¹ÃºÃ»Ã¼Ã½Ã¿"
     >>> noacc = r"AAAAAACEEEEIIIINOOOOOUUUUYaaaaaaceeeeiiiinooooouuuuyy"
     >>> toascii(acc) == noacc
     True
     """
     try:
-        return unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
+        converted = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
     except:
-        return str(s.decode('ascii', 'ignore'))
-
+        converted =str(s.decode('ascii', 'ignore'))
+    return converted
 
 def python_safe_name(s):
     """
