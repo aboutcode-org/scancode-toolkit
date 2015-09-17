@@ -1,0 +1,5 @@
+licenses:
+    - lgpl-2.1
+    - lgpl-2.1-digia-qt
+notes: Qt is available under a choice of licenses. This is a common choice in Qt 5.x
+license_choice: yes
