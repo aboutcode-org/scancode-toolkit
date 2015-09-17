@@ -1,0 +1,6 @@
+licenses:
+    - digia-qt-commercial
+    - lgpl-3.0
+    - gpl-2.0
+notes: Qt is available under a choice of licenses. This is a common choice in Qt 5.x
+license_choice: yes
