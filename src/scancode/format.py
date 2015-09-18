@@ -29,6 +29,8 @@ from operator import itemgetter
 from os.path import dirname
 from os.path import exists
 from os.path import join
+from os.path import abspath
+from os import makedirs
 
 from commoncode import fileutils
 
@@ -57,20 +59,14 @@ def get_template_dir(format):  # @ReservedAssignment
     return join(dirname(__file__), 'templates', format)
 
 
-def as_html_app(detected_data, scanned_path, output_file):
+def as_html_app(scanned_path, output_file):
     """
     Return an HTML string built from a list of results and the html-app template.
     """
     template = get_html_template('html-app')
-    import json
-    html_dirs = get_html_app_files_dirs(output_file)
-    if html_dirs:
-        _, assets_dir = html_dirs
-    else:
-        assets_dir = ''
-    return template.render(results=json.dumps(detected_data),
-                           assets_dir=assets_dir,
-                           scanned_path=scanned_path)
+    _, assets_dir = get_html_app_files_dirs(output_file)
+
+    return template.render(assets_dir=assets_dir, scanned_path=scanned_path)
 
 
 class HtmlAppAssetCopyWarning(Exception):
@@ -81,21 +77,26 @@ class HtmlAppAssetCopyError(Exception):
     pass
 
 
+def is_stdout(output_file):
+    return output_file.name == '<stdout>'
+
+
 def get_html_app_files_dirs(output_file):
     """
     Return a tuple of (parent_dir, dir_name) directory named after the
     `output_file` file object file_base_name (stripped from extension) and a
-    `_files` suffix Return None if output is to stdout.
+    `_files` suffix Return empty strings if output is to stdout.
     """
+    if is_stdout(output_file):
+        return '', ''
+
     file_name = output_file.name
-    if file_name == '<stdout>':
-        return
     parent_dir = dirname(file_name)
     dir_name = fileutils.file_base_name(file_name) + '_files'
     return parent_dir, dir_name
 
 
-def create_html_app_assets(output_file):
+def create_html_app_assets(results, output_file):
     """
     Given an html-app output_file, create the corresponding `_files` directory
     and copy the assets to this directory. The target directory is deleted if it
@@ -105,14 +106,21 @@ def create_html_app_assets(output_file):
     HtmlAppAssetCopyError if the copy was not possible.
     """
     try:
-        assets_dir = join(get_template_dir('html-app'), 'assets')
-        tgt_dirs = get_html_app_files_dirs(output_file)
-        if not tgt_dirs:
+        if is_stdout(output_file):
             raise HtmlAppAssetCopyWarning()
+        assets_dir = join(get_template_dir('html-app'), 'assets')
+
+        tgt_dirs = get_html_app_files_dirs(output_file)
         target_dir = join(*tgt_dirs)
         if exists(target_dir):
             fileutils.delete(target_dir)
         fileutils.copytree(assets_dir, target_dir)
+
+        # write json data
+        import json
+        root_path, assets_dir = get_html_app_files_dirs(output_file)
+        with open(join(root_path, assets_dir, 'data.json'), 'w') as f:
+            f.write('data=' + json.dumps(results))
     except HtmlAppAssetCopyWarning, w:
         raise w
     except Exception, e:
