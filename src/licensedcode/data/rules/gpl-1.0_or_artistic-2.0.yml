@@ -2,4 +2,4 @@ licenses:
     - gpl-1.0
     - artistic-2.0
 license_choice: yes
-notes: Same as perl, bedian style
+notes: Same as perl, debian style

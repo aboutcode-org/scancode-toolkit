@@ -1,0 +1,7 @@
+key: ms-nuget
+short_name: MS Nuget
+name: Microsoft Nuget License
+category: Proprietary
+notes: >
+    this notices is often found in Nuget packages added by Microsoft on top
+    of other open source Attribution licenses, such as with jQuery.
