@@ -31,6 +31,7 @@ import os
 import click
 from click.testing import CliRunner
 
+from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
 from commoncode.testcase import FileDrivenTesting
 
@@ -175,11 +176,14 @@ def test_paths_are_posix_in_html_app_format_output(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.get_test_loc('posix_path', copy=True)
     runner = CliRunner()
-    result_file = test_env.get_temp_file('html')
+    result_file = test_env.get_temp_file(extension='html', file_name='test_html')
     result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html-app', test_dir, result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    assert '/posix_path/copyright_acme_c-c.c' in open(result_file).read()
+
+    # the data we want to test is in the data.json file
+    data_file = os.path.join(fileutils.parent_directory(result_file),'test_html_files', 'data.json')
+    assert '/posix_path/copyright_acme_c-c.c' in open(data_file).read()
 
 
 def test_paths_are_posix_in_html_format_output(monkeypatch):
