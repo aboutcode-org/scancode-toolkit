@@ -29,8 +29,6 @@ from operator import itemgetter
 from os.path import dirname
 from os.path import exists
 from os.path import join
-from os.path import abspath
-from os import makedirs
 
 from commoncode import fileutils
 
