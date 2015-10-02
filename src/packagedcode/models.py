@@ -94,7 +94,6 @@ The payload of files and directories possibly contains:
   -- code in source or compiled form or both.
 """
 
-
 class Package(object):
     """
     A package base class.
@@ -133,7 +132,6 @@ class Package(object):
     dep_optional = 'optional'
     dep_bundled = 'optional'
     dep_ci = 'continuous integration'
-
     DEPENDENCY_GROUPS = (dep_runtime, dep_dev, dep_optional, dep_test,
                          dep_build, dep_ci, dep_bundled)
 
@@ -146,7 +144,7 @@ class Package(object):
 
         # the id of the package
         self.id = None
-        self.version = None
+        self._version = []
         self.name = None
         # this is a "short" description.
         self.summary = None
@@ -226,8 +224,86 @@ class Package(object):
         # map of dependency group to a list of dependencies for each DEPENDENCY_GROUPS
         self.dependencies = OrderedDict()
 
+        # map to a list of related packages keyed by PAYLOAD
+        # for instance the SRPM of an RPM
+        self.related_packages = OrderedDict()
+
+        # accept all keywords arguments, print a message for unknown arguments
         for k, v in kwargs.items():
+            # handle properties
+            prop = getattr(self.__class__, k, None)
+            if isinstance(prop, property):
+                prop.fset(self, v)
+                continue
+
+            # plain attributes
+            attr = getattr(self, k, None)
+            if not attr:
+                # FIXME: this should be a log message instead
+                print('Warning: creating Package with unknown argument: %(k)r: %(v)r' % locals())
             setattr(self, k, v)
+
+    @property
+    def version(self):
+        """
+        Return version segments joined with a dot.
+        Subclasses can override.
+        """
+        return u'.'.join(self._version)
+
+    @version.setter
+    def version(self, version):
+        """
+        Set the version from a string, list or tuple of strings as a list.
+        """
+        if version is None or version == '' or version == []:
+            self._version = []
+        if isinstance(version, basestring):
+            self._version = [version]
+        elif isinstance(version, (list, tuple,)):
+            assert all(isinstance(i, basestring) for i in version)
+            self._version = list(version)
+        else:
+            raise ValueError('Version must be a string, list or tuple ')
+
+    @property
+    def component_version(self):
+        """
+        Return the component-level version representation for this package.
+        Subclasses can override.
+        """
+        return self.version
+
+    def compare_version(self, package, package_version=True):
+        """
+        Compare self version with another package version using the same
+        semantics as the builtin cmp function: return an integer that is
+        negative if self.version<package.version, zero if
+        self.version==package.version, positive if self.version>package.version.
+
+        Use the component version instead of thepackage version if
+        `package_version` is False.
+
+        Subclasses can override for package-type specific comparisons.
+
+        For example:
+
+        >>> q=Package(version='2')
+        >>> p=Package(version='1')
+        >>> p.compare_version(q)
+        -1
+        >>> p.compare_version(p)
+        0
+        >>> r=Package(version='0')
+        >>> p.compare_version(r)
+        1
+        >>> s=Package(version='1')
+        >>> p.compare_version(s)
+        0
+        """
+        x = package_version and self.version or self.component_version
+        y = package_version and package.version or package.component_version
+        return cmp(x, y)
 
     @property
     def qualified_name(self):
