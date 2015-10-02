@@ -543,6 +543,11 @@ class CpanModule(Package):
 
 class RubyGemPackage(Package):
     type = 'RubyGem'
+    metafiles = ('*.control',
+                 '*.gemspec',
+                 'Gemfile',
+                 'Gemfile.lock',
+                 )
     filetypes = ('.tar', 'tar archive',)
     mimetypes = ('application/x-tar',)
     extensions = ('.gem',)
