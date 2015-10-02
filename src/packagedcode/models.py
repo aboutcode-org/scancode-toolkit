@@ -135,6 +135,12 @@ class Package(object):
     DEPENDENCY_GROUPS = (dep_runtime, dep_dev, dep_optional, dep_test,
                          dep_build, dep_ci, dep_bundled)
 
+    payload_src = 'source'
+    # binaries include minified JavaScripts and similar text but obfuscated formats
+    payload_bin = 'binary'
+    payload_doc = 'doc'
+    PAYLOADS = (payload_src, payload_bin, payload_doc,)
+
     def __init__(self, **kwargs):
         # path to a file or directory
         self.location = None
@@ -150,6 +156,9 @@ class Package(object):
         self.summary = None
         # this is a "long" description, often several pages of text.
         self.description = None
+
+        # the type of payload in this package. one of PAYLOADS or none
+        self.payload_type = None
 
         # list of Parties: authors, packager, maintainers, contributors, distributor, vendor, etc
         self.authors = []
