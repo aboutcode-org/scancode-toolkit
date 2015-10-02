@@ -816,7 +816,6 @@ class TestContentType(FileBasedTesting):
         assert 'data' != get_filetype_file(self.get_test_loc('contenttype/text/wildtest.txt'))
         assert 'octet' not in get_mimetype_file(self.get_test_loc('contenttype/text/wildtest.txt'))
 
-    @expectedFailure
     def test_rgb_stream_is_binary(self):
         # this is a binaryornot bug: https://github.com/audreyr/binaryornot/issues/10
         assert 'data' == get_filetype_file(self.get_test_loc('contenttype/binary/pixelstream.rgb'))
