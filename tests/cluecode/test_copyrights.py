@@ -3885,7 +3885,6 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    @expectedFailure
     def test_copyright_should_not_be_detected_in_pixel_data_stream(self):
         test_file = self.get_test_loc('copyrights/copyright_pixelstream.rgb')
         expected = []

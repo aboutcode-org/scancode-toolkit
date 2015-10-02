@@ -1,7 +1,7 @@
-about_resource: binaryornot-0.3.0-py2-none-any.whl
+about_resource: binaryornot-0.4.0-py2-none-any.whl
 name: BinaryOrNot
-version: 0.3.0
-download_url: https://pypi.python.org/packages/source/b/binaryornot/binaryornot-0.3.0.tar.gz#md5=8f5bdbeb5ca31075582b42fdf4ce28f5
+version: 0.4.0
+download_url: https://pypi.python.org/packages/source/b/binaryornot/binaryornot-0.4.0.tar.gz
 owner:  Audrey Roy
 Keywords: binaryornot 
 copyright: Copyright (c) 2013, Audrey Roy
@@ -10,3 +10,5 @@ home_url: https://github.com/audreyr/binaryornot
 
 dje_license: bsd-new
 license_text_file: binaryornot.LICENSE
+vcs_tool: git
+vcs_repository: https://github.com/audreyr/binaryornot.git
