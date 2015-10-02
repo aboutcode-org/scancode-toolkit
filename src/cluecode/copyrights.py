@@ -116,8 +116,9 @@ patterns = [
     (r'^(Company:|For|File|Last|[Rr]eleased?|[Cc]opyrighting)$', 'JUNK'),
     (r'^Authori.*$', 'JUNK'),
     (r'^[Bb]uild$', 'JUNK'),
-    #
-    (r'^Copyleft|LegalCopyright|AssemblyCopyright|Distributed$', 'JUNK'),
+ 
+    # various trailing words that are junk 
+    (r'^(?:Copyleft|LegalCopyright|AssemblyCopyright|Distributed|Report|Available|true|false|node|jshint|node\':true|node:true)$', 'JUNK'),
 
 
     # Bare C char is COPYRIGHT SIGN
@@ -466,9 +467,9 @@ def strip_some_punct(s):
     Return a string stripped from some leading and trailing punctuations.
     """
     if s:
-        s = s.strip(''','"}:;''')
-        s = s.lstrip(')')
-        s = s.rstrip('&(-_')
+        s = s.strip(''','"}{-_:;&''')
+        s = s.lstrip('.>)]')
+        s = s.rstrip('<([')
     return s
 
 
@@ -546,6 +547,18 @@ def strip_unbalanced_parens(s, parens='()'):
     return type(s)('').join(cleaned)
 
 
+def strip_all_unbalanced_parens(s):
+    """
+    Return a string where unbalanced parenthesis are replaced with a space.
+    Strips (), <>, [] and {}.
+    """
+    c = strip_unbalanced_parens(s, '()')
+    c = strip_unbalanced_parens(c, '<>')
+    c = strip_unbalanced_parens(c, '[]')
+    c = strip_unbalanced_parens(c, '{}')
+    return c
+
+
 def refine_copyright(c):
     """
     Refine a detected copyright string.
@@ -553,10 +566,7 @@ def refine_copyright(c):
     """
     c = strip_some_punct(c)
     c = fix_trailing_space_dot(c)
-    c = strip_unbalanced_parens(c, '()')
-    c = strip_unbalanced_parens(c, '<>')
-    c = strip_unbalanced_parens(c, '[]')
-    c = strip_unbalanced_parens(c, '{}')
+    c = strip_all_unbalanced_parens(c)
     # FIXME: this should be in the grammar, but is hard to get there right
     # these are often artifacts of markup
     c = c.replace('Copyright Copyright', 'Copyright')
@@ -570,11 +580,13 @@ def refine_copyright(c):
     s = c.split()
 
     # fix traliing garbage, captured by the grammar
-    if s[-1] in ('Parts', 'Any',):
+    last_word = s[-1]
+    if last_word.lower() in ('parts', 'any', '0', '1'):
         s = s[:-1]
     # this is hard to catch otherwise, unless we split the author
     # vs copyright grammar in two. Note that AUTHOR and Authors should be kept
-    if s[-1] == 'Author':
+    last_word = s[-1]
+    if last_word.lower() == 'author' and last_word not in ('AUTHOR', 'AUTHORS', 'Authors',) :
         s = s[:-1]
 
     s = u' '.join(s)
@@ -588,10 +600,7 @@ def refine_author(c):
     """
     c = strip_some_punct(c)
     c = strip_numbers(c)
-    c = strip_unbalanced_parens(c, '()')
-    c = strip_unbalanced_parens(c, '<>')
-    c = strip_unbalanced_parens(c, '[]')
-    c = strip_unbalanced_parens(c, '{}')
+    c = strip_all_unbalanced_parens(c)
     c = c.split()
     # this is hard to catch otherwise, unless we split the author vs copyright grammar in two
     if c[0].lower() == 'author':
@@ -612,7 +621,7 @@ def refine_date(c):
 def is_junk(c):
     """
     Return True if string `c` is a junk copyright that cannot be resolved
-    otherwise by the parsing.
+    otherwise by parsing with a grammar.
     It would be best not to have to resort to this, but this is practical.
     """
     junk = set([
