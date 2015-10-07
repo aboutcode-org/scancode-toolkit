@@ -33,8 +33,34 @@
     <meta charset="utf-8">
     <title>ScanCode results</title>
     <style type="text/css">
-      table, td, th { border: 1px solid gray }
-      table { margin-bottom: 20px }
+      .tb  {
+        border-collapse:collapse;
+        border: 1px solid gray;
+        margin-bottom: 20px;
+      }
+      .tb td{
+        padding: 5px 5px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+      }
+      .tb th{
+        padding:10px 5px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        border-color: gray;
+        color: #fff;
+        background-color: #5E81B7;
+      }
+      tr:nth-child(even)  { background-color:#FFFFFF; }
+      tr:nth-child(odd) { background-color:#F9F9F9; }
+      tr:hover {background-color: #EEEEEE;}
+      * {
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: normal;
+        font-size: 12px;
+      }
     </style>
   </head>
   <body>
