@@ -5,7 +5,7 @@
 
     Lexers for various shells.
 
-    :copyright: Copyright 2006-2013 by the Pygments team, see AUTHORS.
+    :copyright: Copyright 2006-2015 by the Pygments team, see AUTHORS.
     :license: BSD, see LICENSE for details.
 """
 
@@ -27,28 +27,34 @@ class BashLexer(RegexLexer):
     """
     Lexer for (ba|k|)sh shell scripts.
 
-    *New in Pygments 0.6.*
+    .. versionadded:: 0.6
     """
 
     name = 'Bash'
-    aliases = ['bash', 'sh', 'ksh']
+    aliases = ['bash', 'sh', 'ksh', 'shell']
     filenames = ['*.sh', '*.ksh', '*.bash', '*.ebuild', '*.eclass',
-                 '.bashrc', 'bashrc', '.bash_*', 'bash_*']
+                 '.bashrc', 'bashrc', '.bash_*', 'bash_*', 'PKGBUILD']
     mimetypes = ['application/x-sh', 'application/x-shellscript']
 
     tokens = {
         'root': [
             include('basic'),
-            (r'\$\(\(', Keyword, 'math'),
-            (r'\$\(', Keyword, 'paren'),
-            (r'\${#?', Keyword, 'curly'),
             (r'`', String.Backtick, 'backticks'),
             include('data'),
+            include('interp'),
+        ],
+        'interp': [
+            (r'\$\(\(', Keyword, 'math'),
+            (r'\$\(', Keyword, 'paren'),
+            (r'\$\{#?', String.Interpol, 'curly'),
+            (r'\$[a-fA-F_][a-fA-F0-9_]*', Name.Variable), # user variable
+            (r'\$(?:\d+|[#$?!_*@-])', Name.Variable), # builtin
+            (r'\$', Text),
         ],
         'basic': [
             (r'\b(if|fi|else|while|do|done|for|then|return|function|case|'
-             r'select|continue|until|esac|elif)\s*\b',
-             Keyword),
+             r'select|continue|until|esac|elif)(\s*)\b',
+             bygroups(Keyword, Text)),
             (r'\b(alias|bg|bind|break|builtin|caller|cd|command|compgen|'
              r'complete|declare|dirs|disown|echo|enable|eval|exec|exit|'
              r'export|false|fc|fg|getopts|hash|help|history|jobs|kill|let|'
@@ -56,7 +62,8 @@ class BashLexer(RegexLexer):
              r'shopt|source|suspend|test|time|times|trap|true|type|typeset|'
              r'ulimit|umask|unalias|unset|wait)\s*\b(?!\.)',
              Name.Builtin),
-            (r'#.*\n', Comment),
+            (r'\A#!.+\n', Comment.Hashbang),
+            (r'#.*\n', Comment.Single),
             (r'\\[\w\W]', String.Escape),
             (r'(\b\w+)(\s*)(=)', bygroups(Name.Variable, Text, Operator)),
             (r'[\[\]{}()=]', Operator),
@@ -65,22 +72,28 @@ class BashLexer(RegexLexer):
             (r'&&|\|\|', Operator),
         ],
         'data': [
-            (r'(?s)\$?"(\\\\|\\[0-7]+|\\.|[^"\\])*"', String.Double),
-            (r"(?s)\$?'(\\\\|\\[0-7]+|\\.|[^'\\])*'", String.Single),
+            (r'(?s)\$?"(\\\\|\\[0-7]+|\\.|[^"\\$])*"', String.Double),
+            (r'"', String.Double, 'string'),
+            (r"(?s)\$'(\\\\|\\[0-7]+|\\.|[^'\\])*'", String.Single),
+            (r"(?s)'.*?'", String.Single),
             (r';', Punctuation),
             (r'&', Punctuation),
             (r'\|', Punctuation),
             (r'\s+', Text),
-            (r'[^=\s\[\]{}()$"\'`\\<&|;]+', Text),
             (r'\d+(?= |\Z)', Number),
-            (r'\$#?(\w+|.)', Name.Variable),
+            (r'[^=\s\[\]{}()$"\'`\\<&|;]+', Text),
             (r'<', Text),
         ],
+        'string': [
+            (r'"', String.Double, '#pop'),
+            (r'(?s)(\\\\|\\[0-7]+|\\.|[^"\\$])+', String.Double),
+            include('interp'),
+        ],
         'curly': [
-            (r'}', Keyword, '#pop'),
+            (r'\}', String.Interpol, '#pop'),
             (r':-', Keyword),
-            (r'[a-zA-Z0-9_]+', Name.Variable),
-            (r'[^}:"\'`$]+', Punctuation),
+            (r'\w+', Name.Variable),
+            (r'[^}:"\'`$\\]+', Punctuation),
             (r':', Punctuation),
             include('root'),
         ],
@@ -91,6 +104,8 @@ class BashLexer(RegexLexer):
         'math': [
             (r'\)\)', Keyword, '#pop'),
             (r'[-+*/%^|&]|\*\*|\|\|', Operator),
+            (r'\d+#\d+', Number),
+            (r'\d+#(?! )', Number),
             (r'\d+', Number),
             include('root'),
         ],
@@ -111,7 +126,7 @@ class BashSessionLexer(Lexer):
     """
     Lexer for simplistic shell sessions.
 
-    *New in Pygments 1.1.*
+    .. versionadded:: 1.1
     """
 
     name = 'Bash Session'
@@ -162,7 +177,7 @@ class ShellSessionLexer(Lexer):
     """
     Lexer for shell sessions that works with different command prompts
 
-    *New in Pygments 1.6.*
+    .. versionadded:: 1.6
     """
 
     name = 'Shell Session'
@@ -179,7 +194,7 @@ class ShellSessionLexer(Lexer):
 
         for match in line_re.finditer(text):
             line = match.group()
-            m = re.match(r'^((?:\[?\S+@[^$#%]+)[$#%])(.*\n?)', line)
+            m = re.match(r'^((?:\[?\S+@[^$#%]+\]?\s*)[$#%])(.*\n?)', line)
             if m:
                 # To support output lexers (say diff output), the output
                 # needs to be broken by prompts whenever the output lexer
@@ -208,10 +223,10 @@ class BatchLexer(RegexLexer):
     """
     Lexer for the DOS/Windows Batch file format.
 
-    *New in Pygments 0.7.*
+    .. versionadded:: 0.7
     """
     name = 'Batchfile'
-    aliases = ['bat', 'dosbatch', 'winbatch']
+    aliases = ['bat', 'batch', 'dosbatch', 'winbatch']
     filenames = ['*.bat', '*.cmd']
     mimetypes = ['application/x-dos-batch']
 
@@ -228,9 +243,9 @@ class BatchLexer(RegexLexer):
             # like %~$VAR:zlt
             (r'%%?[~$:\w]+%?', Name.Variable),
             (r'::.*', Comment), # Technically :: only works at BOL
-            (r'(set)(\s+)(\w+)', bygroups(Keyword, Text, Name.Variable)),
-            (r'(call)(\s+)(:\w+)', bygroups(Keyword, Text, Name.Label)),
-            (r'(goto)(\s+)(\w+)', bygroups(Keyword, Text, Name.Label)),
+            (r'\b(set)(\s+)(\w+)', bygroups(Keyword, Text, Name.Variable)),
+            (r'\b(call)(\s+)(:\w+)', bygroups(Keyword, Text, Name.Label)),
+            (r'\b(goto)(\s+)(\w+)', bygroups(Keyword, Text, Name.Label)),
             (r'\b(set|call|echo|on|off|endlocal|for|do|goto|if|pause|'
              r'setlocal|shift|errorlevel|exist|defined|cmdextversion|'
              r'errorlevel|else|cd|md|del|deltree|cls|choice)\b', Keyword),
@@ -264,7 +279,7 @@ class TcshLexer(RegexLexer):
     """
     Lexer for tcsh scripts.
 
-    *New in Pygments 0.10.*
+    .. versionadded:: 0.10
     """
 
     name = 'Tcsh'
@@ -276,7 +291,7 @@ class TcshLexer(RegexLexer):
         'root': [
             include('basic'),
             (r'\$\(', Keyword, 'paren'),
-            (r'\${#?', Keyword, 'curly'),
+            (r'\$\{#?', Keyword, 'curly'),
             (r'`', String.Backtick, 'backticks'),
             include('data'),
         ],
@@ -294,24 +309,25 @@ class TcshLexer(RegexLexer):
              r'umask|unalias|uncomplete|unhash|universe|unlimit|unset|unsetenv|'
              r'ver|wait|warp|watchlog|where|which)\s*\b',
              Name.Builtin),
-            (r'#.*\n', Comment),
+            (r'#.*', Comment),
             (r'\\[\w\W]', String.Escape),
             (r'(\b\w+)(\s*)(=)', bygroups(Name.Variable, Text, Operator)),
             (r'[\[\]{}()=]+', Operator),
             (r'<<\s*(\'?)\\?(\w+)[\w\W]+?\2', String),
+            (r';', Punctuation),
         ],
         'data': [
             (r'(?s)"(\\\\|\\[0-7]+|\\.|[^"\\])*"', String.Double),
             (r"(?s)'(\\\\|\\[0-7]+|\\.|[^'\\])*'", String.Single),
             (r'\s+', Text),
-            (r'[^=\s\[\]{}()$"\'`\\]+', Text),
+            (r'[^=\s\[\]{}()$"\'`\\;#]+', Text),
             (r'\d+(?= |\Z)', Number),
             (r'\$#?(\w+|.)', Name.Variable),
         ],
         'curly': [
-            (r'}', Keyword, '#pop'),
+            (r'\}', Keyword, '#pop'),
             (r':-', Keyword),
-            (r'[a-zA-Z0-9_]+', Name.Variable),
+            (r'\w+', Name.Variable),
             (r'[^}:"\'`$]+', Punctuation),
             (r':', Punctuation),
             include('root'),
@@ -331,7 +347,7 @@ class PowerShellLexer(RegexLexer):
     """
     For Windows PowerShell code.
 
-    *New in Pygments 1.5.*
+    .. versionadded:: 1.5
     """
     name = 'PowerShell'
     aliases = ['powershell', 'posh', 'ps1', 'psm1']
@@ -387,13 +403,13 @@ class PowerShellLexer(RegexLexer):
             (r'`[\'"$@-]', Punctuation),
             (r'"', String.Double, 'string'),
             (r"'([^']|'')*'", String.Single),
-            (r'(\$|@@|@)((global|script|private|env):)?[a-z0-9_]+',
+            (r'(\$|@@|@)((global|script|private|env):)?\w+',
              Name.Variable),
             (r'(%s)\b' % '|'.join(keywords), Keyword),
             (r'-(%s)\b' % '|'.join(operators), Operator),
-            (r'(%s)-[a-z_][a-z0-9_]*\b' % '|'.join(verbs), Name.Builtin),
-            (r'\[[a-z_\[][a-z0-9_. `,\[\]]*\]', Name.Constant),  # .net [type]s
-            (r'-[a-z_][a-z0-9_]*', Name),
+            (r'(%s)-[a-z_]\w*\b' % '|'.join(verbs), Name.Builtin),
+            (r'\[[a-z_\[][\w. `,\[\]]*\]', Name.Constant),  # .net [type]s
+            (r'-[a-z_]\w*', Name),
             (r'\w+', Name),
             (r'[.,;@{}\[\]$()=+*/\\&%!~?^`|<>-]|::', Punctuation),
         ],
@@ -408,7 +424,7 @@ class PowerShellLexer(RegexLexer):
             (r'[#&.]', Comment.Multiline),
         ],
         'string': [
-            (r"`[0abfnrtv'\"\$]", String.Escape),
+            (r"`[0abfnrtv'\"$`]", String.Escape),
             (r'[^$`"]+', String.Double),
             (r'\$\(', Punctuation, 'child'),
             (r'""', String.Double),
