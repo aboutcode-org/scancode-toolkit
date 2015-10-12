@@ -38,6 +38,7 @@ Other contributors, listed alphabetically, are:
 * Bryan Davis -- EBNF lexer
 * Owen Durni -- Haxe lexer
 * Alexander Dutton, Oxford University Computing Services -- SPARQL lexer
+* James Edwards -- Terraform lexer
 * Nick Efford -- Python 3 lexer
 * Sven Efftinge -- Xtend lexer
 * Artem Egorkine -- terminal256 formatter
