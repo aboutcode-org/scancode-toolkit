@@ -59,6 +59,7 @@ Other contributors, listed alphabetically, are:
 * Patrick Gotthardt -- PHP namespaces support
 * Olivier Guibe -- Asymptote lexer
 * Jordi Gutiérrez Hermoso -- Octave lexer
+* Florian Hahn -- Boogie lexer
 * Martin Harriman -- SNOBOL lexer
 * Matthew Harrison -- SVG formatter
 * Steven Hazel -- Tcl lexer
