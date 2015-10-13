@@ -5,7 +5,7 @@
 
     Lexers for various shells.
 
-    :copyright: Copyright 2006-2014 by the Pygments team, see AUTHORS.
+    :copyright: Copyright 2006-2015 by the Pygments team, see AUTHORS.
     :license: BSD, see LICENSE for details.
 """
 
@@ -47,7 +47,9 @@ class BashLexer(RegexLexer):
             (r'\$\(\(', Keyword, 'math'),
             (r'\$\(', Keyword, 'paren'),
             (r'\$\{#?', String.Interpol, 'curly'),
-            (r'\$#?(\w+|.)', Name.Variable),
+            (r'\$[a-fA-F_][a-fA-F0-9_]*', Name.Variable), # user variable
+            (r'\$(?:\d+|[#$?!_*@-])', Name.Variable), # builtin
+            (r'\$', Text),
         ],
         'basic': [
             (r'\b(if|fi|else|while|do|done|for|then|return|function|case|'
@@ -60,7 +62,8 @@ class BashLexer(RegexLexer):
              r'shopt|source|suspend|test|time|times|trap|true|type|typeset|'
              r'ulimit|umask|unalias|unset|wait)\s*\b(?!\.)',
              Name.Builtin),
-            (r'#.*\n', Comment),
+            (r'\A#!.+\n', Comment.Hashbang),
+            (r'#.*\n', Comment.Single),
             (r'\\[\w\W]', String.Escape),
             (r'(\b\w+)(\s*)(=)', bygroups(Name.Variable, Text, Operator)),
             (r'[\[\]{}()=]', Operator),
