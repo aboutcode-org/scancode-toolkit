@@ -63,6 +63,7 @@ Other contributors, listed alphabetically, are:
 * Martin Harriman -- SNOBOL lexer
 * Matthew Harrison -- SVG formatter
 * Steven Hazel -- Tcl lexer
+* Dan Michael Heggø -- Turtle lexer
 * Aslak Hellesøy -- Gherkin lexer
 * Greg Hendershott -- Racket lexer
 * Justin Hendrick -- ParaSail lexer
