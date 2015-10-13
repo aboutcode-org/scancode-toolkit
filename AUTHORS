@@ -64,6 +64,7 @@ Other contributors, listed alphabetically, are:
 * Steven Hazel -- Tcl lexer
 * Aslak Hellesøy -- Gherkin lexer
 * Greg Hendershott -- Racket lexer
+* Justin Hendrick -- ParaSail lexer
 * David Hess, Fish Software, Inc. -- Objective-J lexer
 * Varun Hiremath -- Debian control lexer
 * Rob Hoelz -- Perl 6 lexer
