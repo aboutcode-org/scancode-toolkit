@@ -190,6 +190,7 @@ class RubyLexer(ExtendedRegexLexer):
 
     tokens = {
         'root': [
+            (r'\A#!.+?$', Comment.Hashbang),
             (r'#.*?$', Comment.Single),
             (r'=begin\s.*?\n=end.*?$', Comment.Multiline),
             # keywords
@@ -256,13 +257,13 @@ class RubyLexer(ExtendedRegexLexer):
              r'(?<=(?:\s|;)when\s)|'
              r'(?<=(?:\s|;)or\s)|'
              r'(?<=(?:\s|;)and\s)|'
-             r'(?<=(?:\s|;|\.)index\s)|'
-             r'(?<=(?:\s|;|\.)scan\s)|'
-             r'(?<=(?:\s|;|\.)sub\s)|'
-             r'(?<=(?:\s|;|\.)sub!\s)|'
-             r'(?<=(?:\s|;|\.)gsub\s)|'
-             r'(?<=(?:\s|;|\.)gsub!\s)|'
-             r'(?<=(?:\s|;|\.)match\s)|'
+             r'(?<=\.index\s)|'
+             r'(?<=\.scan\s)|'
+             r'(?<=\.sub\s)|'
+             r'(?<=\.sub!\s)|'
+             r'(?<=\.gsub\s)|'
+             r'(?<=\.gsub!\s)|'
+             r'(?<=\.match\s)|'
              r'(?<=(?:\s|;)if\s)|'
              r'(?<=(?:\s|;)elsif\s)|'
              r'(?<=^when\s)|'
