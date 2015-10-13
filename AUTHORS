@@ -7,7 +7,7 @@ Other contributors, listed alphabetically, are:
 
 * Sam Aaron -- Ioke lexer
 * Ali Afshar -- image formatter
-* Thomas Aglassinger -- Rexx lexer
+* Thomas Aglassinger -- Easytrieve, JCL and Rexx lexers
 * Kumar Appaiah -- Debian control lexer
 * Andreas Amann -- AppleScript lexer
 * Timothy Armstrong -- Dart lexer fixes
@@ -21,6 +21,7 @@ Other contributors, listed alphabetically, are:
 * Tim Baumann -- (Literate) Agda lexer
 * Paul Baumgart, 280 North, Inc. -- Objective-J lexer
 * Michael Bayer -- Myghty lexers
+* Thomas Beale -- Archetype lexers
 * John Benediktsson -- Factor lexer
 * Christopher Bertels -- Fancy lexer
 * Jarrett Billingsley -- MiniD lexer
@@ -37,6 +38,7 @@ Other contributors, listed alphabetically, are:
 * Bryan Davis -- EBNF lexer
 * Owen Durni -- Haxe lexer
 * Alexander Dutton, Oxford University Computing Services -- SPARQL lexer
+* James Edwards -- Terraform lexer
 * Nick Efford -- Python 3 lexer
 * Sven Efftinge -- Xtend lexer
 * Artem Egorkine -- terminal256 formatter
@@ -57,11 +59,14 @@ Other contributors, listed alphabetically, are:
 * Patrick Gotthardt -- PHP namespaces support
 * Olivier Guibe -- Asymptote lexer
 * Jordi Gutiérrez Hermoso -- Octave lexer
+* Florian Hahn -- Boogie lexer
 * Martin Harriman -- SNOBOL lexer
 * Matthew Harrison -- SVG formatter
 * Steven Hazel -- Tcl lexer
+* Dan Michael Heggø -- Turtle lexer
 * Aslak Hellesøy -- Gherkin lexer
 * Greg Hendershott -- Racket lexer
+* Justin Hendrick -- ParaSail lexer
 * David Hess, Fish Software, Inc. -- Objective-J lexer
 * Varun Hiremath -- Debian control lexer
 * Rob Hoelz -- Perl 6 lexer
@@ -85,6 +90,7 @@ Other contributors, listed alphabetically, are:
 * Adam Koprowski -- Opa lexer
 * Benjamin Kowarsch -- Modula-2 lexer
 * Domen Kožar -- Nix lexer
+* Oleh Krekel -- Emacs Lisp lexer
 * Alexander Kriegisch -- Kconfig and AspectJ lexers
 * Marek Kubica -- Scheme lexer
 * Jochen Kupperschmidt -- Markdown processor
@@ -127,6 +133,7 @@ Other contributors, listed alphabetically, are:
 * Dominik Picheta -- Nimrod lexer
 * Andrew Pinkham -- RTF Formatter Refactoring
 * Clément Prévost -- UrbiScript lexer
+* Elias Rabel -- Fortran fixed form lexer
 * raichoo -- Idris lexer
 * Kashif Rasul -- CUDA lexer
 * Justin Reidy -- MXML lexer
@@ -136,6 +143,7 @@ Other contributors, listed alphabetically, are:
 * Andre Roberge -- Tango style
 * Konrad Rudolph -- LaTeX formatter enhancements
 * Mario Ruggier -- Evoque lexers
+* Miikka Salminen -- Lovelace style, lexer enhancements
 * Stou Sandalski -- NumPy, FORTRAN, tcsh and XSLT lexers
 * Matteo Sasso -- Common Lisp lexer
 * Joe Schafer -- Ada lexer
