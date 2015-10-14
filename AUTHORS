@@ -23,6 +23,7 @@ Other contributors, listed alphabetically, are:
 * Michael Bayer -- Myghty lexers
 * Thomas Beale -- Archetype lexers
 * John Benediktsson -- Factor lexer
+* Vincent Bernat -- LessCSS lexer
 * Christopher Bertels -- Fancy lexer
 * Jarrett Billingsley -- MiniD lexer
 * Adam Blinkinsop -- Haskell, Redcode lexers
@@ -43,6 +44,7 @@ Other contributors, listed alphabetically, are:
 * Nick Efford -- Python 3 lexer
 * Sven Efftinge -- Xtend lexer
 * Artem Egorkine -- terminal256 formatter
+* Michael Ficarra -- CPSA lexer
 * James H. Fisher -- PostScript lexer
 * William S. Fulton -- SWIG lexer
 * Carlos Galdino -- Elixir and Elixir Console lexers
@@ -78,6 +80,7 @@ Other contributors, listed alphabetically, are:
 * Alastair Houghton -- Lexer inheritance facility
 * Tim Howard -- BlitzMax lexer
 * Ivan Inozemtsev -- Fantom lexer
+* Hiroaki Itoh -- Shell console rewrite
 * Brian R. Jackson -- Tea lexer
 * Christian Jann -- ShellSession lexer
 * Dennis Kaarsemaker -- sources.list lexer
@@ -159,6 +162,8 @@ Other contributors, listed alphabetically, are:
 * Jerome St-Louis -- eC lexer
 * James Strachan -- Kotlin lexer
 * Tom Stuart -- Treetop lexer
+* Colin Sullivan -- SuperCollider lexer
+* Edoardo Tenani -- Arduino lexer
 * Tiberius Teng -- default style overhaul
 * Jeremy Thurgood -- Erlang, Squid config lexers
 * Brian Tiffin -- OpenCOBOL lexer

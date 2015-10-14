@@ -444,7 +444,7 @@ class FishShellLexer(RegexLexer):
     """
     Lexer for Fish shell scripts.
 
-    .. versionadded:: 2.1.1
+    .. versionadded:: 2.1
     """
 
     name = 'Fish'
