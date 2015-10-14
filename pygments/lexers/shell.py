@@ -18,7 +18,7 @@ from pygments.util import shebang_matches
 
 
 __all__ = ['BashLexer', 'BashSessionLexer', 'TcshLexer', 'BatchLexer',
-           'PowerShellLexer', 'ShellSessionLexer']
+           'PowerShellLexer', 'ShellSessionLexer', 'FishShellLexer']
 
 line_re  = re.compile('.*?\n')
 
@@ -47,7 +47,9 @@ class BashLexer(RegexLexer):
             (r'\$\(\(', Keyword, 'math'),
             (r'\$\(', Keyword, 'paren'),
             (r'\$\{#?', String.Interpol, 'curly'),
-            (r'\$#?(\w+|.)', Name.Variable),
+            (r'\$[a-fA-F_][a-fA-F0-9_]*', Name.Variable), # user variable
+            (r'\$(?:\d+|[#$?!_*@-])', Name.Variable), # builtin
+            (r'\$', Text),
         ],
         'basic': [
             (r'\b(if|fi|else|while|do|done|for|then|return|function|case|'
@@ -60,7 +62,8 @@ class BashLexer(RegexLexer):
              r'shopt|source|suspend|test|time|times|trap|true|type|typeset|'
              r'ulimit|umask|unalias|unset|wait)\s*\b(?!\.)',
              Name.Builtin),
-            (r'#.*\n', Comment),
+            (r'\A#!.+\n', Comment.Hashbang),
+            (r'#.*\n', Comment.Single),
             (r'\\[\w\W]', String.Escape),
             (r'(\b\w+)(\s*)(=)', bygroups(Name.Variable, Text, Operator)),
             (r'[\[\]{}()=]', Operator),
@@ -434,4 +437,77 @@ class PowerShellLexer(RegexLexer):
             (r'[^@\n]+"]', String.Heredoc),
             (r".", String.Heredoc),
         ]
+    }
+
+
+class FishShellLexer(RegexLexer):
+    """
+    Lexer for Fish shell scripts.
+
+    .. versionadded:: 2.1.1
+    """
+
+    name = 'Fish'
+    aliases = ['fish', 'fishshell']
+    filenames = ['*.fish', '*.load']
+    mimetypes = ['application/x-fish']
+
+    tokens = {
+        'root': [
+            include('basic'),
+            include('data'),
+            include('interp'),
+        ],
+        'interp': [
+            (r'\$\(\(', Keyword, 'math'),
+            (r'\(', Keyword, 'paren'),
+            (r'\$#?(\w+|.)', Name.Variable),
+        ],
+        'basic': [
+            (r'\b(begin|end|if|else|while|break|for|in|return|function|block|'
+             r'case|continue|switch|not|and|or|set|echo|exit|pwd|true|false|'
+             r'cd|count|test)(\s*)\b',
+             bygroups(Keyword, Text)),
+            (r'\b(alias|bg|bind|breakpoint|builtin|command|commandline|'
+             r'complete|contains|dirh|dirs|emit|eval|exec|fg|fish|fish_config|'
+             r'fish_indent|fish_pager|fish_prompt|fish_right_prompt|'
+             r'fish_update_completions|fishd|funced|funcsave|functions|help|'
+             r'history|isatty|jobs|math|mimedb|nextd|open|popd|prevd|psub|'
+             r'pushd|random|read|set_color|source|status|trap|type|ulimit|'
+             r'umask|vared|fc|getopts|hash|kill|printf|time|wait)\s*\b(?!\.)',
+             Name.Builtin),
+            (r'#.*\n', Comment),
+            (r'\\[\w\W]', String.Escape),
+            (r'(\b\w+)(\s*)(=)', bygroups(Name.Variable, Text, Operator)),
+            (r'[\[\]()=]', Operator),
+            (r'<<-?\s*(\'?)\\?(\w+)[\w\W]+?\2', String),
+        ],
+        'data': [
+            (r'(?s)\$?"(\\\\|\\[0-7]+|\\.|[^"\\$])*"', String.Double),
+            (r'"', String.Double, 'string'),
+            (r"(?s)\$'(\\\\|\\[0-7]+|\\.|[^'\\])*'", String.Single),
+            (r"(?s)'.*?'", String.Single),
+            (r';', Punctuation),
+            (r'&|\||\^|<|>', Operator),
+            (r'\s+', Text),
+            (r'\d+(?= |\Z)', Number),
+            (r'[^=\s\[\]{}()$"\'`\\<&|;]+', Text),
+        ],
+        'string': [
+            (r'"', String.Double, '#pop'),
+            (r'(?s)(\\\\|\\[0-7]+|\\.|[^"\\$])+', String.Double),
+            include('interp'),
+        ],
+        'paren': [
+            (r'\)', Keyword, '#pop'),
+            include('root'),
+        ],
+        'math': [
+            (r'\)\)', Keyword, '#pop'),
+            (r'[-+*/%^|&]|\*\*|\|\|', Operator),
+            (r'\d+#\d+', Number),
+            (r'\d+#(?! )', Number),
+            (r'\d+', Number),
+            include('root'),
+        ],
     }
