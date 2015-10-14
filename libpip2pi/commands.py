@@ -302,7 +302,12 @@ def _dir2pi(option, argv):
         symlink_target = os.path.join(pkg_dir, pkg_new_basename)
         symlink_source = os.path.join("../../", pkg_basename)
         if option.use_symlink and OS_HAS_SYMLINK:
-            os.symlink(symlink_source, symlink_target)
+            try:
+                os.symlink(symlink_source, symlink_target)
+            except OSError as e:
+                warnings.warn(dedent("""
+                WARNING: problem encountered creating symlink %s, Skipping : %s
+                """ %(pkg_new_basename, e)))
         else:
             shutil.copy2(pkg_filepath, symlink_target)
 
