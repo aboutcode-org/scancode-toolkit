@@ -19,7 +19,7 @@ from pygments.util import shebang_matches
 
 __all__ = ['BashLexer', 'ShellSessionBaseLexer', 'BashSessionLexer', 'TcshLexer', 'BatchLexer',
            'MSDOSSessionLexer',
-           'PowerShellLexer', 'ShellSessionLexer', 'PowerShellSessionLexer']
+           'PowerShellLexer', 'ShellSessionLexer', 'PowerShellSessionLexer', 'TcshSessionLexer']
 
 line_re  = re.compile('.*?\n')
 
@@ -340,6 +340,22 @@ class TcshLexer(RegexLexer):
             include('root'),
         ],
     }
+
+class TcshSessionLexer(ShellSessionBaseLexer):
+    """
+    Lexer for Tcsh sessions.
+
+    .. versionadded:: 2.1
+    """
+
+    name = 'Tcsh Session'
+    aliases = ['tcshcon']
+    filenames = []
+    mimetypes = []
+
+    _innerLexerCls = TcshLexer
+    _ps1rgx = r'^([^>]+>)(.*\n?)'
+    _ps2 = '? '
 
 
 class PowerShellLexer(RegexLexer):
