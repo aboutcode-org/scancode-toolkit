@@ -17,8 +17,9 @@ from pygments.token import Punctuation, \
 from pygments.util import shebang_matches
 
 
-__all__ = ['BashLexer', 'BashSessionLexer', 'TcshLexer', 'BatchLexer',
-           'PowerShellLexer', 'ShellSessionLexer', 'FishShellLexer']
+__all__ = ['BashLexer', 'ShellSessionBaseLexer', 'BashSessionLexer', 'TcshLexer', 'BatchLexer',
+           'MSDOSSessionLexer', 'PowerShellLexer', 'ShellSessionLexer',
+           'PowerShellSessionLexer', 'TcshSessionLexer', 'FishShellLexer']
 
 line_re  = re.compile('.*?\n')
 
@@ -122,7 +123,51 @@ class BashLexer(RegexLexer):
             return 0.2
 
 
-class BashSessionLexer(Lexer):
+class ShellSessionBaseLexer(Lexer):
+    """
+    Base lexer for simplistic shell sessions.
+
+    .. versionadded:: 2.1
+    """
+    def get_tokens_unprocessed(self, text):
+        innerlexer = self._innerLexerCls(**self.options)
+
+        pos = 0
+        curcode = ''
+        insertions = []
+
+        for match in line_re.finditer(text):
+            line = match.group()
+            m = re.match(self._ps1rgx, line)
+            if m:
+                # To support output lexers (say diff output), the output
+                # needs to be broken by prompts whenever the output lexer
+                # changes.
+                if not insertions:
+                    pos = match.start()
+
+                insertions.append((len(curcode),
+                                   [(0, Generic.Prompt, m.group(1))]))
+                curcode += m.group(2)
+            elif line.startswith(self._ps2):
+                insertions.append((len(curcode),
+                                   [(0, Generic.Prompt, line[:len(self._ps2)])]))
+                curcode += line[len(self._ps2):]
+            else:
+                if insertions:
+                    toks = innerlexer.get_tokens_unprocessed(curcode)
+                    for i, t, v in do_insertions(insertions, toks):
+                        yield pos+i, t, v
+                yield match.start(), Generic.Output, line
+                insertions = []
+                curcode = ''
+        if insertions:
+            for i, t, v in do_insertions(insertions,
+                                         innerlexer.get_tokens_unprocessed(curcode)):
+                yield pos+i, t, v
+
+
+class BashSessionLexer(ShellSessionBaseLexer):
     """
     Lexer for simplistic shell sessions.
 
@@ -134,46 +179,14 @@ class BashSessionLexer(Lexer):
     filenames = ['*.sh-session']
     mimetypes = ['application/x-shell-session']
 
-    def get_tokens_unprocessed(self, text):
-        bashlexer = BashLexer(**self.options)
-
-        pos = 0
-        curcode = ''
-        insertions = []
-
-        for match in line_re.finditer(text):
-            line = match.group()
-            m = re.match(r'^((?:\(\S+\))?(?:|sh\S*?|\w+\S+[@:]\S+(?:\s+\S+)'
-                          r'?|\[\S+[@:][^\n]+\].+)[$#%])(.*\n?)' , line)
-            if m:
-                # To support output lexers (say diff output), the output
-                # needs to be broken by prompts whenever the output lexer
-                # changes.
-                if not insertions:
-                    pos = match.start()
-
-                insertions.append((len(curcode),
-                                   [(0, Generic.Prompt, m.group(1))]))
-                curcode += m.group(2)
-            elif line.startswith('>'):
-                insertions.append((len(curcode),
-                                   [(0, Generic.Prompt, line[:1])]))
-                curcode += line[1:]
-            else:
-                if insertions:
-                    toks = bashlexer.get_tokens_unprocessed(curcode)
-                    for i, t, v in do_insertions(insertions, toks):
-                        yield pos+i, t, v
-                yield match.start(), Generic.Output, line
-                insertions = []
-                curcode = ''
-        if insertions:
-            for i, t, v in do_insertions(insertions,
-                                         bashlexer.get_tokens_unprocessed(curcode)):
-                yield pos+i, t, v
+    _innerLexerCls = BashLexer
+    _ps1rgx = \
+        r'^((?:\(\S+\))?(?:|sh\S*?|\w+\S+[@:]\S+(?:\s+\S+)' \
+        r'?|\[\S+[@:][^\n]+\].+)[$#%])(.*\n?)'
+    _ps2 = '>'
 
 
-class ShellSessionLexer(Lexer):
+class ShellSessionLexer(ShellSessionBaseLexer):
     """
     Lexer for shell sessions that works with different command prompts
 
@@ -185,38 +198,9 @@ class ShellSessionLexer(Lexer):
     filenames = ['*.shell-session']
     mimetypes = ['application/x-sh-session']
 
-    def get_tokens_unprocessed(self, text):
-        bashlexer = BashLexer(**self.options)
-
-        pos = 0
-        curcode = ''
-        insertions = []
-
-        for match in line_re.finditer(text):
-            line = match.group()
-            m = re.match(r'^((?:\[?\S+@[^$#%]+\]?\s*)[$#%])(.*\n?)', line)
-            if m:
-                # To support output lexers (say diff output), the output
-                # needs to be broken by prompts whenever the output lexer
-                # changes.
-                if not insertions:
-                    pos = match.start()
-
-                insertions.append((len(curcode),
-                                   [(0, Generic.Prompt, m.group(1))]))
-                curcode += m.group(2)
-            else:
-                if insertions:
-                    toks = bashlexer.get_tokens_unprocessed(curcode)
-                    for i, t, v in do_insertions(insertions, toks):
-                        yield pos+i, t, v
-                yield match.start(), Generic.Output, line
-                insertions = []
-                curcode = ''
-        if insertions:
-            for i, t, v in do_insertions(insertions,
-                                         bashlexer.get_tokens_unprocessed(curcode)):
-                yield pos+i, t, v
+    _innerLexerCls = BashLexer
+    _ps1rgx = r'^((?:\[?\S+@[^$#%]+\]?\s*)[$#%])(.*\n?)',
+    _ps2 = '>'
 
 
 class BatchLexer(RegexLexer):
@@ -273,6 +257,23 @@ class BatchLexer(RegexLexer):
             (r'([<>|])(\s*)(\w+)', bygroups(Punctuation, Text, Name)),
         ],
     }
+
+
+class MSDOSSessionLexer(ShellSessionBaseLexer):
+    """
+    Lexer for simplistic MSDOS sessions.
+
+    .. versionadded:: 2.1
+    """
+
+    name = 'MSDOS Session'
+    aliases = ['doscon']
+    filenames = []
+    mimetypes = []
+
+    _innerLexerCls = BatchLexer
+    _ps1rgx = r'^([^>]+>)(.*\n?)'
+    _ps2 = 'More? '
 
 
 class TcshLexer(RegexLexer):
@@ -341,6 +342,22 @@ class TcshLexer(RegexLexer):
             include('root'),
         ],
     }
+
+class TcshSessionLexer(ShellSessionBaseLexer):
+    """
+    Lexer for Tcsh sessions.
+
+    .. versionadded:: 2.1
+    """
+
+    name = 'Tcsh Session'
+    aliases = ['tcshcon']
+    filenames = []
+    mimetypes = []
+
+    _innerLexerCls = TcshLexer
+    _ps1rgx = r'^([^>]+>)(.*\n?)'
+    _ps2 = '? '
 
 
 class PowerShellLexer(RegexLexer):
@@ -511,3 +528,20 @@ class FishShellLexer(RegexLexer):
             include('root'),
         ],
     }
+
+
+class PowerShellSessionLexer(ShellSessionBaseLexer):
+    """
+    Lexer for simplistic Windows PowerShell sessions.
+
+    .. versionadded:: 2.1
+    """
+
+    name = 'PowerShell Session'
+    aliases = ['ps1con']
+    filenames = []
+    mimetypes = []
+
+    _innerLexerCls = PowerShellLexer
+    _ps1rgx = r'^(PS [^>]+> )(.*\n?)'
+    _ps2 = '>> '
