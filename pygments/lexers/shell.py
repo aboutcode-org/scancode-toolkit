@@ -17,8 +17,8 @@ from pygments.token import Punctuation, \
 from pygments.util import shebang_matches
 
 
-__all__ = ['BashLexer', 'ShellSessionBaseLexer', 'BashSessionLexer', 'TcshLexer', 'BatchLexer',
-           'MSDOSSessionLexer', 'PowerShellLexer', 'ShellSessionLexer',
+__all__ = ['BashLexer', 'BashSessionLexer', 'TcshLexer', 'BatchLexer',
+           'MSDOSSessionLexer', 'PowerShellLexer',
            'PowerShellSessionLexer', 'TcshSessionLexer', 'FishShellLexer']
 
 line_re  = re.compile('.*?\n')
@@ -175,31 +175,14 @@ class BashSessionLexer(ShellSessionBaseLexer):
     """
 
     name = 'Bash Session'
-    aliases = ['console']
-    filenames = ['*.sh-session']
-    mimetypes = ['application/x-shell-session']
+    aliases = ['console', 'shell-session']
+    filenames = ['*.sh-session', '*.shell-session']
+    mimetypes = ['application/x-shell-session', 'application/x-sh-session']
 
     _innerLexerCls = BashLexer
     _ps1rgx = \
-        r'^((?:\(\S+\))?(?:|sh\S*?|\w+\S+[@:]\S+(?:\s+\S+)' \
-        r'?|\[\S+[@:][^\n]+\].+)[$#%])(.*\n?)'
-    _ps2 = '>'
-
-
-class ShellSessionLexer(ShellSessionBaseLexer):
-    """
-    Lexer for shell sessions that works with different command prompts
-
-    .. versionadded:: 1.6
-    """
-
-    name = 'Shell Session'
-    aliases = ['shell-session']
-    filenames = ['*.shell-session']
-    mimetypes = ['application/x-sh-session']
-
-    _innerLexerCls = BashLexer
-    _ps1rgx = r'^((?:\[?\S+@[^$#%]+\]?\s*)[$#%])(.*\n?)',
+        r'^((?:(?:\[.*?\])|(?:\(\S+\))?(?:| |sh\S*?|\w+\S+[@:]\S+(?:\s+\S+)' \
+        r'?|\[\S+[@:][^\n]+\].+))\s*[$#%])(.*\n?)'
     _ps2 = '>'
 
 
