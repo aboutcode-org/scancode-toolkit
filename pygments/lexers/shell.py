@@ -11,7 +11,8 @@
 
 import re
 
-from pygments.lexer import Lexer, RegexLexer, do_insertions, bygroups, include
+from pygments.lexer import Lexer, RegexLexer, do_insertions, bygroups, \
+     include, default, this, using, words
 from pygments.token import Punctuation, \
      Text, Comment, Operator, Keyword, Name, String, Number, Generic
 from pygments.util import shebang_matches
@@ -199,46 +200,297 @@ class BatchLexer(RegexLexer):
 
     flags = re.MULTILINE | re.IGNORECASE
 
+    _nl = r'\n\x1a'
+    _punct = r'&<>|'
+    _ws = r'\t\v\f\r ,;=\xa0'
+    _space = r'(?:(?:(?:\^[%s])?[%s])+)' % (_nl, _ws)
+    _keyword_terminator = (r'(?=(?:\^[%s]?)?[%s+./:[\\\]]|[%s%s(])' %
+                           (_nl, _ws, _nl, _punct))
+    _token_terminator = r'(?=\^?[%s]|[%s%s])' % (_ws, _punct, _nl)
+    _start_label = r'((?:(?<=^[^:])|^[^:]?)[%s]*)(:)' % _ws
+    _label = r'(?:(?:[^%s%s%s+:^]|\^[%s]?[\w\W])*)' % (_nl, _punct, _ws, _nl)
+    _label_compound = (r'(?:(?:[^%s%s%s+:^)]|\^[%s]?[^)])*)' %
+                       (_nl, _punct, _ws, _nl))
+    _number = r'(?:-?(?:0[0-7]+|0x[\da-f]+|\d+)%s)' % _token_terminator
+    _opword = r'(?:equ|geq|gtr|leq|lss|neq)'
+    _string = r'(?:"[^%s"]*"?)' % _nl
+    _variable = (r'(?:(?:%%(?:\*|(?:~[a-z]*(?:\$[^:]+:)?)?\d|'
+                 r'[^%%:%s]+(?::(?:~(?:-?\d+)?(?:,(?:-?\d+)?)?|(?:[^%%%s^]|'
+                 r'\^[^%%%s])[^=%s]*=(?:[^%%%s^]|\^[^%%%s])*)?)?%%))|'
+                 r'(?:\^?![^!:%s]+(?::(?:~(?:-?\d+)?(?:,(?:-?\d+)?)?|(?:'
+                 r'[^!%s^]|\^[^!%s])[^=%s]*=(?:[^!%s^]|\^[^!%s])*)?)?\^?!))' %
+                 (_nl, _nl, _nl, _nl, _nl, _nl, _nl, _nl, _nl, _nl, _nl, _nl))
+    _core_token = r'(?:(?:(?:\^[%s]?)?[^%s%s%s])+)' % (_nl, _nl, _punct, _ws)
+    _core_token_compound = r'(?:(?:(?:\^[%s]?)?[^%s%s%s)])+)' % (_nl, _nl,
+                                                                 _punct, _ws)
+    _token = r'(?:[%s]+|%s)' % (_punct, _core_token)
+    _token_compound = r'(?:[%s]+|%s)' % (_punct, _core_token_compound)
+    _stoken = (r'(?:[%s]+|(?:%s|%s|%s)+)' %
+               (_punct, _string, _variable, _core_token))
+
+    def _make_begin_state(compound, _core_token=_core_token,
+                          _core_token_compound=_core_token_compound,
+                          _keyword_terminator=_keyword_terminator,
+                          _nl=_nl, _punct=_punct, _string=_string,
+                          _space=_space, _start_label=_start_label,
+                          _stoken=_stoken, _token_terminator=_token_terminator,
+                          _variable=_variable, _ws=_ws):
+        rest = '(?:%s|%s|[^"%%%s%s%s])*' % (_string, _variable, _nl, _punct,
+                                            ')' if compound else '')
+        rest_of_line = r'(?:(?:[^%s^]|\^[%s]?[\w\W])*)' % (_nl, _nl)
+        rest_of_line_compound = r'(?:(?:[^%s^)]|\^[%s]?[^)])*)' % (_nl, _nl)
+        set_space = r'((?:(?:\^[%s]?)?[^\S\n])*)' % _nl
+        suffix = ''
+        if compound:
+            _keyword_terminator = r'(?:(?=\))|%s)' % _keyword_terminator
+            _token_terminator = r'(?:(?=\))|%s)' % _token_terminator
+            suffix = '/compound'
+        return [
+            ((r'\)', Punctuation, '#pop') if compound else
+             (r'\)((?=\()|%s)%s' % (_token_terminator, rest_of_line),
+              Comment.Single)),
+            (r'(?=%s)' % _start_label, Text, 'follow%s' % suffix),
+            (_space, using(this, state='text')),
+            include('redirect%s' % suffix),
+            (r'[%s]+' % _nl, Text),
+            (r'\(', Punctuation, 'root/compound'),
+            (r'@+', Punctuation),
+            (r'((?:for|if|rem)(?:(?=(?:\^[%s]?)?/)|(?:(?!\^)|'
+             r'(?<=m))(?:(?=\()|%s)))(%s?%s?(?:\^[%s]?)?/(?:\^[%s]?)?\?)' %
+             (_nl, _token_terminator, _space,
+              _core_token_compound if compound else _core_token, _nl, _nl),
+             bygroups(Keyword, using(this, state='text')),
+             'follow%s' % suffix),
+            (r'(goto%s)(%s(?:\^[%s]?)?/(?:\^[%s]?)?\?%s)' %
+             (_keyword_terminator, rest, _nl, _nl, rest),
+             bygroups(Keyword, using(this, state='text')),
+             'follow%s' % suffix),
+            (words(('assoc', 'break', 'cd', 'chdir', 'cls', 'color', 'copy',
+                    'date', 'del', 'dir', 'dpath', 'echo', 'endlocal', 'erase',
+                    'exit', 'ftype', 'keys', 'md', 'mkdir', 'mklink', 'move',
+                    'path', 'pause', 'popd', 'prompt', 'pushd', 'rd', 'ren',
+                    'rename', 'rmdir', 'setlocal', 'shift', 'start', 'time',
+                    'title', 'type', 'ver', 'verify', 'vol'),
+                   suffix=_keyword_terminator), Keyword, 'follow%s' % suffix),
+            (r'(call)(%s?)(:)' % _space,
+             bygroups(Keyword, using(this, state='text'), Punctuation),
+             'call%s' % suffix),
+            (r'call%s' % _keyword_terminator, Keyword),
+            (r'(for%s(?!\^))(%s)(/f%s)' %
+             (_token_terminator, _space, _token_terminator),
+             bygroups(Keyword, using(this, state='text'), Keyword),
+             ('for/f', 'for')),
+            (r'(for%s(?!\^))(%s)(/l%s)' %
+             (_token_terminator, _space, _token_terminator),
+             bygroups(Keyword, using(this, state='text'), Keyword),
+             ('for/l', 'for')),
+            (r'for%s(?!\^)' % _token_terminator, Keyword, ('for2', 'for')),
+            (r'(goto%s)(%s?)(:?)' % (_keyword_terminator, _space),
+             bygroups(Keyword, using(this, state='text'), Punctuation),
+             'label%s' % suffix),
+            (r'(if(?:(?=\()|%s)(?!\^))(%s?)((?:/i%s)?)(%s?)((?:not%s)?)(%s?)' %
+             (_token_terminator, _space, _token_terminator, _space,
+              _token_terminator, _space),
+             bygroups(Keyword, using(this, state='text'), Keyword,
+                      using(this, state='text'), Keyword,
+                      using(this, state='text')), ('(?', 'if')),
+            (r'rem(((?=\()|%s)%s?%s?.*|%s%s)' %
+             (_token_terminator, _space, _stoken, _keyword_terminator,
+              rest_of_line_compound if compound else rest_of_line),
+             Comment.Single, 'follow%s' % suffix),
+            (r'(set%s)%s(/a)' % (_keyword_terminator, set_space),
+             bygroups(Keyword, using(this, state='text'), Keyword),
+             'arithmetic%s' % suffix),
+            (r'(set%s)%s((?:/p)?)%s((?:(?:(?:\^[%s]?)?[^"%s%s^=%s]|'
+             r'\^[%s]?[^"=])+)?)((?:(?:\^[%s]?)?=)?)' %
+             (_keyword_terminator, set_space, set_space, _nl, _nl, _punct,
+              ')' if compound else '', _nl, _nl),
+             bygroups(Keyword, using(this, state='text'), Keyword,
+                      using(this, state='text'), using(this, state='variable'),
+                      Punctuation),
+             'follow%s' % suffix),
+            default('follow%s' % suffix)
+        ]
+
+    def _make_follow_state(compound, _label=_label,
+                           _label_compound=_label_compound, _nl=_nl,
+                           _space=_space, _start_label=_start_label,
+                           _token=_token, _token_compound=_token_compound,
+                           _ws=_ws):
+        suffix = '/compound' if compound else ''
+        state = []
+        if compound:
+            state.append((r'(?=\))', Text, '#pop'))
+        state += [
+            (r'%s([%s]*)(%s)(.*)' %
+             (_start_label, _ws, _label_compound if compound else _label),
+             bygroups(Text, Punctuation, Text, Name.Label, Comment.Single)),
+            include('redirect%s' % suffix),
+            (r'(?=[%s])' % _nl, Text, '#pop'),
+            (r'\|\|?|&&?', Punctuation, '#pop'),
+            include('text')
+        ]
+        return state
+
+    def _make_arithmetic_state(compound, _nl=_nl, _punct=_punct,
+                               _string=_string, _variable=_variable, _ws=_ws):
+        op = r'=+\-*/!~'
+        state = []
+        if compound:
+            state.append((r'(?=\))', Text, '#pop'))
+        state += [
+            (r'0[0-7]+', Number.Oct),
+            (r'0x[\da-f]+', Number.Hex),
+            (r'\d+', Number.Integer),
+            (r'[(),]+', Punctuation),
+            (r'([%s]|%%|\^\^)+' % op, Operator),
+            (r'(%s|%s|(\^[%s]?)?[^()%s%%^"%s%s%s]|\^[%s%s]?%s)+' %
+             (_string, _variable, _nl, op, _nl, _punct, _ws, _nl, _ws,
+              r'[^)]' if compound else r'[\w\W]'),
+             using(this, state='variable')),
+            (r'(?=[\x00|&])', Text, '#pop'),
+            include('follow')
+        ]
+        return state
+
+    def _make_call_state(compound, _label=_label,
+                         _label_compound=_label_compound):
+        state = []
+        if compound:
+            state.append((r'(?=\))', Text, '#pop'))
+        state.append((r'(:?)(%s)' % (_label_compound if compound else _label),
+                      bygroups(Punctuation, Name.Label), '#pop'))
+        return state
+
+    def _make_label_state(compound, _label=_label,
+                          _label_compound=_label_compound, _nl=_nl,
+                          _punct=_punct, _string=_string, _variable=_variable):
+        state = []
+        if compound:
+            state.append((r'(?=\))', Text, '#pop'))
+        state.append((r'(%s?)((?:%s|%s|\^[%s]?%s|[^"%%^%s%s%s])*)' %
+                      (_label_compound if compound else _label, _string,
+                       _variable, _nl, r'[^)]' if compound else r'[\w\W]', _nl,
+                       _punct, r')' if compound else ''),
+                      bygroups(Name.Label, Comment.Single), '#pop'))
+        return state
+
+    def _make_redirect_state(compound,
+                             _core_token_compound=_core_token_compound,
+                             _nl=_nl, _punct=_punct, _stoken=_stoken,
+                             _string=_string, _space=_space,
+                             _variable=_variable, _ws=_ws):
+        stoken_compound = (r'(?:[%s]+|(?:%s|%s|%s)+)' %
+                           (_punct, _string, _variable, _core_token_compound))
+        return [
+            (r'((?:(?<=[%s%s])\d)?)(>>?&|<&)([%s%s]*)(\d)' %
+             (_nl, _ws, _nl, _ws),
+             bygroups(Number.Integer, Punctuation, Text, Number.Integer)),
+            (r'((?:(?<=[%s%s])(?<!\^[%s])\d)?)(>>?|<)(%s?%s)' %
+             (_nl, _ws, _nl, _space, stoken_compound if compound else _stoken),
+             bygroups(Number.Integer, Punctuation, using(this, state='text')))
+        ]
+
     tokens = {
-        'root': [
-            # Lines can start with @ to prevent echo
-            (r'^\s*@', Punctuation),
-            (r'^(\s*)(rem\s.*)$', bygroups(Text, Comment)),
-            (r'".*?"', String.Double),
-            (r"'.*?'", String.Single),
-            # If made more specific, make sure you still allow expansions
-            # like %~$VAR:zlt
-            (r'%%?[~$:\w]+%?', Name.Variable),
-            (r'::.*', Comment), # Technically :: only works at BOL
-            (r'\b(set)(\s+)(\w+)', bygroups(Keyword, Text, Name.Variable)),
-            (r'\b(call)(\s+)(:\w+)', bygroups(Keyword, Text, Name.Label)),
-            (r'\b(goto)(\s+)(\w+)', bygroups(Keyword, Text, Name.Label)),
-            (r'\b(set|call|echo|on|off|endlocal|for|do|goto|if|pause|'
-             r'setlocal|shift|errorlevel|exist|defined|cmdextversion|'
-             r'errorlevel|else|cd|md|del|deltree|cls|choice)\b', Keyword),
-            (r'\b(equ|neq|lss|leq|gtr|geq)\b', Operator),
-            include('basic'),
-            (r'.', Text),
+        'root': _make_begin_state(False),
+        'follow': _make_follow_state(False),
+        'arithmetic': _make_arithmetic_state(False),
+        'call': _make_call_state(False),
+        'label': _make_label_state(False),
+        'redirect': _make_redirect_state(False),
+        'root/compound': _make_begin_state(True),
+        'follow/compound': _make_follow_state(True),
+        'arithmetic/compound': _make_arithmetic_state(True),
+        'call/compound': _make_call_state(True),
+        'label/compound': _make_label_state(True),
+        'redirect/compound': _make_redirect_state(True),
+        'variable-or-escape': [
+            (_variable, Name.Variable),
+            (r'%%%%|\^[%s]?(\^!|[\w\W])' % _nl, String.Escape)
         ],
-        'echo': [
-            # Escapes only valid within echo args?
-            (r'\^\^|\^<|\^>|\^\|', String.Escape),
-            (r'\n', Text, '#pop'),
-            include('basic'),
-            (r'[^\'"^]+', Text),
+        'string': [
+            (r'"', String.Double, '#pop'),
+            (_variable, Name.Variable),
+            (r'\^!|%%', String.Escape),
+            (r'[^"%%^%s]+|[%%^]' % _nl, String.Double),
+            default('#pop')
         ],
-        'basic': [
-            (r'".*?"', String.Double),
-            (r"'.*?'", String.Single),
-            (r'`.*?`', String.Backtick),
-            (r'-?\d+', Number),
-            (r',', Punctuation),
-            (r'=', Operator),
-            (r'/\S+', Name),
-            (r':\w+', Name.Label),
-            (r'\w:\w+', Text),
-            (r'([<>|])(\s*)(\w+)', bygroups(Punctuation, Text, Name)),
+        'sqstring': [
+            include('variable-or-escape'),
+            (r'[^%]+|%', String.Single)
         ],
+        'bqstring': [
+            include('variable-or-escape'),
+            (r'[^%]+|%', String.Backtick)
+        ],
+        'text': [
+            (r'"', String.Double, 'string'),
+            include('variable-or-escape'),
+            (r'[^"%%^%s%s%s\d)]+|.' % (_nl, _punct, _ws), Text)
+        ],
+        'variable': [
+            (r'"', String.Double, 'string'),
+            include('variable-or-escape'),
+            (r'[^"%%^%s]+|.' % _nl, Name.Variable)
+        ],
+        'for': [
+            (r'(%s)(in)(%s)(\()' % (_space, _space),
+             bygroups(using(this, state='text'), Keyword,
+                      using(this, state='text'), Punctuation), '#pop'),
+            include('follow')
+        ],
+        'for2': [
+            (r'\)', Punctuation),
+            (r'(%s)(do%s)' % (_space, _token_terminator),
+             bygroups(using(this, state='text'), Keyword), '#pop'),
+            (r'[%s]+' % _nl, Text),
+            include('follow')
+        ],
+        'for/f': [
+            (r'(")((?:%s|[^"])*?")([%s%s]*)(\))' % (_variable, _nl, _ws),
+             bygroups(String.Double, using(this, state='string'), Text,
+                      Punctuation)),
+            (r'"', String.Double, ('#pop', 'for2', 'string')),
+            (r"('(?:%s|[\w\W])*?')([%s%s]*)(\))" % (_variable, _nl, _ws),
+             bygroups(using(this, state='sqstring'), Text, Punctuation)),
+            (r'(`(?:%s|[\w\W])*?`)([%s%s]*)(\))' % (_variable, _nl, _ws),
+             bygroups(using(this, state='bqstring'), Text, Punctuation)),
+            include('for2')
+        ],
+        'for/l': [
+            (r'-?\d+', Number.Integer),
+            include('for2')
+        ],
+        'if': [
+            (r'((?:cmdextversion|errorlevel)%s)(%s)(\d+)' %
+             (_token_terminator, _space),
+             bygroups(Keyword, using(this, state='text'),
+                      Number.Integer), '#pop'),
+            (r'(defined%s)(%s)(%s)' % (_token_terminator, _space, _stoken),
+             bygroups(Keyword, using(this, state='text'),
+                      using(this, state='variable')), '#pop'),
+            (r'(exist%s)(%s%s)' % (_token_terminator, _space, _stoken),
+             bygroups(Keyword, using(this, state='text')), '#pop'),
+            (r'(%s%s?)(==)(%s?%s)' % (_stoken, _space, _space, _stoken),
+             bygroups(using(this, state='text'), Operator,
+                      using(this, state='text')), '#pop'),
+            (r'(%s%s)(%s)(%s%s)' % (_number, _space, _opword, _space, _number),
+             bygroups(using(this, state='arithmetic'), Operator.Word,
+                      using(this, state='arithmetic')), '#pop'),
+            (r'(%s%s)(%s)(%s%s)' % (_stoken, _space, _opword, _space, _stoken),
+             bygroups(using(this, state='text'), Operator.Word,
+                      using(this, state='text')), '#pop')
+        ],
+        '(?': [
+            (_space, using(this, state='text')),
+            (r'\(', Punctuation, ('#pop', 'else?', 'root/compound')),
+            default('#pop')
+        ],
+        'else?': [
+            (_space, using(this, state='text')),
+            (r'else%s' % _token_terminator, Keyword, '#pop'),
+            default('#pop')
+        ]
     }
 
 
