@@ -59,6 +59,7 @@ Other contributors, listed alphabetically, are:
 * Krzysiek Goj -- Scala lexer
 * Matt Good -- Genshi, Cheetah lexers
 * Michał Górny -- vim modeline support
+* Alex Gosse -- TrafficScript lexer
 * Patrick Gotthardt -- PHP namespaces support
 * Olivier Guibe -- Asymptote lexer
 * Jordi Gutiérrez Hermoso -- Octave lexer
@@ -124,6 +125,7 @@ Other contributors, listed alphabetically, are:
 * Jon Morton -- Rust lexer
 * Paulo Moura -- Logtalk lexer
 * Mher Movsisyan -- DTD lexer
+* Dejan Muhamedagic -- Crmsh lexer
 * Ana Nelson -- Ragel, ANTLR, R console lexers
 * Nam T. Nguyen -- Monokai style
 * Jesper Noehr -- HTML formatter "anchorlinenos"
