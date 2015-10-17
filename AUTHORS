@@ -183,6 +183,7 @@ Other contributors, listed alphabetically, are:
 * Matthias Vallentin -- Bro lexer
 * Linh Vu Hong -- RSL lexer
 * Nathan Weizenbaum -- Haml and Sass lexers
+* Nathan Whetsell -- CSound lexers
 * Dietmar Winkler -- Modelica lexer
 * Nils Winter -- Smalltalk lexer
 * Davy Wybiral -- Clojure lexer
