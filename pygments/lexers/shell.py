@@ -62,7 +62,7 @@ class BashLexer(RegexLexer):
              r'export|false|fc|fg|getopts|hash|help|history|jobs|kill|let|'
              r'local|logout|popd|printf|pushd|pwd|read|readonly|set|shift|'
              r'shopt|source|suspend|test|time|times|trap|true|type|typeset|'
-             r'ulimit|umask|unalias|unset|wait)\s*\b(?!\.)',
+             r'ulimit|umask|unalias|unset|wait)(?=[\s)`])',
              Name.Builtin),
             (r'\A#!.+\n', Comment.Hashbang),
             (r'#.*\n', Comment.Single),
