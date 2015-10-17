@@ -252,7 +252,6 @@ class ScalaLexer(RegexLexer):
         'root': [
             # method names
             (r'(class|trait|object)(\s+)', bygroups(Keyword, Text), 'class'),
-            (u"'%s" % idrest, Text.Symbol),
             (r'[^\S\n]+', Text),
             (r'//.*?\n', Comment.Single),
             (r'/\*', Comment.Multiline, 'comment'),
@@ -271,6 +270,7 @@ class ScalaLexer(RegexLexer):
             (r'""".*?"""(?!")', String),
             (r'"(\\\\|\\"|[^"])*"', String),
             (r"'\\.'|'[^\\]'|'\\u[0-9a-fA-F]{4}'", String.Char),
+            (u"'%s" % idrest, Text.Symbol),
             (r'[fs]"""', String, 'interptriplestring'),  # interpolated strings
             (r'[fs]"', String, 'interpstring'),  # interpolated strings
             (r'raw"(\\\\|\\"|[^"])*"', String),  # raw strings
