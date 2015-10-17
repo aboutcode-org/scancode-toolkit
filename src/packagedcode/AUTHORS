@@ -40,6 +40,7 @@ Other contributors, listed alphabetically, are:
 * Pete Curry -- bugfixes
 * Bryan Davis -- EBNF lexer
 * Bruno Deferrari -- Shen lexer
+* Giedrius Dubinskas -- HTML formatter improvements
 * Owen Durni -- Haxe lexer
 * Alexander Dutton, Oxford University Computing Services -- SPARQL lexer
 * James Edwards -- Terraform lexer
