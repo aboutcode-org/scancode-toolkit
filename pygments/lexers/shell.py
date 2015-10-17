@@ -12,9 +12,9 @@
 import re
 
 from pygments.lexer import Lexer, RegexLexer, do_insertions, bygroups, \
-     include, default, this, using, words
+    include, default, this, using, words
 from pygments.token import Punctuation, \
-     Text, Comment, Operator, Keyword, Name, String, Number, Generic
+    Text, Comment, Operator, Keyword, Name, String, Number, Generic
 from pygments.util import shebang_matches
 
 
@@ -22,7 +22,7 @@ __all__ = ['BashLexer', 'BashSessionLexer', 'TcshLexer', 'BatchLexer',
            'MSDOSSessionLexer', 'PowerShellLexer',
            'PowerShellSessionLexer', 'TcshSessionLexer', 'FishShellLexer']
 
-line_re  = re.compile('.*?\n')
+line_re = re.compile('.*?\n')
 
 
 class BashLexer(RegexLexer):
@@ -49,8 +49,8 @@ class BashLexer(RegexLexer):
             (r'\$\(\(', Keyword, 'math'),
             (r'\$\(', Keyword, 'paren'),
             (r'\$\{#?', String.Interpol, 'curly'),
-            (r'\$[a-fA-F_][a-fA-F0-9_]*', Name.Variable), # user variable
-            (r'\$(?:\d+|[#$?!_*@-])', Name.Variable), # builtin
+            (r'\$[a-fA-F_][a-fA-F0-9_]*', Name.Variable),  # user variable
+            (r'\$(?:\d+|[#$?!_*@-])', Name.Variable),      # builtin
             (r'\$', Text),
         ],
         'basic': [
@@ -578,6 +578,7 @@ class TcshLexer(RegexLexer):
         ],
     }
 
+
 class TcshSessionLexer(ShellSessionBaseLexer):
     """
     Lexer for Tcsh sessions.
@@ -603,7 +604,7 @@ class PowerShellLexer(RegexLexer):
     """
     name = 'PowerShell'
     aliases = ['powershell', 'posh', 'ps1', 'psm1']
-    filenames = ['*.ps1','*.psm1']
+    filenames = ['*.ps1', '*.psm1']
     mimetypes = ['text/x-powershell']
 
     flags = re.DOTALL | re.IGNORECASE | re.MULTILINE
@@ -692,6 +693,23 @@ class PowerShellLexer(RegexLexer):
     }
 
 
+class PowerShellSessionLexer(ShellSessionBaseLexer):
+    """
+    Lexer for simplistic Windows PowerShell sessions.
+
+    .. versionadded:: 2.1
+    """
+
+    name = 'PowerShell Session'
+    aliases = ['ps1con']
+    filenames = []
+    mimetypes = []
+
+    _innerLexerCls = PowerShellLexer
+    _ps1rgx = r'^(PS [^>]+> )(.*\n?)'
+    _ps2 = '>> '
+
+
 class FishShellLexer(RegexLexer):
     """
     Lexer for Fish shell scripts.
@@ -763,20 +781,3 @@ class FishShellLexer(RegexLexer):
             include('root'),
         ],
     }
-
-
-class PowerShellSessionLexer(ShellSessionBaseLexer):
-    """
-    Lexer for simplistic Windows PowerShell sessions.
-
-    .. versionadded:: 2.1
-    """
-
-    name = 'PowerShell Session'
-    aliases = ['ps1con']
-    filenames = []
-    mimetypes = []
-
-    _innerLexerCls = PowerShellLexer
-    _ps1rgx = r'^(PS [^>]+> )(.*\n?)'
-    _ps2 = '>> '
