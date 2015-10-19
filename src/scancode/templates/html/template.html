@@ -33,18 +33,18 @@
     <meta charset="utf-8">
     <title>ScanCode results</title>
     <style type="text/css">
-      .tb  {
+      table  {
         border-collapse:collapse;
         border: 1px solid gray;
         margin-bottom: 20px;
       }
-      .tb td{
+      td{
         padding: 5px 5px;
         border-style: solid;
         border-width: 1px;
         overflow: hidden;
       }
-      .tb th{
+      th{
         padding:10px 5px;
         border-style: solid;
         border-width: 1px;
@@ -64,7 +64,7 @@
     </style>
   </head>
   <body>
-    <table class="tb">
+    <table>
       <thead>
         <tr>
           <th>location</th>
@@ -94,7 +94,7 @@
     </table>
 
     {% if licenses %}
-    <table class="tb">
+    <table>
       <caption>Licenses</caption>
       <thead>
         <tr>
