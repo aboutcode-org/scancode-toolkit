@@ -2,6 +2,13 @@
 Changelog
 =========
 
+next
+------------------
+
+ * improved CSS for html format output: Thanks to Steven Esser
+   https://github.com/nexB/scancode-toolkit/issues/12
+
+
 1.3.1 (2015-07-27)
 ------------------
 
