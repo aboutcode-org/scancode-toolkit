@@ -990,7 +990,7 @@ class CeylonLexer(RegexLexer):
 
 class KotlinLexer(RegexLexer):
     """
-    For `Kotlin <http://kotlin.jetbrains.org/>`_
+    For `Kotlin <http://kotlinlang.org/>`_
     source code.
 
     .. versionadded:: 1.5
@@ -1025,15 +1025,17 @@ class KotlinLexer(RegexLexer):
             (r"[0-9](\.[0-9]*)?([eE][+-][0-9]+)?[flFL]?|"
              r"0[xX][0-9a-fA-F]+[Ll]?", Number),
             (r'(class)(\s+)(object)', bygroups(Keyword, Text, Keyword)),
-            (r'(class|trait|object)(\s+)', bygroups(Keyword, Text), 'class'),
+            (r'(class|interface|object)(\s+)', bygroups(Keyword, Text), 'class'),
             (r'(package|import)(\s+)', bygroups(Keyword, Text), 'package'),
             (r'(val|var)(\s+)', bygroups(Keyword, Text), 'property'),
             (r'(fun)(\s+)', bygroups(Keyword, Text), 'function'),
-            (r'(abstract|annotation|as|break|by|catch|class|continue|do|else|'
-             r'enum|false|final|finally|for|fun|get|if|import|in|inner|'
-             r'internal|is|null|object|open|out|override|package|private|'
-             r'protected|public|reified|return|set|super|this|throw|trait|'
-             r'true|try|type|val|var|vararg|when|where|while|This)\b', Keyword),
+            (r'(abstract|annotation|as|break|by|catch|class|companion|const|'
+             r'constructor|continue|crossinline|data|do|dynamic|else|enum|'
+             r'external|false|final|finally|for|fun|get|if|import|in|infix|'
+             r'inline|inner|interface|internal|is|lateinit|noinline|null|'
+             r'object|open|operator|out|override|package|private|protected|'
+             r'public|reified|return|sealed|set|super|tailrec|this|throw|'
+             r'true|try|val|var|vararg|when|where|while)\b', Keyword),
             (kt_id, Name),
         ],
         'package': [
