@@ -157,29 +157,50 @@
           licenseData = [];
           if('licenses' in x) {
            licenseData = $.map(x.licenses, function(y){
-                   return [$.extend(y, {
-                     "path" : x.location,
-                     "what": "License",
-                     "start_line": y.start_line,
-                     "end_line": y.end_line,
-                     "info": y.short_name
-                   })];
+               return [$.extend(y, {
+                 "path" : x.location,
+                 "what": "License",
+                 "start_line": y.start_line,
+                 "end_line": y.end_line,
+                 "info": y.short_name,
+                 "pkg_type": "",
+                 "pkg_packaging": "",
+                 "pkg_primary_language": ""
+               })];
           })};
           // Add all copyright columns here
           copyrightData = [];
           if('copyrights' in x) {
            copyrightData = $.map(x.copyrights, function(y){
-                   return [$.extend(y, {
-                     "path" : x.location,
-                     "what": "Copyright",
-                     "start_line": y.start_line,
-                     "end_line": y.end_line,
-                     "info": y.statements.join("</br>")
-                   })];
+               return [$.extend(y, {
+                 "path" : x.location,
+                 "what": "Copyright",
+                 "start_line": y.start_line,
+                 "end_line": y.end_line,
+                 "info": y.statements.join("</br>"),
+                 "pkg_type": "",
+                 "pkg_packaging": "",
+                 "pkg_primary_language": ""
+               })];
           })};
 
+          // Add all package columns here
+          packageData = [];
+          if('packages' in x) {
+           packageData = $.map(x.packages, function(y){
+               return [$.extend(y, {
+                 "path" : x.location,
+                 "what": "Package",
+                 "start_line": "",
+                 "end_line": "",
+                 "info": "",
+                 "pkg_type": y.type,
+                 "pkg_packaging": y.packaging,
+                 "pkg_primary_language": y.primary_language
+               })];
+          })};
           // Return the concatenation of the two data sets
-          return licenseData.concat(copyrightData);
+          return licenseData.concat(copyrightData).concat(packageData);
         })
       };
 
@@ -272,7 +293,10 @@
             { "title": "Start Line", "data": "start_line", "width": "50px"},
             { "title": "End Line", "data": "end_line", "width": "50px"},
             { "orderable": false, "data": null, 'defaultContent': '', "width":"1px"},
-            { "title": "Info", "data": "info", "width": "30%"}
+            { "title": "Info", "data": "info", "width": "30%"},
+            { "title": "Package Type", "data": "pkg_type", "width": "60px"},
+            { "title": "Packaging", "data": "pkg_packaging", "width": "60px"},
+            { "title": "Primary Language", "data": "pkg_primary_language", "width": "60px"}
           ],
           // This is called just before the row is rendered
           "rowCallback": function( row, data, index ) {
