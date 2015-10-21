@@ -130,7 +130,6 @@ def clean(root_dir):
                    develop-eggs eggs parts .installed.cfg
                    .Python
                    .cache
-                   .settings
                    pip-selfcheck.json
                    '''.split()
 
