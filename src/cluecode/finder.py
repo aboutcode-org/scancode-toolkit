@@ -128,10 +128,8 @@ def find_emails(location):
     """
     patterns = [('emails', emails_regex(),)]
     matches = find(location, patterns)
-    matches = apply_filters(matches,
-                            junk_email_domains_filter,
-                            unique_filter,
-                            )
+    email_filters = (junk_email_domains_filter, unique_filter,)
+    matches = apply_filters(matches, *email_filters)
     for _key, email, _line in matches:
         yield email
 
@@ -171,7 +169,6 @@ def urls_regex():
 
 INVALID_URLS_PATTERN = '(ht|f)tp[s]?://([$%*/_])+'
 
-
 def find_urls(location):
     """
     Yield urls found in file at location.
@@ -179,9 +176,7 @@ def find_urls(location):
     patterns = [('urls', urls_regex(),)]
     matches = find(location, patterns)
 
-    # the order of filters IS important
-    matches = apply_filters(
-        matches,
+    url_filters = (
         verbatim_crlf_url_cleaner,
         end_of_url_cleaner,
         empty_urls_filter,
@@ -193,6 +188,10 @@ def find_urls(location):
         junk_urls_filter,
         unique_filter,
     )
+
+
+    # the order of filters IS important
+    matches = apply_filters(matches, url_filters)
     for _key, url, _line in matches:
         yield unicode(url)
 
