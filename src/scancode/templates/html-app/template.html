@@ -66,6 +66,11 @@
         border: 1px solid #CCC;
         border-radius: 4px;
         }
+        .tree_scrolling{
+            overflow-x:scroll;
+            overflow-y:scroll;
+            height: 500px;
+        }
     </style>
 </head>
 <body>
@@ -91,7 +96,7 @@
     -->
     <div class="row">
     <div class="col-md-4" id="leftCol">
-      <div id="tree" style="overflow-x:scroll; overflow-y:auto;"></div>
+      <div id="tree" class="tree_scrolling"></div>
     </div>
 
     <div class="col-md-8">
