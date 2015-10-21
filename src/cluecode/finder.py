@@ -191,7 +191,7 @@ def find_urls(location):
 
 
     # the order of filters IS important
-    matches = apply_filters(matches, url_filters)
+    matches = apply_filters(matches, *url_filters)
     for _key, url, _line in matches:
         yield unicode(url)
 
