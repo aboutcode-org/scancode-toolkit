@@ -1245,14 +1245,21 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
+    @expectedFailure
     def test_copyright_java(self):
         test_file = self.get_test_loc('copyrights/copyright_java-java.java')
         expected = [
             u'Copyright (c) 1992-2002 by P.J. Plauger.',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file)
+
+    @expectedFailure
+    def test_copyright_java_passing(self):
+        test_file = self.get_test_loc('copyrights/copyright_java-java.java')
+        expected = [
+            u'Copyright (c) 1992-2002 by P.J.',
+        ]
+        check_detection(expected, test_file) 
 
     def test_copyright_jdoe(self):
         test_file = self.get_test_loc('copyrights/copyright_jdoe-copyright_c.c')
