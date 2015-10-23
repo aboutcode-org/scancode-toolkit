@@ -32,86 +32,125 @@ from commoncode.testcase import FileBasedTesting
 from cluecode import finder
 
 
+def find_emails_tester(lines_or_location, with_lineno=False, unique=True):
+    """
+    Helper function for testing emails with or without line numbers.
+    """
+    result = list(finder.find_emails(lines_or_location, unique))
+    if not with_lineno:
+        result = [val for val, _ln in result]
+    return result
+
+
 class TestEmail(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_emails_regex(self):
         test_file = self.get_test_loc('finder/email/3w-xxxx.c')
         test_input = open(test_file).read()
-        expected = [u'linux@3ware.com',
-                    u'linux@3ware.com',
-                    u'acme@conectiva.com.br',
-                    u'linux@3ware.com',
-                    u'andre@suse.com',
-                    u'andre@suse.com',
-                    u'linux@3ware.com']
+        expected = [
+            u'linux@3ware.com',
+            u'linux@3ware.com',
+            u'acme@conectiva.com.br',
+            u'linux@3ware.com',
+            u'andre@suse.com',
+            u'andre@suse.com',
+            u'linux@3ware.com'
+        ]
         result = re.findall(finder.emails_regex(), test_input)
         assert expected == result
 
-    def test_find_emails1(self):
+    def test_find_emails_in_c(self):
         test_file = self.get_test_loc('finder/email/3w-xxxx.c')
-        expected = ['linux@3ware.com',
-                    'acme@conectiva.com.br',
-                    'andre@suse.com']
-        result = list(finder.find_emails(test_file))
+        expected = [
+            'linux@3ware.com',
+            'acme@conectiva.com.br',
+            'andre@suse.com'
+        ]
+        result = find_emails_tester(test_file)
         assert expected == result
 
-    def test_find_emails2(self):
+    def test_find_emails_in_python1(self):
         test_file = self.get_test_loc('finder/email/jardiff.py')
-        expected = ['jp_py@demonseed.net', ]
-        result = list(finder.find_emails(test_file))
+        expected = ['jp_py@demonseed.net']
+        result = find_emails_tester(test_file)
         assert expected == result
 
-    def test_find_emails3(self):
+    def test_find_emails_in_python2(self):
         test_file = self.get_test_loc('finder/email/thomas.py')
         expected = ['amir@divmod.org']
-        result = list(finder.find_emails(test_file))
+        result = find_emails_tester(test_file)
         assert expected == result
 
-    def test_find_emails4(self):
-        bogus = ['gpt@40000a00',
-                'xml.@summary',
-                'xml.@detail',
-                'xml.@loggedIn.toXMLString',
-                'xml.@noPasswordExists',
-                'historyDataGrid.selectedItem.@serialNumber',
-                'constant.@name',
-                'constant.@type',
-                'dac.dacDataGrid.selectedItem.@dbUsername',
-                'dac.dacDataGrid.selectedItem.@hostName',
-                'dac.dacDataGrid.selectedItem.@name',
-                'dac.dacDataGrid.selectedItem.@description',
-                'dac.dacDataGrid.selectedItem.@dbPassword', ]
+    def test_find_emails_does_not_return_bogus_emails(self):
+        lines = [
+            'gpt@40000a00',
+            'xml.@summary',
+            'xml.@detail',
+            'xml.@loggedIn.toXMLString',
+            'xml.@noPasswordExists',
+            'historyDataGrid.selectedItem.@serialNumber',
+            'constant.@name',
+            'constant.@type',
+            'dac.dacDataGrid.selectedItem.@dbUsername',
+            'dac.dacDataGrid.selectedItem.@hostName',
+            'dac.dacDataGrid.selectedItem.@name',
+            'dac.dacDataGrid.selectedItem.@description',
+            'dac.dacDataGrid.selectedItem.@dbPassword',
+        ]
         expected = []
-        result = list(finder.find_emails(bogus))
+        result = find_emails_tester(lines)
         assert expected == result
 
-    def test_find_emails5(self):
-        bogus = ['navigation-logo@2x.png', ]
+    def test_find_emails_does_not_return_png(self):
+        lines = ['navigation-logo@2x.png']
         expected = []
-        result = list(finder.find_emails(bogus))
+        result = find_emails_tester(lines)
         assert expected == result
 
-    def test_find_emails6(self):
-        bogus = ['user@...', 'thomas@...', '*@example.com', 'user@localhost']
+    def test_find_emails_does_not_return_incomplete_emails_or_example_emails(self):
+        lines = ['user@...', 'thomas@...', '*@example.com', 'user@localhost']
         expected = []
-        result = list(finder.find_emails(bogus))
+        result = find_emails_tester(lines)
         assert expected == result
 
-    def test_find_emails8(self):
-        test_file = self.get_test_loc('finder/email/jardiff.py')
-        expected = [u'jp_py@demonseed.net', ]
-        result = list(finder.find_emails(test_file))
+    def test_find_emails_filters_unique_by_default(self):
+        lines = ['user@me.com', 'user@me.com']
+        expected = ['user@me.com']
+        result = find_emails_tester(lines)
         assert expected == result
+
+    def test_find_emails_does_not_filter_unique_if_requested(self):
+        lines = ['user@me.com', 'user@me.com']
+        expected = ['user@me.com', 'user@me.com']
+        result = find_emails_tester(lines, unique=False)
+        assert expected == result
+
+    def test_find_emails_does_return_line_number(self):
+        lines = ['user@me.com', 'user2@me.com']
+        expected = [('user@me.com', 1), ('user2@me.com', 2)]
+        result = find_emails_tester(lines, with_lineno=True)
+        assert expected == result
+
+
+def find_urls_tester(lines_or_location, with_lineno=False, unique=True):
+    """
+    Helper function for testing URLs with or without line numbers.
+    """
+    result = list(finder.find_urls(lines_or_location, unique))
+    if not with_lineno:
+        result = [val for val, _ln in result]
+    return result
+
 
 class TestUrl(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_urls_regex_without_http(self):
-        test = re.match(finder.urls_regex(),
+        result = re.match(finder.urls_regex(),
                         u'www.something.domain.tld').group()
         expected = u'www.something.domain.tld'
-        self.assertEqual(expected, test)
+        assert expected == result
 
     def test_urls_regex(self):
         test_file = self.get_test_loc('finder/url/BeautifulSoup.py')
@@ -142,7 +181,7 @@ class TestUrl(FileBasedTesting):
         for test, expected in data:
             assert expected == finder.canonical_url(test)
 
-    def test_find_urls(self):
+    def test_find_urls_returns_unique(self):
         lines = [
             r"http://alaphalinu.org').",
             r'http://alaphalinu.org/bridge.',
@@ -182,10 +221,10 @@ class TestUrl(FileBasedTesting):
             u'http://kernelnewbies.org/',
             u'http://alaphalinu.org/somedir/',
         ]
-        result = list(finder.find_urls(lines))
+        result = find_urls_tester(lines)
         assert expected == result
 
-    def test_find_urls2(self):
+    def test_find_urls_does_not_return_local_urls(self):
         lines = [
             'http://localhost',
             'http://localhost/',
@@ -198,7 +237,7 @@ class TestUrl(FileBasedTesting):
             'http://127.0.0.1/page.htm',
         ]
         expected = []
-        result = list(finder.find_urls(lines))
+        result = find_urls_tester(lines)
         assert expected == result
 
     def test_find_urls_does_not_return_local_ip(self):
@@ -221,7 +260,7 @@ class TestUrl(FileBasedTesting):
             'http://172.32.120.155'
         ]
         expected = [u'http://172.32.120.155/']
-        result = list(finder.find_urls(lines))
+        result = find_urls_tester(lines)
         assert expected == result
 
     def test_is_good_host(self):
@@ -233,9 +272,15 @@ class TestUrl(FileBasedTesting):
         assert expected == result
 
     def test_find_urls_filters_bogus_url(self):
-        url_text = [u'http://__________________']
+        lines = [u'http://__________________']
         expected = []
-        result = list(finder.find_urls(url_text))
+        result = find_urls_tester(lines)
+        assert expected == result
+
+    def test_find_urls_with_square_brackets_from_trac_wiki_html(self):
+        lines = ['title="Link: [http://www.somedo.com/ Example]"']
+        expected = ['http://www.somedo.com/']
+        result = find_urls_tester(lines)
         assert expected == result
 
     def test_find_urls_in_pom(self):
@@ -270,11 +315,11 @@ class TestUrl(FileBasedTesting):
             u'https://svn.sourceforge.net/svnroot/jtidy/trunk/jtidy/',
             u'https://svn.sourceforge.net/svn/jtidy/trunk/jtidy/',
         ]
-        result = list(finder.find_urls(lines))
+        result = find_urls_tester(lines)
         assert expected == result
 
-    def test_find_urls_in_file_in_markup_in_code(self):
-        testfile = self.get_test_loc('finder/url/markup_in_code.c')
+    def test_find_urls_in_file_with_markup_in_code(self):
+        test_file = self.get_test_loc('finder/url/markup_in_code.c')
         expected = [
             u'http://xml.libexpat.org/dummy.ent',
             u'http://xml.libexpat.org/e',
@@ -285,23 +330,23 @@ class TestUrl(FileBasedTesting):
             u'http://xml.libexpat.org/entity.ent',
             u'http://xml.libexpat.org/ns1'
         ]
-        result = list(finder.find_urls(testfile))
+        result = find_urls_tester(test_file)
         assert expected == result
 
-    def test_find_urls_does_not_return_duplicate_urls(self):
-        testfile = self.get_test_loc('finder/url/nodupe.htm')
+    def test_find_urls_does_not_return_duplicate_urls_by_default(self):
+        test_file = self.get_test_loc('finder/url/nodupe.htm')
         expected = [
             u'http://nexb.com/',
             u'http://trac.edgewall.org/',
             u'http://www.edgewall.org/',
         ]
-        result = list(finder.find_urls(testfile))
+        result = find_urls_tester(test_file)
         assert expected == result
 
-    def test_find_urls_no_junk_urls(self):
-        testfile = self.get_test_loc('finder/url/junk_urls.c')
+    def test_find_urls__does_not_return_junk_urls(self):
+        test_file = self.get_test_loc('finder/url/junk_urls.c')
         expected = []
-        result = list(finder.find_urls(testfile))
+        result = find_urls_tester(test_file)
         assert expected == result
 
     def test_find_urls_detects_urls_correcty_in_html(self):
@@ -358,7 +403,7 @@ class TestUrl(FileBasedTesting):
             u'http://trac.edgewall.org/',
             u'http://www.edgewall.org/'
         ]
-        result = list(finder.find_urls(test_file))
+        result = find_urls_tester(test_file)
         assert expected == result
 
     def test_find_urls_without_scheme_in_lines(self):
@@ -372,22 +417,22 @@ class TestUrl(FileBasedTesting):
             u'http://docs.python.org/dist/dist.html',
             u'http://www.programming-with-objects.com/',
         ]
-        result = list(finder.find_urls(lines))
+        result = find_urls_tester(lines)
         assert expected == result
 
     def test_find_urls_without_scheme_in_python(self):
-        testfile = self.get_test_loc('finder/url/no-scheme.py')
+        test_file = self.get_test_loc('finder/url/no-scheme.py')
         expected = [
             u'http://rvl4.ecn.purdue.edu/~kak/dist/BitVector-1.5.1.html',
             u'http://docs.python.org/dist/dist.html',
             u'http://www.programming-with-objects.com/',
         ]
-        result = list(finder.find_urls(testfile))
+        result = find_urls_tester(test_file)
         assert expected == result
 
     def test_find_urls_filters_invalid_urls(self):
-        testfile = self.get_test_loc('finder/url/truncated_url')
-        result = list(finder.find_urls(testfile))
+        test_file = self.get_test_loc('finder/url/truncated_url')
+        result = find_urls_tester(test_file)
         expected = []
         assert expected == result
 
@@ -399,7 +444,7 @@ class TestUrl(FileBasedTesting):
             u'http://pypi.python.org/packages/source/P/Pygments/Pygments-0.11.1.tar.gz#md5=a7dc555f316437ba5241855ac306209a',
             u'http://pypi.python.org/packages/2.4/P/Pygments/Pygments-0.11.1-py2.4.egg#md5=52d7a46a91a4a426f8fbc681c5c6f1f5',
         ]
-        result = list(finder.find_urls(test_file))
+        result = find_urls_tester(test_file)
         assert expected == result
 
     def test_find_urls_in_python(self):
@@ -410,37 +455,76 @@ class TestUrl(FileBasedTesting):
             u'http://cjkpython.i18n.org/',
             u'http://www.crummy.com/software/BeautifulSoup/documentation.html',
         ]
-        result = list(finder.find_urls(test_file))
+        result = find_urls_tester(test_file)
         assert expected == result
 
     def test_find_urls_in_java(self):
         test_file = self.get_test_loc('finder/url/IMarkerActionFilter.java')
-        expected = [u'http://www.eclipse.org/legal/epl-v10.html', ]
-        result = list(finder.find_urls(test_file))
+        expected = [u'http://www.eclipse.org/legal/epl-v10.html']
+        result = find_urls_tester(test_file)
+        assert expected == result
+
+    def test_find_urls_filters_unique_by_default(self):
+        lines = ['http://www.me.com', 'http://www.me.com']
+        expected = ['http://www.me.com/']
+        result = find_urls_tester(lines)
+        assert expected == result
+
+    def test_find_urls_does_not_filter_unique_if_requested(self):
+        lines = ['http://www.me.com', 'http://www.me.com']
+        expected = ['http://www.me.com/', 'http://www.me.com/']
+        result = find_urls_tester(lines, unique=False)
+        assert expected == result
+
+    def test_find_urls_does_return_line_number(self):
+        lines = ['http://www.me.com', 'http://www.me2.com']
+        expected = [('http://www.me.com/', 1), ('http://www.me2.com/', 2)]
+        result = find_urls_tester(lines, with_lineno=True)
+        assert expected == result
+
+    def test_find_urls_finds_git_urls(self):
+        lines = ['git@github.com:christophercantu/pipeline.git',]
+        expected = ['git@github.com:christophercantu/pipeline.git']
+        result = find_urls_tester(lines)
         assert expected == result
 
 
 class TestSearch(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_search(self):
-        test_folder = self.get_test_loc('finder/search', copy=True)
+    def test_search_is_non_unique_by_default(self):
+        test_dir = self.get_test_loc('finder/search', copy=True)
         pattern = 'Copyright'
-        tests = [(u'addr.c', [u'Copyright', u'Copyright']),
-                (u'CommandLine.java', [u'Copyright', u'Copyright']),
-                (u'CustomFileFilter.java', [u'Copyright', u'Copyright']),
-                (u'diskio.c', [u'copyright', u'copyright',
-                               u'copyright', u'Copyright']),
-                (u'getopt_long.c', [u'Copyright']),
+        tests = [
+            (u'addr.c', [u'Copyright', u'Copyright']),
+            (u'CommandLine.java', [u'Copyright', u'Copyright']),
+            (u'CustomFileFilter.java', [u'Copyright', u'Copyright']),
+            (u'diskio.c', [u'copyright', u'copyright', u'copyright', u'Copyright']),
+            (u'getopt_long.c', [u'Copyright']),
         ]
         for test_file, expected in tests:
-            location = os.path.join(test_folder, test_file)
-            result = list(finder.find_pattern(location, pattern))
+            location = os.path.join(test_dir, test_file)
+            result = list(s for s, _ln in finder.find_pattern(location, pattern))
             assert expected == result
 
-    def test_search_in_binaries(self):
+    def test_search_unique(self):
+        test_dir = self.get_test_loc('finder/search', copy=True)
+        pattern = 'Copyright'
+        tests = [
+            (u'addr.c', [u'Copyright']),
+            (u'CommandLine.java', [u'Copyright']),
+            (u'CustomFileFilter.java', [u'Copyright', ]),
+            (u'diskio.c', [u'copyright', u'Copyright']),
+            (u'getopt_long.c', [u'Copyright']),
+        ]
+        for test_file, expected in tests:
+            location = os.path.join(test_dir, test_file)
+            result = list(s for s, _ln in finder.find_pattern(location, pattern, unique=True))
+            assert expected == result
+
+    def test_search_in_binaries_with_line(self):
         test_file = self.get_test_loc('finder/binaries/gapi32.dll')
         pattern = r'This program ([\(\w\)\.\- ]+)'
-        expected = ['cannot be run in DOS mode.']
+        expected = [('cannot be run in DOS mode.', 1)]
         result = list(finder.find_pattern(test_file, pattern))
         assert expected == result
