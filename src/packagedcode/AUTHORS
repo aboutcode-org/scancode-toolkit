@@ -7,12 +7,13 @@ Other contributors, listed alphabetically, are:
 
 * Sam Aaron -- Ioke lexer
 * Ali Afshar -- image formatter
-* Thomas Aglassinger -- Rexx lexer
+* Thomas Aglassinger -- Easytrieve, JCL and Rexx lexers
 * Kumar Appaiah -- Debian control lexer
 * Andreas Amann -- AppleScript lexer
 * Timothy Armstrong -- Dart lexer fixes
 * Jeffrey Arnold -- R/S, Rd, BUGS, Jags, and Stan lexers
 * Jeremy Ashkenas -- CoffeeScript lexer
+* José Joaquín Atria -- Praat lexer
 * Stefan Matthias Aust -- Smalltalk lexer
 * Lucas Bajolet -- Nit lexer
 * Ben Bangert -- Mako lexers
@@ -23,6 +24,8 @@ Other contributors, listed alphabetically, are:
 * Michael Bayer -- Myghty lexers
 * Thomas Beale -- Archetype lexers
 * John Benediktsson -- Factor lexer
+* Trevor Bergeron -- mIRC formatter
+* Vincent Bernat -- LessCSS lexer
 * Christopher Bertels -- Fancy lexer
 * Jarrett Billingsley -- MiniD lexer
 * Adam Blinkinsop -- Haskell, Redcode lexers
@@ -36,11 +39,15 @@ Other contributors, listed alphabetically, are:
 * Daniël W. Crompton - Pike lexer
 * Pete Curry -- bugfixes
 * Bryan Davis -- EBNF lexer
+* Bruno Deferrari -- Shen lexer
+* Giedrius Dubinskas -- HTML formatter improvements
 * Owen Durni -- Haxe lexer
 * Alexander Dutton, Oxford University Computing Services -- SPARQL lexer
+* James Edwards -- Terraform lexer
 * Nick Efford -- Python 3 lexer
 * Sven Efftinge -- Xtend lexer
 * Artem Egorkine -- terminal256 formatter
+* Michael Ficarra -- CPSA lexer
 * James H. Fisher -- PostScript lexer
 * William S. Fulton -- SWIG lexer
 * Carlos Galdino -- Elixir and Elixir Console lexers
@@ -55,14 +62,18 @@ Other contributors, listed alphabetically, are:
 * Krzysiek Goj -- Scala lexer
 * Matt Good -- Genshi, Cheetah lexers
 * Michał Górny -- vim modeline support
+* Alex Gosse -- TrafficScript lexer
 * Patrick Gotthardt -- PHP namespaces support
 * Olivier Guibe -- Asymptote lexer
 * Jordi Gutiérrez Hermoso -- Octave lexer
+* Florian Hahn -- Boogie lexer
 * Martin Harriman -- SNOBOL lexer
 * Matthew Harrison -- SVG formatter
 * Steven Hazel -- Tcl lexer
+* Dan Michael Heggø -- Turtle lexer
 * Aslak Hellesøy -- Gherkin lexer
 * Greg Hendershott -- Racket lexer
+* Justin Hendrick -- ParaSail lexer
 * David Hess, Fish Software, Inc. -- Objective-J lexer
 * Varun Hiremath -- Debian control lexer
 * Rob Hoelz -- Perl 6 lexer
@@ -73,6 +84,7 @@ Other contributors, listed alphabetically, are:
 * Alastair Houghton -- Lexer inheritance facility
 * Tim Howard -- BlitzMax lexer
 * Ivan Inozemtsev -- Fantom lexer
+* Hiroaki Itoh -- Shell console rewrite
 * Brian R. Jackson -- Tea lexer
 * Christian Jann -- ShellSession lexer
 * Dennis Kaarsemaker -- sources.list lexer
@@ -93,10 +105,12 @@ Other contributors, listed alphabetically, are:
 * Gerd Kurzbach -- Modelica lexer
 * Jon Larimer, Google Inc. -- Smali lexer
 * Olov Lassus -- Dart lexer
+* Matt Layman -- TAP lexer
 * Sylvestre Ledru -- Scilab lexer
 * Mark Lee -- Vala lexer
 * Ben Mabey -- Gherkin lexer
 * Angus MacArthur -- QML lexer
+* Louis Mandel -- X10 lexer
 * Louis Marchand -- Eiffel lexer
 * Simone Margaritelli -- Hybris lexer
 * Kirk McDonald -- D lexer
@@ -114,6 +128,7 @@ Other contributors, listed alphabetically, are:
 * Jon Morton -- Rust lexer
 * Paulo Moura -- Logtalk lexer
 * Mher Movsisyan -- DTD lexer
+* Dejan Muhamedagic -- Crmsh lexer
 * Ana Nelson -- Ragel, ANTLR, R console lexers
 * Nam T. Nguyen -- Monokai style
 * Jesper Noehr -- HTML formatter "anchorlinenos"
@@ -153,6 +168,8 @@ Other contributors, listed alphabetically, are:
 * Jerome St-Louis -- eC lexer
 * James Strachan -- Kotlin lexer
 * Tom Stuart -- Treetop lexer
+* Colin Sullivan -- SuperCollider lexer
+* Edoardo Tenani -- Arduino lexer
 * Tiberius Teng -- default style overhaul
 * Jeremy Thurgood -- Erlang, Squid config lexers
 * Brian Tiffin -- OpenCOBOL lexer
@@ -167,6 +184,7 @@ Other contributors, listed alphabetically, are:
 * Matthias Vallentin -- Bro lexer
 * Linh Vu Hong -- RSL lexer
 * Nathan Weizenbaum -- Haml and Sass lexers
+* Nathan Whetsell -- CSound lexers
 * Dietmar Winkler -- Modelica lexer
 * Nils Winter -- Smalltalk lexer
 * Davy Wybiral -- Clojure lexer
@@ -174,5 +192,6 @@ Other contributors, listed alphabetically, are:
 * Enrique Zamudio -- Ceylon lexer
 * Alex Zimin -- Nemerle lexer
 * Rob Zimmerman -- Kal lexer
+* Vincent Zurczak -- Roboconf lexer
 
 Many thanks for all contributions!
