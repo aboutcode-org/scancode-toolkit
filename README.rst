@@ -28,7 +28,7 @@ repository, tickets and pull requests can be viewed.
 Continuous testing runs on drone.io:
 
 .. image:: https://drone.io/bitbucket.org/birkenfeld/pygments-main/status.png
-   :target: https://drone.io/bitbucket.org/birkenfeld/pygments-main/
+   :target: https://drone.io/bitbucket.org/birkenfeld/pygments-main
 
 The authors
 -----------
