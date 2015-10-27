@@ -177,7 +177,7 @@ def uninteresting_emails_filter(matches):
 # TODO: consider: http://blog.codinghorror.com/the-problem-with-urls/
 
 
-schemes = 'https?|ftps?|sftp|rsync|ssh|svn|git|hg'
+schemes = 'https?|ftps?|sftp|rsync|ssh|svn|git|hg|https?\+git|https?\+svn|https?\+hg'
 url_body = '[^\s<>\[\]"]'
 
 def urls_regex():
