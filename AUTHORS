@@ -50,6 +50,7 @@ Other contributors, listed alphabetically, are:
 * Nick Efford -- Python 3 lexer
 * Sven Efftinge -- Xtend lexer
 * Artem Egorkine -- terminal256 formatter
+* Matthew Fernandez -- CAmkES lexer
 * Michael Ficarra -- CPSA lexer
 * James H. Fisher -- PostScript lexer
 * William S. Fulton -- SWIG lexer
