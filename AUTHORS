@@ -8,6 +8,7 @@ Other contributors, listed alphabetically, are:
 * Sam Aaron -- Ioke lexer
 * Ali Afshar -- image formatter
 * Thomas Aglassinger -- Easytrieve, JCL and Rexx lexers
+* Muthiah Annamalai -- Ezhil lexer
 * Kumar Appaiah -- Debian control lexer
 * Andreas Amann -- AppleScript lexer
 * Timothy Armstrong -- Dart lexer fixes
