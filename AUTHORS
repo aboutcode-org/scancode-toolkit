@@ -94,6 +94,7 @@ Other contributors, listed alphabetically, are:
 * Olov Lassus -- Dart lexer
 * Sylvestre Ledru -- Scilab lexer
 * Mark Lee -- Vala lexer
+* Valentin Lorentz -- C++ lexer improvements
 * Ben Mabey -- Gherkin lexer
 * Angus MacArthur -- QML lexer
 * Louis Marchand -- Eiffel lexer
