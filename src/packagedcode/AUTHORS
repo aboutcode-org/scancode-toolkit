@@ -88,7 +88,7 @@ Other contributors, listed alphabetically, are:
 * Tim Howard -- BlitzMax lexer
 * Dustin Howett -- Logos lexer
 * Ivan Inozemtsev -- Fantom lexer
-* Hiroaki Itoh -- Shell console rewrite
+* Hiroaki Itoh -- Shell console rewrite, BC Lexer
 * Brian R. Jackson -- Tea lexer
 * Christian Jann -- ShellSession lexer
 * Dennis Kaarsemaker -- sources.list lexer
