@@ -123,7 +123,7 @@ System Requirements
 -------------------
 
 **Hardware** : 
-ScanCode will run best with a modern X86 processor and at least 2GB or Ram and 250MB of disk.
+ScanCode will run best with a modern X86 processor and at least 2GB of RAM and 250MB of disk.
 
 **Supported operating systems** : ScanCode should run on these OSes:
 
