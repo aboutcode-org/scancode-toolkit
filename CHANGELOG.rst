@@ -4,6 +4,8 @@ Changelog
 
 next
 ------------------
+ * Separated JSON data into a separate file for the html app.
+   https://github.com/nexB/scancode-toolkit/issues/38
  * Added support for scanning package and file information.
  * Added file and package information to the html-app output.
    https://github.com/nexB/scancode-toolkit/issues/76
