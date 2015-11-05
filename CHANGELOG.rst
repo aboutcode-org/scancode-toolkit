@@ -4,7 +4,9 @@ Changelog
 
 next
 ------------------
-
+ * Added support for scanning package and file information.
+ * Added file and package information to the html-app output.
+   https://github.com/nexB/scancode-toolkit/issues/76
  * improved CSS for html format output: Thanks to Steven Esser
    https://github.com/nexB/scancode-toolkit/issues/12
 
