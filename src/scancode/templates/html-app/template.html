@@ -33,7 +33,7 @@
     <link href="{{ assets_dir }}/style.min.css" rel="stylesheet"/>
     <link href="{{ assets_dir }}/bootstrap.min.css" rel="stylesheet"/>
     <link href="{{ assets_dir }}/jquery.dataTables.min.css" rel="stylesheet"/>
-    <style>
+        <style>
         footer {
             text-align: center;
             border-top: 1px solid #e5e5e5;
@@ -62,7 +62,7 @@
           text-overflow: ellipsis;
           white-space: nowrap;
         }
-        #data_table, #tree {
+        .data_table, #tree {
         border: 1px solid #CCC;
         border-radius: 4px;
         }
@@ -74,7 +74,7 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-            <span class="navbar-brand icon-primary"><a href="https://github.com/nexB/scancode-toolkit/">ScanCode</a> scan results for: {{ scanned_path }}</span>
+            <span class="navbar-brand icon-primary"><a href="https://github.com/nexB/scancode-toolkit/">ScanCode</a> scan results for: scancode-toolkit2/scancode-toolkit/samples/</span>
         </div>
           <ul class="nav navbar-nav navbar-right">
            <li><a href="http://www.nexb.com">Made by nexB</a></li>
@@ -95,9 +95,14 @@
     </div>
 
     <div class="col-md-8">
-      <div id="selected"></div>
-      <table id="data_table" class="display table-wrap" cellspacing="0" width="100%">
-      </table>
+      <ul class="nav nav-tabs">
+        <li id="tab1" class="active"><a data-toggle="tab" href="#">License & Copyright Information</a></li>
+        <li id="tab2"><a data-toggle="tab" href="#">File Information</a></li>
+        <li id="tab3"><a data-toggle="tab" href="#">Package Information</a></li>
+      </ul>
+
+        <table id="data_table" class="data_table display table-wrap" cellspacing="0" width="100%">
+        </table>
     </div>
   </div>
 </div>
@@ -111,6 +116,7 @@
     </div>
 </footer>
   <script src="{{ assets_dir }}/jquery.min.js"></script>
+  <script src="{{ assets_dir }}/bootstrap.min.js"></script>
   <script src="{{ assets_dir }}/jstree.min.js"></script>
   <script src="{{ assets_dir }}/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="{{ assets_dir }}/data.json"></script>
@@ -134,8 +140,48 @@
           var dataArray = data;
           var jsTreeData = toJSTreeFormat(dataArray);
           var dtData = toDataTableFormat(dataArray);
+          var dtData2 = toDataTableFormat2(dataArray);
+          var dtData3 = toDataTableFormat3(dataArray);
           renderTree(jsTreeData.reverse());
           renderTable(dtData);
+
+          $( "#tab1" ).click(function() {
+            table = $('#data_table').DataTable();
+            table.clear();
+            table.columns( '.tab1' ).visible( true );
+            table.columns( '.tab2' ).visible( false );
+            table.columns( '.tab3' ).visible( false );
+            table.rows.add(dtData);
+            table.draw();
+          });
+          $( "#tab2" ).click(function() {
+            table = $('#data_table').DataTable();
+            table.clear();
+            table.columns( '.tab1' ).visible( false );
+            table.columns( '.tab2' ).visible( true );
+            table.columns( '.tab3' ).visible( false );
+            table.rows.add(dtData2);
+            table.draw();
+          });
+          $( "#tab3" ).click(function() {
+            table = $('#data_table').DataTable();
+            table.clear();
+            table.columns( '.tab1' ).visible( false );
+            table.columns( '.tab2' ).visible( false );
+            table.columns( '.tab3' ).visible( true );
+            table.rows.add(dtData3);
+            table.draw();
+          });
+
+          // TODO: Optimize way to get table to redraw with correct widths
+          table = $('#data_table').DataTable();
+          table.columns( '.tab1' ).visible( false );
+          table.columns( '.tab2' ).visible( false );
+          table.columns( '.tab3' ).visible( false );
+          table.clear();
+          table.columns( '.tab1' ).visible( true );
+          table.rows.add(dtData);
+          table.draw();
       });
 
       // Returns a row in the format expected by jstree
@@ -150,7 +196,7 @@
         };
       };
 
-      // Return data in table format
+      // Return license and copyright data in table format
       toDataTableFormat = function(jsonData){
         return $.map(jsonData, function(x){
           // Add all license columns here
@@ -162,7 +208,27 @@
                      "what": "License",
                      "start_line": y.start_line,
                      "end_line": y.end_line,
-                     "info": y.short_name
+                     "info": y.short_name,
+                     "type" : "",
+                     "name" : "",
+                     "extension": "",
+                     "date" : "",
+                     "size" : "",
+                     "sha1" : "",
+                     "md5" : "",
+                     "files_count" : "",
+                     "mime_type" : "",
+                     "file_type" : "",
+                     "programming_language" : "",
+                     "is_binary" : "",
+                     "is_text" : "",
+                     "is_archive" : "",
+                     "is_media" : "",
+                     "is_source" : "",
+                     "is_script" : "",
+                     "pkg_type" : "",
+                     "pkg_packaging" : "",
+                     "pkg_primary_language" : ""
                    })];
           })};
           // Add all copyright columns here
@@ -174,12 +240,112 @@
                      "what": "Copyright",
                      "start_line": y.start_line,
                      "end_line": y.end_line,
-                     "info": y.statements.join("</br>")
+                     "info": y.statements.join("</br>"),
+                     "type" : "",
+                     "name" : "",
+                     "extension": "",
+                     "date" : "",
+                     "size" : "",
+                     "sha1" : "",
+                     "md5" : "",
+                     "files_count" : "",
+                     "mime_type" : "",
+                     "file_type" : "",
+                     "programming_language" : "",
+                     "is_binary" : "",
+                     "is_text" : "",
+                     "is_archive" : "",
+                     "is_media" : "",
+                     "is_source" : "",
+                     "is_script" : "",
+                     "pkg_type" : "",
+                     "pkg_packaging" : "",
+                     "pkg_primary_language" : ""
                    })];
           })};
 
           // Return the concatenation of the two data sets
           return licenseData.concat(copyrightData);
+        })
+      };
+
+      // Return file information data in table format
+      toDataTableFormat2 = function(jsonData){
+        return $.map(jsonData, function(x){
+          fileInfoData = [];
+          if('infos' in x) {
+           fileInfoData = $.map(x.infos, function(y){
+                   return [$.extend(y, {
+                     "path" : x.location,
+                     "what": "File Info",
+                     "start_line": "",
+                     "end_line": "",
+                     "info": "",
+                     "type" : y.type,
+                     "name" : y.name,
+                     "extension": y.extension,
+                     "date" : y.date,
+                     "size" : y.size,
+                     "sha1" : y.sha1,
+                     "md5" : y.md5,
+                     "files_count" : y.files_count,
+                     "mime_type" : y.mime_type,
+                     "file_type" : y.file_type,
+                     "programming_language" : y.programming_language,
+                     "is_binary" : y.is_binary,
+                     "is_text" : y.is_text,
+                     "is_archive" : y.is_archive,
+                     "is_media" : y.is_media,
+                     "is_source" : y.is_source,
+                     "is_script" : y.is_script,
+                     "pkg_type" : "",
+                     "pkg_packaging" : "",
+                     "pkg_primary_language" : ""
+                   })];
+          })};
+
+          // Return the concatenation of the two data sets
+          return fileInfoData;
+        })
+      };
+
+      // Return file information data in table format
+      toDataTableFormat3 = function(jsonData){
+        return $.map(jsonData, function(x){
+          packageInfoData = [];
+          if('packages' in x) {
+           packageInfoData = $.map(x.packages, function(y){
+                   return [$.extend(y, {
+                     "path" : x.location,
+                     "what": "Packages",
+                     "start_line": "",
+                     "end_line": "",
+                     "info": "",
+                     "type" : "",
+                     "name" : "",
+                     "extension": "",
+                     "date" : "",
+                     "size" : "",
+                     "sha1" : "",
+                     "md5" : "",
+                     "files_count" : "",
+                     "mime_type" : "",
+                     "file_type" : "",
+                     "programming_language" : "",
+                     "is_binary" : "",
+                     "is_text" : "",
+                     "is_archive" : "",
+                     "is_media" : "",
+                     "is_source" : "",
+                     "is_script" : "",
+                     "pkg_type" : y.type,
+                     "pkg_packaging" : y.packaging,
+                     "pkg_primary_language" : y.primary_language
+                   })];
+          })};
+
+          // Return the concatenation of the two data sets
+          return packageInfoData;
         })
       };
 
@@ -249,6 +415,7 @@
         })
           .on("select_node.jstree", function(e, data) {
           // Redraw data table (forces custom filter to rerun)
+          // TODO: Figure out the tab and only update that table instead of all
           table = $('#data_table').DataTable();
           table.draw();
         })
@@ -260,19 +427,41 @@
         });
       };
 
-      // Render the DataTable by specifying data
+      // Render the DataTable by specifying Copyright and License
       renderTable = function(data) {
-        return $('#data_table').dataTable( {
+        return $('#data_table').DataTable( {
+          "scrollX": true,
+          "autoWidth": true,
           // data is in format: [[col1, col2], [col1, col2], ...]
           "data": data,
           "order": [[0, 'asc'], [2, 'asc'], [3, 'asc']],
           "columns": [
-            { "title": "Path", "data": "path", "width": "30%"},
-            { "title": "What", "data": "what", "width": "50px"},
-            { "title": "Start Line", "data": "start_line", "width": "50px"},
-            { "title": "End Line", "data": "end_line", "width": "50px"},
-            { "orderable": false, "data": null, 'defaultContent': '', "width":"1px"},
-            { "title": "Info", "data": "info", "width": "30%"}
+            { "title": "Path", "data": "path"},
+            { "class": "tab1", "title": "What", "data": "what", width:"50px"},
+            { "class": "tab1", "title": "Start Line", "data": "start_line", width:"50px"},
+            { "class": "tab1",  "title": "End Line", "data": "end_line", width:"50px"},
+            { "class": "tab1",  "orderable": false, "data": null, 'defaultContent': '', "width":"1px"},
+            { "class": "tab1",  "title": "Info", "data": "info"},
+            { "class": "tab2",  "title": "Type", "data": "type", width:"50px"},
+            { "class": "tab2",  "title": "Name", "data": "name"},
+            { "class": "tab2",  "title": "Extension", "data": "extension", width:"50px"},
+            { "class": "tab2",  "title": "Date", "data": "date", width:"50px"},
+            { "class": "tab2",  "title": "Size", "data": "size", width:"50px"},
+            { "class": "tab2",  "title": "sha1", "data": "sha1"},
+            { "class": "tab2",  "title": "md5", "data": "md5"},
+            { "class": "tab2",  "title": "files_count", "data": "files_count", width:"50px"},
+            { "class": "tab2",  "title": "mime_type", "data": "mime_type"},
+            { "class": "tab2",  "title": "file_type", "data": "file_type"},
+            { "class": "tab2",  "title": "programming_language", "data": "programming_language"},
+            { "class": "tab2",  "title": "is_binary", "data": "is_binary", width:"30px"},
+            { "class": "tab2",  "title": "is_text", "data": "is_text", width:"30px"},
+            { "class": "tab2",  "title": "is_archive", "data": "is_archive", width:"30px"},
+            { "class": "tab2",  "title": "is_media", "data": "is_media", width:"30px"},
+            { "class": "tab2",  "title": "is_source", "data": "is_source", width:"30px"},
+            { "class": "tab2",  "title": "is_script", "data": "is_script", width:"30px"},
+            { "class": "tab3",  "title": "pkg_type", "data": "pkg_type"},
+            { "class": "tab3",  "title": "pkg_packaging", "data": "pkg_packaging"},
+            { "class": "tab3",  "title": "pkg_primary_language", "data": "pkg_primary_language"},
           ],
           // This is called just before the row is rendered
           "rowCallback": function( row, data, index ) {
