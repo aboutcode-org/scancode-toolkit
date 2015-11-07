@@ -156,6 +156,7 @@ Other contributors, listed alphabetically, are:
 * Corey Richardson -- Rust lexer updates
 * Lubomir Rintel -- GoodData MAQL and CL lexers
 * Andre Roberge -- Tango style
+* Georg Rollinger -- HSAIL lexer
 * Konrad Rudolph -- LaTeX formatter enhancements
 * Mario Ruggier -- Evoque lexers
 * Miikka Salminen -- Lovelace style, Hexdump lexer, lexer enhancements
