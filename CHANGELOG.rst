@@ -7,7 +7,7 @@ next
  * Separated JSON data into a separate file for the html app.
    https://github.com/nexB/scancode-toolkit/issues/38
  * Added support for scanning package and file information.
- * Added file and package information to the html-app output.
+ * Added file and package information to the html-app and html output.
    https://github.com/nexB/scancode-toolkit/issues/76
  * improved CSS for html format output: Thanks to Steven Esser
    https://github.com/nexB/scancode-toolkit/issues/12
