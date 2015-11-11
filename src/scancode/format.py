@@ -132,6 +132,8 @@ def as_html(detected_data):
     template = get_html_template('html')
 
     converted = OrderedDict()
+    converted_infos = OrderedDict()
+    converted_packages = OrderedDict()
     licenses = {}
 
     # Create a dict keyed by location
@@ -158,11 +160,22 @@ def as_html(detected_data):
 
                 if entry['key'] not in licenses:
                     licenses[entry['key']] = entry
-
         if results:
             converted[location] = sorted(results, key=itemgetter('start'))
 
+        if 'infos' in scan_result:
+            converted_infos[location] = scan_result['infos']
+
+        if 'packages' in scan_result:
+            converted_packages[location] = scan_result['packages']
+
         licenses = OrderedDict(sorted(licenses.items()))
 
-    return template.render(results=converted, licenses=licenses)
+    results = {
+        "license_copyright": converted,
+        "infos": converted_infos,
+        "packages": converted_packages
+    }
+
+    return template.render(results=results, licenses=licenses)
 
