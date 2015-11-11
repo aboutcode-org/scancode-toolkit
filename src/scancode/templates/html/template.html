@@ -64,6 +64,7 @@
     </style>
   </head>
   <body>
+    {% if results.license_copyright %}
     <table>
       <thead>
         <tr>
@@ -75,7 +76,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for location, data in results.items() %}
+        {% for location, data in results.license_copyright.items() %}
           {% for row in data %}
             <tr>
               <td>{{ location }}</td>
@@ -92,6 +93,87 @@
         {% endfor %}
       </tbody>
     </table>
+    {% endif %}
+
+    {% if results.infos %}
+    <table>
+      <caption>File Information</caption>
+      <thead>
+        <tr>
+          <th>location</th>
+          <th>type</th>
+          <th>name</th>
+          <th>extension</th>
+          <th>date</th>
+          <th>size</th>
+          <th>sha1</th>
+          <th>md5</th>
+          <th>files_count</th>
+          <th>mime_type</th>
+          <th>file_type</th>
+          <th>programming_language</th>
+          <th>is_binary</th>
+          <th>is_text</th>
+          <th>is_archive</th>
+          <th>is_media</th>
+          <th>is_source</th>
+          <th>is_script</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for location, data in results.infos.items() %}
+          {% for row in data %}
+            <tr>
+              <td>{{ location }}</td>
+              <td>{{ row.type }}</td>
+              <td>{{ row.name }}</td>
+              <td>{{ row.extension }}</td>
+              <td>{{ row.date }}</td>
+              <td>{{ row.size }}</td>
+              <td>{{ row.sha1 }}</td>
+              <td>{{ row.md5 }}</td>
+              <td>{{ row.file_count }}</td>
+              <td>{{ row.mime_type }}</td>
+              <td>{{ row.file_type }}</td>
+              <td>{{ row.programming_language }}</td>
+              <td>{{ row.is_binary }}</td>
+              <td>{{ row.is_text }}</td>
+              <td>{{ row.is_archive }}</td>
+              <td>{{ row.is_media }}</td>
+              <td>{{ row.is_source }}</td>
+              <td>{{ row.is_script }}</td>
+            </tr>
+          {% endfor %}
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {% if results.packages %}
+    <table>
+      <caption>Package Information</caption>
+      <thead>
+        <tr>
+          <th>location</th>
+          <th>type</th>
+          <th>packaging</th>
+          <th>primary_language</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for location, data in results.packages.items() %}
+          {% for row in data %}
+            <tr>
+              <td>{{ location }}</td>
+              <td>{{ row.type }}</td>
+              <td>{{ row.packaging }}</td>
+              <td>{{ row.primary_language }}</td>
+            </tr>
+          {% endfor %}
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
 
     {% if licenses %}
     <table>
