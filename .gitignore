@@ -1,15 +1,7 @@
-*.py[co]
-
-# test files that should not be ignored
-!/tests/typecode/data/contenttype/compiled/java/*
-!/tests/typecode/data/contenttype/compiled/python/*
-!/tests/typecode/data/contenttype/compiled/flash/*
-!/tests/typecode/data/contenttype/compiled/linux/*
-!/tests/typecode/data/contenttype/compiled/win/*
-!/tests/typecode/data/contenttype/package/*
+*.py[cod]
 
 # virtualenv and other misc bits
-/src/*.egg-info
+*.egg-info
 /dist
 /build
 /bin
@@ -28,6 +20,7 @@
 pip-log.txt
 
 # Unit test / coverage reports
+.cache
 .coverage
 .coverage.*
 nosetests.xml
@@ -51,3 +44,12 @@ docs/_build
 .ve
 *.bak
 /.cache/
+
+# test files that should not be ignored
+!/tests/typecode/data/contenttype/compiled/java/*
+!/tests/typecode/data/contenttype/compiled/python/*
+!/tests/typecode/data/contenttype/compiled/flash/*
+!/tests/typecode/data/contenttype/compiled/linux/*
+!/tests/typecode/data/contenttype/compiled/win/*
+!/tests/typecode/data/contenttype/package/*
+
