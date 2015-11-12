@@ -16,10 +16,6 @@ CONF_DEFAULT="etc/conf/dev"
 
 CFG_CMD_LINE_ARGS="$@"
 
-if [ "$1" == "--init" ]; then
-    CFG_CMD_LINE_ARGS=$CONF_INIT
-fi
-
 if [ "$1" == "" ]; then
     # default for dev conf if not argument is provided
     CFG_CMD_LINE_ARGS=$CONF_DEFAULT
