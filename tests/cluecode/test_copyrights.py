@@ -1259,7 +1259,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             u'Copyright (c) 1992-2002 by P.J.',
         ]
-        check_detection(expected, test_file) 
+        check_detection(expected, test_file)
 
     def test_copyright_jdoe(self):
         test_file = self.get_test_loc('copyrights/copyright_jdoe-copyright_c.c')
@@ -3911,7 +3911,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_should_not_have_trailing_garbage(self):
         test_file = self.get_test_loc('copyrights/copyright_with_trailing_words.js')
         expected = [
-            'Copyright 2012-2015 The Dojo Foundation', 
+            'Copyright 2012-2015 The Dojo Foundation',
             'Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters',
             'Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters',
             'Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters',
@@ -3926,3 +3926,16 @@ class TestCopyrightDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights/copyright_hostapd_trailing_available.c')
         expected = [u'Copyright (c) 2004-2005, Jouni Malinen <jkmaline@cc.hut.fi>']
         check_detection(expected, test_file)
+
+    @expectedFailure
+    def test_copyright_with_dots_and_all_lowercase_on_multilines(self):
+        test_lines = [u'Copyright . 2008 company name, inc.', 
+                      u'  Change: Add functions',]
+        expected = [u'Copyright . 2008 company name, inc.']
+        check_detection(expected, test_lines)
+
+    @expectedFailure
+    def test_copyright_with_dots_and_all_lowercase_on_single_line(self):
+        test_lines = [u'Copyright . 2008 foo name, inc.']
+        expected = [u'Copyright . 2008 foo name, inc.']
+        check_detection(expected, test_lines)
