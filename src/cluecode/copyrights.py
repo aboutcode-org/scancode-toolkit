@@ -38,7 +38,7 @@ from cluecode import copyrights_hint
 
 
 logger = logging.getLogger(__name__)
-if os.environ.get('SC_COPYRIGHT_DEBUG'):
+if os.environ.get('SCANCODE_COPYRIGHT_DEBUG'):
     import sys
     logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
@@ -364,6 +364,8 @@ grammar = """
 
     COPYRIGHT: {<COPY> <COPY> <NN> <NAME> <YR-RANGE>}
     COPYRIGHT: {<COPY> <NN> <NAME> <YR-RANGE>}
+
+    COPYRIGHT: {<COPY>+ <BY> <NAME|NAME2|NAME3>+}
 
     COPYRIGHT: {<COPY> <COPY> <COMP>+}
 
