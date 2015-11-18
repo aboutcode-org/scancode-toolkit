@@ -66,6 +66,16 @@
         border: 1px solid #CCC;
         border-radius: 4px;
         }
+        .chart rect {
+          fill: #337ab7;
+        }
+
+        .chart text {
+          fill: white;
+          font: 12px sans-serif;
+          text-anchor: end;
+        }
+
     </style>
 </head>
 <body>
@@ -89,6 +99,11 @@
       </div>
     </div>
     -->
+    <div class="row">
+        <div class="col-md-12">
+            <svg class="chart"></svg>
+        </div>
+    </div>
     <div class="row">
     <div class="col-md-4" id="leftCol">
       <div id="tree" style="overflow-x:scroll; overflow-y:auto;"></div>
@@ -119,6 +134,7 @@
   <script src="{{ assets_dir }}/bootstrap.min.js"></script>
   <script src="{{ assets_dir }}/jstree.min.js"></script>
   <script src="{{ assets_dir }}/jquery.dataTables.min.js"></script>
+  <script src="{{ assets_dir }}/d3.min.js"  charset="utf-8"></script>
   <script type="text/javascript" src="{{ assets_dir }}/data.json"></script>
   <script type="text/javascript">
       var icon_file        = "glyphicon glyphicon-file";
@@ -517,6 +533,60 @@
       }
 
       $('#button').click(function(){ $('#data_table').toggleClass('ellipsis'); })
+  </script>
+  <script>
+
+    short_names = $.map(data, function(row){
+      return $.map(row.licenses, function(license) {
+          return license.short_name;
+      });
+    });
+
+      var count = {};
+      $.each(short_names, function(i, name){
+          count[name] = count[name] + 1 || 1;
+      });
+
+      count_items = $.map(count, function(key, val) {
+        return {
+          name: val,
+          count: key
+        };
+      });
+
+      count_items.sort(function(a,b){
+        if (a.count == b.count) {
+          return 0;
+        } else {
+          return a.count > b.count ? -1 : 1;
+        }
+      });
+
+      var width = 900, bar_height = 20, bar_padding = 2;
+
+      var x = d3.scale.linear()
+        .domain([0, d3.max($.map(count_items, function(item) { return item.count; }))])
+        .range([0, width]);
+
+      var chart = d3.select(".chart")
+        .attr("width", width)
+        .attr("height", (bar_height + bar_padding) * count_items.length);
+
+      var bars =  chart
+        .selectAll("g")
+          .data(count_items)
+        .enter().append("g")
+          .attr("transform", function(d, i) { return "translate(0, " + i * (bar_height + bar_padding) + ")"; })
+
+      bars.append("rect")
+        .attr("width", function(d) { return x(d.count); })
+        .attr("height", bar_height);
+
+      bars.append("text")
+        .attr("x", function(d) { return x(d.count) - 3; })
+        .attr("y", bar_height / 2)
+        .attr("dy", ".35em")
+        .text(function(d) { return d.name + " (" + d.count + ")"; });
   </script>
 </body>
 </html>
