@@ -1253,7 +1253,6 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    @expectedFailure
     def test_copyright_java_passing(self):
         test_file = self.get_test_loc('copyrights/copyright_java-java.java')
         expected = [
@@ -3938,4 +3937,9 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_with_dots_and_all_lowercase_on_single_line(self):
         test_lines = [u'Copyright . 2008 foo name, inc.']
         expected = [u'Copyright . 2008 foo name, inc.']
+        check_detection(expected, test_lines)
+
+    def test_copyright_copy_copy_by_name3(self):
+        test_lines = [u'Copyright (c) by 2007  Joachim Foerster <JOFT@gmx.de>']
+        expected = [u'Copyright (c) by 2007 Joachim Foerster <JOFT@gmx.de>']
         check_detection(expected, test_lines)
