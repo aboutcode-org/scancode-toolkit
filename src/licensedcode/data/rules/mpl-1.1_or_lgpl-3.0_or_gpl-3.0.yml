@@ -1,0 +1,6 @@
+licenses:
+    - mpl-1.1
+    - lgpl-3.0-plus
+    - gpl-3.0-plus
+license_choice: yes
+template: yes
