@@ -100,24 +100,23 @@
     </div>
     -->
     <div class="row">
-        <div class="col-md-12">
-            <svg class="chart"></svg>
-        </div>
-    </div>
-    <div class="row">
     <div class="col-md-4" id="leftCol">
       <div id="tree" style="overflow-x:scroll; overflow-y:auto;"></div>
     </div>
 
-    <div class="col-md-8">
-      <ul class="nav nav-tabs">
-        <li id="tab1" class="active"><a data-toggle="tab" href="#">License & Copyright Information</a></li>
-        <li id="tab2"><a data-toggle="tab" href="#">File Information</a></li>
-        <li id="tab3"><a data-toggle="tab" href="#">Package Information</a></li>
-      </ul>
-
-        <table id="data_table" class="data_table display table-wrap" cellspacing="0" width="100%">
-        </table>
+    <div id="tabbar" class="col-md-8">
+        <ul class="nav nav-tabs">
+            <li id="tab4" class="active"><a data-toggle="tab" href="#chart">License Summary</a></li>
+            <li id="tab1"><a data-toggle="tab" href="#">License & Copyright Information</a></li>
+            <li id="tab2"><a data-toggle="tab" href="#">File Information</a></li>
+            <li id="tab3"><a data-toggle="tab" href="#">Package Information</a></li>
+        </ul>
+        <div id="summary">
+            <svg class="chart"></svg>
+        </div>
+        <div id="details">
+            <table id="data_table" class="data_table display table-wrap" cellspacing="0" width="100%"></table>
+        </div>
     </div>
   </div>
 </div>
@@ -162,44 +161,48 @@
           renderTable(dtData);
 
           $( "#tab1" ).click(function() {
+            $('#details').show();
+            $('#summary').hide();
             table = $('#data_table').DataTable();
             table.clear();
             table.columns( '.tab1' ).visible( true );
             table.columns( '.tab2' ).visible( false );
             table.columns( '.tab3' ).visible( false );
+            table.columns( '.tab4' ).visible( false );
             table.rows.add(dtData);
             table.draw();
           });
           $( "#tab2" ).click(function() {
+            $('#details').show();
+            $('#summary').hide();
             table = $('#data_table').DataTable();
             table.clear();
             table.columns( '.tab1' ).visible( false );
             table.columns( '.tab2' ).visible( true );
             table.columns( '.tab3' ).visible( false );
+            table.columns( '.tab4' ).visible( false );
             table.rows.add(dtData2);
             table.draw();
           });
           $( "#tab3" ).click(function() {
+            $('#details').show();
+            $('#summary').hide();
             table = $('#data_table').DataTable();
             table.clear();
             table.columns( '.tab1' ).visible( false );
             table.columns( '.tab2' ).visible( false );
             table.columns( '.tab3' ).visible( true );
+            table.columns( '.tab4' ).visible( false );
             table.rows.add(dtData3);
             table.draw();
           });
+          $( "#tab4" ).click(function() {
+           $('#details').hide();
+           $('#summary').show();
+          });
 
-          // TODO: Optimize way to get table to redraw with correct widths
-          table = $('#data_table').DataTable();
-          table.columns( '.tab1' ).visible( false );
-          table.columns( '.tab2' ).visible( false );
-          table.columns( '.tab3' ).visible( false );
-          table.clear();
-          table.columns( '.tab1' ).visible( true );
-          table.rows.add(dtData);
-          table.draw();
+          $("#details").hide();
       });
-
       // Returns a row in the format expected by jstree
       getJSTreeData = function(parent, id, text, icon_class){
         return {
@@ -535,58 +538,66 @@
       $('#button').click(function(){ $('#data_table').toggleClass('ellipsis'); })
   </script>
   <script>
-
-    short_names = $.map(data, function(row){
+    var short_names = $.map(data, function(row){
       return $.map(row.licenses, function(license) {
           return license.short_name;
       });
     });
 
-      var count = {};
-      $.each(short_names, function(i, name){
-          count[name] = count[name] + 1 || 1;
-      });
+    var count = {};
+    $.each(short_names, function(i, name){
+        count[name] = count[name] + 1 || 1;
+    });
 
-      count_items = $.map(count, function(key, val) {
-        return {
-          name: val,
-          count: key
-        };
-      });
+    var count_items = $.map(count, function(key, val) {
+      return {
+        name: val,
+        count: key
+      };
+    });
 
-      count_items.sort(function(a,b){
-        if (a.count == b.count) {
-          return 0;
-        } else {
-          return a.count > b.count ? -1 : 1;
-        }
-      });
+    count_items.sort(function(a,b){
+      if (a.count == b.count) {
+        return 0;
+      } else {
+        return a.count > b.count ? -1 : 1;
+      }
+    });
 
-      var width = 900, bar_height = 20, bar_padding = 2;
+    var bar_height = 20, bar_padding = 2;
+    var data_max = d3.max($.map(count_items, function(item) { return item.count; }))
 
-      var x = d3.scale.linear()
-        .domain([0, d3.max($.map(count_items, function(item) { return item.count; }))])
-        .range([0, width]);
+    var x = d3.scale.linear()
+        .domain([0, data_max])
 
-      var chart = d3.select(".chart")
-        .attr("width", width)
+    var chart = d3.select(".chart")
         .attr("height", (bar_height + bar_padding) * count_items.length);
 
-      var bars =  chart
+    var bars = chart
         .selectAll("g")
           .data(count_items)
         .enter().append("g")
           .attr("transform", function(d, i) { return "translate(0, " + i * (bar_height + bar_padding) + ")"; })
 
-      bars.append("rect")
-        .attr("width", function(d) { return x(d.count); })
+    var rects = bars.append("rect")
         .attr("height", bar_height);
 
-      bars.append("text")
-        .attr("x", function(d) { return x(d.count) - 3; })
+    var texts = bars.append("text")
         .attr("y", bar_height / 2)
         .attr("dy", ".35em")
         .text(function(d) { return d.name + " (" + d.count + ")"; });
+
+    setupChart = function() {
+      var width = $('#tabbar').width();
+
+      x.range([0, width]);
+      chart.attr("width", width);
+      rects.attr("width", function(d) { return x(d.count); })
+      texts.attr("x", function(d) { return x(d.count) - 3; })
+    };
+
+    setupChart();
+    d3.select(window).on('resize', setupChart);
   </script>
 </body>
 </html>
