@@ -8,6 +8,7 @@ Other contributors, listed alphabetically, are:
 * Sam Aaron -- Ioke lexer
 * Ali Afshar -- image formatter
 * Thomas Aglassinger -- Easytrieve, JCL and Rexx lexers
+* Muthiah Annamalai -- Ezhil lexer
 * Kumar Appaiah -- Debian control lexer
 * Andreas Amann -- AppleScript lexer
 * Timothy Armstrong -- Dart lexer fixes
@@ -27,16 +28,18 @@ Other contributors, listed alphabetically, are:
 * Trevor Bergeron -- mIRC formatter
 * Vincent Bernat -- LessCSS lexer
 * Christopher Bertels -- Fancy lexer
+* Sébastien Bigaret -- QVT Operational lexer
 * Jarrett Billingsley -- MiniD lexer
 * Adam Blinkinsop -- Haskell, Redcode lexers
 * Frits van Bommel -- assembler lexers
 * Pierre Bourdon -- bugfixes
+* chebee7i -- Python traceback lexer improvements
 * Hiram Chirino -- Scaml and Jade lexers
 * Ian Cooper -- VGL lexer
 * David Corbett -- Inform, Jasmin, and TADS 3 lexers
 * Leaf Corcoran -- MoonScript lexer
 * Christopher Creutzig -- MuPAD lexer
-* Daniël W. Crompton - Pike lexer
+* Daniël W. Crompton -- Pike lexer
 * Pete Curry -- bugfixes
 * Bryan Davis -- EBNF lexer
 * Bruno Deferrari -- Shen lexer
@@ -47,6 +50,7 @@ Other contributors, listed alphabetically, are:
 * Nick Efford -- Python 3 lexer
 * Sven Efftinge -- Xtend lexer
 * Artem Egorkine -- terminal256 formatter
+* Matthew Fernandez -- CAmkES lexer
 * Michael Ficarra -- CPSA lexer
 * James H. Fisher -- PostScript lexer
 * William S. Fulton -- SWIG lexer
@@ -80,15 +84,15 @@ Other contributors, listed alphabetically, are:
 * Doug Hogan -- Mscgen lexer
 * Ben Hollis -- Mason lexer
 * Max Horn -- GAP lexer
-* Dustin Howett -- Logos lexer
 * Alastair Houghton -- Lexer inheritance facility
 * Tim Howard -- BlitzMax lexer
+* Dustin Howett -- Logos lexer
 * Ivan Inozemtsev -- Fantom lexer
-* Hiroaki Itoh -- Shell console rewrite
+* Hiroaki Itoh -- Shell console rewrite, Lexers for PowerShell session, MSDOS session, BC
 * Brian R. Jackson -- Tea lexer
 * Christian Jann -- ShellSession lexer
 * Dennis Kaarsemaker -- sources.list lexer
-* Dmitri Kabak - Inferno Limbo lexer
+* Dmitri Kabak -- Inferno Limbo lexer
 * Igor Kalnitsky -- vhdl lexer
 * Alexander Kit -- MaskJS lexer
 * Pekka Klärck -- Robot Framework lexer
@@ -108,6 +112,7 @@ Other contributors, listed alphabetically, are:
 * Matt Layman -- TAP lexer
 * Sylvestre Ledru -- Scilab lexer
 * Mark Lee -- Vala lexer
+* Valentin Lorentz -- C++ lexer improvements
 * Ben Mabey -- Gherkin lexer
 * Angus MacArthur -- QML lexer
 * Louis Mandel -- X10 lexer
@@ -137,9 +142,9 @@ Other contributors, listed alphabetically, are:
 * Edward O'Callaghan -- Cryptol lexer
 * David Oliva -- Rebol lexer
 * Pat Pannuto -- nesC lexer
-* Jon Parise -- Protocol buffers lexer
-* Ronny Pfannschmidt -- BBCode lexer
+* Jon Parise -- Protocol buffers and Thrift lexers
 * Benjamin Peterson -- Test suite refactoring
+* Ronny Pfannschmidt -- BBCode lexer
 * Dominik Picheta -- Nimrod lexer
 * Andrew Pinkham -- RTF Formatter Refactoring
 * Clément Prévost -- UrbiScript lexer
@@ -153,7 +158,7 @@ Other contributors, listed alphabetically, are:
 * Andre Roberge -- Tango style
 * Konrad Rudolph -- LaTeX formatter enhancements
 * Mario Ruggier -- Evoque lexers
-* Miikka Salminen -- Lovelace style, lexer enhancements
+* Miikka Salminen -- Lovelace style, Hexdump lexer, lexer enhancements
 * Stou Sandalski -- NumPy, FORTRAN, tcsh and XSLT lexers
 * Matteo Sasso -- Common Lisp lexer
 * Joe Schafer -- Ada lexer
@@ -180,14 +185,14 @@ Other contributors, listed alphabetically, are:
 * Daniele Varrazzo -- PostgreSQL lexers
 * Abe Voelker -- OpenEdge ABL lexer
 * Pepijn de Vos -- HTML formatter CTags support
-* Whitney Young -- ObjectiveC lexer
 * Matthias Vallentin -- Bro lexer
 * Linh Vu Hong -- RSL lexer
 * Nathan Weizenbaum -- Haml and Sass lexers
-* Nathan Whetsell -- CSound lexers
+* Nathan Whetsell -- Csound lexers
 * Dietmar Winkler -- Modelica lexer
 * Nils Winter -- Smalltalk lexer
 * Davy Wybiral -- Clojure lexer
+* Whitney Young -- ObjectiveC lexer
 * Diego Zamboni -- CFengine3 lexer
 * Enrique Zamudio -- Ceylon lexer
 * Alex Zimin -- Nemerle lexer
