@@ -39,7 +39,7 @@ from commoncode import fileutils
 from scancode import __version__ as version
 from scancode import utils
 
-from scancode.format import as_html
+from scancode.format import as_template
 from scancode.format import as_html_app
 from scancode.format import create_html_app_assets
 from scancode.format import HtmlAppAssetCopyWarning
@@ -218,8 +218,8 @@ formats = ['json', 'html', 'html-app']
 @click.option('-p', '--package', is_flag=True, default=False, help='Scan <input> for packages. [default]')
 @click.option('-i', '--info', is_flag=True, default=False, help='Scan <input> for files information.')
 
-@click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>', type=click.Choice(formats),
-              help='Set <output_file> format <style> to one of: %s' % ' or '.join(formats),)
+@click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
+              help='Set <output_file> format <style> to one of the standard formats: %s or the path to a custom template' % ' or '.join(formats),)
 @click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.')
 @click.option('--quiet', is_flag=True, default=False, help='Do not print any progress message.')
 
@@ -337,9 +337,11 @@ def save_results(results, format, input, output_file):  # @ReservedAssignment
     """
     Save results to file or screen.
     """
-    assert format in formats
-    if format == 'html':
-        output_file.write(as_html(results))
+    if format not in formats:
+        # render using a user-provided custom format template
+        output_file.write(as_template(results, template=format))
+    elif format == 'html':
+        output_file.write(as_template(results))
     elif format == 'html-app':
         output_file.write(as_html_app(input, output_file))
         try:

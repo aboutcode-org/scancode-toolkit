@@ -31,28 +31,27 @@ from os.path import exists
 from os.path import join
 
 from commoncode import fileutils
+import os
 
 
 """
 Format scans outputs.
 """
 
-
-def get_html_template(format):  # @ReservedAssignment
+def get_template(templates_dir, template_name='template.html'):  # @ReservedAssignment
     """
-    Given a format string corresponding to a template directory, load and return
-    the template.html file found in that directory.
+    Given a template directory, load and return the template file in the template_name
+    file found in that directory.
     """
     from jinja2 import Environment, FileSystemLoader
-    templates_dir = get_template_dir(format)
     env = Environment(loader=FileSystemLoader(templates_dir))
-    template = env.get_template('template.html')
+    template = env.get_template(template_name)
     return template
 
 
 def get_template_dir(format):  # @ReservedAssignment
     """
-    Given a format string return the corresponding template directory.
+    Given a format string return the corresponding standard template directory.
     """
     return join(dirname(__file__), 'templates', format)
 
@@ -61,7 +60,7 @@ def as_html_app(scanned_path, output_file):
     """
     Return an HTML string built from a list of results and the html-app template.
     """
-    template = get_html_template('html-app')
+    template = get_template(get_template_dir('html-app'))
     _, assets_dir = get_html_app_files_dirs(output_file)
 
     return template.render(assets_dir=assets_dir, scanned_path=scanned_path)
@@ -125,19 +124,29 @@ def create_html_app_assets(results, output_file):
         raise HtmlAppAssetCopyError(e)
 
 
-def as_html(detected_data):
+def as_template(scan_data, template='html'):
     """
-    Return an HTML string built from a list of results and the html template.
+    Return an string built from a list of results and the provided template.
+    The template defaults to the standard HTML template format or can point to
+    the path of a custom template file.
     """
-    template = get_html_template('html')
+    if template == 'html':
+        template = get_template(get_template_dir('html'))
+    else:
+        # load a custom template
+        tpath = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(template)))
+        assert os.path.isfile(tpath)
+        tdir = fileutils.parent_directory(tpath)
+        tfile = fileutils.file_name(tpath)
+        template = get_template(tdir, tfile)
 
     converted = OrderedDict()
     converted_infos = OrderedDict()
     converted_packages = OrderedDict()
     licenses = {}
 
-    # Create a dict keyed by location
-    for scan_result in detected_data:
+    # Create a flattened data dict keyed by location
+    for scan_result in scan_data:
         location = scan_result['location']
         results = []
         if 'copyrights' in scan_result:
@@ -172,10 +181,9 @@ def as_html(detected_data):
         licenses = OrderedDict(sorted(licenses.items()))
 
     results = {
-        "license_copyright": converted,
-        "infos": converted_infos,
-        "packages": converted_packages
+        'license_copyright': converted,
+        'infos': converted_infos,
+        'packages': converted_packages
     }
 
     return template.render(results=results, licenses=licenses)
-
