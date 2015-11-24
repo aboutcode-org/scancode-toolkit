@@ -339,7 +339,10 @@ def save_results(results, format, input, output_file):  # @ReservedAssignment
     """
     if format not in formats:
         # render using a user-provided custom format template
-        output_file.write(as_template(results, template=format))
+        if not os.path.isfile(format):
+            click.secho('\nInvalid template passed.', err=True, fg='red')    
+        else:
+            output_file.write(as_template(results, template=format))
     elif format == 'html':
         output_file.write(as_template(results))
     elif format == 'html-app':

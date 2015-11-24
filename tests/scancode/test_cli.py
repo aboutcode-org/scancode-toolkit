@@ -206,3 +206,22 @@ def test_paths_are_posix_in_json_format_output(monkeypatch):
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     assert '/posix_path/copyright_acme_c-c.c' in open(result_file).read()
+
+def test_format_with_custom_filename_rejects_invalids(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.get_test_loc('posix_path', copy=True)
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('html')
+    result = runner.invoke(cli.scancode, [ '--format', test_dir, test_dir, result_file])
+    assert result.exit_code == 0
+    assert 'Invalid template passed' in result.output
+
+def test_format_with_custom_filename(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.get_test_loc('posix_path', copy=True)
+    runner = CliRunner()
+    template = test_env.get_test_loc('template/sample-template.html')
+    result_file = test_env.get_temp_file('html')
+    result = runner.invoke(cli.scancode, [ '--format', template, test_dir, result_file])
+    assert result.exit_code == 0
+    assert 'Custom Template' in open(result_file).read()
