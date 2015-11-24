@@ -4,3 +4,4 @@ The following organization or individuals have contributed to ScanCode:
 - Philippe Ombredanne
 - Jillian Daguil
 - Steven Esser
+- Li Ha
