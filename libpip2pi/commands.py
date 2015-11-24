@@ -208,6 +208,8 @@ class Pip2PiOptionParser(optparse.OptionParser):
             """))
         self.add_option(
             '-S', '--no-symlink', dest="use_symlink", action="store_false")
+        self.add_option(
+            '-v', '--verbose', dest="verbose", action="store_true")
 
     def _process_args(self, largs, rargs, values):
         """
@@ -302,8 +304,12 @@ def _dir2pi(option, argv):
         symlink_target = os.path.join(pkg_dir, pkg_new_basename)
         symlink_source = os.path.join("../../", pkg_basename)
         if option.use_symlink and OS_HAS_SYMLINK:
+            if option.verbose:
+                print('linking %s to %s' % (symlink_source, symlink_target))
             os.symlink(symlink_source, symlink_target)
         else:
+            if option.verbose:
+                print('copying %s to %s' % (symlink_target, pkg_filepath))
             shutil.copy2(pkg_filepath, symlink_target)
 
         if pkg_name not in processed_pkg:
