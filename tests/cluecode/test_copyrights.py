@@ -3943,3 +3943,8 @@ class TestCopyrightDetection(FileBasedTesting):
         test_lines = [u'Copyright (c) by 2007  Joachim Foerster <JOFT@gmx.de>']
         expected = [u'Copyright (c) by 2007 Joachim Foerster <JOFT@gmx.de>']
         check_detection(expected, test_lines)
+
+    def test_copyright_rimini(self):
+        test_file = self.get_test_loc('copyrights/rimini.c')
+        expected = [u'(c) Copyright 2000 Paolo Scaffardi, AIRVENT SAM s.p.a - RIMINI(ITALY), arsenio@tin.it']
+        check_detection(expected, test_file)

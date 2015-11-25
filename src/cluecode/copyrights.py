@@ -152,6 +152,8 @@ patterns = [
     (r'^(S\.?A\.?S?|Sas|sas|A[GBS]|Labs?|[Cc][Oo]\.|Research|INRIA).?$', 'COMP'),
     # (german) company suffix
     (r'^[Gg][Mm][Bb][Hh].?$', 'COMP'),
+    # (italian) company suffix
+    (r'^[sS]\.[pP]\.[aA]\.?$', 'COMP'),
     # university
     (r'^[Uu]niv([.]|ersit(y|e|at?|ad?))$', 'UNI'),
     # institutes
@@ -289,7 +291,8 @@ grammar = """
     COMPANY: {<COMPANY> <CC> <COMPANY>}
     COMPANY: {<ATT> <COMP>?}
     COMPANY: {<COMPANY> <CC> <NNP>}
-    # Group 42, Inc
+    # AIRVENT SAM s.p.a - RIMINI(ITALY)
+    COMPANY: {<COMPANY> <DASH> <NNP|NN> <EMAIL>?}
 
 # Typical names
     NAME: {<NNP|PN>+ <NNP>+}
