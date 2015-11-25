@@ -227,3 +227,8 @@ class TestAuthors(FileBasedTesting):
             u'written by Tim Hudson (tjh@mincom.oz.au)',
         ]
         check_detection(expected, test_file, what='authors')
+
+    def test_author_wcstok_c(self):
+        test_file = self.get_test_loc('authors/wcstok.c')
+        expected = [u'Wes Peters <wes@softweyr.com>']
+        check_detection(expected, test_file, what='authors')
