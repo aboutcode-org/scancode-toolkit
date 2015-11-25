@@ -177,5 +177,4 @@ def as_html(detected_data):
         "packages": converted_packages
     }
 
-    return template.render(results=results, licenses=licenses)
-
+    return template.render(results=results, licenses=licenses).encode('utf-8')
