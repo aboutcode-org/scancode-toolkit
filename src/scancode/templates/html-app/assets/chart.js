@@ -25,6 +25,8 @@
 
 */
 
+// Creates a bar chart given an array of objects with a 'name' and 'val'
+// attributes
 function BarChart(chartData, chartOptions, chartSelector){
     var margin = {
         left: chartOptions.margin + this.maxNameWidth(chartData),
@@ -33,15 +35,16 @@ function BarChart(chartData, chartOptions, chartSelector){
         bottom: chartOptions.margin
     }
 
+    // The chart height is bar height * the number of licenses in the data
     var chartHeight = chartOptions.barHeight * chartData.length
 
-    // Build up the chart (Sum of each license chart + margin top + margin bottom)
+    // Build up the chart (Sum of chart + margin top + margin bottom)
     var boundHeight = chartHeight + margin.top + margin.bottom;
 
     // Create bounds of chart
     var bounds = d3.select(chartSelector).attr('height', boundHeight);
 
-    // The chart sits within the bounds starting at (margin.left , margin.right)
+    // The chart sits within the bounds starting at (margin.left , margin.top)
     var chart = bounds.append('g')
         .attr('transform', 'translate('+ margin.left + ',' + margin.top + ')');
 
@@ -53,16 +56,19 @@ function BarChart(chartData, chartOptions, chartSelector){
     // Create scaling for y that converts chartData names to pixels
     var yScale = d3.scale.ordinal()
         .domain(chartData.map(function(d) {return d.name; }))
-        .rangeRoundBands([0, chartHeight], 0.1);
+        .rangeRoundBands([0, chartHeight], 0.1 /* white space percentage */);
 
+    // Creates a d3 axis given a scale (takes care of tick marks and labels)
     var xAxis = d3.svg.axis()
         .scale(xScale)
         .orient('bottom');
 
+    // Creates a d3 axis given a scale (takes care of tick marks and labels)
     var yAxis = d3.svg.axis()
         .scale(yScale)
         .orient('left');
 
+    // Creates a graphic tag (<g>) for each bar in the chart
     var bars = chart.selectAll('g')
         .data(chartData)
         .enter().append('g');
@@ -74,27 +80,24 @@ function BarChart(chartData, chartOptions, chartSelector){
     var texts = bars.append('text')
         .attr('y', function(d) { return yScale(d.name); })
         .attr('dy', '1.2em')
-        .text(function(d){ return '(' + d.val + ')'; });
+        .text(function(d){ return '(' + d.val + ')'; })
+        .style('text-anchor', 'start');
 
-    var xAxisG = chart.append('g')
-        .attr('transform', 'translate(0, ' + chartHeight + ')')
-        .attr('class', 'x axis');
-
+    // Adds the y-axis to the chart
     var yAxisG = chart.append('g')
         .attr('class', 'y axis')
         .call(yAxis);
 
-    // Draws chart and sets width dynamically
+    // Redraws chart and sets width based on available chart width.
+    // User needs to call this function whenever the width of the chart changes.
     this.draw = function() {
         var boundWidth = $(chartSelector).width()
 
         var chartWidth = boundWidth - margin.left - margin.right;
 
         xScale.range([0, chartWidth]);
-        bounds.attr('width', boundWidth);
         rects.attr('width', function(d) { return xScale(d.val); });
-        texts.attr('x', function(d) { return xScale(d.val) + 2; })
-            .style('text-anchor', 'start');
+        texts.attr('x', function(d) { return xScale(d.val) + 2; });
     }
 
     this.draw();
