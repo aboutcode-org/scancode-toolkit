@@ -129,6 +129,8 @@ def as_html(detected_data):
     """
     Return an HTML string built from a list of results and the html template.
     """
+    from licensedcode.models import get_license
+
     template = get_html_template('html')
 
     converted = OrderedDict()
@@ -160,6 +162,7 @@ def as_html(detected_data):
 
                 if entry['key'] not in licenses:
                     licenses[entry['key']] = entry
+                    entry['object'] = get_license(entry['key'])
         if results:
             converted[location] = sorted(results, key=itemgetter('start'))
 
