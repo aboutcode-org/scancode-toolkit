@@ -7,7 +7,13 @@ Every little bit helps, and credit will always be given.
 
 When contributing to ScanCode (such as code, bugs, documentation, etc.) you
 agree to the Developer Certificate of Origin http://developercertificate.org/
-and the ScanCode license (see the NOTICE file)
+and the ScanCode license (see the NOTICE file).  The same approach is used
+by the Linux Kernel developers.
+
+For commits, simply add a line like this to your commit message, with your
+name and email::
+
+    Signed-off-by: Jane Doe <developer@example.com>
 
 
 Feature requests and feedback
