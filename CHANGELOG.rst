@@ -4,6 +4,16 @@ Changelog
 
 next
 ------------------
+
+ * New support for custom Jinja templates for the HTML output.
+   The template also has access to the whole License object to output full
+   license texts or other data. Thanks to @ened Sebastian Roth for this.
+
+1.4.0 (2015-11-24)
+------------------
+
+* New features abd bug fixes
+
  * Separated JSON data into a separate file for the html app.
    https://github.com/nexB/scancode-toolkit/issues/38
  * Added support for scanning package and file information.

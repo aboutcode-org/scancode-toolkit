@@ -1,7 +1,9 @@
 The following organization or individuals have contributed to ScanCode:
 
-- nexB Inc.
-- Philippe Ombredanne
-- Jillian Daguil
-- Steven Esser
-- Li Ha
+- Chin-Yeung Li @chinyeungli
+- Jillian Daguil @jdaguil
+- Li Ha @linexb
+- nexB Inc. @nexB
+- Philippe Ombredanne @pombredanne
+- Sebastian Roth @ened
+- Steven Esser @majurg
