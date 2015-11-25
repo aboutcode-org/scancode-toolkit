@@ -66,6 +66,24 @@
         border: 1px solid #CCC;
         border-radius: 4px;
         }
+        .chart rect {
+          fill: #337ab7;
+        }
+
+        .chart text {
+          fill: black;
+          font: 12px sans-serif;
+          text-anchor: end;
+        }
+
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+        .chart {width: 100%;}
+
     </style>
 </head>
 <body>
@@ -94,15 +112,19 @@
       <div id="tree" style="overflow-x:scroll; overflow-y:auto;"></div>
     </div>
 
-    <div class="col-md-8">
-      <ul class="nav nav-tabs">
-        <li id="tab1" class="active"><a data-toggle="tab" href="#">License & Copyright Information</a></li>
-        <li id="tab2"><a data-toggle="tab" href="#">File Information</a></li>
-        <li id="tab3"><a data-toggle="tab" href="#">Package Information</a></li>
-      </ul>
-
-        <table id="data_table" class="data_table display table-wrap" cellspacing="0" width="100%">
-        </table>
+    <div id="tabbar" class="col-md-8">
+        <ul class="nav nav-tabs">
+            <li id="tab4" class="active"><a data-toggle="tab" href="#chart">License Summary</a></li>
+            <li id="tab1"><a data-toggle="tab" href="#">License & Copyright Information</a></li>
+            <li id="tab2"><a data-toggle="tab" href="#">File Information</a></li>
+            <li id="tab3"><a data-toggle="tab" href="#">Package Information</a></li>
+        </ul>
+        <div id="summary">
+            <svg class="chart"></svg>
+        </div>
+        <div id="details">
+            <table id="data_table" class="data_table display table-wrap" cellspacing="0" width="100%"></table>
+        </div>
     </div>
   </div>
 </div>
@@ -119,6 +141,8 @@
   <script src="{{ assets_dir }}/bootstrap.min.js"></script>
   <script src="{{ assets_dir }}/jstree.min.js"></script>
   <script src="{{ assets_dir }}/jquery.dataTables.min.js"></script>
+  <script src="{{ assets_dir }}/d3.min.js"  charset="utf-8"></script>
+  <script src="{{ assets_dir }}/chart.js"></script>
   <script type="text/javascript" src="{{ assets_dir }}/data.json"></script>
   <script type="text/javascript">
       var icon_file        = "glyphicon glyphicon-file";
@@ -146,44 +170,48 @@
           renderTable(dtData);
 
           $( "#tab1" ).click(function() {
+            $('#details').show();
+            $('#summary').hide();
             table = $('#data_table').DataTable();
             table.clear();
             table.columns( '.tab1' ).visible( true );
             table.columns( '.tab2' ).visible( false );
             table.columns( '.tab3' ).visible( false );
+            table.columns( '.tab4' ).visible( false );
             table.rows.add(dtData);
             table.draw();
           });
           $( "#tab2" ).click(function() {
+            $('#details').show();
+            $('#summary').hide();
             table = $('#data_table').DataTable();
             table.clear();
             table.columns( '.tab1' ).visible( false );
             table.columns( '.tab2' ).visible( true );
             table.columns( '.tab3' ).visible( false );
+            table.columns( '.tab4' ).visible( false );
             table.rows.add(dtData2);
             table.draw();
           });
           $( "#tab3" ).click(function() {
+            $('#details').show();
+            $('#summary').hide();
             table = $('#data_table').DataTable();
             table.clear();
             table.columns( '.tab1' ).visible( false );
             table.columns( '.tab2' ).visible( false );
             table.columns( '.tab3' ).visible( true );
+            table.columns( '.tab4' ).visible( false );
             table.rows.add(dtData3);
             table.draw();
           });
+          $( "#tab4" ).click(function() {
+           $('#details').hide();
+           $('#summary').show();
+          });
 
-          // TODO: Optimize way to get table to redraw with correct widths
-          table = $('#data_table').DataTable();
-          table.columns( '.tab1' ).visible( false );
-          table.columns( '.tab2' ).visible( false );
-          table.columns( '.tab3' ).visible( false );
-          table.clear();
-          table.columns( '.tab1' ).visible( true );
-          table.rows.add(dtData);
-          table.draw();
+          $("#details").hide();
       });
-
       // Returns a row in the format expected by jstree
       getJSTreeData = function(parent, id, text, icon_class){
         return {
@@ -517,6 +545,51 @@
       }
 
       $('#button').click(function(){ $('#data_table').toggleClass('ellipsis'); })
+  </script>
+  <script>
+    // Get license short name
+    var shortNames = $.map(data, function(item){
+        return $.map(item.licenses, function(license) {
+            return license.short_name;
+        });
+    });
+
+    // Sum the total number of times the license appears
+    var count = {};
+    $.each(shortNames, function(i, name){
+        count[name] = count[name] + 1 || 1;
+    });
+
+    // Transform license count into array of objects with license name & count
+    var chartData = $.map(count, function(val, key) {
+        return {
+            name: key,
+            val: val
+        };
+    });
+
+    // Options for the bar chart
+    var chartOptions = {
+        name: "License Summary",
+        margin: 30,
+        barHeight: 25,
+        xAxisName: "License Count",
+        yAxisName: "License Name"
+    };
+
+    // Sorts the data highest value to lowest value
+    chartData.sort(function(a,b){
+        if (a.val == b.val) {
+            return a.name.localeCompare(b.name);
+        } else {
+            return a.val > b.val ? -1 : 1;
+        }
+    });
+
+    // Create and display the bar chart
+    barChart = new BarChart(chartData, chartOptions, '.chart');
+
+    $(window).on('resize', barChart.draw);
   </script>
 </body>
 </html>

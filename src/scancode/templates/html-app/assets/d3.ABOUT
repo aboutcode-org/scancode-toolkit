@@ -1,0 +1,12 @@
+about_resource: d3.min.js
+download_url: https://github.com/mbostock/d3/tree/v3.5.9
+version: 3.5.9
+
+name: D3.js
+description: D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG, and CSS.
+home_url: https://d3js.org/
+owner: Michael Bostock
+contact: mike@ocks.org
+dje_license: bsd-new
+license_text_file: d3.LICENSE
+copyright: Copyright (c) 2010-2015, Michael Bostock
