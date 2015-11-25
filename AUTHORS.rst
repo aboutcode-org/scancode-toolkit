@@ -1,4 +1,4 @@
-The following organization or individuals have contributed to ScanCode:
+The following organizations or individuals have contributed to ScanCode:
 
 - Chin-Yeung Li @chinyeungli
 - Jillian Daguil @jdaguil
