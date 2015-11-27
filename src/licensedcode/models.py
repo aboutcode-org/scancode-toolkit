@@ -88,6 +88,8 @@ class License(object):
         self.spdx_url = ''
         self.spdx_notes = ''
 
+        self.main_license = ''
+
         self.text_urls = []
         self.osi_url = ''
         self.faq_url = ''
@@ -154,6 +156,8 @@ class License(object):
             data['faq_url'] = self.faq_url
         if self.other_urls:
             data['other_urls'] = self.other_urls
+        if self.main_license:
+            data['main_license'] = self.main_license
         return data
 
     def dump(self):

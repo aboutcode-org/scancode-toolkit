@@ -16,3 +16,4 @@ text_urls:
     - http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
 other_urls:
     - http://www.gnu.org/copyleft/lesser.html
+main_license: lgpl-2.1

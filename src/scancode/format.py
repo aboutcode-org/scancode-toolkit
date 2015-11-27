@@ -163,7 +163,20 @@ def as_template(scan_data, template='html'):
                     'value': '\n'.join(entry['statements']),
                 })
         if 'licenses' in scan_result:
+            # first pass, find main licenses
+            extra_licenses = []
+
             for entry in scan_result['licenses']:
+                license = get_license(entry['key'])
+                if license.main_license:
+                    extra_licenses.append({
+                        'start_line': entry['start_line'],
+                        'end_line': entry['end_line'],
+                        'key': license.main_license,
+                    })
+
+            # second pass, generate the list of licenses
+            for entry in scan_result['licenses'] + extra_licenses:
                 results.append({
                     'start': entry['start_line'],
                     'end': entry['end_line'],

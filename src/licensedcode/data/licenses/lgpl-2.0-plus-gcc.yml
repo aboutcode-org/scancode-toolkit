@@ -6,3 +6,4 @@ category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 text_urls:
     - http://www.opensource.apple.com/source/libcppabi/libcppabi-26/include/demangle.h
+main_license: lgpl-2.0
