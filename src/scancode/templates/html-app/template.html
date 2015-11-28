@@ -549,7 +549,7 @@
   <script>
     // Get license short name
     var shortNames = $.map(data, function(item){
-        return $.map(item.licenses, function(license) {
+        return $.map(item.licenses.length > 0 ? item.licenses : [{short_name: 'No License Found'}], function(license) {
             return license.short_name;
         });
     });
