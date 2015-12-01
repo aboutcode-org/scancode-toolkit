@@ -31,7 +31,7 @@ function BarChart(chartData, chartOptions, chartSelector){
     var margin = {
         left: chartOptions.margin + this.maxNameWidth(chartData),
         top: chartOptions.margin,
-        right: chartOptions.margin,
+        right: chartOptions.margin + this.maxValueWidth(chartData),
         bottom: chartOptions.margin
     }
 
@@ -104,10 +104,17 @@ function BarChart(chartData, chartOptions, chartSelector){
 };
 
 $.extend(BarChart.prototype, {
-    // Takes the data names, finds the name with the most characters, and
-    // appends a span element with that name to the DOM. Gets the width in
+    // Appends a span element with that name to the DOM. Gets the width in
     // pixels. Removes the appended span element from the DOM and returns the
     // width.
+    strPixelWidth: function(str) {
+        var tmp = $('<span></span>').text(str);
+        $('body').append(tmp);
+        var width = tmp.width();
+        tmp.remove();
+        return width;
+    },
+    // Returns the pixel width of the string with the longest length
     maxNameWidth: function(data) {
         var names = data.map(function(d) { return d.name; });
 
@@ -118,10 +125,11 @@ $.extend(BarChart.prototype, {
             }
         });
 
-        var tmp = $('<span></span>').text(maxStr);
-        $('body').append(tmp);
-        var maxWidth = tmp.width();
-        tmp.remove();
-        return maxWidth;
+        return this.strPixelWidth(maxStr);
+    },
+    // Returns the pixel width of the value with the longest length
+    maxValueWidth: function(data) {
+        var maxValue = d3.max(data, function(d) { return d.val; });
+        return this.strPixelWidth('(' + maxValue + ')');
     }
 });
