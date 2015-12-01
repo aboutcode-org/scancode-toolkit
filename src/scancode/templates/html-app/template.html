@@ -547,9 +547,11 @@
       $('#button').click(function(){ $('#data_table').toggleClass('ellipsis'); })
   </script>
   <script>
-    // Get license short name
+    var NO_LICENSES = [{short_name: 'No License Found'}]
+    // Get license short name and if no license set it to No License Found
     var shortNames = $.map(data, function(item){
-        return $.map(item.licenses, function(license) {
+        licenses = item.licenses.length > 0 ? item.licenses : NO_LICENSES;
+        return $.map(licenses, function(license) {
             return license.short_name;
         });
     });
