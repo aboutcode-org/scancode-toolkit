@@ -88,6 +88,10 @@ function BarChart(chartData, chartOptions, chartSelector){
         .attr('class', 'y axis')
         .call(yAxis);
 
+    this.remove = function() {
+        chart.remove();
+    }
+
     // Redraws chart and sets width based on available chart width.
     // User needs to call this function whenever the width of the chart changes.
     this.draw = function() {
