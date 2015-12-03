@@ -176,7 +176,8 @@ def create_virtualenv(std_python, root_dir, tpp_dirs, quiet=False):
     vendored Python distributions that pip will use to find required
     components.
     """
-    print("* Configuring Python ...")
+    if not quiet:
+        print("* Configuring Python ...")
     # search virtualenv.py in the tpp_dirs. keep the first found
     venv_py = None
     for tpd in tpp_dirs:
@@ -213,7 +214,8 @@ def install_3pp(configs, root_dir, tpp_dirs, quiet=False):
     Install requirements from requirement files found in `configs` with pip,
     using the vendored components in `tpp_dirs`.
     """
-    print("* Installing components ...")
+    if not quiet:
+        print("* Installing components ...")
     requirement_files = get_conf_files(configs, root_dir, requirements)
     for req_file in requirement_files:
         pcmd = ['pip', 'install', '--no-allow-external',
@@ -227,11 +229,12 @@ def install_3pp(configs, root_dir, tpp_dirs, quiet=False):
         call(pcmd, root_dir)
 
 
-def run_scripts(configs, root_dir, configured_python):
+def run_scripts(configs, root_dir, configured_python, quiet=False):
     """
     Run Python scripts and shell scripts found in `configs`.
     """
-    print("* Configuring ...")
+    if not quiet:
+        print("* Configuring ...")
     # Run Python scripts for each configurations
     for py_script in get_conf_files(configs, root_dir, python_scripts):
         cmd = [configured_python, os.path.join(root_dir, py_script)]
@@ -380,7 +383,8 @@ if __name__ == '__main__':
     activate(root_dir)
 
     install_3pp(configs, root_dir, thirdparty_dirs, quiet=run_quiet)
-    run_scripts(configs, root_dir, configured_python)
+    run_scripts(configs, root_dir, configured_python, quiet=run_quiet)
     chmod_bin(bin_dir)
-    print("* Configuration completed.")
-    print()
+    if not run_quiet:
+        print("* Configuration completed.")
+        print()
