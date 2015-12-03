@@ -4,7 +4,7 @@ graft thirdparty
 graft samples
 
 recursive-exclude thirdparty/dev *
-#recursive-exclude tests *
+prune tests
 
 include AUTHORS.rst
 include CHANGELOG.rst
