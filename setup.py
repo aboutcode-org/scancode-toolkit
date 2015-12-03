@@ -29,7 +29,7 @@ long_description = '%s\n%s' % (
 
 setup(
     name='scancode-toolkit',
-    version='1.4.0',
+    version='1.4.1',
     license='Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others',
     description='ScanCode is a tool to scan code for license, copyright and other interesting facts.',
     long_description=long_description,
