@@ -152,6 +152,7 @@
       var file_color_empty = "icon-empty";
       var dir_color        = "icon-primary";
       var dir_color_empty  = "icon-empty";
+      var currNodeData;
 
       genIconClass = function(isLeaf, isOpen, isEmpty){
           icon  = isLeaf  ? icon_file : (isOpen ? icon_dir_open : icon_dir_close);
@@ -208,12 +209,13 @@
           $( "#tab4" ).click(function() {
            $('#details').hide();
            $('#summary').show();
+           resetChart(currNodeData);
           });
 
           $("#details").hide();
       });
       // Returns a row in the format expected by jstree
-      getJSTreeData = function(parent, id, text, icon_class){
+      function getJSTreeData(parent, id, text, icon_class){
         return {
           "id": id,
           "parent": parent == "" ? '#' : parent,
@@ -225,7 +227,7 @@
       };
 
       // Return license and copyright data in table format
-      toDataTableFormat = function(jsonData){
+      function toDataTableFormat(jsonData){
         return $.map(jsonData, function(x){
           // Add all license columns here
           licenseData = [];
@@ -457,8 +459,21 @@
       };
 
       function onNodeSelected(nodeData){
-          // filter the data
-          filteredData = formatChartData($.map(data, function(item){
+          currNodeData = nodeData;
+          resetChart(currNodeData);
+      }
+
+      function resetChart(nodeData) {
+          barChart.remove();
+          barChart = new BarChart(filteredData(nodeData), chartOptions, '.chart');
+      }
+
+      // filter the data
+      function filteredData(nodeData){
+          if (typeof nodeData == 'undefined') {
+              return formatChartData(data);
+          }
+          return formatChartData($.map(data, function(item){
               var pattern = '^' + nodeData.selected[0];
               pattern += nodeData.node.children.length > 0 ? '/' : '';
               if (item.location.match(pattern)){
@@ -467,8 +482,6 @@
                   return;
               }
           }));
-          barChart.remove();
-          barChart = new BarChart(filteredData, chartOptions, '.chart');
       }
 
       // Render the DataTable by specifying Copyright and License
