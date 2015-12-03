@@ -1,5 +1,12 @@
 graft src
+graft etc
+graft thirdparty
+graft samples
+
 graft tests
+
+
+prune src/scancode_toolkit.egg-info
 
 include AUTHORS.rst
 include CHANGELOG.rst
@@ -8,8 +15,20 @@ include CONTRIBUTING.rst
 include apache-2.0.LICENSE
 include cc0-1.0.LICENSE
 include NOTICE
-include scancode.ABOUT
+include MANIFEST.in
+include setup.py
+include setup.cfg
+include .gitignore
+include configure
+include configure.bat
+include CONTRIBUTING.rst
+include MANIFEST.in
+include NOTICE
+include scancode
+include scancode.bat
+include extractcode
+include extractcode.bat
 
-include tox.ini .travis.yml appveyor.yml
+include .travis.yml appveyor.yml
 
 global-exclude *.py[co] __pycache__
