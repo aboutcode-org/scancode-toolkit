@@ -169,11 +169,10 @@ def as_template(scan_data, template='html'):
             for entry in scan_result['licenses']:
                 license = get_license(entry['key'])
                 if license.main_license:
-                    extra_licenses.append({
-                        'start_line': entry['start_line'],
-                        'end_line': entry['end_line'],
-                        'key': license.main_license,
-                    })
+                    d = get_license(license.main_license).asdict()
+                    d['start_line'] = entry['start_line']
+                    d['end_line'] = entry['end_line']
+                    extra_licenses.append(d)
 
             # second pass, generate the list of licenses
             for entry in scan_result['licenses'] + extra_licenses:
