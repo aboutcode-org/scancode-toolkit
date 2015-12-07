@@ -163,7 +163,7 @@ class NoOpProgressBar(EnhancedProgressBar):
     A ProgressBar-like object that does not show any progress.
     """
     def __init__(self, *args, **kwargs):
-        ProgressBar.__init__(self, *args, **kwargs)
+        EnhancedProgressBar.__init__(self, *args, **kwargs)
         self.is_hidden = True
 
 
