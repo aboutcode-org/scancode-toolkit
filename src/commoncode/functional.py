@@ -24,14 +24,16 @@
 
 from __future__ import absolute_import, print_function
 
-from types import ListType, TupleType, GeneratorType
 import functools
+from itertools import izip
+from types import ListType, TupleType, GeneratorType
 
 
 def flatten(seq):
     """
-    Flatten a sequence sub-sequences: either a tuple, list or generator
-    (generators will be consumed) are converted to a flat list of elements.
+    Flatten recursively a sequence and all its sub-sequences that can be tuples,
+    lists or generators (generators will be consumed): all are converted to a
+    flat list of elements.
 
     For example::
     >>> flatten([7, (6, [5, [4, ['a'], 3]], 3), 2, 1])
@@ -52,12 +54,25 @@ def flatten(seq):
     for x in seq:
         if isinstance(x, (ListType, TupleType)):
             r.extend(flatten(x))
-        # generator is not exposed as a built-in type by default
         elif isinstance(x, GeneratorType):
-            r.extend(flatten([y for y in x]))
+            r.extend(flatten(list(x)))
         else:
             r.append(x)
     return r
+
+
+def pair_chunks(iterable):
+    """
+    Return an iterable of chunks of elements pairs from iterable. The iterable
+    must contain an even number of elements or it will truncated.
+
+    For example::
+    >>> list(pair_chunks([1, 2, 3, 4, 5, 6]))
+    [(1, 2), (3, 4), (5, 6)]
+    >>> list(pair_chunks([1, 2, 3, 4, 5, 6, 7]))
+    [(1, 2), (3, 4), (5, 6)]
+    """
+    return izip(*[iter(iterable)] * 2)
 
 
 def memoize(fun):
