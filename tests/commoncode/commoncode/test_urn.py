@@ -33,23 +33,23 @@ class URNTestCase(TestCase):
 
     def test_encode_license(self):
         u1 = urn.encode('license', key='somekey')
-        self.assertEquals('urn:dje:license:somekey', u1)
+        assert 'urn:dje:license:somekey' == u1
 
     def test_encode_owner(self):
         u1 = urn.encode('owner', name='somekey')
-        self.assertEquals('urn:dje:owner:somekey', u1)
+        assert 'urn:dje:owner:somekey' == u1
 
     def test_encode_component(self):
         u1 = urn.encode('component', name='name', version='version')
-        self.assertEquals('urn:dje:component:name:version', u1)
+        assert 'urn:dje:component:name:version' == u1
 
     def test_encode_component_no_version(self):
         u1 = urn.encode('component', name='name', version='')
-        self.assertEquals('urn:dje:component:name:', u1)
+        assert 'urn:dje:component:name:' == u1
 
     def test_encode_license_with_extra_fields_are_ignored(self):
         u1 = urn.encode('license', key='somekey', junk='somejunk')
-        self.assertEquals('urn:dje:license:somekey', u1)
+        assert 'urn:dje:license:somekey' == u1
 
     def test_encode_missing_field_raise_keyerror(self):
         with self.assertRaises(KeyError):
@@ -66,51 +66,51 @@ class URNTestCase(TestCase):
     def test_encode_component_with_spaces_are_properly_quoted(self):
         u1 = urn.encode('component', name='name space',
                         version='version space')
-        self.assertEquals('urn:dje:component:name+space:version+space', u1)
+        assert 'urn:dje:component:name+space:version+space' == u1
 
     def test_encode_leading_and_trailing_spaces_are_trimmed_and_ignored(self):
         u1 = urn.encode(' component ', name=' name space    ',
                         version='''  version space ''')
-        self.assertEquals('urn:dje:component:name+space:version+space', u1)
+        assert 'urn:dje:component:name+space:version+space' == u1
 
     def test_encode_component_with_semicolon_are_properly_quoted(self):
         u1 = urn.encode('component', name='name:', version=':version')
-        self.assertEquals('urn:dje:component:name%3A:%3Aversion', u1)
+        assert 'urn:dje:component:name%3A:%3Aversion' == u1
 
     def test_encode_component_with_plus_are_properly_quoted(self):
         u1 = urn.encode('component', name='name+', version='version+')
-        self.assertEquals('urn:dje:component:name%2B:version%2B', u1)
+        assert 'urn:dje:component:name%2B:version%2B' == u1
 
     def test_encode_component_with_percent_are_properly_quoted(self):
         u1 = urn.encode('component', name='name%', version='version%')
-        self.assertEquals('urn:dje:component:name%25:version%25', u1)
+        assert 'urn:dje:component:name%25:version%25' == u1
 
     def test_encode_object_type_case_is_not_significant(self):
         u1 = urn.encode('license', key='key')
         u2 = urn.encode('lICENSe', key='key')
-        self.assertEquals(u1, u2)
+        assert u1 == u2
 
     def test_decode_component(self):
         u = 'urn:dje:component:name:version'
         parsed = ('component', {'name': 'name', 'version': 'version'})
-        self.assertEqual(parsed, urn.decode(u))
+        assert parsed == urn.decode(u)
 
     def test_decode_license(self):
         u = 'urn:dje:license:lic'
         parsed = ('license', {'key': 'lic'})
-        self.assertEqual(parsed, urn.decode(u))
+        assert parsed == urn.decode(u)
 
     def test_decode_org(self):
         u = 'urn:dje:owner:name'
         parsed = ('owner', {'name': 'name'})
-        self.assertEqual(parsed, urn.decode(u))
+        assert parsed == urn.decode(u)
 
     def test_decode_build_is_idempotent(self):
         u1 = urn.encode('component', owner__name='org%', name='name%',
                        version='version%')
         m, f = urn.decode(u1)
         u3 = urn.encode(m, **f)
-        self.assertEqual(u1, u3)
+        assert u1 == u3
 
     def test_decode_raise_exception_if_incorrect_prefix(self):
         with self.assertRaises(urn.URNValidationError):

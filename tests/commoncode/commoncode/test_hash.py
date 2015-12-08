@@ -39,9 +39,9 @@ class TestHash(FileBasedTesting):
 
     def test_get_hasher(self):
         h = commoncode.hash.get_hasher(160)
-        self.assertEqual('hvfkN_qlp_zhXR3cuerq6jd2Z7g=', h('a').b64digest())
-        self.assertEqual('4MkDWJjdUvxlxBRUzsnE0mEb-zc=', h('aa').b64digest())
-        self.assertEqual('fiQN50-x7Qj6CNOAY_amqRRiqBU=', h('aaa').b64digest())
+        assert 'hvfkN_qlp_zhXR3cuerq6jd2Z7g=' == h('a').b64digest()
+        assert '4MkDWJjdUvxlxBRUzsnE0mEb-zc=' == h('aa').b64digest()
+        assert 'fiQN50-x7Qj6CNOAY_amqRRiqBU=' == h('aaa').b64digest()
 
     def test_hash_1(self):
         test_file = self.get_test_loc('hash/dir1/a.png')

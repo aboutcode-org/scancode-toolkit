@@ -34,7 +34,7 @@ class TestFunctional(TestCase):
     def test_flatten(self):
         expected = [7, 6, 5, 4, 'a', 3, 3, 2, 1]
         test = flatten([7, (6, [5, [4, ["a"], 3]], 3), 2, 1])
-        self.assertEqual(expected, test)
+        assert expected == test
 
     def test_flatten_generator(self):
         def gen():
@@ -43,9 +43,9 @@ class TestFunctional(TestCase):
 
         expected = [0, 1, 2, 3, 4, 0, 1, 2, 3, 4]
         test = flatten(gen())
-        self.assertEqual(expected, test)
+        assert expected == test
 
     def test_flatten_empties(self):
         expected = ['a']
         test = flatten([[], (), ['a']])
-        self.assertEqual(expected, test)
+        assert expected == test
