@@ -3933,10 +3933,21 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [u'Copyright . 2008 company name, inc.']
         check_detection(expected, test_lines)
 
+    def test_copyright_with_dots_and_all_lowercase_on_multilines_current(self):
+        test_lines = [u'Copyright . 2008 company name, inc.', 
+                      u'  Change: Add functions',]
+        expected = [u'Copyright . 2008']
+        check_detection(expected, test_lines)
+
     @expectedFailure
     def test_copyright_with_dots_and_all_lowercase_on_single_line(self):
         test_lines = [u'Copyright . 2008 foo name, inc.']
         expected = [u'Copyright . 2008 foo name, inc.']
+        check_detection(expected, test_lines)
+
+    def test_copyright_with_dots_and_all_lowercase_on_single_line_current(self):
+        test_lines = [u'Copyright . 2008 foo name, inc.']
+        expected = [u'Copyright . 2008 foo']
         check_detection(expected, test_lines)
 
     def test_copyright_copy_copy_by_name3(self):
