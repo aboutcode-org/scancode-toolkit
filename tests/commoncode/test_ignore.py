@@ -57,7 +57,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
     @skipIf(on_mac, 'Return different result on Mac for reasons to investigate')
     def test_default_ignores_eclipse1(self):
         test_dir = self.extract_test_tar('ignore/excludes/eclipse.tgz')
-        test_base  = os.path.join(test_dir, 'eclipse')
+        test_base = os.path.join(test_dir, 'eclipse')
 
         test = os.path.join(test_base, '.settings')
         result = ignore.is_ignored(test, ignore.default_ignores, {})
@@ -65,7 +65,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
 
     def test_default_ignores_eclipse2(self):
         test_dir = self.extract_test_tar('ignore/excludes/eclipse.tgz')
-        test_base  = os.path.join(test_dir, 'eclipse')
+        test_base = os.path.join(test_dir, 'eclipse')
 
         test = os.path.join(test_base, '.settings/somefile')
         result = ignore.is_ignored(test, ignore.default_ignores, {})
@@ -73,7 +73,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
 
     def test_default_ignores_eclipse3(self):
         test_dir = self.extract_test_tar('ignore/excludes/eclipse.tgz')
-        test_base  = os.path.join(test_dir, 'eclipse')
+        test_base = os.path.join(test_dir, 'eclipse')
 
         test = os.path.join(test_base, '.project')
         result = ignore.is_ignored(test, ignore.default_ignores, {})
@@ -81,7 +81,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
 
     def test_default_ignores_eclipse4(self):
         test_dir = self.extract_test_tar('ignore/excludes/eclipse.tgz')
-        test_base  = os.path.join(test_dir, 'eclipse')
+        test_base = os.path.join(test_dir, 'eclipse')
 
         test = os.path.join(test_base, '.pydevproject')
         result = ignore.is_ignored(test, ignore.default_ignores, {})

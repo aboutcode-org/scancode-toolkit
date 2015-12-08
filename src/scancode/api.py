@@ -69,19 +69,25 @@ def get_copyrights(location):
 DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/license_library/Demo/{}/'
 
 
-def get_licenses(location):
+def get_licenses(location, minimum_score=100):
     """
     Yield an iterable of dictionaries of license data detected in the file at
     location for each detected license.
+
+    minimum_score is the minimum score threshold from 0 to 100. The default is
+    100 means only exact licenses will be detected. With any value below 100,
+    approximate license results are included. Note that the minimum length for
+    an approximate match is four words.
     """
     from licensedcode.models import get_license
     from licensedcode.detect import get_license_matches
 
-    for match in get_license_matches(location):
+    for match in get_license_matches(location, minimum_score=minimum_score):
         for license_key in match.rule.licenses:
             lic = get_license(license_key)
             result = OrderedDict()
             result['key'] = lic.key
+            result['score'] = match.score
             result['short_name'] = lic.short_name
             result['category'] = lic.category
             result['owner'] = lic.owner

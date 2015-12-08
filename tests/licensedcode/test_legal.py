@@ -24,13 +24,17 @@
 
 from __future__ import absolute_import, print_function
 
+import os
 
 from commoncode.testcase import FileBasedTesting
-import os
 from licensedcode import legal
 
+
+TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+
+
 class TestSpecialFiles(FileBasedTesting):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+    test_data_dir = TEST_DATA_DIR
 
     def test_license_special_files(self):
         tests = [

@@ -27,45 +27,44 @@ from __future__ import absolute_import, print_function
 import os
 
 from commoncode.testcase import FileBasedTesting
-from textcode.analysis import Token
 from licensedcode import models
+from textcode.analysis import Token
+
+
+TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
 class TestLicense(FileBasedTesting):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+    test_data_dir = TEST_DATA_DIR
 
     def test_load_license(self):
         test_dir = self.get_test_loc('models/licenses')
         lics = models.load_licenses(test_dir)
         # one license is obsolete and not loaded
-        self.assertEqual([u'apache-2.0',
-                          u'bsd-ack-carrot2',
-                          u'w3c-docs-19990405'],
-                         sorted(lics.keys()))
+        expected = [u'apache-2.0', u'bsd-ack-carrot2', u'w3c-docs-19990405']
+        assert expected == sorted(lics.keys())
 
-        self.assertTrue(all(isinstance(l, models.License)
-                            for l in lics.values()))
+        assert all(isinstance(l, models.License) for l in lics.values())
         # test a sample of a licenses field
-        self.assertTrue('1994-2002 World Wide Web Consortium'
-                        in lics[u'w3c-docs-19990405'].text)
+        assert '1994-2002 World Wide Web Consortium' in lics[u'w3c-docs-19990405'].text
 
     def test_get_texts(self):
         test_dir = self.get_test_loc('models/licenses')
         lics = models.load_licenses(test_dir)
         for lic in lics.values():
-            self.assertTrue('distribut' in lic.text.lower())
+            assert 'distribut' in lic.text.lower()
 
     def test_get_rules_from_license_texts(self):
         test_dir = self.get_test_loc('models/licenses')
         lics = models.load_licenses(test_dir)
         rules = [r for r in models.get_rules_from_license_texts(lics)]
-        self.assertEqual(4, len(rules))
+        assert 4 == len(rules)
         for rule in rules:
-            self.assertTrue('distribut' in rule.text.lower())
+            assert 'distribut' in rule.text.lower()
 
 
 class TestRule(FileBasedTesting):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+    test_data_dir = TEST_DATA_DIR
 
     def create_test_file(self, text):
         tf = self.get_temp_file()
@@ -74,25 +73,23 @@ class TestRule(FileBasedTesting):
         return tf
 
     def test_create_template_rule(self):
-        ttr = models.Rule(text_file=self.create_test_file(u'A one. A {{}}two. A three.'), template=True)
+        test_rule = models.Rule(text_file=self.create_test_file(u'A one. A {{}}two. A three.'), template=True)
         toks = [
             Token(start=0, start_line=0, start_char=0, end_line=0, end_char=8, end=2, gap=5, value=u'a one a', length=3),
             Token(start=3, start_line=0, start_char=13, end_line=0, end_char=25, end=5, gap=0, value=u'two a three', length=3)
         ]
-        assert toks == list(ttr.get_tokens())
-        for i in range(len(toks)):
-            self.assertEqual(toks[i], ttr.tokens[i])
+        tokens, min_len, max_len, gaps_count = test_rule.get_tokens()
+        assert (toks, 5, 10, 5) == (tokens, min_len, max_len, gaps_count)
 
     def test_create_plain_rule(self):
-        ftr = models.Rule(text_file=self.create_test_file('A one. A two. A three.'))
+        test_rule = models.Rule(text_file=self.create_test_file('A one. A two. A three.'))
         toks = [
             Token(start=0, start_line=0, start_char=0, end_line=0, end_char=12, end=3, gap=0, value=u'a one a two', length=4),
             Token(start=1, start_line=0, start_char=2, end_line=0, end_char=15, end=4, gap=0, value=u'one a two a', length=4),
             Token(start=2, start_line=0, start_char=7, end_line=0, end_char=21, end=5, gap=0, value=u'a two a three', length=4),
         ]
-        self.assertEqual(toks, list(ftr.get_tokens()))
-        for i in range(len(toks)):
-            self.assertEqual(toks[i], ftr.tokens[i])
+        tokens, min_len, max_len, gaps_count = test_rule.get_tokens()
+        assert (toks, 5, 5, 0) == (tokens, min_len, max_len, gaps_count)
 
     def test_load_rules(self):
         test_dir = self.get_test_loc('models/rules')
@@ -125,3 +122,15 @@ class TestRule(FileBasedTesting):
         r1 = models.Rule(text_file=self.create_test_file('Some text'), license_choice=False)
         r2 = models.Rule(text_file=self.create_test_file('Some text'), license_choice=True)
         assert models.rule_identifier(r1) != models.rule_identifier(r2)
+
+    def test_rule_min_len_is_computed_correctly(self):
+        test_text = '''zero one two three
+            four {{gap1}}
+            five six seven eight nine ten'''
+        r1 = models.Rule(text_file=self.create_test_file(test_text), template=False)
+        r1.get_tokens()
+        assert 11 == r1.min_len
+
+        r2 = models.Rule(text_file=self.create_test_file(test_text), template=True)
+        r2.get_tokens()
+        assert 10 == r2.min_len

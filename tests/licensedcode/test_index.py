@@ -24,7 +24,6 @@
 
 from __future__ import absolute_import, print_function
 
-
 import os
 import codecs
 
@@ -37,8 +36,11 @@ from textcode.analysis import text_lines
 from licensedcode import index
 
 
+TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+
+
 class TestIndexBasedDetection(FileBasedTesting):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+    test_data_dir = TEST_DATA_DIR
 
     def test_merge_positions(self):
         pos1 = Token(start=58, end=58, start_line=8, start_char=52, end_line=8, end_char=59)
@@ -68,10 +70,11 @@ class TestIndexBasedDetection(FileBasedTesting):
             if (subset and docid in subset) or not subset:
                 yield docid, text_lines(location=os.path.join(base, docid))
 
-    def test_Index_index_many_unigrams(self):
+    def test_Index_index_several_unigrams(self):
         test_docs = self.get_test_docs('index/bsd', ['bsd-new', 'bsd-no-mod'])
         idx = index.Index(ngram_len=1)
-        idx._index_many(test_docs)
+        for docid, doc in test_docs:
+            idx.index_one(docid, doc)
         unigrams_index = idx.indexes[1]
 
         assert 213 == idx.get_tokens_count('bsd-new')
@@ -128,7 +131,7 @@ class TestIndexBasedDetection(FileBasedTesting):
             'tmpl6': 6,
             'tmpl7': 7,
             'tmpl8': 8,
-            'tmpl9': 9
+            'tmpl9': 9,
         }
 
         result = {docid: idx.get_tokens_count(docid) for docid in docids}
@@ -184,10 +187,11 @@ class TestIndexBasedDetection(FileBasedTesting):
 
     def get_test_index(self, docs, ngram_len=3, template=False):
         idx = index.Index(ngram_len)
-        idx._index_many(docs, template)
+        for docid, doc in docs:
+            idx.index_one(docid, doc, template)
         return idx
 
-    def test_Index_match_simple(self):
+    def test_Index_exact_match_simple(self):
         test_docs = self.get_test_docs('index/bsd')
         idx = self.get_test_index(test_docs, ngram_len=1)
         test_query_doc = self.get_test_loc('index/querysimple')
@@ -230,11 +234,11 @@ class TestIndexBasedDetection(FileBasedTesting):
                  ]
         }
 
-        test = dict(idx.match(text_lines(test_query_doc), perfect=True))
-        for k, val in test.items():
+        matches = idx.match(text_lines(test_query_doc))
+        for k, val in matches.items():
             assert expected[k] == val
 
-    def test_Index_match_unigrams_perfect(self):
+    def test_Index_exact_match_unigrams_perfect(self):
         test_docs = self.get_test_docs('index/bsd')
         idx = self.get_test_index(test_docs, ngram_len=1, template=False)
         test_query_doc = self.get_test_loc('index/queryperfect')
@@ -246,39 +250,42 @@ class TestIndexBasedDetection(FileBasedTesting):
             ]
         }
 
-        test = dict(idx.match(text_lines(test_query_doc), perfect=True))
+        matches = idx.match(text_lines(test_query_doc))
 
-        self.assertNotEqual({}, test)
-        for k, val in test.items():
+        assert {} != matches
+        for k, val in matches.items():
             assert expected[k] == val
 
         with codecs.open(test_query_doc, encoding='utf-8') as td:
             actual = td.read().splitlines(True)
             expected = u''.join(actual[5:-2])[:-2]
-            query_match_pos = test['bsd-new'][0][-1]
+            query_match_pos = matches['bsd-new'][0][-1]
             tst = analysis.doc_subset(text_lines(location=test_query_doc), query_match_pos)
             tst = u''.join(tst)
             assert expected == tst
 
-    def test_Index_match_ngrams_perfect_minimalist(self):
+    def test_Index_exact_match_ngrams_perfect_minimalist(self):
         index_doc = [u'name is joker, name is joker']
+        #                 0  1     2     3  4     5
         idx = index.Index(ngram_len=3)
         idx.index_one('tst', text_lines(index_doc), template=False)
 
         query_doc = [u'Hi my name is joker, name is joker yes.']
+        # match         0  1   |2  3     4     5  6     7|  8
         expected = {
             'tst': [
                 (Token(start=0, start_line=0, start_char=0, end_line=0, end_char=28, end=5),
                  Token(start=2, start_line=0, start_char=6, end_line=0, end_char=34, end=7))
             ]
         }
-        test = dict(idx.match(query_doc, perfect=True))
+        matches = idx.match(query_doc)
 
-        self.assertNotEqual({}, test)
-        for k, val in test.items():
+        assert {} != matches
+        for k, val in matches.items():
+#              assert [] == val
             assert expected[k] == val
 
-    def test_Index_match_ngrams_perfect_single_index_doc_in_index_minimal(self):
+    def test_Index_exact_match_ngrams_perfect_single_index_doc_in_index_minimal(self):
         test_docs = self.get_test_docs('index/mini')
         idx = self.get_test_index(test_docs, ngram_len=3, template=False)
         test_query_doc = self.get_test_loc('index/queryperfect-mini')
@@ -289,31 +296,34 @@ class TestIndexBasedDetection(FileBasedTesting):
                  Token(start=1, start_line=2, start_char=0, end_line=2, end_char=94, end=14))
             ]
         }
-        test = dict(idx.match(text_lines(test_query_doc), perfect=True))
+        matches = idx.match(text_lines(test_query_doc))
 
-        assert {} != test
-        for k, val in test.items():
+        assert {} != matches
+        for k, val in matches.items():
             assert expected[k] == val
 
-    def test_Index_match_ngrams_templates_perfect_minimalist(self):
+    def test_Index_exact_match_ngrams_templates_perfect_minimalist(self):
         index_doc = [u'name is joker, {{}} name is joker']
         idx = index.Index(ngram_len=3)
         idx.index_one('tst', text_lines(index_doc), template=True)
 
         query_doc = [u'Hi my name is joker the joker name is joker yes.']
+        #              012345678901234567890123456789012345678901234567
+        #                        11111111112222222222333333333344444444
         expected = {
             'tst': [
                 (Token(start=0, start_line=0, start_char=0, end_line=0, end_char=33, end=5),
                  Token(start=2, start_line=0, start_char=6, end_line=0, end_char=43, end=9))
             ]
         }
-        test = dict(idx.match(text_lines(query_doc), perfect=True))
 
-        self.assertNotEqual({}, test)
-        for k, val in test.items():
+        matches = idx.match(text_lines(query_doc))
+
+        assert {} != matches
+        for k, val in matches.items():
             assert expected[k] == val
 
-    def test_Index_match_ngrams_template_perfect_multi_index_doc_in_index(self):
+    def test_Index_exact_match_ngrams_template_perfect_multi_index_doc_in_index(self):
         test_docs = self.get_test_docs('index/bsd_templates')
         idx = self.get_test_index(test_docs, ngram_len=3, template=True)
         test_query_doc = self.get_test_loc('index/queryperfect_single_template')
@@ -324,9 +334,48 @@ class TestIndexBasedDetection(FileBasedTesting):
                   Token(start=4, start_line=5, start_char=0, end_line=11, end_char=753, end=216))
             ]
         }
-
-        test = dict(idx.match(text_lines(test_query_doc), perfect=True))
-
-        self.assertNotEqual({}, test)
-        for k, val in test.items():
+        matches = idx.match(text_lines(test_query_doc))
+        assert {} != matches
+        for k, val in matches.items():
             assert expected[k] == val
+
+    def test_Index_exact_match_return_one_match_with_correct_offsets(self):
+        index_doc = [u'A one. A two. A three.']
+        idx = index.Index(ngram_len=4)
+        idx.index_one('tst', text_lines(index_doc), template=False)
+        query_doc = [u'some junk. A one. A two. A three.']
+        #                         1111111111222222222233
+        #              012345678901234567890123456789012
+
+        matches = idx.match(query_doc)
+        match = matches['tst']
+        assert 1 == len(match)
+        index_pos, query_pos = match[0]
+        assert 11 == query_pos.start_char
+        assert 32 == query_pos.end_char
+        assert 0 == index_pos.start_char
+        assert 21 == index_pos.end_char
+
+    def test_Index_exact_match_to_indexed_template_with_short_tokens_around_gaps(self):
+        # was failing when a gapped token (from a template) starts at a
+        # beginning of an index doc and at a position less than ngram length
+
+        # setup
+        idx = index.Index(ngram_len=4)
+        index_doc = text_lines(self.get_test_loc('index/templates/idx.txt'))
+        idx.index_one('idx', text_lines(index_doc), template=True)
+
+        # test index
+        quad_grams_index = idx._get_index_for_len(4)
+        assert 205 == len(quad_grams_index)
+        assert u'software without prior written' in quad_grams_index
+
+        # test match
+        query_doc = text_lines(self.get_test_loc('index/templates/query.txt'))
+        matches = idx.match(query_doc)
+        assert 1 == len(matches)
+
+        # we expect a single match to the idx doc
+        matched_query_doc_position = matches['idx'][0][1]
+        expected = Token(start=0, start_line=0, start_char=0, end_line=39, end_char=34, end=276)
+        assert expected == matched_query_doc_position

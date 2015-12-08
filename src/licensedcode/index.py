@@ -37,12 +37,8 @@ logger = logging.getLogger(__name__)
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 # logger.setLevel(logging.DEBUG)
 
-
+# general debug flag
 DEBUG = False
-DEBUG_CANDIDATES = False
-DEBUG_ALIGN = False
-if DEBUG or DEBUG_CANDIDATES or DEBUG_ALIGN:
-    from pprint import pformat
 
 
 def posting_list():
@@ -204,7 +200,7 @@ class Index(object):
         for docid, doc in docs:
             self.index_one(docid, doc, template)
 
-    def match(self, query_doc, perfect=True):
+    def match(self, query_doc, minimum_score=100):
         """
         Return matches as a mapping of matched index docid to a list of tuples
         (matched index doc pos, matched query doc pos).
@@ -212,13 +208,12 @@ class Index(object):
         Match `query_doc` against the index where `query_doc` is an iterable
         of unicode text lines.
 
-        Only check for perfect, exact matches if `perfect` is True.
+        TODO: Include approximate results if minimum_score is less than 100.
         """
         if not query_doc:
             return {}
-
-        # get candidates sharing at least one ngram
-        candidate_matches = self.candidates(query_doc)
+        query_tokens = list(self.query_tknzr(query_doc))
+        candidate_matches = self.candidate_matches(query_tokens)
 
         if not candidate_matches:
             return {}
@@ -227,7 +222,6 @@ class Index(object):
 
         by_index_position_start = lambda x: x[0].start
 
-        # first find contiguous matches
         for docid, matches in candidate_matches.items():
             sorted_matches = sorted(matches, key=by_index_position_start)
             for idx, match in enumerate(sorted_matches):
@@ -241,35 +235,13 @@ class Index(object):
                     pass
                 # start of a possible full match at index_position 0
                 subset = sorted_matches[idx + 1:]
-
-                if DEBUG:
-                    lsub = len(subset) + 1
-                    print('     Index.match: about to align %(lsub)r '
-                          'candidate matches for %(docid)r:\n'
-                          'index_position: %(index_position)r\nquery_position: %(query_position)r\n'
-                          % locals())
-
                 matched_positions = self.align_matches(index_position, query_position, subset)
 
-                if DEBUG:
-                    lmp = len(matched_positions)
-                    print('    Index.match: aligned %(lmp)r matches for '
-                          '%(docid)r. Now merging' % locals())
-
                 merged = merge_aligned_positions(matched_positions)
-
-                if DEBUG:
-                    lmrg = len(merged)
-                    print('    Index.match: merged %(lmp)r aligned '
-                          'matches in %(lmrg)r positions for %(docid)r'
-                          % locals())
-                    print('    Index.match: merged positions are: '
-                          '\n%s\n' % pformat(merged))
-
                 if merged:
                     all_results[docid].append(merged)
 
-        filtered = self.filter_matches(all_results, perfect)
+        filtered = self.filter_matches(all_results, perfect=True)
         return filtered
 
     def align_matches(self, cur_index_position, cur_query_position, matches):
@@ -322,95 +294,36 @@ class Index(object):
         # add first match
         matched = [(cur_index_position, cur_query_position,)]
         cumulative_gap = 0
-
-        if DEBUG_ALIGN:
-            print()
-
         for match in matches:
             prev_index_position, prev_query_position = matched[-1]
             cumulative_gap += prev_index_position.gap
             cur_index_position, cur_query_position = match
-
-            if DEBUG_ALIGN:
-                print(''.join(['Index.aligned match: positions \n',
-                      '  prev_index_position: %(start)r %(end)r %(value)r\n' % prev_index_position._asdict(),
-                      '   cur_index_position : %(start)r %(end)r %(value)r\n' % cur_index_position._asdict(),
-                      '  prev_query_position: %(start)r %(end)r %(value)r\n' % prev_query_position._asdict(),
-                      '   cur_query_position : %(start)r %(end)r %(value)r' % cur_query_position._asdict(),
-                      ]))
-
-                print('Index.aligned match: prev_index_position.start:%d < '
-                      'cur_index_position.start:%d <= prev_index_position.end + 1:%d'
-                      % (prev_index_position.start, cur_index_position.start,
-                         prev_index_position.end + 1,))
-
             if (prev_index_position.start < cur_index_position.start <= prev_index_position.end + 1):
-
-                if DEBUG_ALIGN:
-                    print('Index.aligned match: possible contiguous tokens')
-
                 # we are contiguous in index_position: are we contiguous in query_position?
                 if prev_query_position.start + 1 == cur_query_position.start:
-
-                    if DEBUG_ALIGN:
-                        print('Index.aligned match: Keeping contiguous '
-                              'tokens: prev_query_position.start + 1 '
-                              '== cur_query_position.start\n')
-
                     matched.append((cur_index_position, cur_query_position,))
                     continue
                 else:
                     # we are not contiguous, but could we be when gaps are
                     # considered?
-
-                    if DEBUG_ALIGN:
-                        print('Index.aligned match: '
-                              'prev_query_position.start:%d < cur_query_position.start:%d '
-                              '<= prev_query_position.start + 1 + cumulative_gap '
-                              '+ self.ngram_len: %d' %
-                              (prev_query_position.start, cur_query_position.start,
-                               prev_query_position.start + cumulative_gap + self.ngram_len,))
-
                     if (prev_query_position.start < cur_query_position.start and
                         cur_query_position.start <= (prev_query_position.start + cumulative_gap + self.ngram_len)):
                         # we are contiguous gap-wise, keep this match
-
-                        if DEBUG_ALIGN:
-                            print('Index.aligned match: Keeping gap-wise contiguous tokens\n')
-
                         matched.append((cur_index_position, cur_query_position,))
                     continue
-            else:
-                if DEBUG_ALIGN:
-                    print('Index.aligned match: Skipping tokens\n')
-
-                continue
         return matched
 
-    def candidates(self, query_doc):
+    def candidate_matches(self, query_tokens):
         """
-        Find candidate matches for query_doc against index where query doc is
-        an iterable of unicode text lines. Return candidate matches as a
-        mapping of:
+        Find candidate matches for query_tokens in the index where query tokens is
+        an iterable of tokens. Return matched candidate tokens as a mapping of:
         matched index docid -> sorted set of tuples (matched index doc pos,
                                                      matched query doc pos).
         """
-        if DEBUG_CANDIDATES:
-            print()
-            print('=>Index.candidates: entering')
-            query_doc = list(query_doc)
-            print(' Index.candidates: Query doc has %d lines.' % len(query_doc))
-            print(u''.join(query_doc))
-            print()
-            query_doc = iter(query_doc)
-
         # map index_docid -> sorted set of tuples (index_position, query_position)
         candidate_matches = defaultdict(list)
         # iterate over query_doc tokens using query_tknzr
-        for qtoken in self.query_tknzr(query_doc):
-            if DEBUG_CANDIDATES:
-                print('  Index.candidates: processing\n   %(qtoken)r' % locals())
-
+        for qtoken in query_tokens:
             # query the proper inverted index for the value len, aka the ngram length
             matches = self._lookup_token(qtoken)
 
@@ -419,9 +332,6 @@ class Index(object):
             # accumulate matches for each docid
             for docid, postings in matches.items():
                 for itoken in postings:
-                    if DEBUG_CANDIDATES:
-                        print('  Index.candidates: %(docid)r matched from:\n      %(itoken)r\n      %(qtoken)r' % locals())
-
                     candidate_matches[docid].append((itoken, qtoken))
         return candidate_matches
 

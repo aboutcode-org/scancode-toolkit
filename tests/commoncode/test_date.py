@@ -48,7 +48,7 @@ class TestDate(testcase.FileBasedTesting):
         open(test_file, 'w').close()
         now = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
         result = commoncode.date.get_file_mtime(test_file)[:10]
-        self.assertEqual(now[:10], result)
+        assert now[:10] == result
 
     def test_get_file_time2(self):
         test_file = self.get_temp_file()
@@ -57,7 +57,7 @@ class TestDate(testcase.FileBasedTesting):
         m_ts = (24 * 3600) * 134 + (24 * 3600 * 365) * 22
         # setting modified time to expected values
         os.utime(test_file, (m_ts, m_ts))
-        self.assertEqual(expected, commoncode.date.get_file_mtime(test_file))
+        assert expected == commoncode.date.get_file_mtime(test_file)
 
     def test_get_file_time3(self):
         test_file = self.get_temp_file()
@@ -65,4 +65,4 @@ class TestDate(testcase.FileBasedTesting):
         # setting modified time to expected values
         expected = u'2011-01-06 14:35:00'
         os.utime(test_file, (1294324500, 1294324500))
-        self.assertEqual(expected, commoncode.date.get_file_mtime(test_file))
+        assert expected == commoncode.date.get_file_mtime(test_file)

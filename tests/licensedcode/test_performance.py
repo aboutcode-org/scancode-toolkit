@@ -26,13 +26,15 @@ from __future__ import absolute_import, print_function
 
 import os
 from unittest.case import skip
+
 from commoncode.testcase import FileBasedTesting
 
-from licensedcode import detect
+
+TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
 class TestMatchingPerf(FileBasedTesting):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+    test_data_dir = TEST_DATA_DIR
 
     # Comment the skip decorator to run this test
     @skip('Use only for local profiling')
@@ -48,7 +50,7 @@ class TestMatchingPerf(FileBasedTesting):
 
         def detect_lic():
             for location in locations:
-                list(detect.detect_license(location, perfect=True))
+                list(licensedcode.detect.detect_license(location))
 
         tf = ['perf/test1.txt', 'perf/whatever.py', 'perf/udll.cxx']
 
@@ -61,7 +63,7 @@ class TestMatchingPerf(FileBasedTesting):
 
 
 class TestIndexingPerformance(FileBasedTesting):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+    test_data_dir = TEST_DATA_DIR
 
     # Comment the skip decorator to run this test
     @skip('Use only for local profiling')
@@ -85,7 +87,7 @@ class TestIndexingPerformance(FileBasedTesting):
 
 
 class TestTokenzingPerformance(FileBasedTesting):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+    test_data_dir = TEST_DATA_DIR
 
     # Comment the skip decorator to run this test
     @skip('Use only for local profiling')

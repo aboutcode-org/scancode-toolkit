@@ -182,7 +182,7 @@ def string_dumper(dumper, value, _tag=u'tag:yaml.org,2002:str'):
 #     colon_space = ': ' in value
 #     hash_space = '# ' in value
 
-    if multilines:# or colon_space or hash_space or (single_quote and double_quote) or double_quote:
+    if multilines:  # or colon_space or hash_space or (single_quote and double_quote) or double_quote:
         style = verbatim_style
     elif long_lines:
         style = folded_style

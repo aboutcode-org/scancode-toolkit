@@ -215,6 +215,7 @@
       "licenses": [
         {
           "key": "bsd-original-uc", 
+          "score": 100.0, 
           "short_name": "BSD-Original-UC", 
           "category": "Attribution", 
           "owner": "Regents of the University of California", 
@@ -289,6 +290,7 @@
       "licenses": [
         {
           "key": "gpl-2.0", 
+          "score": 100.0, 
           "short_name": "GPL 2.0", 
           "category": "Copyleft", 
           "owner": "Free Software Foundation (FSF)", 
@@ -302,6 +304,7 @@
         }, 
         {
           "key": "bsd-new", 
+          "score": 100.0, 
           "short_name": "BSD-Modified", 
           "category": "Attribution", 
           "owner": "Regents of the University of California", 

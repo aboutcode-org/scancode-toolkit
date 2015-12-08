@@ -24,26 +24,23 @@
 
 from __future__ import print_function, absolute_import
 
-
 import codecs
 from collections import OrderedDict
 from collections import defaultdict
 from itertools import chain
 import logging
 import os
+from os.path import dirname
 from os.path import exists
 from os.path import join
 import sys
 
-from licensedcode import saneyaml
-
 from commoncode import fileutils
-from licensedcode import licenses_data_dir, rules_data_dir
+from licensedcode import saneyaml
+from licensedcode import licenses_data_dir, rules_data_dir, src_dir
 from licensedcode import index
 from textcode import analysis
 from textcode.analysis import Token
-from os.path import dirname
-from licensedcode import src_dir
 
 
 """
@@ -55,9 +52,6 @@ logger = logging.getLogger(__name__)
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 # logger.setLevel(logging.DEBUG)
 
-
-# special magic key for rules pointing to non-license text
-not_a_license_key = 'not-a-license'
 
 class License(object):
     """
@@ -187,12 +181,12 @@ class License(object):
         except Exception, e:
             print()
             print('#############################')
-            print('INVALID LICENSE FILE:', data_file)
+            print('INVALID LICENSE YAML FILE:', data_file)
             print('#############################')
             print(e)
             print('#############################')
-            # this is a rare case, but yes we abruptly exit globally
-            sys.exit(1)
+            # this is a rare case
+            raise
 
         for k, v in data.items():
             setattr(self, k, v)
@@ -282,6 +276,10 @@ if not os.path.exists(cache_dir):
     fileutils.create_dir(cache_dir)
 
 
+class RuleWithNoTokenError(Exception):
+    pass
+
+
 def get_tokens(location, template, use_cache=False):
     """
     Return a list of tokens from a from a file at location using the tokenizer
@@ -289,10 +287,11 @@ def get_tokens(location, template, use_cache=False):
     """
     location = os.path.abspath(location)
     if not exists(location):
-        return []
+        raise RuleWithNoTokenError('Rule text location does not exist: %(location)r' % locals())
+#        return []
 
     file_name = fileutils.file_name(location)
-    cached_tokens  = os.path.join(cache_dir,file_name)
+    cached_tokens = os.path.join(cache_dir, file_name)
     if use_cache and os.path.exists(cached_tokens):
         # TODO: improve cache check
         tokens = list(load_tokens(cached_tokens))
@@ -327,11 +326,13 @@ def load_tokens(location):
 
 class Rule(object):
     """
-    Base class for detection rules.
+    A detection rule object relating a text to use for detection with the
+    corresponding detected licenses. A rule can be a plain rule where the text
+    is used as-is or a template rule that contains variable parts where the text
+    is parsed for templated regions marked with double curly braces {{ }}.
     """
-    def __init__(self, data_file=None, text_file=None,
-                 licenses=None, license_choice=False,
-                 template=False, notes=None):
+    def __init__(self, data_file=None, text_file=None, licenses=None,
+                 license_choice=False, template=False, notes=None):
 
         self.licenses = licenses or []
         self.license_choice = license_choice
@@ -345,14 +346,43 @@ class Rule(object):
 
         self.text_file = text_file
 
-        self.tokens = None  # a list
-        self.tokens_count = 0
+        # a list of Token objects
+        self.tokens = None
+
+        # minimum and maximum length in number of unigram tokens that can be
+        # matched by this rule
+        self.min_len = 0
+        self.max_len = 0
+
+        # the number of cumulative gaps (always zero for plain text rules)
+        self.gaps_count = 0
+
+    def compute_min_max(self):
+        """
+        Update self with the computed minimum and maximum length in number
+        of tokens that can be matched by this rule and the number of gaps.
+        For a plain text rule, min and max are equal to the count of tokens.
+
+        For a template rule, the number of gaps for every templated regions is
+        computed such that for min_len we use the number of tokens ignoring all
+        gaps and for max_len we use the number of tokens and add all the longest
+        gaps possible (using the default of default gaps).
+        """
+        if not self.tokens:
+            raise Exception('Rule has no token: %(self)r' % locals())
+        self.min_len = self.max_len = max(t.end for t in self.tokens)
+        if self.template:
+            self.gaps_count = sum(t.gap for t in self.tokens)
+            self.max_len += self.gaps_count
 
     def get_tokens(self):
+        """
+        Return lazily a tuple of (rule tokens, min_len, max_len, gaps_count
+        """
         if self.tokens is None:
             self.tokens = get_tokens(self.text_file, self.template)
-            self.tokens_count = len(self.tokens)
-        return self.tokens
+            self.compute_min_max()
+        return self.tokens, self.min_len, self.max_len, self.gaps_count
 
     @property
     def text(self):
@@ -371,7 +401,9 @@ class Rule(object):
         rt = self.template
         idf = self.identifier
         text = self.text[:10] + '...'
-        return 'Rule(%(idf)r, template=%(rt)r, text=%(text)r)' % locals()
+        keys = self.licenses
+        choice = self.license_choice
+        return 'Rule(%(idf)r, %(keys)r, choice=%(choice)r, template=%(rt)r, text=%(text)r)' % locals()
 
     def asdict(self):
         """

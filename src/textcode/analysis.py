@@ -28,7 +28,6 @@ from collections import deque
 import re
 import unicodedata
 
-
 import typecode.contenttype
 from textcode import strings
 from textcode import pdf
@@ -42,8 +41,8 @@ All internal processing assumes unicode in and out.
 """
 
 # Template constants
-# Support template gaps up to 2 digits, 99 tokens maximum.
-MAX_GAP = 150
+# Support template gaps up to MAX_GAPS
+MAX_GAP = 25
 
 # A gap when chunks of texts are contiguous, i.e. regular text, not a template
 NO_GAP = 0
@@ -132,7 +131,7 @@ class Token(object):
         Return a Token loaded from a unicode serialized string.
         """
         elements = s.split(u',')
-        numerics = [int(i) for i in elements[:-1]]
+        numerics = [int(i or 0) for i in elements[:-1]]
         value = elements[-1]
         length = numerics[-1]
         numerics = numerics[:-1]
@@ -503,7 +502,7 @@ def doc_subset(lines, position):
             # single line case
             if ln == position.start_line == position.end_line:
                 yield line[position.start_char:position.end_char]
-            # here the position spans lines
+            # here the position spans multiple lines
             elif ln == position.start_line:
                 yield line[position.start_char:]
             elif ln == position.end_line:

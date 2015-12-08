@@ -339,7 +339,6 @@ More (advanced) rules options:
 
 * you can use a ``notes:`` text field to  document this rule.
 * if no license should be detected for your .RULE text, do not add a list of license keys, just add a note.
-  You can also use the special ``not-a-license`` license key as a single `licenses:` item.
 * .RULE text can contain special text regions that can be ignored when scanning for licenses. 
   You can mark a template region in your rule text using {{double curly braces}} and up to five words can
   vary and still match this rule. You must add this field in your .yml data file to mark this rule as a `template`::

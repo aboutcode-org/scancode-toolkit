@@ -47,8 +47,7 @@ class TestStrings(FileBasedTesting):
     def test_is_good(self):
         assert not strings.is_good('aw w we ww ')
         assert strings.is_good('ww asww wew wee wew ')
-        self.assertFalse(strings.is_good('asw wew wee wew ',
-                                         strings.filter_strict))
+        assert not strings.is_good('asw wew wee wew ', strings.filter_strict)
         assert strings.is_good('gnu as')
         assert strings.is_good('gnu as', strings.filter_strict)
         assert not strings.is_good('aaqa', strings.filter_strict)

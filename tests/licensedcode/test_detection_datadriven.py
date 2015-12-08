@@ -27,19 +27,21 @@ from __future__ import absolute_import, print_function
 import codecs
 from collections import OrderedDict
 import os
+from os.path import abspath
 from os.path import dirname
 from os.path import join
+import unittest
 from unittest.case import expectedFailure
 
 from commoncode import fileutils
-from commoncode.testcase import FileBasedTesting
+from commoncode import functional
 from commoncode import text
 
 from licensedcode import saneyaml
 from licensedcode import detect
 
 
-test_data_dir = join(dirname(__file__), 'data/licenses')
+TEST_DATA_DIR = join(dirname(__file__), 'data/licenses')
 
 
 """
@@ -77,8 +79,9 @@ class LicenseTest(object):
                 data = saneyaml.load(df.read())
 
         self.licenses = data.get('licenses', [])
+        # TODO: this is for future support of license expressions
+        self.license = data.get('license', None)
         self.notes = data.get('notes')
-        self.sort = data.get('sort', False)
         self.expected_failure = data.get('expected_failure', False)
 
     def asdict(self):
@@ -87,8 +90,6 @@ class LicenseTest(object):
             dct['licenses'] = self.licenses
         if self.expected_failure:
             dct['expected_failure'] = self.expected_failure
-        if self.sort and self.licenses and len(self.licenses) > 1:
-            dct['sort'] = self.sort
         if self.notes:
             dct['notes'] = self.notes
         return dct
@@ -104,7 +105,7 @@ class LicenseTest(object):
             df.write(as_yaml)
 
 
-def load_license_tests(test_dir=test_data_dir):
+def load_license_tests(test_dir=TEST_DATA_DIR):
     """
     Yield an iterable of LicenseTest loaded from test data files in test_dir.
     """
@@ -115,7 +116,7 @@ def load_license_tests(test_dir=test_data_dir):
     for top, _, files in os.walk(test_dir):
         for yfile in files:
             base_name = fileutils.file_base_name(yfile)
-            file_path = join(top, yfile)
+            file_path = abspath(join(top, yfile))
             if yfile.endswith('.yml'):
                 assert base_name not in data_files
                 data_files[base_name] = file_path
@@ -140,50 +141,52 @@ def build_tests(license_tests, clazz):
     these method to the clazz test class.
     """
     for test in license_tests:
-        # path relative to the data directory
-        tfn = 'licenses/' + test.test_file_name
+        # absolute path
+        tfn = test.test_file
         test_name = 'test_detection_%(tfn)s' % locals()
         test_name = text.python_safe_name(test_name)
         # closure on the test params
-        test_method = make_test_function(test.licenses, tfn, test_name, sort=test.sort)
+        test_method = make_license_test_function(test.licenses, tfn, test_name)
+
         if test.expected_failure:
             test_method = expectedFailure(test_method)
         # attach that method to our test class
         setattr(clazz, test_name, test_method)
 
 
-def make_test_function(expected_licenses, test_file, test_name, sort=False):
+def flat_keys(matches):
+    """
+    Return a flattened list of detected license keys, sorted by position and then rule order.
+    """
+    return functional.flatten(match.rule.licenses for match in matches)
+
+
+def make_license_test_function(expected_licenses, test_file, test_name, minimum_score=100):
     """
     Build a test function closing on tests arguments
     """
+    if not isinstance(expected_licenses, list):
+        expected_licenses = [expected_licenses]
 
     def data_driven_test_function(self):
-        test_loc = self.get_test_loc(test_file)
-        result = list(detect.detect_license(test_loc, perfect=True))
+        matches = list(detect.get_license_matches(test_file, minimum_score=minimum_score))
         # the detected license is the first member of the returned tuple
-        license_result = [d[0] for d in result]
+        license_result = flat_keys(matches)
         try:
-            if sort:
-                assert sorted(expected_licenses) == sorted(license_result)
-            else:
-                assert expected_licenses == license_result
+            assert expected_licenses == license_result
         except:
-            # on failure, we compare against the full results to get
-            # additional failure details, including the test_file
-
-            if sort:
-                assert sorted(expected_licenses) == ['test file: ' + test_file] + sorted(result)
-            else:
-                assert expected_licenses == ['test file: ' + test_file] + result
+            # on failure, we compare against more result data to get
+            # additional failure details, including the test_file and full match details
+            assert expected_licenses == ['test file: ' + test_file] + [repr(license_result)] + matches
 
     data_driven_test_function.__name__ = test_name
     data_driven_test_function.funcname = test_name
     return data_driven_test_function
 
 
-class TestLicenseDataDriven(FileBasedTesting):
+class TestLicenseDataDriven(unittest.TestCase):
     # test functions are attached to this class at module import time
-    test_data_dir = join(dirname(__file__), 'data')
+    pass
 
 
 build_tests(license_tests=load_license_tests(), clazz=TestLicenseDataDriven)

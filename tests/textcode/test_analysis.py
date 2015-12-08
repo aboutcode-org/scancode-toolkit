@@ -246,10 +246,11 @@ class TestTemplates(FileBasedTesting):
         self.assertRaises(InvalidGapError, self.template_parsing, lines)
 
     def test_process_template_recognizes_template_with_maxgap(self):
-        lines = u'ab{{150 nexb Company}}cd'
+        from textcode.analysis import MAX_GAP
+        lines = u'ab{{%(MAX_GAP)r nexb Company}}cd' % locals()
         expected = [
-            Token(start_line=0, end_line=0, start_char=0, end_char=2, value=u'ab', gap=150),
-            Token(start_line=0, end_line=0, start_char=22, end_char=24, value=u'cd', gap=NO_GAP)
+            Token(start_line=0, end_line=0, start_char=0, end_char=2, value=u'ab', gap=MAX_GAP),
+            Token(start_line=0, end_line=0, start_char=21, end_char=23, value=u'cd', gap=NO_GAP)
         ]
         assert expected == self.template_parsing(lines)
 
@@ -635,7 +636,7 @@ class TestTemplates(FileBasedTesting):
         tf = self.get_test_loc('analysis/ill_formed_template/text.txt')
         lines = unicode_text_lines(tf)
         result = list(self.template_parsing(lines))
-        expected_gaps = [30, 10, 60, 70, 20]
+        expected_gaps = [20, 10, 20, 20, 20]
         result_gaps = [x.gap for x in result if x.gap]
         assert expected_gaps == result_gaps
 
