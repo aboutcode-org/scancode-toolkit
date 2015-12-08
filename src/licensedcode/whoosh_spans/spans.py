@@ -30,7 +30,7 @@
 class Span(object):
     """
     Represent a Span of tokens or text. Start and end are the offsets that can
-    be any measure such as characters, lines or token. 
+    be any measure such as characters, lines or token.
 
     Originally derived and modified from Whoosh.
     """
@@ -68,30 +68,45 @@ class Span(object):
 
     @staticmethod
     def from_span(span):
-        assert all(hasattr(span, attr) for attr in ('start', 'end',))
         return Span(start=span.start, end=span.end)
 
-    @classmethod
-    def merge(cls, spans):
+    @staticmethod
+    def merge(spans, bridge_gap=0):
         """
-        Merge overlapping and touches spans in the given list of spans.
-        Return a new list of merged (and possibly unmerged) spans.
+        Merge overlapping and touches spans in the given list of spans. Return a
+        new list of merged mergeable spans and not-merged un-mergeable spans.
+
+        `bridge_gap` is a integer to merge (aka bridge) two non- touching non-
+        overlapping spans that are separated by up to `bridge_gap` distance.
 
         >>> spans = [Span(1,2), Span(3,5), Span(3,6), Span(8,10)]
         >>> new_spans = Span.merge(spans)
         >>> new_spans
         [Span(start=1, end=6), Span(start=8, end=10)]
+
+        >>> spans = [Span(1,2), Span(4,5), Span(7,8), Span(11,12)]
+        >>> new_spans = Span.merge(spans, bridge_gap=1)
+        >>> new_spans
+        [Span(start=1, end=8), Span(start=11, end=12)]
+
+        >>> spans = [Span(1,2), Span(5,6), Span(7,8), Span(12,13)]
+        >>> new_spans = Span.merge(spans, bridge_gap=2)
+        >>> new_spans
+        [Span(start=1, end=8), Span(start=12, end=13)]
+
         """
-        spans = spans[:]
+        spans = sorted(spans)
         i = 0
         while i < len(spans) - 1:
             here = spans[i]
             j = i + 1
             while j < len(spans):
                 there = spans[j]
-                if there.start > here.end + 1:
+                if there.start > here.end + 1 + bridge_gap:
                     break
-                if here.touches(there) or here.overlaps(there):
+                if (here.touches(there)
+                    or here.overlaps(there)
+                    or here.distance_to(there) <= bridge_gap + 1):
                     here = here.to(there)
                     spans[i] = here
                     del spans[j]
@@ -99,6 +114,33 @@ class Span(object):
                     j += 1
             i += 1
         return spans
+
+    @staticmethod
+    def fuse(spans):
+        """
+        Fuse a sequence spans in the given list of spans. Return a new Span
+        ignoring if spans touch or have gaps or else: the new Span is based on
+        the smallest start and the biggest end.
+
+        >>> spans = [Span(1,2), Span(3,5), Span(3,6), Span(8,10)]
+        >>> new_span = Span.fuse(spans)
+        >>> new_span
+        Span(start=1, end=10)
+
+        >>> spans = [Span(1,2), Span(4,5), Span(7,8), Span(11,12)]
+        >>> new_spans = Span.fuse(spans)
+        >>> new_spans
+        Span(start=1, end=12)
+
+        >>> spans = [Span(1), Span(4), Span(7), Span(11,12)]
+        >>> new_spans = Span.fuse(spans)
+        >>> new_spans
+        Span(start=1, end=12)
+        """
+        spans = list(spans)
+        start = min(s.start for s in spans)
+        end = max((s.end or s.start) for s in spans)
+        return Span(start, end)
 
     def to(self, span):
         """
@@ -187,17 +229,24 @@ class Span(object):
     def distance_to(self, span):
         """
         Return the absolute positive distance from self to other span.
+        Touching and overlapping spans have a zero distance.
 
         >>> Span(8,9).distance_to(Span(5,7))
-        1
+        0
         >>> Span(5,7).distance_to(Span(8,9))
-        1
+        0
+        >>> Span(5,6).distance_to(Span(8,9))
+        2
         >>> Span(5,7).distance_to(Span(5,7))
+        0
+        >>> Span(4,6).distance_to(Span(5,7))
         0
         >>> Span(5,7).distance_to(Span(10,12))
         3
+        >>> Span(1,2).distance_to(Span(4,52))
+        2
         """
-        if self.overlaps(span):
+        if self.overlaps(span) or self.touches(span):
             return 0
         elif self.is_before(span):
             return span.start - self.end

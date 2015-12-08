@@ -1,10 +1,12 @@
-about_resource:spans.py
+about_resource: spans.py
 version: 2.4.1 
 name: Whoosh Spans
-revision: 72e06bd0aac8
+vcs_revision: 72e06bd0aac8
+vcs_tool: hg
+vcs_repository: https://bitbucket.org/mchaput/whoosh
 home_url: https://bitbucket.org/mchaput/whoosh
 owner: Matt Chaput
-copyright: Copyright 2011 Matt Chaput.
+copyright: Copyright (c) 2011 Matt Chaput.
 download_url: https://bitbucket.org/mchaput/whoosh/get/2.4.1.tar.gz
 license_text_file: whoosh.LICENSE
 dje_license: bsd-simplified
