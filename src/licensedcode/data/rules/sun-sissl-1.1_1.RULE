@@ -42,7 +42,6 @@ to it, including all modules it contains, plus any associated interface definiti
 to control compilation and installation of an Executable.
 1.13
 “Standards” means the standards identified in Exhibit B.
-{{30 page footer}}
 
 1.14
 “You” (or “Your”) means an individual or a legal entity exercising rights under, and
@@ -91,7 +90,6 @@ and reference implementation or Modifications available to all third parties und
 as this license on a royalty free basis within thirty (30) days of Your first customer shipment of
 
 
-{{30 page footer}}
 
 Your Modifications.
 3.2
@@ -137,7 +135,6 @@ Section 3.2 and must be included with all distributions of the Source Code. Exce
 prohibited by statute or regulation, such description must be sufficiently detailed for a recipient of
 ordinary skill to be able to understand it.
 
-{{30 page footer}}
 
 5.0
 APPLICATION OF THIS LICENSE
@@ -197,7 +194,6 @@ In the event of termination under Section 8.1 above, all end user license agreem
 (excluding distributors and resellers) which have been validly granted by You or any distributor
 hereunder prior to termination shall survive termination.
 
-{{30 page footer}}
 
 
 9.0
@@ -247,30 +243,3 @@ responsible for costs, including without limitation, court costs and reasonable 
 expenses. The application of the United Nations Convention on Contracts for the International
 Sale of Goods is expressly excluded. Any law or regulation which provides that the language of a
 contract shall be construed against the drafter shall not apply to this License.
-
-{{30 page footer}}
-EXHIBIT A - Sun Standards License
-‘‘The contents of this file are subject to the Sun Standards License Version 1.1 (the "License");
-You may not use this file except in compliance with the License. You may obtain a copy of the
-License at {{30 var}}.
-Software distributed under the License is distributed on an "AS IS" basis, WITHOUT
-WARRANTY OF ANY KIND, either express or implied. See the License for the specific
-language governing rights and limitations under the License.
-     The Original Code is {{30 var}}.
-     The Initial Developer of the Original Code is: Sun Microsystems, Inc..
-Portions created by:
-{{30 var}}
-are Copyright (C):
-{{30 var}}
-All Rights Reserved.
-Contributor(s):
-
-{{100 var and page footer}}
-
-
-EXHIBIT B - Standards
-The Standard is defined as the following:
-OpenOffice.org XML File Format Specification, located at http://xml.openoffice.org
-OpenOffice.org Application Programming Interface  Specification, located at 
-http://api.openoffice.org
- 

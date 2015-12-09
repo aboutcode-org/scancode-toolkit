@@ -8,4 +8,4 @@ licenses:
     - gpl-1.0-plus
     - unicode
     - zlib
-sort: yes
+expected_failure: yes

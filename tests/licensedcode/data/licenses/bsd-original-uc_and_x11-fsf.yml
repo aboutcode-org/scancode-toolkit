@@ -1,4 +1,3 @@
 licenses:
-    - bsd-original-uc
     - x11-fsf
-sort: yes
+    - bsd-original-uc

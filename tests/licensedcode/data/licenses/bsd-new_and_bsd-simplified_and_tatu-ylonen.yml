@@ -1,5 +1,4 @@
 licenses:
-    - bsd-new
-    - bsd-simplified
     - tatu-ylonen
-sort: yes
+    - bsd-simplified
+    - bsd-new

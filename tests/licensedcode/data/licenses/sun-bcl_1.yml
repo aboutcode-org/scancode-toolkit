@@ -1,4 +1,3 @@
 licenses:
     - sun-bcl
-expected_failure: yes
-notes: there is no generic "sun-bcl"
+notes: there is no such thing as a really generic "sun-bcl" but we have a rule for this

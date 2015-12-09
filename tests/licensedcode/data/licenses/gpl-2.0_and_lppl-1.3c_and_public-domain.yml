@@ -3,12 +3,11 @@ licenses:
     - public-domain
     - public-domain
     - public-domain
-    - public-domain
-    - public-domain
-    - public-domain
-    - public-domain
-    - public-domain
-    - public-domain
     - lppl-1.3c
-sort: yes
+    - public-domain
+    - public-domain
+    - public-domain
+    - public-domain
+    - public-domain
+    - public-domain
 notes: should detect public domain correctly

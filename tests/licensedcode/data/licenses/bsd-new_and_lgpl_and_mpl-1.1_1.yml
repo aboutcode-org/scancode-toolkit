@@ -1,5 +1,4 @@
 licenses:
-    - bsd-new
     - lgpl
     - mpl-1.1
-sort: yes
+    - bsd-new

@@ -1,8 +1,8 @@
 licenses:
     - gpl-2.0
+    - gpl-2.0-plus
+    - gpl-2.0-plus
     - gpl-2.0
-    - gpl-2.0-plus
-    - gpl-2.0-plus
     - lgpl-2.1
     - mpl-1.1
-sort: yes
+    

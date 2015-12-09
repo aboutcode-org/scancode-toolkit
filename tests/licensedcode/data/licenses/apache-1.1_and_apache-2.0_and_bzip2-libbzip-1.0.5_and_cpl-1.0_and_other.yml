@@ -1,9 +1,13 @@
 licenses:
-    - apache-1.1
     - apache-2.0
+    - mx4j
+    - epl-1.0
+    - zlib
+    - zlib
     - bzip2-libbzip-1.0.5
     - cpl-1.0
-    - epl-1.0
-    - lzma-cpl-exception
     - zlib
-sort: yes
+    - bzip2-libbzip-1.0.5
+    - cpl-1.0
+    - lzma-cpl-exception
+expected_failure: yes

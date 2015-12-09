@@ -2,7 +2,7 @@ Names of relevant binary program{{(s) }}and copyright info have been adapted to
 avoid the violation of the GPL license {{10 (as offered by Joerg Schilling) }} and the
 obligations created {{by German laws.}}
 
-{{45
+{{20
 Copyright:
 
 * cdda2wav 
@@ -12,7 +12,7 @@ Copyright:
   parts    (C) <s>RSA Data Security, Inc.</s>
 }}  License: GPLv2
  
-{{40
+{{20
 * mkisofs
   Written by <s>Eric Youngdale</s> (1993).
   Copyright 1993 <s>Yggdrasil Computing, Incorporated</s>
@@ -20,18 +20,18 @@ Copyright:
   APPLE_HYB <s>James Pearson j.pearson@ge.ucl.ac.uk</s> 22/2/2000
 }}  License: GPLv2
 
-{{30
+{{20
 * libedc compact disc reed-solomon routines
   (c) 1998-2002 by <s>Heiko Eissfeldt, heiko@colossus.escape.de</s>
   (c) 2002 by <s>Joerg Schilling</s>
 }}  License: GPLv2
 
-{{30
+{{20
 * libhfs_iso - Modified version of libhfs (v2.0) to work with mkhybrid.
   (C) 1996, 1997 <s>Robert Leslie</s>
 }}  License: GPLv2
 
-{{30
+{{20
 * libcdparanoia
   (C) by <s>Monty (xiphmont@mit.edu)</s>
   Modifications to make the code portable Copyright (c) 2002 <s>J. Schilling</s>

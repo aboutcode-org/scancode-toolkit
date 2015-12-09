@@ -1,6 +1,5 @@
 licenses:
     - gpl-2.0-plus
-    - gpl-2.0-plus-openmotif
     - lgpl-2.1-plus
+    - gpl-2.0-plus-openmotif
     - mpl-1.1
-sort: yes

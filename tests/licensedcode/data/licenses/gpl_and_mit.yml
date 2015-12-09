@@ -2,6 +2,5 @@ licenses:
     - gpl
     - mit
 expected_failure: yes
-sort: yes
 notes: 
     The licenses are http://filamentgroup.com/examples/gpl-license.txt and http://filamentgroup.com/examples/mit-license.txt

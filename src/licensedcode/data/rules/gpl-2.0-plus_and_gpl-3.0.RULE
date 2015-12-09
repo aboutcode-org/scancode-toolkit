@@ -37,7 +37,7 @@ complete text of the GNU General Public License version 3 can be found
 in `/usr/share/common-licenses/GPL-3'.
 
 The Debian packaging is:
-{{25
+{{20
     Copyright (C) 2009 <s>Masayuki Hatta (mhatta) <mhatta@debian.org></s>
     Copyright (C) 2009 <s>Patrik Fimml <patrik@fimml.at></s>
 }}

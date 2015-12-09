@@ -31,7 +31,7 @@ SOFTWARE.
  with Debian Free Software Guidelines and was stripped.  This code was
  developed under a non-disclosure agreement to build against the libipp
  offering primitives optimized for Intel processors.  The removed files were:
-{{30    decoder/table-dewindow-ipp.h
+{{20    decoder/table-dewindow-ipp.h
     decoder/mp3-ipp.h
     decoder/mp3-ipp.c
 }}

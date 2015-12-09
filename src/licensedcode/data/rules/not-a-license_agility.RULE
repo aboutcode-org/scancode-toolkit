@@ -1,0 +1,18 @@
+Beagle's version claims to be BSD licensed:
+http://svn.gnome.org/viewvc/beagle/trunk/Filters/HtmlAgilityPack/HtmlDocument.cs?revision=16&view=markup&pathrev=16
+
+While the original project says it's CC Share-alike 2.5 licensed:
+http://htmlagilitypack.codeplex.com/license
+
+FIXME:
+Either beagle illegal relicensed Html Agility Pack from CC Share-alike to
+BSD (3 clause) or the author of Html Agility Pack published somewhere a BSD
+version (or maybe even relicensed specially for beagle)
+
+TEMP FIX:
+AgilityPack.dll was removed from the mono source tarball, see debian/rules
+get-orig-source target.
+
+2009-05-19:
+The license on http://htmlagilitypack.codeplex.com/license now says:
+Microsoft Public License (Ms-PL)

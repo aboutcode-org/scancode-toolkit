@@ -1,0 +1,29 @@
+
+Red Hat, Inc. grants you the right to use the Package during the
+normal operation of other software programs that call upon the
+Package.  Red Hat, Inc. grants to you the right and license to copy
+and redistribute the Package, but only in conjunction with copying or
+redistributing additional software packages that call upon the Package
+during the normal course of operation.  Such rights are granted to you
+without fee, provided that:
+
+1. The above copyright notice and this license are included with each
+copy you make, and they remain intact and are not altered, deleted, or
+modified in any way;
+2. You do not modify the Package, or the appearance of any or all of
+the Logos in any manner; and
+3. You do not use any or all of the Logos as, or as part of, a
+trademark, trade name, or trade identifier; or in any other fashion
+except as set forth in this license.
+
+NO WARRANTY.  THIS PACKAGE IS PROVIDED "AS IS" AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED.  IN NO EVENT SHALL RED HAT, INC. BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+IN ANY WAY OUT OF THE USE OF THIS PACKAGE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.

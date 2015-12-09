@@ -3,8 +3,6 @@ This source code is dual-licensed under the Apache License, version
 
 The APL v2.0:
 
-   {{ 30 Copyright (C) 2007, 2008 <s>LShift Ltd.</s>, <s>Cohesive Financial</s>
-   Technologies LLC., and <s>Rabbit Technologies Ltd.</s> }}
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -27,26 +25,12 @@ The MPL v1.1:
    The contents of this file are subject to the Mozilla Public License
    Version 1.1 (the "License"); you may not use this file except in   
    compliance with the License. You may obtain a copy of the License at
-   {{10 http://www.rabbitmq.com/mpl.html }}
 
    Software distributed under the License is distributed on an "AS IS"
    basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
    License for the specific language governing rights and limitations
    under the License.
 
-   {{80 The Original Code is The RabbitMQ .NET Client.
-
-   The Initial Developers of the Original Code are <s>LShift Ltd.</s>,
-   <s>Cohesive Financial Technologies LLC.</s>, and <s>Rabbit Technologies Ltd.</s>
-
-   Portions created by <s>LShift Ltd.</s>, <s>Cohesive Financial Technologies
-   LLC.</s>, and <s>Rabbit Technologies Ltd.</s> are Copyright (C) 2007, 2008 
-   <s>LShift Ltd.</s>, <s>Cohesive Financial Technologies LLC.</s>, and <s>Rabbit   
-   Technologies Ltd.</s>;
-
-   All Rights Reserved.
-   }} 
-   Contributor(s): ______________________________________.
 
 
                           MOZILLA PUBLIC LICENSE
@@ -494,22 +478,3 @@ EXHIBIT A - Mozilla Public License.
      basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
      License for the specific language governing rights and limitations
      under the License.
-		 {{80
-     The Original Code is RabbitMQ.
-
-     The Initial Developers of the Original Code are <s>LShift Ltd.</s>,
-     <s>Cohesive Financial Technologies LLC.</s>, and <s>Rabbit Technologies Ltd.</s>
-
-     Portions created by <s>LShift Ltd.</s>, <s>Cohesive Financial
-     Technologies LLC.</s>, and <s>Rabbit Technologies Ltd.</s> are Copyright (C) 
-     2007 <s>LShift Ltd.</s>, <s>Cohesive Financial Technologies LLC.</s>, and <s>Rabbit 
-     Technologies Ltd.</s>; 
-
-     All Rights Reserved.
-     }}
-     Contributor(s): ______________________________________.''
-
-     [NOTE: The text of this Exhibit A may differ slightly from the text of
-     the notices in the Source Code files of the Original Code. You should
-     use the text of this Exhibit A rather than the text found in the
-     Original Code Source Code for Your Modifications.]

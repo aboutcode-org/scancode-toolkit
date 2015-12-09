@@ -1,5 +1,4 @@
 licenses:
-    - bsd-new
-    - bsd-new
     - sleepycat
-sort: yes
+    - bsd-new
+    - bsd-new

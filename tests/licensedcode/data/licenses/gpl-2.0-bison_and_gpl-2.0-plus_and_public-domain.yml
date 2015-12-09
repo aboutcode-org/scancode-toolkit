@@ -3,4 +3,3 @@ licenses:
     - gpl-2.0-plus
     - public-domain
 expected_failure: yes
-sort: yes

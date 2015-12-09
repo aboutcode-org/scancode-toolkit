@@ -1,6 +1,3 @@
 licenses:
-    - apache-2.0
-    - apache-2.0
-    - lgpl
     - mit
-expected_failure: yes
+notes: this contains a section of text on the historical licensing of Open Office, ignored by a rule.

@@ -1,0 +1,64 @@
+   Commercial Usage
+    Licensees holding valid Qt Commercial licenses may use this file in
+    accordance with the Qt Commercial License Agreement provided with the
+    Software or, alternatively, in accordance with the terms contained in
+    a written agreement between you and Nokia.
+
+    GNU Lesser General Public License Usage
+    Alternatively, this file may be used under the terms of the GNU Lesser
+    General Public License version 2.1 as published by the Free Software
+    Foundation and appearing in the file LICENSE.LGPL included in the
+    packaging of this file.  Please review the following information to
+    ensure the GNU Lesser General Public License version 2.1 requirements
+    will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+
+    In addition, as a special exception, Nokia gives you certain
+    additional rights. These rights are described in the Nokia Qt LGPL
+    Exception version 1.0, included in the file LGPL_EXCEPTION.txt in this
+    package.
+
+    GNU General Public License Usage
+    Alternatively, this file may be used under the terms of the GNU
+    General Public License version 3.0 as published by the Free Software
+    Foundation and appearing in the file LICENSE.GPL included in the
+    packaging of this file.  Please review the following information to
+    ensure the GNU General Public License version 3.0 requirements will be
+    met: http://www.gnu.org/copyleft/gpl.html.
+
+On Debian systems, the complete text of the GNU General Public License
+can be found in `/usr/share/common-licenses/LGPL-2.2`,
+`/usr/share/common-licenses/GPL-2` and `/usr/share/common-licenses/GPL-3`.
+
+Since Qt 4.5.0, Qt allows for LGPL copying.
+
+Since Qt 4.4.3, copyright of Qt has been transferred to Nokia Corporation.
+
+Since Qt 4.4.0, Qt isn't licensed under the QPL anymore.
+
+Since Qt 4.3.4, Qt is triple licensed under the QPL, GPL 2 and GPL 3.
+
+Since Qt 4.3.1, a Trolltech GPL exception was added to allow linking
+against non-GPL libraries and applications:
+
+Nokia Qt LGPL Exception version 1.1
+
+As an additional permission to the GNU Lesser General Public License version
+2.1, the object code form of a "work that uses the Library" may incorporate
+material from a header file that is part of the Library.  You may distribute
+such object code under terms of your choice, provided that:
+    (i)   the header files of the Library have not been modified; and 
+    (ii)  the incorporated material is limited to numerical parameters, data
+          structure layouts, accessors, macros, inline functions and
+          templates; and
+    (iii) you comply with the terms of Section 6 of the GNU Lesser General
+          Public License version 2.1.
+
+Moreover, you may apply this exception to a modified version of the Library,
+provided that such modification does not involve copying material from the
+Library into the modified Library's header files unless such material is
+limited to (i) numerical parameters; (ii) data structure layouts;
+(iii) accessors; and (iv) small macros, templates and inline functions of
+five lines or less in length.
+
+Furthermore, you are not required to apply this additional permission to a
+modified version of the Library.

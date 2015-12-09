@@ -6,4 +6,3 @@ licenses:
     - x11-opengroup
     - x11-opengroup
 expected_failure: yes
-sort: yes

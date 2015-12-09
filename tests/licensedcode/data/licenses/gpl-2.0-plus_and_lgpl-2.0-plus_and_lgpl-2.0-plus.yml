@@ -3,4 +3,3 @@ licenses:
     - lgpl-2.0-plus
     - lgpl-2.0-plus
 expected_failure: yes
-sort: yes

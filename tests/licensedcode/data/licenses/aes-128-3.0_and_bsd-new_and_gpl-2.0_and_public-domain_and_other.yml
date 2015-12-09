@@ -1,6 +1,5 @@
 licenses:
-    - aes-128-3.0
-    - bsd-new
-    - gpl-2.0
     - public-domain
-sort: yes
+    - gpl-2.0
+    - bsd-new
+    - aes-128-3.0

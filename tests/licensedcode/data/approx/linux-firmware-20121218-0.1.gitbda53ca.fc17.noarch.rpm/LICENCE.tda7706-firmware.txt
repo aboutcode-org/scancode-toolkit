@@ -1,0 +1,48 @@
+FIRMWARE LICENSE TERMS
+
+
+Copyright (c) ST Microelectronics
+
+All rights reserved.
+
+Redistribution. Redistribution and use in binary form, without modification, are
+permitted provided that the following conditions are met:
+
+* Redistributions must reproduce the above copyright notice and the following
+disclaimer in the documentation and/or other materials provided with the
+distribution.
+
+* Neither the name of ST Microelectronics nor the names of its suppliers
+may be used to endorse or promote products derived from this software without
+specific prior written permission.
+
+* No reverse engineering, decompilation, or disassembly of this software is
+permitted.
+
+Limited patent license. ST Microelectronics grants a world-wide,
+royalty-free, non-exclusive license under patents it now or hereafter owns or
+controls to make, have made, use, import, offer to sell and sell ("Utilize")
+this software, but solely to the extent that any such patent is necessary to
+Utilize the software alone, or in combination with an operating system licensed
+under an approved Open Source license as listed by the Open Source Initiative at
+http://opensource.org/licenses. The patent license shall not apply to any other
+combinations which include this software. No hardware per se is licensed
+hereunder.
+
+DISCLAIMER. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.
+
+STMicroelectronics has made every effort possible to ensure that this software is free of any bugs or
+errors; however, in no way is the software to be considered error or bug free. You assume all
+responsibility for any damages or lost data that may result from any errors or bugs in the software.
+IN NO EVENT WILL STMicroelectronics BE LIABLE TO YOU FOR ANY GENERAL, SPECIAL,
+INDIRECT, CONSEQUENTIAL, INCIDENTAL OR OTHER DAMAGES ARISING OUT OF THIS
+LICENSE.
+----
+
+Note
+Explicit permission from ST Microelectronics was obtained to upload this firmware to the
+linux-firmware git repository under the ST Microelectronics firmware license above.
+

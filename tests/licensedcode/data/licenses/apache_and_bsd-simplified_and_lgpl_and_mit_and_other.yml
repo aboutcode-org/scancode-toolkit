@@ -1,7 +1,7 @@
 licenses:
-    - apache
     - bsd-simplified
+    - apache-2.0
+    - apache-1.1
     - lgpl
     - mit
-expected_failure: yes
-sort: yes
+notes: this is a notice listing quite a few licenses, normally referenced elsewhere 

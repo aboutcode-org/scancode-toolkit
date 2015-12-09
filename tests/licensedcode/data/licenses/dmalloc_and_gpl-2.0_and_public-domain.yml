@@ -1,5 +1,4 @@
 licenses:
-    - dmalloc
     - gpl-2.0
+    - dmalloc
     - public-domain
-sort: yes

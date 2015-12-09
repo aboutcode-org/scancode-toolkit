@@ -1,4 +1,3 @@
 licenses:
-    - ibm-dhcp
     - isc
-sort: yes
+    - ibm-dhcp

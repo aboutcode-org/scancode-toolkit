@@ -1,7 +1,6 @@
 licenses:
-    - bsd-new
-    - bsd-new
     - cpl-1.0
-    - gpl
     - gpl-2.0
-sort: yes
+    - bsd-new
+    - bsd-new
+    - gpl

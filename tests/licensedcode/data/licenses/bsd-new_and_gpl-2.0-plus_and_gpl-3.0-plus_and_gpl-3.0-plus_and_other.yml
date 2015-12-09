@@ -5,4 +5,3 @@ licenses:
     - gpl-3.0-plus
     - gpl-3.0-plus
 expected_failure: yes
-sort: yes

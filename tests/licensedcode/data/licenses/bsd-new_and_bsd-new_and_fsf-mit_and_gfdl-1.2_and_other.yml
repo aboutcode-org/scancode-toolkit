@@ -1,16 +1,15 @@
 licenses:
+    - gpl-3.0-plus
     - bsd-new
+    - gpl-3.0-plus
     - bsd-new
-    - fsf-mit
-    - gfdl-1.2
-    - gpl-3.0-plus
-    - gpl-3.0-plus
-    - gpl-3.0-plus
-    - gpl-3.0-plus
-    - gpl-3.0-plus
-    - gpl-3.0-plus
-    - gpl-3.0-plus
     - gpl-3.0-plus
     - gpl-3.0-plus
     - isc
-sort: yes
+    - fsf-unlimited
+    - gpl-3.0-plus
+    - gpl-3.0-plus
+    - gpl-3.0-plus
+    - gpl-3.0-plus
+    - gfdl-1.2
+    - gpl-3.0-plus

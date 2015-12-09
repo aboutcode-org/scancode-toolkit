@@ -1,16 +1,14 @@
 licenses:
+    - gpl
     - apache-2.0
-    - apache-2.0
-    - bsd-new
-    - gpl
-    - gpl
-    - gpl
+    - mit
     - lgpl
-    - mit
-    - mit
-    - mpl-1.1
-    - ms-pl
-    - ms-pl
-    - nunit-v2
     - proprietary
-sort: yes
+    - gpl
+    - ms-pl
+    - mit
+    - nunit-v2
+    - mpl-1.1
+    - apache-2.0
+    - gpl
+expected_failure: yes

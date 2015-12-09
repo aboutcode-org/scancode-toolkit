@@ -1,6 +1,0 @@
-licenses:
-    - bsd-new
-    - unicode
-expected_failure: yes
-sort: yes
-notes: Several complex intertwined license mentions

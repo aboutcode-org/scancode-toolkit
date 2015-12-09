@@ -34,7 +34,7 @@ The MPL v1.1:
    License for the specific language governing rights and limitations
    under the License.
 
-   {{60 The Original Code is The RabbitMQ .NET Client.
+   {{25 The Original Code is The RabbitMQ .NET Client.
 
    The Initial Developers of the Original Code are <s>LShift Ltd.</s>,
    <s>Cohesive Financial Technologies LLC.</s>, and <s>Rabbit Technologies Ltd.</s>
