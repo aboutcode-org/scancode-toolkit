@@ -142,11 +142,12 @@ def build_tests(license_tests, clazz):
     """
     for test in license_tests:
         # absolute path
-        tfn = test.test_file
+        tfn = test.test_file_name
+        tf = test.test_file
         test_name = 'test_detection_%(tfn)s' % locals()
         test_name = text.python_safe_name(test_name)
         # closure on the test params
-        test_method = make_license_test_function(test.licenses, tfn, test_name)
+        test_method = make_license_test_function(test.licenses, tf, test_name)
 
         if test.expected_failure:
             test_method = expectedFailure(test_method)
