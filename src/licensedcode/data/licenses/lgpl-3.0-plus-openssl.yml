@@ -4,3 +4,4 @@ name: LGPL 3.0 or later with OpenSSL exception
 category: Copyleft Limited
 owner: psycopg
 homepage_url: http://initd.org/psycopg/license/
+main_license: lgpl-3.0

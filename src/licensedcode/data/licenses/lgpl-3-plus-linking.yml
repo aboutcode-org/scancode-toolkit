@@ -7,3 +7,4 @@ owner: Canonical Inc.
 homepage_url: https://github.com/go-yaml/yaml/blob/v2/LICENSE
 text_urls:
     - https://github.com/go-yaml/yaml/blob/v2/LICENSE
+main_license: lgpl-3.0
