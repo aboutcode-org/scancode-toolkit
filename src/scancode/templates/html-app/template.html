@@ -66,6 +66,24 @@
         border: 1px solid #CCC;
         border-radius: 4px;
         }
+        .chart rect {
+          fill: #337ab7;
+        }
+
+        .chart text {
+          fill: black;
+          font: 12px sans-serif;
+          text-anchor: end;
+        }
+
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+        .chart {width: 100%;}
+
     </style>
 </head>
 <body>
@@ -74,7 +92,7 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-            <span class="navbar-brand icon-primary"><a href="https://github.com/nexB/scancode-toolkit/">ScanCode</a> scan results for: scancode-toolkit2/scancode-toolkit/samples/</span>
+            <span class="navbar-brand icon-primary"><a href="https://github.com/nexB/scancode-toolkit/">ScanCode</a> scan results for: {{ scanned_path }}</span>
         </div>
           <ul class="nav navbar-nav navbar-right">
            <li><a href="http://www.nexb.com">Made by nexB</a></li>
@@ -94,15 +112,19 @@
       <div id="tree" style="overflow-x:scroll; overflow-y:auto;"></div>
     </div>
 
-    <div class="col-md-8">
-      <ul class="nav nav-tabs">
-        <li id="tab1" class="active"><a data-toggle="tab" href="#">License & Copyright Information</a></li>
-        <li id="tab2"><a data-toggle="tab" href="#">File Information</a></li>
-        <li id="tab3"><a data-toggle="tab" href="#">Package Information</a></li>
-      </ul>
-
-        <table id="data_table" class="data_table display table-wrap" cellspacing="0" width="100%">
-        </table>
+    <div id="tabbar" class="col-md-8">
+        <ul class="nav nav-tabs">
+            <li id="tab4" class="active"><a data-toggle="tab" href="#chart">License Summary</a></li>
+            <li id="tab1"><a data-toggle="tab" href="#">License & Copyright Information</a></li>
+            <li id="tab2"><a data-toggle="tab" href="#">File Information</a></li>
+            <li id="tab3"><a data-toggle="tab" href="#">Package Information</a></li>
+        </ul>
+        <div id="summary">
+            <svg class="chart"></svg>
+        </div>
+        <div id="details">
+            <table id="data_table" class="data_table display table-wrap" cellspacing="0" width="100%"></table>
+        </div>
     </div>
   </div>
 </div>
@@ -119,6 +141,8 @@
   <script src="{{ assets_dir }}/bootstrap.min.js"></script>
   <script src="{{ assets_dir }}/jstree.min.js"></script>
   <script src="{{ assets_dir }}/jquery.dataTables.min.js"></script>
+  <script src="{{ assets_dir }}/d3.min.js"  charset="utf-8"></script>
+  <script src="{{ assets_dir }}/chart.js"></script>
   <script type="text/javascript" src="{{ assets_dir }}/data.json"></script>
   <script type="text/javascript">
       var icon_file        = "glyphicon glyphicon-file";
@@ -128,6 +152,7 @@
       var file_color_empty = "icon-empty";
       var dir_color        = "icon-primary";
       var dir_color_empty  = "icon-empty";
+      var currNodeData;
 
       genIconClass = function(isLeaf, isOpen, isEmpty){
           icon  = isLeaf  ? icon_file : (isOpen ? icon_dir_open : icon_dir_close);
@@ -146,46 +171,51 @@
           renderTable(dtData);
 
           $( "#tab1" ).click(function() {
+            $('#details').show();
+            $('#summary').hide();
             table = $('#data_table').DataTable();
             table.clear();
             table.columns( '.tab1' ).visible( true );
             table.columns( '.tab2' ).visible( false );
             table.columns( '.tab3' ).visible( false );
+            table.columns( '.tab4' ).visible( false );
             table.rows.add(dtData);
             table.draw();
           });
           $( "#tab2" ).click(function() {
+            $('#details').show();
+            $('#summary').hide();
             table = $('#data_table').DataTable();
             table.clear();
             table.columns( '.tab1' ).visible( false );
             table.columns( '.tab2' ).visible( true );
             table.columns( '.tab3' ).visible( false );
+            table.columns( '.tab4' ).visible( false );
             table.rows.add(dtData2);
             table.draw();
           });
           $( "#tab3" ).click(function() {
+            $('#details').show();
+            $('#summary').hide();
             table = $('#data_table').DataTable();
             table.clear();
             table.columns( '.tab1' ).visible( false );
             table.columns( '.tab2' ).visible( false );
             table.columns( '.tab3' ).visible( true );
+            table.columns( '.tab4' ).visible( false );
             table.rows.add(dtData3);
             table.draw();
           });
+          $( "#tab4" ).click(function() {
+           $('#details').hide();
+           $('#summary').show();
+           resetChart(currNodeData);
+          });
 
-          // TODO: Optimize way to get table to redraw with correct widths
-          table = $('#data_table').DataTable();
-          table.columns( '.tab1' ).visible( false );
-          table.columns( '.tab2' ).visible( false );
-          table.columns( '.tab3' ).visible( false );
-          table.clear();
-          table.columns( '.tab1' ).visible( true );
-          table.rows.add(dtData);
-          table.draw();
+          $("#details").hide();
       });
-
       // Returns a row in the format expected by jstree
-      getJSTreeData = function(parent, id, text, icon_class){
+      function getJSTreeData(parent, id, text, icon_class){
         return {
           "id": id,
           "parent": parent == "" ? '#' : parent,
@@ -197,7 +227,7 @@
       };
 
       // Return license and copyright data in table format
-      toDataTableFormat = function(jsonData){
+      function toDataTableFormat(jsonData){
         return $.map(jsonData, function(x){
           // Add all license columns here
           licenseData = [];
@@ -351,6 +381,10 @@
 
       // Renders json data to jsTree format
       toJSTreeFormat = function(jsonData){
+        // Sort data by location to ensure files are seen before directories
+        jsonData.sort(function (a, b) {
+            return a.location.localeCompare( b.location );
+        }).reverse();
         // Keeps track of IDs
         var uniqueIDs = {};
 
@@ -413,11 +447,12 @@
             }
            }
         })
-          .on("select_node.jstree", function(e, data) {
+          .on("select_node.jstree", function(e, nodeData) {
           // Redraw data table (forces custom filter to rerun)
           // TODO: Figure out the tab and only update that table instead of all
           table = $('#data_table').DataTable();
           table.draw();
+          onNodeSelected(nodeData);
         })
           .on('open_node.jstree', function(e, data) {
           data.instance.set_icon(data.node,  genIconClass(false, true, ""));
@@ -426,6 +461,32 @@
           data.instance.set_icon(data.node,  genIconClass(false, false, ""));
         });
       };
+
+      function onNodeSelected(nodeData){
+          currNodeData = nodeData;
+          resetChart(currNodeData);
+      }
+
+      function resetChart(nodeData) {
+          barChart.remove();
+          barChart = new BarChart(filteredData(nodeData), chartOptions, '.chart');
+      }
+
+      // filter the data
+      function filteredData(nodeData){
+          if (typeof nodeData == 'undefined') {
+              return formatChartData(data);
+          }
+          return formatChartData($.map(data, function(item){
+              var pattern = '^' + nodeData.selected[0];
+              pattern += nodeData.node.children.length > 0 ? '/' : '';
+              if (item.location.match(pattern)){
+                  return item;
+              } else {
+                  return;
+              }
+          }));
+      }
 
       // Render the DataTable by specifying Copyright and License
       renderTable = function(data) {
@@ -517,6 +578,58 @@
       }
 
       $('#button').click(function(){ $('#data_table').toggleClass('ellipsis'); })
+  </script>
+  <script>
+    function formatChartData(data) {
+
+        var NO_LICENSES = [{short_name: 'No License Found'}]
+        // Get license short name and if no license set it to No License Found
+        var shortNames = $.map(data, function(item){
+            licenses = item.licenses.length > 0 ? item.licenses : NO_LICENSES;
+            return $.map(licenses, function(license) {
+                return license.short_name;
+            });
+        });
+
+        // Sum the total number of times the license appears
+        var count = {};
+        $.each(shortNames, function(i, name){
+            count[name] = count[name] + 1 || 1;
+        });
+
+        // Transform license count into array of objects with license name & count
+        var chartData = $.map(count, function(val, key) {
+            return {
+                name: key,
+                val: val
+            };
+        });
+
+        // Sorts the data highest value to lowest value
+        chartData.sort(function(a,b){
+            if (a.val == b.val) {
+                return a.name.localeCompare(b.name);
+            } else {
+                return a.val > b.val ? -1 : 1;
+            }
+        });
+        return chartData;
+    }
+    var chartData = formatChartData(data);
+
+    // Options for the bar chart
+    var chartOptions = {
+        name: "License Summary",
+        margin: 30,
+        barHeight: 25,
+        xAxisName: "License Count",
+        yAxisName: "License Name"
+    };
+
+    // Create and display the bar chart
+    barChart = new BarChart(chartData, chartOptions, '.chart');
+
+    $(window).on('resize', barChart.draw);
   </script>
 </body>
 </html>
