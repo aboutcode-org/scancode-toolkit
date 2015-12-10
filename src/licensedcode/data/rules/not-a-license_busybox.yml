@@ -1,0 +1,5 @@
+notes: >
+ In busybox-1.17.4/modutils/depmod.c (line 71 in the file)  an incorrect 
+ license detection of GPL 3.0 was made for this line
+   if (strncmp(ptr, "gpl", 3) == 0
+
