@@ -381,6 +381,10 @@
 
       // Renders json data to jsTree format
       toJSTreeFormat = function(jsonData){
+        // Sort data by location to ensure files are seen before directories
+        jsonData.sort(function (a, b) {
+            return a.location.localeCompare( b.location );
+        }).reverse();
         // Keeps track of IDs
         var uniqueIDs = {};
 
