@@ -28,7 +28,7 @@ from collections import OrderedDict
 
 
 """
-Common data model for packages information and dependencies, abstracting the
+Common data model for package information and dependencies, abstracting the
 many small differences existing between package management formats and tools.
 
 At a high level a package is some piece of code that can be consumed as a unit
@@ -42,10 +42,10 @@ A package typically contains:
  - some metadata,
  - some payload of code, doc, data.
 
-Packages metadata are found in multiple places:
+Package metadata are found in multiple places:
 - inside code text  (JavaDoc tags or Python __copyright__ magic)
 - inside binaries (such as a Linux Elf or LKM or a Windows PE or an RPM header).
-- in dedicated metafiles (such as a Maven POMs, NPM package.json and many others)
+- in dedicated metafiles (such as a Maven POM, NPM package.json and many others)
 
 These metadata provide details on:
  - information on the format version of the current metadata file or header.
