@@ -55,12 +55,13 @@ def get_copyrights(location):
     """
     from cluecode.copyrights import detect_copyrights
 
-    for copyrights, _, _, _, start_line, end_line in detect_copyrights(location):
+    for copyrights, _authors, years, holders, start_line, end_line in detect_copyrights(location):
         if not copyrights:
             continue
         result = OrderedDict()
         # FIXME: we should call this copyright instead, and yield one item per statement
         result['statements'] = copyrights
+        result['holders'] = holders
         result['start_line'] = start_line
         result['end_line'] = end_line
         yield result

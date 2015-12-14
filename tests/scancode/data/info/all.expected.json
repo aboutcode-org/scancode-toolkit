@@ -254,6 +254,10 @@
           "statements": [
             "Copyright (c) 1993 The Regents of the University of California."
           ], 
+          "holders": [
+            "Regents of the University of California.", 
+            "University of California."
+          ], 
           "start_line": 22, 
           "end_line": 23
         }
@@ -342,6 +346,9 @@
         {
           "statements": [
             "Copyright (c) 2006, Jouni Malinen <j@w1.fi>"
+          ], 
+          "holders": [
+            "Jouni Malinen"
           ], 
           "start_line": 2, 
           "end_line": 3

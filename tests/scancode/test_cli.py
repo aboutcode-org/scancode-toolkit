@@ -55,6 +55,8 @@ def check_scan_json(expected_file, result_file, test_dir, regen=False):
         with open(expected_file, 'wb') as reg:
             json.dump(result, reg, indent=2)
     expected = _load_json_result(expected_file, test_dir)
+    expected = json.dumps(expected, indent=2)
+    result = json.dumps(result, indent=2)
     assert expected == result
 
 
@@ -170,7 +172,6 @@ def test_info_license_copyrights(monkeypatch):
     check_scan_json(test_env.get_test_loc('info/all.expected.json'),
                     result_file,
                     test_dir)
-
 
 def test_paths_are_posix_in_html_app_format_output(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
