@@ -234,6 +234,11 @@ class TestSmokeTest(FileBasedTesting):
         extractors = archive.get_extractors(test_file)
         assert [archive.extract_zip] == extractors
 
+    def test_windows_ntfs_wmz_are_sometimes_gzip(self):
+        test_file = self.get_test_loc('archive/wmz/image003.wmz')
+        extractors = archive.get_extractors(test_file)
+        assert [archive.uncompress_gzip] == extractors
+
 
 class BaseArchiveTestCase(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -426,16 +431,13 @@ class TestGzip(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/gzip/leading_data.gz')
         test_dir = self.get_temp_dir()
         expected = Exception('Not a gzipped file')
-        self.assertRaisesInstance(expected,
-                                  archive.uncompress_gzip,
-                                  test_file, test_dir)
+        self.assertRaisesInstance(expected, archive.uncompress_gzip, test_file, test_dir)
 
     def test_uncompress_gzip_with_random_data(self):
         test_file = self.get_test_loc('archive/gzip/random_binary.data')
         test_dir = self.get_temp_dir()
         expected = Exception('Not a gzipped file')
-        self.assertRaisesInstance(expected, archive.uncompress_gzip,
-                                  test_file, test_dir)
+        self.assertRaisesInstance(expected, archive.uncompress_gzip, test_file, test_dir)
 
     def test_uncompress_gzip_with_backslash_in_path(self):
         # weirdly enough, gzip keeps the original path/name
@@ -443,6 +445,14 @@ class TestGzip(BaseArchiveTestCase):
         test_dir = self.get_temp_dir()
         archive.uncompress_gzip(test_file, test_dir)
         result = os.path.join(test_dir, 'backslash_path.gz-extract')
+        assert os.path.exists(result)
+
+    def test_uncompress_gzip_can_uncompress_windows_ntfs_wmz(self):
+        test_file = self.get_test_loc('archive/wmz/image003.wmz')
+        test_dir = self.get_temp_dir()
+        archive.uncompress_gzip(test_file, test_dir)
+        print(os.listdir(test_dir))
+        result = os.path.join(test_dir, 'image003.wmz-extract')
         assert os.path.exists(result)
 
 
@@ -472,8 +482,7 @@ class TestTarBz2(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/tbz/tarred_bzipped_broken.tar.bz2')
         test_dir = self.get_temp_dir()
         expected = Exception("'bzip decompression failed'")
-        self.assertRaisesInstance(expected, archive.extract_tar,
-                                  test_file, test_dir)
+        self.assertRaisesInstance(expected, archive.extract_tar, test_file, test_dir)
 
     def test_extract_tar_bz2_absolute_path(self):
         assert not os.path.exists('/tmp/subdir')
@@ -1645,10 +1654,10 @@ class TestIso(BaseArchiveTestCase):
         archive.extract_iso(test_file, test_dir)
         extracted = self.collect_extracted_path(test_dir)
         expected = [
-            '/ChangeLog', 
-            '/ChangeLog (copy)', 
-            '/freebase.ABOUT', 
-            '/this/', 
+            '/ChangeLog',
+            '/ChangeLog (copy)',
+            '/freebase.ABOUT',
+            '/this/',
             '/this/that'
         ]
         assert sorted(expected) == sorted(extracted)

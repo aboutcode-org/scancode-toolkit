@@ -544,8 +544,7 @@ TarGzipHandler = Handler(
     name='Tar gzip',
     filetypes=('gzip compressed',),
     mimetypes=('application/x-gzip',),
-    extensions=('.tgz', '.tar.gz', '.tar.gzip', '.targz',
-          '.targzip', '.tgzip',),
+    extensions=('.tgz', '.tar.gz', '.tar.gzip', '.targz', '.targzip', '.tgzip',),
     kind=regular_nested,
     extractors=[extract_tar],
     strict=False
@@ -553,9 +552,9 @@ TarGzipHandler = Handler(
 
 GzipHandler = Handler(
     name='Gzip',
-    filetypes=('gzip compressed',),
+    filetypes=('gzip compressed', 'gzip compressed data'),
     mimetypes=('application/x-gzip',),
-    extensions=('.gz', '.gzip',),
+    extensions=('.gz', '.gzip', '.wmz'),
     kind=regular,
     extractors=[uncompress_gzip],
     strict=False
