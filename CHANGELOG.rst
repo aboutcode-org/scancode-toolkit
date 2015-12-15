@@ -2,17 +2,51 @@
 Changelog
 =========
 
+
 next
 ------------------
 
+
+
+1.5.0 (2015-12-15)
+------------------
+
+* New features
+
+ * The HTML app now display a license summary graphic
+ * Copyright holders and Authors are now collected together with copyrights
+ * New email and url scan options: scan for URLs and emails
+ * New and improved license and detection rules
+
+These scans are for now only available in the JSON output 
+
+
+1.4.3 (2015-12-03)
+------------------
+
+* Minor bug fix
+
+ * In the HTML app, the scanned path was hardcoded as
+   scancode-toolkit2/scancode-toolkit/samples instead of displaying the path
+   that was scanned.
+
+
+1.4.2 (2015-12-03)
+------------------
+
+* Minor features and bug fixes
+
+ * The release archives were missing some code (packagedcode)
+ * Improved --quiet option for command line operations
  * New support for custom Jinja templates for the HTML output.
    The template also has access to the whole License object to output full
    license texts or other data. Thanks to @ened Sebastian Roth for this.
 
+
 1.4.0 (2015-11-24)
 ------------------
 
-* New features abd bug fixes
+* New features and bug fixes
 
  * Separated JSON data into a separate file for the html app.
    https://github.com/nexB/scancode-toolkit/issues/38
