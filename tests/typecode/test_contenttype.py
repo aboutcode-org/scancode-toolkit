@@ -347,7 +347,8 @@ class TestContentType(FileBasedTesting):
         assert is_text(self.get_test_loc(u'contenttype/code/groff/example.ms'))
         assert 'Groff' == get_filetype_pygment(self.get_test_loc(u'contenttype/code/groff/example.ms'))
         assert 'groff language text' == get_filetype(self.get_test_loc(u'contenttype/code/groff/example.ms'))
-        assert 'text/troff' == get_mimetype_python(self.get_test_loc(u'contenttype/code/groff/example.ms'))
+        # the Apache mimes do not have .ms in their types
+        assert '' == get_mimetype_python(self.get_test_loc(u'contenttype/code/groff/example.ms'))
         assert 'text/troff' == get_mimetype_file(self.get_test_loc(u'contenttype/code/groff/example.ms'))
         assert get_filetype_file(self.get_test_loc(u'contenttype/code/groff/example.ms')).startswith('troff or preprocessor input')
 
