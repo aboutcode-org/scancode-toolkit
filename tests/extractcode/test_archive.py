@@ -229,6 +229,11 @@ class TestSmokeTest(FileBasedTesting):
         expected = ['c/a/a.txt', 'c/b/a.txt', 'c/c/a.txt']
         check_files(test_tgt_dir, expected)
 
+    def test_windows_media_player_skins_are_zip(self):
+        test_file = self.get_test_loc('archive/wmz/Go.wmz')
+        extractors = archive.get_extractors(test_file)
+        assert [archive.extract_zip] == extractors
+
 
 class BaseArchiveTestCase(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -818,6 +823,14 @@ class TestZip(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/zip/javascript-fastclass.1.1.729.121805.nupkg')
         handler = get_best_handler(test_file)
         assert archive.NugetHandler == handler
+
+    def test_extract_zip_can_extract_windows_media_player_skins(self):
+        test_file = self.get_test_loc('archive/wmz/Go.wmz')
+        test_dir = self.get_temp_dir()
+        result = archive.extract_zip(test_file, test_dir)
+        assert [] == result
+        expected = ['32px.png', 'go.js', 'go.wms']
+        check_files(test_dir, expected)
 
 
 class TestLibarch(BaseArchiveTestCase):
