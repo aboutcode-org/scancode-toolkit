@@ -55,16 +55,49 @@ def get_copyrights(location):
     """
     from cluecode.copyrights import detect_copyrights
 
-    for copyrights, _authors, years, holders, start_line, end_line in detect_copyrights(location):
+    for copyrights, authors, _years, holders, start_line, end_line in detect_copyrights(location):
         if not copyrights:
             continue
         result = OrderedDict()
         # FIXME: we should call this copyright instead, and yield one item per statement
         result['statements'] = copyrights
         result['holders'] = holders
+        result['authors'] = authors
         result['start_line'] = start_line
         result['end_line'] = end_line
         yield result
+
+
+def get_emails(location):
+    """
+    Yield an iterable of dictionaries of emails detected in the file at
+    location.
+    """
+    from cluecode.finder import find_emails
+    for email, line_num  in find_emails(location):
+        if not email:
+            continue
+        misc = OrderedDict()
+        misc['email'] = email
+        misc['start_line'] = line_num
+        misc['end_line'] = line_num
+        yield misc
+
+
+def get_urls(location):
+    """
+    Yield an iterable of dictionaries of urls detected in the file at
+    location.
+    """
+    from cluecode.finder import find_urls
+    for urls, line_num  in find_urls(location):
+        if not urls:
+            continue
+        misc = OrderedDict()
+        misc['url'] = urls
+        misc['start_line'] = line_num
+        misc['end_line'] = line_num
+        yield misc
 
 
 DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/license_library/Demo/{}/'

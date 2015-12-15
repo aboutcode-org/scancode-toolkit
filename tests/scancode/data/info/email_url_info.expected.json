@@ -4,8 +4,7 @@
   "results": [
     {
       "location": "basic", 
-      "copyrights": [], 
-      "licenses": [], 
+      "urls": [], 
       "infos": [
         {
           "type": "directory", 
@@ -26,12 +25,12 @@
           "is_source": null, 
           "is_script": null
         }
-      ]
+      ], 
+      "emails": []
     }, 
     {
       "location": "basic/dbase.fdt", 
-      "copyrights": [], 
-      "licenses": [], 
+      "urls": [], 
       "infos": [
         {
           "type": "file", 
@@ -52,12 +51,12 @@
           "is_source": null, 
           "is_script": null
         }
-      ]
+      ], 
+      "emails": []
     }, 
     {
       "location": "basic/dir", 
-      "copyrights": [], 
-      "licenses": [], 
+      "urls": [], 
       "infos": [
         {
           "type": "directory", 
@@ -78,12 +77,12 @@
           "is_source": null, 
           "is_script": null
         }
-      ]
+      ], 
+      "emails": []
     }, 
     {
       "location": "basic/dir/e.tar", 
-      "copyrights": [], 
-      "licenses": [], 
+      "urls": [], 
       "infos": [
         {
           "type": "file", 
@@ -104,12 +103,12 @@
           "is_source": null, 
           "is_script": null
         }
-      ]
+      ], 
+      "emails": []
     }, 
     {
       "location": "basic/dir/subdir", 
-      "copyrights": [], 
-      "licenses": [], 
+      "urls": [], 
       "infos": [
         {
           "type": "directory", 
@@ -130,12 +129,12 @@
           "is_source": null, 
           "is_script": null
         }
-      ]
+      ], 
+      "emails": []
     }, 
     {
       "location": "basic/dir/subdir/a.aif", 
-      "copyrights": [], 
-      "licenses": [], 
+      "urls": [], 
       "infos": [
         {
           "type": "file", 
@@ -156,12 +155,12 @@
           "is_source": null, 
           "is_script": null
         }
-      ]
+      ], 
+      "emails": []
     }, 
     {
       "location": "basic/dir2", 
-      "copyrights": [], 
-      "licenses": [], 
+      "urls": [], 
       "infos": [
         {
           "type": "directory", 
@@ -182,12 +181,12 @@
           "is_source": null, 
           "is_script": null
         }
-      ]
+      ], 
+      "emails": []
     }, 
     {
       "location": "basic/dir2/subdir", 
-      "copyrights": [], 
-      "licenses": [], 
+      "urls": [], 
       "infos": [
         {
           "type": "directory", 
@@ -208,38 +207,16 @@
           "is_source": null, 
           "is_script": null
         }
-      ]
+      ], 
+      "emails": []
     }, 
     {
       "location": "basic/dir2/subdir/bcopy.s", 
-      "copyrights": [
+      "urls": [
         {
-          "statements": [
-            "Copyright (c) 1993 The Regents of the University of California."
-          ], 
-          "holders": [
-            "Regents of the University of California.", 
-            "University of California."
-          ], 
-          "authors": [], 
-          "start_line": 22, 
-          "end_line": 23
-        }
-      ], 
-      "licenses": [
-        {
-          "key": "bsd-original-uc", 
-          "score": 100.0, 
-          "short_name": "BSD-Original-UC", 
-          "category": "Attribution", 
-          "owner": "Regents of the University of California", 
-          "homepage_url": "ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change", 
-          "text_url": "http://www.xfree86.org/3.3.6/COPYRIGHT2.html", 
-          "dejacode_url": "https://enterprise.dejacode.com/license_library/Demo/bsd-original-uc/", 
-          "spdx_license_key": "BSD-4-Clause-UC", 
-          "spdx_url": "http://spdx.org/licenses/BSD-4-Clause-UC", 
-          "start_line": 22, 
-          "end_line": 51
+          "url": "http://www.cornfed.com/", 
+          "start_line": 17, 
+          "end_line": 17
         }
       ], 
       "infos": [
@@ -262,12 +239,24 @@
           "is_source": true, 
           "is_script": null
         }
+      ], 
+      "emails": [
+        {
+          "email": "ws@tools.de", 
+          "start_line": 412, 
+          "end_line": 412
+        }
       ]
     }, 
     {
       "location": "basic/dir2/subdir/config.conf", 
-      "copyrights": [], 
-      "licenses": [], 
+      "urls": [
+        {
+          "url": "http://jtrac.info/", 
+          "start_line": 2, 
+          "end_line": 2
+        }
+      ], 
       "infos": [
         {
           "type": "file", 
@@ -288,53 +277,12 @@
           "is_source": null, 
           "is_script": null
         }
-      ]
+      ], 
+      "emails": []
     }, 
     {
       "location": "basic/main.c", 
-      "copyrights": [
-        {
-          "statements": [
-            "Copyright (c) 2006, Jouni Malinen <j@w1.fi>"
-          ], 
-          "holders": [
-            "Jouni Malinen"
-          ], 
-          "authors": [], 
-          "start_line": 2, 
-          "end_line": 3
-        }
-      ], 
-      "licenses": [
-        {
-          "key": "gpl-2.0", 
-          "score": 100.0, 
-          "short_name": "GPL 2.0", 
-          "category": "Copyleft", 
-          "owner": "Free Software Foundation (FSF)", 
-          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html", 
-          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt", 
-          "dejacode_url": "https://enterprise.dejacode.com/license_library/Demo/gpl-2.0/", 
-          "spdx_license_key": "GPL-2.0", 
-          "spdx_url": "http://spdx.org/licenses/GPL-2.0", 
-          "start_line": 5, 
-          "end_line": 10
-        }, 
-        {
-          "key": "bsd-new", 
-          "score": 100.0, 
-          "short_name": "BSD-Modified", 
-          "category": "Attribution", 
-          "owner": "Regents of the University of California", 
-          "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause", 
-          "text_url": "http://www.opensource.org/licenses/BSD-3-Clause", 
-          "dejacode_url": "https://enterprise.dejacode.com/license_library/Demo/bsd-new/", 
-          "spdx_license_key": "BSD-3-Clause", 
-          "spdx_url": "http://spdx.org/licenses/BSD-3-Clause", 
-          "start_line": 5, 
-          "end_line": 10
-        }
-      ], 
+      "urls": [], 
       "infos": [
         {
           "type": "file", 
@@ -354,6 +302,13 @@
           "is_media": null, 
           "is_source": true, 
           "is_script": null
+        }
+      ], 
+      "emails": [
+        {
+          "email": "j@w1.fi", 
+          "start_line": 3, 
+          "end_line": 3
         }
       ]
     }

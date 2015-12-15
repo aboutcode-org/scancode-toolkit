@@ -49,14 +49,22 @@ the actual command outputs as if using a TTY or not.
 """
 
 
-def check_scan_json(expected_file, result_file, test_dir, regen=False):
+def check_scan(expected_file, result_file, test_dir, regen=False):
+    """
+    Check the scan result_file JSON results against the expected_file expected
+    JSON results. Removes references to test_dir for the comparison. If regen is
+    True the expected_file WILL BE overwritten with the results. This is
+    convenient for updating tests expectations. But use with caution.
+    """
     result = _load_json_result(result_file, test_dir)
     if regen:
         with open(expected_file, 'wb') as reg:
             json.dump(result, reg, indent=2)
     expected = _load_json_result(expected_file, test_dir)
-    expected = json.dumps(expected, indent=2)
-    result = json.dumps(result, indent=2)
+    # NOTE we redump the JSON as a string for a more efficient comparison of
+    # failures
+    expected = json.dumps(expected, indent=2, sort_keys=True)
+    result = json.dumps(result, indent=2, sort_keys=True)
     assert expected == result
 
 
@@ -148,7 +156,7 @@ def test_usage_and_help_return_a_correct_script_name_on_all_platforms(monkeypatc
     assert 'scancode-script.py' not in result.output
 
 
-def test_info_collect_infos(monkeypatch):
+def test_scan_info_does_collect_infos(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     runner = CliRunner()
@@ -156,12 +164,10 @@ def test_info_collect_infos(monkeypatch):
     result = runner.invoke(cli.scancode, ['--info', test_dir, result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    check_scan_json(test_env.get_test_loc('info/basic.expected.json'),
-                    result_file,
-                    test_dir)
+    check_scan(test_env.get_test_loc('info/basic.expected.json'), result_file, test_dir)
 
 
-def test_info_license_copyrights(monkeypatch):
+def test_scan_info_license_copyrights(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     runner = CliRunner()
@@ -169,11 +175,21 @@ def test_info_license_copyrights(monkeypatch):
     result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright', test_dir, result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    check_scan_json(test_env.get_test_loc('info/all.expected.json'),
-                    result_file,
-                    test_dir)
+    check_scan(test_env.get_test_loc('info/all.expected.json'), result_file, test_dir)
 
-def test_paths_are_posix_in_html_app_format_output(monkeypatch):
+
+def test_scan_email_url_info(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.extract_test_tar('info/basic.tgz')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['--email', '--url', '--info', test_dir, result_file])
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    check_scan(test_env.get_test_loc('info/email_url_info.expected.json'), result_file, test_dir)
+
+
+def test_paths_are_posix_paths_in_html_app_format_output(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.get_test_loc('posix_path', copy=True)
     runner = CliRunner()
@@ -181,9 +197,8 @@ def test_paths_are_posix_in_html_app_format_output(monkeypatch):
     result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html-app', test_dir, result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-
     # the data we want to test is in the data.json file
-    data_file = os.path.join(fileutils.parent_directory(result_file),'test_html_files', 'data.json')
+    data_file = os.path.join(fileutils.parent_directory(result_file), 'test_html_files', 'data.json')
     assert '/posix_path/copyright_acme_c-c.c' in open(data_file).read()
 
 
@@ -208,6 +223,7 @@ def test_paths_are_posix_in_json_format_output(monkeypatch):
     assert 'Scanning done' in result.output
     assert '/posix_path/copyright_acme_c-c.c' in open(result_file).read()
 
+
 def test_format_with_custom_filename_rejects_invalids(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.get_test_loc('posix_path', copy=True)
@@ -216,6 +232,7 @@ def test_format_with_custom_filename_rejects_invalids(monkeypatch):
     result = runner.invoke(cli.scancode, [ '--format', test_dir, test_dir, result_file])
     assert result.exit_code == 0
     assert 'Invalid template passed' in result.output
+
 
 def test_format_with_custom_filename(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)

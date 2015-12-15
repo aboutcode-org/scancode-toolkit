@@ -49,6 +49,8 @@ from scancode.api import get_copyrights
 from scancode.api import get_licenses
 from scancode.api import get_file_infos
 from scancode.api import get_package_infos
+from scancode.api import get_emails
+from scancode.api import get_urls
 
 
 info_text = '''
@@ -216,6 +218,8 @@ formats = ['json', 'html', 'html-app']
 @click.option('-c', '--copyright', is_flag=True, default=False, help='Scan <input> for copyrights. [default]')
 @click.option('-l', '--license', is_flag=True, default=False, help='Scan <input> for licenses. [default]')
 @click.option('-p', '--package', is_flag=True, default=False, help='Scan <input> for packages. [default]')
+@click.option('--email', is_flag=True, default=False, help='Scan <input> for emails.')
+@click.option('--url', is_flag=True, default=False, help='Scan <input> for urls.')
 @click.option('-i', '--info', is_flag=True, default=False, help='Scan <input> for files information.')
 
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
@@ -229,24 +233,24 @@ formats = ['json', 'html', 'html-app']
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
 
 def scancode(ctx, input, output_file, copyright, license, package,  # @ReservedAssignment
-             info, format, verbose, quiet, *args, **kwargs):  # @ReservedAssignment
-    """scan the <input> file or directory for origin and license and save results to the <output_file>.
+             email, url, info, format, verbose, quiet, *args, **kwargs):  # @ReservedAssignment
+    """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
 
     The scan results are printed on terminal if <output_file> is not provided.
     """
-    possible_scans = [copyright, license, package, info]
+    possible_scans = [copyright, license, package, email, url, info]
     # Default scan when no options is provided
     if not any(possible_scans):
         copyright = True  # @ReservedAssignment
         license = True  # @ReservedAssignment
         package = True
 
-    results = scan(input, copyright, license, package, info, verbose, quiet)
+    results = scan(input, copyright, license, package, email, url, info, verbose, quiet)
     save_results(results, format, input, output_file)
 
 
 def scan(input_path, copyright=True, license=True, package=True,  # @ReservedAssignment
-         info=True, verbose=False, quiet=False):  # @ReservedAssignment
+         email=False, url=False, info=True, verbose=False, quiet=False):  # @ReservedAssignment
     """
     Do the scans proper, return results.
     """
@@ -259,6 +263,8 @@ def scan(input_path, copyright=True, license=True, package=True,  # @ReservedAss
         'copyrights': copyright and get_copyrights,
         'licenses': license and get_licenses,
         'packages': package and get_package_infos,
+        'emails': email and get_emails,
+        'urls': url and get_urls,
         'infos': info and get_file_infos,
     }
 
@@ -270,13 +276,11 @@ def scan(input_path, copyright=True, license=True, package=True,  # @ReservedAss
         """Progress event displayed at start of scan"""
         return style('Scanning files...', fg='green')
 
-
     def scan_event(item):
         """Progress event displayed each time a file is scanned"""
         if item:
             line = verbose and item or fileutils.file_name(item) or ''
             return 'Scanning: %(line)s' % locals()
-
 
     def scan_end():
         """Progress event displayed at end of scan"""
@@ -288,7 +292,6 @@ def scan(input_path, copyright=True, license=True, package=True,  # @ReservedAss
         summary_color = has_errors and 'red' or summary_color
         summary.append(style('Scanning done.', fg=summary_color, reset=True))
         return '\n'.join(summary)
-
 
     ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
     resources = fileutils.resource_iter(abs_input, ignored=ignored)
@@ -340,7 +343,7 @@ def save_results(results, format, input, output_file):  # @ReservedAssignment
     if format not in formats:
         # render using a user-provided custom format template
         if not os.path.isfile(format):
-            click.secho('\nInvalid template passed.', err=True, fg='red')    
+            click.secho('\nInvalid template passed.', err=True, fg='red')
         else:
             output_file.write(as_template(results, template=format))
     elif format == 'html':
