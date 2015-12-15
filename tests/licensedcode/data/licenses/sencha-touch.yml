@@ -1,0 +1,4 @@
+licenses:
+    - gpl-3.0
+expected_failure: yes
+notes: the sencha touch 2.4.2 licensing is rather complex and requires some digging
