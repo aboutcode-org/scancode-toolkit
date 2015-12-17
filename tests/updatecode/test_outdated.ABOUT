@@ -1,0 +1,6 @@
+about_resource: test_outdated.py
+download_url: https://raw.githubusercontent.com/pypa/pip/7cea748d0fb2e8980c2676304607426585550b41/tests/unit/test_unit_outdated.py
+license: mit
+notice_file: test_outdated.NOTICE
+license_text_file: test_outdated.LICENSE
+notes: this code was derived and heavily modified from pip/tests/unit/test_unit_outdated.py.
