@@ -43,14 +43,18 @@ class TestDate(testcase.FileBasedTesting):
             file_date = commoncode.date.get_file_mtime(test_file)
             commoncode.date.secs_from_epoch(file_date)
 
-    def test_get_file_time1(self):
+    def test_get_file_mtime_for_a_new_file(self):
         test_file = self.get_temp_file()
         open(test_file, 'w').close()
-        now = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
-        result = commoncode.date.get_file_mtime(test_file)[:10]
-        assert now[:10] == result
 
-    def test_get_file_time2(self):
+        def as_yyyymmdd(s):
+            return s[:10]
+
+        now = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+        result = commoncode.date.get_file_mtime(test_file)
+        assert as_yyyymmdd(now) == as_yyyymmdd(result)
+
+    def test_get_file_mtime_for_a_modified_file(self):
         test_file = self.get_temp_file()
         open(test_file, 'w').close()
         expected = u'1992-05-09 00:00:00'
@@ -59,7 +63,7 @@ class TestDate(testcase.FileBasedTesting):
         os.utime(test_file, (m_ts, m_ts))
         assert expected == commoncode.date.get_file_mtime(test_file)
 
-    def test_get_file_time3(self):
+    def test_get_file_mtime_for_a_modified_file_2(self):
         test_file = self.get_temp_file()
         open(test_file, 'w').close()
         # setting modified time to expected values
