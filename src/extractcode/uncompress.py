@@ -62,8 +62,11 @@ def uncompress(location, target_dir, decompressor, suffix=EXTRACT_SUFFIX):
     target_location = os.path.join(target_dir, os.path.basename(location) + suffix)
     with decompressor(location, 'rb') as compressed:
         with open(target_location, 'wb') as uncompressed:
-            chunk = compressed.read()
-            uncompressed.write(chunk)
+            while True:
+                chunk = compressed.read(1024 * 1024)
+                if not chunk:
+                    break
+                uncompressed.write(chunk)
         if getattr(decompressor, 'has_trailing_garbage', False):
             warnings.append(location +': Trailing garbage found and ignored.')
     return warnings
