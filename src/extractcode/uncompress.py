@@ -63,7 +63,7 @@ def uncompress(location, target_dir, decompressor, suffix=EXTRACT_SUFFIX):
     with decompressor(location, 'rb') as compressed:
         with open(target_location, 'wb') as uncompressed:
             while True:
-                chunk = compressed.read(1024 * 1024)
+                chunk = compressed.read(8 * 1024 * 1024)
                 if not chunk:
                     break
                 uncompressed.write(chunk)
