@@ -49,6 +49,13 @@ See more command examples::
     ./scancode --examples
 
 
+About archives
+==============
+All code must be extracted before running ScanCode since ScanCode will not extract files from tarballs, zip files, etc.  However, the ScanCode Toolkit comes with a utility called extractcode that does recursive archive extraction.
+For example, this command will recursively extract the mytar.tar.bz2 tarball in the mytar.tar.bz2-extract directory::
+    ./extractcode mytar.tar.bz2
+
+
 Build and tests status
 ======================
 
