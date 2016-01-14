@@ -183,7 +183,7 @@ class LicenseIndex(object):
             print(' LicenseIndex.match: unfiltered exact_license_matches: %(exact_license_matches)r' % locals())
         if DEBUG_FILTER:
             print(' in EXACT: LicenseIndex.match: filtered with filter_overlapping_matches')
-        filtered_exact = filter_overlapping_matches(exact_license_matches, discard_negative=True)
+        filtered_exact = filter_overlapping_matches(exact_license_matches, discard_negative=False)
         return sorted(filtered_exact, key=lambda x: x.span)
 
 
