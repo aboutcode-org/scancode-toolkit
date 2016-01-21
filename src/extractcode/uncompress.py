@@ -33,6 +33,7 @@ import gzip
 # Because of http://bugs.python.org/issue20781
 from bz2file import BZ2File
 
+from commoncode import fileutils
 from extractcode import EXTRACT_SUFFIX
 
 DEBUG = False
@@ -52,25 +53,58 @@ def uncompress(location, target_dir, decompressor, suffix=EXTRACT_SUFFIX):
     # FIXME: do not create a sub-directory and instead strip the "compression"
     # extension such gz, etc. or introspect the archive header to get the file
     # name when present.
-    assert location
-    assert target_dir
-    assert decompressor
-
     if DEBUG:
         logger.debug('uncompress: ' + location)
-    warnings = []
+    tmp_loc, warnings = uncompress_file(location, decompressor)
     target_location = os.path.join(target_dir, os.path.basename(location) + suffix)
+    if os.path.exists(target_location):
+        fileutils.delete(target_location)
+    os.rename(tmp_loc, target_location)
+    return warnings
+
+
+def uncompress_file(location, decompressor):
+    """
+    Uncompress a compressed file at location and return a temporary location of
+    the uncompressed file and a list of warning messages. Raise Exceptions on
+    errors. Use the `decompressor` object for decompression.
+    """
+    # FIXME: do not create a sub-directory and instead strip the "compression"
+    # extension such gz, etc. or introspect the archive header to get the file
+    # name when present.
+    assert location
+    assert decompressor
+
+    warnings = []
+    base_name = fileutils.file_base_name(location)
+    target_location = os.path.join(fileutils.get_temp_dir(base_dir='extract'), base_name)
     with decompressor(location, 'rb') as compressed:
         with open(target_location, 'wb') as uncompressed:
-            EIGHT_MB = 8 * 1024 * 1024
+            buffer_size = 32 * 1024 * 1024
             while True:
-                chunk = compressed.read(EIGHT_MB)
+                chunk = compressed.read(buffer_size)
                 if not chunk:
                     break
                 uncompressed.write(chunk)
         if getattr(decompressor, 'has_trailing_garbage', False):
-            warnings.append(location +': Trailing garbage found and ignored.')
-    return warnings
+            warnings.append(location + ': Trailing garbage found and ignored.')
+    return target_location, warnings
+
+
+def uncompress_bzip2(location, target_dir):
+    """
+    Uncompress a bzip2 compressed file at location in the target_dir.
+    Return a warnings mapping of path->warning.
+    """
+    return uncompress(location, target_dir, BZ2File)
+
+
+def uncompress_gzip(location, target_dir):
+    """
+    Uncompress a gzip compressed file at location in the target_dir.
+    Return a warnings mapping of path -> warning.
+    """
+    return uncompress(location, target_dir, GzipFileWithTrailing)
 
 
 class GzipFileWithTrailing(gzip.GzipFile):
@@ -88,9 +122,7 @@ class GzipFileWithTrailing(gzip.GzipFile):
         magic = self.fileobj.read(2)
         # rewind two bytes back
         self.fileobj.seek(-2, os.SEEK_CUR)
-
         is_gzip = magic != self.gzip_magic
-
         if is_gzip and not self.first_file:
             self.first_file = False
             self.has_trailing_garbage = True
@@ -98,19 +130,3 @@ class GzipFileWithTrailing(gzip.GzipFile):
 
         self.first_file = False
         gzip.GzipFile._read_gzip_header(self)
-
-
-def uncompress_gzip(location, target_dir):
-    """
-    Uncompress a gzip compressed file at location in the target_dir.
-    Return a warnings mapping of path -> warning.
-    """
-    return uncompress(location, target_dir, GzipFileWithTrailing)
-
-
-def uncompress_bzip2(location, target_dir):
-    """
-    Uncompress a bzip2 compressed file at location in the target_dir.
-    Return a warnings mapping of path->warning.
-    """
-    return uncompress(location, target_dir, BZ2File)
