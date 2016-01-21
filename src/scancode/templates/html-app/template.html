@@ -64,6 +64,7 @@
     <div id="tabbar" class="col-md-8">
         <ul class="nav nav-tabs">
             <li id="tab4" class="active"><a data-toggle="tab" href="#chart">License Summary</a></li>
+            <li id="tab5"><a data-toggle="tab" href="#">Copyright Summary</a></li>
             <li id="tab1"><a data-toggle="tab" href="#">License & Copyright Information</a></li>
             <li id="tab2"><a data-toggle="tab" href="#">File Information</a></li>
             <li id="tab3"><a data-toggle="tab" href="#">Package Information</a></li>
@@ -97,6 +98,14 @@
   <script type="text/javascript" src="{{ assets_dir }}/data.json"></script>
   <script type="text/javascript">
       var dataArray = data;
+      var currNodeData = null;
+      var chartOptions = {
+          name: "License Summary",
+          margin: 30,
+          barHeight: 25,
+          xAxisName: "License Count",
+          yAxisName: "License Name"
+      };
 
       // Prepare data for tree and table
       $( document ).ready(function() {
@@ -108,7 +117,7 @@
                   table = $('#data_table').DataTable();
                   table.draw();
                   currNodeData = nodeData;
-                  resetChart(currNodeData);
+                  resetChartSelect();
               });
 
           // Setup DataTable
@@ -122,14 +131,7 @@
           $('#button').click(function(){ $('#data_table').toggleClass('ellipsis'); })
 
           // Setup BarChart
-          var chartData = formatChartData(data);
-          var chartOptions = {
-              name: "License Summary",
-              margin: 30,
-              barHeight: 25,
-              xAxisName: "License Count",
-              yAxisName: "License Name"
-          };
+          var chartData = formatLicenseChartData(data);
           var barChart = new BarChart(chartData, chartOptions, '.chart');
           $(window).on('resize', barChart.draw);
 
@@ -149,26 +151,38 @@
             $('#summary').hide();
             scancodeDataTable.showPkgInfo();
           });
-          $( "#tab4" ).click(function() {
-           $('#details').hide();
-           $('#summary').show();
-           resetChart(currNodeData);
+          $("#tab4").click(function() {
+            $('#details').hide();
+            $('#summary').show();
+            resetChart(formatLicenseChartData(filteredData(currNodeData)));
           });
-
+          $("#tab5").click(function() {
+            $('#details').hide();
+            $('#summary').show();
+            resetChart(formatCopyrightChartData(filteredData(currNodeData)));
+          });
           $("#details").hide();
 
-          function resetChart(nodeData) {
+          function resetChartSelect() {
+              if ($('#tab4').hasClass('active')) {
+                  resetChart(formatLicenseChartData(filteredData(currNodeData)));
+              } else if($('#tab5').hasClass('active')){
+                  resetChart(formatCopyrightChartData(filteredData(currNodeData)));
+              }
+          }
+
+          function resetChart(chartData) {
               barChart.remove();
-              barChart = new BarChart(filteredData(nodeData), chartOptions, '.chart');
+              barChart = new BarChart(chartData, chartOptions, '.chart');
           }
       });
 
       // filter the data
       function filteredData(nodeData){
-          if (typeof nodeData == 'undefined') {
-              return formatChartData(data);
+          if (nodeData == null) {
+              return data;
           }
-          return formatChartData($.map(data, function(item){
+          return $.map(data, function(item){
               var pattern = '^' + nodeData.selected[0];
               pattern += nodeData.node.children.length > 0 ? '/' : '';
               if (item.location.match(pattern)){
@@ -176,10 +190,10 @@
               } else {
                   return;
               }
-          }));
+          });
       }
 
-      function formatChartData(data) {
+      function formatLicenseChartData(data){
         var NO_LICENSES = [{short_name: 'No License Found'}]
         // Get license short name and if no license set it to No License Found
         var shortNames = $.map(data, function(item){
@@ -188,10 +202,25 @@
                 return license.short_name;
             });
         });
+        return formatChartData(shortNames)
+      }
 
-        // Sum the total number of times the license appears
+      function formatCopyrightChartData(data){
+        var NO_COPYRIGHT = [{holders: ['No Copyright Found']}]
+        // Get copyright holder and if none set it to No Copyright Found
+        var holderNames = $.map(data, function(item){
+            copyrights = item.copyrights.length > 0 ? item.copyrights : NO_COPYRIGHT;
+            return $.map(copyrights, function(copyright) {
+                return copyright.holders[0];
+            });
+        });
+        return formatChartData(holderNames)
+      }
+
+      function formatChartData(names) {
+        // Sum the total number of times the name appears
         var count = {};
-        $.each(shortNames, function(i, name){
+        $.each(names, function(i, name){
             count[name] = count[name] + 1 || 1;
         });
 
