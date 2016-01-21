@@ -1,0 +1,4 @@
+# Copyright 2005 HSQL Developers Group
+# can be distributed and used according to HSQLDB License
+# see http://hsqldb.org
+

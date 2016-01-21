@@ -669,3 +669,14 @@ File NomosTestfiles/Artistic-1.0-Perl/Artistic-1.0-Perl.txt contains license(s) 
 File NomosTestfiles/D-FSL-1.0/D-FSL-1.0.txt contains license(s) D-FSL-1.0,GPL
 File NomosTestfiles/SISSL-1.2/SISSL-1.2.txt contains license(s) SISSL-1.2
 File NomosTestfiles/YPL-1.0/YPL-1.0.txt contains license(s) YPL-1.0
+File NomosTestfiles/EDL/edl-v10 contains license(s) BSD-3-Clause,EDL-1.0
+File NomosTestfiles/EDL/edl1.txt contains license(s) EDL-1.0,EPL-1.0
+File NomosTestfiles/OpenSSL/syslog-ng-ctl.c contains license(s) LGPL-2.1+,OpenSSL-exception
+File NomosTestfiles/HSQLDB/hsqldb-license contains license(s) BSD-3-Clause
+File NomosTestfiles/HSQLDB/hsqldb-ref1.txt contains license(s) HSQLDB
+File NomosTestfiles/OpenMap/openmap.md contains license(s) OpenMap
+File NomosTestfiles/eCos/lcd.c contains license(s) Cygnus-eCos-1.0
+File NomosTestfiles/eCos/Cygnus-eCos-1.0.txt contains license(s) Cygnus-eCos-1.0
+File NomosTestfiles/BSD/cpld.c contains license(s) Freeware
+File NomosTestfiles/BSD/lynxkdi.c contains license(s) Freeware
+File NomosTestfiles/Sun/Sun-proprietary contains license(s) Sun-Proprietary
