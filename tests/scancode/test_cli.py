@@ -243,3 +243,16 @@ def test_format_with_custom_filename(monkeypatch):
     result = runner.invoke(cli.scancode, [ '--format', template, test_dir, result_file])
     assert result.exit_code == 0
     assert 'Custom Template' in open(result_file).read()
+
+
+def test_scanned_path_is_present_in_html_app_output(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.get_test_loc('html_app')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('test.html')
+    result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html-app', test_dir, result_file])
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    html_file = open(result_file).read()
+    assert '<title>ScanCode scan results for: %(test_dir)s</title>' % locals() in html_file
+    assert 'ScanCode</a> scan results for: %(test_dir)s</span>' % locals() in html_file
