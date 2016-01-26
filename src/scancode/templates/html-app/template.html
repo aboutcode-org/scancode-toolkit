@@ -33,58 +33,7 @@
     <link href="{{ assets_dir }}/style.min.css" rel="stylesheet"/>
     <link href="{{ assets_dir }}/bootstrap.min.css" rel="stylesheet"/>
     <link href="{{ assets_dir }}/jquery.dataTables.min.css" rel="stylesheet"/>
-        <style>
-        footer {
-            text-align: center;
-            border-top: 1px solid #e5e5e5;
-            padding-top: 20px;
-            margin-top: 20px;
-        }
-        td.details-control:before {
-            content:"\2b";
-            font-family:"Glyphicons Halflings";
-            cursor: pointer;
-            color: #0064CD;
-        }
-        tr.shown td.details-control:before {
-            content:"\2212";
-            font-family:"Glyphicons Halflings";
-        }
-        .icon-primary{color: #0064CD;}
-        .icon-secondary{color: #0064CD;}
-        .icon-empty{color: #A4B1BF;}
-        table.table-wrap {
-          table-layout:fixed;
-          word-wrap: break-word;
-        }
-        .ellipsis td {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
-        .data_table, #tree {
-        border: 1px solid #CCC;
-        border-radius: 4px;
-        }
-        .chart rect {
-          fill: #337ab7;
-        }
-
-        .chart text {
-          fill: black;
-          font: 12px sans-serif;
-          text-anchor: end;
-        }
-
-        .axis path,
-        .axis line {
-            fill: none;
-            stroke: #000;
-            shape-rendering: crispEdges;
-        }
-        .chart {width: 100%;}
-
-    </style>
+    <link href="{{ assets_dir }}/main.css" rel="stylesheet"/>
 </head>
 <body>
 
@@ -115,7 +64,8 @@
     <div id="tabbar" class="col-md-8">
         <ul class="nav nav-tabs">
             <li id="tab4" class="active"><a data-toggle="tab" href="#chart">License Summary</a></li>
-            <li id="tab1"><a data-toggle="tab" href="#">License & Copyright Information</a></li>
+            <li id="tab5"><a data-toggle="tab" href="#">Copyright Summary</a></li>
+            <li id="tab1"><a data-toggle="tab" href="#">License &amp; Copyright Information</a></li>
             <li id="tab2"><a data-toggle="tab" href="#">File Information</a></li>
             <li id="tab3"><a data-toggle="tab" href="#">Package Information</a></li>
         </ul>
@@ -143,341 +93,96 @@
   <script src="{{ assets_dir }}/jquery.dataTables.min.js"></script>
   <script src="{{ assets_dir }}/d3.min.js"  charset="utf-8"></script>
   <script src="{{ assets_dir }}/chart.js"></script>
+  <script src="{{ assets_dir }}/scancode_jstree.js"></script>
+  <script src="{{ assets_dir }}/scancode_datatable.js"></script>
   <script type="text/javascript" src="{{ assets_dir }}/data.json"></script>
   <script type="text/javascript">
-      var icon_file        = "glyphicon glyphicon-file";
-      var icon_dir_close   = "glyphicon glyphicon-folder-close";
-      var icon_dir_open    = "glyphicon glyphicon-folder-open";
-      var file_color       = "icon-secondary";
-      var file_color_empty = "icon-empty";
-      var dir_color        = "icon-primary";
-      var dir_color_empty  = "icon-empty";
-      var currNodeData;
-
-      genIconClass = function(isLeaf, isOpen, isEmpty){
-          icon  = isLeaf  ? icon_file : (isOpen ? icon_dir_open : icon_dir_close);
-          color = isEmpty ? file_color_empty : (isLeaf ? file_color : dir_color);
-          return [color, icon].join(" ");
+      var dataArray = data;
+      var currNodeData = null;
+      var chartOptions = {
+          name: "License Summary",
+          margin: 30,
+          barHeight: 25,
+          xAxisName: "License Count",
+          yAxisName: "License Name"
       };
 
       // Prepare data for tree and table
       $( document ).ready(function() {
-          var dataArray = data;
-          var jsTreeData = toJSTreeFormat(dataArray);
-          var dtData = toDataTableFormat(dataArray);
-          var dtData2 = toDataTableFormat2(dataArray);
-          var dtData3 = toDataTableFormat3(dataArray);
-          renderTree(jsTreeData.reverse());
-          renderTable(dtData);
+          // Setup JSTree
+          var scancodeJSTree = new ScancodeJSTree('#tree', dataArray)
+              .onNodeSelected(function(e, nodeData) {
+                  // Redraw data table (forces custom filter to rerun)
+                  // TODO: Figure out the tab and only update that table instead of all
+                  table = $('#data_table').DataTable();
+                  table.draw();
+                  currNodeData = nodeData;
+                  resetChartSelect();
+              });
 
+          // Setup DataTable
+          var scancodeDataTable = new ScancodeDataTable('#data_table', dataArray)
+              .addFilter(function( settings, data, dataIndex ) {
+                  // Get selected ID in tree
+                  var id = $('#tree').jstree('get_selected')[0];
+                  // keep if column 0 starts with ID (i.e., indexOf(id) == 0)
+                  return id == null || data[0].indexOf(id + '/') == 0 || data[0] == id;
+              });
+          $('#button').click(function(){ $('#data_table').toggleClass('ellipsis'); })
+
+          // Setup BarChart
+          var chartData = formatLicenseChartData(data);
+          var barChart = new BarChart(chartData, chartOptions, '.chart');
+          $(window).on('resize', barChart.draw);
+
+          // Setup Tabs
           $( "#tab1" ).click(function() {
             $('#details').show();
             $('#summary').hide();
-            table = $('#data_table').DataTable();
-            table.clear();
-            table.columns( '.tab1' ).visible( true );
-            table.columns( '.tab2' ).visible( false );
-            table.columns( '.tab3' ).visible( false );
-            table.columns( '.tab4' ).visible( false );
-            table.rows.add(dtData);
-            table.draw();
+            scancodeDataTable.showLicenseAndCopyright();
           });
           $( "#tab2" ).click(function() {
             $('#details').show();
             $('#summary').hide();
-            table = $('#data_table').DataTable();
-            table.clear();
-            table.columns( '.tab1' ).visible( false );
-            table.columns( '.tab2' ).visible( true );
-            table.columns( '.tab3' ).visible( false );
-            table.columns( '.tab4' ).visible( false );
-            table.rows.add(dtData2);
-            table.draw();
+            scancodeDataTable.showFileInfo();
           });
           $( "#tab3" ).click(function() {
             $('#details').show();
             $('#summary').hide();
-            table = $('#data_table').DataTable();
-            table.clear();
-            table.columns( '.tab1' ).visible( false );
-            table.columns( '.tab2' ).visible( false );
-            table.columns( '.tab3' ).visible( true );
-            table.columns( '.tab4' ).visible( false );
-            table.rows.add(dtData3);
-            table.draw();
+            scancodeDataTable.showPkgInfo();
           });
-          $( "#tab4" ).click(function() {
-           $('#details').hide();
-           $('#summary').show();
-           resetChart(currNodeData);
+          $("#tab4").click(function() {
+            $('#details').hide();
+            $('#summary').show();
+            resetChart(formatLicenseChartData(filteredData(currNodeData)));
           });
-
+          $("#tab5").click(function() {
+            $('#details').hide();
+            $('#summary').show();
+            resetChart(formatCopyrightChartData(filteredData(currNodeData)));
+          });
           $("#details").hide();
+
+          function resetChartSelect() {
+              if ($('#tab4').hasClass('active')) {
+                  resetChart(formatLicenseChartData(filteredData(currNodeData)));
+              } else if($('#tab5').hasClass('active')){
+                  resetChart(formatCopyrightChartData(filteredData(currNodeData)));
+              }
+          }
+
+          function resetChart(chartData) {
+              barChart.remove();
+              barChart = new BarChart(chartData, chartOptions, '.chart');
+          }
       });
-      // Returns a row in the format expected by jstree
-      function getJSTreeData(parent, id, text, icon_class){
-        return {
-          "id": id,
-          "parent": parent == "" ? '#' : parent,
-          // open the root tree
-          "state": {"opened": parent == "" ? true : false},
-          "text": text,
-          "icon": icon_class
-        };
-      };
-
-      // Return license and copyright data in table format
-      function toDataTableFormat(jsonData){
-        return $.map(jsonData, function(x){
-          // Add all license columns here
-          licenseData = [];
-          if('licenses' in x) {
-           licenseData = $.map(x.licenses, function(y){
-                   return [$.extend(y, {
-                     "path" : x.location,
-                     "what": "License",
-                     "start_line": y.start_line,
-                     "end_line": y.end_line,
-                     "info": y.short_name,
-                     "type" : "",
-                     "name" : "",
-                     "extension": "",
-                     "date" : "",
-                     "size" : "",
-                     "sha1" : "",
-                     "md5" : "",
-                     "files_count" : "",
-                     "mime_type" : "",
-                     "file_type" : "",
-                     "programming_language" : "",
-                     "is_binary" : "",
-                     "is_text" : "",
-                     "is_archive" : "",
-                     "is_media" : "",
-                     "is_source" : "",
-                     "is_script" : "",
-                     "pkg_type" : "",
-                     "pkg_packaging" : "",
-                     "pkg_primary_language" : ""
-                   })];
-          })};
-          // Add all copyright columns here
-          copyrightData = [];
-          if('copyrights' in x) {
-           copyrightData = $.map(x.copyrights, function(y){
-                   return [$.extend(y, {
-                     "path" : x.location,
-                     "what": "Copyright",
-                     "start_line": y.start_line,
-                     "end_line": y.end_line,
-                     "info": y.statements.join("</br>"),
-                     "type" : "",
-                     "name" : "",
-                     "extension": "",
-                     "date" : "",
-                     "size" : "",
-                     "sha1" : "",
-                     "md5" : "",
-                     "files_count" : "",
-                     "mime_type" : "",
-                     "file_type" : "",
-                     "programming_language" : "",
-                     "is_binary" : "",
-                     "is_text" : "",
-                     "is_archive" : "",
-                     "is_media" : "",
-                     "is_source" : "",
-                     "is_script" : "",
-                     "pkg_type" : "",
-                     "pkg_packaging" : "",
-                     "pkg_primary_language" : ""
-                   })];
-          })};
-
-          // Return the concatenation of the two data sets
-          return licenseData.concat(copyrightData);
-        })
-      };
-
-      // Return file information data in table format
-      toDataTableFormat2 = function(jsonData){
-        return $.map(jsonData, function(x){
-          fileInfoData = [];
-          if('infos' in x) {
-           fileInfoData = $.map(x.infos, function(y){
-                   return [$.extend(y, {
-                     "path" : x.location,
-                     "what": "File Info",
-                     "start_line": "",
-                     "end_line": "",
-                     "info": "",
-                     "type" : y.type,
-                     "name" : y.name,
-                     "extension": y.extension,
-                     "date" : y.date,
-                     "size" : y.size,
-                     "sha1" : y.sha1,
-                     "md5" : y.md5,
-                     "files_count" : y.files_count,
-                     "mime_type" : y.mime_type,
-                     "file_type" : y.file_type,
-                     "programming_language" : y.programming_language,
-                     "is_binary" : y.is_binary,
-                     "is_text" : y.is_text,
-                     "is_archive" : y.is_archive,
-                     "is_media" : y.is_media,
-                     "is_source" : y.is_source,
-                     "is_script" : y.is_script,
-                     "pkg_type" : "",
-                     "pkg_packaging" : "",
-                     "pkg_primary_language" : ""
-                   })];
-          })};
-
-          // Return the concatenation of the two data sets
-          return fileInfoData;
-        })
-      };
-
-      // Return file information data in table format
-      toDataTableFormat3 = function(jsonData){
-        return $.map(jsonData, function(x){
-          packageInfoData = [];
-          if('packages' in x) {
-           packageInfoData = $.map(x.packages, function(y){
-                   return [$.extend(y, {
-                     "path" : x.location,
-                     "what": "Packages",
-                     "start_line": "",
-                     "end_line": "",
-                     "info": "",
-                     "type" : "",
-                     "name" : "",
-                     "extension": "",
-                     "date" : "",
-                     "size" : "",
-                     "sha1" : "",
-                     "md5" : "",
-                     "files_count" : "",
-                     "mime_type" : "",
-                     "file_type" : "",
-                     "programming_language" : "",
-                     "is_binary" : "",
-                     "is_text" : "",
-                     "is_archive" : "",
-                     "is_media" : "",
-                     "is_source" : "",
-                     "is_script" : "",
-                     "pkg_type" : y.type,
-                     "pkg_packaging" : y.packaging,
-                     "pkg_primary_language" : y.primary_language
-                   })];
-          })};
-
-          // Return the concatenation of the two data sets
-          return packageInfoData;
-        })
-      };
-
-      // Renders json data to jsTree format
-      toJSTreeFormat = function(jsonData){
-        // Sort data by location to ensure files are seen before directories
-        jsonData.sort(function (a, b) {
-            return a.location.localeCompare( b.location );
-        }).reverse();
-        // Keeps track of IDs
-        var uniqueIDs = {};
-
-        // Loop through each element and find unique IDs in path
-        return $.map(jsonData, function(x) {
-
-          // Creates array in format: ["", "path1", "path2", "file"]
-          var paths = x.location.split("/");
-
-          // Loop through path elements and return jsTree rows
-          return $.map(paths, function(_, i){
-            // build parent and id for each unique path, e.g.
-            // (1) parent="",             id="/path1
-            // (2) parent="/path1",       id="/path1/path2"
-            // (3) parent="/path1/path2", id="/path1/path2/file"
-            var parent = paths.slice(0,i).join("/");
-            var id = paths.slice(0,i+1).join("/");
-            var text = paths[i];
-
-            // Add the jsTree row if ID not in uniqueIDs already
-            if(id != "" && !(id in uniqueIDs)){
-              uniqueIDs[id] = true;
-              var isLeaf = (i == paths.length - 1);
-              var isEmpty = isLeaf &&
-                      (!('licenses' in x) || x.licenses.length == 0) &&
-                      (!('copyrights' in x) || x.copyrights.length == 0);
-              var iconClass = genIconClass(isLeaf, false, isEmpty);
-              return getJSTreeData(parent, id, text, iconClass);
-            }
-          });
-        });
-      };
-
-      // Render the jstree with data and listeners
-      renderTree = function(data) {
-        return $('#tree')
-          .jstree({
-          // data is in format: {"id": id, "parent": parent, "text": text, ...}
-          "core": {
-            "themes" : {
-              "stripes": true,
-              "responsive": true
-            },
-            "check_callback" : true,
-            "data": data
-          },
-          "plugins": ["wholerow", "sort"],
-          "sort": function(a, b) {
-            var lengthA = this.get_node(a).children.length;
-            var lengthB = this.get_node(b).children.length;
-            if(lengthA == 0 && lengthB == 0){
-              // both files
-              return a.toLowerCase() > b.toLowerCase() ? 1 : -1;
-            } else if(lengthA > 0 && lengthB > 0) {
-              // both directories
-              return a.toLowerCase() > b.toLowerCase() ? 1 : -1;
-            } else {
-              // a file vs directory
-              return lengthA < lengthB ? 1 : -1;
-            }
-           }
-        })
-          .on("select_node.jstree", function(e, nodeData) {
-          // Redraw data table (forces custom filter to rerun)
-          // TODO: Figure out the tab and only update that table instead of all
-          table = $('#data_table').DataTable();
-          table.draw();
-          onNodeSelected(nodeData);
-        })
-          .on('open_node.jstree', function(e, data) {
-          data.instance.set_icon(data.node,  genIconClass(false, true, ""));
-        })
-          .on('close_node.jstree', function(e, data) {
-          data.instance.set_icon(data.node,  genIconClass(false, false, ""));
-        });
-      };
-
-      function onNodeSelected(nodeData){
-          currNodeData = nodeData;
-          resetChart(currNodeData);
-      }
-
-      function resetChart(nodeData) {
-          barChart.remove();
-          barChart = new BarChart(filteredData(nodeData), chartOptions, '.chart');
-      }
 
       // filter the data
       function filteredData(nodeData){
-          if (typeof nodeData == 'undefined') {
-              return formatChartData(data);
+          if (nodeData == null) {
+              return data;
           }
-          return formatChartData($.map(data, function(item){
+          return $.map(data, function(item){
               var pattern = '^' + nodeData.selected[0];
               pattern += nodeData.node.children.length > 0 ? '/' : '';
               if (item.location.match(pattern)){
@@ -485,103 +190,10 @@
               } else {
                   return;
               }
-          }));
+          });
       }
 
-      // Render the DataTable by specifying Copyright and License
-      renderTable = function(data) {
-        return $('#data_table').DataTable( {
-          "scrollX": true,
-          "autoWidth": true,
-          // data is in format: [[col1, col2], [col1, col2], ...]
-          "data": data,
-          "order": [[0, 'asc'], [2, 'asc'], [3, 'asc']],
-          "columns": [
-            { "title": "Path", "data": "path"},
-            { "class": "tab1", "title": "What", "data": "what", width:"50px"},
-            { "class": "tab1", "title": "Start Line", "data": "start_line", width:"50px"},
-            { "class": "tab1",  "title": "End Line", "data": "end_line", width:"50px"},
-            { "class": "tab1",  "orderable": false, "data": null, 'defaultContent': '', "width":"1px"},
-            { "class": "tab1",  "title": "Info", "data": "info"},
-            { "class": "tab2",  "title": "Type", "data": "type", width:"50px"},
-            { "class": "tab2",  "title": "Name", "data": "name"},
-            { "class": "tab2",  "title": "Extension", "data": "extension", width:"50px"},
-            { "class": "tab2",  "title": "Date", "data": "date", width:"50px"},
-            { "class": "tab2",  "title": "Size", "data": "size", width:"50px"},
-            { "class": "tab2",  "title": "sha1", "data": "sha1"},
-            { "class": "tab2",  "title": "md5", "data": "md5"},
-            { "class": "tab2",  "title": "files_count", "data": "files_count", width:"50px"},
-            { "class": "tab2",  "title": "mime_type", "data": "mime_type"},
-            { "class": "tab2",  "title": "file_type", "data": "file_type"},
-            { "class": "tab2",  "title": "programming_language", "data": "programming_language"},
-            { "class": "tab2",  "title": "is_binary", "data": "is_binary", width:"30px"},
-            { "class": "tab2",  "title": "is_text", "data": "is_text", width:"30px"},
-            { "class": "tab2",  "title": "is_archive", "data": "is_archive", width:"30px"},
-            { "class": "tab2",  "title": "is_media", "data": "is_media", width:"30px"},
-            { "class": "tab2",  "title": "is_source", "data": "is_source", width:"30px"},
-            { "class": "tab2",  "title": "is_script", "data": "is_script", width:"30px"},
-            { "class": "tab3",  "title": "pkg_type", "data": "pkg_type"},
-            { "class": "tab3",  "title": "pkg_packaging", "data": "pkg_packaging"},
-            { "class": "tab3",  "title": "pkg_primary_language", "data": "pkg_primary_language"},
-          ],
-          // This is called just before the row is rendered
-          "rowCallback": function( row, data, index ) {
-            // Add expansion toggle for license rows
-            if ( data['what'] == "License" ) {
-              $('td:eq(4)', row).addClass( 'details-control' );
-            }
-          },
-          "language": {
-              "zeroRecords": "No clues found"
-          }
-        } );
-      };
-
-      // Custom Filter on selected tree node
-      $.fn.dataTable.ext.search.push(
-        function( settings, data, dataIndex ) {
-          // Get selected ID in tree
-          var id = $('#tree').jstree('get_selected')[0];
-          // keep if column 0 starts with ID (i.e., indexOf(id) == 0)
-          return id == null || data[0].indexOf(id + '/') == 0 || data[0] == id;
-        }
-      );
-
-      // Custom row expansion listener
-      $( "#data_table").on( "click", 'td.details-control', function() {
-        var table = $('#data_table').DataTable();
-        var tr = $(this).closest('tr');
-        var row = table.row( tr );
-
-        tr.toggleClass('shown');
-        if ( row.child.isShown() ) {
-          row.child.hide();
-        }
-        else {
-          row.child( format(row.data())).show();
-        }
-      });
-
-      // Formatting function for row details - modify as you need
-      function format ( d ) {
-          // `d` is the original data object for the row
-          return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-              '<tr>'+
-                  '<td><b>Category:</b></td>'+
-                  '<td>'+d.category+'</td>'+
-              '</tr>'+
-              '<tr>'+
-                  '<td><b>DejaCode URL:</b></td>'+
-                  '<td><a href="'+d.dejacode_url+'">'+d.dejacode_url+'</a></td>'+
-              '</tr>'+
-          '</table>';
-      }
-
-      $('#button').click(function(){ $('#data_table').toggleClass('ellipsis'); })
-  </script>
-  <script>
-    function formatChartData(data) {
-
+      function formatLicenseChartData(data){
         var NO_LICENSES = [{short_name: 'No License Found'}]
         // Get license short name and if no license set it to No License Found
         var shortNames = $.map(data, function(item){
@@ -590,10 +202,25 @@
                 return license.short_name;
             });
         });
+        return formatChartData(shortNames)
+      }
 
-        // Sum the total number of times the license appears
+      function formatCopyrightChartData(data){
+        var NO_COPYRIGHT = [{holders: ['No Copyright Found']}]
+        // Get copyright holder and if none set it to No Copyright Found
+        var holderNames = $.map(data, function(item){
+            copyrights = item.copyrights.length > 0 ? item.copyrights : NO_COPYRIGHT;
+            return $.map(copyrights, function(copyright) {
+                return copyright.holders[0];
+            });
+        });
+        return formatChartData(holderNames)
+      }
+
+      function formatChartData(names) {
+        // Sum the total number of times the name appears
         var count = {};
-        $.each(shortNames, function(i, name){
+        $.each(names, function(i, name){
             count[name] = count[name] + 1 || 1;
         });
 
@@ -615,21 +242,6 @@
         });
         return chartData;
     }
-    var chartData = formatChartData(data);
-
-    // Options for the bar chart
-    var chartOptions = {
-        name: "License Summary",
-        margin: 30,
-        barHeight: 25,
-        xAxisName: "License Count",
-        yAxisName: "License Name"
-    };
-
-    // Create and display the bar chart
-    barChart = new BarChart(chartData, chartOptions, '.chart');
-
-    $(window).on('resize', barChart.draw);
   </script>
 </body>
 </html>
