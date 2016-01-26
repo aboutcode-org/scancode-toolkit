@@ -246,8 +246,7 @@ class Package(object):
                 continue
 
             # plain attributes
-            attr = getattr(self, k, None)
-            if not attr:
+            if not hasattr(self, k):
                 # FIXME: this should be a log message instead
                 print('Warning: creating Package with unknown argument: %(k)r: %(v)r' % locals())
             setattr(self, k, v)
