@@ -205,13 +205,7 @@
         });
         // Get the total number of files
         var totalFiles = data.length;
-
         $( "p.total-files" ).text( "Total Files Scanned: " + totalFiles );
-        // Sum the total number of times the license appears
-        var count = {};
-        $.each(shortNames, function(i, name){
-            count[name] = count[name] + 1 || 1;
-        });
         return formatChartData(shortNames)
       }
 
@@ -227,11 +221,6 @@
         // Get the total number of files
         var totalFiles = data.length;
         $( "p.total-files" ).text( "Total Files Scanned: " + totalFiles );
-        // Sum the total number of times the copyright appears
-        var count = {};
-        $.each(holderNames, function(i, name){
-            count[name] = count[name] + 1 || 1;
-        });
         return formatChartData(holderNames)
       }
 
