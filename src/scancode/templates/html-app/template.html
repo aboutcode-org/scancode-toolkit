@@ -70,6 +70,7 @@
             <li id="tab3"><a data-toggle="tab" href="#">Package Information</a></li>
         </ul>
         <div id="summary">
+            <p class="total-files"></p>
             <svg class="chart"></svg>
         </div>
         <div id="details">
@@ -202,6 +203,9 @@
                 return license.short_name;
             });
         });
+        // Get the total number of files
+        var totalFiles = data.length;
+        $( "p.total-files" ).text( "Total Files Scanned: " + totalFiles );
         return formatChartData(shortNames)
       }
 
@@ -214,6 +218,9 @@
                 return copyright.holders[0];
             });
         });
+        // Get the total number of files
+        var totalFiles = data.length;
+        $( "p.total-files" ).text( "Total Files Scanned: " + totalFiles );
         return formatChartData(holderNames)
       }
 

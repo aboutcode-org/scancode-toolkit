@@ -73,3 +73,5 @@ border-radius: 4px;
     shape-rendering: crispEdges;
 }
 .chart {width: 100%;}
+
+.total-files{ padding-top: 10px;}
