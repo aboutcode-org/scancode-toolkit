@@ -1,0 +1,2 @@
+About: License
+  This file is licensed under the GPLv2+, like the rest of Zypper.
