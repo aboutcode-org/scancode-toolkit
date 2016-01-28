@@ -1,0 +1,6 @@
+StartFontMetrics 3.0
+Comment Copyright URW Software, Copyright 1997 by URW
+Comment Creation Date: 10/19/1999
+Comment See the file COPYING (GNU General Public License) for license conditions.
+FontName Dingbats
+FullName Dingbats 
