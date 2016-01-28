@@ -1,0 +1,8 @@
+StartFontMetrics 2.0
+Comment Copyright (c) IBM Corporation 1990,1991.
+Comment IBM Courier is a Trademark of the IBM Corporation.
+Comment US Gov't Restricted Rights Notice - Use, Duplication or Disclosure
+Comment Restricted By Accompanying License Agreement With IBM Corp.
+Comment Creation Date: Tue Sep 17 16:16:44 1991
+Comment UniqueID 263786
+Comment VMusage 57844 76768
