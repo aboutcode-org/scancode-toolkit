@@ -5,7 +5,19 @@ Changelog
 
 next
 ------------------
+* New features
+ *  
 
+1.6.0 (2016-01-29)
+------------------
+
+* New features
+
+ * The HTML app now displays a copyright holder summary graphic
+ * HTML app ui enhancements
+ * File extraction fixes
+ * New and improved license and detection rules
+ * Other minor improvements and minor bug fixes
 
 
 1.5.0 (2015-12-15)
