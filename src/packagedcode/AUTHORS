@@ -186,6 +186,7 @@ Other contributors, listed alphabetically, are:
 * Abe Voelker -- OpenEdge ABL lexer
 * Pepijn de Vos -- HTML formatter CTags support
 * Matthias Vallentin -- Bro lexer
+* Benoît Vinot -- AMPL lexer
 * Linh Vu Hong -- RSL lexer
 * Nathan Weizenbaum -- Haml and Sass lexers
 * Nathan Whetsell -- Csound lexers
