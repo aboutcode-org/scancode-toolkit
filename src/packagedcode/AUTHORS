@@ -111,6 +111,7 @@ Other contributors, listed alphabetically, are:
 * Olov Lassus -- Dart lexer
 * Matt Layman -- TAP lexer
 * Sylvestre Ledru -- Scilab lexer
+* Chee Sing Lee -- Flatline lexer
 * Mark Lee -- Vala lexer
 * Valentin Lorentz -- C++ lexer improvements
 * Ben Mabey -- Gherkin lexer
