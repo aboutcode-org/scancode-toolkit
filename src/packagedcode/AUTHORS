@@ -110,6 +110,7 @@ Other contributors, listed alphabetically, are:
 * Jon Larimer, Google Inc. -- Smali lexer
 * Olov Lassus -- Dart lexer
 * Matt Layman -- TAP lexer
+* Kristian Lyngstøl -- Varnish lexers
 * Sylvestre Ledru -- Scilab lexer
 * Mark Lee -- Vala lexer
 * Valentin Lorentz -- C++ lexer improvements
