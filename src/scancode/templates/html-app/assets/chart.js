@@ -66,7 +66,7 @@ function BarChart(chartData, chartOptions, chartSelector){
     // Creates a d3 axis given a scale (takes care of tick marks and labels)
     var yAxis = d3.svg.axis()
         .scale(yScale)
-        .orient('left');
+        .orient('left')
 
     // Creates a graphic tag (<g>) for each bar in the chart
     var bars = chart.selectAll('g')
@@ -83,10 +83,12 @@ function BarChart(chartData, chartOptions, chartSelector){
         .text(function(d){ return '(' + d.val + ')'; })
         .style('text-anchor', 'start');
 
-    // Adds the y-axis to the chart
-    var yAxisG = chart.append('g')
-        .attr('class', 'y axis')
-        .call(yAxis);
+    // Adds the y-axis to the chart if data exists
+    if (chartData.length > 0) {
+        chart.append('g')
+            .attr('class', 'y axis')
+            .call(yAxis);
+    }
 
     this.remove = function() {
         chart.remove();
