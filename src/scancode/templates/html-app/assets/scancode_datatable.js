@@ -217,9 +217,71 @@ function ScancodeDataTable(tagId, data){
                         "pkg_primary_language" : ""
                     })];
                 })};
+            emailData = [];
+            if('emails' in x) {
+                emailData = $.map(x.emails, function(y){
+                    return [$.extend(y, {
+                        "path" : x.location,
+                        "what": "Email",
+                        "start_line": y.start_line,
+                        "end_line": y.end_line,
+                        "info": y.email,
+                        "type" : "",
+                        "name" : "",
+                        "extension": "",
+                        "date" : "",
+                        "size" : "",
+                        "sha1" : "",
+                        "md5" : "",
+                        "files_count" : "",
+                        "mime_type" : "",
+                        "file_type" : "",
+                        "programming_language" : "",
+                        "is_binary" : "",
+                        "is_text" : "",
+                        "is_archive" : "",
+                        "is_media" : "",
+                        "is_source" : "",
+                        "is_script" : "",
+                        "pkg_type" : "",
+                        "pkg_packaging" : "",
+                        "pkg_primary_language" : ""
+                    })];
+                })};
+            urlData = [];
+            if('urls' in x) {
+                urlData = $.map(x.urls, function(y){
+                    return [$.extend(y, {
+                        "path" : x.location,
+                        "what": "URL",
+                        "start_line": y.start_line,
+                        "end_line": y.end_line,
+                        "info": y.url,
+                        "type" : "",
+                        "name" : "",
+                        "extension": "",
+                        "date" : "",
+                        "size" : "",
+                        "sha1" : "",
+                        "md5" : "",
+                        "files_count" : "",
+                        "mime_type" : "",
+                        "file_type" : "",
+                        "programming_language" : "",
+                        "is_binary" : "",
+                        "is_text" : "",
+                        "is_archive" : "",
+                        "is_media" : "",
+                        "is_source" : "",
+                        "is_script" : "",
+                        "pkg_type" : "",
+                        "pkg_packaging" : "",
+                        "pkg_primary_language" : ""
+                    })];
+                })};
 
             // Return the concatenation of the two data sets
-            return licenseData.concat(copyrightData);
+            return licenseData.concat(copyrightData).concat(emailData).concat(urlData);
         })
     };
 

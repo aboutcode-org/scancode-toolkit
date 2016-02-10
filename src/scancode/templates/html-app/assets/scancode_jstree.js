@@ -127,7 +127,9 @@ function ScancodeJSTree(tagId, data){
                     var isLeaf = (i == paths.length - 1);
                     var isEmpty = isLeaf &&
                         (!('licenses' in x) || x.licenses.length == 0) &&
-                        (!('copyrights' in x) || x.copyrights.length == 0);
+                        (!('copyrights' in x) || x.copyrights.length == 0) &&
+                        (!('emails' in x) || x.emails.length == 0) &&
+                        (!('urls' in x) || x.urls.length == 0);
                     var iconClass = genIconClass(isLeaf, false, isEmpty);
                     return getJSTreeData(parent, id, text, iconClass);
                 }
