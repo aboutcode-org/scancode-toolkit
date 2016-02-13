@@ -1,0 +1,12 @@
+about_resource: html5shiv.js
+download_url: https://github.com/aFarkas/html5shiv/archive/3.7.0.zip
+
+version: 3.7.0
+name: HTML5 Shiv
+home_url: https://github.com/aFarkas/html5shiv/tree/3.7.0
+owner: Alexander Farkas
+copyright: Copyright (c) 2014 Alexander Farkas (aFarkas).
+
+license_url: https://raw.githubusercontent.com/aFarkas/html5shiv/master/MIT%20and%20GPL2%20licenses.md
+dje_license: mit
+license_text_file: html5shiv.LICENSE
