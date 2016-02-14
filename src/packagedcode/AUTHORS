@@ -33,6 +33,7 @@ Other contributors, listed alphabetically, are:
 * Adam Blinkinsop -- Haskell, Redcode lexers
 * Frits van Bommel -- assembler lexers
 * Pierre Bourdon -- bugfixes
+* Matthias Bussonnier -- ANSI style handling for terminal-256 formatter
 * chebee7i -- Python traceback lexer improvements
 * Hiram Chirino -- Scaml and Jade lexers
 * Ian Cooper -- VGL lexer
