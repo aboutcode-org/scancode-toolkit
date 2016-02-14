@@ -564,14 +564,14 @@ class IokeLexer(RegexLexer):
         ],
 
         'slashRegexp': [
-            (r'(?<!\\)/[oxpniums]*', String.Regex, '#pop'),
+            (r'(?<!\\)/[im-psux]*', String.Regex, '#pop'),
             include('interpolatableText'),
             (r'\\/', String.Regex),
             (r'[^/]', String.Regex)
         ],
 
         'squareRegexp': [
-            (r'(?<!\\)][oxpniums]*', String.Regex, '#pop'),
+            (r'(?<!\\)][im-psux]*', String.Regex, '#pop'),
             include('interpolatableText'),
             (r'\\]', String.Regex),
             (r'[^\]]', String.Regex)
