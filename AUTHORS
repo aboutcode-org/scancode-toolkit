@@ -151,6 +151,7 @@ Other contributors, listed alphabetically, are:
 * Alexander Smishlajev -- Visual FoxPro lexer
 * Steve Spigarelli -- XQuery lexer
 * Jerome St-Louis -- eC lexer
+* Camil Staps -- Clean lexer
 * James Strachan -- Kotlin lexer
 * Tom Stuart -- Treetop lexer
 * Tiberius Teng -- default style overhaul
