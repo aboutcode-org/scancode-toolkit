@@ -33,6 +33,7 @@ Other contributors, listed alphabetically, are:
 * Adam Blinkinsop -- Haskell, Redcode lexers
 * Frits van Bommel -- assembler lexers
 * Pierre Bourdon -- bugfixes
+* Matthias Bussonnier -- ANSI style handling for terminal-256 formatter
 * chebee7i -- Python traceback lexer improvements
 * Hiram Chirino -- Scaml and Jade lexers
 * Ian Cooper -- VGL lexer
@@ -88,7 +89,8 @@ Other contributors, listed alphabetically, are:
 * Tim Howard -- BlitzMax lexer
 * Dustin Howett -- Logos lexer
 * Ivan Inozemtsev -- Fantom lexer
-* Hiroaki Itoh -- Shell console rewrite
+* Hiroaki Itoh -- Shell console rewrite, Lexers for PowerShell session,
+  MSDOS session, BC, WDiff
 * Brian R. Jackson -- Tea lexer
 * Christian Jann -- ShellSession lexer
 * Dennis Kaarsemaker -- sources.list lexer
@@ -110,7 +112,9 @@ Other contributors, listed alphabetically, are:
 * Jon Larimer, Google Inc. -- Smali lexer
 * Olov Lassus -- Dart lexer
 * Matt Layman -- TAP lexer
+* Kristian Lyngstøl -- Varnish lexers
 * Sylvestre Ledru -- Scilab lexer
+* Chee Sing Lee -- Flatline lexer
 * Mark Lee -- Vala lexer
 * Valentin Lorentz -- C++ lexer improvements
 * Ben Mabey -- Gherkin lexer
@@ -157,6 +161,7 @@ Other contributors, listed alphabetically, are:
 * Lubomir Rintel -- GoodData MAQL and CL lexers
 * Andre Roberge -- Tango style
 * Georg Rollinger -- HSAIL lexer
+* Michiel Roos -- TypoScript lexer
 * Konrad Rudolph -- LaTeX formatter enhancements
 * Mario Ruggier -- Evoque lexers
 * Miikka Salminen -- Lovelace style, Hexdump lexer, lexer enhancements
@@ -172,6 +177,7 @@ Other contributors, listed alphabetically, are:
 * Alexander Smishlajev -- Visual FoxPro lexer
 * Steve Spigarelli -- XQuery lexer
 * Jerome St-Louis -- eC lexer
+* Camil Staps -- Clean lexer
 * James Strachan -- Kotlin lexer
 * Tom Stuart -- Treetop lexer
 * Colin Sullivan -- SuperCollider lexer
@@ -187,6 +193,7 @@ Other contributors, listed alphabetically, are:
 * Abe Voelker -- OpenEdge ABL lexer
 * Pepijn de Vos -- HTML formatter CTags support
 * Matthias Vallentin -- Bro lexer
+* Benoît Vinot -- AMPL lexer
 * Linh Vu Hong -- RSL lexer
 * Nathan Weizenbaum -- Haml and Sass lexers
 * Nathan Whetsell -- Csound lexers
