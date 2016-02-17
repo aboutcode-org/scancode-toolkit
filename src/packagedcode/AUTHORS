@@ -181,6 +181,7 @@ Other contributors, listed alphabetically, are:
 * James Strachan -- Kotlin lexer
 * Tom Stuart -- Treetop lexer
 * Colin Sullivan -- SuperCollider lexer
+* Ben Swift -- Extempore lexer
 * Edoardo Tenani -- Arduino lexer
 * Tiberius Teng -- default style overhaul
 * Jeremy Thurgood -- Erlang, Squid config lexers
