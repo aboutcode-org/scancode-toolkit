@@ -1,0 +1,12 @@
+about_resource: simple-sidebar.css
+download_url: https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/archive/v1.0.5.tar.gz
+
+version: 1.0.5
+name: Start Bootstrap - Simple Sidebar
+home_url: http://startbootstrap.com/template-overviews/simple-sidebar/
+owner: Iron Summit Media Strategies, LLC
+copyright: Copyright 2013-2015 Iron Summit Media Strategies, LLC.
+
+license_url: https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-simple-sidebar/v1.0.5/LICENSE
+dje_license: apache-2.0
+license_text_file: simple-sidebar.LICENSE

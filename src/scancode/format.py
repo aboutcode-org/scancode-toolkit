@@ -27,6 +27,7 @@ from __future__ import print_function, absolute_import
 from collections import OrderedDict
 from operator import itemgetter
 from os.path import abspath
+from os.path import basename
 from os.path import dirname
 from os.path import exists
 from os.path import expanduser
@@ -66,6 +67,16 @@ def as_html_app(scanned_path, output_file):
     _, assets_dir = get_html_app_files_dirs(output_file)
 
     return template.render(assets_dir=assets_dir, scanned_path=scanned_path)
+
+
+def get_html_app_help(output_filename):
+    """
+    Return an HTML string containing html-app help page with a reference back
+    to the main app
+    """
+    template = get_template(get_template_dir('html-app'), template_name='help_template.html')
+
+    return template.render(main_app=output_filename)
 
 
 class HtmlAppAssetCopyWarning(Exception):
@@ -109,10 +120,13 @@ def create_html_app_assets(results, output_file):
             raise HtmlAppAssetCopyWarning()
         assets_dir = join(get_template_dir('html-app'), 'assets')
 
+        # delete old assets
         tgt_dirs = get_html_app_files_dirs(output_file)
         target_dir = join(*tgt_dirs)
         if exists(target_dir):
             fileutils.delete(target_dir)
+
+        # copy assets
         fileutils.copytree(assets_dir, target_dir)
 
         # write json data
@@ -120,6 +134,10 @@ def create_html_app_assets(results, output_file):
         root_path, assets_dir = get_html_app_files_dirs(output_file)
         with open(join(root_path, assets_dir, 'data.json'), 'w') as f:
             f.write('data=' + json.dumps(results))
+
+        # create help file
+        with open(join(root_path, assets_dir, 'help.html'), 'w') as f:
+            f.write(get_html_app_help(basename(output_file.name)))
     except HtmlAppAssetCopyWarning, w:
         raise w
     except Exception, e:

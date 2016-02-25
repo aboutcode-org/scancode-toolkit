@@ -34,6 +34,7 @@
     <link href="{{ assets_dir }}/bootstrap.min.css" rel="stylesheet"/>
     <link href="{{ assets_dir }}/jquery.dataTables.min.css" rel="stylesheet"/>
     <link href="{{ assets_dir }}/main.css" rel="stylesheet"/>
+    <link href="{{ assets_dir }}/simple-sidebar.css" rel="stylesheet"/>
 </head>
 <body>
 
@@ -44,7 +45,8 @@
             <span class="navbar-brand icon-primary"><a href="https://github.com/nexB/scancode-toolkit/">ScanCode</a> scan results for: {{ scanned_path }}</span>
         </div>
           <ul class="nav navbar-nav navbar-right">
-           <li><a href="http://www.nexb.com">Made by nexB</a></li>
+            <li><a href="{{ assets_dir }}/help.html">Help</a></li>
+            <li><a href="http://www.nexb.com">Made by nexB</a></li>
          </ul>
       </div>
     </nav>
