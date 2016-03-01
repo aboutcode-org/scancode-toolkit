@@ -253,7 +253,7 @@
         // Transform license count into array of objects with license name & count
         var chartData = $.map(count, function(val, key) {
             return {
-                name: key,
+                name: key.substr(0, 80),
                 val: val
             };
         });
