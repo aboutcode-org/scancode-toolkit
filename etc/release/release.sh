@@ -26,6 +26,7 @@ echo "  RELEASE: Building release archives..."
 
 # build a zip and tar.bz2
 bin/python setup.py --quiet sdist --formats=bztar,zip
+bin/python setup.py --quiet bdist_wheel
 
 
 # Restoring initial dev setup and config...
