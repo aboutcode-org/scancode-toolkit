@@ -214,16 +214,16 @@ class BatchLexer(RegexLexer):
                        (_nl, _punct, _ws, _nl))
     _number = r'(?:-?(?:0[0-7]+|0x[\da-f]+|\d+)%s)' % _token_terminator
     _opword = r'(?:equ|geq|gtr|leq|lss|neq)'
-    _string = r'(?:"[^%s"]*"?)' % _nl
+    _string = r'(?:"[^%s"]*(?:"|(?=[%s])))' % (_nl, _nl)
     _variable = (r'(?:(?:%%(?:\*|(?:~[a-z]*(?:\$[^:]+:)?)?\d|'
                  r'[^%%:%s]+(?::(?:~(?:-?\d+)?(?:,(?:-?\d+)?)?|(?:[^%%%s^]|'
                  r'\^[^%%%s])[^=%s]*=(?:[^%%%s^]|\^[^%%%s])*)?)?%%))|'
                  r'(?:\^?![^!:%s]+(?::(?:~(?:-?\d+)?(?:,(?:-?\d+)?)?|(?:'
                  r'[^!%s^]|\^[^!%s])[^=%s]*=(?:[^!%s^]|\^[^!%s])*)?)?\^?!))' %
                  (_nl, _nl, _nl, _nl, _nl, _nl, _nl, _nl, _nl, _nl, _nl, _nl))
-    _core_token = r'(?:(?:(?:\^[%s]?)?[^%s%s%s])+)' % (_nl, _nl, _punct, _ws)
-    _core_token_compound = r'(?:(?:(?:\^[%s]?)?[^%s%s%s)])+)' % (_nl, _nl,
-                                                                 _punct, _ws)
+    _core_token = r'(?:(?:(?:\^[%s]?)?[^"%s%s%s])+)' % (_nl, _nl, _punct, _ws)
+    _core_token_compound = r'(?:(?:(?:\^[%s]?)?[^"%s%s%s)])+)' % (_nl, _nl,
+                                                                  _punct, _ws)
     _token = r'(?:[%s]+|%s)' % (_punct, _core_token)
     _token_compound = r'(?:[%s]+|%s)' % (_punct, _core_token_compound)
     _stoken = (r'(?:[%s]+|(?:%s|%s|%s)+)' %
