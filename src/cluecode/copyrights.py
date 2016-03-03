@@ -30,7 +30,6 @@ import os
 import re
 
 import nltk
-nltk3 = nltk.__version__.startswith('3')
 
 import commoncode
 from textcode import analysis
@@ -81,14 +80,19 @@ def detect(location):
     Deprecated legacy entry point.
     """
     copyrights = []
+    copyrights_extend = copyrights.extend
     authors = []
+    authors_extend = authors.extend
     years = []
+    years_extend = years.extend
     holders = []
+    holders_extend = holders.extend
+
     for cp, auth, yr, hold, _start, _end in detect_copyrights(location):
-        copyrights.extend(cp)
-        authors.extend(auth)
-        years.extend(yr)
-        holders.extend(hold)
+        copyrights_extend(cp)
+        authors_extend(auth)
+        years_extend(yr)
+        holders_extend(hold)
     return copyrights, authors, years, holders
 
 
@@ -116,8 +120,8 @@ patterns = [
     (r'^(Company:|For|File|Last|[Rr]eleased?|[Cc]opyrighting)$', 'JUNK'),
     (r'^Authori.*$', 'JUNK'),
     (r'^[Bb]uild$', 'JUNK'),
- 
-    # various trailing words that are junk 
+
+    # various trailing words that are junk
     (r'^(?:Copyleft|LegalCopyright|AssemblyCopyright|Distributed|Report|Available|true|false|node|jshint|node\':true|node:true)$', 'JUNK'),
 
 
@@ -535,16 +539,22 @@ def strip_unbalanced_parens(s, parens='()'):
     start, end = parens
     if not start in s and not end in s:
         return s
+
     unbalanced = []
+    unbalanced_append = unbalanced.append
+
     stack = []
+    stack_append = stack.append
+    stack_pop = stack.pop
+
     for i, c in enumerate(s):
         if c == start:
-            stack.append((i, c,))
+            stack_append((i, c,))
         elif c == end:
             try:
-                stack.pop()
+                stack_pop()
             except IndexError:
-                unbalanced.append((i, c,))
+                unbalanced_append((i, c,))
 
     unbalanced.extend(stack)
     pos_to_del = set([i for i, c in unbalanced])
@@ -619,8 +629,7 @@ def refine_date(c):
     Refine a detected date or date range.
     FIXME: the grammar should not allow this to happen.
     """
-    c = strip_some_punct(c)
-    return c
+    return strip_some_punct(c)
 
 
 def is_junk(c):
@@ -684,7 +693,7 @@ class CopyrightDetector(object):
         numbers = [n for n, _l in numbered_lines]
         start_line = min(numbers)
         end_line = max(numbers)
-        logger.debug('CopyrightDetector:detect:lines numbers: %(start_line)d->%(end_line)d' % locals())
+        #logger.debug('CopyrightDetector:detect:lines numbers: %(start_line)d->%(end_line)d' % locals())
         tokens = self.get_tokens(numbered_lines)
 
         # we accumulate detected items in these synchronized lists
@@ -695,13 +704,23 @@ class CopyrightDetector(object):
         if not tokens:
             return copyrights, authors, years, holders, None, None
 
+        # OPTIMIZED
+        copyrights_append = copyrights.append
+        authors_append = authors.append
+        years_append = years.append
+        holders_append = holders.append
+
         # first, POS tag each token using token regexes
         tagged_text = self.tagger.tag(tokens)
-        logger.debug('CopyrightDetector:tagged_text: ' + str(tagged_text))
+        #logger.debug('CopyrightDetector:tagged_text: ' + str(tagged_text))
 
         # then build a parse tree based on tagged tokens
         tree = self.chunker.parse(tagged_text)
-        logger.debug('CopyrightDetector:parse tree: ' + str(tree))
+        #logger.debug('CopyrightDetector:parse tree: ' + str(tree))
+
+        # OPTIMIZED
+        nltk_tree_Tree = nltk.tree.Tree
+        CopyrightDetector_as_str = CopyrightDetector.as_str
 
         def collect_year_and_holder(detected_copyright):
             """
@@ -709,31 +728,32 @@ class CopyrightDetector(object):
             node collecting all years and holders.
             """
             for copyr in detected_copyright:
-                if isinstance(copyr, nltk.tree.Tree):
-                    logger.debug('n: ' + str(copyr))
-                    node_text = CopyrightDetector.as_str(copyr)
-                    if 'YR-RANGE' in (copyr.label() if nltk3 else copyr.node):
-                        years.append(refine_date(node_text))
-                    elif ('NAME' == (copyr.label() if nltk3 else copyr.node)
-                          or 'COMPANY' in (copyr.label() if nltk3 else copyr.node)):
+                if isinstance(copyr, nltk_tree_Tree):
+                    #logger.debug('n: ' + str(copyr))
+                    node_text = CopyrightDetector_as_str(copyr)
+                    copyr_label = copyr.label()
+                    if 'YR-RANGE' in copyr_label:
+                        years_append(refine_date(node_text))
+                    elif 'NAME' == copyr_label or 'COMPANY' in copyr_label:
                         # FIXME : this would wreck things like 23andme
                         # where a company name contains numbers
-                        holders.append(refine_author(node_text))
-                        logger.debug('CopyrightDetector: node_text: ' + node_text)
+                        holders_append(refine_author(node_text))
+                        #logger.debug('CopyrightDetector: node_text: ' + node_text)
                     collect_year_and_holder(copyr)
 
         # then walk the parse tree, collecting copyrights, years and authors
         for tree_node in tree:
-            if isinstance(tree_node, nltk.tree.Tree):
-                node_text = CopyrightDetector.as_str(tree_node)
-                if 'COPYRIGHT' in (tree_node.label() if nltk3 else tree_node.node):
+            if isinstance(tree_node, nltk_tree_Tree):
+                node_text = CopyrightDetector_as_str(tree_node)
+                tree_node_label = tree_node.label()
+                if 'COPYRIGHT' in tree_node_label:
                     if node_text and node_text.strip():
                         refined = refine_copyright(node_text)
                         if not is_junk(refined):
-                            copyrights.append(refined)
+                            copyrights_append(refined)
                             collect_year_and_holder(tree_node)
-                elif (tree_node.label() if nltk3 else tree_node.node) == 'AUTHOR':
-                    authors.append(refine_author(node_text))
+                elif tree_node_label == 'AUTHOR':
+                    authors_append(refine_author(node_text))
 
         return copyrights, authors, years, holders, start_line, end_line
 
@@ -742,8 +762,10 @@ class CopyrightDetector(object):
         Return an iterable of tokens from lines of text.
         """
         tokens = []
+        tokens_append = tokens.append
+
         # simple tokenization: spaces and some punctuation
-        splitter = re.compile('[\\t =;]+')
+        splitter = re.compile('[\\t =;]+').split
 
         for _line_number, line in numbered_lines:
             line = line.strip()
@@ -752,7 +774,7 @@ class CopyrightDetector(object):
             if line :
                 line = strip_markup(line)
             if line and line.strip():
-                for tok in splitter.split(line):
+                for tok in splitter(line):
                     # strip trailing quotes and ignore empties
                     tok = tok.strip("' ")
                     if not tok:
@@ -762,7 +784,7 @@ class CopyrightDetector(object):
                     # strip leading @: : why?
                     tok = tok.lstrip('@').strip()
                     if tok and tok not in (':',):
-                        tokens.append(tok)
+                        tokens_append(tok)
         logger.debug('CopyrightDetector:tokens: ' + repr(list(tokens)))
         return tokens
 
@@ -773,8 +795,7 @@ def is_candidate(line):
     """
     line = line.lower()
     line = prepare_text_line(line)
-    return (has_content(line)
-            and any(s in line for s in copyrights_hint.statement_markers))
+    return (has_content(line) and any(s in line for s in copyrights_hint.statement_markers))
 
 
 def has_content(line):
@@ -806,6 +827,9 @@ def candidate_lines(lines):
     A few lines before and after a candidate line are also included.
     """
     candidates = deque()
+    candidates_append = candidates.append
+    candidates_clear = candidates.clear
+
     previous = None
     # used as a state and line counter
     in_copyright = 0
@@ -817,34 +841,34 @@ def candidate_lines(lines):
             in_copyright = 2
             # we keep one line before a candidate line if any
             if previous:
-                candidates.append(previous)
+                candidates_append(previous)
                 previous = None
             # we keep the candidate line and yield if we reached the end
             # of a statement
-            candidates.append(numbered_line)
+            candidates_append(numbered_line)
             if is_all_rights_reserved(line):
                 yield list(candidates)
-                candidates.clear()
+                candidates_clear()
                 in_copyright = 0
         else:
             if in_copyright:
                 # if the previous line was a candidate
                 # then we keep one line after that candidate line
                 if has_content(line):
-                    candidates.append(numbered_line)
+                    candidates_append(numbered_line)
                     # and decrement our state
                     in_copyright -= 1
                 else:
                     if candidates:
                         yield list(candidates)
-                        candidates.clear()
+                        candidates_clear()
                     in_copyright = 0
             else:
                 # if are neither a candidate line nor the line just after
                 # then we yield the accumulated lines if any
                 if candidates:
                     yield list(candidates)
-                    candidates.clear()
+                    candidates_clear()
                 # and we keep track of this line as "previous"
                 if has_content(line):
                     previous = numbered_line
@@ -916,13 +940,15 @@ def lowercase_well_known_word(text):
     for a named entity because capitalized words are often company names.
     """
     lines = []
+    lines_append = lines.append
     for line in text.splitlines(True):
         words = []
+        words_append = words.append
         for word in line.split():
             if word in COMMON_WORDS:
                 word = word.lower()
-            words.append(word)
-        lines.append(' '.join(words))
+            words_append(word)
+        lines_append(' '.join(words))
     return '\n'.join(lines)
 
 
@@ -953,6 +979,7 @@ def prepare_text_line(line):
     Prepare a line of text for copyright detection.
     """
 
+    re_sub = re.sub
     # FIXME: maintain the original character positions
 
     # strip whitespace
@@ -962,12 +989,12 @@ def prepare_text_line(line):
     # common comment characters
     line = line.strip('\\/*#%;')
     # un common comment line prefix in dos
-    line = re.sub('^rem ', ' ', line)
-    line = re.sub('^\@rem ', ' ', line)
+    line = re_sub('^rem ', ' ', line)
+    line = re_sub('^\@rem ', ' ', line)
     # un common comment line prefix in autotools am/in
-    line = re.sub('^dnl ', ' ', line)
+    line = re_sub('^dnl ', ' ', line)
     # un common comment line prefix in man pages
-    line = re.sub('^\.\\"', ' ', line)
+    line = re_sub('^\.\\"', ' ', line)
     # un common pipe chars in some ascii art
     line = line.replace('|', ' ')
 
@@ -1003,9 +1030,9 @@ def prepare_text_line(line):
 
 
     # note that we do not replace the debian tag by a space:  we remove it
-    line = re.sub(DEBIAN_COPYRIGHT_TAGS_RE(), '', line)
+    line = re_sub(DEBIAN_COPYRIGHT_TAGS_RE(), '', line)
 
-    line = re.sub(IGNORED_PUNCTUATION_RE(), ' ', line)
+    line = re_sub(IGNORED_PUNCTUATION_RE(), ' ', line)
 
     # tabs to spaces
     line = line.replace('\t', ' ')
@@ -1015,8 +1042,8 @@ def prepare_text_line(line):
 
     # remove ASCII "line decorations"
     # such as in --- or === or !!! or *****
-    line = re.sub(ASCII_LINE_DECO_RE(), ' ', line)
-    line = re.sub(ASCII_LINE_DECO2_RE(), ' ', line)
+    line = re_sub(ASCII_LINE_DECO_RE(), ' ', line)
+    line = re_sub(ASCII_LINE_DECO2_RE(), ' ', line)
 
     # Replace escaped literal \0 \n \r \t that may exist as-is by a space
     # such as in code literals: a="\\n some text"

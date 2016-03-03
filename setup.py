@@ -59,8 +59,8 @@ setup(
         'py2-ipaddress >= 2.0, <3.0',
         'url >= 0.1.4',
         'publicsuffix2',
-        # TODO: upgrade to nltk==3.0.1
-        'nltk >= 2.0b4, <3.0.0',
+        # Some lntk version ranges were buggy
+        'nltk >= 3.2, < 4.0',
 
         # extractcode
         'patch >= 1.14.2, < 1.15 ',
