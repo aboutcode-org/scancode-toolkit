@@ -1,6 +1,6 @@
 about_resource: virtualenv.py
-version: 13.0.3
-download_url: https://raw.githubusercontent.com/pypa/virtualenv/13.0.3/virtualenv.py
+version: 15.0.0
+download_url: https://github.com/pypa/virtualenv/raw/15.0.0/virtualenv.py
 
 vcs_tool: git
 vcs_repository: https://github.com/pypa/virtualenv.git

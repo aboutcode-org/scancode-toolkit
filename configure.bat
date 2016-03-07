@@ -49,12 +49,12 @@ if not exist "c:\python27\python.exe" (
     exit /b 1
 )
 
-call c:\python27\python.exe %SCANCODE_ROOT_DIR%etc\configure.py %SCANCODE_CLI_ARGS%
+call c:\python27\python.exe "%SCANCODE_ROOT_DIR%etc\configure.py" %SCANCODE_CLI_ARGS%
 if %errorlevel% neq 0 (
     exit /b %errorlevel%
 )
-if exist %SCANCODE_ROOT_DIR%bin\activate (
-    %SCANCODE_ROOT_DIR%bin\activate
+if exist "%SCANCODE_ROOT_DIR%bin\activate" (
+    "%SCANCODE_ROOT_DIR%bin\activate"
 )
 goto EOS
 

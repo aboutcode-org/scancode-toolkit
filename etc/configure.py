@@ -157,7 +157,7 @@ def build_pip_dirs_args(paths, root_dir, option='--extra-search-dir='):
         if not os.path.isabs(path):
             path = os.path.join(root_dir, path)
         if os.path.exists(path):
-            yield option + path
+            yield option + '"' + path + '"'
 
 
 def create_virtualenv(std_python, root_dir, tpp_dirs, quiet=False):
@@ -183,7 +183,7 @@ def create_virtualenv(std_python, root_dir, tpp_dirs, quiet=False):
     for tpd in tpp_dirs:
         venv = os.path.join(root_dir, tpd, 'virtualenv.py')
         if os.path.exists(venv):
-            venv_py = venv
+            venv_py = '"' + venv + '"'
             break
 
     # error out if venv_py not found
@@ -197,7 +197,7 @@ def create_virtualenv(std_python, root_dir, tpp_dirs, quiet=False):
     # third parties may be in more than one directory
     vcmd.extend(build_pip_dirs_args(tpp_dirs, root_dir))
     # we create the virtualenv in the root_dir
-    vcmd.append(root_dir)
+    vcmd.append('"' + root_dir + '"')
     call(vcmd, root_dir)
 
 
@@ -227,7 +227,7 @@ def install_3pp(configs, root_dir, tpp_dirs, quiet=False):
         pip_dir_args = list(build_pip_dirs_args(tpp_dirs, root_dir, '--find-links='))
         pcmd.extend(pip_dir_args)
         req_loc = os.path.join(root_dir, req_file)
-        pcmd.extend(['-r' , req_loc])
+        pcmd.extend(['-r' , '"' + req_loc + '"'])
         call(pcmd, root_dir)
 
 
@@ -239,7 +239,7 @@ def run_scripts(configs, root_dir, configured_python, quiet=False):
         print("* Configuring ...")
     # Run Python scripts for each configurations
     for py_script in get_conf_files(configs, root_dir, python_scripts):
-        cmd = [configured_python, os.path.join(root_dir, py_script)]
+        cmd = [configured_python, '"' + os.path.join(root_dir, py_script) + '"']
         call(cmd, root_dir)
 
     # Run sh_script scripts for each configurations
@@ -342,7 +342,7 @@ if __name__ == '__main__':
         if not os.path.exists(scripts_dir):
             os.makedirs(scripts_dir)
         if not os.path.exists(bin_dir):
-            cmd = ('mklink /J %(bin_dir)s %(scripts_dir)s' % locals()).split()
+            cmd = ('mklink /J "%(bin_dir)s" "%(scripts_dir)s"' % locals()).split()
             call(cmd, root_dir)
     else:
         configured_python = os.path.join(bin_dir, 'python')
