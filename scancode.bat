@@ -19,18 +19,18 @@ set SCANCODE_CONFIGURED_PYTHON=%SCANCODE_ROOT_DIR%\bin\python.exe
 :continue
 
 
-if not exist %SCANCODE_CONFIGURED_PYTHON% goto configure
+if not exist "%SCANCODE_CONFIGURED_PYTHON%" goto configure
 goto scancode
 
 :configure
  echo * Configuring ScanCode for first use...
  set CONFIGURE_QUIET=1
- call %SCANCODE_ROOT_DIR%\configure etc/conf
+ call "%SCANCODE_ROOT_DIR%\configure" etc/conf
  if %errorlevel% neq 0 (
     exit /b %errorlevel%
  )
 
 :scancode
-%SCANCODE_ROOT_DIR%\bin\scancode %SCANCODE_CMD_LINE_ARGS%
+"%SCANCODE_ROOT_DIR%\bin\scancode" %SCANCODE_CMD_LINE_ARGS%
 
 :EOS
