@@ -95,7 +95,7 @@ def remove_non_printable(binary_string):
 def file_strings(location, buff_size=1024 * 1024):
     """
     Process (eventually large) files in chunks and yield ASCII strings found
-    in file as location, encoded as Unicode.
+    in file at location, encoded as Unicode.
     """
     file_size = os.path.getsize(location)
     count = 0
