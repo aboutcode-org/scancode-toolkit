@@ -1,4 +1,3 @@
 licenses:
     - x11
-template: yes
 notes: icu 1.8.1 template text, x11

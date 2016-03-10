@@ -1,0 +1,3 @@
+This enables compiling with dmalloc ( http://dmalloc.com/ )
+which is an excellent public domain mem leak and malloc problem
+detector.

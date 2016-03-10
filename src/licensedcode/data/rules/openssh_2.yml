@@ -1,4 +1,3 @@
 licenses:
     - openssh
-template: yes
 notes: Openssh templatized

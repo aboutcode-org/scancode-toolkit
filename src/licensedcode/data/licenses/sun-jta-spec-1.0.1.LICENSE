@@ -5,7 +5,17 @@ Copyright 1997-1999 Sun Microsystems, Inc.
 901 San Antonio Road, Palo Alto, California 94303 U.S.A.
 All rights reserved. Copyright in this document is owned by Sun Microsystems Inc.
 
-Sun Microsystems, Inc. (SUN) hereby grants to you at no charge a nonexclusive, nontransferable, perpetual, worldwide, limited license (without the right to sublicense) under SUN's intellectual property rights that are essential to practice this specification for the limited purpose of creating and distributing implementations of this specification, provided however, that such implementations do not derive from any SUN source code or binary materials and do not include any SUN binary materials without an appropriate and separate license from SUN. Other than this limited license, you acquire no right, title or interest in or to this specification or any other SUN intellectual property. No right, title, or interest in or to any trademarks, service marks, or trade names of SUN or SUN’s licensors is granted hereunder.
+Sun Microsystems, Inc. (SUN) hereby grants to you at no charge a nonexclusive,
+nontransferable, perpetual, worldwide, limited license (without the right to
+sublicense) under SUN's intellectual property rights that are essential to
+practice this specification for the limited purpose of creating and distributing
+implementations of this specification, provided however, that such
+implementations do not derive from any SUN source code or binary materials and
+do not include any SUN binary materials without an appropriate and separate
+license from SUN. Other than this limited license, you acquire no right, title
+or interest in or to this specification or any other SUN intellectual property.
+No right, title, or interest in or to any trademarks, service marks, or trade
+names of SUN or SUN’s licensors is granted hereunder.
 
 RESTRICTED RIGHTS LEGEND
 Use, duplication, or disclosure by the U.S. Government is subject to restrictions of FAR 52.227-

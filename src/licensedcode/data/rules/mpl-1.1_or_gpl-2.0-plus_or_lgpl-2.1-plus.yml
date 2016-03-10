@@ -1,0 +1,5 @@
+licenses:
+    - mpl-1.0
+    - gpl-2.0-plus
+license_choice: yes
+notes: This is a Dual MPL/GPL license found from linux kernel source files with the declaration MODULE_LICENSE("Dual MPL/GPL")

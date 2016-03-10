@@ -28,5 +28,7 @@ As a special exception, the copyright holder of FreeRTOS gives you permission to
 2. The combined work is not itself an RTOS, scheduler, kernel or related product.
 3. The independent modules add significant and primary functionality to FreeRTOS and do not merely extend the existing functionality already present in FreeRTOS.
 
-Clause 2
-FreeRTOS may not be used for any competitive or comparative purpose, including the publication of any form of run time or compile time metric, without the express permission of {{Real Time Engineers Ltd. }} (this is the norm within the industry and is intended to ensure information accuracy).
+Clause 2 FreeRTOS may not be used for any competitive or comparative purpose,
+including the publication of any form of run time or compile time metric,
+without the express permission of {{Real Time Engineers Ltd. }} (this is the
+norm within the industry and is intended to ensure information accuracy).

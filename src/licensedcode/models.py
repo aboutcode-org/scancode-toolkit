@@ -25,22 +25,23 @@
 from __future__ import print_function, absolute_import
 
 import codecs
-from collections import OrderedDict
 from collections import defaultdict
+from collections import OrderedDict
 from itertools import chain
 import logging
 import os
-from os.path import dirname
+from os import walk
 from os.path import exists
 from os.path import join
-import sys
 
-from commoncode import fileutils
+from commoncode.fileutils import file_base_name
+from commoncode.fileutils import file_name
+
+from licensedcode import licenses_data_dir
 from licensedcode import saneyaml
-from licensedcode import licenses_data_dir, rules_data_dir, src_dir
-from licensedcode import index
-from textcode import analysis
-from textcode.analysis import Token
+from licensedcode import src_dir
+from licensedcode import rules_data_dir
+from licensedcode.tokenize import rule_tokenizer
 
 
 """
@@ -200,7 +201,7 @@ class License(object):
         return text
 
 
-# cache license objects in a map by license key
+# global cache of licenses as mapping of license key -> license object
 _LICENSES_BY_KEY = {}
 
 
@@ -228,7 +229,6 @@ def load_licenses(license_dir=licenses_data_dir):
     """
     licenses = {}
 
-    # TODO: add check for unknown files
     for top, _, files in os.walk(license_dir):
         for yfile in files:
             if not yfile.endswith('.yml'):
@@ -241,173 +241,187 @@ def load_licenses(license_dir=licenses_data_dir):
     return licenses
 
 
-def get_rules_from_license_texts(licenses_list=None):
+def get_rules(unique=False):
     """
-    Return an iterable of rules built from license texts and spdx texts from
-    in the `licenses_list` license objects iterable.
-
-    Load the reference list list from disk if list_list is not provided.
+    Return an iterable of all rules loaded from licenses and rules files.
+    Check uniqueness if unique is True.
     """
-    if not licenses_list:
-        licenses_list = get_licenses_by_key()
+    rls = chain(rules_from_licenses(), rules())
+    if unique:
+        rls = unique_rules(rls)
+        check_licenses(rls)
+    return rls
 
-    for license_key, license_obj in licenses_list.items():
+
+def rules(rule_dir=rules_data_dir):
+    """
+    Return an iterable of rules loaded from rules files.
+    """
+    # TODO: OPTIMIZE: break RULES with gaps in multiple sub-rules??
+    # TODO: OPTIMIZE: create a graph of rules to account for containment and similarity clusters?
+    seen_files = set()
+    processed_files = set()
+    for top, _, files in walk(rule_dir):
+        for yfile in (f for f in files if f.endswith('.yml')):
+            data_file = join(top, yfile)
+            base_name = file_base_name(yfile)
+            text_file = join(top, base_name + '.RULE')
+            processed_files.add(data_file)
+            processed_files.add(text_file)
+            yield Rule(data_file=data_file, text_file=text_file)
+            seen_files.add(join(top, yfile))
+
+    unknown_files = seen_files - processed_files
+    if unknown_files:
+        print(unknown_files)
+        files = '\n'.join(sorted(unknown_files))
+        msg = 'Unknown files in rule directory: %(rule_dir)r\n%(files)s'
+        raise Exception(msg % locals())
+
+
+def rules_from_licenses(licenses=None):
+    """
+    Return an iterable of rules built from license and spdx texts from a
+    `licenses` license objects iterable.
+
+    Load the reference list from disk if `licenses` is not provided.
+    """
+    licenses = licenses or get_licenses_by_key()
+    for license_key, license_obj in licenses.items():
         text = license_obj.text
         spdx_text = license_obj.spdx_license_text
         if text:
-            yield Rule(
-                text_file=join(license_obj.src_dir, license_obj.text_file),
-                licenses=[license_key],
-            )
-
+            tfile = join(license_obj.src_dir, license_obj.text_file)
+            yield Rule(text_file=tfile, licenses=[license_key])
         if spdx_text:
-            yield Rule(
-                text_file=join(license_obj.src_dir, license_obj.spdx_file),
-                licenses=[license_key],
-            )
-
-
-text_tknzr, template_tknzr, _ = index.tokenizers()
-
-
-# token caching
-cache_dir = join(dirname(dirname(src_dir)), '.cache', 'license_tokens')
-if not os.path.exists(cache_dir):
-    fileutils.create_dir(cache_dir)
-
-
-class RuleWithNoTokenError(Exception):
-    pass
-
-
-def get_tokens(location, template, use_cache=False):
-    """
-    Return a list of tokens from a from a file at location using the tokenizer
-    function.
-    """
-    location = os.path.abspath(location)
-    if not exists(location):
-        raise RuleWithNoTokenError('Rule text location does not exist: %(location)r' % locals())
-#        return []
-
-    file_name = fileutils.file_name(location)
-    cached_tokens = os.path.join(cache_dir, file_name)
-    if use_cache and os.path.exists(cached_tokens):
-        # TODO: improve cache check
-        tokens = list(load_tokens(cached_tokens))
-    else:
-        tokenizr = template and template_tknzr or text_tknzr
-        lines = analysis.unicode_text_lines(location)
-        tokens = list(tokenizr(lines))
-        if use_cache:
-            dump_tokens(cached_tokens, tokens)
-    return tokens
-
-
-def dump_tokens(location, tokens):
-    """
-    Dump a list of tokens to a file location
-    """
-    location = os.path.abspath(location)
-    with codecs.open(location, 'wb', encoding='utf-8') as loc:
-        loc.writelines([tok.dumps() for tok in tokens])
-
-
-def load_tokens(location):
-    """
-    Return a list of tokens loaded from a file location
-    """
-    location = os.path.abspath(location)
-    with codecs.open(location, 'rb', encoding='utf-8') as loc:
-        loaded = loc.read().splitlines(False)
-        for l in loaded:
-            yield Token.loads(l)
+            sfile = join(license_obj.src_dir, license_obj.spdx_file)
+            yield Rule(text_file=sfile, licenses=[license_key])
 
 
 class Rule(object):
     """
-    A detection rule object relating a text to use for detection with the
-    corresponding detected licenses. A rule can be a plain rule where the text
-    is used as-is or a template rule that contains variable parts where the text
-    is parsed for templated regions marked with double curly braces {{ }}.
+    A detection rule object is a text to use for detection and corresponding
+    detected licenses and metadata. A rule text can contain variable parts
+    marked with double curly braces {{ }}.
     """
-    def __init__(self, data_file=None, text_file=None, licenses=None,
-                 license_choice=False, template=False, notes=None):
+    # OPTMIZED: use slot to increase attribute access speed wrt. namedtuple
+    __slots__ = ('rid', 'licenses', 'license_choice', 'notes', 'data_file',
+                 'text_file', '_text', 'length', 'gaps', 'gaps_count')
 
+    def __init__(self, data_file=None, text_file=None, licenses=None,
+                 license_choice=False, notes=None, _text=None):
+
+        # optional rule id int typically assigned at indexing time
+        self.rid = None
+
+        # list of valid license keys
         self.licenses = licenses or []
+
+        # True if the rule is for a choice of all licenses. default to False
         self.license_choice = license_choice
+
         self.notes = notes
 
-        self.template = template
-
+        # path to the YAML data file for this rule
         self.data_file = data_file
         if data_file:
             self.load()
 
+        # path to the rule text file
         self.text_file = text_file
+        # for testing only, when we do not use a file
+        self._text = _text
 
-        # a list of Token objects
-        self.tokens = None
+        # length in number of tokens
+        self.length = 0
 
-        # minimum and maximum length in number of unigram tokens that can be
-        # matched by this rule
-        self.min_len = 0
-        self.max_len = 0
-
-        # the number of cumulative gaps (always zero for plain text rules)
+        # set of pos followed by a gap, aka a template region
+        self.gaps = set()
         self.gaps_count = 0
 
-    def compute_min_max(self):
+    def tokens(self, lower=True):
         """
-        Update self with the computed minimum and maximum length in number
-        of tokens that can be matched by this rule and the number of gaps.
-        For a plain text rule, min and max are equal to the count of tokens.
+        Return an iterable of tokens and keep track of gaps by position. Gaps
+        and length are recomputed. Tokens inside gaps are tracked but not part
+        of the returned stream.
+        """
+        gaps = set()
+        # Note: we track the pos instead of enumerating it because we create
+        # positions abstracting gaps
+        pos = 0
+        length = 0
+        for token in rule_tokenizer(self.text(), lower=lower):
+            if token is None:
+                gaps.add(pos - 1)
+            else:
+                length += 1
+                yield token
+                # only increment pos if we are not in a gap
+                pos += 1
 
-        For a template rule, the number of gaps for every templated regions is
-        computed such that for min_len we use the number of tokens ignoring all
-        gaps and for max_len we use the number of tokens and add all the longest
-        gaps possible (using the default of default gaps).
-        """
-        if not self.tokens:
-            raise Exception('Rule has no token: %(self)r' % locals())
-        self.min_len = self.max_len = max(t.end for t in self.tokens)
-        if self.template:
-            self.gaps_count = sum(t.gap for t in self.tokens)
-            self.max_len += self.gaps_count
+        self.length = length
+        self.gaps = gaps
+        self.gaps_count = len(gaps)
 
-    def get_tokens(self):
-        """
-        Return lazily a tuple of (rule tokens, min_len, max_len, gaps_count
-        """
-        if self.tokens is None:
-            self.tokens = get_tokens(self.text_file, self.template)
-            self.compute_min_max()
-        return self.tokens, self.min_len, self.max_len, self.gaps_count
-
-    @property
     def text(self):
-        if not exists(self.text_file):
-            text = u''
-        else:
-            with codecs.open(self.text_file, encoding='utf-8') as f:
-                text = f.read()
-        return text
+        """
+        Return the rule text loaded from its file.
+        """
+        # used for test only
+        if self._text:
+            return self._text
 
-    @property
+        if self.text_file and exists(self.text_file):
+            with codecs.open(self.text_file, encoding='utf-8') as f:
+                return f.read()
+        raise Exception('Inconsistent rule text for:', self.identifier())
+
     def identifier(self):
-        return fileutils.file_name(self.text_file)
+        """
+        Return a computed rule identifier based on the rule file name.
+        """
+        # use dummy _tst_ identifier for test only
+        return self.text_file and file_name(self.text_file) or '_tst_'
 
     def __repr__(self):
-        rt = self.template
-        idf = self.identifier
-        text = self.text[:10] + '...'
+        idf = self.identifier()
+        ird = self.rid
+        text = self.text()[:10] + '...'
         keys = self.licenses
         choice = self.license_choice
-        return 'Rule(%(idf)r, %(keys)r, choice=%(choice)r, template=%(rt)r, text=%(text)r)' % locals()
+        return 'Rule(%(idf)r, rid=%(ird)r, licenses=%(keys)r, choice=%(choice)r, text=%(text)r)' % locals()
+
+    def licensing_identifier(self):
+        return tuple(sorted(set(self.licenses))) + (self.license_choice,)
+
+    def same_licensing(self, other):
+        """
+        Return True if other rule has a the same licensing as self.
+        """
+        # TODO: include license expressions
+        return self.licensing_identifier() == other.licensing_identifier()
+
+    def negative(self):
+        """
+        Return True if this Rule does not point to real licenses and is
+        therefore a "negative" rule denoting that a match to this rule should be
+        ignored.
+        """
+        return not self.licenses
+
+    def _data(self):
+        """
+        Return a tuple of data used to check for uniqueness.
+        """
+        comparable = list(self.tokens())
+        comparable.extend(sorted(self.gaps))
+        comparable.append(self.license_choice)
+        comparable.extend(sorted(self.licenses))
+        return tuple(comparable)
 
     def asdict(self):
         """
-        Return an OrderedDict of self, excluding texts.
+        Return an OrderedDict of self, excluding texts. Used for serialization.
         Empty values are not included.
         """
         data = OrderedDict()
@@ -415,15 +429,13 @@ class Rule(object):
             data['licenses'] = self.licenses
         if self.license_choice:
             data['license_choice'] = self.license_choice
-        if self.template:
-            data['template'] = self.template
         if self.notes:
             data['notes'] = self.note
         return data
 
     def dump(self):
         """
-        Dump a representation of self to tgt_dir using two files:
+        Dump a representation of self to tgt_dir as two files:
          - a .yml for the rule data in YAML block format
          - a .RULE: the rule text as a UTF-8 file
         """
@@ -432,7 +444,7 @@ class Rule(object):
             with codecs.open(self.data_file, 'wb', encoding='utf-8') as df:
                 df.write(as_yaml)
             with codecs.open(self.text_file, 'wb', encoding='utf-8') as tf:
-                tf.write(self.text)
+                tf.write(self.text())
 
     def load(self, load_notes=False):
         """
@@ -443,75 +455,31 @@ class Rule(object):
             with codecs.open(self.data_file, encoding='utf-8') as f:
                 data = saneyaml.load(f.read())
         except Exception, e:
-            print()
             print('#############################')
             print('INVALID LICENSE RULE FILE:', self.data_file)
             print('#############################')
             print(e)
             print('#############################')
-            # this is a rare case, but yes we abruptly exit globally
-            sys.exit(1)
+            # this is a rare case, but yes we abruptly stop.
+            raise e
 
         self.licenses = data.get('licenses', [])
         self.license_choice = data.get('license_choice', False)
-        self.template = data.get('template', False)
         # these are purely informational and not used at run time
         if load_notes:
             self.notes = data.get('notes')
         return self
 
 
-def load_rules(rule_dir=rules_data_dir):
-    """
-    Return a list of rules, loaded from rules files.
-    FIXME: return an iterable instead
-    """
-    rules = []
-
-    seen_files = set()
-    processed_files = set()
-    for top, _, files in os.walk(rule_dir):
-        for yfile in files:
-            if yfile.endswith('.yml'):
-                data_file = join(top, yfile)
-                base_name = fileutils.file_base_name(yfile)
-                text_file = join(top, base_name + '.RULE')
-                rule = Rule(data_file=data_file, text_file=text_file)
-                rules.append(rule)
-                processed_files.add(data_file)
-                processed_files.add(text_file)
-
-            seen_file = join(top, yfile)
-            seen_files.add(seen_file)
-
-    unknown_files = seen_files - processed_files
-    if unknown_files:
-        print(unknown_files)
-        files = '\n'.join(sorted(unknown_files))
-        msg = 'Unknown files in rule directory: %(rule_dir)r\n%(files)s'
-        raise Exception(msg % locals())
-    return rules
-
-
-def get_all_rules(_use_cache=False):
-    """
-    Return an iterable of all unique rules loaded from licenses and rules files.
-    """
-    rules = chain(get_rules_from_license_texts(), load_rules())
-    unique = unique_rules(rules)
-    verify_rules_license(unique)
-    return unique
-
-
 class MissingLicense(Exception):
     pass
 
 
-def verify_rules_license(rules):
+def check_licenses(rules):
     """
-    Ensure that every rules license is a valid license. Raise a MissingLicense
-    exception with a message containing the list of rule files that do not have
-    a corresponding existing license.
+    Given a lists of rules, check that all license keys reference a known
+    license. Raise a MissingLicense exception with a message containing the list
+    of rule files without a corresponding license.
     """
     invalid_rules = defaultdict(list)
     for rule in rules:
@@ -521,35 +489,21 @@ def verify_rules_license(rules):
             except KeyError:
                 invalid_rules[rule.data_file].append(key)
     if invalid_rules:
-        invalid_rules = (data_file + ': ' + ' '.join(keys)
-                         for data_file, keys in invalid_rules.iteritems())
+        invalid_rules = (data_file + ': ' + ' '.join(keys) for data_file, keys in invalid_rules.iteritems())
         msg = 'Rules data file with missing licenses:\n' + '\n'.join(invalid_rules)
         raise MissingLicense(msg)
 
 
 def unique_rules(rules):
     """
-    Return a list of unique rules.
-    FIXME: return an iterable instead
+    Yield an iterable of unique rules given an iterable of rules.
     """
-    seen = set()
-    uniques = []
+    seen = {}
     for rule in rules:
-        ridt = rule_identifier(rule)
+        ridt = rule._data()
         if ridt in seen:
+            print(rule.identifier(), 'is a duplicate of', seen[ridt])
             continue
         else:
-            seen.add(ridt)
-            uniques.append(rule)
-    return uniques
-
-
-def rule_identifier(rule):
-    """
-    Return a string used to compare similar rules.
-    """
-    comparable = rule.text.strip().lower().split()
-    comparable.append(repr(rule.license_choice))
-    comparable.append(repr(rule.template))
-    comparable.extend(sorted(rule.licenses))
-    return u''.join([t for t in comparable if t])
+            seen[ridt] = rule.identifier()
+            yield rule
