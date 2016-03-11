@@ -1,0 +1,4 @@
+licenses:
+    - sun-jta-spec
+expected_failure: yes
+

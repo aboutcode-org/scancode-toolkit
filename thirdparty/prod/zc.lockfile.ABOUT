@@ -1,0 +1,14 @@
+about_resource: zc.lockfile-1.1.0-py2-none-any.whl
+version: 1.1.0
+download_url: https://pypi.python.org/packages/source/z/zc.lockfile/zc.lockfile-1.1.0.zip
+
+name: zc.lockfile
+home_url: https://github.com/zopefoundation/zc.lockfile
+owner: Zope Foundation
+
+dje_license: zpl-2.1
+license_text_file: zope21.LICENSE
+copyright: Zope Foundation and Contributors
+
+vcs_tool: git
+vcs_repository: https://github.com/zopefoundation/zc.lockfile.git

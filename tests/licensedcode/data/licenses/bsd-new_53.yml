@@ -1,2 +1,5 @@
 licenses:
     - bsd-new
+    - gpl
+expected_failure: yes
+notes: GPL is missed

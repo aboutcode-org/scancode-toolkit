@@ -70,6 +70,9 @@ setup(
 
         # licensedcode
         'PyYAML >= 3.0, <4.0',
+        'bitarray >= 0.8.1, < 1.0.0',
+        'zc.lockfile >= 1.0.0, < 2.0.0',
+        'yg.lockfile >= 2.0.0, < 3.0.0',
 
         # textcode
         'Beautifulsoup >= 3.2.0, <4.0.0',

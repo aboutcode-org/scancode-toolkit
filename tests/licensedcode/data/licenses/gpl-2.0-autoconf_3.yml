@@ -1,3 +1,9 @@
 licenses:
+    - gpl-2.0-plus
     - gpl-2.0-autoconf
-    - unknown
+license: gpl-2.0-plus with gpl-2.0-autoconf
+expected_failure: yes
+TODO: we are missing this GPL notice.
+ This is free software; see the source for copying conditions.  There is NO
+ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ 

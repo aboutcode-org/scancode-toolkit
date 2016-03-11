@@ -1,4 +1,8 @@
 licenses:
     - gpl-2.0-plus
+    - gpl
+    - gpl-3.0-plus
     - gpl-3.0-font
     - public-domain
+expected_failure: yes
+notes: TODO refine expectation

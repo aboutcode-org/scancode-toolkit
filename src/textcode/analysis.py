@@ -72,6 +72,7 @@ def text_lines(location):
     if T.is_pdf:
         return unicode_text_lines_from_pdf(location)
 
+# TODO: enable markup stripping support
 #     if T.is_doc:
 #         return unicode_text_lines_from_markup(location)
 

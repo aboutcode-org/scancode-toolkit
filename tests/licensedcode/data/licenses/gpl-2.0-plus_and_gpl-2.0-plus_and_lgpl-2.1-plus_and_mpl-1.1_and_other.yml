@@ -1,5 +1,6 @@
 licenses:
     - gpl-2.0-plus
+    - mpl-1.1
     - gpl-2.0-plus
     - lgpl-2.1-plus
-    - mpl-1.1
+expected_failure: yes

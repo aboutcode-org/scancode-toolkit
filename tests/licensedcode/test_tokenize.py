@@ -33,7 +33,7 @@ from licensedcode.tokenize import query_tokenizer
 from licensedcode.tokenize import rule_tokenizer
 
 
-TEST_DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'licensedcode/data')
+TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
 class TestQueryTokenizer(FileBasedTesting):

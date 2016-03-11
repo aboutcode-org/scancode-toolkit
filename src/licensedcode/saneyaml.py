@@ -135,7 +135,7 @@ class SaneDumper(SafeDumper):
     """
     Ensure that lists items are always indented.
     """
-    def increase_indent(self, flow=False, indentless=False):  # @UnusedVariable
+    def increase_indent(self, flow=False, indentless=False):
         return super(SaneDumper, self).increase_indent(flow, indentless=False)
 
 
@@ -148,7 +148,7 @@ def ordered_dumper(dumper, data):
 SaneDumper.add_representer(OrderedDict, ordered_dumper)
 
 
-def null_dumper(dumper, value):  # @UnusedVariable
+def null_dumper(dumper, value):
     """
     Always dump nulls as empty string.
     """

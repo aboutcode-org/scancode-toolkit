@@ -1,7 +1,9 @@
 licenses:
+    - bsd-new
     - apache
     - gpl
     - lgpl
     - mpl
     - bsd-new
     - afl-2.1
+expected_failure: yes

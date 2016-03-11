@@ -221,6 +221,7 @@ formats = ['json', 'html', 'html-app']
 @click.option('--email', is_flag=True, default=False, help='Scan <input> for emails.')
 @click.option('--url', is_flag=True, default=False, help='Scan <input> for urls.')
 @click.option('-i', '--info', is_flag=True, default=False, help='Scan <input> for files information.')
+@click.option('--license-score', is_flag=False, default=100, type=int, show_default=True, help='Set the license match lowest score. Matches with lower scores are not returned. A number between 0 and 100.')
 
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
               help='Set <output_file> format <style> to one of the standard formats: %s or the path to a custom template' % ' or '.join(formats),)
@@ -232,8 +233,8 @@ formats = ['json', 'html', 'html-app']
 @click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.')
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
 
-def scancode(ctx, input, output_file, copyright, license, package,  # @ReservedAssignment
-             email, url, info, format, verbose, quiet, *args, **kwargs):  # @ReservedAssignment
+def scancode(ctx, input, output_file, copyright, license, package,
+             email, url, info, license_score, format, verbose, quiet, *args, **kwargs):
     """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
 
     The scan results are printed on terminal if <output_file> is not provided.
@@ -241,16 +242,16 @@ def scancode(ctx, input, output_file, copyright, license, package,  # @ReservedA
     possible_scans = [copyright, license, package, email, url, info]
     # Default scan when no options is provided
     if not any(possible_scans):
-        copyright = True  # @ReservedAssignment
-        license = True  # @ReservedAssignment
+        copyright = True
+        license = True
         package = True
 
-    results = scan(input, copyright, license, package, email, url, info, verbose, quiet)
+    results = scan(input, copyright, license, package, email, url, info, license_score, verbose, quiet)
     save_results(results, format, input, output_file)
 
 
-def scan(input_path, copyright=True, license=True, package=True,  # @ReservedAssignment
-         email=False, url=False, info=True, verbose=False, quiet=False):  # @ReservedAssignment
+def scan(input_path, copyright=True, license=True, package=True,
+         email=False, url=False, info=True, license_score=100, verbose=False, quiet=False):
     """
     Do the scans proper, return results.
     """
@@ -258,15 +259,18 @@ def scan(input_path, copyright=True, license=True, package=True,  # @ReservedAss
     original_input = fileutils.as_posixpath(input_path)
     abs_input = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(input_path)))
 
+    get_licenses_with_score = partial(get_licenses, min_score=license_score)
+
     # note: "flag and function" expressions return the function if flag is True
     scanners = {
         'copyrights': copyright and get_copyrights,
-        'licenses': license and get_licenses,
+        'licenses': license and get_licenses_with_score,
         'packages': package and get_package_infos,
         'emails': email and get_emails,
         'urls': url and get_urls,
         'infos': info and get_file_infos,
     }
+
 
     results = []
 
@@ -336,7 +340,7 @@ def scan_one(input_file, scans):
     return data
 
 
-def save_results(results, format, input, output_file):  # @ReservedAssignment
+def save_results(results, format, input, output_file):
     """
     Save results to file or screen.
     """

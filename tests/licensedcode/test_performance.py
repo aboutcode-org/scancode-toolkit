@@ -29,91 +29,102 @@ from unittest.case import skip
 
 from commoncode.testcase import FileBasedTesting
 
+from licensedcode import index
+from licensedcode import models
+
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
+# Instructions: Comment out the skip decorators to run a test. Do not commit without a skip
+
 class TestMatchingPerf(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    # Comment the skip decorator to run this test
-    @skip('Use only for local profiling')
-    def test_detect_license_performance_profiling(self):
-        # pre-index : we are profiling only the detection, not the indexing
-        import licensedcode.detect
-        licensedcode.detect.get_index()
-
+    def profile_match(self, idx, locations, stats_file, top=50, min_score=100):
         import cProfile as profile
         import pstats
-        stats = 'detect_license_performance_profile_log.txt'
-        from itertools import repeat
 
         def detect_lic():
             for location in locations:
-                list(licensedcode.detect.detect_license(location))
+                list(idx.match(location, min_score=min_score))
 
-        tf = ['perf/test1.txt', 'perf/whatever.py', 'perf/udll.cxx']
-
-        locations = [self.get_test_loc(f) for f in tf]
         test_py = 'detect_lic()'
-        profile.runctx(test_py, globals(), locals(), stats)
-        p = pstats.Stats(stats)
-        p.sort_stats('cumulative').print_stats()
-        # p.print_stats()
+        profile.runctx(test_py, globals(), locals(), stats_file)
+        p = pstats.Stats(stats_file)
+        p.sort_stats('time').print_stats(top)
+
+    @skip('Use only for local profiling')
+    def test_match_license_performance_profiling_on_limited_index(self):
+        # pre-index : we are profiling only the detection, not the indexing
+        rule_dir = self.get_test_loc('detect/rule_template/rules')
+        rules = models.rules(rule_dir)
+        idx = index.LicenseIndex(rules)
+
+        stats_file = 'license_match_limited_index_profile_log.txt'
+        locations = [self.get_test_loc('detect/rule_template/query.txt')]
+        self.profile_match(idx, locations, stats_file)
+
+    @skip('Use only for local profiling')
+    def test_approximate_match_to_indexed_template_with_few_tokens_around_gaps(self):
+        rule = models.Rule(text_file=self.get_test_loc('index/templates/idx.txt'), licenses=['test'],)
+        idx = index.LicenseIndex([rule])
+
+        stats_file = 'license_approx_match_limited_index_profile_log.txt'
+        locations = [self.get_test_loc('index/templates/query.txt')]
+        self.profile_match(idx, locations, stats_file, min_score=0)
+
+    @skip('Use only for local profiling')
+    def test_match_license_performance_profiling_on_full_index_match_chunk(self):
+        # pre-index : we are profiling only the detection, not the indexing
+        idx = index.get_index()
+
+        stats_file = 'license_match_chunk_full_index_profile_log.txt'
+        locations = [self.get_test_loc('perf/cc-by-nc-sa-3.0.SPDX')]
+        self.profile_match(idx, locations, stats_file)
+
+    @skip('Use only for local profiling')
+    def test_match_license_performance_profiling_on_full_index(self):
+        # pre-index : we are profiling only the detection, not the indexing
+        idx = index.get_index()
+        stats_file = 'license_match_full_index_profile_log.txt'
+        locations = [self.get_test_loc(f) for f in ['perf/test1.txt', 'perf/whatever.py', 'perf/udll.cxx']]
+        self.profile_match(idx, locations, stats_file)
+
+    @skip('Use only for local profiling')
+    def test_match_license_performance_profiling_on_full_index_binary_lkm(self):
+        # pre-index : we are profiling only the detection, not the indexing
+        idx = index.get_index()
+        stats_file = 'license_match_full_index_profile_log.txt'
+        locations = [self.get_test_loc('perf/eeepc_acpi.ko')]
+        self.profile_match(idx, locations, stats_file)
+
+    @skip('Use only for local profiling')
+    def test_match_license_performance_profiling_on_full_index_small_binary_lkm2(self):
+        # pre-index : we are profiling only the detection, not the indexing
+        idx = index.get_index()
+        stats_file = 'license_match_full_index_profile_log.txt'
+        locations = [self.get_test_loc('perf/ath_pci.ko')]
+        self.profile_match(idx, locations, stats_file)
 
 
 class TestIndexingPerformance(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    # Comment the skip decorator to run this test
     @skip('Use only for local profiling')
     def test_build_index_performance_profiling(self):
-        # pre-load the JSON : we are profiling only the indexing here
-#         from licensedcode.json_rules import load_license_rules
-#         rules = load_license_rules()
-
         import cProfile as profile
         import pstats
-        from licensedcode import detect
         stats = 'build_index_performance_profile_log.txt'
-        test_py = 'detect.get_license_index()'
+        test_py = 'index.get_index()'
         profile.runctx(test_py, globals(), locals(), stats)
         p = pstats.Stats(stats)
         p.sort_stats('time').print_stats(40)
-        print()
-        print()
-        print()
-        # p.print_stats()
 
 
-class TestTokenzingPerformance(FileBasedTesting):
+class TestTokenizingPerformance(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    # Comment the skip decorator to run this test
-    @skip('Use only for local profiling')
-    def test_get_tokens_timing(self):
-        from timeit import timeit
-        setup = '''
-from licensedcode.models import get_tokens
-from commoncode.fileutils import file_iter
-from licensedcode import rules_data_dir
-import os
-rule_files = [os.path.join(rules_data_dir, f) for f in os.listdir(rules_data_dir) if f.endswith('.RULE')]
-'''
-        test = '''
-for f in rule_files:
-    get_tokens(f, template=False)
-    try:
-        get_tokens(f, template=True)
-    except:
-        pass
-'''
-        print()
-        print('WITH OBJECT')
-        print(timeit(stmt=test, setup=setup, number=5))
-# 
-
-    # Comment the skip decorator to run this test
     @skip('Use only for local profiling')
     def test_get_all_rules_performance_timing(self):
         from timeit import timeit

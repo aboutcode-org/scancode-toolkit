@@ -8,3 +8,4 @@ licenses:
     - bsd-new
     - bsd-new
     - bzip2-libbzip-1.0.5
+expected_failure: yes

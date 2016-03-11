@@ -46,13 +46,13 @@ def build_tests(data_set, clazz):
     for license_key, license_obj in data_set.items():
         if license_obj.text_file and os.path.exists(license_obj.text_file):
             test_name = ('test_validate_detection_of_text_for_' + text.python_safe_name(license_key))
-            test_method = make_license_test_function(license_key, license_obj.text_file, test_name)
+            test_method = make_license_test_function(license_key, license_obj.text_file, test_name, min_score=100, check_negative=False)
             setattr(clazz, test_name, test_method)
 
         if license_obj.spdx_license_key:
             if license_obj.spdx_file and os.path.exists(license_obj.spdx_file):
                 test_name = ('test_validate_detection_of_spdx_text_for_' + text.python_safe_name(license_key))
-                test_method = make_license_test_function(license_key, license_obj.spdx_file, test_name)
+                test_method = make_license_test_function(license_key, license_obj.spdx_file, test_name, min_score=100, check_negative=False)
                 setattr(clazz, test_name, test_method)
 
 

@@ -1,0 +1,8 @@
+apache
+<version>1.0-beta-6</version>
+<version>1.1-alpha-1</version>
+</dependency>
+org.apache.ant
+ant
+<version>1.8.3
+

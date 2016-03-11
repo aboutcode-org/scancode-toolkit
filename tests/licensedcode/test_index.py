@@ -24,358 +24,381 @@
 
 from __future__ import absolute_import, print_function
 
+from array import array
+from itertools import chain
+from operator import itemgetter
 import os
-import codecs
 
 from commoncode.testcase import FileBasedTesting
 
-from textcode import analysis
-from textcode.analysis import Token
-from textcode.analysis import text_lines
+from licensedcode.whoosh_spans.spans import Span
 
 from licensedcode import index
+from licensedcode import models
+from licensedcode import query
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
-class TestIndexBasedDetection(FileBasedTesting):
+class IndexTesting(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def test_merge_positions(self):
-        pos1 = Token(start=58, end=58, start_line=8, start_char=52, end_line=8, end_char=59)
-        pos2 = Token(start=63, end=64, start_line=23, start_char=12, end_line=53, end_char=23)
-        expected = Token(start=58, end=64, start_line=8, start_char=52, end_line=53, end_char=23)
-        tst = index.merge_positions([pos2, pos1])
-        assert expected == tst
+    def get_test_rules(self, base, subset=None):
+        base = self.get_test_loc(base)
+        test_files = sorted(os.listdir(base))
+        if subset:
+            test_files = [t for t in test_files if t in subset]
+        return [models.Rule(text_file=os.path.join(base, license_key), licenses=[license_key]) for license_key in test_files]
 
-    def test_merge_aligned_positions(self):
-        pos11 = Token(start=58, end=58, start_line=8, start_char=52, end_line=8, end_char=59)
-        pos12 = Token(start=63, end=64, start_line=23, start_char=12, end_line=53, end_char=23)
 
-        pos21 = Token(start=12, end=24, start_line=12, start_char=52, end_line=12, end_char=59)
-        pos22 = Token(start=15, end=35, start_line=45, start_char=12, end_line=54, end_char=36)
+class TestIndexing(IndexTesting):
 
-        expected = (
-            Token(start=58, end=64, start_line=8, start_char=52, end_line=53, end_char=23),
-            Token(start=12, end=35, start_line=12, start_char=52, end_line=54, end_char=36)
-        )
+    def test_init_with_rules(self):
+        test_rules = self.get_test_rules('index/bsd', ['bsd-new', 'bsd-no-mod'])
+        idx = index.LicenseIndex(test_rules)
+        assert 4 == idx.frequencies_by_tid[idx.dictionary[u'redistribution']]
+        assert 7 == idx.frequencies_by_tid[idx.dictionary[u'disclaimer']]
+        assert 2 == len(idx.postings_by_rid)
+        keys = chain(*[ridx.keys() for ridx in idx.postings_by_rid])
+        assert 138 == len(set(keys))
+        assert 1, 61 == idx.postings_by_rid[idx.dictionary['minimum']]
 
-        tst = index.merge_aligned_positions([(pos11, pos21,), (pos12, pos22,)])
-        assert expected == tst
+    def test__add_rules(self):
+        test_rules = self.get_test_rules('index/bsd', ['bsd-new', 'bsd-no-mod'])
+        idx = index.LicenseIndex()
+        idx._add_rules(test_rules)
+        assert 4 == idx.frequencies_by_tid[idx.dictionary[u'redistribution']]
+        assert 7 == idx.frequencies_by_tid[idx.dictionary[u'disclaimer']]
+        assert 2 == len(idx.postings_by_rid)
+        keys = chain(*[ridx.keys() for ridx in idx.postings_by_rid])
+        assert 138 == len(set(keys))
+        assert 1, 61 == idx.postings_by_rid[idx.dictionary['minimum']]
 
-    def get_test_docs(self, base, subset=None):
-        base = self.get_test_loc(base, copy=True)
-        for docid in os.listdir(base):
-            if (subset and docid in subset) or not subset:
-                yield docid, text_lines(location=os.path.join(base, docid))
+    def test__add_rules_with_templates(self):
+        test_rules = self.get_test_rules('index/bsd_templates2')
+        idx = index.LicenseIndex()
+        idx._add_rules(test_rules)
+        assert 4 == idx.frequencies_by_tid[idx.dictionary[u'redistribution']]
+        assert 7 == idx.frequencies_by_tid[idx.dictionary[u'disclaimer']]
+        assert 2 == len(idx.postings_by_rid)
+        keys = chain(*[ridx.keys() for ridx in idx.postings_by_rid])
+        assert 137 == len(set(keys))
 
-    def test_Index_index_several_unigrams(self):
-        test_docs = self.get_test_docs('index/bsd', ['bsd-new', 'bsd-no-mod'])
-        idx = index.Index(ngram_len=1)
-        for docid, doc in test_docs:
-            idx.index_one(docid, doc)
-        unigrams_index = idx.indexes[1]
+    def test_index_internals_with__add_rules(self):
+        base = self.get_test_loc('index/tokens_count')
+        keys = sorted(os.listdir(base))
+        idx = index.LicenseIndex()
+        rules = []
+        for key in keys:
+            rules.append(models.Rule(text_file=os.path.join(base, key)))
 
-        assert 213 == idx.get_tokens_count('bsd-new')
-        assert 234 == idx.get_tokens_count('bsd-no-mod')
-        assert 138 == len(unigrams_index)
+        idx._add_rules(rules)
 
-        pos = Token(start=61, end=61, start_line=8, start_char=52, end_line=8, end_char=59, value=u'minimum')
-        expected_posting = ('bsd-no-mod', [pos],)
-        assert expected_posting == unigrams_index['minimum'].items()[0]
-
-    def test_get_tokens_count(self):
-        base = self.get_test_loc('index/tokens_count', copy=True)
-        docids = os.listdir(base)
-        idx = index.Index(ngram_len=3)
-        for docid in docids:
-            doc = text_lines(location=os.path.join(base, docid))
-            template = docid.startswith('tmpl')
-            idx.index_one(docid, doc, template=template)
-        indexes = [
-            (idx.indexes[1], set(['all',
-                                  'redistribution',
-                                  'for',
-                                  'is'
-                                 ]),),
-            (idx.indexes[2], set(['is allowed',
-                                  'all and',
-                                  'redistribution is',
-                                  'allowed for',
-                                 ]),),
-            (idx.indexes[3], set(['for all and',
-                                  'and any thing',
-                                  'is allowed for',
-                                  'all and any',
-                                  'redistribution is allowed',
-                                  'allowed for all',
-                                 ]),)
+        expected_index = [
+            {5: array('h', [0])},
+            {0: array('h', [1]), 5: array('h', [0])},
+            {0: array('h', [1]), 5: array('h', [0]), 6: array('h', [2])},
+            {0: array('h', [1]), 2: array('h', [3]), 5: array('h', [0]), 6: array('h', [2])},
+            {0: array('h', [1]), 1: array('h', [4]), 2: array('h', [3]), 5: array('h', [0]), 6: array('h', [2])},
+            {0: array('h', [1]), 1: array('h', [4, 6]), 2: array('h', [3]), 3: array('h', [5, 7]), 4: array('h', [9]), 5: array('h', [0]), 6: array('h', [2]), 7: array('h', [8])},
+            {0: array('h', [1]), 5: array('h', [0])},
+            {0: array('h', [1]), 5: array('h', [0]), 6: array('h', [2])},
+            {0: array('h', [1]), 2: array('h', [3]), 5: array('h', [0]), 6: array('h', [2])},
+            {0: array('h', [1, 2]), 2: array('h', [4]), 5: array('h', [0]), 6: array('h', [3])},
+            {0: array('h', [1]), 1: array('h', [4]), 2: array('h', [3]), 5: array('h', [0]), 6: array('h', [2])},
+            {0: array('h', [1]), 1: array('h', [4]), 2: array('h', [3]), 3: array('h', [5]), 5: array('h', [0]), 6: array('h', [2])},
+            {0: array('h', [1]), 1: array('h', [4, 6]), 2: array('h', [3]), 3: array('h', [5]), 5: array('h', [0]), 6: array('h', [2])},
+            {0: array('h', [1]), 1: array('h', [4, 6]), 2: array('h', [3]), 3: array('h', [5, 7]), 5: array('h', [0]), 6: array('h', [2])},
+            {0: array('h', [1]), 1: array('h', [4, 6]), 2: array('h', [3]), 3: array('h', [5, 7]), 5: array('h', [0]), 6: array('h', [2]), 7: array('h', [8])}
         ]
+        assert expected_index == idx.postings_by_rid
 
-        for idxi, expected_keys in indexes:
-            assert expected_keys == set(idxi.keys())
+        expected_freqs = [15, 11, 10, 8, 1, 15, 12, 2]
+        assert expected_freqs == idx.frequencies_by_tid
 
-        expected = {
-            'plain1': 1,
-            'plain2': 2,
-            'plain3': 3,
-            'plain4': 4,
-            'plain5': 5,
-            'tmpl10': 10,
-            'tmpl2': 2,
-            'tmpl3': 3,
-            'tmpl4': 4,
-            'tmpl5': 5,
-            'tmpl5_2': 5,
-            'tmpl6': 6,
-            'tmpl7': 7,
-            'tmpl8': 8,
-            'tmpl9': 9,
-        }
-
-        result = {docid: idx.get_tokens_count(docid) for docid in docids}
-        assert expected == result
-
-    def test_Index_index_one_unigrams(self):
-        test_docs = self.get_test_docs('index/bsd', ['bsd-new', 'bsd-no-mod'])
-        idx = index.Index(ngram_len=1)
-        for docid, doc in test_docs:
-            idx.index_one(docid, doc)
-        unigrams_index = idx.indexes[1]
-
-        assert 213 == idx.get_tokens_count('bsd-new')
-        assert 234 == idx.get_tokens_count('bsd-no-mod')
-        assert 138 == len(unigrams_index)
-
-        pos = Token(start=61, end=61, start_line=8, start_char=52, end_line=8, end_char=59, value=u'minimum')
-        expected_posting = ('bsd-no-mod', [pos],)
-        assert expected_posting == unigrams_index['minimum'].items()[0]
-
-    def test_Index_index_one_trigrams_no_templates(self):
-        test_docs = self.get_test_docs('index/bsd', ['bsd-new', 'bsd-no-mod'])
-        idx = index.Index(ngram_len=3)
-
-        for docid, doc in test_docs:
-            idx.index_one(docid, doc)
-
-        indexes = [(idx.indexes[1], 0,),
-                   (idx.indexes[2], 0,),
-                   (idx.indexes[3], 280,)]
-        for idxi, expected_len in indexes:
-            assert expected_len == len(idxi)
-
-        assert 213 == idx.get_tokens_count('bsd-new')
-        assert 234 == idx.get_tokens_count('bsd-no-mod')
-
-    def test_Index_index_one_trigrams_with_templates(self):
-        test_docs = self.get_test_docs('index/bsd_templates2')
-        idx = index.Index(ngram_len=3)
-        for docid, doc in test_docs:
-            idx.index_one(docid, doc, template=True)
-        indexes = [
-            (idx.indexes[1], 2,),
-            (idx.indexes[2], 5,),
-            (idx.indexes[3], 267,)
+        expected_dict = [
+            (u'is', 0),
+            (u'all', 1),
+            (u'for', 2),
+            (u'and', 3),
+            (u'thing', 4),
+            (u'redistribution', 5),
+            (u'allowed', 6),
+            (u'any', 7)
         ]
+        assert expected_dict == sorted(idx.dictionary.items(), key=itemgetter(1))
 
-        for idxi, expected_len in indexes:
-            assert expected_len == len(idxi)
+    def test_index_internals_humanized_with__add_rules(self):
+        base = self.get_test_loc('index/tokens_count')
+        keys = sorted(os.listdir(base))
+        rules = [models.Rule(text_file=os.path.join(base, key)) for key in keys]
+        idx = index.LicenseIndex(rules)
 
-        assert 211 == idx.get_tokens_count('bsd-new')
-        assert 232 == idx.get_tokens_count('bsd-no-mod')
-
-    def get_test_index(self, docs, ngram_len=3, template=False):
-        idx = index.Index(ngram_len)
-        for docid, doc in docs:
-            idx.index_one(docid, doc, template)
-        return idx
-
-    def test_Index_exact_match_simple(self):
-        test_docs = self.get_test_docs('index/bsd')
-        idx = self.get_test_index(test_docs, ngram_len=1)
-        test_query_doc = self.get_test_loc('index/querysimple')
-        expected = {
-            'bsd-new':
-                [(Token(start=0, start_line=0, start_char=0, end_line=6, end_char=753, end=212),
-                  Token(start=0, start_line=4, start_char=0, end_line=12, end_char=607, end=212))
-                ],
-            'bsd-no-mod':
-                [(Token(start=0, start_line=0, start_char=0, end_line=0, end_char=49, end=7),
-                  Token(start=0, start_line=4, start_char=0, end_line=4, end_char=49, end=7))
-                ],
-            'bsd-original':
-                [(Token(start=0, start_line=0, start_char=0, end_line=0, end_char=9, end=0),
-                  Token(start=29, start_line=6, start_char=59, end_line=6, end_char=68, end=29)
-                 ),
-                 (Token(start=0, start_line=0, start_char=0, end_line=0, end_char=9, end=0),
-                  Token(start=47, start_line=7, start_char=62, end_line=7, end_char=71, end=47)
-                 ),
-                 (Token(start=0, start_line=0, start_char=0, end_line=0, end_char=9, end=0),
-                  Token(start=103, start_line=10, start_char=33, end_line=10, end_char=42, end=103)
-                 ),
-                 (Token(start=0, start_line=0, start_char=0, end_line=0, end_char=9, end=0),
-                  Token(start=137, start_line=12, start_char=117, end_line=12, end_char=126, end=137)
-                 )
-                ],
-            'bsd-original-uc':
-                [(Token(start=0, start_line=0, start_char=0, end_line=0, end_char=9, end=0),
-                  Token(start=29, start_line=6, start_char=59, end_line=6, end_char=68, end=29)),
-                 (Token(start=0, start_line=0, start_char=0, end_line=0, end_char=9, end=0),
-                  Token(start=47, start_line=7, start_char=62, end_line=7, end_char=71, end=47)),
-                 (Token(start=0, start_line=0, start_char=0, end_line=0, end_char=9, end=0),
-                  Token(start=103, start_line=10, start_char=33, end_line=10, end_char=42, end=103)),
-                 (Token(start=0, start_line=0, start_char=0, end_line=0, end_char=9, end=0),
-                  Token(start=137, start_line=12, start_char=117, end_line=12, end_char=126, end=137))
-                ],
-            'bsd-simplified':
-                [(Token(start=0, start_line=0, start_char=3, end_line=7, end_char=73, end=67),
-                  Token(start=0, start_line=4, start_char=0, end_line=7, end_char=207, end=67))
-                 ]
+        expected_index = {
+            'plain1': {u'redistribution': [0]},
+            'plain2': {u'is': [1], u'redistribution': [0]},
+            'plain3': {u'allowed': [2], u'is': [1], u'redistribution': [0]},
+            'plain4': {u'allowed': [2], u'for': [3], u'is': [1], u'redistribution': [0]},
+            'plain5': {u'all': [4], u'allowed': [2], u'for': [3], u'is': [1], u'redistribution': [0]},
+            'tmpl10': {u'all': [4, 6], u'allowed': [2], u'and': [5, 7], u'any': [8], u'for': [3], u'is': [1], u'redistribution': [0], u'thing': [9]},
+            'tmpl2': {u'is': [1], u'redistribution': [0]},
+            'tmpl3': {u'allowed': [2], u'is': [1], u'redistribution': [0]},
+            'tmpl4': {u'allowed': [2], u'for': [3], u'is': [1], u'redistribution': [0]},
+            'tmpl5': {u'allowed': [3], u'for': [4], u'is': [1, 2], u'redistribution': [0]},
+            'tmpl5_2': {u'all': [4], u'allowed': [2], u'for': [3], u'is': [1], u'redistribution': [0]},
+            'tmpl6': {u'all': [4], u'allowed': [2], u'and': [5], u'for': [3], u'is': [1], u'redistribution': [0]},
+            'tmpl7': {u'all': [4, 6], u'allowed': [2], u'and': [5], u'for': [3], u'is': [1], u'redistribution': [0]},
+            'tmpl8': {u'all': [4, 6], u'allowed': [2], u'and': [5, 7], u'for': [3], u'is': [1], u'redistribution': [0]},
+            'tmpl9': {u'all': [4, 6], u'allowed': [2], u'and': [5, 7], u'any': [8], u'for': [3], u'is': [1], u'redistribution': [0]}
         }
+        assert expected_index == idx._as_dict()
 
-        matches = idx.match(text_lines(test_query_doc))
-        for k, val in matches.items():
-            assert expected[k] == val
+        expected_freqs = {u'all': 11, u'allowed': 12, u'and': 8, u'any': 2, u'for': 10, u'is': 15, u'redistribution': 15, u'thing': 1}
+        assert expected_freqs == {idx.tokens_by_tid[tok]: freq for tok, freq in enumerate(idx.frequencies_by_tid)}
 
-    def test_Index_exact_match_unigrams_perfect(self):
-        test_docs = self.get_test_docs('index/bsd')
-        idx = self.get_test_index(test_docs, ngram_len=1, template=False)
-        test_query_doc = self.get_test_loc('index/queryperfect')
-
-        expected = {
-            'bsd-new': [
-                (Token(start=0, start_line=0, start_char=0, end_line=6, end_char=753, end=212),
-                 Token(start=0, start_line=5, start_char=0, end_line=11, end_char=753, end=212))
-            ]
+        expected_dict = {
+            u'is': 0,
+            u'all': 1,
+            u'for': 2,
+            u'and': 3,
+            u'thing': 4,
+            u'redistribution': 5,
+            u'allowed': 6,
+            u'any': 7
         }
+        assert expected_dict == idx.dictionary
+        assert 8 == len(idx.tokens_by_tid)
+        assert 5 == idx.len_junk
 
-        matches = idx.match(text_lines(test_query_doc))
+        expected_frequencies_by_rid = [
+            {u'redistribution': 1},
+            {u'is': 1, u'redistribution': 1},
+            {u'allowed': 1, u'is': 1, u'redistribution': 1},
+            {u'allowed': 1, u'for': 1, u'is': 1, u'redistribution': 1},
+            {u'all': 1, u'allowed': 1, u'for': 1, u'is': 1, u'redistribution': 1},
+            {u'all': 2, u'allowed': 1, u'and': 2, u'any': 1, u'for': 1, u'is': 1, u'redistribution': 1, u'thing': 1},
+            {u'is': 1, u'redistribution': 1},
+            {u'allowed': 1, u'is': 1, u'redistribution': 1},
+            {u'allowed': 1, u'for': 1, u'is': 1, u'redistribution': 1},
+            {u'allowed': 1, u'for': 1, u'is': 2, u'redistribution': 1},
+            {u'all': 1, u'allowed': 1, u'for': 1, u'is': 1, u'redistribution': 1},
+            {u'all': 1, u'allowed': 1, u'and': 1, u'for': 1, u'is': 1, u'redistribution': 1},
+            {u'all': 2, u'allowed': 1, u'and': 1, u'for': 1, u'is': 1, u'redistribution': 1},
+            {u'all': 2, u'allowed': 1, u'and': 2, u'for': 1, u'is': 1, u'redistribution':1},
+            {u'all': 2, u'allowed': 1, u'and': 2, u'any': 1, u'for': 1, u'is': 1, u'redistribution': 1}
+        ]
+        assert expected_frequencies_by_rid == [{idx.tokens_by_tid[tok]: freq for tok, freq in rule_freq.items()} for rule_freq in idx.frequencies_by_rid]
 
-        assert {} != matches
-        for k, val in matches.items():
-            assert expected[k] == val
+    def test_renumber_tokens(self):
+        test_rules = [
+            u'a one a two a three licensed.',
+            u'a four a five a six licensed.',
+            u'one two three four five gpl',
+            u'The rose is a rose mit',
+            u'The license is GPL',
+            u'The license is a GPL',
+            u'a license is a rose',
+            u'the gpl',
+            u'the mit',
+            u'the bsd',
+            u'the lgpl',
+        ]
+        idx = index.LicenseIndex()
+        tokens_by_rid = []
+        rules = []
+        for t in test_rules:
+            rule = models.Rule(_text=t)
+            rules.append(rule)
+            tokens_by_rid.append(list(rule.tokens()))
+        rules_tokens_ids = idx._add_rules(rules, optimize=False)
 
-        with codecs.open(test_query_doc, encoding='utf-8') as td:
-            actual = td.read().splitlines(True)
-            expected = u''.join(actual[5:-2])[:-2]
-            query_match_pos = matches['bsd-new'][0][-1]
-            tst = analysis.doc_subset(text_lines(location=test_query_doc), query_match_pos)
-            tst = u''.join(tst)
-            assert expected == tst
+        renumbered = index.renumber_token_ids(rules_tokens_ids, idx.dictionary, idx.tokens_by_tid, idx.frequencies_by_tid, length=2, with_checks=True)
+        old_to_new, len_junk, new_dictionary, new_tokens_by_tid, new_frequencies_by_tid = renumbered
 
-    def test_Index_exact_match_ngrams_perfect_minimalist(self):
-        index_doc = [u'name is joker, name is joker']
+        assert array('h', [0, 15, 8, 7, 10, 2, 14, 11, 13, 12, 6, 3, 9, 1, 5, 4]) == old_to_new
+        assert 10 == len_junk
+
+        xdict = {
+            u'a': 0,
+            u'the': 1,
+            u'is': 2,
+            u'rose': 3,
+            u'two': 4,
+            u'three': 5,
+            u'one': 6,
+            u'four': 7,
+            u'five': 8,
+            u'six': 9,
+            u'gpl': 10,
+            u'license': 11,
+            u'mit': 12,
+            u'licensed': 13,
+            u'lgpl': 14,
+            u'bsd': 15,
+        }
+        assert xdict == new_dictionary
+
+        xtbi = [
+            u'a',
+            u'the',
+            u'is',
+            u'rose',
+            u'two',
+            u'three',
+            u'one',
+            u'four',
+            u'five',
+            u'six',
+            u'gpl',
+            u'license',
+            u'mit',
+            u'licensed',
+            u'lgpl',
+            u'bsd']
+        assert xtbi == new_tokens_by_tid
+
+        xtf = [10, 7, 4, 3, 2, 2, 2, 2, 2, 1, 4, 3, 2, 2, 1, 1]
+        assert xtf == new_frequencies_by_tid
+
+    def test_index_internals_with_template_rule(self):
+        idx = index.LicenseIndex([models.Rule(_text=u'A one. A {{}}two. A three.')])
+        expected = {'_tst_': {u'a': [0, 2, 4], u'one': [1], u'three': [5], u'two': [3]}}
+        assert expected == idx._as_dict()
+
+
+class TestMatchNoTemplates(IndexTesting):
+    test_data_dir = TEST_DATA_DIR
+
+    def test_match_exact_from_string(self):
+        idx = index.LicenseIndex(self.get_test_rules('index/mini'))
+        query = '''
+            The
+            Redistribution and use in source and binary forms, with or without modification, are permitted.
+            
+            Always'''
+
+        result = idx.match(query=query, min_score=100)
+        assert 1 == len(result)
+        match = result[0]
+        assert (Span(0, 13),) == match.qspans
+        assert (Span(0, 13),) == match.ispans
+
+    def test_match_exact_from_string_twice(self):
+        rule = models.Rule()
+        rule._text = u'name is joker, name is joker'
         #                 0  1     2     3  4     5
-        idx = index.Index(ngram_len=3)
-        idx.index_one('tst', text_lines(index_doc), template=False)
+        rule.licenses = ['tst']
 
-        query_doc = [u'Hi my name is joker, name is joker yes.']
-        # match         0  1   |2  3     4     5  6     7|  8
-        expected = {
-            'tst': [
-                (Token(start=0, start_line=0, start_char=0, end_line=0, end_char=28, end=5),
-                 Token(start=2, start_line=0, start_char=6, end_line=0, end_char=34, end=7))
-            ]
-        }
-        matches = idx.match(query_doc)
+        idx = index.LicenseIndex([rule])
+        query = u'Hi my name is joker, name is joker yes.'
+        # match            0  1     2     3  4    5
 
-        assert {} != matches
-        for k, val in matches.items():
-#              assert [] == val
-            assert expected[k] == val
+        result = idx.match(query=query, min_score=0)
+        assert 1 == len(result)
+        match = result[0]
+        assert (Span(0, 5),) == match.qspans
+        assert (Span(0, 5),) == match.ispans
 
-    def test_Index_exact_match_ngrams_perfect_single_index_doc_in_index_minimal(self):
-        test_docs = self.get_test_docs('index/mini')
-        idx = self.get_test_index(test_docs, ngram_len=3, template=False)
-        test_query_doc = self.get_test_loc('index/queryperfect-mini')
+        # match again to ensure that there are no state side effects
+        result = idx.match(query=query, min_score=100)
+        assert 1 == len(result)
+        match = result[0]
+        assert (Span(0, 5),) == match.qspans
+        assert (Span(0, 5),) == match.ispans
 
-        expected = {
-            'bsd-new': [
-                (Token(start=0, start_line=0, start_char=0, end_line=0, end_char=94, end=13),
-                 Token(start=1, start_line=2, start_char=0, end_line=2, end_char=94, end=14))
-            ]
-        }
-        matches = idx.match(text_lines(test_query_doc))
+    def test_match_exact_from_file(self):
+        idx = index.LicenseIndex(self.get_test_rules('index/mini'))
+        query = self.get_test_loc('index/queryperfect-mini')
 
-        assert {} != matches
-        for k, val in matches.items():
-            assert expected[k] == val
+        result = idx.match(location=query, min_score=100)
+        assert 1 == len(result)
+        match = result[0]
+        assert (Span(0, 13),) == match.qspans
+        assert (Span(0, 13),) == match.ispans
 
-    def test_Index_exact_match_ngrams_templates_perfect_minimalist(self):
-        index_doc = [u'name is joker, {{}} name is joker']
-        idx = index.Index(ngram_len=3)
-        idx.index_one('tst', text_lines(index_doc), template=True)
+    def test_match_exact_from_file_2(self):
+        idx = index.LicenseIndex(self.get_test_rules('index/bsd'))
+        query = self.get_test_loc('index/queryperfect')
 
-        query_doc = [u'Hi my name is joker the joker name is joker yes.']
-        #              012345678901234567890123456789012345678901234567
-        #                        11111111112222222222333333333344444444
-        expected = {
-            'tst': [
-                (Token(start=0, start_line=0, start_char=0, end_line=0, end_char=33, end=5),
-                 Token(start=2, start_line=0, start_char=6, end_line=0, end_char=43, end=9))
-            ]
-        }
+        result = idx.match(location=query, min_score=100)
+        assert 1 == len(result)
+        match = result[0]
+        assert (Span(0, 212),) == match.qspans
+        assert (Span(0, 212),) == match.ispans
 
-        matches = idx.match(text_lines(query_doc))
+    def test_match_multiple(self):
+        test_rules = self.get_test_rules('index/bsd')
+        idx = index.LicenseIndex(test_rules)
+        query = self.get_test_loc('index/querysimple')
 
-        assert {} != matches
-        for k, val in matches.items():
-            assert expected[k] == val
+        result = idx.match(location=query, min_score=100)
+        assert 1 == len(result)
+        expected = (Span(0, 212),), (Span(0, 212),)
+        match = result[0]
+        assert expected == (match.qspans, match.ispans)
 
-    def test_Index_exact_match_ngrams_template_perfect_multi_index_doc_in_index(self):
-        test_docs = self.get_test_docs('index/bsd_templates')
-        idx = self.get_test_index(test_docs, ngram_len=3, template=True)
-        test_query_doc = self.get_test_loc('index/queryperfect_single_template')
+    def test_match_return_correct_offsets(self):
+        rule = models.Rule(licenses=['test'])
+        rule._text = u'A GPL. A MIT. A LGPL.'
+        #              0   1  2   3  4    5
+        idx = index.LicenseIndex([rule])
+        query = u'some junk. A GPL. A MIT. A LGPL.'
+        #            0    1  2   3  4   5  6    7
 
-        expected = {
-            'bsd-new':[
-                 (Token(start=0, start_line=0, start_char=0, end_line=6, end_char=753, end=210),
-                  Token(start=4, start_line=5, start_char=0, end_line=11, end_char=753, end=216))
-            ]
-        }
-        matches = idx.match(text_lines(test_query_doc))
-        assert {} != matches
-        for k, val in matches.items():
-            assert expected[k] == val
+        result = idx.match(query=query, min_score=100)
+        assert 1 == len(result)
+        assert (Span(0, 5),) == result[0].qspans
+        assert (Span(0, 5),) == result[0].ispans
 
-    def test_Index_exact_match_return_one_match_with_correct_offsets(self):
-        index_doc = [u'A one. A two. A three.']
-        idx = index.Index(ngram_len=4)
-        idx.index_one('tst', text_lines(index_doc), template=False)
-        query_doc = [u'some junk. A one. A two. A three.']
-        #                         1111111111222222222233
-        #              012345678901234567890123456789012
 
-        matches = idx.match(query_doc)
-        match = matches['tst']
-        assert 1 == len(match)
-        index_pos, query_pos = match[0]
-        assert 11 == query_pos.start_char
-        assert 32 == query_pos.end_char
-        assert 0 == index_pos.start_char
-        assert 21 == index_pos.end_char
+class TestMatchWithTemplates(IndexTesting):
+    test_data_dir = TEST_DATA_DIR
 
-    def test_Index_exact_match_to_indexed_template_with_short_tokens_around_gaps(self):
+    def test_match_with_template_and_multiple_rules(self):
+        test_rules = self.get_test_rules('index/bsd_templates',)
+        idx = index.LicenseIndex(test_rules)
+        query_loc = self.get_test_loc('index/queryperfect_single_template')
+
+        result = idx.match(location=query_loc, min_score=80)
+
+        assert 1 == len(result)
+        match = result[0]
+        assert 100 == match.normalized_score()
+        assert (Span(1, 72), Span(74, 212),) == match.qspans
+        assert (Span(0, 210),) == match.ispans
+
+    def test_match_to_indexed_template_with_few_tokens_around_gaps(self):
         # was failing when a gapped token (from a template) starts at a
-        # beginning of an index doc and at a position less than ngram length
+        # beginning of an index doc
 
-        # setup
-        idx = index.Index(ngram_len=4)
-        index_doc = text_lines(self.get_test_loc('index/templates/idx.txt'))
-        idx.index_one('idx', text_lines(index_doc), template=True)
+        rule = models.Rule(text_file=self.get_test_loc('index/templates/idx.txt'), licenses=['test'],)
+        idx = index.LicenseIndex([rule])
 
-        # test index
-        quad_grams_index = idx._get_index_for_len(4)
-        assert 205 == len(quad_grams_index)
-        assert u'software without prior written' in quad_grams_index
+        query_loc = self.get_test_loc('index/templates/query.txt')
+        result = idx.match(location=query_loc, min_score=0)
 
-        # test match
-        query_doc = text_lines(self.get_test_loc('index/templates/query.txt'))
-        matches = idx.match(query_doc)
-        assert 1 == len(matches)
+        assert 1 == len(result)
+        match = result[0]
+        assert 99.5 < match.normalized_score()
+        assert Span(2, 253) == match.qregion
+        assert Span(1, 244) == match.iregion
 
-        # we expect a single match to the idx doc
-        matched_query_doc_position = matches['idx'][0][1]
-        expected = Token(start=0, start_line=0, start_char=0, end_line=39, end_char=34, end=276)
-        assert expected == matched_query_doc_position
+    def test_match_with_templates_with_redundant_tokens_yield_single_exact_match(self):
+        rule = models.Rule()
+        rule._text = u'copyright reserved mit is license, {{}} copyright reserved mit is license'
+        #                     0    1       2   3  4             5              6   7  8    9
+        rule.licenses = ['tst']
+        idx = index.LicenseIndex([rule], _ngram_length=2)
+        querys = u'Hi my copyright reserved mit is license the copyright reserved mit is license yes.'
+        #                 0          1      2  3       4        5            6     7  8   9
+        result = idx.match(query=querys, min_score=0)
+        assert 1 == len(result)
+
+        match = result[0]
+        assert Span(0, 9) == match.qregion
+        assert Span(0, 9) == match.iregion
+        assert 1 == match.score()
+        qtext, itext = query.get_texts(match, query=querys, dictionary=idx.dictionary)
+        assert 'copyright reserved mit is license <no-match> copyright reserved mit is license' == qtext
+        assert 'copyright reserved mit is license copyright reserved mit is license' == itext

@@ -1,3 +1,5 @@
 licenses:
     - mpl-1.1
     - lgpl-2.1
+expected_failure: yes
+notes: markup, needs pre-processing

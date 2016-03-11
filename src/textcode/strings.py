@@ -214,7 +214,7 @@ def del_special(S):
     return S.replace('\\r', ' ').replace('\\n', ' ').replace('\\t', ' ')
 
 
-def is_mangled_ccp(S):  # @UnusedVariable
+def is_mangled_ccp(S):
     return False
 
 
@@ -222,7 +222,7 @@ def demangle_cpp(S):
     return S
 
 
-def is_mangled_java(S):  # @UnusedVariable
+def is_mangled_java(S):
     return False
 
 
@@ -332,7 +332,7 @@ def JAVAREF_RE():
     return re.compile('^.*$', re.IGNORECASE)
 
 
-def is_java_ref(S):  # @UnusedVariable
+def is_java_ref(S):
     """
     Return True is S looks like a reference to a java class or package in a
     class file.

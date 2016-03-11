@@ -28,7 +28,6 @@ import codecs
 from collections import OrderedDict
 import os
 from os.path import abspath
-from os.path import dirname
 from os.path import join
 import unittest
 from unittest.case import expectedFailure
@@ -38,10 +37,10 @@ from commoncode import functional
 from commoncode import text
 
 from licensedcode import saneyaml
-from licensedcode import detect
+from licensedcode import index
 
 
-TEST_DATA_DIR = join(dirname(__file__), 'data/licenses')
+TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data/licenses')
 
 
 """
@@ -162,7 +161,7 @@ def flat_keys(matches):
     return functional.flatten(match.rule.licenses for match in matches)
 
 
-def make_license_test_function(expected_licenses, test_file, test_name, minimum_score=100):
+def make_license_test_function(expected_licenses, test_file, test_name, min_score=100, check_negative=True):
     """
     Build a test function closing on tests arguments
     """
@@ -170,15 +169,21 @@ def make_license_test_function(expected_licenses, test_file, test_name, minimum_
         expected_licenses = [expected_licenses]
 
     def data_driven_test_function(self):
-        matches = list(detect.get_license_matches(test_file, minimum_score=minimum_score))
+        idx = index.get_index()
+        matches = idx.match(location=test_file, min_score=min_score, _check_negative=check_negative)
         # the detected license is the first member of the returned tuple
         license_result = flat_keys(matches)
         try:
             assert expected_licenses == license_result
         except:
-            # on failure, we compare against more result data to get
-            # additional failure details, including the test_file and full match details
-            assert expected_licenses == ['test file: ' + test_file] + [repr(license_result)] + matches
+            # on failure, we compare against more result data to get additional
+            # failure details, including the test_file and full match details
+            from licensedcode.query import get_texts
+            matches_with_qtexts = []
+            for m in matches:
+                qtext, itext = get_texts(m, location=test_file, dictionary=idx.dictionary, width=80)
+                matches_with_qtexts.append((m, qtext.splitlines(), m.qspans, itext.splitlines(), m.ispans,))
+            assert expected_licenses == ['test file: ' + test_file] + [repr(license_result)] + matches_with_qtexts
 
     data_driven_test_function.__name__ = test_name
     data_driven_test_function.funcname = test_name
