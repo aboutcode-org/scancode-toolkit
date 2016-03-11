@@ -702,7 +702,7 @@ def renumber_token_ids(rules_tokens_ids, dictionary, tokens_by_tid, frequencies_
     # keep track of very common junk tokens: digits and single letters
     very_common = set()
     very_common_add = very_common.add
-    string_lowercase = unicode(string.lowercase)
+    string_lowercase = unicode(string.lowercase, encoding='utf-8')
     for tid, token in enumerate(tokens_by_tid):
         # DIGIT TOKENS: Treat tokens composed only of digits as common junk
         # SINGLE ASCII LETTER TOKENS: Treat single ASCII letter tokens as common junk
