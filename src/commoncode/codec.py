@@ -30,11 +30,7 @@ Numbers to bytes or strings and URLs coder/decoders.
 
 padding = '/'
 
-b85_symbols = ('0123456789'
-               'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-               'abcdefghijklmnopqrstuvwxyz'
-               '!#$%&()*+-;<=>?@^_`{|}~')
-
+b85_symbols = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&()*+-;<=>?@^_`{|}~'
 len_b85_symbols = len(b85_symbols)
 
 
@@ -86,10 +82,10 @@ def to_base85(num):
 
 def to_base10(s, b=36):
     """
-    Convert a string s representing a number in base b back to an integer.
+    Convert a string s representing a number in base b back to an integer where base <= 85.
+
     """
-    assert b <= len(b85_symbols) and b >= 2, ('Base must be in range(2, %d)'
-                                          % (len(b85_symbols)))
+    assert b <= len(b85_symbols) and b >= 2, 'Base must be in range(2, %d)' % (len(b85_symbols))
     # strip padding
     s = s.replace(padding, '')
 
@@ -112,14 +108,19 @@ def num_to_bin(num):
     safely to a long: using structs does not work easily for this.
     """
     binstr = []
+
+    # Zero is not encoded but returned as an empty value
+    if num == 0:
+        return '\x00'
+
     while num > 0:
         # add the least significant byte value
         binstr.append(chr(num & 0xFF))
         # shift the next byte to least significant and repeat
         num = num >> 8
 
-    # reverse the list now to the most significant
-    # byte is at the start of ths string to speed decoding
+    # reverse the list now such that the most significant
+    # byte is at the start of this string to speed decoding
     return ''.join(reversed(binstr))
 
 
@@ -160,6 +161,5 @@ def urlsafe_b64decode(b64):
 def _encode(num):
     """
     Encode a number (int or long) in url safe base64.
-    Used in simhash5
     """
     return b64encode(num_to_bin(num))

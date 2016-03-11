@@ -76,7 +76,9 @@ def execute(cmd, args, root_dir=None, cwd=None, env=None, to_files=False):
     temporary files.
 
     Resolve the `cmd` location using os/arch local/vendored location based on
-    using `root_dir`. Run the command `cwd` current working directory using an
+    using `root_dir`. No resolution is done if root_dir is None
+
+    Run the command using the `cwd` current working directory with an
     `env` dict of environment variables.
     """
     assert cmd
