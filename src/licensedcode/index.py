@@ -701,30 +701,35 @@ def renumber_token_ids(rules_tokens_ids, dictionary, tokens_by_tid, frequencies_
     """
     # keep track of very common junk tokens: digits and single letters
     very_common = set()
+    very_common_add = very_common.add
+    string_lowercase = unicode(string.lowercase)
     for tid, token in enumerate(tokens_by_tid):
         # DIGIT TOKENS: Treat tokens composed only of digits as common junk
         # SINGLE ASCII LETTER TOKENS: Treat single ASCII letter tokens as common junk
 
         # TODO: ensure common numbers as strings are always there (one, two, and first, second, etc.)
-        if token.isdigit() or (len(token) == 1 and token in string.lowercase):
-            very_common.add(tid)
+        if token.isdigit() or (len(token) == 1 and token in string_lowercase):
+            very_common_add(tid)
 
     # keep track of good, "not junk" tokens
     good = set()
+    good_update = good.update
 
     # Classify rules tokens as smaller or equal to `length` or regular.
     regular_rules = []
+    regular_rules_append = regular_rules.append
     small_rules = []
+    small_rules_append = small_rules.append
 
     for rid, rule_toks_ids in enumerate(rules_tokens_ids):
         len_toks = len(rule_toks_ids)
         if len_toks == 1:
             # RULES of ONE TOKEN: their token cannot be junk
-            good.update(rule_toks_ids)
+            good_update(rule_toks_ids)
         if len_toks <= length:
-            small_rules.append((rid, rule_toks_ids))
+            small_rules_append((rid, rule_toks_ids))
         else:
-            regular_rules.append((rid, rule_toks_ids))
+            regular_rules_append((rid, rule_toks_ids))
 
     # Build a candidate junk set of roughly ~ 1/10th the size of of tokens set:
     # we use a curated list of common words as a base. The final length (and
@@ -734,15 +739,17 @@ def renumber_token_ids(rules_tokens_ids, dictionary, tokens_by_tid, frequencies_
     junk_max = abs((len(tokens_by_tid) / 11) - len(very_common))
 
     junk = set()
+    junk_add = junk.add
+    dictionary_get = dictionary.get
     junk_count = 0
-
+    
     for token in global_tokens_by_ranks():
-        tid = dictionary.get(token)
+        tid = dictionary_get(token)
         if tid is None:
             continue
 
         if tid not in very_common and tid not in good:
-            junk.add(tid)
+            junk_add(tid)
             junk_count += 1
 
         if junk_count == junk_max:
