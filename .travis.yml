@@ -5,7 +5,7 @@ os:
   - linux 
 
 env:
-  - TEST_SUITE: bin/py.test -n 2 -vvs
+  - TEST_SUITE: bin/py.test -n 2 -s
   - TEST_SUITE: ./etc/release/release.sh
 
 

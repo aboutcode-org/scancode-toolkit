@@ -6,4 +6,4 @@ install:
 build: off
 
 test_script:
-    - py.test -n 2 -vvs
+    - py.test -n 2 -s
