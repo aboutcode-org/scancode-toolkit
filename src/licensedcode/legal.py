@@ -28,7 +28,7 @@ from commoncode import fileutils
 
 
 special_names = ('COPYING', 'COPYRIGHT', 'NOTICE', 'LICENSE', 'LICENCE',
-                 'LEGAL', 'EULA', 'AGREEMENT', 'ABOUT', 'COPYLEFT')
+                 'LEGAL', 'EULA', 'AGREEMENT', 'ABOUT', 'COPYLEFT', 'LICENSING')
 
 
 special_names_lower = tuple(x.lower() for x in special_names)
