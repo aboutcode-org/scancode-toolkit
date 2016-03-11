@@ -118,7 +118,7 @@ def get_licenses(location, min_score=100):
 
     idx = get_index()
 
-    for match in idx.match(location, min_score=min_score):
+    for match in idx.match(location=location, min_score=min_score):
         for license_key in match.rule.licenses:
             lic = get_license(license_key)
             result = OrderedDict()

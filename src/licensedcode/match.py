@@ -670,6 +670,7 @@ def filter_matches(matches, merge_spans=False):
 
     return matches
 
+
 def filter_spurious_matches(matches, min_score=100, min_length=0, min_density=0.33):
     """
     Return a matches sequence filtered from spurious matches and a sequence of

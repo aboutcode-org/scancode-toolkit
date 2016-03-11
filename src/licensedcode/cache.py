@@ -73,7 +73,7 @@ def get_or_build_index_from_cache():
                         idx = LicenseIndex.loads(ifc.read())
                         return idx
 
-            #here the cache is stale or non-existing: we need to regen the index
+            # here the cache is stale or non-existing: we need to regen the index
             idx = LicenseIndex(get_rules())
             with open(index_cache_file, 'wb') as ifc:
                 ifc.write(idx.dumps())
