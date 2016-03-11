@@ -91,14 +91,18 @@ def to_os_native_path(path):
     return path
 
 
-def get_test_loc(test_path, test_data_dir):
+def get_test_loc(test_path, test_data_dir, debug=False):
     """
     Given a `test_path` relative to the `test_data_dir` directory, return the
     location to a test file or directory for this path. No copy is done.
     """
+    if debug:
+        import inspect
+        caller = inspect.stack()[1][3]
+        print('\nget_test_loc,%(caller)s,"%(test_path)s","%(test_data_dir)s"' % locals())
+
     assert test_path
     assert test_data_dir
-
 
     if not os.path.exists(test_data_dir):
         raise IOError("[Errno 2] No such directory: test_data_dir not found:"
@@ -122,13 +126,18 @@ class FileDrivenTesting(object):
     """
     test_data_dir = None
 
-    def get_test_loc(self, test_path, copy=False):
+    def get_test_loc(self, test_path, copy=False, debug=False):
         """
         Given a `test_path` relative to the self.test_data_dir directory, return the
         location to a test file or directory for this path. Copy to a temp
         test location if `copy` is True.
         """
-        test_loc = get_test_loc(test_path, self.test_data_dir)
+        if debug:
+            import inspect
+            caller = inspect.stack()[1][3]
+            print('\nself.get_test_loc,%(caller)s,"%(test_path)s"' % locals())
+
+        test_loc = get_test_loc(test_path, self.test_data_dir, debug=debug)
         if copy:
             base_name = os.path.basename(test_loc)
             if filetype.is_file(test_loc):
