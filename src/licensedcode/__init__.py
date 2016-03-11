@@ -23,10 +23,37 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from os.path import abspath, dirname, join, exists
+from __future__ import absolute_import
+
+from os.path import dirname
+from os.path import abspath
+from os.path import getsize
+from os.path import getmtime
+from os.path import join
+from os.path import exists
+
+from commoncode import fileutils
 
 
-src_dir = abspath(dirname(__file__))
-data_dir = join(src_dir, 'data')
+lic_src_dir = abspath(dirname(__file__))
+src_dir = dirname(lic_src_dir)
+data_dir = join(lic_src_dir, 'data')
 licenses_data_dir = join(data_dir, 'licenses')
 rules_data_dir = join(data_dir, 'rules')
+root_dir = dirname(src_dir)
+cache_dir = join(root_dir, '.cache')
+license_index_cache_dir = join(cache_dir, 'license_index')
+
+if not exists(license_index_cache_dir):
+    fileutils.create_dir(license_index_cache_dir)
+
+
+NGRAM_LENGTH = 4
+
+# maximum gap in number of tokens between two hits or matches to be considered
+# part of the hit group or match
+MAX_GAP = 25
+
+
+# minimum length of a match to be considered as worthy
+MIN_LENGTH = 4
