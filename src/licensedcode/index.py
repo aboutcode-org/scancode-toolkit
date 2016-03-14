@@ -263,12 +263,15 @@ class LicenseIndex(object):
         ######################################################################
         # compute the unique tokens and frequency at once
         unique_tokens = Counter()
+        unique_tokens_update = unique_tokens.update
 
         # accumulate all rule tokens at once. Also assign the rule ids
         tokens_by_rid = []
+        tokens_by_rid_append = tokens_by_rid.append
 
         regular_rids = set()
         regular_rids_add = regular_rids.add
+
         negative_rids = set()
         negative_rids_add = negative_rids.add
 
@@ -279,13 +282,13 @@ class LicenseIndex(object):
             else:
                 regular_rids_add(rid)
             rule_tokens = list(rule.tokens())
-            tokens_by_rid.append(rule_tokens)
-            unique_tokens.update(rule_tokens)
+            tokens_by_rid_append(rule_tokens)
+            unique_tokens_update(rule_tokens)
 
         # Create the tokens lookup structure at once.
         # Note that tokens ids are assigned randomly at first by unzipping we
         # get the frequencies and tokens->id at once.
-        tokens_by_tid, frequencies_by_tid = izip(*sorted(unique_tokens.most_common()))
+        tokens_by_tid, frequencies_by_tid = izip(*unique_tokens.items())
         dictionary = {ts: tid for tid, ts in enumerate(tokens_by_tid)}
 
         # for speed
@@ -310,9 +313,10 @@ class LicenseIndex(object):
 
         # mapping of rule_id->new token_ids array
         new_rules_tokens_ids = []
+        new_rules_tokens_ids_append = new_rules_tokens_ids.append
         # renumber old token ids to new
         for rule_token_ids in rules_tokens_ids:
-            new_rules_tokens_ids.append(array('h', (old_to_new[tid] for tid in rule_token_ids)))
+            new_rules_tokens_ids_append(array('h', (old_to_new[tid] for tid in rule_token_ids)))
 
         # Third pass: build index structures
         ####################################
@@ -477,7 +481,6 @@ class LicenseIndex(object):
 
         assert 0 <= min_score <= 100
         logger_debug('_match start....')
-
 
         # Collect candidate rules using bitvectors of good tokens
         # ##############################################################
@@ -730,12 +733,11 @@ def renumber_token_ids(rules_tokens_ids, dictionary, tokens_by_tid, frequencies_
         else:
             regular_rules_append((rid, rule_toks_ids))
 
-    # Build a candidate junk set of roughly ~ 1/10th the size of of tokens set:
-    # we use a curated list of common words as a base. The final length (and
-    # also biggest token id) of junk tokens set typically ~ 1200 for about 12K
-    # tokens
+    # Build a candidate junk set with a defined proportion of junk tokens the
+    # size of of tokens set: we use a curated list of common words as a base.
 
-    junk_max = abs((len(tokens_by_tid) / 11) - len(very_common))
+    proportion_of_junk = float(3)
+    junk_max = abs((len(tokens_by_tid) / proportion_of_junk) - len(very_common))
 
     junk = set()
     junk_add = junk.add
@@ -769,7 +771,7 @@ def renumber_token_ids(rules_tokens_ids, dictionary, tokens_by_tid, frequencies_
                 assert not all([jt in final_junk for jt in tokens])
             except AssertionError:
                 # this is a serious index issue
-                print('!!!License Index FATAL ERROR: small rule: ', rid , 'is all made of junk:', tokens_str(tokens))
+                print('!!!LicenseIndex: FATAL ERROR: small rule: ', rid , 'is all made of junk:', tokens_str(tokens))
                 raise
 
         # Check that not too many ngrams are made entirely of junk
@@ -790,12 +792,10 @@ def renumber_token_ids(rules_tokens_ids, dictionary, tokens_by_tid, frequencies_
 
         # TODO: test that the junk choice is correct: for instance using some
         # stats based on standard deviation or markov chains or similar
-        # conditional probabilities such that we verify that CANNOT create a
+        # conditional probabilities such that we verify that we CANNOT create a
         # distinctive meaningful license string made entirely from junk tokens
 
-
-        # check that we do not have too many ngrams made entirely of junk
-        assert all_junk_ngrams_count < (length * 20)
+        # TODO: ?check that we do not have too many ngrams made entirely of junk
 
     # Sort each set of old token IDs by decreasing original frequencies
     # FIXME: should use a key function not a schwartzian sort

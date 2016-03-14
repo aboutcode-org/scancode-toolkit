@@ -262,8 +262,8 @@ class TestIndexing(IndexTesting):
         assert xtf == new_frequencies_by_tid
 
     def test_index_internals_with_template_rule(self):
-        idx = index.LicenseIndex([models.Rule(_text=u'A one. A {{}}two. A three.')])
-        expected = {'_tst_': {u'a': [0, 2, 4], u'one': [1], u'three': [5], u'two': [3]}}
+        idx = index.LicenseIndex([models.Rule(_text=u'This GPL. This {{}}GPL. This license.')])
+        expected = {'_tst_': {u'gpl': [1, 3], u'license': [5], u'this': [0, 2, 4]}}
         assert expected == idx._as_dict()
 
 

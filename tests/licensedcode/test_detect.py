@@ -49,7 +49,7 @@ class TestIndexMatch(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
     def test_match_does_not_return_matches_for_empty_query(self):
-        idx = index.LicenseIndex([Rule(_text='A one. A two. A three.')])
+        idx = index.LicenseIndex([Rule(_text='A one. A two. license A three.')])
 
         matches = idx.match(query='')
         assert [] == matches
@@ -57,7 +57,7 @@ class TestIndexMatch(FileBasedTesting):
         assert [] == matches
 
     def test_match_does_not_return_matches_for_junk_queries(self):
-        idx = index.LicenseIndex([Rule(_text='A one. a license two. A three.')])
+        idx = index.LicenseIndex([Rule(_text='A one. a license two. license A three.')])
 
         assert [] == idx.match(query=u'some other junk')
         assert [] == idx.match(query=u'some junk')
