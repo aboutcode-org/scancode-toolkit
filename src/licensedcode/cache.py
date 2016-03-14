@@ -45,7 +45,10 @@ index_cache_file = join(license_index_cache_dir, 'index_cache')
 def tree_checksum(base_dir=src_dir):
     """
     Return a checksum  computed from a file tree using the file paths, size and
-    modification time stamps
+    last modified time stamps.
+    
+    The purpose is to detect is there has been any modification to source code,
+    compiled code or licenses or rule files.
     """
     hashable = [''.join([loc, str(getmtime(loc)), str(getsize(loc))]) for loc in file_iter(base_dir)]
     return md5(''.join(hashable)).hexdigest()
@@ -53,7 +56,8 @@ def tree_checksum(base_dir=src_dir):
 
 def get_or_build_index_from_cache():
     """
-    Return a LicenseIndex loaded from cache or build a new index and caches it.
+    Return a LicenseIndex loaded from cache. If the index is stale or does not
+    exist, build a new index and caches it.
     """
     from licensedcode.index import LicenseIndex
     from licensedcode.models import get_rules
@@ -70,8 +74,9 @@ def get_or_build_index_from_cache():
                 if current_checksum == existing_checksum:
                     # load index from cache
                     with open(index_cache_file, 'rb') as ifc:
+                        # Note: loads() is much (twice++) faster than load()
                         idx = LicenseIndex.loads(ifc.read())
-                        return idx
+                    return idx
 
             # here the cache is stale or non-existing: we need to regen the index
             idx = LicenseIndex(get_rules())
@@ -85,5 +90,5 @@ def get_or_build_index_from_cache():
             return idx
 
     except yg.lockfile.FileLockTimeout:
-        # handle unable to lock
+        # TODO: unable to lock in a nicer way 
         raise
