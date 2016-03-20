@@ -170,6 +170,7 @@ Other contributors, listed alphabetically, are:
 * Joe Schafer -- Ada lexer
 * Ken Schutte -- Matlab lexers
 * Tassilo Schweyer -- Io, MOOCode lexers
+* Sebastian Schweizer -- Whiley lexer
 * Ted Shaw -- AutoIt lexer
 * Joerg Sieker -- ABAP lexer
 * Robert Simmons -- Standard ML lexer
