@@ -76,6 +76,11 @@ class TypeTest(commoncode.testcase.FileBasedTesting):
 
         assert sorted(expected) == sorted(results)
 
+    def test_get_debiantype(self):
+        test_file = self.get_test_loc('filetype/debian/libjama-dev_1.2.4-2_all.deb')
+        type = filetype.get_type(test_file)
+        assert 'f' == type 
+
     def test_is_rwx_with_none(self):
         assert not filetype.is_writable(None)
         assert not filetype.is_readable(None)
