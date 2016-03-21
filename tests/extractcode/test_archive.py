@@ -1024,6 +1024,11 @@ class TestDebian(BaseArchiveTestCase):
         archive.extract_ar(test_file, test_dir)
         check_size(158441, os.path.join(test_dir, 'data.tar.gz'))
 
+    def test_get_best_handler_deb_package_is_an_archive(self):
+        test_file = self.get_test_loc('archive/deb/libjama-dev_1.2.4-2_all.deb')
+        handler = get_best_handler(test_file)
+        assert archive.DebHandler == handler
+
     def test_extract_deb_package_3(self):
         test_file = self.get_test_loc('archive/deb/wget-el_0.5.0-8_all.deb')
         test_dir = self.get_temp_dir()

@@ -147,6 +147,16 @@ class TestContentType(FileBasedTesting):
         assert is_archive(self.get_test_loc('contenttype/archive/e.tar'))
         assert 'posix tar archive (gnu)' == get_filetype(self.get_test_loc('contenttype/archive/e.tar'))
 
+    def test_debian_package(self):
+        test_file = self.get_test_loc('contenttype/package/libjama-dev_1.2.4-2_all.deb')
+        assert 'debian binary package (format 2.0)' == get_filetype(test_file)
+        assert is_binary(test_file)
+
+    @expectedFailure
+    def test_debian_package_is_archive(self):
+        test_file = self.get_test_loc('contenttype/package/libjama-dev_1.2.4-2_all.deb')
+        assert is_archive(test_file)
+
     def test_archive_gz(self):
         assert is_binary(self.get_test_loc('contenttype/archive/file_4.26-1.diff.gz'))
         assert is_archive(self.get_test_loc('contenttype/archive/file_4.26-1.diff.gz'))
