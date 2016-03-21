@@ -191,6 +191,7 @@ class Package(object):
         # checksums for the download
         self.download_sha1 = None
         self.download_sha256 = None
+        self.download_sha512 = None
         self.download_md5 = None
 
         # issue or bug tracker
