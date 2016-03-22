@@ -33,6 +33,7 @@ htmlcov
 .project
 .pydevproject
 .idea
+org.eclipse.core.resources.prefs
 
 # Sphinx
 docs/_build
