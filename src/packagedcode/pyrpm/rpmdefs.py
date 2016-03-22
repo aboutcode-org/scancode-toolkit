@@ -3,17 +3,17 @@
 # vim:ts=4:sw=4:et
 
 # Copyright (c) Mário Morgado
-# 
+#
 # Redistribution and use in source and binary forms, with or without modification,
 # are permitted provided that the following conditions are met:
-# 
+#
 # 1. Redistributions of source code must retain the above copyright notice, this
 # list of conditions and the following disclaimer.
-# 
+#
 # 2. Redistributions in binary form must reproduce the above copyright notice,
 # this list of conditions and the following disclaimer in the documentation and/or
 # other materials provided with the distribution.
-# 
+#
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 # ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 # WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -36,7 +36,7 @@ RPM_HEADER_MAGIC_NUMBER = '\x8e\xad\xe8'
 RPMTAG_MIN_NUMBER = 1000
 RPMTAG_MAX_NUMBER = 1146
 
-#signature tags
+# signature tags
 RPMSIGTAG_SIZE     = 1000
 RPMSIGTAG_LEMD5_1  = 1001
 RPMSIGTAG_PGP      = 1002
@@ -46,8 +46,8 @@ RPMSIGTAG_GPG      = 1005
 RPMSIGTAG_PGP5     = 1006
 
 
-MD5_SIZE = 16 #16 bytes long
-PGP_SIZE = 152 #152 bytes long
+MD5_SIZE = 16  # 16 bytes long
+PGP_SIZE = 152  # 152 bytes long
 
 
 # data types definition
@@ -59,11 +59,11 @@ RPM_DATA_TYPE_INT32 = 4
 RPM_DATA_TYPE_INT64 = 5
 RPM_DATA_TYPE_STRING = 6
 RPM_DATA_TYPE_BIN = 7
-#these types are not really standard, 8 and 9 were used for strings in the past
-#rpm3 defines these this way
-RPM_DATA_TYPE_STRING_ARRAY = 8 #entries with multiple strings
-RPM_DATA_TYPE_I18NSTRING_TYPE = 9 #internationalized string 
-#new types, not yet supported, though said to be handled as binary
+# these types are not really standard, 8 and 9 were used for strings in the past
+# rpm3 defines these this way
+RPM_DATA_TYPE_STRING_ARRAY = 8  # entries with multiple strings
+RPM_DATA_TYPE_I18NSTRING_TYPE = 9  # internationalized string 
+# new types, not yet supported, though said to be handled as binary
 RPM_DATA_TYPE_ASN1 = 10
 RPM_DATA_TYPE_OPENPGP = 11
 
@@ -81,19 +81,20 @@ RPM_DATA_TYPES = (RPM_DATA_TYPE_NULL,
                   RPM_DATA_TYPE_OPENPGP
                   )
 
-#tags to collect
+# tags to collect
 
 RPMTAG_NAME = 1000
 RPMTAG_VERSION = 1001
 RPMTAG_RELEASE = 1002
+RPMTAG_EPOCH = 1003
 RPMTAG_SUMMARY = 1004
 RPMTAG_DESCRIPTION = 1005
 RPMTAG_DISTRIBUTION = 1010
-RPMTAG_VENDOR = 1011 
+RPMTAG_VENDOR = 1011
 RPMTAG_LICENSE = 1014
 RPMTAG_PACKAGER = 1015
 RPMTAG_GROUP = 1016
-RPMTAG_PATCH = 1019 
+RPMTAG_PATCH = 1019
 RPMTAG_URL = 1020
 RPMTAG_OS = 1021
 RPMTAG_ARCH = 1022
@@ -102,25 +103,28 @@ RPMTAG_SOURCEPACKAGE = 1106
 RPMTAG_DISTURL = 1123
 
 
+RPMTAGS = {
+   RPMTAG_NAME: 'name',
+   RPMTAG_EPOCH: 'epoch',
+   RPMTAG_VERSION: 'version',
+   RPMTAG_RELEASE: 'release',
+   RPMTAG_SUMMARY: 'summary',
+   RPMTAG_DESCRIPTION: 'description',
+   RPMTAG_DISTRIBUTION: 'distribution',
+   RPMTAG_VENDOR: 'vendor',
+   RPMTAG_LICENSE: 'license',
+   RPMTAG_PACKAGER: 'packager',
+   RPMTAG_GROUP: 'group',
+   RPMTAG_PATCH: 'patch',
+   RPMTAG_URL: 'url',
+   RPMTAG_OS: 'os',
+   RPMTAG_ARCH: 'arch',
+   RPMTAG_SOURCERPM: 'source_rpm',
+   RPMTAG_SOURCEPACKAGE: 'source_package',
+   RPMTAG_DISTURL: 'dist_url',
+}
 
-RPMTAGS = {RPMTAG_NAME:'name',
-           RPMTAG_VERSION:'version',
-           RPMTAG_RELEASE:'release',
-           RPMTAG_SUMMARY:'summary',
-           RPMTAG_DESCRIPTION:'description',
-           RPMTAG_DISTRIBUTION:'distribution',
-           RPMTAG_VENDOR:'vendor',
-           RPMTAG_LICENSE:'license',
-           RPMTAG_PACKAGER:'packager',
-           RPMTAG_GROUP:'group',
-           RPMTAG_PATCH:'patch',
-           RPMTAG_URL:'url',
-           RPMTAG_OS:'os',
-           RPMTAG_ARCH:'arch',
-           RPMTAG_SOURCERPM:'source_rpm',
-           RPMTAG_SOURCEPACKAGE:'source_package',
-           RPMTAG_DISTURL:'dist_url',
-           }
+
 """
 from rpm.org lib/rpmtag.h
 See also: http://refspecs.linuxfoundation.org/LSB_5.0.0/LSB-Core-generic/LSB-Core-generic/pkgformat.html
@@ -328,4 +332,3 @@ RPMTAG_ORIGFILENAMES = 5007,
 RPMTAG_LONGFILESIZES = 5008,
 RPMTAG_LONGSIZE = 5009, }
 """
-

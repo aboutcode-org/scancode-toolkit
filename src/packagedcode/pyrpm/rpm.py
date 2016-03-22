@@ -3,17 +3,17 @@
 # vim:ts=4:sw=4:et
 
 # Copyright (c) Mário Morgado
-# 
+#
 # Redistribution and use in source and binary forms, with or without modification,
 # are permitted provided that the following conditions are met:
-# 
+#
 # 1. Redistributions of source code must retain the above copyright notice, this
 # list of conditions and the following disclaimer.
-# 
+#
 # 2. Redistributions in binary form must reproduce the above copyright notice,
 # this list of conditions and the following disclaimer in the documentation and/or
 # other materials provided with the distribution.
-# 
+#
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 # ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 # WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -29,7 +29,8 @@
 PyRPM
 =====
 
-PyRPM is a pure python, simple to use, module to read information from a RPM file.
+PyRPM is a pure python, simple to use, module to read information from a RPM
+file.
 '''
 
 from __future__ import absolute_import
@@ -42,6 +43,7 @@ import re
 from . import rpmdefs
 
 HEADER_MAGIC_NUMBER = re.compile('(\x8e\xad\xe8)')
+
 
 def find_magic_number(regexp, data):
     ''' find a magic number in a buffer
@@ -65,17 +67,19 @@ class Entry(object):
         self.entry = entry
         self.store = store
 
-        self.switch = { rpmdefs.RPM_DATA_TYPE_CHAR:            self.__readchar,
-                        rpmdefs.RPM_DATA_TYPE_INT8:            self.__readint8,
-                        rpmdefs.RPM_DATA_TYPE_INT16:           self.__readint16,
-                        rpmdefs.RPM_DATA_TYPE_INT32:           self.__readint32,
-                        rpmdefs.RPM_DATA_TYPE_INT64:           self.__readint64,
-                        rpmdefs.RPM_DATA_TYPE_STRING:          self.__readstring,
-                        rpmdefs.RPM_DATA_TYPE_BIN:             self.__readbin,
-                        rpmdefs.RPM_DATA_TYPE_STRING_ARRAY:    self.__readstring,
-                        rpmdefs.RPM_DATA_TYPE_ASN1:            self.__readbin,
-                        rpmdefs.RPM_DATA_TYPE_OPENPGP:         self.__readbin,
-                        rpmdefs.RPM_DATA_TYPE_I18NSTRING_TYPE: self.__readstring}
+        self.switch = {
+            rpmdefs.RPM_DATA_TYPE_CHAR:            self.__readchar,
+            rpmdefs.RPM_DATA_TYPE_INT8:            self.__readint8,
+            rpmdefs.RPM_DATA_TYPE_INT16:           self.__readint16,
+            rpmdefs.RPM_DATA_TYPE_INT32:           self.__readint32,
+            rpmdefs.RPM_DATA_TYPE_INT64:           self.__readint64,
+            rpmdefs.RPM_DATA_TYPE_STRING:          self.__readstring,
+            rpmdefs.RPM_DATA_TYPE_BIN:             self.__readbin,
+            rpmdefs.RPM_DATA_TYPE_STRING_ARRAY:    self.__readstring,
+            rpmdefs.RPM_DATA_TYPE_ASN1:            self.__readbin,
+            rpmdefs.RPM_DATA_TYPE_OPENPGP:         self.__readbin,
+            rpmdefs.RPM_DATA_TYPE_I18NSTRING_TYPE: self.__readstring
+        }
         self.store.seek(entry[2])
         self.value = self.switch[entry[1]]()
         self.tag = entry[0]
@@ -130,7 +134,7 @@ class Entry(object):
         string = ''
         while 1:
             char = self.__readchar()
-            if char[0] == '\x00': # read until '\0'
+            if char[0] == '\x00':  # read until '\0'
                 break
             string += char[0]
         return string
@@ -151,7 +155,7 @@ class Entry(object):
 class Header(object):
     ''' RPM Header Structure
     '''
-    def __init__(self, header, entries , store):
+    def __init__(self, header, entries, store):
         self.header = header
         self.entries = entries
         self.store = store
@@ -194,12 +198,12 @@ class RPM(object):
     def __init__(self, rpm):
         ''' rpm - StringIO.StringIO | file
         '''
-        if hasattr(rpm, 'read'): # if it walk like a duck..
+        if hasattr(rpm, 'read'):  # if it walk like a duck..
             self.rpmfile = rpm
         else:
             raise ValueError('invalid initialization: '
                              'StringIO or file expected received %s'
-                                 % (type(rpm), ))
+                                 % (type(rpm),))
         self.binary = None
         self.source = None
         self.__entries = []
@@ -321,7 +325,7 @@ class RPM(object):
     def tags(self):
         '''returns a dict of tags, keyed by name'''
         tgs = {}
-        for tagid,tagname in rpmdefs.RPMTAGS.items():
+        for tagid, tagname in rpmdefs.RPMTAGS.items():
             try:
                 tag = self[tagid]
                 if tag == 'None' or tag == None : tag = ''

@@ -26,9 +26,9 @@ from __future__ import absolute_import, print_function
 
 from collections import namedtuple
 
-from packagedcode.models import AssertedLicense
+from packagedcode.models import AssertedLicense, Package
 from packagedcode.pyrpm.rpm import RPM
-from packagedcode.pyrpm.rpm import RPMError
+from packagedcode.models import RpmPackage
 
 import typecode.contenttype
 
@@ -38,27 +38,33 @@ import typecode.contenttype
 #  http://www.faqs.org/docs/artu/ch05s02.html#id2906931%29.)
 #  http://code.activestate.com/recipes/436229-record-jar-parser/
 
-RPM_TAGS = ('name',
-           'version',
-           'release',
-           'summary',
-           # the full description is often a long text
-           'description',
-           'distribution',
-           'vendor',
-           'license',
-           'packager',
-           'group',
-           'patch',
-           'url',
-           'os',
-           'arch',
-           'source_rpm',
-           'source_package',
-           'dist_url',
-           'bin_or_src',
-           )
+RPM_TAGS = (
+    'name',
+    'epoch',
+    'version',
+    'release',
+    'arch',
+    'os',
+    'summary',
+    # the full description is often a long text
+    'description',
+    'distribution',
+    'vendor',
+    'license',
+    'packager',
+    'group',
+    'patch',
+    'url',
+    'source_rpm',
+    'source_package',
+    'dist_url',
+    'bin_or_src',
+)
 
+
+class EnhancedRpmPackage(RpmPackage):
+    def __init__(self, **kwargs):
+        pass
 
 RPMInfo = namedtuple('RPMInfo', list(RPM_TAGS))
 
@@ -95,30 +101,34 @@ def info(location, include_desc=False):
     the long RPM description value if include_desc is True.
     """
     tgs = tags(location, include_desc)
-    return RPMInfo(**tgs) if tgs else None
+    return tgs and RPMInfo(**tgs) or None
 
 
 def parse(location):
     """
-    Return a package object of RPM metadata.
-    'location' is the file location.
+    Return an RpmPackage object for the file at location or None if the file is
+    not an RPM.
     """
-    from packagedcode.models import RpmPackage
-    infos = tags(location, include_desc=True)
-    asserted_license = AssertedLicense(license=infos['license'])
-    package = RpmPackage(
-                summary=infos['summary'],
-                description=infos['description'],
-                name=infos['name'],
-                version=infos['version'],
-                release=infos['release'],
-                homepage_url=infos['url'],
-                source_rpm=infos['source_rpm'],
-                distributors=infos['distribution'],
-                arch=infos['arch'],
-                location=location,
-                os=infos['os'],
-                vendor=infos['vendor'],
-                bin_or_src=infos['bin_or_src'],
-                asserted_licenses=[asserted_license],)
-    return package
+    infos = info(location, include_desc=True)
+    if not infos:
+        return
+    package = dict(
+        summary=infos.summary,
+        description=infos.description,
+        name=infos.name,
+        epoch=infos.epoch,
+        version=infos.version,
+        release=infos.release,
+        homepage_url=infos.url,
+        distributors=[infos.distribution],
+        arch=infos.arch,
+        location=location,
+        os=infos.os,
+        vendors=[infos.vendor],
+    )
+    if infos.license:
+        package['asserted_licenses'] = [AssertedLicense(license=infos.license)]
+    if infos.source_rpm:
+        src_rpm = RpmPackage(name=infos.source_rpm)
+        package['related_packages'] = {Package.payload_src: [src_rpm]}
+    return RpmPackage(**package)
