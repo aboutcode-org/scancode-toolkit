@@ -26,7 +26,8 @@ from __future__ import absolute_import, print_function
 
 from collections import namedtuple
 
-from packagedcode.models import AssertedLicense, Package
+from packagedcode.models import AssertedLicense
+from packagedcode.models import Package
 from packagedcode.pyrpm.rpm import RPM
 from packagedcode.models import RpmPackage
 
@@ -62,10 +63,6 @@ RPM_TAGS = (
 )
 
 
-class EnhancedRpmPackage(RpmPackage):
-    def __init__(self, **kwargs):
-        pass
-
 RPMInfo = namedtuple('RPMInfo', list(RPM_TAGS))
 
 
@@ -75,7 +72,7 @@ def tags(location, include_desc=False):
     dictionary. Include the long RPM description value if include_desc is True.
     """
     T = typecode.contenttype.get_type(location)
-    if not 'rpm' in T.filetype_file.lower():
+    if 'rpm' not in T.filetype_file.lower():
         return {}
 
     with open(location, 'rb') as rpmf:
