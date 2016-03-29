@@ -1,7 +1,5 @@
 Copyright (c) 1992-2010 Bruno Haible, Michael Stoll, Sam Steingold
                            All Rights Reserved
-
-
 Summary:
 
   This program is free software; you can redistribute it and/or modify
@@ -16,7 +14,6 @@ Summary:
   You should have received a copy of the GNU General Public License
   along with this program; if not, write to the Free Software Foundation,
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
-
 
 Note:
 
@@ -54,7 +51,6 @@ Note:
   through dynamic linking is not exempted from this copyright. I.e. such
   code, when distributed for use with CLISP, must be distributed under
   the GPL.
-
 
 Authors:
   Generic CLISP: Bruno Haible, Michael Stoll

@@ -4,7 +4,6 @@ Copyright {{15 1999 2002-2006 <s>LaTeX3 Project</s> }}
     Everyone is allowed to distribute verbatim copies of this
     license document, but modification of it is not allowed.
 
-
 PREAMBLE
 ========
 
@@ -389,7 +388,6 @@ with the case that a Derived Work is intended to be used as a
 (compatible or incompatible) replacement of the original Work. If
 this is not the case (e.g., if a few lines of code are reused for a
 completely different task), then clauses 6b and 6d shall not apply.
-
 
 Important Recommendations
 -------------------------
