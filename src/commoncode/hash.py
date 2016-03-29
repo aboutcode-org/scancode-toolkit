@@ -22,11 +22,12 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import, division, print_function
 
 import hashlib
 
-from commoncode import codec
+from commoncode.codec import bin_to_num
+from commoncode.codec import urlsafe_b64encode
 from commoncode import filetype
 
 
@@ -40,59 +41,50 @@ truncated md5. Other length use SHA hashes.
 Checksums are operating on files.
 """
 
-def hash_mod(bitsize, hmodule):
+def _hash_mod(bitsize, hmodule):
     """
     Return a hashing class returning hashes with a `bitsize` bit length. The
     interface of this class is similar to the hash module API.
     """
-    class hash_cls(object):
+    class hasher(object):
         def __init__(self, msg=None):
-            self.digest_size = size / 8
-            if msg:
-                self.hd = module(msg).digest()[-(self.digest_size):]
-            else:
-                self.hd = None
+            digest_size = bitsize // 8
+            self.h = msg and hmodule(msg).digest()[:digest_size] or None
 
         def digest(self):
-            return self.hd
+            return self.h
 
         def hexdigest(self):
-            if self.hd:
-                return self.hd.encode('hex')
+            return self.h and self.h.encode('hex')
 
         def b64digest(self):
-            if self.hd:
-                return codec.urlsafe_b64encode(self.hd)
+            return self.h and urlsafe_b64encode(self.h)
 
         def intdigest(self):
-            if self.hd:
-                return codec.bin_to_num(self.hd)
+            return self.h and bin_to_num(self.h)
 
-    size = bitsize
-    module = hmodule
-    return hash_cls
+    return hasher
+
 
 # Base hashers for each bit size
-bitsizes = {
+_hashmodules_by_bitsize = {
     # md5-based
-    16: hashlib.md5, 24: hashlib.md5, 32: hashlib.md5, 48: hashlib.md5,
-    64: hashlib.md5, 96: hashlib.md5, 128: hashlib.md5,
+    32: _hash_mod(32, hashlib.md5),
+    64: _hash_mod(64, hashlib.md5),
+    128: _hash_mod(128, hashlib.md5),
     # sha-based
-    160: hashlib.sha1, 224: hashlib.sha224, 256: hashlib.sha256,
-    384: hashlib.sha384, 512: hashlib.sha512
+    160: _hash_mod(160, hashlib.sha1),
+    256: _hash_mod(256, hashlib.sha256),
+    384: _hash_mod(384, hashlib.sha384),
+    512: _hash_mod(512, hashlib.sha512)
 }
-
-
-# All available hash modules keyed by the bit size of the hashed output.
-hashmodules_by_bitsize = dict ((s, hash_mod(s, m),)
-                               for s, m in bitsizes.items())
 
 
 def get_hasher(bitsize):
     """
     Return a hasher for a given size in bits of the resulting hash.
     """
-    return hashmodules_by_bitsize[bitsize]
+    return _hashmodules_by_bitsize[bitsize]
 
 
 def checksum(location, bitsize, base64=False):
@@ -112,17 +104,21 @@ def checksum(location, bitsize, base64=False):
     hashed = hasher(hashable)
     if base64:
         return hashed.b64digest()
-    else:
-        return hashed.hexdigest()
+
+    return hashed.hexdigest()
 
 
 def md5(location):
     return checksum(location, bitsize=128, base64=False)
 
-
 def sha1(location):
     return checksum(location, bitsize=160, base64=False)
 
-
 def b64sha1(location):
     return checksum(location, bitsize=160, base64=True)
+
+def sha256(location):
+    return checksum(location, bitsize=256, base64=False)
+
+def sha512(location):
+    return checksum(location, bitsize=512, base64=False)
