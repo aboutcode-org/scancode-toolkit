@@ -1,0 +1,14 @@
+about_resource: pyrpm
+date: 2010-03-12
+scm_tool:git
+scm_repository: git://github.com/mjvm/pyrpm.git
+scm_rev: 405aaa4b33c91d25d96c0fa7e1f02d520ef5cd9a
+version: 405aaa4b33c91d25d96c0fa7e1f02d520ef5cd9a
+
+dje_license: bsd-new
+license_text: pyrpm.LICENSE
+owner: Mário Morgado
+
+description: PyRPM is a pure python module to extract information from a RPM package.
+
+notes: patched and fixed, with several tests added
