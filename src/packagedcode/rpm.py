@@ -113,19 +113,19 @@ def parse(location):
         summary=infos.summary,
         description=infos.description,
         name=infos.name,
-        epoch=infos.epoch,
-        version=infos.version,
-        release=infos.release,
+#         epoch=infos.epoch,
+        _version=infos.version,
+#         release=infos.release,
         homepage_url=infos.url,
         distributors=[infos.distribution],
-        arch=infos.arch,
+#         arch=infos.arch,
         location=location,
-        os=infos.os,
+#         os=infos.os,
         vendors=[infos.vendor],
     )
     if infos.license:
-        package['asserted_licenses'] = [AssertedLicense(license=infos.license)]
+        package['asserted_licenses'] = [AssertedLicense(dict(license=infos.license))]
     if infos.source_rpm:
-        src_rpm = RpmPackage(name=infos.source_rpm)
-        package['related_packages'] = {Package.payload_src: [src_rpm]}
-    return RpmPackage(**package)
+        src_rpm = RpmPackage(dict(name=infos.source_rpm))
+#         package['related_packages'] = {Package.payload_src: [src_rpm]}
+    return RpmPackage(package)

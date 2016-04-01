@@ -145,7 +145,7 @@ def parse(location):
 
     # a package.json is at the root of an NPM package
     base_dir = fileutils.parent_directory(location)
-    package = NpmPackage(location=base_dir)
+    package = NpmPackage(dict(location=base_dir))
     package.metafile_locations = [location]
 
     for source, target in plain_fields.items():
@@ -186,7 +186,7 @@ def licensing_mapper(licenses, package):
         return package
 
     if isinstance(licenses, basestring):
-        package.asserted_licenses.append(AssertedLicense(license=licenses))
+        package.asserted_licenses.append(AssertedLicense(dict(license=licenses)))
 
     elif isinstance(licenses, dict):
         """

@@ -73,4 +73,4 @@ def recognize_packaged_archives(location):
 
         if type_matched and mime_matched and extension_matched:
             # we return the first match in the order of PACKAGE_TYPES
-            return package(location=location)
+            return package(dict(location=location))

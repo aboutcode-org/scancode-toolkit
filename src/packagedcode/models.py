@@ -25,6 +25,11 @@
 from __future__ import absolute_import, print_function
 
 from collections import OrderedDict
+from schematics.models import Model
+from schematics.types import StringType
+from schematics.types.compound import ListType
+from schematics.types.compound import ModelType
+from schematics.types.compound import DictType
 
 
 """
@@ -94,7 +99,34 @@ The payload of files and directories possibly contains:
   -- code in source or compiled form or both.
 """
 
-class Package(object):
+
+class AssertedLicense(Model):
+    """
+    As asserted in a package
+    """
+    license = StringType(default=None)
+    text = StringType(default=None)
+    notice = StringType(default=None)
+    url = StringType(default=None)
+
+#     def __init__(self, license=None, text=None, notice=None, url=None):  # @ReservedAssignment
+#         # this is not well defined and is package dependent
+#         # can be a license name, text, formal or free expression
+#         self.license = license
+#         self.text = text
+#         self.notice = notice
+#         self.url = url
+
+    def as_dict(self):
+        license = OrderedDict()  # @ReservedAssignment
+        license['license'] = self.license
+        license['text'] = self.text
+        license['notice'] = self.notice
+        license['url'] = self.url
+        return license
+
+
+class Package(Model):
     """
     A package base class.
     """
@@ -140,117 +172,116 @@ class Package(object):
     payload_bin = 'binary'
     payload_doc = 'doc'
     PAYLOADS = (payload_src, payload_bin, payload_doc,)
+    # path to a file or directory
+    location = StringType(default=None)
 
-    def __init__(self, **kwargs):
-        # path to a file or directory
-        self.location = None
+    # path to where a package archive has been extracted
+    extracted_to = StringType(default=None)
 
-        # path to where a package archive has been extracted
-        self.extracted_to = None
+    # the id of the package
+    id = StringType(default=None)
+    _version = ListType(StringType(), default=[])
+    name = StringType(required=True)
+    # this is a "short" description.
+    summary = StringType(default=None)
+    # this is a "long" description, often several pages of text.
+    description = StringType(default=None)
 
-        # the id of the package
-        self.id = None
-        self._version = []
-        self.name = None
-        # this is a "short" description.
-        self.summary = None
-        # this is a "long" description, often several pages of text.
-        self.description = None
+    # the type of payload in this package. one of PAYLOADS or none
+    payload_type = StringType(default=None)
 
-        # the type of payload in this package. one of PAYLOADS or none
-        self.payload_type = None
+    # list of Parties: authors, packager, maintainers, contributors, distributor, vendor, etc
+    authors = ListType(StringType(), default=[])
+    maintainers = ListType(StringType(), default=[])
+    contributors = ListType(StringType(), default=[])
+    owners = ListType(StringType(), default=[])
+    packagers = ListType(StringType(), default=[])
+    distributors = ListType(StringType(), default=[])
+    vendors = ListType(StringType(), default=[])
 
-        # list of Parties: authors, packager, maintainers, contributors, distributor, vendor, etc
-        self.authors = []
-        self.maintainers = []
-        self.contributors = []
-        self.owners = []
-        self.packagers = []
-        self.distributors = []
-        self.vendors = []
+    # keywords or tags
+    keywords = ListType(StringType(), default=[])
+    # url to a reference documentation for keywords or tags (such as a Pypi or SF.net Trove map)
+    keywords_doc_url = StringType(default=None)
 
-        # keywords or tags
-        self.keywords = []
-        # url to a reference documentation for keywords or tags (such as a Pypi or SF.net Trove map)
-        self.keywords_doc_url = None
+    # paths to metadata files for this package, if any
+    # can be the same as the package location (e.g. RPMs)
+    metafile_locations = ListType(StringType(), default=[])
 
-        # paths to metadata files for this package, if any
-        # can be the same as the package location (e.g. RPMs)
-        self.metafile_locations = []
+    # URLs to metadata files for this package.
+    metafile_urls = ListType(StringType(), default=[])
 
-        # URLs to metadata files for this package.
-        self.metafile_urls = []
+    homepage_url = StringType(default=None)
+    notes = StringType(default=None)
 
-        self.homepage_url = None
-        self.notes = None
+    # one or more direct download urls, possibly in SPDX vcs url form
+    # the first one is considered to be the primary
+    download_urls = ListType(StringType(), default=[])
 
-        # one or more direct download urls, possibly in SPDX vcs url form
-        # the first one is considered to be the primary
-        self.download_urls = []
+    # checksums for the download
+    download_sha1 = StringType(default=None)
+    download_sha256 = StringType(default=None)
+    download_md5 = StringType(default=None)
 
-        # checksums for the download
-        self.download_sha1 = None
-        self.download_sha256 = None
-        self.download_sha512 = None
-        self.download_md5 = None
+    # issue or bug tracker
+    bug_tracking_url = StringType(default=None)
 
-        # issue or bug tracker
-        self.bug_tracking_url = None
+    # strings (such as email, urls, etc)
+    support_contacts = ListType(StringType(), default=[])
 
-        # strings (such as email, urls, etc)
-        self.support_contacts = []
+    # a URL where the code can be browsed online
+    code_view_url = StringType(default=None)
 
-        # a URL where the code can be browsed online
-        self.code_view_url = None
+    # one of git, svn, hg, etc
+    vcs_tool = StringType(default=None)
+    # a URL in the SPDX form of:
+    # git+https://github.com/nexb/scancode-toolkit.git
+    vcs_repository = StringType(default=None)
+    # a revision, branch, tag reference, etc (can also be included in the URL
+    vcs_revision = StringType(default=None)
 
-        # one of git, svn, hg, etc
-        self.vcs_tool = None
-        # a URL in the SPDX form of:
-        # git+https://github.com/nexb/scancode-toolkit.git
-        self.vcs_repository = None
-        # a revision, branch, tag reference, etc (can also be included in the URL
-        self.vcs_revision = None
+    # a top level copyright often asserted in metadata
+    copyright_top_level = StringType(default=None)
+    # effective copyrights as detected and eventually summarized
+    copyrights = ListType(StringType(), default=[])
 
-        # a top level copyright often asserted in metadata
-        self.copyright_top_level = None
-        # effective copyrights as detected and eventually summarized
-        self.copyrights = []
+    # as asserted licensing information
+    # a list of AssertLicense objects
+    asserted_licenses = ListType(ModelType(AssertedLicense), default=[])
 
-        # as asserted licensing information
-        # a list of AssertLicense objects
-        self.asserted_licenses = []
+    # list of legal files locations (such as COPYING, NOTICE, LICENSE, README, etc.)
+    legal_file_locations = ListType(StringType(), default=[])
 
-        # list of legal files locations (such as COPYING, NOTICE, LICENSE, README, etc.)
-        self.legal_file_locations = []
+    # resolved or detected license expressions
+    license_expression = StringType(default=None)
+    # a list of license texts
+    license_texts = ListType(StringType(), default=[])
 
-        # resolved or detected license expressions
-        self.license_expression = None
-        # a list of license texts
-        self.license_texts = []
+    # a list of notices texts
+    notice_texts = ListType(StringType(), default=[])
 
-        # a list of notices texts
-        self.notice_texts = []
+    # map of dependency group to a list of dependencies for each DEPENDENCY_GROUPS
+    dependencies = DictType(StringType(), default=OrderedDict())
 
-        # map of dependency group to a list of dependencies for each DEPENDENCY_GROUPS
-        self.dependencies = OrderedDict()
+    # map to a list of related packages keyed by PAYLOAD
+    # for instance the SRPM of an RPM
+#     related_packages = ListType(ModelType())
 
-        # map to a list of related packages keyed by PAYLOAD
-        # for instance the SRPM of an RPM
-        self.related_packages = OrderedDict()
-
-        # accept all keywords arguments, print a message for unknown arguments
-        for k, v in kwargs.items():
-            # handle properties
-            prop = getattr(self.__class__, k, None)
-            if isinstance(prop, property):
-                prop.fset(self, v)
-                continue
-
-            # plain attributes
-            if not hasattr(self, k):
-                # FIXME: this should be a log message instead
-                print('Warning: creating Package with unknown argument: %(k)r: %(v)r' % locals())
-            setattr(self, k, v)
+#     def __init__(self, **kwargs):
+#         # accept all keywords arguments, print a message for unknown arguments
+#         for k, v in kwargs.items():
+#             # handle properties
+#             prop = getattr(self.__class__, k, None)
+#             if isinstance(prop, property):
+#                 prop.fset(self, v)
+#                 continue
+# 
+#             # plain attributes
+#             attr = getattr(self, k, None)
+#             if not attr:
+#                 # FIXME: this should be a log message instead
+#                 print('Warning: creating Package with unknown argument: %(k)r: %(v)r' % locals())
+#             setattr(self, k, v)
 
     @property
     def version(self):
@@ -337,27 +368,6 @@ class Package(object):
             # package['location'] = self.location
             # package['extracted_to'] = self.extracted_to
             raise NotImplementedError()
-
-
-class AssertedLicense(object):
-    """
-    As asserted in a package
-    """
-    def __init__(self, license=None, text=None, notice=None, url=None):  # @ReservedAssignment
-        # this is not well defined and is package dependent
-        # can be a license name, text, formal or free expression
-        self.license = license
-        self.text = text
-        self.notice = notice
-        self.url = url
-
-    def as_dict(self):
-        license = OrderedDict()  # @ReservedAssignment
-        license['license'] = self.license
-        license['text'] = self.text
-        license['notice'] = self.notice
-        license['url'] = self.url
-        return license
 
 
 class Party(object):
