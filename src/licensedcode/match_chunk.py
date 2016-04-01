@@ -24,16 +24,13 @@
 
 from __future__ import print_function, absolute_import
 
+from copy import copy
 from itertools import islice
 from itertools import izip
 
 from licensedcode.whoosh_spans.spans import Span
-
 from licensedcode import NGRAM_LENGTH
-
 from licensedcode.match import LicenseMatch
-from licensedcode.query import filtered_query_tokens
-from licensedcode.query import query_ngrams
 from licensedcode.tokenize import ngrams
 
 
@@ -50,7 +47,7 @@ ngram if this is not a template, or several if this a template.
 At matching time:
  - compute ngrams from the query.
  - lookup ngrams in the index for starter ngrams.
- -- If there is a match check if we can match this at once again the corresponding rule spans
+ -- If there is a match check if we can match this at once again the corresponding rule span
  --- if yes, yield a LicenseMatch 
  --- if this is an exact match, skip the matched query chunk 
 """
@@ -98,7 +95,7 @@ def index_starters(rule_tokens, gaps, _ngram_length=NGRAM_LENGTH):
         #       2           7     10
         # slices:
         #  [0:3]      [3:8]     [8:11]
-        # spans:
+        # span:
         #  [0:2]      [3:7]     [8:10]
         # recipe:
         #  [T'+1:T+1] [T'+1:T+1] [T'+1:T+1]
@@ -112,23 +109,29 @@ def index_starters(rule_tokens, gaps, _ngram_length=NGRAM_LENGTH):
                 yield ngram, start
 
 
-def match_chunks(idx, candidates, query_tokens, line_by_pos, _ngram_length=NGRAM_LENGTH):
+def match_chunks(idx, candidates, query_run, _ngram_length=NGRAM_LENGTH):
     """
-    Return a LicenseMatch by matching the `query_tokens` sequence against the
-    idx index only for the `candidates` rule ids. `line_by_pos` are used to
-    construct the matches. `candidates` is a list of candidate rule ids sorted
-    by decreasing likeliness of being matched. Match uses `idx.start_ngrams_by_rid` ngrams
-    of `ngram_length`.
+    Return a LicenseMatch by matching the query sequence against the idx index
+    only for the `candidates` rule ids. `candidates` is a list of candidate rule
+    ids sorted by decreasing likeliness of being matched. Match uses
+    `idx.start_ngrams_by_rid` ngrams of `ngram_length`.
     """
     logger_debug('match_chunks: start....')
 
+    # FIXME: likely not needed
+    query_run = copy(query_run)
+
+    candidates = set(candidates)
     chunk_matches = []
     # loop for as long as we have matches returned
     while True:
-        matches = _match_chunk(idx, candidates, query_tokens, line_by_pos, _ngram_length)
+        if not candidates:
+            break
+        matches = _match_chunk(idx, candidates, query_run, _ngram_length)
         if matches:
             chunk_matches.extend(matches)
-            query_tokens = filtered_query_tokens(query_tokens, matches)
+            query_run.substract(matches)
+            # refine the candidates
         else:
             break
 
@@ -143,7 +146,7 @@ def match_chunks(idx, candidates, query_tokens, line_by_pos, _ngram_length=NGRAM
     return chunk_matches
 
 
-def _match_chunk(idx, candidates, query_tokens, line_by_pos, _ngram_length=NGRAM_LENGTH):
+def _match_chunk(idx, candidates, query_run, _ngram_length=NGRAM_LENGTH):
     """
     Return a sequence of LicenseMatch by matching the longest possible
     `query_tokens` sequence against the idx index only for the sequence of
@@ -154,12 +157,12 @@ def _match_chunk(idx, candidates, query_tokens, line_by_pos, _ngram_length=NGRAM
     starters = idx.start_ngrams_by_rid
     tokens_by_rid = idx.tokens_by_rid
 
+    query_run_start = query_run.start
+
     matches = []
     matches_append = matches.append
-    for qngram, qstart in query_ngrams(query_tokens, _ngram_length):
-        for _dist, rid in candidates:
-            matched_rule_ispans = []
-            matched_rule_ispans_extend = matched_rule_ispans.extend
+    for qngram, qstart in query_run.ngrams(_ngram_length):
+        for rid in candidates:
             rid_starters = starters[rid]
             if not rid_starters:
 #                 logger_debug(' no rid_starters')
@@ -175,38 +178,33 @@ def _match_chunk(idx, candidates, query_tokens, line_by_pos, _ngram_length=NGRAM
             if istarts is None:
                 continue
 
-            if DEBUG:
-                logger_debug()
-                logger_debug(' _match_chunks: FOUND rid_starters istarts, qstart', istarts, qstart)
+            if DEBUG: logger_debug(' _match_chunks: FOUND rid_starters istarts, qstart', istarts, qstart)
 
             rule = idx.rules_by_rid[rid]
             rule_tokens = tokens_by_rid[rid]
             # find the longest matching sequence starting at this starter
             for istart in istarts:
-                if DEBUG:
-                    logger_debug(' _match_chunks: for istart in istarts')
-                # do not re-match regions already matched
-                istart_span = Span(istart, istart + _ngram_length - 1)
-                if any(istart_span in mrisp for mrisp in matched_rule_ispans):
-                    continue
-                qtks = islice(query_tokens, qstart, None)
+                if DEBUG: logger_debug(' _match_chunks: for istart in istarts')
+
+                # handle query_run start offset
+                qtks = islice(query_run.tokens, qstart - query_run_start, None)
                 itks = islice(rule_tokens, istart, None)
                 # note that we do not izip_longest here
                 pos = -1
                 broke = False
-                for pos, qtok_itok in enumerate(izip(qtks, itks)):
-                    qtok, itok = qtok_itok
-                    if DEBUG:
-                        logger_debug('   _match_chunks: considering --> matched pos:', pos, 'token:', idx.tokens_by_tid[qtok])
+                for pos, (qtok, itok) in enumerate(izip(qtks, itks)):
+
+                    if DEBUG: logger_debug('   _match_chunks: considering --> matched pos:', pos, 'token:', idx.tokens_by_tid[qtok])
+
                     if qtok != itok:
-                        if DEBUG:
-                            logger_debug('    _match_chunks: BREAK: qtok != itok --> matched pos:', pos, 'qtoken:', idx.tokens_by_tid[qtok], 'itoken:', idx.tokens_by_tid[itok])
+                        if DEBUG: logger_debug('    _match_chunks: BREAK: qtok != itok --> matched pos:', pos, 'qtoken:', idx.tokens_by_tid[qtok], 'itoken:', idx.tokens_by_tid[itok])
                         broke = True
                         break
                 if pos != -1:
                     # at worst we will have a match that is ngram_length long
                     if DEBUG:
                         logger_debug('      _match_chunks: ==>pos != -1')
+
                     if broke:
                         offset_fix = 1
                     else:
@@ -214,16 +212,28 @@ def _match_chunk(idx, candidates, query_tokens, line_by_pos, _ngram_length=NGRAM
 
                     if DEBUG:
                         logger_debug('        _match_chunks: ==>pos qstart', qstart)
-                    qspans = [Span(qstart, qstart + pos - offset_fix)]
-                    ispans = [Span(istart, istart + pos - offset_fix)]
-                    match = LicenseMatch(rule, qspans, ispans, line_by_pos, _type=MATCH_TYPE)
+
+                    # handle query_run start offset
+                    # qspan = [Span(qstart + query_run_start, qstart + pos - offset_fix + query_run_start)]
+                    qspan = Span(qstart, qstart + pos - offset_fix)
+                    ispan = Span(istart, istart + pos - offset_fix)
+#                     print()
+#                     print('qspan', qspan)
+#                     print()
+#                     print('ispan', qspan)
+#                     print()
+#                     print('query_run.start', query_run.start)
+#                     print()
+#                     map(print, [(pos, idx.tokens_by_tid[tid]) for pos, tid in query_run.tokens_pos()])
+#                     print()
+
+                    match = LicenseMatch(rule, qspan, ispan, query_run.line_by_pos, _type=MATCH_TYPE)
+
                     if DEBUG:
                         logger_debug('        _match_chunks: appending match:', match)
-                        logger_debug('          _match_chunks: appending matched spans:', qspans, ispans)
+                        logger_debug('          _match_chunks: appending matched spans:', qspan, ispan)
+
                     matches_append(match)
-                    # also track already matched ispans for this rule
-                    matched_rule_ispans_extend(ispans)
-                    # matched_rule_ispans = Span.merge(matched_rule_ispans)
 
             if DEBUG:
                 logger_debug(' _match_chunks: ==>END for istart in istarts')

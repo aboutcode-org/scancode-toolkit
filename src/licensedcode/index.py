@@ -22,12 +22,14 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import absolute_import, division, print_function
 
 from array import array
 import cPickle
 from collections import Counter
 from collections import defaultdict
+from copy import copy
+from itertools import chain
 from itertools import izip
 from time import time
 
@@ -38,11 +40,7 @@ from commoncode.dict_utils import sparsify
 from licensedcode import NGRAM_LENGTH
 from licensedcode.frequent_tokens import global_tokens_by_ranks
 
-from licensedcode.match import filter_matches
-from licensedcode.match import filter_sparse_matches
-from licensedcode.match import filter_low_scoring_matches
-from licensedcode.match import filter_short_matches
-from licensedcode.match import LicenseMatch
+from licensedcode.match import refine_matches
 
 from licensedcode.match_inv import match_inverted
 from licensedcode.match_inv import reinject_hits
@@ -50,21 +48,19 @@ from licensedcode.match_inv import reinject_hits
 from licensedcode.match_chunk import index_starters
 from licensedcode.match_chunk import match_chunks
 
-from licensedcode.prefilter import bit_candidates
-from licensedcode.prefilter import freq_candidates
-
-from licensedcode.query import filtered_query_data
-from licensedcode.query import query_data
+from licensedcode.query import Query
 
 from licensedcode.tokenize import ngrams
-
+from licensedcode.prefilter import get_candidates
+from licensedcode.prefilter import get_query_candidates
+from licensedcode.prefilter import compute_candidates
 """
 Main license index construction, query processing and matching entry points.
 Actual matching is delegated to modules that implement a matching strategy. 
 """
 
 # debug flags
-DEBUG = False
+DEBUG = True
 DEBUG_DEEP = False
 DEBUG_PERF = False
 
@@ -91,6 +87,9 @@ if DEBUG or DEBUG_DEEP:
         def logger_debug_deep(*args):
             return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
+
+# if 4, ~ 1/4 of all tokens will be treated as junk
+PROPORTION_OF_JUNK = 3
 
 def get_license_matches(location=None, min_score=100):
     """
@@ -127,7 +126,7 @@ def detect_license(location=None, min_score=100):
         for detected_license in match.rule.licenses:
             yield (detected_license,
                    match.lines.start, match.lines.end,
-                   match.qregion.start, match.qregion.end,
+                   match.qspan.start, match.qspan.end,
                    match.rule.identifier(),
                    match.normalized_score(),)
 
@@ -166,6 +165,7 @@ class LicenseIndex(object):
         # largest token ID for a "junk" token. A token with a smaller id than
         # len_junk is considered a "junk" very common token
         self.len_junk = -1
+        self.len_good = -1
 
         # total number of known tokens
         self.len_tokens = -1
@@ -180,6 +180,8 @@ class LicenseIndex(object):
         # mapping of token id -> token frequency as a list where the index is
         # the token id and the value the count of occurrences of this token in
         # all rules: Note the most frequent token is 'the' with +100K occurrences
+
+        # TODO: Remove. this is used only during indexing and never afterwards, except for testing
         self.frequencies_by_tid = []
 
         # mapping of rule id->(mapping of (token_id->list of positions in the rule)
@@ -206,26 +208,29 @@ class LicenseIndex(object):
 
         # ngram_length for starters
         self._ngram_length = _ngram_length
-        # this is equivalent to a defaultdict(defaultdict(list))
-        self.start_ngrams_by_rid = []
+        # mapping of ngram -> [(start, rid, ), ...]
+        self.start_ngrams = defaultdict(list)
 
-        # These are mappings of rid-> data as lists of data where the list index is the
-        # rule id.
+        # These are mappings of rid-> data as lists of data where the list index
+        # is the rule id.
         #
         # rule objects proper
         self.rules_by_rid = []
-        # token_ids sequence
+        # token_id sequence
         self.tokens_by_rid = []
+
+        # template bitvector
+        self.bv_template = None
         # bitvector for high tokens
         self.high_bitvectors_by_rid = []
         # bitvector for low tokens
         self.low_bitvectors_by_rid = []
         # Counters of tokens
+        # TODO: remove combined frequencies_by_rid
         self.frequencies_by_rid = []
+        self.high_frequencies_by_rid = []
+        self.low_frequencies_by_rid = []
 
-        # Lenghts
-        self.high_lengths_by_rid = []
-        self.lengths_by_rid = []
         # disjunctive sets of regular and negative rule ids
         self.regular_rids = set()
         self.negative_rids = set()
@@ -252,12 +257,16 @@ class LicenseIndex(object):
     def _add_rules(self, rules, optimize=True, _ngram_length=NGRAM_LENGTH):
         """
         Add an iterable of Rule objects to the index as an optimized batch
-        operation. This replaces any existing indexed rules previously added.
+        operation. This replaces any existing indexed rules_by_rid previously added.
         """
         if self.optimized:
             raise Exception('Index has been optimized and cannot be updated.')
 
-        rules = list(rules)
+        rules_by_rid = list(rules)
+        len_rules = len(rules_by_rid)
+
+        # template reused for rule_id "list" mappings
+        rules_list_template = [0 for _r in range(len_rules)]
 
         # First pass: collect tokens, count frequencies and find unique tokens
         ######################################################################
@@ -265,9 +274,8 @@ class LicenseIndex(object):
         unique_tokens = Counter()
         unique_tokens_update = unique_tokens.update
 
-        # accumulate all rule tokens at once. Also assign the rule ids
-        tokens_by_rid = []
-        tokens_by_rid_append = tokens_by_rid.append
+        # accumulate all rule tokens at once. Also assign the rule ids implicitly
+        token_strings_by_rid = rules_list_template[:]
 
         regular_rids = set()
         regular_rids_add = regular_rids.add
@@ -275,35 +283,35 @@ class LicenseIndex(object):
         negative_rids = set()
         negative_rids_add = negative_rids.add
 
-        for rid, rule in enumerate(rules):
+        for rid, rule in enumerate(rules_by_rid):
             rule.rid = rid
             if rule.negative():
                 negative_rids_add(rid)
             else:
                 regular_rids_add(rid)
             rule_tokens = list(rule.tokens())
-            tokens_by_rid_append(rule_tokens)
+            token_strings_by_rid[rid] = rule_tokens
             unique_tokens_update(rule_tokens)
 
-        # Create the tokens lookup structure at once.
-        # Note that tokens ids are assigned randomly at first by unzipping we
-        # get the frequencies and tokens->id at once.
+        # Create the tokens lookup structure at once. Note that tokens ids are
+        # assigned randomly at first by unzipping: we get the frequencies and
+        # tokens->id at once.
         tokens_by_tid, frequencies_by_tid = izip(*unique_tokens.items())
         dictionary = {ts: tid for tid, ts in enumerate(tokens_by_tid)}
+        len_tokens = len(tokens_by_tid)
 
         # for speed
         sparsify(dictionary)
 
         # replace strings with token ids
-        rules_tokens_ids = [[dictionary[tok] for tok in rule_tok] for rule_tok in tokens_by_rid]
-        len_tokens = len(tokens_by_tid)
+        tokens_by_rid = [[dictionary[tok] for tok in rule_tok] for rule_tok in token_strings_by_rid]
 
         # Second pass: Optimize token ids based on frequencies and common words
         #######################################################################
 
         # renumber tokens ids
         if optimize:
-            renumbered = renumber_token_ids(rules_tokens_ids, dictionary, tokens_by_tid, frequencies_by_tid)
+            renumbered = renumber_token_ids(tokens_by_rid, dictionary, tokens_by_tid, frequencies_by_tid)
             old_to_new, len_junk, dictionary, tokens_by_tid, frequencies_by_tid = renumbered
         else:
             # for testing only
@@ -312,98 +320,125 @@ class LicenseIndex(object):
             old_to_new = range(len_tokens)
 
         # mapping of rule_id->new token_ids array
-        new_rules_tokens_ids = []
-        new_rules_tokens_ids_append = new_rules_tokens_ids.append
+        new_tokens_by_rid = rules_list_template[:]
         # renumber old token ids to new
-        for rule_token_ids in rules_tokens_ids:
-            new_rules_tokens_ids_append(array('h', (old_to_new[tid] for tid in rule_token_ids)))
+        for rid, rule_tokens in enumerate(tokens_by_rid):
+            new_tokens_by_rid[rid] = array('h', (old_to_new[tid] for tid in rule_tokens))
 
         # Third pass: build index structures
         ####################################
         # lists of bitvectors for high and low tokens, one per rule
-        high_bitvectors_by_rid = [0 for _r in rules]
-        low_bitvectors_by_rid = [0 for _r in rules]
+        # ALTERNATIVE: bv_template = bitarray([0 for _t in tokens_by_tid])
+        bv_template = bitarray('0') * len_tokens
+        high_bitvectors_by_rid = [bv_template.copy() for _r in range(len_rules)]
+        low_bitvectors_by_rid = [bv_template.copy() for _r in range(len_rules)]
 
-        frequencies_by_rid = [0 for _r in rules]
-        lengths_by_rid = array('h', [0 for _r in rules])
+        frequencies_by_rid = [Counter() for _r in range(len_rules)]
+        high_frequencies_by_rid = [Counter() for _r in range(len_rules)]
+        low_frequencies_by_rid = [Counter() for _r in range(len_rules)]
 
         # nested inverted index by rule_id->token_id->[postings array]
-        postings_by_rid = [defaultdict(list) for _r in rules]
+        postings_by_rid = [defaultdict(list) for _r in rules_by_rid]
 
         # mapping of rule_id -> mapping of starter ngrams -> [(start, end,), ...]
-        start_ngrams_by_rid = [defaultdict(list) for _r in rules]
-
-        bv_template = bitarray([0 for _t in tokens_by_tid])
+        start_ngrams_by_rid = [defaultdict(list) for _r in rules_by_rid]
 
         # build posting lists and other index structures
-        for rid, new_rule_token_ids in enumerate(new_rules_tokens_ids):
-            rid_postings = postings_by_rid[rid]
+        for rid, new_rule_token_ids in enumerate(new_tokens_by_rid):
+            rule_postings = postings_by_rid[rid]
 
-            tokens_frequency = Counter()
+            rule_frequencies = frequencies_by_rid[rid]
+            rule_high_frequencies = high_frequencies_by_rid[rid]
+            rule_low_frequencies = low_frequencies_by_rid[rid]
+            high_length = 0
+            low_length = 0
+
             # rule bitvector: index is the token id, 1 means token is present, and 0 absent
-            tokens_occurrence = bv_template.copy()
+            rule_bv = bv_template.copy()
 
-            # loop through rules token (new) ids
             for pos, new_tid in enumerate(new_rule_token_ids):
-                # append posting
-                rid_postings[new_tid].append(pos)
-                # set bit to one in bitvector for the token id
+                rule_postings[new_tid].append(pos)
+
                 # TODO: optimize: slice assignments could be faster?
-                tokens_frequency[new_tid] += 1
-                tokens_occurrence[new_tid] = 1
+                rule_bv[new_tid] = 1
+                if new_tid >= len_junk:
+                    high_length += 1
+                    rule_high_frequencies[new_tid] += 1
+                    rule_frequencies[new_tid] += 1
+                else:
+                    low_length += 1
+                    rule_low_frequencies[new_tid] += 1
+                    rule_frequencies[new_tid] += 1
 
-            sparsify(rid_postings)
+            # update rule token ids lengths
+            rule = rules_by_rid[rid]
+            rule.high_length = high_length
+            rule.low_length = low_length
 
-            # build a  high and low bitvector for the rule
-            high_bitvectors_by_rid[rid] = tokens_occurrence[len_junk:]
-            # build a  high and low bitvector for the rule
-            low_bitvectors_by_rid[rid] = tokens_occurrence[:len_junk]
-
-            frequencies_by_rid[rid] = tokens_frequency
-            lengths_by_rid[rid] = len(new_rule_token_ids)
+            # build high and low bitvectors
+            hbv = rule_bv[len_junk:]
+            lbv = rule_bv[:len_junk]
+            # all rule should have at least one high tokens
+            assert hbv.any()
+            high_bitvectors_by_rid[rid] = hbv
+            low_bitvectors_by_rid[rid] = lbv
 
             # collect starters
-            rid_starters = start_ngrams_by_rid[rid]
-            gaps = rules[rid].gaps
-            for starter_ngram, start in index_starters(new_rule_token_ids, gaps, _ngram_length):
-                rid_starters[starter_ngram].append(start)
+            start_ngrams = start_ngrams_by_rid[rid]
+            for start_ngram, start in index_starters(new_rule_token_ids, rule.gaps, _ngram_length):
+                start_ngrams[start_ngram].append(start)
 
-            sparsify(rid_starters)
+            # for speed
+            sparsify(start_ngrams)
 
-            # OPTIMIZED: for faster access to index: convert postings to arrays
-            postings_by_rid[rid] = {key: array('h', value) for key, value in rid_postings.items()}
+            # OPTIMIZED: for speed and memory: convert postings to arrays
+            rule_postings = {key: array('h', value) for key, value in rule_postings.items()}
+            # for speed
+            sparsify(rule_postings)
+            postings_by_rid[rid] = rule_postings
 
-        # assign back the created index structure to self attributes
+        # finally assign back new index structure to self
+        self.rules_by_rid = rules_by_rid
         self.postings_by_rid = postings_by_rid
-        self.len_junk = len_junk
-        self.len_tokens = len_tokens
-        self.tokens_by_tid = tokens_by_tid
-        self.frequencies_by_tid = frequencies_by_tid
-        self.lengths_by_rid = lengths_by_rid
-        self.dictionary = dictionary
-        self.rules_by_rid = rules
-        self.high_bitvectors_by_rid = high_bitvectors_by_rid
-        self.low_bitvectors_by_rid = low_bitvectors_by_rid
-        self.frequencies_by_rid = frequencies_by_rid
-        self.tokens_by_rid = new_rules_tokens_ids
+        self.tokens_by_rid = new_tokens_by_rid
         self.start_ngrams_by_rid = start_ngrams_by_rid
         self.negative_rids = negative_rids
         self.regular_rids = regular_rids
+
+        self.len_junk = len_junk
+        self.len_good = len_tokens - len_junk
+        self.len_tokens = len_tokens
+
+        self.dictionary = dictionary
+        self.tokens_by_tid = tokens_by_tid
+
+        # TODO: remove: only used for testing
+        self.frequencies_by_tid = frequencies_by_tid
+
+        # TODO: remove combined frequencies_by_rid
+        self.frequencies_by_rid = frequencies_by_rid
+        self.high_frequencies_by_rid = high_frequencies_by_rid
+        self.low_frequencies_by_rid = low_frequencies_by_rid
+
+        self.high_bitvectors_by_rid = high_bitvectors_by_rid
+        self.low_bitvectors_by_rid = low_bitvectors_by_rid
+        self.bv_template = bv_template
+
         if optimize:
             self.optimized = True
         else:
             # for testing
-            return rules_tokens_ids
+            return tokens_by_rid
 
-    def match(self, location=None, query=None, min_score=100, min_length=4, _ngram_length=NGRAM_LENGTH, _check_negative=True):
+    def match(self, location=None, query_string=None, min_score=100, min_length=4, _ngram_length=NGRAM_LENGTH, _detect_negative=True):
         """
         Return a sequence of LicenseMatch by matching the file at `location` or
-        the `query` text string against the index. Only include matches with
+        the `query_string` text against the index. Only include matches with
         scores greater or equal to `min_score`.
         """
-        # TODO: consider new match procedure breaking query in runs
-        # TODO: consider returning all matches of all scores always:
-        #  after exact matching, match stepwise by 5 or 10% decrements performing approximate matching.
+        # TODO: OPTIMIZE: Compute hash based on runs, broken on first ngram and
+        # last ngrams index for super fast exact match of a full text at once
+        # TODO: match whole rules exactly using a hash on whole vector
 
         # TODO: OPTIMIZE: LRU cache matches for a query: intuition: several
         # files in the same project will have a quasi identical header comment
@@ -414,10 +449,6 @@ class LicenseIndex(object):
         # files of a project. Another common pattern is for multiple copies of a
         # full (and possibly long) license text. by caching and returning the cache
         # right away, we can avoid doing the same matching over and over entirely.
-
-        # TODO: OPTIMIZE: Compute hash based on runs, broken on first ngram and
-        # last ngrams index for super fast exact match of a full text at once
-        # TODO: match whole rules exactly using a hash on whole vector
 
         # TODO: OPTIMIZE: combined with caching above, and if we reuse query runs
         # again here, we could normalize the cached vector for a run, such that the
@@ -431,191 +462,220 @@ class LicenseIndex(object):
         assert 0 <= min_score <= 100
         logger_debug('match start....')
 
-        line_by_pos, qvector1, qtokens1 = query_data(location, query, self.dictionary)
+        if not location and not query_string:
+            return []
 
-        if _check_negative:
-            logger_debug('##################match: NEGATIVE MATCHING....')
-            # Match 100% against negative rules if any first
-            negative_matches = self._match(qtokens1, qvector1, line_by_pos, min_score=100, min_density=0.8, min_length=4, max_dist1=0, max_dist2=2, match_negative=True, _ngram_length=_ngram_length)
-            logger_debug('==>match:negative_matches:', len(negative_matches))
-            if DEBUG: map(logger_debug, sorted(negative_matches, key=lambda m: m.qregion))
-        else:
-            negative_matches = []
+        matches = []
+        discarded = []
 
-        qtokens2, qvector2 = qtokens1, qvector1
-        # then remove the negative matches from the query data
-        if negative_matches:
-            # keep only subset of unmatched query at this step
-            qtokens2, qvector2 = filtered_query_data(qtokens1, negative_matches, self.len_tokens)
+        qry = Query(location, query_string, self)
+        query_candidates = None
+        query_runs = qry.query_runs()
 
-        logger_debug('##################match: EXACT MATCHING....')
-        # Match 100% always
-        exact_matches = self._match(qtokens2, qvector2, line_by_pos, min_score=100, min_density=0.5, min_length=min_length, max_dist1=5, max_dist2=15, dilate1=0, dilate2=5, match_negative=False, _ngram_length=_ngram_length)
-        logger_debug('==>match:exact_matches:', len(exact_matches))
+        # TODO: compute query-wide candidates and hashes
+        if False:
+            query_runs = list(qry.query_runs())
+            # TODO consider using from_iterable
+            # query_tokens = chain.from_iterable(qr.tokens for qr in query_runs)
+            query_tokens = chain(*(qr.tokens for qr in query_runs))
+            query_candidates = get_query_candidates(query_tokens, self)
+            if not query_candidates:
+                return []
 
-        approx_matches = []
-        # If min score is not 100, match approx
-        if min_score != 100:
-            qtokens3, qvector3 = qtokens2, qvector2
-            # first remove the 100% matches from the query data
-            if exact_matches:
-                qtokens3, qvector3 = filtered_query_data(qtokens2, exact_matches, self.len_tokens)
+        for query_run in query_runs:
+            run_matches = []
+            logger_debug()
+            logger_debug('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
+            logger_debug('#match: processing query run:', query_run)
 
-            logger_debug('##################match: APPROX MATCHING....')
+            if not query_run.matchable():
+                logger_debug('#match: query run not matchable')
+                continue
 
-            # then match approx
-            approx_matches = self._match(qtokens3, qvector3, line_by_pos, min_score=min_score, min_density=0.4, min_length=min_length, max_dist1=5, max_dist2=15, dilate1=1, dilate2=5, match_negative=False, _ngram_length=_ngram_length)
+            # note: _detect_negative may be false for tests only, to test negative rules detection
+            if _detect_negative:
+                # remove the negative rules matches from the query stream
+                negative_matches = self._negative_match(query_run, _ngram_length=_ngram_length)
+                if negative_matches:
+                    query_run.substract(negative_matches)
+                if DEBUG: logger_debug('###match: Found negative matches#:', len(negative_matches))
 
-        logger_debug('==>match:approx_matches:', len(approx_matches))
+            # first pass with chunk matching top 10
+            #######################################################
+            if DEBUG: logger_debug('#match: Candidates1...')
+            candidates1, all_candidates = compute_candidates(query_run, self, rules_subset=self.regular_rids)
+            if DEBUG: logger_debug('##match: Collected candidates1 #:', len(candidates1), len(all_candidates))
 
-        return sorted(exact_matches + approx_matches)
+            if DEBUG: logger_debug('#match: CHUNK1 MATCHING....')
 
-    def _match(self, qtokens, qvector, line_by_pos, min_score=100, min_density=0.3, min_length=4, max_dist1=11, max_dist2=15, dilate1=1, dilate2=6, match_negative=False, _ngram_length=NGRAM_LENGTH):
+            chunk_matches = match_chunks(self, candidates1, query_run, _ngram_length=_ngram_length)
+
+            if DEBUG: logger_debug('##match: CHUNK1: Found matches #:', len(chunk_matches))
+            if DEBUG: map(logger_debug, chunk_matches)
+
+            chunk_matches = reinject_hits(chunk_matches, query_run, self.rules_by_rid, self.postings_by_rid, len_junk=self.len_junk, dilate=5, high_tokens=True)
+            chunk_matches = reinject_hits(chunk_matches, query_run, self.rules_by_rid, self.postings_by_rid, len_junk=0, dilate=0, high_tokens=False)
+
+            if DEBUG: logger_debug('###match: CHUNK1: high tokens re-injected')
+            if DEBUG: map(logger_debug, chunk_matches)
+
+            run_matches.extend(chunk_matches)
+            # keep only subset of unmatched query
+            query_run.substract(chunk_matches)
+
+            # second pass with chunk matching top 10 again
+            #######################################################
+
+            # stop early if we have consumed all the query.
+            if not query_run.matchable():
+                matches.extend(chunk_matches)
+                continue
+
+            if DEBUG: logger_debug('#match: Candidates2...')
+            candidates2, all_candidates = compute_candidates(query_run, self, rules_subset=all_candidates)
+            if DEBUG: logger_debug('##match: Collected candidates2 #:', len(candidates2), len(all_candidates))
+
+            if DEBUG: logger_debug('#match: CHUNK MATCHING2....')
+
+            chunk_matches = match_chunks(self, candidates2, query_run, _ngram_length=_ngram_length)
+
+            if DEBUG: logger_debug('##match: CHUNK2: Found matches #:', len(chunk_matches))
+            if DEBUG: map(logger_debug, chunk_matches)
+
+            chunk_matches = reinject_hits(chunk_matches, query_run, self.rules_by_rid, self.postings_by_rid, len_junk=self.len_junk, dilate=5, high_tokens=True)
+            chunk_matches = reinject_hits(chunk_matches, query_run, self.rules_by_rid, self.postings_by_rid, len_junk=0, dilate=0, high_tokens=False)
+
+            if DEBUG: logger_debug('###match: CHUNK2: high tokens re-injected')
+            if DEBUG: map(logger_debug, chunk_matches)
+
+            run_matches.extend(chunk_matches)
+            # keep only subset of unmatched query
+            query_run.substract(chunk_matches)
+
+            # stop early if we have consumed all the query.
+            if not query_run.matchable():
+                matches.extend(chunk_matches)
+                continue
+
+            # third pass with chunk matching top 10 again
+            #######################################################
+
+            if DEBUG: logger_debug('#match: Candidates3...')
+            candidates3, all_candidates = compute_candidates(query_run, self, rules_subset=all_candidates)
+            if DEBUG: logger_debug('##match: Collected candidates3 #:', len(candidates3), len(all_candidates))
+
+            if DEBUG: logger_debug('#match: CHUNK MATCHING3....')
+
+            chunk_matches = match_chunks(self, candidates3, query_run, _ngram_length=_ngram_length)
+
+            if DEBUG: logger_debug('##match: CHUNK3: Found matches #:', len(chunk_matches))
+            if DEBUG: map(logger_debug, chunk_matches)
+
+            chunk_matches = reinject_hits(chunk_matches, query_run, self.rules_by_rid, self.postings_by_rid, len_junk=self.len_junk, dilate=5, high_tokens=True)
+            chunk_matches = reinject_hits(chunk_matches, query_run, self.rules_by_rid, self.postings_by_rid, len_junk=0, dilate=0, high_tokens=False)
+
+            if DEBUG: logger_debug('###match: CHUNK3: high tokens re-injected')
+            if DEBUG: map(logger_debug, chunk_matches)
+
+            run_matches.extend(chunk_matches)
+            # keep only subset of unmatched query
+            query_run.substract(chunk_matches)
+
+            # stop early if we have consumed all the query.
+            if not query_run.matchable():
+                matches.extend(chunk_matches)
+                continue
+
+            # inverted matches pass 1
+            #######################################################
+            if DEBUG: logger_debug('#match: Candidates4...')
+            candidates4, all_candidates = compute_candidates(query_run, self, all_candidates)
+            if DEBUG: logger_debug('##match: Collected candidates4 #:', len(candidates4))
+
+            inv_matches = match_inverted(self, candidates4, query_run, max_dist=5, dilate=5)
+
+            if DEBUG: logger_debug('#match: INVERTED:', len(inv_matches))
+            if DEBUG: map(logger_debug, inv_matches)
+
+            run_matches.extend(inv_matches)
+            query_run.substract(inv_matches)
+
+            # stop early if we have consumed all the query.
+            if not query_run.matchable():
+                matches.extend(inv_matches)
+                continue
+
+            # inverted matches pass 2
+            #######################################################
+            if DEBUG: logger_debug('#match: Candidates5...')
+            candidates5, all_candidates = compute_candidates(query_run, self, all_candidates)
+            if DEBUG: logger_debug('##match: Collected candidates4 #:', len(candidates5))
+
+            inv_matches = match_inverted(self, candidates5, query_run, max_dist=5, dilate=5)
+
+            if DEBUG: logger_debug('#match: INVERTED:', len(inv_matches))
+            if DEBUG: map(logger_debug, inv_matches)
+
+            run_matches.extend(inv_matches)
+            query_run.substract(inv_matches)
+
+            # stop early if we have consumed all the query.
+            if not query_run.matchable():
+                matches.extend(inv_matches)
+                continue
+
+
+            if DEBUG: logger_debug('#match: query run matches before filtering:', len(matches))
+            if DEBUG: map(logger_debug, run_matches)
+
+            if DEBUG: logger_debug('###match: FILTERING...')
+            refined_matches, refined_discarded = refine_matches(run_matches, max_dist=15, min_length=min_length, min_density=0.3, min_score=0)
+
+            if DEBUG: logger_debug('#match: query run matches after filtering:', len(refined_matches))
+            if DEBUG: map(logger_debug, refined_matches)
+            if DEBUG: logger_debug('#match: query run discarded matches after filtering:', len(refined_discarded))
+            if DEBUG: map(logger_debug, refined_discarded)
+
+            matches.extend(refined_matches)
+            discarded.extend(refined_discarded)
+
+        if DEBUG: logger_debug('#match: matches :', len(matches))
+        if DEBUG_DEEP: map(logger_debug, matches)
+        if DEBUG: logger_debug('#match: discarded :', len(discarded))
+        if DEBUG_DEEP: map(logger_debug, discarded)
+
+        # finally refine once more across all matches
+        all_matches, all_discarded = refine_matches(matches + discarded, max_dist=15, min_length=min_length, min_density=0.3, min_score=min_score)
+
+        if DEBUG: logger_debug('#match: whole query matches   :', len(all_matches))
+        if DEBUG: map(logger_debug, all_matches)
+        if DEBUG: logger_debug('#match: whole query discarded :', len(all_discarded))
+        if DEBUG: map(logger_debug, all_discarded)
+
+        all_matches.sort()
+        return all_matches
+
+    def _negative_match(self, query_run, _ngram_length=NGRAM_LENGTH):
         """
-        Return a sequence of LicenseMatch by matching the file at `location` or
-        the `query` text string against the index. Only include matches with
-        scores greater or equal to `min_score`.
-        If match_negative is True, only match against negative rules.
-        Otherwise do not match against negative rules and only consider "regular" rules.
+        Match a query run against negative, license-less rules.
         """
+        logger_debug(' ##_negative_match: NEGATIVE MATCHING....')
 
-        assert 0 <= min_score <= 100
-        logger_debug('_match start....')
+        candidates1 = get_candidates(query_run, self, self.negative_rids, min_score=100)
+        chunk_matches = match_chunks(self, candidates1, query_run, _ngram_length)
+        # note: we trick the re-injection of both junk and good at once
+        negative_matches = reinject_hits(chunk_matches, query_run, self.rules_by_rid, self.postings_by_rid, len_junk=0, dilate=3, high_tokens=False)
 
-        # Collect candidate rules using bitvectors of good tokens
-        # ##############################################################
-        logger_debug('   #############_match: PREFILTER....\n')
-        logger_debug('  _match: candidates1: start: filter rules with bitvector distance')
-        if match_negative:
-            rules_subset = self.negative_rids
-        else:
-            rules_subset = self.regular_rids
+        # keep only subset of unmatched query at this step, working on a copy of the query run
+        new_query_run = copy(query_run)
+        new_query_run.substract(chunk_matches)
 
-        candidates1 = bit_candidates(qvector, self.high_bitvectors_by_rid, self.low_bitvectors_by_rid, self.len_junk, rules_subset=rules_subset, min_score=min_score)
-        if not candidates1:
-            logger_debug('  _match: candidates1: all junk from bitvector. No match')
-            return []
-        logger_debug('  _match: candidates1:', len(candidates1), 'candidates rules from bitvector.')
+        if new_query_run.matchable():
+            candidates2 = get_candidates(new_query_run, self, set(rid for _, rid in candidates1), min_score=100)
+            negative_matches += match_inverted(self, candidates2, query_run, max_dist=2, dilate=3)
 
-        # Refine candidate rules using freqs and min score
-        # ##############################################################
-        logger_debug('  _match: candidates2: start: filter rules with freqs')
-
-        candidates2 = freq_candidates(qvector, self.frequencies_by_rid, self.lengths_by_rid, rules_subset=set(rid for (_, rid) in candidates1), min_score=min_score)
-
-        if not candidates2:
-            logger_debug('  _match: candidates2: No match')
-            return []
-        logger_debug('  _match: candidates2:', len(candidates2), 'candidates rules from freq.')
-
-        # Chunks matching using starters index
-        # ####################################################################
-        logger_debug('   #############_match: CHUNK MATCHING....\n')
-        matches1 = match_chunks(self, candidates2, qtokens, line_by_pos, _ngram_length=_ngram_length)
-        if DEBUG: map(logger_debug, sorted(matches1, key=lambda m: m.qregion))
-
-        if matches1:
-            logger_debug('   _match: matches1: Found matches #', len(matches1))
-            if DEBUG: map(logger_debug, sorted(matches1, key=lambda m: m.qregion))
-            matches1 = reinject_hits(matches1, qvector, self.rules_by_rid, self.postings_by_rid, len_junk=self.len_junk, line_by_pos=line_by_pos, dilate=dilate1, junk=False)
-            for m in matches1:
-                m.simplify()
-
-            logger_debug('   ##### _match: matches1: reinjected', len(matches1))
-            if DEBUG:
-                m = matches1[0]
-                logger_debug('qspans')
-                for span in m.qspans:
-                    logger_debug(span);
-                logger_debug('ispans')
-                for span in m.ispans:
-                    logger_debug(span);
-
-            # keep only subset of unmatched query at this step
-            qtokens2, qvector2 = filtered_query_data(qtokens, matches1, self.len_tokens)
-            if DEBUG:
-                logger_debug('   _match:  len qtokens1,qtokens2', len(qtokens), len([q for q in qtokens2 if q is not None]))
-
-            # TODO: OPTIMIZE: we do not need to re-match against every rule, but only against the previous candidates
-            # recollect remainder candidate rules using bitvectors of good tokens
-            candidates3 = bit_candidates(qvector2, self.high_bitvectors_by_rid, self.low_bitvectors_by_rid, self.len_junk, set(rid for _, rid in candidates2), min_score=min_score)
-
-            if not candidates3:
-                logger_debug('   _match: candidates3: all junk from bitvector. No more matches')
-            else:
-                logger_debug('   _match: candidates3:', len(candidates3), 'candidates rules from bitvector.')
-
-            # Refine candidate rules using freqs and min score
-            # ##############################################################
-            logger_debug('   _match: candidates4: start: filter rules with freqs')
-
-            candidates4 = freq_candidates(qvector2, self.frequencies_by_rid, self.lengths_by_rid, rules_subset=set(rid for _, rid in candidates3), min_score=min_score)
-
-            logger_debug('   _match: candidates4:', len(candidates4), 'candidates rules from freq.')
-        else:
-            logger_debug('   _match: matches1: No match Found')
-            qvector2 = qvector
-            qtokens2 = qtokens
-            candidates4 = candidates2
-
-        # Match against the inverted index
-        # ####################################################################
-        # We proceed in order of higher scored rule in the filtering steps one rule at a time
-        matches2 = []
-        logger_debug('   #############_match: INVERTED MATCHING....\n')
-        if any(tid is not None for tid in qtokens2):
-            # TODO: stop early if we have consumed all the query.
-            matches2 = match_inverted(self, candidates4, qvector2, line_by_pos, min_score=min_score, max_dist=max_dist1, min_density=min_density, dilate=dilate2, min_length=min_length)
-            if DEBUG: logger_debug();map(logger_debug, sorted(matches2, key=lambda m: m.qregion))
-
-            logger_debug('  _match: matches inverted:', len(matches2))
-
-        all_matches = matches1 + matches2
-
-        logger_debug('   #############_match: MERGING and FILTERING....\n')
-        logger_debug('  _match: matches: ALL matches#', len(all_matches))
-        if DEBUG_DEEP: logger_debug();map(logger_debug, sorted(all_matches, key=lambda m: m.qregion))
-
-        for m in all_matches:
-            m.simplify()
-        logger_debug('  _match: matches: ALL matches simplified#', len(all_matches))
-        if DEBUG_DEEP: logger_debug();map(logger_debug, sorted(all_matches, key=lambda m: m.qregion))
-
-        if not all_matches:
-            logger_debug('  _match: NO matches')
-            return []
-
-        all_matches = LicenseMatch.merge(all_matches, merge_spans=True, max_dist=max_dist2)
-
-        logger_debug('  _match: ##merged_matches#:', len(all_matches))
-        if DEBUG_DEEP: map(logger_debug, sorted(all_matches, key=lambda m: m.qregion))
-
-        all_matches = filter_sparse_matches(all_matches, min_density=min_density)
-
-        logger_debug('  _match: after sparse filter#', len(all_matches))
-        if DEBUG: map(print, sorted(all_matches, key=lambda m: m.qregion))
-
-        all_matches = filter_short_matches(all_matches, min_length=min_length)
-
-        logger_debug('  _match: after filter_short_matches#', len(all_matches))
-        if DEBUG_DEEP: map(print, sorted(all_matches, key=lambda m: m.qregion))
-
-        all_matches = filter_low_scoring_matches(all_matches, min_score=min_score)
-
-        logger_debug('  _match: after filter_low_scoring_matches#', len(all_matches))
-        if DEBUG_DEEP: map(print, sorted(all_matches, key=lambda m: m.qregion))
-
-        all_matches = filter_matches(all_matches)
-
-        logger_debug('  _match: filtered_matches#:', len(all_matches))
-        if DEBUG_DEEP: map(print, sorted(all_matches, key=lambda m: m.qregion))
-
-        all_matches = filter_low_scoring_matches(all_matches, min_score=min_score)
-
-        logger_debug('  _match: final matches#:', len(all_matches))
-        if DEBUG_DEEP: map(print, sorted(all_matches, key=lambda m: m.qregion))
-
-        return sorted(all_matches)
+        negative_matches, _discarded = refine_matches(negative_matches, max_dist=3, min_length=4, min_density=0.8, min_score=100)
+        return negative_matches
 
     def _print_index_stats(self):
         """
@@ -643,9 +703,9 @@ class LicenseIndex(object):
             print('  ', struct_name, ':', 'length    :', len(struct))
             siz = size_of(struct)
             total_size += siz
-            print('  ', struct_name, ':', 'size in MB:', round(siz / (1024 * 1024.0), 2))
-        print('    TOTAL internals in MB:', round(total_size / (1024 * 1024.0), 2))
-        print('    TOTAL real size in MB:', round(size_of(self) / (1024 * 1024.0), 2))
+            print('  ', struct_name, ':', 'size in MB:', round(siz / (1024 * 1024), 2))
+        print('    TOTAL internals in MB:', round(total_size / (1024 * 1024), 2))
+        print('    TOTAL real size in MB:', round(size_of(self) / (1024 * 1024), 2))
 
     def _as_dict(self):
         """
@@ -655,7 +715,7 @@ class LicenseIndex(object):
         """
         as_dict = {}
         for rid, tok2pos in enumerate(self.postings_by_rid):
-            as_dict[self.rules_by_rid[rid].identifier()] = {self.tokens_by_tid[tokid]: list(posts) for tokid, posts in tok2pos.items()}
+            as_dict[self.rules_by_rid[rid].identifier()] = [(self.tokens_by_tid[tokid], list(posts),) for tokid, posts in sorted(tok2pos.items())]
         return as_dict
 
     @staticmethod
@@ -736,14 +796,14 @@ def renumber_token_ids(rules_tokens_ids, dictionary, tokens_by_tid, frequencies_
     # Build a candidate junk set with a defined proportion of junk tokens the
     # size of of tokens set: we use a curated list of common words as a base.
 
-    proportion_of_junk = float(3)
+    proportion_of_junk = PROPORTION_OF_JUNK
     junk_max = abs((len(tokens_by_tid) / proportion_of_junk) - len(very_common))
 
     junk = set()
     junk_add = junk.add
     dictionary_get = dictionary.get
     junk_count = 0
-    
+
     for token in global_tokens_by_ranks():
         tid = dictionary_get(token)
         if tid is None:

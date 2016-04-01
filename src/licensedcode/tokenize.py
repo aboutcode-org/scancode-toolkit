@@ -28,6 +28,8 @@ import re
 from itertools import islice
 from itertools import izip
 
+from licensedcode import NGRAM_LENGTH
+
 
 """
 Utilities to tokenize rules and query texts.
@@ -51,13 +53,13 @@ def query_tokenizer(text, lower=True):
                 yield token
 
 
-# Template-aware splitter, keeping a templated region {{anything}} as a token.
+# Template-aware splitter, keeping a templated part {{anything}} as a token.
 # Use non capturing groups for alternation.
 template_splitter = re.compile(r'''
     # same split on white space and punctuation as in the base splitter
     (?:[^\W_\-\+])+
     |
-    # a template region is anything enclosed in double braces
+    # a template part is anything enclosed in double braces
     (?:{{[^{}]*}})
 ''' , re.UNICODE | re.VERBOSE).findall
 
@@ -65,7 +67,7 @@ template_splitter = re.compile(r'''
 def rule_tokenizer(text, lower=True):
     """
     Return a sequence of tokens from a unicode rule text returning templated
-    regions as a None token. Leading and trailing templated regions are skipped.
+    parts as a None token. Leading and trailing templated parts are skipped.
     """
     if  text:
         text = lower and text.lower() or text
@@ -122,3 +124,23 @@ def ngrams(iterable, ngram_length):
     []
     """
     return izip(*(islice(iterable, i, None) for i in range(ngram_length)))
+
+
+def ngrams_with_positions(tokens, len_junk, start_pos=0, ngram_length=NGRAM_LENGTH):
+    """
+    Return an iterator of (start, end, ngram tuple) for ngrams of length
+    `ngram_len` given an iterable of tokens. The returned iterable is empty if
+    the input iterable contains less than `ngram_length` tokens. Only high, non-
+    junk tokens are considered: Tokens with a "junk" id and None tokens are
+    ignored and not part of the returned ngrams.  For each ngram, the start and
+    end position is the absolute position in the token stream. Ngrams may
+    therefore have an end position extending beyond start + ngram_length.
+    """
+    tokens_with_pos = ((pos, token) for pos, token in enumerate(tokens, start_pos)
+                                    if token is not None and token > len_junk)
+
+    for pos_ngram in ngrams(tokens_with_pos):
+        ngr, poss = zip(*pos_ngram)
+        start = poss[0]
+        end = poss[-1]
+        yield start, end, tuple(ngr)

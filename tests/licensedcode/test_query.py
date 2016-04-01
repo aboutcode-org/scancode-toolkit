@@ -30,9 +30,10 @@ from commoncode.testcase import FileBasedTesting
 
 from licensedcode import index
 from licensedcode.models import Rule
+
 from licensedcode.query import iterlines
-from licensedcode.query import query_data
 from licensedcode.query import query_ngrams
+from licensedcode.query import Query
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -50,16 +51,16 @@ class IndexTesting(FileBasedTesting):
         return [Rule(text_file=os.path.join(base, license_key), licenses=[license_key]) for license_key in test_files]
 
 
-class TestQueryVector(IndexTesting):
+class TestQueryText(IndexTesting):
 
     def test_iterlines_from_location(self):
-        query = self.get_test_loc('index/queryperfect-mini')
+        query_loc = self.get_test_loc('index/queryperfect-mini')
         expected = [
             (2, u'The'),
             (3, u'Redistribution and use in source and binary forms, with or without modification, are permitted.'),
             (5, u'Always')
         ]
-        result = list(iterlines(location=query))
+        result = list(iterlines(location=query_loc))
         assert expected == result
 
     def test_iterlines_from_string(self):
@@ -77,11 +78,11 @@ class TestQueryVector(IndexTesting):
             (6, 'is'),
         ]
 
-        result = list(iterlines(query=query_string))
+        result = list(iterlines(query_string=query_string))
         assert expected == result
 
     def test_iterlines_complex(self):
-        query = self.get_test_loc('index/querytokens')
+        query_loc = self.get_test_loc('index/querytokens')
         expected = [
             (4, u'Redistribution and use in source and binary forms,'),
             (6, u'* Redistributions of source code must'),
@@ -89,208 +90,10 @@ class TestQueryVector(IndexTesting):
             (8, u'Welcom to Jamaica'),
             (9, u'* Redistributions in binary form must'),
             (11, u'THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"'),
-            (14, u'Redistributions')
+            (15, u'Redistributions')
         ]
-        result = list(iterlines(location=query))
+        result = list(iterlines(location=query_loc))
         assert expected == result
-
-
-class TestQueryData(IndexTesting):
-
-    def test_query_data_from_index_and_string(self):
-        idx = index.LicenseIndex(self.get_test_rules('index/mini'))
-        query = '''
-            The
-            Redistribution and use in source and binary are permitted.
-        
-            Athena capital of Grece 
-            Paris and Athene
-            Always'''.splitlines(False)
-
-        line_by_pos, vector, tokens = query_data(location=query, dictionary=idx.dictionary)
-
-        expected_lbp = {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3, 7: 3, 8: 3, 9: 6}
-        assert expected_lbp == line_by_pos
-
-        expected_qv = [
-            (u'and', 0, [1, 5, 9]),
-            (u'in', 4, [3]),
-            (u'are', 5, [7]),
-            (u'use', 6, [2]),
-            (u'source', 7, [4]),
-            (u'redistribution', 8, [0]),
-            (u'permitted', 9, [8]),
-            (u'binary', 12, [6])
-        ]
-        assert expected_qv == [(idx.tokens_by_tid[i], i, p) for i, p in enumerate(vector) if p]
-
-        expected_toks = [
-            (u'redistribution', 8),
-            (u'and', 0),
-            (u'use', 6),
-            (u'in', 4),
-            (u'source', 7),
-            (u'and', 0),
-            (u'binary', 12),
-            (u'are', 5),
-            (u'permitted', 9),
-            (u'and', 0)]
-        assert expected_toks == [(idx.tokens_by_tid[t], t) for t in tokens]
-
-    def test_query_data_from_index_and_location(self):
-        idx = index.LicenseIndex(self.get_test_rules('index/bsd'))
-        query = self.get_test_loc('index/querytokens')
-        line_by_pos, vector, tokens = query_data(location=query, dictionary=idx.dictionary)
-
-        expected_lbp = {0: 4, 1: 4, 2: 4, 3: 4, 4: 4, 5: 4, 6: 4, 7: 4, 8: 6,
-                        9: 6, 10: 6, 11: 6, 12: 6, 13: 7, 14: 7, 15: 7, 16: 7,
-                        17: 7, 18: 8, 19: 9, 20: 9, 21: 9, 22: 9, 23: 9, 24: 11,
-                        25: 11, 26: 11, 27: 11, 28: 11, 29: 11, 30: 11, 31: 11,
-                        32: 11, 33: 11, 34: 11, 35: 11, 36: 14}
-
-        assert expected_lbp == line_by_pos
-
-        expected_qv = [
-            (u'the', 0, [13, 29]),
-            (u'of', 1, [9]),
-            (u'and', 3, [1, 5, 32]),
-            (u'in', 4, [3, 20]),
-            (u'this', 5, [14, 24]),
-            (u'to', 7, [18]),
-            (u'not', 9, [17]),
-            (u'is', 10, [16, 26, 35]),
-            (u'by', 18, [28]),
-            (u'that', 21, [15]),
-            (u'as', 30, [34]),
-            (u'copyright', 52, [30]),
-            (u'use', 54, [2]),
-            (u'software', 55, [25]),
-            (u'provided', 58, [27]),
-            (u'must', 60, [12, 23]),
-            (u'binary', 62, [6, 21]),
-            (u'source', 64, [4, 10]),
-            (u'redistributions', 65, [8, 19, 36]),
-            (u'contributors', 69, [33]),
-            (u'redistribution', 71, [0]),
-            (u'forms', 97, [7]),
-            (u'form', 98, [22]),
-            (u'code', 107, [11]),
-            (u'holders', 116, [31])]
-        
-        assert expected_qv == [(idx.tokens_by_tid[i], i, p) for i, p in enumerate(vector) if p]
-
-        expected_toks = [
-            (u'redistribution', 71),
-            (u'and', 3),
-            (u'use', 54),
-            (u'in', 4),
-            (u'source', 64),
-            (u'and', 3),
-            (u'binary', 62),
-            (u'forms', 97),
-            (u'redistributions', 65),
-            (u'of', 1),
-            (u'source', 64),
-            (u'code', 107),
-            (u'must', 60),
-            (u'the', 0),
-            (u'this', 5),
-            (u'that', 21),
-            (u'is', 10),
-            (u'not', 9),
-            (u'to', 7),
-            (u'redistributions', 65),
-            (u'in', 4),
-            (u'binary', 62),
-            (u'form', 98),
-            (u'must', 60),
-            (u'this', 5),
-            (u'software', 55),
-            (u'is', 10),
-            (u'provided', 58),
-            (u'by', 18),
-            (u'the', 0),
-            (u'copyright', 52),
-            (u'holders', 116),
-            (u'and', 3),
-            (u'contributors', 69),
-            (u'as', 30),
-            (u'is', 10),
-            (u'redistributions', 65)]
-        
-        assert expected_toks == [(idx.tokens_by_tid[t], t) for t in tokens]
-
-    def test_query_data_solo(self):
-        # setup, no index involved
-        query = 'redistributions in binary form must redistributions in'
-        tok_by_id = query.split()
-        tok_dict = {}
-        for tid, tok in enumerate(tok_by_id):
-            if tok not in tok_dict:
-                tok_dict[tok] = tid
-
-        lines_by_pos, vector, tokens = query_data(query=query, dictionary=tok_dict)
-        assert {0: 1, 1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1} == lines_by_pos
-        expected = [
-            ('redistributions', [0, 5]),
-            ('in', [1, 6]),
-            ('binary', [2]),
-            ('form', [3]),
-            ('must', [4])
-        ]
-        result = [(tok_by_id[tid], posts) for tid, posts in enumerate(vector)]
-        assert expected == result
-
-        expected_toks = [
-            ('redistributions', 0),
-            ('in', 1),
-            ('binary', 2),
-            ('form', 3),
-            ('must', 4),
-            ('redistributions', 0),
-            ('in', 1)
-        ]
-        assert expected_toks == [(tok_by_id[t], t) for t in tokens]
-
-    def test_query_data_junk(self):
-        tok_dict = {'binary':0, 'must':1}
-
-        # two junks
-        lines_by_pos, vector, tokens = query_data(query='binary must', dictionary=tok_dict)
-        assert lines_by_pos
-        len_junk = 1
-        assert any(tid >= len_junk for tid, posts in enumerate(vector) if posts)
-        assert [0, 1] == tokens
-
-        # one junk
-        lines_by_pos, vector, tokens = query_data(query='in binary', dictionary=tok_dict)
-        assert lines_by_pos
-        len_junk = 1
-        assert not any(tid >= len_junk for tid, posts in enumerate(vector) if posts)
-        assert [0] == tokens
-
-        # one junk
-        lines_by_pos, vector, tokens = query_data(query='binary is', dictionary=tok_dict)
-        assert lines_by_pos
-        len_junk = 0
-        assert any(tid >= len_junk for tid, posts in enumerate(vector) if posts)
-        assert [0] == tokens
-
-    def test_query_data_vectors_are_same_for_different_query_formattings(self):
-        test_files = [self.get_test_loc(f) for f in [
-            'match_inv/queryformat/license2.txt',
-            'match_inv/queryformat/license3.txt',
-            'match_inv/queryformat/license4.txt',
-            'match_inv/queryformat/license5.txt',
-            'match_inv/queryformat/license6.txt',
-        ]]
-
-        rule_file = self.get_test_loc('match_inv/queryformat/license1.txt')
-        idx = index.LicenseIndex([Rule(text_file=rule_file, licenses=['mit'])])
-        _lbp, expected, _tokens = query_data(rule_file, dictionary=idx.dictionary)
-        for tf in test_files:
-            _lbp, result, _toks = query_data(tf, dictionary=idx.dictionary)
-            assert expected == result
 
     def test_query_ngrams(self):
         query_tokens = '''
@@ -318,29 +121,303 @@ class TestQueryData(IndexTesting):
         assert expected == result
 
 
+class TestQueryWithSingleRun(IndexTesting):
+
+    def test_query_from_index_and_string(self):
+        idx = index.LicenseIndex(self.get_test_rules('index/mini'))
+        querys = '''
+            The
+            Redistribution and use in source and binary are permitted.
+        
+            Athena capital of Grece 
+            Paris and Athene
+            Always'''
+
+        qry = Query(query_string=querys, idx=idx)
+        runs = list(qry.query_runs(1000))
+        assert len(runs) == 1
+        query_run = runs[0]
+
+        expected_lbp = {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3, 7: 3, 8: 3, 9: 6}
+        assert expected_lbp == query_run.line_by_pos
+
+        expected_qv = [
+            (u'and', 0, [1, 5, 9]),
+            (u'in', 3, [3]),
+            (u'are', 4, [7]),
+            (u'redistribution', 6, [0]),
+            (u'source', 8, [4]),
+            (u'permitted', 10, [8]),
+            (u'use', 11, [2]),
+            (u'binary', 12, [6])]
+        assert expected_qv == [(idx.tokens_by_tid[i], i, p) for i, p in enumerate(query_run.vector()) if p]
+
+        expected_toks = [
+            (u'redistribution', 6),
+            (u'and', 0),
+            (u'use', 11),
+            (u'in', 3),
+            (u'source', 8),
+            (u'and', 0),
+            (u'binary', 12),
+            (u'are', 4),
+            (u'permitted', 10),
+            (u'and', 0)]
+        assert expected_toks == [(idx.tokens_by_tid[t], t) for t in query_run.tokens]
+
+    def test_query_from_index_and_location(self):
+        idx = index.LicenseIndex(self.get_test_rules('index/bsd'))
+        query_loc = self.get_test_loc('index/querytokens')
+
+        qry = Query(location=query_loc, idx=idx)
+        runs = list(qry.query_runs(1000))
+        assert len(runs) == 1
+        query_run = runs[0]
+
+
+        expected_lbp = {0: 4, 1: 4, 2: 4, 3: 4, 4: 4, 5: 4, 6: 4, 7: 4, 8: 6,
+                        9: 6, 10: 6, 11: 6, 12: 6, 13: 7, 14: 7, 15: 7, 16: 7,
+                        17: 7, 18: 8, 19: 9, 20: 9, 21: 9, 22: 9, 23: 9, 24: 11,
+                        25: 11, 26: 11, 27: 11, 28: 11, 29: 11, 30: 11, 31: 11,
+                        32: 11, 33: 11, 34: 11, 35: 11, 36: 15}
+
+        assert expected_lbp == query_run.line_by_pos
+
+        expected_qv = [
+            (u'the', 0, [13, 29]),
+            (u'of', 1, [9]),
+            (u'and', 3, [1, 5, 32]),
+            (u'in', 4, [3, 20]),
+            (u'this', 5, [14, 24]),
+            (u'to', 7, [18]),
+            (u'is', 9, [16, 26, 35]),
+            (u'not', 12, [17]),
+            (u'by', 19, [28]),
+            (u'as', 22, [34]),
+            (u'that', 23, [15]),
+            (u'copyright', 52, [30]),
+            (u'use', 54, [2]),
+            (u'software', 55, [25]),
+            (u'provided', 59, [27]),
+            (u'must', 60, [12, 23]),
+            (u'binary', 62, [6, 21]),
+            (u'contributors', 63, [33]),
+            (u'redistributions', 64, [8, 19, 36]),
+            (u'source', 66, [4, 10]),
+            (u'redistribution', 71, [0]),
+            (u'form', 86, [22]),
+            (u'forms', 107, [7]),
+            (u'code', 111, [11]),
+            (u'holders', 118, [31])]
+
+        assert expected_qv == [(idx.tokens_by_tid[i], i, p) for i, p in enumerate(query_run.vector()) if p]
+
+        expected_toks = [
+            (u'redistribution', 71),
+            (u'and', 3),
+            (u'use', 54),
+            (u'in', 4),
+            (u'source', 66),
+            (u'and', 3),
+            (u'binary', 62),
+            (u'forms', 107),
+            (u'redistributions', 64),
+            (u'of', 1),
+            (u'source', 66),
+            (u'code', 111),
+            (u'must', 60),
+            (u'the', 0),
+            (u'this', 5),
+            (u'that', 23),
+            (u'is', 9),
+            (u'not', 12),
+            (u'to', 7),
+            (u'redistributions', 64),
+            (u'in', 4),
+            (u'binary', 62),
+            (u'form', 86),
+            (u'must', 60),
+            (u'this', 5),
+            (u'software', 55),
+            (u'is', 9),
+            (u'provided', 59),
+            (u'by', 19),
+            (u'the', 0),
+            (u'copyright', 52),
+            (u'holders', 118),
+            (u'and', 3),
+            (u'contributors', 63),
+            (u'as', 22),
+            (u'is', 9),
+            (u'redistributions', 64)]
+
+        assert expected_toks == [(idx.tokens_by_tid[t], t) for t in query_run.tokens]
+
+    def test_query_junk(self):
+        idx = index.LicenseIndex([Rule(_text='a is the binary')])
+
+        assert {'the': 0, 'is': 1, 'a': 2, 'binary': 3} == idx.dictionary
+        assert 3 == idx.len_junk
+
+        # two junks
+        q = Query(query_string='is a', idx=idx)
+        qrun = list(q.query_runs(1000))[0]
+        assert qrun.line_by_pos
+        assert [[], [0], [1], []] == qrun.vector()
+        assert [1, 2] == qrun.tokens
+
+        # one junk
+        q = Query(query_string='is binary', idx=idx)
+        qrun = list(q.query_runs(1000))[0]
+        assert qrun.line_by_pos
+        assert [[], [0], [], [1]] == qrun.vector()
+        assert [1, 3] == qrun.tokens
+
+        # one junk
+        q = Query(query_string='binary a', idx=idx)
+        qrun = list(q.query_runs(1000))[0]
+        assert qrun.line_by_pos
+        assert [[], [], [1], [0]] == qrun.vector()
+        assert [3, 2] == qrun.tokens
+
+        # one unknown
+        q = Query(query_string='that binary', idx=idx)
+        qrun = list(q.query_runs(1000))[0]
+        assert qrun.line_by_pos
+        assert [[], [] , [], [0]] == qrun.vector()
+        assert [3] == qrun.tokens
+
+    def test_query_vectors_are_same_for_different_text_formatting(self):
+
+        test_files = [self.get_test_loc(f) for f in [
+            'match_inv/queryformat/license2.txt',
+            'match_inv/queryformat/license3.txt',
+            'match_inv/queryformat/license4.txt',
+            'match_inv/queryformat/license5.txt',
+            'match_inv/queryformat/license6.txt',
+        ]]
+
+        rule_file = self.get_test_loc('match_inv/queryformat/license1.txt')
+        idx = index.LicenseIndex([Rule(text_file=rule_file, licenses=['mit'])])
+
+        q = Query(location=rule_file, idx=idx)
+        expected = list(q.query_runs(1000))[0]
+        for tf in test_files:
+            q = Query(tf, idx=idx)
+            qr = list(q.query_runs(1000))[0]
+            assert expected.vector() == qr.vector()
+
+
+class TestQueryWithMultipleRuns(IndexTesting):
+
+    def test_query_runs_from_location(self):
+        idx = index.LicenseIndex(self.get_test_rules('index/bsd'))
+        query_loc = self.get_test_loc('index/querytokens')
+        qry = Query(location=query_loc, idx=idx)
+        runs = qry.query_runs(3)
+        result = [q._as_dict(brief=True) for q in runs]
+
+        expected = [
+            {'lines': (4, 11),
+             'matchable': True,
+             'start': 0,
+             'tokens': u'redistribution and use in source ... holders and contributors as is'},
+            {'lines': (15, 15),
+             'matchable': True,
+             'start': 36,
+             'tokens': u'redistributions'}]
+
+        assert expected == result
+
+    def test_QueryRun_vector(self):
+        idx = index.LicenseIndex([Rule(_text= 'redistributions in binary form must redistributions in')])
+        qry = Query(query_string='redistributions in binary form must redistributions in', idx=idx)
+        qruns = list(qry.query_runs())
+        assert 1== len(qruns)
+        qr = qruns[0]
+        # test
+        qv = qr.vector()
+        result = [(idx.tokens_by_tid[tid], posts) for tid, posts in enumerate(qv)]
+        expected = [
+            ('in', [1, 6]),
+            ('redistributions', [0, 5]),
+            ('form', [3]),
+            ('must', [4]),
+            ('binary', [2])]
+        assert expected == result
+
+    def test_QueryRun_copy(self):
+        idx = index.LicenseIndex([Rule(_text= 'redistributions in binary form must redistributions in')])
+        qry = Query(query_string='redistributions in binary form must redistributions in', idx=idx)
+        qruns = list(qry.query_runs())
+        assert 1== len(qruns)
+        qr = qruns[0]
+        from copy import copy
+        qr2= copy(qr)
+        assert qr is not qr2
+        assert qr == qr2
+
+    
+    def test_query_runs2(self):
+        idx = index.LicenseIndex(self.get_test_rules('index/bsd'))
+        query_loc = self.get_test_loc('index/queryruns')
+        expected = [
+            {'lines': (4, 12),
+              'matchable': True,
+              'start': 0,
+              'tokens': u'the redistribution and use in ... 2 1 3 c 4'},
+             {'lines': (14, 14),
+              'matchable': True,
+              'start': 85,
+              'tokens': u'this software is provided by ... holders and contributors as is'},
+             {'lines': (21, 21),
+              'matchable': True,
+              'start': 98,
+              'tokens': u'redistributions'}]
+
+        qry = Query(location=query_loc, idx=idx)
+        qruns = list(qry.query_runs())
+        result = [q._as_dict(brief=True) for q in qruns]
+        assert expected == result
+
+    def test_query_runs_from_rules_should_return_few_runs(self):
+        # warning: this  is a long running function
+        idx = index.get_index()
+        rules_with_multiple_runs = 0
+        for rule in idx.rules_by_rid:
+            qry = Query(location=rule.text_file, idx=idx)
+            runs = list(qry.query_runs(4))
+            if len(runs) != 1:
+                rules_with_multiple_runs += 1
+        # uncomment to print which rules are a problem.
+        #         print()
+        #         print('Multiple runs for rule:', rule.identifier())
+        #         for r in runs:
+        #             print(r._as_dict(brief=True))
+        # print('#Rules with Multiple runs:', rules_with_multiple_runs)
+        assert 100 > rules_with_multiple_runs
+
+
 class TestQueryWithFullIndex(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def test_query_data_in_binary_lkms_1(self):
+    def test_query_from_binary_lkms_1(self):
         location = self.get_test_loc('query/ath_pci.ko')
         idx = index.get_index()
-        result = query_data(location, dictionary=idx.dictionary)
+        result = Query(location, idx=idx)
+        result = list(result.query_runs())
         assert result
 
-    def test_query_data_in_binary_lkms_2(self):
+    def test_query_from_binary_lkms_2(self):
         location = self.get_test_loc('query/eeepc_acpi.ko')
         idx = index.get_index()
-        result = query_data(location, dictionary=idx.dictionary)
+        result = Query(location, idx=idx)
+        result = list(result.query_runs())
         assert result
 
-    def test_query_data_in_binary_lkms_3(self):
+    def test_query_from_binary_lkms_3(self):
         location = self.get_test_loc('query/wlan_xauth.ko')
         idx = index.get_index()
-        result = query_data(location, dictionary=idx.dictionary)
+        result = Query(location, idx=idx)
+        result = list(result.query_runs())
         assert result
-
-    def test_all_query_vectors_from_rules_should_not_create_any_all_junk_vector(self):
-        # NOTE: we use high bitvectors as a proxy for query vectors
-        idx = index.get_index()
-        for rule_high_bv in idx.high_bitvectors_by_rid:
-            assert rule_high_bv.any()

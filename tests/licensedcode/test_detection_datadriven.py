@@ -154,14 +154,14 @@ def build_tests(license_tests, clazz):
         setattr(clazz, test_name, test_method)
 
 
-def flat_keys(matches):
+def license_keys(matches):
     """
     Return a flattened list of detected license keys, sorted by position and then rule order.
     """
     return functional.flatten(match.rule.licenses for match in matches)
 
 
-def make_license_test_function(expected_licenses, test_file, test_name, min_score=100, check_negative=True):
+def make_license_test_function(expected_licenses, test_file, test_name, expected_rule_identifier=None, min_score=100, detect_negative=True):
     """
     Build a test function closing on tests arguments
     """
@@ -170,11 +170,15 @@ def make_license_test_function(expected_licenses, test_file, test_name, min_scor
 
     def data_driven_test_function(self):
         idx = index.get_index()
-        matches = idx.match(location=test_file, min_score=min_score, _check_negative=check_negative)
-        # the detected license is the first member of the returned tuple
-        license_result = flat_keys(matches)
+        matches = idx.match(location=test_file, min_score=min_score, _detect_negative=detect_negative)
+        # TODO: we should expect matches properly, not with a grab bag of flat license keys
+        license_result = license_keys(matches)
         try:
             assert expected_licenses == license_result
+            # used for validation testing of rules and licenses self detection
+            if expected_rule_identifier:
+                for match in matches:
+                    assert expected_rule_identifier == match.rule.identifier()
         except:
             # on failure, we compare against more result data to get additional
             # failure details, including the test_file and full match details

@@ -8,5 +8,4 @@ spdx_license_key: Beerware
 spdx_full_name: Beerware License
 spdx_url: http://spdx.org/licenses/Beerware
 text_urls:
-    - http://people.freebsd.org/~phk/
     - https://fedoraproject.org/wiki/Licensing/Beerware

@@ -1,3 +1,7 @@
 Contrary to the GNU Public License (GPL) the Apache
-    Software License does not make any claims over your
-    extensions
+Software License does not make any claims over your
+extensions. By extensions, we mean totally new code that
+invokes existing log4j classes. You are free to do
+whatever you wish with your proprietary log4j extensions.
+In particular, you may choose to never release your extensions
+to the wider public.

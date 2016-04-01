@@ -10,7 +10,5 @@ spdx_url: http://spdx.org/licenses/EPL-1.0
 spdx_notes: |-
     This license is OSI certifified
     EPL replaced the CPL on 28 June 2005.
-text_urls:
-    - http://www.eclipse.org/legal/epl-v10.html
 osi_url: http://opensource.org/licenses/eclipse-1.0.php
 faq_url: http://eclipse.org/legal/eplfaq.php

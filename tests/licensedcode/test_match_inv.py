@@ -61,7 +61,7 @@ def gstrings(ghts, query):
 class TestHits(IndexTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def test_group_hits_by_rid_with_simple_numerical_hits(self):
+    def test_group_hits_with_simple_numerical_hits(self):
         hits_by_rid = {
             0: [
                 (0, 5),
@@ -89,44 +89,61 @@ class TestHits(IndexTesting):
         }
 
         expected = {
-         0: [[(0, 5)],
-             [(1, 3), (4, 5), (5, 6), (6, 7), (7, 8), (8, 9)],
-             [(2, 0), (3, 1)]],
-         1: [[(0, 10)],
-             [(1, 1), (3, 3), (6, 6)],
+         0: [[(2, 0), (3, 1), (4, 5), (5, 6), (6, 7), (7, 8), (8, 9)],
+             [(1, 3)],
+             [(0, 5)]],
+         1: [[(1, 1), (3, 3), (6, 6)],
+             [(0, 10)],
              [(4, 10), (5, 11), (6, 12), (8, 14), (9, 16), (10, 17)]]}
 
-        result = match_inv.group_hits_by_rid(hits_by_rid, rules=None, max_dist=5)
-        assert expected == result
 
-    def test_build_matches(self):
-        hit_groups_by_rid = {
-            0: [
-                [(5, 0)],
-                [(3, 1)],
-                [(0, 2), (1, 3), (5, 4), (6, 5), (7, 6), (8, 7), (9, 8)],
-            ],
-            1: [
-                [(10, 0)],
-                [(1, 1), (3, 3), (10, 4), (11, 5)],
-                [(6, 6)],
-                [(12, 6), (14, 8), (16, 9), (17, 10)],
-            ]
-        }
+        assert expected[0] == match_inv.group_hits(hits_by_rid[0], max_dist=5)
+        assert expected[1] == match_inv.group_hits(hits_by_rid[1], max_dist=5)
 
-        expected = [
-            (0, (Span(5, 5),), (Span(0, 0),)),
-            (0, (Span(3, 3),), (Span(1, 1),)),
-            (0, (Span(0, 1), Span(5, 9)), (Span(2, 8),)),
-            (1, (Span(10, 10),), (Span(0, 0),)),
-            (1, (Span(1, 1), Span(3, 3), Span(10, 11)), (Span(1, 1), Span(3, 5))),
-            (1, (Span(6, 6),), (Span(6, 6),)),
-            (1, (Span(12, 12), Span(14, 14), Span(16, 17)), (Span(6, 6), Span(8, 10)))
+    def test_build_match(self):
+        rule = models.Rule(_text='abc')
+        line_by_pos = {}
+        hits = [(5, 0,)]
+        match = match_inv.build_match(hits, rule, line_by_pos)
+        assert Span([5]) == match.qspan
+        assert Span([0]) == match.ispan
+
+    def test_build_matches1(self):
+        hit_groups = [
+            [(5, 0,)],
+            [(3, 1,)],
+            [(0, 2), (1, 3), (5, 4), (6, 5), (7, 6), (8, 7), (9, 8)],
         ]
 
-        rules = {0: models.Rule(), 1: models.Rule()}
-        rules[0].rid = 0
-        rules[1].rid = 1
-        matches = match_inv.build_matches(hit_groups_by_rid, rules, {})
-        result = [(match.rule.rid, match.qspans, match.ispans) for match in matches]
+        expected = [
+            (Span([5]), Span([0])),
+            (Span([3]), Span([1])),
+            (Span([0, 1, 5, 6, 7, 8, 9]), Span([2, 3, 4, 5, 6, 7, 8])),
+        ]
+
+        rule = models.Rule(_text='ab')
+        rule.rid = 0
+        matches = match_inv.build_matches(hit_groups, rule, {})
+        result = [(match.qspan, match.ispan) for match in matches]
+        assert expected == result
+
+    def test_build_matches2(self):
+        hit_groups = [
+            [(10, 0,)],
+            [(1, 1), (3, 3), (10, 4), (11, 5)],
+            [(6, 6,)],
+            [(12, 6), (14, 8), (16, 9), (17, 10)],
+        ]
+
+        expected = [
+            (Span([10]), Span([0])),
+            (Span([1, 3, 10, 11]), Span([1, 3, 4, 5])),
+            (Span([6]), Span([6])),
+            (Span([12, 14, 16, 17]), Span([6, 8, 9, 10]))
+        ]
+
+        rule = models.Rule(_text='ab')
+        rule.rid = 0
+        matches = match_inv.build_matches(hit_groups, rule, {})
+        result = [(match.qspan, match.ispan) for match in matches]
         assert expected == result

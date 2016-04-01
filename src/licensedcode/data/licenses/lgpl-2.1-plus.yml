@@ -12,7 +12,5 @@ spdx_url: http://spdx.org/licenses/LGPL-2.1+
 spdx_notes: |-
     This license was released: February 1999.
     This license is OSI certified.
-text_urls:
-    - http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
 other_urls:
     - http://www.gnu.org/copyleft/lesser.html

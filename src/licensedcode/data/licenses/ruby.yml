@@ -13,5 +13,3 @@ spdx_notes: >-
     to BSD-2-Clause currently), so one needs to be aware of that change. The Ruby
     License itself is un-versioned, but has varied a bit over the years, the last
     substantive variation being in 2002.
-text_urls:
-    - http://www.ruby-lang.org/en/LICENSE.txt

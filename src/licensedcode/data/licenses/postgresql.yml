@@ -10,5 +10,3 @@ spdx_url: http://spdx.org/licenses/PostgreSQL
 spdx_notes: This license is OSI certified.
 text_urls:
     - http://www.opensource.org/licenses/postgresql
-    - http://www.postgresql.org/about/licence
-osi_url: http://www.opensource.org/licenses/postgresql

@@ -10,5 +10,3 @@ spdx_url: >-
     http://www.zope.org/Resources/License/ZPL-2.1 http://www.zope.org/Resources/ZPL
 spdx_notes: >-
     This is a generic version of the ZPL 2.0 license
-text_urls:
-    - http://www.zope.org/Resources/License/

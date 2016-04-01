@@ -35,7 +35,8 @@ from licensedcode import prefilter
 class FilterTesting(TestCase):
 
     def test_bit_candidates(self):
-        qvector = [[0], [1, 2, 3], [0]]
+        qbvector = bitarray('011')
+
         high_bitvectors_by_rid = [
             bitarray('11')
         ]
@@ -43,12 +44,11 @@ class FilterTesting(TestCase):
             bitarray('0')
         ]
         len_junk = 1
-        candidates = prefilter.bit_candidates(qvector, high_bitvectors_by_rid, low_bitvectors_by_rid, len_junk)
+        candidates = prefilter.bit_candidates(qbvector, high_bitvectors_by_rid, low_bitvectors_by_rid, len_junk, min_score=100)
         assert [(0, 0)] == candidates
 
-
     def test_bit_candidates2(self):
-        qvector = [[], [1, 2, 3], [0]]
+        qbvector = bitarray('100')
         high_bitvectors_by_rid = [
             bitarray('11')
         ]
@@ -56,13 +56,16 @@ class FilterTesting(TestCase):
             bitarray('1')
         ]
         len_junk = 1
-        candidates = prefilter.bit_candidates(qvector, high_bitvectors_by_rid, low_bitvectors_by_rid, len_junk)
+        candidates = prefilter.bit_candidates(qbvector, high_bitvectors_by_rid, low_bitvectors_by_rid, len_junk, min_score=100)
         assert [] == candidates
 
-        qvector = [[5], [1, 2, 3], [0]]
-        candidates = prefilter.bit_candidates(qvector, high_bitvectors_by_rid, low_bitvectors_by_rid, len_junk)
+        qbvector = bitarray('111')
+        candidates = prefilter.bit_candidates(qbvector, high_bitvectors_by_rid, low_bitvectors_by_rid, len_junk, min_score=100)
         assert [(0, 0)] == candidates
 
+        qbvector = bitarray('011')
+        candidates = prefilter.bit_candidates(qbvector, high_bitvectors_by_rid, low_bitvectors_by_rid, len_junk, min_score=100)
+        assert [] == candidates
 
     def test_freq_candidates(self):
         qvector = [[0], [1, 2, 3], [0]]
@@ -70,10 +73,8 @@ class FilterTesting(TestCase):
             Counter({0: 1, 1: 3, 2: 0}),
             Counter({0: 2, 1: 2, 2: 1})
         ]
-        lengths_by_rid = [
-            4,
-            5,
-        ]
+
+        lengths_by_rid = [4,5]
 
         candidates = prefilter.freq_candidates(qvector, frequencies_by_rid, lengths_by_rid, min_score=100)
         assert [(100, 0)] == candidates

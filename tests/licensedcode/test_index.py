@@ -41,6 +41,17 @@ from licensedcode import query
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
+def print_matched_texts(match, location=None, query_string=None, idx=None):
+    from licensedcode.query import get_texts
+    qtext, itext = get_texts(match, location=location, query_string=query_string, dictionary=idx.dictionary)
+    print()
+    print('Matched qtext')
+    print(qtext)
+    print()
+    print('Matched itext')
+    print(itext)
+
+
 class IndexTesting(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
@@ -216,7 +227,7 @@ class TestIndexing(IndexTesting):
         renumbered = index.renumber_token_ids(rules_tokens_ids, idx.dictionary, idx.tokens_by_tid, idx.frequencies_by_tid, length=2, with_checks=True)
         old_to_new, len_junk, new_dictionary, new_tokens_by_tid, new_frequencies_by_tid = renumbered
 
-        assert array('h', [0, 15, 8, 7, 10, 2, 14, 11, 13, 12, 6, 3, 9, 1, 5, 4]) == old_to_new
+        assert array('h', [0, 10, 15, 11, 3, 2, 9, 8, 13, 7, 6, 5, 14, 1, 4, 12]) == old_to_new
         assert 10 == len_junk
 
         xdict = {
@@ -224,18 +235,18 @@ class TestIndexing(IndexTesting):
             u'the': 1,
             u'is': 2,
             u'rose': 3,
-            u'two': 4,
-            u'three': 5,
-            u'one': 6,
+            u'one': 4,
+            u'two': 5,
+            u'five': 6,
             u'four': 7,
-            u'five': 8,
+            u'three': 8,
             u'six': 9,
             u'gpl': 10,
             u'license': 11,
             u'mit': 12,
             u'licensed': 13,
-            u'lgpl': 14,
-            u'bsd': 15,
+            u'bsd': 14,
+            u'lgpl': 15,
         }
         assert xdict == new_dictionary
 
@@ -244,18 +255,18 @@ class TestIndexing(IndexTesting):
             u'the',
             u'is',
             u'rose',
-            u'two',
-            u'three',
             u'one',
-            u'four',
+            u'two',
             u'five',
+            u'four',
+            u'three',
             u'six',
             u'gpl',
             u'license',
             u'mit',
             u'licensed',
-            u'lgpl',
-            u'bsd']
+            u'bsd',
+            u'lgpl']
         assert xtbi == new_tokens_by_tid
 
         xtf = [10, 7, 4, 3, 2, 2, 2, 2, 2, 1, 4, 3, 2, 2, 1, 1]
@@ -270,7 +281,7 @@ class TestIndexing(IndexTesting):
 class TestMatchNoTemplates(IndexTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def test_match_exact_from_string(self):
+    def test_match_exact_from_string_once(self):
         idx = index.LicenseIndex(self.get_test_rules('index/mini'))
         query = '''
             The
@@ -278,11 +289,11 @@ class TestMatchNoTemplates(IndexTesting):
             
             Always'''
 
-        result = idx.match(query=query, min_score=100)
+        result = idx.match(query_string=query, min_score=100)
         assert 1 == len(result)
         match = result[0]
-        assert (Span(0, 13),) == match.qspans
-        assert (Span(0, 13),) == match.ispans
+        assert Span(0, 13) == match.qspan
+        assert Span(0, 13) == match.ispan
 
     def test_match_exact_from_string_twice(self):
         rule = models.Rule()
@@ -294,18 +305,18 @@ class TestMatchNoTemplates(IndexTesting):
         query = u'Hi my name is joker, name is joker yes.'
         # match            0  1     2     3  4    5
 
-        result = idx.match(query=query, min_score=0)
+        result = idx.match(query_string=query, min_score=0)
         assert 1 == len(result)
         match = result[0]
-        assert (Span(0, 5),) == match.qspans
-        assert (Span(0, 5),) == match.ispans
+        assert Span(0, 5) == match.qspan
+        assert Span(0, 5) == match.ispan
 
         # match again to ensure that there are no state side effects
-        result = idx.match(query=query, min_score=100)
+        result = idx.match(query_string=query, min_score=100)
         assert 1 == len(result)
         match = result[0]
-        assert (Span(0, 5),) == match.qspans
-        assert (Span(0, 5),) == match.ispans
+        assert Span(0, 5) == match.qspan
+        assert Span(0, 5) == match.ispan
 
     def test_match_exact_from_file(self):
         idx = index.LicenseIndex(self.get_test_rules('index/mini'))
@@ -314,8 +325,8 @@ class TestMatchNoTemplates(IndexTesting):
         result = idx.match(location=query, min_score=100)
         assert 1 == len(result)
         match = result[0]
-        assert (Span(0, 13),) == match.qspans
-        assert (Span(0, 13),) == match.ispans
+        assert Span(0, 13) == match.qspan
+        assert Span(0, 13) == match.ispan
 
     def test_match_exact_from_file_2(self):
         idx = index.LicenseIndex(self.get_test_rules('index/bsd'))
@@ -324,8 +335,8 @@ class TestMatchNoTemplates(IndexTesting):
         result = idx.match(location=query, min_score=100)
         assert 1 == len(result)
         match = result[0]
-        assert (Span(0, 212),) == match.qspans
-        assert (Span(0, 212),) == match.ispans
+        assert Span(0, 212) == match.qspan
+        assert Span(0, 212) == match.ispan
 
     def test_match_multiple(self):
         test_rules = self.get_test_rules('index/bsd')
@@ -334,9 +345,9 @@ class TestMatchNoTemplates(IndexTesting):
 
         result = idx.match(location=query, min_score=100)
         assert 1 == len(result)
-        expected = (Span(0, 212),), (Span(0, 212),)
         match = result[0]
-        assert expected == (match.qspans, match.ispans)
+        assert Span(0, 212) == match.qspan
+        assert Span(0, 212) == match.ispan
 
     def test_match_return_correct_offsets(self):
         rule = models.Rule(licenses=['test'])
@@ -346,10 +357,11 @@ class TestMatchNoTemplates(IndexTesting):
         query = u'some junk. A GPL. A MIT. A LGPL.'
         #            0    1  2   3  4   5  6    7
 
-        result = idx.match(query=query, min_score=100)
+        result = idx.match(query_string=query, min_score=100)
         assert 1 == len(result)
-        assert (Span(0, 5),) == result[0].qspans
-        assert (Span(0, 5),) == result[0].ispans
+        match = result[0]
+        assert Span(0, 5) == match.qspan
+        assert Span(0, 5) == match.ispan
 
 
 class TestMatchWithTemplates(IndexTesting):
@@ -365,8 +377,8 @@ class TestMatchWithTemplates(IndexTesting):
         assert 1 == len(result)
         match = result[0]
         assert 100 == match.normalized_score()
-        assert (Span(1, 72), Span(74, 212),) == match.qspans
-        assert (Span(0, 210),) == match.ispans
+        assert Span(1, 72) | Span(74, 212) == match.qspan
+        assert Span(0, 210) == match.ispan
 
     def test_match_to_indexed_template_with_few_tokens_around_gaps(self):
         # was failing when a gapped token (from a template) starts at a
@@ -380,9 +392,10 @@ class TestMatchWithTemplates(IndexTesting):
 
         assert 1 == len(result)
         match = result[0]
-        assert 99.5 < match.normalized_score()
-        assert Span(2, 253) == match.qregion
-        assert Span(1, 244) == match.iregion
+        # print_matched_texts(match, location=query_loc, idx=idx)
+        assert (0, 251) == (match.qstart, match.qend)
+        assert (0, 243) == (match.istart, match.iend)
+        assert 100 <= match.normalized_score()
 
     def test_match_with_templates_with_redundant_tokens_yield_single_exact_match(self):
         rule = models.Rule()
@@ -392,13 +405,13 @@ class TestMatchWithTemplates(IndexTesting):
         idx = index.LicenseIndex([rule], _ngram_length=2)
         querys = u'Hi my copyright reserved mit is license the copyright reserved mit is license yes.'
         #                 0          1      2  3       4        5            6     7  8   9
-        result = idx.match(query=querys, min_score=0)
+        result = idx.match(query_string=querys, min_score=0)
         assert 1 == len(result)
 
         match = result[0]
-        assert Span(0, 9) == match.qregion
-        assert Span(0, 9) == match.iregion
+        assert Span(0, 9) == match.qspan
+        assert Span(0, 9) == match.ispan
         assert 1 == match.score()
-        qtext, itext = query.get_texts(match, query=querys, dictionary=idx.dictionary)
+        qtext, itext = query.get_texts(match, query_string=querys, dictionary=idx.dictionary)
         assert 'copyright reserved mit is license <no-match> copyright reserved mit is license' == qtext
         assert 'copyright reserved mit is license copyright reserved mit is license' == itext

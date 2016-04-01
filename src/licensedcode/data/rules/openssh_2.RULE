@@ -174,15 +174,15 @@
     Remaining components of the software are provided under a standard
     2-term BSD licence with the following names as copyright holders:
 
-	{{10 Markus Friedl
+	{{ Markus Friedl
 	Theo de Raadt
 	Niels Provos
-	Dug Song}}
-	{{10 Aaron Campbell
+	Dug Song
+    Aaron Campbell
 	Damien Miller
 	Kevin Steves
-	Daniel Kouril}}
-	{{10 Per Allansson}}
+	Daniel Kouril
+    Per Allansson}}
 
      * Redistribution and use in source and binary forms, with or without
      * modification, are permitted provided that the following conditions

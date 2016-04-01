@@ -4,9 +4,6 @@ name: IETF Trust License
 category: Attribution
 owner: IETF - Internet Engineering Task Force
 homepage_url: http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf
-text_urls:
-    - http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf
-faq_url: http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf
 other_urls:
     - http://trustee.ietf.org/policyandprocedures.html
     - http://trustee.ietf.org/license-info/

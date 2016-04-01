@@ -22,13 +22,12 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import absolute_import, division, print_function
 
 from functools import total_ordering
 from itertools import groupby
-from itertools import izip
+from operator import or_
 
-from licensedcode.whoosh_spans import spans
 from licensedcode.whoosh_spans.spans import Span
 from licensedcode import NGRAM_LENGTH
 from licensedcode import MAX_GAP
@@ -36,6 +35,7 @@ from licensedcode import MAX_GAP
 
 DEBUG = False
 DEBUG_REPR = False
+DEBUG_REFINE = False
 DEBUG_FILTER = False
 DEBUG_MERGE = False
 
@@ -56,6 +56,12 @@ if DEBUG:
 
 EXACT_MATCH_SCORE = 1.
 
+# FIXME: Implement each ordering functions. From the Python docs: Note: While
+# this decorator makes it easy to create well behaved totally ordered types, it
+# does come at the cost of slower execution and more complex stack traces for
+# the derived comparison methods. If performance benchmarking indicates this is
+# a bottleneck for a given application, implementing all six rich comparison
+# methods instead is likely to provide an easy speed boost.
 
 @total_ordering
 class LicenseMatch(object):
@@ -63,55 +69,30 @@ class LicenseMatch(object):
     License detection match to a rule with matched query positions and lines and
     matched index positions. Also computes a score for match. At a high level, a
     match behaves a bit like a Span and has several similar methods taking into
-    account not a single span but the aligned query and index spans and regions.
+    account both the query and index Span.
     """
 
-    __slots__ = 'rule', 'qspans', 'qregion', 'ispans', 'iregion', 'lines' , '_type', '_merged', '_ilen'
+    __slots__ = 'rule', 'qspan', 'ispan', 'line_by_pos' , '_type', '_merged'
 
-    def __init__(self, rule, qspans, ispans, line_by_pos=None, merge_spans=False, _type=''):
+    def __init__(self, rule, qspan, ispan, line_by_pos=None, _type=''):
         """
         Create a new match from:
          - rule: matched Rule object
-         - qspans: query text matched Spans list, start at zero.
-         - qregion: query text maximal matched region as a single span.
-         - ispans: rule text matched Spans list, start at zero.
-         - iregion: rule text maximal matched region as a single span.
+         - qspan: query text matched Span.
+         - ispan: rule text matched Span start at zero.
          - line_by_pos: mapping of (query positions -> line numbers). Line numbers start at one.
-           Optional: if not provided, the `lines` spans will be Span(0) and no line information will be available.
-         - merge_spans: if True, the ispans and qspans are also merged.
+           Optional: if not provided, the `lines` start and end tuple will be (0, 0) and no line information will be available.
          - _type: a string indicating which matching procedure this match was created with. Used for debugging and testing only.
         """
         self.rule = rule
-
-        # note: spans are not merged nor sorted by default
-        if merge_spans:
-            self.qspans = tuple(Span.merge(qspans))
-            self.ispans = tuple(Span.merge(ispans))
-        else:
-            self.qspans = tuple(qspans)
-            self.ispans = tuple(ispans)
-
-        def _region(spans):
-            # FIXME: we are iterating a tuple of TWO values: end and start
-            starts, ends = izip(*spans)
-            return Span(min(starts), max(ends))
-
-        self.qregion = _region(self.qspans)
-        self.iregion = _region(self.ispans)
-
-        # cached index side match length
-        self._ilen = None
-
-        # span of lines for the query region
-        if line_by_pos:
-            self.lines = Span(line_by_pos[self.qregion.start], line_by_pos[self.qregion.end])
-        else:
-            self.lines = Span(0)
-
+        self.qspan = qspan
+        self.ispan = ispan
+        self.line_by_pos= line_by_pos or {}
         self._type = _type
 
         # a list of original matches that were merged in this match
         self._merged = []
+
 
     def __repr__(self):
         data = dict(
@@ -120,20 +101,21 @@ class LicenseMatch(object):
             rule_licenses=', '.join(sorted(self.rule.licenses)),
             nscore=round(self.normalized_score(), 2),
             ilen=self.ilen(),
-            qregion=self.qregion,
-            iregion=self.iregion,
-            qspans=self.qspans,
-            ispans=self.ispans,
+            qse=(self.qstart, self.qend),
+            ise=(self.istart, self.iend),
+            qspan=self.qspan,
+            ispan=self.ispan,
             lines=self.lines,
             _type=self._type,
             density=round(self.density(), 2),
         )
+        msg = 'LicenseMatch<%(rule_id)r, %(rule_licenses)r, s=%(nscore)r, l=%(ilen)r, d=%(density)r, qse=%(qse)r, ise=%(ise)r, ln=%(lines)r, %(_type)r>'
         if DEBUG_REPR:
-            return ('''LicenseMatch<%(rule_id)r, %(rule_licenses)r, s=%(nscore)r, l=%(ilen)r, d=%(density)r, qs=%(qregion)r, ir=%(iregion)r, ln=%(lines)r, %(_type)r
-            qspans=%(qspans)r
-            ispans=%(ispans)r''' % data)
-        else:
-            return ('LicenseMatch<%(rule_id)r, %(rule_licenses)r, s=%(nscore)r, l=%(ilen)r, d=%(density)r, qr=%(qregion)r, ir=%(iregion)r, ln=%(lines)r, %(_type)r>' % data)
+            msg += '''
+            qspan=%(qspan)r
+            ispan=%(ispan)r'''
+
+        return msg % data
 
     def __eq__(self, other):
         """
@@ -141,152 +123,151 @@ class LicenseMatch(object):
         """
         return (isinstance(other, LicenseMatch)
             and self.rule == other.rule
-            and self.qspans == other.qspans
-            and self.ispans == other.ispans
+            and self.qspan == other.qspan
+            and self.ispan == other.ispan
             and self.lines == other.lines)
 
     def __copy__(self):
         """
         Return a shallow copy of self.
         """
-        copied = LicenseMatch(self.rule, self.qspans[:], self.ispans[:], merge_spans=False, _type=self._type)
-        copied.lines = Span(self.lines.start, self.lines.end)
-        return copied
+        return LicenseMatch(self.rule, Span(self.qspan), Span(self.ispan), dict(self.line_by_pos), _type=self._type)
 
-    def __lt__(self, match):
+    def __lt__(self, other):
         """
-        Only consider qregion for ordering
+        Only consider qspan for ordering
         """
-        return self.qregion < match.qregion
+        return self.qstart < other.qstart
 
     def __hash__(self):
         """
         Matches are hashable.
         """
-        return hash((self.rule, tuple(self.qspans), tuple(self.ispans), self.lines))
+        return hash((self.rule, tuple(self.qspan), tuple(self.ispan), self.lines))
 
-    def __contains__(self, match):
+    @property
+    def qstart(self):
+        return self.qspan.start
+
+    @property
+    def qend(self):
+        return self.qspan.end
+
+    @property
+    def istart(self):
+        return self.ispan.start
+
+    @property
+    def iend(self):
+        return self.ispan.end
+
+    @property
+    def lines(self):
+        return self.line_by_pos.get(self.qstart, 0), self.line_by_pos.get(self.qend, 0)
+
+    def __contains__(self, other):
         """
-        Return True if every other qspans are contained in any self qspans.
+        Return True if every other qspan and ispan are contained in any self qspan.
         """
-        return self.contains_qspans(match) and self.contains_ispans(match)
+        return self.contains_qspan(other) and self.contains_ispan(other)
 
-    def contains_qregion(self, match):
-        return match.qregion in self.qregion
+    def contains_qspan(self, other):
+        return other.qspan.issubset(self.qspan)
 
-    def contains_iregion(self, match):
-        return match.iregion in self.iregion
-
-    def contains_qspans(self, match):
-        return spans.contained(self.qspans, match.qspans)
-
-    def contains_ispans(self, match):
-        return spans.contained(self.ispans, match.ispans)
-
-    def contains_spans(self, match):
+    def contains_ispan(self, other):
+        return other.ispan.issubset(self.ispan)
+    
+    def qdistance_to(self, other):
         """
-        Return True if all other match qspans and ispans are contained in this match qspans and ispans.
-        """
-        return self.contains_qspans(match) and self.contains_ispans(match)
-
-    def qdistance_to(self, match):
-        """
-        Return the absolute qregion distance to other match.
+        Return the absolute qspan distance to other match.
         Touching and overlapping matches have a zero distance.
         """
-        return self.qregion.distance_to(match.qregion)
+        return self.qspan.distance_to(other.qspan)
 
-    def idistance_to(self, match):
+    def idistance_to(self, other):
         """
-        Return the absolute iregion distance from self to other match.
+        Return the absolute ispan distance from self to other match.
         Touching and overlapping matches have a zero distance.
         """
-        return self.iregion.distance_to(match.iregion)
+        return self.ispan.distance_to(other.ispan)
 
-    def qoverlap(self, match):
-        return self.qregion.overlap(match.qregion)
+    def qoverlap(self, other):
+        return self.qspan.overlap(other.qspan)
 
-    def ioverlap(self, match):
-        return self.iregion.overlap(match.iregion)
+    def ioverlap(self, other):
+        return self.ispan.overlap(other.ispan)
 
-    def overlap(self, match):
+    def overlap(self, other):
         """
-        Return True if this match regions both overlap with other match regions.
+        Return True if this match spans both overlap with other match spans.
         """
-        return self.qoverlap(match) and self.ioverlap(match)
+        return self.qoverlap(other) and self.ioverlap(other)
 
-    def qtouch(self, match):
-        return self.qregion.touch(match.qregion)
+    def qtouch(self, other):
+        return self.qspan.touch(other.qspan)
 
-    def itouch(self, match):
-        return self.iregion.touch(match.iregion)
+    def itouch(self, other):
+        return self.ispan.touch(other.ispan)
 
-    def touch(self, match):
+    def touch(self, other):
         """
-        Return True if this match regions both touch other match regions.
+        Return True if this match spans both touch other match spans.
         """
-        return self.qtouch(match) and self.itouch(match)
+        return self.qtouch(other) and self.itouch(other)
 
-    def qsurround(self, match):
-        return self.qregion.surround(match.qregion)
+    def qsurround(self, other):
+        return self.qspan.surround(other.qspan)
 
-    def isurround(self, match):
-        return self.iregion.surround(match.iregion)
+    def isurround(self, other):
+        return self.ispan.surround(other.ispan)
 
-    def surround(self, match):
+    def surround(self, other):
         """
-        Return True if this match regions both surround (without touching) other match regions.
+        Return True if this match spans both surround (without touching) other match spans.
         """
-        return self.qsurround(match) and self.isurround(match)
+        return self.qsurround(other) and self.isurround(other)
 
-    def is_qbefore(self, match):
-        return self.qregion.is_before(match.qregion)
+    def is_qbefore(self, other):
+        return self.qspan.is_before(other.qspan)
 
-    def is_qbefore_or_touch(self, match):
-        return self.qregion.is_before_or_touch(match.qregion)
+    def is_qbefore_or_touch(self, other):
+        return self.qspan.is_before_or_touch(other.qspan)
 
-    def is_ibefore(self, match):
-        return self.iregion.is_before(match.iregion)
+    def is_ibefore(self, other):
+        return self.ispan.is_before(other.ispan)
 
-    def is_ibefore_or_touch(self, match):
-        return self.iregion.is_before_or_touch(match.iregion)
+    def is_ibefore_or_touch(self, other):
+        return self.ispan.is_before_or_touch(other.ispan)
 
-    def is_before(self, match):
+    def is_before(self, other):
         """
-        Return True if this match regions are strictly before other match regions.
+        Return True if this match spans are strictly before other match spans.
         """
-        return self.is_qbefore(match) and self.is_ibefore(match)
+        return self.is_qbefore(other) and self.is_ibefore(other)
 
-    def is_qafter(self, match):
-        return self.qregion.is_after(match.qregion)
+    def is_qafter(self, other):
+        return self.qspan.is_after(other.qspan)
 
-    def is_qafter_or_touch(self, match):
-        return self.qregion.is_after_or_touch(match.qregion)
+    def is_qafter_or_touch(self, other):
+        return self.qspan.is_after_or_touch(other.qspan)
 
-    def is_iafter(self, match):
-        return self.iregion.is_after(match.iregion)
+    def is_iafter(self, other):
+        return self.ispan.is_after(other.ispan)
 
-    def is_iafter_or_touch(self, match):
-        return self.iregion.is_after_or_touch(match.iregion)
+    def is_iafter_or_touch(self, other):
+        return self.ispan.is_after_or_touch(other.ispan)
 
-    def is_after(self, match):
+    def is_after(self, other):
         """
-        Return True if this match regions are strictly after other match regions.
+        Return True if this match spans are strictly after other match spans.
         """
-        return self.is_qafter(match) and self.is_iafter(match)
+        return self.is_qafter(other) and self.is_iafter(other)
 
-    def is_after_or_touch(self, match):
-        return self.is_qafter_or_touch(match) and self.is_iafter_or_touch(match)
-
-    def simplify(self):
-        """
-        Simplify match by merging mergeable qspans and ispans.
-        """
-        self.qspans = tuple(Span.merge(self.qspans))
-        self.ispans = tuple(Span.merge(self.ispans))
+    def is_after_or_touch(self, other):
+        return self.is_qafter_or_touch(other) and self.is_iafter_or_touch(other)
 
     @staticmethod
-    def merge(matches, merge_spans=False, max_dist=15):
+    def merge(matches, max_dist=15):
         """
         Merge overlapping, touching or close-by matches in the given iterable of
         matches. Return a new list of merged matches if they can be merged.
@@ -294,20 +275,17 @@ class LicenseMatch(object):
         
         Only matches for the same rules can be merged.
         
-        The overlap and touch is considered using both the qregion and iregion.
+        The overlap and touch is considered using both the qspan and ispan.
         
         The maximal merge is always returned and eventually a single match per
         rule is returned if all matches for that rule can be merged.
         
         For being merged two matches must also be in increasing query and index positions.
-
-        `merge_spans` is a flag to also merge ispans and qspans in all returned
-        matches.
         """
-        # FIXME: longer and denser matches starting at the same qregion should
+        # FIXME: longer and denser matches starting at the same qspan should
         # be sorted first
 
-        matches = sorted(matches, key=lambda m: (m.rule.rid, m.qregion))
+        matches = sorted(matches, key=lambda m: (m.rule.rid, m.qspan))
         merged = []
         # only merge for now matches with the same rule
         # iterate on matches grouped by rule, one rule at a time.
@@ -361,8 +339,8 @@ class LicenseMatch(object):
                             )
                          or (
                              next_match.ioverlap(this_match)
-                             and next_match.iregion.start > this_match.iregion.start
-                             and next_match.iregion.end > this_match.iregion.end
+                             and next_match.istart > this_match.istart
+                             and next_match.iend > this_match.iend
                             )
                         )
                        )
@@ -373,7 +351,7 @@ class LicenseMatch(object):
                         if DEBUG_MERGE:
                             print('====>MERGING')
                             print()
-                        this_match = this_match.update(next_match, merge_spans=merge_spans)
+                        this_match = this_match.update(next_match)
                         rule_matches[i] = this_match
                         del rule_matches[j]
 
@@ -385,48 +363,44 @@ class LicenseMatch(object):
             merged.extend(rule_matches)
         return merged
 
-    def combine(self, match, merge_spans=False):
+    def combine(self, other):
         """
         Return a new match combining self and an other match.
         """
-        same_rule = self.rule == match.rule
-        same_licensing = self.same_licensing(match)
-        assert same_rule or same_licensing, 'Cannot combine matches with different rules or licensing: from: %(self)r, to: %(match)r' % locals()
-        combined = LicenseMatch(self.rule, self.qspans + match.qspans, self.ispans + match.ispans, merge_spans=merge_spans)
+        same_rule = self.rule == other.rule
+        same_licensing = self.same_licensing(other)
+        assert same_rule or same_licensing, 'Cannot combine matches with different rules or licensing: from: %(self)r, to: %(other)r' % locals()
+        combined = LicenseMatch(self.rule, self.qspan | other.qspan, self.ispan | other.ispan)
 
-        # combine and set lines spans (we cannot pass it to the initializer as we do not have it stored in a match)
-        combined.lines = self.lines.to(match.lines)
-        if match._type not in self._type:
-            combined._type = ' '.join([self._type, match._type])
+        # combine and set lines Region (we cannot pass line by pos to the initializer as we do not have it stored in a match)
+        combined.line_by_pos.update(self.line_by_pos)
+        combined.line_by_pos.update(other.line_by_pos) 
+
+        if other._type not in self._type:
+            combined._type = ' '.join([self._type, other._type])
         else:
             combined._type = self._type
 
         # keep track of merged
-        # combined._merged = self._merged + match._merged + [copy(self), copy(match)]
+        # combined._merged = self._merged + other._merged + [copy(self), copy(other)]
         return combined
 
-    def update(self, match, merge_spans=False):
+    def update(self, other):
         """
         Update self with other match and return self.
         """
-        combined = self.combine(match, merge_spans=merge_spans)
-        self.qspans = combined.qspans
-        self.ispans = combined.ispans
-        self.qregion = combined.qregion
-        self.iregion = combined.iregion
-        self.lines = combined.lines
+        combined = self.combine(other)
+        self.qspan = combined.qspan
+        self.ispan = combined.ispan
+        self.line_by_pos = combined.line_by_pos
         self._type = combined._type
-        self._ilen = None
         return self
 
     def ilen(self):
         """
         Return the length of the match as the number of matched index tokens.
         """
-        if self._ilen is None:
-            # self.ispans = tuple(Span.merge(self.ispans))
-            self._ilen = sum(len(span) for span in self.ispans)
-        return self._ilen
+        return len(self.ispan)
 
     def negative(self):
         """
@@ -441,7 +415,7 @@ class LicenseMatch(object):
         if not self.rule.length:
             return 0.
         # simple ratio of matched tokens to total rule tokens
-        return self.ilen() / float(self.rule.length)
+        return self.ilen() / self.rule.length
 
     def normalized_score(self):
         """
@@ -455,17 +429,17 @@ class LicenseMatch(object):
     def density(self):
         """
         Return the computed density of this match as a float between 0 and 1. A
-        dense match has all ispans contiguous and has a maximum density of one.
-        A sparse match has some non-contiguous ispans.
+        dense match has ispan contiguous and has a maximum density of one.
+        A sparse match has some non-contiguous ispan.
 
         Density is not related to the score: a low scoring match can be dense
         and a high scoring match can be sparse.
 
         The density is computed as the ratio of ilen (effective number of
-        matched itokens) to the length of the qregion (actual maximal range of
+        matched itokens) to the length of the qspan (actual maximal range of
         positions for this match).
         """
-        dens = self.ilen() / float(len(self.qregion))
+        dens = self.ilen() / self.qspan.magnitude()
         # assert dens <= 1, 'density cannot be bigger than 1' + str(dens)
         if DEBUG and dens > 1:
             logger_debug('density cannot be bigger than 1', dens)
@@ -486,7 +460,7 @@ class LicenseMatch(object):
             This Apache component was released as v1.1 in 2015.
         """
 
-        rule_len = float(self.rule.length)
+        rule_len = self.rule.length
 
         # set as the biggest of 1/10th the length or the ngram length
         smallest_gap = max([round(rule_len / 10), NGRAM_LENGTH])
@@ -502,12 +476,6 @@ class LicenseMatch(object):
         Return True if other has the same licensing, score and spans.
         """
         return self.same_licensing(other) and self.same_score(other) and self.same_spans(other)
-
-    def almost_same(self, other):
-        """
-        Return True if other has the same licensing, a close score and the same regions (not spans).
-        """
-        return self.same_licensing(other) and self.close_score(other) and self.same_regions(other)
 
     def same_rule(self, other):
         """
@@ -527,42 +495,11 @@ class LicenseMatch(object):
         """
         return self.score() == other.score()
 
-    def close_score(self, other, threshold=0.1):
-        """
-        Return True if other has a score close to self where close is defined as
-        having an absolute difference less than a threshold.
-        """
-        return abs(self.score() - other.score()) <= threshold
-
-    def same_qspans(self, other):
-        return self.qspans == other.qspans
-
-    def same_ispans(self, other):
-        return self.ispans == other.ispans
-
     def same_spans(self, other):
         """
-        Return True if other has the same qspans and ispans.
+        Return True if other has the same qspan and ispan.
         """
-        return self.same_qspans(other) and self.same_ispans(other)
-
-    def same_regions(self, other):
-        """
-        Return True if other has the same regions.
-        """
-        return self.qregion == other.qregion and self.iregion == other.iregion
-
-    def more_relevant_spans(self, other):
-        """
-        Return True if self is more relevant than other score-wise with same spans.
-        """
-        return self.same_spans(other) and self.score() > other.score()
-
-    def more_relevant_regions(self, other):
-        """
-        Return True if self is more relevant than other score-wise with same regions.
-        """
-        return self.same_regions(other) and self.score() > other.score()
+        return self.qspan == other.qspan and self.ispan == other.ispan
 
     def small(self, min_length=NGRAM_LENGTH):
         """
@@ -574,18 +511,23 @@ class LicenseMatch(object):
             return False
         return self.ilen() < min_length
 
+    def query_positions(self, offset=0):
+        """
+        Return a set of unique matched query positions.
+        Subtract offset from positions if provided.
+        """
+        return set([i + offset for i in self.qspan])
 
-def build_match(hits, rule, line_by_pos, merge_spans=False, _type=None):
+
+def query_positions(matches, offset=0):
     """
-    Return a match from a hits list, a rule and a mapping of qpos -> line
-    numbers.
+    Return a set of unique matched query positions for a list of matches.
+    Subtract offset from positions if provided.
     """
-    qhits, ihits = izip(*hits)
-    qspans, ispans = Span.from_ints(qhits), Span.from_ints(ihits)
-    return LicenseMatch(rule, qspans, ispans, line_by_pos, merge_spans=merge_spans, _type=_type)
+    return matches and reduce(or_, (match.query_positions(offset) for match in matches)) or set()
 
 
-def filter_matches(matches, merge_spans=False):
+def filter_matches(matches):
     """
     Return a filtered list of LicenseMatch given a `matches` list of
     LicenseMatch by removing duplicated or superfluous matches based on matched
@@ -596,49 +538,38 @@ def filter_matches(matches, merge_spans=False):
     When more than one matched position matches the same license(s), only one
     match of this set is kept.
     """
+    matches = sorted(matches, key=lambda m: (m.qstart, -m.ilen()))
 
-    matches = sorted(matches, key=lambda m: (m.qregion.start, -m.ilen()))
-
-    if DEBUG_FILTER:
-        print('filter_matches: number of matches to process:', len(matches))
-
-    i = 0
+    if DEBUG_FILTER: print('filter_matches: number of matches to process:', len(matches))
 
     # compare two matches in the sorted sequence: this_match and the next one
+    i = 0
     while i < len(matches) - 1:
         this_match = matches[i]
-        # this_match.simplify()
-        if DEBUG_FILTER:
-            print('filter_match: this_match:', this_match)
+        if DEBUG_FILTER: print('filter_match: this_match:', this_match)
 
         j = i + 1
 
         while j < len(matches):
             next_match = matches[j]
-            # note: this is essential to compare spans
-            # next_match.simplify()
-            if DEBUG_FILTER:
-                print(' filter_match: next_match:', next_match)
+            if DEBUG_FILTER: print(' filter_match: next_match:', next_match)
 
             # Skip strict duplicates
             if next_match.same(this_match):
-                if DEBUG_FILTER:
-                    print('   filter_matches: next_match.same')
+                if DEBUG_FILTER: print('   filter_matches: next_match.same')
                 del matches[j]
                 continue
 
             # Skip qcontained, irrespective of licensing
-            if this_match.contains_qspans(next_match):
-                if DEBUG_FILTER:
-                    print('   filter_matches: next_match in this_match')
+            if this_match.contains_qspan(next_match):
+                if DEBUG_FILTER: print('   filter_matches: next_match in this_match')
                 del matches[j]
                 continue
 
             # if the next_match overlaps, merge it in this_match and delete it
             if (this_match.same_rule(next_match) and this_match.qoverlap(next_match)):
-                if DEBUG_FILTER:
-                    print('   filter_matches: mergeable same rule')
-                this_match = this_match.update(next_match, merge_spans=merge_spans)
+                if DEBUG_FILTER: print('   filter_matches: mergeable same rule')
+                this_match = this_match.update(next_match)
                 matches[i] = this_match
                 del matches[j]
                 continue
@@ -646,18 +577,16 @@ def filter_matches(matches, merge_spans=False):
             # Skip fully qcontained in this match and next next match, irrespective of licensing
             if j + 1 < len(matches):
                 next_next_match = matches[j + 1]
-                this_and_next_next_qspans = this_match.qspans + next_next_match.qspans
-                if spans.contained(this_and_next_next_qspans, next_match.qspans):
-                    if DEBUG_FILTER:
-                        print('   filter_matches: next_match qspans in (this_match+next_next_match)')
+                this_and_next_next_qspan = this_match.qspan | next_next_match.qspan
+                if next_match.qspan.issubset(this_and_next_next_qspan):
+                    if DEBUG_FILTER: print('   filter_matches: next_match qspan in (this_match+next_next_match)')
                     del matches[j]
                     continue
 
             # if the next_match overlaps, merge it in this_match and delete it
             if (this_match.same_licensing(next_match) and this_match.qoverlap(next_match)):
-                if DEBUG_FILTER:
-                    print('   filter_matches: mergeable same licensing')
-                this_match = this_match.update(next_match, merge_spans=merge_spans)
+                if DEBUG_FILTER: print('   filter_matches: mergeable same licensing')
+                this_match = this_match.update(next_match)
                 matches[i] = this_match
                 del matches[j]
                 continue
@@ -671,40 +600,164 @@ def filter_matches(matches, merge_spans=False):
     return matches
 
 
-def filter_spurious_matches(matches, min_score=100, min_length=0, min_density=0.33):
-    """
-    Return a matches sequence filtered from spurious matches and a sequence of
-    filtered matches.
-    """
-
-
 def filter_low_scoring_matches(matches, min_score=100):
     """
     Return a new matches iterable filtering matches that are sparse with a low
-    density of matched positions.
+    density of matched positions. Also return the matches that were filtered out.
     """
-    return [match for match in matches if match.normalized_score() >= min_score]
+    kept = []
+    discarded = []
+
+    for match in matches:
+        if match.normalized_score() >= min_score:
+            kept.append(match)
+        else:
+            discarded.append(match)
+
+    return kept, discarded
 
 
 def filter_short_matches(matches, min_length=0):
     """
     Return a new matches iterable filtering matches shorter a minimal length
     using ipos. Never filter matches with a rule length shorter than the minimal
-    length.
+    length. Also return the matches that were filtered out.
     """
+    kept = []
+    discarded = []
+
     if not min_length:
-        return list(matches)
-    return [match for match in matches if not match.small(min_length=min_length)]
+        return list(matches), discarded
+
+    for match in matches:
+        if not match.small(min_length=min_length):
+            kept.append(match)
+        else:
+            discarded.append(match)
+
+    return kept, discarded
 
 
 def filter_sparse_matches(matches, min_density=0.33):
     """
     Return a new matches iterable filtering matches that are sparse with a low
-    density of matched positions.
+    density of matched positions. Also return the matches that were filtered out.
     """
-    filtered = []
+    kept = []
+    discarded = []
+
     for match in matches:
         density = match.density()
         if density >= match.minimum_density() and density >= min_density:
-            filtered.append(match)
-    return filtered
+            kept.append(match)
+        else:
+            discarded.append(match)
+
+    return kept, discarded
+
+
+def filter_spurious_matches(matches, idx):
+    """
+    Return a new matches sequence filtering spurious matches. Also return the
+    matches that were filtered out.
+    Spurious matches are sparse and short matches that are false positive. 
+    """
+    kept = []
+    discarded = []
+
+    minimum_density = 0.33
+    for match in matches:
+        rule = match.rule
+        rule_high_len = rule.high_length
+        rule_low_len = rule.low_length
+        rule_len = rule.tid_length
+        rule_gaps = rule.gaps
+
+        rule_min_density = rule_minimum_density()
+        match_density = match.density()
+
+        # Is the match too sparse to be relevant?
+        #   Do we have gaps at expected gaps positions?
+        # Is the rule so short that it should be a high density match?
+        # Does the rule have enough good tokens matched to be relevant?
+
+        if match_density >= rule_minimum_density and match_density >= minimum_density:
+            kept.append(match)
+        else:
+            discarded.append(match)
+
+    return kept, discarded
+
+
+def rule_minimum_density(rule):
+    """
+    Return the minimum density as a float between 0 and 1 that this match
+    should have to be considered as a good match.
+    
+    The rationale is that for some small rules with very few tokens, it does
+    not make sense to consider sparse matches at all unless their density is
+    high.
+    
+    For example, a rule with this text: 
+        Apache-1.1
+    should not be matched to this query:    
+        This Apache component was released as v1.1 in 2015.
+    """
+
+    rule_len = rule.length
+
+    # set as the biggest of 1/10th the length or the ngram length
+    smallest_gap = max([round(rule_len / 10), NGRAM_LENGTH])
+
+    # not more than max_gap
+    gap_length = min([smallest_gap, MAX_GAP])
+
+    # for a rule with no gaps and a length of 4 or less, the minimum density is 1.
+    return rule_len / (rule_len + (rule.gaps_count * gap_length))
+
+
+
+def refine_matches(matches, max_dist, min_length, min_density, min_score):
+    """
+    Return two sequences of matches: one contains refined good matches, and the
+    other contains matches that were filtered out.
+    """
+    if DEBUG_REFINE: map(logger_debug, matches)
+
+    if DEBUG: logger_debug('   #####_match: matches: ALL matches simplified#', len(matches))
+    if DEBUG_REFINE: map(logger_debug, matches)
+
+    matches = LicenseMatch.merge(matches, max_dist=max_dist)
+
+    matches = filter_matches(matches)
+
+    logger_debug('   ##### _match: filtered_matches#:', len(matches))
+    if DEBUG_REFINE: map(logger_debug, matches)
+
+    all_discarded = []
+
+    logger_debug('   #####_match: MERGED #:', len(matches))
+    if DEBUG_REFINE: map(logger_debug, matches)
+
+    matches, discarded = filter_sparse_matches(matches, min_density=min_density)
+    all_discarded.extend(discarded)
+
+    if DEBUG: logger_debug('   #####_match: after sparse filter#', len(matches))
+    if DEBUG_REFINE: map(logger_debug, matches)
+
+    matches, discarded = filter_short_matches(matches, min_length=min_length)
+    all_discarded.extend(discarded)
+
+    if DEBUG: logger_debug('   #####: after filter_short_matches#', len(matches))
+    if DEBUG_REFINE: map(logger_debug, matches)
+
+    matches, discarded = filter_low_scoring_matches(matches, min_score=min_score)
+    all_discarded.extend(discarded)
+
+    if DEBUG: logger_debug('   #####_match: after filter_low_scoring_matches#', len(matches))
+    if DEBUG_REFINE: map(logger_debug, matches)
+
+    if DEBUG: logger_debug('   ###_match: FINAL matches#:', len(matches))
+    if DEBUG_REFINE: map(logger_debug, matches)
+
+    return matches, all_discarded

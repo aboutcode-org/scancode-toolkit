@@ -1,5 +1,6 @@
 The LaTeX Project Public License
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 LPPL Version 1.3c  2008-05-04
 
 Copyright 1999 2002-2008 LaTeX3 Project
@@ -9,6 +10,7 @@ Copyright 1999 2002-2008 LaTeX3 Project
 
 PREAMBLE
 ========
+
 The LaTeX Project Public License (LPPL) is the primary license under
 which the LaTeX kernel and the base LaTeX packages are distributed.
 
@@ -37,6 +39,7 @@ and `modguide.tex' in the base LaTeX distribution for suggestions.
 
 DEFINITIONS
 ===========
+
 In this license document the following terms are used:
 
    `Work'
@@ -92,6 +95,7 @@ In this license document the following terms are used:
 
 CONDITIONS ON DISTRIBUTION AND MODIFICATION
 ===========================================
+
 1.  Activities other than distribution and/or modification of the Work
 are not covered by this license; they are outside its scope.  In
 particular, the act of running the Work is not restricted and no
@@ -200,6 +204,7 @@ complete compliance by all parties with all applicable laws.
 
 NO WARRANTY
 ===========
+
 There is no warranty for the Work.  Except when otherwise stated in
 writing, the Copyright Holder provides the Work `as is', without
 warranty of any kind, either expressed or implied, including, but not
@@ -222,6 +227,7 @@ party has been advised of the possibility of such damages.
 
 MAINTENANCE OF THE WORK
 =======================
+
 The Work has the status `author-maintained' if the Copyright Holder
 explicitly and prominently states near the primary copyright notice in
 the Work that the Work can only be maintained by the Copyright Holder
@@ -293,6 +299,7 @@ in 2b) above.
 
 WHETHER AND HOW TO DISTRIBUTE WORKS UNDER THIS LICENSE
 ======================================================
+
 This section contains important instructions, examples, and
 recommendations for authors who are considering distributing their
 works under this license.  These authors are addressed as `you' in
@@ -300,6 +307,7 @@ this section.
 
 Choosing This License or Another License
 ----------------------------------------
+
 If for any part of your work you want or need to use *distribution*
 conditions that differ significantly from those in this license, then
 do not refer to this license anywhere in your work but, instead,
@@ -318,6 +326,7 @@ license are encouraged to read it.
 
 A Recommendation on Modification Without Distribution
 -----------------------------------------------------
+
 It is wise never to modify a component of the Work, even for your own
 personal use, without also meeting the above conditions for
 distributing the modified component.  While you might intend that such
@@ -333,6 +342,7 @@ without altering any of its licensed components.
 
 How to Use This License
 -----------------------
+
 To use this license, place in each of the components of your work both
 an explicit copyright notice including your name and the year the work
 was authored and/or last substantially modified.  Include also a
@@ -375,6 +385,7 @@ yourself.
 
 Derived Works That Are Not Replacements
 ---------------------------------------
+
 Several clauses of the LPPL specify means to provide reliability and
 stability for the user community. They therefore concern themselves
 with the case that a Derived Work is intended to be used as a
@@ -385,7 +396,8 @@ completely different task), then clauses 6b and 6d shall not apply.
 
 Important Recommendations
 -------------------------
-Defining What Constitutes the Work
+
+ Defining What Constitutes the Work
 
    The LPPL requires that distributions of the Work contain all the
    files of the Work.  It is therefore important that you provide a
@@ -401,3 +413,4 @@ Defining What Constitutes the Work
    to comprise the Work and, in such a case, the licensee would be
    entitled to make reasonable conjectures as to which files comprise
    the Work.
+

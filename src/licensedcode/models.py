@@ -36,6 +36,7 @@ from os.path import join
 
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
+from commoncode.functional import memoize
 
 from licensedcode import licenses_data_dir
 from licensedcode import saneyaml
@@ -253,7 +254,12 @@ def get_rules(unique=False):
     return rls
 
 
+@memoize
 def rules(rule_dir=rules_data_dir):
+    return list(_rules(rule_dir))
+
+
+def _rules(rule_dir=rules_data_dir):
     """
     Return an iterable of rules loaded from rules files.
     """
@@ -306,7 +312,9 @@ class Rule(object):
     """
     # OPTMIZED: use slot to increase attribute access speed wrt. namedtuple
     __slots__ = ('rid', 'licenses', 'license_choice', 'notes', 'data_file',
-                 'text_file', '_text', 'length', 'gaps', 'gaps_count')
+                 'text_file', '_text', 'length', 
+                 'high_length', 'low_length', 
+                 'gaps', 'gaps_count')
 
     def __init__(self, data_file=None, text_file=None, licenses=None,
                  license_choice=False, notes=None, _text=None):
@@ -332,10 +340,14 @@ class Rule(object):
         # for testing only, when we do not use a file
         self._text = _text
 
-        # length in number of tokens
+        # length in number of token strings
         self.length = 0
 
-        # set of pos followed by a gap, aka a template region
+        # lengths in token ids, including high/low token counts, set in indexing
+        self.high_length = 0
+        self.low_length = 0
+
+        # set of pos followed by a gap, aka a template part
         self.gaps = set()
         self.gaps_count = 0
 
@@ -370,11 +382,12 @@ class Rule(object):
         # used for test only
         if self._text:
             return self._text
-
-        if self.text_file and exists(self.text_file):
+        
+        elif self.text_file and exists(self.text_file):
             with codecs.open(self.text_file, encoding='utf-8') as f:
                 return f.read()
-        raise Exception('Inconsistent rule text for:', self.identifier())
+        else:
+            raise Exception('Inconsistent rule text for:', self.identifier())
 
     def identifier(self):
         """

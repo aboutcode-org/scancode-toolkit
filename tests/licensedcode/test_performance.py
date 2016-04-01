@@ -66,7 +66,7 @@ class TestMatchingPerf(FileBasedTesting):
         self.profile_match(idx, locations, stats_file)
 
     @skip('Use only for local profiling')
-    def test_approximate_match_to_indexed_template_with_few_tokens_around_gaps(self):
+    def test_approximate_match_to_indexed_template_with_few_tokens_around_gaps_on_limited_index(self):
         rule = models.Rule(text_file=self.get_test_loc('index/templates/idx.txt'), licenses=['test'],)
         idx = index.LicenseIndex([rule])
 
@@ -84,10 +84,10 @@ class TestMatchingPerf(FileBasedTesting):
         self.profile_match(idx, locations, stats_file)
 
     @skip('Use only for local profiling')
-    def test_match_license_performance_profiling_on_full_index(self):
+    def test_match_license_performance_profiling_on_full_index_mixed_matching(self):
         # pre-index : we are profiling only the detection, not the indexing
         idx = index.get_index()
-        stats_file = 'license_match_full_index_profile_log.txt'
+        stats_file = 'license_match_mixed_matching_full_index_profile_log.txt'
         locations = [self.get_test_loc(f) for f in ['perf/test1.txt', 'perf/whatever.py', 'perf/udll.cxx']]
         self.profile_match(idx, locations, stats_file)
 

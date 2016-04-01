@@ -24,42 +24,26 @@
 
 from __future__ import print_function, absolute_import
 
+from collections import Counter
 from functools import partial
 import textwrap
 
 from textcode.analysis import text_lines
 
 from licensedcode import NGRAM_LENGTH
+from licensedcode import match
 from licensedcode.tokenize import ngrams
 from licensedcode.tokenize import query_tokenizer
-from licensedcode.whoosh_spans.spans import Span
 
 
 """
-Build queries from the files being scanned.
+Build license queries from scanned files .
 """
 
-# debug flags
-DEBUG = False
-
-if DEBUG:
-    import logging
-    import sys
-
-    logger = logging.getLogger(__name__)
-
-    def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
-
-    # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
-else:
-    def logger_debug(*args):
-        pass
+DEBUG_REPR = False
 
 
-def iterlines(location=None, query=None):
+def iterlines(location=None, query_string=None, with_empty=False):
     """
     Given a file at location or a query string, return an iterable of (line_num,
     line text). Line numbers start at one.
@@ -68,8 +52,8 @@ def iterlines(location=None, query=None):
     # we could instead get lines and tokens at once in a batch?
     if location:
         lines = text_lines(location)
-    elif query:
-        lines = query.splitlines(False)
+    elif query_string:
+        lines = query_string.splitlines(False)
     else:
         lines = []
 
@@ -77,100 +61,234 @@ def iterlines(location=None, query=None):
     for line_num, line in enumerate(lines, 1):
         if line:
             line = line.strip()
-        if line:
+        if with_empty:
             yield line_num, line
+        else:
+            if line:
+                yield line_num, line
 
 
-def query_data(location=None, query=None, dictionary=None):
+class QueryRun(object):
     """
-    Return a line by position mapping, a query vector and a query_tokens
-    sequence given:
-    - a file at `location` or a `query` string [one of these is required],
-    - a `dictionary` mapping token strings to token ids [required],
-    Line numbers start at one, token positions at zero.
-    Unknown tokens are skipped and do not increment positions.
+    A query run is a chunk of query tokens.
     """
-    assert dictionary
-    line_by_pos = {}
-    vector = [[] for _ in range(len(dictionary))]
-    tokens = []
-    pos = 0
-    for line_num, line in iterlines(location, query):
-        for token in query_tokenizer(line):
-            token_id = dictionary.get(token)
-            # note: zero is a valid token_id. Only None is not.
+    __slots__ = 'idx', 'start', 'tokens', 'line_by_pos', '_tokens_range'
+    def __init__(self, idx, start):
+        self.idx = idx
+        # absolute position of this run in the query
+        self.start = start
+
+        # note: tokens may be updated afterwards
+        self.tokens = []
+
+        self.line_by_pos = {}
+
+        self._tokens_range = range(self.idx.len_tokens)
+
+    def __repr__(self):
+        if DEBUG_REPR:
+            data = (self.start, len(self.tokens), self.matchable(),
+                    u' '.join(self.idx.tokens_by_tid[tid] for tid in self.tokens),)
+            return 'QueryRun<start=%d, len=%d, matchable=%r, tokens=%r>' % data
+        else:
+            data = (self.start, len(self.tokens), self.matchable(),)
+            return 'QueryRun<start=%d, len=%d, matchable=%r>' % data
+
+    def __eq__(self, other):
+        return (isinstance(other, QueryRun)
+            and self.tokens == other.tokens
+            and self.start == other.start
+            and self.line_by_pos == other.line_by_pos)
+
+    def __hash__(self):
+        """
+        QueryRuns are hashable.
+        """
+        return hash((self.start, tuple(self.tokens), tuple(self.line_by_pos.items())))
+
+    def __copy__(self):
+        nqr = QueryRun(self.idx, self.start)
+        nqr.tokens = self.tokens[:]
+        nqr.line_by_pos = dict(self.line_by_pos)
+        return nqr
+        
+    def _as_dict(self, brief=False):
+        """
+        Return a human readable dictionary representing the query replacing
+        token ids with their string values. If brief is True, the tokens
+        sequence will be truncated to show only the first 5 and last five tokens
+        of the run. 
+        Used for debugging and testing.
+        """
+        tokens_by_tid = self.idx.tokens_by_tid
+
+        def tokens_string(tks):
+            "Return a string from a token id seq"
+            return u' '.join((tid is not None and tid >= 0) and tokens_by_tid[tid] or u'None' for tid in tks)
+
+        if brief and len(self.tokens) > 10:
+            tokens = tokens_string(self.tokens[:5]) + u' ... ' + tokens_string(self.tokens[-5:])
+        else:
+            tokens = tokens_string(self.tokens)
+
+        return {
+            'start': self.start,
+            'matchable': self.matchable(),
+            'tokens': tokens,
+            'lines': (min(self.line_by_pos.values()), max(self.line_by_pos.values()),)
+        }
+
+    def bv(self):
+        """
+        Return a bitvector built from this run tokens.
+        """
+        return build_bv(self.tokens, self.idx.bv_template)
+
+    def matchable(self):
+        """
+        Return True if this query run has some matchable tokens.
+        """
+        return any(tid >= self.idx.len_junk for tid in self.tokens)
+
+    def tokens_pos(self):
+        """
+        Return an iterable of (pos, token) where pos is the absolute position in
+        the original query.
+        """
+        for pos, token_id in enumerate(self.tokens, self.start):
+            yield pos, token_id
+
+    def vector(self):
+        """
+        Build and return a query vector from the accumulated tokens. The query
+        vector is a list of lists of absolute positions, similar to the inverted
+        index structure: the index in the outer list is a token id.
+        """
+        vector = [[] for _ in self._tokens_range]
+        for pos, token_id in self.tokens_pos():
             if token_id is not None:
                 vector[token_id].append(pos)
-                line_by_pos[pos] = line_num
-                tokens.append(token_id)
-                pos += 1
+        return vector
 
-    return line_by_pos, vector, tokens
+    def ngrams(self, _ngram_length=NGRAM_LENGTH):
+        """
+        Return an iterable of (ngram, start,) tuples for this query tokens.
+        """
+        # FIXME: wee should return start, ngram instead
+        return query_ngrams(self.tokens, self.start, _ngram_length)
+
+    def frequencies(self):
+        """
+        Return a Counter of token ids for this run.
+        """
+        # FIXME: would iterating tokens be faster?
+        return Counter({tid: len(postings) for tid, postings in enumerate(self.vector()) if postings})
+
+    def substract(self, matches):
+        """
+        Update this query run given a sequence of LicenseMatch by replacing
+        token query positions contained in any LicenseMatch by None.
+        """
+        mposses = match.query_positions(matches, offset=self.start)
+        self.tokens = [None if pos in mposses else tid for pos, tid in enumerate(self.tokens)]
 
 
-def query_ngrams(query_tokens, _ngram_length=NGRAM_LENGTH):
+def build_bv(tokens, bv_template):
+        bv  = bv_template.copy()
+        st = set(t for t in tokens if t is not None)
+        for token_id in st:
+            bv[token_id] = True
+        return bv
+
+
+class Query(object):
     """
-    Return an iterable of (ngram, start, end) tuples given an iterable of query
+    Keep track of a file being queried for licenses, exposing various derived
+    data structures as required for matching.
+    """
+    def __init__(self, location=None, query_string=None, idx=None):
+        """
+        Initialize the query from a location or query string and a LicenseIndex.
+        """
+        assert (location or query_string) and idx
+        self.location = location
+        self.query_string = query_string
+        self.idx = idx
+
+    def query_runs(self, line_threshold=3):
+        """
+        Yield QueryRun objects for this query.
+        line_threshold is the threshold is number of empty of junk lines to break a new run
+        """
+        len_junk = self.idx.len_junk
+
+        # initial query run
+        query_run = QueryRun(self.idx, start=0)
+
+        # TODO: add junk/unknown threshold
+
+        # break in runs based on lines either empty, all unknown or all junk
+        empty_lines = 0
+
+        # positions start at zero: note that we ignore unknown positions
+        pos = 0
+        for line_num, line  in iterlines(self.location, self.query_string, with_empty=True):
+            # have we reached a run break point?
+            if query_run.tokens and empty_lines >= line_threshold:
+                yield query_run
+
+                # start new query run
+                query_run = QueryRun(self.idx, start=pos)
+                empty_lines = 0
+
+            if not line:
+                empty_lines += 1
+                continue
+
+            line_has_known_tokens = False
+            line_has_good_tokens = False
+
+            for token in query_tokenizer(line):
+                token_id = self.idx.dictionary.get(token)
+                if token_id is not None:
+                    line_has_known_tokens = True
+                    if token_id >= len_junk:
+                        line_has_good_tokens = True
+                    query_run.tokens.append(token_id)
+                    query_run.line_by_pos[pos] = line_num
+                    # TODO: optimize: we could build the initial vector, ngrams and more early on
+                    pos += 1
+
+            if not query_run.tokens:
+                query_run.start = pos
+
+            if not line_has_known_tokens:
+                empty_lines += 1
+                continue
+
+            if line_has_good_tokens:
+                empty_lines = 0
+            else:
+                empty_lines += 1
+
+        # yield final run if any
+        if query_run.tokens:
+            yield query_run
+
+
+def query_ngrams(query_tokens, start=0, _ngram_length=NGRAM_LENGTH):
+    """
+    Return an iterable of (ngram, start,) tuples given an iterable of query
     (token, pos) tuples. Skip ngrams that contain a None as a side effect of
     filtering.
     """
-    return ((ngram, start,) for start, ngram in enumerate(ngrams(query_tokens, _ngram_length)) if None not in ngram)
+    return ((ngram, start,) for start, ngram in enumerate(ngrams(query_tokens, _ngram_length), start=start) if None not in ngram)
 
 
-def filtered_query_data(query_tokens, matches, len_tokens):
-    """
-    Return a new query_tokens and a corresponding query_vector given a sequence
-    of query_tokens, a sequence of LicenseMatch and the len_tokens number of
-    known tokens. The tokens are filtered by replacing any token position
-    contained in any matched qspans by None. Filtered tokens are ignored from
-    the vector.
-    """
-    logger_debug('filtered_query_data')
-    filtered_tokens = filtered_query_tokens(query_tokens, matches)
-    assert filtered_tokens
-    filtered_vector = filtered_query_vector_from_tokens(filtered_tokens, len_tokens)
-    return filtered_tokens, filtered_vector
-
-
-def filtered_query_vector_from_tokens(query_tokens, len_tokens):
-    """
-    Return a new query vector given a sequence of filtered query_tokens
-    (eventually containing None for filtered positions).
-    """
-    vector = [[] for _ in range(len_tokens)]
-    for qpos, token_id in enumerate(query_tokens):
-        if token_id is not None:
-            vector[token_id].append(qpos)
-    return vector
-
-
-def filtered_query_tokens(query_tokens, matches):
-    """
-    Return a new query_tokens sequence of query token given a sequence of
-    query_tokens and a sequence of LicenseMatch. The tokens are filtered by
-    replacing any token position contained in any matched qspans by None.
-    """
-    mpos = matched_query_positions(matches)
-    return [None if pos in mpos else tid for pos, tid in enumerate(query_tokens)]
-
-
-def matched_query_positions(matches):
-    """
-    Return a set of unique matched query positions given a sequence of
-    LicenseMatch.
-    """
-    matched_pos = set()
-    matched_pos_update = matched_pos.update
-    for match in matches:
-        for qspan in match.qspans:
-            matched_pos_update(range(qspan.start, qspan.end + 1))
-    return matched_pos
-
-
-def _query_token_strings(location=None, query=None, dictionary=None, lower=False):
+def _query_token_strings(location=None, query_string=None, dictionary=None, lower=False):
     """
     Return an iterable of (normalized query token strings, real_pos, query_pos)
-    given a file at `location` or a `query` string [one of these is required].
+    given a file at `location` or a `query_string` [one of these is required].
 
     real_pos is the absolute real token position in the original query stream.
 
@@ -186,7 +304,7 @@ def _query_token_strings(location=None, query=None, dictionary=None, lower=False
     real_pos = 0
     query_pos = 0
     token_is_known = False
-    for _line_num, line in iterlines(location, query):
+    for _line_num, line in iterlines(location, query_string):
         for token in query_tokenizer(line, lower):
             token_id = dictionary.get(token.lower())
             if token_id is None:
@@ -200,7 +318,7 @@ def _query_token_strings(location=None, query=None, dictionary=None, lower=False
             real_pos += 1
 
 
-def get_texts(match, location=None, query=None, dictionary=None, width=120):
+def get_texts(match, location=None, query_string=None, dictionary=None, width=120, no_match='<no-match>'):
     """
     Given a match and a query location of query string return a tuple of:
     - the matched query text as a string.
@@ -213,25 +331,24 @@ def get_texts(match, location=None, query=None, dictionary=None, width=120):
     """
     assert dictionary
 
-    no_match = '<no-match>'
-
     # rebuild matched query text
-    matched_qpos = Span.ranges(match.qspans)
-    matched_qreg = Span.ranges([match.qregion])
-
+    matched_qpos = match.qspan
+    matched_qstart = match.qspan.start
+    matched_qend = match.qspan.end
     matched_qtokens = []
     qstarted = False
-    for token, _real_pos, query_pos in _query_token_strings(location, query, dictionary):
+    for token, _real_pos, query_pos in _query_token_strings(location, query_string, dictionary):
         if query_pos == -1:
             continue
 
-        if query_pos not in matched_qreg:
+        if query_pos < matched_qstart or query_pos > matched_qend:
             continue
 
         if query_pos in matched_qpos:
             qtok = token or no_match
         else:
             qtok = no_match
+
         if not qstarted:
             if qtok == no_match:
                 continue
@@ -240,13 +357,10 @@ def get_texts(match, location=None, query=None, dictionary=None, width=120):
         matched_qtokens.append(qtok)
 
     # rebuild matched index text
-    matched_ipos = Span.ranges(match.ispans)
-    matched_ireg = Span.ranges([match.iregion])
+    matched_ipos = match.ispan
 
     matched_itokens = []
     for pos, token in enumerate(match.rule.tokens(lower=False)):
-        if pos not in matched_ireg:
-            continue
         if pos in matched_ipos:
             itok = token or no_match
             matched_itokens.append(itok)

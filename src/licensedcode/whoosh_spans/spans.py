@@ -27,336 +27,470 @@
 # those of the authors and should not be interpreted as representing official
 # policies, either expressed or implied, of Matt Chaput.
 
-from __future__ import absolute_import
+from __future__ import absolute_import, division, print_function
 
-from functools import total_ordering
 from itertools import count
 from itertools import groupby
-from itertools import izip
+from itertools import imap
 
 
-@total_ordering
-class Span(object):
+class Span(set):
     """
-    Represent a span from start to end where start and end are positive integers. A
-    span includes both items represented by start and end. 
-
-    A span is neither a slice nor an interval. 
-    Instead a span represents the start and end indexes (inclusive) of a
-    sequence slice. Slices do not include the end index.
-    
+    Represent a set of integers with a start and end.
     Typically used to represent a range of contiguous tokens positions.
-
-    Originally derived and modified from Whoosh.
+    Originally derived and heavily modified from Whoosh.
     """
-    __slots__ = 'start', 'end'
-
-    def __init__(self, start, end=None):
+    def __init__(self, *args):
         """
-        Create a new Span from start to end. end defaults to start if not
-        provided.
+        Create a new Span from a start and end ints or an iterable of ints. 
+
+        First form:
+        Span(start int, end int) : the span is initialized with a range(start, end+1)
+
+        Second form:
+        Span(iterable of ints) : the span is initialized with the iterable 
+        
+        Spans are hashable and immutable.
+
+        For example:
+        >>> s = Span([1, 2])
+        >>> s.start
+        1
+        >>> s.end
+        2
+        >>> s
+        Span([1, 2])
+
+        >>> s = Span(1, 3)
+        >>> s.start
+        1
+        >>> s.end
+        3
+        >>> s
+        Span([1, 2, 3])
+
+        >>> s = Span([6, 5, 1, 2])
+        >>> s.start
+        1
+        >>> s.end
+        6
+        >>> s
+        Span([1, 2, 5, 6])
+        >>> len(s)
+        4
+
+        >>> Span([5, 6, 7, 8, 9, 10 ,11, 12]) == Span([5, 6, 7, 8, 9, 10 ,11, 12])
+        True
+        >>> hash(Span([5, 6, 7, 8, 9, 10 ,11, 12])) == hash(Span([5, 6, 7, 8, 9, 10 ,11, 12]))
+        True
+        >>> hash(Span([5, 6, 7, 8, 9, 10 ,11, 12])) == hash(Span(5, 12))
+        True
         """
-        self.start = start
-        self.end = end is not None and end or start
+        if not args:
+            raise TypeError('Excepted at least one argument')
+            # super(Span, self).__init__()
+        else:
 
-    def __repr__(self):
-        return 'Span(%d, %d)' % (self.start, self.end)
+            len_args = len(args)
+            if len_args == 2:
+                for x in args:
+                    assert isinstance(x, int), 'All args %r should be int but was:%r' % (args, x)
+                iterable = range(args[0], args[1] + 1)
+            elif len_args == 1:
+                # assume an iterable
+                iterable = list(args[0])
+                for x in iterable:
+                    assert isinstance(x, int), 'All args %r should be int but was:%r' % (iterable, x)
 
-    def __eq__(self, other):
-        return isinstance(other, Span) and self.start == other.start and self.end == other.end
-
-    def __lt__(self, other):
-        # FIXME: we should consider the length and end too for deciding on ordering
-        return self.start < other.start
+            super(Span, self).__init__(iterable)
 
     def __hash__(self):
-        return hash((self.start, self.end))
+        return hash(frozenset(self))
 
-    def __len__(self):
+    def __repr__(self):
+        return 'Span(%r)' % sorted(self)
+
+    def union(self, *args):
+        return Span(set.union(self, *args))
+
+    @property
+    def start(self):
+        return min(self)
+
+    @property
+    def end(self):
+        return max(self)
+
+    def magnitude(self):
         """
-        >>> len(Span(1, 2))
+        Return the length of the actual maximal length represented by this span
+        ignoring gaps. The magnitude is the same as the length for a contiguous
+        span. It is based on the start and end of the span.
+
+        For example:
+        >>> Span([4, 8]).magnitude()
+        5
+        >>> len(Span([4, 8]))
         2
-        >>> len(Span(0, 0))
+        >>> len(Span([4, 5, 6, 7, 8]))
+        5
+        >>> Span([4, 5, 6, 7, 8]).magnitude()
+        5
+        >>> Span([0]).magnitude()
         1
-        >>> len(Span(0, 10))
-        11
-        >>> len(Span(4, 6))
-        3
-        """
-        return (self.end - self.start) + 1
-
-    def __iter__(self):
-        """
-        Return an iterator on start and end. 
-        >>> [x for x in Span(1, 8)]
-        [1, 8]
-        >>> it = iter(Span(1, 8))
-        >>> it.next()
+        >>> Span([0]).magnitude()
         1
-        >>> it.next()
-        8
-        >>> try:
-        ...    it.next()
-        ... except StopIteration:
-        ...    pass
         """
-        yield self.start
-        yield self.end
+        return self.end - self.start + 1
 
     def __contains__(self, other):
         """
-        Return True if self contains other span (span can also be a single int).
+        Return True if self contains other (where other is a Span, an int or
+        an ints set).
 
-        >>> Span(5, 7) in Span(5, 7)
+        For example:
+        >>> Span([5, 7]) in Span(5, 7)
         True
-        >>> Span(5, 8) in Span(5, 7)
+        >>> Span([5, 8]) in Span([5, 7])
         False
-        >>> 6 in Span(4, 8)
+        >>> 6 in Span([4, 5, 6, 7, 8])
         True
-        >>> 2 in Span(4, 8)
+        >>> 2 in Span([4, 5, 6, 7, 8])
         False
-        >>> 8 in Span(4, 8)
+        >>> 8 in Span([4, 8])
         True
-        >>> 9 in Span(4, 8)
+        >>> 5 in Span([4, 8])
+        False
+        >>> set([4, 5]) in Span([4, 5, 6, 7, 8])
+        True
+        >>> set([9]) in Span([4, 8])
         False
         """
+        if isinstance(other, (Span, set, frozenset,)):
+            return self.issuperset(other)
+
         if isinstance(other, int):
-            return self.start <= other <= self.end
-        return isinstance(other, Span) and self.start <= other.start and other.end <= self.end
+            return super(Span, self).__contains__(other)
 
     @staticmethod
     def from_ints(ints):
         """
-        Return a iterator of spans from an iterable of ints. Contiguous ints are
-        grouped in a single span.
+        Return a iterable of Spans from an iterable of ints. Contiguous ints are
+        grouped in a single Span.
         >>> list(Span.from_ints([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]))
-        [Span(1, 12)]
+        [Span([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])]
         >>> list(Span.from_ints([1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12]))
-        [Span(1, 3), Span(5, 12)]
+        [Span([1, 2, 3]), Span([5, 6, 7, 8, 9, 10, 11, 12])]
         >>> list(Span.from_ints([0, 2, 3, 5, 6, 7, 8, 9, 10, 11, 13]))
-        [Span(0, 0), Span(2, 3), Span(5, 11), Span(13, 13)]
+        [Span([0]), Span([2, 3]), Span([5, 6, 7, 8, 9, 10, 11]), Span([13])]
         """
         ints = sorted(set(ints))
-        groups = (list(group) for _, group in groupby(ints, lambda group, c=count(): next(c) - group))
-        return (Span(group[0], group[-1]) for group in groups)
+        groups = (group for _, group in groupby(ints, lambda group, c=count(): next(c) - group))
+        return imap(Span, groups)
 
     @staticmethod
     def merge(spans):
         """
-        Merge overlapping and touching spans in the given iterable of spans.
-        Return a new list of merged spans if they can be merged. Spans that
-        cannot be merged are returned as-is.
+        Return a list of merged spans from a list of spans merging overlapping
+        and touching spans in the given iterable of spans. Spans that cannot be
+        merged are returned as-is.
 
         The maximal merge is always returned, eventually resulting in a single
-        span if all spans could be merged.
+        span if all spans can merge.
 
-        >>> spans = [Span(1, 2), Span(3, 5), Span(3, 6), Span(8, 10)]
+        For example:
+        >>> spans = [Span([5, 6, 7, 8, 9, 10]), Span([1, 2]), Span([3, 4, 5]), Span([3, 4, 5, 6]), Span([8, 9, 10])]
         >>> Span.merge(spans)
-        [Span(1, 6), Span(8, 10)]
+        [Span([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])]
 
-        >>> spans = [Span(1, 2), Span(4, 5), Span(7, 8), Span(11, 12)]
+        >>> spans = [Span([1, 2]), Span([3, 4, 5]), Span([3, 4, 5, 6]), Span([8, 9, 10])]
         >>> Span.merge(spans)
-        [Span(1, 2), Span(4, 5), Span(7, 8), Span(11, 12)]
+        [Span([1, 2, 3, 4, 5, 6]), Span([8, 9, 10])]
 
-        >>> spans = [Span(1, 2), Span(5, 6), Span(7, 8), Span(12, 13)]
+        >>> spans = [Span([1, 2]), Span([4, 5]), Span([7, 8]), Span([11, 12])]
         >>> Span.merge(spans)
-        [Span(1, 2), Span(5, 8), Span(12, 13)]
+        [Span([1, 2]), Span([4, 5]), Span([7, 8]), Span([11, 12])]
+
+        >>> spans = [Span([1, 2]), Span([5, 6]), Span([7, 8]), Span([12, 13])]
+        >>> Span.merge(spans)
+        [Span([1, 2]), Span([5, 6, 7, 8]), Span([12, 13])]
+
+        # This fails for sparse spans with this implmentation:
+        # When spans are not touching they do not merge:
+        # >>> Span.merge([Span([63, 64]), Span([58, 58])])
+        # [Span([58]), Span([63, 64])]
+        # 
+        # Overlapping spans are merged:
+        # >>> spans = [Span([12, 17, 24]), Span([15, 16, 17, 35]), Span([58, 58]), Span([63, 64])]
+        # >>> Span.merge(spans)
+        # [Span([12, 15, 16, 17, 24, 35]), Span([58]), Span([63, 64])]
         """
-        return list(Span.from_ints(Span.ranges(spans)))
+        return list(Span.from_ints(Span.union(*spans)))
 
+    # TODO: check which of merge or merge2 is faster
     @staticmethod
-    def merge_two(span1, span2):
+    def merge2(spans, bridge=0):
         """
-        Return a merged Span covering span1 and span2 if they are mergeable or None otherwise.
+        Merge overlapping and touches spans in the given list of spans. Return a
+        new list of merged mergeable spans and not-merged un-mergeable spans.
 
-        `bridge` is a integer to merge (aka. "bridge") two non-touching non-
-        overlapping spans that are separated by up to `bridge` distance.
+        `bridge` is a integer to merge two non-touching non-overlapping spans
+        that are separated by up to `bridge` distance.
 
-        >>> Span.merge_two(Span(1, 2), Span(3, 5))
-        Span(1, 5)
+        For example:
+        >>> spans = [Span([1, 2]), Span([3, 4, 5]), Span([3, 4, 5, 6]), Span([8, 10])]
+        >>> Span.merge2(spans)
+        [Span([1, 2, 3, 4, 5, 6]), Span([8, 10])]
+ 
+        >>> spans = [Span([1, 2]), Span([4, 5]), Span([7,8]), Span([11, 12])]
+        >>> Span.merge2(spans, bridge=1)
+        [Span([1, 2, 4, 5, 7, 8]), Span([11, 12])]
+ 
+        >>> spans = [Span([1, 2]), Span([5, 6]), Span([7, 8]), Span([12, 13])]
+        >>> Span.merge2(spans, bridge=2)
+        [Span([1, 2, 5, 6, 7, 8]), Span([12, 13])]
 
-        >>> Span.merge_two(Span(1, 4), Span(3, 5))
-        Span(1, 5)
+        >>> spans = [Span([5, 6, 7, 8, 9, 10]), Span([1, 2]), Span([3, 4, 5]), Span([3, 4, 5, 6]), Span([8, 9, 10])]
+        >>> Span.merge2(spans)
+        [Span([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])]
 
-        >>> Span.merge_two(Span(5, 6), Span(3, 5))
-        Span(3, 6)
+        >>> spans = [Span([1, 2]), Span([3, 4, 5]), Span([3, 4, 5, 6]), Span([8, 9, 10])]
+        >>> Span.merge2(spans)
+        [Span([1, 2, 3, 4, 5, 6]), Span([8, 9, 10])]
 
-        >>> Span.merge_two(Span(3, 6), Span(8, 10))
+        >>> spans = [Span([1, 2]), Span([4, 5]), Span([7, 8]), Span([11, 12])]
+        >>> Span.merge2(spans)
+        [Span([1, 2]), Span([4, 5]), Span([7, 8]), Span([11, 12])]
+
+        >>> spans = [Span([1, 2]), Span([5, 6]), Span([7, 8]), Span([12, 13])]
+        >>> Span.merge2(spans)
+        [Span([1, 2]), Span([5, 6, 7, 8]), Span([12, 13])]
+
+        When spans are not touching they do not merge:
+        >>> Span.merge2([Span([63, 64]), Span([58, 58])])
+        [Span([58]), Span([63, 64])]
+
+        Overlapping spans are merged:
+        >>> spans = [Span([12, 17, 24]), Span([15, 16, 17, 35]), Span([58, 58]), Span([63, 64])]
+        >>> Span.merge2(spans)
+        [Span([12, 15, 16, 17, 24, 35]), Span([58]), Span([63, 64])]
         """
-        merged = Span.merge([span1, span2])
-        if len(merged) == 2:
-            return
-        else:
-            return merged[0]
+        spans = Span.sort(spans)
+        i = 0
+        while i < len(spans) - 1:
+            here = spans[i]
+            j = i + 1
+            while j < len(spans):
+                there = spans[j]
+                if there.start > here.end + 1 + bridge:
+                    break
+                if here.touch(there) or here.overlap(there) or here.distance_to(there) <= bridge + 1:
+                    here = here.union(there)
+                    spans[i] = here
+                    del spans[j]
+                else:
+                    j += 1
+            i += 1
+        return spans
 
-    @staticmethod
-    def fuse(spans):
+    def overlap(self, other):
         """
-        Return a new span covering all the spans in the given list of spans.
-        The new Span is based on the smallest start and the biggest end.
+        Return the count of overlapping items between this span and another span.
 
-        >>> spans = [Span(1, 2), Span(3, 5), Span(3, 6), Span(8, 10)]
-        >>> Span.fuse(spans)
-        Span(1, 10)
-
-        >>> spans = [Span(1, 2), Span(4, 5), Span(7, 8), Span(11, 12)]
-        >>> Span.fuse(spans)
-        Span(1, 12)
-
-        >>> spans = [Span(1), Span(4), Span(7), Span(11, 12)]
-        >>> Span.fuse(spans)
-        Span(1, 12)
+        For example:
+        >>> Span([1, 2]).overlap(Span([5, 6]))
+        0
+        >>> Span([5, 6]).overlap(Span([5, 6]))
+        2
+        >>> Span([4, 5, 6, 7]).overlap(Span([5, 6]))
+        2
+        >>> Span([4, 5, 6]).overlap(Span([5, 6, 7]))
+        2
+        >>> Span([4, 5, 6]).overlap(Span([6]))
+        1
+        >>> Span([4, 5]).overlap(Span([6, 7]))
+        0
         """
-        starts, ends = izip(*((s.start, s.end) for s in spans))
-        return Span(min(starts), max(ends))
+        return len(self & other)
 
-    def to(self, span):
+    def surround(self, other):
         """
-        Return a new span covering self and other span.
+        Return True if this span surrounds (contains without touching) another span.
 
-        >>> Span(1, 2).to(Span(5))
-        Span(1, 5)
-        >>> Span(1, 2).to(Span(5, 7))
-        Span(1, 7)
-        >>> Span(12, 14).to(Span(5, 7))
-        Span(5, 14)
-        """
-        return Span(min(self.start, span.start), max(self.end, span.end))
-
-    def overlap(self, span):
-        """
-        Return True if self overlaps with other span.
-
-        >>> Span(1, 2).overlap(Span(5, 6))
+        For example:
+        >>> Span([4, 8]).surround(Span([4, 8]))
         False
-        >>> Span(5, 6).overlap(Span(5, 6))
-        True
-        >>> Span(4, 7).overlap(Span(5, 6))
-        True
-        >>> Span(4, 6).overlap(Span(5, 7))
-        True
-        >>> Span(4, 5).overlap(Span(6, 7))
-        False
-        """
-        # FIXME: this test is obscure
-        return ((self.start >= span.start and self.start <= span.end)
-             or (self.end >= span.start and self.end <= span.end)
-             or (span.start >= self.start and span.start <= self.end)
-             or (span.end >= self.start and span.end <= self.end))
-
-    def surround(self, span):
-        """
-        Return True if self surrounds (without touching) other span.
-
-        >>> Span(4, 8).surround(Span(4, 8))
-        False
-        >>> Span(4, 8).surround(Span(5, 7))
-        True
-        """
-        return self.start < span.start and self.end > span.end
-
-    def is_before(self, span):
-        return self.end < span.start
-
-    def is_before_or_touch(self, span):
-        return self.end <= span.start
-
-    def is_after(self, span):
-        return self.start > span.end
-
-    def is_after_or_touch(self, span):
-        return self.start >= span.end
-
-    def touch(self, span):
-        """
-        Return True if self is contiguous with other span without overlap.
-
-        >>> Span(5, 7).touch(Span(5))
-        False
-        >>> Span(5, 7).touch(Span(5, 8))
-        False
-        >>> Span(5, 7).touch(Span(7, 8))
-        False
-        >>> Span(5, 7).touch(Span(8, 9))
-        True
-        >>> Span(8, 9).touch(Span(5, 7))
+        >>> Span([4, 5, 6, 7, 8]).surround(Span([5, 6, 7]))
         True
         """
-        return self.start == span.end + 1 or self.end == span.start - 1
+        return self.issuperset(other) and self.start < other.start and self.end > other.end
 
-    def distance_to(self, span):
+    def is_before(self, other):
+        return self.end < other.start
+
+    def is_before_or_touch(self, other):
+        return self.end <= other.start
+
+    def is_after(self, other):
+        return self.start > other.end
+
+    def is_after_or_touch(self, other):
+        return self.start >= other.end
+
+    def touch(self, other):
         """
-        Return the absolute positive distance from self to other span.
+        Return True if self sequence is contiguous with other span without overlap.
+
+        For example:
+        >>> Span([5, 7]).touch(Span([5]))
+        False
+        >>> Span([5, 7]).touch(Span([5, 8]))
+        False
+        >>> Span([5, 7]).touch(Span([7, 8]))
+        False
+        >>> Span([5, 7]).touch(Span([8, 9]))
+        True
+        >>> Span([8, 9]).touch(Span([5, 7]))
+        True
+        """
+        return self.start == other.end + 1 or self.end == other.start - 1
+
+    def distance_to(self, other):
+        """
+        Return the absolute positive distance from this span to other span.
         Touching and overlapping spans have a zero distance.
 
-        >>> Span(8, 9).distance_to(Span(5, 7))
+        For example:
+        >>> Span([8, 9]).distance_to(Span([5, 7]))
         0
-        >>> Span(5, 7).distance_to(Span(8, 9))
+        >>> Span([5, 7]).distance_to(Span([8, 9]))
         0
-        >>> Span(5, 6).distance_to(Span(8, 9))
+        >>> Span([5, 6]).distance_to(Span([8, 9]))
         2
-        >>> Span(5, 7).distance_to(Span(5, 7))
+        >>> Span([5, 7]).distance_to(Span([5, 7]))
         0
-        >>> Span(4, 6).distance_to(Span(5, 7))
+        >>> Span([4, 5, 6]).distance_to(Span([5, 6, 7]))
         0
-        >>> Span(5, 7).distance_to(Span(10, 12))
+        >>> Span([5, 7]).distance_to(Span([10, 12]))
         3
-        >>> Span(1, 2).distance_to(Span(4, 52))
+        >>> Span([1, 2]).distance_to(Span(range(4, 52)))
         2
         """
-        if self.overlap(span) or self.touch(span):
+        if self.overlap(other) or self.touch(other):
             return 0
-        elif self.is_before(span):
-            return span.start - self.end
+        elif self.is_before(other):
+            return other.start - self.end
         else:
-            return self.start - span.end
+            return self.start - other.end
 
     def dilate(self, count=0):
         """
-        Return a new "dilated" Span by extending it left and right with the
-        provided positive count int. Add count to end and subtract count from
-        start. start is never less than zero.
+        Return a new "dilated" Span by extending this span left and right with
+        the provided positive count int. Add count ints at start and end. start
+        is never less than zero.
 
-        >>> Span(8, 9).dilate(3)
-        Span(5, 12)
-        >>> Span(5, 6).dilate(6)
-        Span(0, 12)
+        For example:
+        >>> Span([8, 9]).dilate(3)
+        Span([5, 6, 7, 8, 9, 10, 11, 12])
+
+        >>> Span([2, 3]).dilate(6)
+        Span([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
         """
         if not count:
-            return Span(self.start, self.end)
-        return Span(max([0, self.start - count]), self.end + count)
+            return Span(self)
 
+        new_items = set.union(
+            self,
+            set(range(max([0, self.start - count]), self.start)),
+            set(range(self.end + 1, self.end + 1 + count))
+        )
+        return Span(new_items)
 
-    def range(self):
+    def range(self, offset=0):
         """
-        Return a range of integers representing this span.
+        Return a sorted range of integers representing this span.
+        Add offset to each item.
 
-        >>> Span(8, 9).range()
+        For example:
+        >>> Span([8, 9]).range()
         [8, 9]
-        >>> Span(0, 4).range()
+        >>> Span(range(5)).range()
         [0, 1, 2, 3, 4]
-        >>> Span(1, 1).range()
+        >>> Span([1]).range()
         [1]
+        >>> Span(range(5)).range(1)
+        [1, 2, 3, 4, 5]
         """
-        return range(self.start, self.end + 1)
+        return sorted(i + offset for i in self)
 
     @staticmethod
-    def ranges(spans):
+    def sort(spans):
         """
-        Return a set of integers representing the ranges of a spans sequence.
+        Return a sorted list of spans.
+        The primary sort is on start. The secondary sort is on length.
+        For two spans with same start positions, the longer span will sort first.
+
+        For example:
+        >>> spans = [Span([5, 6, 7, 8, 9, 10]), Span([1, 2]), Span([3, 4, 5]), Span([3, 4, 5, 6]), Span([8, 9, 10])]
+        >>> Span.sort(spans)
+        [Span([1, 2]), Span([3, 4, 5, 6]), Span([3, 4, 5]), Span([5, 6, 7, 8, 9, 10]), Span([8, 9, 10])]
+
+        >>> spans = [Span([1, 2]), Span([3, 4, 5]), Span([3, 4, 5, 6]), Span([8, 9, 10])]
+        >>> Span.sort(spans)
+        [Span([1, 2]), Span([3, 4, 5, 6]), Span([3, 4, 5]), Span([8, 9, 10])]
+ 
+        >>> spans = [Span([1, 2]), Span([4, 5]), Span([7, 8]), Span([11, 12])]
+        >>> Span.sort(spans)
+        [Span([1, 2]), Span([4, 5]), Span([7, 8]), Span([11, 12])]
+ 
+        >>> spans = [Span([1, 2]), Span([7, 8]), Span([5, 6]), Span([12, 13])]
+        >>> Span.sort(spans)
+        [Span([1, 2]), Span([5, 6]), Span([7, 8]), Span([12, 13])]
+            
         """
-        spans_range = set()
-        for span in spans:
-            spans_range.update(span.range())
-        return spans_range
+        key = lambda s: (s.start, -len(s),)
+        return sorted(spans, key=key)
 
+    def resemblance(self, other):
+        """
+        Return a resemblance coefficient as a float between 0 and 1.
+        0 means the spans are completely different and 1 identical. 
+        The resemblance is the Jaccard coefficient between the two span.
 
-def contained(spans1, spans2):
-    """
-    Return True if all spans from spans2 list are contained in some span of
-    spans1 list.
-    """
-    for span2 in spans2:
-        if not any(span2 in span for span in spans1):
-            return False
-    return True
+        >>> Span([8, 9]).range()
+        [8, 9]
+        >>> Span(range(5)).range()
+        [0, 1, 2, 3, 4]
+        >>> Span([1]).range()
+        [1]
+        >>> Span(range(5)).range(1)
+        [1, 2, 3, 4, 5]
+        """
+        if self.isdisjoint(other):
+            return 0
+
+        if self == other:
+            return 1
+
+        intersection = self & other
+        union = self | other
+        resemblance = len(intersection) / len(union)
+        return resemblance
+
+    def containment(self, other):
+        """
+        Return a containment coefficient as a float between 0 and 1.
+
+        >>> Span([8, 9]).range()
+        [8, 9]
+        >>> Span(range(5)).range()
+        [0, 1, 2, 3, 4]
+        >>> Span([1]).range()
+        [1]
+        >>> Span(range(5)).range(1)
+        [1, 2, 3, 4, 5]
+        """
+        intersection = self & other
+        union = self | other
+        resemblance = len(intersection) / len(union)
+        return resemblance

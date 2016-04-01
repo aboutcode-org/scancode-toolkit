@@ -10,8 +10,6 @@ spdx_full_name: >-
     University of Illinois/NCSA Open Source License
 spdx_url: http://spdx.org/licenses/NCSA
 spdx_notes: This license is OSI certified
-text_urls:
-    - http://www.otm.illinois.edu/faculty/forms/opensource.asp
 osi_url: http://www.opensource.org/licenses/UoI-NCSA.php
 other_urls:
     - http://www.stlinux.com/node/140

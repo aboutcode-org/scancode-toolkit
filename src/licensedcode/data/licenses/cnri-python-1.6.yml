@@ -10,7 +10,5 @@ spdx_full_name: CNRI Python License
 spdx_url: http://spdx.org/licenses/CNRI-Python
 spdx_notes: >-
     CNRI portion of the multi-part Python License (Python-2.0)
-text_urls:
-    - http://www.handle.net/python_licenses/python1.6_9-5-00.html
 other_urls:
     - http://spdx.org/licenses/CNRI-Python

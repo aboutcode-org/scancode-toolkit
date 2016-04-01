@@ -135,12 +135,12 @@ class TestRuleTokenizer(FileBasedTesting):
         expected = [u'ab', None, u'cd']
         assert expected == list(rule_tokenizer(text))
 
-    def test_rule_tokenizer_can_process_multiple_templatized_regions(self):
+    def test_rule_tokenizer_can_process_multiple_templatized_parts(self):
         text = u'ab{{nexb Company}}cd {{second}}ef'
         expected = [u'ab', None, u'cd', None, u'ef', ]
         assert expected == list(rule_tokenizer(text))
 
-    def test_rule_tokenizer_can_process_multiple_templatized_regions_strip_multiple_contig_templates_and_leading_and_trailing(self):
+    def test_rule_tokenizer_can_process_multiple_templatized_parts_strip_multiple_contig_templates_and_leading_and_trailing(self):
         text = u'''{{nexb}}{{nexb}}ab{{nexb Company}}{{nexb}}cd {{second}} {{nexb}}
         {{nexb}}
         {{nexb}}ef
@@ -149,7 +149,7 @@ class TestRuleTokenizer(FileBasedTesting):
         expected = [u'ab', None, u'cd', None, u'ef', ]
         assert expected == list(rule_tokenizer(text))
 
-    def test_rule_tokenizer_can_process_multiple_templatized_regions_with_default_gap_and_custom_gaps(self):
+    def test_rule_tokenizer_can_process_multiple_templatized_parts_with_default_gap_and_custom_gaps(self):
         text = u'ab{{nexb Company}}cd{{12 second}}ef{{12 second}}gh'
         expected = [u'ab', None, u'cd', None, u'ef', None, u'gh']
         assert expected == list(rule_tokenizer(text))
@@ -249,7 +249,7 @@ class TestRuleTokenizer(FileBasedTesting):
         with codecs.open(test_file, encoding='utf-8') as test:
             list(rule_tokenizer(test.read()))
 
-    def test_rule_tokenizer_does_not_crash_with_non_well_formed_templatized_regions(self):
+    def test_rule_tokenizer_does_not_crash_with_non_well_formed_templatized_parts(self):
         text = u'abcd{{ddd'
         assert [u'abcd', u'ddd'] == list(rule_tokenizer(text))
 
