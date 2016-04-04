@@ -27,7 +27,7 @@ from __future__ import absolute_import, print_function
 from collections import namedtuple
 
 from packagedcode.models import AssertedLicense
-from packagedcode.models import Package
+from packagedcode.models import Party
 from packagedcode.pyrpm.rpm import RPM
 from packagedcode.models import RpmPackage
 
@@ -114,14 +114,14 @@ def parse(location):
         description=infos.description,
         name=infos.name,
 #         epoch=infos.epoch,
-        _version=infos.version,
+        version=[infos.version],
 #         release=infos.release,
         homepage_url=infos.url,
-        distributors=[infos.distribution],
+        distributors=[Party(dict(name=infos.distribution))],
 #         arch=infos.arch,
         location=location,
 #         os=infos.os,
-        vendors=[infos.vendor],
+        vendors=[Party(dict(name=infos.vendor))],
     )
     if infos.license:
         package['asserted_licenses'] = [AssertedLicense(dict(license=infos.license))]

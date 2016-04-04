@@ -22,7 +22,8 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 from collections import OrderedDict
 from schematics.models import Model
@@ -109,14 +110,6 @@ class AssertedLicense(Model):
     notice = StringType(default=None)
     url = StringType(default=None)
 
-#     def __init__(self, license=None, text=None, notice=None, url=None):  # @ReservedAssignment
-#         # this is not well defined and is package dependent
-#         # can be a license name, text, formal or free expression
-#         self.license = license
-#         self.text = text
-#         self.notice = notice
-#         self.url = url
-
     def as_dict(self):
         license = OrderedDict()  # @ReservedAssignment
         license['license'] = self.license
@@ -126,6 +119,31 @@ class AssertedLicense(Model):
         return license
 
 
+class Party(Model):
+    """
+    A party is a person, project or organization
+    """
+    name = StringType()
+    type = StringType()
+    url = StringType()
+    email = StringType()
+    party_person = 'person'
+    # often loosely defined
+    party_project = 'project'
+    # more formally defined
+    party_org = 'organization'
+
+    PARTY_TYPES = (party_person, party_project, party_org,)
+
+    def as_dict(self):
+        party = OrderedDict()
+        party['name'] = self.name
+        party['type'] = self.type
+        party['email'] = self.email
+        party['url'] = self.url
+        return party
+
+
 class Package(Model):
     """
     A package base class.
@@ -133,7 +151,7 @@ class Package(Model):
     # descriptive name of the type of package:
     # RubyGem, Python Wheel, Maven Jar, etc.
     # see PACKAGE_TYPES
-    type = None
+    type = StringType()
 
     # types information
     filetypes = tuple()
@@ -167,144 +185,129 @@ class Package(Model):
     DEPENDENCY_GROUPS = (dep_runtime, dep_dev, dep_optional, dep_test,
                          dep_build, dep_ci, dep_bundled)
 
+    # path to a file or directory
+    location = StringType()
+
+    # the id of the package
+    id = StringType()
+    version = ListType(StringType())
+    name = StringType(required=True)
+    # this is a "short" description.
+    summary = StringType()
+    # this is a "long" description, often several pages of text.
+    description = StringType()
+
     payload_src = 'source'
     # binaries include minified JavaScripts and similar text but obfuscated formats
     payload_bin = 'binary'
     payload_doc = 'doc'
     PAYLOADS = (payload_src, payload_bin, payload_doc,)
-    # path to a file or directory
-    location = StringType(default=None)
-
-    # path to where a package archive has been extracted
-    extracted_to = StringType(default=None)
-
-    # the id of the package
-    id = StringType(default=None)
-    _version = ListType(StringType(), default=[])
-    name = StringType(required=True)
-    # this is a "short" description.
-    summary = StringType(default=None)
-    # this is a "long" description, often several pages of text.
-    description = StringType(default=None)
-
     # the type of payload in this package. one of PAYLOADS or none
-    payload_type = StringType(default=None)
+    payload_type = StringType(choices=PAYLOADS)
 
     # list of Parties: authors, packager, maintainers, contributors, distributor, vendor, etc
-    authors = ListType(StringType(), default=[])
-    maintainers = ListType(StringType(), default=[])
-    contributors = ListType(StringType(), default=[])
-    owners = ListType(StringType(), default=[])
-    packagers = ListType(StringType(), default=[])
-    distributors = ListType(StringType(), default=[])
-    vendors = ListType(StringType(), default=[])
+    authors = ListType(ModelType(Party))
+    maintainers = ListType(ModelType(Party))
+    contributors = ListType(ModelType(Party))
+    owners = ListType(ModelType(Party))
+    packagers = ListType(ModelType(Party))
+    distributors = ListType(ModelType(Party))
+    vendors = ListType(ModelType(Party))
 
     # keywords or tags
-    keywords = ListType(StringType(), default=[])
+    keywords = ListType(StringType())
     # url to a reference documentation for keywords or tags (such as a Pypi or SF.net Trove map)
-    keywords_doc_url = StringType(default=None)
+    keywords_doc_url = StringType()
 
     # paths to metadata files for this package, if any
     # can be the same as the package location (e.g. RPMs)
-    metafile_locations = ListType(StringType(), default=[])
+    metafile_locations = ListType(StringType())
 
     # URLs to metadata files for this package.
-    metafile_urls = ListType(StringType(), default=[])
+    metafile_urls = ListType(StringType())
 
-    homepage_url = StringType(default=None)
-    notes = StringType(default=None)
+    homepage_url = StringType()
+    notes = StringType()
 
     # one or more direct download urls, possibly in SPDX vcs url form
     # the first one is considered to be the primary
-    download_urls = ListType(StringType(), default=[])
+    download_urls = ListType(StringType())
 
     # checksums for the download
-    download_sha1 = StringType(default=None)
-    download_sha256 = StringType(default=None)
-    download_md5 = StringType(default=None)
+    download_sha1 = StringType()
+    download_sha256 = StringType()
+    download_md5 = StringType()
 
     # issue or bug tracker
-    bug_tracking_url = StringType(default=None)
+    bug_tracking_url = StringType()
 
     # strings (such as email, urls, etc)
-    support_contacts = ListType(StringType(), default=[])
+    support_contacts = ListType(StringType())
 
     # a URL where the code can be browsed online
-    code_view_url = StringType(default=None)
+    code_view_url = StringType()
 
     # one of git, svn, hg, etc
-    vcs_tool = StringType(default=None)
+    vcs_tool = StringType(choices=['git', 'svn', 'hg'])
     # a URL in the SPDX form of:
     # git+https://github.com/nexb/scancode-toolkit.git
-    vcs_repository = StringType(default=None)
+    vcs_repository = StringType()
     # a revision, branch, tag reference, etc (can also be included in the URL
-    vcs_revision = StringType(default=None)
+    vcs_revision = StringType()
 
     # a top level copyright often asserted in metadata
-    copyright_top_level = StringType(default=None)
+    copyright_top_level = StringType()
     # effective copyrights as detected and eventually summarized
-    copyrights = ListType(StringType(), default=[])
+    copyrights = ListType(StringType())
 
     # as asserted licensing information
     # a list of AssertLicense objects
-    asserted_licenses = ListType(ModelType(AssertedLicense), default=[])
+    asserted_licenses = ListType(ModelType(AssertedLicense))
 
     # list of legal files locations (such as COPYING, NOTICE, LICENSE, README, etc.)
-    legal_file_locations = ListType(StringType(), default=[])
+    legal_file_locations = ListType(StringType())
 
     # resolved or detected license expressions
-    license_expression = StringType(default=None)
+    license_expression = StringType()
     # a list of license texts
-    license_texts = ListType(StringType(), default=[])
+    license_texts = ListType(StringType())
 
     # a list of notices texts
-    notice_texts = ListType(StringType(), default=[])
+    notice_texts = ListType(StringType())
 
     # map of dependency group to a list of dependencies for each DEPENDENCY_GROUPS
-    dependencies = DictType(StringType(), default=OrderedDict())
+    dependencies = DictType(StringType())
+
+    @staticmethod
+    def getPackage():
+        return Package
 
     # map to a list of related packages keyed by PAYLOAD
     # for instance the SRPM of an RPM
-#     related_packages = ListType(ModelType())
+#     related_packages = ListType(ModelType('Package'))
 
-#     def __init__(self, **kwargs):
-#         # accept all keywords arguments, print a message for unknown arguments
-#         for k, v in kwargs.items():
-#             # handle properties
-#             prop = getattr(self.__class__, k, None)
-#             if isinstance(prop, property):
-#                 prop.fset(self, v)
-#                 continue
-# 
-#             # plain attributes
-#             attr = getattr(self, k, None)
-#             if not attr:
-#                 # FIXME: this should be a log message instead
-#                 print('Warning: creating Package with unknown argument: %(k)r: %(v)r' % locals())
-#             setattr(self, k, v)
+#     @property
+#     def version(self):
+#         """
+#         Return version segments joined with a dot.
+#         Subclasses can override.
+#         """
+#         return u'.'.join(self._version)
 
-    @property
-    def version(self):
-        """
-        Return version segments joined with a dot.
-        Subclasses can override.
-        """
-        return u'.'.join(self._version)
-
-    @version.setter
-    def version(self, version):
-        """
-        Set the version from a string, list or tuple of strings as a list.
-        """
-        if version is None or version == '' or version == []:
-            self._version = []
-        if isinstance(version, basestring):
-            self._version = [version]
-        elif isinstance(version, (list, tuple,)):
-            assert all(isinstance(i, basestring) for i in version)
-            self._version = list(version)
-        else:
-            raise ValueError('Version must be a string, list or tuple ')
+#     @version.setter
+#     def version(self, version):
+#         """
+#         Set the version from a string, list or tuple of strings as a list.
+#         """
+#         if version is None or version == '' or version == []:
+#             self._version = []
+#         if isinstance(version, basestring):
+#             self._version = [version]
+#         elif isinstance(version, (list, tuple,)):
+#             assert all(isinstance(i, basestring) for i in version)
+#             self._version = list(version)
+#         else:
+#             raise ValueError('Version must be a string, list or tuple ')
 
     @property
     def component_version(self):
@@ -368,35 +371,6 @@ class Package(Model):
             # package['location'] = self.location
             # package['extracted_to'] = self.extracted_to
             raise NotImplementedError()
-
-
-class Party(object):
-    """
-    A party is a person, project or organization
-    """
-    party_person = 'person'
-    # often loosely defined
-    party_project = 'project'
-    # more formally defined
-    party_org = 'organization'
-
-    PARTY_TYPES = (party_person, party_project, party_org,)
-
-    def __init__(self, name=None, type=None, email=None, url=None,  # @ReservedAssignment
-                 notes=None):
-        self.name = name
-        # one of PARTY_TYPES
-        self.type = type
-        self.email = email
-        self.url = url
-
-    def as_dict(self):
-        party = OrderedDict()
-        party['name'] = self.name
-        party['type'] = self.type
-        party['email'] = self.email
-        party['url'] = self.url
-        return party
 
 
 class Dependency(object):
@@ -471,7 +445,6 @@ class Repository(object):
         # Maven Central, Pypi, RubyGems, npmjs.org
         self.name = name
 
-
 #
 # Package Types
 #
@@ -479,8 +452,9 @@ class Repository(object):
 # NOTE: this is somewhat redundant with extractcode archive handlers
 # yet the purpose and semantics are rather different here
 
+
 class RpmPackage(Package):
-    type = 'RPM'
+    type = StringType(default='RPM')
     metafiles = ('*.spec',)
     extensions = ('.rpm', '.srpm', '.mvl', '.vip',)
     filetypes = ('rpm ',)
@@ -490,7 +464,7 @@ class RpmPackage(Package):
 
 
 class DebianPackage(Package):
-    type = 'Debian package'
+    type = StringType(default='Debian package')
     metafiles = ('*.control',)
     extensions = ('.deb',)
     filetypes = ('debian binary package',)
@@ -501,7 +475,7 @@ class DebianPackage(Package):
 
 
 class JarPackage(Package):
-    type = 'Java Jar'
+    type = StringType(default='Java Jar')
     metafiles = ['META-INF/MANIFEST.MF']
     extensions = ('.jar',)
     filetypes = ('java archive ', 'zip archive',)
@@ -512,7 +486,7 @@ class JarPackage(Package):
 
 
 class JarAppPackage(Package):
-    type = 'Java application'
+    type = StringType(default='Java application')
     metafiles = ['WEB-INF/']
     extensions = ('.war', '.sar', '.ear',)
     filetypes = ('java archive ', 'zip archive',)
@@ -523,27 +497,27 @@ class JarAppPackage(Package):
 
 
 class MavenPackage(JarPackage, JarAppPackage):
-    type = 'Maven'
+    type = StringType(default='Maven')
     metafiles = ['META-INF/**/*.pom', 'pom.xml']
     repo_types = [Repository.repo_type_maven]
 
 
 class BowerPackage(Package):
-    type = 'Bower'
+    type = StringType(default='Bower')
     metafiles = ['bower.json']
     primary_language = 'JavaScript'
     repo_types = []
 
 
 class MeteorPackage(Package):
-    type = 'Meteor'
+    type = StringType(default='Meteor')
     metafiles = ['package.js']
     primary_language = 'JavaScript'
     repo_types = []
 
 
 class CpanModule(Package):
-    type = 'CPAN'
+    type = StringType(default='CPAN')
     metafiles = ['*.pod',
                  'MANIFEST',
                  'META.yml']
@@ -552,7 +526,7 @@ class CpanModule(Package):
 
 
 class RubyGemPackage(Package):
-    type = 'RubyGem'
+    type = StringType(default='RubyGem')
     metafiles = ('*.control',
                  '*.gemspec',
                  'Gemfile',
@@ -567,7 +541,7 @@ class RubyGemPackage(Package):
 
 
 class AndroidAppPackage(Package):
-    type = 'Android app'
+    type = StringType(default='Android app')
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.apk',)
@@ -576,9 +550,9 @@ class AndroidAppPackage(Package):
     repo_types = []
 
 
-    # see http://tools.android.com/tech-docs/new-build-system/aar-formats
+# see http://tools.android.com/tech-docs/new-build-system/aar-formats
 class AndroidLibPackage(Package):
-    type = 'Android library'
+    type = StringType(default='Android library')
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     # note: Apache Axis also uses AAR extensions for plain Jars.
@@ -590,7 +564,7 @@ class AndroidLibPackage(Package):
 
 
 class MozillaExtPackage(Package):
-    type = 'Mozilla extension'
+    type = StringType(default='Mozilla extension')
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.xpi',)
@@ -600,7 +574,7 @@ class MozillaExtPackage(Package):
 
 
 class ChromeExtPackage(Package):
-    type = 'Chrome extension'
+    type = StringType(default='Chrome extension')
     filetypes = ('data',)
     mimetypes = ('application/octet-stream',)
     extensions = ('.crx',)
@@ -610,7 +584,7 @@ class ChromeExtPackage(Package):
 
 
 class IosAppPackage(Package):
-    type = 'iOS app'
+    type = StringType(default='iOS app')
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.ipa',)
@@ -620,7 +594,7 @@ class IosAppPackage(Package):
 
 
 class PythonPackage(Package):
-    type = 'Python package'
+    type = StringType(default='Python package')
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.egg', '.whl', '.pyz', '.pex',)
@@ -630,7 +604,7 @@ class PythonPackage(Package):
 
 
 class CabPackage(Package):
-    type = 'Microsoft cab'
+    type = StringType(default='Microsoft cab')
     filetypes = ('microsoft cabinet',)
     mimetypes = ('application/vnd.ms-cab-compressed',)
     extensions = ('.cab',)
@@ -639,7 +613,7 @@ class CabPackage(Package):
 
 
 class MsiInstallerPackage(Package):
-    type = 'Microsoft MSI Installer'
+    type = StringType(default='Microsoft MSI Installer')
     filetypes = ('msi installer',)
     mimetypes = ('application/x-msi',)
     extensions = ('.msi',)
@@ -649,7 +623,7 @@ class MsiInstallerPackage(Package):
 
 # notes: this catches all  exe and fails often
 class InstallShieldPackage(Package):
-    type = 'InstallShield Installer'
+    type = StringType(default='InstallShield Installer')
     filetypes = ('installshield',)
     mimetypes = ('application/x-dosexec',)
     extensions = ('.exe',)
@@ -658,7 +632,7 @@ class InstallShieldPackage(Package):
 
 
 class NugetPackage(Package):
-    type = 'Nuget'
+    type = StringType(default='Nuget')
     metafiles = ['[Content_Types].xml', '*.nuspec']
     filetypes = ('zip archive', 'microsoft ooxml')
     mimetypes = ('application/zip', 'application/octet-stream')
@@ -668,7 +642,7 @@ class NugetPackage(Package):
 
 
 class NSISInstallerPackage(Package):
-    type = 'Nullsoft Installer'
+    type = StringType(default='Nullsoft Installer')
     filetypes = ('nullsoft installer',)
     mimetypes = ('application/x-dosexec',)
     extensions = ('.exe',)
@@ -677,7 +651,7 @@ class NSISInstallerPackage(Package):
 
 
 class SharPackage(Package):
-    type = 'shar shell archive'
+    type = StringType(default='shar shell archive')
     filetypes = ('posix shell script',)
     mimetypes = ('text/x-shellscript',)
     extensions = ('.sha', '.shar', '.bin')
@@ -686,7 +660,7 @@ class SharPackage(Package):
 
 
 class AppleDmgPackage(Package):
-    type = 'Apple dmg'
+    type = StringType(default='Apple dmg')
     filetypes = ('zlib compressed',)
     mimetypes = ('application/zlib',)
     extensions = ('.dmg', '.sparseimage',)
@@ -695,7 +669,7 @@ class AppleDmgPackage(Package):
 
 
 class IsoImagePackage(Package):
-    type = 'ISO CD image'
+    type = StringType(default='ISO CD image')
     filetypes = ('iso 9660 cd-rom', 'high sierra cd-rom')
     mimetypes = ('application/x-iso9660-image',)
     extensions = ('.iso', '.udf', '.img')
@@ -704,7 +678,7 @@ class IsoImagePackage(Package):
 
 
 class SquashfsPackage(Package):
-    type = 'squashfs FS'
+    type = StringType(default='squashfs FS')
     filetypes = ('squashfs',)
     mimetypes = tuple()
     packaging = Package.as_archive
@@ -714,8 +688,9 @@ class SquashfsPackage(Package):
 # these very generic archives must come last
 #
 
+
 class RarPackage(Package):
-    type = 'RAR archive'
+    type = StringType(default='RAR archive')
     filetypes = ('rar archive',)
     mimetypes = ('application/x-rar',)
     extensions = ('.rar',)
@@ -724,7 +699,7 @@ class RarPackage(Package):
 
 
 class TarPackage(Package):
-    type = 'plain tarball'
+    type = StringType(default='plain tarball')
     filetypes = (
         '.tar', 'tar archive',
         'xz compressed', 'lzma compressed',
@@ -755,7 +730,7 @@ class TarPackage(Package):
 
 
 class ZipPackage(Package):
-    type = 'plain zip'
+    type = StringType(default='plain zip')
     filetypes = ('zip archive', '7-zip archive',)
     mimetypes = ('application/zip', 'application/x-7z-compressed',)
     extensions = ('.zip', '.zipx', '.7z',)

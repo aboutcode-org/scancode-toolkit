@@ -74,11 +74,11 @@ class TestNpm(FileBasedTesting):
 
     def test_parse_person3(self):
         test = 'Isaac Z. Schlueter  (http://blog.izs.me)'
-        assert ('Isaac Z. Schlueter', None , 'http://blog.izs.me') == npm.parse_person(test)
+        assert ('Isaac Z. Schlueter',None , 'http://blog.izs.me') == npm.parse_person(test)
 
     def test_parse_person4(self):
         test = 'Isaac Z. Schlueter'
-        assert ('Isaac Z. Schlueter', None , None) == npm.parse_person(test)
+        assert ('Isaac Z. Schlueter',None , None) == npm.parse_person(test)
 
     def test_parse_person5(self):
         test = '<i@izs.me> (http://blog.izs.me)'
@@ -86,21 +86,21 @@ class TestNpm(FileBasedTesting):
 
     def test_parse_person_dict(self):
         test = {'name': 'Isaac Z. Schlueter'}
-        assert ('Isaac Z. Schlueter', None , None) == npm.parse_person(test)
+        assert ('Isaac Z. Schlueter', None, None) == npm.parse_person(test)
 
     def test_parse_person_dict2(self):
         test = {'email': 'me@this.com'}
-        assert (None , 'me@this.com', None) == npm.parse_person(test)
+        assert (None, 'me@this.com', None) == npm.parse_person(test)
 
     def test_parse_person_dict3(self):
         test = {'url': 'http://example.com'}
-        assert (None , None, 'http://example.com') == npm.parse_person(test)
+        assert (None, None, 'http://example.com') == npm.parse_person(test)
 
     def test_parse_person_dict4(self):
         test = {'name': 'Isaac Z. Schlueter',
                 'email': 'me@this.com',
                 'url': 'http://example.com'}
-        assert ('Isaac Z. Schlueter', 'me@this.com' , 'http://example.com') == npm.parse_person(test)
+        assert ('Isaac Z. Schlueter','me@this.com' , 'http://example.com') == npm.parse_person(test)
 
     def relative_locations(self, package_dict):
         """
