@@ -38,14 +38,12 @@ class TestRpm(FileBasedTesting):
         test_file = self.get_test_loc('rpm/header/libproxy-bin-0.3.0-4.el6_3.x86_64.rpm')
         package = rpm.parse(test_file)
         assert 'libproxy-bin' == package.name
-        assert ['0.3.0'] == package.version
-#         assert '4.el6_3' == package.release
+        assert '0.3.0' == package.versioning.version
+        assert '4.el6_3' == package.versioning.release
         assert 'CentOS' == package.vendors[0].name
         assert 'http://code.google.com/p/libproxy/' == package.homepage_url
-#         assert 'linux' == package.os
         assert 'Binary to test libproxy' == package.summary
         assert 'The libproxy-bin package contains the proxy binary for libproxy' == package.description
-#         assert 'x86_64' == package.arch
 
     def test_pyrpm_basic(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')

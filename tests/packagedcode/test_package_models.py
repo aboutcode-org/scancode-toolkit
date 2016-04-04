@@ -29,6 +29,9 @@ import os.path
 from commoncode.testcase import FileBasedTesting
 
 from packagedcode import models
+from packagedcode.models import Package
+from packagedcode.models import Party
+from packagedcode.models import AssertedLicense
 from collections import OrderedDict
 
 
@@ -42,3 +45,31 @@ class TestModels(FileBasedTesting):
                                 ('packaging', 'archive'),
                                 ('primary_language', 'Java')])
         assert expected == result
+    def test_validate_package(self):
+        package = Package(dict(
+            name='Sample',
+            summary='Some package',
+            payload_type='source',
+            authors=[Party(
+                dict(
+                    name='Some Author',
+                    email='some@email.com'
+                    )
+                )
+            ],
+            keywords=['some', 'keyword'],
+            vcs_tool='git',
+            asserted_licenses=[
+                AssertedLicense(dict(
+                    license='apache-2.0'
+                    )
+                )
+            ],
+            )
+        )
+        assert 'Sample' == package.name
+        assert 'Some package' == package.summary
+        assert 'source' == package.payload_type
+        assert 'Some Author' == package.authors[0].name
+        assert ['some', 'keyword'] == package.keywords
+        assert 'apache-2.0' == package.asserted_licenses[0].license

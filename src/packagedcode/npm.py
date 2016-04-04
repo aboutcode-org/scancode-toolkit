@@ -39,6 +39,9 @@ from packagedcode.models import Dependency
 from packagedcode.models import Package
 from packagedcode.models import Party
 from packagedcode.models import Repository
+from packagedcode.models import Version
+from schematics.types import StringType
+from schematics.types.compound import ModelType
 
 """
 Handle Node.js NPM packages
@@ -67,8 +70,13 @@ def is_node_modules(location):
             and fileutils.file_name(location).lower() == 'node_modules')
 
 
+class NpmVersion(Version):
+    version = StringType()
+
+
 class NpmPackage(Package):
-    type = 'npm'
+    type = StringType(default='npm')
+    versioning = ModelType(NpmVersion)
     metafiles = ['package.json']
     primary_language = 'JavaScript'
     repo_types = [Repository.repo_type_npm]
@@ -85,7 +93,7 @@ class NpmPackage(Package):
         package['id'] = self.name
         package['name'] = self.name
         package['qualified_name'] = self.qualified_name
-        package['version'] = self.version
+        package['version'] = self.versioning.version
         package['summary'] = self.summary
         package['asserted_licenses'] = [l.as_dict() for l in self.asserted_licenses]
 
@@ -112,7 +120,6 @@ def parse(location):
     # mapping of top level package.json items to the Package object field name
     plain_fields = OrderedDict([
         ('name', 'name'),
-        ('version', 'version'),
         ('description', 'summary'),
         ('keywords', 'keywords'),
         ('homepage', 'homepage_url'),
@@ -147,7 +154,7 @@ def parse(location):
     base_dir = fileutils.parent_directory(location)
     package = NpmPackage(dict(location=base_dir))
     package.metafile_locations = [location]
-
+    package.versioning = NpmVersion(dict(version=data.get('version')))
     for source, target in plain_fields.items():
         value = data.get(source)
         if value:
@@ -165,7 +172,7 @@ def parse(location):
             if value:
                 func(value, package)
 
-    package.download_urls.append(public_download_url(package.name, package.version))
+    package.download_urls.append(public_download_url(package.name, package.versioning.version))
     package.metafile_locations.append(location)
     return package
 
@@ -231,10 +238,10 @@ def author_mapper(author, package):
     The "author" is one person.
     """
     name, email, url = parse_person(author)
-    package.authors = [Party(type=Party.party_person,
+    package.authors = [Party(dict(type=Party.party_person,
                              name=name,
                              email=email,
-                             url=url)]
+                             url=url))]
     return package
 
 
@@ -248,16 +255,16 @@ def contributors_mapper(contributors, package):
     if isinstance(contributors, list):
         for contrib in contributors:
             name, email, url = parse_person(contrib)
-            contribs.append(Party(type=Party.party_person,
+            contribs.append(Party(dict(type=Party.party_person,
                                   name=name,
                                   email=email,
-                                  url=url))
+                                  url=url)))
     else:  # a string or dict
         name, email, url = parse_person(contributors)
-        contribs.append(Party(type=Party.party_person,
+        contribs.append(Party(dict(type=Party.party_person,
                               name=name,
                               email=email,
-                              url=url))
+                              url=url)))
     package.contributors = contribs
     return package
 
@@ -273,16 +280,16 @@ def maintainers_mapper(maintainers, package):
     if isinstance(maintainers, list):
         for contrib in maintainers:
             name, email, url = parse_person(contrib)
-            maintains.append(Party(type=Party.party_person,
+            maintains.append(Party(dict(type=Party.party_person,
                                    name=name,
                                    email=email,
-                                   url=url))
+                                   url=url)))
     else:  # a string or dict
         name, email, url = parse_person(maintainers)
-        maintains.append(Party(type=Party.party_person,
+        maintains.append(Party(dict(type=Party.party_person,
                                name=name,
                                email=email,
-                               url=url))
+                               url=url)))
     package.maintainers = maintains
     return package
 

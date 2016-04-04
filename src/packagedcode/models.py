@@ -28,6 +28,7 @@ from __future__ import print_function
 from collections import OrderedDict
 from schematics.models import Model
 from schematics.types import StringType
+from schematics.types import IntType
 from schematics.types.compound import ListType
 from schematics.types.compound import ModelType
 from schematics.types.compound import DictType
@@ -101,6 +102,11 @@ The payload of files and directories possibly contains:
 """
 
 
+class Version(Model):
+    version = StringType()
+    pass
+
+
 class AssertedLicense(Model):
     """
     As asserted in a package
@@ -124,7 +130,6 @@ class Party(Model):
     A party is a person, project or organization
     """
     name = StringType()
-    type = StringType()
     url = StringType()
     email = StringType()
     party_person = 'person'
@@ -134,6 +139,8 @@ class Party(Model):
     party_org = 'organization'
 
     PARTY_TYPES = (party_person, party_project, party_org,)
+
+    type = StringType(choices=PARTY_TYPES)
 
     def as_dict(self):
         party = OrderedDict()
@@ -190,7 +197,7 @@ class Package(Model):
 
     # the id of the package
     id = StringType()
-    version = ListType(StringType())
+    versioning = ModelType(Version)
     name = StringType(required=True)
     # this is a "short" description.
     summary = StringType()
@@ -231,7 +238,7 @@ class Package(Model):
 
     # one or more direct download urls, possibly in SPDX vcs url form
     # the first one is considered to be the primary
-    download_urls = ListType(StringType())
+    download_urls = ListType(StringType(), default=[])
 
     # checksums for the download
     download_sha1 = StringType()
@@ -262,7 +269,7 @@ class Package(Model):
 
     # as asserted licensing information
     # a list of AssertLicense objects
-    asserted_licenses = ListType(ModelType(AssertedLicense))
+    asserted_licenses = ListType(ModelType(AssertedLicense), default=[])
 
     # list of legal files locations (such as COPYING, NOTICE, LICENSE, README, etc.)
     legal_file_locations = ListType(StringType())
@@ -276,7 +283,7 @@ class Package(Model):
     notice_texts = ListType(StringType())
 
     # map of dependency group to a list of dependencies for each DEPENDENCY_GROUPS
-    dependencies = DictType(StringType())
+    dependencies = DictType(StringType(), default={})
 
     @staticmethod
     def getPackage():
@@ -315,7 +322,7 @@ class Package(Model):
         Return the component-level version representation for this package.
         Subclasses can override.
         """
-        return self.version
+        return self.versioning.version
 
     def compare_version(self, package, package_version=True):
         """
@@ -331,21 +338,21 @@ class Package(Model):
 
         For example:
 
-        >>> q=Package(version='2')
-        >>> p=Package(version='1')
+        >>> q=Package(dict(versioning=Version(dict(version='2'))))
+        >>> p=Package(dict(versioning=Version(dict(version='1'))))
         >>> p.compare_version(q)
         -1
         >>> p.compare_version(p)
         0
-        >>> r=Package(version='0')
+        >>> r=Package(dict(versioning=Version(dict(version='0'))))
         >>> p.compare_version(r)
         1
-        >>> s=Package(version='1')
+        >>> s=Package(dict(versioning=Version(dict(version='1'))))
         >>> p.compare_version(s)
         0
         """
-        x = package_version and self.version or self.component_version
-        y = package_version and package.version or package.component_version
+        x = package_version and self.versioning.version or self.component_version
+        y = package_version and package.versioning.version or package.component_version
         return cmp(x, y)
 
     @property
@@ -453,7 +460,14 @@ class Repository(object):
 # yet the purpose and semantics are rather different here
 
 
+class RpmVersion(Version):
+    version = StringType()
+    release = StringType()
+    epoch = IntType()
+
+
 class RpmPackage(Package):
+    versioning = ModelType(RpmVersion)
     type = StringType(default='RPM')
     metafiles = ('*.spec',)
     extensions = ('.rpm', '.srpm', '.mvl', '.vip',)
@@ -463,7 +477,12 @@ class RpmPackage(Package):
     repo_types = [Repository.repo_type_yum]
 
 
+class DebianVersion(Version):
+    version = StringType()
+
+
 class DebianPackage(Package):
+    versioning = ModelType(DebianVersion)
     type = StringType(default='Debian package')
     metafiles = ('*.control',)
     extensions = ('.deb',)
@@ -474,7 +493,12 @@ class DebianPackage(Package):
     repo_types = [Repository.repo_type_debian]
 
 
+class JarVersion(Version):
+    version = StringType()
+
+
 class JarPackage(Package):
+    versioning = ModelType(JarVersion)
     type = StringType(default='Java Jar')
     metafiles = ['META-INF/MANIFEST.MF']
     extensions = ('.jar',)
@@ -485,7 +509,12 @@ class JarPackage(Package):
     repo_types = [Repository.repo_type_maven, Repository.repo_type_ivy]
 
 
+class JarAppVersion(Version):
+    versioning = StringType()
+
+
 class JarAppPackage(Package):
+    versioning = ModelType(JarAppVersion)
     type = StringType(default='Java application')
     metafiles = ['WEB-INF/']
     extensions = ('.war', '.sar', '.ear',)
@@ -496,27 +525,47 @@ class JarAppPackage(Package):
     repo_types = [Repository.repo_type_maven, Repository.repo_type_ivy]
 
 
+class MavenVersion(Version):
+    versioning = StringType()
+
+
 class MavenPackage(JarPackage, JarAppPackage):
+    versioning = ModelType(MavenVersion)
     type = StringType(default='Maven')
     metafiles = ['META-INF/**/*.pom', 'pom.xml']
     repo_types = [Repository.repo_type_maven]
 
 
+class BowerVersion(Version):
+    version = StringType()
+
+
 class BowerPackage(Package):
+    versioning = ModelType(BowerVersion)
     type = StringType(default='Bower')
     metafiles = ['bower.json']
     primary_language = 'JavaScript'
     repo_types = []
 
 
+class MeteorVersion(Version):
+    version = StringType()
+
+
 class MeteorPackage(Package):
+    versioning = ModelType(MeteorVersion)
     type = StringType(default='Meteor')
     metafiles = ['package.js']
     primary_language = 'JavaScript'
     repo_types = []
 
 
+class CpanVersion(Version):
+    version = StringType()
+
+
 class CpanModule(Package):
+    versioning = ModelType(CpanVersion)
     type = StringType(default='CPAN')
     metafiles = ['*.pod',
                  'MANIFEST',
@@ -525,7 +574,12 @@ class CpanModule(Package):
     repo_types = [Repository.repo_type_cpan]
 
 
+class RubyGemVersion(Version):
+    version = StringType()
+
+
 class RubyGemPackage(Package):
+    versioning = ModelType(RubyGemVersion)
     type = StringType(default='RubyGem')
     metafiles = ('*.control',
                  '*.gemspec',
@@ -540,7 +594,12 @@ class RubyGemPackage(Package):
     repo_types = [Repository.repo_type_gems]
 
 
+class AndroidAppVersion(Version):
+    version = StringType()
+
+
 class AndroidAppPackage(Package):
+    versioning = ModelType(AndroidAppVersion)
     type = StringType(default='Android app')
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
@@ -550,8 +609,13 @@ class AndroidAppPackage(Package):
     repo_types = []
 
 
+class AndroidLibVersion(Version):
+    version = StringType()
+
+
 # see http://tools.android.com/tech-docs/new-build-system/aar-formats
 class AndroidLibPackage(Package):
+    versioning = ModelType(AndroidLibVersion)
     type = StringType(default='Android library')
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
@@ -563,7 +627,12 @@ class AndroidLibPackage(Package):
     repo_types = []
 
 
+class MozillaExtVersion(Version):
+    version = StringType()
+
+
 class MozillaExtPackage(Package):
+    versioning = ModelType(MozillaExtVersion)
     type = StringType(default='Mozilla extension')
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
@@ -573,7 +642,12 @@ class MozillaExtPackage(Package):
     repo_types = []
 
 
+class ChromeExtVersion(Version):
+    Version = StringType()
+
+
 class ChromeExtPackage(Package):
+    versioning = ModelType(ChromeExtVersion)
     type = StringType(default='Chrome extension')
     filetypes = ('data',)
     mimetypes = ('application/octet-stream',)
@@ -583,7 +657,12 @@ class ChromeExtPackage(Package):
     repo_types = []
 
 
+class IosAppVersion(Version):
+    version = StringType()
+
+
 class IosAppPackage(Package):
+    versioning = ModelType(IosAppVersion)
     type = StringType(default='iOS app')
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
@@ -593,7 +672,12 @@ class IosAppPackage(Package):
     repo_types = []
 
 
+class PythonVersion(Version):
+    version = StringType()
+
+
 class PythonPackage(Package):
+    versioning = ModelType(PythonVersion)
     type = StringType(default='Python package')
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
@@ -603,7 +687,12 @@ class PythonPackage(Package):
     repo_types = [Repository.repo_type_python]
 
 
+class CabVersion(Version):
+    version = StringType()
+
+
 class CabPackage(Package):
+    versioning = ModelType(CabVersion)
     type = StringType(default='Microsoft cab')
     filetypes = ('microsoft cabinet',)
     mimetypes = ('application/vnd.ms-cab-compressed',)
@@ -612,7 +701,12 @@ class CabPackage(Package):
     repo_types = []
 
 
+class MsiInstallerVersion(Version):
+    version = StringType()
+
+
 class MsiInstallerPackage(Package):
+    versioning = ModelType(MsiInstallerVersion)
     type = StringType(default='Microsoft MSI Installer')
     filetypes = ('msi installer',)
     mimetypes = ('application/x-msi',)
@@ -621,8 +715,13 @@ class MsiInstallerPackage(Package):
     repo_types = []
 
 
+class InstallShieldVersion(Version):
+    version = StringType()
+
+
 # notes: this catches all  exe and fails often
 class InstallShieldPackage(Package):
+    versioning = ModelType(InstallShieldVersion)
     type = StringType(default='InstallShield Installer')
     filetypes = ('installshield',)
     mimetypes = ('application/x-dosexec',)
@@ -631,7 +730,12 @@ class InstallShieldPackage(Package):
     repo_types = []
 
 
+class NugetVersion(Version):
+    version = StringType()
+
+
 class NugetPackage(Package):
+    versioning = ModelType(NugetVersion)
     type = StringType(default='Nuget')
     metafiles = ['[Content_Types].xml', '*.nuspec']
     filetypes = ('zip archive', 'microsoft ooxml')
@@ -641,7 +745,12 @@ class NugetPackage(Package):
     repo_types = [Repository.repo_type_nuget]
 
 
+class NSISInstallerVersion(Version):
+    version = StringType()
+
+
 class NSISInstallerPackage(Package):
+    versioning = ModelType(NSISInstallerVersion)
     type = StringType(default='Nullsoft Installer')
     filetypes = ('nullsoft installer',)
     mimetypes = ('application/x-dosexec',)
@@ -650,7 +759,12 @@ class NSISInstallerPackage(Package):
     repo_types = []
 
 
+class SharVersion(Version):
+    version = StringType()
+
+
 class SharPackage(Package):
+    versioning = ModelType(SharVersion)
     type = StringType(default='shar shell archive')
     filetypes = ('posix shell script',)
     mimetypes = ('text/x-shellscript',)
@@ -659,7 +773,12 @@ class SharPackage(Package):
     repo_types = []
 
 
+class AppleDmgVersion(Version):
+    version = StringType()
+
+
 class AppleDmgPackage(Package):
+    versioning = ModelType(AppleDmgVersion)
     type = StringType(default='Apple dmg')
     filetypes = ('zlib compressed',)
     mimetypes = ('application/zlib',)
@@ -668,7 +787,12 @@ class AppleDmgPackage(Package):
     repo_types = []
 
 
+class IsoImageVersion(Version):
+    version = StringType()
+
+
 class IsoImagePackage(Package):
+    versioning = ModelType(IsoImageVersion)
     type = StringType(default='ISO CD image')
     filetypes = ('iso 9660 cd-rom', 'high sierra cd-rom')
     mimetypes = ('application/x-iso9660-image',)
@@ -677,7 +801,12 @@ class IsoImagePackage(Package):
     repo_types = []
 
 
+class SquashfsVersion(Version):
+    version = StringType()
+
+
 class SquashfsPackage(Package):
+    versioning = ModelType(SquashfsVersion)
     type = StringType(default='squashfs FS')
     filetypes = ('squashfs',)
     mimetypes = tuple()
@@ -689,7 +818,12 @@ class SquashfsPackage(Package):
 #
 
 
+class RarVersion(Version):
+    version = StringType()
+
+
 class RarPackage(Package):
+    versioning = ModelType(RarVersion)
     type = StringType(default='RAR archive')
     filetypes = ('rar archive',)
     mimetypes = ('application/x-rar',)
@@ -698,7 +832,12 @@ class RarPackage(Package):
     repo_types = []
 
 
+class TarVersion(Version):
+    version = StringType()
+
+
 class TarPackage(Package):
+    versioning = ModelType(TarVersion)
     type = StringType(default='plain tarball')
     filetypes = (
         '.tar', 'tar archive',
@@ -729,7 +868,12 @@ class TarPackage(Package):
     packaging = Package.as_archive
 
 
+class ZipVersion(Version):
+    version = StringType()
+
+
 class ZipPackage(Package):
+    versioning = ModelType(ZipVersion)
     type = StringType(default='plain zip')
     filetypes = ('zip archive', '7-zip archive',)
     mimetypes = ('application/zip', 'application/x-7z-compressed',)
@@ -738,5 +882,3 @@ class ZipPackage(Package):
 
 
 # TODO: Add VM images formats(VMDK, OVA, OVF, VDI, etc) and Docker/other containers
-
-

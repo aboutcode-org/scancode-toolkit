@@ -28,6 +28,7 @@ from collections import namedtuple
 
 from packagedcode.models import AssertedLicense
 from packagedcode.models import Party
+from packagedcode.models import RpmVersion
 from packagedcode.pyrpm.rpm import RPM
 from packagedcode.models import RpmPackage
 
@@ -109,18 +110,15 @@ def parse(location):
     infos = info(location, include_desc=True)
     if not infos:
         return
+    epoch = int(infos.epoch) if infos.epoch else None
     package = dict(
         summary=infos.summary,
         description=infos.description,
         name=infos.name,
-#         epoch=infos.epoch,
-        version=[infos.version],
-#         release=infos.release,
+        versioning=RpmVersion(dict(version=infos.version, epoch=epoch, release=infos.release)),
         homepage_url=infos.url,
         distributors=[Party(dict(name=infos.distribution))],
-#         arch=infos.arch,
         location=location,
-#         os=infos.os,
         vendors=[Party(dict(name=infos.vendor))],
     )
     if infos.license:
