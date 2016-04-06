@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 from collections import OrderedDict
+from packagedcode.pyrpm import rpm
 from schematics.models import Model
 from schematics.types import StringType
 from schematics.types import IntType
@@ -476,6 +477,12 @@ class RpmPackage(Package):
     packaging = Package.as_archive
     repo_types = [Repository.repo_type_yum]
 
+    @staticmethod
+    def recognize_package(location):
+        package = rpm.RPM(open(location, 'rb'))
+        if package.tags():
+            return True
+
 
 class DebianVersion(Version):
     version = StringType()
@@ -491,6 +498,10 @@ class DebianPackage(Package):
                  'application/vnd.debian.binary-package',)
     packaging = Package.as_archive
     repo_types = [Repository.repo_type_debian]
+
+    @staticmethod
+    def recognize_package(location):
+        return True
 
 
 class JarVersion(Version):
@@ -508,6 +519,11 @@ class JarPackage(Package):
     packaging = Package.as_archive
     repo_types = [Repository.repo_type_maven, Repository.repo_type_ivy]
 
+    @staticmethod
+    def recognize_package(location):
+        return True
+
+
 
 class JarAppVersion(Version):
     versioning = StringType()
@@ -524,6 +540,10 @@ class JarAppPackage(Package):
     packaging = Package.as_archive
     repo_types = [Repository.repo_type_maven, Repository.repo_type_ivy]
 
+    @staticmethod
+    def recognize_package(location):
+        return True
+
 
 class MavenVersion(Version):
     versioning = StringType()
@@ -534,6 +554,10 @@ class MavenPackage(JarPackage, JarAppPackage):
     type = StringType(default='Maven')
     metafiles = ['META-INF/**/*.pom', 'pom.xml']
     repo_types = [Repository.repo_type_maven]
+
+    @staticmethod
+    def recognize_package(location):
+        return True
 
 
 class BowerVersion(Version):
@@ -547,6 +571,10 @@ class BowerPackage(Package):
     primary_language = 'JavaScript'
     repo_types = []
 
+    @staticmethod
+    def recognize_package(location):
+        return True
+
 
 class MeteorVersion(Version):
     version = StringType()
@@ -558,6 +586,10 @@ class MeteorPackage(Package):
     metafiles = ['package.js']
     primary_language = 'JavaScript'
     repo_types = []
+
+    @staticmethod
+    def recognize_package(location):
+        return True
 
 
 class CpanVersion(Version):
@@ -572,6 +604,10 @@ class CpanModule(Package):
                  'META.yml']
     primary_language = 'Perl'
     repo_types = [Repository.repo_type_cpan]
+
+    @staticmethod
+    def recognize_package(location):
+        return True
 
 
 class RubyGemVersion(Version):
@@ -593,6 +629,10 @@ class RubyGemPackage(Package):
     packaging = Package.as_archive
     repo_types = [Repository.repo_type_gems]
 
+    @staticmethod
+    def recognize_package(location):
+        return True
+
 
 class AndroidAppVersion(Version):
     version = StringType()
@@ -607,6 +647,10 @@ class AndroidAppPackage(Package):
     primary_language = 'Java'
     packaging = Package.as_archive
     repo_types = []
+
+    @staticmethod
+    def recognize_package(location):
+        return True
 
 
 class AndroidLibVersion(Version):
@@ -626,6 +670,10 @@ class AndroidLibPackage(Package):
     packaging = Package.as_archive
     repo_types = []
 
+    @staticmethod
+    def recognize_package(location):
+        return True
+
 
 class MozillaExtVersion(Version):
     version = StringType()
@@ -640,6 +688,10 @@ class MozillaExtPackage(Package):
     primary_language = 'JavaScript'
     packaging = Package.as_archive
     repo_types = []
+
+    @staticmethod
+    def recognize_package(location):
+        return True
 
 
 class ChromeExtVersion(Version):
@@ -656,6 +708,10 @@ class ChromeExtPackage(Package):
     packaging = Package.as_archive
     repo_types = []
 
+    @staticmethod
+    def recognize_package(location):
+        return True
+
 
 class IosAppVersion(Version):
     version = StringType()
@@ -670,6 +726,10 @@ class IosAppPackage(Package):
     primary_language = 'Objective-C'
     packaging = Package.as_archive
     repo_types = []
+
+    @staticmethod
+    def recognize_package(location):
+        return True
 
 
 class PythonVersion(Version):
@@ -686,6 +746,10 @@ class PythonPackage(Package):
     packaging = Package.as_archive
     repo_types = [Repository.repo_type_python]
 
+    @staticmethod
+    def recognize_package(location):
+        return True
+
 
 class CabVersion(Version):
     version = StringType()
@@ -700,6 +764,10 @@ class CabPackage(Package):
     packaging = Package.as_archive
     repo_types = []
 
+    @staticmethod
+    def recognize_package(location):
+        return True
+
 
 class MsiInstallerVersion(Version):
     version = StringType()
@@ -713,6 +781,10 @@ class MsiInstallerPackage(Package):
     extensions = ('.msi',)
     packaging = Package.as_archive
     repo_types = []
+
+    @staticmethod
+    def recognize_package(location):
+        return True
 
 
 class InstallShieldVersion(Version):
@@ -729,6 +801,10 @@ class InstallShieldPackage(Package):
     packaging = Package.as_archive
     repo_types = []
 
+    @staticmethod
+    def recognize_package(location):
+        return True
+
 
 class NugetVersion(Version):
     version = StringType()
@@ -744,6 +820,10 @@ class NugetPackage(Package):
     packaging = Package.as_archive
     repo_types = [Repository.repo_type_nuget]
 
+    @staticmethod
+    def recognize_package(location):
+        return True
+
 
 class NSISInstallerVersion(Version):
     version = StringType()
@@ -758,6 +838,10 @@ class NSISInstallerPackage(Package):
     packaging = Package.as_archive
     repo_types = []
 
+    @staticmethod
+    def recognize_package(location):
+        return True
+
 
 class SharVersion(Version):
     version = StringType()
@@ -771,6 +855,10 @@ class SharPackage(Package):
     extensions = ('.sha', '.shar', '.bin')
     packaging = Package.as_archive
     repo_types = []
+
+    @staticmethod
+    def recognize_package(location):
+        return True
 
 
 class AppleDmgVersion(Version):
@@ -800,6 +888,10 @@ class IsoImagePackage(Package):
     packaging = Package.as_archive
     repo_types = []
 
+    @staticmethod
+    def recognize_package(location):
+        return True
+
 
 class SquashfsVersion(Version):
     version = StringType()
@@ -812,6 +904,10 @@ class SquashfsPackage(Package):
     mimetypes = tuple()
     packaging = Package.as_archive
     repo_types = []
+
+    @staticmethod
+    def recognize_package(location):
+        return True
 
 #
 # these very generic archives must come last
@@ -830,6 +926,10 @@ class RarPackage(Package):
     extensions = ('.rar',)
     packaging = Package.as_archive
     repo_types = []
+
+    @staticmethod
+    def recognize_package(location):
+        return True
 
 
 class TarVersion(Version):
@@ -867,6 +967,10 @@ class TarPackage(Package):
     )
     packaging = Package.as_archive
 
+    @staticmethod
+    def recognize_package(location):
+        return True
+
 
 class ZipVersion(Version):
     version = StringType()
@@ -879,6 +983,10 @@ class ZipPackage(Package):
     mimetypes = ('application/zip', 'application/x-7z-compressed',)
     extensions = ('.zip', '.zipx', '.7z',)
     packaging = Package.as_archive
+
+    @staticmethod
+    def recognize_package(location):
+        return True
 
 
 # TODO: Add VM images formats(VMDK, OVA, OVF, VDI, etc) and Docker/other containers
