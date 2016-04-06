@@ -28,11 +28,18 @@ import os.path
 
 from commoncode.testcase import FileBasedTesting
 
+from collections import OrderedDict
+from packagedcode.models import AssertedLicense
+from packagedcode.models import AndroidAppPackage
+from packagedcode.models import AndroidLibPackage
+from packagedcode.models import JarPackage
+from packagedcode.models import JarAppPackage
 from packagedcode import models
 from packagedcode.models import Package
 from packagedcode.models import Party
-from packagedcode.models import AssertedLicense
-from collections import OrderedDict
+from packagedcode.models import RpmPackage
+from packagedcode.models import RubyGemPackage
+from unittest.case import expectedFailure
 
 
 class TestModels(FileBasedTesting):
@@ -45,6 +52,7 @@ class TestModels(FileBasedTesting):
                                 ('packaging', 'archive'),
                                 ('primary_language', 'Java')])
         assert expected == result
+
     def test_validate_package(self):
         package = Package(dict(
             name='Sample',
@@ -73,3 +81,34 @@ class TestModels(FileBasedTesting):
         assert 'Some Author' == package.authors[0].name
         assert ['some', 'keyword'] == package.keywords
         assert 'apache-2.0' == package.asserted_licenses[0].license
+
+    def test_rpm_recognize_package(self):
+        input = self.get_test_loc('package_models/rpm/elfinfo-1.0-1.fc9.src.rpm')
+        output = RpmPackage.recognize_package(input)
+        assert output is not None
+
+    def test_jar_recognize_package(self):
+        input = self.get_test_loc('package_models/jar/org.apache.felix.ipojo.handler.extender.pattern-0.8.0.jar')
+        output = JarPackage.recognize_package(input)
+        assert output is not None
+
+    @expectedFailure
+    def test_jarapp_recognize_package(self):
+        input = self.get_test_loc('package_models/jarapp/AirPortEAR-0.1.0.alpha.ear')
+        output = JarAppPackage.recognize_package(input)
+        assert output is not None
+
+    def test_rubygem_recognize_package(self):
+        input = self.get_test_loc('package_models/rubygem/actionmailer-4.0.3.gem')
+        output = RubyGemPackage.recognize_package(input)
+        assert output is not None
+
+    def test_androidapp_recognize_package(self):
+        input = self.get_test_loc('package_models/androidapp/net.tecnotopia.SimpleCalculator.apk')
+        output = AndroidAppPackage.recognize_package(input)
+        assert output is not None
+
+    def test_androidlib_recognize_package(self):
+        input = self.get_test_loc('package_models/androidlib/pixlhash-0.1.0.aar')
+        output = AndroidLibPackage.recognize_package(input)
+        assert output is not None

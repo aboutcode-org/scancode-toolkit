@@ -27,6 +27,7 @@ from __future__ import print_function
 
 from collections import OrderedDict
 from packagedcode.pyrpm import rpm
+from scancode.api import get_file_infos
 from schematics.models import Model
 from schematics.types import StringType
 from schematics.types import IntType
@@ -479,9 +480,10 @@ class RpmPackage(Package):
 
     @staticmethod
     def recognize_package(location):
-        package = rpm.RPM(open(location, 'rb'))
-        if package.tags():
-            return True
+        file_infos = get_file_infos(location)
+        mime_type = file_infos[0]['mime_type']
+        if mime_type == 'application/x-rpm':
+            return mime_type
 
 
 class DebianVersion(Version):
@@ -521,8 +523,10 @@ class JarPackage(Package):
 
     @staticmethod
     def recognize_package(location):
-        return True
-
+        file_infos = get_file_infos(location)
+        mime_type = file_infos[0]['mime_type'] 
+        if mime_type == 'application/java-archive':
+            return mime_type
 
 
 class JarAppVersion(Version):
@@ -542,7 +546,10 @@ class JarAppPackage(Package):
 
     @staticmethod
     def recognize_package(location):
-        return True
+        file_infos = get_file_infos(location)
+        mime_type = file_infos[0]['mime_type'] 
+        if mime_type == 'application/java-archive':
+            return mime_type
 
 
 class MavenVersion(Version):
@@ -631,7 +638,10 @@ class RubyGemPackage(Package):
 
     @staticmethod
     def recognize_package(location):
-        return True
+        file_infos = get_file_infos(location)
+        mime_type = file_infos[0]['mime_type']
+        if mime_type == 'application/x-tar':
+            return mime_type
 
 
 class AndroidAppVersion(Version):
@@ -650,7 +660,10 @@ class AndroidAppPackage(Package):
 
     @staticmethod
     def recognize_package(location):
-        return True
+        file_infos = get_file_infos(location)
+        mime_type = file_infos[0]['mime_type']
+        if mime_type == 'application/java-archive':
+            return mime_type
 
 
 class AndroidLibVersion(Version):
@@ -672,7 +685,10 @@ class AndroidLibPackage(Package):
 
     @staticmethod
     def recognize_package(location):
-        return True
+        file_infos = get_file_infos(location)
+        mime_type = file_infos[0]['mime_type']
+        if mime_type == 'application/zip':
+            return mime_type
 
 
 class MozillaExtVersion(Version):
@@ -873,6 +889,10 @@ class AppleDmgPackage(Package):
     extensions = ('.dmg', '.sparseimage',)
     packaging = Package.as_archive
     repo_types = []
+
+    @staticmethod
+    def recognize_package(location):
+        return True
 
 
 class IsoImageVersion(Version):
