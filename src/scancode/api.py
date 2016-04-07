@@ -178,5 +178,5 @@ def get_package_infos(location):
     package = recognize_packaged_archives(location)
     if not package:
         return []
-    return [package.as_dict(simple=True)]
+    return [package.as_dict(simple=False)]
 

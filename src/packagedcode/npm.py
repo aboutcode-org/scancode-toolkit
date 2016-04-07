@@ -76,10 +76,17 @@ class NpmVersion(Version):
 
 class NpmPackage(Package):
     type = StringType(default='npm')
+    packaging = Package.as_archive
     versioning = ModelType(NpmVersion)
     metafiles = ['package.json']
     primary_language = 'JavaScript'
+    filetypes = ('.tgz',)
+    mimetypes = ('application/x-tar',)
     repo_types = [Repository.repo_type_npm]
+
+    @staticmethod
+    def getPackage(location):
+        return parse(location)
 
     def get_info(self):
         """

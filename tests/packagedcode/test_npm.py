@@ -121,7 +121,7 @@ class TestNpm(FileBasedTesting):
         package = npm.parse(test_file)
         expected = OrderedDict([
             ('type', 'npm'),
-            ('packaging', None),
+            ('packaging', 'archive'),
             ('primary_language', 'JavaScript'),
             ('metafile_location', 'package.json'),
             ('id', u'npm'),
@@ -150,7 +150,7 @@ class TestNpm(FileBasedTesting):
         result = self.relative_locations(package.get_info())
         expected = OrderedDict([
             ('type', 'npm'),
-            ('packaging', None),
+            ('packaging', 'archive'),
             ('primary_language', 'JavaScript'),
             ('metafile_location', 'package.json'),
             ('id', u'cookie-signature'),
@@ -175,7 +175,7 @@ class TestNpm(FileBasedTesting):
         result = self.relative_locations(package.get_info())
         expected = OrderedDict([
             ('type', 'npm'),
-            ('packaging', None),
+            ('packaging', 'archive'),
             ('primary_language', 'JavaScript'),
             ('metafile_location', 'package.json'),
             ('id', u'npm'),
@@ -200,7 +200,7 @@ class TestNpm(FileBasedTesting):
         result = self.relative_locations(package.get_info())
         expected = OrderedDict([
             ('type', 'npm'),
-            ('packaging', None),
+            ('packaging', 'archive'),
             ('primary_language', 'JavaScript'),
             ('metafile_location', 'package.json'),
             ('id', u'npm'),

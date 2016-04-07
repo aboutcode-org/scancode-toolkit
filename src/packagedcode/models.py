@@ -26,8 +26,6 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 from collections import OrderedDict
-from packagedcode.pyrpm import rpm
-from scancode.api import get_file_infos
 from schematics.models import Model
 from schematics.types import StringType
 from schematics.types import IntType
@@ -288,8 +286,12 @@ class Package(Model):
     dependencies = DictType(StringType(), default={})
 
     @staticmethod
-    def getPackage():
-        return Package
+    def getPackage(location):
+        """
+        takes 'location' of a metafile for a given package and returns the
+        corresponding package object.
+        """
+        return
 
     # map to a list of related packages keyed by PAYLOAD
     # for instance the SRPM of an RPM
@@ -377,9 +379,42 @@ class Package(Model):
             package['primary_language'] = self.primary_language
             return package
         else:
-            # package['location'] = self.location
-            # package['extracted_to'] = self.extracted_to
-            raise NotImplementedError()
+            package = OrderedDict()
+            package['metafile_urls'] = self.metafile_urls
+            package['distributors'] = self.distributors
+            package['download_sha256'] = self.download_sha256
+            package['asserted_licenses'] = self.asserted_licenses
+            package['vcs_tool'] = self.vcs_tool
+            package['keywords'] = self.keywords
+            package['payload_bin'] = self.payload_bin
+            package['license_texts'] = self.license_texts
+            package['vendors'] = self.vendors
+            package['copyrights'] = self.copyrights
+            package['location'] = self.location
+            package['type'] = self.type
+            package['bug_tracking_url'] = self.bug_tracking_url
+            package['qualified_name'] = self.qualified_name
+            package['name'] = self.name
+            package['summary'] = self.summary
+            package['download_md5'] = self.download_md5
+            package['download_sha1'] = self.download_sha1
+            if self.versioning:
+                package['version'] = self.versioning.version
+            package['vcs_repository'] = self.vcs_repository
+            package['contributors'] = self.contributors
+            package['packagers'] = self.packagers
+            package['download_urls'] = self.download_urls
+            package['primary_language'] = self.primary_language
+            package['repo_types'] = self.repo_types
+            package['id'] = self.id
+            package['code_view_url'] = self.code_view_url
+            package['description'] = self.description
+            package['maintainers'] = self.maintainers
+            package['owners'] = self.owners
+            package['authors'] = self.authors
+            package['homepage_url'] = self.homepage_url
+            package['filetypes'] = self.filetypes
+            return package
 
 
 class Dependency(object):

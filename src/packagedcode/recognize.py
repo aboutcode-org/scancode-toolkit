@@ -57,7 +57,8 @@ def recognize_packaged_archives(location):
             continue
 
         # Note: default to True if there is nothing to match against
-
+        if location.endswith(tuple(package.metafiles)):
+            return package.getPackage(location)
         if package.filetypes:
             type_matched = any(t in ftype for t in package.filetypes)
         else:
