@@ -1,0 +1,134 @@
+# This is a shell archive.  Save it in a file, remove anything before
+# this line, and then unpack it by entering "sh file".  Note, it may
+# create directories; files and directories will be owned by you and
+# have default permissions.
+#
+# This archive contains:
+#
+#	winmusik
+#	winmusik/pkg-descr
+#	winmusik/files
+#	winmusik/files/WinMusik.desktop
+#	winmusik/Makefile
+#	winmusik/distinfo
+#
+echo c - winmusik
+mkdir -p winmusik > /dev/null 2>&1
+echo x - winmusik/pkg-descr
+sed 's/^X//' >winmusik/pkg-descr << 'd4dbdb170bed6c6b11458f151ea3f6c5'
+XWinMusik
+X
+XWinMusik is a program for archiving music titles from audio CDs, DVDs,
+Xaudio tapes, vinyl records, harddisks and other audio devices. It has a
+Xsmart editor and an easy to use search interface.
+X
+X  - smart graphical user interface for editing your music titles
+X  - import of MP3 files on harddisk
+X  - ID3v2-Tag-support
+X  - supports cover images in MP3 files
+X  - extensive search functions
+X  - print cd cover
+X  - search lists
+X  - open source under the GNU GENERAL PUBLIC LICENSE v3
+X  - runs on Windows XP/Vista/7, Linux, FreeBSD and other
+X    unixes
+X
+XWWW: http://www.winmusik.de/
+XAuthor: Patrick Fedick <patrick@pfp.de>, http://www.pfp.de/
+d4dbdb170bed6c6b11458f151ea3f6c5
+echo c - winmusik/files
+mkdir -p winmusik/files > /dev/null 2>&1
+echo x - winmusik/files/WinMusik.desktop
+sed 's/^X//' >winmusik/files/WinMusik.desktop << '7d2655c3df6b1e79bd9d365e530a3171'
+X[Desktop Entry]
+XEncoding=UTF-8
+XName=WinMusik
+XComment=Webcam capture program for creating stopmotion video
+XExec=/usr/local/bin/WinMusik
+XTerminal=false
+XType=Application
+XCategories=GTK;GNOME;AudioVideo;
+XIcon=/usr/local/share/pixmaps/WinMusik.png
+7d2655c3df6b1e79bd9d365e530a3171
+echo x - winmusik/Makefile
+sed 's/^X//' >winmusik/Makefile << '755cfe1e3a9a8c139b5aca028d790b20'
+X# $FreeBSD$
+X
+XPORTNAME=			WinMusik
+XPORTVERSION=		3.0.6
+XCATEGORIES=			multimedia
+XMASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+XMASTER_SITE_SUBDIR=	winmusik/client/Sourcecode
+XEXTRACT_SUFX=		-src.tar.bz2
+X
+XMAINTAINER=			patrick@pfp.de
+XCOMMENT=			Music database to maintain songs on various devices
+X
+XLICENSE=			GPLv3
+X
+XLIB_DEPENDS=		jpeg:${PORTSDIR}/graphics/jpeg \
+X					png15:${PORTSDIR}/graphics/png \
+X					freetype:${PORTSDIR}/print/freetype2 \
+X					iconv:${PORTSDIR}/converters/libiconv \
+X					pcre:${PORTSDIR}/devel/pcre \
+X					mcrypt:${PORTSDIR}/security/libmcrypt \
+X					curl:${PORTSDIR}/ftp/curl \
+X					iconv:${PORTSDIR}/converters/libiconv
+XBUILD_DEPENDS=		nasm:${PORTSDIR}/devel/nasm
+X
+XMAKE_JOBS_SAFE=		yes
+X
+XUSE_QT4=			corelib gui qmake
+X
+XPLIST_FILES=		bin/WinMusik \
+X					share/pixmaps/WinMusik.png \
+X					share/applications/WinMusik.desktop \
+X					share/doc/WinMusik/Userguide_de.pdf
+X
+X.include <bsd.port.pre.mk>
+X
+Xdo-configure:
+X	cd ${WRKSRC}; ${MKDIR} bin include lib; cd  ${WRKSRC}/ppl6; \
+X	./configure --with-pcre=${LOCALBASE} --with-libiconv-prefix=${LOCALBASE} \
+X		--with-nasm --with-jpeg --with-png --with-libcurl=${LOCALBASE} \
+X		--prefix=${WRKSRC} --with-openssl=/usr \
+X		--without-libmicrohttpd --with-libmcrypt-prefix=${LOCALBASE} --without-libmhash \
+X		--without-mpg123 --without-lame --without-ft-prefix --without-libmad \
+X		--without-lame --without-x --with-sdl-prefix=${WRKSRC} \
+X		--without-ogg --without-libshout --without-sqlite \
+X		--without-mysql --without-postgresql --without-freetds --without-libldns
+X
+Xdo-build:
+X	@(cd ${WRKSRC}/ppl6; if ! ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}; then \
+X		if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
+X			${ECHO_MSG} "===> Compilation failed unexpectedly."; \
+X			(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+X		fi; \
+X		${FALSE}; \
+X	fi)
+X	@(PATH="${WRKSRC}/bin:${PATH}"; export PATH; cd ${WRKSRC}/WinMusik; \
+X	qmake-qt4; \
+X	if ! ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}; then \
+X		if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
+X			${ECHO_MSG} "===> Compilation failed unexpectedly."; \
+X			(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+X		fi; \
+X		${FALSE}; \
+X	fi)
+X
+Xdo-install:
+X	${MKDIR} ${PREFIX}/bin ${PREFIX}/share/pixmaps ${PREFIX}/share/applications ${PREFIX}/share/doc/${PORTNAME}
+X	${INSTALL_PROGRAM} ${WRKSRC}/WinMusik/release/${PORTNAME} ${PREFIX}/bin
+X	${INSTALL_DATA} ${WRKSRC}/WinMusik/docs/Userguide_de.pdf ${PREFIX}/share/doc/${PORTNAME}
+X	${INSTALL_DATA} ${WRKSRC}/WinMusik/resources/icon64.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+X	${INSTALL_DATA} ${FILESDIR}/WinMusik.desktop ${PREFIX}/share/applications/${PORTNAME}.desktop
+X
+X.include <bsd.port.post.mk>
+755cfe1e3a9a8c139b5aca028d790b20
+echo x - winmusik/distinfo
+sed 's/^X//' >winmusik/distinfo << '4a8a67e8aa9e0d9252a396212323abb3'
+XSHA256 (WinMusik-3.0.6-src.tar.bz2) = bb8029b31b4565ddd49d25ff9a066de38dcf4d0d5187f3055f48dcae2e13839e
+XSIZE (WinMusik-3.0.6-src.tar.bz2) = 11436115
+4a8a67e8aa9e0d9252a396212323abb3
+exit
+
