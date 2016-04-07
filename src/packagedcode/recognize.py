@@ -27,7 +27,7 @@ from __future__ import absolute_import, print_function
 import logging
 
 from commoncode import filetype
-import typecode.contenttype
+from typecode import contenttype
 
 from packagedcode import models
 from packagedcode import PACKAGE_TYPES
@@ -48,7 +48,7 @@ def recognize_packaged_archives(location):
     if not filetype.is_file(location):
         return
 
-    T = typecode.contenttype.get_type(location)
+    T = contenttype.get_type(location)
     ftype = T.filetype_file.lower()
     mtype = T.mimetype_file
 
@@ -72,6 +72,6 @@ def recognize_packaged_archives(location):
             extension_matched = True
 
         if type_matched and mime_matched and extension_matched:
-            if package.recognize_package(location):
+            if mtype in package.mimetypes:
                 # we return the first match in the order of PACKAGE_TYPES
                 return package(dict(location=location))

@@ -478,13 +478,6 @@ class RpmPackage(Package):
     packaging = Package.as_archive
     repo_types = [Repository.repo_type_yum]
 
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in RpmPackage.mimetypes:
-            return mime_type
-
 
 class DebianVersion(Version):
     version = StringType()
@@ -500,13 +493,6 @@ class DebianPackage(Package):
                  'application/vnd.debian.binary-package',)
     packaging = Package.as_archive
     repo_types = [Repository.repo_type_debian]
-
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in DebianPackage.mimetypes:
-            return mime_type
 
 
 class JarVersion(Version):
@@ -524,13 +510,6 @@ class JarPackage(Package):
     packaging = Package.as_archive
     repo_types = [Repository.repo_type_maven, Repository.repo_type_ivy]
 
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type'] 
-        if mime_type in JarAppPackage.mimetypes:
-            return mime_type
-
 
 class JarAppVersion(Version):
     versioning = StringType()
@@ -547,13 +526,6 @@ class JarAppPackage(Package):
     packaging = Package.as_archive
     repo_types = [Repository.repo_type_maven, Repository.repo_type_ivy]
 
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type'] 
-        if mime_type in JarAppPackage.mimetypes:
-            return mime_type
-
 
 class MavenVersion(Version):
     versioning = StringType()
@@ -564,10 +536,6 @@ class MavenPackage(JarPackage, JarAppPackage):
     type = StringType(default='Maven')
     metafiles = ['META-INF/**/*.pom', 'pom.xml']
     repo_types = [Repository.repo_type_maven]
-
-    @staticmethod
-    def recognize_package(location):
-        return True
 
 
 class BowerVersion(Version):
@@ -581,10 +549,6 @@ class BowerPackage(Package):
     primary_language = 'JavaScript'
     repo_types = []
 
-    @staticmethod
-    def recognize_package(location):
-        return True
-
 
 class MeteorVersion(Version):
     version = StringType()
@@ -596,10 +560,6 @@ class MeteorPackage(Package):
     metafiles = ['package.js']
     primary_language = 'JavaScript'
     repo_types = []
-
-    @staticmethod
-    def recognize_package(location):
-        return True
 
 
 class CpanVersion(Version):
@@ -614,10 +574,6 @@ class CpanModule(Package):
                  'META.yml']
     primary_language = 'Perl'
     repo_types = [Repository.repo_type_cpan]
-
-    @staticmethod
-    def recognize_package(location):
-        return True
 
 
 class RubyGemVersion(Version):
@@ -639,13 +595,6 @@ class RubyGemPackage(Package):
     packaging = Package.as_archive
     repo_types = [Repository.repo_type_gems]
 
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in RubyGemPackage.mimetypes:
-            return mime_type
-
 
 class AndroidAppVersion(Version):
     version = StringType()
@@ -660,13 +609,6 @@ class AndroidAppPackage(Package):
     primary_language = 'Java'
     packaging = Package.as_archive
     repo_types = []
-
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in AndroidAppPackage.mimetypes:
-            return mime_type
 
 
 class AndroidLibVersion(Version):
@@ -686,13 +628,6 @@ class AndroidLibPackage(Package):
     packaging = Package.as_archive
     repo_types = []
 
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in AndroidLibPackage.mimetypes:
-            return mime_type
-
 
 class MozillaExtVersion(Version):
     version = StringType()
@@ -707,13 +642,6 @@ class MozillaExtPackage(Package):
     primary_language = 'JavaScript'
     packaging = Package.as_archive
     repo_types = []
-
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in MozillaExtPackage.mimetypes:
-            return mime_type
 
 
 class ChromeExtVersion(Version):
@@ -730,13 +658,6 @@ class ChromeExtPackage(Package):
     packaging = Package.as_archive
     repo_types = []
 
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in ChromeExtPackage.mimetypes:
-            return mime_type
-
 
 class IosAppVersion(Version):
     version = StringType()
@@ -751,13 +672,6 @@ class IosAppPackage(Package):
     primary_language = 'Objective-C'
     packaging = Package.as_archive
     repo_types = []
-
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in IosAppPackage.mimetypes:
-            return mime_type
 
 
 class PythonVersion(Version):
@@ -774,13 +688,6 @@ class PythonPackage(Package):
     packaging = Package.as_archive
     repo_types = [Repository.repo_type_python]
 
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in PythonPackage.mimetypes:
-            return mime_type
-
 
 class CabVersion(Version):
     version = StringType()
@@ -795,13 +702,6 @@ class CabPackage(Package):
     packaging = Package.as_archive
     repo_types = []
 
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in CabPackage.mimetypes:
-            return mime_type
-
 
 class MsiInstallerVersion(Version):
     version = StringType()
@@ -815,13 +715,6 @@ class MsiInstallerPackage(Package):
     extensions = ('.msi',)
     packaging = Package.as_archive
     repo_types = []
-
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in MsiInstallerPackage.mimetypes:
-            return mime_type
 
 
 class InstallShieldVersion(Version):
@@ -838,14 +731,6 @@ class InstallShieldPackage(Package):
     packaging = Package.as_archive
     repo_types = []
 
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in InstallShieldPackage.mimetypes:
-            return mime_type
-
-
 
 class NugetVersion(Version):
     version = StringType()
@@ -861,13 +746,6 @@ class NugetPackage(Package):
     packaging = Package.as_archive
     repo_types = [Repository.repo_type_nuget]
 
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in NugetPackage.mimetypes:
-            return mime_type
-
 
 class NSISInstallerVersion(Version):
     version = StringType()
@@ -881,13 +759,6 @@ class NSISInstallerPackage(Package):
     extensions = ('.exe',)
     packaging = Package.as_archive
     repo_types = []
-
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in NSISInstallerPackage.mimetypes:
-            return mime_type
 
 
 class SharVersion(Version):
@@ -903,13 +774,6 @@ class SharPackage(Package):
     packaging = Package.as_archive
     repo_types = []
 
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in SharPackage.mimetypes:
-            return mime_type
-
 
 class AppleDmgVersion(Version):
     version = StringType()
@@ -923,13 +787,6 @@ class AppleDmgPackage(Package):
     extensions = ('.dmg', '.sparseimage',)
     packaging = Package.as_archive
     repo_types = []
-
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in AppleDmgPackage.mimetypes:
-            return mime_type
 
 
 class IsoImageVersion(Version):
@@ -945,13 +802,6 @@ class IsoImagePackage(Package):
     packaging = Package.as_archive
     repo_types = []
 
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in IsoImagePackage.mimetypes:
-            return mime_type
-
 
 class SquashfsVersion(Version):
     version = StringType()
@@ -965,12 +815,6 @@ class SquashfsPackage(Package):
     packaging = Package.as_archive
     repo_types = []
 
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in SquashfsPackage.mimetypes:
-            return mime_type
 
 #
 # these very generic archives must come last
@@ -989,13 +833,6 @@ class RarPackage(Package):
     extensions = ('.rar',)
     packaging = Package.as_archive
     repo_types = []
-
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in RarPackage.mimetypes:
-            return mime_type
 
 
 class TarVersion(Version):
@@ -1033,13 +870,6 @@ class TarPackage(Package):
     )
     packaging = Package.as_archive
 
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in TarPackage.mimetypes:
-            return mime_type
-
 
 class ZipVersion(Version):
     version = StringType()
@@ -1052,13 +882,6 @@ class ZipPackage(Package):
     mimetypes = ('application/zip', 'application/x-7z-compressed',)
     extensions = ('.zip', '.zipx', '.7z',)
     packaging = Package.as_archive
-
-    @staticmethod
-    def recognize_package(location):
-        file_infos = get_file_infos(location)
-        mime_type = file_infos[0]['mime_type']
-        if mime_type in ZipPackage.mimetypes:
-            return mime_type
 
 
 # TODO: Add VM images formats(VMDK, OVA, OVF, VDI, etc) and Docker/other containers
