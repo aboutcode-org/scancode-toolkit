@@ -104,7 +104,6 @@ The payload of files and directories possibly contains:
 
 class Version(Model):
     version = StringType()
-    pass
 
 
 class AssertedLicense(Model):
@@ -286,7 +285,7 @@ class Package(Model):
     dependencies = DictType(StringType(), default={})
 
     @staticmethod
-    def getPackage(location):
+    def get_package(location):
         """
         takes 'location' of a metafile for a given package and returns the
         corresponding package object.

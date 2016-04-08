@@ -29,30 +29,10 @@ import os.path
 from commoncode.testcase import FileBasedTesting
 
 from collections import OrderedDict
-from packagedcode.models import AndroidAppPackage
-from packagedcode.models import AndroidLibPackage
-from packagedcode.models import AppleDmgPackage
 from packagedcode.models import AssertedLicense
-from packagedcode.models import CabPackage
-from packagedcode.models import InstallShieldPackage
-from packagedcode.models import IsoImagePackage
-from packagedcode.models import JarPackage
-from packagedcode.models import JarAppPackage
-from packagedcode.models import MozillaExtPackage
-from packagedcode.models import MsiInstallerPackage
-from packagedcode.models import NugetPackage
-from packagedcode.models import NSISInstallerPackage
-from packagedcode.models import PythonPackage
 from packagedcode.models import Package
 from packagedcode.models import Party
 from packagedcode import models
-from packagedcode.models import RarPackage
-from packagedcode.models import RpmPackage
-from packagedcode.models import RubyGemPackage
-from packagedcode.models import SharPackage
-from packagedcode.models import TarPackage
-from packagedcode.models import ZipPackage
-from unittest.case import expectedFailure
 
 
 class TestModels(FileBasedTesting):

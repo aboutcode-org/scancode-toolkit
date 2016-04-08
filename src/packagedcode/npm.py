@@ -76,7 +76,6 @@ class NpmVersion(Version):
 
 class NpmPackage(Package):
     type = StringType(default='npm')
-    packaging = Package.as_archive
     versioning = ModelType(NpmVersion)
     metafiles = ['package.json']
     primary_language = 'JavaScript'
