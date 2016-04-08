@@ -119,28 +119,25 @@ class TestNpm(FileBasedTesting):
     def test_parse_from_tarball(self):
         test_file = self.get_test_loc('npm/from_tarball/package.json')
         package = npm.parse(test_file)
-        expected = OrderedDict([
-            ('type', 'npm'),
-            ('packaging', 'archive'),
-            ('primary_language', 'JavaScript'),
-            ('metafile_location', 'package.json'),
-            ('id', u'npm'),
-            ('name', u'npm'),
-            ('qualified_name', u'npm npm'),
-            ('version', u'2.13.5'),
-            ('summary', u'a package manager for JavaScript'),
-            ('asserted_licenses', [OrderedDict([('license', u'Artistic-2.0'),
-                                      ('text', None),
-                                      ('notice', None),
-                                      ('url', None)])]),
-            ('author', u'Isaac Z. Schlueter'),
-            ('author_email', u'i@izs.me'),
-            ('author_url', u'http://blog.izs.me'),
-            ('homepage_url', u'https://docs.npmjs.com/'),
-            ('download_url', u'https://registry.npmjs.org/npm/-/npm-2.13.5.tgz'),
-            ('vcs_tool', u'git'),
-            ('vcs_repository', u'https://github.com/npm/npm')
-        ])
+        expected = {
+            'asserted_licenses': [OrderedDict([('license', u'Artistic-2.0'), ('text', None), ('notice', None), ('url', None)])],
+            'author': u'Isaac Z. Schlueter',
+            'author_email': u'i@izs.me',
+            'author_url': u'http://blog.izs.me',
+            'download_url': u'https://registry.npmjs.org/npm/-/npm-2.13.5.tgz',
+            'homepage_url': u'https://docs.npmjs.com/',
+            'id': u'npm',
+            'metafile_location': 'package.json',
+            'name': u'npm',
+            'packaging': None,
+            'primary_language': 'JavaScript',
+            'qualified_name': u'npm npm',
+            'summary': u'a package manager for JavaScript',
+            'type': 'npm',
+            'vcs_repository': u'https://github.com/npm/npm',
+            'vcs_tool': u'git',
+            'version': u'2.13.5'
+        }
 
         assert expected == self.relative_locations(package.get_info())
 
@@ -148,75 +145,50 @@ class TestNpm(FileBasedTesting):
         test_file = self.get_test_loc('npm/basic/package.json')
         package = npm.parse(test_file)
         result = self.relative_locations(package.get_info())
-        expected = OrderedDict([
-            ('type', 'npm'),
-            ('packaging', 'archive'),
-            ('primary_language', 'JavaScript'),
-            ('metafile_location', 'package.json'),
-            ('id', u'cookie-signature'),
-            ('name', u'cookie-signature'),
-            ('qualified_name', u'npm cookie-signature'),
-            ('version', u'1.0.3'),
-            ('summary', u'Sign and unsign cookies'),
-            ('asserted_licenses', []),
-            ('author', u'TJ Holowaychuk'),
-            ('author_email', u'tj@learnboost.com'),
-            ('author_url', None),
-            ('homepage_url', None),
-            ('download_url', u'https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz'),
-            ('vcs_tool', u'git'),
-            ('vcs_repository', u'https://github.com/visionmedia/node-cookie-signature.git'),
-        ])
+        expected = {
+            'asserted_licenses': [],
+            'author': u'TJ Holowaychuk',
+            'author_email': u'tj@learnboost.com',
+            'author_url': None,
+            'download_url': u'https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz',
+            'homepage_url': None,
+            'id': u'cookie-signature',
+            'metafile_location': 'package.json',
+            'name': u'cookie-signature',
+            'packaging': None,
+            'primary_language': 'JavaScript',
+            'qualified_name': u'npm cookie-signature',
+            'summary': u'Sign and unsign cookies',
+            'type': 'npm',
+            'vcs_repository': u'https://github.com/visionmedia/node-cookie-signature.git',
+            'vcs_tool': u'git',
+            'version': u'1.0.3'
+        }
         assert expected == result
 
     def test_parse_from_npmjs(self):
         test_file = self.get_test_loc('npm/from_nmpjs/package.json')
         package = npm.parse(test_file)
         result = self.relative_locations(package.get_info())
-        expected = OrderedDict([
-            ('type', 'npm'),
-            ('packaging', 'archive'),
-            ('primary_language', 'JavaScript'),
-            ('metafile_location', 'package.json'),
-            ('id', u'npm'),
-            ('name', u'npm'),
-            ('qualified_name', u'npm npm'),
-            ('version', u'2.13.5'),
-            ('summary', u'a package manager for JavaScript'),
-            ('asserted_licenses', [OrderedDict([('license', u'Artistic-2.0'), ('text', None), ('notice', None), ('url', None)])]),
-            ('author', u'Isaac Z. Schlueter'),
-            ('author_email', u'i@izs.me'),
-            ('author_url', u'http://blog.izs.me'),
-            ('homepage_url', u'https://docs.npmjs.com/'),
-            ('download_url', u'http://registry.npmjs.org/npm/-/npm-2.13.5.tgz'),
-            ('vcs_tool', u'git'),
-            ('vcs_repository', u'git+https://github.com/npm/npm.git'),
-        ])
-        assert expected == result
-
-    def test_parse_as_installed(self):
-        test_file = self.get_test_loc('npm/as_installed/package.json')
-        package = npm.parse(test_file)
-        result = self.relative_locations(package.get_info())
-        expected = OrderedDict([
-            ('type', 'npm'),
-            ('packaging', 'archive'),
-            ('primary_language', 'JavaScript'),
-            ('metafile_location', 'package.json'),
-            ('id', u'npm'),
-            ('name', u'npm'),
-            ('qualified_name', u'npm npm'),
-            ('version', u'2.13.5'),
-            ('summary', u'a package manager for JavaScript'),
-            ('asserted_licenses', [OrderedDict([('license', u'Artistic-2.0'), ('text', None), ('notice', None), ('url', None)])]),
-            ('author', u'Isaac Z. Schlueter'),
-            ('author_email', u'i@izs.me'),
-            ('author_url', u'http://blog.izs.me'),
-            ('homepage_url', u'https://docs.npmjs.com/'),
-            ('download_url', u'http://registry.npmjs.org/npm/-/npm-2.13.5.tgz'),
-            ('vcs_tool', u'git'),
-            ('vcs_repository', u'git+https://github.com/npm/npm.git'),
-        ])
+        expected = {
+            'asserted_licenses': [OrderedDict([('license', u'Artistic-2.0'), ('text', None), ('notice', None), ('url', None)])],
+            'author': u'Isaac Z. Schlueter',
+            'author_email': u'i@izs.me',
+            'author_url': u'http://blog.izs.me',
+            'download_url': u'http://registry.npmjs.org/npm/-/npm-2.13.5.tgz',
+            'homepage_url': u'https://docs.npmjs.com/',
+            'id': u'npm',
+            'metafile_location': 'package.json',
+            'name': u'npm',
+            'packaging': None,
+            'primary_language': 'JavaScript',
+            'qualified_name': u'npm npm',
+            'summary': u'a package manager for JavaScript',
+            'type': 'npm',
+            'vcs_repository': u'git+https://github.com/npm/npm.git',
+            'vcs_tool': u'git',
+            'version': u'2.13.5'
+        }
         assert expected == result
 
     def test_parse_subset(self):

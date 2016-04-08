@@ -366,55 +366,6 @@ class Package(Model):
         """
         return self.name and self.type + ' ' + self.name or None
 
-    def as_dict(self, simple=True):
-        """
-        Return an Ordered dictionary of package data, composed only of simple
-        types: OrderedDict, lists and unicode strings.
-        """
-        if simple:
-            package = OrderedDict()
-            package['type'] = self.type
-            package['packaging'] = self.packaging
-            package['primary_language'] = self.primary_language
-            return package
-        else:
-            package = OrderedDict()
-            package['metafile_urls'] = self.metafile_urls
-            package['distributors'] = self.distributors
-            package['download_sha256'] = self.download_sha256
-            package['asserted_licenses'] = self.asserted_licenses
-            package['vcs_tool'] = self.vcs_tool
-            package['keywords'] = self.keywords
-            package['payload_bin'] = self.payload_bin
-            package['license_texts'] = self.license_texts
-            package['vendors'] = self.vendors
-            package['copyrights'] = self.copyrights
-            package['location'] = self.location
-            package['type'] = self.type
-            package['bug_tracking_url'] = self.bug_tracking_url
-            package['qualified_name'] = self.qualified_name
-            package['name'] = self.name
-            package['summary'] = self.summary
-            package['download_md5'] = self.download_md5
-            package['download_sha1'] = self.download_sha1
-            if self.versioning:
-                package['version'] = self.versioning.version
-            package['vcs_repository'] = self.vcs_repository
-            package['contributors'] = self.contributors
-            package['packagers'] = self.packagers
-            package['download_urls'] = self.download_urls
-            package['primary_language'] = self.primary_language
-            package['repo_types'] = self.repo_types
-            package['id'] = self.id
-            package['code_view_url'] = self.code_view_url
-            package['description'] = self.description
-            package['maintainers'] = self.maintainers
-            package['owners'] = self.owners
-            package['authors'] = self.authors
-            package['homepage_url'] = self.homepage_url
-            package['filetypes'] = self.filetypes
-            return package
-
 
 class Dependency(object):
     """
