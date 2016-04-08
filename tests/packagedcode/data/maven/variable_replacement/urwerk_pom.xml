@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>main</artifactId>
+  <groupId>ur.urwerk.test.modules</groupId>
+  <packaging>pom</packaging>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>${groupId}:${artifactId}:${packaging}:${version}</name>
+  
+  <parent>
+    <artifactId>project</artifactId>
+    <groupId>ur.urwerk</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <modules>
+    <module>module-x</module>
+    <module>module-y</module>
+    <module>module-z</module>
+  </modules>
+
+</project>
