@@ -1,9 +1,0 @@
-about_resource: lxml-3.6.0-cp27-none-linux_x86_64.whl
-name: lxml
-version: 3.6.0
-summary: Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API.
-download_url: https://pypi.python.org/packages/2.6/l/lxml/lxml-3.6.0-cp26-none-win32.whl
-dje_license: bsd-new
-owner: lxml dev team
-email: lxml-dev@lxml.de
-home_url: http://lxml.de/
