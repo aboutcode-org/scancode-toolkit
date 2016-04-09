@@ -77,11 +77,11 @@ class NpmVersion(Version):
 class NpmPackage(Package):
     type = StringType(default='npm')
     versioning = ModelType(NpmVersion)
-    metafiles = ['package.json']
-    primary_language = 'JavaScript'
+    metafiles = ('package.json',)
+    primary_language = StringType(default='JavaScript')
     filetypes = ('.tgz',)
     mimetypes = ('application/x-tar',)
-    repo_types = [Repository.repo_type_npm]
+    repo_types = (Repository.repo_type_npm,)
 
     @staticmethod
     def getPackage(location):

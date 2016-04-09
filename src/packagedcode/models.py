@@ -174,20 +174,20 @@ class Package(Model):
     repo_types = []
 
     # one of PACKAGINGS
-    packaging = None
+    packaging = StringType(default=None)
 
-    as_archive = 'archive'
-    as_dir = 'directory'
-    as_file = 'file'
+    as_archive = StringType(default='archive')
+    as_dir = StringType(default='directory')
+    as_file = StringType(default='file')
     PACKAGINGS = (as_archive, as_dir, as_file)
 
-    dep_runtime = 'runtime'
-    dep_dev = 'development'
-    dep_test = 'test'
-    dep_build = 'build'
-    dep_optional = 'optional'
-    dep_bundled = 'optional'
-    dep_ci = 'continuous integration'
+    dep_runtime = StringType(default='runtime')
+    dep_dev = StringType(default='development')
+    dep_test = StringType(default='test')
+    dep_build = StringType(default='build')
+    dep_optional = StringType(default='optional')
+    dep_bundled = StringType(default='optional')
+    dep_ci = StringType(default='continuous integration')
     DEPENDENCY_GROUPS = (dep_runtime, dep_dev, dep_optional, dep_test,
                          dep_build, dep_ci, dep_bundled)
 
@@ -203,10 +203,10 @@ class Package(Model):
     # this is a "long" description, often several pages of text.
     description = StringType()
 
-    payload_src = 'source'
+    payload_src = StringType(default='source')
     # binaries include minified JavaScripts and similar text but obfuscated formats
-    payload_bin = 'binary'
-    payload_doc = 'doc'
+    payload_bin = StringType(default='binary')
+    payload_doc = StringType(default='doc')
     PAYLOADS = (payload_src, payload_bin, payload_doc,)
     # the type of payload in this package. one of PAYLOADS or none
     payload_type = StringType(choices=PAYLOADS)
@@ -461,7 +461,7 @@ class RpmPackage(Package):
     filetypes = ('rpm ',)
     mimetypes = ('application/x-rpm',)
     packaging = Package.as_archive
-    repo_types = [Repository.repo_type_yum]
+    repo_types = (Repository.repo_type_yum,)
 
 
 class DebianVersion(Version):
@@ -477,7 +477,7 @@ class DebianPackage(Package):
     mimetypes = ('application/x-archive',
                  'application/vnd.debian.binary-package',)
     packaging = Package.as_archive
-    repo_types = [Repository.repo_type_debian]
+    repo_types = (Repository.repo_type_debian,)
 
 
 class JarVersion(Version):
@@ -487,13 +487,13 @@ class JarVersion(Version):
 class JarPackage(Package):
     versioning = ModelType(JarVersion)
     type = StringType(default='Java Jar')
-    metafiles = ['META-INF/MANIFEST.MF']
+    metafiles = ('META-INF/MANIFEST.MF',)
     extensions = ('.jar',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip',)
-    primary_language = 'Java'
+    primary_language = StringType(default='Java')
     packaging = Package.as_archive
-    repo_types = [Repository.repo_type_maven, Repository.repo_type_ivy]
+    repo_types = (Repository.repo_type_maven, Repository.repo_type_ivy,)
 
 
 class JarAppVersion(Version):
@@ -503,13 +503,13 @@ class JarAppVersion(Version):
 class JarAppPackage(Package):
     versioning = ModelType(JarAppVersion)
     type = StringType(default='Java application')
-    metafiles = ['WEB-INF/']
+    metafiles = ('WEB-INF/',)
     extensions = ('.war', '.sar', '.ear',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip')
-    primary_language = 'Java'
+    primary_language = StringType(default='Java')
     packaging = Package.as_archive
-    repo_types = [Repository.repo_type_maven, Repository.repo_type_ivy]
+    repo_types = (Repository.repo_type_maven, Repository.repo_type_ivy,)
 
 
 class MavenVersion(Version):
@@ -519,8 +519,8 @@ class MavenVersion(Version):
 class MavenPackage(JarPackage, JarAppPackage):
     versioning = ModelType(MavenVersion)
     type = StringType(default='Maven')
-    metafiles = ['META-INF/**/*.pom', 'pom.xml']
-    repo_types = [Repository.repo_type_maven]
+    metafiles = ('META-INF/**/*.pom', 'pom.xml',)
+    repo_types = (Repository.repo_type_maven,)
 
 
 class BowerVersion(Version):
@@ -530,9 +530,9 @@ class BowerVersion(Version):
 class BowerPackage(Package):
     versioning = ModelType(BowerVersion)
     type = StringType(default='Bower')
-    metafiles = ['bower.json']
+    metafiles = ('bower.json',)
     primary_language = 'JavaScript'
-    repo_types = []
+    repo_types = ()
 
 
 class MeteorVersion(Version):
@@ -542,9 +542,9 @@ class MeteorVersion(Version):
 class MeteorPackage(Package):
     versioning = ModelType(MeteorVersion)
     type = StringType(default='Meteor')
-    metafiles = ['package.js']
+    metafiles = ('package.js',)
     primary_language = 'JavaScript'
-    repo_types = []
+    repo_types = ()
 
 
 class CpanVersion(Version):
@@ -554,11 +554,11 @@ class CpanVersion(Version):
 class CpanModule(Package):
     versioning = ModelType(CpanVersion)
     type = StringType(default='CPAN')
-    metafiles = ['*.pod',
+    metafiles = ('*.pod',
                  'MANIFEST',
-                 'META.yml']
+                 'META.yml',)
     primary_language = 'Perl'
-    repo_types = [Repository.repo_type_cpan]
+    repo_types = (Repository.repo_type_cpan,)
 
 
 class RubyGemVersion(Version):
@@ -578,7 +578,7 @@ class RubyGemPackage(Package):
     extensions = ('.gem',)
     primary_language = 'Ruby'
     packaging = Package.as_archive
-    repo_types = [Repository.repo_type_gems]
+    repo_types = (Repository.repo_type_gems,)
 
 
 class AndroidAppVersion(Version):
@@ -591,9 +591,9 @@ class AndroidAppPackage(Package):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.apk',)
-    primary_language = 'Java'
+    primary_language = StringType(default='Java')
     packaging = Package.as_archive
-    repo_types = []
+    repo_types = ()
 
 
 class AndroidLibVersion(Version):
@@ -609,9 +609,9 @@ class AndroidLibPackage(Package):
     # note: Apache Axis also uses AAR extensions for plain Jars.
     # this can be decided based on internal structure
     extensions = ('.aar',)
-    primary_language = 'Java'
+    primary_language = StringType(default='Java')
     packaging = Package.as_archive
-    repo_types = []
+    repo_types = ()
 
 
 class MozillaExtVersion(Version):
@@ -624,9 +624,9 @@ class MozillaExtPackage(Package):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.xpi',)
-    primary_language = 'JavaScript'
+    primary_language = StringType(default='JavaScript')
     packaging = Package.as_archive
-    repo_types = []
+    repo_types = ()
 
 
 class ChromeExtVersion(Version):
@@ -639,9 +639,9 @@ class ChromeExtPackage(Package):
     filetypes = ('data',)
     mimetypes = ('application/octet-stream',)
     extensions = ('.crx',)
-    primary_language = 'JavaScript'
+    primary_language = StringType(default='JavaScript')
     packaging = Package.as_archive
-    repo_types = []
+    repo_types = ()
 
 
 class IosAppVersion(Version):
@@ -654,9 +654,9 @@ class IosAppPackage(Package):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.ipa',)
-    primary_language = 'Objective-C'
+    primary_language = StringType(default='Objective-C')
     packaging = Package.as_archive
-    repo_types = []
+    repo_types = ()
 
 
 class PythonVersion(Version):
@@ -669,9 +669,9 @@ class PythonPackage(Package):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.egg', '.whl', '.pyz', '.pex',)
-    primary_language = 'Python'
+    primary_language = StringType(default='Python')
     packaging = Package.as_archive
-    repo_types = [Repository.repo_type_python]
+    repo_types = (Repository.repo_type_python,)
 
 
 class CabVersion(Version):
@@ -685,7 +685,7 @@ class CabPackage(Package):
     mimetypes = ('application/vnd.ms-cab-compressed',)
     extensions = ('.cab',)
     packaging = Package.as_archive
-    repo_types = []
+    repo_types = ()
 
 
 class MsiInstallerVersion(Version):
@@ -699,7 +699,7 @@ class MsiInstallerPackage(Package):
     mimetypes = ('application/x-msi',)
     extensions = ('.msi',)
     packaging = Package.as_archive
-    repo_types = []
+    repo_types = ()
 
 
 class InstallShieldVersion(Version):
@@ -714,7 +714,7 @@ class InstallShieldPackage(Package):
     mimetypes = ('application/x-dosexec',)
     extensions = ('.exe',)
     packaging = Package.as_archive
-    repo_types = []
+    repo_types = ()
 
 
 class NugetVersion(Version):
@@ -724,12 +724,12 @@ class NugetVersion(Version):
 class NugetPackage(Package):
     versioning = ModelType(NugetVersion)
     type = StringType(default='Nuget')
-    metafiles = ['[Content_Types].xml', '*.nuspec']
-    filetypes = ('zip archive', 'microsoft ooxml')
-    mimetypes = ('application/zip', 'application/octet-stream')
+    metafiles = ('[Content_Types].xml', '*.nuspec',)
+    filetypes = ('zip archive', 'microsoft ooxml',)
+    mimetypes = ('application/zip', 'application/octet-stream',)
     extensions = ('.nupkg',)
     packaging = Package.as_archive
-    repo_types = [Repository.repo_type_nuget]
+    repo_types = (Repository.repo_type_nuget)
 
 
 class NSISInstallerVersion(Version):
@@ -743,7 +743,7 @@ class NSISInstallerPackage(Package):
     mimetypes = ('application/x-dosexec',)
     extensions = ('.exe',)
     packaging = Package.as_archive
-    repo_types = []
+    repo_types = ()
 
 
 class SharVersion(Version):
@@ -755,9 +755,9 @@ class SharPackage(Package):
     type = StringType(default='shar shell archive')
     filetypes = ('posix shell script',)
     mimetypes = ('text/x-shellscript',)
-    extensions = ('.sha', '.shar', '.bin')
+    extensions = ('.sha', '.shar', '.bin',)
     packaging = Package.as_archive
-    repo_types = []
+    repo_types = ()
 
 
 class AppleDmgVersion(Version):
@@ -771,7 +771,7 @@ class AppleDmgPackage(Package):
     mimetypes = ('application/zlib',)
     extensions = ('.dmg', '.sparseimage',)
     packaging = Package.as_archive
-    repo_types = []
+    repo_types = ()
 
 
 class IsoImageVersion(Version):
@@ -781,11 +781,11 @@ class IsoImageVersion(Version):
 class IsoImagePackage(Package):
     versioning = ModelType(IsoImageVersion)
     type = StringType(default='ISO CD image')
-    filetypes = ('iso 9660 cd-rom', 'high sierra cd-rom')
+    filetypes = ('iso 9660 cd-rom', 'high sierra cd-rom',)
     mimetypes = ('application/x-iso9660-image',)
-    extensions = ('.iso', '.udf', '.img')
+    extensions = ('.iso', '.udf', '.img',)
     packaging = Package.as_archive
-    repo_types = []
+    repo_types = ()
 
 
 class SquashfsVersion(Version):
@@ -798,7 +798,7 @@ class SquashfsPackage(Package):
     filetypes = ('squashfs',)
     mimetypes = tuple()
     packaging = Package.as_archive
-    repo_types = []
+    repo_types = ()
 
 
 #
@@ -817,7 +817,7 @@ class RarPackage(Package):
     mimetypes = ('application/x-rar',)
     extensions = ('.rar',)
     packaging = Package.as_archive
-    repo_types = []
+    repo_types = ()
 
 
 class TarVersion(Version):

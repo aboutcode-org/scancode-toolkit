@@ -29,22 +29,20 @@ import os.path
 from commoncode.testcase import FileBasedTesting
 
 from packagedcode.models import AssertedLicense
+from packagedcode import models
 from packagedcode.models import Package
 from packagedcode.models import Party
-from packagedcode import models
-from unittest.case import expectedFailure
 
 
 class TestModels(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    @expectedFailure
     def test_model_creation_and_dump(self):
         aap = models.AndroidAppPackage()
         result = aap.to_primitive()
         assert 'Android app' == result['type']
         assert 'archive' == result['packaging']
-        assert 'Java' == result['primitive_language']
+        assert 'Java' == result['primary_language']
 
     def test_validate_package(self):
         package = Package(dict(
