@@ -147,6 +147,9 @@ class TestContentType(FileBasedTesting):
         assert is_archive(self.get_test_loc('contenttype/archive/e.tar'))
         assert 'posix tar archive (gnu)' == get_filetype(self.get_test_loc('contenttype/archive/e.tar'))
 
+    def test_debianfile(self):
+        assert 'debian binary package (format 2.0)' == get_filetype(self.get_test_loc('contenttype/debian/libjama-dev_1.2.4-2_all.deb'))
+
     def test_archive_gz(self):
         assert is_binary(self.get_test_loc('contenttype/archive/file_4.26-1.diff.gz'))
         assert is_archive(self.get_test_loc('contenttype/archive/file_4.26-1.diff.gz'))
