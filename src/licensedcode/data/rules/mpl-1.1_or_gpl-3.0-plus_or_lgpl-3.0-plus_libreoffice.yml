@@ -1,0 +1,7 @@
+licenses:
+    - mpl-1.1
+    - gpl-3.0-plus
+    - lgpl-3.0-plus
+license_choice: yes
+template: yes
+notes: found in Libreoffice
