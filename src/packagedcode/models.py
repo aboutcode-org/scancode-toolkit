@@ -29,9 +29,10 @@ from collections import OrderedDict
 from schematics.models import Model
 from schematics.types import StringType
 from schematics.types import IntType
+from schematics.types.base import BooleanType
+from schematics.types.compound import DictType
 from schematics.types.compound import ListType
 from schematics.types.compound import ModelType
-from schematics.types.compound import DictType
 
 
 """
@@ -150,6 +151,41 @@ class Party(Model):
         return party
 
 
+class Dependency(Model):
+    """
+    A dependency points to a Package via a package id and version, and jhas a version
+    constraint  (such as ">= 3.4"). The version is the effective version that
+    has been picked and resolved.
+    """
+    id = StringType()
+    # the effective or concrete resolved and used version
+    version = StringType()
+
+    # the potential constraints for this dep.
+    # this is package format specific
+    version_constraint = StringType()
+
+    # a normalized list of version constraints for this dep.
+    # this is package indepdenent
+    normalized_version_constraints = ListType(StringType(), default=[])
+
+    # is the dep up to date and the latest available?
+    is_latest = BooleanType(default=False)
+
+    def as_dict(self):
+        dep = OrderedDict()
+        dep['id'] = self.package_id
+        dep['version'] = self.urls
+        dep['version_constraint'] = self.version_constraint
+        return dep
+
+    def resolve_and_normalize(self):
+        """
+        Compute the concrete version and normalized_version_constraints
+        """
+        pass
+
+
 class Package(Model):
     """
     A package base class.
@@ -181,13 +217,13 @@ class Package(Model):
     as_file = StringType(default='file')
     PACKAGINGS = (as_archive, as_dir, as_file)
 
-    dep_runtime = StringType(default='runtime')
-    dep_dev = StringType(default='development')
-    dep_test = StringType(default='test')
-    dep_build = StringType(default='build')
-    dep_optional = StringType(default='optional')
-    dep_bundled = StringType(default='optional')
-    dep_ci = StringType(default='continuous integration')
+    dep_runtime = 'runtime'
+    dep_dev = 'development'
+    dep_test = 'test'
+    dep_build = 'build'
+    dep_optional = 'optional'
+    dep_bundled = 'optional'
+    dep_ci = 'continuous integration'
     DEPENDENCY_GROUPS = (dep_runtime, dep_dev, dep_optional, dep_test,
                          dep_build, dep_ci, dep_bundled)
 
@@ -282,7 +318,7 @@ class Package(Model):
     notice_texts = ListType(StringType())
 
     # map of dependency group to a list of dependencies for each DEPENDENCY_GROUPS
-    dependencies = DictType(StringType(), default={})
+    dependencies = DictType(ListType(ModelType(Dependency)), default={})
 
     @staticmethod
     def get_package(location):
@@ -365,42 +401,6 @@ class Package(Model):
         or None
         """
         return self.name and self.type + ' ' + self.name or None
-
-
-class Dependency(object):
-    """
-    A dependency points to a Package via a package id and version, and jhas a version
-    constraint  (such as ">= 3.4"). The version is the effective version that
-    has been picked and resolved.
-    """
-    def __init__(self, id, version_constraint=None, version=None):  # @ReservedAssignment
-        self.id = id
-        # the effective or concrete resolved and used version
-        self.version = version
-
-        # the potential constraints for this dep.
-        # this is package format specific
-        self.version_constraint = version_constraint
-
-        # a normalized list of version constraints for this dep.
-        # this is package indepdenent
-        self.normalized_version_constraints = []
-
-        # is the dep up to date and the latest available?
-        self.is_latest = False
-
-    def as_dict(self):
-        dep = OrderedDict()
-        dep['id'] = self.package_id
-        dep['version'] = self.urls
-        dep['version_constraint'] = self.version_constraint
-        return dep
-
-    def resolve_and_normalize(self):
-        """
-        Compute the concrete version and normalized_version_constraints
-        """
-        pass
 
 
 class Repository(object):

@@ -87,34 +87,6 @@ class NpmPackage(Package):
     def getPackage(location):
         return parse(location)
 
-    def get_info(self):
-        """
-        Return an Ordered dictionary of npm data.
-        """
-        package = OrderedDict()
-        package['type'] = self.type
-        package['packaging'] = self.packaging
-        package['primary_language'] = self.primary_language
-        package['metafile_location'] = self.metafile_locations and self.metafile_locations[0] or []
-        package['id'] = self.name
-        package['name'] = self.name
-        package['qualified_name'] = self.qualified_name
-        package['version'] = self.versioning.version
-        package['summary'] = self.summary
-        package['asserted_licenses'] = [l.as_dict() for l in self.asserted_licenses]
-
-        # take the first of authors if any
-        package['author'] = self.authors and self.authors[0].name
-        package['author_email'] = self.authors and self.authors[0].email
-        package['author_url'] = self.authors and self.authors[0].url
-        package['homepage_url'] = self.homepage_url
-        package['summary'] = self.summary
-        # take the first of authors if any
-        package['download_url'] = self.download_urls and self.download_urls[0]
-        package['vcs_tool'] = self.vcs_tool
-        package['vcs_repository'] = self.vcs_repository
-        return package
-
 
 def parse(location):
     """
@@ -470,7 +442,7 @@ def _deps_mapper(deps, package, field_name):
     resolved_type = dep_types[field_name]
     dependencies = []
     for pid, version_constraint in deps.items():
-        dep = Dependency(id=pid, version_constraint=version_constraint)
+        dep = Dependency(dict(id=pid, version_constraint=version_constraint))
         dependencies.append(dep)
     if resolved_type in package.dependencies:
         package.dependencies[resolved_type].extend(dependencies)
