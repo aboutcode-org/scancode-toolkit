@@ -328,9 +328,9 @@ class Package(Model):
         """
         return
 
-    # map to a list of related packages keyed by PAYLOAD
-    # for instance the SRPM of an RPM
-#     related_packages = ListType(ModelType('Package'))
+#     map to a list of related packages keyed by PAYLOAD
+#     for instance the SRPM of an RPM
+    related_packages = ListType(ModelType(Model), default=[])
 
 #     @property
 #     def version(self):

@@ -28,6 +28,7 @@ from collections import namedtuple
 
 from packagedcode.models import AssertedLicense
 from packagedcode.models import Party
+from packagedcode.models import Package
 from packagedcode.models import RpmVersion
 from packagedcode.pyrpm.rpm import RPM
 from packagedcode.models import RpmPackage
@@ -125,5 +126,5 @@ def parse(location):
         package['asserted_licenses'] = [AssertedLicense(dict(license=infos.license))]
     if infos.source_rpm:
         src_rpm = RpmPackage(dict(name=infos.source_rpm))
-#         package['related_packages'] = {Package.payload_src: [src_rpm]}
+        package['related_packages'] = [src_rpm]
     return RpmPackage(package)
