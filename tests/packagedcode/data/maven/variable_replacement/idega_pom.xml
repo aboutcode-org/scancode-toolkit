@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.idega.block.addon</groupId>
+    <artifactId>com.idega.block.addon</artifactId>
+    <version>4.1.3-SNAPSHOT</version>
+  </parent>
+  <name>idegaWeb Contract Block</name>
+  <groupId>com.idega.block.addon</groupId>
+  <artifactId>com.idega.block.contract</artifactId>
+  <version>4.1.3-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <inceptionYear>2000</inceptionYear>
+  <description>Contract</description>
+
+  <scm>
+    <!--
+    <connection>scm:cvs:ext:${user.name}@code.idega.com:/idega/cvs:${groupId}/${artifactId}/</connection>
+    <developerConnection>scm:cvs:ext:${user.name}@code.idega.com:/idega/cvs:${groupId}/${artifactId}/</developerConnection>
+     -->
+    <connection>scm:cvs:ext:idegaweb@code.idega.com:/idega/cvs:com.idega.block.addon/com.idega.block.contract/</connection>
+    <developerConnection>scm:cvs:ext:idegaweb@code.idega.com:/idega/cvs:com.idega.block.addon/com.idega.block.contract/</developerConnection>
+  </scm>
+  <developers>
+    <developer>
+      <name>Tryggvi Larusson</name>
+      <id>tryggvil</id>
+      <email>tryggvi@idega.is</email>
+      <organization>idega software</organization>
+      <roles />
+    </developer>
+    <developer>
+      <name>Pall Helgason</name>
+      <id>palli</id>
+      <email>palli@idega.is</email>
+      <organization>idega software</organization>
+      <roles />
+    </developer>
+    <developer>
+      <name>Eirikur Sveinn Hrafnsson</name>
+      <id>eiki</id>
+      <email>eiki@idega.is</email>
+      <organization>idega software</organization>
+      <roles />
+    </developer>
+    <developer>
+      <name>Thorhallur Helgason</name>
+      <id>laddi</id>
+      <email>laddi@idega.is</email>
+      <organization>idega software</organization>
+      <roles />
+    </developer>
+  </developers>
+  <dependencies>
+    <dependency>
+      <groupId>com.idega.block.platform</groupId>
+      <artifactId>com.idega.core</artifactId>
+     </dependency>
+     <dependency>
+      <groupId>com.idega.block.platform</groupId>
+      <artifactId>com.idega.block.media</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>itextpdf</groupId>
+      <artifactId>itext-paulo</artifactId>
+      <version>${itextpdf-itext-paulo-version}</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>itext</groupId>
+      <artifactId>itext-xml</artifactId>
+      <version>${itext-itext-xml-version}</version>
+      <type>jar</type>
+    </dependency>
+  </dependencies>
+</project>

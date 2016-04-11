@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+/*
+ * Copyright 2004 The Apache Software Foundation.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ -->
+
+<project>
+  <extend>../plugin-parent/project.xml</extend>
+  <pomVersion>3</pomVersion>
+  <id>maven-abbot-plugin</id>
+  <name>Maven Abbot plugin</name>
+  <currentVersion>1.1</currentVersion>
+  <description>Run Abbot tests</description>
+  <shortDescription>Abbot Tests</shortDescription>
+  <url>http://maven.apache.org/reference/plugins/abbot/</url>
+  <issueTrackingUrl>http://jira.codehaus.org/browse/MPABBOT</issueTrackingUrl>
+  <siteDirectory>/www/maven.apache.org/reference/plugins/abbot/</siteDirectory>
+  <repository>
+    <connection>scm:cvs:pserver:anoncvs@cvs.apache.org:/home/cvspublic:maven-plugins/abbot/</connection>
+    <developerConnection>scm:cvs:ext:${maven.username}@cvs.apache.org:/home/cvs:maven-plugins/abbot/</developerConnection>
+    <url>http://cvs.apache.org/viewcvs/maven-plugins/abbot/</url>
+  </repository>
+  <versions>
+    <version>
+      <id>1.0</id>
+      <name>1.0</name>
+      <tag>MAVEN_ABBOT_1_0</tag>
+    </version>
+    <version>
+      <id>1.1</id>
+      <name>1.1</name>
+      <tag>MAVEN_ABBOT_1_1</tag>
+    </version>
+  </versions>
+  <developers>
+    <developer>
+      <name>Christian Blavier</name>
+      <id>cblavier</id>
+      <email>cblavier@octo.com</email>
+      <organization>Octo Technology</organization>
+      <roles>
+        <role>Creator</role>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Vincent Massol</name>
+      <id>vmassol</id>
+      <email>vmassol@pivolis.com</email>
+      <organization>Pivolis</organization>
+      <roles>
+        <role>Creator</role>
+        <role>Java Developer</role>
+        <role>Release Manager</role>
+      </roles>
+    </developer>
+  </developers>
+  <contributors/>
+  <dependencies>
+    <dependency>
+      <groupId>abbot</groupId>
+      <artifactId>abbot</artifactId>
+      <version>0.13.0</version>
+      <properties>
+        <abbot.editor>true</abbot.editor>
+        <abbot.webstart>true</abbot.webstart>
+      </properties>
+    </dependency>
+    <dependency>
+      <groupId>jdom</groupId>
+      <artifactId>jdom</artifactId>
+      <version>b10</version>
+      <properties>
+        <abbot.editor>true</abbot.editor>
+        <abbot.webstart>true</abbot.webstart>
+      </properties>
+    </dependency>
+    <!-- Required for the Costello editor -->
+
+    <dependency>
+      <groupId>mrj</groupId>
+      <artifactId>MRJToolkitStubs</artifactId>
+      <version>1.0</version>
+      <properties>
+        <abbot.editor>true</abbot.editor>
+      </properties>
+    </dependency>
+    <dependency>
+      <groupId>gnu-regexp</groupId>
+      <artifactId>gnu-regexp</artifactId>
+      <version>1.1.4</version>
+      <properties>
+        <abbot.editor>true</abbot.editor>
+      </properties>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <properties>
+        <abbot.editor>true</abbot.editor>
+        <abbot.webstart>true</abbot.webstart>
+      </properties>
+    </dependency>
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xerces</artifactId>
+      <version>2.4.0</version>
+      <properties>
+        <abbot.editor>true</abbot.editor>
+        <abbot.webstart>true</abbot.webstart>
+      </properties>
+    </dependency>
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xmlParserAPIs</artifactId>
+      <version>2.2.1</version>
+      <properties>
+        <abbot.editor>true</abbot.editor>
+        <abbot.webstart>true</abbot.webstart>
+      </properties>
+    </dependency>
+    <dependency>
+      <groupId>ant</groupId>
+      <artifactId>ant</artifactId>
+      <version>1.5.3-1</version>
+      <properties>
+        <abbot.webstart>true</abbot.webstart>
+      </properties>
+    </dependency>
+    <dependency>
+      <groupId>ant</groupId>
+      <artifactId>ant-optional</artifactId>
+      <version>1.5.3-1</version>
+      <properties>
+        <abbot.webstart>true</abbot.webstart>
+      </properties>
+    </dependency>
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly-tags-xml</artifactId>
+      <version>20030211.142705</version>
+      <url>http://jakarta.apache.org/commons/jelly/libs/xml/</url>
+    </dependency>
+  </dependencies>
+</project>
