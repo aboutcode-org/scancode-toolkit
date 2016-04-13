@@ -30,6 +30,7 @@ from schematics.models import Model
 from schematics.types import StringType
 from schematics.types import IntType
 from schematics.types.base import BooleanType
+from schematics.types.base import URLType
 from schematics.types.compound import DictType
 from schematics.types.compound import ListType
 from schematics.types.compound import ModelType
@@ -259,21 +260,21 @@ class Package(Model):
     # keywords or tags
     keywords = ListType(StringType())
     # url to a reference documentation for keywords or tags (such as a Pypi or SF.net Trove map)
-    keywords_doc_url = StringType()
+    keywords_doc_url = URLType()
 
     # paths to metadata files for this package, if any
     # can be the same as the package location (e.g. RPMs)
     metafile_locations = ListType(StringType())
 
     # URLs to metadata files for this package.
-    metafile_urls = ListType(StringType())
+    metafile_urls = ListType(URLType(), default=[])
 
-    homepage_url = StringType()
+    homepage_url = URLType()
     notes = StringType()
 
     # one or more direct download urls, possibly in SPDX vcs url form
     # the first one is considered to be the primary
-    download_urls = ListType(StringType(), default=[])
+    download_urls = ListType(URLType(), default=[])
 
     # checksums for the download
     download_sha1 = StringType()
@@ -281,13 +282,13 @@ class Package(Model):
     download_md5 = StringType()
 
     # issue or bug tracker
-    bug_tracking_url = StringType()
+    bug_tracking_url = URLType()
 
     # strings (such as email, urls, etc)
     support_contacts = ListType(StringType())
 
     # a URL where the code can be browsed online
-    code_view_url = StringType()
+    code_view_url = URLType()
 
     # one of git, svn, hg, etc
     vcs_tool = StringType(choices=['git', 'svn', 'hg'])
@@ -328,32 +329,9 @@ class Package(Model):
         """
         return
 
-#     map to a list of related packages keyed by PAYLOAD
-#     for instance the SRPM of an RPM
+    # map to a list of related packages keyed by PAYLOAD
+    # for instance the SRPM of an RPM
     related_packages = ListType(ModelType(Model), default=[])
-
-#     @property
-#     def version(self):
-#         """
-#         Return version segments joined with a dot.
-#         Subclasses can override.
-#         """
-#         return u'.'.join(self._version)
-
-#     @version.setter
-#     def version(self, version):
-#         """
-#         Set the version from a string, list or tuple of strings as a list.
-#         """
-#         if version is None or version == '' or version == []:
-#             self._version = []
-#         if isinstance(version, basestring):
-#             self._version = [version]
-#         elif isinstance(version, (list, tuple,)):
-#             assert all(isinstance(i, basestring) for i in version)
-#             self._version = list(version)
-#         else:
-#             raise ValueError('Version must be a string, list or tuple ')
 
     @property
     def component_version(self):
@@ -403,7 +381,7 @@ class Package(Model):
         return self.name and self.type + ' ' + self.name or None
 
 
-class Repository(object):
+class Repository(Model):
     """
     A package repository.
     """
@@ -429,15 +407,14 @@ class Repository(object):
         repo_type_nuget,
     )
 
-    def __init__(self, type, url=None, public=False, mirror_urls=None, name=None):  # @ReservedAssignment
-        # one of REPO_TYPES
-        self.type = type
-        self.url = url
-        self.public = public
-        self.mirror_urls = mirror_urls or []
-        # optional: used for well known "named" public repos such as:
-        # Maven Central, Pypi, RubyGems, npmjs.org
-        self.name = name
+    # one of REPO_TYPES
+    type = StringType(choices=REPO_TYPES)
+    url = URLType(default=None)
+    public = BooleanType(default=False)
+    mirror_urls = ListType(URLType, default=[])
+    # optional: used for well known "named" public repos such as:
+    # Maven Central, Pypi, RubyGems, npmjs.org
+    name = StringType(default=None)
 
 #
 # Package Types
