@@ -27,7 +27,13 @@ Quick Start
 
 For Windows, please go to the Comprehensive Installation section instead.
 
-Get Python 2.7 then download and extract the latest ScanCode release from::
+Make sure you have Python 2.7 installed:
+ * Download for Windows https://www.python.org/ftp/python/2.7.11/python-2.7.11.msi
+ * Download for Mac https://www.python.org/ftp/python/2.7.11/python-2.7.11-macosx10.6.pkg
+ * "sudo apt-get install python" for Debian/Ubuntu 14.04
+ * See Comprehensive Installation for details and other Linux installation
+
+Then download and extract the latest ScanCode release from::
 
     https://github.com/nexB/scancode-toolkit/releases/latest
 
@@ -160,7 +166,7 @@ ScanCode needs a Python 2.7 interpreter.
   on 32-bit or 64-bit. DO NOT USE Python X86_64 even if you run 64 bit Windows.
 
   Download Python from this url:
-  https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi
+  https://www.python.org/ftp/python/2.7.11/python-2.7.11.msi
 
   Install Python on the c: drive and use all default installer options.
   See the Windows installation section for more installation details.
@@ -169,7 +175,7 @@ ScanCode needs a Python 2.7 interpreter.
 - **On Mac**:
 
   Download and install Python from this url:
-  https://www.python.org/ftp/python/2.7.10/python-2.7.10-macosx10.6.pkg
+  https://www.python.org/ftp/python/2.7.11/python-2.7.11-macosx10.6.pkg
 
 
 Installation on Linux and Mac
