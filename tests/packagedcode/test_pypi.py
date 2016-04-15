@@ -59,3 +59,13 @@ class TestPyPi(FileBasedTesting):
         assert 'MIT' == package.asserted_licenses[0].license
         assert ['Benjamin Peterson'] == package.authors
         assert 'http://pypi.python.org/pypi/six/' == package.homepage_url
+
+    def test_parse_pkg_info(self):
+        test_file = self.get_test_loc('pypi/PKG-INFO')
+        package = pypi.parse_pkg_info(test_file)
+        assert 'TicketImport' == package.name
+        assert '0.7a' == package.version
+        assert 'Import CSV and Excel files' == package.summary
+        assert 'BSD' == package.asserted_licenses[0].license
+        assert 'http://nexb.com' == package.homepage_url
+        assert ['Francois Granade'] == package.authors

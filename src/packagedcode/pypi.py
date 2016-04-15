@@ -46,6 +46,45 @@ logger = logging.getLogger(__name__)
 # logger.setLevel(logging.DEBUG)
 
 
+PKG_INFO_ATTRIBUTES = [
+    'Name',
+    'Version',
+    'Author',
+    'Author-email',
+    'License',
+    'Description',
+    'Platform',
+    'Home-page',
+    'Summary'
+]
+
+
+def parse_pkg_info(location):
+    """
+    parse a 'PKG-INFO' file at 'location' and return a PythonPackage object.
+    """
+    infos = {}
+    with open(location, 'rb') as txt_file:
+        lines = []
+        for line in txt_file:
+            lines.append(line)
+        lines = ''.join(lines)
+        for attribute in PKG_INFO_ATTRIBUTES:
+            infos[attribute] = re.findall('^'+attribute+'[\s:]*.*', lines, flags=re.MULTILINE)[0]
+            infos[attribute] = re.sub('^'+attribute+'[\s:]*', '', infos[attribute], flags=re.MULTILINE)
+            if infos[attribute] == 'UNKNOWN':
+                infos[attribute] = None
+        package = PythonPackage(
+            name=infos.get('Name'),
+            version=infos.get('Version'),
+            summary=infos.get('Summary'),
+            homepage_url=infos.get('Home-page'),
+            asserted_licenses=[AssertedLicense(license=infos.get('License'))],
+            authors=[infos.get('Author')],
+        )
+    return package
+
+
 def get_attribute(setup_location, attribute):
     """
     Return the value specified for a given 'attribute' mentioned in a 'setup.py'
@@ -115,3 +154,5 @@ def parse(location):
         return package
     if file_name == 'metadata.json':
         parse_metadata(location)
+    if file_name == 'PKG-INFO':
+        parse_pkg_info(location)
