@@ -49,3 +49,13 @@ class TestPyPi(FileBasedTesting):
         assert 'scancode-toolkit' == pypi.get_attribute(test_file, 'name')
         assert '1.5.0' == pypi.get_attribute(test_file, 'version')
         assert 'ScanCode' == pypi.get_attribute(test_file, 'author')
+
+    def test_parse_metadata(self):
+        test_file = self.get_test_loc('pypi/metadata.json')
+        package = pypi.parse_metadata(test_file)
+        assert 'six' == package.name
+        assert '1.10.0' == package.version
+        assert 'Python 2 and 3 compatibility utilities' == package.summary
+        assert 'MIT' == package.asserted_licenses[0].license
+        assert ['Benjamin Peterson'] == package.authors
+        assert 'http://pypi.python.org/pypi/six/' == package.homepage_url

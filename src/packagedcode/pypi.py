@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -25,11 +25,15 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
+import json
 import logging
+import os
 import re
 
+from commoncode import fileutils
 from packagedcode.models import AssertedLicense
 from packagedcode.models import PythonPackage
+
 
 """
 Handle Python PyPi packages
@@ -54,9 +58,8 @@ def get_attribute(setup_location, attribute):
     'requests' is returned for the attribute 'name'
     """
     setup_text = open(setup_location, 'rb').read()
-    setup_text = setup_text.replace('\n', '')
     # FIXME Use a valid parser for parsing 'setup.py'
-    values = re.findall('setup\(.*?'+attribute+'=[\"\']{1}.*?\',', setup_text)
+    values = re.findall('setup\(.*?'+attribute+'=[\"\']{1}.*?\',', setup_text.replace('\n', ''))
     if len(values) > 1:
         return
     else:
@@ -68,18 +71,47 @@ def get_attribute(setup_location, attribute):
             return output
 
 
+def parse_metadata(location):
+    parent_dir = fileutils.parent_directory(location)
+    if os.path.exists(os.path.join(parent_dir, 'METADATA')) and os.path.exists(os.path.join(parent_dir, 'DESCRIPTION.rst')):
+        infos = json.loads(open(location, 'rb').read())
+        homepage_url = None
+        authors = []
+        if infos['extensions']:
+            try:
+                homepage_url = infos['extensions']['python.details']['project_urls']['Home']
+            except:
+                pass
+            try:
+                for contact in infos['extensions']['python.details']['contacts']:
+                    authors.append(contact['name'])
+            except:
+                pass
+        package = PythonPackage(
+            name=infos.get('name'),
+            version=infos.get('version'),
+            summary=infos.get('summary'),
+            asserted_licenses=[AssertedLicense(license=infos.get('license'))],
+            homepage_url=homepage_url,
+            authors=authors,
+        )
+        return package
+
+
 def parse(location):
     """
     Parse a 'setup.py' and return a PythonPackage object.
     """
-    if not location.endswith('setup.py'):
-        return
-    package = PythonPackage(
-        name=get_attribute(location, 'name'),
-        homepage_url=get_attribute(location, 'url'),
-        description=get_attribute(location, 'description'),
-        version=get_attribute(location, 'version'),
-        authors=[get_attribute(location, 'author')],
-        asserted_licenses=[AssertedLicense(license=get_attribute(location, 'license'))],
-    )
-    return package
+    file_name = fileutils.file_name(location)
+    if file_name == 'setup.py':
+        package = PythonPackage(
+            name=get_attribute(location, 'name'),
+            homepage_url=get_attribute(location, 'url'),
+            description=get_attribute(location, 'description'),
+            version=get_attribute(location, 'version'),
+            authors=[get_attribute(location, 'author')],
+            asserted_licenses=[AssertedLicense(license=get_attribute(location, 'license'))],
+        )
+        return package
+    if file_name == 'metadata.json':
+        parse_metadata(location)
