@@ -64,24 +64,20 @@ def parse_pkg_info(location):
     parse a 'PKG-INFO' file at 'location' and return a PythonPackage object.
     """
     infos = {}
-    with open(location, 'rb') as txt_file:
-        lines = []
-        for line in txt_file:
-            lines.append(line)
-        lines = ''.join(lines)
-        for attribute in PKG_INFO_ATTRIBUTES:
-            infos[attribute] = re.findall('^'+attribute+'[\s:]*.*', lines, flags=re.MULTILINE)[0]
-            infos[attribute] = re.sub('^'+attribute+'[\s:]*', '', infos[attribute], flags=re.MULTILINE)
-            if infos[attribute] == 'UNKNOWN':
-                infos[attribute] = None
-        package = PythonPackage(
-            name=infos.get('Name'),
-            version=infos.get('Version'),
-            summary=infos.get('Summary'),
-            homepage_url=infos.get('Home-page'),
-            asserted_licenses=[AssertedLicense(license=infos.get('License'))],
-            authors=[infos.get('Author')],
-        )
+    file_text = open(location, 'rb').read()
+    for attribute in PKG_INFO_ATTRIBUTES:
+        infos[attribute] = re.findall('^'+attribute+'[\s:]*.*', file_text, flags=re.MULTILINE)[0]
+        infos[attribute] = re.sub('^'+attribute+'[\s:]*', '', infos[attribute], flags=re.MULTILINE)
+        if infos[attribute] == 'UNKNOWN':
+            infos[attribute] = None
+    package = PythonPackage(
+        name=infos.get('Name'),
+        version=infos.get('Version'),
+        summary=infos.get('Summary'),
+        homepage_url=infos.get('Home-page'),
+        asserted_licenses=[AssertedLicense(license=infos.get('License'))],
+        authors=[infos.get('Author')],
+    )
     return package
 
 
