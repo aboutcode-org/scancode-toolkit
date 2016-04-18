@@ -93,6 +93,7 @@ setup(
 
         # packagedcode
         'requests >= 2.7.0, < 3.0.0',
+        'lxml >=2.3, < 3.0',
     ],
 
     extras_require={

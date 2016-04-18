@@ -1,0 +1,114 @@
+lxml is copyright Infrae and distributed under the BSD license (see
+doc/licenses/BSD.txt), with the following exceptions:
+
+Some code, such a selftest.py, selftest2.py and
+src/lxml/_elementpath.py are derived from ElementTree and
+cElementTree. See doc/licenses/elementtree.txt for the license text.
+
+The ElementTree / XML Toys Library is
+
+Copyright (c) 1999-2003 by Secret Labs AB
+Copyright (c) 1999-2003 by Fredrik Lundh
+
+By obtaining, using, and/or copying this software and/or its
+associated documentation, you agree that you have read, understood,
+and will comply with the following terms and conditions:
+
+Permission to use, copy, modify, and distribute this software and its
+associated documentation for any purpose and without fee is hereby
+granted, provided that the above copyright notice appears in all
+copies, and that both that copyright notice and this permission notice
+appear in supporting documentation, and that the name of Secret Labs
+AB or the author not be used in advertising or publicity pertaining to
+distribution of the software without specific, written prior
+permission.
+
+SECRET LABS AB AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO
+THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS.  IN NO EVENT SHALL SECRET LABS AB OR THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
+OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+
+test.py, the test-runner script, is GPL and copyright Shuttleworth
+Foundation. See doc/licenses/GPL.txt. It is believed the unchanged
+inclusion of test.py to run the unit test suite falls under the
+"aggregation" clause of the GPL and thus does not affect the license
+of the rest of the package.
+
+# SchoolTool - common information systems platform for school administration
+# Copyright (c) 2003 Shuttleworth Foundation
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+
+the doctest.py module is taken from the Python library and falls under
+the PSF Python License.
+
+The isoschematron implementation uses several XSL and RelaxNG resources:
+ * The (XML syntax) RelaxNG schema for schematron, copyright International
+   Organization for Standardization (see 
+   src/lxml/isoschematron/resources/rng/iso-schematron.rng for the license
+   text)
+
+    Copyright (c) International Organization for Standardization 2005. 
+    Permission to copy in any form is granted for use with conforming 
+    SGML systems and applications as defined in ISO 8879, 
+    provided this notice is included in all copies.
+
+ * The skeleton iso-schematron-xlt1 pure-xslt schematron implementation
+   xsl stylesheets, copyright Rick Jelliffe and Academia Sinica Computing
+   Center, Taiwan (see the xsl files here for the license text: 
+   src/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/)
+
+    Copyright (c) 2000-2008 Rick Jelliffe and Academia Sinica Computing Center, Taiwan
+    
+    This software is provided 'as-is', without any express or implied warranty. 
+    In no event will the authors be held liable for any damages arising from 
+    the use of this software.
+    
+    Permission is granted to anyone to use this software for any purpose, 
+    including commercial applications, and to alter it and redistribute it freely,
+    subject to the following restrictions:
+    
+    1. The origin of this software must not be misrepresented; you must not claim
+    that you wrote the original software. If you use this software in a product, 
+    an acknowledgment in the product documentation would be appreciated but is 
+    not required.
+    
+    2. Altered source versions must be plainly marked as such, and must not be 
+    misrepresented as being the original software.
+    
+    3. This notice may not be removed or altered from any source distribution.
+
+   Implementation of Schematron Validation Report Language from ISO Schematron
+   ISO/IEC 19757 Document Schema Definition Languages (DSDL) 
+     Part 3: Rule-based validation  Schematron 
+     Annex D: Schematron Validation Report Language 
+
+  This ISO Standard is available free as a Publicly Available Specification in PDF from ISO.
+  Also see www.schematron.com for drafts and other information.
+
+
+ * The xsd/rng schema schematron extraction xsl transformations are unlicensed
+   and copyright the respective authors as noted (see 
+   src/lxml/isoschematron/resources/xsl/RNG2Schtrn.xsl and
+   src/lxml/isoschematron/resources/xsl/XSD2Schtrn.xsl)
+
+    Created by Eddie Robertsson 2002/06/01 and modified by Holger Joukl
+    based on an original transform by Eddie Robertsson
+   

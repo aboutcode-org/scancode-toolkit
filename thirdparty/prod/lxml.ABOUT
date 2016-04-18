@@ -1,0 +1,24 @@
+about_resource:
+    - lxml-2.3.tar.gz
+    - lxml-2.3-cp27-none-macosx_10_6_intel.whl
+    - lxml-2.3-cp27-none-macosx_10_8_intel.whl
+    - lxml-2.3-cp27-none-macosx_10_9_intel.whl
+    - lxml-2.3-cp27-none-win32.whl
+    - lxml-2.3-cp27-none-linux_x86_64.whl
+
+homepage_url: http://lxml.de/
+name: lxml
+version: 2.3
+copyright: Copyright (c) 2004 Infrae. All rights reserved.
+download_url: https://pypi.python.org/packages/source/l/lxml/lxml-2.3.tar.gz
+license_text_file: lxml.LICENSE
+license_notice_file: lxml.NOTICE
+dje_license: bsd-new and gpl-2.0 and mit and zope-2.0 and others.
+
+vcs_tool: git
+vcs_branch: tree/lxml-2.3
+vsc_repo: https://github.com/lxml/lxml.git
+
+notes: |
+    the MacOSX and Windows wheels are statically linked as needed 
+    with libxml and libxslt
