@@ -1,0 +1,69 @@
+{
+  "maven_distribution_management_site_1": [], 
+  "maven_scm_url": [], 
+  "maven_component_artifact_id": [
+    "palmed"
+  ], 
+  "maven_project_short_description_1": [
+    "An ascii files editor for PDA"
+  ], 
+  "maven_license_url": [], 
+  "maven_repository_url_1": [
+    "http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/palmed"
+  ], 
+  "maven_repository_name": [], 
+  "maven_component_classifier": [], 
+  "maven_repository_url": [], 
+  "maven_distribution_management_repository_url": [], 
+  "maven_scm_connection": [], 
+  "maven_component_parent_version": [], 
+  "maven_model_version": [], 
+  "maven_repository_layout": [], 
+  "maven_project_inception_year": [
+    "2004"
+  ], 
+  "maven_component_parent_group_id": [], 
+  "maven_project_url": [
+    "http://palmed.sourceforge.net"
+  ], 
+  "maven_component_version": [], 
+  "maven_distribution_management_site_url": [], 
+  "maven_component_group_id": [
+    "palmed"
+  ], 
+  "maven_distribution_management_group_id": [], 
+  "maven_scm_developer_connection": [], 
+  "maven_component_extend_1": [], 
+  "maven_developer_name": [
+    "Mat"
+  ], 
+  "maven_license": [], 
+  "maven_component_packaging": [], 
+  "maven_developer_email": [
+    "mat007@users.sourceforge.net"
+  ], 
+  "maven_license_comments": [], 
+  "maven_organization_name": [
+    "PalmEd"
+  ], 
+  "maven_component_current_version_1": [
+    "1.0.4"
+  ], 
+  "maven_license_distribution": [], 
+  "maven_distribution_management_directory_1": [], 
+  "maven_organization_url": [
+    "http://palmed.sourceforge.net"
+  ], 
+  "maven_repository_id": [], 
+  "maven_project_description": [], 
+  "maven_repository_connection_1": [
+    "scm:cvs:pserver:anonymous@cvs.sourceforge.net:/cvsroot/palmed:palmed"
+  ], 
+  "maven_license_name": [], 
+  "maven_repository_developer_connection_1": [
+    "scm:cvs:ssh:${maven.username}@cvs.sourceforge.net:/cvsroot/palmed:palmed"
+  ], 
+  "maven_project_name": [
+    "PalmEd"
+  ]
+}

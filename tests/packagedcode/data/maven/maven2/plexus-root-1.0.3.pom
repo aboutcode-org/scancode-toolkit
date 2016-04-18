@@ -1,0 +1,13 @@
+<project>
+    <modelVersion></modelVersion>
+  <developers>
+    <developer>
+      <name>Trygve Laugst&oslash;l</name>
+      <id>trygvis</id>
+      <email>trygvis@codehaus.org</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+</project>

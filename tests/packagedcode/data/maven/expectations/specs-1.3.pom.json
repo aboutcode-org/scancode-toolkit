@@ -1,0 +1,75 @@
+{
+  "maven_distribution_management_site_1": [], 
+  "maven_scm_url": [
+    "http://svn.apache.org/viewvc/geronimo/specs/tags/1_3/"
+  ], 
+  "maven_component_artifact_id": [
+    "specs"
+  ], 
+  "maven_project_short_description_1": [], 
+  "maven_license_url": [], 
+  "maven_repository_url_1": [], 
+  "maven_repository_name": [
+    "Apache Snapshots Repository"
+  ], 
+  "maven_component_classifier": [], 
+  "maven_repository_url": [
+    "http://people.apache.org/repo/m2-snapshot-repository"
+  ], 
+  "maven_distribution_management_repository_url": [], 
+  "maven_scm_connection": [
+    "scm:svn:http://svn.apache.org/repos/asf/geronimo/specs/tags/1_3"
+  ], 
+  "maven_component_parent_version": [
+    "1.1"
+  ], 
+  "maven_model_version": [
+    "4.0.0"
+  ], 
+  "maven_repository_layout": [
+    "default"
+  ], 
+  "maven_project_inception_year": [], 
+  "maven_component_parent_group_id": [
+    "org.apache.geronimo.genesis.config"
+  ], 
+  "maven_project_url": [], 
+  "maven_component_version": [
+    "1.3"
+  ], 
+  "maven_distribution_management_site_url": [
+    "scp://people.apache.org/www/geronimo.apache.org/maven/specs"
+  ], 
+  "maven_component_group_id": [
+    "org.apache.geronimo.specs"
+  ], 
+  "maven_distribution_management_group_id": [], 
+  "maven_scm_developer_connection": [
+    "scm:svn:https://svn.apache.org/repos/asf/geronimo/specs/tags/1_3/"
+  ], 
+  "maven_component_extend_1": [], 
+  "maven_developer_name": [], 
+  "maven_license": [], 
+  "maven_component_packaging": [
+    "pom"
+  ], 
+  "maven_developer_email": [], 
+  "maven_license_comments": [], 
+  "maven_organization_name": [], 
+  "maven_component_current_version_1": [], 
+  "maven_license_distribution": [], 
+  "maven_distribution_management_directory_1": [], 
+  "maven_organization_url": [], 
+  "maven_repository_id": [
+    "apache-snapshots"
+  ], 
+  "maven_project_description": [
+    "Provides open-source implementations of Sun specifications."
+  ], 
+  "maven_repository_connection_1": [], 
+  "maven_license_name": [], 
+  "maven_repository_developer_connection_1": [], 
+  "maven_project_name": [
+    "Geronimo Specifications"
+  ]
+}

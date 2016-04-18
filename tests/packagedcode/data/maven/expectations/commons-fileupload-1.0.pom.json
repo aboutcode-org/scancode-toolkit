@@ -1,0 +1,73 @@
+{
+  "maven_distribution_management_site_1": [], 
+  "maven_scm_url": [], 
+  "maven_component_artifact_id": [
+    "commons-fileupload"
+  ], 
+  "maven_project_short_description_1": [], 
+  "maven_license_url": [], 
+  "maven_repository_url_1": [], 
+  "maven_repository_name": [], 
+  "maven_component_classifier": [], 
+  "maven_repository_url": [], 
+  "maven_distribution_management_repository_url": [], 
+  "maven_scm_connection": [], 
+  "maven_component_parent_version": [], 
+  "maven_model_version": [
+    "4.0.0"
+  ], 
+  "maven_repository_layout": [], 
+  "maven_project_inception_year": [
+    "2002"
+  ], 
+  "maven_component_parent_group_id": [], 
+  "maven_project_url": [
+    "http://jakarta.apache.org/commons/fileupload/"
+  ], 
+  "maven_component_version": [
+    "1.0"
+  ], 
+  "maven_distribution_management_site_url": [], 
+  "maven_component_group_id": [
+    "commons-fileupload"
+  ], 
+  "maven_distribution_management_group_id": [], 
+  "maven_scm_developer_connection": [], 
+  "maven_component_extend_1": [], 
+  "maven_developer_name": [
+    "Martin Cooper", 
+    "dIon Gillard", 
+    "John McNally", 
+    "Daniel Rall", 
+    "Jason van Zyl", 
+    "Robert Burrell Donkin", 
+    "Sean C. Sullivan"
+  ], 
+  "maven_license": [], 
+  "maven_component_packaging": [], 
+  "maven_developer_email": [
+    "martinc@apache.org", 
+    "dion@apache.org", 
+    "jmcnally@collab.net", 
+    "dlr@finemaltcoding.com", 
+    "jason@zenplex.com", 
+    "rdonkin@apache.org", 
+    "sean |at| seansullivan |dot| com"
+  ], 
+  "maven_license_comments": [], 
+  "maven_organization_name": [], 
+  "maven_component_current_version_1": [], 
+  "maven_license_distribution": [], 
+  "maven_distribution_management_directory_1": [], 
+  "maven_organization_url": [], 
+  "maven_repository_id": [], 
+  "maven_project_description": [
+    "The FileUpload component provides a simple yet flexible means of adding\n    support for multipart file upload functionality to servlets and web\n    applications."
+  ], 
+  "maven_repository_connection_1": [], 
+  "maven_license_name": [], 
+  "maven_repository_developer_connection_1": [], 
+  "maven_project_name": [
+    "FileUpload"
+  ]
+}
