@@ -95,7 +95,7 @@ def get_attribute(setup_location, attribute):
     setup_text = open(setup_location, 'rb').read()
     # FIXME Use a valid parser for parsing 'setup.py'
     values = re.findall('setup\(.*?'+attribute+'=[\"\']{1}.*?\',', setup_text.replace('\n', ''))
-    if len(values) > 1:
+    if len(values) > 1 or len(values) == 0:
         return
     else:
         values = ''.join(values)
@@ -107,6 +107,11 @@ def get_attribute(setup_location, attribute):
 
 
 def parse_metadata(location):
+    """
+    Check if the directory at 'location' has both 'METADATA' and
+    'DESCRIPTION.rst' files. Parse a 'metadata.json' file at 'location' and
+    return a PythonPackage object.
+    """
     parent_dir = fileutils.parent_directory(location)
     if os.path.exists(os.path.join(parent_dir, 'METADATA')) and os.path.exists(os.path.join(parent_dir, 'DESCRIPTION.rst')):
         infos = json.loads(open(location, 'rb').read())
@@ -135,7 +140,8 @@ def parse_metadata(location):
 
 def parse(location):
     """
-    Parse a 'setup.py' and return a PythonPackage object.
+    Parse a file at 'location' and return a PythonPackage object. File at
+    'location' can be a'setup.py' or 'metadata.json' or a 'PKG-INFO' file.
     """
     file_name = fileutils.file_name(location)
     if file_name == 'setup.py':
