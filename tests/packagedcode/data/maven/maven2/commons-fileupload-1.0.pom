@@ -1,0 +1,73 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>commons-fileupload</groupId>
+  <artifactId>commons-fileupload</artifactId>
+  <name>FileUpload</name>
+  <version>1.0</version>
+  <description>The FileUpload component provides a simple yet flexible means of adding
+    support for multipart file upload functionality to servlets and web
+    applications.</description>
+  <url>http://jakarta.apache.org/commons/fileupload/</url>
+  <issueManagement>
+    <url>http://nagoya.apache.org/bugzilla/</url>
+  </issueManagement>
+  <inceptionYear>2002</inceptionYear>
+  <developers>
+    <developer>
+      <id>martinc</id>
+      <name>Martin Cooper</name>
+      <email>martinc@apache.org</email>
+      <organization>Tumbleweed Communications</organization>
+    </developer>
+    <developer>
+      <id>dion</id>
+      <name>dIon Gillard</name>
+      <email>dion@apache.org</email>
+      <organization>Multitask Consulting</organization>
+    </developer>
+    <developer>
+      <id>jmcnally</id>
+      <name>John McNally</name>
+      <email>jmcnally@collab.net</email>
+      <organization>CollabNet</organization>
+    </developer>
+    <developer>
+      <id>dlr</id>
+      <name>Daniel Rall</name>
+      <email>dlr@finemaltcoding.com</email>
+      <organization>CollabNet</organization>
+    </developer>
+    <developer>
+      <id>jvanzyl</id>
+      <name>Jason van Zyl</name>
+      <email>jason@zenplex.com</email>
+      <organization>Zenplex</organization>
+    </developer>
+    <developer>
+      <id>rdonkin</id>
+      <name>Robert Burrell Donkin</name>
+      <email>rdonkin@apache.org</email>
+      <organization></organization>
+    </developer>
+    <developer>
+      <id>sullis</id>
+      <name>Sean C. Sullivan</name>
+      <email>sean |at| seansullivan |dot| com</email>
+      <organization></organization>
+    </developer>
+  </developers>
+  <dependencies>
+    <dependency>
+      <groupId>servletapi</groupId>
+      <artifactId>servletapi</artifactId>
+      <version>2.3</version>
+      <scope>provided</scope> 
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope> 
+    </dependency>
+  </dependencies>
+</project>

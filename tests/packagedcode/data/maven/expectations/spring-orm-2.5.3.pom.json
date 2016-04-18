@@ -1,0 +1,76 @@
+{
+  "maven_distribution_management_site_1": [], 
+  "maven_scm_url": [
+    "http://springframework.cvs.sourceforge.net/springframework/"
+  ], 
+  "maven_component_artifact_id": [
+    "spring-orm"
+  ], 
+  "maven_project_short_description_1": [], 
+  "maven_license_url": [
+    "http://www.apache.org/licenses/LICENSE-2.0.txt"
+  ], 
+  "maven_repository_url_1": [], 
+  "maven_repository_name": [], 
+  "maven_component_classifier": [], 
+  "maven_repository_url": [], 
+  "maven_distribution_management_repository_url": [
+    "file:///Users/benhale/development/public/repos/repo"
+  ], 
+  "maven_scm_connection": [
+    "scm:cvs:pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring"
+  ], 
+  "maven_model_version": [
+    "4.0.0"
+  ], 
+  "maven_repository_layout": [], 
+  "maven_project_inception_year": [], 
+  "maven_component_parent_group_id": [], 
+  "maven_project_url": [
+    "http://www.springframework.org"
+  ], 
+  "maven_component_version": [
+    "2.5.3"
+  ], 
+  "maven_distribution_management_site_url": [], 
+  "maven_component_group_id": [
+    "org.springframework"
+  ], 
+  "maven_distribution_management_group_id": [], 
+  "maven_scm_developer_connection": [
+    "scm:cvs:ext:username@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring"
+  ], 
+  "maven_component_extend_1": [], 
+  "maven_developer_name": [], 
+  "maven_license": [
+    "The Apache Software License, Version 2.0"
+  ], 
+  "maven_component_packaging": [
+    "jar"
+  ], 
+  "maven_developer_email": [], 
+  "maven_license_comments": [], 
+  "maven_organization_name": [
+    "Spring Framework"
+  ], 
+  "maven_component_current_version_1": [], 
+  "maven_license_distribution": [
+    "repo"
+  ], 
+  "maven_distribution_management_directory_1": [], 
+  "maven_organization_url": [
+    "http://www.springframework.org/"
+  ], 
+  "maven_repository_id": [], 
+  "maven_project_description": [
+    "Spring Framework: ORM"
+  ], 
+  "maven_repository_connection_1": [], 
+  "maven_license_name": [
+    "The Apache Software License, Version 2.0"
+  ], 
+  "maven_repository_developer_connection_1": [], 
+  "maven_project_name": [
+    "Spring Framework: ORM"
+  ]
+}

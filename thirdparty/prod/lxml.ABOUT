@@ -1,0 +1,11 @@
+about_resource:
+    - lxml-2.3.tar.gz
+    - lxml-2.3-cp27-none-macosx_10_6_intel.whl
+    - lxml-2.3-cp27-none-macosx_10_8_intel.whl
+    - lxml-2.3-cp27-none-macosx_10_9_intel.whl
+    - lxml-2.3-cp27-none-win32.whl
+
+name: lxml
+version: 2.3
+download_url: https://pypi.python.org/packages/source/l/lxml/lxml-2.3.tar.gz
+license_text_file: lxml.LICENSE

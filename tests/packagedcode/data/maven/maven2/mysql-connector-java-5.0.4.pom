@@ -1,0 +1,9 @@
+<project>
+
+    <modelVersion>4.0.0</modelVersion>
+    <scm>
+        <url>
+            http://svn.mysql.com/svnpublic/connector-j/trunk/connector-j
+        </url>
+    </scm>
+</project>

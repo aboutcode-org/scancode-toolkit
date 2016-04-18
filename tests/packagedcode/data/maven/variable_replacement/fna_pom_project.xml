@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+	<parent>
+        	<groupId>com.adobe.ac.samples.bash</groupId>
+  			<artifactId>bash</artifactId>
+  			<version>1.0</version>
+    </parent>    
+    <groupId>${project.parent.groupId}</groupId>
+    <artifactId>bash_flex_app</artifactId>
+    <packaging>swf</packaging>
+    <name>${project.parent.groupId} ${project.parent.artifactId} bash_flex_app</name>
+	<description>This project hold the flex (blazeds enabled) flex front-end.
+	Its architecture is based on adobe consulting mvn framework: cairngorm.</description>
+    <dependencies>
+
+		<dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>bash_blazeds_service_config</artifactId>
+            <version>${project.version}</version>
+            <classifier>resources</classifier>
+            <type>zip</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- see: http://blog.flex-mojos.info/2008/06/27/adding-libraries-to-compilation/ -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>bash_flex_remoted_objects</artifactId>
+            <version>${project.version}</version>
+            <type>swc</type>
+            <scope>internal</scope>
+        </dependency>
+
+          <!-- flex sdk dependencies -->
+  		<dependency>
+            <groupId>com.adobe.flex</groupId>
+            <artifactId>compiler</artifactId>
+            <version>${flex.sdk.version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.flex.framework</groupId>
+            <artifactId>flex-framework</artifactId>
+            <version>${flex.sdk.version}</version>
+            <type>pom</type>
+        </dependency>
+        <!-- end of flex sdk dependencies -->
+
+        
+          <dependency>
+            <groupId>com.adobe.cairngorm</groupId>
+            <artifactId>cairngorm</artifactId>
+            <version>${cairngorm.version}</version>
+            <type>swc</type>
+        </dependency>    
+        
+         <!--To enable flexunit on cairgorm event 
+            cf. Tom Sugden's blog :
+            http://blogs.adobe.com/tomsugden/2008/01/eventfultestcase_a_flexunit_ex.html#more
+            but beware of http://jira.codehaus.org/browse/MNG-2315 
+         <dependency>
+            <groupId>com.adobe.cairngorm</groupId>
+            <artifactId>event-source</artifactId>
+            <version>1.0</version>
+            <type>swc</type>            
+            <scope>test</scope>
+           
+            <exclusions>
+   				<exclusion>
+     				<groupId>com.adobe.flex.sdk</groupId>
+     				<artifactId>*</artifactId>
+     				 
+   				</exclusion>
+ 			</exclusions>
+        </dependency>
+        -->
+        
+       <!-- flexUnit is now on opensource.adobe.com ,
+			the swc are on fna repository -->
+		<dependency>
+			<groupId>com.adobe.flexunit</groupId>
+			<artifactId>flexunit</artifactId>
+			<version>${flexunit.version}</version>
+			<type>swc</type>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>info.flex-mojos</groupId>
+			<artifactId>testing-support</artifactId>
+			<version>${flex-mojos.version}</version>
+			<type>swc</type>
+			<scope>test</scope>
+		</dependency>
+    </dependencies>
+    <build>
+        <sourceDirectory>src/main/flex</sourceDirectory>
+        <testSourceDirectory>src/test/flex</testSourceDirectory>
+        <resources>
+            <resource>
+                <directory>${project.build.directory}/dependencies-resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+        	<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack-config</id>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/dependencies-resources</outputDirectory>
+                            <includeGroupIds>${project.groupId}</includeGroupIds>
+                            <includeArtifacIds>bash_blazeds_service_config</includeArtifacIds>
+                            <includeClassifiers>resources</includeClassifiers>
+                            <includeTypes>zip</includeTypes>
+                            <excludeTransitive>true</excludeTransitive>
+                            <includes>**/*.xml</includes>
+                        </configuration>
+                     </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>info.flex-mojos</groupId>
+                <artifactId>flex-compiler-mojo</artifactId>
+                <version>${flex-mojos.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <locales>
+                        <param>en_US</param>
+                    </locales>
+                    <sourcePaths>
+                        <path>${project.build.sourceDirectory}</path>
+                    </sourcePaths>
+                    <contextRoot>bash_java_webapp</contextRoot>
+                    <showWarnings>false</showWarnings>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+            </plugin>
+            <!--
+				buggy plugin> <groupId>info.flex-mojos</groupId>
+				<artifactId>asdoc-mojo</artifactId> </plugin
+			-->
+        </plugins>
+    </reporting>
+</project>
