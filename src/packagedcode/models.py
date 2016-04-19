@@ -117,14 +117,6 @@ class AssertedLicense(Model):
     notice = StringType(default=None)
     url = StringType(default=None)
 
-    def as_dict(self):
-        license = OrderedDict()  # @ReservedAssignment
-        license['license'] = self.license
-        license['text'] = self.text
-        license['notice'] = self.notice
-        license['url'] = self.url
-        return license
-
 
 class Party(Model):
     """
@@ -142,14 +134,6 @@ class Party(Model):
     PARTY_TYPES = (party_person, party_project, party_org,)
 
     type = StringType(choices=PARTY_TYPES)
-
-    def as_dict(self):
-        party = OrderedDict()
-        party['name'] = self.name
-        party['type'] = self.type
-        party['email'] = self.email
-        party['url'] = self.url
-        return party
 
 
 class Dependency(Model):
@@ -172,13 +156,6 @@ class Dependency(Model):
 
     # is the dep up to date and the latest available?
     is_latest = BooleanType(default=False)
-
-    def as_dict(self):
-        dep = OrderedDict()
-        dep['id'] = self.package_id
-        dep['version'] = self.urls
-        dep['version_constraint'] = self.version_constraint
-        return dep
 
     def resolve_and_normalize(self):
         """
