@@ -41,9 +41,57 @@ class TestModels(FileBasedTesting):
     def test_model_creation_and_dump(self):
         aap = models.AndroidAppPackage()
         result = aap.as_dict()
-        assert 'Android app' == result['type']
-        assert 'archive' == result['packaging']
-        assert 'Java' == result['primary_language']
+        expected = {
+            'as_archive': u'archive',
+            'as_dir': u'directory',
+            'as_file': u'file',
+            'asserted_licenses': [],
+            'authors': None,
+            'bug_tracking_url': None,
+            'code_view_url': None,
+            'contributors': None,
+            'copyright_top_level': None,
+            'copyrights': None,
+            'dependencies': {},
+            'description': None,
+            'distributors': None,
+            'download_md5': None,
+            'download_sha1': None,
+            'download_sha256': None,
+            'download_urls': [],
+            'homepage_url': None,
+            'id': None,
+            'keywords': None,
+            'keywords_doc_url': None,
+            'legal_file_locations': None,
+            'license_expression': None,
+            'license_texts': None,
+            'location': None,
+            'maintainers': None,
+            'metafile_locations': None,
+            'metafile_urls': [],
+            'name': None,
+            'notes': None,
+            'notice_texts': None,
+            'owners': None,
+            'packagers': None,
+            'packaging': u'archive',
+            'payload_bin': u'binary',
+            'payload_doc': u'doc',
+            'payload_src': u'source',
+            'payload_type': None,
+            'primary_language': u'Java',
+            'related_packages': [],
+            'summary': None,
+            'support_contacts': None,
+            'type': u'Android app',
+            'vcs_repository': None,
+            'vcs_revision': None,
+            'vcs_tool': None,
+            'vendors': None,
+            'versioning': None
+        }
+        assert expected == result
 
     def test_validate_package(self):
         package = Package(dict(
@@ -67,9 +115,63 @@ class TestModels(FileBasedTesting):
             ],
             )
         )
-        assert 'Sample' == package.name
-        assert 'Some package' == package.summary
-        assert 'source' == package.payload_type
-        assert 'Some Author' == package.authors[0].name
-        assert ['some', 'keyword'] == package.keywords
-        assert 'apache-2.0' == package.asserted_licenses[0].license
+        expected = {
+            'as_archive': u'archive',
+            'as_dir': u'directory',
+            'as_file': u'file',
+            'asserted_licenses': [{
+                'license': u'apache-2.0',
+                'notice': None,
+                'text': None,
+                'url': None}
+            ],
+            'authors': [{
+                'email': u'some@email.com',
+                'name': u'Some Author',
+                'type': None,
+                'url': None}
+            ],
+            'bug_tracking_url': None,
+            'code_view_url': None,
+            'contributors': None,
+            'copyright_top_level': None,
+            'copyrights': None,
+            'dependencies': {},
+            'description': None,
+            'distributors': None,
+            'download_md5': None,
+            'download_sha1': None,
+            'download_sha256': None,
+            'download_urls': [],
+            'homepage_url': None,
+            'id': None,
+            'keywords': [u'some', u'keyword'],
+            'keywords_doc_url': None,
+            'legal_file_locations': None,
+            'license_expression': None,
+            'license_texts': None,
+            'location': None,
+            'maintainers': None,
+            'metafile_locations': None,
+            'metafile_urls': [],
+            'name': u'Sample',
+            'notes': None,
+            'notice_texts': None,
+            'owners': None,
+            'packagers': None,
+            'packaging': None,
+            'payload_bin': u'binary',
+            'payload_doc': u'doc',
+            'payload_src': u'source',
+            'payload_type': u'source',
+            'related_packages': [],
+            'summary': u'Some package',
+            'support_contacts': None,
+            'type': None,
+            'vcs_repository': None,
+            'vcs_revision': None,
+            'vcs_tool': u'git',
+            'vendors': None,
+            'versioning': None
+    }
+        assert expected == package.as_dict()
