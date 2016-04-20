@@ -130,7 +130,7 @@ def parse(location):
 
     # a package.json is at the root of an NPM package
     base_dir = fileutils.parent_directory(location)
-    package = NpmPackage(dict(location=base_dir))
+    package = NpmPackage()
     package.metafile_locations = [location]
     package.versioning = NpmVersion(dict(version=data.get('version')))
     for source, target in plain_fields.items():

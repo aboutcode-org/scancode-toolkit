@@ -40,10 +40,10 @@ class TestRpm(FileBasedTesting):
         package = rpm.parse(test_file)
         expected = {
             'asserted_licenses': [{
-               'license': u'LGPLv2+',
-               'notice': None,
-               'text': None,
-               'url': None}],
+                'license': u'LGPLv2+',
+                'notice': None,
+                'text': None,
+                'url': None}],
             'authors': [],
             'bug_tracking_url': None,
             'code_view_url': None,
@@ -64,7 +64,6 @@ class TestRpm(FileBasedTesting):
             'legal_file_locations': [],
             'license_expression': None,
             'license_texts': [],
-            'location': u'/home/rakesh/git/scancode-toolkit/tests/packagedcode/data/rpm/header/libproxy-bin-0.3.0-4.el6_3.x86_64.rpm',
             'maintainers': [],
             'metafile_locations': [],
             'metafile_urls': [],
@@ -97,7 +96,6 @@ class TestRpm(FileBasedTesting):
                 'legal_file_locations': [],
                 'license_expression': None,
                 'license_texts': [],
-                'location': None,
                 'maintainers': [],
                 'metafile_locations': [],
                 'metafile_urls': [],
@@ -126,6 +124,7 @@ class TestRpm(FileBasedTesting):
             'vendors': [{'email': None, 'name': u'CentOS', 'type': None, 'url': None}],
             'versioning': {'epoch': None, 'release': u'4.el6_3', 'version': u'0.3.0'}
         }
+
         assert expected == package.to_primitive()
 
     def test_pyrpm_basic(self):

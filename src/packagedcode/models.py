@@ -205,7 +205,7 @@ class Package(Model):
                          dep_build, dep_ci, dep_bundled)
 
     # path to a file or directory
-    location = StringType()
+    location = None
 
     # the id of the package
     id = StringType()

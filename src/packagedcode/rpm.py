@@ -118,7 +118,6 @@ def parse(location):
         versioning=RpmVersion(dict(version=infos.version, epoch=epoch, release=infos.release)),
         homepage_url=infos.url,
         distributors=[Party(dict(name=infos.distribution))],
-        location=location,
         vendors=[Party(dict(name=infos.vendor))],
     )
     if infos.license:
