@@ -186,13 +186,13 @@ class Package(Model):
 
     repo_types = []
 
-    # one of PACKAGINGS
-    packaging = StringType(default=None)
-
     as_archive = StringType(default='archive')
     as_dir = StringType(default='directory')
     as_file = StringType(default='file')
-    PACKAGINGS = (as_archive, as_dir, as_file)
+    PACKAGINGS = [as_archive, as_dir, as_file]
+
+    # one of PACKAGINGS
+    packaging = StringType(choices=PACKAGINGS)
 
     dep_runtime = 'runtime'
     dep_dev = 'development'
@@ -216,31 +216,31 @@ class Package(Model):
     # this is a "long" description, often several pages of text.
     description = StringType()
 
-    payload_src = StringType(default='source')
+    payload_src = 'source'
     # binaries include minified JavaScripts and similar text but obfuscated formats
-    payload_bin = StringType(default='binary')
-    payload_doc = StringType(default='doc')
-    PAYLOADS = (payload_src, payload_bin, payload_doc,)
+    payload_bin = 'binary'
+    payload_doc = 'doc'
+    PAYLOADS = [payload_src, payload_bin, payload_doc]
     # the type of payload in this package. one of PAYLOADS or none
     payload_type = StringType(choices=PAYLOADS)
 
     # list of Parties: authors, packager, maintainers, contributors, distributor, vendor, etc
-    authors = ListType(ModelType(Party))
-    maintainers = ListType(ModelType(Party))
-    contributors = ListType(ModelType(Party))
-    owners = ListType(ModelType(Party))
-    packagers = ListType(ModelType(Party))
-    distributors = ListType(ModelType(Party))
-    vendors = ListType(ModelType(Party))
+    authors = ListType(ModelType(Party), default=[])
+    maintainers = ListType(ModelType(Party), default=[])
+    contributors = ListType(ModelType(Party), default=[])
+    owners = ListType(ModelType(Party), default=[])
+    packagers = ListType(ModelType(Party), default=[])
+    distributors = ListType(ModelType(Party), default=[])
+    vendors = ListType(ModelType(Party), default=[])
 
     # keywords or tags
-    keywords = ListType(StringType())
+    keywords = ListType(StringType(), default=[])
     # url to a reference documentation for keywords or tags (such as a Pypi or SF.net Trove map)
     keywords_doc_url = URLType()
 
     # paths to metadata files for this package, if any
     # can be the same as the package location (e.g. RPMs)
-    metafile_locations = ListType(StringType())
+    metafile_locations = ListType(StringType(), default=[])
 
     # URLs to metadata files for this package.
     metafile_urls = ListType(URLType(), default=[])
@@ -261,7 +261,7 @@ class Package(Model):
     bug_tracking_url = URLType()
 
     # strings (such as email, urls, etc)
-    support_contacts = ListType(StringType())
+    support_contacts = ListType(StringType(), default=[])
 
     # a URL where the code can be browsed online
     code_view_url = URLType()
@@ -277,22 +277,22 @@ class Package(Model):
     # a top level copyright often asserted in metadata
     copyright_top_level = StringType()
     # effective copyrights as detected and eventually summarized
-    copyrights = ListType(StringType())
+    copyrights = ListType(StringType(), default=[])
 
     # as asserted licensing information
     # a list of AssertLicense objects
     asserted_licenses = ListType(ModelType(AssertedLicense), default=[])
 
     # list of legal files locations (such as COPYING, NOTICE, LICENSE, README, etc.)
-    legal_file_locations = ListType(StringType())
+    legal_file_locations = ListType(StringType(), default=[])
 
     # resolved or detected license expressions
     license_expression = StringType()
     # a list of license texts
-    license_texts = ListType(StringType())
+    license_texts = ListType(StringType(), default=[])
 
     # a list of notices texts
-    notice_texts = ListType(StringType())
+    notice_texts = ListType(StringType(), default=[])
 
     # map of dependency group to a list of dependencies for each DEPENDENCY_GROUPS
     dependencies = DictType(ListType(ModelType(Dependency)), default={})
