@@ -42,9 +42,6 @@ class TestModels(FileBasedTesting):
         aap = models.AndroidAppPackage()
         result = aap.as_dict()
         expected = {
-            'as_archive': u'archive',
-            'as_dir': u'directory',
-            'as_file': u'file',
             'asserted_licenses': [],
             'authors': [],
             'bug_tracking_url': None,
@@ -113,9 +110,6 @@ class TestModels(FileBasedTesting):
             )
         )
         expected = {
-            'as_archive': u'archive',
-            'as_dir': u'directory',
-            'as_file': u'file',
             'asserted_licenses': [{'license': u'apache-2.0',
                                    'notice': None,
                                    'text': None,

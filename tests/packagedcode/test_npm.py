@@ -120,9 +120,6 @@ class TestNpm(FileBasedTesting):
         test_file = self.get_test_loc('npm/from_tarball/package.json')
         package = npm.parse(test_file)
         expected = {
-            'as_archive': u'archive',
-            'as_dir': u'directory',
-            'as_file': u'file',
             'asserted_licenses': [{'license': u'Artistic-2.0',
                                    'notice': None,
                                    'text': None,
@@ -559,9 +556,6 @@ class TestNpm(FileBasedTesting):
         package = npm.parse(test_file)
         result = self.relative_locations(package.as_dict())
         expected = {
-            'as_archive': u'archive',
-            'as_dir': u'directory',
-            'as_file': u'file',
             'asserted_licenses': [],
             'authors': [{
                             'email': u'tj@learnboost.com',
@@ -626,9 +620,6 @@ class TestNpm(FileBasedTesting):
         package = npm.parse(test_file)
         result = self.relative_locations(package.as_dict())
         expected = {
-            'as_archive': u'archive',
-            'as_dir': u'directory',
-            'as_file': u'file',
             'asserted_licenses': [{'license': u'Artistic-2.0',
                                    'notice': None,
                                    'text': None,

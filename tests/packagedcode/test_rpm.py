@@ -38,13 +38,95 @@ class TestRpm(FileBasedTesting):
     def test_parse(self):
         test_file = self.get_test_loc('rpm/header/libproxy-bin-0.3.0-4.el6_3.x86_64.rpm')
         package = rpm.parse(test_file)
-        assert 'libproxy-bin' == package.name
-        assert '0.3.0' == package.versioning.version
-        assert '4.el6_3' == package.versioning.release
-        assert 'CentOS' == package.vendors[0].name
-        assert 'http://code.google.com/p/libproxy/' == package.homepage_url
-        assert 'Binary to test libproxy' == package.summary
-        assert 'The libproxy-bin package contains the proxy binary for libproxy' == package.description
+        expected = {
+            'asserted_licenses': [{
+               'license': u'LGPLv2+',
+               'notice': None,
+               'text': None,
+               'url': None}],
+            'authors': [],
+            'bug_tracking_url': None,
+            'code_view_url': None,
+            'contributors': [],
+            'copyright_top_level': None,
+            'copyrights': [],
+            'dependencies': {},
+            'description': u'The libproxy-bin package contains the proxy binary for libproxy',
+            'distributors': [{'email': None, 'name': u'', 'type': None, 'url': None}],
+            'download_md5': None,
+            'download_sha1': None,
+            'download_sha256': None,
+            'download_urls': [],
+            'homepage_url': u'http://code.google.com/p/libproxy/',
+            'id': None,
+            'keywords': [],
+            'keywords_doc_url': None,
+            'legal_file_locations': [],
+            'license_expression': None,
+            'license_texts': [],
+            'location': u'/home/rakesh/git/scancode-toolkit/tests/packagedcode/data/rpm/header/libproxy-bin-0.3.0-4.el6_3.x86_64.rpm',
+            'maintainers': [],
+            'metafile_locations': [],
+            'metafile_urls': [],
+            'name': u'libproxy-bin',
+            'notes': None,
+            'notice_texts': [],
+            'owners': [],
+            'packagers': [],
+            'packaging': u'archive',
+            'payload_type': None,
+            'related_packages': [{
+                'asserted_licenses': [],
+                'authors': [],
+                'bug_tracking_url': None,
+                'code_view_url': None,
+                'contributors': [],
+                'copyright_top_level': None,
+                'copyrights': [],
+                'dependencies': {},
+                'description': None,
+                'distributors': [],
+                'download_md5': None,
+                'download_sha1': None,
+                'download_sha256': None,
+                'download_urls': [],
+                'homepage_url': None,
+                'id': None,
+                'keywords': [],
+                'keywords_doc_url': None,
+                'legal_file_locations': [],
+                'license_expression': None,
+                'license_texts': [],
+                'location': None,
+                'maintainers': [],
+                'metafile_locations': [],
+                'metafile_urls': [],
+                'name': u'libproxy-0.3.0-4.el6_3.src.rpm',
+                'notes': None,
+                'notice_texts': [],
+                'owners': [],
+                'packagers': [],
+                'packaging': u'archive',
+                'payload_type': None,
+                'related_packages': [],
+                'summary': None,
+                'support_contacts': [],
+                'type': u'RPM',
+                'vcs_repository': None,
+                'vcs_revision': None,
+                'vcs_tool': None,
+                'vendors': [],
+                'versioning': None}],
+            'summary': u'Binary to test libproxy',
+            'support_contacts': [],
+            'type': u'RPM',
+            'vcs_repository': None,
+            'vcs_revision': None,
+            'vcs_tool': None,
+            'vendors': [{'email': None, 'name': u'CentOS', 'type': None, 'url': None}],
+            'versioning': {'epoch': None, 'release': u'4.el6_3', 'version': u'0.3.0'}
+        }
+        assert expected == package.to_primitive()
 
     def test_pyrpm_basic(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')

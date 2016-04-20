@@ -186,9 +186,9 @@ class Package(Model):
 
     repo_types = []
 
-    as_archive = StringType(default='archive')
-    as_dir = StringType(default='directory')
-    as_file = StringType(default='file')
+    as_archive = 'archive'
+    as_dir = 'directory'
+    as_file = 'file'
     PACKAGINGS = [as_archive, as_dir, as_file]
 
     # one of PACKAGINGS
@@ -416,7 +416,7 @@ class RpmPackage(Package):
     extensions = ('.rpm', '.srpm', '.mvl', '.vip',)
     filetypes = ('rpm ',)
     mimetypes = ('application/x-rpm',)
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = (Repository.repo_type_yum,)
 
 
@@ -432,7 +432,7 @@ class DebianPackage(Package):
     filetypes = ('debian binary package',)
     mimetypes = ('application/x-archive',
                  'application/vnd.debian.binary-package',)
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = (Repository.repo_type_debian,)
 
 
@@ -448,7 +448,7 @@ class JarPackage(Package):
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip',)
     primary_language = StringType(default='Java')
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = (Repository.repo_type_maven, Repository.repo_type_ivy,)
 
 
@@ -464,7 +464,7 @@ class JarAppPackage(Package):
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip')
     primary_language = StringType(default='Java')
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = (Repository.repo_type_maven, Repository.repo_type_ivy,)
 
 
@@ -533,7 +533,7 @@ class RubyGemPackage(Package):
     mimetypes = ('application/x-tar',)
     extensions = ('.gem',)
     primary_language = 'Ruby'
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = (Repository.repo_type_gems,)
 
 
@@ -548,7 +548,7 @@ class AndroidAppPackage(Package):
     mimetypes = ('application/zip',)
     extensions = ('.apk',)
     primary_language = StringType(default='Java')
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = ()
 
 
@@ -566,7 +566,7 @@ class AndroidLibPackage(Package):
     # this can be decided based on internal structure
     extensions = ('.aar',)
     primary_language = StringType(default='Java')
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = ()
 
 
@@ -581,7 +581,7 @@ class MozillaExtPackage(Package):
     mimetypes = ('application/zip',)
     extensions = ('.xpi',)
     primary_language = StringType(default='JavaScript')
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = ()
 
 
@@ -596,7 +596,7 @@ class ChromeExtPackage(Package):
     mimetypes = ('application/octet-stream',)
     extensions = ('.crx',)
     primary_language = StringType(default='JavaScript')
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = ()
 
 
@@ -611,7 +611,7 @@ class IosAppPackage(Package):
     mimetypes = ('application/zip',)
     extensions = ('.ipa',)
     primary_language = StringType(default='Objective-C')
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = ()
 
 
@@ -626,7 +626,7 @@ class PythonPackage(Package):
     mimetypes = ('application/zip',)
     extensions = ('.egg', '.whl', '.pyz', '.pex',)
     primary_language = StringType(default='Python')
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = (Repository.repo_type_python,)
 
 
@@ -640,7 +640,7 @@ class CabPackage(Package):
     filetypes = ('microsoft cabinet',)
     mimetypes = ('application/vnd.ms-cab-compressed',)
     extensions = ('.cab',)
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = ()
 
 
@@ -654,7 +654,7 @@ class MsiInstallerPackage(Package):
     filetypes = ('msi installer',)
     mimetypes = ('application/x-msi',)
     extensions = ('.msi',)
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = ()
 
 
@@ -669,7 +669,7 @@ class InstallShieldPackage(Package):
     filetypes = ('installshield',)
     mimetypes = ('application/x-dosexec',)
     extensions = ('.exe',)
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = ()
 
 
@@ -684,7 +684,7 @@ class NugetPackage(Package):
     filetypes = ('zip archive', 'microsoft ooxml',)
     mimetypes = ('application/zip', 'application/octet-stream',)
     extensions = ('.nupkg',)
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = (Repository.repo_type_nuget)
 
 
@@ -698,7 +698,7 @@ class NSISInstallerPackage(Package):
     filetypes = ('nullsoft installer',)
     mimetypes = ('application/x-dosexec',)
     extensions = ('.exe',)
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = ()
 
 
@@ -712,7 +712,7 @@ class SharPackage(Package):
     filetypes = ('posix shell script',)
     mimetypes = ('text/x-shellscript',)
     extensions = ('.sha', '.shar', '.bin',)
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = ()
 
 
@@ -726,7 +726,7 @@ class AppleDmgPackage(Package):
     filetypes = ('zlib compressed',)
     mimetypes = ('application/zlib',)
     extensions = ('.dmg', '.sparseimage',)
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = ()
 
 
@@ -740,7 +740,7 @@ class IsoImagePackage(Package):
     filetypes = ('iso 9660 cd-rom', 'high sierra cd-rom',)
     mimetypes = ('application/x-iso9660-image',)
     extensions = ('.iso', '.udf', '.img',)
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = ()
 
 
@@ -753,7 +753,7 @@ class SquashfsPackage(Package):
     type = StringType(default='squashfs FS')
     filetypes = ('squashfs',)
     mimetypes = tuple()
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = ()
 
 
@@ -772,7 +772,7 @@ class RarPackage(Package):
     filetypes = ('rar archive',)
     mimetypes = ('application/x-rar',)
     extensions = ('.rar',)
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
     repo_types = ()
 
 
@@ -809,7 +809,7 @@ class TarPackage(Package):
         '.tar.7z', '.tar.7zip', '.t7z',
         '.tz', '.tar.z', '.tarz',
     )
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
 
 
 class ZipVersion(Version):
@@ -822,7 +822,7 @@ class ZipPackage(Package):
     filetypes = ('zip archive', '7-zip archive',)
     mimetypes = ('application/zip', 'application/x-7z-compressed',)
     extensions = ('.zip', '.zipx', '.7z',)
-    packaging = Package.as_archive
+    packaging = StringType(default=Package.as_archive)
 
 
 # TODO: Add VM images formats(VMDK, OVA, OVF, VDI, etc) and Docker/other containers
