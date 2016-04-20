@@ -25,7 +25,6 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-from collections import OrderedDict
 from schematics.models import Model
 from schematics.types import StringType
 from schematics.types import IntType
@@ -297,6 +296,9 @@ class Package(Model):
 
     # map of dependency group to a list of dependencies for each DEPENDENCY_GROUPS
     dependencies = DictType(ListType(ModelType(Dependency)), default={})
+
+    def as_dict(self):
+        return self.to_primitive()
 
     @staticmethod
     def get_package(location):

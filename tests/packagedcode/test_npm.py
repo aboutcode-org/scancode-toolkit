@@ -22,7 +22,8 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import json
 import os.path
@@ -32,7 +33,6 @@ from commoncode.testcase import FileBasedTesting
 
 from packagedcode import npm
 from commoncode import fileutils
-from collections import OrderedDict
 
 
 class TestNpm(FileBasedTesting):
@@ -555,12 +555,12 @@ class TestNpm(FileBasedTesting):
             'versioning': {'version': u'2.13.5'}
         }
 
-        assert expected == self.relative_locations(package.to_primitive())
+        assert expected == self.relative_locations(package.as_dict())
 
     def test_parse_basic(self):
         test_file = self.get_test_loc('npm/basic/package.json')
         package = npm.parse(test_file)
-        result = self.relative_locations(package.to_primitive())
+        result = self.relative_locations(package.as_dict())
         expected = {
             'as_archive': u'archive',
             'as_dir': u'directory',
@@ -630,7 +630,7 @@ class TestNpm(FileBasedTesting):
     def test_parse_from_npmjs(self):
         test_file = self.get_test_loc('npm/from_nmpjs/package.json')
         package = npm.parse(test_file)
-        result = self.relative_locations(package.to_primitive())
+        result = self.relative_locations(package.as_dict())
         expected = {
             'as_archive': u'archive',
             'as_dir': u'directory',
