@@ -103,11 +103,16 @@ The payload of files and directories possibly contains:
 """
 
 
-class Version(Model):
+class EnhancedModel(Model):
+    def __init__(self, deserialize_mapping=None, strict=True, **kwargs):
+        Model.__init__(self, raw_data=kwargs, deserialize_mapping=deserialize_mapping, strict=strict)
+
+
+class Version(EnhancedModel):
     version = StringType()
 
 
-class AssertedLicense(Model):
+class AssertedLicense(EnhancedModel):
     """
     As asserted in a package
     """
@@ -117,7 +122,7 @@ class AssertedLicense(Model):
     url = StringType(default=None)
 
 
-class Party(Model):
+class Party(EnhancedModel):
     """
     A party is a person, project or organization
     """
@@ -135,7 +140,7 @@ class Party(Model):
     type = StringType(choices=PARTY_TYPES)
 
 
-class Dependency(Model):
+class Dependency(EnhancedModel):
     """
     A dependency points to a Package via a package id and version, and jhas a version
     constraint  (such as ">= 3.4"). The version is the effective version that
@@ -163,7 +168,7 @@ class Dependency(Model):
         pass
 
 
-class Package(Model):
+class Package(EnhancedModel):
     """
     A package base class.
     """
@@ -310,7 +315,7 @@ class Package(Model):
 
     # map to a list of related packages keyed by PAYLOAD
     # for instance the SRPM of an RPM
-    related_packages = ListType(ModelType(Model), default=[])
+    related_packages = ListType(ModelType(EnhancedModel), default=[])
 
     @property
     def component_version(self):
@@ -360,7 +365,7 @@ class Package(Model):
         return self.name and self.type + ' ' + self.name or None
 
 
-class Repository(Model):
+class Repository(EnhancedModel):
     """
     A package repository.
     """

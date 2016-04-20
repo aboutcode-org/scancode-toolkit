@@ -132,7 +132,7 @@ def parse(location):
     base_dir = fileutils.parent_directory(location)
     package = NpmPackage()
     package.metafile_locations = [location]
-    package.versioning = NpmVersion(dict(version=data.get('version')))
+    package.versioning = NpmVersion(version=data.get('version'))
     for source, target in plain_fields.items():
         value = data.get(source)
         if value:
@@ -171,7 +171,7 @@ def licensing_mapper(licenses, package):
         return package
 
     if isinstance(licenses, basestring):
-        package.asserted_licenses.append(AssertedLicense(dict(license=licenses)))
+        package.asserted_licenses.append(AssertedLicense(license=licenses))
 
     elif isinstance(licenses, dict):
         """
@@ -216,10 +216,10 @@ def author_mapper(author, package):
     The "author" is one person.
     """
     name, email, url = parse_person(author)
-    package.authors = [Party(dict(type=Party.party_person,
+    package.authors = [Party(type=Party.party_person,
                              name=name,
                              email=email,
-                             url=url))]
+                             url=url)]
     return package
 
 
@@ -233,16 +233,16 @@ def contributors_mapper(contributors, package):
     if isinstance(contributors, list):
         for contrib in contributors:
             name, email, url = parse_person(contrib)
-            contribs.append(Party(dict(type=Party.party_person,
+            contribs.append(Party(type=Party.party_person,
                                   name=name,
                                   email=email,
-                                  url=url)))
+                                  url=url))
     else:  # a string or dict
         name, email, url = parse_person(contributors)
-        contribs.append(Party(dict(type=Party.party_person,
+        contribs.append(Party(type=Party.party_person,
                               name=name,
                               email=email,
-                              url=url)))
+                              url=url))
     package.contributors = contribs
     return package
 
@@ -258,16 +258,16 @@ def maintainers_mapper(maintainers, package):
     if isinstance(maintainers, list):
         for contrib in maintainers:
             name, email, url = parse_person(contrib)
-            maintains.append(Party(dict(type=Party.party_person,
+            maintains.append(Party(type=Party.party_person,
                                    name=name,
                                    email=email,
-                                   url=url)))
+                                   url=url))
     else:  # a string or dict
         name, email, url = parse_person(maintainers)
-        maintains.append(Party(dict(type=Party.party_person,
+        maintains.append(Party(type=Party.party_person,
                                name=name,
                                email=email,
-                               url=url)))
+                               url=url))
     package.maintainers = maintains
     return package
 
@@ -442,7 +442,7 @@ def _deps_mapper(deps, package, field_name):
     resolved_type = dep_types[field_name]
     dependencies = []
     for pid, version_constraint in deps.items():
-        dep = Dependency(dict(id=pid, version_constraint=version_constraint))
+        dep = Dependency(id=pid, version_constraint=version_constraint)
         dependencies.append(dep)
     if resolved_type in package.dependencies:
         package.dependencies[resolved_type].extend(dependencies)

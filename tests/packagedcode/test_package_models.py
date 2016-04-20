@@ -87,26 +87,22 @@ class TestModels(FileBasedTesting):
         assert expected == result
 
     def test_validate_package(self):
-        package = Package(dict(
+        package = Package(
             name='Sample',
             summary='Some package',
             payload_type='source',
             authors=[Party(
-                dict(
                     name='Some Author',
                     email='some@email.com'
-                    )
                 )
             ],
             keywords=['some', 'keyword'],
             vcs_tool='git',
             asserted_licenses=[
-                AssertedLicense(dict(
+                AssertedLicense(
                     license='apache-2.0'
                     )
-                )
             ],
-            )
         )
         expected = {
             'asserted_licenses': [{'license': u'apache-2.0',
