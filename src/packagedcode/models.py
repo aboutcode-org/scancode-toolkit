@@ -272,7 +272,7 @@ class Package(BaseModel):
     code_view_url = StringType()
 
     # one of git, svn, hg, etc
-    vcs_tool = StringType(choices=['git', 'svn', 'hg', 'csv'])
+    vcs_tool = StringType(choices=['git', 'svn', 'hg', 'cvs'])
     # a URL in the SPDX form of:
     # git+https://github.com/nexb/scancode-toolkit.git
     vcs_repository = StringType()
