@@ -104,8 +104,8 @@ The payload of files and directories possibly contains:
 
 
 class BaseModel(Model):
-    def __init__(self, deserialize_mapping=None, strict=True, **kwargs):
-        Model.__init__(self, raw_data=kwargs, deserialize_mapping=deserialize_mapping, strict=strict)
+    def __init__(self, **kwargs):
+        Model.__init__(self, raw_data=kwargs)
 
 
 class Versioning(BaseModel):
@@ -272,7 +272,7 @@ class Package(BaseModel):
     code_view_url = StringType()
 
     # one of git, svn, hg, etc
-    vcs_tool = StringType(choices=['git', 'svn', 'hg'])
+    vcs_tool = StringType(choices=['git', 'svn', 'hg', 'csv'])
     # a URL in the SPDX form of:
     # git+https://github.com/nexb/scancode-toolkit.git
     vcs_repository = StringType()
