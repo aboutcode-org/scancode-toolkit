@@ -340,16 +340,16 @@ class Package(EnhancedModel):
 
         For example:
 
-        >>> q=Package(dict(versioning=Version(dict(version='2'))))
-        >>> p=Package(dict(versioning=Version(dict(version='1'))))
+        >>> q=Package(versioning=Version(version='2'))
+        >>> p=Package(versioning=Version(version='1'))
         >>> p.compare_version(q)
         -1
         >>> p.compare_version(p)
         0
-        >>> r=Package(dict(versioning=Version(dict(version='0'))))
+        >>> r=Package(versioning=Version(version='0'))
         >>> p.compare_version(r)
         1
-        >>> s=Package(dict(versioning=Version(dict(version='1'))))
+        >>> s=Package(versioning=Version(version='1'))
         >>> p.compare_version(s)
         0
         """
