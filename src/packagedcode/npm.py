@@ -22,7 +22,8 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import codecs
 from collections import OrderedDict
@@ -39,7 +40,7 @@ from packagedcode.models import Dependency
 from packagedcode.models import Package
 from packagedcode.models import Party
 from packagedcode.models import Repository
-from packagedcode.models import Version
+from packagedcode.models import Versioning
 from schematics.types import StringType
 from schematics.types.compound import ModelType
 
@@ -70,7 +71,7 @@ def is_node_modules(location):
             and fileutils.file_name(location).lower() == 'node_modules')
 
 
-class NpmVersion(Version):
+class NpmVersion(Versioning):
     version = StringType()
 
 

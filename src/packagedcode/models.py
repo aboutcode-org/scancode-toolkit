@@ -104,16 +104,16 @@ The payload of files and directories possibly contains:
 """
 
 
-class EnhancedModel(Model):
+class BaseModel(Model):
     def __init__(self, deserialize_mapping=None, strict=True, **kwargs):
         Model.__init__(self, raw_data=kwargs, deserialize_mapping=deserialize_mapping, strict=strict)
 
 
-class Version(EnhancedModel):
+class Versioning(BaseModel):
     version = StringType()
 
 
-class AssertedLicense(EnhancedModel):
+class AssertedLicense(BaseModel):
     """
     As asserted in a package
     """
@@ -123,7 +123,7 @@ class AssertedLicense(EnhancedModel):
     url = StringType(default=None)
 
 
-class Party(EnhancedModel):
+class Party(BaseModel):
     """
     A party is a person, project or organization
     """
@@ -141,9 +141,9 @@ class Party(EnhancedModel):
     type = StringType(choices=PARTY_TYPES)
 
 
-class Dependency(EnhancedModel):
+class Dependency(BaseModel):
     """
-    A dependency points to a Package via a package id and version, and jhas a version
+    A dependency points to a Package via a package id and version, and has a version
     constraint  (such as ">= 3.4"). The version is the effective version that
     has been picked and resolved.
     """
@@ -169,7 +169,7 @@ class Dependency(EnhancedModel):
         pass
 
 
-class Package(EnhancedModel):
+class Package(BaseModel):
     """
     A package base class.
     """
@@ -215,7 +215,7 @@ class Package(EnhancedModel):
 
     # the id of the package
     id = StringType()
-    versioning = ModelType(Version)
+    versioning = ModelType(Versioning)
     name = StringType(required=True)
     # this is a "short" description.
     summary = StringType()
@@ -316,7 +316,7 @@ class Package(EnhancedModel):
 
     # map to a list of related packages keyed by PAYLOAD
     # for instance the SRPM of an RPM
-    related_packages = ListType(ModelType(EnhancedModel), default=[])
+    related_packages = ListType(ModelType(BaseModel), default=[])
 
     @property
     def component_version(self):
@@ -340,16 +340,16 @@ class Package(EnhancedModel):
 
         For example:
 
-        >>> q=Package(versioning=Version(version='2'))
-        >>> p=Package(versioning=Version(version='1'))
+        >>> q=Package(versioning=Versioning(version='2'))
+        >>> p=Package(versioning=Versioning(version='1'))
         >>> p.compare_version(q)
         -1
         >>> p.compare_version(p)
         0
-        >>> r=Package(versioning=Version(version='0'))
+        >>> r=Package(versioning=Versioning(version='0'))
         >>> p.compare_version(r)
         1
-        >>> s=Package(versioning=Version(version='1'))
+        >>> s=Package(versioning=Versioning(version='1'))
         >>> p.compare_version(s)
         0
         """
@@ -366,7 +366,7 @@ class Package(EnhancedModel):
         return self.name and self.type + ' ' + self.name or None
 
 
-class Repository(EnhancedModel):
+class Repository(BaseModel):
     """
     A package repository.
     """
@@ -409,7 +409,7 @@ class Repository(EnhancedModel):
 # yet the purpose and semantics are rather different here
 
 
-class RpmVersion(Version):
+class RpmVersion(Versioning):
     version = StringType()
     release = StringType()
     epoch = IntType()
@@ -426,7 +426,7 @@ class RpmPackage(Package):
     repo_types = (Repository.repo_type_yum,)
 
 
-class DebianVersion(Version):
+class DebianVersion(Versioning):
     version = StringType()
 
 
@@ -442,7 +442,7 @@ class DebianPackage(Package):
     repo_types = (Repository.repo_type_debian,)
 
 
-class JarVersion(Version):
+class JarVersion(Versioning):
     version = StringType()
 
 
@@ -458,7 +458,7 @@ class JarPackage(Package):
     repo_types = (Repository.repo_type_maven, Repository.repo_type_ivy,)
 
 
-class JarAppVersion(Version):
+class JarAppVersion(Versioning):
     versioning = StringType()
 
 
@@ -474,7 +474,7 @@ class JarAppPackage(Package):
     repo_types = (Repository.repo_type_maven, Repository.repo_type_ivy,)
 
 
-class MavenVersion(Version):
+class MavenVersion(Versioning):
     versioning = StringType()
 
 
@@ -485,7 +485,7 @@ class MavenPackage(JarPackage, JarAppPackage):
     repo_types = (Repository.repo_type_maven,)
 
 
-class BowerVersion(Version):
+class BowerVersion(Versioning):
     version = StringType()
 
 
@@ -497,7 +497,7 @@ class BowerPackage(Package):
     repo_types = ()
 
 
-class MeteorVersion(Version):
+class MeteorVersion(Versioning):
     version = StringType()
 
 
@@ -509,7 +509,7 @@ class MeteorPackage(Package):
     repo_types = ()
 
 
-class CpanVersion(Version):
+class CpanVersion(Versioning):
     version = StringType()
 
 
@@ -523,7 +523,7 @@ class CpanModule(Package):
     repo_types = (Repository.repo_type_cpan,)
 
 
-class RubyGemVersion(Version):
+class RubyGemVersion(Versioning):
     version = StringType()
 
 
@@ -543,7 +543,7 @@ class RubyGemPackage(Package):
     repo_types = (Repository.repo_type_gems,)
 
 
-class AndroidAppVersion(Version):
+class AndroidAppVersion(Versioning):
     version = StringType()
 
 
@@ -558,7 +558,7 @@ class AndroidAppPackage(Package):
     repo_types = ()
 
 
-class AndroidLibVersion(Version):
+class AndroidLibVersion(Versioning):
     version = StringType()
 
 
@@ -576,7 +576,7 @@ class AndroidLibPackage(Package):
     repo_types = ()
 
 
-class MozillaExtVersion(Version):
+class MozillaExtVersion(Versioning):
     version = StringType()
 
 
@@ -591,7 +591,7 @@ class MozillaExtPackage(Package):
     repo_types = ()
 
 
-class ChromeExtVersion(Version):
+class ChromeExtVersion(Versioning):
     Version = StringType()
 
 
@@ -606,7 +606,7 @@ class ChromeExtPackage(Package):
     repo_types = ()
 
 
-class IosAppVersion(Version):
+class IosAppVersion(Versioning):
     version = StringType()
 
 
@@ -621,7 +621,7 @@ class IosAppPackage(Package):
     repo_types = ()
 
 
-class PythonVersion(Version):
+class PythonVersion(Versioning):
     version = StringType()
 
 
@@ -636,7 +636,7 @@ class PythonPackage(Package):
     repo_types = (Repository.repo_type_python,)
 
 
-class CabVersion(Version):
+class CabVersion(Versioning):
     version = StringType()
 
 
@@ -650,7 +650,7 @@ class CabPackage(Package):
     repo_types = ()
 
 
-class MsiInstallerVersion(Version):
+class MsiInstallerVersion(Versioning):
     version = StringType()
 
 
@@ -664,7 +664,7 @@ class MsiInstallerPackage(Package):
     repo_types = ()
 
 
-class InstallShieldVersion(Version):
+class InstallShieldVersion(Versioning):
     version = StringType()
 
 
@@ -679,7 +679,7 @@ class InstallShieldPackage(Package):
     repo_types = ()
 
 
-class NugetVersion(Version):
+class NugetVersion(Versioning):
     version = StringType()
 
 
@@ -694,7 +694,7 @@ class NugetPackage(Package):
     repo_types = (Repository.repo_type_nuget)
 
 
-class NSISInstallerVersion(Version):
+class NSISInstallerVersion(Versioning):
     version = StringType()
 
 
@@ -708,7 +708,7 @@ class NSISInstallerPackage(Package):
     repo_types = ()
 
 
-class SharVersion(Version):
+class SharVersion(Versioning):
     version = StringType()
 
 
@@ -722,7 +722,7 @@ class SharPackage(Package):
     repo_types = ()
 
 
-class AppleDmgVersion(Version):
+class AppleDmgVersion(Versioning):
     version = StringType()
 
 
@@ -736,7 +736,7 @@ class AppleDmgPackage(Package):
     repo_types = ()
 
 
-class IsoImageVersion(Version):
+class IsoImageVersion(Versioning):
     version = StringType()
 
 
@@ -750,7 +750,7 @@ class IsoImagePackage(Package):
     repo_types = ()
 
 
-class SquashfsVersion(Version):
+class SquashfsVersion(Versioning):
     version = StringType()
 
 
@@ -768,7 +768,7 @@ class SquashfsPackage(Package):
 #
 
 
-class RarVersion(Version):
+class RarVersion(Versioning):
     version = StringType()
 
 
@@ -782,7 +782,7 @@ class RarPackage(Package):
     repo_types = ()
 
 
-class TarVersion(Version):
+class TarVersion(Versioning):
     version = StringType()
 
 
@@ -818,7 +818,7 @@ class TarPackage(Package):
     packaging = StringType(default=Package.as_archive)
 
 
-class ZipVersion(Version):
+class ZipVersion(Versioning):
     version = StringType()
 
 
