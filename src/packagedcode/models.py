@@ -30,7 +30,6 @@ from schematics.models import Model
 from schematics.types import StringType
 from schematics.types import IntType
 from schematics.types.base import BooleanType
-from schematics.types.base import URLType
 from schematics.types.compound import DictType
 from schematics.types.compound import ListType
 from schematics.types.compound import ModelType
@@ -117,10 +116,10 @@ class AssertedLicense(BaseModel):
     """
     As asserted in a package
     """
-    license = StringType(default=None)
-    text = StringType(default=None)
-    notice = StringType(default=None)
-    url = StringType(default=None)
+    license = StringType()
+    text = StringType()
+    notice = StringType()
+    url = StringType()
 
 
 class Party(BaseModel):
@@ -242,21 +241,21 @@ class Package(BaseModel):
     # keywords or tags
     keywords = ListType(StringType(), default=[])
     # url to a reference documentation for keywords or tags (such as a Pypi or SF.net Trove map)
-    keywords_doc_url = URLType()
+    keywords_doc_url = StringType()
 
     # paths to metadata files for this package, if any
     # can be the same as the package location (e.g. RPMs)
     metafile_locations = ListType(StringType(), default=[])
 
     # URLs to metadata files for this package.
-    metafile_urls = ListType(URLType(), default=[])
+    metafile_urls = ListType(StringType(), default=[])
 
-    homepage_url = URLType()
+    homepage_url = StringType()
     notes = StringType()
 
     # one or more direct download urls, possibly in SPDX vcs url form
     # the first one is considered to be the primary
-    download_urls = ListType(URLType(), default=[])
+    download_urls = ListType(StringType(), default=[])
 
     # checksums for the download
     download_sha1 = StringType()
@@ -264,13 +263,13 @@ class Package(BaseModel):
     download_md5 = StringType()
 
     # issue or bug tracker
-    bug_tracking_url = URLType()
+    bug_tracking_url = StringType()
 
     # strings (such as email, urls, etc)
     support_contacts = ListType(StringType(), default=[])
 
     # a URL where the code can be browsed online
-    code_view_url = URLType()
+    code_view_url = StringType()
 
     # one of git, svn, hg, etc
     vcs_tool = StringType(choices=['git', 'svn', 'hg'])
@@ -394,12 +393,12 @@ class Repository(BaseModel):
 
     # one of REPO_TYPES
     type = StringType(choices=REPO_TYPES)
-    url = URLType(default=None)
+    url = StringType()
     public = BooleanType(default=False)
-    mirror_urls = ListType(URLType, default=[])
+    mirror_urls = ListType(StringType, default=[])
     # optional: used for well known "named" public repos such as:
     # Maven Central, Pypi, RubyGems, npmjs.org
-    name = StringType(default=None)
+    name = StringType()
 
 #
 # Package Types

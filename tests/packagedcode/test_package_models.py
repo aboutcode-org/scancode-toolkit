@@ -39,7 +39,7 @@ class TestModels(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_model_creation_and_dump(self):
-        aap = models.AndroidAppPackage()
+        aap = models.AndroidAppPackage(name='someAndroidPAcakge')
         result = aap.as_dict()
         expected = {
             'asserted_licenses': [],
@@ -66,7 +66,7 @@ class TestModels(FileBasedTesting):
             'maintainers': [],
             'metafile_locations': [],
             'metafile_urls': [],
-            'name': None,
+            'name': u'someAndroidPAcakge',
             'notes': None,
             'notice_texts': [],
             'owners': [],
@@ -84,6 +84,12 @@ class TestModels(FileBasedTesting):
             'vendors': [],
             'versioning': None
         }
+        no_errors = True
+        try:
+            aap.validate()
+        except:
+            no_errors = False
+        self.assertTrue(no_errors)
         assert expected == result
 
     def test_validate_package(self):
@@ -152,4 +158,10 @@ class TestModels(FileBasedTesting):
             'vendors': [],
             'versioning': None
         }
+        no_errors = True
+        try:
+            package.validate()
+        except:
+            no_errors = False
+        self.assertTrue(no_errors)
         assert expected == package.as_dict()

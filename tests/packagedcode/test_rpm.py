@@ -125,6 +125,12 @@ class TestRpm(FileBasedTesting):
             'versioning': {'epoch': None, 'release': u'4.el6_3', 'version': u'0.3.0'}
         }
 
+        no_errors = True
+        try:
+            package.validate()
+        except:
+            no_errors = False
+        self.assertTrue(no_errors)
         assert expected == package.to_primitive()
 
     def test_pyrpm_basic(self):

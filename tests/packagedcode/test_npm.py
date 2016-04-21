@@ -547,7 +547,12 @@ class TestNpm(FileBasedTesting):
             'vendors': [],
             'versioning': {'version': u'2.13.5'}
         }
-
+        no_errors = True
+        try:
+            package.validate()
+        except:
+            no_errors = False
+        self.assertTrue(no_errors)
         assert expected == self.relative_locations(package.as_dict())
 
     def test_parse_basic(self):
@@ -611,6 +616,12 @@ class TestNpm(FileBasedTesting):
             'vendors': [],
             'versioning': {'version': u'1.0.3'}
         }
+        no_errors = True
+        try:
+            package.validate()
+        except:
+            no_errors = False
+        self.assertTrue(no_errors)
         assert expected == result
 
     def test_parse_from_npmjs(self):
@@ -2289,6 +2300,12 @@ class TestNpm(FileBasedTesting):
             'vendors': [],
             'versioning': {'version': u'2.13.5'}}
 
+        no_errors = True
+        try:
+            package.validate()
+        except:
+            no_errors = False
+        self.assertTrue(no_errors)
         assert expected == result
 
     def test_parse_subset(self):
