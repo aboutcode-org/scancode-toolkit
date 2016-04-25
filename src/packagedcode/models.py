@@ -105,7 +105,7 @@ The payload of files and directories possibly contains:
 
 class BaseModel(Model):
     def __init__(self, **kwargs):
-        Model.__init__(self, raw_data=kwargs)
+        super(BaseModel, self).__init__(raw_data=kwargs)
 
 
 class Versioning(BaseModel):
