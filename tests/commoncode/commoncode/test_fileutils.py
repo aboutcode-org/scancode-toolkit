@@ -318,7 +318,7 @@ class TestFileUtils(FileBasedTesting):
     def test_fileutils_walk(self):
         test_dir = self.get_test_loc('fileutils/walk')
         base = self.get_test_loc('fileutils')
-        result = [(as_posixpath(t.replace(base, '')), d, f,) for t, d, f in fileutils.walk(test_dir)]
+        result = [(as_posixpath(t.replace(base, '')), d, sorted(f),) for t, d, f in fileutils.walk(test_dir)]
         expected = [
             ('/walk', ['d1'], ['f', 'unicode.zip']),
             ('/walk/d1', ['d2'], ['f1']),
@@ -366,7 +366,7 @@ class TestFileUtils(FileBasedTesting):
             '/walk/d1/d2/f2',
             '/walk/d1/d2/d3/f3'
         ]
-        assert expected == result
+        assert sorted(expected) == sorted(result)
 
     def test_file_iter_can_iterate_a_single_file(self):
         test_file = self.get_test_loc('fileutils/walk/f')
