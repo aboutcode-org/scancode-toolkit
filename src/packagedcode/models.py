@@ -303,7 +303,13 @@ class Package(BaseModel):
     dependencies = DictType(ListType(ModelType(Dependency)), default={})
 
     def as_dict(self):
-        return OrderedDict(self.to_primitive().items())
+        pkg_info = self.to_primitive()
+        keys = pkg_info.keys()
+        output = OrderedDict()
+        keys = sorted(keys)
+        for key in keys:
+            output[key] = pkg_info[key]
+        return output
 
     @staticmethod
     def get_package(location):
