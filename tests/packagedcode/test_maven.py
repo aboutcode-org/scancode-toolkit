@@ -415,7 +415,7 @@ class TestMavenPackage(BaseMavenCase):
         assert ['http://www.apache.org/licenses/LICENSE-2.0.txt'] == [lic.url for lic in package.asserted_licenses if lic.url][0]
 
 
-class TestMavenLong(BaseMavenCase):
+class TestMavenDataDriven(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
@@ -466,8 +466,5 @@ def build_tests(root_dir, test_dir, expected_dir, clazz, regen=False):
         setattr(clazz, test_name, test_method)
 
 
-build_tests(root_dir='maven/longtest',
-            test_dir='repository',
-            expected_dir='expected',
-            clazz=TestMavenLong,
-            regen=False)
+# note: we use short dir names to deal with Windows long paths limitations
+build_tests(root_dir='m2', test_dir='r', expected_dir='e', clazz=TestMavenDataDriven, regen=False)
