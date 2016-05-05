@@ -107,6 +107,15 @@ class BaseModel(Model):
     def __init__(self, **kwargs):
         super(BaseModel, self).__init__(raw_data=kwargs)
 
+    def as_dict(self):
+        pkg_info = self.to_primitive()
+        keys = pkg_info.keys()
+        output = OrderedDict()
+        keys = sorted(keys)
+        for key in keys:
+            output[key] = pkg_info[key]
+        return output
+
 
 class Versioning(BaseModel):
     version = StringType()
@@ -301,15 +310,6 @@ class Package(BaseModel):
 
     # map of dependency group to a list of dependencies for each DEPENDENCY_GROUPS
     dependencies = DictType(ListType(ModelType(Dependency)), default={})
-
-    def as_dict(self):
-        pkg_info = self.to_primitive()
-        keys = pkg_info.keys()
-        output = OrderedDict()
-        keys = sorted(keys)
-        for key in keys:
-            output[key] = pkg_info[key]
-        return output
 
     @staticmethod
     def get_package(location):
