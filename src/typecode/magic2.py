@@ -52,8 +52,6 @@ import ctypes
 from commoncode import system
 from commoncode import command
 
-import typecode
-
 """
 magic2 is minimal and specialized wrapper around a vendored libmagic file
 identification library. This is NOT thread-safe. It is based on python-magic
@@ -61,8 +59,12 @@ by Adam Hup and adapted to the specific needs of ScanCode.
 """
 
 
+data_dir = os.path.join(os.path.dirname(__file__), 'data')
+bin_dir = os.path.join(os.path.dirname(__file__), 'bin')
+
+
 # path to vendored magic DB, possibly OS-specific
-basemag= os.path.join(typecode.data_dir, 'magic')
+basemag= os.path.join(data_dir, 'magic')
 # keep the first which is the most specific directory
 magdir = command.get_base_dirs(basemag)[0]
 magic_db = os.path.join(magdir, 'magic.mgc')
@@ -189,7 +191,7 @@ def load_lib():
     """
     Return the loaded libmagic shared library object from vendored paths.
     """
-    root_dir = command.get_base_dirs(typecode.bin_dir)[0]
+    root_dir = command.get_base_dirs(bin_dir)[0]
     _bin_dir, lib_dir = command.get_bin_lib_dirs(root_dir)
     magic_so = os.path.join(lib_dir, 'libmagic' + system.lib_ext)
 
