@@ -221,13 +221,11 @@ class Dict(collections.MutableMapping):
         print('-' * 50)
 
 
-# http://code.activestate.com/recipes/198157-improve-dictionary-lookup-performance/
-# Created by Raymond Hettinger on Sun, 4 May 2003 (PSF)
-# Reduce average dictionary lookup time by making the internal tables more sparse.
-
-
 def sparsify(d):
     """
+    http://code.activestate.com/recipes/198157-improve-dictionary-lookup-performance/
+    Created by Raymond Hettinger on Sun, 4 May 2003 (PSF)
+    Reduce average dictionary lookup time by making the internal tables more sparse.
     Improve dictionary sparsity.
 
     The dict.update() method makes space for non-overlapping keys.
@@ -236,13 +234,15 @@ def sparsify(d):
     be no more that 1/3 full.  As a result, lookups require less
     than 1.5 probes on average.
 
+
     Example:
-    >>> import __builtin__
-    >>> sparsify(__builtin__.__dict__)
+    >>> sparsify({1: 3, 4: 5})
+    {1: 3, 4: 5}
     """
 
     e = d.copy()
     d.update(e)
+    return d
 
 
 if __name__ == '__main__':
