@@ -3,3 +3,4 @@ short_name: LGPL
 name: LGPL, no version
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
+spdx_license_key: LGPL-2.0+
