@@ -29,15 +29,95 @@ import os
 
 from commoncode.testcase import FileBasedTesting
 
+from licensedcode.tokenize import query_lines
+from licensedcode.tokenize import query_ngrams
 from licensedcode.tokenize import query_tokenizer
+from licensedcode.tokenize import word_splitter
+
 from licensedcode.tokenize import rule_tokenizer
+from licensedcode.tokenize import rule_ngrams
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
-class TestQueryTokenizer(FileBasedTesting):
+class TestTokenizers(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
+
+    def test_word_splitter(self):
+        text = u'Redistribution and use in source and binary forms, with or without modification, are permitted.'
+        result = list(word_splitter(text))
+        expected = [
+            u'Redistribution',
+            u'and',
+            u'use',
+            u'in',
+            u'source',
+            u'and',
+            u'binary',
+            u'forms',
+            u'with',
+            u'or',
+            u'without',
+            u'modification',
+            u'are',
+            u'permitted']
+        assert expected == result
+
+    def test_query_lines_from_location(self):
+        query_loc = self.get_test_loc('index/queryperfect-mini')
+        expected = [
+             u'',
+             u'The',
+             u'Redistribution and use in source and binary forms, with or without modification, are permitted.',
+             u'',
+             u'Always',
+        ]
+        result = list(query_lines(location=query_loc))
+        assert expected == result
+
+    def test_query_lines_from_string(self):
+        query_string = '''
+            The   
+            Redistribution and use in source and binary forms, with or without modification, are permitted.
+            
+            Always  
+            is
+ '''
+        expected = [
+             u'',
+             u'The',
+             u'Redistribution and use in source and binary forms, with or without modification, are permitted.',
+             u'',
+             u'Always',
+             u'is',
+             u'',
+        ]
+
+        result = list(query_lines(query_string=query_string))
+        assert expected == result
+
+    def test_query_lines_complex(self):
+        query_loc = self.get_test_loc('index/querytokens')
+        expected = [
+             u'',
+             u'',
+             u'',
+             u'Redistribution and use in source and binary forms,',
+             u'',
+             u'* Redistributions of source code must',
+             u'The this that is not there',
+             u'Welcom to Jamaica',
+             u'* Redistributions in binary form must',
+             u'',
+             u'THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"',
+             u'',
+             u'',
+             u'',
+             u'Redistributions',
+        ]
+        result = list(query_lines(location=query_loc))
+        assert expected == result
 
     def test_query_tokenizer_handles_empty_string(self):
         text = ''
@@ -75,8 +155,17 @@ class TestQueryTokenizer(FileBasedTesting):
         conditions are met redistributions of source code must retain the above
         copyright notice this list of conditions and the following
         disclaimer'''.split()
-
         assert expected == result
+
+    def test_rule_and_query_tokenizer_have_the_same_behavior(self):
+        texts = [
+            ('MODULE_LICENSE("Dual BSD/GPL");', ['module', 'license', 'dual', 'bsd', 'gpl']),
+            ('Dual BSD/GPL', ['dual', 'bsd', 'gpl']),
+            ('license=Dual BSD/GPL', ['license', 'dual', 'bsd', 'gpl']),
+            ('license_Dual+BSD-GPL', ['license', 'dual', 'bsd', 'gpl']),
+        ]
+        for text , expected in texts:
+            assert expected == list(rule_tokenizer(text)) == list(query_tokenizer(text))
 
 
 class TestRuleTokenizer(FileBasedTesting):
@@ -269,3 +358,93 @@ class TestRuleTokenizer(FileBasedTesting):
     def test_rule_tokenizer_handles_combination_of_well_formed_and_ill_formed_templates_2(self):
         text = u'}}{{{{abcd}}ddd}}{{'
         assert [u'ddd'] == list(rule_tokenizer(text))
+
+
+class TestNgrams(FileBasedTesting):
+    test_data_dir = TEST_DATA_DIR
+
+    def test_query_ngrams(self):
+        tokens = '''
+            Redistribution and use in source and binary are permitted.
+            '''.split()
+
+        result = list(query_ngrams(tokens, ngram_length=4))
+        expected = [
+            (0, ('Redistribution', 'and', 'use', 'in')),
+            (1, ('and', 'use', 'in', 'source')),
+            (2, ('use', 'in', 'source', 'and')),
+            (3, ('in', 'source', 'and', 'binary')),
+            (4, ('source', 'and', 'binary', 'are')),
+            (5, ('and', 'binary', 'are', 'permitted.'))]
+
+        assert expected == result
+
+    def test_query_ngrams_with_None(self):
+        tokens = ['Redistribution', 'and', 'use', None, 'in', 'source', 'and', 'binary', 'are', None]
+        result = list(query_ngrams(tokens, ngram_length=4))
+        expected = [
+            (4, ('in', 'source', 'and', 'binary')),
+            (5, ('source', 'and', 'binary', 'are'))
+        ]
+        assert expected == result
+
+    def test_query_ngrams_with_None_length_three(self):
+        tokens = ['Redistribution', 'and', 'use', None, 'in', 'source', 'and', 'binary', 'are', None]
+        result = list(query_ngrams(tokens, ngram_length=3))
+        expected = [
+            (0, ('Redistribution', 'and', 'use')),
+            (4, ('in', 'source', 'and')),
+            (5, ('source', 'and', 'binary')),
+            (6, ('and', 'binary', 'are'))
+        ]
+        assert expected == result
+
+    def test_rule_ngrams(self):
+        tokens = '''
+            Redistribution and use in source and binary are permitted.
+            '''.split()
+
+        result = list(rule_ngrams(tokens, ngram_length=4))
+        expected = [
+            (0, ('Redistribution', 'and', 'use', 'in')),
+            (1, ('and', 'use', 'in', 'source')),
+            (2, ('use', 'in', 'source', 'and')),
+            (3, ('in', 'source', 'and', 'binary')),
+            (4, ('source', 'and', 'binary', 'are')),
+            (5, ('and', 'binary', 'are', 'permitted.'))]
+
+        assert expected == result
+
+    def test_rule_ngrams_with_gaps(self):
+        tokens = ['Redistribution', 'and', 'use', 'in', 'source', 'and', 'binary', 'are', 'fine']
+        gaps = set([3])
+        result = list(rule_ngrams(tokens, ngram_length=4, gaps=gaps))
+        expected = [
+            (0, ('Redistribution', 'and', 'use', 'in')),
+            (4, ('source', 'and', 'binary', 'are')),
+            (5, ('and', 'binary', 'are', 'fine'))
+        ]
+        assert expected == result
+
+    def test_rule_ngrams_with_gaps_ngram_length_three(self):
+        tokens = ['Redistribution', 'and', 'use', 'in', 'source', 'and', 'binary', 'are', 'fine']
+        gaps = set([3])
+        result = list(rule_ngrams(tokens, ngram_length=3, gaps=gaps))
+        expected = [
+            (0, ('Redistribution', 'and', 'use')),
+            (1, ('and', 'use', 'in')),
+            (4, ('source', 'and', 'binary')),
+            (5, ('and', 'binary', 'are')),
+            (6, ('binary', 'are', 'fine'))
+        ]
+
+        assert expected == result
+
+    def test_rule_ngrams_and_query_have_the_same_behavior(self):
+        tokens = '''
+            Redistribution and use in source and binary are permitted.
+            '''.split()
+
+        result = list(rule_ngrams(tokens, ngram_length=4))
+        expected = list(query_ngrams(tokens, ngram_length=4))
+        assert expected == result
