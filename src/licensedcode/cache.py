@@ -30,12 +30,27 @@ from os.path import getsize
 from os.path import getmtime
 from os.path import join
 
+import cachetools
 import yg.lockfile
 
 from commoncode.fileutils import file_iter
 from licensedcode import src_dir
 from licensedcode import license_index_cache_dir
 
+
+"""
+Various caching strategies either on-disk or in memory:
+ - index peristent caching
+ - per query and per query-run matches caching
+"""
+
+
+"""
+An on-disk persistent cache of LicenseIndex. The index is pickled and
+invalidated if there are any changes in the code or licenses text or rules.
+Loading and dumping the cached index is safe to use across multiple processes
+using lock files.
+"""
 
 index_lock_file = join(license_index_cache_dir, 'lockfile')
 tree_checksum_file = join(license_index_cache_dir, 'tree_checksums')
@@ -70,8 +85,9 @@ def get_or_build_index_from_cache():
                 with open(tree_checksum_file, 'rb') as etcs:
                     existing_checksum = etcs.read()
                 current_checksum = tree_checksum()
-                #  if this cached index is current for the code and data
                 if current_checksum == existing_checksum:
+                    # this cached index is valid for the code and data
+
                     # load index from cache
                     with open(index_cache_file, 'rb') as ifc:
                         # Note: loads() is much (twice++) faster than load()
@@ -90,5 +106,67 @@ def get_or_build_index_from_cache():
             return idx
 
     except yg.lockfile.FileLockTimeout:
-        # TODO: unable to lock in a nicer way 
+        # TODO: unable to lock in a nicer way
         raise
+
+
+"""
+A cache of recent matches from queries and query runs.
+
+Several files in the same project or codebase are highly likely have repeated
+identical license headers, texts or notices. Another common pattern is for
+multiple copies of a full (and possibly long) license text. By caching and
+returning the cached matches right away, we can avoid doing the same matching
+over and over.
+
+The approach is to use the hash of a sequence of token ids as a cache key either
+for a whole query or a query run and to ignore positions. And as values we store
+the LicenseMatch objects for this sequence of tokens. When we have a cache hit,
+the returned cached LicenseMatch are adjusted for their query and line
+positions. This way we can have cache hits for the same sequence of tokens
+eventually starting at different positions in different queries. Actually we
+cache a list of LicenseMatch, and this list may be empty: this way we also cache
+the absence of matches for a sequence of tokens. This absence of matches can be
+as costly to compute initially than an actual matches.
+
+"""
+
+MATCH_TYPE = 'cached'
+
+matches_cache = cachetools.LRUCache(maxsize=1000)
+
+def cache_key(tokens):
+    return md5(' '.join(map(str, tokens))).digest()
+
+
+def get_cached_matches(query_run):
+    """
+    Return a list of new LicenseMatch fetched from a cache or None given a list of token
+    ids or an empty list if no cached LicenseMatch was found. New LicenseMatch are
+    created using the provided start position to update the spans and
+    line_by_pos.
+    """
+    global matches_cache
+    if not matches_cache:
+        return None
+    key = cache_key(query_run.tokens)
+    cached = matches_cache.get(key)
+    # either we did not get a hit or we got a hit to nothing
+    if cached is None:
+        return None
+    else:
+        if not cached:
+            return []
+        else:
+            return [lm.rebase(query_run.start, query_run.line_by_pos, MATCH_TYPE) for lm in cached]
+
+
+def cache_matches(tokens, matches):
+    """
+    Add a list of LicenseMatch to the cache given a list of token ids.
+    """
+    global matches_cache
+    key = cache_key(tokens)
+    cached = matches_cache.get(key)
+    if cached is None:
+        matches_cache[key] = matches[:]
