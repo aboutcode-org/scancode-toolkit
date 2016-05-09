@@ -22,55 +22,92 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import division
 
-from collections import Counter
-from operator import attrgetter
+from operator import itemgetter
 
-from bitarray import bitdiff
-
-from licensedcode import query
-
-
-"""
-Pre-matching filters using bitvectors and other approximate matching techniques:
-the purpose is to collect subset of rules that could be matched given a minimum
-score threshold. This way less matching needs to be done and in some cases no
-matching is necessary.
-
-Filtering strategies return a subset of candidate rules using:
-- bitvectors where each bit position correspond to a token id to quickly check for token occurrence
-- token_id->frequency counters to quickly check for rule that could be matched with a minimum score
-"""
+from licensedcode.models import Rule
 
 
 """
-bitvectors:
-==========
-This filter uses a term occurrence matrix stored compactly as bit arrays.
+Pre-matching filters to find candidates rules that have the highest likeliness
+of matching a query using approximate and probabilistic matching techniques.
 
-The idea is to create a bit vector for each rule using only high id non-junk
-tokens. Then this is used at matching time as a filter such that we can identify
-quickly which rules are likely to get matches and we then do actual matching
-only against this subset of rules.
+The purpose is to quickly and aggressively filter rules that could not possibly
+yield a valid match. The candidates are ranked and used later for a pair-wise
+matching with the query. This way either less or no matching is needing.
 
-frequency counters:
-==================
-We build and store a token counter of the frequency for each rule, then build a
-similar counter for the query. Then we compute the intersection and union of
-these counters pair-wise to compute the distance between a rule and the query.
-Generally this is similar to bitvectors but bigger and involving not only token
-occurrence but also it frequency. We can derive an approximate score from the
-counter distance that is used to further ignore Rules that could not be matched.
+We collect a subset of rules that could be matched given a minimum threshold of
+matched token occurrences or an approximation of the length of a match.
+
+The primary technique is to compute sets or multisets intersections and use the
+intersection length for ranking.
+
+Since we use integer to represent tokens, this reduces the problem to integer
+set or multisets intersections. Furthermore, we have a finite and limited number
+of tokens and we distinguish high and low (junk or common) token ids based on a
+threshold. We use these properties to consider first sets of high tokens and
+refine candidates based on the sets of low tokens.
+
+Two techniques are used here: tokens sets and multisets.
+
+Tokens occurrence sets
+======================
+
+A tokens occurrence set is represented as an array of bits (aka. a bit map)
+where each bit position corresponds to a token id. The length of each bit array
+is therefore equal to the number of unique tokens across all rules. This forms a
+term occurrence matrix stored compactly as bit arrays. With about 14K unique
+tokens and about 3500 rules, we store about 50 millions bits (14K x 3500) for
+about 6MB of total storage for this matrix. Computing intersections of bit
+arrays is very fast even if it needs to be done 3500 times for each query and
+query run.
+
+The length of the intersection of a query and rule bit array tells us the
+occurrence count of common tokens. We first intersect high tokens arrays. If the
+intersection is empty or below a minimum rule-specific length, we can skip that
+rule for further matching. If we want an exact match and we have less tokens
+present than in the rule, we skip this rule. If we have some common high tokens,
+we then intersect the low token arrays. We sum the lengths of these two
+intersections to rank the candidates.
+
+
+Tokens occurrence multisets aka. frequency counters
+===================================================
+
+A tokens frequency counter maps a token id to the number of times it shows up in
+a text. This is also called a multiset.
+
+We intersect the query and rule frequency counters. For each shared token we
+collect the minimum of the two token counts. We sum these to obtain an
+approximation to the number of matched tokens. This is an approximation because
+it does not consider the relative positions of the tokens.
+
+This sum is then used for the same filtering and ranking used for the token sets
+filter: First intersect high tokens first, skip if some threshold is not met.
+Then intersect the low token and sum the min-sum of these two intersections to
+rank the candidates. 
+
+Token frequencies also allow extra filtering when looking only for exact matches
+or for small rules where we want all tokens to be matched.
+
+
+About candidates ranking and scoring: we use only the matched lengths for now for
+ranking. This could be refined by computing tf/idf, BM25 or approximating
+various similarity measures or their approximations such as Levenshtein
+distance, Jaccard coefficient, etc.
 """
 
 # debug flags
-DEBUG = False
+TRACE = False
+TRACE_DEEP = False
 
 def logger_debug(*args): pass
 
 
-if DEBUG:
+if TRACE:
     import logging
     import sys
 
@@ -82,265 +119,184 @@ if DEBUG:
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
 
-def get_query_candidates(tokens, idx):
+def compute_candidates(query_run, idx, rules_subset, top=0, exact=False, refine=True):
     """
-    Return a list of candidate rule ids for matching given a whole query, an
-    index, an optional subset of rule_ids to consider and a minimum score.
-    """
-    qhigh_bitvector = query.build_bv((t for t in tokens if t >= idx.len_junk), idx.bv_template)
-    qhigh_bitvector = qhigh_bitvector[idx.len_junk:]
-    candidates = set()
-    candidates_add = candidates.add
-    for rid, ibitvector in enumerate(idx.high_bitvectors_by_rid):
-        # we compute the AND that tells us all tokenids that exist in both. then
-        # the hamming distance of that bitarray to the rule array
-        intersection = qhigh_bitvector & ibitvector
-        if intersection.any():
-            candidates_add(rid)
-#     print()
-#     print ('CANDIDATES', candidates)
+    Return a ranked list of rule id candidates for further matching using
+    approximate ranked matching, ignoring positions.
 
-#     print ('CANDIDATES', len(candidates))
-    return candidates
+    Only consider rules that have an rid in `rules_subset`.
+    Return at most `top` candidates. If `exact` is True, only return rules that
+    may be matched exactly.
 
-
-"""
-Approach to collect candidates:
-
-# chunk matching 1
-#################
-- using bitvectors, collect candidates with 100% high matches. complement with 100% low matches.
-Filter using high and low token lens and special check for small rules.
-
-- using frequencies, refine these candidates with 80% high matches. complement with low matches to refine to 80%. 
-Filter using high and low token lens and special check for small rules. to ensure we can get some chunk matches
-Sort on longer matches first rather than high scoring first.
-
-- perform CHUNK matching on a rule, reinject junk, substract from query run
-Repeat
-
-
-# chunk matching 2
-#################
-- using bitvectors, collect candidates with at least a distance TBD.
-Filter using high token lens and special check for small rules based on unique high tokens.
-
-- using frequencies, refine these candidates with 50% high matches. complement with low matches to refine to 50%. 
-Filter using high and low token lens and special check for small rules to ensure we can get some chunk matches
-
-- perform CHUNK matching on a rule, reinject junk, substract from query run
-Repeat
-
-# inv matching 2
-#################
-- using bitvectors, collect candidates with at least one shared token.
-Filter using high token lens and special check for small rules based on unique high tokens.
-
-- using whole frequencies, compute score to sort these candidates from high to low score
-Filter using high and low token lens and special check for small rules to ensure we can get some chunk matches
-
-- perform INV matching on a rule, reinject junk, substract from query run
-Repeat
-"""
-
-def compute_candidates(query_run, idx, rules_subset=None):
-    """
-    Return a list of rule id candidates for further matching based on
-    matching bitvectors sorted by decreasing importance.
+    If `refine` is False, filter and rank using tokens occurrence sets only in a single step
+    If `refine` is True, refine candidates using tokens occurrence multisets in a second step.
     
-    Only rules that share at least a certain number of tokens with the query are returned.
-    This minimum number is rule-specific and based on:
-    - the count of occurring unique tokens in the query,
-    - the distance between this count and the total count of occurring unique tokens in a rule.
-    - the actual length of a rule in high, low and combined tokens,
-    - a minimal length of a match
+    Only return rules sharing at least a minimum number of tokens with the query.
+    Minimums and ranking is rule-specific and based on:
+    - occurrences in high and low tokens for the query and the rule
+    - minimal match occurrences for a rule in high and low tokens
+    - lengths and minimal match length for a rule in high and low tokens
+    - the difference and distance of these between the query and the rule 
     """
-    qbitvector = query_run.bv()
-    qhigh_bitvector = qbitvector[idx.len_junk:]
-    qhigh_count = qhigh_bitvector.count()
-    qlow_bitvector = qbitvector[:idx.len_junk]
-    qlow_count = qlow_bitvector.count()
-    q_count = qlow_count + qhigh_count
 
-    high_bitvectors_by_rid = idx.high_bitvectors_by_rid
+    # initial rules
+    candidates = [(rid, rule) for (rid, rule) in enumerate(idx.rules_by_rid) if rid in rules_subset]
 
-    # subset the rules
-    if rules_subset:
-        interesting_rules = [r for r in idx.rules_by_rid if r.rid in rules_subset]
+    # perform one step with set or two steps with sets and then multisets for refinements
+    steps = (1, 2,) if refine else (1,)
 
-    candidates = []
-    for rule in interesting_rules:
-        ihigh_bitvector = high_bitvectors_by_rid[rule.rid]
-        # the intersection that tells us which token ids exist in both
-        high_intersection = qhigh_bitvector & ihigh_bitvector
-        high_intersection_len = high_intersection.count()
+    # step 1 is on bit sets:
+    _qbitvector = query_run.bv()
+    qhigh = _qbitvector[idx.len_junk:]
+    qlow = _qbitvector[:idx.len_junk]
+    high_by_rid = idx.high_bitvectors_by_rid
+    low_by_rid = idx.low_bitvectors_by_rid
+    thresholds_getter = Rule.thresholds_unique
+    intersector = int_set_intersector
 
-        if rule.high_length <= 4 and high_intersection_len != rule.high_length:
-            continue
+    for step in steps:
+        if TRACE_DEEP: logger_debug('compute_candidates: STEP:', step)
+        sortable_candidates = []
 
-        if rule.high_length - high_intersection_len < 4:
-            continue
+        for rid, rule in candidates:
+            if TRACE_DEEP: logger_debug(' compute_candidates: evaluating rule:', rule.identifier())
 
-        candidate = high_intersection_len, rule.rid
-        candidates.append(candidate)
+            ihigh = high_by_rid[rid]
+            ilow = low_by_rid[rid]
+            thresholds = thresholds_getter(rule)
+            sort_order = compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, exact=exact)
+            if sort_order:
+                sortable_candidates.append((sort_order, rid, rule))
 
-    if not candidates:
-        return [], []
-    candidates.sort(reverse=True)
-    top_ten = candidates[:10]
-    all_candidates = set(rid for _, rid in candidates)
+        ranked = sorted(sortable_candidates)
+        if top:
+            ranked = ranked[:top]
 
-    # further refine the top 10 candidates to get the really highest scoring first
-    top_candidates = []
-    query_freq = query_run.frequencies()
-    for _inter_len, rid in top_ten:
-        rule_len = idx.rules_by_rid[rid].length
-        rule_freq = idx.frequencies_by_rid[rid]
-        intersection = rule_freq & query_freq
-        score = sum(intersection.values())
-        score = (score / rule_len) * 100
-        top_candidates.append((score, rid,))
+        if TRACE_DEEP and sortable_candidates:
+            logger_debug(' compute_candidates: RANKED at step:', step, ':', len(sortable_candidates))
+            if TRACE_DEEP:
+                for sort_order, rid, rule in ranked:
+                    logger_debug(' compute_candidates: rule:', rule.identifier(), 'sort_order:', sort_order)
 
-    top_candidates.sort(reverse=True)
-    top_candidates= [rid for _, rid in top_candidates]
-    return top_candidates, all_candidates
+        candidates = [(rid, rule) for _sort_order, rid, rule in ranked]
+
+        if len(steps) == 2:
+            # step 2 is on frequencies multisets: update the parameters after step1 if needed
+            qhigh, qlow = query_run.frequencies(start=idx.len_junk)
+            high_by_rid = idx.high_frequencies_by_rid
+            low_by_rid = idx.low_frequencies_by_rid
+            thresholds_getter = Rule.thresholds
+            intersector = int_multiset_intersector
+
+    if TRACE:
+        logger_debug('compute_candidates: FINAL candidates:', len(sortable_candidates))
+        tops = [r.identifier() for _i, r in candidates[:10]]
+        map(logger_debug, tops)
+
+    # FIXME: we should return the matched vectors or counters intersections:
+    # they contain valuable information for matching e.g. the actual token ids
+    # matched and could therefore speed up a lot matching since non-matched
+    # tokens could be skipped entirely from the matching phase.
+
+    # return only rid from (rid, rule)
+    good_candidates = map(itemgetter(0), candidates)
+    return good_candidates
 
 
-def get_candidates(query_run, idx, rules_subset=None, min_score=100):
+def int_set_intersector(qbv, ibv):
     """
-    Return a list of candidate rule ids for matching given a query_run, an
-    index, an optional subset of rule_ids to consider and a minimum score.
+    Return the number of bits set to 1 in the intersection of a query and an
+    index integer set.
     """
-    b_candidates = bit_candidates(query_run.bv(), idx.high_bitvectors_by_rid, idx.low_bitvectors_by_rid, idx.len_junk, rules_subset=rules_subset, min_score=min_score)
-    if not b_candidates:
-        logger_debug('get_candidates: bit candidates: all junk from bitvector. No match')
-        return []
-    logger_debug('get_candidates: bit candidates:', len(b_candidates))
-
-    f_candidates = freq_candidates_from_query_run(query_run, idx, rules_subset=set(rid for (_, rid) in b_candidates), min_score=min_score)
-
-    if not f_candidates:
-        logger_debug('get_candidates: f_candidates: No match')
-        return []
-    logger_debug('get_candidates: f_candidates:', len(f_candidates))
-    return f_candidates
+    # using bitarrays at the moment
+    return (qbv & ibv).count()
 
 
-def bit_candidates(qbitvector, high_bitvectors_by_rid, low_bitvectors_by_rid, len_junk, rules_subset=None, min_score=100):
+def int_multiset_intersector(qfreq, ifreq):
     """
-    Return rule candidates for further matching based on matching bitvectors on
-    good token ranges.
+    Return the sum of the minimum values of the intersection of a query and an
+    index integer multiset.
     """
-    qhigh_bitvector = qbitvector[len_junk:]
+    # With collection.Counter, the intersection of two Counter a and b is
+    # min(a[x], b[x]).
 
-    # Is the query_vector entirely composed of junk tokens?
-    if not qhigh_bitvector.any():
-        return []
-
-    if rules_subset is not None:
-        matchable_vectors1 = [(rid, ihbv,) for rid, ihbv in enumerate(high_bitvectors_by_rid) if rid in rules_subset]
-    else:
-        matchable_vectors1 = enumerate(high_bitvectors_by_rid)
-
-    candidates = _bit_candidates(qhigh_bitvector, matchable_vectors1, min_score, ignore_empty=True)
-
-    if candidates and min_score == 100:
-        # further refine candidates using low tokens
-        candidates_rules = set(rid for _, rid in candidates)
-        matchable_vectors2 = [(rid, lhbv,) for rid, lhbv in enumerate(low_bitvectors_by_rid) if rid in candidates_rules]
-        qlow_bitvector = qbitvector[:len_junk]
-        candidates2 = set(rid for _, rid in _bit_candidates(qlow_bitvector, matchable_vectors2, min_score, ignore_empty=False))
-        candidates = [(dist, rid,) for dist, rid in candidates if rid in candidates2]
-
-    # order by lowest distance:
-    # TODO: is this really needed?
-    candidates.sort()
-    return candidates
+    # TODO: we could re-implement this using a faster intersection for our
+    # smaller use-case using arrays instead of counters
+    return sum((ifreq & qfreq).itervalues())
 
 
-def _bit_candidates(qbitvector, bitvectors_by_rid, min_score=100, ignore_empty=True):
+def compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, exact=True):
     """
-    Return rule candidates for further matching based on matching bitvectors.
-
-    Note: the bit count of an XOR between to vectors is the hamming distance
-    between these two bits vectors. bitdiff is a shortcut for XOR and count:
-    - a 0 distance means that the vectors are identical.
-    - a maximum distance of len_good (the length of the bitvectors) means that
-    all bits are different
+    Compare a query qhigh and qlow sets with an index rule ihigh and ilow sets.
+    Return a tuple suitable for ranked sorting or None if this combination is
+    not match worthy.
     
-    We first use an AND between a query and rule vector to get a new vector that
-    has 1 for common 1 bits. We then compute the hamming distance between that
-    vector and the rule vector which is the exact number of token id presents in
-    both the query and rule.
+    Use the models.Thresholds `thresholds` to determine match worthiness and
+    ranking.
+    
+    Use the `intersector` callable to compute the number of matching tokens
+    between sets allowing to use this function for sets or multisets or set-like
+    objects.
+    
+    If `exact` is True, return None if the query could not be matched exactly
+    against this index rule.
     """
-    if ignore_empty and not qbitvector.any():
-        return []
+    # the intersection that tells us which token ids exist in both
+    high_inter_len = intersector(qhigh, ihigh)
 
-    # FIXME: this length should be cached and never changes for high and low
-    matchable_len = len(qbitvector)
-    candidates = []
-    candidates_append = candidates.append
-    for rid, ibitvector in bitvectors_by_rid:
-        # we compute the intersection that tells us which token ids exist in
-        # both, then the hamming distance of that bitarray to the rule array
-        intersection = qbitvector & ibitvector
-        distance = bitdiff(intersection, ibitvector)
-        # a difference means we have some common bits (i.e. token ids)
-        if distance != matchable_len:
-            if min_score == 100:
-                if distance == 0:
-                    # only keep possible 100% matches
-                    candidates_append((distance, rid,))
-            else:
-                candidates_append((distance, rid,))
-    return candidates
+    # for exact, all high must be matched
 
+    if exact and high_inter_len < thresholds.high_len:
+        if TRACE_DEEP:
+            ihigh_len = thresholds.high_len
+            logger_debug('  compare_sets: SKIP 1: exact=%(exact)r and high_inter_len=%(high_inter_len)r != ihigh_len=%(ihigh_len)r' % locals())
+        return
 
-def freq_candidates_from_query_run(query_run, idx, rules_subset=None, min_score=100):
-    lengths_by_rid = [rule.length for rule in idx.rules_by_rid]
-    return freq_candidates(query_run.vector(),
-                           idx.frequencies_by_rid,
-                           lengths_by_rid,
-                           rules_subset, min_score)
+    # need some high match above min high
+    if high_inter_len < thresholds.min_high:
+        if TRACE_DEEP:
+            min_ihigh = thresholds.min_high
+            logger_debug('  compare_sets: SKIP 2: high_inter_len=%(high_inter_len)r < min_ihigh=%(min_ihigh)r' % locals())
+        return
 
+    # intersect again this time on low tokens
+    low_inter_len = intersector(qlow, ilow)
 
-def freq_candidates(qvector, frequencies_by_rid, lengths_by_rid, rules_subset=None, min_score=100):
-    """
-    Return rule candidates for further matching based on matching frequency
-    vectors.
-    """
-    # transform the query vector in query frequencies
-    # FIXME: use QueryRun method instead
-    # FIXME: would iterating tokens be faster?
-    query_freq = Counter({tid: len(postings) for tid, postings in enumerate(qvector) if postings})
+    # for exact, all low must be matched
+    if exact and low_inter_len < thresholds.low_len:
+        if TRACE_DEEP:
+            ilow_len = thresholds.low_len
+            logger_debug('  compare_sets: SKIP 3: exact=%(exact)r and low_inter_len=%(low_inter_len)r < ilow_len=%(ilow_len)r' % locals())
+        return
 
-    if rules_subset is not None:
-        matchable_freqs = ((rid, rule_freq,) for rid, rule_freq in enumerate(frequencies_by_rid) if rid in rules_subset)
-    else:
-        matchable_freqs = enumerate(frequencies_by_rid)
+    # need match len above min length
+    if high_inter_len + low_inter_len < thresholds.min_len:
+        if TRACE_DEEP:
+            min_ilen = thresholds.min_len
+            logger_debug('  compare_sets: SKIP 4: high_inter_len=%(high_inter_len)r + low_inter_len=%(low_inter_len)r < min_ilen=%(min_ilen)r' % locals())
+        return
 
-    candidates = []
-    candidates_append = candidates.append
-    for rid, rule_freq in matchable_freqs:
-        # We compute the intersection of frequency counters
-        # The score is exactly the sum of intersection/ length
-        rule_len = lengths_by_rid[rid]
-        intersection = rule_freq & query_freq
+    # for small rules, we want all tokens matched
+    if thresholds.small and (high_inter_len + low_inter_len != thresholds.length):
+        if TRACE_DEEP:
+            small = thresholds.small
+            ilen = thresholds.length
+            logger_debug('  compare_sets: SKIP 5: small=%(small)r and high_inter_len=%(high_inter_len)r + low_inter_len=%(low_inter_len)r != ilen=%(ilen)r' % locals())
+        return
 
-        if min_score == 100:
-            # for 100% score we need to check each token freq individually and
-            # not the the whole score. each value must be bigger than or equal
-            # to the rule freq for a given token id. Or the difference must not
-            # be superior to zero
-            difference = rule_freq - intersection
-            if any(v > 0 for v in difference.values()):
-                continue
-            candidates_append((100, rid,))
-        else:
-            score = sum(intersection.values())
-            score = (score / rule_len) * 100
-            if score >= min_score:
-                candidates_append((score, rid,))
-    # order by highest score
-    candidates.sort(reverse=True)
-    return candidates
+    # FIXME: this does not make sense, for bitvectors: we cannot evaluate gaps at this stage!!!!
+    # therefore this will always be True
+    # need match len within gap bounds
+    if high_inter_len + low_inter_len > thresholds.length + thresholds.max_gaps:
+        if TRACE_DEEP:
+            max_igaps = thresholds.max_gaps
+            ilen = thresholds.length
+            logger_debug('  compare_sets: SKIP 6: high_inter_len=%(high_inter_len)r + low_inter_len=%(low_inter_len)r > ilen=%(ilen)r + max_igaps=%(max_igaps)r' % locals())
+        return
+
+    length = high_inter_len + low_inter_len
+    distance = thresholds.length - length
+
+    # set sort order by closest distance,  longest lengths
+    candidate = distance, -high_inter_len, -length, thresholds.length
+    return candidate

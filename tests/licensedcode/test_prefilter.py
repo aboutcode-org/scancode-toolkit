@@ -24,57 +24,78 @@
 
 from __future__ import absolute_import, print_function
 
-from collections import Counter
 from unittest.case import TestCase
 
 from bitarray import bitarray
 
 from licensedcode import prefilter
+from licensedcode.models import Thresholds
 
 
 class FilterTesting(TestCase):
 
-    def test_bit_candidates(self):
-        qbvector = bitarray('011')
+    def test_compare_sets_bitvectors(self):
+        thresholds = Thresholds(high_len=3, low_len=0, length=3, min_high=2, small=False, min_len=2, max_gaps=0)
+        qlow, qhigh = bitarray('00'), bitarray('01101')
+        ilow, ihigh = bitarray('00'), bitarray('01101')
 
-        high_bitvectors_by_rid = [
-            bitarray('11')
-        ]
-        low_bitvectors_by_rid = [
-            bitarray('0')
-        ]
-        len_junk = 1
-        candidates = prefilter.bit_candidates(qbvector, high_bitvectors_by_rid, low_bitvectors_by_rid, len_junk, min_score=100)
-        assert [(0, 0)] == candidates
+        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.int_set_intersector, exact=False)
+        assert candidate
 
-    def test_bit_candidates2(self):
-        qbvector = bitarray('100')
-        high_bitvectors_by_rid = [
-            bitarray('11')
-        ]
-        low_bitvectors_by_rid = [
-            bitarray('1')
-        ]
-        len_junk = 1
-        candidates = prefilter.bit_candidates(qbvector, high_bitvectors_by_rid, low_bitvectors_by_rid, len_junk, min_score=100)
-        assert [] == candidates
+    def test_compare_sets_bitvectors_match_with_less_than_high_len(self):
+        thresholds = Thresholds(high_len=3, low_len=0, length=3, min_high=2, small=False, min_len=2, max_gaps=0)
+        qlow, qhigh = bitarray('00'), bitarray('01100')
+        ilow, ihigh = bitarray('00'), bitarray('01101')
 
-        qbvector = bitarray('111')
-        candidates = prefilter.bit_candidates(qbvector, high_bitvectors_by_rid, low_bitvectors_by_rid, len_junk, min_score=100)
-        assert [(0, 0)] == candidates
+        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.int_set_intersector, exact=True)
+        assert not candidate
+        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.int_set_intersector, exact=False)
+        assert candidate
 
-        qbvector = bitarray('011')
-        candidates = prefilter.bit_candidates(qbvector, high_bitvectors_by_rid, low_bitvectors_by_rid, len_junk, min_score=100)
-        assert [] == candidates
+    def test_compare_sets_bitvectors_non_exact_match_with_less_than_min_high(self):
+        thresholds = Thresholds(high_len=3, low_len=0, length=3, min_high=2, small=False, min_len=2, max_gaps=0)
+        qlow, qhigh = bitarray('00'), bitarray('01000')
+        ilow, ihigh = bitarray('00'), bitarray('01101')
 
-    def test_freq_candidates(self):
-        qvector = [[0], [1, 2, 3], [0]]
-        frequencies_by_rid = [
-            Counter({0: 1, 1: 3, 2: 0}),
-            Counter({0: 2, 1: 2, 2: 1})
-        ]
+        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.int_set_intersector, exact=True)
+        assert not candidate
+        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.int_set_intersector, exact=False)
+        assert not candidate
 
-        lengths_by_rid = [4,5]
+    def test_compare_sets_bitvectors_exact_match_with_less_than_ilow_len(self):
+        thresholds = Thresholds(high_len=3, low_len=1, length=3, min_high=2, small=False, min_len=2, max_gaps=0)
+        qlow, qhigh = bitarray('00'), bitarray('01101')
+        ilow, ihigh = bitarray('01'), bitarray('01101')
+        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.int_set_intersector, exact=True)
 
-        candidates = prefilter.freq_candidates(qvector, frequencies_by_rid, lengths_by_rid, min_score=100)
-        assert [(100, 0)] == candidates
+        assert not candidate
+        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.int_set_intersector, exact=False)
+        assert candidate
+
+    def test_compare_sets_bitvectors_match_with_more_than_min_and_low_len(self):
+        thresholds = Thresholds(high_len=3, low_len=1, length=4, min_high=2, small=False, min_len=2, max_gaps=0)
+        qlow, qhigh = bitarray('00'), bitarray('01101')
+        ilow, ihigh = bitarray('01'), bitarray('01101')
+
+        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.int_set_intersector, exact=True)
+        assert not candidate
+        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.int_set_intersector, exact=False)
+        assert candidate
+
+    def test_compare_sets_bitvectors_match_with_small_rule(self):
+        thresholds = Thresholds(high_len=3, low_len=1, length=4, min_high=2, small=True, min_len=2, max_gaps=0)
+        qlow, qhigh = bitarray('00'), bitarray('01101')
+        ilow, ihigh = bitarray('01'), bitarray('01101')
+
+        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.int_set_intersector, exact=False)
+        assert not candidate
+
+        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.int_set_intersector, exact=True)
+        assert not candidate
+
+        thresholds = Thresholds(high_len=3, low_len=1, length=4, min_high=2, small=False, min_len=2, max_gaps=0)
+        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.int_set_intersector, exact=False)
+        assert candidate
+
+        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.int_set_intersector, exact=True)
+        assert not candidate
