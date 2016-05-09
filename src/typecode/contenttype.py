@@ -44,16 +44,18 @@ from pdfminer.pdftypes import PDFException
 from commoncode import fileutils
 from commoncode import filetype
 
-import typecode
 from typecode import magic2
 
 LOG = logging.getLogger(__name__)
 
+data_dir = os.path.join(os.path.dirname(__file__), 'data')
+bin_dir = os.path.join(os.path.dirname(__file__), 'bin')
+
 
 # Python mimetypes path setup using Apache mimetypes DB
-os.environ['XDG_DATA_DIRS'] = os.path.join(typecode.data_dir, 'apache')
+os.environ['XDG_DATA_DIRS'] = os.path.join(data_dir, 'apache')
 os.environ['XDG_DATA_HOME'] = os.environ['XDG_DATA_DIRS']
-APACHE_MIME_TYPES = os.path.join(typecode.data_dir, 'apache', 'mime.types')
+APACHE_MIME_TYPES = os.path.join(data_dir, 'apache', 'mime.types')
 
 # Ensure that all dates are UTC, especially for fine free file.
 os.environ['TZ'] = 'UTC'

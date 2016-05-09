@@ -22,7 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-import os.path
+from __future__ import absolute_import
 
-data_dir = os.path.join(os.path.dirname(__file__), 'data')
-bin_dir = os.path.join(os.path.dirname(__file__), 'bin')
+from typecode.contenttype import get_type
