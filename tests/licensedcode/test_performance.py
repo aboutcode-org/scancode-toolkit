@@ -47,7 +47,7 @@ class TestMatchingPerf(FileBasedTesting):
 
         def detect_lic():
             for location in locations:
-                list(idx.match(location, min_score=min_score))
+                list(idx.match(location, min_score=min_score, _with_cache=False))
 
         test_py = 'detect_lic()'
         profile.runctx(test_py, globals(), locals(), stats_file)
@@ -75,7 +75,7 @@ class TestMatchingPerf(FileBasedTesting):
         self.profile_match(idx, locations, stats_file, min_score=0)
 
     @skip('Use only for local profiling')
-    def test_match_license_performance_profiling_on_full_index_match_chunk(self):
+    def test_match_license_performance_profiling_on_full_index_match_hash(self):
         # pre-index : we are profiling only the detection, not the indexing
         idx = index.get_index()
 
@@ -87,7 +87,15 @@ class TestMatchingPerf(FileBasedTesting):
     def test_match_license_performance_profiling_on_full_index_mixed_matching(self):
         # pre-index : we are profiling only the detection, not the indexing
         idx = index.get_index()
-        stats_file = 'license_match_mixed_matching_full_index_profile_log.txt'
+        stats_file = 'license_match_mixed_matching_full_index_profile_log1.txt'
+        locations = [self.get_test_loc(f) for f in ['perf/test1.txt', 'perf/whatever.py']]
+        self.profile_match(idx, locations, stats_file)
+
+    @skip('Use only for local profiling')
+    def test_match_license_performance_profiling_on_full_index_mixed_matching_long(self):
+        # pre-index : we are profiling only the detection, not the indexing
+        idx = index.get_index()
+        stats_file = 'license_match_mixed_matching_full_index_profile_log2.txt'
         locations = [self.get_test_loc(f) for f in ['perf/test1.txt', 'perf/whatever.py', 'perf/udll.cxx']]
         self.profile_match(idx, locations, stats_file)
 
