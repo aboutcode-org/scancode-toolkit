@@ -61,6 +61,12 @@ class TestLicense(FileBasedTesting):
         for rule in rules:
             assert 'distribut' in rule.text().lower()
 
+    def test_validate_licenses(self):
+        errors, warnings, infos = models.License.validate(models.get_licenses_by_key())
+        assert {} == errors
+        assert {} == warnings
+        assert len(infos) < 20
+
 
 class TestRule(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
