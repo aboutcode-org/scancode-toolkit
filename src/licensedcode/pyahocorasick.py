@@ -2,11 +2,11 @@
 
 # Copyright (c) 2011-2014 Wojciech Mula
 # All rights reserved.
-# 
+#
 # Redistribution and use in source and binary forms, with or
 # without modification, are permitted provided that the following
 # conditions are met:
-# 
+#
 # * Redistributions of source code must retain the above copyright
 #   notice, this list of conditions and the following disclaimer.
 # * Redistributions in binary form must reproduce the above
@@ -17,7 +17,7 @@
 #   contributors may be used to endorse or promote products
 #   derived from this software without specific prior written
 #   permission.
-# 
+#
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
 # CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
 # INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
@@ -45,7 +45,7 @@ from collections import deque
 
 
 # used to distinguish from None
-nil = object()
+NIL = object()
 
 
 class TrieNode(object):
@@ -57,13 +57,13 @@ class TrieNode(object):
         # an element of the sequence.
         self.keyitem = keyitem
         # value associated with this node
-        self.value = nil
+        self.value = NIL
         # failure link used by Aho-Corasick automaton
-        self.fail = nil
+        self.fail = NIL
         self.children = {}
 
     def __repr__(self):
-        if self.value is not nil:
+        if self.value is not NIL:
             return "<TrieNode '%s' '%s'>" % (self.keyitem, self.value)
         else:
             return "<TrieNode '%s'>" % self.keyitem
@@ -86,12 +86,14 @@ class Trie(object):
         """
         node = self.root
         for keyitem in seq:
-            node = node.children.get(keyitem, None)
-            if node is None:
-                return
+            try:
+                # note: children may be None
+                node = node.children[keyitem]
+            except KeyError:
+                return None
         return node
 
-    def get(self, seq, default=nil):
+    def get(self, seq, default=NIL):
         """
         Return the value associated with the sequence of items. If the sequence
         of items is not present in trie return the `default` if provided or
@@ -99,12 +101,12 @@ class Trie(object):
         # FIXME: should match the dict semantics.
         """
         node = self.__get_node(seq)
-        value = nil
+        value = NIL
         if node:
             value = node.value
 
-        if value is nil:
-            if default is nil:
+        if value is NIL:
+            if default is NIL:
                 raise KeyError()
             else:
                 return default
@@ -125,13 +127,13 @@ class Trie(object):
                 if not isinstance(s, list):
                     # FIXME: should use generators
                     s = [s]
-                s += list(node.keyitem)
+                s = s + list(node.keyitem)
             else:
                 if node.keyitem is not None:
                     s = [node.keyitem]
                 else:
                     s = []
-            if node.value is not nil:
+            if node.value is not NIL:
                 L.append((s, node.value))
 
             # FIXME: this is using recursion
@@ -144,17 +146,14 @@ class Trie(object):
 
     def __len__(self):
         stack = deque()
-        stack_append = stack.append
-        stack_pop = stack.pop
-
-        stack_append(self.root)
+        stack.append(self.root)
         n = 0
         while stack:
-            node = stack_pop()
-            if node.value is not nil:
+            node = stack.pop()
+            if node.value is not NIL:
                 n += 1
             for child in node.children.itervalues():
-                stack_append(child)
+                stack.append(child)
         return n
 
     def add(self, seq, value):
@@ -167,11 +166,14 @@ class Trie(object):
 
         node = self.root
         for keyitem in seq:
-            node = node.children.get(keyitem)
-            if node is not None:
+            try:
+                # note: children may be None
+                node = node.children[keyitem]
+            except KeyError:
                 n = TrieNode(keyitem)
                 node.children[keyitem] = n
                 node = n
+
         # only assign the value to the last item of the sequence
         node.value = value
 
@@ -181,7 +183,7 @@ class Trie(object):
         """
         node = self.__get_node(seq)
         if node:
-            return bool(node.value != nil)
+            return bool(node.value != NIL)
         else:
             return False
 
@@ -199,55 +201,47 @@ class Trie(object):
         Defaults to 256 for plain bytes.
         """
         queue = deque()
-        queue_append = queue.append
-        queue_popleft = queue.popleft
-
-        self_root = self.root
-        self_root_children = self_root.children
 
         # 1. create top root children over the items range, failing to root
         for i in range(self.items_range):
-            # content is either int or chr
-            c = self.content(i)
-            if c in self_root_children:
-                node = self_root_children[c]
+            # self.content is either int or chr
+            item = self.content(i)
+            if item in self.root.children:
+                node = self.root.children[item]
                 # f(s) = 0
-                node.fail = self_root
-                queue_append(node)
+                node.fail = self.root
+                queue.append(node)
             else:
-                self_root_children[c] = self_root
+                self.root.children[item] = self.root
 
         # 2. using the queue of all possible items, walk the trie and add failure links
         while queue:
-            r = queue_popleft()
-            for node in r.children.values():
-                queue_append(node)
-                state = r.fail
+            current = queue.popleft()
+            for node in current.children.values():
+                queue.append(node)
+                state = current.fail
                 while node.keyitem not in state.children:
                     state = state.fail
-                node.fail = state.children.get(node.keyitem, self_root)
+                node.fail = state.children.get(node.keyitem, self.root)
 
     def search(self, seq):
         """
         Perform an Aho-Corasick search for a sequence of items yielding
         tuples of (position in seq, values associated with matched seq)
         """
-        self_root = self.root
-        state = self_root
+        state = self.root
         for index, keyitem in enumerate(seq):
             # find the first failure link and next state
             while keyitem not in state.children:
                 state = state.fail
 
             # follow children or get back to root
-            state = state.children.get(keyitem, self_root)
+            state = state.children.get(keyitem, self.root)
             tmp = state
             value = []
-            value_append = value.append
-            while tmp is not nil:
-                tmp_value = tmp.value
-                if tmp_value is not nil:
-                    value_append(tmp_value)
+            while tmp is not NIL:
+                if tmp.value is not NIL:
+                    value.append(tmp.value)
                 tmp = tmp.fail
             if value:
                 yield index, value

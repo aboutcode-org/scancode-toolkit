@@ -31,10 +31,7 @@
 # IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 # THE POSSIBILITY OF SUCH DAMAGE.
 
-
-
 from __future__ import absolute_import, print_function
-
 
 from licensedcode.pyahocorasick import Trie
 
@@ -145,15 +142,6 @@ def test_itervalues_ShouldReturnAllValuesAlreadyAddedToTheTrie():
     assert [1, 2, 3, 4, 5] == result
 
 
-def get_test_automaton():
-    words = 'he her hers his she hi him man himan'.split()
-    t = Trie();
-    for w in words:
-        t.add(w, w)
-    t.make_automaton()
-    return t
-
-
 def test_search_should_match_all_strings():
     words = 'he her hers his she hi him man himan'.split()
     t = Trie();
@@ -162,6 +150,7 @@ def test_search_should_match_all_strings():
     t.make_automaton()
 
     test_string = 'he she himan'
+    #              012345678901   
     result = list(t.search(test_string))
 
     # there are 5 matching positions
@@ -179,4 +168,5 @@ def test_search_should_match_all_strings():
     for end_index, strings in result:
         for s in strings:
             n = len(s)
-            assert s, test_string[end_index - n + 1 : end_index + 1]
+            expected = test_string[end_index - n + 1:end_index + 1]
+            assert s == expected
