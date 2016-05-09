@@ -27,38 +27,85 @@ from __future__ import absolute_import, print_function
 import os
 import unittest
 
+from commoncode import functional
 from commoncode import text
+from licensedcode import index
 from licensedcode import models
+from licensedcode import query
 
-from test_detection_datadriven import make_license_test_function
-from commoncode.fileutils import file_name
+
+# set to True to print matched texts on test failure.
+TRACE_TEXTS = True
 
 
 """
-Validate that each reference license texts and each rule is properly detected.
+Validate that each license text and each rule is properly detected.
 """
 
-def build_license_validation_tests(data_set, clazz):
+def license_keys(matches, unique_keys=False):
+    """
+    Return a flattened list of detected license keys, sorted by position and then rule order.
+    """
+    all_keys = functional.flatten(match.rule.licenses for match in matches)
+    if unique_keys:
+        all_keys = sorted(set(all_keys))
+    return all_keys
+
+
+def make_license_test_function(expected_licenses, test_file, test_name, unique_keys=False, min_score=100, detect_negative=True):
+    """
+    Build a test function closing on tests arguments
+    """
+    if not isinstance(expected_licenses, list):
+        expected_licenses = [expected_licenses]
+
+    def data_driven_test_function(self):
+        idx = index.get_index()
+        file_tested = test_file
+        matches = idx.match(location=test_file, min_score=min_score, _detect_negative=detect_negative)
+        if not matches:
+            assert [] == ['No match: min_score:{min_score}. detect_negative={detect_negative}, test_file: file://{file_tested}'.format(**locals())]
+
+        detected_licenses = functional.flatten(match.rule.licenses for match in matches)
+        try:
+            assert expected_licenses == detected_licenses
+        except:
+            # on failure, we compare against more result data to get additional
+            # failure details, including the test_file and full match details
+            matches_texts = []
+            if TRACE_TEXTS:
+                for match in matches:
+                    qtext, itext = query.get_texts(match, location=test_file, dictionary=idx.dictionary)
+                    matches_texts.extend(['', '', 
+                        '======= MATCH ====', match, 
+                        '======= Matched Query Text for: file://' + test_file , qtext.splitlines(), '',
+                        '======= Matched Rule Text for file://' + match.rule.text_file, itext.splitlines(),
+                    ])
+            assert expected_licenses == [detected_licenses] + [test_name, 'test file: file://' + test_file] + matches_texts
+
+    data_driven_test_function.__name__ = test_name
+    data_driven_test_function.funcname = test_name
+    return data_driven_test_function
+
+
+def build_license_validation_tests(licenses_by_key, cls):
     """
     Dynamically build an individual test method for each license texts and spdx
     texts in a licenses `data_set` then mapping attaching the test method to the
-    `clazz` test class.
+    `cls` test class.
     """
-    for license_key, license_obj in data_set.items():
+    for license_key, license_obj in licenses_by_key.items():
         if license_obj.text_file and os.path.exists(license_obj.text_file):
             test_name = ('test_validate_self_detection_of_text_for_' + text.python_safe_name(license_key))
             # also verify that we are detecting exactly with the license rule itself
-            expected_rule_identifier = file_name(license_obj.text_file)
-            test_method = make_license_test_function(license_key, license_obj.text_file, expected_rule_identifier, test_name, min_score=100, detect_negative=True)
-            setattr(clazz, test_name, test_method)
+            test_method = make_license_test_function(license_key, license_obj.text_file, test_name, unique_keys=True, min_score=100, detect_negative=True)
+            setattr(cls, test_name, test_method)
 
         if license_obj.spdx_license_key:
             if license_obj.spdx_file and os.path.exists(license_obj.spdx_file):
                 test_name = ('test_validate_self_detection_of_spdx_text_for_' + text.python_safe_name(license_key))
-                # also verify that we are detecting exactly with the license rule itself
-                expected_rule_identifier = file_name(license_obj.spdx_file,)
-                test_method = make_license_test_function(license_key, license_obj.spdx_file, test_name, expected_rule_identifier, min_score=100, detect_negative=True)
-                setattr(clazz, test_name, test_method)
+                test_method = make_license_test_function(license_key, license_obj.spdx_file, test_name, unique_keys=True, min_score=100, detect_negative=True)
+                setattr(cls, test_name, test_method)
 
 
 class TestValidateLicenseTextDetection(unittest.TestCase):
@@ -66,19 +113,19 @@ class TestValidateLicenseTextDetection(unittest.TestCase):
     pass
 
 
-build_license_validation_tests(data_set=models.get_licenses_by_key(), clazz=TestValidateLicenseTextDetection)
+build_license_validation_tests(models.get_licenses_by_key(), TestValidateLicenseTextDetection)
 
 
-def build_rule_validation_tests(rules, clazz):
+def build_rule_validation_tests(rules, cls):
     """
     Dynamically build an individual test method for each rule texts in a rules
-    `data_set` then mapping attaching the test method to the `clazz` test class.
+    `data_set` then mapping attaching the test method to the `cls` test class.
     """
     for rule in rules:
-        expected_rule_identifier = rule.identifier()
-        test_name = ('test_validate_self_detection_of_rule_for_' + text.python_safe_name(expected_rule_identifier))
-        test_method = make_license_test_function(rule.licenses, rule.text_file, test_name, expected_rule_identifier, min_score=100, detect_negative=not rule.negative())
-        setattr(clazz, test_name, test_method)
+        expected_identifier = rule.identifier()
+        test_name = ('test_validate_self_detection_of_rule_for_' + text.python_safe_name(expected_identifier))
+        test_method = make_license_test_function(rule.licenses, rule.text_file, test_name, unique_keys=True, min_score=100, detect_negative=not rule.negative())
+        setattr(cls, test_name, test_method)
 
 
 class TestValidateLicenseRuleSelfDetection(unittest.TestCase):
@@ -86,4 +133,4 @@ class TestValidateLicenseRuleSelfDetection(unittest.TestCase):
     pass
 
 
-build_rule_validation_tests(data_set=models.rules(), clazz=TestValidateLicenseRuleSelfDetection)
+build_rule_validation_tests(models.rules(), TestValidateLicenseRuleSelfDetection)

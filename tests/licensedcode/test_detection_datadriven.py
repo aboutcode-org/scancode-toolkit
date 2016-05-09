@@ -31,6 +31,7 @@ from os.path import abspath
 from os.path import join
 import unittest
 from unittest.case import expectedFailure
+from unittest.case import skip
 
 from commoncode import fileutils
 from commoncode import functional
@@ -38,9 +39,13 @@ from commoncode import text
 
 from licensedcode import saneyaml
 from licensedcode import index
+from licensedcode import query
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data/licenses')
+
+# set to True to print matched texts on test failure.
+TRACE_TEXTS = True
 
 
 """
@@ -82,6 +87,7 @@ class LicenseTest(object):
         self.license = data.get('license', None)
         self.notes = data.get('notes')
         self.expected_failure = data.get('expected_failure', False)
+        self.skip = data.get('skip', False)
 
     def asdict(self):
         dct = OrderedDict()
@@ -89,6 +95,8 @@ class LicenseTest(object):
             dct['licenses'] = self.licenses
         if self.expected_failure:
             dct['expected_failure'] = self.expected_failure
+        if self.skip:
+            dct['skip'] = self.skip
         if self.notes:
             dct['notes'] = self.notes
         return dct
@@ -127,7 +135,7 @@ def load_license_tests(test_dir=TEST_DATA_DIR):
     diff = set(data_files.keys()).symmetric_difference(set(test_files.keys()))
     assert not diff
 
-    # second, create pairs of a data_file and the corresponding test file
+    # second, create pairs of corresponding (data_file, test file) for files
     # that have the same base_name
     for base_name, data_file in data_files.items():
         test_file = test_files[base_name]
@@ -147,6 +155,9 @@ def build_tests(license_tests, clazz):
         test_name = text.python_safe_name(test_name)
         # closure on the test params
         test_method = make_license_test_function(test.licenses, tf, test_name)
+        skipper = skip('Skipping long test')
+        if test.skip:
+            test_method = skipper(test_method)
 
         if test.expected_failure:
             test_method = expectedFailure(test_method)
@@ -154,14 +165,10 @@ def build_tests(license_tests, clazz):
         setattr(clazz, test_name, test_method)
 
 
-def license_keys(matches):
-    """
-    Return a flattened list of detected license keys, sorted by position and then rule order.
-    """
-    return functional.flatten(match.rule.licenses for match in matches)
+# TODO: check that we do not have duplicated tests with same data and text
+TRACE = False
 
-
-def make_license_test_function(expected_licenses, test_file, test_name, expected_rule_identifier=None, min_score=100, detect_negative=True):
+def make_license_test_function(expected_licenses, test_file, test_name, min_score=100, detect_negative=True):
     """
     Build a test function closing on tests arguments
     """
@@ -170,24 +177,30 @@ def make_license_test_function(expected_licenses, test_file, test_name, expected
 
     def data_driven_test_function(self):
         idx = index.get_index()
+        file_tested = test_file
         matches = idx.match(location=test_file, min_score=min_score, _detect_negative=detect_negative)
+        if not matches:
+            assert [] == ['No match: min_score:{min_score}. detect_negative={detect_negative}, test_file: file://{file_tested}'.format(**locals())]
+
         # TODO: we should expect matches properly, not with a grab bag of flat license keys
-        license_result = license_keys(matches)
+        # flattened list of all detected license keys across all matches.
+        detected_licenses = functional.flatten(match.rule.licenses for match in matches)
         try:
-            assert expected_licenses == license_result
-            # used for validation testing of rules and licenses self detection
-            if expected_rule_identifier:
-                for match in matches:
-                    assert expected_rule_identifier == match.rule.identifier()
+            assert expected_licenses == detected_licenses
         except:
             # on failure, we compare against more result data to get additional
             # failure details, including the test_file and full match details
-            from licensedcode.query import get_texts
-            matches_with_qtexts = []
-            for m in matches:
-                qtext, itext = get_texts(m, location=test_file, dictionary=idx.dictionary, width=80)
-                matches_with_qtexts.append((m, qtext.splitlines(), m.qspans, itext.splitlines(), m.ispans,))
-            assert expected_licenses == ['test file: ' + test_file] + [repr(license_result)] + matches_with_qtexts
+            matches_texts = []
+            if TRACE_TEXTS:
+                for match in matches:
+                    qtext, itext = query.get_texts(match, location=test_file, dictionary=idx.dictionary)
+                    matches_texts.extend(['', '',
+                        '======= MATCH ====', match, 
+                        '======= Matched Query Text for: file://' + test_file , qtext.splitlines(), '',
+                        '======= Matched Rule Text for file://' + match.rule.text_file, itext.splitlines(),
+                    ])
+            assert expected_licenses == [detected_licenses] + ['test file: file://' + test_file] + matches_texts
+
 
     data_driven_test_function.__name__ = test_name
     data_driven_test_function.funcname = test_name
