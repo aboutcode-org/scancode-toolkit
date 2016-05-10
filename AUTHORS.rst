@@ -7,3 +7,6 @@ The following organizations or individuals have contributed to ScanCode:
 - Philippe Ombredanne @pombredanne
 - Sebastian Roth @ened
 - Steven Esser @majurg
+- Sebastian Schuberth @sschuberth
+- Rakesh Balusa @balusarakesh
+
