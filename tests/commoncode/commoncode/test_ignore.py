@@ -164,6 +164,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
             ('/vcs/.bzr', 'Default ignore: Bazaar artifact'),
             ('/vcs/.git', 'Default ignore: Git artifact'),
             ('/vcs/.hg', 'Default ignore: Mercurial artifact'),
+            ('/vcs/.repo', 'Default ignore: Multiple Git repository artifact'),
             ('/vcs/.svn', 'Default ignore: SVN artifact'),
             ('/vcs/CVS', 'Default ignore: CVS artifact'),
             ('/vcs/_darcs', 'Default ignore: Darcs artifact'),
