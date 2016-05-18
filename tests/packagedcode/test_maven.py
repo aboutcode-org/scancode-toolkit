@@ -383,12 +383,9 @@ class TestMavenPom(BaseMavenCase):
         self.check_pom('maven/maven1/jen-0.14.pom',
                        'maven/expectations/jen-0.14.pom.json')
 
-#     @expectedFailure
     def test_parse_pom_activemq_camel(self):
         pom_file = self.get_test_loc('maven/pom_file/activemq-camel-pom.xml')
         pom_data = maven.parse_pom(pom_file)
-        from pprint import pprint
-        pprint(pom_data)
         assert [u'org.apache.activemq'] == pom_data['maven_component_group_id']
         assert [u'5.4.2'] == pom_data['maven_component_version']
 
