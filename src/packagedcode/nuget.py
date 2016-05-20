@@ -77,18 +77,24 @@ def parse(location):
     if not nuspec:
         return
     asserted_license = models.AssertedLicense(url=nuspec.get('licenseUrl'))
+
+    authors = [models.Party(name=nuspec.get('authors'))] if nuspec.get('authors') else []
+    owners = [models.Party(name=nuspec.get('owners'))] if nuspec.get('owners') else []
+
     package = models.NugetPackage(
-        id=nuspec.get('id'),
+        location=location,
+
+        name=nuspec.get('id'),
+        version=nuspec.get('version'),
+
+        summary=nuspec.get('title'),
+        description=nuspec.get('description'),
+        homepage_url=nuspec.get('projectUrl'),
+        
+        authors=authors,
+        owners=owners,
+
         asserted_licenses=[asserted_license],
         copyrights=[nuspec.get('copyright')],
-        version=nuspec.get('version'),
-        homepage_url=nuspec.get('projectUrl'),
-        name=nuspec.get('id'),
-        description=nuspec.get('description'),
-        # FIXME: this mapping is not correct: owners and authors should be Party objects
-        authors=nuspec.get('authors'),
-        owners=nuspec.get('owners'),
-        summary=nuspec.get('title'),
-        location=location,
     )
     return package

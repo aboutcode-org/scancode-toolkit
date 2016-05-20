@@ -29,6 +29,7 @@ import os.path
 from commoncode.testcase import FileBasedTesting
 
 from packagedcode import nuget
+from collections import OrderedDict
 
 
 class TestNuget(FileBasedTesting):
@@ -36,8 +37,8 @@ class TestNuget(FileBasedTesting):
 
     def test_parse_nuspec_bootstrap(self):
         test_file = self.get_test_loc('nuget/bootstrap.nuspec')
-        output_obtained = nuget.parse_nuspec(test_file)
-        expected_output = {
+        result = nuget.parse_nuspec(test_file)
+        expected = {
             'authors': u'Twitter, Inc.',
             'copyright': u'Copyright 2015',
             'description': u'The most popular front-end framework for developing responsive, mobile first projects on the web.',
@@ -51,7 +52,7 @@ class TestNuget(FileBasedTesting):
             'title': u'Bootstrap CSS',
             'version': u'4.0.0-alpha'
         }
-        assert expected_output == output_obtained
+        assert expected == result
 
     def test_parse_nuspec_entity_framework(self):
         test_file = self.get_test_loc('nuget/EntityFramework.nuspec')
@@ -106,11 +107,34 @@ class TestNuget(FileBasedTesting):
     def test_parse_creates_package_from_nuspec(self):
         test_file = self.get_test_loc('nuget/Microsoft.Net.Http.nuspec')
         package = nuget.parse(test_file)
-        assert 'Microsoft.Net.Http' == package.name
-        assert 'Microsoft.Net.Http' == package.id
-        assert [u'Copyright \xa9 Microsoft Corporation'] == package.copyrights
-        assert '2.2.29' == package.version
-        assert 'http://go.microsoft.com/fwlink/?LinkID=280055' == package.homepage_url
-        assert 'Microsoft HTTP Client Libraries' == package.summary
-        assert 'Microsoft' == package.authors
-        assert 'Microsoft' == package.owners
+        expected = OrderedDict([
+            ('type', u'Nuget'), 
+            ('name', u'Microsoft.Net.Http'), 
+            ('version', u'2.2.29'), 
+            ('primary_language', None), 
+            ('packaging', u'archive'), 
+            ('summary', u'Microsoft HTTP Client Libraries'), 
+            ('description', u'This package includes HttpClient for sending requests over HTTP, as well as HttpRequestMessage and HttpResponseMessage for '
+                            u'processing HTTP messages.\n\nThis package is not supported in Visual Studio 2010, and is only required for projects targeting'
+                            u' .NET Framework 4.5, Windows 8, or Windows Phone 8.1 when consuming a library that uses this package.\n\nSupported Platforms:'
+                            u'\n- .NET Framework 4\n- Windows 8\n- Windows Phone 8.1\n- Windows Phone Silverlight 7.5\n- Silverlight 4\n- Portable Class Libraries'), 
+            ('payload_type', None), 
+            ('authors', [OrderedDict([('type', None), ('name', u'Microsoft'), ('email', None), ('url', None)])]), 
+            ('maintainers', []), ('contributors', []), 
+            ('owners', [OrderedDict([('type', None), ('name', u'Microsoft'), ('email', None), ('url', None)])]), 
+            ('packagers', []), ('distributors', []), ('vendors', []), 
+            ('keywords', []), ('keywords_doc_url', None), 
+            ('metafile_locations', []), 
+            ('metafile_urls', []), 
+            ('homepage_url', u'http://go.microsoft.com/fwlink/?LinkID=280055'), 
+            ('notes', None), ('download_urls', []), 
+            ('download_sha1', None), ('download_sha256', None), ('download_md5', None), 
+            ('bug_tracking_url', None), ('support_contacts', []), ('code_view_url', None), 
+            ('vcs_tool', None), ('vcs_repository', None), ('vcs_revision', None), 
+            ('copyright_top_level', None), ('copyrights', [u'Copyright \xa9 Microsoft Corporation']), 
+            ('asserted_licenses', [OrderedDict([('license', None), ('url', u'http://go.microsoft.com/fwlink/?LinkId=329770'), ('text', None), ('notice', None)])]), 
+            ('legal_file_locations', []), ('license_expression', None), ('license_texts', []), ('notice_texts', []), 
+            ('dependencies', {}), ('related_packages', [])])
+
+        
+        assert expected == package.as_dict()
