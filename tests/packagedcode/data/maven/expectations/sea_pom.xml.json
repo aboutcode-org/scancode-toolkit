@@ -84,7 +84,6 @@
     "The Seam Maven Reference implementation root POM. \n    You can use this POM as a template for your own root pom."
   ], 
   "maven_repository_connection_1": [], 
-  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "no.knowit.seam : root : 2.2.0-SNAPSHOT"

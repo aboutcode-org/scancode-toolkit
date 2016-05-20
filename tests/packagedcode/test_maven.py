@@ -37,7 +37,7 @@ from commoncode import fileutils
 
 from packagedcode import maven
 from packagedcode import xmlutils
-from packagedcode.models import MavenPackage
+from packagedcode.models import MavenJar
 
 
 class BaseMavenCase(testcase.FileBasedTesting):
@@ -384,32 +384,62 @@ class TestMavenPom(BaseMavenCase):
                        'maven/expectations/jen-0.14.pom.json')
 
     def test_parse_pom_activemq_camel(self):
-        pom_file = self.get_test_loc('maven/pom_file/activemq-camel-pom.xml')
-        pom_data = maven.parse_pom(pom_file)
-        assert [u'org.apache.activemq'] == pom_data['maven_component_group_id']
-        assert [u'5.4.2'] == pom_data['maven_component_version']
+        self.check_pom('maven/maven2/activemq-camel-pom.xml',
+                       'maven/expectations/activemq-camel-pom.xml.json', regen=False)
 
 
 class TestMavenPackage(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_parse_as_package(self):
-        test_file = self.get_test_loc('maven/pom_file/spring-beans-4.2.2.RELEASE.pom.xml')
+    def test_parse_to_package(self):
+        test_file = self.get_test_loc('maven/maven2/spring-beans-4.2.2.RELEASE.pom.xml')
         package = maven.parse(test_file)
-        assert isinstance(package, MavenPackage)
-        assert 'spring-beans' == package.name
-        assert '4.2.2.RELEASE' == package.version
-        assert 'https://github.com/spring-projects/spring-framework' == package.homepage_url
-        assert 'org.springframework' == package.id
-        expected = [OrderedDict([
-            ('license', [u'The Apache Software License, Version 2.0']),
-            ('text', None),
-            ('notice', None),
-            ('url', [u'http://www.apache.org/licenses/LICENSE-2.0.txt'])
-        ])]
-        assert  expected == [l.as_dict() for l in package.asserted_licenses]
-        assert  'Juergen Hoeller' == package.authors
-        assert ['http://www.apache.org/licenses/LICENSE-2.0.txt'] == [lic.url for lic in package.asserted_licenses if lic.url][0]
+
+        assert isinstance(package, MavenJar)
+        expected = [
+            ('type', u'Apache Maven'),
+            ('name', u'org.springframework:spring-beans'),
+            ('version', u'4.2.2.RELEASE'),
+            ('primary_language', u'Java'),
+            ('packaging', u'archive'),
+            ('summary', u'Spring Beans'),
+            ('description', u'Spring Beans'),
+            ('payload_type', None),
+            ('authors', [OrderedDict([('type', u'person'), ('name', u'Juergen Hoeller'), ('email', u'jhoeller@pivotal.io'), ('url', None)])]),
+            ('maintainers', []),
+            ('contributors', []),
+            ('owners', [OrderedDict([('type', u'organization'), ('name', u'Spring IO'), ('email', None), ('url', u'http://projects.spring.io/spring-framework')])]),
+            ('packagers', []),
+            ('distributors', []),
+            ('vendors', []),
+            ('keywords', []),
+            ('keywords_doc_url', None),
+            ('metafile_locations', []),
+            ('metafile_urls', []),
+            ('homepage_url', u'https://github.com/spring-projects/spring-framework'),
+            ('notes', None),
+            ('download_urls', []),
+            ('download_sha1', None),
+            ('download_sha256', None),
+            ('download_md5', None),
+            ('bug_tracking_url', None),
+            ('support_contacts', []),
+            ('code_view_url', None),
+            ('vcs_tool', None),
+            ('vcs_repository', None),
+            ('vcs_revision', None),
+            ('copyright_top_level', None),
+            ('copyrights', []),
+            ('asserted_licenses', [OrderedDict([('license', u'The Apache Software License, Version 2.0'), ('url', u'http://www.apache.org/licenses/LICENSE-2.0.txt'), ('text', None), ('notice', None)])]),
+            ('legal_file_locations', []),
+            ('license_expression', None),
+            ('license_texts', []),
+            ('notice_texts', []),
+            ('dependencies', {}),
+            ('related_packages', [])
+        ]
+        assert expected == package.as_dict().items()
+        package.validate()
 
 
 class TestMavenDataDriven(BaseMavenCase):

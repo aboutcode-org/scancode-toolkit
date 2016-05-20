@@ -25,6 +25,7 @@
 from __future__ import absolute_import, print_function
 
 from functools import partial
+from itertools import izip_longest
 import logging
 import os.path
 from os.path import dirname
@@ -50,10 +51,11 @@ Support Maven POMs including older versions.
 Attempts to resolve some Maven properties when possible.
 """
 
-# FIXME: use Maven Java code directly or pymaven instead.
+# FIXME: use Maven Java code directly or pymaven instead. The parsing done here is rather weird.
+# the only part that is somewheta interesting short of using the original Maven parser is the properties resolution
 
-# FIXME: Maven 1 is an oddity and the code should cleaned to deal separately
-# with eachy version
+# FIXME: Maven 1 is an oddity and the code should cleaned to deal separately with each version
+# or Maven1 support dropped entirely
 
 
 # Maven1 field name -> xpath
@@ -88,7 +90,6 @@ MAVEN2_FIELDS = [
     ('license', '/project/licenses/license/name'),
     ('license_comments', '/project/licenses/license/comments'),
     ('license_distribution', '/project/licenses/license/distribution'),
-    ('license_name', '/project/licenses/license/name'),
     ('license_url', '/project/licenses/license/url'),
 
     ('organization_name', '/project/organization/name'),
@@ -364,7 +365,7 @@ def resolve_properties(value, properties):
             logger.debug('   resolve_properties: KeyError')
 
             msg = ('Failed to resolve property %(val)r. error:\n%(e)r' % locals())
-            logger.debug('   resolve_properties: '+ msg)
+            logger.debug('   resolve_properties: ' + msg)
             # always accumulate the raw value if we failed to resolve
             original = u'${%(val)s}' % locals()
             logger.debug('   resolve_properties: IndexError: resolved_props.append(%(original)r)' % locals())
@@ -484,6 +485,7 @@ def extract_pom_data(xdoc, fields=MAVEN_FIELDS):
 
         if resolved:
             logger.debug(' extract_pom_data: found: {resolved}'.format(**locals()))
+        # FIXME: this is grossly incorrect!
         pom_data[name] = resolved or []
 
     # logger.debug(' found: {pom_data}'.format(**locals()))
@@ -510,25 +512,6 @@ def inherit_from_parent(pom_data):
     return pom_data
 
 
-def transposed(lists):
-    """
-    Transpose a list of lists.
-
-    Equivalent to these examples:
-    >>> a=[[1,2,3],[4,5,6]]
-    >>> transposed(a)
-    [[1, 4], [2, 5], [3, 6]]
-    >>> zip(*a)
-    [(1, 4), (2, 5), (3, 6)]
-    >>> map(None,a)
-    [[1, 2, 3], [4, 5, 6]]
-    >>> map(None,*a)
-    [(1, 4), (2, 5), (3, 6)]
-    """
-    if not lists:
-        return []
-    return map(lambda *row: list(row), *lists)
-
 
 def parse(location):
     """
@@ -536,18 +519,53 @@ def parse(location):
     """
     if not location.endswith('pom.xml') or location.endswith('.pom'):
         return
+
     pom = parse_pom(location)
-    logger.debug('POM: \n' + repr(pom))
-    asserted_license = models.AssertedLicense(license=pom['maven_license'], url=pom['maven_license_url'])
-    package = models.MavenPackage(
-        version=''.join(pom['maven_component_version']),
-        id=''.join(pom['maven_component_group_id']),
-        authors='\n'.join(pom['maven_developer_name']),
-        homepage_url=''.join(pom['maven_project_url']),
-        description=''.join(pom['maven_project_description']),
-        name=''.join(pom['maven_component_artifact_id']),
-        asserted_licenses=[asserted_license],
-        location=location
+
+    def get_val(key):
+        val = pom.get(key)
+        if not val:
+            return
+        if isinstance(val, list) and len(val) == 1:
+            return val[0]
+        else:
+            return u'\n'.join(val)
+
+    group_artifact = ':'.join([get_val('maven_component_group_id'), get_val('maven_component_artifact_id')])
+    
+    # FIXME: the way we collect nested tags is entirely WRONG, especially for licenses
+    # attempt to align licenses for now
+    licenses = izip_longest(
+        pom['maven_license'],
+        pom['maven_license_url'],
+        pom['maven_license_comments'],
+    )
+    licenses = [models.AssertedLicense(license=lic, url=url, notice=comments)
+                for lic, url, comments in licenses]
+
+    authors = izip_longest(
+        pom['maven_developer_name'],
+        pom['maven_developer_email'],
+    )
+    authors = [models.Party(type=models.party_person, name=name, email=email) for name, email in authors]
+
+    orgs = izip_longest(
+        pom['maven_organization_name'],
+        pom['maven_organization_url'],
+    )
+    orgs = [models.Party(type=models.party_org, name=name, url=url) for name, url in orgs]
+
+    package = models.MavenJar(
+        location=location,
+        name=group_artifact,
+        # FIXME: this is not right: name and identifier should be storable
+        summary=get_val('maven_project_name'),
+        version=get_val('maven_component_version'),
+        homepage_url=get_val('maven_project_url'),
+        description=get_val('maven_project_description'),
+        asserted_licenses=licenses,
+        authors=authors,
+        owners=orgs,
     )
     return package
 
@@ -556,6 +574,8 @@ class MavenRecognizer(object):
     """
     A package recognizer for Maven-based packages.
     """
+    def __init__(self):
+        return NotImplementedError()
 
     def recon(self, location):
         for f in  os.listdir(location):

@@ -77,9 +77,6 @@
     "Transform fixed-length and variable-length text files into beans and back"
   ], 
   "maven_repository_connection_1": [], 
-  "maven_license_name": [
-    "LGPL"
-  ], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "jrecordbind"

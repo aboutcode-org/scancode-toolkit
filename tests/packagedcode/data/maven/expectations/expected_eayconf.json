@@ -72,7 +72,6 @@
     "EasyConf is a library to access configuration of software components and applications. \n    It defines simple conventions to make it easier to use. It was born in a portlets-based \n    portal and has several features useful for this and similar environments."
   ], 
   "maven_repository_connection_1": [], 
-  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "Easyconf library"

@@ -59,7 +59,6 @@
   "maven_repository_connection_1": [
     "scm:cvs:pserver:anonymous@cvs.sourceforge.net:/cvsroot/palmed:palmed"
   ], 
-  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [
     "scm:cvs:ssh:${maven.username}@cvs.sourceforge.net:/cvsroot/palmed:palmed"
   ], 

@@ -49,7 +49,6 @@
     "contains the sshexec and scp tasks\n  jsch 0.1.29 might not be available from maven"
   ], 
   "maven_repository_connection_1": [], 
-  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": []
 }
