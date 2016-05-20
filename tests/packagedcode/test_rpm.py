@@ -26,112 +26,69 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import os
-from collections import OrderedDict
 
 from commoncode.testcase import FileBasedTesting
 
 from packagedcode import rpm
+from collections import OrderedDict
 
 
 class TestRpm(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_parse(self):
+    def test_parse_to_package(self):
         test_file = self.get_test_loc('rpm/header/libproxy-bin-0.3.0-4.el6_3.x86_64.rpm')
         package = rpm.parse(test_file)
-        expected = OrderedDict([
-            ('asserted_licenses',
-             [{'license': u'LGPLv2+', 'notice': None, 'text': None, 'url': None}]),
-            ('authors', []),
-            ('bug_tracking_url', None),
-            ('code_view_url', None),
-            ('contributors', []),
-            ('copyright_top_level', None),
-            ('copyrights', []),
-            ('dependencies', {}),
+        expected = [
+            ('type', u'RPM'),
+            ('name', u'libproxy-bin'),
+            ('version', u'0.3.0-4.el6_3'),
+            ('primary_language', None),
+            ('packaging', u'archive'),
+            ('summary', u'Binary to test libproxy'),
             ('description',
              u'The libproxy-bin package contains the proxy binary for libproxy'),
-            ('distributors', [{'email': None, 'name': u'', 'type': None, 'url': None}]),
-            ('download_md5', None),
-            ('download_sha1', None),
-            ('download_sha256', None),
-            ('download_urls', []),
-            ('homepage_url', u'http://code.google.com/p/libproxy/'),
-            ('id', None),
+            ('payload_type', None),
+            ('authors', []),
+            ('maintainers', []),
+            ('contributors', []),
+            ('owners', []),
+            ('packagers', []),
+            ('distributors',
+             [OrderedDict([('type', None), ('name', u''), ('email', None), ('url', None)])]),
+            ('vendors',
+             [OrderedDict([('type', None), ('name', u'CentOS'), ('email', None), ('url', None)])]),
             ('keywords', []),
             ('keywords_doc_url', None),
+            ('metafile_locations', []),
+            ('metafile_urls', []),
+            ('homepage_url', u'http://code.google.com/p/libproxy/'),
+            ('notes', None),
+            ('download_urls', []),
+            ('download_sha1', None),
+            ('download_sha256', None),
+            ('download_md5', None),
+            ('bug_tracking_url', None),
+            ('support_contacts', []),
+            ('code_view_url', None),
+            ('vcs_tool', None),
+            ('vcs_repository', None),
+            ('vcs_revision', None),
+            ('copyright_top_level', None),
+            ('copyrights', []),
+            ('asserted_licenses',
+             [OrderedDict([('license', u'LGPLv2+'), ('url', None), ('text', None), ('notice', None)])]),
             ('legal_file_locations', []),
             ('license_expression', None),
             ('license_texts', []),
-            ('maintainers', []),
-            ('metafile_locations', []),
-            ('metafile_urls', []),
-            ('name', u'libproxy-bin'),
-            ('notes', None),
             ('notice_texts', []),
-            ('owners', []),
-            ('packagers', []),
-            ('packaging', u'archive'),
-            ('payload_type', None),
+            ('dependencies', {}),
             ('related_packages',
-             [{'asserted_licenses': [],
-               'authors': [],
-               'bug_tracking_url': None,
-               'code_view_url': None,
-               'contributors': [],
-               'copyright_top_level': None,
-               'copyrights': [],
-               'dependencies': {},
-               'description': None,
-               'distributors': [],
-               'download_md5': None,
-               'download_sha1': None,
-               'download_sha256': None,
-               'download_urls': [],
-               'homepage_url': None,
-               'id': None,
-               'keywords': [],
-               'keywords_doc_url': None,
-               'legal_file_locations': [],
-               'license_expression': None,
-               'license_texts': [],
-               'maintainers': [],
-               'metafile_locations': [],
-               'metafile_urls': [],
-               'name': u'libproxy-0.3.0-4.el6_3.src.rpm',
-               'notes': None,
-               'notice_texts': [],
-               'owners': [],
-               'packagers': [],
-               'packaging': u'archive',
-               'payload_type': None,
-               'related_packages': [],
-               'summary': None,
-               'support_contacts': [],
-               'type': u'RPM',
-               'vcs_repository': None,
-               'vcs_revision': None,
-               'vcs_tool': None,
-               'vendors': [],
-               'versioning': None}]),
-            ('summary', u'Binary to test libproxy'),
-            ('support_contacts', []),
-            ('type', u'RPM'),
-            ('vcs_repository', None),
-            ('vcs_revision', None),
-            ('vcs_tool', None),
-            ('vendors', [{'email': None, 'name': u'CentOS', 'type': None, 'url': None}]),
-            ('versioning', {'epoch': None, 'release': u'4.el6_3', 'version': u'0.3.0'})]
+             [OrderedDict([('type', u'RPM'), ('name', u'libproxy'), ('version', u'0.3.0-4.el6_3'), ('payload_type', 'source')])])
+        ]
 
-        )
-
-        no_errors = True
-        try:
-            package.validate()
-        except:
-            no_errors = False
-        self.assertTrue(no_errors)
-        assert expected == package.as_dict()
+        assert expected == package.as_dict().items()
+        package.validate()
 
     def test_pyrpm_basic(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')
