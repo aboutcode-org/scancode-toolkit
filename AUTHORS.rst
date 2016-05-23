@@ -9,4 +9,5 @@ The following organizations or individuals have contributed to ScanCode:
 - Steven Esser @majurg
 - Sebastian Schuberth @sschuberth
 - Rakesh Balusa @balusarakesh
-
+- Francois Granade @farialima
+- Savino Sguera @savinos
