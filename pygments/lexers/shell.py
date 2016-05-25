@@ -452,9 +452,9 @@ class BatchLexer(RegexLexer):
              bygroups(String.Double, using(this, state='string'), Text,
                       Punctuation)),
             (r'"', String.Double, ('#pop', 'for2', 'string')),
-            (r"('(?:%s|[\w\W])*?')([%s%s]*)(\))" % (_variable, _nl, _ws),
+            (r"('(?:%%%%|%s|[\w\W])*?')([%s%s]*)(\))" % (_variable, _nl, _ws),
              bygroups(using(this, state='sqstring'), Text, Punctuation)),
-            (r'(`(?:%s|[\w\W])*?`)([%s%s]*)(\))' % (_variable, _nl, _ws),
+            (r'(`(?:%%%%|%s|[\w\W])*?`)([%s%s]*)(\))' % (_variable, _nl, _ws),
              bygroups(using(this, state='bqstring'), Text, Punctuation)),
             include('for2')
         ],
