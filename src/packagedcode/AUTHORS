@@ -65,6 +65,7 @@ Other contributors, listed alphabetically, are:
 * Alex Gilding -- BlitzBasic lexer
 * Bertrand Goetzmann -- Groovy lexer
 * Krzysiek Goj -- Scala lexer
+* Andrey Golovizin -- BibTeX lexers
 * Matt Good -- Genshi, Cheetah lexers
 * Michał Górny -- vim modeline support
 * Alex Gosse -- TrafficScript lexer
