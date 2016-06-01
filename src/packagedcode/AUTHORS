@@ -7,7 +7,7 @@ Other contributors, listed alphabetically, are:
 
 * Sam Aaron -- Ioke lexer
 * Ali Afshar -- image formatter
-* Thomas Aglassinger -- Easytrieve, JCL and Rexx lexers
+* Thomas Aglassinger -- Easytrieve, JCL, Rexx and Transact-SQL lexers
 * Muthiah Annamalai -- Ezhil lexer
 * Kumar Appaiah -- Debian control lexer
 * Andreas Amann -- AppleScript lexer
@@ -37,7 +37,7 @@ Other contributors, listed alphabetically, are:
 * chebee7i -- Python traceback lexer improvements
 * Hiram Chirino -- Scaml and Jade lexers
 * Ian Cooper -- VGL lexer
-* David Corbett -- Inform, Jasmin, JSGF, and TADS 3 lexers
+* David Corbett -- Inform, Jasmin, JSGF, Snowball, and TADS 3 lexers
 * Leaf Corcoran -- MoonScript lexer
 * Christopher Creutzig -- MuPAD lexer
 * Daniël W. Crompton -- Pike lexer
@@ -65,6 +65,7 @@ Other contributors, listed alphabetically, are:
 * Alex Gilding -- BlitzBasic lexer
 * Bertrand Goetzmann -- Groovy lexer
 * Krzysiek Goj -- Scala lexer
+* Andrey Golovizin -- BibTeX lexers
 * Matt Good -- Genshi, Cheetah lexers
 * Michał Górny -- vim modeline support
 * Alex Gosse -- TrafficScript lexer
@@ -152,6 +153,7 @@ Other contributors, listed alphabetically, are:
 * Dominik Picheta -- Nimrod lexer
 * Andrew Pinkham -- RTF Formatter Refactoring
 * Clément Prévost -- UrbiScript lexer
+* Oleh Prypin -- Crystal lexer (based on Ruby lexer)
 * Elias Rabel -- Fortran fixed form lexer
 * raichoo -- Idris lexer
 * Kashif Rasul -- CUDA lexer
@@ -169,6 +171,7 @@ Other contributors, listed alphabetically, are:
 * Matteo Sasso -- Common Lisp lexer
 * Joe Schafer -- Ada lexer
 * Ken Schutte -- Matlab lexers
+* Sebastian Schweizer -- Whiley lexer
 * Tassilo Schweyer -- Io, MOOCode lexers
 * Ted Shaw -- AutoIt lexer
 * Joerg Sieker -- ABAP lexer
@@ -178,7 +181,7 @@ Other contributors, listed alphabetically, are:
 * Alexander Smishlajev -- Visual FoxPro lexer
 * Steve Spigarelli -- XQuery lexer
 * Jerome St-Louis -- eC lexer
-* Camil Staps -- Clean lexer
+* Camil Staps -- Clean and NuSMV lexers
 * James Strachan -- Kotlin lexer
 * Tom Stuart -- Treetop lexer
 * Colin Sullivan -- SuperCollider lexer
