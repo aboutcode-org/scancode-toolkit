@@ -83,7 +83,7 @@ class BashLexer(RegexLexer):
             (r'&', Punctuation),
             (r'\|', Punctuation),
             (r'\s+', Text),
-            (r'\d+(?= |\Z)', Number),
+            (r'\d+\b', Number),
             (r'[^=\s\[\]{}()$"\'`\\<&|;]+', Text),
             (r'<', Text),
         ],
