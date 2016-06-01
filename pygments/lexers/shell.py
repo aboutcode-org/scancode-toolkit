@@ -137,11 +137,15 @@ class ShellSessionBaseLexer(Lexer):
         pos = 0
         curcode = ''
         insertions = []
+        backslash_continuation = False
 
         for match in line_re.finditer(text):
             line = match.group()
             m = re.match(self._ps1rgx, line)
-            if m:
+            if backslash_continuation:
+                curcode += line
+                backslash_continuation = curcode.endswith('\\\n')
+            elif m:
                 # To support output lexers (say diff output), the output
                 # needs to be broken by prompts whenever the output lexer
                 # changes.
@@ -151,10 +155,12 @@ class ShellSessionBaseLexer(Lexer):
                 insertions.append((len(curcode),
                                    [(0, Generic.Prompt, m.group(1))]))
                 curcode += m.group(2)
+                backslash_continuation = curcode.endswith('\\\n')
             elif line.startswith(self._ps2):
                 insertions.append((len(curcode),
                                    [(0, Generic.Prompt, line[:len(self._ps2)])]))
                 curcode += line[len(self._ps2):]
+                backslash_continuation = curcode.endswith('\\\n')
             else:
                 if insertions:
                     toks = innerlexer.get_tokens_unprocessed(curcode)
