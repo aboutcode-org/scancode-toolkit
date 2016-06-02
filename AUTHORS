@@ -212,5 +212,6 @@ Other contributors, listed alphabetically, are:
 * Alex Zimin -- Nemerle lexer
 * Rob Zimmerman -- Kal lexer
 * Vincent Zurczak -- Roboconf lexer
+* Kurt Neufeld -- Markdown lexer
 
 Many thanks for all contributions!
