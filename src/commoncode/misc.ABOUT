@@ -1,0 +1,8 @@
+about_resource: misc.py
+download_url: 
+    - http://code.activestate.com/recipes/578433-mixin-for-pickling-objects-with-__slots__/
+
+dje_license: mit
+license_text_file: misc.LICENSE
+copyright: Copyright (c) 2013 Oren Tirosh
+owner: Oren Tirosh
