@@ -1,2 +1,3 @@
 licenses:
     - bsd-original-uc
+expected_contains: yes

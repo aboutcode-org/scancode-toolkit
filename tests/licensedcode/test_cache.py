@@ -28,34 +28,160 @@ import os
 
 from commoncode.testcase import FileBasedTesting
 
+from licensedcode import index
+from licensedcode import models
+from licensedcode.match import get_texts
+
+
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
-class TestMatchCache(FileBasedTesting):
+class LicenseMatchCacheTest(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def test_cache(self):
-        raise NotImplementedError()
-    """
-E             +  '======= MATCH ====================================',
-E             +  LicenseMatch<'spl-1.0_6.RULE', u'spl-1.0', score=33.33, qlen=1, ilen=1, rlen=3, qreg=(0, 0), ireg=(1, 1), lines=(0, 0), 'multigram_chunk cached'>,
-E             +  '',
-E             +  '======= Matched Query Text for: file:///home/pombreda/w421/scancode-toolkit-ref/tests/licensedcode/data/licenses/sun-bcl-sdk-5.0_2.html ==================',
-E             +  [],
-E             +  '',
-E             +  '======= Matched Rule Text for file:///home/pombreda/w421/scancode-toolkit-ref/src/licensedcode/data/rules/spl-1.0_6.RULE',
-E             +  ' ============================',
-E             +  [u'Public'],
-E             +  '',
-E             +  '======= MATCH ====================================',
-E             +  LicenseMatch<'apache-2.0_1.RULE', u'apache-2.0', score=0.46, qlen=7, ilen=7, rlen=1538, qreg=(0, 20), ireg=(44, 50), lines=(0, 2), 'multigram_chunk cached'>,
-E             +  '',
-E             +  '======= Matched Query Text for: file:///home/pombreda/w421/scancode-toolkit-ref/tests/licensedcode/data/licenses/sun-bcl-sdk-5.0_2.html ==================',
-E             +  [u'<no-match> <no-match> <no-match> <no-match> <no-match> <no-match> 01 <no-match> <no-match> <no-match> <no-match>',
-E             +   u'<no-match> <no-match> head meta http <no-match> <no-match> <no-match> content'],
-E             +  '',
-E             +  '======= Matched Rule Text for file:///home/pombreda/w421/scancode-toolkit-ref/src/licensedcode/data/rules/apache-2.0_1.RULE',
-E             +  ' ============================',
-E             +  [u'0 license can be found at http']]
+    def get_test_rules(self, base, subset=None):
+        base = self.get_test_loc(base)
+        test_files = sorted(os.listdir(base))
+        if subset:
+            test_files = [t for t in test_files if t in subset]
+        return [models.Rule(text_file=os.path.join(base, license_key), licenses=[license_key]) for license_key in test_files]
 
-    """
+    def test_cached_match_plain(self):
+        idx = index.LicenseIndex(self.get_test_rules('cache/plain'))
+        cache_dir = self.get_temp_dir('license_cache')
+
+        query_loc = self.get_test_loc('cache/queryplain.txt')
+        result = idx.match(location=query_loc, use_cache=cache_dir)
+        assert 1 == len(result)
+        match = result[0]
+        assert 'chunk' == match._type
+        assert 1 == len(os.listdir(cache_dir))
+
+        # match again to check a cache hit
+        result = idx.match(location=query_loc, use_cache=cache_dir)
+        assert 1 == len(result)
+        cached_match = result[0]
+        assert 'cache' in cached_match._type
+        assert cached_match.same(match)
+        assert 1 == len(os.listdir(cache_dir))
+
+    def test_cached_match_to_template(self):
+        rule = models.Rule(text_file=self.get_test_loc('cache/templates/idx.txt'), licenses=['test'],)
+        idx = index.LicenseIndex([rule])
+        cache_dir = self.get_temp_dir('license_cache')
+
+        query_loc = self.get_test_loc('cache/templates/query.txt')
+        result = idx.match(location=query_loc, use_cache=cache_dir)
+        assert 1 == len(result)
+        match = result[0]
+        assert 'chunk' == match._type
+        assert 1 == len(os.listdir(cache_dir))
+
+        # match again to check a cache hit
+        result = idx.match(location=query_loc, use_cache=cache_dir)
+        assert 1 == len(result)
+        cached_match = result[0]
+        assert 'cache' in cached_match._type
+        assert cached_match.same(match)
+        assert 1 == len(os.listdir(cache_dir))
+
+    def test_cache_hits_with_different_query_runs_rebase_correctly(self):
+        bsd_new = 'Redistribution and use in source and binary forms are permitted'
+        bsd_no_mod = 'Redistribution and use in source and binary forms unmodified are permitted'
+        bsd_orig = 'Redistribution and use in source and binary forms are permitted by the regents'
+
+        rules = [
+            models.Rule(_text=bsd_new, licenses=['bsd_new']),
+            models.Rule(_text=bsd_no_mod, licenses=['bsd_no_mod']),
+            models.Rule(_text=bsd_orig, licenses=['bsd_orig']),
+        ]
+
+        idx = index.LicenseIndex(rules)
+        cache_dir = self.get_temp_dir('license_cache')
+
+        querys = 'Redistribution and use in source and binary forms are permitted are'
+        match = idx.match(query_string=querys, use_cache=cache_dir)[0]
+        assert 1 == len(os.listdir(cache_dir))
+        assert 'chunk' == match._type
+
+        expected = 'Redistribution and use in source and binary forms are permitted'
+        qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
+        assert expected == qtext
+
+        # does not hit cache
+        querys = 'are Redistribution and use in source and binary forms are permitted are'
+        match = idx.match(query_string=querys, use_cache=cache_dir)[0]
+        assert 2 == len(os.listdir(cache_dir))
+        assert 'chunk' == match._type
+
+        expected = 'Redistribution and use in source and binary forms are permitted'
+        qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
+        assert expected == qtext
+
+        # does hit cache
+        querys = 'are Redistribution and use in source and binary forms are permitted are'
+        match = idx.match(query_string=querys, use_cache=cache_dir)[0]
+        assert 2 == len(os.listdir(cache_dir))
+        assert 'chunk cached' == match._type
+
+        expected = 'Redistribution and use in source and binary forms are permitted'
+        qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
+        assert expected == qtext
+
+        # does hit cache, with unknown
+        querys = 'are Redistribution and explicit use in source and binary forms are permitted are'
+        match = idx.match(query_string=querys, use_cache=cache_dir)[0]
+        assert 2 == len(os.listdir(cache_dir))
+        assert 'chunk cached' == match._type
+
+        expected = 'Redistribution and <no-match> use in source and binary forms are permitted'
+        qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
+        assert expected == qtext
+
+        # does hit cache, with unknown
+        querys = 'Redistribution that and explicit use in source and binary forms are permitted are'
+        match = idx.match(query_string=querys, use_cache=cache_dir)[0]
+        assert 2 == len(os.listdir(cache_dir))
+        assert 'chunk cached' == match._type
+
+        expected = 'Redistribution <no-match> and <no-match> use in source and binary forms are permitted'
+        qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
+        assert expected == qtext
+
+        # does hit cache, with unknown
+        querys = ('are Redistribution that and explicit use in source and binary forms are permitted are'
+                + '\n' * 10
+                + 'are Redistribution and explicit use in source and binary forms are permitted are'
+        )
+        matches = idx.match(query_string=querys, use_cache=cache_dir)
+        assert 3 == len(os.listdir(cache_dir))
+        assert all('chunk cached' == match._type for match in matches)
+
+        match = matches[0]
+        expected = 'Redistribution <no-match> and <no-match> use in source and binary forms are permitted'
+        qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
+        assert expected == qtext
+
+        match = matches[1]
+        expected = 'Redistribution and <no-match> use in source and binary forms are permitted'
+        qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
+        assert expected == qtext
+
+        # does hit cache, with unknown, again
+        querys = ('are Redistribution that and explicit use in source and binary forms are permitted are'
+                + '\n' * 10
+                + 'are Redistribution and explicit use in source and binary forms are permitted are'
+        )
+        matches = idx.match(query_string=querys, use_cache=cache_dir)
+        assert 3 == len(os.listdir(cache_dir))
+        assert all('chunk cached' == match._type for match in matches)
+
+        match = matches[0]
+        expected = 'Redistribution <no-match> and <no-match> use in source and binary forms are permitted'
+        qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
+        assert expected == qtext
+
+        match = matches[1]
+        expected = 'Redistribution <no-match> and <no-match> use in source and binary forms are permitted'
+        qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
+        assert expected == qtext

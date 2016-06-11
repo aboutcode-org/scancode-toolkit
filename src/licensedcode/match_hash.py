@@ -24,6 +24,7 @@
 
 from __future__ import print_function, absolute_import
 
+from array import array
 from hashlib import md5
 
 from licensedcode.whoosh_spans.spans import Span
@@ -31,7 +32,7 @@ from licensedcode.match import LicenseMatch
 
 
 """
-Matching strategy using whole rules hashes
+Matching strategy using hashes for a whole text chunk (whole rule or subset).
 """
 
 # Set to True to enable debug tracing
@@ -58,35 +59,37 @@ MATCH_TYPE = 'hash'
 
 
 def tokens_hash(tokens):
-    return md5(' '.join(map(str, tokens))).digest()
+    """
+    Return a digest binary string computed from a sequence of numeric token ids. 
+    """
+    return md5(array('h', tokens).tostring()).digest()
 
 
 def index_hash(rule_tokens):
     """
     Return a hash digest string given a sequence of rule tokens.
     """
-    # FIXME: handle gaps!
+    # FIXME: handle gaps and query runs?
     return tokens_hash(rule_tokens)
 
 
 def match_hash(idx, query_run):
     """
-    Return a sequence of LicenseMatch by matching the query_toeksn sequence
+    Return a sequence of LicenseMatch by matching the query_tokens sequence
     against the idx index.
     """
     logger_debug('match_hash: start....')
-
     matches = []
-    query_hash = tokens_hash(t for t in query_run.tokens if t is not None)
-    qspan = Span(p for p, t in enumerate(query_run.tokens) if t is not None)
-    matched_rids = idx.hashes.get(query_hash, [])
-    for rid in matched_rids:
+    query_hash = tokens_hash(query_run.tokens)
+    rid = idx.hashes.get(query_hash)
+    if rid is not None:
         rule = idx.rules_by_rid[rid]
-        logger_debug('match_hash: Match:', rule.identifier())
+        itokens = idx.tids_by_rid[rid]
+        len_junk = idx.len_junk
+        logger_debug('match_hash: Match:', rule.identifier)
+        qspan = Span(query_run.start, query_run.end)
         ispan = Span(range(0, rule.length))
-        hispan = Span(p for p, t in enumerate(idx.tokens_by_rid[rid]) if t >= idx.len_junk)
-
-        match = LicenseMatch(rule, qspan, ispan, hispan=hispan, line_by_pos=query_run.line_by_pos, query_run_start = query_run.start, _type=MATCH_TYPE)
+        hispan = Span(p for p in ispan if itokens[p] >= len_junk)
+        match = LicenseMatch(rule, qspan, ispan, hispan=hispan, line_by_pos=query_run.line_by_pos, query_run_start=query_run.start, _type=MATCH_TYPE)
         matches.append(match)
-    # FIXME: why a set????
-    return list(set(matches))
+    return matches

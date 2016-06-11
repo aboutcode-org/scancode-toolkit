@@ -1,3 +1,4 @@
 licenses:
     - isc
     - ibm-dhcp
+expected_contains: yes

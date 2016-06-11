@@ -1,3 +1,4 @@
 licenses:
     - bsd-original-uc
     - stanford-pvrg
+expected_failure: yes

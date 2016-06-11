@@ -1,6 +1,0 @@
-licenses:
-    - gpl-2.0
-    - lgpl-2.1
-    - mpl-1.1
-license_choice: yes
-notes: Mozilla trilicense variant, from debian

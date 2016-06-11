@@ -35,7 +35,7 @@ from itertools import count
 from itertools import groupby
 
 
-class Span(set):
+class Span(frozenset):
     """
     Represent a range of tokens positions as a set of integers.
     A Span is hashable and not meant to be modified once created.
@@ -43,7 +43,7 @@ class Span(set):
 
     Originally derived and heavily modified from Whoosh Span.
     """
-    def __init__(self, *args):
+    def __new__(cls, *args):
         """
         Create a new Span from a start and end ints or an iterable of ints. 
 
@@ -92,29 +92,23 @@ class Span(set):
         len_args = len(args)
 
         if len_args == 0:
-            super(Span, self).__init__()
+            return super(Span, cls).__new__(cls)
 
         elif len_args == 1:
             # args0 is a single int or an iterable of ints
-            if isinstance(args[0], int):
-                super(Span, self).__init__(args)
+            if isinstance(args[0], (int, long)):
+                return super(Span, cls).__new__(cls, args)
             else:
-                super(Span, self).__init__(args[0])
+                return super(Span, cls).__new__(cls, args[0])
 
         elif len_args == 2:
             # args0 and args1 describe a start and end closed range
-            super(Span, self).__init__(range(args[0], args[1] + 1))
+            return super(Span, cls).__new__(cls, range(args[0], args[1] + 1))
 
         else:
             # args0 is a single int or args is an iterable of ints
             # args is an iterable of ints
-            super(Span, self).__init__(args)
-
-#     def __hash__(self):
-#         return hash(frozenset(self))
-
-#     def __eq__(self, other):
-#         return frozenset(self) == frozenset(other)
+            return super(Span, cls).__new__(cls, args)
 
     def __repr__(self):
         """
@@ -162,7 +156,7 @@ class Span(set):
         if isinstance(other, (Span, set, frozenset,)):
             return self.issuperset(other)
 
-        if isinstance(other, int):
+        if isinstance(other, (int, long)):
             return super(Span, self).__contains__(other)
 
     @property
@@ -220,7 +214,7 @@ class Span(set):
         >>> len(Span([4, 5, 6, 7, 8]))
         5
 
-        >>> Span([4, 5, 6, , 12, 128]).magnitude()
+        >>> Span([4, 5, 6, 14 , 12, 128]).magnitude()
         125
 
         >>> Span([4, 5, 6, 7, 8]).magnitude()
@@ -322,7 +316,7 @@ class Span(set):
         >>> Span([4, 5, 6, 7, 8]).surround(Span([5, 6, 7]))
         True
         """
-        return self.start <= other.start and other.end <= self.end
+        return self.start <= other.start and self.end >= other.end
 
     def is_before(self, other):
         return self.end < other.start

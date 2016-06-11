@@ -26,14 +26,19 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
 
-from operator import itemgetter
+from collections import defaultdict
+from collections import namedtuple
+
+from bitarray import bitarray
 
 from licensedcode.models import Rule
+from licensedcode import NGRAM_LENGTH
+from commoncode.dict_utils import sparsify
 
 
 """
 Pre-matching filters to find candidates rules that have the highest likeliness
-of matching a query using approximate and probabilistic matching techniques.
+of matching a query using approximate inverted index-like matching techniques.
 
 The purpose is to quickly and aggressively filter rules that could not possibly
 yield a valid match. The candidates are ranked and used later for a pair-wise
@@ -42,70 +47,80 @@ matching with the query. This way either less or no matching is needing.
 We collect a subset of rules that could be matched given a minimum threshold of
 matched token occurrences or an approximation of the length of a match.
 
-The primary technique is to compute sets or multisets intersections and use the
-intersection length for ranking.
+The primary technique is to compute token ids sets then multisets intersections
+and use the intersection length for ranking. This is basically the same approach
+as a traditional IR inverted index postings and query intersection, but we want
+to return every matches and not just probabilistic top-ranked matches based on
+frequencies as is typically done in a search engine. Therefore we compute the
+intersection of the query against every rules. This proves more efficient than a
+traditional inverted intersection in part because the queries are much larger
+(1000's of tokens) than a traditional search engine query.
+ 
+Since we use integer to represent tokens, we reduce the problem to integer set
+or multisets intersections. Furthermore, we have a finite and limited number of
+tokens and we distinguish high and low (junk or common, similar to stop words or
+frequencies in IR) token ids based on a threshold. We use these properties to
+consider first sets of high tokens and refine candidates based on the sets of
+low tokens.
 
-Since we use integer to represent tokens, this reduces the problem to integer
-set or multisets intersections. Furthermore, we have a finite and limited number
-of tokens and we distinguish high and low (junk or common) token ids based on a
-threshold. We use these properties to consider first sets of high tokens and
-refine candidates based on the sets of low tokens.
-
-Two techniques are used here: tokens sets and multisets.
+Two techniques are used in sequence: tokens sets and multisets.
 
 Tokens occurrence sets
 ======================
 
-A tokens occurrence set is represented as an array of bits (aka. a bit map)
-where each bit position corresponds to a token id. The length of each bit array
-is therefore equal to the number of unique tokens across all rules. This forms a
-term occurrence matrix stored compactly as bit arrays. With about 14K unique
-tokens and about 3500 rules, we store about 50 millions bits (14K x 3500) for
-about 6MB of total storage for this matrix. Computing intersections of bit
-arrays is very fast even if it needs to be done 3500 times for each query and
-query run.
+A tokens occurrence set is represented as an array of bits (aka. a bitmap) where
+each bit position corresponds to a token id. The length of each bit array is
+therefore equal to the number of unique tokens across all rules. This forms a
+term occurrence matrix stored compactly as bitmaps. With about 14K unique tokens
+and about 3500 rules, we store about 50 millions bits (14K x 3500) for about 6MB
+of total storage for this matrix. Computing intersections of bitmaps is fast
+even if it needs to be done 3500 times for each query and query run.
 
-The length of the intersection of a query and rule bit array tells us the
-occurrence count of common tokens. We first intersect high tokens arrays. If the
-intersection is empty or below a minimum rule-specific length, we can skip that
-rule for further matching. If we want an exact match and we have less tokens
-present than in the rule, we skip this rule. If we have some common high tokens,
-we then intersect the low token arrays. We sum the lengths of these two
+The length of the intersection of a query and rule bitmap tells us the count of
+shared tokens. We first intersect high tokens sets. If the intersection is empty
+or below a minimum rule-specific length, we can skip this rule. If we want an
+exact match and we have fewer tokens present in the intersection than in the
+rule, we can skip this rule too. If we have some shared high tokens above the
+minimum, we then intersect the low token sets. We use the lengths of these two
 intersections to rank the candidates.
 
 
-Tokens occurrence multisets aka. frequency counters
-===================================================
+Tokens ids occurrences multisets aka. frequency counters
+========================================================
 
 A tokens frequency counter maps a token id to the number of times it shows up in
 a text. This is also called a multiset.
 
-We intersect the query and rule frequency counters. For each shared token we
+Given the subset of ranked candidates from the token sets intersection step, we
+intersect the query and rule frequency counters. For each shared token we
 collect the minimum of the two token counts. We sum these to obtain an
-approximation to the number of matched tokens. This is an approximation because
-it does not consider the relative positions of the tokens.
+approximation to the number of matchable tokens between the query and rule. This
+is an approximation because it does not consider the relative positions of the
+tokens so it may be bigger than what will eventually be matched.
 
 This sum is then used for the same filtering and ranking used for the token sets
-filter: First intersect high tokens first, skip if some threshold is not met.
-Then intersect the low token and sum the min-sum of these two intersections to
+step: First intersect high tokens, skip if some threshold is not met.
+Then intersect the low tokens and sum the min-sum of these two intersections to
 rank the candidates. 
 
-Token frequencies also allow extra filtering when looking only for exact matches
-or for small rules where we want all tokens to be matched.
+Token frequencies allow extra filtering when looking only for exact matches or
+for small rules where we want all shared tokens quantities to be matched.
 
-
-About candidates ranking and scoring: we use only the matched lengths for now for
-ranking. This could be refined by computing tf/idf, BM25 or approximating
-various similarity measures or their approximations such as Levenshtein
-distance, Jaccard coefficient, etc.
+Note about candidates ranking and scoring: we use only the matched lengths for
+now for ranking. (aka. the set intersections cardinality). This could be refined
+by computing tf/idf, BM25 or other various similarity measures or their
+approximations such as Levenshtein distance, Jaccard coefficient, etc.
 """
 
-# debug flags
+# Set to True for tracing
 TRACE = False
+TRACE2 = False
 TRACE_DEEP = False
+TRACE_ULTRA_DEEP = False
+TRACE_COMPARE_SET = False
+
 
 def logger_debug(*args): pass
-
 
 if TRACE:
     import logging
@@ -119,184 +134,292 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
 
-def compute_candidates(query_run, idx, rules_subset, top=0, exact=False, refine=True):
+def index_rules_starters(rids_by_starter, rid, tokens, starter_length=NGRAM_LENGTH):
     """
-    Return a ranked list of rule id candidates for further matching using
-    approximate ranked matching, ignoring positions.
-
-    Only consider rules that have an rid in `rules_subset`.
-    Return at most `top` candidates. If `exact` is True, only return rules that
-    may be matched exactly.
-
-    If `refine` is False, filter and rank using tokens occurrence sets only in a single step
-    If `refine` is True, refine candidates using tokens occurrence multisets in a second step.
-    
-    Only return rules sharing at least a minimum number of tokens with the query.
-    Minimums and ranking is rule-specific and based on:
-    - occurrences in high and low tokens for the query and the rule
-    - minimal match occurrences for a rule in high and low tokens
-    - lengths and minimal match length for a rule in high and low tokens
-    - the difference and distance of these between the query and the rule 
+    Return a mapping of rule starters tuple -> [rids, ...] given rule token ids
+    by rid. The tuple contain `starter_length` tokens from the begning of each
+    rule. If the rule is smaller than it is not indexed. This is used for query
+    run breaking.
     """
+    rids_by_starter = defaultdict(list)
+    if len(tokens) < starter_length:
+        return
+    rids_by_starter[tuple(tokens[:starter_length])].append(rid)
+
+
+def index_token_sets(token_ids, len_junk, len_good):
+    """
+    Return a 4-tuple of low & high tids sets, low & high tids multisets given a
+    token_ids sequence.
+    """
+    # For multisets, we use an array: the index is the token id, the value is
+    # the occurrences count. This is the same as a collections.Counter but using
+    # a more compact and faster iterating array.
+
+    tids_set = bitarray([0] * (len_good + len_junk))
+    low_tids_mset = defaultdict(int)
+    high_tids_mset = defaultdict(int)
+    for tid in token_ids:
+        # this skips unknown token ids that are -1 as well as possible None
+        if tid < 0:
+            continue
+        tids_set[tid] = True
+        if tid < len_junk:
+            low_tids_mset[tid] += 1
+        else:
+            high_tids_mset[tid] += 1
+
+    # sparify for speed
+    sparsify(low_tids_mset)
+    sparsify(high_tids_mset)
+
+    low_tids_set = tids_set[:len_junk]
+    high_tids_set = tids_set[len_junk:]
+    return low_tids_set, high_tids_set, low_tids_mset, high_tids_mset
+
+
+CandidateData = namedtuple('CandidateData', 'intersection distance matched_length high_inter_len low_inter_len')
+
+
+def compute_candidates(query_run, idx, rules_subset, exact=False, top=30):
+    """
+    Return a ranked list of rule candidates for further matching as a tuple of:
+    (rid, rule, multiset of intersected token ids).
+    Use approximate matching ignoring positions.
+
+    Only consider rules that have an rid in a `rules_subset` rid set.
+    Only return rules sharing some minimum number of tokens with the query.
+
+    Minima and ranking is rule-specific and based on matching high then low
+    tokens for the query and rule using:
+    - counts of common tokens occurrence and their minimum
+    - lengths of match and minimal match length
+    - the difference and distance of from query to rule
+    """
+    if not query_run.high_matchables:
+        return []
+
+    qlows, qhighs, qlowms, qhighms = index_token_sets(query_run.matchable_tokens(), idx.len_junk, idx.len_good)
 
     # initial rules
-    candidates = [(rid, rule) for (rid, rule) in enumerate(idx.rules_by_rid) if rid in rules_subset]
+    candidates = [(rid, rule, None) for rid, rule in enumerate(idx.rules_by_rid) if rid in rules_subset]
 
-    # perform one step with set or two steps with sets and then multisets for refinements
-    steps = (1, 2,) if refine else (1,)
-
-    # step 1 is on bit sets:
-    _qbitvector = query_run.bv()
-    qhigh = _qbitvector[idx.len_junk:]
-    qlow = _qbitvector[:idx.len_junk]
-    high_by_rid = idx.high_bitvectors_by_rid
-    low_by_rid = idx.low_bitvectors_by_rid
+    # step 1 is on token id sets:
+    qlow, qhigh = qlows, qhighs
+    sets_by_rid = idx.tids_sets_by_rid
+    intersector, counter = tids_sets_intersector, tids_set_counter
     thresholds_getter = Rule.thresholds_unique
-    intersector = int_set_intersector
 
-    for step in steps:
-        if TRACE_DEEP: logger_debug('compute_candidates: STEP:', step)
+    # perform two steps of matching:
+    # step one with sets and step two multisets for refinements
+    for step in 'sets', 'multisets':
+        if TRACE_ULTRA_DEEP: logger_debug('compute_candidates: STEP:', step)
         sortable_candidates = []
 
-        for rid, rule in candidates:
-            if TRACE_DEEP: logger_debug(' compute_candidates: evaluating rule:', rule.identifier())
+        for rid, rule, _intersection in candidates:
+            ilow, ihigh = sets_by_rid[rid]
+            if TRACE_ULTRA_DEEP:
+                logger_debug('candidate: qlow:', [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(qlow)])
+                logger_debug('candidate: ilow:', [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(ilow)])
+                logger_debug('candidate: qhigh:', [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(qhigh, idx.len_junk)])
+                logger_debug('candidate: ihigh:', [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(ihigh, idx.len_junk)])
 
-            ihigh = high_by_rid[rid]
-            ilow = low_by_rid[rid]
             thresholds = thresholds_getter(rule)
-            sort_order = compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, exact=exact)
-            if sort_order:
-                sortable_candidates.append((sort_order, rid, rule))
+            compared = compare_sets(qhigh, qlow, ihigh, ilow, thresholds,
+                                    intersector, counter,
+                                    exact=exact, rule_identifier=rule.identifier)
+            if compared:
+                sort_order, intersection = compared
+                sortable_candidates.append((sort_order, rid, rule, intersection))
 
         ranked = sorted(sortable_candidates)
-        if top:
-            ranked = ranked[:top]
 
-        if TRACE_DEEP and sortable_candidates:
-            logger_debug(' compute_candidates: RANKED at step:', step, ':', len(sortable_candidates))
+        if TRACE2 and ranked:
+            logger_debug(' compute_candidates: RANKED at step:', step, ':', len(ranked))
             if TRACE_DEEP:
-                for sort_order, rid, rule in ranked:
-                    logger_debug(' compute_candidates: rule:', rule.identifier(), 'sort_order:', sort_order)
+                for sort_order, rid, rule, _intersection in ranked[:10]:
+                    logger_debug(' compute_candidates: rule:', rule.identifier,
+                                 'sort_order:', sort_order)
 
-        candidates = [(rid, rule) for _sort_order, rid, rule in ranked]
+        # remove _sort_order
+        candidates = [cand[1:] for cand in ranked]
+        # keep only the top fifty candidates
+        candidates = candidates[:top]
+        if not candidates:
+            break
 
-        if len(steps) == 2:
-            # step 2 is on frequencies multisets: update the parameters after step1 if needed
-            qhigh, qlow = query_run.frequencies(start=idx.len_junk)
-            high_by_rid = idx.high_frequencies_by_rid
-            low_by_rid = idx.low_frequencies_by_rid
-            thresholds_getter = Rule.thresholds
-            intersector = int_multiset_intersector
+        # step 2 is on tids multisets: update the parameters after step1 if needed
+        qlow, qhigh = qlowms, qhighms
+        sets_by_rid = idx.tids_msets_by_rid
+        intersector, counter = tids_multisets_intersector, tids_multiset_counter
+        thresholds_getter = Rule.thresholds
 
-    if TRACE:
-        logger_debug('compute_candidates: FINAL candidates:', len(sortable_candidates))
-        tops = [r.identifier() for _i, r in candidates[:10]]
-        map(logger_debug, tops)
+    if TRACE and candidates:
+        logger_debug('compute_candidates: FINAL top candidates:', len(candidates))
+        tops = [rule.identifier for _rid, rule, _inter in candidates[:10]]
+        logger_debug(tops)
 
-    # FIXME: we should return the matched vectors or counters intersections:
-    # they contain valuable information for matching e.g. the actual token ids
-    # matched and could therefore speed up a lot matching since non-matched
-    # tokens could be skipped entirely from the matching phase.
-
-    # return only rid from (rid, rule)
-    good_candidates = map(itemgetter(0), candidates)
-    return good_candidates
+    # return rid, rule, intersection
+    return candidates
 
 
-def int_set_intersector(qbv, ibv):
+def tids_sets_intersector(qset, iset):
     """
-    Return the number of bits set to 1 in the intersection of a query and an
-    index integer set.
+    Return the intersection of a query and index token ids sets.
+    Default for bitarrays.
     """
-    # using bitarrays at the moment
-    return (qbv & ibv).count()
+    return qset & iset
 
 
-def int_multiset_intersector(qfreq, ifreq):
+def tids_set_counter(tset):
     """
-    Return the sum of the minimum values of the intersection of a query and an
-    index integer multiset.
+    Return the number of elements present in a token ids set, aka. the set
+    cardinality.
+    Default for bitarrays.
     """
-    # With collection.Counter, the intersection of two Counter a and b is
-    # min(a[x], b[x]).
-
-    # TODO: we could re-implement this using a faster intersection for our
-    # smaller use-case using arrays instead of counters
-    return sum((ifreq & qfreq).itervalues())
+    return tset.count()
 
 
-def compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, exact=True):
+def tids_multisets_intersector(qmset, imset):
+    """
+    Return the intersection of a query and index token ids multisets. For a
+    token id present in both multisets, the intersection value is the minimum of
+    the occurence count in the query and rule for this token.
+    Optimized for defaultdicts.
+    """
+    result = defaultdict(int)
+    # iterate the smallest of the two sets
+    if len(qmset) < len(imset):
+        set1, set2 = qmset, imset
+    else:
+        set1, set2 = imset, qmset
+
+    for elem, count in set1.items():
+        c2count = set2[elem]
+        res = count if count < c2count else c2count
+        if res:
+            result[elem] = res
+    return result
+
+
+# def tids_multisets_counter_intersector(qmset, imset):
+#     """
+#     Return the intersection of a query and index token ids multisets. For a
+#     token id present in both multisets, the intersection value is the minimum of
+#     the occurence count in the query and rule for this token.
+#     Deafult for Counters.
+#     """
+#     return qmset & imset
+
+
+def tids_multiset_counter(tmset):
+    """
+    Return the sum of occurences of elements present in a token ids multiset,
+    aka. the multiset cardinality.
+    """
+    return sum(tmset.values())
+
+
+def compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, counter, exact=True, rule_identifier=None):
     """
     Compare a query qhigh and qlow sets with an index rule ihigh and ilow sets.
-    Return a tuple suitable for ranked sorting or None if this combination is
-    not match worthy.
+    Return a tuple suitable for sorting and the computed sets intersection or
+    None if this combination is not match worthy.
     
-    Use the models.Thresholds `thresholds` to determine match worthiness and
+    Use the rule Thresholds `thresholds` to determine match worthiness and
     ranking.
     
-    Use the `intersector` callable to compute the number of matching tokens
-    between sets allowing to use this function for sets or multisets or set-like
-    objects.
+    `intersector` and `counter` are callables that compute the intersection and
+    count for sets or multisets.
     
     If `exact` is True, return None if the query could not be matched exactly
     against this index rule.
+    
+    `rule_identifier` is used for tracing.
     """
-    # the intersection that tells us which token ids exist in both
-    high_inter_len = intersector(qhigh, ihigh)
+    # intersect on high tokens
+    #########################################
+    high_inter = intersector(qhigh, ihigh)
+    high_inter_len = counter(high_inter)
+    if TRACE_COMPARE_SET :logger_debug('  compare_sets: thresholds:', thresholds)
+    if TRACE_COMPARE_SET : logger_debug('  compare_sets: high_inter_len:', high_inter_len)
+
+    if high_inter_len == 0:
+        if TRACE_COMPARE_SET:
+            logger_debug('   compare_sets: %(rule_identifier)r SKIP 0: high_inter_len=%(high_inter_len)r == 0' % locals())
+        return
 
     # for exact, all high must be matched
-
     if exact and high_inter_len < thresholds.high_len:
-        if TRACE_DEEP:
+        if TRACE_COMPARE_SET:
             ihigh_len = thresholds.high_len
-            logger_debug('  compare_sets: SKIP 1: exact=%(exact)r and high_inter_len=%(high_inter_len)r != ihigh_len=%(ihigh_len)r' % locals())
+            logger_debug('   compare_sets: %(rule_identifier)r SKIP 1: exact=%(exact)r and high_inter_len=%(high_inter_len)r != ihigh_len=%(ihigh_len)r' % locals())
         return
 
     # need some high match above min high
     if high_inter_len < thresholds.min_high:
-        if TRACE_DEEP:
+        if TRACE_COMPARE_SET:
             min_ihigh = thresholds.min_high
-            logger_debug('  compare_sets: SKIP 2: high_inter_len=%(high_inter_len)r < min_ihigh=%(min_ihigh)r' % locals())
+            logger_debug('   compare_sets: %(rule_identifier)r SKIP 2: high_inter_len=%(high_inter_len)r < min_ihigh=%(min_ihigh)r' % locals())
         return
 
-    # intersect again this time on low tokens
-    low_inter_len = intersector(qlow, ilow)
+    # intersect again but on low tokens
+    ###################################
+    low_inter = intersector(qlow, ilow)
+    low_inter_len = counter(low_inter)
+    if TRACE_COMPARE_SET: logger_debug('  compare_sets: low_inter_len:', low_inter_len)
 
     # for exact, all low must be matched
     if exact and low_inter_len < thresholds.low_len:
-        if TRACE_DEEP:
+        if TRACE_COMPARE_SET:
             ilow_len = thresholds.low_len
-            logger_debug('  compare_sets: SKIP 3: exact=%(exact)r and low_inter_len=%(low_inter_len)r < ilow_len=%(ilow_len)r' % locals())
+            logger_debug('   compare_sets: %(rule_identifier)r SKIP 3: exact=%(exact)r and low_inter_len=%(low_inter_len)r < ilow_len=%(ilow_len)r' % locals())
         return
 
     # need match len above min length
     if high_inter_len + low_inter_len < thresholds.min_len:
-        if TRACE_DEEP:
+        if TRACE_COMPARE_SET:
             min_ilen = thresholds.min_len
-            logger_debug('  compare_sets: SKIP 4: high_inter_len=%(high_inter_len)r + low_inter_len=%(low_inter_len)r < min_ilen=%(min_ilen)r' % locals())
+            logger_debug('   compare_sets: %(rule_identifier)r SKIP 4: high_inter_len=%(high_inter_len)r + low_inter_len=%(low_inter_len)r < min_ilen=%(min_ilen)r' % locals())
         return
 
-    # for small rules, we want all tokens matched
-    if thresholds.small and (high_inter_len + low_inter_len != thresholds.length):
-        if TRACE_DEEP:
+    # for small rules, we want all high tokens matched at at least 1/2 of low tokens
+    if thresholds.small and (high_inter_len != thresholds.min_high) and (low_inter_len < (thresholds.low_len // 2)):
+        if TRACE_COMPARE_SET:
             small = thresholds.small
             ilen = thresholds.length
-            logger_debug('  compare_sets: SKIP 5: small=%(small)r and high_inter_len=%(high_inter_len)r + low_inter_len=%(low_inter_len)r != ilen=%(ilen)r' % locals())
+            logger_debug('   compare_sets: %(rule_identifier)r SKIP 5: small=%(small)r and high_inter_len=%(high_inter_len)r + low_inter_len=%(low_inter_len)r != ilen=%(ilen)r' % locals())
         return
 
-    # FIXME: this does not make sense, for bitvectors: we cannot evaluate gaps at this stage!!!!
-    # therefore this will always be True
-    # need match len within gap bounds
-    if high_inter_len + low_inter_len > thresholds.length + thresholds.max_gaps:
-        if TRACE_DEEP:
-            max_igaps = thresholds.max_gaps
-            ilen = thresholds.length
-            logger_debug('  compare_sets: SKIP 6: high_inter_len=%(high_inter_len)r + low_inter_len=%(low_inter_len)r > ilen=%(ilen)r + max_igaps=%(max_igaps)r' % locals())
-        return
+    # distance
+    matched_length = high_inter_len + low_inter_len
+    distance = thresholds.length - matched_length
+    high_distance = thresholds.high_len - high_inter_len
+    # low_distance = thresholds.low_len - low_inter_len
 
-    length = high_inter_len + low_inter_len
-    distance = thresholds.length - length
+    # ressemblance and containment
+    high_union_len = counter(qhigh) + counter(ihigh) - high_inter_len
+    low_union_len = counter(qlow) + counter(ilow) - low_inter_len
+    high_resemblance = high_inter_len / high_union_len
+    #low_resemblance = low_inter_len / low_union_len
+    resemblance = (high_inter_len + low_inter_len) / (high_union_len + low_union_len)
+    high_jaccard_distance = 1. - high_resemblance
+    jaccard_distance = 1. - resemblance
 
-    # set sort order by closest distance,  longest lengths
-    candidate = distance, -high_inter_len, -length, thresholds.length
-    return candidate
+    high_containment = high_inter_len / thresholds.high_len
+    #low_containment = low_inter_len / thresholds.low_len
+    containment = (high_inter_len + low_inter_len) / thresholds.length
+
+
+    # Sort order is based on resemblance and containment with additionl things for disambiguation
+    sort_order = -containment, -high_containment, jaccard_distance, high_jaccard_distance, high_distance, distance, -high_inter_len, -matched_length, thresholds.length
+
+    # We also return the intersection for the whole token ids range
+    # FIXME: but this is NOT used
+    if isinstance(low_inter, bitarray):
+        inter = low_inter + high_inter
+    else:
+        inter = low_inter
+        low_inter.update(high_inter)
+
+    return sort_order, inter

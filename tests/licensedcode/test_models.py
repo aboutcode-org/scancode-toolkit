@@ -28,6 +28,7 @@ import os
 
 from commoncode.testcase import FileBasedTesting
 from licensedcode import models
+from licensedcode import index
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -62,7 +63,7 @@ class TestLicense(FileBasedTesting):
             assert 'distribut' in rule.text().lower()
 
     def test_validate_licenses(self):
-        errors, warnings, infos = models.License.validate(models.get_licenses_by_key())
+        errors, warnings, infos = models.License.validate(models.get_licenses())
         assert {} == errors
         assert {} == warnings
         assert len(infos) < 20
@@ -147,3 +148,22 @@ class TestRule(FileBasedTesting):
         assert models.Rule(_text='test_text').negative()
         assert not models.Rule(_text='test_text', licenses=['mylicense']).negative()
         assert models.Rule(_text='test_text', licenses=[]).negative()
+
+    def test_LicenseMatch_small(self):
+        r1 = models.Rule(text_file='r1', licenses=['apache-1.1'])
+        r1._text = u'licensed under the GPL, licensed under the GPL'
+        r2 = models.Rule(text_file='r1', licenses=['apache-1.1'])
+        r2._text = u'licensed under the GPL, licensed under the GPL' * 10
+        _idx = index.LicenseIndex([r1, r2])
+        assert models.Thresholds(high_len=6, low_len=2, length=8, small=True, min_high=2, min_len=4, max_gap_skip=2) == r1.thresholds()
+        assert models.Thresholds(high_len=51, low_len=20, length=71, small=False, min_high=2, min_len=4, max_gap_skip=25) == r2.thresholds()
+
+        r1 = models.Rule(text_file='r1', licenses=['apache-1.1'])
+        r1._text = u'licensed under the GPL,{{}} licensed under the GPL'
+        r2 = models.Rule(text_file='r1', licenses=['apache-1.1'])
+        r2._text = u'licensed under the GPL, licensed under the GPL' * 10
+
+        _idx = index.LicenseIndex([r1, r2])
+        assert models.Thresholds(high_len=6, low_len=2, length=8, small=True, min_high=2, min_len=4, max_gap_skip=2) == r1.thresholds()
+        assert models.Thresholds(high_len=51, low_len=20, length=71, small=False, min_high=2, min_len=4, max_gap_skip=25) == r2.thresholds()
+

@@ -1,0 +1,15 @@
+  <licenses>
+    <!-- this is the license under which javassist is usually distributed
+      -->
+    <license>
+      <name>MPL 1.1</name>
+      <url>http://www.mozilla.org/MPL/MPL-1.1.html</url>
+    </license>
+    <!-- this is the license under which javassist is distributed when
+     it is bundled with JBoss
+      -->
+    <license>
+      <name>LGPL 2.1</name>
+      <url>http://www.gnu.org/licenses/lgpl-2.1.html</url>
+    </license>
+  </licenses>

@@ -1,0 +1,19 @@
+about_resource: diskcache-1.6.6-py2.py3-none-any.whl
+
+name: python-diskcache
+version: 1.6.6
+
+owner: Grant Jenks
+
+home_url: https://github.com/grantjenks/python-diskcache/
+
+download_url: https://pypi.python.org/packages/c3/e0/89d08ddff8b1343700ed8e7518f7ce5814386510465befaebd9b455c6ba8/diskcache-1.6.6.tar.gz#md5=c84fc7fa0cf9515cad353d5da1abd97b
+vcs_tool: git
+vcs_repository: https://github.com/grantjenks/python-diskcache/.git
+
+
+license_text_file: apache-2.0.LICENSE
+license_spdx: Apache-2.0
+dje_license: apache-2.0
+copyright: Copyright 2016 Grant Jenks
+

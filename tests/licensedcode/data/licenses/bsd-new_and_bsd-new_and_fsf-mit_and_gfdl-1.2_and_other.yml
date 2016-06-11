@@ -6,10 +6,11 @@ licenses:
     - gpl-3.0-plus
     - gpl-3.0-plus
     - isc
-    - fsf-unlimited
+    - fsf-unlimited-lr
     - gpl-3.0-plus
     - gpl-3.0-plus
     - gpl-3.0-plus
     - gpl-3.0-plus
     - gfdl-1.2
     - gpl-3.0-plus
+expected_failure: yes

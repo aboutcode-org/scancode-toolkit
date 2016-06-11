@@ -1,4 +1,5 @@
 licenses:
-    - pdl
     - mit
-expected_failure: yes
+    - pdl-1.0
+    - apache-2.0
+

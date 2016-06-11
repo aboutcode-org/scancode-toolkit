@@ -1,0 +1,120 @@
+MgOpen typefaces
+
+The MgOpen typefaces are freely available and contain glyphs for viewing texts in Greek (written in the monotoniko system).
+
+    Contents
+    Download the typefaces
+    History
+    Contact
+    License
+    Frequently asked questions on licensing
+
+Contents
+
+The MgOpen typeface collection is comprised by the following typefaces:
+MgOpenCanonicaCanonica sample
+
+MgOpenCanonica is a serif typeface, based on the design of Times Roman.
+MgOpenCosmeticaCosmetica sample
+
+MgOpenCosmetica is a sans-serif typeface, based on the design of Optima.
+MgOpenModata Modata sample
+
+MgOpenModata is another sans-serif typeface.
+MgOpenModernaModerna sample
+
+MgOpenModerna is a sans-serif typeface, based on the design of Helvetica.
+
+As can be seen from the samples above, each family contains four fonts, namely all the combinations of regular and bold weight and upright and italic (or oblique) shape.
+
+All the fonts contain glyphs for the latin and greek alphabet (using the monotoniko system), while the fonts of the Canonica family also contain all the glyphs necessary for viewing Greek texts written in the polytoniko system.
+
+All the fonts use the Unicode encoding for characters and are in the TrueType format.
+
+The fonts, in their initial release, have some characters missing, with most important the lack of the Euro symbol. These shortcomings will be fixed in future releases.
+Download the fonts
+
+You can download the fonts either as a compressed archive file of the full collection or individually per family, or even per font.
+
+    Full MgOpen collection: MgOpen.tar.gz (891.086 bytes)
+    Single families:
+        Canonica family: MgOpenCanonica.tar.gz (450.874 bytes)
+            Regular: MgOpenCanonicaRegular.ttf (281.580 bytes)
+            Italic: MgOpenCanonicaItalic.ttf (288.332 bytes)
+            Bold: MgOpenCanonicaBold.ttf (284.968 bytes)
+            Bold Oblique: MgOpenCanonicaBoldItalic.ttf (285.720 bytes)
+    Cosmetica family: MgOpenCosmetica.tar.gz (136.830 bytes)
+            Regular: MgOpenCosmeticaRegular.ttf (61.624 bytes)
+            Oblique: MgOpenCosmeticaOblique.ttf (60.296 bytes)
+            Bold: MgOpenCosmeticaBold.ttf (62.524 bytes)
+            Bold Oblique: MgOpenCosmeticaBoldOblique.ttf (60.184 bytes)
+        Modata family: MgOpenModata.tar.gz (175.490 bytes)
+            Regular: MgOpenModataRegular.ttf (72.244 bytes)
+            Oblique: MgOpenModataOblique.ttf (75.732 bytes)
+            Bold: MgOpenModataBold.ttf (72.632 bytes)
+            Bold Oblique: MgOpenModataBoldOblique.ttf (73.912 bytes)
+        Moderna family: MgOpenModerna.tar.gz (126.871 bytes)
+            Regular: MgOpenModernaRegular.ttf (60.404 bytes)
+            Oblique: MgOpenModernaOblique.ttf (61.440 bytes)
+            Bold: MgOpenModernaBold.ttf (57.592 bytes)
+            Bold Oblique: MgOpenModernaBoldOblique.ttf (56.932 bytes)
+
+The fonts are already available in Debian GNU/Linux, as well as any other distribution that can make use of Debian packages and software repositories: simply install the ttf-mgopen package from the "sarge" release (e.g., with the command: apt-get install ttf-mgopen).
+History
+
+The typefaces contained in the MgOpen collection have been commercially available in the past by Magenta Ltd. Theodoros Karounos initially contacted Panayiotis Sidiropoulos suggesting that some fonts be released as free software. After the company's positive reaction to this proposal, these fonts were selected by Alexios Zavras from Magenta's extensive font portfolio. Zenon Mousmoulas processed the legal issues concerning the fonts and their licensing terms; after negotiating with the company's legal counsel and reaching an agreement, Magenta executives officially announced their intention to release the particular fonts as free software, at the same time asking for help in accomplishing this goal. Alexios Zavras made the first round of corrections and additions, and transformed the fonts in modern encodings and file formats. Konstantinos Margaritis has subsequently undertaken the task of adopting the fonts for their inclusion in Debian GNU/Linux.
+
+It was decided to release the fonts under a license closely modeled after the one used by Bitstream Inc. and GNOME Foundation for the Bitstream Vera fonts. This license provides users with almost unlimited freedom, essentially giving them the right to modify and redistribute the fonts as long as each font is not sold separately and that variations and derivatives will not be distributed under the same name (MgOpen). Please read the exact license agreement below.
+Contact
+
+You can e-mail fonts@ellak.gr to report any problems you may have spotted while using the fonts. You are kindly requested to first read this page as well as any documentation files that may be included in the fonts distribution for issues already known. In order to verify a potential problem, you are advised to follow the procedures described in the Bitstream Vera fonts web page. If you are planning on making modifications or additions to the fonts, we would like to ask you to inform us beforehand by contacting us at the above address, in order to coordinate efforts and achieve the best possible result.
+License
+
+The license of the typefaces is reproduced below. You can compare it to the Bistream Vera license. Please read it carefully. The use of the typefaces implies tha you have read, understood and accept the license agreement.
+
+Copyright © 2004 by MAGENTA Ltd. All Rights Reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of the fonts accompanying this license ("Fonts") and associated documentation files (the "Font Software"), to reproduce and distribute the Font Software, including without limitation the rights to use, copy, merge, publish, distribute, and/or sell copies of the Font Software, and to permit persons to whom the Font Software is furnished to do so, subject to the following conditions:
+
+The above copyright and this permission notice shall be included in all copies of one or more of the Font Software typefaces.
+
+The Font Software may be modified, altered, or added to, and in particular the designs of glyphs or characters in the Fonts may be modified and additional glyphs or characters may be added to the Fonts, only if the fonts are renamed to names not containing the word "MgOpen", or if the modifications are accepted for inclusion in the Font Software itself by the each appointed Administrator.
+
+This License becomes null and void to the extent applicable to Fonts or Font Software that has been modified and is distributed under the "MgOpen" name.
+
+The Font Software may be sold as part of a larger software package but no copy of one or more of the Font Software typefaces may be sold by itself.
+
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL MAGENTA OR PERSONS OR BODIES IN CHARGE OF ADMINISTRATION AND MAINTENANCE OF THE FONT SOFTWARE BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.
+Frequently asked questions on licensing
+
+What is the exact meaning of the resale restrictions?
+
+Magenta Ltd. is giving away these fonts, but wishes to ensure its competitors can't just drop the individual fonts as is into a font sale system and sell them as is. It seems fair that if Magenta can't make money from the MgOpen fonts, their competitors should not be able to do so either.
+
+I want to package these fonts separately for distribution and sale as part of a larger software package or system. Can I do so?
+
+Yes. RPM or Debian packages, for example, that include all the fonts, are "larger software packages" to begin with, and they are meant to integrate in a larger software system, so you aren't selling the typefaces independently by themselves. See the first question above.
+
+Are derivative works allowed?
+
+Yes!
+
+Can I change or add to the font(s)?
+
+Yes, you are free to modify the fonts in any way you want. If you wish to distribute the modified fonts to others you must change their names. In such a case, read below the provisions regarding derivative works. You also have the option to send your modifications to the font maintainers to be considered for integration in MgOpen.
+
+Under what terms are derivative works allowed?
+
+You must change the name(s) of the fonts. This is to ensure the quality of the fonts, both to protect Magenta and the maintainers. We want to ensure that if an application has opened a font specifically of these names, it gets what it expects. You must include the Magenta copyright notice. Additional copyrights can be added, as per copyright law.
+
+If I have improvements for MgOpen typefaces, is it possible they might get adopted in future versions?
+
+Yes. The agreement with Magenta Ltd. anticipates the need for maintaining the quality of the fonts. Therefore quality additions and modifications to the typefaces are possible and desirable as well. Please contact us if you have such additions. Of course it is required that newly added or modified characters preserve the style of each typeface. Note, that in general, apart from filling in currently outstanding shortcomings, we will want new and major additions for the entire collection, not just a single font. In the future a document on the specific design guidelines may be added to this web site, as an aid for potential contributors. In any case, please contact the maintainers if you can offer any such additions or if you even consider working on them.
+
+I want to sell a software package that uses these fonts. Can I do so?
+
+Sure. As long as you include the copyright notice, you can bundle the fonts with your software and sell your software with the fonts.
+
+If applications have built the names of the specific fonts into them, can I override this somehow to use fonts of my choosing?
+
+This issue does not concern the fonts or their copyright. The answer depends on the exact details of the software. Many open source systems and software (e.g., Gnome, KDE, etc.) are now converting to use fontconfig (see www.fontconfig.org) to handle font configuration, selection and substitution; it has provisions for overriding font names and subsituting alternatives. Other software (e.g., the XFree86 core server) has other mechanisms for font substitution.

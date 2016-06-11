@@ -41,13 +41,13 @@ TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 class TestMatchingPerf(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def profile_match(self, idx, locations, stats_file, top=50, min_score=100):
+    def profile_match(self, idx, locations, stats_file, top=50):
         import cProfile as profile
         import pstats
 
         def detect_lic():
             for location in locations:
-                list(idx.match(location, min_score=min_score, _with_cache=False))
+                list(idx.match(location))
 
         test_py = 'detect_lic()'
         profile.runctx(test_py, globals(), locals(), stats_file)
@@ -72,7 +72,7 @@ class TestMatchingPerf(FileBasedTesting):
 
         stats_file = 'license_approx_match_limited_index_profile_log.txt'
         locations = [self.get_test_loc('index/templates/query.txt')]
-        self.profile_match(idx, locations, stats_file, min_score=0)
+        self.profile_match(idx, locations, stats_file)
 
     @skip('Use only for local profiling')
     def test_match_license_performance_profiling_on_full_index_match_hash(self):
@@ -83,7 +83,7 @@ class TestMatchingPerf(FileBasedTesting):
         locations = [self.get_test_loc('perf/cc-by-nc-sa-3.0.SPDX')]
         self.profile_match(idx, locations, stats_file)
 
-    @skip('Use only for local profiling')
+    #@skip('Use only for local profiling')
     def test_match_license_performance_profiling_on_full_index_mixed_matching(self):
         # pre-index : we are profiling only the detection, not the indexing
         idx = index.get_index()

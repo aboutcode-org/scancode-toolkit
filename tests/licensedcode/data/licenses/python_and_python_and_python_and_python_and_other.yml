@@ -1,2 +1,3 @@
 licenses:
     - python
+expected_contains: yes

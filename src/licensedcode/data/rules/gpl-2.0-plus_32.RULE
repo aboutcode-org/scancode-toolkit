@@ -1,6 +1,6 @@
 Everything else in the package is covered by the GNU GPL.
 
-Debian support files {{15 Copyright (C) 2006 <s>Michael Vogt <mvo@debian.org></s> }}
+Debian support files {{Copyright (C) 2006 <s>Michael Vogt <mvo@debian.org></s> }}
 based on the debian-keyring package maintained by James Troup 
 
 Debian support files for debian-archive-keyring are free software; you

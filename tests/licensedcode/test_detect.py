@@ -30,20 +30,32 @@ from unittest.case import skip
 from commoncode.testcase import FileBasedTesting
 
 from licensedcode import index
+from licensedcode.match import LicenseMatch
+from licensedcode.match import get_texts
 from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.whoosh_spans.spans import Span
-from licensedcode.query import get_texts
-from licensedcode.match import LicenseMatch
-from unittest.case import expectedFailure
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
 """
-Test the core license matching mechanics.
+Test the core license detection mechanics.
 """
+
+def print_matched_texts(match, location=None, query_string=None, idx=None):
+    """
+    Convenience function to print matched texts for tracing and debugging tests.
+    """
+    qtext, itext = get_texts(match, location=location, query_string=query_string, idx=idx)
+    print()
+    print('Matched qtext:')
+    print(qtext)
+    print()
+    print('Matched itext:')
+    print(itext)
+
 
 class TestIndexMatch(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
@@ -66,11 +78,15 @@ class TestIndexMatch(FileBasedTesting):
         idx = index.LicenseIndex([Rule(_text='A one. a license two. A three.', licenses=['abc'])])
 
         querys = u'some junk. A one. A license two. A three.'
-        #            t1   t2 t3  t4 t5      t6  t7 t8    t9
+        #            0    1   2   3  4      5    6  7      8
 
-        matches = idx.match(query_string=querys, min_score=0)
+        matches = idx.match(query_string=querys)
         assert 1 == len(matches)
         match = matches[0]
+        qtext, itext = get_texts(match, query_string=querys, idx=idx)
+        assert 'A one A license two A three' == qtext
+        assert 'A one a license two A three' == itext
+
         assert Span(0, 6) == match.qspan
         assert Span(0, 6) == match.ispan
 
@@ -79,13 +95,13 @@ class TestIndexMatch(FileBasedTesting):
         rule = Rule(text_file=test_file, licenses=['mit'])
         idx = index.LicenseIndex([rule])
 
-        matches = idx.match(test_file, min_score=0)
+        matches = idx.match(test_file)
         assert 1 == len(matches)
         match = matches[0]
         assert rule == match.rule
         assert Span(0, 86) == match.qspan
         assert Span(0, 86) == match.ispan
-        assert 100 == match.normalized_score()
+        assert 100 == match.score()
 
     def test_match_matches_correctly_simple_exact_query_1(self):
         tf1 = self.get_test_loc('detect/mit/mit.c')
@@ -99,29 +115,75 @@ class TestIndexMatch(FileBasedTesting):
         assert ftr == match.rule
         assert Span(0, 86) == match.qspan
         assert Span(0, 86) == match.ispan
-    def test_match_matches_correctly_simple_exact_query_across_query_runs (self):
+
+    def test_match_matches_correctly_simple_exact_query_across_query_runs(self):
         tf1 = self.get_test_loc('detect/mit/mit.c')
         ftr = Rule(text_file=tf1, licenses=['mit'])
         idx = index.LicenseIndex([ftr])
         query_doc = self.get_test_loc('detect/mit/mit3.c')
-        matches = idx.match(query_doc, min_score=0, min_length=1)
+        matches = idx.match(query_doc)
         assert 1 == len(matches)
         match = matches[0]
-        assert ftr == match.rule
-        assert Span(0, 86) == match.qspan
+
+        qtext, itext = get_texts(match, location=query_doc, idx=idx)
+        expected_qtext = u'''
+            Permission is hereby granted free of charge to any person obtaining a
+            copy of this software and associated documentation files the Software to
+            deal in THE SOFTWARE WITHOUT RESTRICTION INCLUDING
+            WITHOUT LIMITATION THE RIGHTS TO USE COPY MODIFY MERGE PUBLISH
+            DISTRIBUTE SUBLICENSE AND OR SELL COPIES of the Software and to permit
+            persons to whom the Software is furnished to do so subject to the
+            following conditions The above copyright notice and this
+            permission notice shall be included in all copies or substantial
+            portions of the Software
+        '''.split()
+        assert expected_qtext == qtext.split()
+
+        expected_itext = u'''
+            Permission is hereby granted free of charge to any person obtaining a
+            copy of this software and associated documentation files the Software to
+            deal in the Software without restriction including without limitation
+            the rights to use copy modify merge publish distribute sublicense and or
+            sell copies of the Software and to permit persons to whom the Software
+            is furnished to do so subject to the following conditions The above
+            copyright notice and this permission notice shall be included in all
+            copies or substantial portions of the Software
+        '''.split()
+        assert expected_itext == itext.split()
+
+        assert ftr.same(match.rule)
 
     def test_match_with_surrounding_junk_should_return_an_exact_match(self):
         tf1 = self.get_test_loc('detect/mit/mit.c')
         ftr = Rule(text_file=tf1, licenses=['mit'])
         idx = index.LicenseIndex([ftr])
 
-        query_doc = self.get_test_loc('detect/mit/mit4.c')
-        matches = idx.match(query_doc, min_score=100)
+        query_loc = self.get_test_loc('detect/mit/mit4.c')
+        matches = idx.match(query_loc)
         assert len(matches) == 1
         match = matches[0]
+        qtext, itext = get_texts(match, location=query_loc, idx=idx)
+        expected_qtext = u'''
+            Permission <no-match> <no-match> is hereby granted free of charge to any person obtaining a copy of this software and
+            associated documentation files the Software to deal in the Software without restriction including without limitation the
+            rights to use copy modify merge publish distribute sublicense and or sell copies of the Software and to permit persons
+            to whom the Software is furnished to do so subject to the following conditions The above copyright <no-match> <no-match>
+            notice and this permission notice shall be included in all copies or substantial portions of the Software
+        '''.split()
+        assert expected_qtext == qtext.split()
+
+        expected_itext = u'''
+            Permission is hereby granted free of charge to any person obtaining a copy of this software and associated documentation
+            files the Software to deal in the Software without restriction including without limitation the rights to use copy
+            modify merge publish distribute sublicense and or sell copies of the Software and to permit persons to whom the Software
+            is furnished to do so subject to the following conditions The above copyright notice and this permission notice shall be
+            included in all copies or substantial portions of the Software
+        '''.split()
+        assert expected_itext == itext.split()
+
         assert Span(0, 86) == match.qspan
         assert Span(0, 86) == match.ispan
-        assert 100 == match.normalized_score()
+        assert 100 == match.score()
 
     def test_match_can_match_approximately(self):
         rule_file = self.get_test_loc('approx/mit/mit.c')
@@ -129,44 +191,69 @@ class TestIndexMatch(FileBasedTesting):
         idx = index.LicenseIndex([rule])
 
         query_doc = self.get_test_loc('approx/mit/mit4.c')
-        matches = idx.match(query_doc, min_score=80)
-        assert matches
-        assert rule == matches[0].rule
-        assert matches[0].normalized_score() > 95
+        matches = idx.match(query_doc)
+        assert 2 == len(matches)
+        m1 = matches[0]
+        m2 = matches[1]
+        assert rule == m1.rule
+        assert rule == m2.rule
+        assert 100 == m1.score()
+        assert 100 == m2.score()
 
-    @expectedFailure
-    def test_match_return_correct_query_positions_with_short_index_and_queries(self):
+    def test_match_return_correct_positions_with_short_index_and_queries(self):
         idx = index.LicenseIndex([Rule(_text='MIT License', licenses=['mit'])])
-        matches = idx.match(query_string='MIT License', min_score=0, min_length=2)
-
+        matches = idx.match(query_string='MIT License')
         assert 1 == len(matches)
+
+        assert {'_tst__0': {'license': [1], 'mit': [0]}} == idx._as_dict()
+
+        qtext, itext = get_texts(matches[0], query_string='MIT License', idx=idx)
+        assert 'MIT License' == qtext
+        assert 'MIT License' == itext
         assert Span(0, 1) == matches[0].qspan
         assert Span(0, 1) == matches[0].ispan
 
-        matches = idx.match(query_string='MIT MIT License', min_score=0, min_length=0)
+        matches = idx.match(query_string='MIT MIT License')
         assert 1 == len(matches)
-        assert Span(0, 2) == matches[0].qspan
+
+        qtext, itext = get_texts(matches[0], query_string='MIT MIT License', idx=idx)
+        assert 'MIT License' == qtext
+        assert 'MIT License' == itext
+        assert Span(1, 2) == matches[0].qspan
         assert Span(0, 1) == matches[0].ispan
 
         query_doc1 = 'do you think I am a mit license MIT License, yes, I think so'
         # #                                  0       1   2       3
-        matches = idx.match(query_string=query_doc1, min_score=0)
+        matches = idx.match(query_string=query_doc1)
         assert 2 == len(matches)
+
+        qtext, itext = get_texts(matches[0], query_string=query_doc1, idx=idx)
+        assert 'mit license' == qtext
+        assert 'MIT License' == itext
         assert Span(0, 1) == matches[0].qspan
         assert Span(0, 1) == matches[0].ispan
 
+        qtext, itext = get_texts(matches[1], query_string=query_doc1, idx=idx)
+        assert 'MIT License' == qtext
+        assert 'MIT License' == itext
         assert Span(2, 3) == matches[1].qspan
         assert Span(0, 1) == matches[1].ispan
 
-        # FIXME: this is not right: too many matches
         query_doc2 = '''do you think I am a mit license 
                         MIT License
                         yes, I think so'''
-        matches = idx.match(query_string=query_doc2, min_score=0)
+        matches = idx.match(query_string=query_doc2)
         assert 2 == len(matches)
+
+        qtext, itext = get_texts(matches[0], query_string=query_doc2, idx=idx)
+        assert 'mit license' == qtext
+        assert 'MIT License' == itext
         assert Span(0, 1) == matches[0].qspan
         assert Span(0, 1) == matches[0].ispan
 
+        qtext, itext = get_texts(matches[1], query_string=query_doc2, idx=idx)
+        assert 'MIT License' == qtext
+        assert 'MIT License' == itext
         assert Span(2, 3) == matches[1].qspan
         assert Span(0, 1) == matches[1].ispan
 
@@ -182,7 +269,7 @@ class TestIndexMatch(FileBasedTesting):
         assert Span(0, 241) == match.qspan
         assert Span(0, 241) == match.ispan
         assert (1, 27,) == match.lines
-        assert 100 == match.normalized_score()
+        assert 100 == match.score()
 
     def test_match_works_with_special_characters_1(self):
         test_file = self.get_test_loc('detect/specialcharacter/kerberos.txt')
@@ -223,22 +310,38 @@ class TestIndexMatch(FileBasedTesting):
         #   +-------------------+
 
         # setup index
-        doc1 = '''Redistribution and use permitted.'''
+        license1 = '''Redistribution and use permitted.'''
 
-        doc2 = '''Redistributions of source must retain copyright.
+        license2 = '''Redistributions of source must retain copyright.
         Redistribution and use permitted.
         Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(_text=doc1, licenses=['overlap'], text_file='r1')
-        rule2 = Rule(_text=doc2, licenses=['overlap'], text_file='r2')
-        idx = index.LicenseIndex([rule1, rule2])
+        license3 = '''
+        this license source
+        Redistributions of source must retain copyright.
+        Redistribution and use permitted.
+        Redistributions in binary form is permitted.
+        has a permitted license'''
 
-        # test : doc1 is in the index and contains no other rule. should return 1 at exact score.
-        matches = idx.match(query_string=doc1, min_score=0)
+        license4 = '''My Redistributions is permitted.
+        Redistribution and use permitted.
+        Use is permitted too.'''
+
+        rule1 = Rule(_text=license1, licenses=['overlap'])
+        rule2 = Rule(_text=license2, licenses=['overlap'])
+        rule3 = Rule(_text=license3, licenses=['overlap'])
+        rule4 = Rule(_text=license4, licenses=['overlap'])
+        idx = index.LicenseIndex([rule1, rule2, rule3, rule4])
+
+        querys = 'Redistribution and use bla permitted.'
+        # test : license1 is in the index and contains no other rule. should return rule1 at exact score.
+        matches = idx.match(query_string=querys)
         assert 1 == len(matches)
         match = matches[0]
         assert Span(0, 3) == match.qspan
         assert rule1 == match.rule
+        qtext, _itext = get_texts(match, query_string=querys, idx=idx)
+        assert 'Redistribution and use <no-match> permitted' == qtext
 
     def test_overlap_detection2(self):
         #  test this containment relationship between test and index licenses:
@@ -246,34 +349,55 @@ class TestIndexMatch(FileBasedTesting):
         #   +-license 2 --------+
         #   |  +-license 1 --+  |
         #   +-------------------+
-        #
-        #   * License texts to detect:
-        #   +- license 3 -----------+
-        #   | +-license 2 --------+ |
-        #   | |  +-license 1 --+  | |
-        #   | +-------------------+ |
-        #   +-----------------------+
-        #
-        #   +-license 4 --------+
+
+        # setup index
+        license1 = '''Redistribution and use permitted.'''
+
+        license2 = '''Redistributions of source must retain copyright.
+        Redistribution and use permitted.
+        Redistributions in binary form is permitted.'''
+
+        rule1 = Rule(_text=license1, licenses=['overlap'])
+        rule2 = Rule(_text=license2, licenses=['overlap'])
+        idx = index.LicenseIndex([rule1, rule2])
+
+        # test : license2 contains license1: return license2 as exact score
+
+        querys = 'Redistribution and use bla permitted.'
+        matches = idx.match(query_string=querys)
+        assert 1 == len(matches)
+        match = matches[0]
+        assert rule1 == match.rule
+        qtext, _itext = get_texts(match, query_string=querys, idx=idx)
+        assert 'Redistribution and use <no-match> permitted' == qtext
+
+    def test_overlap_detection2_exact(self):
+        #  test this containment relationship between test and index licenses:
+        #   * Index licenses:
+        #   +-license 2 --------+
         #   |  +-license 1 --+  |
         #   +-------------------+
 
         # setup index
-        doc1 = '''Redistribution and use permitted.'''
+        license1 = '''Redistribution and use permitted.'''
 
-        doc2 = '''Redistributions of source must retain copyright.
+        license2 = '''Redistributions of source must retain copyright.
         Redistribution and use permitted.
         Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(_text=doc1, licenses=['overlap'], text_file='r1')
-        rule2 = Rule(_text=doc2, licenses=['overlap'], text_file='r2')
+        rule1 = Rule(_text=license1, licenses=['overlap'])
+        rule2 = Rule(_text=license2, licenses=['overlap'])
         idx = index.LicenseIndex([rule1, rule2])
 
-        # test : doc2 contains doc1: return doc2 as exact score
-        matches = idx.match(query_string=doc2, min_score=100)
+        # test : license2 contains license1: return license2 as exact score
+
+        querys = 'Redistribution and use bla permitted.'
+        matches = idx.match(query_string=querys)
         assert 1 == len(matches)
         match = matches[0]
-        assert rule2 == match.rule
+        assert rule1 == match.rule
+        qtext, _itext = get_texts(match, query_string=querys, idx=idx)
+        assert 'Redistribution and use <no-match> permitted' == qtext
 
     def test_overlap_detection3(self):
         #  test this containment relationship between test and index licenses:
@@ -289,32 +413,34 @@ class TestIndexMatch(FileBasedTesting):
         #   | +-------------------+ |
         #   +-----------------------+
         #
-        #   +-license 4 --------+
-        #   |  +-license 1 --+  |
-        #   +-------------------+
-
         # setup index
-        doc1 = '''Redistribution and use permitted.'''
+        license1 = '''Redistribution and use permitted.'''
 
-        doc2 = '''Redistributions of source must retain copyright.
+        license2 = '''Redistributions of source must retain copyright.
         Redistribution and use permitted.
         Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(_text=doc1, licenses=['overlap'], text_file='r1')
-        rule2 = Rule(_text=doc2, licenses=['overlap'], text_file='r2')
+        rule1 = Rule(_text=license1, licenses=['overlap'])
+        rule2 = Rule(_text=license2, licenses=['overlap'])
         idx = index.LicenseIndex([rule1, rule2])
 
-        doc3 = '''My source.
-        Redistributions of source must retain copyright.
-        Redistribution and use permitted.
-        Redistributions in binary form is permitted.
-        My code.'''
+        querys = '''My source.
+            Redistributions of source must retain copyright.
+            Redistribution and use permitted.
+            Redistributions in binary form is permitted.
+            My code.'''
 
-        # test : doc3 contains doc2 that contains doc1: return doc2 as exact score
-        matches = idx.match(query_string=doc3, min_score=100)
+        # test : querys contains license2 that contains license1: return license2 as exact score
+        matches = idx.match(query_string=querys)
         assert 1 == len(matches)
         match = matches[0]
         assert rule2 == match.rule
+        qtext, _itext = get_texts(match, query_string=querys, idx=idx)
+        expected = '''
+            Redistributions of source must retain copyright 
+            Redistribution and use permitted
+            Redistributions in binary form is permitted'''.split()
+        assert expected == qtext.split()
 
     def test_overlap_detection4(self):
         #  test this containment relationship between test and index licenses:
@@ -323,58 +449,92 @@ class TestIndexMatch(FileBasedTesting):
         #   |  +-license 1 --+  |
         #   +-------------------+
         #
-        #   * License texts to detect:
-        #   +- license 3 -----------+
-        #   | +-license 2 --------+ |
-        #   | |  +-license 1 --+  | |
-        #   | +-------------------+ |
-        #   +-----------------------+
+        #   +-license 4 --------+
+        #   |  +-license 1 --+  |
+        #   +-------------------+
+
+        # setup index
+        license1 = '''Redistribution and use permitted.'''
+
+        license2 = '''Redistributions of source must retain copyright.
+            Redistribution and use permitted.
+            Redistributions in binary form is permitted.'''
+
+        rule1 = Rule(_text=license1, licenses=['overlap'])
+        rule2 = Rule(_text=license2, licenses=['overlap'])
+        idx = index.LicenseIndex([rule1, rule2])
+
+        querys = '''My source.
+        Redistribution and use permitted.
+        My code.'''
+
+        # test : querys contains license1: return license1 as exact score
+        matches = idx.match(query_string=querys)
+        assert 1 == len(matches)
+        match = matches[0]
+        assert rule1 == match.rule
+        qtext, _itext = get_texts(match, query_string=querys, idx=idx)
+        assert 'Redistribution and use permitted' == qtext
+
+    def test_overlap_detection5(self):
+        #  test this containment relationship between test and index licenses:
+        #   * Index licenses:
+        #   +-license 2 --------+
+        #   |  +-license 1 --+  |
+        #   +-------------------+
         #
         #   +-license 4 --------+
         #   |  +-license 1 --+  |
         #   +-------------------+
 
         # setup index
-        doc1 = '''Redistribution and use permitted.'''
+        license1 = '''Redistribution and use permitted for MIT license.'''
 
-        doc2 = '''Redistributions of source must retain copyright.
-        Redistribution and use permitted.
+        license2 = '''Redistributions of source must retain copyright.
+        Redistribution and use permitted for MIT license.
         Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(_text=doc1, licenses=['overlap'], text_file='r1')
-        rule2 = Rule(_text=doc2, licenses=['overlap'], text_file='r2')
+        rule1 = Rule(_text=license1, licenses=['overlap'])
+        rule2 = Rule(_text=license2, licenses=['overlap'])
         idx = index.LicenseIndex([rule1, rule2])
 
-        doc4 = '''My source.
-        Redistribution and use permitted.
+        querys = '''My source.
+        Redistribution and use permitted for MIT license.
         My code.'''
 
-        # test : doc4 contains doc1: return doc1 as exact score
-        matches = idx.match(query_string=doc4, min_score=100)
+        # test : querys contains license1: return license1 as exact score
+        matches = idx.match(query_string=querys)
         assert 1 == len(matches)
 
         match = matches[0]
         assert rule1 == match.rule
+        qtext, _itext = get_texts(match, query_string=querys, idx=idx)
+        assert 'Redistribution and use permitted for MIT license' == qtext
 
     def test_fulltext_detection_works_with_partial_overlap_from_location(self):
         test_doc = self.get_test_loc('detect/templates/license3.txt')
         idx = index.LicenseIndex([Rule(text_file=test_doc, licenses=['mylicense'])])
 
-        query_doc = self.get_test_loc('detect/templates/license4.txt')
-        matches = idx.match(query_doc, min_score=0)
+        query_loc = self.get_test_loc('detect/templates/license4.txt')
+        matches = idx.match(query_loc)
 
         assert 1 == len(matches)
         match = matches[0]
         assert Span(0, 41) == match.qspan
         assert Span(0, 41) == match.ispan
-        assert 100 == match.normalized_score()
+        assert 100 == match.score()
+        qtext, _itext = get_texts(match, location=query_loc, idx=idx)
+        expected = '''
+            is free software you can redistribute it and or modify it under the terms of the GNU Lesser General Public License as
+            published by the Free Software Foundation either version 2 1 of the License or at your option any later version
+        '''.split()
+        assert expected == qtext.split()
 
 
 class TestIndexMatchWithTemplate(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def test_match_can_match_with_rule_template_simple(self):
-        # setup
+    def test_match_can_match_with_plain_rule_simple(self):
         tf1_text = u'''X11 License
         Copyright (C) 1996 X Consortium
         Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -386,10 +546,79 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         rule = Rule(_text=tf1_text, licenses=['x-consortium'])
         idx = index.LicenseIndex([rule])
 
-        matches = idx.match(self.get_test_loc('detect/simple_detection/x11-xconsortium_text.txt'), min_score=0)
+        query_loc = self.get_test_loc('detect/simple_detection/x11-xconsortium_text.txt')
+        matches = idx.match(query_loc)
         assert 1 == len(matches)
+
         match = matches[0]
         assert Span(0, 216) == match.qspan
+
+    def test_match_can_match_with_plain_rule_simple2(self):
+        rule_text = u'''X11 License
+        Copyright (C) 1996 X Consortium
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        Except as contained in this notice, the name of the X Consortium shall not be used in advertising or otherwise to promote the sale, use or other dealings in this Software without prior written authorization from the X Consortium.
+        X Window System is a trademark of X Consortium, Inc.
+        '''
+        rule = Rule(_text=rule_text, licenses=['x-consortium'])
+        idx = index.LicenseIndex([rule])
+
+        query_loc = self.get_test_loc('detect/simple_detection/x11-xconsortium_text.txt')
+        matches = idx.match(location=query_loc)
+        assert 1 == len(matches)
+
+        expected_qtext = u'''
+        X11 License Copyright C 1996 X Consortium Permission is hereby granted free of charge to any person obtaining a copy of
+        this software and associated documentation files the Software to deal in the Software without restriction including
+        without limitation the rights to use copy modify merge publish distribute sublicense and or sell copies of the Software
+        and to permit persons to whom the Software is furnished to do so subject to the following conditions The above copyright
+        notice and this permission notice shall be included in all copies or substantial portions of the Software THE SOFTWARE
+        IS PROVIDED AS IS WITHOUT WARRANTY OF ANY KIND EXPRESS OR IMPLIED INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+        MERCHANTABILITY FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR
+        ANY CLAIM DAMAGES OR OTHER LIABILITY WHETHER IN AN ACTION OF CONTRACT TORT OR OTHERWISE ARISING FROM OUT OF OR IN
+        CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE Except as contained in this notice the name of
+        the X Consortium shall not be used in advertising or otherwise to promote the sale use or other dealings in this
+        Software without prior written authorization from the X Consortium X Window System is a trademark of X Consortium Inc
+        '''.split()
+        match = matches[0]
+        qtext, _itext = get_texts(match, location=query_loc, idx=idx)
+        assert expected_qtext == qtext.split()
+
+    def test_match_can_match_with_simple_rule_template2(self):
+        rule_text = u'''
+        IN NO EVENT SHALL THE {{X CONSORTIUM}}
+        BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+        CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+        SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        '''
+        rule = Rule(_text=rule_text, licenses=['x-consortium'])
+        idx = index.LicenseIndex([rule])
+
+        query_string = u'''
+        IN NO EVENT SHALL THE Y CORP
+        BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+        CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+        SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        '''
+
+        matches = idx.match(query_string=query_string)
+        assert 1 == len(matches)
+        match = matches[0]
+        qtext, itext = get_texts(match, query_string=query_string, idx=idx)
+
+        expected_qtokens = u'''
+        IN NO EVENT SHALL THE <no-match> <no-match> BE LIABLE FOR ANY CLAIM DAMAGES OR OTHER LIABILITY WHETHER IN AN ACTION OF
+        CONTRACT TORT OR OTHERWISE ARISING FROM OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE
+        '''.split()
+        expected_itokens = u'''
+        IN NO EVENT SHALL THE <gap> BE LIABLE FOR ANY CLAIM DAMAGES OR OTHER LIABILITY WHETHER IN AN ACTION OF CONTRACT TORT OR
+        OTHERWISE ARISING FROM OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
+        '''.split()
+        assert expected_qtokens == qtext.split()
+        assert expected_itokens == itext.split()
 
     def test_match_can_match_with_rule_template_with_inter_gap_of_2(self):
         # in this template text there are only 2 tokens between the two templates markers
@@ -401,10 +630,10 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         querys = u'''Redistributions in binary form must nexB company
         reproduce the word for word above copyright notice.'''
 
-        matches = idx.match(query_string=querys, min_score=0)
+        matches = idx.match(query_string=querys)
         assert 1 == len(matches)
         match = matches[0]
-        assert 1 == match.score()
+        assert 100 == match.score()
         assert Span(0, 9) == match.qspan
         assert Span(0, 9) == match.ispan
 
@@ -418,11 +647,11 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         querys = u'''Redistributions in binary form must nexB company
         reproduce the stipulated word for word above copyright notice.'''
 
-        matches = idx.match(query_string=querys, min_score=0)
+        matches = idx.match(query_string=querys)
         assert 1 == len(matches)
 
         match = matches[0]
-        assert 1 == match.score()
+        assert 100 == match.score()
         assert Span(0, 10) == match.qspan
         assert Span(0, 10) == match.ispan
 
@@ -436,7 +665,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         querys = u'''Redistributions in binary form must nexB company
         reproduce as is stipulated the word for word above copyright notice.'''
 
-        matches = idx.match(query_string=querys, min_score=25)
+        matches = idx.match(query_string=querys)
         assert 1 == len(matches)
 
         match = matches[0]
@@ -460,11 +689,29 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         comes with NO WARRANTY or guarantee of fitness for any purpose.
         SAX2 is Free!
         '''
-        matches = idx.match(query_string=querys, min_score=10)
+        matches = idx.match(query_string=querys)
+
         assert 1 == len(matches)
         match = matches[0]
-        assert 100 == match.normalized_score()
-        assert Span([0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]) == match.qspan
+
+        qtext, itext = get_texts(match, query_string=querys, idx=idx)
+        expected_qtext = u'''
+        I hereby abandon any property rights to <no-match> <no-match> <no-match>
+        <no-match> <no-match> <no-match> <no-match> <no-match> and release all
+        of <no-match> <no-match> <no-match> <no-match> source code compiled code
+        and documentation contained in this distribution into the Public Domain
+        '''.split()
+        assert expected_qtext == qtext.split()
+
+        expected_itext = u'''
+        I hereby abandon any property rights to <gap> and release all of <gap> source code
+        compiled code and documentation contained in this distribution into the
+        Public Domain
+        '''.split()
+        assert expected_itext == itext.split()
+
+        assert 100 == match.score()
+        assert Span(0, 6) | Span(8, 11) | Span(13, 26) == match.qspan
         assert Span(0, 24) == match.ispan
 
     def test_match_can_match_with_rule_template_with_gap_near_start_with_few_tokens_before(self):
@@ -474,79 +721,77 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         idx = index.LicenseIndex([rule])
 
         qloc = self.get_test_loc('detect/templates/license8.txt')
-        matches = idx.match(qloc, min_score=10)
+        matches = idx.match(qloc)
         assert 1 == len(matches)
 
         match = matches[0]
-        qtext, itext = get_texts(match, location=qloc, dictionary=idx.dictionary)
-
         expected_qtokens = u"""
-        Copyright
-        <no-match>
-        <no-match>
-        <no-match>
-        <no-match>
-        <no-match>
-        <no-match>
-        <no-match>
-         All Rights Reserved Redistribution 
-        and use of this software and associated documentation Software with or without modification 
-        are permitted provided that the following conditions are met 1 Redistributions of source
-        code must retain copyright statements and notices Redistributions must also contain a copy of this document 2
-        Redistributions in binary form must reproduce the above copyright notice this list of conditions and the following
-        disclaimer in the documentation and or other materials provided with the distribution 3 The name <no-match> must not be
-        used to endorse or promote products derived from this Software without prior written permission of <no-match> <no-match>
-        For written permission please contact <no-match> <no-match> <no-match> 4 Products derived from this Software may not be
-        called <no-match> nor may <no-match> appear in their names without prior written permission of <no-match> <no-match>
-        <no-match> is a registered trademark of <no-match> <no-match> 5 Due credit should be given to <no-match> <no-match>
-        <no-match> <no-match> <no-match> <no-match> THIS SOFTWARE IS PROVIDED BY <no-match> <no-match> <no-match> CONTRIBUTORS AS
-        IS AND ANY EXPRESSED OR IMPLIED WARRANTIES INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
-        FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL <no-match> <no-match> OR ITS CONTRIBUTORS BE LIABLE
-        FOR ANY DIRECT INDIRECT INCIDENTAL SPECIAL EXEMPLARY OR CONSEQUENTIAL DAMAGES INCLUDING BUT NOT LIMITED TO PROCUREMENT
-        OF SUBSTITUTE GOODS OR SERVICES LOSS OF USE DATA OR PROFITS OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF
-        LIABILITY WHETHER IN CONTRACT STRICT LIABILITY OR TORT INCLUDING NEGLIGENCE OR OTHERWISE ARISING IN ANY WAY OUT OF THE
-        USE OF THIS SOFTWARE EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
-        """.split()
-        assert expected_qtokens == qtext.split()
-
-        expected_itokens = u"""
-        Copyright
+        Copyright <no-match>  <no-match> <no-match> <no-match> <no-match> <no-match> <no-match>
         All Rights Reserved Redistribution and use of this software and associated documentation Software with or without
         modification are permitted provided that the following conditions are met 1 Redistributions of source code must retain
         copyright statements and notices Redistributions must also contain a copy of this document 2 Redistributions in binary
         form must reproduce the above copyright notice this list of conditions and the following disclaimer in the documentation
-        and or other materials provided with the distribution 3 The name must not be used to endorse or promote products derived
-        from this Software without prior written permission of For written permission please contact 4 Products derived from
-        this Software may not be called nor may appear in their names without prior written permission of is a registered
-        trademark of 5 Due credit should be given to THIS SOFTWARE IS PROVIDED BY AS IS AND ANY EXPRESSED OR IMPLIED WARRANTIES
-        INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-        DISCLAIMED IN NO EVENT SHALL OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT INDIRECT INCIDENTAL SPECIAL EXEMPLARY OR
-        CONSEQUENTIAL DAMAGES INCLUDING BUT NOT LIMITED TO PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES LOSS OF USE DATA OR
-        PROFITS OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY WHETHER IN CONTRACT STRICT LIABILITY OR
-        TORT INCLUDING NEGLIGENCE OR OTHERWISE ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE EVEN IF ADVISED OF THE
-        POSSIBILITY OF SUCH DAMAGE
+        and or other materials provided with the distribution 3 The name <no-match> must not be used to endorse or promote
+        products derived from this Software without prior written permission of <no-match> <no-match> For written permission
+        please contact <no-match> <no-match> <no-match> 4 Products derived from this Software may not be called <no-match> nor
+        may <no-match> appear in their names without prior written permission of <no-match> <no-match> <no-match> is a
+        registered trademark of <no-match> <no-match> 5 Due credit should be given to <no-match> <no-match> <no-match>
+        <no-match> <no-match> <no-match> THIS SOFTWARE IS PROVIDED BY <no-match> <no-match> <no-match> <no-match> AS IS AND ANY
+        EXPRESSED OR IMPLIED WARRANTIES INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+        PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL <no-match> <no-match> OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT
+        INDIRECT INCIDENTAL SPECIAL EXEMPLARY OR CONSEQUENTIAL DAMAGES INCLUDING BUT NOT LIMITED TO PROCUREMENT OF SUBSTITUTE
+        GOODS OR SERVICES LOSS OF USE DATA OR PROFITS OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY
+        WHETHER IN CONTRACT STRICT LIABILITY OR TORT INCLUDING NEGLIGENCE OR OTHERWISE ARISING IN ANY WAY OUT OF THE USE OF THIS
+        SOFTWARE EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
         """.split()
+
+        expected_itokens = u'''
+        Copyright <gap>
+        All Rights Reserved Redistribution and use of this software and associated documentation Software with or without
+        modification are permitted provided that the following conditions are met 1 Redistributions of source code must retain
+        copyright statements and notices Redistributions must also contain a copy of this document 2 Redistributions in binary
+        form must reproduce the above copyright notice this list of conditions and the following disclaimer in the documentation
+        and or other materials provided with the distribution 3 The name <gap> must not be used to endorse or promote products
+        derived from this Software without prior written permission of <gap> For written permission please contact <gap> 4
+        Products derived from this Software may not be called <gap> nor may <gap> appear in their names without prior written
+        permission of <gap> is a registered trademark of <gap> 5 Due credit should be given to <gap> THIS SOFTWARE IS PROVIDED
+        BY <gap> AS IS AND ANY EXPRESSED OR IMPLIED WARRANTIES INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+        MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL <gap> OR ITS CONTRIBUTORS BE
+        LIABLE FOR ANY DIRECT INDIRECT INCIDENTAL SPECIAL EXEMPLARY OR CONSEQUENTIAL DAMAGES INCLUDING BUT NOT LIMITED TO
+        PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES LOSS OF USE DATA OR PROFITS OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON
+        ANY THEORY OF LIABILITY WHETHER IN CONTRACT STRICT LIABILITY OR TORT INCLUDING NEGLIGENCE OR OTHERWISE ARISING IN ANY
+        WAY OUT OF THE USE OF THIS SOFTWARE EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
+        '''.split()
+
+        qtext, itext = get_texts(match, location=qloc, idx=idx)
+        assert expected_qtokens == qtext.split()
         assert expected_itokens == itext.split()
 
-        assert 99.5 < match.normalized_score()
-        assert (0, 253) == (match.qstart, match.qend)
-        assert (0, 244) == (match.istart, match.iend)
+        assert 100 == match.score()
+        expected = (
+            Span(0) | Span(2, 98) | Span(100, 125) | Span(127, 131)
+            | Span(133, 139) | Span(141, 145) | Span(149, 178) | Span(180, 253)
+        )
+        assert expected == match.qspan
+        assert  Span(0, 244) == match.ispan
 
     def test_match_can_match_with_index_built_from_rule_directory_with_sun_bcls(self):
         rule_dir = self.get_test_loc('detect/rule_template/rules')
-        rules = models.rules(rule_dir)
-        idx = index.LicenseIndex(rules)
+        idx = index.LicenseIndex(models._rules_proper(rule_dir))
 
-        matches = idx.match(self.get_test_loc('detect/rule_template/query.txt'), min_score=0)
+        # at line 151 the query has an extra "Software" word inserted to avoid hash matching
+        query_loc = self.get_test_loc('detect/rule_template/query.txt')
+        matches = idx.match(location=query_loc)
         assert 1 == len(matches)
         match = matches[0]
-        assert Span(0, 1755) == match.qspan
+        assert Span(0, 958) | Span(960, 1756) == match.qspan
+        assert 'chunk' == match._type
 
-@skip('NOT YET')
+
 class TestMatchAccuracyWithFullIndex(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def check_position(self, test_path, expected, min_score=100):
+    def check_position(self, test_path, expected):
         """
         Check license detection in file or folder against expected result.
         Expected is a list of (license, lines span, qspan span) tuples.
@@ -555,7 +800,7 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         results = []
         # FULL INDEX!!
         idx = index.get_index()
-        matches = idx.match(test_location, min_score=100)
+        matches = idx.match(test_location)
         for match in matches:
             for detected in match.rule.licenses:
                 results.append((detected, match.lines, match.qspan,))
@@ -566,68 +811,77 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         querys = u'''Licensed under the GNU General Public License (GPL).
                      Licensed under the GNU General Public License (GPL).
                      Licensed under the GNU General Public License (GPL).'''
-        matches = idx.match(query_string=querys, min_score=0)
 
-        rule = [r for r in idx.rules_by_rid if r.identifier() == 'gpl-2.0_49.RULE'][0]
-        m1 = LicenseMatch(rule=rule, _type='chunk1', qspan=Span(0, 7), ispan=Span(0, 7))
-        m1.lines = Span(1, 1)
-        m2 = LicenseMatch(rule=rule, _type='chunk2', qspan=Span(8, 15), ispan=Span(0, 7))
-        m2.lines = Span(2, 2)
-        m3 = LicenseMatch(rule=rule, _type='chunk3', qspan=Span(16, 23), ispan=Span(0, 7))
-        m3.lines = Span(3, 3)
+        matches = idx.match(query_string=querys)
 
+        line_by_pos = {x: 1 for x in range(0, 8)}
+        line_by_pos.update({x: 2 for x in range(8, 16)})
+        line_by_pos.update({x: 3 for x in range(16, 24)})
+
+        rule = [r for r in idx.rules_by_rid if r.identifier == 'gpl-2.0_49.RULE'][0]
+        m1 = LicenseMatch(rule=rule, _type='chunk1', qspan=Span(0, 7), ispan=Span(0, 7), line_by_pos=line_by_pos)
+        m2 = LicenseMatch(rule=rule, _type='chunk2', qspan=Span(8, 15), ispan=Span(0, 7), line_by_pos=line_by_pos)
+        m3 = LicenseMatch(rule=rule, _type='chunk3', qspan=Span(16, 23), ispan=Span(0, 7), line_by_pos=line_by_pos)
         assert [m1, m2, m3] == matches
 
-    def test_match_has_correct_positions_1(self):
+    def test_match_has_correct_positions_for_query_with_repeats(self):
         expected = [
-            # detected, match.lines, match.qspan,
-            ('apache-2.0', Span(1, 2), Span(0, 15)),
-            ('apache-2.0', Span(3, 4), Span(16, 31)),
-            ('apache-2.0', Span(5, 6), Span(32, 47)),
-            ('apache-2.0', Span(7, 8), Span(48, 63)),
-            ('apache-2.0', Span(9, 10), Span(64, 79)),
+            # licenses, match.lines, qtext,
+            (u'apache-2.0_8.RULE', (1, 2), u'The Apache Software License Version 2 0 http www apache org licenses LICENSE 2 0 txt'),
+            (u'apache-2.0_8.RULE', (3, 4), u'The Apache Software License Version 2 0 http www apache org licenses LICENSE 2 0 txt'),
+            (u'apache-2.0_8.RULE', (5, 6), u'The Apache Software License Version 2 0 http www apache org licenses LICENSE 2 0 txt'),
+            (u'apache-2.0_8.RULE', (7, 8), u'The Apache Software License Version 2 0 http www apache org licenses LICENSE 2 0 txt'),
+            (u'apache-2.0_8.RULE', (9, 10), u'The Apache Software License Version 2 0 http www apache org licenses LICENSE 2 0 txt'),
         ]
         test_path = 'positions/license1.txt'
 
         test_location = self.get_test_loc(test_path)
-        results = []
         idx = index.get_index()
-        matches = idx.match(test_location, min_score=100)
-        for match in matches:
-            for detected in match.rule.licenses:
-                results.append((detected, match.lines, match.qspan,))
-        assert expected == results
+        matches = idx.match(test_location)
+        for i, match in enumerate(matches):
+            ex_lics, ex_lines, ex_qtext = expected[i]
+            qtext, _itext = get_texts(match, location=test_location, idx=idx)
 
+            try:
+                assert ex_lics == match.rule.identifier
+                assert ex_lines == match.lines
+                assert ex_qtext == qtext
+            except AssertionError:
+                assert expected[i] == (match.rule.identifier, match.lines, qtext)
 
-    def test_match_has_correct_positions_2(self):
+    def test_match_does_not_return_spurious_match(self):
         expected = []
         self.check_position('positions/license2.txt', expected)
 
-    def test_match_has_correct_positions_3(self):
+    def test_match_has_correct_line_positions_for_repeats(self):
         # we had a weird error where the lines were not computed correctly
-        # when we had more than one files detected at a time
+        # when we had more than one file detected at a time
         expected = [
             # detected, match.lines, match.qspan,
-            ('apache-2.0', Span(1, 2), Span(0, 15)),
-            ('apache-2.0', Span(3, 4), Span(16, 31)),
-            ('apache-2.0', Span(5, 6), Span(32, 47)),
-            ('apache-2.0', Span(7, 8), Span(48, 63)),
-            ('apache-2.0', Span(9, 10), Span(64, 79)),
+            ('apache-2.0', (1, 2), Span(0, 15)),
+            ('apache-2.0', (3, 4), Span(16, 31)),
+            ('apache-2.0', (5, 6), Span(32, 47)),
+            ('apache-2.0', (7, 8), Span(48, 63)),
+            ('apache-2.0', (9, 10), Span(64, 79)),
         ]
         self.check_position('positions/license3.txt', expected)
 
     def test_match_works_for_apache_rule(self):
         idx = index.get_index()
         querys = u'''I am not a license.
+
             The Apache Software License, Version 2.0
             http://www.apache.org/licenses/LICENSE-2.0.txt
             '''
-        matches = idx.match(query_string=querys, min_score=100)
+        matches = idx.match(query_string=querys)
 
-        rule = [r for r in idx.rules_by_rid if r.identifier() == 'apache-2.0_8.RULE'][0]
-        m1 = LicenseMatch(rule=rule, _type='chunk1', qspan=Span(5, 20), ispan=Span(0, 15))
-        m1.lines = Span(2, 3)
-        assert [m1] == matches
+        assert 1 == len(matches)
+        match = matches[0]
+        assert 'apache-2.0_8.RULE' == match.rule.identifier
+
+        qtext, _itext = get_texts(match, query_string=querys, idx=idx)
+        assert u'The Apache Software License Version 2 0 http www apache org licenses LICENSE 2 0 txt' == qtext
+        assert (3, 4) == match.lines
 
     def test_match_does_not_detect_spurrious_short_apache_rule(self):
         idx = index.get_index()
@@ -635,43 +889,50 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         <title>Apache log4j 1.2 - Continuous Integration</title>
         '''
-        matches = idx.match(query_string=querys, min_score=100)
+        matches = idx.match(query_string=querys)
         assert [] == matches
 
 
-@skip('NOT YET')
 class TestMatchBinariesWithFullIndex(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
     def test_match_in_binary_lkms_1(self):
         idx = index.get_index()
         qloc = self.get_test_loc('positions/ath_pci.ko')
-        matches = idx.match(location=qloc, min_score=99)
+        matches = idx.match(location=qloc)
         assert 1 == len(matches)
         match = matches[0]
         assert ['bsd-new', 'gpl-2.0'] == match.rule.licenses
+
+        qtext, itext = get_texts(match, location=qloc, idx=idx)
+        assert 'license Dual BSD GPL' == qtext
+        assert 'license Dual BSD GPL' == itext
 
     def test_match_in_binary_lkms_2(self):
         idx = index.get_index()
         qloc = self.get_test_loc('positions/eeepc_acpi.ko')
-        matches = idx.match(location=qloc, min_score=100)
+        matches = idx.match(location=qloc)
         assert 1 == len(matches)
         match = matches[0]
         assert ['gpl-2.0'] == match.rule.licenses
-        assert match.qspan == Span(65, 66)
         assert match.ispan == Span(0, 1)
-        assert match.lines == Span(24, 24)
+
+        qtext, itext = get_texts(match, location=qloc, idx=idx)
+        assert 'license GPL' == qtext
+        assert 'License GPL' == itext
 
     def test_match_in_binary_lkms_3(self):
         idx = index.get_index()
         qloc = self.get_test_loc('positions/wlan_xauth.ko')
-        matches = idx.match(location=qloc, min_score=100)
+        matches = idx.match(location=qloc)
         assert 1 == len(matches)
         match = matches[0]
         assert ['bsd-new', 'gpl-2.0'] == match.rule.licenses
-        assert match.qspan == Span(2, 5)
-        assert match.ispan == Span(0, 3)
-        assert match.lines == Span(3, 3)
+        assert 100 == match.score()
+        qtext, itext = get_texts(match, location=qloc, idx=idx)
+        assert 'license Dual BSD GPL' == qtext
+        assert 'license Dual BSD GPL' == itext
+        assert Span(0, 3) == match.ispan
 
 
 @skip('Needs review')

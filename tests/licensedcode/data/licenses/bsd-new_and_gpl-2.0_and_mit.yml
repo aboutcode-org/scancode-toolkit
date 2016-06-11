@@ -1,5 +1,7 @@
 licenses:
-    - bsd-new
-    - gpl-2.0
     - mit
+    - gpl
+    - mit
+    - bsd-new
+    - gpl
 

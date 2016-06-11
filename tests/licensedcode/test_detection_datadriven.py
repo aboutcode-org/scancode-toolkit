@@ -37,9 +37,9 @@ from commoncode import fileutils
 from commoncode import functional
 from commoncode import text
 
-from licensedcode import saneyaml
 from licensedcode import index
-from licensedcode import query
+from licensedcode.match import get_texts
+from licensedcode import saneyaml
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data/licenses')
@@ -51,7 +51,6 @@ TRACE_TEXTS = True
 """
 Data-driven tests using expectations stored in YAML files.
 """
-
 
 class LicenseTest(object):
     """
@@ -83,18 +82,35 @@ class LicenseTest(object):
                 data = saneyaml.load(df.read())
 
         self.licenses = data.get('licenses', [])
+
         # TODO: this is for future support of license expressions
-        self.license = data.get('license', None)
+        self.license = data.get('license')
+        self.license_choice = data.get('license_choice')
+
         self.notes = data.get('notes')
+        
+        # True if the test is expected to fail
         self.expected_failure = data.get('expected_failure', False)
+
+        # True if we test only that the expected licenses are present
+        self.expected_contains = data.get('expected_contains', False)
+        assert not (self.expected_contains and self.expected_failure)
+
+        # True if the test should be skipped
         self.skip = data.get('skip', False)
 
     def asdict(self):
         dct = OrderedDict()
         if self.licenses:
             dct['licenses'] = self.licenses
+        if self.license:
+            dct['license'] = self.licenses
+        if self.license_choice:
+            dct['license_choice'] = self.license_choice
         if self.expected_failure:
             dct['expected_failure'] = self.expected_failure
+        if self.expected_failure:
+            dct['expected_contains'] = self.expected_contains
         if self.skip:
             dct['skip'] = self.skip
         if self.notes:
@@ -122,6 +138,8 @@ def load_license_tests(test_dir=TEST_DATA_DIR):
     test_files = {}
     for top, _, files in os.walk(test_dir):
         for yfile in files:
+            if yfile. endswith('~'):
+                continue
             base_name = fileutils.file_base_name(yfile)
             file_path = abspath(join(top, yfile))
             if yfile.endswith('.yml'):
@@ -150,11 +168,12 @@ def build_tests(license_tests, clazz):
     for test in license_tests:
         # absolute path
         tfn = test.test_file_name
-        tf = test.test_file
+        test_file = test.test_file
+        data_file = test.data_file
         test_name = 'test_detection_%(tfn)s' % locals()
         test_name = text.python_safe_name(test_name)
         # closure on the test params
-        test_method = make_license_test_function(test.licenses, tf, test_name)
+        test_method = make_license_test_function(test.licenses, test_file, data_file, test_name, expected_contains=test.expected_contains)
         skipper = skip('Skipping long test')
         if test.skip:
             test_method = skipper(test_method)
@@ -166,9 +185,10 @@ def build_tests(license_tests, clazz):
 
 
 # TODO: check that we do not have duplicated tests with same data and text
-TRACE = False
 
-def make_license_test_function(expected_licenses, test_file, test_name, min_score=100, detect_negative=True):
+def make_license_test_function(expected_licenses, test_file, data_file, test_name, 
+                               detect_negative=True, min_score=0,
+                               expected_contains=False):
     """
     Build a test function closing on tests arguments
     """
@@ -178,29 +198,49 @@ def make_license_test_function(expected_licenses, test_file, test_name, min_scor
     def data_driven_test_function(self):
         idx = index.get_index()
         file_tested = test_file
-        matches = idx.match(location=test_file, min_score=min_score, _detect_negative=detect_negative)
-        if not matches:
-            assert [] == ['No match: min_score:{min_score}. detect_negative={detect_negative}, test_file: file://{file_tested}'.format(**locals())]
+        data_file_tested = data_file
+        matches = idx.match(location=test_file, min_score=min_score, 
+                            # we may not want to detect negative rules when testing negative rules
+                            detect_negative=detect_negative, 
+                            # we do not want to use cache when testing
+                            use_cache=False)
+
+        if not matches and expected_licenses:
+            assert [] == ['No match: min_score:{min_score}. detect_negative={detect_negative}, test_files:'.format(**locals()),
+                          'file://{file_tested}'.format(**locals()),
+                          'file://{data_file_tested}'.format(**locals()),
+                         ]
 
         # TODO: we should expect matches properly, not with a grab bag of flat license keys
         # flattened list of all detected license keys across all matches.
         detected_licenses = functional.flatten(match.rule.licenses for match in matches)
         try:
-            assert expected_licenses == detected_licenses
+            if expected_contains:
+                assert all(ex in detected_licenses for ex in expected_licenses)
+            else:
+                assert expected_licenses == detected_licenses                
         except:
             # on failure, we compare against more result data to get additional
             # failure details, including the test_file and full match details
             matches_texts = []
+
             if TRACE_TEXTS:
                 for match in matches:
-                    qtext, itext = query.get_texts(match, location=test_file, dictionary=idx.dictionary)
+                    qtext, itext = get_texts(match, location=test_file, idx=idx)
+                    match_rule_text_file = match.rule.text_file
+                    match_rule_data_file = match.rule.data_file
                     matches_texts.extend(['', '',
-                        '======= MATCH ====', match, 
-                        '======= Matched Query Text for: file://' + test_file , qtext.splitlines(), '',
-                        '======= Matched Rule Text for file://' + match.rule.text_file, itext.splitlines(),
+                        '======= MATCH ====', match,
+                        '======= Matched Query Text for:',
+                            'file://{file_tested}'.format(**locals()),
+                            'file://{data_file_tested}'.format(**locals()),
+                            qtext.splitlines(), '',
+                        '======= Matched Rule Text for:',
+                            'file://{match_rule_text_file}'.format(**locals()),
+                            'file://{match_rule_data_file}'.format(**locals()),
+                             itext.splitlines(),
                     ])
-            assert expected_licenses == [detected_licenses] + ['test file: file://' + test_file] + matches_texts
-
+            assert expected_licenses == detected_licenses + [test_name, 'test file: file://' + test_file] + matches_texts
 
     data_driven_test_function.__name__ = test_name
     data_driven_test_function.funcname = test_name

@@ -27,24 +27,24 @@ from __future__ import print_function
 from __future__ import division
 
 import codecs
+from collections import Counter
 from collections import defaultdict
 from collections import namedtuple
 from collections import OrderedDict
 from itertools import chain
-import os
-from os import walk
+from operator import itemgetter
 from os.path import exists
 from os.path import join
 
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
-from commoncode.functional import memoize
+from commoncode.fileutils import file_iter
 
-from licensedcode import NGRAM_LENGTH
-from licensedcode import MAX_GAP
+from licensedcode import MAX_GAP_SKIP
+from licensedcode import MIN_MATCH_LENGTH
+from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import licenses_data_dir
 from licensedcode import saneyaml
-from licensedcode import src_dir
 from licensedcode import rules_data_dir
 from licensedcode.tokenize import rule_tokenizer
 from licensedcode.tokenize import query_tokenizer
@@ -67,10 +67,47 @@ class License(object):
         - <key>.LICENSE: the license text
         - <key>.SPDX: the SPDX license text
     """
+    # we do not really need slots but they help keep the attributes in check
+    __slots__ = (
+        'key',
+        'src_dir',
+        'deprecated',
+        'short_name',
+        'name',
+        'category',
+        'owner',
+        'homepage_url',
+        'notes',
+        'versions',
+        'or_later_version',
+        'any_version',
+        'any_version_default',
+        'exception_to',
+        'spdx_license_key',
+        'spdx_full_name',
+        'spdx_url',
+        'spdx_notes',
+        'text_urls',
+        'osi_url',
+        'faq_url',
+        'other_urls',
+        'data_file',
+        'text_file',
+        'notice_file',
+        'spdx_file',
+    )
+
     def __init__(self, key=None, src_dir=licenses_data_dir):
+        """
+        Initialize a License for a `key` and data stored in the `src_dir`
+        directory. Key is a lower-case unique ascii string.
+        """
         # unique key: lower case ASCII characters, digits, underscore and dots.
         self.key = key or u''
         self.src_dir = src_dir
+
+        # if this is a deprecated license, contains notes explaining why
+        self.deprecated = u''
 
         # commonly used short name, often abbreviated.
         self.short_name = u''
@@ -96,25 +133,29 @@ class License(object):
         # if any_version, what is the license key to pick by default?
         self.any_version_default = u''
 
-        # if this is a license exception, license key this exception applies to
+        # if this is a license exception, the license key this exception applies to
         self.exception_to = u''
 
-        # a license cluster id, computed based on licenses similarities
-        self.cluster = u''
-
+        # SPDX information if present for SPDX licenses
         self.spdx_license_key = u''
         self.spdx_full_name = u''
         self.spdx_url = u''
         self.spdx_notes = u''
 
+        # Various URLs for info
         self.text_urls = []
         self.osi_url = u''
         self.faq_url = u''
         self.other_urls = []
 
+        # data file paths and known extensions
         self.data_file = join(self.src_dir, self.key + u'.yml')
         self.text_file = join(self.src_dir, self.key + u'.LICENSE')
+        # note: we do not keep a notice if there is no standard notice or if
+        # this is the same as a the license text
         self.notice_file = join(self.src_dir, self.key + u'.NOTICE')
+        # note: we do not keep the SPDX text if it is identical to the license
+        # text
         self.spdx_file = join(self.src_dir, self.key + u'.SPDX')
 
         if src_dir:
@@ -147,7 +188,7 @@ class License(object):
     def asdict(self):
         """
         Return an OrderedDict of license data (excluding texts).
-        Empty values are not included.
+        Fields with empty values are not included.
         """
         data = OrderedDict()
 
@@ -156,6 +197,9 @@ class License(object):
             data[u'short_name'] = self.short_name
         if self.name:
             data[u'name'] = self.name
+
+        if self.deprecated:
+            data[u'deprecated'] = self.deprecated
 
         if self.category:
             data[u'category'] = self.category
@@ -202,7 +246,8 @@ class License(object):
         this way:
          - <key>.yml : the license data in YAML
          - <key>.LICENSE: the license text
-         - <key>.SPDX: the SPDX license text
+         - <key>.NOTICE: the standard notice text if any
+         - <key>.SPDX: the SPDX license text if any
         """
         as_yaml = saneyaml.dump(self.asdict())
         self._write(self.data_file, as_yaml)
@@ -221,6 +266,7 @@ class License(object):
         """
         Populate license data from a YAML file stored in of src_dir.
         Does not load text files.
+        Unknown fields are ignored and not bound to the License object.
         """
         data_file = join(src_dir, self.data_file)
         try:
@@ -250,13 +296,14 @@ class License(object):
     @staticmethod
     def validate(licenses, verbose=False):
         """
-        Validate a mapping of key->lic for correctness. Return two
-        dictionaries of errors and warnings listing validation messages by
-        license_key. Print errors and warnings if verbose is True.
+        Check that licenses are valid. `licenses` is a mapping of key ->
+        License. Return dictionaries of infos, errors and warnings mapping a
+        license key to validation issue messages. Print messages if verbose is
+        True.
         """
-        errors = defaultdict(list)
-        warnings = defaultdict(list)
         infos = defaultdict(list)
+        warnings = defaultdict(list)
+        errors = defaultdict(list)
 
         # used for global dedupe of texts
         by_spdx_key = defaultdict(list)
@@ -295,8 +342,8 @@ class License(object):
                 if len(lic.versions) != len(set(lic.versions)):
                     warn('Duplicated license keys in versions list')
 
-            if (lic.or_later_version or lic.any_version or lic.any_version_default) and not lic.versions:
-                    err('Inconsistent or_later_version or any_version flag or any_version_default: no versions list')
+            if not lic.versions and (lic.or_later_version or lic.any_version or lic.any_version_default) :
+                err('Inconsistent or_later_version or any_version flag or any_version_default: no versions list')
 
             if not lic.any_version and lic.any_version_default:
                 err('Inconsistent any_version_default: any_version flag not set')
@@ -304,7 +351,6 @@ class License(object):
                 err('Unknown lic in any_version_default')
             if lic.any_version_default and lic.any_version_default not in lic.versions:
                 err('Inconsistent any_version_default: not listed in versions')
-
 
             # URLS dedupe and consistency
             if lic.text_urls and not all(lic.text_urls):
@@ -418,109 +464,121 @@ class License(object):
 
 
 # global cache of licenses as mapping of lic key -> lic object
-_LICENSES_BY_KEY = {}
+_LICENSES = {}
 
 
-def get_licenses_by_key():
+def get_licenses():
     """
     Return a mapping of license key -> license object.
     """
-    global _LICENSES_BY_KEY
-    if not _LICENSES_BY_KEY :
-        _LICENSES_BY_KEY = load_licenses()
-    return _LICENSES_BY_KEY
+    global _LICENSES
+    if not _LICENSES :
+        _LICENSES = load_licenses()
+    return _LICENSES
 
 
-def get_license(key):
-    """
-    Return a license object for this key.
-    Raise a KeyError if the license does not exists.
-    """
-    return get_licenses_by_key()[key]
-
-
-def load_licenses(license_dir=licenses_data_dir):
+def load_licenses(license_dir=licenses_data_dir , with_deprecated=False):
     """
     Return a mapping of key -> license objects, loaded from license files.
     """
     licenses = {}
-
-    for top, _, files in os.walk(license_dir):
-        for yfile in files:
-            if not yfile.endswith('.yml'):
-                continue
-            key = yfile.replace('.yml', '')
-            yfile = join(top, yfile)
-            src_dir = os.path.dirname(yfile)
-            licenses[key] = License(key, src_dir)
-
+    for data_file in file_iter(license_dir):
+        if not data_file.endswith('.yml'):
+            continue
+        key = file_base_name(data_file)
+        lic = License(key, license_dir)
+        if not with_deprecated and lic.deprecated:
+            continue
+        licenses[key] = lic
     return licenses
 
 
-def get_rules(unique=False):
+def get_rules():
     """
-    Return an iterable of all rules loaded from licenses and rules files.
-    Check uniqueness if unique is True.
+    Return a list of all reference rules loaded from licenses and rules files.
+    Raise a MissingLicenses exceptions if a rule references unknown license
+    keys.
     """
-    rls = chain(rules_from_licenses(), rules())
-    if unique:
-        rls = unique_rules(rls)
-        check_licenses(rls)
+    rls = list(chain(_rules_from_licenses(), _rules_proper()))
+    check_rules_integrity(rls)
     return rls
 
 
-@memoize
-def rules(rule_dir=rules_data_dir):
-    return list(_rules(rule_dir))
+class MissingLicenses(Exception):
+    pass
 
 
-def _rules(rule_dir=rules_data_dir):
+def check_rules_integrity(rules):
     """
-    Return an iterable of rules loaded from rules files.
+    Given a lists of rules, check that all license keys reference a known
+    license. Raise a MissingLicense exception with a message containing the list
+    of rule files without a corresponding license.
     """
-    # TODO: OPTIMIZE: break RULES with gaps in multiple sub-rules??
+    invalid_rules = defaultdict(list)
+    licenses = get_licenses()
+    for rule in rules:
+        for key in rule.licenses:
+            if key not in licenses:
+                invalid_rules[rule.data_file].append(key)
+    if invalid_rules:
+        invalid_rules = (data_file + ': ' + ' '.join(keys) 
+                         for data_file, keys in invalid_rules.iteritems())
+        msg = 'Rules referencing missing licenses:\n' + '\n'.join(invalid_rules)
+        raise MissingLicenses(msg)
+
+
+def _rules_from_licenses(licenses=None):
+    """
+    Return an iterable of rules built from each license text, notice and spdx
+    text from a `licenses` iterable of license objects. Use the reference list
+    if `licenses` is not provided.
+
+    Load the reference license list from disk if `licenses` is not provided.
+    """
+    licenses = licenses or get_licenses()
+    for license_key, license_obj in licenses.items():
+        tfile = join(license_obj.src_dir, license_obj.text_file)
+        if exists(tfile):
+            yield Rule(text_file=tfile, licenses=[license_key])
+
+        nfile = join(license_obj.src_dir, license_obj.notice_file)
+        if exists(nfile):
+            yield Rule(text_file=nfile, licenses=[license_key])
+
+        sfile = join(license_obj.src_dir, license_obj.spdx_file)
+        if exists(sfile):
+            yield Rule(text_file=sfile, licenses=[license_key])
+
+
+def _rules_proper(rule_dir=rules_data_dir):
+    """
+    Return an iterable of rules loaded from rule files.
+    """
     # TODO: OPTIMIZE: create a graph of rules to account for containment and similarity clusters?
+    # TODO: we should assign the rule id at that stage
     seen_files = set()
     processed_files = set()
-    for top, _, files in walk(rule_dir):
-        for yfile in (f for f in files if f.endswith('.yml')):
-            data_file = join(top, yfile)
-            base_name = file_base_name(yfile)
-            text_file = join(top, base_name + '.RULE')
-            processed_files.add(data_file)
-            processed_files.add(text_file)
+    rules_files = set()
+    for data_file in file_iter(rule_dir):
+        if data_file.endswith('.yml'):
+            base_name = file_base_name(data_file)
+            text_file = join(rule_dir, base_name + '.RULE')
+            processed_files.update([data_file.lower(), text_file.lower()])
             yield Rule(data_file=data_file, text_file=text_file)
-            seen_files.add(join(top, yfile))
+            seen_files.add(data_file)
 
     unknown_files = seen_files - processed_files
     if unknown_files:
-        print(unknown_files)
         files = '\n'.join(sorted(unknown_files))
         msg = 'Unknown files in rule directory: %(rule_dir)r\n%(files)s'
         raise Exception(msg % locals())
 
 
-def rules_from_licenses(licenses=None):
-    """
-    Return an iterable of rules built from license and spdx texts from a
-    `licenses` license objects iterable.
+Thresholds = namedtuple('Thresholds', 
+                        ['high_len', 'low_len', 'length', 
+                         'small', 'min_high', 'min_len', 'max_gap_skip'])
 
-    Load the reference list from disk if `licenses` is not provided.
-    """
-    licenses = licenses or get_licenses_by_key()
-    for license_key, license_obj in licenses.items():
-        text = license_obj.text
-        spdx_text = license_obj.spdx_license_text
-        if text:
-            tfile = join(license_obj.src_dir, license_obj.text_file)
-            yield Rule(text_file=tfile, licenses=[license_key])
-        if spdx_text:
-            sfile = join(license_obj.src_dir, license_obj.spdx_file)
-            yield Rule(text_file=sfile, licenses=[license_key])
-
-
-Thresholds = namedtuple('Thresholds', ['high_len', 'low_len', 'length', 'small', 'min_high', 'min_len', 'max_gaps'])
-
+_TEST_ID_COUNTER = 0
 
 class Rule(object):
     """
@@ -528,13 +586,15 @@ class Rule(object):
     detected licenses and metadata. A rule text can contain variable parts
     marked with double curly braces {{ }}.
     """
-    # OPTMIZED: use slot to increase attribute access speed wrt. namedtuple
-    __slots__ = ('rid', 'licenses', 'license_choice', 'notes', 'data_file',
-                 'text_file', '_text', 'length',
-                 'high_length', 'low_length',
-                 'high_unique', 'low_unique',
-                 'length_unique',
-                 'gaps')
+    __slots__ = ('rid', 'identifier',
+                 'licenses', 'license_choice', 'license', 'licensing_identifier',
+                 'false_positive',
+                 'notes',
+                 'data_file', 'text_file', '_text',
+                 'length', 'low_length', 'high_length', '_thresholds',
+                 'length_unique', 'low_unique', 'high_unique', '_thresholds_unique',
+                 'gaps', 'is_url'
+                 )
 
     def __init__(self, data_file=None, text_file=None, licenses=None,
                  license_choice=False, notes=None, _text=None):
@@ -546,12 +606,29 @@ class Rule(object):
         # optional rule id int typically assigned at indexing time
         self.rid = None
 
+        if not text_file:
+            global _TEST_ID_COUNTER
+            self.identifier = '_tst_' + str(_TEST_ID_COUNTER)
+            _TEST_ID_COUNTER += 1
+        else:
+            self.identifier = file_name(text_file)
+
         # list of valid license keys
         self.licenses = licenses or []
-
         # True if the rule is for a choice of all licenses. default to False
         self.license_choice = license_choice
 
+        # License expression
+        # TODO: implement me.
+        self.license = u''
+
+        # licensing identifier: TODO: replace with a license expression
+        self.licensing_identifier = tuple(sorted(set(self.licenses))) + (license_choice,)
+
+        # is this rule text a false positive when matched? (filtered out)
+        self.false_positive = False
+
+        # optional, free text
         self.notes = notes
 
         # path to the YAML data file for this rule
@@ -561,8 +638,11 @@ class Rule(object):
 
         # path to the rule text file
         self.text_file = text_file
+
         # for testing only, when we do not use a file
         self._text = _text
+
+        # These attributes are computed when processing the rule text or during indexing
 
         # length in number of token strings
         self.length = 0
@@ -570,37 +650,19 @@ class Rule(object):
         # lengths in token ids, including high/low token counts, set in indexing
         self.high_length = 0
         self.low_length = 0
+        self._thresholds = None
 
         # lengths in token ids, including high/low token counts, set in indexing
         self.high_unique = 0
         self.low_unique = 0
         self.length_unique = 0
+        self._thresholds_unique = None
 
         # set of pos followed by a gap, aka a template part
         self.gaps = set()
 
-    def same(self, other):
-        """
-        Return True if all essential attributes of this rule are the same as for the other rule.
-        """
-        if not isinstance(other, Rule):
-            return False
-
-        self_data = (
-            self.licensing_identifier(),
-            self.license_choice,
-            self.notes,
-            list(self.tokens()),
-            self.gaps
-         )
-        other_data = (
-            other.licensing_identifier(),
-            other.license_choice,
-            other.notes,
-            list(other.tokens()),
-            other.gaps
-         )
-        return self_data == other_data
+        # is this rule text for a bare url? (needs exact matching)
+        self.is_url = False
 
     def tokens(self, lower=True):
         """
@@ -608,11 +670,19 @@ class Rule(object):
         by position. Gaps and length are recomputed. Tokens inside gaps are
         tracked but not part of the returned stream.
         """
+        # FIXME: we should cache these outside of the rule object, as a global
         gaps = set()
         # Note: we track the pos instead of enumerating it because we create
         # positions abstracting gaps
         pos = 0
         length = 0
+        text = self.text()
+        text = text.strip()
+
+        # tag this rule as being a bare URL: this is used to determine a matching approach
+        if text.startswith(('http', 'https')) and '\n' not in text[:1000]:
+            self.is_url = True
+
         for token in rule_tokenizer(self.text(), lower=lower):
             if token is None:
                 gaps.add(pos - 1)
@@ -637,43 +707,33 @@ class Rule(object):
             with codecs.open(self.text_file, encoding='utf-8') as f:
                 return f.read()
         else:
-            raise Exception('Inconsistent rule text for:', self.identifier())
-
-    @memoize
-    def identifier(self):
-        """
-        Return a computed rule identifier based on the rule file name.
-        """
-        # use dummy _tst_ identifier for test only
-        return self.text_file and file_name(self.text_file) or '_tst_'
+            raise Exception('Inconsistent rule text for:', self.identifier)
 
     def __repr__(self):
-        idf = self.identifier()
+        idf = self.identifier
         ird = self.rid
         if TRACE_REPR:
             text = self.text()
         else:
-            text = self.text()[:10] + '...'
+            text = self.text()[:20] + '...'
         keys = self.licenses
         choice = self.license_choice
-        return 'Rule(%(idf)r, rid=%(ird)r, licenses=%(keys)r, choice=%(choice)r, text=%(text)r)' % locals()
-
-    def licensing_identifier(self):
-        return tuple(sorted(set(self.licenses))) + (self.license_choice,)
+        fp = self.false_positive
+        return 'Rule(%(idf)r, lics=%(keys)r, fp=%(fp)r, %(text)r)' % locals()
 
     def same_licensing(self, other):
         """
         Return True if the other rule has a the same licensing as this rule.
         """
         # TODO: include license expressions
-        return self.licensing_identifier() == other.licensing_identifier()
+        return self.licensing_identifier == other.licensing_identifier
 
     def licensing_contains(self, other):
         """
         Return True if the other rule licensing is contained in this rule licensing.
         """
         # TODO: include license expressions
-        return set(self.licensing_identifier()).issuperset(other.licensing_identifier())
+        return set(self.licensing_identifier).issuperset(other.licensing_identifier)
 
     def negative(self):
         """
@@ -681,151 +741,81 @@ class Rule(object):
         therefore a "negative" rule denoting that a match to this rule should be
         ignored.
         """
-        return not self.licenses
+        return (not self.licenses) and (not self.false_positive)
 
     def small(self):
-        return bool(self.length < 15 and not self.gaps)
+        """
+        Is this a small rule? It needs special handling for detection. 
+        """
+        SMALL_RULE = 15
+        return self.length < SMALL_RULE or self.is_url
 
-    # TODO: memoize
     def thresholds(self):
         """
-        Return a Thresholds tuple of matching thresholds for this rule
-        considering every token occurrence.
+        Return a Thresholds tuple considering every token occurrence.
         """
-        if self.length < 5:
-            # all tokens should be matched
-            min_high = self.high_length
-            min_len = self.length
-            max_gaps = 0
+        if not self._thresholds:
+            min_high = MIN_MATCH_HIGH_LENGTH
+            min_len = MIN_MATCH_LENGTH
+            max_gap_skip = MAX_GAP_SKIP
 
-        elif self.length < 10:
-            # all high tokens should be matched
-            min_high = self.high_length
-            # most of the length should be matched
-            min_len = self.length - 2
-            max_gaps = 2
-
-        elif self.length < 20:
-            # 50% of high tokens should be matched
-            min_high = min([self.high_length / 2, NGRAM_LENGTH])
-            min_len = min_high
-            max_gaps = 5
-
-        else:
-            min_high = min([self.high_length / 2, NGRAM_LENGTH])
-            min_len = min_high
-            max_gaps = MAX_GAP
-
-        if self.gaps:
-            gaps_count = len(self.gaps)
+            # note: we cascade ifs from largest to smallest lengths
+            if self.length < 30:
+                min_high = self.high_length
+                min_len = self.length // 2
+                max_gap_skip = 1
 
             if self.length < 10:
-                max_gaps = gaps_count * 3
+                min_high = self.high_length
+                min_len = self.length
+                max_gap_skip = 1 if self.gaps else 0
 
-            elif self.length < 20:
-                max_gaps = gaps_count * 4
+            if self.is_url:
+                min_high = self.high_length
+                min_len = self.length
+                max_gap_skip = 0
 
-            elif self.length < 30:
-                max_gaps = gaps_count * 5
+            self._thresholds = Thresholds(
+                self.high_length, self.low_length, self.length,
+                self.small(), min_high, min_len, max_gap_skip)
+        return self._thresholds
 
-            else:
-                max_gaps = gaps_count * 10
-
-        return Thresholds(self.high_length, self.low_length, self.length, self.small(), min_high, min_len, max_gaps)
-
-    # TODO: memoize
     def thresholds_unique(self):
         """
-        Return a Thresholds tuple of matching thresholds for this rule
-        considering only unique token occurrence.
+        Return a Thresholds tuple considering only unique token occurrence.
         """
-        if self.length < 5:
-            # all tokens should be matched
-            min_high = self.high_unique
-            min_len = self.length_unique
-            max_gaps = 0
-
-        elif self.length < 10:
-            # all high tokens should be matched
-            min_high = self.high_unique
-            # most of the length should be matched
-            min_len = self.length_unique - 1
-            max_gaps = 2
-
-        elif self.length < 20:
-            # 50% of high tokens should be matched
-            min_high = min([self.high_unique // 2, NGRAM_LENGTH])
-            min_len = min_high
-            max_gaps = 5
-
-        else:
-            min_high = min([self.high_unique // 2, NGRAM_LENGTH])
-            min_len = min_high
-            max_gaps = MAX_GAP
-
-        if self.gaps:
-            gaps_count = len(self.gaps)
+        if not self._thresholds_unique:
+            min_high = int(min([self.high_unique // 2, MIN_MATCH_HIGH_LENGTH]))
+            min_len = MIN_MATCH_LENGTH
+            max_gap_skip = MAX_GAP_SKIP
+            # note: we cascade IFs from largest to smallest lengths
+            if self.length < 20:
+                min_high = self.high_unique
+                min_len = min_high
+                max_gap_skip = 1
 
             if self.length < 10:
-                max_gaps = gaps_count * 3
+                min_high = self.high_unique
+                if self.length_unique < 2:
+                    min_len = self.length_unique
+                else:
+                    min_len = self.length_unique - 1
+                max_gap_skip = 1 if self.gaps else 0
 
-            elif self.length < 20:
-                max_gaps = gaps_count * 4
+            if self.length < 5:
+                min_high = self.high_unique
+                min_len = self.length_unique
+                max_gap_skip = 1 if self.gaps else 0
 
-            elif self.length < 30:
-                max_gaps = gaps_count * 5
+            if self.is_url:
+                min_high = self.high_unique
+                min_len = self.length_unique
+                max_gap_skip = 0
 
-            else:
-                max_gaps = gaps_count * 10
-
-        return Thresholds(self.high_unique, self.low_unique, self.length_unique, self.small(), min_high, min_len, max_gaps)
-
-    def min_density(self):
-        """
-        Return a float between 0 and 1 representing the minimum density that a
-        match to this rule should have to be valid and significant.
-        
-        The rationale is that for some small rules with few tokens, it does not
-        make sense to consider sparse matches at all unless their density is
-        high. For larger rules, matches that are very sparse may not make sense
-        either.
-        
-        For example, a rule with this text: 
-            Apache-1.1
-        should not be matched to this query:    
-            This Apache component was released as v1.1 in 2015.
-        """
-        if not self.gaps:
-            if self.length < 10:
-                return 1.00
-            elif self.length < 20:
-                return 0.90
-            elif self.length < 30:
-                return 0.85
-            elif self.length < 50:
-                return 0.80
-            else:
-                return 0.75
-
-        # with gaps:
-        if self.length < 30:
-            biggest_gap = 5
-        else:
-            biggest_gap = min([self.length / 10., MAX_GAP])
-
-        gaps_count = len(self.gaps)
-        dens = self.length / (self.length + (biggest_gap * gaps_count))
-        return dens
-
-    def _data(self):
-        """
-        Return a tuple of data used to check for uniqueness.
-        """
-        comparable = list(self.tokens())
-        comparable.extend(sorted(self.gaps))
-        comparable.append(self.license_choice)
-        comparable.extend(sorted(self.licenses))
-        return tuple(comparable)
+            self._thresholds_unique = Thresholds(
+                self.high_unique, self.low_unique, self.length_unique,
+                self.small(), min_high, min_len, max_gap_skip)
+        return self._thresholds_unique
 
     def asdict(self):
         """
@@ -837,6 +827,10 @@ class Rule(object):
             data['licenses'] = self.licenses
         if self.license_choice:
             data['license_choice'] = self.license_choice
+        if self.license:
+            data['license'] = self.license
+        if self.false_positive:
+            data['false_positive'] = self.false_positive
         if self.notes:
             data['notes'] = self.note
         return data
@@ -858,6 +852,7 @@ class Rule(object):
         """
         Load self from a .RULE YAML file stored in self.data_file.
         Does not load the rule text file.
+        Unknown fields are ignored and not bound to the Rule object.
         """
         try:
             with codecs.open(self.data_file, encoding='utf-8') as f:
@@ -873,45 +868,36 @@ class Rule(object):
 
         self.licenses = data.get('licenses', [])
         self.license_choice = data.get('license_choice', False)
+        self.license = data.get('license')
+        self.false_positive = data.get('false_positive', False)
         # these are purely informational and not used at run time
         if load_notes:
-            self.notes = data.get('notes')
+            notes = data.get('notes')
+            if notes:
+                self.notes = notes.strip()
         return self
 
 
-class MissingLicense(Exception):
-    pass
-
-
-def check_licenses(rules):
+def _print_rule_stats():
     """
-    Given a lists of rules, check that all license keys reference a known
-    license. Raise a MissingLicense exception with a message containing the list
-    of rule files without a corresponding license.
+    Print rules statistics.
     """
-    invalid_rules = defaultdict(list)
-    for rule in rules:
-        for key in rule.licenses:
-            try:
-                get_license(key)
-            except KeyError:
-                invalid_rules[rule.data_file].append(key)
-    if invalid_rules:
-        invalid_rules = (data_file + ': ' + ' '.join(keys) for data_file, keys in invalid_rules.iteritems())
-        msg = 'Rules data file with missing licenses:\n' + '\n'.join(invalid_rules)
-        raise MissingLicense(msg)
+    from licensedcode.index import get_index
+    idx = get_index()
+    rules = idx.rules_by_rid
+    sizes = Counter(r.length for r in rules)
+    print('Top 15 lengths: ', sizes.most_common(15))
+    print('15 smallest lengths: ', sorted(sizes.iteritems(), 
+                                          key=itemgetter(0))[:15])
 
+    high_sizes = Counter(r.high_length for r in rules)
+    print('Top 15 high lengths: ', high_sizes.most_common(15))
+    print('15 smallest high lengths: ', sorted(high_sizes.iteritems(), 
+                                               key=itemgetter(0))[:15])
 
-def unique_rules(rules):
-    """
-    Yield an iterable of unique rules given an iterable of rules.
-    """
-    seen = {}
-    for rule in rules:
-        ridt = rule._data()
-        if ridt in seen:
-            print(rule.identifier(), 'is a duplicate of', seen[ridt])
-            continue
-        else:
-            seen[ridt] = rule.identifier()
-            yield rule
+    gaps = Counter(len(r.gaps) for r in rules if r.gaps)
+    print('Top 15 gap counts: ', sorted(gaps.most_common(0), 
+                                        key=itemgetter(1), reverse=True))
+
+    small_with_gaps = [(r.identifier, len(r.gaps)) for r in rules if r.gaps and r.small()]
+    print('Small rules with gaps: ', small_with_gaps)

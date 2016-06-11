@@ -1,0 +1,10 @@
+key: ja-sig
+short_name: JA-SIG
+name: JA-SIG License
+category: Attribution
+owner: Apereo
+homepage_url: http://uportal.org/license.html
+notes: |
+    this is an old and rare license, replaced since by an Apache 2.0.
+    This is a BSD variant.
+    See original at http://web.archive.org/web/20040402030132/http://uportal.org/license.html

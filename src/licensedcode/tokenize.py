@@ -22,15 +22,20 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
+from array import array
 from collections import deque
 from itertools import islice
 from itertools import izip
 import re
+from zlib import crc32
+
+from textcode.analysis import text_lines
 
 from licensedcode import NGRAM_LENGTH
-from textcode.analysis import text_lines
 
 
 """
@@ -41,14 +46,14 @@ specialized version for queries and rules texts.
 
 def query_lines(location=None, query_string=None):
     """
-    Return an iterable of line text given a file at location or a
-    query string. Include empty lines. 
+    Return an iterable of text lines given a file at `location` or a
+    `query string`. Include empty lines. 
     """
     # TODO: OPTIMIZE: tokenizing line by line may be rather slow
     # we could instead get lines and tokens at once in a batch?
     lines = []
     if location:
-        lines = text_lines(location)
+        lines = text_lines(location, demarkup=True)
     elif query_string:
         lines = query_string.splitlines(False)
 
@@ -56,9 +61,11 @@ def query_lines(location=None, query_string=None):
         yield line.strip()
 
 
-# Split on whitespace and punctuation: keep only characters using a (trick)
-# double negation regex on characters (e.g. [^\W]), underscore, dash and +
-word_splitter = re.compile(r'[^\W_\-\+]+', re.UNICODE).findall
+# Split on whitespace and punctuations: keep only characters using a (trick)
+# double negation regex on characters (e.g. [^\W]), underscore, dash and +.
+# Keeping the + is important for licenses name such as GPL2+.
+query_pattern = r'[^\W_\-\+]+'
+word_splitter = re.compile(query_pattern, re.UNICODE).findall
 
 
 def query_tokenizer(text, lower=True):
@@ -73,50 +80,38 @@ def query_tokenizer(text, lower=True):
             yield token
 
 
-def query_tokenid_tokenizer(text, dictionary):
-    """
-    Return an iterable of token ids from a unicode query text and a dictionary.
-    Return -1 for unknown tokens.
-    """
-    if not text:
-        return
-    for token in word_splitter(text.lower()):
-        if token:
-            yield dictionary.get(token, -1)
-
-
-
 # Template-aware splitter, keeping a templated part {{anything}} as a token.
 # This splitter yields plain token strings or double braces-enclosed strings
 # {{something}} for templates.
-template_splitter = re.compile(r'''
-    # Use non capturing groups for alternation.
-    # same split on white space and punctuation as in word_splitter
+# Use non capturing groups for alternation.
+rule_pattern = r'''
+    # Same split on white space and punctuation as in word_splitter
     (?:[^\W_\-\+])+
     |
     # a template part is anything enclosed in double braces
     (?:{{[^{}]*}})
-''' , re.UNICODE | re.VERBOSE).findall
+'''
+template_splitter = re.compile(rule_pattern , re.UNICODE | re.VERBOSE).findall
 
 
 def rule_tokenizer(text, lower=True):
     """
     Return an iterable of tokens from a unicode rule text returning templated
-    parts as a -1 token. Leading and trailing templated parts are skipped.
+    parts as a None token. Leading and trailing templated parts are skipped.
 
     For example:
     >>> list(rule_tokenizer(''))
     []
     >>> list(rule_tokenizer('some Text with   spAces! + _ -'))
-    ['some', 'text', 'with', 'spaces']
+    [u'some', u'text', u'with', u'spaces']
 
     Unbalanced templates are handled correctly:
     >>> list(rule_tokenizer('{{}some }}Text with   spAces! + _ -'))
-    ['some', 'text', 'with', 'spaces']
+    [u'some', u'text', u'with', u'spaces']
 
     Templates are handled correctly and yielding None for templates:
     >>> list(rule_tokenizer('{{Hi}}some {{}}Text with{{noth+-_!@ing}}   {{junk}}spAces! + _ -{{}}'))
-    ['some', None, 'text', 'with', None, 'spaces']
+    [u'some', None, u'text', u'with', None, u'spaces']
     """
     if not text:
         return
@@ -124,7 +119,7 @@ def rule_tokenizer(text, lower=True):
     text = lower and text.lower() or text
     tokens = template_splitter(text)
     # replace templates with None
-    tokens = [None if token.startswith(u'{{') else token for token in tokens]
+    tokens = [None if token.startswith('{{') else token for token in tokens]
 
     # remove leading and trailing templates
     while tokens and tokens[0] is None:
@@ -147,110 +142,7 @@ def rule_tokenizer(text, lower=True):
                 yield token
         previous = token
 
-
-
-def ngrams(iterable, ngram_length):
-    """
-    Return an iterable of ngrams of length `ngram_length` given an iterable.
-    Each ngram is a tuple of ngram_length items.
-    The returned iterable is empty if the input iterable contains less than
-    `ngram_length` items.
-
-    Note: this is a fairly arcane but optimized way to compute ngrams.
-
-    For example:
-    >>> list(ngrams([1,2,3,4,5], 2))
-    [(1, 2), (2, 3), (3, 4), (4, 5)]
-
-    >>> list(ngrams([1,2,3,4,5], 4))
-    [(1, 2, 3, 4), (2, 3, 4, 5)]
-
-    >>> list(ngrams([1,2,3,4], 2))
-    [(1, 2), (2, 3), (3, 4)]
-    
-    >>> list(ngrams([1,2,3], 2))
-    [(1, 2), (2, 3)]
-    >>> list(ngrams([1,2], 2))
-    [(1, 2)]
-    >>> list(ngrams([1], 2))
-    []
-    """
-    return izip(*(islice(iterable, i, None) for i in range(ngram_length)))
-
-
-def query_ngrams(tokens, ngram_length=NGRAM_LENGTH, start=0):
-    """
-    Return an iterable of tuple(start position, ngram) given a `tokens` iterable. 
-    Each ngram is a tuple of ngram_length tokens.
-    Start positions start at `start`.
-    Skip ngrams that contain a None token.
-
-    For example:
-    >>> list(query_ngrams([1,2,3,4,5], 2))
-    [(0, (1, 2)), (1, (2, 3)), (2, (3, 4)), (3, (4, 5))]
-    >>> list(query_ngrams([1,2,3,4], 3))
-    [(0, (1, 2, 3)), (1, (2, 3, 4))]
-    >>> list(query_ngrams([1,2,3,4], 5))
-    []
-    >>> list(query_ngrams([1,2], 2))
-    [(0, (1, 2))]
-    >>> list(query_ngrams([1], 2))
-    []
-
-    With Nones:
-    >>> list(query_ngrams([1,2,3,None], 3))
-    [(0, (1, 2, 3))]
-
-    With start:
-    >>> list(query_ngrams([1,2,3,4,5], 2, 5))
-    [(5, (1, 2)), (6, (2, 3)), (7, (3, 4)), (8, (4, 5))]
-    >>> list(query_ngrams([1,None,3,4,5], 2, 5))
-    [(7, (3, 4)), (8, (4, 5))]
-    """
-    qngrams = enumerate(ngrams(tokens, ngram_length), start)
-    return ((start, ngram) for start, ngram in qngrams if None not in ngram)
-
-
-def rule_ngrams(tokens, ngram_length=NGRAM_LENGTH, gaps=None):
-    """
-    Return an iterable of tuple(start position, ngram) given a `tokens` iterable.
-    Each ngram is a tuple of ngram_length tokens.
-
-    Skip ngrams that spans over a `gaps` positions where `gaps` is a set of gap
-    start positions.
-    
-    For example:
-    >>> list(rule_ngrams([1,2,3,4,5], 2))
-    [(0, (1, 2)), (1, (2, 3)), (2, (3, 4)), (3, (4, 5))]
-    >>> list(rule_ngrams([1,2,3,4], 3))
-    [(0, (1, 2, 3)), (1, (2, 3, 4))]
-    >>> list(rule_ngrams([1,2,3,4], 5))
-    []
-    >>> list(rule_ngrams([1,2], 2))
-    [(0, (1, 2))]
-    >>> list(rule_ngrams([1], 2))
-    []
-    >>> list(rule_ngrams([5,6,7,8,8,9], ngram_length=3))
-    [(0, (5, 6, 7)), (1, (6, 7, 8)), (2, (7, 8, 8)), (3, (8, 8, 9))]
-
-    With gaps at 1 (item 6) and 3 (item 8):
-    >>> list(rule_ngrams([5,6,7,8,12,9], ngram_length=2, gaps=set([1,3])))
-    [(0, (5, 6)), (2, (7, 8)), (4, (12, 9))]
-    >>> list(rule_ngrams([5,6,7,8,12,9], ngram_length=3, gaps=set([1,3])))
-    []
-    """
-    for start, ngram in enumerate(ngrams(tokens, ngram_length)):
-        if gaps:
-            # Note: by design it is perfectly ok for the last token of an ngram
-            # to be at a gap position. The gap position is the same as the token
-            # just before a gap.
-            if not any(p in gaps for p in xrange(start, start + ngram_length - 1)):
-                yield start, ngram
-        else:
-            yield start, ngram
-
-
-def ngrams_longuest(tokens, ngram_length=NGRAM_LENGTH, offset=0):
+def ngrams_longuest(tokens, ngram_length=NGRAM_LENGTH, offset=0, len_junk=0):
     """
     Return an iterable of (start, len, ngram) where ngram is a tuple of
     `ngram_length` or less tokens from a given a sequence of tokens. 
@@ -261,29 +153,33 @@ def ngrams_longuest(tokens, ngram_length=NGRAM_LENGTH, offset=0):
 
     For example:
     >>> list(ngrams_longuest([1,2,3,4,5], 2))
-    [(0, 2, (1, 2)), (1, 2, (2, 3)), (2, 2, (3, 4)), (3, 2, (4, 5))]
+    [(0, 2, '\\x01\\x00\\x02\\x00'), (1, 2, '\\x02\\x00\\x03\\x00'), (2, 2, '\\x03\\x00\\x04\\x00'), (3, 2, '\\x04\\x00\\x05\\x00')]
 
     >>> list(ngrams_longuest([1,2,3,4,5], 6))
-    [(0, 5, (1, 2, 3, 4, 5))]
+    [(0, 5, '\\x01\\x00\\x02\\x00\\x03\\x00\\x04\\x00\\x05\\x00')]
 
     >>> list(ngrams_longuest([1,2,3,4,5], 5))
-    [(0, 5, (1, 2, 3, 4, 5))]
+    [(0, 5, '\\x01\\x00\\x02\\x00\\x03\\x00\\x04\\x00\\x05\\x00')]
 
     >>> list(ngrams_longuest([1,2,3,4], 2))
-    [(0, 2, (1, 2)), (1, 2, (2, 3)), (2, 2, (3, 4))]
- 
+    [(0, 2, '\\x01\\x00\\x02\\x00'), (1, 2, '\\x02\\x00\\x03\\x00'), (2, 2, '\\x03\\x00\\x04\\x00')]
+
     >>> list(ngrams_longuest([1,2,3], 2))
-    [(0, 2, (1, 2)), (1, 2, (2, 3))]
+    [(0, 2, '\\x01\\x00\\x02\\x00'), (1, 2, '\\x02\\x00\\x03\\x00')]
+
     >>> list(ngrams_longuest([1,2], 3))
-    [(0, 2, (1, 2))]
+    [(0, 2, '\\x01\\x00\\x02\\x00')]
+
     >>> list(ngrams_longuest([1], 2))
-    [(0, 1, (1,))]
+    [(0, 1, '\\x01\\x00')]
     """
     if not tokens:
         return
 
-    if len(tokens) <= ngram_length:
-        yield offset, len(tokens), tuple(tokens)
+    lt = len(tokens)
+    if lt <= ngram_length:
+        if tokens[0] >= len_junk and tokens[-1] >= len_junk:
+            yield offset, lt, array(b'h', tokens).tostring()
     else:
         ngram = deque()
         tokens = iter(tokens)
@@ -293,75 +189,79 @@ def ngrams_longuest(tokens, ngram_length=NGRAM_LENGTH, offset=0):
 
         for start, tok in enumerate(tokens):
             ngram.append(tok)
-            yield start + offset, len(ngram), tuple(ngram)
+            ln = len(ngram)
+            # only yield ngrams starting or ending with a high token
+            if ngram[0] >= len_junk and ngram[-1] >= len_junk:
+                yield start + offset, ln, array(b'h', ngram).tostring()
             ngram.popleft()
 
 
-def multigrams(tokens, ngram_length=NGRAM_LENGTH, offset=0):
+def multigrams(tokens, ngram_length=NGRAM_LENGTH, offset=0, len_junk=0):
     """
     Return an iterable of (start, len, ngram) for every ngram length from one
-    (e.g. unigrams) to ngram_length given a sequence of tokens.
-    Add `offset` to start.
+    (e.g. unigrams) to ngram_length given a sequence of tokens. Add `offset` to
+    start. Only return multigrams whose start or end is a high token id.
 
-    For example, with these tokens [1, 2, 3, 4, 5] and ngram_length 3, these ngrams
-    are returned::
+    For example, with these tokens [1, 2, 3, 4, 5] and ngram_length 3, these
+    ngrams are returned::
 
     >>> unigrams = [1, 2, 3, 4, 5]
     >>> from pprint import pprint
     >>> pprint(list(multigrams(unigrams, 3)))
-    [(0, 3, (1, 2, 3)),
-     (1, 3, (2, 3, 4)),
-     (2, 3, (3, 4, 5)),
-     (0, 2, (1, 2)),
-     (1, 2, (2, 3)),
-     (2, 2, (3, 4)),
-     (3, 2, (4, 5)),
-     (0, 1, (1,)),
-     (1, 1, (2,)),
-     (2, 1, (3,)),
-     (3, 1, (4,)),
-     (4, 1, (5,))]
+    [(0, 3, '\\x01\\x00\\x02\\x00\\x03\\x00'),
+     (1, 3, '\\x02\\x00\\x03\\x00\\x04\\x00'),
+     (2, 3, '\\x03\\x00\\x04\\x00\\x05\\x00'),
+     (0, 2, '\\x01\\x00\\x02\\x00'),
+     (1, 2, '\\x02\\x00\\x03\\x00'),
+     (2, 2, '\\x03\\x00\\x04\\x00'),
+     (3, 2, '\\x04\\x00\\x05\\x00'),
+     (0, 1, '\\x01\\x00'),
+     (1, 1, '\\x02\\x00'),
+     (2, 1, '\\x03\\x00'),
+     (3, 1, '\\x04\\x00'),
+     (4, 1, '\\x05\\x00')]
+
 
     And with ngram_length 4, these tokens are returned::
 
     >>> pprint(list(multigrams(unigrams, 4)))
-    [(0, 4, (1, 2, 3, 4)),
-     (1, 4, (2, 3, 4, 5)),
-     (0, 3, (1, 2, 3)),
-     (1, 3, (2, 3, 4)),
-     (2, 3, (3, 4, 5)),
-     (0, 2, (1, 2)),
-     (1, 2, (2, 3)),
-     (2, 2, (3, 4)),
-     (3, 2, (4, 5)),
-     (0, 1, (1,)),
-     (1, 1, (2,)),
-     (2, 1, (3,)),
-     (3, 1, (4,)),
-     (4, 1, (5,))]
+    [(0, 4, '\\x01\\x00\\x02\\x00\\x03\\x00\\x04\\x00'),
+     (1, 4, '\\x02\\x00\\x03\\x00\\x04\\x00\\x05\\x00'),
+     (0, 3, '\\x01\\x00\\x02\\x00\\x03\\x00'),
+     (1, 3, '\\x02\\x00\\x03\\x00\\x04\\x00'),
+     (2, 3, '\\x03\\x00\\x04\\x00\\x05\\x00'),
+     (0, 2, '\\x01\\x00\\x02\\x00'),
+     (1, 2, '\\x02\\x00\\x03\\x00'),
+     (2, 2, '\\x03\\x00\\x04\\x00'),
+     (3, 2, '\\x04\\x00\\x05\\x00'),
+     (0, 1, '\\x01\\x00'),
+     (1, 1, '\\x02\\x00'),
+     (2, 1, '\\x03\\x00'),
+     (3, 1, '\\x04\\x00'),
+     (4, 1, '\\x05\\x00')]
 
     >>> pprint(list(multigrams(unigrams, 6)))
-    [(0, 5, (1, 2, 3, 4, 5)),
-     (0, 4, (1, 2, 3, 4)),
-     (1, 4, (2, 3, 4, 5)),
-     (0, 3, (1, 2, 3)),
-     (1, 3, (2, 3, 4)),
-     (2, 3, (3, 4, 5)),
-     (0, 2, (1, 2)),
-     (1, 2, (2, 3)),
-     (2, 2, (3, 4)),
-     (3, 2, (4, 5)),
-     (0, 1, (1,)),
-     (1, 1, (2,)),
-     (2, 1, (3,)),
-     (3, 1, (4,)),
-     (4, 1, (5,))]
+    [(0, 5, '\\x01\\x00\\x02\\x00\\x03\\x00\\x04\\x00\\x05\\x00'),
+     (0, 4, '\\x01\\x00\\x02\\x00\\x03\\x00\\x04\\x00'),
+     (1, 4, '\\x02\\x00\\x03\\x00\\x04\\x00\\x05\\x00'),
+     (0, 3, '\\x01\\x00\\x02\\x00\\x03\\x00'),
+     (1, 3, '\\x02\\x00\\x03\\x00\\x04\\x00'),
+     (2, 3, '\\x03\\x00\\x04\\x00\\x05\\x00'),
+     (0, 2, '\\x01\\x00\\x02\\x00'),
+     (1, 2, '\\x02\\x00\\x03\\x00'),
+     (2, 2, '\\x03\\x00\\x04\\x00'),
+     (3, 2, '\\x04\\x00\\x05\\x00'),
+     (0, 1, '\\x01\\x00'),
+     (1, 1, '\\x02\\x00'),
+     (2, 1, '\\x03\\x00'),
+     (3, 1, '\\x04\\x00'),
+     (4, 1, '\\x05\\x00')]
     """
     if len(tokens) < ngram_length:
         ngram_length = len(tokens)
     # iterate backwards the ngram length i.e. 4,3,2,1
     for n in range(ngram_length, 0, -1):
-        for ng in ngrams_longuest(tokens, n, offset):
+        for ng in ngrams_longuest(tokens, n, offset, len_junk):
             yield ng
 
 
@@ -380,50 +280,48 @@ def rule_multigrams(tokens, ngram_length=NGRAM_LENGTH, gaps=None, len_junk=0):
     >>> tokens = [1, 2, 3, 4, 5]
     >>> from pprint import pprint
     >>> pprint(list(rule_multigrams(tokens, 3)))
-    [(0, 3, (1, 2, 3)),
-     (1, 3, (2, 3, 4)),
-     (2, 3, (3, 4, 5)),
-     (0, 2, (1, 2)),
-     (1, 2, (2, 3)),
-     (2, 2, (3, 4)),
-     (3, 2, (4, 5)),
-     (0, 1, (1,)),
-     (1, 1, (2,)),
-     (2, 1, (3,)),
-     (3, 1, (4,)),
-     (4, 1, (5,))]
+    [(0, 3, '\\x01\\x00\\x02\\x00\\x03\\x00'),
+     (1, 3, '\\x02\\x00\\x03\\x00\\x04\\x00'),
+     (2, 3, '\\x03\\x00\\x04\\x00\\x05\\x00'),
+     (0, 2, '\\x01\\x00\\x02\\x00'),
+     (1, 2, '\\x02\\x00\\x03\\x00'),
+     (2, 2, '\\x03\\x00\\x04\\x00'),
+     (3, 2, '\\x04\\x00\\x05\\x00'),
+     (0, 1, '\\x01\\x00'),
+     (1, 1, '\\x02\\x00'),
+     (2, 1, '\\x03\\x00'),
+     (3, 1, '\\x04\\x00'),
+     (4, 1, '\\x05\\x00')]
 
     With gaps
     >>> tokens = [1, 2, 3, 4, 5]
     >>> gaps = set([2])
     >>> from pprint import pprint
     >>> pprint(list(rule_multigrams(tokens, 2, gaps)))
-    [(0, 2, (1, 2)),
-     (1, 2, (2, 3)),
-     (0, 1, (1,)),
-     (1, 1, (2,)),
-     (2, 1, (3,)),
-     (3, 2, (4, 5)),
-     (3, 1, (4,)),
-     (4, 1, (5,))]
+    [(0, 2, '\\x01\\x00\\x02\\x00'),
+     (1, 2, '\\x02\\x00\\x03\\x00'),
+     (0, 1, '\\x01\\x00'),
+     (1, 1, '\\x02\\x00'),
+     (2, 1, '\\x03\\x00'),
+     (3, 2, '\\x04\\x00\\x05\\x00'),
+     (3, 1, '\\x04\\x00'),
+     (4, 1, '\\x05\\x00')]
 
     With gaps and junk:
     >>> tokens = [1, 2, 3, 4, 5]
     >>> gaps = set([2])
     >>> from pprint import pprint
     >>> pprint(list(rule_multigrams(tokens, 2, gaps, len_junk=2)))
-    [(0, 2, (1, 2)),
-     (1, 2, (2, 3)),
-     (1, 1, (2,)),
-     (2, 1, (3,)),
-     (3, 2, (4, 5)),
-     (3, 1, (4,)),
-     (4, 1, (5,))]
+    [(1, 2, '\\x02\\x00\\x03\\x00'),
+     (1, 1, '\\x02\\x00'),
+     (2, 1, '\\x03\\x00'),
+     (3, 2, '\\x04\\x00\\x05\\x00'),
+     (3, 1, '\\x04\\x00'),
+     (4, 1, '\\x05\\x00')]
+
     """
     for start, chunk in rule_tokens_slices(tokens, gaps):
-        for start, nglen, ngram in multigrams(chunk, ngram_length, offset=start):
-            if nglen in (1, 2, 3) and all(tid < len_junk for tid in ngram):
-                continue
+        for start, nglen, ngram in multigrams(chunk, ngram_length, start, len_junk):
             yield start, nglen, ngram
 
 
@@ -438,7 +336,7 @@ def rule_tokens_slices(tokens, gaps=None):
     For example:
     >>> tokens = [1, 2, 3, 4, 5]
     >>> list(rule_tokens_slices(tokens))
-    [(0, [1, 2, 3, 4, 5])]
+    [(0, array('h', [1, 2, 3, 4, 5]))]
 
     >>> tokens = []
     >>> list(rule_tokens_slices(tokens))
@@ -446,28 +344,27 @@ def rule_tokens_slices(tokens, gaps=None):
 
     With gaps
     >>> tokens = [5, 6, 7, 8, 8, 9, 11]
-    >>> list(rule_tokens_slices(tokens,gaps=set([1,3])))
-    [(0, [5, 6]), (2, [7, 8]), (4, [8, 9, 11])]
+    >>> list(rule_tokens_slices(tokens, gaps=set([1,3])))
+    [(0, array('h', [5, 6])), (2, array('h', [7, 8])), (4, array('h', [8, 9, 11]))]
     """
     if not tokens:
         return
     if not gaps:
-        yield 0, tokens
+        yield 0, array(b'h', tokens)
     else:
         prevgap = 0
         for gap in sorted(gaps):
             # first slice from start to first gap
             if not prevgap:
-                yield prevgap, tokens[:gap + 1]
+                yield prevgap, array(b'h', tokens[:gap + 1])
                 prevgap = gap
                 continue
             # middle slices: from prevgap to next gap
-            yield prevgap + 1, tokens[prevgap + 1 : gap + 1]
+            yield prevgap + 1, array(b'h', tokens[prevgap + 1 : gap + 1])
             prevgap = gap
 
         # last slice from last gap to the end
-        yield prevgap + 1, tokens[prevgap + 1:]
-
+        yield prevgap + 1, array(b'h', tokens[prevgap + 1:])
 
 def query_multigrams(tokens, ngram_length=NGRAM_LENGTH, len_junk=0, offset=0):
     """
@@ -483,60 +380,132 @@ def query_multigrams(tokens, ngram_length=NGRAM_LENGTH, len_junk=0, offset=0):
     >>> tokens = [1, 2, 3, 4, 5]
     >>> from pprint import pprint
     >>> pprint(list(query_multigrams(tokens, 3)))
-    [(0, 3, (1, 2, 3)),
-     (1, 3, (2, 3, 4)),
-     (2, 3, (3, 4, 5)),
-     (0, 2, (1, 2)),
-     (1, 2, (2, 3)),
-     (2, 2, (3, 4)),
-     (3, 2, (4, 5)),
-     (0, 1, (1,)),
-     (1, 1, (2,)),
-     (2, 1, (3,)),
-     (3, 1, (4,)),
-     (4, 1, (5,))]
+    [(0, 3, '\\x01\\x00\\x02\\x00\\x03\\x00'),
+     (1, 3, '\\x02\\x00\\x03\\x00\\x04\\x00'),
+     (2, 3, '\\x03\\x00\\x04\\x00\\x05\\x00'),
+     (0, 2, '\\x01\\x00\\x02\\x00'),
+     (1, 2, '\\x02\\x00\\x03\\x00'),
+     (2, 2, '\\x03\\x00\\x04\\x00'),
+     (3, 2, '\\x04\\x00\\x05\\x00'),
+     (0, 1, '\\x01\\x00'),
+     (1, 1, '\\x02\\x00'),
+     (2, 1, '\\x03\\x00'),
+     (3, 1, '\\x04\\x00'),
+     (4, 1, '\\x05\\x00')]
 
     With unknown tokens:
     >>> tokens = [1, 2, 3, -1, 4, 5]
     >>> from pprint import pprint
     >>> pprint(list(query_multigrams(tokens, 2)))
-    [(0, 2, (1, 2)),
-     (1, 2, (2, 3)),
-     (0, 1, (1,)),
-     (1, 1, (2,)),
-     (2, 1, (3,)),
-     (4, 2, (4, 5)),
-     (4, 1, (4,)),
-     (5, 1, (5,))]
+    [(0, 2, '\\x01\\x00\\x02\\x00'),
+     (1, 2, '\\x02\\x00\\x03\\x00'),
+     (0, 1, '\\x01\\x00'),
+     (1, 1, '\\x02\\x00'),
+     (2, 1, '\\x03\\x00'),
+     (4, 2, '\\x04\\x00\\x05\\x00'),
+     (4, 1, '\\x04\\x00'),
+     (5, 1, '\\x05\\x00')]
 
     With unknown tokens and junk:
     >>> tokens = [1, 2, 3, -1, 4, 5]
     >>> from pprint import pprint
     >>> pprint(list(query_multigrams(tokens, 2, len_junk=2)))
-    [(0, 2, (1, 2)),
-     (1, 2, (2, 3)),
-     (1, 1, (2,)),
-     (2, 1, (3,)),
-     (4, 2, (4, 5)),
-     (4, 1, (4,)),
-     (5, 1, (5,))]
+    [(0, 2, '\\x01\\x00\\x02\\x00'),
+     (1, 2, '\\x02\\x00\\x03\\x00'),
+     (0, 1, '\\x01\\x00'),
+     (1, 1, '\\x02\\x00'),
+     (2, 1, '\\x03\\x00'),
+     (4, 2, '\\x04\\x00\\x05\\x00'),
+     (4, 1, '\\x04\\x00'),
+     (5, 1, '\\x05\\x00')]
 
     With unknown tokens and junk and offset:
     >>> tokens = [1, 2, 3, -1, 4, 5]
     >>> from pprint import pprint
     >>> pprint(list(query_multigrams(tokens, 2, len_junk=2, offset=3)))
-    [(3, 2, (1, 2)),
-     (4, 2, (2, 3)),
-     (4, 1, (2,)),
-     (5, 1, (3,)),
-     (7, 2, (4, 5)),
-     (7, 1, (4,)),
-     (8, 1, (5,))]
+    [(3, 2, '\\x01\\x00\\x02\\x00'),
+     (4, 2, '\\x02\\x00\\x03\\x00'),
+     (3, 1, '\\x01\\x00'),
+     (4, 1, '\\x02\\x00'),
+     (5, 1, '\\x03\\x00'),
+     (7, 2, '\\x04\\x00\\x05\\x00'),
+     (7, 1, '\\x04\\x00'),
+     (8, 1, '\\x05\\x00')]
     """
     for start, chunk in query_tokens_slices(tokens):
         for start, nglen, ngram in multigrams(chunk, ngram_length, offset=start):
-            if nglen in (1, 2, 3) and all(tid < len_junk for tid in ngram):
-                continue
+            yield start + offset, nglen, ngram
+
+
+
+def query_multigramsold(tokens, ngram_length=NGRAM_LENGTH, len_junk=0, offset=0):
+    """
+    Return an iterable of tuple(start, len, ngram) given a `tokens` sequence.
+    Each ngram is a tuple of ngram_length tokens or less.
+
+    Add offset to start.
+    Skip ngrams that contain None or -1 for unknown tokens.
+    Skip some ngrams that contain junk tokens.
+
+    For example:
+
+    >>> tokens = [1, 2, 3, 4, 5]
+    >>> from pprint import pprint
+    >>> pprint(list(query_multigrams(tokens, 3)))
+    [(0, 3, '\\x01\\x00\\x02\\x00\\x03\\x00'),
+     (1, 3, '\\x02\\x00\\x03\\x00\\x04\\x00'),
+     (2, 3, '\\x03\\x00\\x04\\x00\\x05\\x00'),
+     (0, 2, '\\x01\\x00\\x02\\x00'),
+     (1, 2, '\\x02\\x00\\x03\\x00'),
+     (2, 2, '\\x03\\x00\\x04\\x00'),
+     (3, 2, '\\x04\\x00\\x05\\x00'),
+     (0, 1, '\\x01\\x00'),
+     (1, 1, '\\x02\\x00'),
+     (2, 1, '\\x03\\x00'),
+     (3, 1, '\\x04\\x00'),
+     (4, 1, '\\x05\\x00')]
+
+    With unknown tokens:
+    >>> tokens = [1, 2, 3, -1, 4, 5]
+    >>> from pprint import pprint
+    >>> pprint(list(query_multigrams(tokens, 2)))
+    [(0, 2, '\\x01\\x00\\x02\\x00'),
+     (1, 2, '\\x02\\x00\\x03\\x00'),
+     (0, 1, '\\x01\\x00'),
+     (1, 1, '\\x02\\x00'),
+     (2, 1, '\\x03\\x00'),
+     (4, 2, '\\x04\\x00\\x05\\x00'),
+     (4, 1, '\\x04\\x00'),
+     (5, 1, '\\x05\\x00')]
+
+    With unknown tokens and junk:
+    >>> tokens = [1, 2, 3, -1, 4, 5]
+    >>> from pprint import pprint
+    >>> pprint(list(query_multigrams(tokens, 2, len_junk=2)))
+    [(0, 2, '\\x01\\x00\\x02\\x00'),
+     (1, 2, '\\x02\\x00\\x03\\x00'),
+     (0, 1, '\\x01\\x00'),
+     (1, 1, '\\x02\\x00'),
+     (2, 1, '\\x03\\x00'),
+     (4, 2, '\\x04\\x00\\x05\\x00'),
+     (4, 1, '\\x04\\x00'),
+     (5, 1, '\\x05\\x00')]
+
+    With unknown tokens and junk and offset:
+    >>> tokens = [1, 2, 3, -1, 4, 5]
+    >>> from pprint import pprint
+    >>> pprint(list(query_multigrams(tokens, 2, len_junk=2, offset=3)))
+    [(3, 2, '\\x01\\x00\\x02\\x00'),
+     (4, 2, '\\x02\\x00\\x03\\x00'),
+     (3, 1, '\\x01\\x00'),
+     (4, 1, '\\x02\\x00'),
+     (5, 1, '\\x03\\x00'),
+     (7, 2, '\\x04\\x00\\x05\\x00'),
+     (7, 1, '\\x04\\x00'),
+     (8, 1, '\\x05\\x00')]
+    """
+    for start, chunk in query_tokens_slices(tokens):
+        for start, nglen, ngram in multigrams(chunk, ngram_length, offset=start):
             yield start + offset, nglen, ngram
 
 
@@ -575,6 +544,7 @@ def query_tokens_slices(tokens):
     pos_tokens = list(enumerate(tokens))
 
     # remove leading and trailing None and -1 tokens
+    # FIXME: why -1?
     while pos_tokens and (pos_tokens[0][1] is None or pos_tokens[0][1] < 0):
         del pos_tokens[0]
     while pos_tokens and (pos_tokens[-1][1] is None or pos_tokens[-1][1] < 0):
@@ -604,3 +574,100 @@ def query_tokens_slices(tokens):
     if toks:
         start, _ = toks[0]
         yield start, [t for _, t in toks]
+
+
+def ngrams(iterable, ngram_length):
+    """
+    Return an iterable of ngrams of length `ngram_length` given an iterable.
+    Each ngram is a tuple of ngram_length items.
+    The returned iterable is empty if the input iterable contains less than
+    `ngram_length` items.
+
+    Note: this is a fairly arcane but optimized way to compute ngrams.
+
+    For example:
+    >>> list(ngrams([1,2,3,4,5], 2))
+    [(1, 2), (2, 3), (3, 4), (4, 5)]
+
+    >>> list(ngrams([1,2,3,4,5], 4))
+    [(1, 2, 3, 4), (2, 3, 4, 5)]
+
+    >>> list(ngrams([1,2,3,4], 2))
+    [(1, 2), (2, 3), (3, 4)]
+    
+    >>> list(ngrams([1,2,3], 2))
+    [(1, 2), (2, 3)]
+    >>> list(ngrams([1,2], 2))
+    [(1, 2)]
+    >>> list(ngrams([1], 2))
+    []
+    """
+    return izip(*(islice(iterable, i, None) for i in range(ngram_length)))
+
+
+def ngrams2(iterable, ngram_length):
+    """
+    Return an iterable of ngrams of length `ngram_length` given an iterable.
+    Each ngram is a tuple of ngram_length items.
+    The returned iterable is empty if the input iterable contains less than
+    `ngram_length` items.
+
+    Note: this is a fairly arcane but optimized way to compute ngrams.
+
+    For example:
+    >>> list(ngrams2([1,2,3,4,5], 2))
+    [(1, 2), (2, 3), (3, 4), (4, 5)]
+
+    >>> list(ngrams2([1,2,3,4,5], 4))
+    [(1, 2, 3, 4), (2, 3, 4, 5)]
+
+    >>> list(ngrams2([1,2,3,4], 2))
+    [(1, 2), (2, 3), (3, 4)]
+    
+    >>> list(ngrams2([1,2,3], 2))
+    [(1, 2), (2, 3)]
+    >>> list(ngrams2([1,2], 2))
+    [(1, 2)]
+    >>> list(ngrams2([1], 2))
+    []
+    """
+    iterable = iter(iterable)
+    ngram = deque()
+    for _ in range(ngram_length - 1):
+        ngram.append(next(iterable))
+
+    for token in iterable:
+        ngram.append(token)
+        yield tuple(ngram)
+        ngram.popleft()
+
+
+def select_ngrams(ngrams):
+    """
+    Return an iterable subset of a sequence of ngrams.
+    
+    Using the hailstorm algorithm.
+    DEFINITION: from the paper: Hailstorm (Hs)
+    http://www2009.eprints.org/7/1/p61.pdf
+
+    The algorithm first fingerprints every token and then selects a shingle s if
+    the minimum fingerprint value of all k tokens in s occurs at the first or
+    the last position of s (and potentially also in between). Due to the
+    probabilistic properties of Rabin fingerprints the probability that a
+    shingle is chosen is 2/k if all tokens in the shingle are different."
+
+    For example:
+    >>> list(select_ngrams([(2, 1, 3), (1, 1, 3), (5, 1, 3), (2, 6, 1), (7, 3, 4)]))
+    [(2, 1, 3), (1, 1, 3), (2, 6, 1), (7, 3, 4)]
+    """
+    last = len(ngrams) - 1
+    for i, ngram in enumerate(ngrams):
+        # FIXME: use a proper hash
+        nghs = [crc32(str(ng)) for ng in ngram]
+        min_hash = min(nghs)
+        if nghs[0] == min_hash or nghs[-1] == min_hash:
+            yield ngram
+        else:
+            # always yield the first or last ngram too.
+            if i == 0 or i == last:
+                yield ngram

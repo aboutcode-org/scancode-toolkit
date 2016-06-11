@@ -1,6 +1,6 @@
  is made available under the MIT license:
 
-{{10 Copyright (c) 2004-2012 Leonard Richardson }}
+{{Copyright (c) 2004-2012 Leonard Richardson }}
 
  Permission is hereby granted, free of charge, to any person obtaining
  a copy of this software and associated documentation files (the
@@ -22,5 +22,5 @@
  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE, DAMMIT.
 
-{{15 Beautiful Soup incorporates code from the html5lib library, which is
+{{Beautiful Soup incorporates code from the html5lib library, which is
 also}} made available under the MIT license.

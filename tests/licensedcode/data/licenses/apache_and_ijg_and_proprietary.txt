@@ -1,0 +1,8 @@
+Third-party software, including font technology, is copyrighted and
+licensed from Sun suppliers.  Portions Copyright Eastman Kodak
+Company 1992.  This product includes code licensed from RSA Data
+Security.  This product includes software developed by the Apache
+Software Foundation (http://www.apache.org).  Portions licensed from
+Taligent, Inc. This software is based in part on the work of the
+Independent JPEG Group.  The Graphics Interchange Format is the
+Copyright property of CompuServe Incorporated. 

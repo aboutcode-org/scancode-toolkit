@@ -1,4 +1,5 @@
 licenses:
+    - bsd-new
     - apache-1.1
     - apache-2.0
     - bsd-new

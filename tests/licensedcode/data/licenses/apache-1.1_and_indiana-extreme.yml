@@ -1,4 +1,3 @@
 licenses:
-    - apache-1.1
     - indiana-extreme
 expected_failure: yes

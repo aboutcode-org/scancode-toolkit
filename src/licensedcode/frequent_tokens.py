@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2015 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -33,7 +34,7 @@ from __future__ import absolute_import, print_function
 
 
 def global_tokens_by_ranks():
-    return u'''
+    return frequent_names() + u'''
 the
 of
 and
@@ -90,11 +91,16 @@ which
 their
 news
 out
+copyright
+rights
+right
+reserved
 there
 see
 only
 so
 his
+code
 when
 here
 who
@@ -148,6 +154,9 @@ post
 her
 city
 add
+software
+org
+www
 number
 please
 message
@@ -175,6 +184,7 @@ group
 sex
 need
 many
+any
 said
 de
 does
@@ -201,12 +211,14 @@ made
 report
 off
 line
+lines
 before
 hotels
 did
 send
 type
 because
+cause
 local
 those
 office
@@ -350,6 +362,8 @@ photos
 gay
 thread
 week
+module
+modules
 category
 note
 live
@@ -389,6 +403,8 @@ study
 cart
 staff
 articles
+affect
+result
 san
 feedback
 again
@@ -411,7 +427,6 @@ blog
 login
 student
 let
-above
 recent
 park
 stores
@@ -451,6 +466,7 @@ oct
 four
 poker
 status
+state
 browse
 issue
 range
@@ -480,6 +496,8 @@ hand
 cards
 meeting
 rss
+free
+ip
 become
 interest
 id
@@ -516,6 +534,7 @@ cell
 color
 self
 away
+way
 track
 discussion
 archive
@@ -588,6 +607,7 @@ early
 miles
 sound
 resource
+source
 present
 ago
 word
@@ -717,6 +737,7 @@ entry
 stay
 nature
 orders
+order
 summary
 turn
 growth
@@ -894,10 +915,13 @@ schedule
 bed
 comes
 police
+policy
 independent
 approach
 cameras
 brown
+own
+risk
 hill
 maps
 medicine
@@ -929,6 +953,7 @@ valley
 recently
 probably
 thu
+data
 rentals
 sea
 built
@@ -973,6 +998,7 @@ especially
 rated
 guides
 success
+such
 maximum
 ma
 quite
@@ -1029,6 +1055,23 @@ educational
 md
 leading
 metal
+support
+hardware
+follow
+explicit
+removal
+removals
+install
+installing
+supported
+register
+unable
+writing
+gnu
+version
+linux
+threshold
+thresholds
 positive
 fl
 opinion
@@ -1222,6 +1265,7 @@ th
 cat
 galleries
 die
+original
 jack
 flat
 flow
@@ -1294,6 +1338,7 @@ visitors
 monitor
 trading
 forest
+foundation
 calls
 whose
 couple
@@ -1382,6 +1427,7 @@ professor
 context
 shirt
 apparel
+release
 generally
 foot
 mass
@@ -1412,6 +1458,8 @@ leader
 diamond
 se
 servers
+ver
+server
 alone
 meetings
 seconds
@@ -1421,6 +1469,44 @@ interests
 flight
 congress
 fuel
+user
+users
+interface
+interfaces
+fail
+failed
+write
+writen
+share
+shares
+wireless
+sharing
+unsupported
+ported
+features
+feature
+part
+works
+attribute
+effective
+future
+expires
+expire
+control
+security
+shared
+direct
+private
+bug
+valid
+scope
+algorithm
+address
+remove
+pending
+internal
+country
+fault
 username
 walk
 italian
@@ -1444,6 +1530,7 @@ thousands
 km
 stream
 apartments
+partial
 pick
 hearing
 eastern
@@ -1498,6 +1585,8 @@ became
 orange
 vehicles
 prevent
+event
+iac
 theme
 rich
 im
@@ -1566,6 +1655,7 @@ viewed
 moment
 sequence
 inch
+inc
 attack
 sorry
 centers
@@ -1831,6 +1921,9 @@ calling
 jazz
 bags
 profiles
+file
+files
+set
 comics
 matters
 houses
@@ -1914,6 +2007,7 @@ ski
 soccer
 math
 presence
+perserve
 instant
 healthcare
 viewing
@@ -1939,6 +2033,7 @@ rs
 principal
 daughter
 standing
+standard
 voyeur
 comfort
 colors
@@ -2089,6 +2184,17 @@ tn
 exist
 wheel
 transit
+transfer
+transfered
+period
+system
+systems
+suspend
+suspended
+suspends
+cancel
+reserve
+notify
 salt
 compact
 poetry
@@ -2259,6 +2365,7 @@ linear
 commitment
 specialty
 bears
+commons
 hop
 carrier
 visa
@@ -2274,6 +2381,8 @@ lessons
 fruit
 begins
 reform
+form
+forms
 lens
 alerts
 discovery
@@ -2310,6 +2419,7 @@ micro
 colleges
 laptops
 mile
+however
 showed
 challenges
 mens
@@ -2381,6 +2491,16 @@ loop
 salary
 reservation
 foods
+intent
+src
+consulting
+end
+user
+users
+evaluate
+evaluates
+cache
+caches
 gourmet
 guard
 orleans
@@ -2416,6 +2536,8 @@ absolutely
 millions
 lunch
 push
+computer
+computers
 chamber
 guinea
 findings
@@ -2492,6 +2614,7 @@ ordered
 fighting
 transition
 happens
+appear
 spy
 romance
 bruce
@@ -2718,6 +2841,10 @@ cute
 ba
 para
 adoption
+BGCOLOR
+CLASS
+option
+option
 cr
 capture
 pounds
@@ -2738,6 +2865,7 @@ medline
 bottle
 innovative
 marshall
+shall
 conclusion
 closing
 thousand
@@ -2872,6 +3000,7 @@ comic
 jet
 productivity
 crown
+under
 par
 underground
 diagnosis
@@ -2918,6 +3047,8 @@ sand
 terrorism
 joy
 cpu
+cpus
+data
 ethnic
 ran
 parliament
@@ -3085,6 +3216,7 @@ firefox
 grove
 venture
 clinic
+client
 healing
 princess
 mall
@@ -3384,6 +3516,10 @@ roses
 labs
 bread
 tobacco
+according
+amount
+operation
+portion
 wooden
 motors
 tough
@@ -3509,6 +3645,9 @@ showtimes
 cal
 infant
 sectors
+sam
+asm
+smp
 samuel
 fluid
 grounds
@@ -3538,6 +3677,7 @@ studied
 reviewer
 quarterly
 rpm
+device
 devil
 grass
 marie
@@ -3613,6 +3753,8 @@ equipped
 stages
 sur
 winds
+window
+names
 powder
 broadway
 assess
@@ -3641,6 +3783,10 @@ preparing
 loose
 aims
 cl
+posix
+include
+included
+including
 earned
 illness
 islamic
@@ -4101,6 +4247,7 @@ panama
 indianapolis
 af
 payable
+corporation
 corporations
 courtesy
 criticism
@@ -4367,6 +4514,25 @@ montgomery
 architectural
 louisville
 depend
+depends
+unused
+disabled
+use
+except
+exceptions
+exception
+owner
+enable
+enabled
+x86
+i686
+i86
+x64
+active
+platform
+disable
+operations
+commit
 differ
 macintosh
 movements
@@ -4514,6 +4680,7 @@ testimony
 suspect
 celebrities
 macro
+macros
 sender
 boundaries
 crucial
@@ -4602,6 +4769,10 @@ spec
 finest
 realty
 janet
+verwendet
+werden
+eines
+ein
 bow
 penn
 recruiting
@@ -4655,6 +4826,7 @@ bingo
 whilst
 spatial
 respondents
+respect
 unto
 lt
 ceramic
@@ -4678,6 +4850,7 @@ necklace
 musicians
 leeds
 composite
+available
 unavailable
 cedar
 lang
@@ -4764,6 +4937,7 @@ variations
 moms
 sacred
 addiction
+addition
 morocco
 chrome
 tommy
@@ -4772,6 +4946,7 @@ refused
 brake
 exterior
 greeting
+nbsp
 ecology
 oliver
 congo
@@ -4793,7 +4968,6 @@ lambda
 relay
 composed
 tears
-oasis
 baseline
 cab
 angry
@@ -4833,6 +5007,8 @@ das
 exports
 omaha
 tire
+particular
+following
 participant
 scholarships
 recreational
@@ -4887,6 +5063,7 @@ scsi
 focuses
 soviet
 possession
+possibility
 cu
 laboratories
 treaty
@@ -5004,6 +5181,7 @@ negotiations
 realistic
 dt
 cgi
+case
 showcase
 integral
 asks
@@ -5094,6 +5272,7 @@ confused
 enlargement
 eagles
 bases
+base
 vii
 accused
 bee
@@ -5343,6 +5522,9 @@ timber
 volt
 intense
 div
+contained
+must
+used
 playlist
 registrar
 showers
@@ -5370,6 +5552,7 @@ handed
 suffered
 intake
 informal
+information
 incentive
 butterfly
 tucson
@@ -5415,6 +5598,9 @@ columnists
 pins
 carlos
 reno
+don
+provides
+based
 donna
 andreas
 warrior
@@ -5812,7 +5998,6 @@ locale
 nicholas
 biol
 yu
-bundle
 hammer
 invasion
 witnesses
@@ -6196,6 +6381,8 @@ shake
 algebra
 shadows
 holly
+format
+formats
 formatting
 silly
 nutritional
@@ -6557,7 +6744,6 @@ hierarchy
 influenced
 banners
 eau
-abandoned
 bd
 circles
 italic
@@ -6612,7 +6798,9 @@ trainers
 muze
 renewable
 intersection
+section
 passwords
+password
 sewing
 collectors
 recognised
@@ -6699,8 +6887,14 @@ dressed
 scout
 belfast
 exec
+exe
 dealt
 niagara
+compiler
+compiled
+resulting
+executable
+produce
 inf
 eos
 warcraft
@@ -6888,6 +7082,7 @@ merge
 privilege
 edgar
 develops
+develop
 chassis
 estimation
 barn
@@ -6916,6 +7111,7 @@ fo
 sally
 yacht
 tracy
+preferred
 prefers
 drilling
 brochures
@@ -6973,6 +7169,7 @@ explosion
 pn
 banned
 wendy
+brief
 briefs
 diffs
 cove
@@ -7340,6 +7537,7 @@ colon
 likelihood
 lanes
 purse
+purpose
 fundamentals
 contamination
 mtv
@@ -7469,6 +7667,8 @@ joyce
 detective
 surgeon
 cement
+expect
+expected
 experiencing
 fireplace
 bg
@@ -7899,7 +8099,6 @@ tittens
 teenagers
 courtyard
 presidents
-offenders
 depart
 grading
 tenants
@@ -8389,6 +8588,7 @@ infantry
 faso
 renowned
 corridor
+corresponding
 philosophical
 scripture
 celebrating
@@ -8418,6 +8618,7 @@ jw
 telephones
 tailored
 insect
+separate
 frances
 diaries
 chili
@@ -8472,6 +8673,7 @@ doctoral
 backpack
 npr
 identities
+identity
 outgoing
 mann
 tajikistan
@@ -8646,6 +8848,7 @@ marry
 blankets
 enthusiasm
 confusing
+using
 celebrations
 approaching
 bounce
@@ -9039,4 +9242,416 @@ voyage
 een
 rdf
 colonel
-'''.split()
+'''.lower().split()
+
+
+def frequent_names():
+    """
+    Frequent names that are consider common and not a license indicator.
+    """
+    return u'''
+MX4J
+Java Management Extensions
+JMX
+nullsoft
+NSIS
+sourceforge
+sf
+google
+JSP
+Eclipse
+Windows Installer
+Tomcat
+Aladdin Enterprises
+Peter Deutsch ghost
+ietf
+ANTLR
+Terence Parr
+jguru
+log4j
+Brian Clapper
+bmc
+openoffice
+open
+provide
+provided
+debian
+debianized
+package
+maintained
+widget
+static
+sie
+wie
+von
+k\xf6nnen
+pychess
+erhalten
+sp\xe4teren
+copies
+update
+business
+process
+microsoft
+bea
+IBM
+services
+web
+language
+execution
+specification
+specifications
+specific
+care
+intel
+wsdl
+siebel
+sap
+developerworks
+bpel
+webservices
+dev2dev
+ag
+machines
+International
+Technische Universitaet Berlin
+w3
+XMLSchema
+instance
+version
+identified
+identify
+rfc1321
+ietf
+downloaded
+Agfa Gevaert
+cip4
+Heidelberger Druckmaschinen
+prepress
+cooperation
+operating
+database
+javax
+jcr
+jdbc
+test
+Steve Cleary
+Beman Dawes
+John Maddock
+Howard Hinnant
+Apache
+NERO AG
+RUPPURRER 
+STRASSE
+KARLSRUHE
+GERMANY
+motorola
+completed
+whether
+copy
+considered
+described
+cases
+case
+precedence
+preceding
+determine
+paragraph
+refer
+consequence
+condition
+replaced
+portions
+fact
+continue
+OpenSymphony
+limited
+International
+Cooperation
+Integration
+Processes
+Prepress
+Press
+Postpress
+cip4
+removed
+distribution repo
+feather logo
+OpenOffice
+seagull
+details
+detail
+extensions back 
+define
+project
+projects
+organization
+indicated
+components
+component
+program
+programs
+developers
+developer
+developed
+sourceforge
+lists
+net
+content
+contents
+subject
+subjects
+parts
+accordance
+js
+javascript
+combination
+document
+documents
+belong
+CFE
+Broadcom
+Jean loup Gailly
+Mark Adler
+keio
+w3c
+ERCIM
+DOCUMENTATION
+Netscapes
+SSL
+Center for Automated Learning and Discovery
+Sun Microsystems Inc
+Network 
+Circle
+Santa Clara
+California
+W3CŽ
+libwww Amaya  Jigsaw
+World Wide Web Consortium
+Massachusetts Institute of Technology
+European Research Consortium
+for Informatics and Mathematics
+Keio University
+Beihang
+David Megginson
+Moby Lexical Tools
+title
+binary
+inria 
+fr
+Institut National de Recherche en Informatique et en Automatique
+w3
+year
+c
+wikipedia
+Eric Young eay cryptsoft
+implementation
+written
+script
+supplied
+DAVID YOUNG
+servlet
+put
+login
+method
+auth
+role
+http
+constraint
+conform
+login
+created
+extension
+javassist
+Copyright 
+c 
+year 
+COPYRIGHT
+Tim Hudson tjh
+dtd
+font
+fonts
+generated
+location
+fluendo
+mp3
+dav webdav
+mod
+Foundation Inc
+Hewlett-Packard Company Palo Alto Ca
+Digital Equipment Corporation, Maynard, Mass.
+JA-SIG jasig collaborative
+yan 
+Christopher
+Andrew
+Adam
+Dave West Daniel
+Clark Andrew
+Simon
+GNOME
+UNINSTALL
+VER
+National Center for Supercomputing Applications
+University of Illinois
+ Urbana Champaign
+ FFmpeg
+ mp
+ libavcodec
+ W3C®
+ Corporation National Research Initiatives CNRI
+Bucknell
+property
+Aleksei Valikov
+HP
+Visigoth Software Society
+jrdf
+World Wide Web Consortium Massachusetts Institute of Technology 
+Institut National de Recherche en Informatique et en Automatique Keio University All Rights Reserved http www w3 org Consortium
+mortbay
+STLport
+Silicon Graphics Computer Systems
+Moscow Center for SPARC Technology
+Boris Fomitchev
+eay mincom oz au 
+require
+Coolite
+datejs
+scripts config
+Display PostScript
+Adobe
+MgOpen
+product
+products
+reader
+acrobat
+flash
+reference
+offer
+wish
+behalf
+acknowledgement
+abiword
+personal
+abisource
+apple
+1394la
+abc
+phoenix
+third
+benefit
+expression
+michigan
+National Aeronautics
+Space Administration
+nasa
+Sun Microsystems Inc 901 San Antonio Road Palo Alto
+AES encryption
+PostgreSQL Global
+The Regents of the University of California
+University of
+  California Sun Microsystems Scriptics Corporation
+ ActiveState
+ Ihnen wird
+ ohne
+flashblock mozdev
+NEC SYSTEMS LABORATORY
+METAWEB TECHNOLOGIES
+bzip2
+associated 
+libbzip2
+specified
+src sys netgraph ng
+Status FCS Release November Network Circle Santa Clara California
+U S A All rights reserved
+supplement
+com lowagie text pdf
+codec
+material
+can always find the
+doesn t exist
+different name 
+complete
+rest PostgreSQL
+holds
+chiark greenend org uk
+For additional information contact  4DINKUM or support
+PostgreSQL Data Base Management System formerly known as Postgres then as Postgres95
+Codehaus
+Tatu Ylonen ylo cs hut fi
+openssl
+handling
+Greg Stein gstein lyra org
+Igor author
+export
+os
+contributors
+listed
+www google com analytic
+analytics
+Content Repository JavaTM Technology API Specification
+Day Management AG
+Barfüsserplatz Basel
+Switzerland
+json hunter
+jhunter
+servlets
+servlet
+oreilly
+Trimble Navigation Ltd
+results evaluation
+linked
+against
+appears below as required
+config guess config sub ltconfig
+ansiknr
+linking
+libraries
+change
+bound
+conditions
+condition
+Initial Writer
+following files contain material copyrighted  SUN
+preview
+ Android SDK
+ RSA Data Security Inc
+ DjVuLibre
+ lizardtech
+ DjVu
+ NCursesException
+ cygwin
+ configure
+ distributed
+ Julian Seward Cambridge UK jseward acm org
+Internet Systems Consortium
+Charter Street
+Redwood City  CA
+info
+International Business Machines
+Per Bothner
+didn
+US Naval
+Research Laboratory NRL
+audacity
+noise profiling and noise reduction effects
+fft
+Linus Torvalds
+ maintainer
+ md5
+ manifest
+ TAR GZ 
+ Lance Norskog Sundry
+ James W Newkirk Michael C Two Alexei A
+  Vorontsov Charlie Poole Philip Craig
+  19yy
+  20yy
+  mm dd yyyy
+  yy
+  yyyymmdd
+  ddmmyy
+  ddmmyyyy
+  mmddyy
+  mmddyyyy
+  hhmmss
+  hh mm ss
+'''.lower().split()

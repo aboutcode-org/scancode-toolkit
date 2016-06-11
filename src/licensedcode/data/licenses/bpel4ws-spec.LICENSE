@@ -1,0 +1,34 @@
+[BPEL4WS Specification Version 1,1 Dated May 5, 2003, Copyright statement]
+
+    Copyright (c) 2002, 2003 BEA Systems, International Business Machines
+    Corporation, Microsoft Corporation, SAP AG, Siebel Systems. All rights
+    reserved.
+
+    Permission to copy and display the "Business Process Execution Language for
+    Web Services Specification, version 1.1 dated May 5, 2003" (hereafter "the
+    BPEL4WS Specification"), in any medium without fee or royalty is hereby
+    granted, provided that you include the following on ALL copies of the
+    BPEL4WS Specification, or portions thereof, that you make:
+
+        A link to the BPEL4WS Specification at these locations:
+            http://dev2dev.bea.com/technologies/webservices/BPEL4WS.jsp
+            http://www-106.ibm.com/developerworks/webservices/library/ws-bpel/
+            http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnbiz2k2/html/bpel1-1.asp
+            http://ifr.sap.com/bpel4ws/
+            http://www.siebel.com/bpel
+
+        The copyright notice as shown in the BPEL4WS Specification:
+
+        BEA, IBM, Microsoft, SAP AG and Siebel Systems (collectively, the
+        "Authors") agree to grant you a royalty-free license, under reasonable,
+        non-discriminatory terms and conditions, to patents that they deem
+        necessary to implement the Business Process Execution Language for Web
+        Services Specification.
+
+        THE Business Process Execution Language for Web Services SPECIFICATION IS PROVIDED "AS IS," AND THE AUTHORS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR TITLE; THAT THE CONTENTS OF THE BPEL4WS SPECIFICATION ARE SUITABLE FOR ANY PURPOSE; NOR THAT THE IMPLEMENTATION OF SUCH CONTENTS WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.
+
+        THE AUTHORS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR RELATING TO ANY USE OR DISTRIBUTION OF THE BPEL4WS SPECIFICATION.
+
+        The name and trademarks of the Authors may NOT be used in any manner, including advertising or publicity pertaining to the BPEL4WS Specification or its contents without specific, written prior permission. Title to copyright in the BPEL4WS Specification will at all times remain with the Authors.
+
+        No other rights are granted by implication, estoppel or otherwise.

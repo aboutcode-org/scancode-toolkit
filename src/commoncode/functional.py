@@ -27,6 +27,7 @@ from __future__ import absolute_import, print_function
 import functools
 from itertools import izip
 from types import ListType, TupleType, GeneratorType
+from array import array
 
 
 def flatten(seq):
@@ -114,7 +115,7 @@ def memoize(fun):
         if kwargs:
             return fun(*args, **kwargs)
         # convert any list arg to a tuple
-        args = tuple(tuple(arg) if isinstance(arg, ListType) else arg
+        args = tuple(tuple(arg) if isinstance(arg, (ListType, tuple, array)) else arg
                      for arg in args)
         try:
             return memos[args]
@@ -164,3 +165,53 @@ def memoize_to_attribute(attr_name, _test=False):
         return wrapper
 
     return memoized_to_attr
+
+
+def memoize_gen(fun):
+    """
+    Decorate fun generator function and cache return values. Arguments must be
+    hashable. kwargs are not handled. Used to speed up some often executed
+    functions.
+    Usage example::
+
+    >>> @memoize
+    ... def expensive(*args, **kwargs):
+    ...     print('Calling expensive with', args, kwargs)
+    ...     return 'value expensive to compute' + repr(args)
+    >>> expensive(1, 2)
+    Calling expensive with (1, 2) {}
+    'value expensive to compute(1, 2)'
+    >>> expensive(1, 2)
+    'value expensive to compute(1, 2)'
+    >>> expensive(1, 2, a=0)
+    Calling expensive with (1, 2) {'a': 0}
+    'value expensive to compute(1, 2)'
+    >>> expensive(1, 2, a=0)
+    Calling expensive with (1, 2) {'a': 0}
+    'value expensive to compute(1, 2)'
+    >>> expensive(1, 2)
+    'value expensive to compute(1, 2)'
+    >>> expensive(1, 2, 5)
+    Calling expensive with (1, 2, 5) {}
+    'value expensive to compute(1, 2, 5)'
+
+    The expensive function returned value will be cached based for each args
+    values and computed only once in its life. Call with kwargs are not cached
+    """
+    memos = {}
+
+    @functools.wraps(fun)
+    def memoized(*args, **kwargs):
+        # calls with kwargs are not handled and not cached
+        if kwargs:
+            return fun(*args, **kwargs)
+        # convert any list arg to a tuple
+        args = tuple(tuple(arg) if isinstance(arg, (ListType, tuple, array)) else arg
+                     for arg in args)
+        try:
+            return memos[args]
+        except KeyError:
+            memos[args] = list(fun(*args))
+            return memos[args]
+
+    return functools.update_wrapper(memoized, fun)

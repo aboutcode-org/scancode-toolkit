@@ -234,12 +234,10 @@ def sparsify(d):
     be no more that 1/3 full.  As a result, lookups require less
     than 1.5 probes on average.
 
-
     Example:
     >>> sparsify({1: 3, 4: 5})
     {1: 3, 4: 5}
     """
-
     e = d.copy()
     d.update(e)
     return d

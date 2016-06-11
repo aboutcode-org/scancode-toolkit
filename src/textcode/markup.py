@@ -23,18 +23,23 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
-import os
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import division
+
+import codecs
+from collections import Counter
 import logging
+import os
 
 import chardet
-import codecs
 
 from commoncode import fileutils
-from typecode import contenttype
+from typecode import get_type
+import re
 
 """
-Extracts plain text from HTML and related files.
+Extract text from HTML, XML and related angular markup-like files.
 """
 
 logger = logging.getLogger(__name__)
@@ -42,12 +47,78 @@ logger = logging.getLogger(__name__)
 bin_dir = os.path.join(os.path.dirname(__file__), 'bin')
 
 
-extensions = set(['.html', '.htm', '.php', '.phps', '.jsp', '.jspx'])
-
+extensions = ('.html', '.htm', '.php', '.phps', '.jsp', '.jspx' , '.xml', '.pom',)
 
 
 def is_markup(location):
-    return fileutils.file_extension(location) in extensions
+    """
+    Return True is the file at `location` is some kind of markup, such as HTML,
+    XML, PHP, etc.
+    """
+    T = get_type(location)
+
+    # do not care for small files
+    if T.size < 64:
+        return False
+    
+    if not T.is_text:
+        return False
+
+    if location.endswith(extensions):
+        return True
+
+    with open(location, 'rb') as f:
+        start= f.read(1024)
+
+    if start.startswith('<'):
+        return True
+
+    # count whitespaces
+    no_spaces = ''.join(start.split())
+
+    # count opening and closing tags_count
+    counts = Counter(c for c in no_spaces if c in '<>')
+
+    if not all(c in counts for c in '<>'):
+        return False
+
+    if not all(counts.values()):
+        return False
+
+    # ~ 5 percent of tag <> markers
+    has_tags = sum(counts.values())/len(no_spaces) > 0.05
+
+    # check if we have some significant proportion of tag-like characters
+    open_close = counts['>'] / counts['<']
+    # ration of open to close should approach 1: accept a 20% drift
+    balanced = abs(1 - open_close) < .2
+    return has_tags and balanced
+
+
+def demarkup(location):
+    """
+    Return an iterator of unicode text lines for the file at `location` lightly
+    stripping markup if the file is some kind of markup, such as HTML, XML, PHP,
+    etc. The whitespaces are collapsed to one space.
+    """
+    from textcode.analysis import unicode_text_lines
+
+    # keep the opening tag name of certain tags that contains these strings 
+    kept_tags =('lic', 'copy', 'auth', 'contr', 'leg', '@', '<s>','</s>')
+    
+    # find start and closing tags or the first white space whichever comes first
+    # or entities
+    # this regex is such that ''.join(tags.split(a))==a
+    tags_ents = re.compile(r'(</?[^\s></]+(?:>|\s)?|&[^\s&]+;)').split
+    
+    for line in unicode_text_lines(location):
+        cleaned = []
+        for token in tags_ents(line):
+            if token.startswith(('<', '&',)) and not any(k in token.lower() for k in kept_tags):
+                continue
+            else:
+                cleaned.append(token)
+        yield u''.join(cleaned)
 
 
 def is_html(location):
@@ -66,7 +137,7 @@ def convert_to_utf8(location):
     Convert the file at location to UTF-8 text.
     Return the location of the converted file or None.
     """
-    if not contenttype.get_type(location).is_text:
+    if not get_type(location).is_text:
         return location
     start = open(location, 'rb').read(4096)
     encoding = chardet.detect(start)

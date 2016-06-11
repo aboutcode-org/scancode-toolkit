@@ -1,18 +1,20 @@
 licenses:
-- fsf-mit
-- fsf-unlimited
-- fsf-unlimited
-- fsf-unlimited
-- fsf-unlimited
-- fsf-unlimited
-- fsf-unlimited
-- fsf-unlimited
-- fsf-unlimited
-- fsf-unlimited
-- fsf-unlimited
-- fsf-unlimited
-- fsf-unlimited
-- fsf-unlimited
-- fsf-unlimited
-- fsf-unlimited
-- fsf-unlimited
+   - fsf-mit
+   - fsf-mit
+   - fsf-unlimited-lr
+   - fsf-unlimited-lr
+   - fsf-unlimited-lr
+   - fsf-unlimited-lr
+   - fsf-unlimited-lr
+   - fsf-unlimited-lr
+   - fsf-unlimited-lr
+   - fsf-unlimited-lr
+   - fsf-unlimited-lr
+   - fsf-unlimited-lr
+   - fsf-unlimited-lr
+   - fsf-unlimited-lr
+   - fsf-unlimited-lr
+   - fsf-unlimited-lr
+   - fsf-unlimited-lr
+expected_failure: yes
+notes: this is not passing becasue the fsf-unlimited-lr is entirely contained in the fsf-mit

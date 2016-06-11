@@ -1,0 +1,3 @@
+licenses:
+    - bpel4ws-spec
+expected_failure: yes

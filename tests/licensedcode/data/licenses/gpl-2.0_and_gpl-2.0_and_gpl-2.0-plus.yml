@@ -1,5 +1,8 @@
 licenses:
-    - gpl-2.0
-    - gpl-2.0
     - gpl-2.0-plus
+    - gpl-2.0
+    - gpl-2.0
+    - gpl-2.0
+    - gpl-2.0
+    - gpl-2.0
 expected_failure: yes

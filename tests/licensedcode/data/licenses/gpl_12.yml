@@ -1,3 +1,4 @@
 licenses:
     - gpl
-expected_failure: yes
+    - gpl-2.0
+

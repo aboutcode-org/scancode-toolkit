@@ -30,12 +30,11 @@ import os
 from commoncode.testcase import FileBasedTesting
 
 from licensedcode.tokenize import query_lines
-from licensedcode.tokenize import query_ngrams
 from licensedcode.tokenize import query_tokenizer
 from licensedcode.tokenize import word_splitter
 
 from licensedcode.tokenize import rule_tokenizer
-from licensedcode.tokenize import rule_ngrams
+from licensedcode.tokenize import ngrams
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -363,88 +362,61 @@ class TestRuleTokenizer(FileBasedTesting):
 class TestNgrams(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def test_query_ngrams(self):
+    def test_ngrams(self):
         tokens = '''
             Redistribution and use in source and binary are permitted.
             '''.split()
 
-        result = list(query_ngrams(tokens, ngram_length=4))
+        result = list(ngrams(tokens, ngram_length=4))
         expected = [
-            (0, ('Redistribution', 'and', 'use', 'in')),
-            (1, ('and', 'use', 'in', 'source')),
-            (2, ('use', 'in', 'source', 'and')),
-            (3, ('in', 'source', 'and', 'binary')),
-            (4, ('source', 'and', 'binary', 'are')),
-            (5, ('and', 'binary', 'are', 'permitted.'))]
-
+            ('Redistribution', 'and', 'use', 'in'),
+            ('and', 'use', 'in', 'source'),
+            ('use', 'in', 'source', 'and'),
+            ('in', 'source', 'and', 'binary'),
+            ('source', 'and', 'binary', 'are'),
+            ('and', 'binary', 'are', 'permitted.')
+        ]
         assert expected == result
 
-    def test_query_ngrams_with_None(self):
+    def test_ngrams_with_None(self):
         tokens = ['Redistribution', 'and', 'use', None, 'in', 'source', 'and', 'binary', 'are', None]
-        result = list(query_ngrams(tokens, ngram_length=4))
+        result = list(ngrams(tokens, ngram_length=4))
         expected = [
-            (4, ('in', 'source', 'and', 'binary')),
-            (5, ('source', 'and', 'binary', 'are'))
-        ]
+            ('Redistribution', 'and', 'use', None),
+            ('and', 'use', None, 'in'),
+            ('use', None, 'in', 'source'),
+            (None, 'in', 'source', 'and'),
+            ('in', 'source', 'and', 'binary'),
+            ('source', 'and', 'binary', 'are'),
+            ('and', 'binary', 'are', None)]
         assert expected == result
 
-    def test_query_ngrams_with_None_length_three(self):
+    def test_ngrams_with_None_length_three(self):
         tokens = ['Redistribution', 'and', 'use', None, 'in', 'source', 'and', 'binary', 'are', None]
-        result = list(query_ngrams(tokens, ngram_length=3))
+        result = list(ngrams(tokens, ngram_length=3))
         expected = [
-            (0, ('Redistribution', 'and', 'use')),
-            (4, ('in', 'source', 'and')),
-            (5, ('source', 'and', 'binary')),
-            (6, ('and', 'binary', 'are'))
-        ]
+            ('Redistribution', 'and', 'use'),
+            ('and', 'use', None),
+            ('use', None, 'in'),
+            (None, 'in', 'source'),
+            ('in', 'source', 'and'),
+            ('source', 'and', 'binary'),
+            ('and', 'binary', 'are'),
+            ('binary', 'are', None)]
         assert expected == result
 
-    def test_rule_ngrams(self):
+    def test_ngrams2(self):
         tokens = '''
             Redistribution and use in source and binary are permitted.
             '''.split()
 
-        result = list(rule_ngrams(tokens, ngram_length=4))
+        result = list(ngrams(tokens, ngram_length=4))
         expected = [
-            (0, ('Redistribution', 'and', 'use', 'in')),
-            (1, ('and', 'use', 'in', 'source')),
-            (2, ('use', 'in', 'source', 'and')),
-            (3, ('in', 'source', 'and', 'binary')),
-            (4, ('source', 'and', 'binary', 'are')),
-            (5, ('and', 'binary', 'are', 'permitted.'))]
+            ('Redistribution', 'and', 'use', 'in'),
+            ('and', 'use', 'in', 'source'),
+            ('use', 'in', 'source', 'and'),
+            ('in', 'source', 'and', 'binary'),
+            ('source', 'and', 'binary', 'are'),
+            ('and', 'binary', 'are', 'permitted.')]
 
-        assert expected == result
-
-    def test_rule_ngrams_with_gaps(self):
-        tokens = ['Redistribution', 'and', 'use', 'in', 'source', 'and', 'binary', 'are', 'fine']
-        gaps = set([3])
-        result = list(rule_ngrams(tokens, ngram_length=4, gaps=gaps))
-        expected = [
-            (0, ('Redistribution', 'and', 'use', 'in')),
-            (4, ('source', 'and', 'binary', 'are')),
-            (5, ('and', 'binary', 'are', 'fine'))
-        ]
-        assert expected == result
-
-    def test_rule_ngrams_with_gaps_ngram_length_three(self):
-        tokens = ['Redistribution', 'and', 'use', 'in', 'source', 'and', 'binary', 'are', 'fine']
-        gaps = set([3])
-        result = list(rule_ngrams(tokens, ngram_length=3, gaps=gaps))
-        expected = [
-            (0, ('Redistribution', 'and', 'use')),
-            (1, ('and', 'use', 'in')),
-            (4, ('source', 'and', 'binary')),
-            (5, ('and', 'binary', 'are')),
-            (6, ('binary', 'are', 'fine'))
-        ]
-
-        assert expected == result
-
-    def test_rule_ngrams_and_query_have_the_same_behavior(self):
-        tokens = '''
-            Redistribution and use in source and binary are permitted.
-            '''.split()
-
-        result = list(rule_ngrams(tokens, ngram_length=4))
-        expected = list(query_ngrams(tokens, ngram_length=4))
         assert expected == result

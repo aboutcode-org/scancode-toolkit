@@ -43,17 +43,23 @@ rules_data_dir = join(data_dir, 'rules')
 root_dir = dirname(src_dir)
 cache_dir = join(root_dir, '.cache')
 license_index_cache_dir = join(cache_dir, 'license_index')
+license_matches_cache_dir = join(cache_dir, 'license_matches')
 
 if not exists(license_index_cache_dir):
     fileutils.create_dir(license_index_cache_dir)
 
+# length of ngrams
+NGRAM_LENGTH = 5
 
-NGRAM_LENGTH = 4
+# length of rule starters, used for query breaking
+STARTER_LENGTH = 15
 
-# maximum gap in number of tokens between two hits or matches to be considered
-# part of the hit group or match
-MAX_GAP = 25
+# minimum number of tokens a match should have to be considered as worthy
+MIN_MATCH_LENGTH = 4
+MIN_MATCH_HIGH_LENGTH = 3
 
+# maximum number of non-matching tokens that can be skipped
+MAX_GAP_SKIP = 15
 
-# minimum length of a match to be considered as worthy
-MIN_LENGTH = 4
+# maximum distance between two matches to merge
+MAX_DIST = 50

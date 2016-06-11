@@ -1,0 +1,5 @@
+There is currently only one exception to this.  The files FFT.c and
+FFT.h are original from the Audacity program and fall under its
+license of GPL.  The noise profiling and noise reduction effects
+both make use of this FFT code and would need to be removed from
+any program that requires LGPL only software.

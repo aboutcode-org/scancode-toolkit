@@ -1,4 +1,6 @@
-The lowest common denominator is GNU
+License:
+The licence for translations is the same as that of the application or
+library from which they come.  The lowest common denominator is GNU
 GPL 2 only.  Many apps are under GNU GPL 2 or later and libraries
 under GNU LGPL 2 or later.  See the relevant application or library
 for details.
@@ -40,3 +42,7 @@ for details.
   On Debian GNU/Linux systems, the complete text of the GNU Library General
   Public License can be found in /usr/share/common-licenses/LGPL-2 and version 3
   in /usr/share/common-licenses/LGPL-3
+
+
+The Debian packaging is {{}} and
+is licensed under the GPLv2 or later, see `/usr/share/common-licenses/GPL-2'.

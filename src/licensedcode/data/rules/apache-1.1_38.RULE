@@ -14,17 +14,17 @@
  *
  * 3. The end-user documentation included with the redistribution, if
  *    any, must include the following acknowlegement:
- *       {{20"This product includes software developed by the
+ *       {{"This product includes software developed by the
  *        Caucho Technology (http://www.caucho.com/)." }}
  *    Alternately, this acknowlegement may appear in the software itself,
  *    if and wherever such third-party acknowlegements normally appear.
  *
- * 4. The names {{20 "Burlap", "Resin", and "Caucho"}} must not be used to
+ * 4. The names {{"Burlap", "Resin", and "Caucho"}} must not be used to
  *    endorse or promote products derived from this software without prior
  *    written permission. For written permission, please contact
  *    {{ info@caucho.com.}}
  *
- * 5. Products derived from this software may not be called {{20 "Resin"
+ * 5. Products derived from this software may not be called {{"Resin"
  *    nor may "Resin" }}appear in their names without prior written
  *    permission of {{Caucho Technology.}}
  *

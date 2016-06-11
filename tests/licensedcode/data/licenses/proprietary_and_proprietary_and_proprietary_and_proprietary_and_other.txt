@@ -1,5 +1,4 @@
- unknown_license detects the following license with no problem
-
+ 
 /*******************************************************************************
  *******************************************************************************
  *
@@ -16,8 +15,7 @@
  * and other countries.  To obtain a license, visit
  * http://developer.apple.com/mkt/swl/agreements.html#firewire.
 
-However, it fails if combined proprietary license notice
-
+H
 /*****************************************************************************
 *
 *      Copyright 1999 - 2010

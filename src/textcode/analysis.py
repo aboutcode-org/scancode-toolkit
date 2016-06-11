@@ -28,7 +28,7 @@ import unicodedata
 
 import chardet
 
-import typecode.contenttype
+import typecode
 from textcode import pdf
 from textcode import markup
 from textcode import strings
@@ -41,11 +41,14 @@ All internal processing assumes unicode in and out.
 """
 
 
-def text_lines(location):
+def text_lines(location, demarkup=False):
     """
     Return a text lines iterator from file at `location`. Return an empty
     iterator if no text content is extractible. Text extraction is based on
     detected file type.
+    
+    if `demarkup` is True, attempt to detect if a file contains HTML/XML-like
+    markup and cleanup this markup.
 
     Note: For testing or building from strings, location can be a is a list of
     unicode line strings.
@@ -63,7 +66,7 @@ def text_lines(location):
         # of lines
         return iter(location)
 
-    T = typecode.contenttype.get_type(location)
+    T = typecode.get_type(location)
 
     if not T.is_file:
         return iter([])
@@ -72,29 +75,34 @@ def text_lines(location):
     if T.is_pdf:
         return unicode_text_lines_from_pdf(location)
 
-# TODO: enable markup stripping support
-#     if T.is_doc:
-#         return unicode_text_lines_from_markup(location)
+    # lightweight markup stripping support
+    if demarkup and markup.is_markup(location):
+        try:
+            return markup.demarkup(location)
+        except:
+            # try again later with as plain text
+            pass
 
-#     if markup.is_markup(location):
-#         try:
-#             new_loc = markup.convert_to_text(location)
-#             return unicode_text_lines(new_loc)
-#         except:
-#             # try again with as plain text
-#             pass
+    # TODO: handle Office-like documents, RTF, etc
+    # if T.is_doc:
+    #     return unicode_text_lines_from_doc(location)
 
     if T.is_text:
         return unicode_text_lines(location)
+
+    # DO NOT introspect media, archives and compressed files
+    if not T.contains_text:
+        return iter([])
 
     if T.is_binary:
         # fall back to binary
         return unicode_text_lines_from_binary(location)
 
     else:
-        # if neither text, text-like nor binary: return empty
+        # if neither text, text-like nor binary: treat as binary
         # this should never happen
-        return iter([])
+        # fall back to binary
+        return unicode_text_lines_from_binary(location)
 
 
 def unicode_text_lines_from_binary(location):
@@ -124,7 +132,7 @@ def as_unicode(line):
     then attempt Unicode trans-literation and finally
     fall-back to ASCII strings extraction.
 
-    TODO: Add file/magic detection, unicodedmanit/BS3/4 and chardet
+    TODO: Add file/magic detection, unicodedmanit/BS3/4
     """
     unicodedata_normalize = unicodedata.normalize
     chardet_detect = chardet.detect

@@ -1,2 +1,4 @@
 licenses:
     - mpl-1.1
+    - unknown
+license_choice: yes

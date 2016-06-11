@@ -21,6 +21,7 @@
 #  for any legal advice.
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+
 from __future__ import absolute_import, print_function
 
 if __name__ == '__main__':
@@ -30,8 +31,15 @@ if __name__ == '__main__':
     from commoncode.testcase import get_test_loc
     
     from licensedcode import index
+    from licensedcode import models
     
     TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'licensedcode', 'data')
-    idx = index.get_index()
-    loc = get_test_loc('perf/cc-by-nc-sa-3.0.SPDX', TEST_DATA_DIR)
-    list(idx.match(loc))
+
+    rule_dir = get_test_loc('detect/rule_template/rules', TEST_DATA_DIR)
+    rules = models.rules(rule_dir)
+    idx = index.LicenseIndex(rules)
+
+    # loc = get_test_loc('perf/cc-by-nc-sa-3.0.SPDX', TEST_DATA_DIR)
+    loc= get_test_loc('detect/rule_template/query.txt', TEST_DATA_DIR)
+    list(idx.match(loc, min_score=0, _with_cache=False))
+  

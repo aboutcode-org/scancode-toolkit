@@ -9,7 +9,7 @@ possible reuse and benefit.
 We try to include on most such released files a small notice 
 such as: 
 
-{{10 /* (PD) 2006 The Bitzi Corporation }}
+{{/* (PD) 2006 The Bitzi Corporation }}
  * Please see file COPYING or http://bitzi.com/publicdomain 
  * for more info. 
  */ 
@@ -17,7 +17,7 @@ such as:
 For major standalone files, or as the "COPYING" file, we 
 include a version of this longer explanation: 
 
-{{10 /* (PD) 2006 The Bitzi Corporation }}
+{{/* (PD) 2006 The Bitzi Corporation }}
  * 
  * 1. Authorship. This work and others bearing the above 
  * label were created by, or on behalf of, the Bitzi 
@@ -37,7 +37,7 @@ include a version of this longer explanation:
  * 
  * 3. Trademark Advisory. The Bitzi Corporation reserves 
  * all rights with regard to any of its trademarks which 
- * may appear herein, such as {{10 "Bitzi", "Bitcollider", or 
+ * may appear herein, such as {{"Bitzi", "Bitcollider", or 
  * "Bitpedia". }} Please take care that your uses of this 
  * work do not infringe on our trademarks or imply our 
  * endorsement. For example, you should change labels 
@@ -66,7 +66,7 @@ include a version of this longer explanation:
  * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
  * 
-{{20 * Please see http://bitzi.com/publicdomain or write 
+{{* Please see http://bitzi.com/publicdomain or write 
  * info@bitzi.com for more info. 
  */ 
  }}

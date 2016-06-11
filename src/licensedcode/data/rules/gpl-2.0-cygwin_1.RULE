@@ -9,7 +9,7 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
-Foundation, Inc., {{20 address 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.}}
+Foundation, Inc., {{address 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.}}
 
 			*** NOTE ***
 
@@ -25,12 +25,12 @@ DLL itself.  If you distribute a (possibly modified) version of the DLL
 you must adhere to the terms of the GPL, i.e. you must provide sources
 for the cygwin DLL.
 
-See {{10 http://www.opensource.org/docs/osd/ }} for the precise Open Source
+See {{http://www.opensource.org/docs/osd/ }} for the precise Open Source
 Definition referenced above.
 
 Red Hat sells a special Cygwin License for customers who are unable to
 provide their application in open source code form.  For more
-information, please see: {{10 http://www.redhat.com/software/cygwin/, }} or call
-{{20 tel +1-866-2REDHAT ext. 45300 (toll-free in the US).}}
+information, please see: {{http://www.redhat.com/software/cygwin/, }} or call
+{{tel +1-866-2REDHAT ext. 45300 (toll-free in the US).}}
 
 Outside the US call your regional Red Hat office, see
