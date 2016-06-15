@@ -51,9 +51,6 @@ if not exists(license_index_cache_dir):
 # length of ngrams
 NGRAM_LENGTH = 5
 
-# length of rule starters, used for query breaking
-STARTER_LENGTH = 15
-
 # minimum number of tokens a match should have to be considered as worthy
 MIN_MATCH_LENGTH = 4
 MIN_MATCH_HIGH_LENGTH = 3

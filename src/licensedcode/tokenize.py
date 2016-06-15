@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2015 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -64,7 +65,7 @@ def query_lines(location=None, query_string=None):
 # Split on whitespace and punctuations: keep only characters using a (trick)
 # double negation regex on characters (e.g. [^\W]), underscore, dash and +.
 # Keeping the + is important for licenses name such as GPL2+.
-query_pattern = r'[^\W_\-\+]+'
+query_pattern = r'[^\W_\-\+©]+'
 word_splitter = re.compile(query_pattern, re.UNICODE).findall
 
 
@@ -86,7 +87,7 @@ def query_tokenizer(text, lower=True):
 # Use non capturing groups for alternation.
 rule_pattern = r'''
     # Same split on white space and punctuation as in word_splitter
-    (?:[^\W_\-\+])+
+    (?:[^\W_\-\+©])+
     |
     # a template part is anything enclosed in double braces
     (?:{{[^{}]*}})
@@ -611,8 +612,6 @@ def ngrams2(iterable, ngram_length):
     Each ngram is a tuple of ngram_length items.
     The returned iterable is empty if the input iterable contains less than
     `ngram_length` items.
-
-    Note: this is a fairly arcane but optimized way to compute ngrams.
 
     For example:
     >>> list(ngrams2([1,2,3,4,5], 2))

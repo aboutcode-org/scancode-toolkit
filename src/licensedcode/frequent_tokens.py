@@ -9654,4 +9654,9 @@ Linus Torvalds
   mmddyyyy
   hhmmss
   hh mm ss
+  ©
+Sam Leffler Silicon Graphics
+ Whistle Communications
+ dll 
+ v1
 '''.lower().split()

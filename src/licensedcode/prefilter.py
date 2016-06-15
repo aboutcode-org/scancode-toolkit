@@ -30,10 +30,11 @@ from collections import defaultdict
 from collections import namedtuple
 
 from bitarray import bitarray
+from intbitset import intbitset
+
+from commoncode.dict_utils import sparsify
 
 from licensedcode.models import Rule
-from licensedcode import NGRAM_LENGTH
-from commoncode.dict_utils import sparsify
 
 
 """
@@ -55,7 +56,7 @@ frequencies as is typically done in a search engine. Therefore we compute the
 intersection of the query against every rules. This proves more efficient than a
 traditional inverted intersection in part because the queries are much larger
 (1000's of tokens) than a traditional search engine query.
- 
+
 Since we use integer to represent tokens, we reduce the problem to integer set
 or multisets intersections. Furthermore, we have a finite and limited number of
 tokens and we distinguish high and low (junk or common, similar to stop words or
@@ -101,7 +102,7 @@ tokens so it may be bigger than what will eventually be matched.
 This sum is then used for the same filtering and ranking used for the token sets
 step: First intersect high tokens, skip if some threshold is not met.
 Then intersect the low tokens and sum the min-sum of these two intersections to
-rank the candidates. 
+rank the candidates.
 
 Token frequencies allow extra filtering when looking only for exact matches or
 for small rules where we want all shared tokens quantities to be matched.
@@ -134,20 +135,10 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
 
-def index_rules_starters(rids_by_starter, rid, tokens, starter_length=NGRAM_LENGTH):
-    """
-    Return a mapping of rule starters tuple -> [rids, ...] given rule token ids
-    by rid. The tuple contain `starter_length` tokens from the begning of each
-    rule. If the rule is smaller than it is not indexed. This is used for query
-    run breaking.
-    """
-    rids_by_starter = defaultdict(list)
-    if len(tokens) < starter_length:
-        return
-    rids_by_starter[tuple(tokens[:starter_length])].append(rid)
+# TODO: add bigrams sets and multisets
+# TODO: see also https://github.com/bolo1729/python-memopt/blob/master/memopt/memopt.py for multisets
 
-
-def index_token_sets(token_ids, len_junk, len_good):
+def index_token_bitsets(token_ids, len_junk, len_good):
     """
     Return a 4-tuple of low & high tids sets, low & high tids multisets given a
     token_ids sequence.
@@ -178,6 +169,97 @@ def index_token_sets(token_ids, len_junk, len_good):
     return low_tids_set, high_tids_set, low_tids_mset, high_tids_mset
 
 
+def tids_sets_intersector(qset, iset):
+    """
+    Return the intersection of a query and index token ids sets.
+    Default for bitarrays.
+    """
+    return qset & iset
+
+
+def tids_setbit_counter(tset):
+    """
+    Return the number of elements present in a token ids set, aka. the set
+    cardinality.
+    Default for bitarrays.
+    """
+    return tset.count()
+
+
+def tids_multisets_intersector(qmset, imset):
+    """
+    Return the intersection of a query and index token ids multisets. For a
+    token id present in both multisets, the intersection value is the minimum of
+    the occurence count in the query and rule for this token.
+    Optimized for defaultdicts.
+    """
+    result = defaultdict(int)
+    # iterate the smallest of the two sets
+    if len(qmset) < len(imset):
+        set1, set2 = qmset, imset
+    else:
+        set1, set2 = imset, qmset
+
+    for elem, count in set1.items():
+        c2count = set2[elem]
+        res = count if count < c2count else c2count
+        if res:
+            result[elem] = res
+    return result
+
+def tids_multiset_counter(tmset):
+    """
+    Return the sum of occurences of elements present in a token ids multiset,
+    aka. the multiset cardinality.
+    """
+    return sum(tmset.values())
+
+
+def index_token_sets_with_intbitset(token_ids, len_junk, len_good):
+    """
+    Return a 4-tuple of low & high tids sets, low & high tids multisets given a
+    token_ids sequence.
+    """
+    # For multisets, we use an array: the index is the token id, the value is
+    # the occurrences count. This is the same as a collections.Counter but using
+    # a more compact and faster iterating array.
+
+    # this variant uses intbitset to evaluate its performance wrt to bitarray
+
+    low_tids_set = intbitset(len_junk)
+    low_tids_set_add = low_tids_set.add
+    high_tids_set = intbitset(len_good)
+    high_tids_set_add = high_tids_set.add
+    low_tids_mset = defaultdict(int)
+    high_tids_mset = defaultdict(int)
+    for tid in token_ids:
+        # this skips unknown token ids that are -1 as well as possible None
+        if tid < 0:
+            continue
+        if tid < len_junk:
+            low_tids_mset[tid] += 1
+            low_tids_set_add(tid)
+        else:
+            high_tids_mset[tid] += 1
+            high_tids_set_add(tid)
+
+    # sparify for speed
+    sparsify(low_tids_mset)
+    sparsify(high_tids_mset)
+    return low_tids_set, high_tids_set, low_tids_mset, high_tids_mset
+
+def tids_inbitset_counter(tset):
+    """
+    Return the number of elements present in a token ids set, aka. the set
+    cardinality.
+    Default for bitarrays.
+    """
+    return len(tset)
+
+# use bitarrays or intbitset
+index_token_sets = index_token_sets_with_intbitset
+tids_set_counter = tids_inbitset_counter
+
 CandidateData = namedtuple('CandidateData', 'intersection distance matched_length high_inter_len low_inter_len')
 
 
@@ -196,7 +278,7 @@ def compute_candidates(query_run, idx, rules_subset, exact=False, top=30):
     - lengths of match and minimal match length
     - the difference and distance of from query to rule
     """
-    if not query_run.high_matchables:
+    if not query_run.is_matchable():
         return []
 
     qlows, qhighs, qlowms, qhighms = index_token_sets(query_run.matchable_tokens(), idx.len_junk, idx.len_good)
@@ -263,94 +345,38 @@ def compute_candidates(query_run, idx, rules_subset, exact=False, top=30):
     return candidates
 
 
-def tids_sets_intersector(qset, iset):
-    """
-    Return the intersection of a query and index token ids sets.
-    Default for bitarrays.
-    """
-    return qset & iset
-
-
-def tids_set_counter(tset):
-    """
-    Return the number of elements present in a token ids set, aka. the set
-    cardinality.
-    Default for bitarrays.
-    """
-    return tset.count()
-
-
-def tids_multisets_intersector(qmset, imset):
-    """
-    Return the intersection of a query and index token ids multisets. For a
-    token id present in both multisets, the intersection value is the minimum of
-    the occurence count in the query and rule for this token.
-    Optimized for defaultdicts.
-    """
-    result = defaultdict(int)
-    # iterate the smallest of the two sets
-    if len(qmset) < len(imset):
-        set1, set2 = qmset, imset
-    else:
-        set1, set2 = imset, qmset
-
-    for elem, count in set1.items():
-        c2count = set2[elem]
-        res = count if count < c2count else c2count
-        if res:
-            result[elem] = res
-    return result
-
-
-# def tids_multisets_counter_intersector(qmset, imset):
-#     """
-#     Return the intersection of a query and index token ids multisets. For a
-#     token id present in both multisets, the intersection value is the minimum of
-#     the occurence count in the query and rule for this token.
-#     Deafult for Counters.
-#     """
-#     return qmset & imset
-
-
-def tids_multiset_counter(tmset):
-    """
-    Return the sum of occurences of elements present in a token ids multiset,
-    aka. the multiset cardinality.
-    """
-    return sum(tmset.values())
-
-
 def compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, counter, exact=True, rule_identifier=None):
     """
     Compare a query qhigh and qlow sets with an index rule ihigh and ilow sets.
     Return a tuple suitable for sorting and the computed sets intersection or
     None if this combination is not match worthy.
-    
+
     Use the rule Thresholds `thresholds` to determine match worthiness and
     ranking.
-    
+
     `intersector` and `counter` are callables that compute the intersection and
     count for sets or multisets.
-    
+
     If `exact` is True, return None if the query could not be matched exactly
     against this index rule.
-    
+
     `rule_identifier` is used for tracing.
     """
     # intersect on high tokens
     #########################################
     high_inter = intersector(qhigh, ihigh)
     high_inter_len = counter(high_inter)
-    if TRACE_COMPARE_SET :logger_debug('  compare_sets: thresholds:', thresholds)
-    if TRACE_COMPARE_SET : logger_debug('  compare_sets: high_inter_len:', high_inter_len)
+    if TRACE_COMPARE_SET: logger_debug('  compare_sets: thresholds:', thresholds)
+    if TRACE_COMPARE_SET: logger_debug('  compare_sets: high_inter_len:', high_inter_len)
 
     if high_inter_len == 0:
         if TRACE_COMPARE_SET:
             logger_debug('   compare_sets: %(rule_identifier)r SKIP 0: high_inter_len=%(high_inter_len)r == 0' % locals())
         return
 
-    # for exact, all high must be matched
-    if exact and high_inter_len < thresholds.high_len:
+    # for exact or small, all high must be matched
+    exact_or_small = exact or thresholds.small
+    if exact_or_small and high_inter_len < thresholds.high_len:
         if TRACE_COMPARE_SET:
             ihigh_len = thresholds.high_len
             logger_debug('   compare_sets: %(rule_identifier)r SKIP 1: exact=%(exact)r and high_inter_len=%(high_inter_len)r != ihigh_len=%(ihigh_len)r' % locals())
@@ -369,8 +395,8 @@ def compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, counter, exa
     low_inter_len = counter(low_inter)
     if TRACE_COMPARE_SET: logger_debug('  compare_sets: low_inter_len:', low_inter_len)
 
-    # for exact, all low must be matched
-    if exact and low_inter_len < thresholds.low_len:
+    # for exact or small, all low must be matched
+    if exact_or_small and low_inter_len < thresholds.low_len:
         if TRACE_COMPARE_SET:
             ilow_len = thresholds.low_len
             logger_debug('   compare_sets: %(rule_identifier)r SKIP 3: exact=%(exact)r and low_inter_len=%(low_inter_len)r < ilow_len=%(ilow_len)r' % locals())
@@ -383,13 +409,13 @@ def compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, counter, exa
             logger_debug('   compare_sets: %(rule_identifier)r SKIP 4: high_inter_len=%(high_inter_len)r + low_inter_len=%(low_inter_len)r < min_ilen=%(min_ilen)r' % locals())
         return
 
-    # for small rules, we want all high tokens matched at at least 1/2 of low tokens
-    if thresholds.small and (high_inter_len != thresholds.min_high) and (low_inter_len < (thresholds.low_len // 2)):
-        if TRACE_COMPARE_SET:
-            small = thresholds.small
-            ilen = thresholds.length
-            logger_debug('   compare_sets: %(rule_identifier)r SKIP 5: small=%(small)r and high_inter_len=%(high_inter_len)r + low_inter_len=%(low_inter_len)r != ilen=%(ilen)r' % locals())
-        return
+#     # for small rules, we want all high tokens matched at at least 1/2 of low tokens
+#     if thresholds.small and (high_inter_len != thresholds.min_high) and (low_inter_len < (thresholds.low_len // 2)):
+#         if TRACE_COMPARE_SET:
+#             small = thresholds.small
+#             ilen = thresholds.length
+#             logger_debug('   compare_sets: %(rule_identifier)r SKIP 5: small=%(small)r and high_inter_len=%(high_inter_len)r + low_inter_len=%(low_inter_len)r != ilen=%(ilen)r' % locals())
+#         return
 
     # distance
     matched_length = high_inter_len + low_inter_len
@@ -401,15 +427,18 @@ def compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, counter, exa
     high_union_len = counter(qhigh) + counter(ihigh) - high_inter_len
     low_union_len = counter(qlow) + counter(ilow) - low_inter_len
     high_resemblance = high_inter_len / high_union_len
-    #low_resemblance = low_inter_len / low_union_len
+    # low_resemblance = low_inter_len / low_union_len
     resemblance = (high_inter_len + low_inter_len) / (high_union_len + low_union_len)
     high_jaccard_distance = 1. - high_resemblance
     jaccard_distance = 1. - resemblance
 
     high_containment = high_inter_len / thresholds.high_len
-    #low_containment = low_inter_len / thresholds.low_len
-    containment = (high_inter_len + low_inter_len) / thresholds.length
-
+    # we give twice the weight to high containment
+    containment = high_containment
+    if thresholds.low_len and low_inter_len:
+        low_containment = low_inter_len / thresholds.low_len
+        low_importance = 0.9
+        containment = (high_containment + (low_containment * low_importance)) / (1 + low_importance)
 
     # Sort order is based on resemblance and containment with additionl things for disambiguation
     sort_order = -containment, -high_containment, jaccard_distance, high_jaccard_distance, high_distance, distance, -high_inter_len, -matched_length, thresholds.length

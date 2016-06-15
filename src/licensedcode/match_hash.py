@@ -81,7 +81,7 @@ def match_hash(idx, query_run):
     logger_debug('match_hash: start....')
     matches = []
     query_hash = tokens_hash(query_run.tokens)
-    rid = idx.hashes.get(query_hash)
+    rid = idx.rid_by_hash.get(query_hash)
     if rid is not None:
         rule = idx.rules_by_rid[rid]
         itokens = idx.tids_by_rid[rid]

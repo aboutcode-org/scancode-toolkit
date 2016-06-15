@@ -426,28 +426,6 @@ class LicenseMatch(object):
             _type=' '.join([self._type.replace(cache.MATCH_TYPE, '').strip(), _type]),
         )
 
-    def rebaseold(self, new_query_start, line_by_pos, _type):
-        """
-        Return a copy of this match rebasing the qspan on the new query or query
-        run start, using the new line_by_pos and updating the _type of match.
-        """
-        # FIXME: rebasing is not enough if the sequence pattern of how unknown
-        # tokens are interlaced with known tokens differs between the cache and
-        # the query run. Therefore these positions will be wrong. The only thing
-        # we have is the relative ordering of known tokens is the same in both.
-        # rebase() should use this instead of a simple offset computation.
-        # Eventually we need to realign the qtokens OR we should ignore entirely
-        # the unknown tokens positions or track gaps in qtokens too.
-        return LicenseMatch(
-            rule=self.rule,
-            qspan=Span(self.qspan.rebase(new_query_start - self.query_run_start)),
-            ispan=Span(self.ispan),
-            hispan=Span(self.hispan),
-            line_by_pos=line_by_pos,
-            query_run_start=new_query_start,
-            _type=' '.join([self._type.replace(cache.MATCH_TYPE, '').strip(), _type]),
-        )
-
     def score(self):
         """
         Return the score for this match as a float between 0 and 100.
@@ -489,8 +467,7 @@ class LicenseMatch(object):
         matched_itokens = array('h', (tid for ipos, tid in enumerate(rule_tokens) if ipos in ispan))
         # note: hash computation is inlined here but MUST be the same code as in match_hash
         matched_hash = md5(matched_itokens.tostring()).digest()
-        fp = idx.false_positive_hashes.get(matched_hash)
-        return fp
+        return idx.false_positive_rid_by_hash.get(matched_hash)
 
 def filter_matches(matches):
     """
@@ -568,10 +545,10 @@ def filter_low_score(matches, min_score=100):
     kept = []
     discarded = []
     for match in matches:
-        if match.score() >= min_score:
-            kept.append(match)
-        else:
+        if match.score() < min_score:
             discarded.append(match)
+        else:
+            kept.append(match)
 
     return kept, discarded
 
@@ -636,23 +613,10 @@ def refine_matches(matches, idx, min_score=0, max_dist=MAX_DIST):
     Return two sequences of matches: one contains refined good matches, and the
     other contains matches that were filtered out.
     """
-    if TRACE: logger_debug('#####refine_matches: START matches#', len(matches))
+    if TRACE: logger_debug()
+    if TRACE: logger_debug('   #####refine_matches: START matches#', len(matches))
     if TRACE_REFINE: map(logger_debug, matches)
-
-    matches = LicenseMatch.merge(matches, max_dist=MAX_DIST)
-
     all_discarded = []
-
-    logger_debug('   ##### refine_matches: MERGED_matches#:', len(matches))
-    if TRACE_REFINE: map(logger_debug, matches)
-
-
-    matches, discarded = filter_matches(matches)
-    all_discarded.extend(discarded)
-    logger_debug('   ##### refine_matches: NOT FILTERED matches#:', len(matches))
-    if TRACE_REFINE: map(logger_debug, matches)
-    if TRACE: logger_debug('   #####refine_matches: FILTERED discarded#', len(discarded))
-    if TRACE_REFINE: map(logger_debug, discarded)
 
     matches, discarded = filter_short_matches(matches)
     all_discarded.extend(discarded)
@@ -675,15 +639,30 @@ def refine_matches(matches, idx, min_score=0, max_dist=MAX_DIST):
     if TRACE: logger_debug('   #####refine_matches: SPURIOUS discarded#', len(discarded))
     if TRACE_REFINE: map(logger_debug, discarded)
 
+    matches = LicenseMatch.merge(matches, max_dist=MAX_DIST)
+
+    logger_debug('   ##### refine_matches: MERGED_matches#:', len(matches))
+    if TRACE_REFINE: map(logger_debug, matches)
+
+    matches, discarded = filter_matches(matches)
+    all_discarded.extend(discarded)
+    logger_debug('   ##### refine_matches: NOT FILTERED matches#:', len(matches))
+    if TRACE_REFINE: map(logger_debug, matches)
+    if TRACE: logger_debug('   #####refine_matches: FILTERED discarded#', len(discarded))
+    if TRACE_REFINE: map(logger_debug, discarded)
+
     if min_score:
         matches, discarded = filter_low_score(matches, min_score=min_score)
         all_discarded.extend(discarded)
-        if TRACE: logger_debug('   #####refine_matches: LOW SCORE #', len(matches))
+        if TRACE: logger_debug('   #####refine_matches: NOT LOW SCORE #', len(matches))
         if TRACE_REFINE: map(logger_debug, matches)
         if TRACE: logger_debug('   ###refine_matches: LOW SCORE discarded #:', len(discarded))
         if TRACE_REFINE: map(logger_debug, discarded)
 
     matches = LicenseMatch.merge(matches, max_dist=MAX_DIST)
+
+    logger_debug('   ##### refine_matches: FINAL MERGED_matches#:', len(matches))
+    if TRACE_REFINE: map(logger_debug, matches)
 
     return matches, all_discarded
 

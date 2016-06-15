@@ -680,7 +680,7 @@ class Rule(object):
         text = text.strip()
 
         # tag this rule as being a bare URL: this is used to determine a matching approach
-        if text.startswith(('http', 'https')) and '\n' not in text[:1000]:
+        if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000]:
             self.is_url = True
 
         for token in rule_tokenizer(self.text(), lower=lower):

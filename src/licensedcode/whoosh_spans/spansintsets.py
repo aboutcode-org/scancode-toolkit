@@ -33,9 +33,9 @@ from __future__ import print_function
 
 from itertools import count
 from itertools import groupby
-
-from intbitset import intbitset
 from types import GeneratorType
+
+from intbitset import intbitset  # @UnresolvedImport
 
 
 class Span(intbitset):

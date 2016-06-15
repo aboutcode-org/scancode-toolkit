@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -26,12 +27,12 @@ from __future__ import print_function, absolute_import
 
 from collections import defaultdict
 
+import typecode
+
 from licensedcode import NGRAM_LENGTH
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
 from licensedcode.tokenize import query_multigrams
-from licensedcode import STARTER_LENGTH
-import typecode
 
 
 """
@@ -92,44 +93,40 @@ def build_query(location=None, query_string=None, idx=None):
         qtype = typecode.get_type(location)
         if qtype.is_binary:
             # use a high number of lines per run for binaries, avoiding too many runs
-            qry = Query(location=location, idx=idx, line_threshold=30)
+            qry = Query(location=location, idx=idx, line_threshold=40)
         else:
-            qry = Query(location=location, idx=idx, line_threshold=20)
+            qry = Query(location=location, idx=idx, line_threshold=40)
     else:
         qry = Query(query_string=query_string, idx=idx)
 
     return qry
-        
 
 
 class Query(object):
     """
     A query represent a whole file or string being matched, holding tokens and a
     line positions.
-    
+
     A query is broken down in one or more "runs" that are slices of tokens used
     as a matching unit.
     """
 
     def __init__(self, location=None, query_string=None, idx=None,
-                 line_threshold=4, junk_threshold=10, unknown_threshold=10,
-                  _test_mode=False, tokenizer=query_tokenizer):
+                 line_threshold=4, _test_mode=False, tokenizer=query_tokenizer):
         """
         Initialize the query from a location or query string for an idx
-        LicenseIndex. 
-        
+        LicenseIndex.
+
         Break query in runs when there are at least `line_threshold` empty lines
-        or sequence of `junk_threshold` unknown or junk tokens.
+        or junk-only lines.
         """
         assert (location or query_string) and idx
-        
+
         self.location = location
         self.query_string = query_string
         self.idx = idx
 
         self.line_threshold = line_threshold
-        self.junk_threshold = junk_threshold
-        self.unknown_threshold = unknown_threshold
 
         # token ids array
         self.tokens = []
@@ -141,21 +138,33 @@ class Query(object):
         # for unknowns at the start, the pos is -1
         self.unknowns_by_pos = defaultdict(int)
 
+        self.low_matchables = set()
+        self.high_matchables = set()
+
         self.query_runs = []
         if _test_mode:
             return
 
-        self.tokenize2(self.tokens_by_line(tokenizer=tokenizer),
-                       rids_by_starter=idx.rids_by_starter,
-                       line_threshold=line_threshold)
+        self.tokenize(self.tokens_by_line(tokenizer=tokenizer), line_threshold=line_threshold)
 
     def whole_query_run(self):
         """
         Return a query run built from the whole query.
         """
         wqr = QueryRun(query=self, start=0, end=len(self.tokens) - 1)
-        wqr.low_matchables, wqr.high_matchables = self.low_matchables, self.high_matchables
+        self.low_matchables = set(pos for pos, tid in wqr.tokens_with_pos() if tid < self.idx.len_junk)
+        self.high_matchables = set(pos for pos, tid in wqr.tokens_with_pos() if tid >= self.idx.len_junk)
         return wqr
+
+    def subtract(self, qspan):
+        """
+        Subtract the qspan matched positions from the parent query matchable
+        positions.
+        """
+        if not qspan:
+            return
+        self.high_matchables.difference_update(qspan)
+        self.low_matchables.difference_update(qspan)
 
     @property
     def matchables(self):
@@ -163,23 +172,7 @@ class Query(object):
         Return a set of every matchable token ids positions for the whole query.
         """
         # TODO: use faster intset implementation
-        return set().union(self.low_matchables, self.high_matchables)
-
-    @property
-    def low_matchables(self):
-        """
-        Return a set of matchable high token ids positions for the whole query.
-        """
-        # TODO: use faster intset implementation
-        return set().union(*(qr.low_matchables for qr in self.query_runs))
-
-    @property
-    def high_matchables(self):
-        """
-        Return a set of matchable high token ids positions for the whole query.
-        """
-        # TODO: use faster intset implementation
-        return set().union(*(qr.high_matchables for qr in self.query_runs))
+        return self.low_matchables | self.high_matchables
 
     def tokens_with_unknowns(self):
         """
@@ -240,7 +233,7 @@ class Query(object):
         points. Only keep known token ids but consider unknown token ids to
         break a query in runs.
 
-        `tokens_by_line` is the output of the tokens_by_line() method. 
+        `tokens_by_line` is the output of the tokens_by_line() method.
         `line_threshold` is the number of empty or junk lines to break a new run.
         """
         len_junk = self.idx.len_junk
@@ -260,10 +253,9 @@ class Query(object):
 
         for tokens in tokens_by_line:
             # have we reached a run break point?
-            if len(query_run) > 0 and empty_lines >= line_threshold:
-                self_query_runs_append(query_run)
-
+            if (len(query_run) > 0 and empty_lines >= line_threshold):
                 # start new query run
+                self_query_runs_append(query_run)
                 query_run = QueryRun(query=self, start=pos)
                 empty_lines = 0
 
@@ -277,17 +269,13 @@ class Query(object):
             line_has_known_tokens = False
             line_has_good_tokens = False
 
-            query_run_high_matchables_add = query_run.high_matchables.add
-            query_run_low_matchables_add = query_run.low_matchables.add
+
             for token_id in tokens:
                 if token_id is not None:
                     self_tokens_append(token_id)
                     line_has_known_tokens = True
                     if token_id >= len_junk:
-                        query_run_high_matchables_add(pos)
                         line_has_good_tokens = True
-                    else:
-                        query_run_low_matchables_add(pos)
                     query_run.end = pos
                     pos += 1
 
@@ -303,87 +291,6 @@ class Query(object):
         # append final run if any
         if len(query_run) > 0:
             self.query_runs.append(query_run)
-
-
-    def tokenize2(self, tokens_by_line, rids_by_starter, line_threshold=4, starter_length=STARTER_LENGTH):
-        """
-        Tokenize this query and populate the tokens and query runs at each break
-        points. Only keep known token ids but consider unknown token ids to
-        break a query in runs.
-
-        `tokens_by_line` is the output of the tokens_by_line() method. 
-        `line_threshold` is the number of empty or junk lines to break a new run.
-        """
-        len_junk = self.idx.len_junk
-
-        # initial query run
-        query_run = QueryRun(query=self, start=0)
-
-        # break in runs based on threshold of lines that are either empty, all
-        # unknown or all low id/junk jokens.
-        empty_lines = 0
-
-        # token positions start at zero
-        pos = 0
-
-
-        self_tokens_append = self.tokens.append
-        self_query_runs_append = self.query_runs.append
-
-        rule_starting = False
-        for tokens in tokens_by_line:
-            # have we reached a run break point?
-            if len(query_run) > 0 and (empty_lines >= line_threshold or (rule_starting and empty_lines >= line_threshold//2)):
-                self_query_runs_append(query_run)
-
-                # start new query run
-                query_run = QueryRun(query=self, start=pos)
-                empty_lines = 0
-                rule_starting = False
-
-            if len(query_run) == 0:
-                query_run.start = pos
-
-            if not tokens:
-                empty_lines += 1
-                continue
-
-            line_has_known_tokens = False
-            line_has_good_tokens = False
-
-            query_run_high_matchables_add = query_run.high_matchables.add
-            query_run_low_matchables_add = query_run.low_matchables.add
-
-            line_len = len(tokens)
-            if line_len >= starter_length:
-                if tuple(tokens[:starter_length]) in rids_by_starter:
-                    rule_starting = True
-
-            for token_id in tokens:
-                if token_id is not None:
-                    self_tokens_append(token_id)
-                    line_has_known_tokens = True
-                    if token_id >= len_junk:
-                        query_run_high_matchables_add(pos)
-                        line_has_good_tokens = True
-                    else:
-                        query_run_low_matchables_add(pos)
-                    query_run.end = pos
-                    pos += 1
-
-            if not line_has_known_tokens:
-                empty_lines += 1
-                continue
-
-            if line_has_good_tokens:
-                empty_lines = 0
-            else:
-                empty_lines += 1
-
-        # append final run if any
-        if len(query_run) > 0:
-            self.query_runs.append(query_run)
-
 
 
 class QueryRun(object):
@@ -405,12 +312,7 @@ class QueryRun(object):
         self.line_by_pos = query.line_by_pos
         self.unknowns_by_pos = query.unknowns_by_pos
 
-        self.len_junk = len_junk = self.query.idx.len_junk
-
-        # matchable high and low token id positions of this run
-        # TODO: use faster intset implementation
-        self.low_matchables = set(pos for pos, tid in self.tokens_with_pos() if tid < len_junk)
-        self.high_matchables = set(pos for pos, tid in self.tokens_with_pos() if tid >= len_junk)
+        self.len_junk = self.query.idx.len_junk
 
     def __len__(self):
         if self.end is None:
@@ -451,6 +353,14 @@ class QueryRun(object):
     def tokens_with_pos(self):
         return enumerate(self.tokens, self.start)
 
+    @property
+    def low_matchables(self):
+        return set(pos for pos in self.query.low_matchables if self.start <= pos <= self.end)
+
+    @property
+    def high_matchables(self):
+        return set(pos for pos in self.query.high_matchables if self.start <= pos <= self.end)
+
     def is_matchable(self):
         """
         Return True if this query run has some matchable high tokens.
@@ -469,12 +379,13 @@ class QueryRun(object):
         Return an iterable of matchable tokens tids for this query run either
         only high or every tokens ids.
         """
-        if not self.high_matchables:
+        high_matchables = self.high_matchables
+        if not high_matchables:
             return []
         if only_high:
-            matchables = self.high_matchables
+            matchables = high_matchables
         else:
-            matchables = self.matchables
+            matchables = high_matchables | self.low_matchables
         return (tid if pos in matchables else -1 for pos, tid in self.tokens_with_pos())
 
     def subtract(self, qspan):
@@ -482,17 +393,7 @@ class QueryRun(object):
         Subtract the qspan matched positions from the parent query matchable
         positions.
         """
-        if not qspan:
-            return
-        logger_debug('before query subtract: qspan:', qspan)
-        logger_debug('before query subtract: high_matchables:', self.high_matchables)
-
-        if TRACE: tst = set(self.high_matchables)
-        self.high_matchables.difference_update(qspan)
-        if TRACE: assert tst != self.high_matchables
-
-        logger_debug('after query subtract: high_matchables:', self.high_matchables)
-        self.low_matchables.difference_update(qspan)
+        self.query.subtract(qspan)
 
     def multigrams(self, ngram_length=NGRAM_LENGTH):
         """
@@ -526,3 +427,52 @@ class QueryRun(object):
         if not brief:
             dct['high_matchables'] = self.high_matchables
         return dct
+
+
+# _starters = None
+#
+# def copyright_starters(idx):
+#     """
+#     A tuple of starters and enders breaks for a line.
+#     """
+#     global _starters
+#     if not _starters:
+#         dic = idx.dictionary
+#         starts = (
+#             ('license'), ('licence'),
+#             ('licenses'), ('licences'),
+#             ('copyrights'), ('copyright', 'c'), #(u'copyright', u'©'), (u'©'),
+#             ('copyrighted'), ('portions', 'copyright'), ('portions','copyright'),
+#             ('copyrights'), ('copyrights','c'), #(u'copyrights', u'©'),
+#         )
+#
+#         ends = ('all','rights','reserved'), ('all','right','reserved')
+#
+#         # middles = u'©', 'c', 'by'# and digits
+#
+#         startsdd = defaultdict(list)
+#         for start in starts:
+#             e = tuple(dic[t] for t in start)
+#             startsdd[len(e)].append(e)
+#
+#         endsdd = defaultdict(list)
+#         for end in ends:
+#             e = tuple(dic[t] for t in end)
+#             endsdd[len(e)].append(e)
+#
+#         _starters = startsdd, max(startsdd), endsdd, max(endsdd),
+#     return _starters
+#
+#
+# def index_rules_starters(rids_by_starter, rid, tokens, starter_length=NGRAM_LENGTH):
+#     """
+#     Return a mapping of rule starters tuple -> [rids, ...] given rule token ids
+#     by rid. The tuple contain `starter_length` tokens from the begning of each
+#     rule. If the rule is smaller than it is not indexed. This is used for query
+#     run breaking.
+#     """
+#     rids_by_starter = defaultdict(list)
+#     if len(tokens) < starter_length:
+#         return
+#     rids_by_starter[tuple(tokens[:starter_length])].append(rid)
+

@@ -31,6 +31,7 @@
 # LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
 # IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 # THE POSSIBILITY OF SUCH DAMAGE.
+
 """
 Aho-Corasick string search algorithm.
 
@@ -45,28 +46,24 @@ from collections import deque
 
 
 # used to distinguish from None
-NIL = object()
+NIL = -1
 
+def TrieNode(key):
+    """
+    Build a new node as a simple list: [key, value, fail, kids]
+    # keyitem, must hashable. For strings this is a character. For sequence,
+    # an element of the sequence.
+    # value associated with this node
+    # failure link used by Aho-Corasick automaton
+    """
+    # [keyitem:0, value:1, fail:2, _kids:3]
+    return [key, -1, -1, {}]
 
-class TrieNode(object):
-
-    __slots__ = 'keyitem', 'value', 'fail', 'children'
-
-    def __init__(self, keyitem):
-        # keyitem, must hashable. For strings this is a character. For sequence,
-        # an element of the sequence.
-        self.keyitem = keyitem
-        # value associated with this node
-        self.value = NIL
-        # failure link used by Aho-Corasick automaton
-        self.fail = NIL
-        self.children = {}
-
-    def __repr__(self):
-        if self.value is not NIL:
-            return "<TrieNode '%s' '%s'>" % (self.keyitem, self.value)
-        else:
-            return "<TrieNode '%s'>" % self.keyitem
+# attributes index in the node
+_key = 0
+_val = 1
+_fail = 2
+_kids = 3
 
 
 class Trie(object):
@@ -74,10 +71,12 @@ class Trie(object):
     Trie/Aho-Corasick automaton.
     """
 
-    def __init__(self, items_range=256, content=chr):
-        self.root = TrieNode(None)
+    def __init__(self, items_range):
+        """
+        Initialize a Trie for up to `items_range` number of tokens.
+        """
+        self.root = TrieNode([])
         self.items_range = items_range
-        self.content = content
 
     def __get_node(self, seq):
         """
@@ -85,15 +84,15 @@ class Trie(object):
         items.
         """
         node = self.root
-        for keyitem in seq:
+        for key in seq:
             try:
-                # note: children may be None
-                node = node.children[keyitem]
+                # note: kids may be None
+                node = node[_kids][key]
             except KeyError:
                 return None
         return node
 
-    def get(self, seq, default=NIL):
+    def get(self, seq, default=-1):
         """
         Return the value associated with the sequence of items. If the sequence
         of items is not present in trie return the `default` if provided or
@@ -101,12 +100,12 @@ class Trie(object):
         # FIXME: should match the dict semantics.
         """
         node = self.__get_node(seq)
-        value = NIL
+        value = -1
         if node:
-            value = node.value
+            value = node[_val]
 
-        if value is NIL:
-            if default is NIL:
+        if value == -1:
+            if default == -1:
                 raise KeyError()
             else:
                 return default
@@ -123,25 +122,16 @@ class Trie(object):
         L = []
 
         def walk(node, s):
-            if s:
-                if not isinstance(s, list):
-                    # FIXME: should use generators
-                    s = [s]
-                s = s + list(node.keyitem)
-            else:
-                if node.keyitem is not None:
-                    s = [node.keyitem]
-                else:
-                    s = []
-            if node.value is not NIL:
-                L.append((s, node.value))
+            s = s + [node[_key]]
+            if node[_val] != -1:
+                L.append((s, node[_val]))
 
             # FIXME: this is using recursion
-            for child in node.children.values():
+            for child in node[_kids].values():
                 if child is not node:
                     walk(child, s)
 
-        walk(self.root, None)
+        walk(self.root, [])
         return iter(L)
 
     def __len__(self):
@@ -150,9 +140,9 @@ class Trie(object):
         n = 0
         while stack:
             node = stack.pop()
-            if node.value is not NIL:
+            if node[_val] != -1:
                 n += 1
-            for child in node.children.itervalues():
+            for child in node[_kids].itervalues():
                 stack.append(child)
         return n
 
@@ -165,17 +155,24 @@ class Trie(object):
             return
 
         node = self.root
-        for keyitem in seq:
+        for key in seq:
             try:
-                # note: children may be None
-                node = node.children[keyitem]
+                # note: kids may be None
+                node = node[_kids][key]
             except KeyError:
-                n = TrieNode(keyitem)
-                node.children[keyitem] = n
+                n = TrieNode(key)
+                node[_kids][key] = n
                 node = n
 
         # only assign the value to the last item of the sequence
-        node.value = value
+        node[_val] = value
+
+    def clear(self):
+        """
+        Clears trie.
+        """
+        self.root = TrieNode([])
+
 
     def exists(self, seq):
         """
@@ -183,7 +180,7 @@ class Trie(object):
         """
         node = self.__get_node(seq)
         if node:
-            return bool(node.value != NIL)
+            return bool(node[_val] != -1)
         else:
             return False
 
@@ -196,52 +193,98 @@ class Trie(object):
 
     def make_automaton(self):
         """
-        Convert the trie to an Aho-Corasick automaton.
-        `items_range` is the range of all possible items.
-        Defaults to 256 for plain bytes.
+        Convert the trie to an Aho-Corasick automaton adding the failure links.
+        `self.items_range` is the range of all possible items.
         """
         queue = deque()
 
-        # 1. create top root children over the items range, failing to root
-        for i in range(self.items_range):
+        # 1. create top root kids over the items range, failing to root
+        for item in range(self.items_range):
             # self.content is either int or chr
-            item = self.content(i)
-            if item in self.root.children:
-                node = self.root.children[item]
+            # item = self.content(i)
+            if item in self.root[_kids]:
+                node = self.root[_kids][item]
                 # f(s) = 0
-                node.fail = self.root
+                node[_fail] = self.root
                 queue.append(node)
             else:
-                self.root.children[item] = self.root
+                self.root[_kids][item] = self.root
 
         # 2. using the queue of all possible items, walk the trie and add failure links
         while queue:
             current = queue.popleft()
-            for node in current.children.values():
+            for node in current[_kids].values():
                 queue.append(node)
-                state = current.fail
-                while node.keyitem not in state.children:
-                    state = state.fail
-                node.fail = state.children.get(node.keyitem, self.root)
+                state = current[_fail]
+                while node[_key] not in state[_kids]:
+                    state = state[_fail]
+                node[_fail] = state[_kids].get(node[_key], self.root)
 
     def search(self, seq):
         """
-        Perform an Aho-Corasick search for a sequence of items yielding
-        tuples of (position in seq, values associated with matched seq)
+        Yield all matches of `seq` in the automaton performing an Aho-Corasick
+        search. This includes overlapping matches.
+
+        The returned tuples are: (matched end index in seq, [associated values, ...])
+        such that the actual matched sub-sequence is: seq[end_index - n + 1:end_index + 1]
         """
         state = self.root
-        for index, keyitem in enumerate(seq):
+        for index, key in enumerate(seq):
             # find the first failure link and next state
-            while keyitem not in state.children:
-                state = state.fail
+            while key not in state[_kids]:
+                state = state[_fail]
 
-            # follow children or get back to root
-            state = state.children.get(keyitem, self.root)
+            # follow kids or get back to root
+            state = state[_kids].get(key, self.root)
             tmp = state
             value = []
-            while tmp is not NIL:
-                if tmp.value is not NIL:
-                    value.append(tmp.value)
-                tmp = tmp.fail
+            while tmp != -1:
+                if tmp == -1:
+                    break
+                if tmp[_val] != -1:
+                    value.append(tmp[_val])
+                tmp = tmp[_fail]
             if value:
                 yield index, value
+
+    def search_long(self, seq):
+        """
+        Yield all loguest non-verlapping matches of `seq` in the automaton
+        performing an Aho-Corasick search such that when matches overlap, only
+        the longuest is returned.
+
+        Note that because of the original index construction, two matches cannot
+        be the same as not two rules are identical.
+
+        The returned tuples are: (matched end index in seq, [associated values, ...])
+        such that the actual matched sub-sequence is: seq[end_index - n + 1:end_index + 1]
+        """
+        state = self.root
+        last = None
+
+        index = 0
+        while index < len(seq):
+            item = seq[index]
+
+            if item in state[_kids]:
+                state = state[_kids][item]
+                if state[_val] != -1:
+                    # save the last node on the path
+                    last = index, [state[_val]]
+                index += 1
+            else:
+                if last:
+                    # return the saved match
+                    yield last
+                    # and start over since we do not want overlapping results
+                    # Note: this leads to quadratic complexity in the worst case
+                    index = last[1] + 1
+                    state = self.root
+                    last = None
+                else:
+                    # if no output, perform classic Aho-Corasick algorithm
+                    while item not in state[_kids]:
+                        state = state[_fail]
+        # last match if any
+        if last:
+            yield last

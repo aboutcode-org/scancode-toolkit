@@ -24,12 +24,12 @@
 
 from __future__ import absolute_import, division, print_function
 
-from licensedcode.seq import SequenceMatcher
 
-from licensedcode.match import LicenseMatch
-from licensedcode.match import get_texts
-from licensedcode.whoosh_spans.spans import Span
 from licensedcode import MAX_DIST
+from licensedcode.match import get_texts
+from licensedcode.match import LicenseMatch
+from licensedcode.seq import match_blocks
+from licensedcode.whoosh_spans.spans import Span
 
 
 TRACE = False
@@ -58,53 +58,50 @@ Matching strategy using pair-wise sequences matching with difflib.SequenceMatche
 MATCH_SEQ_TYPE = 'lcsseq'
 
 
-def index_smatchers(tids_by_rid, len_junk):
-    """
-    Return a list of sequence matcher, one for each rule. 
-    """
-    return [SequenceMatcher(tokens, len_junk) for tokens in tids_by_rid]
-
-
 def match_sequence(idx, candidate, query_run, max_dist=MAX_DIST):
     """
     Return a list of LicenseMatch by matching the `query_run` tokens sequence
-    against the `idx` index for the `candidate` rule tuple (rid, rule, intersection).
+    against the `idx` index for the `candidate` rule tuple (rid, rule,
+    intersection).
     """
     if not candidate:
         return []
 
-    rid, rule, intersection = candidate
-    smatcher = idx.smatchers_by_rid[rid]
+    rid, rule, _intersection = candidate
+    high_postings = idx.high_postings_by_rid[rid]
     itokens = idx.tids_by_rid[rid]
 
     len_junk = idx.len_junk
-    line_by_pos = query_run.line_by_pos
 
     qbegin = query_run.start
     qfinish = query_run.end
     qtokens = query_run.query.tokens
     high_matchables = query_run.high_matchables
+    line_by_pos = query_run.line_by_pos
 
-    get_matching_blocks = smatcher.get_matching_blocks
     matches = []
-    # match this rule as long as long we find alignments and are matchable
     qstart = qbegin
+    qlen = len(query_run)
+
+    # match as long as long we find alignments and have high matchable tokens
+    # this allows to find repeated insteance of the same rule in the query run 
     while qstart <= qfinish:
-        if not high_matchables:
+        if not query_run.is_matchable():
             break
-        smatches = get_matching_blocks(qtokens, starta=qstart, matchables=query_run.matchables)
-        if not smatches:
+        block_matches = match_blocks(qtokens, itokens, qstart, qlen, high_postings, len_junk, query_run.matchables)
+        if not block_matches:
             break
         if TRACE2:
-            logger_debug('smatches:')
-            for m in smatches:
+            logger_debug('block_matches:')
+            for m in block_matches:
                 i, j, k = m
                 print(m)
                 print('qtokens:', ' '.join(idx.tokens_by_tid[t] for t in qtokens[i:i + k]))
                 print('itokens:', ' '.join(idx.tokens_by_tid[t] for t in itokens[j:j + k]))
 
-        # create one match for each smatch
-        for qpos, ipos, mlen in smatches:
+        # create one match for each matching block: this not entirely correct
+        # but this will be sorted out at LicenseMatch merging and filtering time
+        for qpos, ipos, mlen in block_matches:
             qspan = Span(range(qpos, qpos + mlen))
             iposses = range(ipos, ipos + mlen)
             hispan = Span(p for p in iposses if itokens[p] >= len_junk)

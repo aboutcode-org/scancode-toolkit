@@ -1,0 +1,11 @@
+about_resource: 
+    - intbitset-2.2.2.dev20160104-cp27-none-linux_x86_64.whl
+name: intbitset
+version: 2.2.2.dev20160104
+download_url: https://github.com/inveniosoftware/intbitset/archive/8026211c8034138c90449e54c52d6ec2a40bf032.zip
+dje_license: lgpl-3.0-plus
+license_text_file: lgpl-3.0.LICENSE
+notice_text_file: intbitset.LICENSE
+owner: CERN
+copyright: Copyright (C) 2013, 2014, 2015, 2016 CERN
+home_url: https://github.com/inveniosoftware/intbitset

@@ -1,2 +1,1 @@
-Note: libbusybox is GPL, not LGPL, and exports no stable API that
-might act as a copyright barrier.
+libbusybox is GPL, not LGPL, and exports no stable API that might act as a copyright barrier.
