@@ -22,18 +22,15 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import print_function, absolute_import, division
 
-from licensedcode.pyahocorasick2 import Trie
+from array import array
 
 from licensedcode.match import LicenseMatch
-from licensedcode.whoosh_spans.spans import Span
-from operator import itemgetter
+from licensedcode.spans import Span
 
 """
-Matching strategies for exact matching. This is used for small rules either for
-a single token using a simple map or for short rules using an Aho-Corasick
-automaton.
+Matching strategy for exact matching using Aho-Corasick automatons.
 """
 
 # Set to False to enable debug tracing
@@ -55,24 +52,26 @@ else:
         pass
 
 
-def index_aho(rules_tokens, len_tokens):
+def index_aho(tids_by_rid):
     """
-    Return an Aho-Corasick Trie for a list of `rules_tokens` tuple of (rid,
-    [token ids]) given the maximum number of tokens `len_tokens`.
+    Return an Aho-Corasick automaton for a list of `tids_by_rid` tid arrays.
     """
-    trie = Trie(items_range=len_tokens, content=int)
-    for rid, tokens in sorted(enumerate(rules_tokens), key=itemgetter(1)):
-        trie.add(tokens, (rid, len(rules_tokens)))
-    trie.make_automaton()
-    return trie
+    import ahocorasick
+    auto = ahocorasick.Automaton(ahocorasick.STORE_INTS)
+    for rid, tokens in enumerate(tids_by_rid):
+        auto.add_word(tokens.tostring(), rid)
+    auto.make_automaton()
+    return auto
 
 
 def exact_match(idx, query_run, automaton, rules_subset=None):
     """
     Return a list of exact LicenseMatch by matching the `query_run` against
-    the `automaton` and `idx` index. 
-    Only return matches for a rule id present in rules_subset if provided. 
+    the `automaton` and `idx` index.
+    Only return matches for a rule id present in rules_subset if provided.
     """
+    MATCH_TYPE = 'aho'
+
     if TRACE: logger_debug(' #exact: start ... ')
 
     len_junk = idx.len_junk
@@ -83,28 +82,46 @@ def exact_match(idx, query_run, automaton, rules_subset=None):
     query_run_matchables = query_run.matchables
     line_by_pos = query_run.line_by_pos
 
+    qtokens_as_str = array('h', qtokens).tostring()
     matches = []
-    for qend, matched_rids in automaton.search(qtokens):
-        for rid in matched_rids:
-            if rules_subset and rid not in rules_subset:
-                continue
+    for qend, rid in automaton.iter(qtokens_as_str):
+        if rules_subset and rid not in rules_subset:
+            continue
 
-            rule = rules_by_rid[rid]
-            len_rule = rule.length
-            qposses = range(qbegin + qend - len_rule + 1, qbegin + qend + 1)
+        rule = rules_by_rid[rid]
+        len_rule = rule.length
 
-            if any(p not in query_run_matchables for p in qposses):
-                if TRACE: logger_debug('   #exact: not matchable match')
-                continue
+        # FIXME: use a trie of ints or a trie or Unicode characters to avoid this shenaningan
+        
+        # Since the Tries stores bytes and we have two bytes per tokenid, the
+        # real end must be adjusted
+        real_qend = (qend - 1) / 2
 
-            qspan = Span(qposses)
-            ispan = Span(range(len_rule))
+        # ... and there is now a real possibility of a false match. 
+        # For instance say we have these tokens : 
+        #   gpl encoded as 0012 and lgpl encoded as 1200 and mit as 2600
+        # And if we scan this "mit lgpl" we get this encoding 2600 1200.
+        # The automaton will find a matched string  of 0012 to gpl in the middle
+        # matching falsely so we check that the corrected end qposition
+        # must be always an integer.
+        if real_qend != int(real_qend):
+            continue
 
-            itokens = idx.tids_by_rid[rid]
-            hispan = Span(p for p in ispan if itokens[p] >= len_junk)
+        real_qend = int(real_qend)
+        qposses = range(qbegin + real_qend - len_rule + 1, qbegin + real_qend + 1)
 
-            match = LicenseMatch(rule, qspan, ispan, hispan, line_by_pos, query_run.start, 'aho')
-            matches.append(match)
+        if any(p not in query_run_matchables for p in qposses):
+            if TRACE: logger_debug('   #exact: not matchable match')
+            continue
+
+        qspan = Span(qposses)
+        ispan = Span(range(len_rule))
+
+        itokens = idx.tids_by_rid[rid]
+        hispan = Span(p for p in ispan if itokens[p] >= len_junk)
+
+        match = LicenseMatch(rule, qspan, ispan, hispan, line_by_pos, query_run.start, MATCH_TYPE)
+        matches.append(match)
 
     if TRACE and matches: logger_debug(' ##small exact: matches found#', matches)
 
