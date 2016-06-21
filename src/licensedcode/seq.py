@@ -4,38 +4,45 @@ from __future__ import print_function
 from collections import namedtuple as _namedtuple
 
 
+"""
+Token sequences alignement and diffing nbased on the longest common substrings
+of "high tokens". This essentially a non-optimal and reasonably fast single
+local sequence alignment between two sequences of integers/token ids..
 
-"""
-Based on Python's difflib.py from the 3.X tip:
+Based on and heavily modified from Python's difflib.py from the 3.X tip:
 https://hg.python.org/cpython/raw-file/0a69b1e8b7fe/Lib/difflib.py
+
+license: PSF. See ABOUT file for details.
 """
+
 
 Match = _namedtuple('Match', 'a b size')
+
 
 def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
     """
     Find longest matching block of a and b in a[alo:ahi] and b[blo:bhi].
 
-    b2j is a mapping of b high token ids -> list of position in b
-    len_junk is such that token ids smaller than len_junk are treated as junk.
-    matchables is a set of matchable positions. Positions not in this set are ignored.
+    `b2j` is a mapping of b high token ids -> list of position in b
+    `len_junk` is such that token ids smaller than `len_junk` are treated as junk.
+    `matchables` is a set of matchable positions. Positions absent from this set are ignored.
 
-    Return (i,j,k) such that a[i:i+k] is equal to b[j:j+k], where
+    Return (i,j,k) tuple such that a[i:i+k] is equal to b[j:j+k], where
         alo <= i <= i+k <= ahi
         blo <= j <= j+k <= bhi
-    and for all (i',j',k') meeting those conditions,
+    and for all (i',j',k') matchable token positions meeting those conditions,
         k >= k'
         i <= i'
         and if i == i', j <= j'
 
-    In other words, of all maximal matching blocks, return one that
-    starts earliest in a, and of all those maximal matching blocks that
-    start earliest in a, return the one that starts earliest in b.
+    In other words, of all maximal matching blocks, return one that starts
+    earliest in a, and of all those maximal matching blocks that start earliest
+    in a, return the one that starts earliest in b.
 
-    First the longest matching block is determined as above where no junk
-    element appears in the block.  Then that block is extended as far as
-    possible by matching other element including junk on both sides.  So the
-    resulting block never matches on junk.
+    First the longest matching block (aka contiguous substring) is determined
+    where no junk element appears in the block.  Then that block is extended as
+    far as possible by matching other tokens including junk on both sides.  So
+    the resulting block never matches on junk.
 
     If no blocks match, return (alo, blo, 0).
     """
@@ -43,7 +50,7 @@ def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
     besti, bestj, bestsize = alo, blo, 0
     b2j_get = b2j.get
 
-    # find longest junk-free match
+    # find longest matchable junk-free match
     # during an iteration of the loop, j2len[j] = length of longest
     # junk-free match ending with a[i-1] and b[j]
     j2len = {}
@@ -94,26 +101,23 @@ def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
     return Match(besti, bestj, bestsize)
 
 
-def match_blocks(a, b, starta, lena, b2j, len_junk, matchables=()):
+def match_blocks(a, b, starta, lena, b2j, len_junk, matchables=frozenset()):
     """
     Return list of matching block Match triples describing matching subsequences
     of a in b starting at the `starta` a position for the `lena` a length.
 
-    b2j is a mapping of b high token ids -> list of position in b
-    len_junk is such that token ids smaller than len_junk are treated as junk.
-    matchables is a set of matchable positions. Positions not in this set are ignored.
+    `b2j` is a mapping of b high token ids -> list of position in b
+    `len_junk` is such that token ids smaller than `len_junk` are treated as junk.
+    `matchables` is a set of matchable positions. Positions absent from this set are ignored.
 
-    Each triple is of the form (i, j, n), and means that
-    a[i:i+n] == b[j:j+n].  The triples are monotonically increasing in
-    i and in j.  New in Python 2.5, it's also guaranteed that if
-    (i, j, n) and (i', j', n') are adjacent triples in the list, and
-    the second is not the last triple in the list, then i+n != i' or
-    j+n != j'.  IOW, adjacent triples never describe adjacent equal
-    blocks.
+    Each triple is of the form (i, j, n), and means that a[i:i+n] == b[j:j+n].
+    The triples are monotonically increasing in i and in j.  It is also
+    guaranteed that adjacent triples never describe adjacent equal blocks.
     """
-    # non-recursive algorithm using a list/queue of blocks we still need to
-    # look at, and append partial results to matching_blocks in a loop. The
-    # matches are sorted at the end.
+
+    # This non-recursive algorithm is using a list as a queue of blocks we still
+    # need to look at and append partial results to matching_blocks in a loop.
+    # The matches are sorted at the end.
 
     queue = [(starta, lena, 0, len(b))]
     queue_append = queue.append
