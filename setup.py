@@ -65,16 +65,18 @@ setup(
         # extractcode
         'patch >= 1.14.2, < 1.15 ',
         # to work around bug http://bugs.python.org/issue19839
-        # on multistream bzip2 files
+        # on multistream bzip2 files: this can in Python 3.
         'bz2file >= 0.98',
 
         # licensedcode
         'PyYAML >= 3.0, <4.0',
         'bitarray >= 0.8.1, < 1.0.0',
+        'initbitset > 2.2.1, < 2.2.3',
+        'pyahocorasick >= 1.1.1, < 1.2',
+        # caching
         'zc.lockfile >= 1.0.0, < 2.0.0',
         'yg.lockfile >= 2.0.0, < 3.0.0',
         'diskcache >= 1.6.0, < 1.7.0',
-        'initbitset > 2.2.1, < 2.2.3',
 
         # textcode
         'Beautifulsoup >= 3.2.0, <4.0.0',
