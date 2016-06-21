@@ -34,7 +34,7 @@ from licensedcode.tokenize import rule_pattern
 from licensedcode.tokenize import query_pattern
 
 """
-Collect matched texts in query and rule files or strings.
+Collect matched license texts in query and rule files or strings.
 """
 
 
