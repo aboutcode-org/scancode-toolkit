@@ -2,4 +2,3 @@ licenses:
     - bsd-new
     - bsd-new
     - bsd-original
-expected_failure: yes

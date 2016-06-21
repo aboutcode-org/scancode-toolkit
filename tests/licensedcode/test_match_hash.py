@@ -28,7 +28,7 @@ import os
 
 from commoncode.testcase import FileBasedTesting
 
-from licensedcode.whoosh_spans.spans import Span
+from licensedcode.spans import Span
 
 from licensedcode import index
 from licensedcode import models
@@ -44,7 +44,7 @@ class TestHashMatch(FileBasedTesting):
 
     def test_match_hash_can_match_exactly(self):
         rule_dir = self.get_test_loc('hash/rules')
-        rules = list(models._rules_proper(rule_dir))
+        rules = list(models.load_rules(rule_dir))
         idx = index.LicenseIndex(rules)
         query_doc = self.get_test_loc('hash/rules/lgpl-2.0-plus_23.RULE')
 
@@ -52,24 +52,21 @@ class TestHashMatch(FileBasedTesting):
         assert 1 == len(matches)
         match = matches[0]
         assert 100 == match.score()
-        assert 'hash' == match._type
+        assert 'hash' == match.matcher
         assert rules[0] == match.rule
-        assert Span(0, 122) == match.qspan
-        assert Span(0, 122) == match.ispan
+        assert Span(0, 121) == match.qspan
+        assert Span(0, 121) == match.ispan
 
     def test_match_hash_returns_correct_offset(self):
         rule_dir = self.get_test_loc('hash/rules')
-        rules = list(models._rules_proper(rule_dir))
+        rules = list(models.load_rules(rule_dir))
         idx = index.LicenseIndex(rules)
         query_doc = self.get_test_loc('hash/query.txt')
-        q = query.Query(location=query_doc, idx=idx)
-        assert len(q.query_runs) > 1
-        print
         matches = idx.match(query_doc)
         assert 1 == len(matches)
         match = matches[0]
-        assert 'hash' == match._type
+        assert 'hash' == match.matcher
         assert 100 == match.score()
         assert rules[0] == match.rule
-        assert Span(1, 123) == match.qspan
-        assert Span(0, 122) == match.ispan
+        assert Span(0, 121) == match.qspan
+        assert Span(0, 121) == match.ispan

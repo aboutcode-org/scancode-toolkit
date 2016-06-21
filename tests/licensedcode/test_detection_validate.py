@@ -82,4 +82,4 @@ class TestValidateLicenseRuleSelfDetection(unittest.TestCase):
     pass
 
 
-build_rule_validation_tests(models._rules_proper(), TestValidateLicenseRuleSelfDetection)
+build_rule_validation_tests(models.load_rules(), TestValidateLicenseRuleSelfDetection)

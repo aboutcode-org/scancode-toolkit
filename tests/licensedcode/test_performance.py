@@ -58,7 +58,7 @@ class TestMatchingPerf(FileBasedTesting):
     def test_match_license_performance_profiling_on_limited_index(self):
         # pre-index : we are profiling only the detection, not the indexing
         rule_dir = self.get_test_loc('detect/rule_template/rules')
-        rules = models.rules(rule_dir)
+        rules = models.load_rules(rule_dir)
         idx = index.LicenseIndex(rules)
 
         stats_file = 'license_match_limited_index_profile_log.txt'

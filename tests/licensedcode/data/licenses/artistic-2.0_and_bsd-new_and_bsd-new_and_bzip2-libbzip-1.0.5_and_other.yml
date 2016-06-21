@@ -1,11 +1,12 @@
 licenses:
+    - gpl-1.0-plus
     - artistic-2.0
+    - zlib
+    - unicode
     - artistic-2.0
+    - gpl
     - bsd-new
     - bsd-new
     - bzip2-libbzip-1.0.5
-    - gpl
-    - gpl-1.0-plus
-    - unicode
-    - zlib
-expected_failure: yes
+license: (gpl-1.0-plus or artistic-2.0) and zlib and unicode and (artistic-2.0 or gpl) and bsd-new and bsd-new and bzip2-libbzip-1.0.5
+

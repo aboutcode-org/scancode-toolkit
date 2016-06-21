@@ -1,7 +1,7 @@
 licenses:
+    - gpl-3.0-plus
     - bsd-new
+    - gpl-3.0-plus
     - gpl-2.0-plus
     - gpl-3.0-plus
-    - gpl-3.0-plus
-    - gpl-3.0-plus
-expected_failure: yes
+

@@ -2,4 +2,3 @@ licenses:
     - tatu-ylonen
     - bsd-simplified
     - bsd-new
-expected_failure: yes

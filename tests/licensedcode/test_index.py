@@ -29,7 +29,7 @@ import json
 
 from commoncode.testcase import FileBasedTesting
 
-from licensedcode.whoosh_spans.spans import Span
+from licensedcode.spans import Span
 
 from licensedcode import index
 from licensedcode import models
@@ -63,36 +63,43 @@ class IndexTesting(FileBasedTesting):
 
 class TestIndexing(IndexTesting):
 
+    def check_index_as_dict(self, idx, expected, regen=False):
+        as_dict = idx._as_dict()
+        expected = self.get_test_loc(expected)
+        if regen:
+            with open(expected, 'wb') as jx:
+                jx.write(json.dumps(as_dict))
+
+        expected_as_dict = json.load(open(expected))
+        assert expected_as_dict == as_dict
+
     def test_init_with_rules(self):
         test_rules = self.get_test_rules('index/bsd', ['bsd-new', 'bsd-no-mod'])
         idx = index.LicenseIndex(test_rules)
-        expected_as_dict = json.load(open(self.get_test_loc('index/test_init_with_rules.json')))
-        assert expected_as_dict == idx._as_dict()
+        self.check_index_as_dict(idx, 'index/test_init_with_rules.json')
 
     def test__add_rules(self):
         test_rules = self.get_test_rules('index/bsd', ['bsd-new', 'bsd-no-mod'])
         idx = index.LicenseIndex()
         idx._add_rules(test_rules)
-        expected_as_dict = json.load(open(self.get_test_loc('index/test__add_rules.json')))
-        assert expected_as_dict == idx._as_dict()
+        self.check_index_as_dict(idx, 'index/test__add_rules.json')
 
     def test__add_rules_with_templates(self):
         test_rules = self.get_test_rules('index/bsd_templates2')
         idx = index.LicenseIndex()
         idx._add_rules(test_rules)
-        expected_as_dict = json.load(open(self.get_test_loc('index/test__add_rules_with_templates.json')))
-        assert expected_as_dict == idx._as_dict()
+        self.check_index_as_dict(idx, 'index/test__add_rules_with_templates.json')
 
     def test_index_structures(self):
         # rule text, unique low/high len, low/high len
         test_rules = [
             (u'a one a two a three licensed.', 4, 1, 6, 1),
-            (u'a four a five a six licensed.', 4, 1, 6, 1),
+            (u'a four a five a six licensed.', 3, 2, 5, 2),
             (u'one two three four five gpl', 5, 1, 5, 1),
-            (u'The rose is a rose mit', 4, 1, 5, 1),
+            (u'The rose is a rose mit', 3, 2, 3, 3),
             (u'The license is GPL', 2, 2, 2, 2),
             (u'The license is a GPL', 3, 2, 3, 2),
-            (u'a license is a rose', 3, 1, 4, 1),
+            (u'a license is a rose', 2, 2, 3, 2),
             (u'the gpl', 1, 1, 1, 1),
             (u'the mit', 1, 1, 1, 1),
             (u'the bsd', 1, 1, 1, 1),
@@ -102,78 +109,65 @@ class TestIndexing(IndexTesting):
         rules = [models.Rule(_text=t[0]) for t in test_rules]
         idx._add_rules(rules)
 
-        assert 10 == idx.len_junk
+        assert 8 == idx.len_junk
 
         for i, rule in enumerate(rules):
-            lens = tuple(test_rules[i][1:])
+            lens = tuple(test_rules[i][1:])            
             assert lens == (rule.low_unique, rule.high_unique, rule.low_length, rule.high_length)
 
         xdict = {
             u'a': 0,
-            u'the': 1,
+            u'bsd': 15,
+            u'five': 5,
+            u'four': 4,
+            u'gpl': 8,
             u'is': 2,
-            u'rose': 3,
-            u'one': 4,
-            u'two': 5,
-            u'five': 6,
-            u'four': 7,
-            u'three': 8,
-            u'six': 9,
-            u'gpl': 10,
-            u'license': 11,
+            u'lgpl': 13,
+            u'license': 9,
+            u'licensed': 11,
             u'mit': 12,
-            u'licensed': 13,
-            u'bsd': 14,
-            u'lgpl': 15,
-        }
+            u'one': 7,
+            u'rose': 10,
+            u'six': 14,
+            u'the': 1,
+            u'three': 3,
+            u'two': 6}
+
         assert xdict == idx.dictionary
 
         xtbi = [
             u'a',
             u'the',
             u'is',
-            u'rose',
-            u'one',
-            u'two',
-            u'five',
-            u'four',
             u'three',
-            u'six',
+            u'four',
+            u'five',
+            u'two',
+            u'one',
             u'gpl',
             u'license',
-            u'mit',
+            u'rose',
             u'licensed',
-            u'bsd',
-            u'lgpl'
-        ]
+            u'mit',
+            u'lgpl',
+            u'six',
+            u'bsd']
+
         assert xtbi == idx.tokens_by_tid
 
         expected_as_dict = {
-            '_tst__0': {u'a': [0, 2, 4],
-                        u'licensed': [6],
-                        u'one': [1],
-                        u'three': [5],
-                        u'two': [3]},
-            '_tst__1': {u'a': [0, 2, 4],
-                        u'five': [3],
-                        u'four': [1],
-                        u'licensed': [6],
-                        u'six': [5]},
-            '_tst__2': {u'five': [4],
-                        u'four': [3],
-                        u'gpl': [5],
-                        u'one': [0],
-                        u'three': [2],
-                        u'two': [1]},
-            '_tst__3': {u'a': [3], u'is': [2], u'mit': [5], u'rose': [1, 4], u'the': [0]},
-            '_tst__4': {u'gpl': [3], u'is': [2], u'license': [1], u'the': [0]},
-            '_tst__5': {u'a': [3], u'gpl': [4], u'is': [2], u'license': [1], u'the': [0]},
-            '_tst__6': {u'a': [0, 3], u'is': [2], u'license': [1], u'rose': [4]},
-            '_tst__7': {u'gpl': [1], u'the': [0]},
-            '_tst__8': {u'mit': [1], u'the': [0]},
-            '_tst__9': {u'bsd': [1], u'the': [0]},
-            '_tst__10': {u'lgpl': [1], u'the': [0]},
-        }
+            '_tst_18_4': {u'gpl': [3], u'license': [1]},
+            '_tst_19_6': {u'license': [1], u'rose': [4]},
+            '_tst_20_5': {u'gpl': [4], u'license': [1]},
+            '_tst_22_3': {u'mit': [5], u'rose': [1, 4]},
+            '_tst_27_2': {u'gpl': [5]},
+            '_tst_29_0': {u'licensed': [6]},
+            '_tst_29_1': {u'licensed': [6], u'six': [5]},
+            '_tst_7_7': {u'gpl': [1]},
+            '_tst_7_8': {u'mit': [1]},
+            '_tst_7_9': {u'bsd': [1]},
+            '_tst_8_10': {u'lgpl': [1]}}
+
         assert expected_as_dict == idx._as_dict()
 
     def test_index_structures_with__add_rules(self):
@@ -186,61 +180,42 @@ class TestIndexing(IndexTesting):
 
         idx._add_rules(rules)
 
-        assert 3 == idx.len_junk
+        assert 4 == idx.len_junk
 
         expected_index = {
-                'plain1_0': {u'redistribution': [0]},
-                'plain2_1': {u'is': [1], u'redistribution': [0], u'yes': [2]},
-                'plain3_2': {u'allowed': [2],
-                             u'is': [1], u'redistribution': [0], u'yes': [3]},
-                'plain4_3': {u'allowed': [2],
-                             u'for': [3], u'is': [1], u'redistribution': [0],
-                             u'yes': [4]},
-                'plain5_4': {u'all': [4],
-                             u'allowed': [2], u'for': [3], u'is': [1],
-                             u'redistribution': [0]},
-                'tmpl10_5': {u'all': [4, 6],
-                             u'allowed': [2], u'and': [5, 7], u'any': [8],
-                             u'for': [3], u'is': [1], u'redistribution': [0],
-                             u'thing': [9]},
-                'tmpl2_6': {u'is': [1], u'redistribution': [0]},
-                'tmpl3_7': {u'allowed': [2], u'is': [1], u'redistribution': [0]},
-                'tmpl4_8': {u'allowed': [2], u'for': [3], u'is': [1], u'redistribution': [0]},
-                'tmpl5_2_10': {u'all': [4],
-                               u'allowed': [2], u'for': [3], u'is': [1],
-                               u'redistribution': [0], u'yes': [5]},
-                'tmpl5_9': {u'allowed': [3],
-                            u'for': [4], u'is': [1, 2], u'redistribution': [0]},
-                'tmpl6_11': {u'all': [4],
-                             u'allowed': [2], u'and': [5], u'for': [3], u'is':
-                             [1], u'redistribution': [0]},
-                'tmpl7_12': {u'all': [4, 6],
-                             u'allowed': [2], u'and': [5], u'for': [3], u'is':
-                             [1], u'redistribution': [0]},
-                'tmpl8_13': {u'all': [4, 6],
-                             u'allowed': [2], u'and': [5, 7], u'for': [3],
-                             u'is': [1], u'redistribution': [0]},
-                'tmpl9_14': {u'all': [4, 6],
-                             u'allowed': [2], u'and': [5, 7], u'any': [8],
-                             u'for': [3], u'is': [1], u'redistribution': [0]}
-            }
+            'plain1_0': {u'redistribution': [0]},
+            'plain2_1': {u'redistribution': [0], u'yes': [2]},
+            'plain3_2': {u'allowed': [2], u'redistribution': [0], u'yes': [3]},
+            'plain4_3': {u'allowed': [2], u'redistribution': [0], u'yes': [4]},
+            'plain5_4': {u'allowed': [2], u'redistribution': [0]},
+            'tmpl10_5': {u'allowed': [2], u'any': [8], u'redistribution': [0], u'thing': [9]},
+            'tmpl2_6': {u'redistribution': [0]},
+            'tmpl3_7': {u'allowed': [2], u'redistribution': [0]},
+            'tmpl4_8': {u'allowed': [2], u'redistribution': [0]},
+            'tmpl5_2_10': {u'allowed': [2], u'redistribution': [0], u'yes': [5]},
+            'tmpl5_9': {u'allowed': [3], u'redistribution': [0]},
+            'tmpl6_11': {u'allowed': [2], u'redistribution': [0]},
+            'tmpl7_12': {u'allowed': [2], u'redistribution': [0]},
+            'tmpl8_13': {u'allowed': [2], u'redistribution': [0]},
+            'tmpl9_14': {u'allowed': [2], u'any': [8], u'redistribution': [0]}
+        }
 
         assert expected_index == idx._as_dict()
 
         expected_dict = {
-            u'all': 5,
-            u'allowed': 4,
-            u'and': 2,
+            u'all': 1,
+            u'allowed': 5,
+            u'and': 3,
             u'any': 7,
-            u'for': 1,
+            u'for': 2,
             u'is': 0,
-            u'redistribution': 3,
+            u'redistribution': 4,
             u'thing': 8,
-            u'yes': 6
-        }
+            u'yes': 6}
+
         assert expected_dict == idx.dictionary
 
-        expected_tids = [u'is', u'for', u'and', u'redistribution', u'allowed', u'all', u'yes', u'any', u'thing']
+        expected_tids = [u'is', u'all', u'for', u'and', u'redistribution', u'allowed', u'yes', u'any', u'thing']
         assert expected_tids == idx.tokens_by_tid
 
         expected_high_tids_msets_by_rid = [
@@ -248,46 +223,50 @@ class TestIndexing(IndexTesting):
             {u'redistribution': 1, u'yes': 1},
             {u'allowed': 1, u'redistribution': 1, u'yes': 1},
             {u'allowed': 1, u'redistribution': 1, u'yes': 1},
-            {u'all': 1, u'allowed': 1, u'redistribution': 1},
-            {u'all': 2, u'allowed': 1, u'any': 1, u'redistribution': 1, u'thing': 1},
+            {u'allowed': 1, u'redistribution': 1},
+            {u'allowed': 1, u'any': 1, u'redistribution': 1, u'thing': 1},
             {u'redistribution': 1},
             {u'allowed': 1, u'redistribution': 1},
             {u'allowed': 1, u'redistribution': 1},
             {u'allowed': 1, u'redistribution': 1},
-            {u'all': 1, u'allowed': 1, u'redistribution': 1, u'yes': 1},
-            {u'all': 1, u'allowed': 1, u'redistribution': 1},
-            {u'all': 2, u'allowed': 1, u'redistribution': 1},
-            {u'all': 2, u'allowed': 1, u'redistribution': 1},
-            {u'all': 2, u'allowed': 1, u'any': 1, u'redistribution': 1}]
+            {u'allowed': 1, u'redistribution': 1, u'yes': 1},
+            {u'allowed': 1, u'redistribution': 1},
+            {u'allowed': 1, u'redistribution': 1},
+            {u'allowed': 1, u'redistribution': 1},
+            {u'allowed': 1, u'any': 1, u'redistribution': 1}
+        ]
 
         low_tids_msets_by_rid, high_tids_msets_by_rid = zip(*idx.tids_msets_by_rid)
 
-        assert expected_high_tids_msets_by_rid == [{idx.tokens_by_tid[tok]: freq for tok, freq in tids_mset.items()}
-                                                   for tids_mset in high_tids_msets_by_rid]
+        htmset = [{idx.tokens_by_tid[tok]:freq for (tok, freq) in tids_mset.items()} 
+                  for tids_mset in high_tids_msets_by_rid]
+        assert expected_high_tids_msets_by_rid == htmset
 
         expected_low_tids_msets_by_rid = [
             {},
             {u'is': 1},
             {u'is': 1},
             {u'for': 1, u'is': 1},
-            {u'for': 1, u'is': 1},
-            {u'and': 2, u'for': 1, u'is': 1},
+            {u'all': 1, u'for': 1, u'is': 1},
+            {u'all': 2, u'and': 2, u'for': 1, u'is': 1},
             {u'is': 1},
             {u'is': 1},
             {u'for': 1, u'is': 1},
             {u'for': 1, u'is': 2},
-            {u'for': 1, u'is': 1},
-            {u'and': 1, u'for': 1, u'is': 1},
-            {u'and': 1, u'for': 1, u'is': 1},
-            {u'and': 2, u'for': 1, u'is': 1},
-            {u'and': 2, u'for': 1, u'is': 1}]
+            {u'all': 1, u'for': 1, u'is': 1},
+            {u'all': 1, u'and': 1, u'for': 1, u'is': 1},
+            {u'all': 2, u'and': 1, u'for': 1, u'is': 1},
+            {u'all': 2, u'and': 2, u'for': 1, u'is': 1},
+            {u'all': 2, u'and': 2, u'for': 1, u'is': 1}
+        ]
+
         assert expected_low_tids_msets_by_rid == [{idx.tokens_by_tid[tok]: freq for tok, freq in tids_mset.items()}
                                                   for tids_mset in low_tids_msets_by_rid]
 
     def test_index_fails_on_duplicated_rules(self):
         rule_dir = self.get_test_loc('index/no_duplicated_rule')
         try:
-            index.LicenseIndex(models._rules_proper(rule_dir))
+            index.LicenseIndex(models.load_rules(rule_dir))
             self.fail('Exception on dupes not raised')
         except AssertionError, e:
             assert u'Duplicate rules' in e.message
@@ -302,7 +281,7 @@ class TestMatchNoTemplates(IndexTesting):
         querys = '''
             The
             Redistribution and use in source and binary forms, with or without modification, are permitted.
-            
+
             Always'''
 
         result = idx.match(query_string=querys)
@@ -316,10 +295,10 @@ class TestMatchNoTemplates(IndexTesting):
         assert Span(0, 13) == match.ispan
 
     def test_match_exact_from_string_twice_with_repeated_text(self):
-        rule = models.Rule()
-        rule._text = u'licensed under the GPL, licensed under the GPL'
-        #                     0    1   2   3         4      5   6   7
-        rule.licenses = ['tst']
+        _text = u'licensed under the GPL, licensed under the GPL'
+        #                0    1   2   3         4      5   6   7
+        licenses = ['tst']
+        rule = models.Rule(licenses=licenses, _text=_text)
 
         idx = index.LicenseIndex([rule])
         querys = u'Hi licensed under the GPL, licensed under the GPL yes.'
@@ -347,9 +326,9 @@ class TestMatchNoTemplates(IndexTesting):
         assert u'licensed under the GPL licensed under the GPL' == itext
 
     def test_match_exact_with_junk_in_between_good_tokens(self):
-        rule = models.Rule()
-        rule._text = u'licensed under the GPL, licensed under the GPL'
-        rule.licenses = ['tst']
+        _text = u'licensed under the GPL, licensed under the GPL'
+        licenses = ['tst']
+        rule = models.Rule(licenses=licenses, _text=_text)
 
         idx = index.LicenseIndex([rule])
         querys = u'Hi licensed that under is the that GPL, licensed or under not the GPL by yes.'
@@ -388,9 +367,10 @@ class TestMatchNoTemplates(IndexTesting):
         assert Span(0, 212) == match.ispan
 
     def test_match_return_correct_offsets(self):
-        rule = models.Rule(licenses=['test'])
-        rule._text = u'A GPL. A MIT. A LGPL.'
-        #              0   1  2   3  4    5
+        _text = u'A GPL. A MIT. A LGPL.'
+        #         0   1  2   3  4    5
+        licenses=['test']
+        rule = models.Rule(licenses=licenses, _text=_text)
         idx = index.LicenseIndex([rule])
         querys = u'some junk. A GPL. A MIT. A LGPL.'
         #             0    1  2   3  4   5  6    7
@@ -449,24 +429,24 @@ No part of match        '''
 
         assert 1 == len(result)
         match = result[0]
-        assert 'chunk' == match._type
+        assert 'seq' == match.matcher
 
         exp_qtext = u"""
             Redistribution and use in source and binary forms with or without
             modification are permitted provided that the following conditions
             are met
-            
+
             Redistributions of source code must retain the above copyright
             notice this list of conditions and the following disclaimer
 
             Redistributions in binary form must reproduce the above copyright
             notice this list of conditions and the following disclaimer in the
             documentation and or other materials provided with the distribution
-            
+
             Neither the name of <no-match> <no-match> nor the names of its
             contributors may be used to endorse or promote products derived from
             this software without specific prior written permission
-            
+
             THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
             AS IS AND ANY EXPRESS OR IMPLIED WARRANTIES INCLUDING BUT NOT
             LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -484,18 +464,18 @@ No part of match        '''
             Redistribution and use in source and binary forms with or without
             modification are permitted provided that the following conditions
             are met
-            
+
             Redistributions of source code must retain the above copyright
             notice this list of conditions and the following disclaimer
-            
+
             Redistributions in binary form must reproduce the above copyright
             notice this list of conditions and the following disclaimer in the
             documentation and or other materials provided with the distribution
-            
+
             Neither the name of <gap> nor the names of its contributors may be
             used to endorse or promote products derived from this software
             without specific prior written permission
-            
+
             THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
             AS IS AND ANY EXPRESS OR IMPLIED WARRANTIES INCLUDING BUT NOT
             LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -540,35 +520,35 @@ No part of match        '''
         match = result[0]
 
         exp_qtext = u"""
-            Copyright <no-match> <no-match> <no-match> <no-match> <no-match> <no-match> <no-match> 
             All Rights Reserved
-            
+
             Redistribution and use of this software and associated documentation
             Software with or without modification are permitted provided that
             the following conditions are met
-            
+
             1 Redistributions of source code must retain copyright statements
             and notices Redistributions must also contain a copy of this
             document
-            
+
             2 Redistributions in binary form must reproduce the above copyright
             notice this list of conditions and the following disclaimer in the
             documentation and or other materials provided with the distribution
-            
+
             3 The name <no-match> must not be used to endorse or promote
             products derived from this Software without prior written permission
-            of <no-match> <no-match> For written permission please contact 
+            of <no-match> <no-match> For written permission please contact
             <no-match> <no-match> <no-match>
-            
+
             4 Products derived from this Software may not be called <no-match>
             nor may <no-match> appear in their names without prior written
             permission of <no-match> <no-match> <no-match> is a registered
             trademark of <no-match> <no-match>
-            
+
             5 Due credit should be given to <no-match> <no-match> <no-match>
             <no-match> <no-match> <no-match>
-            
-            THIS SOFTWARE IS PROVIDED BY <no-match> <no-match> AND CONTRIBUTORS
+
+            <no-match> <no-match> <no-match> <no-match> <no-match> <no-match>
+             <no-match>  AND CONTRIBUTORS
             AS IS AND ANY EXPRESSED OR IMPLIED WARRANTIES INCLUDING BUT NOT
             LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
             A PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL <no-match>
@@ -578,37 +558,37 @@ No part of match        '''
             USE DATA OR PROFITS OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON
             ANY THEORY OF LIABILITY WHETHER IN CONTRACT STRICT LIABILITY OR TORT
             INCLUDING NEGLIGENCE OR OTHERWISE ARISING IN ANY WAY OUT OF THE USE
-            OF THIS SOFTWARE EVEN IF ADVISED OF THE <no-match> <no-match> 
+            OF THIS SOFTWARE EVEN IF ADVISED OF THE <no-match> <no-match>
             <no-match> DAMAGE
         """.split()
 
         exp_itext = u"""
-            Copyright <gap>
-            All Rights Reserved 
-            
+            All Rights Reserved
+
             Redistribution and use of this software and associated documentation
             Software with or without modification are permitted provided that
             the following conditions are met
-            
+
             1 Redistributions of source code must retain copyright statements
             and notices Redistributions must also contain a copy of this
             document
-            
+
             2 Redistributions in binary form must reproduce the above copyright
             notice this list of conditions and the following disclaimer in the
             documentation and or other materials provided with the distribution
-            
+
             3 The name <gap> must not be used to endorse or promote products
             derived from this Software without prior written permission of <gap>
             For written permission please contact <gap>
-            
+
             4 Products derived from this Software may not be called <gap> nor
             may <gap> appear in their names without prior written permission of
             <gap> is a registered trademark of <gap>
-            
+
             5 Due credit should be given to <gap>
-            
-            THIS SOFTWARE IS PROVIDED BY <gap> AND CONTRIBUTORS AS IS AND ANY
+
+            <no-match> <no-match> <no-match> <no-match> <no-match> <gap> 
+            AND CONTRIBUTORS AS IS AND ANY
             EXPRESSED OR IMPLIED WARRANTIES INCLUDING BUT NOT LIMITED TO THE
             IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
             PURPOSE ARE DISCLAIMED IN NO EVENT SHALL <gap> OR ITS CONTRIBUTORS
@@ -623,25 +603,16 @@ No part of match        '''
         qtext, itext = get_texts(match, location=query_loc, idx=idx)
         assert exp_qtext == qtext.split()
         assert exp_itext == itext.split()
-        assert 100 == match.score()
-        assert 'chunk' == match._type
+        assert match.score() > 97
+        assert 'seq' == match.matcher
 
     def test_match_with_templates_with_redundant_tokens_yield_single_exact_match(self):
-        rule = models.Rule()
-        rule._text = u'copyright reserved mit is license, {{}} copyright reserved mit is license'
-        #                      0        1  2   3       4               5        6   7  8       9
-        rule.licenses = ['tst']
+        _text = u'copyright reserved mit is license, {{}} copyright reserved mit is license'
+        #                 0        1  2   3       4               5        6   7  8       9
+        licenses = ['tst']
+        rule = models.Rule(licenses=licenses, _text=_text)
         idx = index.LicenseIndex([rule], ngram_length=2)
-        expected_idx = {
-            '_tst__0': {
-                u'copyright': [0, 5],
-                u'is': [3, 8],
-                u'license': [4, 9],
-                u'mit': [2, 7],
-                u'reserved': [1, 6]
-                }
-        }
-
+        expected_idx = {'_tst_73_0': {u'is': [3, 8], u'license': [4, 9], u'mit': [2, 7]}}
         assert expected_idx == idx._as_dict()
 
         querys = u'Hi my copyright reserved mit is license is the copyright reserved mit is license yes.'

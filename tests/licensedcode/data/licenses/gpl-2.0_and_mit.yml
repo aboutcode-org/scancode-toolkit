@@ -1,4 +1,5 @@
 licenses:
     - gpl-2.0
+    - gpl
     - mit
-notes: there may be a few GPL mention lost in the flow
+

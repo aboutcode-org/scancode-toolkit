@@ -54,10 +54,10 @@ class TestLicense(FileBasedTesting):
         for lic in lics.values():
             assert 'distribut' in lic.text.lower()
 
-    def test_rules_from_licenses(self):
+    def test_build_rules_from_licenses(self):
         test_dir = self.get_test_loc('models/licenses')
         lics = models.load_licenses(test_dir)
-        rules = list(models.rules_from_licenses(lics))
+        rules = list(models.build_rules_from_licenses(lics))
         assert 4 == len(rules)
         for rule in rules:
             assert 'distribut' in rule.text().lower()
@@ -94,7 +94,7 @@ class TestRule(FileBasedTesting):
 
     def test_load_rules(self):
         test_dir = self.get_test_loc('models/rules')
-        rules = list(models.rules(test_dir))
+        rules = list(models.load_rules(test_dir))
         # one license is obsolete and not loaded
         assert 3 == len(rules)
         assert all(isinstance(r, models.Rule) for r in rules)
@@ -104,18 +104,8 @@ class TestRule(FileBasedTesting):
 
     def test_template_rule_is_loaded_correctly(self):
         test_dir = self.get_test_loc('models/rule_template')
-        rules = list(models.rules(test_dir))
+        rules = list(models.load_rules(test_dir))
         assert 1 == len(rules)
-
-    def test_rule_data_ignores_small_text_differences(self):
-        r1 = models.Rule(_text='Some text')
-        r2 = models.Rule(_text='Some \n_-text')
-        assert r1._data() == r2._data()
-
-    def test_rule_data_includes_structure(self):
-        r1 = models.Rule(_text='Some text', license_choice=False)
-        r2 = models.Rule(_text='Some text', license_choice=True)
-        assert r1._data() != r2._data()
 
     def test_rule_len_is_computed_correctly(self):
         test_text = '''zero one two three
@@ -150,20 +140,19 @@ class TestRule(FileBasedTesting):
         assert models.Rule(_text='test_text', licenses=[]).negative()
 
     def test_LicenseMatch_small(self):
-        r1 = models.Rule(text_file='r1', licenses=['apache-1.1'])
-        r1._text = u'licensed under the GPL, licensed under the GPL'
-        r2 = models.Rule(text_file='r1', licenses=['apache-1.1'])
-        r2._text = u'licensed under the GPL, licensed under the GPL' * 10
+        r1_text = u'licensed under the GPL, licensed under the GPL'
+        r1 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r1_text)
+        r2_text = u'licensed under the GPL, licensed under the GPL' * 10
+        r2 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r2_text)
         _idx = index.LicenseIndex([r1, r2])
-        assert models.Thresholds(high_len=6, low_len=2, length=8, small=True, min_high=2, min_len=4, max_gap_skip=2) == r1.thresholds()
-        assert models.Thresholds(high_len=51, low_len=20, length=71, small=False, min_high=2, min_len=4, max_gap_skip=25) == r2.thresholds()
+        assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8, max_gap_skip=0) == r1.thresholds()
+        assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4, max_gap_skip=15) == r2.thresholds()
 
-        r1 = models.Rule(text_file='r1', licenses=['apache-1.1'])
-        r1._text = u'licensed under the GPL,{{}} licensed under the GPL'
-        r2 = models.Rule(text_file='r1', licenses=['apache-1.1'])
-        r2._text = u'licensed under the GPL, licensed under the GPL' * 10
+        r1_text = u'licensed under the GPL,{{}} licensed under the GPL'
+        r1 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r1_text)
+        r2_text = u'licensed under the GPL, licensed under the GPL' * 10
+        r2 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r2_text)
 
         _idx = index.LicenseIndex([r1, r2])
-        assert models.Thresholds(high_len=6, low_len=2, length=8, small=True, min_high=2, min_len=4, max_gap_skip=2) == r1.thresholds()
-        assert models.Thresholds(high_len=51, low_len=20, length=71, small=False, min_high=2, min_len=4, max_gap_skip=25) == r2.thresholds()
-
+        assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8, max_gap_skip=1) == r1.thresholds()
+        assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4, max_gap_skip=15) == r2.thresholds()

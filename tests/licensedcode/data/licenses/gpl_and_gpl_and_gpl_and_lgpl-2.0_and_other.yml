@@ -1,7 +1,7 @@
 licenses:
     - gpl
     - gpl
+    - lgpl
+    - lgpl
     - gpl
-    - lgpl-2.0
-    - lgpl-2.0
-expected_failure: yes
+

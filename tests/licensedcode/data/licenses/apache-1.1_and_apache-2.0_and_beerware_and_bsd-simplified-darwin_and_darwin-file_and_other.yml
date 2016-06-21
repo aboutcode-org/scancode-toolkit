@@ -1,12 +1,16 @@
 licenses:
     - apache-2.0
     - apache-2.0
+    - apache-2.0
     - darwin-file
     - bsd-simplified-darwin
+    - x11-keith-packard
     - historical
-    - some mit old style
-    - some mit old style
     - rsa-md5
+    - apache-2.0
+    - rsa-md5
+    - rsa-md5
+    - apache-2.0
     - rsa-md5
     - beerware
     - rsa-md4
@@ -14,12 +18,11 @@ licenses:
     - apache-1.1
     - public-domain
     - rsa-1990
-    - historical
-    - mit old style
-    - mit old style
+    - mit-old-style-no-advert
+    - mit-old-style-no-advert
     - pcre
-    - mit style of sorts
+    - gpl
+    - lgpl
+    - zeusbench
     - mit
     - apache-2.0
-expected_failure: yes
-notes: this contains several variants of old MIT that would need to be corrected and added as licenses first

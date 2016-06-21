@@ -1,9 +1,5 @@
 licenses:
     - unknown
-    - gpl
-    - lgpl
-    - gpl
-    - lgpl
     - gpl-2.0
     - lgpl-2.0
-expected_failure: yes
+

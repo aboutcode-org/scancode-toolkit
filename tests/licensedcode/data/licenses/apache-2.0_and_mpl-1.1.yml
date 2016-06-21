@@ -3,4 +3,4 @@ licenses:
     - mpl-1.1
     - apache-2.0
     - mpl-1.1
-
+expected_contains: yes

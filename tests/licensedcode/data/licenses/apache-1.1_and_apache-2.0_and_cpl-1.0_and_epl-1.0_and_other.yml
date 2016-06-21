@@ -5,4 +5,5 @@ licenses:
     - cpl-1.0
     - epl-1.0
     - zlib
+notes: TODO refine expectations
 expected_failure: yes

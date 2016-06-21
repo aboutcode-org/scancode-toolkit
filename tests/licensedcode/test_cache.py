@@ -12,7 +12,7 @@
 # CONDITIONS OF ANY KIND, either express or implied. See the License for the
 # specific language governing permissions and limitations under the License.
 #
-# When you publish or redistribute any data created with ScanCode or any ScanCode
+    # When you publish or redistribute any data created with ScanCode or any ScanCode
 # derivative work, you must accompany this data with the following acknowledgment:
 #
 #  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
@@ -54,16 +54,14 @@ class LicenseMatchCacheTest(FileBasedTesting):
         result = idx.match(location=query_loc, use_cache=cache_dir)
         assert 1 == len(result)
         match = result[0]
-        assert 'chunk' == match._type
-        assert 1 == len(os.listdir(cache_dir))
+        assert 'cache' not in match.matcher
 
         # match again to check a cache hit
         result = idx.match(location=query_loc, use_cache=cache_dir)
         assert 1 == len(result)
         cached_match = result[0]
-        assert 'cache' in cached_match._type
+        assert 'cache' in cached_match.matcher
         assert cached_match.same(match)
-        assert 1 == len(os.listdir(cache_dir))
 
     def test_cached_match_to_template(self):
         rule = models.Rule(text_file=self.get_test_loc('cache/templates/idx.txt'), licenses=['test'],)
@@ -74,16 +72,14 @@ class LicenseMatchCacheTest(FileBasedTesting):
         result = idx.match(location=query_loc, use_cache=cache_dir)
         assert 1 == len(result)
         match = result[0]
-        assert 'chunk' == match._type
-        assert 1 == len(os.listdir(cache_dir))
+        assert 'cache' not in match.matcher
 
         # match again to check a cache hit
         result = idx.match(location=query_loc, use_cache=cache_dir)
         assert 1 == len(result)
         cached_match = result[0]
-        assert 'cache' in cached_match._type
+        assert 'cache' in cached_match.matcher
         assert cached_match.same(match)
-        assert 1 == len(os.listdir(cache_dir))
 
     def test_cache_hits_with_different_query_runs_rebase_correctly(self):
         bsd_new = 'Redistribution and use in source and binary forms are permitted'
@@ -101,8 +97,7 @@ class LicenseMatchCacheTest(FileBasedTesting):
 
         querys = 'Redistribution and use in source and binary forms are permitted are'
         match = idx.match(query_string=querys, use_cache=cache_dir)[0]
-        assert 1 == len(os.listdir(cache_dir))
-        assert 'chunk' == match._type
+        assert 'cache' not in match.matcher
 
         expected = 'Redistribution and use in source and binary forms are permitted'
         qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
@@ -111,8 +106,7 @@ class LicenseMatchCacheTest(FileBasedTesting):
         # does not hit cache
         querys = 'are Redistribution and use in source and binary forms are permitted are'
         match = idx.match(query_string=querys, use_cache=cache_dir)[0]
-        assert 2 == len(os.listdir(cache_dir))
-        assert 'chunk' == match._type
+        assert 'cache' not in match.matcher
 
         expected = 'Redistribution and use in source and binary forms are permitted'
         qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
@@ -121,8 +115,7 @@ class LicenseMatchCacheTest(FileBasedTesting):
         # does hit cache
         querys = 'are Redistribution and use in source and binary forms are permitted are'
         match = idx.match(query_string=querys, use_cache=cache_dir)[0]
-        assert 2 == len(os.listdir(cache_dir))
-        assert 'chunk cached' == match._type
+        assert 'cached' in match.matcher
 
         expected = 'Redistribution and use in source and binary forms are permitted'
         qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
@@ -131,8 +124,7 @@ class LicenseMatchCacheTest(FileBasedTesting):
         # does hit cache, with unknown
         querys = 'are Redistribution and explicit use in source and binary forms are permitted are'
         match = idx.match(query_string=querys, use_cache=cache_dir)[0]
-        assert 2 == len(os.listdir(cache_dir))
-        assert 'chunk cached' == match._type
+        assert 'cached' in match.matcher
 
         expected = 'Redistribution and <no-match> use in source and binary forms are permitted'
         qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
@@ -141,8 +133,7 @@ class LicenseMatchCacheTest(FileBasedTesting):
         # does hit cache, with unknown
         querys = 'Redistribution that and explicit use in source and binary forms are permitted are'
         match = idx.match(query_string=querys, use_cache=cache_dir)[0]
-        assert 2 == len(os.listdir(cache_dir))
-        assert 'chunk cached' == match._type
+        assert 'cached' in match.matcher
 
         expected = 'Redistribution <no-match> and <no-match> use in source and binary forms are permitted'
         qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
@@ -154,8 +145,7 @@ class LicenseMatchCacheTest(FileBasedTesting):
                 + 'are Redistribution and explicit use in source and binary forms are permitted are'
         )
         matches = idx.match(query_string=querys, use_cache=cache_dir)
-        assert 3 == len(os.listdir(cache_dir))
-        assert all('chunk cached' == match._type for match in matches)
+        assert all('cached' in match.matcher for match in matches)
 
         match = matches[0]
         expected = 'Redistribution <no-match> and <no-match> use in source and binary forms are permitted'
@@ -173,8 +163,7 @@ class LicenseMatchCacheTest(FileBasedTesting):
                 + 'are Redistribution and explicit use in source and binary forms are permitted are'
         )
         matches = idx.match(query_string=querys, use_cache=cache_dir)
-        assert 3 == len(os.listdir(cache_dir))
-        assert all('chunk cached' == match._type for match in matches)
+        assert all('cached' in match.matcher for match in matches)
 
         match = matches[0]
         expected = 'Redistribution <no-match> and <no-match> use in source and binary forms are permitted'

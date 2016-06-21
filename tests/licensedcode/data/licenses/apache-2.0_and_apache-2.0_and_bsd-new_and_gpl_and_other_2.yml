@@ -11,4 +11,5 @@ licenses:
     - mpl-1.1
     - apache-2.0
     - gpl
+notes: TODO refine expectations
 expected_failure: yes

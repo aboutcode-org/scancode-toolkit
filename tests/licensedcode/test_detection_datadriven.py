@@ -213,9 +213,13 @@ def make_license_test_function(expected_licenses, test_file, data_file, test_nam
 
         # TODO: we should expect matches properly, not with a grab bag of flat license keys
         # flattened list of all detected license keys across all matches.
-        detected_licenses = functional.flatten(match.rule.licenses for match in matches)
+        detected_licenses = functional.flatten(map(unicode, match.rule.licenses) for match in matches)
         try:
-            if expected_contains:
+            if not detect_negative:
+                # we skipped negative detection for a negative rule
+                # we just want to ensure thwt the rule wass matchedd proper
+                assert matches and not expected_licenses and not detected_licenses
+            elif expected_contains:
                 assert all(ex in detected_licenses for ex in expected_licenses)
             else:
                 assert expected_licenses == detected_licenses                

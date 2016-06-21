@@ -1,4 +1,6 @@
 licenses:
-    - should detect something
-expected_failure: yes
-notes: fix me
+    - sun-sissl-1.1
+    - sun-sissl-1.1
+    - sun-sissl-1.1
+    - sun-sissl-1.1
+

@@ -26,9 +26,9 @@ from __future__ import absolute_import, print_function
 
 from unittest.case import TestCase
 
-from bitarray import bitarray
+from intbitset import intbitset
 
-from licensedcode import prefilter
+from licensedcode import match_set
 from licensedcode.models import Thresholds
 
 
@@ -36,70 +36,70 @@ class FilterTesting(TestCase):
 
     def test_compare_sets_tids_sets(self):
         thresholds = Thresholds(high_len=3, low_len=0, length=3, min_high=2, small=False, min_len=2, max_gap_skip=0)
-        qlow, qhigh = bitarray('00'), bitarray('01101')
-        ilow, ihigh = bitarray('00'), bitarray('01101')
+        qlow, qhigh = intbitset(), intbitset([3, 4, 6])
+        ilow, ihigh = intbitset(), intbitset([3, 4, 6])
 
-        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.tids_sets_intersector, prefilter.tids_set_counter, exact=False)
+        candidate = match_set.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, match_set.tids_sets_intersector, match_set.tids_set_counter, exact=False)
         assert candidate
 
     def test_compare_sets_tids_sets_match_with_less_than_high_len(self):
         thresholds = Thresholds(high_len=3, low_len=0, length=3, min_high=2, small=False, min_len=2, max_gap_skip=0)
-        qlow, qhigh = bitarray('00'), bitarray('01100')
-        ilow, ihigh = bitarray('00'), bitarray('01101')
+        qlow, qhigh = intbitset(), intbitset([3, 4])
+        ilow, ihigh = intbitset(), intbitset([3, 4, 6])
 
-        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.tids_sets_intersector, prefilter.tids_set_counter, exact=True)
+        candidate = match_set.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, match_set.tids_sets_intersector, match_set.tids_set_counter, exact=True)
         assert not candidate
-        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.tids_sets_intersector, prefilter.tids_set_counter, exact=False)
+        candidate = match_set.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, match_set.tids_sets_intersector, match_set.tids_set_counter, exact=False)
         assert candidate
 
     def test_compare_sets_tids_sets_non_exact_match_with_less_than_min_high(self):
         thresholds = Thresholds(high_len=3, low_len=0, length=3, min_high=2, small=False, min_len=2, max_gap_skip=0)
-        qlow, qhigh = bitarray('00'), bitarray('01000')
-        ilow, ihigh = bitarray('00'), bitarray('01101')
+        qlow, qhigh = intbitset(), intbitset([3])
+        ilow, ihigh = intbitset(), intbitset([3, 4, 6])
 
-        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.tids_sets_intersector, prefilter.tids_set_counter, exact=True)
+        candidate = match_set.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, match_set.tids_sets_intersector, match_set.tids_set_counter, exact=True)
         assert not candidate
-        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.tids_sets_intersector, prefilter.tids_set_counter, exact=False)
+        candidate = match_set.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, match_set.tids_sets_intersector, match_set.tids_set_counter, exact=False)
         assert not candidate
 
     def test_compare_sets_tids_sets_exact_match_with_less_than_ilow_len(self):
         thresholds = Thresholds(high_len=3, low_len=1, length=3, min_high=2, small=False, min_len=2, max_gap_skip=0)
-        qlow, qhigh = bitarray('00'), bitarray('01101')
-        ilow, ihigh = bitarray('01'), bitarray('01101')
-        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.tids_sets_intersector, prefilter.tids_set_counter, exact=True)
+        qlow, qhigh = intbitset(), intbitset([3, 4, 6])
+        ilow, ihigh = intbitset([1]), intbitset([3, 4, 6])
+        candidate = match_set.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, match_set.tids_sets_intersector, match_set.tids_set_counter, exact=True)
 
         assert not candidate
-        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.tids_sets_intersector, prefilter.tids_set_counter, exact=False)
+        candidate = match_set.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, match_set.tids_sets_intersector, match_set.tids_set_counter, exact=False)
         assert candidate
 
     def test_compare_sets_tids_sets_match_with_more_than_min_and_low_len(self):
         thresholds = Thresholds(high_len=3, low_len=1, length=4, min_high=2, small=False, min_len=2, max_gap_skip=0)
-        qlow, qhigh = bitarray('00'), bitarray('01101')
-        ilow, ihigh = bitarray('01'), bitarray('01101')
+        qlow, qhigh = intbitset(), intbitset([3, 4, 6])
+        ilow, ihigh = intbitset([1]), intbitset([3, 4, 6])
 
-        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.tids_sets_intersector, prefilter.tids_set_counter, exact=True)
+        candidate = match_set.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, match_set.tids_sets_intersector, match_set.tids_set_counter, exact=True)
         assert not candidate
-        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.tids_sets_intersector, prefilter.tids_set_counter, exact=False)
+        candidate = match_set.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, match_set.tids_sets_intersector, match_set.tids_set_counter, exact=False)
         assert candidate
 
     def test_compare_sets_tids_sets_match_with_small_rule(self):
         thresholds = Thresholds(high_len=3, low_len=1, length=4, min_high=2, small=True, min_len=2, max_gap_skip=0)
-        qlow, qhigh = bitarray('00'), bitarray('01101')
-        ilow, ihigh = bitarray('01'), bitarray('01101')
+        qlow, qhigh = intbitset(), intbitset([3, 4, 6])
+        ilow, ihigh = intbitset([1]), intbitset([3, 4, 6])
 
-        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.tids_sets_intersector, prefilter.tids_set_counter, exact=False)
-        assert candidate
+        candidate = match_set.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, match_set.tids_sets_intersector, match_set.tids_set_counter, exact=False)
+        assert not candidate
 
-        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.tids_sets_intersector, prefilter.tids_set_counter, exact=True)
+        candidate = match_set.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, match_set.tids_sets_intersector, match_set.tids_set_counter, exact=True)
         assert not candidate
 
         thresholds = Thresholds(high_len=3, low_len=1, length=4, min_high=2, small=False, min_len=2, max_gap_skip=0)
-        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.tids_sets_intersector, prefilter.tids_set_counter, exact=False)
+        candidate = match_set.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, match_set.tids_sets_intersector, match_set.tids_set_counter, exact=False)
         assert candidate
 
-        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.tids_sets_intersector, prefilter.tids_set_counter, exact=True)
+        candidate = match_set.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, match_set.tids_sets_intersector, match_set.tids_set_counter, exact=True)
         assert not candidate
 
         thresholds = Thresholds(high_len=3, low_len=1, length=4, min_high=4, small=False, min_len=2, max_gap_skip=0)
-        candidate = prefilter.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, prefilter.tids_sets_intersector, prefilter.tids_set_counter, exact=False)
+        candidate = match_set.compare_sets(qhigh, qlow, ihigh, ilow, thresholds, match_set.tids_sets_intersector, match_set.tids_set_counter, exact=False)
         assert not candidate
