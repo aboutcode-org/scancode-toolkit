@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import io
 import os
@@ -29,7 +30,7 @@ long_description = '%s\n%s' % (
 
 setup(
     name='scancode-toolkit',
-    version='1.6.1',
+    version='2.0.0.dev1',
     license='Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others',
     description='ScanCode is a tool to scan code for license, copyright and other interesting facts.',
     long_description=long_description,
@@ -52,7 +53,8 @@ setup(
         'Topic :: Utilities',
     ],
     keywords=[
-        'license', 'filetype', 'urn', 'date', 'codec',
+        'open source', 'scan', 'license', 'package', 
+        'copyright', 'filetype', 'urn', 'date', 'codec',
     ],
     install_requires=[
         # cluecode
@@ -71,8 +73,8 @@ setup(
         # licensedcode
         'PyYAML >= 3.0, <4.0',
         'bitarray >= 0.8.1, < 1.0.0',
-        'initbitset > 2.2.1, < 2.2.3',
-        'pyahocorasick >= 1.1.1, < 1.2',
+        'intbitset > 2.2.1,  < 2.2.3',
+        'pyahocorasick >= 1.1, < 1.2',
         # caching
         'zc.lockfile >= 1.0.0, < 2.0.0',
         'yg.lockfile >= 2.0.0, < 3.0.0',
