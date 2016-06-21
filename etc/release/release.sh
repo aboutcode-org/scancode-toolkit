@@ -25,8 +25,7 @@ export CONFIGURE_QUIET=1
 echo "  RELEASE: Building release archives..."
 
 # build a zip and tar.bz2
-bin/python setup.py --quiet sdist --formats=bztar,zip
-bin/python setup.py --quiet bdist_wheel
+bin/python setup.py --quiet release
 
 
 # Restoring initial dev setup and config...
@@ -35,6 +34,7 @@ cp etc/release/setup.cfg.dev setup.cfg
 
 
 function test_scan {
+    # run a test scan for a given archive
     file_extension=$1
     extract_command=$2
     for archive in *.$file_extension;
@@ -62,6 +62,7 @@ function test_scan {
 
 cd dist
 echo "  RELEASE: Testing..."
+test_scan gz "tar -xf"
 test_scan bz2 "tar -xf"
 test_scan zip "unzip -q"
 
@@ -69,4 +70,3 @@ echo "###  RELEASE is ready for publishing ###"
 
 set +e
 set +x
-
