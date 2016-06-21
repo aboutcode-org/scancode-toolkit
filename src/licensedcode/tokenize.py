@@ -40,7 +40,7 @@ from licensedcode import NGRAM_LENGTH
 
 
 """
-Utilities to break texts in lines, tokens (aka. words) and ngrams with
+Utilities to break texts in lines and tokens (aka. words) and ngrams with
 specialized version for queries and rules texts.
 """
 
