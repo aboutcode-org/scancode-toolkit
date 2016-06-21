@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -33,9 +33,13 @@ from itertools import groupby
 import textwrap
 
 from licensedcode import query
-from licensedcode.whoosh_spans.spans import Span
+from licensedcode.spans import Span
 from licensedcode import cache
 from licensedcode import MAX_DIST
+
+"""
+LicenseMatch data structure and matches merging and filtering routines.
+"""
 
 
 TRACE = False
@@ -82,9 +86,9 @@ class LicenseMatch(object):
     account both the query and index Span.
     """
 
-    __slots__ = 'rule', 'qspan', 'ispan', 'hispan', 'line_by_pos' , 'query_run_start', '_type'
+    __slots__ = 'rule', 'qspan', 'ispan', 'hispan', 'line_by_pos' , 'query_run_start', 'matcher'
 
-    def __init__(self, rule, qspan, ispan, hispan=None, line_by_pos=None, query_run_start=0, _type=''):
+    def __init__(self, rule, qspan, ispan, hispan=None, line_by_pos=None, query_run_start=0, matcher=''):
         """
         Create a new match from:
          - rule: matched Rule object
@@ -93,8 +97,8 @@ class LicenseMatch(object):
          - hispan: rule text matched Span for high tokens, start at zero which is the rule start. Always a subset of ispan.
          - line_by_pos: mapping of (query positions -> line numbers). Line numbers start at one.
            Optional: if not provided, the `lines` start and end tuple will be (0, 0) and no line information will be available.
-         - _type: a string indicating which matching procedure this match was created with. Used for debugging and testing only.
-         
+         - matcher: a string indicating which matching procedure this match was created with. Used for debugging and testing only.
+
          Note the relationship between is the qspan and ispan is such that:
          - they always have the exact same number of items but when sorted each value at an index may be different
          - the nth position when sorted is such that the token value is equal
@@ -107,7 +111,7 @@ class LicenseMatch(object):
         self.hispan = hispan
         self.line_by_pos = line_by_pos or {}
         self.query_run_start = query_run_start
-        self._type = _type
+        self.matcher = matcher
 
     def __repr__(self):
 
@@ -131,13 +135,13 @@ class LicenseMatch(object):
             ireg=(self.istart, self.iend),
 
             lines=self.lines,
-            _type=self._type,
+            matcher=self.matcher,
         )
         return ('LicenseMatch<%(rule_id)r, %(rule_licenses)r, '
                'score=%(score)r, qlen=%(qlen)r, ilen=%(ilen)r, hilen=%(hilen)r, rlen=%(rlen)r, '
                'qreg=%(qreg)r, ireg=%(ireg)r, '
                '%(spans)s'
-               'lines=%(lines)r, %(_type)r>') % rep
+               'lines=%(lines)r, %(matcher)r>') % rep
 
     def __eq__(self, other):
         """
@@ -301,15 +305,15 @@ class LicenseMatch(object):
         """
         Merge overlapping, touching or close-by matches in the given iterable of
         matches. Return a new list of merged matches if they can be merged.
-        Matches that cannot be merged are returned as-is. 
-        
+        Matches that cannot be merged are returned as-is.
+
         Only matches for the same rules can be merged.
-        
+
         The overlap and touch is considered using both the qspan and ispan.
-        
+
         The maximal merge is always returned and eventually a single match per
         rule is returned if all matches for that rule can be merged.
-        
+
         For being merged two matches must also be in increasing query and index positions.
         """
         # FIXME: longer and denser matches starting at the same qspan should
@@ -379,10 +383,10 @@ class LicenseMatch(object):
 
             raise TypeError('Cannot combine matches with different rules or licensing: from: %(self)r, to: %(other)r' % locals())
 
-        if other._type not in self._type:
-            new_type = ' '.join([self._type, other._type])
+        if other.matcher not in self.matcher:
+            newmatcher = ' '.join([self.matcher, other.matcher])
         else:
-            new_type = self._type
+            newmatcher = self.matcher
 
         line_by_pos = dict(self.line_by_pos)
         line_by_pos.update(other.line_by_pos)
@@ -393,7 +397,7 @@ class LicenseMatch(object):
                                 hispan=Span(self.hispan | other.hispan),
                                 line_by_pos=line_by_pos,
                                 query_run_start=min(self.query_run_start, other.query_run_start),
-                                _type=new_type)
+                                matcher=newmatcher)
 
         return combined
 
@@ -406,24 +410,25 @@ class LicenseMatch(object):
         self.ispan = combined.ispan
         self.hispan = combined.hispan
         self.line_by_pos = combined.line_by_pos
-        self._type = combined._type
+        self.matcher = combined.matcher
         self.query_run_start = min(self.query_run_start, other.query_run_start)
 
         return self
 
-    def rebase(self, new_query_start, new_query_end, line_by_pos, _type):
+    def rebase(self, new_query_start, new_query_end, line_by_pos, matcher):
         """
         Return a copy of this match with a new qspan and new line_by_pos and
-        updating the _type of match as needed.
+        updating the matcher of match as needed.
         """
+        offset = new_query_start - self.query_run_start
         return LicenseMatch(
             rule=self.rule,
-            qspan=Span(new_query_start, new_query_end),
+            qspan=self.qspan.rebase(offset),
             ispan=Span(self.ispan),
             hispan=Span(self.hispan),
             line_by_pos=line_by_pos,
             query_run_start=new_query_start,
-            _type=' '.join([self._type.replace(cache.MATCH_TYPE, '').strip(), _type]),
+            matcher=' '.join([self.matcher.replace(cache.MATCH_TYPE, '').strip(), matcher]),
         )
 
     def score(self):
@@ -446,17 +451,17 @@ class LicenseMatch(object):
         min_ilen = thresholds.min_len
         hilen = self.hilen()
         ilen = self.ilen()
-        if TRACE_REFINE_SMALL: 
+        if TRACE_REFINE_SMALL:
             logger_debug('LicenseMatch.small(): hilen=%(hilen)r < min_ihigh=%(min_ihigh)r or ilen=%(ilen)r < min_ilen=%(min_ilen)r : thresholds=%(thresholds)r' % locals(),)
         if thresholds.small and self.score() < 50 and (hilen < min_ihigh or ilen < min_ilen):
             return True
-        if hilen < min_ihigh and ilen < min_ilen:
+        if hilen < min_ihigh or ilen < min_ilen:
             return True
 
     def false_positive(self, idx):
         """
         Return a false positive rule id if the LicenseMatch match is a false
-        positive or None otherwise (nb: not False). 
+        positive or None otherwise (nb: not False).
         Lookup the matched tokens sequence against the idx index.
         """
         ilen = self.ilen()
@@ -639,7 +644,7 @@ def refine_matches(matches, idx, min_score=0, max_dist=MAX_DIST):
     if TRACE: logger_debug('   #####refine_matches: SPURIOUS discarded#', len(discarded))
     if TRACE_REFINE: map(logger_debug, discarded)
 
-    matches = LicenseMatch.merge(matches, max_dist=MAX_DIST)
+    matches = LicenseMatch.merge(matches, max_dist=max_dist)
 
     logger_debug('   ##### refine_matches: MERGED_matches#:', len(matches))
     if TRACE_REFINE: map(logger_debug, matches)
@@ -659,7 +664,7 @@ def refine_matches(matches, idx, min_score=0, max_dist=MAX_DIST):
         if TRACE: logger_debug('   ###refine_matches: LOW SCORE discarded #:', len(discarded))
         if TRACE_REFINE: map(logger_debug, discarded)
 
-    matches = LicenseMatch.merge(matches, max_dist=MAX_DIST)
+    matches = LicenseMatch.merge(matches, max_dist=max_dist)
 
     logger_debug('   ##### refine_matches: FINAL MERGED_matches#:', len(matches))
     if TRACE_REFINE: map(logger_debug, matches)
@@ -671,15 +676,15 @@ def get_texts(match, location=None, query_string=None, idx=None, width=120):
     """
     Given a match and a query location of query string return a tuple of wrapped
     texts at `width` for:
-    
+
     - the matched query text as a string.
     - the matched rule text as a string.
 
     Used primarily to recover the matched texts for testing or reporting.
 
-    Unmatched positions are represented as <no-match>, rule gaps as <gap>. 
+    Unmatched positions are represented as <no-match>, rule gaps as <gap>.
     Punctuation is removed , spaces are normalized (new line is replaced by a
-    space), case is preserved. 
+    space), case is preserved.
 
     If `width` is a number superior to zero, the texts are wrapped to width.
     """
@@ -697,7 +702,7 @@ def get_matched_qtext(match, location=None, query_string=None, idx=None, width=1
 
     Unmatched positions are represented as <no-match>.
     Punctuation is removed , spaces are normalized (new line is replaced by a
-    space), case is preserved. 
+    space), case is preserved.
 
     If `width` is a number superior to zero, the texts are wrapped to width.
     """
@@ -716,7 +721,7 @@ def get_match_itext(match, width=120):
     and rule gaps as <gap>.
 
     Punctuation is removed , spaces are normalized (new line is replaced by a
-    space), case is preserved. 
+    space), case is preserved.
 
     If `width` is a number superior to zero, the texts are wrapped to width.
     """
@@ -726,7 +731,7 @@ def get_match_itext(match, width=120):
 def format_text(tokens, width=120, no_match='<no-match>'):
     """
     Return a formatted text wrapped at `width` given an iterable of tokens.
-    None tokens for unmatched positions are replaced with `no_match`. 
+    None tokens for unmatched positions are replaced with `no_match`.
     """
     nomatch = lambda s: s or no_match
     tokens = map(nomatch, tokens)
@@ -746,7 +751,7 @@ def matched_query_tokens_str(match, location=None, query_string=None, idx=None):
     unmatched positions.
 
     Punctuation is removed , spaces are normalized (new line is replaced by a
-    space), case is preserved. 
+    space), case is preserved.
 
     Used primarily to recover the matched texts for testing or reporting.
     """
