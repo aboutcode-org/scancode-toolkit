@@ -38,8 +38,10 @@ from licensedcode.models import Rule
 
 
 """
-Pre-matching filters to find candidates rules that have the highest likeliness
-of matching a query using approximate inverted index-like matching techniques.
+Approximate matching strategies using token sets and multisets.
+
+This is used as a pre-filter to find candidates rules that have the highest
+likeliness of matching a query.
 
 The purpose is to quickly and aggressively filter rules that could not possibly
 yield a valid match. The candidates are ranked and used later for a pair-wise
