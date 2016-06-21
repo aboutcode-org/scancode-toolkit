@@ -83,7 +83,7 @@ class TestMatchingPerf(FileBasedTesting):
         locations = [self.get_test_loc('perf/cc-by-nc-sa-3.0.SPDX')]
         self.profile_match(idx, locations, stats_file)
 
-    #@skip('Use only for local profiling')
+    @skip('Use only for local profiling')
     def test_match_license_performance_profiling_on_full_index_mixed_matching(self):
         # pre-index : we are profiling only the detection, not the indexing
         idx = index.get_index()
