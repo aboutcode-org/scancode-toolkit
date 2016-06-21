@@ -60,7 +60,7 @@ def is_markup(location):
     # do not care for small files
     if T.size < 64:
         return False
-    
+
     if not T.is_text:
         return False
 
@@ -68,7 +68,7 @@ def is_markup(location):
         return True
 
     with open(location, 'rb') as f:
-        start= f.read(1024)
+        start = f.read(1024)
 
     if start.startswith('<'):
         return True
@@ -86,7 +86,7 @@ def is_markup(location):
         return False
 
     # ~ 5 percent of tag <> markers
-    has_tags = sum(counts.values())/len(no_spaces) > 0.05
+    has_tags = sum(counts.values()) / len(no_spaces) > 0.05
 
     # check if we have some significant proportion of tag-like characters
     open_close = counts['>'] / counts['<']
@@ -103,18 +103,20 @@ def demarkup(location):
     """
     from textcode.analysis import unicode_text_lines
 
-    # keep the opening tag name of certain tags that contains these strings 
-    kept_tags =('lic', 'copy', 'auth', 'contr', 'leg', '@', '<s>','</s>')
-    
+    # keep the opening tag name of certain tags that contains these strings
+    # note: <s> are from debian copyright files
+    kept_tags = ('lic', 'copy', 'auth', 'contr', 'leg', '@', '<s>', '</s>')
+
     # find start and closing tags or the first white space whichever comes first
     # or entities
     # this regex is such that ''.join(tags.split(a))==a
-    tags_ents = re.compile(r'(</?[^\s></]+(?:>|\s)?|&[^\s&]+;)').split
-    
+
+    tags_ents = re.compile(r'(</?[^\s></]+(?:>|\s)?|&[^\s&]+;|href)', re.IGNORECASE).split
+
     for line in unicode_text_lines(location):
         cleaned = []
         for token in tags_ents(line):
-            if token.startswith(('<', '&',)) and not any(k in token.lower() for k in kept_tags):
+            if token.lower().startswith(('<', '&', 'href')) and not any(k in token.lower() for k in kept_tags):
                 continue
             else:
                 cleaned.append(token)
