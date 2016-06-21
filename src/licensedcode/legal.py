@@ -27,6 +27,11 @@ from __future__ import print_function, absolute_import
 from commoncode import fileutils
 
 
+"""
+Recognition of typical "legal" files such as "LICENSE", "COPYING", etc. 
+"""
+
+
 special_names = ('COPYING', 'COPYRIGHT', 'NOTICE', 'LICENSE', 'LICENCE',
                  'LEGAL', 'EULA', 'AGREEMENT', 'ABOUT', 'COPYLEFT', 'LICENSING')
 
