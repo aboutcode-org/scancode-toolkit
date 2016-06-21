@@ -91,8 +91,8 @@ def text_lines(location, demarkup=False):
         return unicode_text_lines(location)
 
     # DO NOT introspect media, archives and compressed files
-    if not T.contains_text:
-        return iter([])
+#    if not T.contains_text:
+#        return iter([])
 
     if T.is_binary:
         # fall back to binary
