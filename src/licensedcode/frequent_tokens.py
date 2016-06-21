@@ -29,12 +29,13 @@ from __future__ import absolute_import, print_function
 # borrowed (and heavily modified) from http://norvig.com/ngrams/count_1w100k.txt
 # as provided by Peter Norvig. Note that is mostly for English-only. This list
 # is used to compare this ranking with the license tokens rankings and build an
-# initial list of very common tokens We excluded several words from the set
-# because they are common legal words.
+# initial list of very common tokens. We excluded several words from the set
+# because they are common legal words and added several new words which are
+# common in our set and not in the global set.
 
 
 def global_tokens_by_ranks():
-    return frequent_names() + u'''
+    return frequent_names_and_misc() + u'''
 the
 of
 and
@@ -9245,9 +9246,10 @@ colonel
 '''.lower().split()
 
 
-def frequent_names():
+def frequent_names_and_misc():
     """
-    Frequent names that are consider common and not a license indicator.
+    Frequent names and other that are considered common and not a license
+    indicator.
     """
     return u'''
 MX4J
@@ -9341,7 +9343,7 @@ John Maddock
 Howard Hinnant
 Apache
 NERO AG
-RUPPURRER 
+RUPPURRER
 STRASSE
 KARLSRUHE
 GERMANY
@@ -9381,7 +9383,7 @@ OpenOffice
 seagull
 details
 detail
-extensions back 
+extensions back
 define
 project
 projects
@@ -9421,7 +9423,7 @@ Netscapes
 SSL
 Center for Automated Learning and Discovery
 Sun Microsystems Inc
-Network 
+Network
 Circle
 Santa Clara
 California
@@ -9437,7 +9439,7 @@ David Megginson
 Moby Lexical Tools
 title
 binary
-inria 
+inria
 fr
 Institut National de Recherche en Informatique et en Automatique
 w3
@@ -9463,9 +9465,9 @@ login
 created
 extension
 javassist
-Copyright 
-c 
-year 
+Copyright
+c
+year
 COPYRIGHT
 Tim Hudson tjh
 dtd
@@ -9481,7 +9483,7 @@ Foundation Inc
 Hewlett-Packard Company Palo Alto Ca
 Digital Equipment Corporation, Maynard, Mass.
 JA-SIG jasig collaborative
-yan 
+yan
 Christopher
 Andrew
 Adam
@@ -9493,26 +9495,26 @@ UNINSTALL
 VER
 National Center for Supercomputing Applications
 University of Illinois
- Urbana Champaign
- FFmpeg
- mp
- libavcodec
- W3C®
- Corporation National Research Initiatives CNRI
+Urbana Champaign
+FFmpeg
+mp
+libavcodec
+W3C®
+Corporation National Research Initiatives CNRI
 Bucknell
 property
 Aleksei Valikov
 HP
 Visigoth Software Society
 jrdf
-World Wide Web Consortium Massachusetts Institute of Technology 
+World Wide Web Consortium Massachusetts Institute of Technology
 Institut National de Recherche en Informatique et en Automatique Keio University All Rights Reserved http www w3 org Consortium
 mortbay
 STLport
 Silicon Graphics Computer Systems
 Moscow Center for SPARC Technology
 Boris Fomitchev
-eay mincom oz au 
+eay mincom oz au
 require
 Coolite
 datejs
@@ -9549,15 +9551,15 @@ AES encryption
 PostgreSQL Global
 The Regents of the University of California
 University of
-  California Sun Microsystems Scriptics Corporation
- ActiveState
- Ihnen wird
- ohne
+California Sun Microsystems Scriptics Corporation
+ActiveState
+Ihnen wird
+ohne
 flashblock mozdev
 NEC SYSTEMS LABORATORY
 METAWEB TECHNOLOGIES
 bzip2
-associated 
+associated
 libbzip2
 specified
 src sys netgraph ng
@@ -9569,7 +9571,7 @@ codec
 material
 can always find the
 doesn t exist
-different name 
+different name
 complete
 rest PostgreSQL
 holds
@@ -9613,16 +9615,16 @@ condition
 Initial Writer
 following files contain material copyrighted  SUN
 preview
- Android SDK
- RSA Data Security Inc
- DjVuLibre
- lizardtech
- DjVu
- NCursesException
- cygwin
- configure
- distributed
- Julian Seward Cambridge UK jseward acm org
+Android SDK
+RSA Data Security Inc
+DjVuLibre
+lizardtech
+DjVu
+NCursesException
+cygwin
+configure
+distributed
+Julian Seward Cambridge UK jseward acm org
 Internet Systems Consortium
 Charter Street
 Redwood City  CA
@@ -9636,27 +9638,52 @@ audacity
 noise profiling and noise reduction effects
 fft
 Linus Torvalds
- maintainer
- md5
- manifest
- TAR GZ 
- Lance Norskog Sundry
- James W Newkirk Michael C Two Alexei A
-  Vorontsov Charlie Poole Philip Craig
-  19yy
-  20yy
-  mm dd yyyy
-  yy
-  yyyymmdd
-  ddmmyy
-  ddmmyyyy
-  mmddyy
-  mmddyyyy
-  hhmmss
-  hh mm ss
-  ©
+maintainer
+md5
+manifest
+TAR GZ
+Lance Norskog Sundry
+James W Newkirk Michael C Two Alexei A
+Vorontsov Charlie Poole Philip Craig
+19yy
+20yy
+mm dd yyyy
+yy
+yyyymmdd
+ddmmyy
+ddmmyyyy
+mmddyy
+mmddyyyy
+hhmmss
+hpp
+cpp
+
+hh mm ss
+©
 Sam Leffler Silicon Graphics
- Whistle Communications
- dll 
- v1
+Whistle Communications
+dll
+v1
+marj4j
+Rachana
+Praveen
+en us dnbiz2k2 html bpel1
+ws bpel
+htmlagilitypack codeplex
+Poul Henning Kamp
+For the expat xml parser component
+Thai Open Source Software Center Ltd
+Clark Cooper
+SoX
+noise profiling and noise reduction effects
+CodeFactory
+Wasabi
+bob mcwhirter bob werken com and James Strachan jstrachan
+apache org
+more information on the
+SAXPath Project please
+Paragraphs Subparagraphs
+CompanyName
+Visual C++ V5 or V6
+DINKUMWARE LTD AND P J  PLAUGER
 '''.lower().split()
