@@ -46,10 +46,10 @@ from scancode.format import HtmlAppAssetCopyWarning
 from scancode.format import HtmlAppAssetCopyError
 
 from scancode.api import get_copyrights
-from scancode.api import get_licenses
-from scancode.api import get_file_infos
-from scancode.api import get_package_infos
 from scancode.api import get_emails
+from scancode.api import get_file_infos
+from scancode.api import get_licenses
+from scancode.api import get_package_infos
 from scancode.api import get_urls
 
 
@@ -221,7 +221,7 @@ formats = ['json', 'html', 'html-app']
 @click.option('--email', is_flag=True, default=False, help='Scan <input> for emails.')
 @click.option('--url', is_flag=True, default=False, help='Scan <input> for urls.')
 @click.option('-i', '--info', is_flag=True, default=False, help='Scan <input> for files information.')
-@click.option('--license-lowest-score', is_flag=False, default=0, type=int, show_default=True, help='Matches with scores lower than this lowest score are not returned. A number between 0 and 100.')
+@click.option('--license-score', is_flag=False, default=0, type=int, show_default=True, help='Matches with scores lower than this score are not returned. A number between 0 and 100.')
 
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
               help='Set <output_file> format <style> to one of the standard formats: %s or the path to a custom template' % ' or '.join(formats),)
