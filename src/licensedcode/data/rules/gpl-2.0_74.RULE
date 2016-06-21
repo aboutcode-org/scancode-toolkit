@@ -1,0 +1,6 @@
+If you distribute GPL-licensed software the license requires that you also
+distribute the source code to that GPL-licensed software.  If you distribute
+BusyBox without making the source code to the version you distribute available,
+you violate the license terms, and thus infringe on the copyrights of BusyBox.
+This requirement applies whether or not you modified BusyBox; either way the
+license terms still apply to you.

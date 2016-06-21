@@ -1,0 +1,5 @@
+Even though BusyBox code, as a whole, can only be used
+under GPL version 2, some individual files may have more permissive licenses:
+"GPL version 2 or later" - meaning that you can also reuse the code from this source file
+for a project which is distributed under GPLv3, and "Public domain" -
+the code in these files have no licensing restrictions whatsoever

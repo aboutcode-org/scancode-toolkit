@@ -1,0 +1,40 @@
+Verbatim copy of the LICENSE :
+
+********************************************************************************
+Mon Nov 30 22:41:58 1998
+
+This files attempts to clarify the licensing situation for the SANE
+distribution.  In case of doubt, the copyright information contained
+in each file overrides what is said here.
+
+SANE consists of three parts each of which has its own licensing
+terms:
+
+  * The frontend programs.
+
+    These programs are generally protected by the GNU General Public
+    License.  (See file COPYING.)
+
+  * The backend libraries.
+
+    Backend libraries are protected by the GNU General Public License (see
+    file COPYING), but as an exception, it is permissible to link against
+    such a library without affecting the licensing status of the program
+    that uses the libraries.  For details, see the copyright notice at the
+    head of the backend files (e.g., backend/dll.c).
+
+    Note that some of the backends have additional licensing constraints.
+    E.g., the DC210 backend uses JPG code that is licensed as described
+    in backend/djpeg.README.gz.
+
+  * The SANE API and network protocol as put forth in the standard document.
+
+    The standard is considered to be in the public domain.  Anyone is free
+    to implement SANE interface conforming applications or libraries in
+    any way he or she sees fit.
+
+********************************************************************************
+
+On Debian systems, the complete text of the GNU General Public License (the
+"COPYING" file referred to above) can be found in the
+/usr/share/common-licenses/GPL file.

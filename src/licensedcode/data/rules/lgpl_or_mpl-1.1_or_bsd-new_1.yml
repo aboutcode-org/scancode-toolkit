@@ -6,4 +6,4 @@ license_choice: yes
 notes: >
     This is found in wireless tools. Because of the code dates (2002) 
     the MPL license that applies should be the MPL 1.1. Unlike the GPL, the
-    MPL does not allow to select any version when no version is stated"
+    MPL does not allow to select any version when no version is stated

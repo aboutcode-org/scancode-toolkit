@@ -1,0 +1,56 @@
+The Computer Modern fonts by Donald E. Knuth have a special
+    license; essentially, they are public domain, but no modified
+    version may use the same name, and the names "TeX" and "MetaFont"
+    for the resulting programs, unless they pass the TRIP and TRAP
+    tests.  The complete license statement can be found in a text at
+    http://www.tug.org/TUGboat/Articles/tb11-4/tb30knut.pdf, and the
+    relevant parts are:
+
+   ,----
+   | My work on developing TEX, METAFONT, and Computer
+   | Modern has come to an end. I willmake no further
+   | changes except to correct extremely serious bugs.
+   | 
+   | I have put these systems into the public domain so that
+   | people everywhere can use the ideas freely if they wish.
+   | 
+   | [...]
+   | As stated on the copyright pages of Volumes B, D, and
+   | E, anybody can make use of my programs in whatever
+   | way they wish, as long as they do not use the names
+   | TEX, METAFONT, or Computer Modern. In particular,
+   | any person or group who wants to produce a program
+   | superior to mine is free to do so. However, nobody is
+   | allowed to call a system TEX or METAFONT unless that
+   | system conforms 100% to my own programs, as I have
+   | specified in the manuals for the TRIP and TRAP tests.
+   | And nobody is allowed to use the names of the Computer
+   | Modern fonts in Volume E for any fonts that do not
+   | produce identical tfm files. This prohibition applies to
+   | all people or machines, whether appointed by TUG or
+   | by any other organization. I do not intend to delegate the
+   | responsibility formaintainance of TEX, METAFONT, or
+   | Computer Modern to anybody else, ever.
+   `----
+
+   For those who believe more in texts written on paper, we reproduce
+   here the copyright page of Volume $of "Computers and Typesetting"
+   by Donald E. Knuth, which present the commented code for the 
+   Computer Modern fonts:
+
+   ,----
+   | The quotations on pages 7 and 351 have been excerpted [...].
+   | 
+   | METAFONT is a trademark of th Addison Wesley Publishing Company.
+   | 
+   | TeX is a trademark of the American Mathematical Society.
+   | 
+   | The programs for computer Modern are in the public domain, and readers
+   | may freely generate and hand-tune their own fonts using the algorithms
+   | of this book.  However, use of the names is restricted:  Any fonts
+   | whose names cmr10 or cmbx12 or ... are identical to the standard font
+   | names of this book should be fully compatible with the fonts defined
+   | here; i.e., fonts with the same names are supposed to have precisely
+   | the same character coding schemes and precisely the same font metric
+   | files. 
+   `----
