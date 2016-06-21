@@ -27,12 +27,12 @@ from __future__ import print_function, absolute_import
 from array import array
 from hashlib import md5
 
-from licensedcode.whoosh_spans.spans import Span
+from licensedcode.spans import Span
 from licensedcode.match import LicenseMatch
 
 
 """
-Matching strategy using hashes for a whole text chunk (whole rule or subset).
+Matching strategy using hashes to match a whole text chunk at once.
 """
 
 # Set to True to enable debug tracing
@@ -90,6 +90,6 @@ def match_hash(idx, query_run):
         qspan = Span(query_run.start, query_run.end)
         ispan = Span(range(0, rule.length))
         hispan = Span(p for p in ispan if itokens[p] >= len_junk)
-        match = LicenseMatch(rule, qspan, ispan, hispan=hispan, line_by_pos=query_run.line_by_pos, query_run_start=query_run.start, _type=MATCH_TYPE)
+        match = LicenseMatch(rule, qspan, ispan, hispan=hispan, line_by_pos=query_run.line_by_pos, query_run_start=query_run.start, matcher=MATCH_TYPE)
         matches.append(match)
     return matches
