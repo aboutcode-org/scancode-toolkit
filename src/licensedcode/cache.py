@@ -24,7 +24,7 @@
 
 from __future__ import absolute_import, print_function
 
-import cPickle
+from array import array
 from hashlib import md5
 from os.path import exists
 from os.path import getmtime
@@ -34,14 +34,11 @@ from os.path import join
 import yg.lockfile
 
 from commoncode.fileutils import create_dir
-from commoncode.fileutils import delete
 from commoncode.fileutils import file_iter
 
 from licensedcode import src_dir
 from licensedcode import license_index_cache_dir
 from licensedcode import license_matches_cache_dir
-from operator import itemgetter
-from array import array
 
 
 """
@@ -65,7 +62,7 @@ def tree_checksum(base_dir=src_dir):
     """
     Return a checksum computed from a file tree using the file paths, size and
     last modified time stamps.
-    
+
     The purpose is to detect is there has been any modification to source code,
     compiled code or licenses or rule files and use this as a proxyx to verify
     the cache consistency.
@@ -132,8 +129,8 @@ the cached matches right away, we can avoid doing the same matching over and
 over.
 
 The approach is to use the hash of a sequence of token ids as a cache key either
-for a whole query or a query run and to ignore the actual start position. 
-As values we cache a list of LicenseMatch objects for this sequence of tokens. 
+for a whole query or a query run and to ignore the actual start position.
+As values we cache a list of LicenseMatch objects for this sequence of tokens.
 
 When we have a cache hit, the returned cached LicenseMatch are adjusted for
 their query and line positions. This way we can have cache hits for the same
@@ -146,7 +143,6 @@ compute initially than an actual matches.
 """
 
 MATCH_TYPE = 'cached'
-match_lock_file = join(license_index_cache_dir, 'cache_lockfile')
 
 
 class LicenseMatchCache(object):
