@@ -31,14 +31,15 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+from collections import Set
 from itertools import count
 from itertools import groupby
-from types import GeneratorType
 
 from intbitset import intbitset  # @UnresolvedImport
 
 
-class Span(intbitset):
+
+class Span(Set):
     """
     Represent a range of tokens positions as a set of integers.
     A Span is hashable and not meant to be modified once created.
@@ -46,7 +47,7 @@ class Span(intbitset):
 
     Originally derived and heavily modified from Whoosh Span.
     """
-    def __new__(cls, *args):
+    def __init__(self, *args):
         """
         Create a new Span from a start and end ints or an iterable of ints. 
 
@@ -98,38 +99,53 @@ class Span(intbitset):
         len_args = len(args)
 
         if len_args == 0:
-            return super(Span, cls).__new__(cls)
+            self._set = intbitset()
 
         elif len_args == 1:
             # args0 is a single int or an iterable of ints
             if isinstance(args[0], (int, long)):
-                return super(Span, cls).__new__(cls, args)
-            elif isinstance(args[0], GeneratorType):
-                return super(Span, cls).__new__(cls, list(args))
+                self._set = intbitset(args)
             else:
-                return super(Span, cls).__new__(cls, args[0])
+                # some sequence or iterable
+                self._set = intbitset(list(args[0]))
 
         elif len_args == 2:
             # args0 and args1 describe a start and end closed range
-            return super(Span, cls).__new__(cls, range(args[0], args[1] + 1))
+            self._set = intbitset(range(args[0], args[1] + 1))
 
         else:
             # args0 is a single int or args is an iterable of ints
             # args is an iterable of ints
-            return super(Span, cls).__new__(cls, args)
+            self._set = intbitset(list(args))
+
+    @classmethod
+    def _from_iterable(cls, it):
+        return cls(list(it))
+
+    def __len__(self):
+        return len(self._set)
+
+    def __iter__(self):
+        return iter(self._set)
 
     def __hash__(self):
-        return hash(frozenset(self))
-
-    def __and__(self, *args):
-        return Span(list(self.intersection(*args)))
-
-    def __or__(self, *args):
-        return Span(self.union(*args))
+        return hash(tuple(self._set))
 
     def __eq__(self, other):
-        return frozenset(self) == frozenset(other)
+        return frozenset(self._set) == frozenset(other)
 
+    def __and__(self, *args):
+        return Span(self._set.intersection(*args))
+
+    def __or__(self, *args):
+        return Span(self._set.union(*args))
+
+    def union(self, *args):
+        return self.__or__(*args)
+
+    def difference(self, other):
+        return self._set.difference(other)
+    
     def __repr__(self):
         """
         Return a brief representation of this span by only listing contiguous
@@ -174,25 +190,34 @@ class Span(intbitset):
         False
         """
         if isinstance(other, (set, frozenset)):
-            return self.issuperset(Span(other))
+            return self._set.issuperset(intbitset(other))
 
-        if isinstance(other, (Span, intbitset)):
-            return self.issuperset(other)
+        if isinstance(other, intbitset):
+            return self._set.issuperset(other)
+
+        if isinstance(other, Span):
+            return self._set.issuperset(other._set)
 
         if isinstance(other, (int, long)):
-            return super(Span, self).__contains__(other)
+            return self._set.__contains__(other)
+
+    def issubset(self, other):
+        return self._set.issubset(other._set)
+
+    def issuperset(self, other):
+        return self._set.issuperset(other._set)
 
     @property
     def start(self):
-        if not self:
+        if not self._set:
             raise TypeError('Empty Span has no start.')
-        return min(self)
+        return self._set[0]
 
     @property
     def end(self):
-        if not self:
+        if not self._set:
             raise TypeError('Empty Span has no end.')
-        return max(self)
+        return self._set[-1]
 
     @staticmethod
     def sort(spans):
@@ -247,7 +272,7 @@ class Span(intbitset):
         >>> Span([0]).magnitude()
         1
         """
-        if not self:
+        if not self._set:
             return 0
         return self.end - self.start + 1
 
@@ -268,9 +293,8 @@ class Span(intbitset):
         >>> Span().density()
         0
         """
-        if not self:
+        if not self._set:
             return 0
-
         return len(self) / self.magnitude()
 
     def overlap(self, other):
@@ -298,9 +322,9 @@ class Span(intbitset):
         Return a resemblance coefficient as a float between 0 and 1.
         0 means the spans are completely different and 1 identical. 
         """
-        if self.isdisjoint(other):
+        if self._set.isdisjoint(other._set):
             return 0
-        if self == other:
+        if self._set == other._set:
             return 1
         resemblance = self.overlap(other) / len(self | other)
         return resemblance
@@ -313,9 +337,9 @@ class Span(intbitset):
         1 means the other span is entirely contained in this span.
         0 means that the other span is not contained at all this span. 
         """
-        if self.isdisjoint(other):
+        if self._set.isdisjoint(other._set):
             return 0
-        if self == other:
+        if self._set == other._set:
             return 1
         containment = self.overlap(other) / len(other)
         return containment
@@ -408,7 +432,7 @@ class Span(intbitset):
         Span(6)|Span(9, 10)|Span(13, 14)
         """
         assert self.start + offset >= 0
-        return Span([i + offset for i in self])
+        return Span([i + offset for i in self._set])
 
     @staticmethod
     def from_ints(ints):
@@ -424,8 +448,7 @@ class Span(intbitset):
         [Span(0), Span(2, 3), Span(5, 11), Span(13)]
         """
         ints = sorted(set(ints))
-        groups = list(list(group) for _, group in groupby(ints, lambda group, c=count(): next(c) - group))
-        #print(groups)
+        groups = (group for _, group in groupby(ints, lambda group, c=count(): next(c) - group))
         return map(Span, groups)
 
     def subspans(self):
@@ -448,7 +471,7 @@ class Span(intbitset):
         >>> span.subspans()
         [Span(12), Span(15, 17), Span(24), Span(35), Span(58), Span(63, 64)]
         """
-        return Span.from_ints(list(self))
+        return Span.from_ints(self)
 
     def gaps(self):
         """
@@ -552,7 +575,7 @@ class Span(intbitset):
                 if there.start > here.end + 1 + bridge:
                     break
                 if here.touch(there) or here.overlap(there) or here.distance_to(there) <= bridge + 1:
-                    here = Span(here.union(there))
+                    here = here.union(there)
                     spans[i] = here
                     del spans[j]
                 else:
