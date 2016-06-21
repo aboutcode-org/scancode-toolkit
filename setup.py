@@ -74,6 +74,7 @@ setup(
         'zc.lockfile >= 1.0.0, < 2.0.0',
         'yg.lockfile >= 2.0.0, < 3.0.0',
         'diskcache >= 1.6.0, < 1.7.0',
+        'initbitset > 2.2.1, < 2.2.3',
 
         # textcode
         'Beautifulsoup >= 3.2.0, <4.0.0',
