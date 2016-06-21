@@ -51,9 +51,8 @@ from licensedcode.tokenize import query_tokenizer
 
 
 """
-Objects representing reference licenses and license detection rules persisted as
-a combo of a YAML 'data' file and one or more text files containing license or
-notice texts.
+Reference License and license Rule structures persisted as a combo of a YAML
+data file and one or more text files containing license or notice texts.
 """
 
 # Set to True to print detailed representations of objects when tracing
@@ -499,7 +498,7 @@ def get_rules():
     Raise a MissingLicenses exceptions if a rule references unknown license
     keys.
     """
-    rls = list(chain(_rules_from_licenses(), _rules_proper()))
+    rls = list(chain(build_rules_from_licenses(), load_rules()))
     check_rules_integrity(rls)
     return rls
 
@@ -527,7 +526,7 @@ def check_rules_integrity(rules):
         raise MissingLicenses(msg)
 
 
-def _rules_from_licenses(licenses=None):
+def build_rules_from_licenses(licenses=None):
     """
     Return an iterable of rules built from each license text, notice and spdx
     text from a `licenses` iterable of license objects. Use the reference list
@@ -550,7 +549,7 @@ def _rules_from_licenses(licenses=None):
             yield Rule(text_file=sfile, licenses=[license_key])
 
 
-def _rules_proper(rule_dir=rules_data_dir):
+def load_rules(rule_dir=rules_data_dir):
     """
     Return an iterable of rules loaded from rule files.
     """
@@ -577,8 +576,6 @@ def _rules_proper(rule_dir=rules_data_dir):
 Thresholds = namedtuple('Thresholds', 
                         ['high_len', 'low_len', 'length', 
                          'small', 'min_high', 'min_len', 'max_gap_skip'])
-
-_TEST_ID_COUNTER = 0
 
 class Rule(object):
     """
@@ -607,9 +604,8 @@ class Rule(object):
         self.rid = None
 
         if not text_file:
-            global _TEST_ID_COUNTER
-            self.identifier = '_tst_' + str(_TEST_ID_COUNTER)
-            _TEST_ID_COUNTER += 1
+            assert _text
+            self.identifier = '_tst_' + str(len(_text))
         else:
             self.identifier = file_name(text_file)
 
