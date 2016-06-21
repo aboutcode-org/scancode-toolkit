@@ -1,6 +1,6 @@
 about_resource: 
     - intbitset-2.2.2.dev20160104-cp27-none-linux_x86_64.whl
-    - intbitset-8026211.tar.gz
+    - intbitset-2.2.2.dev20160104.tar.gz
 name: intbitset
 version: 2.2.2.dev20160104.8026211
 download_url: https://github.com/inveniosoftware/intbitset/archive/8026211c8034138c90449e54c52d6ec2a40bf032.tar.gz
