@@ -27,31 +27,32 @@ from __future__ import print_function, absolute_import
 
 from collections import defaultdict
 
+from intbitset import intbitset
+
 import typecode
 
-from licensedcode import NGRAM_LENGTH
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
-from licensedcode.tokenize import query_multigrams
 
 
 """
-Build license queries from scanned files. Queries are further broken down in
-query runs that are "slices" of query. Several heuristics are used to break down
-the query runs and this process is quite central to overall speed and accuracy
-of license detection: since detection is done query run by query run, and
-sequence alignment is performed on the best ranking candidates from a
-probalistic ranking, the defintion of what chunkc should be matched matters a
-lot. If too small, it will favour smaller rules and increased the processing
-time as more searches need to be done. Each search may be stuck on a suboptimal
-set of candidate rules eventually too small to make sense when matches are
-merged. If too big, it decreases the sensitivity to more specific smaller rules
-and would mistakenly report licenses that may contain the text of other smaller
-licenses. But it does speed up detection as fewer searches nee to be done. So
-rather than breaking the queries using a single universal way for any query, we
-compute crude statistics on the query text "structure" using the counts of
-lines, empty lines, lines with unknown tokens, lines with junk tokens and decide
-how to break a query based on these.
+Build license queries from scanned files to feed the detection pipeline.
+
+Queries are further broken down in query runs that are "slices" of query.
+Several heuristics are used to break down the query runs and this process is
+quite central to overall speed and accuracy of license detection: since
+detection is done query run by query run, and sequence alignment is performed on
+the best ranking candidates from a probalistic ranking, the defintion of what
+chunkc should be matched matters a lot. If too small, it will favour smaller
+rules and increased the processing time as more searches need to be done. Each
+search may be stuck on a suboptimal set of candidate rules eventually too small
+to make sense when matches are merged. If too big, it decreases the sensitivity
+to more specific smaller rules and would mistakenly report licenses that may
+contain the text of other smaller licenses. But it does speed up detection as
+fewer searches nee to be done. So rather than breaking the queries using a
+single universal way for any query, we compute crude statistics on the query
+text "structure" using the counts of lines, empty lines, lines with unknown
+tokens, lines with junk tokens and decide how to break a query based on these.
 
 For instance, some HTML or code file may be very sparse and their source have a
 lot of empty lines. However, this is is most often due to the text having been
@@ -93,9 +94,9 @@ def build_query(location=None, query_string=None, idx=None):
         qtype = typecode.get_type(location)
         if qtype.is_binary:
             # use a high number of lines per run for binaries, avoiding too many runs
-            qry = Query(location=location, idx=idx, line_threshold=40)
+            qry = Query(location=location, idx=idx, line_threshold=100)
         else:
-            qry = Query(location=location, idx=idx, line_threshold=40)
+            qry = Query(location=location, idx=idx, line_threshold=100)
     else:
         qry = Query(query_string=query_string, idx=idx)
 
@@ -138,40 +139,37 @@ class Query(object):
         # for unknowns at the start, the pos is -1
         self.unknowns_by_pos = defaultdict(int)
 
-        self.low_matchables = set()
-        self.high_matchables = set()
-
         self.query_runs = []
         if _test_mode:
             return
 
         self.tokenize(self.tokens_by_line(tokenizer=tokenizer), line_threshold=line_threshold)
 
+        # sets of integers initialized after query tokenization
+        len_junk = idx.len_junk
+        self.high_matchables = intbitset([p for p, t in enumerate(self.tokens) if t >= len_junk])
+        self.low_matchables = intbitset([p for p, t in enumerate(self.tokens) if t < len_junk])
+
     def whole_query_run(self):
         """
         Return a query run built from the whole query.
         """
-        wqr = QueryRun(query=self, start=0, end=len(self.tokens) - 1)
-        self.low_matchables = set(pos for pos, tid in wqr.tokens_with_pos() if tid < self.idx.len_junk)
-        self.high_matchables = set(pos for pos, tid in wqr.tokens_with_pos() if tid >= self.idx.len_junk)
-        return wqr
+        return QueryRun(query=self, start=0, end=len(self.tokens) - 1)
 
     def subtract(self, qspan):
         """
         Subtract the qspan matched positions from the parent query matchable
         positions.
         """
-        if not qspan:
-            return
-        self.high_matchables.difference_update(qspan)
-        self.low_matchables.difference_update(qspan)
+        if qspan:
+            self.high_matchables.difference_update(qspan)
+            self.low_matchables.difference_update(qspan)
 
     @property
     def matchables(self):
         """
         Return a set of every matchable token ids positions for the whole query.
         """
-        # TODO: use faster intset implementation
         return self.low_matchables | self.high_matchables
 
     def tokens_with_unknowns(self):
@@ -248,14 +246,14 @@ class Query(object):
         # token positions start at zero
         pos = 0
 
-        self_tokens_append = self.tokens.append
-        self_query_runs_append = self.query_runs.append
+        tokens_append = self.tokens.append
+        query_runs_append = self.query_runs.append
 
         for tokens in tokens_by_line:
             # have we reached a run break point?
             if (len(query_run) > 0 and empty_lines >= line_threshold):
                 # start new query run
-                self_query_runs_append(query_run)
+                query_runs_append(query_run)
                 query_run = QueryRun(query=self, start=pos)
                 empty_lines = 0
 
@@ -269,10 +267,9 @@ class Query(object):
             line_has_known_tokens = False
             line_has_good_tokens = False
 
-
             for token_id in tokens:
                 if token_id is not None:
-                    self_tokens_append(token_id)
+                    tokens_append(token_id)
                     line_has_known_tokens = True
                     if token_id >= len_junk:
                         line_has_good_tokens = True
@@ -295,13 +292,13 @@ class Query(object):
 
 class QueryRun(object):
     """
-    A query run is a slice of query tokens identified by a start and end
-    positions, inclusive. It is like a view  or a slice on the whole query
-    tokens sequence.
+    A query run is a slice of whole query tokens identified by a start and end
+    positions inclusive.
     """
     def __init__(self, query, start, end=None):
         """
-        Initialize a query run starting at start for a parent query.
+        Initialize a query run starting at start and ending at end a parent
+        query tokens sequence.
         """
         self.query = query
 
@@ -309,10 +306,12 @@ class QueryRun(object):
         self.start = start
         self.end = end
 
-        self.line_by_pos = query.line_by_pos
-        self.unknowns_by_pos = query.unknowns_by_pos
-
         self.len_junk = self.query.idx.len_junk
+
+        # lines by positions, used for final reporting
+        self.line_by_pos = query.line_by_pos
+        # positions with unknown tokens, used for final reporting
+        self.unknowns_by_pos = query.unknowns_by_pos
 
     def __len__(self):
         if self.end is None:
@@ -355,11 +354,11 @@ class QueryRun(object):
 
     @property
     def low_matchables(self):
-        return set(pos for pos in self.query.low_matchables if self.start <= pos <= self.end)
+        return intbitset([pos for pos in self.query.low_matchables if self.start <= pos <= self.end])
 
     @property
     def high_matchables(self):
-        return set(pos for pos in self.query.high_matchables if self.start <= pos <= self.end)
+        return intbitset([pos for pos in self.query.high_matchables if self.start <= pos <= self.end])
 
     def is_matchable(self):
         """
@@ -379,13 +378,11 @@ class QueryRun(object):
         Return an iterable of matchable tokens tids for this query run either
         only high or every tokens ids.
         """
-        high_matchables = self.high_matchables
-        if not high_matchables:
+        if not self.high_matchables:
             return []
+        matchables = self.matchables
         if only_high:
-            matchables = high_matchables
-        else:
-            matchables = high_matchables | self.low_matchables
+            matchables = self.high_matchables
         return (tid if pos in matchables else -1 for pos, tid in self.tokens_with_pos())
 
     def subtract(self, qspan):
@@ -394,12 +391,6 @@ class QueryRun(object):
         positions.
         """
         self.query.subtract(qspan)
-
-    def multigrams(self, ngram_length=NGRAM_LENGTH):
-        """
-        Return an iterable of tuple(start, len, ngram) for this query run tokens.
-        """
-        return query_multigrams(self.tokens, ngram_length, self.len_junk, self.start)
 
     def _as_dict(self, brief=False):
         """
@@ -427,52 +418,3 @@ class QueryRun(object):
         if not brief:
             dct['high_matchables'] = self.high_matchables
         return dct
-
-
-# _starters = None
-#
-# def copyright_starters(idx):
-#     """
-#     A tuple of starters and enders breaks for a line.
-#     """
-#     global _starters
-#     if not _starters:
-#         dic = idx.dictionary
-#         starts = (
-#             ('license'), ('licence'),
-#             ('licenses'), ('licences'),
-#             ('copyrights'), ('copyright', 'c'), #(u'copyright', u'©'), (u'©'),
-#             ('copyrighted'), ('portions', 'copyright'), ('portions','copyright'),
-#             ('copyrights'), ('copyrights','c'), #(u'copyrights', u'©'),
-#         )
-#
-#         ends = ('all','rights','reserved'), ('all','right','reserved')
-#
-#         # middles = u'©', 'c', 'by'# and digits
-#
-#         startsdd = defaultdict(list)
-#         for start in starts:
-#             e = tuple(dic[t] for t in start)
-#             startsdd[len(e)].append(e)
-#
-#         endsdd = defaultdict(list)
-#         for end in ends:
-#             e = tuple(dic[t] for t in end)
-#             endsdd[len(e)].append(e)
-#
-#         _starters = startsdd, max(startsdd), endsdd, max(endsdd),
-#     return _starters
-#
-#
-# def index_rules_starters(rids_by_starter, rid, tokens, starter_length=NGRAM_LENGTH):
-#     """
-#     Return a mapping of rule starters tuple -> [rids, ...] given rule token ids
-#     by rid. The tuple contain `starter_length` tokens from the begning of each
-#     rule. If the rule is smaller than it is not indexed. This is used for query
-#     run breaking.
-#     """
-#     rids_by_starter = defaultdict(list)
-#     if len(tokens) < starter_length:
-#         return
-#     rids_by_starter[tuple(tokens[:starter_length])].append(rid)
-
