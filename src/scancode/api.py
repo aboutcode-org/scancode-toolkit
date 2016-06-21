@@ -103,7 +103,7 @@ def get_urls(location):
 DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/license_library/Demo/{}/'
 
 
-def get_licenses(location, min_score=100):
+def get_licenses(location, min_score=0):
     """
     Yield an iterable of dictionaries of license data detected in the file at
     location for each detected license.
@@ -114,13 +114,14 @@ def get_licenses(location, min_score=100):
     an approximate match is four words.
     """
     from licensedcode.index import get_index
-    from licensedcode.models import get_license
+    from licensedcode.models import get_licenses as licenses_getter
 
     idx = get_index()
+    licenses = licenses_getter()
 
-    for match in idx.match(location=location, min_score=min_score):
+    for match in idx.match(location=location, min_score=min_score, use_cache=True):
         for license_key in match.rule.licenses:
-            lic = get_license(license_key)
+            lic = licenses.get(license_key)
             lines_start, lines_end = match.lines
             result = OrderedDict()
             result['key'] = lic.key

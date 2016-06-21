@@ -221,7 +221,7 @@ formats = ['json', 'html', 'html-app']
 @click.option('--email', is_flag=True, default=False, help='Scan <input> for emails.')
 @click.option('--url', is_flag=True, default=False, help='Scan <input> for urls.')
 @click.option('-i', '--info', is_flag=True, default=False, help='Scan <input> for files information.')
-@click.option('--license-score', is_flag=False, default=100, type=int, show_default=True, help='Set the license match lowest score. Matches with lower scores are not returned. A number between 0 and 100.')
+@click.option('--license-lowest-score', is_flag=False, default=0, type=int, show_default=True, help='Matches with scores lower than this lowest score are not returned. A number between 0 and 100.')
 
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
               help='Set <output_file> format <style> to one of the standard formats: %s or the path to a custom template' % ' or '.join(formats),)
@@ -251,7 +251,7 @@ def scancode(ctx, input, output_file, copyright, license, package,
 
 
 def scan(input_path, copyright=True, license=True, package=True,
-         email=False, url=False, info=True, license_score=100, verbose=False, quiet=False):
+         email=False, url=False, info=True, license_score=0, verbose=False, quiet=False):
     """
     Do the scans proper, return results.
     """
