@@ -4,13 +4,13 @@ os:
   - osx
   - linux 
 
-env:
-  - TEST_SUITE: "bin/py.test -vvs tests/licensedcode/test_detection_datadriven.py -x"
+#env:
+  #- TEST_SUITE: "bin/py.test -vvs tests/licensedcode/test_detection_datadriven.py -x"
   #- TEST_SUITE: ./etc/release/release.sh
 
 install:
     - ./configure
 
 script:
-    - $TEST_SUITE
-
+    - bin/py.test -vvs tests/licensedcode/test_detection_datadriven.py -x
+    #- $TEST_SUITE
