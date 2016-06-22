@@ -520,7 +520,7 @@ def check_rules_integrity(rules):
             if key not in licenses:
                 invalid_rules[rule.data_file].append(key)
     if invalid_rules:
-        invalid_rules = (data_file + ': ' + ' '.join(keys) 
+        invalid_rules = (data_file + ': ' + ' '.join(keys)
                          for data_file, keys in invalid_rules.iteritems())
         msg = 'Rules referencing missing licenses:\n' + '\n'.join(invalid_rules)
         raise MissingLicenses(msg)
@@ -557,24 +557,48 @@ def load_rules(rule_dir=rules_data_dir):
     # TODO: we should assign the rule id at that stage
     seen_files = set()
     processed_files = set()
-    rules_files = set()
+    lower_case_files = set()
+    case_problems = set()
     for data_file in file_iter(rule_dir):
         if data_file.endswith('.yml'):
             base_name = file_base_name(data_file)
-            text_file = join(rule_dir, base_name + '.RULE')
-            processed_files.update([data_file.lower(), text_file.lower()])
-            yield Rule(data_file=data_file, text_file=text_file)
+            rule_file = join(rule_dir, base_name + '.RULE')
+            yield Rule(data_file=data_file, text_file=rule_file)
+
+            # accumulate sets to ensures we do not have illegal names or extra
+            # orphaned files
+            data_lower = data_file.lower()
+            if data_lower in lower_case_files:
+                case_problems.add(data_lower)
+            else:
+                lower_case_files.add(data_lower)
+
+            rule_lower = rule_file.lower()
+            if rule_lower in lower_case_files:
+                case_problems.add(rule_lower)
+            else:
+                lower_case_files.add(rule_lower)
+
+            processed_files.update([data_file, rule_file])
+
+        if not data_file.endswith('~'):
             seen_files.add(data_file)
 
     unknown_files = seen_files - processed_files
-    if unknown_files:
-        files = '\n'.join(sorted(unknown_files))
-        msg = 'Unknown files in rule directory: %(rule_dir)r\n%(files)s'
+    if unknown_files or case_problems:
+        if unknown_files:
+            files = '\n'.join(sorted(unknown_files))
+            msg = 'Unknown files in rule directory: %(rule_dir)r\n%(files)s'
+
+        if case_problems:
+            files = '\n'.join(sorted(case_problems))
+            msg += '\nRule files with non-unique name ignoring casein rule directory: %(rule_dir)r\n%(files)s'
+
         raise Exception(msg % locals())
 
 
-Thresholds = namedtuple('Thresholds', 
-                        ['high_len', 'low_len', 'length', 
+Thresholds = namedtuple('Thresholds',
+                        ['high_len', 'low_len', 'length',
                          'small', 'min_high', 'min_len', 'max_gap_skip'])
 
 class Rule(object):
@@ -741,7 +765,7 @@ class Rule(object):
 
     def small(self):
         """
-        Is this a small rule? It needs special handling for detection. 
+        Is this a small rule? It needs special handling for detection.
         """
         SMALL_RULE = 15
         return self.length < SMALL_RULE or self.is_url
@@ -883,16 +907,16 @@ def _print_rule_stats():
     rules = idx.rules_by_rid
     sizes = Counter(r.length for r in rules)
     print('Top 15 lengths: ', sizes.most_common(15))
-    print('15 smallest lengths: ', sorted(sizes.iteritems(), 
+    print('15 smallest lengths: ', sorted(sizes.iteritems(),
                                           key=itemgetter(0))[:15])
 
     high_sizes = Counter(r.high_length for r in rules)
     print('Top 15 high lengths: ', high_sizes.most_common(15))
-    print('15 smallest high lengths: ', sorted(high_sizes.iteritems(), 
+    print('15 smallest high lengths: ', sorted(high_sizes.iteritems(),
                                                key=itemgetter(0))[:15])
 
     gaps = Counter(len(r.gaps) for r in rules if r.gaps)
-    print('Top 15 gap counts: ', sorted(gaps.most_common(0), 
+    print('Top 15 gap counts: ', sorted(gaps.most_common(0),
                                         key=itemgetter(1), reverse=True))
 
     small_with_gaps = [(r.identifier, len(r.gaps)) for r in rules if r.gaps and r.small()]
