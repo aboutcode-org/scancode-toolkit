@@ -30,4 +30,4 @@ include extractcode.bat
 
 include .travis.yml appveyor.yml
 
-global-exclude *.py[co] __pycache__  *.*~
+global-exclude *.py[co] __pycache__ *.*~
