@@ -145,9 +145,8 @@ def index_token_bitsets(token_ids, len_junk, len_good):
     Return a 4-tuple of low & high tids sets, low & high tids multisets given a
     token_ids sequence.
     """
-    # For multisets, we use an array: the index is the token id, the value is
-    # the occurrences count. This is the same as a collections.Counter but using
-    # a more compact and faster iterating array.
+    # For multisets, we use a defaultdict, rather than a Counter. This is midly
+    # faster than a Counter for sparse sets.
 
     tids_set = bitarray([0] * (len_good + len_junk))
     low_tids_mset = defaultdict(int)
@@ -209,6 +208,7 @@ def tids_multisets_intersector(qmset, imset):
             result[elem] = res
     return result
 
+
 def tids_multiset_counter(tmset):
     """
     Return the sum of occurences of elements present in a token ids multiset,
@@ -222,9 +222,8 @@ def index_token_sets_with_intbitset(token_ids, len_junk, len_good):
     Return a 4-tuple of low & high tids sets, low & high tids multisets given a
     token_ids sequence.
     """
-    # For multisets, we use an array: the index is the token id, the value is
-    # the occurrences count. This is the same as a collections.Counter but using
-    # a more compact and faster iterating array.
+    # For multisets, we use a defaultdict, rather than a Counter. This is midly
+    # faster than a Counter for sparse sets.
 
     # this variant uses intbitset to evaluate its performance wrt to bitarray
 
@@ -250,6 +249,7 @@ def index_token_sets_with_intbitset(token_ids, len_junk, len_good):
     sparsify(high_tids_mset)
     return low_tids_set, high_tids_set, low_tids_mset, high_tids_mset
 
+
 def tids_inbitset_counter(tset):
     """
     Return the number of elements present in a token ids set, aka. the set
@@ -257,6 +257,7 @@ def tids_inbitset_counter(tset):
     Default for bitarrays.
     """
     return len(tset)
+
 
 # use bitarrays or intbitset
 index_token_sets = index_token_sets_with_intbitset
@@ -270,12 +271,12 @@ def compute_candidates(query_run, idx, rules_subset, exact=False, top=30):
     Return a ranked list of rule candidates for further matching as a tuple of:
     (rid, rule, multiset of intersected token ids).
     Use approximate matching ignoring positions.
-
     Only consider rules that have an rid in a `rules_subset` rid set.
     Only return rules sharing some minimum number of tokens with the query.
 
-    Minima and ranking is rule-specific and based on matching high then low
-    tokens for the query and rule using:
+    Minimum number of tokens that needs to matched and ranking is rule-specific
+    and based on matching high then low tokens for the query and rule using:
+
     - counts of common tokens occurrence and their minimum
     - lengths of match and minimal match length
     - the difference and distance of from query to rule
@@ -310,8 +311,7 @@ def compute_candidates(query_run, idx, rules_subset, exact=False, top=30):
 
             thresholds = thresholds_getter(rule)
             compared = compare_sets(qhigh, qlow, ihigh, ilow, thresholds,
-                                    intersector, counter,
-                                    exact=exact, rule_identifier=rule.identifier)
+                                    intersector, counter, exact=exact)
             if compared:
                 sort_order, intersection = compared
                 sortable_candidates.append((sort_order, rid, rule, intersection))
@@ -343,11 +343,10 @@ def compute_candidates(query_run, idx, rules_subset, exact=False, top=30):
         tops = [rule.identifier for _rid, rule, _inter in candidates[:10]]
         logger_debug(tops)
 
-    # return rid, rule, intersection
     return candidates
 
 
-def compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, counter, exact=True, rule_identifier=None):
+def compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, counter, exact=True):
     """
     Compare a query qhigh and qlow sets with an index rule ihigh and ilow sets.
     Return a tuple suitable for sorting and the computed sets intersection or
@@ -361,63 +360,36 @@ def compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, counter, exa
 
     If `exact` is True, return None if the query could not be matched exactly
     against this index rule.
-
-    `rule_identifier` is used for tracing.
     """
     # intersect on high tokens
     #########################################
     high_inter = intersector(qhigh, ihigh)
     high_inter_len = counter(high_inter)
-    if TRACE_COMPARE_SET: logger_debug('  compare_sets: thresholds:', thresholds)
-    if TRACE_COMPARE_SET: logger_debug('  compare_sets: high_inter_len:', high_inter_len)
 
     if high_inter_len == 0:
-        if TRACE_COMPARE_SET:
-            logger_debug('   compare_sets: %(rule_identifier)r SKIP 0: high_inter_len=%(high_inter_len)r == 0' % locals())
         return
 
     # for exact or small, all high must be matched
     exact_or_small = exact or thresholds.small
     if exact_or_small and high_inter_len < thresholds.high_len:
-        if TRACE_COMPARE_SET:
-            ihigh_len = thresholds.high_len
-            logger_debug('   compare_sets: %(rule_identifier)r SKIP 1: exact=%(exact)r and high_inter_len=%(high_inter_len)r != ihigh_len=%(ihigh_len)r' % locals())
         return
 
     # need some high match above min high
     if high_inter_len < thresholds.min_high:
-        if TRACE_COMPARE_SET:
-            min_ihigh = thresholds.min_high
-            logger_debug('   compare_sets: %(rule_identifier)r SKIP 2: high_inter_len=%(high_inter_len)r < min_ihigh=%(min_ihigh)r' % locals())
         return
 
     # intersect again but on low tokens
     ###################################
     low_inter = intersector(qlow, ilow)
     low_inter_len = counter(low_inter)
-    if TRACE_COMPARE_SET: logger_debug('  compare_sets: low_inter_len:', low_inter_len)
 
     # for exact or small, all low must be matched
     if exact_or_small and low_inter_len < thresholds.low_len:
-        if TRACE_COMPARE_SET:
-            ilow_len = thresholds.low_len
-            logger_debug('   compare_sets: %(rule_identifier)r SKIP 3: exact=%(exact)r and low_inter_len=%(low_inter_len)r < ilow_len=%(ilow_len)r' % locals())
         return
 
     # need match len above min length
     if high_inter_len + low_inter_len < thresholds.min_len:
-        if TRACE_COMPARE_SET:
-            min_ilen = thresholds.min_len
-            logger_debug('   compare_sets: %(rule_identifier)r SKIP 4: high_inter_len=%(high_inter_len)r + low_inter_len=%(low_inter_len)r < min_ilen=%(min_ilen)r' % locals())
         return
-
-#     # for small rules, we want all high tokens matched at at least 1/2 of low tokens
-#     if thresholds.small and (high_inter_len != thresholds.min_high) and (low_inter_len < (thresholds.low_len // 2)):
-#         if TRACE_COMPARE_SET:
-#             small = thresholds.small
-#             ilen = thresholds.length
-#             logger_debug('   compare_sets: %(rule_identifier)r SKIP 5: small=%(small)r and high_inter_len=%(high_inter_len)r + low_inter_len=%(low_inter_len)r != ilen=%(ilen)r' % locals())
-#         return
 
     # distance
     matched_length = high_inter_len + low_inter_len
@@ -442,11 +414,13 @@ def compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, counter, exa
         low_importance = 0.9
         containment = (high_containment + (low_containment * low_importance)) / (1 + low_importance)
 
-    # Sort order is based on resemblance and containment with additionl things for disambiguation
+    # Sort order is based on resemblance and containment with additional
+    # distances and length to differentiate ties
+    # FIXME: this is rather convolated and likely can be vastly simplified
     sort_order = -containment, -high_containment, jaccard_distance, high_jaccard_distance, high_distance, distance, -high_inter_len, -matched_length, thresholds.length
 
     # We also return the intersection for the whole token ids range
-    # FIXME: but this is NOT used
+    # FIXME: but this is NOT used anywhere for now
     if isinstance(low_inter, bitarray):
         inter = low_inter + high_inter
     else:
