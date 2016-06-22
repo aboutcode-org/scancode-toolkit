@@ -588,7 +588,7 @@ def load_rules(rule_dir=rules_data_dir):
     if unknown_files or case_problems:
         if unknown_files:
             files = '\n'.join(sorted(unknown_files))
-            msg = 'Unknown files in rule directory: %(rule_dir)r\n%(files)s'
+            msg = 'Orphaned files in rule directory: %(rule_dir)r\n%(files)s'
 
         if case_problems:
             files = '\n'.join(sorted(case_problems))
