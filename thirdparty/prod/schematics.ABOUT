@@ -1,0 +1,13 @@
+about_resource: schematics-1.1.1-cp27-none-any.whl
+name: schematics
+version: 1.1.1
+
+home_url: http://github.com/schematics/schematics
+owner: James Dennis
+copyright: Copyright (c) 2013–2016 Schematics Authors; see AUTHORS for details
+
+dje_license: bsd-new
+license_text_file: schematics.LICENSE
+
+vcs_tool: git
+vcs_repository: https://github.com/schematics/schematics.git

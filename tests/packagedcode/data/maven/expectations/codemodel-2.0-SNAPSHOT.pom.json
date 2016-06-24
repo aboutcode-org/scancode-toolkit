@@ -61,7 +61,6 @@
   "maven_repository_connection_1": [
     "scm:svn:https://guest@maven2-repository.dev.java.net/svn/maven2-repository"
   ], 
-  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [
     "scm:svn:https://maven2-repository.dev.java.net/svn/maven2-repository"
   ], 

@@ -49,7 +49,6 @@
     "image task and corresponding types.\n  jai (Java Advanced Imaging) is not available in public Maven repositories, therefore the dependencies are included with a scope provided\n    the download URL is http://java.sun.com/products/java-media/jai/"
   ], 
   "maven_repository_connection_1": [], 
-  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": []
 }

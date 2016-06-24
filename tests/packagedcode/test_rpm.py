@@ -22,30 +22,73 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import os
 
 from commoncode.testcase import FileBasedTesting
 
 from packagedcode import rpm
+from collections import OrderedDict
 
 
 class TestRpm(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_parse(self):
+    def test_parse_to_package(self):
         test_file = self.get_test_loc('rpm/header/libproxy-bin-0.3.0-4.el6_3.x86_64.rpm')
         package = rpm.parse(test_file)
-        assert 'libproxy-bin' == package.name
-        assert '0.3.0' == package.version
-        assert '4.el6_3' == package.release
-        assert ['CentOS'] == package.vendors
-        assert 'http://code.google.com/p/libproxy/' == package.homepage_url
-        assert 'linux' == package.os
-        assert 'Binary to test libproxy' == package.summary
-        assert 'The libproxy-bin package contains the proxy binary for libproxy' == package.description
-        assert 'x86_64' == package.arch
+        expected = [
+            ('type', u'RPM'),
+            ('name', u'libproxy-bin'),
+            ('version', u'0.3.0-4.el6_3'),
+            ('primary_language', None),
+            ('packaging', u'archive'),
+            ('summary', u'Binary to test libproxy'),
+            ('description',
+             u'The libproxy-bin package contains the proxy binary for libproxy'),
+            ('payload_type', None),
+            ('authors', []),
+            ('maintainers', []),
+            ('contributors', []),
+            ('owners', []),
+            ('packagers', []),
+            ('distributors',
+             [OrderedDict([('type', None), ('name', u''), ('email', None), ('url', None)])]),
+            ('vendors',
+             [OrderedDict([('type', None), ('name', u'CentOS'), ('email', None), ('url', None)])]),
+            ('keywords', []),
+            ('keywords_doc_url', None),
+            ('metafile_locations', []),
+            ('metafile_urls', []),
+            ('homepage_url', u'http://code.google.com/p/libproxy/'),
+            ('notes', None),
+            ('download_urls', []),
+            ('download_sha1', None),
+            ('download_sha256', None),
+            ('download_md5', None),
+            ('bug_tracking_url', None),
+            ('support_contacts', []),
+            ('code_view_url', None),
+            ('vcs_tool', None),
+            ('vcs_repository', None),
+            ('vcs_revision', None),
+            ('copyright_top_level', None),
+            ('copyrights', []),
+            ('asserted_licenses',
+             [OrderedDict([('license', u'LGPLv2+'), ('url', None), ('text', None), ('notice', None)])]),
+            ('legal_file_locations', []),
+            ('license_expression', None),
+            ('license_texts', []),
+            ('notice_texts', []),
+            ('dependencies', {}),
+            ('related_packages',
+             [OrderedDict([('type', u'RPM'), ('name', u'libproxy'), ('version', u'0.3.0-4.el6_3'), ('payload_type', 'source')])])
+        ]
+
+        assert expected == package.as_dict().items()
+        package.validate()
 
     def test_pyrpm_basic(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')

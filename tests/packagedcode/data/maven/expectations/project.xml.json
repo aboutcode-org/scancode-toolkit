@@ -55,7 +55,6 @@
   "maven_repository_connection_1": [
     "scm:cvs:pserver:anoncvs@cvs.apache.org:/home/cvspublic:maven-plugins/abbot/"
   ], 
-  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [
     "scm:cvs:ext:${maven.username}@cvs.apache.org:/home/cvs:maven-plugins/abbot/"
   ], 

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,7 +22,8 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import os.path
 
@@ -30,6 +31,7 @@ from commoncode.testcase import FileBasedTesting
 
 from packagedcode import models
 from packagedcode.recognize import recognize_packaged_archives
+from packagedcode import rpm
 
 
 class TestRecognize(FileBasedTesting):
@@ -43,7 +45,7 @@ class TestRecognize(FileBasedTesting):
     def test_recognize_packaged_archives_rpm(self):
         test_file = self.get_test_loc('archives/alfandega-2.2-2.rh80.src.rpm')
         package = recognize_packaged_archives(test_file)
-        assert isinstance(package, models.RpmPackage)
+        assert isinstance(package, rpm.RpmPackage)
 
     def test_recognize_packaged_archives_cab(self):
         test_file = self.get_test_loc('archives/basic.cab')
@@ -58,17 +60,17 @@ class TestRecognize(FileBasedTesting):
     def test_recognize_packaged_archives_zip(self):
         test_file = self.get_test_loc('archives/myarch-2.3.0.7z')
         package = recognize_packaged_archives(test_file)
-        assert isinstance(package, models.ZipPackage)
+        assert isinstance(package, models.PlainZipPackage)
 
     def test_recognize_packaged_archives_gem(self):
         test_file = self.get_test_loc('archives/mysmallidea-address_standardization-0.4.1.gem')
         package = recognize_packaged_archives(test_file)
-        assert isinstance(package, models.RubyGemPackage)
+        assert isinstance(package, models.RubyGem)
 
     def test_recognize_packaged_archives_jar(self):
         test_file = self.get_test_loc('archives/simple.jar')
         package = recognize_packaged_archives(test_file)
-        assert isinstance(package, models.JarPackage)
+        assert isinstance(package, models.JavaJar)
 
     def test_recognize_packaged_archives_iso(self):
         test_file = self.get_test_loc('archives/small.iso')

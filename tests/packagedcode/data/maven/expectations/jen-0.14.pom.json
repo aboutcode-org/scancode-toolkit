@@ -67,9 +67,6 @@
   "maven_repository_connection_1": [
     "scm:cvs:pserver:guest@cvs.dev.java.net:/cvs:jen/main"
   ], 
-  "maven_license_name": [
-    "Apache Software License, 2.0"
-  ], 
   "maven_repository_developer_connection_1": [
     "scm:cvs:pserver:[username]@cvs.dev.java.net:/cvs:jen/main"
   ], 

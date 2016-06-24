@@ -65,7 +65,6 @@
     "The FileUpload component provides a simple yet flexible means of adding\n    support for multipart file upload functionality to servlets and web\n    applications."
   ], 
   "maven_repository_connection_1": [], 
-  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "FileUpload"

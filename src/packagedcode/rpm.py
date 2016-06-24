@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,16 +22,17 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 from collections import namedtuple
-
-from packagedcode.models import AssertedLicense
-from packagedcode.models import Package
-from packagedcode.pyrpm.rpm import RPM
-from packagedcode.models import RpmPackage
+import string
 
 import typecode.contenttype
+
+from packagedcode import models
+from packagedcode import nevra
+from packagedcode.pyrpm.rpm import RPM
 
 # TODO: retrieve dependencies
 
@@ -101,6 +102,74 @@ def info(location, include_desc=False):
     return tgs and RPMInfo(**tgs) or None
 
 
+class EVR(namedtuple('EVR', 'epoch version release')):
+    """
+    The RPM Epoch, Version, Release tuple.
+    """
+    # note: the order of the named tuple is the sort order.
+    # But for creation we put the rarely used epoch last
+    def __new__(self, version, release, epoch=None):
+        if epoch and epoch.strip() and not epoch.isdigit():
+            raise models.ValidationError('Invalid epoch: must be a number or empty.')
+
+        return super(EVR, self).__new__(EVR, epoch, version, release)
+
+
+class RPMVersionType(models.BaseType):
+    """
+    RPM versions are composed of a (mostly) hidden epoch, a version and release.
+    The release may be further split in build numbers.
+    """
+
+    def __init__(self, **kwargs):
+        super(RPMVersionType, self).__init__(**kwargs)
+
+    def validate_version(self, value):
+        if value and not isinstance(value, EVR):
+            raise models.ValidationError('RPM version must be an EVR tuple')
+
+    def to_primitive(self, value, context=None):
+        """
+        Return an version string using RPM conventions.
+        # FIXME: Handle Epochs
+        """
+        vr = u'-'.join([value.version, value.release])
+        if context and context.get('with_epoch') and value.epoch:
+            return u':'.join([value.epoch, vr])
+        return vr
+
+    def to_native(self, value):
+        return value
+    
+    def _mock(self, context=None):
+        version = models.random_string(1, string.digits)
+        release = models.random_string(1, string.digits)
+        return self.to_primitive(EVR(version, release), context)
+
+
+class RPMRelatedPackage(models.RelatedPackage):
+    type = models.StringType(default='RPM')
+    version = RPMVersionType()
+
+    class Options:
+        fields_order = 'type', 'name', 'version', 'payload_type'
+
+
+class RpmPackage(models.Package):
+    metafiles = ('*.spec',)
+    extensions = ('.rpm', '.srpm', '.mvl', '.vip',)
+    filetypes = ('rpm ',)
+    mimetypes = ('application/x-rpm',)
+    repo_types = (models.repo_yum,)
+
+    type = models.StringType(default='RPM')
+    version = RPMVersionType()
+
+    packaging = models.StringType(default=models.as_archive)
+    related_packages = models.ListType(models.ModelType(RPMRelatedPackage))
+
+
+
 def parse(location):
     """
     Return an RpmPackage object for the file at location or None if the file is
@@ -109,23 +178,32 @@ def parse(location):
     infos = info(location, include_desc=True)
     if not infos:
         return
-    package = dict(
+
+    epoch = int(infos.epoch) if infos.epoch else None
+
+    asserted_licenses = []
+    if infos.license:
+        asserted_licenses = [models.AssertedLicense(license=infos.license)]
+
+    related_packages = []
+    if infos.source_rpm:
+        epoch, name, version, release, _arch = nevra.from_name(infos.source_rpm)
+        evr = EVR(version, release, epoch)
+        related_packages = [RPMRelatedPackage(name=name, 
+                                              version=evr, 
+                                              payload_type=models.payload_src)]
+
+    package = RpmPackage(
         summary=infos.summary,
         description=infos.description,
         name=infos.name,
-        epoch=infos.epoch,
-        version=infos.version,
-        release=infos.release,
+        version=EVR(version=infos.version, release=infos.release, epoch=epoch or None),
         homepage_url=infos.url,
-        distributors=[infos.distribution],
-        arch=infos.arch,
-        location=location,
-        os=infos.os,
-        vendors=[infos.vendor],
+        distributors=[models.Party(name=infos.distribution)],
+        vendors=[models.Party(name=infos.vendor)],
+
+        asserted_licenses=asserted_licenses,
+
+        related_packages=related_packages
     )
-    if infos.license:
-        package['asserted_licenses'] = [AssertedLicense(license=infos.license)]
-    if infos.source_rpm:
-        src_rpm = RpmPackage(name=infos.source_rpm)
-        package['related_packages'] = {Package.payload_src: [src_rpm]}
-    return RpmPackage(**package)
+    return package

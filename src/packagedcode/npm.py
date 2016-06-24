@@ -22,7 +22,8 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import codecs
 from collections import OrderedDict
@@ -34,11 +35,7 @@ import re
 from commoncode import filetype
 from commoncode import fileutils
 
-from packagedcode.models import AssertedLicense
-from packagedcode.models import Dependency
-from packagedcode.models import Package
-from packagedcode.models import Party
-from packagedcode.models import Repository
+from packagedcode import models
 
 """
 Handle Node.js NPM packages
@@ -57,6 +54,20 @@ logger = logging.getLogger(__name__)
 # logger.setLevel(logging.DEBUG)
 
 
+class NpmPackage(models.Package):
+    metafiles = ('package.json', 'npm-shrinkwrap.json')
+    filetypes = ('.tgz',)
+    mimetypes = ('application/x-tar',)
+    repo_types = (models.repo_npm,)
+
+    type = models.StringType(default='npm')
+    primary_language = models.StringType(default='JavaScript')
+
+    @staticmethod
+    def recognize(location):
+        return parse(location)
+
+
 def is_package_json(location):
     return (filetype.is_file(location)
             and fileutils.file_name(location).lower() == 'package.json')
@@ -67,44 +78,9 @@ def is_node_modules(location):
             and fileutils.file_name(location).lower() == 'node_modules')
 
 
-class NpmPackage(Package):
-    type = 'npm'
-    metafiles = ['package.json']
-    primary_language = 'JavaScript'
-    repo_types = [Repository.repo_type_npm]
-
-    def get_info(self):
-        """
-        Return an Ordered dictionary of npm data.
-        """
-        package = OrderedDict()
-        package['type'] = self.type
-        package['packaging'] = self.packaging
-        package['primary_language'] = self.primary_language
-        package['metafile_location'] = self.metafile_locations and self.metafile_locations[0] or []
-        package['id'] = self.name
-        package['name'] = self.name
-        package['qualified_name'] = self.qualified_name
-        package['version'] = self.version
-        package['summary'] = self.summary
-        package['asserted_licenses'] = [l.as_dict() for l in self.asserted_licenses]
-
-        # take the first of authors if any
-        package['author'] = self.authors and self.authors[0].name
-        package['author_email'] = self.authors and self.authors[0].email
-        package['author_url'] = self.authors and self.authors[0].url
-        package['homepage_url'] = self.homepage_url
-        package['summary'] = self.summary
-        # take the first of authors if any
-        package['download_url'] = self.download_urls and self.download_urls[0]
-        package['vcs_tool'] = self.vcs_tool
-        package['vcs_repository'] = self.vcs_repository
-        return package
-
-
 def parse(location):
     """
-    Return a Package object from a package.json
+    Return a Package object from a package.json file or None.
     """
     if not is_package_json(location):
         return
@@ -112,14 +88,13 @@ def parse(location):
     # mapping of top level package.json items to the Package object field name
     plain_fields = OrderedDict([
         ('name', 'name'),
-        ('version', 'version'),
         ('description', 'summary'),
         ('keywords', 'keywords'),
         ('homepage', 'homepage_url'),
     ])
 
-    # mapping of top level package.json items to a function accepting as arguments:
-    # - the package.json element value and a Package Object to update
+    # mapping of top level package.json items to a function accepting as arguments
+    # the package.json element value and returning an iterable of key, values Package Object to update
     field_mappers = OrderedDict([
         ('author', author_mapper),
         ('bugs', bugs_mapper),
@@ -143,11 +118,13 @@ def parse(location):
         # a package.json without name and version is not a usable NPM package
         return
 
+    package = NpmPackage()
     # a package.json is at the root of an NPM package
     base_dir = fileutils.parent_directory(location)
-    package = NpmPackage(location=base_dir)
+    package.location = base_dir
+    # for now we only recognize a pcakge.json, not a node_modules directory yet
     package.metafile_locations = [location]
-
+    package.version = data.get('version')
     for source, target in plain_fields.items():
         value = data.get(source)
         if value:
@@ -186,7 +163,7 @@ def licensing_mapper(licenses, package):
         return package
 
     if isinstance(licenses, basestring):
-        package.asserted_licenses.append(AssertedLicense(license=licenses))
+        package.asserted_licenses.append(models.AssertedLicense(license=licenses))
 
     elif isinstance(licenses, dict):
         """
@@ -195,7 +172,7 @@ def licensing_mapper(licenses, package):
             "url": "http://github.com/kriskowal/q/raw/master/LICENSE"
           }
         """
-        package.asserted_licenses.append(AssertedLicense(license=licenses.get('type'),
+        package.asserted_licenses.append(models.AssertedLicense(license=licenses.get('type'),
                                                          url=licenses.get('url')))
 
     elif isinstance(licenses, list):
@@ -208,18 +185,18 @@ def licensing_mapper(licenses, package):
         # TODO: handle multiple values
         for lic in licenses:
             if isinstance(lic, basestring):
-                package.asserted_licenses.append(AssertedLicense(license=lic))
+                package.asserted_licenses.append(models.AssertedLicense(license=lic))
             elif isinstance(lic, dict):
-                package.asserted_licenses.append(AssertedLicense(license=lic.get('type'),
+                package.asserted_licenses.append(models.AssertedLicense(license=lic.get('type'),
                                                                  url=lic.get('url')))
             else:
                 # use the bare repr
                 if lic:
-                    package.asserted_licenses.append(AssertedLicense(license=repr(lic)))
+                    package.asserted_licenses.append(models.AssertedLicense(license=repr(lic)))
 
     else:
         # use the bare repr
-        package.asserted_licenses.append(AssertedLicense(license=repr(licenses)))
+        package.asserted_licenses.append(models.AssertedLicense(license=repr(licenses)))
 
     return package
 
@@ -231,10 +208,7 @@ def author_mapper(author, package):
     The "author" is one person.
     """
     name, email, url = parse_person(author)
-    package.authors = [Party(type=Party.party_person,
-                             name=name,
-                             email=email,
-                             url=url)]
+    package.authors = [models.Party(type=models.party_person, name=name, email=email, url=url)]
     return package
 
 
@@ -248,16 +222,13 @@ def contributors_mapper(contributors, package):
     if isinstance(contributors, list):
         for contrib in contributors:
             name, email, url = parse_person(contrib)
-            contribs.append(Party(type=Party.party_person,
-                                  name=name,
-                                  email=email,
-                                  url=url))
+
+            contribs.append(models.Party(type=models.party_person, name=name, email=email, url=url))
+
     else:  # a string or dict
         name, email, url = parse_person(contributors)
-        contribs.append(Party(type=Party.party_person,
-                              name=name,
-                              email=email,
-                              url=url))
+        contribs.append(models.Party(type=models.party_person, name=name, email=email, url=url))
+
     package.contributors = contribs
     return package
 
@@ -273,16 +244,10 @@ def maintainers_mapper(maintainers, package):
     if isinstance(maintainers, list):
         for contrib in maintainers:
             name, email, url = parse_person(contrib)
-            maintains.append(Party(type=Party.party_person,
-                                   name=name,
-                                   email=email,
-                                   url=url))
+            maintains.append(models.Party(type=models.party_person, name=name, email=email, url=url))
     else:  # a string or dict
         name, email, url = parse_person(maintainers)
-        maintains.append(Party(type=Party.party_person,
-                               name=name,
-                               email=email,
-                               url=url))
+        maintains.append(models.Party(type=models.party_person, name=name, email=email, url=url))
     package.maintainers = maintains
     return package
 
@@ -352,10 +317,12 @@ VCS_URLS = (
 
 def parse_repo_url(repo_url):
     """
-    https://docs.npmjs.com/files/package.json#repository
     Validate a repo_ulr and handle shortcuts for GitHub, GitHub gist,
     Bitbucket, or GitLab repositories (same syntax as npm install):
-    This is done here: https://github.com/npm/npm/blob/d3c858ce4cfb3aee515bb299eb034fe1b5e44344/node_modules/hosted-git-info/git-host-info.js
+
+    See https://docs.npmjs.com/files/package.json#repository
+    This is done here in npm:
+    https://github.com/npm/npm/blob/d3c858ce4cfb3aee515bb299eb034fe1b5e44344/node_modules/hosted-git-info/git-host-info.js
 
     These should be resolved:
         npm/npm
@@ -408,8 +375,9 @@ def parse_repo_url(repo_url):
 
 def url_mapper(url, package):
     """
-    a "url" fieldis a redirection to your package that has been published
-    somewhere else than the public npm registry
+    In a package.json, the "url" field is a redirection to a package download
+    URL published somewhere else than on the public npm registry.
+    We map it to a download url.
     """
     if url:
         package.download_urls.append(url)
@@ -418,7 +386,7 @@ def url_mapper(url, package):
 
 def dist_mapper(dist, package):
     """
-    only present in some package.json forms (as installed or from a registry?)
+    Only present in some package.json forms (as installed or from a registry?)
       "dist": {
         "shasum": "a124386bce4a90506f28ad4b1d1a804a17baaf32",
         "tarball": "http://registry.npmjs.org/npm/-/npm-2.13.5.tgz"
@@ -436,11 +404,11 @@ def bundle_deps_mapper(bundle_deps, package):
     """
     https://docs.npmjs.com/files/package.json#bundleddependencies
     """
-    package.dependencies[Package.dep_bundled] = bundle_deps
+    package.dependencies[models.dep_bundled] = bundle_deps
     return package
 
 
-def _deps_mapper(deps, package, field_name):
+def deps_mapper(deps, package, field_name):
     """
     Handle deps such as dependencies, devDependencies, peerDependencies, optionalDependencies
     return a tuple of (dep type, list of deps)
@@ -449,15 +417,16 @@ def _deps_mapper(deps, package, field_name):
     https://docs.npmjs.com/files/package.json#devdependencies
     https://docs.npmjs.com/files/package.json#optionaldependencies
     """
-    dep_types = {'dependencies': Package.dep_runtime,
-                 'devDependencies': Package.dep_dev,
-                 'peerDependencies': Package.dep_optional,
-                 'optionalDependencies': Package.dep_optional,
-                 }
+    dep_types = {
+        'dependencies': models.dep_runtime,
+        'devDependencies': models.dep_dev,
+        'peerDependencies': models.dep_optional,
+        'optionalDependencies': models.dep_optional,
+    }
     resolved_type = dep_types[field_name]
     dependencies = []
-    for pid, version_constraint in deps.items():
-        dep = Dependency(id=pid, version_constraint=version_constraint)
+    for name, version_constraint in deps.items():
+        dep = models.Dependency(name=name, version_constraint=version_constraint)
         dependencies.append(dep)
     if resolved_type in package.dependencies:
         package.dependencies[resolved_type].extend(dependencies)
@@ -466,10 +435,10 @@ def _deps_mapper(deps, package, field_name):
     return package
 
 
-dependencies_mapper = partial(_deps_mapper, field_name='dependencies')
-dev_dependencies_mapper = partial(_deps_mapper, field_name='devDependencies')
-peer_dependencies_mapper = partial(_deps_mapper, field_name='peerDependencies')
-optional_dependencies_mapper = partial(_deps_mapper, field_name='optionalDependencies')
+dependencies_mapper = partial(deps_mapper, field_name='dependencies')
+dev_dependencies_mapper = partial(deps_mapper, field_name='devDependencies')
+peer_dependencies_mapper = partial(deps_mapper, field_name='peerDependencies')
+optional_dependencies_mapper = partial(deps_mapper, field_name='optionalDependencies')
 
 
 person_parser = re.compile(
@@ -521,13 +490,15 @@ def parse_person(person):
 
 def public_download_url(name, version, registry='https://registry.npmjs.org'):
     """
-    Return a package tarball download URL
+    Return a package tarball download URL given a name, version and a base
+    registry URL.
     """
     return '%(registry)s/%(name)s/-/%(name)s-%(version)s.tgz' % locals()
 
 
 def public_package_data_url(name, version, registry='https://registry.npmjs.org'):
     """
-    Return a package metadata download URL
+    Return a package metadata download URL given a name, version and a base
+    registry URL.
     """
     return '%(registry)s/%(name)s/%(version)s' % locals()

@@ -22,14 +22,14 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import logging
 
 from commoncode import filetype
-import typecode.contenttype
+from typecode import contenttype
 
-from packagedcode import models
 from packagedcode import PACKAGE_TYPES
 
 
@@ -48,29 +48,27 @@ def recognize_packaged_archives(location):
     if not filetype.is_file(location):
         return
 
-    T = typecode.contenttype.get_type(location)
+    T = contenttype.get_type(location)
     ftype = T.filetype_file.lower()
     mtype = T.mimetype_file
 
     for package in PACKAGE_TYPES:
-        if not package.packaging == models.Package.as_archive:
-            continue
-
         # Note: default to True if there is nothing to match against
-
+        if location.endswith(tuple(package.metafiles)):
+            return package.get_package(location)
         if package.filetypes:
             type_matched = any(t in ftype for t in package.filetypes)
         else:
-            type_matched = True
+            type_matched = False
         if package.mimetypes:
             mime_matched = any(m in mtype for m in package.mimetypes)
         else:
-            mime_matched = True
+            mime_matched = False
         if package.extensions:
             extension_matched = location.lower().endswith(package.extensions)
         else:
-            extension_matched = True
+            extension_matched = False
 
         if type_matched and mime_matched and extension_matched:
             # we return the first match in the order of PACKAGE_TYPES
-            return package(location=location)
+            return package()

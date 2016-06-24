@@ -61,9 +61,6 @@
   "maven_repository_id": [], 
   "maven_project_description": [], 
   "maven_repository_connection_1": [], 
-  "maven_license_name": [
-    "GNU Lesser General Public License"
-  ], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "Logback Access Module"

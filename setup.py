@@ -94,6 +94,7 @@ setup(
         # packagedcode
         'requests >= 2.7.0, < 3.0.0',
         'lxml >=2.3, < 3.0',
+        'schematics >= 1.1.1, < 2.0.0',
     ],
 
     extras_require={
