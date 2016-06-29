@@ -209,3 +209,21 @@ def test_extractcode_command_can_extract_archive_with_unicode_names(monkeypatch)
         '/unicodepath/koristenjem_Karkkainen_-_Sander.pdf'
     ]
     assert sorted(expected) == sorted(file_result)
+
+
+def test_extractcode_command_can_extract_shallow(monkeypatch):
+    test_dir = test_env.get_test_loc('extract_shallow', copy=True)
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    runner = CliRunner()
+    result = runner.invoke(extract_cli.extractcode, ['--shallow', test_dir])
+    assert result.exit_code == 0
+    file_result = [f for f in map(as_posixpath, file_iter(test_dir)) if not f.endswith('unicodepath.tgz')]
+    file_result = [''.join(f.partition('/top.zip-extract/')[1:]) for f in file_result]
+    file_result = [f for f in file_result if f]
+    # this checks that the zip in top.zip are not extracted
+    expected = [
+        '/top.zip-extract/some3.zip',
+        '/top.zip-extract/some2.zip',
+        '/top.zip-extract/some1.zip',
+    ]
+    assert sorted(expected) == sorted(file_result)
