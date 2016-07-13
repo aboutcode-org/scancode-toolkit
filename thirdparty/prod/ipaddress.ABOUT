@@ -1,0 +1,17 @@
+about_resource: ipaddress-1.0.16-py2-none-any.whl
+download_url: https://pypi.python.org/packages/cd/c5/bd44885274379121507870d4abfe7ba908326cf7bfd50a48d9d6ae091c0d/ipaddress-1.0.16.tar.gz#md5=1e27b62aa20f5b6fc200b2bdbf0d0847
+name: ipaddress
+version: 1.0.16
+
+dje_license: python
+license_text_file: PSF.LICENSE
+
+note: This is a Python 2.7 backport of the Python 3.3 ipaddress module. the license is PSF
+
+copyright: Copyright (c) Google Inc. and others.
+
+owner: Philipp Hagemeister 
+home_url: https://github.com/phihag/ipaddress
+
+vcs_tool: git
+vcs_repository: https://github.com/phihag/ipaddress.git

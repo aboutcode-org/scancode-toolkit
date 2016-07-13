@@ -56,7 +56,7 @@ setup(
     ],
     install_requires=[
         # cluecode
-        'py2-ipaddress >= 2.0, <3.0',
+        'ipaddress >= 1.0, <2.0',
         'url >= 0.1.4',
         'publicsuffix2',
         # Some lntk version ranges were buggy
