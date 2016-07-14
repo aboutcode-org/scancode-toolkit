@@ -54,3 +54,4 @@ docs/_build
 !/tests/typecode/data/contenttype/package/*
 
 /share/
+/local/
