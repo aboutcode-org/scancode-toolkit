@@ -168,6 +168,9 @@ class RpmPackage(models.Package):
     packaging = models.StringType(default=models.as_archive)
     related_packages = models.ListType(models.ModelType(RPMRelatedPackage))
 
+    @staticmethod
+    def recognize(location):
+        return parse(location)
 
 
 def parse(location):

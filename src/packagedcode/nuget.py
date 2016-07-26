@@ -70,7 +70,7 @@ def _nuget_handler(xdoc):
 
 def parse(location):
     """
-    Return a Nuget package from a nuspec file at location. 
+    Return a Nuget package from a nuspec file at location.
     Return None if this is not a parsable nuspec.
     """
     nuspec = parse_nuspec(location)
@@ -90,7 +90,7 @@ def parse(location):
         summary=nuspec.get('title'),
         description=nuspec.get('description'),
         homepage_url=nuspec.get('projectUrl'),
-        
+
         authors=authors,
         owners=owners,
 

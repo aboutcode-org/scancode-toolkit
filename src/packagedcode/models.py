@@ -119,6 +119,7 @@ The payload of files and directories possibly contains:
   -- code in source or compiled form or both.
 """
 
+
 class ListType(ListType):
     """
     ListType with a default of an empty list.
@@ -151,10 +152,11 @@ class PackageIndentifierType(BaseType):
 
     def to_native(self, value):
         return value
-    
+
     def validate_id(self, value):
         if not isinstance(value, PackageId):
             raise StopValidation(self.messages['Invalid Package ID: must be PackageId named tuple'])
+
 
 class SHA256Type(HashType):
     LENGTH = 64
@@ -179,12 +181,12 @@ class URIType(StringType):
             r'|ssh'
             r'|git|git\+https?|git\+ssh|git\+git|git\+file'
             r'|hg|hg\+https?|hg\+ssh|hg\+static-https?'
-            
+
             r'|bzr|bzr\+https?|bzr\+ssh|bzr\+sftp|bzr\+ftp|bzr+lp'
             r'|svn|svn\+http?|svn\+ssh|svn\+svn'
             r')'
             r'://'
-        
+
         r'|'
             r'git\@'
         r')'
@@ -216,10 +218,10 @@ class URIType(StringType):
 class VersionType(BaseType):
     """
     A Package version is a string or a sequence of strings (list or tuple).
-    
+
     'separator' is the separator string used to join a version sequence made of
     parts such as major, minor and patch.
-    
+
     Packages with alternative versioning can subclass to define their own
     versioning scheme with add extra methods, a refined compare method for
     instance when storing a tuple, namedtuple or list for each each version
@@ -258,7 +260,7 @@ class VersionType(BaseType):
 
     def to_native(self, value):
         return value
-    
+
     def sortable(self, value):
         """
         Return an opaque tuple to sort or compare versions. When not defined, a
@@ -278,7 +280,7 @@ class VersionType(BaseType):
         for v in re.split('[\.\s\-_]', value):
             srt.append(v.isdigit() and int(v) or v)
         return tuple(srt)
-        
+
     def _mock(self, context=None):
         a = random_string(1, string.digits)
         b = random_string(1, string.digits)
@@ -341,7 +343,7 @@ class Repository(BaseModel):
     # optional: nickname used for well known "named" public repos such as:
     # Maven Central, Pypi, RubyGems, npmjs.org or their mirrors
     nickname = StringType()
-    
+
     class Options:
         fields_order = 'type', 'url', 'public', 'mirror_urls', 'name'
 
@@ -350,7 +352,7 @@ class Repository(BaseModel):
         Return a download URL for this package in this repository.
         """
         return NotImplementedError()
-    
+
     def packages(self):
         """
         Return an iterable of Package objects available in this repository.
@@ -373,7 +375,7 @@ class AssertedLicense(BaseModel):
 
 # Party types
 #################################
-party_person = 'person' 
+party_person = 'person'
 party_project = 'project'  # often loosely defined
 party_org = 'organization'  # more formally defined
 PARTY_TYPES = (party_person, party_project, party_org,)
@@ -389,7 +391,7 @@ class Party(BaseModel):
     email = EmailType()
 
     class Options:
-        fields_order = 'type', 'name', 'email', 'url' 
+        fields_order = 'type', 'name', 'email', 'url'
 
 
 # Groupings of package dependencies
@@ -413,7 +415,7 @@ class Dependency(BaseModel):
     """
     # package name for this dependency
     name = StringType(required=True)
-    
+
     # The effective or concrete resolved and used version
     version = VersionType()
 
@@ -451,9 +453,8 @@ as_dir = 'directory'
 as_file = 'file'
 PACKAGINGS = (as_archive, as_dir, as_file)
 
-
-
 # TODO: define relations. See SPDX specs
+
 
 class RelatedPackage(BaseModel):
     """
@@ -513,7 +514,7 @@ class Package(BaseModel):
     packaging = StringType(choices=PACKAGINGS)
 
     # TODO: add os and arches!!
-    
+
     # this is a "short" description.
     summary = StringType()
     # this is a "long" description, often several pages of text.
@@ -675,7 +676,7 @@ class Package(BaseModel):
         """
         Return a Package object or None given a location to a file or directory
         pointing to a package archive, metafile or similar.
-        
+
         Sub-classes must override to implement recognition.
         """
         raise NotImplementedError()
