@@ -81,3 +81,7 @@ class TestRecognize(FileBasedTesting):
         test_file = self.get_test_loc('archives/tarred_bzipped.tar.bz2')
         package = recognize_packaged_archives(test_file)
         assert isinstance(package, models.TarPackage)
+
+    def test_recognize_cpan_manifest(self):
+        test_file = self.get_test_loc('cpan/MANIFEST')
+        recognize_packaged_archives(test_file)
