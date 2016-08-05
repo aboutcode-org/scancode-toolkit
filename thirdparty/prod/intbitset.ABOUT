@@ -1,12 +1,15 @@
 about_resource: 
-    - intbitset-2.2.2.dev20160104-cp27-none-linux_x86_64.whl
-    - intbitset-2.2.2.dev20160104.tar.gz
+    - intbitset-2.3.0.tar.gz
 name: intbitset
-version: 2.2.2.dev20160104.8026211
-download_url: https://github.com/inveniosoftware/intbitset/archive/8026211c8034138c90449e54c52d6ec2a40bf032.tar.gz
+version: 2.3.0
+download_url: https://pypi.python.org/packages/6b/02/071198144a273f8d89c28a4be8fa971b60a4d80a60bd4c8f1e9d7223d296/intbitset-2.3.0.tar.gz#md5=4b6ef2b2b0d442d2ae673355b5c8e1fe
 dje_license: lgpl-3.0-plus
 license_text_file: lgpl-3.0.LICENSE
-notice_text_file: intbitset.LICENSE
+notice_text_file: intbitset.NOTICE
 owner: CERN
-copyright: Copyright (C) 2013, 2014, 2015, 2016 CERN
+copyright: Copyright (c) 2013, 2014, 2015, 2016 CERN
+
 home_url: https://github.com/inveniosoftware/intbitset
+
+vsc_tool: git
+vcs_repository: https://github.com/inveniosoftware/intbitset.git
