@@ -31,6 +31,22 @@ from packagedcode import xmlutils
 Handle nuget.org Nuget packages.
 """
 
+
+class NugetPackage(models.Package):
+    metafiles = ('[Content_Types].xml', '*.nuspec',)
+    filetypes = ('zip archive', 'microsoft ooxml',)
+    mimetypes = ('application/zip', 'application/octet-stream',)
+    extensions = ('.nupkg',)
+    repo_types = (models.repo_nuget,)
+
+    type = models.StringType(default='Nuget')
+    packaging = models.StringType(default=models.as_archive)
+
+    @classmethod
+    def recognize(cls, location):
+        return parse(location)
+
+
 nuspec_tags = [
     'id',
     'version',
@@ -81,7 +97,7 @@ def parse(location):
     authors = [models.Party(name=nuspec.get('authors'))] if nuspec.get('authors') else []
     owners = [models.Party(name=nuspec.get('owners'))] if nuspec.get('owners') else []
 
-    package = models.NugetPackage(
+    package = NugetPackage(
         location=location,
 
         name=nuspec.get('id'),

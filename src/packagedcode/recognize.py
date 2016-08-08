@@ -56,6 +56,7 @@ def recognize_packaged_archives(location):
         # Note: default to True if there is nothing to match against
         if location.endswith(tuple(package.metafiles)):
             return package.recognize(location)
+
         if package.filetypes:
             type_matched = any(t in ftype for t in package.filetypes)
         else:
@@ -64,6 +65,7 @@ def recognize_packaged_archives(location):
             mime_matched = any(m in mtype for m in package.mimetypes)
         else:
             mime_matched = False
+
         if package.extensions:
             extension_matched = location.lower().endswith(package.extensions)
         else:

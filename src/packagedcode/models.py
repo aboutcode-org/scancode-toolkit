@@ -419,7 +419,7 @@ class Dependency(BaseModel):
     # The effective or concrete resolved and used version
     version = VersionType()
 
-    # The version constraints (aka. possible versions) for this dep. 
+    # The version constraints (aka. possible versions) for this dep.
     # The meaning is package type-specific
     version_constraint = StringType()
 
@@ -665,21 +665,21 @@ class Package(BaseModel):
     def __init__(self, location=None, **kwargs):
         """
         Initialize a new Package.
-        Subclass can override but should override the recognize method to populate a package accordingly. 
+        Subclass can override but should override the recognize method to populate a package accordingly.
         """
         # path to a file or directory where this Package is found in a scan
         self.location = location
         super(Package, self).__init__(**kwargs)
 
-    @staticmethod
-    def recognize(location):
+    @classmethod
+    def recognize(cls, location):
         """
         Return a Package object or None given a location to a file or directory
         pointing to a package archive, metafile or similar.
 
-        Sub-classes must override to implement recognition.
+        Sub-classes should override to implement their own package recognition.
         """
-        raise NotImplementedError()
+        return
 
     @property
     def component_version(self):
@@ -716,8 +716,8 @@ class Package(BaseModel):
         # >>> p.compare_version(s)
         # 0
         """
-        x = component_level and self.component_version() or self.version 
-        y = component_level and other.component_version() or self.version 
+        x = component_level and self.component_version() or self.version
+        y = component_level and other.component_version() or self.version
         return cmp(x, y)
 
     def sort_key(self):
@@ -732,7 +732,7 @@ class Package(BaseModel):
         Return a PackageId object for this package.
         """
         return PackageId(self.type, self.name, self.version)
-        
+
 
 #
 # Package sub types
@@ -809,13 +809,6 @@ class JBossSar(Package):
     type = StringType(default='JBoss service archive')
     packaging = StringType(default=as_archive)
     primary_language = StringType(default='Java')
-
-
-class MavenJar(JavaJar):
-    metafiles = ('META-INF/**/*.pom', 'pom.xml',)
-    repo_types = (repo_maven,)
-
-    type = StringType(default='Apache Maven')
 
 
 class IvyJar(JavaJar):
@@ -961,17 +954,6 @@ class InstallShieldPackage(Package):
     extensions = ('.exe',)
 
     type = StringType(default='InstallShield Installer')
-    packaging = StringType(default=as_archive)
-
-
-class NugetPackage(Package):
-    metafiles = ('[Content_Types].xml', '*.nuspec',)
-    filetypes = ('zip archive', 'microsoft ooxml',)
-    mimetypes = ('application/zip', 'application/octet-stream',)
-    extensions = ('.nupkg',)
-    repo_types = (repo_nuget,)
-
-    type = StringType(default='Nuget')
     packaging = StringType(default=as_archive)
 
 

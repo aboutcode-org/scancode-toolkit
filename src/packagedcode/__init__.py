@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -23,7 +23,9 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from packagedcode import models
+from packagedcode import maven
 from packagedcode import npm
+from packagedcode import nuget
 from packagedcode import rpm
 
 
@@ -35,7 +37,7 @@ PACKAGE_TYPES = [
     models.JavaJar,
     models.JavaEar,
     models.JavaWar,
-    models.MavenJar,
+    maven.MavenJar,
     models.IvyJar,
     models.JBossSar,
     models.Axis2Mar,
@@ -55,7 +57,7 @@ PACKAGE_TYPES = [
     models.MsiInstallerPackage,
     models.InstallShieldPackage,
     models.NSISInstallerPackage,
-    models.NugetPackage,
+    nuget.NugetPackage,
     models.SharPackage,
     models.AppleDmgPackage,
     models.IsoImagePackage,

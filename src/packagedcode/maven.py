@@ -58,6 +58,18 @@ Attempts to resolve some Maven properties when possible.
 # or Maven1 support dropped entirely
 
 
+
+class MavenJar(models.JavaJar):
+    metafiles = ('META-INF/**/*.pom', 'pom.xml',)
+    repo_types = (models.repo_maven,)
+
+    type = models.StringType(default='Apache Maven')
+
+    @classmethod
+    def recognize(cls, location):
+        return parse(location)
+
+
 # Maven1 field name -> xpath
 MAVEN1_FIELDS = [
     ('component_extend_1', '/project/extend'),
@@ -512,7 +524,6 @@ def inherit_from_parent(pom_data):
     return pom_data
 
 
-
 def parse(location):
     """
     Parse a pom file at location and return a Package or None.
@@ -555,7 +566,7 @@ def parse(location):
     )
     orgs = [models.Party(type=models.party_org, name=name, url=url) for name, url in orgs]
 
-    package = models.MavenJar(
+    package = MavenJar(
         location=location,
         name=group_artifact,
         # FIXME: this is not right: name and identifier should be storable

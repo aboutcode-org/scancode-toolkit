@@ -37,7 +37,6 @@ from commoncode import fileutils
 
 from packagedcode import maven
 from packagedcode import xmlutils
-from packagedcode.models import MavenJar
 
 
 class BaseMavenCase(testcase.FileBasedTesting):
@@ -395,7 +394,7 @@ class TestMavenPackage(BaseMavenCase):
         test_file = self.get_test_loc('maven/maven2/spring-beans-4.2.2.RELEASE.pom.xml')
         package = maven.parse(test_file)
 
-        assert isinstance(package, MavenJar)
+        assert isinstance(package, maven.MavenJar)
         expected = [
             ('type', u'Apache Maven'),
             ('name', u'org.springframework:spring-beans'),

@@ -63,8 +63,8 @@ class NpmPackage(models.Package):
     type = models.StringType(default='npm')
     primary_language = models.StringType(default='JavaScript')
 
-    @staticmethod
-    def recognize(location):
+    @classmethod
+    def recognize(cls, location):
         return parse(location)
 
 
