@@ -140,7 +140,7 @@ class RPMVersionType(models.BaseType):
 
     def to_native(self, value):
         return value
-    
+
     def _mock(self, context=None):
         version = models.random_string(1, string.digits)
         release = models.random_string(1, string.digits)
@@ -192,8 +192,8 @@ def parse(location):
     if infos.source_rpm:
         epoch, name, version, release, _arch = nevra.from_name(infos.source_rpm)
         evr = EVR(version, release, epoch)
-        related_packages = [RPMRelatedPackage(name=name, 
-                                              version=evr, 
+        related_packages = [RPMRelatedPackage(name=name,
+                                              version=evr,
                                               payload_type=models.payload_src)]
 
     package = RpmPackage(

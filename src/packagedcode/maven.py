@@ -277,7 +277,7 @@ def get_pom_defined_properties(xdoc):
     props = {}
 
     for xpath in PROPS_XPATH:
-        xpath 
+        xpath
         prop_vals = list(xdoc.xpath(xpath))
         logger.debug('get_pom_defined_properties: ###: {xpath} :'.format(**locals()) + repr(prop_vals))
         # FIXME: what if we have several times the same property defined?
@@ -543,7 +543,7 @@ def parse(location):
             return u'\n'.join(val)
 
     group_artifact = ':'.join([get_val('maven_component_group_id'), get_val('maven_component_artifact_id')])
-    
+
     # FIXME: the way we collect nested tags is entirely WRONG, especially for licenses
     # attempt to align licenses for now
     licenses = izip_longest(

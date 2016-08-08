@@ -31,7 +31,7 @@ import chardet
 
 
 """
-Utility functions for dealing with XML. 
+Utility functions for dealing with XML.
 """
 
 
@@ -40,11 +40,11 @@ def parse(location, handler):
     Given the location of an XML file and a handler function accepting a etree
     document, parse the file at location and invoke the handler on the etree
     doc. If parsing fails while calling handler, another approach to parsing is
-    used. 
-    
+    used.
+
     This is a workaround some lxml bug/weirdness wrt unicode in the 2.3 version
     in use.
-    
+
     The `handler` function must have no side effects and can be called again on
     failures without risk.
 
@@ -122,10 +122,10 @@ def namespace_unaware(xpath):
     This is achieved by wrapping each step of an expression with the local-
     name() XPath function. XPath expressions with namespaced XML can be complex
     and hard to read and write: this helps keep expression simple when
-    namespaces do not matter. 
-    
+    namespaces do not matter.
+
     Use with caution: this works only for simple expression using only single /.
-    
+
     For example:
     >>> simple_xpath = '/project/organization/url'
     >>> namespace_unaware(simple_xpath)

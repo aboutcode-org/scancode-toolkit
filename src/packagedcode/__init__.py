@@ -41,7 +41,7 @@ PACKAGE_TYPES = [
     models.IvyJar,
     models.JBossSar,
     models.Axis2Mar,
-    
+
     npm.NpmPackage,
     models.BowerPackage,
     models.MeteorPackage,

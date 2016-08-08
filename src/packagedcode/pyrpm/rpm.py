@@ -2,7 +2,7 @@
 # -*- Mode: Python; py-ident-offset: 4 -*-
 # vim:ts=4:sw=4:et
 
-# Copyright (c) Mário Morgado
+# Copyright (c) Mï¿½rio Morgado
 #
 # Redistribution and use in source and binary forms, with or without modification,
 # are permitted provided that the following conditions are met:
@@ -85,10 +85,10 @@ class Entry(object):
         self.tag = entry[0]
 
     def __str__(self):
-        return "(%s, %s)" % (self.tag, self.value, )
+        return "(%s, %s)" % (self.tag, self.value,)
 
     def __repr__(self):
-        return "(%s, %s)" % (self.tag, self.value, )
+        return "(%s, %s)" % (self.tag, self.value,)
 
     def __readchar(self, offset=1):
         ''' store is a pointer to the store offset
@@ -107,7 +107,7 @@ class Entry(object):
     def __readint16(self, offset=1):
         ''' int16 = 2bytes
         '''
-        data = self.store.read(offset*2)
+        data = self.store.read(offset * 2)
         fmt = '!' + str(offset) + 'i'
         value = struct.unpack(fmt, data)
         return value
@@ -256,7 +256,7 @@ class RPM(object):
         if not start:
             raise RPMError('invalid RPM file, signature header not found')
         # return the offsite after the magic number
-        return start+3
+        return start + 3
 
     def __readheader(self, header):
         ''' reads the header-header section

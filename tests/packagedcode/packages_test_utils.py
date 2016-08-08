@@ -49,31 +49,31 @@ class PackageTester(testcase.FileBasedTesting):
                 values = [v and fileutils.file_name(v) or None for v in value]
                 package_dict[key] = values
         return package_dict
-    
-    
+
+
     def check_package(self, package, expected_loc, regen=False):
         """
         Helper to test a package object against an expected JSON file.
         """
         expected_loc = self.get_test_loc(expected_loc)
-    
+
         results = self.make_locations_relative(package.as_dict())
-    
+
         if regen:
             regened_exp_loc = self.get_temp_file()
-    
+
             with open(regened_exp_loc, 'wb') as ex:
                 json.dump(results, ex, indent=2)
-    
+
             expected_dir = os.path.dirname(expected_loc)
             if not os.path.exists(expected_dir):
                 os.makedirs(expected_dir)
             shutil.copy(regened_exp_loc, expected_loc)
-    
+
         with open(expected_loc) as ex:
             expected = json.load(ex, object_pairs_hook=OrderedDict)
-    
+
         try:
-            assert expected== results
+            assert expected == results
         except AssertionError:
             assert expected.items() == results.items()
