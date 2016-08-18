@@ -1,0 +1,19 @@
+component:
+    name: lxml
+    version: 3.3.6
+    files:
+        - lxml-2.3.tar.gz
+        - lxml-2.3-cp27-none-macosx_10_6_intel.whl
+        - lxml-2.3-cp27-none-macosx_10_8_intel.whl
+        - lxml-2.3-cp27-none-macosx_10_9_intel.whl
+        - lxml-2.3-cp27-none-win32.whl
+    
+    homepage_url: http://lxml.de/
+    package:
+        download_url: https://pypi.python.org/packages/source/l/lxml/lxml-3.3.6.tar.gz
+    license:
+        text_file: lxml.LICENSE
+        key: bsd-new
+    notes: |
+        the MacOSX and Windows wheels are statically linked as needed 
+        with libxml and libxslt
