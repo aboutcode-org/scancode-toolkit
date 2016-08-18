@@ -73,8 +73,9 @@ setup(
         # licensedcode
         'PyYAML >= 3.0, <4.0',
         'bitarray >= 0.8.1, < 1.0.0',
-        'intbitset > 2.2.1,  < 2.2.3',
+        'intbitset >= 2.3.0,  < 3.0',
         'pyahocorasick >= 1.1, < 1.2',
+
         # caching
         'zc.lockfile >= 1.0.0, < 2.0.0',
         'yg.lockfile >= 2.0.0, < 3.0.0',
@@ -102,6 +103,7 @@ setup(
 
         # packagedcode
         'requests >= 2.7.0, < 3.0.0',
+        'lxml >= 3.3.0, < 4.0.0',
     ],
 
     extras_require={

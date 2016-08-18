@@ -2,11 +2,14 @@ component:
     name: lxml
     version: 3.3.6
     files:
-        - lxml-2.3.tar.gz
-        - lxml-2.3-cp27-none-macosx_10_6_intel.whl
-        - lxml-2.3-cp27-none-macosx_10_8_intel.whl
-        - lxml-2.3-cp27-none-macosx_10_9_intel.whl
-        - lxml-2.3-cp27-none-win32.whl
+        - lxml-3.3.6-cp27-cp27m-macosx_10_9_intel.whl
+        - lxml-3.3.6-cp27-cp27m-manylinux1_i686.whl
+        - lxml-3.3.6-cp27-cp27m-manylinux1_x86_64.whl
+        - lxml-3.3.6-cp27-cp27mu-manylinux1_i686.whl
+        - lxml-3.3.6-cp27-cp27mu-manylinux1_x86_64.whl
+        - lxml-3.3.6-cp27-none-win_amd64.whl
+        - lxml-3.3.6-cp27-none-win32.whl
+        - lxml-3.3.6.tar.gz
     
     homepage_url: http://lxml.de/
     package:
@@ -16,4 +19,5 @@ component:
         key: bsd-new
     notes: |
         the MacOSX and Windows wheels are statically linked as needed 
-        with libxml and libxslt
+        with libxml and libxslt. The Linux wheels are manylinux builds
+        and the build loop may have vendored shared objects in these automatically.
