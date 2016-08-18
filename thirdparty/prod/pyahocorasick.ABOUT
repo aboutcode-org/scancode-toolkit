@@ -1,0 +1,26 @@
+about_resource: 
+    - pyahocorasick-1.1.4-cp27-cp27m-macosx_10_9_intel.whl
+    - pyahocorasick-1.1.4-cp27-cp27m-manylinux1_i686.whl
+    - pyahocorasick-1.1.4-cp27-cp27m-manylinux1_x86_64.whl
+    - pyahocorasick-1.1.4-cp27-cp27m-win_amd64.whl
+    - pyahocorasick-1.1.4-cp27-cp27m-win32.whl
+    - pyahocorasick-1.1.4-cp27-cp27mu-manylinux1_i686.whl
+    - pyahocorasick-1.1.4-cp27-cp27mu-manylinux1_x86_64.whl
+    - pyahocorasick-1.1.4.tar.bz2
+download_url: https://pypi.python.org/packages/1e/75/8005d086cac4cc41d3b320d338972c5e5c6a21f88472f21ac9d0e031d300/pyahocorasick-1.1.4.tar.bz2#md5=ad445b6648dc06e9040705ce1ccb4384
+name: pyahocorasick
+version: 1.1.4
+
+homepage_url: https://github.com/WojciechMula/pyahocorasick
+dje_license: bsd-new
+license_text_file: pyahocorasick.LICENSE
+
+copyright: Copyright (c) 2011-2016 Wojciech Muła
+
+
+owner: Wojciech Muła
+author_url: http://0x80.pl/
+
+vcs_tool: git
+vcs_repository: https://github.com/WojciechMula/pyahocorasick.git
+

@@ -1,4 +1,0 @@
-licenses:
-    - sun-bcl
-expected_failure: yes
-notes: there is no generic "sun-bcl"

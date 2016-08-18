@@ -1,0 +1,23 @@
+Copyright:
+
+/usr/share/common-licenses/LGPL-2.1
+
+                OpenSceneGraph Public License, Version 0.0
+                ==========================================
+                
+  Copyright (C)
+  
+  Everyone is permitted to copy and distribute verbatim copies
+  of this licence document, but changing it is not allowed.
+
+                       OPENSCENEGRAPH PUBLIC LICENCE
+     TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+  This library is free software; you can redistribute it and/or modify it
+  under the terms of the OpenSceneGraph Public License (OSGPL) version 0.0
+  or later.
+  
+  Notes: the OSGPL is based on the LGPL, with the 4 exceptions laid in in
+  the wxWindows section below.  The LGPL in the final section of this
+  license.
+

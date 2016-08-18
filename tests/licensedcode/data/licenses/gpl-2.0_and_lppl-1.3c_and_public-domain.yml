@@ -11,3 +11,5 @@ licenses:
     - public-domain
     - public-domain
 notes: should detect public domain correctly
+expected_failure: yes
+

@@ -5,11 +5,7 @@ os:
   - linux 
 
 env:
-  - TEST_SUITE: bin/py.test -n 2 -vvs src tests/commoncode tests/extractcode tests/textcode tests/typecode tests/scancode tests/packagedcode
-  - TEST_SUITE: bin/py.test -n 2 -vvs tests/cluecode
-  - TEST_SUITE: bin/py.test -n 2 -vvs tests/licensedcode/test_detect.py tests/licensedcode/test_index.py tests/licensedcode/test_legal.py tests/licensedcode/test_models.py
-  - TEST_SUITE: bin/py.test -n 2 -vvs tests/licensedcode/test_detection_datadriven.py
-  - TEST_SUITE: bin/py.test -n 2 -vvs tests/licensedcode/test_detection_validate.py
+  - TEST_SUITE: bin/py.test -n 2 -s
   - TEST_SUITE: ./etc/release/release.sh
 
 
@@ -18,4 +14,7 @@ install:
 
 script:
     - $TEST_SUITE
+
+notifications:
+  irc: "chat.freenode.net#aboutcode"
 

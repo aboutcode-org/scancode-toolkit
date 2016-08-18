@@ -1,3 +1,7 @@
 licenses:
     - tcl
     - gpl-2.0-plus
+    - gpl
+expected_contains: yes
+
+notes: TODO refine expectations

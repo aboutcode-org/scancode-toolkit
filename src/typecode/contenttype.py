@@ -44,16 +44,24 @@ from pdfminer.pdftypes import PDFException
 from commoncode import fileutils
 from commoncode import filetype
 
-import typecode
 from typecode import magic2
+
+"""
+Utilities to detect and report the type of a file or path based on its name,
+extension and mostly its content.
+"""
+
 
 LOG = logging.getLogger(__name__)
 
+data_dir = os.path.join(os.path.dirname(__file__), 'data')
+bin_dir = os.path.join(os.path.dirname(__file__), 'bin')
+
 
 # Python mimetypes path setup using Apache mimetypes DB
-os.environ['XDG_DATA_DIRS'] = os.path.join(typecode.data_dir, 'apache')
+os.environ['XDG_DATA_DIRS'] = os.path.join(data_dir, 'apache')
 os.environ['XDG_DATA_HOME'] = os.environ['XDG_DATA_DIRS']
-APACHE_MIME_TYPES = os.path.join(typecode.data_dir, 'apache', 'mime.types')
+APACHE_MIME_TYPES = os.path.join(data_dir, 'apache', 'mime.types')
 
 # Ensure that all dates are UTC, especially for fine free file.
 os.environ['TZ'] = 'UTC'
@@ -84,6 +92,7 @@ elf_types = (ELF_EXE, ELF_SHARED, ELF_RELOC,)
 
 
 # Global registry of Type objects, keyed by location
+# TODO: can this be a memroy hog for very large scans?
 _registry = {}
 
 
@@ -222,6 +231,8 @@ class Type(object):
                     self._filetype_pygments = ''
         return self._filetype_pygments
 
+    # FIXME: we way we use tri boolean is a tad ugly
+
     @property
     def is_binary(self):
         """
@@ -247,9 +258,12 @@ class Type(object):
         """
         Return True if the file is some kind of archive or compressed file.
         """
+        # FIXME: we should use extracode archive detection
+        # TODO: also treat file systems as archives
         ft = self.filetype_file.lower()
         if not self.is_text and (self.is_compressed
                                  or 'archive' in ft
+        # FIXME: is this really correct???
                                  or '(zip)' in ft):
             return True
         else:
@@ -271,11 +285,13 @@ class Type(object):
         """
         Return True if the file is likely to be a media file.
         """
+        # TODO: fonts?
         mt = self.mimetype_file
         mimes = ('image', 'picture', 'audio', 'video', 'graphic', 'sound',)
 
         ft = self.filetype_file.lower()
-        types = ('image data', 'graphics image', 'ms-windows metafont .wmf',
+        types = (
+            'image data', 'graphics image', 'ms-windows metafont .wmf',
             'png image', 'interleaved image', 'microsoft asf', 'image text',
             'photoshop image', 'shop pro image', 'ogg data', 'vorbis', 'mpeg',
             'theora', 'bitmap', 'audio', 'video', 'sound', 'riff', 'icon',
@@ -320,14 +336,17 @@ class Type(object):
     @property
     def contains_text(self):
         """
-        Return if a non-text resource possibly contains some text
+        Return True if a file possibly contains some text.
         """
-        if not self.is_file is True and not self.is_binary is True:
+        if self.is_file is not True:
             return False
-        if self.is_media  is True or self.is_compressed is True:
-            return False
-        else:
+        if self.is_text is True:
             return True
+        if self.is_pdf is True and self.is_pdf_with_text is not True:
+            return False
+        if (self.is_media is True or self.is_compressed is True or self.is_archive is True):
+            return False
+        return True
 
     @property
     def is_script(self):

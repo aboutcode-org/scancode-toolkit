@@ -257,35 +257,38 @@ def walk(location, ignored=ignore_nothing):
      - optionally ignore files and directories by invoking the `ignored`
        callable on files and directories returning True if it should be ignored.
      - location is a directory or a file: for a file, the file is returned.
-    TODO: consider using scandir for speed-ups
     """
+    # TODO: consider using the new "scandir" module for some speed-up.
     if DEBUG:
         ign = ignored(location)
         logger.debug('walk: ignored:', location, ign)
-    if not ignored(location):
-        if filetype.is_file(location) :
-            yield parent_directory(location), [], [file_name(location)]
-        elif filetype.is_dir(location):
-            dirs = []
-            files = []
-            # TODO: consider using scandir
-            for name in os.listdir(location):
-                loc = os.path.join(location, name)
-                if filetype.is_special(loc) or ignored(loc):
-                    if DEBUG:
-                        ign = ignored(loc)
-                        logger.debug('walk: ignored:', loc, ign)
-                    continue
-                # special files and symlinks are always ignored
-                if filetype.is_dir(loc):
-                    dirs.append(name)
-                elif filetype.is_file(loc):
-                    files.append(name)
-            yield location, dirs, files
+    if ignored(location):
+        return
 
-            for dr in dirs:
-                for tripple in walk(os.path.join(location, dr), ignored):
-                    yield tripple
+    if filetype.is_file(location) :
+        yield parent_directory(location), [], [file_name(location)]
+    
+    elif filetype.is_dir(location):
+        dirs = []
+        files = []
+        # TODO: consider using scandir
+        for name in os.listdir(location):
+            loc = os.path.join(location, name)
+            if filetype.is_special(loc) or ignored(loc):
+                if DEBUG:
+                    ign = ignored(loc)
+                    logger.debug('walk: ignored:', loc, ign)
+                continue
+            # special files and symlinks are always ignored
+            if filetype.is_dir(loc):
+                dirs.append(name)
+            elif filetype.is_file(loc):
+                files.append(name)
+        yield location, dirs, files
+
+        for dr in dirs:
+            for tripple in walk(os.path.join(location, dr), ignored):
+                yield tripple
 
 
 def file_iter(location, ignored=ignore_nothing):

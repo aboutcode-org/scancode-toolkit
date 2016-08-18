@@ -10,3 +10,4 @@ licenses:
     - public-domain
     - public-domain
     - public-domain
+expected_failure: yes

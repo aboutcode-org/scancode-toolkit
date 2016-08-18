@@ -1,0 +1,14 @@
+about_resource: yg.lockfile-2.1.1-py2-none-any.whl
+version: 2.1.1
+download_url: https://pypi.python.org/packages/source/y/yg.lockfile/yg.lockfile-2.1.1.tar.gz
+
+name: yg.lockfile
+home_url: https://bitbucket.org/jaraco/yg.lockfile
+owner: Jason Coombs
+
+dje_license: mit
+license_text_file: yg.lockfile.LICENSE
+copyright: Copyright (c) Jason R. Coombs
+
+vcs_tool: hg
+vcs_repository: https://bitbucket.org/jaraco/yg.lockfile

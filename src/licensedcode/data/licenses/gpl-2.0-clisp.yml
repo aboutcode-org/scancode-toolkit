@@ -5,5 +5,3 @@ name: >-
 category: Copyleft Limited
 owner: Clisp
 homepage_url: http://clisp.hg.sourceforge.net/hgweb/clisp/clisp/raw-file/tip/COPYRIGHT
-text_urls:
-    - http://clisp.hg.sourceforge.net/hgweb/clisp/clisp/raw-file/tip/COPYRIGHT

@@ -2,7 +2,7 @@ licenses:
     - boost-1.0
     - bsd-simplified
     - cddl-1.0
-    - gpl-2.0-classpath
+    - classpath-exception-2.0
     - gpl-2.0-font
     - ijg
     - jboss-eula

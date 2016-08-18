@@ -1,0 +1,4 @@
+licenses:
+    - gpl-2.0-plus
+    - gfdl-1.1
+expected_contains: yes

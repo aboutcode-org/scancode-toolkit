@@ -1,0 +1,4 @@
+licenses:
+    - boost-1.0
+expected_contains: yes
+

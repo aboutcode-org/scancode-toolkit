@@ -1,0 +1,4 @@
+licenses:
+    - isc
+    - ibm-dhcp
+license: isc and ibm-dhcp

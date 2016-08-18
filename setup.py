@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import io
 import os
@@ -29,7 +30,7 @@ long_description = '%s\n%s' % (
 
 setup(
     name='scancode-toolkit',
-    version='1.6.3',
+    version='2.0.0.dev0',
     license='Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others',
     description='ScanCode is a tool to scan code for license, copyright and other interesting facts.',
     long_description=long_description,
@@ -52,11 +53,12 @@ setup(
         'Topic :: Utilities',
     ],
     keywords=[
-        'license', 'filetype', 'urn', 'date', 'codec',
+        'open source', 'scan', 'license', 'package', 
+        'copyright', 'filetype', 'urn', 'date', 'codec',
     ],
     install_requires=[
         # cluecode
-        'ipaddress >= 1.0, <2.0',
+        'py2-ipaddress >= 2.0, <3.0',
         'url >= 0.1.4',
         'publicsuffix2',
         # Some lntk version ranges were buggy
@@ -65,11 +67,19 @@ setup(
         # extractcode
         'patch >= 1.14.2, < 1.15 ',
         # to work around bug http://bugs.python.org/issue19839
-        # on multistream bzip2 files
+        # on multistream bzip2 files: this can removed in Python 3.
         'bz2file >= 0.98',
 
         # licensedcode
         'PyYAML >= 3.0, <4.0',
+        'bitarray >= 0.8.1, < 1.0.0',
+        'intbitset >= 2.3.0,  < 3.0',
+        'pyahocorasick >= 1.1, < 1.2',
+
+        # caching
+        'zc.lockfile >= 1.0.0, < 2.0.0',
+        'yg.lockfile >= 2.0.0, < 3.0.0',
+        'diskcache >= 1.7.0, < 1.8.0',
 
         # textcode
         'Beautifulsoup >= 3.2.0, <4.0.0',
@@ -93,7 +103,7 @@ setup(
 
         # packagedcode
         'requests >= 2.7.0, < 3.0.0',
-        'lxml >=2.3, < 3.0',
+        'lxml >= 3.3.0, < 4.0.0',
         'schematics >= 1.1.1, < 2.0.0',
     ],
 

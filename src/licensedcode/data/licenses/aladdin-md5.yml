@@ -3,3 +3,4 @@ short_name: Aladdin MD5 License
 name: Aladdin MD5 License
 category: Attribution
 owner: Aladdin Enterprises
+deprecated: This license is exactly the same as the zlib license.

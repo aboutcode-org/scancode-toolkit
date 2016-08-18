@@ -10,7 +10,5 @@ spdx_url: http://www.spdx.org/licenses/ANTLR-PD
 spdx_notes: >-
     ANTLR used this public domain notice through version 2.7 and then switched to
     a BSD license for version 3.0 and later.
-text_urls:
-    - http://www.antlr2.org/
 other_urls:
     - http://www.spdx.org/licenses/ANTLR-PD

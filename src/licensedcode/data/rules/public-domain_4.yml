@@ -1,4 +1,3 @@
 licenses:
-    - public-domain
-template: yes
+    - sax-pd
 notes: SAX declaration template

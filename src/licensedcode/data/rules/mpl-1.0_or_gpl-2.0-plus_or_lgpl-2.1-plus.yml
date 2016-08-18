@@ -1,0 +1,8 @@
+licenses:
+    - mpl-1.0
+    - gpl-2.0-plus
+    - lgpl-2.1-plus
+license_choice: yes
+license: mpl-1.0 or gpl-2.0-plus or lgpl-2.1-plus
+
+notes: OpenSIP Tripple MPL/GPL/LGPL

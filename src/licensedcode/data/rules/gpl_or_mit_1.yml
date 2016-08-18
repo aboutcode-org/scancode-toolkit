@@ -1,5 +1,4 @@
 licenses:
-    - gpl
     - mit
+    - gpl
 license_choice: yes
-template: yes

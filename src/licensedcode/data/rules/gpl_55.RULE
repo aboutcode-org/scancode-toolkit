@@ -1,0 +1,5 @@
+    Backend libraries are protected by the GNU General Public License (see
+    file COPYING), but as an exception, it is permissible to link against
+    such a library without affecting the licensing status of the program
+    that uses the libraries.  For details, see the copyright notice at the
+    head of the backend files 

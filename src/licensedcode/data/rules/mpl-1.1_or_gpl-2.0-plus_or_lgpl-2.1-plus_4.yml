@@ -1,0 +1,6 @@
+licenses:
+    - mpl-1.1
+    - gpl-2.0-plus
+    - lgpl-2.1-plus
+license_choice: yes
+notes: complex netspace tri license

@@ -1,2 +1,5 @@
 # scancode-thirdparty
-Thirdparty dependency repository
+Thirdparty dependencies repository
+
+See .ABOUT files for provenance details
+

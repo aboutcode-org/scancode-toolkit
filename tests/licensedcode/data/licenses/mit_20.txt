@@ -6,7 +6,12 @@
  * Portable Windows Library
  *
  * Copyright (c) 1993-1998 Equivalence Pty. Ltd.
- * *
+ *
+ * The contents of this file are subject to the Mozilla Public License
+ * Version 1.0 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
  * Software distributed under the License is distributed on an "AS IS"
  * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
  * the License for the specific language governing rights and limitations
@@ -21,9 +26,24 @@
  *
  * Contributor(s): ______________________________________.
  *
- * $Log$
- * Revision 1.1  2006/06/29 04:18:41  joegenbaclor
- * *** empty log message ***
+ * $Log: udll.cxx,v $
+ * Revision 1.24  2007/07/06 02:12:14  csoutheren
+ * Add extra memory leak debugging on Linux
+ * Remove compile warnings
+ *
+ * Revision 1.23  2006/08/20 00:32:00  csoutheren
+ * Fixed error reporting on DLL load error
+ *
+ * Revision 1.22  2006/07/18 05:15:58  csoutheren
+ * Removed pre-emptive call to dlerror as this crashes RedHat 9
+ *
+ * Revision 1.21  2006/06/20 13:26:19  csoutheren
+ * Only call dlerror if error occurs
+ *
+ * Revision 1.20  2006/06/20 05:36:38  csoutheren
+ * Patch 1471705 rewritten to make threadsafe
+ * Display error from dlopen if available
+ * Thanks to Joerg Pulz
  *
  * Revision 1.19  2005/11/30 12:47:42  csoutheren
  * Removed tabs, reformatted some code, and changed tags for Doxygen
@@ -148,8 +168,6 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 static void *dlsymIntern(void *handle, const char *symbol);
 
 static const char *error(int setget, const char *str, ...);
-
-
 
 /* Set and get the error string for use by dlerror */
 static const char *error(int setget, const char *str, ...)
@@ -342,6 +360,12 @@ static void *dlsym(void *handle, const char *symbol)
 
 #endif // P_MACOSX
 
+static PMutex & GetDLLMutex()
+{
+  static PMutex mutex;
+  return mutex;
+}
+
 #ifndef  P_DYNALINK
 
 #warning "No implementation for dynamic library functions"
@@ -376,11 +400,22 @@ BOOL PDynaLink::Open(const PString & _name)
 
   name = _name;
 
+  {
+    PWaitAndSignal m(GetDLLMutex());
+
+    const char *err; //= dlerror();
+
 #if defined(P_OPENBSD)
-  dllHandle = dlopen((char *)(const char *)name, RTLD_NOW);
+    dllHandle = dlopen((char *)(const char *)name, RTLD_NOW);
 #else
-  dllHandle = dlopen((const char *)name, RTLD_NOW);
+    dllHandle = dlopen((const char *)name, RTLD_NOW);
 #endif
+
+    if (dllHandle == NULL) {
+      err = dlerror();
+      PTRACE_IF(1, err != NULL, "DLL\tError loading DLL - " << err);
+    }
+  }
 
   return IsLoaded();
 }
@@ -393,53 +428,4 @@ void PDynaLink::Close()
   }
   name.MakeEmpty();
 }
-
-BOOL PDynaLink::IsLoaded() const
-{
-  return dllHandle != NULL;
-}
-
-PString PDynaLink::GetName(BOOL full) const
-{
-  if (!IsLoaded())
-    return "";
-
-  PString str = name;
-  PINDEX pos = str.FindLast('/');
-  if (pos != P_MAX_INDEX)
-    str = str.Mid(pos+1);
-  pos = str.FindLast(".so");
-  if (pos != P_MAX_INDEX)
-    str = str.Left(pos);
-
-  return str;
-}
-
-
-BOOL PDynaLink::GetFunction(PINDEX, Function &)
-{
-  return FALSE;
-}
-
-BOOL PDynaLink::GetFunction(const PString & fn, Function & func)
-{
-  if (dllHandle == NULL)
-    return FALSE;
-
-#if defined(P_OPENBSD)
-  void * p = dlsym(dllHandle, (char *)(const char *)fn);
-#else
-  void * p = dlsym(dllHandle, (const char *)fn);
-#endif
-
-  if (p == NULL)
-    return FALSE;
-
-  func = (Function &)p;
-  return TRUE;
-}
-
-#endif
-
-// End of file
 

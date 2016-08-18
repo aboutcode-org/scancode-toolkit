@@ -1,0 +1,30 @@
+  <licenses>
+
+    this is the license under which javassist is usually distributed
+
+      -->
+
+    <license>
+
+      MPL 1.1
+
+      http://www.mozilla.org/MPL/MPL-1.1.html
+
+    </license>
+
+    this is the license under which javassist is distributed when
+
+     it is bundled with JBoss
+
+      -->
+
+    <license>
+
+      LGPL 2.1
+
+      http://www.gnu.org/licenses/lgpl-2.1.html
+
+    </license>
+
+  </licenses>
+

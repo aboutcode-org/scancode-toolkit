@@ -1,4 +1,5 @@
 licenses:
-    - should detect something
-expected_failure: yes
-notes: fix me
+    - sun-sissl-1.1
+    - mit
+    - sun-sissl-1.1
+    - apache-2.0

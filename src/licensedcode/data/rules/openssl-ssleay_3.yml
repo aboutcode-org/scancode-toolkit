@@ -1,4 +1,3 @@
 licenses:
     - openssl-ssleay
-template: yes
 notes: full openssl/ssleay with extra headers

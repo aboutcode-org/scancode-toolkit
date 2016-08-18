@@ -1,0 +1,4 @@
+licenses:
+    - afl-2.0
+    - lgpl-2.0-plus
+license_choice: yes

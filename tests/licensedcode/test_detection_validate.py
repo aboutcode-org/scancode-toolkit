@@ -34,26 +34,27 @@ from test_detection_datadriven import make_license_test_function
 
 
 """
-Validate that each reference license texts is properly detected.
+Validate that each license text and each rule is properly detected.
 """
 
-def build_tests(data_set, clazz):
+def build_license_validation_tests(licenses_by_key, cls):
     """
     Dynamically build an individual test method for each license texts and spdx
-    texts in a licenses `data_set` mapping attaching the test method to the
-    `clazz` test class.
+    texts in a licenses `data_set` then mapping attaching the test method to the
+    `cls` test class.
     """
-    for license_key, license_obj in data_set.items():
+    for license_key, license_obj in licenses_by_key.items():
         if license_obj.text_file and os.path.exists(license_obj.text_file):
-            test_name = ('test_validate_detection_of_text_for_' + text.python_safe_name(license_key))
-            test_method = make_license_test_function(license_key, license_obj.text_file, test_name)
-            setattr(clazz, test_name, test_method)
+            test_name = ('test_validate_self_detection_of_text_for_' + text.python_safe_name(license_key))
+            # also verify that we are detecting exactly with the license rule itself
+            test_method = make_license_test_function(license_key, license_obj.text_file, license_obj.data_file, test_name, detect_negative=True)
+            setattr(cls, test_name, test_method)
 
         if license_obj.spdx_license_key:
             if license_obj.spdx_file and os.path.exists(license_obj.spdx_file):
-                test_name = ('test_validate_detection_of_spdx_text_for_' + text.python_safe_name(license_key))
-                test_method = make_license_test_function(license_key, license_obj.spdx_file, test_name)
-                setattr(clazz, test_name, test_method)
+                test_name = ('test_validate_self_detection_of_spdx_text_for_' + text.python_safe_name(license_key))
+                test_method = make_license_test_function(license_key, license_obj.spdx_file, license_obj.data_file, test_name, detect_negative=True)
+                setattr(cls, test_name, test_method)
 
 
 class TestValidateLicenseTextDetection(unittest.TestCase):
@@ -61,4 +62,24 @@ class TestValidateLicenseTextDetection(unittest.TestCase):
     pass
 
 
-build_tests(data_set=models.get_licenses_by_key(), clazz=TestValidateLicenseTextDetection)
+build_license_validation_tests(models.get_licenses(), TestValidateLicenseTextDetection)
+
+
+def build_rule_validation_tests(rules, cls):
+    """
+    Dynamically build an individual test method for each rule texts in a rules
+    `data_set` then mapping attaching the test method to the `cls` test class.
+    """
+    for rule in rules:
+        expected_identifier = rule.identifier
+        test_name = ('test_validate_self_detection_of_rule_for_' + text.python_safe_name(expected_identifier))
+        test_method = make_license_test_function(rule.licenses, rule.text_file, rule.data_file, test_name, detect_negative=not rule.negative())
+        setattr(cls, test_name, test_method)
+
+
+class TestValidateLicenseRuleSelfDetection(unittest.TestCase):
+    # Test functions are attached to this class at import time
+    pass
+
+
+build_rule_validation_tests(models.load_rules(), TestValidateLicenseRuleSelfDetection)

@@ -13,5 +13,3 @@ spdx_notes: |-
 text_urls:
     - http://www.boost.org/LICENSE_1_0.txt
 osi_url: http://www.opensource.org/licenses/bsl1.0.html
-other_urls:
-    - http://www.boost.org/users/license.html

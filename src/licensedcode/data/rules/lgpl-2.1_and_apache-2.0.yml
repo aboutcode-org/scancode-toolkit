@@ -1,0 +1,5 @@
+licenses:
+    - lgpl-2.1
+    - apache-2.0
+license_choice: no
+notes: this is a weird conlicted license found in Ajax4JSF from Exadel.

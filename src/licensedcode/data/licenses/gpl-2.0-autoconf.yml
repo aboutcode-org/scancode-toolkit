@@ -10,5 +10,3 @@ spdx_full_name: >-
 spdx_url: http://spdx.org/licenses/GPL-2.0-with-autoconf-exception
 text_urls:
     - http://ac-archive.sourceforge.net/doc/copyright.html
-other_urls:
-    - http://ac-archive.sourceforge.net/doc/copyright.html

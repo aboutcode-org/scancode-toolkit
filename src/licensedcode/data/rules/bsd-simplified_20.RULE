@@ -1,6 +1,6 @@
 BSD 2-Clause License (a.k.a Simplified or FreeBSD License)
 
-{{20 Copyright (c) <YEAR>, <OWNER>
+{{Copyright (c) <YEAR>, <OWNER>
 All rights reserved.}}
 
 Redistribution and use in source and binary forms, with or without
@@ -25,4 +25,4 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 The views and conclusions contained in the software and documentation are those
 of the authors and should not be interpreted as representing official policies,
-either expressed or implied, of {{the FreeBSD Project.}}
+either expressed or implied, of

@@ -37,7 +37,7 @@ class TestCodec(TestCase):
         result = bin_to_num('{')
         assert expected == result
 
-    def test_bin_to_num_null(self):
+    def test_bin_to_num_zero(self):
         expected = 0
         result = bin_to_num('\x00')
         assert expected == result
@@ -57,8 +57,8 @@ class TestCodec(TestCase):
         result = num_to_bin(123)
         assert expected == result
 
-    def test_num_to_bin_null(self):
-        expected = ''
+    def test_num_to_bin_zero(self):
+        expected = '\x00'
         result = num_to_bin(0)
         assert expected == result
 
@@ -73,7 +73,7 @@ class TestCodec(TestCase):
         assert expected == result
 
     def test_encode_zero(self):
-        assert  '' == _encode(0)
+        assert  'AA==' == _encode(0)
 
     def test_encode_basic(self):
         assert 'HKq1w7M=' == _encode(123123123123)

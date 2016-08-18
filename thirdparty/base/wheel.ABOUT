@@ -1,6 +1,6 @@
-about_resource: wheel-0.24.0-py2.py3-none-any.whl
-version: 0.24.0
-download_url: https://pypi.python.org/packages/py2.py3/w/wheel/wheel-0.24.0-py2.py3-none-any.whl#md5=4c24453cda2177fd42c5d62d6434679a
+about_resource: wheel-0.29.0-py2.py3-none-any.whl
+version: 0.29.0
+download_url: https://pypi.python.org/packages/py2.py3/w/wheel/wheel-0.29.0-py2.py3-none-any.whl
 
 name: wheel
 home_url: https://bitbucket.org/pypa/wheel

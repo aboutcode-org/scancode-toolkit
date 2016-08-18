@@ -1,4 +1,17 @@
 licenses:
     - gpl-3.0
-expected_failure: yes
-notes: the sencha touch 2.4.2 licensing is rather complex and requires some digging
+    - sencha-app-floss-exception
+    - sencha-dev-floss-exception
+    - sencha-commercial
+    - public-domain
+    - mit
+    - mit
+
+notes: complex notice for Sencha touch 2.4.2
+license: 
+    ((gpl-3.0 with (sencha-app-floss-exception or sencha-dev-floss-exception))
+     or sencha-commercial) 
+     and (public-domain and mit and mit)
+
+
+

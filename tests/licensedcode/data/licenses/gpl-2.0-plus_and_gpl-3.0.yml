@@ -1,3 +1,6 @@
 licenses:
     - gpl-2.0-plus
     - gpl-3.0
+    - gpl
+    - gpl
+expected_contains: yes

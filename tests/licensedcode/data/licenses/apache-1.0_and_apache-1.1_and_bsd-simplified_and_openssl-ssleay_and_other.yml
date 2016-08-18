@@ -1,7 +1,4 @@
 licenses:
     - apache-1.0
-    - apache-1.1
-    - bsd-simplified
-    - openssl-ssleay
     - public-domain
-expected_failure: yes
+

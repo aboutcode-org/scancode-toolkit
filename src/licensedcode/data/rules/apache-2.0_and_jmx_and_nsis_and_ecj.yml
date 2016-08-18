@@ -1,0 +1,10 @@
+licenses:
+    - apache-2.0
+    - mx4j
+    - zlib
+    - bzip2-libbzip-1.0.5
+    - cpl-1.0
+    - lzma-cpl-exception
+    - epl-1.0
+
+notes: complex NSIS notices, not a choice. Found in Tomcat

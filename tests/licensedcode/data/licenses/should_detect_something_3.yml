@@ -1,4 +1,3 @@
 licenses:
-    - should detect something
-expected_failure: yes
-notes: fix me
+    - pdl-1.0
+

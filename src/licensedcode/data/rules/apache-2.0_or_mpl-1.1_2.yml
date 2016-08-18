@@ -1,0 +1,5 @@
+licenses:
+    - apache-2.0
+    - mpl-1.1
+license_choice: yes
+notes: Complex Debian notice for RabbitMQ

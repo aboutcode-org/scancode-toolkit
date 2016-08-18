@@ -1,5 +1,17 @@
 licenses:
-    - hs-regexp
-    - proprietary
     - x11-opengroup
-expected_failure: yes
+    - mit
+    - x11-opengroup
+    - x11-opengroup
+    - x11-dec1
+    - x11-dec1
+    - x11-dec1
+    - x11-dec1
+    - mit-old-style-no-advert
+    - mit
+    - x11-opengroup
+    - x11-opengroup
+    - mit-old-style-no-advert
+    - mit
+notes: TODO refine expectations
+

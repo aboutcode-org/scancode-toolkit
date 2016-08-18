@@ -9,8 +9,6 @@ spdx_full_name: Common Public License 1.0
 spdx_url: http://spdx.org/licenses/CPL-1.0
 spdx_notes: >-
     This license was superseded by Eclipse Public License
-text_urls:
-    - http://www.eclipse.org/legal/cpl-v10.html
 osi_url: http://www.opensource.org/licenses/cpl1.0.php
 faq_url: http://web.archive.org/web/20101104092121/http://www.ibm.com/developerworks/library/os-cplfaq.html
 other_urls:

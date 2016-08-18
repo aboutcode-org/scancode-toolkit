@@ -1,0 +1,11 @@
+Persevere Server is available under *either* the terms of the modified BSD license *or* the
+Academic Free License version 2.1. As a recipient of Persevere, you may choose which
+license to receive this code under (except as noted in per-module LICENSE
+files). Persevere is distributed with several libraries which were produced with
+their own license including Rhino (MPL, LGPL, or GPL),  
+Derby (Apache license), and Apache Commons 
+(Apache license), however, none of these libraries have been modified, the standard binary 
+distributions are included for setup convenience, with the exception that portions of 
+the Stringtree JSON Library source code was used in org.persvr.util.JSONParser. 
+Stringtree is Apache licensed and can be freely used and modified in Persevere
+(compatible with AFL/BSD).

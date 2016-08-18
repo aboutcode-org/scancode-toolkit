@@ -1,3 +1,6 @@
 licenses:
+    - gpl-2.0-plus
     - gpl-2.0-autoconf
+license_choice: yes
+license: gpl-2.0-plus with gpl-2.0-autoconf
 notes: GPL 2.0 with autoconf

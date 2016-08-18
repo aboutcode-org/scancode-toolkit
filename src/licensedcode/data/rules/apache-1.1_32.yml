@@ -1,3 +1,5 @@
 licenses:
     - apache-1.1
-notes: Apache 1.1, opensymphony other variant
+notes: >
+    Notice found in http://apache.org/licenses/LICENSE-1.1 
+    but it is really specific to an Apache Software Foundation component. "

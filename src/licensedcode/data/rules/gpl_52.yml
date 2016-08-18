@@ -1,0 +1,14 @@
+licenses:
+    - gpl
+notes: |
+    No version is specified in this notice found in ansiknr.c as redistributed
+    with automake in this RPM
+
+    http://vault.centos.org/6.7/os/Source/SPackages/automake-1.11.1-4.el6.src.rpm 
+
+    The original tarball for automake found in this RPM contains a GPL 2.0 text
+    at the top-level and a GPL 3.0 text at the same level as ansiknr.c. Since
+    ansiknr.c copyright pre-dates the GPL 3.0 and the notice has no version
+    stated, this rule is defined to match a bare GPL rather than a GPL 3.0. GPL
+    3.0 is the license for automake proper and unlikely the license for
+    ansiknr.c.

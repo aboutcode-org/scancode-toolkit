@@ -6,7 +6,7 @@ licenses:
     - gpl
     - gpl
     - gpl-2.0-gcc-compiler-exception
-    - gpl-2.0-classpath
+    - classpath-exception-2.0
     - gpl-2.0-gcc
     - gpl-2.0-plus-linking
     - gpl-2.0-gcc
@@ -17,3 +17,5 @@ licenses:
     - gpl-2.0-plus-linking
     - mit
     - gfdl-1.2
+notes: TODO refine expectations
+expected_failure: yes

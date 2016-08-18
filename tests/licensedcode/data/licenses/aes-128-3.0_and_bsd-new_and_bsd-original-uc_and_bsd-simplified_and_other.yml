@@ -28,4 +28,5 @@ licenses:
     - unlicense
     - x11-lucent
     - zlib
+
 expected_failure: yes

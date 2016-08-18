@@ -9,7 +9,6 @@ spdx_full_name: Open Public License v1.0
 spdx_url: http://spdx.org/licenses/OPL-1.0
 spdx_notes: https://fedoraproject.org/wiki/Licensing/Open_Public_License
 text_urls:
-    - http://ksoap.objectweb.org/software/license/opl.html
     - http://old.koalateam.com/jackaroo/OPL_1_0.TXT
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/Open_Public_License

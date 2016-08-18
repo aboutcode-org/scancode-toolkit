@@ -1,0 +1,16 @@
+about_resource: six-1.10.0-py2.py3-none-any.whl
+version: 1.10.0
+download_url: https://pypi.python.org/packages/3.3/s/six/six-1.10.0-py2.py3-none-any.whl
+
+name: six
+description: Python 2 and 3 compatibility utilities
+home_url: http://bitbucket.org/gutworth/six
+dje_license: mit
+license_text_file: six.LICENSE
+
+owner: Benjamin Peterson
+contact: http://www.benjamin-peterson.org/
+copyright: Copyright (c) 2010-2011 Benjamin Peterson
+
+vcs_tool: hg
+vcs_repository: https://bitbucket.org/gutworth/six

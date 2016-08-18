@@ -1,0 +1,26 @@
+component:
+    name: bitarray
+    version: 0.8.1
+    homepage_url: https://github.com/ilanschnell/bitarray
+    copyright: Copyright (c) Ilan Schnell and others
+    paths: 
+        - file: bitarray-0.8.1-cp27-cp27m-macosx_10_9_intel.whl
+        - file: bitarray-0.8.1-cp27-cp27m-manylinux1_i686.whl
+        - file: bitarray-0.8.1-cp27-cp27m-manylinux1_x86_64.whl
+        - file: bitarray-0.8.1-cp27-cp27m-win_amd64.whl
+        - file: bitarray-0.8.1-cp27-cp27m-win32.whl
+        - file: bitarray-0.8.1-cp27-cp27mu-manylinux1_i686.whl
+        - file: bitarray-0.8.1-cp27-cp27mu-manylinux1_x86_64.whl
+        - file: bitarray-0.8.1-cp27-none-macosx_10_6_intel.whl
+        - file: bitarray-0.8.1.tar.gz
+
+    party:
+        relationship: owner
+        name: Ilan Schnell
+
+    package:
+        download_url: http://pypi.python.org/packages/source/b/bitarray/bitarray-0.8.1.tar.gz
+    
+    license:
+        key: psf
+        text_file: PSF.LICENSE

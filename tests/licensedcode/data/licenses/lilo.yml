@@ -3,6 +3,7 @@ licenses:
     - bzip2-libbzip-1.0.5
     - vsl-1.0
     - lilo
-    - lilo
     - bzip2-libbzip-1.0.5
     - vsl-1.0
+expected_failure: yes
+notes: complex markup

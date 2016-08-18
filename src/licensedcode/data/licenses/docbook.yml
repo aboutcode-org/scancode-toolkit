@@ -1,0 +1,10 @@
+key: docbook
+short_name: Docbook License
+name: Docbook License
+category: Attribution
+owner: DocBook Project
+homepage_url: http://snapshots.docbook.org/xsl/COPYING
+faq_url: http://wiki.docbook.org/DocBookLicense
+other_urls:
+    - http://www-cs-students.stanford.edu/~tjw/jsbn/
+notes: this is an MIT/X11 style license with an extra clause

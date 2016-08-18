@@ -9,7 +9,5 @@ spdx_full_name: SGI Free Software License B v1.1
 spdx_url: http://spdx.org/licenses/SGI-B-1.1
 spdx_notes: >-
     This license was released 22 February 2002
-text_urls:
-    - http://oss.sgi.com/projects/FreeB/SGIFreeSWLicB.1.1.doc
 other_urls:
     - http://oss.sgi.com/projects/FreeB/

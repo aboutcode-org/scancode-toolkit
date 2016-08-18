@@ -1,0 +1,10 @@
+about_resource: publicsuffix2-2.20160818-py2.py3-none-any.whl
+name: publicsuffix2
+version: 2.20160818
+owner: nexB Inc.
+home_url: https://github.com/pombredanne/python-publicsuffix2
+dje_license: mit and mpl-2.0
+download_url: https://pypi.python.org/packages/39/43/6148f7ecd25e0f945fc275ddf041d7a00f781b6ba06b3a1d75161ddc7860/publicsuffix2-2.20160818-py2.py3-none-any.whl#md5=4dd5ab933d2085b7c667a0c2add0e85b
+license_text_file: publicsuffix.LICENSE
+vcs_tools: git
+vcs_repository: https://github.com/pombredanne/python-publicsuffix2.git

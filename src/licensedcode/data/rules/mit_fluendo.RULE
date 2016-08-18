@@ -1,0 +1,118 @@
+License:
+
+Unless otherwise indicated, Source Code is licensed under MIT license.
+Copyright (c) 2005,2006 <s>Fluendo S.L.</s>
+
+Unless otherwise indicated, Source Code is licensed under MIT license.  See
+further explanation below, under "MIT license Statements for Fluendo's mp3
+plug-in Source Code'
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+  Intel Performance Primitives library source code
+
+ The upstream tarball contained code licensed under a license not compatible
+ with Debian Free Software Guidelines and was stripped.  This code was
+ developed under a non-disclosure agreement to build against the libipp
+ offering primitives optimized for Intel processors.  The removed files were:
+    decoder/table-dewindow-ipp.h
+    decoder/mp3-ipp.h
+    decoder/mp3-ipp.c
+
+MIT license Statements for Fluendo's mp3 plug-in Source Code
+------------------------------------------------------------
+
+Fluendo's mp3 software Source Code (the "Source Code") is licensed under the
+MIT license provisions.
+
+The MIT license is an open source license that permits the User to operate and
+use in many forms the Source Code, which would be governed under its
+regulations.
+
+The purpose of this note is to clarify the intellectual property rights granted
+over the Source Code by Fluendo, as well as other legal issues that concern
+your use of it.
+
+MIT license contents and provisions
+-----------------------------------
+
+The MIT license allows you to do the following things with the Source Code:
+
+- Copy and use the Source Code alone or jointly with other code for any
+  purposes.
+  Copy of the Source Code is not limited and is royalty-free.
+
+- Merge the Source Code with other code for developing new applications with no
+  limits.
+
+- Modifying the Source Code for developing the plug-in or for implementing the
+  plug-in in other applications for any purposes. The MIT License does not
+  require you to share these modifications with anyone.
+
+- Publish, distribute, sublicense and sell copies of the Source Code to third
+  parties.
+
+- Permit anyone to whom the Source Code is licensed to enjoy the rights above
+  subject to the MIT license provisions.
+
+By licensing this Source Code under the MIT License, Fluendo is offering to the
+community the rights set out above without restriction and without any
+obligation for the User of the Source Code to release his/her modifications
+back to the community. Anyone operating with the Source Code released from
+Fluendo must grant the same MIT license rights to the community, except for any
+modifications operated on the Source Code which can be granted under a
+different license (even a proprietary license).
+
+All these rights granted to the User for the Source Code hold a limitation
+which is to include MIT permission notice and the following copyright notice:
+"Copyright 2005 <s>Fluendo, S.L.</s> This Source Code is licensed under MIT license
+and the explanations attached in MIT License Statements". These notices shall
+be included in all copies of the Source Code or in substantial parts of the
+Source Code which may be released separately or with modifications.
+
+Patents over the plug-in and/or Source Code
+-------------------------------------------
+
+The binaries that can be created by compiling this Source Code released by
+Fluendo might be covered by patents in various parts of the world.  Fluendo
+does not own or claim to own any patents on the techniques used in the code.
+(Such patents are owned or claimed to be owned by Thompson Licensing, S.A. and
+some other entities as the case may be).
+
+Fluendo has got the relevant licenses to cover its own activities with the
+Source Code but it is not authorized to sublicense nor to grant the rights
+which it has acquired over the patents. In this sense, you can work and deal
+freely with the Source Code under MIT provisions set out above, bearing in mind
+that some activities might not be allowed under applicable patent regulations
+and that Fluendo is not granting any rights in relation to such patents.
+
+The patent license granted to Fluendo only covers Fluendo's own Software and
+Source Code activities. In any case, this software license does not allow you
+to redistribute or copy complete, ready to use mp3 software decoder binaries
+made from the Source Code as made available by Fluendo. You can of course
+distribute binaries you make yourself under any terms allowed by the MIT
+license and whatever necessary rights you have or have acquired according to
+applicable patent regulations.
+
+As Fluendo can not assure that any of the activities you undertake do not
+infringe any patents or other industrial or intellectual property rights,
+Fluendo hereby disclaims any liability for any patent infringement that may be
+claimed to you or to any other person from any legitimate right's owner, as
+stated in MIT license. So it is your responsibility to get information and to
+acquire the necessary patent licenses to undertake your activities legally.

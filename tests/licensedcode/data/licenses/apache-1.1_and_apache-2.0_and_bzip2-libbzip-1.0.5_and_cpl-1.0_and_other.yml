@@ -10,4 +10,4 @@ licenses:
     - bzip2-libbzip-1.0.5
     - cpl-1.0
     - lzma-cpl-exception
-expected_failure: yes
+expected_contains: yes

@@ -1,0 +1,9 @@
+about_resource: dict_utils.py
+download_url: 
+    - http://code.activestate.com/recipes/578375-proof-of-concept-for-a-more-space-efficient-faster/
+    - http://code.activestate.com/recipes/198157-improve-dictionary-lookup-performance/
+
+dje_license: mit and psf-2.0
+license_text_file: dict_utils.LICENSE
+copyright: Copyright (c) 2012 Raymond Hettinger
+owner: Raymond Hettinger

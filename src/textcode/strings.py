@@ -95,7 +95,7 @@ def remove_non_printable(binary_string):
 def file_strings(location, buff_size=1024 * 1024):
     """
     Process (eventually large) files in chunks and yield ASCII strings found
-    in file as location, encoded as Unicode.
+    in file at location, encoded as Unicode.
     """
     file_size = os.path.getsize(location)
     count = 0
@@ -214,7 +214,7 @@ def del_special(S):
     return S.replace('\\r', ' ').replace('\\n', ' ').replace('\\t', ' ')
 
 
-def is_mangled_ccp(S):  # @UnusedVariable
+def is_mangled_ccp(S):
     return False
 
 
@@ -222,7 +222,7 @@ def demangle_cpp(S):
     return S
 
 
-def is_mangled_java(S):  # @UnusedVariable
+def is_mangled_java(S):
     return False
 
 
@@ -332,7 +332,7 @@ def JAVAREF_RE():
     return re.compile('^.*$', re.IGNORECASE)
 
 
-def is_java_ref(S):  # @UnusedVariable
+def is_java_ref(S):
     """
     Return True is S looks like a reference to a java class or package in a
     class file.

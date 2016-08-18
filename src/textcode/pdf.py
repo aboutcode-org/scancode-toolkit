@@ -38,7 +38,7 @@ from pdfminer.pdftypes import PDFException
 
 def get_text_lines(location):
     """
-    Return a list of text lines extracted from a pdf file at location.
+    Return a list of text lines extracted from a pdf file at `location`.
     """
     extracted_text = StringIO()
     laparams = LAParams()
@@ -56,5 +56,6 @@ def get_text_lines(location):
                     extracted_text.seek(0)
                     lines = extracted_text.readlines()
         except PDFException:
+            # TODO: log errors!
             return []
     return lines

@@ -23,10 +23,40 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from os.path import abspath, dirname, join, exists
+from __future__ import absolute_import
+
+from os.path import dirname
+from os.path import abspath
+from os.path import getsize
+from os.path import getmtime
+from os.path import join
+from os.path import exists
+
+from commoncode import fileutils
 
 
-src_dir = abspath(dirname(__file__))
-data_dir = join(src_dir, 'data')
+lic_src_dir = abspath(dirname(__file__))
+src_dir = dirname(lic_src_dir)
+data_dir = join(lic_src_dir, 'data')
 licenses_data_dir = join(data_dir, 'licenses')
 rules_data_dir = join(data_dir, 'rules')
+root_dir = dirname(src_dir)
+cache_dir = join(root_dir, '.cache')
+license_index_cache_dir = join(cache_dir, 'license_index')
+license_matches_cache_dir = join(cache_dir, 'license_matches')
+
+if not exists(license_index_cache_dir):
+    fileutils.create_dir(license_index_cache_dir)
+
+# length of ngrams
+NGRAM_LENGTH = 5
+
+# minimum number of tokens a match should have to be considered as worthy
+MIN_MATCH_LENGTH = 4
+MIN_MATCH_HIGH_LENGTH = 3
+
+# maximum number of non-matching tokens that can be skipped
+MAX_GAP_SKIP = 15
+
+# maximum distance between two matches to merge
+MAX_DIST = 10

@@ -9,4 +9,4 @@ licenses:
     - lgpl
     - historical
     - bsd-new
-expected_failure: yes
+expected_contains: yes

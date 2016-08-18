@@ -38,17 +38,16 @@ except ImportError:
     from yaml import SafeDumper
 
 
-
 """
-Wrapper around PyYAML to provide sane defaults ensuring that dump/load does
-not damage content, keeps ordering, use always block-style and use four
-spaces indents to get readable YAML and quotes and folds texts in a sane way.
+Wrapper around PyYAML to provide sane defaults ensuring that dump/load does not
+damage content, keeps ordering, use always block-style and use four spaces
+indents to get readable YAML and quotes and folds texts in a sane way.
 
 Use the `load` function to get a primitive type from a YAML string and the
 `dump` function to get a YAML string from a primitive type.
 
-Load and dump rely on subclasses of SafeLoader and SafeDumper respectively
-doing all the dirty bidding to get PyYAML straight.
+Load and dump rely on subclasses of SafeLoader and SafeDumper respectively doing
+all the dirty bidding to get PyYAML straight.
 """
 
 # Check:
@@ -135,7 +134,7 @@ class SaneDumper(SafeDumper):
     """
     Ensure that lists items are always indented.
     """
-    def increase_indent(self, flow=False, indentless=False):  # @UnusedVariable
+    def increase_indent(self, flow=False, indentless=False):
         return super(SaneDumper, self).increase_indent(flow, indentless=False)
 
 
@@ -148,7 +147,7 @@ def ordered_dumper(dumper, data):
 SaneDumper.add_representer(OrderedDict, ordered_dumper)
 
 
-def null_dumper(dumper, value):  # @UnusedVariable
+def null_dumper(dumper, value):
     """
     Always dump nulls as empty string.
     """

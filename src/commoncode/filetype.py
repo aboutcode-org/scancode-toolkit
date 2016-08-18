@@ -166,7 +166,7 @@ def is_rwx(location):
 
 def get_last_modified_date(location):
     """
-    Return the last modified date stamp of a file is YYYYMMDD format. The date
+    Return the last modified date stamp of a file as YYYYMMDD format. The date
     of non-files (dir, links, special) is always an empty string.
     """
     yyyymmdd = ''
