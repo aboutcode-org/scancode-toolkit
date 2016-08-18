@@ -87,6 +87,32 @@ def _load_json_result(result_file, test_dir):
     return scan_result
 
 
+def test_package_option_detects_packages(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.get_test_loc('package', copy=True)
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['--package', test_dir, result_file])
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    assert 'package.json' in result.output
+    assert os.path.exists(result_file)
+    assert len(open(result_file).read()) > 10
+
+
+def test_verbose_option_with_packages(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.get_test_loc('package', copy=True)
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['--package', '--verbose', test_dir, result_file])
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    assert 'package.json' in result.output
+    assert os.path.exists(result_file)
+    assert len(open(result_file).read()) > 10
+    
+
 def test_copyright_option_detects_copyrights(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.get_test_loc('copyright', copy=True)
