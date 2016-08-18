@@ -15,3 +15,6 @@ install:
 script:
     - $TEST_SUITE
 
+notifications:
+  irc: "chat.freenode.net#aboutcode"
+
