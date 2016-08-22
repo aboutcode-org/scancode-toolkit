@@ -103,25 +103,32 @@ setup(
 
         # packagedcode
         'requests >= 2.7.0, < 3.0.0',
-        'lxml >= 3.3.0, < 4.0.0',
         'schematics >= 1.1.1, < 2.0.0',
     ],
-
     extras_require={
-        'base': [
-            'certifi',
-            'setuptools',
-            'wheel',
-            'pip',
-            'wincertstore',
+        ':sys_platform == "win32"': [
+            'lxml == 3.6.0',
         ],
-        'dev': [
-            'pytest',
-            'execnet',
-            'py',
-            'pytest-xdist',
-            'bumpversion',
+        ':"linux" in sys_platform': [
+            'lxml == 3.6.4',
         ],
+        ':"darwin" in sys_platform': [
+            'lxml == 3.6.4',
+        ],
+#         'base': [
+#             'certifi',
+#             'setuptools',
+#             'wheel',
+#             'pip',
+#             'wincertstore',
+#         ],
+#         'dev': [
+#             'pytest',
+#             'execnet',
+#             'py',
+#             'pytest-xdist',
+#             'bumpversion',
+#         ],
 
     },
     entry_points={
