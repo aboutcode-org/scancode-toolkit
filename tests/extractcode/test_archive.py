@@ -1258,7 +1258,6 @@ class TestAr(BaseArchiveTestCase):
         check_files(test_dir, expected)
         assert [] == result
 
-    # @expectedFailure
     def test_extract_ar_with_permissions(self):
         # the behavious is not correct: 7z is better, but has sec flaws for now
         test_file = self.get_test_loc('archive/ar/winlib/zlib.lib')
