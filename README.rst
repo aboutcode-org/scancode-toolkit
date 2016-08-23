@@ -101,6 +101,11 @@ Support
 If you have a question, a suggestion or find a bug, enter a ticket at:
 https://github.com/nexB/scancode-toolkit/issues
 
+For questions and chats, there is an official #aboutcode IRC channel on freenode for
+scancode and other related tools. You can use your favorite IRC client or use the
+web chat at http://webchat.freenode.net/
+
+
 
 Documentation
 =============
