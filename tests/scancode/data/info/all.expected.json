@@ -239,7 +239,15 @@
           "spdx_license_key": "BSD-4-Clause-UC", 
           "spdx_url": "http://spdx.org/licenses/BSD-4-Clause-UC", 
           "start_line": 22, 
-          "end_line": 51
+          "end_line": 51, 
+          "matched_rule": {
+            "identifier": "bsd-original-uc_16.RULE", 
+            "license_choice": false, 
+            "licenses": [
+              "bsd-original-uc"
+            ], 
+            "matcher": "aho cached"
+          }
         }
       ], 
       "infos": [
@@ -318,7 +326,16 @@
           "spdx_license_key": "GPL-2.0", 
           "spdx_url": "http://spdx.org/licenses/GPL-2.0", 
           "start_line": 5, 
-          "end_line": 10
+          "end_line": 10, 
+          "matched_rule": {
+            "identifier": "gpl-2.0_or_bsd-new.RULE", 
+            "license_choice": true, 
+            "licenses": [
+              "gpl-2.0", 
+              "bsd-new"
+            ], 
+            "matcher": "aho cached"
+          }
         }, 
         {
           "key": "bsd-new", 
@@ -332,7 +349,16 @@
           "spdx_license_key": "BSD-3-Clause", 
           "spdx_url": "http://spdx.org/licenses/BSD-3-Clause", 
           "start_line": 5, 
-          "end_line": 10
+          "end_line": 10, 
+          "matched_rule": {
+            "identifier": "gpl-2.0_or_bsd-new.RULE", 
+            "license_choice": true, 
+            "licenses": [
+              "gpl-2.0", 
+              "bsd-new"
+            ], 
+            "matcher": "aho cached"
+          }
         }
       ], 
       "infos": [

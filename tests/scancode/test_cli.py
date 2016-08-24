@@ -44,8 +44,8 @@ test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
 """
-These CLI tests are dependent on py.test monkeypatch to  ensure we are testing
-the actual command outputs as if using a TTY or not.
+These CLI tests are dependent on py.test monkeypatch to  ensure we are testing the
+actual command outputs as if using a real command line call.
 """
 
 
