@@ -80,7 +80,9 @@ Page 1
                 pass
 
     def test_get_text_lines_skip_parse_faulty_broadcom_doc(self):
-        # test for
         test_file = self.get_test_loc('pdf/pdfminer_bug_118/faulty.pdf')
-        result = pdf.get_text_lines(test_file)
-        assert [] == result
+        try:
+            pdf.get_text_lines(test_file)
+            self.fail('Exception should be thrown on faulty PDF')
+        except:
+            pass

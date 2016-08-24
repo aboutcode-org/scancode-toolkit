@@ -51,10 +51,10 @@ actual command outputs as if using a real command line call.
 
 def check_scan(expected_file, result_file, test_dir, regen=False):
     """
-    Check the scan result_file JSON results against the expected_file expected
-    JSON results. Removes references to test_dir for the comparison. If regen is
-    True the expected_file WILL BE overwritten with the results. This is
-    convenient for updating tests expectations. But use with caution.
+    Check the scan result_file JSON results against the expected_file expected JSON
+    results. Removes references to test_dir for the comparison. If regen is True the
+    expected_file WILL BE overwritten with the results. This is convenient for
+    updating tests expectations. But use with caution.
     """
     result = _load_json_result(result_file, test_dir)
     if regen:
@@ -111,7 +111,7 @@ def test_verbose_option_with_packages(monkeypatch):
     assert 'package.json' in result.output
     assert os.path.exists(result_file)
     assert len(open(result_file).read()) > 10
-    
+
 
 def test_copyright_option_detects_copyrights(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
@@ -282,3 +282,13 @@ def test_scanned_path_is_present_in_html_app_output(monkeypatch):
     html_file = open(result_file).read()
     assert '<title>ScanCode scan results for: %(test_dir)s</title>' % locals() in html_file
     assert 'ScanCode</a> scan results for: %(test_dir)s</span>' % locals() in html_file
+
+def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_file = test_env.get_test_loc('failing/patchelf.pdf')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('test.json')
+    result = runner.invoke(cli.scancode, [ '--copyright', test_file, result_file])
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    check_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file, test_file)

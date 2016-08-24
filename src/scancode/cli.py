@@ -332,11 +332,16 @@ def scan_one(input_file, scans):
     """
     data = OrderedDict()
     for scan_name, scan_func in scans.items():
-        if scan_func:
+        if not scan_func:
+            continue
+        try:
             scan = scan_func(input_file)
             if isinstance(scan, GeneratorType):
                 scan = list(scan)
             data[scan_name] = scan
+        except Exception, e:
+            # never fail but instead add an error message.
+            data[scan_name] = {'errors': e.message}
     return data
 
 
