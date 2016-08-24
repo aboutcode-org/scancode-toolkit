@@ -245,8 +245,7 @@
             "license_choice": false, 
             "licenses": [
               "bsd-original-uc"
-            ], 
-            "matcher": "aho cached"
+            ]
           }
         }
       ], 
@@ -333,8 +332,7 @@
             "licenses": [
               "gpl-2.0", 
               "bsd-new"
-            ], 
-            "matcher": "aho cached"
+            ]
           }
         }, 
         {
@@ -356,8 +354,7 @@
             "licenses": [
               "gpl-2.0", 
               "bsd-new"
-            ], 
-            "matcher": "aho cached"
+            ]
           }
         }
       ], 

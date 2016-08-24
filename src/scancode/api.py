@@ -140,7 +140,6 @@ def get_licenses(location, min_score=0):
             result['matched_rule']['identifier'] = match.rule.identifier
             result['matched_rule']['license_choice'] = match.rule.license_choice
             result['matched_rule']['licenses'] = match.rule.licenses
-            result['matched_rule']['matcher'] = match.matcher
             
             yield result
 
