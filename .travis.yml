@@ -16,5 +16,12 @@ script:
     - $TEST_SUITE
 
 notifications:
-  irc: "chat.freenode.net#aboutcode"
-
+    irc:
+        channels:
+          - "chat.freenode.net#aboutcode"
+    on_success: change
+    on_failure: always
+    use_notice: true
+    skip_join: true
+    template:
+      - "%{repository_slug}#%{build_number} (%{branch} - %{commit} : %{author}): %{message} : %{build_url}"
