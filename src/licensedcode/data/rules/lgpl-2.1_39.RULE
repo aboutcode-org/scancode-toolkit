@@ -1,7 +1,3 @@
-/*
- * libuci - Library for the Unified Configuration Interface
- * Copyright (C) 2008 Felix Fietkau <nbd@openwrt.org>
- *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License version 2.1
  * as published by the Free Software Foundation
@@ -10,9 +6,3 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
- */
-
-/*
- * This file contains misc utility functions and wrappers to standard
- * functions, which throw exceptions upon failure.
- */
