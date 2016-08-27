@@ -1,5 +1,5 @@
 Disclaimer:
  Copyright by Ingo R. Homann (ingo.homann@uni-bielefeld.de)
- Nicht f<FC>r kommerzielle Zwecke gedacht.
+ Nicht fur kommerzielle Zwecke gedacht.
  Keine Garantie auf irgendwas.
  usw...
