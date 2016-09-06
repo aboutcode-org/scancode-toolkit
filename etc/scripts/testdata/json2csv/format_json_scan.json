@@ -1,0 +1,31 @@
+{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.", 
+  "scancode_version": "1.6.1", 
+  "resource_count": 1, 
+  "results": [
+    {
+      "location": "setup.py", 
+      "infos": [
+        {
+          "type": "file", 
+          "name": "setup.py", 
+          "extension": ".py", 
+          "date": "2016-04-12", 
+          "size": 3353, 
+          "sha1": "ca926dcd6be44ed4f78bbe45c26ba95b0be159be", 
+          "md5": "cd9fb3e00fd89c72b4c429ec92c3c871", 
+          "files_count": null, 
+          "mime_type": "text/x-python", 
+          "file_type": "Python script, ASCII text executable", 
+          "programming_language": "Python", 
+          "is_binary": null, 
+          "is_text": true, 
+          "is_archive": null, 
+          "is_media": null, 
+          "is_source": true, 
+          "is_script": true
+        }
+      ]
+    }
+  ]
+}

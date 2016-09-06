@@ -1,0 +1,60 @@
+{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.", 
+  "scancode_version": "1.5.0", 
+  "resource_count": 2, 
+  "results": [
+    {
+      "location": "tests/extractcode/test_patch.py", 
+      "copyrights": [
+      ], 
+      "licenses": [
+      ], 
+      "infos": [
+        {
+          "type": "file", 
+          "name": "test_patch.py", 
+          "extension": ".py", 
+          "date": "2015-12-08", 
+          "size": 72347, 
+          "sha1": "bc1dc65b7d6b88709ce170291f93cd255bda8ffa", 
+          "md5": "25edeca9fbedd5b53e7e70af0ab0140a", 
+          "files_count": null, 
+          "mime_type": "text/x-python", 
+          "file_type": "Python script, ASCII text executable", 
+          "programming_language": "Python", 
+          "is_binary": null, 
+          "is_text": true, 
+          "is_archive": null, 
+          "is_media": null, 
+          "is_source": true, 
+          "is_script": true
+        }
+      ], 
+      "packages": []
+    }, 
+    {
+      "location": "tests/extractcode/test_sevenzip.py", 
+      "infos": [
+        {
+          "is_archive": null, 
+          "name": "test_sevenzip.py", 
+          "extension": ".py", 
+          "date": "2015-12-08", 
+          "size": 8773, 
+          "type": "file", 
+          "sha1": "e6ece461dc3af299ff4684081b9010a87fcd82f0", 
+          "md5": "166bde096f06b5fa4ea962f94f217e0b", 
+          "files_count": null, 
+          "mime_type": "text/x-python", 
+          "file_type": "Python script, ASCII text executable, with very long lines", 
+          "programming_language": "Python", 
+          "is_binary": null, 
+          "is_text": true, 
+          "is_media": null, 
+          "is_source": true, 
+          "is_script": true
+        }
+      ]
+    }
+  ]
+}
