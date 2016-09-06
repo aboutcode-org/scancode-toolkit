@@ -100,8 +100,7 @@ def get_urls(location):
         yield misc
 
 
-DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/license_library/Demo/{}/'
-
+DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/?urn=urn:dje:license:{}'
 
 def get_licenses(location, min_score=0):
     """
