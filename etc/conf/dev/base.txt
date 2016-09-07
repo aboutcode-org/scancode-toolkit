@@ -1,7 +1,7 @@
 # AboutCodeTool
 about-code-tool==0.9.0
 # required by AboutCode
-jinja2==2.7.3
+jinja2==2.8
 MarkupSafe==0.23
 
 
