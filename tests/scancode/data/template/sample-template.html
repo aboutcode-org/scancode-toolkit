@@ -31,7 +31,7 @@
 #}
   <head>
     <meta charset="utf-8">
-    <title>ScanCode results</title>
+    <title>Custom Template</title>
     <style type="text/css">
       table  {
         border-collapse:collapse;
@@ -64,12 +64,12 @@
     </style>
   </head>
   <body>
-    <h1>Custom Template</h1>
-    {% if results.license_copyright %}
+    {% if files.license_copyright %}
     <table>
+      <caption>Copyrights and Licenses Information</caption>
       <thead>
         <tr>
-          <th>location</th>
+          <th>path</th>
           <th>start</th>
           <th>end</th>
           <th>what</th>
@@ -77,10 +77,10 @@
         </tr>
       </thead>
       <tbody>
-        {% for location, data in results.license_copyright.items() %}
+        {% for path, data in files.license_copyright.items() %}
           {% for row in data %}
             <tr>
-              <td>{{ location }}</td>
+              <td>{{ path }}</td>
               <td>{{ row.start }}</td>
               <td>{{ row.end }}</td>
               <td>{{ row.what }}</td>
@@ -96,12 +96,12 @@
     </table>
     {% endif %}
 
-    {% if results.infos %}
+    {% if files.infos %}
     <table>
       <caption>File Information</caption>
       <thead>
         <tr>
-          <th>location</th>
+          <th>path</th>
           <th>type</th>
           <th>name</th>
           <th>extension</th>
@@ -122,10 +122,9 @@
         </tr>
       </thead>
       <tbody>
-        {% for location, data in results.infos.items() %}
-          {% for row in data %}
+        {% for path, row in files.infos.items() %}
             <tr>
-              <td>{{ location }}</td>
+              <td>{{ path }}</td>
               <td>{{ row.type }}</td>
               <td>{{ row.name }}</td>
               <td>{{ row.extension }}</td>
@@ -144,28 +143,27 @@
               <td>{{ row.is_source }}</td>
               <td>{{ row.is_script }}</td>
             </tr>
-          {% endfor %}
         {% endfor %}
       </tbody>
     </table>
     {% endif %}
 
-    {% if results.packages %}
+    {% if files.packages %}
     <table>
       <caption>Package Information</caption>
       <thead>
         <tr>
-          <th>location</th>
+          <th>path</th>
           <th>type</th>
           <th>packaging</th>
           <th>primary_language</th>
         </tr>
       </thead>
       <tbody>
-        {% for location, data in results.packages.items() %}
+        {% for path, data in files.packages.items() %}
           {% for row in data %}
             <tr>
-              <td>{{ location }}</td>
+              <td>{{ path }}</td>
               <td>{{ row.type }}</td>
               <td>{{ row.packaging }}</td>
               <td>{{ row.primary_language }}</td>

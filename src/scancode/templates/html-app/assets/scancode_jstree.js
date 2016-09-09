@@ -98,9 +98,9 @@ function ScancodeJSTree(tagId, data){
 
     // Renders json data to jsTree format
     function toJSTreeFormat(jsonData){
-        // Sort data by location to ensure files are seen before directories
+        // Sort data by file path to ensure files are seen before directories
         jsonData.sort(function (a, b) {
-            return a.location.localeCompare( b.location );
+            return a.path.localeCompare( b.path );
         }).reverse();
         // Keeps track of IDs
         var uniqueIDs = {};
@@ -109,7 +109,7 @@ function ScancodeJSTree(tagId, data){
         return $.map(jsonData, function(x) {
 
             // Creates array in format: ["", "path1", "path2", "file"]
-            var paths = x.location.split("/");
+            var paths = x.path.split("/");
 
             // Loop through path elements and return jsTree rows
             return $.map(paths, function(_, i){

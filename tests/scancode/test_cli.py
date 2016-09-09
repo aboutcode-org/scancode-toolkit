@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -49,7 +49,7 @@ actual command outputs as if using a real command line call.
 """
 
 
-def check_scan(expected_file, result_file, test_dir, regen=False):
+def check_scan(expected_file, result_file, test_dir, regen=True):
     """
     Check the scan result_file JSON results against the expected_file expected JSON
     results. Removes references to test_dir for the comparison. If regen is True the
@@ -77,13 +77,13 @@ def _load_json_result(result_file, test_dir):
     test_dir = as_posixpath(test_dir)
     with codecs.open(result_file, encoding='utf-8') as res:
         scan_result = json.load(res, object_pairs_hook=OrderedDict)
-    for result in scan_result['results']:
-        loc = result['location']
+    for result in scan_result['files']:
+        loc = result['path']
         loc = as_posixpath(loc).replace(test_dir, '').strip('/')
-        result['location'] = loc
+        result['path'] = loc
     if scan_result.get('scancode_version'):
         del scan_result['scancode_version']
-    scan_result['results'].sort(key=lambda x: x['location'])
+    scan_result['files'].sort(key=lambda x: x['path'])
     return scan_result
 
 
@@ -159,8 +159,8 @@ def test_scancode_skip_vcs_files_and_dirs_by_default(monkeypatch):
     assert result.exit_code == 0
     scan_result = _load_json_result(result_file, test_dir)
     # a single test.tst file and its directory that is not a VCS file should be listed
-    assert 2 == scan_result['resource_count']
-    scan_locs = [x['location'] for x in scan_result['results']]
+    assert 2 == scan_result['files_count']
+    scan_locs = [x['path'] for x in scan_result['files']]
     assert [u'vcs', u'vcs/test.txt'] == scan_locs
 
 
@@ -250,14 +250,14 @@ def test_paths_are_posix_in_json_format_output(monkeypatch):
     assert '/posix_path/copyright_acme_c-c.c' in open(result_file).read()
 
 
-def test_format_with_custom_filename_rejects_invalids(monkeypatch):
+def test_format_with_custom_filename_fails_for_directory(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.get_test_loc('posix_path', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('html')
     result = runner.invoke(cli.scancode, [ '--format', test_dir, test_dir, result_file])
-    assert result.exit_code == 0
-    assert 'Invalid template passed' in result.output
+    assert result.exit_code != 0
+    assert 'Invalid template file' in result.output
 
 
 def test_format_with_custom_filename(monkeypatch):
@@ -288,6 +288,7 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     runner = CliRunner()
     result_file = test_env.get_temp_file('test.json')
+    print('====>', cli.scancode, [ '--copyright', test_file, result_file])
     result = runner.invoke(cli.scancode, [ '--copyright', test_file, result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
