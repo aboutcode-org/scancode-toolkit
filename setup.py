@@ -109,9 +109,9 @@ setup(
         'unicodecsv',
     ],
     extras_require={
-        ':\'win32\' in sys_platform': ['lxml == 3.6.0'],
-        ':\'linux\' in sys_platform': ['lxml == 3.6.4'],
-        ':\'darwin\' in sys_platform': ['lxml == 3.6.4'],
+        ':platform_system == "Windows"': ['lxml == 3.6.0'],
+        ':platform_system == "Linux"': ['lxml == 3.6.4'],
+        ':platform_system == "Darwin"': ['lxml == 3.6.4'],
 #         'base': [
 #             'certifi',
 #             'setuptools',
