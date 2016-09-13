@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -63,7 +63,7 @@ notice_text = '''
 Software license
 ================
 
-Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 http://nexb.com and https://github.com/nexB/scancode-toolkit/
 The ScanCode software is licensed under the Apache License version 2.0.
 Data generated with ScanCode require an acknowledgment.
@@ -206,8 +206,14 @@ class ScanCommand(utils.BaseCommand):
 Try 'scancode --help' for help on options and arguments.'''
 
 
-formats = ['json', 'html', 'html-app']
+formats = ('json', 'html', 'html-app',)
 
+def validate_formats(ctx, param, value):
+    if value not in formats:
+        # render using a user-provided custom format template
+        if not os.path.isfile(value):
+            raise click.BadParameter('Invalid template file: "%(value)s" does not exists or is not readable.' % locals())
+    return value
 
 @click.command(name='scancode', epilog=epilog_text, cls=ScanCommand)
 @click.pass_context
@@ -224,7 +230,9 @@ formats = ['json', 'html', 'html-app']
 @click.option('--license-score', is_flag=False, default=0, type=int, show_default=True, help='Matches with scores lower than this score are not returned. A number between 0 and 100.')
 
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
-              help='Set <output_file> format <style> to one of the standard formats: %s or the path to a custom template' % ' or '.join(formats),)
+              help=('Set <output_file> format <style> to one of the standard formats: %s '
+                    'or the path to a custom template' % ' or '.join(formats)),
+              callback=validate_formats)
 @click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.')
 @click.option('--quiet', is_flag=True, default=False, help='Do not print any progress message.')
 
@@ -253,7 +261,7 @@ def scancode(ctx, input, output_file, copyright, license, package,
 def scan(input_path, copyright=True, license=True, package=True,
          email=False, url=False, info=True, license_score=0, verbose=False, quiet=False):
     """
-    Do the scans proper, return results.
+    Do the scans proper, return a list of file_results.
     """
     # save paths to report paths relative to the original input
     original_input = fileutils.as_posixpath(input_path)
@@ -262,17 +270,17 @@ def scan(input_path, copyright=True, license=True, package=True,
     get_licenses_with_score = partial(get_licenses, min_score=license_score)
 
     # note: "flag and function" expressions return the function if flag is True
-    scanners = {
-        'copyrights': copyright and get_copyrights,
-        'licenses': license and get_licenses_with_score,
-        'packages': package and get_package_infos,
-        'emails': email and get_emails,
-        'urls': url and get_urls,
-        'infos': info and get_file_infos,
-    }
+    # note: the order of the scans matters to show things in logical order
+    scanners = OrderedDict([
+        ('infos' , info and get_file_infos),
+        ('licenses' , license and get_licenses_with_score),
+        ('copyrights' , copyright and get_copyrights),
+        ('packages' , package and get_package_infos),
+        ('emails' , email and get_emails),
+        ('urls' , url and get_urls),
+    ])
 
-
-    results = []
+    file_results = []
 
     # note: we inline progress display functions to close on some args
 
@@ -312,25 +320,25 @@ def scan(input_path, copyright=True, license=True, package=True,
         for resource in progressive_resources:
             res = fileutils.as_posixpath(resource)
 
-            # fix paths: keep the location as relative to the original input
+            # fix paths: keep the path as relative to the original input
             relative_path = utils.get_relative_path(original_input, abs_input, res)
-            scan_result = OrderedDict(location=relative_path)
+            scan_result = OrderedDict(path=relative_path)
             # Should we yield instead?
             scan_result.update(scan_one(res, scanners))
-            results.append(scan_result)
+            file_results.append(scan_result)
 
-    # TODO: eventually merge scans for the same resource location...
+    # TODO: eventually merge scans for the same files path...
     # TODO: fix absolute paths as relative to original input argument...
 
-    return results
+    return file_results
 
 
 def scan_one(input_file, scans):
     """
-    Scan one file or directory and return scanned data, calling every scan in
+    Scan one file or directory and return a scanned data, calling every scan in
     the `scans` mapping of (scan name -> scan function).
     """
-    data = OrderedDict()
+    scanned_file = OrderedDict()
     for scan_name, scan_func in scans.items():
         if not scan_func:
             continue
@@ -338,29 +346,36 @@ def scan_one(input_file, scans):
             scan = scan_func(input_file)
             if isinstance(scan, GeneratorType):
                 scan = list(scan)
-            data[scan_name] = scan
+            # this is special and we flatten these as direct attributes of a file object
+            if scan_name == 'infos':
+                for file_infos in scan:
+                    scanned_file.update(file_infos.items())
+            else:
+                scanned_file[scan_name] = scan
         except Exception, e:
             # never fail but instead add an error message.
-            data[scan_name] = {'errors': e.message}
-    return data
+            scanned_file[scan_name] = {'errors': e.message}
+    return scanned_file
 
 
-def save_results(results, format, input, output_file):
+def save_results(scanned_files, format, input, output_file):
     """
     Save results to file or screen.
     """
-    if format not in formats:
+    if format and format not in formats:
         # render using a user-provided custom format template
         if not os.path.isfile(format):
             click.secho('\nInvalid template passed.', err=True, fg='red')
         else:
-            output_file.write(as_template(results, template=format))
+            output_file.write(as_template(scanned_files, template=format))
+
     elif format == 'html':
-        output_file.write(as_template(results))
+        output_file.write(as_template(scanned_files))
+
     elif format == 'html-app':
         output_file.write(as_html_app(input, output_file))
         try:
-            create_html_app_assets(results, output_file)
+            create_html_app_assets(scanned_files, output_file)
         except HtmlAppAssetCopyWarning:
             click.secho('\nHTML app creation skipped when printing to terminal.',
                        err=True, fg='yellow')
@@ -371,7 +386,9 @@ def save_results(results, format, input, output_file):
         meta = OrderedDict()
         meta['scancode_notice'] = acknowledgment_text_json
         meta['scancode_version'] = version
-        meta['resource_count'] = len(results)
+        meta['files_count'] = len(scanned_files)
         # TODO: add scanning options to meta
-        meta['results'] = results
+        meta['files'] = scanned_files
         output_file.write(json.dumps(meta, indent=2))
+    else:
+        raise Exception('unknown format')

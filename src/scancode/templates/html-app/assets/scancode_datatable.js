@@ -1,6 +1,6 @@
 /*
  #
- # Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+ # Copyright (c) 2016 nexB Inc. and others. All rights reserved.
  # http://nexb.com and https://github.com/nexB/scancode-toolkit/
  # The ScanCode software is licensed under the Apache License version 2.0.
  # Data generated with ScanCode require an acknowledgment.
@@ -158,7 +158,7 @@ function ScancodeDataTable(tagId, data){
             if('licenses' in x) {
                 licenseData = $.map(x.licenses, function(y){
                     return [$.extend(y, {
-                        "path" : x.location,
+                        "path" : x.path,
                         "what": "License",
                         "start_line": y.start_line,
                         "end_line": y.end_line,
@@ -190,7 +190,7 @@ function ScancodeDataTable(tagId, data){
             if('copyrights' in x) {
                 copyrightData = $.map(x.copyrights, function(y){
                     return [$.extend(y, {
-                        "path" : x.location,
+                        "path" : x.path,
                         "what": "Copyright",
                         "start_line": y.start_line,
                         "end_line": y.end_line,
@@ -221,7 +221,7 @@ function ScancodeDataTable(tagId, data){
             if('emails' in x) {
                 emailData = $.map(x.emails, function(y){
                     return [$.extend(y, {
-                        "path" : x.location,
+                        "path" : x.path,
                         "what": "Email",
                         "start_line": y.start_line,
                         "end_line": y.end_line,
@@ -252,7 +252,7 @@ function ScancodeDataTable(tagId, data){
             if('urls' in x) {
                 urlData = $.map(x.urls, function(y){
                     return [$.extend(y, {
-                        "path" : x.location,
+                        "path" : x.path,
                         "what": "URL",
                         "start_line": y.start_line,
                         "end_line": y.end_line,
@@ -285,54 +285,47 @@ function ScancodeDataTable(tagId, data){
         })
     };
 
-    // Return file information data in table format
+    // Return files information data in table format
     function toFileInfoFormat(jsonData){
         return $.map(jsonData, function(x){
-            fileInfoData = [];
-            if('infos' in x) {
-                fileInfoData = $.map(x.infos, function(y){
-                    return [$.extend(y, {
-                        "path" : x.location,
-                        "what": "File Info",
-                        "start_line": "",
-                        "end_line": "",
-                        "info": "",
-                        "type" : y.type,
-                        "name" : y.name,
-                        "extension": y.extension,
-                        "date" : y.date,
-                        "size" : y.size,
-                        "sha1" : y.sha1,
-                        "md5" : y.md5,
-                        "files_count" : y.files_count,
-                        "mime_type" : y.mime_type,
-                        "file_type" : y.file_type,
-                        "programming_language" : y.programming_language,
-                        "is_binary" : y.is_binary,
-                        "is_text" : y.is_text,
-                        "is_archive" : y.is_archive,
-                        "is_media" : y.is_media,
-                        "is_source" : y.is_source,
-                        "is_script" : y.is_script,
-                        "pkg_type" : "",
-                        "pkg_packaging" : "",
-                        "pkg_primary_language" : ""
-                    })];
-                })};
-
-            // Return the concatenation of the two data sets
-            return fileInfoData;
-        })
+            return {
+                "path" : x.path,
+                "what": "File Info",
+                "start_line": "",
+                "end_line": "",
+                "info": "",
+                "type" : x.type,
+                "name" : x.name,
+                "extension": x.extension,
+                "date" : x.date,
+                "size" : x.size,
+                "sha1" : x.sha1,
+                "md5" : x.md5,
+                "files_count" : x.files_count,
+                "mime_type" : x.mime_type,
+                "file_type" : x.file_type,
+                "programming_language" : x.programming_language,
+                "is_binary" : x.is_binary,
+                "is_text" : x.is_text,
+                "is_archive" : x.is_archive,
+                "is_media" : x.is_media,
+                "is_source" : x.is_source,
+                "is_script" : x.is_script,
+                "pkg_type" : "",
+                "pkg_packaging" : "",
+                "pkg_primary_language" : ""
+             }
+        });
     };
 
-    // Return file information data in table format
+    // Return packages data in table format
     function toPkgInfoFormat(jsonData){
         return $.map(jsonData, function(x){
             packageInfoData = [];
             if('packages' in x) {
                 packageInfoData = $.map(x.packages, function(y){
                     return [$.extend(y, {
-                        "path" : x.location,
+                        "path" : x.path,
                         "what": "Packages",
                         "start_line": "",
                         "end_line": "",
@@ -365,4 +358,3 @@ function ScancodeDataTable(tagId, data){
         })
     };
 };
-

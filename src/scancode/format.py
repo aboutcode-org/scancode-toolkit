@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -144,7 +144,7 @@ def create_html_app_assets(results, output_file):
         raise HtmlAppAssetCopyError(e)
 
 
-def as_template(scan_data, template='html'):
+def as_template(scanned_files, template='html'):
     """
     Return an string built from a list of results and the provided template.
     The template defaults to the standard HTML template format or can point to
@@ -167,12 +167,18 @@ def as_template(scan_data, template='html'):
     converted_packages = OrderedDict()
     licenses = {}
 
-    # Create a flattened data dict keyed by location
-    for scan_result in scan_data:
-        location = scan_result['location']
+    LICENSES = 'licenses'
+    COPYRIGHTS = 'copyrights'
+    PACKAGES = 'packages'
+    URLS = 'urls'
+    EMAILS = 'emails'
+
+    # Create a flattened data dict keyed by path
+    for scanned_file in scanned_files:
+        path = scanned_file['path']
         results = []
-        if 'copyrights' in scan_result:
-            for entry in scan_result['copyrights']:
+        if COPYRIGHTS in scanned_file:
+            for entry in scanned_file[COPYRIGHTS]:
                 results.append({
                     'start': entry['start_line'],
                     'end': entry['end_line'],
@@ -180,8 +186,8 @@ def as_template(scan_data, template='html'):
                     # NOTE: we display one statement per line.
                     'value': '\n'.join(entry['statements']),
                 })
-        if 'licenses' in scan_result:
-            for entry in scan_result['licenses']:
+        if LICENSES in scanned_file:
+            for entry in scanned_file[LICENSES]:
                 results.append({
                     'start': entry['start_line'],
                     'end': entry['end_line'],
@@ -193,20 +199,24 @@ def as_template(scan_data, template='html'):
                     licenses[entry['key']] = entry
                     entry['object'] = get_licenses().get(entry['key'])
         if results:
-            converted[location] = sorted(results, key=itemgetter('start'))
+            converted[path] = sorted(results, key=itemgetter('start'))
 
-        if 'infos' in scan_result:
-            converted_infos[location] = scan_result['infos']
+        # this is klunky: we need to drop templates entirely
+        converted_infos[path] = OrderedDict()
+        for name, value in scanned_file.items():
+            if name in (LICENSES, PACKAGES, COPYRIGHTS, EMAILS, URLS):
+                continue
+            converted_infos[path][name] = value
 
-        if 'packages' in scan_result:
-            converted_packages[location] = scan_result['packages']
+        if PACKAGES in scanned_file:
+            converted_packages[path] = scanned_file[PACKAGES]
 
         licenses = OrderedDict(sorted(licenses.items()))
 
-    results = {
+    files = {
         'license_copyright': converted,
         'infos': converted_infos,
         'packages': converted_packages
     }
 
-    return template.render(results=results, licenses=licenses)
+    return template.render(files=files, licenses=licenses)
