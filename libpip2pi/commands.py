@@ -172,18 +172,25 @@ class Pip2PiOptionParser(optparse.OptionParser):
     def add_index_options(self):
         self.add_option(
             '-n', '--normalize-package-names', dest="normalize_package_names",
-            default=None, action="store_true",
+            default=True, action="store_true",
             help=dedent("""
-                Normalize package names in simple index.
-                Ex, 'simple/Django/Django-1.7.tar.gz' will be
-                normalized to 'simple/django/Django-1.7.tar.gz'.
-                Non-normalized package names are deprecated and
-                this option will eventually be enabled by default.
-                See also: https://github.com/wolever/pip2pi/issues/37
+                Normalize package names in the simple index using whatever
+                scheme is supported by the most recent version of pip (default).
             """))
         self.add_option(
             '-N', '--no-normalize-package-names', dest="normalize_package_names",
             action="store_false")
+        self.add_option(
+            '-a', '--aggressive-normalization', dest="aggressive_normalization",
+            default=False, action="store_true",
+            help=dedent("""
+                Aggressive create symlinks to many different package name
+                normalizations to support multiple pip versions (for a package
+                named "Spam_Eggs--cheese.shop", the following normalizations
+                will be used: "spam-eggs-cheese-shop" (PEP-503),
+                "spam-eggs-cheese.shop" (pip 6, pip 7),
+                "Spam_Eggs--cheese.shop" (pip < 6)).
+            """))
         self.add_option(
             '-x', '--no-build-html', dest="build_html", action="store_false",
             default=True, help=dedent("""
@@ -264,10 +271,38 @@ def dir2pi(argv=sys.argv, use_symlink=None):
     parser.add_index_options()
 
     option, argv = parser.parse_args(argv)
+    if option.aggressive_normalization and not option.use_symlink:
+        sys.stderr.write(
+            "Error: cannot use --aggressive-normalization without --symlink\n")
+        return 1
+
     if len(argv) != 2:
         parser.print_help()
         parser.exit()
     return _dir2pi(option, argv)
+
+def normalize_pep503(pkg_name):
+    # As per https://www.python.org/dev/peps/pep-0503/#normalized-names
+    return re.sub(r"[-_.]+", "-", pkg_name).lower()
+
+def normalize_pip67(pkg_name):
+    # Normalize for pip 6 and 7
+    return re.sub(r"([-.])+", r"\1", pkg_name.replace("_", "-")).lower()
+
+def try_symlink(option, source, target):
+    try:
+        os.symlink(source, target)
+        if option.verbose:
+            print('linking %s to %s' %(source, target))
+    except OSError as e:
+        if e.errno == 17:
+            # ignore errors when the file exists
+            return
+        sys.stderr.write(
+            'ERROR linking %s to %s (skipping): %s\n'
+            %(source, target, e)
+        )
+
 
 def _dir2pi(option, argv):
     pkgdir = argv[1]
@@ -280,7 +315,6 @@ def _dir2pi(option, argv):
     pkg_index = ("<html><head><title>Simple Index</title>"
                  "<meta name='api-version' value='2' /></head><body>\n")
 
-    warn_normalized_pkg_names = []
     processed_pkg = set()
     for file in os.listdir(pkgdir):
         pkg_filepath = os.path.join(pkgdir, file)
@@ -293,25 +327,21 @@ def _dir2pi(option, argv):
 
         pkg_dir_name = pkg_name
         if option.normalize_package_names:
-            pkg_dir_name = pkg_dir_name.lower()
-        elif pkg_dir_name != pkg_dir_name.lower():
-            if option.normalize_package_names is None:
-                warn_normalized_pkg_names.append(pkg_name)
+            pkg_dir_name = normalize_pep503(pkg_dir_name)
+
         pkg_dir = pkgdirpath("simple", pkg_dir_name)
         if not os.path.exists(pkg_dir):
             os.mkdir(pkg_dir)
+
+        if option.aggressive_normalization:
+            try_symlink(option, pkg_dir_name, pkgdirpath("simple", normalize_pip67(pkg_name)))
+            try_symlink(option, pkg_dir_name, pkgdirpath("simple", pkg_name))
+
         pkg_new_basename = "-".join([pkg_name, pkg_rest])
         symlink_target = os.path.join(pkg_dir, pkg_new_basename)
         symlink_source = os.path.join("../../", pkg_basename)
-        if option.use_symlink and OS_HAS_SYMLINK:
-            try:
-                if option.verbose:
-                    print('linking %s to %s' % (symlink_source, symlink_target))
-                os.symlink(symlink_source, symlink_target)
-            except OSError as e:
-                warnings.warn(dedent("""
-                WARNING: problem encountered creating symlink %s, Skipping : %s
-                """ %(pkg_new_basename, e)))
+        if option.use_symlink:
+            try_symlink(option, symlink_source, symlink_target)
         else:
             if option.verbose:
                 print('copying %s to %s' % (symlink_target, pkg_filepath))
@@ -334,18 +364,6 @@ def _dir2pi(option, argv):
     if option.build_html:
         with open(pkgdirpath("simple/index.html"), "w") as fp:
             fp.write(pkg_index)
-
-    if warn_normalized_pkg_names:
-        warnings.warn(dedent("""
-            \n
-            WARNING: Non-normalized packages encountered: %s.\n
-            Please consider passing `--normalize-package-names` and verifying
-            that your environment does not break, as package names will
-            eventually be normalized by default. Silence this warning by
-            passing `--no-normalized-package-names`.\n
-            See also: https://github.com/wolever/pip2pi/issues/37\n
-            _
-        """ %(", ".join(warn_normalized_pkg_names), )), stacklevel=0)
 
     return 0
 
