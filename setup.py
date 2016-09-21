@@ -13,7 +13,7 @@ except IOError:
     long_description = "See https://github.com/wolever/pip2pi"
 
 import libpip2pi
-version = "%s.%s.%s" %libpip2pi.__version__
+version = ".".join(map(str, libpip2pi.__version__))
 
 setup(
     name="pip2pi",
