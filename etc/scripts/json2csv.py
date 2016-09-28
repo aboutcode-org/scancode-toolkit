@@ -341,5 +341,5 @@ def cli(json_input, csv_output, strip=0):
     json_scan_to_csv(json_input, csv_output, strip=strip)
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
    cli()
