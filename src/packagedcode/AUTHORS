@@ -159,6 +159,7 @@ Other contributors, listed alphabetically, are:
 * Elias Rabel -- Fortran fixed form lexer
 * raichoo -- Idris lexer
 * Kashif Rasul -- CUDA lexer
+* Nathan Reed -- HLSL lexer
 * Justin Reidy -- MXML lexer
 * Norman Richards -- JSON lexer
 * Corey Richardson -- Rust lexer updates
