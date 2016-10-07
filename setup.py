@@ -77,8 +77,8 @@ setup(
         'pyahocorasick >= 1.1, < 1.2',
 
         # caching
-        'zc.lockfile >= 1.0.0, < 3.0.0',
-        'yg.lockfile >= 3.0.0, < 3.0.0',
+        'zc.lockfile >= 1.0.0, < 2.0.0',
+        'yg.lockfile >= 2.0.0, < 3.0.0',
         'diskcache >= 1.7.0, < 1.8.0',
 
         # textcode
@@ -88,7 +88,7 @@ setup(
         'six',
 
         # typecode and textcode
-        'pygments >= 3.0.0, <3.0.0',
+        'pygments >= 2.0.0, <3.0.0',
         'pdfminer >= 20140328',
 
         # typecode
@@ -103,7 +103,7 @@ setup(
 
         # packagedcode
         'requests >= 2.7.0, < 3.0.0',
-        'schematics >= 1.1.1, < 3.0.0',
+        'schematics >= 1.1.1, < 2.0.0',
         
         #misc
         'unicodecsv',
