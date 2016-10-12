@@ -25,11 +25,11 @@
 from __future__ import absolute_import, division, print_function
 
 from functools import partial
-from itertools import chain
 import re
 import textwrap
 
-from licensedcode import query
+from licensedcode.match import matched_query_tokens_str
+from licensedcode.match import matched_rule_tokens_str
 from licensedcode.tokenize import rule_pattern
 from licensedcode.tokenize import query_pattern
 
@@ -46,7 +46,7 @@ def get_texts(match, location=None, query_string=None, idx=None):
 
     Used primarily to recover the matched texts for testing or reporting.
 
-    Unmatched positions are represented as <no-match>, rule gaps as <gap>. 
+    Unmatched positions are represented as <no-match>. 
     Initial formatting is preserved. 
     """
     assert idx
@@ -69,7 +69,7 @@ def get_matched_qtext(match, location=None, query_string=None, idx=None):
     """
     assert idx
     tokens = matched_query_tokens_str(match, location, query_string, idx)
-    return format_text(tokens, width)
+    return format_text(tokens, width=120)
 
 
 def get_match_itext(match, width=120):
@@ -79,8 +79,7 @@ def get_match_itext(match, width=120):
 
     Used primarily to recover the matched texts for testing or reporting.
 
-    Unmatched positions inside a matched region are represented as <no-match>
-    and rule gaps as <gap>.
+    Unmatched positions inside a matched region are represented as <no-match>.
 
     Punctuation is removed , spaces are normalized (new line is replaced by a
     space), case is preserved. 
