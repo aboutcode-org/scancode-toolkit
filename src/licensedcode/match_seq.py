@@ -30,7 +30,6 @@ from licensedcode.match import get_texts
 from licensedcode.match import LicenseMatch
 from licensedcode.seq import match_blocks
 from licensedcode.spans import Span
-from licensedcode.match import refine_matches
 
 
 TRACE = False
@@ -55,8 +54,9 @@ Matching strategy using pair-wise multiple local sequences alignment and diff-
 like approaches.
 """
 
+MATCH_SEQ = '3-seq'
 
-def match_sequence(idx, candidate, query_run, max_dist=MAX_DIST):
+def match_sequence(idx, candidate, query_run, max_dist=MAX_DIST*2):
     """
     Return a list of LicenseMatch by matching the `query_run` tokens sequence
     against the `idx` index for the `candidate` rule tuple (rid, rule,
@@ -64,8 +64,6 @@ def match_sequence(idx, candidate, query_run, max_dist=MAX_DIST):
     """
     if not candidate:
         return []
-
-    MATCH_TYPE = 'seq'
 
     rid, rule, _intersection = candidate
     high_postings = idx.high_postings_by_rid[rid]
@@ -105,7 +103,7 @@ def match_sequence(idx, candidate, query_run, max_dist=MAX_DIST):
             iposses = range(ipos, ipos + mlen)
             hispan = Span(p for p in iposses if itokens[p] >= len_junk)
             ispan = Span(iposses)
-            match = LicenseMatch(rule, qspan, ispan, hispan, line_by_pos, qbegin, MATCH_TYPE)
+            match = LicenseMatch(rule, qspan, ispan, hispan, line_by_pos, qbegin, MATCH_SEQ)
             if TRACE2:
                 qt, it = get_texts(match, location=query_run.query.location, query_string=query_run.query.query_string, idx=idx)
                 print('###########################')
@@ -117,11 +115,6 @@ def match_sequence(idx, candidate, query_run, max_dist=MAX_DIST):
                 print('###########################')
             matches.append(match)
             qstart = max([qstart, qspan.end +1])
-
-    matches = LicenseMatch.merge(matches, max_dist=max_dist)
-    matches, _ = refine_matches(matches, idx, max_dist=max_dist)
-    for match in matches:
-        query_run.subtract(match.qspan)
 
     if TRACE: map(logger_debug, matches)
     return matches
