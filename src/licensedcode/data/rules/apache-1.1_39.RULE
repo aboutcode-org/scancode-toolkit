@@ -12,7 +12,7 @@
  *
  * 3. The end-user documentation included with the redistribution, if
  *    any, must include the following acknowlegement:
- *       {{"This product includes software developed by the
+ *       "This product includes software developed by {{the
  *        Caucho Technology (http://www.caucho.com/)." }}
  *    Alternately, this acknowlegement may appear in the software itself,
  *    if and wherever such third-party acknowlegements normally appear.
@@ -22,8 +22,8 @@
  *    written permission. For written permission, please contact
  *    {{ info@caucho.com.}}
  *
- * 5. Products derived from this software may not be called {{"Resin"
- *    nor may "Resin" }}appear in their names without prior written
+ * 5. Products derived from this software may not be called {{"Resin"}}
+ *    nor may {{"Resin"}} appear in their names without prior written
  *    permission of {{Caucho Technology.}}
  *
  * THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED

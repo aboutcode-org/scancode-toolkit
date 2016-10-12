@@ -1,6 +1,7 @@
+
 Sun Industry Standards Source License - Version 1.1
 
-Note: A printer friendly version of this license is available in PDF format.
+Note: A printer friendly version of this license is available in licenses/sissl_license_1-1.pdf PDF format.
 
 1.0 DEFINITIONS
 
@@ -134,4 +135,6 @@ The Standard is defined as the following:
 
 OpenOffice.org XML File Format Specification, located at http://xml.openoffice.org
 
-OpenOffice.org Application Programming Interface Specification, located at 
+OpenOffice.org Application Programming Interface Specification, located at
+http://api.openoffice.org
+
