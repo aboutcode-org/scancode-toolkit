@@ -48,9 +48,6 @@ license_matches_cache_dir = join(cache_dir, 'license_matches')
 if not exists(license_index_cache_dir):
     fileutils.create_dir(license_index_cache_dir)
 
-# length of ngrams
-NGRAM_LENGTH = 5
-
 # minimum number of tokens a match should have to be considered as worthy
 MIN_MATCH_LENGTH = 4
 MIN_MATCH_HIGH_LENGTH = 3
@@ -60,3 +57,9 @@ MAX_GAP_SKIP = 15
 
 # maximum distance between two matches to merge
 MAX_DIST = 10
+
+# length below which a match is considered as "small"
+SMALL_MATCH = 50
+
+# minimal score for matches to small rules
+SMALL_MATCH_MIN_SCORE = 80
