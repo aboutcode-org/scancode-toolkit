@@ -39,7 +39,6 @@ import ahocorasick
 from commoncode.dict_utils import sparsify
 
 from licensedcode import MAX_DIST
-from licensedcode import NGRAM_LENGTH
 
 from licensedcode.frequent_tokens import global_tokens_by_ranks
 
@@ -47,7 +46,6 @@ from licensedcode.cache import license_matches_cache
 from licensedcode.cache import LicenseMatchCache
 
 from licensedcode.match import get_texts
-from licensedcode.match import LicenseMatch
 from licensedcode.match import refine_matches
 
 from licensedcode.match_aho import exact_match
@@ -72,16 +70,20 @@ modules that implement a matching strategy.
 
 # Tracing flags
 TRACE = False
+
 TRACE_QUERY_RUN = False
-TRACE_QUERY_RUN_MATCHES = False
-TRACE_QUERY_RUN_TEXT = False
+
 TRACE_MATCHES = False
-TRACE_MATCHES_FINAL = False
 TRACE_MATCHES_TEXT = False
+
 TRACE_MATCHES_DISCARD = False
-TRACE_MATCHES_NEGATIVE = False
+TRACE_NEGATIVE = False
+
 TRACE_INDEXING_PERF = False
+TRACE_INDEXING_CHECK = False
+
 TRACE_CACHE = False
+USE_CACHE = False
 
 
 def logger_debug(*args):
@@ -99,10 +101,6 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
 
-# if 4, ~ 1/4 of all tokens will be treated as junk
-PROPORTION_OF_JUNK = 2
-
-
 def get_license_matches(location=None, query_string=None, min_score=0):
     """
     Yield detected license matches in the file at `location` or the
@@ -115,8 +113,7 @@ def get_license_matches(location=None, query_string=None, min_score=0):
     The minimum length for an approximate match is four tokens.
     Spurrious matched are always filtered.
     """
-    return get_index().match(location=location, query_string=query_string,
-                             min_score=min_score)
+    return get_index().match(location=location, query_string=query_string, min_score=min_score)
 
 
 # global in-memory cache of the license index
@@ -135,10 +132,13 @@ def get_index():
     return _LICENSES_INDEX
 
 
-# Maximum number of unique tokens we can handle: 16 bits signed integers are up
-# to 32767. We use several arrays of ints for smaller, optimized storage so we
-# cannot exceed this.
+# Maximum number of unique tokens we can handle: 16 bits signed integers are up to
+# 32767. Since we use internally several arrays of ints for smaller and optimized
+# storage we cannot exceed this number of tokens.
 MAX_TOKENS = (2 ** 15) - 1
+
+# if 4, ~ 1/4 of all tokens will be treated as junk
+PROPORTION_OF_JUNK = 2
 
 
 class LicenseIndex(object):
@@ -179,8 +179,7 @@ class LicenseIndex(object):
         'optimized',
     )
 
-    def __init__(self, rules=None, ngram_length=NGRAM_LENGTH,
-                 _ranked_tokens=global_tokens_by_ranks):
+    def __init__(self, rules=None, _ranked_tokens=global_tokens_by_ranks):
         """
         Initialize the index with an iterable of Rule objects.
         """
@@ -399,32 +398,31 @@ class LicenseIndex(object):
 
         dupe_rules = [rules for rules in dupe_rules_by_hash.values() if len(rules) > 1]
         if dupe_rules:
-            dupe_rule_paths = [['file://'+ rule.text_file for rule in rules] for rules in dupe_rules] 
+            dupe_rule_paths = [['file://' + rule.text_file for rule in rules] for rules in dupe_rules]
             msg = (u'Duplicate rules: \n' + u'\n'.join(map(repr, dupe_rule_paths)))
             raise AssertionError(msg)
 
         self.optimized = True
 
-    def debug_matches(self, matches, message, location, query_string, with_text=False):
-        if TRACE:
+    def debug_matches(self, matches, message, location=None, query_string=None, with_text=False):
+        if TRACE or TRACE_NEGATIVE:
             logger_debug(message + ':', len(matches))
 
-            if TRACE_MATCHES:
+            if TRACE_MATCHES or TRACE_NEGATIVE:
                 map(logger_debug, matches)
 
-            if TRACE_MATCHES_TEXT and with_text:
+            if (TRACE_MATCHES_TEXT  or TRACE_NEGATIVE) and with_text:
                 logger_debug(message + ' MATCHED TEXTS')
                 for m in matches:
                     logger_debug(m)
                     qt, it = get_texts(m, location, query_string, self)
-                    print('MATCHED QUERY TEXT')
+                    print('  MATCHED QUERY TEXT')
                     print(qt)
-                    print()
-                    print('MATCHED RULE TEXT')
+                    print('  MATCHED RULE TEXT')
                     print(it)
                     print()
 
-    def match(self, location=None, query_string=None, min_score=0, detect_negative=True, use_cache=False):
+    def match(self, location=None, query_string=None, min_score=0, detect_negative=True, use_cache=USE_CACHE):
         """
         Return a sequence of LicenseMatch by matching the file at `location` or
         the `query_string` text against the index. Only include matches with
@@ -448,7 +446,7 @@ class LicenseIndex(object):
         # Whole query hash and cache matching
         #######################################################################
         whole_query_run = qry.whole_query_run()
-        if (not whole_query_run) or (not whole_query_run.high_matchables):
+        if (not whole_query_run):  # or (not whole_query_run.high_matchables):
             logger_debug('#match: whole query not matchable')
             return []
 
@@ -493,17 +491,16 @@ class LicenseIndex(object):
             logger_debug('#match: NEGATIVE')
             negative = self.negative_match(whole_query_run)
             for neg in negative:
+                if TRACE_NEGATIVE: self.debug_matches(negative, '   ##match: NEGATIVE subtracting #:', location, query_string)
                 qry.subtract(neg.qspan)
-            if TRACE_MATCHES_NEGATIVE: self.debug_matches(negative, '##match: Found negative matches#:', location, query_string)
-            logger_debug('=====>>>#match: NEGATIVE found', negative)
+            logger_debug('     #match: NEGATIVE found', negative)
 
         matches = []
         discarded = []
 
         for qrnum, query_run in enumerate(qry.query_runs, 1):
-            logger_debug('#match: processing query run #:', qrnum)
+            logger_debug('#match: ===> processing query run #:', qrnum)
 
-            if TRACE_QUERY_RUN_TEXT: logger_debug('#match: query_run TEXT:', self._tokens2text(query_run.tokens))
             if not query_run.is_matchable():
                 # logger_debug('#match: query_run NOT MATCHABLE')
                 continue
@@ -512,7 +509,7 @@ class LicenseIndex(object):
             #########################
             hash_matches = match_hash(self, query_run)
             if hash_matches:
-                self.debug_matches(hash_matches, '#match Query run matches (hash)', location, query_string)
+                self.debug_matches(hash_matches, '  #match Query run matches (hash)', location, query_string)
                 matches.extend(hash_matches)
                 # note that we do not cache hash matches
                 continue
@@ -522,32 +519,32 @@ class LicenseIndex(object):
             if use_cache:
                 cached_matches = matches_cache.get(query_run)
                 if cached_matches is not None:
-                    if TRACE_CACHE: self.debug_matches(cached_matches, '#match Query run matches (cached)', location, query_string)
+                    if TRACE_CACHE: self.debug_matches(cached_matches, '  #match Query run matches (cached)', location, query_string)
                     if cached_matches:
                         matches.extend(cached_matches)
                     continue
 
             # query run match proper
             #########################
-            if TRACE: logger_debug('  ##match: MATCHING proper....')
+            if TRACE: logger_debug('  #match: MATCHING proper....')
 
             run_matches = self.match_query_run(query_run)
 
-            if TRACE: self.debug_matches(run_matches, '#match: Query run matches', location, query_string)
+            if TRACE_QUERY_RUN: self.debug_matches(run_matches, '    #match: ===> Query run matches', location, query_string, with_text=True)
+#
+#             if TRACE: self.debug_matches(run_matches, '    #match: ===> Query run matches', location, query_string)
 
             run_matches, run_discarded = refine_matches(run_matches, self, min_score, max_dist=MAX_DIST * 10)
-            if TRACE: self.debug_matches(run_matches, '#match: Query run matches filtered', location, query_string)
-            if TRACE: map(print, run_matches)
 
-            if TRACE: print('=================>run_discarded')
-            if TRACE: map(print, run_discarded)
+            if TRACE: self.debug_matches(run_matches, '     #match: Query run matches filtered', location, query_string)
+            if TRACE: self.debug_matches(run_discarded, '     #match: Query run matches discarded', location, query_string)
 
             discarded.extend(run_discarded)
             matches.extend(run_matches)
 
             if use_cache:
                 # always CACHE even and especially if no matches were found
-                if TRACE_CACHE: self.debug_matches(run_matches, '#match caching Query run matches', location, query_string)
+                if TRACE_CACHE: self.debug_matches(run_matches, ' #match: Query run matches caching', location, query_string)
                 matches_cache.put(query_run, run_matches)
 
         # final matching merge, refinement and filtering
@@ -562,7 +559,6 @@ class LicenseIndex(object):
             self.debug_matches(matches, '#match: FINAL MERGED', location, query_string)
 
             # final merge
-            matches = LicenseMatch.merge(matches, max_dist=500)
 
             discarded.extend(whole_discarded)
             if TRACE_MATCHES_DISCARD: self.debug_matches(discarded, '#match: FINAL DISCARDED', location, query_string)
@@ -582,34 +578,50 @@ class LicenseIndex(object):
         Return a list of LicenseMatch for a query run.
         """
         matches = []
-
+        discarded = []
         exact_matches = exact_match(self, query_run, self.rules_automaton)
-        exact_matches, discarded = refine_matches(exact_matches, self)  # , min_score=100, max_dist=MAX_DIST)
 
+        if TRACE_QUERY_RUN: self.debug_matches(exact_matches, '      #match_query_run: ===> exact matches')
+
+        if TRACE_QUERY_RUN: logger_debug('      #match_query_run: refining following exact match')
+        exact_matches, exact_discarded = refine_matches(exact_matches, self)  # , min_score=100, max_dist=MAX_DIST)
+
+        if TRACE_QUERY_RUN: self.debug_matches(exact_matches, '      #match_query_run: ===> exact matches refined')
+        if TRACE_QUERY_RUN: self.debug_matches(discarded, '      #match_query_run: ===> exact matches discarded')
+
+        discarded.extend(exact_discarded)
         matches.extend(exact_matches)
-        if TRACE_QUERY_RUN: logger_debug('!!!match_query_run: Exact matches:', len(matches))
-        if TRACE_QUERY_RUN: map(logger_debug, matches)
 
-        candidates = compute_candidates(query_run, self,
-            rules_subset=self.regular_rids | self.small_rids, exact=False, top=30)
-        if TRACE_QUERY_RUN: logger_debug('!!!match_query_run: number of candidates: for SEQ', len(candidates))
+        # do not carry over matching if there is nothing left to match
+        if not query_run.is_matchable():
+            return matches
 
-        # remove actual exact matches only after computing the candidates
-#         for m in exact_matches:
-#             query_run.subtract(m.qspan)
+        rules_subset_for_seq_match = self.regular_rids | self.small_rids
+        candidates = compute_candidates(query_run, self, rules_subset=rules_subset_for_seq_match, exact=False, top=30)
+        if TRACE_QUERY_RUN: logger_debug('      #match_query_run: number of candidates for seq match #', len(candidates))
+
+        # computing the candidates has been done before the subtract of exact matches 
+        for match in exact_matches:
+            query_run.subtract(match.qspan)
 
         for candidate in candidates:
+            if TRACE_QUERY_RUN: logger_debug('         #match_query_run: seq matching candidate:', candidate[1])
+            # track the last matches to avoid double matching on small matches
+            last_matches = None
             while True:
                 rule_matches = match_sequence(self, candidate, query_run)
-                if TRACE_QUERY_RUN: logger_debug('!!!match_query_run: rule SEQmatches:', rule_matches)
-                matches.extend(rule_matches)
+                if TRACE_QUERY_RUN and rule_matches: self.debug_matches(rule_matches, '           #match_query_run: seq matches for candidate')
                 if not rule_matches:
                     break
+                if last_matches == rule_matches:
+                    # as an artifact of sequence matching, we do not subtract small matches
+                    # but we can therefore can twice the exact same match in a row.
+                    break
+                matches.extend(rule_matches)
+                last_matches = rule_matches[:]
+
             if not query_run.is_matchable():
                 break
-
-        if TRACE_QUERY_RUN: logger_debug('!!!match_query_run: matches:', len(matches))
-        if TRACE_QUERY_RUN: map(logger_debug, matches)
         return matches
 
     def negative_match(self, query_run):
@@ -617,14 +629,10 @@ class LicenseIndex(object):
         Match a query run exactly against negative, license-less rules.
         Return a list of negative LicenseMatch for a query run, subtract these matches from the query run.
         """
-#         candidates = compute_candidates(query_run, self, rules_subset=self.negative_rids, exact=True, top=0)
-#         if not candidates:
-#             return []
-#         candidate_rids = set(rid for rid, _, _ in candidates)
         matches = exact_match(self, query_run, self.negative_automaton)
 
-        if TRACE_MATCHES_NEGATIVE and matches: logger_debug('     ##final _negative_matches:....', len(matches))
-        if TRACE_MATCHES_NEGATIVE and matches: map(logger_debug, matches)
+        if TRACE_NEGATIVE and matches: logger_debug('     ##final _negative_matches:....', len(matches))
+        if TRACE_NEGATIVE and matches: map(logger_debug, matches)
 
         return matches
 
@@ -673,7 +681,7 @@ class LicenseIndex(object):
         print('    TOTAL internals in MB:', round(total_size / (1024 * 1024), 2))
         print('    TOTAL real size in MB:', round(size_of(self) / (1024 * 1024), 2))
 
-    def _as_dict(self):
+    def _as_dict(self, all_tokens=False):
         """
         Return a human readable dictionary representing the index replacing
         token ids and rule ids with their string values and the postings by
@@ -735,8 +743,6 @@ class LicenseIndex(object):
         token frequencies across rules such that:
          - common tokens have lower token ids smaller than len_junk
          - no rule is composed entirely of junk tokens.
-         - only a few rule ngrams of length length_threshold are composed
-         entirely of common tokens.
         """
         old_dictionary = self.dictionary
         tokens_by_old_tid = self.tokens_by_tid
@@ -807,6 +813,7 @@ class LicenseIndex(object):
         # By construction this should always be true
         assert set(tokens_by_new_tid) == set(tokens_by_old_tid)
 
+        fatals = []
         for rid, new_tids in enumerate(new_tids_by_rid):
             # Check that no rule is all junk: this is a fatal indexing error
             if all(t < len_junk for t in new_tids):
@@ -816,8 +823,14 @@ class LicenseIndex(object):
                     'is all junk tokens:',
                     u' '.join(tokens_by_new_tid[t] for t in new_tids)
                 )
-                raise IndexError(u' '.join(message))
-
+                fatals.append(u' '.join(message))
+        if TRACE and fatals:
+            # raise IndexError(u'\n'.join(fatals))
+            print()
+            print('############################################')
+            map(print, fatals)
+            print('############################################')
+            print()
         # TODO: Check that the junk count choice is correct: for instance using some
         # stats based on standard deviation or markov chains or similar
         # conditional probabilities such that we verify that we CANNOT create a
