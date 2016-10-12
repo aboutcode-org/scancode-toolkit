@@ -5,14 +5,14 @@ from collections import namedtuple as _namedtuple
 
 
 """
-Token sequences alignement and diffing nbased on the longest common substrings
-of "high tokens". This essentially a non-optimal and reasonably fast single
-local sequence alignment between two sequences of integers/token ids..
+Token sequences alignement and diffing based on the longest common substrings of
+"high tokens". This essentially a non-optimal and reasonably fast single local
+sequence alignment between two sequences of integers/token ids.
 
 Based on and heavily modified from Python's difflib.py from the 3.X tip:
 https://hg.python.org/cpython/raw-file/0a69b1e8b7fe/Lib/difflib.py
 
-license: PSF. See ABOUT file for details.
+license: PSF. See seq.ABOUT file for details.
 """
 
 
@@ -145,14 +145,14 @@ def match_blocks(a, b, starta, lena, b2j, len_junk, matchables=frozenset()):
     for i2, j2, k2 in matching_blocks:
         # Is this block adjacent to i1, j1, k1?
         if i1 + k1 == i2 and j1 + k1 == j2:
-            # Yes, so collapse them -- this just increases the length of
-            # the first block by the length of the second, and the first
-            # block so lengthened remains the block to compare against.
+            # Yes, so collapse them -- this just increases the length of the first
+            # block by the length of the second, and the first block so lengthened
+            # remains the block to compare against.
             k1 += k2
         else:
-            # Not adjacent.  Remember the first block (k1==0 means it's
-            # the dummy we started with), and make the second block the
-            # new block to compare against.
+            # Not adjacent: keep it unless this is the first block (k1==0 means it's
+            # the dummy we started with), and make the second block the new block to
+            # compare against.
             if k1:
                 non_adjacent.append((i1, j1, k1))
             i1, j1, k1 = i2, j2, k2
