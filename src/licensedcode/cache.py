@@ -31,7 +31,7 @@ from os.path import getmtime
 from os.path import getsize
 from os.path import join
 
-import yg.lockfile
+import yg.lockfile  # @UnresolvedImport
 
 from commoncode.fileutils import create_dir
 from commoncode.fileutils import file_iter
@@ -72,17 +72,19 @@ def tree_checksum(base_dir=src_dir):
     return md5(''.join(hashable)).hexdigest()
 
 
-def get_or_build_index_from_cache():
+def get_or_build_index_from_cache(force_clear=False):
     """
-    Return a LicenseIndex loaded from cache. If the index is stale or does not
-    exist, build a new index and caches it. Clear or purge the LicenseMatch
-    cache as needed.
+    Return a LicenseIndex loaded from cache. If the index is stale or does not exist,
+    build a new index and caches it. Clear or purge the LicenseMatch cache as needed.
     """
     from licensedcode.index import LicenseIndex
     from licensedcode.models import get_rules
     try:
         # acquire lock and wait until timeout to get a lock or die
         with yg.lockfile.FileLock(index_lock_file, timeout=60 * 3):
+            if force_clear:
+                license_matches_cache.clear(0)
+
             # if we have a saved cached index
             if exists(tree_checksum_file) and exists(index_cache_file):
                 # load saved tree_checksum and compare with current tree_checksum
@@ -142,7 +144,7 @@ of matches for a sequence of tokens. This absence of matches can be as costly to
 compute initially than an actual matches.
 """
 
-MATCH_TYPE = 'cached'
+MATCH_CACHE = '0-cached'
 
 
 class LicenseMatchCache(object):
@@ -177,7 +179,7 @@ class LicenseMatchCache(object):
         qrs = query_run.start
         qre = query_run.end
         qlbp = query_run.line_by_pos
-        return [lm.rebase(qrs, qre, qlbp, MATCH_TYPE) for lm in cached]
+        return [lm.rebase(qrs, qre, qlbp, MATCH_CACHE) for lm in cached]
 
     def put(self, query_run, matches):
         """
