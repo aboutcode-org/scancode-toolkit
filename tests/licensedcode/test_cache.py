@@ -31,6 +31,7 @@ from commoncode.testcase import FileBasedTesting
 from licensedcode import index
 from licensedcode import models
 from licensedcode.match import get_texts
+from licensedcode import cache
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -61,7 +62,7 @@ class LicenseMatchCacheTest(FileBasedTesting):
         assert 1 == len(result)
         cached_match = result[0]
         assert 'cache' in cached_match.matcher
-        assert cached_match.same(match)
+        assert match == cached_match
 
     def test_cached_match_to_template(self):
         rule = models.Rule(text_file=self.get_test_loc('cache/templates/idx.txt'), licenses=['test'],)
@@ -79,7 +80,7 @@ class LicenseMatchCacheTest(FileBasedTesting):
         assert 1 == len(result)
         cached_match = result[0]
         assert 'cache' in cached_match.matcher
-        assert cached_match.same(match)
+        assert match == cached_match
 
     def test_cache_hits_with_different_query_runs_rebase_correctly(self):
         bsd_new = 'Redistribution and use in source and binary forms are permitted'
@@ -115,7 +116,7 @@ class LicenseMatchCacheTest(FileBasedTesting):
         # does hit cache
         querys = 'are Redistribution and use in source and binary forms are permitted are'
         match = idx.match(query_string=querys, use_cache=cache_dir)[0]
-        assert 'cached' in match.matcher
+        assert cache.MATCH_CACHE in match.matcher
 
         expected = 'Redistribution and use in source and binary forms are permitted'
         qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
@@ -124,18 +125,18 @@ class LicenseMatchCacheTest(FileBasedTesting):
         # does hit cache, with unknown
         querys = 'are Redistribution and explicit use in source and binary forms are permitted are'
         match = idx.match(query_string=querys, use_cache=cache_dir)[0]
-        assert 'cached' in match.matcher
+        assert cache.MATCH_CACHE in match.matcher
 
-        expected = 'Redistribution and <no-match> use in source and binary forms are permitted'
+        expected = 'Redistribution and [explicit] use in source and binary forms are permitted'
         qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
         assert expected == qtext
 
         # does hit cache, with unknown
         querys = 'Redistribution that and explicit use in source and binary forms are permitted are'
         match = idx.match(query_string=querys, use_cache=cache_dir)[0]
-        assert 'cached' in match.matcher
+        assert cache.MATCH_CACHE in match.matcher
 
-        expected = 'Redistribution <no-match> and <no-match> use in source and binary forms are permitted'
+        expected = 'Redistribution [that] and [explicit] use in source and binary forms are permitted'
         qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
         assert expected == qtext
 
@@ -145,15 +146,15 @@ class LicenseMatchCacheTest(FileBasedTesting):
                 + 'are Redistribution and explicit use in source and binary forms are permitted are'
         )
         matches = idx.match(query_string=querys, use_cache=cache_dir)
-        assert all('cached' in match.matcher for match in matches)
+        assert all(cache.MATCH_CACHE in match.matcher for match in matches)
 
         match = matches[0]
-        expected = 'Redistribution <no-match> and <no-match> use in source and binary forms are permitted'
+        expected = 'Redistribution [that] and [explicit] use in source and binary forms are permitted'
         qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
         assert expected == qtext
 
         match = matches[1]
-        expected = 'Redistribution and <no-match> use in source and binary forms are permitted'
+        expected = 'Redistribution and [explicit] use in source and binary forms are permitted'
         qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
         assert expected == qtext
 
@@ -163,14 +164,14 @@ class LicenseMatchCacheTest(FileBasedTesting):
                 + 'are Redistribution and explicit use in source and binary forms are permitted are'
         )
         matches = idx.match(query_string=querys, use_cache=cache_dir)
-        assert all('cached' in match.matcher for match in matches)
+        assert all(cache.MATCH_CACHE in match.matcher for match in matches)
 
         match = matches[0]
-        expected = 'Redistribution <no-match> and <no-match> use in source and binary forms are permitted'
+        expected = 'Redistribution [that] and [explicit] use in source and binary forms are permitted'
         qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
         assert expected == qtext
 
         match = matches[1]
-        expected = 'Redistribution <no-match> and <no-match> use in source and binary forms are permitted'
+        expected = 'Redistribution [that] and [explicit] use in source and binary forms are permitted'
         qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
         assert expected == qtext

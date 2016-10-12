@@ -32,7 +32,6 @@ from licensedcode import index
 from licensedcode.models import Rule
 
 from licensedcode.query import Query
-from array import array
 from licensedcode import models
 
 
@@ -217,30 +216,31 @@ class TestQueryWithSingleRun(IndexTesting):
         idx = index.LicenseIndex(self.get_test_rules('index/bsd'))
         query_loc = self.get_test_loc('index/querytokens')
 
-        qry = Query(location=query_loc, idx=idx)
+        qry = Query(location=query_loc, idx=idx, line_threshold=4)
+        result = [qr._as_dict() for qr in qry.query_runs]
+        expected = [
+            {'end': 35,
+             'start': 0,
+             'tokens': (u'redistribution and use in source and binary forms ' 
+                        u'redistributions of source code must the this that is not '
+                        u'to redistributions in binary form must this software is '
+                        u'provided by the copyright holders and contributors as is')
+             },
+            {'end': 36, 'start': 36, 'tokens': u'redistributions'}]
+        assert expected ==result
+        
         runs = qry.query_runs
-        assert len(runs) == 1
+        assert len(runs) == 2
         query_run = runs[0]
 
         expected_lbp = {
             0: 4, 1: 4, 2: 4, 3: 4, 4: 4, 5: 4, 6: 4, 7: 4, 8: 6, 9: 6, 10: 6,
-            11: 6, 12: 6, 13: 7, 14: 7, 15: 7, 16: 7, 17: 7, 18: 8, 19: 9, 
+            11: 6, 12: 6, 13: 7, 14: 7, 15: 7, 16: 7, 17: 7, 18: 8, 19: 9,
             20: 9, 21: 9, 22: 9, 23: 9, 24: 11, 25: 11, 26: 11, 27: 11, 28: 11,
             29: 11, 30: 11, 31: 11, 32: 11, 33: 11, 34: 11, 35: 11, 36: 15
         }
 
         assert expected_lbp == query_run.line_by_pos
-
-        expected_toks = [
-            u'redistribution', u'and', u'use', u'in', u'source', u'and',
-            u'binary', u'forms', u'redistributions', u'of', u'source', u'code',
-            u'must', u'the', u'this', u'that', u'is', u'not', u'to',
-            u'redistributions', u'in', u'binary', u'form', u'must', u'this',
-            u'software', u'is', u'provided', u'by', u'the', u'copyright',
-            u'holders', u'and', u'contributors', u'as', u'is',
-            u'redistributions']
-
-        assert expected_toks == [None if t is None else idx.tokens_by_tid[t] for t in query_run.tokens]
 
     def test_query_run_tokens_with_junk(self):
         ranked_toks = lambda : ['the', 'is', 'a']
@@ -466,11 +466,32 @@ class TestQueryWithMultipleRuns(IndexTesting):
 
         query_loc = self.get_test_loc('detect/simple_detection/x11-xconsortium_text.txt')
         qry = Query(location=query_loc, idx=idx)
-        result = [q._as_dict(brief=True) for q in qry.query_runs]
+        result = [q._as_dict(brief=False) for q in qry.query_runs]
         expected = [{
             'start': 0,
             'end': 216,
-            'tokens': u'x11 license copyright c 1996 ... trademark of x consortium inc'
+            'tokens':(
+                u'x11 license copyright c 1996 x consortium permission is hereby '
+                u'granted free of charge to any person obtaining a copy of this '
+                u'software and associated documentation files the software to deal in '
+                u'the software without restriction including without limitation the '
+                u'rights to use copy modify merge publish distribute sublicense and or '
+                u'sell copies of the software and to permit persons to whom the '
+                u'software is furnished to do so subject to the following conditions '
+                u'the above copyright notice and this permission notice shall be '
+                u'included in all copies or substantial portions of the software the '
+                u'software is provided as is without warranty of any kind express or '
+                u'implied including but not limited to the warranties of '
+                u'merchantability fitness for a particular purpose and noninfringement '
+                u'in no event shall the x consortium be liable for any claim damages or '
+                u'other liability whether in an action of contract tort or otherwise '
+                u'arising from out of or in connection with the software or the use or '
+                u'other dealings in the software except as contained in this notice the '
+                u'name of the x consortium shall not be used in advertising or '
+                u'otherwise to promote the sale use or other dealings in this software '
+                u'without prior written authorization from the x consortium x window '
+                u'system is a trademark of x consortium inc'
+            )
         }]
         assert 217 == len(qry.query_runs[0].tokens)
         assert expected == result
@@ -480,36 +501,32 @@ class TestQueryWithMultipleRuns(IndexTesting):
         rules = list(models.load_rules(rule_dir))
         idx = index.LicenseIndex(rules)
         query_doc = self.get_test_loc('query/runs/query.txt')
-        q = Query(location=query_doc, idx=idx)
-        assert len(q.query_runs) == 2
-        query_run = q.query_runs[0]
-        assert 0 == query_run.start
-        assert 0 == query_run.end
-        assert [25] == query_run.tokens
-
-        query_run = q.query_runs[1]
-        assert 1 == query_run.start
-        assert 123 == query_run.end
+        q = Query(location=query_doc, idx=idx, line_threshold=4)
+        result = [qr._as_dict() for qr in q.query_runs]
+        expected = [
+            {'end': 0, 'start': 0, 'tokens': u'inc'},
+            {
+            'end': 123,
+            'start': 1,
+            'tokens': (
+                u'this library is free software you can redistribute it and or modify '
+                u'it under the terms of the gnu library general public license as '
+                u'published by the free software foundation either version 2 of the '
+                u'license or at your option any later version this library is '
+                u'distributed in the hope that it will be useful but without any '
+                u'warranty without even the implied warranty of merchantability or '
+                u'fitness for a particular purpose see the gnu library general public '
+                u'license for more details you should have received a copy of the gnu '
+                u'library general public license along with this library see the file '
+                u'copying lib if not write to the free software foundation inc 51 '
+                u'franklin street fifth floor boston ma 02110 1301 usa'
+            )
+        }]
+        assert expected == result
 
 
 class TestQueryWithFullIndex(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
-
-    def test_query_runs_from_rules_should_return_few_runs(self):
-        # warning: this  is a long running function which builds ~ 4000 queries
-        idx = index.get_index()
-        rules_with_multiple_runs = 0
-        for rule in idx.rules_by_rid:
-            qry = Query(location=rule.text_file, idx=idx, line_threshold=4)
-            if len(qry.query_runs) != 1:
-                rules_with_multiple_runs += 1
-        # uncomment to print which rules are a problem.
-        #         print()
-        #         print('Multiple runs for rule:', rule.identifier)
-        #         for r in runs:
-        #             print(r._as_dict(brief=True))
-        # print('#Rules with Multiple runs:', rules_with_multiple_runs)
-        assert rules_with_multiple_runs < 350
 
     def test_query_from_binary_lkms_1(self):
         location = self.get_test_loc('query/ath_pci.ko')
@@ -521,7 +538,7 @@ class TestQueryWithFullIndex(FileBasedTesting):
         location = self.get_test_loc('query/eeepc_acpi.ko')
         idx = index.get_index()
         result = Query(location, idx=idx)
-        assert 259 == len(result.query_runs)
+        assert 260 == len(result.query_runs)
         qr = result.query_runs[5]
         assert 'license gpl' in u' '.join(idx.tokens_by_tid[t] for t in qr.matchable_tokens())
 
@@ -529,7 +546,9 @@ class TestQueryWithFullIndex(FileBasedTesting):
         location = self.get_test_loc('query/wlan_xauth.ko')
         idx = index.get_index()
         result = Query(location, idx=idx)
-        assert 498 == len(result.query_runs)
+        assert 501 == len(result.query_runs)
+        qr = result.query_runs[0]
+        assert 'license dual bsd gpl' in u' '.join(idx.tokens_by_tid[t] for t in qr.matchable_tokens())
 
     def test_query_run_tokens(self):
         query_s = u' '.join(u'''

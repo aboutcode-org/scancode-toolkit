@@ -188,44 +188,44 @@ class TestRuleTokenizer(FileBasedTesting):
     def test_rule_tokenizer_can_split_templates(self):
         text = u'abc def \n {{temp}} GHI'
         result = list(rule_tokenizer(text))
-        expected = [u'abc', u'def', None, u'ghi', ]
+        expected = [u'abc', u'def', u'ghi', ]
         assert expected == result
 
     def test_rule_tokenizer_merges_contiguous_gaps(self):
         text = u'abc{{temp}}{{xzy}}def'
         result = list(rule_tokenizer(text))
-        expected = [u'abc', None, u'def']
+        expected = [u'abc', u'def']
         assert expected == result
 
     def test_rule_tokenizer_does_not_return_leading_and_trailing_gaps(self):
         text = u'{{xzy}}{{xzy}}abc{{temp}}def{{xzy}}{{xzy}}'
         result = list(rule_tokenizer(text))
-        expected = [u'abc', None, u'def']
+        expected = [u'abc', u'def']
         assert expected == result
 
     def test_rule_tokenizer_handles_empty_templates(self):
         text = u'ab{{}}cd'
-        expected = [u'ab', None, u'cd']
+        expected = [u'ab', u'cd']
         assert expected == list(rule_tokenizer(text))
 
     def test_rule_tokenizer_handles_multi_word_templates(self):
         text = u'ab{{10 nexb Company}}cd'
-        expected = [u'ab', None, u'cd']
+        expected = [u'ab', u'cd']
         assert expected == list(rule_tokenizer(text))
 
     def test_rule_tokenizer_handles_digits_templates(self):
         text = u'ab{{10}}cd'
-        expected = [u'ab', None, u'cd']
+        expected = [u'ab', u'cd']
         assert expected == list(rule_tokenizer(text))
 
     def test_rule_tokenizer_handles_template_with_spaces(self):
         text = u'ab{{       10 }}cd'
-        expected = [u'ab', None, u'cd']
+        expected = [u'ab', u'cd']
         assert expected == list(rule_tokenizer(text))
 
     def test_rule_tokenizer_can_process_multiple_templatized_parts(self):
         text = u'ab{{nexb Company}}cd {{second}}ef'
-        expected = [u'ab', None, u'cd', None, u'ef', ]
+        expected = [u'ab', u'cd', u'ef', ]
         assert expected == list(rule_tokenizer(text))
 
     def test_rule_tokenizer_can_process_multiple_templatized_parts_strip_multiple_contig_templates_and_leading_and_trailing(self):
@@ -234,12 +234,12 @@ class TestRuleTokenizer(FileBasedTesting):
         {{nexb}}ef
         {{nexb}}
         '''
-        expected = [u'ab', None, u'cd', None, u'ef', ]
+        expected = [u'ab', u'cd', u'ef', ]
         assert expected == list(rule_tokenizer(text))
 
     def test_rule_tokenizer_can_process_multiple_templatized_parts_with_default_gap_and_custom_gaps(self):
         text = u'ab{{nexb Company}}cd{{12 second}}ef{{12 second}}gh'
-        expected = [u'ab', None, u'cd', None, u'ef', None, u'gh']
+        expected = [u'ab', u'cd', u'ef', u'gh']
         assert expected == list(rule_tokenizer(text))
 
     def test_rule_tokenizer_handles_empty_lines(self):
@@ -249,7 +249,7 @@ class TestRuleTokenizer(FileBasedTesting):
 
     def test_rule_tokenizer_can_parse_simple_line(self):
         text = u'Licensed by {{12 nexB}} to you '
-        expected = [u'licensed', u'by', None, u'to', u'you']
+        expected = [u'licensed', u'by', u'to', u'you']
         assert expected == list(rule_tokenizer(text))
 
     def test_rule_tokenizer_does_not_throw_exception_for_illegal_pystache_templates(self):
@@ -266,7 +266,7 @@ class TestRuleTokenizer(FileBasedTesting):
             u'oder', u'n', u'modifizieren', u'entweder', u'gem\xe4\xdf',
             u'version', u'3', u'der', u'lizenz', u'oder', u'nach', u'ihrer',
             u'option', u'jeder', u'sp\xe4teren', u'n', u'version', u'n', u'n',
-            u'die', u'ver\xf6ffentlichung', u'von', None, u'erfolgt', u'in',
+            u'die', u'ver\xf6ffentlichung', u'von', u'erfolgt', u'in',
             u'der', u'hoffnung', u'da\xdf', u'es', u'ihnen', u'von', u'nutzen',
             u'n', u'sein', u'wird', u'aber', u'ohne', u'irgendeine',
             u'garantie', u'sogar', u'ohne', u'die', u'implizite', u'garantie',
@@ -275,7 +275,7 @@ class TestRuleTokenizer(FileBasedTesting):
             u'sie', u'in', u'der', u'gnu', u'general', u'n', u'public',
             u'license', u'n', u'n', u'sie', u'sollten', u'ein', u'exemplar',
             u'der', u'gnu', u'general', u'public', u'license', u'zusammen',
-            u'mit', None, u'n', u'erhalten', u'haben', u'falls',
+            u'mit', u'n', u'erhalten', u'haben', u'falls',
             u'nicht', u'schreiben', u'sie', u'an', u'die', u'free', u'software',
             u'foundation', u'n', u'inc', u'51', u'franklin', u'st', u'fifth',
             u'floor', u'boston', u'ma', u'02110', u'usa',
@@ -294,7 +294,7 @@ class TestRuleTokenizer(FileBasedTesting):
             u'oder', u'n', u'modifizieren', u'entweder', u'gem\xe4\xdf',
             u'version', u'3', u'der', u'lizenz', u'oder', u'nach', u'ihrer',
             u'option', u'jeder', u'sp\xe4teren', u'n', u'version', u'n', u'n',
-            u'die', u'ver\xf6ffentlichung', u'von', None, u'erfolgt', u'in',
+            u'die', u'ver\xf6ffentlichung', u'von', u'erfolgt', u'in',
             u'der', u'hoffnung', u'da\xdf', u'es', u'ihnen', u'von', u'nutzen',
             u'n', u'sein', u'wird', u'aber', u'ohne', u'irgendeine',
             u'garantie', u'sogar', u'ohne', u'die', u'implizite', u'garantie',
@@ -303,7 +303,7 @@ class TestRuleTokenizer(FileBasedTesting):
             u'sie', u'in', u'der', u'gnu', u'general', u'n', u'public',
             u'license', u'n', u'n', u'sie', u'sollten', u'ein', u'exemplar',
             u'der', u'gnu', u'general', u'public', u'license', u'zusammen',
-            u'mit', None, u'n', u'erhalten', u'haben', u'falls', u'nicht',
+            u'mit', u'n', u'erhalten', u'haben', u'falls', u'nicht',
             u'schreiben', u'sie', u'an', u'die', u'free', u'software',
             u'foundation', u'n', u'inc', u'51', u'franklin', u'st', u'fifth',
             u'floor', u'boston', u'ma', u'02110', u'usa',
@@ -345,13 +345,11 @@ class TestRuleTokenizer(FileBasedTesting):
         tf = self.get_test_loc('tokenize/ill_formed_template/text.txt')
         with codecs.open(tf, 'rb', encoding='utf-8') as text:
             result = list(rule_tokenizer(text.read()))
-            expected_gaps = 4
-            result_gaps = len([g for g in result if g is None])
-            assert expected_gaps == result_gaps
+            assert 3875 == len(result)
 
     def test_rule_tokenizer_handles_combination_of_well_formed_and_ill_formed_templates(self):
         text = u'ab{{c}}d}}ef'
-        expected = [u'ab', None, u'd', u'ef']
+        expected = [u'ab', u'd', u'ef']
         assert expected == list(rule_tokenizer(text))
 
     def test_rule_tokenizer_handles_combination_of_well_formed_and_ill_formed_templates_2(self):

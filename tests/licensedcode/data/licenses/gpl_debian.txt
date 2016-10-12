@@ -1,0 +1,2 @@
+The Debian packaging is (C) 2008, ron and
+is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
