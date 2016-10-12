@@ -75,7 +75,7 @@ elif'win32' in sys_platform:
 elif 'darwin' in sys_platform:
     platform_names = ('posix', 'mac',)
 else:
-    raise Exception('Unsupported OS/platform')
+    raise Exception('Unsupported OS/platform %r' % sys_platform)
     platform_names = tuple()
 
 
