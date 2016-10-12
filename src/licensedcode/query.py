@@ -94,9 +94,9 @@ def build_query(location=None, query_string=None, idx=None):
         qtype = typecode.get_type(location)
         if qtype.is_binary:
             # use a high number of lines per run for binaries, avoiding too many runs
-            qry = Query(location=location, idx=idx, line_threshold=100)
+            qry = Query(location=location, idx=idx, line_threshold=40)
         else:
-            qry = Query(location=location, idx=idx, line_threshold=100)
+            qry = Query(location=location, idx=idx, line_threshold=40)
     else:
         qry = Query(query_string=query_string, idx=idx)
 
@@ -189,9 +189,9 @@ class Query(object):
 
     def tokens_by_line(self, tokenizer=query_tokenizer):
         """
-        Yield a sequence of token_ids from this query, one sequence for each
-        line. Populate the query `line_by_pos` and `unknowns_by_pos` mappings as
-        a side effect.
+        Yield a sequence of token_ids from this query, one sequence for each line.
+        Populate the query `line_by_pos` and `unknowns_by_pos` mappings as a side
+        effect.
         """
         line_by_pos = self.line_by_pos
         self_unknowns_by_pos = self.unknowns_by_pos
@@ -403,7 +403,7 @@ class QueryRun(object):
 
         def tokens_string(tks):
             "Return a string from a token id seq"
-            return u' '.join((tid is not None and tid >= 0) and tokens_by_tid[tid] or u'None' for tid in tks)
+            return u' '.join(tokens_by_tid[tid] for tid in tks)
 
         if brief and len(self.tokens) > 10:
             tokens = tokens_string(self.tokens[:5]) + u' ... ' + tokens_string(self.tokens[-5:])
@@ -415,6 +415,4 @@ class QueryRun(object):
             'end': self.end,
             'tokens': tokens,
         }
-        if not brief:
-            dct['high_matchables'] = self.high_matchables
         return dct
