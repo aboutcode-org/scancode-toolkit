@@ -614,11 +614,11 @@ class Rule(object):
                  'data_file', 'text_file', '_text',
                  'length', 'low_length', 'high_length', '_thresholds',
                  'length_unique', 'low_unique', 'high_unique', '_thresholds_unique',
-                 'gaps', 'is_url'
+                 'gaps', 'is_url', 'solid'
                  )
 
     def __init__(self, data_file=None, text_file=None, licenses=None,
-                 license_choice=False, notes=None, _text=None):
+                 license_choice=False, notes=None, solid=False, _text=None):
 
         ###########
         # FIXME: !!! TWO RULES MAY DIFFER BECAUSE THEY ARE UPDATED BY INDEXING
@@ -643,14 +643,18 @@ class Rule(object):
         self.license = u''
 
         # licensing identifier: TODO: replace with a license expression
-        self.licensing_identifier = tuple(sorted(set(self.licenses))) + (license_choice,)
+        self.licensing_identifier = tuple(self.licenses) + (license_choice,)
 
         # is this rule text a false positive when matched? (filtered out)
         self.false_positive = False
 
+        # is this rule text only to be matched if all tokens are matched?
+        # not computed but set
+        self.solid = solid
+
         # optional, free text
         self.notes = notes
-
+        
         # path to the YAML data file for this rule
         self.data_file = data_file
         if data_file:
@@ -662,8 +666,12 @@ class Rule(object):
         # for testing only, when we do not use a file
         self._text = _text
 
-        # These attributes are computed when processing the rule text or during indexing
+        # These attributes are computed upon text loading or setting the thresholds 
+        ###########################################################################
 
+        # is this rule text for a bare url? (needs exact matching)
+        self.is_url = False
+        
         # length in number of token strings
         self.length = 0
 
@@ -678,42 +686,25 @@ class Rule(object):
         self.length_unique = 0
         self._thresholds_unique = None
 
-        # set of pos followed by a gap, aka a template part
-        self.gaps = set()
-
-        # is this rule text for a bare url? (needs exact matching)
-        self.is_url = False
-
     def tokens(self, lower=True):
         """
-        Return an iterable of token strings for this rule and keep track of gaps
-        by position. Gaps and length are recomputed. Tokens inside gaps are
-        tracked but not part of the returned stream.
+        Return an iterable of token strings for this rule. 
+        Length is recomputed. Tokens inside gaps are skipped and ignored.
         """
-        # FIXME: we should cache these outside of the rule object, as a global
-        gaps = set()
-        # Note: we track the pos instead of enumerating it because we create
-        # positions abstracting gaps
-        pos = 0
         length = 0
         text = self.text()
         text = text.strip()
 
-        # tag this rule as being a bare URL: this is used to determine a matching approach
+        # FIXME: this is weird: 
+        # tag this rule as being a bare URL if it starts with a scheme and is on one line: this is used to determine a matching approach
         if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000]:
             self.is_url = True
 
         for token in rule_tokenizer(self.text(), lower=lower):
-            if token is None:
-                gaps.add(pos - 1)
-            else:
-                length += 1
-                yield token
-                # only increment pos if we are not in a gap
-                pos += 1
+            length += 1
+            yield token
 
         self.length = length
-        self.gaps = gaps
 
     def text(self):
         """
@@ -735,11 +726,14 @@ class Rule(object):
         if TRACE_REPR:
             text = self.text()
         else:
-            text = self.text()[:20] + '...'
+            text = self.text()
+        if text:
+            text = text[:20] + '...'
         keys = self.licenses
         choice = self.license_choice
         fp = self.false_positive
-        return 'Rule(%(idf)r, lics=%(keys)r, fp=%(fp)r, %(text)r)' % locals()
+        solid = self.solid
+        return 'Rule(%(idf)r, lics=%(keys)r, fp=%(fp)r, solid=%(solid)r, %(text)r)' % locals()
 
     def same_licensing(self, other):
         """
@@ -761,7 +755,7 @@ class Rule(object):
         therefore a "negative" rule denoting that a match to this rule should be
         ignored.
         """
-        return (not self.licenses) and (not self.false_positive)
+        return not self.licenses and not self.false_positive
 
     def small(self):
         """
@@ -788,9 +782,15 @@ class Rule(object):
             if self.length < 10:
                 min_high = self.high_length
                 min_len = self.length
-                max_gap_skip = 1 if self.gaps else 0
+                max_gap_skip = 1
 
-            if self.is_url:
+            if self.length < 3:
+                min_high = self.high_length
+                min_len = self.length
+                max_gap_skip = 1
+                self.solid = True
+
+            if self.is_url or self.solid:
                 min_high = self.high_length
                 min_len = self.length
                 max_gap_skip = 0
@@ -820,12 +820,12 @@ class Rule(object):
                     min_len = self.length_unique
                 else:
                     min_len = self.length_unique - 1
-                max_gap_skip = 1 if self.gaps else 0
+                max_gap_skip = 1
 
             if self.length < 5:
                 min_high = self.high_unique
                 min_len = self.length_unique
-                max_gap_skip = 1 if self.gaps else 0
+                max_gap_skip = 1
 
             if self.is_url:
                 min_high = self.high_unique
@@ -851,6 +851,8 @@ class Rule(object):
             data['license'] = self.license
         if self.false_positive:
             data['false_positive'] = self.false_positive
+        if self.solid:
+            data['solid'] = self.solid
         if self.notes:
             data['notes'] = self.note
         return data
@@ -890,6 +892,8 @@ class Rule(object):
         self.license_choice = data.get('license_choice', False)
         self.license = data.get('license')
         self.false_positive = data.get('false_positive', False)
+        self.solid = data.get('solid', False)
+
         # these are purely informational and not used at run time
         if load_notes:
             notes = data.get('notes')
@@ -914,10 +918,3 @@ def _print_rule_stats():
     print('Top 15 high lengths: ', high_sizes.most_common(15))
     print('15 smallest high lengths: ', sorted(high_sizes.iteritems(),
                                                key=itemgetter(0))[:15])
-
-    gaps = Counter(len(r.gaps) for r in rules if r.gaps)
-    print('Top 15 gap counts: ', sorted(gaps.most_common(0),
-                                        key=itemgetter(1), reverse=True))
-
-    small_with_gaps = [(r.identifier, len(r.gaps)) for r in rules if r.gaps and r.small()]
-    print('Small rules with gaps: ', small_with_gaps)
