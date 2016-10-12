@@ -35,8 +35,7 @@ from collections import Set
 from itertools import count
 from itertools import groupby
 
-from intbitset import intbitset  # @UnresolvedImport
-
+from intbitset import intbitset
 
 
 class Span(Set):
@@ -333,9 +332,8 @@ class Span(Set):
         """
         Return a containment coefficient as a float between 0 and 1. This is an
         indication of how much of the other span is contained in this span.
-
-        1 means the other span is entirely contained in this span.
-        0 means that the other span is not contained at all this span. 
+            - 1 means the other span is entirely contained in this span.
+            - 0 means that the other span is not contained at all this span. 
         """
         if self._set.isdisjoint(other._set):
             return 0
@@ -347,9 +345,8 @@ class Span(Set):
     def surround(self, other):
         """
         Return True if this span surrounds other span.
-
-        This is different from containment. A span can surround another span
-        region and have no positions in common with the surrounded.
+        This is different from containment. A span can surround another span region
+        and have no positions in common with the surrounded.
 
         For example:
         >>> Span([4, 8]).surround(Span([4, 8]))
@@ -475,9 +472,9 @@ class Span(Set):
 
     def gaps(self):
         """
-        Return a list of Spans representing gaps for this span. A gap starts at
-        the first missing item in the integer items sequence and ends before the
-        next contiguous items range starts.
+        Return a list of Spans representing gaps for this span. A gap starts at the
+        first missing item in the integer items sequence and ends before the next
+        contiguous items range starts.
 
         For example:
         >>> Span([4, 8]).gaps()
@@ -509,76 +506,3 @@ class Span(Set):
         domain = Span(self.start, self.end)
         complement = domain.difference(self)
         return Span.from_ints(complement)
-
-    @staticmethod
-    def merge(spans, bridge=0):
-        """
-        Return a sequence of merged spans from a sequence of spans merging
-        overlapping and touching spans. Spans that cannot be merged are returned
-        as-is.
-
-        The maximal merge is always returned, eventually resulting in a single
-        span if all spans can merge.
-
-        `bridge` is a integer to merge two non-touching non-overlapping spans
-        that are separated by up to `bridge` distance.
-
-        For example:
-        >>> spans = [Span([1, 2]), Span([3, 4, 5]), Span([3, 4, 5, 6]), Span([8, 10])]
-        >>> Span.merge(spans)
-        [Span(1, 6), Span(8)|Span(10)]
- 
-        >>> spans = [Span([1, 2]), Span([4, 5]), Span([7,8]), Span([11, 12])]
-        >>> Span.merge(spans, bridge=1)
-        [Span(1, 2)|Span(4, 5)|Span(7, 8), Span(11, 12)]
- 
-        >>> spans = [Span([1, 2]), Span([5, 6]), Span([7, 8]), Span([12, 13])]
-        >>> Span.merge(spans, bridge=2)
-        [Span(1, 2)|Span(5, 8), Span(12, 13)]
-
-        >>> spans = [Span([5, 6, 7, 8, 9, 10]), Span([1, 2]), Span([3, 4, 5]), Span([3, 4, 5, 6]), Span([8, 9, 10])]
-        >>> Span.merge(spans)
-        [Span(1, 10)]
-
-        >>> spans = [Span([1, 2]), Span([3, 4, 5]), Span([3, 4, 5, 6]), Span([8, 9, 10])]
-        >>> Span.merge(spans)
-        [Span(1, 6), Span(8, 10)]
-
-        >>> spans = [Span([1, 2]), Span([4, 5]), Span([7, 8]), Span([11, 12])]
-        >>> Span.merge(spans)
-        [Span(1, 2), Span(4, 5), Span(7, 8), Span(11, 12)]
-
-        >>> spans = [Span([1, 2]), Span([5, 6]), Span([7, 8]), Span([12, 13])]
-        >>> Span.merge(spans)
-        [Span(1, 2), Span(5, 8), Span(12, 13)]
-
-        When spans are not touching they do not merge:
-        >>> Span.merge([Span([63, 64]), Span([58, 58])])
-        [Span(58), Span(63, 64)]
-
-        ... unless there is a bridge big enough to close the gaps:
-        >>> Span.merge([Span([63, 64]), Span([58, 58])], bridge=4)
-        [Span(58)|Span(63, 64)]
-
-        Overlapping spans are merged:
-        >>> spans = [Span([12, 17, 24]), Span([15, 16, 17, 35]), Span([58, 58]), Span([63, 64])]
-        >>> Span.merge(spans)
-        [Span(12)|Span(15, 17)|Span(24)|Span(35), Span(58), Span(63, 64)]
-        """
-        spans = Span.sort(spans)
-        i = 0
-        while i < len(spans) - 1:
-            here = spans[i]
-            j = i + 1
-            while j < len(spans):
-                there = spans[j]
-                if there.start > here.end + 1 + bridge:
-                    break
-                if here.touch(there) or here.overlap(there) or here.distance_to(there) <= bridge + 1:
-                    here = here.union(there)
-                    spans[i] = here
-                    del spans[j]
-                else:
-                    j += 1
-            i += 1
-        return spans
