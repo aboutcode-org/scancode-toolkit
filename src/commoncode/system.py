@@ -47,7 +47,7 @@ def os_arch():
     elif 'darwin' in sys_platform:
         os = 'mac'
     else:
-        raise Exception('Unsupported OS/platform')
+        raise Exception('Unsupported OS/platform "%s"' % sys_platform)
     return os, arch
 
 
