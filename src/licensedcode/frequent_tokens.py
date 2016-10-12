@@ -53,6 +53,7 @@ you
 not
 or
 be
+license
 are
 from
 at
@@ -304,6 +305,11 @@ times
 sites
 level
 profile
+copyright
+c
+year
+holder
+holders
 love
 old
 john
@@ -994,6 +1000,19 @@ thus
 wall
 ie
 el
+lt
+href
+target
+blank
+gt
+br
+a
+center
+h1
+h2
+n
+\\n
+\\r
 extra
 especially
 rated
@@ -1199,6 +1218,7 @@ teachers
 manual
 block
 agents
+inc
 increased
 repair
 fair
@@ -1606,6 +1626,7 @@ mo
 seem
 affairs
 touch
+sencha
 towards
 sa
 goals
@@ -1836,6 +1857,8 @@ forgot
 knew
 gaming
 feeds
+Kalle
+Kaukonen
 billion
 destination
 faster
@@ -2123,6 +2146,7 @@ recipe
 zum
 seeing
 proof
+dnl
 dna
 diff
 tennis
@@ -9465,10 +9489,6 @@ login
 created
 extension
 javassist
-Copyright
-c
-year
-COPYRIGHT
 Tim Hudson tjh
 dtd
 font
