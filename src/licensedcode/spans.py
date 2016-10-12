@@ -25,6 +25,7 @@
 
 from __future__ import print_function, absolute_import
 
+# this import is exposing which spans implementation is used
 from licensedcode.spanssets import Span
 
 """
