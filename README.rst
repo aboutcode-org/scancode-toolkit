@@ -50,7 +50,8 @@ Make sure you have Python 2.7 installed:
  * Download and install Python 2.7 for Mac https://www.python.org/ftp/python/2.7.12/python-2.7.12-macosx10.6.pkg
 
 On Linux install Python 2.7 "devel" and a few extra packages:
- * ``sudo apt-get install python-dev libbz2 xzutils zlib1g libxml2-dev libxslt1-dev`` for Debian/Ubuntu
+ * ``sudo apt-get install python-dev libbz2 xzutils zlib1g libxml2-dev libxslt1-dev`` for most Debian/Ubuntu
+ * ``sudo apt-get install python-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-dev`` for Debian Jessie/8
  * ``sudo yum install python-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel`` for RPM distros
  * See the Comprehensive Installation bwlow for additional details and other Linux installation
 
@@ -168,7 +169,8 @@ ScanCode needs a Python 2.7 interpreter.
   For instance, visit https://github.com/dejacode/about-code-tool/wiki/BuildingPython27OnCentos6
   for instructions to compile Python from sources on Centos.
 
-  * On Debian/Ubuntu distros, you will need to install these packages first: ``python-dev libbz2 xzutils zlib1g libxml2-dev libxslt1-dev``
+  * On most Debian/Ubuntu distros, you will need to install these packages first: ``python-dev libbz2 xzutils zlib1g libxml2-dev libxslt1-dev``
+  * On Debian 8 (Jessie), you will need to install these packages first: ``python-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-dev``
   * On RPM-based distros, you will need to install these packages first: ``python-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel``
 
 - **On Windows**:
