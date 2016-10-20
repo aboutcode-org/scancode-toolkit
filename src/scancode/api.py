@@ -118,6 +118,7 @@ def get_licenses(location, min_score=0):
     idx = get_index()
     licenses = licenses_getter()
 
+    # note: we do USE the cache here
     for match in idx.match(location=location, min_score=min_score, use_cache=True):
         for license_key in match.rule.licenses:
             lic = licenses.get(license_key)
