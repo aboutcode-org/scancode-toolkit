@@ -25,12 +25,10 @@
 from __future__ import absolute_import, division, print_function
 
 
-from licensedcode import MAX_DIST
 from licensedcode.match import get_texts
 from licensedcode.match import LicenseMatch
 from licensedcode.seq import match_blocks
 from licensedcode.spans import Span
-
 
 TRACE = False
 TRACE2 = False
@@ -56,7 +54,7 @@ like approaches.
 
 MATCH_SEQ = '3-seq'
 
-def match_sequence(idx, candidate, query_run, max_dist=MAX_DIST*2):
+def match_sequence(idx, candidate, query_run, start_offset=0):
     """
     Return a list of LicenseMatch by matching the `query_run` tokens sequence
     against the `idx` index for the `candidate` rule tuple (rid, rule,
@@ -71,7 +69,7 @@ def match_sequence(idx, candidate, query_run, max_dist=MAX_DIST*2):
 
     len_junk = idx.len_junk
 
-    qbegin = query_run.start
+    qbegin = query_run.start + start_offset
     qfinish = query_run.end
     qtokens = query_run.query.tokens
     line_by_pos = query_run.line_by_pos
@@ -81,11 +79,13 @@ def match_sequence(idx, candidate, query_run, max_dist=MAX_DIST*2):
     qlen = len(query_run)
 
     # match as long as long we find alignments and have high matchable tokens
-    # this allows to find repeated insteance of the same rule in the query run 
+    # this allows to find repeated instances of the same rule in the query run 
+
+    query_run_matchables = query_run.matchables
     while qstart <= qfinish:
-        if not query_run.is_matchable():
+        if not query_run_matchables:
             break
-        block_matches = match_blocks(qtokens, itokens, qstart, qlen, high_postings, len_junk, query_run.matchables)
+        block_matches = match_blocks(qtokens, itokens, qstart, qlen, high_postings, len_junk, query_run_matchables)
         if not block_matches:
             break
         if TRACE2:
