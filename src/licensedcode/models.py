@@ -48,6 +48,7 @@ from licensedcode import saneyaml
 from licensedcode import rules_data_dir
 from licensedcode.tokenize import rule_tokenizer
 from licensedcode.tokenize import query_tokenizer
+from textcode.analysis import text_lines
 
 
 """
@@ -715,8 +716,9 @@ class Rule(object):
             return self._text
 
         elif self.text_file and exists(self.text_file):
-            with codecs.open(self.text_file, encoding='utf-8') as f:
-                return f.read()
+            # IMPORTANT: use the same process as query text loading for symmetry
+            lines = text_lines(self.text_file, demarkup=False)
+            return u' '.join(lines)
         else:
             raise Exception('Inconsistent rule text for:', self.identifier)
 
