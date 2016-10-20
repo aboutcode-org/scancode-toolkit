@@ -54,13 +54,13 @@ def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
     # during an iteration of the loop, j2len[j] = length of longest
     # junk-free match ending with a[i-1] and b[j]
     j2len = {}
+    j2lenget = j2len.get
     nothing = []
     for i in range(alo, ahi):
         if not i in matchables:
             continue
         # look at all instances of a[i] in b; note that because
         # b2j has no junk token, the loop is skipped if a[i] is junk
-        j2lenget = j2len.get
         newj2len = {}
         for j in b2j_get(a[i], nothing):
             # a[i] matches b[j]
@@ -72,30 +72,35 @@ def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
             if k > bestsize:
                 besti, bestj, bestsize = i - k + 1, j - k + 1, k
         j2len = newj2len
+        j2lenget = j2len.get
 
     # Extend the best by non-junk tokens on each end.
     while (besti > alo and bestj > blo
-           and b[bestj - 1] >= len_junk
-           and (besti - 1) in matchables
-           and a[besti - 1] == b[bestj - 1]):
+        and b[bestj - 1] >= len_junk
+        and a[besti - 1] == b[bestj - 1]
+        and (besti - 1) in matchables
+        ):
         besti, bestj, bestsize = besti - 1, bestj - 1, bestsize + 1
 
     while (besti + bestsize < ahi and bestj + bestsize < bhi
         and b[bestj + bestsize] >= len_junk
+        and a[besti + bestsize] == b[bestj + bestsize]
         and (besti + bestsize) in matchables
-        and a[besti + bestsize] == b[bestj + bestsize]):
+        ):
         bestsize += 1
 
     if bestsize:
         # if have a non-empty match, append any matching tokens on each end.
         while (besti > alo and bestj > blo
+            and a[besti - 1] == b[bestj - 1]
             and (besti - 1) in matchables
-            and a[besti - 1] == b[bestj - 1]):
+            ):
             besti, bestj, bestsize = besti - 1, bestj - 1, bestsize + 1
 
         while (besti + bestsize < ahi and bestj + bestsize < bhi
+            and a[besti + bestsize] == b[bestj + bestsize]
             and (besti + bestsize) in matchables
-            and a[besti + bestsize] == b[bestj + bestsize]):
+            ):
             bestsize = bestsize + 1
 
     return Match(besti, bestj, bestsize)
