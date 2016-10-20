@@ -49,7 +49,7 @@ actual command outputs as if using a real command line call.
 """
 
 
-def check_scan(expected_file, result_file, test_dir, regen=True):
+def check_scan(expected_file, result_file, test_dir, regen=False):
     """
     Check the scan result_file JSON results against the expected_file expected JSON
     results. Removes references to test_dir for the comparison. If regen is True the
