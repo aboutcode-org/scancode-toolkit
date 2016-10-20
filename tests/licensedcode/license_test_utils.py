@@ -57,7 +57,7 @@ def make_license_test_function(expected_licenses, test_file, test_data_file, tes
         matches = idx.match(location=test_file, min_score=min_score,
                             # if negative, do not detect negative rules when testing negative rules
                             detect_negative=detect_negative,
-                            # do not use cache when testing unless testing cache elsewhere
+                            # DO NOT USE CACHE when testing unless testing cache elsewhere
                             use_cache=False)
 
         if not matches:
@@ -113,3 +113,16 @@ def make_license_test_function(expected_licenses, test_file, test_data_file, tes
         closure_test_function = expectedFailure(closure_test_function)
 
     return closure_test_function
+
+
+def print_matched_texts(match, location=None, query_string=None, idx=None):
+    """
+    Convenience function to print matched texts for tracing and debugging tests.
+    """
+    qtext, itext = get_texts(match, location=location, query_string=query_string, idx=idx)
+    print()
+    print('Matched qtext:')
+    print(qtext)
+    print()
+    print('Matched itext:')
+    print(itext)
