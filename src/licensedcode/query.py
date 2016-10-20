@@ -93,10 +93,9 @@ def build_query(location=None, query_string=None, idx=None):
     if location:
         qtype = typecode.get_type(location)
         if qtype.is_binary:
-            # use a high number of lines per run for binaries, avoiding too many runs
-            qry = Query(location=location, idx=idx, line_threshold=40)
+            qry = Query(location=location, idx=idx, line_threshold=20)
         else:
-            qry = Query(location=location, idx=idx, line_threshold=40)
+            qry = Query(location=location, idx=idx, line_threshold=80)
     else:
         qry = Query(query_string=query_string, idx=idx)
 
@@ -313,6 +312,21 @@ class QueryRun(object):
         # positions with unknown tokens, used for final reporting
         self.unknowns_by_pos = query.unknowns_by_pos
 
+        self._low_matchables = None
+        self._high_matchables = None
+
+    @property
+    def low_matchables(self):
+        if not self._low_matchables:
+            self._low_matchables = intbitset([pos for pos in self.query.low_matchables if self.start <= pos <= self.end])
+        return self._low_matchables
+
+    @property
+    def high_matchables(self):
+        if not self._high_matchables:
+            self._high_matchables = intbitset([pos for pos in self.query.high_matchables if self.start <= pos <= self.end])
+        return self._high_matchables
+
     def __len__(self):
         if self.end is None:
             return 0
@@ -352,19 +366,25 @@ class QueryRun(object):
     def tokens_with_pos(self):
         return enumerate(self.tokens, self.start)
 
-    @property
-    def low_matchables(self):
-        return intbitset([pos for pos in self.query.low_matchables if self.start <= pos <= self.end])
-
-    @property
-    def high_matchables(self):
-        return intbitset([pos for pos in self.query.high_matchables if self.start <= pos <= self.end])
-
-    def is_matchable(self):
+    def is_matchable(self, include_low=False, qspans=None):
         """
         Return True if this query run has some matchable high tokens.
+        If a list of qspans is provided, their positions are first subtracted.
         """
-        return self.high_matchables
+        qs = qspans and [q._set for q in qspans] or []
+
+        if include_low:
+            matchables = self.matchables
+        else:
+            matchables = self.high_matchables
+
+        if not qs:
+            return matchables
+
+        matched = intbitset.union(*qs)
+        high = intbitset(matchables)
+        high.difference_update(matched)
+        return high
 
     @property
     def matchables(self):
@@ -373,24 +393,31 @@ class QueryRun(object):
         """
         return self.low_matchables | self.high_matchables
 
-    def matchable_tokens(self, only_high=False):
+    def matchable_tokens(self):
         """
-        Return an iterable of matchable tokens tids for this query run either
-        only high or every tokens ids.
+        Return an iterable of matchable tokens tids for this query run.
+        Return an empty list if there are no high matchable tokens.
+        Return -1 for positions with non-matchable tokens.
         """
-        if not self.high_matchables:
+        high_matchables = self.high_matchables
+        if not high_matchables:
             return []
-        matchables = self.matchables
-        if only_high:
-            matchables = self.high_matchables
-        return (tid if pos in matchables else -1 for pos, tid in self.tokens_with_pos())
+        return (tid if pos in (high_matchables | self.low_matchables) else -1 for pos, tid in self.tokens_with_pos())
 
     def subtract(self, qspan):
         """
         Subtract the qspan matched positions from the parent query matchable
         positions.
         """
-        self.query.subtract(qspan)
+        if qspan:
+            self.query.subtract(qspan)
+            # also update locally: this is a property hence the side effect
+            self.high_matchables
+            self._high_matchables.difference_update(qspan)
+
+            # also update locally: this is a property hence the side effect
+            self.low_matchables
+            self._low_matchables.difference_update(qspan)
 
     def _as_dict(self, brief=False):
         """
