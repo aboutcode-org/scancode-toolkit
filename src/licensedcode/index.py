@@ -46,6 +46,7 @@ from licensedcode.cache import license_matches_cache
 from licensedcode.cache import LicenseMatchCache
 
 from licensedcode.match import get_texts
+from licensedcode.match import merge_matches
 from licensedcode.match import refine_matches
 
 from licensedcode.match_aho import exact_match
@@ -76,13 +77,17 @@ TRACE_QUERY_RUN = False
 TRACE_MATCHES = False
 TRACE_MATCHES_TEXT = False
 
-TRACE_MATCHES_DISCARD = False
 TRACE_NEGATIVE = False
+TRACE_EXACT = False
+
+TRACE_MATCHES_DISCARD = False
 
 TRACE_INDEXING_PERF = False
 TRACE_INDEXING_CHECK = False
 
 TRACE_CACHE = False
+
+
 USE_CACHE = False
 
 
@@ -443,10 +448,10 @@ class LicenseIndex(object):
         qry = query.build_query(location, query_string, self)
 
         #######################################################################
-        # Whole query hash and cache matching
+        # Whole file matching: hash, cache  and exact matching
         #######################################################################
         whole_query_run = qry.whole_query_run()
-        if (not whole_query_run):  # or (not whole_query_run.high_matchables):
+        if not whole_query_run or not whole_query_run.matchables:
             logger_debug('#match: whole query not matchable')
             return []
 
@@ -472,80 +477,115 @@ class LicenseIndex(object):
                     if TRACE_CACHE: self.debug_matches([], '#match FINAL cache matched to NOTHING', location, query_string)
                     return []
 
+        # hash
         hash_matches = match_hash(self, whole_query_run)
         if hash_matches:
             self.debug_matches(hash_matches, '#match FINAL Hash matched', location, query_string)
             return hash_matches
 
-        #######################################################################
-        # Per query run matching.
-        # Note that the query and query_run.matchables are updated as matching
-        # progresses by tracking matched positions. They are not designed to be
-        # pickled
-        #######################################################################
-        logger_debug('#match: #QUERY RUNS:', len(qry.query_runs))
-
-        # note: detect_negative is false only to test negative rules detection proper
+        # negative rules exact matching
         negative = []
+        # note: detect_negative is false only to test negative rules detection proper
         if detect_negative and self.negative_rids:
             logger_debug('#match: NEGATIVE')
             negative = self.negative_match(whole_query_run)
             for neg in negative:
                 if TRACE_NEGATIVE: self.debug_matches(negative, '   ##match: NEGATIVE subtracting #:', location, query_string)
-                qry.subtract(neg.qspan)
+                whole_query_run.subtract(neg.qspan)
             logger_debug('     #match: NEGATIVE found', negative)
 
-        matches = []
-        discarded = []
+        # exact matches
+        if TRACE_EXACT: logger_debug('#match: EXACT')
+        exact_matches = exact_match(self, whole_query_run, self.rules_automaton)
+        if TRACE_EXACT: self.debug_matches(exact_matches, '  #match: EXACT matches#:', location, query_string)
 
-        for qrnum, query_run in enumerate(qry.query_runs, 1):
-            logger_debug('#match: ===> processing query run #:', qrnum)
+        exact_matches, exact_discarded = refine_matches(exact_matches, self)
 
-            if not query_run.is_matchable():
-                # logger_debug('#match: query_run NOT MATCHABLE')
-                continue
+        if TRACE_EXACT: self.debug_matches(exact_matches, '   #match: ===> exact matches refined')
+        if TRACE_EXACT: self.debug_matches(exact_discarded, '   #match: ===> exact matches discarded')
 
-            # hash match
-            #########################
-            hash_matches = match_hash(self, query_run)
-            if hash_matches:
-                self.debug_matches(hash_matches, '  #match Query run matches (hash)', location, query_string)
-                matches.extend(hash_matches)
-                # note that we do not cache hash matches
-                continue
+        matches = exact_matches
+        discarded = exact_discarded
 
-            # cache short circuit
-            #########################
-            if use_cache:
-                cached_matches = matches_cache.get(query_run)
-                if cached_matches is not None:
-                    if TRACE_CACHE: self.debug_matches(cached_matches, '  #match Query run matches (cached)', location, query_string)
-                    if cached_matches:
-                        matches.extend(cached_matches)
+        #######################################################################
+        # Per query run matching.
+        #######################################################################
+        logger_debug('#match: #QUERY RUNS:', len(qry.query_runs))
+
+        # check if we have some matchable left
+        # collect qspans matched exactly
+        matched_qspans = [m.qspan for m in exact_matches]
+        # do not match futher if we do not need to
+        if whole_query_run.is_matchable(include_low=True, qspans=matched_qspans):
+
+            rules_subset = (self.regular_rids | self.small_rids)
+
+            for qrnum, query_run in enumerate(qry.query_runs, 1):
+                logger_debug('#match: ===> processing query run #:', qrnum)
+
+                if not query_run.is_matchable(include_low=True):
+                    logger_debug('#match: query_run NOT MATCHABLE')
                     continue
 
-            # query run match proper
-            #########################
-            if TRACE: logger_debug('  #match: MATCHING proper....')
+                # hash match
+                #########################
+                hash_matches = match_hash(self, query_run)
+                if hash_matches:
+                    self.debug_matches(hash_matches, '  #match Query run matches (hash)', location, query_string)
+                    matches.extend(hash_matches)
+                    # note that we do not cache hash matches
+                    continue
 
-            run_matches = self.match_query_run(query_run)
+                # cache short circuit
+                #########################
+                if use_cache:
+                    cached_matches = matches_cache.get(query_run)
+                    if cached_matches is not None:
+                        if TRACE_CACHE: self.debug_matches(cached_matches, '  #match Query run matches (cached)', location, query_string)
+                        if cached_matches:
+                            matches.extend(cached_matches)
+                        continue
 
-            if TRACE_QUERY_RUN: self.debug_matches(run_matches, '    #match: ===> Query run matches', location, query_string, with_text=True)
-#
-#             if TRACE: self.debug_matches(run_matches, '    #match: ===> Query run matches', location, query_string)
+                # query run match proper using sequence matching
+                #########################################
+                if TRACE: logger_debug('  #match: Query run MATCHING proper....')
 
-            run_matches, run_discarded = refine_matches(run_matches, self, min_score, max_dist=MAX_DIST * 10)
+                run_matches = []
+                candidates = compute_candidates(query_run, self, rules_subset=rules_subset, top=40)
 
-            if TRACE: self.debug_matches(run_matches, '     #match: Query run matches filtered', location, query_string)
-            if TRACE: self.debug_matches(run_discarded, '     #match: Query run matches discarded', location, query_string)
+                if TRACE_QUERY_RUN: logger_debug('      #match: query_run: number of candidates for seq match #', len(candidates))
 
-            discarded.extend(run_discarded)
-            matches.extend(run_matches)
+                for candidate in candidates:
+                    if TRACE_QUERY_RUN: logger_debug('         #match: query_run: seq matching candidate:', candidate[1])
+                    start_offset = 0
+                    while True:
+                        rule_matches = match_sequence(self, candidate, query_run, start_offset=start_offset)
+                        if TRACE_QUERY_RUN and rule_matches: self.debug_matches(rule_matches, '           #match: query_run: seq matches for candidate')
+                        if not rule_matches:
+                            break
+                        else:
+                            if TRACE_QUERY_RUN: self.debug_matches(rule_matches, '           #match: query_run: merged seq matches for candidate')
+                            run_matches.extend(rule_matches)
 
-            if use_cache:
-                # always CACHE even and especially if no matches were found
-                if TRACE_CACHE: self.debug_matches(run_matches, ' #match: Query run matches caching', location, query_string)
-                matches_cache.put(query_run, run_matches)
+                            matches_end = max(m.qend for m in rule_matches)
+                            if matches_end + 1 < query_run.end:
+                                start_offset = matches_end + 1
+                                continue
+                            else:
+                                break
+
+                ############################################################################
+                if TRACE_QUERY_RUN: self.debug_matches(run_matches, '    #match: ===> Query run matches', location, query_string, with_text=True)
+
+                run_matches = merge_matches(run_matches, max_dist=MAX_DIST)
+                matches.extend(run_matches)
+
+                if TRACE: self.debug_matches(run_matches, '     #match: Query run matches merged', location, query_string)
+
+                if use_cache:
+                    # always CACHE even and especially if no matches were found
+                    if TRACE_CACHE: self.debug_matches(run_matches, ' #match: Query run matches caching', location, query_string)
+                    matches_cache.put(query_run, run_matches)
 
         # final matching merge, refinement and filtering
         ################################################
@@ -554,74 +594,20 @@ class LicenseIndex(object):
             logger_debug('!!!!!!!!!!!!!!!!!!!!REFINING!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
             self.debug_matches(matches, '#match: ALL matches from all query runs', location, query_string)
 
-            matches, whole_discarded = refine_matches(matches, idx=self, min_score=min_score, max_dist=MAX_DIST)
+            matches, whole_discarded = refine_matches(matches, idx=self, min_score=min_score, max_dist=MAX_DIST // 2)
+            discarded.extend(whole_discarded)
+            matches.sort()
 
             self.debug_matches(matches, '#match: FINAL MERGED', location, query_string)
-
-            # final merge
-
-            discarded.extend(whole_discarded)
             if TRACE_MATCHES_DISCARD: self.debug_matches(discarded, '#match: FINAL DISCARDED', location, query_string)
-            matches.sort()
 
         self.debug_matches(matches, '#match: FINAL MATCHES', location, query_string, with_text=True)
 
         if use_cache:
-            # always CACHE even and especially if no matches were found: here whole query
+            # always CACHE at the whole query ruk level even and especially if no matches were found: here whole query
             self.debug_matches(matches, '#match: Caching Final matches', location, query_string)
             matches_cache.put(whole_query_run, matches)
 
-        return matches
-
-    def match_query_run(self, query_run):
-        """
-        Return a list of LicenseMatch for a query run.
-        """
-        matches = []
-        discarded = []
-        exact_matches = exact_match(self, query_run, self.rules_automaton)
-
-        if TRACE_QUERY_RUN: self.debug_matches(exact_matches, '      #match_query_run: ===> exact matches')
-
-        if TRACE_QUERY_RUN: logger_debug('      #match_query_run: refining following exact match')
-        exact_matches, exact_discarded = refine_matches(exact_matches, self)  # , min_score=100, max_dist=MAX_DIST)
-
-        if TRACE_QUERY_RUN: self.debug_matches(exact_matches, '      #match_query_run: ===> exact matches refined')
-        if TRACE_QUERY_RUN: self.debug_matches(discarded, '      #match_query_run: ===> exact matches discarded')
-
-        discarded.extend(exact_discarded)
-        matches.extend(exact_matches)
-
-        # do not carry over matching if there is nothing left to match
-        if not query_run.is_matchable():
-            return matches
-
-        rules_subset_for_seq_match = self.regular_rids | self.small_rids
-        candidates = compute_candidates(query_run, self, rules_subset=rules_subset_for_seq_match, exact=False, top=30)
-        if TRACE_QUERY_RUN: logger_debug('      #match_query_run: number of candidates for seq match #', len(candidates))
-
-        # computing the candidates has been done before the subtract of exact matches 
-        for match in exact_matches:
-            query_run.subtract(match.qspan)
-
-        for candidate in candidates:
-            if TRACE_QUERY_RUN: logger_debug('         #match_query_run: seq matching candidate:', candidate[1])
-            # track the last matches to avoid double matching on small matches
-            last_matches = None
-            while True:
-                rule_matches = match_sequence(self, candidate, query_run)
-                if TRACE_QUERY_RUN and rule_matches: self.debug_matches(rule_matches, '           #match_query_run: seq matches for candidate')
-                if not rule_matches:
-                    break
-                if last_matches == rule_matches:
-                    # as an artifact of sequence matching, we do not subtract small matches
-                    # but we can therefore can twice the exact same match in a row.
-                    break
-                matches.extend(rule_matches)
-                last_matches = rule_matches[:]
-
-            if not query_run.is_matchable():
-                break
         return matches
 
     def negative_match(self, query_run):
