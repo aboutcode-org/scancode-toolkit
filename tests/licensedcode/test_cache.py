@@ -28,10 +28,11 @@ import os
 
 from commoncode.testcase import FileBasedTesting
 
-from licensedcode import index
-from licensedcode import models
-from licensedcode.match import get_texts
 from licensedcode import cache
+from licensedcode import index
+from licensedcode.match import get_texts
+from licensedcode import match_aho
+from licensedcode import models
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -145,6 +146,12 @@ class LicenseMatchCacheTest(FileBasedTesting):
                 + '\n' * 10
                 + 'are Redistribution and explicit use in source and binary forms are permitted are'
         )
+
+        # populate cache with aho exact matches
+        matches = idx.match(query_string=querys, use_cache=cache_dir)
+        assert all(match_aho.MATCH_AHO in match.matcher for match in matches)
+
+        # rematch to hit cache
         matches = idx.match(query_string=querys, use_cache=cache_dir)
         assert all(cache.MATCH_CACHE in match.matcher for match in matches)
 
@@ -158,7 +165,7 @@ class LicenseMatchCacheTest(FileBasedTesting):
         qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
         assert expected == qtext
 
-        # does hit cache, with unknown, again
+        # hit cache again, with unknown
         querys = ('are Redistribution that and explicit use in source and binary forms are permitted are'
                 + '\n' * 10
                 + 'are Redistribution and explicit use in source and binary forms are permitted are'
@@ -172,6 +179,6 @@ class LicenseMatchCacheTest(FileBasedTesting):
         assert expected == qtext
 
         match = matches[1]
-        expected = 'Redistribution [that] and [explicit] use in source and binary forms are permitted'
+        expected = 'Redistribution and [explicit] use in source and binary forms are permitted'
         qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
         assert expected == qtext

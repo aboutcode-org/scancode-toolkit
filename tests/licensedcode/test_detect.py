@@ -46,19 +46,6 @@ TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 Test the core license detection mechanics.
 """
 
-def print_matched_texts(match, location=None, query_string=None, idx=None):
-    """
-    Convenience function to print matched texts for tracing and debugging tests.
-    """
-    qtext, itext = get_texts(match, location=location, query_string=query_string, idx=idx)
-    print()
-    print('Matched qtext:')
-    print(qtext)
-    print()
-    print('Matched itext:')
-    print(itext)
-
-
 class TestIndexMatch(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
@@ -876,10 +863,6 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         # FULL INDEX!!
         idx = index.get_index()
         matches = idx.match(test_location)
-        ########################
-        print('MATCHES')
-        map(print, matches)
-        ########################
         for match in matches:
             for detected in match.rule.licenses:
                 results.append((detected, match.lines(), match.qspan,))
@@ -971,6 +954,28 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         '''
         matches = idx.match(query_string=querys)
         assert [] == matches
+
+    def test_match_handles_negative_rules_and_does_not_match_negative_regions_properly(self):
+        # note: this test relies on the negative rule: not-a-license_busybox_2.RULE
+        # with this text:
+        # "libbusybox is GPL, not LGPL, and exports no stable API that might act as a copyright barrier."
+        # and relies on the short rules that detect GPL and LGPL
+        idx = index.get_index()
+        # lines 3 and 4 should NOT be part of any matches
+        # they should match the negative "not-a-license_busybox_2.RULE"
+        negative_lines_not_to_match = 3, 4
+        querys = u'''
+            licensed under the LGPL license
+            libbusybox is GPL, not LGPL, and exports no stable API
+            that might act as a copyright barrier.
+            for the license
+            license: dual BSD/GPL
+            '''
+        matches = idx.match(query_string=querys)
+
+        for match in matches:
+            for line in negative_lines_not_to_match:
+                assert line not in match.lines()
 
 
 class TestMatchBinariesWithFullIndex(FileBasedTesting):

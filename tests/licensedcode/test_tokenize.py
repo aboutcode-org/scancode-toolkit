@@ -166,6 +166,12 @@ class TestTokenizers(FileBasedTesting):
         for text , expected in texts:
             assert expected == list(rule_tokenizer(text)) == list(query_tokenizer(text))
 
+    def test_rule_and_query_tokenizer_have_the_same_behavior2(self):
+        test_file = self.get_test_loc('tokenize/freertos/gpl-2.0-freertos.RULE')
+        with codecs.open(test_file, encoding='utf-8') as test:
+            text = test.read()
+            assert list(rule_tokenizer(text)) == list(query_tokenizer(text))
+
 
 class TestRuleTokenizer(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR

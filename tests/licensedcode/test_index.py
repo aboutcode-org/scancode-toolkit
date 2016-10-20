@@ -41,16 +41,6 @@ from licensedcode import match_seq
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
-def print_matched_texts(match, location=None, query_string=None, idx=None):
-    qtext, itext = get_texts(match, location=location, query_string=query_string, idx=idx)
-    print()
-    print('Matched qtext')
-    print(qtext)
-    print()
-    print('Matched itext')
-    print(itext)
-
-
 class IndexTesting(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
