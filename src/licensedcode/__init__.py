@@ -56,7 +56,7 @@ MIN_MATCH_HIGH_LENGTH = 3
 MAX_GAP_SKIP = 15
 
 # maximum distance between two matches to merge
-MAX_DIST = 10
+MAX_DIST = 120
 
 # length below which a match is considered as "small"
 SMALL_MATCH = 50
