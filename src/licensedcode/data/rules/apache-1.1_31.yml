@@ -1,5 +1,6 @@
 licenses:
     - apache-1.1
+solid: yes
 notes: >
     Notice found in http://apache.org/licenses/LICENSE-1.1 
-    but it is really specific to an Apache Software Foundation component. "
+    but it is really specific to an Apache Software Foundation component.

@@ -1,4 +1,3 @@
 licenses:
-    - boost-1.0
-expected_contains: yes
-notes: the detection is overall correct, but slightly different rules are selected across query runs
+    - boost-original
+

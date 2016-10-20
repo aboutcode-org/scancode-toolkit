@@ -1,7 +1,9 @@
 licenses:
+    - gpl-2.0
+    - gpl-2.0-plus
     - gpl-2.0-plus
     - mpl-1.1
-    - gpl-2.0-plus
-    - lgpl-2.1-plus
-license: gpl-2.0-plus and (mpl-1.1 or gpl-2.0-plus or lgpl-2.1-plus)
+    - gpl-2.0
+    - lgpl-2.1
+license: gpl-2.0 and gpl-2.0-plus and gpl-2.0-plus and (mpl-1.1 or gpl-2.0 or lgpl-2.1)
 

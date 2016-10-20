@@ -11,25 +11,25 @@ documentation and/or other materials provided with the distribution.
 
 3. The end-user documentation included with the redistribution, if 
 any, must include the following acknowledgment:
-	{{"This product includes software developed by Viola 
-	Systems (http://www.violasystems.com/)."}}
+	 "This product includes software developed by Viola 
+	Systems (http://www.violasystems.com/)." 
 
 Alternately, this acknowledgment may appear in the software itself, 
 if and wherever such third-party acknowledgments normally appear.
 
-4. The names {{"OpenTCP" and "Viola Systems" }}must not be used to 
+4. The names  "OpenTCP" and "Viola Systems"  must not be used to 
 endorse or promote products derived from this software without prior 
 written permission. For written permission, please contact 
-{{opentcp@opentcp.org.}}
+ opentcp@opentcp.org. 
 
-5. Products derived from this software may not be called {{"OpenTCP", }}
-nor may {{"OpenTCP"}} appear in their name, without prior written 
-permission of {{ the Viola Systems Ltd.}}
+5. Products derived from this software may not be called  "OpenTCP",  
+nor may  "OpenTCP"  appear in their name, without prior written 
+permission of   the Viola Systems Ltd. 
 
 THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED 
 WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
 MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
-IN NO EVENT SHALL {{VIOLA SYSTEMS LTD.}} OR ITS CONTRIBUTORS BE LIABLE 
+IN NO EVENT SHALL  VIOLA SYSTEMS LTD.  OR ITS CONTRIBUTORS BE LIABLE 
 FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
 CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
 SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR 

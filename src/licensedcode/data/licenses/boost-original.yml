@@ -1,8 +1,13 @@
-key: agg-2.4
-short_name: AGG Public License 2.4
-name: Anti-Grain Geometry Public License v2.4
+key: boost-original
+short_name: Boost License (original notice)
+name: Boost License (original notice)
 category: Attribution
-owner: AGG Project
-homepage_url: http://www.antigrain.com/license/index.html#toc0002
-text_urls:
-    - http://www.antigrain.com/license/index.html
+owner: Boost
+homepage_url: http://boost.org
+notes: | 
+    This is the original notice for Boost prior to the publication of the boost-1.0 license in 2003.
+    Several boost files still carry this license adn could not be updated to the boost-1.0 license. This
+    license is aslo found in the AntiGrain Geometry component version 2.4.
+    For an example of use in historical Boost, see  https://github.com/boostorg/rational/blob/0fe0beca5397c812c4f85a7de0d0769de59e12e0/include/boost/rational.hpp
+    For an example of use in the current Boost, see  https://github.com/boostorg/rational/blob/develop/include/boost/rational.hpp
+

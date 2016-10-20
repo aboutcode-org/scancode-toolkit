@@ -1,6 +1,6 @@
-{{OpenSBC}} is published under the MPL, GPL, LGPL tripple license.  The default active license is MPL.  However, because of the inherent incompatibility between MPL and GNU licenses, we decided to explicitly publish {{OpenSBC}} using GPL and LGP as alternative licenses.  The full text of the license is as follows
+ OpenSBC  is published under the MPL, GPL, LGPL tripple license.  The default active license is MPL.  However, because of the inherent incompatibility between MPL and GNU licenses, we decided to explicitly publish  OpenSBC  using GPL and LGP as alternative licenses.  The full text of the license is as follows
 
- * {{Copyright (c) opensipstack.org.}}
+ *  Copyright (c) opensipstack.org. 
  *
  * The contents of this file are subject to the Mozilla Public License
  * Version 1.0 (the "License"); you may not use this file except in
@@ -12,11 +12,11 @@
  * the License for the specific language governing rights and limitations
  * under the License.
  *
- * The Original Code is {{OpenSIPStack.}}
+ * The Original Code is  OpenSIPStack. 
  *
- * The Initial Developer of the Original Code is {{opensipstack.org.}}
+ * The Initial Developer of the Original Code is  opensipstack.org. 
  *
- * The author of this code is {{Joegen E. Baclor}}
+ * The author of this code is  Joegen E. Baclor 
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -30,8 +30,8 @@
  * the provisions above, a recipient may use your version of this file under
  * the terms of any one of the MPL, the GPL or the LGPL.
  *
- * The {{OpenSIPStack Library}} includes some GPL/LGPL code libraries that MAY be
+ * The  OpenSIPStack Library  includes some GPL/LGPL code libraries that MAY be
  * enabled at compile time using the --enable-gpllibs configure switch.  If
  * enabled, the content of this file is published under the terms of GNU
  * General Public License Version 2.  For a detailed list of the available
- * GPL code, see {{$(opensipstack)}}/gnu/README file.
+ * GPL code, see  $(opensipstack) /gnu/README file.
