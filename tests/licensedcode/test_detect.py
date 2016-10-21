@@ -35,7 +35,8 @@ from licensedcode.match import get_texts
 from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.spans import Span
-from unittest.case import expectedFailure
+from licensedcode import match_aho
+from licensedcode import match_seq
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -44,19 +45,6 @@ TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 """
 Test the core license detection mechanics.
 """
-
-def print_matched_texts(match, location=None, query_string=None, idx=None):
-    """
-    Convenience function to print matched texts for tracing and debugging tests.
-    """
-    qtext, itext = get_texts(match, location=location, query_string=query_string, idx=idx)
-    print()
-    print('Matched qtext:')
-    print(qtext)
-    print()
-    print('Matched itext:')
-    print(itext)
-
 
 class TestIndexMatch(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
@@ -130,13 +118,12 @@ class TestIndexMatch(FileBasedTesting):
         expected_qtext = u'''
             Permission is hereby granted free of charge to any person obtaining a
             copy of this software and associated documentation files the Software to
-            deal in THE SOFTWARE WITHOUT RESTRICTION INCLUDING
-            WITHOUT LIMITATION THE RIGHTS TO USE COPY MODIFY MERGE PUBLISH
-            DISTRIBUTE SUBLICENSE AND OR SELL COPIES of the Software and to permit
-            persons to whom the Software is furnished to do so subject to the
-            following conditions The above copyright notice and this
-            permission notice shall be included in all copies or substantial
-            portions of the Software
+            deal in THE SOFTWARE WITHOUT RESTRICTION INCLUDING WITHOUT LIMITATION THE
+            RIGHTS TO USE COPY MODIFY MERGE PUBLISH DISTRIBUTE SUBLICENSE AND OR SELL
+            COPIES of the Software and to permit persons to whom the Software is
+            furnished to do so subject to the following conditions The above
+            copyright notice and this permission notice shall be included in all
+            copies or substantial portions of the Software
         '''.split()
         assert expected_qtext == qtext.split()
 
@@ -163,20 +150,27 @@ class TestIndexMatch(FileBasedTesting):
         match = matches[0]
         qtext, itext = get_texts(match, location=query_loc, idx=idx)
         expected_qtext = u'''
-            Permission <no-match> <no-match> is hereby granted free of charge to any person obtaining a copy of this software and
-            associated documentation files the Software to deal in the Software without restriction including without limitation the
-            rights to use copy modify merge publish distribute sublicense and or sell copies of the Software and to permit persons
-            to whom the Software is furnished to do so subject to the following conditions The above copyright <no-match> <no-match>
-            notice and this permission notice shall be included in all copies or substantial portions of the Software
+            Permission [add] [text] is hereby granted free of charge to any person
+            obtaining a copy of this software and associated documentation files the
+            Software to deal in the Software without restriction including without
+            limitation the rights to use copy modify merge publish distribute
+            sublicense and or sell copies of the Software and to permit persons to
+            whom the Software is furnished to do so subject to the following
+            conditions The above copyright [add] [text] notice and this permission
+            notice shall be included in all copies or substantial portions of the
+            Software
         '''.split()
         assert expected_qtext == qtext.split()
 
         expected_itext = u'''
-            Permission is hereby granted free of charge to any person obtaining a copy of this software and associated documentation
-            files the Software to deal in the Software without restriction including without limitation the rights to use copy
-            modify merge publish distribute sublicense and or sell copies of the Software and to permit persons to whom the Software
-            is furnished to do so subject to the following conditions The above copyright notice and this permission notice shall be
-            included in all copies or substantial portions of the Software
+            Permission is hereby granted free of charge to any person obtaining a
+            copy of this software and associated documentation files the Software to
+            deal in the Software without restriction including without limitation the
+            rights to use copy modify merge publish distribute sublicense and or sell
+            copies of the Software and to permit persons to whom the Software is
+            furnished to do so subject to the following conditions The above
+            copyright notice and this permission notice shall be included in all
+            copies or substantial portions of the Software
         '''.split()
         assert expected_itext == itext.split()
 
@@ -204,7 +198,7 @@ class TestIndexMatch(FileBasedTesting):
         matches = idx.match(query_string='MIT License')
         assert 1 == len(matches)
 
-        assert {'_tst_11_0': {'license': [1], 'mit': [0]}} == idx._as_dict()
+        assert {'_tst_11_0': {'mit': [0]}} == idx._as_dict()
 
         qtext, itext = get_texts(matches[0], query_string='MIT License', idx=idx)
         assert 'MIT License' == qtext
@@ -267,7 +261,7 @@ class TestIndexMatch(FileBasedTesting):
         match = matches[0]
         assert Span(0, 241) == match.qspan
         assert Span(0, 241) == match.ispan
-        assert (1, 27,) == match.lines
+        assert (1, 27,) == match.lines()
         assert 100 == match.score()
 
     def test_match_works_with_special_characters_1(self):
@@ -340,7 +334,7 @@ class TestIndexMatch(FileBasedTesting):
         assert Span(0, 3) == match.qspan
         assert rule1 == match.rule
         qtext, _itext = get_texts(match, query_string=querys, idx=idx)
-        assert 'Redistribution and use <no-match> permitted' == qtext
+        assert 'Redistribution and use [bla] permitted' == qtext
 
     def test_overlap_detection2(self):
         #  test this containment relationship between test and index licenses:
@@ -368,7 +362,7 @@ class TestIndexMatch(FileBasedTesting):
         match = matches[0]
         assert rule1 == match.rule
         qtext, _itext = get_texts(match, query_string=querys, idx=idx)
-        assert 'Redistribution and use <no-match> permitted' == qtext
+        assert 'Redistribution and use [bla] permitted' == qtext
 
     def test_overlap_detection2_exact(self):
         #  test this containment relationship between test and index licenses:
@@ -396,7 +390,7 @@ class TestIndexMatch(FileBasedTesting):
         match = matches[0]
         assert rule1 == match.rule
         qtext, _itext = get_texts(match, query_string=querys, idx=idx)
-        assert 'Redistribution and use <no-match> permitted' == qtext
+        assert 'Redistribution and use [bla] permitted' == qtext
 
     def test_overlap_detection3(self):
         #  test this containment relationship between test and index licenses:
@@ -524,8 +518,10 @@ class TestIndexMatch(FileBasedTesting):
         assert 100 == match.score()
         qtext, _itext = get_texts(match, location=query_loc, idx=idx)
         expected = '''
-            is free software you can redistribute it and or modify it under the terms of the GNU Lesser General Public License as
-            published by the Free Software Foundation either version 2 1 of the License or at your option any later version
+            is free software you can redistribute it and or modify it under the terms
+            of the GNU Lesser General Public License as published by the Free
+            Software Foundation either version 2 1 of the License or at your option
+            any later version
         '''.split()
         assert expected == qtext.split()
 
@@ -536,11 +532,24 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
     def test_match_can_match_with_plain_rule_simple(self):
         tf1_text = u'''X11 License
         Copyright (C) 1996 X Consortium
-        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-        Except as contained in this notice, the name of the X Consortium shall not be used in advertising or otherwise to promote the sale, use or other dealings in this Software without prior written authorization from the X Consortium.
-        X Window System is a trademark of X Consortium, Inc.
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions: The above copyright
+        notice and this permission notice shall be included in all copies or
+        substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS",
+        WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+        TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+        NONINFRINGEMENT. IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR ANY CLAIM,
+        DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+        OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+        OR OTHER DEALINGS IN THE SOFTWARE. Except as contained in this notice, the
+        name of the X Consortium shall not be used in advertising or otherwise to
+        promote the sale, use or other dealings in this Software without prior
+        written authorization from the X Consortium. X Window System is a trademark
+        of X Consortium, Inc.
         '''
         rule = Rule(_text=tf1_text, licenses=['x-consortium'])
         idx = index.LicenseIndex([rule])
@@ -555,11 +564,24 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
     def test_match_can_match_with_plain_rule_simple2(self):
         rule_text = u'''X11 License
         Copyright (C) 1996 X Consortium
-        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-        Except as contained in this notice, the name of the X Consortium shall not be used in advertising or otherwise to promote the sale, use or other dealings in this Software without prior written authorization from the X Consortium.
-        X Window System is a trademark of X Consortium, Inc.
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions: The above copyright
+        notice and this permission notice shall be included in all copies or
+        substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS",
+        WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+        TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+        NONINFRINGEMENT. IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR ANY CLAIM,
+        DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+        OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+        OR OTHER DEALINGS IN THE SOFTWARE. Except as contained in this notice, the
+        name of the X Consortium shall not be used in advertising or otherwise to
+        promote the sale, use or other dealings in this Software without prior
+        written authorization from the X Consortium. X Window System is a trademark
+        of X Consortium, Inc.
         '''
         rule = Rule(_text=rule_text, licenses=['x-consortium'])
         idx = index.LicenseIndex([rule])
@@ -569,17 +591,24 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         assert 1 == len(matches)
 
         expected_qtext = u'''
-        X11 License Copyright C 1996 X Consortium Permission is hereby granted free of charge to any person obtaining a copy of
-        this software and associated documentation files the Software to deal in the Software without restriction including
-        without limitation the rights to use copy modify merge publish distribute sublicense and or sell copies of the Software
-        and to permit persons to whom the Software is furnished to do so subject to the following conditions The above copyright
-        notice and this permission notice shall be included in all copies or substantial portions of the Software THE SOFTWARE
-        IS PROVIDED AS IS WITHOUT WARRANTY OF ANY KIND EXPRESS OR IMPLIED INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-        MERCHANTABILITY FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR
-        ANY CLAIM DAMAGES OR OTHER LIABILITY WHETHER IN AN ACTION OF CONTRACT TORT OR OTHERWISE ARISING FROM OUT OF OR IN
-        CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE Except as contained in this notice the name of
-        the X Consortium shall not be used in advertising or otherwise to promote the sale use or other dealings in this
-        Software without prior written authorization from the X Consortium X Window System is a trademark of X Consortium Inc
+        X11 License Copyright C 1996 X Consortium Permission is hereby granted free
+        of charge to any person obtaining a copy of this software and associated
+        documentation files the Software to deal in the Software without restriction
+        including without limitation the rights to use copy modify merge publish
+        distribute sublicense and or sell copies of the Software and to permit
+        persons to whom the Software is furnished to do so subject to the following
+        conditions The above copyright notice and this permission notice shall be
+        included in all copies or substantial portions of the Software THE SOFTWARE
+        IS PROVIDED AS IS WITHOUT WARRANTY OF ANY KIND EXPRESS OR IMPLIED INCLUDING
+        BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY FITNESS FOR A PARTICULAR
+        PURPOSE AND NONINFRINGEMENT IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR
+        ANY CLAIM DAMAGES OR OTHER LIABILITY WHETHER IN AN ACTION OF CONTRACT TORT OR
+        OTHERWISE ARISING FROM OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+        OR OTHER DEALINGS IN THE SOFTWARE Except as contained in this notice the name
+        of the X Consortium shall not be used in advertising or otherwise to promote
+        the sale use or other dealings in this Software without prior written
+        authorization from the X Consortium X Window System is a trademark of X
+        Consortium Inc
         '''.split()
         match = matches[0]
         qtext, _itext = get_texts(match, location=query_loc, idx=idx)
@@ -608,13 +637,15 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         qtext, itext = get_texts(match, query_string=query_string, idx=idx)
 
         expected_qtokens = u'''
-        IN NO EVENT SHALL THE <no-match> <no-match> BE LIABLE FOR ANY CLAIM DAMAGES OR OTHER LIABILITY WHETHER IN AN ACTION OF
-        CONTRACT TORT OR OTHERWISE ARISING FROM OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        IN NO EVENT SHALL THE [Y] [CORP] BE LIABLE FOR ANY CLAIM DAMAGES OR OTHER
+        LIABILITY WHETHER IN AN ACTION OF CONTRACT TORT OR OTHERWISE ARISING FROM OUT
+        OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
         SOFTWARE
         '''.split()
         expected_itokens = u'''
-        IN NO EVENT SHALL THE <gap> BE LIABLE FOR ANY CLAIM DAMAGES OR OTHER LIABILITY WHETHER IN AN ACTION OF CONTRACT TORT OR
-        OTHERWISE ARISING FROM OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
+        IN NO EVENT SHALL THE BE LIABLE FOR ANY CLAIM DAMAGES OR OTHER LIABILITY
+        WHETHER IN AN ACTION OF CONTRACT TORT OR OTHERWISE ARISING FROM OUT OF OR IN
+        CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
         '''.split()
         assert expected_qtokens == qtext.split()
         assert expected_itokens == itext.split()
@@ -674,7 +705,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
     def test_match_can_match_with_rule_template_for_public_domain(self):
         test_text = '''
         I hereby abandon any property rights to {{SAX 2.0 (the Simple API for
-        XML)}}, and release all of {{the SAX 2.0 }}source code, compiled code,
+        XML)}}, and release all of {{the SAX 2.0 }} source code, compiled code,
         and documentation contained in this distribution into the Public Domain.
         '''
         rule = Rule(_text=test_text, licenses=['public-domain'])
@@ -695,23 +726,24 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
 
         qtext, itext = get_texts(match, query_string=querys, idx=idx)
         expected_qtext = u'''
-        I hereby abandon any property rights to <no-match> <no-match> <no-match>
-        <no-match> <no-match> <no-match> <no-match> <no-match> <no-match> <no-match> <no-match> 
-        <no-match>  <no-match> <no-match> <no-match> <no-match> source code compiled code
-        and documentation contained in this distribution into the Public Domain
+        I hereby abandon any property rights to [SAX] [2] [0] <the> [Simple] [API] [for] [XML]
+        <and> <release> <all> <of> <the> [SAX] [2] [0]
+        source code compiled code and documentation contained in this distribution
+        into the Public Domain
         '''.split()
         assert expected_qtext == qtext.split()
 
         expected_itext = u'''
-        I hereby abandon any property rights to <gap> <no-match> <no-match> <no-match> <no-match> <gap> source code
-        compiled code and documentation contained in this distribution into the
-        Public Domain
+        I hereby abandon any property rights to
+        <and> <release> <all> <of>
+        source code compiled code and documentation contained in this distribution
+        into the Public Domain
         '''.split()
         assert expected_itext == itext.split()
 
         assert 80 < match.score()
-        assert Span(0, 6)|Span(13, 26) == match.qspan
-        assert Span(0, 6)|Span(11, 24) == match.ispan
+        assert Span(0, 6) | Span(13, 26) == match.qspan
+        assert Span(0, 6) | Span(11, 24) == match.ispan
 
     def test_match_can_match_with_rule_template_with_gap_near_start_with_few_tokens_before(self):
         # failed when a gapped token starts at a beginning of rule with few tokens before
@@ -725,42 +757,75 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
 
         match = matches[0]
         expected_qtokens = u"""
-        All Rights Reserved Redistribution and use of this software and associated documentation Software with or without
-        modification are permitted provided that the following conditions are met 1 Redistributions of source code must retain
-        copyright statements and notices Redistributions must also contain a copy of this document 2 Redistributions in binary
-        form must reproduce the above copyright notice this list of conditions and the following disclaimer in the documentation
-        and or other materials provided with the distribution 3 The name <no-match> must not be used to endorse or promote
-        products derived from this Software without prior written permission of <no-match> <no-match> For written permission
-        please contact <no-match> <no-match> <no-match> 4 Products derived from this Software may not be called <no-match> nor
-        may <no-match> appear in their names without prior written permission of <no-match> <no-match> <no-match> is a
-        registered trademark of <no-match> <no-match> 5 Due credit should be given to <no-match> <no-match> <no-match>
-        <no-match> <no-match> <no-match> <no-match> <no-match> <no-match> <no-match>
-         <no-match>  <no-match>  <no-match>  <no-match>  <no-match> AS IS AND ANY
-        EXPRESSED OR IMPLIED WARRANTIES INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-        PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL <no-match> <no-match> OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT
-        INDIRECT INCIDENTAL SPECIAL EXEMPLARY OR CONSEQUENTIAL DAMAGES INCLUDING BUT NOT LIMITED TO PROCUREMENT OF SUBSTITUTE
-        GOODS OR SERVICES LOSS OF USE DATA OR PROFITS OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY
-        WHETHER IN CONTRACT STRICT LIABILITY OR TORT INCLUDING NEGLIGENCE OR OTHERWISE ARISING IN ANY WAY OUT OF THE USE OF THIS
-        SOFTWARE EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
+        All Rights Reserved Redistribution and use of this software and associated
+        documentation Software with or without modification are permitted provided
+        that the following conditions are met
+
+        1 Redistributions of source code must retain copyright statements and notices
+        Redistributions must also contain a copy of this document
+
+        2 Redistributions in binary form must reproduce the above copyright notice
+        this list of conditions and the following disclaimer in the documentation and
+        or other materials provided with the distribution
+
+        3 The name [groovy] must not be used to endorse or promote products derived
+        from this Software without prior written permission of <The> [Codehaus] For
+        written permission please contact [info] [codehaus] [org]
+
+        4 Products derived from this Software may not be called [groovy] nor may
+        [groovy] appear in their names without prior written permission of <The>
+        [Codehaus]
+
+        [groovy] is a registered trademark of <The> [Codehaus]
+
+        5 Due credit should be given to <The> [Codehaus]
+        [http] [groovy] [codehaus] [org]
+
+        <THIS> <SOFTWARE> <IS> <PROVIDED> <BY> <THE> [CODEHAUS] <AND> <CONTRIBUTORS>
+        AS IS AND ANY EXPRESSED OR IMPLIED WARRANTIES INCLUDING BUT NOT LIMITED TO
+        THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+        PURPOSE ARE DISCLAIMED IN NO EVENT SHALL <THE> [CODEHAUS] OR ITS
+        CONTRIBUTORS BE LIABLE FOR ANY DIRECT INDIRECT INCIDENTAL SPECIAL EXEMPLARY
+        OR CONSEQUENTIAL DAMAGES INCLUDING BUT NOT LIMITED TO PROCUREMENT OF
+        SUBSTITUTE GOODS OR SERVICES LOSS OF USE DATA OR PROFITS OR BUSINESS
+        INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY WHETHER IN
+        CONTRACT STRICT LIABILITY OR TORT INCLUDING NEGLIGENCE OR OTHERWISE ARISING
+        IN ANY WAY OUT OF THE USE OF THIS SOFTWARE EVEN IF ADVISED OF THE POSSIBILITY
+        OF SUCH DAMAGE
         """.split()
 
-        expected_itokens = u'''
-        All Rights Reserved Redistribution and use of this software and associated documentation Software with or without
-        modification are permitted provided that the following conditions are met 1 Redistributions of source code must retain
-        copyright statements and notices Redistributions must also contain a copy of this document 2 Redistributions in binary
-        form must reproduce the above copyright notice this list of conditions and the following disclaimer in the documentation
-        and or other materials provided with the distribution 3 The name <gap> must not be used to endorse or promote products
-        derived from this Software without prior written permission of <gap> For written permission please contact <gap> 4
-        Products derived from this Software may not be called <gap> nor may <gap> appear in their names without prior written
-        permission of <gap> is a registered trademark of <gap> 5 Due credit should be given to <gap>
-        <no-match>  <no-match>  <no-match>  <no-match>  <no-match>
-        <gap>
-        AS IS AND ANY EXPRESSED OR IMPLIED WARRANTIES INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
-        MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL <gap> OR ITS CONTRIBUTORS BE
-        LIABLE FOR ANY DIRECT INDIRECT INCIDENTAL SPECIAL EXEMPLARY OR CONSEQUENTIAL DAMAGES INCLUDING BUT NOT LIMITED TO
-        PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES LOSS OF USE DATA OR PROFITS OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON
-        ANY THEORY OF LIABILITY WHETHER IN CONTRACT STRICT LIABILITY OR TORT INCLUDING NEGLIGENCE OR OTHERWISE ARISING IN ANY
-        WAY OUT OF THE USE OF THIS SOFTWARE EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
+        expected_itokens = u''' All Rights Reserved Redistribution and use of this
+        software and associated documentation Software with or without modification
+        are permitted provided that the following conditions are met
+
+        1 Redistributions of source code must retain copyright statements and notices
+        Redistributions must also contain a copy of this document
+
+        2 Redistributions in binary form must reproduce the above copyright notice
+        this list of conditions and the following disclaimer in the documentation and
+        or other materials provided with the distribution
+
+        3 The name must not be used to endorse or promote products derived from this
+        Software without prior written permission of For written permission please
+        contact
+
+        4 Products derived from this Software may not be called nor may appear in
+        their names without prior written permission of is a registered trademark of
+
+        5 Due credit should be given to
+
+
+        <THIS> <SOFTWARE> <IS> <PROVIDED> <BY>
+
+        AS IS AND ANY EXPRESSED OR IMPLIED WARRANTIES INCLUDING BUT NOT LIMITED TO
+        THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+        PURPOSE ARE DISCLAIMED IN NO EVENT SHALL OR ITS CONTRIBUTORS BE LIABLE FOR
+        ANY DIRECT INDIRECT INCIDENTAL SPECIAL EXEMPLARY OR CONSEQUENTIAL DAMAGES
+        INCLUDING BUT NOT LIMITED TO PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES LOSS
+        OF USE DATA OR PROFITS OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY
+        THEORY OF LIABILITY WHETHER IN CONTRACT STRICT LIABILITY OR TORT INCLUDING
+        NEGLIGENCE OR OTHERWISE ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE
+        EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
         '''.split()
 
         qtext, itext = get_texts(match, location=qloc, idx=idx)
@@ -770,7 +835,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         assert 97 < match.score()
         expected = Span(2, 98) | Span(100, 125) | Span(127, 131) | Span(133, 139) | Span(149, 178) | Span(180, 253)
         assert expected == match.qspan
-        assert  Span(1, 135)|Span(141, 244) == match.ispan
+        assert  Span(1, 135) | Span(141, 244) == match.ispan
 
     def test_match_can_match_with_index_built_from_rule_directory_with_sun_bcls(self):
         rule_dir = self.get_test_loc('detect/rule_template/rules')
@@ -781,8 +846,8 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         matches = idx.match(location=query_loc)
         assert 1 == len(matches)
         match = matches[0]
-        assert Span(0, 958) | Span(960, 1756) == match.qspan
-        assert 'seq' == match.matcher
+        assert Span(0, 957) | Span(959, 1756) == match.qspan
+        assert match_seq.MATCH_SEQ == match.matcher
 
 
 class TestMatchAccuracyWithFullIndex(FileBasedTesting):
@@ -800,7 +865,7 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         matches = idx.match(test_location)
         for match in matches:
             for detected in match.rule.licenses:
-                results.append((detected, match.lines, match.qspan,))
+                results.append((detected, match.lines(), match.qspan,))
         assert expected == results
 
     def test_match_has_correct_positions_basic(self):
@@ -815,16 +880,15 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         line_by_pos.update({x: 2 for x in range(8, 16)})
         line_by_pos.update({x: 3 for x in range(16, 24)})
 
-        rule = [r for r in idx.rules_by_rid if r.identifier == 'gpl-2.0_49.RULE'][0]
-        m1 = LicenseMatch(rule=rule, matcher='chunk1', qspan=Span(0, 7), ispan=Span(0, 7), line_by_pos=line_by_pos)
-        m2 = LicenseMatch(rule=rule, matcher='chunk2', qspan=Span(8, 15), ispan=Span(0, 7), line_by_pos=line_by_pos)
-        m3 = LicenseMatch(rule=rule, matcher='chunk3', qspan=Span(16, 23), ispan=Span(0, 7), line_by_pos=line_by_pos)
+        rule = [r for r in idx.rules_by_rid if r.identifier == 'gpl_69.RULE'][0]
+        m1 = LicenseMatch(rule=rule, qspan=Span(0, 7), ispan=Span(0, 7), line_by_pos=line_by_pos)
+        m2 = LicenseMatch(rule=rule, qspan=Span(8, 15), ispan=Span(0, 7), line_by_pos=line_by_pos)
+        m3 = LicenseMatch(rule=rule, qspan=Span(16, 23), ispan=Span(0, 7), line_by_pos=line_by_pos)
         assert [m1, m2, m3] == matches
 
-    @expectedFailure
     def test_match_has_correct_line_positions_for_query_with_repeats(self):
         expected = [
-            # licenses, match.lines, qtext,
+            # licenses, match.lines(), qtext,
             ([u'apache-2.0'], (1, 2), u'The Apache Software License Version 2 0 http www apache org licenses LICENSE 2 0 txt'),
             ([u'apache-2.0'], (3, 4), u'The Apache Software License Version 2 0 http www apache org licenses LICENSE 2 0 txt'),
             ([u'apache-2.0'], (5, 6), u'The Apache Software License Version 2 0 http www apache org licenses LICENSE 2 0 txt'),
@@ -842,21 +906,20 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
 
             try:
                 assert ex_lics == match.rule.licenses
-                assert ex_lines == match.lines
+                assert ex_lines == match.lines()
                 assert ex_qtext == qtext
             except AssertionError:
-                assert expected[i] == (match.rule.licenses, match.lines, qtext)
+                assert expected[i] == (match.rule.licenses, match.lines(), qtext)
 
     def test_match_does_not_return_spurious_match(self):
         expected = []
         self.check_position('positions/license2.txt', expected)
 
-    @expectedFailure
     def test_match_has_correct_line_positions_for_repeats(self):
         # we had a weird error where the lines were not computed correctly
         # when we had more than one file detected at a time
         expected = [
-            # detected, match.lines, match.qspan,
+            # detected, match.lines(), match.qspan,
             (u'apache-2.0', (1, 2), Span(0, 15)),
             (u'apache-2.0', (3, 4), Span(16, 31)),
             (u'apache-2.0', (5, 6), Span(32, 47)),
@@ -877,11 +940,11 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         assert 1 == len(matches)
         match = matches[0]
         assert 'apache-2.0_8.RULE' == match.rule.identifier
-        assert 'aho' == match.matcher
+        assert match_aho.MATCH_AHO == match.matcher
 
         qtext, _itext = get_texts(match, query_string=querys, idx=idx)
         assert u'The Apache Software License Version 2 0 http www apache org licenses LICENSE 2 0 txt' == qtext
-        assert (3, 4) == match.lines
+        assert (3, 4) == match.lines()
 
     def test_match_does_not_detect_spurrious_short_apache_rule(self):
         idx = index.get_index()
@@ -891,6 +954,28 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         '''
         matches = idx.match(query_string=querys)
         assert [] == matches
+
+    def test_match_handles_negative_rules_and_does_not_match_negative_regions_properly(self):
+        # note: this test relies on the negative rule: not-a-license_busybox_2.RULE
+        # with this text:
+        # "libbusybox is GPL, not LGPL, and exports no stable API that might act as a copyright barrier."
+        # and relies on the short rules that detect GPL and LGPL
+        idx = index.get_index()
+        # lines 3 and 4 should NOT be part of any matches
+        # they should match the negative "not-a-license_busybox_2.RULE"
+        negative_lines_not_to_match = 3, 4
+        querys = u'''
+            licensed under the LGPL license
+            libbusybox is GPL, not LGPL, and exports no stable API
+            that might act as a copyright barrier.
+            for the license
+            license: dual BSD/GPL
+            '''
+        matches = idx.match(query_string=querys)
+
+        for match in matches:
+            for line in negative_lines_not_to_match:
+                assert line not in match.lines()
 
 
 class TestMatchBinariesWithFullIndex(FileBasedTesting):
@@ -914,7 +999,7 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         matches = idx.match(location=qloc)
         assert 1 == len(matches)
         match = matches[0]
-        assert ['gpl-2.0'] == match.rule.licenses
+        assert ['gpl'] == match.rule.licenses
         assert match.ispan == Span(0, 1)
 
         qtext, itext = get_texts(match, location=qloc, idx=idx)

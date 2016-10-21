@@ -1,0 +1,16 @@
+licenses:
+    - gpl-2.0
+notes: |
+    This is the next version of the GPL text as published by the FSF.
+    Let's call it the GPL 2.0.2
+    This variation was published around about the time of the FSF office
+    move on May 1, 2005 from Temple Place to Franklin Street
+    http://web.archive.org/web/20050507090312/http://www.fsf.org/licensing/licenses/gpl.html
+    In this HTML version, it refers to the Franklin St address and uses the 
+    GNU Library General Public License at the top and GNU Lesser General Public License
+    at the bottom with still a split opinion on which one to use of the LGPL 2 or 2.1
+    This is mostly about an address change.
+    The corresponding text version at
+    http://web.archive.org/web/20050507090312/http://www.fsf.org/copyleft/gpl.txt
+    was not updated for a few days.
+

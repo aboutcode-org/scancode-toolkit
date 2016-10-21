@@ -1,0 +1,7 @@
+licenses:
+    - bsd-new
+notes: |
+    In contrast with the  main text, this version uses  3. [rescinded 22 July 1999] 
+    as opposed to  3. <deleted>. Since this is a bsd-original-uc with the advert claused removed,
+    this becomes de facto a bsd-new
+    

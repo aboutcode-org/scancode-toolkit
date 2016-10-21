@@ -30,16 +30,13 @@ import os
 from os.path import abspath
 from os.path import join
 import unittest
-from unittest.case import expectedFailure
-from unittest.case import skip
 
 from commoncode import fileutils
-from commoncode import functional
 from commoncode import text
 
-from licensedcode import index
-from licensedcode.match import get_texts
 from licensedcode import saneyaml
+
+from license_test_utils import make_license_test_function
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data/licenses')
@@ -88,7 +85,7 @@ class LicenseTest(object):
         self.license_choice = data.get('license_choice')
 
         self.notes = data.get('notes')
-        
+
         # True if the test is expected to fail
         self.expected_failure = data.get('expected_failure', False)
 
@@ -165,90 +162,25 @@ def build_tests(license_tests, clazz):
     Dynamically build test methods from a sequence of LicenseTest and attach
     these method to the clazz test class.
     """
+    # TODO: check that we do not have duplicated tests with same data and text
+
     for test in license_tests:
-        # absolute path
         tfn = test.test_file_name
-        test_file = test.test_file
-        data_file = test.data_file
         test_name = 'test_detection_%(tfn)s' % locals()
         test_name = text.python_safe_name(test_name)
-        # closure on the test params
-        test_method = make_license_test_function(test.licenses, test_file, data_file, test_name, expected_contains=test.expected_contains)
-        skipper = skip('Skipping long test')
-        if test.skip:
-            test_method = skipper(test_method)
 
-        if test.expected_failure:
-            test_method = expectedFailure(test_method)
+        # closure on the test params
+        test_method = make_license_test_function(
+            test.licenses, test.test_file, test.data_file,
+            test_name=test_name,
+            expected_contains=test.expected_contains,
+            expected_failure=test.expected_failure,
+            skip_test=test.skip and 'Skipping long test' or False,
+            trace_text=TRACE_TEXTS
+            )
+
         # attach that method to our test class
         setattr(clazz, test_name, test_method)
-
-
-# TODO: check that we do not have duplicated tests with same data and text
-
-def make_license_test_function(expected_licenses, test_file, data_file, test_name, 
-                               detect_negative=True, min_score=0,
-                               expected_contains=False):
-    """
-    Build a test function closing on tests arguments
-    """
-    if not isinstance(expected_licenses, list):
-        expected_licenses = [expected_licenses]
-
-    def data_driven_test_function(self):
-        idx = index.get_index()
-        file_tested = test_file
-        data_file_tested = data_file
-        matches = idx.match(location=test_file, min_score=min_score, 
-                            # we may not want to detect negative rules when testing negative rules
-                            detect_negative=detect_negative, 
-                            # we do not want to use cache when testing
-                            use_cache=False)
-
-        if not matches and expected_licenses:
-            assert [] == ['No match: min_score:{min_score}. detect_negative={detect_negative}, test_files:'.format(**locals()),
-                          'file://{file_tested}'.format(**locals()),
-                          'file://{data_file_tested}'.format(**locals()),
-                         ]
-
-        # TODO: we should expect matches properly, not with a grab bag of flat license keys
-        # flattened list of all detected license keys across all matches.
-        detected_licenses = functional.flatten(map(unicode, match.rule.licenses) for match in matches)
-        try:
-            if not detect_negative:
-                # we skipped negative detection for a negative rule
-                # we just want to ensure thwt the rule wass matchedd proper
-                assert matches and not expected_licenses and not detected_licenses
-            elif expected_contains:
-                assert all(ex in detected_licenses for ex in expected_licenses)
-            else:
-                assert expected_licenses == detected_licenses                
-        except:
-            # on failure, we compare against more result data to get additional
-            # failure details, including the test_file and full match details
-            matches_texts = []
-
-            if TRACE_TEXTS:
-                for match in matches:
-                    qtext, itext = get_texts(match, location=test_file, idx=idx)
-                    match_rule_text_file = match.rule.text_file
-                    match_rule_data_file = match.rule.data_file
-                    matches_texts.extend(['', '',
-                        '======= MATCH ====', match,
-                        '======= Matched Query Text for:',
-                            'file://{file_tested}'.format(**locals()),
-                            'file://{data_file_tested}'.format(**locals()),
-                            qtext.splitlines(), '',
-                        '======= Matched Rule Text for:',
-                            'file://{match_rule_text_file}'.format(**locals()),
-                            'file://{match_rule_data_file}'.format(**locals()),
-                             itext.splitlines(),
-                    ])
-            assert expected_licenses == detected_licenses + [test_name, 'test file: file://' + test_file] + matches_texts
-
-    data_driven_test_function.__name__ = test_name
-    data_driven_test_function.funcname = test_name
-    return data_driven_test_function
 
 
 class TestLicenseDataDriven(unittest.TestCase):

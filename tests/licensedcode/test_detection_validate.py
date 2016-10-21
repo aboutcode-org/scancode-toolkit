@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -30,7 +30,7 @@ import unittest
 from commoncode import text
 from licensedcode import models
 
-from test_detection_datadriven import make_license_test_function
+from license_test_utils import make_license_test_function
 
 
 """
@@ -47,13 +47,15 @@ def build_license_validation_tests(licenses_by_key, cls):
         if license_obj.text_file and os.path.exists(license_obj.text_file):
             test_name = ('test_validate_self_detection_of_text_for_' + text.python_safe_name(license_key))
             # also verify that we are detecting exactly with the license rule itself
-            test_method = make_license_test_function(license_key, license_obj.text_file, license_obj.data_file, test_name, detect_negative=True)
+            test_method = make_license_test_function(
+                license_key, license_obj.text_file, license_obj.data_file, test_name, detect_negative=True, trace_text=True)
             setattr(cls, test_name, test_method)
 
         if license_obj.spdx_license_key:
             if license_obj.spdx_file and os.path.exists(license_obj.spdx_file):
                 test_name = ('test_validate_self_detection_of_spdx_text_for_' + text.python_safe_name(license_key))
-                test_method = make_license_test_function(license_key, license_obj.spdx_file, license_obj.data_file, test_name, detect_negative=True)
+                test_method = make_license_test_function(
+                    license_key, license_obj.spdx_file, license_obj.data_file, test_name, detect_negative=True, trace_text=True)
                 setattr(cls, test_name, test_method)
 
 
@@ -73,7 +75,9 @@ def build_rule_validation_tests(rules, cls):
     for rule in rules:
         expected_identifier = rule.identifier
         test_name = ('test_validate_self_detection_of_rule_for_' + text.python_safe_name(expected_identifier))
-        test_method = make_license_test_function(rule.licenses, rule.text_file, rule.data_file, test_name, detect_negative=not rule.negative())
+        test_method = make_license_test_function(
+            rule.licenses, rule.text_file, rule.data_file, test_name, detect_negative=not rule.negative(), trace_text=True
+        )
         setattr(cls, test_name, test_method)
 
 

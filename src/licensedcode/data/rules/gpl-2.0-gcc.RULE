@@ -12,12 +12,12 @@ do apply in other respects; for example, they cover modification of
 the file, and distribution when not linked into a combined
 executable.)
 
-{{GNU CC}} is distributed in the hope that it will be useful,
+ GNU CC  is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with {{GNU CC}}; see the file COPYING.  If not, write to
+along with  GNU CC ; see the file COPYING.  If not, write to
 the Free Software Foundation.  
 */

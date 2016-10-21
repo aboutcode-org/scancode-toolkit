@@ -105,11 +105,11 @@ def demarkup(location):
 
     # keep the opening tag name of certain tags that contains these strings
     # note: <s> are from debian copyright files
-    kept_tags = ('lic', 'copy', 'auth', 'contr', 'leg', '@', '<s>', '</s>')
+    kept_tags = ('lic', 'copy', 'auth', 'contr', 'leg', 'inc', '@', '<s>', '</s>')
 
     # find start and closing tags or the first white space whichever comes first
     # or entities
-    # this regex is such that ''.join(tags.split(a))==a
+    # this regex is such that ' '.join(tags.split(a))==a
 
     tags_ents = re.compile(r'(</?[^\s></]+(?:>|\s)?|&[^\s&]+;|href)', re.IGNORECASE).split
 
@@ -120,7 +120,7 @@ def demarkup(location):
                 continue
             else:
                 cleaned.append(token)
-        yield u''.join(cleaned)
+        yield u' '.join(cleaned)
 
 
 def is_html(location):

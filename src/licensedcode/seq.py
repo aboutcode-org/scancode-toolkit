@@ -5,14 +5,14 @@ from collections import namedtuple as _namedtuple
 
 
 """
-Token sequences alignement and diffing nbased on the longest common substrings
-of "high tokens". This essentially a non-optimal and reasonably fast single
-local sequence alignment between two sequences of integers/token ids..
+Token sequences alignement and diffing based on the longest common substrings of
+"high tokens". This essentially a non-optimal and reasonably fast single local
+sequence alignment between two sequences of integers/token ids.
 
 Based on and heavily modified from Python's difflib.py from the 3.X tip:
 https://hg.python.org/cpython/raw-file/0a69b1e8b7fe/Lib/difflib.py
 
-license: PSF. See ABOUT file for details.
+license: PSF. See seq.ABOUT file for details.
 """
 
 
@@ -54,13 +54,13 @@ def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
     # during an iteration of the loop, j2len[j] = length of longest
     # junk-free match ending with a[i-1] and b[j]
     j2len = {}
+    j2lenget = j2len.get
     nothing = []
     for i in range(alo, ahi):
         if not i in matchables:
             continue
         # look at all instances of a[i] in b; note that because
         # b2j has no junk token, the loop is skipped if a[i] is junk
-        j2lenget = j2len.get
         newj2len = {}
         for j in b2j_get(a[i], nothing):
             # a[i] matches b[j]
@@ -72,30 +72,35 @@ def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
             if k > bestsize:
                 besti, bestj, bestsize = i - k + 1, j - k + 1, k
         j2len = newj2len
+        j2lenget = j2len.get
 
     # Extend the best by non-junk tokens on each end.
     while (besti > alo and bestj > blo
-           and b[bestj - 1] >= len_junk
-           and (besti - 1) in matchables
-           and a[besti - 1] == b[bestj - 1]):
+        and b[bestj - 1] >= len_junk
+        and a[besti - 1] == b[bestj - 1]
+        and (besti - 1) in matchables
+        ):
         besti, bestj, bestsize = besti - 1, bestj - 1, bestsize + 1
 
     while (besti + bestsize < ahi and bestj + bestsize < bhi
         and b[bestj + bestsize] >= len_junk
+        and a[besti + bestsize] == b[bestj + bestsize]
         and (besti + bestsize) in matchables
-        and a[besti + bestsize] == b[bestj + bestsize]):
+        ):
         bestsize += 1
 
     if bestsize:
         # if have a non-empty match, append any matching tokens on each end.
         while (besti > alo and bestj > blo
+            and a[besti - 1] == b[bestj - 1]
             and (besti - 1) in matchables
-            and a[besti - 1] == b[bestj - 1]):
+            ):
             besti, bestj, bestsize = besti - 1, bestj - 1, bestsize + 1
 
         while (besti + bestsize < ahi and bestj + bestsize < bhi
+            and a[besti + bestsize] == b[bestj + bestsize]
             and (besti + bestsize) in matchables
-            and a[besti + bestsize] == b[bestj + bestsize]):
+            ):
             bestsize = bestsize + 1
 
     return Match(besti, bestj, bestsize)
@@ -145,14 +150,14 @@ def match_blocks(a, b, starta, lena, b2j, len_junk, matchables=frozenset()):
     for i2, j2, k2 in matching_blocks:
         # Is this block adjacent to i1, j1, k1?
         if i1 + k1 == i2 and j1 + k1 == j2:
-            # Yes, so collapse them -- this just increases the length of
-            # the first block by the length of the second, and the first
-            # block so lengthened remains the block to compare against.
+            # Yes, so collapse them -- this just increases the length of the first
+            # block by the length of the second, and the first block so lengthened
+            # remains the block to compare against.
             k1 += k2
         else:
-            # Not adjacent.  Remember the first block (k1==0 means it's
-            # the dummy we started with), and make the second block the
-            # new block to compare against.
+            # Not adjacent: keep it unless this is the first block (k1==0 means it's
+            # the dummy we started with), and make the second block the new block to
+            # compare against.
             if k1:
                 non_adjacent.append((i1, j1, k1))
             i1, j1, k1 = i2, j2, k2

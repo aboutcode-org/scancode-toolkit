@@ -35,19 +35,10 @@ from licensedcode import index
 from licensedcode import models
 from licensedcode.match import get_texts
 from licensedcode.query import Query
+from licensedcode import match_seq
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
-
-
-def print_matched_texts(match, location=None, query_string=None, idx=None):
-    qtext, itext = get_texts(match, location=location, query_string=query_string, idx=idx)
-    print()
-    print('Matched qtext')
-    print(qtext)
-    print()
-    print('Matched itext')
-    print(itext)
 
 
 class IndexTesting(FileBasedTesting):
@@ -94,12 +85,12 @@ class TestIndexing(IndexTesting):
         # rule text, unique low/high len, low/high len
         test_rules = [
             (u'a one a two a three licensed.', 4, 1, 6, 1),
-            (u'a four a five a six licensed.', 3, 2, 5, 2),
-            (u'one two three four five gpl', 5, 1, 5, 1),
+            (u'a four a five a six licensed.', 2, 3, 4, 3),
+            (u'one two three four five gpl', 4, 2, 4, 2),
             (u'The rose is a rose mit', 3, 2, 3, 3),
-            (u'The license is GPL', 2, 2, 2, 2),
-            (u'The license is a GPL', 3, 2, 3, 2),
-            (u'a license is a rose', 2, 2, 3, 2),
+            (u'The license is GPL', 3, 1, 3, 1),
+            (u'The license is a GPL', 4, 1, 4, 1),
+            (u'a license is a rose', 3, 1, 4, 1),
             (u'the gpl', 1, 1, 1, 1),
             (u'the mit', 1, 1, 1, 1),
             (u'the bsd', 1, 1, 1, 1),
@@ -110,27 +101,26 @@ class TestIndexing(IndexTesting):
         idx._add_rules(rules)
 
         assert 8 == idx.len_junk
-
-        for i, rule in enumerate(rules):
-            lens = tuple(test_rules[i][1:])            
-            assert lens == (rule.low_unique, rule.high_unique, rule.low_length, rule.high_length)
+        expected_lengths = [r[1:] for r in test_rules]
+        results = [(rule.low_unique, rule.high_unique, rule.low_length, rule.high_length) for rule in rules]
+        assert expected_lengths == results
 
         xdict = {
             u'a': 0,
             u'bsd': 15,
-            u'five': 5,
-            u'four': 4,
+            u'five': 11,
+            u'four': 5,
             u'gpl': 8,
             u'is': 2,
             u'lgpl': 13,
-            u'license': 9,
-            u'licensed': 11,
+            u'license': 3,
+            u'licensed': 10,
             u'mit': 12,
             u'one': 7,
-            u'rose': 10,
+            u'rose': 9,
             u'six': 14,
             u'the': 1,
-            u'three': 3,
+            u'three': 4,
             u'two': 6}
 
         assert xdict == idx.dictionary
@@ -139,15 +129,15 @@ class TestIndexing(IndexTesting):
             u'a',
             u'the',
             u'is',
+            u'license',
             u'three',
             u'four',
-            u'five',
             u'two',
             u'one',
             u'gpl',
-            u'license',
             u'rose',
             u'licensed',
+            u'five',
             u'mit',
             u'lgpl',
             u'six',
@@ -156,13 +146,13 @@ class TestIndexing(IndexTesting):
         assert xtbi == idx.tokens_by_tid
 
         expected_as_dict = {
-            '_tst_18_4': {u'gpl': [3], u'license': [1]},
-            '_tst_19_6': {u'license': [1], u'rose': [4]},
-            '_tst_20_5': {u'gpl': [4], u'license': [1]},
+            '_tst_18_4': {u'gpl': [3]},
+            '_tst_19_6': {u'rose': [4]},
+            '_tst_20_5': {u'gpl': [4]},
             '_tst_22_3': {u'mit': [5], u'rose': [1, 4]},
-            '_tst_27_2': {u'gpl': [5]},
+            '_tst_27_2': {u'five': [4], u'gpl': [5]},
             '_tst_29_0': {u'licensed': [6]},
-            '_tst_29_1': {u'licensed': [6], u'six': [5]},
+            '_tst_29_1': {u'five': [3], u'licensed': [6], u'six': [5]},
             '_tst_7_7': {u'gpl': [1]},
             '_tst_7_8': {u'mit': [1]},
             '_tst_7_9': {u'bsd': [1]},
@@ -238,7 +228,7 @@ class TestIndexing(IndexTesting):
 
         low_tids_msets_by_rid, high_tids_msets_by_rid = zip(*idx.tids_msets_by_rid)
 
-        htmset = [{idx.tokens_by_tid[tok]:freq for (tok, freq) in tids_mset.items()} 
+        htmset = [{idx.tokens_by_tid[tok]:freq for (tok, freq) in tids_mset.items()}
                   for tids_mset in high_tids_msets_by_rid]
         assert expected_high_tids_msets_by_rid == htmset
 
@@ -337,7 +327,7 @@ class TestMatchNoTemplates(IndexTesting):
         assert 1 == len(result)
         match = result[0]
         qtext, itext = get_texts(match, query_string=querys, idx=idx)
-        assert u'licensed <no-match> under <no-match> the <no-match> GPL licensed <no-match> under <no-match> the GPL' == qtext
+        assert u'licensed [that] under [is] the [that] GPL licensed [or] under [not] the GPL' == qtext
         assert u'licensed under the GPL licensed under the GPL' == itext
 
     def test_match_exact_from_file(self):
@@ -369,7 +359,7 @@ class TestMatchNoTemplates(IndexTesting):
     def test_match_return_correct_offsets(self):
         _text = u'A GPL. A MIT. A LGPL.'
         #         0   1  2   3  4    5
-        licenses=['test']
+        licenses = ['test']
         rule = models.Rule(licenses=licenses, _text=_text)
         idx = index.LicenseIndex([rule])
         querys = u'some junk. A GPL. A MIT. A LGPL.'
@@ -429,7 +419,7 @@ No part of match        '''
 
         assert 1 == len(result)
         match = result[0]
-        assert 'seq' == match.matcher
+        assert match_seq.MATCH_SEQ == match.matcher
 
         exp_qtext = u"""
             Redistribution and use in source and binary forms with or without
@@ -443,7 +433,7 @@ No part of match        '''
             notice this list of conditions and the following disclaimer in the
             documentation and or other materials provided with the distribution
 
-            Neither the name of <no-match> <no-match> nor the names of its
+            Neither the name of [nexB] <Inc> nor the names of its
             contributors may be used to endorse or promote products derived from
             this software without specific prior written permission
 
@@ -472,7 +462,7 @@ No part of match        '''
             notice this list of conditions and the following disclaimer in the
             documentation and or other materials provided with the distribution
 
-            Neither the name of <gap> nor the names of its contributors may be
+            Neither the name of nor the names of its contributors may be
             used to endorse or promote products derived from this software
             without specific prior written permission
 
@@ -534,32 +524,31 @@ No part of match        '''
             notice this list of conditions and the following disclaimer in the
             documentation and or other materials provided with the distribution
 
-            3 The name <no-match> must not be used to endorse or promote
+            3 The name [groovy] must not be used to endorse or promote
             products derived from this Software without prior written permission
-            of <no-match> <no-match> For written permission please contact
-            <no-match> <no-match> <no-match>
+            of <The> [Codehaus] For written permission please contact
+            [info] [codehaus] [org]
 
-            4 Products derived from this Software may not be called <no-match>
-            nor may <no-match> appear in their names without prior written
-            permission of <no-match> <no-match> <no-match> is a registered
-            trademark of <no-match> <no-match>
+            4 Products derived from this Software may not be called [groovy]
+            nor may [groovy] appear in their names without prior written
+            permission of <The> [Codehaus] [groovy] is a registered
+            trademark of <The> [Codehaus]
 
-            5 Due credit should be given to <no-match> <no-match> <no-match>
-            <no-match> <no-match> <no-match>
+            5 Due credit should be given to <The> [Codehaus]
+            [http] [groovy] [codehaus] [org]
 
-            <no-match> <no-match> <no-match> <no-match> <no-match> <no-match>
-             <no-match>  AND CONTRIBUTORS
+
+            <THIS> <SOFTWARE> <IS> <PROVIDED> <BY> <THE> [CODEHAUS] AND CONTRIBUTORS
             AS IS AND ANY EXPRESSED OR IMPLIED WARRANTIES INCLUDING BUT NOT
             LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-            A PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL <no-match>
-            <no-match> OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT INDIRECT
+            A PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL <THE> [CODEHAUS]
+            OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT INDIRECT
             INCIDENTAL SPECIAL EXEMPLARY OR CONSEQUENTIAL DAMAGES INCLUDING BUT
             NOT LIMITED TO PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES LOSS OF
             USE DATA OR PROFITS OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON
             ANY THEORY OF LIABILITY WHETHER IN CONTRACT STRICT LIABILITY OR TORT
             INCLUDING NEGLIGENCE OR OTHERWISE ARISING IN ANY WAY OUT OF THE USE
-            OF THIS SOFTWARE EVEN IF ADVISED OF THE <no-match> <no-match>
-            <no-match> DAMAGE
+            OF THIS SOFTWARE EVEN IF ADVISED OF THE [POSSIBILITY] <OF> [SUCH] DAMAGE
         """.split()
 
         exp_itext = u"""
@@ -577,42 +566,42 @@ No part of match        '''
             notice this list of conditions and the following disclaimer in the
             documentation and or other materials provided with the distribution
 
-            3 The name <gap> must not be used to endorse or promote products
-            derived from this Software without prior written permission of <gap>
-            For written permission please contact <gap>
+            3 The name must not be used to endorse or promote products
+            derived from this Software without prior written permission of
+            For written permission please contact
 
-            4 Products derived from this Software may not be called <gap> nor
-            may <gap> appear in their names without prior written permission of
-            <gap> is a registered trademark of <gap>
+            4 Products derived from this Software may not be called nor
+            may appear in their names without prior written permission of
+            is a registered trademark of
 
-            5 Due credit should be given to <gap>
+            5 Due credit should be given to
 
-            <no-match> <no-match> <no-match> <no-match> <no-match> <gap> 
+            <THIS> <SOFTWARE> <IS> <PROVIDED> <BY>
             AND CONTRIBUTORS AS IS AND ANY
             EXPRESSED OR IMPLIED WARRANTIES INCLUDING BUT NOT LIMITED TO THE
             IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
-            PURPOSE ARE DISCLAIMED IN NO EVENT SHALL <gap> OR ITS CONTRIBUTORS
+            PURPOSE ARE DISCLAIMED IN NO EVENT SHALL OR ITS CONTRIBUTORS
             BE LIABLE FOR ANY DIRECT INDIRECT INCIDENTAL SPECIAL EXEMPLARY OR
             CONSEQUENTIAL DAMAGES INCLUDING BUT NOT LIMITED TO PROCUREMENT OF
             SUBSTITUTE GOODS OR SERVICES LOSS OF USE DATA OR PROFITS OR BUSINESS
             INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY WHETHER
             IN CONTRACT STRICT LIABILITY OR TORT INCLUDING NEGLIGENCE OR
             OTHERWISE ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE EVEN IF
-            ADVISED OF THE <gap> DAMAGE
+            ADVISED OF THE DAMAGE
         """.split()
         qtext, itext = get_texts(match, location=query_loc, idx=idx)
         assert exp_qtext == qtext.split()
         assert exp_itext == itext.split()
         assert match.score() > 97
-        assert 'seq' == match.matcher
+        assert match_seq.MATCH_SEQ == match.matcher
 
     def test_match_with_templates_with_redundant_tokens_yield_single_exact_match(self):
         _text = u'copyright reserved mit is license, {{}} copyright reserved mit is license'
         #                 0        1  2   3       4               5        6   7  8       9
         licenses = ['tst']
         rule = models.Rule(licenses=licenses, _text=_text)
-        idx = index.LicenseIndex([rule], ngram_length=2)
-        expected_idx = {'_tst_73_0': {u'is': [3, 8], u'license': [4, 9], u'mit': [2, 7]}}
+        idx = index.LicenseIndex([rule])
+        expected_idx = {'_tst_73_0': {u'copyright': [0, 5], u'license': [4, 9], u'mit': [2, 7]}}
         assert expected_idx == idx._as_dict()
 
         querys = u'Hi my copyright reserved mit is license is the copyright reserved mit is license yes.'
@@ -634,5 +623,5 @@ No part of match        '''
         assert Span(0, 9) == match.ispan
         assert 100 == match.score()
         qtext, itext = get_texts(match, query_string=querys, idx=idx)
-        assert 'copyright reserved mit is license <no-match> <no-match> copyright reserved mit is license' == qtext
-        assert 'copyright reserved mit is license <gap> copyright reserved mit is license' == itext
+        assert 'copyright reserved mit is license <is> [the] copyright reserved mit is license' == qtext
+        assert 'copyright reserved mit is license copyright reserved mit is license' == itext

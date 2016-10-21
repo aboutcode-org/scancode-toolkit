@@ -29,14 +29,12 @@ import os
 from commoncode.testcase import FileBasedTesting
 
 from licensedcode import index
-from licensedcode.match import filter_matches
+from licensedcode.match import filter_contained_matches
 from licensedcode.match import LicenseMatch
-from licensedcode.match import get_texts
 from licensedcode.models import Rule
 from licensedcode.models import load_rules
 from licensedcode.spans import Span
-from licensedcode.models import Thresholds
-from unittest.case import expectedFailure
+from licensedcode.match import merge_matches
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -49,11 +47,44 @@ class TestLicenseMatchBasic(FileBasedTesting):
         r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
         m2 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
+
         assert m1 == m2
 
         r2 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
         m3 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
+
         assert m1 != m3
+
+        r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
+        r2 = Rule(text_file='r2', licenses=['gpl', 'apache-2.0'])
+        m2 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
+
+        assert m1 != m2
+        assert m2 != m1
+
+        r3 = Rule(text_file='r3', licenses=['gpl', 'apache-2.0'])
+        m3 = LicenseMatch(rule=r3, qspan=Span(0, 2), ispan=Span(0, 2))
+
+        assert m2 != m3
+
+    def test_LicenseMatch_not_equal(self):
+        r1 = Rule(text_file='r1', licenses=['apache-1.0', 'gpl'])
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
+        r2 = Rule(text_file='r2', licenses=['gpl', 'apache-2.0'])
+        m2 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
+
+        assert m1 != m2
+
+        r3 = Rule(text_file='r3', licenses=['apache-1.0', 'gpl'])
+        m3 = LicenseMatch(rule=r3, qspan=Span(0, 2), ispan=Span(0, 2))
+
+        assert m1 == m3
+
+        r4 = Rule(text_file='r4', licenses=['apache-1.0', 'gpl'])
+        m4 = LicenseMatch(rule=r4, qspan=Span(1, 2), ispan=Span(1, 2))
+
+        assert not m1 == m4
 
     def test_LicenseMatch_lines(self):
         rule = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
@@ -62,44 +93,14 @@ class TestLicenseMatchBasic(FileBasedTesting):
         line_by_pos.update({x: 3 for x in range(16, 24)})
 
         m1 = LicenseMatch(rule=rule, matcher='chunk1', qspan=Span(0, 7), ispan=Span(0, 7), line_by_pos=line_by_pos)
-        assert (1, 1) == m1.lines
+        assert (1, 1) == m1.lines()
         m2 = LicenseMatch(rule=rule, matcher='chunk2', qspan=Span(0, 7), ispan=Span(0, 7), line_by_pos=line_by_pos)
-        assert (1, 1) == m2.lines
+        assert (1, 1) == m2.lines()
         assert m1 == m2
 
         m3 = LicenseMatch(rule=rule, matcher='chunk3', qspan=Span(16, 23), ispan=Span(0, 7), line_by_pos=line_by_pos)
-        assert (3, 3) == m3.lines
+        assert (3, 3) == m3.lines()
         assert m1 != m3
-
-    def test_LicenseMatch_same(self):
-        r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
-        m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
-        r2 = Rule(text_file='r2', licenses=['gpl', 'apache-2.0'])
-        m2 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
-
-        assert m1.same(m2)
-        assert m2.same(m1)
-
-    def test_LicenseMatch_not_same(self):
-        r1 = Rule(text_file='r1', licenses=['apache-1.0', 'gpl'])
-        m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
-        r2 = Rule(text_file='r2', licenses=['gpl', 'apache-2.0'])
-        m2 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
-
-        assert not m1.same(m2)
-        assert not m2.same(m1)
-
-        r3 = Rule(text_file='r3', licenses=['apache-1.0', 'gpl'])
-        m3 = LicenseMatch(rule=r3, qspan=Span(0, 2), ispan=Span(0, 2))
-
-        assert m1.same(m3)
-        assert m3.same(m1)
-
-        r4 = Rule(text_file='r4', licenses=['apache-1.0', 'gpl'])
-        m4 = LicenseMatch(rule=r4, qspan=Span(1, 2), ispan=Span(1, 2))
-
-        assert not m1.same(m4)
-        assert not m4.same(m1)
 
     def test_LicenseMatch_comparisons(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
@@ -109,13 +110,10 @@ class TestLicenseMatchBasic(FileBasedTesting):
         same_span2 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
         before_after = LicenseMatch(rule=r1, qspan=Span(8, 9), ispan=Span(8, 9))
         touching = LicenseMatch(rule=r1, qspan=Span(7, 7), ispan=Span(7, 7))
-        overlap = LicenseMatch(rule=r1, qspan=Span(4, 7), ispan=Span(4, 7))
+        overlaping = LicenseMatch(rule=r1, qspan=Span(4, 7), ispan=Span(4, 7))
 
-        assert same_span1.same(same_span2)
+        assert same_span1 == same_span2
         assert same_span1 in same_span2
-
-        assert not same_span1.touch(same_span2)
-        assert not same_span2.touch(same_span1)
 
         assert same_span1.overlap(same_span2)
         assert same_span2.overlap(same_span1)
@@ -124,27 +122,19 @@ class TestLicenseMatchBasic(FileBasedTesting):
         assert same_span1 not in contained1
 
         assert contained1.overlap(same_span2)
-        assert not contained1.touch(same_span2)
-        assert not same_span2.touch(contained1)
-
-        assert contained1.qsurround(contained2)
-        assert contained1.isurround(contained2)
+        assert contained1.surround(contained2)
 
         assert contained2 in same_span2
         assert contained2 in contained1
 
-        assert contained2.overlap(overlap)
-        assert overlap.overlap(contained2)
-        assert overlap.overlap(same_span1)
-        assert not overlap.overlap(before_after)
+        assert contained2.overlap(overlaping)
+
+        assert overlaping.overlap(contained2)
+        assert overlaping.overlap(same_span1)
+        assert not overlaping.overlap(before_after)
 
         assert before_after.is_after(same_span1)
-
-        assert before_after.touch(touching)
         assert before_after.is_after(touching)
-
-        assert touching.touch(before_after)
-        assert not before_after.touch(same_span1)
         assert before_after.is_after(contained1)
 
     def test_combine_raise_TypeError_for_matches_of_different_rules(self):
@@ -169,16 +159,18 @@ class TestLicenseMatchBasic(FileBasedTesting):
         assert Span(0, 6) == match.qspan
         assert Span(0, 6) == match.ispan
 
-    def test_combine_matches_with_same_licensing(self):
+    def test_combine_matches_cannot_combine_matches_with_same_licensing_and_different_rules(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
         r2 = Rule(text_file='r2', licenses=['apache-2.0', 'gpl'])
 
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
         m2 = LicenseMatch(rule=r2, qspan=Span(1, 6), ispan=Span(1, 6))
 
-        match = m1.combine(m2)
-        assert Span(0, 6) == match.qspan
-        assert Span(0, 6) == match.ispan
+        try:
+            m1.combine(m2)
+            self.fail('Should fail')
+        except TypeError:
+            pass
 
     def test_LicenseMatch_small(self):
         r1_text = u'licensed under the GPL, licensed under the GPL'
@@ -197,7 +189,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
         assert LicenseMatch(rule=r2, qspan=Span(1, 6), ispan=Span(1, 6)).small()
 
 
-class TestLicenseMatchMerge(FileBasedTesting):
+class TestMergeMatches(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
     def test_merge_does_merge_non_contiguous_matches_in_sequence(self):
@@ -206,13 +198,8 @@ class TestLicenseMatchMerge(FileBasedTesting):
         m2 = LicenseMatch(rule=r1, qspan=Span(4, 6), ispan=Span(4, 6))
         m5 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
 
-        matches = LicenseMatch.merge([m1, m2, m5])
-        expected = [
-
-            LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6)),
-            m1
-        ]
-        assert sorted(expected) == sorted(matches)
+        results = merge_matches([m1, m2, m5])
+        assert [LicenseMatch(rule=r1, qspan=Span(0, 6), ispan=Span(0, 6))] == results
 
     def test_merge_does_not_merge_overlapping_matches_of_different_rules_with_different_licensing(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
@@ -221,27 +208,55 @@ class TestLicenseMatchMerge(FileBasedTesting):
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
         m2 = LicenseMatch(rule=r2, qspan=Span(1, 6), ispan=Span(1, 6))
 
-        assert [m1, m2] == LicenseMatch.merge([m1, m2])
+        assert [m1, m2] == merge_matches([m1, m2])
 
-    def test_merge_does_not_merge_overlapping_matches_of_same_rules(self):
+    def test_merge_does_merge_overlapping_matches_of_same_rules_if_in_sequence(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
 
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
         m2 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
 
-        assert [m1, m2] == LicenseMatch.merge([m1, m2])
+        assert [LicenseMatch(rule=r1, qspan=Span(0, 6), ispan=Span(0, 6))] == merge_matches([m1, m2])
 
-    def test_merge_can_merge_contained_matches_of_different_rules_with_same_licensing(self):
+    def test_merge_does_not_merge_overlapping_matches_of_same_rules_if_in_sequence_with_gaps(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
+
+        m1 = LicenseMatch(rule=r1, qspan=Span(1, 3), ispan=Span(1, 3))
+        m2 = LicenseMatch(rule=r1, qspan=Span(14, 20), ispan=Span(4, 10))
+
+        assert [LicenseMatch(rule=r1, qspan=Span(1, 3) | Span(14, 20), ispan=Span(1, 10))] == merge_matches([m1, m2])
+
+    def test_merge_does_not_merge_overlapping_matches_of_same_rules_if_in_not_sequence(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
+
+        m1 = LicenseMatch(rule=r1, qspan=Span(1, 3), ispan=Span(1, 3))
+        m2 = LicenseMatch(rule=r1, qspan=Span(14, 20), ispan=Span(1, 3))
+
+        matches = merge_matches([m1, m2])
+        assert sorted([m1, m2]) == sorted(matches)
+
+    def test_merge_does_not_merge_contained_matches_of_different_rules_with_same_licensing(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
         r2 = Rule(text_file='r2', licenses=['apache-2.0', 'gpl'])
 
-        m1 = LicenseMatch(rule=r1, qspan=Span(1, 5), ispan=Span(1, 6))
+        m1 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
         m2 = LicenseMatch(rule=r2, qspan=Span(1, 6), ispan=Span(1, 6))
 
-        matches = LicenseMatch.merge([m1, m2])
-        assert [m2] == matches
+        matches = merge_matches([m1, m2])
+        assert sorted([m1, m2]) == sorted(matches)
 
-    def test_merge_cannot_merge_overallping_matches_of_same_licensings(self):
+    def test_files_does_filter_contained_matches_of_different_rules_with_same_licensing(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
+        r2 = Rule(text_file='r2', licenses=['apache-2.0', 'gpl'])
+
+        m1 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
+        m2 = LicenseMatch(rule=r2, qspan=Span(1, 6), ispan=Span(1, 6))
+
+        matches, discarded = filter_contained_matches([m1, m2])
+        assert [m2] == matches
+        assert [m1] == discarded
+
+    def test_merge_does_not_merge_overlaping_matches_with_same_licensings(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
         r2 = Rule(text_file='r2', licenses=['apache-2.0', 'gpl'])
 
@@ -249,19 +264,43 @@ class TestLicenseMatchMerge(FileBasedTesting):
         same_span1 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
         same_span2 = LicenseMatch(rule=r2, qspan=Span(1, 6), ispan=Span(1, 6))
 
-        result = LicenseMatch.merge([overlap, same_span1, same_span2])
+        result = merge_matches([overlap, same_span1, same_span2])
         expected = [
-            LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5)),
-            LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6)),
+            LicenseMatch(rule=r1, qspan=Span(0, 6), ispan=Span(0, 6)),
+            LicenseMatch(rule=r2, qspan=Span(1, 6), ispan=Span(1, 6)),
         ]
-        assert expected == result
+        assert sorted(expected) == sorted(result)
+
+    def test_filter_does_filter_overlaping_matches_with_same_licensings(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
+        r2 = Rule(text_file='r2', licenses=['apache-2.0', 'gpl'])
+
+        overlap = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
+        same_span1 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
+        same_span2 = LicenseMatch(rule=r2, qspan=Span(1, 6), ispan=Span(1, 6))
+
+        matches, discarded = filter_contained_matches([overlap, same_span1, same_span2])
+        assert [overlap] == matches
+        assert discarded
+
+    def test_filter_prefers_longer_overlaping_matches(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
+        r2 = Rule(text_file='r2', licenses=['apache-2.0', 'gpl'])
+
+        overlap = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
+        same_span1 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
+        same_span2 = LicenseMatch(rule=r2, qspan=Span(1, 8), ispan=Span(1, 8))
+
+        matches, discarded = filter_contained_matches([overlap, same_span1, same_span2])
+        assert [same_span2] == matches
+        assert discarded
 
     def test_merge_contiguous_touching_matches_in_sequence(self):
         r1 = Rule(_text='r1', licenses=['apache-2.0', 'gpl'])
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
         m2 = LicenseMatch(rule=r1, qspan=Span(3, 6), ispan=Span(3, 6))
 
-        result = LicenseMatch.merge([m1, m2])
+        result = merge_matches([m1, m2])
         match = result[0]
         assert LicenseMatch(rule=r1, qspan=Span(0, 6), ispan=Span(0, 6)) == match
 
@@ -271,7 +310,7 @@ class TestLicenseMatchMerge(FileBasedTesting):
         m2 = LicenseMatch(rule=r1, qspan=Span(3, 6), ispan=Span(3, 6))
         m5 = LicenseMatch(rule=r1, qspan=Span(7, 8), ispan=Span(7, 8))
 
-        result = LicenseMatch.merge([m1, m2, m5])
+        result = merge_matches([m1, m2, m5])
         assert [LicenseMatch(rule=r1, qspan=Span(0, 8), ispan=Span(0, 8))] == result
 
     def test_merge_should_not_merge_repeated_matches_out_of_sequence(self):
@@ -280,20 +319,21 @@ class TestLicenseMatchMerge(FileBasedTesting):
         m1 = LicenseMatch(rule=rule, matcher='chunk1', qspan=Span(0, 7), ispan=Span(0, 7))
         m2 = LicenseMatch(rule=rule, matcher='chunk2', qspan=Span(8, 15), ispan=Span(0, 7))
         m3 = LicenseMatch(rule=rule, matcher='chunk3', qspan=Span(16, 23), ispan=Span(0, 7))
-        result = LicenseMatch.merge([m1, m2, m3])
+        result = merge_matches([m1, m2, m3])
         assert [m1, m2, m3] == result
 
-    def test_merge_merges_single_contained_match(self):
+    def test_merge_merges_contained_and_overlapping_match(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
         contained = LicenseMatch(rule=r1, qspan=Span(1, 4), ispan=Span(1, 4))
-        m5 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
-        assert contained in m5
+        overlapping = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
+        assert contained in overlapping
         assert contained in m1
-        result = LicenseMatch.merge([m1, contained, m5])
-        assert [m1, m5] == result
+        result = merge_matches([m1, contained, overlapping])
+        expected = [LicenseMatch(rule=r1, qspan=Span(0, 6), ispan=Span(0, 6))]
+        assert expected == result
 
-    def test_merge_merge_multiple_contained_matches(self):
+    def test_merge_does_not_merge_multiple_contained_matches_across_rules(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
 
@@ -306,10 +346,43 @@ class TestLicenseMatchMerge(FileBasedTesting):
         r5 = Rule(text_file='r5', licenses=['apache-2.0', 'gpl'])
         m5 = LicenseMatch(rule=r5, qspan=Span(1, 6), ispan=Span(1, 6))
 
-        result = LicenseMatch.merge([m1, contained1, contained2, m5])
-        assert [LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5)), m5] == result
+        result = merge_matches([m1, contained1, contained2, m5])
+        assert sorted([m1, contained1, contained2, m5]) == sorted(result)
 
-    def test_merge_merge_matches_with_same_spans_if_licenses_are_identical(self):
+    def test_filter_does_not_filter_multiple_contained_matches_across_rules(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
+
+        r2 = Rule(text_file='r2', licenses=['apache-2.0', 'gpl'])
+        contained1 = LicenseMatch(rule=r2, qspan=Span(1, 2), ispan=Span(1, 2))
+
+        r3 = Rule(text_file='r3', licenses=['apache-2.0', 'gpl'])
+        contained2 = LicenseMatch(rule=r3, qspan=Span(3, 4), ispan=Span(3, 4))
+
+        r5 = Rule(text_file='r5', licenses=['apache-2.0', 'gpl'])
+        m5 = LicenseMatch(rule=r5, qspan=Span(1, 6), ispan=Span(1, 6))
+
+        result, _discarded = filter_contained_matches([m1, contained1, contained2, m5])
+        assert [m1] == result
+
+    def test_filter_multiple_contained_matches(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
+
+        r2 = Rule(text_file='r2', licenses=['apache-2.0', 'gpl'])
+        contained1 = LicenseMatch(rule=r2, qspan=Span(1, 2), ispan=Span(1, 2))
+
+        r3 = Rule(text_file='r3', licenses=['apache-2.0', 'gpl'])
+        contained2 = LicenseMatch(rule=r3, qspan=Span(3, 4), ispan=Span(3, 4))
+
+        r5 = Rule(text_file='r5', licenses=['apache-2.0', 'gpl'])
+        m5 = LicenseMatch(rule=r5, qspan=Span(1, 6), ispan=Span(1, 6))
+
+        matches, discarded = filter_contained_matches([m1, contained1, contained2, m5])
+        assert [m1] == matches
+        assert sorted([m5, contained1, contained2, ]) == sorted(discarded)
+
+    def test_merge_does_not_merge_matches_with_same_spans_if_licenses_are_identical_but_rule_differ(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0'])
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
         m5 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
@@ -317,11 +390,45 @@ class TestLicenseMatchMerge(FileBasedTesting):
         r2 = Rule(text_file='r2', licenses=['apache-2.0'])
         m2 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
 
-        matches = LicenseMatch.merge([m1, m2, m5])
+        matches = merge_matches([m1, m2, m5])
+        assert sorted([LicenseMatch(rule=r1, qspan=Span(0, 6), ispan=Span(0, 6)), m2]) == sorted(matches)
 
-        assert sorted([m5, m1]) == sorted(matches)
+    def test_filter_filters_matches_with_same_spans_if_licenses_are_identical_but_rule_differ(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0'])
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
+        m5 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
 
-    def test_merge_merges_matches_with_same_spans_if_licenses_are_the_same_but_have_different_licenses_ordering(self):
+        r2 = Rule(text_file='r2', licenses=['apache-2.0'])
+        m2 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
+
+        matches, discarded = filter_contained_matches([m1, m2, m5])
+
+        assert [m5] == matches
+        assert discarded
+
+    def test_merge_then_filter_matches_with_same_spans_if_licenses_are_identical_but_rule_differ(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0'])
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
+        m5 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
+
+        r2 = Rule(text_file='r2', licenses=['apache-2.0'])
+        m2 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
+
+        matches = merge_matches([m1, m2, m5])
+        matches, discarded = filter_contained_matches(matches)
+
+        assert [LicenseMatch(rule=r1, qspan=Span(0, 6), ispan=Span(0, 6))] == matches
+        assert discarded
+
+    def test_merge_overlapping_matches(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0'])
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
+        m2 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
+
+        matches = merge_matches([m1, m2])
+        assert [LicenseMatch(rule=r1, qspan=Span(0, 6), ispan=Span(0, 6))] == matches
+
+    def test_merge_does_not_merges_matches_with_same_spans_if_licenses_are_the_same_but_have_different_licenses_ordering(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
         m5 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
@@ -329,30 +436,76 @@ class TestLicenseMatchMerge(FileBasedTesting):
         r2 = Rule(text_file='r2', licenses=['gpl', 'apache-2.0'])
         m2 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
 
-        result = LicenseMatch.merge([m1, m2, m5])
-        assert sorted([m5, m1]) == sorted(result)
+        result = merge_matches([m1, m2, m5])
+        assert sorted([LicenseMatch(rule=r1, qspan=Span(0, 6), ispan=Span(0, 6)), m2]) == sorted(result)
+
+    def test_merge_does_not_merges_matches_with_same_spans_if_rules_are_different(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
+        m5 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
+
+        r2 = Rule(text_file='r2', licenses=['apache-2.0', 'gpl'])
+        m2 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
+
+        result = merge_matches([m1, m2, m5])
+        assert sorted([LicenseMatch(rule=r1, qspan=Span(0, 6), ispan=Span(0, 6)), m2]) == sorted(result)
 
     def test_merge_merges_duplicate_matches(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0'])
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 8), ispan=Span(0, 8))
         m2 = LicenseMatch(rule=r1, qspan=Span(0, 8), ispan=Span(0, 8))
 
-        matches = LicenseMatch.merge([m1, m2])
-        assert [m1] == matches or [m2] == matches
+        matches = merge_matches([m1, m2])
+        assert ([m1] == matches) or ([m2] == matches)
+
+    def test_merge_does_not_merge_overlapping_matches_in_sequence_with_assymetric_overlap(self):
+        r1 = Rule(text_file='r1', licenses=[u'lgpl-2.0-plus'])
+
+        # ---> merge_matches: current: LicenseMatch<'3-seq', lines=(9, 28), 'lgpl-2.0-plus_9.RULE', u'lgpl-2.0-plus', choice=False, score=87.5, qlen=126, ilen=126, hilen=20, rlen=144, qreg=(50, 200), ireg=(5, 142), qspan=Span(50, 90)|Span(92, 142)|Span(151, 182)|Span(199, 200), ispan=Span(5, 21)|Span(23, 46)|Span(48, 77)|Span(79, 93)|Span(95, 100)|Span(108, 128)|Span(130, 142), hispan=Span(10)|Span(14)|Span(18)|Span(24)|Span(27)|Span(52)|Span(57)|Span(61)|Span(65, 66)|Span(68)|Span(70)|Span(80)|Span(88)|Span(96)|Span(111)|Span(113)|Span(115)|Span(131)|Span(141)>
+        # ---> merge_matches: next:    LicenseMatch<'2-aho', lines=(28, 44), 'lgpl-2.0-plus_9.RULE', u'lgpl-2.0-plus', choice=False, score=100.0, qlen=144, ilen=144, hilen=21, rlen=144, qreg=(198, 341), ireg=(0, 143), qspan=Span(198, 341), ispan=Span(0, 143), hispan=Span(1)|Span(10)|Span(14)|Span(18)|Span(24)|Span(27)|Span(52)|Span(57)|Span(61)|Span(65, 66)|Span(68)|Span(70)|Span(80)|Span(88)|Span(96)|Span(111)|Span(113)|Span(115)|Span(131)|Span(141)>
+        #     ---> ###merge_matches: next overlaps in sequence current, merged as new: LicenseMatch<'3-seq 2-aho', lines=(9, 44), 'lgpl-2.0-plus_9.RULE', u'lgpl-2.0-plus', choice=False, score=100.0, qlen=268, ilen=144, hilen=21, rlen=144, qreg=(50, 341), ireg=(0, 143), qspan=Span(50, 90)|Span(92, 142)|Span(151, 182)|Span(198, 341), ispan=Span(0, 143), his
+
+        # ---> merge_matches: current: qlen=126, ilen=126, hilen=20, rlen=144, qreg=(50, 200), ireg=(5, 142)
+        # ---> merge_matches: next:    qlen=144, ilen=144, hilen=21, rlen=144, qreg=(198, 341), ireg=(0, 143)
+
+        m1 = LicenseMatch(
+            rule=r1,
+            qspan=Span(50, 90) | Span(92, 142) | Span(151, 182) | Span(199, 200),
+            ispan=
+                Span(5, 21) | Span(23, 46) | Span(48, 77) | Span(79, 93) |
+                Span(95, 100) | Span(108, 128) | Span(130, 142),
+            hispan=
+                Span(10) | Span(14) | Span(18) | Span(24) | Span(27) | Span(52) |
+                Span(57) | Span(61) | Span(65, 66) | Span(68) | Span(70) | Span(80) |
+                Span(88) | Span(96) | Span(111) | Span(113) | Span(115) | Span(131) |
+                Span(141),
+        )
+        m2 = LicenseMatch(
+            rule=r1,
+            qspan=Span(198, 341),
+            ispan=Span(0, 143),
+            hispan=
+                Span(1) | Span(10) | Span(14) | Span(18) | Span(24) | Span(27) |
+                Span(52) | Span(57) | Span(61) | Span(65, 66) | Span(68) | Span(70) |
+                Span(80) | Span(88) | Span(96) | Span(111) | Span(113) | Span(115) |
+                Span(131) | Span(141))
+
+        matches = merge_matches([m1, m2])
+        assert [m1, m2] == matches
 
 
 class TestLicenseMatchFilter(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def test_filter_matches_filters_multiple_nested_contained_matches(self):
+    def test_filter_matches_filters_multiple_nested_contained_matches_and_large_overlapping(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
-        overlap = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
+        large_overlap = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
         contained = LicenseMatch(rule=r1, qspan=Span(1, 4), ispan=Span(1, 4))
         in_contained = LicenseMatch(rule=r1, qspan=Span(2, 3), ispan=Span(2, 3))
-        result, discarded = filter_matches([m1, contained, in_contained, overlap])
+        result, discarded = filter_contained_matches([m1, contained, in_contained, large_overlap])
         assert [m1] == result
-        assert [overlap] == discarded
+        assert discarded
 
     def test_filter_matches_filters_non_contiguous_or_overlapping__but_contained_matches(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
@@ -362,9 +515,9 @@ class TestLicenseMatchFilter(FileBasedTesting):
         m4 = LicenseMatch(rule=r1, qspan=Span(0, 7), ispan=Span(0, 7))
         m5 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
 
-        result, discarded = filter_matches([m1, m2, m3, m4, m5])
+        result, discarded = filter_contained_matches([m1, m2, m3, m4, m5])
         assert [m4] == result
-        assert [] == discarded
+        assert discarded
 
     def test_filter_matches_filters_non_contiguous_or_overlapping_contained_matches_with_touching_boundaries(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
@@ -385,9 +538,9 @@ class TestLicenseMatchFilter(FileBasedTesting):
         r4 = Rule(text_file='r4', licenses=['apache-2.0', 'gpl'])
         m4 = LicenseMatch(rule=r4, qspan=Span(0, 7), ispan=Span(0, 7))
 
-        result, discarded = filter_matches([m1, m2, m3, m4, m5, m6])
+        result, discarded = filter_contained_matches([m1, m2, m3, m4, m5, m6])
         assert [m4] == result
-        assert [] == discarded
+        assert discarded
 
     def test_filter_matches_does_filter_matches_with_contained_spans_if_licenses_are_different(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0'])
@@ -399,40 +552,31 @@ class TestLicenseMatchFilter(FileBasedTesting):
         r3 = Rule(text_file='r3', licenses=['apache-1.1'])
         m3 = LicenseMatch(rule=r3, qspan=Span(0, 2), ispan=Span(0, 2))
 
-        matches, discarded = filter_matches([m1, m2, m3])
-        assert [m2, m1] == matches
-        assert[] == discarded
+        matches, discarded = filter_contained_matches([m1, m2, m3])
+        assert [m2] == matches
+        assert discarded
 
-    def test_filter_matches_filters_matches_with_partially_overlapping_spans_if_license_are_the_same(self):
+    def test_filter_matches_filters_matches_with_medium_overlap_only_if_license_are_the_same(self):
         r1 = Rule(text_file='r1', licenses=['apache-1.1'])
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 10), ispan=Span(0, 10))
-        m2 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
+        m2 = LicenseMatch(rule=r1, qspan=Span(3, 11), ispan=Span(3, 11))
+
         r2 = Rule(text_file='r2', licenses=['gpl', 'apache-2.0'])
-        m3 = LicenseMatch(rule=r2, qspan=Span(5, 15), ispan=Span(5, 15))
+        m3 = LicenseMatch(rule=r2, qspan=Span(7, 15), ispan=Span(7, 15))
 
-        result, discarded = filter_matches([m1, m2, m3])
-        assert [m1, m3] == result
-        assert[] == discarded
+        result, discarded = filter_contained_matches([m1, m2, m3])
+        assert sorted([m1, m3]) == sorted(result)
+        assert discarded
 
-    # note: We do not yet merge partial matches
-    @expectedFailure
-    def test_filter_matches_filters_partially_contained_matches_with_significant_overlap(self):
+    def test_filter_matches_handles_interlaced_matches_with_overlap_and_same_license(self):
         rule_dir = self.get_test_loc('match_filter/rules')
         idx = index.LicenseIndex(load_rules(rule_dir))
-
+        rules = {r.identifier: r for r in idx.rules_by_rid}
         query_loc = self.get_test_loc('match_filter/query')
         matches = idx.match(location=query_loc)
-        assert 2 == len(matches)
+        expected = [
+            # filtered: LicenseMatch(matcher='3-seq', rule=rules['rule1.RULE'], qspan=Span(4, 47) | Span(50, 59), ispan=Span(1, 53)),
+            LicenseMatch(matcher='2-aho', rule=rules['rule2.RULE'], qspan=Span(24, 86), ispan=Span(0, 62)),
+        ]
 
-
-def print_matched_texts(match, location=None, query_string=None, idx=None):
-    """
-    Convenience function to print matched texts for tracing and debugging tests.
-    """
-    qtext, itext = get_texts(match, location=location, query_string=query_string, idx=idx)
-    print()
-    print('Matched qtext:')
-    print(qtext)
-    print()
-    print('Matched itext:')
-    print(itext)
+        assert expected == matches

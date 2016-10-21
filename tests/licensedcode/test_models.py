@@ -77,7 +77,6 @@ class TestRule(FileBasedTesting):
         expected = ['a', 'one', 'a', 'two', 'a', 'three']
         assert expected == list(test_rule.tokens())
         assert 6 == test_rule.length
-        assert set([2]) == test_rule.gaps
 
     def test_create_plain_rule_with_text_file(self):
         def create_test_file(text):
@@ -89,7 +88,6 @@ class TestRule(FileBasedTesting):
         test_rule = models.Rule(text_file=create_test_file('A one. A two. A three.'))
         expected = ['a', 'one', 'a', 'two', 'a', 'three']
         assert expected == list(test_rule.tokens())
-        assert set() == test_rule.gaps
         assert 6 == test_rule.length
 
     def test_load_rules(self):
@@ -119,7 +117,6 @@ class TestRule(FileBasedTesting):
         test_text = '''{{gap0}}zero one two three{{gap2}}'''
         r1 = models.Rule(_text=test_text)
         assert ['zero', 'one', 'two', 'three'] == list(r1.tokens())
-        assert set() == r1.gaps
 
     def test_rule_tokens_and_gaps_are_computed_correctly(self):
         test_text = '''I hereby abandon any{{SAX 2.0 (the)}}, and Release all of {{the SAX 2.0 }}source code of his'''
@@ -130,9 +127,6 @@ class TestRule(FileBasedTesting):
 
         rule_tokens = list(rule.tokens(lower=False))
         assert ['I', 'hereby', 'abandon', 'any', 'and', 'Release', 'all', 'of', 'source', 'code', 'of', 'his'] == rule_tokens
-
-        gaps = rule.gaps
-        assert set([3, 7]) == gaps
 
     def test_negative(self):
         assert models.Rule(_text='test_text').negative()
@@ -145,7 +139,7 @@ class TestRule(FileBasedTesting):
         r2_text = u'licensed under the GPL, licensed under the GPL' * 10
         r2 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r2_text)
         _idx = index.LicenseIndex([r1, r2])
-        assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8, max_gap_skip=0) == r1.thresholds()
+        assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8, max_gap_skip=1) == r1.thresholds()
         assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4, max_gap_skip=15) == r2.thresholds()
 
         r1_text = u'licensed under the GPL,{{}} licensed under the GPL'

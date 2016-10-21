@@ -11,21 +11,14 @@
 // for the specific language governing rights and limitations under the
 // License.
 // 
-// The Original Code is {{the Public Suffix List.}}
+// The Original Code is  the Public Suffix List. 
 // 
 // The Initial Developer of the Original Code is
-// {{Jo Hermans &#x3C;jo.hermans@gmail.com&#x3E;. }}
-// Portions created by the Initial Developer are {{Copyright (C) 2007 }}
-// {{the Initial Developer.}} All Rights Reserved.
+// Portions created by the Initial Developer are  Copyright (C) 
+//  the Initial Developer.  All Rights Reserved.
 // 
-// {{Contributor(s): 
-//   Ruben Arakelyan &#x3C;ruben@rubenarakelyan.com&#x3E;
-//   Gervase Markham &#x3C;gerv@gerv.net&#x3E;
-//   Pamela Greene &#x3C;pamg.bugs@gmail.com&#x3E;
-//   David Triendl &#x3C;david@triendl.name&#x3E;
-//   Jothan Frakes &#x3C;jothan@gmail.com&#x3E;
-//   The kind representatives of many TLD registries
-// }}
+//  Contributor(s): 
+//  
 // Alternatively, the contents of this file may be used under the terms of
 // either the GNU General Public License Version 2 or later (the "GPL"), or
 // the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),

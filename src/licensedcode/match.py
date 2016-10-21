@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, division, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import division
 
 from array import array
 from functools import partial
@@ -41,19 +43,24 @@ from licensedcode import MAX_DIST
 LicenseMatch data structure and matches merging and filtering routines.
 """
 
-
 TRACE = False
-TRACE_REPR = False
-TRACE_REFINE = False
-TRACE_REFINE_SMALL = False
 TRACE_FILTER = False
+TRACE_FILTER_CONTAINS = False
+TRACE_REFINE = False
 TRACE_MERGE = False
+TRACE_REFINE_SMALL = False
+TRACE_REFINE_SOLID = False
+TRACE_SPAN_DETAILS = False
 TRACE_MERGE_TEXTS = False
+
+
+# include or not unmatched tokens in debug texts
+INCLUDE_UNMATCHED_TEXTS = True
 
 
 def logger_debug(*args): pass
 
-if TRACE:
+if TRACE or TRACE_FILTER or TRACE_MERGE:
     import logging
     import sys
 
@@ -64,11 +71,6 @@ if TRACE:
 
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
-
-
-# When soring matches for merging or refining, we divide starts and length by
-# ROUNDING with an intergerb division to round values in coarse bands
-ROUNDING = 10
 
 
 # FIXME: Implement each ordering functions. From the Python docs: Note: While
@@ -99,9 +101,9 @@ class LicenseMatch(object):
            Optional: if not provided, the `lines` start and end tuple will be (0, 0) and no line information will be available.
          - matcher: a string indicating which matching procedure this match was created with. Used for debugging and testing only.
 
-         Note the relationship between is the qspan and ispan is such that:
+         Note that the relationship between is the qspan and ispan is such that:
          - they always have the exact same number of items but when sorted each value at an index may be different
-         - the nth position when sorted is such that the token value is equal
+         - the nth position when sorted by position is such that their token value is equal for this position
         """
         self.rule = rule
         self.qspan = qspan
@@ -113,39 +115,39 @@ class LicenseMatch(object):
         self.query_run_start = query_run_start
         self.matcher = matcher
 
-    def __repr__(self):
+    def __repr__(self, trace=TRACE_SPAN_DETAILS):
 
         spans = ''
-        if TRACE_REPR:
+        if trace:
+            hispan = self.hispan
             qspan = self.qspan
             ispan = self.ispan
-            spans = 'qspan=%(qspan)r, ispan=%(ispan)r, ' % locals()
+            spans = ', qspan=%(qspan)r, ispan=%(ispan)r, hispan=%(hispan)r' % locals()
 
         rep = dict(
+            matcher=self.matcher,
+            spans=spans,
             rule_id=self.rule.identifier,
-            rule_licenses=', '.join(sorted(self.rule.licenses)),
+            licenses=', '.join(self.rule.licenses),
+            choice=self.rule.license_choice,
             score=self.score(),
-
             qlen=self.qlen(),
             ilen=self.ilen(),
             hilen=self.hilen(),
             qreg=(self.qstart, self.qend),
-            spans=spans,
             rlen=self.rule.length,
             ireg=(self.istart, self.iend),
-
-            lines=self.lines,
-            matcher=self.matcher,
+            lines=self.lines(),
         )
-        return ('LicenseMatch<%(rule_id)r, %(rule_licenses)r, '
-               'score=%(score)r, qlen=%(qlen)r, ilen=%(ilen)r, hilen=%(hilen)r, rlen=%(rlen)r, '
-               'qreg=%(qreg)r, ireg=%(ireg)r, '
-               '%(spans)s'
-               'lines=%(lines)r, %(matcher)r>') % rep
+        return ('LicenseMatch<%(matcher)r, lines=%(lines)r, '
+                '%(rule_id)r, %(licenses)r, choice=%(choice)r, '
+                'score=%(score)r, qlen=%(qlen)r, ilen=%(ilen)r, hilen=%(hilen)r, rlen=%(rlen)r, '
+                'qreg=%(qreg)r, ireg=%(ireg)r'
+                '%(spans)s>') % rep
 
     def __eq__(self, other):
         """
-        Strict equality.
+        Strict equality is based on licensing not matched rule.
         """
         return (isinstance(other, LicenseMatch)
             and self.same_licensing(other)
@@ -153,27 +155,24 @@ class LicenseMatch(object):
             and self.ispan == other.ispan
         )
 
-    def same(self, other):
-        """
-        Return True if other has the same licensing, score and spans.
-        """
-        return (isinstance(other, LicenseMatch)
-            and self.same_licensing(other)
-            and self.qspan == other.qspan
-            and self.ispan == other.ispan)
-
     def same_licensing(self, other):
         """
-        Return True if other has the same detected license keys.
+        Return True if other has the same licensing.
         """
         return self.rule.same_licensing(other.rule)
 
-    def __lt__(self, other):
-        return self.qstart < other.qstart
+    def licensing_contains(self, other):
+        """
+        Return True if other licensing is contained is this match licensing.
+        """
+        return self.rule.licensing_contains(other.rule)
 
     @property
     def qstart(self):
         return self.qspan.start
+
+    def __lt__(self, other):
+        return self.qstart < other.qstart
 
     @property
     def qend(self):
@@ -184,9 +183,6 @@ class LicenseMatch(object):
         Return the length of the match as the number of matched query tokens.
         """
         return len(self.qspan)
-
-    def qmagnitude(self):
-        return self.qspan.magnitude()
 
     @property
     def istart(self):
@@ -202,16 +198,9 @@ class LicenseMatch(object):
         """
         return len(self.ispan)
 
-    def imagnitude(self):
-        return self.ispan.magnitude()
-
     @property
     def histart(self):
         return self.hispan.start
-
-    @property
-    def hiend(self):
-        return self.hispan.end
 
     def hilen(self):
         """
@@ -219,21 +208,23 @@ class LicenseMatch(object):
         """
         return len(self.hispan)
 
-    @property
     def lines(self):
+        """
+        Return a tuple of start and end line for this match.
+        """
         return self.line_by_pos.get(self.qstart, 0), self.line_by_pos.get(self.qend, 0)
 
     def __contains__(self, other):
         """
-        Return True if every other qspan and ispan are contained in any self qspan.
+        Return True if qspan contains other.qspan and ispan contains other.ispan.
         """
-        return self.contains_qspan(other) and self.contains_ispan(other)
+        return other.qspan in self.qspan and other.ispan in self.ispan
 
-    def contains_qspan(self, other):
-        return other.qspan.issubset(self.qspan)
-
-    def contains_ispan(self, other):
-        return other.ispan.issubset(self.ispan)
+    def qcontains(self, other):
+        """
+        Return True if qspan contains other.qspan.
+        """
+        return other.qspan in self.qspan
 
     def qdistance_to(self, other):
         """
@@ -249,139 +240,52 @@ class LicenseMatch(object):
         """
         return self.ispan.distance_to(other.ispan)
 
-    def qoverlap(self, other):
-        return self.qspan.overlap(other.qspan)
-
-    def ioverlap(self, other):
-        return self.ispan.overlap(other.ispan)
-
     def overlap(self, other):
         """
-        Return True if this match spans both overlap with other match spans.
+        Return the number of overlaping positions with other.
         """
-        return self.qoverlap(other) and self.ioverlap(other)
+        return self.qspan.overlap(other.qspan)
 
-    def qtouch(self, other):
-        return self.qspan.touch(other.qspan)
-
-    def itouch(self, other):
-        return self.ispan.touch(other.ispan)
-
-    def touch(self, other):
+    def coverage(self):
         """
-        Return True if this match spans both touch other match spans.
+        Return the coverage of this match to the matched rule as a float between 0 and 1.
         """
-        return self.qtouch(other) and self.itouch(other)
+        if not self.rule.length:
+            return 0
+        return self.ilen() / self.rule.length
 
-    def qsurround(self, other):
-        return self.qspan.surround(other.qspan)
+    def score(self):
+        """
+        Return the score for this match as a float between 0 and 100.
 
-    def isurround(self, other):
-        return self.ispan.surround(other.ispan)
+        This is a ratio of matched tokens to the rule length and an indication of
+        coverage of match with respect to the matched rule.
+        """
+        # TODO: compute a better score based tf/idf, BM25, applying ratio to low tokens, etc
+        return round(self.coverage() * 100, 2)
 
-    def is_qafter(self, other):
-        return self.qspan.is_after(other.qspan)
+    def surround(self, other):
+        """
+        Return True if this match query span surrounds other other match query span.
 
-    def is_iafter(self, other):
-        return self.ispan.is_after(other.ispan)
+        This is different from containment. A matched query region can surround
+        another matched query region and have no positions in common with the
+        surrounded match.
+        """
+        return self.qstart <= other.qstart and self.qend >= other.qend
 
     def is_after(self, other):
         """
         Return True if this match spans are strictly after other match spans.
         """
-        return self.is_qafter(other) and self.is_iafter(other)
-
-    def subtract(self, other):
-        """
-        Subtract an other match from this match by removing overlapping span
-        items present in both matches from this match.
-        """
-        self.qspan.difference_update(other.qspan)
-        self.ispan.difference_update(other.ispan)
-        return self
-
-    @staticmethod
-    def merge(matches, max_dist=MAX_DIST):
-        """
-        Merge overlapping, touching or close-by matches in the given iterable of
-        matches. Return a new list of merged matches if they can be merged.
-        Matches that cannot be merged are returned as-is.
-
-        Only matches for the same rules can be merged.
-
-        The overlap and touch is considered using both the qspan and ispan.
-
-        The maximal merge is always returned and eventually a single match per
-        rule is returned if all matches for that rule can be merged.
-
-        For being merged two matches must also be in increasing query and index positions.
-        """
-        # FIXME: longer and denser matches starting at the same qspan should
-        # be sorted first
-
-        # only merge matches with the same licensing_identifier
-        # iterate on matches grouped by licensing_identifier, one licensing_identifier at a time.
-        # we divide by ROUNDING with an intergerb division to round values in coarse bands
-        sorter = lambda m: (m.rule.licensing_identifier, m.qspan.start , -m.qlen(), -m.ilen())
-        matches = sorted(matches, key=sorter)
-        merged = []
-        for _rid, rule_matches in groupby(matches, key=lambda m: m.rule.licensing_identifier):
-            rule_matches = list(rule_matches)
-            i = 0
-            if TRACE_MERGE:
-                logger_debug('merge_match: processing rule:', rule_matches[0].rule.identifier)
-
-            # compare two matches in the sorted sequence: current_match and the next one
-            while i < len(rule_matches) - 1:
-                current_match = rule_matches[i]
-                j = i + 1
-                if TRACE_MERGE: logger_debug('merge_match: current_match:', current_match)
-
-                while j < len(rule_matches):
-                    next_match = rule_matches[j]
-                    if TRACE_MERGE: logger_debug(' merge_match: next_match:', next_match)
-
-                    if next_match.qdistance_to(current_match) >= max_dist or next_match.idistance_to(current_match) >= max_dist:
-                        break
-
-                    # remove surrounded matches
-                    if current_match.qsurround(next_match):
-                        # current_match.update(next_match)
-                        if TRACE_MERGE: logger_debug('    ==> NEW MERGED 1:', current_match)
-                        if TRACE_MERGE_TEXTS: print('MERGE    ==> surround:\n',
-                                               current_match, '\n', get_match_itext(current_match),
-                                               '\nnext:\n', get_match_itext(next_match))
-                        del rule_matches[j]
-
-                    # next_match is strictly in increasing sequence and within distance
-                    # and same rule
-                    elif (next_match.is_after(current_match)
-                    and current_match.rule == next_match.rule
-                    and next_match.qdistance_to(current_match) < max_dist
-                    and next_match.idistance_to(current_match) < max_dist):
-                        current_match.update(next_match)
-                        if TRACE_MERGE: logger_debug('    ==> NEW MERGED 2:', current_match)
-                        if TRACE_MERGE_TEXTS: print('MERGE    ==> increasing within dist\n',
-                                               current_match, '\n', get_match_itext(current_match),
-                                               '\nnext:\n', get_match_itext(next_match))
-                        del rule_matches[j]
-
-                    else:
-                        j += 1
-                i += 1
-            merged.extend(rule_matches)
-        return merged
+        return self.qspan.is_after(other.qspan) and self.ispan.is_after(other.ispan)
 
     def combine(self, other):
         """
-        Return a new match combining self and an other match.
+        Return a new match object combining self and an other match.
         """
-        same_rule = self.rule == other.rule
-        # FIXME: we may be combining apples and oranges by considering same licensing too!
-        same_licensing = self.same_licensing(other)
-        if not (same_rule or same_licensing):
-
-            raise TypeError('Cannot combine matches with different rules or licensing: from: %(self)r, to: %(other)r' % locals())
+        if self.rule != other.rule:
+            raise TypeError('Cannot combine matches with different rules: from: %(self)r, to: %(other)r' % locals())
 
         if other.matcher not in self.matcher:
             newmatcher = ' '.join([self.matcher, other.matcher])
@@ -398,12 +302,11 @@ class LicenseMatch(object):
                                 line_by_pos=line_by_pos,
                                 query_run_start=min(self.query_run_start, other.query_run_start),
                                 matcher=newmatcher)
-
         return combined
 
     def update(self, other):
         """
-        Update self with other match and return self.
+        Update self with other match and return the updated self. Do not create a new object.
         """
         combined = self.combine(other)
         self.qspan = combined.qspan
@@ -412,7 +315,6 @@ class LicenseMatch(object):
         self.line_by_pos = combined.line_by_pos
         self.matcher = combined.matcher
         self.query_run_start = min(self.query_run_start, other.query_run_start)
-
         return self
 
     def rebase(self, new_query_start, new_query_end, line_by_pos, matcher):
@@ -428,19 +330,8 @@ class LicenseMatch(object):
             hispan=Span(self.hispan),
             line_by_pos=line_by_pos,
             query_run_start=new_query_start,
-            matcher=' '.join([self.matcher.replace(cache.MATCH_TYPE, '').strip(), matcher]),
+            matcher=' '.join([self.matcher.replace(cache.MATCH_CACHE, '').strip(), matcher]),
         )
-
-    def score(self):
-        """
-        Return the score for this match as a float between 0 and 100.
-        This is a ratio of matched tokens to the rule length.
-        """
-        # TODO: compute a better score based tf/idf, BM25, applying ratio to low tokens, etc
-        if not self.rule.length:
-            return 0
-        score = self.ilen() / self.rule.length
-        return round(score * 100, 2)
 
     def small(self):
         """
@@ -474,64 +365,299 @@ class LicenseMatch(object):
         matched_hash = md5(matched_itokens.tostring()).digest()
         return idx.false_positive_rid_by_hash.get(matched_hash)
 
-def filter_matches(matches):
-    """
-    Return a filtered list of LicenseMatch given a `matches` list of
-    LicenseMatch by removing duplicated or superfluous matches based on matched
-    positions relation such as sequence, containment, touch, overlap, same
-    licensing.
 
-    Matches that are entirely contained in another bigger match are removed.
-    When more than one matched position matches the same license(s), only one
-    match of this set is kept.
+def merge_matches(matches, max_dist=MAX_DIST):
     """
-    matches = sorted(matches, key=lambda m: (m.qstart // ROUNDING, -m.qlen(), -m.ilen()))
+    Merge matches to the same rule in a sequence of matches. Return a new list
+    of merged matches if they can be merged. Matches that cannot be merged are
+    returned as-is.
+    For being merged two matches must also be in increasing query and index positions.
+    """
 
-    if TRACE_FILTER: print('filter_matches: number of matches to process:', len(matches))
+    # shortcut for single matches
+    if len(matches) < 2:
+        return matches
+
+    # only merge matches with the same rule: sort then group by rule
+    # for the same rule, sort on start, longer high, longer match, matcher type
+    sorter = lambda m: (m.rule.identifier, m.qspan.start, -m.hilen(), -m.qlen(), m.matcher)
+    all_matches = sorted(matches, key=sorter)
+
+
+    matches_by_rule = [(rid, list(rule_matches)) for rid, rule_matches
+                        in groupby(all_matches, key=lambda m: m.rule.identifier)]
+
+    if TRACE_MERGE: print('merge_matches: number of matches to process:', len(matches))
+
+    merged = []
+    for rid, matches in matches_by_rule:
+        if TRACE_MERGE: logger_debug('merge_matches: processing rule:', rid)
+
+        # compare two matches in the sorted sequence: current and next
+        i = 0
+        while i < len(matches) - 1:
+            j = i + 1
+            while j < len(matches):
+                current_match = matches[i]
+                next_match = matches[j]
+                if TRACE_MERGE: logger_debug('---> merge_matches: current:', current_match)
+                if TRACE_MERGE: logger_debug('---> merge_matches: next:   ', next_match)
+
+                # stop if we exceed max dist
+                if current_match.qdistance_to(next_match) > MAX_DIST:
+                    break
+
+                # keep one of equal matches
+                if current_match.qspan == next_match.qspan and current_match.ispan == next_match.ispan:
+                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next EQUALS in current')
+                    del matches[j]
+                    continue
+
+                # remove contained matches
+                if current_match.qcontains(next_match):
+                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next CONTAINED in current')
+                    del matches[j]
+                    continue
+
+                # remove contained matches the other way
+                if next_match.qcontains(current_match):
+                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: current CONTAINED in next ')
+                    del matches[i]
+                    i -= 1
+                    break
+
+                # merge surrounded
+                if current_match.surround(next_match):
+                    current_match.update(next_match)
+                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: current SURROUNDS next, merged as new:', current_match)
+                    del matches[j]
+                    continue
+
+                # merge surrounded the other way too: merge in current
+                if next_match.surround(current_match):
+                    next_match.update(current_match)
+                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next SURROUNDS current, merged as new:', current_match)
+                    del matches[i]
+                    i -= 1
+                    break
+
+                # next_match is strictly in increasing sequence: merge in current
+                if next_match.is_after(current_match):
+                    current_match.update(next_match)
+                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next follows current, merged as new:', current_match)
+                    del matches[j]
+                    continue
+
+                # next_match overlaps
+                # Check increasing sequence and overlap importance to decide merge
+                if (current_match.qstart <= next_match.qstart
+                and current_match.qend <= next_match.qend):
+                    qoverlap = current_match.qspan.overlap(next_match.qspan)
+                    if qoverlap:
+                        # round the q and i overlap:
+                        qoverlap = qoverlap // 10
+                        ioverlap = current_match.ispan.overlap(next_match.ispan) // 10
+                        # only merge if rounded overlaps are equals
+                        if qoverlap == ioverlap:
+                            current_match.update(next_match)
+                            if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next overlaps in sequence current, merged as new:', current_match)
+                            del matches[j]
+                            continue
+
+                j += 1
+            i += 1
+        merged.extend(matches)
+    return merged
+
+
+def filter_contained_matches(matches):
+    """
+    Return a filtered list of LicenseMatch given a `matches` list of LicenseMatch by
+    removing duplicated or superfluous matches using containment relationships.
+    Works across all matches.
+
+    For instance a match entirely contained in another bigger match is removed. When
+    more than one matched position matches the same license(s), only one match of
+    this set is kept.
+    """
 
     discarded = []
-    # compare two matches in the sorted sequence: current_match and the next one
+
+    # do not bother if there is only one match
+    if len(matches) < 2:
+        return matches, discarded
+
+    # containment relationships and thresholds between two matches
+    # based on this containment we may prefer one match over the other and discard a match
+    CONTAINMENT_SMALL = 0.10
+    CONTAINMENT_MEDIUM = 0.40
+    CONTAINMENT_LARGE = 0.60
+    CONTAINMENT_EXTRA_LARGE = 0.80
+
+    # sort on start, longer high, longer match, matcher type
+    sorter = lambda m: (m.qspan.start, -m.hilen(), -m.qlen(), m.matcher)
+    matches = sorted(matches, key=sorter)
+
+    if TRACE_FILTER: print('filter_contained_matches: number of matches to process:', len(matches))
+    if TRACE_FILTER:
+        print('filter_contained_matches: matches')
+        map(print, matches)
+
+    # compare two matches in the sorted sequence: current and next match
+    # we progressively compare a pair and remove next or current
     i = 0
     while i < len(matches) - 1:
-        current_match = matches[i]
         j = i + 1
         while j < len(matches):
+            current_match = matches[i]
             next_match = matches[j]
-            if TRACE_FILTER: print('filter_match: current_match:', current_match)
-            if TRACE_FILTER: print(' filter_match: next_match:', next_match)
 
-            # Skip qcontained, irrespective of licensing
-            # FIXME: by construction this CANNOT happen
-            if current_match.contains_qspan(next_match):
-                if TRACE_FILTER: print('   filter_matches: next_match in current_match')
+            # stop when no overlap: Touching and overlapping matches have a zero distance.
+#             if current_match.qdistance_to(next_match):
+#                 break
+
+            if TRACE_FILTER: logger_debug('---> filter_contained_matches: current: i=', i, current_match)
+            if TRACE_FILTER: logger_debug('---> filter_contained_matches: next:    j=', j, next_match)
+
+            # equals matches
+            if current_match.qspan == next_match.qspan:
+                if current_match.score() >= next_match.score():
+                    if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: next EQUALS current, removed next with lower or equal score', matches[j], '\n')
+                    discarded.append(next_match)
+                    del matches[j]
+                    continue
+                else:
+                    if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: next EQUALS current, removed current with lower score', matches[i], '\n')
+                    discarded.append(current_match)
+                    del matches[i]
+                    i -= 1
+                    break
+
+            # remove contained matches
+            if current_match.qcontains(next_match):
+                if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: next CONTAINED in current, removed next', matches[j], '\n')
+                discarded.append(next_match)
                 del matches[j]
                 continue
 
-            if current_match.qsurround(next_match):
-                # Skip if next match is surrounded and has same of licensing
-                if current_match.same_licensing(next_match):
-                    if TRACE_FILTER: print('   filter_matches: next_match in current_match region and same licensing')
+            # remove contained matches the other way
+            if next_match.qcontains(current_match):
+                if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: current CONTAINED in next, removed current', matches[i], '\n')
+                discarded.append(current_match)
+                del matches[i]
+                i -= 1
+                break
+
+            # handle overlapping matches: determine overlap and containment relationships
+            overlap = current_match.overlap(next_match)
+
+            # next match overlap to current
+            overlap_ratio_to_next = overlap / next_match.qlen()
+
+            extra_large_next = overlap_ratio_to_next >= CONTAINMENT_EXTRA_LARGE
+            large_next = overlap_ratio_to_next >= CONTAINMENT_LARGE
+            medium_next = overlap_ratio_to_next >= CONTAINMENT_MEDIUM
+            small_next = overlap_ratio_to_next >= CONTAINMENT_SMALL
+
+            # current match overlap to next
+            overlap_ratio_to_current = overlap / current_match.qlen()
+
+            extra_large_current = overlap_ratio_to_current >= CONTAINMENT_EXTRA_LARGE
+            large_current = overlap_ratio_to_current >= CONTAINMENT_LARGE
+            medium_current = overlap_ratio_to_current >= CONTAINMENT_MEDIUM
+            small_current = overlap_ratio_to_current >= CONTAINMENT_SMALL
+
+            if TRACE_FILTER: logger_debug(
+                '  ---> ###filter_contained_matches:',
+                'overlap:', overlap,
+                'containment of next to current is:',
+                'overlap_ratio_to_next:', overlap_ratio_to_next,
+                (extra_large_next and 'EXTRA_LARGE')
+                or (large_next and 'LARGE')
+                or (medium_next and 'MEDIUM')
+                or (small_next and 'SMALL')
+                or 'NOT CONTAINED',
+                'containment of current to next is:',
+                'overlap_ratio_to_current:', overlap_ratio_to_current,
+                (extra_large_current and 'EXTRA_LARGE')
+                or (large_current and 'LARGE')
+                or (medium_current and 'MEDIUM')
+                or (small_current and 'SMALL')
+                or 'NOT CONTAINED',
+            )
+
+            if extra_large_next and current_match.qlen() >= next_match.qlen():
+                if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: EXTRA_LARGE next included, removed shorter next', matches[j], '\n')
+                discarded.append(next_match)
+                del matches[j]
+                continue
+
+            if extra_large_current and current_match.qlen() <= next_match.qlen():
+                if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: EXTRA_LARGE next includes current, removed shorter current', matches[i], '\n')
+                discarded.append(current_match)
+                del matches[i]
+                i -= 1
+                break
+
+            if large_next and current_match.qlen() >= next_match.qlen() and current_match.hilen() >= next_match.hilen():
+                if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: LARGE next included, removed shorter next', matches[j], '\n')
+                discarded.append(next_match)
+                del matches[j]
+                continue
+
+            if large_current and current_match.qlen() <= next_match.qlen() and current_match.hilen() <= next_match.hilen():
+                if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: LARGE next includes current, removed shorter current', matches[i], '\n')
+                discarded.append(current_match)
+                del matches[i]
+                i -= 1
+                break
+
+            if medium_next:
+                if TRACE_FILTER: logger_debug('    ---> ###filter_contained_matches: MEDIUM NEXT')
+                if current_match.licensing_contains(next_match) and current_match.qlen() >= next_match.qlen() and current_match.hilen() >= next_match.hilen():
+                    if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: MEDIUM next included'
+                                                  ' with next licensing contained, removed next', matches[j], '\n')
+                    discarded.append(next_match)
                     del matches[j]
                     continue
 
-                if current_match.qlen() > (next_match.qlen() * 2):
-                    # Skip if next match is surrounded and is much smaller than current
-                    if TRACE_FILTER: print('   filter_matches: remove surrounding with much bigger match')
+                if next_match.licensing_contains(current_match) and current_match.qlen() <= next_match.qlen() and current_match.hilen() <= next_match.hilen():
+                    if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: MEDIUM next includes'
+                                                  ' current with current licensing contained, removed current', matches[i], '\n')
+                    discarded.append(current_match)
+                    del matches[i]
+                    i -= 1
+                    break
+
+            if medium_current:
+                if TRACE_FILTER: logger_debug('    ---> ###filter_contained_matches: MEDIUM CURRENT')
+                if current_match.licensing_contains(next_match) and current_match.qlen() >= next_match.qlen() and current_match.hilen() >= next_match.hilen():
+                    if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: MEDIUM current, bigger current'
+                                                  ' with next licensing contained, removed next', matches[j], '\n')
+                    discarded.append(next_match)
                     del matches[j]
                     continue
 
-            # the next_match has some region overlap
-            if current_match.qstart < next_match.qstart and current_match.qend < next_match.qend:
-                # compute region overlap
-                overlapping = [p for p in next_match.qspan if p < current_match.qend]
-                overlap = len(overlapping)
-                # over 50 % of overlap: discard
-                if overlap > (len(next_match.qspan) / 2):
-                    if TRACE_FILTER: print('   filter_matches: remove partially overlapping with much bigger match')
-                    matches[i] = current_match
-                    discarded.append(matches[j])
-                    del matches[j]
-                    continue
+                if next_match.licensing_contains(current_match) and current_match.qlen() <= next_match.qlen() and current_match.hilen() <= next_match.hilen():
+                    if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: MEDIUM current, bigger next'
+                                                  ' current with current licensing contained, removed current', matches[i], '\n')
+                    discarded.append(current_match)
+                    del matches[i]
+                    i -= 1
+                    break
+
+            if small_next and current_match.surround(next_match) and current_match.licensing_contains(next_match) and current_match.qlen() >= next_match.qlen() and current_match.hilen() >= next_match.hilen():
+                if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: SMALL next surrounded, removed next', matches[j], '\n')
+                discarded.append(next_match)
+                del matches[j]
+                continue
+
+            if small_current and next_match.surround(current_match) and next_match.licensing_contains(current_match) and current_match.qlen() <= next_match.qlen() and current_match.hilen() <= next_match.hilen():
+                if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: SMALL current surrounded, removed current', matches[i], '\n')
+                discarded.append(next_match)
+                del matches[i]
+                i -= 1
+                break
 
             j += 1
         i += 1
@@ -551,10 +677,27 @@ def filter_low_score(matches, min_score=100):
     discarded = []
     for match in matches:
         if match.score() < min_score:
+            if TRACE_REFINE: logger_debug('    ==> DISCARDING small score:', match)
             discarded.append(match)
         else:
             kept.append(match)
 
+    return kept, discarded
+
+
+def filter_not_solid(matches):
+    """
+    Return a list of matches to solid rules that are not solid and a list of small matches.
+    """
+    kept = []
+    discarded = []
+    for match in matches:
+        if match.rule.solid  and match.score() != 100:
+            if TRACE_REFINE_SOLID: logger_debug('    ==> DISCARDING NOT SOLID:', 'solid:', match.rule.solid, 'score:', match.score(), match)
+            discarded.append(match)
+        else:
+            if TRACE_REFINE_SOLID: logger_debug('  ===> NOT DISCARDING NOT SOLID:', 'solid:', match.rule.solid, 'score:', match.score(), match)
+            kept.append(match)
     return kept, discarded
 
 
@@ -565,8 +708,8 @@ def filter_short_matches(matches):
     kept = []
     discarded = []
     for match in matches:
-        if match.small():
-            if TRACE_REFINE_SMALL: logger_debug('DISCARDING SHORT:', match)
+        if (match.small()):  # and match.score() < SMALL_MATCH_MIN_SCORE):
+            if TRACE_REFINE_SMALL: logger_debug('    ==> DISCARDING SHORT:', match)
             discarded.append(match)
         else:
             if TRACE_REFINE_SMALL: logger_debug('  ===> NOT DISCARDING SHORT:', match)
@@ -587,8 +730,13 @@ def filter_spurious_matches(matches):
         idens = match.ispan.density()
         ilen = match.ilen()
         hilen = match.hilen()
-        if ilen < 20 and hilen < 5 and (qdens < 0.3 or idens < 0.3):
-            if TRACE_REFINE: logger_debug('DISCARDING Spurrious:', match)
+        if (
+           (ilen < 30 and hilen < 8 and (qdens < 0.4 or idens < 0.4))
+        or (ilen < 20 and hilen < 5 and (qdens < 0.3 or idens < 0.3))
+        or (ilen < 15 and (qdens < 0.2 or idens < 0.2))
+        or (ilen < 10 and (qdens < 0.1 or idens < 0.1))
+           ):
+            if TRACE_REFINE: logger_debug('    ==> DISCARDING Spurious:', match)
             discarded.append(match)
         else:
             kept.append(match)
@@ -605,10 +753,10 @@ def filter_false_positive_matches(idx, matches):
     for match in matches:
         fp = match.false_positive(idx)
         if fp is None:
-            if TRACE_REFINE: logger_debug('NOT DISCARDING FALSE POSITIVE:', match)
+#             if TRACE_REFINE: logger_debug('    ==> NOT DISCARDING FALSE POSITIVE:', match)
             kept.append(match)
         else:
-            if TRACE_REFINE: logger_debug('DISCARDING FALSE POSITIVE:', match, 'fp rule:', idx.rules_by_rid[fp].identifier)
+            if TRACE_REFINE: logger_debug('    ==> DISCARDING FALSE POSITIVE:', match, 'fp rule:', idx.rules_by_rid[fp].identifier)
             discarded.append(match)
     return kept, discarded
 
@@ -619,12 +767,20 @@ def refine_matches(matches, idx, min_score=0, max_dist=MAX_DIST):
     other contains matches that were filtered out.
     """
     if TRACE: logger_debug()
-    if TRACE: logger_debug('   #####refine_matches: START matches#', len(matches))
+    if TRACE: logger_debug(' #####refine_matches: STARTING matches#', len(matches))
     if TRACE_REFINE: map(logger_debug, matches)
+
+    matches = merge_matches(matches, max_dist=max_dist)
+    if TRACE: logger_debug('     ##### refine_matches: STARTING MERGED_matches#:', len(matches))
+
     all_discarded = []
+
+    matches, discarded = filter_not_solid(matches)
+    all_discarded.extend(discarded)
 
     matches, discarded = filter_short_matches(matches)
     all_discarded.extend(discarded)
+
     if TRACE: logger_debug('   #####refine_matches: NOT SHORT #', len(matches))
     if TRACE_REFINE: map(logger_debug, matches)
     if TRACE: logger_debug('   #####refine_matches: SHORT discarded#', len(discarded))
@@ -644,12 +800,11 @@ def refine_matches(matches, idx, min_score=0, max_dist=MAX_DIST):
     if TRACE: logger_debug('   #####refine_matches: SPURIOUS discarded#', len(discarded))
     if TRACE_REFINE: map(logger_debug, discarded)
 
-    matches = LicenseMatch.merge(matches, max_dist=max_dist)
-
-    logger_debug('   ##### refine_matches: MERGED_matches#:', len(matches))
+    matches = merge_matches(matches, max_dist=max_dist)
+    if TRACE: logger_debug(' #####refine_matches: before FILTER matches#', len(matches))
     if TRACE_REFINE: map(logger_debug, matches)
 
-    matches, discarded = filter_matches(matches)
+    matches, discarded = filter_contained_matches(matches)
     all_discarded.extend(discarded)
     logger_debug('   ##### refine_matches: NOT FILTERED matches#:', len(matches))
     if TRACE_REFINE: map(logger_debug, matches)
@@ -664,7 +819,7 @@ def refine_matches(matches, idx, min_score=0, max_dist=MAX_DIST):
         if TRACE: logger_debug('   ###refine_matches: LOW SCORE discarded #:', len(discarded))
         if TRACE_REFINE: map(logger_debug, discarded)
 
-    matches = LicenseMatch.merge(matches, max_dist=max_dist)
+    matches = merge_matches(matches, max_dist=max_dist)
 
     logger_debug('   ##### refine_matches: FINAL MERGED_matches#:', len(matches))
     if TRACE_REFINE: map(logger_debug, matches)
@@ -682,77 +837,69 @@ def get_texts(match, location=None, query_string=None, idx=None, width=120):
 
     Used primarily to recover the matched texts for testing or reporting.
 
-    Unmatched positions are represented as <no-match>, rule gaps as <gap>.
-    Punctuation is removed , spaces are normalized (new line is replaced by a
-    space), case is preserved.
+    Unmatched positions are represented between angular backets <> or square brackets
+    [] for unknown tokens not part of the index. Punctuation is removed , spaces are
+    normalized (new line is replaced by a space), case is preserved.
 
     If `width` is a number superior to zero, the texts are wrapped to width.
     """
-    assert idx
     return (get_matched_qtext(match, location, query_string, idx, width),
             get_match_itext(match, width))
 
 
-def get_matched_qtext(match, location=None, query_string=None, idx=None, width=120):
+def get_matched_qtext(match, location=None, query_string=None, idx=None, width=120, margin=0):
     """
     Return the matched query text as a wrapped string of `width` given a match,
     a query location or string and an index.
 
     Used primarily to recover the matched texts for testing or reporting.
 
-    Unmatched positions are represented as <no-match>.
-    Punctuation is removed , spaces are normalized (new line is replaced by a
-    space), case is preserved.
+    Unmatched positions are represented between angular backets <> or square brackets
+    [] for unknown tokens not part of the index. Punctuation is removed , spaces are
+    normalized (new line is replaced by a space), case is preserved.
 
     If `width` is a number superior to zero, the texts are wrapped to width.
     """
-    assert idx
-    tokens = matched_query_tokens_str(match, location, query_string, idx)
-    return format_text(tokens, width)
+    return format_text(matched_query_tokens_str(match, location, query_string, idx), width=width, margin=margin)
 
 
-def get_match_itext(match, width=120):
+def get_match_itext(match, width=120, margin=0):
     """
     Return the matched rule text as a wrapped string of `width` given a match.
-
     Used primarily to recover the matched texts for testing or reporting.
 
-    Unmatched positions inside a matched region are represented as <no-match>
-    and rule gaps as <gap>.
-
-    Punctuation is removed , spaces are normalized (new line is replaced by a
-    space), case is preserved.
+    Unmatched positions are represented between angular backets <>.
+    Punctuation is removed , spaces are normalized (new line is replaced by a space),
+    case is preserved.
 
     If `width` is a number superior to zero, the texts are wrapped to width.
     """
-    return format_text(matched_rule_tokens_str(match), width)
+    return format_text(matched_rule_tokens_str(match), width=width, margin=margin)
 
 
-def format_text(tokens, width=120, no_match='<no-match>'):
+def format_text(tokens, width=120, no_match='<no-match>', margin=4):
     """
     Return a formatted text wrapped at `width` given an iterable of tokens.
     None tokens for unmatched positions are replaced with `no_match`.
     """
     nomatch = lambda s: s or no_match
     tokens = map(nomatch, tokens)
-
-    # if width =0
     noop = lambda x: [x]
-
-    wrapper = partial(textwrap.wrap, width=width, break_on_hyphens=False)
+    initial_indent = subsequent_indent = u' ' * margin
+    wrapper = partial(textwrap.wrap, width=width, break_on_hyphens=False,
+                      initial_indent=initial_indent,
+                      subsequent_indent=subsequent_indent)
     wrap = width and wrapper or noop
     return u'\n'.join(wrap(u' '.join(tokens)))
 
 
-def matched_query_tokens_str(match, location=None, query_string=None, idx=None):
+def matched_query_tokens_str(match, location=None, query_string=None, idx=None, include_unmatched=INCLUDE_UNMATCHED_TEXTS):
     """
     Return an iterable of matched query token strings given a query file at
-    `location` or a `query_string`, a match and an index. Yield None for
-    unmatched positions.
-
-    Punctuation is removed , spaces are normalized (new line is replaced by a
-    space), case is preserved.
-
+    `location` or a `query_string`, a match and an index.
+    Yield None for unmatched positions.
+    Punctuation is removed , spaces are normalized (new line is replaced by a space),
+    case is preserved.
     Used primarily to recover the matched texts for testing or reporting.
     """
     assert idx
@@ -785,26 +932,32 @@ def matched_query_tokens_str(match, location=None, query_string=None, idx=None):
             if known_pos in match_qspan and token_id is not None:
                 yield token
             else:
-                yield None
+                if include_unmatched:
+                    if token_id is not None:
+                        yield '<%s>' % token
+                    else:
+                        yield '[%s]' % token
+                else:
+                    yield '.'
 
 
-def matched_rule_tokens_str(match, gap='<gap>'):
+def matched_rule_tokens_str(match, include_unmatched=INCLUDE_UNMATCHED_TEXTS):
     """
-    Return an iterable of matched rule token strings given a match. Yield None
-    for unmatched positions. Yield the `gap` string to represent a gap.
-
-    Punctuation is removed , spaces are normalized (new line is replaced by a
-    space), case is preserved.
-
+    Return an iterable of matched rule token strings given a match.
+    Yield None for unmatched positions.
+    Punctuation is removed, spaces are normalized (new line is replaced by a space),
+    case is preserved.
     Used primarily to recover the matched texts for testing or reporting.
     """
-    span = match.ispan
-    gaps = match.rule.gaps
+    ispan = match.ispan
+    ispan_start = ispan.start
+    ispan_end = ispan.end
     for pos, token in enumerate(match.rule.tokens(lower=False)):
-        if span.start <= pos <= span.end:
-            tok = None
-            if pos in span:
-                tok = token
-            yield tok
-            if gaps and pos in gaps:
-                yield gap
+        if ispan_start <= pos <= ispan_end:
+            if pos in ispan:
+                yield token
+            else:
+                if include_unmatched:
+                    yield '<%s>' % token
+                else:
+                    yield '.'

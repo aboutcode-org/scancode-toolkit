@@ -1,3 +1,32 @@
- <license>
-        <name>GNU Lesser General Public License, version 2.1</name>
-        <url>http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt</url>
+    <groupId>org.richfaces</groupId>
+    <artifactId>richfaces-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>14-SNAPSHOT</version>
+    <name>RichFaces Parent</name>
+
+    <description>
+        This is the parent for all RichFaces artifacts, and contains project
+        metadata, shared/stable configuration, and other common settings that 
+        change very rarely.
+    </description>
+
+    <url>http://richfaces.org</url>
+
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License, Version 2.1</name>
+            <distribution>repo</distribution>
+            <url>http://www.gnu.org/licenses/lgpl-2.1.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>RichFaces committers</name>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>jira</system>
+        <url>https://jira.jboss.org/jira/browse/RF</url>
+    </issueManagement>

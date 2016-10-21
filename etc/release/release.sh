@@ -49,9 +49,13 @@ function test_scan {
 
             # minimal test: update when new scans are available
             ./scancode --quiet -lcip apache-2.0.LICENSE test_scan.json
+            echo "TEST JSON passed: ./scancode --quiet -lcip apache-2.0.LICENSE test_scan.json"
             ./scancode --quiet -lcip --format html apache-2.0.LICENSE test_scan.html
+            echo "TEST HTML passed: ./scancode --quiet -lcip --format html apache-2.0.LICENSE test_scan.html"
             ./scancode --quiet -lcip --format html-app apache-2.0.LICENSE test_scan_app.html
+            echo "TEST HTML-APP passed: ./scancode --quiet -lcip --format html-app apache-2.0.LICENSE test_scan_app.html"
             ./extractcode --quiet samples/arch
+            echo "TEST EXTRACTCODE passed: ./extractcode --quiet samples/arch"
 
             # cleanup
             cd ..

@@ -55,7 +55,7 @@ else:
         pass
 
 
-MATCH_TYPE = 'hash'
+MATCH_HASH = '1-hash'
 
 
 def tokens_hash(tokens):
@@ -69,7 +69,6 @@ def index_hash(rule_tokens):
     """
     Return a hash digest string given a sequence of rule tokens.
     """
-    # FIXME: handle gaps and query runs?
     return tokens_hash(rule_tokens)
 
 
@@ -90,6 +89,9 @@ def match_hash(idx, query_run):
         qspan = Span(query_run.start, query_run.end)
         ispan = Span(range(0, rule.length))
         hispan = Span(p for p in ispan if itokens[p] >= len_junk)
-        match = LicenseMatch(rule, qspan, ispan, hispan=hispan, line_by_pos=query_run.line_by_pos, query_run_start=query_run.start, matcher=MATCH_TYPE)
+        match = LicenseMatch(rule, qspan, ispan, hispan=hispan, 
+                             line_by_pos=query_run.line_by_pos, 
+                             query_run_start=query_run.start, 
+                             matcher=MATCH_HASH)
         matches.append(match)
     return matches

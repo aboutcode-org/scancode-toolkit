@@ -32,7 +32,7 @@ from licensedcode.spans import Span
 
 from licensedcode import index
 from licensedcode import models
-from licensedcode import query
+from licensedcode import match_hash
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -52,7 +52,7 @@ class TestHashMatch(FileBasedTesting):
         assert 1 == len(matches)
         match = matches[0]
         assert 100 == match.score()
-        assert 'hash' == match.matcher
+        assert match_hash.MATCH_HASH == match.matcher
         assert rules[0] == match.rule
         assert Span(0, 121) == match.qspan
         assert Span(0, 121) == match.ispan
@@ -65,7 +65,7 @@ class TestHashMatch(FileBasedTesting):
         matches = idx.match(query_doc)
         assert 1 == len(matches)
         match = matches[0]
-        assert 'hash' == match.matcher
+        assert match_hash.MATCH_HASH == match.matcher
         assert 100 == match.score()
         assert rules[0] == match.rule
         assert Span(0, 121) == match.qspan

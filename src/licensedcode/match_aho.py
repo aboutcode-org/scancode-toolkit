@@ -35,6 +35,7 @@ Matching strategy for exact matching using Aho-Corasick automatons.
 
 # Set to False to enable debug tracing
 TRACE = False
+TRACE_DEEP = False
 
 if TRACE:
     import logging
@@ -64,15 +65,16 @@ def index_aho(tids_by_rid):
     return auto
 
 
-def exact_match(idx, query_run, automaton, rules_subset=None):
+MATCH_AHO = '2-aho'
+
+
+def exact_match(idx, query_run, automaton):
     """
     Return a list of exact LicenseMatch by matching the `query_run` against
     the `automaton` and `idx` index.
-    Only return matches for a rule id present in rules_subset if provided.
     """
-    MATCH_TYPE = 'aho'
-
-    if TRACE: logger_debug(' #exact: start ... ')
+    if TRACE: logger_debug(' #exact_AHO: start ... ')
+    if TRACE_DEEP: logger_debug(' #exact_AHO: query_run:', query_run)
 
     len_junk = idx.len_junk
     rules_by_rid = idx.rules_by_rid
@@ -85,10 +87,9 @@ def exact_match(idx, query_run, automaton, rules_subset=None):
     qtokens_as_str = array('h', qtokens).tostring()
     matches = []
     for qend, rid in automaton.iter(qtokens_as_str):
-        if rules_subset and rid not in rules_subset:
-            continue
-
         rule = rules_by_rid[rid]
+        if TRACE_DEEP: logger_debug('   #exact_AHO: found match to rule:', rule.identifier)
+
         len_rule = rule.length
 
         # FIXME: use a trie of ints or a trie or Unicode characters to avoid this shenaningan
@@ -105,13 +106,14 @@ def exact_match(idx, query_run, automaton, rules_subset=None):
         # matching falsely so we check that the corrected end qposition
         # must be always an integer.
         if real_qend != int(real_qend):
+            if TRACE: logger_debug('   #exact_AHO: real_qend != int(real_qend), discarding rule:', rule.identifier)
             continue
 
         real_qend = int(real_qend)
         qposses = range(qbegin + real_qend - len_rule + 1, qbegin + real_qend + 1)
 
         if any(p not in query_run_matchables for p in qposses):
-            if TRACE: logger_debug('   #exact: not matchable match')
+            if TRACE: logger_debug('   #exact_AHO: not matchable match: any(p not in query_run_matchables for p in qposses), discarding rule:', rule.identifier)
             continue
 
         qspan = Span(qposses)
@@ -120,9 +122,11 @@ def exact_match(idx, query_run, automaton, rules_subset=None):
         itokens = idx.tids_by_rid[rid]
         hispan = Span(p for p in ispan if itokens[p] >= len_junk)
 
-        match = LicenseMatch(rule, qspan, ispan, hispan, line_by_pos, query_run.start, MATCH_TYPE)
+        match = LicenseMatch(rule, qspan, ispan, hispan, line_by_pos, query_run.start, MATCH_AHO)
         matches.append(match)
 
-    if TRACE and matches: logger_debug(' ##small exact: matches found#', matches)
-
+    if TRACE and matches:
+        logger_debug(' ##exact_AHO: matches found#', matches)
+        map(print, matches)
+ 
     return matches

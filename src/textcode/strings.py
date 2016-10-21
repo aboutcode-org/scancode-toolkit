@@ -38,8 +38,12 @@ Use character translations tables for this, replacing all non-printable
 characters by a newline char.
 Then split on lines, yield these lines filtering out junk strings.
 This is similar to what GNU Binutils strings does.
+
 TODO: Add support for some additional and common strings-inbinary encodings
-such ass UTC-16 in Windows binary executables.
+such as UTC-16 in Windows binary executables.
+
+https://github.com/fireeye/flare-floss
+http://stackoverflow.com/questions/10637055/how-do-i-extract-unicode-character-sequences-from-an-mz-executable-file
 """
 
 

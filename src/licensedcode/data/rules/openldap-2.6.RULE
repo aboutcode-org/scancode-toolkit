@@ -1,5 +1,5 @@
 The OpenLDAP Public License 
-Version 2.6, {{date 14 June 2001 }}
+Version 2.6,  date 14 June 2001  
 
 Redistribution and use of this software and associated documentation 
 ("Software"), with or without modification, are permitted provided 
@@ -41,6 +41,6 @@ POSSIBILITY OF SUCH DAMAGE.
 
 OpenLDAP is a trademark of the OpenLDAP Foundation. 
 
-Copyright {{1999-2001 The OpenLDAP Foundation, Redwood City, 
-California, USA}}. All Rights Reserved. Permission to copy and 
+Copyright  1999-2001 The OpenLDAP Foundation, Redwood City, 
+California, USA . All Rights Reserved. Permission to copy and 
 distributed verbatim copies of this document is granted. 

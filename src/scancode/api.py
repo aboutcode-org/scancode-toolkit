@@ -118,10 +118,11 @@ def get_licenses(location, min_score=0):
     idx = get_index()
     licenses = licenses_getter()
 
+    # note: we do USE the cache here
     for match in idx.match(location=location, min_score=min_score, use_cache=True):
         for license_key in match.rule.licenses:
             lic = licenses.get(license_key)
-            lines_start, lines_end = match.lines
+            lines_start, lines_end = match.lines()
             result = OrderedDict()
             result['key'] = lic.key
             result['score'] = match.score()
@@ -139,6 +140,8 @@ def get_licenses(location, min_score=0):
             result['matched_rule']['identifier'] = match.rule.identifier
             result['matched_rule']['license_choice'] = match.rule.license_choice
             result['matched_rule']['licenses'] = match.rule.licenses
+            # TODO: add debug details such as matcher
+            # result['matched_rule']['matcher'] = match.matcher
             
             yield result
 

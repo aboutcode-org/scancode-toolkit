@@ -42,8 +42,7 @@ Once that mapping is applied, we then only deal with integers in two dimensions:
  - the token ids (and whether they are in the high or low range).
  - their positions in the query (qpos) and the indexed rule (ipos).
 
-We also use an integer id for a rule, and we identify a gap in a rule template
-by the position of its start.
+We also use an integer id for a rule.
 
 All operations are from then on dealing with list, arrays or sets of integers in
 defined ranges.

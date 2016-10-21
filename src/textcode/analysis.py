@@ -110,9 +110,8 @@ def unicode_text_lines_from_binary(location):
     Return an iterable over unicode text lines extracted from a binary file at
     location.
     """
-    as_unicodef = as_unicode
     for line in strings.strings_in_file(location, filt=strings.filter_strict):
-        yield as_unicodef(line)
+        yield as_unicode(line)
 
 
 def unicode_text_lines_from_pdf(location):
@@ -120,9 +119,8 @@ def unicode_text_lines_from_pdf(location):
     Return an iterable over unicode text lines extracted from a pdf file at
     location.
     """
-    as_unicodef = as_unicode
     for line in pdf.get_text_lines(location):
-        yield as_unicodef(line)
+        yield as_unicode(line)
 
 
 def as_unicode(line):
@@ -163,16 +161,24 @@ def as_unicode(line):
     return s
 
 
+def remove_verbatim_line_endings(s):
+    """
+    Return a string removing verbatim, escaped line endings (such as \n).
+    """
+    if not s:
+        return s
+    return s.replace('\\r', ' ').replace('\\n', ' ').replace('\\t', ' ')
+
+
 def unicode_text_lines(location):
     """
     Return an iterable over unicode text lines from a text file at location.
     Open the file as binary with universal new lines then try to decode each
     line as Unicode.
     """
-    as_unicodef = as_unicode
     with open(location, 'rbU') as f:
         for line in f:
-            yield as_unicodef(line)
+            yield remove_verbatim_line_endings(as_unicode(line))
 
 
 def unicode_text(location):
@@ -181,4 +187,4 @@ def unicode_text(location):
     location. The whole file content is returned at once, which may be a
     problem for very large files.
     """
-    return u''.join(unicode_text_lines(location))
+    return u' '.join(unicode_text_lines(location))

@@ -4,3 +4,5 @@ licenses:
     - bsd-new
     - gpl-2.0
 license: (intel-bsd-special or gpl-2.0) and (bsd-new or gpl)
+license_choice: yes
+
