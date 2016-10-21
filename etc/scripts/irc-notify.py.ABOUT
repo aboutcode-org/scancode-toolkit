@@ -1,0 +1,22 @@
+name: irc-notify.py
+version: def54f8166089b733d166665fdabcad4cdc526d8
+download_url: https://raw.githubusercontent.com/gridsync/gridsync/def54f8166089b733d166665fdabcad4cdc526d8/misc/irc-notify.py
+description: Quick and dirty IRC notification script.
+home_url: https://github.com/gridsync/gridsync
+owner: Christopher R. Wood
+copyright: Copyright (C) 2015-2016 Christopher R. Wood
+dje_license_key: gpl-2.0-plus
+license_text_file: gpl-2.0.LICENSE
+notice_text: |
+    This program is free software; you can redistribute it and/or modify it under the
+    terms of the GNU General Public License as published by the Free Software
+    Foundation; either version 2 of the License, or (at your option) any later
+    version.
+    
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY
+    WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+    PARTICULAR PURPOSE. See the GNU General Public License for more details.
+    
+    You should have received a copy of the GNU General Public License along with this
+    program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street,
+    Fifth Floor, Boston, MA 02110-1301 USA.
