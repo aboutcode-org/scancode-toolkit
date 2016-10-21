@@ -342,4 +342,4 @@ def cli(json_input, csv_output, strip=0):
 
 
 if __name__ == '__main__':
-   cli()
+    cli()
