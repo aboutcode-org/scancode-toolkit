@@ -209,10 +209,10 @@
           "dejacode_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bsd-original-uc", 
           "spdx_license_key": "BSD-4-Clause-UC", 
           "spdx_url": "http://spdx.org/licenses/BSD-4-Clause-UC", 
-          "start_line": 22, 
+          "start_line": 25, 
           "end_line": 51, 
           "matched_rule": {
-            "identifier": "bsd-original-uc_16.RULE", 
+            "identifier": "bsd-original-uc_5.RULE", 
             "license_choice": false, 
             "licenses": [
               "bsd-original-uc"
