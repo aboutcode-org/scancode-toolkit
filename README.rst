@@ -46,10 +46,14 @@ Quick Start
 For Windows, please go to the Comprehensive Installation section instead.
 
 Make sure you have Python 2.7 installed:
- * Download for Windows https://www.python.org/ftp/python/2.7.11/python-2.7.11.msi
- * Download for Mac https://www.python.org/ftp/python/2.7.11/python-2.7.11-macosx10.6.pkg
- * "sudo apt-get install python" for Debian/Ubuntu 14.04
- * See Comprehensive Installation for details and other Linux installation
+ * Download and install Python 2.7 32 bits for Windows https://www.python.org/ftp/python/2.7.12/python-2.7.12.msi
+ * Download and install Python 2.7 for Mac https://www.python.org/ftp/python/2.7.12/python-2.7.12-macosx10.6.pkg
+
+On Linux install Python 2.7 "devel" and a few extra packages:
+ * ``sudo apt-get install python-dev libbz2 xzutils zlib1g libxml2-dev libxslt1-dev`` for most Debian/Ubuntu
+ * ``sudo apt-get install python-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-dev`` for Debian Jessie/8
+ * ``sudo yum install python-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel`` for RPM distros
+ * See the Comprehensive Installation bwlow for additional details and other Linux installation
 
 Then download and extract the latest ScanCode release from::
 
@@ -148,7 +152,7 @@ ScanCode will run best with a modern X86 processor and at least 2GB of RAM and 2
 
 **Supported operating systems** : ScanCode should run on these OSes:
 
-* Linux: on most recent 64-bit Linux distributions (32-bit distros are not supported for now),
+* Linux: on most recent 64-bit Linux distributions (32-bit distros are only partially supported),
 * Mac: on recent Mac OSX (10.6.8 and up),
 * Windows: on Windows 7 and up (32- or 64-bit) using a 32-bit Python.
 
@@ -163,18 +167,19 @@ ScanCode needs a Python 2.7 interpreter.
   If Python 2.7 is not available from your package manager, you must compile it from sources.
 
   For instance, visit https://github.com/dejacode/about-code-tool/wiki/BuildingPython27OnCentos6
-  for instruction to compile Python from sources on Centos.
+  for instructions to compile Python from sources on Centos.
 
-  * On Debian/Ubuntu distros, you may need to install these packages: `libbz2 xzutils zlib1g`.
-  * On RPM-based distros, you may need to install these packages: `zlib bzip2-libs xz-libs`.
+  * On most Debian/Ubuntu distros, you will need to install these packages first: ``python-dev libbz2 xzutils zlib1g libxml2-dev libxslt1-dev``
+  * On Debian 8 (Jessie), you will need to install these packages first: ``python-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-dev``
+  * On RPM-based distros, you will need to install these packages first: ``python-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel``
 
 - **On Windows**:
 
-  Use the Python 2.7 (Windows x86 MSI installer) for X86 regardless of whether you run Windows
-  on 32-bit or 64-bit. DO NOT USE Python X86_64 even if you run 64 bit Windows.
+  Use the Python 2.7 32-bit (e.g. the Windows x86 MSI installer) for X86 regardless of whether you run Windows
+  on 32-bit or 64-bit. **DO NOT USE Python X86_64 installer** even if you run 64 bit Windows.
 
   Download Python from this url:
-  https://www.python.org/ftp/python/2.7.11/python-2.7.11.msi
+  https://www.python.org/ftp/python/2.7.12/python-2.7.12.msi
 
   Install Python on the c: drive and use all default installer options.
   See the Windows installation section for more installation details.
@@ -183,7 +188,7 @@ ScanCode needs a Python 2.7 interpreter.
 - **On Mac**:
 
   Download and install Python from this url:
-  https://www.python.org/ftp/python/2.7.11/python-2.7.11-macosx10.6.pkg
+  https://www.python.org/ftp/python/2.7.12/python-2.7.12-macosx10.6.pkg
 
 
 Installation on Linux and Mac
