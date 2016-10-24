@@ -940,7 +940,7 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         assert 1 == len(matches)
         match = matches[0]
         assert 'apache-2.0_8.RULE' == match.rule.identifier
-        assert match_aho.MATCH_AHO == match.matcher
+        assert match_aho.MATCH_AHO_EXACT == match.matcher
 
         qtext, _itext = get_texts(match, query_string=querys, idx=idx)
         assert u'The Apache Software License Version 2 0 http www apache org licenses LICENSE 2 0 txt' == qtext
