@@ -72,6 +72,9 @@ def tree_checksum(base_dir=src_dir):
     return md5(''.join(hashable)).hexdigest()
 
 
+LICENSE_INDEX_LOCK_TIMEOUT = 60 * 3
+
+
 def get_or_build_index_from_cache(force_clear=False):
     """
     Return a LicenseIndex loaded from cache. If the index is stale or does not exist,
@@ -81,7 +84,7 @@ def get_or_build_index_from_cache(force_clear=False):
     from licensedcode.models import get_rules
     try:
         # acquire lock and wait until timeout to get a lock or die
-        with yg.lockfile.FileLock(index_lock_file, timeout=60 * 3):
+        with yg.lockfile.FileLock(index_lock_file, timeout=LICENSE_INDEX_LOCK_TIMEOUT):
             if force_clear:
                 license_matches_cache.clear(0)
 
