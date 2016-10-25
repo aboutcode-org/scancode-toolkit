@@ -774,6 +774,8 @@ stop
 started
 administration
 bar
+applies
+apply
 institute
 views
 plans
@@ -2369,6 +2371,7 @@ setup
 poll
 booking
 glossary
+isc
 fiscal
 celebrity
 styles
@@ -2410,6 +2413,7 @@ efficient
 weblog
 linear
 commitment
+mit
 specialty
 bears
 commons
