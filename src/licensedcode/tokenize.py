@@ -152,9 +152,6 @@ def ngrams(iterable, ngram_length):
 
     >>> list(ngrams(tuple([1,2,3,4,5]), 2))
     [(1, 2), (2, 3), (3, 4), (4, 5)]
-    
-
-
     """
     return izip(*(islice(iterable, i, None) for i in range(ngram_length)))
 
@@ -180,8 +177,11 @@ def select_ngrams(ngrams, with_pos=False):
     >>> list(select_ngrams([(2, 1, 3), (1, 1, 3), (5, 1, 3), (2, 6, 1), (7, 3, 4)], with_pos=True))
     [(0, (2, 1, 3)), (1, (1, 1, 3)), (3, (2, 6, 1)), (4, (7, 3, 4))]
 
+    This works also from a generator:
+    >>> list(select_ngrams(x for x in [(2, 1, 3), (1, 1, 3), (5, 1, 3), (2, 6, 1), (7, 3, 4)]))
+    [(2, 1, 3), (1, 1, 3), (2, 6, 1), (7, 3, 4)]
     """
-    last = len(ngrams) - 1
+    last = None
     for i, ngram in enumerate(ngrams):
         # FIXME: use a proper hash
         nghs = [crc32(str(ng)) for ng in ngram]
@@ -190,7 +190,11 @@ def select_ngrams(ngrams, with_pos=False):
             ngram = (i, ngram,)
         if nghs[0] == min_hash or nghs[-1] == min_hash:
             yield ngram
+            last = ngram
         else:
             # always yield the first or last ngram too.
-            if i == 0 or i == last:
+            if i == 0:
                 yield ngram
+                last = ngram
+    if last != ngram:
+        yield ngram
