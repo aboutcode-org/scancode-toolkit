@@ -62,6 +62,7 @@ from licensedcode.match_set import tids_set_counter
 
 from licensedcode import query
 from licensedcode.tokenize import ngrams
+from licensedcode.tokenize import select_ngrams
 
 """
 Main license index construction, query processing and matching entry points for
@@ -89,11 +90,6 @@ TRACE_INDEXING_PERF = False
 TRACE_INDEXING_CHECK = False
 
 TRACE_CACHE = False
-
-USE_CACHE = False
-
-# feature switch to enable or not ngram fragments detection
-USE_AHO_FRAGMENTS = False
 
 
 def logger_debug(*args):
@@ -141,6 +137,17 @@ def get_index():
         _LICENSES_INDEX = get_or_build_index_from_cache()
     return _LICENSES_INDEX
 
+# Feature switches
+
+# Feature switch to use license cache or not (False is used only for testing)
+USE_CACHE = False
+
+# Feature switch to enable or not ngram fragments detection
+USE_AHO_FRAGMENTS = False
+
+# length of ngrams used for fragments detection
+NGRAM_LEN = 32
+
 
 # Maximum number of unique tokens we can handle: 16 bits signed integers are up to
 # 32767. Since we use internally several arrays of ints for smaller and optimized
@@ -150,8 +157,6 @@ MAX_TOKENS = (2 ** 15) - 1
 # if 4, ~ 1/4 of all tokens will be treated as junk
 PROPORTION_OF_JUNK = 2
 
-
-NGRAM_LEN = 12
 
 
 class LicenseIndex(object):
@@ -400,7 +405,9 @@ class LicenseIndex(object):
                     rules_automaton_add(tids=rule_token_ids, rid=rid)
                     # ... and ngrams: compute ngrams and populate the automaton with ngrams
                     if USE_AHO_FRAGMENTS and not rule.is_url and not rule.solid and len(rule_token_ids) > NGRAM_LEN:
-                        for pos, ngram in enumerate(ngrams(rule_token_ids, ngram_length=NGRAM_LEN)):
+                        all_ngrams = ngrams(rule_token_ids, ngram_length=NGRAM_LEN)
+                        selected_ngrams = select_ngrams(all_ngrams, with_pos=True)
+                        for pos, ngram in selected_ngrams:
                             rules_automaton_add(tids=ngram, rid=rid, start=pos)
 
                 # update rule thresholds
@@ -531,8 +538,8 @@ class LicenseIndex(object):
         logger_debug('#match: #QUERY RUNS:', len(qry.query_runs))
 
         # check if we have some matchable left
-        # collect qspans matched exactly
-        matched_qspans = [m.qspan for m in exact_matches]
+        # collect qspans matched exactly e.g. with score 100%
+        matched_qspans = [m.qspan for m in exact_matches if m.score()==100]
         # do not match futher if we do not need to
         if whole_query_run.is_matchable(include_low=True, qspans=matched_qspans):
 
