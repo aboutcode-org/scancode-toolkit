@@ -1,4 +1,5 @@
 licenses:
     - standard-ml-nj
-    - x11
     - x11-opengroup
+    - x11
+
