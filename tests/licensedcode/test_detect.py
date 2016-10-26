@@ -977,6 +977,16 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
             for line in negative_lines_not_to_match:
                 assert line not in match.lines()
 
+    def test_match_has_correct_line_positions_in_automake_perl_file(self):
+        # reported as https://github.com/nexB/scancode-toolkit/issues/88
+        expected = [
+              # detected, match.lines(), match.qspan,
+            (u'gpl-2.0-plus', (12, 25), Span(48, 159)),
+            (u'fsf-mit', (231, 238), Span(962, 1026)),
+            (u'unknown', (306, 307), Span(1308, 1331))
+        ]
+        self.check_position('positions/automake.pl', expected)
+
 
 class TestMatchBinariesWithFullIndex(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
