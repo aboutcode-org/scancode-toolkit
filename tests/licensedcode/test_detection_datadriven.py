@@ -148,7 +148,9 @@ def load_license_tests(test_dir=TEST_DATA_DIR):
 
     # ensure that each data file has a corresponding test file
     diff = set(data_files.keys()).symmetric_difference(set(test_files.keys()))
-    assert not diff
+    assert not diff, ('Orphaned license test file(s) found: '
+                      'test file without its YAML test descriptor '
+                      'or YAML test descriptor without its test file.')
 
     # second, create pairs of corresponding (data_file, test file) for files
     # that have the same base_name
