@@ -37,6 +37,7 @@ from licensedcode.models import Rule
 from licensedcode.spans import Span
 from licensedcode import match_aho
 from licensedcode import match_seq
+from license_test_utils import print_matched_texts
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -853,7 +854,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
 class TestMatchAccuracyWithFullIndex(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def check_position(self, test_path, expected):
+    def check_position(self, test_path, expected, with_span=True, print_results=False):
         """
         Check license detection in file or folder against expected result.
         Expected is a list of (license, lines span, qspan span) tuples.
@@ -865,7 +866,11 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         matches = idx.match(test_location)
         for match in matches:
             for detected in match.rule.licenses:
-                results.append((detected, match.lines(), match.qspan,))
+                if print_results:
+                    print()
+                    print(match)
+                    print_matched_texts(match, location=test_location, idx=idx)
+                results.append((detected, match.lines(), with_span and match.qspan or None))
         assert expected == results
 
     def test_match_has_correct_positions_basic(self):
@@ -983,7 +988,7 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
               # detected, match.lines(), match.qspan,
             (u'gpl-2.0-plus', (12, 25), Span(48, 159)),
             (u'fsf-mit', (231, 238), Span(962, 1026)),
-            (u'unknown', (306, 307), Span(1308, 1331))
+            (u'unknown', (306, 307), Span(1302, 1325))
         ]
         self.check_position('positions/automake.pl', expected)
 
