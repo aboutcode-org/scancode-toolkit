@@ -4,13 +4,12 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import io
-import os
-import re
 from glob import glob
 from os.path import basename
 from os.path import dirname
 from os.path import join
 from os.path import splitext
+import re
 
 from setuptools import find_packages
 from setuptools import setup
@@ -24,7 +23,7 @@ def read(*names, **kwargs):
 
 
 long_description = '%s\n%s' % (
-    read('README.rst'), 
+    read('README.rst'),
     re.sub(':obj:`~?(.*?)`', r'``\1``', read('CHANGELOG.rst'))
 )
 
@@ -53,7 +52,7 @@ setup(
         'Topic :: Utilities',
     ],
     keywords=[
-        'open source', 'scan', 'license', 'package', 
+        'open source', 'scan', 'license', 'package',
         'copyright', 'filetype', 'urn', 'date', 'codec',
     ],
     install_requires=[
@@ -77,8 +76,8 @@ setup(
         'pyahocorasick >= 1.1, < 1.2',
 
         # caching
-        'zc.lockfile >= 1.0.0, < 2.0.1',
-        'yg.lockfile >= 2.0.1, < 3.0.0',
+        'zc.lockfile >= 1.0.0, < 2.0.0',
+        'yg.lockfile >= 2.0.0, < 3.0.0',
         'diskcache >= 1.7.0, < 1.8.0',
 
         # textcode
@@ -88,7 +87,7 @@ setup(
         'six',
 
         # typecode and textcode
-        'pygments >= 2.0.1, <3.0.0',
+        'pygments >= 2.0.0, <3.0.0',
         'pdfminer >= 20140328',
 
         # typecode
@@ -103,9 +102,9 @@ setup(
 
         # packagedcode
         'requests >= 2.7.0, < 3.0.0',
-        'schematics >= 1.1.1, < 2.0.1',
-        
-        #misc
+        'schematics >= 1.1.1, < 2.0.0',
+
+        # misc
         'unicodecsv',
     ],
     extras_require={
