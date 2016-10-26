@@ -212,7 +212,7 @@
           "start_line": 25, 
           "end_line": 51, 
           "matched_rule": {
-            "identifier": "bsd-original-uc_5.RULE", 
+            "identifier": "bsd-original-uc_4.RULE", 
             "license_choice": false, 
             "licenses": [
               "bsd-original-uc"
