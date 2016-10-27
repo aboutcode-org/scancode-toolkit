@@ -2,7 +2,7 @@ licenses:
     - gpl-1.0-plus
     - artistic-2.0
     - zlib
-    - unicode
+    - unicode-data-software
     - artistic-2.0
     - gpl
     - bsd-new

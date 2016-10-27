@@ -1,4 +1,4 @@
 licenses:
     - gpl-2.0
-notes: MODULE_LICENSE in LKMs
+notes: MODULE_LICENSE in LKMs. FIXME this should be a plain GPL no version
 solid: yes

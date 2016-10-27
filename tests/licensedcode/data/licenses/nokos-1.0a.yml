@@ -1,3 +1,4 @@
 licenses:
     - nokos-1.0a
-notes: this is a damagedd version of the license.
+    - nokos-1.0a
+notes: this is a damaged version of the license where section 2.2 has been removed and partially merged in section 2.1.

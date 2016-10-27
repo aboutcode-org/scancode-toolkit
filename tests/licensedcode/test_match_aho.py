@@ -50,4 +50,4 @@ class TestMatchExact(FileBasedTesting):
         matches = match_aho.exact_match(idx, qry.whole_query_run(), idx.rules_automaton)
         assert 1 == len(matches)
         match = matches[0]
-        assert match_aho.MATCH_AHO == match.matcher
+        assert match_aho.MATCH_AHO_EXACT == match.matcher

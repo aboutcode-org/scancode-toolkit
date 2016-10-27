@@ -29,6 +29,7 @@ from array import array
 import cPickle
 from collections import Counter
 from collections import defaultdict
+from functools import partial
 from itertools import izip
 from operator import itemgetter
 import sys
@@ -49,6 +50,7 @@ from licensedcode.match import get_texts
 from licensedcode.match import merge_matches
 from licensedcode.match import refine_matches
 
+from licensedcode import match_aho
 from licensedcode.match_aho import exact_match
 from licensedcode.match_hash import index_hash
 from licensedcode.match_hash import match_hash
@@ -59,6 +61,8 @@ from licensedcode.match_set import tids_multiset_counter
 from licensedcode.match_set import tids_set_counter
 
 from licensedcode import query
+from licensedcode.tokenize import ngrams
+from licensedcode.tokenize import select_ngrams
 
 """
 Main license index construction, query processing and matching entry points for
@@ -88,13 +92,10 @@ TRACE_INDEXING_CHECK = False
 TRACE_CACHE = False
 
 
-USE_CACHE = False
-
-
 def logger_debug(*args):
     pass
 
-if TRACE:
+if TRACE or TRACE_INDEXING_PERF:
     import logging
 
     logger = logging.getLogger(__name__)
@@ -136,6 +137,17 @@ def get_index():
         _LICENSES_INDEX = get_or_build_index_from_cache()
     return _LICENSES_INDEX
 
+# Feature switches
+
+# Feature switch to use license cache or not (False is used only for testing)
+USE_CACHE = False
+
+# Feature switch to enable or not ngram fragments detection
+USE_AHO_FRAGMENTS = False
+
+# length of ngrams used for fragments detection
+NGRAM_LEN = 32
+
 
 # Maximum number of unique tokens we can handle: 16 bits signed integers are up to
 # 32767. Since we use internally several arrays of ints for smaller and optimized
@@ -144,6 +156,7 @@ MAX_TOKENS = (2 ** 15) - 1
 
 # if 4, ~ 1/4 of all tokens will be treated as junk
 PROPORTION_OF_JUNK = 2
+
 
 
 class LicenseIndex(object):
@@ -344,6 +357,10 @@ class LicenseIndex(object):
         # track all duplicate rules: fail and report dupes at once at the end
         dupe_rules_by_hash = defaultdict(list)
 
+        # build closures for methods that populate automatons
+        negative_automaton_add = partial(match_aho.add_sequence, automaton=self.negative_automaton)
+        rules_automaton_add = partial(match_aho.add_sequence, automaton=self.rules_automaton)
+
         # build by-rule index structures over the token ids seq of each rule
         for rid, rule_token_ids in enumerate(tids_by_rid):
             rule = self.rules_by_rid[rid]
@@ -359,10 +376,10 @@ class LicenseIndex(object):
             else:
                 # negative, small and regular
 
-                # # hashes
+                # update hashes index
                 self.rid_by_hash[rule_hash] = rid
 
-                # # high postings: positions by high tids
+                # update high postings index: positions by high tids
                 # TODO: this could be optimized with a group_by
                 postings = defaultdict(list)
                 for pos, tid in enumerate(rule_token_ids):
@@ -374,18 +391,26 @@ class LicenseIndex(object):
                 sparsify(postings)
                 self.high_postings_by_rid[rid] = postings
 
-                # # high and low tids sets and multisets
+                # build high and low tids sets and multisets
                 rlow_set, rhigh_set, rlow_mset, rhigh_mset = index_token_sets(rule_token_ids, len_junk, len_good)
                 self.tids_sets_by_rid[rid] = rlow_set, rhigh_set
                 self.tids_msets_by_rid[rid] = rlow_mset, rhigh_mset
 
-                # # automatons
+                # populate automatons...
                 if rule.negative():
-                    self.negative_automaton.add_word(rule_token_ids.tostring(), rid)
+                    # ... with only the whole rule tokens sequence
+                    negative_automaton_add(tids=rule_token_ids, rid=rid)
                 else:
-                    self.rules_automaton.add_word(rule_token_ids.tostring(), rid)
+                    # ... or with the whole rule tokens sequence
+                    rules_automaton_add(tids=rule_token_ids, rid=rid)
+                    # ... and ngrams: compute ngrams and populate the automaton with ngrams
+                    if USE_AHO_FRAGMENTS and not rule.is_url and not rule.solid and len(rule_token_ids) > NGRAM_LEN:
+                        all_ngrams = ngrams(rule_token_ids, ngram_length=NGRAM_LEN)
+                        selected_ngrams = select_ngrams(all_ngrams, with_pos=True)
+                        for pos, ngram in selected_ngrams:
+                            rules_automaton_add(tids=ngram, rid=rid, start=pos)
 
-                # # update rule thresholds
+                # update rule thresholds
                 rule.low_unique = tids_set_counter(rlow_set)
                 rule.high_unique = tids_set_counter(rhigh_set)
                 rule.length_unique = rule.high_unique + rule.low_unique
@@ -513,8 +538,8 @@ class LicenseIndex(object):
         logger_debug('#match: #QUERY RUNS:', len(qry.query_runs))
 
         # check if we have some matchable left
-        # collect qspans matched exactly
-        matched_qspans = [m.qspan for m in exact_matches]
+        # collect qspans matched exactly e.g. with score 100%
+        matched_qspans = [m.qspan for m in exact_matches if m.score()==100]
         # do not match futher if we do not need to
         if whole_query_run.is_matchable(include_low=True, qspans=matched_qspans):
 

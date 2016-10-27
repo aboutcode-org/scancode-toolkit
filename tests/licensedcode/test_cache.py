@@ -149,7 +149,7 @@ class LicenseMatchCacheTest(FileBasedTesting):
 
         # populate cache with aho exact matches
         matches = idx.match(query_string=querys, use_cache=cache_dir)
-        assert all(match_aho.MATCH_AHO in match.matcher for match in matches)
+        assert all(match_aho.MATCH_AHO_EXACT in match.matcher for match in matches)
 
         # rematch to hit cache
         matches = idx.match(query_string=querys, use_cache=cache_dir)

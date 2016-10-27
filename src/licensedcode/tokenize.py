@@ -134,40 +134,67 @@ def ngrams(iterable, ngram_length):
 
     >>> list(ngrams([1,2,3,4], 2))
     [(1, 2), (2, 3), (3, 4)]
-    
+
     >>> list(ngrams([1,2,3], 2))
     [(1, 2), (2, 3)]
+
     >>> list(ngrams([1,2], 2))
     [(1, 2)]
+
     >>> list(ngrams([1], 2))
     []
+
+    This also works with arrays or tuples:
+    
+    >>> from array import array
+    >>> list(ngrams(array(b'h', [1,2,3,4,5]), 2))
+    [(1, 2), (2, 3), (3, 4), (4, 5)]
+
+    >>> list(ngrams(tuple([1,2,3,4,5]), 2))
+    [(1, 2), (2, 3), (3, 4), (4, 5)]
     """
     return izip(*(islice(iterable, i, None) for i in range(ngram_length)))
 
 
-def select_ngrams(ngrams):
+def select_ngrams(ngrams, with_pos=False):
     """
     Return an iterable as a subset of a sequence of ngrams using the hailstorm
-    algorithm. 
+    algorithm. If `with_pos` is True also include the starting position for the ngram
+    in the original sequence.
+    
     Definition from the paper: http://www2009.eprints.org/7/1/p61.pdf
-    The algorithm first fingerprints every token and then selects a shingle s if the
-    minimum fingerprint value of all k tokens in s occurs at the first or the last
-    position of s (and potentially also in between). Due to the probabilistic
-    properties of Rabin fingerprints the probability that a shingle is chosen is 2/k
-    if all tokens in the shingle are different.
+      The algorithm first fingerprints every token and then selects a shingle s if
+      the minimum fingerprint value of all k tokens in s occurs at the first or the
+      last position of s (and potentially also in between). Due to the
+      probabilistic properties of Rabin fingerprints the probability that a shingle
+      is chosen is 2/k if all tokens in the shingle are different.
 
     For example:
     >>> list(select_ngrams([(2, 1, 3), (1, 1, 3), (5, 1, 3), (2, 6, 1), (7, 3, 4)]))
     [(2, 1, 3), (1, 1, 3), (2, 6, 1), (7, 3, 4)]
+
+    Positions can also be included. In this case, tuple of (pos, ngram) are returned:
+    >>> list(select_ngrams([(2, 1, 3), (1, 1, 3), (5, 1, 3), (2, 6, 1), (7, 3, 4)], with_pos=True))
+    [(0, (2, 1, 3)), (1, (1, 1, 3)), (3, (2, 6, 1)), (4, (7, 3, 4))]
+
+    This works also from a generator:
+    >>> list(select_ngrams(x for x in [(2, 1, 3), (1, 1, 3), (5, 1, 3), (2, 6, 1), (7, 3, 4)]))
+    [(2, 1, 3), (1, 1, 3), (2, 6, 1), (7, 3, 4)]
     """
-    last = len(ngrams) - 1
+    last = None
     for i, ngram in enumerate(ngrams):
         # FIXME: use a proper hash
         nghs = [crc32(str(ng)) for ng in ngram]
         min_hash = min(nghs)
+        if with_pos:
+            ngram = (i, ngram,)
         if nghs[0] == min_hash or nghs[-1] == min_hash:
             yield ngram
+            last = ngram
         else:
             # always yield the first or last ngram too.
-            if i == 0 or i == last:
+            if i == 0:
                 yield ngram
+                last = ngram
+    if last != ngram:
+        yield ngram

@@ -30,3 +30,4 @@ licenses:
     - zlib
 
 expected_failure: yes
+notes: this is a notice from an iPhone (1 or 2)

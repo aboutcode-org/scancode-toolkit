@@ -1,0 +1,5 @@
+licenses:
+    - apache-2.0
+    - bsd-new
+license_choice: yes
+notes: seen in https://pypi.python.org/pypi/python-subunit

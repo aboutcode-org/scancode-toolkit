@@ -2,5 +2,4 @@ licenses:
     - proprietary
     - gpl
     - lgpl
-expected_contains: yes
 notes: a complex proprietary license with GPL and LGPL references.

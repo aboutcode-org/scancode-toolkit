@@ -404,7 +404,8 @@ def merge_matches(matches, max_dist=MAX_DIST):
                 if TRACE_MERGE: logger_debug('---> merge_matches: next:   ', next_match)
 
                 # stop if we exceed max dist
-                if current_match.qdistance_to(next_match) > MAX_DIST:
+                if (current_match.qdistance_to(next_match) > MAX_DIST
+                or current_match.idistance_to(next_match) > MAX_DIST):
                     break
 
                 # keep one of equal matches
@@ -426,6 +427,7 @@ def merge_matches(matches, max_dist=MAX_DIST):
                     i -= 1
                     break
 
+                # FIXME: qsurround is too weak. We want to check also isurround
                 # merge surrounded
                 if current_match.surround(next_match):
                     current_match.update(next_match)
@@ -433,6 +435,7 @@ def merge_matches(matches, max_dist=MAX_DIST):
                     del matches[j]
                     continue
 
+                # FIXME: qsurround is too weak. We want to check also isurround
                 # merge surrounded the other way too: merge in current
                 if next_match.surround(current_match):
                     next_match.update(current_match)
@@ -451,7 +454,9 @@ def merge_matches(matches, max_dist=MAX_DIST):
                 # next_match overlaps
                 # Check increasing sequence and overlap importance to decide merge
                 if (current_match.qstart <= next_match.qstart
-                and current_match.qend <= next_match.qend):
+                and current_match.qend <= next_match.qend
+                and current_match.istart <= next_match.istart
+                and current_match.iend <= next_match.iend):
                     qoverlap = current_match.qspan.overlap(next_match.qspan)
                     if qoverlap:
                         # round the q and i overlap:
