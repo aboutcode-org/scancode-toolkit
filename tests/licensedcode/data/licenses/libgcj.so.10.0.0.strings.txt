@@ -1,0 +1,829 @@
+gnu.gcj.convert.Input_
+too many `-' arguments
+unrecognized argument `
+jv-convert exception:
+gnu.gcj.convert.Output_
+([Ljava.lang.String;)V
+partial_bytes_expected
+gnu.gcj.convert.BytesToUnicode
+gnu.gcj.convert.Output_JavaSrc
+gnu.gcj.convert.UnicodeToBytes
+gnu.gcj.convert.IOConverter
+gnu.gcj.convert.Input_ASCII
+gnu.gcj.convert.Input_SJIS
+gnu.gcj.convert.Input_UTF8
+gnu.gcj.convert.Input_iconv
+gnu.gcj.convert.Output_SJIS
+gnu.gcj.convert.Output_UTF8
+too many filename arguments
+--encoding FROM
+missing arg after `
+cseucpkdfmtjapanese
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+--reverse          swap FROM and TO encodings
+--help             print this help, then exit
+T21
+Copyright (C) 2010 Free Software Foundation, Inc.
+`-' as a file name argument can be used to refer to stdin or stdout.
+-o FILE            print output to FILE
+--from FROM        use FROM as source encoding name
+gnu.gcj.convert.Output_UnicodeLittleUnmarked
+Try `jv-convert --help' for more information.
+extended_unix_code_packed_format_for_japanese
+shsInit
+update
+digest
+counter
+(Ljava.lang.String;Ljava.lang.String;[Ljava.lang.String;[Ljava.lang.String;Z)V
+(Ljava.lang.Class;Ljava.lang.String;[Ljava.lang.Object;)Ljava.lang.reflect.Method;
+Invoking the DummyContext is not expected - Please file a bug report at http://www/gnu.org/software/classpath/.
+Adding objects without an index to a fixed array is not possible.
+gnu.java.beans.encoder.PrimitivePersistenceDelegate
+gnu.java.beans.encoder.elements.ArrayInstantiation
+gnu.java.beans.encoder.elements.ObjectInstantiation
+Property attribut allows zero or one argument only.
+Statements inside a growable array are not allowed.
+(ILjava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)V
+gnu/java/awt/font/fonts.properties# fonts.properties
+#    Copyright (C) 2007 Free Software Foundation, Inc.
+# 
+# This file is part of GNU Classpath.
+# 
+# GNU Classpath is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+# 
+# GNU Classpath is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with GNU Classpath; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+# 02110-1301 USA.
+# 
+# Linking this library statically or dynamically with other modules is
+# making a combined work based on this library.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+# 
+# As a special exception, the copyright holders of this library give you
+# permission to link this library with independent modules to produce an
+# executable, regardless of the license terms of these independent
+# modules, and to copy and distribute the resulting executable under
+# terms of your choice, provided that you also meet, for each linked
+# independent module, the terms and conditions of the license of that
+# module.  An independent module is a module which is not derived from
+# or based on this library.  If you modify this library, you may extend
+# this exception to your version of the library, but you are not
+# obligated to do so.  If you do not wish to do so, delete this
+# exception statement from your version.
+
+# List of available fonts.
+FreeMono/p=/usr/share/fonts/truetype/freefont/FreeMono.ttf
+FreeMono/b=/usr/share/fonts/truetype/freefont/FreeMonoBold.ttf
+FreeMono/bi=/usr/share/fonts/truetype/freefont/FreeMonoBoldOblique.ttf
+FreeMono/i=/usr/share/fonts/truetype/freefont/FreeMonoOblique.ttf
+
+FreeSans/p=/usr/share/fonts/truetype/freefont/FreeSans.ttf
+FreeSans/b=/usr/share/fonts/truetype/freefont/FreeSansBold.ttf
+FreeSans/bi=/usr/share/fonts/truetype/freefont/FreeSansBoldOblique.ttf
+FreeSans/i=/usr/share/fonts/truetype/freefont/FreeSansOblique.ttf
+
+FreeSerif/p=/usr/share/fonts/truetype/freefont/FreeSerif.ttf
+FreeSerif/b=/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf
+FreeSerif/bi=/usr/share/fonts/truetype/freefont/FreeSerifBoldOblique.ttf
+FreeSerif/i=/usr/share/fonts/truetype/freefont/FreeSerifOblique.ttf
+
+# List of aliases.
+Dialog/a=FreeSans
+DialogInput/a=FreeSans
+Serif/a=FreeSerif
+SansSerif/a=FreeSans
+Monospaced/a=FreeMono
+gnu/java/awt/peer/gtk/font.properties# font.properties
+#    Copyright (C) 2002 Free Software Foundation, Inc.
+# 
+# This file is part of GNU Classpath.
+# 
+# GNU Classpath is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+# 
+# GNU Classpath is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with GNU Classpath; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+# 02110-1301 USA.
+# 
+# Linking this library statically or dynamically with other modules is
+# making a combined work based on this library.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+# 
+# As a special exception, the copyright holders of this library give you
+# permission to link this library with independent modules to produce an
+# executable, regardless of the license terms of these independent
+# modules, and to copy and distribute the resulting executable under
+# terms of your choice, provided that you also meet, for each linked
+# independent module, the terms and conditions of the license of that
+# module.  An independent module is a module which is not derived from
+# or based on this library.  If you modify this library, you may extend
+# this exception to your version of the library, but you are not
+# obligated to do so.  If you do not wish to do so, delete this
+# exception statement from your version.
+
+
+# This file is meant to be temporary.
+# We'll eventually replace _all_ the font code when GScript is done.
+# Until that happens, we won't be supporting non-iso8859-1 fonts.
+#
+# suffixes:
+# .0 = plain
+# .1 = bold
+# .2 = italic
+# .3 = bold & italic
+
+serif.0=-adobe-times-medium-r-normal--*-%d-*-*-p-*-iso8859-1
+serif.1=-adobe-times-bold-r-normal--*-%d-*-*-p-*-iso8859-1
+serif.2=-adobe-times-medium-i-normal--*-%d-*-*-p-*-iso8859-1
+serif.3=-adobe-times-bold-i-normal--*-%d-*-*-p-*-iso8859-1
+
+sansserif.0=-adobe-helvetica-medium-r-normal--*-%d-*-*-p-*-iso8859-1
+sansserif.1=-adobe-helvetica-bold-r-normal--*-%d-*-*-p-*-iso8859-1
+sansserif.2=-adobe-helvetica-medium-o-normal--*-%d-*-*-p-*-iso8859-1
+sansserif.3=-adobe-helvetica-bold-o-normal--*-%d-*-*-p-*-iso8859-1
+
+monospaced.0=-adobe-courier-medium-r-normal--*-%d-*-*-m-*-iso8859-1
+monospaced.1=-adobe-courier-bold-r-normal--*-%d-*-*-m-*-iso8859-1
+monospaced.2=-adobe-courier-medium-o-normal--*-%d-*-*-m-*-iso8859-1
+monospaced.3=-adobe-courier-bold-o-normal--*-%d-*-*-m-*-iso8859-1
+
+dialog.0=-b&h-lucida-medium-r-normal-sans-*-%d-*-*-p-*-iso8859-1
+dialog.1=-b&h-lucida-bold-r-normal-sans-*-%d-*-*-p-*-iso8859-1
+dialog.2=-b&h-lucida-medium-i-normal-sans-*-%d-*-*-p-*-iso8859-1
+dialog.3=-b&h-lucida-bold-i-normal-sans-*-%d-*-*-p-*-iso8859-1
+
+dialoginput.0=-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+dialoginput.1=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+dialoginput.2=-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+dialoginput.3=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+gnu/java/awt/peer/x/fonts.properties# fonts.properties
+#    Copyright (C) 2006 Free Software Foundation, Inc.
+# 
+# This file is part of GNU Classpath.
+# 
+# GNU Classpath is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+# 
+# GNU Classpath is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with GNU Classpath; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+# 02110-1301 USA.
+# 
+# Linking this library statically or dynamically with other modules is
+# making a combined work based on this library.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+# 
+# As a special exception, the copyright holders of this library give you
+# permission to link this library with independent modules to produce an
+# executable, regardless of the license terms of these independent
+# modules, and to copy and distribute the resulting executable under
+# terms of your choice, provided that you also meet, for each linked
+# independent module, the terms and conditions of the license of that
+# module.  An independent module is a module which is not derived from
+# or based on this library.  If you modify this library, you may extend
+# this exception to your version of the library, but you are not
+# obligated to do so.  If you do not wish to do so, delete this
+# exception statement from your version.
+
+serif.plain=-adobe-times-medium-r-normal--*-%d-75-*-p-*-iso8859-1
+serif.bold=-adobe-times-bold-r-normal--*-%d-75-*-p-*-iso8859-1
+serif.italic=-adobe-times-medium-o-normal--*-%d-75-*-p-*-iso8859-1
+serif.bolditalic=-adobe-times-bold-o-normal--*-%d-75-*-p-*-iso8859-1
+
+sansserif.plain=-adobe-helvetica-medium-r-normal--*-%d-75-*-p-*-iso8859-1
+sansserif.bold=-adobe-helvetica-bold-r-normal--*-%d-75-*-p-*-iso8859-1
+sansserif.italic=-adobe-helvetica-medium-o-normal--*-%d-75-*-p-*-iso8859-1
+sansserif.bolditalic=-adobe-helvetica-bold-o-normal--*-%d-75-*-p-*-iso8859-1
+
+monospaced.plain=-adobe-courier-medium-r-normal--*-%d-75-*-p-*-iso8859-1
+monospaced.bold=-adobe-courier-bold-r-normal--*-%d-75-*-p-*-iso8859-1
+monospaced.italic=-adobe-courier-medium-o-normal--*-%d-75-*-p-*-iso8859-1
+monospaced.bolditalic=-adobe-courier-bold-o-normal--*-%d-75-*-p-*-iso8859-1
+
+dialog.plain=-adobe-helvetica-medium-r-normal--*-%d-75-*-p-*-iso8859-1
+dialog.bold=-adobe-helvetica-bold-r-normal--*-%d-75-*-p-*-iso8859-1
+dialog.italic=-adobe-helvetica-medium-o-normal--*-%d-75-*-p-*-iso8859-1
+dialog.bolditalic=-adobe-helvetica-bold-o-normal--*-%d-75-*-p-*-iso8859-1
+
+dialoginput.plain=-adobe-helvetica-medium-r-normal--*-%d-75-*-p-*-iso8859-1
+dialoginput.bold=-adobe-helvetica-bold-r-normal--*-%d-75-*-p-*-iso8859-1
+dialoginput.italic=-adobe-helvetica-medium-o-normal--*-%d-75-*-p-*-iso8859-1
+dialoginput.bolditalic=-adobe-helvetica-bold-o-normal--*-%d-75-*-p-*-iso8859-1
+gnu/java/awt/peer/x/xfonts.properties
+serif.plain=-adobe-times-medium-r-normal--%d-*-*-*-p-*-iso8859-1
+serif.bold=-adobe-times-bold-r-normal--%d-*-*-*-p-*-iso8859-1
+serif.italic=-adobe-times-medium-o-normal--%d-*-*-*-p-*-iso8859-1
+serif.bolditalic=-adobe-times-bold-o-normal--%d-*-*-*-p-*-iso8859-1
+
+sansserif.plain=-adobe-helvetica-medium-r-normal--%d-*-*-*-p-*-iso8859-1
+sansserif.bold=-adobe-helvetica-bold-r-normal--%d-*-*-*-p-*-iso8859-1
+sansserif.italic=-adobe-helvetica-medium-o-normal--%d-*-*-*-p-*-iso8859-1
+sansserif.bolditalic=-adobe-helvetica-bold-o-normal--%d-*-*-*-p-*-iso8859-1
+
+monospaced.plain=-adobe-courier-medium-r-normal--%d-*-*-*-p-*-iso8859-1
+monospaced.bold=-adobe-courier-bold-r-normal--%d-*-*-*-p-*-iso8859-1
+monospaced.italic=-adobe-courier-medium-o-normal--%d-*-*-*-p-*-iso8859-1
+monospaced.bolditalic=-adobe-courier-bold-o-normal--%d-*-*-*-p-*-iso8859-1
+
+dialog.plain=-adobe-helvetica-medium-r-normal--%d-*-*-*-p-*-iso8859-1
+dialog.bold=-adobe-helvetica-bold-r-normal--%d-*-*-*-p-*-iso8859-1
+dialog.italic=-adobe-helvetica-medium-o-normal--%d-*-*-*-p-*-iso8859-1
+dialog.bolditalic=-adobe-helvetica-bold-o-normal--%d-*-*-*-p-*-iso8859-1
+
+dialoginput.plain=-adobe-helvetica-medium-r-normal--%d-*-*-*-p-*-iso8859-1
+dialoginput.bold=-adobe-helvetica-bold-r-normal--%d-*-*-*-p-*-iso8859-1
+dialoginput.italic=-adobe-helvetica-medium-o-normal--%d-*-*-*-p-*-iso8859-1
+dialoginput.bolditalic=-adobe-helvetica-bold-o-normal--%d-*-*-*-p-*-iso8859-1
+gnu/java/locale/LocaleInformation.properties# LocaleInformation.properties --
+# Copyright (C) 1991-2005 Unicode, Inc.
+# All rights reserved. Distributed under the Terms of Use
+# in http://www.unicode.org/copyright.html.
+#
+# This file was automatically generated by gnu.localegen from CLDR.
+
+percent=%
+perMill=\u2030
+exponential=E
+infinity=\u221e
+NaN=NaN
+minusSign=-
+zeroDigit=0
+
+modificarla
+gnu/javax/print/PrinterDialog.properties# PrinterDialog.properties -- Default property file for PrinterDialog
+# Copyright (C) 2006 Free Software Foundation, Inc.
+# 
+# This file is part of GNU Classpath.
+# 
+# GNU Classpath is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+# 
+# GNU Classpath is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with GNU Classpath; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+# 02110-1301 USA.
+# 
+# Linking this library statically or dynamically with other modules is
+# making a combined work based on this library.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+# 
+# As a special exception, the copyright holders of this library give you
+# permission to link this library with independent modules to produce an
+# executable, regardless of the license terms of these independent
+# modules, and to copy and distribute the resulting executable under
+# terms of your choice, provided that you also meet, for each linked
+# independent module, the terms and conditions of the license of that
+# module.  An independent module is a module which is not derived from
+# or based on this library.  If you modify this library, you may extend
+# this exception to your version of the library, but you are not
+# obligated to do so.  If you do not wish to do so, delete this
+# exception statement from your version.
+#
+rbt.onesided=Onesided
+rbt.calendar=Calendar
+rbt.duplex=Duplex
+rbt.blackwhite=Black&White
+rbt.color=Color
+rbt.low=Low
+rbt.normal=Normal
+rbt.high=High
+rbt.all=All
+rbt.pages=Pages
+rbt.portrait=Portrait
+rbt.landscape=Landscape
+rbt.revportrait=Reversed Portrait
+rbt.revlandscape=Reversed Landscape
+cb.cover=Cover page
+cb.sort=Sort
+cb.output=Redirect output in file
+lb.size=Size:
+lb.source=Source:
+lb.left=left (mm)
+lb.right=right (mm)
+lb.top=top (mm)
+lb.bottom=bottom (mm)
+lb.name=Name:
+lb.status=Status:
+lb.typ=Typ:
+lb.info=Info:
+lb.to=to
+lb.copies=Number of copies:
+lb.jobname=Job name:
+lb.username=User name:
+lb.priority=Priority:
+lb.acceptingjobs=Printer is accepting jobs
+lb.notacceptingjobs=Printer is not accepting jobs
+lb.automatically=Automatically Select
+bt.attributes=Attributes...
+bt.print=Print
+bt.OK=OK
+bt.cancel=Cancel
+# names of the panel titles
+title.medias=Medias
+title.printservice=Printservice
+title.orientation=Orientation
+title.color=Color
+title.sides=Sides
+title.copies=Copies
+title.quality=Quality
+title.jobattributes=Job-Attributes
+title.margins=Margins
+title.printdialog=Printing
+title.pagedialog=Printing
+title.printrange=Printrange
+# names of the main tabs
+tab.general=General
+tab.pagesetup=Page setup
+tab.appearance=Appearance
+gnu/javax/print/PrinterDialog_de.properties# PrinterDialog_de.properties -- German property file for PrinterDialog
+# Copyright (C) 2006 Free Software Foundation, Inc.
+# 
+# This file is part of GNU Classpath.
+# 
+# GNU Classpath is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+# 
+# GNU Classpath is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with GNU Classpath; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+# 02110-1301 USA.
+# 
+# Linking this library statically or dynamically with other modules is
+# making a combined work based on this library.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+# 
+# As a special exception, the copyright holders of this library give you
+# permission to link this library with independent modules to produce an
+# executable, regardless of the license terms of these independent
+# modules, and to copy and distribute the resulting executable under
+# terms of your choice, provided that you also meet, for each linked
+# independent module, the terms and conditions of the license of that
+# module.  An independent module is a module which is not derived from
+# or based on this library.  If you modify this library, you may extend
+# this exception to your version of the library, but you are not
+# obligated to do so.  If you do not wish to do so, delete this
+# exception statement from your version.
+#
+rbt.onesided=Einseitig
+rbt.calendar=Kalenderdruck
+rbt.duplex=Duplex
+rbt.blackwhite=Schwarzwei
+rbt.color=Farbe
+rbt.low=Entwurf
+rbt.normal=Normal
+rbt.high=Hoch
+rbt.all=Alle
+rbt.pages=Seiten
+rbt.portrait=Hochformat
+rbt.landscape=Querformat
+rbt.revportrait=Umgekehrtes Hochformat
+rbt.revlandscape=Umgekehrtes Querformat
+cb.cover=Deckblatt
+cb.sort=Sortieren
+cb.output=Ausgabe in Datei umleiten
+lb.size=Gr
+e:
+lb.source=Quelle:
+lb.left=links (mm)
+lb.right=rechts (mm)
+lb.top=oben (mm)
+lb.bottom=unten (mm)
+lb.name=Name:
+lb.status=Status:
+lb.typ=Typ:
+lb.info=Info:
+lb.to=Bis
+lb.copies=Anzahl der Kopien:
+lb.jobname=Job-name:
+lb.username=Benutzername:
+lb.priority=Priorit
+t:
+lb.acceptingjobs=Drucker nimmt Auftr
+ge an
+lb.notacceptingjobs=Drucker nimmt keine Auftr
+ge an
+lb.automatically=Automatische Auswahl
+bt.attributes=Eigenschaften...
+bt.print=Drucken
+bt.OK=OK
+bt.cancel=Abbrechen
+title.medias=Medien
+title.printservice=Druckdienst
+title.orientation=Ausrichtung
+title.color=Farbdarstellung
+title.sides=Seiten
+title.copies=Kopien
+title.quality=Qualit
+t
+title.jobattributes=Job-Attribute
+title.margins=R
+nder
+title.printdialog=Drucken
+title.pagedialog=Seite einrichten
+title.printrange=Druckbereich
+tab.general=Allgemein
+tab.pagesetup=Seite einrichten
+tab.appearance=Aussehen
+gnu/javax/security/auth/callback/MessagesBundle.properties# MessagesBundle.properties -- Default messages bundle.
+# Copyright (C) 2005  Free Software Foundation, Inc.
+#
+# This file is a part of GNU Classpath.
+#
+# GNU Classpath is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as
+# published by the Free Software Foundation; either version 2 of the
+# License, or (at your option) any later version.
+#
+# GNU Classpath is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with GNU Classpath; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
+# USA
+#
+# Linking this library statically or dynamically with other modules is
+# making a combined work based on this library.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+#
+# As a special exception, the copyright holders of this library give
+# you permission to link this library with independent modules to
+# produce an executable, regardless of the license terms of these
+# independent modules, and to copy and distribute the resulting
+# executable under terms of your choice, provided that you also meet,
+# for each linked independent module, the terms and conditions of the
+# license of that module.  An independent module is a module which is
+# not derived from or based on this library.  If you modify this
+# library, you may extend this exception to your version of the
+# library, but you are not obligated to do so.  If you do not wish to
+# do so, delete this exception statement from your version.
+
+callback.yesNo=(yes or no)\ 
+callback.yesNoCancel=(yes, no, cancel)\ 
+callback.okCancel=(ok or cancel)\ 
+callback.language=Choose your language:\ 
+
+callback.yes=Yes
+callback.shortYes=y
+callback.no=No
+callback.shortNo=n
+callback.cancel=Cancel
+callback.ok=Okay
+minDays.MT=4
+minDays.NL=4
+minDays.NO=4
+minDays.SE=4
+minDays.SK=4
+javax/imageio/plugins/jpeg/MessagesBundle.properties# Localized error messages for javax.imageio.plugins.jpeg
+
+# Compression types
+compression.types.jpeg=JPEG
+
+# Compression quality descriptions
+compression.minimum=Minimum useful
+compression.default=Visually lossless
+compression.maximum=Maximum useful
+javax/swing/text/html/default.css/* default.css --
+   Copyright (C) 2005 Free Software Foundation, Inc.
+
+This file is part of GNU Classpath.
+
+GNU Classpath is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+GNU Classpath is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with GNU Classpath; see the file COPYING.  If not, write to the
+Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301 USA.
+
+Linking this library statically or dynamically with other modules is
+making a combined work based on this library.  Thus, the terms and
+conditions of the GNU General Public License cover the whole
+combination.
+
+As a special exception, the copyright holders of this library give you
+permission to link this library with independent modules to produce an
+executable, regardless of the license terms of these independent
+modules, and to copy and distribute the resulting executable under
+terms of your choice, provided that you also meet, for each linked
+independent module, the terms and conditions of the license of that
+module.  An independent module is a module which is not derived from
+or based on this library.  If you modify this library, you may extend
+this exception to your version of the library, but you are not
+obligated to do so.  If you do not wish to do so, delete this
+exception statement from your version. */
+
+nobr {
+  white-space: nowrap;
+}
+
+ol {
+  margin-right: 50px;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+  list-style-type: decimal;
+}
+
+u {
+  text-decoration: underline;
+}
+
+s {
+  text-decoration: line-through;
+}
+
+p {
+  margin-top: 15px;
+}
+
+dd p {
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+ol li p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+
+address {
+  font-style: italic;
+  color: blue;
+}
+
+i {
+  font-style: italic;
+}
+
+h6 {
+  margin-top: 10px;
+  font-size: xx-small;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+big { 
+  font-size: x-large;
+}
+org/ietf/jgss/MessagesBundle.properties# MessagesBundle.properties -- English GSS messages.
+# Copyright (C) 2004  Free Software Foundation, Inc.
+#
+# This file is a part of GNU Classpath.
+#
+# GNU Classpath is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as
+# published by the Free Software Foundation; either version 2 of the
+# License, or (at your option) any later version.
+#
+# GNU Classpath is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with GNU Classpath; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301
+# USA
+#
+# Linking this library statically or dynamically with other modules is
+# making a combined work based on this library.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+#
+# As a special exception, the copyright holders of this library give
+# you permission to link this library with independent modules to
+# produce an executable, regardless of the license terms of these
+# independent modules, and to copy and distribute the resulting
+# executable under terms of your choice, provided that you also meet,
+# for each linked independent module, the terms and conditions of the
+# license of that module.  An independent module is a module which is
+# not derived from or based on this library.  If you modify this
+# library, you may extend this exception to your version of the
+# library, but you are not obligated to do so.  If you do not wish to
+# do so, delete this exception statement from your version.
+
+GSSException.BAD_MECH=An unsupported mechanism was requested.
+GSSException.BAD_NAME=An invalid name was supplied.
+GSSException.BAD_NAMETYPE=A supplied name was of an unsupported type.
+GSSException.BAD_BINDINGS=Incorrect channel bindings were supplied.
+GSSException.BAD_STATUS=An invalid status code was supplied.
+GSSException.BAD_MIC=A token had an invalid MIC.
+GSSException.NO_CRED=No credentials were supplied, or the credentials were unavailable or inaccessible.
+GSSException.NO_CONTEXT=Invalid context has been supplied.
+GSSException.DEFECTIVE_TOKEN=A supplied token was invalid.
+GSSException.DEFECTIVE_CREDENTIAL=A supplied credential was invalid.
+GSSException.CREDENTIALS_EXPIRED=The referenced credentials have expired.
+GSSException.CONTEXT_EXPIRED=The context has expired.
+GSSException.FAILURE=Miscellaneous failure.
+GSSException.BAD_QOP=The quality-of-protection requested could not be provided.
+GSSException.UNAUTHORIZED=The operation is forbidden by local security policy.
+GSSException.UNAVAILABLE=The operation or option is unavailable.
+GSSException.DUPLICATE_ELEMENT=The requested credential element already exists.
+GSSException.NAME_NOT_MN=The provided name was not a mechanism name.
+GSSException.OLD_TOKEN=The token\'s validity period has expired.
+GSSException.DUPLICATE_TOKEN=The token was a duplicate of an earlier version.
+GSSException.UNSEQ_TOKEN=A later token has already been processed.
+GSSException.GAP_TOKEN=An expected per-message token was not received.
+META-INF/services/java.util.prefs.PreferencesFactorygnu.java.util.prefs.FileBasedFactory
+META-INF/services/java.util.prefs.PreferencesFactory.in@DEFAULT_PREFS_PEER@
+META-INF/services/javax.sound.midi.spi.MidiDeviceProvidergnu.javax.sound.midi.alsa.AlsaMidiDeviceProvider
+gnu.javax.sound.midi.dssi.DSSIMidiDeviceProvider
+META-INF/services/javax.sound.midi.spi.MidiFileReadergnu.javax.sound.midi.file.MidiFileReader
+META-INF/services/javax.sound.midi.spi.MidiFileWritergnu.javax.sound.midi.file.MidiFileWriter
+META-INF/services/javax.sound.sampled.spi.AudioFileReader
+gnu.javax.sound.sampled.WAV.WAVReader
+gnu.javax.sound.sampled.AU.AUReader
+invalid mutex handler registration
+../../../../libjava/libltdl/ltdl.c
+dirnam[(((dirnam) && (dirnam)[0]) ? strlen (dirnam) : 0) -1] != '/'
+before - *ppath <= strlen (*ppath)
+invalid search path insert position
+invalid errorcode
+not enough memory
+invalid module handle
+can't close resident module
+library already shutdown
+invalid loader
+loader removal failed
+symbol not found
+no symbols defined
+@PROGRAM@
+diagnostic
+path && *path
+pcanonical
+pargz
+pargz_len
+unknown error
+internal buffer overflow
+filenamesize > lendir
+LTDL_LIBRARY_PATH
+/lib:/usr/lib
+dirnam && *dirnam
+entry && *entry
+dlopen
+dlpreload
+loader initialization failed
+dlopen support not available
+filename && *filename
+pfile
+dirname
+dlname
+*phandle == 0
+base_name && *base_name
+dlname=
+old_library=
+libdir=
+dependency_libs=
+installed=yes
+installed=no
+library_names=
+*phandle
+dir && *dir
+canonical && *canonical
+!before
+*ppath <= before
+dependency library not found
+can't open the module
+can't close the module
+canonicalize_path
+lt_dlpath_insertdir
+argzize_path
+foreach_dirinpath
+list_files_by_dir
+lt_argz_insertinorder
+/lib:/usr/lib
+try_dlopen
+find_file_callback
+.libs/
+tryall_dlopen_module
+lt_dladderror
+aCoc
+v<y5
+=v<y5
+r1?Y
+!)@:F,@zj/@\G1@|
+=@zj?@L~@@\GA@l
+../../../../../../libjava/classpath/native/fdlibm/mprec.c
+k <= ptr->_max_k
+vH7B
+W4vC
+Ngm
+yCx
+O8M2
+_Jv_Balloc
+?ASSERTION FAILURE: %s at %s:%d
+4yz
+4yz
+noexec
+/selinux
+/proc/mounts
+selinuxfs
+/var/tmp
+/dev/shm
+HOME
+/etc/mtab
+***Section from 0x%lx to 0x%lx
+free block of size 0x%lx bytes
+Block not on free list %ld!!
+Block on list %ld, should be on %ld!!
+used for blocks of size 0x%lx bytes
+GC Warning: Header allocation failed: Dropping block.
+GC Warning: Repeated allocation of very large block (appr. size %ld):
+	May lead to memory leak and poor performance.
+Duplicate large block deallocation of 0x%lx
+Duplicate large block deallocation
+0x%lx
+Missing header!!(%ld)
+Total heap size: %lu
+%lu/%lu blacklisted
+GC_PRINT_ADDRESS_MAP
+%lu msecs
+(attempt %ld)
+%lu iterations
+Collection %lu finished
+---> heapsize = %lu bytes
+Memory available again ...
+See source code for details.
+Section %ld from 0x%lx to 0x%lx
+Too many heap sections: Increase MAXHINCR or MAX_HEAP_SECTS
+Failed to expand heap by %ld bytes
+Increasing heap size by %lu after %lu allocated bytes
+Back height not available: Rebuild collector with -DMAKE_BACK_GRAPH
+Abandoning stopped marking after
+--> Marking for collection %lu
+after %lu allocd bytes + %lu wasted bytes
+Abandoned stopped marking after
+World-stopped marking took %lu msecs
+GC_try_to_collect_inner: finishing collection in progress
+Initiating full world-stop collection %lu after %ld allocd bytes
+Complete collection took %lu msecs
+GC Warning: Out of Memory!  Trying to continue ...
+GC Warning: Out of Memory!  Returning NIL!
+***>Full mark for collection %lu after %ld allocd bytes
+Copyright 1988,1989 Hans-J. Boehm and Alan J. Demers
+Copyright (c) 1991-1995 by Xerox Corporation.  All rights reserved.
+Copyright (c) 1996-1998 by Silicon Graphics.  All rights reserved.
+Copyright (c) 1999-2001 by Hewlett-Packard Company.  All rights reserved.
+THIS MATERIAL IS PROVIDED AS IS, WITH ABSOLUTELY NO WARRANTY
+EXPRESSED OR IMPLIED.  ANY USE IS AT YOUR OWN RISK.
+$tIInsufficient memory for black list
+start: 0x%lx, appr. length: %ld
+in register
