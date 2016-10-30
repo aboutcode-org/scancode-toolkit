@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -32,7 +32,6 @@ import typecode
 from textcode import pdf
 from textcode import markup
 from textcode import strings
-from textcode.strings import remove_non_printable
 
 """
 Utilities to analyze text. Files are the input.
@@ -46,7 +45,7 @@ def text_lines(location, demarkup=False):
     Return a text lines iterator from file at `location`. Return an empty
     iterator if no text content is extractible. Text extraction is based on
     detected file type.
-    
+
     if `demarkup` is True, attempt to detect if a file contains HTML/XML-like
     markup and cleanup this markup.
 
@@ -110,8 +109,8 @@ def unicode_text_lines_from_binary(location):
     Return an iterable over unicode text lines extracted from a binary file at
     location.
     """
-    for line in strings.strings_in_file(location, filt=strings.filter_strict):
-        yield as_unicode(line)
+    for line in strings.strings_from_file(location):
+        yield line
 
 
 def unicode_text_lines_from_pdf(location):
@@ -135,19 +134,18 @@ def as_unicode(line):
     unicodedata_normalize = unicodedata.normalize
     chardet_detect = chardet.detect
     try:
-        s = unicode(line, 'utf-8')
+        s = unicode(line, 'UTF-8')
     except UnicodeDecodeError:
         try:
             # FIXME: latin-1 may never fail
-            s = unicode(line, 'latin-1')
+            s = unicode(line, 'LATIN-1')
         except UnicodeDecodeError:
             try:
-                # Convert some byte string to ASCII characters as
-                # Unicode including replacing accented characters with
-                # their non- accented NFKD equivalent. Non ISO-Latin
-                # and non ASCII characters are stripped from the
-                # output. Does not preserve the original length
-                # offsets. For Unicode NFKD equivalence, see:
+                # Convert some byte string to ASCII characters as Unicode including
+                # replacing accented characters with their non- accented NFKD
+                # equivalent. Non ISO-Latin and non ASCII characters are stripped
+                # from the output. Does not preserve the original length offsets.
+                # For Unicode NFKD equivalence, see:
                 # http://en.wikipedia.org/wiki/Unicode_equivalence
                 s = unicodedata_normalize('NFKD', line).encode('ASCII')
             except UnicodeDecodeError:
@@ -155,9 +153,8 @@ def as_unicode(line):
                     enc = chardet_detect(line)['encoding']
                     s = unicode(line, enc)
                 except UnicodeDecodeError:
-                    # fall-back to strings extraction if all else
-                    # fails
-                    s = unicode(remove_non_printable(s))
+                    # fall-back to strings extraction if all else fails
+                    s = strings.string_from_string(s)
     return s
 
 

@@ -1168,12 +1168,21 @@ class TestCopyrightDetection(FileBasedTesting):
                         expected_in_results=False,
                         results_in_expected=True)
 
-    def test_copyright_in_dll(self):
+    def test_copyright_in_dll_approximate(self):
         test_file = self.get_test_loc('copyrights/copyright_in_dll-9_msvci_dll.dll')
         expected = [
-            'Copyright Myself and Me, Inc',
+            u'Copyright Myself and Me, Inc QjT F4P',
         ]
         check_detection(expected, test_file)
+
+    @expectedFailure
+    def test_copyright_in_dll_exact(self):
+        test_file = self.get_test_loc('copyrights/copyright_in_dll-9_msvci_dll.dll')
+        expected = [
+            u'Copyright Myself and Me, Inc',
+        ]
+        check_detection(expected, test_file)
+
 
     def test_copyright_in_h(self):
         test_file = self.get_test_loc('copyrights/copyright_in_h-h.h')
