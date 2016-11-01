@@ -168,5 +168,6 @@ file.debug
 .got
 .got.plt
 .data
+.bss
 .comment
 .gnu_debuglink

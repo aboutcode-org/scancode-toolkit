@@ -89,14 +89,23 @@ ATUSH
 r9I9
 r4K
 AUE1
+ATA
 tIB
 "t)Hc
 w49
 AUE1
+ATA
 40H
 40H
+L$8L
+L$HH
+L$8L
+L$HH
+L$8L
+L$HH
 L$HI
 L$8H
+L$HH)
 uBH
 S01
 USH
@@ -104,6 +113,7 @@ I0A
 y >wbA
 I0A
 AWI
+AVA
 AUATUSH
 e41
 M0H
@@ -116,10 +126,12 @@ cwH
 t$0H
 tJH
 AWI
+AVA
 AUATUH
 tUB
 9A:E
 9A:E
+$D9D$
 D$0H
 %s: Unable to allocate state variable
 %s: Unable to initialize state variable
@@ -148,6 +160,7 @@ Unknown error in is_absolute_path
 vhVpdsblct:rm:
 No matching files loaded
 %s: No input files
+%s%c%s
 %s: Out of memory
 %s: out of memory
 %s: invalid file header
@@ -357,6 +370,7 @@ stddef.h
 ssdeep.h
 xJZ
 @:LZHZ
+>K;KY
 e KIuY
 zJ4
 /usr/lib/gcc/x86_64-redhat-linux/4.1.2/include
@@ -373,10 +387,12 @@ ssdeep.h
 o<28
 JE3
 KI=G
+zJZ
 wtv
 o<28
 JE3
 JYZ,>
+zJZ
 9#U?3
 VJ>Z:>1
 Ig6
@@ -412,6 +428,7 @@ KZV>Z:>
 rLY
 YWKZVL
 gicv
+tti
 ztM+i
 =;P}ORz
 /usr/include
@@ -641,6 +658,7 @@ fuzzy_compare
 buffer_size
 roll_reset
 fuzzy.c
+s1_1
 s1_2
 ss_engine
 s2_1
@@ -656,6 +674,7 @@ ss_destroy
 filepos
 score_strings
 bytes_read
+s2_2
 ret2
 roll_hash
 ss_update
@@ -686,6 +705,7 @@ fstat
 w0h
 w8l
 w0q
+w8w
 .symtab
 .strtab
 .shstrtab
@@ -711,6 +731,7 @@ w0q
 .got
 .got.plt
 .data
+.bss
 .comment
 .debug_aranges
 .debug_pubnames

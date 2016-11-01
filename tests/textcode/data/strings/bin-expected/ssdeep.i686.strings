@@ -108,6 +108,7 @@ Unknown error in is_absolute_path
 vhVpdsblct:rm:
 No matching files loaded
 %s: No input files
+%s%c%s
 %s: Out of memory
 %s: out of memory
 %s: invalid file header
@@ -262,6 +263,7 @@ GNU AS 2.17.50
 init.c
 /usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu
 crti.S
+!/!=Z!gg//
 /usr/include
 /usr/lib/gcc/i586-suse-linux/4.2.1/include
 /usr/include/bits
@@ -373,12 +375,15 @@ stdio.h
 libio.h
 stdint.h
 s/1K
+suu-
 9wc0Hhm
 fIuD
 Zd>w
 pXg
+ttM+
 [9vm
 zfc
+wfw
 gA7A7ARz
 e=x82
 /usr/lib/gcc/i586-suse-linux/4.2.1/include
@@ -611,6 +616,7 @@ total_chars
 roll_reset
 score2
 has_common_substring
+s1_1
 done
 ss_engine
 len1
@@ -623,6 +629,7 @@ fuzzy.c
 buffer
 eliminate_sequences
 s2_1
+s2_2
 buf_len
 filepos
 fuzzy_hash_buf
@@ -684,6 +691,7 @@ udG
 .got
 .got.plt
 .data
+.bss
 .comment
 .debug_aranges
 .debug_pubnames

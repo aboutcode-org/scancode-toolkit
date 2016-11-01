@@ -73,6 +73,7 @@ embed
 v$VSW
 QPj
 H0Q
+BPP
 PHP_SELF
 max_execution_time
 implicit_flush

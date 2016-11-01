@@ -31,6 +31,7 @@ z0B
 z0B
 P0B
 X0c
+00B
 80c
 cqP1
 cqX
@@ -68,6 +69,7 @@ x0B
 x4B
 HdB
 txd
+H+0H
 X%dB
 jX%5k
 GX%d
@@ -76,6 +78,7 @@ z/f7
 z0B
 z0B
 z0B
+00B
 xdB
 void tcb_t::copy_regs_to_mrs(tcb_t*)
 handle_interrupt
@@ -564,6 +567,7 @@ Compare
 Config
 Context
 Count
+ECC
 EntryHi
 EntryLo0
 EntryLo1
@@ -655,6 +659,7 @@ TLB management
 64M
 Wthr
 WthrA
+Off
 CoEx
 CoCOW
 CoCUW
@@ -663,6 +668,7 @@ Index           EntryHi  EntryLo0 (cache v d)  EntryLo1 (cache v d) | Size  ASID
 Yes
 %2d:    %p  %8lx (%s %d %d)  %8lx (%s %d %d) | %s   %3d     %s
 Index       (virt)   Even Page  (phys)      |      (virt)   Odd Page   (phys)       ASID
+all
 tlb info
 show
 show watch status
@@ -821,11 +827,13 @@ H8b
 0-8b
 0-8b
 0-8b
+B0B
 Pf1
 1qp$
 Hxd
 ~04p
 0dC
+00b
 y8B
 34c33
 84c33
@@ -834,6 +842,7 @@ z0B
 z0B
 z0B
 WdC
+Ff1
 Ef1
 wPb
 g8C

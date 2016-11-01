@@ -106,10 +106,12 @@ GLIBC_2.2.3
 GLIBC_2.3
 A80(
 px8
+p88
 AyH
 AI:~F
 AI9~F
 p8H
+pp9
 0px8
 0px8
 0px8
@@ -117,6 +119,7 @@ p8H
 C	8P@
 3tF
 C08
+88F
 Bx D
 8H G
 p
@@ -127,27 +130,38 @@ x80#
 x80#
 x80+
 x80#
+C88
+C88
+C88
+C88
 XAD
 XAD
 Hp M
 XAD
 appR
 90r
+C88
+C88
+C88
 3tF
 Bx`A
 9@j8
 @$px8
 px8
+pP8
 0mb+
 px8
 9@j8
 0mb+#0
+pP8
 0mb+
 GOf
 1rH
 p8F
 p8F
 1nF
+H	Ha
+pp9
 C
 00n
 H	8A
@@ -161,6 +175,7 @@ px8
 px8
 1nF
 pH8
+pPF
 R
 x8
 thR
@@ -168,10 +183,12 @@ xD0#
 xD0#
 xD0#
 xD0#
+pPF
 xpF
 QttR
 QttR
 p0F
+ppF
 xhR
 H@2q
 HzF
@@ -188,6 +205,7 @@ HzF
 xhR
 thR
 C	p B
+Bpp
 0AJ
 RUm
 R
@@ -195,6 +213,7 @@ p8
 J	p T
 pD0#
 pD0#
+B@Bx
 X
 p J
 px9
@@ -202,18 +221,33 @@ px9
 px9
 px9
 0pB
+C
+88
 A3~F
 TJA
 ph9
 p8H
 pH8
+88F
 x80#
 x80#
+0c	0
 px9
 HeR
 aH	R
+88B
+88B
 8HF
+88B
+88B
+88B
+88B
+88H
 x80#
+p<
+@ tp
+p<
+@@tp
 A
 x F
 full-iso
@@ -222,6 +256,7 @@ iso
 locale
 %b %e  %Y
 %b %e %H:%M
+all
 escape
 directory
 dired
@@ -265,6 +300,7 @@ yes
 force
 never
 auto
+tty
 if-tty
 verbose
 long
@@ -508,3 +544,5 @@ main
 .dtors
 .got
 .sdata
+.sbss
+.bss

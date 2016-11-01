@@ -149,7 +149,7 @@ def clean_string(s, min_len=MIN_LEN,
         st = remove_junk('', st)
         return (st and len(st) >= min_len
                 # ignore character repeats, e.g need more than two unique characters
-                and len(set(st.lower())) > 2
+                and len(set(st.lower())) > 1
                 # ignore string made only of digit or punctuation
                 and not all(c in junk for c in st))
 

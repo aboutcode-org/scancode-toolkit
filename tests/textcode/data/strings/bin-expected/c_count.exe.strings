@@ -4,6 +4,7 @@ $
 0`.rdata
 0@.bss
 .idata
+C$00@
 c_count WARNING - newline in string, line %ld, file %s
 c_count ERROR - terminated in comment in %s
 c_count ERROR - terminated in string in %s
@@ -35,6 +36,7 @@ cygwin1.dll
 KERNEL32.dll
 .text
 .data
+.bss
 .file
 c_count.c
 _peek
@@ -42,13 +44,16 @@ _ispeek
 _main
 .text
 .data
+.bss
 .rdata
 probe
 done
 .text
 .data
+.bss
 .text
 .data
+.bss
 .text
 .idata$78
 .idata$5
@@ -96,6 +101,7 @@ done
 .idata$6
 .text
 .data
+.bss
 .idata$7
 .idata$5
 .idata$4
@@ -122,6 +128,7 @@ done
 .idata$6
 .text
 .data
+.bss
 .text
 .idata$7@
 .idata$5
@@ -129,6 +136,7 @@ done
 .idata$6@
 .text
 .data
+.bss
 .text
 .idata$7D
 .idata$5
@@ -146,12 +154,16 @@ done
 .idata$6
 .text
 .data
+.bss
 .text
 .data
+.bss
 .text
 .data
+.bss
 .text
 .data
+.bss
 .text
 .idata$7H
 .idata$5
@@ -159,6 +171,7 @@ done
 .idata$6\
 .text
 .data
+.bss
 .idata$7
 .idata$5
 .idata$4
@@ -169,6 +182,7 @@ hname
 fthunk
 .text
 .data
+.bss
 .idata$2
 .idata$5
 .idata$4
@@ -176,11 +190,13 @@ fthunk
 fake
 .text
 .data
+.bss
 .idata$4
 .idata$5
 .idata$7
 .text
 .data
+.bss
 .idata$2
 .idata$5
 .idata$4<
@@ -202,6 +218,7 @@ _strcmp
 _getc
 _ungetc
 _environ4
+__dll__
 ___main
 _fprintf
 __alloca

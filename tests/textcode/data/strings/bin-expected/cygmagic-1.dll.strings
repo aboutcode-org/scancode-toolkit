@@ -4,6 +4,7 @@ Z2J
 .text
 .data
 .rdata
+`@.bss
 .edata
 0@.idata
 .reloc
@@ -40,13 +41,17 @@ M,Qj
 xta1
 k,Qj
 1Qj
+@qQj
 3Qj
+qQj
 pQj
 D-Qj
 X-Qj
 w-Qj
+qQj
 %tBC
 3Qj
+qQj
 $4Qj
 L.Qj
 p.Qj
@@ -75,6 +80,8 @@ WVS
 pQj
 =0!Qj
 pQj
+qQj
+@qQj
 $6Qj
 6Qj
 46Qj
@@ -124,6 +131,7 @@ D:Qj
 7Qj
 i:Qj
 S;Qj
+j;Qj
 WVS
 L<Qj
 WVS
@@ -182,6 +190,9 @@ HQj
 IQj
 WVS
 WVS
+JQj
+JQj
+JQj
 KQj
 DKQj
 WVS
@@ -218,9 +229,15 @@ PQj
 PQj
 PQj
 PQj
+QQj
+QQj
+QQj
+QQj
 MQj
+*QQj
 PQj
 5QQj
+=QQj
 PQj
 KQQj
 UQQj
@@ -228,8 +245,26 @@ eQQj
 LQj
 LQj
 oQQj
+}QQj
+QQj
+QQj
+QQj
+QQj
+QQj
 eQQj
+QQj
+QQj
+QQj
+}QQj
+QQj
+}QQj
+QQj
+QQj
+QQj
+QQj
+QQj
 8t4
+QQj
 tdf
 RQj
 (RQj
@@ -250,6 +285,7 @@ SQj
 4TQj
 (RQj
 8t6
+QQj
 ?TQj
 KTQj
 YTQj
@@ -263,6 +299,7 @@ UQj
 7UQj
 ;UQj;
 Qjs
+qQj
 AUQj
 CUQj
 DUQj
@@ -276,6 +313,7 @@ UUQj
 "UQj
 bUQj
 iUQj
+qQj
 mUQj
 UUQj
 qUQj
@@ -612,6 +650,8 @@ no modifiers allowed for 16-bit strings
 0Pj
 0Pjf0Pjf0Pjf0Pj
 -Pjv-Pj
+-Pjj-Pj^-Pj
+-Pj%-Pj
 8PjC0PjC0PjC0PjC0PjC0PjC0PjC0Pj
 8PjC0PjC0PjC0Pjf8Pj98Pj98Pj
 7Pj
@@ -685,6 +725,8 @@ binary
 (no description)
 *** Possible binary test for text type
 level 0 "default" did not sort last
+<Pjp<Pj
+<Pjp<Pj
 <Pj%.3o
 `APjHAPj0APj
 APj
@@ -745,10 +787,13 @@ QPj
 QPj2OPj
 SPj
 OPj
+PPj
 QPj
 SPj
+PPj
 QPj
 SPj
+PPj
 OPj
 SPj
 SPj
@@ -756,6 +801,7 @@ SPj
 RPj
 OPj
 OPjkPPj
+PPj
 SPj
 SPj'TPj'TPj'TPj
 SPj
@@ -789,6 +835,8 @@ cannot happen with double: invalid relation `%c'
 cannot happen with float: invalid relation `%c'
 %llu != %llu = %d
 regexec error %d, (%s)
+%lld > %lld = %d
+%lld < %lld = %d
 %llu == *any* = 1
 _PjG_Pj
 aPj
@@ -901,13 +949,17 @@ nPj
 oPj
 oPj
 tPj
+pPj
 oPj7pPj
 sPj7pPj
 sPj
 tPj
 tPj
+pPj
+pPj
 pPj_sPj7pPj
 tPj
+pPj
 oPj
 sPj
 sPj
@@ -922,6 +974,7 @@ sPj&qPj
 qPj
 sPj&qPj
 qPj:sPj
+pPj
 pPj tPjGpPj
 mPj
 uPj
@@ -1055,6 +1108,7 @@ struct
 union
 CFLAGS
 LDFLAGS
+all:
 .PRECIOUS
 .ascii
 .asciiz
@@ -1152,10 +1206,12 @@ CX8
 SEP
 AMD_SYSC
 CMOV
+MMX
 AMD_MMX
 AMD_3DNow
 AMD_3DNowx
 FXSR
+SSE
 SSE2
 PAUSE
 SSE3
@@ -1270,6 +1326,8 @@ Warning:
 *Invalid time*
 *bad*
 %.8llx
+%lld
+PjJ
 @(#)$File: fsmagic.c,v 1.59 2009/02/03 20:27:51 christos Exp $
 symbolic link in a loop
 broken symbolic link to `%s'
@@ -1365,8 +1423,10 @@ ZQj
 (size_t)CDF_SEC_SIZE(h) == len
 (size_t)CDF_SHORT_SEC_SIZE(h) == len
 SummaryInformation
+Pjp
 PjY
 Pj%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x
+0x%x
 @(#)$File: cdf_time.c,v 1.6 2009/03/10 11:44:29 christos Exp $
 @(#)$File: readcdf.c,v 1.18 2009/05/06 20:48:22 christos Exp $
 vnd.ms-office
@@ -1570,9 +1630,12 @@ cygz.dll
 KERNEL32.dll
 7)8K8
 0e2
+6d6
 1V1@2a2
+333R3
 5 5<5W5f5
 6B7
+8K8
 2;2O2o2z2
 9 :H:a:u:
 4:5t5
@@ -1580,25 +1643,32 @@ KERNEL32.dll
 4I5
 6j7
 1(2U2
+0P0
 181Z1
 1!2B2J2n2
+333Z3
 6r7
 8$9*9W9
 :!:?:E:s:y:
 1T2i2s213
+7q7
 869t9
+0U0
 1M2]5
 6O8
 0"0B0z0
 0,1N1l1
+3?3H3^3
 5Q6c6
 7s8
 8)9;9F9
 <0=Z=p=
 =1W1s1
 232I2_2u2
+3B3b3
 4<4Z4x4
 646P6l6
+7:7j7
 8L8\8p8
 3U4
 6f7g8H9
@@ -1637,6 +1707,8 @@ KERNEL32.dll
 = =$=(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
 PjBB
 PjMB
+Dd6
+DeD
 DgK
 Doe
 Dkg
@@ -1659,6 +1731,7 @@ PjMI
 PjBB
 PjBB
 PjBB
+Pj!J
 PjBB
 p9PjBB
 4QjPM
@@ -1670,6 +1743,7 @@ p9PjBB
 4Qj
 4Qj
 4Qj
+P@Pj
 APj
 APjBB
 CPjjN
@@ -1700,11 +1774,14 @@ DnK
 DsN
 DtU
 Dua
+Dwd
 Dzy
 mPjBB
 7Qj
 N|Pj
 P|Pj V
+P|Pj$
+P|Pj
 |PjBB
 DzB
 PjBB
@@ -1761,6 +1838,7 @@ DM5
 DRO
 DQT
 DTV
+DDp
 PjBB
 VQj
 Dm6
@@ -1772,6 +1850,7 @@ DI2
 DJ5
 DN7
 DCa
+DDl
 DFp
 PjBB
 PjBB
@@ -2892,6 +2971,7 @@ magic.c
 _rcsid
 .text
 .data
+.bss
 .stab
 .rdata
 .file
@@ -2911,6 +2991,7 @@ _swap8
 done.0
 .text
 .data
+.bss
 .stab
 .rdata
 .file
@@ -2926,6 +3007,7 @@ _mcopy
 _mget
 .text
 .data
+.bss
 .stab
 .rdata
 .file
@@ -2935,6 +3017,7 @@ _types
 _names
 .text
 .data
+.bss
 .stab
 .rdata
 .file
@@ -2942,6 +3025,7 @@ encoding.c
 _rcsid
 .text
 .data
+.bss
 .stab
 .rdata
 .file
@@ -2953,6 +3037,7 @@ _swrite
 _sread
 .text
 .data
+.bss
 .stab
 .rdata
 .file
@@ -2961,6 +3046,7 @@ _rcsid
 _tartype
 .text
 .data
+.bss
 .stab
 .rdata
 .file
@@ -2973,6 +3059,7 @@ _donote
 _doshn
 .text
 .data
+.bss
 .stab
 .rdata
 .file
@@ -2981,6 +3068,7 @@ _rcsid
 optyp.0
 .text
 .data
+.bss
 .stab
 .rdata
 .file
@@ -2988,6 +3076,7 @@ fsmagic.c
 _rcsid
 .text
 .data
+.bss
 .stab
 .rdata
 .file
@@ -2995,6 +3084,7 @@ funcs.c
 _rcsid
 .text
 .data
+.bss
 .stab
 .rdata
 .file
@@ -3002,6 +3092,7 @@ apptype.c
 _rcsid
 .text
 .data
+.bss
 .stab
 .rdata
 .file
@@ -3011,6 +3102,7 @@ _cdf_bo
 name.0
 .text
 .data
+.bss
 .stab
 .rdata
 .file
@@ -3019,6 +3111,7 @@ _rcsid
 _mdays
 .text
 .data
+.bss
 .stab
 .rdata
 .file
@@ -3026,6 +3119,7 @@ readcdf.c
 _rcsid
 .text
 .data
+.bss
 .stab
 .rdata
 .text
@@ -3045,18 +3139,24 @@ _rcsid
 .idata$6<
 .text
 .data
+.bss
 .text
 .data
+.bss
 .text
 .data
+.bss
 probe
 done
 .text
 .data
+.bss
 .text
 .data
+.bss
 .text
 .data
+.bss
 .text
 .idata$7<
 .idata$5
@@ -3064,24 +3164,28 @@ done
 .idata$6@
 .text
 .data
+.bss
 .idata$7
 .idata$5\
 .idata$4
 .idata$6|
 .text
 .data
+.bss
 .idata$7
 .idata$5t
 .idata$4
 .idata$6
 .text
 .data
+.bss
 .idata$7
 .idata$5
 .idata$4
 .idata$6
 .text
 .data
+.bss
 .idata$7
 .idata$5d
 .idata$4
@@ -3148,6 +3252,7 @@ done
 .idata$6
 .text
 .data
+.bss
 .idata$7
 .idata$5h
 .idata$4
@@ -3159,6 +3264,7 @@ done
 .idata$6t
 .text
 .data
+.bss
 .idata$7
 .idata$5p
 .idata$4
@@ -3240,6 +3346,7 @@ done
 .idata$6$
 .text
 .data
+.bss
 .idata$7
 .idata$5`
 .idata$4
@@ -3316,24 +3423,28 @@ done
 .idata$6
 .text
 .data
+.bss
 .idata$7
 .idata$5
 .idata$4
 .idata$6
 .text
 .data
+.bss
 .idata$7
 .idata$5
 .idata$4
 .idata$6
 .text
 .data
+.bss
 .idata$7
 .idata$5|
 .idata$4
 .idata$6
 .text
 .data
+.bss
 .idata$7
 .idata$5x
 .idata$4
@@ -3435,6 +3546,7 @@ done
 .idata$6
 .text
 .data
+.bss
 .idata$7
 .idata$5l
 .idata$4
@@ -3461,6 +3573,7 @@ done
 .idata$6
 .text
 .data
+.bss
 .text
 .idata$7
 .idata$5h
@@ -3468,8 +3581,10 @@ done
 .idata$6
 .text
 .data
+.bss
 .text
 .data
+.bss
 .text
 .idata$7
 .idata$5p
@@ -3482,14 +3597,19 @@ done
 .idata$6
 .text
 .data
+.bss
 .text
 .data
+.bss
 .text
 .data
+.bss
 .text
 .data
+.bss
 .text
 .data
+.bss
 .text
 .idata$7
 .idata$5l
@@ -3497,6 +3617,7 @@ done
 .idata$6
 .text
 .data
+.bss
 .idata$7
 .idata$5
 .idata$4
@@ -3507,6 +3628,7 @@ hname
 fthunk
 .text
 .data
+.bss
 .idata$2(
 .idata$5
 .idata$4
@@ -3514,11 +3636,13 @@ fthunk
 fake
 .text
 .data
+.bss
 .idata$4
 .idata$5
 .idata$7
 .text
 .data
+.bss
 .idata$2
 .idata$5
 .idata$4d
@@ -3607,6 +3731,7 @@ _regcomp`
 _mktime
 _environ4
 _open
+__dll__
 _fwrite
 __stat64
 _regexec@

@@ -134,6 +134,8 @@ H9W
 USH
 upH
 ATL
+uHH
+AWA
 AVAUI
 ATUSH
 tCL
@@ -149,16 +151,22 @@ uM1
 AWAVI
 AUI
 ATSH
+rLL
 tJH
+t%ff
 AWAVA
 AUATUSH
 vpH
 uQH
+[]A\A]A^A_H
 L9o
 v8H
 t4H
 AVAUATI
 pIQ
+0[]A\A]A^
+0[]A\A]A^
+0[]A\A]A^
 pIQ
 tKL
 t0H
@@ -166,6 +174,7 @@ USH
 G(H9
 G(H;G0r
 0EQ
+uHH
 H;C wBH
 ATUSH
 t|H9
@@ -180,6 +189,9 @@ G(H;G0s
 uID
 AWAVAUATL
 B0H
+tdD
+PpH
+PPH
 AWAVAUATUSH
 G(H;G0
 G(H;G0
@@ -192,9 +204,11 @@ G(H;G0
 G(H;G0
 AWI
 AVAUATS
+eHH
 E0H
 uMH
 AWI
+AVA
 AUATUSH
 tZ1
 G(H;G0
@@ -209,7 +223,9 @@ WhH9Vh|
 WPH9VP
 WXH9VX|
 AUI
+ATA
 USH
+uLL
 &tPA
 _tJL
 4$t]M
@@ -220,6 +236,7 @@ D$LH
 D$(H+D$XH
 D$XL
 D$(H+D$XI9
+l$XL
 D$XH
 wQE1
 ED$L
@@ -246,8 +263,11 @@ D$XE
 D$pI	A
 D$(H+D$XH9D$@
 D$(H+D$XH9
+l$XL
+DD$l
 DD$xE1
 D$(H+D$XH9
+gfff
 A0H
 gfffffffM
 D$(H+D$XH9
@@ -271,6 +291,7 @@ S0H
 t4I9
 s8I
 s6H
+t*fff
 sGzE
 G(0A
 u0H
@@ -280,20 +301,28 @@ k0L
 s8H
 AVAUATUH
 tYI
+EHH
 ATI
 USH
 uqI
+WHH
+GHH
+GHH
 U0H
 tGE
 tcH
 AWAVAUATUSH
+H8H
 P0H
 BHL
+D$HH
 tQL
 T$0H
+D$HH
 AWI
 AVAUI
 ATU
+thH
 taH
 t#Hct$
 4$M9
@@ -308,11 +337,13 @@ xW1
 AWAVAUI
 ATUH
 T$0H
+T$HH
 D$PH
 C\$XH
 H9l$
 T$8H
 D$4E1
+T$HH
 l$8H
 toE
 D$8H
@@ -320,6 +351,9 @@ T$8H
 l$8A
 uZA
 D$4H9
+T$HH
+H+l$HH
+6ff
 t$XL)
 T$PI9
 |$0E1
@@ -333,6 +367,8 @@ P9D$4w
 tjE
 l$8E1
 A0H
+H+l$HH
+T$HH
 l$8H
 tUE
 t$0H
@@ -345,6 +381,7 @@ USH
 xBH
 gfffffffI
 A0H
+gfffffff
 AWAVAUL
 ,7ATUSH
 r%E1
@@ -367,6 +404,7 @@ L;L$8s	H
 D$0B
 t1H
 L;L$8s
+L;L$8
 L;L$8A
 H9D$8v	H
 H9D$8v	H
@@ -395,9 +433,11 @@ L9L$8v	H
 D$X8
 D$X8
 wQH
+l$0L
 t$8L
 PFQ
 tAH
+ATA
 L$0H
 D$0H
 D$8H
@@ -415,9 +455,12 @@ L$HJ
 6t.1
 wEH
 AUI
+ATA
 wVH
 tXH
+l$0L
 t$8L
+l$0L
 t$8L
 full-iso
 %b %e  %Y
@@ -693,3 +736,4 @@ PFQ
 .got
 .got.plt
 .data
+.bss

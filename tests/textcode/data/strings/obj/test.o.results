@@ -400,6 +400,7 @@ _M_leak_hard
 _ZNSs12_M_leak_hardEv
 _ZNSs12_S_empty_repEv
 ~basic_string
+H11
 _ZNSsaSERKSs
 _ZNSsaSEPKc
 _ZNSsaSEc
@@ -447,6 +448,7 @@ _ZNSsixEm
 _ZNKSs2atEm
 _ZNSs2atEm
 _ZNSspLERKSs
+HH5
 _ZNSspLEPKc
 Hp5
 _ZNSspLEc
@@ -3121,6 +3123,7 @@ GCC: (GNU) 4.1.2 20071124 (Red Hat 4.1.2-42)
 .shstrtab
 .rela.text
 .data
+.bss
 .debug_abbrev
 .rela.debug_info
 .rela.debug_line

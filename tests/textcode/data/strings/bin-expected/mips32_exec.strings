@@ -1,22 +1,42 @@
 ELF
+b0!0
 0!8B
+B0B
+B0B
+B0B
+B0B
 P!0B
+B0B
+B0B
+B0B
+B0B
+B0B
 J5$D
 Jf$D
+B0B
 84B
 L7$D
 9B4B
 D$B9H
 $B9H
 $B9H
+B0B
 $B9l
+B0B
 Dh
 0
+B0B
+B0B
 $B9H
 $B9H
 $B9H
+B0B
+B0B
 $BQx
 P0b
+B0B
+B0B
+B0B
 Ye$E8p<
 Ye$E8|
 Ye$E7
@@ -24,6 +44,7 @@ Ye$E6
 C0$4
 U6q
 _s$C;4
+B0B
 _s$C;l
 40B
 0$B9
@@ -34,16 +55,30 @@ b$E6
 0$B9
 0!8B
 dW$c
+H0
+0
 Cp
 1
 eL&p
+B0B
+E0
+0
+H0
+0
+B0B
+B0B
 jL&R
 EH
 1"
+B0B
+B0B
 F0!2%
+B0B
 92B
+B0B
 B0D
 uM0
+B0B
 B0D
 B0D
 v6$P
@@ -566,6 +601,9 @@ logmask: %8x
 buffer %d: offset: %8d,  head: %8d
 Log Mask
 %6d: %9m
+(%d, %d, %d) %s:
+(%d, %d, %d) %s
+(%d, %d, %d) "%s"
 No current active buffer!
 -- current ASID is %d, CPU %d --
 fpr
@@ -597,6 +635,7 @@ Cause
 Compare
 Config
 Context
+ECC
 EntryHi
 EntryLo0
 EntryLo1
@@ -666,6 +705,7 @@ TLB management
 64M
 Wthr
 WthrA
+Off
 CoEx
 CoCOW
 CoCUW
@@ -676,6 +716,7 @@ Yes
 Even Page               Odd Page
 Index    (virt)    (phys)   |   (virt)    (phys)     size   ASID
 %8lx -> %8lx
+all
 tlb info
 show
 show watch status
@@ -801,20 +842,31 @@ $BG4
 @0!$BG,
 @0!8b
 $BGD
+B0B
 X0b
+B0B
+B0B
+B0B
 $FOd0b
 $EWl<
+B0B
 P$0c
 P80
 w$DT
 b4TM
+B0B
+B0B
 $CKD$
 w$DT
 $FKX$
 X0b
+B0B
+B0B
 U&EP
+P&FP
 K&GP
 w$DT
+$DKD$
 S$GK
 S$GK
 S$GK
@@ -833,18 +885,23 @@ w$DY
 w$DY
 X4B
 B0D
+B0B
 x1c
 $RZT<
 w$DT
 w$DT
 w&daP
 c020
+cP&c
 $EdH$
+cP&c
 80B
 $EdH$
+B0b
 PB&bf
 CX
 1
+B0b
 B0c
 B0c
 w$Dgh2C
@@ -854,6 +911,7 @@ w$Dgh2C
 w2e
 $EdH<
 xp%kx
+B0B
 b4BM
 b4BM
 X4B
@@ -871,6 +929,7 @@ q4B
 q4B
 28$Q
 28$P
+88B
 q4B
 Z0Q
 4BNmpb
@@ -883,6 +942,7 @@ iguana/server/src/slab_cache.c
 thread(%p)
 Client sessions:
 Server sessions:
+pd(%p)
 memsection(%p)
 session(%p)
 Client: #%ld Server: #%ld
@@ -929,6 +989,7 @@ pd_setup_callback
 self != NULL
 iguana/server/src/pd.c
 ((void*) (self)) > ((void*) BASE_PAGESIZE)
+PD: %p
 Owner: %p
 ((void*) (&ms->data)) > ((void*) BASE_PAGESIZE)
 ((void*) (&td->data)) > ((void*) BASE_PAGESIZE)
@@ -1249,6 +1310,7 @@ Cx&s
 Hp'D
 $Bxt
 $Bxt
+44B
 B !4c
 $cbH
 W,$Thp<
@@ -1284,14 +1346,17 @@ H4c
 P4c
 H4c
 P4c
+$BhH
 L4c
 P4c
 T4c
 &Fkp
 j4&eh
+0!0c
 $Bkd
 $Bkd
 t&gj@
+0!0c
 x$El
 mD$B
 m`$El
@@ -1355,6 +1420,7 @@ libs/check/src/check_run.c
 checked_setup
 Receive phase
 No Error
+%s (%s, %d)
 !"Shouldn't get here - Did you leave a send redirector set?"
 Send phase
 Bad print_mode argument to srunner_run_all: %d
@@ -1424,6 +1490,7 @@ CK_VERBOSITY
 silent
 minimal
 verbose
+%s:%d:%s:%s:%s: %s%s
 (after this point)
 %d%%: Checks: %d, Failures: %d, Errors: %d
 __tls_init_malloc

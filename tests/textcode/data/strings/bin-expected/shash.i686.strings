@@ -98,6 +98,7 @@ GNU AS 2.17.50
 init.c
 /usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu
 crti.S
+!/!=Z!gg//
 /usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu
 crtn.S
 short int
@@ -134,6 +135,7 @@ long long int
 .got
 .got.plt
 .data
+.bss
 .comment
 .debug_aranges
 .debug_pubnames
