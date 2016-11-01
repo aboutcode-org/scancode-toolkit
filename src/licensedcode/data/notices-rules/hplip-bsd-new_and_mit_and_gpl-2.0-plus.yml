@@ -1,7 +1,0 @@
-licenses:
-    - bsd-new
-    - mit
-    - gpl-2.0-plus
-notes: |
-    Older complex notice found in debian hplib and hpijs
-    http://sourceforge.net/projects/hplip/ and http://hplipopensource.com/

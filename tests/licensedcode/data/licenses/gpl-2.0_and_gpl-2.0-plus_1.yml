@@ -1,4 +1,11 @@
 licenses:
     - gpl-2.0
+    - gpl-2.0
+    - gpl-2.0
+    - gpl-2.0
+    - gpl-2.0
+    - gpl-2.0
     - gpl-2.0-plus
-expected_contains: yes
+    - gpl
+    - gpl-2.0
+
