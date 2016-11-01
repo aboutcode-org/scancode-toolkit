@@ -209,10 +209,12 @@ Try 'scancode --help' for help on options and arguments.'''
 formats = ('json', 'html', 'html-app',)
 
 def validate_formats(ctx, param, value):
-    if value not in formats:
-        # render using a user-provided custom format template
-        if not os.path.isfile(value):
-            raise click.BadParameter('Invalid template file: "%(value)s" does not exists or is not readable.' % locals())
+    value_lower = value.lower()
+    if value_lower in formats:
+        return value_lower
+    # render using a user-provided custom format template
+    if not os.path.isfile(value):
+        raise click.BadParameter('Invalid template file: "%(value)s" does not exists or is not readable.' % locals())
     return value
 
 @click.command(name='scancode', epilog=epilog_text, cls=ScanCommand)
