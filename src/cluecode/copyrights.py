@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -158,6 +158,8 @@ patterns = [
     (r'^[Gg][Mm][Bb][Hh].?$', 'COMP'),
     # (italian) company suffix
     (r'^[sS]\.[pP]\.[aA]\.?$', 'COMP'),
+    # (dutch and belgian) company suffix
+    (r'^[Bb]\.?[Vv]\.?|BVBA$', 'COMP'),
     # university
     (r'^[Uu]niv([.]|ersit(y|e|at?|ad?))$', 'UNI'),
     # institutes
@@ -693,7 +695,7 @@ class CopyrightDetector(object):
         numbers = [n for n, _l in numbered_lines]
         start_line = min(numbers)
         end_line = max(numbers)
-        #logger.debug('CopyrightDetector:detect:lines numbers: %(start_line)d->%(end_line)d' % locals())
+        # logger.debug('CopyrightDetector:detect:lines numbers: %(start_line)d->%(end_line)d' % locals())
         tokens = self.get_tokens(numbered_lines)
 
         # we accumulate detected items in these synchronized lists
@@ -712,11 +714,11 @@ class CopyrightDetector(object):
 
         # first, POS tag each token using token regexes
         tagged_text = self.tagger.tag(tokens)
-        #logger.debug('CopyrightDetector:tagged_text: ' + str(tagged_text))
+        # logger.debug('CopyrightDetector:tagged_text: ' + str(tagged_text))
 
         # then build a parse tree based on tagged tokens
         tree = self.chunker.parse(tagged_text)
-        #logger.debug('CopyrightDetector:parse tree: ' + str(tree))
+        # logger.debug('CopyrightDetector:parse tree: ' + str(tree))
 
         # OPTIMIZED
         nltk_tree_Tree = nltk.tree.Tree
@@ -729,7 +731,7 @@ class CopyrightDetector(object):
             """
             for copyr in detected_copyright:
                 if isinstance(copyr, nltk_tree_Tree):
-                    #logger.debug('n: ' + str(copyr))
+                    # logger.debug('n: ' + str(copyr))
                     node_text = CopyrightDetector_as_str(copyr)
                     copyr_label = copyr.label()
                     if 'YR-RANGE' in copyr_label:
@@ -738,7 +740,7 @@ class CopyrightDetector(object):
                         # FIXME : this would wreck things like 23andme
                         # where a company name contains numbers
                         holders_append(refine_author(node_text))
-                        #logger.debug('CopyrightDetector: node_text: ' + node_text)
+                        # logger.debug('CopyrightDetector: node_text: ' + node_text)
                     collect_year_and_holder(copyr)
 
         # then walk the parse tree, collecting copyrights, years and authors

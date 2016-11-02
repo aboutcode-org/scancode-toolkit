@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -3085,8 +3085,8 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) 1991-1998, Thomas G. Lane',
             u'Copyright 1994-2002 World Wide Web Consortium',
             u'Copyright (c) 2002 Anders Carlsson <andersca@gnu.org>',
-            u'Copyright (c) 2003, WiseGuys Internet',
-            u'Copyright (c) 2003, WiseGuys Internet',
+            u'Copyright (c) 2003, WiseGuys Internet B.V.',
+            u'Copyright (c) 2003, WiseGuys Internet B.V.',
             u'Copyright 1997-1999 World Wide Web Consortium',
             u'Copyright (c) 2002-2003 Aleksey Sanin',
             u'Copyright (c) 2003 America Online, Inc.',
@@ -3928,14 +3928,14 @@ class TestCopyrightDetection(FileBasedTesting):
 
     @expectedFailure
     def test_copyright_with_dots_and_all_lowercase_on_multilines(self):
-        test_lines = [u'Copyright . 2008 company name, inc.', 
-                      u'  Change: Add functions',]
+        test_lines = [u'Copyright . 2008 company name, inc.',
+                      u'  Change: Add functions', ]
         expected = [u'Copyright . 2008 company name, inc.']
         check_detection(expected, test_lines)
 
     def test_copyright_with_dots_and_all_lowercase_on_multilines_current(self):
-        test_lines = [u'Copyright . 2008 company name, inc.', 
-                      u'  Change: Add functions',]
+        test_lines = [u'Copyright . 2008 company name, inc.',
+                      u'  Change: Add functions', ]
         expected = [u'Copyright . 2008']
         check_detection(expected, test_lines)
 
@@ -3965,4 +3965,9 @@ class TestCopyrightDetection(FileBasedTesting):
         # This should not detect a copyright see #191
         test_file = self.get_test_loc('copyrights/copyright_apache_in_html.html')
         expected = []
+        check_detection(expected, test_file)
+
+    def test_copyright_bv_legal_entity(self):
+        test_file = self.get_test_loc('copyrights/bv.txt')
+        expected = [u'Copyright (c) 2016 HERE Europe B.V.', u'(c) HERE 2016']
         check_detection(expected, test_file)
