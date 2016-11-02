@@ -28,6 +28,7 @@ from collections import OrderedDict
 from functools import partial
 import json
 import os
+import sys
 from types import GeneratorType
 
 import click
@@ -35,6 +36,9 @@ from click.termui import style
 
 from commoncode import ignore
 from commoncode import fileutils
+
+from os.path import expanduser
+from os.path import abspath
 
 from scancode import __version__ as version
 from scancode import utils
@@ -209,10 +213,12 @@ Try 'scancode --help' for help on options and arguments.'''
 formats = ('json', 'html', 'html-app',)
 
 def validate_formats(ctx, param, value):
-    if value not in formats:
-        # render using a user-provided custom format template
-        if not os.path.isfile(value):
-            raise click.BadParameter('Invalid template file: "%(value)s" does not exists or is not readable.' % locals())
+    value_lower = value.lower()
+    if value_lower in formats:
+        return value_lower
+    # render using a user-provided custom format template
+    if not os.path.isfile(value):
+        raise click.BadParameter('Invalid template file: "%(value)s" does not exists or is not readable.' % locals())
     return value
 
 @click.command(name='scancode', epilog=epilog_text, cls=ScanCommand)
@@ -362,6 +368,11 @@ def save_results(scanned_files, format, input, output_file):
     """
     Save results to file or screen.
     """
+    if output_file != sys.stdout:
+        parent_dir = os.path.dirname(output_file.name)
+        if parent_dir:
+            fileutils.create_dir(abspath(expanduser(parent_dir)))
+
     if format and format not in formats:
         # render using a user-provided custom format template
         if not os.path.isfile(format):
