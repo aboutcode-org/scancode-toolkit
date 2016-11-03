@@ -1,0 +1,8 @@
+key: x11-doc
+short_name: X11 Documentation License
+name: X11 Documentation License
+category: Attribution
+owner: X Consortium
+homepage_url: https://www.x.org/
+text_urls:
+    - https://www.x.org/releases/X11R7.7/doc/libXtst/xtestlib.txt

@@ -1,18 +1,11 @@
 licenses:
     - x11-opengroup
-    - mit
-    - x11-opengroup
-    - x11-opengroup
-    - x11-dec1
-    - x11-dec1
-    - x11-dec1
-    - x11-dec1
-    - mit-old-style-no-advert
-    - mit
-    - x11-opengroup
-    - x11-opengroup
-    - mit-old-style-no-advert
-    - mit
-notes: TODO refine expectations
-expected_failure: yes
+    - x11
+    - historical
+    - x11-keith-packard
+    - standard-ml-nj
+    - x11-x11r5
+    - xfree86-1.0
+    - x11-doc
+    - x11-fsf
 
