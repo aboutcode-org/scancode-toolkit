@@ -1,4 +1,2 @@
 licenses:
-    - should detect something
-expected_failure: yes
-notes: fix me
+    - generic-cla

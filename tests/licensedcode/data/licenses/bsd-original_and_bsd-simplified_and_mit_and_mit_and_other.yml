@@ -1,8 +1,10 @@
 licenses:
+    - x11-opengroup
+    - mit-open-group
     - bsd-original
     - bsd-simplified
     - mit
     - mit
     - x11-opengroup
-    - x11-opengroup
 expected_failure: yes
+

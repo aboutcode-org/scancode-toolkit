@@ -1,9 +1,8 @@
 licenses:
-    - isc
-    - gpl-2.0-plus
+    - reportbug
+    - gpl
     - gpl-2.0-plus
     - gpl-2.0-plus
     - public-domain
-    - isc
-expected_failure: yes
+    - reportbug
 
