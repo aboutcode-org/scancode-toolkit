@@ -39,7 +39,7 @@ from cluecode import copyrights_hint
 logger = logging.getLogger(__name__)
 if os.environ.get('SCANCODE_COPYRIGHT_DEBUG'):
     import sys
-    logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+    logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
 
@@ -120,6 +120,14 @@ patterns = [
     (r'^(Company:|For|File|Last|[Rr]eleased?|[Cc]opyrighting)$', 'JUNK'),
     (r'^Authori.*$', 'JUNK'),
     (r'^[Bb]uild$', 'JUNK'),
+    (r'^[Ss]tring$', 'JUNK'),
+    (r'^Implementation-Vendor$', 'JUNK'),
+    (r'^(dnl|rem|REM)$', 'JUNK'),
+    (r'^Implementation-Vendor$', 'JUNK'),
+    (r'^Supports$', 'JUNK'),
+    (r'^\.byte$', 'JUNK'),
+    (r'^[Cc]ontributed?$', 'JUNK'),
+    (r'^[Ff]unctions?$', 'JUNK'),
 
     # various trailing words that are junk
     (r'^(?:Copyleft|LegalCopyright|AssemblyCopyright|Distributed|Report|Available|true|false|node|jshint|node\':true|node:true)$', 'JUNK'),
@@ -161,7 +169,8 @@ patterns = [
     # (dutch and belgian) company suffix
     (r'^[Bb]\.?[Vv]\.?|BVBA$', 'COMP'),
     # university
-    (r'^[Uu]niv([.]|ersit(y|e|at?|ad?))$', 'UNI'),
+    (r'^\(?[Uu]niv(?:[.]|ersit(?:y|e|at?|ad?))\)?$', 'UNI'),
+    # university
     # institutes
     (r'^[Ii]nstitut(s|o|os|e|es|et|a|at|as|u|i)?$', 'NNP'),
     # "holders" is considered as a common noun
@@ -169,18 +178,21 @@ patterns = [
 
     # (r'^[Cc]ontributors?\.?', 'NN'),
     # "authors" or "contributors" is interesting, and so a tag of its own
-    (r'^[Aa]uthors?$', 'AUTH'),
-    (r'^[Aa]uthor\(s\)$', 'AUTH'),
+    (r'^[Aa]uthors?\.?$', 'AUTH'),
+    (r'^[Aa]uthor\(s\)\.?$', 'AUTH'),
     (r'^[Cc]ontribut(ors?|ing)\.?$', 'AUTH'),
 
     # commiters is interesting, and so a tag of its own
-    (r'[Cc]ommitters?', 'COMMIT'),
-    # same for maintainer, developed, etc...
+    (r'[Cc]ommitters\.??', 'COMMIT'),
+    # same for maintainers.
+    (r'^([Mm]aintainers?\.?|[Dd]evelopers?\.?)$', 'MAINT'),
+    
+    # same for developed, etc...
     (r'^(([Rr]e)?[Cc]oded|[Mm]odified|[Mm]ai?nt[ea]ine(d|r)|[Ww]ritten|[Dd]eveloped)$', 'AUTH2'),
     # author
     (r'@author', 'AUTH'),
     # of
-    (r'^[Oo][Ff]|[Dd][Ee]$', 'OF'),
+    (r'^[Oo][Ff]|[Dd][Eei]$', 'OF'),
     # in
     (r'^in$', 'IN'),
     # by
@@ -199,6 +211,9 @@ patterns = [
     # explicitly ignoring these words: FIXME: WHY?
     (r'^([Tt]his|THIS|[Pp]ermissions?|PERMISSIONS?|All)$', 'NN'),
 
+    # Portions copyright .... are worth keeping
+    (r'[Pp]ortions?', 'PORTIONS'),
+    
     # in dutch/german names, like Marco van Basten, or Klemens von Metternich
     # and Spanish/French Da Siva and De Gaulle
     (r'^(([Vv][ao]n)|[Dd][aeu])$', 'VAN'),
@@ -257,20 +272,22 @@ patterns = [
     (r'^AT&T$', 'ATT'),
     # comma as a conjunction
     (r'^,$', 'CC'),
-    # .\ is not a noun
-    (r'^\.\\$', 'JUNK'),
+    # .\" is not a noun
+    (r'^\.\\\?"?$', 'JUNK'),
 
     # nouns (default)
     (r'.+', 'NN'),
 ]
 
 # Comments in the Grammar are lines that start with #
-grammar = """
+grammar = """   
     COPY: {<COPY>}
-    YR-RANGE: {<YR>+ <CC> <YR>}
+    YR-RANGE: {<YR>+ <CC>+ <YR>}
     YR-RANGE: {<YR> <DASH>* <YR|CD>+}
     YR-RANGE: {<CD>? <YR>+}
     YR-RANGE: {<YR>+ }
+    YR-AND: {<CC>? <YR>+ <CC>+ <YR>}
+    YR-RANGE: {<YR-AND>+}
 
     NAME: {<NNP> <VAN|OF> <NN*> <NNP>}
     NAME: {<NNP> <PN> <VAN> <NNP>}
@@ -294,6 +311,7 @@ grammar = """
     COMPANY: {<NNP|CAPS> <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <COMP> <COMP>?}
     COMPANY: {<UNI|NNP> <VAN|OF> <NNP>+ <UNI>?}
     COMPANY: {<NNP>+ <UNI>}
+    COMPANY: {<UNI> <OF> <NN|NNP>}
     COMPANY: {<COMPANY> <CC> <COMPANY>}
     COMPANY: {<ATT> <COMP>?}
     COMPANY: {<COMPANY> <CC> <NNP>}
@@ -308,6 +326,10 @@ grammar = """
     NAME: {<NNP> <PN|VAN>? <PN|VAN>? <NNP>}
     NAME: {<NNP> <NN> <NNP>}
     NAME: {<NNP> <COMMIT>}
+    # the LGPL VGABios developers Team
+    NAME: {<NN>? <NNP> <MAINT> <COMP>}
+    # Debian Qt/KDE Maintainers
+    NAME: {<NNP> <NN>? <MAINT>}
     NAME: {<NN> <NNP> <ANDCO>}
     NAME: {<NN>? <NNP> <CC> <NAME>}
     NAME: {<NN>? <NNP> <OF> <NN>? <NNP> <NNP>?}
@@ -329,6 +351,8 @@ grammar = """
 
     NAME: {<NNP|CAPS>+ <AUTH>}
 
+    NAME: {<VAN|OF> <NAME>}
+    NAME: {<NAME3> <COMP>}
 
 # Companies
     COMPANY: {<NAME|NAME2|NAME3|NNP>+ <OF> <NN>? <COMPANY|COMP>}
@@ -338,6 +362,9 @@ grammar = """
     COMPANY: {<COMPANY> <CC> <AUTH>}
     COMPANY: {<NN> <COMP>+}
     COMPANY: {<URL>}
+
+# The Regents of the University of California
+    NAME: {<NN> <NNP> <OF> <NN> <COMPANY>}
 
 # Trailing Authors
     COMPANY: {<NAME|NAME2|NAME3|NNP>+ <AUTH>}
@@ -350,29 +377,34 @@ grammar = """
 
     NAME: {<BY> <NN> <AUTH>}
 
+# NetGroup, Politecnico di Torino (Italy)
+    COMPANY: {<NNP> <COMPANY> <NN>}
+
+# Arizona Board of Regents (University of Arizona)
+    NAME: {<COMPANY> <OF> <NN|NNP>}
+
+# The Regents of the University of California
+    NAME: {<NAME> <COMPANY>}
+
+# John Doe and Myriam Doe
+    NAME: {<NAME|NNP> <CC> <NNP|NAME>}
+
 # Various forms of copyright statements
     COPYRIGHT: {<COPY> <NAME> <COPY> <YR-RANGE>}
 
-    COPYRIGHT: {<COPY> <COPY> <BY>? <COMPANY|NAME*|YR-RANGE>* <BY>? <EMAIL>+}
-    COPYRIGHT: {<COPY> <BY>? <COMPANY|NAME*|YR-RANGE>* <BY>? <EMAIL>+}
+    COPYRIGHT: {<COPY> <COPY>? <BY>? <COMPANY|NAME*|YR-RANGE>* <BY>? <EMAIL>+}
 
-    COPYRIGHT: {<COPY> <COPY> <NAME|NAME2|NAME3> <CAPS> <YR-RANGE>}
-    COPYRIGHT: {<COPY> <NAME|NAME2|NAME3> <CAPS> <YR-RANGE>}
+    COPYRIGHT: {<COPY> <COPY>? <NAME|NAME2|NAME3> <CAPS> <YR-RANGE>}
 
-    COPYRIGHT: {<COPY> <COPY> <NAME|NAME2|NAME3>+ <YR-RANGE>*}
-    COPYRIGHT: {<COPY> <NAME|NAME2|NAME3>+ <YR-RANGE>*}
+    COPYRIGHT: {<COPY> <COPY>? <NAME|NAME2|NAME3>+ <YR-RANGE>*}
 
-    COPYRIGHT: {<COPY> <COPY> <CAPS|NNP>+ <CC> <NN> <COPY> <YR-RANGE>?}
-    COPYRIGHT: {<COPY> <CAPS|NNP>+ <CC> <NN> <COPY> <YR-RANGE>?}
+    COPYRIGHT: {<COPY> <COPY>? <CAPS|NNP>+ <CC> <NN> <COPY> <YR-RANGE>?}
 
-    COPYRIGHT: {<COPY> <COPY> <BY>? <COMPANY|NAME*>+ <YR-RANGE>*}
-    COPYRIGHT: {<COPY> <BY>? <COMPANY|NAME*>+ <YR-RANGE>*}
+    COPYRIGHT: {<COPY> <COPY>? <BY>? <COMPANY|NAME*>+ <YR-RANGE>*}
 
-    COPYRIGHT: {<NNP>? <COPY> <COPY> (<YR-RANGE>+ <BY>? <NN>? <COMPANY|NAME|NAME2>+ <EMAIL>?)+}
-    COPYRIGHT: {<NNP>? <COPY> (<YR-RANGE>+ <BY>? <NN>? <COMPANY|NAME|NAME2>+ <EMAIL>?)+}
+    COPYRIGHT: {<NNP>? <COPY> <COPY>? (<YR-RANGE>+ <BY>? <NN>? <COMPANY|NAME|NAME2>+ <EMAIL>?)+}
 
-    COPYRIGHT: {<COPY> <COPY> <NN> <NAME> <YR-RANGE>}
-    COPYRIGHT: {<COPY> <NN> <NAME> <YR-RANGE>}
+    COPYRIGHT: {<COPY> <COPY>? <NN> <NAME> <YR-RANGE>}
 
     COPYRIGHT: {<COPY>+ <BY> <NAME|NAME2|NAME3>+}
 
@@ -380,14 +412,12 @@ grammar = """
 
     COPYRIGHT: {<COPY> <COPY> <NN>+ <COMPANY|NAME|NAME2>+}
 
-    COPYRIGHT: {<COPY> <COPY> <NN> <NN>? <COMP> <YR-RANGE>?}
-    COPYRIGHT: {<COPY> <NN> <NN>? <COMP> <YR-RANGE>?}
+    COPYRIGHT: {<COPY> <COPY>? <NN> <NN>? <COMP> <YR-RANGE>?}
 
-    COPYRIGHT: {<COPY> <COPY> <NN> <NN>? <COMP> <YR-RANGE>?}
+    COPYRIGHT: {<COPY> <COPY>? <NN> <NN>? <COMP> <YR-RANGE>?}
     COPYRIGHT: {<COPY> <NN> <NN>? <COMPANY> <YR-RANGE>?}
 
-    COPYRIGHT: {<COPY> <COPY> <YR-RANGE|NNP> <CAPS|BY>? <NNP|YR-RANGE|NAME>+}
-    COPYRIGHT: {<COPY> <YR-RANGE|NNP> <CAPS|BY>? <NNP|YR-RANGE|NAME>+}
+    COPYRIGHT: {<COPY> <COPY>? <YR-RANGE|NNP> <CAPS|BY>? <NNP|YR-RANGE|NAME>+}
 
     COPYRIGHT: {<COPY> <COPY> <NNP>+}
 
@@ -402,42 +432,39 @@ grammar = """
     COPYRIGHT2: {<COPY> <COPY><NN>? <COPY> <YR-RANGE> <BY> <NN>}
     COPYRIGHT2: {<COPY> <NN>? <COPY> <YR-RANGE> <BY> <NN>}
 
-    COPYRIGHT2: {<COPY> <COPY><NN> <YR-RANGE> <BY> <NAME>}
-    COPYRIGHT2: {<COPY> <NN> <YR-RANGE> <BY> <NAME>}
+    COPYRIGHT2: {<COPY> <COPY>? <NN> <YR-RANGE> <BY> <NAME>}
 
-    COPYRIGHT2: {<COPY> <COPY><YR-RANGE> <DASH> <NAME2|NAME>}
-    COPYRIGHT2: {<COPY> <YR-RANGE> <DASH> <NAME2|NAME>}
+    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <DASH> <BY>? <NAME2|NAME>}
 
-    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <NNP> <NAME>}
-    COPYRIGHT2: {<COPY> <YR-RANGE> <NNP> <NAME>}
+    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <NNP> <NAME>}
 
     COPYRIGHT2: {<NAME> <COPY> <YR-RANGE>}
 
-    COPYRIGHT2: {<COPY> <COPY> <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>*}
-    COPYRIGHT2: {<COPY> <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>*}
+    COPYRIGHT2: {<COPY> <COPY>? <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>*}
 
-    COPYRIGHT2: {<COPY> <COPY> <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <COMPANY>}
-    COPYRIGHT2: {<COPY> <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <COMPANY>}
+    COPYRIGHT2: {<COPY> <COPY>? <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <COMPANY>}
 
-    COPYRIGHT2: {<COPY> <COPY> <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <DASH> <COMPANY>}
-    COPYRIGHT2: {<COPY> <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <DASH> <COMPANY>}
+    COPYRIGHT2: {<COPY> <COPY>? <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <DASH> <COMPANY>}
 
     COPYRIGHT2: {<NNP|NAME|COMPANY> <COPYRIGHT2>}
 
     COPYRIGHT: {<COPYRIGHT> <NN> <COMPANY>}
 
-    COPYRIGHT: {<COPY> <COPY> <BY>? <NN> <COMPANY>}
-    COPYRIGHT: {<COPY> <BY>? <NN> <COMPANY>}
+    COPYRIGHT: {<COPY> <COPY>? <BY>? <NN> <COMPANY>}
 
     COPYRIGHT: {<COMPANY> <NN> <NAME> <COPYRIGHT2>}
     COPYRIGHT: {<COPYRIGHT2> <COMP> <COMPANY>}
     COPYRIGHT: {<COMPANY> <NN> <COPYRIGHT2>}
     COPYRIGHT: {<COPYRIGHT2> <NNP> <CC> <COMPANY>}
 
+    #COPYRIGHT2: {<COPYRIGHT2> <JUNK>* <COMPANY>}
 
 # copyrights in the style of Scilab/INRIA
     COPYRIGHT: {<NNP> <NN> <COPY> <NNP>}
     COPYRIGHT: {<NNP> <COPY> <NNP>}
+
+# portions copyright
+    COPYRIGHT: {<PORTIONS> <COPYRIGHT|COPYRIGHT2>}
 
 # Authors
     AUTH: {<AUTH2>+ <BY>}
@@ -714,11 +741,11 @@ class CopyrightDetector(object):
 
         # first, POS tag each token using token regexes
         tagged_text = self.tagger.tag(tokens)
-        # logger.debug('CopyrightDetector:tagged_text: ' + str(tagged_text))
+        logger.debug('CopyrightDetector:tagged_text: ' + str(tagged_text))
 
         # then build a parse tree based on tagged tokens
         tree = self.chunker.parse(tagged_text)
-        # logger.debug('CopyrightDetector:parse tree: ' + str(tree))
+        logger.debug('CopyrightDetector:parse tree: ' + str(tree))
 
         # OPTIMIZED
         nltk_tree_Tree = nltk.tree.Tree
@@ -991,12 +1018,12 @@ def prepare_text_line(line):
     # common comment characters
     line = line.strip('\\/*#%;')
     # un common comment line prefix in dos
-    line = re_sub('^rem ', ' ', line)
-    line = re_sub('^\@rem ', ' ', line)
+    line = re_sub('^rem\s+', ' ', line)
+    line = re_sub('^\@rem\s+', ' ', line)
     # un common comment line prefix in autotools am/in
-    line = re_sub('^dnl ', ' ', line)
+    line = re_sub('^dnl\s+', ' ', line)
     # un common comment line prefix in man pages
-    line = re_sub('^\.\\"', ' ', line)
+    line = re_sub('^\.\\\\"', ' ', line)
     # un common pipe chars in some ascii art
     line = line.replace('|', ' ')
 
