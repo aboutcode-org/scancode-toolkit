@@ -53,7 +53,7 @@ class TestStrings(FileBasedTesting):
         assert list(strings.clean_string('aaa\nqqq\nbbb'))
         assert not list(strings.clean_string('aaaa'))
         assert list(strings.clean_string('abababa'))
-        assert not list(strings.clean_string('  tt\nf   '))
+        assert list(strings.clean_string('  tt\nf   '))
 
     def test_strings_in_file(self):
         expected = [
