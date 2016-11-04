@@ -38,8 +38,7 @@ License test utilities.
 """
 
 def make_license_test_function(expected_licenses, test_file, test_data_file, test_name,
-                               detect_negative=True, min_score=0, 
-                               expected_contains=False,
+                               detect_negative=True, min_score=0,
                                expected_failure=False,
                                # if not False, a reason string must be provided
                                skip_test=False,
@@ -71,8 +70,6 @@ def make_license_test_function(expected_licenses, test_file, test_data_file, tes
                 # we skipped negative detection for a negative rule
                 # we just want to ensure that the rule was matched proper
                 assert matches and not expected_licenses and not detected_licenses
-            elif expected_contains:
-                assert all(ex in detected_licenses for ex in expected_licenses)
             else:
                 assert expected_licenses == detected_licenses
         except:

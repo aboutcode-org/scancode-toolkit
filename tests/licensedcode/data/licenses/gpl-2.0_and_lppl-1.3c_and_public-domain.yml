@@ -1,15 +1,33 @@
 licenses:
     - gpl-2.0
+    - gpl-2.0
     - public-domain
+    - gpl
     - public-domain
+    - lppl-1.0
     - public-domain
+    - lppl-1.0
+    - gpl
+#    - tex-live
     - lppl-1.3c
+    - gpl
+    - lppl-1.3c
+    - artistic-2.0
+    - bsd-new
+    - gpl-2.0
+    - lppl-1.3c
+    - artistic-2.0
     - public-domain
     - public-domain
     - public-domain
     - public-domain
     - public-domain
     - public-domain
-notes: should detect public domain correctly
+    - lppl-1.0
+    - gpl-2.0-plus
+    - lppl-1.2
+    - lppl-1.2
+    - lppl-1.2
+    - lppl-1.2
 expected_failure: yes
 

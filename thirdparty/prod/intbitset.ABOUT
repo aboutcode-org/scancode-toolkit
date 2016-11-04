@@ -12,7 +12,6 @@ component:
         expression: lgpl-3.0-plus
         text_file: lgpl-3.0.LICENSE
         notice_file: intbitset.NOTICE
-        category: perrmissive
 
     package:
         relationship: upstream

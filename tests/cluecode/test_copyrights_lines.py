@@ -99,7 +99,12 @@ class TestCopyrightLinesDetection(FileBasedTesting):
         # this is a certificate and the actual copyright holder is not clear:
         # could be either Wisekey or OISTE Foundation.
         test_file = self.get_test_loc('copyrights/copyright_3a3b02ce_0-a_b_ce.0')
-        expected = [([u'Copyright (c) 2005', u'Copyright (c) 2005'], 28, 66)]
+        expected = [([
+                u'Copyright (c) 2005, OU OISTE Foundation', 
+                u'Copyright (c) 2005, OU OISTE Foundation'
+            ], 
+                28, 66
+        )]
         check_detection(expected, test_file)
 
     def test_copyright_ABC_cpp(self):

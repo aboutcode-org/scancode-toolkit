@@ -1,4 +1,4 @@
 licenses:
     - gpl-2.0-plus
     - gpl-2.0-autoconf
-expected_contains: yes
+    - unknown

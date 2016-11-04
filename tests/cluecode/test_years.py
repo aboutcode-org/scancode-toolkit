@@ -36,81 +36,81 @@ class TestYears(FileBasedTesting):
     def test_years_hostpad(self):
         test_file = self.get_test_loc('years/years_hostpad-hostapd_cli_c.c')
         expected = [
-            '2004-2005',
-            '2004-2005',
+            u'2004-2005',
+            u'2004-2005',
         ]
         check_detection(expected, test_file, what='years')
 
     def test_years_ifrename(self):
         test_file = self.get_test_loc('years/years_ifrename-ifrename_c.c')
         expected = [
-            '2004',
+            u'2004',
         ]
         check_detection(expected, test_file, what='years')
 
     def test_years_in_c(self):
         test_file = self.get_test_loc('years/years_in_c-c.c')
         expected = [
-            '2005',
-            '2004',
-            '2003',
-            '2002',
-            '2001',
-            '2000',
-            '1999',
-            '1998',
-            '1997',
-            '1996',
+            u'2005',
+            u'2004',
+            u'2003',
+            u'2002',
+            u'2001',
+            u'2000',
+            u'1999',
+            u'1998',
+            u'1997',
+            u'1996',
         ]
         check_detection(expected, test_file, what='years')
 
     def test_years_in_copyright(self):
         test_file = self.get_test_loc('years/years_in_copyright-COPYRIGHT_madwifi.madwifi')
         expected = [
-            '2002-2006',
+            u'2002-2006',
         ]
         check_detection(expected, test_file, what='years')
 
     def test_years_in_h(self):
         test_file = self.get_test_loc('years/years_in_h-ah_h.h')
         expected = [
-            '2002-2006',
+            u'2002-2006',
         ]
         check_detection(expected, test_file, what='years')
 
     def test_years_in_license(self):
         test_file = self.get_test_loc('years/years_in_license-COPYING_gpl.gpl')
         expected = [
-            '1989, 1991',
+            u'1989, 1991',
         ]
         check_detection(expected, test_file, what='years')
 
     def test_years_in_readme(self):
         test_file = self.get_test_loc('years/years_in_readme-README')
         expected = [
-            '2002-2006',
+            u'2002-2006',
         ]
         check_detection(expected, test_file, what='years')
 
     def test_years_in_txt(self):
         test_file = self.get_test_loc('years/years_in_txt.txt')
         expected = [
-            '2005',
-            '2004',
-            '2003',
-            '2002',
-            '2001',
-            '2000',
-            '1999',
-            '1998',
-            '1997',
-            '1996',
+            u'2005',
+            u'2004',
+            u'2003',
+            u'2002',
+            u'2001',
+            u'2000',
+            u'1999',
+            u'1998',
+            u'1997',
+            u'1996',
         ]
         check_detection(expected, test_file, what='years')
 
     def test_years_in_uuencode_binary(self):
         test_file = self.get_test_loc('years/years_in_uuencode_binary-mips_be_elf_hal_o_uu.uu')
         expected = [
-            '2002-2006',
+            u'2002-2006',
         ]
         check_detection(expected, test_file, what='years')

@@ -44,7 +44,6 @@ LicenseMatch data structure and matches merging and filtering routines.
 """
 
 TRACE = False
-TRACE_FILTER = False
 TRACE_FILTER_CONTAINS = False
 TRACE_REFINE = False
 TRACE_MERGE = False
@@ -60,7 +59,7 @@ INCLUDE_UNMATCHED_TEXTS = True
 
 def logger_debug(*args): pass
 
-if TRACE or TRACE_FILTER or TRACE_MERGE:
+if TRACE or TRACE_FILTER_CONTAINS or TRACE_MERGE:
     import logging
     import sys
 
@@ -306,7 +305,7 @@ class LicenseMatch(object):
 
     def update(self, other):
         """
-        Update self with other match and return the updated self. Do not create a new object.
+        Update self with other match and return the updated self in place.
         """
         combined = self.combine(other)
         self.qspan = combined.qspan
@@ -410,19 +409,34 @@ def merge_matches(matches, max_dist=MAX_DIST):
 
                 # keep one of equal matches
                 if current_match.qspan == next_match.qspan and current_match.ispan == next_match.ispan:
-                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next EQUALS in current')
+                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next EQUALS current, del next')
                     del matches[j]
                     continue
 
+                # if we have two equal ispans and some overlap
+                # keep the shortest/densest match in qspan e.g. the smallest magnitude of the two
+                if current_match.ispan == next_match.ispan and current_match.overlap(next_match):
+                    cqmag = current_match.qspan.magnitude()
+                    nqmag = next_match.qspan.magnitude()
+                    if cqmag <= nqmag:
+                        if TRACE_MERGE: logger_debug('    ---> ###merge_matches: current ispan EQUALS next ispan, current qmagnitude smaller, del next')
+                        del matches[j]
+                        continue
+                    else:
+                        if TRACE_MERGE: logger_debug('    ---> ###merge_matches: current ispan EQUALS next ispan, next qmagnitude smaller, del current')
+                        del matches[i]
+                        i -= 1
+                        break
+
                 # remove contained matches
                 if current_match.qcontains(next_match):
-                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next CONTAINED in current')
+                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next CONTAINED in current, del next')
                     del matches[j]
                     continue
 
                 # remove contained matches the other way
                 if next_match.qcontains(current_match):
-                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: current CONTAINED in next ')
+                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: current CONTAINED in next, del current')
                     del matches[i]
                     i -= 1
                     break
@@ -430,19 +444,25 @@ def merge_matches(matches, max_dist=MAX_DIST):
                 # FIXME: qsurround is too weak. We want to check also isurround
                 # merge surrounded
                 if current_match.surround(next_match):
-                    current_match.update(next_match)
-                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: current SURROUNDS next, merged as new:', current_match)
-                    del matches[j]
-                    continue
+                    new_match = current_match.combine(next_match)
+                    if len(new_match.qspan) == len(new_match.ispan):
+                        # the merged matched is likely aligned
+                        current_match.update(next_match)
+                        if TRACE_MERGE: logger_debug('    ---> ###merge_matches: current SURROUNDS next, merged as new:', current_match)
+                        del matches[j]
+                        continue
 
                 # FIXME: qsurround is too weak. We want to check also isurround
                 # merge surrounded the other way too: merge in current
                 if next_match.surround(current_match):
-                    next_match.update(current_match)
-                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next SURROUNDS current, merged as new:', current_match)
-                    del matches[i]
-                    i -= 1
-                    break
+                    new_match = current_match.combine(next_match)
+                    if len(new_match.qspan) == len(new_match.ispan):
+                        # the merged matched is likely aligned
+                        next_match.update(current_match)
+                        if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next SURROUNDS current, merged as new:', current_match)
+                        del matches[i]
+                        i -= 1
+                        break
 
                 # next_match is strictly in increasing sequence: merge in current
                 if next_match.is_after(current_match):
@@ -459,10 +479,8 @@ def merge_matches(matches, max_dist=MAX_DIST):
                 and current_match.iend <= next_match.iend):
                     qoverlap = current_match.qspan.overlap(next_match.qspan)
                     if qoverlap:
-                        # round the q and i overlap:
-                        qoverlap = qoverlap // 10
-                        ioverlap = current_match.ispan.overlap(next_match.ispan) // 10
-                        # only merge if rounded overlaps are equals
+                        ioverlap = current_match.ispan.overlap(next_match.ispan)
+                        # only merge if overlaps are equals (otherwise they are not aligned)
                         if qoverlap == ioverlap:
                             current_match.update(next_match)
                             if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next overlaps in sequence current, merged as new:', current_match)
@@ -503,8 +521,8 @@ def filter_contained_matches(matches):
     sorter = lambda m: (m.qspan.start, -m.hilen(), -m.qlen(), m.matcher)
     matches = sorted(matches, key=sorter)
 
-    if TRACE_FILTER: print('filter_contained_matches: number of matches to process:', len(matches))
-    if TRACE_FILTER:
+    if TRACE_FILTER_CONTAINS: print('filter_contained_matches: number of matches to process:', len(matches))
+    if TRACE_FILTER_CONTAINS:
         print('filter_contained_matches: matches')
         map(print, matches)
 
@@ -521,8 +539,8 @@ def filter_contained_matches(matches):
 #             if current_match.qdistance_to(next_match):
 #                 break
 
-            if TRACE_FILTER: logger_debug('---> filter_contained_matches: current: i=', i, current_match)
-            if TRACE_FILTER: logger_debug('---> filter_contained_matches: next:    j=', j, next_match)
+            if TRACE_FILTER_CONTAINS: logger_debug('---> filter_contained_matches: current: i=', i, current_match)
+            if TRACE_FILTER_CONTAINS: logger_debug('---> filter_contained_matches: next:    j=', j, next_match)
 
             # equals matches
             if current_match.qspan == next_match.qspan:
@@ -572,7 +590,7 @@ def filter_contained_matches(matches):
             medium_current = overlap_ratio_to_current >= CONTAINMENT_MEDIUM
             small_current = overlap_ratio_to_current >= CONTAINMENT_SMALL
 
-            if TRACE_FILTER: logger_debug(
+            if TRACE_FILTER_CONTAINS: logger_debug(
                 '  ---> ###filter_contained_matches:',
                 'overlap:', overlap,
                 'containment of next to current is:',
@@ -592,77 +610,100 @@ def filter_contained_matches(matches):
             )
 
             if extra_large_next and current_match.qlen() >= next_match.qlen():
-                if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: EXTRA_LARGE next included, removed shorter next', matches[j], '\n')
+                if TRACE_FILTER_CONTAINS: logger_debug('      ---> ###filter_contained_matches: EXTRA_LARGE next included, removed shorter next', matches[j], '\n')
                 discarded.append(next_match)
                 del matches[j]
                 continue
 
             if extra_large_current and current_match.qlen() <= next_match.qlen():
-                if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: EXTRA_LARGE next includes current, removed shorter current', matches[i], '\n')
+                if TRACE_FILTER_CONTAINS: logger_debug('      ---> ###filter_contained_matches: EXTRA_LARGE next includes current, removed shorter current', matches[i], '\n')
                 discarded.append(current_match)
                 del matches[i]
                 i -= 1
                 break
 
             if large_next and current_match.qlen() >= next_match.qlen() and current_match.hilen() >= next_match.hilen():
-                if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: LARGE next included, removed shorter next', matches[j], '\n')
+                if TRACE_FILTER_CONTAINS: logger_debug('      ---> ###filter_contained_matches: LARGE next included, removed shorter next', matches[j], '\n')
                 discarded.append(next_match)
                 del matches[j]
                 continue
 
             if large_current and current_match.qlen() <= next_match.qlen() and current_match.hilen() <= next_match.hilen():
-                if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: LARGE next includes current, removed shorter current', matches[i], '\n')
+                if TRACE_FILTER_CONTAINS: logger_debug('      ---> ###filter_contained_matches: LARGE next includes current, removed shorter current', matches[i], '\n')
                 discarded.append(current_match)
                 del matches[i]
                 i -= 1
                 break
 
             if medium_next:
-                if TRACE_FILTER: logger_debug('    ---> ###filter_contained_matches: MEDIUM NEXT')
+                if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: MEDIUM NEXT')
                 if current_match.licensing_contains(next_match) and current_match.qlen() >= next_match.qlen() and current_match.hilen() >= next_match.hilen():
-                    if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: MEDIUM next included'
-                                                  ' with next licensing contained, removed next', matches[j], '\n')
+                    if TRACE_FILTER_CONTAINS: logger_debug(
+                        '      ---> ###filter_contained_matches: MEDIUM next included with next licensing contained, removed next', matches[j], '\n',)
                     discarded.append(next_match)
                     del matches[j]
                     continue
 
                 if next_match.licensing_contains(current_match) and current_match.qlen() <= next_match.qlen() and current_match.hilen() <= next_match.hilen():
-                    if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: MEDIUM next includes'
-                                                  ' current with current licensing contained, removed current', matches[i], '\n')
+                    if TRACE_FILTER_CONTAINS: logger_debug(
+                        '      ---> ###filter_contained_matches: MEDIUM next includes current with current licensing contained, removed current', matches[i], '\n')
                     discarded.append(current_match)
                     del matches[i]
                     i -= 1
                     break
 
             if medium_current:
-                if TRACE_FILTER: logger_debug('    ---> ###filter_contained_matches: MEDIUM CURRENT')
+                if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: MEDIUM CURRENT')
                 if current_match.licensing_contains(next_match) and current_match.qlen() >= next_match.qlen() and current_match.hilen() >= next_match.hilen():
-                    if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: MEDIUM current, bigger current'
-                                                  ' with next licensing contained, removed next', matches[j], '\n')
+                    if TRACE_FILTER_CONTAINS: logger_debug(
+                        '      ---> ###filter_contained_matches: MEDIUM current, bigger current with next licensing contained, removed next', matches[j], '\n')
                     discarded.append(next_match)
                     del matches[j]
                     continue
 
                 if next_match.licensing_contains(current_match) and current_match.qlen() <= next_match.qlen() and current_match.hilen() <= next_match.hilen():
-                    if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: MEDIUM current, bigger next'
-                                                  ' current with current licensing contained, removed current', matches[i], '\n')
+                    if TRACE_FILTER_CONTAINS: logger_debug(
+                        '      ---> ###filter_contained_matches: MEDIUM current, bigger next current with current licensing contained, removed current', matches[i], '\n')
                     discarded.append(current_match)
                     del matches[i]
                     i -= 1
                     break
 
             if small_next and current_match.surround(next_match) and current_match.licensing_contains(next_match) and current_match.qlen() >= next_match.qlen() and current_match.hilen() >= next_match.hilen():
-                if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: SMALL next surrounded, removed next', matches[j], '\n')
+                if TRACE_FILTER_CONTAINS: logger_debug('      ---> ###filter_contained_matches: SMALL next surrounded, removed next', matches[j], '\n')
                 discarded.append(next_match)
                 del matches[j]
                 continue
 
             if small_current and next_match.surround(current_match) and next_match.licensing_contains(current_match) and current_match.qlen() <= next_match.qlen() and current_match.hilen() <= next_match.hilen():
-                if TRACE_FILTER: logger_debug('      ---> ###filter_contained_matches: SMALL current surrounded, removed current', matches[i], '\n')
+                if TRACE_FILTER_CONTAINS: logger_debug('      ---> ###filter_contained_matches: SMALL current surrounded, removed current', matches[i], '\n')
                 discarded.append(next_match)
                 del matches[i]
                 i -= 1
                 break
+
+            # check the previous current and next match
+            # discard current if it is entirely contained in a combined previous and next
+            # and previous and next do not overlap
+
+            # ensure that we have a previous
+            if i:
+                previous_match = matches[i - 1]
+                # ensure previous and next do not overlap
+                if not previous_match.overlap(next_match):
+                    # ensure most of current is contained in the previous and next overlap
+                    cpo = current_match.overlap(previous_match)
+                    cno = current_match.overlap(next_match)
+                    if cpo and cno:
+                        overlap_len = cno + cpo
+                        cqlen = current_match.qlen()
+                        # we want at least 90% of the current that is in the overlap
+                        if overlap_len >= (cqlen * 0.9):
+                            if TRACE_FILTER_CONTAINS: logger_debug('      ---> ###filter_contained_matches: current mostly contained in previsou and next, removed current', matches[i], '\n')
+                            discarded.append(next_match)
+                            del matches[i]
+                            i -= 1
+                            break
 
             j += 1
         i += 1

@@ -1,33 +1,30 @@
 licenses:
-    - aes-128-3.0
-    - bsd-new
-    - bsd-original-uc
-    - bsd-simplified
-    - bsla
-    - cryptopp
-    - freetype
-    - gpl-2.0-plus
-    - ietf
-    - ijg
-    - isc
-    - lgpl-2.0
-    - lgpl-2.1
-    - libpng
-    - mit-license-1998
-    - isc
-    - mpl-1.1
-    - openldap-2.8
-    - openssl-ssleay
-    - pcre
-    - public-domain
-    - ruby
-    - ssleay-windows
-    - sun-rpc
-    - tidy
-    - unicode-mappings
-    - unlicense
+    - 3pp-proprietary-08
+    - 3pp-proprietary-08
+    - 3pp-proprietary-08
+    - 3pp-proprietary-08
+    - 3pp-proprietary-08
+    - 3pp-proprietary-08
+    - 3pp-proprietary-08
+    - bsd-original
     - x11-lucent
+    - bsd-new
+    - carnegie-mellon-contributors
+    - paul-mackerras
+    - cmu-computing-services
+    - brian-clapper
+    - historical
+    - cmu-computing-services
+    - bsd-new
+    #
+    - x11-fsf
+    - bsd-new
     - zlib
+    - bsd-new
+    - brian-gladman-dual
+    #
+    #
+    - bsd-new
 
 expected_failure: yes
-notes: this is a notice from an iPhone (1 or 2)
+notes: this is a notice from an iPhone 2

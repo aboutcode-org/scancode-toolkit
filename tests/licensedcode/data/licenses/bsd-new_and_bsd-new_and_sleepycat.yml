@@ -1,5 +1,6 @@
 licenses:
     - sleepycat
+    - sleepycat
     - bsd-new
     - bsd-new
-expected_contains: yes
+

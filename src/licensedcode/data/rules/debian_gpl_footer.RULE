@@ -1,0 +1,6 @@
+On Debian systems, you can find the complete textes for the GNU (Lesser)
+General licenses:
+  - GPL:      /usr/share/common-licenses/GPL
+  - GPLv2:    /usr/share/common-licenses/GPL-2
+  - LGPLv2:   /usr/share/common-licenses/LGPL-2
+  - GFDL:     /usr/share/common-licenses/GFDL

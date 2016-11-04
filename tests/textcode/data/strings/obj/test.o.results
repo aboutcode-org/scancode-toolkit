@@ -43,6 +43,7 @@ _Ios_Openmode
 _S_app
 _S_ate
 _S_bin
+_S_in
 _S_out
 _S_trunc
 _S_ios_openmode_end
@@ -64,7 +65,10 @@ _S_synced_with_stdio
 _ZNSt8ios_base4Init20_S_synced_with_stdioE
 Init
 ~Init
+zQ?W
 zSFW
+zT#W
+z\MW
 zenW
 money_base
 pattern
@@ -340,6 +344,7 @@ _Exit
 llabs
 bool
 _Atomic_word
+i@9k*
 ~new_allocator
 address
 hK_ZNK9__gnu_cxx13new_allocatorIcE7addressERc
@@ -395,6 +400,7 @@ _M_leak_hard
 _ZNSs12_M_leak_hardEv
 _ZNSs12_S_empty_repEv
 ~basic_string
+H11
 _ZNSsaSERKSs
 _ZNSsaSEPKc
 _ZNSsaSEc
@@ -406,8 +412,10 @@ end
 _ZNSs3endEv
 end
 _ZNKSs3endEv
+IL2
 rbegin
 _ZNSs6rbeginEv
+Ix2
 rbegin
 _ZNKSs6rbeginEv
 rend
@@ -418,7 +426,9 @@ size
 _ZNKSs4sizeEv
 length
 _ZNKSs6lengthEv
+HF3
 _ZNKSs8max_sizeEv
+Jx3
 resize
 _ZNSs6resizeEmc
 resize
@@ -429,33 +439,43 @@ reserve
 _ZNSs7reserveEm
 clear
 _ZNSs5clearEv
+IQ4
 empty
 _ZNKSs5emptyEv
+Hz4
 _ZNKSsixEm
 _ZNSsixEm
 _ZNKSs2atEm
 _ZNSs2atEm
 _ZNSspLERKSs
+HH5
 _ZNSspLEPKc
+Hp5
 _ZNSspLEc
 _ZNSs6appendERKSs
 _ZNSs6appendERKSsmm
 _ZNSs6appendEPKcm
 _ZNSs6appendEPKc
+Hs6
 _ZNSs6appendEmc
 push_back
 _ZNSs9push_backEc
 _ZNSs6assignERKSs
 _ZNSs6assignERKSsmm
+HE7
 _ZNSs6assignEPKcm
+Ht7
 _ZNSs6assignEPKc
 _ZNSs6assignEmc
 _ZNSs6insertEN9__gnu_cxx17__normal_iteratorIPcSsEEmc
+H68
 _ZNSs6insertEmRKSs
+Hx8
 _ZNSs6insertEmRKSsmm
 _ZNSs6insertEmPKcm
 _ZNSs6insertEmPKc
 _ZNSs6insertEmmc
+Hx9
 _ZNSs6insertEN9__gnu_cxx17__normal_iteratorIPcSsEEc
 erase
 _ZNSs5eraseEmm
@@ -494,6 +514,7 @@ get_allocator
 _ZNKSs13get_allocatorEv
 find
 _ZNKSs4findEPKcmm
+I7A
 find
 _ZNKSs4findERKSsm
 IlA
@@ -509,11 +530,13 @@ HxB
 _ZNKSs5rfindEcm
 _ZNKSs13find_first_ofERKSsm
 _ZNKSs13find_first_ofEPKcmm
+H9C
 _ZNKSs13find_first_ofEPKcm
 HuC
 _ZNKSs13find_first_ofEcm
 _ZNKSs12find_last_ofERKSsm
 _ZNKSs12find_last_ofEPKcmm
+H3D
 _ZNKSs12find_last_ofEPKcm
 HnD
 _ZNKSs12find_last_ofEcm
@@ -540,6 +563,7 @@ _ZNKSs7compareEmmPKcm
 P_S_empty_rep_storage
 tP_ZNSs4_Rep20_S_empty_rep_storageE
 _ZNSs4_Rep12_S_empty_repEv
+3rI
 _M_is_leaked
 _ZNKSs4_Rep12_M_is_leakedEv
 _M_is_shared
@@ -586,6 +610,7 @@ _ZNSt6localeaSERKS_
 string
 name
 _ZNKSt6locale4nameEv
+3DO
 operator==
 _ZNKSt6localeeqERKS_
 operator!=
@@ -605,6 +630,7 @@ _ZNSt6locale11_M_coalesceERKS_S1_i
 B_M_index
 _ZNSt6locale2id11_S_refcountE
 _ZNSt6locale2idaSERKS0_
+_M_id
 _ZNKSt6locale2id5_M_idEv
 B_M_facets
 B_M_facets_size
@@ -795,6 +821,7 @@ langinfo.h
 nl_types.h
 iconv.h
 libintl.h
+c++io.h
 gthr.h
 gthr-default.h
 pthread.h
@@ -961,15 +988,21 @@ __REGISTER_PREFIX__
 __USER_LABEL_PREFIX__
 __VERSION__ "4.1.2 20071124 (Red Hat 4.1.2-42)"
 __GNUC_GNU_INLINE__ 1
+_LP64 1
+__LP64__ 1
 __NO_INLINE__ 1
 __FINITE_MATH_ONLY__ 0
 __amd64 1
 __amd64__ 1
+__x86_64 1
+__x86_64__ 1
 __MMX__ 1
 __SSE__ 1
 __SSE2__ 1
 __SSE_MATH__ 1
 __SSE2_MATH__ 1
+__k8 1
+__k8__ 1
 __gnu_linux__ 1
 __linux 1
 __linux__ 1
@@ -2090,6 +2123,10 @@ __off64_t_defined
 __useconds_t_defined
 __intptr_t_defined
 __socklen_t_defined
+R_OK 4
+W_OK 2
+X_OK 1
+F_OK 0
 L_SET SEEK_SET
 L_INCR SEEK_CUR
 L_XTND SEEK_END

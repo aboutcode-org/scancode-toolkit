@@ -1,12 +1,16 @@
 licenses:
     - lgpl
-    - lgpl
+    - gpl
+    - bsd-new
+    - bsd-new
     - bsd-new
     - gpl
     - lgpl
     - lgpl
     - lgpl
     - lgpl
+    - bsd-new
+    - historical
     - historical
     - bsd-new
-expected_contains: yes
+

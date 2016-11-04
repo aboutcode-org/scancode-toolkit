@@ -1,0 +1,4 @@
+licenses:
+    - x11
+    - unknown
+notes: DANSE notice which is an X11 with some extras, reported as unknown

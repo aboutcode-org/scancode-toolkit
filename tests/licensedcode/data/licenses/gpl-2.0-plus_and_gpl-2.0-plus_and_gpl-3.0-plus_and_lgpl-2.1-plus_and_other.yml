@@ -2,9 +2,11 @@ licenses:
     - gpl-3.0-plus
     - lgpl-2.1-plus
     - lgpl-2.1-plus
+    - lgpl-2.1-plus
+    - mit-modern
     - gpl-2.0-plus
     - gpl-2.0-plus
-    - gpl-3.0-plus
-    - lgpl-2.1-plus
-    - lgpl-2.1-plus
-expected_failure: yes
+    - lgpl-2.1
+    - gpl-2.0
+    - gpl-3.0
+

@@ -89,10 +89,6 @@ class LicenseTest(object):
         # True if the test is expected to fail
         self.expected_failure = data.get('expected_failure', False)
 
-        # True if we test only that the expected licenses are present
-        self.expected_contains = data.get('expected_contains', False)
-        assert not (self.expected_contains and self.expected_failure)
-
         # True if the test should be skipped
         self.skip = data.get('skip', False)
 
@@ -106,8 +102,6 @@ class LicenseTest(object):
             dct['license_choice'] = self.license_choice
         if self.expected_failure:
             dct['expected_failure'] = self.expected_failure
-        if self.expected_failure:
-            dct['expected_contains'] = self.expected_contains
         if self.skip:
             dct['skip'] = self.skip
         if self.notes:
@@ -175,7 +169,6 @@ def build_tests(license_tests, clazz):
         test_method = make_license_test_function(
             test.licenses, test.test_file, test.data_file,
             test_name=test_name,
-            expected_contains=test.expected_contains,
             expected_failure=test.expected_failure,
             skip_test=test.skip and 'Skipping long test' or False,
             trace_text=TRACE_TEXTS

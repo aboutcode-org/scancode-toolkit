@@ -3,5 +3,5 @@ licenses:
     - gpl-2.0-autoconf
     - unknown
 license: (gpl-2.0-plus with gpl-2.0-autoconf) and unknown
-expected_contains: yes
+
 

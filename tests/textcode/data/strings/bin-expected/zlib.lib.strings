@@ -1,13 +1,10 @@
 !<arch>
 /               1161153312              0       122       `
-~
 __IMPORT_DESCRIPTOR_zlib
 __NULL_IMPORT_DESCRIPTOR
 zlib_NULL_THUNK_DATA
 __imp__initzlib
 _initzlib
-/               1161153312              0       132       `
-~
 __IMPORT_DESCRIPTOR_zlib
 __NULL_IMPORT_DESCRIPTOR
 __imp__initzlib
@@ -15,66 +12,37 @@ _initzlib
 zlib_NULL_THUNK_DATA
 zlib.pyd/       1161153312              0       483       `
 L
-5E
 .debug$S
-?
-@
 B.idata$2
-@
-0
 .idata$6
-@
 zlib.pyd(
 Microsoft (R) LINK
 zlib.pyd
 @comp.id
-]
 .idata$2@
-h
 .idata$6
 .idata$4@
-h
 .idata$5@
-h
-6
-L
 __IMPORT_DESCRIPTOR_zlib
 __NULL_IMPORT_DESCRIPTOR
 zlib_NULL_THUNK_DATA
 zlib.pyd/       1161153312              0       248       `
 L
-5E
 .debug$S
-?
-d
-@
 B.idata$3
-@
-0
 zlib.pyd(
 Microsoft (R) LINK
 @comp.id
-]
 __NULL_IMPORT_DESCRIPTOR
 zlib.pyd/       1161153312              0       273       `
 L
-5E
 .debug$S
-?
-@
 B.idata$5
-@
-0
 .idata$4
-@
-0
 zlib.pyd(
 Microsoft (R) LINK
 @comp.id
-]
 zlib_NULL_THUNK_DATA
 zlib.pyd/       1161153312              0       39        `
-L
-5E
 _initzlib
 zlib.pyd

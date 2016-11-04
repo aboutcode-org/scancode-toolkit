@@ -1,13 +1,10 @@
 !<arch>
 /               1161153314              0       134       `
-L
 L__IMPORT_DESCRIPTOR_pyexpat
 __NULL_IMPORT_DESCRIPTOR
 pyexpat_NULL_THUNK_DATA
 __imp__initpyexpat
 _initpyexpat
-/               1161153314              0       144       `
-L
 __IMPORT_DESCRIPTOR_pyexpat
 __NULL_IMPORT_DESCRIPTOR
 __imp__initpyexpat
@@ -15,70 +12,37 @@ _initpyexpat
 pyexpat_NULL_THUNK_DATA
 pyexpat.pyd/    1161153314              0       494       `
 L
-"
-5E
 .debug$S
-B
-@
 B.idata$2
-@
-0
 .idata$6
-@
 pyexpat.pyd(
 Microsoft (R) LINK
 pyexpat.pyd
 @comp.id
-]
 .idata$2@
-h
 .idata$6
 .idata$4@
-h
 .idata$5@
-h
-9
-R
 __IMPORT_DESCRIPTOR_pyexpat
 __NULL_IMPORT_DESCRIPTOR
 pyexpat_NULL_THUNK_DATA
 pyexpat.pyd/    1161153314              0       251       `
 L
-"
-5E
 .debug$S
-B
-d
-@
 B.idata$3
-@
-0
 pyexpat.pyd(
 Microsoft (R) LINK
 @comp.id
-]
 __NULL_IMPORT_DESCRIPTOR
 pyexpat.pyd/    1161153314              0       279       `
 L
-"
-5E
 .debug$S
-B
-@
 B.idata$5
-@
-0
 .idata$4
-@
-0
 pyexpat.pyd(
 Microsoft (R) LINK
 @comp.id
-]
 pyexpat_NULL_THUNK_DATA
 pyexpat.pyd/    1161153314              0       45        `
-L
-"
-5E
 _initpyexpat
 pyexpat.pyd

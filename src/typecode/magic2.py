@@ -64,7 +64,7 @@ bin_dir = os.path.join(os.path.dirname(__file__), 'bin')
 
 
 # path to vendored magic DB, possibly OS-specific
-basemag= os.path.join(data_dir, 'magic')
+basemag = os.path.join(data_dir, 'magic')
 # keep the first which is the most specific directory
 magdir = command.get_base_dirs(basemag)[0]
 magic_db = os.path.join(magdir, 'magic.mgc')
@@ -164,11 +164,11 @@ class Detector(object):
             # first use the path as is
             return  _magic_file(self.cookie, location)
         except:
-            # then try to get a utf-8 encoded path: Rationale: https://docs.py
-            # thon.org/2/library/ctypes.html#ctypes.set_conversion_mode ctypes
+            # then try to get a utf-8 encoded path: Rationale:
+            # https://docs.python.org/2/library/ctypes.html#ctypes.set_conversion_mode ctypes
             # encode strings to byte as ASCII or MBCS depending on the OS The
-            # location string may therefore be mangled and the file not
-            # accessible anymore by libmagic in some cases.
+            # location string may therefore be mangled and the file not accessible
+            # anymore by libmagic in some cases.
             try:
                 uloc = location.encode('utf-8')
                 return  _magic_file(self.cookie, uloc)

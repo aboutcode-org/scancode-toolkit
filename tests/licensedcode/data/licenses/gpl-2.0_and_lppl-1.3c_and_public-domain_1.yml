@@ -1,13 +1,28 @@
 licenses:
     - gpl-2.0
+    - gpl-2.0
     - public-domain
+    - gpl
     - public-domain
-    - public-domain
+    - lppl-1.0
+    - gpl
     - lppl-1.3c
+    - artistic-2.0
+    - bsd-new
+    - gpl-2.0
+    - gpl
+    - lppl-1.3c
+    - artistic-2.0
     - public-domain
     - public-domain
     - public-domain
     - public-domain
     - public-domain
-    - public-domain
+    - lppl-1.0
+    - gpl-2.0-plus
+    - lppl-1.2
+    - lppl-1.2
+    - lppl-1.2
+    - lppl-1.2
 expected_failure: yes
+

@@ -1,5 +1,5 @@
 licenses:
     - gpl
     - gpl
-expected_contains: yes
+
 notes: config file

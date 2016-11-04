@@ -643,9 +643,6 @@ class Rule(object):
         # TODO: implement me.
         self.license = u''
 
-        # licensing identifier: TODO: replace with a license expression
-        self.licensing_identifier = tuple(self.licenses) + (license_choice,)
-
         # is this rule text a false positive when matched? (filtered out)
         self.false_positive = False
 
@@ -660,6 +657,9 @@ class Rule(object):
         self.data_file = data_file
         if data_file:
             self.load()
+
+        # licensing identifier: TODO: replace with a license expression
+        self.licensing_identifier = tuple(self.licenses) + (license_choice,)
 
         # path to the rule text file
         self.text_file = text_file

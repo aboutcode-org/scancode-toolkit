@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,7 +24,6 @@
 
 from __future__ import absolute_import, print_function
 
-import os
 import string
 import re
 
@@ -32,315 +31,229 @@ from commoncode.text import toascii
 
 
 """
-Extract ASCII strings from a (possibly) binary string.
+Extract raw ASCII strings from (possibly) binary strings.
+Both plain ASCII and UTF-16-LE-encoded (aka. wide) strings are extracted.
+The later is found typically in some Windows PEs.
 
-Use character translations tables for this, replacing all non-printable
-characters by a newline char.
-Then split on lines, yield these lines filtering out junk strings.
-This is similar to what GNU Binutils strings does.
+This is more or less similar to what GNU Binutils strings does.
 
-TODO: Add support for some additional and common strings-inbinary encodings
-such as UTC-16 in Windows binary executables.
+Does not recognize and extract non-ASCII characters
 
-https://github.com/fireeye/flare-floss
+Some alternative and references:
+https://github.com/fireeye/flare-floss (also included)
 http://stackoverflow.com/questions/10637055/how-do-i-extract-unicode-character-sequences-from-an-mz-executable-file
+http://stackoverflow.com/questions/1324067/how-do-i-get-str-translate-to-work-with-unicode-strings
+http://stackoverflow.com/questions/11066400/remove-punctuation-from-unicode-formatted-strings/11066687#11066687
+https://github.com/TakahiroHaruyama/openioc_scan/blob/d7e8c5962f77f55f9a5d34dbfd0799f8c57eff7f/openioc_scan.py#L184
 """
 
-
-"""
-Definition of non printable text: Remove digit,letters, punctuation and white
-spaces, all the rest is junk.
-
-Note: we replace also \r and \f with a newline. Since \r will be replaced by a
-new line, some empty lines are possible, which is not a problem.
-
-The fact that strings could be null-terminated is handled since the null is
-also replaced by a newline.
-
-The translation table is:
-    0123456789abcdefghijklmnopqrstuvwxyz
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \n
-"""
-allchars = string.maketrans('', '')
-non_printable = string.translate(allchars, allchars,
-                                 string.digits
-                                 + string.letters
-                                 + string.punctuation
-                                 + ' \t\n')
+# at least three characters are needed to consider some blob as a good string
+MIN_LEN = 3
 
 
-"""
-This create a translation table to replace junk chars with a newline char
-"""
-printable = string.maketrans(non_printable, '\n' * len(non_printable))
-
-
-# this is heart of the code... a one liner
-def strings(binary_string):
+def strings_from_file(location, buff_size=1024 * 1024, ascii=False, clean=True, min_len=MIN_LEN):
     """
-    Return a list of strings extracted from a binary string.
+    Yield unicode strings made only of ASCII characters found in file at location.
+    Process the file in chunks (to limit memory usage). If ascii is True, strings
+    are converted to plain ASCII "str or byte" strings instead of unicode.
     """
-    return lines(remove_non_printable(binary_string))
-
-
-def lines(s):
-    for x in s.splitlines():
-        yield x
-
-
-def remove_non_printable(binary_string):
-    """
-    Returns an ASCII printable string for a binary string, removing all non
-    printable characters.
-    """
-    return binary_string.translate(printable)
-
-
-def file_strings(location, buff_size=1024 * 1024):
-    """
-    Process (eventually large) files in chunks and yield ASCII strings found
-    in file at location, encoded as Unicode.
-    """
-    file_size = os.path.getsize(location)
-    count = 0
+    min_len = MIN_LEN
     with open(location, 'rb') as f:
         while 1:
-            start = f.tell()
             buf = f.read(buff_size)
-            count += 1
-            if not buf or not buf.strip():
+            if not buf:
                 break
-            s = remove_non_printable(buf)
-
-            if file_size >= buff_size * count:
-                # if the last char is not a '\n' we need to backtrack to avoid
-                # truncating lines in the middle
-                last_ln_end = s.rfind('\n')
-                # what if we did not find any??
-                # in this case we likely need to read forward instead of
-                # backward since this is a very unlikely event, we are just
-                # yielding what we have
-                if last_ln_end != -1:
-                    to_truncate = len(s) - last_ln_end
-                    back_pos = start - to_truncate
-                    f.seek(back_pos, os.SEEK_CUR)
-                    s = s[:last_ln_end + 1]
-
-            for l in s.splitlines():
-                ls = l.strip()
-                if ls:
-                    yield ls
-
-#
-# Junk strings filtering
-#
-
-# Filters accept or reject a string: a filtering function returns True if the
-# strings needs to be filtered out
-
-non_chars = string.translate(allchars, allchars, string.letters)
-letters = string.maketrans(non_chars, ' ' * len(non_chars))
+            for s in strings_from_string(buf, clean=clean, min_len=min_len):
+                if ascii:
+                    s = toascii(s)
+                    s = s.strip()
+                    if not s or len(s) < min_len:
+                        continue
+                yield s
 
 
-def filter_string(S, min_length=2):
+# Extracted text is digit, letters, punctuation and white spaces
+punctuation = re.escape(string.punctuation)
+whitespaces = ' \t\n\r'
+printable = 'A-Za-z0-9' + whitespaces + punctuation
+null_byte = '\x00'
+
+
+ascii_strings = re.compile(
+    # plain ASCII is a sequence of printable of a minimum length
+      '('
+    + '[' + printable + ']'
+    + '{' + str(MIN_LEN) + ',}'
+    + ')'
+    # or utf-16-le-encoded ASCII is a sequence of ASCII+null byte
+    + '|'
+    + '('
+    + '(?:' + '[' + printable + ']' + null_byte + ')'
+    + '{' + str(MIN_LEN) + ',}'
+    + ')'
+    ).finditer
+
+
+def strings_from_string(binary_string, clean=False, min_len=0):
     """
-    Filters strings composed of :
-     * only one repeated character
-     * only short tokens
+    Yield strings extracted from a (possibly binary) string. The strings are ASCII
+    printable characters only. If clean is True, also clean and filter short and
+    repeated strings.
+    Note: we do not keep the offset of where a string was found (e.g. match.start).
     """
-    tok = del_special(S)
-    tok = tok.translate(letters)
-    tok = tok.strip().lower().split()
+    for match in ascii_strings(binary_string):
+        s = decode(match.group())
+        if s:
+            if clean:
+                for ss in clean_string(s, min_len=min_len):
+                    yield ss
+            else:
+                yield s
 
-    if S:
-        repeat = S[0]
+
+def string_from_string(binary_string, clean=False, min_len=0):
+    """
+    Return a unicode string string extracted from a (possibly binary) string,
+    removing all non printable characters.
+    """
+    return u' '.join(strings_from_string(binary_string, clean, min_len))
+
+
+def decode(s):
+    """
+    Return a decoded unicode string from s or None if the string cannot be decoded.
+    """
+    if '\x00' in s:
+        try:
+            return s.decode('utf-16-le')
+        except UnicodeDecodeError:
+            pass
     else:
-        repeat = ' '
-    return (all(len(x) <= min_length for x in tok)
-            or all(x == repeat for x in list(S)))
+        return s.decode('ascii')
 
 
-def filter_strict(S):
-    return filter_string (S, min_length=4)
+remove_junk = re.compile('[' + punctuation + whitespaces + ']').sub
 
 
-# Ensure certain short strings are not filtered out
-token_to_keep = set(
-    (
-     # elf related
-     'gnu',
-     'gnu as',
-     'elf',
-     'rel',
-     'dyn',
-     'jcr',
-     'dot',
-     'jss',
-     'plt',
-     'bss',
-     'jcr',
-     'end',
-     'die',
-     # license related
-     'gpl',
-     'mit',
-     'bsd',
-     '(c)',
-     )
-)
-
-
-def to_keep(S):
+def clean_string(s, min_len=MIN_LEN,
+                 junk=string.punctuation + string.digits + string.whitespace):
     """
-    Keeps strings that are in a reference set.
+    Yield cleaned strings from string s if it passes some validity tests:
+     * not made of white spaces
+     * with a minimum length
+     * not made of only two repeated character
+     * not made of only of digits, punctuations and whitespaces
     """
-    return S.lower() in token_to_keep
+    s = s.strip()
+    def valid(st):
+        st = remove_junk('', st)
+        return (st and len(st) >= min_len
+                # ignore character repeats, e.g need more than two unique characters
+                and len(set(st.lower())) > 1
+                # ignore string made only of digit or punctuation
+                and not all(c in junk for c in st))
+
+    if valid(s):
+        yield s.strip()
 
 
-def is_good(S, filt=filter_string):
-    """
-    Returns True if if string is a keeper or False if filtered.
-    """
-    if not S:
-        return False
-    return to_keep(S) or not filt(S)
-
-#
-# transformers change the content of strings
-#
-
-# TODO: add c++ demangling, etc)
-def del_special(S):
-    """
-    Replace verbatim white space lien endings and tabs (\\n, \\r, \\t) that
-    may exist as-is as literals in the extracted string by a space.
-    """
-    return S.replace('\\r', ' ').replace('\\n', ' ').replace('\\t', ' ')
-
-
-def is_mangled_ccp(S):
-    return False
-
-
-def demangle_cpp(S):
-    return S
-
-
-def is_mangled_java(S):
-    return False
-
-
-def demangle_java(S):
-    return S
-
-
-def strings_in_file(location, filt=filter_string):
-    """
-    Yield ASCCI strings encoded as Unicode extracted from a file at location.
-    """
-    for s in file_strings(location):
-        if is_good(s, filt):
-            s = s.strip()
-            if s:
-                yield toascii(s)
-
-
+#####################################################################################
+# TODO: Strings classification
+# Classify strings, detect junk, detect paths, symbols, demangle symbols, unescape
 # http://code.activestate.com/recipes/466293-efficient-character-escapes-decoding/?in=user-2382677
-# classifiers detect specific patterns in the strings
-# TODO: add path detection, etc
-# Detect paths and file names
-
-def FILE_RE():
-    return re.compile('^[\w_\-]+\.\w{1,4}$', re.IGNORECASE)
 
 
-def is_file(S):
+def is_file(s):
     """
-    Return True is S looks like a file name.
+    Return True if s looks like a file name.
     Exmaple: dsdsd.dll
     """
-    return 'file-name' if re.match(FILE_RE(), S) else None
+    filename = re.compile('^[\w_\-]+\.\w{1,4}$', re.IGNORECASE).match
+    return filename(s)
 
 
-def SO_RE():
-    return re.compile('^[\w_\-]+\.so\.[0-9]+\.*.[0-9]*$', re.IGNORECASE)
-
-def is_shared_object(S):
+def is_shared_object(s):
     """
-    Return True is S looks like a shared object file.
+    Return True if s looks like a shared object file.
     Example: librt.so.1
     """
-    return 'elf-shared-object' if re.match(SO_RE(), S) else None
+    so = re.compile('^[\w_\-]+\.so\.[0-9]+\.*.[0-9]*$', re.IGNORECASE).match
+    return so(s)
 
 
-def POSIXPATH_RE():
-    return re.compile('^[\w_\-]+\.so\.[0-9]+\.*.[0-9]*$', re.IGNORECASE)
-
-def is_posix_path(S):
+def is_posix_path(s):
     """
-    Return True is S looks like a posix path.
-    Example: /usr/lib/librt.so.1 or usr/lib
+    Return True if s looks like a posix path.
+    Example: /usr/lib/librt.so.1 or /usr/lib
     """
-    return re.match(POSIXPATH_RE(), S)
+    # TODO: implement me
+    posix = re.compile('^/[\w_\-].*$', re.IGNORECASE).match
+    posix(s)
+    return False
 
 
-def RELATIVE_RE():
-    return re.compile('^[\w_\-]+\.so\.[0-9]+\.*.[0-9]*$', re.IGNORECASE)
-
-def is_relative_path(S):
+def is_relative_path(s):
     """
-    Return True is S looks like a relative posix path.
+    Return True if s looks like a relative posix path.
     Example: usr/lib/librt.so.1 or ../usr/lib
     """
-    return re.match(POSIXPATH_RE(), S)
+    relative = re.compile('^(?:([^/]|\.\.)[\w_\-]+/.*$', re.IGNORECASE).match
+    return relative(s)
 
 
-def WINPATH_RE():
-    return re.compile('^[\w_\-]+\.so\.[0-9]+\.*.[0-9]*$', re.IGNORECASE)
-
-def is_win_path(S):
+def is_win_path(s):
     """
-    Return True is S looks like a win path.
+    Return True if s looks like a win path.
     Example: c:\usr\lib\librt.so.1.
     """
-    return re.match(WINPATH_RE(), S)
+    winpath = re.compile('^[\w_\-]+\.so\.[0-9]+\.*.[0-9]*$', re.IGNORECASE).match
+    return winpath(s)
 
 
-def is_c_source(S):
+def is_c_source(s):
     """
-    Return True is S looks like a C source path.
-    Example: this.c 
+    Return True if s looks like a C source path.
+    Example: this.c
     FIXME: should get actual algo from contenttype.
     """
-    return S.endswith(('.c', '.cpp', '.hpp', '.h',))
+    return s.endswith(('.c', '.cpp', '.hpp', '.h'))
 
 
-def is_java_source(S):
+def is_java_source(s):
     """
-    Return True is S looks like a Java source path.
+    Return True if s looks like a Java source path.
     Example: this.java
     FIXME: should get actual algo from contenttype.
     """
-    return S.endswith(('.java', '.jsp', '.aj',))
+    return s.endswith(('.java', '.jsp', '.aj',))
 
 
-def is_GLIBC_ref(S):
+def is_glibc_ref(s):
     """
-    Return True is S looks like a reference to GLIBC as typically found in
+    Return True if s looks like a reference to GLIBC as typically found in
     Elfs.
     """
-    return '@@GLIBC' in S
+    return '@@GLIBC' in s
 
 
-def JAVAREF_RE():
-    return re.compile('^.*$', re.IGNORECASE)
-
-
-def is_java_ref(S):
+def is_java_ref(s):
     """
-    Return True is S looks like a reference to a java class or package in a
+    Return True if s looks like a reference to a java class or package in a
     class file.
     """
+    jref = re.compile('^.*$', re.IGNORECASE).match
+    # TODO: implement me
+    jref(s)
+    return False
+
+
+def is_win_guid(s):
+    """
+    Return True if s looks like a windows GUID/APPID/CLSID.
+    """
+    guid = re.compile('"\{[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}\}"', re.IGNORECASE).match
+    # TODO: implement me
+    guid(s)
     return False
 
 
@@ -355,3 +268,10 @@ class BinaryStringsClassifier(object):
     """
     # TODO: Implement me
 
+
+if __name__ == '__main__':
+    # also usable a simple command line script
+    import sys
+    location = sys.argv[1]
+    for s in strings_from_file(location):
+        print(s)

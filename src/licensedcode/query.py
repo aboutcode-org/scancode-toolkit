@@ -93,7 +93,8 @@ def build_query(location=None, query_string=None, idx=None):
     if location:
         qtype = typecode.get_type(location)
         if qtype.is_binary:
-            qry = Query(location=location, idx=idx, line_threshold=20)
+            # for binaries we want to avoid a large number of query runs
+            qry = Query(location=location, idx=idx, line_threshold=1000)
         else:
             qry = Query(location=location, idx=idx, line_threshold=80)
     else:
