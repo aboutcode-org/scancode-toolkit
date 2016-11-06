@@ -99,6 +99,7 @@ setup(
         'jinja2 >= 2.7.0, < 3.0.0',
         'MarkupSafe >= 0.23',
         'colorama',
+        'simplejson',
 
         # packagedcode
         'requests >= 2.7.0, < 3.0.0',
