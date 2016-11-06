@@ -92,7 +92,7 @@ def test_package_option_detects_packages(monkeypatch):
     test_dir = test_env.get_test_loc('package', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['--package', test_dir, result_file])
+    result = runner.invoke(cli.scancode, ['--package', test_dir, result_file], catch_exceptions=False)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     assert 'package.json' in result.output
@@ -105,7 +105,7 @@ def test_verbose_option_with_packages(monkeypatch):
     test_dir = test_env.get_test_loc('package', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['--package', '--verbose', test_dir, result_file])
+    result = runner.invoke(cli.scancode, ['--package', '--verbose', test_dir, result_file], catch_exceptions=False)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     assert 'package.json' in result.output
@@ -118,7 +118,7 @@ def test_copyright_option_detects_copyrights(monkeypatch):
     test_dir = test_env.get_test_loc('copyright', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['--copyright', test_dir, result_file])
+    result = runner.invoke(cli.scancode, ['--copyright', test_dir, result_file], catch_exceptions=False)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     assert os.path.exists(result_file)
@@ -130,7 +130,7 @@ def test_verbose_option_with_copyrights(monkeypatch):
     test_dir = test_env.get_test_loc('copyright', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['--copyright', '--verbose', test_dir, result_file])
+    result = runner.invoke(cli.scancode, ['--copyright', '--verbose', test_dir, result_file], catch_exceptions=False)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     assert 'copyright_acme_c-c.c' in result.output
@@ -143,7 +143,7 @@ def test_license_option_detects_licenses(monkeypatch):
     test_dir = test_env.get_test_loc('license', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['--license', test_dir, result_file])
+    result = runner.invoke(cli.scancode, ['--license', test_dir, result_file], catch_exceptions=False)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     assert os.path.exists(result_file)
@@ -155,7 +155,7 @@ def test_scancode_skip_vcs_files_and_dirs_by_default(monkeypatch):
     test_dir = test_env.extract_test_tar('ignore/vcs.tgz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['--copyright', test_dir, result_file])
+    result = runner.invoke(cli.scancode, ['--copyright', test_dir, result_file], catch_exceptions=False)
     assert result.exit_code == 0
     scan_result = _load_json_result(result_file, test_dir)
     # a single test.tst file and its directory that is not a VCS file should be listed
@@ -172,12 +172,12 @@ def test_usage_and_help_return_a_correct_script_name_on_all_platforms(monkeypatc
     # this was showing up on Windows
     assert 'scancode-script.py' not in result.output
 
-    result = runner.invoke(cli.scancode, [])
+    result = runner.invoke(cli.scancode, [], catch_exceptions=False)
     assert 'Usage: scancode [OPTIONS]' in result.output
     # this was showing up on Windows
     assert 'scancode-script.py' not in result.output
 
-    result = runner.invoke(cli.scancode, ['-xyz'])
+    result = runner.invoke(cli.scancode, ['-xyz'], catch_exceptions=False)
     # this was showing up on Windows
     assert 'scancode-script.py' not in result.output
 
@@ -187,7 +187,7 @@ def test_scan_info_does_collect_infos(monkeypatch):
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['--info', test_dir, result_file])
+    result = runner.invoke(cli.scancode, ['--info', test_dir, result_file], catch_exceptions=False)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_scan(test_env.get_test_loc('info/basic.expected.json'), result_file, test_dir)
@@ -198,7 +198,7 @@ def test_scan_info_license_copyrights(monkeypatch):
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright', test_dir, result_file])
+    result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright', test_dir, result_file], catch_exceptions=False)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_scan(test_env.get_test_loc('info/all.expected.json'), result_file, test_dir)
@@ -207,9 +207,12 @@ def test_scan_info_license_copyrights(monkeypatch):
 def test_scan_email_url_info(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.extract_test_tar('info/basic.tgz')
+    print('############################')
+    print(test_dir)
+    print('############################')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['--email', '--url', '--info', test_dir, result_file])
+    result = runner.invoke(cli.scancode, ['--email', '--url', '--info', test_dir, result_file], catch_exceptions=False)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_scan(test_env.get_test_loc('info/email_url_info.expected.json'), result_file, test_dir)
@@ -220,7 +223,7 @@ def test_paths_are_posix_paths_in_html_app_format_output(monkeypatch):
     test_dir = test_env.get_test_loc('posix_path', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file(extension='html', file_name='test_html')
-    result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html-app', test_dir, result_file])
+    result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html-app', test_dir, result_file], catch_exceptions=False)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     # the data we want to test is in the data.json file
@@ -233,7 +236,7 @@ def test_paths_are_posix_in_html_format_output(monkeypatch):
     test_dir = test_env.get_test_loc('posix_path', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('html')
-    result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html', test_dir, result_file])
+    result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html', test_dir, result_file], catch_exceptions=False)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     assert '/posix_path/copyright_acme_c-c.c' in open(result_file).read()
@@ -244,7 +247,7 @@ def test_paths_are_posix_in_json_format_output(monkeypatch):
     test_dir = test_env.get_test_loc('posix_path', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'json', test_dir, result_file])
+    result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'json', test_dir, result_file], catch_exceptions=False)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     assert '/posix_path/copyright_acme_c-c.c' in open(result_file).read()
@@ -255,7 +258,7 @@ def test_format_with_custom_filename_fails_for_directory(monkeypatch):
     test_dir = test_env.get_test_loc('posix_path', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('html')
-    result = runner.invoke(cli.scancode, [ '--format', test_dir, test_dir, result_file])
+    result = runner.invoke(cli.scancode, [ '--format', test_dir, test_dir, result_file], catch_exceptions=False)
     assert result.exit_code != 0
     assert 'Invalid template file' in result.output
 
@@ -266,7 +269,7 @@ def test_format_with_custom_filename(monkeypatch):
     runner = CliRunner()
     template = test_env.get_test_loc('template/sample-template.html')
     result_file = test_env.get_temp_file('html')
-    result = runner.invoke(cli.scancode, [ '--format', template, test_dir, result_file])
+    result = runner.invoke(cli.scancode, [ '--format', template, test_dir, result_file], catch_exceptions=False)
     assert result.exit_code == 0
     assert 'Custom Template' in open(result_file).read()
 
@@ -276,7 +279,7 @@ def test_scanned_path_is_present_in_html_app_output(monkeypatch):
     test_dir = test_env.get_test_loc('html_app')
     runner = CliRunner()
     result_file = test_env.get_temp_file('test.html')
-    result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html-app', test_dir, result_file])
+    result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html-app', test_dir, result_file], catch_exceptions=False)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     html_file = open(result_file).read()
@@ -288,8 +291,7 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     runner = CliRunner()
     result_file = test_env.get_temp_file('test.json')
-    print('====>', cli.scancode, [ '--copyright', test_file, result_file])
-    result = runner.invoke(cli.scancode, [ '--copyright', test_file, result_file])
+    result = runner.invoke(cli.scancode, [ '--copyright', test_file, result_file], catch_exceptions=False)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file, test_file)
