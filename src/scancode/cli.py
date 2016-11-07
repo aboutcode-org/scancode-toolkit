@@ -362,7 +362,6 @@ def scan_infos(input_file):
     try:
         infos = get_file_infos(input_file, as_list=False)
     except Exception, e:
-        raise
         # never fail but instead add an error message.
         # FIXME: this should not be stored at the individual scan level
         return dict(errors=e.message)
@@ -385,7 +384,6 @@ def scan_one(input_file, scans):
                 scan_details = list(scan_details)
             scan_result[scan_name] = scan_details
         except Exception, e:
-            raise
             # never fail but instead add an error message.
             # FIXME: this should not be stored at the individual scan level
             scan_result[scan_name] = {'errors': e.message}
