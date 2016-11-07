@@ -24,6 +24,7 @@
 
 from __future__ import absolute_import, print_function
 
+from collections import OrderedDict
 import os
 import sys
 
@@ -31,7 +32,6 @@ from commoncode import fileutils
 from commoncode import timeutils
 
 from scancode import scans_cache_dir
-from collections import OrderedDict
 
 """
 Caching scans on disk: A cache of all the scan results.
