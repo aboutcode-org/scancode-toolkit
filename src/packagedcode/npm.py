@@ -122,7 +122,7 @@ def parse(location):
     # a package.json is at the root of an NPM package
     base_dir = fileutils.parent_directory(location)
     package.location = base_dir
-    # for now we only recognize a pcakge.json, not a node_modules directory yet
+    # for now we only recognize a package.json, not a node_modules directory yet
     package.metafile_locations = [location]
     package.version = data.get('version')
     for source, target in plain_fields.items():
@@ -141,9 +141,8 @@ def parse(location):
                 value = value.strip()
             if value:
                 func(value, package)
-
+    # this should be a mapper function but requires two args
     package.download_urls.append(public_download_url(package.name, package.version))
-    package.metafile_locations.append(location)
     return package
 
 
