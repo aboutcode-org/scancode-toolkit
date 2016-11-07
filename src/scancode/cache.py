@@ -85,10 +85,18 @@ class ScanCache(object):
         self.cache_scans_dir = os.path.join(self.cache_base_dir, 'scans')
         fileutils.create_dir(self.cache_scans_dir)
 
+        # workaround for https://github.com/grantjenks/python-diskcache/issues/32
+        from diskcache import Disk
+        class DiskWithNoHighPickleProtocol(Disk):
+            "Subclass of diskcache.Disk that always use the lowest pickle protocol."
+            def __init__(self, directory, size_threshold, pickle_protocol):
+                super(DiskWithNoHighPickleProtocol, self).__init__(directory, size_threshold, pickle_protocol)
+                self._protocol = 0
+
         # and finially cache instances
         from diskcache import Cache
-        self.infos = Cache(self.cache_infos_dir)
-        self.scans = Cache(self.cache_scans_dir)
+        self.infos = Cache(self.cache_infos_dir, disk=DiskWithNoHighPickleProtocol)
+        self.scans = Cache(self.cache_scans_dir, disk=DiskWithNoHighPickleProtocol)
 
     def scan_key(self, path, file_infos):
         """
