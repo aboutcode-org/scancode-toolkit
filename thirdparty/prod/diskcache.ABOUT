@@ -1,13 +1,13 @@
-about_resource: diskcache-1.7.0-py2.py3-none-any.whl
+about_resource: diskcache-2.0.2-py2.py3-none-any.whl
 
 name: python-diskcache
-version: 1.7.0
+version: 2.0.2
 
 owner: Grant Jenks
 
 home_url: https://github.com/grantjenks/python-diskcache/
 
-download_url: https://pypi.python.org/packages/0f/fc/b24e3d66525e09c621817ae1d3804e7ec605e5d91cf1c2da3d755c4b9e52/diskcache-1.7.0.tar.gz#md5=8fcce03a1b25b37b376a0982c50d70eb
+download_url: https://pypi.python.org/packages/9f/71/36193e75dfa37bebad9a46d80bb003c52602de69ad2b945d0987a80c2d59/diskcache-2.0.2.tar.gz#md5=c3d75a2a99e87da6844bd882e7be82fe
 vcs_tool: git
 vcs_repository: https://github.com/grantjenks/python-diskcache.git
 

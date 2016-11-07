@@ -34,6 +34,8 @@ from os.path import expanduser
 from os.path import isfile
 from os.path import join
 
+import simplejson as json
+
 from commoncode import fileutils
 
 
@@ -130,10 +132,10 @@ def create_html_app_assets(results, output_file):
         fileutils.copytree(assets_dir, target_dir)
 
         # write json data
-        import json
         root_path, assets_dir = get_html_app_files_dirs(output_file)
         with open(join(root_path, assets_dir, 'data.json'), 'w') as f:
-            f.write('data=' + json.dumps(results))
+            f.write('data=')
+            json.dump(results, f, iterable_as_array=True)
 
         # create help file
         with open(join(root_path, assets_dir, 'help.html'), 'w') as f:

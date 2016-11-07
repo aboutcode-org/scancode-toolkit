@@ -142,11 +142,11 @@ def get_licenses(location, min_score=0):
             result['matched_rule']['licenses'] = match.rule.licenses
             # TODO: add debug details such as matcher
             # result['matched_rule']['matcher'] = match.matcher
-            
+
             yield result
 
 
-def get_file_infos(location):
+def get_file_infos(location, as_list=True):
     """
     Return a list of dictionaries of informations collected from the file or
     directory at location.
@@ -177,7 +177,10 @@ def get_file_infos(location):
     infos['is_media'] = is_file and T.is_media or None
     infos['is_source'] = is_file and T.is_source or None
     infos['is_script'] = is_file and T.is_script or None
-    return [infos]
+    if as_list:
+        return [infos]
+    else:
+        return infos
 
 
 def get_package_infos(location):

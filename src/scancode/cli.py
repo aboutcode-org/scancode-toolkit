@@ -26,13 +26,13 @@ from __future__ import print_function, absolute_import
 
 from collections import OrderedDict
 from functools import partial
-import json
 import os
 import sys
 from types import GeneratorType
 
 import click
 from click.termui import style
+import simplejson as json
 
 from commoncode import ignore
 from commoncode import fileutils
@@ -42,6 +42,8 @@ from os.path import abspath
 
 from scancode import __version__ as version
 from scancode import utils
+
+from scancode.cache import get_scans_cache
 
 from scancode.format import as_template
 from scancode.format import as_html_app
@@ -260,15 +262,27 @@ def scancode(ctx, input, output_file, copyright, license, package,
         license = True
         package = True
 
-    results = scan(input, copyright, license, package, email, url, info, license_score, verbose, quiet)
-    save_results(results, format, input, output_file)
+    scans_cache = get_scans_cache()
+    try:
+        files_count, results = scan(input, copyright, license, package, email, url, info, license_score, verbose, quiet, scans_cache)
+        save_results(files_count, results, format, input, output_file)
+    finally:
+        # cleanup
+        scans_cache.clear()
 
 
 def scan(input_path, copyright=True, license=True, package=True,
-         email=False, url=False, info=True, license_score=0, verbose=False, quiet=False):
+         email=False, url=False, info=True, license_score=0,
+         verbose=False, quiet=False,
+         scans_cache=None):
     """
-    Do the scans proper, return a list of file_results.
+    Return a tuple of (file_count, scan_results) where scan_results is an iterable.
+    Run each requested scan proper: each individual file scan is cached on disk to
+    free memory. Then the whole set of scans is loaded from the cache and streamed at
+    the end.
     """
+    assert scans_cache
+
     # save paths to report paths relative to the original input
     original_input = fileutils.as_posixpath(input_path)
     abs_input = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(input_path)))
@@ -278,15 +292,13 @@ def scan(input_path, copyright=True, license=True, package=True,
     # note: "flag and function" expressions return the function if flag is True
     # note: the order of the scans matters to show things in logical order
     scanners = OrderedDict([
-        ('infos' , info and get_file_infos),
+        # ('infos' , info and get_file_infos),
         ('licenses' , license and get_licenses_with_score),
         ('copyrights' , copyright and get_copyrights),
         ('packages' , package and get_package_infos),
         ('emails' , email and get_emails),
         ('urls' , url and get_urls),
     ])
-
-    file_results = []
 
     # note: we inline progress display functions to close on some args
 
@@ -323,20 +335,37 @@ def scan(input_path, copyright=True, license=True, package=True,
                                quiet=quiet
                                ) as progressive_resources:
 
-        for resource in progressive_resources:
+        for files_count, resource in enumerate(progressive_resources):
+            # actual path of the file being scanned
             res = fileutils.as_posixpath(resource)
-
             # fix paths: keep the path as relative to the original input
             relative_path = utils.get_relative_path(original_input, abs_input, res)
-            scan_result = OrderedDict(path=relative_path)
-            # Should we yield instead?
-            scan_result.update(scan_one(res, scanners))
-            file_results.append(scan_result)
 
-    # TODO: eventually merge scans for the same files path...
-    # TODO: fix absolute paths as relative to original input argument...
+            # always fetch infos and cache.
+            infos = scan_infos(res)
+            is_cached = scans_cache.put_infos(relative_path, infos)
 
-    return file_results
+            # Skip other scans if already cached
+            if is_cached:
+                continue
+            scan_result = scan_one(res, scanners)
+            scans_cache.put_scan(relative_path, infos, scan_result)
+        files_count += 1
+    return files_count, scans_cache.iterate(with_infos=info)
+
+
+def scan_infos(input_file):
+    """
+    Scan one file or directory and return file_infos data.
+    """
+    infos = OrderedDict()
+    try:
+        infos = get_file_infos(input_file, as_list=False)
+    except Exception, e:
+        # never fail but instead add an error message.
+        # FIXME: this should not be stored at the individual scan level
+        return dict(errors=e.message)
+    return infos
 
 
 def scan_one(input_file, scans):
@@ -344,27 +373,24 @@ def scan_one(input_file, scans):
     Scan one file or directory and return a scanned data, calling every scan in
     the `scans` mapping of (scan name -> scan function).
     """
-    scanned_file = OrderedDict()
+    scan_result = OrderedDict()
     for scan_name, scan_func in scans.items():
         if not scan_func:
             continue
         try:
-            scan = scan_func(input_file)
-            if isinstance(scan, GeneratorType):
-                scan = list(scan)
-            # this is special and we flatten these as direct attributes of a file object
-            if scan_name == 'infos':
-                for file_infos in scan:
-                    scanned_file.update(file_infos.items())
-            else:
-                scanned_file[scan_name] = scan
+            scan_details = scan_func(input_file)
+            # consume generators
+            if isinstance(scan_details, GeneratorType):
+                scan_details = list(scan_details)
+            scan_result[scan_name] = scan_details
         except Exception, e:
             # never fail but instead add an error message.
-            scanned_file[scan_name] = {'errors': e.message}
-    return scanned_file
+            # FIXME: this should not be stored at the individual scan level
+            scan_result[scan_name] = {'errors': e.message}
+    return scan_result
 
 
-def save_results(scanned_files, format, input, output_file):
+def save_results(files_count, scanned_files, format, input, output_file):
     """
     Save results to file or screen.
     """
@@ -397,9 +423,10 @@ def save_results(scanned_files, format, input, output_file):
         meta = OrderedDict()
         meta['scancode_notice'] = acknowledgment_text_json
         meta['scancode_version'] = version
-        meta['files_count'] = len(scanned_files)
+        meta['files_count'] = files_count
         # TODO: add scanning options to meta
         meta['files'] = scanned_files
-        output_file.write(json.dumps(meta, indent=2))
+        # json.dump(meta, output_file, indent=2)
+        json.dump(meta, output_file, indent=2 * ' ', iterable_as_array=True)
     else:
         raise Exception('unknown format')

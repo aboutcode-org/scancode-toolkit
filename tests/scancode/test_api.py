@@ -22,22 +22,28 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-__version__ = '2.0.0rc2'
+from __future__ import absolute_import, print_function
 
-from os.path import dirname
-from os.path import abspath
-from os.path import getsize
-from os.path import getmtime
-from os.path import join
-from os.path import exists
+import os
 
-from commoncode import fileutils
+from commoncode.testcase import FileBasedTesting
 
-scan_src_dir = abspath(dirname(__file__))
-src_dir = dirname(scan_src_dir)
-root_dir = dirname(src_dir)
-cache_dir = join(root_dir, '.cache')
-scans_cache_dir = join(cache_dir, 'scan_results_caches')
+from scancode import api
 
-if not exists(scans_cache_dir):
-    fileutils.create_dir(scans_cache_dir)
+
+class TestAPI(FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_get_package_infos_can_pickle(self):
+        test_file = self.get_test_loc('api/package/package.json')
+        package = api.get_package_infos(test_file)
+
+        import pickle
+        import cPickle
+        try:
+            _pickled = pickle.dumps(package, pickle.HIGHEST_PROTOCOL)
+            _cpickled = cPickle.dumps(package, pickle.HIGHEST_PROTOCOL)
+            self.fail('pickle.HIGHEST_PROTOCOL used to fail to pickle this data')
+        except:
+            _pickled = pickle.dumps(package)
+            _cpickled = cPickle.dumps(package)

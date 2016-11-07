@@ -1,0 +1,24 @@
+component:
+    name: simplejson
+    version: 3.10.0
+
+    home_url: https://github.com/simplejson/simplejson
+    owner: Bob Ippolito
+    copyright: Copyright (c) 2006 Bob Ippolito
+    license_expression: mit or afl-2.1
+    license_text_file: simplejson.LICENSE
+
+    vcs_tool: git
+    vcs_repository: https://github.com/simplejson/simplejson.git
+
+    files:
+        - simplejson-3.10.0-cp27-cp27m-linux_i686.whl
+        - simplejson-3.10.0-cp27-cp27m-linux_x86_64.whl
+        - simplejson-3.10.0-cp27-cp27m-macosx_10_11_x86_64.whl
+        - simplejson-3.10.0-cp27-cp27m-win_amd64.whl
+        - simplejson-3.10.0-cp27-cp27m-win32.whl
+        - simplejson-3.10.0-cp27-cp27mu-linux_i686.whl
+        - simplejson-3.10.0-cp27-cp27mu-linux_x86_64.whl
+        - simplejson-3.10.0.tar.gz
+
+    

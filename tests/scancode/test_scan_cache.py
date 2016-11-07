@@ -22,22 +22,24 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-__version__ = '2.0.0rc2'
+from __future__ import absolute_import, print_function
 
-from os.path import dirname
-from os.path import abspath
-from os.path import getsize
-from os.path import getmtime
-from os.path import join
-from os.path import exists
+import os
 
-from commoncode import fileutils
+from commoncode.testcase import FileBasedTesting
 
-scan_src_dir = abspath(dirname(__file__))
-src_dir = dirname(scan_src_dir)
-root_dir = dirname(src_dir)
-cache_dir = join(root_dir, '.cache')
-scans_cache_dir = join(cache_dir, 'scan_results_caches')
+from scancode.cache import ScanCache
 
-if not exists(scans_cache_dir):
-    fileutils.create_dir(scans_cache_dir)
+
+class TestCache(FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_can_cache(self):
+        test_file = self.get_test_loc('cache/package/package.json')
+        from scancode import api
+        package = api.get_package_infos(test_file)
+
+        test_dir = self.get_temp_dir()
+        cache = ScanCache(test_dir)
+        cache.put_infos(path='abc', file_infos=dict(sha1='def'))
+        cache.put_scan(path='abc', file_infos=dict(sha1='def'), scan_result=package)
