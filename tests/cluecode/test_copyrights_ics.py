@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -9081,16 +9081,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/iptables-extensions/libxt_conntrack.c')
         expected = [
             u'(c) 2001 Marc Boucher (marc@mbsi.ca).',
-            u'Copyright (c) CC Computer Consultants GmbH',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
-    def test_ics_iptables_extensions_libxt_conntrack_c_trail_year(self):
-        test_file = self.get_test_loc('ics/iptables-extensions/libxt_conntrack.c')
-        expected = [
-            u'(c) 2001 Marc Boucher (marc@mbsi.ca).',
-            u'Copyright (c) CC Computer Consultants GmbH, 2007 - 2008',
+            u'Copyright (c) CC Computer Consultants GmbH, 2007 - 2008 Jan Engelhardt <jengelh@computergmbh.de>',
         ]
         check_detection(expected, test_file)
 
@@ -9139,15 +9130,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_iptables_extensions_libxt_owner_c(self):
         test_file = self.get_test_loc('ics/iptables-extensions/libxt_owner.c')
         expected = [
-            u'Copyright (c) CC Computer Consultants GmbH',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
-    def test_ics_iptables_extensions_libxt_owner_c_trail_year(self):
-        test_file = self.get_test_loc('ics/iptables-extensions/libxt_owner.c')
-        expected = [
-            u'Copyright (c) CC Computer Consultants GmbH, 2007 - 2008',
+            u'Copyright (c) CC Computer Consultants GmbH, 2007 - 2008 Jan Engelhardt <jengelh@computergmbh.de>'
         ]
         check_detection(expected, test_file)
 
@@ -9177,18 +9160,10 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/iptables-extensions/libxt_TCPOPTSTRIP.c')
         expected = [
             u'Copyright (c) 2007 Sven Schnelle <svens@bitebene.org>',
-            u'Copyright (c) CC Computer Consultants GmbH',
+            u'Copyright (c) CC Computer Consultants GmbH, 2007 Jan Engelhardt <jengelh@computergmbh.de>',
         ]
         check_detection(expected, test_file)
 
-    @expectedFailure
-    def test_ics_iptables_extensions_libxt_tcpoptstrip_c_trail_year(self):
-        test_file = self.get_test_loc('ics/iptables-extensions/libxt_TCPOPTSTRIP.c')
-        expected = [
-            u'Copyright (c) 2007 Sven Schnelle <svens@bitebene.org>',
-            u'Copyright (c) CC Computer Consultants GmbH, 2007 - 2008',
-        ]
-        check_detection(expected, test_file)
 
     def test_ics_iptables_extensions_libxt_tee_c(self):
         test_file = self.get_test_loc('ics/iptables-extensions/libxt_TEE.c')
@@ -13091,36 +13066,6 @@ class TestCopyright(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    @expectedFailure
-    def test_ics_opencv_notice_trail_email(self):
-        test_file = self.get_test_loc('ics/opencv/NOTICE')
-        expected = [
-            u'Copyright (c) 2000-2006, Intel Corporation',
-            u'Copyright (c) 2006-2009 SIProp Project',
-            u'Copyright (c) 1992, 1993 The Regents of the University of California.',
-            u'Copyright (c) 2008, Liu Liu',
-            u'Copyright (c) 2008, Google',
-            u'Copyright (c) 1992, 1993 The Regents of the University of California.',
-            u'Copyright (c) 2002, MD-Mathematische Dienste GmbH Im Defdahl',
-            u'Copyright (c) 2000-2003 Chih-Chung Chang and Chih-Jen Lin',
-            u'Copyright (c) 2000, Intel Corporation',
-            u'Copyright (c) 2000, Intel Corporation',
-            u'Copyright (c) 2002, Intel Corporation',
-            u'Copyright (c) 2008, Xavier Delacour',
-            u'Copyright (c) 2000, Intel Corporation',
-            u'Copyright (c) 2008, Nils Hasler',
-            u'Copyright (c) 2000, Intel Corporation',
-            u'Copyright (c) 2000, Intel Corporation',
-            u'Copyright (c) 2000, Intel Corporation',
-            u'Copyright (c) 2000, Intel Corporation',
-            u'Copyright (c) 1978-1999 Ken Turkowski. <turk@computer.org>',
-            u'Copyright (c) 1981-1999 Ken Turkowski. <turk@computer.org>',
-            u'Copyright (c) 1998 Yossi Rubner Computer Science Department, Stanford University E-Mail: rubner@cs.stanford.edu   URL: http://vision.stanford.edu/~rubner',
-            u'Copyright (c) 2006 Simon Perreault',
-            u'Copyright (c) 1995 Intel Corporation.',
-        ]
-        check_detection(expected, test_file)
-
     def test_ics_opencv_cvaux_src_cv3dtracker_cpp(self):
         test_file = self.get_test_loc('ics/opencv-cvaux-src/cv3dtracker.cpp')
         expected = [
@@ -13264,15 +13209,6 @@ class TestCopyright(FileBasedTesting):
         expected = [
             u'Copyright (c) 2000, Intel Corporation',
             u'(Copyright (c) 1999-2001 MIYASAKA Masaru)',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
-    def test_ics_opencv_otherlibs_highgui_grfmt_png_cpp_extra_parens(self):
-        test_file = self.get_test_loc('ics/opencv-otherlibs-highgui/grfmt_png.cpp')
-        expected = [
-            u'Copyright (c) 2000, Intel Corporation',
-            u'Copyright (c) 1999-2001 MIYASAKA Masaru',
         ]
         check_detection(expected, test_file)
 
@@ -17664,16 +17600,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/srec-tools-grxmlcompile/grxmlcompile.cpp')
         expected = [
             u'Copyright 2007, 2008 Nuance Communciations, Inc.',
-            u'Copyright (c) 2007',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
-    def test_ics_srec_tools_grxmlcompile_grxmlcompile_cpp_trail_name(self):
-        test_file = self.get_test_loc('ics/srec-tools-grxmlcompile/grxmlcompile.cpp')
-        expected = [
-            u'Copyright 2007, 2008 Nuance Communciations, Inc.',
-            u'Copyright (c) 2007 Project Admins: leethomason',
+            u'Copyright (c) 2007 Project Admins leethomason',
         ]
         check_detection(expected, test_file)
 
@@ -18126,7 +18053,7 @@ class TestCopyright(FileBasedTesting):
             u'Copyright (c) 1995, 1996 Michael Elizabeth Chastain <mec@duracef.shout.net>',
             u'Copyright (c) 1993, 1994, 1995, 1996 Rick Sladkey <jrs@world.std.com>',
             u'Copyright (c) 1998-2001 Wichert Akkerman <wakkerma@deephackmode.org>',
-             u'COPYRIGHT,v 1.3 2002/03/31 18:43:00 wichert',
+            # this is redundant and rare junk u'COPYRIGHT,v 1.3 2002/03/31 18:43:00 wichert',
         ]
         check_detection(expected, test_file)
 
@@ -18412,31 +18339,11 @@ class TestCopyright(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    @expectedFailure
-    def test_ics_svox_pico_lib_picofftsg_c_extra_parens(self):
-        test_file = self.get_test_loc('ics/svox-pico-lib/picofftsg.c')
-        expected = [
-            u'Copyright (c) 2008-2009 SVOX AG',
-            u'Copyright (c) 2008-2009 SVOX AG',
-            u'Copyright Takuya OOURA, 1996-2001',
-        ]
-        check_detection(expected, test_file)
-
     def test_ics_svox_pico_lib_picoos_c(self):
         test_file = self.get_test_loc('ics/svox-pico-lib/picoos.c')
         expected = [
             u'Copyright (c) 2008-2009 SVOX AG',
             u'Copyright (c) 2008-2009 SVOX AG',
-            u'(c) SVOX AG',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
-    def test_ics_svox_pico_lib_picoos_c_trail_place_trail_place(self):
-        test_file = self.get_test_loc('ics/svox-pico-lib/picoos.c')
-        expected = [
-            u'Copyright (c) 2008-2009 SVOX AG, Baslerstr. 30, 8048 Zuerich, Switzerland',
-            u'Copyright (c) 2008-2009 SVOX AG, Baslerstr. 30, 8048 Zuerich, Switzerland',
             u'(c) SVOX AG',
         ]
         check_detection(expected, test_file)
@@ -18649,7 +18556,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_tcpdump_makemib(self):
         test_file = self.get_test_loc('ics/tcpdump/makemib')
         expected = [
-            u'Copyright (c) 1990, 1996 John Robert',
+            u'Copyright (c) 1990, 1996 John Robert LoVerso.',
             u'copyright (c) 1999 William C. Fenner.',
         ]
         check_detection(expected, test_file)
@@ -18987,7 +18894,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_tcpdump_print_snmp_c(self):
         test_file = self.get_test_loc('ics/tcpdump/print-snmp.c')
         expected = [
-            u'Copyright (c) 1990, 1991, 1993, 1994, 1995, 1996, 1997 John Robert',
+            u'Copyright (c) 1990, 1991, 1993, 1994, 1995, 1996, 1997 John Robert LoVerso.',
             u'J. Schoenwaelder, Copyright (c) 1999.',
             u'Copyright (c) 1990, 1991, 1993, 1994, 1995, 1996, 1997 this software was produced',
         ]

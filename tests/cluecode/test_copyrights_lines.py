@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -129,7 +129,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
 
     def test_copyright_sample_py(self):
         test_file = self.get_test_loc('copyrights/copyright_sample_py-py.py')
-        expected = [([u'COPYRIGHT 2006'], 6, 7)]
+        expected = [([u'COPYRIGHT 2006 ABC'], 6, 7)]
         check_detection(expected, test_file)
 
     def test_copyright_abc(self):

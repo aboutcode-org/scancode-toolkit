@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -77,7 +77,7 @@ def detect(location):
     """
     Return lists of detected copyrights, authors, years and holders
     in file at location.
-    Deprecated legacy entry point.
+    WARNING: Deprecated legacy entry point.
     """
     copyrights = []
     copyrights_extend = copyrights.extend
@@ -96,8 +96,69 @@ def detect(location):
     return copyrights, authors, years, holders
 
 
+_YEAR = (r'('
+    '19[6-9][0-9]'  # 1960 to 1999
+    '|'
+    '20[0-1][0-9]'  # 2000 to 2019
+')')
+
+_YEAR_SHORT = (r'('
+    '[6-9][0-9]'  # 19-60 to 19-99
+    '|'
+    '[0-1][0-9]'  # 20-00 to 20-19
+')')
+
+_YEAR_YEAR = (r'('
+    '19[6-9][0-9][\.,\-]_[6-9][0-9]'  # 1960-99
+    '|'
+    '19[6-9][0-9][\.,\-]+[0-9]'  # 1998-9
+    '|'
+    '20[0-1][0-9][\.,\-]+[0-1][0-9]'  # 2001-16 or 2012-04
+    '|'
+    '200[0-9][\.,\-]+[0-9]'  # 2001-4 not 2012
+')')
+
+_PUNCT = (r'('
+    '['
+        '\W'  # not a word (word includes underscore)
+        '\D'  # not a digit
+        '\_'  # underscore
+        'i'   # oddity
+        '\?'
+    ']'
+    '|'
+    '\&nbsp'  # html entity sometimes are double escaped
+')*')  # repeated 0 or more times
+
+
+_YEAR_PUNCT = _YEAR + _PUNCT
+_YEAR_YEAR_PUNCT = _YEAR_YEAR + _PUNCT
+_YEAR_SHORT_PUNCT = _YEAR_SHORT + _PUNCT
+
+_YEAR_OR_YEAR_YEAR_WITH_PUNCT = (r'(' +
+    _YEAR_PUNCT +
+    '|' +
+    _YEAR_YEAR_PUNCT +
+')')
+
+_YEAR_THEN_YEAR_SHORT = (r'(' +
+    _YEAR_OR_YEAR_YEAR_WITH_PUNCT +
+    '(' +
+    _YEAR_SHORT_PUNCT +
+    ')*' +
+')')
+
+pats = [
+    _YEAR,
+    _YEAR_SHORT,
+    _YEAR_YEAR,
+    _PUNCT,
+    _YEAR_OR_YEAR_YEAR_WITH_PUNCT
+    ]
+
 # FIXME: multi-tokens patterns are likely not behaving as expected
 # FIXME: patterns could be greatly simplified
+
 patterns = [
     # TODO: this needs to be simplified:
     # TODO: in NLTK 3.0 this will fail because of this bug:
@@ -111,9 +172,12 @@ patterns = [
     # found in crypto certificates and LDAP
     (r'^(O=|OU=|OU|XML)$', 'JUNK'),
     (r'^(Parser|Dual|Crypto|NO|PART|[Oo]riginall?y?|[Rr]epresentations?\.?)$', 'JUNK'),
-    (r'^(Refer|Apt|Agreement|Usage|Please|Based|Upstream|Files?|Filename:?|Description:?|Holder?s|HOLDER?S|[Pp]rocedures?|You|Everyone)$', 'JUNK'),
+
+    (r'^(Refer|Apt|Agreement|Usage|Please|Based|Upstream|Files?|Filename:?|'
+     r'Description:?|Holder?s|HOLDER?S|[Pp]rocedures?|You|Everyone)$', 'JUNK'),
     (r'^(Rights?|Unless|rant|Subject|Acknowledgements?|Special)$', 'JUNK'),
-    (r'^(Derivative|Work|[Ll]icensable|[Ss]ince|[Ll]icen[cs]e[\.d]?|[Ll]icen[cs]ors?|under|COPYING)$', 'JUNK'),
+    (r'^(Derivative|Work|[Ll]icensable|[Ss]ince|[Ll]icen[cs]e[\.d]?|'
+     r'[Ll]icen[cs]ors?|under|COPYING)$', 'JUNK'),
     (r'^(TCK|Use|[Rr]estrictions?|[Ii]ntroduction)$', 'JUNK'),
     (r'^([Ii]ncludes?|[Vv]oluntary|[Cc]ontributions?|[Mm]odifications?)$', 'JUNK'),
     (r'^(CONTRIBUTORS?|OTHERS?|Contributors?\:)$', 'JUNK'),
@@ -130,8 +194,8 @@ patterns = [
     (r'^[Ff]unctions?$', 'JUNK'),
 
     # various trailing words that are junk
-    (r'^(?:Copyleft|LegalCopyright|AssemblyCopyright|Distributed|Report|Available|true|false|node|jshint|node\':true|node:true)$', 'JUNK'),
-
+    (r'^(?:Copyleft|LegalCopyright|AssemblyCopyright|Distributed|Report|'
+     r'Available|true|false|node|jshint|node\':true|node:true)$', 'JUNK'),
 
     # Bare C char is COPYRIGHT SIGN
     # (r'^C$', 'COPY'),
@@ -153,9 +217,13 @@ patterns = [
     # company suffix
     (r'^([Ii]nc[.]?|[I]ncorporated|[Cc]ompany|Limited|LIMITED).?$', 'COMP'),
     # company suffix
-    (r'^(INC(ORPORATED|[.])?|CORP(ORATION|[.])?|FOUNDATION|GROUP|COMPANY|[(]tm[)]).?$|[Ff]orum.?', 'COMP'),
+    (r'^(INC(ORPORATED|[.])?|CORP(ORATION|[.])?|FOUNDATION|GROUP|COMPANY|'
+     r'[(]tm[)]).?$|[Ff]orum.?', 'COMP'),
     # company suffix
-    (r'^([cC]orp(oration|[.])?|[fF]oundation|[Aa]lliance|Working|[Gg]roup|[Tt]echnolog(y|ies)|[Cc]ommunit(y|ies)|[Mm]icrosystems.?|[Pp]roject|[Tt]eams?|[Tt]ech).?$', 'COMP'),
+    (r'^([cC]orp(oration|[.])?|[fF]oundation|[Aa]lliance|Working|[Gg]roup|'
+     r'[Tt]echnolog(y|ies)|[Cc]ommunit(y|ies)|[Mm]icrosystems.?|[Pp]roject|'
+     r'[Tt]eams?|[Tt]ech).?$', 'COMP'),
+
     # company suffix : LLC, LTD, LLP followed by one extra char
     (r'^([Ll][Ll][CcPp]|[Ll][Tt][Dd])\.,$', 'COMP'),
     (r'^([Ll][Ll][CcPp]|[Ll][Tt][Dd])\.?,?$', 'COMP'),
@@ -218,8 +286,29 @@ patterns = [
     # and Spanish/French Da Siva and De Gaulle
     (r'^(([Vv][ao]n)|[Dd][aeu])$', 'VAN'),
 
-    # year
-    (r'^[(]?(19|20)[0-9]{2}((\s)*([,-]|to)(\s)*(19|20)?[0-9]{2})*[)]?', 'YR'),
+    # year or year ranges
+    # plain year with various leading and trailing punct
+    # dual or multi years 1994/1995. or 1994-1995
+    # 1987,88,89,90,91,92,93,94,95,96,98,99,2000,2001,2002,2003,2004,2006
+    # multi years
+    # dual years with second part abbreviated
+    # 1994/95. or 2002-04 or 1991-9
+    (r'^' + _PUNCT + _YEAR_OR_YEAR_YEAR_WITH_PUNCT + '+'+
+        '('+
+            _YEAR_OR_YEAR_YEAR_WITH_PUNCT +
+        '|' + 
+            _YEAR_THEN_YEAR_SHORT + 
+        ')*' + '$', 'YR'),
+
+    (r'^' + _PUNCT + _YEAR_OR_YEAR_YEAR_WITH_PUNCT + '+'+
+        '('+
+            _YEAR_OR_YEAR_YEAR_WITH_PUNCT +
+        '|' + 
+            _YEAR_THEN_YEAR_SHORT + 
+        '|' + 
+            _YEAR_SHORT_PUNCT + 
+        ')*' + '$', 'YR'),
+
     # cardinal numbers
     (r'^-?[0-9]+(.[0-9]+)?.?$', 'CD'),
 
@@ -228,7 +317,7 @@ patterns = [
 
     # composed proper nouns, ie. Jean-Claude or ST-Microelectronics
     # FIXME: what about a variant with spaces around the dash?
-    (r'^[A-Z][a-zA-Z]*[-][A-Z]?[a-zA-Z]+.?$', 'NNP'),
+    (r'^[A-Z][a-zA-Z]*\s?[\-]\s?[A-Z]?[a-zA-Z]+.?$', 'NNP'),
 
     # proper nouns with digits
     (r'^[A-Z][a-z0-9]+.?$', 'NNP'),
@@ -275,6 +364,9 @@ patterns = [
     # .\" is not a noun
     (r'^\.\\\?"?$', 'JUNK'),
 
+    # Mixed cap nouns (rare) LeGrande
+    (r'^[A-Z][a-z]+[A-Z][a-z]+[\.\,]?$', 'MIXEDCAP'),
+
     # nouns (default)
     (r'.+', 'NN'),
 ]
@@ -319,9 +411,12 @@ grammar = """
     COMPANY: {<COMPANY> <DASH> <NNP|NN> <EMAIL>?}
 
 # Typical names
+    #John Robert LoVerso
+    NAME: {<NNP> <NNP> <MIXEDCAP>}
     NAME: {<NNP|PN>+ <NNP>+}
     NAME: {<NNP> <PN>? <NNP>+}
     NAME: {<NNP> <NNP>}
+
     NAME: {<NNP> <NN> <EMAIL>}
     NAME: {<NNP> <PN|VAN>? <PN|VAN>? <NNP>}
     NAME: {<NNP> <NN> <NNP>}
@@ -389,6 +484,7 @@ grammar = """
 # John Doe and Myriam Doe
     NAME: {<NAME|NNP> <CC> <NNP|NAME>}
 
+
 # Various forms of copyright statements
     COPYRIGHT: {<COPY> <NAME> <COPY> <YR-RANGE>}
 
@@ -421,6 +517,9 @@ grammar = """
 
     COPYRIGHT: {<COPY> <COPY> <NNP>+}
 
+    # Copyright (c) 2016 Project Admins foobar
+    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE>+ <COMP> <NNP> <NN>}
+
     # Copyright (c) 1995, 1996 The President and Fellows of Harvard University
     COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <NN> <NNP> <ANDCO>}
 
@@ -448,6 +547,9 @@ grammar = """
 
     # Copyright (c) 2012-2016, Project contributors
     COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <COMP> <AUTH>}
+
+    COPYRIGHT2: {<COPY>+ <YR-RANGE> <COMP>}
+    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE>+ <CAPS>? <MIXEDCAP>}
 
     COPYRIGHT2: {<NAME> <COPY> <YR-RANGE>}
 
@@ -498,6 +600,9 @@ grammar = """
 
     COPYRIGHT: {<AUTHOR> <COPYRIGHT2>}
     COPYRIGHT: {<AUTHOR> <YR-RANGE>}
+    
+    COPYRIGHT: {<COPYRIGHT> <NAME3>}
+
 """
 
 
@@ -825,7 +930,7 @@ class CopyrightDetector(object):
                     tok = tok.lstrip('@').strip()
                     if tok and tok not in (':',):
                         tokens_append(tok)
-        logger.debug('CopyrightDetector:tokens: ' + repr(list(tokens)))
+        logger.debug('CopyrightDetector:tokens: ' + repr(tokens))
         return tokens
 
 
