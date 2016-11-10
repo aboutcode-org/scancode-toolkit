@@ -58,12 +58,11 @@ def query_lines(location=None, query_string=None):
         yield line.strip()
 
 
-# Split on whitespace and punctuations: keep only characters using a (trick)
-# double negation regex on characters (e.g. [^\W]), underscore, dash and +.
+# Split on whitespace and punctuations: keep only characters and +.
 # Keeping the + is important for licenses name such as GPL2+.
-query_pattern = r'[^\W_\-\+©]+'
-word_splitter = re.compile(query_pattern, re.UNICODE).findall
 
+query_pattern = '[a-zA-Z0-9]+ ?\+|[^!\"#\$%&\'\(\)\*,\-\./:;<=>\?@\[\]\^_`\{\|\}\\\~\s\+\x92\x93\x94”“’–]'
+word_splitter = re.compile('(?:%s)+' % query_pattern, re.UNICODE).findall
 
 def query_tokenizer(text, lower=True):
     """
@@ -77,16 +76,12 @@ def query_tokenizer(text, lower=True):
 
 # Template-aware splitter, keeping a templated part {{anything}} as a token.
 # This splitter yields plain token strings or double braces-enclosed strings
-# {{something}} for templates.
-# Use non capturing groups for alternation.
-rule_pattern = r'''
-    # Same split on white space and punctuation as in word_splitter
-    (?:[^\W_\-\+©])+
-    |
-    # a template part is anything enclosed in double braces
-    (?:{{[^{}]*}})
-'''
-template_splitter = re.compile(rule_pattern , re.UNICODE | re.VERBOSE).findall
+# {{something}} for templates. curly barces are otherwise treated as punctuation.
+# A template part is anything enclosed in double braces
+template_pattern = '\{\{[^{}]*\}\}'
+rule_pattern = '(?:%s)+|%s+' % (query_pattern, template_pattern,)
+# rule_pattern = template_pattern
+template_splitter = re.compile(rule_pattern , re.UNICODE).findall
 
 
 def rule_tokenizer(text, lower=True):

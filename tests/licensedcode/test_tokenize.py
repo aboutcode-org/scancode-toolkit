@@ -161,7 +161,7 @@ class TestTokenizers(FileBasedTesting):
             ('MODULE_LICENSE("Dual BSD/GPL");', ['module', 'license', 'dual', 'bsd', 'gpl']),
             ('Dual BSD/GPL', ['dual', 'bsd', 'gpl']),
             ('license=Dual BSD/GPL', ['license', 'dual', 'bsd', 'gpl']),
-            ('license_Dual+BSD-GPL', ['license', 'dual', 'bsd', 'gpl']),
+            ('license_Dual+BSD-GPL', ['license', 'dual+bsd', 'gpl']),
         ]
         for text , expected in texts:
             assert expected == list(rule_tokenizer(text)) == list(query_tokenizer(text))
