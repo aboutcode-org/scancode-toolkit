@@ -1,0 +1,7 @@
+licenses:
+    - mpl-1.1
+    - gpl-2.0
+    - lgpl-2.1
+license: mpl-1.1 or gpl-2.0 or lgpl-2.1
+license_choice: yes
+notes: Found in a Lizartech DJVU debian notice, rather complex

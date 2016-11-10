@@ -1,0 +1,83 @@
+This product contains the EXT2 filesystem.
+
+This package, the EXT2 filesystem utilities, are made available under
+the GNU Public License version 2, with the exception of the lib/ext2fs
+and lib/e2p libraries, which are made available under the GNU Library
+General Public License Version 2, the lib/uuid library which is made
+available under a BSD-style license and the lib/et and lib/ss
+libraries which are made available under an MIT-style license.  Please
+see lib/uuid/COPYING for more details for the license for the files
+comprising the libuuid library, and the source file headers of the
+libet and libss libraries for more information.
+
+lib/uuid:
+Copyright (C) 1996, 1997, 1998, 1999 Theodore Ts'o.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, and the entire permission notice in its entirety,
+   including the disclaimer of warranties.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. The name of the author may not be used to endorse or promote
+   products derived from this software without specific prior
+   written permission.
+
+THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, ALL OF
+WHICH ARE HEREBY DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+USE OF THIS SOFTWARE, EVEN IF NOT ADVISED OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+lib/e2p:
+Copyright (C) 1996, 1997, 1998, 1999 Theodore Ts'o.
+libe2p s free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License as
+published by the Free Software Foundation; either version 2.1 of the
+License, or (at your option) any later version.
+
+lib/libblkid:
+Copyright (C) 1994, 1995, 1996, 1997, 2000, 2001, 2003, 2004
+Andreas Dilger, Theodore Ts'o, Kay Sievers.
+
+Libblkid is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License as
+published by the Free Software Foundation; either version 2.1 of the
+License, or (at your option) any later version.
+
+lib/libext2fs:
+Copyright (C) 1991 - 2012
+Theodore Ts'o,
+IBM Corporation,
+Intel Corporation,
+Ben Gardner <bgardner@wabtec.com>,
+Cluster File Systems, Inc.,
+Andreas Dilger <adilger@clusterfs.com>,
+Daniel Phillips,
+Mark Habersack,
+Linus Torvalds,
+Cluster File Systems, Inc. <info@clusterfs.com>,
+Andreas Gruenbacher, <a.gruenbacher@computer.org>,
+VMware, Inc.,
+Red Hat, Inc.,
+Andrey Shedel (andreys@ns.cr.cyco.com),
+Lukas Czerner <lczerner@redhat.com>,
+Andrew Tridgell,
+Jeremy Allison,
+Paul `Rusty' Russell,
+Andrew Esh,
+
+Libext2fs is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License as
+published by the Free Software Foundation; either version 2.1 of the
+License, or (at your option) any later version.
