@@ -32,6 +32,7 @@ from collections import defaultdict
 from functools import partial
 from itertools import izip
 from operator import itemgetter
+import os
 import sys
 from time import time
 
@@ -95,7 +96,7 @@ TRACE_CACHE = False
 def logger_debug(*args):
     pass
 
-if TRACE or TRACE_INDEXING_PERF:
+if TRACE or TRACE_INDEXING_PERF or os.environ.get('SCANCODE_LICENSE_DEBUG'):
     import logging
 
     logger = logging.getLogger(__name__)
