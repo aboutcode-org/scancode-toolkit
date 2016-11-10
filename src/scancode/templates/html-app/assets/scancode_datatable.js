@@ -155,14 +155,14 @@ function ScancodeDataTable(tagId, data){
         return $.map(jsonData, function(x){
             // Add all license columns here
             licenseData = [];
-            if('licenses' in x) {
+            if('licenses' in x && x.licenses != []) {
                 licenseData = $.map(x.licenses, function(y){
                     return [$.extend(y, {
                         "path" : x.path,
                         "what": "License",
-                        "start_line": y.start_line,
-                        "end_line": y.end_line,
-                        "info": y.short_name,
+                        "start_line": y.start_line || "",
+                        "end_line": y.end_line || "",
+                        "info": y.short_name || "",
                         "type" : "",
                         "name" : "",
                         "extension": "",
@@ -187,14 +187,14 @@ function ScancodeDataTable(tagId, data){
                 })};
             // Add all copyright columns here
             copyrightData = [];
-            if('copyrights' in x) {
+            if('copyrights' in x && x.copyrights != []) {
                 copyrightData = $.map(x.copyrights, function(y){
                     return [$.extend(y, {
                         "path" : x.path,
                         "what": "Copyright",
-                        "start_line": y.start_line,
-                        "end_line": y.end_line,
-                        "info": y.statements.join("</br>"),
+                        "start_line": y.start_line || "",
+                        "end_line": y.end_line || "",
+                        "info": (y.statements && y.statements.join("</br>")) || "",
                         "type" : "",
                         "name" : "",
                         "extension": "",
@@ -218,14 +218,14 @@ function ScancodeDataTable(tagId, data){
                     })];
                 })};
             emailData = [];
-            if('emails' in x) {
+            if('emails' in x && x.emails != []) {
                 emailData = $.map(x.emails, function(y){
                     return [$.extend(y, {
                         "path" : x.path,
                         "what": "Email",
-                        "start_line": y.start_line,
-                        "end_line": y.end_line,
-                        "info": y.email,
+                        "start_line": y.start_line || "",
+                        "end_line": y.end_line || "",
+                        "info": y.email || "",
                         "type" : "",
                         "name" : "",
                         "extension": "",
@@ -249,14 +249,14 @@ function ScancodeDataTable(tagId, data){
                     })];
                 })};
             urlData = [];
-            if('urls' in x) {
+            if('urls' in x && x.urls != []) {
                 urlData = $.map(x.urls, function(y){
                     return [$.extend(y, {
                         "path" : x.path,
                         "what": "URL",
-                        "start_line": y.start_line,
-                        "end_line": y.end_line,
-                        "info": y.url,
+                        "start_line": y.start_line || "",
+                        "end_line": y.end_line || "",
+                        "info": y.url || "",
                         "type" : "",
                         "name" : "",
                         "extension": "",
@@ -294,23 +294,23 @@ function ScancodeDataTable(tagId, data){
                 "start_line": "",
                 "end_line": "",
                 "info": "",
-                "type" : x.type,
-                "name" : x.name,
-                "extension": x.extension,
-                "date" : x.date,
-                "size" : x.size,
-                "sha1" : x.sha1,
-                "md5" : x.md5,
-                "files_count" : x.files_count,
-                "mime_type" : x.mime_type,
-                "file_type" : x.file_type,
-                "programming_language" : x.programming_language,
-                "is_binary" : x.is_binary,
-                "is_text" : x.is_text,
-                "is_archive" : x.is_archive,
-                "is_media" : x.is_media,
-                "is_source" : x.is_source,
-                "is_script" : x.is_script,
+                "type" : x.type || "",
+                "name" : x.name || "",
+                "extension": x.extension || "",
+                "date" : x.date || "",
+                "size" : x.size || "",
+                "sha1" : x.sha1 || "",
+                "md5" : x.md5 || "",
+                "files_count" : x.files_count || "",
+                "mime_type" : x.mime_type || "",
+                "file_type" : x.file_type || "",
+                "programming_language" : x.programming_language || "",
+                "is_binary" : x.is_binary || "",
+                "is_text" : x.is_text || "",
+                "is_archive" : x.is_archive || "",
+                "is_media" : x.is_media || "",
+                "is_source" : x.is_source || "",
+                "is_script" : x.is_script || "",
                 "pkg_type" : "",
                 "pkg_packaging" : "",
                 "pkg_primary_language" : ""
@@ -322,7 +322,7 @@ function ScancodeDataTable(tagId, data){
     function toPkgInfoFormat(jsonData){
         return $.map(jsonData, function(x){
             packageInfoData = [];
-            if('packages' in x) {
+            if('packages' in x & x.packages != []) {
                 packageInfoData = $.map(x.packages, function(y){
                     return [$.extend(y, {
                         "path" : x.path,
@@ -347,9 +347,9 @@ function ScancodeDataTable(tagId, data){
                         "is_media" : "",
                         "is_source" : "",
                         "is_script" : "",
-                        "pkg_type" : y.type,
-                        "pkg_packaging" : y.packaging,
-                        "pkg_primary_language" : y.primary_language
+                        "pkg_type" : y.type || "",
+                        "pkg_packaging" : y.packaging || "",
+                        "pkg_primary_language" : y.primary_language  || ""
                     })];
                 })};
 
