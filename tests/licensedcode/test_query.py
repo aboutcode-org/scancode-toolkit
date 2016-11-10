@@ -554,7 +554,7 @@ class TestQueryWithFullIndex(FileBasedTesting):
         location = self.get_test_loc('query/eeepc_acpi.ko')
         idx = index.get_index()
         result = Query(location, idx=idx)
-        assert len(result.query_runs) < 450
+        assert len(result.query_runs) < 500
         qrs = result.query_runs[5:10]
         assert any('license gpl' in u' '.join(idx.tokens_by_tid[t] for t in qr.matchable_tokens())
                    for qr in qrs)
@@ -563,7 +563,7 @@ class TestQueryWithFullIndex(FileBasedTesting):
         location = self.get_test_loc('query/wlan_xauth.ko')
         idx = index.get_index()
         result = Query(location, idx=idx)
-        assert len(result.query_runs) < 800
+        assert len(result.query_runs) < 900
         qr = result.query_runs[0]
         assert 'license dual bsd gpl' in u' '.join(idx.tokens_by_tid[t] for t in qr.matchable_tokens())
 
@@ -585,29 +585,42 @@ class TestQueryWithFullIndex(FileBasedTesting):
         # NOTE: this is not a token present in any rules or licenses
         unknown_token = u'baridationally'
         assert unknown_token not in idx.dictionary
-        assert u' '.join([t for t in query_s.split() if t != unknown_token]) == u' '.join(idx.tokens_by_tid[t] for t in qr.tokens)
+        assert u' '.join([t for t in query_s.split() if t not in (unknown_token, 'proc')]) == u' '.join(idx.tokens_by_tid[t] for t in qr.tokens)
 
     def test_query_run_tokens_matchable(self):
-        query_s = u' '.join(u''' 3 unable to create proc entry license gpl
-        description driver author eric depends 2 6 24 19 generic smp mod module acpi
-        baridationally register driver proc acpi disabled acpi install notify acpi baridationally get
-        status cache caches create proc entry baridationally generate proc event acpi evaluate
-        object acpi remove notify remove proc entry acpi baridationally driver acpi acpi gcc gnu
+        query_s = u' '.join(u'''
+
+        3 unable to create proc entry license gpl description driver author eric
+        depends 2 6 24 19 generic smp mod module acpi baridationally register driver
+        proc acpi disabled acpi install notify acpi baridationally get status cache
+        caches create proc entry baridationally generate proc event acpi evaluate
+        object acpi remove notify remove proc entry acpi baridationally driver acpi
+        acpi gcc gnu 4 2 3 ubuntu 4 2 3 gcc gnu 4 2 3 ubuntu 4 2 3 current stack
+        pointer current stack pointer this module end usr src modules acpi include
+        linux include asm include asm generic include acpi acpi c posix types 32 h
+        types h types h h h h h
+        '''.split())
+        idx = index.get_index()
+        result = Query(query_string=query_s, idx=idx)
+
+        assert 1 == len(result.query_runs)
+        qr = result.query_runs[0]
+        expected_qr0 = u' '.join(u'''
+        3 unable to create entry license gpl description driver author eric depends 2
+        6 24 19 generic smp mod module acpi register driver acpi disabled acpi
+        install notify acpi get status cache caches create entry generate event acpi
+        evaluate object acpi remove notify remove entry acpi driver acpi acpi gcc gnu
         4 2 3 ubuntu 4 2 3 gcc gnu 4 2 3 ubuntu 4 2 3 current stack pointer current
         stack pointer this module end usr src modules acpi include linux include asm
         include asm generic include acpi acpi c posix types 32 h types h types h h h
         h h
         '''.split())
-        idx = index.get_index()
-        result = Query(query_string=query_s, idx=idx)
-        assert 1 == len(result.query_runs)
-        qr = result.query_runs[0]
+        assert expected_qr0 == u' '.join(idx.tokens_by_tid[t] for t in qr.tokens)
+
         # NOTE: this is not a token present in any rules or licenses
         unknown_token = u'baridationally'
         assert unknown_token not in idx.dictionary
-        expected = u'3 to license 2 6 gnu 4 2 3 4 2 3 gnu 4 2 3 4 2 3 this include include include include c'
-        assert expected == u' '.join(idx.tokens_by_tid[t] for t in qr.tokens if t in qr.matchables)
+        assert expected_qr0 == u' '.join(idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.matchables)
 
-        expected = u'license'
-        assert expected == u' '.join(idx.tokens_by_tid[t] for t in qr.tokens if t in qr.high_matchables)
-
+        expected = u'gpl'
+        assert expected == u' '.join(idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.high_matchables)
