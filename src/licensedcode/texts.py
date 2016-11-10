@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -114,7 +114,7 @@ def build_text(tokens, span, template=u'<%s>'):
                 text.append(template % tok)
 
 
-query_strings = re.compile(query_pattern , re.UNICODE | re.VERBOSE).finditer
+query_strings = re.compile(query_pattern , re.UNICODE).finditer
 
 def query_tokens(query_text):
     """
@@ -141,7 +141,7 @@ def query_tokens(query_text):
         yield False, pos, query_text[m.end():]
 
 
-rule_strings = re.compile(rule_pattern , re.UNICODE | re.VERBOSE).finditer
+rule_strings = re.compile(rule_pattern , re.UNICODE).finditer
 
 def rule_tokens(rule_text):
     """
