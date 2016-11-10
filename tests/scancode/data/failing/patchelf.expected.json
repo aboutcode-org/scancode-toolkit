@@ -3,10 +3,13 @@
   "files_count": 1, 
   "files": [
     {
+      "copyrights": [],
       "path": "", 
-      "copyrights": {
-        "errors": "unpack requires a string argument of length 8"
-      }
+      "scan_errors": [
+        {
+          "copyrights": "unpack requires a string argument of length 8"
+        }
+      ]
     }
   ]
 }

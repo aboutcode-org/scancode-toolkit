@@ -123,12 +123,14 @@ class ScanCache(object):
         """
         Put scan_result in the cache. Also put  file_infos in the cache if needed.
         """
-        scan_key = self.scan_key(path, file_infos)
-        self.scans.add(scan_key, scan_result)
-        if TRACE:
-            logger_debug('put_scan:', 'scan_key:', scan_key, 'file_infos:', file_infos, 'scan_result:', scan_result, '\n')
-            logger_debug('put_scan:', 'cached_infos:', self.infos[path], '\n')
-            logger_debug('put_scan:', 'scan_key:', scan_key, 'cached_scan:', self.scans[scan_key], '\n')
+        is_cached = self.put_infos(path, file_infos)
+        if not is_cached:
+            scan_key = self.scan_key(path, file_infos)
+            self.scans.add(scan_key, scan_result)
+            if TRACE:
+                logger_debug('put_scan:', 'scan_key:', scan_key, 'file_infos:', file_infos, 'scan_result:', scan_result, '\n')
+                logger_debug('put_scan:', 'cached_infos:', self.infos[path], '\n')
+                logger_debug('put_scan:', 'scan_key:', scan_key, 'cached_scan:', self.scans[scan_key], '\n')
 
     def iterate(self, with_infos=True):
         """
@@ -141,10 +143,17 @@ class ScanCache(object):
                 # infos is always collected but only returnedd if asked:
                 # we flatten these as direct attributes of a file object
                 scan_result.update(file_infos.items())
+            else:
+                # always report errors
+                scan_result['scan_errors'] = file_infos.get('scan_errors', [])
 
             scan_key = self.scan_key(path, file_infos)
-            scan_details = self.scans[scan_key]
-            scan_result.update(scan_details)
+            scan_details = self.scans[scan_key].items()
+            for scan_name, scan_data in scan_details:
+                if scan_name == 'scan_errors':
+                    scan_result['scan_errors'].extend(scan_data)
+                else:
+                    scan_result[scan_name] = scan_data
             if TRACE:
                 logger_debug('iterate:', 'scan_details:', scan_details, 'for path:', path, 'scan_key:', scan_key, '\n')
             yield scan_result

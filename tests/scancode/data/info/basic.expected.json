@@ -20,7 +20,8 @@
       "is_archive": null, 
       "is_media": null, 
       "is_source": null, 
-      "is_script": null
+      "is_script": null, 
+      "scan_errors": []
     }, 
     {
       "path": "basic/dbase.fdt", 
@@ -40,7 +41,8 @@
       "is_archive": null, 
       "is_media": null, 
       "is_source": null, 
-      "is_script": null
+      "is_script": null, 
+      "scan_errors": []
     }, 
     {
       "path": "basic/dir", 
@@ -60,7 +62,8 @@
       "is_archive": null, 
       "is_media": null, 
       "is_source": null, 
-      "is_script": null
+      "is_script": null, 
+      "scan_errors": []
     }, 
     {
       "path": "basic/dir/e.tar", 
@@ -80,7 +83,8 @@
       "is_archive": true, 
       "is_media": null, 
       "is_source": null, 
-      "is_script": null
+      "is_script": null, 
+      "scan_errors": []
     }, 
     {
       "path": "basic/dir/subdir", 
@@ -100,7 +104,8 @@
       "is_archive": null, 
       "is_media": null, 
       "is_source": null, 
-      "is_script": null
+      "is_script": null, 
+      "scan_errors": []
     }, 
     {
       "path": "basic/dir/subdir/a.aif", 
@@ -120,7 +125,8 @@
       "is_archive": null, 
       "is_media": true, 
       "is_source": null, 
-      "is_script": null
+      "is_script": null, 
+      "scan_errors": []
     }, 
     {
       "path": "basic/dir2", 
@@ -140,7 +146,8 @@
       "is_archive": null, 
       "is_media": null, 
       "is_source": null, 
-      "is_script": null
+      "is_script": null, 
+      "scan_errors": []
     }, 
     {
       "path": "basic/dir2/subdir", 
@@ -160,7 +167,8 @@
       "is_archive": null, 
       "is_media": null, 
       "is_source": null, 
-      "is_script": null
+      "is_script": null, 
+      "scan_errors": []
     }, 
     {
       "path": "basic/dir2/subdir/bcopy.s", 
@@ -180,7 +188,8 @@
       "is_archive": null, 
       "is_media": null, 
       "is_source": true, 
-      "is_script": null
+      "is_script": null, 
+      "scan_errors": []
     }, 
     {
       "path": "basic/dir2/subdir/config.conf", 
@@ -200,7 +209,8 @@
       "is_archive": null, 
       "is_media": null, 
       "is_source": null, 
-      "is_script": null
+      "is_script": null, 
+      "scan_errors": []
     }, 
     {
       "path": "basic/main.c", 
@@ -220,7 +230,8 @@
       "is_archive": null, 
       "is_media": null, 
       "is_source": true, 
-      "is_script": null
+      "is_script": null, 
+      "scan_errors": []
     }
   ]
 }

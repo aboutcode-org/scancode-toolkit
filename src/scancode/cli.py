@@ -27,7 +27,10 @@ from __future__ import print_function, absolute_import
 from collections import OrderedDict
 from functools import partial
 import os
+from os.path import expanduser
+from os.path import abspath
 import sys
+import traceback
 from types import GeneratorType
 
 import click
@@ -36,9 +39,6 @@ import simplejson as json
 
 from commoncode import ignore
 from commoncode import fileutils
-
-from os.path import expanduser
-from os.path import abspath
 
 from scancode import __version__ as version
 from scancode import utils
@@ -356,27 +356,33 @@ def scan(input_path, copyright=True, license=True, package=True,
 
 def scan_infos(input_file):
     """
-    Scan one file or directory and return file_infos data.
+    Scan one file or directory and return file_infos data. This may contain an
+    'errors' key with a list of error messages.
     """
     infos = OrderedDict()
+    errors = []
     try:
         infos = get_file_infos(input_file, as_list=False)
     except Exception, e:
         # never fail but instead add an error message.
-        # FIXME: this should not be stored at the individual scan level
-        return dict(errors=e.message)
+        errors = dict(infos=(e.message, traceback.format_exc(),))
+    # put errors last
+    infos['scan_errors'] = errors
     return infos
 
 
 def scan_one(input_file, scans):
     """
     Scan one file or directory and return a scanned data, calling every scan in
-    the `scans` mapping of (scan name -> scan function).
+    the `scans` mapping of (scan name -> scan function). This may contain an
+    'errors' key with a list of error messages.
     """
     scan_result = OrderedDict()
+    errors = []
     for scan_name, scan_func in scans.items():
         if not scan_func:
             continue
+        scan_errors = dict()
         try:
             scan_details = scan_func(input_file)
             # consume generators
@@ -384,9 +390,12 @@ def scan_one(input_file, scans):
                 scan_details = list(scan_details)
             scan_result[scan_name] = scan_details
         except Exception, e:
-            # never fail but instead add an error message.
-            # FIXME: this should not be stored at the individual scan level
-            scan_result[scan_name] = {'errors': e.message}
+            # never fail but instead add an error message and keep an empty scan:
+            scan_result[scan_name] = []
+            scan_errors[scan_name] = (e.message, traceback.format_exc(),)
+            errors.append(scan_errors)
+    # put errors last
+    scan_result['scan_errors'] = errors
     return scan_result
 
 

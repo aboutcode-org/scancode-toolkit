@@ -81,8 +81,19 @@ def _load_json_result(result_file, test_dir):
         loc = result['path']
         loc = as_posixpath(loc).replace(test_dir, '').strip('/')
         result['path'] = loc
+
+        # strip errors from full stack trace for testing
+        error_messages = []
+        for errors in result.get('scan_errors',[]):
+            for scan_name, messages in errors.items():
+                if isinstance(messages,(tuple, list,)):
+                    messages, _trace = messages
+                error_messages.append({scan_name: messages})
+        result['scan_errors'] = error_messages
+        
     if scan_result.get('scancode_version'):
         del scan_result['scancode_version']
+
     scan_result['files'].sort(key=lambda x: x['path'])
     return scan_result
 
