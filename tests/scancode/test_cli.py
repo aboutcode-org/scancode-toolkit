@@ -283,7 +283,8 @@ def test_scanned_path_is_present_in_html_app_output(monkeypatch):
     assert '<title>ScanCode scan results for: %(test_dir)s</title>' % locals() in html_file
     assert 'ScanCode</a> scan results for: %(test_dir)s</span>' % locals() in html_file
 
-def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking(monkeypatch):
+
+def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_json(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     runner = CliRunner()
@@ -292,3 +293,23 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file, test_file)
+
+
+def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_file = test_env.get_test_loc('failing/patchelf.pdf')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('test.html')
+    result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html', test_file, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+
+
+def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html_app(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_file = test_env.get_test_loc('failing/patchelf.pdf')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('test.app.html')
+    result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html-app', test_file, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
