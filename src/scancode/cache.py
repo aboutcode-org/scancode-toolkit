@@ -167,5 +167,8 @@ class ScanCache(object):
         fileutils.delete(self.cache_base_dir)
 
 
-def get_scans_cache():
-    return ScanCache(cache_dir=scans_cache_dir)
+def get_scans_cache(cache_dir=scans_cache_dir):
+    """
+    Return a new unique persistent cache instance.
+    """
+    return ScanCache(cache_dir)
