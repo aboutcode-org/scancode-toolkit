@@ -194,7 +194,13 @@ function ScancodeDataTable(tagId, data){
                         "what": "Copyright",
                         "start_line": y.start_line || "",
                         "end_line": y.end_line || "",
-                        "info": (y.statements && y.statements.join("</br>")) || "",
+                        // somehow we return sometimes something else than an Array?
+                        // see https://github.com/nexB/scancode-toolkit/issues/362#issuecomment-259942416
+                        "info": (y.statements && 
+                        			((Array.isArray(y.statements) && y.statements.join("</br>"))
+                        			||
+                        			(typeof y.statements === "string" && y.statements))
+                        		) || "",
                         "type" : "",
                         "name" : "",
                         "extension": "",
