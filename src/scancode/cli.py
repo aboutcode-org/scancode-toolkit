@@ -426,7 +426,7 @@ def scan_timeout(size):
         # add extra seconds for each megabyte
         timeout += (size / 1024 * 1024 * 1024) * 30
 
-    timeout = max((timeout, MAX_SCAN_TIMEOUT))
+    timeout = min((timeout, MAX_SCAN_TIMEOUT))
     return timeout
 
 
