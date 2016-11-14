@@ -84,13 +84,13 @@ def _load_json_result(result_file, test_dir):
 
         # strip errors from full stack trace for testing
         error_messages = []
-        for errors in result.get('scan_errors',[]):
+        for errors in result.get('scan_errors', []):
             for scan_name, messages in errors.items():
-                if isinstance(messages,(tuple, list,)):
+                if isinstance(messages, (tuple, list,)):
                     messages, _trace = messages
                 error_messages.append({scan_name: messages})
         result['scan_errors'] = error_messages
-        
+
     if scan_result.get('scancode_version'):
         del scan_result['scancode_version']
 
@@ -236,7 +236,7 @@ def test_paths_are_posix_paths_in_html_app_format_output(monkeypatch):
     assert 'Scanning done' in result.output
     # the data we want to test is in the data.json file
     data_file = os.path.join(fileutils.parent_directory(result_file), 'test_html_files', 'data.json')
-    assert '/posix_path/copyright_acme_c-c.c' in open(data_file).read()
+    assert 'copyright_acme_c-c.c' in open(data_file).read()
 
 
 def test_paths_are_posix_in_html_format_output(monkeypatch):
@@ -247,7 +247,7 @@ def test_paths_are_posix_in_html_format_output(monkeypatch):
     result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    assert '/posix_path/copyright_acme_c-c.c' in open(result_file).read()
+    assert 'copyright_acme_c-c.c' in open(result_file).read()
 
 
 def test_paths_are_posix_in_json_format_output(monkeypatch):
