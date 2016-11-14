@@ -64,9 +64,8 @@ End
         assert 'file' == utils.get_relative_path(path='/file', len_base_path=5, base_is_dir=False)
         # plain file in a deep path
         assert 'that' == utils.get_relative_path(path='/this/file/that', len_base_path=5, base_is_dir=False)
+
         # plain path with directories
         assert 'file/that' == utils.get_relative_path(path='/this/file/that', len_base_path=5, base_is_dir=True)
-        assert 'this/file/that' == utils.get_relative_path(path='/this/file/that', len_base_path=5, base_is_dir=False)
-        assert 'this/file/that' == utils.get_relative_path(path='/foo//this/file/that', len_base_path=5, base_is_dir=False)
-        assert 'this/file/that' == utils.get_relative_path(path='/foo//this/file/that', len_base_path=5, base_is_dir=False)
-        assert 'this/file/that' == utils.get_relative_path(path='/foo/this/file/that', len_base_path=5, base_is_dir=False)
+        assert 'that' == utils.get_relative_path(path='/this/file/that', len_base_path=10, base_is_dir=True)
+        assert 'this/file/that' == utils.get_relative_path(path='/foo//this/file/that', len_base_path=4, base_is_dir=True)
