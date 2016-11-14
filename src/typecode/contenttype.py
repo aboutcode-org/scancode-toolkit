@@ -120,6 +120,26 @@ class Type(object):
 
     Raise an IOError if the location does not exists.
     """
+    __slots__ = (
+        'location',
+        'is_file',
+        'is_dir',
+        'is_regular',
+        'is_special',
+        'date',
+        'is_link',
+        'is_broken_link',
+        '_size',
+        '_link_target',
+        '_mimetype_python',
+        '_filetype_file',
+        '_mimetype_file',
+        '_filetype_pygments',
+        '_is_pdf_with_text',
+        '_is_text',
+        '_is_binary',
+    )
+
     def __init__(self, location):
         if (not location
             or (not os.path.exists(location)
@@ -344,7 +364,7 @@ class Type(object):
             return True
         if self.is_pdf is True and self.is_pdf_with_text is not True:
             return False
-        if (self.is_media is True or self.is_compressed is True or self.is_archive is True):
+        if self.is_media is True or self.is_compressed is True or self.is_archive is True:
             return False
         return True
 
