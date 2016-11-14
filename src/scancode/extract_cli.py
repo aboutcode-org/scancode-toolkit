@@ -97,12 +97,6 @@ def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssign
     original_input = fileutils.as_posixpath(input)
     abs_input = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(input)))
 
-    # note: we inline functions so they can close on local variables
-
-    def extract_start():
-        return style('Extracting archives...', fg='green')
-
-
     def extract_event(item):
         """
         Display an extract event.
@@ -112,13 +106,13 @@ def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssign
         if verbose:
             if item.done:
                 return ''
-            line = utils.get_relative_path(original_input, abs_input, as_posixpath(item.source)) or ''
+            line = item.source and as_posixpath(item.source) or ''
         else:
-            line = fileutils.file_name(item.source) or ''
+            line = item.source and fileutils.file_name(item.source) or ''
         return 'Extracting: %(line)s' % locals()
 
 
-    def extract_end():
+    def display_extract_summary():
         """
         Display a summary of warnings and errors if any.
         """
@@ -142,23 +136,22 @@ def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssign
             summary_color = 'red'
 
         summary.append(style('Extracting done.', fg=summary_color, reset=True))
-        return '\n'.join(summary)
+        click.echo('\n'.join(summary))
 
 
     extract_results = []
     has_extract_errors = False
 
-    with utils.progressmanager(extract_archives(abs_input),
-                               item_show_func=extract_event,
-                               start_show_func=extract_start,
-                               finish_show_func=extract_end,
-                               verbose=verbose,
-                               quiet=quiet,
-                               ) as extraction_events:
+    click.secho('Extracting archives...', fg='green')
+
+    with utils.progressmanager(extract_archives(abs_input), item_show_func=extract_event,
+                               verbose=verbose, quiet=quiet) as extraction_events:
         for xev in extraction_events:
             if xev.done and (xev.warnings or xev.errors):
                 has_extract_errors = has_extract_errors or xev.errors
                 extract_results.append(xev)
+
+    display_extract_summary()
 
     rc = 1 if has_extract_errors else 0
     ctx.exit(rc)
