@@ -1,0 +1,25 @@
+files:
+    - psutil-5.0.0-cp27-cp27m-linux_i686.whl
+    - psutil-5.0.0-cp27-cp27m-linux_x86_64.whl
+    - psutil-5.0.0-cp27-cp27mu-linux_i686.whl
+    - psutil-5.0.0-cp27-cp27mu-linux_x86_64.whl
+    - psutil-5.0.0-cp27-none-win_amd64.whl
+    - psutil-5.0.0-cp27-none-win32.whl
+    - psutil-5.0.0-cp27-cp27m-macosx_10_11_x86_64.whl
+    - psutil-5.0.0.zip
+
+components:
+    -
+    name: psutil
+    version: 5.0.0
+    owner: Giampaolo Rodola 
+    copyright: Copyright (c) 2009, Jay Loden, Dave Daeschler, Giampaolo Rodola'
+    home_url: https://github.com/giampaolo/psutil
+    license_expression: bsd-new
+    license_text_file: psutil.LICENSE
+
+packages:
+    - 
+    download_url: https://pypi.python.org/packages/93/7f/347309562d30c688299727e65f4d76ef34180c406dfb6f2c7b6c8d746e13/psutil-5.0.0.zip#md5=362a03686ce36940d22a548ecb47d7e0
+    vcs_tools: git
+    vcs_repository: https://github.com/giampaolo/psutil.git
