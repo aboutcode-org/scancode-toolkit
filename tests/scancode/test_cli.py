@@ -304,6 +304,8 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file, test_file)
+    assert 'Some files failed to scan' in result.output
+    assert 'patchelf.pdf' in result.output
 
 
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html(monkeypatch):
@@ -364,4 +366,3 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
         assert sorted(expected) == sorted(result_json['files'])
     finally:
         cli.TEST_TIMEOUT = 0
-
