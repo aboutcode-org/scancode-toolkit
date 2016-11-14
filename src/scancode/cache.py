@@ -25,6 +25,7 @@
 from __future__ import absolute_import, print_function
 
 from collections import OrderedDict
+from functools import partial
 import os
 import sys
 
@@ -74,16 +75,10 @@ class ScanCache(object):
     This is NOT thread-safe, but is multi-process safe.
     """
     def __init__(self, cache_dir):
-        fileutils.create_dir(cache_dir)
-
-        # create a unique temp directory in cache_dir
-        self.cache_base_dir = fileutils.get_temp_dir(cache_dir, prefix=timeutils.time2tstamp() + '-')
-
-        # and subdirs for infos and scans caches
+        self.cache_base_dir = cache_dir
+        # subdirs for infos and scans caches
         self.cache_infos_dir = os.path.join(self.cache_base_dir, 'infos')
-        fileutils.create_dir(self.cache_infos_dir)
         self.cache_scans_dir = os.path.join(self.cache_base_dir, 'scans')
-        fileutils.create_dir(self.cache_scans_dir)
 
         # workaround for https://github.com/grantjenks/python-diskcache/issues/32
         from diskcache import Disk
@@ -112,29 +107,27 @@ class ScanCache(object):
         in file_infos has already been scanned or False otherwise.
         """
         self.infos.set(path, file_infos)
-        has_cached_details = self.scan_key(path, file_infos) in self.scans
+        is_scan_cached = self.scan_key(path, file_infos) in self.scans
         if TRACE:
-            logger_debug('put_infos:', 'path:', path, 'has_cached_details:', has_cached_details, 'file_infos:', file_infos, '\n')
+            logger_debug('put_infos:', 'path:', path, 'is_scan_cached:', is_scan_cached, 'file_infos:', file_infos, '\n')
             logger_debug('put_infos:', 'cached_infos:', self.infos[path], '\n')
-
-        return has_cached_details
+        return is_scan_cached
 
     def put_scan(self, path, file_infos, scan_result):
         """
         Put scan_result in the cache. Also put  file_infos in the cache if needed.
         """
-        is_cached = self.put_infos(path, file_infos)
-        if not is_cached:
-            scan_key = self.scan_key(path, file_infos)
-            self.scans.add(scan_key, scan_result)
-            if TRACE:
-                logger_debug('put_scan:', 'scan_key:', scan_key, 'file_infos:', file_infos, 'scan_result:', scan_result, '\n')
-                logger_debug('put_scan:', 'cached_infos:', self.infos[path], '\n')
-                logger_debug('put_scan:', 'scan_key:', scan_key, 'cached_scan:', self.scans[scan_key], '\n')
+        scan_key = self.scan_key(path, file_infos)
+        self.scans.add(scan_key, scan_result)
+        if TRACE:
+            logger_debug('put_scan:', 'scan_key:', scan_key, 'file_infos:', file_infos, 'scan_result:', scan_result, '\n')
+            logger_debug('put_scan:', 'cached_infos:', self.infos[path], '\n')
+            logger_debug('put_scan:', 'scan_key:', scan_key, 'cached_scan:', self.scans[scan_key], '\n')
 
     def iterate(self, with_infos=True):
         """
-        Return an iterator of scan data for all cached scans e.g. the whole cache.
+        Yield scan data for all cached scans e.g. the whole cache.
+        If a scan is missing for a given info, an error is appended to scan_errors.
         """
         for path in self.infos:
             file_infos = self.infos[path]
@@ -144,26 +137,40 @@ class ScanCache(object):
                 # we flatten these as direct attributes of a file object
                 scan_result.update(file_infos.items())
             else:
-                # always report errors
+                # always include errors even if empty
                 scan_result['scan_errors'] = file_infos.get('scan_errors', [])
 
+            no_scan_details = dict(scan_errors=[
+                ('ERROR: Requested scan details unavailable in cache.',
+                'This is either a bug or processing was aborted with CTRL-C.')]
+            )
+
             scan_key = self.scan_key(path, file_infos)
-            scan_details = self.scans[scan_key].items()
-            for scan_name, scan_data in scan_details:
-                if scan_name == 'scan_errors':
-                    scan_result['scan_errors'].extend(scan_data)
-                else:
-                    scan_result[scan_name] = scan_data
+            scan_details = self.scans.get(scan_key, no_scan_details)
             if TRACE:
                 logger_debug('iterate:', 'scan_details:', scan_details, 'for path:', path, 'scan_key:', scan_key, '\n')
+
+            # append errors to other top level errors if any
+            scan_errors = scan_details.pop('scan_errors', [])
+            scan_result['scan_errors'].extend(scan_errors)
+
+            scan_result.update(scan_details)
             yield scan_result
+
+    def close(self):
+        """
+        Close the underlying caches.
+        """
+        if self.infos:
+            self.infos.close()
+        if self.scans:
+            self.scans.close()
 
     def clear(self, *args):
         """
         Purge the cache by deleting the corresponding cached data files.
         """
-        self.infos.close()
-        self.scans.close()
+        self.close()
         fileutils.delete(self.cache_base_dir)
 
 
@@ -172,3 +179,13 @@ def get_scans_cache(cache_dir=scans_cache_dir):
     Return a new unique persistent cache instance.
     """
     return ScanCache(cache_dir)
+
+
+def get_scans_cache_class(cache_dir=scans_cache_dir):
+    """
+    Return a new unique persistent cache instance.
+    """
+    fileutils.create_dir(cache_dir)
+    # create a unique temp directory in cache_dir
+    cache_dir = fileutils.get_temp_dir(cache_dir, prefix=timeutils.time2tstamp() + '-')
+    return partial(ScanCache, cache_dir)
