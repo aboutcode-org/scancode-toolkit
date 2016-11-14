@@ -453,10 +453,15 @@ def _scanit(paths, scanners, scans_cache_class):
             timeout = TEST_TIMEOUT or scan_timeout(infos.get('size', 0))
             scans_runner = partial(scan_one, abs_path, scanners)
             success, scan_result = interruptible(scans_runner, timeout=timeout)
+
             if not success:
                 # Use scan errors as the scan result for that file on failure
                 scan_result = dict(scan_errors=[scan_result, ''])
             scans_cache.put_scan(rel_path, infos, scan_result)
+
+            # do not report success if some other errors happened
+            if scan_result.get('scan_errors'):
+                success = False
     finally:
         if scans_cache:
             scans_cache.close()
