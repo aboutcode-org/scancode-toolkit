@@ -4,7 +4,7 @@
   "files": [
     {
       "copyrights": [],
-      "path": "", 
+      "path": "patchelf.pdf", 
       "scan_errors": [
         {
           "copyrights": "unpack requires a string argument of length 8"
