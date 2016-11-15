@@ -158,8 +158,8 @@ class LicenseMatchCache(object):
     def __init__(self, cache_dir):
         self.cache_dir = cache_dir
         create_dir(cache_dir)
-        from diskcache import FanoutCache
-        self.cache = FanoutCache(cache_dir)
+        from diskcache import Cache as Cache
+        self.cache = Cache(cache_dir)
 
     def key(self, tokens):
         """
