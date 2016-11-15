@@ -88,7 +88,7 @@ class ScanCache(object):
                 super(DiskWithNoHighPickleProtocol, self).__init__(directory, size_threshold, pickle_protocol)
                 self._protocol = 0
 
-        # and finially cache instances
+        # and finally cache instances
         from diskcache import Cache
         self.infos = Cache(self.cache_infos_dir, disk=DiskWithNoHighPickleProtocol)
         self.scans = Cache(self.cache_scans_dir, disk=DiskWithNoHighPickleProtocol)
