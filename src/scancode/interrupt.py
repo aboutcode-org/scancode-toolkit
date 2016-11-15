@@ -123,10 +123,10 @@ def time_and_ram_interruptible(func, *args, **kwargs):
     timeout = kwargs.pop('timeout', MAX_TIMEOUT)
     max_memory = kwargs.pop('max_memory', MAX_MEMORY)
 
-    # we use a pool of three threads:
+    # We use a pool of three threads that will race to finish against each other:
     # - one will run the func
-    # - one will sleep until timeout
-    # - one will run a loop to check for memory usage
+    # - one will sleep until a timeout and return
+    # - one will run a loop to check for memory usage and return when it exceedd max_memory
     # The first thread that completes will return a result and stop the pool. e.g if
     # the func completes within timeout and does not exceed RAM, it will return first
     # otherwise it will be killed and some error will be returned instead
