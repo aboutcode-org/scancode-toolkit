@@ -358,16 +358,16 @@ def scan(input_path, copyright=True, license=True, package=True,
 
     scan_summary['indexing_time'] = indexing_time
 
-    # TODO: handle pickling errors as in ./scancode -cilp   samples/ -n3: note they are only caused by the FanoutCache
+    # TODO: handle pickling errors as in ./scancode -cilp   samples/ -n3: note they are only caused by a FanoutCache
     # TODO: handle other exceptions properly to avoid any hanging
 
     # maxtasksperchild helps with recycling processes in case of leaks
     pool = Pool(processes=processes, maxtasksperchild=1000)
     resources = resource_paths(input_path)
     scanit = partial(_scanit, scanners=scanners, scans_cache_class=scans_cache_class)
-    # chunksize is documented as much more efficient.
-    # Yet 1 still provides a more progressive feedback
-    # results are returned as soon as ready out of order
+    # Using chunksize is documented as much more efficient in the Python doc.
+    # Yet "1" still provides a better and more progressive feedback.
+    # With imap_unordered, results are returned as soon as ready and out of order.
     scanned_files = pool.imap_unordered(scanit, resources, chunksize=1)
 
     def scan_event(item):
@@ -379,12 +379,13 @@ def scan(input_path, copyright=True, license=True, package=True,
 
     scanning_errors = []
     files_count = 0
-    with utils.progressmanager(scanned_files, item_show_func=scan_event, show_pos=True, verbose=verbose, quiet=quiet) as scanned:
+    with utils.progressmanager(scanned_files, item_show_func=scan_event,
+                               show_pos=True, verbose=verbose, quiet=quiet) as scanned:
         while True:
             try:
                 result = scanned.next()
-                scan_sucess, scanned_rel_path = result
-                if not scan_sucess:
+                scan_success, scanned_rel_path = result
+                if not scan_success:
                     scanning_errors.append(scanned_rel_path)
                 files_count += 1
             except StopIteration:
@@ -426,8 +427,9 @@ def scan(input_path, copyright=True, license=True, package=True,
 
 def _scanit(paths, scanners, scans_cache_class):
     """
-    Run scans and cache results. Used as an execution unit for parallel processing.
-    Return True on success, False on error.
+    Run scans and cache results on disk. Return a tuple of (success, scanned relative
+    path) where sucess is True on success, False on error. Note that this is really
+    only a wrapper function used as an execution unit for parallel processing.
     """
     abs_path, rel_path = paths
     # always fetch infos and cache.
@@ -471,14 +473,13 @@ def _scanit(paths, scanners, scans_cache_class):
     return success, rel_path
 
 
-def resource_paths(input_path):
+def resource_paths(base_path):
     """
     Yield tuples of (absolute path, base_path-relative path) for all the files found
-    at absolute_path (either a directory or file) given a base_path (used for
-    relative path resolution). Only yield Files, not directories. All outputs are
-    POSIX paths.
+    at base_path (either a directory or file) given an absolute base_path. Only yield
+    Files, not directories. All outputs are POSIX paths.
     """
-    base_path = os.path.abspath(os.path.normpath(os.path.expanduser(input_path)))
+    base_path = os.path.abspath(os.path.normpath(os.path.expanduser(base_path)))
     base_is_dir = filetype.is_dir(base_path)
     len_base_path = len(base_path)
     ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
@@ -511,8 +512,8 @@ def scan_infos(input_file):
 def scan_one(input_file, scans):
     """
     Scan one file or directory and return a scanned data, calling every scan in
-    the `scans` mapping of (scan name -> scan function). This may contain an
-    'errors' key with a list of error messages.
+    the `scans` mapping of (scan name -> scan function). Scan data contain a
+    'scan_errors' key with a list of error messages.
     """
     scan_result = OrderedDict()
     errors = []
@@ -538,7 +539,7 @@ def scan_one(input_file, scans):
 
 def save_results(files_count, scanned_files, format, input, output_file):
     """
-    Save results to file or screen.
+    Save scan results to file or screen.
     """
     if output_file != sys.stdout:
         parent_dir = os.path.dirname(output_file.name)
