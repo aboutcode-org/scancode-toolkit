@@ -11,94 +11,61 @@ On 2016-11-11 the Dan O'Reilly provided this feedback:
 @PhilippeOmbredanne Public Domain, as far as I'm concerned.
 - dano 1 hour ago
 
-Original comments:
+The code was heavily modified to support both a timeout and memory quota:
 
-Here's a way you can do this without needing to change your worker function. The idea
-is to wrap the worker in another function, which will call worker in a background
-thread, and then wait for a result for for timeout seconds. If the timeout expires,
-it raises an exception, which will abruptly terminate the thread worker is executing
-in. Any function that timeouts will raise multiprocessing.TimeoutError. Note that
-this means your callback won't execute when a timeout occurs. If this isn't
-acceptable, just change the except block of abortable_worker to return something
-instead of calling raise.
+We use a pool of three threads that will race against each other to finish first:
+- one will run the requested function proper
+- one will sleep until a timeout and then return
+- one will run a loop to check for memory usage and return when it exceeds max_memory
 
-When you pass N to the Pool constructor, N processes are immediately launched, and
-those exact N processes continue to run for the entire lifetime of the pool. No
-additional processes get added, and no processes get removed. Any work items you pass
-to the Pool via apply/map get distributed to those N workers. If all the workers are
-busy, the work item get queued until a worker frees up and is able to execute it.
+The first thread that completes will return its result and win. e.g if the function
+completes within timeout and does not exceeds RAM, it will return first. Otherwise if
+the memory check or the timeout thread completes first, the may function will be
+killed and some error will be returned instead.
 """
 
 from __future__ import print_function, absolute_import
 
-#
-# ###########################################################################
-# # Monkeypatch Pool iterators so that Ctrl-C interrupts everything properly
-# # based from https://gist.github.com/aljungberg/626518
-# # FIXME: unknown license
-# ###########################################################################
-# from multiprocessing.pool import IMapIterator, IMapUnorderedIterator
-#
-# def wrapped(func):
-#     def wrap(self, timeout=None):
-#         return func(self, timeout=timeout or 1e10)
-#     return wrap
-#
-# IMapIterator.next = wrapped(IMapIterator.next)
-# IMapIterator.__next__ = IMapIterator.next
-# IMapUnorderedIterator.next = wrapped(IMapUnorderedIterator.next)
-# IMapUnorderedIterator.__next__ = IMapUnorderedIterator.next
-#
-# ###########################################################################
+###########################################################################
+# Monkeypatch Pool iterators so that Ctrl-C interrupts everything properly
+# derived from https://gist.github.com/aljungberg/626518
+# FIXME: unknown license
+###########################################################################
+from multiprocessing.pool import IMapIterator, IMapUnorderedIterator
+
+def wrapped(func):
+    # ensure that we do not double wrap
+    if func.func_name != 'wrap':
+        def wrap(self, timeout=None):
+            return func(self, timeout=timeout or 1e10)
+        return wrap
+    else:
+        return func
+
+IMapIterator.next = wrapped(IMapIterator.next)
+IMapIterator.__next__ = IMapIterator.next
+IMapUnorderedIterator.next = wrapped(IMapUnorderedIterator.next)
+IMapUnorderedIterator.__next__ = IMapUnorderedIterator.next
+###########################################################################
 
 from multiprocessing.dummy import Pool as ThreadPool
 import multiprocessing
 
-from functools import partial
-import random
 from time import sleep
 
 import psutil
 
 
+MIN_TIMEOUT = 60  # seconds
 MAX_TIMEOUT = 600  # seconds
-MAX_MEMORY = 640 * 1024 * 1024 * 1024  # 640MB
+RUNTIME_EXCEEDED = 1
+
+MIN_MEMORY = 640 * 1024 * 1024  # 640MB
+MAX_MEMORY = 2 * 1024 * 1024 * 1024  # 2GB
+MEMORY_EXCEEDED = 2
 
 
 def interruptible(func, *args, **kwargs):
-    """
-    Call `func` function with `args` arguments and return a tuple of (success, return
-    value). `func` is invoked through a wrapper and will be interrupted if it does
-    not return within `timeout` seconds of execution. `timeout` defaults to
-    MAX_TIMEOUT seconds and must be provided as a keyword argument. Only args are
-    passed to func, not kwargs.
-
-    In the returned tuple of (success, value), success is True or False. If success
-    is True, the call was successful and the second item in the tuple is the returned
-    value of func.
-    If success is False, the call did not complete within timeout seconds and was
-    interrupted. The second item in the tuple is an error message string.
-    """
-    timeout = kwargs.pop('timeout', MAX_TIMEOUT)
-    pool = ThreadPool(1)
-    runner = pool.apply_async(func, args=args)
-    try:
-        # Wait timeout seconds for func to complete.
-        result = runner.get(timeout)
-        return True, result
-    except multiprocessing.TimeoutError:
-        return False, 'Processing interrupted after timeout of %(timeout)d seconds.' % locals()
-    except KeyboardInterrupt:
-        return False, 'Processing interrupted with Ctrl-C.'
-    finally:
-        pool.terminate()
-        pool.close()
-
-
-MEMORY_EXCEEDED = 1
-RUNTIME_EXCEEDED = 2
-
-def time_and_ram_interruptible(func, *args, **kwargs):
     """
     Call `func` function with `args` arguments and return a tuple of (success, return
     value). `func` is invoked through a wrapper and will be interrupted if it does
@@ -108,8 +75,8 @@ def time_and_ram_interruptible(func, *args, **kwargs):
     `timeout` defaults to MAX_TIMEOUT seconds and must be provided as a keyword
     argument.
 
-    `max_memory` defaults to MAX_MEMORY bytes and must be provided as a keyword
-    argument.
+    `max_memory` defaults to MAX_MEMORY bytes and should be provided as a keyword
+    argument. If not present, there are maximum memory interruption is not enabled.
 
     Only `args` are passed to `func`, not any `kwargs`.
 
@@ -120,23 +87,23 @@ def time_and_ram_interruptible(func, *args, **kwargs):
     max_memory and was interrupted. The second item in the tuple is an error message
     string.
     """
-    timeout = kwargs.pop('timeout', MAX_TIMEOUT)
-    max_memory = kwargs.pop('max_memory', MAX_MEMORY)
+    timeout = kwargs.pop('timeout', MIN_TIMEOUT)
 
     # We use a pool of three threads that will race to finish against each other:
-    # - one will run the func
+    # - one will run the func proper
     # - one will sleep until a timeout and return
-    # - one will run a loop to check for memory usage and return when it exceedd max_memory
-    # The first thread that completes will return a result and stop the pool. e.g if
-    # the func completes within timeout and does not exceed RAM, it will return first
-    # otherwise it will be killed and some error will be returned instead
-    pool = ThreadPool(3)
+    # - one will run a loop to check for memory usage and return when it exceeds max_memory
+    # The first thread that completes will return a result and win.
+    # Other threads will be terminated.
 
+    pool = ThreadPool(3)
     execution_units = [
-        (func, args),
-        (memory_guard, [max_memory]),
-        (time_guard, [timeout]),
+        (func, args,),
+        (time_guard, [timeout],),
     ]
+    if 'max_memory' in kwargs:
+        max_memory = kwargs.pop('max_memory', MIN_MEMORY)
+        execution_units.append((memory_guard, [max_memory],))
 
     # submit our three threads: whichever finishes first will be returned by the call to next()
     threads = pool.imap_unordered(runner, execution_units, chunksize=1)
@@ -145,9 +112,9 @@ def time_and_ram_interruptible(func, *args, **kwargs):
         result = threads.next(MAX_TIMEOUT)
         if result == MEMORY_EXCEEDED:
             max_mb = megabytes(max_memory)
-            return False, 'Processing interrupted: excessive memory usage over %(max_mb)s.' % locals()
+            return False, 'Processing interrupted: excessive memory usage of more than %(max_mb)s.' % locals()
         elif result == RUNTIME_EXCEEDED:
-            return False, 'Processing interrupted: did not complete within timeout of %(timeout)d seconds.' % locals()
+            return False, 'Processing interrupted: timeout after %(timeout)d seconds.' % locals()
         else:
             # we succeeded with quotas: return results and stop processing
             return True, result
@@ -159,20 +126,38 @@ def time_and_ram_interruptible(func, *args, **kwargs):
         return False, 'Processing interrupted with Ctrl-C.'
     finally:
         pool.terminate()
-        pool.close()
 
 
 def runner(arg):
     """
-    Run func with args and return its returned value.
+    Run func with args and return its returned value where arg is tuple of (func, args).
+    This is a wrapper to allow using an imap-like call.
     """
     func, args = arg
     return func(*args)
 
 
-def memory_guard(max_memory, interval=1):
+def time_guard(timeout):
     """
-    Run forever and return if memory usage in the current process exceeds max_memory.
+    Return when a timeout has expired.
+    """
+    sleep(timeout)
+    return RUNTIME_EXCEEDED
+
+
+def compute_timeout(size, extra_sec_per_mb=30):
+    """
+    Return a scan timeout in seconds computed based on a file size.
+    """
+    # add extra seconds for each megabyte
+    timeout = MIN_TIMEOUT + ((size // (1024 * 1024)) * extra_sec_per_mb)
+    return min([timeout, MAX_TIMEOUT])
+
+
+def memory_guard(max_memory, interval=5):
+    """
+    Run forever unless memory usage in the current process exceeds `max_memory`.
+    If it does, return `MEMORY_EXCEEDED`
     Check memory usage every `interval` seconds.
     """
     process = psutil.Process()
@@ -187,43 +172,18 @@ def memory_guard(max_memory, interval=1):
             return MEMORY_EXCEEDED
 
 
-def time_guard(timeout):
+def compute_memory_quota(size, extra_ram_per_mb=5):
     """
-    Return when a timeout has expired.
+    Return a not-to-exceed maximum memory_quota in bytes computed based on a file size.
     """
-    sleep(timeout)
-    return RUNTIME_EXCEEDED
+    # add extra quota for each byte of a file bigger than 1MB
+    memory_quota = MIN_MEMORY + (size * extra_ram_per_mb)
+    return min([memory_quota, MAX_MEMORY])
 
 
 def megabytes(n):
     """
     Return a string representation of a bytes number as megabytes.
     """
-    mega = 1024 * 1024 * 1024
+    mega = 1024 * 1024
     return '%dMB' % (n // mega)
-
-
-if __name__ == '__main__':
-    """
-    Example.
-    """
-    def worker(*args):
-        sleep(random.randint(1, 4))
-        return 'OK'
-
-    # list of arguments
-    features = [[1000, k, 1] for k in range(20)]
-    inter = partial(interruptible, worker, timeout=2)
-
-    pool = multiprocessing.Pool(4)
-    results = pool.imap_unordered(inter, features)
-    while True:
-        try:
-            success, result = results.next(1000)
-            print('success, result:', success, result)
-        except StopIteration:
-            break
-        except KeyboardInterrupt:
-            print('\nKeyboard interrupt!')
-            pool.terminate()
-            break
