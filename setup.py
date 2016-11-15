@@ -79,6 +79,7 @@ setup(
         'zc.lockfile >= 1.0.0, < 2.0.0',
         'yg.lockfile >= 2.0.0, < 3.0.0',
         'diskcache >= 2.0.0, < 3.0.0',
+        'psutil >= 5.0.0, < 6.0.0',
 
         # textcode
         'Beautifulsoup >= 3.2.0, <4.0.0',
