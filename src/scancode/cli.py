@@ -24,30 +24,31 @@
 
 from __future__ import print_function, absolute_import, division
 
-
 ###########################################################################
 # Monkeypatch Pool iterators so that Ctrl-C interrupts everything properly
-# based from https://gist.github.com/aljungberg/626518
+# derived from https://gist.github.com/aljungberg/626518
 # FIXME: unknown license
 ###########################################################################
 from multiprocessing.pool import IMapIterator, IMapUnorderedIterator
 
 def wrapped(func):
-    def wrap(self, timeout=None):
-        return func(self, timeout=timeout or 1e10)
-    return wrap
+    # ensure that we do not double wrap
+    if func.func_name != 'wrap':
+        def wrap(self, timeout=None):
+            return func(self, timeout=timeout or 1e10)
+        return wrap
+    else:
+        return func
 
 IMapIterator.next = wrapped(IMapIterator.next)
 IMapIterator.__next__ = IMapIterator.next
 IMapUnorderedIterator.next = wrapped(IMapUnorderedIterator.next)
 IMapUnorderedIterator.__next__ = IMapUnorderedIterator.next
-
-from multiprocessing import Pool
 ###########################################################################
-
 
 from collections import OrderedDict
 from functools import partial
+from multiprocessing import Pool
 import os
 from os.path import expanduser
 from os.path import abspath
@@ -67,7 +68,9 @@ from commoncode import filetype
 from scancode import __version__ as version
 
 from scancode.interrupt import interruptible
-from scancode.interrupt import time_and_ram_interruptible
+from scancode.interrupt import compute_memory_quota
+from scancode.interrupt import compute_timeout
+
 from scancode import utils
 
 from scancode.cache import get_scans_cache_class
@@ -84,6 +87,11 @@ from scancode.api import get_file_infos
 from scancode.api import get_licenses
 from scancode.api import get_package_infos
 from scancode.api import get_urls
+
+
+# set a value only for testing scan quotas
+TEST_TIMEOUT = 0
+TEST_MAX_MEMORY = 0
 
 
 info_text = '''
@@ -336,7 +344,7 @@ def scan(input_path, copyright=True, license=True, package=True,
     scans = info and ['infos'] or []
     scans.extend([k for k, v in scanners.items() if v])
     _scans = ', '.join(scans)
-    click.secho('Scanning files for: %(_scans)s with %(processes)d processes...' % locals(), err=to_stdout)
+    click.secho('Scanning files for: %(_scans)s with %(processes)d process(es)...' % locals(), err=to_stdout)
 
     scan_summary['scans'] = scans[:]
     scan_start = time()
@@ -406,7 +414,7 @@ def scan(input_path, copyright=True, license=True, package=True,
             click.secho(' ' + errored_path, fg='red', err=to_stdout)
 
     click.secho('Scan statistics: %(files_count)d files scanned in %(total_time)ds.' % locals(), err=to_stdout)
-    click.secho('Scan options:    %(_scans)s with %(processes)d processe(s).' % locals(), err=to_stdout)
+    click.secho('Scan options:    %(_scans)s with %(processes)d process(es).' % locals(), err=to_stdout)
     click.secho('Scanning speed:  {:.2} files per sec.'.format(files_scanned_per_second), err=to_stdout)
     click.secho('Scanning time:   %(scanning_time)ds.' % locals(), err=to_stdout, reset=True,)
     click.secho('Indexing time:   %(indexing_time)ds.' % locals(), err=to_stdout)
@@ -414,43 +422,6 @@ def scan(input_path, copyright=True, license=True, package=True,
     # finally return an iterator on cached results
     cached_scan = scans_cache_class()
     return files_count, cached_scan.iterate(with_infos=info)
-
-
-TEST_TIMEOUT = 0
-MAX_SCAN_TIMEOUT = 600
-
-TEST_MAX_MEMORY = 0 #1024 * 1024 * 1024 * 80  # 100MB
-MAX_SCAN_MEMORY = 1024 * 1024 * 1024 * 1024  # 1GB
-
-SCANCODE_EXPERIMENTAL_MAX_MEMORY = os.environ.get('SCANCODE_EXPERIMENTAL_MAX_MEMORY', False)
-
-
-def scan_timeout(size):
-    """
-    Return a scan timeout in seconds computed based on a file size.
-    """
-    # at least 60 seconds
-    timeout = 60
-    if size > 1024 * 1024 * 1024:
-        # add extra seconds for each megabyte
-        timeout += (size / 1024 * 1024 * 1024) * 30
-
-    timeout = min((timeout, MAX_SCAN_TIMEOUT))
-    return timeout
-
-
-def scan_max_memory(size):
-    """
-    Return a scan not-to-exceed maximum memory in bytes computed based on a file size.
-    """
-
-    max_memory = 1024 * 1024 * 1024 * 700  # 700MB
-    if size > 1024 * 1024 * 1024:
-        # add extra quota for each byte: 5x
-        max_memory += size * 5
-
-    max_memory = min((max_memory, MAX_SCAN_MEMORY))
-    return max_memory
 
 
 def _scanit(paths, scanners, scans_cache_class):
@@ -476,14 +447,15 @@ def _scanit(paths, scanners, scans_cache_class):
 
             file_size = infos.get('size', 0)
             # use TEST_TIMEOUT for tests if provided
-            timeout = TEST_TIMEOUT or scan_timeout(file_size)
-            # feature switch
-            if SCANCODE_EXPERIMENTAL_MAX_MEMORY:
-                # use TEST_MAX_MEMORY for tests if provided
-                max_memory = TEST_MAX_MEMORY or scan_max_memory(file_size)
-                success, scan_result = time_and_ram_interruptible(scans_runner, timeout=timeout, max_memory=max_memory)
-            else: 
-                success, scan_result = interruptible(scans_runner, timeout=timeout)                
+            timeout = TEST_TIMEOUT or compute_timeout(file_size)
+            kwargs = dict(timeout=timeout)
+
+            # use TEST_MAX_MEMORY for tests if provided
+            max_memory = TEST_MAX_MEMORY or compute_memory_quota(file_size)
+            kwargs['max_memory'] = max_memory
+
+            success, scan_result = interruptible(scans_runner, **kwargs)
+
             if not success:
                 # Use scan errors as the scan result for that file on failure
                 scan_result = dict(scan_errors=[scan_result, ''])

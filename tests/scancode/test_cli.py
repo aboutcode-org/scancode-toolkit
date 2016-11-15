@@ -358,11 +358,35 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
         assert result.exit_code == 0
         assert 'Scanning done' in result.output
         expected = [
-            {u'path': u'apache-1.1.txt', u'scan_errors': [u'Processing interrupted after timeout of 0 seconds.', u'']},
-             {u'path': u'apache-1.0.txt', u'scan_errors': [u'Processing interrupted after timeout of 0 seconds.', u'']},
-             {u'path': u'patchelf.pdf', u'scan_errors': [u'Processing interrupted after timeout of 0 seconds.', u'']}
+            {u'path': u'apache-1.1.txt', u'scan_errors': [u'Processing interrupted: timeout after 0 seconds.', u'']},
+             {u'path': u'apache-1.0.txt', u'scan_errors': [u'Processing interrupted: timeout after 0 seconds.', u'']},
+             {u'path': u'patchelf.pdf', u'scan_errors': [u'Processing interrupted: timeout after 0 seconds.', u'']}
         ]
         result_json = json.loads(open(result_file).read())
         assert sorted(expected) == sorted(result_json['files'])
     finally:
         cli.TEST_TIMEOUT = 0
+
+
+def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.get_test_loc('multiprocessing', copy=True)
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+
+    # set monkeypatched short timeout for test
+    try:
+        cli.TEST_MAX_MEMORY = 100
+
+        result = runner.invoke(cli.scancode, [ '--copyright', '--processes', '3', '--format', 'json', test_dir, result_file], catch_exceptions=True)
+        assert result.exit_code == 0
+        assert 'Scanning done' in result.output
+        expected = [
+            {u'path': u'apache-1.1.txt', u'scan_errors': [u'Processing interrupted: excessive memory usage of more than 0MB.', u'']},
+             {u'path': u'apache-1.0.txt', u'scan_errors': [u'Processing interrupted: excessive memory usage of more than 0MB.', u'']},
+             {u'path': u'patchelf.pdf', u'scan_errors': [u'Processing interrupted: excessive memory usage of more than 0MB.', u'']}
+        ]
+        result_json = json.loads(open(result_file).read())
+        assert sorted(expected) == sorted(result_json['files'])
+    finally:
+        cli.TEST_MAX_MEMORY = 0
