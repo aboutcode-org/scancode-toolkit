@@ -18,9 +18,9 @@ We use a pool of three threads that will race against each other to finish first
 - one will sleep until a timeout and then return
 - one will run a loop to check for memory usage and return when it exceeds max_memory
 
-The first thread that completes will return its result and win. e.g if the function
+The first thread to complete will return its result and win. e.g if the function
 completes within timeout and does not exceeds RAM, it will return first. Otherwise if
-the memory check or the timeout thread completes first, the may function will be
+the memory check or the timeout thread completes first, the main function will be
 killed and some error will be returned instead.
 """
 
@@ -60,7 +60,7 @@ MIN_TIMEOUT = 60  # seconds
 MAX_TIMEOUT = 600  # seconds
 RUNTIME_EXCEEDED = 1
 
-MIN_MEMORY = 640 * 1024 * 1024  # 640MB
+MIN_MEMORY = 1024 * 1024 * 1024  # 1GB
 MAX_MEMORY = 2 * 1024 * 1024 * 1024  # 2GB
 MEMORY_EXCEEDED = 2
 
@@ -72,11 +72,11 @@ def interruptible(func, *args, **kwargs):
     not return within `timeout` seconds of execution or uses more than 'max_memory`
     bytes of memory.
 
-    `timeout` defaults to MAX_TIMEOUT seconds and must be provided as a keyword
-    argument.
+    `timeout` in seconds should be provided as a keyword argument.
+    MAX_TIMEOUT is always enforced even if no timeout keyword is present.
 
-    `max_memory` defaults to MAX_MEMORY bytes and should be provided as a keyword
-    argument. If not present, there are maximum memory interruption is not enabled.
+    `max_memory` in bytes should be provided as a keyword argument.
+    If not present maximum memory quota is not enforced.
 
     Only `args` are passed to `func`, not any `kwargs`.
 
@@ -87,7 +87,6 @@ def interruptible(func, *args, **kwargs):
     max_memory and was interrupted. The second item in the tuple is an error message
     string.
     """
-    timeout = kwargs.pop('timeout', MIN_TIMEOUT)
 
     # We use a pool of three threads that will race to finish against each other:
     # - one will run the func proper
@@ -97,18 +96,26 @@ def interruptible(func, *args, **kwargs):
     # Other threads will be terminated.
 
     pool = ThreadPool(3)
-    execution_units = [
-        (func, args,),
-        (time_guard, [timeout],),
-    ]
+
+    # our execution units contain at least the the function to run proper
+    execution_units = [(func, args,)]
+
+    # add timeout only if present
+    if 'timeout' in kwargs:
+        timeout = kwargs.pop('timeout', MIN_TIMEOUT)
+        execution_units.append((time_guard, [timeout],))
+
+    # add memory quota only if present
     if 'max_memory' in kwargs:
         max_memory = kwargs.pop('max_memory', MIN_MEMORY)
         execution_units.append((memory_guard, [max_memory],))
 
-    # submit our three threads: whichever finishes first will be returned by the call to next()
+    # submit our three threads: whichever finishes first thanks to imap_unordered
+    # will be returned by the call to next()
     threads = pool.imap_unordered(runner, execution_units, chunksize=1)
 
     try:
+        # always use MAX_TIMEOUT
         result = threads.next(MAX_TIMEOUT)
         if result == MEMORY_EXCEEDED:
             max_mb = megabytes(max_memory)
@@ -116,15 +123,16 @@ def interruptible(func, *args, **kwargs):
         elif result == RUNTIME_EXCEEDED:
             return False, 'Processing interrupted: timeout after %(timeout)d seconds.' % locals()
         else:
-            # we succeeded with quotas: return results and stop processing
+            # we succeeded with quotas: return expected results
             return True, result
 
     except multiprocessing.TimeoutError:
-        return False, 'Processing interrupted after timeout of %(timeout)d seconds.' % locals()
+        return False, 'Processing interrupted: timeout after %(timeout)d seconds.' % locals()
 
     except KeyboardInterrupt:
         return False, 'Processing interrupted with Ctrl-C.'
     finally:
+        # stop processing
         pool.terminate()
 
 
@@ -168,7 +176,7 @@ def memory_guard(max_memory, interval=5):
                 return MEMORY_EXCEEDED
             sleep(interval)
         except:
-            # How could this happen? this is really bad???
+            # How could this happen? Some psutil issue??
             return MEMORY_EXCEEDED
 
 
