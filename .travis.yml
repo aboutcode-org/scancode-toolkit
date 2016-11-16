@@ -5,7 +5,8 @@ os:
   - linux 
 
 env:
-  - TEST_SUITE: bin/py.test -n 2 -s
+  - TEST_SUITE: bin/py.test -n 2 -s --ignore=tests/scancode/
+  - TEST_SUITE: bin/py.test -vvs tests/scancode/
   - TEST_SUITE: ./etc/release/release.sh
 
 
