@@ -146,8 +146,9 @@ def progressmanager(iterable=None, length=None, label=None, show_eta=True,
 
 def get_relative_path(path, len_base_path, base_is_dir):
     """
-    Compute a new posix path based on 'path' relative to the base in original
-    format or a fully resolved posix format.
+    Return a posix relative path from the posix 'path' relative to a base path of
+    `len_base_path` length where the base is a directory if `base_is_dir` True or a
+    file otherwise.
     """
     if base_is_dir:
         rel_path = path[len_base_path:]

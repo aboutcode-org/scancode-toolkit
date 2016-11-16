@@ -25,6 +25,7 @@
 from __future__ import absolute_import, print_function
 
 import codecs
+from collections import OrderedDict
 import json
 import os
 
@@ -36,7 +37,6 @@ from commoncode.fileutils import as_posixpath
 from commoncode.testcase import FileDrivenTesting
 
 from scancode import cli
-from collections import OrderedDict
 
 
 test_env = FileDrivenTesting()
@@ -77,19 +77,6 @@ def _load_json_result(result_file, test_dir):
     test_dir = as_posixpath(test_dir)
     with codecs.open(result_file, encoding='utf-8') as res:
         scan_result = json.load(res, object_pairs_hook=OrderedDict)
-    for result in scan_result['files']:
-        loc = result['path']
-        loc = as_posixpath(loc).replace(test_dir, '').strip('/')
-        result['path'] = loc
-
-        # strip errors from full stack trace for testing
-        error_messages = []
-        for errors in result.get('scan_errors', []):
-            for scan_name, messages in errors.items():
-                if isinstance(messages, (tuple, list,)):
-                    messages, _trace = messages
-                error_messages.append({scan_name: messages})
-        result['scan_errors'] = error_messages
 
     if scan_result.get('scancode_version'):
         del scan_result['scancode_version']
@@ -308,6 +295,28 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     assert 'patchelf.pdf' in result.output
 
 
+def test_scan_with_errors_and_diag_option_includes_full_traceback(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_file = test_env.get_test_loc('failing/patchelf.pdf')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('test.json')
+    result = runner.invoke(cli.scancode, [ '--copyright', '--diag', test_file, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    check_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file, test_file)
+    assert 'Some files failed to scan' in result.output
+    assert 'patchelf.pdf' in result.output
+
+def test_failing_scan_return_proper_exit_code(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_file = test_env.get_test_loc('failing/patchelf.pdf')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('test.json')
+    result = runner.invoke(cli.scancode, [ '--copyright', test_file, result_file], catch_exceptions=True)
+    # this will start failing when the proper return code is there, e.g. 1.
+    assert result.exit_code != 1
+
+
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
@@ -350,22 +359,28 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
 
-    # set monkeypatched short timeout for test
-    try:
-        cli.TEST_TIMEOUT = 0.01
+    patched_environ = dict(
+        # set small memory quota for test
+        SCANCODE_TEST_MAX_MEMORY='0',  # use default
+        SCANCODE_TEST_TIMEOUT='0.01',
+    )
 
-        result = runner.invoke(cli.scancode, [ '--copyright', '--processes', '2', '--format', 'json', test_dir, result_file], catch_exceptions=True)
-        assert result.exit_code == 0
-        assert 'Scanning done' in result.output
-        expected = [
-            {u'path': u'apache-1.1.txt', u'scan_errors': [u'Processing interrupted: timeout after 0 seconds.', u'']},
-            {u'path': u'apache-1.0.txt', u'scan_errors': [u'Processing interrupted: timeout after 0 seconds.', u'']},
-            {u'path': u'patchelf.pdf', u'scan_errors': [u'Processing interrupted: timeout after 0 seconds.', u'']}
-        ]
-        result_json = json.loads(open(result_file).read())
-        assert sorted(expected) == sorted(result_json['files'])
-    finally:
-        cli.TEST_TIMEOUT = 0
+    result = runner.invoke(
+        cli.scancode,
+        [ '--copyright', '--processes', '2', '--format', 'json', test_dir, result_file],
+        catch_exceptions=True,
+        env=patched_environ)
+
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    expected = [
+        {u'path': u'apache-1.0.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 0 seconds.']}]},
+        {u'path': u'patchelf.pdf', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 0 seconds.']}]},
+        {u'path': u'apache-1.1.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 0 seconds.']}]}
+    ]
+
+    result_json = json.loads(open(result_file).read())
+    assert sorted(expected) == sorted(result_json['files'])
 
 
 def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
@@ -374,19 +389,26 @@ def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
 
-    # set monkeypatched small memory quota for test
-    try:
-        cli.TEST_MAX_MEMORY = 30 * 1024 * 1024
+    patched_environ = dict(
+        # set small memory quota for test
+        SCANCODE_TEST_MAX_MEMORY=str(1 * 1024 * 1024),
+        SCANCODE_TEST_TIMEOUT='0',  # use default
+    )
 
-        result = runner.invoke(cli.scancode, [ '--copyright', '--license', '--processes', '2', '--format', 'json', test_dir, result_file], catch_exceptions=True)
-        assert result.exit_code == 0
-        assert 'Scanning done' in result.output
-        expected = [
-            {u'path': u'apache-1.1.txt', u'scan_errors': [u'Processing interrupted: excessive memory usage of more than 30MB.', u'']},
-            {u'path': u'apache-1.0.txt', u'scan_errors': [u'Processing interrupted: excessive memory usage of more than 30MB.', u'']},
-            {u'path': u'patchelf.pdf', u'scan_errors': [u'Processing interrupted: excessive memory usage of more than 30MB.', u'']}
-        ]
-        result_json = json.loads(open(result_file).read())
-        assert sorted(expected) == sorted(result_json['files'])
-    finally:
-        cli.TEST_MAX_MEMORY = 0
+    result = runner.invoke(
+        cli.scancode,
+        [ '--copyright', '--license', '--processes', '2', '--format', 'json', test_dir, result_file],
+        catch_exceptions=True,
+        env=patched_environ
+    )
+
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    expected = [
+        {u'path': u'apache-1.1.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: excessive memory usage of more than 1MB.']}]},
+        {u'path': u'apache-1.0.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: excessive memory usage of more than 1MB.']}]},
+        {u'path': u'patchelf.pdf', u'scan_errors': [{u'scan': [u'Processing interrupted: excessive memory usage of more than 1MB.']}]}
+    ]
+    result_json = json.loads(open(result_file).read())
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: False)
+    assert sorted(expected) == sorted(result_json['files'])
