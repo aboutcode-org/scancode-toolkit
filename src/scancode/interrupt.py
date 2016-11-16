@@ -113,6 +113,7 @@ def interruptible(func, *args, **kwargs):
     # submit our three threads: whichever finishes first thanks to imap_unordered
     # will be returned by the call to next()
     threads = pool.imap_unordered(runner, execution_units, chunksize=1)
+    pool.close()
 
     try:
         # always use MAX_TIMEOUT
