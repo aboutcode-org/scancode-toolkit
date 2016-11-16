@@ -7,4 +7,4 @@ build: off
 
 test_script:
     - python -c "import sys;print sys.getdefaultencoding()"
-    - py.test -n 2 -vvs tests/scancode
+    - py.test -vvs tests/scancode

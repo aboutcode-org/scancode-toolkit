@@ -8,5 +8,5 @@ install:
     - ./configure
 
 script:
-    - bin/py.test -n 2 -vvs tests/scancode
+    - bin/py.test -vvs tests/scancode
 
