@@ -72,7 +72,7 @@ class TestInterrupt(FileBasedTesting):
             sleep(exec_time)
             return 'OK'
 
-        result = interrupt.interruptible(some_long_function, 0.01, timeout=5, max_memory=1024 * 1024 * 1024)
+        result = interrupt.interruptible(some_long_function, 0.01, timeout=10, max_memory=1024 * 1024 * 1024)
         assert (True, 'OK') == result
 
     def test_interruptible_stops_execution_on_timeout(self):
@@ -82,7 +82,7 @@ class TestInterrupt(FileBasedTesting):
             sleep(exec_time)
             return 'OK'
 
-        result = interrupt.interruptible(some_long_function, 0.5, timeout=0.1)
+        result = interrupt.interruptible(some_long_function, 0.5, timeout=0.01)
         assert (False, 'Processing interrupted: timeout after 0 seconds.') == result
 
     def test_interruptible_stops_execution_on_memory(self):
@@ -94,9 +94,6 @@ class TestInterrupt(FileBasedTesting):
             _ram = range(1000000)
             return 'OK'
 
-        process = psutil.Process()
-        current_memory = process.memory_info().rss
-
-        success, result = interrupt.interruptible(some_hungry_function, 0.1, timeout=5, max_memory=current_memory + 1000)
+        success, result = interrupt.interruptible(some_hungry_function, 0.1, timeout=5, max_memory=1000)
         assert success == False
         assert 'Processing interrupted: excessive memory usage of more than' in result
