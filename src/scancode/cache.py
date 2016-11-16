@@ -115,7 +115,7 @@ class ScanCache(object):
 
     def put_scan(self, path, file_infos, scan_result):
         """
-        Put scan_result in the cache. Also put  file_infos in the cache if needed.
+        Put scan_result in the cache if not already cached.
         """
         scan_key = self.scan_key(path, file_infos)
         self.scans.add(scan_key, scan_result)
