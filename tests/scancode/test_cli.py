@@ -367,7 +367,7 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
 
     result = runner.invoke(
         cli.scancode,
-        [ '--copyright', '--processes', '2', '--format', 'json', test_dir, result_file],
+        [ '--copyright', '--license', '--processes', '2', '--format', 'json', test_dir, result_file],
         catch_exceptions=True,
         env=patched_environ)
 
@@ -380,7 +380,8 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
     ]
 
     result_json = json.loads(open(result_file).read())
-    assert sorted(expected) == sorted(result_json['files'])
+    for scan_result in result_json['files']:
+        assert any(scan_result in expected)
 
 
 def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
@@ -410,5 +411,5 @@ def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
         {u'path': u'patchelf.pdf', u'scan_errors': [{u'scan': [u'Processing interrupted: excessive memory usage of more than 1MB.']}]}
     ]
     result_json = json.loads(open(result_file).read())
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: False)
-    assert sorted(expected) == sorted(result_json['files'])
+    for scan_result in result_json['files']:
+        assert any(scan_result in expected)
