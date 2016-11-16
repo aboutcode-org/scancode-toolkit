@@ -357,6 +357,7 @@ def scan(input_path, copyright=True, license=True, package=True,
     indexing_time = 0
     if license:
         # build index outside of the main loop
+        # this also ensures that forked processes will get the index on POSIX naturally
         click.secho('Building license detection index...', err=to_stdout, fg='green')
         from licensedcode.index import get_index
         get_index()
@@ -376,6 +377,7 @@ def scan(input_path, copyright=True, license=True, package=True,
     # Yet "1" still provides a better and more progressive feedback.
     # With imap_unordered, results are returned as soon as ready and out of order.
     scanned_files = pool.imap_unordered(scanit, resources, chunksize=1)
+    pool.close()
 
     def scan_event(item):
         """Progress event displayed each time a file is scanned"""
