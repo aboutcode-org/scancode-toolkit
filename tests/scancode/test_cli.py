@@ -380,8 +380,7 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
     ]
 
     result_json = json.loads(open(result_file).read())
-    for scan_result in result_json['files']:
-        assert any(scan_result in expected)
+    assert any(scan_result in expected for scan_result in result_json['files'])
 
 
 def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
@@ -411,5 +410,4 @@ def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
         {u'path': u'patchelf.pdf', u'scan_errors': [{u'scan': [u'Processing interrupted: excessive memory usage of more than 1MB.']}]}
     ]
     result_json = json.loads(open(result_file).read())
-    for scan_result in result_json['files']:
-        assert any(scan_result in expected)
+    assert any(scan_result in expected for scan_result in result_json['files'])
