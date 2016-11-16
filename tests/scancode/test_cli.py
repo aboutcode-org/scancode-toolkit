@@ -25,6 +25,7 @@
 from __future__ import absolute_import, print_function
 
 import codecs
+from collections import OrderedDict
 import json
 import os
 
@@ -36,7 +37,6 @@ from commoncode.fileutils import as_posixpath
 from commoncode.testcase import FileDrivenTesting
 
 from scancode import cli
-from collections import OrderedDict
 
 
 test_env = FileDrivenTesting()
@@ -77,20 +77,7 @@ def _load_json_result(result_file, test_dir):
     test_dir = as_posixpath(test_dir)
     with codecs.open(result_file, encoding='utf-8') as res:
         scan_result = json.load(res, object_pairs_hook=OrderedDict)
-    for result in scan_result['files']:
-        loc = result['path']
-        loc = as_posixpath(loc).replace(test_dir, '').strip('/')
-        result['path'] = loc
 
-        # strip errors from full stack trace for testing
-        error_messages = []
-        for errors in result.get('scan_errors',[]):
-            for scan_name, messages in errors.items():
-                if isinstance(messages,(tuple, list,)):
-                    messages, _trace = messages
-                error_messages.append({scan_name: messages})
-        result['scan_errors'] = error_messages
-        
     if scan_result.get('scancode_version'):
         del scan_result['scancode_version']
 
@@ -236,7 +223,7 @@ def test_paths_are_posix_paths_in_html_app_format_output(monkeypatch):
     assert 'Scanning done' in result.output
     # the data we want to test is in the data.json file
     data_file = os.path.join(fileutils.parent_directory(result_file), 'test_html_files', 'data.json')
-    assert '/posix_path/copyright_acme_c-c.c' in open(data_file).read()
+    assert 'copyright_acme_c-c.c' in open(data_file).read()
 
 
 def test_paths_are_posix_in_html_format_output(monkeypatch):
@@ -247,7 +234,7 @@ def test_paths_are_posix_in_html_format_output(monkeypatch):
     result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    assert '/posix_path/copyright_acme_c-c.c' in open(result_file).read()
+    assert 'copyright_acme_c-c.c' in open(result_file).read()
 
 
 def test_paths_are_posix_in_json_format_output(monkeypatch):
@@ -258,7 +245,7 @@ def test_paths_are_posix_in_json_format_output(monkeypatch):
     result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'json', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    assert '/posix_path/copyright_acme_c-c.c' in open(result_file).read()
+    assert 'copyright_acme_c-c.c' in open(result_file).read()
 
 
 def test_format_with_custom_filename_fails_for_directory(monkeypatch):
@@ -304,6 +291,30 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file, test_file)
+    assert 'Some files failed to scan' in result.output
+    assert 'patchelf.pdf' in result.output
+
+
+def test_scan_with_errors_and_diag_option_includes_full_traceback(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_file = test_env.get_test_loc('failing/patchelf.pdf')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('test.json')
+    result = runner.invoke(cli.scancode, [ '--copyright', '--diag', test_file, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    check_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file, test_file)
+    assert 'Some files failed to scan' in result.output
+    assert 'patchelf.pdf' in result.output
+
+def test_failing_scan_return_proper_exit_code(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_file = test_env.get_test_loc('failing/patchelf.pdf')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('test.json')
+    result = runner.invoke(cli.scancode, [ '--copyright', test_file, result_file], catch_exceptions=True)
+    # this will start failing when the proper return code is there, e.g. 1.
+    assert result.exit_code != 1
 
 
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html(monkeypatch):
@@ -324,3 +335,79 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html-app', test_file, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
+
+
+def test_scan_works_with_multiple_processes(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.get_test_loc('multiprocessing', copy=True)
+    runner = CliRunner()
+    # run the same scan with one or three processes
+    result_file_1 = test_env.get_temp_file('json')
+    result1 = runner.invoke(cli.scancode, [ '--copyright', '--processes', '1', '--format', 'json', test_dir, result_file_1], catch_exceptions=True)
+    assert result1.exit_code == 0
+    result_file_3 = test_env.get_temp_file('json')
+    result3 = runner.invoke(cli.scancode, [ '--copyright', '--processes', '3', '--format', 'json', test_dir, result_file_3], catch_exceptions=True)
+    assert result3.exit_code == 0
+    res1 = json.loads(open(result_file_1).read())
+    res3 = json.loads(open(result_file_3).read())
+    assert sorted(res1['files']) == sorted(res3['files'])
+
+
+def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.get_test_loc('multiprocessing', copy=True)
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+
+    patched_environ = dict(
+        # set small memory quota for test
+        SCANCODE_TEST_MAX_MEMORY='0',  # use default
+        SCANCODE_TEST_TIMEOUT='0.01',
+    )
+
+    result = runner.invoke(
+        cli.scancode,
+        [ '--copyright', '--license', '--processes', '2', '--format', 'json', test_dir, result_file],
+        catch_exceptions=True,
+        env=patched_environ)
+
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    expected = [
+        {u'path': u'apache-1.0.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 0 seconds.']}]},
+        {u'path': u'patchelf.pdf', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 0 seconds.']}]},
+        {u'path': u'apache-1.1.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 0 seconds.']}]}
+    ]
+
+    result_json = json.loads(open(result_file).read())
+    assert any(scan_result in expected for scan_result in result_json['files'])
+
+
+def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.get_test_loc('multiprocessing', copy=True)
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+
+    patched_environ = dict(
+        # set small memory quota for test
+        SCANCODE_TEST_MAX_MEMORY=str(1 * 1024 * 1024),
+        SCANCODE_TEST_TIMEOUT='0',  # use default
+    )
+
+    result = runner.invoke(
+        cli.scancode,
+        [ '--copyright', '--license', '--processes', '2', '--format', 'json', test_dir, result_file],
+        catch_exceptions=True,
+        env=patched_environ
+    )
+
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    expected = [
+        {u'path': u'apache-1.1.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: excessive memory usage of more than 1MB.']}]},
+        {u'path': u'apache-1.0.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: excessive memory usage of more than 1MB.']}]},
+        {u'path': u'patchelf.pdf', u'scan_errors': [{u'scan': [u'Processing interrupted: excessive memory usage of more than 1MB.']}]}
+    ]
+    result_json = json.loads(open(result_file).read())
+    assert any(scan_result in expected for scan_result in result_json['files'])

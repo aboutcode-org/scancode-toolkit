@@ -7,10 +7,4 @@ build: off
 
 test_script:
     - python -c "import sys;print sys.getdefaultencoding()"
-    - py.test -n 2 -s
-
-on_success:
-  - "python etc/scripts/irc-notify.py aboutcode [{project_name}:{branch}] {short_commit}: \"{message}\" ({author}) {color_green}Succeeded,Details: {build_url},Commit: {commit_url}"
-
-on_failure:
-  - "python etc/scripts/irc-notify.py aboutcode [{project_name}:{branch}] {short_commit}: \"{message}\" ({author}) {color_red}Failed,Details: {build_url},Commit: {commit_url}"
+    - py.test -vvs tests/scancode

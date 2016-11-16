@@ -22,10 +22,33 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import print_function, absolute_import, division
+
+###########################################################################
+# Monkeypatch Pool iterators so that Ctrl-C interrupts everything properly
+# derived from https://gist.github.com/aljungberg/626518
+# FIXME: unknown license
+###########################################################################
+from multiprocessing.pool import IMapIterator, IMapUnorderedIterator
+
+def wrapped(func):
+    # ensure that we do not double wrap
+    if func.func_name != 'wrap':
+        def wrap(self, timeout=None):
+            return func(self, timeout=timeout or 1e10)
+        return wrap
+    else:
+        return func
+
+IMapIterator.next = wrapped(IMapIterator.next)
+IMapIterator.__next__ = IMapIterator.next
+IMapUnorderedIterator.next = wrapped(IMapUnorderedIterator.next)
+IMapUnorderedIterator.__next__ = IMapUnorderedIterator.next
+###########################################################################
 
 from collections import OrderedDict
 from functools import partial
+from multiprocessing import Pool
 import os
 from os.path import expanduser
 from os.path import abspath
@@ -36,14 +59,21 @@ from types import GeneratorType
 import click
 from click.termui import style
 import simplejson as json
+from time import time
 
 from commoncode import ignore
 from commoncode import fileutils
+from commoncode import filetype
 
 from scancode import __version__ as version
+
+from scancode.interrupt import interruptible
+from scancode.interrupt import compute_memory_quota
+from scancode.interrupt import compute_timeout
+
 from scancode import utils
 
-from scancode.cache import get_scans_cache
+from scancode.cache import get_scans_cache_class
 
 from scancode.format import as_template
 from scancode.format import as_html_app
@@ -57,6 +87,11 @@ from scancode.api import get_file_infos
 from scancode.api import get_licenses
 from scancode.api import get_package_infos
 from scancode.api import get_urls
+
+
+# set a value only for testing scan quotas
+TEST_TIMEOUT = 0
+TEST_MAX_MEMORY = 0
 
 
 info_text = '''
@@ -235,7 +270,8 @@ def validate_formats(ctx, param, value):
 @click.option('--email', is_flag=True, default=False, help='Scan <input> for emails.')
 @click.option('--url', is_flag=True, default=False, help='Scan <input> for urls.')
 @click.option('-i', '--info', is_flag=True, default=False, help='Scan <input> for files information.')
-@click.option('--license-score', is_flag=False, default=0, type=int, show_default=True, help='Matches with scores lower than this score are not returned. A number between 0 and 100.')
+@click.option('--license-score', is_flag=False, default=0, type=int, show_default=True,
+              help='Matches with scores lower than this score are not returned. A number between 0 and 100.')
 
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
               help=('Set <output_file> format <style> to one of the standard formats: %s '
@@ -243,14 +279,18 @@ def validate_formats(ctx, param, value):
               callback=validate_formats)
 @click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.')
 @click.option('--quiet', is_flag=True, default=False, help='Do not print any progress message.')
+@click.option('-n', '--processes', is_flag=False, default=1, type=int, help='Scan <input> using n parallel processes.')
 
 @click.help_option('-h', '--help')
 @click.option('--examples', is_flag=True, is_eager=True, callback=print_examples, help=('Show command examples and exit.'))
 @click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.')
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
+@click.option('--diag', is_flag=True, default=False, help='Include detailed diagnnostic messages for scanning errors.')
 
 def scancode(ctx, input, output_file, copyright, license, package,
-             email, url, info, license_score, format, verbose, quiet, *args, **kwargs):
+             email, url, info, license_score, format, 
+             verbose, quiet, processes, diag,
+             *args, **kwargs):
     """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
 
     The scan results are printed on terminal if <output_file> is not provided.
@@ -262,37 +302,42 @@ def scancode(ctx, input, output_file, copyright, license, package,
         license = True
         package = True
 
-    scans_cache = get_scans_cache()
+    scans_cache_class = get_scans_cache_class()
     try:
-        files_count, results = scan(input, copyright, license, package, email, url, info, license_score, verbose, quiet, scans_cache)
+        to_stdout = output_file == sys.stdout
+        # for tests only
+        _timeout = float(os.environ.get('SCANCODE_TEST_TIMEOUT', '0'))
+        _max_memory = int(os.environ.get('SCANCODE_TEST_MAX_MEMORY', '0'))
+        files_count, results = scan(input, copyright, license, package, email, url, info, license_score,
+                                    verbose, quiet, processes, scans_cache_class, to_stdout,
+                                    diag, _timeout, _max_memory)
         save_results(files_count, results, format, input, output_file)
     finally:
         # cleanup
-        scans_cache.clear()
+        cache = scans_cache_class()
+        cache.clear()
 
 
 def scan(input_path, copyright=True, license=True, package=True,
          email=False, url=False, info=True, license_score=0,
-         verbose=False, quiet=False,
-         scans_cache=None):
+         verbose=False, quiet=False, processes=1,
+         scans_cache_class=None, to_stdout=False, 
+         diag=False, _timeout=0, _max_memory=0):
     """
-    Return a tuple of (file_count, scan_results) where scan_results is an iterable.
-    Run each requested scan proper: each individual file scan is cached on disk to
-    free memory. Then the whole set of scans is loaded from the cache and streamed at
-    the end.
+    Return a tuple of (file_count, indexing_time, scan_results) where
+    scan_results is an iterable. Run each requested scan proper: each individual file
+    scan is cached on disk to free memory. Then the whole set of scans is loaded from
+    the cache and streamed at the end.
     """
-    assert scans_cache
-
-    # save paths to report paths relative to the original input
-    original_input = fileutils.as_posixpath(input_path)
-    abs_input = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(input_path)))
-
+    assert scans_cache_class
+    scan_summary = OrderedDict()
+    scan_summary['scanned_path'] = input_path
+    scan_summary['processes'] = processes
     get_licenses_with_score = partial(get_licenses, min_score=license_score)
 
     # note: "flag and function" expressions return the function if flag is True
     # note: the order of the scans matters to show things in logical order
     scanners = OrderedDict([
-        # ('infos' , info and get_file_infos),
         ('licenses' , license and get_licenses_with_score),
         ('copyrights' , copyright and get_copyrights),
         ('packages' , package and get_package_infos),
@@ -300,64 +345,169 @@ def scan(input_path, copyright=True, license=True, package=True,
         ('urls' , url and get_urls),
     ])
 
-    # note: we inline progress display functions to close on some args
+    # Display scan start details
+    ############################
+    scans = info and ['infos'] or []
+    scans.extend([k for k, v in scanners.items() if v])
+    _scans = ', '.join(scans)
+    click.secho('Scanning files for: %(_scans)s with %(processes)d process(es)...' % locals(), err=to_stdout)
 
-    def scan_start():
-        """Progress event displayed at start of scan"""
-        return style('Scanning files...', fg='green')
+    scan_summary['scans'] = scans[:]
+    scan_start = time()
+    indexing_time = 0
+    if license:
+        # build index outside of the main loop
+        # this also ensures that forked processes will get the index on POSIX naturally
+        click.secho('Building license detection index...', err=to_stdout, fg='green')
+        from licensedcode.index import get_index
+        get_index()
+        indexing_time = time() - scan_start
+
+    scan_summary['indexing_time'] = indexing_time
+
+    # TODO: handle pickling errors as in ./scancode -cilp   samples/ -n3: note they are only caused by a FanoutCache
+    # TODO: handle other exceptions properly to avoid any hanging
+
+    # maxtasksperchild helps with recycling processes in case of leaks
+    pool = Pool(processes=processes, maxtasksperchild=1000)
+    resources = resource_paths(input_path)
+    scanit = partial(_scanit, scanners=scanners, scans_cache_class=scans_cache_class,
+                     diag=diag, _timeout=_timeout, _max_memory=_max_memory)
+    # Using chunksize is documented as much more efficient in the Python doc.
+    # Yet "1" still provides a better and more progressive feedback.
+    # With imap_unordered, results are returned as soon as ready and out of order.
+    scanned_files = pool.imap_unordered(scanit, resources, chunksize=1)
+    pool.close()
 
     def scan_event(item):
         """Progress event displayed each time a file is scanned"""
         if item:
-            line = verbose and item or fileutils.file_name(item) or ''
-            return 'Scanning: %(line)s' % locals()
+            _scan_success, _scanned_path = item
+            _progress_line = verbose and _scanned_path or fileutils.file_name(_scanned_path)
+            return style('Scanning: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
 
-    def scan_end():
-        """Progress event displayed at end of scan"""
-        has_warnings = False
-        has_errors = False
-        summary = []
-        summary_color = 'green'
-        summary_color = has_warnings and 'yellow' or summary_color
-        summary_color = has_errors and 'red' or summary_color
-        summary.append(style('Scanning done.', fg=summary_color, reset=True))
-        return '\n'.join(summary)
+    scanning_errors = []
+    files_count = 0
+    with utils.progressmanager(scanned_files, item_show_func=scan_event,
+                               show_pos=True, verbose=verbose, quiet=quiet) as scanned:
+        while True:
+            try:
+                result = scanned.next()
+                scan_success, scanned_rel_path = result
+                if not scan_success:
+                    scanning_errors.append(scanned_rel_path)
+                files_count += 1
+            except StopIteration:
+                break
+            except KeyboardInterrupt:
+                print('\nAborted!')
+                pool.terminate()
+                break
 
+    # Compute stats
+    ##########################
+    scan_summary['files_count'] = files_count
+    scan_summary['files_with_errors'] = scanning_errors
+    total_time = time() - scan_start
+    scanning_time = total_time - indexing_time
+    scan_summary['total_time'] = total_time
+    scan_summary['scanning_time'] = scanning_time
+    files_scanned_per_second = round(float(files_count) / scanning_time , 2)
+    scan_summary['files_scanned_per_second'] = files_scanned_per_second
+
+    # Display stats
+    ##########################
+    click.secho('Scanning done.' % locals(), fg=scanning_errors and 'red' or 'green', err=to_stdout)
+    if scanning_errors:
+        click.secho('Some files failed to scan properly. See scan for details:', fg='red', err=to_stdout)
+        for errored_path in scanning_errors:
+            click.secho(' ' + errored_path, fg='red', err=to_stdout)
+
+    click.secho('Scan statistics: %(files_count)d files scanned in %(total_time)ds.' % locals(), err=to_stdout)
+    click.secho('Scan options:    %(_scans)s with %(processes)d process(es).' % locals(), err=to_stdout)
+    click.secho('Scanning speed:  {:.2} files per sec.'.format(files_scanned_per_second), err=to_stdout)
+    click.secho('Scanning time:   %(scanning_time)ds.' % locals(), err=to_stdout, reset=True,)
+    click.secho('Indexing time:   %(indexing_time)ds.' % locals(), err=to_stdout)
+
+    # finally return an iterator on cached results
+    cached_scan = scans_cache_class()
+    return files_count, cached_scan.iterate(with_infos=info)
+
+
+def _scanit(paths, scanners, scans_cache_class, diag, _timeout=0, _max_memory=0):
+    """
+    Run scans and cache results on disk. Return a tuple of (success, scanned relative
+    path) where sucess is True on success, False on error. Note that this is really
+    only a wrapper function used as an execution unit for parallel processing.
+    """
+    abs_path, rel_path = paths
+    # always fetch infos and cache.
+    infos = scan_infos(abs_path)
+    scans_cache = None
+    success = True
+    try:
+        # build a local instance of a cache
+        scans_cache = scans_cache_class()
+        is_cached = scans_cache.put_infos(rel_path, infos)
+
+        # Skip other scans if already cached
+        # ENSURE we only do tghis for files not directories
+        if not is_cached:
+            # run the scan as an interruptiple task
+            scans_runner = partial(scan_one, abs_path, scanners, diag)
+
+            file_size = infos.get('size', 0)
+
+            # quota keyword args for interruptible
+            # use _timeout or _max_memory for tests if provided or compute these quotas
+            kwargs = dict()
+            kwargs['timeout'] = _timeout or compute_timeout(file_size)
+            kwargs['max_memory'] = _max_memory or compute_memory_quota(file_size)
+
+            success, scan_result = interruptible(scans_runner, **kwargs)
+
+            if not success:
+                # Use scan errors as the scan result for that file on failure this is
+                # a top-level error not attachedd to a specific scanner, hence the
+                # "scan" key is used for these errors
+                scan_result = {'scan_errors': [{'scan': [scan_result]}]}
+
+            scans_cache.put_scan(rel_path, infos, scan_result)
+
+            # do not report success if some other errors happened
+            if scan_result.get('scan_errors'):
+                success = False
+    finally:
+        if scans_cache:
+            scans_cache.close()
+
+    return success, rel_path
+
+
+def resource_paths(base_path):
+    """
+    Yield tuples of (absolute path, base_path-relative path) for all the files found
+    at base_path (either a directory or file) given an absolute base_path. Only yield
+    Files, not directories. All outputs are POSIX paths.
+    """
+    base_path = os.path.abspath(os.path.normpath(os.path.expanduser(base_path)))
+    base_is_dir = filetype.is_dir(base_path)
+    len_base_path = len(base_path)
     ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
-    resources = fileutils.resource_iter(abs_input, ignored=ignored)
+    resources = fileutils.resource_iter(base_path, ignored=ignored)
 
-    with utils.progressmanager(resources,
-                               item_show_func=scan_event,
-                               start_show_func=scan_start,
-                               finish_show_func=scan_end,
-                               verbose=verbose,
-                               show_pos=True,
-                               quiet=quiet
-                               ) as progressive_resources:
-
-        for files_count, resource in enumerate(progressive_resources):
-            # actual path of the file being scanned
-            res = fileutils.as_posixpath(resource)
-            # fix paths: keep the path as relative to the original input
-            relative_path = utils.get_relative_path(original_input, abs_input, res)
-
-            # always fetch infos and cache.
-            infos = scan_infos(res)
-            is_cached = scans_cache.put_infos(relative_path, infos)
-
-            # Skip other scans if already cached
-            if is_cached:
-                continue
-            scan_result = scan_one(res, scanners)
-            scans_cache.put_scan(relative_path, infos, scan_result)
-        files_count += 1
-    return files_count, scans_cache.iterate(with_infos=info)
+    for abs_path in resources:
+        posix_path = fileutils.as_posixpath(abs_path)
+        # fix paths: keep the path as relative to the original base_path
+        rel_path = utils.get_relative_path(posix_path, len_base_path, base_is_dir)
+        yield posix_path, rel_path
 
 
 def scan_infos(input_file):
     """
-    Scan one file or directory and return file_infos data. This may contain an
-    'errors' key with a list of error messages.
+    Scan one file or directory and return file_infos data.
+    This always contains an extra 'errors' key with a list of error messages,
+    possibly empty.
     """
     infos = OrderedDict()
     errors = []
@@ -371,18 +521,19 @@ def scan_infos(input_file):
     return infos
 
 
-def scan_one(input_file, scans):
+def scan_one(input_file, scans, diag=False):
     """
     Scan one file or directory and return a scanned data, calling every scan in
-    the `scans` mapping of (scan name -> scan function). This may contain an
-    'errors' key with a list of error messages.
+    the `scans` mapping of (scan name -> scan function). Scan data contain a
+    'scan_errors' key with errors a dictionary keyed by "scan name" and a value as a
+    list of errors messages. If `diag` is True, 'scan_errors' error messages
+    also contain detailed diagnotics information, e.g. a traceback if available.
     """
     scan_result = OrderedDict()
-    errors = []
+    scan_errors = []
     for scan_name, scan_func in scans.items():
         if not scan_func:
             continue
-        scan_errors = dict()
         try:
             scan_details = scan_func(input_file)
             # consume generators
@@ -392,16 +543,18 @@ def scan_one(input_file, scans):
         except Exception, e:
             # never fail but instead add an error message and keep an empty scan:
             scan_result[scan_name] = []
-            scan_errors[scan_name] = (e.message, traceback.format_exc(),)
-            errors.append(scan_errors)
-    # put errors last
-    scan_result['scan_errors'] = errors
+            errs = [e.message]
+            if diag:
+                errs.append(traceback.format_exc())
+            scan_errors.append({scan_name: [e.message]})
+    # put errors last, after scans proper
+    scan_result['scan_errors'] = scan_errors
     return scan_result
 
 
 def save_results(files_count, scanned_files, format, input, output_file):
     """
-    Save results to file or screen.
+    Save scan results to file or screen.
     """
     if output_file != sys.stdout:
         parent_dir = os.path.dirname(output_file.name)
@@ -437,5 +590,6 @@ def save_results(files_count, scanned_files, format, input, output_file):
         meta['files'] = scanned_files
         # json.dump(meta, output_file, indent=2)
         json.dump(meta, output_file, indent=2 * ' ', iterable_as_array=True)
+        output_file.write('\n')
     else:
         raise Exception('unknown format')
