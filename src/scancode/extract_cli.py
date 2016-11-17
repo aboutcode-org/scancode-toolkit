@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -27,16 +27,15 @@ from __future__ import print_function, absolute_import
 import os
 
 import click
+from click.termui import style
 
-from scancode.cli import version
-from scancode.cli import print_about
+from commoncode import fileutils
+from commoncode import filetype
 
 from scancode.api import extract_archives
-from scancode.utils import BaseCommand
-from commoncode import fileutils
+from scancode.cli import print_about
+from scancode.cli import version
 from scancode import utils
-from click.termui import style
-from commoncode.fileutils import as_posixpath
 
 
 def print_version(ctx, param, value):
@@ -69,7 +68,7 @@ Extract a single archive. Files are extracted in the directory
 '''
 
 
-class ExtractCommand(BaseCommand):
+class ExtractCommand(utils.BaseCommand):
     short_usage_help = '''
 Try 'extractcode --help' for help on options and arguments.'''
 
@@ -89,19 +88,12 @@ Try 'extractcode --help' for help on options and arguments.'''
 def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssignment
     """extract archives and compressed files found in the <input> file or directory tree.
 
-    Use this command before scanning proper, as an <input> preparation step.
+    Use this command before scanning proper as an <input> preparation step.
     Archives found inside an extracted archive are extracted recursively.
     Extraction is done in-place in a directory named '-extract' side-by-side with an archive.
     """
 
-    original_input = fileutils.as_posixpath(input)
-    abs_input = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(input)))
-
-    # note: we inline functions so they can close on local variables
-
-    def extract_start():
-        return style('Extracting archives...', fg='green')
-
+    abs_location = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(input)))
 
     def extract_event(item):
         """
@@ -112,13 +104,13 @@ def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssign
         if verbose:
             if item.done:
                 return ''
-            line = utils.get_relative_path(original_input, abs_input, as_posixpath(item.source)) or ''
+            line = item.source and utils.get_relative_path(path=item.source, len_base_path=len_base_path, base_is_dir=base_is_dir) or ''
         else:
-            line = fileutils.file_name(item.source) or ''
+            line = item.source and fileutils.file_name(item.source) or ''
         return 'Extracting: %(line)s' % locals()
 
 
-    def extract_end():
+    def display_extract_summary():
         """
         Display a summary of warnings and errors if any.
         """
@@ -128,12 +120,12 @@ def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssign
         for xev in extract_results:
             has_errors = has_errors or bool(xev.errors)
             has_warnings = has_warnings or bool(xev.warnings)
-            source = as_posixpath(xev.source)
-            source = utils.get_relative_path(original_input, abs_input, source)
+            source = fileutils.as_posixpath(xev.source)
+            source = utils.get_relative_path(path=source, len_base_path=len_base_path, base_is_dir=base_is_dir)
             for e in xev.errors:
-                summary.append(style('ERROR extracting: %(source)s: %(e)r' % locals(), fg='red', reset=False))
+                summary.append(style('ERROR extracting: %(source)s: %(e)r' % locals(), fg='red'))
             for warn in xev.warnings:
-                summary.append(style('WARNING extracting: %(source)s: %(warn)r' % locals(), fg='yellow', reset=False))
+                summary.append(style('WARNING extracting: %(source)s: %(warn)r' % locals(), fg='yellow'))
 
         summary_color = 'green'
         if has_warnings:
@@ -141,24 +133,26 @@ def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssign
         if has_errors:
             summary_color = 'red'
 
-        summary.append(style('Extracting done.', fg=summary_color, reset=True))
-        return '\n'.join(summary)
+        summary.append(style('Extracting done.', fg=summary_color))
+        click.secho('\n'.join(summary), err=not verbose, reset=True)
 
+    # use for relative paths computation
+    len_base_path = len(abs_location)
+    base_is_dir = filetype.is_dir(abs_location)
 
     extract_results = []
     has_extract_errors = False
 
-    with utils.progressmanager(extract_archives(abs_input),
-                               item_show_func=extract_event,
-                               start_show_func=extract_start,
-                               finish_show_func=extract_end,
-                               verbose=verbose,
-                               quiet=quiet,
-                               ) as extraction_events:
+    click.secho('Extracting archives...', fg='green', err=not verbose)
+
+    with utils.progressmanager(extract_archives(abs_location), item_show_func=extract_event,
+                               verbose=verbose, quiet=quiet) as extraction_events:
         for xev in extraction_events:
             if xev.done and (xev.warnings or xev.errors):
                 has_extract_errors = has_extract_errors or xev.errors
                 extract_results.append(xev)
+
+    display_extract_summary()
 
     rc = 1 if has_extract_errors else 0
     ctx.exit(rc)

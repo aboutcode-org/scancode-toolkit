@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -64,25 +64,25 @@ def test_extractcode_command_does_extract_verbose(monkeypatch):
     assert os.path.exists(os.path.join(test_dir, 'some.tar.gz-extract'))
     expected = [
         'Extracting archives...',
-        '/some.tar.gz',
-        '/broken.tar.gz',
-        '/tarred_gzipped.tgz',
+        'some.tar.gz',
+        'broken.tar.gz',
+        'tarred_gzipped.tgz',
         'ERROR extracting',
-        "/broken.tar.gz: 'Unrecognized archive format'",
+        "broken.tar.gz: 'Unrecognized archive format'",
         'Extracting done.',
     ]
     for e in expected:
         assert e in result.output
 
 
-def test_extractcode_command_does_no_show_anything_if_not_using_a_tty(monkeypatch):
+def test_extractcode_command_always_shows_something_if_not_using_a_tty_verbose_or_not(monkeypatch):
     test_dir = test_env.get_test_loc('extract/some.tar.gz', copy=True)
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: False)
     runner = CliRunner()
     result = runner.invoke(extract_cli.extractcode, ['--verbose', test_dir])
-    assert '' == result.output
+    assert 'Extracting archives...\nExtracting done.\n' == result.output
     result = runner.invoke(extract_cli.extractcode, [test_dir])
-    assert '' == result.output
+    assert 'Extracting archives...\nExtracting done.\n' == result.output
 
 
 def test_extractcode_command_works_with_relative_paths(monkeypatch):
