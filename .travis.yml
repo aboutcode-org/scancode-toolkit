@@ -1,14 +1,14 @@
 language: cpp
 
 os: 
-  - osx
-  - linux 
+    - osx
+    - linux 
 
 env:
-  - TEST_SUITE: "bin/py.test -n 2 -s --ignore=tests/scancode"
-  - TEST_SUITE: "bin/py.test -vvs tests/scancode"
-  - TEST_SUITE: "./etc/release/release.sh"
-
+    matrix:
+        - TEST_SUITE="bin/py.test -n 2 -s --ignore=tests/scancode"
+        - TEST_SUITE="bin/py.test -vvs tests/scancode"
+        - TEST_SUITE="./etc/release/release.sh"
 
 install:
     - ./configure
@@ -25,4 +25,4 @@ notifications:
     use_notice: true
     skip_join: true
     template:
-      - "%{repository_slug}#%{build_number} (%{branch} - %{commit} : %{author}): %{message} : %{build_url}"
+        - "%{repository_slug}#%{build_number} (%{branch} - %{commit} : %{author}): %{message} : %{build_url}"
