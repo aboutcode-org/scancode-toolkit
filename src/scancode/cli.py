@@ -288,7 +288,7 @@ def validate_formats(ctx, param, value):
 @click.option('--diag', is_flag=True, default=False, help='Include detailed diagnnostic messages for scanning errors.')
 
 def scancode(ctx, input, output_file, copyright, license, package,
-             email, url, info, license_score, format, 
+             email, url, info, license_score, format,
              verbose, quiet, processes, diag,
              *args, **kwargs):
     """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
@@ -321,7 +321,7 @@ def scancode(ctx, input, output_file, copyright, license, package,
 def scan(input_path, copyright=True, license=True, package=True,
          email=False, url=False, info=True, license_score=0,
          verbose=False, quiet=False, processes=1,
-         scans_cache_class=None, to_stdout=False, 
+         scans_cache_class=None, to_stdout=False,
          diag=False, _timeout=0, _max_memory=0):
     """
     Return a tuple of (file_count, indexing_time, scan_results) where
@@ -360,7 +360,7 @@ def scan(input_path, copyright=True, license=True, package=True,
         # this also ensures that forked processes will get the index on POSIX naturally
         click.secho('Building license detection index...', err=to_stdout, fg='green')
         from licensedcode.index import get_index
-        get_index()
+        _idx = get_index()
         indexing_time = time() - scan_start
 
     scan_summary['indexing_time'] = indexing_time
@@ -384,7 +384,7 @@ def scan(input_path, copyright=True, license=True, package=True,
         if item:
             _scan_success, _scanned_path = item
             _progress_line = verbose and _scanned_path or fileutils.file_name(_scanned_path)
-            return style('Scanning: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
+            return style('Scanned: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
 
     scanning_errors = []
     files_count = 0

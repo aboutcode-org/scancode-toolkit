@@ -26,8 +26,6 @@ from __future__ import absolute_import, print_function
 
 import os
 
-import psutil
-
 from commoncode.testcase import FileBasedTesting
 
 from scancode import interrupt
@@ -44,9 +42,9 @@ class TestInterrupt(FileBasedTesting):
 
     def test_compute_memory_quota(self):
         assert interrupt.MIN_MEMORY == interrupt.compute_memory_quota(0)
-        assert interrupt.MIN_MEMORY + (1000 * 5) == interrupt.compute_memory_quota(1000)
-        assert interrupt.MIN_MEMORY + (10 * 1024 * 1024 * 5) == interrupt.compute_memory_quota(10 * 1024 * 1024)
-        assert interrupt.MAX_MEMORY == interrupt.compute_memory_quota(1000 * 1024 * 1024)
+        assert interrupt.MIN_MEMORY <= interrupt.compute_memory_quota(1000)
+        assert interrupt.MIN_MEMORY < interrupt.compute_memory_quota(10 * 1024 * 1024)
+        assert interrupt.MIN_MEMORY < interrupt.compute_memory_quota(1000 * 1024 * 1024) <= interrupt.MAX_MEMORY
 
     def test_megabytes(self):
         assert '12MB' == interrupt.megabytes(12 * 1024 * 1024)
@@ -55,12 +53,9 @@ class TestInterrupt(FileBasedTesting):
         assert '11MB' == interrupt.megabytes(11.6 * 1024 * 1024)
 
     def test_memory_guard(self):
-        assert interrupt.MEMORY_EXCEEDED == interrupt.memory_guard(1)
-        process = psutil.Process()
-        current_memory = process.memory_info().rss
-        # consume some memory
-        _ram = range(100000)
-        assert interrupt.MEMORY_EXCEEDED == interrupt.memory_guard(current_memory)
+        assert interrupt.MEMORY_EXCEEDED == interrupt.time_and_memory_guard(max_memory=1, timeout=4, interval=2)
+        # should fail after 2 seconds
+        assert interrupt.RUNTIME_EXCEEDED == interrupt.time_and_memory_guard(max_memory=1024 * 1024 * 1024 * 1024, timeout=2, interval=1)
 
     def test_time_guard(self):
         assert interrupt.RUNTIME_EXCEEDED == interrupt.time_guard(0.1)

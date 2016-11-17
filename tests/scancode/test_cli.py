@@ -355,14 +355,15 @@ def test_scan_works_with_multiple_processes(monkeypatch):
 
 def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    test_dir = test_env.get_test_loc('multiprocessing', copy=True)
+    # this contains test files with a lot of 100+ small licenses mentions that should take more tha
+    test_dir = test_env.get_test_loc('timeout', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
 
     patched_environ = dict(
         # set small memory quota for test
         SCANCODE_TEST_MAX_MEMORY='0',  # use default
-        SCANCODE_TEST_TIMEOUT='0.01',
+        SCANCODE_TEST_TIMEOUT='2',
     )
 
     result = runner.invoke(
@@ -374,13 +375,13 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     expected = [
-        {u'path': u'apache-1.0.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 0 seconds.']}]},
-        {u'path': u'patchelf.pdf', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 0 seconds.']}]},
-        {u'path': u'apache-1.1.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 0 seconds.']}]}
+        {u'path': u'test1.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 2 seconds.']}]},
+        {u'path': u'test2.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 2 seconds.']}]},
+        {u'path': u'test3.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 2 seconds.']}]}
     ]
 
     result_json = json.loads(open(result_file).read())
-    assert any(scan_result in expected for scan_result in result_json['files'])
+    assert all(scan_result in expected for scan_result in result_json['files'])
 
 
 def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
