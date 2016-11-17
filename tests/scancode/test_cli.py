@@ -355,15 +355,23 @@ def test_scan_works_with_multiple_processes(monkeypatch):
 
 def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    # this contains test files with a lot of 100+ small licenses mentions that should take more tha
+    # this contains test files with a lot of 100+ small licenses mentions that should
+    # take more thant timeout to scan
     test_dir = test_env.get_test_loc('timeout', copy=True)
+    # add some random bytes to the test files to ensure that the license results will
+    # not be cached
+    import time, random
+    for tf in fileutils.file_iter(test_dir):
+        with open(tf, 'ab') as tfh:
+            tfh.write(str(time.time() + random.randint(0, 10 ** 6)))
+
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
 
     patched_environ = dict(
         # set small memory quota for test
         SCANCODE_TEST_MAX_MEMORY='0',  # use default
-        SCANCODE_TEST_TIMEOUT='2',
+        SCANCODE_TEST_TIMEOUT='1',
     )
 
     result = runner.invoke(
@@ -375,18 +383,25 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     expected = [
-        {u'path': u'test1.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 2 seconds.']}]},
-        {u'path': u'test2.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 2 seconds.']}]},
-        {u'path': u'test3.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 2 seconds.']}]}
+        {u'path': u'test1.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 1 seconds.']}]},
+        {u'path': u'test2.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 1 seconds.']}]},
+        {u'path': u'test3.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 1 seconds.']}]}
     ]
 
     result_json = json.loads(open(result_file).read())
-    assert all(scan_result in expected for scan_result in result_json['files'])
+    assert any([scan_result in expected for scan_result in result_json['files']])
 
 
 def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.get_test_loc('multiprocessing', copy=True)
+    # add some random bytes to the test files to ensure that the license results will
+    # not be cached
+    import time, random
+    for tf in fileutils.file_iter(test_dir):
+        with open(tf, 'ab') as tfh:
+            tfh.write(str(time.time() + random.randint(0, 10 ** 6)))
+
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
 
@@ -411,4 +426,4 @@ def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
         {u'path': u'patchelf.pdf', u'scan_errors': [{u'scan': [u'Processing interrupted: excessive memory usage of more than 1MB.']}]}
     ]
     result_json = json.loads(open(result_file).read())
-    assert any(scan_result in expected for scan_result in result_json['files'])
+    assert any([scan_result in expected for scan_result in result_json['files']])
