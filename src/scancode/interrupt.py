@@ -54,13 +54,10 @@ from time import sleep
 
 import psutil
 
-
-MIN_TIMEOUT = 60  # seconds
-MAX_TIMEOUT = 600  # seconds
+DEFAULT_TIMEOUT = 120  # seconds
 RUNTIME_EXCEEDED = 1
 
-MIN_MEMORY = 2 * 1024 * 1024 * 1024  # 2GB
-MAX_MEMORY = 4 * 1024 * 1024 * 1024  # 4GB
+DEFAULT_MAX_MEMORY = 1000  # megabytes
 MEMORY_EXCEEDED = 2
 
 
@@ -69,12 +66,12 @@ def interruptible(func, *args, **kwargs):
     Call `func` function with `args` arguments and return a tuple of (success, return
     value). `func` is invoked through a wrapper and will be interrupted if it does
     not return within `timeout` seconds of execution or uses more than 'max_memory`
-    bytes of memory. `func` returned results should be pickable.
+    MEGABYTES of memory. `func` returned results should be pickable.
 
     `timeout` in seconds should be provided as a keyword argument.
     MIN_TIMEOUT is always enforced even if no timeout keyword is present.
 
-    `max_memory` in bytes should be provided as a keyword argument.
+    `max_memory` in megabytes should be provided as a keyword argument.
     If not present a memory quota is not enforced.
 
     Only `args` are passed to `func`, not any `kwargs`.
@@ -87,6 +84,9 @@ def interruptible(func, *args, **kwargs):
     item in the tuple is an error message string.
     """
 
+    timeout = kwargs.pop('timeout', DEFAULT_TIMEOUT)
+    max_memory = kwargs.pop('max_memory', DEFAULT_MAX_MEMORY) * 1024 * 1024
+
     # We use a pool of two threads that race to finish against each other:
     # - one runs the func proper
     # - one runs a loop until a timeout to check memory usage and return when it
@@ -94,37 +94,14 @@ def interruptible(func, *args, **kwargs):
     # The first thread to complete return its result. The other thread is terminated.
 
     pool = ThreadPool(2)
+    execution_units = [(func, args,), (time_and_memory_guard, [max_memory, timeout],)]
 
-    # our execution units contain at least the the function to run proper
-    execution_units = [(func, args,)]
-
-    only_monitor_timeout = True
-    timeout = MIN_TIMEOUT
-
-    # add timeout only if present
-    if 'timeout' in kwargs:
-        timeout = kwargs.pop('timeout', MIN_TIMEOUT)
-
-    # add memory quota only if present
-    if 'max_memory' in kwargs:
-        max_memory = kwargs.pop('max_memory', MIN_MEMORY)
-        only_monitor_timeout = False
-
-    if only_monitor_timeout:
-        # monitor using a simple time guard
-        execution_units.append((time_guard, [timeout],))
-    else:
-        # monitor using a combined time + memory guard
-        execution_units.append((time_and_memory_guard, [max_memory, timeout],))
-
-    # submit our threads: whichever finishes first thanks to imap_unordered
-    # will be returned by the call to next()
+    # run our threads: whichever finishes first thanks to imap_unordered will be
+    # returned by the call to next()
     threads = pool.imap_unordered(runner, execution_units, chunksize=1)
     pool.close()
-
     try:
-        # always use MAX_TIMEOUT
-        result = threads.next(MAX_TIMEOUT)
+        result = threads.next(timeout)
         if result == MEMORY_EXCEEDED:
             max_mb = megabytes(max_memory)
             return False, 'Processing interrupted: excessive memory usage of more than %(max_mb)s.' % locals()
@@ -139,6 +116,7 @@ def interruptible(func, *args, **kwargs):
 
     except KeyboardInterrupt:
         return False, 'Processing interrupted with Ctrl-C.'
+
     finally:
         # stop processing
         pool.terminate()
@@ -153,20 +131,12 @@ def runner(arg):
     return func(*args)
 
 
-def time_guard(timeout):
+def time_and_memory_guard(max_memory=DEFAULT_MAX_MEMORY, timeout=DEFAULT_TIMEOUT, interval=2):
     """
-    Return when a timeout has expired.
-    """
-    sleep(timeout)
-    return RUNTIME_EXCEEDED
-
-
-def time_and_memory_guard(max_memory, timeout=MAX_TIMEOUT, interval=2):
-    """
-    Return when max_memory hass been used or when a timeout has expired.
+    Return when max_memory bytes has been used or when a timeout has expired.
     Check memory usage every `interval` seconds during up to `timeout` seconds. Run
-    until the memory usage in the current process exceeds `max_memory`. If it does,
-    return `MEMORY_EXCEEDED`. If the memory usage does not go over `max_memory`
+    until the memory usage in the current process exceeds `max_memory` bytes. If it does,
+    return `MEMORY_EXCEEDED`. If the memory usage does not go over `max_memory` bytes
     within `timeout` seconds, return RUNTIME_EXCEEDED.
     """
     process = psutil.Process()
@@ -181,24 +151,6 @@ def time_and_memory_guard(max_memory, timeout=MAX_TIMEOUT, interval=2):
             # How could this happen? Some psutil error?
             return MEMORY_EXCEEDED
     return RUNTIME_EXCEEDED
-
-
-def compute_timeout(size, extra_sec_per_mb=30):
-    """
-    Return a scan timeout in seconds computed from a file size.
-    """
-    # add extra seconds for each megabyte
-    timeout = MIN_TIMEOUT + ((size // (1024 * 1024)) * extra_sec_per_mb)
-    return min([timeout, MAX_TIMEOUT])
-
-
-def compute_memory_quota(size, extra_ram_multiplier=50):
-    """
-    Return a not-to-exceed maximum memory_quota in bytes computed from a file size.
-    """
-    # add extra quota for each byte of a file bigger than 1MB
-    memory_quota = MIN_MEMORY + (size * extra_ram_multiplier)
-    return min([memory_quota, MAX_MEMORY])
 
 
 def megabytes(n):

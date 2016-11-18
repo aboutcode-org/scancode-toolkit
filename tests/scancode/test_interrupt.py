@@ -34,18 +34,6 @@ from scancode import interrupt
 class TestInterrupt(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_compute_timeout(self):
-        assert interrupt.MIN_TIMEOUT == interrupt.compute_timeout(0)
-        assert interrupt.MIN_TIMEOUT == interrupt.compute_timeout(1000)
-        assert interrupt.MIN_TIMEOUT + 300 == interrupt.compute_timeout(10 * 1024 * 1024)
-        assert interrupt.MAX_TIMEOUT == interrupt.compute_timeout(1000 * 1024 * 1024)
-
-    def test_compute_memory_quota(self):
-        assert interrupt.MIN_MEMORY == interrupt.compute_memory_quota(0)
-        assert interrupt.MIN_MEMORY <= interrupt.compute_memory_quota(1000)
-        assert interrupt.MIN_MEMORY < interrupt.compute_memory_quota(10 * 1024 * 1024)
-        assert interrupt.MIN_MEMORY < interrupt.compute_memory_quota(1000 * 1024 * 1024) <= interrupt.MAX_MEMORY
-
     def test_megabytes(self):
         assert '12MB' == interrupt.megabytes(12 * 1024 * 1024)
         assert '1MB' == interrupt.megabytes(1 * 1024 * 1024)
@@ -57,9 +45,6 @@ class TestInterrupt(FileBasedTesting):
         # should fail after 2 seconds
         assert interrupt.RUNTIME_EXCEEDED == interrupt.time_and_memory_guard(max_memory=1024 * 1024 * 1024 * 1024, timeout=2, interval=1)
 
-    def test_time_guard(self):
-        assert interrupt.RUNTIME_EXCEEDED == interrupt.time_guard(0.1)
-
     def test_interruptible_can_run_function(self):
         from time import sleep
 
@@ -67,7 +52,7 @@ class TestInterrupt(FileBasedTesting):
             sleep(exec_time)
             return 'OK'
 
-        result = interrupt.interruptible(some_long_function, 0.01, timeout=10, max_memory=1024 * 1024 * 1024)
+        result = interrupt.interruptible(some_long_function, 0.01, timeout=10, max_memory=1024)
         assert (True, 'OK') == result
 
     def test_interruptible_stops_execution_on_timeout(self):
@@ -89,6 +74,6 @@ class TestInterrupt(FileBasedTesting):
             _ram = range(1000000)
             return 'OK'
 
-        success, result = interrupt.interruptible(some_hungry_function, 0.1, timeout=5, max_memory=1000)
+        success, result = interrupt.interruptible(some_hungry_function, 0.1, timeout=5, max_memory=1)
         assert success == False
         assert 'Processing interrupted: excessive memory usage of more than' in result

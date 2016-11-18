@@ -368,17 +368,10 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
 
-    patched_environ = dict(
-        # set small memory quota for test
-        SCANCODE_TEST_MAX_MEMORY='0',  # use default
-        SCANCODE_TEST_TIMEOUT='1',
-    )
-
     result = runner.invoke(
         cli.scancode,
-        [ '--copyright', '--license', '--processes', '2', '--format', 'json', test_dir, result_file],
-        catch_exceptions=True,
-        env=patched_environ)
+        [ '--copyright', '--license', '--processes', '2', '--timeout', '1', '--format', 'json', test_dir, result_file],
+        catch_exceptions=True)
 
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
@@ -405,17 +398,10 @@ def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
 
-    patched_environ = dict(
-        # set small memory quota for test
-        SCANCODE_TEST_MAX_MEMORY=str(1 * 1024 * 1024),
-        SCANCODE_TEST_TIMEOUT='0',  # use default
-    )
-
     result = runner.invoke(
         cli.scancode,
-        [ '--copyright', '--license', '--processes', '2', '--format', 'json', test_dir, result_file],
+        [ '--copyright', '--license', '--processes', '2', '--max-memory', '1', '--format', 'json', test_dir, result_file],
         catch_exceptions=True,
-        env=patched_environ
     )
 
     assert result.exit_code == 0
