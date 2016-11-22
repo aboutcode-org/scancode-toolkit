@@ -181,8 +181,7 @@ class LicenseMatchCache(object):
 
         qrs = query_run.start
         qre = query_run.end
-        qlbp = query_run.line_by_pos
-        return [lm.rebase(qrs, qre, qlbp, MATCH_CACHE) for lm in cached]
+        return [lm.rebase(qrs, qre, MATCH_CACHE) for lm in cached]
 
     def put(self, query_run, matches):
         """
