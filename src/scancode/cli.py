@@ -68,8 +68,9 @@ from commoncode import filetype
 from scancode import __version__ as version
 
 from scancode.interrupt import interruptible
-from scancode.interrupt import compute_memory_quota
-from scancode.interrupt import compute_timeout
+from scancode.interrupt import DEFAULT_TIMEOUT
+from scancode.interrupt import DEFAULT_MAX_MEMORY
+
 
 from scancode import utils
 
@@ -88,10 +89,6 @@ from scancode.api import get_licenses
 from scancode.api import get_package_infos
 from scancode.api import get_urls
 
-
-# set a value only for testing scan quotas
-TEST_TIMEOUT = 0
-TEST_MAX_MEMORY = 0
 
 
 info_text = '''
@@ -267,29 +264,32 @@ def validate_formats(ctx, param, value):
 @click.option('-c', '--copyright', is_flag=True, default=False, help='Scan <input> for copyrights. [default]')
 @click.option('-l', '--license', is_flag=True, default=False, help='Scan <input> for licenses. [default]')
 @click.option('-p', '--package', is_flag=True, default=False, help='Scan <input> for packages. [default]')
-@click.option('--email', is_flag=True, default=False, help='Scan <input> for emails.')
-@click.option('--url', is_flag=True, default=False, help='Scan <input> for urls.')
-@click.option('-i', '--info', is_flag=True, default=False, help='Scan <input> for files information.')
+@click.option('-e', '--email', is_flag=True, default=False, help='Scan <input> for emails.')
+@click.option('-u', '--url', is_flag=True, default=False, help='Scan <input> for urls.')
+@click.option('-i', '--info', is_flag=True, default=False, help='Include information such as size, type, etc.')
 @click.option('--license-score', is_flag=False, default=0, type=int, show_default=True,
-              help='Matches with scores lower than this score are not returned. A number between 0 and 100.')
+              help='Do not return license matches with scores lower than this score. A number between 0 and 100.')
 
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
               help=('Set <output_file> format <style> to one of the standard formats: %s '
                     'or the path to a custom template' % ' or '.join(formats)),
               callback=validate_formats)
 @click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.')
-@click.option('--quiet', is_flag=True, default=False, help='Do not print any progress message.')
-@click.option('-n', '--processes', is_flag=False, default=1, type=int, help='Scan <input> using n parallel processes.')
+@click.option('--quiet', is_flag=True, default=False, help='Do not print progress messages.')
+@click.option('-n', '--processes', is_flag=False, default=1, type=int, show_default=True, help='Scan <input> using n parallel processes.')
 
 @click.help_option('-h', '--help')
 @click.option('--examples', is_flag=True, is_eager=True, callback=print_examples, help=('Show command examples and exit.'))
 @click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.')
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
-@click.option('--diag', is_flag=True, default=False, help='Include detailed diagnnostic messages for scanning errors.')
+@click.option('--diag', is_flag=True, default=False, help='Include detailed diagnostic messages in results if there are scanning errors.')
+@click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=int, show_default=True, help='Stop scanning a file if it takes longer than a timeout in seconds.')
+@click.option('--max-memory', is_flag=False, default=DEFAULT_MAX_MEMORY, type=int, show_default=True, help='Stop scanning a file if it its scan requires more than a maximum amount of memory in megabytes.')
 
 def scancode(ctx, input, output_file, copyright, license, package,
              email, url, info, license_score, format,
-             verbose, quiet, processes, diag,
+             verbose, quiet, processes,
+             diag, timeout, max_memory,
              *args, **kwargs):
     """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
 
@@ -305,12 +305,9 @@ def scancode(ctx, input, output_file, copyright, license, package,
     scans_cache_class = get_scans_cache_class()
     try:
         to_stdout = output_file == sys.stdout
-        # for tests only
-        _timeout = float(os.environ.get('SCANCODE_TEST_TIMEOUT', '0'))
-        _max_memory = int(os.environ.get('SCANCODE_TEST_MAX_MEMORY', '0'))
         files_count, results = scan(input, copyright, license, package, email, url, info, license_score,
                                     verbose, quiet, processes, scans_cache_class, to_stdout,
-                                    diag, _timeout, _max_memory)
+                                    diag, timeout, max_memory)
         save_results(files_count, results, format, input, output_file)
     finally:
         # cleanup
@@ -322,7 +319,7 @@ def scan(input_path, copyright=True, license=True, package=True,
          email=False, url=False, info=True, license_score=0,
          verbose=False, quiet=False, processes=1,
          scans_cache_class=None, to_stdout=False,
-         diag=False, _timeout=0, _max_memory=0):
+         diag=False, timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY):
     """
     Return a tuple of (file_count, indexing_time, scan_results) where
     scan_results is an iterable. Run each requested scan proper: each individual file
@@ -372,7 +369,7 @@ def scan(input_path, copyright=True, license=True, package=True,
     pool = Pool(processes=processes, maxtasksperchild=1000)
     resources = resource_paths(input_path)
     scanit = partial(_scanit, scanners=scanners, scans_cache_class=scans_cache_class,
-                     diag=diag, _timeout=_timeout, _max_memory=_max_memory)
+                     diag=diag, timeout=timeout, max_memory=max_memory)
     # Using chunksize is documented as much more efficient in the Python doc.
     # Yet "1" still provides a better and more progressive feedback.
     # With imap_unordered, results are returned as soon as ready and out of order.
@@ -434,7 +431,7 @@ def scan(input_path, copyright=True, license=True, package=True,
     return files_count, cached_scan.iterate(with_infos=info)
 
 
-def _scanit(paths, scanners, scans_cache_class, diag, _timeout=0, _max_memory=0):
+def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY):
     """
     Run scans and cache results on disk. Return a tuple of (success, scanned relative
     path) where sucess is True on success, False on error. Note that this is really
@@ -459,10 +456,7 @@ def _scanit(paths, scanners, scans_cache_class, diag, _timeout=0, _max_memory=0)
             file_size = infos.get('size', 0)
 
             # quota keyword args for interruptible
-            # use _timeout or _max_memory for tests if provided or compute these quotas
-            kwargs = dict()
-            kwargs['timeout'] = _timeout or compute_timeout(file_size)
-            kwargs['max_memory'] = _max_memory or compute_memory_quota(file_size)
+            kwargs = dict(timeout=timeout, max_memory=max_memory)
 
             success, scan_result = interruptible(scans_runner, **kwargs)
 
