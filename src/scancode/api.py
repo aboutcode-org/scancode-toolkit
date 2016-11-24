@@ -119,10 +119,9 @@ def get_licenses(location, min_score=0):
     licenses = licenses_getter()
 
     # note: we do USE the cache here
-    for match in idx.match(location=location, min_score=min_score, use_cache=True):
+    for match in idx.match(location=location, min_score=min_score, use_cache=False):
         for license_key in match.rule.licenses:
             lic = licenses.get(license_key)
-            lines_start, lines_end = match.lines()
             result = OrderedDict()
             result['key'] = lic.key
             result['score'] = match.score()
@@ -134,8 +133,8 @@ def get_licenses(location, min_score=0):
             result['dejacode_url'] = DEJACODE_LICENSE_URL.format(lic.key)
             result['spdx_license_key'] = lic.spdx_license_key
             result['spdx_url'] = lic.spdx_url
-            result['start_line'] = lines_start
-            result['end_line'] = lines_end
+            result['start_line'] = match.start_line
+            result['end_line'] = match.end_line
             result['matched_rule'] = OrderedDict()
             result['matched_rule']['identifier'] = match.rule.identifier
             result['matched_rule']['license_choice'] = match.rule.license_choice

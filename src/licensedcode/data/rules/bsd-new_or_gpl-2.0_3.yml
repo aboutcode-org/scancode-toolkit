@@ -1,7 +1,7 @@
 licenses:
     - bsd-new
     - gpl-2.0
-solid: yes
+minimum_score: 100
 license: bsd-new or gpl-2.0
 license_choice: yes
 notes: LKM with Dual BSD/GPL

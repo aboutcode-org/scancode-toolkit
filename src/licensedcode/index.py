@@ -50,6 +50,7 @@ from licensedcode.cache import LicenseMatchCache
 from licensedcode.match import get_texts
 from licensedcode.match import merge_matches
 from licensedcode.match import refine_matches
+from licensedcode.match import set_lines
 
 from licensedcode import match_aho
 from licensedcode.match_aho import exact_match
@@ -405,7 +406,7 @@ class LicenseIndex(object):
                     # ... or with the whole rule tokens sequence
                     rules_automaton_add(tids=rule_token_ids, rid=rid)
                     # ... and ngrams: compute ngrams and populate the automaton with ngrams
-                    if USE_AHO_FRAGMENTS and not rule.is_url and not rule.solid and len(rule_token_ids) > NGRAM_LEN:
+                    if USE_AHO_FRAGMENTS and not rule.is_url and rule.minimum_score < 100 and len(rule_token_ids) > NGRAM_LEN:
                         all_ngrams = ngrams(rule_token_ids, ngram_length=NGRAM_LEN)
                         selected_ngrams = select_ngrams(all_ngrams, with_pos=True)
                         for pos, ngram in selected_ngrams:
@@ -507,6 +508,7 @@ class LicenseIndex(object):
         hash_matches = match_hash(self, whole_query_run)
         if hash_matches:
             self.debug_matches(hash_matches, '#match FINAL Hash matched', location, query_string)
+            set_lines(hash_matches, qry.line_by_pos)
             return hash_matches
 
         # negative rules exact matching
@@ -525,7 +527,7 @@ class LicenseIndex(object):
         exact_matches = exact_match(self, whole_query_run, self.rules_automaton)
         if TRACE_EXACT: self.debug_matches(exact_matches, '  #match: EXACT matches#:', location, query_string)
 
-        exact_matches, exact_discarded = refine_matches(exact_matches, self)
+        exact_matches, exact_discarded = refine_matches(exact_matches, self, query=qry)
 
         if TRACE_EXACT: self.debug_matches(exact_matches, '   #match: ===> exact matches refined')
         if TRACE_EXACT: self.debug_matches(exact_discarded, '   #match: ===> exact matches discarded')
@@ -536,28 +538,29 @@ class LicenseIndex(object):
         #######################################################################
         # Per query run matching.
         #######################################################################
-        logger_debug('#match: #QUERY RUNS:', len(qry.query_runs))
+        if TRACE: logger_debug('#match: #QUERY RUNS:', len(qry.query_runs))
 
         # check if we have some matchable left
         # collect qspans matched exactly e.g. with score 100%
-        matched_qspans = [m.qspan for m in exact_matches if m.score()==100]
+        # this score check is because we have provision to match fragments (unused for now)
+        matched_qspans = [m.qspan for m in exact_matches if m.score() == 100]
         # do not match futher if we do not need to
         if whole_query_run.is_matchable(include_low=True, qspans=matched_qspans):
 
             rules_subset = (self.regular_rids | self.small_rids)
 
             for qrnum, query_run in enumerate(qry.query_runs, 1):
-                logger_debug('#match: ===> processing query run #:', qrnum)
+                if TRACE: logger_debug('#match: ===> processing query run #:', qrnum)
 
                 if not query_run.is_matchable(include_low=True):
-                    logger_debug('#match: query_run NOT MATCHABLE')
+                    if TRACE: logger_debug('#match: query_run NOT MATCHABLE')
                     continue
 
                 # hash match
                 #########################
                 hash_matches = match_hash(self, query_run)
                 if hash_matches:
-                    self.debug_matches(hash_matches, '  #match Query run matches (hash)', location, query_string)
+                    if TRACE: self.debug_matches(hash_matches, '  #match Query run matches (hash)', location, query_string)
                     matches.extend(hash_matches)
                     # note that we do not cache hash matches
                     continue
@@ -581,8 +584,8 @@ class LicenseIndex(object):
 
                 if TRACE_QUERY_RUN: logger_debug('      #match: query_run: number of candidates for seq match #', len(candidates))
 
-                for candidate in candidates:
-                    if TRACE_QUERY_RUN: logger_debug('         #match: query_run: seq matching candidate:', candidate[1])
+                for candidate_num, candidate in enumerate(candidates):
+                    if TRACE_QUERY_RUN: logger_debug('         #match: query_run: seq matching candidate#:', candidate_num, 'candidate:', candidate)
                     start_offset = 0
                     while True:
                         rule_matches = match_sequence(self, candidate, query_run, start_offset=start_offset)
@@ -590,10 +593,9 @@ class LicenseIndex(object):
                         if not rule_matches:
                             break
                         else:
-                            if TRACE_QUERY_RUN: self.debug_matches(rule_matches, '           #match: query_run: merged seq matches for candidate')
+                            matches_end = max(m.qend for m in rule_matches)
                             run_matches.extend(rule_matches)
 
-                            matches_end = max(m.qend for m in rule_matches)
                             if matches_end + 1 < query_run.end:
                                 start_offset = matches_end + 1
                                 continue
@@ -620,10 +622,11 @@ class LicenseIndex(object):
             logger_debug('!!!!!!!!!!!!!!!!!!!!REFINING!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
             self.debug_matches(matches, '#match: ALL matches from all query runs', location, query_string)
 
-            matches, whole_discarded = refine_matches(matches, idx=self, min_score=min_score, max_dist=MAX_DIST // 2)
-            discarded.extend(whole_discarded)
+            matches, whole_discarded = refine_matches(matches, idx=self, query=qry, min_score=min_score, max_dist=MAX_DIST // 2)
+            if TRACE_MATCHES_DISCARD:
+                discarded.extend(whole_discarded)
             matches.sort()
-
+            set_lines(matches, qry.line_by_pos)
             self.debug_matches(matches, '#match: FINAL MERGED', location, query_string)
             if TRACE_MATCHES_DISCARD: self.debug_matches(discarded, '#match: FINAL DISCARDED', location, query_string)
 

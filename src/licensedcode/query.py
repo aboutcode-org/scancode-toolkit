@@ -132,12 +132,15 @@ class Query(object):
         # token ids array
         self.tokens = []
 
-        # index of position -> line number
-        self.line_by_pos = {}
+        # index of position -> line number where the pos is the list index
+        self.line_by_pos = []
 
         # index of known position -> number of unknown tokens after that pos
         # for unknowns at the start, the pos is -1
         self.unknowns_by_pos = defaultdict(int)
+
+        # set of known position were we have  short, single letter tokens at that pos
+        self.shorts_pos = set()
 
         self.query_runs = []
         if _test_mode:
@@ -193,8 +196,9 @@ class Query(object):
         Populate the query `line_by_pos` and `unknowns_by_pos` mappings as a side
         effect.
         """
-        line_by_pos = self.line_by_pos
+        line_by_pos_append = self.line_by_pos.append
         self_unknowns_by_pos = self.unknowns_by_pos
+        self_shorts_pos_add = self.shorts_pos.add
         dic_get = self.idx.dictionary.get
 
         # note: positions start at zero
@@ -215,7 +219,9 @@ class Query(object):
                 if tid is not None:
                     known_pos += 1
                     started = True
-                    line_by_pos[known_pos] = lnum
+                    line_by_pos_append(lnum)
+                    if len(token) ==1:
+                        self_shorts_pos_add(known_pos)
                 else:
                     # we have not yet started
                     if not started:
@@ -295,6 +301,8 @@ class QueryRun(object):
     A query run is a slice of whole query tokens identified by a start and end
     positions inclusive.
     """
+    __slots__ = ('query', 'start', 'end', 'len_junk', '_low_matchables', '_high_matchables')
+
     def __init__(self, query, start, end=None):
         """
         Initialize a query run starting at start and ending at end a parent
@@ -308,13 +316,15 @@ class QueryRun(object):
 
         self.len_junk = self.query.idx.len_junk
 
-        # lines by positions, used for final reporting
-        self.line_by_pos = query.line_by_pos
-        # positions with unknown tokens, used for final reporting
-        self.unknowns_by_pos = query.unknowns_by_pos
-
         self._low_matchables = None
         self._high_matchables = None
+
+    @property
+    def unknowns_by_pos(self):
+        """
+        Return positions with unknown tokens, used for final reporting.
+        """
+        return self.query.unknowns_by_pos
 
     @property
     def low_matchables(self):
@@ -372,20 +382,18 @@ class QueryRun(object):
         Return True if this query run has some matchable high tokens.
         If a list of qspans is provided, their positions are first subtracted.
         """
-        qs = qspans and [q._set for q in qspans] or []
-
         if include_low:
             matchables = self.matchables
         else:
             matchables = self.high_matchables
 
-        if not qs:
+        if not qspans:
             return matchables
 
-        matched = intbitset.union(*qs)
-        high = intbitset(matchables)
-        high.difference_update(matched)
-        return high
+        matched = intbitset.union(*[q._set for q in qspans])
+        matchables = intbitset(matchables)
+        matchables.difference_update(matched)
+        return matchables
 
     @property
     def matchables(self):

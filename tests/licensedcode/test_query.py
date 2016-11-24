@@ -69,7 +69,7 @@ class TestQueryWithSingleRun(IndexTesting):
         expected = [
             [],
             [None],
-            [12, 0, 6, 3, 2, 0, 1, 10, 7],
+            [11, 0, 6, 4, 3, 0, 1, 9, 2],
             [],
             [None, None, None, None],
             [None, 0, None],
@@ -94,7 +94,7 @@ class TestQueryWithSingleRun(IndexTesting):
 
         assert expected_str == result_str
 
-        assert {0: 3, 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3, 7: 3, 8: 3, 9: 6} == qry.line_by_pos
+        assert [3, 3, 3, 3, 3, 3, 3, 3, 3, 6] == qry.line_by_pos
 
         idx = index.LicenseIndex([Rule(_text=rule_text, licenses=['bsd'])])
         querys = 'and this is not a license'
@@ -228,19 +228,12 @@ class TestQueryWithSingleRun(IndexTesting):
              },
             {'end': 36, 'start': 36, 'tokens': u'redistributions'}]
         assert expected == result
-
-        runs = qry.query_runs
-        assert len(runs) == 2
-        query_run = runs[0]
-
-        expected_lbp = {
-            0: 4, 1: 4, 2: 4, 3: 4, 4: 4, 5: 4, 6: 4, 7: 4, 8: 6, 9: 6, 10: 6,
-            11: 6, 12: 6, 13: 7, 14: 7, 15: 7, 16: 7, 17: 7, 18: 8, 19: 9,
-            20: 9, 21: 9, 22: 9, 23: 9, 24: 11, 25: 11, 26: 11, 27: 11, 28: 11,
-            29: 11, 30: 11, 31: 11, 32: 11, 33: 11, 34: 11, 35: 11, 36: 15
-        }
-
-        assert expected_lbp == query_run.line_by_pos
+ 
+        expected_lbp = [
+            4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 
+            9, 9, 9, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 15
+        ]
+        assert expected_lbp == qry.line_by_pos
 
     def test_query_and_index_tokens_are_identical_for_same_text(self):
         rule_dir = self.get_test_loc('query/rtos_exact/')
@@ -267,57 +260,57 @@ class TestQueryWithSingleRun(IndexTesting):
 
         # two junks
         q = Query(query_string='a the', idx=idx)
+        assert q.line_by_pos
         qrun = q.query_runs[0]
-        assert qrun.line_by_pos
         assert [0, 1] == qrun.tokens
         assert {} == qrun.unknowns_by_pos
 
         # one junk
         q = Query(query_string='a binary', idx=idx)
         qrun = q.query_runs[0]
-        assert qrun.line_by_pos
+        assert q.line_by_pos
         assert [0, 2] == qrun.tokens
         assert {} == qrun.unknowns_by_pos
 
         # one junk
         q = Query(query_string='binary the', idx=idx)
         qrun = q.query_runs[0]
-        assert qrun.line_by_pos
+        assert q.line_by_pos
         assert [2, 1] == qrun.tokens
         assert {} == qrun.unknowns_by_pos
 
         # one unknown at start
         q = Query(query_string='that binary', idx=idx)
         qrun = q.query_runs[0]
-        assert qrun.line_by_pos
+        assert q.line_by_pos
         assert [2] == qrun.tokens
         assert {-1: 1} == qrun.unknowns_by_pos
 
         # one unknown at end
         q = Query(query_string='binary that', idx=idx)
         qrun = q.query_runs[0]
-        assert qrun.line_by_pos
+        assert q.line_by_pos
         assert [2] == qrun.tokens
         assert {0: 1} == qrun.unknowns_by_pos
 
         # onw unknown in the middle
         q = Query(query_string='binary that a binary', idx=idx)
         qrun = q.query_runs[0]
-        assert qrun.line_by_pos
+        assert q.line_by_pos
         assert [2, 0, 2] == qrun.tokens
         assert {0: 1} == qrun.unknowns_by_pos
 
         # onw unknown in the middle
         q = Query(query_string='a binary that a binary', idx=idx)
         qrun = q.query_runs[0]
-        assert qrun.line_by_pos
+        assert q.line_by_pos
         assert [0, 2, 0, 2] == qrun.tokens
         assert {1: 1} == qrun.unknowns_by_pos
 
         # two unknowns in the middle
         q = Query(query_string='binary that was a binary', idx=idx)
         qrun = q.query_runs[0]
-        assert qrun.line_by_pos
+        assert q.line_by_pos
         assert [2, 0, 2] == qrun.tokens
         assert {0: 2} == qrun.unknowns_by_pos
 
@@ -325,7 +318,7 @@ class TestQueryWithSingleRun(IndexTesting):
         q = Query(query_string='hello dolly binary that was a binary end really', idx=idx)
         #                         u     u           u    u            u    u
         qrun = q.query_runs[0]
-        assert qrun.line_by_pos
+        assert q.line_by_pos
         assert [2, 0, 2] == qrun.tokens
         assert {-1: 2, 0: 2, 2: 2} == qrun.unknowns_by_pos
 

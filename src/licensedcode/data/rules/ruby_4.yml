@@ -1,4 +1,4 @@
 licenses:
     - ruby
-solid: yes
+minimum_score: 100
 

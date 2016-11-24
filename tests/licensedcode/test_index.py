@@ -174,82 +174,78 @@ class TestIndexing(IndexTesting):
 
         expected_index = {
             'plain1_0': {u'redistribution': [0]},
-            'plain2_1': {u'redistribution': [0], u'yes': [2]},
-            'plain3_2': {u'allowed': [2], u'redistribution': [0], u'yes': [3]},
-            'plain4_3': {u'allowed': [2], u'redistribution': [0], u'yes': [4]},
-            'plain5_4': {u'allowed': [2], u'redistribution': [0]},
-            'tmpl10_5': {u'allowed': [2], u'any': [8], u'redistribution': [0], u'thing': [9]},
-            'tmpl2_6': {u'redistribution': [0]},
-            'tmpl3_7': {u'allowed': [2], u'redistribution': [0]},
-            'tmpl4_8': {u'allowed': [2], u'redistribution': [0]},
-            'tmpl5_2_10': {u'allowed': [2], u'redistribution': [0], u'yes': [5]},
-            'tmpl5_9': {u'allowed': [3], u'redistribution': [0]},
-            'tmpl6_11': {u'allowed': [2], u'redistribution': [0]},
-            'tmpl7_12': {u'allowed': [2], u'redistribution': [0]},
-            'tmpl8_13': {u'allowed': [2], u'redistribution': [0]},
-            'tmpl9_14': {u'allowed': [2], u'any': [8], u'redistribution': [0]}
+            'plain2_1': {u'is': [1], u'redistribution': [0], u'yes': [2]},
+            'plain3_2': {u'is': [1], u'redistribution': [0], u'yes': [3]},
+            'plain4_3': {u'is': [1], u'redistribution': [0], u'yes': [4]},
+            'plain5_4': {u'is': [1], u'redistribution': [0]},
+            'tmpl10_5': {u'any': [8], u'is': [1], u'redistribution': [0], u'thing': [9]},
+            'tmpl2_6': {u'is': [1], u'redistribution': [0]},
+            'tmpl3_7': {u'is': [1], u'redistribution': [0]},
+            'tmpl4_8': {u'is': [1], u'redistribution': [0]},
+            'tmpl5_2_10': {u'is': [1], u'redistribution': [0], u'yes': [5]},
+            'tmpl5_9': {u'is': [1, 2], u'redistribution': [0]},
+            'tmpl6_11': {u'is': [1], u'redistribution': [0]},
+            'tmpl7_12': {u'is': [1], u'redistribution': [0]},
+            'tmpl8_13': {u'is': [1], u'redistribution': [0]},
+            'tmpl9_14': {u'any': [8], u'is': [1], u'redistribution': [0]}
         }
-
         assert expected_index == idx._as_dict()
 
         expected_dict = {
             u'all': 1,
-            u'allowed': 5,
+            u'allowed': 0,
             u'and': 3,
             u'any': 7,
             u'for': 2,
-            u'is': 0,
-            u'redistribution': 4,
+            u'is': 4,
+            u'redistribution': 5,
             u'thing': 8,
-            u'yes': 6}
-
+            u'yes': 6
+        }
         assert expected_dict == idx.dictionary
 
-        expected_tids = [u'is', u'all', u'for', u'and', u'redistribution', u'allowed', u'yes', u'any', u'thing']
+        expected_tids = [u'allowed', u'all', u'for', u'and', u'is', u'redistribution', u'yes', u'any', u'thing']
         assert expected_tids == idx.tokens_by_tid
 
         expected_high_tids_msets_by_rid = [
             {u'redistribution': 1},
-            {u'redistribution': 1, u'yes': 1},
-            {u'allowed': 1, u'redistribution': 1, u'yes': 1},
-            {u'allowed': 1, u'redistribution': 1, u'yes': 1},
-            {u'allowed': 1, u'redistribution': 1},
-            {u'allowed': 1, u'any': 1, u'redistribution': 1, u'thing': 1},
-            {u'redistribution': 1},
-            {u'allowed': 1, u'redistribution': 1},
-            {u'allowed': 1, u'redistribution': 1},
-            {u'allowed': 1, u'redistribution': 1},
-            {u'allowed': 1, u'redistribution': 1, u'yes': 1},
-            {u'allowed': 1, u'redistribution': 1},
-            {u'allowed': 1, u'redistribution': 1},
-            {u'allowed': 1, u'redistribution': 1},
-            {u'allowed': 1, u'any': 1, u'redistribution': 1}
+            {u'is': 1, u'redistribution': 1, u'yes': 1},
+            {u'is': 1, u'redistribution': 1, u'yes': 1},
+            {u'is': 1, u'redistribution': 1, u'yes': 1},
+            {u'is': 1, u'redistribution': 1},
+            {u'any': 1, u'is': 1, u'redistribution': 1, u'thing': 1},
+            {u'is': 1, u'redistribution': 1},
+            {u'is': 1, u'redistribution': 1},
+            {u'is': 1, u'redistribution': 1},
+            {u'is': 2, u'redistribution': 1},
+            {u'is': 1, u'redistribution': 1, u'yes': 1},
+            {u'is': 1, u'redistribution': 1},
+            {u'is': 1, u'redistribution': 1},
+            {u'is': 1, u'redistribution': 1},
+            {u'any': 1, u'is': 1, u'redistribution': 1}
         ]
-
         low_tids_msets_by_rid, high_tids_msets_by_rid = zip(*idx.tids_msets_by_rid)
-
         htmset = [{idx.tokens_by_tid[tok]:freq for (tok, freq) in tids_mset.items()}
                   for tids_mset in high_tids_msets_by_rid]
         assert expected_high_tids_msets_by_rid == htmset
 
         expected_low_tids_msets_by_rid = [
             {},
-            {u'is': 1},
-            {u'is': 1},
-            {u'for': 1, u'is': 1},
-            {u'all': 1, u'for': 1, u'is': 1},
-            {u'all': 2, u'and': 2, u'for': 1, u'is': 1},
-            {u'is': 1},
-            {u'is': 1},
-            {u'for': 1, u'is': 1},
-            {u'for': 1, u'is': 2},
-            {u'all': 1, u'for': 1, u'is': 1},
-            {u'all': 1, u'and': 1, u'for': 1, u'is': 1},
-            {u'all': 2, u'and': 1, u'for': 1, u'is': 1},
-            {u'all': 2, u'and': 2, u'for': 1, u'is': 1},
-            {u'all': 2, u'and': 2, u'for': 1, u'is': 1}
+            {},
+            {u'allowed': 1},
+            {u'allowed': 1, u'for': 1},
+            {u'all': 1, u'allowed': 1, u'for': 1},
+            {u'all': 2, u'allowed': 1, u'and': 2, u'for': 1},
+            {},
+            {u'allowed': 1},
+            {u'allowed': 1, u'for': 1},
+            {u'allowed': 1, u'for': 1},
+            {u'all': 1, u'allowed': 1, u'for': 1},
+            {u'all': 1, u'allowed': 1, u'and': 1, u'for': 1},
+            {u'all': 2, u'allowed': 1, u'and': 1, u'for': 1},
+            {u'all': 2, u'allowed': 1, u'and': 2, u'for': 1},
+            {u'all': 2, u'allowed': 1, u'and': 2, u'for': 1}
         ]
-
         assert expected_low_tids_msets_by_rid == [{idx.tokens_by_tid[tok]: freq for tok, freq in tids_mset.items()}
                                                   for tids_mset in low_tids_msets_by_rid]
 

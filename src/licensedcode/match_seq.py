@@ -72,7 +72,6 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
     qbegin = query_run.start + start_offset
     qfinish = query_run.end
     qtokens = query_run.query.tokens
-    line_by_pos = query_run.line_by_pos
 
     matches = []
     qstart = qbegin
@@ -103,7 +102,7 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
             iposses = range(ipos, ipos + mlen)
             hispan = Span(p for p in iposses if itokens[p] >= len_junk)
             ispan = Span(iposses)
-            match = LicenseMatch(rule, qspan, ispan, hispan, line_by_pos, qbegin, MATCH_SEQ)
+            match = LicenseMatch(rule, qspan, ispan, hispan, qbegin, MATCH_SEQ)
             if TRACE2:
                 qt, it = get_texts(match, location=query_run.query.location, query_string=query_run.query.query_string, idx=idx)
                 print('###########################')
