@@ -303,9 +303,15 @@ def test_scan_with_errors_and_diag_option_includes_full_traceback(monkeypatch):
     result = runner.invoke(cli.scancode, [ '--copyright', '--diag', test_file, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    check_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file, test_file)
     assert 'Some files failed to scan' in result.output
     assert 'patchelf.pdf' in result.output
+
+    result_json = json.loads(open(result_file).read())
+    expected = 'ERROR: copyrights: unpack requires a string argument of length 8'
+    assert expected == result_json['files'][0]['scan_errors'][0]
+
+    assert result_json['files'][0]['scan_errors'][1].startswith('ERROR: copyrights: Traceback (most recent call')
+
 
 def test_failing_scan_return_proper_exit_code(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
@@ -376,13 +382,13 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     expected = [
-        {u'path': u'test1.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 1 seconds.']}]},
-        {u'path': u'test2.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 1 seconds.']}]},
-        {u'path': u'test3.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: timeout after 1 seconds.']}]}
+        {u'path': u'test1.txt', u'scan_errors': [u'ERROR: Processing interrupted: timeout after 1 seconds.']},
+        {u'path': u'test2.txt', u'scan_errors': [u'ERROR: Processing interrupted: timeout after 1 seconds.']},
+        {u'path': u'test3.txt', u'scan_errors': [u'ERROR: Processing interrupted: timeout after 1 seconds.']}
     ]
 
     result_json = json.loads(open(result_file).read())
-    assert any([scan_result in expected for scan_result in result_json['files']])
+    assert sorted(expected) == sorted(result_json['files'])
 
 
 def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
@@ -407,9 +413,9 @@ def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     expected = [
-        {u'path': u'apache-1.1.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: excessive memory usage of more than 1MB.']}]},
-        {u'path': u'apache-1.0.txt', u'scan_errors': [{u'scan': [u'Processing interrupted: excessive memory usage of more than 1MB.']}]},
-        {u'path': u'patchelf.pdf', u'scan_errors': [{u'scan': [u'Processing interrupted: excessive memory usage of more than 1MB.']}]}
+        {u'path': u'apache-1.1.txt', u'scan_errors': [u'ERROR: Processing interrupted: excessive memory usage of more than 1MB.']},
+        {u'path': u'apache-1.0.txt', u'scan_errors': [u'ERROR: Processing interrupted: excessive memory usage of more than 1MB.']},
+        {u'path': u'patchelf.pdf', u'scan_errors': [u'ERROR: Processing interrupted: excessive memory usage of more than 1MB.']}
     ]
     result_json = json.loads(open(result_file).read())
-    assert any([scan_result in expected for scan_result in result_json['files']])
+    assert sorted(expected) == sorted(result_json['files'])

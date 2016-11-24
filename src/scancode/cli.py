@@ -30,6 +30,7 @@ from __future__ import print_function, absolute_import, division
 # FIXME: unknown license
 ###########################################################################
 from multiprocessing.pool import IMapIterator, IMapUnorderedIterator
+from scancode.cache import ScanFileCache
 
 def wrapped(func):
     # ensure that we do not double wrap
@@ -88,7 +89,6 @@ from scancode.api import get_file_infos
 from scancode.api import get_licenses
 from scancode.api import get_package_infos
 from scancode.api import get_urls
-
 
 
 info_text = '''
@@ -308,11 +308,12 @@ def scancode(ctx, input, output_file, copyright, license, package,
         files_count, results = scan(input, copyright, license, package, email, url, info, license_score,
                                     verbose, quiet, processes, scans_cache_class, to_stdout,
                                     diag, timeout, max_memory)
+        click.secho('Saving results...', err=to_stdout, fg='green')
         save_results(files_count, results, format, input, output_file)
     finally:
         # cleanup
         cache = scans_cache_class()
-        cache.clear()
+        # cache.clear()
 
 
 def scan(input_path, copyright=True, license=True, package=True,
@@ -355,10 +356,11 @@ def scan(input_path, copyright=True, license=True, package=True,
     if license:
         # build index outside of the main loop
         # this also ensures that forked processes will get the index on POSIX naturally
-        click.secho('Building license detection index...', err=to_stdout, fg='green')
+        click.secho('Building license detection index...', err=to_stdout, fg='green', nl=False)
         from licensedcode.index import get_index
         _idx = get_index()
         indexing_time = time() - scan_start
+        click.secho('Done.', err=to_stdout, fg='green', nl=True)
 
     scan_summary['indexing_time'] = indexing_time
 
@@ -368,38 +370,46 @@ def scan(input_path, copyright=True, license=True, package=True,
     # maxtasksperchild helps with recycling processes in case of leaks
     pool = Pool(processes=processes, maxtasksperchild=1000)
     resources = resource_paths(input_path)
-    scanit = partial(_scanit, scanners=scanners, scans_cache_class=scans_cache_class,
-                     diag=diag, timeout=timeout, max_memory=max_memory)
-    # Using chunksize is documented as much more efficient in the Python doc.
-    # Yet "1" still provides a better and more progressive feedback.
-    # With imap_unordered, results are returned as soon as ready and out of order.
-    scanned_files = pool.imap_unordered(scanit, resources, chunksize=1)
-    pool.close()
+    logfile_path = scans_cache_class().cache_files_log
+    with open(logfile_path, 'wb') as logfile_fd:
 
-    def scan_event(item):
-        """Progress event displayed each time a file is scanned"""
-        if item:
-            _scan_success, _scanned_path = item
-            _progress_line = verbose and _scanned_path or fileutils.file_name(_scanned_path)
-            return style('Scanned: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
+        logged_resources = _resource_logger(logfile_fd, resources)
 
-    scanning_errors = []
-    files_count = 0
-    with utils.progressmanager(scanned_files, item_show_func=scan_event,
-                               show_pos=True, verbose=verbose, quiet=quiet) as scanned:
-        while True:
-            try:
-                result = scanned.next()
-                scan_success, scanned_rel_path = result
-                if not scan_success:
-                    scanning_errors.append(scanned_rel_path)
-                files_count += 1
-            except StopIteration:
-                break
-            except KeyboardInterrupt:
-                print('\nAborted!')
-                pool.terminate()
-                break
+        scanit = partial(_scanit, scanners=scanners, scans_cache_class=scans_cache_class,
+                         diag=diag, timeout=timeout, max_memory=max_memory)
+        # Using chunksize is documented as much more efficient in the Python doc.
+        # Yet "1" still provides a better and more progressive feedback.
+        # With imap_unordered, results are returned as soon as ready and out of order.
+        scanned_files = pool.imap_unordered(scanit, logged_resources, chunksize=1)
+        pool.close()
+
+        click.secho('Scanning files...', err=to_stdout, fg='green')
+
+
+        def scan_event(item):
+            """Progress event displayed each time a file is scanned"""
+            if item:
+                _scan_success, _scanned_path = item
+                _progress_line = verbose and _scanned_path or fileutils.file_name(_scanned_path)
+                return style('Scanned: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
+
+        scanning_errors = []
+        files_count = 0
+        with utils.progressmanager(scanned_files, item_show_func=scan_event, show_pos=True, verbose=verbose, quiet=quiet) as scanned:
+            while True:
+                try:
+                    result = scanned.next()
+                    scan_success, scanned_rel_path = result
+                    if not scan_success:
+                        scanning_errors.append(scanned_rel_path)
+                    files_count += 1
+                except StopIteration:
+                    break
+                except KeyboardInterrupt:
+                    print('\nAborted!')
+                    pool.terminate()
+                    break
+
 
     # Compute stats
     ##########################
@@ -409,12 +419,13 @@ def scan(input_path, copyright=True, license=True, package=True,
     scanning_time = total_time - indexing_time
     scan_summary['total_time'] = total_time
     scan_summary['scanning_time'] = scanning_time
+
     files_scanned_per_second = round(float(files_count) / scanning_time , 2)
     scan_summary['files_scanned_per_second'] = files_scanned_per_second
 
     # Display stats
     ##########################
-    click.secho('Scanning done.' % locals(), fg=scanning_errors and 'red' or 'green', err=to_stdout)
+    click.secho('Scanning done.', fg=scanning_errors and 'red' or 'green', err=to_stdout)
     if scanning_errors:
         click.secho('Some files failed to scan properly. See scan for details:', fg='red', err=to_stdout)
         for errored_path in scanning_errors:
@@ -422,13 +433,28 @@ def scan(input_path, copyright=True, license=True, package=True,
 
     click.secho('Scan statistics: %(files_count)d files scanned in %(total_time)ds.' % locals(), err=to_stdout)
     click.secho('Scan options:    %(_scans)s with %(processes)d process(es).' % locals(), err=to_stdout)
-    click.secho('Scanning speed:  {:.2} files per sec.'.format(files_scanned_per_second), err=to_stdout)
+    click.secho('Scanning speed:  %(files_scanned_per_second)s files per sec.' % locals(), err=to_stdout)
     click.secho('Scanning time:   %(scanning_time)ds.' % locals(), err=to_stdout, reset=True,)
     click.secho('Indexing time:   %(indexing_time)ds.' % locals(), err=to_stdout)
 
     # finally return an iterator on cached results
+    scan_names = []
+    if info:
+        scan_names.append('infos')
+    scan_names.extend(k for k, v in scanners.items() if v)
     cached_scan = scans_cache_class()
-    return files_count, cached_scan.iterate(with_infos=info)
+    return files_count, cached_scan.iterate(scan_names)
+
+
+def _resource_logger(logfile_fd, resources):
+    """
+    Log file path to the logfile_fd opened file descriptor for each resource and
+    yield back the resources.
+    """
+    file_logger = ScanFileCache.log_file_path
+    for posix_path, rel_path in resources:
+        file_logger(logfile_fd, rel_path)
+        yield posix_path, rel_path
 
 
 def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY):
@@ -439,41 +465,35 @@ def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, m
     """
     abs_path, rel_path = paths
     # always fetch infos and cache.
-    infos = scan_infos(abs_path)
-    scans_cache = None
-    success = True
-    try:
-        # build a local instance of a cache
-        scans_cache = scans_cache_class()
-        is_cached = scans_cache.put_infos(rel_path, infos)
+    infos = OrderedDict()
+    infos['path'] = rel_path
+    infos.update(scan_infos(abs_path, diag=diag))
 
+    success = True
+    scans_cache = scans_cache_class()
+    is_cached = scans_cache.put_info(rel_path, infos)
+
+    has_scanners = any(scanners.values())
+    if has_scanners:
         # Skip other scans if already cached
-        # ENSURE we only do tghis for files not directories
+        # FIXME: ENSURE we only do this for files not directories
         if not is_cached:
             # run the scan as an interruptiple task
             scans_runner = partial(scan_one, abs_path, scanners, diag)
-
-            file_size = infos.get('size', 0)
-
             # quota keyword args for interruptible
             kwargs = dict(timeout=timeout, max_memory=max_memory)
-
             success, scan_result = interruptible(scans_runner, **kwargs)
-
             if not success:
                 # Use scan errors as the scan result for that file on failure this is
                 # a top-level error not attachedd to a specific scanner, hence the
                 # "scan" key is used for these errors
-                scan_result = {'scan_errors': [{'scan': [scan_result]}]}
+                scan_result = {'scan_errors': [scan_result]}
 
             scans_cache.put_scan(rel_path, infos, scan_result)
 
             # do not report success if some other errors happened
             if scan_result.get('scan_errors'):
                 success = False
-    finally:
-        if scans_cache:
-            scans_cache.close()
 
     return success, rel_path
 
@@ -497,7 +517,7 @@ def resource_paths(base_path):
         yield posix_path, rel_path
 
 
-def scan_infos(input_file):
+def scan_infos(input_file, diag=False):
     """
     Scan one file or directory and return file_infos data.
     This always contains an extra 'errors' key with a list of error messages,
@@ -509,23 +529,25 @@ def scan_infos(input_file):
         infos = get_file_infos(input_file, as_list=False)
     except Exception, e:
         # never fail but instead add an error message.
-        errors = dict(infos=(e.message, traceback.format_exc(),))
+        messages = ['ERROR: infos: ' + e.message]
+        if diag:
+            messages.append('ERROR: infos: ' + traceback.format_exc())
     # put errors last
     infos['scan_errors'] = errors
     return infos
 
 
-def scan_one(input_file, scans, diag=False):
+def scan_one(input_file, scanners, diag=False):
     """
     Scan one file or directory and return a scanned data, calling every scan in
     the `scans` mapping of (scan name -> scan function). Scan data contain a
-    'scan_errors' key with errors a dictionary keyed by "scan name" and a value as a
-    list of errors messages. If `diag` is True, 'scan_errors' error messages
-    also contain detailed diagnotics information, e.g. a traceback if available.
+    'scan_errors' key with a list of error messages.
+    If `diag` is True, 'scan_errors' error messages also contain detailed diagnostic
+    information such as a traceback if available.
     """
     scan_result = OrderedDict()
     scan_errors = []
-    for scan_name, scan_func in scans.items():
+    for scan_name, scan_func in scanners.items():
         if not scan_func:
             continue
         try:
@@ -537,10 +559,10 @@ def scan_one(input_file, scans, diag=False):
         except Exception, e:
             # never fail but instead add an error message and keep an empty scan:
             scan_result[scan_name] = []
-            errs = [e.message]
+            messages = ['ERROR: ' + scan_name + ': ' + e.message]
             if diag:
-                errs.append(traceback.format_exc())
-            scan_errors.append({scan_name: [e.message]})
+                messages.append('ERROR: ' + scan_name + ': ' + traceback.format_exc())
+            scan_errors.extend(messages)
     # put errors last, after scans proper
     scan_result['scan_errors'] = scan_errors
     return scan_result
