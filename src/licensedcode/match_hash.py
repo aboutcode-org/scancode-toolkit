@@ -60,7 +60,7 @@ MATCH_HASH = '1-hash'
 
 def tokens_hash(tokens):
     """
-    Return a digest binary string computed from a sequence of numeric token ids. 
+    Return a digest binary string computed from a sequence of numeric token ids.
     """
     return md5(array('h', tokens).tostring()).digest()
 
@@ -86,12 +86,9 @@ def match_hash(idx, query_run):
         itokens = idx.tids_by_rid[rid]
         len_junk = idx.len_junk
         logger_debug('match_hash: Match:', rule.identifier)
-        qspan = Span(query_run.start, query_run.end)
+        qspan = Span(range(query_run.start, query_run.end + 1))
         ispan = Span(range(0, rule.length))
         hispan = Span(p for p in ispan if itokens[p] >= len_junk)
-        match = LicenseMatch(rule, qspan, ispan, hispan=hispan, 
-                             line_by_pos=query_run.line_by_pos, 
-                             query_run_start=query_run.start, 
-                             matcher=MATCH_HASH)
+        match = LicenseMatch(rule, qspan, ispan, hispan=hispan, query_run_start=query_run.start, matcher=MATCH_HASH)
         matches.append(match)
     return matches

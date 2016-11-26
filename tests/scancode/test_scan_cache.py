@@ -28,7 +28,7 @@ import os
 
 from commoncode.testcase import FileBasedTesting
 
-from scancode.cache import ScanCache
+from scancode.cache import ScanFileCache
 
 
 class TestCache(FileBasedTesting):
@@ -38,8 +38,11 @@ class TestCache(FileBasedTesting):
         test_file = self.get_test_loc('cache/package/package.json')
         from scancode import api
         package = api.get_package_infos(test_file)
+        file_info = dict(sha1='def')
 
         test_dir = self.get_temp_dir()
-        cache = ScanCache(test_dir)
-        cache.put_infos(path='abc', file_infos=dict(sha1='def'))
-        cache.put_scan(path='abc', file_infos=dict(sha1='def'), scan_result=package)
+        cache = ScanFileCache(test_dir)
+        cache.put_info(path='abc', file_info=file_info)
+        cache.put_scan(path='abc', file_info=file_info, scan_result=package)
+        assert file_info == cache.get_info(path='abc')
+        assert package == cache.get_scan(path='abc', file_info=file_info)

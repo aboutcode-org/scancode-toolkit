@@ -28,6 +28,9 @@
     "conditioned": [
       72
     ], 
+    "minimum": [
+      59
+    ], 
     "including": [
       74, 
       137, 
@@ -149,9 +152,6 @@
     ], 
     "promote": [
       106
-    ], 
-    "permitted": [
-      7
     ], 
     "nor": [
       94
@@ -340,9 +340,6 @@
     ], 
     "promote": [
       84
-    ], 
-    "permitted": [
-      13
     ], 
     "nor": [
       72

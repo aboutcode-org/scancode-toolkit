@@ -40,7 +40,6 @@ from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import file_iter
 
-from licensedcode import MAX_GAP_SKIP
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import licenses_data_dir
@@ -598,9 +597,7 @@ def load_rules(rule_dir=rules_data_dir):
         raise Exception(msg % locals())
 
 
-Thresholds = namedtuple('Thresholds',
-                        ['high_len', 'low_len', 'length',
-                         'small', 'min_high', 'min_len', 'max_gap_skip'])
+Thresholds = namedtuple('Thresholds', ['high_len', 'low_len', 'length', 'small', 'min_high', 'min_len'])
 
 class Rule(object):
     """
@@ -615,11 +612,11 @@ class Rule(object):
                  'data_file', 'text_file', '_text',
                  'length', 'low_length', 'high_length', '_thresholds',
                  'length_unique', 'low_unique', 'high_unique', '_thresholds_unique',
-                 'gaps', 'is_url', 'solid'
+                 'is_url', 'minimum_score'
                  )
 
     def __init__(self, data_file=None, text_file=None, licenses=None,
-                 license_choice=False, notes=None, solid=False, _text=None):
+                 license_choice=False, notes=None, minimum_score=0, _text=None):
 
         ###########
         # FIXME: !!! TWO RULES MAY DIFFER BECAUSE THEY ARE UPDATED BY INDEXING
@@ -646,13 +643,12 @@ class Rule(object):
         # is this rule text a false positive when matched? (filtered out)
         self.false_positive = False
 
-        # is this rule text only to be matched if all tokens are matched?
-        # not computed but set
-        self.solid = solid
+        # is this rule text only to be matched with a minimum score?
+        self.minimum_score = minimum_score
 
         # optional, free text
         self.notes = notes
-        
+
         # path to the YAML data file for this rule
         self.data_file = data_file
         if data_file:
@@ -667,12 +663,12 @@ class Rule(object):
         # for testing only, when we do not use a file
         self._text = _text
 
-        # These attributes are computed upon text loading or setting the thresholds 
+        # These attributes are computed upon text loading or setting the thresholds
         ###########################################################################
 
         # is this rule text for a bare url? (needs exact matching)
         self.is_url = False
-        
+
         # length in number of token strings
         self.length = 0
 
@@ -689,14 +685,14 @@ class Rule(object):
 
     def tokens(self, lower=True):
         """
-        Return an iterable of token strings for this rule. 
-        Length is recomputed. Tokens inside gaps are skipped and ignored.
+        Return an iterable of token strings for this rule. Length is recomputed.
+        Tokens inside double curly braces (eg. {{ignored}}) are skipped and ignored.
         """
         length = 0
         text = self.text()
         text = text.strip()
 
-        # FIXME: this is weird: 
+        # FIXME: this is weird:
         # tag this rule as being a bare URL if it starts with a scheme and is on one line: this is used to determine a matching approach
         if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000]:
             self.is_url = True
@@ -734,8 +730,8 @@ class Rule(object):
         keys = self.licenses
         choice = self.license_choice
         fp = self.false_positive
-        solid = self.solid
-        return 'Rule(%(idf)r, lics=%(keys)r, fp=%(fp)r, solid=%(solid)r, %(text)r)' % locals()
+        minimum_score = self.minimum_score
+        return 'Rule(%(idf)r, lics=%(keys)r, fp=%(fp)r, minimum_score=%(minimum_score)r, %(text)r)' % locals()
 
     def same_licensing(self, other):
         """
@@ -771,35 +767,31 @@ class Rule(object):
         Return a Thresholds tuple considering every token occurrence.
         """
         if not self._thresholds:
-            min_high = MIN_MATCH_HIGH_LENGTH
+            min_high = min([self.high_length, MIN_MATCH_HIGH_LENGTH])
             min_len = MIN_MATCH_LENGTH
-            max_gap_skip = MAX_GAP_SKIP
 
             # note: we cascade ifs from largest to smallest lengths
             if self.length < 30:
-                min_high = self.high_length
                 min_len = self.length // 2
-                max_gap_skip = 1
 
             if self.length < 10:
                 min_high = self.high_length
                 min_len = self.length
-                max_gap_skip = 1
+                self.minimum_score = 80
 
             if self.length < 3:
                 min_high = self.high_length
                 min_len = self.length
-                max_gap_skip = 1
-                self.solid = True
+                self.minimum_score = 100
 
-            if self.is_url or self.solid:
+            if self.is_url or self.minimum_score == 100:
                 min_high = self.high_length
                 min_len = self.length
-                max_gap_skip = 0
 
             self._thresholds = Thresholds(
                 self.high_length, self.low_length, self.length,
-                self.small(), min_high, min_len, max_gap_skip)
+                self.small(), min_high, min_len
+            )
         return self._thresholds
 
     def thresholds_unique(self):
@@ -807,14 +799,13 @@ class Rule(object):
         Return a Thresholds tuple considering only unique token occurrence.
         """
         if not self._thresholds_unique:
-            min_high = int(min([self.high_unique // 2, MIN_MATCH_HIGH_LENGTH]))
+            highu = (int(self.high_unique // 2)) or self.high_unique
+            min_high = min([highu, MIN_MATCH_HIGH_LENGTH])
             min_len = MIN_MATCH_LENGTH
-            max_gap_skip = MAX_GAP_SKIP
             # note: we cascade IFs from largest to smallest lengths
             if self.length < 20:
                 min_high = self.high_unique
                 min_len = min_high
-                max_gap_skip = 1
 
             if self.length < 10:
                 min_high = self.high_unique
@@ -822,21 +813,18 @@ class Rule(object):
                     min_len = self.length_unique
                 else:
                     min_len = self.length_unique - 1
-                max_gap_skip = 1
 
             if self.length < 5:
                 min_high = self.high_unique
                 min_len = self.length_unique
-                max_gap_skip = 1
 
             if self.is_url:
                 min_high = self.high_unique
                 min_len = self.length_unique
-                max_gap_skip = 0
 
             self._thresholds_unique = Thresholds(
                 self.high_unique, self.low_unique, self.length_unique,
-                self.small(), min_high, min_len, max_gap_skip)
+                self.small(), min_high, min_len)
         return self._thresholds_unique
 
     def asdict(self):
@@ -853,8 +841,8 @@ class Rule(object):
             data['license'] = self.license
         if self.false_positive:
             data['false_positive'] = self.false_positive
-        if self.solid:
-            data['solid'] = self.solid
+        if self.minimum_score:
+            data['minimum_score'] = self.minimum_score
         if self.notes:
             data['notes'] = self.note
         return data
@@ -894,7 +882,7 @@ class Rule(object):
         self.license_choice = data.get('license_choice', False)
         self.license = data.get('license')
         self.false_positive = data.get('false_positive', False)
-        self.solid = data.get('solid', False)
+        self.minimum_score = int(data.get('minimum_score', 0))
 
         # these are purely informational and not used at run time
         if load_notes:

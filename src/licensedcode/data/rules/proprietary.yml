@@ -1,4 +1,4 @@
 licenses:
     - proprietary
-solid: yes
+minimum_score: 100
 notes: Found in some old debian specs

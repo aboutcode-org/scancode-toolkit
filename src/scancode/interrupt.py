@@ -104,18 +104,18 @@ def interruptible(func, *args, **kwargs):
         result = threads.next(timeout)
         if result == MEMORY_EXCEEDED:
             max_mb = megabytes(max_memory)
-            return False, 'Processing interrupted: excessive memory usage of more than %(max_mb)s.' % locals()
+            return False, 'ERROR: Processing interrupted: excessive memory usage of more than %(max_mb)s.' % locals()
         elif result == RUNTIME_EXCEEDED:
-            return False, 'Processing interrupted: timeout after %(timeout)d seconds.' % locals()
+            return False, 'ERROR: Processing interrupted: timeout after %(timeout)d seconds.' % locals()
         else:
             # we succeeded with quotas: return expected results
             return True, result
 
     except multiprocessing.TimeoutError:
-        return False, 'Processing interrupted: timeout after %(timeout)d seconds.' % locals()
+        return False, 'ERROR: Processing interrupted: timeout after %(timeout)d seconds.' % locals()
 
     except KeyboardInterrupt:
-        return False, 'Processing interrupted with Ctrl-C.'
+        return False, 'ERROR: Processing interrupted with Ctrl-C.'
 
     finally:
         # stop processing

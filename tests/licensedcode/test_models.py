@@ -139,8 +139,8 @@ class TestRule(FileBasedTesting):
         r2_text = u'licensed under the GPL, licensed under the GPL' * 10
         r2 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r2_text)
         _idx = index.LicenseIndex([r1, r2])
-        assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8, max_gap_skip=1) == r1.thresholds()
-        assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4, max_gap_skip=15) == r2.thresholds()
+        assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8) == r1.thresholds()
+        assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4) == r2.thresholds()
 
         r1_text = u'licensed under the GPL,{{}} licensed under the GPL'
         r1 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r1_text)
@@ -148,5 +148,5 @@ class TestRule(FileBasedTesting):
         r2 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r2_text)
 
         _idx = index.LicenseIndex([r1, r2])
-        assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8, max_gap_skip=1) == r1.thresholds()
-        assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4, max_gap_skip=15) == r2.thresholds()
+        assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8) == r1.thresholds()
+        assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4) == r2.thresholds()

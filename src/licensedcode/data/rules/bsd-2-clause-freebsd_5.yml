@@ -1,4 +1,4 @@
 licenses:
     - bsd-2-clause-freebsd
 
-solid: yes
+minimum_score: 100

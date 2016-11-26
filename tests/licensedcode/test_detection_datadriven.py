@@ -172,7 +172,7 @@ def build_tests(license_tests, clazz):
             expected_failure=test.expected_failure,
             skip_test=test.skip and 'Skipping long test' or False,
             trace_text=TRACE_TEXTS
-            )
+        )
 
         # attach that method to our test class
         setattr(clazz, test_name, test_method)

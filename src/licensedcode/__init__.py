@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -51,9 +51,6 @@ if not exists(license_index_cache_dir):
 # minimum number of tokens a match should have to be considered as worthy
 MIN_MATCH_LENGTH = 4
 MIN_MATCH_HIGH_LENGTH = 3
-
-# maximum number of non-matching tokens that can be skipped
-MAX_GAP_SKIP = 15
 
 # maximum distance between two matches to merge
 MAX_DIST = 120

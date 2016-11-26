@@ -63,7 +63,7 @@ class TestInterrupt(FileBasedTesting):
             return 'OK'
 
         result = interrupt.interruptible(some_long_function, 0.5, timeout=0.01)
-        assert (False, 'Processing interrupted: timeout after 0 seconds.') == result
+        assert (False, 'ERROR: Processing interrupted: timeout after 0 seconds.') == result
 
     def test_interruptible_stops_execution_on_memory(self):
         from time import sleep

@@ -1,4 +1,4 @@
 licenses:
     - apache-1.1
-solid: yes
+minimum_score: 100
 notes: Old, original Apache 1.1 URL

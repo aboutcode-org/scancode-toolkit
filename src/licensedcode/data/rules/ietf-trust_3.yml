@@ -1,3 +1,3 @@
 licenses:
     - ietf-trust
-solid: yes
+minimum_score: 100

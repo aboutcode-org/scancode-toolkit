@@ -26,29 +26,40 @@ from __future__ import absolute_import, print_function
 
 from collections import OrderedDict
 from functools import partial
+import json
+from hashlib import sha1
 import os
+import posixpath
 import sys
 
 from commoncode import fileutils
+from commoncode.fileutils import as_posixpath
 from commoncode import timeutils
 
 from scancode import scans_cache_dir
 
 """
-Caching scans on disk: A cache of all the scan results.
+Cache scan results for a file or directory disk using a file-based cache.
 
-Each scan results for a file or directory is cached on disk.
+The approach is to cache the scan of a file using these files:
+ - one "global" file contains a log of all the paths scanned.
+ - for each file being scanned, we store a file that contains the corresponding file
+   info data as JSON. This file is named after the hash of the path of a scanned file.
+ - for each unique file being scanned (e.g. based on its content SHA1), we store a
+   another JSON file that contains the corresponding scan data. This file is named
+   after the hash of the scanned file content.
 
-The approach is to use to cache:
- - the results of a scan, excluding file infos keyed by the hash of a scanned file
- - the file infos, keyed by the path of a scanned file
-
-Once a scan is completed, we iterate the caches to output the scan results using this
-procedure: iterate the cached file infos and for each lookup the scan details in the
-cached scan results. This iteration is driving the final streaming of results to the
-output format (e.g. JSON).
+Once a scan is completed, we iterate the cache to output the final scan results:
+First iterate the global log file to get the paths, from there collect the cached
+file info for that file and from the path and file info collect the cached scanned
+result. This iterator is then streamed to the final JSON output.
 
 Finally once a scan is completed the cache is destroyed to free up disk space.
+
+Internally the cache is organized as a tree of directories named after the first few
+characters or a path hash or file hash. This is to avoid having having too many files
+per directory that can make some filesystems choke as well as having directories that
+are too deep or having file paths that are too long which problematic on some OS.
 """
 
 # Tracing flags
@@ -69,123 +80,221 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
 
-class ScanCache(object):
+def get_scans_cache_class(cache_dir=scans_cache_dir):
     """
-    A file-based cache for scan results.
-    This is NOT thread-safe, but is multi-process safe.
+    Return a new persistent cache class configured with a unique storage directory.
+    """
+    # create a unique temp directory in cache_dir
+    fileutils.create_dir(cache_dir)
+    cache_dir = fileutils.get_temp_dir(cache_dir, prefix=timeutils.time2tstamp() + '-')
+    sc = ScanFileCache(cache_dir)
+    sc.setup()
+    return partial(ScanFileCache, cache_dir)
+
+
+def info_keys(path):
+    """
+    Return a file info cache keys tripple for a path.
+
+    For example:
+    >>> sha1('/w421/scancode-toolkit2').hexdigest()
+    'fb87db2bb28e9501ac7fdc4812782118f4c94a0f'
+    >>> info_keys('/w421/scancode-toolkit2')
+    ('f', 'b', '87db2bb28e9501ac7fdc4812782118f4c94a0f')
+    """
+    return keys_from_hash(sha1(path).hexdigest())
+
+
+def scan_keys(path, file_info):
+    """
+    Return a scan cache keys tripple for a path and file_info. If the file_info
+    sha1 is empty (e.g. such as a directory), return a key based on the path instead.
+    """
+    sha1_digest = file_info['sha1']
+    if sha1_digest:
+        return keys_from_hash(sha1_digest)
+    else:
+        # we may eventually store directories, in which case we use the path as a key
+        # with some extra seed
+        return  info_keys(u'empty hash' + path)
+
+
+def keys_from_hash(hexdigest):
+    """
+    Return a cache keys triple for a hash hexdigest string.
+
+    NOTE: since we use the first character and next two characters as directories, we
+    create at most 16 dir at the first level and 16 dir at the second level for each
+    first level directory for a maximum total of 16*16 = 256 directories. For a
+    million files we would have about 4000 files per directory on average with this
+    scheme which should keep most file systems happy and avoid some performance
+    issues when there are too many files in a single directory.
+
+    For example:
+    >>> keys_from_hash('fb87db2bb28e9501ac7fdc4812782118f4c94a0f')
+    ('f', 'b', '87db2bb28e9501ac7fdc4812782118f4c94a0f')
+    """
+    return hexdigest[0], hexdigest[1], hexdigest[2:]
+
+
+def paths_from_keys(base_path, keys):
+    """
+    Return a tuple of (parent dir path, filename) built from a cache keys triple and
+    a base_directory. Ensure that the parent directory exist.
+    """
+    dir1, dir2, fname = keys
+    parent = os.path.join(base_path, dir1, dir2)
+    fileutils.create_dir(parent)
+    return parent, fname
+
+
+class ScanFileCache(object):
+    """
+    A file-based cache for scan results saving results in files and using no locking.
+    This is NOT thread-safe and NOT multi-process safe but works OK in our context:
+    we cache the scan for a given file once and read it only a few times.
     """
     def __init__(self, cache_dir):
         self.cache_base_dir = cache_dir
-        # subdirs for infos and scans caches
-        self.cache_infos_dir = os.path.join(self.cache_base_dir, 'infos')
-        self.cache_scans_dir = os.path.join(self.cache_base_dir, 'scans')
+        # subdirs for info and scans caches
+        self.cache_infos_dir = as_posixpath(os.path.join(self.cache_base_dir, 'infos/'))
+        self.cache_scans_dir = as_posixpath(os.path.join(self.cache_base_dir, 'scans/'))
+        self.cache_files_log = as_posixpath(os.path.join(self.cache_base_dir, 'files_log'))
 
-        # workaround for https://github.com/grantjenks/python-diskcache/issues/32
-        from diskcache import Disk
-        class DiskWithNoHighPickleProtocol(Disk):
-            "Subclass of diskcache.Disk that always use the lowest pickle protocol."
-            def __init__(self, directory, size_threshold, pickle_protocol):
-                super(DiskWithNoHighPickleProtocol, self).__init__(directory, size_threshold, pickle_protocol)
-                self._protocol = 0
+    def setup(self):
+        """
+        Setup the cache: must be called at least once globally after cache
+        initialization.
+        """
+        os.makedirs(self.cache_infos_dir)
+        os.makedirs(self.cache_scans_dir)
 
-        # and finally cache instances
-        from diskcache import Cache
-        self.infos = Cache(self.cache_infos_dir, disk=DiskWithNoHighPickleProtocol)
-        self.scans = Cache(self.cache_scans_dir, disk=DiskWithNoHighPickleProtocol)
+    @classmethod
+    def log_file_path(cls, logfile_fd, path):
+        """
+        Log file path in the cache logfile_fd **opened** file descriptor.
+        """
+        # we dump the path as JSON, one per line.
+        # JSON is to avoid any issue with weird file paths/names
+        logfile_fd.write(json.dumps(path))
+        logfile_fd.write('\n')
 
-    def scan_key(self, path, file_infos):
+    def get_cached_info_path(self, path):
         """
-        Return a scan cache key for a path and file_infos.
+        Return the path where to store a file info in the cache given a path.
         """
-        sha1 = file_infos['sha1']
-        # we may eventually store directories, in which case we use the path as a key
-        return sha1 or path
+        keys = info_keys(path)
+        paths = paths_from_keys(self.cache_infos_dir, keys)
+        return posixpath.join(*paths)
 
-    def put_infos(self, path, file_infos):
+    def put_info(self, path, file_info):
         """
-        Put file_infos for path in the cache and return True if the file referenced
-        in file_infos has already been scanned or False otherwise.
+        Put file_info for path in the cache and return True if the file referenced
+        in file_info has already been scanned or False otherwise.
         """
-        self.infos.set(path, file_infos)
-        is_scan_cached = self.scan_key(path, file_infos) in self.scans
+        info_path = self.get_cached_info_path(path)
+        with open(info_path, 'wb') as cached_infos:
+            json.dump(file_info, cached_infos, check_circular=False)
+        scan_path = self.get_cached_scan_path(path, file_info)
+        is_scan_cached = os.path.exists(scan_path)
         if TRACE:
-            logger_debug('put_infos:', 'path:', path, 'is_scan_cached:', is_scan_cached, 'file_infos:', file_infos, '\n')
-            logger_debug('put_infos:', 'cached_infos:', self.infos[path], '\n')
+            logger_debug('put_infos:', 'path:', path, 'is_scan_cached:', is_scan_cached, 'file_info:', file_info, '\n')
         return is_scan_cached
 
-    def put_scan(self, path, file_infos, scan_result):
+    def get_info(self, path):
+        """
+        Return file info from the cache for a path.
+        Return None on failure to find the info in the cache.
+        """
+        info_path = self.get_cached_info_path(path)
+        if os.path.exists(info_path):
+            with open(info_path, 'rb') as ci:
+                return json.load(ci, object_pairs_hook=OrderedDict)
+
+    def get_cached_scan_path(self, path, file_info):
+        """
+        Return the path where to store a scan in the cache given a path and file_info.
+        """
+        keys = scan_keys(path, file_info)
+        paths = paths_from_keys(self.cache_scans_dir, keys)
+        return posixpath.join(*paths)
+
+    def put_scan(self, path, file_info, scan_result):
         """
         Put scan_result in the cache if not already cached.
         """
-        scan_key = self.scan_key(path, file_infos)
-        self.scans.add(scan_key, scan_result)
+        scan_path = self.get_cached_scan_path(path, file_info)
+        if not os.path.exists(scan_path):
+            with open(scan_path, 'wb') as cached_scan:
+                json.dump(scan_result, cached_scan, check_circular=False)
         if TRACE:
-            logger_debug('put_scan:', 'scan_key:', scan_key, 'file_infos:', file_infos, 'scan_result:', scan_result, '\n')
-            logger_debug('put_scan:', 'cached_infos:', self.infos[path], '\n')
-            logger_debug('put_scan:', 'scan_key:', scan_key, 'cached_scan:', self.scans[scan_key], '\n')
+            logger_debug('put_scan:', 'scan_path:', scan_path, 'file_info:', file_info, 'scan_result:', scan_result, '\n')
 
-    def iterate(self, with_infos=True):
+    def get_scan(self, path, file_info):
         """
-        Yield scan data for all cached scans e.g. the whole cache.
-        If a scan is missing for a given info, an error is appended to scan_errors.
+        Return scan results from the cache for a path and file_info.
+        Return None on failure to find the scan results in the cache.
         """
-        for path in self.infos:
-            file_infos = self.infos[path]
-            scan_result = OrderedDict(path=path)
-            if with_infos:
-                # infos is always collected but only returnedd if asked:
-                # we flatten these as direct attributes of a file object
-                scan_result.update(file_infos.items())
-            else:
-                # always include errors even if empty
-                scan_result['scan_errors'] = file_infos.get('scan_errors', [])
+        scan_path = self.get_cached_scan_path(path, file_info)
+        if os.path.exists(scan_path):
+            with open(scan_path, 'rb') as cs:
+                return json.load(cs, object_pairs_hook=OrderedDict)
 
-            no_scan_details = dict(scan_errors=[
-                ('ERROR: Requested scan details unavailable in cache.',
-                'This is either a bug or processing was aborted with CTRL-C.')]
-            )
-
-            scan_key = self.scan_key(path, file_infos)
-            scan_details = self.scans.get(scan_key, no_scan_details)
-            if TRACE:
-                logger_debug('iterate:', 'scan_details:', scan_details, 'for path:', path, 'scan_key:', scan_key, '\n')
-
-            # append errors to other top level errors if any
-            scan_errors = scan_details.pop('scan_errors', [])
-            scan_result['scan_errors'].extend(scan_errors)
-
-            scan_result.update(scan_details)
-            yield scan_result
-
-    def close(self):
+    def iterate(self, scan_names):
         """
-        Close the underlying caches.
+        Yield scan data for all cached scans e.g. the whole cache given a list of
+        scan names.
+
+        The logfile MUST have been closed before calling this method.
         """
-        if self.infos:
-            self.infos.close()
-        if self.scans:
-            self.scans.close()
+        with open(self.cache_files_log, 'rb') as cached_files:
+            # iterate the list of (path, (info keys)), one by line
+            for file_log in cached_files:
+                path = json.loads(file_log)
+                file_info = self.get_info(path)
+
+                # rare but possible corner case
+                if file_info is None:
+                    no_info = ('ERROR: file info unavailable in cache: '
+                               'This is either a bug or processing was aborted with CTRL-C.')
+                    scan_result = OrderedDict(path=path)
+                    scan_result['scan_errors'] = [no_info]
+                    if TRACE:
+                        logger_debug('iterate:', 'scan_result:', scan_result, 'for path:', path, '\n')
+                    yield scan_result
+                    continue
+
+                path = file_info.pop('path')
+                scan_result = OrderedDict(path=path)
+
+                if 'infos' in scan_names:
+                    # infos is always collected but only returned if requested
+                    # we flatten these as direct attributes of a file object
+                    scan_result.update(file_info.items())
+                if not scan_result.get('scan_errors'):
+                    scan_result['scan_errors'] = []
+
+                # check if we have more than just infos
+                if ['infos'] != scan_names:
+                    errors = scan_result['scan_errors']
+                    scan_details = self.get_scan(path, file_info)
+                    if scan_details is None:
+                        no_scan_details = (
+                            'ERROR: scan details unavailable in cache: '
+                            'This is either a bug or processing was aborted with CTRL-C.')
+                        errors.append(no_scan_details)
+                    else:
+                        # append errors to other top level errors if any
+                        scan_errors = scan_details.pop('scan_errors', [])
+                        errors.extend(scan_errors)
+                        scan_result.update(scan_details)
+
+                if TRACE:
+                    logger_debug('iterate:', 'scan_result:', scan_result, 'for path:', path, '\n')
+                yield scan_result
 
     def clear(self, *args):
         """
         Purge the cache by deleting the corresponding cached data files.
         """
-        self.close()
         fileutils.delete(self.cache_base_dir)
-
-
-def get_scans_cache(cache_dir=scans_cache_dir):
-    """
-    Return a new unique persistent cache instance.
-    """
-    return ScanCache(cache_dir)
-
-
-def get_scans_cache_class(cache_dir=scans_cache_dir):
-    """
-    Return a new unique persistent cache instance.
-    """
-    fileutils.create_dir(cache_dir)
-    # create a unique temp directory in cache_dir
-    cache_dir = fileutils.get_temp_dir(cache_dir, prefix=timeutils.time2tstamp() + '-')
-    return partial(ScanCache, cache_dir)

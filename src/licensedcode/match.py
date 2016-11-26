@@ -48,18 +48,20 @@ TRACE_FILTER_CONTAINS = False
 TRACE_REFINE = False
 TRACE_MERGE = False
 TRACE_REFINE_SMALL = False
+TRACE_REFINE_SINGLE = False
+TRACE_REFINE_RULE_MIN_SCORE = False
 TRACE_REFINE_SOLID = False
 TRACE_SPAN_DETAILS = False
 TRACE_MERGE_TEXTS = False
 
 
-# include or not unmatched tokens in debug texts
+# include or not unmatched tokens in collect matched texts (usedmostly for debugging)
 INCLUDE_UNMATCHED_TEXTS = True
 
 
 def logger_debug(*args): pass
 
-if TRACE or TRACE_FILTER_CONTAINS or TRACE_MERGE:
+if TRACE or TRACE_FILTER_CONTAINS or TRACE_MERGE or TRACE_REFINE_RULE_MIN_SCORE or TRACE_REFINE_SINGLE:
     import logging
     import sys
 
@@ -87,17 +89,15 @@ class LicenseMatch(object):
     account both the query and index Span.
     """
 
-    __slots__ = 'rule', 'qspan', 'ispan', 'hispan', 'line_by_pos' , 'query_run_start', 'matcher'
+    __slots__ = 'rule', 'qspan', 'ispan', 'hispan', 'query_run_start', 'matcher', 'start_line', 'end_line'
 
-    def __init__(self, rule, qspan, ispan, hispan=None, line_by_pos=None, query_run_start=0, matcher=''):
+    def __init__(self, rule, qspan, ispan, hispan=None, query_run_start=0, matcher='', start_line=0, end_line=0):
         """
         Create a new match from:
          - rule: matched Rule object
          - qspan: query text matched Span, start at zero which is the absolute query start (not the query_run start).
          - ispan: rule text matched Span, start at zero which is the rule start.
          - hispan: rule text matched Span for high tokens, start at zero which is the rule start. Always a subset of ispan.
-         - line_by_pos: mapping of (query positions -> line numbers). Line numbers start at one.
-           Optional: if not provided, the `lines` start and end tuple will be (0, 0) and no line information will be available.
          - matcher: a string indicating which matching procedure this match was created with. Used for debugging and testing only.
 
          Note that the relationship between is the qspan and ispan is such that:
@@ -110,9 +110,10 @@ class LicenseMatch(object):
         if hispan is None:
             hispan = Span()
         self.hispan = hispan
-        self.line_by_pos = line_by_pos or {}
         self.query_run_start = query_run_start
         self.matcher = matcher
+        self.start_line = start_line
+        self.end_line = end_line
 
     def __repr__(self, trace=TRACE_SPAN_DETAILS):
 
@@ -166,6 +167,9 @@ class LicenseMatch(object):
         """
         return self.rule.licensing_contains(other.rule)
 
+    def lines(self):
+        return self.start_line, self.end_line
+
     @property
     def qstart(self):
         return self.qspan.start
@@ -206,12 +210,6 @@ class LicenseMatch(object):
         Return the length of the match as the number of matched query tokens.
         """
         return len(self.hispan)
-
-    def lines(self):
-        """
-        Return a tuple of start and end line for this match.
-        """
-        return self.line_by_pos.get(self.qstart, 0), self.line_by_pos.get(self.qend, 0)
 
     def __contains__(self, other):
         """
@@ -291,14 +289,10 @@ class LicenseMatch(object):
         else:
             newmatcher = self.matcher
 
-        line_by_pos = dict(self.line_by_pos)
-        line_by_pos.update(other.line_by_pos)
-
         combined = LicenseMatch(rule=self.rule,
                                 qspan=Span(self.qspan | other.qspan),
                                 ispan=Span(self.ispan | other.ispan),
                                 hispan=Span(self.hispan | other.hispan),
-                                line_by_pos=line_by_pos,
                                 query_run_start=min(self.query_run_start, other.query_run_start),
                                 matcher=newmatcher)
         return combined
@@ -311,15 +305,14 @@ class LicenseMatch(object):
         self.qspan = combined.qspan
         self.ispan = combined.ispan
         self.hispan = combined.hispan
-        self.line_by_pos = combined.line_by_pos
         self.matcher = combined.matcher
         self.query_run_start = min(self.query_run_start, other.query_run_start)
         return self
 
-    def rebase(self, new_query_start, new_query_end, line_by_pos, matcher):
+    def rebase(self, new_query_start, new_query_end, matcher):
         """
-        Return a copy of this match with a new qspan and new line_by_pos and
-        updating the matcher of match as needed.
+        Return a copy of this match with a new qspan updating the matcher of this
+        copied match as needed.
         """
         offset = new_query_start - self.query_run_start
         return LicenseMatch(
@@ -327,7 +320,6 @@ class LicenseMatch(object):
             qspan=self.qspan.rebase(offset),
             ispan=Span(self.ispan),
             hispan=Span(self.hispan),
-            line_by_pos=line_by_pos,
             query_run_start=new_query_start,
             matcher=' '.join([self.matcher.replace(cache.MATCH_CACHE, '').strip(), matcher]),
         )
@@ -342,10 +334,14 @@ class LicenseMatch(object):
         hilen = self.hilen()
         ilen = self.ilen()
         if TRACE_REFINE_SMALL:
-            logger_debug('LicenseMatch.small(): hilen=%(hilen)r < min_ihigh=%(min_ihigh)r or ilen=%(ilen)r < min_ilen=%(min_ilen)r : thresholds=%(thresholds)r' % locals(),)
+            logger_debug('LicenseMatch.small(): hilen=%(hilen)r, ilen=%(ilen)r, thresholds=%(thresholds)r' % locals(),)
         if thresholds.small and self.score() < 50 and (hilen < min_ihigh or ilen < min_ilen):
+            if TRACE_REFINE_SMALL:
+                logger_debug('LicenseMatch.small(): CASE 1 thresholds.small and self.score() < 50 and (hilen < min_ihigh or ilen < min_ilen)')
             return True
         if hilen < min_ihigh or ilen < min_ilen:
+            if TRACE_REFINE_SMALL:
+                logger_debug('LicenseMatch.small(): CASE 2 hilen < min_ihigh or ilen < min_ilen')
             return True
 
     def false_positive(self, idx):
@@ -365,6 +361,17 @@ class LicenseMatch(object):
         return idx.false_positive_rid_by_hash.get(matched_hash)
 
 
+def set_lines(matches, line_by_pos):
+    """
+    Update a matches sequence with start and end line given a line_by_pos pos->line mapping.
+    """
+    # if there is no line_by_pos, do not bother: the lines will stay to zero.
+    if line_by_pos:
+        for match in matches:
+            match.start_line = line_by_pos[match.qstart]
+            match.end_line = line_by_pos[match.qend]
+
+
 def merge_matches(matches, max_dist=MAX_DIST):
     """
     Merge matches to the same rule in a sequence of matches. Return a new list
@@ -372,7 +379,6 @@ def merge_matches(matches, max_dist=MAX_DIST):
     returned as-is.
     For being merged two matches must also be in increasing query and index positions.
     """
-
     # shortcut for single matches
     if len(matches) < 2:
         return matches
@@ -380,25 +386,22 @@ def merge_matches(matches, max_dist=MAX_DIST):
     # only merge matches with the same rule: sort then group by rule
     # for the same rule, sort on start, longer high, longer match, matcher type
     sorter = lambda m: (m.rule.identifier, m.qspan.start, -m.hilen(), -m.qlen(), m.matcher)
-    all_matches = sorted(matches, key=sorter)
-
-
+    matches.sort(key=sorter)
     matches_by_rule = [(rid, list(rule_matches)) for rid, rule_matches
-                        in groupby(all_matches, key=lambda m: m.rule.identifier)]
-
+                        in groupby(matches, key=lambda m: m.rule.identifier)]
     if TRACE_MERGE: print('merge_matches: number of matches to process:', len(matches))
 
     merged = []
-    for rid, matches in matches_by_rule:
+    for rid, rule_matches in matches_by_rule:
         if TRACE_MERGE: logger_debug('merge_matches: processing rule:', rid)
 
         # compare two matches in the sorted sequence: current and next
         i = 0
-        while i < len(matches) - 1:
+        while i < len(rule_matches) - 1:
             j = i + 1
-            while j < len(matches):
-                current_match = matches[i]
-                next_match = matches[j]
+            while j < len(rule_matches):
+                current_match = rule_matches[i]
+                next_match = rule_matches[j]
                 if TRACE_MERGE: logger_debug('---> merge_matches: current:', current_match)
                 if TRACE_MERGE: logger_debug('---> merge_matches: next:   ', next_match)
 
@@ -410,7 +413,7 @@ def merge_matches(matches, max_dist=MAX_DIST):
                 # keep one of equal matches
                 if current_match.qspan == next_match.qspan and current_match.ispan == next_match.ispan:
                     if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next EQUALS current, del next')
-                    del matches[j]
+                    del rule_matches[j]
                     continue
 
                 # if we have two equal ispans and some overlap
@@ -420,24 +423,24 @@ def merge_matches(matches, max_dist=MAX_DIST):
                     nqmag = next_match.qspan.magnitude()
                     if cqmag <= nqmag:
                         if TRACE_MERGE: logger_debug('    ---> ###merge_matches: current ispan EQUALS next ispan, current qmagnitude smaller, del next')
-                        del matches[j]
+                        del rule_matches[j]
                         continue
                     else:
                         if TRACE_MERGE: logger_debug('    ---> ###merge_matches: current ispan EQUALS next ispan, next qmagnitude smaller, del current')
-                        del matches[i]
+                        del rule_matches[i]
                         i -= 1
                         break
 
                 # remove contained matches
                 if current_match.qcontains(next_match):
                     if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next CONTAINED in current, del next')
-                    del matches[j]
+                    del rule_matches[j]
                     continue
 
                 # remove contained matches the other way
                 if next_match.qcontains(current_match):
                     if TRACE_MERGE: logger_debug('    ---> ###merge_matches: current CONTAINED in next, del current')
-                    del matches[i]
+                    del rule_matches[i]
                     i -= 1
                     break
 
@@ -449,7 +452,7 @@ def merge_matches(matches, max_dist=MAX_DIST):
                         # the merged matched is likely aligned
                         current_match.update(next_match)
                         if TRACE_MERGE: logger_debug('    ---> ###merge_matches: current SURROUNDS next, merged as new:', current_match)
-                        del matches[j]
+                        del rule_matches[j]
                         continue
 
                 # FIXME: qsurround is too weak. We want to check also isurround
@@ -460,7 +463,7 @@ def merge_matches(matches, max_dist=MAX_DIST):
                         # the merged matched is likely aligned
                         next_match.update(current_match)
                         if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next SURROUNDS current, merged as new:', current_match)
-                        del matches[i]
+                        del rule_matches[i]
                         i -= 1
                         break
 
@@ -468,7 +471,7 @@ def merge_matches(matches, max_dist=MAX_DIST):
                 if next_match.is_after(current_match):
                     current_match.update(next_match)
                     if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next follows current, merged as new:', current_match)
-                    del matches[j]
+                    del rule_matches[j]
                     continue
 
                 # next_match overlaps
@@ -484,12 +487,12 @@ def merge_matches(matches, max_dist=MAX_DIST):
                         if qoverlap == ioverlap:
                             current_match.update(next_match)
                             if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next overlaps in sequence current, merged as new:', current_match)
-                            del matches[j]
+                            del rule_matches[j]
                             continue
 
                 j += 1
             i += 1
-        merged.extend(matches)
+        merged.extend(rule_matches)
     return merged
 
 
@@ -712,6 +715,23 @@ def filter_contained_matches(matches):
     return matches, discarded
 
 
+def filter_rule_min_score(matches):
+    """
+    Return a list of matches scoring at or above a rule-defined minimum score and a
+    list of matches scoring below.
+    """
+    kept = []
+    discarded = []
+    for match in matches:
+        if match.score() < match.rule.minimum_score:
+            if TRACE_REFINE_RULE_MIN_SCORE: logger_debug('    ==> DISCARDING rule.minimum_score:', match.rule.minimum_score, 'match:', match)
+            discarded.append(match)
+        else:
+            kept.append(match)
+
+    return kept, discarded
+
+
 def filter_low_score(matches, min_score=100):
     """
     Return a list of matches scoring above `min_score` and a list of matches scoring below.
@@ -731,18 +751,46 @@ def filter_low_score(matches, min_score=100):
     return kept, discarded
 
 
-def filter_not_solid(matches):
+def filter_spurrious_single_token(matches, query=None, idx=None, unknown_count=5):
     """
-    Return a list of matches to solid rules that are not solid and a list of small matches.
+    Return a list of matches where matches to a single token are only surrounded by
+    at least `unknown_count` unknown tokens or short tokens composed of a single
+    character.
     """
     kept = []
     discarded = []
+    if not query:
+        return matches, discarded
+
+    unknowns_by_pos = query.unknowns_by_pos
+    shorts_pos = query.shorts_pos
     for match in matches:
-        if match.rule.solid  and match.score() != 100:
-            if TRACE_REFINE_SOLID: logger_debug('    ==> DISCARDING NOT SOLID:', 'solid:', match.rule.solid, 'score:', match.score(), match)
+        if not match.qlen() == 1:
+            kept.append(match)
+            continue
+
+        qstart = match.qstart
+        qend = match.qend
+
+        # compute the number of unknown tokens before and after this single matched position
+        # note: unknowns_by_pos is a defaultdict(int), shorts_pos is a set of integers
+        before = unknowns_by_pos[qstart - 1]
+        for p in range(qstart - 1 - unknown_count, qstart):
+            if p in shorts_pos:
+                before += 1
+
+        after = unknowns_by_pos[qstart]
+        for p in range(qend, qend + 1 + unknown_count):
+            if p in shorts_pos:
+                after += 1
+
+        if before >= unknown_count and after >= unknown_count:
+            if TRACE_REFINE_SINGLE: logger_debug('    ==> DISCARDING spurrious_single_token:', match)
+            if TRACE_REFINE_SINGLE: _debug_print_match(match, query, extras=unknown_count)
             discarded.append(match)
         else:
-            if TRACE_REFINE_SOLID: logger_debug('  ===> NOT DISCARDING NOT SOLID:', 'solid:', match.rule.solid, 'score:', match.score(), match)
+            if TRACE_REFINE_SINGLE: logger_debug('    ==> !!! NOT DISCARDING spurrious_single_token:', match, before, after)
+            if TRACE_REFINE_SINGLE: _debug_print_match(match, query, extras=unknown_count)
             kept.append(match)
     return kept, discarded
 
@@ -807,7 +855,7 @@ def filter_false_positive_matches(idx, matches):
     return kept, discarded
 
 
-def refine_matches(matches, idx, min_score=0, max_dist=MAX_DIST):
+def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST):
     """
     Return two sequences of matches: one contains refined good matches, and the
     other contains matches that were filtered out.
@@ -821,12 +869,22 @@ def refine_matches(matches, idx, min_score=0, max_dist=MAX_DIST):
 
     all_discarded = []
 
-    matches, discarded = filter_not_solid(matches)
+    matches, discarded = filter_rule_min_score(matches)
     all_discarded.extend(discarded)
+#     if TRACE: logger_debug('   #####refine_matches: NOT SHORT #', len(matches))
+#     if TRACE_REFINE: map(logger_debug, matches)
+#     if TRACE: logger_debug('   #####refine_matches: SHORT discarded#', len(discarded))
+#     if TRACE_REFINE: map(logger_debug, discarded)
+
+    matches, discarded = filter_spurrious_single_token(matches, query, idx)
+    all_discarded.extend(discarded)
+#     if TRACE: logger_debug('   #####refine_matches: NOT SHORT #', len(matches))
+#     if TRACE_REFINE: map(logger_debug, matches)
+#     if TRACE: logger_debug('   #####refine_matches: SHORT discarded#', len(discarded))
+#     if TRACE_REFINE: map(logger_debug, discarded)
 
     matches, discarded = filter_short_matches(matches)
     all_discarded.extend(discarded)
-
     if TRACE: logger_debug('   #####refine_matches: NOT SHORT #', len(matches))
     if TRACE_REFINE: map(logger_debug, matches)
     if TRACE: logger_debug('   #####refine_matches: SHORT discarded#', len(discarded))
@@ -1007,3 +1065,17 @@ def matched_rule_tokens_str(match, include_unmatched=INCLUDE_UNMATCHED_TEXTS):
                     yield '<%s>' % token
                 else:
                     yield '.'
+
+
+def _debug_print_match(match, query, extras=5):
+    # create a fake new match with extra unknown left and right
+    new_match = match.combine(match)
+    new_qstart = max([0, match.qstart - extras])
+    new_qend = min([match.qend + extras, len(query.tokens)])
+    new_qspan = Span(new_qstart, new_qend)
+    new_match.qspan = new_qspan
+
+    logger_debug(new_match)
+    logger_debug(' MATCHED QUERY TEXT with extras')
+    qt, _it = get_texts(new_match, location=query.location, query_string=None, idx=query.idx)
+    print(qt)

@@ -86,20 +86,13 @@ class TestLicenseMatchBasic(FileBasedTesting):
 
         assert not m1 == m4
 
-    def test_LicenseMatch_lines(self):
+    def test_LicenseMatch_equals(self):
         rule = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
-        line_by_pos = {x: 1 for x in range(0, 8)}
-        line_by_pos.update({x: 2 for x in range(8, 16)})
-        line_by_pos.update({x: 3 for x in range(16, 24)})
-
-        m1 = LicenseMatch(rule=rule, matcher='chunk1', qspan=Span(0, 7), ispan=Span(0, 7), line_by_pos=line_by_pos)
-        assert (1, 1) == m1.lines()
-        m2 = LicenseMatch(rule=rule, matcher='chunk2', qspan=Span(0, 7), ispan=Span(0, 7), line_by_pos=line_by_pos)
-        assert (1, 1) == m2.lines()
+        m1 = LicenseMatch(rule=rule, matcher='chunk1', qspan=Span(0, 7), ispan=Span(0, 7), start_line=1, end_line=1)
+        m2 = LicenseMatch(rule=rule, matcher='chunk2', qspan=Span(0, 7), ispan=Span(0, 7), start_line=1, end_line=1)
         assert m1 == m2
 
-        m3 = LicenseMatch(rule=rule, matcher='chunk3', qspan=Span(16, 23), ispan=Span(0, 7), line_by_pos=line_by_pos)
-        assert (3, 3) == m3.lines()
+        m3 = LicenseMatch(rule=rule, matcher='chunk3', qspan=Span(16, 23), ispan=Span(0, 7), start_line=3, end_line=3)
         assert m1 != m3
 
     def test_LicenseMatch_comparisons(self):

@@ -89,7 +89,6 @@ def exact_match(idx, query_run, automaton):
     qtokens = query_run.tokens
     qbegin = query_run.start
     query_run_matchables = query_run.matchables
-    line_by_pos = query_run.line_by_pos
 
     qtokens_as_str = array('h', qtokens).tostring()
     matches = []
@@ -135,7 +134,7 @@ def exact_match(idx, query_run, automaton):
             itokens = idx.tids_by_rid[rid]
             hispan = Span(p for p in ispan if itokens[p] >= len_junk)
 
-            match = LicenseMatch(rule, qspan, ispan, hispan, line_by_pos, query_run.start, matcher=matcher)
+            match = LicenseMatch(rule, qspan, ispan, hispan, query_run.start, matcher=matcher)
             matches.append(match)
 
     if TRACE and matches:

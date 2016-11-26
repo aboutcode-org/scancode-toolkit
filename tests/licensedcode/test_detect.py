@@ -881,14 +881,10 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
 
         matches = idx.match(query_string=querys)
 
-        line_by_pos = {x: 1 for x in range(0, 8)}
-        line_by_pos.update({x: 2 for x in range(8, 16)})
-        line_by_pos.update({x: 3 for x in range(16, 24)})
-
         rule = [r for r in idx.rules_by_rid if r.identifier == 'gpl_69.RULE'][0]
-        m1 = LicenseMatch(rule=rule, qspan=Span(0, 7), ispan=Span(0, 7), line_by_pos=line_by_pos)
-        m2 = LicenseMatch(rule=rule, qspan=Span(8, 15), ispan=Span(0, 7), line_by_pos=line_by_pos)
-        m3 = LicenseMatch(rule=rule, qspan=Span(16, 23), ispan=Span(0, 7), line_by_pos=line_by_pos)
+        m1 = LicenseMatch(rule=rule, qspan=Span(0, 7), ispan=Span(0, 7), start_line=1, end_line=1)
+        m2 = LicenseMatch(rule=rule, qspan=Span(8, 15), ispan=Span(0, 7), start_line=2, end_line=2)
+        m3 = LicenseMatch(rule=rule, qspan=Span(16, 23), ispan=Span(0, 7), start_line=3, end_line=3)
         assert [m1, m2, m3] == matches
 
     def test_match_has_correct_line_positions_for_query_with_repeats(self):
