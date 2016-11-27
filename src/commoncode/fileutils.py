@@ -107,9 +107,9 @@ def system_temp_dir():
 
 def get_temp_dir(base_dir, prefix=''):
     """
-    Return the path to base a new unique temporary directory, created under
-    the system-wide `system_temp_dir` temp directory and as a subdir of the
-    base_dir path, a path relative to the `system_temp_dir`.
+    Return the path to a new unique temporary directory, created under
+    the system-wide `system_temp_dir` temp directory as a subdir of the
+    base_dir path (a path relative to the `system_temp_dir`).
     """
     base = os.path.join(system_temp_dir(), base_dir)
     create_dir(base)
