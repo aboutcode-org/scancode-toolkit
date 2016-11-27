@@ -49,7 +49,7 @@ TRACE_REFINE = False
 TRACE_MERGE = False
 TRACE_REFINE_SMALL = False
 TRACE_REFINE_SINGLE = False
-TRACE_REFINE_RULE_MIN_SCORE = False
+TRACE_REFINE_RULE_MIN_COVERAGE = False
 TRACE_REFINE_SOLID = False
 TRACE_SPAN_DETAILS = False
 TRACE_MERGE_TEXTS = False
@@ -61,7 +61,7 @@ INCLUDE_UNMATCHED_TEXTS = True
 
 def logger_debug(*args): pass
 
-if TRACE or TRACE_FILTER_CONTAINS or TRACE_MERGE or TRACE_REFINE_RULE_MIN_SCORE or TRACE_REFINE_SINGLE:
+if TRACE or TRACE_FILTER_CONTAINS or TRACE_MERGE or TRACE_REFINE_RULE_MIN_COVERAGE or TRACE_REFINE_SINGLE:
     import logging
     import sys
 
@@ -131,6 +131,7 @@ class LicenseMatch(object):
             licenses=', '.join(self.rule.licenses),
             choice=self.rule.license_choice,
             score=self.score(),
+            coverage=self.coverage(),
             qlen=self.qlen(),
             ilen=self.ilen(),
             hilen=self.hilen(),
@@ -141,7 +142,7 @@ class LicenseMatch(object):
         )
         return ('LicenseMatch<%(matcher)r, lines=%(lines)r, '
                 '%(rule_id)r, %(licenses)r, choice=%(choice)r, '
-                'score=%(score)r, qlen=%(qlen)r, ilen=%(ilen)r, hilen=%(hilen)r, rlen=%(rlen)r, '
+                'sc=%(score)r, cov=%(coverage)r, qlen=%(qlen)r, ilen=%(ilen)r, hilen=%(hilen)r, rlen=%(rlen)r, '
                 'qreg=%(qreg)r, ireg=%(ireg)r'
                 '%(spans)s>') % rep
 
@@ -245,6 +246,12 @@ class LicenseMatch(object):
 
     def coverage(self):
         """
+        Return the coverage of this match to the matched rule as a float between 0 and 100.
+        """
+        return round(self._coverage() * 100, 2)
+
+    def _coverage(self):
+        """
         Return the coverage of this match to the matched rule as a float between 0 and 1.
         """
         if not self.rule.length:
@@ -255,11 +262,26 @@ class LicenseMatch(object):
         """
         Return the score for this match as a float between 0 and 100.
 
-        This is a ratio of matched tokens to the rule length and an indication of
-        coverage of match with respect to the matched rule.
+        This is an indication the quality and confidence that a match is good
+        computed as a ratio of matched tokens to the rule length multiplied by the
+        matched rule relevance.
         """
-        # TODO: compute a better score based tf/idf, BM25, applying ratio to low tokens, etc
-        return round(self.coverage() * 100, 2)
+        # _coverage return a value between 0 and 1
+        coverage = self._coverage()
+        if not coverage:
+            return 0
+
+        # relevance is a number between 0 and 100. Divide by 100
+        relevance = self.rule.relevance / 100
+        if not relevance:
+            return 0
+
+        print('coverage , relevance', coverage , relevance)
+
+        if not coverage or not relevance:
+            return 0
+
+        return round(coverage * relevance * 100, 2)
 
     def surround(self, other):
         """
@@ -327,6 +349,7 @@ class LicenseMatch(object):
     def small(self):
         """
         Return True if this match is "small" based on its rule thresholds.
+        Small matches are spurrious matches that are discarded.
         """
         thresholds = self.rule.thresholds()
         min_ihigh = thresholds.min_high
@@ -335,9 +358,9 @@ class LicenseMatch(object):
         ilen = self.ilen()
         if TRACE_REFINE_SMALL:
             logger_debug('LicenseMatch.small(): hilen=%(hilen)r, ilen=%(ilen)r, thresholds=%(thresholds)r' % locals(),)
-        if thresholds.small and self.score() < 50 and (hilen < min_ihigh or ilen < min_ilen):
+        if thresholds.small and self.coverage() < 50 and (hilen < min_ihigh or ilen < min_ilen):
             if TRACE_REFINE_SMALL:
-                logger_debug('LicenseMatch.small(): CASE 1 thresholds.small and self.score() < 50 and (hilen < min_ihigh or ilen < min_ilen)')
+                logger_debug('LicenseMatch.small(): CASE 1 thresholds.small and self.coverage() < 50 and (hilen < min_ihigh or ilen < min_ilen)')
             return True
         if hilen < min_ihigh or ilen < min_ilen:
             if TRACE_REFINE_SMALL:
@@ -547,13 +570,13 @@ def filter_contained_matches(matches):
 
             # equals matches
             if current_match.qspan == next_match.qspan:
-                if current_match.score() >= next_match.score():
-                    if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: next EQUALS current, removed next with lower or equal score', matches[j], '\n')
+                if current_match.coverage() >= next_match.coverage():
+                    if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: next EQUALS current, removed next with lower or equal coverage', matches[j], '\n')
                     discarded.append(next_match)
                     del matches[j]
                     continue
                 else:
-                    if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: next EQUALS current, removed current with lower score', matches[i], '\n')
+                    if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: next EQUALS current, removed current with lower coverage', matches[i], '\n')
                     discarded.append(current_match)
                     del matches[i]
                     i -= 1
@@ -715,16 +738,16 @@ def filter_contained_matches(matches):
     return matches, discarded
 
 
-def filter_rule_min_score(matches):
+def filter_rule_min_coverage(matches):
     """
-    Return a list of matches scoring at or above a rule-defined minimum score and a
+    Return a list of matches scoring at or above a rule-defined minimum coverage and a
     list of matches scoring below.
     """
     kept = []
     discarded = []
     for match in matches:
-        if match.score() < match.rule.minimum_score:
-            if TRACE_REFINE_RULE_MIN_SCORE: logger_debug('    ==> DISCARDING rule.minimum_score:', match.rule.minimum_score, 'match:', match)
+        if match.coverage() < match.rule.minimum_coverage:
+            if TRACE_REFINE_RULE_MIN_COVERAGE: logger_debug('    ==> DISCARDING rule.minimum_coverage:', match.rule.minimum_coverage, 'match:', match)
             discarded.append(match)
         else:
             kept.append(match)
@@ -802,7 +825,7 @@ def filter_short_matches(matches):
     kept = []
     discarded = []
     for match in matches:
-        if (match.small()):  # and match.score() < SMALL_MATCH_MIN_SCORE):
+        if match.small():
             if TRACE_REFINE_SMALL: logger_debug('    ==> DISCARDING SHORT:', match)
             discarded.append(match)
         else:
@@ -869,7 +892,7 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST):
 
     all_discarded = []
 
-    matches, discarded = filter_rule_min_score(matches)
+    matches, discarded = filter_rule_min_coverage(matches)
     all_discarded.extend(discarded)
 #     if TRACE: logger_debug('   #####refine_matches: NOT SHORT #', len(matches))
 #     if TRACE_REFINE: map(logger_debug, matches)

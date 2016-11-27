@@ -1,4 +1,4 @@
 licenses:
     - gpl-3.0
-minimum_score: 100
+minimum_coverage: 100
 

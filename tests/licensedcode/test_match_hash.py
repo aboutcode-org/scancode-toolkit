@@ -51,7 +51,7 @@ class TestHashMatch(FileBasedTesting):
         matches = idx.match(query_doc)
         assert 1 == len(matches)
         match = matches[0]
-        assert 100 == match.score()
+        assert 100 == match.coverage()
         assert match_hash.MATCH_HASH == match.matcher
         assert rules[0] == match.rule
         assert Span(0, 121) == match.qspan
@@ -66,7 +66,7 @@ class TestHashMatch(FileBasedTesting):
         assert 1 == len(matches)
         match = matches[0]
         assert match_hash.MATCH_HASH == match.matcher
-        assert 100 == match.score()
+        assert 100 == match.coverage()
         assert rules[0] == match.rule
         assert Span(0, 121) == match.qspan
         assert Span(0, 121) == match.ispan

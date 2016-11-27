@@ -331,7 +331,7 @@ def scan(input_path, copyright=True, license=True, package=True,
     scan_summary = OrderedDict()
     scan_summary['scanned_path'] = input_path
     scan_summary['processes'] = processes
-    get_licenses_with_score = partial(get_licenses, min_score=license_score)
+    get_licenses_with_score = partial(get_licenses, min_score=license_score, diag=diag)
 
     # note: "flag and function" expressions return the function if flag is True
     # note: the order of the scans matters to show things in logical order

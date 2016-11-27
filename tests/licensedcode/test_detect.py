@@ -91,7 +91,7 @@ class TestIndexMatch(FileBasedTesting):
         assert rule == match.rule
         assert Span(0, 86) == match.qspan
         assert Span(0, 86) == match.ispan
-        assert 100 == match.score()
+        assert 100 == match.coverage()
 
     def test_match_matches_correctly_simple_exact_query_1(self):
         tf1 = self.get_test_loc('detect/mit/mit.c')
@@ -177,7 +177,7 @@ class TestIndexMatch(FileBasedTesting):
 
         assert Span(0, 86) == match.qspan
         assert Span(0, 86) == match.ispan
-        assert 100 == match.score()
+        assert 100 == match.coverage()
 
     def test_match_can_match_approximately(self):
         rule_file = self.get_test_loc('approx/mit/mit.c')
@@ -191,8 +191,8 @@ class TestIndexMatch(FileBasedTesting):
         m2 = matches[1]
         assert rule == m1.rule
         assert rule == m2.rule
-        assert 100 == m1.score()
-        assert 100 == m2.score()
+        assert 100 == m1.coverage()
+        assert 100 == m2.coverage()
 
     def test_match_return_correct_positions_with_short_index_and_queries(self):
         idx = index.LicenseIndex([Rule(_text='MIT License', licenses=['mit'])])
@@ -263,7 +263,7 @@ class TestIndexMatch(FileBasedTesting):
         assert Span(0, 241) == match.qspan
         assert Span(0, 241) == match.ispan
         assert (1, 27,) == match.lines()
-        assert 100 == match.score()
+        assert 100 == match.coverage()
 
     def test_match_works_with_special_characters_1(self):
         test_file = self.get_test_loc('detect/specialcharacter/kerberos.txt')
@@ -328,7 +328,7 @@ class TestIndexMatch(FileBasedTesting):
         idx = index.LicenseIndex([rule1, rule2, rule3, rule4])
 
         querys = 'Redistribution and use bla permitted.'
-        # test : license1 is in the index and contains no other rule. should return rule1 at exact score.
+        # test : license1 is in the index and contains no other rule. should return rule1 at exact coverage.
         matches = idx.match(query_string=querys)
         assert 1 == len(matches)
         match = matches[0]
@@ -355,7 +355,7 @@ class TestIndexMatch(FileBasedTesting):
         rule2 = Rule(_text=license2, licenses=['overlap'])
         idx = index.LicenseIndex([rule1, rule2])
 
-        # test : license2 contains license1: return license2 as exact score
+        # test : license2 contains license1: return license2 as exact coverage
 
         querys = 'Redistribution and use bla permitted.'
         matches = idx.match(query_string=querys)
@@ -383,7 +383,7 @@ class TestIndexMatch(FileBasedTesting):
         rule2 = Rule(_text=license2, licenses=['overlap'])
         idx = index.LicenseIndex([rule1, rule2])
 
-        # test : license2 contains license1: return license2 as exact score
+        # test : license2 contains license1: return license2 as exact coverage
 
         querys = 'Redistribution and use bla permitted.'
         matches = idx.match(query_string=querys)
@@ -424,7 +424,7 @@ class TestIndexMatch(FileBasedTesting):
             Redistributions in binary form is permitted.
             My code.'''
 
-        # test : querys contains license2 that contains license1: return license2 as exact score
+        # test : querys contains license2 that contains license1: return license2 as exact coverage
         matches = idx.match(query_string=querys)
         assert 1 == len(matches)
         match = matches[0]
@@ -462,7 +462,7 @@ class TestIndexMatch(FileBasedTesting):
         Redistribution and use permitted.
         My code.'''
 
-        # test : querys contains license1: return license1 as exact score
+        # test : querys contains license1: return license1 as exact coverage
         matches = idx.match(query_string=querys)
         assert 1 == len(matches)
         match = matches[0]
@@ -496,7 +496,7 @@ class TestIndexMatch(FileBasedTesting):
         Redistribution and use permitted for MIT license.
         My code.'''
 
-        # test : querys contains license1: return license1 as exact score
+        # test : querys contains license1: return license1 as exact coverage
         matches = idx.match(query_string=querys)
         assert 1 == len(matches)
 
@@ -516,7 +516,7 @@ class TestIndexMatch(FileBasedTesting):
         match = matches[0]
         assert Span(0, 41) == match.qspan
         assert Span(0, 41) == match.ispan
-        assert 100 == match.score()
+        assert 100 == match.coverage()
         qtext, _itext = get_texts(match, location=query_loc, idx=idx)
         expected = '''
             is free software you can redistribute it and or modify it under the terms
@@ -664,7 +664,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         matches = idx.match(query_string=querys)
         assert 1 == len(matches)
         match = matches[0]
-        assert 100 == match.score()
+        assert 100 == match.coverage()
         assert Span(0, 9) == match.qspan
         assert Span(0, 9) == match.ispan
 
@@ -682,7 +682,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         assert 1 == len(matches)
 
         match = matches[0]
-        assert 100 == match.score()
+        assert 100 == match.coverage()
         assert Span(0, 10) == match.qspan
         assert Span(0, 10) == match.ispan
 
@@ -742,7 +742,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         '''.split()
         assert expected_itext == itext.split()
 
-        assert 80 < match.score()
+        assert 80 < match.coverage()
         assert Span(0, 6) | Span(13, 26) == match.qspan
         assert Span(0, 6) | Span(11, 24) == match.ispan
 
@@ -833,7 +833,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         assert expected_qtokens == qtext.split()
         assert expected_itokens == itext.split()
 
-        assert 97 < match.score()
+        assert 97 < match.coverage()
         expected = Span(2, 98) | Span(100, 125) | Span(127, 131) | Span(133, 139) | Span(149, 178) | Span(180, 253)
         assert expected == match.qspan
         assert  Span(1, 135) | Span(141, 244) == match.ispan
@@ -1024,7 +1024,7 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         assert 1 == len(matches)
         match = matches[0]
         assert ['bsd-new', 'gpl-2.0'] == match.rule.licenses
-        assert 100 == match.score()
+        assert 100 == match.coverage()
         qtext, itext = get_texts(match, location=qloc, idx=idx)
         assert 'license Dual BSD GPL' == qtext
         assert 'license Dual BSD GPL' == itext

@@ -102,7 +102,7 @@ def get_urls(location):
 
 DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
 
-def get_licenses(location, min_score=0):
+def get_licenses(location, min_score=0, diag=False):
     """
     Yield an iterable of dictionaries of license data detected in the file at
     location for each detected license.
@@ -113,10 +113,10 @@ def get_licenses(location, min_score=0):
     an approximate match is four words.
     """
     from licensedcode.index import get_index
-    from licensedcode.models import get_licenses as licenses_getter
+    from licensedcode.models import get_licenses as licenses_details
 
     idx = get_index()
-    licenses = licenses_getter()
+    licenses = licenses_details()
 
     # note: we do USE the cache here
     for match in idx.match(location=location, min_score=min_score, use_cache=False):
@@ -139,8 +139,12 @@ def get_licenses(location, min_score=0):
             result['matched_rule']['identifier'] = match.rule.identifier
             result['matched_rule']['license_choice'] = match.rule.license_choice
             result['matched_rule']['licenses'] = match.rule.licenses
-            # TODO: add debug details such as matcher
-            # result['matched_rule']['matcher'] = match.matcher
+            if diag:
+                result['matched_rule']['matcher'] = match.matcher
+                result['matched_rule']['rule_length'] = match.rule.length
+                result['matched_rule']['matched_length'] = match.ilen()
+                result['matched_rule']['match_coverage'] = match.coverage()
+                result['matched_rule']['rule_relevance'] = match.rule.relevance
 
             yield result
 

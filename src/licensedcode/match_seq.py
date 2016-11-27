@@ -78,7 +78,7 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
     qlen = len(query_run)
 
     # match as long as long we find alignments and have high matchable tokens
-    # this allows to find repeated instances of the same rule in the query run 
+    # this allows to find repeated instances of the same rule in the query run
 
     query_run_matchables = query_run.matchables
     while qstart <= qfinish:
@@ -113,7 +113,7 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
                 print(it)
                 print('###########################')
             matches.append(match)
-            qstart = max([qstart, qspan.end +1])
+            qstart = max([qstart, qspan.end + 1])
 
     if TRACE: map(logger_debug, matches)
     return matches
