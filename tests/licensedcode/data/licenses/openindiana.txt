@@ -1,0 +1,785 @@
+          Name: SUNWgnome-vfs
+       Summary: GNOME virtual file system framework and application/MIME type registry
+     Publisher: opensolaris.org
+       Version: 0.5.11
+ Build Release: 5.11
+        Branch: 0.89
+Packaging Date: 27 May 2008 16:41:48 
+          Size: 7.57 MB
+          FMRI: pkg://opensolaris.org/SUNWgnome-vfs@0.5.11,5.11-0.89:20080527T164148Z
+
+License:
+  Copyright 2008 Sun Microsystems, Inc.  All rights reserved.
+  Use is subject to license terms.
+
+For the avoidance of doubt, except that if any license choice other
+than GPL or LGPL is available it will apply instead, Sun elects to
+use only the General Public License version 2 (GPLv2) at this time
+for any software where a choice of GPL license versions is made
+available with the language indicating that GPLv2 or any later
+version may be used, or where a choice of which version of the GPL
+is applied is otherwise unspecified.
+
+--------------------------------------------------------------------
+
+ Copyright (C) 2000 Eazel, Inc.
+ Copyright (C) 2004 Nokia Corporation.
+ Copyright (C) 2004-2005 Nokia Corporation.
+ Copyright (C) 2004-2006 Nokia Corporation.
+ Copyright (C) 2001,2002,2004 Red Hat, Inc.
+ Copyright (C) 1995, 1996, 1997 Free Software Foundation, Inc.
+
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public License as
+ published by the Free Software Foundation; version 2 of the
+ License.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public
+ License along with this program; if not, write to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ Boston, MA 02111-1307, USA.
+
+ Authora: 
+     Richard Hult <richard@imendio.com>
+         Alexander Larsson <alexl@redhat.com>
+     Ulrich Drepper <drepper@gnu.ai.mit.edu>, 1995.  
+     John Sullivan <sullivan@eazel.com>
+     John Sullivan <sullivan@eazel.com>
+
+--------------------------------------------------------------------
+
+ Copyright (C) 2001,2002,2003 Red Hat
+ Copyright (C) 2002 Bradford Hovinen
+ Copyright (c) 2001 Markus Friedl.  All rights reserved.
+ Copyright (c) 2001,2002 Damien Miller.  All rights reserved.
+ Copyright notice for derived sources from OpenBSD: sftp.h
+
+ Author: Bastien Nocera <hadess@hadess.net>
+ Author: Bradford Hovinen <bghovinen@math.uwaterloo.ca>
+ 
+ 
+ smb-method.h - VFS modules for SMB
+
+ sftp-method.c - Gnome VFS module for SFTP
+
+ Portions copyright (C) 2001, 2002 Damien Miller
+
+ Authors:
+    Alexander Larsson <alexl@redhat.com>
+    Nate Nielsen <nielsen@memberwebs.com>
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+ Portions of this file are derived from OpenSSH.
+
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+--------------------------------------------------------------------
+
+   Copyright (C) 1999-2000 Tommi Komulainen <Tommi.Komulainen@iki.fi>
+   Copyright (C) 1999-2005, Joe Orton <joe@manyfish.co.uk>
+   Copyright (C) 2004 Jiang Lei <tristone@deluxe.ocn.ne.jp>
+   Copyright (C) 2004  Red Hat, Inc., Marco Pesenti Gritti <mpg@redhat.com>
+   Copyright (C) 2005 Novell, Inc
+ 
+
+   This library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Library General Public
+   License as published by the Free Software Foundation; either
+   version 2 of the License, or (at your option) any later version.
+   
+   This library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Library General Public License for more details.
+
+   You should have received a copy of the GNU Library General Public
+   License along with this library; if not, write to the Free
+   Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+   MA 02111-1307, USA
+
+--------------------------------------------------------------------
+
+   Copyright (C) 2001 Andy Hertzfeld
+   All rights reserved.
+
+   Copyright (C) 1990, 91, 92, 93, 94 Free Software Foundation, Inc.
+   Copyright (C) 1998 Miguel de Icaza
+   Copyright (C) 2000 Ian McKellar, Eazel Inc.
+   Copyright (C) 2000, 2001 Eazel, Inc.
+   Copyright (C) 2000, Eazel Inc.
+   Copyright (C) 2001 Andy Hertzfeld
+   Copyright (C) 2001 Ian McKellar
+   Copyright (C) 2001 Maciej Stachowiak
+   Copyright (C) 2002 Giovanni Corriga
+   Copyright (C) 2002 Seth Nickell
+   Copyright (C) 2002 Ximian, Inc
+   Copyright (C) 2003-2006, Red Hat
+   Copyright (C) 2004-2006 Christian Kellner <gicmo@gnome.org>
+   Copyright (C) 2005 John McCutchan
+   Copyright (C) 2005 Sun Microsystems
+   Copyright (C) 2006 John McCutchan <john@johnmccutchan.com>
+   Copyright (C) 2007 Thadeu Lima de Souza Cascardo
+   Copyright 1993 Yggdrasil Computing, Incorporated
+   Copyright (C) 1997 Paolo Molaro
+   Copyright (C) 1997-2001 Free Software Foundation
+   Copyright (C) 2001 Maciej Stachowiak
+   Copyright (C) 2001 Seth Nickell
+   Copyright (C) 2002 Andrew McDonald
+
+   Author: Abigail Brady <morwen@evilmagic.org> (tarpet.h) 
+   Author: Alexander Larsson <alexl@redhat.com>
+   Author: Alvaro Lopez Ortega <alvaro@sun.com>
+   Author: Andy Hertzfeld <andy@differnet.com>
+   Author: Bastien Nocera <hadess@hadess.net>
+   Author: Chrsitian Kellner <gicmo@gnome.org>
+   Author: Cody Russell  <cody@jhu.edu>
+   Author: Darin Adler <darin@eazel.com>
+   Author: David Zeuthen <davidz@redhat.com>
+   Author: David MacKenzie <djm@gnu.ai.mit.edu>
+   Author: Eric Youngdale (1993).
+   Author: Ettore Perazzoli <ettore@comm2000.it> 
+   Author: Ettore Perazzoli <ettore@gnu.org>
+   Author: Gene Z. Ragan <gzr@eazel.com> 
+   Author: George Lebl, <jirka@5z.com>
+   Author: Giovanni Corriga <valkadesh@libero.it>
+   Author: Havoc Pennington <hp@redhat.com> 
+   Author: Ian McKellar <yakk@yakk.net> 
+   Author: John McCutchan <john@johnmccutchan.com>
+   Author: John McCutchan <ttb@tentacle.dhs.org>
+   Author: L�szl� P�ter <laca@ireland.sun.com>
+   Author: Maciej Stachowiak <mjs@eazel.com> 
+   Author: Maciej Stachowiak <mjs@noisehavoc.org>
+   Author: Mathieu Lacage <mathieu@eazel.com>
+   Author: Michael Fleming <mfleming@eazel.com>
+   Author: Michael Meeks <michael@imaginator.com> 
+   Author: Michael Meeks <mmeeks@gnu.org> 
+   Author: Pavel Cisler <pavel@eazel.com>
+   Author: Rachel Hestilow <hestilow@ximian.com>
+   Author: Seth Nickell <snickell@stanford.edu> 
+   Author: Thadeu Lima de Souza Cascardo
+ 
+   The Gnome Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Library General Public License as
+   published by the Free Software Foundation; either version 2 of the
+   License, or (at your option) any later version.
+
+   The Gnome Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Library General Public License for more details.
+
+   You should have received a copy of the GNU Library General Public
+   License along with the Gnome Library; see the file COPYING.LIB.  If not,
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
+
+   
+   `_gnome_vfs_canonicalize_pathname()' derived from code by Brian Fox and Chet
+   Ramey in GNU Bash, the Bourne Again SHell.  Copyright (C) 1987, 1988, 1989,
+   1990, 1991, 1992 Free Software Foundation, Inc.  
+
+   Authors: 1995 Miguel de Icaza
+        1995 Jakub Jelinek
+            1998 Pavel Machek
+            1999 Cleanup by Ettore Perazzoli
+
+   finduid, findgid are from GNU tar.  
+   Authors: 
+    Ian McKellar <yakk@yakk.net>
+ 
+--------------------------------------------------------------------
+ Copyright (C) 1991, 1992, 1993 Free Software Foundation, Inc.
+ Copyright (C) 2003,2004  Jonathan Blandford <jrb@alum.mit.edu>
+ Copyright (C) 2003-2005  Red Hat, Inc.
+ Copyright (C) 2004-2005  Matthias Clasen <mclasen@redhat.com>
+
+ Licensed under the Academic Free License version 2.0
+ Or under the following terms:
+ xdgmimeint.h: Internal defines and functions.
+ xdgmimemagic.: Private file.  Datastructure for storing magic files.
+ xdgmimeint.c: Internal defines and functions.
+ xdgmimeglob.h: Private file.  Datastructure for storing the globs.
+
+ More info can be found at http://www.freedesktop.org/standards/
+
+ xdgmimeparent.h: Private file.  Datastructure for storing the hierarchy.
+ xdgmimealias.h: Private file.  Datastructure for storing the aliases.
+ xdgmimealias.c: Private file.  Datastructure for storing the aliases.
+ xdgmime.h: XDG Mime Spec mime resolver.  Based on version 0.11 of the spec.
+ xdgmimecache.h: Private file.  Datastructure for mmapped caches.
+
+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.    See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ Boston, MA 02111-1307, USA.
+ 
+
+ Stripped-down UTF-8 fnmatch() lifted from GTK+ 
+
+--------------------------------------------------------------------
+
+
+  Copyright 2008 Sun Microsystems, Inc.  All rights reserved.
+  Use is subject to license terms.
+
+For the avoidance of doubt, except that if any license choice other
+than GPL or LGPL is available it will apply instead, Sun elects to
+use only the General Public License version 2 (GPLv2) at this time
+for any software where a choice of GPL license versions is made
+available with the language indicating that GPLv2 or any later
+version may be used, or where a choice of which version of the GPL
+is applied is otherwise unspecified.
+
+--------------------------------------------------------------------
+
+ Copyright (C) 2000 Eazel, Inc.
+ Copyright (C) 2004 Nokia Corporation.
+ Copyright (C) 2004-2005 Nokia Corporation.
+ Copyright (C) 2004-2006 Nokia Corporation.
+ Copyright (C) 2001,2002,2004 Red Hat, Inc.
+ Copyright (C) 1995, 1996, 1997 Free Software Foundation, Inc.
+
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public License as
+ published by the Free Software Foundation; version 2 of the
+ License.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public
+ License along with this program; if not, write to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ Boston, MA 02111-1307, USA.
+
+ Authora: 
+     Richard Hult <richard@imendio.com>
+         Alexander Larsson <alexl@redhat.com>
+     Ulrich Drepper <drepper@gnu.ai.mit.edu>, 1995.  
+     John Sullivan <sullivan@eazel.com>
+     John Sullivan <sullivan@eazel.com>
+
+--------------------------------------------------------------------
+
+ Copyright (C) 2001,2002,2003 Red Hat
+ Copyright (C) 2002 Bradford Hovinen
+ Copyright (c) 2001 Markus Friedl.  All rights reserved.
+ Copyright (c) 2001,2002 Damien Miller.  All rights reserved.
+ Copyright notice for derived sources from OpenBSD: sftp.h
+
+ Author: Bastien Nocera <hadess@hadess.net>
+ Author: Bradford Hovinen <bghovinen@math.uwaterloo.ca>
+ 
+ 
+ smb-method.h - VFS modules for SMB
+
+ sftp-method.c - Gnome VFS module for SFTP
+
+ Portions copyright (C) 2001, 2002 Damien Miller
+
+ Authors:
+    Alexander Larsson <alexl@redhat.com>
+    Nate Nielsen <nielsen@memberwebs.com>
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+ Portions of this file are derived from OpenSSH.
+
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+--------------------------------------------------------------------
+
+   Copyright (C) 1999-2000 Tommi Komulainen <Tommi.Komulainen@iki.fi>
+   Copyright (C) 1999-2005, Joe Orton <joe@manyfish.co.uk>
+   Copyright (C) 2004 Jiang Lei <tristone@deluxe.ocn.ne.jp>
+   Copyright (C) 2004  Red Hat, Inc., Marco Pesenti Gritti <mpg@redhat.com>
+   Copyright (C) 2005 Novell, Inc
+ 
+
+   This library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Library General Public
+   License as published by the Free Software Foundation; either
+   version 2 of the License, or (at your option) any later version.
+   
+   This library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Library General Public License for more details.
+
+   You should have received a copy of the GNU Library General Public
+   License along with this library; if not, write to the Free
+   Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+   MA 02111-1307, USA
+
+--------------------------------------------------------------------
+
+   Copyright (C) 2001 Andy Hertzfeld
+   All rights reserved.
+
+   Copyright (C) 1990, 91, 92, 93, 94 Free Software Foundation, Inc.
+   Copyright (C) 1998 Miguel de Icaza
+   Copyright (C) 2000 Ian McKellar, Eazel Inc.
+   Copyright (C) 2000, 2001 Eazel, Inc.
+   Copyright (C) 2000, Eazel Inc.
+   Copyright (C) 2001 Andy Hertzfeld
+   Copyright (C) 2001 Ian McKellar
+   Copyright (C) 2001 Maciej Stachowiak
+   Copyright (C) 2002 Giovanni Corriga
+   Copyright (C) 2002 Seth Nickell
+   Copyright (C) 2002 Ximian, Inc
+   Copyright (C) 2003-2006, Red Hat
+   Copyright (C) 2004-2006 Christian Kellner <gicmo@gnome.org>
+   Copyright (C) 2005 John McCutchan
+   Copyright (C) 2005 Sun Microsystems
+   Copyright (C) 2006 John McCutchan <john@johnmccutchan.com>
+   Copyright (C) 2007 Thadeu Lima de Souza Cascardo
+   Copyright 1993 Yggdrasil Computing, Incorporated
+   Copyright (C) 1997 Paolo Molaro
+   Copyright (C) 1997-2001 Free Software Foundation
+   Copyright (C) 2001 Maciej Stachowiak
+   Copyright (C) 2001 Seth Nickell
+   Copyright (C) 2002 Andrew McDonald
+
+   Author: Abigail Brady <morwen@evilmagic.org> (tarpet.h) 
+   Author: Alexander Larsson <alexl@redhat.com>
+   Author: Alvaro Lopez Ortega <alvaro@sun.com>
+   Author: Andy Hertzfeld <andy@differnet.com>
+   Author: Bastien Nocera <hadess@hadess.net>
+   Author: Chrsitian Kellner <gicmo@gnome.org>
+   Author: Cody Russell  <cody@jhu.edu>
+   Author: Darin Adler <darin@eazel.com>
+   Author: David Zeuthen <davidz@redhat.com>
+   Author: David MacKenzie <djm@gnu.ai.mit.edu>
+   Author: Eric Youngdale (1993).
+   Author: Ettore Perazzoli <ettore@comm2000.it> 
+   Author: Ettore Perazzoli <ettore@gnu.org>
+   Author: Gene Z. Ragan <gzr@eazel.com> 
+   Author: George Lebl, <jirka@5z.com>
+   Author: Giovanni Corriga <valkadesh@libero.it>
+   Author: Havoc Pennington <hp@redhat.com> 
+   Author: Ian McKellar <yakk@yakk.net> 
+   Author: John McCutchan <john@johnmccutchan.com>
+   Author: John McCutchan <ttb@tentacle.dhs.org>
+   Author: L�szl� P�ter <laca@ireland.sun.com>
+   Author: Maciej Stachowiak <mjs@eazel.com> 
+   Author: Maciej Stachowiak <mjs@noisehavoc.org>
+   Author: Mathieu Lacage <mathieu@eazel.com>
+   Author: Michael Fleming <mfleming@eazel.com>
+   Author: Michael Meeks <michael@imaginator.com> 
+   Author: Michael Meeks <mmeeks@gnu.org> 
+   Author: Pavel Cisler <pavel@eazel.com>
+   Author: Rachel Hestilow <hestilow@ximian.com>
+   Author: Seth Nickell <snickell@stanford.edu> 
+   Author: Thadeu Lima de Souza Cascardo
+ 
+   The Gnome Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Library General Public License as
+   published by the Free Software Foundation; either version 2 of the
+   License, or (at your option) any later version.
+
+   The Gnome Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Library General Public License for more details.
+
+   You should have received a copy of the GNU Library General Public
+   License along with the Gnome Library; see the file COPYING.LIB.  If not,
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
+
+   
+   `_gnome_vfs_canonicalize_pathname()' derived from code by Brian Fox and Chet
+   Ramey in GNU Bash, the Bourne Again SHell.  Copyright (C) 1987, 1988, 1989,
+   1990, 1991, 1992 Free Software Foundation, Inc.  
+
+   Authors: 1995 Miguel de Icaza
+        1995 Jakub Jelinek
+            1998 Pavel Machek
+            1999 Cleanup by Ettore Perazzoli
+
+   finduid, findgid are from GNU tar.  
+   Authors: 
+    Ian McKellar <yakk@yakk.net>
+ 
+--------------------------------------------------------------------
+ Copyright (C) 1991, 1992, 1993 Free Software Foundation, Inc.
+ Copyright (C) 2003,2004  Jonathan Blandford <jrb@alum.mit.edu>
+ Copyright (C) 2003-2005  Red Hat, Inc.
+ Copyright (C) 2004-2005  Matthias Clasen <mclasen@redhat.com>
+
+ Licensed under the Academic Free License version 2.0
+ Or under the following terms:
+ xdgmimeint.h: Internal defines and functions.
+ xdgmimemagic.: Private file.  Datastructure for storing magic files.
+ xdgmimeint.c: Internal defines and functions.
+ xdgmimeglob.h: Private file.  Datastructure for storing the globs.
+
+ More info can be found at http://www.freedesktop.org/standards/
+
+ xdgmimeparent.h: Private file.  Datastructure for storing the hierarchy.
+ xdgmimealias.h: Private file.  Datastructure for storing the aliases.
+ xdgmimealias.c: Private file.  Datastructure for storing the aliases.
+ xdgmime.h: XDG Mime Spec mime resolver.  Based on version 0.11 of the spec.
+ xdgmimecache.h: Private file.  Datastructure for mmapped caches.
+
+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.    See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ Boston, MA 02111-1307, USA.
+ 
+
+ Stripped-down UTF-8 fnmatch() lifted from GTK+ 
+
+--------------------------------------------------------------------
+
+
+  Copyright 2008 Sun Microsystems, Inc.  All rights reserved.
+  Use is subject to license terms.
+
+For the avoidance of doubt, except that if any license choice other
+than GPL or LGPL is available it will apply instead, Sun elects to
+use only the General Public License version 2 (GPLv2) at this time
+for any software where a choice of GPL license versions is made
+available with the language indicating that GPLv2 or any later
+version may be used, or where a choice of which version of the GPL
+is applied is otherwise unspecified.
+
+--------------------------------------------------------------------
+
+ Copyright (C) 2000 Eazel, Inc.
+ Copyright (C) 2004 Nokia Corporation.
+ Copyright (C) 2004-2005 Nokia Corporation.
+ Copyright (C) 2004-2006 Nokia Corporation.
+ Copyright (C) 2001,2002,2004 Red Hat, Inc.
+ Copyright (C) 1995, 1996, 1997 Free Software Foundation, Inc.
+
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public License as
+ published by the Free Software Foundation; version 2 of the
+ License.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public
+ License along with this program; if not, write to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ Boston, MA 02111-1307, USA.
+
+ Authora: 
+     Richard Hult <richard@imendio.com>
+         Alexander Larsson <alexl@redhat.com>
+     Ulrich Drepper <drepper@gnu.ai.mit.edu>, 1995.  
+     John Sullivan <sullivan@eazel.com>
+     John Sullivan <sullivan@eazel.com>
+
+--------------------------------------------------------------------
+
+ Copyright (C) 2001,2002,2003 Red Hat
+ Copyright (C) 2002 Bradford Hovinen
+ Copyright (c) 2001 Markus Friedl.  All rights reserved.
+ Copyright (c) 2001,2002 Damien Miller.  All rights reserved.
+ Copyright notice for derived sources from OpenBSD: sftp.h
+
+ Author: Bastien Nocera <hadess@hadess.net>
+ Author: Bradford Hovinen <bghovinen@math.uwaterloo.ca>
+ 
+ 
+ smb-method.h - VFS modules for SMB
+
+ sftp-method.c - Gnome VFS module for SFTP
+
+ Portions copyright (C) 2001, 2002 Damien Miller
+
+ Authors:
+    Alexander Larsson <alexl@redhat.com>
+    Nate Nielsen <nielsen@memberwebs.com>
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+ Portions of this file are derived from OpenSSH.
+
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+--------------------------------------------------------------------
+
+   Copyright (C) 1999-2000 Tommi Komulainen <Tommi.Komulainen@iki.fi>
+   Copyright (C) 1999-2005, Joe Orton <joe@manyfish.co.uk>
+   Copyright (C) 2004 Jiang Lei <tristone@deluxe.ocn.ne.jp>
+   Copyright (C) 2004  Red Hat, Inc., Marco Pesenti Gritti <mpg@redhat.com>
+   Copyright (C) 2005 Novell, Inc
+ 
+
+   This library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Library General Public
+   License as published by the Free Software Foundation; either
+   version 2 of the License, or (at your option) any later version.
+   
+   This library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Library General Public License for more details.
+
+   You should have received a copy of the GNU Library General Public
+   License along with this library; if not, write to the Free
+   Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+   MA 02111-1307, USA
+
+--------------------------------------------------------------------
+
+   Copyright (C) 2001 Andy Hertzfeld
+   All rights reserved.
+
+   Copyright (C) 1990, 91, 92, 93, 94 Free Software Foundation, Inc.
+   Copyright (C) 1998 Miguel de Icaza
+   Copyright (C) 2000 Ian McKellar, Eazel Inc.
+   Copyright (C) 2000, 2001 Eazel, Inc.
+   Copyright (C) 2000, Eazel Inc.
+   Copyright (C) 2001 Andy Hertzfeld
+   Copyright (C) 2001 Ian McKellar
+   Copyright (C) 2001 Maciej Stachowiak
+   Copyright (C) 2002 Giovanni Corriga
+   Copyright (C) 2002 Seth Nickell
+   Copyright (C) 2002 Ximian, Inc
+   Copyright (C) 2003-2006, Red Hat
+   Copyright (C) 2004-2006 Christian Kellner <gicmo@gnome.org>
+   Copyright (C) 2005 John McCutchan
+   Copyright (C) 2005 Sun Microsystems
+   Copyright (C) 2006 John McCutchan <john@johnmccutchan.com>
+   Copyright (C) 2007 Thadeu Lima de Souza Cascardo
+   Copyright 1993 Yggdrasil Computing, Incorporated
+   Copyright (C) 1997 Paolo Molaro
+   Copyright (C) 1997-2001 Free Software Foundation
+   Copyright (C) 2001 Maciej Stachowiak
+   Copyright (C) 2001 Seth Nickell
+   Copyright (C) 2002 Andrew McDonald
+
+   Author: Abigail Brady <morwen@evilmagic.org> (tarpet.h) 
+   Author: Alexander Larsson <alexl@redhat.com>
+   Author: Alvaro Lopez Ortega <alvaro@sun.com>
+   Author: Andy Hertzfeld <andy@differnet.com>
+   Author: Bastien Nocera <hadess@hadess.net>
+   Author: Chrsitian Kellner <gicmo@gnome.org>
+   Author: Cody Russell  <cody@jhu.edu>
+   Author: Darin Adler <darin@eazel.com>
+   Author: David Zeuthen <davidz@redhat.com>
+   Author: David MacKenzie <djm@gnu.ai.mit.edu>
+   Author: Eric Youngdale (1993).
+   Author: Ettore Perazzoli <ettore@comm2000.it> 
+   Author: Ettore Perazzoli <ettore@gnu.org>
+   Author: Gene Z. Ragan <gzr@eazel.com> 
+   Author: George Lebl, <jirka@5z.com>
+   Author: Giovanni Corriga <valkadesh@libero.it>
+   Author: Havoc Pennington <hp@redhat.com> 
+   Author: Ian McKellar <yakk@yakk.net> 
+   Author: John McCutchan <john@johnmccutchan.com>
+   Author: John McCutchan <ttb@tentacle.dhs.org>
+   Author: L�szl� P�ter <laca@ireland.sun.com>
+   Author: Maciej Stachowiak <mjs@eazel.com> 
+   Author: Maciej Stachowiak <mjs@noisehavoc.org>
+   Author: Mathieu Lacage <mathieu@eazel.com>
+   Author: Michael Fleming <mfleming@eazel.com>
+   Author: Michael Meeks <michael@imaginator.com> 
+   Author: Michael Meeks <mmeeks@gnu.org> 
+   Author: Pavel Cisler <pavel@eazel.com>
+   Author: Rachel Hestilow <hestilow@ximian.com>
+   Author: Seth Nickell <snickell@stanford.edu> 
+   Author: Thadeu Lima de Souza Cascardo
+ 
+   The Gnome Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Library General Public License as
+   published by the Free Software Foundation; either version 2 of the
+   License, or (at your option) any later version.
+
+   The Gnome Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Library General Public License for more details.
+
+   You should have received a copy of the GNU Library General Public
+   License along with the Gnome Library; see the file COPYING.LIB.  If not,
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
+
+   
+   `_gnome_vfs_canonicalize_pathname()' derived from code by Brian Fox and Chet
+   Ramey in GNU Bash, the Bourne Again SHell.  Copyright (C) 1987, 1988, 1989,
+   1990, 1991, 1992 Free Software Foundation, Inc.  
+
+   Authors: 1995 Miguel de Icaza
+        1995 Jakub Jelinek
+            1998 Pavel Machek
+            1999 Cleanup by Ettore Perazzoli
+
+   finduid, findgid are from GNU tar.  
+   Authors: 
+    Ian McKellar <yakk@yakk.net>
+ 
+--------------------------------------------------------------------
+ Copyright (C) 1991, 1992, 1993 Free Software Foundation, Inc.
+ Copyright (C) 2003,2004  Jonathan Blandford <jrb@alum.mit.edu>
+ Copyright (C) 2003-2005  Red Hat, Inc.
+ Copyright (C) 2004-2005  Matthias Clasen <mclasen@redhat.com>
+
+ Licensed under the Academic Free License version 2.0
+ Or under the following terms:
+ xdgmimeint.h: Internal defines and functions.
+ xdgmimemagic.: Private file.  Datastructure for storing magic files.
+ xdgmimeint.c: Internal defines and functions.
+ xdgmimeglob.h: Private file.  Datastructure for storing the globs.
+
+ More info can be found at http://www.freedesktop.org/standards/
+
+ xdgmimeparent.h: Private file.  Datastructure for storing the hierarchy.
+ xdgmimealias.h: Private file.  Datastructure for storing the aliases.
+ xdgmimealias.c: Private file.  Datastructure for storing the aliases.
+ xdgmime.h: XDG Mime Spec mime resolver.  Based on version 0.11 of the spec.
+ xdgmimecache.h: Private file.  Datastructure for mmapped caches.
+
+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.    See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ Boston, MA 02111-1307, USA.
+ 
+
+ Stripped-down UTF-8 fnmatch() lifted from GTK+ 
+
+--------------------------------------------------------------------
+
+

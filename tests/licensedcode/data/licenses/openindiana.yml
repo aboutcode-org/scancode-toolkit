@@ -1,0 +1,27 @@
+licenses:
+    - gpl-2.0
+    - lgpl-2.0
+    - gpl-2.0-plus
+    - bsd-simplified
+    - lgpl-2.0-plus
+    - lgpl-2.0-plus
+    - afl-2.0
+    - lgpl-2.0-plus
+    - gpl-2.0
+    - lgpl-2.0
+    - gpl-2.0-plus
+    - bsd-simplified
+    - lgpl-2.0-plus
+    - lgpl-2.0-plus
+    - afl-2.0
+    - lgpl-2.0-plus
+    - gpl-2.0
+    - lgpl-2.0
+    - gpl-2.0-plus
+    - bsd-simplified
+    - lgpl-2.0-plus
+    - lgpl-2.0-plus
+    - afl-2.0
+    - lgpl-2.0-plus
+
+notes: "from http://pkg.openindiana.org/legacy/info/0/pkg%3A%2F%2Fopensolaris.org%2FSUNWgnome-vfs@0.5.11,5.11-0.89%3A20080527T164148Z"

@@ -882,7 +882,7 @@ class Rule(object):
         self.license_choice = data.get('license_choice', False)
         self.license = data.get('license')
         self.false_positive = data.get('false_positive', False)
-        self.minimum_score = int(data.get('minimum_score', 0))
+        self.minimum_score = float(data.get('minimum_score', 0))
 
         # these are purely informational and not used at run time
         if load_notes:
