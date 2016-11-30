@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -54,11 +54,12 @@ DEBUG = False
 
 
 """
-libarchive2 is a minimal and specialized wrapper around a vendored libarchive
-archive extraction library. It is inspired from several libarchive bindings
-such as libarchive_c and python-libarchive for Python and others for Ruby.
+libarchive2 is a minimal and specialized wrapper around a vendored libarchive archive
+extraction library. It only deals with archive extraction and does not create
+archives. It is inspired from several libarchive bindings such as libarchive_c and
+python-libarchive for Python and other similar wrappers for Ruby such as ffi-
+libarchive.
 """
-
 
 
 def load_lib():
@@ -80,11 +81,13 @@ def load_lib():
             return lib
     raise ImportError('Failed to load libarchive: %(libarchive)r' % locals())
 
+
 # NOTE: this is important to avoid timezone differences
 os.environ['TZ'] = 'UTC'
 # NOTE: this is important to avoid locale-specific errors on various OS
 locale.setlocale(locale.LC_ALL, '')
 
+# load and initialize the shared library
 libarchive = load_lib()
 
 
@@ -178,7 +181,7 @@ class Archive(object):
         if extract:
             use_all_formats(self.archive_struct)
         try:
-            # TODO: ensure that we have proper exceptions raised
+            # TODO: ensure that we have proper exceptions raised?
             open_file(self.archive_struct, self.location, self.block_size)
         except:
             open_file_w(self.archive_struct, self.location, self.block_size)
@@ -219,12 +222,14 @@ class Archive(object):
 
 class Entry(object):
     """
-    Represent an Archive Entry, typically a file or a directory. The attribute
-    names are loosely based on the stdlib tarfile module Tarfile attributes.Some
-    attributes are not handled on purpose because they are never used: things
-    such as modes/perms/users/groups are never restored by design to ensure
-    extracted files are readable/writable and owned by the extracting user.
+    Represent an Archive Entry, typically a file or a directory. The attribute names
+    are loosely based on the stdlib tarfile module Tarfile attributes. Some
+    attributes are not handled on purpose because they are never used: things such as
+    modes/perms/users/groups are never restored by design to ensure extracted files
+    are readable/writable and owned by the extracting user.
     """
+    # TODO: users and groups may have some value for origin determination?
+
     def __init__(self, archive, entry_struct):
         self.archive = archive
         self.entry_struct = entry_struct
@@ -257,9 +262,9 @@ class Entry(object):
 
     def _path_bytes(self, func, func_w):
         """
-        Call path function `func` then call `func_w` if `func` does not provide
-        a path. Return a path as a byte string converted to UTF-8-encoded bytes
-        if this is unicode.
+        Return a path as a byte string converted to UTF-8-encoded bytes if this is
+        unicode. First call the path function `func` then call the wide char
+        equivalent `func_w` if `func` did not provide a path.
         """
         path = func(self.entry_struct)
         if not path:
@@ -270,12 +275,12 @@ class Entry(object):
 
     def write(self, target_dir, transform_path=lambda x: x):
         """
-        Write entry to a file or directory saved relatively to the base_dir.
-        Return a tuple (path, warnings), with the path where the file or
-        directory was written or None if nothing was written to disk.
-        `transform_path` is a callable taking a path and returning a transformed
-        path. such as resolving relative paths, transliterating non portable
-        characters or other transformations. The default is a no-op lambda.
+        Write entry to a file or directory saved relatively to the `target_dir` and
+        return the path where the file or directory was written or None if nothing
+        was written to disk. `transform_path` is a callable taking a path and
+        returning a transformed path such as resolving relative paths,
+        transliterating non-portable characters or other path transformations. The default
+        is a no-op lambda.
         """
         if not self.archive.archive_struct:
             raise ArchiveErrorIllegalOperationOnClosedArchive()
@@ -290,7 +295,7 @@ class Entry(object):
             fileutils.create_dir(dir_path)
             return dir_path
 
-        # here isfile=True
+        # note: here isfile=True
         try:
             # create parent directories if needed
             # TODO: also rename directories, segment by segment?
@@ -321,14 +326,10 @@ class Entry(object):
 
     def __repr__(self):
         return ('Entry('
-                      'path=%(path)r,'
-                      'size=%(size)r,'
-                      'isfile=%(isfile)r,'
-                      'isdir=%(isdir)r,'
-                      'islnk=%(islnk)r,'
-                      'issym=%(issym)r,'
-                      'isspecial=%(isspecial)r,'
-                ')') % self.__dict__
+            'path=%(path)r, size=%(size)r, isfile=%(isfile)r, isdir=%(isdir)r,'
+            'islnk=%(islnk)r, issym=%(issym)r, isspecial=%(isspecial)r'
+        ')'
+        ) % self.__dict__
 
 
 class ArchiveException(ExtractError):
@@ -348,8 +349,8 @@ class ArchiveException(ExtractError):
     def __str__(self):
         msg = '%(msg)r'
         if DEBUG:
-            msg += ': in function %(func)r with rc=%(rc)r, errno=%(errno)r, '
-            msg += 'root_ex=%(root_ex)s'
+            msg += (': in function %(func)r with rc=%(rc)r, errno=%(errno)r, '
+                    'root_ex=%(root_ex)s')
         return msg % self.__dict__
 
 
@@ -375,14 +376,13 @@ class ArchiveErrorIllegalOperationOnClosedArchive(ArchiveException):
     pass
 
 
-##################################
-# C ctypes interface to libarchive
-##################################
+#################################################
+# ctypes defintion of the interface to libarchive
+#################################################
 
 def errcheck(rc, archive_func, args, null=False):
     """
-    ctypes error check handler for functions returning int or or null if
-    null is True.
+    ctypes error check handler for functions returning int, or null if null is True.
     """
     if null:
         if rc is None:
@@ -408,7 +408,7 @@ def errcheck(rc, archive_func, args, null=False):
 errcheck_null = partial(errcheck, null=True)
 
 
-# return codes
+# libarchive return codes
 ARCHIVE_EOF = 1
 ARCHIVE_OK = 0
 ARCHIVE_RETRY = -10
@@ -417,29 +417,37 @@ ARCHIVE_FAILED = -25
 ARCHIVE_FATAL = -30
 
 
-# stat/file types
-AE_IFMT = 0o0170000
-AE_IFREG = 0o0100000
-AE_IFLNK = 0o0120000
-AE_IFSOCK = 0o0140000
-AE_IFCHR = 0o0020000
-AE_IFBLK = 0o0060000
-AE_IFDIR = 0o0040000
-AE_IFIFO = 0o0010000
+# libarchive stat/file types
+AE_IFREG = 0o0100000  # Regular file
+AE_IFLNK = 0o0120000  # Symbolic link
+AE_IFSOCK = 0o0140000  # Socket
+AE_IFCHR = 0o0020000  # Character device
+AE_IFBLK = 0o0060000  # Block device
+AE_IFDIR = 0o0040000  # Directory
+AE_IFIFO = 0o0010000  # Named pipe (fifo)
+
+AE_IFMT = 0o0170000  # Format mask
 
 
-##########################
-# C functions declarations
-##########################
-# NOTE: these are verbose on purpose to help with debugging and tracing lower
-# level errors and issues
+#####################################
+# libarchive C functions declarations
+#####################################
+# NOTE: these declaration come with verbose doc to help with debugging and tracing
+# lower level errors and issues. Ssome comments and the function signatures are
+# copied from libarchve.
+#
+# Note: String data in librachive can be set or accessed as wide character strings or
+# normal char strings. The functions that use wide character strings are suffixed
+# with _w. Note that these are different representations of the same data: For
+# example, if you store a narrow string and read the corresponding wide string, the
+# object will transparently convert formats using the current locale. Similarly, if
+# you store a wide string and then store a narrow string for the same data, the
+# previously-set wide string will be discarded in favor of the new data.
 
-# archive level functions
-##########################
 
 """
 To read an archive, you must first obtain an initialized struct archive object
-from archive_read_new().
+from archive_read_new()
 
 Allocates and initializes a struct archive object suitable for reading from an
 archive. NULL is returned on error.
@@ -543,9 +551,9 @@ free_archive.argtypes = [c_void_p]
 free_archive.restype = c_int
 free_archive.errcheck = errcheck
 
-
+#
 # entry level functions
-#######################
+#
 """
 You can think of a struct archive_entry as a heavy-duty version of struct stat
 : it includes everything from struct stat plus associated pathname, textual
@@ -624,7 +632,7 @@ free_entry.restype = None
 
 #
 # Entry attributes: path, type, size, etc. are collected with these functions:
-##############################
+#
 
 """
 The functions archive_entry_filetype() and archive_entry_set_filetype() get
@@ -643,11 +651,10 @@ stat(2) may have different numeric values from the corresponding constants
 above.
 """
 # struct archive_entry * archive_entry_filetype(struct archive_entry *);
+# TODO: check for nulls
 entry_type = libarchive.archive_entry_filetype
 entry_type.argtypes = [c_void_p]
 entry_type.restype = c_int
-# TODO: check for nulls
-# entry_type.errcheck = errcheck
 
 
 """
@@ -656,9 +663,7 @@ time).
 
 The timestamps are truncated automatically depending on the archive format
 (for archiving) or the filesystem capabilities (for restoring).
-All timestamp fields are optional. The XXX_unset() functions can be used to
-mark the corresponding field as missing. The current state can be queried
-using XXX_is_set(). Unset time fields have a second and nanosecond field of 0.
+All timestamp fields are optional.
 """
 # time_t archive_entry_mtime(struct archive_entry *);
 entry_time = libarchive.archive_entry_mtime
@@ -673,31 +678,16 @@ char *        Multibyte strings in the current locale.
 wchar_t *     Wide character strings in the current locale.
 """
 # const char * archive_entry_pathname(struct archive_entry *a);
+# TODO: check for nulls
 entry_path = libarchive.archive_entry_pathname
 entry_path.argtypes = [c_void_p]
 entry_path.restype = c_char_p
-# TODO: check for nulls
-# entry_path.errcheck = None
 
-
-"""
-String data can be set or accessed as wide character strings or normal char
-strings. The functions that use wide character strings are suffixed with _w.
-
-Note that these are different representations of the same data: For example,
-if you store a narrow string and read the corresponding wide string, the
-object will transparently convert formats using the current locale
-
-Similarly, if you store a wide string and then store a narrow string for the
-same data, the previously-set wide string will be discarded in favor of the new
-data.
-"""
 # const wchar_t * archive_entry_pathname_w(struct archive_entry *a);
+# TODO: check for nulls?
 entry_path_w = libarchive.archive_entry_pathname_w
 entry_path_w.argtypes = [c_void_p]
 entry_path_w.restype = c_wchar_p
-# TODO: check for nulls?
-# entry_path_w.errcheck = None
 
 
 # int64_t archive_entry_size(struct archive_entry *a);
@@ -760,8 +750,8 @@ symlink_path_w.errcheck = errcheck_null
 
 
 #
-# Utilities and error handling
-##############################
+# Utilities and error handling: not all are defined for now
+#
 
 """
 Returns a numeric error code (see errno(2)) indicating the reason for the most
