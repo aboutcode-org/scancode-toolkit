@@ -145,7 +145,7 @@ function ScancodeDataTable(tagId, data){
             '</tr>'+
             '<tr>'+
             '<td><b>DejaCode URL:</b></td>'+
-            '<td><a href="'+d.dejacode_url+'">'+d.dejacode_url+'</a></td>'+
+            '<td><a href="'+d.dejacode_url+'" target="_blank">'+d.dejacode_url+'</a></td>'+
             '</tr>'+
             '</table>';
     }

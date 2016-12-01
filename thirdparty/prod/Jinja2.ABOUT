@@ -1,6 +1,6 @@
-about_resource: Jinja2-2.7.3-py2-none-any.whl
-version: 2.7.3
-download_url: https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.7.3.tar.gz#md5=b9dffd2f3b43d673802fe857c8445b1a
+about_resource: Jinja2-2.8-py2.py3-none-any.whl
+version: 2.8
+download_url: https://pypi.python.org/packages/96/a1/c56bc4d99dc2663514a8481511e80eba8994133ae75eebdadfc91a5597d9/Jinja2-2.8-py2.py3-none-any.whl#md5=75acb6f1abfc46ed75f4fd392f321ac2
 
 name: Jinja2
 home_url: http://jinja.pocoo.org/
