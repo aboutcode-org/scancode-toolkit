@@ -377,39 +377,45 @@ def scan(input_path, copyright=True, license=True, package=True,
 
         scanit = partial(_scanit, scanners=scanners, scans_cache_class=scans_cache_class,
                          diag=diag, timeout=timeout, max_memory=max_memory)
-        # Using chunksize is documented as much more efficient in the Python doc.
-        # Yet "1" still provides a better and more progressive feedback.
-        # With imap_unordered, results are returned as soon as ready and out of order.
-        scanned_files = pool.imap_unordered(scanit, logged_resources, chunksize=1)
-        pool.close()
 
-        click.secho('Scanning files...', err=to_stdout, fg='green')
-
-
-        def scan_event(item):
-            """Progress event displayed each time a file is scanned"""
-            if item:
-                _scan_success, _scanned_path = item
-                _progress_line = verbose and _scanned_path or fileutils.file_name(_scanned_path)
-                return style('Scanned: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
-
-        scanning_errors = []
-        files_count = 0
-        with utils.progressmanager(scanned_files, item_show_func=scan_event, show_pos=True, verbose=verbose, quiet=quiet) as scanned:
-            while True:
-                try:
-                    result = scanned.next()
-                    scan_success, scanned_rel_path = result
-                    if not scan_success:
-                        scanning_errors.append(scanned_rel_path)
-                    files_count += 1
-                except StopIteration:
-                    break
-                except KeyboardInterrupt:
-                    print('\nAborted!')
-                    pool.terminate()
-                    break
-
+        try:
+            # Using chunksize is documented as much more efficient in the Python doc.
+            # Yet "1" still provides a better and more progressive feedback.
+            # With imap_unordered, results are returned as soon as ready and out of order.
+            scanned_files = pool.imap_unordered(scanit, logged_resources, chunksize=1)
+            pool.close()
+    
+            click.secho('Scanning files...', err=to_stdout, fg='green')
+    
+    
+            def scan_event(item):
+                """Progress event displayed each time a file is scanned"""
+                if item:
+                    _scan_success, _scanned_path = item
+                    _progress_line = verbose and _scanned_path or fileutils.file_name(_scanned_path)
+                    return style('Scanned: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
+    
+            scanning_errors = []
+            files_count = 0
+            with utils.progressmanager(scanned_files, item_show_func=scan_event, 
+                                       show_pos=True, verbose=verbose, quiet=quiet) as scanned:
+                while True:
+                    try:
+                        result = scanned.next()
+                        scan_success, scanned_rel_path = result
+                        if not scan_success:
+                            scanning_errors.append(scanned_rel_path)
+                        files_count += 1
+                    except StopIteration:
+                        break
+                    except KeyboardInterrupt:
+                        print('\nAborted with Ctrl+C!')
+                        pool.terminate()
+                        break
+        finally:
+            # ensure the pool is really dead to work around a Python 2.7.3 bug: 
+            # http://bugs.python.org/issue15101 
+            pool.terminate()
 
     # Compute stats
     ##########################
