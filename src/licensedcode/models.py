@@ -940,13 +940,12 @@ class Rule(object):
 
         # case for negative rules with no license (and are not an FP)
         # they do not have licenses and their matches are never returned
-        if not self.false_positive and not len(self.licenses):
+        if self.negative():
             self.relevance = 0
             return
 
         # general case
         length = self.length
-        assert length, 'Length is needed to compute rule relevance: %r' % self
         if length >= 20:
             self.relevance = 100
         else:
