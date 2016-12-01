@@ -102,15 +102,17 @@ def get_urls(location):
 
 DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
 
+
 def get_licenses(location, min_score=0, diag=False):
     """
-    Yield an iterable of dictionaries of license data detected in the file at
-    location for each detected license.
+    Yield dictionaries of license data detected in the file at location.
 
-    minimum_score is the minimum score threshold from 0 to 100. The default is
-    100 means only exact licenses will be detected. With any value below 100,
-    approximate license results are included. Note that the minimum length for
-    an approximate match is four words.
+    `minimum_score` is a minimum score threshold from 0 to 100. The default is 0
+    means that all license matches will be returned. With any other value matches
+    that have a score below minimum score with not be returned.
+
+    If `diag` is True, additional match details are returned with the matched_rule
+    key of the returned mapping.
     """
     from licensedcode.index import get_index
     from licensedcode.models import get_licenses as licenses_details
@@ -135,17 +137,16 @@ def get_licenses(location, min_score=0, diag=False):
             result['spdx_url'] = lic.spdx_url
             result['start_line'] = match.start_line
             result['end_line'] = match.end_line
-            result['matched_rule'] = OrderedDict()
-            result['matched_rule']['identifier'] = match.rule.identifier
-            result['matched_rule']['license_choice'] = match.rule.license_choice
-            result['matched_rule']['licenses'] = match.rule.licenses
+            matched_rule = result['matched_rule'] = OrderedDict()
+            matched_rule['identifier'] = match.rule.identifier
+            matched_rule['license_choice'] = match.rule.license_choice
+            matched_rule['licenses'] = match.rule.licenses
             if diag:
-                result['matched_rule']['matcher'] = match.matcher
-                result['matched_rule']['rule_length'] = match.rule.length
-                result['matched_rule']['matched_length'] = match.ilen()
-                result['matched_rule']['match_coverage'] = match.coverage()
-                result['matched_rule']['rule_relevance'] = match.rule.relevance
-
+                matched_rule['matcher'] = match.matcher
+                matched_rule['rule_length'] = match.rule.length
+                matched_rule['matched_length'] = match.ilen()
+                matched_rule['match_coverage'] = match.coverage()
+                matched_rule['rule_relevance'] = match.rule.relevance
             yield result
 
 
