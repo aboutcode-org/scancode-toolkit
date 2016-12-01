@@ -62,26 +62,11 @@ from click.termui import style
 import simplejson as json
 from time import time
 
-from commoncode import ignore
-from commoncode import fileutils
 from commoncode import filetype
+from commoncode import fileutils
+from commoncode import ignore
 
 from scancode import __version__ as version
-
-from scancode.interrupt import interruptible
-from scancode.interrupt import DEFAULT_TIMEOUT
-from scancode.interrupt import DEFAULT_MAX_MEMORY
-
-
-from scancode import utils
-
-from scancode.cache import get_scans_cache_class
-
-from scancode.format import as_template
-from scancode.format import as_html_app
-from scancode.format import create_html_app_assets
-from scancode.format import HtmlAppAssetCopyWarning
-from scancode.format import HtmlAppAssetCopyError
 
 from scancode.api import get_copyrights
 from scancode.api import get_emails
@@ -89,6 +74,20 @@ from scancode.api import get_file_infos
 from scancode.api import get_licenses
 from scancode.api import get_package_infos
 from scancode.api import get_urls
+
+from scancode.cache import get_scans_cache_class
+
+from scancode.interrupt import interruptible
+from scancode.interrupt import DEFAULT_TIMEOUT
+from scancode.interrupt import DEFAULT_MAX_MEMORY
+
+from scancode.format import as_template
+from scancode.format import as_html_app
+from scancode.format import create_html_app_assets
+from scancode.format import HtmlAppAssetCopyWarning
+from scancode.format import HtmlAppAssetCopyError
+
+from scancode import utils
 
 
 info_text = '''
