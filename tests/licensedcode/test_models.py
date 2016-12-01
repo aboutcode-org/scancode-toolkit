@@ -133,7 +133,7 @@ class TestRule(FileBasedTesting):
         assert not models.Rule(_text='test_text', licenses=['mylicense']).negative()
         assert models.Rule(_text='test_text', licenses=[]).negative()
 
-    def test_LicenseMatch_small(self):
+    def test_Thresholds(self):
         r1_text = u'licensed under the GPL, licensed under the GPL'
         r1 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r1_text)
         r2_text = u'licensed under the GPL, licensed under the GPL' * 10
@@ -150,3 +150,63 @@ class TestRule(FileBasedTesting):
         _idx = index.LicenseIndex([r1, r2])
         assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8) == r1.thresholds()
         assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4) == r2.thresholds()
+
+    def test_compute_relevance_does_not_change_stored_relevance(self):
+        rule = models.Rule(_text='1', licenses=['public-domain'])
+        rule.relevance = 13
+        rule.has_stored_relevance = True
+        rule.length = 1000
+        rule.compute_relevance()
+        assert 13 == rule.relevance
+
+    def test_compute_relevance_is_zero_for_false_positive(self):
+        rule = models.Rule(_text='1', licenses=['public-domain'])
+        rule.relevance = 13
+        rule.has_stored_relevance = False
+        rule.false_positive = True
+        rule.length = 1000
+        rule.compute_relevance()
+        assert 0 == rule.relevance
+
+    def test_compute_relevance_is_zero_for_negative(self):
+        rule = models.Rule(_text='1', licenses=[])
+        rule.relevance = 13
+        rule.has_stored_relevance = False
+        rule.false_positive = False
+        rule.length = 1000
+        rule.compute_relevance()
+        assert 0 == rule.relevance
+
+    def test_compute_relevance_using_rule_length(self):
+        rule = models.Rule(_text='1', licenses=['some license'])
+        rule.relevance = 13
+        rule.has_stored_relevance = False
+        rule.false_positive = False
+
+        rule.length = 1000
+        rule.compute_relevance()
+        assert 100 == rule.relevance
+
+        rule.length = 1
+        rule.compute_relevance()
+        assert 5 == rule.relevance
+
+        rule.length = 20
+        rule.compute_relevance()
+        assert 100 == rule.relevance
+
+        rule.length = 21
+        rule.compute_relevance()
+        assert 100 == rule.relevance
+
+        rule.length = 0
+        rule.compute_relevance()
+        assert 0 == rule.relevance
+
+        rule.length = 12
+        rule.compute_relevance()
+        assert 60 == rule.relevance
+
+        rule.length = 18
+        rule.compute_relevance()
+        assert 90 == rule.relevance

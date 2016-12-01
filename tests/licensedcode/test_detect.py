@@ -92,6 +92,7 @@ class TestIndexMatch(FileBasedTesting):
         assert Span(0, 86) == match.qspan
         assert Span(0, 86) == match.ispan
         assert 100 == match.coverage()
+        assert 100 == match.score()
 
     def test_match_matches_correctly_simple_exact_query_1(self):
         tf1 = self.get_test_loc('detect/mit/mit.c')
@@ -177,7 +178,7 @@ class TestIndexMatch(FileBasedTesting):
 
         assert Span(0, 86) == match.qspan
         assert Span(0, 86) == match.ispan
-        assert 100 == match.coverage()
+        assert 100 == match.score()
 
     def test_match_can_match_approximately(self):
         rule_file = self.get_test_loc('approx/mit/mit.c')
@@ -193,6 +194,8 @@ class TestIndexMatch(FileBasedTesting):
         assert rule == m2.rule
         assert 100 == m1.coverage()
         assert 100 == m2.coverage()
+        assert 100 == m1.score()
+        assert 100 == m2.score()
 
     def test_match_return_correct_positions_with_short_index_and_queries(self):
         idx = index.LicenseIndex([Rule(_text='MIT License', licenses=['mit'])])
@@ -264,6 +267,7 @@ class TestIndexMatch(FileBasedTesting):
         assert Span(0, 241) == match.ispan
         assert (1, 27,) == match.lines()
         assert 100 == match.coverage()
+        assert 100 == match.score()
 
     def test_match_works_with_special_characters_1(self):
         test_file = self.get_test_loc('detect/specialcharacter/kerberos.txt')
@@ -517,6 +521,7 @@ class TestIndexMatch(FileBasedTesting):
         assert Span(0, 41) == match.qspan
         assert Span(0, 41) == match.ispan
         assert 100 == match.coverage()
+        assert 100 == match.score()
         qtext, _itext = get_texts(match, location=query_loc, idx=idx)
         expected = '''
             is free software you can redistribute it and or modify it under the terms
@@ -665,6 +670,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         assert 1 == len(matches)
         match = matches[0]
         assert 100 == match.coverage()
+        assert 50 == match.score()
         assert Span(0, 9) == match.qspan
         assert Span(0, 9) == match.ispan
 
@@ -683,6 +689,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
 
         match = matches[0]
         assert 100 == match.coverage()
+        assert 55 == match.score()
         assert Span(0, 10) == match.qspan
         assert Span(0, 10) == match.ispan
 
@@ -743,6 +750,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         assert expected_itext == itext.split()
 
         assert 80 < match.coverage()
+        assert 84 == match.score()
         assert Span(0, 6) | Span(13, 26) == match.qspan
         assert Span(0, 6) | Span(11, 24) == match.ispan
 
@@ -834,6 +842,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         assert expected_itokens == itext.split()
 
         assert 97 < match.coverage()
+        assert 97 < match.score()
         expected = Span(2, 98) | Span(100, 125) | Span(127, 131) | Span(133, 139) | Span(149, 178) | Span(180, 253)
         assert expected == match.qspan
         assert  Span(1, 135) | Span(141, 244) == match.ispan
@@ -1025,6 +1034,7 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         match = matches[0]
         assert ['bsd-new', 'gpl-2.0'] == match.rule.licenses
         assert 100 == match.coverage()
+        assert 20 == match.score()
         qtext, itext = get_texts(match, location=qloc, idx=idx)
         assert 'license Dual BSD GPL' == qtext
         assert 'license Dual BSD GPL' == itext
