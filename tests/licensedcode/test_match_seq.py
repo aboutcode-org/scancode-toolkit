@@ -84,7 +84,7 @@ class TestMatchSeq(FileBasedTesting):
         assert exp_qtext == qtext.split()
         assert exp_qtext == qtext.split()
         assert exp_itext == itext.split()
-        assert 99 <= match.score()
+        assert 99 <= match.coverage()
 
     def test_match_seq_are_correct_on_apache(self):
         rule_dir = self.get_test_loc('match_seq/rules')

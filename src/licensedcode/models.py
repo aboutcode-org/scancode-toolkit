@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -599,6 +599,7 @@ def load_rules(rule_dir=rules_data_dir):
 
 Thresholds = namedtuple('Thresholds', ['high_len', 'low_len', 'length', 'small', 'min_high', 'min_len'])
 
+
 class Rule(object):
     """
     A detection rule object is a text to use for detection and corresponding
@@ -612,11 +613,11 @@ class Rule(object):
                  'data_file', 'text_file', '_text',
                  'length', 'low_length', 'high_length', '_thresholds',
                  'length_unique', 'low_unique', 'high_unique', '_thresholds_unique',
-                 'is_url', 'minimum_score'
+                 'minimum_coverage', 'relevance', 'has_stored_relevance'
                  )
 
     def __init__(self, data_file=None, text_file=None, licenses=None,
-                 license_choice=False, notes=None, minimum_score=0, _text=None):
+                 license_choice=False, notes=None, minimum_coverage=0, _text=None):
 
         ###########
         # FIXME: !!! TWO RULES MAY DIFFER BECAUSE THEY ARE UPDATED BY INDEXING
@@ -640,14 +641,25 @@ class Rule(object):
         # TODO: implement me.
         self.license = u''
 
-        # is this rule text a false positive when matched? (filtered out)
+        # is this rule text a false positive when matched? (filtered out) FIXME: this
+        # should be unified with the relevance: a false positive match is a a match
+        # with a relevance of zero
         self.false_positive = False
 
-        # is this rule text only to be matched with a minimum score?
-        self.minimum_score = minimum_score
+        # is this rule text only to be matched with a minimum coverage?
+        self.minimum_coverage = minimum_coverage
 
         # optional, free text
         self.notes = notes
+
+        # what is the relevance of a match to this rule text? a float between 0 and
+        # 100 where 100 means highly relevant and 0 menas not relevant at all.
+        # For instance a match to the "gpl" or the "cpol" words have a fairly low
+        # relevance as they are a weak indication of an actual license and could be
+        # a false positive. In somce cases, this may even be used to discard obvious
+        # false positive matches automatically.
+        self.relevance = 100
+        self.has_stored_relevance = False
 
         # path to the YAML data file for this rule
         self.data_file = data_file
@@ -666,9 +678,6 @@ class Rule(object):
         # These attributes are computed upon text loading or setting the thresholds
         ###########################################################################
 
-        # is this rule text for a bare url? (needs exact matching)
-        self.is_url = False
-
         # length in number of token strings
         self.length = 0
 
@@ -685,23 +694,25 @@ class Rule(object):
 
     def tokens(self, lower=True):
         """
-        Return an iterable of token strings for this rule. Length is recomputed.
-        Tokens inside double curly braces (eg. {{ignored}}) are skipped and ignored.
+        Return an iterable of token strings for this rule. Length is recomputed as a
+        side effect. Tokens inside double curly braces (eg. {{ignored}}) are skipped
+        and ignored.
         """
         length = 0
         text = self.text()
         text = text.strip()
 
         # FIXME: this is weird:
-        # tag this rule as being a bare URL if it starts with a scheme and is on one line: this is used to determine a matching approach
+        # We tag this rule as being a bare URL if it starts with a scheme and is on one line: this is used to determine a matching approach
         if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000]:
-            self.is_url = True
+            self.minimum_coverage = 100
 
         for token in rule_tokenizer(self.text(), lower=lower):
             length += 1
             yield token
 
         self.length = length
+        self.compute_relevance()
 
     def text(self):
         """
@@ -730,8 +741,8 @@ class Rule(object):
         keys = self.licenses
         choice = self.license_choice
         fp = self.false_positive
-        minimum_score = self.minimum_score
-        return 'Rule(%(idf)r, lics=%(keys)r, fp=%(fp)r, minimum_score=%(minimum_score)r, %(text)r)' % locals()
+        minimum_coverage = self.minimum_coverage
+        return 'Rule(%(idf)r, lics=%(keys)r, fp=%(fp)r, minimum_coverage=%(minimum_coverage)r, %(text)r)' % locals()
 
     def same_licensing(self, other):
         """
@@ -760,7 +771,7 @@ class Rule(object):
         Is this a small rule? It needs special handling for detection.
         """
         SMALL_RULE = 15
-        return self.length < SMALL_RULE or self.is_url
+        return self.length < SMALL_RULE or self.minimum_coverage == 100
 
     def thresholds(self):
         """
@@ -777,14 +788,14 @@ class Rule(object):
             if self.length < 10:
                 min_high = self.high_length
                 min_len = self.length
-                self.minimum_score = 80
+                self.minimum_coverage = 80
 
             if self.length < 3:
                 min_high = self.high_length
                 min_len = self.length
-                self.minimum_score = 100
+                self.minimum_coverage = 100
 
-            if self.is_url or self.minimum_score == 100:
+            if self.minimum_coverage == 100:
                 min_high = self.high_length
                 min_len = self.length
 
@@ -818,7 +829,7 @@ class Rule(object):
                 min_high = self.high_unique
                 min_len = self.length_unique
 
-            if self.is_url:
+            if self.minimum_coverage == 100:
                 min_high = self.high_unique
                 min_len = self.length_unique
 
@@ -841,8 +852,10 @@ class Rule(object):
             data['license'] = self.license
         if self.false_positive:
             data['false_positive'] = self.false_positive
-        if self.minimum_score:
-            data['minimum_score'] = self.minimum_score
+        if self.has_stored_relevance:
+            data['relevance'] = self.relevance
+        if self.minimum_coverage:
+            data['minimum_coverage'] = self.minimum_coverage
         if self.notes:
             data['notes'] = self.note
         return data
@@ -882,7 +895,12 @@ class Rule(object):
         self.license_choice = data.get('license_choice', False)
         self.license = data.get('license')
         self.false_positive = data.get('false_positive', False)
-        self.minimum_score = float(data.get('minimum_score', 0))
+        relevance = data.get('relevance')
+        if relevance is not None:
+            # Keep track if we have a stored relevance of not.
+            self.has_stored_relevance = True
+            self.relevance = float(relevance)
+        self.minimum_coverage = float(data.get('minimum_coverage', 0))
 
         # these are purely informational and not used at run time
         if load_notes:
@@ -890,6 +908,48 @@ class Rule(object):
             if notes:
                 self.notes = notes.strip()
         return self
+
+    def compute_relevance(self):
+        """
+        Compute and set the `relevance` attribute for this rule. The relevance is a
+        float between 0 and 100 where 100 means highly relevant and 0 means not
+        relevant at all.
+
+        It is either defined in the rule YAML data file or computed here using this
+        approach:
+
+        - a rule of length up to 20 receives 5 relevance points per token (so a rule
+          of length 1 has a 5 relevance and a rule of length 20 has a 100 relevance)
+        - a rule of length over 20 has a 100 relevance
+        - a false positive rule has a relevance of zero.
+
+        For instance a match to the "gpl" or the "cpol" words have a fairly low
+        relevance as they are a weak indication of an actual license and could be a
+        false positive and should therefore be assigned a low relevance. In contrast
+        a match to most or all of the apache-2.0 license text is highly relevant. The
+        Rule relevance is used as the basis to compute a match score.
+        """
+        if self.has_stored_relevance:
+            return
+
+        # case for false positive: they do not have licenses and their matches are
+        # never returned. Relevance is zero.
+        if self.false_positive:
+            self.relevance = 0
+            return
+
+        # case for negative rules with no license (and are not an FP)
+        # they do not have licenses and their matches are never returned
+        if self.negative():
+            self.relevance = 0
+            return
+
+        # general case
+        length = self.length
+        if length >= 20:
+            self.relevance = 100
+        else:
+            self.relevance = length * 5
 
 
 def _print_rule_stats():

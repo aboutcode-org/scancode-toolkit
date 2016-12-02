@@ -1,4 +1,4 @@
 licenses:
     - public-domain
 notes: Moby declaration
-minimum_score: 100
+minimum_coverage: 100

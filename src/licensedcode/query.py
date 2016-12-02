@@ -38,30 +38,40 @@ from licensedcode.tokenize import query_tokenizer
 """
 Build license queries from scanned files to feed the detection pipeline.
 
-Queries are further broken down in query runs that are "slices" of query.
-Several heuristics are used to break down the query runs and this process is
-quite central to overall speed and accuracy of license detection: since
-detection is done query run by query run, and sequence alignment is performed on
-the best ranking candidates from a probalistic ranking, the defintion of what
-chunkc should be matched matters a lot. If too small, it will favour smaller
-rules and increased the processing time as more searches need to be done. Each
-search may be stuck on a suboptimal set of candidate rules eventually too small
-to make sense when matches are merged. If too big, it decreases the sensitivity
-to more specific smaller rules and would mistakenly report licenses that may
-contain the text of other smaller licenses. But it does speed up detection as
-fewer searches nee to be done. So rather than breaking the queries using a
-single universal way for any query, we compute crude statistics on the query
-text "structure" using the counts of lines, empty lines, lines with unknown
-tokens, lines with junk tokens and decide how to break a query based on these.
+A query is a sequence of tokens.
+Queries are further broken down in query runs that are "slices" of a query.
 
-For instance, some HTML or code file may be very sparse and their source have a
-lot of empty lines. However, this is is most often due to the text having been
-damaged or an artifact of some generted HTML or HTML editor. When we can detect
-these, we can eventually ignore heuristic to break queries based on sequences of
-empty lines.
+Several heuristics are used to break down a query in query runs and this process is
+important to the overall speed and accuracy of license detection: since the most
+costly parts of detection is done query run by query run, and sequence alignment is
+performed on the best ranking candidates from a probalistic ranking, the defintion of
+what chunk should be matched matters a lot.
 
-Conversely, some file may be very dense and may have contain a single line or
-only a few lines as can happen in minified JavaScript. In these cases counting
+If too small, chunking would favour alignment against smaller rules and increase the
+processing time as more alignments would need to be computed. If too big, chunking
+would eschew alignment against smaller rules.
+
+So based on the chunk side, the alignment may be stuck on working with a suboptimal
+set of candidate rules yielding possibly matches that are too small and scattered to
+make sense when matches are merged.
+
+If chunks are bigger, this decreases the sensitivity to more specific smaller rules
+and would mistakenly report licenses that may contain the text of other smaller
+licenses instead of larger longer licenses. But this does speed up detection as fewer
+alignments need to be compued. So rather than breaking the queries using a single way
+for all queries, we compute crude statistics on the query text "structure" using the
+counts of lines, empty lines, lines with unknown tokens, lines with junk tokens and
+decide how to break a query based on these.
+
+For instance, some HTML or code file may be very sparse and their source have a lot
+of empty lines. However, this is is most often due to the original text having been
+transformed when encoded as HTML or an artifact of some generated HTML or HTML
+editor. When we can detect these, we can eventually ignore heuristics to break
+queries based on sequences of empty lines. (Note this is not yet implemented for
+HTML).
+
+Conversely, a file text could be very dense and may contain a single line or only a
+few lines of text as can happen with minified JavaScript. In these cases counting
 lines is useless and other heuristic are needed.
 """
 
@@ -92,12 +102,16 @@ def build_query(location=None, query_string=None, idx=None):
     """
     if location:
         qtype = typecode.get_type(location)
+        # TODO: implement additional type-driven heuristics for query chunking.
         if qtype.is_binary:
-            # for binaries we want to avoid a large number of query runs
+            # for binaries we want to avoid a large number of query runs as the
+            # license context is often very sparse or absent
             qry = Query(location=location, idx=idx, line_threshold=1000)
         else:
+            # for text
             qry = Query(location=location, idx=idx, line_threshold=80)
     else:
+        # a string is always considered text
         qry = Query(query_string=query_string, idx=idx)
 
     return qry
@@ -105,21 +119,36 @@ def build_query(location=None, query_string=None, idx=None):
 
 class Query(object):
     """
-    A query represent a whole file or string being matched, holding tokens and a
-    line positions.
+    A query represent a whole file or string being scanned for licenses. It holds
+    tokens, token line positions and query runs. It also tracks which parts have been
+    matched as matching progresses.
 
-    A query is broken down in one or more "runs" that are slices of tokens used
-    as a matching unit.
+    A query is broken down in one or more "runs" that are slices of tokens used as a
+    matching unit.
     """
+    # use slots for a small lower memory usage
+    __slots__ = (
+        'location',
+        'query_string',
+        'idx',
+        'line_threshold',
+        'tokens',
+        'line_by_pos',
+        'unknowns_by_pos',
+        'shorts_and_digits_pos',
+        'query_runs',
+        'high_matchables',
+        'low_matchables',
+    )
 
     def __init__(self, location=None, query_string=None, idx=None,
                  line_threshold=4, _test_mode=False, tokenizer=query_tokenizer):
         """
-        Initialize the query from a location or query string for an idx
-        LicenseIndex.
+        Initialize the query from a file `location` or `query_string` string for an
+        `idx` LicenseIndex.
 
-        Break query in runs when there are at least `line_threshold` empty lines
-        or junk-only lines.
+        Break query in runs when there are at least `line_threshold` empty lines or
+        junk-only lines.
         """
         assert (location or query_string) and idx
 
@@ -139,8 +168,9 @@ class Query(object):
         # for unknowns at the start, the pos is -1
         self.unknowns_by_pos = defaultdict(int)
 
-        # set of known position were we have  short, single letter tokens at that pos
-        self.shorts_pos = set()
+        # set of query position were there is a short, single letter token or digits-only token
+        # TODO: consider using an intbitset
+        self.shorts_and_digits_pos = set()
 
         self.query_runs = []
         if _test_mode:
@@ -155,14 +185,13 @@ class Query(object):
 
     def whole_query_run(self):
         """
-        Return a query run built from the whole query.
+        Return a query run built from the whole range of query tokens.
         """
         return QueryRun(query=self, start=0, end=len(self.tokens) - 1)
 
     def subtract(self, qspan):
         """
-        Subtract the qspan matched positions from the parent query matchable
-        positions.
+        Subtract the qspan matched positions from the query matchable positions.
         """
         if qspan:
             self.high_matchables.difference_update(qspan)
@@ -171,14 +200,13 @@ class Query(object):
     @property
     def matchables(self):
         """
-        Return a set of every matchable token ids positions for the whole query.
+        Return a set of every matchable token positions for this query.
         """
         return self.low_matchables | self.high_matchables
 
     def tokens_with_unknowns(self):
         """
-        Yield the original tokens stream including unknown tokens (represented
-        by None).
+        Yield the original tokens stream with unknown tokens represented by None.
         """
         unknowns = self.unknowns_by_pos
         # yield anything at the start
@@ -192,13 +220,14 @@ class Query(object):
 
     def tokens_by_line(self, tokenizer=query_tokenizer):
         """
-        Yield a sequence of token_ids from this query, one sequence for each line.
-        Populate the query `line_by_pos` and `unknowns_by_pos` mappings as a side
-        effect.
+        Yield one sequence of tokens for each line in this query.
+        Populate the query `line_by_pos`, `unknowns_by_pos`, `unknowns_by_pos` and
+        `shorts_and_digits_pos` as a side effect.
         """
+        # bind frequently called functions to local scope
         line_by_pos_append = self.line_by_pos.append
         self_unknowns_by_pos = self.unknowns_by_pos
-        self_shorts_pos_add = self.shorts_pos.add
+        self_shorts_and_digits_pos_add = self.shorts_and_digits_pos.add
         dic_get = self.idx.dictionary.get
 
         # note: positions start at zero
@@ -220,8 +249,8 @@ class Query(object):
                     known_pos += 1
                     started = True
                     line_by_pos_append(lnum)
-                    if len(token) ==1:
-                        self_shorts_pos_add(known_pos)
+                    if len(token) == 1 or token.isdigit():
+                        self_shorts_and_digits_pos_add(known_pos)
                 else:
                     # we have not yet started
                     if not started:
@@ -233,9 +262,9 @@ class Query(object):
 
     def tokenize(self, tokens_by_line, line_threshold=4):
         """
-        Tokenize this query and populate the tokens and query runs at each break
-        points. Only keep known token ids but consider unknown token ids to
-        break a query in runs.
+        Tokenize this query and populate tokens and query_runs at each break point.
+        Only keep known token ids but consider unknown token ids to break a query in
+        runs.
 
         `tokens_by_line` is the output of the tokens_by_line() method.
         `line_threshold` is the number of empty or junk lines to break a new run.
@@ -252,6 +281,7 @@ class Query(object):
         # token positions start at zero
         pos = 0
 
+        # bind frequently called functions to local scope
         tokens_append = self.tokens.append
         query_runs_append = self.query_runs.append
 
@@ -298,15 +328,15 @@ class Query(object):
 
 class QueryRun(object):
     """
-    A query run is a slice of whole query tokens identified by a start and end
-    positions inclusive.
+    A query run is a slice of query tokens identified by a start and end positions
+    inclusive.
     """
     __slots__ = ('query', 'start', 'end', 'len_junk', '_low_matchables', '_high_matchables')
 
     def __init__(self, query, start, end=None):
         """
-        Initialize a query run starting at start and ending at end a parent
-        query tokens sequence.
+        Initialize a query run from starting at `start` and ending at `end` from a
+        parent `query`.
         """
         self.query = query
 
@@ -320,18 +350,11 @@ class QueryRun(object):
         self._high_matchables = None
 
     @property
-    def unknowns_by_pos(self):
-        """
-        Return positions with unknown tokens, used for final reporting.
-        """
-        return self.query.unknowns_by_pos
-
-    @property
     def low_matchables(self):
         if not self._low_matchables:
             self._low_matchables = intbitset([pos for pos in self.query.low_matchables if self.start <= pos <= self.end])
         return self._low_matchables
-
+ 
     @property
     def high_matchables(self):
         if not self._high_matchables:
@@ -361,7 +384,7 @@ class QueryRun(object):
         Yield the original tokens stream including unknown tokens (represented
         by None).
         """
-        unknowns = self.unknowns_by_pos
+        unknowns = self.query.unknowns_by_pos
         # yield anything at the start only if this is the first query run
         if self.start == 0:
             for _ in range(unknowns[-1]):
@@ -423,14 +446,14 @@ class QueryRun(object):
             # also update locally: this is a property hence the side effect
             self.high_matchables
             self._high_matchables.difference_update(qspan)
-
+ 
             # also update locally: this is a property hence the side effect
             self.low_matchables
             self._low_matchables.difference_update(qspan)
 
     def _as_dict(self, brief=False):
         """
-        Return a human readable dictionary representing the query replacing
+        Return a human readable dictionary representing the query run replacing
         token ids with their string values. If brief is True, the tokens
         sequence will be truncated to show only the first 5 and last five tokens
         of the run. Used for debugging and testing.

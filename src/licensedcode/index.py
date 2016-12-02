@@ -115,8 +115,8 @@ def get_license_matches(location=None, query_string=None, min_score=0):
     `query_string` string.
 
     `min_score` is a minimum score threshold for a license match from 0 to 100
-    percent. 100 is an exact match where all tokens of a rule or license are
-    matched in sequence. 0 means all matches are returned.
+    percent. 100 is a high confidence match and 0 a low confidence match. A
+    `min_score` of 0 means all matches are returned.
 
     The minimum length for an approximate match is four tokens.
     Spurrious matched are always filtered.
@@ -139,7 +139,6 @@ def get_index():
         _LICENSES_INDEX = get_or_build_index_from_cache()
     return _LICENSES_INDEX
 
-# Feature switches
 
 # Feature switch to use license cache or not (False is used only for testing)
 USE_CACHE = False
@@ -150,7 +149,6 @@ USE_AHO_FRAGMENTS = False
 # length of ngrams used for fragments detection
 NGRAM_LEN = 32
 
-
 # Maximum number of unique tokens we can handle: 16 bits signed integers are up to
 # 32767. Since we use internally several arrays of ints for smaller and optimized
 # storage we cannot exceed this number of tokens.
@@ -158,7 +156,6 @@ MAX_TOKENS = (2 ** 15) - 1
 
 # if 4, ~ 1/4 of all tokens will be treated as junk
 PROPORTION_OF_JUNK = 2
-
 
 
 class LicenseIndex(object):
@@ -406,7 +403,7 @@ class LicenseIndex(object):
                     # ... or with the whole rule tokens sequence
                     rules_automaton_add(tids=rule_token_ids, rid=rid)
                     # ... and ngrams: compute ngrams and populate the automaton with ngrams
-                    if USE_AHO_FRAGMENTS and not rule.is_url and rule.minimum_score < 100 and len(rule_token_ids) > NGRAM_LEN:
+                    if USE_AHO_FRAGMENTS and rule.minimum_coverage < 100 and len(rule_token_ids) > NGRAM_LEN:
                         all_ngrams = ngrams(rule_token_ids, ngram_length=NGRAM_LEN)
                         selected_ngrams = select_ngrams(all_ngrams, with_pos=True)
                         for pos, ngram in selected_ngrams:
@@ -458,8 +455,7 @@ class LicenseIndex(object):
         """
         Return a sequence of LicenseMatch by matching the file at `location` or
         the `query_string` text against the index. Only include matches with
-        scores greater or equal to `min_score` where the score is the number of
-        tokens matched to the number of tokens in the matched to rule or text.
+        scores greater or equal to `min_score`.
 
         `detect_negative` and `use_cache` are for testing purpose only.
         """
@@ -541,9 +537,9 @@ class LicenseIndex(object):
         if TRACE: logger_debug('#match: #QUERY RUNS:', len(qry.query_runs))
 
         # check if we have some matchable left
-        # collect qspans matched exactly e.g. with score 100%
-        # this score check is because we have provision to match fragments (unused for now)
-        matched_qspans = [m.qspan for m in exact_matches if m.score() == 100]
+        # collect qspans matched exactly e.g. with coverage 100%
+        # this coverage check is because we have provision to match fragments (unused for now)
+        matched_qspans = [m.qspan for m in exact_matches if m.coverage() == 100]
         # do not match futher if we do not need to
         if whole_query_run.is_matchable(include_low=True, qspans=matched_qspans):
 

@@ -263,56 +263,56 @@ class TestQueryWithSingleRun(IndexTesting):
         assert q.line_by_pos
         qrun = q.query_runs[0]
         assert [0, 1] == qrun.tokens
-        assert {} == qrun.unknowns_by_pos
+        assert {} == qrun.query.unknowns_by_pos
 
         # one junk
         q = Query(query_string='a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
         assert [0, 2] == qrun.tokens
-        assert {} == qrun.unknowns_by_pos
+        assert {} == qrun.query.unknowns_by_pos
 
         # one junk
         q = Query(query_string='binary the', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
         assert [2, 1] == qrun.tokens
-        assert {} == qrun.unknowns_by_pos
+        assert {} == qrun.query.unknowns_by_pos
 
         # one unknown at start
         q = Query(query_string='that binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
         assert [2] == qrun.tokens
-        assert {-1: 1} == qrun.unknowns_by_pos
+        assert {-1: 1} == qrun.query.unknowns_by_pos
 
         # one unknown at end
         q = Query(query_string='binary that', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
         assert [2] == qrun.tokens
-        assert {0: 1} == qrun.unknowns_by_pos
+        assert {0: 1} == qrun.query.unknowns_by_pos
 
         # onw unknown in the middle
         q = Query(query_string='binary that a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
         assert [2, 0, 2] == qrun.tokens
-        assert {0: 1} == qrun.unknowns_by_pos
+        assert {0: 1} == qrun.query.unknowns_by_pos
 
         # onw unknown in the middle
         q = Query(query_string='a binary that a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
         assert [0, 2, 0, 2] == qrun.tokens
-        assert {1: 1} == qrun.unknowns_by_pos
+        assert {1: 1} == qrun.query.unknowns_by_pos
 
         # two unknowns in the middle
         q = Query(query_string='binary that was a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
         assert [2, 0, 2] == qrun.tokens
-        assert {0: 2} == qrun.unknowns_by_pos
+        assert {0: 2} == qrun.query.unknowns_by_pos
 
         # unknowns at start, middle and end
         q = Query(query_string='hello dolly binary that was a binary end really', idx=idx)
@@ -320,7 +320,7 @@ class TestQueryWithSingleRun(IndexTesting):
         qrun = q.query_runs[0]
         assert q.line_by_pos
         assert [2, 0, 2] == qrun.tokens
-        assert {-1: 2, 0: 2, 2: 2} == qrun.unknowns_by_pos
+        assert {-1: 2, 0: 2, 2: 2} == qrun.query.unknowns_by_pos
 
     def test_query_tokens_are_same_for_different_text_formatting(self):
 

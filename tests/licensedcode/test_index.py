@@ -490,7 +490,7 @@ No part of match        '''
         assert Span(Span(1, 72) | Span(74, 212)) == match.qspan
 
         assert Span(0, 210) == match.ispan
-        assert 100 == match.score()
+        assert 100 == match.coverage()
 
     def test_match_to_indexed_template_with_few_tokens_around_gaps(self):
         # Was failing when a gap in a template starts very close to the start of
@@ -588,7 +588,7 @@ No part of match        '''
         qtext, itext = get_texts(match, location=query_loc, idx=idx)
         assert exp_qtext == qtext.split()
         assert exp_itext == itext.split()
-        assert match.score() > 97
+        assert match.coverage() > 97
         assert match_seq.MATCH_SEQ == match.matcher
 
     def test_match_with_templates_with_redundant_tokens_yield_single_exact_match(self):
@@ -617,7 +617,7 @@ No part of match        '''
         match = result[0]
         assert Span(0, 4) | Span(6, 10) == match.qspan
         assert Span(0, 9) == match.ispan
-        assert 100 == match.score()
+        assert 100 == match.coverage()
         qtext, itext = get_texts(match, query_string=querys, idx=idx)
         assert 'copyright reserved mit is license <is> [the] copyright reserved mit is license' == qtext
         assert 'copyright reserved mit is license copyright reserved mit is license' == itext

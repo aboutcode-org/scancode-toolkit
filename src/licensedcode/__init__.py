@@ -48,15 +48,10 @@ license_matches_cache_dir = join(cache_dir, 'license_matches')
 if not exists(license_index_cache_dir):
     fileutils.create_dir(license_index_cache_dir)
 
-# minimum number of tokens a match should have to be considered as worthy
+# minimum number of tokens a match should have to be considered as worthy keeping
 MIN_MATCH_LENGTH = 4
 MIN_MATCH_HIGH_LENGTH = 3
 
 # maximum distance between two matches to merge
 MAX_DIST = 120
 
-# length below which a match is considered as "small"
-SMALL_MATCH = 50
-
-# minimal score for matches to small rules
-SMALL_MATCH_MIN_SCORE = 80

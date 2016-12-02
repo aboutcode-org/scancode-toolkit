@@ -298,7 +298,7 @@ class TestMergeMatches(FileBasedTesting):
         assert LicenseMatch(rule=r1, qspan=Span(0, 6), ispan=Span(0, 6)) == match
 
     def test_merge_contiguous_contained_matches(self):
-        r1 = Rule(text_file='r1', licenses=['ap    ache-2.0', 'gpl'])
+        r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
         m2 = LicenseMatch(rule=r1, qspan=Span(3, 6), ispan=Span(3, 6))
         m5 = LicenseMatch(rule=r1, qspan=Span(7, 8), ispan=Span(7, 8))
@@ -573,3 +573,47 @@ class TestLicenseMatchFilter(FileBasedTesting):
         ]
 
         assert expected == matches
+
+
+class TestLicenseMatchScore(FileBasedTesting):
+    test_data_dir = TEST_DATA_DIR
+
+    def test_LicenseMatch_score_100(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0'])
+        r1.relevance = 100
+        r1.length = 3
+
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
+        assert m1.score() == 100
+
+    def test_LicenseMatch_score_50(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0'])
+        r1.relevance = 50
+        r1.length = 3
+
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
+        assert m1.score() == 50
+
+    def test_LicenseMatch_score_25(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0'])
+        r1.relevance = 50
+        r1.length = 6
+
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
+        assert m1.score() == 25
+
+    def test_LicenseMatch_score_0(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0'])
+        r1.relevance = 0
+        r1.length = 6
+
+        m1 = LicenseMatch(rule=r1, qspan=Span(), ispan=Span())
+        assert m1.score() == 0
+
+    def test_LicenseMatch_score_0_relevance(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0'])
+        r1.relevance = 0
+        r1.length = 6
+
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
+        assert m1.score() == 0

@@ -1,3 +1,3 @@
 licenses:
     - mod-dav-1.0
-minimum_score: 80
+minimum_coverage: 80

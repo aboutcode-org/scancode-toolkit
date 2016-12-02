@@ -49,19 +49,16 @@ TRACE_REFINE = False
 TRACE_MERGE = False
 TRACE_REFINE_SMALL = False
 TRACE_REFINE_SINGLE = False
-TRACE_REFINE_RULE_MIN_SCORE = False
+TRACE_REFINE_RULE_MIN_COVERAGE = False
 TRACE_REFINE_SOLID = False
 TRACE_SPAN_DETAILS = False
 TRACE_MERGE_TEXTS = False
 
 
-# include or not unmatched tokens in collect matched texts (usedmostly for debugging)
-INCLUDE_UNMATCHED_TEXTS = True
-
 
 def logger_debug(*args): pass
 
-if TRACE or TRACE_FILTER_CONTAINS or TRACE_MERGE or TRACE_REFINE_RULE_MIN_SCORE or TRACE_REFINE_SINGLE:
+if TRACE or TRACE_FILTER_CONTAINS or TRACE_MERGE or TRACE_REFINE_RULE_MIN_COVERAGE or TRACE_REFINE_SINGLE:
     import logging
     import sys
 
@@ -131,6 +128,7 @@ class LicenseMatch(object):
             licenses=', '.join(self.rule.licenses),
             choice=self.rule.license_choice,
             score=self.score(),
+            coverage=self.coverage(),
             qlen=self.qlen(),
             ilen=self.ilen(),
             hilen=self.hilen(),
@@ -141,7 +139,7 @@ class LicenseMatch(object):
         )
         return ('LicenseMatch<%(matcher)r, lines=%(lines)r, '
                 '%(rule_id)r, %(licenses)r, choice=%(choice)r, '
-                'score=%(score)r, qlen=%(qlen)r, ilen=%(ilen)r, hilen=%(hilen)r, rlen=%(rlen)r, '
+                'sc=%(score)r, cov=%(coverage)r, qlen=%(qlen)r, ilen=%(ilen)r, hilen=%(hilen)r, rlen=%(rlen)r, '
                 'qreg=%(qreg)r, ireg=%(ireg)r'
                 '%(spans)s>') % rep
 
@@ -245,6 +243,12 @@ class LicenseMatch(object):
 
     def coverage(self):
         """
+        Return the coverage of this match to the matched rule as a rounded float between 0 and 100.
+        """
+        return round(self._coverage() * 100, 2)
+
+    def _coverage(self):
+        """
         Return the coverage of this match to the matched rule as a float between 0 and 1.
         """
         if not self.rule.length:
@@ -253,13 +257,26 @@ class LicenseMatch(object):
 
     def score(self):
         """
-        Return the score for this match as a float between 0 and 100.
+        Return the score for this match as a rounded float between 0 and 100.
 
-        This is a ratio of matched tokens to the rule length and an indication of
-        coverage of match with respect to the matched rule.
+        The score is an indication of the confidence that a match is good. It is
+        computed from the number of matched tokens, the number of rule tokens and the
+        matched rule relevance.
         """
-        # TODO: compute a better score based tf/idf, BM25, applying ratio to low tokens, etc
-        return round(self.coverage() * 100, 2)
+        # _coverage is a value between 0 and 1
+        coverage = self._coverage()
+        if not coverage:
+            return 0
+
+        # relevance is a number between 0 and 100. Divide by 100
+        relevance = self.rule.relevance / 100
+        if not relevance:
+            return 0
+
+        if not coverage or not relevance:
+            return 0
+
+        return round(coverage * relevance * 100, 2)
 
     def surround(self, other):
         """
@@ -327,6 +344,7 @@ class LicenseMatch(object):
     def small(self):
         """
         Return True if this match is "small" based on its rule thresholds.
+        Small matches are spurrious matches that are discarded.
         """
         thresholds = self.rule.thresholds()
         min_ihigh = thresholds.min_high
@@ -335,9 +353,9 @@ class LicenseMatch(object):
         ilen = self.ilen()
         if TRACE_REFINE_SMALL:
             logger_debug('LicenseMatch.small(): hilen=%(hilen)r, ilen=%(ilen)r, thresholds=%(thresholds)r' % locals(),)
-        if thresholds.small and self.score() < 50 and (hilen < min_ihigh or ilen < min_ilen):
+        if thresholds.small and self.coverage() < 50 and (hilen < min_ihigh or ilen < min_ilen):
             if TRACE_REFINE_SMALL:
-                logger_debug('LicenseMatch.small(): CASE 1 thresholds.small and self.score() < 50 and (hilen < min_ihigh or ilen < min_ilen)')
+                logger_debug('LicenseMatch.small(): CASE 1 thresholds.small and self.coverage() < 50 and (hilen < min_ihigh or ilen < min_ilen)')
             return True
         if hilen < min_ihigh or ilen < min_ilen:
             if TRACE_REFINE_SMALL:
@@ -346,9 +364,10 @@ class LicenseMatch(object):
 
     def false_positive(self, idx):
         """
-        Return a false positive rule id if the LicenseMatch match is a false
-        positive or None otherwise (nb: not False).
-        Lookup the matched tokens sequence against the idx index.
+        Return a True-ish (e.g. a false positive rule id) if the LicenseMatch match
+        is a false positive or None otherwise (nb: not False). This is done by a
+        lookup of the matched tokens sequence against the `idx` index false positive
+        rules.
         """
         ilen = self.ilen()
         if ilen > idx.largest_false_positive_length:
@@ -547,13 +566,13 @@ def filter_contained_matches(matches):
 
             # equals matches
             if current_match.qspan == next_match.qspan:
-                if current_match.score() >= next_match.score():
-                    if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: next EQUALS current, removed next with lower or equal score', matches[j], '\n')
+                if current_match.coverage() >= next_match.coverage():
+                    if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: next EQUALS current, removed next with lower or equal coverage', matches[j], '\n')
                     discarded.append(next_match)
                     del matches[j]
                     continue
                 else:
-                    if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: next EQUALS current, removed current with lower score', matches[i], '\n')
+                    if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: next EQUALS current, removed current with lower coverage', matches[i], '\n')
                     discarded.append(current_match)
                     del matches[i]
                     i -= 1
@@ -715,20 +734,19 @@ def filter_contained_matches(matches):
     return matches, discarded
 
 
-def filter_rule_min_score(matches):
+def filter_rule_min_coverage(matches):
     """
-    Return a list of matches scoring at or above a rule-defined minimum score and a
-    list of matches scoring below.
+    Return a list of matches scoring at or above a rule-defined minimum coverage and
+    a list of matches with a coverage below a rule-defined minimum coverage.
     """
     kept = []
     discarded = []
     for match in matches:
-        if match.score() < match.rule.minimum_score:
-            if TRACE_REFINE_RULE_MIN_SCORE: logger_debug('    ==> DISCARDING rule.minimum_score:', match.rule.minimum_score, 'match:', match)
+        if match.coverage() < match.rule.minimum_coverage:
+            if TRACE_REFINE_RULE_MIN_COVERAGE: logger_debug('    ==> DISCARDING rule.minimum_coverage:', match.rule.minimum_coverage, 'match:', match)
             discarded.append(match)
         else:
             kept.append(match)
-
     return kept, discarded
 
 
@@ -747,15 +765,17 @@ def filter_low_score(matches, min_score=100):
             discarded.append(match)
         else:
             kept.append(match)
-
     return kept, discarded
 
 
-def filter_spurrious_single_token(matches, query=None, idx=None, unknown_count=5):
+def filter_spurious_single_token(matches, query=None, idx=None, unknown_count=5):
     """
-    Return a list of matches where matches to a single token are only surrounded by
-    at least `unknown_count` unknown tokens or short tokens composed of a single
-    character.
+    Return a list of matches without "spurious" single token matches and a list of
+    "spurious" single token matches.
+
+    A "spurious" single token match is a match to a single token that is surrounded
+    on both sides by at least `unknown_count` tokens of either unknown tokens, short
+    tokens composed of a single character or tokens composed only of digits.
     """
     kept = []
     discarded = []
@@ -763,7 +783,7 @@ def filter_spurrious_single_token(matches, query=None, idx=None, unknown_count=5
         return matches, discarded
 
     unknowns_by_pos = query.unknowns_by_pos
-    shorts_pos = query.shorts_pos
+    shorts_and_digits = query.shorts_and_digits_pos
     for match in matches:
         if not match.qlen() == 1:
             kept.append(match)
@@ -773,36 +793,41 @@ def filter_spurrious_single_token(matches, query=None, idx=None, unknown_count=5
         qend = match.qend
 
         # compute the number of unknown tokens before and after this single matched position
-        # note: unknowns_by_pos is a defaultdict(int), shorts_pos is a set of integers
+        # note: unknowns_by_pos is a defaultdict(int), shorts_and_digits is a set of integers
         before = unknowns_by_pos[qstart - 1]
         for p in range(qstart - 1 - unknown_count, qstart):
-            if p in shorts_pos:
+            if p in shorts_and_digits:
                 before += 1
+        if before < unknown_count:
+            if TRACE_REFINE_SINGLE: logger_debug('    ==> !!! NOT DISCARDING spurrious_single_token, not enough before:', match, before)
+            if TRACE_REFINE_SINGLE: _debug_print_matched_query_text(match, query, extras=unknown_count)
+            kept.append(match)
+            continue
 
         after = unknowns_by_pos[qstart]
         for p in range(qend, qend + 1 + unknown_count):
-            if p in shorts_pos:
+            if p in shorts_and_digits:
                 after += 1
 
-        if before >= unknown_count and after >= unknown_count:
+        if after >= unknown_count:
             if TRACE_REFINE_SINGLE: logger_debug('    ==> DISCARDING spurrious_single_token:', match)
-            if TRACE_REFINE_SINGLE: _debug_print_match(match, query, extras=unknown_count)
+            if TRACE_REFINE_SINGLE: _debug_print_matched_query_text(match, query, extras=unknown_count)
             discarded.append(match)
         else:
-            if TRACE_REFINE_SINGLE: logger_debug('    ==> !!! NOT DISCARDING spurrious_single_token:', match, before, after)
-            if TRACE_REFINE_SINGLE: _debug_print_match(match, query, extras=unknown_count)
+            if TRACE_REFINE_SINGLE: logger_debug('    ==> !!! NOT DISCARDING spurrious_single_token, not enough after:', match, before, after)
+            if TRACE_REFINE_SINGLE: _debug_print_matched_query_text(match, query, extras=unknown_count)
             kept.append(match)
     return kept, discarded
 
 
 def filter_short_matches(matches):
     """
-    Return a list of matches that are not small and a list of small matches.
+    Return a list of matches that are not short and a list of short spurious matches.
     """
     kept = []
     discarded = []
     for match in matches:
-        if (match.small()):  # and match.score() < SMALL_MATCH_MIN_SCORE):
+        if match.small():
             if TRACE_REFINE_SMALL: logger_debug('    ==> DISCARDING SHORT:', match)
             discarded.append(match)
         else:
@@ -813,8 +838,10 @@ def filter_short_matches(matches):
 
 def filter_spurious_matches(matches):
     """
-    Return a list of matches that are not spurious and a list of spurrious
-    matches.
+    Return a list of matches that are not spurious and a list of spurious matches.
+
+    Spurious matches are small matches with a low density (e.g. where the matched
+    tokens are separated by many unmatched tokens.)
     """
     kept = []
     discarded = []
@@ -837,7 +864,7 @@ def filter_spurious_matches(matches):
     return kept, discarded
 
 
-def filter_false_positive_matches(idx, matches):
+def filter_false_positive_matches(matches, idx):
     """
     Return a list of matches that are not false positives and a list of false
     positive matches given an index `idx`.
@@ -847,7 +874,7 @@ def filter_false_positive_matches(idx, matches):
     for match in matches:
         fp = match.false_positive(idx)
         if fp is None:
-#             if TRACE_REFINE: logger_debug('    ==> NOT DISCARDING FALSE POSITIVE:', match)
+            # if TRACE_REFINE: logger_debug('    ==> NOT DISCARDING FALSE POSITIVE:', match)
             kept.append(match)
         else:
             if TRACE_REFINE: logger_debug('    ==> DISCARDING FALSE POSITIVE:', match, 'fp rule:', idx.rules_by_rid[fp].identifier)
@@ -869,19 +896,19 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST):
 
     all_discarded = []
 
-    matches, discarded = filter_rule_min_score(matches)
+    matches, discarded = filter_rule_min_coverage(matches)
     all_discarded.extend(discarded)
-#     if TRACE: logger_debug('   #####refine_matches: NOT SHORT #', len(matches))
-#     if TRACE_REFINE: map(logger_debug, matches)
-#     if TRACE: logger_debug('   #####refine_matches: SHORT discarded#', len(discarded))
-#     if TRACE_REFINE: map(logger_debug, discarded)
+    # if TRACE: logger_debug('   #####refine_matches: NOT SHORT #', len(matches))
+    # if TRACE_REFINE: map(logger_debug, matches)
+    # if TRACE: logger_debug('   #####refine_matches: SHORT discarded#', len(discarded))
+    # if TRACE_REFINE: map(logger_debug, discarded)
 
-    matches, discarded = filter_spurrious_single_token(matches, query, idx)
+    matches, discarded = filter_spurious_single_token(matches, query, idx)
     all_discarded.extend(discarded)
-#     if TRACE: logger_debug('   #####refine_matches: NOT SHORT #', len(matches))
-#     if TRACE_REFINE: map(logger_debug, matches)
-#     if TRACE: logger_debug('   #####refine_matches: SHORT discarded#', len(discarded))
-#     if TRACE_REFINE: map(logger_debug, discarded)
+    # if TRACE: logger_debug('   #####refine_matches: NOT SHORT #', len(matches))
+    # if TRACE_REFINE: map(logger_debug, matches)
+    # if TRACE: logger_debug('   #####refine_matches: SHORT discarded#', len(discarded))
+    # if TRACE_REFINE: map(logger_debug, discarded)
 
     matches, discarded = filter_short_matches(matches)
     all_discarded.extend(discarded)
@@ -890,7 +917,7 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST):
     if TRACE: logger_debug('   #####refine_matches: SHORT discarded#', len(discarded))
     if TRACE_REFINE: map(logger_debug, discarded)
 
-    matches, discarded = filter_false_positive_matches(idx, matches)
+    matches, discarded = filter_false_positive_matches(matches, idx)
     all_discarded.extend(discarded)
     if TRACE: logger_debug('   #####refine_matches: NOT FALSE POS #', len(matches))
     if TRACE_REFINE: map(logger_debug, matches)
@@ -939,11 +966,10 @@ def get_texts(match, location=None, query_string=None, idx=None, width=120):
     - the matched query text as a string.
     - the matched rule text as a string.
 
-    Used primarily to recover the matched texts for testing or reporting.
-
-    Unmatched positions are represented between angular backets <> or square brackets
-    [] for unknown tokens not part of the index. Punctuation is removed , spaces are
-    normalized (new line is replaced by a space), case is preserved.
+    Unmatched positions to known tokens are represented between angular backets <>
+    and between square brackets [] for unknown tokens not part of the index.
+    Punctuation is removed , spaces are normalized (new line is replaced by a space),
+    case is preserved.
 
     If `width` is a number superior to zero, the texts are wrapped to width.
     """
@@ -953,16 +979,15 @@ def get_texts(match, location=None, query_string=None, idx=None, width=120):
 
 def get_matched_qtext(match, location=None, query_string=None, idx=None, width=120, margin=0):
     """
-    Return the matched query text as a wrapped string of `width` given a match,
-    a query location or string and an index.
-
-    Used primarily to recover the matched texts for testing or reporting.
+    Return the matched query text as a wrapped string of `width` given a match, a
+    query location or string and an index.
 
     Unmatched positions are represented between angular backets <> or square brackets
     [] for unknown tokens not part of the index. Punctuation is removed , spaces are
     normalized (new line is replaced by a space), case is preserved.
 
-    If `width` is a number superior to zero, the texts are wrapped to width.
+    If `width` is a number superior to zero, the texts are wrapped to width with an
+    optional `margin`.
     """
     return format_text(matched_query_tokens_str(match, location, query_string, idx), width=width, margin=margin)
 
@@ -970,13 +995,13 @@ def get_matched_qtext(match, location=None, query_string=None, idx=None, width=1
 def get_match_itext(match, width=120, margin=0):
     """
     Return the matched rule text as a wrapped string of `width` given a match.
-    Used primarily to recover the matched texts for testing or reporting.
 
     Unmatched positions are represented between angular backets <>.
     Punctuation is removed , spaces are normalized (new line is replaced by a space),
     case is preserved.
 
-    If `width` is a number superior to zero, the texts are wrapped to width.
+    If `width` is a number superior to zero, the texts are wrapped to width with an
+    optional `margin`.
     """
     return format_text(matched_rule_tokens_str(match), width=width, margin=margin)
 
@@ -997,14 +1022,13 @@ def format_text(tokens, width=120, no_match='<no-match>', margin=4):
     return u'\n'.join(wrap(u' '.join(tokens)))
 
 
-def matched_query_tokens_str(match, location=None, query_string=None, idx=None, include_unmatched=INCLUDE_UNMATCHED_TEXTS):
+def matched_query_tokens_str(match, location=None, query_string=None, idx=None):
     """
     Return an iterable of matched query token strings given a query file at
     `location` or a `query_string`, a match and an index.
-    Yield None for unmatched positions.
-    Punctuation is removed , spaces are normalized (new line is replaced by a space),
-    case is preserved.
-    Used primarily to recover the matched texts for testing or reporting.
+
+    Yield None for unmatched positions. Punctuation is removed, spaces are normalized
+    (new line is replaced by a space), case is preserved.
     """
     assert idx
     dictionary_get = idx.dictionary.get
@@ -1036,22 +1060,18 @@ def matched_query_tokens_str(match, location=None, query_string=None, idx=None, 
             if known_pos in match_qspan and token_id is not None:
                 yield token
             else:
-                if include_unmatched:
-                    if token_id is not None:
-                        yield '<%s>' % token
-                    else:
-                        yield '[%s]' % token
+                if token_id is not None:
+                    yield '<%s>' % token
                 else:
-                    yield '.'
+                    yield '[%s]' % token
 
 
-def matched_rule_tokens_str(match, include_unmatched=INCLUDE_UNMATCHED_TEXTS):
+def matched_rule_tokens_str(match):
     """
     Return an iterable of matched rule token strings given a match.
     Yield None for unmatched positions.
     Punctuation is removed, spaces are normalized (new line is replaced by a space),
     case is preserved.
-    Used primarily to recover the matched texts for testing or reporting.
     """
     ispan = match.ispan
     ispan_start = ispan.start
@@ -1061,13 +1081,14 @@ def matched_rule_tokens_str(match, include_unmatched=INCLUDE_UNMATCHED_TEXTS):
             if pos in ispan:
                 yield token
             else:
-                if include_unmatched:
-                    yield '<%s>' % token
-                else:
-                    yield '.'
+                yield '<%s>' % token
 
 
-def _debug_print_match(match, query, extras=5):
+def _debug_print_matched_query_text(match, query, extras=5):
+    """
+    Print a matched query text including `extras` tokens before and after the match.
+    Used for debugging license matches.
+    """
     # create a fake new match with extra unknown left and right
     new_match = match.combine(match)
     new_qstart = max([0, match.qstart - extras])
