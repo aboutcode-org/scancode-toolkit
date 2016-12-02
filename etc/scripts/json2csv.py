@@ -80,7 +80,7 @@ def load_scan(json_input):
     return scan_results
 
 
-def parse_scan(scan):
+def parse_scan(scan, strip=0):
     header = []
     rows = []
 
@@ -91,8 +91,26 @@ def parse_scan(scan):
     for component in scan:
         row = []
         for field in header:
-            row.append(component[field])
+            entry = component[field]
+
+            if field == 'path':
+                if strip:
+                    # do not keep leading slash but add it back afterwards. keep trailing slashes
+                    entry = entry.lstrip('/')
+                    splits = [s for s in entry.split('/')]
+                    entry = '/'.join(splits[strip:])
+
+                entry = entry.startswith('/') and entry or '/' + entry
+
+                if component['type'] == 'directory':
+                    if not entry.endswith('/'):
+                        entry = entry + '/'
+
+            row.append(entry)
+
         rows.append(row)
+
+    header[0] = 'Resource'
 
     return header, rows
 
@@ -103,7 +121,7 @@ def json_scan_to_csv(json_input, csv_output, strip=0):
     Optionally strip up to `strip` path segments from the location paths.
     """
     scan_results = load_scan(json_input)
-    headers, rows = parse_scan(scan_results)
+    headers, rows = parse_scan(scan_results, strip)
     with open(csv_output, 'wb') as output:
         w = unicodecsv.writer(output)
         w.writerow(headers)
