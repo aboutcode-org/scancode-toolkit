@@ -30,7 +30,6 @@ from __future__ import print_function, absolute_import, division
 # FIXME: unknown license
 ###########################################################################
 from multiprocessing.pool import IMapIterator, IMapUnorderedIterator
-from scancode.cache import ScanFileCache
 
 def wrapped(func):
     # ensure that we do not double wrap
@@ -75,11 +74,8 @@ from scancode.api import get_licenses
 from scancode.api import get_package_infos
 from scancode.api import get_urls
 
+from scancode.cache import ScanFileCache
 from scancode.cache import get_scans_cache_class
-
-from scancode.interrupt import interruptible
-from scancode.interrupt import DEFAULT_TIMEOUT
-from scancode.interrupt import DEFAULT_MAX_MEMORY
 
 from scancode.format import as_template
 from scancode.format import as_html_app
@@ -87,8 +83,13 @@ from scancode.format import create_html_app_assets
 from scancode.format import HtmlAppAssetCopyWarning
 from scancode.format import HtmlAppAssetCopyError
 
+from scancode.interrupt import interruptible
+from scancode.interrupt import DEFAULT_TIMEOUT
+from scancode.interrupt import DEFAULT_MAX_MEMORY
+
 from scancode import utils
 
+from scancode import utils
 
 info_text = '''
 ScanCode scans code and other files for origin and license.
@@ -307,12 +308,16 @@ def scancode(ctx, input, output_file, copyright, license, package,
         files_count, results = scan(input, copyright, license, package, email, url, info, license_score,
                                     verbose, quiet, processes, scans_cache_class, to_stdout,
                                     diag, timeout, max_memory)
-        click.secho('Saving results...', err=to_stdout, fg='green')
+        click.secho('Saving results.', err=to_stdout, fg='green')
         save_results(files_count, results, format, input, output_file)
     finally:
         # cleanup
         cache = scans_cache_class()
-        # cache.clear()
+        cache.clear()
+
+    # TODO: addproper return code
+    # rc = 1 if has__errors else 0
+    # ctx.exit(rc)
 
 
 def scan(input_path, copyright=True, license=True, package=True,
@@ -383,20 +388,19 @@ def scan(input_path, copyright=True, license=True, package=True,
             # With imap_unordered, results are returned as soon as ready and out of order.
             scanned_files = pool.imap_unordered(scanit, logged_resources, chunksize=1)
             pool.close()
-    
+
             click.secho('Scanning files...', err=to_stdout, fg='green')
-    
-    
+
             def scan_event(item):
                 """Progress event displayed each time a file is scanned"""
                 if item:
                     _scan_success, _scanned_path = item
                     _progress_line = verbose and _scanned_path or fileutils.file_name(_scanned_path)
                     return style('Scanned: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
-    
+
             scanning_errors = []
             files_count = 0
-            with utils.progressmanager(scanned_files, item_show_func=scan_event, 
+            with utils.progressmanager(scanned_files, item_show_func=scan_event,
                                        show_pos=True, verbose=verbose, quiet=quiet) as scanned:
                 while True:
                     try:
@@ -412,8 +416,8 @@ def scan(input_path, copyright=True, license=True, package=True,
                         pool.terminate()
                         break
         finally:
-            # ensure the pool is really dead to work around a Python 2.7.3 bug: 
-            # http://bugs.python.org/issue15101 
+            # ensure the pool is really dead to work around a Python 2.7.3 bug:
+            # http://bugs.python.org/issue15101
             pool.terminate()
 
     # Compute stats
@@ -439,8 +443,8 @@ def scan(input_path, copyright=True, license=True, package=True,
     click.secho('Scan statistics: %(files_count)d files scanned in %(total_time)ds.' % locals(), err=to_stdout)
     click.secho('Scan options:    %(_scans)s with %(processes)d process(es).' % locals(), err=to_stdout)
     click.secho('Scanning speed:  %(files_scanned_per_second)s files per sec.' % locals(), err=to_stdout)
-    click.secho('Scanning time:   %(scanning_time)ds.' % locals(), err=to_stdout, reset=True,)
-    click.secho('Indexing time:   %(indexing_time)ds.' % locals(), err=to_stdout)
+    click.secho('Scanning time:   %(scanning_time)ds.' % locals(), err=to_stdout)
+    click.secho('Indexing time:   %(indexing_time)ds.' % locals(), err=to_stdout, reset=True)
 
     # finally return an iterator on cached results
     scan_names = []
