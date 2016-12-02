@@ -68,7 +68,7 @@ class EnhancedProgressBar(ProgressBar):
     """
     def render_progress(self):
         if not self.is_hidden:
-            return ProgressBar.render_progress(self)
+            return super(EnhancedProgressBar, self).render_progress()
 
 
 class NoOpProgressBar(EnhancedProgressBar):
@@ -94,6 +94,9 @@ class ProgressLogger(ProgressBar):
 
     If no item_show_func is provided a simple dot is printed for each event.
     """
+    def __init__(self, *args, **kwargs):
+        super(ProgressLogger, self).__init__(*args, **kwargs)
+        self.is_hidden = False
 
     def render_progress(self):
         line = self.format_progress_line()
