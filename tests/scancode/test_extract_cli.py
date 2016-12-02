@@ -80,9 +80,9 @@ def test_extractcode_command_always_shows_something_if_not_using_a_tty_verbose_o
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: False)
     runner = CliRunner()
     result = runner.invoke(extract_cli.extractcode, ['--verbose', test_dir])
-    assert 'Extracting archives...\nExtracting done.\n' == result.output
+    assert all(x in result.output for x in ('Extracting archives...', 'Extracting: some.tar.gz', 'Extracting done.'))
     result = runner.invoke(extract_cli.extractcode, [test_dir])
-    assert 'Extracting archives...\nExtracting done.\n' == result.output
+    assert all(x in result.output for x in ('Extracting archives...', 'Extracting done.'))
 
 
 def test_extractcode_command_works_with_relative_paths(monkeypatch):
@@ -140,7 +140,7 @@ def test_extractcode_command_works_with_relative_paths_verbose(monkeypatch):
         test_src_file = join(test_src_dir, 'basic.zip')
         runner = CliRunner()
         monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-        result = runner.invoke(extract_cli.extractcode, ['--verbose',test_src_file])
+        result = runner.invoke(extract_cli.extractcode, ['--verbose', test_src_file])
         assert result.exit_code == 0
         # extract the path from the second line of the output
         # check that the path is relative and not absolute

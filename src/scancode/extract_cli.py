@@ -27,7 +27,6 @@ from __future__ import print_function, absolute_import
 import os
 
 import click
-from click.termui import style
 
 from commoncode import fileutils
 from commoncode import filetype
@@ -109,7 +108,6 @@ def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssign
             line = item.source and fileutils.file_name(item.source) or ''
         return 'Extracting: %(line)s' % locals()
 
-
     def display_extract_summary():
         """
         Display a summary of warnings and errors if any.
@@ -123,9 +121,9 @@ def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssign
             source = fileutils.as_posixpath(xev.source)
             source = utils.get_relative_path(path=source, len_base_path=len_base_path, base_is_dir=base_is_dir)
             for e in xev.errors:
-                summary.append(style('ERROR extracting: %(source)s: %(e)r' % locals(), fg='red'))
+                click.secho('ERROR extracting: %(source)s: %(e)r' % locals(), fg='red', err=not verbose)
             for warn in xev.warnings:
-                summary.append(style('WARNING extracting: %(source)s: %(warn)r' % locals(), fg='yellow'))
+                click.secho('WARNING extracting: %(source)s: %(warn)r' % locals(), fg='yellow', err=not verbose)
 
         summary_color = 'green'
         if has_warnings:
@@ -133,8 +131,7 @@ def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssign
         if has_errors:
             summary_color = 'red'
 
-        summary.append(style('Extracting done.', fg=summary_color))
-        click.secho('\n'.join(summary), err=not verbose, reset=True)
+        click.secho('Extracting done.', fg=summary_color, err=not verbose, reset=True)
 
     # use for relative paths computation
     len_base_path = len(abs_location)
