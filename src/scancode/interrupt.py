@@ -48,11 +48,50 @@ IMapUnorderedIterator.next = wrapped(IMapUnorderedIterator.next)
 IMapUnorderedIterator.__next__ = IMapUnorderedIterator.next
 ###########################################################################
 
-from multiprocessing.dummy import Pool as ThreadPool
+###########################################################################
+# Monkeypatch/subclass multiprocessing Process and ThreadPool to
+# apply fix for bug https://bugs.python.org/issue14881
+# In Python before 2.7.6 this happens at times. For intance on Ubuntu 12.04
+# This is the fix applied in https://www.python.org/ftp/python/2.7.12/Python-2.7.12.tar.xz
+# We only apply this fix to Python versions before 2.7.6
+###########################################################################
+
 import multiprocessing
+import sys
+
+py_before_276 = (sys.version_info[0] == 2 and sys.version_info[1] == 7 and (sys.version_info[2] < 6))
+
+if py_before_276:
+    import threading
+    from multiprocessing.dummy import Process as StandardProcess
+    from multiprocessing.pool import ThreadPool as StandardThreadPool
+
+    class PatchedProcess(StandardProcess):
+        """
+        dummy.Process subclass with patched start method for bug https://bugs.python.org/issue14881
+        """
+        def start(self):
+            assert self._parent is super(PatchedProcess, self).current_process()
+            self._start_called = True
+            if hasattr(self._parent, '_children'):
+                self._parent._children[self] = None
+            threading.Thread.start(self)
+
+    class ThreadPool(StandardThreadPool):
+        """
+        ThreadPool subclass using patched Process
+        """
+        Process = PatchedProcess
+
+else:
+    from multiprocessing.pool import ThreadPool
+
+###########################################################################
+
 from time import sleep
 
 import psutil
+
 
 DEFAULT_TIMEOUT = 120  # seconds
 RUNTIME_EXCEEDED = 1
@@ -97,7 +136,7 @@ def interruptible(func, *args, **kwargs):
     execution_units = [(func, args,), (time_and_memory_guard, [max_memory, timeout],)]
 
     # run our threads: whichever finishes first thanks to imap_unordered will be
-    # returned by the call to next()
+    # returned by the single call to next()
     threads = pool.imap_unordered(runner, execution_units, chunksize=1)
     pool.close()
     try:
@@ -122,12 +161,13 @@ def interruptible(func, *args, **kwargs):
         pool.terminate()
 
 
-def runner(arg):
+def runner(func_args):
     """
-    Given an `arg` tuple or (func, args) run the func callable with args and return
-    func's returned value. This is a wrapper to allow using in a map-like call.
+    Given a `func_args` tuple of (func, args) run the func callable with args and
+    return func's returned value. This is a wrapper to allow using in a map-like
+    call.
     """
-    func, args = arg
+    func, args = func_args
     return func(*args)
 
 
@@ -135,9 +175,9 @@ def time_and_memory_guard(max_memory=DEFAULT_MAX_MEMORY, timeout=DEFAULT_TIMEOUT
     """
     Return when max_memory bytes has been used or when a timeout has expired.
     Check memory usage every `interval` seconds during up to `timeout` seconds. Run
-    until the memory usage in the current process exceeds `max_memory` bytes. If it does,
-    return `MEMORY_EXCEEDED`. If the memory usage does not go over `max_memory` bytes
-    within `timeout` seconds, return RUNTIME_EXCEEDED.
+    until the memory usage in the current process exceeds `max_memory` bytes. If it
+    does, return `MEMORY_EXCEEDED`. If the memory usage does not go over `max_memory`
+    bytes within `timeout` seconds, return RUNTIME_EXCEEDED.
     """
     process = psutil.Process()
     memory_info = process.memory_info
