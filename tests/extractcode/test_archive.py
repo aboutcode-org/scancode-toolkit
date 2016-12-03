@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -91,6 +91,7 @@ class TestSmokeTest(FileBasedTesting):
             ('archive/7z/z.7z', [archive.extract_7z]),
             ('archive/Z/tr2tex.Z', [archive.extract_Z, ]),
             ('archive/Z/tkWWW-0.11.tar.Z', [archive.extract_Z, archive.extract_tar]),
+            ('archive/xar/xar-1.4.xar', [archive.extract_xarpkg]),
         ]
 
         for test_file, expected in test_data:
@@ -1862,4 +1863,15 @@ class TestTarZ(BaseArchiveTestCase):
         test_dir = self.get_temp_dir()
         archive.extract_Z(test_file, test_dir)
         result = os.path.join(test_dir, 'tr2tex')
+        assert os.path.exists(result)
+
+
+class TestXar(BaseArchiveTestCase):
+    def test_extract_xar_basic(self):
+        test_file = self.get_test_loc('archive/xar/xar-1.4.xar')
+        test_dir = self.get_temp_dir()
+        archive.extract_Z(test_file, test_dir)
+        result = os.path.join(test_dir, '[TOC].xml')
+        assert os.path.exists(result)
+        result = os.path.join(test_dir, 'xar-1.4', 'Makefile.in')
         assert os.path.exists(result)
