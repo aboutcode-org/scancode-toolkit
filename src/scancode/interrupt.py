@@ -64,6 +64,7 @@ py_before_276 = (sys.version_info[0] == 2 and sys.version_info[1] == 7 and (sys.
 if py_before_276:
     import threading
     from multiprocessing.dummy import Process as StandardProcess
+    from multiprocessing.dummy import current_process
     from multiprocessing.pool import ThreadPool as StandardThreadPool
 
     class PatchedProcess(StandardProcess):
@@ -71,7 +72,7 @@ if py_before_276:
         dummy.Process subclass with patched start method for bug https://bugs.python.org/issue14881
         """
         def start(self):
-            assert self._parent is super(PatchedProcess, self).current_process()
+            assert self._parent is current_process()
             self._start_called = True
             if hasattr(self._parent, '_children'):
                 self._parent._children[self] = None
