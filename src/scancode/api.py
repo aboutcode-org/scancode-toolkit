@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -158,6 +158,7 @@ def get_file_infos(location, as_list=True):
     from commoncode import fileutils
     from commoncode import filetype
     from commoncode.hash import sha1, md5
+    from scancode import utils
     from typecode import contenttype
 
     T = contenttype.get_type(location)
@@ -165,7 +166,7 @@ def get_file_infos(location, as_list=True):
     is_dir = T.is_dir
     infos = OrderedDict()
     infos['type'] = filetype.get_type(location, short=False)
-    infos['name'] = fileutils.file_name(location)
+    infos['name'] = utils.encode_path(fileutils.file_name(location))
     infos['extension'] = is_file and fileutils.file_extension(location) or ''
     infos['date'] = is_file and filetype.get_last_modified_date(location) or None
     infos['size'] = T.size
@@ -197,4 +198,3 @@ def get_package_infos(location):
     if not package:
         return []
     return [package.as_dict()]
-

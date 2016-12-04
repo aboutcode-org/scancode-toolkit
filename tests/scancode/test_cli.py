@@ -419,3 +419,15 @@ def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
     ]
     result_json = json.loads(open(result_file).read())
     assert sorted(expected) == sorted(result_json['files'])
+
+
+def test_scan_does_not_fail_unicode_files_and_paths(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.get_test_loc('unicodepath', copy=True)
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright',
+                                          '--package', '--email', '--url', test_dir, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    check_scan(test_env.get_test_loc('unicodepath.expected.json'), result_file, test_dir, regen=False)

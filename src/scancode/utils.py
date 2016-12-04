@@ -24,6 +24,8 @@
 
 from __future__ import print_function, absolute_import
 
+from urllib import quote_plus
+
 import click
 from click._termui_impl import ProgressBar
 from click.utils import echo
@@ -147,6 +149,15 @@ def progressmanager(iterable=None, length=None, label=None, show_eta=True,
                           width=width, color=color)
 
 
+def encode_path(path):
+    """
+    Return a path as ASCII possibly URL-encoded if it cannot be decoded as UTF-8.
+    """
+    if isinstance(path, unicode):
+        path = path.encode('utf-8')
+    return quote_plus(path)
+
+
 def get_relative_path(path, len_base_path, base_is_dir):
     """
     Return a posix relative path from the posix 'path' relative to a base path of
@@ -157,4 +168,7 @@ def get_relative_path(path, len_base_path, base_is_dir):
         rel_path = path[len_base_path:]
     else:
         rel_path = fileutils.file_name(path)
-    return rel_path.lstrip('/')
+
+    encoded_segments = [encode_path(p) for p in rel_path.split('/')]
+
+    return '/'.join(encoded_segments).lstrip('/')
