@@ -86,7 +86,8 @@ def get_scans_cache_class(cache_dir=scans_cache_dir):
     """
     # create a unique temp directory in cache_dir
     fileutils.create_dir(cache_dir)
-    cache_dir = fileutils.get_temp_dir(cache_dir, prefix=timeutils.time2tstamp() + '-')
+    # ensure that the cache dir is alwasy unicode
+    cache_dir = fileutils.get_temp_dir(unicode(cache_dir), prefix=unicode(timeutils.time2tstamp()) + u'-')
     sc = ScanFileCache(cache_dir)
     sc.setup()
     return partial(ScanFileCache, cache_dir)
@@ -102,7 +103,12 @@ def info_keys(path):
     >>> info_keys('/w421/scancode-toolkit2')
     ('f', 'b', '87db2bb28e9501ac7fdc4812782118f4c94a0f')
     """
-    return keys_from_hash(sha1(path).hexdigest())
+    # ensure that we always pass bytes to the hash function
+    if isinstance(path, unicode):
+        pa = path.encode('utf-8')
+    else:
+        pa = path
+    return keys_from_hash(sha1(pa).hexdigest())
 
 
 def scan_keys(path, file_info):
@@ -116,7 +122,7 @@ def scan_keys(path, file_info):
     else:
         # we may eventually store directories, in which case we use the path as a key
         # with some extra seed
-        return  info_keys(u'empty hash' + path)
+        return  info_keys('empty hash' + path)
 
 
 def keys_from_hash(hexdigest):
@@ -157,9 +163,9 @@ class ScanFileCache(object):
     def __init__(self, cache_dir):
         self.cache_base_dir = cache_dir
         # subdirs for info and scans caches
-        self.cache_infos_dir = as_posixpath(os.path.join(self.cache_base_dir, 'infos/'))
-        self.cache_scans_dir = as_posixpath(os.path.join(self.cache_base_dir, 'scans/'))
-        self.cache_files_log = as_posixpath(os.path.join(self.cache_base_dir, 'files_log'))
+        self.cache_infos_dir = as_posixpath(os.path.join(self.cache_base_dir, u'infos/'))
+        self.cache_scans_dir = as_posixpath(os.path.join(self.cache_base_dir, u'scans/'))
+        self.cache_files_log = as_posixpath(os.path.join(self.cache_base_dir, u'files_log'))
 
     def setup(self):
         """
@@ -174,9 +180,8 @@ class ScanFileCache(object):
         """
         Log file path in the cache logfile_fd **opened** file descriptor.
         """
-        # we dump the path as JSON, one per line.
-        # JSON is to avoid any issue with weird file paths/names
-        logfile_fd.write(json.dumps(path))
+        # we dump one path per line.
+        logfile_fd.write(path)
         logfile_fd.write('\n')
 
     def get_cached_info_path(self, path):
@@ -250,7 +255,7 @@ class ScanFileCache(object):
         with open(self.cache_files_log, 'rb') as cached_files:
             # iterate the list of (path, (info keys)), one by line
             for file_log in cached_files:
-                path = json.loads(file_log)
+                path = file_log.rstrip('\n')
                 file_info = self.get_info(path)
 
                 # rare but possible corner case

@@ -89,7 +89,6 @@ from scancode.interrupt import DEFAULT_MAX_MEMORY
 
 from scancode import utils
 
-from scancode import utils
 
 info_text = '''
 ScanCode scans code and other files for origin and license.
@@ -512,6 +511,8 @@ def resource_paths(base_path):
     Yield tuples of (absolute path, base_path-relative path) for all the files found
     at base_path (either a directory or file) given an absolute base_path. Only yield
     Files, not directories. All outputs are POSIX paths.
+
+    The relative path is guaranted to be unicode and may be URL-encoded.
     """
     base_path = os.path.abspath(os.path.normpath(os.path.expanduser(base_path)))
     base_is_dir = filetype.is_dir(base_path)
