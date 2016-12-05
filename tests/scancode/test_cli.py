@@ -423,16 +423,23 @@ def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
 
 def test_scan_does_not_fail_unicode_files_and_paths(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    test_dir = test_env.extract_test_tar('unicodepath/unicodepath.tgz')
+
+    # use extractcode for proper unicode extraction
+    from scancode import extract_cli
+    xtest_dir = test_env.get_test_loc('unicodepath/unicodepath.tgz', copy=True)
+    xrunner = CliRunner()
+    xresult = xrunner.invoke(extract_cli.extractcode, [xtest_dir])
+    assert xresult.exit_code == 0
+
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
     result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright',
-                                          '--package', '--email', '--url', test_dir, result_file], catch_exceptions=True)
+                                          '--package', '--email', '--url', xtest_dir + '-extract', result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
-    # the paths for each OS end up encoded differently. 
-    # See https://github.com/nexB/scancode-toolkit/issues/390 for details 
+    # the paths for each OS end up encoded differently.
+    # See https://github.com/nexB/scancode-toolkit/issues/390 for details
     from commoncode.system import on_linux
     from commoncode.system import on_mac
     from commoncode.system import on_windows
@@ -443,5 +450,5 @@ def test_scan_does_not_fail_unicode_files_and_paths(monkeypatch):
         expected = 'unicodepath/unicodepath.expected-mac.json'
     elif on_windows:
         expected = 'unicodepath/unicodepath.expected-win.json'
-        
-    check_scan(test_env.get_test_loc(expected), result_file, test_dir, regen=False)
+
+    check_scan(test_env.get_test_loc(expected), result_file, xtest_dir, regen=False)
