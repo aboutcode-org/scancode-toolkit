@@ -103,7 +103,7 @@ def parse_scan(scan, strip=0):
         # list 0 = file info in an OrderedDict
         # list 1 = license info, each license and its info is in its own OrderedDict
         # list 2 = copyright info, each copyright and its info is in its own OrderedDict
-        resources[location] =[OrderedDict(),[],[]]
+        resources[location] = [OrderedDict(), [], []]
 
         resources[location][0]['Resource'] = location
 
