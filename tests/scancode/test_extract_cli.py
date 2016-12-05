@@ -30,10 +30,10 @@ import click
 from click.testing import CliRunner
 
 from commoncode.fileutils import as_posixpath
-
-from scancode import extract_cli
+from commoncode.fileutils import file_iter
 from commoncode.testcase import FileDrivenTesting
 from commoncode.system import on_windows
+from scancode import extract_cli
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -155,9 +155,10 @@ def test_extractcode_command_works_with_relative_paths_verbose(monkeypatch):
     finally:
         fileutils.delete(test_src_dir)
 
+
 def test_usage_and_help_return_a_correct_script_name_on_all_platforms(monkeypatch):
-    runner = CliRunner()
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    runner = CliRunner()
     result = runner.invoke(extract_cli.extractcode, ['--help'])
     assert 'Usage: extractcode [OPTIONS]' in result.output
     # this was showing up on Windows
@@ -171,3 +172,14 @@ def test_usage_and_help_return_a_correct_script_name_on_all_platforms(monkeypatc
     result = runner.invoke(extract_cli.extractcode, ['-xyz'])
     # this was showing up on Windows
     assert 'extractcode-script.py' not in result.output
+
+
+def test_extractcode_command_can_extract_archive_with_unicode_names(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.get_test_loc('extract_unicodepath', copy=True)
+    runner = CliRunner()
+    result = runner.invoke(extract_cli.extractcode, ['--verbose', test_dir])
+    assert result.exit_code == 0
+    assert 'Izgradnja' in result.output
+    resultf = list(file_iter(test_dir,))
+    assert 4 == len(resultf)
