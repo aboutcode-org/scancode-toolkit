@@ -160,12 +160,12 @@ def new_name(location, is_dir=False):
        the extension unchanged.
     """
     assert location
-    
+
     location = location.rstrip('\\/')
     name = fileutils.file_name(location).strip()
-    if (not name or name == '.' 
+    if (not name or name == '.'
         # windows bare drive path as in c: or z:
-        or (name and len(name)==2 and name.endswith(':'))):
+        or (name and len(name) == 2 and name.endswith(':'))):
         name = 'file'
 
     parent = fileutils.parent_directory(location)
