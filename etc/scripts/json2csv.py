@@ -58,6 +58,37 @@ class OrderedSet(object):
             self.add(value)
 
 
+def flatten_on_key(k, d):
+    if k in d and isinstance(d[k], list) and len(d[k]) > 0:
+        flatlist = []
+        for x in d[k]:
+            flat_d = OrderedDict(d)
+            flat_d[k] = x
+            flatlist.append(flat_d)
+        return flatlist
+    else:
+        return [d]
+
+
+def flatten(d):
+    temp = [d]
+    for k in d.keys():
+        flatlist = []
+        for v in temp:
+            flatlist += flatten_on_key(k, v)
+        temp = flatlist
+    return flatlist
+
+
+def promote_inner_keys(d):
+    for k1, v1 in d.items():
+        if isinstance(v1, dict):
+            d.pop(k1)
+            for k2, v2 in v1.items():
+                d[k1 + "_" + k2] = v2
+    return d
+
+
 def load_scan(json_input):
     """
     Return a list of scan results loaded from a json_input, either in ScanCode
@@ -113,20 +144,29 @@ def parse_scan(scan, strip=0):
         for field in component.keys():
             if field == 'path' or field == 'type':
                 continue
-            if field == 'licenses':
-                pass
-            if field == 'copyrights':
-                pass
+            elif field == 'licenses':
+                for licensing in component.get('licenses', []):
+                    lic = OrderedDict()
+                    for k, val in licensing.items():
+                        if k not in ('start_line', 'end_line',):
+                            k = 'license_' + k
+                        if k == 'license_matched_rule':
+                            val = val['identifier']
+                        lic[k] = val
+                        keys.add(k)
+                    resources[location][1].append(lic)
 
-            keys.add(field)
-            resources[location][0][field] = component[field]
+            # TODO: add support for copyright option
+            elif field == 'copyrights':
+                pass
+            else:
+                keys.add(field)
+                resources[location][0][field] = component[field]
 
     all_rows = []
     for resource in resources:
         file_info = resources[resource][0]
-
-        # TODO: add support for license option
-        licence_info = resources[resource][1]
+        license_info = resources[resource][1]
 
         # TODO: add support for copyright option
         copyright_info = resources[resource][2]
@@ -135,6 +175,13 @@ def parse_scan(scan, strip=0):
         for k in keys.keys():
             row[k] = file_info.get(k, '')
         all_rows.append(row)
+
+        for licensing in license_info:
+            row = OrderedDict()
+            for k in keys.keys():
+                row[k] = licensing.get(k, '')
+            row['Resource'] = resource
+            all_rows.append(row)
 
     return all_rows
 
