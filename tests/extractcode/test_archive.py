@@ -96,14 +96,7 @@ class TestSmokeTest(FileBasedTesting):
         for test_file, expected in test_data:
             test_loc = self.get_test_loc(test_file)
             extractors = archive.get_extractors(test_loc)
-            ft = typecode.contenttype.get_type(test_loc).filetype_file
-            mt = typecode.contenttype.get_type(test_loc).mimetype_file
-            fe = fileutils.file_extension(test_loc).lower()
-            msg = (expected[0].__module__ + '.' + expected[0].__name__
-                   + '!='
-                   + extractors[0].__module__ + '.' + extractors[0].__name__
-                   + ' for %(test_file)r') % locals()
-            assert expected == extractors, msg
+            assert expected == extractors
 
     def test_get_extractors_with_kinds(self):
         test_data = [
@@ -387,6 +380,15 @@ class TestTarGzip(BaseArchiveTestCase):
         # from http://archive.apache.org/dist/commons/logging/source/commons-logging-1.1.2-src.tar.gz
         # failed with ReadError('not a bzip2 file',)
         test_file = self.get_test_loc('archive/tgz/commons-logging-1.1.2-src.tar.gz')
+        test_dir = self.get_temp_dir()
+        extractor = archive.get_extractor(test_file)
+        assert archive.extract_tar == extractor
+        result = archive.extract_tar(test_file, test_dir)
+        assert [] == result
+        assert os.listdir(test_dir)
+
+    def test_extract_targz_with_unicode_path_should_extract_without_error(self):
+        test_file = self.get_test_loc('archive/tgz/tgz_unicode.tgz')
         test_dir = self.get_temp_dir()
         extractor = archive.get_extractor(test_file)
         assert archive.extract_tar == extractor
@@ -840,6 +842,13 @@ class TestZip(BaseArchiveTestCase):
         assert [] == result
         expected = ['32px.png', 'go.js', 'go.wms']
         check_files(test_dir, expected)
+
+    def test_extract_zip_with_unicode_path_should_extract_without_error(self):
+        test_file = self.get_test_loc('archive/zip/zip_unicode.zip')
+        test_dir = self.get_temp_dir()
+        result = archive.extract_zip(test_file, test_dir)
+        assert [] == result
+        assert os.listdir(test_dir)
 
 
 class TestLibarch(BaseArchiveTestCase):
@@ -1588,12 +1597,11 @@ class TestSevenZip(BaseArchiveTestCase):
         msg = 'No error returned'
         self.assertRaisesInstance(ExtractErrorFailedToExtract(msg), sevenzip.extract, test_file, test_dir)
 
-    def test_extract_7z_with_broken_archive(self):
+    def test_extract_7z_with_broken_archive_does_not_fail_when_using_fallback(self):
         test_file = self.get_test_loc('archive/7z/corrupted7z.7z')
         test_dir = self.get_temp_dir()
-        expected = libarchive2.ArchiveError()
-        expected.msg = 'Damaged 7-Zip archive'
-        self.assertRaisesInstance(expected, archive.extract_7z, test_file, test_dir)
+        msg = 'No error returned'
+        self.assertRaisesInstance(ExtractErrorFailedToExtract(msg), archive.extract_7z, test_file, test_dir)
 
     def test_extract_7z_with_non_existing_archive(self):
         test_file = 'archive/7z/I_DO_NOT_EXIST.zip'
@@ -1647,8 +1655,30 @@ class TestSevenZip(BaseArchiveTestCase):
     def test_extract_7z_with_password(self):
         test_file = self.get_test_loc('archive/7z/7zip_password.7z')
         test_dir = self.get_temp_dir()
-        expected = Exception("'The file content is encrypted, but currently not supported'")
+        expected = Exception('Password protected archive, unable to extract')
         self.assertRaisesInstance(expected, archive.extract_7z, test_file, test_dir)
+
+    def test_extract_7zip_native_with_unicode_path_should_extract_without_error(self):
+        test_file = self.get_test_loc('archive/7z/7zip_unicode.7z')
+        test_dir = self.get_temp_dir()
+        result = sevenzip.extract(test_file, test_dir)
+        assert [] == result
+        assert 2 == len(os.listdir(os.path.join(test_dir, 'zip')))
+
+    def test_extract_7zip_with_fallback_with_unicode_path_should_extract_without_error(self):
+        test_file = self.get_test_loc('archive/7z/7zip_unicode.7z')
+        test_dir = self.get_temp_dir()
+        result = archive.extract_7z(test_file, test_dir)
+        assert [] == result
+        assert 2 == len(os.listdir(os.path.join(test_dir, 'zip')))
+
+    def test_extract_7zip_libarchive_with_unicode_path_extracts_with_errors(self):
+        test_file = self.get_test_loc('archive/7z/7zip_unicode.7z')
+        test_dir = self.get_temp_dir()
+        try:
+            archive.extract_7z(test_file, test_dir)
+        except libarchive2.ArchiveError, e:
+            assert 'Damaged 7-Zip archive' in e.msg
 
 
 class TestIso(BaseArchiveTestCase):
