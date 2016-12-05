@@ -423,11 +423,25 @@ def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
 
 def test_scan_does_not_fail_unicode_files_and_paths(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    test_dir = test_env.get_test_loc('unicodepath', copy=True)
+    test_dir = test_env.extract_test_tar('unicodepath/unicodepath.tgz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
     result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright',
                                           '--package', '--email', '--url', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    check_scan(test_env.get_test_loc('unicodepath.expected.json'), result_file, test_dir, regen=False)
+
+    # the paths for each OS end up encoded differently. 
+    # See https://github.com/nexB/scancode-toolkit/issues/390 for details 
+    from commoncode.system import on_linux
+    from commoncode.system import on_mac
+    from commoncode.system import on_windows
+
+    if on_linux:
+        expected = 'unicodepath/unicodepath.expected-linux.json'
+    elif on_mac:
+        expected = 'unicodepath/unicodepath.expected-mac.json'
+    elif on_windows:
+        expected = 'unicodepath/unicodepath.expected-win.json'
+        
+    check_scan(test_env.get_test_loc(expected), result_file, test_dir, regen=False)
