@@ -81,38 +81,62 @@ def load_scan(json_input):
 
 
 def parse_scan(scan, strip=0):
-    header = []
-    rows = []
-
-    # We get the headers of the CSV from the first component.
-    for key in scan[0].keys():
-        header.append(key)
+    # unique keys, but ordered
+    keys = OrderedSet(['Resource'])
+    resources = OrderedDict()
 
     for component in scan:
-        row = []
-        for field in header:
-            entry = component[field]
+        location = component['path']
 
-            if field == 'path':
-                if strip:
-                    # do not keep leading slash but add it back afterwards. keep trailing slashes
-                    entry = entry.lstrip('/')
-                    splits = [s for s in entry.split('/')]
-                    entry = '/'.join(splits[strip:])
+        if strip:
+            # do not keep leading slash but add it back afterwards. keep trailing slashes
+            location = location.lstrip('/')
+            splits = [s for s in location.split('/')]
+            location = '/'.join(splits[strip:])
 
-                entry = entry.startswith('/') and entry or '/' + entry
+        location = location.startswith('/') and location or '/' + location
 
-                if component['type'] == 'directory':
-                    if not entry.endswith('/'):
-                        entry = entry + '/'
+        if component['type'] == 'directory':
+            if not location.endswith('/'):
+                location = location + '/'
 
-            row.append(entry)
+        # list 0 = file info in an OrderedDict
+        # list 1 = license info, each license and its info is in its own OrderedDict
+        # list 2 = copyright info, each copyright and its info is in its own OrderedDict
+        resources[location] =[OrderedDict(),[],[]]
 
-        rows.append(row)
+        resources[location][0]['Resource'] = location
 
-    header[0] = 'Resource'
+        keys.add('type')
+        resources[location][0]['type'] = component['type']
 
-    return header, rows
+        for field in component.keys():
+            if field == 'path' or field == 'type':
+                continue
+            if field == 'licenses':
+                pass
+            if field == 'copyrights':
+                pass
+
+            keys.add(field)
+            resources[location][0][field] = component[field]
+
+    all_rows = []
+    for resource in resources:
+        file_info = resources[resource][0]
+
+        # TODO: add support for license option
+        licence_info = resources[resource][1]
+
+        # TODO: add support for copyright option
+        copyright_info = resources[resource][2]
+
+        row = OrderedDict()
+        for k in keys.keys():
+            row[k] = file_info.get(k, '')
+        all_rows.append(row)
+
+    return all_rows
 
 
 def json_scan_to_csv(json_input, csv_output, strip=0):
@@ -121,12 +145,14 @@ def json_scan_to_csv(json_input, csv_output, strip=0):
     Optionally strip up to `strip` path segments from the location paths.
     """
     scan_results = load_scan(json_input)
-    headers, rows = parse_scan(scan_results, strip)
+    rows = parse_scan(scan_results, strip)
+
+    headers = rows[0].keys()
     with open(csv_output, 'wb') as output:
         w = unicodecsv.writer(output)
         w.writerow(headers)
         for r in rows:
-            w.writerow(r)
+            w.writerow(r.values())
 
 
 @click.command()
