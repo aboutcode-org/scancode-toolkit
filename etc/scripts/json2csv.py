@@ -111,14 +111,19 @@ def load_scan(json_input):
     return scan_results
 
 
-def parse_scan(scan, strip=0):
+def scan_as_list(scan, strip=0):
+    """
+    Return a list of ordered dictionaries of key/values flattening the data and
+    keying always by location, given a ScanCode scan results list.
+    Optionally strip up to `strip` path segments from the location paths.
+    """
+
     # unique keys, but ordered
     keys = OrderedSet(['Resource'])
     resources = OrderedDict()
 
     for component in scan:
         location = component['path']
-
         if strip:
             # do not keep leading slash but add it back afterwards. keep trailing slashes
             location = location.lstrip('/')
@@ -134,6 +139,7 @@ def parse_scan(scan, strip=0):
         # list 0 = file info in an OrderedDict
         # list 1 = license info, each license and its info is in its own OrderedDict
         # list 2 = copyright info, each copyright and its info is in its own OrderedDict
+        # There will need to be a fourth element for package info
         resources[location] = [OrderedDict(), [], []]
 
         resources[location][0]['Resource'] = location
@@ -147,11 +153,20 @@ def parse_scan(scan, strip=0):
             elif field == 'licenses':
                 for licensing in component.get('licenses', []):
                     lic = OrderedDict()
+                    lic['Resource'] = location
                     for k, val in licensing.items():
                         if k not in ('start_line', 'end_line',):
                             k = 'license_' + k
                         if k == 'license_matched_rule':
-                            val = val['identifier']
+                            for matched_rule in val:
+                                col_name = k + "_" + matched_rule
+                                if matched_rule == 'licenses':
+                                    # We join all licenses under this field as one string
+                                    lic[col_name] = ', '.join(val.get(matched_rule, ''))
+                                else:
+                                    lic[col_name] = val.get(matched_rule, '')
+                                keys.add(col_name)
+                            continue
                         lic[k] = val
                         keys.add(k)
                     resources[location][1].append(lic)
@@ -180,7 +195,6 @@ def parse_scan(scan, strip=0):
             row = OrderedDict()
             for k in keys.keys():
                 row[k] = licensing.get(k, '')
-            row['Resource'] = resource
             all_rows.append(row)
 
     return all_rows
@@ -192,8 +206,7 @@ def json_scan_to_csv(json_input, csv_output, strip=0):
     Optionally strip up to `strip` path segments from the location paths.
     """
     scan_results = load_scan(json_input)
-    rows = parse_scan(scan_results, strip)
-
+    rows = scan_as_list(scan_results, strip)
     headers = rows[0].keys()
     with open(csv_output, 'wb') as output:
         w = unicodecsv.writer(output)
