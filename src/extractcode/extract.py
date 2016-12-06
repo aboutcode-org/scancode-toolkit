@@ -37,10 +37,12 @@ import extractcode
 from extractcode import archive
 
 logger = logging.getLogger(__name__)
-DEBUG = False
-# import sys
-# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-# logger.setLevel(logging.DEBUG)
+TRACE = False
+
+if TRACE:
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
 
 
 """
@@ -118,46 +120,46 @@ def extract(location, kinds=extractcode.default_kinds, recurse=False):
     first before resuming the file system walk.
     """
     ignored = partial(ignore.is_ignored, ignores=ignore.default_ignores, unignores={})
-    if DEBUG:
+    if TRACE:
         logger.debug('extract:start: %(location)r  recurse: %(recurse)r\n' % locals())
     abs_location = abspath(expanduser(location))
     for top, dirs, files in fileutils.walk(abs_location, ignored):
-        if DEBUG:
+        if TRACE:
             logger.debug('extract:walk: top:  %(top)r dirs: %(dirs)r files: r(files)r' % locals())
 
         if not recurse:
-            if DEBUG:
+            if TRACE:
                 drs = set(dirs)
             for d in dirs[:]:
                 if extractcode.is_extraction_path(d):
                     dirs.remove(d)
-            if DEBUG:
+            if TRACE:
                 logger.debug('extract:walk: not recurse: removed dirs:' + repr(drs.symmetric_difference(set(dirs))))
         for f in files:
             loc = join(top, f)
             if not recurse and extractcode.is_extraction_path(loc):
-                if DEBUG:
+                if TRACE:
                     logger.debug('extract:walk not recurse: skipped  file: %(loc)r' % locals())
                 continue
 
             if not archive.should_extract(loc, kinds):
-                if DEBUG:
+                if TRACE:
                     logger.debug('extract:walk: skipped file: not should_extract: %(loc)r' % locals())
                 continue
 
             target = join(abspath(top), extractcode.get_extraction_path(loc))
-            if DEBUG:
+            if TRACE:
                 logger.debug('extract:target: %(target)r' % locals())
             for xevent in extract_file(loc, target, kinds):
-                if DEBUG:
+                if TRACE:
                     logger.debug('extract:walk:extraction event: %(xevent)r' % locals())
                 yield xevent
 
             if recurse:
-                if DEBUG:
+                if TRACE:
                     logger.debug('extract:walk: recursing on target: %(target)r' % locals())
                 for xevent in extract(target, kinds, recurse):
-                    if DEBUG:
+                    if TRACE:
                         logger.debug('extract:walk:recurse:extraction event: %(xevent)r' % locals())
                     yield xevent
 
@@ -170,8 +172,8 @@ def extract_file(location, target, kinds=extractcode.default_kinds):
     warnings = []
     errors = []
     extractor = archive.get_extractor(location, kinds)
-    if DEBUG:
-        logger.debug('extract_file: extractor: for: %(location)r with kinds: r(kinds)r : ' % locals()
+    if TRACE:
+        logger.debug('extract_file: extractor: for: %(location)r with kinds: %(kinds)r : ' % locals()
                      + getattr(extractor, '__module__', '')
                      + '.' + getattr(extractor, '__name__', ''))
     if extractor:
@@ -181,12 +183,12 @@ def extract_file(location, target, kinds=extractcode.default_kinds):
             # if there is an error,  the extracted files will not be moved
             # to target
             tmp_tgt = fileutils.get_temp_dir('extract')
-            abs_location= abspath(expanduser(location))
+            abs_location = abspath(expanduser(location))
             warnings.extend(extractor(abs_location, tmp_tgt))
             fileutils.copytree(tmp_tgt, target)
             fileutils.delete(tmp_tgt)
         except Exception, e:
-            if DEBUG:
+            if TRACE:
                 logger.debug('extract_file: ERROR: %(location)r: %(errors)r, %(e)r.\n' % locals())
             errors = [str(e).strip(' \'"')]
         finally:

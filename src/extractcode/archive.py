@@ -51,11 +51,13 @@ from extractcode.uncompress import uncompress_bzip2
 
 
 logger = logging.getLogger(__name__)
-DEBUG = False
-DEBUG_DEEP = False
-# import sys
-# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-# logger.setLevel(logging.DEBUG)
+TRACE = False
+TRACE_DEEP = False
+
+if TRACE:
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
 
 
 
@@ -176,15 +178,16 @@ def get_handlers(location):
             mime_matched = handler.mimetypes and any(m in mtype for m in handler.mimetypes)
             extension_matched = handler.extensions and location.lower().endswith(handler.extensions)
 
-            if DEBUG_DEEP:
-                logger.debug('get_handlers: %(location)s: ftype: %(ftype)s, mtype: %(mtype)s ' % locals())
+            if TRACE_DEEP:
+                handler_name = handler.name
+                logger.debug('get_handlers: considering %(handler_name)r  handler for %(location)s: ftype: %(ftype)s, mtype: %(mtype)s ' % locals())
                 logger.debug('get_handlers: %(location)s: matched type: %(type_matched)s, mime: %(mime_matched)s, ext: %(extension_matched)s' % locals())
 
             if handler.strict and not all([type_matched, mime_matched, extension_matched]):
                 continue
 
             if type_matched or mime_matched or extension_matched:
-                if DEBUG_DEEP:
+                if TRACE_DEEP:
                     logger.debug('get_handlers: %(location)s: matched type: %(type_matched)s, mime: %(mime_matched)s, ext: %(extension_matched)s' % locals())
                     logger.debug('get_handlers: %(location)s: handler: %(handler)r' % locals())
                 yield handler, type_matched, mime_matched, extension_matched
@@ -300,7 +303,7 @@ def extract_twice(location, target_dir, extractor1, extractor2):
     # extract first the intermediate payload to a temp dir
     temp_target = unicode(fileutils.get_temp_dir('extract'))
     warnings = extractor1(abs_location, temp_target)
-    if DEBUG:
+    if TRACE:
         logger.debug('extract_twice: temp_target: %(temp_target)r' % locals())
 
     # extract this intermediate payload to the final target_dir
@@ -310,7 +313,7 @@ def extract_twice(location, target_dir, extractor1, extractor2):
             warnings.append(location + ': No files found in archive.')
         else:
             for extracted1_loc in inner_archives:
-                if DEBUG:
+                if TRACE:
                     logger.debug('extract_twice: extractor2: %(extracted1_loc)r' % locals())
                 warnings.extend(extractor2(extracted1_loc, abs_target_dir))
     finally:
@@ -334,14 +337,14 @@ def extract_with_fallback(location, target_dir, extractor1, extractor2):
     temp_target1 = unicode(fileutils.get_temp_dir('extract1'))
     try:
         warnings = extractor1(abs_location, temp_target1)
-        if DEBUG:
+        if TRACE:
             logger.debug('extract_with_fallback: temp_target1: %(temp_target1)r' % locals())
         fileutils.copytree(temp_target1, abs_target_dir)
     except:
         try:
             temp_target2 = unicode(fileutils.get_temp_dir('extract2'))
             warnings = extractor2(abs_location, temp_target2)
-            if DEBUG:
+            if TRACE:
                 logger.debug('extract_with_fallback: temp_target2: %(temp_target2)r' % locals())
             fileutils.copytree(temp_target2, abs_target_dir)
         finally:
@@ -375,6 +378,7 @@ extract_cab = sevenzip.extract
 extract_nsis = sevenzip.extract
 extract_ishield = sevenzip.extract
 extract_Z = sevenzip.extract
+extract_xarpkg = sevenzip.extract
 
 
 # Archive handlers.
@@ -799,6 +803,26 @@ AppleDmgHandler = Handler(
     strict=True
 )
 
+ApplePkgHandler = Handler(
+    name='Apple pkg or mpkg package installer',
+    filetypes=('xar archive',),
+    mimetypes=('application/octet-stream',),
+    extensions=('.pkg', '.mpkg',),
+    kind=package,
+    extractors=[extract_xarpkg],
+    strict=True
+)
+
+XarHandler = Handler(
+    name='Xar archive v1',
+    filetypes=('xar archive',),
+    mimetypes=('application/octet-stream',),
+    extensions=('.xar',),
+    kind=package,
+    extractors=[extract_xarpkg],
+    strict=True
+)
+
 IsoImageHandler = Handler(
     name='ISO CD image',
     filetypes=('iso 9660 cd-rom', 'high sierra cd-rom',),
@@ -858,6 +882,8 @@ archive_handlers = [
     RarHandler,
     CabHandler,
     MsiInstallerHandler,
+    ApplePkgHandler,
+    XarHandler,
     # notes: this may catch all exe and fails too often
     InstallShieldHandler,
     NSISInstallerHandler,
