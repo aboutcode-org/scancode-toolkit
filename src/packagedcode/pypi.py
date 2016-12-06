@@ -26,7 +26,6 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import json
-import logging
 import os
 import re
 
@@ -36,14 +35,8 @@ from packagedcode.models import PythonPackage
 
 
 """
-Handle Python PyPi packages
+Detect and collect Python packages information.
 """
-
-
-logger = logging.getLogger(__name__)
-# import sys
-# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-# logger.setLevel(logging.DEBUG)
 
 
 PKG_INFO_ATTRIBUTES = [
@@ -61,45 +54,60 @@ PKG_INFO_ATTRIBUTES = [
 
 def parse_pkg_info(location):
     """
-    parse a 'PKG-INFO' file at 'location' and return a PythonPackage object.
+    Return a Package from a a 'PKG-INFO' file at 'location' or None.
     """
+    if not location or not location.endswith('PKG-INFO'):
+        return
     infos = {}
-    file_text = open(location, 'rb').read()
+    # FIXME: wrap in a with statement
+    pkg_info = open(location, 'rb').read()
     for attribute in PKG_INFO_ATTRIBUTES:
-        infos[attribute] = re.findall('^'+attribute+'[\s:]*.*', file_text, flags=re.MULTILINE)[0]
-        infos[attribute] = re.sub('^'+attribute+'[\s:]*', '', infos[attribute], flags=re.MULTILINE)
+        # FIXME: what is this code doing? this is cryptic
+        infos[attribute] = re.findall('^' + attribute + '[\s:]*.*', pkg_info, flags=re.MULTILINE)[0]
+        infos[attribute] = re.sub('^' + attribute + '[\s:]*', '', infos[attribute], flags=re.MULTILINE)
         if infos[attribute] == 'UNKNOWN':
             infos[attribute] = None
+
     package = PythonPackage(
         name=infos.get('Name'),
         version=infos.get('Version'),
         summary=infos.get('Summary'),
         homepage_url=infos.get('Home-page'),
         asserted_licenses=[AssertedLicense(license=infos.get('License'))],
+        # FIXME: what about Party objects and email?
+        # FIXME: what about maintainers?
         authors=[infos.get('Author')],
     )
     return package
 
 
-def get_attribute(setup_location, attribute):
+def get_attribute(location, attribute):
     """
-    Return the value specified for a given 'attribute' mentioned in a 'setup.py'
-    file.
-    Example :
+    Return the the value for an `attribute` if found in the 'setup.py' file at
+    `location` or None.
+
+    For example with this setup.py file:
     setup(
         name='requests',
         version='1.0',
         )
-    'requests' is returned for the attribute 'name'
+    the value 'request' is returned for the attribute 'name'
     """
-    setup_text = open(setup_location, 'rb').read()
+    if not location or not location.endswith('setup.py'):
+        return
+    # FIXME: what if this is unicode text?
+    # FIXME: wrap in a with statement
+    setup_text = open(location, 'rb').read()
     # FIXME Use a valid parser for parsing 'setup.py'
-    values = re.findall('setup\(.*?'+attribute+'=[\"\']{1}.*?\',', setup_text.replace('\n', ''))
+    # FIXME: it does not make sense to reread a setup.py once for each attribute
+
+    # FIXME: what are these regex doing?
+    values = re.findall('setup\(.*?' + attribute + '=[\"\']{1}.*?\',', setup_text.replace('\n', ''))
     if len(values) > 1 or len(values) == 0:
         return
     else:
         values = ''.join(values)
-        output = re.sub('setup\(.*?'+attribute+'=[\"\']{1}', '', values)
+        output = re.sub('setup\(.*?' + attribute + '=[\"\']{1}', '', values)
         if output.endswith('\','):
             return output.replace('\',', '')
         else:
@@ -108,40 +116,51 @@ def get_attribute(setup_location, attribute):
 
 def parse_metadata(location):
     """
-    Check if the directory at 'location' has both 'METADATA' and
-    'DESCRIPTION.rst' files. Parse a 'metadata.json' file at 'location' and
-    return a PythonPackage object.
+    Return a Package object from the Python wheel 'metadata.json' file at 'location'
+    or None. Check if the parent directory of 'location' contains both a 'METADATA'
+    and a 'DESCRIPTION.rst' file.
     """
+    if not location or not location.endswith('metadata.json'):
+        return
+
     parent_dir = fileutils.parent_directory(location)
-    if os.path.exists(os.path.join(parent_dir, 'METADATA')) and os.path.exists(os.path.join(parent_dir, 'DESCRIPTION.rst')):
-        infos = json.loads(open(location, 'rb').read())
-        homepage_url = None
-        authors = []
-        if infos['extensions']:
-            try:
-                homepage_url = infos['extensions']['python.details']['project_urls']['Home']
-            except:
-                pass
-            try:
-                for contact in infos['extensions']['python.details']['contacts']:
-                    authors.append(contact['name'])
-            except:
-                pass
-        package = PythonPackage(
-            name=infos.get('name'),
-            version=infos.get('version'),
-            summary=infos.get('summary'),
-            asserted_licenses=[AssertedLicense(license=infos.get('license'))],
-            homepage_url=homepage_url,
-            authors=authors,
-        )
-        return package
+    # FIXME: is the absence of these two files a show stopper?
+    if not all(os.path.exists(os.path.join(parent_dir, fname))
+               for fname in ('METADATA' 'DESCRIPTION.rst')):
+        return
+    # FIXME: wrap in a with statement
+    infos = json.loads(open(location, 'rb').read())
+
+    homepage_url = None
+    authors = []
+    if infos['extensions']:
+        try:
+            homepage_url = infos['extensions']['python.details']['project_urls']['Home']
+        except:
+            # FIXME: why catch all expections?
+            pass
+        try:
+            for contact in infos['extensions']['python.details']['contacts']:
+                authors.append(contact['name'])
+        except:
+            # FIXME: why catch all expections?
+            pass
+
+    package = PythonPackage(
+        name=infos.get('name'),
+        version=infos.get('version'),
+        summary=infos.get('summary'),
+        asserted_licenses=[AssertedLicense(license=infos.get('license'))],
+        homepage_url=homepage_url,
+        authors=authors,
+    )
+    return package
 
 
 def parse(location):
     """
-    Parse a file at 'location' and return a PythonPackage object. File at
-    'location' can be a'setup.py' or 'metadata.json' or a 'PKG-INFO' file.
+    Return a Package built from parsing a file at 'location'
+    The file name can be either a 'setup.py', 'metadata.json' or 'PKG-INFO' file.
     """
     file_name = fileutils.file_name(location)
     if file_name == 'setup.py':
