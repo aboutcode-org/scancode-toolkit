@@ -223,6 +223,14 @@ def scan_as_list(scan, strip=0):
                         copyrights.append(inf)
                         keys.update(inf.keys())
 
+            elif field == 'packages':
+                # TODO: Add package option support
+                continue
+
+            elif field == 'scan_errors':
+                # TODO: Add scan error support
+                continue
+
             else:
                 keys.add(field)
                 file_info[field] = entry[field]
