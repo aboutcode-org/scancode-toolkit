@@ -1,0 +1,5 @@
+licenses:
+    - mit
+    - gpl
+license_choice: yes
+notes: from https://github.com/alvaro-prieto/colResizable
