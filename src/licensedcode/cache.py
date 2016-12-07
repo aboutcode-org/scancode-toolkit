@@ -25,6 +25,7 @@
 from __future__ import absolute_import, print_function
 
 from array import array
+from functools import partial
 from hashlib import md5
 from os.path import exists
 from os.path import getmtime
@@ -35,6 +36,7 @@ import yg.lockfile  # @UnresolvedImport
 
 from commoncode.fileutils import create_dir
 from commoncode.fileutils import file_iter
+from commoncode import ignore
 
 from licensedcode import src_dir
 from licensedcode import license_index_cache_dir
@@ -58,7 +60,10 @@ tree_checksum_file = join(license_index_cache_dir, 'tree_checksums')
 index_cache_file = join(license_index_cache_dir, 'index_cache')
 
 
-def tree_checksum(base_dir=src_dir):
+_ignored_from_hash = partial(ignore.is_ignored, ignores={'*.pyc': 'pyc files'}, unignores={})
+
+
+def tree_checksum(base_dir=src_dir, ignored=_ignored_from_hash):
     """
     Return a checksum computed from a file tree using the file paths, size and
     last modified time stamps.
@@ -68,7 +73,7 @@ def tree_checksum(base_dir=src_dir):
     the cache consistency.
     """
     hashable = [''.join([loc, str(getmtime(loc)), str(getsize(loc))])
-                for loc in file_iter(base_dir)]
+                for loc in file_iter(base_dir, ignored=_ignored_from_hash)]
     return md5(''.join(hashable)).hexdigest()
 
 
@@ -88,6 +93,7 @@ def get_or_build_index_from_cache(force_clear=False):
             if force_clear:
                 license_matches_cache.clear(0)
 
+            current_checksum = None
             # if we have a saved cached index
             if exists(tree_checksum_file) and exists(index_cache_file):
                 # load saved tree_checksum and compare with current tree_checksum
@@ -115,7 +121,7 @@ def get_or_build_index_from_cache(force_clear=False):
 
             # save the new checksums tree
             with open(tree_checksum_file, 'wb') as ctcs:
-                ctcs.write(tree_checksum())
+                ctcs.write(current_checksum or tree_checksum())
 
             return idx
 

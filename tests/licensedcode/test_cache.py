@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -33,6 +33,7 @@ from licensedcode import index
 from licensedcode.match import get_texts
 from licensedcode import match_aho
 from licensedcode import models
+from commoncode import fileutils
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -182,3 +183,14 @@ class LicenseMatchCacheTest(FileBasedTesting):
         expected = 'Redistribution and [explicit] use in source and binary forms are permitted'
         qtext, _ = get_texts(match, query_string=querys, idx=idx, width=0)
         assert expected == qtext
+
+    def test_tree_chekcsum_ignores_pyc_files_and_directories(self):
+        test_dir = self.get_test_loc('cache/tree', copy=True)
+        before = cache.tree_checksum(test_dir)
+        # create some new pyc file and a dir
+        with open(os.path.join(test_dir, 'some.pyc'), 'wb') as pyc:
+            pyc.write('')
+        fileutils.create_dir(os.path.join(test_dir, 'some dir'))
+
+        after = cache.tree_checksum(test_dir)
+        assert before == after
