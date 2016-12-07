@@ -136,26 +136,13 @@ def flatten_scan(scan, strip=0):
         for copy_info in scanned_file.get('copyrights', []):
             start_line = copy_info['start_line']
             end_line = copy_info['end_line']
-            for cop in copy_info.get('statements', []):
-                inf = OrderedDict(Resource=path)
-                inf['copyright'] = cop
-                inf['start_line'] = start_line
-                inf['end_line'] = end_line
-                yield inf
-
-            for hold in copy_info.get('holders', []):
-                inf = OrderedDict(Resource=path)
-                inf['copyright_holder'] = hold
-                inf['start_line'] = start_line
-                inf['end_line'] = end_line
-                yield inf
-
-            for auth in copy_info.get('authors', []):
-                inf = OrderedDict(Resource=path)
-                inf['author'] = auth
-                inf['start_line'] = start_line
-                inf['end_line'] = end_line
-                yield inf
+            for key, header in (('statements', 'copyright'), ('holders', 'copyright_holder'), ('authors', 'author')):
+                for cop in copy_info.get(key, []):
+                    inf = OrderedDict(Resource=path)
+                    inf[header] = cop
+                    inf['start_line'] = start_line
+                    inf['end_line'] = end_line
+                    yield inf
 
         for package in scanned_file.get('packages', []):
             pack = OrderedDict(Resource=path)
