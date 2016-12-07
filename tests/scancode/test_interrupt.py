@@ -71,7 +71,7 @@ class TestInterrupt(FileBasedTesting):
         def some_hungry_function(exec_time):
             sleep(exec_time)
             # consume some memory
-            _ram = range(1000000)
+            _ram = list(range(1000000))
             return 'OK'
 
         success, result = interrupt.interruptible(some_hungry_function, 0.1, timeout=5, max_memory=1)
