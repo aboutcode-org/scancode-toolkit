@@ -83,7 +83,7 @@ def load_scan(json_input):
 def json_scan_to_csv(json_input, csv_output, strip=0):
     """
     Convert a scancode JSON output file to a nexb-toolkit-like CSV.
-    Optionally strip up to `strip` path segments from the path paths.
+    Optionally strip up to `strip` path segments from the location paths.
     """
     scan_results = load_scan(json_input)
     rows = list(flatten_scan(scan_results, strip))
@@ -99,7 +99,7 @@ def flatten_scan(scan, strip=0):
     """
     Yield ordered dictionaries of key/values flattening the data and
     keying always by path, given a ScanCode scan results list.
-    Optionally strip up to `strip` path segments from the path paths.
+    Optionally strip up to `strip` path segments from the location paths.
     """
 
     for scanned_file in scan:
@@ -144,14 +144,39 @@ def flatten_scan(scan, strip=0):
                     inf['end_line'] = end_line
                     yield inf
 
+        excluded_columns = ('packaging',
+                            'payload_type',
+                            'keywords_doc_url',
+                            'download_sha1',
+                            'download_sha256',
+                            'download_md5',
+                            'code_view_url',
+                            'vcs_tool',
+                            'vcs_revision',
+                            'license_expression')
+
         for package in scanned_file.get('packages', []):
             pack = OrderedDict(Resource=path)
             for k, val in package.items():
                 nk = 'package__' + k
                 if not isinstance(val, (list, dict, OrderedDict)):
-                    pack[nk] = val
+                    if k not in excluded_columns:
+                        pack[nk] = val
                 elif k in ('authors', 'download_urls', 'copyrights', 'asserted_licenses'):
-                    pack[nk] = repr(val)
+                    if len(val) > 0:
+                        if k == 'authors':
+                            # We only want the first author
+                            pack[nk] = val[0]['name']
+                        if k == 'download_urls':
+                            # We only want the first URL
+                            pack[nk] = val[0]
+                        if k == 'copyrights':
+                            pack[nk] = '\n'.join(val)
+                        if k == 'asserted_licenses':
+                            licenses = [license_info['license'] for license_info in val]
+                            pack[nk] = '\n'.join(licenses)
+                    else:
+                        pack[nk] = ''
             yield pack
 
 
@@ -168,12 +193,12 @@ def collect_header_keys(scan_data):
 @click.command()
 @click.argument('json_input', type=click.Path(exists=True, readable=True))
 @click.argument('csv_output', type=click.Path(exists=False, readable=True))
-@click.option('-s', '--strip', help='Number of leading path segments to strip from path paths', type=click.INT, default=0)
+@click.option('-s', '--strip', help='Number of leading path segments to strip from location paths', type=click.INT, default=0)
 @click.help_option('-h', '--help')
 def cli(json_input, csv_output, strip=0):
     """
     Convert a ScanCode JSON scan file to a nexb-toolkit-like CSV.
-    Optionally strip up to `strip` leading path segments from the path paths.
+    Optionally strip up to `strip` leading path segments from the location paths.
 
     JSON_INPUT is either a ScanCode json format scan or the data.json file from a ScanCode html-app format scan.
     """
