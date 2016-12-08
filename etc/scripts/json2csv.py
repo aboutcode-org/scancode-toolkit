@@ -112,7 +112,7 @@ def flatten_scan(scan, strip=0):
 
         path = path if path.startswith('/') else '/' + path
 
-        if scanned_file['type'] == 'directory':
+        if scanned_file.get('type', '') == 'directory':
             if not path.endswith('/'):
                 path = path + '/'
 
@@ -122,6 +122,11 @@ def flatten_scan(scan, strip=0):
         info_details = OrderedDict(((k, v) for k, v in scanned_file.items() if k != 'path' and not isinstance(v, list)))
         file_info.update(info_details)
         yield file_info
+
+        error_info = OrderedDict(Resource=path)
+        errors = [error for error in scanned_file.get('scan_errors', [])]
+        error_info['scan_errors'] = '\n'.join(errors)
+        yield error_info
 
         for licensing in scanned_file.get('licenses', []):
             lic = OrderedDict(Resource=path)
@@ -143,6 +148,18 @@ def flatten_scan(scan, strip=0):
                     inf['start_line'] = start_line
                     inf['end_line'] = end_line
                     yield inf
+
+        for email in scanned_file.get('emails', []):
+            email_info = OrderedDict(Resource=path)
+            for k, val in email.items():
+                email_info[k] = val
+            yield email_info
+
+        for url in scanned_file.get('urls', []):
+            url_info = OrderedDict(Resource=path)
+            for k, val in url.items():
+                url_info[k] = val
+            yield url_info
 
         excluded_columns = ('packaging',
                             'payload_type',
