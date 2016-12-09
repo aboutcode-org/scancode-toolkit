@@ -80,13 +80,13 @@ def load_scan(json_input):
     return scan_results
 
 
-def json_scan_to_csv(json_input, csv_output, strip=0):
+def json_scan_to_csv(json_input, csv_output):
     """
     Convert a scancode JSON output file to a nexb-toolkit-like CSV.
     Optionally strip up to `strip` path segments from the location paths.
     """
     scan_results = load_scan(json_input)
-    rows = list(flatten_scan(scan_results, strip))
+    rows = list(flatten_scan(scan_results))
     headers = collect_header_keys(rows)
     with open(csv_output, 'wb') as output:
         w = unicodecsv.DictWriter(output, headers)
@@ -95,7 +95,7 @@ def json_scan_to_csv(json_input, csv_output, strip=0):
             w.writerow(r)
 
 
-def flatten_scan(scan, strip=0):
+def flatten_scan(scan):
     """
     Yield ordered dictionaries of key/values flattening the data and
     keying always by path, given a ScanCode scan results list.
@@ -104,12 +104,6 @@ def flatten_scan(scan, strip=0):
 
     for scanned_file in scan:
         path = scanned_file['path']
-        if strip:
-            # do not keep leading slash but add it back afterwards. keep trailing slashes
-            path = path.lstrip('/')
-            splits = [s for s in path.split('/')]
-            path = '/'.join(splits[strip:])
-
         path = path if path.startswith('/') else '/' + path
 
         if scanned_file.get('type', '') == 'directory':
@@ -210,18 +204,16 @@ def collect_header_keys(scan_data):
 @click.command()
 @click.argument('json_input', type=click.Path(exists=True, readable=True))
 @click.argument('csv_output', type=click.Path(exists=False, readable=True))
-@click.option('-s', '--strip', help='Number of leading path segments to strip from location paths', type=click.INT, default=0)
 @click.help_option('-h', '--help')
-def cli(json_input, csv_output, strip=0):
+def cli(json_input, csv_output):
     """
     Convert a ScanCode JSON scan file to a nexb-toolkit-like CSV.
-    Optionally strip up to `strip` leading path segments from the location paths.
 
     JSON_INPUT is either a ScanCode json format scan or the data.json file from a ScanCode html-app format scan.
     """
     json_input = os.path.abspath(os.path.expanduser(json_input))
     csv_output = os.path.abspath(os.path.expanduser(csv_output))
-    json_scan_to_csv(json_input, csv_output, strip=strip)
+    json_scan_to_csv(json_input, csv_output)
 
 
 if __name__ == '__main__':

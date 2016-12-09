@@ -41,23 +41,15 @@ class TestJson2CSV(FileBasedTesting):
     def test_scanc_as_list_minimal(self):
         test_json = self.get_test_loc('json2csv/minimal.json')
         scan = json2csv.load_scan(test_json)
-        result = json2csv.scan_as_list(scan)
+        result = list(json2csv.flatten_scan(scan))
         expected = self.get_test_loc('json2csv/minimal.json-expected')
-        expected = json.load(open(expected), object_pairs_hook=OrderedDict)
-        assert expected == result
-
-    def test_scanc_as_list_minimal_with_strip(self):
-        test_json = self.get_test_loc('json2csv/minimal.json')
-        scan = json2csv.load_scan(test_json)
-        result = json2csv.scan_as_list(scan, strip=2)
-        expected = self.get_test_loc('json2csv/minimal.json-strip-expected')
         expected = json.load(open(expected), object_pairs_hook=OrderedDict)
         assert expected == result
 
     def test_scanc_as_list_full(self):
         test_json = self.get_test_loc('json2csv/full.json')
         scan = json2csv.load_scan(test_json)
-        result = json2csv.scan_as_list(scan)
+        result = list(json2csv.flatten_scan(scan))
         expected = self.get_test_loc('json2csv/full.json-expected')
         expected = json.load(open(expected), object_pairs_hook=OrderedDict)
         assert expected == result
@@ -74,7 +66,7 @@ class TestJson2CSV(FileBasedTesting):
     def test_key_ordering(self):
         test_json = self.get_test_loc('json2csv/key_order.json')
         scan = json2csv.load_scan(test_json)
-        result = json2csv.scan_as_list(scan)
+        result = json2csv.flatten_scan(scan)
 
         expected = [
          OrderedDict([
@@ -125,7 +117,7 @@ class TestJson2CSV(FileBasedTesting):
         # this scan has no results at all
         test_json = self.get_test_loc('json2csv/no_keys.json')
         scan = json2csv.load_scan(test_json)
-        result = json2csv.scan_as_list(scan)
+        result = json2csv.flatten_scan(scan)
         assert [] == result
 
     def test_can_process_html_app_and_regular_json_the_same_way(self):
