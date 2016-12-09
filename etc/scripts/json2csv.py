@@ -118,6 +118,7 @@ def flatten_scan(scan):
         yield file_info
 
         error_info = OrderedDict(Resource=path)
+        # Scan errors are to be joined in a multi-line cell
         errors = [error for error in scanned_file.get('scan_errors', [])]
         error_info['scan_errors'] = '\n'.join(errors)
         yield error_info
@@ -182,8 +183,10 @@ def flatten_scan(scan):
                             # We only want the first URL
                             pack[nk] = val[0]
                         if k == 'copyrights':
+                            # All copyright statements are to be joined in a multi-line cell
                             pack[nk] = '\n'.join(val)
                         if k == 'asserted_licenses':
+                            # All license names are to be joined in a multi-line cell
                             licenses = [license_info['license'] for license_info in val]
                             pack[nk] = '\n'.join(licenses)
                     else:
