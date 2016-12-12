@@ -988,6 +988,8 @@ ship
 disease
 tx
 excellent
+\xc9tats
+unis
 perfect
 hair
 opportunity
@@ -1695,6 +1697,8 @@ centers
 opening
 lab
 recipes
+recipient
+recipients
 gamma
 plastic
 snow
@@ -9370,6 +9374,7 @@ provided
 debian
 debianized
 package
+packages
 maintained
 widget
 static
@@ -9820,4 +9825,71 @@ acpi
 ubuntu
 proc
 divx
+Arev
+Tavmjong Bah
+Albania
+Andorra
+Armenia
+Austria
+Azerbaijan
+Belarus
+Belgium
+Bosnia and Herzegovina
+Bulgaria
+Croatia
+Cyprus
+Czech Republic
+Denmark
+Estonia
+Finland
+France
+Georgia
+Germany
+Greece
+Hungary
+Iceland
+Ireland
+Italy
+Latvia
+Liechtenstein
+Lithuania
+Luxembourg
+Macedonia
+Malta
+Moldova
+Monaco
+Montenegro
+Netherlands
+Norway
+Poland
+Portugal
+Romania
+San Marino
+Serbia
+Slovakia
+Slovenia
+Spain
+Sweden
+Switzerland
+Ukraine
+United Kingdom
+Vatican City
+votre
+vous
+pouvez
+Oracle
+jdbc
+driver
+java
+util
+ArrayList
+CopyOnWriteArrayList
+ConcurrentReaderHashMap
+classes
+HashMap
+zend
+php
+party
+changes
+change
 '''.lower().split()
