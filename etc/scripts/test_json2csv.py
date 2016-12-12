@@ -41,23 +41,15 @@ class TestJson2CSV(FileBasedTesting):
     def test_scanc_as_list_minimal(self):
         test_json = self.get_test_loc('json2csv/minimal.json')
         scan = json2csv.load_scan(test_json)
-        result = json2csv.scan_as_list(scan)
+        result = list(json2csv.flatten_scan(scan))
         expected = self.get_test_loc('json2csv/minimal.json-expected')
-        expected = json.load(open(expected), object_pairs_hook=OrderedDict)
-        assert expected == result
-
-    def test_scanc_as_list_minimal_with_strip(self):
-        test_json = self.get_test_loc('json2csv/minimal.json')
-        scan = json2csv.load_scan(test_json)
-        result = json2csv.scan_as_list(scan, strip=2)
-        expected = self.get_test_loc('json2csv/minimal.json-strip-expected')
         expected = json.load(open(expected), object_pairs_hook=OrderedDict)
         assert expected == result
 
     def test_scanc_as_list_full(self):
         test_json = self.get_test_loc('json2csv/full.json')
         scan = json2csv.load_scan(test_json)
-        result = json2csv.scan_as_list(scan)
+        result = list(json2csv.flatten_scan(scan))
         expected = self.get_test_loc('json2csv/full.json-expected')
         expected = json.load(open(expected), object_pairs_hook=OrderedDict)
         assert expected == result
@@ -71,64 +63,96 @@ class TestJson2CSV(FileBasedTesting):
         result = codecs.open(result_file, 'rb', encoding='utf-8').read()
         assert expected == result
 
+    def test_json2csv_full(self):
+        test_json = self.get_test_loc('json2csv/full.json')
+        result_file = self.get_temp_file('.csv')
+        json2csv.json_scan_to_csv(test_json, result_file)
+        expected_file = self.get_test_loc('json2csv/full.csv')
+        expected = codecs.open(expected_file, 'rb', encoding='utf-8').read()
+        result = codecs.open(result_file, 'rb', encoding='utf-8').read()
+        assert expected == result
+
     def test_key_ordering(self):
         test_json = self.get_test_loc('json2csv/key_order.json')
         scan = json2csv.load_scan(test_json)
-        result = json2csv.scan_as_list(scan)
+        result = list(json2csv.flatten_scan(scan))
 
         expected = [
-         OrderedDict([
-            (u'Resource', u'/tests/extractcode/test_patch.py'),
-            (u'info_type', u'file'),
-            (u'info_name', u'test_patch.py'),
-            (u'info_extension', u'.py'),
-            (u'info_date', u'2015-12-08'),
-            (u'info_size', 72347),
-            (u'info_sha1', u'bc1dc65b7d6b88709ce170291f93cd255bda8ffa'),
-            (u'info_md5', u'25edeca9fbedd5b53e7e70af0ab0140a'),
-            (u'info_files_count', None),
-            (u'info_mime_type', u'text/x-python'),
-            (u'info_file_type', u'Python script, ASCII text executable'),
-            (u'info_programming_language', u'Python'),
-            (u'info_is_binary', None),
-            (u'info_is_text', True),
-            (u'info_is_archive', None),
-            (u'info_is_media', None),
-            (u'info_is_source', True),
-            (u'info_is_script', True),
-        ]),
-
-         OrderedDict([
-            (u'Resource', u'/tests/extractcode/test_sevenzip.py'),
-            (u'info_type', u'file'),
-            (u'info_name', u'test_sevenzip.py'),
-            (u'info_extension', u'.py'),
-            (u'info_date', u'2015-12-08'),
-            (u'info_size', 8773),
-            (u'info_sha1', u'e6ece461dc3af299ff4684081b9010a87fcd82f0'),
-            (u'info_md5', u'166bde096f06b5fa4ea962f94f217e0b'),
-            (u'info_files_count', None),
-            (u'info_mime_type', u'text/x-python'),
-            (u'info_file_type', u'Python script, ASCII text executable, with very long lines'),
-            (u'info_programming_language', u'Python'),
-            (u'info_is_binary', None),
-            (u'info_is_text', True),
-            (u'info_is_archive', None),
-            (u'info_is_media', None),
-            (u'info_is_source', True),
-            (u'info_is_script', True),
-        ])
+            OrderedDict([
+                ('Resource', u'/code/srp_vfy.c'),
+                (u'type', u'file'),
+                (u'name', u'srp_vfy.c'),
+                (u'extension', u'.c'),
+                (u'date', u'2016-11-10'),
+                (u'size', 17428),
+                (u'sha1', u'fa622c0499367a7e551d935c4c7394d5dfc31b26'),
+                (u'md5', u'4e02508d6433c8893e72fd521f36b37a'),
+                (u'files_count', None),
+                (u'mime_type', u'text/plain'),
+                (u'file_type', u'ASCIItext'),
+                (u'programming_language', u'C'),
+                (u'is_binary', None),
+                (u'is_text', True),
+                (u'is_archive', None),
+                (u'is_media', None),
+                (u'is_source', True),
+                (u'is_script', None),
+                ('scan_errors', '')
+            ]),
+            OrderedDict([
+                ('Resource', u'/code/srp_lib.c'),
+                (u'type', u'file'),
+                (u'name', u'srp_lib.c'),
+                (u'extension', u'.c'),
+                (u'date', u'2016-11-10'),
+                (u'size', 7302),
+                (u'sha1', u'624360fb75baf8f3498f6d70f7b3c66ed03bfa6c'),
+                (u'md5', u'b5c2f56afc2477d5a1768f97b314fe0f'),
+                (u'files_count', None),
+                (u'mime_type', u'text/x-c'),
+                (u'file_type', u'Csource, ASCIItext'),
+                (u'programming_language', u'C'),
+                (u'is_binary', None),
+                (u'is_text', True),
+                (u'is_archive', None),
+                (u'is_media', None),
+                (u'is_source', True),
+                (u'is_script', None),
+                ('scan_errors', '')
+            ]),
+            OrderedDict([
+                ('Resource', u'/code/build.info'),
+                (u'type', u'file'),
+                (u'name', u'build.info'),
+                (u'extension', u'.info'),
+                (u'date', u'2016-11-10'),
+                (u'size', 65),
+                (u'sha1', u'994b9ec16ec11f96a1dfade472ecec8c5c837ab4'),
+                (u'md5', u'eaacdd82c253a8967707c431cca6227e'),
+                (u'files_count', None),
+                (u'mime_type', u'text/plain'),
+                (u'file_type', u'ASCIItext'),
+                (u'programming_language', None),
+                (u'is_binary', None),
+                (u'is_text', True),
+                (u'is_archive', None),
+                (u'is_media', None),
+                (u'is_source', None),
+                (u'is_script', None),
+                ('scan_errors', '')
+            ])
         ]
+
         assert expected == result
 
     def test_json_with_no_keys_does_not_error_out(self):
         # this scan has no results at all
         test_json = self.get_test_loc('json2csv/no_keys.json')
         scan = json2csv.load_scan(test_json)
-        result = json2csv.scan_as_list(scan)
+        result = list(json2csv.flatten_scan(scan))
         assert [] == result
 
     def test_can_process_html_app_and_regular_json_the_same_way(self):
-        test_html = self.get_test_loc('json2csv/format_html_app_data.json')
-        test_json = self.get_test_loc('json2csv/format_json_scan.json')
+        test_html = self.get_test_loc('json2csv/minimal_html_app_data.json')
+        test_json = self.get_test_loc('json2csv/minimal.json')
         assert json2csv.load_scan(test_html) == json2csv.load_scan(test_json)
