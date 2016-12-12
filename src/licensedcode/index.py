@@ -829,9 +829,8 @@ class LicenseIndex(object):
             # Check that no rule is all junk: this is a fatal indexing error
             if all(t < len_junk for t in new_tids):
                 message = (
-                    'FATAL ERROR: Invalid rule:',
+                    'WARNING: Weak rule, made only of frequent junk tokens. Can only be matched exactly:',
                     self.rules_by_rid[rid].identifier,
-                    'is all junk tokens:',
                     u' '.join(tokens_by_new_tid[t] for t in new_tids)
                 )
                 fatals.append(u' '.join(message))
