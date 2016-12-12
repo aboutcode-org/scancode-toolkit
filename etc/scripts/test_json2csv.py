@@ -96,10 +96,7 @@ class TestJson2CSV(FileBasedTesting):
                 (u'is_archive', None),
                 (u'is_media', None),
                 (u'is_source', True),
-                (u'is_script', None)
-            ]),
-            OrderedDict([
-                ('Resource', u'/code/srp_vfy.c'),
+                (u'is_script', None),
                 ('scan_errors', '')
             ]),
             OrderedDict([
@@ -120,10 +117,7 @@ class TestJson2CSV(FileBasedTesting):
                 (u'is_archive', None),
                 (u'is_media', None),
                 (u'is_source', True),
-                (u'is_script', None)
-            ]),
-            OrderedDict([
-                ('Resource', u'/code/srp_lib.c'),
+                (u'is_script', None),
                 ('scan_errors', '')
             ]),
             OrderedDict([
@@ -144,10 +138,7 @@ class TestJson2CSV(FileBasedTesting):
                 (u'is_archive', None),
                 (u'is_media', None),
                 (u'is_source', None),
-                (u'is_script', None)
-            ]),
-            OrderedDict([
-                ('Resource', u'/code/build.info'),
+                (u'is_script', None),
                 ('scan_errors', '')
             ])
         ]

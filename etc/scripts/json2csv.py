@@ -39,25 +39,6 @@ etc/scripts/json2csv -h
 """
 
 
-class OrderedSet(object):
-    """
-    Ordered set based on list.
-    """
-    def __init__(self):
-        self.seq = []
-
-    def add(self, value):
-        if value not in self.seq:
-            self.seq.append(value)
-
-    def keys(self):
-        return self.seq[:]
-
-    def update(self, iterable):
-        for value in iterable:
-            self.add(value)
-
-
 def load_scan(json_input):
     """
     Return a list of scan results loaded from a json_input, either in ScanCode
@@ -83,7 +64,6 @@ def load_scan(json_input):
 def json_scan_to_csv(json_input, csv_output):
     """
     Convert a scancode JSON output file to a nexb-toolkit-like CSV.
-    Optionally strip up to `strip` path segments from the location paths.
     """
     scan_results = load_scan(json_input)
     rows = list(flatten_scan(scan_results))
@@ -99,9 +79,7 @@ def flatten_scan(scan):
     """
     Yield ordered dictionaries of key/values flattening the data and
     keying always by path, given a ScanCode scan results list.
-    Optionally strip up to `strip` path segments from the location paths.
     """
-
     for scanned_file in scan:
         path = scanned_file['path']
         path = path if path.startswith('/') else '/' + path
@@ -115,13 +93,9 @@ def flatten_scan(scan):
         file_info = OrderedDict(Resource=path)
         info_details = OrderedDict(((k, v) for k, v in scanned_file.items() if k != 'path' and not isinstance(v, list)))
         file_info.update(info_details)
-        yield file_info
-
-        error_info = OrderedDict(Resource=path)
         # Scan errors are to be joined in a multi-line cell
-        errors = [error for error in scanned_file.get('scan_errors', [])]
-        error_info['scan_errors'] = '\n'.join(errors)
-        yield error_info
+        file_info['scan_errors'] = '\n'.join(scanned_file.get('scan_errors', []))
+        yield file_info
 
         for licensing in scanned_file.get('licenses', []):
             lic = OrderedDict(Resource=path)
@@ -173,6 +147,8 @@ def flatten_scan(scan):
                 nk = 'package__' + k
                 if not isinstance(val, (list, dict, OrderedDict)):
                     if k not in excluded_columns:
+                        if k == 'version' and val:
+                            val = 'v ' + val
                         pack[nk] = val
                 elif k in ('authors', 'download_urls', 'copyrights', 'asserted_licenses'):
                     if len(val) > 0:
@@ -198,10 +174,12 @@ def collect_header_keys(scan_data):
     """
     Return a list of keys collected from a list of scanned data dictionaries.
     """
-    keys = OrderedSet()
+    keys = []
     for scan in scan_data:
-        keys.update(scan.keys())
-    return keys.keys()
+        for key in scan.keys():
+            if key not in keys:
+                keys.append(key)
+    return keys
 
 
 @click.command()
@@ -213,6 +191,8 @@ def cli(json_input, csv_output):
     Convert a ScanCode JSON scan file to a nexb-toolkit-like CSV.
 
     JSON_INPUT is either a ScanCode json format scan or the data.json file from a ScanCode html-app format scan.
+
+    Resource path will be prefixed with \'\\code\' to provide a common base directory for scanned resources.
     """
     json_input = os.path.abspath(os.path.expanduser(json_input))
     csv_output = os.path.abspath(os.path.expanduser(csv_output))

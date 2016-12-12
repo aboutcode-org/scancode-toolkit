@@ -1,8 +1,5 @@
 [
     {
-        "Resource": "/code/srp_vfy.c"
-    },
-    {
         "Resource": "/code/srp_vfy.c",
         "scan_errors": ""
     },
@@ -49,9 +46,6 @@
         "end_line": 2
     },
     {
-        "Resource": "/code/srp_lib.c"
-    },
-    {
         "Resource": "/code/srp_lib.c",
         "scan_errors": ""
     },
@@ -96,9 +90,6 @@
         "copyright_holder": "OpenSSL Project",
         "start_line": 2,
         "end_line": 2
-    },
-    {
-        "Resource": "/code/build.info"
     },
     {
         "Resource": "/code/build.info",
