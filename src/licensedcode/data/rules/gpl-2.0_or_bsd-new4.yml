@@ -1,0 +1,6 @@
+licenses:
+    - gpl-2.0
+    - bsd-new
+license_choice: yes
+license: gpl-2.0 or bsd-new
+minimum_coverage: 80
