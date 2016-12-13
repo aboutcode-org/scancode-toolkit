@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -31,6 +31,7 @@ from commoncode.testcase import FileBasedTesting
 
 from textcode.analysis import unicode_text_lines
 from textcode.analysis import text_lines
+from commoncode.fileutils import file_iter
 
 
 class TestAnalysis(FileBasedTesting):
@@ -53,3 +54,21 @@ class TestAnalysis(FileBasedTesting):
         with open(expected_file, 'rb') as tf:
             expected = cPickle.load(tf)
         assert expected == result
+
+    def test_archives_do_not_yield_text_lines(self):
+        test_file = self.get_test_loc('archive/simple.jar')
+        result = list(text_lines(test_file))
+        assert [] == result
+
+    def test_some_media_do_yield_text_lines(self):
+        test_dir = self.get_test_loc('media_with_text')
+        for test_file in file_iter(test_dir):
+            result = list(text_lines(test_file))
+            assert result, 'Should return text lines:' + test_file
+            assert any('nexb' in l for l in result)
+
+    def test_some_media_do_not_yield_text_lines(self):
+        test_dir = self.get_test_loc('media_without_text')
+        for test_file in file_iter(test_dir):
+            result = list(text_lines(test_file))
+            assert [] == result, 'Should not return text lines:' + test_file

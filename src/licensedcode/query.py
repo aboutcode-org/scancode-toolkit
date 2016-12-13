@@ -101,9 +101,11 @@ def build_query(location=None, query_string=None, idx=None):
     Return a Query built from location or querty string given an index.
     """
     if location:
-        qtype = typecode.get_type(location)
+        T = typecode.get_type(location)
         # TODO: implement additional type-driven heuristics for query chunking.
-        if qtype.is_binary:
+        if not T.contains_text:
+            return
+        if T.is_binary:
             # for binaries we want to avoid a large number of query runs as the
             # license context is often very sparse or absent
             qry = Query(location=location, idx=idx, line_threshold=1000)
@@ -354,7 +356,7 @@ class QueryRun(object):
         if not self._low_matchables:
             self._low_matchables = intbitset([pos for pos in self.query.low_matchables if self.start <= pos <= self.end])
         return self._low_matchables
- 
+
     @property
     def high_matchables(self):
         if not self._high_matchables:
@@ -446,7 +448,7 @@ class QueryRun(object):
             # also update locally: this is a property hence the side effect
             self.high_matchables
             self._high_matchables.difference_update(qspan)
- 
+
             # also update locally: this is a property hence the side effect
             self.low_matchables
             self._low_matchables.difference_update(qspan)
