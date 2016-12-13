@@ -312,6 +312,7 @@ repo_godoc = 'Godoc'
 repo_ivy = 'IVY'
 repo_maven = 'Maven'
 repo_npm = 'NPM'
+repo_phpcomposer = 'Packagist'
 repo_nuget = 'Nuget'
 repo_python = 'Pypi'
 repo_yum = 'YUM'
@@ -325,6 +326,7 @@ REPO_TYPES = (
     repo_ivy,
     repo_maven,
     repo_npm,
+    repo_phpcomposer,
     repo_nuget,
     repo_python,
     repo_yum,
