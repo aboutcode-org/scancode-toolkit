@@ -4,3 +4,4 @@ name: Microsoft MSN WebGrease License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://www.microsoft.com/web/webpi/eula/msn_webgrease_eula.htm
+minimum_coverage: 90

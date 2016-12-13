@@ -94,6 +94,7 @@ class License(object):
         'text_file',
         'notice_file',
         'spdx_file',
+        'minimum_coverage'
     )
 
     def __init__(self, key=None, src_dir=licenses_data_dir):
@@ -156,6 +157,8 @@ class License(object):
         # note: we do not keep the SPDX text if it is identical to the license
         # text
         self.spdx_file = join(self.src_dir, self.key + u'.SPDX')
+
+        self.minimum_coverage = 0
 
         if src_dir:
             self.load(src_dir)
@@ -237,6 +240,8 @@ class License(object):
             data[u'faq_url'] = self.faq_url
         if self.other_urls:
             data[u'other_urls'] = self.other_urls
+        if self.minimum_coverage:
+            data[u'minimum_coverage'] = int(self.minimum_coverage)
         return data
 
     def dump(self):
@@ -280,8 +285,10 @@ class License(object):
             print(e)
             print('#############################')
             raise
-
+        numeric_keys = ('minimum_coverage',)
         for k, v in data.items():
+            if k in numeric_keys:
+                v = int(v)
             setattr(self, k, v)
 
     def _read_text(self, location):
@@ -537,16 +544,18 @@ def build_rules_from_licenses(licenses=None):
     licenses = licenses or get_licenses()
     for license_key, license_obj in licenses.items():
         tfile = join(license_obj.src_dir, license_obj.text_file)
+        minimum_coverage = license_obj.minimum_coverage
+
         if exists(tfile):
-            yield Rule(text_file=tfile, licenses=[license_key])
+            yield Rule(text_file=tfile, licenses=[license_key], minimum_coverage=minimum_coverage)
 
         nfile = join(license_obj.src_dir, license_obj.notice_file)
         if exists(nfile):
-            yield Rule(text_file=nfile, licenses=[license_key])
+            yield Rule(text_file=nfile, licenses=[license_key], minimum_coverage=minimum_coverage)
 
         sfile = join(license_obj.src_dir, license_obj.spdx_file)
         if exists(sfile):
-            yield Rule(text_file=sfile, licenses=[license_key])
+            yield Rule(text_file=sfile, licenses=[license_key], minimum_coverage=minimum_coverage)
 
 
 def load_rules(rule_dir=rules_data_dir):

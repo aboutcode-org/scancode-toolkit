@@ -743,7 +743,7 @@ def filter_rule_min_coverage(matches):
     discarded = []
     for match in matches:
         if match.coverage() < match.rule.minimum_coverage:
-            if TRACE_REFINE_RULE_MIN_COVERAGE: logger_debug('    ==> DISCARDING rule.minimum_coverage:', match.rule.minimum_coverage, 'match:', match)
+            if TRACE_REFINE_RULE_MIN_COVERAGE: logger_debug('    ==> DISCARDING rule.minimum_coverage:', type(match.rule.minimum_coverage), ':', repr(match.rule.minimum_coverage), 'match:', match)
             discarded.append(match)
         else:
             kept.append(match)
@@ -898,17 +898,17 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST):
 
     matches, discarded = filter_rule_min_coverage(matches)
     all_discarded.extend(discarded)
-    # if TRACE: logger_debug('   #####refine_matches: NOT SHORT #', len(matches))
-    # if TRACE_REFINE: map(logger_debug, matches)
-    # if TRACE: logger_debug('   #####refine_matches: SHORT discarded#', len(discarded))
-    # if TRACE_REFINE: map(logger_debug, discarded)
+    if TRACE: logger_debug('   #####refine_matches: NOT UNDER MIN COVERAGE #', len(matches))
+    if TRACE_REFINE: map(logger_debug, matches)
+    if TRACE: logger_debug('   #####refine_matches: UNDER MIN COVERAGE discarded#', len(discarded))
+    if TRACE_REFINE: map(logger_debug, discarded)
 
     matches, discarded = filter_spurious_single_token(matches, query, idx)
     all_discarded.extend(discarded)
-    # if TRACE: logger_debug('   #####refine_matches: NOT SHORT #', len(matches))
-    # if TRACE_REFINE: map(logger_debug, matches)
-    # if TRACE: logger_debug('   #####refine_matches: SHORT discarded#', len(discarded))
-    # if TRACE_REFINE: map(logger_debug, discarded)
+    if TRACE: logger_debug('   #####refine_matches: NOT SINGLE TOKEN #', len(matches))
+    if TRACE_REFINE: map(logger_debug, matches)
+    if TRACE: logger_debug('   #####refine_matches: SINGLE TOKEN discarded#', len(discarded))
+    if TRACE_REFINE: map(logger_debug, discarded)
 
     matches, discarded = filter_short_matches(matches)
     all_discarded.extend(discarded)

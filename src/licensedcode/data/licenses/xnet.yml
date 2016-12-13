@@ -10,3 +10,4 @@ spdx_url: http://spdx.org/licenses/Xnet
 spdx_notes: |-
     This license is OSI certified.
     This License has been voluntarily deprecated by its author.
+minimum_coverage: 70
