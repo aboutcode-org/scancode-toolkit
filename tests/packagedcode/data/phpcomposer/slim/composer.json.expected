@@ -2,7 +2,7 @@
   "type": "phpcomposer", 
   "name": "slim/slim", 
   "version": null, 
-  "primary_language": "JavaScript", 
+  "primary_language": "PHP", 
   "packaging": null, 
   "summary": "Slim is a PHP micro framework that helps you quickly write simple yet powerful web applications and APIs", 
   "description": null, 

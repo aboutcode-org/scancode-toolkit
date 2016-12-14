@@ -2,7 +2,7 @@
   "type": "phpcomposer", 
   "name": "jandreasn/a-timer", 
   "version": null, 
-  "primary_language": "JavaScript", 
+  "primary_language": "PHP", 
   "packaging": null, 
   "summary": "A simple timer.", 
   "description": null, 

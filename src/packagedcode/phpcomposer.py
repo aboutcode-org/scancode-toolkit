@@ -55,13 +55,13 @@ logger = logging.getLogger(__name__)
 
 
 class PHPComposerPackage(models.Package):
-    metafiles = ('package.json')
+    metafiles = ('composer.json')
     filetypes = ('.json',)
-    mimetypes = ('application/x-tar',)
+    mimetypes = ('text/xml',)
     repo_types = (models.repo_phpcomposer,)
 
     type = models.StringType(default='phpcomposer')
-    primary_language = models.StringType(default='JavaScript')
+    primary_language = models.StringType(default='PHP')
 
     @classmethod
     def recognize(cls, location):
@@ -84,6 +84,7 @@ def parse(location):
         ('name', 'name'),
         ('description', 'summary'),
         ('keywords', 'keywords'),
+        ('version', 'version'),
         ('homepage', 'homepage_url'),
     ])
 
@@ -109,7 +110,6 @@ def parse(location):
     # a composer.json is at the root of a PHP composer package
     base_dir = fileutils.parent_directory(location)
     package.location = base_dir
-    # for now we only recognize a package.json, not a node_modules directory yet
     package.metafile_locations = [location]
     package.version = data.get('version')
     for source, target in plain_fields.items():
@@ -357,15 +357,6 @@ def deps_mapper(deps, package, field_name):
 
 dependencies_mapper = partial(deps_mapper, field_name='dependencies')
 dev_dependencies_mapper = partial(deps_mapper, field_name='devDependencies')
-
-
-person_parser = re.compile(
-    r'^(?P<name>[^\(<]+)'
-    r'\s?'
-    r'(?P<email><([^>]+)>)?'
-    r'\s?'
-    r'(?P<url>\([^\)]+\))?$'
-).match
 
 
 def parse_person(persons):

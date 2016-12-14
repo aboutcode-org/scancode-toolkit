@@ -2,7 +2,7 @@
   "type": "phpcomposer", 
   "name": "narrowspark/framework", 
   "version": null, 
-  "primary_language": "JavaScript", 
+  "primary_language": "PHP", 
   "packaging": null, 
   "summary": "Narrowspark Framework for Creative People.", 
   "description": null, 
