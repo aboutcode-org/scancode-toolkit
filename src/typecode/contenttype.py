@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -109,6 +109,8 @@ def get_type(location):
         return t
 
 
+# TODO: simplify code using a cached property decorator
+
 class Type(object):
     """
     Content, media and mime type information about a file.
@@ -138,6 +140,7 @@ class Type(object):
         '_is_pdf_with_text',
         '_is_text',
         '_is_binary',
+        '_contains_text',
     )
 
     def __init__(self, location):
@@ -171,6 +174,7 @@ class Type(object):
         self._is_pdf_with_text = None
         self._is_text = None
         self._is_binary = None
+        self._contains_text = None
 
     def __repr__(self):
         return ('Type(ftf=%r, mtf=%r, ftpyg=%r, mtpy=%r)'
@@ -281,10 +285,41 @@ class Type(object):
         # FIXME: we should use extracode archive detection
         # TODO: also treat file systems as archives
         ft = self.filetype_file.lower()
-        if not self.is_text and (self.is_compressed
-                                 or 'archive' in ft
-        # FIXME: is this really correct???
-                                 or '(zip)' in ft):
+        if (not self.is_text
+        and (self.is_compressed
+          or 'archive' in ft
+          or self.is_package
+          or self.is_filesystem
+          or (self.is_office_doc and self.location.endswith('x'))
+          # FIXME: is this really correct???
+          or '(zip)' in ft
+          )
+        ):
+            return True
+        else:
+            return False
+
+    @property
+    def is_office_doc(self):
+        loc = self.location.lower()
+        if loc.endswith(('.doc', '.docx', '.xlsx', '.xlsx', '.ppt', '.pptx',)):
+            return True
+        else:
+            return False
+
+    @property
+    def is_package(self):
+        """
+        Return True if the file is some kind of packaged archive.
+        """
+        ft = self.filetype_file.lower()
+        loc = self.location.lower()
+        if ('debian binary package' in ft
+         or ft.startswith('rpm ')
+         or (ft == 'posix tar archive' and loc.endswith('.gem'))
+         or (ft.startswith(('zip archive',)) and loc.endswith(('.jar', '.war', '.ear', '.egg', '.whl',)))
+         or (ft.startswith(('java archive',)) and loc.endswith(('.jar', '.war', '.ear', '.zip',)))
+         ):
             return True
         else:
             return False
@@ -295,7 +330,22 @@ class Type(object):
         Return True if the file is some kind of compressed file.
         """
         ft = self.filetype_file.lower()
-        if not self.is_text and 'compressed' in ft:
+        if (not self.is_text
+        and ('compressed' in ft
+          or self.is_package
+          or (self.is_office_doc and self.location.endswith('x'))
+        )):
+            return True
+        else:
+            return False
+
+    @property
+    def is_filesystem(self):
+        """
+        Return True if the file is some kind of file system or disk image.
+        """
+        ft = self.filetype_file.lower()
+        if ('squashfs filesystem' in ft):
             return True
         else:
             return False
@@ -312,6 +362,7 @@ class Type(object):
         ft = self.filetype_file.lower()
         types = (
             'image data', 'graphics image', 'ms-windows metafont .wmf',
+            'windows enhanced metafile',
             'png image', 'interleaved image', 'microsoft asf', 'image text',
             'photoshop image', 'shop pro image', 'ogg data', 'vorbis', 'mpeg',
             'theora', 'bitmap', 'audio', 'video', 'sound', 'riff', 'icon',
@@ -322,6 +373,18 @@ class Type(object):
             return True
         else:
             return False
+
+    @property
+    def is_media_with_meta(self):
+        """
+        Return True if the file is a media file that may contain text metadata.
+        """
+        # For now we only exclude PNGs, though there are likely several other
+        # mp(1,2,3,4), jpeg, gif all have support for metadata
+        if self.is_media and 'png image' in self.filetype_file.lower():
+            return False
+        else:
+            return True
 
     @property
     def is_pdf(self):
@@ -351,22 +414,27 @@ class Type(object):
                             self._is_pdf_with_text = doc.is_extractable
                     except (PDFSyntaxError, PDFException, PDFEncryptionError):
                         self._is_pdf_with_text = False
-            return self._is_pdf_with_text
+        return self._is_pdf_with_text
 
     @property
     def contains_text(self):
         """
         Return True if a file possibly contains some text.
         """
-        if self.is_file is not True:
-            return False
-        if self.is_text is True:
-            return True
-        if self.is_pdf is True and self.is_pdf_with_text is not True:
-            return False
-        if self.is_media is True or self.is_compressed is True or self.is_archive is True:
-            return False
-        return True
+        if self._contains_text is None:
+            if not self.is_file:
+                self._contains_text = False
+            elif self.is_text:
+                self._contains_text = True
+            elif self.is_pdf and not self.is_pdf_with_text:
+                self._contains_text = False
+            elif self.is_compressed or self.is_archive:
+                self._contains_text = False
+            elif self.is_media and not self.is_media_with_meta:
+                self._contains_text = False
+            else:
+                self._contains_text = True
+        return self._contains_text
 
     @property
     def is_script(self):

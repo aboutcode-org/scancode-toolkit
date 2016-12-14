@@ -1142,10 +1142,17 @@ class TestCopyrightDetection(FileBasedTesting):
                         expected_in_results=False,
                         results_in_expected=True)
 
-    def test_copyright_in_binary_lib(self):
-        test_file = self.get_test_loc('copyrights/copyright_in_binary_lib-php_embed_lib.lib')
+    def test_copyright_in_binary_file_with_metadata(self):
+        test_file = self.get_test_loc('copyrights/mp4_with_metadata.mp4')
         expected = [
-            'Copyright nexB and others (c) 2012',
+            u'copyright (c) 2016 Philippe',
+            u'copyright (c) 2016 Philippe http://nexb.com joe@nexb.com',
+        ]
+        check_detection(expected, test_file)
+
+    def test_copyright_php_lib(self):
+        test_file = self.get_test_loc('copyrights/copyright_php_lib-php_embed_lib.lib')
+        expected = [
         ]
         check_detection(expected, test_file)
 
@@ -3265,13 +3272,6 @@ class TestCopyrightDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights/copyright_peter_c-c.c')
         expected = [
             u'(c) 2005 - Peter Nederlof',
-        ]
-        check_detection(expected, test_file)
-
-    def test_copyright_php_lib(self):
-        test_file = self.get_test_loc('copyrights/copyright_php_lib-php_embed_lib.lib')
-        expected = [
-            u'Copyright nexB and others (c) 2012',
         ]
         check_detection(expected, test_file)
 

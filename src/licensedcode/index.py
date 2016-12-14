@@ -469,6 +469,9 @@ class LicenseIndex(object):
             return []
 
         qry = query.build_query(location, query_string, self)
+        if not qry:
+            logger_debug('#match: No query returned for:', location)
+            return []
 
         #######################################################################
         # Whole file matching: hash, cache  and exact matching

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -45,6 +45,7 @@ get_filetype_file = lambda l: get_type(l).filetype_file
 get_mimetype_file = lambda l: get_type(l).mimetype_file
 is_text = lambda l: get_type(l).is_text
 is_archive = lambda l: get_type(l).is_archive
+is_compressed = lambda l: get_type(l).is_compressed
 is_media = lambda l: get_type(l).is_media
 is_winexe = lambda l: get_type(l).is_winexe
 is_source = lambda l: get_type(l).is_source
@@ -60,6 +61,7 @@ get_link_target = lambda l: get_type(l).link_target
 is_link = lambda l: get_type(l).is_link
 is_broken_link = lambda l: get_type(l).is_broken_link
 size = lambda l: get_type(l).size
+contains_text = lambda l: get_type(l).contains_text
 
 
 class TestContentType(FileBasedTesting):
@@ -112,22 +114,27 @@ class TestContentType(FileBasedTesting):
     def test_symbolink_links(self):
         test_dir = self.extract_test_tar('contenttype/links/links.tar.gz', verbatim=True)
 
-        assert is_link(os.path.join(test_dir, 'prunedirs/targets/simlink_to_dir'))
-        assert is_link(os.path.join(test_dir, 'prunedirs/targets/simlink_to_file'))
-        assert not is_broken_link(os.path.join(test_dir, 'prunedirs/targets/simlink_to_dir'))
-        assert not is_broken_link(os.path.join(test_dir, 'prunedirs/targets/simlink_to_file'))
-        assert '../sources/subdir' == get_link_target(os.path.join(test_dir, 'prunedirs/targets/simlink_to_dir'))
-        assert '../sources/a.txt' == get_link_target(os.path.join(test_dir, 'prunedirs/targets/simlink_to_file'))
+        test_file1 = os.path.join(test_dir, 'prunedirs/targets/simlink_to_dir')
+        assert is_link(test_file1)
+        assert not is_broken_link(test_file1)
+        assert '../sources/subdir' == get_link_target(test_file1)
 
-        assert is_link(os.path.join(test_dir, 'prunedirs/targets/simlink_to_missing_file'))
-        assert is_link(os.path.join(test_dir, 'prunedirs/targets/simlink_to_missing_dir'))
-        assert is_broken_link(os.path.join(test_dir, 'prunedirs/targets/simlink_to_missing_file'))
-        assert is_broken_link(os.path.join(test_dir, 'prunedirs/targets/simlink_to_missing_dir'))
-        assert '../sources/temp.txt' == get_link_target(os.path.join(test_dir, 'prunedirs/targets/simlink_to_missing_file'))
-        assert '../sources/tempdir' == get_link_target(os.path.join(test_dir, 'prunedirs/targets/simlink_to_missing_dir'))
+        test_file2 = os.path.join(test_dir, 'prunedirs/targets/simlink_to_file')
+        assert is_link(test_file2)
+        assert not is_broken_link(test_file2)
+        assert '../sources/a.txt' == get_link_target(test_file2)
 
+        test_file3 = os.path.join(test_dir, 'prunedirs/targets/simlink_to_missing_file')
+        assert is_link(test_file3)
+        assert is_broken_link(test_file3)
+        assert '../sources/temp.txt' == get_link_target(test_file3)
 
-    @skipIf(not on_windows, 'Hangs for now, for mysterious reasons.')
+        test_file4 = os.path.join(test_dir, 'prunedirs/targets/simlink_to_missing_dir')
+        assert is_link(test_file4)
+        assert is_broken_link(test_file4)
+        assert '../sources/tempdir' == get_link_target(test_file4)
+
+    @skipIf(not on_windows, 'Hangs for now, for lack of proper sudo access on some test servers.')
     @skipIf(on_windows, 'Windows does not have fifos.')
     def test_contenttype_fifo(self):
         test_dir = self.get_temp_dir()
@@ -140,84 +147,116 @@ class TestContentType(FileBasedTesting):
         assert 'FIFO pipe' == get_filetype(myfifo)
 
     def test_directory(self):
-        assert not is_binary(self.get_test_loc('contenttype'))
+        test_file = self.get_test_loc('contenttype')
+        assert not is_binary(test_file)
 
     def test_archive_gnu_tar(self):
-        assert is_binary(self.get_test_loc('contenttype/archive/e.tar'))
-        assert is_archive(self.get_test_loc('contenttype/archive/e.tar'))
-        assert 'posix tar archive (gnu)' == get_filetype(self.get_test_loc('contenttype/archive/e.tar'))
+        test_file = self.get_test_loc('contenttype/archive/e.tar')
+        assert 'posix tar archive (gnu)' == get_filetype(test_file)
+        assert is_binary(test_file)
+        assert is_archive(test_file)
+        assert not is_compressed(test_file)
+        assert not contains_text(test_file)
 
     def test_debian_package(self):
         test_file = self.get_test_loc('contenttype/package/libjama-dev_1.2.4-2_all.deb')
         assert 'debian binary package (format 2.0)' == get_filetype(test_file)
         assert is_binary(test_file)
-
-    @expectedFailure
-    def test_debian_package_is_archive(self):
-        test_file = self.get_test_loc('contenttype/package/libjama-dev_1.2.4-2_all.deb')
         assert is_archive(test_file)
+        assert not contains_text(test_file)
 
     def test_archive_gz(self):
-        assert is_binary(self.get_test_loc('contenttype/archive/file_4.26-1.diff.gz'))
-        assert is_archive(self.get_test_loc('contenttype/archive/file_4.26-1.diff.gz'))
-        assert get_filetype(self.get_test_loc('contenttype/archive/file_4.26-1.diff.gz')).startswith('gzip compressed data')
+        test_file = self.get_test_loc('contenttype/archive/file_4.26-1.diff.gz')
+        assert get_filetype(test_file).startswith('gzip compressed data')
+        assert is_binary(test_file)
+        assert is_archive(test_file)
+        assert is_compressed(test_file)
+        assert not contains_text(test_file)
 
     @skipIf(on_windows, 'fails because of libmagic bug on windows.')
     def test_archive_squashfs_crashing(self):
         test_file = self.get_test_loc('contenttype/archive/crashing-squashfs')
         assert get_filetype_file(test_file).startswith('Squashfs filesystem, little endian, version 4.0')
+        assert is_archive(test_file)
+        assert not contains_text(test_file)
 
     @skipIf(on_windows, 'fails because of libmagic bug on windows.')
     def test_archive_squashfs_gz(self):
         test_file = self.get_test_loc('contenttype/archive/sqfs-gz.sqs')
         assert get_filetype_file(test_file).startswith('Squashfs filesystem, little endian, version 4.0')
+        assert is_archive(test_file)
+        assert not contains_text(test_file)
 
     @skipIf(on_windows, 'fails because of libmagic bug on windows.')
     def test_archive_squashfs_lzo(self):
         test_file = self.get_test_loc('contenttype/archive/sqfs-lzo.sqs')
         assert get_filetype_file(test_file).startswith('Squashfs filesystem, little endian, version 4.0')
+        assert is_archive(test_file)
+        assert not contains_text(test_file)
 
     @skipIf(on_windows, 'fails because of libmagic bug on windows.')
     def test_archive_squashfs_xz(self):
         test_file = self.get_test_loc('contenttype/archive/sqfs-xz.sqs')
         assert get_filetype_file(test_file).startswith('Squashfs filesystem, little endian, version 4.0')
+        assert is_archive(test_file)
+        assert not contains_text(test_file)
 
     def test_archive_tar_bz2(self):
-        assert is_binary(self.get_test_loc('contenttype/archive/e.tar.bz2'))
-        assert is_archive(self.get_test_loc('contenttype/archive/e.tar.bz2'))
-        assert 'bzip2 compressed data, block size = 900k' == get_filetype(self.get_test_loc('contenttype/archive/e.tar.bz2'))
+        test_file = self.get_test_loc('contenttype/archive/e.tar.bz2')
+        assert is_binary(test_file)
+        assert is_archive(test_file)
+        assert 'bzip2 compressed data, block size = 900k' == get_filetype(test_file)
+        assert is_archive(test_file)
+        assert is_compressed(test_file)
+        assert not contains_text(test_file)
 
     def test_archive_tar_gz_1(self):
-        assert not is_source(self.get_test_loc('contenttype/archive/a.tar.gz'))
-        assert not is_text(self.get_test_loc('contenttype/archive/a.tar.gz'))
-        assert '' == get_filetype_pygment(self.get_test_loc('contenttype/archive/a.tar.gz'))
-        assert 'application/x-gzip' == get_mimetype_file(self.get_test_loc('contenttype/archive/a.tar.gz'))
-        assert get_filetype(self.get_test_loc('contenttype/archive/a.tar.gz')).startswith('gzip compressed data')
+        test_file = self.get_test_loc('contenttype/archive/a.tar.gz')
+        assert not is_source(test_file)
+        assert not is_text(test_file)
+        assert '' == get_filetype_pygment(test_file)
+        assert 'application/x-gzip' == get_mimetype_file(test_file)
+        assert get_filetype(test_file).startswith('gzip compressed data')
+        assert is_archive(test_file)
+        assert is_compressed(test_file)
+        assert not contains_text(test_file)
 
     def test_archive_tar_gz_3(self):
-        assert is_binary(self.get_test_loc('contenttype/archive/e.tar.gz'))
-        assert is_archive(self.get_test_loc('contenttype/archive/e.tar.gz'))
-        assert get_filetype(self.get_test_loc('contenttype/archive/e.tar.gz')).startswith('gzip compressed data')
+        test_file = self.get_test_loc('contenttype/archive/e.tar.gz')
+        assert is_binary(test_file)
+        assert is_archive(test_file)
+        assert get_filetype(test_file).startswith('gzip compressed data')
+        assert is_archive(test_file)
+        assert is_compressed(test_file)
+        assert not contains_text(test_file)
 
     def test_archive_tar_posix(self):
-        assert is_binary(self.get_test_loc('contenttype/archive/posixnotgnu.tar'))
-        assert is_archive(self.get_test_loc('contenttype/archive/posixnotgnu.tar'))
-        assert 'posix tar archive' == get_filetype(self.get_test_loc('contenttype/archive/posixnotgnu.tar'))
+        test_file = self.get_test_loc('contenttype/archive/posixnotgnu.tar')
+        assert is_binary(test_file)
+        assert is_archive(test_file)
+        assert 'posix tar archive' == get_filetype(test_file)
+        assert is_archive(test_file)
+        assert not is_compressed(test_file)
+        assert not contains_text(test_file)
 
     def test_config_eclipse_data(self):
-        assert is_binary(self.get_test_loc('contenttype/config/eclipse_configuration_3u.cfs'))
-        assert 'data' == get_filetype(self.get_test_loc('contenttype/config/eclipse_configuration_3u.cfs'))
+        test_file = self.get_test_loc('contenttype/config/eclipse_configuration_3u.cfs')
+        assert is_binary(test_file)
+        assert 'data' == get_filetype(test_file)
 
     def test_binary_data(self):
-        assert is_binary(self.get_test_loc('contenttype/binary/data.fdt'))
-        assert 'data' == get_filetype(self.get_test_loc('contenttype/binary/data.fdt'))
+        test_file = self.get_test_loc('contenttype/binary/data.fdt')
+        assert is_binary(test_file)
+        assert 'data' == get_filetype(test_file)
 
     def test_binary_data_2(self):
-        assert 'data' == get_filetype(self.get_test_loc('contenttype/binary/dbase.fdt'))
+        test_file = self.get_test_loc('contenttype/binary/dbase.fdt')
+        assert 'data' == get_filetype(test_file)
 
     def test_binary_java_serialized_data(self):
-        assert is_binary(self.get_test_loc('contenttype/binary/jruby_time_zone_TimeOfDay.dat'))
-        assert 'java serialization data, version 5' == get_filetype(self.get_test_loc('contenttype/binary/jruby_time_zone_TimeOfDay.dat'))
+        test_file = self.get_test_loc('contenttype/binary/jruby_time_zone_TimeOfDay.dat')
+        assert is_binary(test_file)
+        assert 'java serialization data, version 5' == get_filetype(test_file)
 
     def test_binary_random_data(self):
         assert 'data' == get_filetype(self.get_test_loc('contenttype/binary-random/binary_random_0'))
@@ -231,589 +270,792 @@ class TestContentType(FileBasedTesting):
         assert 'data' == get_filetype(self.get_test_loc('contenttype/binary-random/binary_random_8'))
 
     def test_build_ant_build_xml(self):
-        assert not is_binary(self.get_test_loc('contenttype/build/build.xml'))
-        assert 'xml language text' == get_filetype(self.get_test_loc('contenttype/build/build.xml'))
+        test_file = self.get_test_loc('contenttype/build/build.xml')
+        assert not is_binary(test_file)
+        assert 'xml language text' == get_filetype(test_file)
 
     def test_build_makefile(self):
-        assert is_source(self.get_test_loc('contenttype/build/Makefile'))
-        assert is_text(self.get_test_loc('contenttype/build/Makefile'))
-        assert 'Makefile' == get_filetype_pygment(self.get_test_loc('contenttype/build/Makefile'))
-        assert 'ASCII text' == get_filetype_file(self.get_test_loc('contenttype/build/Makefile'))
-        assert 'makefile language text' == get_filetype(self.get_test_loc('contenttype/build/Makefile'))
-        assert 'text/plain' == get_mimetype_file(self.get_test_loc('contenttype/build/Makefile'))
+        test_file = self.get_test_loc('contenttype/build/Makefile')
+        assert is_source(test_file)
+        assert is_text(test_file)
+        assert 'Makefile' == get_filetype_pygment(test_file)
+        assert 'ASCII text' == get_filetype_file(test_file)
+        assert 'makefile language text' == get_filetype(test_file)
+        assert 'text/plain' == get_mimetype_file(test_file)
 
     def test_build_makefile_2(self):
-        assert is_source(self.get_test_loc('contenttype/build/Makefile.inc'))
-        assert is_text(self.get_test_loc('contenttype/build/Makefile.inc'))
-        assert 'text/x-makefile' == get_mimetype_file(self.get_test_loc('contenttype/build/Makefile.inc'))
-        assert 'ASCII text' == get_filetype_file(self.get_test_loc('contenttype/build/Makefile'))
+        test_file = self.get_test_loc('contenttype/build/Makefile.inc')
+        assert is_source(test_file)
+        assert is_text(test_file)
+        assert 'text/x-makefile' == get_mimetype_file(test_file)
+        assert 'makefile script, ASCII text, with CRLF line terminators' == get_filetype_file(test_file)
 
     @expectedFailure
     def test_build_makefile_inc_is_not_povray(self):
-        assert 'Makefile' == get_filetype_pygment(self.get_test_loc('contenttype/build/Makefile.inc'))
-        assert 'makefile language text' == get_filetype(self.get_test_loc('contenttype/build/Makefile.inc'))
+        test_file = self.get_test_loc('contenttype/build/Makefile.inc')
+        assert 'Makefile' == get_filetype_pygment(test_file)
+        assert 'makefile language text' == get_filetype(test_file)
 
     def test_build_ide_makefile(self):
-        assert 'makefile language text' == get_filetype(self.get_test_loc('contenttype/build/documentation.dsp'))
+        test_file = self.get_test_loc('contenttype/build/documentation.dsp')
+        assert 'makefile language text' == get_filetype(test_file)
 
-    def test_build_java_maven_pom(self):
-        assert not is_source(self.get_test_loc('contenttype/build/pom.pom'))
+    def test_build_java_maven_pom_pom(self):
+        test_file = self.get_test_loc('contenttype/build/pom.pom')
+        assert not is_source(test_file)
 
-        assert is_source(self.get_test_loc('contenttype/build/pom.xml'))
-        assert 'xml language text' == get_filetype(self.get_test_loc('contenttype/build/pom.xml'))
+    def test_build_java_maven_pom_xml(self):
+        test_file = self.get_test_loc('contenttype/build/pom.xml')
+        assert is_source(test_file)
+        assert 'xml language text' == get_filetype(test_file)
 
     def test_certificate_rsa_eclipse(self):
-        assert is_binary(self.get_test_loc('contenttype/certificate/ECLIPSE.RSA'))
-        assert 'data' == get_filetype(self.get_test_loc('contenttype/certificate/ECLIPSE.RSA'))
+        test_file = self.get_test_loc('contenttype/certificate/ECLIPSE.RSA')
+        assert is_binary(test_file)
+        assert 'data' == get_filetype(test_file)
 
     def test_certificate(self):
-        assert is_binary(self.get_test_loc('contenttype/certificate/CERTIFICATE'))
-        assert 'data' == get_filetype(self.get_test_loc('contenttype/certificate/CERTIFICATE'))
+        test_file = self.get_test_loc('contenttype/certificate/CERTIFICATE')
+        assert is_binary(test_file)
+        assert 'data' == get_filetype(test_file)
 
     def test_code_assembly(self):
-        assert 'C source, ASCII text, with CRLF line terminators' == get_filetype_file(self.get_test_loc('contenttype/code/assembly/bcopy.s'))
-        assert 'GAS' == get_filetype_pygment(self.get_test_loc('contenttype/code/assembly/bcopy.s'))
-        assert 'text/x-c' == get_mimetype_file(self.get_test_loc('contenttype/code/assembly/bcopy.s'))
+        test_file = self.get_test_loc('contenttype/code/assembly/bcopy.s')
+        assert 'C source, ASCII text, with CRLF line terminators' == get_filetype_file(test_file)
+        assert 'GAS' == get_filetype_pygment(test_file)
+        assert 'text/x-c' == get_mimetype_file(test_file)
 
     def test_code_c_1(self):
-        assert 'c language text' == get_filetype(self.get_test_loc('contenttype/code/c/c_code.c'))
+        test_file = self.get_test_loc('contenttype/code/c/c_code.c')
+        assert 'c language text' == get_filetype(test_file)
 
     def test_code_c_2(self):
-        assert is_source(self.get_test_loc('contenttype/code/c/main.c'))
-        assert is_text(self.get_test_loc('contenttype/code/c/main.c'))
-        assert 'C' == get_filetype_pygment(self.get_test_loc('contenttype/code/c/main.c'))
-        assert 'c language text' == get_filetype(self.get_test_loc('contenttype/code/c/main.c'))
-        assert 'C source, ASCII text' == get_filetype_file(self.get_test_loc('contenttype/code/c/main.c'))
-        assert 'text/x-c' == get_mimetype_file(self.get_test_loc('contenttype/code/c/main.c'))
+        test_file = self.get_test_loc('contenttype/code/c/main.c')
+        assert is_source(test_file)
+        assert is_text(test_file)
+        assert 'C' == get_filetype_pygment(test_file)
+        assert 'c language text' == get_filetype(test_file)
+        assert 'C source, ASCII text' == get_filetype_file(test_file)
+        assert 'text/x-c' == get_mimetype_file(test_file)
 
     def test_code_c_3(self):
-        assert is_source(self.get_test_loc('contenttype/code/c/cpu.c'))
-        assert is_text(self.get_test_loc('contenttype/code/c/cpu.c'))
-        assert 'C' == get_filetype_pygment(self.get_test_loc('contenttype/code/c/cpu.c'))
-        assert 'c language text' == get_filetype(self.get_test_loc('contenttype/code/c/cpu.c'))
-        assert 'text/x-c' == get_mimetype_file(self.get_test_loc('contenttype/code/c/cpu.c'))
+        test_file = self.get_test_loc('contenttype/code/c/cpu.c')
+        assert is_source(test_file)
+        assert is_text(test_file)
+        assert 'C' == get_filetype_pygment(test_file)
+        assert 'c language text' == get_filetype(test_file)
+        assert 'text/x-c' == get_mimetype_file(test_file)
 
     def test_code_c_4(self):
-        assert is_source(self.get_test_loc('contenttype/code/c/mm.c'))
-        assert is_text(self.get_test_loc('contenttype/code/c/mm.c'))
-        assert 'C' == get_filetype_pygment(self.get_test_loc('contenttype/code/c/mm.c'))
-        assert 'c language text' == get_filetype(self.get_test_loc('contenttype/code/c/mm.c'))
-        assert 'text/x-c' == get_mimetype_file(self.get_test_loc('contenttype/code/c/mm.c'))
+        test_file = self.get_test_loc('contenttype/code/c/mm.c')
+        assert is_source(test_file)
+        assert is_text(test_file)
+        assert 'C' == get_filetype_pygment(test_file)
+        assert 'c language text' == get_filetype(test_file)
+        assert 'text/x-c' == get_mimetype_file(test_file)
 
     def test_code_c_5(self):
-        assert is_source(self.get_test_loc('contenttype/code/c/pci.c'))
-        assert is_text(self.get_test_loc('contenttype/code/c/pci.c'))
-        assert 'C source, ASCII text' == get_filetype_file(self.get_test_loc('contenttype/code/c/pci.c'))
-        assert 'C' == get_filetype_pygment(self.get_test_loc('contenttype/code/c/pci.c'))
-        assert 'c language text' == get_filetype(self.get_test_loc('contenttype/code/c/pci.c'))
-        assert 'text/x-c' == get_mimetype_file(self.get_test_loc('contenttype/code/c/pci.c'))
+        test_file = self.get_test_loc('contenttype/code/c/pci.c')
+        assert is_source(test_file)
+        assert is_text(test_file)
+        assert 'C source, ASCII text' == get_filetype_file(test_file)
+        assert 'C' == get_filetype_pygment(test_file)
+        assert 'c language text' == get_filetype(test_file)
+        assert 'text/x-c' == get_mimetype_file(test_file)
 
     def test_code_c_6(self):
-        assert is_source(self.get_test_loc('contenttype/code/c/pci_v3.c'))
-        assert is_text(self.get_test_loc('contenttype/code/c/pci_v3.c'))
-        assert 'C source, ASCII text' == get_filetype_file(self.get_test_loc('contenttype/code/c/pci_v3.c'))
-        assert 'C' == get_filetype_pygment(self.get_test_loc('contenttype/code/c/pci_v3.c'))
-        assert 'c language text' == get_filetype(self.get_test_loc('contenttype/code/c/pci_v3.c'))
-        assert 'text/x-c' == get_mimetype_file(self.get_test_loc('contenttype/code/c/pci_v3.c'))
+        test_file = self.get_test_loc('contenttype/code/c/pci_v3.c')
+        assert is_source(test_file)
+        assert is_text(test_file)
+        assert 'C source, ASCII text' == get_filetype_file(test_file)
+        assert 'C' == get_filetype_pygment(test_file)
+        assert 'c language text' == get_filetype(test_file)
+        assert 'text/x-c' == get_mimetype_file(test_file)
 
     def test_code_c_7(self):
-        assert 'c language text' == get_filetype(self.get_test_loc('contenttype/code/c/some.c'))
+        test_file = self.get_test_loc('contenttype/code/c/some.c')
+        assert 'c language text' == get_filetype(test_file)
 
     def test_code_c_include(self):
-        assert 'c language text' == get_filetype(self.get_test_loc('contenttype/code/c/resource.h'))
+        test_file = self.get_test_loc('contenttype/code/c/resource.h')
+        assert 'c language text' == get_filetype(test_file)
+        assert is_source(test_file)
 
-        assert is_source(self.get_test_loc('contenttype/code/c/netdb.h'))
+    def test_code_c_include_2(self):
+        test_file = self.get_test_loc('contenttype/code/c/netdb.h')
+        assert 'c language text' == get_filetype(test_file)
+        assert is_source(test_file)
 
-    def test_code_c_include_mixed_case(self):
-        assert 'c++ language text' == get_filetype(self.get_test_loc('contenttype/code/c/TEST.H'))
-        assert 'c language text' == get_filetype(self.get_test_loc('contenttype/code/c/TEST_LOWERCASE.h'))
+    def test_code_c_include_mixed_case_2(self):
+        test_file = self.get_test_loc('contenttype/code/c/TEST_LOWERCASE.h')
+        assert 'c language text' == get_filetype(test_file)
 
-    def test_code_c_mixed_case(self):
-        assert 'c++ language text' == get_filetype(self.get_test_loc('contenttype/code/c/SIMPLE.C'))
-
-    def test_code_cpp_1(self):
-        assert is_source(self.get_test_loc('contenttype/code/cpp/stacktrace.cpp'))
-        assert is_text(self.get_test_loc('contenttype/code/cpp/stacktrace.cpp'))
-        assert 'C++' == get_filetype_pygment(self.get_test_loc('contenttype/code/cpp/stacktrace.cpp'))
-        assert 'c++ language text' == get_filetype(self.get_test_loc('contenttype/code/cpp/stacktrace.cpp'))
-        assert 'text/x-c' == get_mimetype_file(self.get_test_loc('contenttype/code/cpp/stacktrace.cpp'))
-
-    def test_code_cpp_non_ascii(self):
-        assert is_source(self.get_test_loc('contenttype/code/cpp/non_ascii.cpp'))
-        assert is_text(self.get_test_loc('contenttype/code/cpp/non_ascii.cpp'))
-        assert 'application/octet-stream' == get_mimetype_file(self.get_test_loc('contenttype/code/cpp/non_ascii.cpp'))
-        assert 'C++' == get_filetype_pygment(self.get_test_loc('contenttype/code/cpp/non_ascii.cpp'))
-        assert 'c++ language text' == get_filetype(self.get_test_loc('contenttype/code/cpp/non_ascii.cpp'))
-
-    def test_code_cpp_stdafx(self):
-        assert 'c++ language text' == get_filetype(self.get_test_loc('contenttype/code/cpp/StdAfx.cpp'))
+    def test_code_cpp_include_mixed_case(self):
+        test_file = self.get_test_loc('contenttype/code/c/TEST.H')
+        assert 'c++ language text' == get_filetype(test_file)
 
     def test_code_cpp_mixed_case(self):
-        assert 'c++ language text' == get_filetype(self.get_test_loc('contenttype/code/cpp/string.CPP'))
-        assert 'c++ language text' == get_filetype(self.get_test_loc('contenttype/code/cpp/string.CPP'))
+        test_file = self.get_test_loc('contenttype/code/c/SIMPLE.C')
+        assert 'c++ language text' == get_filetype(test_file)
+
+    def test_code_cpp_mixed_case_2(self):
+        test_file = self.get_test_loc('contenttype/code/cpp/string.CPP')
+        assert 'c++ language text' == get_filetype(test_file)
+
+    def test_code_cpp_1(self):
+        test_file = self.get_test_loc('contenttype/code/cpp/stacktrace.cpp')
+        assert is_source(test_file)
+        assert is_text(test_file)
+        assert 'C++' == get_filetype_pygment(test_file)
+        assert 'c++ language text' == get_filetype(test_file)
+        assert 'text/x-c' == get_mimetype_file(test_file)
+
+    def test_code_cpp_non_ascii(self):
+        test_file = self.get_test_loc('contenttype/code/cpp/non_ascii.cpp')
+        assert is_source(test_file)
+        assert is_text(test_file)
+        assert 'application/octet-stream' == get_mimetype_file(test_file)
+        assert 'C++' == get_filetype_pygment(test_file)
+        assert 'c++ language text' == get_filetype(test_file)
+
+    def test_code_cpp_stdafx(self):
+        test_file = self.get_test_loc('contenttype/code/cpp/StdAfx.cpp')
+        assert 'c++ language text' == get_filetype(test_file)
 
     @expectedFailure
     def test_code_groff(self):
-        assert not is_special(self.get_test_loc(u'contenttype/code/groff/example.ms'))
-        assert is_text(self.get_test_loc(u'contenttype/code/groff/example.ms'))
-        assert 'Groff' == get_filetype_pygment(self.get_test_loc(u'contenttype/code/groff/example.ms'))
-        assert 'groff language text' == get_filetype(self.get_test_loc(u'contenttype/code/groff/example.ms'))
+        test_file = self.get_test_loc(u'contenttype/code/groff/example.ms')
+        assert not is_special(test_file)
+        assert is_text(test_file)
+        assert 'Groff' == get_filetype_pygment(test_file)
+        assert 'groff language text' == get_filetype(test_file)
         # the Apache mimes do not have .ms in their types
         # but the type is still mysteriously returnedd on Windows
-        assert '' == get_mimetype_python(self.get_test_loc(u'contenttype/code/groff/example.ms'))
-        assert 'text/troff' == get_mimetype_file(self.get_test_loc(u'contenttype/code/groff/example.ms'))
-        assert get_filetype_file(self.get_test_loc(u'contenttype/code/groff/example.ms')).startswith('troff or preprocessor input')
+        assert '' == get_mimetype_python(test_file)
+        assert 'text/troff' == get_mimetype_file(test_file)
+        assert get_filetype_file(test_file).startswith('troff or preprocessor input')
 
     def test_code_java_1(self):
-        assert not is_binary(self.get_test_loc('contenttype/code/java/contenttype.java'))
-        assert 'Java' == get_pygments_lexer(self.get_test_loc('contenttype/code/java/contenttype.java')).name
+        test_file = self.get_test_loc('contenttype/code/java/contenttype.java')
+        assert not is_binary(test_file)
+        assert 'Java' == get_pygments_lexer(test_file).name
 
     def test_code_java_non_ascii(self):
-        assert is_source(self.get_test_loc('contenttype/code/java/ChartTiming1.java'))
-        assert is_text(self.get_test_loc('contenttype/code/java/ChartTiming1.java'))
+        test_file = self.get_test_loc('contenttype/code/java/ChartTiming1.java')
+        assert is_source(test_file)
+        assert is_text(test_file)
         # FIXME: incorrect
-        assert 'application/octet-stream' == get_mimetype_file(self.get_test_loc('contenttype/code/java/ChartTiming1.java'))
-        assert 'Java' == get_filetype_pygment(self.get_test_loc('contenttype/code/java/ChartTiming1.java'))
-        assert 'java language text' == get_filetype(self.get_test_loc('contenttype/code/java/ChartTiming1.java'))
+        assert 'application/octet-stream' == get_mimetype_file(test_file)
+        assert 'Java' == get_filetype_pygment(test_file)
+        assert 'java language text' == get_filetype(test_file)
 
     def test_code_java_3(self):
-        assert 'java language text' == get_filetype(self.get_test_loc('contenttype/code/java/Appender.java'))
+        test_file = self.get_test_loc('contenttype/code/java/Appender.java')
+        assert 'java language text' == get_filetype(test_file)
 
     def test_code_java_jad(self):
         # FIXME: should this be Java code?
-        assert 'python language text' == get_filetype(self.get_test_loc('contenttype/code/java/CommonViewerSiteFactory.jad'))
+        test_file = self.get_test_loc('contenttype/code/java/CommonViewerSiteFactory.jad')
+        assert 'python language text' == get_filetype(test_file)
 
     def test_code_java_mixed_case(self):
         # FIXME: incorrect type
-        assert 'python language text' == get_filetype(self.get_test_loc('contenttype/code/java/Logger.JAVA'))
+        test_file = self.get_test_loc('contenttype/code/java/Logger.JAVA')
+        assert 'python language text' == get_filetype(test_file)
 
     def test_code_js(self):
         assert not is_media(self.get_test_loc('contenttype/code/js/a.js'))
 
     def test_code_python_1(self):
-        assert not is_binary(self.get_test_loc('contenttype/code/python/contenttype.py'))
-        assert 'Python' == get_pygments_lexer(self.get_test_loc('contenttype/code/python/contenttype.py')).name
+        test_file = self.get_test_loc('contenttype/code/python/contenttype.py')
+        assert not is_binary(test_file)
+        assert 'Python' == get_pygments_lexer(test_file).name
 
     def test_code_python_2(self):
-        assert is_source(self.get_test_loc('contenttype/code/python/extract.py'))
-        assert is_text(self.get_test_loc('contenttype/code/python/extract.py'))
-        assert 'Python' == get_filetype_pygment(self.get_test_loc('contenttype/code/python/extract.py'))
-        assert 'python language text' == get_filetype(self.get_test_loc('contenttype/code/python/extract.py'))
-        assert 'text/x-python' == get_mimetype_file(self.get_test_loc('contenttype/code/python/extract.py'))
-        assert get_filetype_file(self.get_test_loc('contenttype/code/python/extract.py')).startswith('Python script')
+        test_file = self.get_test_loc('contenttype/code/python/extract.py')
+        assert is_source(test_file)
+        assert is_text(test_file)
+        assert 'Python' == get_filetype_pygment(test_file)
+        assert 'python language text' == get_filetype(test_file)
+        assert 'text/x-python' == get_mimetype_file(test_file)
+        assert get_filetype_file(test_file).startswith('Python script')
 
     def test_code_python_3(self):
-        assert 'python language text' == get_filetype(self.get_test_loc('contenttype/code/python/__init__.py'))
+        test_file = self.get_test_loc('contenttype/code/python/__init__.py')
+        assert 'python language text' == get_filetype(test_file)
 
     def test_code_resource(self):
-        assert 'c language text' == get_filetype(self.get_test_loc('contenttype/code/c/CcccDevStudioAddIn.rc2'))
+        test_file = self.get_test_loc('contenttype/code/c/CcccDevStudioAddIn.rc2')
+        assert 'c language text' == get_filetype(test_file)
 
     def test_code_scala(self):
-        assert 'scala language text' == get_filetype(self.get_test_loc('contenttype/code/scala/Applicative.scala'))
+        test_file = self.get_test_loc('contenttype/code/scala/Applicative.scala')
+        assert 'scala language text' == get_filetype(test_file)
 
-    def test_compiled_elf_exe(self):
-        assert is_binary(self.get_test_loc('contenttype/compiled/linux/i686-shash'))
+    def test_compiled_elf_exe_32bits(self):
+        test_file = self.get_test_loc('contenttype/compiled/linux/i686-shash')
+        assert is_binary(test_file)
         assert 'elf 32-bit lsb executable, intel 80386, version 1 (sysv), dynamically linked, interpreter /lib/ld-linux.so.2, for gnu/linux 2.6.4, not stripped' == get_filetype(self.get_test_loc(u'contenttype/compiled/linux/i686-shash'))
-        assert is_binary(self.get_test_loc('contenttype/compiled/linux/x86_64-shash'))
+
+    def test_compiled_elf_exe_64bits(self):
+        test_file = self.get_test_loc('contenttype/compiled/linux/x86_64-shash')
+        assert is_binary(test_file)
         assert 'elf 64-bit lsb executable, x86-64, version 1 (sysv), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for gnu/linux 2.6.9, not stripped' == get_filetype(self.get_test_loc(u'contenttype/compiled/linux/x86_64-shash'))
 
     def test_compiled_elf_so(self):
-        assert not is_special(self.get_test_loc(u'contenttype/compiled/linux/libssl.so.0.9.7'))
-        assert not is_text(self.get_test_loc(u'contenttype/compiled/linux/libssl.so.0.9.7'))
-        assert '' == get_filetype_pygment(self.get_test_loc(u'contenttype/compiled/linux/libssl.so.0.9.7'))
-        assert 'application/x-sharedlib' == get_mimetype_file(self.get_test_loc(u'contenttype/compiled/linux/libssl.so.0.9.7'))
-        assert 'elf 32-bit lsb shared object, intel 80386, version 1 (sysv), dynamically linked, stripped' == get_filetype(self.get_test_loc(u'contenttype/compiled/linux/libssl.so.0.9.7'))
-        assert 'ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically linked, stripped' == get_filetype_file(self.get_test_loc(u'contenttype/compiled/linux/libssl.so.0.9.7'))
+        test_file = self.get_test_loc(u'contenttype/compiled/linux/libssl.so.0.9.7')
+        assert not is_special(test_file)
+        assert not is_text(test_file)
+        assert '' == get_filetype_pygment(test_file)
+        assert 'application/x-sharedlib' == get_mimetype_file(test_file)
+        assert 'elf 32-bit lsb shared object, intel 80386, version 1 (sysv), dynamically linked, stripped' == get_filetype(test_file)
+        assert 'ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically linked, stripped' == get_filetype_file(test_file)
 
     def test_compiled_elf_so_2(self):
-        assert not is_source(self.get_test_loc('contenttype/compiled/linux/libnetsnmpagent.so.5'))
+        test_file = self.get_test_loc('contenttype/compiled/linux/libnetsnmpagent.so.5')
+        assert not is_source(test_file)
+        assert 'elf 32-bit lsb shared object, intel 80386, version 1 (sysv), dynamically linked, not stripped' == get_filetype(test_file)
 
     def test_compiled_flash(self):
-        assert is_binary(self.get_test_loc('contenttype/compiled/flash/a.swf'))
-        assert is_binary(self.get_test_loc('contenttype/compiled/flash/b.swf'))
+        test_file = self.get_test_loc('contenttype/compiled/flash/a.swf')
+        assert is_binary(test_file)
+        assert 'macromedia flash data, version 7' == get_filetype(test_file)
+
+    def test_compiled_flash_2(self):
+        test_file = self.get_test_loc('contenttype/compiled/flash/b.swf')
+        assert is_binary(test_file)
+        assert 'macromedia flash data, version 7' == get_filetype(test_file)
 
     def test_compiled_flash_swc(self):
-        assert is_binary(self.get_test_loc('contenttype/compiled/flash/flash-haloclassic.swc.incr'))
-        assert 'data' == get_filetype(self.get_test_loc('contenttype/compiled/flash/flash-haloclassic.swc.incr'))
+        test_file = self.get_test_loc('contenttype/compiled/flash/flash-haloclassic.swc.incr')
+        assert is_binary(test_file)
+        assert 'data' == get_filetype(test_file)
 
-    def test_compiled_java(self):
-        assert 'compiled java class data, version 46.0 (java 1.2)' == get_filetype(self.get_test_loc('contenttype/compiled/java/CommonViewerSiteFactory.class'))
-        assert is_binary(self.get_test_loc('contenttype/compiled/java/old.class'))
-        assert 'compiled java class data, version 46.0 (java 1.2)' == get_filetype(self.get_test_loc('contenttype/compiled/java/old.class'))
+    def test_compiled_java_classfile_1(self):
+        test_file = self.get_test_loc('contenttype/compiled/java/CommonViewerSiteFactory.class')
+        assert 'compiled java class data, version 46.0 (java 1.2)' == get_filetype(test_file)
+
+    def test_compiled_java_classfile_2(self):
+        test_file = self.get_test_loc('contenttype/compiled/java/old.class')
+        assert is_binary(test_file)
+        assert 'compiled java class data, version 46.0 (java 1.2)' == get_filetype(test_file)
 
     def test_compiled_python_1(self):
         test_dir = self.extract_test_zip('contenttype/compiled/python/compiled.zip')
-        assert 'python 2.5 byte-compiled' == get_filetype(os.path.join(test_dir, 'command.pyc'))
-        assert not is_source(os.path.join(test_dir, 'command.pyc'))
-        assert not is_text(os.path.join(test_dir, 'command.pyc'))
-        assert 'application/octet-stream' == get_mimetype_file(os.path.join(test_dir, 'command.pyc'))
-        assert '' == get_filetype_pygment(os.path.join(test_dir, 'command.pyc'))
+        test_file = os.path.join(test_dir, 'command.pyc')
+        assert 'python 2.5 byte-compiled' == get_filetype(test_file)
+        assert not is_source(test_file)
+        assert not is_text(test_file)
+        assert 'application/octet-stream' == get_mimetype_file(test_file)
+        assert '' == get_filetype_pygment(test_file)
 
-    def test_compiled_python_2(self):
-        test_dir = self.extract_test_zip('contenttype/compiled/python/compiled.zip')
-        assert is_binary(os.path.join(test_dir, 'contenttype.pyc'))
-        assert get_pygments_lexer(os.path.join(test_dir, 'contenttype.pyc')) is None
+        test_file2 = os.path.join(test_dir, 'contenttype.pyc')
+        assert is_binary(test_file2)
+        assert get_pygments_lexer(test_file2) is None
 
-    def test_compiled_python_3(self):
-        test_dir = self.extract_test_zip('contenttype/compiled/python/compiled.zip')
-        assert is_binary(os.path.join(test_dir, 'contenttype.pyo'))
-        assert get_pygments_lexer(os.path.join(test_dir, 'contenttype.pyo')) is None
+        test_file3 = os.path.join(test_dir, 'contenttype.pyo')
+        assert is_binary(test_file3)
+        assert get_pygments_lexer(test_file3) is None
 
-    def test_compiled_python_4(self):
-        test_dir = self.extract_test_zip('contenttype/compiled/python/compiled.zip')
-        assert 'python 2.5 byte-compiled' == get_filetype(os.path.join(test_dir, 'extract.pyc'))
-        assert not is_source(os.path.join(test_dir, 'extract.pyc'))
-        assert not is_text(os.path.join(test_dir, 'extract.pyc'))
-        assert 'application/octet-stream' == get_mimetype_file(os.path.join(test_dir, 'extract.pyc'))
-        assert '' == get_filetype_pygment(os.path.join(test_dir, 'extract.pyc'))
+        test_file4 = os.path.join(test_dir, 'extract.pyc')
+        assert 'python 2.5 byte-compiled' == get_filetype(test_file4)
+        assert not is_source(test_file4)
+        assert not is_text(test_file4)
+        assert 'application/octet-stream' == get_mimetype_file(test_file4)
+        assert '' == get_filetype_pygment(test_file4)
 
     def test_compiled_win_dll(self):
-        assert is_winexe(self.get_test_loc(u'contenttype/compiled/win/zlib1.dll'))
+        test_file = self.get_test_loc(u'contenttype/compiled/win/zlib1.dll')
+        assert is_winexe(test_file)
         assert is_binary(self.get_test_loc('contenttype/compiled/win/zlib1.dll'))
 
     def test_compiled_win_exe(self):
-        assert is_winexe(self.get_test_loc(u'contenttype/compiled/win/file.exe'))
+        test_file = self.get_test_loc(u'contenttype/compiled/win/file.exe')
+        assert is_winexe(test_file)
         assert is_binary(self.get_test_loc('contenttype/compiled/win/file.exe'))
 
     def test_config_conf(self):
-        assert 'ascii text, with crlf line terminators' == get_filetype(self.get_test_loc('contenttype/config/config.conf'))
+        test_file = self.get_test_loc('contenttype/config/config.conf')
+        assert 'ascii text, with crlf line terminators' == get_filetype(test_file)
 
     def test_config_linux_conf(self):
-        assert 'linux make config build file (old)' == get_filetype(self.get_test_loc('contenttype/config/defconfig-ar531x-jffs2'))
-
-    def test_config_linux_conf_2(self):
-        assert not is_source(self.get_test_loc('contenttype/config/defconfig-ar531x-jffs2'))
-        assert is_text(self.get_test_loc('contenttype/config/defconfig-ar531x-jffs2'))
-        assert '' == get_filetype_pygment(self.get_test_loc('contenttype/config/defconfig-ar531x-jffs2'))
-        assert 'linux make config build file (old)' == get_filetype(self.get_test_loc('contenttype/config/defconfig-ar531x-jffs2'))
-        assert 'text/plain' == get_mimetype_file(self.get_test_loc('contenttype/config/defconfig-ar531x-jffs2'))
+        test_file = self.get_test_loc('contenttype/config/defconfig-ar531x-jffs2')
+        assert 'linux make config build file (old)' == get_filetype(test_file)
+        assert not is_source(test_file)
+        assert is_text(test_file)
+        assert '' == get_filetype_pygment(test_file)
+        assert 'linux make config build file (old)' == get_filetype(test_file)
+        assert 'text/plain' == get_mimetype_file(test_file)
 
     def test_config_text_3(self):
-        assert 'ascii text, with crlf line terminators' == get_filetype(self.get_test_loc('contenttype/config/wrapper.conf'))
-        assert 'ascii text, with crlf line terminators' == get_filetype(self.get_test_loc('contenttype/config/wrapper.conf'))
+        test_file = self.get_test_loc('contenttype/config/wrapper.conf')
+        assert 'ascii text, with crlf line terminators' == get_filetype(test_file)
+        assert 'ascii text, with crlf line terminators' == get_filetype(test_file)
 
     def test_debug_win_pdb(self):
-        assert is_binary(self.get_test_loc('contenttype/debug/QTMovieWin.pdb'))
-        assert 'msvc program database ver \\004' == get_filetype(self.get_test_loc('contenttype/debug/QTMovieWin.pdb'))
+        test_file = self.get_test_loc('contenttype/debug/QTMovieWin.pdb')
+        assert is_binary(test_file)
+        assert 'msvc program database ver \\004' == get_filetype(test_file)
 
     def test_doc_html(self):
-        assert not is_binary(self.get_test_loc('contenttype/doc/html/contenttype.html'))
-        assert 'HTML' == get_pygments_lexer(self.get_test_loc('contenttype/doc/html/contenttype.html')).name
-        assert not is_binary(self.get_test_loc('contenttype/doc/html/a.htm'))
+        test_file = self.get_test_loc('contenttype/doc/html/contenttype.html')
+        assert not is_binary(test_file)
+        assert 'HTML' == get_pygments_lexer(test_file).name
 
     def test_doc_html_2(self):
-        assert is_source(self.get_test_loc('contenttype/doc/html/allclasses-frame.html'))
-        assert is_text(self.get_test_loc('contenttype/doc/html/allclasses-frame.html'))
-        assert 'HTML' == get_filetype_pygment(self.get_test_loc('contenttype/doc/html/allclasses-frame.html'))
-        assert 'html language text' == get_filetype(self.get_test_loc('contenttype/doc/html/allclasses-frame.html'))
-        assert 'text/html' == get_mimetype_file(self.get_test_loc('contenttype/doc/html/allclasses-frame.html'))
-        assert 'HTML document, ASCII text' == get_filetype_file(self.get_test_loc('contenttype/doc/html/allclasses-frame.html'))
+        test_file = self.get_test_loc('contenttype/doc/html/allclasses-frame.html')
+        assert is_source(test_file)
+        assert is_text(test_file)
+        assert 'HTML' == get_filetype_pygment(test_file)
+        assert 'html language text' == get_filetype(test_file)
+        assert 'text/html' == get_mimetype_file(test_file)
+        assert 'HTML document, ASCII text' == get_filetype_file(test_file)
 
     def test_doc_html_3(self):
-        assert is_source(self.get_test_loc('contenttype/doc/html/Label.html'))
-        assert is_text(self.get_test_loc('contenttype/doc/html/Label.html'))
-        assert 'HTML' == get_filetype_pygment(self.get_test_loc('contenttype/doc/html/Label.html'))
-        assert 'html language text' == get_filetype(self.get_test_loc('contenttype/doc/html/Label.html'))
-        assert 'text/html' == get_mimetype_file(self.get_test_loc('contenttype/doc/html/Label.html'))
-        assert 'HTML document, ASCII text, with very long lines' == get_filetype_file(self.get_test_loc('contenttype/doc/html/Label.html'))
+        test_file = self.get_test_loc('contenttype/doc/html/Label.html')
+        assert is_source(test_file)
+        assert is_text(test_file)
+        assert 'HTML' == get_filetype_pygment(test_file)
+        assert 'html language text' == get_filetype(test_file)
+        assert 'text/html' == get_mimetype_file(test_file)
+        assert 'HTML document, ASCII text, with very long lines' == get_filetype_file(test_file)
 
-    @expectedFailure
-    def test_doc_office_are_archives(self):
-        assert is_archive(self.get_test_loc('contenttype/doc/office/document'))
-        assert is_archive(self.get_test_loc('contenttype/doc/office/document.doc'))
-        assert is_archive(self.get_test_loc('contenttype/doc/office/word.docx'))
-        assert is_archive(self.get_test_loc('contenttype/doc/office/excel.xlsx'))
-        assert is_archive(self.get_test_loc('contenttype/doc/office/power.pptx'))
-
-    def test_doc_office_excel(self):
-        assert 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' == get_mimetype_file(self.get_test_loc('contenttype/doc/office/excel.xlsx'))
-        assert 'application/vnd.ms-excel' == get_mimetype_file(self.get_test_loc('contenttype/doc/office/excel.xls'))
-
-    def test_doc_office_powerpoint(self):
-        assert 'application/vnd.openxmlformats-officedocument.presentationml.presentation' == get_mimetype_file(self.get_test_loc('contenttype/doc/office/power.pptx'))
-        assert 'application/vnd.ms-powerpoint' == get_mimetype_file(self.get_test_loc('contenttype/doc/office/power.ppt'))
-
-    def test_doc_office_visio(self):
-        assert 'application/vnd.ms-office' == get_mimetype_file(self.get_test_loc('contenttype/doc/office/Glitch-ERD.vsd'))
-        assert not is_text(self.get_test_loc('contenttype/doc/office/Glitch-ERD.vsd'))
-        assert is_binary(self.get_test_loc('contenttype/doc/office/Glitch-ERD.vsd'))
+    def test_doc_html_4(self):
+        test_file = self.get_test_loc('contenttype/doc/html/a.htm')
+        assert not is_binary(test_file)
+        assert not is_binary(test_file)
+        assert 'HTML' == get_pygments_lexer(test_file).name
 
     def test_doc_office_word(self):
-        assert 'microsoft word 2007+' == get_filetype(self.get_test_loc('contenttype/doc/office/document'))
+        test_file = self.get_test_loc('contenttype/doc/office/document')
+        assert not is_archive(test_file)
+        assert 'microsoft word 2007+' == get_filetype(test_file)
 
-        assert 'microsoft word 2007+' == get_filetype(self.get_test_loc('contenttype/doc/office/document.doc'))
+    def test_doc_office_word_2(self):
+        test_file = self.get_test_loc('contenttype/doc/office/document.doc')
+        assert not is_archive(test_file)
+        assert 'microsoft word 2007+' == get_filetype(test_file)
 
-        assert not is_special(self.get_test_loc('contenttype/doc/office/word.doc'))
-        assert '' == get_filetype_pygment(self.get_test_loc('contenttype/doc/office/word.doc'))
-        assert 'application/msword' == get_mimetype_file(self.get_test_loc('contenttype/doc/office/word.doc'))
-        assert get_filetype(self.get_test_loc('contenttype/doc/office/word.doc')).startswith('composite document file v2 document')
-        assert get_filetype_file(self.get_test_loc('contenttype/doc/office/word.doc')).startswith('Composite Document File V2 Document')
+    def test_doc_office_word_3(self):
+        test_file = self.get_test_loc('contenttype/doc/office/word.doc')
+        assert not is_special(test_file)
+        assert '' == get_filetype_pygment(test_file)
+        assert 'application/msword' == get_mimetype_file(test_file)
+        assert get_filetype(test_file).startswith('composite document file v2 document')
+        assert get_filetype_file(test_file).startswith('Composite Document File V2 Document')
 
-        assert 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' == get_mimetype_file(self.get_test_loc('contenttype/doc/office/word.docx'))
+    def test_docx_office_word(self):
+        test_file = self.get_test_loc('contenttype/doc/office/word.docx')
+        assert 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' == get_mimetype_file(test_file)
+        assert is_archive(test_file)
+        assert is_compressed(test_file)
+        assert not contains_text(test_file)
+
+    def test_pptx_office_is_archive(self):
+        test_file = self.get_test_loc('contenttype/doc/office/power.pptx')
+        assert is_archive(test_file)
+        assert is_compressed(test_file)
+        assert not contains_text(test_file)
+
+    def test_doc_office_excel_xlsx(self):
+        test_file = self.get_test_loc('contenttype/doc/office/excel.xlsx')
+        assert 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' == get_mimetype_file(test_file)
+        assert is_archive(test_file)
+        assert is_compressed(test_file)
+        assert not contains_text(test_file)
+
+    def test_doc_office_excel_xls(self):
+        test_file = self.get_test_loc('contenttype/doc/office/excel.xls')
+        assert 'application/vnd.ms-excel' == get_mimetype_file(test_file)
+
+    def test_doc_office_powerpoint_pptx(self):
+        test_file = self.get_test_loc('contenttype/doc/office/power.pptx')
+        assert 'application/vnd.openxmlformats-officedocument.presentationml.presentation' == get_mimetype_file(test_file)
+        assert is_archive(test_file)
+        assert is_compressed(test_file)
+        assert not contains_text(test_file)
+
+    def test_doc_office_powerpoint_ppt(self):
+        test_file = self.get_test_loc('contenttype/doc/office/power.ppt')
+        assert 'application/vnd.ms-powerpoint' == get_mimetype_file(test_file)
+
+    def test_doc_office_visio(self):
+        test_file = self.get_test_loc('contenttype/doc/office/Glitch-ERD.vsd')
+        assert 'application/vnd.ms-office' == get_mimetype_file(test_file)
+        assert not is_text(test_file)
+        assert is_binary(test_file)
 
     def test_doc_pdf_1(self):
-        assert is_pdf(self.get_test_loc('contenttype/doc/pdf/a.pdf'))
-        assert is_pdf_with_text(self.get_test_loc('contenttype/doc/pdf/a.pdf'))
-        assert 'pdf document, version 1.2' == get_filetype(self.get_test_loc('contenttype/doc/pdf/a.pdf'))
-        assert not is_media(self.get_test_loc('contenttype/doc/pdf/a.pdf'))
-        assert is_binary(self.get_test_loc('contenttype/doc/pdf/a.pdf'))
+        test_file = self.get_test_loc('contenttype/doc/pdf/a.pdf')
+        assert is_pdf(test_file)
+        assert is_pdf_with_text(test_file)
+        assert 'pdf document, version 1.2' == get_filetype(test_file)
+        assert not is_media(test_file)
+        assert is_binary(test_file)
 
     def test_doc_pdf_2(self):
-        assert not is_pdf_with_text(self.get_test_loc('contenttype/doc/pdf/notpdf.pdf'))
+        test_file = self.get_test_loc('contenttype/doc/pdf/notpdf.pdf')
+        assert not is_pdf_with_text(test_file)
 
     def test_doc_pdf_3(self):
-        assert is_pdf(self.get_test_loc('contenttype/doc/pdf/pdf.pdf'))
-        assert is_pdf_with_text(self.get_test_loc('contenttype/doc/pdf/pdf.pdf'))
-        assert 'pdf document, version 1.4' == get_filetype(self.get_test_loc('contenttype/doc/pdf/pdf.pdf'))
+        test_file = self.get_test_loc('contenttype/doc/pdf/pdf.pdf')
+        assert is_pdf(test_file)
+        assert is_pdf_with_text(test_file)
+        assert 'pdf document, version 1.4' == get_filetype(test_file)
 
     def test_doc_postscript_1(self):
-        assert is_text(self.get_test_loc('contenttype/doc/postscript/doc.ps'))
-        assert not is_binary(self.get_test_loc('contenttype/doc/postscript/doc.ps'))
+        test_file = self.get_test_loc('contenttype/doc/postscript/doc.ps')
+        assert is_text(test_file)
+        assert not is_binary(test_file)
 
     def test_doc_postscript_2(self):
-        assert not is_binary(self.get_test_loc('contenttype/doc/postscript/a.ps'))
-        assert not is_media(self.get_test_loc('contenttype/doc/postscript/a.ps'))
+        test_file = self.get_test_loc('contenttype/doc/postscript/a.ps')
+        assert not is_binary(test_file)
+        assert not is_media(test_file)
 
     def test_doc_postscript_eps(self):
-        assert is_binary(self.get_test_loc('contenttype/doc/postscript/Image1.eps'))
-        assert 'application/octet-stream' == get_mimetype_file(self.get_test_loc('contenttype/doc/postscript/Image1.eps'))
-        assert get_filetype_file(self.get_test_loc('contenttype/doc/postscript/Image1.eps')).startswith('DOS EPS Binary File Postscript')
+        test_file = self.get_test_loc('contenttype/doc/postscript/Image1.eps')
+        assert is_binary(test_file)
+        assert 'application/octet-stream' == get_mimetype_file(test_file)
+        assert get_filetype_file(test_file).startswith('DOS EPS Binary File Postscript')
 
     def test_doc_xml(self):
-        assert not is_binary(self.get_test_loc('contenttype/doc/xml/simple.xml'))
-        assert 'xml language text' == get_filetype(self.get_test_loc('contenttype/doc/xml/simple.xml'))
+        test_file = self.get_test_loc('contenttype/doc/xml/simple.xml')
+        assert not is_binary(test_file)
+        assert 'xml language text' == get_filetype(test_file)
 
-        assert not is_binary(self.get_test_loc('contenttype/doc/xml/some.xml'))
-        assert 'xml language text' == get_filetype(self.get_test_loc('contenttype/doc/xml/some.xml'))
+    def test_doc_xml_2(self):
+        test_file = self.get_test_loc('contenttype/doc/xml/some.xml')
+        assert not is_binary(test_file)
+        assert 'xml language text' == get_filetype(test_file)
 
-        assert not is_binary(self.get_test_loc('contenttype/doc/xml/somespring.xml'))
-        assert 'xml language text' == get_filetype(self.get_test_loc('contenttype/doc/xml/somespring.xml'))
+    def test_doc_xml_3(self):
+        test_file = self.get_test_loc('contenttype/doc/xml/somespring.xml')
+        assert not is_binary(test_file)
+        assert 'xml language text' == get_filetype(test_file)
 
     def test_media_audio_aif(self):
-        assert is_media(self.get_test_loc('contenttype/media/a.aif'))
-        assert is_binary(self.get_test_loc('contenttype/media/a.aif'))
+        test_file = self.get_test_loc('contenttype/media/a.aif')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
         assert is_media(self.get_test_loc('contenttype/media/a.aiff'))
         assert is_binary(self.get_test_loc('contenttype/media/a.aiff'))
 
     def test_media_audio_au(self):
-        assert is_media(self.get_test_loc('contenttype/media/a.au'))
-        assert is_binary(self.get_test_loc('contenttype/media/a.au'))
+        test_file = self.get_test_loc('contenttype/media/a.au')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_audio_flac(self):
-        assert is_media(self.get_test_loc('contenttype/media/a.flac'))
-        assert is_binary(self.get_test_loc('contenttype/media/a.flac'))
+        test_file = self.get_test_loc('contenttype/media/a.flac')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_audio_mp3(self):
-        assert is_media(self.get_test_loc('contenttype/media/a.mp3'))
-        assert is_binary(self.get_test_loc('contenttype/media/a.mp3'))
+        test_file = self.get_test_loc('contenttype/media/a.mp3')
+        assert is_media(test_file)
+        assert is_binary(test_file)
+        assert contains_text(test_file)
 
     def test_media_audio_wav(self):
-        assert is_media(self.get_test_loc('contenttype/media/a.wav'))
-        assert is_binary(self.get_test_loc('contenttype/media/a.wav'))
+        test_file = self.get_test_loc('contenttype/media/a.wav')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_image_bmp_1(self):
-        assert is_media(self.get_test_loc('contenttype/media/Image1.bmp'))
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.bmp'))
+        test_file = self.get_test_loc('contenttype/media/Image1.bmp')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_image_bmp_2(self):
-        assert 'pc bitmap, windows 3.x format, 400 x 32 x 4' == get_filetype(self.get_test_loc('contenttype/media/TBarLrge.bmp'))
-        assert 'pc bitmap, windows 3.x format, 210 x 16 x 4' == get_filetype(self.get_test_loc('contenttype/media/TBarMedm.bmp'))
+        test_file = self.get_test_loc('contenttype/media/TBarLrge.bmp')
+        assert 'pc bitmap, windows 3.x format, 400 x 32 x 4' == get_filetype(test_file)
+
+    def test_media_image_bmp_3(self):
+        test_file = self.get_test_loc('contenttype/media/TBarMedm.bmp')
+        assert 'pc bitmap, windows 3.x format, 210 x 16 x 4' == get_filetype(test_file)
 
     def test_media_image_dib(self):
-        assert is_media(self.get_test_loc('contenttype/media/Image1.dib'))
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.dib'))
+        test_file = self.get_test_loc('contenttype/media/Image1.dib')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_image_gif(self):
-        assert is_media(self.get_test_loc('contenttype/media/Image1.gif'))
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.gif'))
+        test_file = self.get_test_loc('contenttype/media/Image1.gif')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_image_ico(self):
-        assert is_media(self.get_test_loc('contenttype/media/Image1.ico'))
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.ico'))
+        test_file = self.get_test_loc('contenttype/media/Image1.ico')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_image_iff(self):
-        assert is_media(self.get_test_loc('contenttype/media/Image1.iff'))
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.iff'))
+        test_file = self.get_test_loc('contenttype/media/Image1.iff')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_image_img(self):
         # FIXME: .img files are more complex
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.img'))
-        assert get_filetype_file(self.get_test_loc('contenttype/media/Image1.img')).startswith('GEM Image data')
-        assert 'application/octet-stream' == get_mimetype_file(self.get_test_loc('contenttype/media/Image1.img'))
-        assert not get_mimetype_python(self.get_test_loc('contenttype/media/Image1.img'))
-        assert is_media(self.get_test_loc('contenttype/media/Image1.img'))
+        test_file = self.get_test_loc('contenttype/media/Image1.img')
+        assert is_binary(test_file)
+        assert get_filetype_file(test_file).startswith('GEM Image data')
+        assert 'application/octet-stream' == get_mimetype_file(test_file)
+        assert not get_mimetype_python(test_file)
+        assert is_media(test_file)
 
     def test_media_image_jif(self):
-        assert is_media(self.get_test_loc('contenttype/media/Image1.jif'))
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.jif'))
+        test_file = self.get_test_loc('contenttype/media/Image1.jif')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_image_jpeg(self):
-        assert is_media(self.get_test_loc('contenttype/media/Image1.jpeg'))
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.jpeg'))
+        test_file = self.get_test_loc('contenttype/media/Image1.jpeg')
+        assert is_media(test_file)
+        assert is_binary(test_file)
+        assert contains_text(test_file)
 
-        assert is_media(self.get_test_loc('contenttype/media/Image1.jpg'))
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.jpg'))
+    def test_media_image_jpg(self):
+        test_file = self.get_test_loc('contenttype/media/Image1.jpg')
+        assert is_media(test_file)
+        assert is_binary(test_file)
+        assert contains_text(test_file)
 
-    def test_media_image_pbm_ppm(self):
-        assert is_media(self.get_test_loc('contenttype/media/Image1.pbm'))
-        assert not is_binary(self.get_test_loc('contenttype/media/Image1.pbm'))
-        assert not is_binary(self.get_test_loc('contenttype/media/Image1.ppm'))
+    def test_media_image_pbm(self):
+        test_file = self.get_test_loc('contenttype/media/Image1.pbm')
+        assert is_media(test_file)
+        assert not is_binary(test_file)
 
+    def test_media_image_ppm(self):
+        test_file = self.get_test_loc('contenttype/media/Image1.ppm')
+        assert not is_binary(test_file)
         # this is text
-        assert is_media(self.get_test_loc('contenttype/media/Image1.ppm'))
+        assert is_media(test_file)
 
     def test_media_image_pcx(self):
-        assert is_media(self.get_test_loc('contenttype/media/Image1.pcx'))
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.pcx'))
+        test_file = self.get_test_loc('contenttype/media/Image1.pcx')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_image_photoshop(self):
-        assert is_media(self.get_test_loc('contenttype/media/Image1.psd'))
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.psd'))
+        test_file = self.get_test_loc('contenttype/media/Image1.psd')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_image_png(self):
-        assert is_media(self.get_test_loc('contenttype/media/a.png'))
-        assert is_binary(self.get_test_loc('contenttype/media/a.png'))
+        test_file = self.get_test_loc('contenttype/media/a.png')
+        assert is_media(test_file)
+        assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_psp(self):
-        assert is_media(self.get_test_loc('contenttype/media/Image1.psp'))
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.psp'))
+        test_file = self.get_test_loc('contenttype/media/Image1.psp')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_image_ras(self):
-        assert is_media(self.get_test_loc('contenttype/media/Image1.ras'))
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.ras'))
+        test_file = self.get_test_loc('contenttype/media/Image1.ras')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_image_svg(self):
-        assert not is_binary(self.get_test_loc('contenttype/media/drawing.svg'))
-        assert is_media(self.get_test_loc('contenttype/media/drawing.svg'))
-        assert is_media(self.get_test_loc('contenttype/media/drawing.svg'))
+        test_file = self.get_test_loc('contenttype/media/drawing.svg')
+        assert not is_binary(test_file)
+        assert is_media(test_file)
+        assert is_media(test_file)
 
     def test_media_image_tgg(self):
-        assert is_media(self.get_test_loc('contenttype/media/Image1.tga'))
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.tga'))
+        test_file = self.get_test_loc('contenttype/media/Image1.tga')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_image_tif(self):
-        assert is_media(self.get_test_loc('contenttype/media/Image1.tif'))
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.tif'))
+        test_file = self.get_test_loc('contenttype/media/Image1.tif')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_image_windows_metafile(self):
-        assert 'application/octet-stream' == get_mimetype_file(self.get_test_loc('contenttype/media/Image1.emf'))
-        assert not get_mimetype_python(self.get_test_loc('contenttype/media/Image1.emf'))
-        assert get_filetype_file(self.get_test_loc('contenttype/media/Image1.emf')).startswith('Windows Enhanced Metafile')
-        assert is_media(self.get_test_loc('contenttype/media/Image1.emf'))
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.emf'))
+        test_file = self.get_test_loc('contenttype/media/Image1.emf')
+        assert 'application/octet-stream' == get_mimetype_file(test_file)
+        assert get_filetype_file(test_file).startswith('Windows Enhanced Metafile')
+        assert not get_mimetype_python(test_file)
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_video_mpeg(self):
-        assert is_media(self.get_test_loc('contenttype/media/a4.mp4'))
-        assert is_binary(self.get_test_loc('contenttype/media/a4.mp4'))
+        test_file = self.get_test_loc('contenttype/media/a4.mp4')
+        assert is_media(test_file)
+        assert is_binary(test_file)
+        assert contains_text(test_file)
 
-        assert is_media(self.get_test_loc('contenttype/media/a4.mpg'))
-        assert is_binary(self.get_test_loc('contenttype/media/a4.mpg'))
+    def test_media_video_mpg(self):
+        test_file = self.get_test_loc('contenttype/media/a4.mpg')
+        assert is_media(test_file)
+        assert is_binary(test_file)
+        assert contains_text(test_file)
 
-        assert is_media(self.get_test_loc('contenttype/media/a.mp2'))
-        assert is_binary(self.get_test_loc('contenttype/media/a.mp2'))
+    def test_media_video_mp2(self):
+        test_file = self.get_test_loc('contenttype/media/a.mp2')
+        assert is_media(test_file)
+        assert is_binary(test_file)
+        assert contains_text(test_file)
 
-    def test_media_video_msft(self):
-        assert is_media(self.get_test_loc('contenttype/media/a.avi'))
-        assert is_binary(self.get_test_loc('contenttype/media/a.avi'))
+    def test_media_video_msft_avi(self):
+        test_file = self.get_test_loc('contenttype/media/a.avi')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
-        assert is_media(self.get_test_loc('contenttype/media/Image1.wmf'))
-        assert is_binary(self.get_test_loc('contenttype/media/Image1.wmf'))
+    def test_media_video_msft_wmf(self):
+        test_file = self.get_test_loc('contenttype/media/Image1.wmf')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
-        assert is_media(self.get_test_loc('contenttype/media/mov.wvm.wmv'))
-        assert is_binary(self.get_test_loc('contenttype/media/mov.wvm.wmv'))
-        assert is_media(self.get_test_loc('contenttype/media/Movie.wmv'))
-        assert is_binary(self.get_test_loc('contenttype/media/Movie.wmv'))
+    def test_media_video_msft_wmv(self):
+        test_file = self.get_test_loc('contenttype/media/mov.wvm.wmv')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
-        assert is_media(self.get_test_loc('contenttype/media/Movie_0001.wmv'))
-        assert is_binary(self.get_test_loc('contenttype/media/Movie_0001.wmv'))
-        assert is_media(self.get_test_loc('contenttype/media/Movie_0002.wmv'))
-        assert is_binary(self.get_test_loc('contenttype/media/Movie_0002.wmv'))
+        test_file = self.get_test_loc('contenttype/media/Movie.wmv')
+        assert is_media(test_file)
+        assert is_binary(test_file)
+
+        test_file = self.get_test_loc('contenttype/media/Movie_0001.wmv')
+        assert is_media(test_file)
+        assert is_binary(test_file)
+
+        test_file = self.get_test_loc('contenttype/media/Movie_0002.wmv')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_media_video_ogg(self):
-        assert is_media(self.get_test_loc('contenttype/media/a.ogg'))
-        assert is_binary(self.get_test_loc('contenttype/media/a.ogg'))
-        assert is_media(self.get_test_loc('contenttype/media/a.theo.ogg'))
-        assert is_binary(self.get_test_loc('contenttype/media/a.theo.ogg'))
+        test_file = self.get_test_loc('contenttype/media/a.ogg')
+        assert is_media(test_file)
+        assert is_binary(test_file)
+
+    def test_media_video_theora_ogg(self):
+        test_file = self.get_test_loc('contenttype/media/a.theo.ogg')
+        assert is_media(test_file)
+        assert is_binary(test_file)
 
     def test_package_debian(self):
-        assert 'debian binary package (format 2.0)' == get_filetype(self.get_test_loc('contenttype/package/wget-el_0.5.0-8_all.deb'))
+        test_file = self.get_test_loc('contenttype/package/wget-el_0.5.0-8_all.deb')
+        assert 'debian binary package (format 2.0)' == get_filetype(test_file)
+        assert is_binary(test_file)
+        assert is_archive(test_file)
+        assert not contains_text(test_file)
 
     def test_package_java_jar(self):
-        assert is_binary(self.get_test_loc('contenttype/package/ant-jsch-1.7.0.jar'))
-        assert is_archive(self.get_test_loc('contenttype/package/ant-jsch-1.7.0.jar'))
-        assert 'java archive data (jar)' == get_filetype(self.get_test_loc('contenttype/package/ant-jsch-1.7.0.jar'))
+        test_file = self.get_test_loc('contenttype/package/ant-jsch-1.7.0.jar')
+        assert 'java archive data (jar)' == get_filetype(test_file)
+        assert is_binary(test_file)
+        assert is_compressed(test_file)
+        assert is_archive(test_file)
+        assert not contains_text(test_file)
 
     def test_package_java_jar_as_zip(self):
-        assert is_binary(self.get_test_loc('contenttype/package/ant.zip'))
-        assert is_archive(self.get_test_loc('contenttype/package/ant.zip'))
-        assert 'java archive data (jar)' == get_filetype(self.get_test_loc('contenttype/package/ant.zip'))
+        test_file = self.get_test_loc('contenttype/package/ant.zip')
+        assert 'java archive data (jar)' == get_filetype(test_file)
+        assert is_binary(test_file)
+        assert is_compressed(test_file)
+        assert is_archive(test_file)
+        assert not contains_text(test_file)
 
     def test_package_java_war(self):
-        assert is_binary(self.get_test_loc('contenttype/package/c.war'))
-        assert is_archive(self.get_test_loc('contenttype/package/c.war'))
-        assert 'zip archive data, at least v1.0 to extract' == get_filetype(self.get_test_loc('contenttype/package/c.war'))
+        test_file = self.get_test_loc('contenttype/package/c.war')
+        assert 'zip archive data, at least v1.0 to extract' == get_filetype(test_file)
+        assert is_binary(test_file)
+        assert is_compressed(test_file)
+        assert is_archive(test_file)
+        assert not contains_text(test_file)
 
     def test_package_python_egg(self):
-        assert is_binary(self.get_test_loc('contenttype/package/TicketImport-0.7a-py2.5.egg'))
-        assert is_archive(self.get_test_loc('contenttype/package/TicketImport-0.7a-py2.5.egg'))
-        assert 'zip archive data, at least v2.0 to extract' == get_filetype(self.get_test_loc('contenttype/package/TicketImport-0.7a-py2.5.egg'))
+        test_file = self.get_test_loc('contenttype/package/TicketImport-0.7a-py2.5.egg')
+        assert 'zip archive data, at least v2.0 to extract' == get_filetype(test_file)
+        assert is_binary(test_file)
+        assert is_compressed(test_file)
+        assert is_archive(test_file)
+        assert not contains_text(test_file)
 
     def test_package_rpm(self):
-        assert 'rpm v3.0 bin i386/x86_64' == get_filetype(self.get_test_loc('contenttype/package/wget-1.11.4-3.fc11.i586.rpm'))
+        test_file = self.get_test_loc('contenttype/package/wget-1.11.4-3.fc11.i586.rpm')
+        assert 'rpm v3.0 bin i386/x86_64' == get_filetype(test_file)
+        assert is_binary(test_file)
+        assert is_archive(test_file)
+        assert is_compressed(test_file)
+        assert not contains_text(test_file)
 
     def test_package_rubygem(self):
-        assert 'posix tar archive' == get_filetype(self.get_test_loc('contenttype/package/rubygems-update-1.4.1.gem'))
+        test_file = self.get_test_loc('contenttype/package/rubygems-update-1.4.1.gem')
+        assert 'posix tar archive' == get_filetype(test_file)
+        assert is_binary(test_file)
+        assert is_compressed(test_file)
+        assert is_archive(test_file)
+        assert not contains_text(test_file)
 
     def test_script_bash(self):
-        assert 'bash language text' == get_filetype(self.get_test_loc('contenttype/script/test.sh'))
+        test_file = self.get_test_loc('contenttype/script/test.sh')
+        assert 'bash language text' == get_filetype(test_file)
 
     def test_script_bash_makelinks(self):
-        assert is_source(self.get_test_loc('contenttype/script/makelinks'))
+        test_file = self.get_test_loc('contenttype/script/makelinks')
+        assert is_source(test_file)
 
     def test_script_windows_bat(self):
-        assert 'batchfile language text' == get_filetype(self.get_test_loc('contenttype/script/build_w32vc.bat'))
-        assert 'batchfile language text' == get_filetype(self.get_test_loc('contenttype/script/zip_src.bat'))
+        test_file = self.get_test_loc('contenttype/script/build_w32vc.bat')
+        assert 'batchfile language text' == get_filetype(test_file)
+
+    def test_script_windows_bat_2(self):
+        test_file = self.get_test_loc('contenttype/script/zip_src.bat')
+        assert 'batchfile language text' == get_filetype(test_file)
 
     def test_script_install(self):
         assert 'ascii text' == get_filetype(self.get_test_loc('contenttype/script/install'))
 
     def test_text_crashing(self):
-        assert 'ASCII text' == get_filetype_file(self.get_test_loc('contenttype/text/crashing-a.txt'))
-        assert 'ASCII text' == get_filetype_file(self.get_test_loc('contenttype/text/crashing-z.txt'))
+        # these used to make libmagic crash somehow
+        test_file = self.get_test_loc('contenttype/text/crashing-a.txt')
+        assert 'ASCII text' == get_filetype_file(test_file)
+        test_file = self.get_test_loc('contenttype/text/crashing-z.txt')
+        assert 'ASCII text' == get_filetype_file(test_file)
 
     def test_text(self):
-        assert not is_binary(self.get_test_loc('contenttype/text/x11-xconsortium_text.txt'))
-        assert not is_archive(self.get_test_loc('contenttype/text/x11-xconsortium_text.txt'))
+        test_file = self.get_test_loc('contenttype/text/x11-xconsortium_text.txt')
+        assert not is_binary(test_file)
+        assert not is_archive(test_file)
 
     def test_text_license_copying(self):
-        assert 'ascii text' in get_filetype(self.get_test_loc('contenttype/text/COPYING'))
-        assert not is_source(self.get_test_loc('contenttype/text/COPYING'))
-        assert is_text(self.get_test_loc('contenttype/text/COPYING'))
-        assert '' == get_filetype_pygment(self.get_test_loc('contenttype/text/COPYING'))
-        assert 'text/plain' == get_mimetype_file(self.get_test_loc('contenttype/text/COPYING'))
+        test_file = self.get_test_loc('contenttype/text/COPYING')
+        assert 'ascii text' in get_filetype(test_file)
+        assert not is_source(test_file)
+        assert is_text(test_file)
+        assert '' == get_filetype_pygment(test_file)
+        assert 'text/plain' == get_mimetype_file(test_file)
 
     def test_text_license_credits(self):
         # FIXME
-        assert 'css+lasso language text' == get_filetype(self.get_test_loc('contenttype/text/CREDITS'))
-        assert is_text(self.get_test_loc('contenttype/text/CREDITS'))
+        test_file = self.get_test_loc('contenttype/text/CREDITS')
+        assert 'css+lasso language text' == get_filetype(test_file)
+        assert is_text(test_file)
         # FIXME: incorrect
-        assert is_source(self.get_test_loc('contenttype/text/CREDITS'))
+        assert is_source(test_file)
         # FIXME: incorrect
-        assert 'CSS+Lasso' == get_filetype_pygment(self.get_test_loc('contenttype/text/CREDITS'))
-        assert 'ISO-8859 text' == get_filetype_file(self.get_test_loc('contenttype/text/CREDITS'))
-        assert 'text/plain' == get_mimetype_file(self.get_test_loc('contenttype/text/CREDITS'))
+        assert 'CSS+Lasso' == get_filetype_pygment(test_file)
+        assert 'ISO-8859 text' == get_filetype_file(test_file)
+        assert 'text/plain' == get_mimetype_file(test_file)
 
     def test_text_license_gpl(self):
-        assert not is_source(self.get_test_loc('contenttype/text/GPL.txt'))
+        test_file = self.get_test_loc('contenttype/text/GPL.txt')
+        assert not is_source(test_file)
 
     def test_text_log(self):
-        assert not is_source(self.get_test_loc('contenttype/text/windowserver.log'))
-        assert is_text(self.get_test_loc('contenttype/text/windowserver.log'))
-        assert '' == get_filetype_pygment(self.get_test_loc('contenttype/text/windowserver.log'))
-        assert 'ascii text' == get_filetype(self.get_test_loc('contenttype/text/windowserver.log'))
-        assert 'ASCII text' == get_filetype_file(self.get_test_loc('contenttype/text/windowserver.log'))
-        assert 'text/plain' == get_mimetype_file(self.get_test_loc('contenttype/text/windowserver.log'))
+        test_file = self.get_test_loc('contenttype/text/windowserver.log')
+        assert not is_source(test_file)
+        assert is_text(test_file)
+        assert '' == get_filetype_pygment(test_file)
+        assert 'ascii text' == get_filetype(test_file)
+        assert 'ASCII text' == get_filetype_file(test_file)
+        assert 'text/plain' == get_mimetype_file(test_file)
 
     def test_is_standard_include(self):
         assert is_standard_include('<built-in>')
@@ -821,16 +1063,19 @@ class TestContentType(FileBasedTesting):
         assert is_standard_include('/usr/include/this.h')
 
     def test_text_iso_text_changelog_is_not_iso_cdrom(self):
-        assert 'Non-ISO extended-ASCII text' == get_filetype_file(self.get_test_loc('contenttype/text/ChangeLog'))
+        test_file = self.get_test_loc('contenttype/text/ChangeLog')
+        assert 'Non-ISO extended-ASCII text' == get_filetype_file(test_file)
 
     @expectedFailure
     def test_text_rsync_file_is_not_octet_stream(self):
         # this is a libmagic bug: http://bugs.gw.com/view.php?id=473
-        assert 'data' != get_filetype_file(self.get_test_loc('contenttype/text/wildtest.txt'))
-        assert 'octet' not in get_mimetype_file(self.get_test_loc('contenttype/text/wildtest.txt'))
+        test_file = self.get_test_loc('contenttype/text/wildtest.txt')
+        assert 'data' != get_filetype_file(test_file)
+        assert 'octet' not in get_mimetype_file(test_file)
 
     def test_rgb_stream_is_binary(self):
         # this is a binaryornot bug: https://github.com/audreyr/binaryornot/issues/10
-        assert 'data' == get_filetype_file(self.get_test_loc('contenttype/binary/pixelstream.rgb'))
-        assert 'application/octet-stream' == get_mimetype_file(self.get_test_loc('contenttype/binary/pixelstream.rgb'))
-        assert is_binary(self.get_test_loc('contenttype/binary/pixelstream.rgb'))
+        test_file = self.get_test_loc('contenttype/binary/pixelstream.rgb')
+        assert 'data' == get_filetype_file(test_file)
+        assert 'application/octet-stream' == get_mimetype_file(test_file)
+        assert is_binary(test_file)

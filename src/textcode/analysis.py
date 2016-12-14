@@ -67,7 +67,7 @@ def text_lines(location, demarkup=False):
 
     T = typecode.get_type(location)
 
-    if not T.is_file:
+    if not T.contains_text:
         return iter([])
 
     # Should we read this as some markup, pdf office doc, text or binary?
@@ -109,8 +109,10 @@ def unicode_text_lines_from_binary(location):
     Return an iterable over unicode text lines extracted from a binary file at
     location.
     """
-    for line in strings.strings_from_file(location):
-        yield line
+    T = typecode.get_type(location)
+    if T.contains_text:
+        for line in strings.strings_from_file(location):
+            yield line
 
 
 def unicode_text_lines_from_pdf(location):
@@ -173,9 +175,11 @@ def unicode_text_lines(location):
     Open the file as binary with universal new lines then try to decode each
     line as Unicode.
     """
-    with open(location, 'rbU') as f:
-        for line in f:
-            yield remove_verbatim_line_endings(as_unicode(line))
+    T = typecode.get_type(location)
+    if T.contains_text:
+        with open(location, 'rbU') as f:
+            for line in f:
+                yield remove_verbatim_line_endings(as_unicode(line))
 
 
 def unicode_text(location):
