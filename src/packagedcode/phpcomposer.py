@@ -88,7 +88,7 @@ def parse(location):
         ('homepage', 'homepage_url'),
     ])
 
-    # mapping of top level package.json items to a function accepting as arguments
+    # mapping of top level composer.json items to a function accepting as arguments
     # the package.json element value and returning an iterable of key, values Package Object to update
     field_mappers = OrderedDict([
         ('authors', author_mapper),
@@ -103,7 +103,7 @@ def parse(location):
         data = json.load(loc, object_pairs_hook=OrderedDict)
 
     if not data.get('name') or not data.get('description'):
-        # a package.json without name and description is not a usable PHP composer package
+        # a composer.json without name and description is not a usable PHP composer package
         return
 
     package = PHPComposerPackage()
@@ -177,14 +177,13 @@ def licensing_mapper(licenses, package):
     return package
 
 
-def author_mapper(author, package):
+def author_mapper(authors_content, package):
     """
-    Update package author and return package.
+    Update package authors and return package.
     https://getcomposer.org/doc/04-schema.md#authors
-    The "author" is one person.
     """
     authors = []
-    for name, email, url in parse_person(author):
+    for name, email, url in parse_person(authors_content):
         authors.append(models.Party(type=models.party_person, name=name, email=email, url=url))
     package.authors = authors
     return package
@@ -281,7 +280,7 @@ VCS_URLS = (
 
 def parse_repo_url(repo_url):
     """
-    Validate a repo_ulr and handle shortcuts for GitHub, GitHub gist,
+    Validate a repo_url and handle shortcuts for GitHub, GitHub gist,
     Bitbucket, or GitLab repositories:
 
     See https://getcomposer.org/doc/04-schema.md#repositories
@@ -304,13 +303,11 @@ def parse_repo_url(repo_url):
 
     is_vcs_url = repo_url.startswith(VCS_URLS)
     if is_vcs_url:
-        # TODO: ensure the .git suffix is present if needed
         return repo_url
 
     if repo_url.startswith('git@'):
         left, right = repo_url.split('@', 1)
         host, repo = right.split(':', 1)
-        # may be we should
         if any(h in host for h in ['github', 'bitbucket', 'gitlab']):
             return 'https://%(host)s/%(repo)s' % locals()
         else:
@@ -328,7 +325,6 @@ def parse_repo_url(repo_url):
         hoster, repo = repo_url.split(':', 1)
         return hoster_urls[hoster] % locals()
     elif len(repo_url.split('/')) == 2:
-        # implicit github
         return 'https://github.com/%(repo_url)s' % locals()
     return repo_url
 
@@ -391,4 +387,4 @@ def parse_person(persons):
             url = person.get('homepage')
             yield name and name.strip(), email and email.strip('<> '), url and url.strip('() ')
     else:
-        raise Exception('Incorrect PHP composer package.json person: %(person)r' % locals())
+        raise Exception('Incorrect PHP composer composer.json person: %(person)r' % locals())
