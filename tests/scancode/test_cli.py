@@ -563,3 +563,52 @@ def test_scan_can_handle_weird_file_names(monkeypatch):
         expected = 'weird_file_name/expected-win.json'
 
     check_scan(test_env.get_test_loc(expected), result_file, regen=False)
+
+
+
+
+def test_scan_html_output_does_not_truncate_copyright(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.get_test_loc('do_not_truncate_copyright/scan/')
+    runner = CliRunner()
+    json_result_file = test_env.get_temp_file('test.json')
+    json_result = runner.invoke(cli.scancode, [ '-clip', '--format', 'json', test_dir, json_result_file], catch_exceptions=True)
+    assert json_result.exit_code == 0
+    assert 'Scanning done' in json_result.output
+    expected_json = test_env.get_test_loc('do_not_truncate_copyright/expected.json')
+
+    check_scan(test_env.get_test_loc(expected_json), json_result_file, strip_dates=True, regen=False)
+
+    html_result_file = test_env.get_temp_file('test.html')
+    html_result = runner.invoke(cli.scancode, [ '-clip', '--format', 'html', '-n', '3', test_dir, html_result_file], catch_exceptions=True)
+    assert html_result.exit_code == 0
+    assert 'Scanning done' in html_result.output
+
+    with open(html_result_file) as hi:
+        html_result_text = hi.read()
+    expected_template = r'''
+        <tr>
+          <td>%s</td>
+          <td>1</td>
+          <td>1</td>
+          <td>copyright</td>
+            <td>Copyright \(c\) 2000 ACME, Inc\.</td>
+        </tr>
+    '''
+    expected_files = r'''
+        copy1.c
+        copy2.c
+        subdir/copy1.c
+        subdir/copy4.c
+        subdir/copy2.c
+        subdir/copy3.c
+        copy3.c
+    '''.split()
+
+    # for this test we build regexes from a template so we can abstract whitespaces
+    import re
+    for scanned_file in expected_files:
+        exp = expected_template % (scanned_file,)
+        exp = r'\s*'.join(exp.split())
+        check = re.findall(exp, html_result_text, re.MULTILINE)
+        assert check
