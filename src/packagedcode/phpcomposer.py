@@ -149,12 +149,7 @@ def licensing_mapper(licenses, package):
         return package
 
     if isinstance(licenses, basestring):
-        if '(' in licenses and ')' in license and 'or' in license:
-            for license in licenses.split('or'):
-                license = license.lstrip('(').rstrip(')')
-                package.asserted_licenses.append(models.AssertedLicense(license=license))
-        else:
-            package.asserted_licenses.append(models.AssertedLicense(license=licenses))
+        package.asserted_licenses.append(models.AssertedLicense(license=licenses))
     elif isinstance(licenses, list):
         """
         "license": [
