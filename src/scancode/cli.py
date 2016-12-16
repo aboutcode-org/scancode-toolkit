@@ -22,7 +22,10 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import, division
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import division
+from __future__ import unicode_literals
 
 ###########################################################################
 # Monkeypatch Pool iterators so that Ctrl-C interrupts everything properly
@@ -53,13 +56,13 @@ import os
 from os.path import expanduser
 from os.path import abspath
 import sys
+from time import time
 import traceback
 from types import GeneratorType
 
 import click
 from click.termui import style
 import simplejson as json
-from time import time
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -258,7 +261,7 @@ def validate_formats(ctx, param, value):
 @click.pass_context
 
 @click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True))
-@click.argument('output_file', default='-', metavar='<output_file>', type=click.File('wb'))
+@click.argument('output_file', default='-', metavar='<output_file>', type=click.File('w', encoding='utf-8'))
 
 @click.option('-c', '--copyright', is_flag=True, default=False, help='Scan <input> for copyrights. [default]')
 @click.option('-l', '--license', is_flag=True, default=False, help='Scan <input> for licenses. [default]')
@@ -592,18 +595,31 @@ def save_results(files_count, scanned_files, format, input, output_file):
         if not os.path.isfile(format):
             click.secho('\nInvalid template passed.', err=True, fg='red')
         else:
-            output_file.write(as_template(scanned_files, template=format))
+            for template_chunk in as_template(scanned_files, template=format):
+                try:
+                    output_file.write(template_chunk)
+                except Exception as e:
+                    extra_context = 'ERROR: Failed to write output to HTML for: ' + repr(template_chunk)
+                    click.secho(extra_context, err=True, fg='red')
+                    e.args += (extra_context,)
+                    raise e
 
     elif format == 'html':
-        output_file.write(as_template(scanned_files))
+        for template_chunk in as_template(scanned_files):
+            try:
+                output_file.write(template_chunk)
+            except Exception as e:
+                extra_context = 'ERROR: Failed to write output to HTML for: ' + repr(template_chunk)
+                click.secho(extra_context, err=True, fg='red')
+                e.args += (extra_context,)
+                raise e
 
     elif format == 'html-app':
         output_file.write(as_html_app(input, output_file))
         try:
             create_html_app_assets(scanned_files, output_file)
         except HtmlAppAssetCopyWarning:
-            click.secho('\nHTML app creation skipped when printing to terminal.',
-                       err=True, fg='yellow')
+            click.secho('\nHTML app creation skipped when printing to terminal.', err=True, fg='yellow')
         except HtmlAppAssetCopyError:
             click.secho('\nFailed to create HTML app.', err=True, fg='red')
 
@@ -614,8 +630,7 @@ def save_results(files_count, scanned_files, format, input, output_file):
         meta['files_count'] = files_count
         # TODO: add scanning options to meta
         meta['files'] = scanned_files
-        # json.dump(meta, output_file, indent=2)
-        json.dump(meta, output_file, indent=2 * ' ', iterable_as_array=True)
+        output_file.write(unicode(json.dumps(meta, indent=2 * ' ', iterable_as_array=True, encoding='utf-8')))
         output_file.write('\n')
     else:
-        raise Exception('unknown format')
+        raise Exception('Unknown format')

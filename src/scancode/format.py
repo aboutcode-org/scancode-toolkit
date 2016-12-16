@@ -22,8 +22,11 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import print_function
+from __future__ import absolute_import
+from __future__ import unicode_literals
 
+import codecs
 from collections import OrderedDict
 from operator import itemgetter
 from os.path import abspath
@@ -133,12 +136,12 @@ def create_html_app_assets(results, output_file):
 
         # write json data
         root_path, assets_dir = get_html_app_files_dirs(output_file)
-        with open(join(root_path, assets_dir, 'data.json'), 'w') as f:
+        with codecs.open(join(root_path, assets_dir, 'data.json'), 'wb', encoding='utf-8') as f:
             f.write('data=')
             json.dump(results, f, iterable_as_array=True)
 
         # create help file
-        with open(join(root_path, assets_dir, 'help.html'), 'w') as f:
+        with codecs.open(join(root_path, assets_dir, 'help.html'), 'wb', encoding='utf-8') as f:
             f.write(get_html_app_help(basename(output_file.name)))
     except HtmlAppAssetCopyWarning, w:
         raise w
@@ -221,4 +224,4 @@ def as_template(scanned_files, template='html'):
         'packages': converted_packages
     }
 
-    return template.render(files=files, licenses=licenses)
+    return template.generate(files=files, licenses=licenses)
