@@ -30,7 +30,6 @@ from collections import OrderedDict
 from functools import partial
 import json
 import logging
-import re
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -38,13 +37,7 @@ from commoncode import fileutils
 from packagedcode import models
 
 """
-Handle PHP composer packages
-per https://getcomposer.org/
-"""
-
-"""
-To check
-https://github.com/pombredanne/normalize-package-data
+Handle PHP composer packages, refer to https://getcomposer.org/
 """
 
 
@@ -57,7 +50,7 @@ logger = logging.getLogger(__name__)
 class PHPComposerPackage(models.Package):
     metafiles = ('composer.json')
     filetypes = ('.json',)
-    mimetypes = ('text/xml',)
+    mimetypes = ('application/x-directory', 'text/directory', 'inode/directory')
     repo_types = (models.repo_phpcomposer,)
 
     type = models.StringType(default='phpcomposer')
