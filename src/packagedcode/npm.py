@@ -36,6 +36,7 @@ from commoncode import filetype
 from commoncode import fileutils
 
 from packagedcode import models
+from packagedcode.utils import parse_repo_url
 
 """
 Handle Node.js NPM packages
@@ -297,79 +298,6 @@ def repository_mapper(repo, package):
         package.vcs_tool = repo.get('type') or 'git'
         package.vcs_repository = parse_repo_url(repo.get('url'))
     return package
-
-
-VCS_URLS = (
-    'https://',
-    'http://',
-    'git://',
-    'git+git://',
-    'hg+https://',
-    'hg+http://',
-    'git+https://',
-    'git+http://',
-    'svn+https://',
-    'svn+http://',
-    'svn://',
-)
-
-
-def parse_repo_url(repo_url):
-    """
-    Validate a repo_ulr and handle shortcuts for GitHub, GitHub gist,
-    Bitbucket, or GitLab repositories (same syntax as npm install):
-
-    See https://docs.npmjs.com/files/package.json#repository
-    This is done here in npm:
-    https://github.com/npm/npm/blob/d3c858ce4cfb3aee515bb299eb034fe1b5e44344/node_modules/hosted-git-info/git-host-info.js
-
-    These should be resolved:
-        npm/npm
-        gist:11081aaa281
-        bitbucket:example/repo
-        gitlab:another/repo
-        expressjs/serve-static
-        git://github.com/angular/di.js.git
-        git://github.com/hapijs/boom
-        git@github.com:balderdashy/waterline-criteria.git
-        http://github.com/ariya/esprima.git
-        http://github.com/isaacs/nopt
-        https://github.com/chaijs/chai
-        https://github.com/christkv/kerberos.git
-        https://gitlab.com/foo/private.git
-        git@gitlab.com:foo/private.git
-    """
-
-    # TODO: Improve this and use outside of NPMs
-    is_vcs_url = repo_url.startswith(VCS_URLS)
-    if is_vcs_url:
-        # TODO: ensure the .git suffix is present if needed
-        return repo_url
-
-    if repo_url.startswith('git@'):
-        left, right = repo_url.split('@', 1)
-        host, repo = right.split(':', 1)
-        # may be we should
-        if any(h in host for h in ['github', 'bitbucket', 'gitlab']):
-            return 'https://%(host)s/%(repo)s' % locals()
-        else:
-            return repo_url
-
-    if repo_url.startswith('gist:'):
-        return repo_url
-
-    elif repo_url.startswith(('bitbucket:', 'gitlab:', 'github:')):
-        hoster_urls = {
-            'bitbucket:': 'https://bitbucket.org/%(repo)s',
-            'github:': 'https://github.com/%(repo)s',
-            'gitlab:': 'https://gitlab.com/%(repo)s',
-        }
-        hoster, repo = repo_url.split(':', 1)
-        return hoster_urls[hoster] % locals()
-    elif len(repo_url.split('/')) == 2:
-        # implicit github
-        return 'https://github.com/%(repo_url)s' % locals()
-    return repo_url
 
 
 def url_mapper(url, package):

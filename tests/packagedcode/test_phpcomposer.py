@@ -30,6 +30,7 @@ import os.path
 from packages_test_utils import PackageTester
 
 from packagedcode import phpcomposer
+from packagedcode.utils import parse_repo_url
 
 
 class TestPHPcomposer(PackageTester):
@@ -54,6 +55,30 @@ class TestPHPcomposer(PackageTester):
                     ('Jordi Boggiano', 'j.boggiano@seld.be', 'http://seld.be')
         ]
         assert expected == list(phpcomposer.parse_person(test))
+
+    def test_parse_repo_url_basic(self):
+        url = 'https://pear2.php.net'
+        result = parse_repo_url(url)
+        expected = 'https://pear2.php.net'
+        assert expected == result
+
+    def test_parse_repo_url_svn(self):
+        url = 'http://svn.example.org/projectA/'
+        result = parse_repo_url(url)
+        expected = 'http://svn.example.org/projectA/'
+        assert expected == result
+
+    def test_parse_repo_url_github(self):
+        url = 'https://github.com/igorw/monolog'
+        result = parse_repo_url(url)
+        expected = 'https://github.com/igorw/monolog'
+        assert expected == result
+
+    def test_parse_repo_url_bitbucket(self):
+        url = 'git@bitbucket.org:vendor/my-private-repo.git'
+        result = parse_repo_url(url)
+        expected = 'https://bitbucket.org/vendor/my-private-repo.git'
+        assert expected == result
 
     def test_parse_atimer(self):
         test_file = self.get_test_loc('phpcomposer/a-timer/composer.json')
