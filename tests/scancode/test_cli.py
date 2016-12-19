@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import division
 
 import codecs
 from collections import OrderedDict
@@ -434,7 +436,7 @@ def test_scan_does_not_fail_unicode_files_and_paths(monkeypatch):
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
     result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright',
-                                          '--package', '--email', '--url', xtest_dir + '-extract', result_file], catch_exceptions=True)
+                                          '--package', '--email', '--url', xtest_dir + '-extract', result_file], catch_exceptions=False)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
@@ -452,3 +454,13 @@ def test_scan_does_not_fail_unicode_files_and_paths(monkeypatch):
         expected = 'unicodepath/unicodepath.expected-win.json'
 
     check_scan(test_env.get_test_loc(expected), result_file, xtest_dir, regen=False)
+
+
+def test_scan_can_handle_licenses_with_unicode_metadata(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.get_test_loc('license_with_unicode_meta')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['--license', test_dir, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
