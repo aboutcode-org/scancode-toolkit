@@ -20,7 +20,14 @@
   "owners": [], 
   "packagers": [], 
   "distributors": [], 
-  "vendors": [], 
+  "vendors": [
+    {
+      "type": null, 
+      "name": "narrowspark", 
+      "email": null, 
+      "url": null
+    }
+  ], 
   "keywords": [
     "framework", 
     "narrowspark", 

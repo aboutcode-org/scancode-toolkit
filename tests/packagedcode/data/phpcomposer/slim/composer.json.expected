@@ -38,7 +38,14 @@
   "owners": [], 
   "packagers": [], 
   "distributors": [], 
-  "vendors": [], 
+  "vendors": [
+    {
+      "type": null, 
+      "name": "slim", 
+      "email": null, 
+      "url": null
+    }
+  ], 
   "keywords": [
     "framework", 
     "micro", 

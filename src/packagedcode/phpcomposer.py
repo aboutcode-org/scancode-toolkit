@@ -105,7 +105,7 @@ def parse(location):
     base_dir = fileutils.parent_directory(location)
     package.location = base_dir
     package.metafile_locations = [location]
-    package.version = data.get('version')
+
     for source, target in plain_fields.items():
         value = data.get(source)
         if value:
@@ -122,6 +122,7 @@ def parse(location):
                 value = value.strip()
             if value:
                 func(value, package)
+    vendor_mapper(package)  # Parse vendor from name value 
     return package
 
 
@@ -186,6 +187,19 @@ def support_mapper(support, package):
     package.support_contacts = [support.get('email')]
     package.bug_tracking_url = support.get('issues')
     package.code_view_url = support.get('source')
+    return package
+
+
+def vendor_mapper(package):
+    """
+    Vender is part of name element.
+    https://getcomposer.org/doc/04-schema.md#name
+    """
+    name = package.name
+    if name and '/' in name:
+        vendors = name.split('/')
+        if vendors[0]:
+            package.vendors = [models.Party(name=vendors[0])]
     return package
 
 
