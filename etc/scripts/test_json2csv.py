@@ -156,3 +156,11 @@ class TestJson2CSV(FileBasedTesting):
         test_html = self.get_test_loc('json2csv/minimal_html_app_data.json')
         test_json = self.get_test_loc('json2csv/minimal.json')
         assert json2csv.load_scan(test_html) == json2csv.load_scan(test_json)
+
+    def test_can_process_package_license_when_license_value_is_null(self):
+        test_json = self.get_test_loc('json2csv/package_license_value_null.json')
+        scan = json2csv.load_scan(test_json)
+        result = list(json2csv.flatten_scan(scan))
+        expected = self.get_test_loc('json2csv/package_license_value_null.json-expected')
+        expected = json.load(open(expected), object_pairs_hook=OrderedDict)
+        assert expected == result
