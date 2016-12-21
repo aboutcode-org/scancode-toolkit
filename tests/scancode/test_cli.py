@@ -503,3 +503,16 @@ def test_scan_can_return_matched_license_text(monkeypatch):
     result = runner.invoke(cli.scancode, ['--license', '--license-text', test_file, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     check_scan(test_env.get_test_loc(expected_file), result_file, regen=False)
+
+
+def test_scan_can_handle_weird_file_names(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.extract_test_tar('weird_file_name/weird_file_name.tar.gz')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['-c', '-i', test_dir, result_file], catch_exceptions=False)
+    assert result.exit_code == 0
+    assert "KeyError: 'sha1'" not in result.output
+    assert 'Scanning done' in result.output
+    expected = 'weird_file_name/expected.json'
+    check_scan(test_env.get_test_loc(expected), result_file, test_dir, regen=False)
