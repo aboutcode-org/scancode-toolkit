@@ -59,6 +59,7 @@ IMapUnorderedIterator.__next__ = IMapUnorderedIterator.next
 import multiprocessing
 import sys
 
+
 py_before_276 = (sys.version_info[0] == 2 and sys.version_info[1] == 7 and (sys.version_info[2] < 6))
 
 if py_before_276:
@@ -90,6 +91,7 @@ else:
 ###########################################################################
 
 from time import sleep
+import traceback
 
 import psutil
 
@@ -156,6 +158,9 @@ def interruptible(func, *args, **kwargs):
 
     except KeyboardInterrupt:
         return False, 'ERROR: Processing interrupted with Ctrl-C.'
+
+    except Exception:
+        return False, 'ERROR: ' + traceback.format_exc()
 
     finally:
         # stop processing
