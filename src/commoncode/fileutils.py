@@ -164,11 +164,19 @@ def read_text_file(location, universal_new_lines=True):
 
 def as_posixpath(location):
     """
-    Return a posix-like path using posix path separators (slash or "/") for a
-    `location` path. This converts Windows paths to look like posix paths that
-    Python accepts gracefully on Windows for path handling.
+    Return a POSIX-like path using POSIX path separators (slash or "/") for a
+    `location` path. This converts Windows paths to look like POSIX paths that
+    Python accepts gracefully on Windows for paths handling.
     """
     return location.replace(ntpath.sep, posixpath.sep)
+
+
+def _split_parent_resource(path):
+    """
+    Return a (tuple of parent directory path, resource name).
+    """
+    path = path.rstrip('/').rstrip('\\')
+    return os.path.split(path)
 
 
 def resource_name(path):
@@ -176,9 +184,7 @@ def resource_name(path):
     Return the resource name (file name or directory name) from `path` which
     is the last path segment.
     """
-    path = as_posixpath(path)
-    path = path.rstrip('/')
-    _left, right = posixpath.split(path)
+    _left, right = _split_parent_resource(path)
     return right or  ''
 
 
@@ -193,9 +199,7 @@ def parent_directory(path):
     """
     Return the parent directory of a file or directory path.
     """
-    path = as_posixpath(path)
-    path = path.rstrip('/')
-    left, _ = posixpath.split(path)
+    left, _right = _split_parent_resource(path)
     trail = '/' if left != '/' else ''
     return left + trail
 
@@ -267,7 +271,7 @@ def walk(location, ignored=ignore_nothing):
 
     if filetype.is_file(location) :
         yield parent_directory(location), [], [file_name(location)]
-    
+
     elif filetype.is_dir(location):
         dirs = []
         files = []
@@ -326,7 +330,7 @@ def resource_iter(location, ignored=ignore_nothing, with_files=True, with_dirs=T
     :param with_files: If True, include the  files.
     :return: an iterable of file and directory locations.
     """
-    assert  with_dirs or with_files, "One or both of 'with_dirs' and 'with_files' is required"
+    assert with_dirs or with_files, "fileutils.resource_iter: One or both of 'with_dirs' and 'with_files' is required"
     for top, dirs, files in walk(location, ignored):
         if with_files:
             for f in files:
