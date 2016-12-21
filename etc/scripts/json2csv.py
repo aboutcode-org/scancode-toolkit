@@ -163,7 +163,7 @@ def flatten_scan(scan):
                             pack[nk] = '\n'.join(val)
                         if k == 'asserted_licenses':
                             # All license names are to be joined in a multi-line cell
-                            licenses = [license_info['license'] for license_info in val]
+                            licenses = [license_info.get('license') or '' for license_info in val]
                             pack[nk] = '\n'.join(licenses)
                     else:
                         pack[nk] = ''
