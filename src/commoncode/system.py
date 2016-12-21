@@ -108,7 +108,7 @@ if on_linux:
 py27 = (sys.version_info[0] == 2 and sys.version_info[1] == 7)
 py34 = (sys.version_info[0] == 3 and sys.version_info[1] == 4)
 py35 = (sys.version_info[0] == 3 and sys.version_info[1] == 5)
-
+py35 = (sys.version_info[0] == 3 and sys.version_info[1] == 6)
 #
 # User related
 #
