@@ -26,10 +26,11 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import codecs
+import logging
+import json
 from collections import OrderedDict
 from functools import partial
-import json
-import logging
+
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -98,6 +99,7 @@ def parse(location):
 
     if not data.get('name') or not data.get('description'):
         # a composer.json without name and description is not a usable PHP composer package
+        # name and description fields are required: https://getcomposer.org/doc/04-schema.md#name
         return
 
     package = PHPComposerPackage()
@@ -122,7 +124,7 @@ def parse(location):
                 value = value.strip()
             if value:
                 func(value, package)
-    vendor_mapper(package)  # Parse vendor from name value 
+    vendor_mapper(package)  # Parse vendor from name value
     return package
 
 
@@ -253,13 +255,15 @@ def repository_mapper(repos, package):
     elif isinstance(repos, list):
         for repo in repos:
             if repo.get('type') == 'vcs':
+                # vcs type includes git, svn, fossil or hg.
+                # refer to https://getcomposer.org/doc/05-repositories.md#vcs
                 repo_url = repo.get('url')
-                if repo_url.startswith('svn'):
+                if repo_url.startswith('svn') or 'subversion.apache.org' in repo_url:
                     package.vcs_tool = 'svn'
-                elif repo_url.startswith('hg'):
+                elif repo_url.startswith('hg') or 'mercurial.selenic.com' in repo_url:
                     package.vcs_tool = 'hg'
-                elif repo_url.startswith('cvs'):
-                    package.vcs_tool = 'cvs'
+                elif repo_url.startswith('fossil') or 'fossil-scm.org' in repo_url:
+                    package.vcs_tool = 'fossil'
                 else:
                     package.vcs_tool = 'git'
                 package.vcs_repository = parse_repo_url(repo.get('url'))
