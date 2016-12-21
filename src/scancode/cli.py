@@ -75,6 +75,7 @@ from scancode.api import get_file_infos
 from scancode.api import get_licenses
 from scancode.api import get_package_infos
 from scancode.api import get_urls
+from scancode.api import _empty_file_infos
 
 from scancode.cache import ScanFileCache
 from scancode.cache import get_scans_cache_class
@@ -546,9 +547,12 @@ def resource_paths(base_path):
     """
     Yield tuples of (absolute path, base_path-relative path) for all the files found
     at base_path (either a directory or file) given an absolute base_path. Only yield
-    Files, not directories. All outputs are POSIX paths.
+    Files, not directories.
+    absolute path is a native OS path.
+    base_path-relative path is a POSIX path.
 
-    The relative path is guaranted to be unicode and may be URL-encoded.
+    The relative path is guaranted to be unicode and may be URL-encoded and may not
+    be suitable to address an actual file.
     """
     base_path = os.path.abspath(os.path.normpath(os.path.expanduser(base_path)))
     base_is_dir = filetype.is_dir(base_path)
@@ -560,7 +564,7 @@ def resource_paths(base_path):
         posix_path = fileutils.as_posixpath(abs_path)
         # fix paths: keep the path as relative to the original base_path
         rel_path = utils.get_relative_path(posix_path, len_base_path, base_is_dir)
-        yield posix_path, rel_path
+        yield abs_path, rel_path
 
 
 def scan_infos(input_file, diag=False):
@@ -569,15 +573,15 @@ def scan_infos(input_file, diag=False):
     This always contains an extra 'errors' key with a list of error messages,
     possibly empty.
     """
-    infos = OrderedDict()
     errors = []
     try:
         infos = get_file_infos(input_file, as_list=False)
-    except Exception, e:
+    except Exception as e:
         # never fail but instead add an error message.
-        messages = ['ERROR: infos: ' + e.message]
+        infos = _empty_file_infos()
+        errors = ['ERROR: infos: ' + e.message]
         if diag:
-            messages.append('ERROR: infos: ' + traceback.format_exc())
+            errors.append('ERROR: infos: ' + traceback.format_exc())
     # put errors last
     infos['scan_errors'] = errors
     return infos
@@ -602,7 +606,7 @@ def scan_one(input_file, scanners, diag=False):
             if isinstance(scan_details, GeneratorType):
                 scan_details = list(scan_details)
             scan_result[scan_name] = scan_details
-        except Exception, e:
+        except Exception as e:
             # never fail but instead add an error message and keep an empty scan:
             scan_result[scan_name] = []
             messages = ['ERROR: ' + scan_name + ': ' + e.message]
