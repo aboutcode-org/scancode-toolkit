@@ -51,7 +51,7 @@ logger = logging.getLogger(__name__)
 class PHPComposerPackage(models.Package):
     metafiles = ('composer.json')
     filetypes = ('.json',)
-    mimetypes = ('application/x-directory', 'text/directory', 'inode/directory')
+    mimetypes = ('application/json')
     repo_types = (models.repo_phpcomposer,)
 
     type = models.StringType(default='phpcomposer')
