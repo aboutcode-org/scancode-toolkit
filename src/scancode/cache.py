@@ -116,7 +116,8 @@ def scan_keys(path, file_info):
     Return a scan cache keys tripple for a path and file_info. If the file_info
     sha1 is empty (e.g. such as a directory), return a key based on the path instead.
     """
-    sha1_digest = file_info['sha1']
+    # we "get" because in some off cases getting file info may have failed.
+    sha1_digest = file_info.get('sha1')
     if sha1_digest:
         return keys_from_hash(sha1_digest)
     else:
