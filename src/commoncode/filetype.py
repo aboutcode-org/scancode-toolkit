@@ -22,7 +22,8 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import os
 from collections import OrderedDict
@@ -31,6 +32,10 @@ from datetime import datetime
 from commoncode.system import on_posix
 from commoncode.functional import memoize
 
+
+"""
+Low level file type utilities, essentially a wrapper around os.path and stat.
+"""
 
 def is_link(location):
     """
@@ -93,8 +98,8 @@ def get_link_target(location):
     if on_posix and is_link(location):
         try:
             # return false on OSes not supporting links
-            target = os.readlink(location)  # @UndefinedVariable
-        except UnicodeEncodeError:  # @UnusedVariable
+            target = os.readlink(location)
+        except UnicodeEncodeError:
             # location is unicode but readlink can fail in some cases
             pass
     return target
@@ -102,10 +107,12 @@ def get_link_target(location):
 
 # Map of type checker function -> short type code
 # The order of types check matters: link -> file -> directory -> special
-TYPES = OrderedDict([(is_link, ('l', 'link',)),
-                     (is_file, ('f', 'file',)),
-                     (is_dir, ('d', 'directory',)),
-                     (is_special, ('s', 'special',))])
+TYPES = OrderedDict([
+    (is_link, ('l', 'link',)),
+     (is_file, ('f', 'file',)),
+     (is_dir, ('d', 'directory',)),
+     (is_special, ('s', 'special',))
+])
 
 
 def get_type(location, short=True):
@@ -143,6 +150,7 @@ def is_writable(location):
             return os.access(location, os.R_OK | os.W_OK | os.X_OK)
         else:
             return os.access(location, os.R_OK | os.W_OK)
+
 
 def is_executable(location):
     """
