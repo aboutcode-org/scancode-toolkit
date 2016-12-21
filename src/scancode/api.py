@@ -166,10 +166,12 @@ def get_file_infos(location, as_list=True):
     from scancode import utils
     from typecode import contenttype
 
-    T = contenttype.get_type(location)
-    is_file = T.is_file
-    is_dir = T.is_dir
     infos = OrderedDict()
+    is_file = filetype.is_file(location)
+    is_dir = filetype.is_dir(location)
+
+    T = contenttype.get_type(location)
+ 
     infos['type'] = filetype.get_type(location, short=False)
     infos['name'] = utils.encode_path(fileutils.file_name(location))
     infos['extension'] = is_file and fileutils.file_extension(location) or ''
@@ -187,10 +189,37 @@ def get_file_infos(location, as_list=True):
     infos['is_media'] = is_file and T.is_media or None
     infos['is_source'] = is_file and T.is_source or None
     infos['is_script'] = is_file and T.is_script or None
+    
     if as_list:
         return [infos]
     else:
         return infos
+
+
+# FIXME: this smells bad
+def _empty_file_infos():
+    """
+    Return an empty mapping of info key/values, used in case of failure.
+    """
+    infos = OrderedDict()
+    infos['type'] = None
+    infos['name'] = None
+    infos['extension'] =  None
+    infos['date'] =  None
+    infos['size'] =  None
+    infos['sha1'] =  None
+    infos['md5'] =  None
+    infos['files_count'] =  None
+    infos['mime_type'] =  None
+    infos['file_type'] =  None
+    infos['programming_language'] =  None
+    infos['is_binary'] =  None
+    infos['is_text'] =  None
+    infos['is_archive'] =  None
+    infos['is_media'] =  None
+    infos['is_source'] =  None
+    infos['is_script'] =  None
+    return infos
 
 
 def get_package_infos(location):
