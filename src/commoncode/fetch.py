@@ -40,25 +40,26 @@ logger = logging.getLogger(__name__)
 # logger.setLevel(logging.DEBUG)
 
 
-def download_url(url, file_name=None, verify=True):
+def download_url(url, file_name=None, verify=True, timeout=10):
     """
-    Return the temporary location of the file fetched at the remote url. Use
-    file_name if provided or create a file name base on the last url segment. If
-    verify is True, SSL certification is performed. Otherwise, no verification
-    is done but a warning will be printed.
+    Fetch `url` and return the temporary location where the fetched content was
+    saved. Use `file_name` if provided or create a new `file_name` base on the last
+    url segment. If `verify` is True, SSL certification is performed. Otherwise, no
+    verification is done but a warning will be printed.
+    `timeout` is the timeout in seconds.
     """
-    requests_args = dict(timeout=10, verify=verify)
+    requests_args = dict(timeout=timeout, verify=verify)
     file_name = file_name or fileutils.file_name(url)
 
     try:
         response = requests.get(url, **requests_args)
     except (ConnectionError, InvalidSchema) as e:
-        logger.error('fetch: Download failed for %(url)r' % locals())
+        logger.error('download_url: Download failed for %(url)r' % locals())
         raise
 
     status = response.status_code
     if status != 200:
-        msg = 'fetch: Download failed for %(url)r with %(status)r' % locals()
+        msg = 'download_url: Download failed for %(url)r with %(status)r' % locals()
         logger.error(msg)
         raise Exception(msg)
 
@@ -72,10 +73,11 @@ def download_url(url, file_name=None, verify=True):
 
 def ping_url(url):
     """
-    Returns True is the URL is reachable.
+    Returns True is `url` is reachable.
     """
     import urllib2
 
+    # FIXME: if there is no 200 HTTP status, then the ULR may not be reachable.
     try:
         urllib2.urlopen(url)
     except Exception:
