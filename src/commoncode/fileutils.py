@@ -38,6 +38,7 @@ from commoncode import system
 from commoncode import text
 from commoncode import filetype
 from commoncode.filetype import is_rwx
+from textcode.strings import is_posix_path
 
 
 # this exception is not available on posix
@@ -162,11 +163,36 @@ def read_text_file(location, universal_new_lines=True):
 # PATHS AND NAMES MANIPULATIONS
 #
 
+def is_posixpath(location):
+    """
+    Return True if the `location` path is likely a POSIX-like path using POSIX path
+    separators (slash or "/"). 
+    
+    Return None if the `location` path does not contain any slash or backslash (e.g.
+    "\" or "/") and the path is either POSIX or Windows.
+    
+    Return False if the `location` path is likely a Windows-like path using backslash
+    as path separators (e.g. "\").
+    """
+    slashes = location.count('/')
+    backslashes = location.count('\\')
+    is_posix = None
+    if backslashes and slashes:
+        # this is a case where posix is the only possibility, slash are illegal on Win
+        is_posix = True
+    elif backslashes:
+        is_posix = False
+    elif slashes:
+        is_posix = True
+    
+    return is_posix
+
+
 def as_posixpath(location):
     """
     Return a POSIX-like path using POSIX path separators (slash or "/") for a
-    `location` path. This converts Windows paths to look like POSIX paths that
-    Python accepts gracefully on Windows for paths handling.
+    `location` path. This converts Windows paths to look like POSIX paths: Python
+    accepts gracefully POSIX paths on Windows.
     """
     return location.replace(ntpath.sep, posixpath.sep)
 
@@ -175,8 +201,9 @@ def _split_parent_resource(path):
     """
     Return a (tuple of parent directory path, resource name).
     """
+    splitter = is_posixpath(path) and posixpath or ntpath
     path = path.rstrip('/').rstrip('\\')
-    return os.path.split(path)
+    return splitter.split(path)
 
 
 def resource_name(path):
@@ -197,10 +224,11 @@ def file_name(path):
 
 def parent_directory(path):
     """
-    Return the parent directory of a file or directory path.
+    Return the parent directory path of a file or directory `path`.
     """
     left, _right = _split_parent_resource(path)
-    trail = '/' if left != '/' else ''
+    sep = is_posixpath(path) and '/' or '\\'
+    trail = sep if left != sep else ''
     return left + trail
 
 
