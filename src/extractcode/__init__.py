@@ -29,6 +29,7 @@ import os
 import posixpath
 import re
 import shutil
+import sys
 
 from commoncode import fileutils
 
@@ -189,6 +190,114 @@ def new_name(location, is_dir=False):
             break
         counter += 1
     return os.path.join(parent, new_name)
+
+
+def portable_new_name(filename):
+    """
+    Return a new name for `filename` that is portable across operating systems.
+    """
+    # https://github.com/pallets/werkzeug/blob/master/werkzeug/utils.py#L253
+    # https://raw.githubusercontent.com/pallets/werkzeug/8c2d63ce247ba1345e1b9332a68ceff93b2c07ab/werkzeug/utils.py
+
+    # See also https://github.com/dbr/tvnamer/blob/master/tvnamer/utils.py
+
+    _filename_ascii_strip_re = re.compile(r'[^A-Za-z0-9_.-]')
+    _windows_device_files = ('CON', 'AUX', 'COM1', 'COM2', 'COM3', 'COM4', 'LPT1', 'LPT2', 'LPT3', 'PRN', 'NUL')
+
+    # https://raw.githubusercontent.com/pallets/werkzeug/8c2d63ce247ba1345e1b9332a68ceff93b2c07ab/werkzeug/_compat.py
+    PY2 = sys.version_info[0] == 2
+    if PY2:
+        text_type = unicode
+    else:
+        text_type = str    
+
+    def secure_filename(filename):
+        r"""Pass it a filename and it will return a secure version of it.  This
+        filename can then safely be stored on a regular file system and passed
+        to :func:`os.path.join`.  The filename returned is an ASCII only string
+        for maximum portability.
+
+        On windows systems the function also makes sure that the file is not
+        named after one of the special device files.
+
+        >>> secure_filename("My cool movie.mov")
+        'My_cool_movie.mov'
+        >>> secure_filename("../../../etc/passwd")
+        'etc_passwd'
+        >>> secure_filename(u'i contain cool \xfcml\xe4uts.txt')
+        'i_contain_cool_umlauts.txt'
+
+        The function might return an empty filename.  It's your responsibility
+        to ensure that the filename is unique and that you generate random
+        filename if the function returned an empty one.
+
+        .. versionadded:: 0.5
+
+        :param filename: the filename to secure
+        """
+        if isinstance(filename, text_type):
+            from unicodedata import normalize
+            filename = normalize('NFKD', filename).encode('ascii', 'ignore')
+            if not PY2:
+                filename = filename.decode('ascii')
+        for sep in os.path.sep, os.path.altsep:
+            if sep:
+                filename = filename.replace(sep, ' ')
+        re.sub
+        filename = str(_filename_ascii_strip_re.sub('', '_'.join(
+                       filename.split()))).strip('._')
+
+        # on nt a couple of special files are present in each folder.  We
+        # have to ensure that the target file is not such a filename.  In
+        # this case we prepend an underline
+        if os.name == 'nt' and filename and \
+           filename.split('.')[0].upper() in _windows_device_files:
+            filename = '_' + filename
+
+        return filename
+
+
+
+
+def is_portable_file_name(name):
+    """
+    Return True if `name` is a legal and portable file name on all supported OSes,
+    e.g. on Linux/POSIX, Windows and MacOSX.
+
+    See for more details:
+    https://msdn.microsoft.com/en-us/library/windows/desktop/aa365247(v=vs.85).aspx
+    http://stackoverflow.com/questions/122400/what-are-reserved-filenames-for-various-platforms
+    http://www.boost.org/doc/libs/1_36_0/libs/filesystem/doc/portability_guide.htm
+    """
+
+    windows_reserved_chars1 = '<>:"/\\|?*'
+    # null to 31.
+    windows_reserved_chars2 = ''.join(map(chr, range(32)))
+    # these are illegal both upper and lowercase and with or without an extension
+    windows_reserved_base_names1 = [n.lower() for n in (
+        'CON', 'PRN', 'AUX', 'NUL',
+        'COM1', 'COM2', 'COM3', 'COM4', 'COM5', 'COM6', 'COM7', 'COM8', 'COM9',
+        'LPT1', 'LPT2', 'LPT3', 'LPT4', 'LPT5', 'LPT6', 'LPT7', 'LPT8', 'LPT9'
+    )]
+    windows_reserved_base_names2 = [re.compile('^' + n + '\..*$').match for n in windows_reserved_base_names1]
+
+    # not trailing dot in a windows name
+    windows_illegal_trailing_chars = ('.',)
+
+    illegal_char = windows_reserved_chars1 + windows_reserved_chars2
+
+    namel = name.lower()
+    if (any(c in name for c in illegal_char)
+     or any(namel == rn for rn in windows_reserved_base_names1)
+     or any(ill(namel) for ill in windows_reserved_base_names2)
+     or name.endswith(windows_illegal_trailing_chars)):
+        return False
+    return True
+
+
+# http://www.opengroup.org/onlinepubs/007904975/basedefs/xbd_chap03.html
+is_portable_posix = re.compile('^[0-9a-zA-Z\._\-]*$').match
+
 
 
 class Entry(object):
