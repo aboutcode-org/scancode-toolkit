@@ -24,7 +24,6 @@
 
 from __future__ import absolute_import, print_function
 
-
 import codecs
 import os
 import posixpath
@@ -33,7 +32,10 @@ from unittest.case import skipIf
 
 import commoncode.date
 from commoncode.testcase import FileBasedTesting
+from commoncode import filetype
 from commoncode import fileutils
+
+from commoncode.system import on_mac
 from commoncode.system import on_windows
 import typecode.contenttype
 
@@ -42,13 +44,13 @@ from extractcode_assert_utils import check_size
 
 from extractcode import all_kinds
 from extractcode import archive
+from extractcode import default_kinds
+from extractcode.archive import get_best_handler
+from extractcode import ExtractErrorFailedToExtract
 from extractcode import libarchive2
 from extractcode import sevenzip
-from extractcode import default_kinds
-from extractcode import ExtractErrorFailedToExtract
-from extractcode.archive import get_best_handler
+from extractcode import tar
 
-from commoncode.system import on_mac
 
 
 """
@@ -237,29 +239,36 @@ class TestSmokeTest(FileBasedTesting):
 class BaseArchiveTestCase(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_extract(self, test_file, test_function, expected):
+    def check_extract(self, test_function, test_file, expected, check_all=False):
         """
-        Run the extraction test_function on test_file checking that a map of
+        Run the extraction `test_function` on `test_file` checking that a map of
         expected paths --> size exist in the extracted target directory.
-        Does not test the presence of all files.
+        Does not test the presence of all files unless `check_all` is True.
         """
         test_file = self.get_test_loc(test_file)
         test_dir = self.get_temp_dir()
         test_function(test_file, test_dir)
-        for exp_path, exp_size in expected.items():
-            exp_loc = os.path.join(test_dir, exp_path)
-            msg = '''When extracting: %(test_file)s
-                With function: %(test_function)r
-                Failed to find expected path: %(exp_loc)s'''
-            assert os.path.exists(exp_loc), msg % locals()
-            if exp_size is not None:
-                res_size = os.stat(exp_loc).st_size
+
+        if check_all:
+            len_test_dir = len(test_dir)
+            extracted = {path[len_test_dir:]: filetype.get_size(path) for path in fileutils.file_iter(test_dir)}
+            expected = {os.path.join(test_dir, exp_path): exp_size for exp_path, exp_size in expected.items()}
+            assert sorted(expected.items()) == sorted(extracted.items())
+        else:
+            for exp_path, exp_size in expected.items():
+                exp_loc = os.path.join(test_dir, exp_path)
                 msg = '''When extracting: %(test_file)s
                     With function: %(test_function)r
-                    Failed to assert the correct size %(exp_size)d
-                    Got instead: %(res_size)d
-                    for expected path: %(exp_loc)s'''
-                assert exp_size == res_size, msg % locals()
+                    Failed to find expected path: %(exp_loc)s'''
+                assert os.path.exists(exp_loc), msg % locals()
+                if exp_size is not None:
+                    res_size = os.stat(exp_loc).st_size
+                    msg = '''When extracting: %(test_file)s
+                        With function: %(test_function)r
+                        Failed to assert the correct size %(exp_size)d
+                        Got instead: %(res_size)d
+                        for expected path: %(exp_loc)s'''
+                    assert exp_size == res_size, msg % locals()
 
     def collect_extracted_path(self, test_dir):
         result = []
@@ -766,7 +775,7 @@ class TestZip(BaseArchiveTestCase):
         expected = {'META-INF/license/': None,  # a directory
                     'META-INF/license/LICENSE.base64.txt': 1618,
                     'META-INF/LICENSE_1': 11366}
-        self.check_extract(test_file, archive.extract_zip, expected)
+        self.check_extract(archive.extract_zip, test_file, expected)
 
     def test_extract_zip_with_timezone(self):
         test_file = self.get_test_loc('archive/zip/timezone/c.zip')
@@ -817,8 +826,7 @@ class TestZip(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/zip/backslash/boo-0.3-src.zip')
         test_dir = self.get_temp_dir()
         archive.extract_zip(test_file, test_dir)
-        result = os.path.join(test_dir, 'src/Boo.Lang.Compiler'
-                                '/TypeSystem/InternalCallableType.cs')
+        result = os.path.join(test_dir, 'src/Boo.Lang.Compiler/TypeSystem/InternalCallableType.cs')
         assert os.path.exists(result)
 
     def test_get_best_handler_nuget_is_selected_over_zip(self):
@@ -1875,3 +1883,60 @@ class TestXar(BaseArchiveTestCase):
         assert os.path.exists(result)
         result = os.path.join(test_dir, 'xar-1.4', 'Makefile.in')
         assert os.path.exists(result)
+
+
+class TestExtractArchiveWithIllegalFilenames(BaseArchiveTestCase):
+    def test_extract_tar_with_weird_filenames_with_sevenzip(self):
+        test_file = self.get_test_loc('archive/tar/weird_file_name.tar')
+        expected = {
+            "/some 'file": 20,
+            '/some /file': 21,
+            '/some file': 38,
+            '/some"file': 39,
+            '/some/"file': 21
+        }
+        self.check_extract(sevenzip.extract, test_file, expected, check_all=True)
+
+    def test_extract_tar_with_weird_filenames_with_libarchive(self):
+        test_file = self.get_test_loc('archive/tar/weird_file_name.tar')
+        expected = {
+            "/some 'file": 20,
+            '/some /file': 21,
+            '/some file': 38,
+            '/some"file': 39,
+            '/some/"file': 21
+        }
+        self.check_extract(libarchive2.extract, test_file, expected, check_all=True)
+
+    def test_extract_tar_with_weird_filenames_with_pytar(self):
+        test_file = self.get_test_loc('archive/tar/weird_file_name.tar')
+        expected = {
+            "/some 'file": 20,
+            '/some /file': 21,
+            '/some file': 38,
+            '/some"file': 39,
+            '/some/"file': 21
+        }
+        self.check_extract(tar.extract, test_file, expected, check_all=True)
+
+    def test_extract_zip_with_weird_filenames_with_sevenzip(self):
+        test_file = self.get_test_loc('archive/zip/weird_file_name.zip')
+        expected = {
+            "/weird_file_name/some 'file": 20,
+            '/weird_file_name/some /file': 21,
+            '/weird_file_name/some file': 38,
+            '/weird_file_name/some"file': 39,
+            '/weird_file_name/some/"file': 21
+        }
+        self.check_extract(sevenzip.extract, test_file, expected, check_all=True)
+
+    def test_extract_zip_with_weird_filenames_with_libarchive(self):
+        test_file = self.get_test_loc('archive/zip/weird_file_name.zip')
+        expected = {
+            "/weird_file_name/some 'file": 20,
+            '/weird_file_name/some /file': 21,
+            '/weird_file_name/some file': 38,
+            '/weird_file_name/some"file': 39,
+            '/weird_file_name/some/"file': 21
+        }
+        self.check_extract(libarchive2.extract, test_file, expected, check_all=True)
