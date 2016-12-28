@@ -120,8 +120,7 @@ def get_licenses(location, min_score=0, diag=False):
     idx = get_index()
     licenses = licenses_details()
 
-    # note: we do USE the cache here
-    for match in idx.match(location=location, min_score=min_score, use_cache=False):
+    for match in idx.match(location=location, min_score=min_score):
         for license_key in match.rule.licenses:
             lic = licenses.get(license_key)
             result = OrderedDict()

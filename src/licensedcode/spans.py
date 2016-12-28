@@ -419,23 +419,6 @@ class Span(Set):
         else:
             return self.start - other.end
 
-    def rebase(self, offset):
-        """
-        Return a copy of this span adding `offset` to each item
-
-        For example:
-        >>> Span([4, 5]).rebase(0)
-        Span(4, 5)
-        >>> Span(4, 5).rebase(1)
-        Span(5, 6)
-        >>> Span([4, 5]).rebase(3)
-        Span(7, 8)
-        >>> Span([1, 4, 5, 8, 9]).rebase(5)
-        Span(6)|Span(9, 10)|Span(13, 14)
-        """
-        assert self.start + offset >= 0
-        return Span([i + offset for i in self._set])
-
     @staticmethod
     def from_ints(ints):
         """

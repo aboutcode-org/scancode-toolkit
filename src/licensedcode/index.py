@@ -44,9 +44,6 @@ from licensedcode import MAX_DIST
 
 from licensedcode.frequent_tokens import global_tokens_by_ranks
 
-from licensedcode.cache import license_matches_cache
-from licensedcode.cache import LicenseMatchCache
-
 from licensedcode.match import get_texts
 from licensedcode.match import merge_matches
 from licensedcode.match import refine_matches
@@ -90,8 +87,6 @@ TRACE_MATCHES_DISCARD = False
 
 TRACE_INDEXING_PERF = False
 TRACE_INDEXING_CHECK = False
-
-TRACE_CACHE = False
 
 
 def logger_debug(*args):
@@ -139,9 +134,6 @@ def get_index():
         _LICENSES_INDEX = get_or_build_index_from_cache()
     return _LICENSES_INDEX
 
-
-# Feature switch to use license cache or not (False is used only for testing)
-USE_CACHE = False
 
 # Feature switch to enable or not ngram fragments detection
 USE_AHO_FRAGMENTS = False
@@ -451,13 +443,13 @@ class LicenseIndex(object):
                     print(it)
                     print()
 
-    def match(self, location=None, query_string=None, min_score=0, detect_negative=True, use_cache=USE_CACHE):
+    def match(self, location=None, query_string=None, min_score=0, detect_negative=True):
         """
         Return a sequence of LicenseMatch by matching the file at `location` or
         the `query_string` text against the index. Only include matches with
         scores greater or equal to `min_score`.
 
-        `detect_negative` and `use_cache` are for testing purpose only.
+        `detect_negative` is for testing purpose only.
         """
         assert 0 <= min_score <= 100
 
@@ -474,34 +466,12 @@ class LicenseIndex(object):
             return []
 
         #######################################################################
-        # Whole file matching: hash, cache  and exact matching
+        # Whole file matching: hash, negative and exact matching
         #######################################################################
         whole_query_run = qry.whole_query_run()
         if not whole_query_run or not whole_query_run.matchables:
             logger_debug('#match: whole query not matchable')
             return []
-
-        if use_cache:
-            if use_cache is True:
-                matches_cache = license_matches_cache
-            else:
-                # NOTE: this weird "if" is only for cache testing when use_cache
-                # can contain a temp test cache_dir path and is not True
-                matches_cache = LicenseMatchCache(cache_dir=use_cache)
-
-        # check cache
-        if use_cache:
-            cached_matches = matches_cache.get(whole_query_run)
-
-            if cached_matches is not None:
-                if cached_matches:
-                    if TRACE_CACHE: self.debug_matches(cached_matches, '#match FINAL cache matched', location, query_string)
-                    # FIXME: should we filter and refine here?
-                    return cached_matches
-                else:
-                    # cached but empty matches
-                    if TRACE_CACHE: self.debug_matches([], '#match FINAL cache matched to NOTHING', location, query_string)
-                    return []
 
         # hash
         hash_matches = match_hash(self, whole_query_run)
@@ -561,18 +531,7 @@ class LicenseIndex(object):
                 if hash_matches:
                     if TRACE: self.debug_matches(hash_matches, '  #match Query run matches (hash)', location, query_string)
                     matches.extend(hash_matches)
-                    # note that we do not cache hash matches
                     continue
-
-                # cache short circuit
-                #########################
-                if use_cache:
-                    cached_matches = matches_cache.get(query_run)
-                    if cached_matches is not None:
-                        if TRACE_CACHE: self.debug_matches(cached_matches, '  #match Query run matches (cached)', location, query_string)
-                        if cached_matches:
-                            matches.extend(cached_matches)
-                        continue
 
                 # query run match proper using sequence matching
                 #########################################
@@ -609,11 +568,6 @@ class LicenseIndex(object):
 
                 if TRACE: self.debug_matches(run_matches, '     #match: Query run matches merged', location, query_string)
 
-                if use_cache:
-                    # always CACHE even and especially if no matches were found
-                    if TRACE_CACHE: self.debug_matches(run_matches, ' #match: Query run matches caching', location, query_string)
-                    matches_cache.put(query_run, run_matches)
-
         # final matching merge, refinement and filtering
         ################################################
         if matches:
@@ -630,11 +584,6 @@ class LicenseIndex(object):
             if TRACE_MATCHES_DISCARD: self.debug_matches(discarded, '#match: FINAL DISCARDED', location, query_string)
 
         self.debug_matches(matches, '#match: FINAL MATCHES', location, query_string, with_text=True)
-
-        if use_cache:
-            # always CACHE at the whole query ruk level even and especially if no matches were found: here whole query
-            self.debug_matches(matches, '#match: Caching Final matches', location, query_string)
-            matches_cache.put(whole_query_run, matches)
 
         return matches
 

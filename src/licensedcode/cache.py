@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,7 +24,6 @@
 
 from __future__ import absolute_import, print_function
 
-from array import array
 from functools import partial
 from hashlib import md5
 from os.path import exists
@@ -34,25 +33,17 @@ from os.path import join
 
 import yg.lockfile  # @UnresolvedImport
 
-from commoncode.fileutils import create_dir
 from commoncode.fileutils import file_iter
 from commoncode import ignore
 
 from licensedcode import src_dir
 from licensedcode import license_index_cache_dir
-from licensedcode import license_matches_cache_dir
 
 
 """
-Caching on-disk  of LicenseIndex and LicenseMatches:
-"""
-
-
-"""
-An on-disk persistent cache of LicenseIndex. The index is pickled and
-invalidated if there are any changes in the code or licenses text or rules.
-Loading and dumping the cached index is safe to use across multiple processes
-using lock files.
+An on-disk persistent cache of LicenseIndex. The index is pickled and invalidated if
+there are any changes in the code or licenses text or rules. Loading and dumping the
+cached index is safe to use across multiple processes using lock files.
 """
 
 index_lock_file = join(license_index_cache_dir, 'lockfile')
@@ -69,8 +60,8 @@ def tree_checksum(base_dir=src_dir, ignored=_ignored_from_hash):
     last modified time stamps.
 
     The purpose is to detect is there has been any modification to source code,
-    compiled code or licenses or rule files and use this as a proxyx to verify
-    the cache consistency.
+    compiled code or licenses or rule files and use this as a proxy to verify the
+    cache consistency.
     """
     hashable = [''.join([loc, str(getmtime(loc)), str(getsize(loc))])
                 for loc in file_iter(base_dir, ignored=_ignored_from_hash)]
@@ -90,9 +81,6 @@ def get_or_build_index_from_cache(force_clear=False):
     try:
         # acquire lock and wait until timeout to get a lock or die
         with yg.lockfile.FileLock(index_lock_file, timeout=LICENSE_INDEX_LOCK_TIMEOUT):
-            if force_clear:
-                license_matches_cache.clear(0)
-
             current_checksum = None
             # if we have a saved cached index
             if exists(tree_checksum_file) and exists(index_cache_file):
@@ -110,10 +98,6 @@ def get_or_build_index_from_cache(force_clear=False):
 
             # Here, the cache is not consistent with the latest code and data:
             # It is either stale or non-existing: we need to cleanup/regen
-
-            # clear the LicenseMatch cache entirely
-            license_matches_cache.clear(0)
-
             # regen the index
             idx = LicenseIndex(get_rules())
             with open(index_cache_file, 'wb') as ifc:
@@ -128,82 +112,3 @@ def get_or_build_index_from_cache(force_clear=False):
     except yg.lockfile.FileLockTimeout:
         # TODO: unable to lock in a nicer way
         raise
-
-
-"""
-A cache of recent matches from queries and query runs.
-
-Several files in the same project or codebase are highly likely have repeated
-identical license headers, texts or notices. Another common pattern is multiple
-copies of a complete (and possibly long) license text. By caching and returning
-the cached matches right away, we can avoid doing the same matching over and
-over.
-
-The approach is to use the hash of a sequence of token ids as a cache key either
-for a whole query or a query run and to ignore the actual start position.
-As values we cache a list of LicenseMatch objects for this sequence of tokens.
-
-When we have a cache hit, the returned cached LicenseMatch are adjusted for
-their query and line positions. This way we can have cache hits for the same
-sequence of tokens eventually starting at different positions in different
-queries.
-
-The cached list of LicenseMatch may be empty: this way we also cache the absence
-of matches for a sequence of tokens. This absence of matches can be as costly to
-compute initially than an actual matches.
-"""
-
-MATCH_CACHE = '0-cached'
-
-
-class LicenseMatchCache(object):
-    """
-    A file-based cache for license matches.
-    This is NOT thread-safe, but is multi-process safe.
-    """
-    def __init__(self, cache_dir):
-        self.cache_dir = cache_dir
-        create_dir(cache_dir)
-        from diskcache import Cache as Cache
-        self.cache = Cache(cache_dir)
-
-    def key(self, tokens):
-        """
-        Return a computed cache key for a sequence of query `tokens` numeric ids.
-        """
-        return md5(array('h', tokens).tostring()).hexdigest()
-
-    def get(self, query_run):
-        """
-        Return a sequence of cached LicenseMatch if found in the cache or None.
-        It may return an empty sequence if this was a cached value.
-        """
-        cache_key = self.key(query_run.tokens)
-        cached = self.cache.get(cache_key)
-        # either we did not get a hit or we got a hit to nothing (empty list)
-        # which is a valid cached value
-        if not cached:
-            return cached
-
-        qrs = query_run.start
-        qre = query_run.end
-        return [lm.rebase(qrs, qre, MATCH_CACHE) for lm in cached]
-
-    def put(self, query_run, matches):
-        """
-        Cache a license `matches` sequence given a `query run` tokens.
-        """
-        cache_key = self.key(query_run.tokens)
-        self.cache[cache_key] = matches
-        return cache_key
-
-    def clear(self, *args):
-        """
-        Purge the cache keeping up to `max_size` of the most recently created
-        entries. If `max_size` is zero, the whole cache is purged.
-        Raise an exception if a write lock cannot be acquired.
-        """
-        self.cache.clear()
-
-# global cache
-license_matches_cache = LicenseMatchCache(cache_dir=license_matches_cache_dir)

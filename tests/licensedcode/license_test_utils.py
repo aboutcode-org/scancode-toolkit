@@ -55,9 +55,7 @@ def make_license_test_function(expected_licenses, test_file, test_data_file, tes
         idx = index.get_index()
         matches = idx.match(location=test_file, min_score=min_score,
                             # if negative, do not detect negative rules when testing negative rules
-                            detect_negative=detect_negative,
-                            # DO NOT USE CACHE when testing unless testing cache elsewhere
-                            use_cache=False)
+                            detect_negative=detect_negative)
 
         if not matches:
             matches = []

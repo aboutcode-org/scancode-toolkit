@@ -36,7 +36,6 @@ import textwrap
 
 from licensedcode import query
 from licensedcode.spans import Span
-from licensedcode import cache
 from licensedcode import MAX_DIST
 
 """
@@ -325,21 +324,6 @@ class LicenseMatch(object):
         self.matcher = combined.matcher
         self.query_run_start = min(self.query_run_start, other.query_run_start)
         return self
-
-    def rebase(self, new_query_start, new_query_end, matcher):
-        """
-        Return a copy of this match with a new qspan updating the matcher of this
-        copied match as needed.
-        """
-        offset = new_query_start - self.query_run_start
-        return LicenseMatch(
-            rule=self.rule,
-            qspan=self.qspan.rebase(offset),
-            ispan=Span(self.ispan),
-            hispan=Span(self.hispan),
-            query_run_start=new_query_start,
-            matcher=' '.join([self.matcher.replace(cache.MATCH_CACHE, '').strip(), matcher]),
-        )
 
     def small(self):
         """

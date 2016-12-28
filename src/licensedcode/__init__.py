@@ -43,7 +43,6 @@ rules_data_dir = join(data_dir, 'rules')
 root_dir = dirname(src_dir)
 cache_dir = join(root_dir, '.cache')
 license_index_cache_dir = join(cache_dir, 'license_index')
-license_matches_cache_dir = join(cache_dir, 'license_matches')
 
 if not exists(license_index_cache_dir):
     fileutils.create_dir(license_index_cache_dir)
