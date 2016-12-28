@@ -464,3 +464,22 @@ def test_scan_can_handle_licenses_with_unicode_metadata(monkeypatch):
     result = runner.invoke(cli.scancode, ['--license', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
+
+
+def test_scan_quiet_does_not_echo_anything(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.extract_test_tar('info/basic.tgz')
+    runner = CliRunner()
+    result1_file = test_env.get_temp_file('json')
+    result1 = runner.invoke(cli.scancode, ['--quiet', '--info', test_dir, result1_file], catch_exceptions=True)
+    assert result1.exit_code == 0
+    assert not result1.output
+
+    # also test with an output of JSON to stdout
+    runner2 = CliRunner()
+    result2 = runner2.invoke(cli.scancode, ['--quiet', '--info', test_dir], catch_exceptions=False)
+    assert result2.exit_code == 0
+
+    # outputs to file or stdout should be identical
+    result1_output = open(result1_file).read()
+    assert result1_output == result2.output

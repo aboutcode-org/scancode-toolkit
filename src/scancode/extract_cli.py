@@ -26,6 +26,7 @@ from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
+from functools import partial
 import os
 
 import click
@@ -39,10 +40,13 @@ from scancode.cli import version
 from scancode import utils
 
 
+echo_stderr = partial(click.secho, err=True)
+
+
 def print_version(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
-    click.secho('ScanCode extractcode version ' + version)
+    echo_stderr('ScanCode extractcode version ' + version)
     ctx.exit()
 
 
@@ -80,7 +84,7 @@ Try 'extractcode --help' for help on options and arguments.'''
 @click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True))
 
 @click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.')
-@click.option('--quiet', is_flag=True, default=False, help='Do not print any progress message.')
+@click.option('--quiet', is_flag=True, default=False, help='Do not print any summary or progress message.')
 
 @click.help_option('-h', '--help')
 @click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.')
@@ -100,6 +104,8 @@ def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssign
         """
         Display an extract event.
         """
+        if quiet:
+            return ''
         if not item:
             return ''
         if verbose:
@@ -123,9 +129,9 @@ def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssign
             source = fileutils.as_posixpath(xev.source)
             source = utils.get_relative_path(path=source, len_base_path=len_base_path, base_is_dir=base_is_dir)
             for e in xev.errors:
-                click.secho('ERROR extracting: %(source)s: %(e)r' % locals(), fg='red', err=not verbose)
+                echo_stderr('ERROR extracting: %(source)s: %(e)r' % locals(), fg='red')
             for warn in xev.warnings:
-                click.secho('WARNING extracting: %(source)s: %(warn)r' % locals(), fg='yellow', err=not verbose)
+                echo_stderr('WARNING extracting: %(source)s: %(warn)r' % locals(), fg='yellow')
 
         summary_color = 'green'
         if has_warnings:
@@ -133,7 +139,8 @@ def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssign
         if has_errors:
             summary_color = 'red'
 
-        click.secho('Extracting done.', fg=summary_color, err=not verbose, reset=True)
+        echo_stderr('Extracting done.', fg=summary_color, reset=True)
+
 
     # use for relative paths computation
     len_base_path = len(abs_location)
@@ -141,8 +148,8 @@ def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssign
 
     extract_results = []
     has_extract_errors = False
-
-    click.secho('Extracting archives...', fg='green', err=not verbose)
+    if not quiet:
+        echo_stderr('Extracting archives...', fg='green')
 
     with utils.progressmanager(extract_archives(abs_location), item_show_func=extract_event,
                                verbose=verbose, quiet=quiet) as extraction_events:
@@ -151,7 +158,8 @@ def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssign
                 has_extract_errors = has_extract_errors or xev.errors
                 extract_results.append(xev)
 
-    display_extract_summary()
+    if not quiet:
+        display_extract_summary()
 
     rc = 1 if has_extract_errors else 0
     ctx.exit(rc)
