@@ -92,6 +92,8 @@ from scancode.interrupt import DEFAULT_MAX_MEMORY
 
 from scancode import utils
 
+echo_stderr = partial(click.secho, err=True)
+
 
 info_text = '''
 ScanCode scans code and other files for origin and license.
@@ -189,12 +191,12 @@ HTML file:
 
     scancode --format html samples/zlib scancode_result.html
 
-Scan a single file for copyrights. Print scan results on terminal as JSON:
+Scan a single file for copyrights. Print scan results to stdout as JSON:
 
     scancode --copyright samples/zlib/zlib.h
 
-Scan a single file for licenses, print verbose progress on terminal as each file
-is scanned. Save scan to a JSON file:
+Scan a single file for licenses, print verbose progress to stderr as each
+file is scanned. Save scan to a JSON file:
 
     scancode --license --verbose samples/zlib/zlib.h licenses.json
 
@@ -257,6 +259,7 @@ def validate_formats(ctx, param, value):
         raise click.BadParameter('Invalid template file: "%(value)s" does not exists or is not readable.' % locals())
     return value
 
+
 @click.command(name='scancode', epilog=epilog_text, cls=ScanCommand)
 @click.pass_context
 
@@ -277,16 +280,16 @@ def validate_formats(ctx, param, value):
                     'or the path to a custom template' % ' or '.join(formats)),
               callback=validate_formats)
 @click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.')
-@click.option('--quiet', is_flag=True, default=False, help='Do not print progress messages.')
+@click.option('--quiet', is_flag=True, default=False, help='Do not print summary or progress messages.')
 @click.option('-n', '--processes', is_flag=False, default=1, type=int, show_default=True, help='Scan <input> using n parallel processes.')
 
 @click.help_option('-h', '--help')
 @click.option('--examples', is_flag=True, is_eager=True, callback=print_examples, help=('Show command examples and exit.'))
 @click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.')
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
-@click.option('--diag', is_flag=True, default=False, help='Include detailed diagnostic messages in results if there are scanning errors.')
-@click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=int, show_default=True, help='Stop scanning a file if it takes longer than a timeout in seconds.')
-@click.option('--max-memory', is_flag=False, default=DEFAULT_MAX_MEMORY, type=int, show_default=True, help='Stop scanning a file if it its scan requires more than a maximum amount of memory in megabytes.')
+@click.option('--diag', is_flag=True, default=False, help='Include additional diagnostic information such as error messages or result details.')
+@click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=int, show_default=True, help='Stop scanning a file if scanning takes longer than a timeout in seconds.')
+@click.option('--max-memory', is_flag=False, default=DEFAULT_MAX_MEMORY, type=int, show_default=True, help='Stop scanning a file if scanning requires more than a maximum amount of memory in megabytes.')
 
 def scancode(ctx, input, output_file, copyright, license, package,
              email, url, info, license_score, format,
@@ -295,7 +298,8 @@ def scancode(ctx, input, output_file, copyright, license, package,
              *args, **kwargs):
     """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
 
-    The scan results are printed on terminal if <output_file> is not provided.
+    The scan results are printed to stdout if <output_file> is not provided.
+    Error and progress is printed to stderr. 
     """
     possible_scans = [copyright, license, package, email, url, info]
     # Default scan when no options is provided
@@ -306,26 +310,25 @@ def scancode(ctx, input, output_file, copyright, license, package,
 
     scans_cache_class = get_scans_cache_class()
     try:
-        to_stdout = output_file == sys.stdout
         files_count, results = scan(input, copyright, license, package, email, url, info, license_score,
-                                    verbose, quiet, processes, scans_cache_class, to_stdout,
+                                    verbose, quiet, processes, scans_cache_class,
                                     diag, timeout, max_memory)
-        click.secho('Saving results.', err=to_stdout, fg='green')
+        if not quiet:
+            echo_stderr('Saving results.', fg='green')
         save_results(files_count, results, format, input, output_file)
     finally:
         # cleanup
         cache = scans_cache_class()
         cache.clear()
 
-    # TODO: addproper return code
+    # TODO: add proper return code
     # rc = 1 if has__errors else 0
     # ctx.exit(rc)
 
 
 def scan(input_path, copyright=True, license=True, package=True,
          email=False, url=False, info=True, license_score=0,
-         verbose=False, quiet=False, processes=1,
-         scans_cache_class=None, to_stdout=False,
+         verbose=False, quiet=False, processes=1, scans_cache_class=None,
          diag=False, timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY):
     """
     Return a tuple of (file_count, indexing_time, scan_results) where
@@ -354,7 +357,8 @@ def scan(input_path, copyright=True, license=True, package=True,
     scans = info and ['infos'] or []
     scans.extend([k for k, v in scanners.items() if v])
     _scans = ', '.join(scans)
-    click.secho('Scanning files for: %(_scans)s with %(processes)d process(es)...' % locals(), err=to_stdout)
+    if not quiet:
+        echo_stderr('Scanning files for: %(_scans)s with %(processes)d process(es)...' % locals())
 
     scan_summary['scans'] = scans[:]
     scan_start = time()
@@ -362,11 +366,13 @@ def scan(input_path, copyright=True, license=True, package=True,
     if license:
         # build index outside of the main loop
         # this also ensures that forked processes will get the index on POSIX naturally
-        click.secho('Building license detection index...', err=to_stdout, fg='green', nl=False)
+        if not quiet:
+            echo_stderr('Building license detection index...', fg='green', nl=False)
         from licensedcode.index import get_index
         _idx = get_index()
         indexing_time = time() - scan_start
-        click.secho('Done.', err=to_stdout, fg='green', nl=True)
+        if not quiet:
+            echo_stderr('Done.', fg='green', nl=True)
 
     scan_summary['indexing_time'] = indexing_time
 
@@ -391,10 +397,13 @@ def scan(input_path, copyright=True, license=True, package=True,
             scanned_files = pool.imap_unordered(scanit, logged_resources, chunksize=1)
             pool.close()
 
-            click.secho('Scanning files...', err=to_stdout, fg='green')
+            if not quiet:
+                echo_stderr('Scanning files...', fg='green')
 
             def scan_event(item):
                 """Progress event displayed each time a file is scanned"""
+                if quiet:
+                    return ''
                 if item:
                     _scan_success, _scanned_path = item
                     _progress_line = verbose and _scanned_path or fileutils.file_name(_scanned_path)
@@ -403,7 +412,8 @@ def scan(input_path, copyright=True, license=True, package=True,
             scanning_errors = []
             files_count = 0
             with utils.progressmanager(scanned_files, item_show_func=scan_event,
-                                       show_pos=True, verbose=verbose, quiet=quiet) as scanned:
+                                       show_pos=True, verbose=verbose, quiet=quiet,
+                                       file=sys.stderr) as scanned:
                 while True:
                     try:
                         result = scanned.next()
@@ -422,6 +432,8 @@ def scan(input_path, copyright=True, license=True, package=True,
             # http://bugs.python.org/issue15101
             pool.terminate()
 
+    # TODO: add stats to results somehow
+
     # Compute stats
     ##########################
     scan_summary['files_count'] = files_count
@@ -434,19 +446,20 @@ def scan(input_path, copyright=True, license=True, package=True,
     files_scanned_per_second = round(float(files_count) / scanning_time , 2)
     scan_summary['files_scanned_per_second'] = files_scanned_per_second
 
-    # Display stats
-    ##########################
-    click.secho('Scanning done.', fg=scanning_errors and 'red' or 'green', err=to_stdout)
-    if scanning_errors:
-        click.secho('Some files failed to scan properly. See scan for details:', fg='red', err=to_stdout)
-        for errored_path in scanning_errors:
-            click.secho(' ' + errored_path, fg='red', err=to_stdout)
+    if not quiet:
+        # Display stats
+        ##########################
+        echo_stderr('Scanning done.', fg=scanning_errors and 'red' or 'green')
+        if scanning_errors:
+            echo_stderr('Some files failed to scan properly. See scan for details:', fg='red')
+            for errored_path in scanning_errors:
+                echo_stderr(' ' + errored_path, fg='red')
 
-    click.secho('Scan statistics: %(files_count)d files scanned in %(total_time)ds.' % locals(), err=to_stdout)
-    click.secho('Scan options:    %(_scans)s with %(processes)d process(es).' % locals(), err=to_stdout)
-    click.secho('Scanning speed:  %(files_scanned_per_second)s files per sec.' % locals(), err=to_stdout)
-    click.secho('Scanning time:   %(scanning_time)ds.' % locals(), err=to_stdout)
-    click.secho('Indexing time:   %(indexing_time)ds.' % locals(), err=to_stdout, reset=True)
+        echo_stderr('Scan statistics: %(files_count)d files scanned in %(total_time)ds.' % locals())
+        echo_stderr('Scan options:    %(_scans)s with %(processes)d process(es).' % locals())
+        echo_stderr('Scanning speed:  %(files_scanned_per_second)s files per sec.' % locals())
+        echo_stderr('Scanning time:   %(scanning_time)ds.' % locals())
+        echo_stderr('Indexing time:   %(indexing_time)ds.' % locals(), reset=True)
 
     # finally return an iterator on cached results
     scan_names = []
@@ -585,7 +598,10 @@ def save_results(files_count, scanned_files, format, input, output_file):
     """
     Save scan results to file or screen.
     """
-    if output_file != sys.stdout:
+    # note: in tests, sys.sdtout is not used, but some io wrapper with no name attributes
+    is_real_file = hasattr(output_file, 'name')
+
+    if output_file != sys.stdout and is_real_file:
         parent_dir = os.path.dirname(output_file.name)
         if parent_dir:
             fileutils.create_dir(abspath(expanduser(parent_dir)))
@@ -593,14 +609,14 @@ def save_results(files_count, scanned_files, format, input, output_file):
     if format and format not in formats:
         # render using a user-provided custom format template
         if not os.path.isfile(format):
-            click.secho('\nInvalid template passed.', err=True, fg='red')
+            echo_stderr('\nInvalid template passed.', fg='red')
         else:
             for template_chunk in as_template(scanned_files, template=format):
                 try:
                     output_file.write(template_chunk)
                 except Exception as e:
                     extra_context = 'ERROR: Failed to write output to HTML for: ' + repr(template_chunk)
-                    click.secho(extra_context, err=True, fg='red')
+                    echo_stderr(extra_context, fg='red')
                     e.args += (extra_context,)
                     raise e
 
@@ -610,7 +626,7 @@ def save_results(files_count, scanned_files, format, input, output_file):
                 output_file.write(template_chunk)
             except Exception as e:
                 extra_context = 'ERROR: Failed to write output to HTML for: ' + repr(template_chunk)
-                click.secho(extra_context, err=True, fg='red')
+                echo_stderr(extra_context, fg='red')
                 e.args += (extra_context,)
                 raise e
 
@@ -619,9 +635,9 @@ def save_results(files_count, scanned_files, format, input, output_file):
         try:
             create_html_app_assets(scanned_files, output_file)
         except HtmlAppAssetCopyWarning:
-            click.secho('\nHTML app creation skipped when printing to terminal.', err=True, fg='yellow')
+            echo_stderr('\nHTML app creation skipped when printing to stdout.', fg='yellow')
         except HtmlAppAssetCopyError:
-            click.secho('\nFailed to create HTML app.', err=True, fg='red')
+            echo_stderr('\nFailed to create HTML app.', fg='red')
 
     elif format == 'json':
         meta = OrderedDict()
