@@ -191,11 +191,11 @@ HTML file:
 
     scancode --format html samples/zlib scancode_result.html
 
-Scan a single file for copyrights. Print scan results on terminal stdout as JSON:
+Scan a single file for copyrights. Print scan results to stdout as JSON:
 
     scancode --copyright samples/zlib/zlib.h
 
-Scan a single file for licenses, print verbose progress on terminal stderr as each
+Scan a single file for licenses, print verbose progress to stderr as each
 file is scanned. Save scan to a JSON file:
 
     scancode --license --verbose samples/zlib/zlib.h licenses.json
@@ -298,7 +298,8 @@ def scancode(ctx, input, output_file, copyright, license, package,
              *args, **kwargs):
     """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
 
-    The scan results are printed on the terminal stdout if <output_file> is not provided.
+    The scan results are printed to stdout if <output_file> is not provided.
+    Error and progress is printed to stderr. 
     """
     possible_scans = [copyright, license, package, email, url, info]
     # Default scan when no options is provided
@@ -411,7 +412,8 @@ def scan(input_path, copyright=True, license=True, package=True,
             scanning_errors = []
             files_count = 0
             with utils.progressmanager(scanned_files, item_show_func=scan_event,
-                                       show_pos=True, verbose=verbose, quiet=quiet) as scanned:
+                                       show_pos=True, verbose=verbose, quiet=quiet,
+                                       file=sys.stderr) as scanned:
                 while True:
                     try:
                         result = scanned.next()
@@ -633,7 +635,7 @@ def save_results(files_count, scanned_files, format, input, output_file):
         try:
             create_html_app_assets(scanned_files, output_file)
         except HtmlAppAssetCopyWarning:
-            echo_stderr('\nHTML app creation skipped when printing to terminal.', fg='yellow')
+            echo_stderr('\nHTML app creation skipped when printing to stdout.', fg='yellow')
         except HtmlAppAssetCopyError:
             echo_stderr('\nFailed to create HTML app.', fg='red')
 
