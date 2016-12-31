@@ -1,0 +1,8 @@
+about_resource: attrs-16.3.0-py2.py3-none-any.whl
+version: 16.3.0
+name: beautifulsoup
+home_url: http://attrs.org
+download_url: https://pypi.python.org/packages/bb/6c/730710c765ab6d4493f460196ab003671d27b38568412a780fc67532b47c/attrs-16.3.0-py2.py3-none-any.whl#md5=0d188abbbde8c83253cb11e8df890d30
+license_text_file: attrs.LICENSE
+dje_license: mit
+copyright: Copyright (c) 2015 Hynek Schlawack

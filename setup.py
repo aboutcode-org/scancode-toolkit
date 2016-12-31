@@ -74,6 +74,7 @@ setup(
         'bitarray >= 0.8.1, < 1.0.0',
         'intbitset >= 2.3.0,  < 3.0',
         'pyahocorasick >= 1.1, < 1.2',
+        'attrs >=16.0, < 17.0',
 
         # caching
         'zc.lockfile >= 1.0.0, < 2.0.0',
