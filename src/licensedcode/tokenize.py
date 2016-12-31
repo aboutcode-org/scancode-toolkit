@@ -40,11 +40,10 @@ Utilities to break texts in lines and tokens (aka. words) with specialized versi
 for queries and rules texts.
 """
 
-
-def query_lines(location=None, query_string=None):
+def query_lines(location=None, query_string=None, strip=True):
     """
     Return an iterable of text lines given a file at `location` or a
-    `query string`. Include empty lines. 
+    `query string`. Include empty lines.
     """
     # TODO: OPTIMIZE: tokenizing line by line may be rather slow
     # we could instead get lines and tokens at once in a batch?
@@ -52,16 +51,25 @@ def query_lines(location=None, query_string=None):
     if location:
         lines = text_lines(location, demarkup=False)
     elif query_string:
-        lines = query_string.splitlines(False)
+        if strip:
+            keepends = False
+        else:
+            keepends = True
+        lines = query_string.splitlines(keepends)
 
     for line in lines:
-        yield line.strip()
+        if strip:
+            yield line.strip()
+        else:
+            yield line
 
 
 # Split on whitespace and punctuations: keep only characters and +.
 # Keeping the + is important for licenses name such as GPL2+.
 
-query_pattern = '[a-zA-Z0-9]+ ?\+|[^!\"#\$%&\'\(\)\*,\-\./:;<=>\?@\[\]\^_`\{\|\}\\\~\s\+\x92\x93\x94”“’–]'
+_letter_or_digit = '[a-zA-Z0-9]+ ?\+'
+_not_punctuation = '[^!\"#\$%&\'\(\)\*,\-\./:;<=>\?@\[\]\^_`\{\|\}\\\~\s\+\x92\x93\x94”“’–]'
+query_pattern = _letter_or_digit + '|' + _not_punctuation
 word_splitter = re.compile('(?:%s)+' % query_pattern, re.UNICODE).findall
 
 def query_tokenizer(text, lower=True):
@@ -72,6 +80,33 @@ def query_tokenizer(text, lower=True):
         return []
     text = lower and text.lower() or text
     return (token for token in word_splitter(text) if token)
+
+
+# Alternate pattern used for matched text collection
+# collect tokens and non-token texts in two different groups
+_punctuation = '[!\"#\$%&\'\(\)\*,\-\./:;<=>\?@\[\]\^_`\{\|\}\\\~\s\+\x92\x93\x94”“’–]'
+_text_capture_pattern = '(?P<token>(?:' + query_pattern + ')+)' + '|' + '(?P<punct>' + _punctuation + '+)'
+tokens_and_non_tokens = re.compile(_text_capture_pattern, re.UNICODE).finditer
+
+def matched_query_text_tokenizer(text):
+    """
+    Return an iterable of tokens and non-tokens from a unicode query text keeping
+    everything (including punctuations, line endings, etc.)
+    The returned iterable contains 2-tuples of:
+    - True if the string is a text token or False if this is not (such as punctuation, spaces, etc).
+    - the corresponding string
+    This is used to reconstruct the matched query text accurately.
+    """
+    if not text:
+        return
+    for match in tokens_and_non_tokens(text):
+        if not match:
+            continue
+        mgd = match.groupdict()
+        token = mgd.get('token')
+        punct = mgd.get('punct')
+        if token or punct:
+            yield (True, token) if token else (False, punct)
 
 
 # Template-aware splitter, keeping a templated part {{anything}} as a token.
@@ -140,7 +175,7 @@ def ngrams(iterable, ngram_length):
     []
 
     This also works with arrays or tuples:
-    
+
     >>> from array import array
     >>> list(ngrams(array(b'h', [1,2,3,4,5]), 2))
     [(1, 2), (2, 3), (3, 4), (4, 5)]
@@ -156,7 +191,7 @@ def select_ngrams(ngrams, with_pos=False):
     Return an iterable as a subset of a sequence of ngrams using the hailstorm
     algorithm. If `with_pos` is True also include the starting position for the ngram
     in the original sequence.
-    
+
     Definition from the paper: http://www2009.eprints.org/7/1/p61.pdf
       The algorithm first fingerprints every token and then selects a shingle s if
       the minimum fingerprint value of all k tokens in s occurs at the first or the

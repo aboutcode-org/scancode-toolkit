@@ -25,6 +25,7 @@
 from __future__ import absolute_import, print_function
 
 import codecs
+import itertools
 import os
 
 from commoncode.testcase import FileBasedTesting
@@ -35,6 +36,9 @@ from licensedcode.tokenize import word_splitter
 
 from licensedcode.tokenize import rule_tokenizer
 from licensedcode.tokenize import ngrams
+
+from licensedcode.tokenize import matched_query_text_tokenizer
+from licensedcode.tokenize import tokens_and_non_tokens
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -424,3 +428,91 @@ class TestNgrams(FileBasedTesting):
             ('and', 'binary', 'are', 'permitted.')]
 
         assert expected == result
+
+
+class MatchedTextTokenizer(FileBasedTesting):
+    test_data_dir = TEST_DATA_DIR
+
+    def test_tokens_and_non_tokens_yield_properly_all_texts(self):
+        text = u'''Redistribution+ ;and use in! 2003 source and binary forms, 
+        ()with or without modification, are permitted.\t\n
+        \r'''
+        result = [m.groupdict() for m in tokens_and_non_tokens(text)]
+        expected = [
+            {u'punct': None, u'token': u'Redistribution+'},
+            {u'punct': u' ;', u'token': None},
+            {u'punct': None, u'token': u'and'},
+            {u'punct': u' ', u'token': None},
+            {u'punct': None, u'token': u'use'},
+            {u'punct': u' ', u'token': None},
+            {u'punct': None, u'token': u'in'},
+            {u'punct': u'! ', u'token': None},
+            {u'punct': None, u'token': u'2003'},
+            {u'punct': u' ', u'token': None},
+            {u'punct': None, u'token': u'source'},
+            {u'punct': u' ', u'token': None},
+            {u'punct': None, u'token': u'and'},
+            {u'punct': u' ', u'token': None},
+            {u'punct': None, u'token': u'binary'},
+            {u'punct': u' ', u'token': None},
+            {u'punct': None, u'token': u'forms'},
+            {u'punct': u', \n        ()', u'token': None},
+            {u'punct': None, u'token': u'with'},
+            {u'punct': u' ', u'token': None},
+            {u'punct': None, u'token': u'or'},
+            {u'punct': u' ', u'token': None},
+            {u'punct': None, u'token': u'without'},
+            {u'punct': u' ', u'token': None},
+            {u'punct': None, u'token': u'modification'},
+            {u'punct': u', ', u'token': None},
+            {u'punct': None, u'token': u'are'},
+            {u'punct': u' ', u'token': None},
+            {u'punct': None, u'token': u'permitted'},
+            {u'punct': u'.\t\n\n        \r', u'token': None}
+        ]
+        assert expected == result
+
+        result_as_text = u''.join(itertools.chain.from_iterable([v for v in m.groupdict().values() if v] for m in tokens_and_non_tokens(text)))
+        assert text == result_as_text
+        
+    def matched_query_text_tokenizer_yield_properly_all_texts(self):
+        text = u'''Redistribution+ ;and use in! 2003 source and binary forms, 
+        ()with or without modification, are permitted.\t\n
+        \r'''
+        result = list(matched_query_text_tokenizer(text))
+        expected = [
+            (True, u'Redistribution+'),
+            (False, u' ;'),
+            (True, u'and'),
+            (False, u' '),
+            (True, u'use'),
+            (False, u' '),
+            (True, u'in'),
+            (False, u'! '),
+            (True, u'2003'),
+            (False, u' '),
+            (True, u'source'),
+            (False, u' '),
+            (True, u'and'),
+            (False, u' '),
+            (True, u'binary'),
+            (False, u' '),
+            (True, u'forms'),
+            (False, u', \n        ()'),
+            (True, u'with'),
+            (False, u' '),
+            (True, u'or'),
+            (False, u' '),
+            (True, u'without'),
+            (False, u' '),
+            (True, u'modification'),
+            (False, u', '),
+            (True, u'are'),
+            (False, u' '),
+            (True, u'permitted'),
+            (False, u'.\t\n\n        \r')
+        ]
+        assert expected == result
+
+        result_as_text = u''.join(v for _t, v in result)
+        assert text == result_as_text

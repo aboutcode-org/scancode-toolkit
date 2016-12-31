@@ -160,9 +160,10 @@ def as_unicode(line):
     return s
 
 
-def remove_verbatim_line_endings(s):
+def remove_verbatim_cr_lf_tab_chars(s):
     """
-    Return a string removing verbatim, escaped line endings (such as \n).
+    Return a string replacinf by a space any verbatim but escaped line endings and
+    tabs (such as a literal \n or \r \t).
     """
     if not s:
         return s
@@ -179,7 +180,7 @@ def unicode_text_lines(location):
     if T.contains_text:
         with open(location, 'rbU') as f:
             for line in f:
-                yield remove_verbatim_line_endings(as_unicode(line))
+                yield remove_verbatim_cr_lf_tab_chars(as_unicode(line))
 
 
 def unicode_text(location):
