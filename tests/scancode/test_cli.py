@@ -155,7 +155,7 @@ def test_scancode_skip_vcs_files_and_dirs_by_default(monkeypatch):
     result_file = test_env.get_temp_file('json')
     result = runner.invoke(cli.scancode, ['--copyright', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
-    scan_result = _load_json_result(result_file, test_dir)
+    scan_result = _load_json_result(result_file)
     # a single test.tst file and its directory that is not a VCS file should be listed
     assert 2 == scan_result['files_count']
     scan_locs = [x['path'] for x in scan_result['files']]
