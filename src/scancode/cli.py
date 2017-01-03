@@ -245,7 +245,7 @@ class ScanCommand(utils.BaseCommand):
 Try 'scancode --help' for help on options and arguments.'''
 
 
-formats = ('json', 'html', 'html-app',)
+formats = ('json', 'html', 'html-app', 'spdx-tv')
 
 def validate_formats(ctx, param, value):
     value_lower = value.lower()
@@ -647,5 +647,49 @@ def save_results(files_count, scanned_files, format, input, output_file):
         meta['files'] = scanned_files
         output_file.write(unicode(json.dumps(meta, indent=2 * ' ', iterable_as_array=True, encoding='utf-8')))
         output_file.write('\n')
+
+    elif format == 'spdx-tv':
+        from spdx.checksum import Algorithm
+        from spdx.creationinfo import Tool
+        from spdx.document import Document, License
+        from spdx.file import File
+        from spdx.package import Package
+        from spdx.utils import NoAssert
+        from spdx.version import Version
+        from spdx.writers.tagvalue import write_document
+
+        doc = Document(Version(2, 1), License.from_identifier('CC0-1.0'))
+
+        doc.creation_info.add_creator(Tool('ScanCode ' + version))
+        doc.creation_info.set_created_now()
+
+        doc.package = Package(input, NoAssert())
+
+        for file_data in scanned_files:
+            file_entry = File(file_data['path'])
+            # FIXME: should we really compue the checcksum here rather than get it from the scan?
+            file_entry.chk_sum = Algorithm('SHA1', file_entry.calc_chksum())
+            for file_license in file_data['licenses']:
+                spdx_id = file_license.get('spdx_license_key')
+                # TODO: we should create a "LicenseRef:xxx" identifier 
+                # if the license is not known to SPDX
+                if spdx_id:
+                    spdx_license = License.from_identifier(spdx_id)
+                    file_entry.add_lics(spdx_license)
+                    doc.package.add_lics_from_file(spdx_license)
+
+            file_entry.conc_lics = NoAssert()
+            file_entry.copyright = NoAssert()
+            doc.package.add_file(file_entry)
+
+        # Remove duplicate licenses from the list.
+        doc.package.licenses_from_files = list(set(doc.package.licenses_from_files))
+
+        doc.package.verif_code = doc.package.calc_verif_code()
+        doc.package.cr_text = NoAssert()
+        doc.package.license_declared = NoAssert()
+        doc.package.conc_lics = NoAssert()
+
+        write_document(doc, output_file)
     else:
         raise Exception('Unknown format')

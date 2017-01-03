@@ -100,6 +100,7 @@ setup(
         'MarkupSafe >= 0.23',
         'colorama',
         'simplejson',
+        'spdx-tools',
 
         # packagedcode
         'requests >= 2.7.0, < 3.0.0',
