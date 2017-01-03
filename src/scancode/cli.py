@@ -62,7 +62,6 @@ from types import GeneratorType
 
 import click
 from click.termui import style
-import simplejson as json
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -131,8 +130,6 @@ acknowledgment_text = '''
   ScanCode is a free software code scanning tool from nexB Inc. and others.
   Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 '''
-
-acknowledgment_text_json = acknowledgment_text.strip().replace('  ', '')
 
 
 extra_notice_text = '''
@@ -640,8 +637,10 @@ def save_results(files_count, scanned_files, format, input, output_file):
             echo_stderr('\nFailed to create HTML app.', fg='red')
 
     elif format == 'json':
+        import simplejson as json
+
         meta = OrderedDict()
-        meta['scancode_notice'] = acknowledgment_text_json
+        meta['scancode_notice'] = acknowledgment_text.strip().replace('  ', '')
         meta['scancode_version'] = version
         meta['files_count'] = files_count
         # TODO: add scanning options to meta
