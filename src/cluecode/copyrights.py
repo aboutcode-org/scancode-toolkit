@@ -186,7 +186,7 @@ patterns = [
     (r'[Cc]ommitters\.??', 'COMMIT'),
     # same for maintainers.
     (r'^([Mm]aintainers?\.?|[Dd]evelopers?\.?)$', 'MAINT'),
-    
+
     # same for developed, etc...
     (r'^(([Rr]e)?[Cc]oded|[Mm]odified|[Mm]ai?nt[ea]ine(d|r)|[Ww]ritten|[Dd]eveloped)$', 'AUTH2'),
     # author
@@ -213,7 +213,7 @@ patterns = [
 
     # Portions copyright .... are worth keeping
     (r'[Pp]ortions?', 'PORTIONS'),
-    
+
     # in dutch/german names, like Marco van Basten, or Klemens von Metternich
     # and Spanish/French Da Siva and De Gaulle
     (r'^(([Vv][ao]n)|[Dd][aeu])$', 'VAN'),
@@ -280,7 +280,7 @@ patterns = [
 ]
 
 # Comments in the Grammar are lines that start with #
-grammar = """   
+grammar = """
     COPY: {<COPY>}
     YR-RANGE: {<YR>+ <CC>+ <YR>}
     YR-RANGE: {<YR> <DASH>* <YR|CD>+}
@@ -425,6 +425,10 @@ grammar = """
     COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <NN> <NNP> <ANDCO>}
 
     COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <NN> <AUTH>}
+
+    # Copyright 1999, 2000 - D.T.Shield.
+    # Copyright (c) 1999, 2000 - D.T.Shield.
+    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <DASH> <NN>}
 
     COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <BY> <NN> <NN> <NAME>}
     COPYRIGHT2: {<COPY> <YR-RANGE> <BY> <NN> <NN> <NAME>}

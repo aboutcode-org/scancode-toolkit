@@ -3971,3 +3971,13 @@ class TestCopyrightDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights/bv.txt')
         expected = [u'Copyright (c) 2016 HERE Europe B.V.', u'(c) HERE 2016']
         check_detection(expected, test_file)
+
+    def test_copyright_with_dash_and_dotted_name(self):
+        test_lines = [u'Copyright 1999, 2000 - D.T.Shield.']
+        expected = [u'Copyright 1999, 2000 - D.T.Shield.']
+        check_detection(expected, test_lines)
+
+    def test_copyright_with_sign_dash_and_dotted_name(self):
+        test_lines = [u'Copyright (c) 1999, 2000 - D.T.Shield.']
+        expected = [u'Copyright (c) 1999, 2000 - D.T.Shield.']
+        check_detection(expected, test_lines)
