@@ -1,6 +1,6 @@
 Beautiful Soup is made available under the MIT license:
 
- Copyright (c) 2004-2012 Leonard Richardson
+ Copyright (c) 2004-2016 Leonard Richardson
 
  Permission is hereby granted, free of charge, to any person obtaining
  a copy of this software and associated documentation files (the
@@ -20,11 +20,11 @@ Beautiful Soup is made available under the MIT license:
  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE, DAMMIT.
+ SOFTWARE.
 
 Beautiful Soup incorporates code from the html5lib library, which is
-also made available under the MIT license.
-
+also made available under the MIT license. Copyright (c) 2006-2013
+James Graham and other contributors
 
 Copyright (c) 2006-2013 James Graham and other contributors
 

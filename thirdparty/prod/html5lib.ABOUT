@@ -1,7 +1,7 @@
-about_resource: chardet-2.1.1-py2-none-any.whl
+about_resource: html5lib-0.999999999-py2.py3-none-any.whl
 name: html5lib
-version: 0.99999
-download_url: https://pypi.python.org/packages/source/c/chardet/chardet-2.1.1.tar.gz#md5=295367fd210d20f3febda615a88e1ef0
+version: 0.999999999
+download_url: https://pypi.python.org/packages/f7/71/a96f36d34394bcfff9fb54bfe0aa72cc5b4ff2f803e5728645aef38f7aee/html5lib-0.999999999-py2.py3-none-any.whl#md5=c94780c55ea28529c39ad19ed372d629
 dje_license: mit
 license_text_file: html5lib.LICENSE
 owner: James Graham
