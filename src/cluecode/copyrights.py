@@ -430,6 +430,10 @@ grammar = """
     # Copyright (c) 1999, 2000 - D.T.Shield.
     COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <DASH> <NN>}
 
+    # Copyright 2007-2010 the original author or authors.
+    # Copyright (c) 2007-2010 the original author or authors.
+    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <NN> <JUNK> <AUTH> <NN> <AUTH>}
+
     COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <BY> <NN> <NN> <NAME>}
     COPYRIGHT2: {<COPY> <YR-RANGE> <BY> <NN> <NN> <NAME>}
 
