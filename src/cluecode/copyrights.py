@@ -442,6 +442,9 @@ grammar = """
 
     COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <NNP> <NAME>}
 
+    # Copyright (c) 2012-2016, Project contributors
+    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <COMP> <AUTH>}
+
     COPYRIGHT2: {<NAME> <COPY> <YR-RANGE>}
 
     COPYRIGHT2: {<COPY> <COPY>? <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>*}

@@ -3981,3 +3981,13 @@ class TestCopyrightDetection(FileBasedTesting):
         test_lines = [u'Copyright (c) 1999, 2000 - D.T.Shield.']
         expected = [u'Copyright (c) 1999, 2000 - D.T.Shield.']
         check_detection(expected, test_lines)
+
+    def test_copyright_with_sign_year_comp_and_auth(self):
+        test_lines = [u'Copyright (c) 2012-2016, Project contributors']
+        expected = [u'Copyright (c) 2012-2016, Project contributors']
+        check_detection(expected, test_lines)
+
+    def test_copyright_with_year_comp_and_auth(self):
+        test_lines = [u'Copyright 2012-2016, Project contributors']
+        expected = [u'Copyright 2012-2016, Project contributors']
+        check_detection(expected, test_lines)
