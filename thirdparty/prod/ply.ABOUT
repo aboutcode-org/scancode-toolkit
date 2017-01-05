@@ -1,0 +1,13 @@
+about_resource: ply-3.9-py2.py3-none-any.whl
+name: ply
+version: 3.9
+home_url: http://www.dabeaz.com/ply/
+download_url: https://pypi.python.org/packages/a8/4d/487e12d0478ee0cbb15d6fe9b8916e98fe4e2fce4cc65e4de309209c0b24/ply-3.9.tar.gz#md5=c5c5767376eff902617fd9874f0c76b7
+owner: David Beazley
+copyright: Copyright (c) 2001-2016 David M. Beazley (Dabeaz LLC)
+
+vcs_tool: git
+vcs_repository: https://github.com/dabeaz/ply.git
+
+dje_license: bsd-new
+license_text_file: ply.LICENSE

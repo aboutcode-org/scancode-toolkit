@@ -1,0 +1,13 @@
+about_resource: rdflib-4.2.1-cp27-none-any.whl
+name: rdflib
+version: 4.2.1
+home_url: https://github.com/RDFLib/rdflib
+download_url: https://pypi.python.org/packages/9d/fa/4198e8d8b444a4ace5c8fd86d128c2faa210a6e281973c8e5e16d978eaf4/rdflib-4.2.1.tar.gz#md5=528adaa10536d14a608507d7831711f5
+owner: RDFLib Team
+copyright: Copyright (c) 2002-2015, RDFLib Team
+vcs_tool: git
+
+vcs_repository: https://github.com/RDFLib/rdflib.git
+
+dje_license: bsd-new
+license_text_file: rdflib.LICENSE

@@ -1,0 +1,15 @@
+about_resource: isodate-0.5.4-cp27-none-any.whl
+download_url: https://pypi.python.org/packages/f4/5b/fe03d46ced80639b7be9285492dc8ce069b841c0cebe5baacdd9b090b164/isodate-0.5.4.tar.gz#md5=9da3ea2af54a6261d854e73d2266030e
+name: isodate
+version: 0.5.4
+
+dje_license: bsd-new
+license_text_file: isodate.LICENSE
+
+copyright: Copyright (c) 2009 Gerhard Weis
+
+owner: Gerhard Weis
+home_url: https://github.com/gweis/isodate
+
+vcs_tool: git
+vcs_repository: https://github.com/gweis/isodate.git

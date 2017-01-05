@@ -1,0 +1,15 @@
+about_resource: spdx_tools-0.3-py2.py3-none-any.whl
+version: 0.3
+download_url: https://pypi.python.org/packages/d9/85/d6ef92c78efd1440f42fe0e3df6ca1e838d8b75d9a249968778bc5c2040f/spdx_tools-0.3-py2.py3-none-any.whl#md5=29cdb6e3167742638d4d27c9cda7077e
+
+name: spdx-tools
+home_url: https://github.com/spdx/tools-python
+
+dje_license: apache-2.0
+license_text_file: spdx-tools.LICENSE
+
+vcs_tool: git
+vcs_repository: https://github.com/spdx/tools-python.git
+
+owner: Philippe Ombredanne
+copyright: Copyright (c) 2014 Ahmed H. Ismail
