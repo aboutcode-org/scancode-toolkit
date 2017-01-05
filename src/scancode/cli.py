@@ -245,7 +245,7 @@ class ScanCommand(utils.BaseCommand):
 Try 'scancode --help' for help on options and arguments.'''
 
 
-formats = ('json', 'html', 'html-app', 'spdx-tv')
+formats = ('json', 'html', 'html-app', 'spdx-tv', 'spdx-rdf')
 
 def validate_formats(ctx, param, value):
     value_lower = value.lower()
@@ -648,7 +648,7 @@ def save_results(files_count, scanned_files, format, input, output_file):
         output_file.write(unicode(json.dumps(meta, indent=2 * ' ', iterable_as_array=True, encoding='utf-8')))
         output_file.write('\n')
 
-    elif format == 'spdx-tv':
+    elif format == 'spdx-tv' or format == 'spdx-rdf':
         from spdx.checksum import Algorithm
         from spdx.creationinfo import Tool
         from spdx.document import Document, License
@@ -656,7 +656,6 @@ def save_results(files_count, scanned_files, format, input, output_file):
         from spdx.package import Package
         from spdx.utils import NoAssert
         from spdx.version import Version
-        from spdx.writers.tagvalue import write_document
 
         doc = Document(Version(2, 1), License.from_identifier('CC0-1.0'))
 
@@ -690,6 +689,12 @@ def save_results(files_count, scanned_files, format, input, output_file):
         doc.package.license_declared = NoAssert()
         doc.package.conc_lics = NoAssert()
 
-        write_document(doc, output_file)
+        if format == 'spdx-tv':
+            from spdx.writers.tagvalue import write_document
+            write_document(doc, output_file)
+        else:
+            from spdx.writers.rdf import write_document
+            write_document(doc, output_file)
+
     else:
         raise Exception('Unknown format')
