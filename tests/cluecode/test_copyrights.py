@@ -4001,3 +4001,8 @@ class TestCopyrightDetection(FileBasedTesting):
         test_lines = [u'Copyright (c) 2007-2010 the original author or authors.']
         expected = [u'Copyright (c) 2007-2010 the original author or authors.']
         check_detection(expected, test_lines)
+
+    def test_copyright_byten_c_exactly(self):
+        test_lines = [u'... don’t fit into your fixed-size buffer.\nByten ( c )\nExactly n bytes. If the']
+        expected = []
+        check_detection(expected, test_lines)
