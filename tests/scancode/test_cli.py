@@ -35,7 +35,6 @@ import click
 from click.testing import CliRunner
 
 from commoncode import fileutils
-from commoncode.fileutils import as_posixpath
 from commoncode.testcase import FileDrivenTesting
 
 from scancode import cli
@@ -51,18 +50,18 @@ actual command outputs as if using a real command line call.
 """
 
 
-def check_scan(expected_file, result_file, test_dir, regen=False):
+def check_scan(expected_file, result_file, regen=False):
     """
     Check the scan result_file JSON results against the expected_file expected JSON
     results. Removes references to test_dir for the comparison. If regen is True the
     expected_file WILL BE overwritten with the results. This is convenient for
     updating tests expectations. But use with caution.
     """
-    result = _load_json_result(result_file, test_dir)
+    result = _load_json_result(result_file)
     if regen:
         with open(expected_file, 'wb') as reg:
             json.dump(result, reg, indent=2)
-    expected = _load_json_result(expected_file, test_dir)
+    expected = _load_json_result(expected_file)
     # NOTE we redump the JSON as a string for a more efficient comparison of
     # failures
     expected = json.dumps(expected, indent=2, sort_keys=True)
@@ -70,13 +69,12 @@ def check_scan(expected_file, result_file, test_dir, regen=False):
     assert expected == result
 
 
-def _load_json_result(result_file, test_dir):
+def _load_json_result(result_file):
     """
     Load the result file as utf-8 JSON and strip test_dir prefix from
     locations.
     Sort the results by location.
     """
-    test_dir = as_posixpath(test_dir)
     with codecs.open(result_file, encoding='utf-8') as res:
         scan_result = json.load(res, object_pairs_hook=OrderedDict)
 
@@ -157,7 +155,7 @@ def test_scancode_skip_vcs_files_and_dirs_by_default(monkeypatch):
     result_file = test_env.get_temp_file('json')
     result = runner.invoke(cli.scancode, ['--copyright', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
-    scan_result = _load_json_result(result_file, test_dir)
+    scan_result = _load_json_result(result_file)
     # a single test.tst file and its directory that is not a VCS file should be listed
     assert 2 == scan_result['files_count']
     scan_locs = [x['path'] for x in scan_result['files']]
@@ -190,7 +188,7 @@ def test_scan_info_does_collect_infos(monkeypatch):
     result = runner.invoke(cli.scancode, ['--info', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    check_scan(test_env.get_test_loc('info/basic.expected.json'), result_file, test_dir)
+    check_scan(test_env.get_test_loc('info/basic.expected.json'), result_file)
 
 
 def test_scan_info_license_copyrights(monkeypatch):
@@ -201,7 +199,7 @@ def test_scan_info_license_copyrights(monkeypatch):
     result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    check_scan(test_env.get_test_loc('info/all.expected.json'), result_file, test_dir)
+    check_scan(test_env.get_test_loc('info/all.expected.json'), result_file)
 
 
 def test_scan_email_url_info(monkeypatch):
@@ -212,7 +210,7 @@ def test_scan_email_url_info(monkeypatch):
     result = runner.invoke(cli.scancode, ['--email', '--url', '--info', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    check_scan(test_env.get_test_loc('info/email_url_info.expected.json'), result_file, test_dir)
+    check_scan(test_env.get_test_loc('info/email_url_info.expected.json'), result_file)
 
 
 def test_paths_are_posix_paths_in_html_app_format_output(monkeypatch):
@@ -292,7 +290,7 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     result = runner.invoke(cli.scancode, [ '--copyright', test_file, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    check_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file, test_file)
+    check_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file)
     assert 'Some files failed to scan' in result.output
     assert 'patchelf.pdf' in result.output
 
@@ -453,7 +451,7 @@ def test_scan_does_not_fail_unicode_files_and_paths(monkeypatch):
     elif on_windows:
         expected = 'unicodepath/unicodepath.expected-win.json'
 
-    check_scan(test_env.get_test_loc(expected), result_file, xtest_dir, regen=False)
+    check_scan(test_env.get_test_loc(expected), result_file, regen=False)
 
 
 def test_scan_can_handle_licenses_with_unicode_metadata(monkeypatch):
@@ -493,3 +491,15 @@ def test_scan_quiet_to_stdout_only_echoes_json_results(monkeypatch):
     # outputs to file or stdout should be identical
     result1_output = open(result1_file).read()
     assert result1_output == result2.output
+
+
+def test_scan_can_return_matched_license_text(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_file = test_env.get_test_loc('license_text/test.txt')
+    expected_file = test_env.get_test_loc('license_text/test.expected')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+
+    result = runner.invoke(cli.scancode, ['--license', '--license-text', test_file, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    check_scan(test_env.get_test_loc(expected_file), result_file, regen=False)

@@ -103,7 +103,7 @@ def get_urls(location):
 DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
 
 
-def get_licenses(location, min_score=0, diag=False):
+def get_licenses(location, min_score=0, include_text=False, diag=False):
     """
     Yield dictionaries of license data detected in the file at location.
 
@@ -115,12 +115,16 @@ def get_licenses(location, min_score=0, diag=False):
     key of the returned mapping.
     """
     from licensedcode.index import get_index
+    from licensedcode.match import get_full_matched_text
     from licensedcode.models import get_licenses as licenses_details
 
     idx = get_index()
     licenses = licenses_details()
 
     for match in idx.match(location=location, min_score=min_score):
+        if include_text:
+            matched_text = u''.join(get_full_matched_text(match, location=location, 
+                                                          idx=idx, whole_lines=False))
         for license_key in match.rule.licenses:
             lic = licenses.get(license_key)
             result = OrderedDict()
@@ -146,6 +150,8 @@ def get_licenses(location, min_score=0, diag=False):
                 matched_rule['matched_length'] = match.ilen()
                 matched_rule['match_coverage'] = match.coverage()
                 matched_rule['rule_relevance'] = match.rule.relevance
+            if include_text:
+                result['matched_text'] = matched_text
             yield result
 
 

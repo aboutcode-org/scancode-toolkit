@@ -271,6 +271,8 @@ def validate_formats(ctx, param, value):
 @click.option('-i', '--info', is_flag=True, default=False, help='Include information such as size, type, etc.')
 @click.option('--license-score', is_flag=False, default=0, type=int, show_default=True,
               help='Do not return license matches with scores lower than this score. A number between 0 and 100.')
+@click.option('--license-text', is_flag=True, default=False,
+              help='Include the detected licenses matched text. Has no effect unless --license is requested.')
 
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
               help=('Set <output_file> format <style> to one of the standard formats: %s '
@@ -289,14 +291,14 @@ def validate_formats(ctx, param, value):
 @click.option('--max-memory', is_flag=False, default=DEFAULT_MAX_MEMORY, type=int, show_default=True, help='Stop scanning a file if scanning requires more than a maximum amount of memory in megabytes.')
 
 def scancode(ctx, input, output_file, copyright, license, package,
-             email, url, info, license_score, format,
+             email, url, info, license_score, license_text, format,
              verbose, quiet, processes,
              diag, timeout, max_memory,
              *args, **kwargs):
     """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
 
     The scan results are printed to stdout if <output_file> is not provided.
-    Error and progress is printed to stderr. 
+    Error and progress is printed to stderr.
     """
     possible_scans = [copyright, license, package, email, url, info]
     # Default scan when no options is provided
@@ -307,9 +309,22 @@ def scancode(ctx, input, output_file, copyright, license, package,
 
     scans_cache_class = get_scans_cache_class()
     try:
-        files_count, results = scan(input, copyright, license, package, email, url, info, license_score,
-                                    verbose, quiet, processes, scans_cache_class,
-                                    diag, timeout, max_memory)
+        files_count, results = scan(input_path=input,
+                                    copyright=copyright,
+                                    license=license,
+                                    package=package,
+                                    email=email,
+                                    url=url,
+                                    info=info,
+                                    license_score=license_score,
+                                    license_text=license_text,
+                                    verbose=verbose,
+                                    quiet=quiet,
+                                    processes=processes,
+                                    timeout=timeout, max_memory=max_memory,
+                                    diag=diag,
+                                    scans_cache_class=scans_cache_class,
+                                    )
         if not quiet:
             echo_stderr('Saving results.', fg='green')
         save_results(files_count, results, format, input, output_file)
@@ -323,10 +338,14 @@ def scancode(ctx, input, output_file, copyright, license, package,
     # ctx.exit(rc)
 
 
-def scan(input_path, copyright=True, license=True, package=True,
-         email=False, url=False, info=True, license_score=0,
-         verbose=False, quiet=False, processes=1, scans_cache_class=None,
-         diag=False, timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY):
+def scan(input_path,
+         copyright=True, license=True, package=True,
+         email=False, url=False, info=True,
+         license_score=0, license_text=False,
+         verbose=False, quiet=False,
+         processes=1, timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY,
+         diag=False,
+         scans_cache_class=None):
     """
     Return a tuple of (file_count, indexing_time, scan_results) where
     scan_results is an iterable. Run each requested scan proper: each individual file
@@ -337,7 +356,7 @@ def scan(input_path, copyright=True, license=True, package=True,
     scan_summary = OrderedDict()
     scan_summary['scanned_path'] = input_path
     scan_summary['processes'] = processes
-    get_licenses_with_score = partial(get_licenses, min_score=license_score, diag=diag)
+    get_licenses_with_score = partial(get_licenses, min_score=license_score, include_text=license_text, diag=diag)
 
     # note: "flag and function" expressions return the function if flag is True
     # note: the order of the scans matters to show things in logical order

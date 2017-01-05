@@ -35,6 +35,7 @@ from licensedcode.models import Rule
 from licensedcode.models import load_rules
 from licensedcode.spans import Span
 from licensedcode.match import merge_matches
+from licensedcode.match import get_full_matched_text
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -617,3 +618,51 @@ class TestLicenseMatchScore(FileBasedTesting):
 
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
         assert m1.score() == 0
+
+
+class TestCollectLicenseMatchTexts(FileBasedTesting):
+    test_data_dir = TEST_DATA_DIR
+
+    def test_get_full_matched_text(self):
+        rule_text = u'''
+            Copyright {{some copyright}}
+            THIS IS FROM {{THE CODEHAUS}} AND CONTRIBUTORS
+            IN NO EVENT SHALL {{THE CODEHAUS}} OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE {{POSSIBILITY OF SUCH}} DAMAGE
+        '''
+
+        rule = Rule(_text=rule_text, licenses=['test'],)
+        idx = index.LicenseIndex([rule])
+
+        querys = u'''
+            foobar 45 Copyright 2003 (C) James. All Rights Reserved.
+            THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
+            IN NO EVENT SHALL THE best CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. chabada DAMAGE 12 ABC
+        '''
+        result = idx.match(query_string=querys)
+        assert 1 == len(result)
+        match = result[0]
+
+        expected = u"""Copyright [2003] ([C]) [James]. [All] [Rights] [Reserved].
+            THIS IS FROM [THE] [CODEHAUS] AND CONTRIBUTORS
+            IN NO EVENT SHALL [THE] [best] [CODEHAUS] OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE [POSSIBILITY] [OF] [SUCH] DAMAGE"""
+        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
+        assert expected == matched_text
+
+        # test again using a template
+        expected = u"""Copyright <br>2003</br> (<br>C</br>) <br>James</br>. <br>All</br> <br>Rights</br> <br>Reserved</br>.
+            THIS IS FROM <br>THE</br> <br>CODEHAUS</br> AND CONTRIBUTORS
+            IN NO EVENT SHALL <br>THE</br> <br>best</br> <br>CODEHAUS</br> OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE <br>POSSIBILITY</br> <br>OF</br> <br>SUCH</br> DAMAGE"""
+        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, highlight_not_matched=u'<br>%s</br>'))
+        assert expected == matched_text
+
+        # test again using whole_lines
+        expected = u"""            foobar 45 Copyright 2003 (C) James. All Rights Reserved.
+            THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
+            IN NO EVENT SHALL THE best CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. chabada DAMAGE 12 ABC\n"""
+        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, highlight_not_matched=u'%s', whole_lines=True))
+        assert expected == matched_text
