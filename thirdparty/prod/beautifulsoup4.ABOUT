@@ -1,8 +1,13 @@
-about_resource: beautifulsoup4-4.3.2-py2-none-any.whl
-version: 4.3.2
+about_resource: beautifulsoup4-4.5.3-py2-none-any.whl
+version: 4.5.3
 name: beautifulsoup4
 home_url: http://www.crummy.com/software/BeautifulSoup/bs4
-download_url: https://pypi.python.org/packages/source/b/beautifulsoup4/beautifulsoup4-4.3.2.tar.gz
+download_url: https://pypi.python.org/packages/cf/9b/8a6891f8c349431ee94669ce592fc375a19d4e3f4273a01a47207c7990b2/beautifulsoup4-4.5.3-py2-none-any.whl#md5=a1751f0013475d8505714f22e873841b
 owner: Leonard Richardson
 dje_icense: mit
 license_text: beautifulsoup4.LICENSE
+vcs_tools: bzr
+vsc_repo: https://code.launchpad.net/beautifulsoup
+copyright:
+ Copyright (c) 2004-2016 Leonard Richardson
+ Copyright (c) 2006-2013 James Graham and other contributors

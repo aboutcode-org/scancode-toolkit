@@ -1,8 +1,8 @@
-about_resource: setuptools-25.2.0-py2.py3-none-any.whl
+about_resource: setuptools-32.3.1-py2.py3-none-any.whl
 name: setuptools
-version: 25.2.0
+version: 32.3.1
 
-download_url: setuptools-25.2.0-py2.py3-none-any.whl
+download_url: https://pypi.python.org/packages/69/19/b1dff551058ce79d88b1e3688f1c735590d7ddf44d10681512133b35019f/setuptools-32.3.1-py2.py3-none-any.whl#md5=9fe4e32f20a9b13c206c1bdc4c9feaf4
 
 home_url: https://pypi.python.org/pypi/setuptools
 owner: Python Packaging Authority

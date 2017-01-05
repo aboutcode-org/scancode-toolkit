@@ -1,0 +1,14 @@
+about_resource: webencodings-0.5-py2-none-any.whl
+name: webencodings
+version: 0.5
+home_url: https://github.com/gsnedders/python-webencodings
+download_url: https://pypi.python.org/packages/c3/e5/74d05eed73b09752ac3dc4a8a69ae92ffa1ce92fcb03eaa624d1fcd17e33/webencodings-0.5.tar.gz#md5=878714d45241f7970dffd8991d61fff9
+maintainer: Geoffrey Sneddon
+owner: Simon Sapin
+copyright: Copyright (c) 2012 Simon Sapin and others
+
+vcs_tool: git
+vcs_repository: https://github.com/gsnedders/python-webencodings.git
+
+dje_license: bsd-new
+license_text_file: webencodings.LICENSE

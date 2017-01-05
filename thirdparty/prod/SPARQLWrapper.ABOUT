@@ -1,0 +1,14 @@
+about_resource: SPARQLWrapper-1.8.0-cp27-none-any.whl
+name: SPARQLWrapper
+version: 1.8.0
+home_url: http://rdflib.github.io/sparqlwrapper/
+download_url: https://pypi.python.org/packages/03/69/3a625d5315a85174c4a0ab9b9afc0018c21a618117de141dc53e14d5de97/SPARQLWrapper-1.8.0.tar.gz#md5=9541c7d6f01ed2a98efb4b86bbc982e8
+authors: Ivan Herman, Sergio Fernández, Carlos Tejo Alonso, Alexey Zakhlestin
+owner: World Wide Web Consortium <http://www.w3.org> Foundation CTIC <http://www.fundacionctic.org/>
+copyright: Copyright (c) 2002-2015, RDFLib Team
+
+vcs_tool: git
+vcs_repository: https://github.com/rdflib/sparqlwrapper.git
+
+dje_license: w3c
+license_text_file: SPARQLWrapper.LICENSE
