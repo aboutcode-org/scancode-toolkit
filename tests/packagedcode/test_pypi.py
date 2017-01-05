@@ -41,7 +41,7 @@ class TestPyPi(FileBasedTesting):
         package = pypi.parse(test_file)
         assert 'scancode-toolkit' == package.name
         assert '1.5.0' == package.version
-        assert 'ScanCode' == package.authors[0]
+        assert 'ScanCode' == package.authors[0].name
         assert 'ScanCode is a tool to scan code for license, copyright and other interesting facts.' == package.description
         assert 'https://github.com/nexB/scancode-toolkit' == package.homepage_url
 
@@ -54,13 +54,14 @@ class TestPyPi(FileBasedTesting):
         assert 'ScanCode' == pypi.get_attribute(test_file, 'author')
 
     def test_parse_metadata(self):
-        test_file = self.get_test_loc('pypi/metadata.json')
+        test_folder = self.get_test_loc('pypi')
+        test_file = os.path.join(test_folder, 'metadata.json')
         package = pypi.parse_metadata(test_file)
         assert 'six' == package.name
         assert '1.10.0' == package.version
         assert 'Python 2 and 3 compatibility utilities' == package.summary
         assert 'MIT' == package.asserted_licenses[0].license
-        assert ['Benjamin Peterson'] == package.authors
+        assert 'Benjamin Peterson' == package.authors[0].name
         assert 'http://pypi.python.org/pypi/six/' == package.homepage_url
 
     def test_parse_pkg_info(self):
@@ -71,4 +72,4 @@ class TestPyPi(FileBasedTesting):
         assert 'Import CSV and Excel files' == package.summary
         assert 'BSD' == package.asserted_licenses[0].license
         assert 'http://nexb.com' == package.homepage_url
-        assert ['Francois Granade'] == package.authors
+        assert 'Francois Granade' == package.authors[0].name

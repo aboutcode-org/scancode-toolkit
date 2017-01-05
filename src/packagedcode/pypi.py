@@ -32,6 +32,7 @@ import re
 from commoncode import fileutils
 from packagedcode.models import AssertedLicense
 from packagedcode.models import PythonPackage
+from packagedcode import models
 
 
 """
@@ -76,7 +77,7 @@ def parse_pkg_info(location):
         asserted_licenses=[AssertedLicense(license=infos.get('License'))],
         # FIXME: what about Party objects and email?
         # FIXME: what about maintainers?
-        authors=[infos.get('Author')],
+        authors=[models.Party(type=models.party_person, name=infos.get('Author'))],
     )
     return package
 
@@ -122,15 +123,14 @@ def parse_metadata(location):
     """
     if not location or not location.endswith('metadata.json'):
         return
-
     parent_dir = fileutils.parent_directory(location)
     # FIXME: is the absence of these two files a show stopper?
     if not all(os.path.exists(os.path.join(parent_dir, fname))
-               for fname in ('METADATA' 'DESCRIPTION.rst')):
+               for fname in ('METADATA', 'DESCRIPTION.rst')):
         return
     # FIXME: wrap in a with statement
     infos = json.loads(open(location, 'rb').read())
-
+    print(infos)
     homepage_url = None
     authors = []
     if infos['extensions']:
@@ -141,7 +141,7 @@ def parse_metadata(location):
             pass
         try:
             for contact in infos['extensions']['python.details']['contacts']:
-                authors.append(contact['name'])
+                authors.append(models.Party(type=models.party_person, name=contact['name'],))
         except:
             # FIXME: why catch all expections?
             pass
@@ -169,7 +169,7 @@ def parse(location):
             homepage_url=get_attribute(location, 'url'),
             description=get_attribute(location, 'description'),
             version=get_attribute(location, 'version'),
-            authors=[get_attribute(location, 'author')],
+            authors=[models.Party(type=models.party_person, name=get_attribute(location, 'author'))],
             asserted_licenses=[AssertedLicense(license=get_attribute(location, 'license'))],
         )
         return package
