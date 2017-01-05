@@ -26,9 +26,10 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import os.path
+import shutil
+
 
 from commoncode.testcase import FileBasedTesting
-
 from packagedcode import pypi
 
 
@@ -45,7 +46,9 @@ class TestPyPi(FileBasedTesting):
         assert 'https://github.com/nexB/scancode-toolkit' == package.homepage_url
 
     def test_get_attribute(self):
-        test_file = self.get_test_loc('pypi/setup2.py')
+        test_input = self.get_test_loc('pypi/setup2.py')
+        test_file = self.get_temp_file('setup.py')
+        shutil.copyfile(test_input, test_file)
         assert 'scancode-toolkit' == pypi.get_attribute(test_file, 'name')
         assert '1.5.0' == pypi.get_attribute(test_file, 'version')
         assert 'ScanCode' == pypi.get_attribute(test_file, 'author')
