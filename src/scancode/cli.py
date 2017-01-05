@@ -245,7 +245,7 @@ class ScanCommand(utils.BaseCommand):
 Try 'scancode --help' for help on options and arguments.'''
 
 
-formats = ('json', 'html', 'html-app', 'spdx-tv', 'spdx-rdf')
+formats = ('json', 'json-pp', 'html', 'html-app', 'spdx-tv', 'spdx-rdf')
 
 def validate_formats(ctx, param, value):
     value_lower = value.lower()
@@ -655,7 +655,7 @@ def save_results(files_count, scanned_files, format, input, output_file):
         except HtmlAppAssetCopyError:
             echo_stderr('\nFailed to create HTML app.', fg='red')
 
-    elif format == 'json':
+    elif format == 'json' or format == 'json-pp':
         import simplejson as json
 
         meta = OrderedDict()
@@ -664,7 +664,10 @@ def save_results(files_count, scanned_files, format, input, output_file):
         meta['files_count'] = files_count
         # TODO: add scanning options to meta
         meta['files'] = scanned_files
-        output_file.write(unicode(json.dumps(meta, indent=2 * ' ', iterable_as_array=True, encoding='utf-8')))
+        if format == 'json-pp':
+            output_file.write(unicode(json.dumps(meta, indent=2 * ' ', iterable_as_array=True, encoding='utf-8')))
+        else:
+            output_file.write(unicode(json.dumps(meta, iterable_as_array=True, encoding='utf-8')))
         output_file.write('\n')
 
     elif format == 'spdx-tv' or format == 'spdx-rdf':
