@@ -30,9 +30,10 @@ from __future__ import print_function
 import re
 import logging
 import unicodedata
+from text_unidecode import unidecode
 
 """
-A text processing module providing functions to process and prepare text 
+A text processing module providing functions to process and prepare text
 before indexing or fingerprinting such as:
  - case folding
  - conversion of iso latin and unicode to ascii
@@ -96,7 +97,7 @@ def nopunctuation(text):
     >>> nopunctuation(t).split()
     ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'just']
     >>> t = r'''This problem is about: sequence-bunching
-    ... 
+    ...
     ... just
     ... '''
     >>> nopunctuation(t)
@@ -137,55 +138,45 @@ def nolinesep(text):
     return text.replace(CR, ' ').replace(LF, ' ')
 
 
-# additional non standard normalizations but quite common sense
-unicode_translation_table = {
-    u'Ø': u'O', 
-    u'ø': u'o', 
-    u'ž': u'z', 
-    u'Ž': u'Z',
-    u'¢': u'c',
-    u'￠': u'c',
-    u'₡': u'c',
-    u'₵': u'c',
-    # does not preserve offsets
-    u'æ': u'ae',
-    u'Æ': u'AE',
+def toascii(s, translit=False):
+    u""" Convert a Unicode string to ASCII characters, including replacing accented
+    characters with their non-accented equivalent. 
+    
+    If `translit` is False use the Unicode NFKD equivalence.
+    
+    If `translit` is True, use a transliteration with the unidecode library.
+    
+    Non ISO-Latin and non ASCII characters are stripped from the
+    output. 
+    When no transliteration is possible, the resulting character is replaced
+    by an underscore "_".
+    
+    For Unicode NFKD equivalence, see http://en.wikipedia.org/wiki/Unicode_equivalence
 
-    u'œ': u'oe',
-    u'Œ': u'OE',
+    The convertion may NOT preserve the original string length and with NFKD some
+    characters may be deleted.
 
-    u'©': u'(c)',
-    u'®': u'(r)',
-
-    u'ß': u'ss',
-    u'ẞ': u'ss',
-}
-
-
-
-def toascii(s):
-    u"""
-    Convert a Unicode string to ASCII characters, including replacing accented
-    characters with their non-accented NFKD equivalent. Non ISO-Latin and non
-    ASCII characters are stripped from the output. For Unicode NFKD
-    equivalence, see http://en.wikipedia.org/wiki/Unicode_equivalence
-
-    Does not preserve the original length and character offsets.
-
-    Inspired from:
-    http://code.activestate.com/recipes/251871/#c10 by Aaron Bentley.
+    Inspired from: http://code.activestate.com/recipes/251871/#c10 by Aaron Bentley.
 
     For example:
-    >>> acc =   u"ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝàáâãäåçèéêëìíîïñòóôõöøùúûüýÿ"
-    >>> noacc = r"AAAAAACEEEEIIIINOOOOOUUUUYaaaaaaceeeeiiiinooooouuuuyy"
-    >>> toascii(acc) == noacc
+    >>> acc =   u"ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝàáâãäåçèéêëìíîïñòóôõöøùúûüýÿẞß®©œŒØøÆæ₵₡￠¢Žž"
+    >>> noacc = r'AAAAAACEEEEIIIINOOOOOUUUUYaaaaaaceeeeiiiinooooouuuuyyZz'
+    >>> toascii(acc, translit=False) == noacc
+    True
+    >>> noacc = r'AAAAAACEEEEIIIINOOOOOOUUUUYaaaaaaceeeeiiiinoooooouuuuyySsss(r)(c)oeOEOoAEae_CL/CC/Zz'
+    >>> toascii(acc, translit=True) == noacc
     True
     """
     try:
-        converted = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
+        if translit:
+            converted = unidecode(s).encode('ascii', 'ignore')
+            converted = converted.replace('[?]', '_')
+        else:
+            converted = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
     except:
-        converted =str(s.decode('ascii', 'ignore'))
+        converted = str(s.decode('ascii', 'ignore'))
     return converted
+
 
 def python_safe_name(s):
     """
