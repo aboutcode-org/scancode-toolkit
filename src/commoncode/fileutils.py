@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -38,7 +38,6 @@ from commoncode import system
 from commoncode import text
 from commoncode import filetype
 from commoncode.filetype import is_rwx
-from textcode.strings import is_posix_path
 
 
 # this exception is not available on posix
@@ -60,8 +59,8 @@ File, paths and directory utility functions.
 
 def create_dir(location):
     """
-    Create directory and all sub-directories recursively at location ensuring
-    these are readable and writeable.
+    Create directory and all sub-directories recursively at location ensuring these
+    are readable and writeable.
     Raise Exceptions if it fails to create the directory.
     """
     if os.path.exists(location):
@@ -163,28 +162,30 @@ def read_text_file(location, universal_new_lines=True):
 # PATHS AND NAMES MANIPULATIONS
 #
 
+# TODO: move these functions to paths.py
+
 def is_posixpath(location):
     """
     Return True if the `location` path is likely a POSIX-like path using POSIX path
-    separators (slash or "/"). 
-    
-    Return None if the `location` path does not contain any slash or backslash (e.g.
-    "\" or "/") and the path is either POSIX or Windows.
-    
+    separators (slash or "/")or has no path separator.
+
     Return False if the `location` path is likely a Windows-like path using backslash
     as path separators (e.g. "\").
     """
-    slashes = location.count('/')
-    backslashes = location.count('\\')
-    is_posix = None
-    if backslashes and slashes:
-        # this is a case where posix is the only possibility, slash are illegal on Win
-        is_posix = True
-    elif backslashes:
+    has_slashes = '/' in location
+    has_backslashes = '\\' in location
+    # windows paths with drive
+    if location:
+        drive, _ = ntpath.splitdrive(location)
+        if drive:
+            return False
+
+
+    # a path is always POSIX unless it contains ONLY backslahes
+    # which is a rough approximation (it could still be posix)
+    is_posix = True
+    if has_backslashes and not has_slashes:
         is_posix = False
-    elif slashes:
-        is_posix = True
-    
     return is_posix
 
 
@@ -197,12 +198,20 @@ def as_posixpath(location):
     return location.replace(ntpath.sep, posixpath.sep)
 
 
-def _split_parent_resource(path):
+def as_winpath(location):
+    """
+    Return a Windows-like path using Windows path separators (backslash or "\") for a
+    `location` path.
+    """
+    return location.replace(posixpath.sep, ntpath.sep)
+
+
+def split_parent_resource(path, force_posix=False):
     """
     Return a (tuple of parent directory path, resource name).
     """
     splitter = is_posixpath(path) and posixpath or ntpath
-    path = path.rstrip('/').rstrip('\\')
+    path = path.rstrip('/\\')
     return splitter.split(path)
 
 
@@ -211,7 +220,7 @@ def resource_name(path):
     Return the resource name (file name or directory name) from `path` which
     is the last path segment.
     """
-    _left, right = _split_parent_resource(path)
+    _left, right = split_parent_resource(path)
     return right or  ''
 
 
@@ -226,7 +235,7 @@ def parent_directory(path):
     """
     Return the parent directory path of a file or directory `path`.
     """
-    left, _right = _split_parent_resource(path)
+    left, _right = split_parent_resource(path)
     sep = is_posixpath(path) and '/' or '\\'
     trail = sep if left != sep else ''
     return left + trail
