@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -81,25 +81,28 @@ class TestNewName(FileBasedTesting):
         assert 'teST.txt_2' == result
 
     def test_new_name_with_empties(self):
-        test_dir = self.get_temp_dir()
-        self.assertRaises(AssertionError,new_name, '', is_dir=False)
+        base_dir = self.get_temp_dir()
+        self.assertRaises(AssertionError, new_name, '', is_dir=False)
+        test_file = base_dir + '/'
+        renamed = new_name(test_file, is_dir=False)
+        assert renamed
+        assert not exists(renamed)
 
-        renamed = new_name(join(test_dir, '/'), is_dir=False)
+        test_file = join(base_dir, '.')
+        renamed = new_name(test_file, is_dir=False)
         assert not exists(renamed)
         result = fileutils.file_name(renamed)
-        assert 'file' == result
+        assert '_' == result
 
-        renamed = new_name(join(test_dir, '.'), is_dir=False)
+        test_dir = base_dir + '/'
+
+        renamed = new_name(test_dir, is_dir=True)
         assert not exists(renamed)
         result = fileutils.file_name(renamed)
-        assert 'file' == result
+        assert result
 
-        renamed = new_name(join(test_dir, '/'), is_dir=True)
+        test_dir = join(base_dir, '.')
+        renamed = new_name(test_dir, is_dir=True)
         assert not exists(renamed)
         result = fileutils.file_name(renamed)
-        assert 'file' == result
-
-        renamed = new_name(join(test_dir, '.'), is_dir=True)
-        assert not exists(renamed)
-        result = fileutils.file_name(renamed)
-        assert 'file' == result
+        assert '_' == result

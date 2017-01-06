@@ -38,6 +38,8 @@ from commoncode import fileutils
 from commoncode.testcase import FileDrivenTesting
 
 from scancode import cli
+from commoncode.testcase import extract_tar
+from commoncode.fileutils import file_iter
 
 
 test_env = FileDrivenTesting()
@@ -424,17 +426,16 @@ def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
 def test_scan_does_not_fail_unicode_files_and_paths(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
 
-    # use extractcode for proper unicode extraction
-    from scancode import extract_cli
-    xtest_dir = test_env.get_test_loc('unicodepath/unicodepath.tgz', copy=True)
-    xrunner = CliRunner()
-    xresult = xrunner.invoke(extract_cli.extractcode, [xtest_dir])
-    assert xresult.exit_code == 0
+    # use plain tar for proper unicode names extraction without transliteration
+    test_archive = test_env.get_test_loc('unicodepath/unicodepath.tgz')
+    xtest_dir = test_env.get_temp_dir()
+    extract_tar(test_archive, xtest_dir)
 
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
     result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright',
-                                          '--package', '--email', '--url', xtest_dir + '-extract', result_file], catch_exceptions=False)
+                                          '--package', '--email', '--url', xtest_dir , result_file], catch_exceptions=True)
+    print(result.output_bytes)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 

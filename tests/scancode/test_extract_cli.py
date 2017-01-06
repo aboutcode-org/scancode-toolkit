@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -175,14 +175,18 @@ def test_usage_and_help_return_a_correct_script_name_on_all_platforms(monkeypatc
 
 
 def test_extractcode_command_can_extract_archive_with_unicode_names(monkeypatch):
-    if on_windows:
-        # TODO: for now this fails, and this needs extra work 
-        return
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.get_test_loc('extract_unicodepath', copy=True)
     runner = CliRunner()
     result = runner.invoke(extract_cli.extractcode, ['--verbose', test_dir])
     assert result.exit_code == 0
     assert 'Izgradnja' in result.output
-    resultf = list(file_iter(test_dir,))
-    assert 4 == len(resultf)
+    result = [f for f in map(as_posixpath, file_iter(test_dir)) if not f.endswith('unicodepath.tgz')]
+    result = ['/'.join(f.partition('/unicodepath/')[1:]) for f in result]
+    expected = [
+        '/unicodepath//Ho_',
+         '/unicodepath//Ho_a', 
+         '/unicodepath//Izgradnja_sufiksnog_polja_koristenjem_Karkkainen_-_Sandersovog_algoritma.pdf'
+    ]
+    assert expected == result
+

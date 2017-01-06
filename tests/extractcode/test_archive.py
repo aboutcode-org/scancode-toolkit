@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -50,7 +50,6 @@ from extractcode import ExtractErrorFailedToExtract
 from extractcode import libarchive2
 from extractcode import sevenzip
 from extractcode import tar
-
 
 
 """
@@ -239,7 +238,7 @@ class TestSmokeTest(FileBasedTesting):
 class BaseArchiveTestCase(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_extract(self, test_function, test_file, expected, check_all=False):
+    def check_extract(self, test_function, test_file, expected, expected_warnings=None, check_all=False):
         """
         Run the extraction `test_function` on `test_file` checking that a map of
         expected paths --> size exist in the extracted target directory.
@@ -247,7 +246,9 @@ class BaseArchiveTestCase(FileBasedTesting):
         """
         test_file = self.get_test_loc(test_file)
         test_dir = self.get_temp_dir()
-        test_function(test_file, test_dir)
+        warnings = test_function(test_file, test_dir)
+        if expected_warnings is not None:
+            assert expected_warnings == warnings
 
         if check_all:
             len_test_dir = len(test_dir)
@@ -374,7 +375,7 @@ class TestTarGzip(BaseArchiveTestCase):
         exp_file = self.get_test_loc('archive/tgz/mixed_case_and_symlink.tgz.expected')
         with codecs.open(exp_file, encoding='utf-8') as ef:
             expected_files = json.load(ef)
-        check_files(test_dir, expected_files)
+        check_files(test_dir, map(str, expected_files))
 
     def test_extract_targz_symlinks(self):
         test_file = self.get_test_loc('archive/tgz/symlink.tar.gz')
@@ -812,20 +813,48 @@ class TestZip(BaseArchiveTestCase):
         # Info-ZIP 'zip' displays:
         # warning: booxw-1202-bin.distribution.zip appears to use
         # backslashes as path separators (which is the right thing to do)
+        expected = ['scripts/AutomaticClose.int']
+        check_files(test_dir, expected)
+
         result = os.path.join(test_dir, 'scripts/AutomaticClose.int')
         assert os.path.exists(result)
 
-    def test_extract_zip_with_backsplash_in_path_2(self):
+    def test_extract_zip_with_backslash_in_path_2(self):
         test_file = self.get_test_loc('archive/zip/backslash/AspectJTest.zip')
         test_dir = self.get_temp_dir()
         archive.extract_zip(test_file, test_dir)
-        result = os.path.join(test_dir, 'AspectJTest/bin/p3/Flyable.class')
-        assert os.path.exists(result)
+        expected = '''
+            AspectJTest/.classpath
+            AspectJTest/.project
+            AspectJTest/src/META-INF/aop.xml
+            AspectJTest/src/p3/ExpertFlyable.java
+            AspectJTest/src/p3/MakeFlyableAspect.java
+            AspectJTest/src/p3/Flyable.java
+            AspectJTest/src/p3/MakeFlyable.java
+            AspectJTest/src/p3/Main2.java
+            AspectJTest/src/p3/p4/Person.java
+            AspectJTest/src/p2/MyLoggingAspect.java
+            AspectJTest/src/p1/MyService.java
+            AspectJTest/src/p1/Main1.java
+            AspectJTest/bin/META-INF/aop.xml
+            AspectJTest/bin/p3/MakeFlyableAspect.class
+            AspectJTest/bin/p3/ExpertFlyable.class
+            AspectJTest/bin/p3/Flyable.class
+            AspectJTest/bin/p3/Main2.class
+            AspectJTest/bin/p3/MakeFlyable.class
+            AspectJTest/bin/p3/p4/Person.class
+            AspectJTest/bin/p2/MyLoggingAspect.class
+            AspectJTest/bin/p1/Main1.class
+            AspectJTest/bin/p1/MyService.class
+            '''.split()
+        check_files(test_dir, expected)
 
     def test_extract_zip_with_backslash_in_path_3(self):
         test_file = self.get_test_loc('archive/zip/backslash/boo-0.3-src.zip')
         test_dir = self.get_temp_dir()
         archive.extract_zip(test_file, test_dir)
+        print()
+        map(print, fileutils.file_iter(test_dir))
         result = os.path.join(test_dir, 'src/Boo.Lang.Compiler/TypeSystem/InternalCallableType.cs')
         assert os.path.exists(result)
 
@@ -975,25 +1004,25 @@ class TestTar(BaseArchiveTestCase):
             'gnu/sparse-0.1',
             'gnu/sparse-1.0',
             'misc/eof',
-            'misc/regtype-hpux-signed-chksum-\xc4\xd6\xdc\xe4\xf6\xfc\xdf',
+            'misc/regtype-hpux-signed-chksum-AOUaouss',
             'misc/regtype-old-v7',
-            'misc/regtype-old-v7-signed-chksum-\xc4\xd6\xdc\xe4\xf6\xfc\xdf',
+            'misc/regtype-old-v7-signed-chksum-AOUaouss',
             'misc/regtype-suntar',
             'misc/regtype-xstar',
             'pax/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/longname',
-            'pax/hdrcharset-\xe4\xf6\xfc',
+            'pax/hdrcharset-aou',
             'pax/regtype1',
             'pax/regtype2',
             'pax/regtype3',
             'pax/regtype4',
             'pax/regtype4_1',
-            'pax/umlauts-\xc3\x84\xc3\x96\xc3\x9c\xc3\xa4\xc3\xb6\xc3\xbc\xc3\x9f',
+            'pax/umlauts-AOUaouss',
             'ustar/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/1234567/longname',
             'ustar/conttype',
             'ustar/linktest1/regtype',
             'ustar/regtype',
             'ustar/sparse',
-            'ustar/umlauts-\xc4\xd6\xdc\xe4\xf6\xfc\xdf'
+            'ustar/umlauts-AOUaouss'
         ]
         if on_mac:
             # the pure Python tar behaves a tad differently on Mac
@@ -1144,7 +1173,7 @@ class TestAr(BaseArchiveTestCase):
         ]
         assert expected_warns == result
         # inccorrect for now: need this: ['__.SYMDEF', 'release/init.obj']
-        expected = ['file', 'file_1', 'file_2', 'file_3']
+        expected = ['dot', 'dot_1', 'dot_2', 'dot_3']
         check_files(test_dir, expected)
 
     def test_extract_ar_with_relative_path_and_backslashes_in_names_libarch(self):
@@ -1158,42 +1187,42 @@ class TestAr(BaseArchiveTestCase):
         assert expected_warns == result
         # 7zip is better, but has a security bug for now
         expected = [
-            'file',
-            'file_1',
-            'file_10',
-            'file_11',
-            'file_12',
-            'file_13',
-            'file_14',
-            'file_15',
-            'file_16',
-            'file_17',
-            'file_18',
-            'file_19',
-            'file_2',
-            'file_20',
-            'file_21',
-            'file_22',
-            'file_23',
-            'file_24',
-            'file_25',
-            'file_26',
-            'file_27',
-            'file_28',
-            'file_29',
-            'file_3',
-            'file_30',
-            'file_31',
-            'file_32',
-            'file_33',
-            'file_34',
-            'file_35',
-            'file_4',
-            'file_5',
-            'file_6',
-            'file_7',
-            'file_8',
-            'file_9'
+            'dot',
+            'dot_1',
+            'dot_10',
+            'dot_11',
+            'dot_12',
+            'dot_13',
+            'dot_14',
+            'dot_15',
+            'dot_16',
+            'dot_17',
+            'dot_18',
+            'dot_19',
+            'dot_2',
+            'dot_20',
+            'dot_21',
+            'dot_22',
+            'dot_23',
+            'dot_24',
+            'dot_25',
+            'dot_26',
+            'dot_27',
+            'dot_28',
+            'dot_29',
+            'dot_3',
+            'dot_30',
+            'dot_31',
+            'dot_32',
+            'dot_33',
+            'dot_34',
+            'dot_35',
+            'dot_4',
+            'dot_5',
+            'dot_6',
+            'dot_7',
+            'dot_8',
+            'dot_9'
         ]
 
         check_files(test_dir, expected)
@@ -1277,12 +1306,12 @@ class TestAr(BaseArchiveTestCase):
         assert [] == result
 
     def test_extract_ar_with_permissions(self):
-        # the behavious is not correct: 7z is better, but has sec flaws for now
+        # this behavior is not correct: 7z is better, but has security flaws for now
         test_file = self.get_test_loc('archive/ar/winlib/zlib.lib')
         test_dir = self.get_temp_dir()
         result = archive.extract_ar(test_file, test_dir)
         assert [] == result
-        expected = ['file', 'file_1']
+        expected = ['dot', 'dot_1']
         check_files(test_dir, expected)
 
 
@@ -1310,7 +1339,7 @@ class TestCpio(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/cpio/cpio_broken.cpio')
         test_dir = self.get_temp_dir()
         result = archive.extract_cpio(test_file, test_dir)
-        assert ['elfinfo-1.0.tar.gz', 'elfinfo-1.0.tar_1.gz'] == sorted(os.listdir(test_dir))
+        assert ['elfinfo-1.0.tar.gz', 'elfinfo-1_1.0.tar.gz'] == sorted(os.listdir(test_dir))
         assert ['elfinfo-1.0.tar.gz: Skipped 72 bytes before finding valid header'] == result
 
     def test_extract_cpio_with_absolute_path(self):
@@ -1886,57 +1915,131 @@ class TestXar(BaseArchiveTestCase):
 
 
 class TestExtractArchiveWithIllegalFilenames(BaseArchiveTestCase):
-    def test_extract_tar_with_weird_filenames_with_sevenzip(self):
-        test_file = self.get_test_loc('archive/tar/weird_file_name.tar')
-        expected = {
-            "/some 'file": 20,
-            '/some /file': 21,
-            '/some file': 38,
-            '/some"file': 39,
-            '/some/"file': 21
-        }
-        self.check_extract(sevenzip.extract, test_file, expected, check_all=True)
+
+    def check_extract(self, test_function, test_file, expected_suffix, expected_warnings=None, regen=False):
+        """
+        Run the extraction `test_function` on `test_file` checking that the paths
+        listed in the `test_file.excepted` file exist in the extracted target directory.
+        Regen expected_file if True.
+        """
+        test_file = self.get_test_loc(test_file)
+        test_dir = self.get_temp_dir()
+        warnings = test_function(test_file, test_dir)
+        if expected_warnings is not None:
+            assert expected_warnings == warnings
+
+        len_test_dir = len(test_dir)
+        extracted = [path[len_test_dir:] for path in fileutils.file_iter(test_dir)]
+        expected_file = test_file + '_' + expected_suffix + '.expected'
+        import json
+        if regen:
+            with open(expected_file, 'wb') as ef:
+                ef.write(json.dumps(sorted(extracted), indent=2))
+
+        expected = json.loads(open(expected_file).read())
+        expected = [os.path.join(test_dir, str(exp_path)) for exp_path in expected if exp_path.strip()]
+        assert sorted(expected) == sorted(extracted)
+
+    def test_extract_7zip_with_weird_filenames_with_libarchive(self):
+        test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
+        self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
+
+    @skipIf(on_windows, '7zip behavior is different.')
+    def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
+        test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
+        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+
+    def test_extract_ar_with_weird_filenames_with_libarchive(self):
+        test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
+        warns = ['COM3.txt: Incorrect file header signature', 'com4: Incorrect file header signature']
+        self.check_extract(libarchive2.extract, test_file, expected_warnings=warns, expected_suffix='libarch')
+
+    @skipIf(on_windows, '7zip behavior is different.')
+    def test_extract_ar_with_weird_filenames_with_sevenzip(self):
+        test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
+        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+
+    def test_extract_cpio_with_weird_filenames_with_libarchive(self):
+        test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
+        self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
+
+    @skipIf(on_windows, '7zip behavior is different.')
+    def test_extract_cpio_with_weird_filenames_with_sevenzip(self):
+        test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
+        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+
+    def test_extract_iso_with_weird_filenames_with_sevenzip(self):
+        test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
+        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+
+    @skipIf(on_windows, '7zip behavior is different.')
+    def test_extract_rar_with_weird_filenames_with_sevenzip(self):
+        test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
+        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
     def test_extract_tar_with_weird_filenames_with_libarchive(self):
-        test_file = self.get_test_loc('archive/tar/weird_file_name.tar')
-        expected = {
-            "/some 'file": 20,
-            '/some /file': 21,
-            '/some file': 38,
-            '/some"file': 39,
-            '/some/"file': 21
-        }
-        self.check_extract(libarchive2.extract, test_file, expected, check_all=True)
+        test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
+        self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
 
     def test_extract_tar_with_weird_filenames_with_pytar(self):
-        test_file = self.get_test_loc('archive/tar/weird_file_name.tar')
-        expected = {
-            "/some 'file": 20,
-            '/some /file': 21,
-            '/some file': 38,
-            '/some"file': 39,
-            '/some/"file': 21
-        }
-        self.check_extract(tar.extract, test_file, expected, check_all=True)
+        test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
+        warns = [
+            'weird_names/win/LPT7.txt: Skipping duplicate file name.',
+            'weird_names/win/COM5.txt: Skipping duplicate file name.',
+            'weird_names/win/LPT1.txt: Skipping duplicate file name.',
+            'weird_names/win/con: Skipping duplicate file name.',
+            'weird_names/win/COM7.txt: Skipping duplicate file name.',
+            'weird_names/win/LPT6.txt: Skipping duplicate file name.',
+            'weird_names/win/com6: Skipping duplicate file name.',
+            'weird_names/win/nul: Skipping duplicate file name.',
+            'weird_names/win/com2: Skipping duplicate file name.',
+            'weird_names/win/com9.txt: Skipping duplicate file name.',
+            'weird_names/win/LPT8.txt: Skipping duplicate file name.',
+            'weird_names/win/prn.txt: Skipping duplicate file name.',
+            'weird_names/win/aux.txt: Skipping duplicate file name.',
+            'weird_names/win/com9: Skipping duplicate file name.',
+            'weird_names/win/com8: Skipping duplicate file name.',
+            'weird_names/win/LPT5.txt: Skipping duplicate file name.',
+            'weird_names/win/lpt8: Skipping duplicate file name.',
+            'weird_names/win/COM6.txt: Skipping duplicate file name.',
+            'weird_names/win/lpt4: Skipping duplicate file name.',
+            'weird_names/win/lpt5: Skipping duplicate file name.',
+            'weird_names/win/lpt6: Skipping duplicate file name.',
+            'weird_names/win/lpt7: Skipping duplicate file name.',
+            'weird_names/win/com5: Skipping duplicate file name.',
+            'weird_names/win/lpt1: Skipping duplicate file name.',
+            'weird_names/win/COM1.txt: Skipping duplicate file name.',
+            'weird_names/win/lpt9: Skipping duplicate file name.',
+            'weird_names/win/COM2.txt: Skipping duplicate file name.',
+            'weird_names/win/COM4.txt: Skipping duplicate file name.',
+            'weird_names/win/aux: Skipping duplicate file name.',
+            'weird_names/win/LPT9.txt: Skipping duplicate file name.',
+            'weird_names/win/LPT2.txt: Skipping duplicate file name.',
+            'weird_names/win/com1: Skipping duplicate file name.',
+            'weird_names/win/com3: Skipping duplicate file name.',
+            'weird_names/win/COM8.txt: Skipping duplicate file name.',
+            'weird_names/win/COM3.txt: Skipping duplicate file name.',
+            'weird_names/win/prn: Skipping duplicate file name.',
+            'weird_names/win/lpt2: Skipping duplicate file name.',
+            'weird_names/win/com4: Skipping duplicate file name.',
+            'weird_names/win/nul.txt: Skipping duplicate file name.',
+            'weird_names/win/LPT3.txt: Skipping duplicate file name.',
+            'weird_names/win/lpt3: Skipping duplicate file name.',
+            'weird_names/win/con.txt: Skipping duplicate file name.',
+            'weird_names/win/LPT4.txt: Skipping duplicate file name.',
+            'weird_names/win/com7: Skipping duplicate file name.'
+        ]
+        self.check_extract(tar.extract, test_file, expected_warnings=warns, expected_suffix='pytar')
 
-    def test_extract_zip_with_weird_filenames_with_sevenzip(self):
-        test_file = self.get_test_loc('archive/zip/weird_file_name.zip')
-        expected = {
-            "/weird_file_name/some 'file": 20,
-            '/weird_file_name/some /file': 21,
-            '/weird_file_name/some file': 38,
-            '/weird_file_name/some"file': 39,
-            '/weird_file_name/some/"file': 21
-        }
-        self.check_extract(sevenzip.extract, test_file, expected, check_all=True)
+    def test_extract_tar_with_weird_filenames_with_sevenzip(self):
+        test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
+        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
     def test_extract_zip_with_weird_filenames_with_libarchive(self):
-        test_file = self.get_test_loc('archive/zip/weird_file_name.zip')
-        expected = {
-            "/weird_file_name/some 'file": 20,
-            '/weird_file_name/some /file': 21,
-            '/weird_file_name/some file': 38,
-            '/weird_file_name/some"file': 39,
-            '/weird_file_name/some/"file': 21
-        }
-        self.check_extract(libarchive2.extract, test_file, expected, check_all=True)
+        test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
+        self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
+
+    @skipIf(on_windows, '7zip behavior is different.')
+    def test_extract_zip_with_weird_filenames_with_sevenzip(self):
+        test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
+        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
