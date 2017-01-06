@@ -263,9 +263,12 @@ def validate_formats(ctx, param, value):
 @click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True))
 @click.argument('output_file', default='-', metavar='<output_file>', type=click.File('w', encoding='utf-8'))
 
+# Note that click's 'default' option is set to 'false' here despite these being documented to be enabled by default in
+# order to more elegantly enable all of these (see code below) if *none* of the command line options are specified.
 @click.option('-c', '--copyright', is_flag=True, default=False, help='Scan <input> for copyrights. [default]')
 @click.option('-l', '--license', is_flag=True, default=False, help='Scan <input> for licenses. [default]')
 @click.option('-p', '--package', is_flag=True, default=False, help='Scan <input> for packages. [default]')
+
 @click.option('-e', '--email', is_flag=True, default=False, help='Scan <input> for emails.')
 @click.option('-u', '--url', is_flag=True, default=False, help='Scan <input> for urls.')
 @click.option('-i', '--info', is_flag=True, default=False, help='Include information such as size, type, etc.')
@@ -300,8 +303,9 @@ def scancode(ctx, input, output_file, copyright, license, package,
     The scan results are printed to stdout if <output_file> is not provided.
     Error and progress is printed to stderr.
     """
+
+    # Use default scan options when no options are provided on the command line.
     possible_scans = [copyright, license, package, email, url, info]
-    # Default scan when no options is provided
     if not any(possible_scans):
         copyright = True
         license = True
