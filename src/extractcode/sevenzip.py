@@ -171,7 +171,7 @@ def extract(location, target_dir, arch_type='*'):
         error = get_7z_errors(stdout) or 'No error returned'
         raise ExtractErrorFailedToExtract(error)
 
-    extractcode.remove_backslashes(abs_target_dir)
+    extractcode.remove_backslashes_and_dotdots(abs_target_dir)
     return get_7z_warnings(stdout)
 
 

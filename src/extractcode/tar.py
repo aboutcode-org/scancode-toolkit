@@ -123,13 +123,14 @@ def extract(location, target_dir):
 
     warnings = defaultdict(list)
 
+    # track directories to fixup modification times at the end
+    directories = []
+
     with closing(tarfile.open(location)) as tar:
         tar.errorlevel = 1
-        directories = []
         names = set()
         for tinfo in tar.getmembers():
-            is_special = not (tinfo.isfile() or tinfo.isdir()
-                              or tinfo.islnk() or tinfo.issym())
+            is_special = not any((tinfo.isfile(), tinfo.isdir(), tinfo.islnk(), tinfo.issym()))
             if is_special:
                 # FIXME: we should not report a warning?
                 warnings[tinfo.name].append('Skipping special file.')
@@ -189,17 +190,17 @@ def extract(location, target_dir):
             except Exception, e:
                 raise ExtractError()
 
-        # Set correct mtime on directories, starting from the bottom of the
-        # tree
-        for tinfo in sorted(directories,
-                            cmp=lambda a, b: cmp(a.name, b.name),
-                            reverse=True):
-            dir_loc = os.path.join(target_dir, tinfo.name)
-            try:
-                # NOTE: this may not work at all on Windows
-                tar.utime(tinfo, dir_loc)
-            except Exception, e:
-                warnings[tinfo.name].append(str(e))
+    # Set correct mtime on directories, starting from the bottom of the tree
+    def dir_sorter(a, b): 
+        return cmp(a.name, b.name)
+
+    for tinfo in sorted(directories, cmp=dir_sorter, reverse=True):
+        dir_loc = os.path.join(target_dir, tinfo.name)
+        try:
+            # NOTE: this may not work at all on Windows
+            tar.utime(tinfo, dir_loc)
+        except Exception, e:
+            warnings[tinfo.name].append(str(e))
 
     # collect warnings
     warning_messages = []
