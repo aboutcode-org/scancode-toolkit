@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -31,79 +31,115 @@ from commoncode import paths
 
 class TestPortablePath(TestCase):
 
-    def test_safe_path(self):
-        # tuples of test data, expected results
-        tests = [
-         # mixed slashes
-        (r'C:\Documents and Settings\Boki\Desktop\head\patches\drupal6/drupal.js',
-          'c_/documents_and_settings/boki/desktop/head/patches/drupal6/drupal.js'),
-         # mixed slashes and spaces
-        (r'C:\Documents and Settings\Boki\Desktop\head\patches\parallel uploads/drupal.js',
-          'c_/documents_and_settings/boki/desktop/head/patches/parallel_uploads/drupal.js'),
-         # windows style
-        (r'C:\Documents and Settings\Administrator\Desktop\siftDemoV4_old\defs.h',
-          'c_/documents_and_settings/administrator/desktop/siftdemov4_old/defs.h'),
-         # windows style, mixed slashes, no spaces
-        (r'C:\Documents and Settings\Boki\Desktop\head\patches\imagefield/imagefield.css',
-          'c_/documents_and_settings/boki/desktop/head/patches/imagefield/imagefield.css'),
-         # windows style, spaces
-        (r'C:\Documents and Settings\Boki\Desktop\head\patches\js delete\imagefield.css',
-          'c_/documents_and_settings/boki/desktop/head/patches/js_delete/imagefield.css'),
-         # windows style, posix slashes
-        (r'C:/Documents and Settings/Alex Burgel/workspace/Hibernate3.2/test/org/hibernate/test/AllTests.java',
-          'c_/documents_and_settings/alex_burgel/workspace/hibernate3.2/test/org/hibernate/test/alltests.java'),
-         # windows style, relative
-        (r'includes\webform.components.inc',
-          'includes/webform.components.inc'),
-         # windows style, absolute, trailing slash
-        ('\\includes\\webform.components.inc\\',
-          'includes/webform.components.inc'),
-         # posix style, relative
-        (r'includes/webform.components.inc',
-          'includes/webform.components.inc'),
-         # posix style, absolute, trailing slash
-        (r'/includes/webform.components.inc/',
-          'includes/webform.components.inc'),
-         # posix style, french char
-        ('/includes/webform.compon\xc3nts.inc/',
-          'includes/webform.compon_nts.inc'),
-         # posix style, chinese char
-        ('/includes/webform.compon\xd2\xaants.inc/',
-          'includes/webform.compon__nts.inc'),
-         # windows style, dots
-        ('\\includes\\..\\webform.components.inc\\',
-          'webform.components.inc'),
-         # windows style, many dots
-        ('.\\includes\\.\\..\\..\\..\webform.components.inc\\.',
-          'dotdot/dotdot/webform.components.inc'),
-         # posix style, dots
-        (r'includes/../webform.components.inc',
-          'webform.components.inc'),
-         # posix style, many dots
-        (r'./includes/./../../../../webform.components.inc/.',
-          'dotdot/dotdot/dotdot/webform.components.inc'),
-        ]
-        for tst, expected in tests:
-            assert expected == paths.safe_path(tst)
+    def test_safe_path_mixed_slashes(self):
+        test = paths.safe_path('C:\\Documents and Settings\\Boki\\Desktop\\head\\patches\\drupal6/drupal.js')
+        expected = 'C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/drupal.js'
+        assert expected == test
 
-    def test_resolve(self):
-        # tuples of test data, expected results
-        tests = [
-        ('C:\\..\\./drupal.js',
-         'drupal.js'),
-        ('\\includes\\..\\webform.components.inc\\',
-        'webform.components.inc'),
-        ('includes/../webform.components.inc',
-         'webform.components.inc'),
-        ('////.//includes/./../..//..///../webform.components.inc/.',
-        'dotdot/dotdot/dotdot/webform.components.inc'),
-        (u'////.//includes/./../..//..///../webform.components.inc/.',
-         u'dotdot/dotdot/dotdot/webform.components.inc'),
-        ('includes/../',
-        '.'),
-        ]
-        for tst, expected in tests:
-            assert expected == paths.resolve(tst)
+    def test_safe_path_mixed_slashes_and_spaces(self):
+        test = paths.safe_path('C:\\Documents and Settings\\Boki\\Desktop\\head\\patches\\parallel uploads/drupal.js')
+        expected = 'C/Documents_and_Settings/Boki/Desktop/head/patches/parallel_uploads/drupal.js'
+        assert expected == test
+
+    def test_safe_path_windows_style(self):
+        test = paths.safe_path('C:\\Documents and Settings\\Administrator\\Desktop\\siftDemoV4_old\\defs.h')
+        expected = 'C/Documents_and_Settings/Administrator/Desktop/siftDemoV4_old/defs.h'
+        assert expected == test
+
+    def test_safe_path_windows_style_mixed_slashes_no_spaces(self):
+        test = paths.safe_path('C:\\Documents and Settings\\Boki\\Desktop\\head\\patches\\imagefield/imagefield.css')
+        expected = 'C/Documents_and_Settings/Boki/Desktop/head/patches/imagefield/imagefield.css'
+        assert expected == test
+
+    def test_safe_path_windows_style_spaces(self):
+        test = paths.safe_path('C:\\Documents and Settings\\Boki\\Desktop\\head\\patches\\js delete\\imagefield.css')
+        expected = 'C/Documents_and_Settings/Boki/Desktop/head/patches/js_delete/imagefield.css'
+        assert expected == test
+
+    def test_safe_path_windows_style_posix_slashes(self):
+        test = paths.safe_path('C:/Documents and Settings/Alex Burgel/workspace/Hibernate3.2/test/org/hibernate/test/AllTests.java')
+        expected = 'C/Documents_and_Settings/Alex_Burgel/workspace/Hibernate3.2/test/org/hibernate/test/AllTests.java'
+        assert expected == test
+
+    def test_safe_path_windows_style_relative(self):
+        test = paths.safe_path('includes\\webform.components.inc')
+        expected = 'includes/webform.components.inc'
+        assert expected == test
+
+    def test_safe_path_windows_style_absolute_trailing_slash(self):
+        test = paths.safe_path('\\includes\\webform.components.inc\\')
+        expected = 'includes/webform.components.inc'
+        assert expected == test
+
+    def test_safe_path_posix_style_relative(self):
+        test = paths.safe_path('includes/webform.components.inc')
+        expected = 'includes/webform.components.inc'
+        assert expected == test
+
+    def test_safe_path_posix_style_absolute_trailing_slash(self):
+        test = paths.safe_path('/includes/webform.components.inc/')
+        expected = 'includes/webform.components.inc'
+        assert expected == test
+
+    def test_safe_path_posix_style_french_char(self):
+        test = paths.safe_path('/includes/webform.compon\xc3nts.inc/')
+        expected = 'includes/webform.componAnts.inc'
+        assert expected == test
+
+    def test_safe_path_posix_style_chinese_char(self):
+        test = paths.safe_path('/includes/webform.compon\xd2\xaants.inc/')
+        expected = 'includes/webform.componS_nts.inc'
+        assert expected == test
+
+    def test_safe_path_windows_style_dots(self):
+        test = paths.safe_path('\\includes\\..\\webform.components.inc\\')
+        expected = 'webform.components.inc'
+        assert expected == test
+
+    def test_safe_path_windows_style_many_dots(self):
+        test = paths.safe_path('.\\includes\\.\\..\\..\\..\\webform.components.inc\\.')
+        expected = 'dotdot/dotdot/webform.components.inc'
+        assert expected == test
+
+    def test_safe_path_posix_style_dots(self):
+        test = paths.safe_path('includes/../webform.components.inc')
+        expected = 'webform.components.inc'
+        assert expected == test
+
+    def test_safe_path_posix_style_many_dots(self):
+        test = paths.safe_path('./includes/./../../../../webform.components.inc/.')
+        expected = 'dotdot/dotdot/dotdot/webform.components.inc'
+        assert expected == test
+
+    def test_resolve_mixed_slash(self):
+        test = paths.resolve('C:\\..\\./drupal.js')
+        expected = 'C/drupal.js'
+        assert expected == test
+
+    def test_resolve_2(self):
+        test = paths.resolve('\\includes\\..\\webform.components.inc\\')
+        expected = 'webform.components.inc'
+        assert expected == test
+
+    def test_resolve_3(self):
+        test = paths.resolve('includes/../webform.components.inc')
+        expected = 'webform.components.inc'
+        assert expected == test
+
+    def test_resolve_4(self):
+        test = paths.resolve('////.//includes/./../..//..///../webform.components.inc/.')
+        expected = 'dotdot/dotdot/dotdot/webform.components.inc'
+        assert expected == test
+
+    def test_resolve_5(self):
+        test = paths.resolve(u'////.//includes/./../..//..///../webform.components.inc/.')
+        expected = u'dotdot/dotdot/dotdot/webform.components.inc'
+        assert expected == test
+
+    def test_resolve_6(self):
+        test = paths.resolve('includes/../')
+        expected = '.'
+        assert expected == test
 
 
 class TestCommonPath(TestCase):
@@ -213,13 +249,11 @@ class TestCommonPath(TestCase):
         assert ('a/b', 2) == test
 
     def test_common_path_suffix_handles_relative_subpath(self):
-        test = paths.common_path_suffix('zsds/adsds/a/b/b/c',
-                                                     'a//a/d//b/c')
+        test = paths.common_path_suffix('zsds/adsds/a/b/b/c', 'a//a/d//b/c')
         assert ('b/c', 2) == test
 
     def test_common_path_suffix_ignore_and_strip_trailing_slash(self):
-        test = paths.common_path_suffix('zsds/adsds/a/b/b/c/',
-                                                     'a//a/d//b/c/')
+        test = paths.common_path_suffix('zsds/adsds/a/b/b/c/', 'a//a/d//b/c/')
         assert ('b/c', 2) == test
 
     def test_common_path_suffix_return_None_if_no_common_suffix(self):
@@ -232,8 +266,7 @@ class TestCommonPath(TestCase):
 
     def test_common_path_suffix_match_only_whole_segments(self):
         # only segments are honored, commonality within segment is ignored
-        test = paths.common_path_suffix(
-            'this/is/aaaa/great/path', 'this/is/aaaaa/great/path')
+        test = paths.common_path_suffix('this/is/aaaa/great/path', 'this/is/aaaaa/great/path')
         assert ('great/path', 2) == test
 
     def test_common_path_suffix_two_root(self):
