@@ -39,7 +39,6 @@ from commoncode.testcase import FileDrivenTesting
 
 from scancode import cli
 from commoncode.testcase import extract_tar
-from commoncode.fileutils import file_iter
 
 
 test_env = FileDrivenTesting()
@@ -516,4 +515,4 @@ def test_scan_can_handle_weird_file_names(monkeypatch):
     assert "KeyError: 'sha1'" not in result.output
     assert 'Scanning done' in result.output
     expected = 'weird_file_name/expected.json'
-    check_scan(test_env.get_test_loc(expected), result_file, test_dir, regen=False)
+    check_scan(test_env.get_test_loc(expected), result_file, regen=False)
