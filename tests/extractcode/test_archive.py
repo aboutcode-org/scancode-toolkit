@@ -34,7 +34,7 @@ import commoncode.date
 from commoncode.testcase import FileBasedTesting
 from commoncode import filetype
 from commoncode import fileutils
-
+from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
 import typecode.contenttype
@@ -1920,17 +1920,23 @@ class TestExtractArchiveWithIllegalFilenames(BaseArchiveTestCase):
         """
         Run the extraction `test_function` on `test_file` checking that the paths
         listed in the `test_file.excepted` file exist in the extracted target directory.
-        Regen expected_file if True.
+        Regen expected file if True.
         """
         test_file = self.get_test_loc(test_file)
         test_dir = self.get_temp_dir()
         warnings = test_function(test_file, test_dir)
-        if expected_warnings is not None:
-            assert expected_warnings == warnings
 
         len_test_dir = len(test_dir)
         extracted = [path[len_test_dir:] for path in fileutils.file_iter(test_dir)]
-        expected_file = test_file + '_' + expected_suffix + '.expected'
+
+        if on_linux:
+            os_suffix = 'linux'
+        elif on_mac:
+            os_suffix = 'mac'
+        elif on_windows:
+            os_suffix = 'win'
+
+        expected_file = test_file + '_' + expected_suffix + '_' + os_suffix + '.expected'
         import json
         if regen:
             with open(expected_file, 'wb') as ef:
@@ -1940,11 +1946,13 @@ class TestExtractArchiveWithIllegalFilenames(BaseArchiveTestCase):
         expected = [os.path.join(test_dir, str(exp_path)) for exp_path in expected if exp_path.strip()]
         assert sorted(expected) == sorted(extracted)
 
+        if expected_warnings is not None:
+            assert expected_warnings == warnings
+
     def test_extract_7zip_with_weird_filenames_with_libarchive(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
         self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
 
-    @skipIf(on_windows, '7zip behavior is different.')
     def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -1954,7 +1962,6 @@ class TestExtractArchiveWithIllegalFilenames(BaseArchiveTestCase):
         warns = ['COM3.txt: Incorrect file header signature', 'com4: Incorrect file header signature']
         self.check_extract(libarchive2.extract, test_file, expected_warnings=warns, expected_suffix='libarch')
 
-    @skipIf(on_windows, '7zip behavior is different.')
     def test_extract_ar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -1963,7 +1970,6 @@ class TestExtractArchiveWithIllegalFilenames(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
         self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
 
-    @skipIf(on_windows, '7zip behavior is different.')
     def test_extract_cpio_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -1972,7 +1978,6 @@ class TestExtractArchiveWithIllegalFilenames(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @skipIf(on_windows, '7zip behavior is different.')
     def test_extract_rar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -2039,7 +2044,6 @@ class TestExtractArchiveWithIllegalFilenames(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
         self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
 
-    @skipIf(on_windows, '7zip behavior is different.')
     def test_extract_zip_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
