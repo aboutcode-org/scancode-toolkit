@@ -36,9 +36,12 @@ from click.testing import CliRunner
 
 from commoncode import fileutils
 from commoncode.testcase import FileDrivenTesting
+from commoncode.system import on_linux
+from commoncode.system import on_mac
+from commoncode.system import on_windows
+from commoncode.testcase import extract_tar
 
 from scancode import cli
-from commoncode.testcase import extract_tar
 
 
 test_env = FileDrivenTesting()
@@ -440,9 +443,6 @@ def test_scan_does_not_fail_unicode_files_and_paths(monkeypatch):
 
     # the paths for each OS end up encoded differently.
     # See https://github.com/nexB/scancode-toolkit/issues/390 for details
-    from commoncode.system import on_linux
-    from commoncode.system import on_mac
-    from commoncode.system import on_windows
 
     if on_linux:
         expected = 'unicodepath/unicodepath.expected-linux.json'
@@ -514,5 +514,14 @@ def test_scan_can_handle_weird_file_names(monkeypatch):
     assert result.exit_code == 0
     assert "KeyError: 'sha1'" not in result.output
     assert 'Scanning done' in result.output
-    expected = 'weird_file_name/expected.json'
+
+    # Some info vary on each OS
+    # See https://github.com/nexB/scancode-toolkit/issues/438 for details
+    if on_linux:
+        expected = 'weird_file_name/expected-linux.json'
+    elif on_mac:
+        expected = 'weird_file_name/expected-mac.json'
+    elif on_windows:
+        expected = 'weird_file_name/expected-win.json'
+
     check_scan(test_env.get_test_loc(expected), result_file, regen=False)
