@@ -33,6 +33,7 @@ import click
 
 from commoncode import fileutils
 from commoncode import filetype
+from commoncode.text import toascii
 
 from scancode.api import extract_archives
 from scancode.cli import print_about
@@ -114,6 +115,8 @@ def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssign
             line = item.source and utils.get_relative_path(path=item.source, len_base_path=len_base_path, base_is_dir=base_is_dir) or ''
         else:
             line = item.source and fileutils.file_name(item.source) or ''
+        if not isinstance(line, unicode):
+            line = toascii(line, translit=True).decode('utf-8', 'replace')
         return 'Extracting: %(line)s' % locals()
 
     def display_extract_summary():
@@ -128,6 +131,8 @@ def extractcode(ctx, input, verbose, quiet, *args, **kwargs):  # @ReservedAssign
             has_warnings = has_warnings or bool(xev.warnings)
             source = fileutils.as_posixpath(xev.source)
             source = utils.get_relative_path(path=source, len_base_path=len_base_path, base_is_dir=base_is_dir)
+            if not isinstance(source, unicode):
+                source = toascii(source, translit=True).decode('utf-8', 'replace')
             for e in xev.errors:
                 echo_stderr('ERROR extracting: %(source)s: %(e)r' % locals(), fg='red')
             for warn in xev.warnings:
