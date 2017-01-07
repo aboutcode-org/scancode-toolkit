@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -142,31 +142,34 @@ def extract(location, target_dir, arch_type='*'):
     # pass an empty password  so that extraction with passwords WILL fail
     password = '-p'
 
+    # renaming may not behave the same way on all OSes in particular Mac and Windows
     auto_rename_dupe_names = '-aou'
 
-    # these do not work well with p7zip
-    # ensure that we treat the FS as case insensitive even if it is
-    # this ensure we have consistent names across OSes
-    # case_insensitive = '-ssc-'
-    # force any console output to be UTF-8 encoded
-
-    # TODO: add this may be for a UTF output on Windows only
-    # output_as_utf = '-sccUTF-8'
-    # working_tmp_dir = '-w<path>'
+    # These things do not work well with p7zip for now:
+    # - ensure that we treat the FS as case insensitive even if it is
+    #   this ensure we have consistent names across OSes
+    #   case_insensitive = '-ssc-'
+    # - force any console output to be UTF-8 encoded
+    #   TODO: add this may be for a UTF output on Windows only
+    #   output_as_utf = '-sccUTF-8'
+    #   working_tmp_dir = '-w<path>'
 
     # NB: we force running in the GMT timezone, because 7z is unable to set
     # the TZ correctly when the archive does not contain TZ info. This does
     # not work on Windows, because 7z is not using the TZ env var there.
     timezone = os.environ.update({'TZ': 'GMT'})
 
-    # Note: 7z does extract in the current directory so we cwd to target_dir
+    # Note: 7z does extract in the current directory so we cwd to the target dir first
     args = [extract, yes_to_all, auto_rename_dupe_names,
             arch_type, password, abs_location]
-    rc, stdout, _stderr = command.execute(cmd='7z',
-                                          args=args,
-                                          cwd=abs_target_dir,
-                                          env=timezone,
-                                          root_dir=root_dir)
+    rc, stdout, _stderr = command.execute(
+        cmd='7z',
+        args=args,
+        cwd=abs_target_dir,
+        env=timezone,
+        root_dir=root_dir
+    )
+
     if rc != 0:
         error = get_7z_errors(stdout) or 'No error returned'
         raise ExtractErrorFailedToExtract(error)
