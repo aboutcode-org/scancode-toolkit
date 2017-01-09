@@ -667,7 +667,7 @@ def save_results(files_count, scanned_files, format, input, output_file):
         if format == 'json-pp':
             output_file.write(unicode(json.dumps(meta, indent=2 * ' ', iterable_as_array=True, encoding='utf-8')))
         else:
-            output_file.write(unicode(json.dumps(meta, iterable_as_array=True, encoding='utf-8')))
+            output_file.write(unicode(json.dumps(meta, separators=(',', ':'), iterable_as_array=True, encoding='utf-8')))
         output_file.write('\n')
 
     elif format == 'spdx-tv' or format == 'spdx-rdf':
