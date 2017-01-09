@@ -426,7 +426,7 @@ def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
 
 def test_scan_does_not_fail_when_scanning_unicode_files_and_paths(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    test_dir = test_env.get_test_loc('unicodepath/uc')
+    test_dir = test_env.get_test_loc(u'unicodepath/uc')
 
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
