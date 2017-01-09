@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -39,7 +39,6 @@ from commoncode.testcase import FileDrivenTesting
 from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
-from commoncode.testcase import extract_tar
 
 from scancode import cli
 
@@ -425,19 +424,14 @@ def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
     assert sorted(expected) == sorted(result_json['files'])
 
 
-def test_scan_does_not_fail_unicode_files_and_paths(monkeypatch):
+def test_scan_does_not_fail_when_scanning_unicode_files_and_paths(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-
-    # use plain tar for proper unicode names extraction without transliteration
-    test_archive = test_env.get_test_loc('unicodepath/unicodepath.tgz')
-    xtest_dir = test_env.get_temp_dir()
-    extract_tar(test_archive, xtest_dir)
+    test_dir = test_env.get_test_loc('unicodepath/uc')
 
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
     result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright',
-                                          '--package', '--email', '--url', xtest_dir , result_file], catch_exceptions=True)
-    print(result.output_bytes)
+                                          '--package', '--email', '--url', test_dir , result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
