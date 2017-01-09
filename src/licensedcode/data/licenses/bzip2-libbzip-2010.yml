@@ -1,7 +1,7 @@
 key: bzip2-libbzip-2010
 short_name: bzip2 License 2010
 name: bzip2 License 2010
-category: Attribution
+category: Permissive
 owner: bzip
 homepage_url: https://github.com/asimonov-im/bzip2/blob/master/LICENSE
 spdx_license_key: bzip2-1.0.6

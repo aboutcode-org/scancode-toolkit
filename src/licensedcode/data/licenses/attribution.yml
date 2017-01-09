@@ -1,7 +1,7 @@
 key: attribution
 short_name: AAL
 name: Attribution Assurance License
-category: Attribution
+category: Permissive
 homepage_url: http://opensource.org/licenses/attribution.php
 spdx_license_key: AAL
 spdx_full_name: Attribution Assurance License

@@ -1,7 +1,7 @@
 key: apache-due-credit
 short_name: Apache Due Credit Variant
 name: Apache Due Credit Variant
-category: Attribution
+category: Permissive
 owner: Codehaus
 other_urls:
     - http://openorb.sourceforge.net/license.txt

@@ -1,7 +1,7 @@
 key: openssh
 short_name: OpenSSH License
 name: OpenSSH License
-category: Attribution
+category: Permissive
 owner: OpenBSD Project
 homepage_url: http://www.openssh.org/
 text_urls:

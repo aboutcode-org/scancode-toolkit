@@ -1,7 +1,7 @@
 key: ibm-icu
 short_name: ICU Composite License
 name: ICU Composite License
-category: Attribution
+category: Permissive
 owner: IBM
 homepage_url: http://source.icu-project.org/repos/icu/icu/trunk/license.html
 text_urls:

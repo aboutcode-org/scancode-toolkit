@@ -1,7 +1,7 @@
 key: standard-ml-nj
 short_name: Standard ML of New Jersey
 name: Standard ML of New Jersey
-category: Attribution
+category: Permissive
 owner: Alcatel-Lucent
 homepage_url: http://www.smlnj.org//license.html
 spdx_license_key: StandardML-NJ

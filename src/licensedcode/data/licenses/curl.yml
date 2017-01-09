@@ -1,7 +1,7 @@
 key: curl
 short_name: cURL License
 name: cURL License
-category: Attribution
+category: Permissive
 owner: cURL
 homepage_url: http://curl.haxx.se/
 text_urls:

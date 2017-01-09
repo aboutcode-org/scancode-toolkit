@@ -1,7 +1,7 @@
 key: reportbug
 short_name: reportbug License
 name: reportbug License
-category: Attribution
+category: Permissive
 owner: Debian
 text_urls:
     - https://tracker.debian.org/media/packages/r/reportbug/copyright-6.6.6

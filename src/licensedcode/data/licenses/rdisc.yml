@@ -1,7 +1,7 @@
 key: rdisc
 short_name: Rdisc License
 name: Rdisc License
-category: Attribution
+category: Permissive
 owner: Oracle (Sun)
 homepage_url: https://fedoraproject.org/wiki/Licensing/Rdisc_License
 spdx_license_key: Rdisc

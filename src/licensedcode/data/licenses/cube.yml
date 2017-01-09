@@ -1,7 +1,7 @@
 key: cube
 short_name: Cube License
 name: Cube License
-category: Attribution
+category: Permissive
 owner: Wouter van Oortmerssen
 homepage_url: https://fedoraproject.org/wiki/Licensing/Cube
 spdx_license_key: Cube

@@ -1,7 +1,7 @@
 key: zlib
 short_name: ZLIB License
 name: ZLIB License
-category: Attribution
+category: Permissive
 owner: zlib
 homepage_url: http://www.zlib.net/
 spdx_license_key: Zlib

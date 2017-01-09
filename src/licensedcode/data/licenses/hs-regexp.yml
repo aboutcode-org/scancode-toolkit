@@ -1,7 +1,7 @@
 key: hs-regexp
 short_name: Henry Spencer Regexp License
 name: Henry Spencer Regexp License
-category: Attribution
+category: Permissive
 owner: Henry Spencer
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/Henry_Spencer_Reg-Ex_Library_License

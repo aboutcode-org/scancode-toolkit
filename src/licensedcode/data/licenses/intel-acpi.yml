@@ -1,7 +1,7 @@
 key: intel-acpi
 short_name: Intel ACPI SLA
 name: Intel ACPI Software License Agreement
-category: Attribution
+category: Permissive
 owner: Intel Corporation
 homepage_url: https://fedoraproject.org/wiki/Licensing/Intel_ACPI_Software_License_Agreement
 spdx_license_key: Intel-ACPI

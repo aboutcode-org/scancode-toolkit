@@ -114,7 +114,7 @@ class License(object):
         # full name.
         self.name = u''
 
-        # Attribution, Copyleft, etc
+        # Permissive, Copyleft, etc
         self.category = u''
 
         self.owner = u''
