@@ -1,7 +1,8 @@
 # Testing
+apipkg
+py
 pytest
 colorama
 execnet
-py
 pytest-xdist
 bumpversion
