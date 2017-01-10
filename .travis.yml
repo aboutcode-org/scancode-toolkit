@@ -14,6 +14,7 @@ env:
         - TEST_SUITE="bin/py.test -n 2 -s --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
         - TEST_SUITE="./etc/release/release.sh"
 
+
 install:
     - ./configure
 
