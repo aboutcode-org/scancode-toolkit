@@ -513,7 +513,8 @@ def test_scan_can_return_matched_license_text(monkeypatch):
     assert result.exit_code == 0
     check_scan(test_env.get_test_loc(expected_file), result_file, regen=False)
 
-@skipIf(on_windows, 'This test cannot run on winows as these are not legal file names.')
+
+@skipIf(on_windows, 'This test cannot run on windows as these are not legal file names.')
 def test_scan_can_handle_weird_file_names(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.extract_test_tar('weird_file_name/weird_file_name.tar.gz')
