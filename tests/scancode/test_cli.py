@@ -54,7 +54,16 @@ actual command outputs as if using a real command line call.
 """
 
 
-def check_scan(expected_file, result_file, regen=False):
+def remove_dates(scan_result):
+    """
+    Remove date fields from scan.
+    """
+    for scanned_file in scan_result['files']:
+        if 'date' in scanned_file:
+            del scanned_file['date']
+
+
+def check_scan(expected_file, result_file, regen=False, strip_dates=False):
     """
     Check the scan result_file JSON results against the expected_file expected JSON
     results. Removes references to test_dir for the comparison. If regen is True the
@@ -62,10 +71,15 @@ def check_scan(expected_file, result_file, regen=False):
     updating tests expectations. But use with caution.
     """
     result = _load_json_result(result_file)
+    if strip_dates:
+        remove_dates(result)
     if regen:
         with open(expected_file, 'wb') as reg:
             json.dump(result, reg, indent=2)
     expected = _load_json_result(expected_file)
+    if strip_dates:
+        remove_dates(expected)
+
     # NOTE we redump the JSON as a string for a more efficient comparison of
     # failures
     expected = json.dumps(expected, indent=2, sort_keys=True)
@@ -446,7 +460,7 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths(monkeypatch):
     elif on_windows:
         expected = 'unicodepath/unicodepath.expected-win.json'
 
-    check_scan(test_env.get_test_loc(expected), result_file, regen=False)
+    check_scan(test_env.get_test_loc(expected), result_file, strip_dates=True, regen=False)
 
 
 def test_scan_can_handle_licenses_with_unicode_metadata(monkeypatch):
