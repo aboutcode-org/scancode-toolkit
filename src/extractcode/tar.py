@@ -188,6 +188,7 @@ def extract(location, target_dir):
             try:
                 tar.extract(tinfo, target_dir)
             except Exception, e:
+                # FIXME: we must keep the traceback for diagnostics
                 raise ExtractError()
 
     # Set correct mtime on directories, starting from the bottom of the tree
