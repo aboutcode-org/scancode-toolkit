@@ -2305,6 +2305,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin(ExtractArchiveWith
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
+    # The results are not correct but not a problem: we use libarchive for these
     def test_extract_tar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
