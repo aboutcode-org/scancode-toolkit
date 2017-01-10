@@ -25,6 +25,7 @@
 from __future__ import absolute_import, print_function
 
 import codecs
+import ntpath
 import os
 import posixpath
 from unittest.case import expectedFailure
@@ -1891,6 +1892,49 @@ class TestXar(BaseArchiveTestCase):
 # with check_warnings set to True to tests only possible warnings separately.
 # The code tries to avoid too much duplication, but this is at the cost of readability
 
+
+def is_posixpath(location):
+    """
+    Return True if the `location` path is likely a POSIX-like path using POSIX path
+    separators (slash or "/")or has no path separator.
+
+    Return False if the `location` path is likely a Windows-like path using backslash
+    as path separators (e.g. "\").
+    """
+    has_slashes = '/' in location
+    has_backslashes = '\\' in location
+    # windows paths with drive
+    if location:
+        drive, _ = ntpath.splitdrive(location)
+        if drive:
+            return False
+
+    # a path is always POSIX unless it contains ONLY backslahes
+    # which is a rough approximation (it could still be posix)
+    is_posix = True
+    if has_backslashes and not has_slashes:
+        is_posix = False
+    return is_posix
+
+
+def to_posix(path):
+    """
+    Return a path using the posix path separator given a path that may contain posix
+    or windows separators, converting \ to /. NB: this path will still be valid in
+    the windows explorer (except as a UNC or share name). It will be a valid path
+    everywhere in Python. It will not be valid for windows command line operations.
+    """
+    is_unicode = isinstance(path, unicode)
+    ntpath_sep = is_unicode and u'\\' or '\\'
+    posixpath_sep = is_unicode and u'/' or '/'
+    if is_posixpath(path):
+        if on_windows:
+            return path.replace(ntpath_sep, posixpath_sep)
+        else:
+            return path
+    return path.replace(ntpath_sep, posixpath_sep)
+
+
 class ExtractArchiveWithIllegalFilenamesTestCase(BaseArchiveTestCase):
 
     check_only_warnings = False
@@ -1898,20 +1942,24 @@ class ExtractArchiveWithIllegalFilenamesTestCase(BaseArchiveTestCase):
     def check_extract(self, test_function, test_file, expected_suffix, expected_warnings=None, regen=False):
         """
         Run the extraction `test_function` on `test_file` checking that the paths
-        listed in the `test_file.excepted` file exist in the extracted target directory.
-        Regen expected file if True.
+        listed in the `test_file.excepted` file exist in the extracted target
+        directory. Regen expected file if True.
         """
+        if not isinstance(test_file, unicode):
+            test_file = unicode(test_file)
         test_file = self.get_test_loc(test_file)
         test_dir = self.get_temp_dir()
         warnings = test_function(test_file, test_dir)
-
-        len_test_dir = len(test_dir)
-        extracted = [path[len_test_dir:] for path in fileutils.file_iter(test_dir)]
 
         # shortcut if check of warnings are requested
         if self.check_only_warnings and expected_warnings is not None:
             assert sorted(expected_warnings) == sorted(warnings)
             return
+
+        len_test_dir = len(test_dir)
+        extracted = sorted(path[len_test_dir:] for path in fileutils.file_iter(test_dir))
+        extracted = [unicode(p) for p in extracted]
+        extracted = [to_posix(p) for p in extracted]
 
         if on_linux:
             os_suffix = 'linux'
@@ -1924,11 +1972,11 @@ class ExtractArchiveWithIllegalFilenamesTestCase(BaseArchiveTestCase):
         import json
         if regen:
             with open(expected_file, 'wb') as ef:
-                ef.write(json.dumps(sorted(extracted), indent=2))
+                ef.write(json.dumps(extracted, indent=2))
 
         expected = json.loads(open(expected_file).read())
-        expected = [os.path.join(test_dir, str(exp_path)) for exp_path in expected if exp_path.strip()]
-        assert sorted(expected) == sorted(extracted)
+        expected = [p for p in expected if p.strip()]
+        assert expected == extracted
 
 
 @skipIf(not on_linux, 'Run only on Linux because of specific test expectations.')
@@ -2126,37 +2174,37 @@ class TestExtractArchiveWithIllegalFilenamesWithPytarOnLinuxWarnings(TestExtract
 class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac(ExtractArchiveWithIllegalFilenamesTestCase):
     check_only_warnings = False
 
-    @expectedFailure # not a problem: we use libarchive for these
+    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure # not a problem: we use libarchive for these
+    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_ar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure # not a problem: we use libarchive for these
+    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_cpio_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure # This is a problem
+    @expectedFailure  # This is a problem
     def test_extract_iso_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure # This is a problem, but unrar seems to fail the same way
+    @expectedFailure  # This is a problem, but unrar seems to fail the same way
     def test_extract_rar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure # not a problem: we use libarchive for these
+    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_tar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure # not a problem: we use libarchive for these
+    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_zip_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -2234,17 +2282,17 @@ class TestExtractArchiveWithIllegalFilenamesWithPytarOnMacWarnings(TestExtractAr
 class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin(ExtractArchiveWithIllegalFilenamesTestCase):
     check_only_warnings = False
 
-    @expectedFailure # not a problem: we use libarchive for these
+    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure # not a problem: we use libarchive for these
+    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_ar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure # not a problem: we use libarchive for these
+    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_cpio_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -2261,7 +2309,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin(ExtractArchiveWith
         test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure # not a problem: we use libarchive for these
+    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_zip_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -2276,7 +2324,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWinWarning(TestExtract
 class TestExtractArchiveWithIllegalFilenamesWithPytarOnWin(ExtractArchiveWithIllegalFilenamesTestCase):
     check_only_warnings = False
 
-    @expectedFailure # not a problem: we use libarchive for these and pytar is not equipped to handle these
+    @expectedFailure  # not a problem: we use libarchive for these and pytar is not equipped to handle these
     def test_extract_tar_with_weird_filenames_with_pytar(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
         warns = [
