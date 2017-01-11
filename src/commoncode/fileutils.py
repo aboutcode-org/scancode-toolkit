@@ -180,7 +180,6 @@ def is_posixpath(location):
         if drive:
             return False
 
-
     # a path is always POSIX unless it contains ONLY backslahes
     # which is a rough approximation (it could still be posix)
     is_posix = True
@@ -208,78 +207,104 @@ def as_winpath(location):
 
 def split_parent_resource(path, force_posix=False):
     """
-    Return a (tuple of parent directory path, resource name).
+    Return a tuple of (parent directory path, resource name).
     """
-    splitter = is_posixpath(path) and posixpath or ntpath
+    use_posix = force_posix or is_posixpath(path)
+    splitter = use_posix and posixpath or ntpath
     path = path.rstrip('/\\')
     return splitter.split(path)
 
 
-def resource_name(path):
+def resource_name(path, force_posix=False):
     """
     Return the resource name (file name or directory name) from `path` which
     is the last path segment.
     """
-    _left, right = split_parent_resource(path)
+    _left, right = split_parent_resource(path,force_posix)
     return right or  ''
 
 
-def file_name(path):
+def file_name(path, force_posix=False):
     """
     Return the file name (or directory name) of a path.
     """
-    return resource_name(path)
+    return resource_name(path, force_posix)
 
 
-def parent_directory(path):
+def parent_directory(path, force_posix=False):
     """
     Return the parent directory path of a file or directory `path`.
     """
-    left, _right = split_parent_resource(path)
-    sep = is_posixpath(path) and '/' or '\\'
+    left, _right = split_parent_resource(path, force_posix)
+    use_posix = force_posix or is_posixpath(path) 
+    sep = use_posix and '/' or '\\'
     trail = sep if left != sep else ''
     return left + trail
 
 
-def file_base_name(path):
+def file_base_name(path, force_posix=False):
     """
     Return the file base name for a path. The base name is the base name of
     the file minus the extension. For a directory return an empty string.
     """
-    return splitext(path)[0]
+    return splitext(path, force_posix)[0]
 
 
-def file_extension(path):
+def file_extension(path, force_posix=False):
     """
     Return the file extension for a path.
     """
-    return splitext(path)[1]
+    return splitext(path, force_posix)[1]
 
 
-def splitext(path):
+def splitext(path, force_posix=False):
     """
     Return a tuple of strings (basename, extension) for a path. The basename is
     the file name minus its extension. Return an empty extension string for a
     directory. A directory is identified by ending with a path separator. Not
     the same as os.path.splitext.
+    
+    For example:
+    >>> splitext('C:\\dir\path.ext')
+    ('path', '.ext')
+
+    Directories even with dotted names have no extension:
+    >>> import ntpath
+    >>> splitext('C:\\dir\\path.ext' + ntpath.sep)
+    ('path.ext', '')
+
+    >>> splitext('/dir/path.ext/')
+    ('path.ext', '')
+
+    >>> splitext('/some/file.txt')
+    ('file', '.txt')
+    
+    Composite extensions for tarballs are properly handled:
+    >>> splitext('archive.tar.gz')
+    ('archive', '.tar.gz')
     """
     base_name = ''
     extension = ''
     if not path:
         return base_name, extension
 
-    path = as_posixpath(path)
-    name = resource_name(path)
-    if path.endswith('/'):
-        # directories have no extension
+    ppath= as_posixpath(path)    
+    name = resource_name(path, force_posix)
+    name = name.strip('\\/')
+    if ppath.endswith('/'):
+        # directories never have an extension
         base_name = name
         extension = ''
     elif name.startswith('.') and '.' not in name[1:]:
-        base_name = ''
-        extension = name
+        base_name = name
+        extension = ''
     else:
         base_name, extension = posixpath.splitext(name)
-    return base_name or '', extension or ''
+        # handle composed extensions of tar.gz, bz, zx,etc
+        if base_name.endswith('.tar'):
+            base_name, extension2 = posixpath.splitext(base_name)
+            extension = extension2 + extension
+    return base_name, extension
 
 #
 # DIRECTORY AND FILES WALKING/ITERATION
