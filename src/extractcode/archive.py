@@ -45,7 +45,6 @@ from extractcode import special_package
 from extractcode import patch
 from extractcode import sevenzip
 from extractcode import libarchive2
-from extractcode import extracted_files
 from extractcode.uncompress import uncompress_gzip
 from extractcode.uncompress import uncompress_bzip2
 
@@ -308,7 +307,7 @@ def extract_twice(location, target_dir, extractor1, extractor2):
 
     # extract this intermediate payload to the final target_dir
     try:
-        inner_archives = list(extracted_files(temp_target))
+        inner_archives = list(fileutils.file_iter(temp_target))
         if not inner_archives:
             warnings.append(location + ': No files found in archive.')
         else:

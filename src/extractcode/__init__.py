@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -29,8 +29,12 @@ import os
 import posixpath
 import re
 import shutil
+import sys
+
+from text_unidecode import unidecode
 
 from commoncode import fileutils
+from commoncode.text import toascii
 
 
 logger = logging.getLogger(__name__)
@@ -111,7 +115,7 @@ def remove_archive_suffix(path):
     return re.sub(EXTRACT_SUFFIX, '', path)
 
 
-def remove_backslashes(directory):
+def remove_backslashes_and_dotdots(directory):
     """
     Walk a directory and rename the files if their names contain backslashes.
     Return a list of errors if any.
@@ -119,78 +123,82 @@ def remove_backslashes(directory):
     errors = []
     for top, _, files in os.walk(str(directory)):
         for filename in files:
-            if '\\' in filename or '..' in filename:
-
-                try:
-                    new_path = fileutils.as_posixpath(filename)
-                    new_path = new_path.strip('/')
-                    new_path = posixpath.normpath(new_path)
-                    new_path = new_path.replace('..', '/')
-                    new_path = new_path.strip('/')
-                    new_path = posixpath.normpath(new_path)
-                    segments = new_path.split('/')
-                    directory = os.path.join(top, *segments[:-1])
-                    fileutils.create_dir(directory)
-                    shutil.move(os.path.join(top, filename), os.path.join(top, *segments))
-                except Exception:
-                    errors.append(os.path.join(top, filename))
+            if not ('\\' in filename or '..' in filename):
+                continue
+            try:
+                new_path = fileutils.as_posixpath(filename)
+                new_path = new_path.strip('/')
+                new_path = posixpath.normpath(new_path)
+                new_path = new_path.replace('..', '/')
+                new_path = new_path.strip('/')
+                new_path = posixpath.normpath(new_path)
+                segments = new_path.split('/')
+                directory = os.path.join(top, *segments[:-1])
+                fileutils.create_dir(directory)
+                shutil.move(os.path.join(top, filename), os.path.join(top, *segments))
+            except Exception:
+                errors.append(os.path.join(top, filename))
     return errors
-
-
-def extracted_files(location):
-    """
-    Yield the locations of extracted files in a directory location.
-    """
-    assert location
-    logger.debug('extracted_files for: %(location)r' % locals())
-    return fileutils.file_iter(location)
 
 
 def new_name(location, is_dir=False):
     """
-    Return a new non-existing location usable to write a file or create
-    directory without overwriting existing files or directories in the same
-    parent directory, ignoring the case of the name.
-    The case of the name is ignored to ensure that similar results are returned
+    Return a new non-existing location from a `location` usable to write a file
+    or create directory without overwriting existing files or directories in the same
+    parent directory, ignoring the case of the filename.
+
+    The case of the filename is ignored to ensure that similar results are returned
     across case sensitive (*nix) and case insensitive file systems.
 
-    To find a new unique name:
+    To find a new unique filename, this tries new names this way:
      * pad a directory name with _X where X is an incremented number.
      * pad a file base name with _X where X is an incremented number and keep
        the extension unchanged.
     """
     assert location
-
     location = location.rstrip('\\/')
-    name = fileutils.file_name(location).strip()
-    if (not name or name == '.'
-        # windows bare drive path as in c: or z:
-        or (name and len(name) == 2 and name.endswith(':'))):
-        name = 'file'
-
+    assert location
+        
     parent = fileutils.parent_directory(location)
+
     # all existing files or directory as lower case
     siblings_lower = set(s.lower() for s in os.listdir(parent))
 
-    if name.lower() not in siblings_lower:
-        return posixpath.join(parent, name)
+    filename = fileutils.file_name(location)
 
-    ext = fileutils.file_extension(name)
-    base_name = fileutils.file_base_name(name)
+    # corner case
+    if filename in ('.', '..'):
+        filename = '_'
+
+    # if unique, return this
+    if filename.lower() not in siblings_lower:
+        return os.path.join(parent, filename)
+
+    # otherwise seek a unique name
     if is_dir:
-        # directories have no extension
+        # directories do not have an "extension"
+        base_name = filename
         ext = ''
-        base_name = name
+    else:
+        base_name, dot, ext = filename.partition('.')
+        if dot:
+            ext = dot + ext
+        else:
+            base_name = filename
+            ext = ''
 
+    # find a unique filename, adding a counter int to the base_name
     counter = 1
     while 1:
-        new_name = base_name + '_' + str(counter) + ext
-        if new_name.lower() not in siblings_lower:
+        filename = base_name + '_' + str(counter) + ext
+        if filename.lower() not in siblings_lower:
             break
         counter += 1
-    return os.path.join(parent, new_name)
+    return os.path.join(parent, filename)
 
 
+
+# TODO: use attrs and slots
 class Entry(object):
     """
     An archive entry presenting the common data that exists in all entries
@@ -199,10 +207,16 @@ class Entry(object):
     """
     # the actual posix as in the archive (relative, absolute, etc)
     path = None
+
     # path to use for links, typically a normalized target
+    # FIXME: not used
     actual_path = None
+
     # where we will really extract, relative to the archive root
+    # FIXME: not used
     extraction_path = None
+
+    # in bytes
     size = 0
     date = None
     is_file = True
@@ -219,6 +233,7 @@ class Entry(object):
         Fix paths that are absolute, relative, backslashes and other
         shenanigans. Update the extraction path.
         """
+        # TODO: Implement ME
 
     def __repr__(self):
         msg = (

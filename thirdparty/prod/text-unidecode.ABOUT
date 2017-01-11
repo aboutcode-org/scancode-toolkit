@@ -1,0 +1,25 @@
+component:
+    name: text-unidecode
+    version: 1.0
+
+    home_url: https://github.com/kmike/text-unidecode
+    owner: Mikhail Korobov
+    copyright: Copyright (c) Mikhail Korobov and Sean Burke
+    license_expression: artistic-1.0
+    license_text_file: text-unidecode.LICENSE
+
+    vcs_tool: git
+    vcs_repository: https://github.com/kmike/text-unidecode.git
+
+    packages:
+        -
+        download_url: https://pypi.python.org/packages/09/c6/c7a477228b2162937f200ece3793bb21c0f21f66b00fc010cdeb93cf465b/text_unidecode-1.0-py2.py3-none-any.whl#md5=86d6c12b9a0ff95099cde36c5c29acb7
+        md5: 86d6c12b9a0ff95099cde36c5c29acb7
+        blake2b_256: 09c6c7a477228b2162937f200ece3793bb21c0f21f66b00fc010cdeb93cf465b
+        file_name: text_unidecode-1.0-py2.py3-none-any.whl
+
+    files:
+        - text_unidecode-1.0-py2.py3-none-any.whl
+
+    notes: this is a port of the Perl module "Text::Unidecode" from
+     http://search.cpan.org/~sburke/Text-Unidecode-1.30/lib/Text/Unidecode.pm 

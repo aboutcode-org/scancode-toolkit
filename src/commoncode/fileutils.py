@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -59,8 +59,8 @@ File, paths and directory utility functions.
 
 def create_dir(location):
     """
-    Create directory and all sub-directories recursively at location ensuring
-    these are readable and writeable.
+    Create directory and all sub-directories recursively at location ensuring these
+    are readable and writeable.
     Raise Exceptions if it fails to create the directory.
     """
     if os.path.exists(location):
@@ -162,13 +162,57 @@ def read_text_file(location, universal_new_lines=True):
 # PATHS AND NAMES MANIPULATIONS
 #
 
+# TODO: move these functions to paths.py
+
+def is_posixpath(location):
+    """
+    Return True if the `location` path is likely a POSIX-like path using POSIX path
+    separators (slash or "/")or has no path separator.
+
+    Return False if the `location` path is likely a Windows-like path using backslash
+    as path separators (e.g. "\").
+    """
+    has_slashes = '/' in location
+    has_backslashes = '\\' in location
+    # windows paths with drive
+    if location:
+        drive, _ = ntpath.splitdrive(location)
+        if drive:
+            return False
+
+
+    # a path is always POSIX unless it contains ONLY backslahes
+    # which is a rough approximation (it could still be posix)
+    is_posix = True
+    if has_backslashes and not has_slashes:
+        is_posix = False
+    return is_posix
+
+
 def as_posixpath(location):
     """
-    Return a posix-like path using posix path separators (slash or "/") for a
-    `location` path. This converts Windows paths to look like posix paths that
-    Python accepts gracefully on Windows for path handling.
+    Return a POSIX-like path using POSIX path separators (slash or "/") for a
+    `location` path. This converts Windows paths to look like POSIX paths: Python
+    accepts gracefully POSIX paths on Windows.
     """
     return location.replace(ntpath.sep, posixpath.sep)
+
+
+def as_winpath(location):
+    """
+    Return a Windows-like path using Windows path separators (backslash or "\") for a
+    `location` path.
+    """
+    return location.replace(posixpath.sep, ntpath.sep)
+
+
+def split_parent_resource(path, force_posix=False):
+    """
+    Return a (tuple of parent directory path, resource name).
+    """
+    splitter = is_posixpath(path) and posixpath or ntpath
+    path = path.rstrip('/\\')
+    return splitter.split(path)
 
 
 def resource_name(path):
@@ -176,9 +220,7 @@ def resource_name(path):
     Return the resource name (file name or directory name) from `path` which
     is the last path segment.
     """
-    path = as_posixpath(path)
-    path = path.rstrip('/')
-    _left, right = posixpath.split(path)
+    _left, right = split_parent_resource(path)
     return right or  ''
 
 
@@ -191,12 +233,11 @@ def file_name(path):
 
 def parent_directory(path):
     """
-    Return the parent directory of a file or directory path.
+    Return the parent directory path of a file or directory `path`.
     """
-    path = as_posixpath(path)
-    path = path.rstrip('/')
-    left, _ = posixpath.split(path)
-    trail = '/' if left != '/' else ''
+    left, _right = split_parent_resource(path)
+    sep = is_posixpath(path) and '/' or '\\'
+    trail = sep if left != sep else ''
     return left + trail
 
 
@@ -267,7 +308,7 @@ def walk(location, ignored=ignore_nothing):
 
     if filetype.is_file(location) :
         yield parent_directory(location), [], [file_name(location)]
-    
+
     elif filetype.is_dir(location):
         dirs = []
         files = []
@@ -326,7 +367,7 @@ def resource_iter(location, ignored=ignore_nothing, with_files=True, with_dirs=T
     :param with_files: If True, include the  files.
     :return: an iterable of file and directory locations.
     """
-    assert  with_dirs or with_files, "One or both of 'with_dirs' and 'with_files' is required"
+    assert with_dirs or with_files, "fileutils.resource_iter: One or both of 'with_dirs' and 'with_files' is required"
     for top, dirs, files in walk(location, ignored):
         if with_files:
             for f in files:

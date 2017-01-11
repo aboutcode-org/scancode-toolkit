@@ -1,6 +1,6 @@
-about_resource: pytest-2.7.0-py2-none-any.whl
-download_url: https://pypi.python.org/packages/source/p/pytest/pytest-2.7.0.tar.gz
-version: 2.7.0
+about_resource: pytest-3.0.5-py2.py3-none-any.whl
+download_url: https://pypi.python.org/packages/dd/28/4abc547194d8e6ff93d3ef186cb809a413d719cdc21e524af08fe986f7c2/pytest-3.0.5-py2.py3-none-any.whl#md5=790888ee21cfd19c104155b0ae9b84e5
+version: 3.0.5
 
 name: pytest
 description: pytest: simple powerful testing with Python

@@ -1,4 +1,4 @@
-# -*- coding: iso-8859-15 -*-
+# -*- coding: utf-8 -*-
 # NOTE: the iso-8859-15 charset is not a mistake.
 #
 # Copyright (c) 2015 nexB Inc. and others. All rights reserved.
@@ -24,14 +24,16 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import re
 import logging
 import unicodedata
+from text_unidecode import unidecode
 
 """
-A text processing module providing functions to process and prepare text 
+A text processing module providing functions to process and prepare text
 before indexing or fingerprinting such as:
  - case folding
  - conversion of iso latin and unicode to ascii
@@ -91,11 +93,11 @@ def nopunctuation(text):
     Warning: this also drops line endings.
 
     For example:
-    >>> t = '''This problem is about sequence-bunching, %^$^%**^&*Â©Â©^(*&(*()()_+)_!@@#:><>>?/./,.,';][{}{]just'''
+    >>> t = '''This problem is about sequence-bunching, %^$^%**^&*Ã‚Â©Ã‚Â©^(*&(*()()_+)_!@@#:><>>?/./,.,';][{}{]just'''
     >>> nopunctuation(t).split()
     ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'just']
     >>> t = r'''This problem is about: sequence-bunching
-    ... 
+    ...
     ... just
     ... '''
     >>> nopunctuation(t)
@@ -136,50 +138,44 @@ def nolinesep(text):
     return text.replace(CR, ' ').replace(LF, ' ')
 
 
-# additional non standard normalizations but quite common sense
-unicode_translation_table = {u'Ø˜': u'O', u'ø': u'o', u'¸': u'z', u'´˜': u'Z'}
+def toascii(s, translit=False):
+    u""" Convert a Unicode string to ASCII characters, including replacing accented
+    characters with their non-accented equivalent. 
+    
+    If `translit` is False use the Unicode NFKD equivalence.
+    
+    If `translit` is True, use a transliteration with the unidecode library.
+    
+    Non ISO-Latin and non ASCII characters are stripped from the
+    output. 
+    When no transliteration is possible, the resulting character is replaced
+    by an underscore "_".
+    
+    For Unicode NFKD equivalence, see http://en.wikipedia.org/wiki/Unicode_equivalence
 
-# Other candidates
-{
-    u'¢': u'c',
-    # not space preserving
-    u'æ': u'a',
-    u'Æ†': u'A',
+    The convertion may NOT preserve the original string length and with NFKD some
+    characters may be deleted.
 
-    u'“½': u'o',
-    u'¼': u'O',
-
-    u'“©': u'(c)',
-    u'®': u'(r)',
-
-    # see http://en.wikipedia.org/wiki/ÃŸ
-    u'ßŸ': u'ss',
-    u'\u1e9e': u'SS'
-}
-
-
-def toascii(s):
-    u"""
-    Convert a Unicode string to ASCII characters, including replacing accented
-    characters with their non-accented NFKD equivalent. Non ISO-Latin and non
-    ASCII characters are stripped from the output. For Unicode NFKD
-    equivalence, see http://en.wikipedia.org/wiki/Unicode_equivalence
-
-    Does not preserve the original length and character offsets.
-
-    Inspired from:
-    http://code.activestate.com/recipes/251871/#c10 by Aaron Bentley.
+    Inspired from: http://code.activestate.com/recipes/251871/#c10 by Aaron Bentley.
 
     For example:
-    >>> acc =   u"ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝàáâãäåçèéêëìíîïñòóôõöøùúûüýÿ"
-    >>> noacc = r"AAAAAACEEEEIIIINOOOOOUUUUYaaaaaaceeeeiiiinooooouuuuyy"
-    >>> toascii(acc) == noacc
+    >>> acc =   u"Ã€ÃÃ‚ÃƒÃ„Ã…Ã‡ÃˆÃ‰ÃŠÃ‹ÃŒÃÃŽÃÃ‘Ã’Ã“Ã”Ã•Ã–Ã˜Ã™ÃšÃ›ÃœÃÃ Ã¡Ã¢Ã£Ã¤Ã¥Ã§Ã¨Ã©ÃªÃ«Ã¬Ã­Ã®Ã¯Ã±Ã²Ã³Ã´ÃµÃ¶Ã¸Ã¹ÃºÃ»Ã¼Ã½Ã¿áºžÃŸÂ®Â©Å“Å’Ã˜Ã¸Ã†Ã¦â‚µâ‚¡ï¿ Â¢Å½Å¾"
+    >>> noacc = r'AAAAAACEEEEIIIINOOOOOUUUUYaaaaaaceeeeiiiinooooouuuuyyZz'
+    >>> toascii(acc, translit=False) == noacc
+    True
+    >>> noacc = r'AAAAAACEEEEIIIINOOOOOOUUUUYaaaaaaceeeeiiiinoooooouuuuyySsss(r)(c)oeOEOoAEae_CL/CC/Zz'
+    >>> toascii(acc, translit=True) == noacc
     True
     """
     try:
-        return unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
+        if translit:
+            converted = unidecode(s).encode('ascii', 'ignore')
+            converted = converted.replace('[?]', '_')
+        else:
+            converted = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
     except:
-        return str(s.decode('ascii', 'ignore'))
+        converted = str(s.decode('ascii', 'ignore'))
+    return converted
 
 
 def python_safe_name(s):

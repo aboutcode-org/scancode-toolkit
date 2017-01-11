@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -174,15 +174,38 @@ def test_usage_and_help_return_a_correct_script_name_on_all_platforms(monkeypatc
     assert 'extractcode-script.py' not in result.output
 
 
-def test_extractcode_command_can_extract_archive_with_unicode_names(monkeypatch):
-    if on_windows:
-        # TODO: for now this fails, and this needs extra work 
-        return
+def test_extractcode_command_can_extract_archive_with_unicode_names_verbose(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    test_dir = test_env.get_test_loc('extract_unicodepath', copy=True)
+    test_dir = test_env.get_test_loc('unicodearch', copy=True)
     runner = CliRunner()
-    result = runner.invoke(extract_cli.extractcode, ['--verbose', test_dir])
+    result = runner.invoke(extract_cli.extractcode, ['--verbose', test_dir], catch_exceptions=False)
     assert result.exit_code == 0
-    assert 'Izgradnja' in result.output
-    resultf = list(file_iter(test_dir,))
-    assert 4 == len(resultf)
+
+    assert 'Sanders' in result.output
+    file_result = [f for f in map(as_posixpath, file_iter(test_dir)) if not f.endswith('unicodepath.tgz')]
+    file_result = [''.join(f.partition('/unicodepath/')[1:]) for f in file_result]
+    file_result = [f for f in file_result if f]
+    expected = [
+        '/unicodepath/Ho_',
+        '/unicodepath/Ho_a',
+        '/unicodepath/koristenjem_Karkkainen_-_Sander.pdf'
+    ]
+    assert sorted(expected) == sorted(file_result)
+
+
+def test_extractcode_command_can_extract_archive_with_unicode_names(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.get_test_loc('unicodearch', copy=True)
+    runner = CliRunner()
+    result = runner.invoke(extract_cli.extractcode, [test_dir], catch_exceptions=False)
+    assert result.exit_code == 0
+
+    file_result = [f for f in map(as_posixpath, file_iter(test_dir)) if not f.endswith('unicodepath.tgz')]
+    file_result = [''.join(f.partition('/unicodepath/')[1:]) for f in file_result]
+    file_result = [f for f in file_result if f]
+    expected = [
+        '/unicodepath/Ho_',
+        '/unicodepath/Ho_a',
+        '/unicodepath/koristenjem_Karkkainen_-_Sander.pdf'
+    ]
+    assert sorted(expected) == sorted(file_result)

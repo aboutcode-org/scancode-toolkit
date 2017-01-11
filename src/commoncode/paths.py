@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,34 +22,96 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
-
+from __future__ import absolute_import
+from __future__ import print_function
 
 from os.path import commonprefix
-import string
+import ntpath
 import posixpath
+import re
 
-from commoncode import fileutils
-from commoncode import text
+from commoncode.fileutils import is_posixpath
+from commoncode.text import toascii
+from commoncode.fileutils import as_winpath
+from commoncode.fileutils import as_posixpath
+
 
 """
 Various path utilities such as common prefix and suffix functions, conversion
 to OS-safe paths and to POSIX paths.
 """
 
+#
+# Build OS-portable and safer paths
 
-def resolve(path):
+def safe_path(path, posix=False):
     """
-    Resolve and return a path-like string `path` to a posix relative path
-    string where extra slashes including leading and trailing slashes, dot
-    '.' and dotdot '..' path segments have been removed or normalized or
-    resolved with the provided path "tree". When a dotdot path segment cannot
-    be further resolved by "escaping" the provided path tree, it is replaced
-    by the string 'dotdot'.
+    Convert `path` to a safe and portable POSIX path usable on multiple OSes. The
+    returned path is an ASCII-only byte string, resolved for relative segments and
+    itself relative.
+
+    The `path` is treated as a POSIX path if `posix` is True or as a Windows path
+    with blackslash separators otherwise.
     """
-    slash, dot, dotdot = '/', '.', 'dotdot'
-    if isinstance(path, unicode):
-        slash, dot, dotdot = u'/', u'.', u'dotdot'
+    # if the path is UTF, try to use unicode instead
+    if not isinstance(path, unicode):
+        try:
+            path = unicode(path, 'utf-8')
+        except:
+            pass
+
+    path = path.strip()
+
+    if not is_posixpath(path):
+        path = as_winpath(path)
+        posix = False
+
+    path = resolve(path, posix)
+
+    _pathmod, path_sep = path_handlers(path, posix)
+
+    segments = [s.strip() for s in path.split(path_sep) if s.strip()]
+    segments = [portable_filename(s) for s in segments]
+
+    # print('safe_path: orig:', orig_path, 'segments:', segments)
+
+    if not segments:
+        return '_'
+
+    # always return posix
+    sep = isinstance(path, unicode) and u'/' or '/'
+    path = sep.join(segments)
+    return as_posixpath(path)
+
+
+def path_handlers(path, posix=True):
+    """
+    Return a path module and path separator to use for handling (e.g. split and join)
+    `path` using either POSIX or Windows conventions depending on the `path` content.
+    Force usage of POSIX conventions if `posix` is True.
+    """
+    # determine if we use posix or windows path handling
+    is_posix = is_posixpath(path)
+    use_posix = posix or is_posix
+    pathmod = use_posix and posixpath or ntpath
+    path_sep = use_posix and '/' or '\\'
+    path_sep = isinstance(path, unicode) and unicode(path_sep) or path_sep
+    return pathmod, path_sep
+
+
+def resolve(path, posix=True):
+    """
+    Return a resolved relative POSIX path from `path` where extra slashes including
+    leading and trailing slashes are removed, dot '.' and dotdot '..' path segments
+    have been removed or resolved as possible. When a dotdot path segment cannot be
+    further resolved and would be "escaping" from the provided path "tree", it is
+    replaced by the string 'dotdot'.
+
+    The `path` is treated as a POSIX path if `posix` is True (default) or as a
+    Windows path with blackslash separators otherwise.
+    """
+    is_unicode = isinstance(path, unicode)
+    dot = is_unicode and u'.' or '.'
 
     if not path:
         return dot
@@ -58,70 +120,120 @@ def resolve(path):
     if not path:
         return dot
 
-    path = fileutils.as_posixpath(path)
-    path = path.strip(slash)
-    segments = [s.strip() for s in path.split(slash)]
+    if not is_posixpath(path):
+        path = as_winpath(path)
+        posix = False
+
+    pathmod, path_sep = path_handlers(path, posix)
+
+    path = path.strip(path_sep)
+    segments = [s.strip() for s in path.split(path_sep) if s.strip()]
+
     # remove empty (// or ///) or blank (space only) or single dot segments
     segments = [s for s in segments if s and s != '.']
-    path = slash.join(segments)
-    # resolves ..
-    path = posixpath.normpath(path)
-    # replace .. with literal dotdot
-    segments = path.split(slash)
-    segments = [dotdot if s == '..' else s for s in segments]
-    path = slash.join(segments)
+
+    path = path_sep.join(segments)
+
+    # resolves . dot, .. dotdot
+    path = pathmod.normpath(path)
+
+    segments = path.split(path_sep)
+
+    # remove empty or blank segments
+    segments = [s.strip() for s in segments if s and s.strip()]
+
+    # is this a windows absolute path? if yes strip the colon to make this relative
+    if segments and len(segments[0]) == 2 and segments[0].endswith(':'):
+        segments[0] = segments[0][:-1]
+
+    # replace any remaining (usually leading) .. segment with a literal "dotdot"
+    dotdot = is_unicode and u'dotdot' or 'dotdot'
+    segments = [dotdot if s == '..' else s for s in segments if s]
+    if segments:
+        path = path_sep.join(segments)
+    else:
+        path = dot
+
+    path = as_posixpath(path)
+
     return path
 
 
-#
-# Build OS-portable and safer paths
-#
-
-"""
-To convert a path to a safe cross-os path, we use a characters translation
-table. This will replaces all non-safe characters by an underscore char.
-"""
-allchars = string.maketrans('', '')
+legal_punctuation = "!\#$%&\(\)\+,\-\.;\=@\[\]_\{\}\~"
+legal_chars = 'A-Za-z0-9' + legal_punctuation
+illegal_chars_re = '[^' + legal_chars + ']'
+replace_illegal_chars = re.compile(illegal_chars_re).sub
 
 
-# table of non safe characters: Exclude digit,letters and a select subset of
-# supported punctuation, all the rest is junk. nb: we consider the backslash
-# as path safe for now, but we convert these later to posix path
-not_path_safe = string.translate(allchars,
-                                 allchars,
-                                 '0123456789'
-                                 'abcdefghijklmnopqrstuvwxyz'
-                                 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#+-./_\\')
-
-# create translation table to replace non-safe chars with underscore char
-path_safe = string.maketrans(not_path_safe, '_' * len(not_path_safe))
-
-
-def safe_path(path, lowered=True, resolved=True):
+def portable_filename(filename):
     """
-    Convert a path-like string `path` to a posix path string safer to use as a
-    file path on all OSes. The path is lowercased. Non-ASCII alphanumeric
-    characters and spaces are replaced with an underscore.
-    The path is optionally resolved and lowercased.
+    Return a new name for `filename` that is portable across operating systems.
+
+    In particular the returned file name is guaranteed to be:
+    - a portable name on most OSses using a limited ASCII characters set including
+      some limited punctuation.
+    - a valid name on Linux, Windows and Mac.
+
+    Unicode file names are transliterated to plain ASCII.
+
+    See for more details:
+    - http://www.opengroup.org/onlinepubs/007904975/basedefs/xbd_chap03.html
+    - https://msdn.microsoft.com/en-us/library/windows/desktop/aa365247(v=vs.85).aspx
+    - http://www.boost.org/doc/libs/1_36_0/libs/filesystem/doc/portability_guide.htm
+
+    Also inspired by Werkzeug:
+    https://raw.githubusercontent.com/pallets/werkzeug/8c2d63ce247ba1345e1b9332a68ceff93b2c07ab/werkzeug/utils.py
+
+    For example:
+    >>> portable_filename("A:\\ file/ with Spaces.mov")
+    'A___file__with_Spaces.mov'
+
+    Unresolved reslative paths will be trated as a single filename. Use resolve
+    instead if you want to resolve paths:
+
+    >>> portable_filename("../../../etc/passwd")
+    '___.._.._etc_passwd'
+
+    Unicode name are transliterated:
+
+    >>> portable_filename(u'This contain UMLAUT \xfcml\xe4uts.txt')
+    'This_contain_UMLAUT_umlauts.txt'
     """
-    safe = path.strip()
-    # TODO: replace COM/PRN/LPT windows special names
-    # TODO: resolve 'UNC' windows paths
-    # TODO: strip leading windows drives
-    # remove any unsafe chars
-    safe = safe.translate(path_safe)
-    safe = text.toascii(safe)
-    safe = fileutils.as_posixpath(safe)
-    if lowered:
-        safe = safe.lower()
-    if resolved:
-        safe = resolve(safe)
-    return safe
+    filename = toascii(filename, translit=True)
+
+    if not filename:
+        return '_'
+
+    filename = replace_illegal_chars('_', filename)
+
+    # these are illegal both upper and lowercase and with or without an extension
+    # we insert an underscore after the base name.
+    windows_illegal_names = set([
+        'com1', 'com2', 'com3', 'com4', 'com5', 'com6', 'com7', 'com8', 'com9',
+        'lpt1', 'lpt2', 'lpt3', 'lpt4', 'lpt5', 'lpt6', 'lpt7', 'lpt8', 'lpt9',
+        'aux', 'con', 'nul', 'prn'
+    ])
+
+    basename, dot, extension = filename.partition('.')
+    if basename.lower() in windows_illegal_names:
+        filename = ''.join([basename, '_', dot, extension])
 
 
+    # no name made only of dots.
+    if set(filename) == set(['.']):
+        filename = 'dot' * len(filename)
+
+    # replaced any leading dotdot
+    if filename != '..' and filename.startswith('..'):
+        while filename.startswith('..'):
+            filename = filename.replace('..', '__', 1)
+
+    return filename
+
 #
-# paths comparisons
+# paths comparisons, common prefix and suffix extraction
 #
+
 def common_prefix(s1, s2):
     """
     Return the common leading subsequence of two sequences and its length.
@@ -166,8 +278,8 @@ def common_path_suffix(p1, p2):
 
 def split(p):
     """
-    Split a posix path in a sequence of segments, ignoring leading and
-    trailing slash. Return an empty sequence for an empty path and the root /.
+    Split a posix path in a sequence of segments, ignoring leading and trailing
+    slash. Return an empty sequence for an empty path and the root path /.
     """
     if not p:
         return []
@@ -177,7 +289,9 @@ def split(p):
 
 def _common_path(p1, p2, common_func):
     """
-    Common function to compute common leading or trailing paths.
+    Return a common leading or trailing path brtween paths `p1` and `p2` and the
+    common length in number of segments using the `common_func` path comparison
+    function.
     """
     common, lgth = common_func(split(p1), split(p2))
     common = '/'.join(common) if common else None

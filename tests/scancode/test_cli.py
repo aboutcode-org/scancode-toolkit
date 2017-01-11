@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -30,12 +30,16 @@ import codecs
 from collections import OrderedDict
 import json
 import os
+from unittest.case import skipIf
 
 import click
 from click.testing import CliRunner
 
 from commoncode import fileutils
 from commoncode.testcase import FileDrivenTesting
+from commoncode.system import on_linux
+from commoncode.system import on_mac
+from commoncode.system import on_windows
 
 from scancode import cli
 
@@ -50,7 +54,16 @@ actual command outputs as if using a real command line call.
 """
 
 
-def check_scan(expected_file, result_file, regen=False):
+def remove_dates(scan_result):
+    """
+    Remove date fields from scan.
+    """
+    for scanned_file in scan_result['files']:
+        if 'date' in scanned_file:
+            del scanned_file['date']
+
+
+def check_scan(expected_file, result_file, regen=False, strip_dates=False):
     """
     Check the scan result_file JSON results against the expected_file expected JSON
     results. Removes references to test_dir for the comparison. If regen is True the
@@ -58,10 +71,15 @@ def check_scan(expected_file, result_file, regen=False):
     updating tests expectations. But use with caution.
     """
     result = _load_json_result(result_file)
+    if strip_dates:
+        remove_dates(result)
     if regen:
         with open(expected_file, 'wb') as reg:
             json.dump(result, reg, indent=2)
     expected = _load_json_result(expected_file)
+    if strip_dates:
+        remove_dates(expected)
+
     # NOTE we redump the JSON as a string for a more efficient comparison of
     # failures
     expected = json.dumps(expected, indent=2, sort_keys=True)
@@ -449,28 +467,19 @@ def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
     assert sorted(expected) == sorted(result_json['files'])
 
 
-def test_scan_does_not_fail_unicode_files_and_paths(monkeypatch):
+def test_scan_does_not_fail_when_scanning_unicode_files_and_paths(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-
-    # use extractcode for proper unicode extraction
-    from scancode import extract_cli
-    xtest_dir = test_env.get_test_loc('unicodepath/unicodepath.tgz', copy=True)
-    xrunner = CliRunner()
-    xresult = xrunner.invoke(extract_cli.extractcode, [xtest_dir])
-    assert xresult.exit_code == 0
+    test_dir = test_env.get_test_loc(u'unicodepath/uc')
 
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
     result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright',
-                                          '--package', '--email', '--url', xtest_dir + '-extract', result_file], catch_exceptions=False)
+                                          '--package', '--email', '--url', test_dir , result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
     # the paths for each OS end up encoded differently.
     # See https://github.com/nexB/scancode-toolkit/issues/390 for details
-    from commoncode.system import on_linux
-    from commoncode.system import on_mac
-    from commoncode.system import on_windows
 
     if on_linux:
         expected = 'unicodepath/unicodepath.expected-linux.json'
@@ -479,7 +488,7 @@ def test_scan_does_not_fail_unicode_files_and_paths(monkeypatch):
     elif on_windows:
         expected = 'unicodepath/unicodepath.expected-win.json'
 
-    check_scan(test_env.get_test_loc(expected), result_file, regen=False)
+    check_scan(test_env.get_test_loc(expected), result_file, strip_dates=True, regen=False)
 
 
 def test_scan_can_handle_licenses_with_unicode_metadata(monkeypatch):
@@ -531,3 +540,26 @@ def test_scan_can_return_matched_license_text(monkeypatch):
     result = runner.invoke(cli.scancode, ['--license', '--license-text', test_file, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     check_scan(test_env.get_test_loc(expected_file), result_file, regen=False)
+
+
+@skipIf(on_windows, 'This test cannot run on windows as these are not legal file names.')
+def test_scan_can_handle_weird_file_names(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.extract_test_tar('weird_file_name/weird_file_name.tar.gz')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['-c', '-i', test_dir, result_file], catch_exceptions=False)
+    assert result.exit_code == 0
+    assert "KeyError: 'sha1'" not in result.output
+    assert 'Scanning done' in result.output
+
+    # Some info vary on each OS
+    # See https://github.com/nexB/scancode-toolkit/issues/438 for details
+    if on_linux:
+        expected = 'weird_file_name/expected-linux.json'
+    elif on_mac:
+        expected = 'weird_file_name/expected-mac.json'
+    elif on_windows:
+        expected = 'weird_file_name/expected-win.json'
+
+    check_scan(test_env.get_test_loc(expected), result_file, regen=False)
