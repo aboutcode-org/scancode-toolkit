@@ -671,8 +671,11 @@ class TestParentDir(FileBasedTesting):
         test_file = 'a/.a/file'
         expected_name = 'a/.a/'
         result = fileutils.parent_directory(test_file)
+        result = fileutils.as_posixpath(result)
         assert expected_name == result
+
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
     def test_parent_directory_on_path_and_location_2(self):
@@ -680,8 +683,11 @@ class TestParentDir(FileBasedTesting):
         test_file = 'a/.a/'
         expected_name = 'a/'
         result = fileutils.parent_directory(test_file)
+        result = fileutils.as_posixpath(result)
         assert expected_name == result
+
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
     def test_parent_directory_on_path_and_location_3(self):
@@ -689,8 +695,11 @@ class TestParentDir(FileBasedTesting):
         test_file = 'a/b/.a.b'
         expected_name = 'a/b/'
         result = fileutils.parent_directory(test_file)
+        result = fileutils.as_posixpath(result)
         assert expected_name == result
+
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
     def test_parent_directory_on_path_and_location_4(self):
@@ -698,8 +707,11 @@ class TestParentDir(FileBasedTesting):
         test_file = 'a/b/a.tag.gz'
         expected_name = 'a/b/'
         result = fileutils.parent_directory(test_file)
+        result = fileutils.as_posixpath(result)
         assert expected_name == result
+
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
     def test_parent_directory_on_path_and_location_5(self):
@@ -707,8 +719,11 @@ class TestParentDir(FileBasedTesting):
         test_file = 'a/b/'
         expected_name = 'a/'
         result = fileutils.parent_directory(test_file)
+        result = fileutils.as_posixpath(result)
         assert expected_name == result
+
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
     def test_parent_directory_on_path_and_location_6(self):
@@ -716,8 +731,11 @@ class TestParentDir(FileBasedTesting):
         test_file = 'a/f.a'
         expected_name = 'a/'
         result = fileutils.parent_directory(test_file)
+        result = fileutils.as_posixpath(result)
         assert expected_name == result
+
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
     def test_parent_directory_on_path_and_location_7(self):
@@ -725,8 +743,11 @@ class TestParentDir(FileBasedTesting):
         test_file = 'a/'
         expected_name = '/'
         result = fileutils.parent_directory(test_file)
+        result = fileutils.as_posixpath(result)
         assert expected_name == result
+
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
     def test_parent_directory_on_path_and_location_8(self):
@@ -734,8 +755,11 @@ class TestParentDir(FileBasedTesting):
         test_file = 'f.a/a.c'
         expected_name = 'f.a/'
         result = fileutils.parent_directory(test_file)
+        result = fileutils.as_posixpath(result)
         assert expected_name == result
+
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
     def test_parent_directory_on_path_and_location_9(self):
@@ -743,8 +767,11 @@ class TestParentDir(FileBasedTesting):
         test_file = 'f.a/'
         expected_name = '/'
         result = fileutils.parent_directory(test_file)
+        result = fileutils.as_posixpath(result)
         assert expected_name == result
+
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
     def test_parent_directory_on_path_and_location_10(self):
@@ -752,6 +779,9 @@ class TestParentDir(FileBasedTesting):
         test_file = 'tst'
         expected_name = '/'
         result = fileutils.parent_directory(test_file)
+        result = fileutils.as_posixpath(result)
         assert expected_name == result
+
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
