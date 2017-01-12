@@ -696,7 +696,7 @@ def save_results(files_count, scanned_files, format, input, output_file):
 
         for file_data in scanned_files:
             file_entry = File(file_data['path'])
-            # FIXME: should we really compue the checcksum here rather than get it from the scan?
+            # FIXME: should we really compute the checksum here rather than getting it from the scan?
             file_entry.chk_sum = Algorithm('SHA1', file_entry.calc_chksum())
             for file_license in file_data['licenses']:
                 spdx_id = file_license.get('spdx_license_key')
