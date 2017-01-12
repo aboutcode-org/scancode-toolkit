@@ -1,7 +1,7 @@
 key: openssl-ssleay
 short_name: OpenSSL/SSLeay License
 name: OpenSSL/SSLeay License
-category: Attribution
+category: Permissive
 owner: OpenSSL
 homepage_url: http://www.openssl.org/source/license.html
 spdx_license_key: OpenSSL

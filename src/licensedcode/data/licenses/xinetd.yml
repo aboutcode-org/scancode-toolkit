@@ -1,7 +1,7 @@
 key: xinetd
 short_name: xinetd License
 name: xinetd License
-category: Attribution
+category: Permissive
 owner: xinetd
 homepage_url: https://fedoraproject.org/wiki/Licensing/Xinetd_License
 spdx_license_key: xinetd

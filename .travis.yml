@@ -6,13 +6,14 @@ os:
 
 env:
     matrix:
+        - TEST_SUITE="bin/py.test -n 2 -vvs --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
         - TEST_SUITE="bin/py.test -n 2 -vvs tests/scancode"
         - TEST_SUITE="bin/py.test -n 2 -vvs tests/extractcode"
         - TEST_SUITE="bin/py.test -n 2 -s tests/licensedcode"
         - TEST_SUITE="bin/py.test -n 2 -s tests/cluecode"
         - TEST_SUITE="bin/py.test -n 2 -s tests/packagedcode"
-        - TEST_SUITE="bin/py.test -n 2 -s --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
         - TEST_SUITE="./etc/release/release.sh"
+
 
 install:
     - ./configure

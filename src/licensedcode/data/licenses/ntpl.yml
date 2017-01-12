@@ -1,7 +1,7 @@
 key: ntpl
 short_name: NTP License
 name: NTP License
-category: Attribution
+category: Permissive
 owner: OSI - Open Source Initiative
 homepage_url: http://www.opensource.org/licenses/ntp-license.php
 spdx_license_key: NTP

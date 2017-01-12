@@ -1,7 +1,7 @@
 key: fsf-unlimited-lr
 short_name: FSF-Unlimited LR
 name: Free Software Foundation - Unlimited License with License Retention
-category: Attribution
+category: Permissive
 owner: Free Software Foundation (FSF)
 homepage_url: https://fedoraproject.org/wiki/Licensing/FSF_Unlimited_License#License_Retention_Variant
 spdx_license_key: FSFULLR

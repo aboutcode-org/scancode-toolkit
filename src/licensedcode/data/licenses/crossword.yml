@@ -1,7 +1,7 @@
 key: crossword
 short_name: Crossword License
 name: Crossword License
-category: Attribution
+category: Permissive
 owner: Gerd Neugebauer
 homepage_url: https://fedoraproject.org/wiki/Licensing/Crossword
 spdx_license_key: Crossword

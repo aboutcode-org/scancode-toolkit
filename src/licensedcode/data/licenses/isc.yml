@@ -1,7 +1,7 @@
 key: isc
 short_name: ISC License
 name: ISC License
-category: Attribution
+category: Permissive
 owner: ISC - Internet Systems Consortium
 homepage_url: https://www.isc.org/downloads/software-support-policy/isc-license/
 spdx_license_key: ISC

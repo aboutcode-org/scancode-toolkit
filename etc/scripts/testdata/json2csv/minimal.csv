@@ -1,12 +1,12 @@
 Resource,scan_errors,license__key,license__score,license__short_name,license__category,license__owner,license__homepage_url,license__text_url,license__dejacode_url,license__spdx_license_key,license__spdx_url,start_line,end_line,copyright,copyright_holder
 /code/srp_vfy.c,,,,,,,,,,,,,,,
-/code/srp_vfy.c,,apache-2.0,53.85,Apache 2.0,Attribution,Apache Software Foundation,http://www.apache.org/licenses/,http://www.apache.org/licenses/LICENSE-2.0,https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0,Apache-2.0,http://spdx.org/licenses/Apache-2.0,4,5,,
-/code/srp_vfy.c,,openssl-ssleay,10.0,OpenSSL/SSLeay License,Attribution,OpenSSL,http://www.openssl.org/source/license.html,,https://enterprise.dejacode.com/urn/urn:dje:license:openssl-ssleay,OpenSSL,http://spdx.org/licenses/OpenSSL,4,4,,
+/code/srp_vfy.c,,apache-2.0,53.85,Apache 2.0,Permissive,Apache Software Foundation,http://www.apache.org/licenses/,http://www.apache.org/licenses/LICENSE-2.0,https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0,Apache-2.0,http://spdx.org/licenses/Apache-2.0,4,5,,
+/code/srp_vfy.c,,openssl-ssleay,10.00,OpenSSL/SSLeay License,Permissive,OpenSSL,http://www.openssl.org/source/license.html,,https://enterprise.dejacode.com/urn/urn:dje:license:openssl-ssleay,OpenSSL,http://spdx.org/licenses/OpenSSL,4,4,,
 /code/srp_vfy.c,,,,,,,,,,,,2,2,Copyright 2011-2016 The OpenSSL Project,
 /code/srp_vfy.c,,,,,,,,,,,,2,2,,OpenSSL Project
 /code/srp_lib.c,,,,,,,,,,,,,,,
-/code/srp_lib.c,,apache-2.0,53.85,Apache 2.0,Attribution,Apache Software Foundation,http://www.apache.org/licenses/,http://www.apache.org/licenses/LICENSE-2.0,https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0,Apache-2.0,http://spdx.org/licenses/Apache-2.0,4,5,,
-/code/srp_lib.c,,openssl-ssleay,10.0,OpenSSL/SSLeay License,Attribution,OpenSSL,http://www.openssl.org/source/license.html,,https://enterprise.dejacode.com/urn/urn:dje:license:openssl-ssleay,OpenSSL,http://spdx.org/licenses/OpenSSL,4,4,,
+/code/srp_lib.c,,apache-2.0,53.85,Apache 2.0,Permissive,Apache Software Foundation,http://www.apache.org/licenses/,http://www.apache.org/licenses/LICENSE-2.0,https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0,Apache-2.0,http://spdx.org/licenses/Apache-2.0,4,5,,
+/code/srp_lib.c,,openssl-ssleay,10.00,OpenSSL/SSLeay License,Permissive,OpenSSL,http://www.openssl.org/source/license.html,,https://enterprise.dejacode.com/urn/urn:dje:license:openssl-ssleay,OpenSSL,http://spdx.org/licenses/OpenSSL,4,4,,
 /code/srp_lib.c,,,,,,,,,,,,2,2,Copyright 2011-2016 The OpenSSL Project,
 /code/srp_lib.c,,,,,,,,,,,,2,2,,OpenSSL Project
 /code/build.info,,,,,,,,,,,,,,,

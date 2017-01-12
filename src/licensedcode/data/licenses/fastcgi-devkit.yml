@@ -1,7 +1,7 @@
 key: fastcgi-devkit
 short_name: FastCGI DevKit
 name: FastCGI DevKit
-category: Attribution
+category: Permissive
 owner: OpenMarket
 homepage_url: http://www.fastcgi.com/devkit/LICENSE.TERMS
 spdx_license_key: OML

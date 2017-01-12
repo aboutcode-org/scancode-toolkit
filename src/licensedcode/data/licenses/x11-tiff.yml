@@ -1,7 +1,7 @@
 key: x11-tiff
 short_name: X11-Style (Tiff)
 name: X11-Style (Tiff)
-category: Attribution
+category: Permissive
 owner: SGI - Silicon Graphics
 spdx_license_key: libtiff
 spdx_full_name: libtiff License

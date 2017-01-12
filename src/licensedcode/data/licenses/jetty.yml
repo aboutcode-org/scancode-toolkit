@@ -1,7 +1,7 @@
 key: jetty
 short_name: Jetty License
 name: Jetty License
-category: Attribution
+category: Permissive
 owner: Jetty Project
 homepage_url: http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt
 text_urls:

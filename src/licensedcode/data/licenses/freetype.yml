@@ -1,7 +1,7 @@
 key: freetype
 short_name: FreeType Project License
 name: FreeType Project License
-category: Attribution
+category: Permissive
 owner: FreeType Project
 homepage_url: http://www.freetype.org/license.html
 spdx_license_key: FTL

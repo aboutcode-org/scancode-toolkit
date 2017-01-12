@@ -1,7 +1,7 @@
 key: bsd-unchanged
 short_name: BSD Unchanged
 name: BSD Simplified with Unchanged requirement
-category: Attribution
+category: Permissive
 owner: Dag-Erling Coïdan Smørgrav
 notes: >
     Contains this extra text "in this position and unchanged" when

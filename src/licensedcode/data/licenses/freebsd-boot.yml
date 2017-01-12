@@ -1,7 +1,7 @@
 key: freebsd-boot
 short_name: FreeBSD Boot
 name: FreeBSD Boot
-category: Attribution
+category: Permissive
 owner: FreeBSD
 homepage_url: http://freebsd.active-venture.com/FreeBSD-srctree/newsrc/boot/i386/boot2/boot2.c.html
 other_urls:

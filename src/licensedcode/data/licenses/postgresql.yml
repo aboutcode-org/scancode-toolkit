@@ -1,7 +1,7 @@
 key: postgresql
 short_name: PostgreSQL License
 name: PostgreSQL License
-category: Attribution
+category: Permissive
 owner: PostgreSQL
 homepage_url: http://www.postgresql.org/about/licence
 spdx_license_key: PostgreSQL

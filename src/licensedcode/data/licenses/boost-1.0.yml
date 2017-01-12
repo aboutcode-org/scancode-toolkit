@@ -1,7 +1,7 @@
 key: boost-1.0
 short_name: Boost 1.0
 name: Boost Software License 1.0
-category: Attribution
+category: Permissive
 owner: Boost
 homepage_url: http://www.boost.org/users/license.html
 spdx_license_key: BSL-1.0

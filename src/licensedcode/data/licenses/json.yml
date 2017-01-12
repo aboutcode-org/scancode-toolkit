@@ -1,7 +1,7 @@
 key: json
 short_name: JSON License
 name: JSON License
-category: Attribution
+category: Permissive
 owner: JSON.org
 homepage_url: http://www.json.org/license.html
 spdx_license_key: JSON

@@ -1,7 +1,7 @@
 key: dvipdfm
 short_name: dvipdfm License
 name: dvipdfm License
-category: Attribution
+category: Permissive
 homepage_url: https://fedoraproject.org/wiki/Licensing/dvipdfm
 spdx_license_key: dvipdfm
 spdx_full_name: dvipdfm License

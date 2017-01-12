@@ -1,7 +1,7 @@
 key: zlib-acknowledgement
 short_name: ZLIB License with Acknowledgment
 name: ZLIB License with Acknowledgment
-category: Attribution
+category: Permissive
 owner: Charlie Poole
 homepage_url: https://fedoraproject.org/wiki/Licensing:ZlibWithAcknowledgement?rd=Licensing/ZlibWithAcknowledgement
 spdx_license_key: zlib-acknowledgement

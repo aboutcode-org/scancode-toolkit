@@ -1,7 +1,7 @@
 key: xnet
 short_name: Altera License
 name: Altera License
-category: Attribution
+category: Permissive
 owner: Altera Corporation
 homepage_url: http://www.opensource.org/licenses/xnet.php
 spdx_license_key: Xnet

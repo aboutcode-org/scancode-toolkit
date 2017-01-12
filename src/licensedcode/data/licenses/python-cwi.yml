@@ -1,7 +1,7 @@
 key: python-cwi
 short_name: Python CWI License
 name: Python CWI License Agreement
-category: Attribution
+category: Permissive
 owner: Python Software Foundation (PSF)
 homepage_url: http://docs.python.org/license.html
 notes: |
