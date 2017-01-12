@@ -23,7 +23,7 @@
     {
         "Resource": "/code/test_sevenzip.py",
         "license__key": "apache-2.0",
-        "license__score": 98.45,
+        "license__score": "98.45",
         "license__short_name": "Apache 2.0",
         "license__category": "Permissive",
         "license__owner": "Apache Software Foundation",
@@ -38,7 +38,7 @@
     {
         "Resource": "/code/test_sevenzip.py",
         "license__key": "scancode-acknowledgment",
-        "license__score": 98.45,
+        "license__score": "98.45",
         "license__short_name": "ScanCode acknowledgment",
         "license__category": "Permissive",
         "license__owner": "nexB Inc.",
@@ -140,7 +140,7 @@
     {
         "Resource": "/code/test_tar.py",
         "license__key": "apache-2.0",
-        "license__score": 98.45,
+        "license__score": "98.45",
         "license__short_name": "Apache 2.0",
         "license__category": "Permissive",
         "license__owner": "Apache Software Foundation",
@@ -155,7 +155,7 @@
     {
         "Resource": "/code/test_tar.py",
         "license__key": "scancode-acknowledgment",
-        "license__score": 98.45,
+        "license__score": "98.45",
         "license__short_name": "ScanCode acknowledgment",
         "license__category": "Permissive",
         "license__owner": "nexB Inc.",
@@ -233,7 +233,7 @@
     {
         "Resource": "/code/test_patch.py",
         "license__key": "apache-2.0",
-        "license__score": 98.45,
+        "license__score": "98.45",
         "license__short_name": "Apache 2.0",
         "license__category": "Permissive",
         "license__owner": "Apache Software Foundation",
@@ -248,7 +248,7 @@
     {
         "Resource": "/code/test_patch.py",
         "license__key": "scancode-acknowledgment",
-        "license__score": 98.45,
+        "license__score": "98.45",
         "license__short_name": "ScanCode acknowledgment",
         "license__category": "Permissive",
         "license__owner": "nexB Inc.",
@@ -314,7 +314,7 @@
     {
         "Resource": "/code/test_extract.py",
         "license__key": "apache-2.0",
-        "license__score": 98.45,
+        "license__score": "98.45",
         "license__short_name": "Apache 2.0",
         "license__category": "Permissive",
         "license__owner": "Apache Software Foundation",
@@ -329,7 +329,7 @@
     {
         "Resource": "/code/test_extract.py",
         "license__key": "scancode-acknowledgment",
-        "license__score": 98.45,
+        "license__score": "98.45",
         "license__short_name": "ScanCode acknowledgment",
         "license__category": "Permissive",
         "license__owner": "nexB Inc.",
@@ -395,7 +395,7 @@
     {
         "Resource": "/code/extractcode_assert_utils.py",
         "license__key": "apache-2.0",
-        "license__score": 98.45,
+        "license__score": "98.45",
         "license__short_name": "Apache 2.0",
         "license__category": "Permissive",
         "license__owner": "Apache Software Foundation",
@@ -410,7 +410,7 @@
     {
         "Resource": "/code/extractcode_assert_utils.py",
         "license__key": "scancode-acknowledgment",
-        "license__score": 98.45,
+        "license__score": "98.45",
         "license__short_name": "ScanCode acknowledgment",
         "license__category": "Permissive",
         "license__owner": "nexB Inc.",
@@ -476,7 +476,7 @@
     {
         "Resource": "/code/test_extractcode.py",
         "license__key": "apache-2.0",
-        "license__score": 98.45,
+        "license__score": "98.45",
         "license__short_name": "Apache 2.0",
         "license__category": "Permissive",
         "license__owner": "Apache Software Foundation",
@@ -491,7 +491,7 @@
     {
         "Resource": "/code/test_extractcode.py",
         "license__key": "scancode-acknowledgment",
-        "license__score": 98.45,
+        "license__score": "98.45",
         "license__short_name": "ScanCode acknowledgment",
         "license__category": "Permissive",
         "license__owner": "nexB Inc.",
@@ -557,7 +557,7 @@
     {
         "Resource": "/code/test_archive.py",
         "license__key": "apache-2.0",
-        "license__score": 98.45,
+        "license__score": "98.45",
         "license__short_name": "Apache 2.0",
         "license__category": "Permissive",
         "license__owner": "Apache Software Foundation",
@@ -572,7 +572,7 @@
     {
         "Resource": "/code/test_archive.py",
         "license__key": "scancode-acknowledgment",
-        "license__score": 98.45,
+        "license__score": "98.45",
         "license__short_name": "ScanCode acknowledgment",
         "license__category": "Permissive",
         "license__owner": "nexB Inc.",
@@ -1517,7 +1517,7 @@
     {
         "Resource": "/code/data/extract/TODO/org-jvnet-glassfish-comms-sipagent_1530.jar",
         "license__key": "apache-2.0",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "Apache 2.0",
         "license__category": "Permissive",
         "license__owner": "Apache Software Foundation",
@@ -1532,7 +1532,7 @@
     {
         "Resource": "/code/data/extract/TODO/org-jvnet-glassfish-comms-sipagent_1530.jar",
         "license__key": "cddl-1.0",
-        "license__score": 45.0,
+        "license__score": "45.00",
         "license__short_name": "CDDL 1.0",
         "license__category": "Copyleft Limited",
         "license__owner": "Oracle Corporation",
@@ -4571,7 +4571,7 @@
     {
         "Resource": "/code/data/patch/patches/dnsmasq_2.63-1.diff.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 87.01,
+        "license__score": "87.01",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -4586,7 +4586,7 @@
     {
         "Resource": "/code/data/patch/patches/dnsmasq_2.63-1.diff.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -4601,7 +4601,7 @@
     {
         "Resource": "/code/data/patch/patches/dnsmasq_2.63-1.diff.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -4616,7 +4616,7 @@
     {
         "Resource": "/code/data/patch/patches/dnsmasq_2.63-1.diff.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -4631,7 +4631,7 @@
     {
         "Resource": "/code/data/patch/patches/dnsmasq_2.63-1.diff.expected",
         "license__key": "gpl",
-        "license__score": 50.0,
+        "license__score": "50.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -4928,7 +4928,7 @@
     {
         "Resource": "/code/data/patch/patches/dnsmasq_2.63-1.diff",
         "license__key": "gpl-2.0-plus",
-        "license__score": 87.01,
+        "license__score": "87.01",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -4943,7 +4943,7 @@
     {
         "Resource": "/code/data/patch/patches/dnsmasq_2.63-1.diff",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -4958,7 +4958,7 @@
     {
         "Resource": "/code/data/patch/patches/dnsmasq_2.63-1.diff",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -4973,7 +4973,7 @@
     {
         "Resource": "/code/data/patch/patches/dnsmasq_2.63-1.diff",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -4988,7 +4988,7 @@
     {
         "Resource": "/code/data/patch/patches/dnsmasq_2.63-1.diff",
         "license__key": "gpl",
-        "license__score": 50.0,
+        "license__score": "50.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -6500,7 +6500,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch.expected",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -6515,7 +6515,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch.expected",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -6530,7 +6530,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch.expected",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -6545,7 +6545,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch.expected",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -6560,7 +6560,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch.expected",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -6575,7 +6575,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch.expected",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -6590,7 +6590,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch.expected",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -6605,7 +6605,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch.expected",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -7337,7 +7337,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -7352,7 +7352,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -7367,7 +7367,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -7382,7 +7382,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -7397,7 +7397,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -7412,7 +7412,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -7427,7 +7427,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -7442,7 +7442,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -8126,7 +8126,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/prepatches/webcore_videoplane.patch.expected",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -8273,7 +8273,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/webkit/opensource/prepatches/webcore_videoplane.patch",
         "license__key": "lgpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "LGPL 2.0 or later",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -8831,7 +8831,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 99.11,
+        "license__score": "99.11",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -8846,7 +8846,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -8861,7 +8861,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -8876,7 +8876,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -8891,7 +8891,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -8906,7 +8906,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -8921,7 +8921,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -8936,7 +8936,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -8951,7 +8951,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -8966,7 +8966,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -8981,7 +8981,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -8996,7 +8996,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9227,7 +9227,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9242,7 +9242,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9257,7 +9257,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9272,7 +9272,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9287,7 +9287,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9302,7 +9302,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9317,7 +9317,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9332,7 +9332,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9347,7 +9347,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9362,7 +9362,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9377,7 +9377,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9392,7 +9392,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9407,7 +9407,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9422,7 +9422,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9437,7 +9437,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9452,7 +9452,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9467,7 +9467,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9482,7 +9482,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9497,7 +9497,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9512,7 +9512,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9527,7 +9527,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9542,7 +9542,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9557,7 +9557,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9572,7 +9572,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9587,7 +9587,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9602,7 +9602,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9617,7 +9617,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9632,7 +9632,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9647,7 +9647,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9662,7 +9662,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -9677,7 +9677,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12113,7 +12113,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12128,7 +12128,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12143,7 +12143,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12158,7 +12158,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12173,7 +12173,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12188,7 +12188,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12203,7 +12203,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12218,7 +12218,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12233,7 +12233,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12248,7 +12248,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12263,7 +12263,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12278,7 +12278,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12293,7 +12293,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12308,7 +12308,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12323,7 +12323,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12338,7 +12338,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12353,7 +12353,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12368,7 +12368,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12383,7 +12383,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12398,7 +12398,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12413,7 +12413,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12428,7 +12428,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12443,7 +12443,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12458,7 +12458,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12473,7 +12473,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12488,7 +12488,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12503,7 +12503,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12518,7 +12518,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12533,7 +12533,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12548,7 +12548,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -12563,7 +12563,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -15656,7 +15656,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/vip19x3_board.patch",
         "license__key": "curl",
-        "license__score": 57.14,
+        "license__score": "57.14",
         "license__short_name": "cURL License",
         "license__category": "Permissive",
         "license__owner": "cURL",
@@ -15671,7 +15671,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/vip19x3_board.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 45.0,
+        "license__score": "45.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -15770,7 +15770,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 99.11,
+        "license__score": "99.11",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -15785,7 +15785,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -15800,7 +15800,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -15815,7 +15815,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -15830,7 +15830,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -15845,7 +15845,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -15860,7 +15860,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -15875,7 +15875,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -15890,7 +15890,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -15905,7 +15905,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -15920,7 +15920,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -15935,7 +15935,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -16076,7 +16076,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/motorola_rootdisk.c.patch",
         "license__key": "dual-bsd-gpl",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "Dual BSD-GPL",
         "license__category": "Permissive",
         "license__owner": "Motorola",
@@ -16091,7 +16091,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/motorola_rootdisk.c.patch",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -16277,7 +16277,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/fan_ctrl.patch.expected",
         "license__key": "dual-bsd-gpl",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "Dual BSD-GPL",
         "license__category": "Permissive",
         "license__owner": "Motorola",
@@ -16292,7 +16292,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/fan_ctrl.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -16334,7 +16334,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/vip19xx_nand.patch",
         "license__key": "dual-bsd-gpl",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "Dual BSD-GPL",
         "license__category": "Permissive",
         "license__owner": "Motorola",
@@ -16349,7 +16349,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/vip19xx_nand.patch",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -16424,7 +16424,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 99.11,
+        "license__score": "99.11",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -16439,7 +16439,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -16454,7 +16454,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -16469,7 +16469,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -16484,7 +16484,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -16499,7 +16499,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -16514,7 +16514,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -16529,7 +16529,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -16544,7 +16544,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -16559,7 +16559,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -16574,7 +16574,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -16589,7 +16589,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17063,7 +17063,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/vip19x3_board.patch.expected",
         "license__key": "curl",
-        "license__score": 57.14,
+        "license__score": "57.14",
         "license__short_name": "cURL License",
         "license__category": "Permissive",
         "license__owner": "cURL",
@@ -17078,7 +17078,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/vip19x3_board.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 45.0,
+        "license__score": "45.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17351,7 +17351,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/fan_ctrl.patch",
         "license__key": "dual-bsd-gpl",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "Dual BSD-GPL",
         "license__category": "Permissive",
         "license__owner": "Motorola",
@@ -17366,7 +17366,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/fan_ctrl.patch",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17435,7 +17435,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/sched-cfs-v2.6.23.12-v24.1.mod.patch.expected",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17450,7 +17450,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/sched-cfs-v2.6.23.12-v24.1.mod.patch.expected",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17465,7 +17465,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/sched-cfs-v2.6.23.12-v24.1.mod.patch.expected",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17480,7 +17480,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/sched-cfs-v2.6.23.12-v24.1.mod.patch.expected",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17618,7 +17618,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 99.11,
+        "license__score": "99.11",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17633,7 +17633,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17648,7 +17648,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17663,7 +17663,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17678,7 +17678,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17693,7 +17693,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17708,7 +17708,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17723,7 +17723,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17738,7 +17738,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17753,7 +17753,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17768,7 +17768,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -17783,7 +17783,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18110,7 +18110,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/sched-cfs-v2.6.23.12-v24.1.mod.patch",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18125,7 +18125,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/sched-cfs-v2.6.23.12-v24.1.mod.patch",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18140,7 +18140,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/sched-cfs-v2.6.23.12-v24.1.mod.patch",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18155,7 +18155,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/sched-cfs-v2.6.23.12-v24.1.mod.patch",
         "license__key": "gpl",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18224,7 +18224,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/marvell_88e3015.patch",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18386,7 +18386,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/vip19xx_nand.patch.expected",
         "license__key": "dual-bsd-gpl",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "Dual BSD-GPL",
         "license__category": "Permissive",
         "license__owner": "Motorola",
@@ -18401,7 +18401,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/vip19xx_nand.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18470,7 +18470,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 99.11,
+        "license__score": "99.11",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18485,7 +18485,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18500,7 +18500,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18515,7 +18515,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18530,7 +18530,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18545,7 +18545,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18560,7 +18560,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18575,7 +18575,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18590,7 +18590,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18605,7 +18605,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18620,7 +18620,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18635,7 +18635,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -18992,7 +18992,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/vip19xx.h.patch",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19145,7 +19145,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 99.11,
+        "license__score": "99.11",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19160,7 +19160,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19175,7 +19175,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19190,7 +19190,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19205,7 +19205,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19220,7 +19220,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19235,7 +19235,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19250,7 +19250,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19265,7 +19265,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19280,7 +19280,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19295,7 +19295,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19310,7 +19310,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19451,7 +19451,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/vip19xx.h.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19556,7 +19556,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 99.11,
+        "license__score": "99.11",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19571,7 +19571,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19586,7 +19586,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19601,7 +19601,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19616,7 +19616,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19631,7 +19631,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19646,7 +19646,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19661,7 +19661,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19676,7 +19676,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19691,7 +19691,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19706,7 +19706,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19721,7 +19721,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19862,7 +19862,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/hcd_stm.c.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -19961,7 +19961,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/marvell_88e3015.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20060,7 +20060,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/vip19xx_nor.patch.expected",
         "license__key": "dual-bsd-gpl",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "Dual BSD-GPL",
         "license__category": "Permissive",
         "license__owner": "Motorola",
@@ -20075,7 +20075,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/vip19xx_nor.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20591,7 +20591,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/vip19xx_nor.patch",
         "license__key": "dual-bsd-gpl",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "Dual BSD-GPL",
         "license__category": "Permissive",
         "license__owner": "Motorola",
@@ -20606,7 +20606,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/vip19xx_nor.patch",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20723,7 +20723,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 76.47,
+        "license__score": "76.47",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20738,7 +20738,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 65.0,
+        "license__score": "65.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20753,7 +20753,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 65.0,
+        "license__score": "65.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20768,7 +20768,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20783,7 +20783,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20798,7 +20798,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 93.94,
+        "license__score": "93.94",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20813,7 +20813,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20828,7 +20828,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20843,7 +20843,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20858,7 +20858,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20873,7 +20873,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20888,7 +20888,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20903,7 +20903,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20918,7 +20918,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20933,7 +20933,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20948,7 +20948,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20963,7 +20963,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20978,7 +20978,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -20993,7 +20993,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21008,7 +21008,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21023,7 +21023,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21038,7 +21038,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21053,7 +21053,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21068,7 +21068,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21083,7 +21083,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21098,7 +21098,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21113,7 +21113,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21128,7 +21128,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21143,7 +21143,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21158,7 +21158,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21173,7 +21173,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21188,7 +21188,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21203,7 +21203,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21218,7 +21218,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21233,7 +21233,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21248,7 +21248,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21263,7 +21263,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21278,7 +21278,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21293,7 +21293,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21308,7 +21308,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21323,7 +21323,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21338,7 +21338,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21353,7 +21353,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21368,7 +21368,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21383,7 +21383,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21398,7 +21398,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21413,7 +21413,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21428,7 +21428,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21443,7 +21443,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21458,7 +21458,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21473,7 +21473,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21488,7 +21488,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21503,7 +21503,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21518,7 +21518,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21533,7 +21533,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21548,7 +21548,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "bsd-new",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "BSD-Modified",
         "license__category": "Permissive",
         "license__owner": "Regents of the University of California",
@@ -21563,7 +21563,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21578,7 +21578,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21593,7 +21593,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21608,7 +21608,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21623,7 +21623,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21638,7 +21638,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21653,7 +21653,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21668,7 +21668,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21683,7 +21683,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21698,7 +21698,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21713,7 +21713,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21728,7 +21728,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21743,7 +21743,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -21758,7 +21758,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -22607,7 +22607,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 99.11,
+        "license__score": "99.11",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -22622,7 +22622,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -22637,7 +22637,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -22652,7 +22652,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -22667,7 +22667,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -22682,7 +22682,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -22697,7 +22697,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -22712,7 +22712,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -22727,7 +22727,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -22742,7 +22742,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -22757,7 +22757,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
         "license__key": "gpl-2.0-plus",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0 or later",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -22772,7 +22772,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -22976,7 +22976,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/hcd_stm.c.patch",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23012,7 +23012,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 76.47,
+        "license__score": "76.47",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23027,7 +23027,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl-2.0",
-        "license__score": 65.0,
+        "license__score": "65.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23042,7 +23042,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 65.0,
+        "license__score": "65.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23057,7 +23057,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23072,7 +23072,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23087,7 +23087,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 93.94,
+        "license__score": "93.94",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23102,7 +23102,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23117,7 +23117,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23132,7 +23132,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23147,7 +23147,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23162,7 +23162,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23177,7 +23177,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23192,7 +23192,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23207,7 +23207,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23222,7 +23222,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23237,7 +23237,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23252,7 +23252,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23267,7 +23267,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23282,7 +23282,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23297,7 +23297,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23312,7 +23312,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23327,7 +23327,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23342,7 +23342,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23357,7 +23357,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23372,7 +23372,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23387,7 +23387,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23402,7 +23402,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23417,7 +23417,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23432,7 +23432,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23447,7 +23447,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23462,7 +23462,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23477,7 +23477,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23492,7 +23492,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23507,7 +23507,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23522,7 +23522,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23537,7 +23537,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23552,7 +23552,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23567,7 +23567,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23582,7 +23582,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23597,7 +23597,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23612,7 +23612,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23627,7 +23627,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23642,7 +23642,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23657,7 +23657,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23672,7 +23672,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23687,7 +23687,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23702,7 +23702,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23717,7 +23717,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23732,7 +23732,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23747,7 +23747,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23762,7 +23762,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23777,7 +23777,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23792,7 +23792,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23807,7 +23807,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23822,7 +23822,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23837,7 +23837,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "bsd-new",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "BSD-Modified",
         "license__category": "Permissive",
         "license__owner": "Regents of the University of California",
@@ -23852,7 +23852,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23867,7 +23867,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23882,7 +23882,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23897,7 +23897,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23912,7 +23912,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23927,7 +23927,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23942,7 +23942,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23957,7 +23957,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl-2.0",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23972,7 +23972,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -23987,7 +23987,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -24002,7 +24002,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -24017,7 +24017,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl-2.1",
-        "license__score": 40.0,
+        "license__score": "40.00",
         "license__short_name": "LGPL 2.1",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -24032,7 +24032,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -24047,7 +24047,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -24728,7 +24728,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/motorola_rootdisk.c.patch.expected",
         "license__key": "dual-bsd-gpl",
-        "license__score": 100.0,
+        "license__score": "100.00",
         "license__short_name": "Dual BSD-GPL",
         "license__category": "Permissive",
         "license__owner": "Motorola",
@@ -24743,7 +24743,7 @@
     {
         "Resource": "/code/data/patch/patches/misc/linux-st710x/patches/motorola_rootdisk.c.patch.expected",
         "license__key": "gpl-2.0",
-        "license__score": 15.0,
+        "license__score": "15.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -27677,7 +27677,7 @@
     {
         "Resource": "/code/data/archive/TODO/rpmticket_6327/gettext-runtime-32bit-0.17-61.40.x86_64.rpm",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -27692,7 +27692,7 @@
     {
         "Resource": "/code/data/archive/TODO/rpmticket_6327/gettext-runtime-32bit-0.17-61.40.x86_64.rpm",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -27707,7 +27707,7 @@
     {
         "Resource": "/code/data/archive/TODO/rpmticket_6327/gettext-runtime-32bit-0.17-61.40.x86_64.rpm",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -27722,7 +27722,7 @@
     {
         "Resource": "/code/data/archive/TODO/rpmticket_6327/gettext-runtime-32bit-0.17-61.40.x86_64.rpm",
         "license__key": "gpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -28811,7 +28811,7 @@
     {
         "Resource": "/code/data/archive/cpio/elfinfo-1.0-1.fc9.src.cpio",
         "license__key": "gpl-2.0",
-        "license__score": 10.0,
+        "license__score": "10.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -28865,7 +28865,7 @@
     {
         "Resource": "/code/data/archive/cpio/cpio_trailing.cpio",
         "license__key": "gpl-2.0",
-        "license__score": 10.0,
+        "license__score": "10.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -28961,7 +28961,7 @@
     {
         "Resource": "/code/data/archive/cpio/cpio_broken.cpio",
         "license__key": "gpl-2.0",
-        "license__score": 10.0,
+        "license__score": "10.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -33698,7 +33698,7 @@
     {
         "Resource": "/code/data/archive/rpm/broken.rpm",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -33839,7 +33839,7 @@
     {
         "Resource": "/code/data/archive/rpm/renamed.rpm",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -33905,7 +33905,7 @@
     {
         "Resource": "/code/data/archive/rpm/python-glc-0.7.1-1.src.rpm",
         "license__key": "lgpl",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "LGPL",
         "license__category": "Copyleft Limited",
         "license__owner": "Free Software Foundation (FSF)",
@@ -33971,7 +33971,7 @@
     {
         "Resource": "/code/data/archive/rpm/elfinfo-1.0-1.fc9.src.rpm",
         "license__key": "gpl-2.0",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -34037,7 +34037,7 @@
     {
         "Resource": "/code/data/archive/rpm/rpm_trailing.rpm",
         "license__key": "gpl-2.0",
-        "license__score": 5.0,
+        "license__score": "5.00",
         "license__short_name": "GPL 2.0",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -35402,7 +35402,7 @@
     {
         "Resource": "/code/data/archive/bz2/bzip2_with_gentoo_trailing_data/sys-libs%253Azlib-1.2.3-r1%7E1.tbz2",
         "license__key": "gpl",
-        "license__score": 20.0,
+        "license__score": "20.00",
         "license__short_name": "GPL",
         "license__category": "Copyleft",
         "license__owner": "Free Software Foundation (FSF)",
@@ -35417,7 +35417,7 @@
     {
         "Resource": "/code/data/archive/bz2/bzip2_with_gentoo_trailing_data/sys-libs%253Azlib-1.2.3-r1%7E1.tbz2",
         "license__key": "zlib",
-        "license__score": 93.55,
+        "license__score": "93.55",
         "license__short_name": "ZLIB License",
         "license__category": "Permissive",
         "license__owner": "zlib",

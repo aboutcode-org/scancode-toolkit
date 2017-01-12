@@ -1,6 +1,6 @@
 #!/usr/bin/python2
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -23,8 +23,11 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import print_function
+from __future__ import absolute_import
+from __future__ import unicode_literals
 
+import codecs
 from collections import OrderedDict
 import json
 import os
@@ -44,7 +47,7 @@ def load_scan(json_input):
     Return a list of scan results loaded from a json_input, either in ScanCode
     standard JSON format or the data.json html-app format.
     """
-    with open(json_input) as jsonf:
+    with codecs.open(json_input, 'rb', encoding='utf-8') as jsonf:
         scan = jsonf.read()
 
     # strip the leading data padding if any (used in the html-app JSON)
@@ -68,7 +71,7 @@ def json_scan_to_csv(json_input, csv_output):
     scan_results = load_scan(json_input)
     rows = list(flatten_scan(scan_results))
     headers = collect_header_keys(rows)
-    with open(csv_output, 'wb') as output:
+    with codecs.open(csv_output, 'wb', encoding='utf-8') as output:
         w = unicodecsv.DictWriter(output, headers)
         w.writeheader()
         for r in rows:
@@ -82,91 +85,126 @@ def flatten_scan(scan):
     """
     for scanned_file in scan:
         path = scanned_file['path']
+
+        # alway use a root slash
         path = path if path.startswith('/') else '/' + path
 
+        # alway use a trailing slash for directories
         if scanned_file.get('type', '') == 'directory':
             if not path.endswith('/'):
                 path = path + '/'
 
+        # alway create a root directory
         path = '/code' + path
 
-        file_info = OrderedDict(Resource=path)
-        info_details = OrderedDict(((k, v) for k, v in scanned_file.items() if k != 'path' and not isinstance(v, list)))
+        file_info = OrderedDict()
+        file_info['Resource'] = path
+        info_details = ((k, v) for k, v in scanned_file.items() if k != 'path' and not isinstance(v, list))
         file_info.update(info_details)
-        # Scan errors are to be joined in a multi-line cell
+        # Scan errors are joined in a single multi-line value
         file_info['scan_errors'] = '\n'.join(scanned_file.get('scan_errors', []))
         yield file_info
 
         for licensing in scanned_file.get('licenses', []):
-            lic = OrderedDict(Resource=path)
+            lic = OrderedDict()
+            lic['Resource'] = path
             for k, val in licensing.items():
+                # do not include matched rule details for now.
                 if k == 'matched_rule':
                     continue
+
+                if k == 'score':
+                    # normalize the string representation of this number
+                    val = '{:.2f}'.format(val)
+
+                # lines are present in multiple scans: keep their column name as not scan-specific
+                # Prefix othe columns with license__
                 if k not in ('start_line', 'end_line',):
                     k = 'license__' + k
                 lic[k] = val
             yield lic
 
+        key_to_header_mapping = [
+            ('statements', 'copyright'),
+            ('holders', 'copyright_holder'),
+            ('authors', 'author')
+        ]
         for copy_info in scanned_file.get('copyrights', []):
             start_line = copy_info['start_line']
             end_line = copy_info['end_line']
-            for key, header in (('statements', 'copyright'), ('holders', 'copyright_holder'), ('authors', 'author')):
+            # rename some keys to a different column header
+            for key, header in key_to_header_mapping:
                 for cop in copy_info.get(key, []):
-                    inf = OrderedDict(Resource=path)
+                    inf = OrderedDict()
+                    inf['Resource'] = path
                     inf[header] = cop
                     inf['start_line'] = start_line
                     inf['end_line'] = end_line
                     yield inf
 
         for email in scanned_file.get('emails', []):
-            email_info = OrderedDict(Resource=path)
-            for k, val in email.items():
-                email_info[k] = val
+            email_info = OrderedDict()
+            email_info['Resource'] = path
+            email_info.update(email)
             yield email_info
 
         for url in scanned_file.get('urls', []):
-            url_info = OrderedDict(Resource=path)
-            for k, val in url.items():
-                url_info[k] = val
+            url_info = OrderedDict()
+            url_info['Resource'] = path
+            url_info.update(url)
             yield url_info
 
-        excluded_columns = ('packaging',
-                            'payload_type',
-                            'keywords_doc_url',
-                            'download_sha1',
-                            'download_sha256',
-                            'download_md5',
-                            'code_view_url',
-                            'vcs_tool',
-                            'vcs_revision',
-                            'license_expression')
+        # exclude some columns from the packages for now
+        excluded_package_columns = {
+            'packaging',
+            'payload_type',
+            'keywords_doc_url',
+            'download_sha1',
+            'download_sha256',
+            'download_md5',
+            'code_view_url',
+            'vcs_tool',
+            'vcs_revision',
+            'license_expression'
+        }
 
         for package in scanned_file.get('packages', []):
-            pack = OrderedDict(Resource=path)
+            pack = OrderedDict()
+            pack['Resource'] = path
             for k, val in package.items():
+                # prefix columns with "package__"
                 nk = 'package__' + k
-                if not isinstance(val, (list, dict, OrderedDict)):
-                    if k not in excluded_columns:
-                        if k == 'version' and val:
-                            val = 'v ' + val
-                        pack[nk] = val
+
+                # keep all non-excluded plain string values
+                if k not in excluded_package_columns and not isinstance(val, (list, dict, OrderedDict)):
+                    # prefix versions with a v to avoid spreadsheet tools to mistake
+                    # a version for a number or date.
+                    if k == 'version' and val:
+                        val = 'v ' + val
+                    pack[nk] = val
+
+                # FIXME: we only keep for now some of the value lists
                 elif k in ('authors', 'download_urls', 'copyrights', 'asserted_licenses'):
-                    if len(val) > 0:
+                    pack[nk] = ''
+                    if val and len(val):
                         if k == 'authors':
-                            # We only want the first author
+                            # FIXME: we only keep the first author name for now
                             pack[nk] = val[0]['name']
+
                         if k == 'download_urls':
-                            # We only want the first URL
+                            # FIXME: we only keep the first URL for now
                             pack[nk] = val[0]
+
                         if k == 'copyrights':
-                            # All copyright statements are to be joined in a multi-line cell
+                            # All copyright statements are joined in a single multiline value
                             pack[nk] = '\n'.join(val)
+
                         if k == 'asserted_licenses':
-                            # All license names are to be joined in a multi-line cell
-                            licenses = [license_info.get('license') or '' for license_info in val]
+                            # All licenses are joined in a single multi-line value
+                            licenses = [license_info.get('license') for license_info in val]
+                            licenses = [lic for lic in licenses if lic]
                             pack[nk] = '\n'.join(licenses)
-                    else:
-                        pack[nk] = ''
+
             yield pack
 
 
@@ -192,7 +230,7 @@ def cli(json_input, csv_output):
 
     JSON_INPUT is either a ScanCode json format scan or the data.json file from a ScanCode html-app format scan.
 
-    Resource path will be prefixed with \'\\code\' to provide a common base directory for scanned resources.
+    Paths will be prefixed with '/code/' to provide a common base directory for scanned resources.
     """
     json_input = os.path.abspath(os.path.expanduser(json_input))
     csv_output = os.path.abspath(os.path.expanduser(csv_output))

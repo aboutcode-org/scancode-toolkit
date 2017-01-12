@@ -1,4 +1,4 @@
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -21,18 +21,47 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
-
-from __future__ import absolute_import, print_function
+from __future__ import print_function
+from __future__ import absolute_import
+from __future__ import unicode_literals
 
 import codecs
 from collections import OrderedDict
 import json
 import os
 
+import unicodecsv
+
 from commoncode.testcase import FileBasedTesting
 
 import json2csv
+
+
+def load_csv(location):
+    """
+    Load a CSV file at location and return a tuple of (field names, list of rows as
+    mappings field->value)
+    """
+    with codecs.open(location, 'rb', encoding='utf-8') as csvin:
+        reader = unicodecsv.DictReader(csvin)
+        fields = reader.fieldnames
+        values = list(reader)
+        return fields, values
+
+
+def check_csvs(result_file, expected_file, regen=False):
+    """
+    Load and compare two CSVs.
+    """
+    result_fields, results = load_csv(result_file)
+    if regen:
+        import shutil
+        shutil.copy2(result_file, expected_file)
+    expected_fields, expected = load_csv(expected_file)
+    assert expected_fields == result_fields
+    # then check results line by line for more compact results
+    for exp, res in zip(expected,results):
+        assert exp == res
 
 
 class TestJson2CSV(FileBasedTesting):
@@ -43,7 +72,7 @@ class TestJson2CSV(FileBasedTesting):
         scan = json2csv.load_scan(test_json)
         result = list(json2csv.flatten_scan(scan))
         expected = self.get_test_loc('json2csv/minimal.json-expected')
-        expected = json.load(open(expected), object_pairs_hook=OrderedDict)
+        expected = json.load(codecs.open(expected, encoding='utf-8'), object_pairs_hook=OrderedDict)
         assert expected == result
 
     def test_scanc_as_list_full(self):
@@ -51,7 +80,7 @@ class TestJson2CSV(FileBasedTesting):
         scan = json2csv.load_scan(test_json)
         result = list(json2csv.flatten_scan(scan))
         expected = self.get_test_loc('json2csv/full.json-expected')
-        expected = json.load(open(expected), object_pairs_hook=OrderedDict)
+        expected = json.load(codecs.open(expected, encoding='utf-8'), object_pairs_hook=OrderedDict)
         assert expected == result
 
     def test_json2csv_minimal(self):
@@ -59,18 +88,14 @@ class TestJson2CSV(FileBasedTesting):
         result_file = self.get_temp_file('.csv')
         json2csv.json_scan_to_csv(test_json, result_file)
         expected_file = self.get_test_loc('json2csv/minimal.csv')
-        expected = codecs.open(expected_file, 'rb', encoding='utf-8').read()
-        result = codecs.open(result_file, 'rb', encoding='utf-8').read()
-        assert expected == result
+        check_csvs(result_file, expected_file)
 
     def test_json2csv_full(self):
         test_json = self.get_test_loc('json2csv/full.json')
         result_file = self.get_temp_file('.csv')
         json2csv.json_scan_to_csv(test_json, result_file)
         expected_file = self.get_test_loc('json2csv/full.csv')
-        expected = codecs.open(expected_file, 'rb', encoding='utf-8').read()
-        result = codecs.open(result_file, 'rb', encoding='utf-8').read()
-        assert expected == result
+        check_csvs(result_file, expected_file)
 
     def test_key_ordering(self):
         test_json = self.get_test_loc('json2csv/key_order.json')
@@ -162,5 +187,5 @@ class TestJson2CSV(FileBasedTesting):
         scan = json2csv.load_scan(test_json)
         result = list(json2csv.flatten_scan(scan))
         expected = self.get_test_loc('json2csv/package_license_value_null.json-expected')
-        expected = json.load(open(expected), object_pairs_hook=OrderedDict)
+        expected = json.load(codecs.open(expected, encoding='utf-8'), object_pairs_hook=OrderedDict)
         assert expected == result

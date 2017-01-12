@@ -6,7 +6,7 @@
     {
         "Resource": "/code/srp_vfy.c",
         "license__key": "apache-2.0",
-        "license__score": 53.85,
+        "license__score": "53.85",
         "license__short_name": "Apache 2.0",
         "license__category": "Permissive",
         "license__owner": "Apache Software Foundation",
@@ -21,7 +21,7 @@
     {
         "Resource": "/code/srp_vfy.c",
         "license__key": "openssl-ssleay",
-        "license__score": 10.0,
+        "license__score": "10.00",
         "license__short_name": "OpenSSL/SSLeay License",
         "license__category": "Permissive",
         "license__owner": "OpenSSL",
