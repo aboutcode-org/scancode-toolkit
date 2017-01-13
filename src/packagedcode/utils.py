@@ -68,16 +68,15 @@ def parse_repo_url(repo_url):
         git@gitlab.com:foo/private.git
     """
 
-    # TODO: Improve this and use outside of NPMs
     is_vcs_url = repo_url.startswith(VCS_URLS)
     if is_vcs_url:
-        # TODO: ensure the .git suffix is present if needed
+        # TODO: If we match http and https, we may should add more check in case if the url is not a repo one.
+        # For example, check the domain name in the url...
         return repo_url
 
     if repo_url.startswith('git@'):
         left, right = repo_url.split('@', 1)
         host, repo = right.split(':', 1)
-        # may be we should
         if any(h in host for h in ['github', 'bitbucket', 'gitlab']):
             return 'https://%(host)s/%(repo)s' % locals()
         else:
@@ -88,9 +87,9 @@ def parse_repo_url(repo_url):
 
     elif repo_url.startswith(('bitbucket:', 'gitlab:', 'github:')):
         hoster_urls = {
-            'bitbucket:': 'https://bitbucket.org/%(repo)s',
-            'github:': 'https://github.com/%(repo)s',
-            'gitlab:': 'https://gitlab.com/%(repo)s',
+            'bitbucket': 'https://bitbucket.org/%(repo)s',
+            'github': 'https://github.com/%(repo)s',
+            'gitlab': 'https://gitlab.com/%(repo)s',
         }
         hoster, repo = repo_url.split(':', 1)
         return hoster_urls[hoster] % locals()
