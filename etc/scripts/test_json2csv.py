@@ -86,14 +86,16 @@ class TestJson2CSV(FileBasedTesting):
     def test_json2csv_minimal(self):
         test_json = self.get_test_loc('json2csv/minimal.json')
         result_file = self.get_temp_file('.csv')
-        json2csv.json_scan_to_csv(test_json, result_file)
+        with open(result_file, 'wb') as rf:
+            json2csv.json_scan_to_csv(test_json, rf)
         expected_file = self.get_test_loc('json2csv/minimal.csv')
         check_csvs(result_file, expected_file)
 
     def test_json2csv_full(self):
         test_json = self.get_test_loc('json2csv/full.json')
         result_file = self.get_temp_file('.csv')
-        json2csv.json_scan_to_csv(test_json, result_file)
+        with open(result_file, 'wb') as rf:
+            json2csv.json_scan_to_csv(test_json, rf)
         expected_file = self.get_test_loc('json2csv/full.csv')
         check_csvs(result_file, expected_file)
 

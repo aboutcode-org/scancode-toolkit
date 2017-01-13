@@ -67,15 +67,15 @@ def load_scan(json_input):
 def json_scan_to_csv(json_input, csv_output):
     """
     Convert a scancode JSON output file to a nexb-toolkit-like CSV.
+    csv_output is an open file descriptor.
     """
     scan_results = load_scan(json_input)
     rows = list(flatten_scan(scan_results))
     headers = collect_header_keys(rows)
-    with codecs.open(csv_output, 'wb', encoding='utf-8') as output:
-        w = unicodecsv.DictWriter(output, headers)
-        w.writeheader()
-        for r in rows:
-            w.writerow(r)
+    w = unicodecsv.DictWriter(csv_output, headers)
+    w.writeheader()
+    for r in rows:
+        w.writerow(r)
 
 
 def flatten_scan(scan):
@@ -222,7 +222,7 @@ def collect_header_keys(scan_data):
 
 @click.command()
 @click.argument('json_input', type=click.Path(exists=True, readable=True))
-@click.argument('csv_output', type=click.Path(exists=False, readable=True))
+@click.argument('csv_output', type=click.File('wb', lazy=False))
 @click.help_option('-h', '--help')
 def cli(json_input, csv_output):
     """
@@ -233,7 +233,6 @@ def cli(json_input, csv_output):
     Paths will be prefixed with '/code/' to provide a common base directory for scanned resources.
     """
     json_input = os.path.abspath(os.path.expanduser(json_input))
-    csv_output = os.path.abspath(os.path.expanduser(csv_output))
     json_scan_to_csv(json_input, csv_output)
 
 
