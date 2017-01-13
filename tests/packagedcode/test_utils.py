@@ -35,7 +35,8 @@ class TestUtilsPi(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_parse_url(self):
-        inputs = ['gist:11081aaa281',
+        inputs = ['npm/npm',
+                  'gist:11081aaa281',
                   'bitbucket:example/repo',
                   'gitlab:another/repo',
                   'expressjs/serve-static',
@@ -52,7 +53,8 @@ class TestUtilsPi(FileBasedTesting):
         results = []
         for input in inputs:
             results.append(parse_repo_url(input))
-        expected = ['gist:11081aaa281',
+        expected = ['https://github.com/npm/npm',
+                    'https://gist.github.com/11081aaa281',
                     'https://bitbucket.org/example/repo',
                     'https://gitlab.com/another/repo',
                     'https://github.com/expressjs/serve-static',

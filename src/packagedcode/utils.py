@@ -82,14 +82,12 @@ def parse_repo_url(repo_url):
         else:
             return repo_url
 
-    if repo_url.startswith('gist:'):
-        return repo_url
-
-    elif repo_url.startswith(('bitbucket:', 'gitlab:', 'github:')):
+    if repo_url.startswith(('bitbucket:', 'gitlab:', 'github:', 'gist:')):
         hoster_urls = {
             'bitbucket': 'https://bitbucket.org/%(repo)s',
             'github': 'https://github.com/%(repo)s',
             'gitlab': 'https://gitlab.com/%(repo)s',
+            'gist': 'https://gist.github.com/%(repo)s',
         }
         hoster, repo = repo_url.split(':', 1)
         return hoster_urls[hoster] % locals()
