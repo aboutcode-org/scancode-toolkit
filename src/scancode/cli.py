@@ -262,6 +262,10 @@ def scancode(ctx, input, output_file, copyright, license, package,
         license = True
         package = True
 
+    # A hack to force info being exposed for SPDX output in order to reuse calculated file SHA1s.
+    if format in ('spdx-tv', 'spdx-rdf'):
+        info = True
+
     scans_cache_class = get_scans_cache_class()
     try:
         files_count, results = scan(input_path=input,
@@ -628,7 +632,7 @@ def save_results(files_count, scanned_files, format, input, output_file):
             output_file.write(unicode(json.dumps(meta, separators=(',', ':'), iterable_as_array=True, encoding='utf-8')))
         output_file.write('\n')
 
-    elif format == 'spdx-tv' or format == 'spdx-rdf':
+    elif format in ('spdx-tv', 'spdx-rdf'):
         from spdx.checksum import Algorithm
         from spdx.creationinfo import Tool
         from spdx.document import Document, License
@@ -645,10 +649,15 @@ def save_results(files_count, scanned_files, format, input, output_file):
         doc.package = Package(input, NoAssert())
 
         for file_data in scanned_files:
-            file_entry = File(file_data['path'])
-            # FIXME: should we really compue the checcksum here rather than get it from the scan?
-            file_entry.chk_sum = Algorithm('SHA1', file_entry.calc_chksum())
-            for file_license in file_data['licenses']:
+            file_sha1 = file_data.get('sha1')
+            if not file_sha1:
+                # Skip directories.
+                continue
+
+            file_entry = File(file_data.get('path'))
+            file_entry.chk_sum = Algorithm('SHA1', file_sha1)
+
+            for file_license in file_data.get('licenses'):
                 spdx_id = file_license.get('spdx_license_key')
                 # TODO: we should create a "LicenseRef:xxx" identifier 
                 # if the license is not known to SPDX
