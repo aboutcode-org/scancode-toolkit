@@ -639,6 +639,7 @@ def save_results(files_count, scanned_files, format, input, output_file):
         from spdx.file import File
         from spdx.package import Package
         from spdx.utils import NoAssert
+        from spdx.utils import SPDXNone
         from spdx.version import Version
 
         doc = Document(Version(2, 1), License.from_identifier('CC0-1.0'))
@@ -657,14 +658,19 @@ def save_results(files_count, scanned_files, format, input, output_file):
             file_entry = File(file_data.get('path'))
             file_entry.chk_sum = Algorithm('SHA1', file_sha1)
 
-            for file_license in file_data.get('licenses'):
-                spdx_id = file_license.get('spdx_license_key')
-                # TODO: we should create a "LicenseRef:xxx" identifier 
-                # if the license is not known to SPDX
-                if spdx_id:
-                    spdx_license = License.from_identifier(spdx_id)
-                    file_entry.add_lics(spdx_license)
-                    doc.package.add_lics_from_file(spdx_license)
+            file_licenses = file_data.get('licenses')
+            if file_licenses:
+                for file_license in file_licenses:
+                    spdx_id = file_license.get('spdx_license_key')
+                    # TODO: we should create a "LicenseRef:xxx" identifier
+                    # if the license is not known to SPDX
+                    if spdx_id:
+                        spdx_license = License.from_identifier(spdx_id)
+                        file_entry.add_lics(spdx_license)
+                        doc.package.add_lics_from_file(spdx_license)
+
+            else:
+                file_entry.add_lics(SPDXNone())
 
             file_entry.conc_lics = NoAssert()
             file_entry.copyright = NoAssert()
@@ -672,6 +678,8 @@ def save_results(files_count, scanned_files, format, input, output_file):
 
         # Remove duplicate licenses from the list.
         doc.package.licenses_from_files = list(set(doc.package.licenses_from_files))
+        if not doc.package.licenses_from_files:
+            doc.package.licenses_from_files = [SPDXNone()]
 
         doc.package.verif_code = doc.package.calc_verif_code()
         doc.package.cr_text = NoAssert()
