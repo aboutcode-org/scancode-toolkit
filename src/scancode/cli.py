@@ -655,8 +655,7 @@ def save_results(files_count, scanned_files, format, input, output_file):
                 # Skip directories.
                 continue
 
-            file_entry = File(file_data.get('path'))
-            file_entry.chk_sum = Algorithm('SHA1', file_sha1)
+            file_entry = File(file_data.get('path'), Algorithm('SHA1', file_sha1))
 
             file_licenses = file_data.get('licenses')
             if file_licenses:
