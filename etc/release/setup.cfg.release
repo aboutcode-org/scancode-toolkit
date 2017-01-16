@@ -1,11 +1,7 @@
-[bdist_wheel]
-universal = 1
-
 [metadata]
 license_file = NOTICE
 
 [aliases]
-# no register/upload for now
-# pypi_release = clean --all sdist --formats=bztar,zip bdist_wheel register upload
+pypi_release = clean --all sdist --formats=bztar bdist_wheel register upload
 
 release = clean --all sdist --formats=gztar,bztar,zip bdist_wheel
