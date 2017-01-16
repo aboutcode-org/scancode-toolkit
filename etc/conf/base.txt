@@ -4,6 +4,7 @@ setuptools
 wheel
 pip
 wincertstore
+six
 
 # Self
 -e .
