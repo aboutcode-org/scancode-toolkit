@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -48,8 +48,8 @@ def _hash_mod(bitsize, hmodule):
     """
     class hasher(object):
         def __init__(self, msg=None):
-            digest_size = bitsize // 8
-            self.h = msg and hmodule(msg).digest()[:digest_size] or None
+            self.digest_size = bitsize // 8
+            self.h = msg and hmodule(msg).digest()[:self.digest_size] or None
 
         def digest(self):
             return self.h
