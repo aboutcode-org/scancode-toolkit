@@ -115,20 +115,6 @@ setup(
         ':platform_system == "Windows"': ['lxml == 3.6.0'],
         ':platform_system == "Linux"': ['lxml == 3.6.4'],
         ':platform_system == "Darwin"': ['lxml == 3.6.4'],
-#         'base': [
-#             'certifi',
-#             'setuptools',
-#             'wheel',
-#             'pip',
-#             'wincertstore',
-#         ],
-#         'dev': [
-#             'pytest',
-#             'execnet',
-#             'py',
-#             'pytest-xdist',
-#             'bumpversion',
-#         ],
 
     },
     entry_points={
