@@ -22,7 +22,7 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-__version__ = '2.0.0rc2'
+__version__ = '2.0.0rc3'
 
 from os.path import dirname
 from os.path import abspath
