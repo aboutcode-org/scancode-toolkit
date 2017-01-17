@@ -679,12 +679,15 @@ def save_results(files_count, scanned_files, format, input, output_file):
             if file_licenses:
                 for file_license in file_licenses:
                     spdx_id = file_license.get('spdx_license_key')
-                    # TODO: we should create a "LicenseRef:xxx" identifier
-                    # if the license is not known to SPDX
                     if spdx_id:
                         spdx_license = License.from_identifier(spdx_id)
                         file_entry.add_lics(spdx_license)
                         doc.package.add_lics_from_file(spdx_license)
+                    else:
+                        license_key = 'LicenseRef-' + file_license.get('key')
+                        license_ref = License(file_license.get('short_name'), license_key)
+                        file_entry.add_lics(license_ref)
+                        doc.package.add_lics_from_file(license_ref)
 
             else:
                 file_entry.add_lics(SPDXNone())
