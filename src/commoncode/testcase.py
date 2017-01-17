@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,6 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
+"""
+FIXME: TEMPORARY COPY of commoncode.testcase to handle new semantics for get_test_loc
+"""
 
 from __future__ import absolute_import
 from __future__ import print_function
@@ -92,7 +95,7 @@ def to_os_native_path(path):
     return path
 
 
-def get_test_loc(test_path, test_data_dir, debug=False):
+def get_test_loc(test_path, test_data_dir, debug=False, exists=True):
     """
     Given a `test_path` relative to the `test_data_dir` directory, return the
     location to a test file or directory for this path. No copy is done.
@@ -112,7 +115,7 @@ def get_test_loc(test_path, test_data_dir, debug=False):
     tpath = to_os_native_path(test_path)
     test_loc = os.path.abspath(os.path.join(test_data_dir, tpath))
 
-    if not os.path.exists(test_loc):
+    if exists and not os.path.exists(test_loc):
         raise IOError("[Errno 2] No such file or directory: "
                       "test_path not found: '%(test_loc)s'" % locals())
 
