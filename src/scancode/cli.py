@@ -642,31 +642,52 @@ def save_results(files_count, scanned_files, format, input, output_file):
         from spdx.utils import SPDXNone
         from spdx.version import Version
 
+        input = abspath(input)
+
+        if os.path.isdir(input):
+            input_path = input
+        else:
+            input_path = os.path.dirname(input)
+
         doc = Document(Version(2, 1), License.from_identifier('CC0-1.0'))
 
         doc.creation_info.add_creator(Tool('ScanCode ' + version))
         doc.creation_info.set_created_now()
 
-        doc.package = Package(input, NoAssert())
+        doc.package = Package(os.path.basename(input_path), NoAssert())
 
         for file_data in scanned_files:
+            # Construct the absolute path in case we need to access the file
+            # to calculate its SHA1.
+            file_entry = File(os.path.join(input_path, file_data.get('path')))
+
             file_sha1 = file_data.get('sha1')
             if not file_sha1:
-                # Skip directories.
-                continue
+                if os.path.isfile(file_entry.name):
+                    # Calculate the SHA1 in case it is missing, e.g. for empty files.
+                    file_sha1 = file_entry.calc_chksum()
+                else:
+                    # Skip directories.
+                    continue
 
-            file_entry = File(file_data.get('path'), Algorithm('SHA1', file_sha1))
+            # Restore the relative file name as that is what we want in
+            # SPDX output.
+            file_entry.name = file_data.get('path')
+            file_entry.chk_sum = Algorithm('SHA1', file_sha1)
 
             file_licenses = file_data.get('licenses')
             if file_licenses:
                 for file_license in file_licenses:
                     spdx_id = file_license.get('spdx_license_key')
-                    # TODO: we should create a "LicenseRef:xxx" identifier
-                    # if the license is not known to SPDX
                     if spdx_id:
                         spdx_license = License.from_identifier(spdx_id)
                         file_entry.add_lics(spdx_license)
                         doc.package.add_lics_from_file(spdx_license)
+                    else:
+                        license_key = 'LicenseRef-' + file_license.get('key')
+                        license_ref = License(file_license.get('short_name'), license_key)
+                        file_entry.add_lics(license_ref)
+                        doc.package.add_lics_from_file(license_ref)
 
             else:
                 file_entry.add_lics(SPDXNone())
