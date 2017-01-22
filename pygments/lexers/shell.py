@@ -27,16 +27,17 @@ line_re = re.compile('.*?\n')
 
 class BashLexer(RegexLexer):
     """
-    Lexer for (ba|k|)sh shell scripts.
+    Lexer for (ba|k|z|)sh shell scripts.
 
     .. versionadded:: 0.6
     """
 
     name = 'Bash'
-    aliases = ['bash', 'sh', 'ksh', 'shell']
+    aliases = ['bash', 'sh', 'ksh', 'zsh', 'shell']
     filenames = ['*.sh', '*.ksh', '*.bash', '*.ebuild', '*.eclass',
-                 '*.exheres-0', '*.exlib',
-                 '.bashrc', 'bashrc', '.bash_*', 'bash_*', 'PKGBUILD']
+                 '*.exheres-0', '*.exlib', '*.zsh',
+                 '.bashrc', 'bashrc', '.bash_*', 'bash_*', 'zshrc', '.zshrc',
+                 'PKGBUILD']
     mimetypes = ['application/x-sh', 'application/x-shellscript']
 
     tokens = {
