@@ -51,7 +51,7 @@ class BashLexer(RegexLexer):
             (r'\$\(\(', Keyword, 'math'),
             (r'\$\(', Keyword, 'paren'),
             (r'\$\{#?', String.Interpol, 'curly'),
-            (r'\$[a-zA-Z_][a-zA-Z0-9_]*', Name.Variable),  # user variable
+            (r'\$[a-zA-Z_]\w*', Name.Variable),  # user variable
             (r'\$(?:\d+|[#$?!_*@-])', Name.Variable),      # builtin
             (r'\$', Text),
         ],
