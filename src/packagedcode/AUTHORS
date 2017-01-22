@@ -155,6 +155,7 @@ Other contributors, listed alphabetically, are:
 * Dominik Picheta -- Nimrod lexer
 * Andrew Pinkham -- RTF Formatter Refactoring
 * Clément Prévost -- UrbiScript lexer
+* Tanner Prynn -- cmdline -x option and loading lexers from files
 * Oleh Prypin -- Crystal lexer (based on Ruby lexer)
 * Elias Rabel -- Fortran fixed form lexer
 * raichoo -- Idris lexer
