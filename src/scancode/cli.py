@@ -671,8 +671,8 @@ def save_results(files_count, scanned_files, format, input, output_file):
                     continue
 
             # Restore the relative file name as that is what we want in
-            # SPDX output.
-            file_entry.name = file_data.get('path')
+            # SPDX output (with explicit leading './').
+            file_entry.name = './' + file_data.get('path')
             file_entry.chk_sum = Algorithm('SHA1', file_sha1)
 
             file_licenses = file_data.get('licenses')
