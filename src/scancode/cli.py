@@ -697,7 +697,7 @@ def save_results(files_count, scanned_files, format, input, output_file):
             doc.package.add_file(file_entry)
 
         # Remove duplicate licenses from the list.
-        doc.package.licenses_from_files = list(set(doc.package.licenses_from_files))
+        doc.package.licenses_from_files = list(set(doc.package.licenses_from_files)).sort()
         if not doc.package.licenses_from_files:
             doc.package.licenses_from_files = [SPDXNone()]
 
