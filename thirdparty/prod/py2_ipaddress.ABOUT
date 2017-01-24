@@ -1,5 +1,5 @@
-about_resource:py2_ipaddress-2.0-py2-none-any.whl
-download_url:https://pypi.python.org/packages/source/p/py2-ipaddress/py2-ipaddress-2.0.tar.gz
+about_resource: py2_ipaddress-2.0-py2-none-any.whl
+download_url: https://pypi.python.org/packages/source/p/py2-ipaddress/py2-ipaddress-2.0.tar.gz
 name: py2-ipaddress
 version: 2.0
 
