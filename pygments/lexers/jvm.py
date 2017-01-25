@@ -5,7 +5,7 @@
 
     Pygments lexers for JVM languages.
 
-    :copyright: Copyright 2006-2015 by the Pygments team, see AUTHORS.
+    :copyright: Copyright 2006-2017 by the Pygments team, see AUTHORS.
     :license: BSD, see LICENSE for details.
 """
 
@@ -59,25 +59,27 @@ class JavaLexer(RegexLexer):
              Keyword.Type),
             (r'(package)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
             (r'(true|false|null)\b', Keyword.Constant),
-            (r'(class|interface)(\s+)', bygroups(Keyword.Declaration, Text), 'class'),
-            (r'(import)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
+            (r'(class|interface)(\s+)', bygroups(Keyword.Declaration, Text),
+             'class'),
+            (r'(import(?:\s+static)?)(\s+)', bygroups(Keyword.Namespace, Text),
+             'import'),
             (r'"(\\\\|\\"|[^"])*"', String),
             (r"'\\.'|'[^\\]'|'\\u[0-9a-fA-F]{4}'", String.Char),
             (r'(\.)((?:[^\W\d]|\$)[\w$]*)', bygroups(Operator, Name.Attribute)),
             (r'^\s*([^\W\d]|\$)[\w$]*:', Name.Label),
             (r'([^\W\d]|\$)[\w$]*', Name),
-            (r'([0-9](_*[0-9]+)*\.([0-9](_*[0-9]+)*)?|'
-             r'([0-9](_*[0-9]+)*)?\.[0-9](_*[0-9]+)*)'
-             r'([eE][+\-]?[0-9](_*[0-9]+)*)?[fFdD]?|'
-             r'[0-9][eE][+\-]?[0-9](_*[0-9]+)*[fFdD]?|'
-             r'[0-9]([eE][+\-]?[0-9](_*[0-9]+)*)?[fFdD]|'
-             r'0[xX]([0-9a-fA-F](_*[0-9a-fA-F]+)*\.?|'
-             r'([0-9a-fA-F](_*[0-9a-fA-F]+)*)?\.[0-9a-fA-F](_*[0-9a-fA-F]+)*)'
-             r'[pP][+\-]?[0-9](_*[0-9]+)*[fFdD]?', Number.Float),
-            (r'0[xX][0-9a-fA-F](_*[0-9a-fA-F]+)*[lL]?', Number.Hex),
-            (r'0[bB][01](_*[01]+)*[lL]?', Number.Bin),
-            (r'0(_*[0-7]+)+[lL]?', Number.Oct),
-            (r'0|[1-9](_*[0-9]+)*[lL]?', Number.Integer),
+            (r'([0-9][0-9_]*\.([0-9][0-9_]*)?|'
+             r'\.[0-9][0-9_]*)'
+             r'([eE][+\-]?[0-9][0-9_]*)?[fFdD]?|'
+             r'[0-9][eE][+\-]?[0-9][0-9_]*[fFdD]?|'
+             r'[0-9]([eE][+\-]?[0-9][0-9_]*)?[fFdD]|'
+             r'0[xX]([0-9a-fA-F][0-9a-fA-F_]*\.?|'
+             r'([0-9a-fA-F][0-9a-fA-F_]*)?\.[0-9a-fA-F][0-9a-fA-F_]*)'
+             r'[pP][+\-]?[0-9][0-9_]*[fFdD]?', Number.Float),
+            (r'0[xX][0-9a-fA-F][0-9a-fA-F_]*[lL]?', Number.Hex),
+            (r'0[bB][01][01_]*[lL]?', Number.Bin),
+            (r'0[0-7_]+[lL]?', Number.Oct),
+            (r'0|[1-9][0-9_]*[lL]?', Number.Integer),
             (r'[~^*!%&\[\](){}<>|+=:;,./?-]', Operator),
             (r'\n', Text)
         ],
@@ -564,14 +566,14 @@ class IokeLexer(RegexLexer):
         ],
 
         'slashRegexp': [
-            (r'(?<!\\)/[oxpniums]*', String.Regex, '#pop'),
+            (r'(?<!\\)/[im-psux]*', String.Regex, '#pop'),
             include('interpolatableText'),
             (r'\\/', String.Regex),
             (r'[^/]', String.Regex)
         ],
 
         'squareRegexp': [
-            (r'(?<!\\)][oxpniums]*', String.Regex, '#pop'),
+            (r'(?<!\\)][im-psux]*', String.Regex, '#pop'),
             include('interpolatableText'),
             (r'\\]', String.Regex),
             (r'[^\]]', String.Regex)
