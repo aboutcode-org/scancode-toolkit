@@ -5,7 +5,7 @@
 
     Lexers for Ruby and related languages.
 
-    :copyright: Copyright 2006-2015 by the Pygments team, see AUTHORS.
+    :copyright: Copyright 2006-2017 by the Pygments team, see AUTHORS.
     :license: BSD, see LICENSE for details.
 """
 
@@ -47,9 +47,9 @@ class RubyLexer(ExtendedRegexLexer):
 
         start = match.start(1)
         yield start, Operator, match.group(1)        # <<-?
-        yield match.start(2), String.Heredoc, match.group(2)  # quote ", ', `
-        yield match.start(3), Name.Constant, match.group(3)   # heredoc name
-        yield match.start(4), String.Heredoc, match.group(4)  # quote again
+        yield match.start(2), String.Heredoc, match.group(2)   # quote ", ', `
+        yield match.start(3), String.Delimiter, match.group(3) # heredoc name
+        yield match.start(4), String.Heredoc, match.group(4)   # quote again
 
         heredocstack = ctx.__dict__.setdefault('heredocstack', [])
         outermost = not bool(heredocstack)
@@ -74,7 +74,7 @@ class RubyLexer(ExtendedRegexLexer):
                     if check == hdname:
                         for amatch in lines:
                             yield amatch.start(), String.Heredoc, amatch.group()
-                        yield match.start(), Name.Constant, match.group()
+                        yield match.start(), String.Delimiter, match.group()
                         ctx.pos = match.end()
                         break
                     else:
