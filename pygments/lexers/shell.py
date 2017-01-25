@@ -5,7 +5,7 @@
 
     Lexers for various shells.
 
-    :copyright: Copyright 2006-2015 by the Pygments team, see AUTHORS.
+    :copyright: Copyright 2006-2017 by the Pygments team, see AUTHORS.
     :license: BSD, see LICENSE for details.
 """
 
@@ -27,16 +27,17 @@ line_re = re.compile('.*?\n')
 
 class BashLexer(RegexLexer):
     """
-    Lexer for (ba|k|)sh shell scripts.
+    Lexer for (ba|k|z|)sh shell scripts.
 
     .. versionadded:: 0.6
     """
 
     name = 'Bash'
-    aliases = ['bash', 'sh', 'ksh', 'shell']
+    aliases = ['bash', 'sh', 'ksh', 'zsh', 'shell']
     filenames = ['*.sh', '*.ksh', '*.bash', '*.ebuild', '*.eclass',
-                 '*.exheres-0', '*.exlib',
-                 '.bashrc', 'bashrc', '.bash_*', 'bash_*', 'PKGBUILD']
+                 '*.exheres-0', '*.exlib', '*.zsh',
+                 '.bashrc', 'bashrc', '.bash_*', 'bash_*', 'zshrc', '.zshrc',
+                 'PKGBUILD']
     mimetypes = ['application/x-sh', 'application/x-shellscript']
 
     tokens = {
@@ -50,7 +51,7 @@ class BashLexer(RegexLexer):
             (r'\$\(\(', Keyword, 'math'),
             (r'\$\(', Keyword, 'paren'),
             (r'\$\{#?', String.Interpol, 'curly'),
-            (r'\$[a-zA-Z_][a-zA-Z0-9_]*', Name.Variable),  # user variable
+            (r'\$[a-zA-Z_]\w*', Name.Variable),  # user variable
             (r'\$(?:\d+|[#$?!_*@-])', Name.Variable),      # builtin
             (r'\$', Text),
         ],
@@ -68,7 +69,7 @@ class BashLexer(RegexLexer):
             (r'\A#!.+\n', Comment.Hashbang),
             (r'#.*\n', Comment.Single),
             (r'\\[\w\W]', String.Escape),
-            (r'(\b\w+)(\s*)(=)', bygroups(Name.Variable, Text, Operator)),
+            (r'(\b\w+)(\s*)(\+?=)', bygroups(Name.Variable, Text, Operator)),
             (r'[\[\]{}()=]', Operator),
             (r'<<<', Operator),  # here-string
             (r'<<-?\s*(\'?)\\?(\w+)[\w\W]+?\2', String),
@@ -83,7 +84,7 @@ class BashLexer(RegexLexer):
             (r'&', Punctuation),
             (r'\|', Punctuation),
             (r'\s+', Text),
-            (r'\d+(?= |\Z)', Number),
+            (r'\d+\b', Number),
             (r'[^=\s\[\]{}()$"\'`\\<&|;]+', Text),
             (r'<', Text),
         ],
@@ -137,11 +138,15 @@ class ShellSessionBaseLexer(Lexer):
         pos = 0
         curcode = ''
         insertions = []
+        backslash_continuation = False
 
         for match in line_re.finditer(text):
             line = match.group()
             m = re.match(self._ps1rgx, line)
-            if m:
+            if backslash_continuation:
+                curcode += line
+                backslash_continuation = curcode.endswith('\\\n')
+            elif m:
                 # To support output lexers (say diff output), the output
                 # needs to be broken by prompts whenever the output lexer
                 # changes.
@@ -151,10 +156,12 @@ class ShellSessionBaseLexer(Lexer):
                 insertions.append((len(curcode),
                                    [(0, Generic.Prompt, m.group(1))]))
                 curcode += m.group(2)
+                backslash_continuation = curcode.endswith('\\\n')
             elif line.startswith(self._ps2):
                 insertions.append((len(curcode),
                                    [(0, Generic.Prompt, line[:len(self._ps2)])]))
                 curcode += line[len(self._ps2):]
+                backslash_continuation = curcode.endswith('\\\n')
             else:
                 if insertions:
                     toks = innerlexer.get_tokens_unprocessed(curcode)
@@ -452,9 +459,9 @@ class BatchLexer(RegexLexer):
              bygroups(String.Double, using(this, state='string'), Text,
                       Punctuation)),
             (r'"', String.Double, ('#pop', 'for2', 'string')),
-            (r"('(?:%s|[\w\W])*?')([%s%s]*)(\))" % (_variable, _nl, _ws),
+            (r"('(?:%%%%|%s|[\w\W])*?')([%s%s]*)(\))" % (_variable, _nl, _ws),
              bygroups(using(this, state='sqstring'), Text, Punctuation)),
-            (r'(`(?:%s|[\w\W])*?`)([%s%s]*)(\))' % (_variable, _nl, _ws),
+            (r'(`(?:%%%%|%s|[\w\W])*?`)([%s%s]*)(\))' % (_variable, _nl, _ws),
              bygroups(using(this, state='bqstring'), Text, Punctuation)),
             include('for2')
         ],
@@ -472,13 +479,16 @@ class BatchLexer(RegexLexer):
                       using(this, state='variable')), '#pop'),
             (r'(exist%s)(%s%s)' % (_token_terminator, _space, _stoken),
              bygroups(Keyword, using(this, state='text')), '#pop'),
-            (r'(%s%s?)(==)(%s?%s)' % (_stoken, _space, _space, _stoken),
-             bygroups(using(this, state='text'), Operator,
-                      using(this, state='text')), '#pop'),
             (r'(%s%s)(%s)(%s%s)' % (_number, _space, _opword, _space, _number),
              bygroups(using(this, state='arithmetic'), Operator.Word,
                       using(this, state='arithmetic')), '#pop'),
-            (r'(%s%s)(%s)(%s%s)' % (_stoken, _space, _opword, _space, _stoken),
+            (_stoken, using(this, state='text'), ('#pop', 'if2')),
+        ],
+        'if2': [
+            (r'(%s?)(==)(%s?%s)' % (_space, _space, _stoken),
+             bygroups(using(this, state='text'), Operator,
+                      using(this, state='text')), '#pop'),
+            (r'(%s)(%s)(%s%s)' % (_space, _opword, _space, _stoken),
              bygroups(using(this, state='text'), Operator.Word,
                       using(this, state='text')), '#pop')
         ],
