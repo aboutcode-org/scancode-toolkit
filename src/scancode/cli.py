@@ -688,12 +688,20 @@ def save_results(files_count, scanned_files, format, input, output_file):
                         license_ref = License(file_license.get('short_name'), license_key)
                         file_entry.add_lics(license_ref)
                         doc.package.add_lics_from_file(license_ref)
-
             else:
                 file_entry.add_lics(SPDXNone())
 
             file_entry.conc_lics = NoAssert()
-            file_entry.copyright = NoAssert()
+
+            file_copyrights = file_data.get('copyrights')
+            if file_copyrights:
+                file_entry.copyright = ''
+                for file_copyright in file_copyrights:
+                    file_entry.copyright += '\n'.join(file_copyright.get('statements'))
+                    file_entry.copyright += '\n'
+            else:
+                file_entry.copyright = SPDXNone()
+
             doc.package.add_file(file_entry)
 
         # Remove duplicate licenses from the list.
