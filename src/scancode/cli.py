@@ -704,6 +704,13 @@ def save_results(files_count, scanned_files, format, input, output_file):
 
             doc.package.add_file(file_entry)
 
+        if len(doc.package.files) == 0:
+            if format == 'spdx-tv':
+                output_file.write("# No results for package '{}'.\n".format(doc.package.name))
+            else:
+                output_file.write("<!-- No results for package '{}'. -->\n".format(doc.package.name))
+            return
+
         # Remove duplicate licenses from the list.
         doc.package.licenses_from_files = list(set(doc.package.licenses_from_files)).sort()
         if not doc.package.licenses_from_files:
