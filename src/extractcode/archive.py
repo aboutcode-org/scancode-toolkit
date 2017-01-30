@@ -507,6 +507,18 @@ JavaJarHandler = Handler(
     strict=False
 )
 
+# See https://projects.spring.io/spring-boot/
+# this is a ZIP with a shell header (e.g. a self-executing zip of sorts)
+SpringBootShellJarHandler = Handler(
+    name='Springboot Java Jar package',
+    filetypes=('Bourne-Again shell script executable (binary data)',),
+    mimetypes=('text/x-shellscript',),
+    extensions=('.jar', ),
+    kind=package,
+    extractors=[extract_zip],
+    strict=False
+)
+
 JavaJarZipHandler = Handler(
     name='Java Jar package',
     filetypes=('zip archive',),
@@ -867,6 +879,7 @@ archive_handlers = [
     IosAppHandler,
     JavaJarHandler,
     JavaJarZipHandler,
+    SpringBootShellJarHandler,
     JavaWebHandler,
     PythonHandler,
     XzHandler,
