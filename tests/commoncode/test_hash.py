@@ -34,6 +34,9 @@ from commoncode.hash import md5
 from commoncode.hash import sha1
 from commoncode.hash import sha256
 from commoncode.hash import sha512
+from commoncode.hash import checksum
+from collections import OrderedDict
+from commoncode.hash import multi_checksums
 
 
 class TestHash(FileBasedTesting):
@@ -52,10 +55,6 @@ class TestHash(FileBasedTesting):
         h = get_hasher(64)
         assert '4124bc0a9335c27f' == h('aa').hexdigest()
 
-    def test_sha1_checksum(self):
-        test_file = self.get_test_loc('hash/dir1/a.png')
-        assert sha1(test_file) == '34ac5465d48a9b04fc275f09bc2230660df8f4f7'
-
     def test_sha1_checksum_on_text(self):
         test_file = self.get_test_loc('hash/dir1/a.txt')
         assert sha1(test_file) == '3ca69e8d6c234a469d16ac28a4a658c92267c423'
@@ -72,10 +71,6 @@ class TestHash(FileBasedTesting):
         test_file = self.get_test_loc('hash/dir1/a.png')
         assert b64sha1(test_file) == 'NKxUZdSKmwT8J18JvCIwZg349Pc='
 
-    def test_md5_checksum(self):
-        test_file = self.get_test_loc('hash/dir1/a.png')
-        assert md5(test_file) == '4760fb467f1ebf3b0aeace4a3926f1a4'
-
     def test_md5_checksum_on_text(self):
         test_file = self.get_test_loc('hash/dir1/a.txt')
         assert md5(test_file) == '40c53c58fdafacc83cfff6ee3d2f6d69'
@@ -88,6 +83,14 @@ class TestHash(FileBasedTesting):
         test_file = self.get_test_loc('hash/dir2/dos.txt')
         assert md5(test_file) == '095f5068940e41df9add5d4cc396c181'
 
+    def test_md5_checksum(self):
+        test_file = self.get_test_loc('hash/dir1/a.png')
+        assert md5(test_file) == '4760fb467f1ebf3b0aeace4a3926f1a4'
+
+    def test_sha1_checksum(self):
+        test_file = self.get_test_loc('hash/dir1/a.png')
+        assert sha1(test_file) == '34ac5465d48a9b04fc275f09bc2230660df8f4f7'
+
     def test_sha256_checksum(self):
         test_file = self.get_test_loc('hash/dir1/a.png')
         assert sha256(test_file) == '1b598db6fee8f1ec7bb919c0adf68956f3d20af8c9934a9cf2db52e1347efd35'
@@ -95,3 +98,30 @@ class TestHash(FileBasedTesting):
     def test_sha512_checksum(self):
         test_file = self.get_test_loc('hash/dir1/a.png')
         assert sha512(test_file) == '5be9e01cd20ff288fd3c3fc46be5c2747eaa2c526197125330947a95cdb418222176b182a4680f0e435ba8f114363c45a67b30eed9a9222407e63ccbde46d3b4'
+
+    def test_checksum_160(self):
+        test_file = self.get_test_loc('hash/dir1/a.txt')
+        assert checksum(test_file, 160) == '3ca69e8d6c234a469d16ac28a4a658c92267c423'
+
+    def test_checksum_128(self):
+        test_file = self.get_test_loc('hash/dir1/a.txt')
+        assert checksum(test_file, 128) == '40c53c58fdafacc83cfff6ee3d2f6d69'
+
+    def test_multi_checksums(self):
+        test_file = self.get_test_loc('hash/dir1/a.png')
+        expected = OrderedDict([
+            ('md5', '4760fb467f1ebf3b0aeace4a3926f1a4'),
+            ('sha1', '34ac5465d48a9b04fc275f09bc2230660df8f4f7'),
+            ('sha256', '1b598db6fee8f1ec7bb919c0adf68956f3d20af8c9934a9cf2db52e1347efd35'),
+        ])
+        result = multi_checksums(test_file)
+        assert expected == result
+
+    def test_multi_checksums_custom(self):
+        test_file = self.get_test_loc('hash/dir1/a.png')
+        result = multi_checksums(test_file, ('sha512',))
+        expected = OrderedDict([
+            ('sha512', '5be9e01cd20ff288fd3c3fc46be5c2747eaa2c526197125330947a95cdb418222176b182a4680f0e435ba8f114363c45a67b30eed9a9222407e63ccbde46d3b4'),
+        ])
+        assert expected == result
+

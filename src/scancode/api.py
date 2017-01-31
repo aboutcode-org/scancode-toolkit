@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,7 +22,8 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import print_function
+from __future__ import absolute_import
 
 from collections import OrderedDict
 
@@ -123,7 +124,7 @@ def get_licenses(location, min_score=0, include_text=False, diag=False):
 
     for match in idx.match(location=location, min_score=min_score):
         if include_text:
-            matched_text = u''.join(get_full_matched_text(match, location=location, 
+            matched_text = u''.join(get_full_matched_text(match, location=location,
                                                           idx=idx, whole_lines=False))
         for license_key in match.rule.licenses:
             lic = licenses.get(license_key)
@@ -162,7 +163,7 @@ def get_file_infos(location, as_list=True):
     """
     from commoncode import fileutils
     from commoncode import filetype
-    from commoncode.hash import sha1, md5
+    from commoncode.hash import multi_checksums
     from scancode import utils
     from typecode import contenttype
 
@@ -171,14 +172,13 @@ def get_file_infos(location, as_list=True):
     is_dir = filetype.is_dir(location)
 
     T = contenttype.get_type(location)
- 
+
     infos['type'] = filetype.get_type(location, short=False)
     infos['name'] = utils.encode_path(fileutils.file_name(location))
     infos['extension'] = is_file and fileutils.file_extension(location) or ''
     infos['date'] = is_file and filetype.get_last_modified_date(location) or None
     infos['size'] = T.size
-    infos['sha1'] = is_file and sha1(location) or None
-    infos['md5'] = is_file and md5(location) or None
+    infos.update(multi_checksums(location, ('sha1', 'md5',)))
     infos['files_count'] = is_dir and filetype.get_file_count(location) or None
     infos['mime_type'] = is_file and T.mimetype_file or None
     infos['file_type'] = is_file and T.filetype_file or None
@@ -189,7 +189,7 @@ def get_file_infos(location, as_list=True):
     infos['is_media'] = is_file and T.is_media or None
     infos['is_source'] = is_file and T.is_source or None
     infos['is_script'] = is_file and T.is_script or None
-    
+
     if as_list:
         return [infos]
     else:
@@ -204,21 +204,21 @@ def _empty_file_infos():
     infos = OrderedDict()
     infos['type'] = None
     infos['name'] = None
-    infos['extension'] =  None
-    infos['date'] =  None
-    infos['size'] =  None
-    infos['sha1'] =  None
-    infos['md5'] =  None
-    infos['files_count'] =  None
-    infos['mime_type'] =  None
-    infos['file_type'] =  None
-    infos['programming_language'] =  None
-    infos['is_binary'] =  None
-    infos['is_text'] =  None
-    infos['is_archive'] =  None
-    infos['is_media'] =  None
-    infos['is_source'] =  None
-    infos['is_script'] =  None
+    infos['extension'] = None
+    infos['date'] = None
+    infos['size'] = None
+    infos['sha1'] = None
+    infos['md5'] = None
+    infos['files_count'] = None
+    infos['mime_type'] = None
+    infos['file_type'] = None
+    infos['programming_language'] = None
+    infos['is_binary'] = None
+    infos['is_text'] = None
+    infos['is_archive'] = None
+    infos['is_media'] = None
+    infos['is_source'] = None
+    infos['is_script'] = None
     return infos
 
 
