@@ -22,8 +22,11 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, division, print_function
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
 
+from collections import OrderedDict
 import hashlib
 
 from commoncode.codec import bin_to_num
@@ -87,6 +90,16 @@ def get_hasher(bitsize):
     return _hashmodules_by_bitsize[bitsize]
 
 
+_hashmodules_by_name = {
+    'md5': get_hasher(128),
+    'sha1': get_hasher(160),
+    'sha256': get_hasher(256),
+    'sha384': get_hasher(384),
+    'sha512': get_hasher(512)
+}
+
+
+
 def checksum(location, bitsize, base64=False):
     """
     Return a checksum of `bitsize` length from the content of the file at
@@ -122,3 +135,23 @@ def sha256(location):
 
 def sha512(location):
     return checksum(location, bitsize=512, base64=False)
+
+
+def multi_checksums(location, checksum_names=('md5', 'sha1', 'sha256')):
+    """
+    Return a mapping of hexdigest checksums keyed by checksum name from the content
+    of the file at `location`. Use the `checksum_names` list of checksum names.
+    The mapping is guaranted to contains all the requested names as keys.
+    If the location is not a file, the values are None.
+    """
+    results = OrderedDict([(name, None) for name in checksum_names])
+    if not filetype.is_file(location):
+        return results
+
+    # fixme: we should read in chunks
+    with open(location, 'rb') as f:
+        hashable = f.read()
+
+    for name in checksum_names:
+        results[name] = _hashmodules_by_name[name](hashable).hexdigest()
+    return results
