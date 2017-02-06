@@ -223,10 +223,13 @@ def validate_formats(ctx, param, value):
 @click.option('-e', '--email', is_flag=True, default=False, help='Scan <input> for emails.')
 @click.option('-u', '--url', is_flag=True, default=False, help='Scan <input> for urls.')
 @click.option('-i', '--info', is_flag=True, default=False, help='Include information such as size, type, etc.')
+
 @click.option('--license-score', is_flag=False, default=0, type=int, show_default=True,
               help='Do not return license matches with scores lower than this score. A number between 0 and 100.')
 @click.option('--license-text', is_flag=True, default=False,
               help='Include the detected licenses matched text. Has no effect unless --license is requested.')
+@click.option('--only-findings', is_flag=True, default=False,
+              help='Only return files or directories with findings for the active scans. Files without findings are omitted.')
 
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
               help=('Set <output_file> format <style> to one of the standard formats: %s '
@@ -240,6 +243,7 @@ def validate_formats(ctx, param, value):
 @click.option('--examples', is_flag=True, is_eager=True, callback=print_examples, help=('Show command examples and exit.'))
 @click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.')
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
+
 @click.option('--diag', is_flag=True, default=False, help='Include additional diagnostic information such as error messages or result details.')
 @click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=int, show_default=True, help='Stop scanning a file if scanning takes longer than a timeout in seconds.')
 @click.option('--max-memory', is_flag=False, default=DEFAULT_MAX_MEMORY, type=int, show_default=True, help='Stop scanning a file if scanning requires more than a maximum amount of memory in megabytes.')
@@ -248,7 +252,7 @@ def scancode(ctx,
              input, output_file,
              copyright, license, package,
              email, url, info,
-             license_score, license_text,
+             license_score, license_text, only_findings,
              format, verbose, quiet, processes,
              diag, timeout, max_memory,
              *args, **kwargs):
@@ -306,7 +310,7 @@ def scancode(ctx,
                                     )
         if not quiet:
             echo_stderr('Saving results.', fg='green')
-        save_results(files_count, results, format, input, output_file)
+        save_results(scanners, only_findings, files_count, results, format, input, output_file)
     finally:
         # cleanup
         cache = scans_cache_class()
@@ -580,10 +584,32 @@ def scan_one(input_file, scanners, diag=False):
     return scan_result
 
 
-def save_results(files_count, scanned_files, format, input, output_file):
+def has_findings(active_scans, file_data):
+    """
+    Check whether the given file has findings for the provided list of scan names.
+    """
+
+    for scan_name in active_scans:
+        if file_data.get(scan_name):
+            return True
+
+    return False
+
+
+def save_results(scanners, only_findings, files_count, scanned_files, format, input, output_file):
     """
     Save scan results to file or screen.
     """
+
+    if only_findings:
+        # Find all scans that are both enabled and have a valid function reference. This deliberately filters out
+        # the "info" scan (which always has a "None" function reference) as there is no dedicated "infos" key in
+        # the results that "has_findings()" could check.
+        active_scans = [k for k, v in scanners.items() if v[0] and v[1]]
+
+        scanned_files = [file_data for file_data in scanned_files if has_findings(active_scans, file_data)]
+        files_count = len(scanned_files)
+
     # note: in tests, sys.sdtout is not used, but some io wrapper with no name attributes
     is_real_file = hasattr(output_file, 'name')
 
