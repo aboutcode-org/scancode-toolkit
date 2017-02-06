@@ -306,7 +306,7 @@ def scan(input_path,
          diag=False,
          scans_cache_class=None):
     """
-    Return a tuple of (file_count, indexing_time, scan_results) where
+    Return a tuple of (files_count, indexing_time, scan_results) where
     scan_results is an iterable. Run each requested scan proper: each individual file
     scan is cached on disk to free memory. Then the whole set of scans is loaded from
     the cache and streamed at the end.
@@ -576,7 +576,7 @@ def save_results(files_count, scanned_files, format, input, output_file):
     """
     Save scan results to file or screen.
     """
-    # note: in tests, sys.sdtout is not used, but some io wrapper with no name attributes
+    # note: in tests, sys.stdout is not used, but some io wrapper with no name attributes
     is_real_file = hasattr(output_file, 'name')
 
     if output_file != sys.stdout and is_real_file:
