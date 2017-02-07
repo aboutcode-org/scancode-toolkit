@@ -591,6 +591,16 @@ def has_findings(active_scans, file_data):
     return any(file_data.get(scan_name) for scan_name in active_scans)
 
 
+def filter_scanned_files(scanned_files, active_scans, keep_condition):
+    """
+    A generator to filter the list of scanned files on demand to reduce memory usage.
+    """
+
+    for file_data in scanned_files:
+        if keep_condition(active_scans, file_data):
+            yield file_data
+
+
 def save_results(scanners, only_findings, files_count, scanned_files, format, input, output_file):
     """
     Save scan results to file or screen.
@@ -602,11 +612,8 @@ def save_results(scanners, only_findings, files_count, scanned_files, format, in
         # the results that "has_findings()" could check.
         active_scans = [k for k, v in scanners.items() if v[0] and v[1]]
 
-        # FIXME: this is forcing all the scan results to be loaded in memory
-        # and defeats lazy loading from cache
-        scanned_files = [file_data for file_data in scanned_files if has_findings(active_scans, file_data)]
-        # FIXME: computing len before hand will need a list and therefore need loding it all aheaed of time
-        files_count = len(scanned_files)
+        scanned_files = filter_scanned_files(scanned_files, active_scans, has_findings)
+        # TODO: Fix the files_count (which is only used in JSON output) in this case.
 
     # note: in tests, sys.stdout is not used, but some io wrapper with no name attributes
     is_real_file = hasattr(output_file, 'name')
