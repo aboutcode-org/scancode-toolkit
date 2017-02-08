@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
+
 from __future__ import absolute_import
 from __future__ import print_function
 
@@ -34,7 +35,7 @@ setup(
     description='ScanCode is a tool to scan code for license, copyright and other interesting facts.',
     long_description=long_description,
     author='ScanCode',
-    author_email='info@scancode.io',
+    author_email='info@aboutcode.org',
     url='https://github.com/nexB/scancode-toolkit',
     packages=find_packages('src'),
     package_dir={'': 'src'},
