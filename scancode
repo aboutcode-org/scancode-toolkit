@@ -5,7 +5,8 @@
 
 # A minimal shell wrapper to the CLI entry point
 
-SCANCODE_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SCANCODE_BIN="$(readlink -f -n "${BASH_SOURCE[0]}")"
+SCANCODE_ROOT_DIR="$( cd "$( dirname "${SCANCODE_BIN}" )" && pwd )"
 
 SCANCODE_CONFIGURED_PYTHON=$SCANCODE_ROOT_DIR/bin/python
 if [ ! -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
