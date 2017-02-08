@@ -655,8 +655,11 @@ def save_results(files_count, scanned_files, format, input, output_file):
         doc.creation_info.set_created_now()
 
         doc.package = Package(os.path.basename(input_path), NoAssert())
+        doc.package.cr_text = set()
 
         all_files_have_no_license = True
+        all_files_have_no_copyright = True
+
         for file_data in scanned_files:
             # Construct the absolute path in case we need to access the file
             # to calculate its SHA1.
@@ -702,12 +705,21 @@ def save_results(files_count, scanned_files, format, input, output_file):
 
             file_copyrights = file_data.get('copyrights')
             if file_copyrights:
-                file_entry.copyright = ''
+                all_files_have_no_copyright = False
+                file_entry.copyright = set()
                 for file_copyright in file_copyrights:
-                    file_entry.copyright += '\n'.join(file_copyright.get('statements'))
-                    file_entry.copyright += '\n'
+                    file_entry.copyright.update(file_copyright.get('statements'))
+
+                doc.package.cr_text.update(file_entry.copyright)
+                file_entry.copyright = '\n'.join(file_entry.copyright) + '\n'
             else:
-                file_entry.copyright = SPDXNone()
+                if file_copyrights == None:
+                    all_files_have_no_copyright = False
+                    spdx_copyright = NoAssert()
+                else:
+                    spdx_copyright = SPDXNone()
+
+                file_entry.copyright = spdx_copyright
 
             doc.package.add_file(file_entry)
 
@@ -728,8 +740,15 @@ def save_results(files_count, scanned_files, format, input, output_file):
         else:
             doc.package.licenses_from_files = sorted(unique_licenses, key = lambda x : x.identifier)
 
+        if len(doc.package.cr_text) == 0:
+            if all_files_have_no_copyright:
+                doc.package.cr_text = SPDXNone()
+            else:
+                doc.package.cr_text = NoAssert()
+        else:
+            doc.package.cr_text = '\n'.join(doc.package.cr_text) + '\n'
+
         doc.package.verif_code = doc.package.calc_verif_code()
-        doc.package.cr_text = NoAssert()
         doc.package.license_declared = NoAssert()
         doc.package.conc_lics = NoAssert()
 
