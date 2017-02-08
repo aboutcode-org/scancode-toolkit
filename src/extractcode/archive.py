@@ -587,6 +587,19 @@ TarGzipHandler = Handler(
     strict=False
 )
 
+#https://wiki.openwrt.org/doc/techref/opkg: ipk
+# http://downloads.openwrt.org/snapshots/trunk/x86/64/packages/base/
+
+OpkgHandler = Handler(
+    name='OPKG package',
+    filetypes=('gzip compressed',),
+    mimetypes=('application/x-gzip',),
+    extensions=('.ipk',),
+    kind=regular_nested,
+    extractors=[extract_tar],
+    strict=False
+)
+
 GzipHandler = Handler(
     name='Gzip',
     filetypes=('gzip compressed', 'gzip compressed data'),
