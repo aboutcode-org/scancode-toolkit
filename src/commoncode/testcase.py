@@ -220,6 +220,7 @@ class FileDrivenTesting(object):
         Given an archive file identified by test_path relative
         to a test files directory, return a new temp directory where the
         archive file has been extracted using extract_func.
+        If `verbatim` is True preserve the permissions.
         """
         assert test_path and test_path != ''
         test_path = to_os_native_path(test_path)
@@ -239,6 +240,7 @@ class FileDrivenTesting(object):
 def extract_tar(location, target_dir, verbatim=False):
     """
     Extract a tar archive at location in the target_dir directory.
+    If `verbatim` is True preserve the permissions.
     """
     with open(location, 'rb') as input_tar:
         tar = tarfile.open(fileobj=input_tar)
