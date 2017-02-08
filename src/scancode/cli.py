@@ -656,6 +656,7 @@ def save_results(files_count, scanned_files, format, input, output_file):
 
         doc.package = Package(os.path.basename(input_path), NoAssert())
 
+        all_files_have_no_license = True
         for file_data in scanned_files:
             # Construct the absolute path in case we need to access the file
             # to calculate its SHA1.
@@ -677,19 +678,25 @@ def save_results(files_count, scanned_files, format, input, output_file):
 
             file_licenses = file_data.get('licenses')
             if file_licenses:
+                all_files_have_no_license = False
                 for file_license in file_licenses:
                     spdx_id = file_license.get('spdx_license_key')
                     if spdx_id:
                         spdx_license = License.from_identifier(spdx_id)
-                        file_entry.add_lics(spdx_license)
-                        doc.package.add_lics_from_file(spdx_license)
                     else:
                         license_key = 'LicenseRef-' + file_license.get('key')
-                        license_ref = License(file_license.get('short_name'), license_key)
-                        file_entry.add_lics(license_ref)
-                        doc.package.add_lics_from_file(license_ref)
+                        spdx_license = License(file_license.get('short_name'), license_key)
+
+                    file_entry.add_lics(spdx_license)
+                    doc.package.add_lics_from_file(spdx_license)
             else:
-                file_entry.add_lics(SPDXNone())
+                if file_licenses == None:
+                    all_files_have_no_license = False
+                    spdx_license = NoAssert()
+                else:
+                    spdx_license = SPDXNone()
+
+                file_entry.add_lics(spdx_license)
 
             file_entry.conc_lics = NoAssert()
 
@@ -712,9 +719,14 @@ def save_results(files_count, scanned_files, format, input, output_file):
             return
 
         # Remove duplicate licenses from the list.
-        doc.package.licenses_from_files = sorted(set(doc.package.licenses_from_files), key = lambda x : x.identifier)
-        if not doc.package.licenses_from_files:
-            doc.package.licenses_from_files = [SPDXNone()]
+        unique_licenses = set(doc.package.licenses_from_files)
+        if len(doc.package.licenses_from_files) == 0:
+            if all_files_have_no_license:
+                doc.package.licenses_from_files = [SPDXNone()]
+            else:
+                doc.package.licenses_from_files = [NoAssert()]
+        else:
+            doc.package.licenses_from_files = sorted(unique_licenses, key = lambda x : x.identifier)
 
         doc.package.verif_code = doc.package.calc_verif_code()
         doc.package.cr_text = NoAssert()
