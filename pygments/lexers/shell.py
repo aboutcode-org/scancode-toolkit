@@ -638,13 +638,17 @@ class PowerShellLexer(RegexLexer):
         'wildcard').split()
 
     verbs = (
-        'write where wait use update unregister undo trace test tee take '
-        'suspend stop start split sort skip show set send select scroll resume '
-        'restore restart resolve resize reset rename remove register receive '
-        'read push pop ping out new move measure limit join invoke import '
-        'group get format foreach export expand exit enter enable disconnect '
-        'disable debug cxnew copy convertto convertfrom convert connect '
-        'complete compare clear checkpoint aggregate add').split()
+        'write where watch wait use update unregister unpublish unprotect '
+        'unlock uninstall undo unblock trace test tee take sync switch '
+        'suspend submit stop step start split sort skip show set send select '
+        'search scroll save revoke resume restore restart resolve resize '
+        'reset request repair rename remove register redo receive read push '
+        'publish protect pop ping out optimize open new move mount merge '
+        'measure lock limit join invoke install initialize import hide group '
+        'grant get format foreach find export expand exit enter enable edit '
+        'dismount disconnect disable deny debug cxnew copy convertto '
+        'convertfrom convert connect confirm compress complete compare close '
+        'clear checkpoint block backup assert approve aggregate add').split()
 
     aliases = (
         'ac asnp cat cd cfs chdir clc clear clhy cli clp cls clv cnsn '
