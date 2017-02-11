@@ -1,0 +1,5 @@
+licenses:
+    - gpl-2.0
+    - bsd-simplified
+license_choice: yes
+license: gpl-2.0 or bsd-simplified
