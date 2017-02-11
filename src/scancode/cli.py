@@ -223,10 +223,13 @@ def validate_formats(ctx, param, value):
 @click.option('-e', '--email', is_flag=True, default=False, help='Scan <input> for emails.')
 @click.option('-u', '--url', is_flag=True, default=False, help='Scan <input> for urls.')
 @click.option('-i', '--info', is_flag=True, default=False, help='Include information such as size, type, etc.')
+
 @click.option('--license-score', is_flag=False, default=0, type=int, show_default=True,
               help='Do not return license matches with scores lower than this score. A number between 0 and 100.')
 @click.option('--license-text', is_flag=True, default=False,
               help='Include the detected licenses matched text. Has no effect unless --license is requested.')
+@click.option('--only-findings', is_flag=True, default=False,
+              help='Only return files or directories with findings for the active scans. Files without findings are omitted.')
 
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
               help=('Set <output_file> format <style> to one of the standard formats: %s '
@@ -240,13 +243,17 @@ def validate_formats(ctx, param, value):
 @click.option('--examples', is_flag=True, is_eager=True, callback=print_examples, help=('Show command examples and exit.'))
 @click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.')
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
+
 @click.option('--diag', is_flag=True, default=False, help='Include additional diagnostic information such as error messages or result details.')
 @click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=int, show_default=True, help='Stop scanning a file if scanning takes longer than a timeout in seconds.')
 @click.option('--max-memory', is_flag=False, default=DEFAULT_MAX_MEMORY, type=int, show_default=True, help='Stop scanning a file if scanning requires more than a maximum amount of memory in megabytes.')
 
-def scancode(ctx, input, output_file, copyright, license, package,
-             email, url, info, license_score, license_text, format,
-             verbose, quiet, processes,
+def scancode(ctx,
+             input, output_file,
+             copyright, license, package,
+             email, url, info,
+             license_score, license_text, only_findings,
+             format, verbose, quiet, processes,
              diag, timeout, max_memory,
              *args, **kwargs):
     """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
@@ -255,26 +262,43 @@ def scancode(ctx, input, output_file, copyright, license, package,
     Error and progress is printed to stderr.
     """
 
+    possible_scans = OrderedDict([
+        ('infos', info),
+        ('licenses', license),
+        ('copyrights', copyright),
+        ('packages', package),
+        ('emails', email),
+        ('urls', url)
+    ])
+
     # Use default scan options when no options are provided on the command line.
-    possible_scans = [copyright, license, package, email, url, info]
-    if not any(possible_scans):
-        copyright = True
-        license = True
-        package = True
+    if not any(possible_scans.values()):
+        possible_scans['copyrights'] = True
+        possible_scans['licenses'] = True
+        possible_scans['packages'] = True
 
     # A hack to force info being exposed for SPDX output in order to reuse calculated file SHA1s.
     if format in ('spdx-tv', 'spdx-rdf'):
-        info = True
+        possible_scans['infos'] = True
+
+    get_licenses_with_score = partial(get_licenses, min_score=license_score, include_text=license_text, diag=diag)
+
+    # List of scan functions in the same order as "possible_scans".
+    scan_functions = [
+        None, # For "infos" there is no separate scan function, they are always gathered, though not always exposed.
+        get_licenses_with_score,
+        get_copyrights,
+        get_package_infos,
+        get_emails,
+        get_urls
+    ]
+
+    scanners = OrderedDict(zip(possible_scans.keys(), zip(possible_scans.values(), scan_functions)))
 
     scans_cache_class = get_scans_cache_class()
     try:
         files_count, results = scan(input_path=input,
-                                    copyright=copyright,
-                                    license=license,
-                                    package=package,
-                                    email=email,
-                                    url=url,
-                                    info=info,
+                                    scanners=scanners,
                                     license_score=license_score,
                                     license_text=license_text,
                                     verbose=verbose,
@@ -286,7 +310,7 @@ def scancode(ctx, input, output_file, copyright, license, package,
                                     )
         if not quiet:
             echo_stderr('Saving results.', fg='green')
-        save_results(files_count, results, format, input, output_file)
+        save_results(scanners, only_findings, files_count, results, format, input, output_file)
     finally:
         # cleanup
         cache = scans_cache_class()
@@ -298,8 +322,7 @@ def scancode(ctx, input, output_file, copyright, license, package,
 
 
 def scan(input_path,
-         copyright=True, license=True, package=True,
-         email=False, url=False, info=True,
+         scanners,
          license_score=0, license_text=False,
          verbose=False, quiet=False,
          processes=1, timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY,
@@ -317,20 +340,9 @@ def scan(input_path,
     scan_summary['processes'] = processes
     get_licenses_with_score = partial(get_licenses, min_score=license_score, include_text=license_text, diag=diag)
 
-    # note: "flag and function" expressions return the function if flag is True
-    # note: the order of the scans matters to show things in logical order
-    scanners = OrderedDict([
-        ('licenses' , license and get_licenses_with_score),
-        ('copyrights' , copyright and get_copyrights),
-        ('packages' , package and get_package_infos),
-        ('emails' , email and get_emails),
-        ('urls' , url and get_urls),
-    ])
-
     # Display scan start details
     ############################
-    scans = info and ['infos'] or []
-    scans.extend([k for k, v in scanners.items() if v])
+    scans = [k for k, v in scanners.items() if v[0]]
     _scans = ', '.join(scans)
     if not quiet:
         echo_stderr('Scanning files for: %(_scans)s with %(processes)d process(es)...' % locals())
@@ -437,12 +449,8 @@ def scan(input_path,
         echo_stderr('Indexing time:   %(indexing_time)ds.' % locals(), reset=True)
 
     # finally return an iterator on cached results
-    scan_names = []
-    if info:
-        scan_names.append('infos')
-    scan_names.extend(k for k, v in scanners.items() if v)
     cached_scan = scans_cache_class()
-    return files_count, cached_scan.iterate(scan_names)
+    return files_count, cached_scan.iterate(scans)
 
 
 def _resource_logger(logfile_fd, resources):
@@ -472,8 +480,12 @@ def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, m
     scans_cache = scans_cache_class()
     is_cached = scans_cache.put_info(rel_path, infos)
 
-    has_scanners = any(scanners.values())
-    if has_scanners:
+    # note: "flag and function" expressions return the function if flag is True
+    # note: the order of the scans matters to show things in logical order
+    scanner_functions = map(lambda t : t[0] and t[1], scanners.values())
+    scanners = OrderedDict(zip(scanners.keys(), scanner_functions))
+
+    if any(scanner_functions):
         # Skip other scans if already cached
         # FIXME: ENSURE we only do this for files not directories
         if not is_cached:
@@ -572,10 +584,32 @@ def scan_one(input_file, scanners, diag=False):
     return scan_result
 
 
-def save_results(files_count, scanned_files, format, input, output_file):
+def has_findings(active_scans, file_data):
+    """
+    Check whether the given file has findings for the provided list of scan names.
+    """
+
+    for scan_name in active_scans:
+        if file_data.get(scan_name):
+            return True
+
+    return False
+
+
+def save_results(scanners, only_findings, files_count, scanned_files, format, input, output_file):
     """
     Save scan results to file or screen.
     """
+
+    if only_findings:
+        # Find all scans that are both enabled and have a valid function reference. This deliberately filters out
+        # the "info" scan (which always has a "None" function reference) as there is no dedicated "infos" key in
+        # the results that "has_findings()" could check.
+        active_scans = [k for k, v in scanners.items() if v[0] and v[1]]
+
+        scanned_files = [file_data for file_data in scanned_files if has_findings(active_scans, file_data)]
+        files_count = len(scanned_files)
+
     # note: in tests, sys.stdout is not used, but some io wrapper with no name attributes
     is_real_file = hasattr(output_file, 'name')
 
