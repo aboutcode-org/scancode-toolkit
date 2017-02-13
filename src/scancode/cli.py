@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -229,7 +229,7 @@ def validate_formats(ctx, param, value):
 @click.option('--license-text', is_flag=True, default=False,
               help='Include the detected licenses matched text. Has no effect unless --license is requested.')
 @click.option('--only-findings', is_flag=True, default=False,
-              help='Only return files or directories with findings for the active scans. Files without findings are omitted.')
+              help='Only return files or directories with findings for the requested scans. Files without findings are omitted.')
 
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
               help=('Set <output_file> format <style> to one of the standard formats: %s '
@@ -586,14 +586,9 @@ def scan_one(input_file, scanners, diag=False):
 
 def has_findings(active_scans, file_data):
     """
-    Check whether the given file has findings for the provided list of scan names.
+    Return True if the file_data has findings for any of the `active_scans` names list.
     """
-
-    for scan_name in active_scans:
-        if file_data.get(scan_name):
-            return True
-
-    return False
+    return any(file_data.get(scan_name) for scan_name in active_scans)
 
 
 def save_results(scanners, only_findings, files_count, scanned_files, format, input, output_file):
@@ -607,7 +602,10 @@ def save_results(scanners, only_findings, files_count, scanned_files, format, in
         # the results that "has_findings()" could check.
         active_scans = [k for k, v in scanners.items() if v[0] and v[1]]
 
+        # FIXME: this is forcing all the scan results to be loaded in memory
+        # and defeats lazy loading from cache
         scanned_files = [file_data for file_data in scanned_files if has_findings(active_scans, file_data)]
+        # FIXME: computing len before hand will need a list and therefore need loding it all aheaed of time
         files_count = len(scanned_files)
 
     # note: in tests, sys.stdout is not used, but some io wrapper with no name attributes
