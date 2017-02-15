@@ -27,31 +27,12 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
-###########################################################################
-# Monkeypatch Pool iterators so that Ctrl-C interrupts everything properly
-# derived from https://gist.github.com/aljungberg/626518
-# FIXME: unknown license
-###########################################################################
-from multiprocessing.pool import IMapIterator, IMapUnorderedIterator
+# Import early because this import has monkey-patching side effects
+from scancode.pool import get_pool
 
-def wrapped(func):
-    # ensure that we do not double wrap
-    if func.func_name != 'wrap':
-        def wrap(self, timeout=None):
-            return func(self, timeout=timeout or 1e10)
-        return wrap
-    else:
-        return func
-
-IMapIterator.next = wrapped(IMapIterator.next)
-IMapIterator.__next__ = IMapIterator.next
-IMapUnorderedIterator.next = wrapped(IMapUnorderedIterator.next)
-IMapUnorderedIterator.__next__ = IMapUnorderedIterator.next
-###########################################################################
 
 from collections import OrderedDict
 from functools import partial
-from multiprocessing import Pool
 import os
 from os.path import expanduser
 from os.path import abspath
@@ -281,7 +262,7 @@ def scancode(ctx,
 
     # List of scan functions in the same order as "possible_scans".
     scan_functions = [
-        None, # For "infos" there is no separate scan function, they are always gathered, though not always exposed.
+        None,  # For "infos" there is no separate scan function, they are always gathered, though not always exposed.
         get_licenses_with_score,
         get_copyrights,
         get_package_infos,
@@ -367,7 +348,7 @@ def scan(input_path,
     # TODO: handle other exceptions properly to avoid any hanging
 
     # maxtasksperchild helps with recycling processes in case of leaks
-    pool = Pool(processes=processes, maxtasksperchild=1000)
+    pool = get_pool(processes=processes, maxtasksperchild=1000)
     resources = resource_paths(input_path)
     logfile_path = scans_cache_class().cache_files_log
     with open(logfile_path, 'wb') as logfile_fd:
@@ -464,7 +445,8 @@ def _resource_logger(logfile_fd, resources):
         yield posix_path, rel_path
 
 
-def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY):
+def _scanit(paths, scanners, scans_cache_class, diag,
+            timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY):
     """
     Run scans and cache results on disk. Return a tuple of (success, scanned relative
     path) where sucess is True on success, False on error. Note that this is really
@@ -492,8 +474,9 @@ def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, m
             # run the scan as an interruptiple task
             scans_runner = partial(scan_one, abs_path, scanners, diag)
             # quota keyword args for interruptible
-            kwargs = dict(timeout=timeout, max_memory=max_memory)
-            success, scan_result = interruptible(scans_runner, **kwargs)
+            success, scan_result = interruptible(scans_runner,
+                                                 timeout=timeout,
+                                                 max_memory=max_memory)
             if not success:
                 # Use scan errors as the scan result for that file on failure this is
                 # a top-level error not attachedd to a specific scanner, hence the
@@ -597,25 +580,28 @@ def save_results(scanners, only_findings, files_count, scanned_files, format, in
     """
 
     if only_findings:
-        # Find all scans that are both enabled and have a valid function reference. This deliberately filters out
-        # the "info" scan (which always has a "None" function reference) as there is no dedicated "infos" key in
-        # the results that "has_findings()" could check.
+        # Find all scans that are both enabled and have a valid function reference.
+        # This deliberately filters out the "info" scan (which always has a "None"
+        # function reference) as there is no dedicated "infos" key in the results
+        # that "has_findings()" could check.
         active_scans = [k for k, v in scanners.items() if v[0] and v[1]]
 
         # FIXME: this is forcing all the scan results to be loaded in memory
         # and defeats lazy loading from cache
-        scanned_files = [file_data for file_data in scanned_files if has_findings(active_scans, file_data)]
-        # FIXME: computing len before hand will need a list and therefore need loding it all aheaed of time
+        scanned_files = [file_data for file_data in scanned_files
+                         if has_findings(active_scans, file_data)]
+        # FIXME: computing len before hand will need a list and therefore need loding
+        # it all aheaed of time
         files_count = len(scanned_files)
 
-    # note: in tests, sys.stdout is not used, but some io wrapper with no name attributes
+    # note: in tests, sys.stdout is not used, but some io wrapper with no name
+    # attributes
     is_real_file = hasattr(output_file, 'name')
 
     if output_file != sys.stdout and is_real_file:
         parent_dir = os.path.dirname(output_file.name)
         if parent_dir:
             fileutils.create_dir(abspath(expanduser(parent_dir)))
-
 
     if format not in formats:
         # render using a user-provided custom format template
