@@ -293,6 +293,7 @@ def scancode(ctx,
         get_urls
     ]
 
+    # FIXME: this is does not make sense to use tuple and positional values
     scanners = OrderedDict(zip(possible_scans.keys(), zip(possible_scans.values(), scan_functions)))
 
     scans_cache_class = get_scans_cache_class()
@@ -342,6 +343,7 @@ def scan(input_path,
 
     # Display scan start details
     ############################
+    # FIXME: this is does not make sense to use tuple and positional values
     scans = [k for k, v in scanners.items() if v[0]]
     _scans = ', '.join(scans)
     if not quiet:
@@ -350,7 +352,9 @@ def scan(input_path,
     scan_summary['scans'] = scans[:]
     scan_start = time()
     indexing_time = 0
-    if license:
+    # FIXME: this is does not make sense to use tuple and positional values
+    with_licenses, _ = scanners.get('licenses', (False, ''))
+    if with_licenses:
         # build index outside of the main loop
         # this also ensures that forked processes will get the index on POSIX naturally
         if not quiet:
