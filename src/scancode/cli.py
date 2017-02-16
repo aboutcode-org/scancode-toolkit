@@ -691,6 +691,8 @@ def save_results(scanners, only_findings, files_count, scanned_files, format, in
         doc.creation_info.set_created_now()
 
         doc.package = Package(os.path.basename(input_path), NoAssert())
+
+        # Use a set of unique copyrights for the package.
         doc.package.cr_text = set()
 
         all_files_have_no_license = True
@@ -726,6 +728,8 @@ def save_results(scanners, only_findings, files_count, scanned_files, format, in
                         license_key = 'LicenseRef-' + file_license.get('key')
                         spdx_license = License(file_license.get('short_name'), license_key)
 
+                    # Add licenses in the order they appear in the file. Maintaining the order
+                    # might be useful for provenance purposes.
                     file_entry.add_lics(spdx_license)
                     doc.package.add_lics_from_file(spdx_license)
             else:
@@ -742,11 +746,14 @@ def save_results(scanners, only_findings, files_count, scanned_files, format, in
             file_copyrights = file_data.get('copyrights')
             if file_copyrights:
                 all_files_have_no_copyright = False
-                file_entry.copyright = set()
+                file_entry.copyright = []
                 for file_copyright in file_copyrights:
-                    file_entry.copyright.update(file_copyright.get('statements'))
+                    file_entry.copyright.extend(file_copyright.get('statements'))
 
                 doc.package.cr_text.update(file_entry.copyright)
+
+                # Create a text of copyright statements in the order they appear in the file.
+                # Maintaining the order might be useful for provenance purposes.
                 file_entry.copyright = '\n'.join(file_entry.copyright) + '\n'
             else:
                 if file_copyrights == None:
@@ -766,7 +773,7 @@ def save_results(scanners, only_findings, files_count, scanned_files, format, in
                 output_file.write("<!-- No results for package '{}'. -->\n".format(doc.package.name))
             return
 
-        # Remove duplicate licenses from the list.
+        # Remove duplicate licenses from the list for the package.
         unique_licenses = set(doc.package.licenses_from_files)
         if len(doc.package.licenses_from_files) == 0:
             if all_files_have_no_license:
@@ -774,6 +781,7 @@ def save_results(scanners, only_findings, files_count, scanned_files, format, in
             else:
                 doc.package.licenses_from_files = [NoAssert()]
         else:
+            # List license identifiers alphabetically for the package.
             doc.package.licenses_from_files = sorted(unique_licenses, key = lambda x : x.identifier)
 
         if len(doc.package.cr_text) == 0:
@@ -782,7 +790,8 @@ def save_results(scanners, only_findings, files_count, scanned_files, format, in
             else:
                 doc.package.cr_text = NoAssert()
         else:
-            doc.package.cr_text = '\n'.join(doc.package.cr_text) + '\n'
+            # Create a text of alphabetically sorted copyright statements for the package.
+            doc.package.cr_text = '\n'.join(sorted(doc.package.cr_text)) + '\n'
 
         doc.package.verif_code = doc.package.calc_verif_code()
         doc.package.license_declared = NoAssert()
