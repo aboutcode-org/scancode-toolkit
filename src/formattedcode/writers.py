@@ -38,7 +38,7 @@ from formattedcode.format import HtmlAppAssetCopyWarning
 from formattedcode.format import HtmlAppAssetCopyError
 
 
-def save_formatted_output(scanners, files_count, version, notice, scanned_files, format, input, output_file, _echo):
+def write_formatted_output(scanners, files_count, version, notice, scanned_files, format, input, output_file, _echo):
     """
     Save scan results to file or screen.
     """

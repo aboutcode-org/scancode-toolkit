@@ -80,7 +80,7 @@ from scancode.api import _empty_file_infos
 from scancode.cache import ScanFileCache
 from scancode.cache import get_scans_cache_class
 
-from formattedcode.saver import save_formatted_output
+from formattedcode.writers import write_formatted_output
 from formattedcode.format import as_template
 
 from scancode.interrupt import interruptible
@@ -632,4 +632,4 @@ def save_results(scanners, only_findings, files_count, scanned_files, format, in
                     raise e
         return
 
-    save_formatted_output(scanners, files_count, version, notice, scanned_files, format, input, output_file, echo_stderr)
+    write_formatted_output(scanners, files_count, version, notice, scanned_files, format, input, output_file, echo_stderr)

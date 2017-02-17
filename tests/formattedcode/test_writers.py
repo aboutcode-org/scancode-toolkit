@@ -43,11 +43,11 @@ test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
-
 """
 These CLI tests are dependent on py.test monkeypatch to  ensure we are testing the
 actual command outputs as if using a real command line call.
 """
+
 def test_json_pretty_print_option(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.get_test_loc('json-option', copy=True)
