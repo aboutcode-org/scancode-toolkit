@@ -1,0 +1,4 @@
+licenses:
+    - ruby
+
+notes: from https://raw.githubusercontent.com/datamapper/extlib/v0.9.16/lib/extlib/dictionary.rb
