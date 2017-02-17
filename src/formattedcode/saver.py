@@ -28,35 +28,8 @@ from __future__ import division
 from __future__ import unicode_literals
 
 from collections import OrderedDict
-from functools import partial
-from multiprocessing import Pool
 import os
-from os.path import expanduser
 from os.path import abspath
-import sys
-from time import time
-import traceback
-from types import GeneratorType
-
-import click
-from click.termui import style
-
-from commoncode import filetype
-from commoncode import fileutils
-from commoncode import ignore
-
-from scancode import __version__ as version
-
-from scancode.api import get_copyrights
-from scancode.api import get_emails
-from scancode.api import get_file_infos
-from scancode.api import get_licenses
-from scancode.api import get_package_infos
-from scancode.api import get_urls
-from scancode.api import _empty_file_infos
-
-from scancode.cache import ScanFileCache
-from scancode.cache import get_scans_cache_class
 
 from formattedcode.format import as_template
 from formattedcode.format import as_html_app
@@ -218,7 +191,7 @@ def save_formatted_output(scanners, files_count, version, notice, scanned_files,
                 doc.package.licenses_from_files = [NoAssert()]
         else:
             # List license identifiers alphabetically for the package.
-            doc.package.licenses_from_files = sorted(unique_licenses, key = lambda x : x.identifier)
+            doc.package.licenses_from_files = sorted(unique_licenses, key=lambda x: x.identifier)
 
         if len(doc.package.cr_text) == 0:
             if all_files_have_no_copyright:
