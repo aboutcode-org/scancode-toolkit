@@ -1,0 +1,9 @@
+licenses:
+    - ruby
+    - gpl-2.0
+license_choice: yes
+license_expression: ruby or gpl-2.0
+
+notes: >
+    the change is only the email of the author
+    https://raw.githubusercontent.com/ruby/ruby/67245eec7192abdc1dd0dc2510c1f6c77df89bd0/COPYING

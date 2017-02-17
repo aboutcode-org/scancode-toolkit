@@ -1,0 +1,7 @@
+licenses:
+    - ruby
+    - gpl-2.0
+license_choice: yes
+license_expression: ruby or gpl-2.0
+
+notes: https://cache.ruby-lang.org/pub/ruby/1.8/ruby-1.8.0.tar.gz

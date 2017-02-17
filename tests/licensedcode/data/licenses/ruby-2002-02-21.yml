@@ -1,0 +1,10 @@
+licenses:
+    - ruby
+    - gpl-2.0
+license_choice: yes
+license_expression: ruby or gpl-2.0
+
+notes: >
+    the change is "executables" to "binaries"
+    This is a short-lived changes for only 5 days
+    https://raw.githubusercontent.com/ruby/ruby/a08cea360d69e6a7c42154f2032590ea3e77a386/COPYING

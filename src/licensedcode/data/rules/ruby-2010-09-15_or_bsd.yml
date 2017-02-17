@@ -1,0 +1,9 @@
+licenses: 
+    - ruby
+    - bsd-simplified
+license_choice: yes
+license_expression: ruby or bsd-simplified
+
+notes: >
+    Changed dual license terms to ruby or gpl v2 to ruby or bsd on 2019-09-15
+    https://raw.githubusercontent.com/ruby/ruby/2cd6800fd8437b1f862f3f5c44db877159271d17/COPYING

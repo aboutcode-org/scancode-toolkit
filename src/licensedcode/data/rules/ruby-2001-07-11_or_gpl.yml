@@ -1,0 +1,15 @@
+licenses:
+    - ruby
+    - gpl-2.0
+license_choice: yes
+license_expression: ruby or gpl-2.0
+
+notes: >
+    This replaced the GPL COPYING file with the ruby dual licensing terms 
+    https://raw.githubusercontent.com/ruby/ruby/cbc3756009999e58d717af4fc82ba6c33bd3e7e6/COPYING
+    Before this the ruby license was in the README
+    https://github.com/ruby/ruby/blob/d0cf53ffb494469d40be95eb97decdb86c95f653/README
+    and the bottom of section 4. was changed on a regular bassis to update the list
+    of files and minor typos.
+    The Ruby license was first introduced there in early 1998
+    https://github.com/ruby/ruby/blob/7ea2ceddb832b9973694fecac9fe3c30400735ba/README

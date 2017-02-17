@@ -1,3 +1,6 @@
+Ruby is copyrighted free software by Yukihiro Matsumoto <matz@netlab.jp>.
+You can redistribute it and/or modify it under either the terms of the GPL
+(see the file GPL), or the conditions below:
 
   1. You may make and give away verbatim copies of the source form of the
      software without restriction, provided that you duplicate all of the
@@ -14,8 +17,8 @@
        b) use the modified software only within your corporation or
           organization.
 
-       c) give non-standard binaries non-standard names, with
-          instructions on where to get the original software distribution.
+       c) rename any non-standard binaries so the names do not conflict
+          with standard binaries, which must also be provided.
 
        d) make other distribution arrangements with the author.
 

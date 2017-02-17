@@ -1,0 +1,7 @@
+licenses:
+    - ruby
+
+notes: >
+    the change is "executables" to "binaries"
+    This is a short-lived changes for only 5 days
+    https://raw.githubusercontent.com/ruby/ruby/a08cea360d69e6a7c42154f2032590ea3e77a386/COPYING

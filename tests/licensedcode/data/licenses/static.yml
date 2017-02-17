@@ -1,0 +1,7 @@
+licenses:
+    - ruby
+    - gpl-3.0
+license_choice: yes
+license_expression: ruby or gpl-3.0
+
+notes: from https://bogomips.org/unicorn.git/plain/lib/unicorn/app/old_rails/static.rb

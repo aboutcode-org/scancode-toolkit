@@ -1,0 +1,5 @@
+licenses:
+    - ruby
+    - gpl-2.0
+license_choice: yes
+notes: this is an old ruby license circa 1999.
