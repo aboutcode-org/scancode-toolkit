@@ -1,3 +1,6 @@
 licenses:
     - artistic-2.0
-    - gpl
+    - gpl-1.0-plus
+license_choices: yes
+license_expression: artistic-2.0 or gpl-1.0-plus
+

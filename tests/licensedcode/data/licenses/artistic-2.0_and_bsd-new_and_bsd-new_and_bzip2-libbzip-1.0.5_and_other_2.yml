@@ -1,10 +1,10 @@
 licenses:
-    - gpl-1.0-plus
     - artistic-2.0
+    - gpl-1.0-plus
     - zlib
     - unicode-data-software
     - artistic-2.0
-    - gpl
+    - gpl-1.0-plus
     - bsd-new
     - bsd-new
     - bzip2-libbzip-1.0.5
