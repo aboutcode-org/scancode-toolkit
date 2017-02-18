@@ -385,7 +385,7 @@ class TestBaseName(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_file_base_name_on_path_and_location_1(self):
-        test_dir = self.get_test_loc('fileutils/basename')
+        test_dir = '/fileutils/basename'
         test_file = 'a/.a/file'
         expected_name = 'file'
         result = fileutils.file_base_name(test_file)
@@ -393,8 +393,8 @@ class TestBaseName(FileBasedTesting):
         result = fileutils.file_base_name((os.path.join(test_dir, test_file)))
         assert expected_name == result
 
-    def test_file_base_name_on_path_and_location_2(self):
-        test_dir = self.get_test_loc('fileutils/basename')
+    def test_file_base_name_on_path_and_location_for_dot_filex  (self):
+        test_dir = '/fileutils/basename'
         test_file = 'a/.a/'
         expected_name = '.a'
         result = fileutils.file_base_name(test_file)
@@ -403,7 +403,7 @@ class TestBaseName(FileBasedTesting):
         assert expected_name == result
 
     def test_file_base_name_on_path_and_location_3(self):
-        test_dir = self.get_test_loc('fileutils/basename')
+        test_dir = '/fileutils/basename'
         test_file = 'a/b/.a.b'
         expected_name = '.a'
         result = fileutils.file_base_name(test_file)
@@ -412,7 +412,7 @@ class TestBaseName(FileBasedTesting):
         assert expected_name == result
 
     def test_file_base_name_on_path_and_location_4(self):
-        test_dir = self.get_test_loc('fileutils/basename')
+        test_dir = '/fileutils/basename'
         test_file = 'a/b/a.tag.gz'
         expected_name = 'a.tag'
         result = fileutils.file_base_name(test_file)
@@ -421,7 +421,7 @@ class TestBaseName(FileBasedTesting):
         assert expected_name == result
 
     def test_file_base_name_on_path_and_location_5(self):
-        test_dir = self.get_test_loc('fileutils/basename')
+        test_dir = '/fileutils/basename'
         test_file = 'a/b/'
         expected_name = 'b'
         result = fileutils.file_base_name(test_file)
@@ -430,7 +430,7 @@ class TestBaseName(FileBasedTesting):
         assert expected_name == result
 
     def test_file_base_name_on_path_and_location_6(self):
-        test_dir = self.get_test_loc('fileutils/basename')
+        test_dir = '/fileutils/basename'
         test_file = 'a/f.a'
         expected_name = 'f'
         result = fileutils.file_base_name(test_file)
@@ -439,7 +439,7 @@ class TestBaseName(FileBasedTesting):
         assert expected_name == result
 
     def test_file_base_name_on_path_and_location_7(self):
-        test_dir = self.get_test_loc('fileutils/basename')
+        test_dir = '/fileutils/basename'
         test_file = 'a/'
         expected_name = 'a'
         result = fileutils.file_base_name(test_file)
@@ -448,7 +448,7 @@ class TestBaseName(FileBasedTesting):
         assert expected_name == result
 
     def test_file_base_name_on_path_and_location_8(self):
-        test_dir = self.get_test_loc('fileutils/basename')
+        test_dir = '/fileutils/basename'
         test_file = 'f.a/a.c'
         expected_name = 'a'
         result = fileutils.file_base_name(test_file)
@@ -457,7 +457,7 @@ class TestBaseName(FileBasedTesting):
         assert expected_name == result
 
     def test_file_base_name_on_path_and_location_9(self):
-        test_dir = self.get_test_loc('fileutils/basename')
+        test_dir = '/fileutils/basename'
         test_file = 'f.a/'
         expected_name = 'f.a'
         result = fileutils.file_base_name(test_file)
@@ -466,7 +466,7 @@ class TestBaseName(FileBasedTesting):
         assert expected_name == result
 
     def test_file_base_name_on_path_and_location_10(self):
-        test_dir = self.get_test_loc('fileutils/basename')
+        test_dir = '/fileutils/basename'
         test_file = 'tst'
         expected_name = 'tst'
         result = fileutils.file_base_name(test_file)

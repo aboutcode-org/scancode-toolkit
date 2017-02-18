@@ -296,6 +296,7 @@ def splitext(path, force_posix=False):
         base_name = name
         extension = ''
     elif name.startswith('.') and '.' not in name[1:]:
+        # .dot files base name is the full name and they do not have an extension
         base_name = name
         extension = ''
     else:
