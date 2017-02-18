@@ -26,8 +26,6 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
 
-import codecs
-from collections import OrderedDict
 import json
 import os
 from unittest.case import skipIf
@@ -41,6 +39,9 @@ from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
 
+from scancode.cli_test_utils import _load_json_result
+from scancode.cli_test_utils import check_scan
+
 from scancode import cli
 
 
@@ -52,85 +53,6 @@ test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 These CLI tests are dependent on py.test monkeypatch to  ensure we are testing the
 actual command outputs as if using a real command line call.
 """
-
-
-def remove_dates(scan_result):
-    """
-    Remove date fields from scan.
-    """
-    for scanned_file in scan_result['files']:
-        if 'date' in scanned_file:
-            del scanned_file['date']
-
-
-def check_scan(expected_file, result_file, regen=False, strip_dates=False):
-    """
-    Check the scan result_file JSON results against the expected_file expected JSON
-    results. Removes references to test_dir for the comparison. If regen is True the
-    expected_file WILL BE overwritten with the results. This is convenient for
-    updating tests expectations. But use with caution.
-    """
-    result = _load_json_result(result_file)
-    if strip_dates:
-        remove_dates(result)
-    if regen:
-        with open(expected_file, 'wb') as reg:
-            json.dump(result, reg, indent=2)
-    expected = _load_json_result(expected_file)
-    if strip_dates:
-        remove_dates(expected)
-
-    # NOTE we redump the JSON as a string for a more efficient comparison of
-    # failures
-    expected = json.dumps(expected, indent=2, sort_keys=True)
-    result = json.dumps(result, indent=2, sort_keys=True)
-    assert expected == result
-
-
-def _load_json_result(result_file):
-    """
-    Load the result file as utf-8 JSON and strip test_dir prefix from
-    locations.
-    Sort the results by location.
-    """
-    with codecs.open(result_file, encoding='utf-8') as res:
-        scan_result = json.load(res, object_pairs_hook=OrderedDict)
-
-    if scan_result.get('scancode_version'):
-        del scan_result['scancode_version']
-
-    scan_result['files'].sort(key=lambda x: x['path'])
-    return scan_result
-
-
-def test_json_pretty_print_option(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    test_dir = test_env.get_test_loc('json-option', copy=True)
-    runner = CliRunner()
-    result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['--copyright', '--format', 'json-pp', test_dir, result_file], catch_exceptions=True)
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-    assert 'copyright_acme_c-c.c' in result.output
-    assert os.path.exists(result_file)
-    assert len(open(result_file).read()) > 10
-    assert len(open(result_file).readlines()) > 1
-
-
-def test_json_output_option_is_minified(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    test_dir = test_env.get_test_loc('json-option', copy=True)
-    runner = CliRunner()
-    result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['--copyright', '--format', 'json', test_dir, result_file], catch_exceptions=True)
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-    assert 'copyright_acme_c-c.c' in result.output
-    assert os.path.exists(result_file)
-    assert len(open(result_file).read()) > 10
-    assert len(open(result_file).readlines()) == 1
-    
-
 def test_package_option_detects_packages(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.get_test_loc('package', copy=True)
@@ -257,75 +179,6 @@ def test_scan_email_url_info(monkeypatch):
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_scan(test_env.get_test_loc('info/email_url_info.expected.json'), result_file)
-
-
-def test_paths_are_posix_paths_in_html_app_format_output(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    test_dir = test_env.get_test_loc('posix_path', copy=True)
-    runner = CliRunner()
-    result_file = test_env.get_temp_file(extension='html', file_name='test_html')
-    result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html-app', test_dir, result_file], catch_exceptions=True)
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-    # the data we want to test is in the data.json file
-    data_file = os.path.join(fileutils.parent_directory(result_file), 'test_html_files', 'data.json')
-    assert 'copyright_acme_c-c.c' in open(data_file).read()
-
-
-def test_paths_are_posix_in_html_format_output(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    test_dir = test_env.get_test_loc('posix_path', copy=True)
-    runner = CliRunner()
-    result_file = test_env.get_temp_file('html')
-    result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html', test_dir, result_file], catch_exceptions=True)
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-    assert 'copyright_acme_c-c.c' in open(result_file).read()
-
-
-def test_paths_are_posix_in_json_format_output(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    test_dir = test_env.get_test_loc('posix_path', copy=True)
-    runner = CliRunner()
-    result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'json', test_dir, result_file], catch_exceptions=True)
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-    assert 'copyright_acme_c-c.c' in open(result_file).read()
-
-
-def test_format_with_custom_filename_fails_for_directory(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    test_dir = test_env.get_test_loc('posix_path', copy=True)
-    runner = CliRunner()
-    result_file = test_env.get_temp_file('html')
-    result = runner.invoke(cli.scancode, [ '--format', test_dir, test_dir, result_file], catch_exceptions=True)
-    assert result.exit_code != 0
-    assert 'Invalid template file' in result.output
-
-
-def test_format_with_custom_filename(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    test_dir = test_env.get_test_loc('posix_path', copy=True)
-    runner = CliRunner()
-    template = test_env.get_test_loc('template/sample-template.html')
-    result_file = test_env.get_temp_file('html')
-    result = runner.invoke(cli.scancode, [ '--format', template, test_dir, result_file], catch_exceptions=True)
-    assert result.exit_code == 0
-    assert 'Custom Template' in open(result_file).read()
-
-
-def test_scanned_path_is_present_in_html_app_output(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    test_dir = test_env.get_test_loc('html_app')
-    runner = CliRunner()
-    result_file = test_env.get_temp_file('test.html')
-    result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html-app', test_dir, result_file], catch_exceptions=True)
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-    html_file = open(result_file).read()
-    assert '<title>ScanCode scan results for: %(test_dir)s</title>' % locals() in html_file
-    assert 'ScanCode</a> scan results for: %(test_dir)s</span>' % locals() in html_file
 
 
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_json(monkeypatch):
@@ -563,52 +416,3 @@ def test_scan_can_handle_weird_file_names(monkeypatch):
         expected = 'weird_file_name/expected-win.json'
 
     check_scan(test_env.get_test_loc(expected), result_file, regen=False)
-
-
-
-
-def test_scan_html_output_does_not_truncate_copyright(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    test_dir = test_env.get_test_loc('do_not_truncate_copyright/scan/')
-    runner = CliRunner()
-    json_result_file = test_env.get_temp_file('test.json')
-    json_result = runner.invoke(cli.scancode, [ '-clip', '--format', 'json', test_dir, json_result_file], catch_exceptions=True)
-    assert json_result.exit_code == 0
-    assert 'Scanning done' in json_result.output
-    expected_json = test_env.get_test_loc('do_not_truncate_copyright/expected.json')
-
-    check_scan(test_env.get_test_loc(expected_json), json_result_file, strip_dates=True, regen=False)
-
-    html_result_file = test_env.get_temp_file('test.html')
-    html_result = runner.invoke(cli.scancode, [ '-clip', '--format', 'html', '-n', '3', test_dir, html_result_file], catch_exceptions=True)
-    assert html_result.exit_code == 0
-    assert 'Scanning done' in html_result.output
-
-    with open(html_result_file) as hi:
-        html_result_text = hi.read()
-    expected_template = r'''
-        <tr>
-          <td>%s</td>
-          <td>1</td>
-          <td>1</td>
-          <td>copyright</td>
-            <td>Copyright \(c\) 2000 ACME, Inc\.</td>
-        </tr>
-    '''
-    expected_files = r'''
-        copy1.c
-        copy2.c
-        subdir/copy1.c
-        subdir/copy4.c
-        subdir/copy2.c
-        subdir/copy3.c
-        copy3.c
-    '''.split()
-
-    # for this test we build regexes from a template so we can abstract whitespaces
-    import re
-    for scanned_file in expected_files:
-        exp = expected_template % (scanned_file,)
-        exp = r'\s*'.join(exp.split())
-        check = re.findall(exp, html_result_text, re.MULTILINE)
-        assert check
