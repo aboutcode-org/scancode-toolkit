@@ -1,0 +1,9 @@
+key: repoze
+short_name: Repoze License
+name: Repoze License
+category: Permissive
+owner: Debian
+text_urls:
+    - http://repoze.org/license.html
+    - http://repoze.org/LICENSE.txt
+notes: found in Debian reportbug
