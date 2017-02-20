@@ -1,9 +1,0 @@
-/* vi: set sw=4 ts=4: */
-/*
- * A tiny 'top' utility.
- *
-
-   lgpl
-   
- * This reads the PIDs of all processes and their status and shows
- * the status of processes (first ones that fit to screen) at given
