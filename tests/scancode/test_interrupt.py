@@ -25,48 +25,52 @@
 from __future__ import absolute_import, print_function
 
 import os
+import threading
+from time import sleep
 
 from commoncode.testcase import FileBasedTesting
 
 from scancode import interrupt
 
+"""
+Note that these tests check the active threads count before and after each test to
+verify there is no thread leak.
+"""
 
 class TestInterrupt(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_megabytes(self):
-        assert '12MB' == interrupt.megabytes(12 * 1024 * 1024)
-        assert '1MB' == interrupt.megabytes(1 * 1024 * 1024)
-        assert '0MB' == interrupt.megabytes(1024)
-        assert '11MB' == interrupt.megabytes(11.6 * 1024 * 1024)
-
-    def test_memory_guard(self):
-        assert interrupt.MEMORY_EXCEEDED == interrupt.time_and_memory_guard(max_memory=1, timeout=4, interval=2)
-        # should fail after 2 seconds
-        assert interrupt.RUNTIME_EXCEEDED == interrupt.time_and_memory_guard(max_memory=1024 * 1024 * 1024 * 1024, timeout=2, interval=1)
 
     def test_interruptible_can_run_function(self):
-        from time import sleep
+        before = threading.active_count()
 
         def some_long_function(exec_time):
             sleep(exec_time)
             return 'OK'
 
-        result = interrupt.interruptible(some_long_function, 0.01, timeout=10, max_memory=1024)
+        result = interrupt.interruptible(some_long_function, args=(0.01,),
+                                         timeout=10, max_memory=1024)
         assert (True, 'OK') == result
 
+        after = threading.active_count()
+        assert before == after
+
     def test_interruptible_stops_execution_on_timeout(self):
-        from time import sleep
+        before = threading.active_count()
 
         def some_long_function(exec_time):
-            sleep(exec_time)
+            for i in range(exec_time):
+                sleep(i)
             return 'OK'
 
-        result = interrupt.interruptible(some_long_function, 0.5, timeout=0.01)
+        result = interrupt.interruptible(some_long_function, args=(20,), timeout=0.00001)
         assert (False, 'ERROR: Processing interrupted: timeout after 0 seconds.') == result
 
-    def test_interruptible_stops_execution_on_memory(self):
-        from time import sleep
+        after = threading.active_count()
+        assert before == after
+
+    def test_interruptible_stops_execution_on_excessive_memory_usage(self):
+        before = threading.active_count()
 
         def some_hungry_function(exec_time):
             sleep(exec_time)
@@ -74,6 +78,9 @@ class TestInterrupt(FileBasedTesting):
             _ram = list(range(1000000))
             return 'OK'
 
-        success, result = interrupt.interruptible(some_hungry_function, 0.1, timeout=5, max_memory=1)
+        success, result = interrupt.interruptible(some_hungry_function, args=(5,), timeout=5, max_memory=0.0001)
         assert success == False
         assert 'Processing interrupted: excessive memory usage of more than' in result
+
+        after = threading.active_count()
+        assert before == after

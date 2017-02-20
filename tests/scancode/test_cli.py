@@ -281,9 +281,9 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     expected = [
-        {u'path': u'test1.txt', u'scan_errors': [u'ERROR: Processing interrupted: timeout after 1 seconds.']},
-        {u'path': u'test2.txt', u'scan_errors': [u'ERROR: Processing interrupted: timeout after 1 seconds.']},
-        {u'path': u'test3.txt', u'scan_errors': [u'ERROR: Processing interrupted: timeout after 1 seconds.']}
+        {u'path': u'test1.txt', u'scan_errors': [u'ERROR: Processing interrupted: timeout after 0 seconds.']},
+        {u'path': u'test2.txt', u'scan_errors': [u'ERROR: Processing interrupted: timeout after 0 seconds.']},
+        {u'path': u'test3.txt', u'scan_errors': [u'ERROR: Processing interrupted: timeout after 0 seconds.']}
     ]
 
     result_json = json.loads(open(result_file).read())
