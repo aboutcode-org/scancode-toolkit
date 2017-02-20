@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -673,7 +673,12 @@ class Rule(object):
         # path to the YAML data file for this rule
         self.data_file = data_file
         if data_file:
-            self.load()
+            try:
+                self.load()
+            except Exception as e:
+                message = 'While loading: %(data_file)r' % locals() + e.message
+                print(message)
+                raise Exception(message)
 
         # licensing identifier: TODO: replace with a license expression
         self.licensing_identifier = tuple(self.licenses) + (license_choice,)
