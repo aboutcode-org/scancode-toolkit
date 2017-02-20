@@ -4,7 +4,10 @@ Aladdin Free Public License
 Copyright (C) 1994, 1995, 1997, 1998, 1999, 2000 Aladdin Enterprises,
 Menlo Park, California, U.S.A. All rights reserved.
 
-NOTE: This License is not the same as any of the GNU Licenses published by the Free Software Foundation. Its terms are substantially different from those of the GNU Licenses. If you are familiar with the GNU Licenses, please read this license with extra care.
+NOTE: This License is not the same as any of the GNU Licenses published by the Free
+Software Foundation. Its terms are substantially different from those of the GNU
+Licenses. If you are familiar with the GNU Licenses, please read this license with
+extra care.
 
 Aladdin Enterprises hereby grants to anyone the permission to apply
 this License to their own work, as long as the entire License (including
@@ -207,11 +210,17 @@ EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY
 OF SUCH DAMAGES.
 
 6. General.
-This License is governed by the laws of the State of California, U.S.A., excluding choice of law rules.
 
-If any part of this License is found to be in conflict with the law, that part shall be interpreted in its broadest meaning consistent with the law, and no other parts of the License shall be affected.
+This License is governed by the laws of the State of California, U.S.A., excluding
+choice of law rules.
 
-For United States Government users, the Program is provided with RESTRICTED RIGHTS. If you are a unit or agency of the United States Government or are acquiring the Program for any such unit or agency, the following apply:
+If any part of this License is found to be in conflict with the law, that part shall
+be interpreted in its broadest meaning consistent with the law, and no other parts of
+the License shall be affected.
+
+For United States Government users, the Program is provided with RESTRICTED RIGHTS.
+If you are a unit or agency of the United States Government or are acquiring the
+Program for any such unit or agency, the following apply:
 
 If the unit or agency is the Department of Defense ("DOD"),
 the Program and its documentation are classified as "commercial computer
