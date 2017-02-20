@@ -31,27 +31,28 @@ from commoncode import functional
 
 from licensedcode import index
 from licensedcode.match import get_texts
+from commoncode.text import python_safe_name
 
 
 """
 License test utilities.
 """
 
-def make_license_test_function(expected_licenses, test_file, test_data_file, test_name,
-                               detect_negative=True, min_score=0,
-                               expected_failure=False,
-                               # if not False, a reason string must be provided
-                               skip_test=False,
-                               # if True detailed traces including matched texts will be returned
-                               trace_text=False
-                               ):
+def make_license_test_function(
+        expected_licenses, test_file, test_data_file, test_name,
+        detect_negative=True, min_score=0,
+        expected_failure=False,
+        # if not False, a reason string must be provided
+        skip_test=False,
+        # if True detailed traces including matched texts will be returned
+        trace_text=False):
     """
     Build and return a test function closing on tests arguments.
     """
     if not isinstance(expected_licenses, list):
         expected_licenses = [expected_licenses]
 
-    def closure_test_function(self):
+    def closure_test_function(*args, **kwargs):
         idx = index.get_index()
         matches = idx.match(location=test_file, min_score=min_score,
                             # if negative, do not detect negative rules when testing negative rules
@@ -121,3 +122,18 @@ def print_matched_texts(match, location=None, query_string=None, idx=None):
     print()
     print('Matched itext:')
     print(itext)
+
+
+def check_license(location=None, query_string=None, expected=(), test_data_dir=None):
+    if query_string:
+        idx = index.get_index()
+        matches = idx.match(location=location, query_string=query_string)
+        results = functional.flatten(map(unicode, match.rule.licenses) for match in matches)
+        assert expected == results
+    else:
+        test_name = python_safe_name('test_' + location.replace(test_data_dir, ''))
+        tester = make_license_test_function(
+            expected_licenses=expected, test_file=location,
+            test_data_file=None, test_name=test_name,
+            trace_text=True)
+        tester()
