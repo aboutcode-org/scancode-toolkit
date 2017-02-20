@@ -1,2 +1,4 @@
 licenses:
     - supervisor
+expected_failure: yes
+notes: this is a composite license.
