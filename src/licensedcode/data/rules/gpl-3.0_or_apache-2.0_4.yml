@@ -1,0 +1,6 @@
+licenses:
+    - gpl-3.0
+    - apache-2.0
+license_choice: yes
+license_expression: gpl-3.0 or apache-2.0
+notes: found in https://github.com/nexB/scancode-toolkit/issues/508 cloudinit

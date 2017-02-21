@@ -1,0 +1,2 @@
+notes: >-
+    This is a flake 8 rule commented out as found in the cloudinit codebase tox.ini
