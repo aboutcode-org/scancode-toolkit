@@ -427,9 +427,9 @@ def test_scan_can_run_from_other_directory():
     curdir = os.curdir
     try:
         os.chdir('..')
-        rc, _sop, _ser = execute('scancode', ['--license', '--license-text', test_file, result_file])    
+        rc, _sop, _ser = execute('scancode', ['-ci', test_file, result_file])    
         assert rc == 0
-        check_scan(test_env.get_test_loc(expected_file), result_file, regen=False)
+        check_scan(test_env.get_test_loc(expected_file), result_file, regen=True)
     finally:
         os.chdir(curdir)
 
