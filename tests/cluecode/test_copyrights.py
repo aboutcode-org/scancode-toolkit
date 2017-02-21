@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -204,7 +204,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_sample_py(self):
         test_file = self.get_test_loc('copyrights/copyright_sample_py-py.py')
         expected = [
-            u'COPYRIGHT 2006',
+            u'COPYRIGHT 2006 ABC',
         ]
         check_detection(expected, test_file)
 
@@ -751,13 +751,11 @@ class TestCopyrightDetection(FileBasedTesting):
             u'COPYRIGHT (c) ADIONYSOS2 2006',
             u'COPYRIGHT (c) MyCompany 2006 - 2009',
             u'COPYRIGHT (c) 2006 MyCompany2',
-            u'COPYRIGHT (c) 2024 DIONYSOS2',
             u'copyright (c) 2006 - 2009 DIONYSOS',
             u'copyright (c) ADIONYSOS 2006 - 2009',
             u'copyright (c) ADIONYSOS2 2006',
             u'copyright (c) MyCompany 2006 - 2009',
             u'copyright (c) 2006 MyCompany2',
-            u'copyright (c) 2024 DIONYSOS2',
         ]
         check_detection(expected, test_file)
 
@@ -1150,11 +1148,29 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    def test_copyright_php_lib(self):
-        test_file = self.get_test_loc('copyrights/copyright_php_lib-php_embed_lib.lib')
+    @expectedFailure
+    def test_copyright_in_windows_binary_lib(self):
+        test_file = self.get_test_loc('copyrights/copyright_in_binary_lib-php_embed_lib.lib')
         expected = [
+            u'Copyright nexB and others (c) 2012',
         ]
         check_detection(expected, test_file)
+
+    @expectedFailure
+    def test_copyright_in_windows_binary_dll(self):
+        test_file = self.get_test_loc('copyrights/windows.dll')
+        expected = [
+            u'Copyright nexB and others (c) 2012',
+        ]
+        check_detection(expected, test_file)
+
+    def test_copyright_in_windows_binary_dll_leading_junk(self):
+        test_file = self.get_test_loc('copyrights/windows.dll')
+        expected = [
+            u'ROW_SERVER_R_RES HKCR NoRemove Interface Copyright nexB and others (c) 2012'
+        ]
+        check_detection(expected, test_file)
+
 
     def test_copyright_in_c(self):
         test_file = self.get_test_loc('copyrights/copyright_in_c-c.c')
@@ -3022,7 +3038,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_objectivec(self):
         test_file = self.get_test_loc('copyrights/copyright_objectivec-objectiveC_m.m')
         expected = [
-            u'Copyright (c) 2009',
+            u'Copyright (c) 2009 ABC',
         ]
         check_detection(expected, test_file)
 
@@ -3048,7 +3064,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright 2001-2007 The Apache Software Foundation',
             u'Copyright 1999-2007 The Apache Software Foundation',
             u'Copyright (c) 2000 Pat Niemeyer',
-            u'Copyright (c) 2000',
+            u'Copyright (c) 2000 INRIA',
             u'Copyright (c) 2002 France Telecom',
             u'Copyright (c) 1990-2003 Sleepycat Software',
             u'Copyright (c) 1990, 1993, 1994, 1995 The Regents of the University of California',
@@ -4006,3 +4022,8 @@ class TestCopyrightDetection(FileBasedTesting):
         test_lines = [u'... don’t fit into your fixed-size buffer.\nByten ( c )\nExactly n bytes. If the']
         expected = []
         check_detection(expected, test_lines)
+
+    def test_copyright_should_not_be_detected_in_junk_strings_with_year_prefix(self):
+        test_file = self.get_test_loc('copyrights/access_strings.txt')
+        expected = []
+        check_detection(expected, test_file)

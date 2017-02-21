@@ -206,7 +206,6 @@ class TestContentType(FileBasedTesting):
         assert is_binary(test_file)
         assert is_archive(test_file)
         assert 'bzip2 compressed data, block size = 900k' == get_filetype(test_file)
-        assert is_archive(test_file)
         assert is_compressed(test_file)
         assert not contains_text(test_file)
 
@@ -226,7 +225,6 @@ class TestContentType(FileBasedTesting):
         assert is_binary(test_file)
         assert is_archive(test_file)
         assert get_filetype(test_file).startswith('gzip compressed data')
-        assert is_archive(test_file)
         assert is_compressed(test_file)
         assert not contains_text(test_file)
 
@@ -235,9 +233,23 @@ class TestContentType(FileBasedTesting):
         assert is_binary(test_file)
         assert is_archive(test_file)
         assert 'posix tar archive' == get_filetype(test_file)
-        assert is_archive(test_file)
         assert not is_compressed(test_file)
         assert not contains_text(test_file)
+
+    def test_ar_archive_win_library(self):
+        test_file = self.get_test_loc('contenttype/archive/win-archive.lib')
+        assert is_binary(test_file)
+        assert is_archive(test_file)
+        assert 'current ar archive' == get_filetype(test_file)
+        assert not is_compressed(test_file)
+        assert not contains_text(test_file)
+
+    def test_win_dll(self):
+        test_file = self.get_test_loc('contenttype/binary/windows.dll')
+        assert is_binary(test_file)
+        assert not is_archive(test_file)
+        assert not is_compressed(test_file)
+        assert contains_text(test_file)
 
     def test_config_eclipse_data(self):
         test_file = self.get_test_loc('contenttype/config/eclipse_configuration_3u.cfs')
