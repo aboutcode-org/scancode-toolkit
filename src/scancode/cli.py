@@ -79,7 +79,8 @@ Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 '''
 
-notice_text = open('NOTICE').read()
+notice_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'NOTICE')
+notice_text = open(notice_path).read()
  
 delimiter = '\n\n\n'
 [notice_text, extra_notice_text] = notice_text.split(delimiter, 1)
