@@ -47,3 +47,9 @@ class TestAPI(FileBasedTesting):
         except:
             _pickled = pickle.dumps(package)
             _cpickled = cPickle.dumps(package)
+
+    def test_get_file_infos_has_no_nulls(self):
+        test_dir = self.get_test_loc('api/info')
+        info = api.get_file_infos(test_dir, as_list=False)
+        is_key_values = [v for k, v in info.items() if k.startswith('is_')]
+        assert all(v is not None for v in is_key_values)
