@@ -375,7 +375,7 @@ def test_scan_quiet_to_stdout_only_echoes_json_results(monkeypatch):
 
     # also test with an output of JSON to stdout
     runner2 = CliRunner()
-    result2 = runner2.invoke(cli.scancode, ['--quiet', '--info', test_dir], catch_exceptions=False)
+    result2 = runner2.invoke(cli.scancode, ['--quiet', '--info', test_dir], catch_exceptions=True)
     assert result2.exit_code == 0
 
     # outputs to file or stdout should be identical
@@ -401,7 +401,7 @@ def test_scan_can_handle_weird_file_names(monkeypatch):
     test_dir = test_env.extract_test_tar('weird_file_name/weird_file_name.tar.gz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['-c', '-i', test_dir, result_file], catch_exceptions=False)
+    result = runner.invoke(cli.scancode, ['-c', '-i', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert "KeyError: 'sha1'" not in result.output
     assert 'Scanning done' in result.output
@@ -419,17 +419,14 @@ def test_scan_can_handle_weird_file_names(monkeypatch):
 
 
 def test_scan_can_run_from_other_directory():
+    import scancode
     from commoncode.command import execute
-
     test_file = test_env.get_test_loc('altpath/copyright.c')
     expected_file = test_env.get_test_loc('altpath/copyright.expected.json')
     result_file = test_env.get_temp_file('json')
-    curdir = os.curdir
-    try:
-        os.chdir('..')
-        rc, _sop, _ser = execute('scancode', ['-ci', test_file, result_file])    
-        assert rc == 0
-        check_scan(test_env.get_test_loc(expected_file), result_file, regen=True)
-    finally:
-        os.chdir(curdir)
+    scan_cmd = os.path.join(scancode.root_dir, 'scancode')
+    work_dir = os.path.dirname(result_file)
+    rc, _sop, _ser = execute(scan_cmd, ['-ci', test_file, result_file], cwd=work_dir)    
+    assert rc == 0
+    check_scan(test_env.get_test_loc(expected_file), result_file, regen=False)
 
