@@ -1,0 +1,12 @@
+about_resource: setuptools_scm-1.15.0-py2.py3-none-any.whl
+name: setuptools-scm
+version: 1.15.0
+
+download_url: https://pypi.python.org/packages/f7/8b/96bf8303d35080ea7469d531955f0911f1be7f3ddc34ec05e98af1022e65/setuptools_scm-1.15.0-py2.py3-none-any.whl#md5=1d961668aefcbb8f016ee950be1cfc95
+
+home_url: https://github.com/pypa/setuptools_scm/
+owner: Python Packaging Authority
+
+copyright: copyright (c) 2010-2015 by Ronny Pfannschmidt and the Python Packaging Authority
+dje_license: mit
+license_text_file: PSF.LICENSE
