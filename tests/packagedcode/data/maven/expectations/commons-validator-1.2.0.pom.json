@@ -11,8 +11,42 @@
     "/LICENSE.txt"
   ], 
   "maven_repository_url_1": [], 
+  "maven_issue_url": [
+    "http://issues.apache.org/bugzilla/"
+  ], 
+  "maven_dependency_version": [
+    "1.7.0", 
+    "1.6", 
+    "1.0.4", 
+    "2.0.8", 
+    "2.0.2", 
+    "3.8.1"
+  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [
+    "Saul Q Yuan Add", 
+    "Shane Bailey", 
+    "Dave Derry", 
+    "Tim O'Brien", 
+    "Scott Clasen", 
+    "Marcus Brito Finish", 
+    "Padma Ginnaram", 
+    "Thomas Jacob", 
+    "Adam Kramer", 
+    "Greg Ludington", 
+    "Bjorn-H. Moritz", 
+    "David Neuer", 
+    "Kurt Post", 
+    "Arun Mammen Thomas", 
+    "Steven Fines", 
+    "Didier Romelot", 
+    "Steve Stair", 
+    "Jeremy Tan", 
+    "94RGt2", 
+    "Nacho G. Mac Dowell", 
+    "Mark Lowe"
+  ], 
   "maven_repository_url": [], 
   "maven_distribution_management_repository_url": [
     "file:///www/jakarta.apache.org/builds/jakarta-commons/validator/"
@@ -41,6 +75,16 @@
   "maven_component_group_id": [
     "commons-validator"
   ], 
+  "maven_contributor_email": [
+    "ticktock@speakeasy.net>", 
+    "thomas.jacob@sinnerschrader.com", 
+    "DavidNeuer@nascopgh.com", 
+    "steven.fines@cotelligent.com", 
+    "didier.romelot@renault.com", 
+    "jeremytan@scualum.com", 
+    "lmagee@biziworks.com.au", 
+    "mark.lowe@boxstuff.com"
+  ], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [], 
   "maven_component_extend_1": [], 
@@ -55,6 +99,15 @@
     "Niall Pemberton", 
     "James Turner", 
     "David Winterfeldt"
+  ], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [
+    "commons-beanutils", 
+    "commons-digester", 
+    "commons-logging", 
+    "oro", 
+    "xml-apis", 
+    "junit"
   ], 
   "maven_license": [
     "The Apache Software License, Version 2.0"
@@ -83,10 +136,17 @@
     "http://jakarta.apache.org"
   ], 
   "maven_repository_id": [], 
+  "maven_developer_organization": [
+    "EdgeTech, Inc"
+  ], 
   "maven_project_description": [
     "Commons Validator provides the building blocks for both client side validation\n    and server side data validation. It may be used standalone or with a framework like\n    Struts."
   ], 
   "maven_repository_connection_1": [], 
+  "maven_dependency_scope": [], 
+  "maven_license_name": [
+    "The Apache Software License, Version 2.0"
+  ], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "Validator"

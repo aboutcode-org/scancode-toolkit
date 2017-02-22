@@ -7,8 +7,15 @@
   "maven_project_short_description_1": [], 
   "maven_license_url": [], 
   "maven_repository_url_1": [], 
+  "maven_issue_url": [], 
+  "maven_dependency_version": [
+    "1.7.0", 
+    "1.1.2_01", 
+    "1.1.2.1"
+  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [], 
   "maven_repository_url": [], 
   "maven_distribution_management_repository_url": [], 
   "maven_scm_connection": [], 
@@ -31,10 +38,17 @@
   "maven_component_group_id": [
     "org.apache.ant"
   ], 
+  "maven_contributor_email": [], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [], 
   "maven_component_extend_1": [], 
   "maven_developer_name": [], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [
+    "ant", 
+    "jai-core", 
+    "jai-codec"
+  ], 
   "maven_license": [], 
   "maven_component_packaging": [], 
   "maven_developer_email": [], 
@@ -45,10 +59,13 @@
   "maven_distribution_management_directory_1": [], 
   "maven_organization_url": [], 
   "maven_repository_id": [], 
+  "maven_developer_organization": [], 
   "maven_project_description": [
     "image task and corresponding types.\n  jai (Java Advanced Imaging) is not available in public Maven repositories, therefore the dependencies are included with a scope provided\n    the download URL is http://java.sun.com/products/java-media/jai/"
   ], 
   "maven_repository_connection_1": [], 
+  "maven_dependency_scope": [], 
+  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": []
 }

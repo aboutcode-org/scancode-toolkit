@@ -7,11 +7,19 @@
   "maven_project_short_description_1": [], 
   "maven_license_url": [], 
   "maven_repository_url_1": [], 
+  "maven_issue_url": [], 
+  "maven_dependency_version": [
+    "1.0-alpha-7", 
+    "3.8.1", 
+    "1.1-alpha-2", 
+    "1.0.2"
+  ], 
   "maven_repository_name": [
     "Maven Snapshot Development Repository", 
     "Maven Repository Switchboard"
   ], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [], 
   "maven_repository_url": [
     "http://snapshots.maven.codehaus.org/maven2", 
     "http://repo1.maven.org/maven2"
@@ -39,6 +47,7 @@
   "maven_component_group_id": [
     "org.codehaus.plexus"
   ], 
+  "maven_contributor_email": [], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [
     "scm:svn:https://svn.codehaus.org/plexus/trunk/plexus-components/plexus-interactivity/plexus-interactivity-api"
@@ -56,6 +65,13 @@
     "Emmanuel Venisse", 
     "Trygve Laugstol", 
     "Kenney Westerhof"
+  ], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [
+    "plexus-container-default", 
+    "junit", 
+    "classworlds", 
+    "plexus-utils"
   ], 
   "maven_license": [], 
   "maven_component_packaging": [], 
@@ -85,8 +101,15 @@
     "snapshots", 
     "central"
   ], 
+  "maven_developer_organization": [
+    "Zenplex", 
+    "Envoi solutions", 
+    "Walding Consulting Services"
+  ], 
   "maven_project_description": [], 
   "maven_repository_connection_1": [], 
+  "maven_dependency_scope": [], 
+  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "Plexus Default Interactivity Handler"

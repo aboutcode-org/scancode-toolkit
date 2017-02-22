@@ -13,8 +13,20 @@
   "maven_repository_url_1": [
     "http://jen.dev.java.net/source/browse/jen/"
   ], 
+  "maven_issue_url": [], 
+  "maven_dependency_version": [
+    "3.8.1", 
+    "0.30-SNAPSHOT", 
+    "2.1", 
+    "2.1", 
+    "2.1", 
+    "2.1"
+  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [
+    "John McPeek"
+  ], 
   "maven_repository_url": [], 
   "maven_distribution_management_repository_url": [], 
   "maven_scm_connection": [], 
@@ -33,11 +45,23 @@
   "maven_component_group_id": [
     "jen"
   ], 
+  "maven_contributor_email": [
+    "not@disclosed"
+  ], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [], 
   "maven_component_extend_1": [], 
   "maven_developer_name": [
     "Ross Bamford"
+  ], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [
+    "junit", 
+    "juno", 
+    "asm", 
+    "asm-commons", 
+    "asm-attrs", 
+    "asm-tree"
   ], 
   "maven_license": [
     "Apache Software License, 2.0"
@@ -61,11 +85,18 @@
     "http://roscopeco.co.uk/"
   ], 
   "maven_repository_id": [], 
+  "maven_developer_organization": [
+    "Roscopeco Open Tech"
+  ], 
   "maven_project_description": [
     "Jen is a very-high-level Java class generation API, built on top of ASM and Cglib. Jen provides a small, easy to use API covering common use-cases, while working with and giving access to the underlying APIs to allow total flexibility and control when required."
   ], 
   "maven_repository_connection_1": [
     "scm:cvs:pserver:guest@cvs.dev.java.net:/cvs:jen/main"
+  ], 
+  "maven_dependency_scope": [], 
+  "maven_license_name": [
+    "Apache Software License, 2.0"
   ], 
   "maven_repository_developer_connection_1": [
     "scm:cvs:pserver:[username]@cvs.dev.java.net:/cvs:jen/main"

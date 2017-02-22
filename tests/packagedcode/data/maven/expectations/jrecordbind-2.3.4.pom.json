@@ -11,10 +11,20 @@
     "http://www.gnu.org/copyleft/lesser.html"
   ], 
   "maven_repository_url_1": [], 
+  "maven_issue_url": [
+    "https://jrecordbind.dev.java.net/servlets/ProjectIssues"
+  ], 
+  "maven_dependency_version": [
+    "20020414", 
+    "2.1.11", 
+    "2.1.11", 
+    "20081112"
+  ], 
   "maven_repository_name": [
     "Java.net Maven 2 Repository"
   ], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [], 
   "maven_repository_url": [
     "http://download.java.net/maven/2"
   ], 
@@ -45,6 +55,7 @@
   "maven_component_group_id": [
     "it.assist.jrecordbind"
   ], 
+  "maven_contributor_email": [], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [
     "scm:svn:https://jrecordbind.dev.java.net/svn/jrecordbind/trunk/"
@@ -52,6 +63,13 @@
   "maven_component_extend_1": [], 
   "maven_developer_name": [
     "Federico Fissore"
+  ], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [
+    "relaxngDatatype", 
+    "jaxb-impl", 
+    "jaxb-xjc", 
+    "xsom"
   ], 
   "maven_license": [
     "LGPL"
@@ -73,10 +91,15 @@
   "maven_repository_id": [
     "maven2-repository.dev.java.net"
   ], 
+  "maven_developer_organization": [], 
   "maven_project_description": [
     "Transform fixed-length and variable-length text files into beans and back"
   ], 
   "maven_repository_connection_1": [], 
+  "maven_dependency_scope": [], 
+  "maven_license_name": [
+    "LGPL"
+  ], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "jrecordbind"

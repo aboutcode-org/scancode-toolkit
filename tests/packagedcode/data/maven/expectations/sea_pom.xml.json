@@ -9,6 +9,8 @@
   "maven_project_short_description_1": [], 
   "maven_license_url": [], 
   "maven_repository_url_1": [], 
+  "maven_issue_url": [], 
+  "maven_dependency_version": [], 
   "maven_repository_name": [
     "JBoss Repository", 
     "Codehaus Repository", 
@@ -16,6 +18,7 @@
     "Apache Snapshot Repository"
   ], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [], 
   "maven_repository_url": [
     "http://repository.jboss.org/maven2", 
     "http://repository.codehaus.org", 
@@ -47,6 +50,7 @@
   "maven_component_group_id": [
     "no.knowit.seam"
   ], 
+  "maven_contributor_email": [], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [
     "scm:svn:https://seam-maven-refimpl.googlecode.com/svn/trunk"
@@ -56,6 +60,8 @@
     "Leif Olsen", 
     "Ken Gullaksen"
   ], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [], 
   "maven_license": [], 
   "maven_component_packaging": [
     "pom"
@@ -80,10 +86,16 @@
     "snapshots.jboss.org", 
     "apache-m2-snapshot"
   ], 
+  "maven_developer_organization": [
+    "Know IT Objectnet Kristiansand", 
+    "Know IT Objectnet Oslo"
+  ], 
   "maven_project_description": [
     "The Seam Maven Reference implementation root POM. \n    You can use this POM as a template for your own root pom."
   ], 
   "maven_repository_connection_1": [], 
+  "maven_dependency_scope": [], 
+  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "no.knowit.seam : root : 2.2.0-SNAPSHOT"

@@ -11,8 +11,11 @@
   "maven_repository_url_1": [
     "https://maven2-repository.dev.java.net/source/browse/maven2-repository"
   ], 
+  "maven_issue_url": [], 
+  "maven_dependency_version": [], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [], 
   "maven_repository_url": [], 
   "maven_distribution_management_repository_url": [], 
   "maven_scm_connection": [], 
@@ -27,6 +30,7 @@
   "maven_component_group_id": [
     "codedom"
   ], 
+  "maven_contributor_email": [], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [], 
   "maven_component_extend_1": [], 
@@ -35,6 +39,8 @@
     "Ryan Shoemaker", 
     "Bhakti Mehta"
   ], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [], 
   "maven_license": [], 
   "maven_component_packaging": [], 
   "maven_developer_email": [
@@ -55,12 +61,15 @@
     "http://www.sun.com/"
   ], 
   "maven_repository_id": [], 
+  "maven_developer_organization": [], 
   "maven_project_description": [
     "Java source code generation library"
   ], 
   "maven_repository_connection_1": [
     "scm:svn:https://guest@maven2-repository.dev.java.net/svn/maven2-repository"
   ], 
+  "maven_dependency_scope": [], 
+  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [
     "scm:svn:https://maven2-repository.dev.java.net/svn/maven2-repository"
   ], 

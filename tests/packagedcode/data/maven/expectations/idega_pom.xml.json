@@ -7,8 +7,14 @@
   "maven_project_short_description_1": [], 
   "maven_license_url": [], 
   "maven_repository_url_1": [], 
+  "maven_issue_url": [], 
+  "maven_dependency_version": [
+    "${itextpdf-itext-paulo-version}", 
+    "${itext-itext-xml-version}"
+  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [], 
   "maven_repository_url": [], 
   "maven_distribution_management_repository_url": [], 
   "maven_scm_connection": [
@@ -35,6 +41,7 @@
   "maven_component_group_id": [
     "com.idega.block.addon"
   ], 
+  "maven_contributor_email": [], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [
     "scm:cvs:ext:idegaweb@code.idega.com:/idega/cvs:com.idega.block.addon/com.idega.block.contract/"
@@ -45,6 +52,13 @@
     "Pall Helgason", 
     "Eirikur Sveinn Hrafnsson", 
     "Thorhallur Helgason"
+  ], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [
+    "com.idega.core", 
+    "com.idega.block.media", 
+    "itext-paulo", 
+    "itext-xml"
   ], 
   "maven_license": [], 
   "maven_component_packaging": [
@@ -63,10 +77,18 @@
   "maven_distribution_management_directory_1": [], 
   "maven_organization_url": [], 
   "maven_repository_id": [], 
+  "maven_developer_organization": [
+    "idega software", 
+    "idega software", 
+    "idega software", 
+    "idega software"
+  ], 
   "maven_project_description": [
     "Contract"
   ], 
   "maven_repository_connection_1": [], 
+  "maven_dependency_scope": [], 
+  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "idegaWeb Contract Block"

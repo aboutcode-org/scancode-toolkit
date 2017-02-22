@@ -11,8 +11,19 @@
     "LICENSE.txt"
   ], 
   "maven_repository_url_1": [], 
+  "maven_issue_url": [], 
+  "maven_dependency_version": [
+    "2.0.4", 
+    "2.0.4", 
+    "2.0.4", 
+    "1.0-alpha-8", 
+    "1.2.0"
+  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [
+    "Detlef Pleiss"
+  ], 
   "maven_repository_url": [], 
   "maven_distribution_management_repository_url": [], 
   "maven_scm_connection": [
@@ -39,6 +50,9 @@
   "maven_component_group_id": [
     "org.codehaus.mojo"
   ], 
+  "maven_contributor_email": [
+    "d.pleiss@comundus.com"
+  ], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [
     "scm:svn:https://svn.codehaus.org/mojo/tags/findbugs-maven-plugin-1.1.1"
@@ -47,6 +61,16 @@
   "maven_developer_name": [
     "Cyrill Ruettimann", 
     "Garvin LeClaire"
+  ], 
+  "maven_contributor_organization": [
+    "comundus GmbH"
+  ], 
+  "maven_dependency": [
+    "maven-artifact", 
+    "maven-reporting-impl", 
+    "maven-reporting-api", 
+    "doxia-core", 
+    "findbugs"
   ], 
   "maven_license": [
     "MIT"
@@ -71,10 +95,15 @@
     "http://www.codehaus.org"
   ], 
   "maven_repository_id": [], 
+  "maven_developer_organization": [], 
   "maven_project_description": [
     "This Plug-In generates reports based on the FindBugs Library"
   ], 
   "maven_repository_connection_1": [], 
+  "maven_dependency_scope": [], 
+  "maven_license_name": [
+    "MIT"
+  ], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "Maven FindBugs PlugIn"

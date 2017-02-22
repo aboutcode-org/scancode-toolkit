@@ -7,8 +7,23 @@
   "maven_project_short_description_1": [], 
   "maven_license_url": [], 
   "maven_repository_url_1": [], 
+  "maven_issue_url": [], 
+  "maven_dependency_version": [
+    "${flex-mojos.version}", 
+    "1.0-SNAPSHOT", 
+    "1.0-SNAPSHOT", 
+    "${flex.sdk.version}", 
+    "${flex.sdk.version}", 
+    "${cairngorm.version}", 
+    "${cairngorm.version}", 
+    "${lcds.version}", 
+    "${lcds.version}", 
+    "${flexUnit.version}", 
+    "${flexUnit.version}"
+  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [], 
   "maven_repository_url": [], 
   "maven_distribution_management_repository_url": [], 
   "maven_scm_connection": [], 
@@ -31,10 +46,25 @@
   "maven_component_group_id": [
     "com.adobe.ac.samples.lcds"
   ], 
+  "maven_contributor_email": [], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [], 
   "maven_component_extend_1": [], 
   "maven_developer_name": [], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [
+    "testing-support", 
+    "blazeds_service_config", 
+    "flex_remoted_objects", 
+    "compiler", 
+    "flex-framework", 
+    "cairngorm", 
+    "cairngorm-enterprise", 
+    "fds", 
+    "fds", 
+    "flexunit", 
+    "flexunit-optional"
+  ], 
   "maven_license": [], 
   "maven_component_packaging": [
     "swf"
@@ -47,10 +77,13 @@
   "maven_distribution_management_directory_1": [], 
   "maven_organization_url": [], 
   "maven_repository_id": [], 
+  "maven_developer_organization": [], 
   "maven_project_description": [
     "This project hold the flex (blazeds enabled) flex front-end.\n        Its architecture is based on adobe consulting mvn framework: cairngorm."
   ], 
   "maven_repository_connection_1": [], 
+  "maven_dependency_scope": [], 
+  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "com.adobe.ac.samples.lcds custom flex_app"

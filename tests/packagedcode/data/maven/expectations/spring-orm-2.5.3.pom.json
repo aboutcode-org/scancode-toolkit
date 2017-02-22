@@ -11,8 +11,28 @@
     "http://www.apache.org/licenses/LICENSE-2.0.txt"
   ], 
   "maven_repository_url_1": [], 
+  "maven_issue_url": [], 
+  "maven_dependency_version": [
+    "1.0", 
+    "1.1.1", 
+    "2.41", 
+    "10.1.3", 
+    "2.0", 
+    "1.0", 
+    "2.3.0", 
+    "3.2.6.ga", 
+    "3.3.1.ga", 
+    "2.5.3", 
+    "2.5.3", 
+    "2.5.3", 
+    "2.5.3", 
+    "2.5.3", 
+    "2.5.3", 
+    "2.5.3"
+  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [], 
   "maven_repository_url": [], 
   "maven_distribution_management_repository_url": [
     "file:///Users/benhale/development/public/repos/repo"
@@ -37,12 +57,32 @@
   "maven_component_group_id": [
     "org.springframework"
   ], 
+  "maven_contributor_email": [], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [
     "scm:cvs:ext:username@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring"
   ], 
   "maven_component_extend_1": [], 
   "maven_developer_name": [], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [
+    "aopalliance", 
+    "commons-logging", 
+    "toplink-essentials", 
+    "toplink", 
+    "jdo2-api", 
+    "persistence-api", 
+    "ibatis-sqlmap", 
+    "hibernate", 
+    "hibernate-entitymanager", 
+    "spring-aop", 
+    "spring-beans", 
+    "spring-context", 
+    "spring-core", 
+    "spring-jdbc", 
+    "spring-tx", 
+    "spring-web"
+  ], 
   "maven_license": [
     "The Apache Software License, Version 2.0"
   ], 
@@ -63,10 +103,15 @@
     "http://www.springframework.org/"
   ], 
   "maven_repository_id": [], 
+  "maven_developer_organization": [], 
   "maven_project_description": [
     "Spring Framework: ORM"
   ], 
   "maven_repository_connection_1": [], 
+  "maven_dependency_scope": [], 
+  "maven_license_name": [
+    "The Apache Software License, Version 2.0"
+  ], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "Spring Framework: ORM"

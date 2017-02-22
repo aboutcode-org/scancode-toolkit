@@ -11,8 +11,11 @@
     "http://www.gnu.org/licenses/lgpl.html"
   ], 
   "maven_repository_url_1": [], 
+  "maven_issue_url": [], 
+  "maven_dependency_version": [], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [], 
   "maven_repository_url": [], 
   "maven_distribution_management_repository_url": [], 
   "maven_scm_connection": [
@@ -39,12 +42,21 @@
   "maven_component_group_id": [
     "ch.qos.logback"
   ], 
+  "maven_contributor_email": [], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [
     "https://svn.qos.ch/repos/logback/access/trunk/"
   ], 
   "maven_component_extend_1": [], 
   "maven_developer_name": [], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [
+    "logback-core", 
+    "catalina", 
+    "jetty", 
+    "resin", 
+    "servlet-api-2.5"
+  ], 
   "maven_license": [
     "GNU Lesser General Public License"
   ], 
@@ -59,8 +71,13 @@
   "maven_distribution_management_directory_1": [], 
   "maven_organization_url": [], 
   "maven_repository_id": [], 
+  "maven_developer_organization": [], 
   "maven_project_description": [], 
   "maven_repository_connection_1": [], 
+  "maven_dependency_scope": [], 
+  "maven_license_name": [
+    "GNU Lesser General Public License"
+  ], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "Logback Access Module"

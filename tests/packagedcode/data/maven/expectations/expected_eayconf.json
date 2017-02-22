@@ -9,8 +9,32 @@
   "maven_project_short_description_1": [], 
   "maven_license_url": [], 
   "maven_repository_url_1": [], 
+  "maven_issue_url": [
+    "https://sourceforge.net/tracker/?group_id=131552&atid=721404"
+  ], 
+  "maven_dependency_version": [
+    "1.2.8", 
+    "2.3", 
+    "1.1", 
+    "1.1", 
+    "3.1", 
+    "2.0", 
+    "1.4", 
+    "1.0.4", 
+    "1.6", 
+    "2.2.1", 
+    "2.0.2", 
+    "1.2.1", 
+    "3.8.1", 
+    "1.7.0", 
+    "1.7.0", 
+    "1.2.1", 
+    "2.1.1", 
+    "2.1.1"
+  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [], 
   "maven_repository_url": [], 
   "maven_distribution_management_repository_url": [
     "file:///www/easyconf/builds/"
@@ -39,6 +63,7 @@
   "maven_component_group_id": [
     "easyconf"
   ], 
+  "maven_contributor_email": [], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [
     "scm:cvs:ext:jferrergerminus@cvs.sourceforge.net:/cvsroot/easyconf:easyconf"
@@ -49,6 +74,27 @@
     "Jes\u00fas Jaimez", 
     "Ismael Ferrer", 
     "\u00c3?lvaro Gonz\u00c3\u00a1lez"
+  ], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [
+    "log4j", 
+    "servletapi", 
+    "struts", 
+    "commons-configuration", 
+    "commons-collections", 
+    "commons-lang", 
+    "dom4j", 
+    "commons-logging", 
+    "commons-digester", 
+    "xerces", 
+    "xml-apis", 
+    "xdoclet", 
+    "junit", 
+    "commons-beanutils-core", 
+    "commons-beanutils-bean-collections", 
+    "xdoclet-web-module", 
+    "mx4j-jmx", 
+    "mx4j-impl"
   ], 
   "maven_license": [], 
   "maven_component_packaging": [], 
@@ -68,10 +114,17 @@
     "http://www.sourceforge.net/projects/easyconf"
   ], 
   "maven_repository_id": [], 
+  "maven_developer_organization": [
+    "Germinus XXI", 
+    "Germinus XXI", 
+    "Germinus XXI"
+  ], 
   "maven_project_description": [
     "EasyConf is a library to access configuration of software components and applications. \n     It defines simple conventions to make it easier to use. It was born in a portlets-based \n     portal and has several features useful for this and similar environments."
   ], 
   "maven_repository_connection_1": [], 
+  "maven_dependency_scope": [], 
+  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "Easyconf library"

@@ -11,8 +11,34 @@
     "http://www.apache.org/licenses/LICENSE-2.0.txt"
   ], 
   "maven_repository_url_1": [], 
+  "maven_issue_url": [], 
+  "maven_dependency_version": [
+    "2.2", 
+    "2.2", 
+    "1.1.1", 
+    "2.0.7", 
+    "2.3.12", 
+    "2.0.2", 
+    "2.0", 
+    "1.1.0", 
+    "2.4", 
+    "2.6.6", 
+    "2.0.5", 
+    "2.0.5", 
+    "2.0.5", 
+    "3.0.1", 
+    "1.5", 
+    "1.4", 
+    "1.4", 
+    "2.5.3", 
+    "2.5.3", 
+    "2.5.3", 
+    "2.5.3", 
+    "2.5.3"
+  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [], 
   "maven_repository_url": [], 
   "maven_distribution_management_repository_url": [
     "file:///Users/benhale/development/public/repos/repo"
@@ -37,12 +63,38 @@
   "maven_component_group_id": [
     "org.springframework"
   ], 
+  "maven_contributor_email": [], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [
     "scm:cvs:ext:username@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring"
   ], 
   "maven_component_extend_1": [], 
   "maven_developer_name": [], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [
+    "commons-attributes-api", 
+    "commons-attributes-compiler", 
+    "commons-logging", 
+    "itext", 
+    "freemarker", 
+    "jasperreports", 
+    "jsp-api", 
+    "jstl", 
+    "servlet-api", 
+    "jxl", 
+    "tiles-api", 
+    "tiles-core", 
+    "tiles-jsp", 
+    "poi", 
+    "velocity", 
+    "velocity-tools-generic", 
+    "velocity-tools-view", 
+    "spring-beans", 
+    "spring-context", 
+    "spring-context-support", 
+    "spring-core", 
+    "spring-web"
+  ], 
   "maven_license": [
     "The Apache Software License, Version 2.0"
   ], 
@@ -63,10 +115,15 @@
     "http://www.springframework.org/"
   ], 
   "maven_repository_id": [], 
+  "maven_developer_organization": [], 
   "maven_project_description": [
     "Spring Framework: Web MVC"
   ], 
   "maven_repository_connection_1": [], 
+  "maven_dependency_scope": [], 
+  "maven_license_name": [
+    "The Apache Software License, Version 2.0"
+  ], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "Spring Framework: Web MVC"

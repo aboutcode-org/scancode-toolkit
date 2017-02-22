@@ -7,10 +7,19 @@
   "maven_project_short_description_1": [], 
   "maven_license_url": [], 
   "maven_repository_url_1": [], 
+  "maven_issue_url": [], 
+  "maven_dependency_version": [
+    "2.0.4-SNAPSHOT", 
+    "2.0.5-SNAPSHOT", 
+    "2.0.5-SNAPSHOT", 
+    "0.0.2-SNAPSHOT", 
+    "3.8.1"
+  ], 
   "maven_repository_name": [
     "VSGC internal repository"
   ], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [], 
   "maven_repository_url": [
     "http://zam904.zam.kfa-juelich.de/maven"
   ], 
@@ -33,10 +42,19 @@
   "maven_component_group_id": [
     "de.fzj.unicore.rcp"
   ], 
+  "maven_contributor_email": [], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [], 
   "maven_component_extend_1": [], 
   "maven_developer_name": [], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [
+    "gpe-clients-all", 
+    "gpe-gridbean-api", 
+    "gpe-utils", 
+    "gpe-gridbeans-swt", 
+    "junit"
+  ], 
   "maven_license": [], 
   "maven_component_packaging": [
     "jar"
@@ -51,8 +69,11 @@
   "maven_repository_id": [
     "vsgc-public"
   ], 
+  "maven_developer_organization": [], 
   "maven_project_description": [], 
   "maven_repository_connection_1": [], 
+  "maven_dependency_scope": [], 
+  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "Eclipse Sequence Plugin"
