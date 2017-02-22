@@ -15,12 +15,12 @@
       "mime_type": "text/plain", 
       "file_type": "UTF-8 Unicode text, with no line terminators", 
       "programming_language": "C", 
-      "is_binary": null, 
+      "is_binary": false, 
       "is_text": true, 
-      "is_archive": null, 
-      "is_media": null, 
+      "is_archive": false, 
+      "is_media": false, 
       "is_source": true, 
-      "is_script": null, 
+      "is_script": false, 
       "scan_errors": [], 
       "copyrights": [
         {

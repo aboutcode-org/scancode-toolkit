@@ -183,12 +183,12 @@ def get_file_infos(location, as_list=True):
     infos['mime_type'] = is_file and T.mimetype_file or None
     infos['file_type'] = is_file and T.filetype_file or None
     infos['programming_language'] = is_file and T.programming_language or None
-    infos['is_binary'] = is_file and T.is_binary or None
-    infos['is_text'] = is_file and T.is_text or None
-    infos['is_archive'] = is_file and T.is_archive or None
-    infos['is_media'] = is_file and T.is_media or None
-    infos['is_source'] = is_file and T.is_source or None
-    infos['is_script'] = is_file and T.is_script or None
+    infos['is_binary'] = bool(is_file and T.is_binary)
+    infos['is_text'] = bool(is_file and T.is_text)
+    infos['is_archive'] = bool(is_file and T.is_archive)
+    infos['is_media'] = bool(is_file and T.is_media)
+    infos['is_source'] = bool(is_file and T.is_source)
+    infos['is_script'] = bool(is_file and T.is_script)
 
     if as_list:
         return [infos]
@@ -213,12 +213,12 @@ def _empty_file_infos():
     infos['mime_type'] = None
     infos['file_type'] = None
     infos['programming_language'] = None
-    infos['is_binary'] = None
-    infos['is_text'] = None
-    infos['is_archive'] = None
-    infos['is_media'] = None
-    infos['is_source'] = None
-    infos['is_script'] = None
+    infos['is_binary'] = False
+    infos['is_text'] = False
+    infos['is_archive'] = False
+    infos['is_media'] = False
+    infos['is_source'] = False
+    infos['is_script'] = False
     return infos
 
 
