@@ -427,15 +427,12 @@ def test_scan_can_run_from_other_directory():
     scan_cmd = os.path.join(scancode.root_dir, 'scancode')
     work_dir = os.path.dirname(result_file)
     rc, sop, ser = execute(scan_cmd, ['-ci', test_file, result_file], cwd=work_dir)    
-    try:
-        assert rc == 0
-    except:
+    if rc != 0:
         print()
         print('stdout:')
         print(sop)
         print()
         print('stderr:')
         print(ser)
-        raise
+    assert rc == 0
     check_scan(test_env.get_test_loc(expected_file), result_file, strip_dates=True, regen=False)
-
