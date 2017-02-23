@@ -1,7 +1,6 @@
-about_resource: unicodecsv-0.9.4-py2-none-any.whl
-version: 0.9.4
-download_url: https://pypi.python.org/packages/source/u/unicodecsv/unicodecsv-0.9.4.tar.gz#md5=344fa55f299ba198cb73db48546002fd
-
+about_resource: unicodecsv-0.14.1-py2-none-any.whl
+version: 0.14.1
+download_url: https://pypi.python.org/packages/source/u/unicodecsv/unicodecsv-0.14.1.tar.gz#md5=c18ffe8ded29a4f429224877b2b34252
 name: unicodecsv
 home_url: https://github.com/jdunck/python-unicodecsv
 owner: Jeremy Dunck
