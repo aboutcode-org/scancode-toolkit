@@ -137,7 +137,7 @@ def sha512(location):
     return checksum(location, bitsize=512, base64=False)
 
 
-def multi_checksums(location, checksum_names=('md5', 'sha1', 'sha256')):
+def multi_checksums(location, checksum_names=('md5', 'sha1', 'sha256', 'sha512')):
     """
     Return a mapping of hexdigest checksums keyed by checksum name from the content
     of the file at `location`. Use the `checksum_names` list of checksum names.

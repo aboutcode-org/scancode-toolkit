@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -114,7 +114,7 @@ class TestHash(FileBasedTesting):
             ('sha1', '34ac5465d48a9b04fc275f09bc2230660df8f4f7'),
             ('sha256', '1b598db6fee8f1ec7bb919c0adf68956f3d20af8c9934a9cf2db52e1347efd35'),
         ])
-        result = multi_checksums(test_file)
+        result = multi_checksums(test_file, 'md5 sha1 sha256'.split())
         assert expected == result
 
     def test_multi_checksums_custom(self):
@@ -125,3 +125,24 @@ class TestHash(FileBasedTesting):
         ])
         assert expected == result
 
+    def test_multi_checksums_shattered1(self):
+        test_file = self.get_test_loc('hash/sha1-collision/shattered-1.pdf')
+        expected = OrderedDict([
+            ('md5', 'ee4aa52b139d925f8d8884402b0a750c'), 
+            ('sha1', '38762cf7f55934b34d179ae6a4c80cadccbb7f0a'), 
+            ('sha256', '2bb787a73e37352f92383abe7e2902936d1059ad9f1ba6daaa9c1e58ee6970d0'), 
+            ('sha512', '3c19b2cbcf72f7f5b252ea31677b8f2323d6119e49bcc0fb55931d00132385f1e749bb24cbd68c04ac826ae8421802825d3587fe185abf709669bb9693f6b416')
+        ])
+        result = multi_checksums(test_file)
+        assert expected == result
+
+    def test_multi_checksums_shattered2(self):
+        test_file = self.get_test_loc('hash/sha1-collision/shattered-2.pdf')
+        expected = OrderedDict([
+            ('md5', '5bd9d8cabc46041579a311230539b8d1'), 
+            ('sha1', '38762cf7f55934b34d179ae6a4c80cadccbb7f0a'), 
+            ('sha256', 'd4488775d29bdef7993367d541064dbdda50d383f89f0aa13a6ff2e0894ba5ff'), 
+            ('sha512', 'f39a04842e4b28e04558496beb7cb84654ded9c00b2f873c3ef64f9dfdbc760cd0273b816858ba5b203c0dd71af8b65d6a0c1032e00e48ace0b4705eedcc1bab')
+        ])
+        result = multi_checksums(test_file)
+        assert expected == result
