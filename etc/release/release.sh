@@ -33,10 +33,9 @@ echo "  RELEASE: Building release archives..."
 # build a zip and tar.bz2
 bin/python setup.py --quiet release
 
-
-# Restoring initial dev setup and config...
-cp etc/release/MANIFEST.in.dev MANIFEST.in
-cp etc/release/setup.cfg.dev setup.cfg
+# restore dev manifests
+mv MANIFEST.in.dev MANIFEST.in
+mv setup.cfg.dev setup.cfg
 
 
 function test_scan {
@@ -78,9 +77,6 @@ test_scan gz "tar -xf"
 test_scan bz2 "tar -xf"
 test_scan zip "unzip -q"
 
-# restore dev manifests
-mv MANIFEST.in.dev MANIFEST.in 
-mv setup.cfg.dev setup.cfg 
 
 echo "###  RELEASE is ready for publishing ###"
 
