@@ -37,7 +37,7 @@ from commoncode.testcase import FileBasedTesting
 import json2csv
 
 
-def load_csv(location):
+def load_csv(location, ignore_date=False):
     """
     Load a CSV file at location and return a tuple of (field names, list of rows as
     mappings field->value)
@@ -49,7 +49,7 @@ def load_csv(location):
         return fields, values
 
 
-def check_csvs(result_file, expected_file, regen=False):
+def check_csvs(result_file, expected_file, ignore_date=False, regen=False):
     """
     Load and compare two CSVs.
     """
@@ -61,6 +61,11 @@ def check_csvs(result_file, expected_file, regen=False):
     assert expected_fields == result_fields
     # then check results line by line for more compact results
     for exp, res in zip(expected,results):
+        if ignore_date:
+            if 'date' in exp:
+                del exp['date']
+            if 'date' in res:
+                del res['date']
         assert exp == res
 
 
@@ -191,3 +196,22 @@ class TestJson2CSV(FileBasedTesting):
         expected = self.get_test_loc('json2csv/package_license_value_null.json-expected')
         expected = json.load(codecs.open(expected, encoding='utf-8'), object_pairs_hook=OrderedDict)
         assert expected == result
+
+
+class TestJson2CSVWithLiveScans(FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'testdata')
+
+    def test_can_process_scan_from_json_scan(self):
+        import scancode
+        from commoncode.command import execute
+        test_dir = self.get_test_loc('livescan/scan')
+        json_file = self.get_temp_file('json')
+        scan_cmd = os.path.join(scancode.root_dir, 'scancode')
+        rc, _stdout, _stderr = execute(scan_cmd, 
+            ['-clip', '--email', '--url', '--format', 'json',test_dir, json_file])    
+        assert rc ==0
+        result_file = self.get_temp_file('.csv')
+        with open(result_file, 'wb') as rf:
+            json2csv.json_scan_to_csv(json_file, rf)
+        expected_file = self.get_test_loc('livescan/expected.csv')
+        check_csvs(result_file, expected_file, ignore_date=True)

@@ -99,6 +99,7 @@ def flatten_scan(scan):
 
         file_info = OrderedDict()
         file_info['Resource'] = path
+        # info are NOT lists
         info_details = ((k, v) for k, v in scanned_file.items() if k != 'path' and not isinstance(v, list))
         file_info.update(info_details)
         # Scan errors are joined in a single multi-line value
