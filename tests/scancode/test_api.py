@@ -49,6 +49,7 @@ class TestAPI(FileBasedTesting):
             _cpickled = cPickle.dumps(package)
 
     def test_get_file_infos_has_no_nulls(self):
+        # note the test file is EMPTY on purpose to generate all False is_* flags 
         test_dir = self.get_test_loc('api/info')
         info = api.get_file_infos(test_dir, as_list=False)
         is_key_values = [v for k, v in info.items() if k.startswith('is_')]
