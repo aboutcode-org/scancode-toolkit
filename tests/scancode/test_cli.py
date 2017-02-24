@@ -121,7 +121,7 @@ def test_scancode_skip_vcs_files_and_dirs_by_default(monkeypatch):
     test_dir = test_env.extract_test_tar('ignore/vcs.tgz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['--copyright', test_dir, result_file], catch_exceptions=True)
+    result = runner.invoke(cli.scancode, ['--copyright', '--strip-root', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     scan_result = _load_json_result(result_file)
     # a single test.tst file and its directory that is not a VCS file should be listed
@@ -153,10 +153,21 @@ def test_scan_info_does_collect_infos(monkeypatch):
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['--info', test_dir, result_file], catch_exceptions=True)
+    result = runner.invoke(cli.scancode, ['--info', '--strip-root', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_scan(test_env.get_test_loc('info/basic.expected.json'), result_file)
+
+
+def test_scan_info_does_collect_infos_with_root(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.extract_test_tar('info/basic.tgz')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['--info', test_dir, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    check_scan(test_env.get_test_loc('info/basic.rooted.expected.json'), result_file, regen=False)
 
 
 def test_scan_info_license_copyrights(monkeypatch):
@@ -164,10 +175,21 @@ def test_scan_info_license_copyrights(monkeypatch):
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright', test_dir, result_file], catch_exceptions=True)
+    result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright', '--strip-root', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_scan(test_env.get_test_loc('info/all.expected.json'), result_file)
+
+
+def test_scan_noinfo_license_copyrights_with_root(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.extract_test_tar('info/basic.tgz')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['--email', '--url', '--license', '--copyright', test_dir, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    check_scan(test_env.get_test_loc('info/all.rooted.expected.json'), result_file, regen=False)
 
 
 def test_scan_email_url_info(monkeypatch):
@@ -175,7 +197,7 @@ def test_scan_email_url_info(monkeypatch):
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['--email', '--url', '--info', test_dir, result_file], catch_exceptions=True)
+    result = runner.invoke(cli.scancode, ['--email', '--url', '--info', '--strip-root', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_scan(test_env.get_test_loc('info/email_url_info.expected.json'), result_file)
@@ -186,7 +208,7 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     runner = CliRunner()
     result_file = test_env.get_temp_file('test.json')
-    result = runner.invoke(cli.scancode, [ '--copyright', test_file, result_file], catch_exceptions=True)
+    result = runner.invoke(cli.scancode, [ '--copyright', '--strip-root', test_file, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file)
@@ -275,7 +297,7 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
 
     result = runner.invoke(
         cli.scancode,
-        [ '--copyright', '--license', '--processes', '2', '--timeout', '1', '--format', 'json', test_dir, result_file],
+        [ '--copyright', '--license', '--processes', '2', '--timeout', '1', '--strip-root', '--format', 'json', test_dir, result_file],
         catch_exceptions=True)
 
     assert result.exit_code == 0
@@ -299,7 +321,7 @@ def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
 
     result = runner.invoke(
         cli.scancode,
-        [ '--copyright', '--license', '--processes', '2', '--max-memory', '1', '--format', 'json', test_dir, result_file],
+        [ '--copyright', '--license', '--processes', '2', '--max-memory', '1', '--strip-root', '--format', 'json', test_dir, result_file],
         catch_exceptions=True,
     )
 
@@ -321,7 +343,7 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths(monkeypatch):
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
     result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright',
-                                          '--package', '--email', '--url', test_dir , result_file], catch_exceptions=True)
+                                          '--package', '--email', '--url', '--strip-root', test_dir , result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
@@ -384,7 +406,7 @@ def test_scan_can_return_matched_license_text(monkeypatch):
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
 
-    result = runner.invoke(cli.scancode, ['--license', '--license-text', test_file, result_file], catch_exceptions=True)
+    result = runner.invoke(cli.scancode, ['--license', '--license-text', '--strip-root', test_file, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     check_scan(test_env.get_test_loc(expected_file), result_file, regen=False)
 
@@ -395,7 +417,7 @@ def test_scan_can_handle_weird_file_names(monkeypatch):
     test_dir = test_env.extract_test_tar('weird_file_name/weird_file_name.tar.gz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['-c', '-i', test_dir, result_file], catch_exceptions=True)
+    result = runner.invoke(cli.scancode, ['-c', '-i', '--strip-root', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert "KeyError: 'sha1'" not in result.output
     assert 'Scanning done' in result.output
@@ -420,7 +442,7 @@ def test_scan_can_run_from_other_directory():
     result_file = test_env.get_temp_file('json')
     scan_cmd = os.path.join(scancode.root_dir, 'scancode')
     work_dir = os.path.dirname(result_file)
-    rc, stdout, stderr = execute(scan_cmd, ['-ci', test_file, result_file], cwd=work_dir)    
+    rc, stdout, stderr = execute(scan_cmd, ['-ci', '--strip-root', test_file, result_file], cwd=work_dir)    
     if rc != 0:
         print()
         print('stdout:')

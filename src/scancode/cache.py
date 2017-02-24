@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -246,7 +246,7 @@ class ScanFileCache(object):
             with open(scan_path, 'rb') as cs:
                 return json.load(cs, object_pairs_hook=OrderedDict)
 
-    def iterate(self, scan_names):
+    def iterate(self, scan_names, root_dir=None):
         """
         Yield scan data for all cached scans e.g. the whole cache given a list of
         scan names.
@@ -259,19 +259,25 @@ class ScanFileCache(object):
                 path = file_log.rstrip('\n')
                 file_info = self.get_info(path)
 
+                if root_dir:
+                    rooted_path = posixpath.join(root_dir, path)
+                else:
+                    rooted_path = path
+                logger_debug('iterate:', 'rooted_path:', rooted_path)
+
                 # rare but possible corner case
                 if file_info is None:
                     no_info = ('ERROR: file info unavailable in cache: '
                                'This is either a bug or processing was aborted with CTRL-C.')
-                    scan_result = OrderedDict(path=path)
+                    scan_result = OrderedDict(path=rooted_path)
                     scan_result['scan_errors'] = [no_info]
                     if TRACE:
-                        logger_debug('iterate:', 'scan_result:', scan_result, 'for path:', path, '\n')
+                        logger_debug('iterate:', 'scan_result:', scan_result, 'for path:', rooted_path, '\n')
                     yield scan_result
                     continue
 
                 path = file_info.pop('path')
-                scan_result = OrderedDict(path=path)
+                scan_result = OrderedDict(path=rooted_path)
 
                 if 'infos' in scan_names:
                     # infos is always collected but only returned if requested
@@ -296,7 +302,7 @@ class ScanFileCache(object):
                         scan_result.update(scan_details)
 
                 if TRACE:
-                    logger_debug('iterate:', 'scan_result:', scan_result, 'for path:', path, '\n')
+                    logger_debug('iterate:', 'scan_result:', scan_result, 'for path:', rooted_path, '\n')
                 yield scan_result
 
     def clear(self, *args):

@@ -81,15 +81,15 @@ Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 notice_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'NOTICE')
 notice_text = open(notice_path).read()
- 
+
 delimiter = '\n\n\n'
 [notice_text, extra_notice_text] = notice_text.split(delimiter, 1)
 extra_notice_text = delimiter + extra_notice_text
- 
+
 delimiter = '\n\n  '
 [notice_text, acknowledgment_text] = notice_text.split(delimiter, 1)
 acknowledgment_text = delimiter + acknowledgment_text
- 
+
 notice = acknowledgment_text.strip().replace('  ', '')
 
 
@@ -208,6 +208,9 @@ def validate_formats(ctx, param, value):
               help='Include the detected licenses matched text. Has no effect unless --license is requested.')
 @click.option('--only-findings', is_flag=True, default=False,
               help='Only return files or directories with findings for the requested scans. Files without findings are omitted.')
+@click.option('--strip-root', is_flag=True, default=False,
+              help='Strip the root directory segment of all paths. The default is to always '
+                   'include the last directory segment of the scanned path such that all paths have a common root directory.')
 
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
               help=('Set <output_file> format <style> to one of the standard formats: %s '
@@ -230,7 +233,7 @@ def scancode(ctx,
              input, output_file,
              copyright, license, package,
              email, url, info,
-             license_score, license_text, only_findings,
+             license_score, license_text, only_findings, strip_root,
              format, verbose, quiet, processes,
              diag, timeout, max_memory,
              *args, **kwargs):
@@ -275,6 +278,7 @@ def scancode(ctx,
     scanners = OrderedDict(zip(possible_scans.keys(), zip(possible_scans.values(), scan_functions)))
 
     scans_cache_class = get_scans_cache_class()
+
     try:
         files_count, results = scan(input_path=input,
                                     scanners=scanners,
@@ -286,10 +290,12 @@ def scancode(ctx,
                                     timeout=timeout, max_memory=max_memory,
                                     diag=diag,
                                     scans_cache_class=scans_cache_class,
-                                    )
+                                    strip_root=strip_root)
         if not quiet:
             echo_stderr('Saving results.', fg='green')
+
         save_results(scanners, only_findings, files_count, results, format, input, output_file)
+
     finally:
         # cleanup
         cache = scans_cache_class()
@@ -306,9 +312,10 @@ def scan(input_path,
          verbose=False, quiet=False,
          processes=1, timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY,
          diag=False,
-         scans_cache_class=None):
+         scans_cache_class=None,
+         strip_root=False):
     """
-    Return a tuple of (files_count, indexing_time, scan_results) where
+    Return a tuple of (files_count, scan_results) where
     scan_results is an iterable. Run each requested scan proper: each individual file
     scan is cached on disk to free memory. Then the whole set of scans is loaded from
     the cache and streamed at the end.
@@ -432,7 +439,25 @@ def scan(input_path,
 
     # finally return an iterator on cached results
     cached_scan = scans_cache_class()
-    return files_count, cached_scan.iterate(scans)
+    root_dir = _get_root_dir(input_path, strip_root)
+    return files_count, cached_scan.iterate(scans, root_dir)
+
+
+def _get_root_dir(input_path, strip_root=False):
+    """
+    Return a root dir name or None.
+    """
+    if strip_root:
+        root_dir = None
+    else:
+        _scanned_path = os.path.abspath(os.path.normpath(os.path.expanduser(input_path)))
+        if filetype.is_dir(_scanned_path):
+            root_dir = _scanned_path
+        else:
+            root_dir = fileutils.parent_directory(_scanned_path)
+        root_dir = fileutils.file_name(root_dir)
+
+    return root_dir
 
 
 def _resource_logger(logfile_fd, resources):
@@ -575,7 +600,7 @@ def has_findings(active_scans, file_data):
     return any(file_data.get(scan_name) for scan_name in active_scans)
 
 
-def save_results(scanners, only_findings, files_count, scanned_files, format, input, output_file):
+def save_results(scanners, only_findings, files_count, results, format, input, output_file):
     """
     Save scan results to file or screen.
     """
@@ -589,11 +614,10 @@ def save_results(scanners, only_findings, files_count, scanned_files, format, in
 
         # FIXME: this is forcing all the scan results to be loaded in memory
         # and defeats lazy loading from cache
-        scanned_files = [file_data for file_data in scanned_files
-                         if has_findings(active_scans, file_data)]
+        results = [file_data for file_data in results if has_findings(active_scans, file_data)]
         # FIXME: computing len before hand will need a list and therefore need loding
         # it all aheaed of time
-        files_count = len(scanned_files)
+        files_count = len(results)
 
     # note: in tests, sys.stdout is not used, but some io wrapper with no name
     # attributes
@@ -609,7 +633,7 @@ def save_results(scanners, only_findings, files_count, scanned_files, format, in
         if not os.path.isfile(format):
             echo_stderr('\nInvalid template passed.', fg='red')
         else:
-            for template_chunk in as_template(scanned_files, template=format):
+            for template_chunk in as_template(results, template=format):
                 try:
                     output_file.write(template_chunk)
                 except Exception as e:
@@ -619,4 +643,4 @@ def save_results(scanners, only_findings, files_count, scanned_files, format, in
                     raise e
         return
 
-    write_formatted_output(scanners, files_count, version, notice, scanned_files, format, input, output_file, echo_stderr)
+    write_formatted_output(scanners, files_count, version, notice, results, format, input, output_file, echo_stderr)
