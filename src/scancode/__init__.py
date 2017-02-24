@@ -45,11 +45,9 @@ if not exists(scans_cache_dir):
     fileutils.create_dir(scans_cache_dir)
 
 
-__version__ = '2.0.0rc3'
-
+from pkg_resources import get_distribution, DistributionNotFound
 try:
-    from setuptools_scm import get_version
-    __version__ = get_version(root=root_dir, relative_to=__file__)
-except:
-    pass
-
+    __version__ = get_distribution('scancode-toolkit').version
+except DistributionNotFound:
+    # package is not installed ??
+    __version__ = '2.0.0rc3'

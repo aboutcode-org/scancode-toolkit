@@ -5,7 +5,6 @@ wheel
 pip
 wincertstore
 six
-setuptools-scm
 
 # Self
 -e .
