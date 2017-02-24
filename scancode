@@ -102,13 +102,13 @@ _canonicalize_file_path() {
 ###################################################################################
 # Now run scancode proper
 
-SCANCODE_BIN="$(realpath "${BASH_SOURCE[0]}")"
+SCANCODE_BIN="$( realpath "${BASH_SOURCE[0]}" )"
 SCANCODE_ROOT_DIR="$( cd "$( dirname "${SCANCODE_BIN}" )" && pwd )"
 
 SCANCODE_CONFIGURED_PYTHON=$SCANCODE_ROOT_DIR/bin/python
 if [ ! -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
     echo "* Configuring ScanCode for first use..."
-    CONFIGURE_QUIET=1 $SCANCODE_ROOT_DIR/configure $SCANCODE_ROOT_DIR/etc/conf
+    CONFIGURE_QUIET=1 $SCANCODE_ROOT_DIR/configure etc/conf
 fi
 
 $SCANCODE_ROOT_DIR/bin/scancode "$@"

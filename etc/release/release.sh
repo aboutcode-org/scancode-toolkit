@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (c) 2015 nexB Inc. http://www.nexb.com/ - All rights reserved.
+# Copyright (c) 2017 nexB Inc. http://www.nexb.com/ - All rights reserved.
 #
 
 # ScanCode release script
@@ -16,8 +16,14 @@ echo "###  BUILDING ScanCode release ###"
 echo -n "  RELEASE: Cleaning previous release archives, then setup and config: "
 rm -rf dist/
 
+# backup dev manifests
+cp MANIFEST.in MANIFEST.in.dev 
+cp setup.cfg setup.cfg.dev 
+
+# install release manifests
 cp etc/release/MANIFEST.in.release MANIFEST.in
 cp etc/release/setup.cfg.release setup.cfg
+
 ./configure --clean
 export CONFIGURE_QUIET=1
 ./configure etc/conf
@@ -71,6 +77,10 @@ echo "  RELEASE: Testing..."
 test_scan gz "tar -xf"
 test_scan bz2 "tar -xf"
 test_scan zip "unzip -q"
+
+# restore dev manifests
+mv MANIFEST.in.dev MANIFEST.in 
+mv setup.cfg.dev setup.cfg 
 
 echo "###  RELEASE is ready for publishing ###"
 
