@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Copyright (c) 2015 nexB Inc. http://www.nexb.com/ - All rights reserved.
+# Copyright (c) 2017 nexB Inc. http://www.nexb.com/ - All rights reserved.
 
 """
 This script a configuration helper to select pip requirement files to install
@@ -125,13 +125,21 @@ def clean(root_dir):
     Remove cleanable directories and files in root_dir.
     """
     print('* Cleaning ...')
-    cleanable = '''build bin lib Lib include Include Scripts local
-                   django_background_task.log
-                   develop-eggs eggs parts .installed.cfg
-                   .Python
-                   .cache
-                   pip-selfcheck.json
-                   '''.split()
+    cleanable = '''
+        build
+        bin
+        lib
+        Lib
+        include
+        Include
+        Scripts
+        local
+        .Python
+        .eggs
+        .cache
+        pip-selfcheck.json
+        src/scancode_toolkit.egg-info
+    '''.split()
 
     # also clean __pycache__ if any
     cleanable.extend(find_pycache(root_dir))
