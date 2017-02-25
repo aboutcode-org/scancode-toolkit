@@ -82,19 +82,19 @@ def interruptible(func, args=(), kwargs={},
     if max_bytes:
         get_memory_in_use = psutil.Process(os.getpid()).memory_info
 
-    interval = 0.5  # second
+    interval = 0.2  # second
     try:
         while timeout > 0:
+            if max_bytes and get_memory_in_use().rss > max_bytes:
+                return False, ('ERROR: Processing interrupted: excessive memory usage '
+                               'of more than %(max_memory)dMB.' % locals())
+
             try:
                 # blocking get for interval which is a slice of the timeout
                 res = results.get(timeout=interval)
                 return True, res
             except Queue.Empty:
                 timeout -= interval
-
-            if max_bytes and get_memory_in_use().rss > max_bytes:
-                return False, ('ERROR: Processing interrupted: excessive memory usage '
-                               'of more than %(max_memory)dMB.' % locals())
 
         return False, ('ERROR: Processing interrupted: timeout after '
                        '%(timeout)d seconds.' % locals())

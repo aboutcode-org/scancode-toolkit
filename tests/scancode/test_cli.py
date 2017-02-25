@@ -293,12 +293,6 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
 def test_scan_works_with_multiple_processes_and_memory_quota(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.get_test_loc('multiprocessing', copy=True)
-    # add some random bytes to the test files to ensure that the license results will
-    # not be cached
-    import time, random
-    for tf in fileutils.file_iter(test_dir):
-        with open(tf, 'ab') as tfh:
-            tfh.write(str(time.time() + random.randint(0, 10 ** 6)))
 
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
