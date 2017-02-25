@@ -150,7 +150,7 @@ def test_scan_html_output_does_not_truncate_copyright(monkeypatch):
     test_dir = test_env.get_test_loc('do_not_truncate_copyright/scan/')
     runner = CliRunner()
     json_result_file = test_env.get_temp_file('test.json')
-    json_result = runner.invoke(cli.scancode, [ '-clip', '--format', 'json', test_dir, json_result_file], catch_exceptions=True)
+    json_result = runner.invoke(cli.scancode, [ '-clip', '--strip-root', '--format', 'json', test_dir, json_result_file], catch_exceptions=True)
     assert json_result.exit_code == 0
     assert 'Scanning done' in json_result.output
     expected_json = test_env.get_test_loc('do_not_truncate_copyright/expected.json')
@@ -158,7 +158,7 @@ def test_scan_html_output_does_not_truncate_copyright(monkeypatch):
     check_scan(test_env.get_test_loc(expected_json), json_result_file, strip_dates=True, regen=False)
 
     html_result_file = test_env.get_temp_file('test.html')
-    html_result = runner.invoke(cli.scancode, [ '-clip', '--format', 'html', '-n', '3', test_dir, html_result_file], catch_exceptions=True)
+    html_result = runner.invoke(cli.scancode, [ '-clip', '--strip-root', '--format', 'html', '-n', '3', test_dir, html_result_file], catch_exceptions=True)
     assert html_result.exit_code == 0
     assert 'Scanning done' in html_result.output
 
