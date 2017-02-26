@@ -19,7 +19,7 @@ from setuptools import setup
 version = '2.0.0rc3'
 
 
-def get_version(default=version, template='{tag}.{distance}+{commit}{dirty}'):
+def get_version(default=version, template='{tag}.{distance}.{commit}{dirty}'):
     """
     Return a version collected from git if possible or fall back to an hard-coded
     version otherwise.
@@ -30,7 +30,7 @@ def get_version(default=version, template='{tag}.{distance}+{commit}{dirty}'):
             # we are from a clean Git tag: use tag
             return tag
 
-        distance = 'dev{}'.format(distance)
+        distance = 'post{}'.format(distance)
         if dirty:
             time_stamp = get_time_stamp()
             dirty = '.dirty.' + get_time_stamp()
