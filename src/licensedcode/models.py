@@ -40,15 +40,15 @@ from os.path import join
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import file_iter
+from textcode.analysis import text_lines
 
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import licenses_data_dir
-from licensedcode import saneyaml
 from licensedcode import rules_data_dir
+from licensedcode import saneyaml
 from licensedcode.tokenize import rule_tokenizer
 from licensedcode.tokenize import query_tokenizer
-from textcode.analysis import text_lines
 
 
 """
@@ -77,11 +77,10 @@ class License(object):
         'owner',
         'homepage_url',
         'notes',
-        'versions',
-        'or_later_version',
-        'any_version',
-        'any_version_default',
-        'exception_to',
+        'is_exception',
+        'next_version',
+        'is_or_later',
+        'base_license',
         'spdx_license_key',
         'text_urls',
         'osi_url',
@@ -89,7 +88,8 @@ class License(object):
         'other_urls',
         'data_file',
         'text_file',
-        'minimum_coverage'
+        'minimum_coverage',
+        'standard_notice',
     )
 
     def __init__(self, key=None, src_dir=licenses_data_dir):
@@ -116,20 +116,15 @@ class License(object):
         self.homepage_url = ''
         self.notes = ''
 
-        # an ordered list of license keys for all the versions of this license
-        # Must be including this license key
-        self.versions = []
-
-        # True if this license allows later versions to be used
-        self.or_later_version = False
-
-        # True if this license allows any version to be used
-        self.any_version = False
-        # if any_version, what is the license key to pick by default?
-        self.any_version_default = ''
-
         # if this is a license exception, the license key this exception applies to
-        self.exception_to = ''
+        self.is_exception = False
+
+        # license key for the next version of this license if any
+        self.next_version = ''
+        # True if this license allows later versions to be used
+        self.is_or_later = False
+        # If is_or_later is True, license key for the not "or later" variant if any
+        self.base_license = ''
 
         # SPDX key for SPDX licenses
         self.spdx_license_key = ''
@@ -140,10 +135,12 @@ class License(object):
         self.faq_url = ''
         self.other_urls = []
 
+        self.minimum_coverage = 0
+        self.standard_notice = ''
+
         # data file paths and known extensions
         self.data_file = join(self.src_dir, self.key + '.yml')
         self.text_file = join(self.src_dir, self.key + '.LICENSE')
-        self.minimum_coverage = 0
 
         if src_dir:
             self.load(src_dir)
@@ -154,13 +151,6 @@ class License(object):
         License text, re-loaded on demand.
         """
         return self._read_text(self.text_file)
-
-    @property
-    def notice_text(self):
-        """
-        Notice text, re-loaded on demand.
-        """
-        return self._read_text(self.notice_file)
 
     def asdict(self):
         """
@@ -188,17 +178,16 @@ class License(object):
         if self.notes:
             data['notes'] = self.notes
 
-        if self.versions:
-            data['versions'] = self.versions
-            if self.or_later_version:
-                data['or_later_version'] = self.or_later_version
-            if self.any_version:
-                data['any_version'] = self.any_version
-            if self.any_version_default:
-                data['any_version_default'] = self.any_version_default
+        if self.is_exception:
+            data['is_exception'] = self.is_exception
 
-        if self.exception_to:
-            data['exception_to'] = self.exception_to
+        if self.next_version:
+            data['next_version'] = self.next_version
+
+        if self.is_or_later:
+            data['is_or_later'] = self.is_or_later
+            if self.base_license:
+                data['base_license'] = self.base_license
 
         if self.spdx_license_key:
             data['spdx_license_key'] = self.spdx_license_key
@@ -213,6 +202,8 @@ class License(object):
             data['other_urls'] = self.other_urls
         if self.minimum_coverage:
             data['minimum_coverage'] = int(self.minimum_coverage)
+        if self.standard_notice:
+            data['standard_notice'] = self.standard_notice
         return data
 
     def dump(self):
@@ -250,10 +241,12 @@ class License(object):
             print(e)
             print('#############################')
             raise
+
         numeric_keys = ('minimum_coverage',)
         for k, v in data.items():
             if k in numeric_keys:
                 v = int(v)
+
             setattr(self, k, v)
 
     def _read_text(self, location):
@@ -293,35 +286,13 @@ class License(object):
             if not lic.category:
                 warn('No category')
 
-            # keys consistency for exceptions and multiple versions
-            if lic.exception_to:
-                if not lic.exception_to in licenses:
-                    err('Unknown exception_to license key')
+            if lic.next_version and lic.next_version not in licenses:
+                err('License next version is unknown')
 
-            if lic.versions:
-                if not any(lic.versions):
-                    err('Empty versions list')
-                if key not in lic.versions:
-                    info('License key not in its own versions list')
-
-                for vkey in lic.versions:
-                    if  vkey not in licenses:
-                        err('Unknown license in versions. Not a lic: ' + vkey)
-
-                if lic.or_later_version or lic.any_version or lic.any_version_default:
-                    warn('No additional flags or default defined with a versions list')
-                if len(lic.versions) != len(set(lic.versions)):
-                    warn('Duplicated license keys in versions list')
-
-            if not lic.versions and (lic.or_later_version or lic.any_version or lic.any_version_default) :
-                err('Inconsistent or_later_version or any_version flag or any_version_default: no versions list')
-
-            if not lic.any_version and lic.any_version_default:
-                err('Inconsistent any_version_default: any_version flag not set')
-            if lic.any_version_default and lic.any_version_default not in licenses:
-                err('Unknown lic in any_version_default')
-            if lic.any_version_default and lic.any_version_default not in lic.versions:
-                err('Inconsistent any_version_default: not listed in versions')
+            if (lic.is_or_later and
+                lic.base_license and
+                lic.base_license not in licenses):
+                err('Base license for an "or later" license is unknown')
 
             # URLS dedupe and consistency
             if lic.text_urls and not all(lic.text_urls):

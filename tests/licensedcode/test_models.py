@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,16 +22,30 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
+from collections import OrderedDict
+import json
 import os
 
 from commoncode.testcase import FileBasedTesting
+
 from licensedcode import models
 from licensedcode import index
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+
+
+def check_json(expected, results, regen=False):
+    if regen:
+        with open(expected, 'wb') as ex:
+            json.dump(results, ex, indent=2)
+    with open(expected) as ex:
+        expected = json.load(ex, object_pairs_hook=OrderedDict)
+    assert expected == results
 
 
 class TestLicense(FileBasedTesting):
@@ -40,13 +54,10 @@ class TestLicense(FileBasedTesting):
     def test_load_license(self):
         test_dir = self.get_test_loc('models/licenses')
         lics = models.load_licenses(test_dir)
-        # one license is obsolete and not loaded
-        expected = [u'apache-2.0', u'bsd-ack-carrot2', u'w3c-docs-19990405']
-        assert expected == sorted(lics.keys())
-
-        assert all(isinstance(l, models.License) for l in lics.values())
-        # test a sample of a licenses field
-        assert '1994-2002 World Wide Web Consortium' in lics[u'w3c-docs-19990405'].text
+        # Note: one license is obsolete and not loaded. Other are various exception/version cases
+        results = sorted(l.asdict() for l in lics.values())
+        expected = self.get_test_loc('models/licenses.expected.json')
+        check_json(expected, results)
 
     def test_get_texts(self):
         test_dir = self.get_test_loc('models/licenses')
@@ -57,23 +68,44 @@ class TestLicense(FileBasedTesting):
     def test_build_rules_from_licenses(self):
         test_dir = self.get_test_loc('models/licenses')
         lics = models.load_licenses(test_dir)
-        rules = list(models.build_rules_from_licenses(lics))
-        assert 3 == len(rules)
-        for rule in rules:
-            assert 'distribut' in rule.text().lower()
+        rules = models.build_rules_from_licenses(lics)
+        results = sorted(r.asdict() for r in rules)
+        expected = self.get_test_loc('models/rules.expected.json')
+        check_json(expected, results)
 
     def test_validate_licenses(self):
         errors, warnings, infos = models.License.validate(models.get_licenses())
         assert {} == errors
         assert {} == warnings
-        assert len(infos) < 20
+
+        expected = {
+            'GLOBAL': [
+                'SPDX key: LGPL-2.1 used in multiple licenses: lgpl-2.1, lgpl-2.1-fabrice_bellard',
+                'SPDX key: GPL-1.0+ used in multiple licenses: gpl, gpl-1.0-plus',
+                'SPDX key: BSD-3-Clause used in multiple licenses: bsd-new, bsd-new-link',
+                'SPDX key: LGPL-3.0 used in multiple licenses: lgpl-3.0, lgpl-3.0-notice',
+                'SPDX key: LGPL-2.0+ used in multiple licenses: lgpl, lgpl-2.0-plus'
+            ],
+            'free-unknown': ['No license text'],
+            'generic-cla': ['No license text'],
+            'gfdl': ['No license text'],
+            'gpl': ['No license text'],
+            'gpl-2.0-classpath': ['No license text'],
+            'lgpl': ['No license text'],
+            'mpl': ['No license text'],
+            'non-commercial': ['No license text'],
+            'see-license': ['No license text'],
+            'sun-proprietary-jdk': ['No license text'],
+            'unknown': ['No license text']
+        }
+        assert expected == infos
 
 
 class TestRule(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
     def test_create_template_rule(self):
-        test_rule = models.Rule(_text=u'A one. A {{}}two. A three.')
+        test_rule = models.Rule(_text='A one. A {{}}two. A three.')
         expected = ['a', 'one', 'a', 'two', 'a', 'three']
         assert expected == list(test_rule.tokens())
         assert 6 == test_rule.length
@@ -97,7 +129,7 @@ class TestRule(FileBasedTesting):
         assert 3 == len(rules)
         assert all(isinstance(r, models.Rule) for r in rules)
         # test a sample of a licenses field
-        expected = [[u'lzma-sdk-original'], [u'gpl-2.0'], [u'oclc-2.0']]
+        expected = [['lzma-sdk-original'], ['gpl-2.0'], ['oclc-2.0']]
         assert sorted(expected) == sorted(r.licenses for r in rules)
 
     def test_template_rule_is_loaded_correctly(self):
@@ -134,17 +166,17 @@ class TestRule(FileBasedTesting):
         assert models.Rule(_text='test_text', licenses=[]).negative()
 
     def test_Thresholds(self):
-        r1_text = u'licensed under the GPL, licensed under the GPL'
+        r1_text = 'licensed under the GPL, licensed under the GPL'
         r1 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r1_text)
-        r2_text = u'licensed under the GPL, licensed under the GPL' * 10
+        r2_text = 'licensed under the GPL, licensed under the GPL' * 10
         r2 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r2_text)
         _idx = index.LicenseIndex([r1, r2])
         assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8) == r1.thresholds()
         assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4) == r2.thresholds()
 
-        r1_text = u'licensed under the GPL,{{}} licensed under the GPL'
+        r1_text = 'licensed under the GPL,{{}} licensed under the GPL'
         r1 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r1_text)
-        r2_text = u'licensed under the GPL, licensed under the GPL' * 10
+        r2_text = 'licensed under the GPL, licensed under the GPL' * 10
         r2 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r2_text)
 
         _idx = index.LicenseIndex([r1, r2])
