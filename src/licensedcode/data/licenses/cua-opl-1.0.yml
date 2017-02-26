@@ -4,9 +4,9 @@ name: CUA Office Public License 1.0
 category: Copyleft Limited
 owner: OSI - Open Source Initiative
 homepage_url: http://www.opensource.org/licenses/cuaoffice.php
+notes: |-
+    notes from SPDX:
+    This license is OSI certifified.
 spdx_license_key: CUA-OPL-1.0
-spdx_full_name: CUA Office Public License v1.0
-spdx_url: http://spdx.org/licenses/CUA-OPL-1.0
-spdx_notes: This license is OSI certifified.
 text_urls:
     - http://opensource.org/licenses/cuaoffice.php

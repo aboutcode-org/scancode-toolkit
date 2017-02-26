@@ -5,7 +5,5 @@ category: Permissive
 owner: Tcl Developer Xchange
 homepage_url: http://www.tcl.tk/software/tcltk/license.html
 spdx_license_key: TCL
-spdx_full_name: TCL/TK License
-spdx_url: http://spdx.org/licenses/TCL
 other_urls:
     - http://fedoraproject.org/wiki/Licensing/TCL

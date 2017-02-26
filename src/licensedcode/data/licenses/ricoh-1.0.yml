@@ -4,7 +4,7 @@ name: Ricoh Source Code Public License v1.0
 category: Copyleft Limited
 owner: Ricoh Global
 homepage_url: http://opensource.org/licenses/ricohpl.php
+notes: |-
+    notes from SPDX:
+    This license is OSI certified
 spdx_license_key: RSCPL
-spdx_full_name: Ricoh Source Code Public License
-spdx_url: http://spdx.org/licenses/RSCPL
-spdx_notes: This license is OSI certified

@@ -4,11 +4,10 @@ name: Academic Free License 1.1
 category: Permissive
 owner: Lawrence Rosen
 homepage_url: http://spdx.org/licenses/AFL-1.1
-spdx_license_key: AFL-1.1
-spdx_full_name: Academic Free License v1.1
-spdx_url: http://spdx.org/licenses/AFL-1.1
-spdx_notes: >-
+notes: |-
+    notes from SPDX:
     This license has been superseded by later versions.
+spdx_license_key: AFL-1.1
 text_urls:
     - http://www.opensource.org/licenses/afl-1.1.txt
 osi_url: http://web.archive.org/web/20060924134536/http://www.opensource.org/licenses/afl-1.1.txt

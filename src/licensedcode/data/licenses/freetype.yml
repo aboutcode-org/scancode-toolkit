@@ -4,10 +4,10 @@ name: FreeType Project License
 category: Permissive
 owner: FreeType Project
 homepage_url: http://www.freetype.org/license.html
+notes: |-
+    notes from SPDX:
+    This license was released 27 Jan 2006
 spdx_license_key: FTL
-spdx_full_name: Freetype Project License
-spdx_url: http://spdx.org/licenses/FTL
-spdx_notes: This license was released 27 Jan 2006
 text_urls:
     - http://www.freetype.org/FTL.TXT
 other_urls:

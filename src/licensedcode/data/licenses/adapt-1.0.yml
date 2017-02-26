@@ -4,7 +4,7 @@ name: Adaptive Public License
 category: Copyleft
 owner: OSI - Open Source Initiative
 homepage_url: http://www.opensource.org/licenses/apl1.0.php
+notes: |-
+    notes from SPDX:
+    This license is OSI certified.
 spdx_license_key: APL-1.0
-spdx_full_name: Adaptive Public License
-spdx_url: http://spdx.org/licenses/APL-1.0
-spdx_notes: This license is OSI certified.

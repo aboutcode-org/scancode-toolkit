@@ -4,8 +4,7 @@ name: OpenLDAP Public License 1.4
 category: Copyleft Limited
 owner: OpenLDAP Foundation
 homepage_url: http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=c9f95c2f3f2ffb5e0ae55fe7388af75547660941
-spdx_license_key: OLDAP-1.4
-spdx_full_name: Open LDAP Public License v1.4
-spdx_url: http://spdx.org/licenses/OLDAP-1.4
-spdx_notes: >-
+notes: |-
+    notes from SPDX:
     This license was released 18 January 1999.
+spdx_license_key: OLDAP-1.4

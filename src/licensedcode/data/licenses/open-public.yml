@@ -4,10 +4,10 @@ name: Open Public License v1.0
 category: Copyleft Limited
 owner: Lutris Technologies, Inc.
 homepage_url: http://ksoap.objectweb.org/software/license/opl.html
+notes: |-
+    notes from SPDX:
+    https://fedoraproject.org/wiki/Licensing/Open_Public_License
 spdx_license_key: OPL-1.0
-spdx_full_name: Open Public License v1.0
-spdx_url: http://spdx.org/licenses/OPL-1.0
-spdx_notes: https://fedoraproject.org/wiki/Licensing/Open_Public_License
 text_urls:
     - http://old.koalateam.com/jackaroo/OPL_1_0.TXT
 other_urls:

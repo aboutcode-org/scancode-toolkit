@@ -4,9 +4,9 @@ name: BSD-Modified
 category: Permissive
 owner: Regents of the University of California
 homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+notes: |-
+    notes from SPDX:
+    This license is OSI certified.
 spdx_license_key: BSD-3-Clause
-spdx_full_name: BSD 3-clause "New" or "Revised" License
-spdx_url: http://spdx.org/licenses/BSD-3-Clause
-spdx_notes: This license is OSI certified.
 other_urls:
     - http://framework.zend.com/license/new-bsd

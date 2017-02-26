@@ -4,9 +4,9 @@ name: PostgreSQL License
 category: Permissive
 owner: PostgreSQL
 homepage_url: http://www.postgresql.org/about/licence
+notes: |-
+    notes from SPDX:
+    This license is OSI certified.
 spdx_license_key: PostgreSQL
-spdx_full_name: PostgreSQL License
-spdx_url: http://spdx.org/licenses/PostgreSQL
-spdx_notes: This license is OSI certified.
 text_urls:
     - http://www.opensource.org/licenses/postgresql

@@ -4,12 +4,10 @@ name: GNU Affero General Public License 3.0
 category: Copyleft
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.gnu.org/licenses/agpl-3.0.html
+notes: |-
+    notes from SPDX:
+    This version was released: 19 November 2007 This license is OSI certified
 spdx_license_key: AGPL-3.0
-spdx_full_name: GNU Affero General Public License v3
-spdx_url: http://spdx.org/licenses/AGPL-3.0
-spdx_notes: |-
-    This version was released: 19 November 2007
-    This license is OSI certified
 text_urls:
     - http://www.gnu.org/licenses/agpl.txt
 osi_url: http://www.opensource.org/licenses/agpl-v3.html

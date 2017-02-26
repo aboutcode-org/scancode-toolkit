@@ -3,9 +3,7 @@ short_name: AAL
 name: Attribution Assurance License
 category: Permissive
 homepage_url: http://opensource.org/licenses/attribution.php
+notes: |-
+    notes from SPDX:
+    This version was released: 2002 This license is OSI certifified.
 spdx_license_key: AAL
-spdx_full_name: Attribution Assurance License
-spdx_url: http://spdx.org/licenses/AAL
-spdx_notes: |-
-    This version was released: 2002
-    This license is OSI certifified.

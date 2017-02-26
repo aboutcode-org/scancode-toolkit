@@ -4,10 +4,10 @@ name: wxWindows Library Licence 3.1
 category: Copyleft Limited
 owner: wxWidgets
 homepage_url: http://www.wxwidgets.org/about/newlicen.htm
+notes: |-
+    notes from SPDX:
+    This license is OSI certified.
 spdx_license_key: WXwindows
-spdx_full_name: wxWindows Library License
-spdx_url: http://spdx.org/licenses/WXwindows
-spdx_notes: This license is OSI certified.
 osi_url: http://www.opensource.org/licenses/wxwindows.php
 faq_url: http://www.wxwidgets.org/about/licence.htm
 other_urls:

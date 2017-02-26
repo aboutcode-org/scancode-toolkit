@@ -4,12 +4,10 @@ name: W3C Software Notice and License
 category: Permissive
 owner: W3C - World Wide Web Consortium
 homepage_url: http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
+notes: |-
+    notes from SPDX:
+    This license was released: 13 December 2002. This license is OSI certified.
 spdx_license_key: W3C
-spdx_full_name: W3C Software Notice and License
-spdx_url: http://spdx.org/licenses/W3C
-spdx_notes: |-
-    This license was released: 13 December 2002.
-    This license is OSI certified.
 text_urls:
     - http://www.open-xchange.com/fileadmin/downloads/W3C_SOFTWARE_NOTICE_AND_LICENSE.pdf
 other_urls:

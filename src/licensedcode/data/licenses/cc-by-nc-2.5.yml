@@ -1,14 +1,13 @@
 key: cc-by-nc-2.5
 short_name: CC-BY-NC-2.5
-name: >-
-    Creative Commons Attribution Non-Commercial 2.5
+name: Creative Commons Attribution Non-Commercial 2.5
 category: Free Restricted
 owner: Creative Commons
 homepage_url: http://creativecommons.org/licenses/by-nc/2.5/
-spdx_license_key: CC-BY-NC-2.5
-spdx_full_name: >-
-    Creative Commons Attribution Non Commercial 2.5
-spdx_url: http://spdx.org/licenses/CC-BY-NC-2.5
-spdx_notes: None
+notes: |-
+    notes from SPDX:
+    None
+spdx_license_key: >-
+    CC-BY-NC-2.5 Creative Commons Attribution Non Commercial 2.5
 text_urls:
     - http://creativecommons.org/licenses/by-nc/2.5/legalcode

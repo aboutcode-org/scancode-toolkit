@@ -1,15 +1,10 @@
 key: historical
-short_name: >-
-    Historical Permission Notice and Disclaimer
-name: >-
-    Historical Permission Notice and Disclaimer
+short_name: Historical Permission Notice and Disclaimer
+name: Historical Permission Notice and Disclaimer
 category: Permissive
 owner: OSI - Open Source Initiative
 homepage_url: http://www.opensource.org/licenses/historical.php
+notes: |-
+    notes from SPDX:
+    This license is OSI certified. This license has been voluntarily deprecated by its author.
 spdx_license_key: HPND
-spdx_full_name: >-
-    Historic Permission Notice and Disclaimer
-spdx_url: http://spdx.org/licenses/HPND
-spdx_notes: |-
-    This license is OSI certified.
-    This license has been voluntarily deprecated by its author.

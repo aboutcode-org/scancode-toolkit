@@ -4,12 +4,10 @@ name: Boost Software License 1.0
 category: Permissive
 owner: Boost
 homepage_url: http://www.boost.org/users/license.html
+notes: |-
+    notes from SPDX:
+    This version was released: 17 August 2003 This license is OSI certifified.
 spdx_license_key: BSL-1.0
-spdx_full_name: Boost Software License 1.0
-spdx_url: http://spdx.org/licenses/BSL-1.0
-spdx_notes: |-
-    This version was released: 17 August 2003
-    This license is OSI certifified.
 text_urls:
     - http://www.boost.org/LICENSE_1_0.txt
 osi_url: http://www.opensource.org/licenses/bsl1.0.html

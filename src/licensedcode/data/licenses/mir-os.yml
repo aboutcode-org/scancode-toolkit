@@ -4,10 +4,10 @@ name: MirOS License
 category: Permissive
 owner: MirOS Project
 homepage_url: https://www.mirbsd.org/MirOS-Licence
+notes: |-
+    notes from SPDX:
+    This license is OSI certified.
 spdx_license_key: MirOS
-spdx_full_name: MirOS Licence
-spdx_url: http://spdx.org/licenses/MirOS
-spdx_notes: This license is OSI certified.
 text_urls:
     - http://opensource.org/licenses/miros.html
     - https://www.mirbsd.org/about.htm#licence

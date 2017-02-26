@@ -5,8 +5,6 @@ category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.gnu.org/software/classpath/
 spdx_license_key: Classpath-exception-2.0
-spdx_full_name: Classpath exception 2.0
-spdx_url: http://spdx.org/licenses/Classpath-exception-2.0.html
 text_urls:
     - http://www.gnu.org/software/classpath/license.html
 other_urls:

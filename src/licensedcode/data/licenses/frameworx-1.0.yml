@@ -4,9 +4,7 @@ name: Frameworx Open License v1.0
 category: Copyleft Limited
 owner: Frameworx Company
 homepage_url: http://opensource.org/licenses/frameworx.php
+notes: |-
+    notes from SPDX:
+    This license is OSI certified. The url included in the license does not work. (15/10/10)
 spdx_license_key: Frameworx-1.0
-spdx_full_name: Frameworx Open License 1.0
-spdx_url: http://spdx.org/licenses/Frameworx-1.0
-spdx_notes: |-
-    This license is OSI certified.
-    The url included in the license does not work. (15/10/10)

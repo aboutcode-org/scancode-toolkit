@@ -4,7 +4,7 @@ name: NTP License
 category: Permissive
 owner: OSI - Open Source Initiative
 homepage_url: http://www.opensource.org/licenses/ntp-license.php
+notes: |-
+    notes from SPDX:
+    This license is OSI certified.
 spdx_license_key: NTP
-spdx_full_name: NTP License
-spdx_url: http://spdx.org/licenses/NTP
-spdx_notes: This license is OSI certified.

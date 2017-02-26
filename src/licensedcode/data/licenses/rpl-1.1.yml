@@ -4,8 +4,7 @@ name: Reciprocal Public License 1.1
 category: Copyleft Limited
 owner: OSI - Open Source Initiative
 homepage_url: http://opensource.org/licenses/RPL-1.1
-spdx_license_key: RPL-1.1
-spdx_full_name: Reciprocal Public License 1.1
-spdx_url: http://spdx.org/licenses/RPL-1.1
-spdx_notes: >-
+notes: |-
+    notes from SPDX:
     This license has been superseded by the Reciprocal Public License, version 1.5
+spdx_license_key: RPL-1.1

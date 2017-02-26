@@ -4,7 +4,7 @@ name: NAUMEN Public License
 category: Permissive
 owner: OSI - Open Source Initiative
 homepage_url: http://www.opensource.org/licenses/naumen.php
+notes: |-
+    notes from SPDX:
+    This license is OSI certified.
 spdx_license_key: Naumen
-spdx_full_name: Naumen Public License
-spdx_url: http://spdx.org/licenses/Naumen
-spdx_notes: This license is OSI certified.

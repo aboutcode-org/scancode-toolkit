@@ -4,7 +4,7 @@ name: LaTeX Project Public License v1.0
 category: Copyleft
 owner: LaTeX
 homepage_url: http://www.latex-project.org/lppl/lppl-1-0.txt
+notes: |-
+    notes from SPDX:
+    This license was released 1 Mar 1999
 spdx_license_key: LPPL-1.0
-spdx_full_name: LaTeX Project Public License v1.0
-spdx_url: http://spdx.org/licenses/LPPL-1.0
-spdx_notes: This license was released 1 Mar 1999

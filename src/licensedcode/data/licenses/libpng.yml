@@ -5,7 +5,5 @@ category: Permissive
 owner: libpng
 homepage_url: http://www.libpng.org/pub/png/libpng.html
 spdx_license_key: Libpng
-spdx_full_name: libpng License
-spdx_url: http://spdx.org/licenses/Libpng
 text_urls:
     - http://libpng.org/pub/png/src/libpng-LICENSE.txt

@@ -58,7 +58,7 @@ class TestLicense(FileBasedTesting):
         test_dir = self.get_test_loc('models/licenses')
         lics = models.load_licenses(test_dir)
         rules = list(models.build_rules_from_licenses(lics))
-        assert 4 == len(rules)
+        assert 3 == len(rules)
         for rule in rules:
             assert 'distribut' in rule.text().lower()
 

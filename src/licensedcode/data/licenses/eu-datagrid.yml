@@ -4,8 +4,8 @@ name: EU DataGrid Software License
 category: Permissive
 owner: DataGrid Project
 homepage_url: http://eu-datagrid.web.cern.ch/eu-datagrid/license.html
+notes: |-
+    notes from SPDX:
+    This license is OSI certified
 spdx_license_key: EUDatagrid
-spdx_full_name: EU DataGrid Software License
-spdx_url: http://spdx.org/licenses/EUDatagrid
-spdx_notes: This license is OSI certified
 osi_url: http://www.opensource.org/licenses/eudatagrid.php

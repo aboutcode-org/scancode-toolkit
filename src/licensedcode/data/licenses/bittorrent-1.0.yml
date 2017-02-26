@@ -5,8 +5,6 @@ category: Copyleft
 owner: BitTorrent, Inc.
 homepage_url: http://www.bittorrent.com/license/
 spdx_license_key: BitTorrent-1.0
-spdx_full_name: BitTorrent Open Source License v1.0
-spdx_url: https://spdx.org/licenses/BitTorrent-1.0
 text_urls:
     - http://web.archive.org/web/20050209224501/http://www.bittorrent.com/license/
     - https://spdx.org/licenses/BitTorrent-1.0.html

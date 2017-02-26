@@ -4,10 +4,8 @@ name: OpenSSL/SSLeay License
 category: Permissive
 owner: OpenSSL
 homepage_url: http://www.openssl.org/source/license.html
+notes: |-
+    notes from SPDX:
+    The OpenSSL toolkit stays under a dual license, i.e. both the conditions of the OpenSSL License and the original SSLeay license apply to the toolkit.
 spdx_license_key: OpenSSL
-spdx_full_name: OpenSSL License
-spdx_url: http://spdx.org/licenses/OpenSSL
-spdx_notes: >-
-    The OpenSSL toolkit stays under a dual license, i.e. both the conditions of the
-    OpenSSL License and the original SSLeay license apply to the toolkit.
 faq_url: http://www.openssl.org/support/faq.html

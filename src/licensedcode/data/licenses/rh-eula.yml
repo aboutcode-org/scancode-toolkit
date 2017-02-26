@@ -1,7 +1,6 @@
 key: rh-eula
 short_name: Red Hat EULA
-name: >-
-    Red Hat EULA for Enterprise Linux and Applications
+name: Red Hat EULA for Enterprise Linux and Applications
 category: Copyleft
 owner: Red Hat
 homepage_url: http://www.redhat.com/en/about/red-hat-end-user-license-agreements

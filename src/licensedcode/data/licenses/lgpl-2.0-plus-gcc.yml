@@ -1,7 +1,6 @@
 key: lgpl-2.0-plus-gcc
 short_name: LGPL 2.0 or later with GCC exception
-name: >-
-    GNU Library General Public License 2.0 or later with GCC Runtime Library exception
+name: GNU Library General Public License 2.0 or later with GCC Runtime Library exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 text_urls:

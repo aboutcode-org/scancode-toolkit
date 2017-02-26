@@ -1,8 +1,6 @@
 key: gpl-2.0-mysql-connector-odbc
-short_name: >-
-    GPL 2.0 with MySQL Connector ODBC exception
-name: >-
-    GNU General Public License 2.0 with MySQL Connector ODBC exception
+short_name: GPL 2.0 with MySQL Connector ODBC exception
+name: GNU General Public License 2.0 with MySQL Connector ODBC exception
 category: Copyleft Limited
 owner: Oracle Corporation
 homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html

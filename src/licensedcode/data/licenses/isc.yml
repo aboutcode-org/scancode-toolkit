@@ -4,10 +4,10 @@ name: ISC License
 category: Permissive
 owner: ISC - Internet Systems Consortium
 homepage_url: https://www.isc.org/downloads/software-support-policy/isc-license/
+notes: |-
+    notes from SPDX:
+    This license is OSI certified.
 spdx_license_key: ISC
-spdx_full_name: ISC License
-spdx_url: http://spdx.org/licenses/ISC
-spdx_notes: This license is OSI certified.
 osi_url: http://opensource.org/licenses/isc-license.txt
 other_urls:
     - https://www.isc.org/software/license

@@ -4,8 +4,8 @@ name: Artistic License 1.0
 category: Copyleft Limited
 owner: Perl Foundation
 homepage_url: http://www.perlfoundation.org/artistic_license_1_0
+notes: |-
+    notes from SPDX:
+    This license was superseded by v2.0
 spdx_license_key: Artistic-1.0
-spdx_full_name: Artistic License 1.0
-spdx_url: http://spdx.org/licenses/Artistic-1.0
-spdx_notes: This license was superseded by v2.0
 osi_url: http://opensource.org/licenses/artistic-license-1.0

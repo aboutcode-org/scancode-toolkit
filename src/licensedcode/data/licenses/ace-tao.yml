@@ -5,8 +5,6 @@ category: Permissive
 owner: Douglas Schmidt
 homepage_url: http://www.cs.wustl.edu/~schmidt/
 spdx_license_key: DOC
-spdx_full_name: DOC License
-spdx_url: http://spdx.org/licenses/DOC
 text_urls:
     - http://www.cs.wustl.edu/~schmidt/ACE-copying.html
 minimum_coverage: 30

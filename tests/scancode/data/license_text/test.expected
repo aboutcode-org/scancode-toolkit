@@ -16,7 +16,7 @@
           "text_url": "http://www.gnu.org/licenses/lgpl-2.1.txt", 
           "dejacode_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.1", 
           "spdx_license_key": "LGPL-2.1", 
-          "spdx_url": "http://spdx.org/licenses/LGPL-2.1", 
+          "spdx_url": "https://spdx.org/licenses/LGPL-2.1", 
           "start_line": 1, 
           "end_line": 1, 
           "matched_rule": {

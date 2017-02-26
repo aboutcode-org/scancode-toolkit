@@ -4,11 +4,11 @@ name: Microsoft Public License
 category: Permissive
 owner: Microsoft
 homepage_url: http://www.microsoft.com/opensource/licenses.mspx#Ms-PL
+notes: |-
+    notes from SPDX:
+    This license is OSI certified.
 spdx_license_key: MS-PL
-spdx_full_name: Microsoft Public License
-spdx_url: http://spdx.org/licenses/MS-PL
-spdx_notes: This license is OSI certified.
 osi_url: http://www.opensource.org/licenses/ms-pl.html
 other_urls:
     - http://www.microsoft.com/en-us/openness/licenses.aspx#MPL
-    - https://msdn.microsoft.com/en-us/library/ff649456.aspx 
+    - https://msdn.microsoft.com/en-us/library/ff649456.aspx

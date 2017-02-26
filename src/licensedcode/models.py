@@ -23,6 +23,7 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
+from __future__ import unicode_literals
 from __future__ import print_function
 from __future__ import division
 
@@ -64,7 +65,6 @@ class License(object):
     A license consists of these files, where <key> is the license key:
         - <key>.yml : the license data in YAML
         - <key>.LICENSE: the license text
-        - <key>.SPDX: the SPDX license text
     """
     # we do not really need slots but they help keep the attributes in check
     __slots__ = (
@@ -83,17 +83,12 @@ class License(object):
         'any_version_default',
         'exception_to',
         'spdx_license_key',
-        'spdx_full_name',
-        'spdx_url',
-        'spdx_notes',
         'text_urls',
         'osi_url',
         'faq_url',
         'other_urls',
         'data_file',
         'text_file',
-        'notice_file',
-        'spdx_file',
         'minimum_coverage'
     )
 
@@ -103,23 +98,23 @@ class License(object):
         directory. Key is a lower-case unique ascii string.
         """
         # unique key: lower case ASCII characters, digits, underscore and dots.
-        self.key = key or u''
+        self.key = key or ''
         self.src_dir = src_dir
 
         # if this is a deprecated license, contains notes explaining why
-        self.deprecated = u''
+        self.deprecated = ''
 
         # commonly used short name, often abbreviated.
-        self.short_name = u''
+        self.short_name = ''
         # full name.
-        self.name = u''
+        self.name = ''
 
         # Permissive, Copyleft, etc
-        self.category = u''
+        self.category = ''
 
-        self.owner = u''
-        self.homepage_url = u''
-        self.notes = u''
+        self.owner = ''
+        self.homepage_url = ''
+        self.notes = ''
 
         # an ordered list of license keys for all the versions of this license
         # Must be including this license key
@@ -131,33 +126,23 @@ class License(object):
         # True if this license allows any version to be used
         self.any_version = False
         # if any_version, what is the license key to pick by default?
-        self.any_version_default = u''
+        self.any_version_default = ''
 
         # if this is a license exception, the license key this exception applies to
-        self.exception_to = u''
+        self.exception_to = ''
 
-        # SPDX information if present for SPDX licenses
-        self.spdx_license_key = u''
-        self.spdx_full_name = u''
-        self.spdx_url = u''
-        self.spdx_notes = u''
+        # SPDX key for SPDX licenses
+        self.spdx_license_key = ''
 
         # Various URLs for info
         self.text_urls = []
-        self.osi_url = u''
-        self.faq_url = u''
+        self.osi_url = ''
+        self.faq_url = ''
         self.other_urls = []
 
         # data file paths and known extensions
-        self.data_file = join(self.src_dir, self.key + u'.yml')
-        self.text_file = join(self.src_dir, self.key + u'.LICENSE')
-        # note: we do not keep a notice if there is no standard notice or if
-        # this is the same as a the license text
-        self.notice_file = join(self.src_dir, self.key + u'.NOTICE')
-        # note: we do not keep the SPDX text if it is identical to the license
-        # text
-        self.spdx_file = join(self.src_dir, self.key + u'.SPDX')
-
+        self.data_file = join(self.src_dir, self.key + '.yml')
+        self.text_file = join(self.src_dir, self.key + '.LICENSE')
         self.minimum_coverage = 0
 
         if src_dir:
@@ -177,16 +162,6 @@ class License(object):
         """
         return self._read_text(self.notice_file)
 
-    @property
-    def spdx_license_text(self):
-        """
-        SPDX license text, re-loaded on demand.
-
-        Note that even though a license may be in the SPDX list, we only keep
-        its text if it is different from our standard .LICENSE text.
-        """
-        return self.spdx_license_key and self._read_text(self.spdx_file) or u''
-
     def asdict(self):
         """
         Return an OrderedDict of license data (excluding texts).
@@ -194,54 +169,50 @@ class License(object):
         """
         data = OrderedDict()
 
-        data[u'key'] = self.key
+        data['key'] = self.key
         if self.short_name:
-            data[u'short_name'] = self.short_name
+            data['short_name'] = self.short_name
         if self.name:
-            data[u'name'] = self.name
+            data['name'] = self.name
 
         if self.deprecated:
-            data[u'deprecated'] = self.deprecated
+            data['deprecated'] = self.deprecated
 
         if self.category:
-            data[u'category'] = self.category
+            data['category'] = self.category
 
         if self.owner:
-            data[u'owner'] = self.owner
+            data['owner'] = self.owner
         if self.homepage_url:
-            data[u'homepage_url'] = self.homepage_url
+            data['homepage_url'] = self.homepage_url
         if self.notes:
-            data[u'notes'] = self.notes
+            data['notes'] = self.notes
 
         if self.versions:
-            data[u'versions'] = self.versions
+            data['versions'] = self.versions
             if self.or_later_version:
-                data[u'or_later_version'] = self.or_later_version
+                data['or_later_version'] = self.or_later_version
             if self.any_version:
-                data[u'any_version'] = self.any_version
+                data['any_version'] = self.any_version
             if self.any_version_default:
-                data[u'any_version_default'] = self.any_version_default
+                data['any_version_default'] = self.any_version_default
 
         if self.exception_to:
-            data[u'exception_to'] = self.exception_to
+            data['exception_to'] = self.exception_to
 
         if self.spdx_license_key:
-            data[u'spdx_license_key'] = self.spdx_license_key
-            data[u'spdx_full_name'] = self.spdx_full_name
-            data[u'spdx_url'] = self.spdx_url
-            if self.spdx_notes:
-                data[u'spdx_notes'] = self.spdx_notes
+            data['spdx_license_key'] = self.spdx_license_key
 
         if self.text_urls:
-            data[u'text_urls'] = self.text_urls
+            data['text_urls'] = self.text_urls
         if self.osi_url:
-            data[u'osi_url'] = self.osi_url
+            data['osi_url'] = self.osi_url
         if self.faq_url:
-            data[u'faq_url'] = self.faq_url
+            data['faq_url'] = self.faq_url
         if self.other_urls:
-            data[u'other_urls'] = self.other_urls
+            data['other_urls'] = self.other_urls
         if self.minimum_coverage:
-            data[u'minimum_coverage'] = int(self.minimum_coverage)
+            data['minimum_coverage'] = int(self.minimum_coverage)
         return data
 
     def dump(self):
@@ -250,17 +221,11 @@ class License(object):
         this way:
          - <key>.yml : the license data in YAML
          - <key>.LICENSE: the license text
-         - <key>.NOTICE: the standard notice text if any
-         - <key>.SPDX: the SPDX license text if any
         """
         as_yaml = saneyaml.dump(self.asdict())
         self._write(self.data_file, as_yaml)
         if self.text:
             self._write(self.text_file, self.text)
-        if self.spdx_license_text:
-            self._write(self.spdx_file, self.spdx_license_text)
-        if self.notice_text:
-            self._write(self.notice_file, self.notice_text)
 
     def _write(self, f, d):
         with codecs.open(f, 'wb', encoding='utf-8') as of:
@@ -293,7 +258,7 @@ class License(object):
 
     def _read_text(self, location):
         if not exists(location):
-            text = u''
+            text = ''
         else:
             with codecs.open(location, encoding='utf-8') as f:
                 text = f.read()
@@ -387,9 +352,7 @@ class License(object):
                 warn('Some duplicated URLs')
 
             # local text consistency
-            spdx_license_text = lic.spdx_license_text
             text = lic.text
-            notice_text = lic.notice_text
 
             license_qtokens = tuple(query_tokenizer(text, lower=True))
             license_rtokens = tuple(rule_tokenizer(text, lower=True))
@@ -401,40 +364,9 @@ class License(object):
                 # for global dedupe
                 by_text[license_qtokens].append(key + ': TEXT')
 
-            if spdx_license_text:
-                spdx_qtokens = tuple(query_tokenizer(spdx_license_text, lower=True))
-                spdx_rtokens = tuple(rule_tokenizer(spdx_license_text, lower=True))
-                if spdx_qtokens:
-                    if spdx_qtokens != spdx_rtokens:
-                        info('SPDX text contains rule templated region with  {{}}')
-
-                    if spdx_qtokens == license_qtokens:
-                        err('License text same as SPDX text')
-                    else:
-                        by_text[spdx_qtokens].append(key + ': SPDX')
-
-            if notice_text:
-                notice_qtokens = tuple(query_tokenizer(notice_text, lower=True))
-                notice_rtokens = tuple(rule_tokenizer(notice_text, lower=True))
-                if notice_qtokens:
-                    if notice_qtokens != notice_rtokens:
-                        info('NOTICE text contains rule templated region with {{}}')
-                    if notice_qtokens == license_qtokens:
-                        err('License text same as NOTICE text')
-                    else:
-                        by_text[notice_qtokens].append(key + ': NOTICE')
 
             # SPDX consistency
-            if not lic.spdx_license_key:
-                if lic.spdx_full_name:
-                    err('spdx_full_name defined with no spdx_license_key')
-                if lic.spdx_url:
-                    err('spdx_url defined with no spdx_license_key')
-                if lic.spdx_notes:
-                    err('spdx_notes defined with no spdx_license_key')
-                if spdx_license_text:
-                    err('spdx_license_text defined with no spdx_license_key')
-            else:
+            if lic.spdx_license_key:
                 by_spdx_key[lic.spdx_license_key].append(key)
 
         # global SPDX consistency
@@ -535,9 +467,9 @@ def check_rules_integrity(rules):
 
 def build_rules_from_licenses(licenses=None):
     """
-    Return an iterable of rules built from each license text, notice and spdx
-    text from a `licenses` iterable of license objects. Use the reference list
-    if `licenses` is not provided.
+    Return an iterable of rules built from each license text from a `licenses`
+    iterable of license objects. Use the reference list if `licenses` is not
+    provided.
 
     Load the reference license list from disk if `licenses` is not provided.
     """
@@ -548,14 +480,6 @@ def build_rules_from_licenses(licenses=None):
 
         if exists(tfile):
             yield Rule(text_file=tfile, licenses=[license_key], minimum_coverage=minimum_coverage)
-
-        nfile = join(license_obj.src_dir, license_obj.notice_file)
-        if exists(nfile):
-            yield Rule(text_file=nfile, licenses=[license_key], minimum_coverage=minimum_coverage)
-
-        sfile = join(license_obj.src_dir, license_obj.spdx_file)
-        if exists(sfile):
-            yield Rule(text_file=sfile, licenses=[license_key], minimum_coverage=minimum_coverage)
 
 
 def load_rules(rule_dir=rules_data_dir):
@@ -648,7 +572,7 @@ class Rule(object):
 
         # License expression
         # TODO: implement me.
-        self.license = u''
+        self.license = ''
 
         # is this rule text a false positive when matched? (filtered out) FIXME: this
         # should be unified with the relevance: a false positive match is a a match
@@ -739,7 +663,7 @@ class Rule(object):
         elif self.text_file and exists(self.text_file):
             # IMPORTANT: use the same process as query text loading for symmetry
             lines = text_lines(self.text_file, demarkup=False)
-            return u' '.join(lines)
+            return ' '.join(lines)
         else:
             raise Exception('Inconsistent rule text for:', self.identifier)
 

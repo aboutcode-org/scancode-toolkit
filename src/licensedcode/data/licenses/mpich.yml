@@ -4,11 +4,9 @@ name: MPICH License
 category: Permissive
 owner: University of Chicago
 homepage_url: https://svn.mcs.anl.gov/repos/mpi/mpich2/trunk/COPYRIGHT
+notes: |-
+    notes from SPDX:
+    from Fedora: "This is missing the "anti-publicity-use clause", and doesn't mention sublicensing, but otherwise, it is functionally identical to MIT."
 spdx_license_key: mpich2
-spdx_full_name: mpich2 License
-spdx_url: http://spdx.org/licenses/mpich2
-spdx_notes: >-
-    from Fedora: "This is missing the "anti-publicity-use clause", and doesn't mention
-    sublicensing, but otherwise, it is functionally identical to MIT."
 text_urls:
     - https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#mpich2_variant

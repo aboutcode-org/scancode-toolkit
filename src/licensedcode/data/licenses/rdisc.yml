@@ -4,8 +4,7 @@ name: Rdisc License
 category: Permissive
 owner: Oracle (Sun)
 homepage_url: https://fedoraproject.org/wiki/Licensing/Rdisc_License
-spdx_license_key: Rdisc
-spdx_full_name: Rdisc License
-spdx_url: http://spdx.org/licenses/Rdisc
-spdx_notes: >-
+notes: |-
+    notes from SPDX:
     Per Fedora: "This is a permissive style license from Sun, Free and GPL compatible."
+spdx_license_key: Rdisc

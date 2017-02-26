@@ -1,7 +1,6 @@
 key: gpl-2.0-cygwin
 short_name: GPL 2.0 with cygwin exception
-name: >-
-    GNU General Public License 2.0 with Cygwin exception
+name: GNU General Public License 2.0 with Cygwin exception
 category: Copyleft Limited
 owner: Red Hat
 homepage_url: http://cygwin.com/licensing.html

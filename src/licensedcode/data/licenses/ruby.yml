@@ -4,15 +4,8 @@ name: Ruby License
 category: Copyleft Limited
 owner: Ruby
 homepage_url: http://www.ruby-lang.org/en/LICENSE.txt
+notes: |-
+    This version of the Ruby license is the latest found in the dual license COPYING dated from 2019-09-25  https://raw.githubusercontent.com/ruby/ruby/2cd6800fd8437b1f862f3f5c44db877159271d17/COPYING
+    notes from SPDX:
+    Ruby is disjunctively licensed project that allows the choice of this license and another. The other license choice has changed over time (from GPL originally, to BSD-2-Clause currently), so one needs to be aware of that change. The Ruby License itself is un-versioned, but has varied a bit over the years, the last substantive variation being in 2002.
 spdx_license_key: Ruby
-spdx_full_name: Ruby License
-spdx_url: http://spdx.org/licenses/Ruby
-spdx_notes: >-
-    Ruby is disjunctively licensed project that allows the choice of this license
-    and another. The other license choice has changed over time (from GPL originally,
-    to BSD-2-Clause currently), so one needs to be aware of that change. The Ruby
-    License itself is un-versioned, but has varied a bit over the years, the last
-    substantive variation being in 2002. 
-notes: >
-    This version of the Ruby license is the latest found in the dual license COPYING dated from 2019-09-25 
-    https://raw.githubusercontent.com/ruby/ruby/2cd6800fd8437b1f862f3f5c44db877159271d17/COPYING

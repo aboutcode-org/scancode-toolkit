@@ -5,8 +5,6 @@ category: Copyleft
 owner: CeCILL
 homepage_url: http://www.cecill.info/licences.en.html
 spdx_license_key: CECILL-B
-spdx_full_name: CeCILL-B Free Software License Agreement
-spdx_url: http://spdx.org/licenses/CECILL-B
 notes: |
     The primary text is in French.
 text_urls:

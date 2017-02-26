@@ -4,9 +4,7 @@ name: GNU General Public License 2.0 or later
 category: Copyleft
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+notes: |-
+    notes from SPDX:
+    This license was released: June 1991 This license is OSI certified.
 spdx_license_key: GPL-2.0+
-spdx_full_name: GNU General Public License v2.0 or later
-spdx_url: http://spdx.org/licenses/GPL-2.0+
-spdx_notes: |-
-    This license was released: June 1991
-    This license is OSI certified.

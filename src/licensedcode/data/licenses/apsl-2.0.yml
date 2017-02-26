@@ -4,11 +4,9 @@ name: Apple Public Source License 2.0
 category: Copyleft Limited
 owner: Apple
 homepage_url: http://www.opensource.apple.com/license/apsl/
+notes: |-
+    notes from SPDX:
+    This version was released: 6 August 2003. This license is OSI certifified.
 spdx_license_key: APSL-2.0
-spdx_full_name: Apple Public Source License 2.0
-spdx_url: http://spdx.org/licenses/APSL-2.0
-spdx_notes: |-
-    This version was released: 6 August 2003.
-    This license is OSI certifified.
 osi_url: http://opensource.org/licenses/apsl-2.0.php
 faq_url: http://www.gnu.org/philosophy/apsl.html

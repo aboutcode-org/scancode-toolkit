@@ -4,7 +4,5 @@ name: X11-Style (Tiff)
 category: Permissive
 owner: SGI - Silicon Graphics
 spdx_license_key: libtiff
-spdx_full_name: libtiff License
-spdx_url: http://spdx.org/licenses/libtiff
 text_urls:
     - https://fedoraproject.org/wiki/Licensing/libtiff

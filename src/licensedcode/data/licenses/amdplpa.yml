@@ -5,5 +5,3 @@ category: Permissive
 owner: Advanced Micro Devices
 homepage_url: https://fedoraproject.org/wiki/Licensing/AMD_plpa_map_License
 spdx_license_key: AMDPLPA
-spdx_full_name: AMD's plpa_map.c License
-spdx_url: http://spdx.org/licenses/AMDPLPA

@@ -4,23 +4,7 @@ name: GNU General Public License 2.0
 category: Copyleft
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
-spdx_license_key: GPL-2.0
-spdx_full_name: GNU General Public License v2.0 only
-spdx_url: http://spdx.org/licenses/GPL-2.0
-spdx_notes: |
-    This license was released: June 1991
-    This license is OSI certified.
-text_urls:
-    - http://www.gnu.org/licenses/gpl-2.0.txt
-    - http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
-osi_url: http://opensource.org/licenses/gpl-license.php
-faq_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-faq.html
-other_urls:
-    - http://creativecommons.org/licenses/GPL/2.0/
-    - http://creativecommons.org/choose/cc-gpl
-    - http://creativecommons.org/images/public/cc-GPL-a.png
-    - http://creativecommons.org/licenses/GPL/2.0/legalcode.pt
-notes: |
+notes: |-
     This is the last version of the GPL text as published by the FSF.
     This variation was published around about the time of the FSF released
     the GPL 3 in July 2007.
@@ -34,3 +18,16 @@ notes: |
     can find these in the GPL rules as gpl-2.0_100.RULE, gpl-2.0_101.RULE,
     gpl-2.0_102.RULE and gpl-2.0_103.RULE. Their corresponding YAML data
     explains their history and provides archive.org pointer to their texts.
+    notes from SPDX:
+    This license was released: June 1991 This license is OSI certified.
+spdx_license_key: GPL-2.0
+text_urls:
+    - http://www.gnu.org/licenses/gpl-2.0.txt
+    - http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
+osi_url: http://opensource.org/licenses/gpl-license.php
+faq_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-faq.html
+other_urls:
+    - http://creativecommons.org/licenses/GPL/2.0/
+    - http://creativecommons.org/choose/cc-gpl
+    - http://creativecommons.org/images/public/cc-GPL-a.png
+    - http://creativecommons.org/licenses/GPL/2.0/legalcode.pt

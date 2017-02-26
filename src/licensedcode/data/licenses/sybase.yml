@@ -4,7 +4,7 @@ name: Sybase Open Watcom Public License v1.0
 category: Proprietary Free
 owner: Sybase, Inc. (an SAP subsidiary)
 homepage_url: http://opensource.org/licenses/sybase.php
+notes: |-
+    notes from SPDX:
+    This license is OSI certified
 spdx_license_key: Watcom-1.0
-spdx_full_name: Sybase Open Watcom Public License 1.0
-spdx_url: http://spdx.org/licenses/Watcom-1.0
-spdx_notes: This license is OSI certified

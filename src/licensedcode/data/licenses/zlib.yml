@@ -4,10 +4,10 @@ name: ZLIB License
 category: Permissive
 owner: zlib
 homepage_url: http://www.zlib.net/
+notes: |-
+    notes from SPDX:
+    This is OSI certified
 spdx_license_key: Zlib
-spdx_full_name: zlib License
-spdx_url: http://spdx.org/licenses/Zlib
-spdx_notes: This is OSI certified
 text_urls:
     - http://www.gzip.org/zlib/zlib_license.html
 osi_url: http://www.opensource.org/licenses/zlib-license.php
