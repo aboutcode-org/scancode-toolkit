@@ -1,0 +1,4 @@
+licenses:
+    - sleepycat
+notes: license text as published by SPDX
+minimum_coverage: 10
