@@ -22,7 +22,8 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-__version__ = '2.0.0rc3'
+from __future__ import print_function
+from __future__ import absolute_import
 
 from os.path import dirname
 from os.path import abspath
@@ -33,6 +34,7 @@ from os.path import exists
 
 from commoncode import fileutils
 
+
 scan_src_dir = abspath(dirname(__file__))
 src_dir = dirname(scan_src_dir)
 root_dir = dirname(src_dir)
@@ -41,3 +43,11 @@ scans_cache_dir = join(cache_dir, 'scan_results_caches')
 
 if not exists(scans_cache_dir):
     fileutils.create_dir(scans_cache_dir)
+
+
+from pkg_resources import get_distribution, DistributionNotFound
+try:
+    __version__ = get_distribution('scancode-toolkit').version
+except DistributionNotFound:
+    # package is not installed ??
+    __version__ = '2.0.0rc3'

@@ -58,3 +58,4 @@ docs/_build
 /local/
 /share/
 /tcl/
+/.eggs/
