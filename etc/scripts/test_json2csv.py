@@ -208,7 +208,7 @@ class TestJson2CSVWithLiveScans(FileBasedTesting):
         json_file = self.get_temp_file('json')
         scan_cmd = os.path.join(scancode.root_dir, 'scancode')
         rc, _stdout, _stderr = execute(scan_cmd, 
-            ['-clip', '--email', '--url', '--format', 'json',test_dir, json_file])    
+            ['-clip', '--email', '--url', '--strip-root', '--format', 'json',test_dir, json_file])    
         assert rc ==0
         result_file = self.get_temp_file('.csv')
         with open(result_file, 'wb') as rf:
