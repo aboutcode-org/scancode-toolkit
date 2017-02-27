@@ -2282,17 +2282,14 @@ class TestExtractArchiveWithIllegalFilenamesWithPytarOnMacWarnings(TestExtractAr
 class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin(ExtractArchiveWithIllegalFilenamesTestCase):
     check_only_warnings = False
 
-    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_ar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_cpio_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -2310,7 +2307,6 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin(ExtractArchiveWith
         test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_zip_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
