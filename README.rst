@@ -31,9 +31,9 @@ ScanCode provides reasonably accurate scan results and the line position where
 each result is found. The results can be formatted as JSON or HTML, and ScanCode
 provides a simple HTML app for quick visualization of scan results.
 
-This initial release of ScanCode scans only for exact license and copyright text.
-We are working on new features, such as analysis of dependencies or improving 
-performance for scanning of larger codebases.
+We are continuously working on new features, such as analysis of dependencies or
+improving  performance for scanning of larger codebases.
+
 See the roadmap for upcoming features:
 https://github.com/nexB/scancode-toolkit/wiki/Roadmap
 
