@@ -142,7 +142,7 @@ class License(object):
         self.data_file = join(self.src_dir, self.key + '.yml')
         self.text_file = join(self.src_dir, self.key + '.LICENSE')
 
-        if src_dir:
+        if src_dir and exists(self.data_file) and exists(self.text_file):
             self.load(src_dir)
 
     @property
