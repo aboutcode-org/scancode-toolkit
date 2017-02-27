@@ -80,7 +80,7 @@
           "text_url": "http://www.xfree86.org/3.3.6/COPYRIGHT2.html", 
           "dejacode_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bsd-original-uc", 
           "spdx_license_key": "BSD-4-Clause-UC", 
-          "spdx_url": "http://spdx.org/licenses/BSD-4-Clause-UC", 
+          "spdx_url": "https://spdx.org/licenses/BSD-4-Clause-UC", 
           "start_line": 25, 
           "end_line": 51, 
           "matched_rule": {
@@ -149,7 +149,7 @@
           "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt", 
           "dejacode_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0", 
           "spdx_license_key": "GPL-2.0", 
-          "spdx_url": "http://spdx.org/licenses/GPL-2.0", 
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0", 
           "start_line": 5, 
           "end_line": 12, 
           "matched_rule": {
@@ -171,7 +171,7 @@
           "text_url": "", 
           "dejacode_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bsd-new", 
           "spdx_license_key": "BSD-3-Clause", 
-          "spdx_url": "http://spdx.org/licenses/BSD-3-Clause", 
+          "spdx_url": "https://spdx.org/licenses/BSD-3-Clause", 
           "start_line": 5, 
           "end_line": 12, 
           "matched_rule": {
