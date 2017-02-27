@@ -1,3 +1,4 @@
+
 """
 From: https://raw.githubusercontent.com/gridsync/gridsync/def54f8166089b733d166665fdabcad4cdc526d8/misc/irc-notify.py
 and: https://github.com/gridsync/gridsync
@@ -56,14 +57,22 @@ in Appveyor's YAML:
 
 """
 
-import os, random, socket, ssl, sys, time
+from __future__ import print_function
+from __future__ import absolute_import
+
+import os
+from os import environ
+import random
+import socket
+import ssl
+import sys
+import time
 
 
 def appveyor_vars():
     """
     Return a dict of key value carfted from appveyor environment variables.
     """
-    from os import environ
 
     appveyor_url = environ.get('APPVEYOR_URL')
     message_extended = environ.get('APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED')
@@ -115,7 +124,10 @@ def appveyor_vars():
     return vars
 
 
-if __name__ == '__main__':
+def notify():
+    """
+    Send IRC notification
+    """
     apvy_vars = appveyor_vars()
 
     channel = sys.argv[1]
@@ -152,3 +164,11 @@ if __name__ == '__main__':
                 irc_sock.send('NOTICE #{} :{}\r\n'.format(channel, msg).encode())
             time.sleep(5)
             sys.exit()
+
+
+if __name__ == '__main__':
+    try:
+        notify()
+    except:
+        import traceback
+        print('ERROR: Failed to send notification: \n' + traceback.format_exc())
