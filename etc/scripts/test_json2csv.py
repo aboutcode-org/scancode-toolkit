@@ -45,7 +45,7 @@ def load_csv(location, ignore_date=False):
     with codecs.open(location, 'rb', encoding='utf-8') as csvin:
         reader = unicodecsv.DictReader(csvin)
         fields = reader.fieldnames
-        values = list(reader)
+        values = sorted(reader)
         return fields, values
 
 
