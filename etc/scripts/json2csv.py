@@ -37,8 +37,7 @@ import unicodecsv
 
 """
 Convert a ScanCode JSON scan file to a nexb-toolkit-like CSV.
-Ensure you are in the scancode virtualenv and call:
-etc/scripts/json2csv -h
+Ensure you are in the scancode virtualenv and call: etc/scripts/json2csv -h
 """
 
 
