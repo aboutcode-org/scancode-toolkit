@@ -3,7 +3,7 @@ short_name: AFL 1.1
 name: Academic Free License 1.1
 category: Permissive
 owner: Lawrence Rosen
-homepage_url: http://spdx.org/licenses/AFL-1.1
+homepage_url: https://spdx.org/licenses/AFL-1.1
 notes: |-
     notes from SPDX:
     This license has been superseded by later versions.
