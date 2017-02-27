@@ -19,8 +19,5 @@ test_script:
     - python -c "import sys;print sys.getdefaultencoding()"
     - cmd: "%TEST_SUITE%"
 
-on_success:
-    - "python etc/scripts/irc-notify.py aboutcode [{project_name}:{branch}] {short_commit}: \"{message}\" ({author}) {color_green}Succeeded - {build_url}"
-
 on_failure:
     - "python etc/scripts/irc-notify.py aboutcode [{project_name}:{branch}] {short_commit}: \"{message}\" ({author}) {color_red}Failed - {build_url}"
