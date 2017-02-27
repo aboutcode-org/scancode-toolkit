@@ -37,10 +37,10 @@ from commoncode.testcase import FileBasedTesting
 import json2csv
 
 
-def load_csv(location, ignore_date=False):
+def load_csv(location):
     """
     Load a CSV file at location and return a tuple of (field names, list of rows as
-    mappings field->value)
+    mappings field->value).
     """
     with codecs.open(location, 'rb', encoding='utf-8') as csvin:
         reader = unicodecsv.DictReader(csvin)
@@ -49,9 +49,10 @@ def load_csv(location, ignore_date=False):
         return fields, values
 
 
-def check_csvs(result_file, expected_file, ignore_date=False, regen=False):
+def check_csvs(result_file, expected_file, ignore_keys=('date', 'file_type', 'mime_type',), regen=False):
     """
     Load and compare two CSVs.
+    `ignore_keys` is a tuple of keys that will be ignored in the comparisons.
     """
     result_fields, results = load_csv(result_file)
     if regen:
@@ -61,11 +62,9 @@ def check_csvs(result_file, expected_file, ignore_date=False, regen=False):
     assert expected_fields == result_fields
     # then check results line by line for more compact results
     for exp, res in zip(expected, results):
-        if ignore_date:
-            if 'date' in exp:
-                del exp['date']
-            if 'date' in res:
-                del res['date']
+        for ign in ignore_keys:
+            exp.pop(ign, None)
+            res.pop(ign, None)
         assert exp == res
 
 
@@ -290,11 +289,11 @@ class TestJson2CSV(FileBasedTesting):
             ('package', []),
             ])
         result = list(json2csv.flatten_scan(scan, headers))
-        expected_headers =  OrderedDict([
-            ('info', ['Resource', 'scan_errors']), 
-            ('license', ['license__key', 'license__score', 'license__short_name', 'license__category', 'license__owner', 'license__homepage_url', 'license__text_url', 'license__dejacode_url', 'license__spdx_license_key', 'license__spdx_url', 'start_line', 'end_line']), ('copyright', ['copyright', 'copyright_holder']), 
-            ('email', []), 
-            ('url', []), 
+        expected_headers = OrderedDict([
+            ('info', ['Resource', 'scan_errors']),
+            ('license', ['license__key', 'license__score', 'license__short_name', 'license__category', 'license__owner', 'license__homepage_url', 'license__text_url', 'license__dejacode_url', 'license__spdx_license_key', 'license__spdx_url', 'start_line', 'end_line']), ('copyright', ['copyright', 'copyright_holder']),
+            ('email', []),
+            ('url', []),
             ('package', ['package__asserted_licenses'])])
         assert expected_headers == headers
         expected = self.get_test_loc('json2csv/package_license_value_null.json-expected')
@@ -317,4 +316,4 @@ class TestJson2CSVWithLiveScans(FileBasedTesting):
         with open(result_file, 'wb') as rf:
             json2csv.json_scan_to_csv(json_file, rf)
         expected_file = self.get_test_loc('livescan/expected.csv')
-        check_csvs(result_file, expected_file, ignore_date=True)
+        check_csvs(result_file, expected_file)
