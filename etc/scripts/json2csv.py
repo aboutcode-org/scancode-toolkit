@@ -69,21 +69,42 @@ def json_scan_to_csv(json_input, csv_output):
     csv_output is an open file descriptor.
     """
     scan_results = load_scan(json_input)
-    rows = list(flatten_scan(scan_results))
-    headers = collect_header_keys(rows)
-    w = unicodecsv.DictWriter(csv_output, headers)
+    headers = OrderedDict([
+        ('info', []),
+        ('license', []),
+        ('copyright', []),
+        ('email', []),
+        ('url', []),
+        ('package', []),
+        ])
+    rows = list(flatten_scan(scan_results, headers))
+
+    ordered_headers = []
+    for key_group in headers.values():
+        ordered_headers.extend(key_group)
+
+    w = unicodecsv.DictWriter(csv_output, ordered_headers)
     w.writeheader()
     for r in rows:
         w.writerow(r)
 
 
-def flatten_scan(scan):
+def flatten_scan(scan, headers):
     """
     Yield ordered dictionaries of key/values flattening the data and
     keying always by path, given a ScanCode scan results list.
+    Update the headers mapping list with seen keys as a side effect.
     """
+    seen = set()
+
+    def collect_keys(mapping, key_group):
+        """Update the headers with new keys."""
+        keys = mapping.keys()
+        headers[key_group].extend(k for k in keys if k not in seen)
+        seen.update(keys)
+
     for scanned_file in scan:
-        path = scanned_file['path']
+        path = scanned_file.pop('path')
 
         # alway use a root slash
         path = path if path.startswith('/') else '/' + path
@@ -96,13 +117,15 @@ def flatten_scan(scan):
         # alway create a root directory
         path = '/code' + path
 
+        errors = scanned_file.pop('scan_errors', [])
+
         file_info = OrderedDict()
         file_info['Resource'] = path
-        # info are NOT lists
-        info_details = ((k, v) for k, v in scanned_file.items() if k != 'path' and not isinstance(v, list))
-        file_info.update(info_details)
+        # info are NOT lists: lists are the actual scans
+        file_info.update(((k, v) for k, v in scanned_file.items() if not isinstance(v, list)))
         # Scan errors are joined in a single multi-line value
-        file_info['scan_errors'] = '\n'.join(scanned_file.get('scan_errors', []))
+        file_info['scan_errors'] = '\n'.join(errors)
+        collect_keys(file_info, 'info')
         yield file_info
 
         for licensing in scanned_file.get('licenses', []):
@@ -122,6 +145,7 @@ def flatten_scan(scan):
                 if k not in ('start_line', 'end_line',):
                     k = 'license__' + k
                 lic[k] = val
+            collect_keys(lic, 'license')
             yield lic
 
         key_to_header_mapping = [
@@ -140,18 +164,21 @@ def flatten_scan(scan):
                     inf[header] = cop
                     inf['start_line'] = start_line
                     inf['end_line'] = end_line
+                    collect_keys(inf, 'copyright')
                     yield inf
 
         for email in scanned_file.get('emails', []):
             email_info = OrderedDict()
             email_info['Resource'] = path
             email_info.update(email)
+            collect_keys(email_info, 'email')
             yield email_info
 
         for url in scanned_file.get('urls', []):
             url_info = OrderedDict()
             url_info['Resource'] = path
             url_info.update(url)
+            collect_keys(url_info, 'url')
             yield url_info
 
         # exclude some columns from the packages for now
@@ -205,19 +232,8 @@ def flatten_scan(scan):
                             licenses = [lic for lic in licenses if lic]
                             pack[nk] = '\n'.join(licenses)
 
+            collect_keys(pack, 'package')
             yield pack
-
-
-def collect_header_keys(scan_data):
-    """
-    Return a list of keys collected from a list of scanned data dictionaries.
-    """
-    keys = []
-    for scan in scan_data:
-        for key in scan.keys():
-            if key not in keys:
-                keys.append(key)
-    return keys
 
 
 @click.command()
