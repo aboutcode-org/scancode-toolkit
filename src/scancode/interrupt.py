@@ -45,6 +45,19 @@ But not code has been reused from this post.
 
 def interruptible(func, args=(), kwargs={},
                   timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY):
+
+    try:
+        return _interruptible(func, args, kwargs, timeout, max_memory)
+    except:
+        import traceback
+        print('#############ERROR##################')
+        print(traceback.format_exc())
+        print('###################################')
+        raise
+
+
+def _interruptible(func, args=(), kwargs={},
+                  timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY):
     """
     Call `func` function with `args` and `kwargs` arguments and return a tuple of
     (success, return value). `func` is invoked through a wrapper in a thread and
