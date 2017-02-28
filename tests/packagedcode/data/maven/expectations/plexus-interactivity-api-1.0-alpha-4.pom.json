@@ -8,12 +8,6 @@
   "maven_license_url": [], 
   "maven_repository_url_1": [], 
   "maven_issue_url": [], 
-  "maven_dependency_version": [
-    "1.0-alpha-7", 
-    "3.8.1", 
-    "1.1-alpha-2", 
-    "1.0.2"
-  ], 
   "maven_repository_name": [
     "Maven Snapshot Development Repository", 
     "Maven Repository Switchboard"
@@ -68,10 +62,30 @@
   ], 
   "maven_contributor_organization": [], 
   "maven_dependency": [
-    "plexus-container-default", 
-    "junit", 
-    "classworlds", 
-    "plexus-utils"
+    {
+      "scope": "compile", 
+      "version": "1.0-alpha-7", 
+      "groupId": "org.codehaus.plexus", 
+      "artifactId": "plexus-container-default"
+    }, 
+    {
+      "scope": "test", 
+      "version": "3.8.1", 
+      "groupId": "junit", 
+      "artifactId": "junit"
+    }, 
+    {
+      "scope": "compile", 
+      "version": "1.1-alpha-2", 
+      "groupId": "classworlds", 
+      "artifactId": "classworlds"
+    }, 
+    {
+      "scope": "compile", 
+      "version": "1.0.2", 
+      "groupId": "plexus", 
+      "artifactId": "plexus-utils"
+    }
   ], 
   "maven_license": [], 
   "maven_component_packaging": [], 
@@ -108,7 +122,6 @@
   ], 
   "maven_project_description": [], 
   "maven_repository_connection_1": [], 
-  "maven_dependency_scope": [], 
   "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [

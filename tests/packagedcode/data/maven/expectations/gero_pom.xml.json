@@ -8,9 +8,6 @@
   "maven_license_url": [], 
   "maven_repository_url_1": [], 
   "maven_issue_url": [], 
-  "maven_dependency_version": [
-    "1.4"
-  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
   "maven_contributor_name": [], 
@@ -43,7 +40,12 @@
   "maven_developer_name": [], 
   "maven_contributor_organization": [], 
   "maven_dependency": [
-    "axis"
+    {
+      "version": "${pkgVersion}", 
+      "optional": "true", 
+      "groupId": "${pkgGroupId}", 
+      "artifactId": "${pkgArtifactId}"
+    }
   ], 
   "maven_license": [], 
   "maven_component_packaging": [
@@ -62,7 +64,6 @@
     "This bundle simply wraps axis-1.4.jar."
   ], 
   "maven_repository_connection_1": [], 
-  "maven_dependency_scope": [], 
   "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [

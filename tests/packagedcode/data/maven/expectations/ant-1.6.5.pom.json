@@ -6,10 +6,6 @@
   "maven_license_url": [], 
   "maven_repository_url_1": [], 
   "maven_issue_url": [], 
-  "maven_dependency_version": [
-    "2.6.2", 
-    "1.3.04"
-  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
   "maven_contributor_name": [], 
@@ -34,8 +30,18 @@
   "maven_developer_name": [], 
   "maven_contributor_organization": [], 
   "maven_dependency": [
-    "xercesImpl", 
-    "xml-apis"
+    {
+      "version": "2.6.2", 
+      "optional": "true", 
+      "groupId": "xerces", 
+      "artifactId": "xercesImpl"
+    }, 
+    {
+      "version": "1.3.04", 
+      "optional": "true", 
+      "groupId": "xml-apis", 
+      "artifactId": "xml-apis"
+    }
   ], 
   "maven_license": [], 
   "maven_component_packaging": [], 
@@ -50,7 +56,6 @@
   "maven_developer_organization": [], 
   "maven_project_description": [], 
   "maven_repository_connection_1": [], 
-  "maven_dependency_scope": [], 
   "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": []

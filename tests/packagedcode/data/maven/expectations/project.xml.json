@@ -10,18 +10,6 @@
     "http://cvs.apache.org/viewcvs/maven-plugins/abbot/"
   ], 
   "maven_issue_url": [], 
-  "maven_dependency_version": [
-    "0.13.0", 
-    "b10", 
-    "1.0", 
-    "1.1.4", 
-    "3.8.1", 
-    "2.4.0", 
-    "2.2.1", 
-    "1.5.3-1", 
-    "1.5.3-1", 
-    "20030211.142705"
-  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
   "maven_contributor_name": [], 
@@ -51,16 +39,56 @@
   ], 
   "maven_contributor_organization": [], 
   "maven_dependency": [
-    "abbot", 
-    "jdom", 
-    "MRJToolkitStubs", 
-    "gnu-regexp", 
-    "junit", 
-    "xerces", 
-    "xmlParserAPIs", 
-    "ant", 
-    "ant-optional", 
-    "commons-jelly-tags-xml"
+    {
+      "version": "0.13.0", 
+      "groupId": "abbot", 
+      "artifactId": "abbot"
+    }, 
+    {
+      "version": "b10", 
+      "groupId": "jdom", 
+      "artifactId": "jdom"
+    }, 
+    {
+      "version": "1.0", 
+      "groupId": "mrj", 
+      "artifactId": "MRJToolkitStubs"
+    }, 
+    {
+      "version": "1.1.4", 
+      "groupId": "gnu-regexp", 
+      "artifactId": "gnu-regexp"
+    }, 
+    {
+      "version": "3.8.1", 
+      "groupId": "junit", 
+      "artifactId": "junit"
+    }, 
+    {
+      "version": "2.4.0", 
+      "groupId": "xerces", 
+      "artifactId": "xerces"
+    }, 
+    {
+      "version": "2.2.1", 
+      "groupId": "xerces", 
+      "artifactId": "xmlParserAPIs"
+    }, 
+    {
+      "version": "1.5.3-1", 
+      "groupId": "ant", 
+      "artifactId": "ant"
+    }, 
+    {
+      "version": "1.5.3-1", 
+      "groupId": "ant", 
+      "artifactId": "ant-optional"
+    }, 
+    {
+      "version": "20030211.142705", 
+      "groupId": "commons-jelly", 
+      "artifactId": "commons-jelly-tags-xml"
+    }
   ], 
   "maven_license": [], 
   "maven_component_packaging": [], 
@@ -87,7 +115,6 @@
   "maven_repository_connection_1": [
     "scm:cvs:pserver:anoncvs@cvs.apache.org:/home/cvspublic:maven-plugins/abbot/"
   ], 
-  "maven_dependency_scope": [], 
   "maven_license_name": [], 
   "maven_repository_developer_connection_1": [
     "scm:cvs:ext:${maven.username}@cvs.apache.org:/home/cvs:maven-plugins/abbot/"

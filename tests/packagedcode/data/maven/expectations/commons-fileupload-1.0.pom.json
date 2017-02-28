@@ -10,10 +10,6 @@
   "maven_issue_url": [
     "http://nagoya.apache.org/bugzilla/"
   ], 
-  "maven_dependency_version": [
-    "2.3", 
-    "3.8.1"
-  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
   "maven_contributor_name": [], 
@@ -54,8 +50,18 @@
   ], 
   "maven_contributor_organization": [], 
   "maven_dependency": [
-    "servletapi", 
-    "junit"
+    {
+      "scope": "provided", 
+      "version": "2.3", 
+      "groupId": "servletapi", 
+      "artifactId": "servletapi"
+    }, 
+    {
+      "scope": "test", 
+      "version": "3.8.1", 
+      "groupId": "junit", 
+      "artifactId": "junit"
+    }
   ], 
   "maven_license": [], 
   "maven_component_packaging": [], 
@@ -86,7 +92,6 @@
     "The FileUpload component provides a simple yet flexible means of adding\n    support for multipart file upload functionality to servlets and web\n    applications."
   ], 
   "maven_repository_connection_1": [], 
-  "maven_dependency_scope": [], 
   "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [

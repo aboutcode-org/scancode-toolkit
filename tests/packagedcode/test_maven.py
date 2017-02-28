@@ -73,7 +73,6 @@ class BaseMavenCase(testcase.FileBasedTesting):
                 compressed.write(uncompressed.read())
         return target_loc
 
-
     def check_pom(self, test_pom_loc, expected_json_loc, regen=False):
         if not os.path.isabs(test_pom_loc):
             test_pom_loc = self.get_test_loc(test_pom_loc)

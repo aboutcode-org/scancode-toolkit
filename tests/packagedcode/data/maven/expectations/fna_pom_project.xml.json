@@ -8,15 +8,6 @@
   "maven_license_url": [], 
   "maven_repository_url_1": [], 
   "maven_issue_url": [], 
-  "maven_dependency_version": [
-    "1.0", 
-    "1.0", 
-    "${flex.sdk.version}", 
-    "${flex.sdk.version}", 
-    "${cairngorm.version}", 
-    "${flexunit.version}", 
-    "${flex-mojos.version}"
-  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
   "maven_contributor_name": [], 
@@ -49,13 +40,52 @@
   "maven_developer_name": [], 
   "maven_contributor_organization": [], 
   "maven_dependency": [
-    "bash_blazeds_service_config", 
-    "bash_flex_remoted_objects", 
-    "compiler", 
-    "flex-framework", 
-    "cairngorm", 
-    "flexunit", 
-    "testing-support"
+    {
+      "scope": "provided", 
+      "version": "${project.version}", 
+      "type": "zip", 
+      "groupId": "${project.groupId}", 
+      "artifactId": "bash_blazeds_service_config"
+    }, 
+    {
+      "scope": "internal", 
+      "version": "${project.version}", 
+      "type": "swc", 
+      "groupId": "${project.groupId}", 
+      "artifactId": "bash_flex_remoted_objects"
+    }, 
+    {
+      "version": "${flex.sdk.version}", 
+      "type": "pom", 
+      "groupId": "com.adobe.flex", 
+      "artifactId": "compiler"
+    }, 
+    {
+      "version": "${flex.sdk.version}", 
+      "type": "pom", 
+      "groupId": "com.adobe.flex.framework", 
+      "artifactId": "flex-framework"
+    }, 
+    {
+      "version": "${cairngorm.version}", 
+      "type": "swc", 
+      "groupId": "com.adobe.cairngorm", 
+      "artifactId": "cairngorm"
+    }, 
+    {
+      "scope": "test", 
+      "version": "${flexunit.version}", 
+      "type": "swc", 
+      "groupId": "com.adobe.flexunit", 
+      "artifactId": "flexunit"
+    }, 
+    {
+      "scope": "test", 
+      "version": "${flex-mojos.version}", 
+      "type": "swc", 
+      "groupId": "info.flex-mojos", 
+      "artifactId": "testing-support"
+    }
   ], 
   "maven_license": [], 
   "maven_component_packaging": [
@@ -74,7 +104,6 @@
     "This project hold the flex (blazeds enabled) flex front-end.\n\tIts architecture is based on adobe consulting mvn framework: cairngorm."
   ], 
   "maven_repository_connection_1": [], 
-  "maven_dependency_scope": [], 
   "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [

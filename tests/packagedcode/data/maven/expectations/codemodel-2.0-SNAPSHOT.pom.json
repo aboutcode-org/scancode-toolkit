@@ -12,7 +12,6 @@
     "https://maven2-repository.dev.java.net/source/browse/maven2-repository"
   ], 
   "maven_issue_url": [], 
-  "maven_dependency_version": [], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
   "maven_contributor_name": [], 
@@ -68,7 +67,6 @@
   "maven_repository_connection_1": [
     "scm:svn:https://guest@maven2-repository.dev.java.net/svn/maven2-repository"
   ], 
-  "maven_dependency_scope": [], 
   "maven_license_name": [], 
   "maven_repository_developer_connection_1": [
     "scm:svn:https://maven2-repository.dev.java.net/svn/maven2-repository"

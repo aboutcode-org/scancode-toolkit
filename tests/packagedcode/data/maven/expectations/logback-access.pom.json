@@ -12,7 +12,6 @@
   ], 
   "maven_repository_url_1": [], 
   "maven_issue_url": [], 
-  "maven_dependency_version": [], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
   "maven_contributor_name": [], 
@@ -51,11 +50,31 @@
   "maven_developer_name": [], 
   "maven_contributor_organization": [], 
   "maven_dependency": [
-    "logback-core", 
-    "catalina", 
-    "jetty", 
-    "resin", 
-    "servlet-api-2.5"
+    {
+      "scope": "compile", 
+      "groupId": "ch.qos.logback", 
+      "artifactId": "logback-core"
+    }, 
+    {
+      "scope": "compile", 
+      "groupId": "tomcat", 
+      "artifactId": "catalina"
+    }, 
+    {
+      "scope": "compile", 
+      "groupId": "org.mortbay.jetty", 
+      "artifactId": "jetty"
+    }, 
+    {
+      "scope": "compile", 
+      "groupId": "com.caucho", 
+      "artifactId": "resin"
+    }, 
+    {
+      "scope": "compile", 
+      "groupId": "org.mortbay.jetty", 
+      "artifactId": "servlet-api-2.5"
+    }
   ], 
   "maven_license": [
     "GNU Lesser General Public License"
@@ -74,7 +93,6 @@
   "maven_developer_organization": [], 
   "maven_project_description": [], 
   "maven_repository_connection_1": [], 
-  "maven_dependency_scope": [], 
   "maven_license_name": [
     "GNU Lesser General Public License"
   ], 

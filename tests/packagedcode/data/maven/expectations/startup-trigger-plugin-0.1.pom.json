@@ -10,9 +10,6 @@
   "maven_license_url": [], 
   "maven_repository_url_1": [], 
   "maven_issue_url": [], 
-  "maven_dependency_version": [
-    "1.8.1"
-  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
   "maven_contributor_name": [], 
@@ -53,7 +50,12 @@
   ], 
   "maven_contributor_organization": [], 
   "maven_dependency": [
-    "mockito-all"
+    {
+      "scope": "test", 
+      "version": "1.8.1", 
+      "groupId": "org.mockito", 
+      "artifactId": "mockito-all"
+    }
   ], 
   "maven_license": [], 
   "maven_component_packaging": [
@@ -72,7 +74,6 @@
   "maven_developer_organization": [], 
   "maven_project_description": [], 
   "maven_repository_connection_1": [], 
-  "maven_dependency_scope": [], 
   "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [

@@ -8,19 +8,6 @@
   "maven_license_url": [], 
   "maven_repository_url_1": [], 
   "maven_issue_url": [], 
-  "maven_dependency_version": [
-    "${flex-mojos.version}", 
-    "1.0-SNAPSHOT", 
-    "1.0-SNAPSHOT", 
-    "${flex.sdk.version}", 
-    "${flex.sdk.version}", 
-    "${cairngorm.version}", 
-    "${cairngorm.version}", 
-    "${lcds.version}", 
-    "${lcds.version}", 
-    "${flexUnit.version}", 
-    "${flexUnit.version}"
-  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
   "maven_contributor_name": [], 
@@ -53,17 +40,77 @@
   "maven_developer_name": [], 
   "maven_contributor_organization": [], 
   "maven_dependency": [
-    "testing-support", 
-    "blazeds_service_config", 
-    "flex_remoted_objects", 
-    "compiler", 
-    "flex-framework", 
-    "cairngorm", 
-    "cairngorm-enterprise", 
-    "fds", 
-    "fds", 
-    "flexunit", 
-    "flexunit-optional"
+    {
+      "scope": "test", 
+      "version": "${flex-mojos.version}", 
+      "type": "swc", 
+      "groupId": "info.flex-mojos", 
+      "artifactId": "testing-support"
+    }, 
+    {
+      "scope": "provided", 
+      "version": "${project.version}", 
+      "type": "zip", 
+      "groupId": "${project.groupId}", 
+      "artifactId": "blazeds_service_config"
+    }, 
+    {
+      "scope": "internal", 
+      "version": "${project.version}", 
+      "type": "swc", 
+      "groupId": "${project.groupId}", 
+      "artifactId": "flex_remoted_objects"
+    }, 
+    {
+      "version": "${flex.sdk.version}", 
+      "type": "pom", 
+      "groupId": "com.adobe.flex", 
+      "artifactId": "compiler"
+    }, 
+    {
+      "version": "${flex.sdk.version}", 
+      "type": "pom", 
+      "groupId": "com.adobe.flex.framework", 
+      "artifactId": "flex-framework"
+    }, 
+    {
+      "version": "${cairngorm.version}", 
+      "type": "swc", 
+      "groupId": "com.adobe.cairngorm", 
+      "artifactId": "cairngorm"
+    }, 
+    {
+      "version": "${cairngorm.version}", 
+      "type": "swc", 
+      "groupId": "com.adobe.cairngorm", 
+      "artifactId": "cairngorm-enterprise"
+    }, 
+    {
+      "version": "${lcds.version}", 
+      "type": "rb.swc", 
+      "groupId": "com.adobe.lcds", 
+      "artifactId": "fds"
+    }, 
+    {
+      "version": "${lcds.version}", 
+      "type": "swc", 
+      "groupId": "com.adobe.lcds", 
+      "artifactId": "fds"
+    }, 
+    {
+      "scope": "test", 
+      "version": "${flexUnit.version}", 
+      "type": "swc", 
+      "groupId": "com.adobe.flexunit", 
+      "artifactId": "flexunit"
+    }, 
+    {
+      "scope": "test", 
+      "version": "${flexUnit.version}", 
+      "type": "swc", 
+      "groupId": "com.adobe.flexunit", 
+      "artifactId": "flexunit-optional"
+    }
   ], 
   "maven_license": [], 
   "maven_component_packaging": [
@@ -82,7 +129,6 @@
     "This project hold the flex (blazeds enabled) flex front-end.\n        Its architecture is based on adobe consulting mvn framework: cairngorm."
   ], 
   "maven_repository_connection_1": [], 
-  "maven_dependency_scope": [], 
   "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [

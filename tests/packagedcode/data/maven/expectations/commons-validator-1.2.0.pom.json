@@ -14,14 +14,6 @@
   "maven_issue_url": [
     "http://issues.apache.org/bugzilla/"
   ], 
-  "maven_dependency_version": [
-    "1.7.0", 
-    "1.6", 
-    "1.0.4", 
-    "2.0.8", 
-    "2.0.2", 
-    "3.8.1"
-  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
   "maven_contributor_name": [
@@ -102,12 +94,37 @@
   ], 
   "maven_contributor_organization": [], 
   "maven_dependency": [
-    "commons-beanutils", 
-    "commons-digester", 
-    "commons-logging", 
-    "oro", 
-    "xml-apis", 
-    "junit"
+    {
+      "version": "1.7.0", 
+      "groupId": "commons-beanutils", 
+      "artifactId": "commons-beanutils"
+    }, 
+    {
+      "version": "1.6", 
+      "groupId": "commons-digester", 
+      "artifactId": "commons-digester"
+    }, 
+    {
+      "version": "1.0.4", 
+      "groupId": "commons-logging", 
+      "artifactId": "commons-logging"
+    }, 
+    {
+      "version": "2.0.8", 
+      "groupId": "oro", 
+      "artifactId": "oro"
+    }, 
+    {
+      "version": "2.0.2", 
+      "groupId": "xml-apis", 
+      "artifactId": "xml-apis"
+    }, 
+    {
+      "scope": "test", 
+      "version": "3.8.1", 
+      "groupId": "junit", 
+      "artifactId": "junit"
+    }
   ], 
   "maven_license": [
     "The Apache Software License, Version 2.0"
@@ -143,7 +160,6 @@
     "Commons Validator provides the building blocks for both client side validation\n    and server side data validation. It may be used standalone or with a framework like\n    Struts."
   ], 
   "maven_repository_connection_1": [], 
-  "maven_dependency_scope": [], 
   "maven_license_name": [
     "The Apache Software License, Version 2.0"
   ], 

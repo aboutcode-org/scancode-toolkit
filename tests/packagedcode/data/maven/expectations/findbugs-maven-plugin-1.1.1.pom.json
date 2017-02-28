@@ -12,13 +12,6 @@
   ], 
   "maven_repository_url_1": [], 
   "maven_issue_url": [], 
-  "maven_dependency_version": [
-    "2.0.4", 
-    "2.0.4", 
-    "2.0.4", 
-    "1.0-alpha-8", 
-    "1.2.0"
-  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
   "maven_contributor_name": [
@@ -66,11 +59,31 @@
     "comundus GmbH"
   ], 
   "maven_dependency": [
-    "maven-artifact", 
-    "maven-reporting-impl", 
-    "maven-reporting-api", 
-    "doxia-core", 
-    "findbugs"
+    {
+      "version": "2.0.4", 
+      "groupId": "org.apache.maven", 
+      "artifactId": "maven-artifact"
+    }, 
+    {
+      "version": "2.0.4", 
+      "groupId": "org.apache.maven.reporting", 
+      "artifactId": "maven-reporting-impl"
+    }, 
+    {
+      "version": "2.0.4", 
+      "groupId": "org.apache.maven.reporting", 
+      "artifactId": "maven-reporting-api"
+    }, 
+    {
+      "version": "1.0-alpha-8", 
+      "groupId": "org.apache.maven.doxia", 
+      "artifactId": "doxia-core"
+    }, 
+    {
+      "version": "1.2.0", 
+      "groupId": "net.sourceforge.findbugs", 
+      "artifactId": "findbugs"
+    }
   ], 
   "maven_license": [
     "MIT"
@@ -100,7 +113,6 @@
     "This Plug-In generates reports based on the FindBugs Library"
   ], 
   "maven_repository_connection_1": [], 
-  "maven_dependency_scope": [], 
   "maven_license_name": [
     "MIT"
   ], 

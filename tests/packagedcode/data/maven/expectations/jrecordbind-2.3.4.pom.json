@@ -14,12 +14,6 @@
   "maven_issue_url": [
     "https://jrecordbind.dev.java.net/servlets/ProjectIssues"
   ], 
-  "maven_dependency_version": [
-    "20020414", 
-    "2.1.11", 
-    "2.1.11", 
-    "20081112"
-  ], 
   "maven_repository_name": [
     "Java.net Maven 2 Repository"
   ], 
@@ -66,10 +60,30 @@
   ], 
   "maven_contributor_organization": [], 
   "maven_dependency": [
-    "relaxngDatatype", 
-    "jaxb-impl", 
-    "jaxb-xjc", 
-    "xsom"
+    {
+      "scope": "compile", 
+      "version": "20020414", 
+      "groupId": "relaxngDatatype", 
+      "artifactId": "relaxngDatatype"
+    }, 
+    {
+      "scope": "compile", 
+      "version": "2.1.11", 
+      "groupId": "com.sun.xml.bind", 
+      "artifactId": "jaxb-impl"
+    }, 
+    {
+      "scope": "compile", 
+      "version": "2.1.11", 
+      "groupId": "com.sun.xml.bind", 
+      "artifactId": "jaxb-xjc"
+    }, 
+    {
+      "scope": "compile", 
+      "version": "20081112", 
+      "groupId": "com.sun.xsom", 
+      "artifactId": "xsom"
+    }
   ], 
   "maven_license": [
     "LGPL"
@@ -96,7 +110,6 @@
     "Transform fixed-length and variable-length text files into beans and back"
   ], 
   "maven_repository_connection_1": [], 
-  "maven_dependency_scope": [], 
   "maven_license_name": [
     "LGPL"
   ], 

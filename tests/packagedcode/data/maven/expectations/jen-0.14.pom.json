@@ -14,14 +14,6 @@
     "http://jen.dev.java.net/source/browse/jen/"
   ], 
   "maven_issue_url": [], 
-  "maven_dependency_version": [
-    "3.8.1", 
-    "0.30-SNAPSHOT", 
-    "2.1", 
-    "2.1", 
-    "2.1", 
-    "2.1"
-  ], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
   "maven_contributor_name": [
@@ -56,12 +48,42 @@
   ], 
   "maven_contributor_organization": [], 
   "maven_dependency": [
-    "junit", 
-    "juno", 
-    "asm", 
-    "asm-commons", 
-    "asm-attrs", 
-    "asm-tree"
+    {
+      "version": "3.8.1", 
+      "type": "jar", 
+      "groupId": "junit", 
+      "artifactId": "junit"
+    }, 
+    {
+      "version": "0.30-SNAPSHOT", 
+      "type": "jar", 
+      "groupId": "bloxx", 
+      "artifactId": "juno"
+    }, 
+    {
+      "version": "2.1", 
+      "type": "jar", 
+      "groupId": "asm", 
+      "artifactId": "asm"
+    }, 
+    {
+      "version": "2.1", 
+      "type": "jar", 
+      "groupId": "asm", 
+      "artifactId": "asm-commons"
+    }, 
+    {
+      "version": "2.1", 
+      "type": "jar", 
+      "groupId": "asm", 
+      "artifactId": "asm-attrs"
+    }, 
+    {
+      "version": "2.1", 
+      "type": "jar", 
+      "groupId": "asm", 
+      "artifactId": "asm-tree"
+    }
   ], 
   "maven_license": [
     "Apache Software License, 2.0"
@@ -94,7 +116,6 @@
   "maven_repository_connection_1": [
     "scm:cvs:pserver:guest@cvs.dev.java.net:/cvs:jen/main"
   ], 
-  "maven_dependency_scope": [], 
   "maven_license_name": [
     "Apache Software License, 2.0"
   ], 

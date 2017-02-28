@@ -10,9 +10,6 @@
   "maven_license_url": [], 
   "maven_repository_url_1": [], 
   "maven_issue_url": [], 
-  "maven_dependency_version": [
-    "3.8.1"
-  ], 
   "maven_repository_name": [
     "Apache Snapshots Repository"
   ], 
@@ -57,7 +54,12 @@
   "maven_developer_name": [], 
   "maven_contributor_organization": [], 
   "maven_dependency": [
-    "junit"
+    {
+      "scope": "test", 
+      "version": "3.8.1", 
+      "groupId": "junit", 
+      "artifactId": "junit"
+    }
   ], 
   "maven_license": [], 
   "maven_component_packaging": [
@@ -78,7 +80,6 @@
     "Provides open-source implementations of Sun specifications."
   ], 
   "maven_repository_connection_1": [], 
-  "maven_dependency_scope": [], 
   "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
