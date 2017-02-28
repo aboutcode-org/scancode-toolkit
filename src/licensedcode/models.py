@@ -228,15 +228,14 @@ class License(object):
         Does not load text files.
         Unknown fields are ignored and not bound to the License object.
         """
-        data_file = join(src_dir, self.data_file)
         try:
-            with codecs.open(data_file, encoding='utf-8') as f:
+            with codecs.open(self.data_file, encoding='utf-8') as f:
                 data = saneyaml.load(f.read())
         except Exception, e:
             # this is a rare case: fail loudly
             print()
             print('#############################')
-            print('INVALID LICENSE YAML FILE:', data_file)
+            print('INVALID LICENSE YAML FILE:', self.data_file)
             print('#############################')
             print(e)
             print('#############################')
