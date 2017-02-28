@@ -5,6 +5,8 @@ Contributing
 Contributions are welcome and appreciated!
 Every little bit helps, and credit will always be given.
 
+If you are new to ScanCode and want to find easy tickets to work on, check https://github.com/nexB/scancode-toolkit/labels/easy
+
 When contributing to ScanCode (such as code, bugs, documentation, etc.) you
 agree to the Developer Certificate of Origin http://developercertificate.org/
 and the ScanCode license (see the NOTICE file).  The same approach is used
