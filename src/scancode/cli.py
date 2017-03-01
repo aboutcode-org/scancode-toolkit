@@ -145,6 +145,34 @@ results to a file:
 
     scancode -f json -l -c samples/zlib/ > scan.json
 
+Scan a directory while ignoring a single file. Print scan results to stdout as JSON:
+
+    scancode --ignore README samples/
+
+Scan a directory while ignoring all files with txt extension. Print scan results to
+stdout as JSON (It is recommended to use quoted glob patterns to prevent pattern
+expansion by the shell):
+
+    scancode --ignore "*.txt" samples/
+
+Special characters supported in GLOB pattern:
+*       matches everything
+?       matches any single character
+[seq]   matches any character in seq
+[!seq]  matches any character not in seq
+
+For a literal match, wrap the meta-characters in brackets. For example, '[?]' matches the character '?'.
+For glob see https://en.wikipedia.org/wiki/Glob_(programming).
+
+Note: Glob patterns cannot be applied to path as strings, for e.g.
+    scancode --ignore "samples*licenses" samples/
+will not ignore "samples/JGroups/licenses".
+
+Scan a directory while ignoring multiple files (or glob patterns). Print the scan
+results to stdout as JSON:
+
+    scancode --ignore README --ignore "*.txt" samples/
+
 To extract archives, see the 'extractcode' command instead.
 '''
 
@@ -252,6 +280,8 @@ def validate_exclusive(ctx, exclusive_options):
               help=('Set <output_file> format <style> to one of the standard formats: %s '
                     'or the path to a custom template' % ' or '.join(formats)),
               callback=validate_formats)
+@click.option('--ignore', default=None, multiple=True, metavar='<pattern>',
+              help=('Ignore files matching <pattern>.'))
 @click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.')
 @click.option('--quiet', is_flag=True, default=False, help='Do not print summary or progress messages.')
 @click.option('-n', '--processes', is_flag=False, default=1, type=int, show_default=True, help='Scan <input> using n parallel processes.')
@@ -269,7 +299,7 @@ def scancode(ctx,
              copyright, license, package,
              email, url, info,
              license_score, license_text, only_findings, strip_root, full_root,
-             format, verbose, quiet, processes,
+             format, ignore, verbose, quiet, processes,
              diag, timeout, *args, **kwargs):
     """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
 
@@ -300,6 +330,7 @@ def scancode(ctx,
         ('--only-findings', only_findings),
         ('--strip-root', strip_root),
         ('--full-root', full_root),
+        ('--ignore', ignore),
         ('--format', format),
         ('--diag', diag),
     ])
@@ -340,6 +371,8 @@ def scancode(ctx,
 
     scans_cache_class = get_scans_cache_class()
 
+    user_ignore = {patt: 'User ignore: Supplied by --ignore' for patt in ignore}
+
     try:
         files_count, results, success = scan(
             input_path=input,
@@ -353,7 +386,8 @@ def scancode(ctx,
             diag=diag,
             scans_cache_class=scans_cache_class,
             strip_root=strip_root,
-            full_root=full_root)
+            full_root=full_root,
+            ignore=user_ignore)
 
         if not quiet:
             echo_stderr('Saving results.', fg='green')
@@ -377,7 +411,8 @@ def scan(input_path,
          diag=False,
          scans_cache_class=None,
          strip_root=False,
-         full_root=False):
+         full_root=False,
+         ignore=None):
     """
     Return a tuple of (files_count, scan_results, success) where
     scan_results is an iterable and success is a boolean.
@@ -423,7 +458,8 @@ def scan(input_path,
 
     # maxtasksperchild helps with recycling processes in case of leaks
     pool = get_pool(processes=processes, maxtasksperchild=1000)
-    resources = resource_paths(input_path)
+    ignore = ignore or {}
+    resources = resource_paths(input_path, ignore)
     logfile_path = scans_cache_class().cache_files_log
     paths_with_error = []
     files_count = 0
@@ -628,7 +664,7 @@ def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT):
     return success, rel_path
 
 
-def resource_paths(base_path):
+def resource_paths(base_path, user_ignores):
     """
     Yield tuples of (absolute path, base_path-relative path) for all the files found
     at base_path (either a directory or file) given an absolute base_path. Only yield
@@ -642,7 +678,10 @@ def resource_paths(base_path):
     base_path = os.path.abspath(os.path.normpath(os.path.expanduser(base_path)))
     base_is_dir = filetype.is_dir(base_path)
     len_base_path = len(base_path)
-    ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
+    ignores = dict()
+    ignores.update(user_ignores)
+    ignores.update(ignore.ignores_VCS)
+    ignored = partial(ignore.is_ignored, ignores=ignores, unignores={})
     resources = fileutils.resource_iter(base_path, ignored=ignored)
 
     for abs_path in resources:

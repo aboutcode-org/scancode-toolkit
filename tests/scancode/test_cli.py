@@ -139,6 +139,54 @@ def test_scancode_skip_vcs_files_and_dirs_by_default():
     scan_locs = [x['path'] for x in scan_result['files']]
     assert [u'vcs', u'vcs/test.txt'] == scan_locs
 
+def test_scancode_skip_single_file(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.extract_test_tar('ignore/user.tgz')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['--copyright', '--strip-root', '--ignore', 'sample.doc', test_dir, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    scan_result = _load_json_result(result_file)
+    assert 6 == scan_result['files_count']
+    scan_locs = [x['path'] for x in scan_result['files']]
+    assert [u'user', u'user/ignore.doc', u'user/src', u'user/src/ignore.doc', u'user/src/test', u'user/src/test/sample.txt'] == scan_locs
+
+def test_scancode_skip_multiple_files(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.extract_test_tar('ignore/user.tgz')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['--copyright', '--strip-root', '--ignore', 'ignore.doc', test_dir, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    scan_result = _load_json_result(result_file)
+    assert 5 == scan_result['files_count']
+    scan_locs = [x['path'] for x in scan_result['files']]
+    assert [u'user', u'user/src', u'user/src/test', u'user/src/test/sample.doc', u'user/src/test/sample.txt'] == scan_locs
+
+def test_scancode_skip_glob_files(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.extract_test_tar('ignore/user.tgz')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['--copyright', '--strip-root', '--ignore', '*.doc', test_dir, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    scan_result = _load_json_result(result_file)
+    assert 4 == scan_result['files_count']
+    scan_locs = [x['path'] for x in scan_result['files']]
+    assert [u'user', u'user/src', u'user/src/test', u'user/src/test/sample.txt'] == scan_locs
+
+def test_scancode_skip_glob_path(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.extract_test_tar('ignore/user.tgz')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['--copyright', '--strip-root', '--ignore', '*/src/test/*', test_dir, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    scan_result = _load_json_result(result_file)
+    assert 5 == scan_result['files_count']
+    scan_locs = [x['path'] for x in scan_result['files']]
+    assert [u'user', u'user/ignore.doc', u'user/src', u'user/src/ignore.doc', u'user/src/test'] == scan_locs
+
 
 def test_usage_and_help_return_a_correct_script_name_on_all_platforms():
     runner = CliRunner()
