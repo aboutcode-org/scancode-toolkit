@@ -170,7 +170,8 @@ ScanCode needs a Python 2.7 interpreter.
   for instructions to compile Python from sources on Centos.
 
   * On Ubuntu 16.04 and later, you will need to install these packages first: ``python-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev``
-  * On Debian 8 (Jessie), you will need to install these packages first: ``python-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-dev``
+  * On most Debian/Ubuntu distros, you will need to install these packages first: ``python-dev libbz2 xzutils zlib1g libxml2-dev libxslt1-dev``
+* On Debian 8 (Jessie), you will need to install these packages first: ``python-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-dev``
   * On RPM-based distros, you will need to install these packages first: ``python-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel``
 
 - **On Windows**:
