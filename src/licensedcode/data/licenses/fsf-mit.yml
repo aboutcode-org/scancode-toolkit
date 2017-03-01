@@ -2,7 +2,7 @@ key: fsf-mit
 short_name: FSF-MIT
 name: >-
     Free Software Foundation - MIT Style License
-is_deprecated: yes
+
 category: Permissive
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.fsf.org/licensing/licenses/

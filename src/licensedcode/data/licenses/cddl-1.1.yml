@@ -2,7 +2,7 @@ key: cddl-1.1
 short_name: CDDL 1.1
 name: >-
     Common Development and Distribution License 1.1
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: Oracle Corporation
 homepage_url: http://glassfish.java.net/public/CDDL+GPL_1_1.html

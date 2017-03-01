@@ -1,7 +1,7 @@
 key: gpl-1.0
 short_name: GPL 1.0
 name: GNU General Public License 1.0
-is_deprecated: yes
+
 category: Copyleft
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.gnu.org/licenses/gpl-1.0.html

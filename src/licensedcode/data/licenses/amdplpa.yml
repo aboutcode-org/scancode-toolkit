@@ -1,7 +1,7 @@
 key: amdplpa
 short_name: AMD PLPA License
 name: AMD PLPA License
-is_deprecated: yes
+
 category: Permissive
 owner: Advanced Micro Devices
 homepage_url: https://fedoraproject.org/wiki/Licensing/AMD_plpa_map_License

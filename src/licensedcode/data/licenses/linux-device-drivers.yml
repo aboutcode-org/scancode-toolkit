@@ -1,6 +1,6 @@
 key: linux-device-drivers
 short_name: Linux Device Drivers
 name: Linux Device Drivers License
-is_deprecated: yes
+
 category: Permissive
 owner: O'Reilly Media, Inc.

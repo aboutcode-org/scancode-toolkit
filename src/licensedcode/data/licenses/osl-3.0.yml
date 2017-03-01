@@ -1,7 +1,7 @@
 key: osl-3.0
 short_name: OSL 3.0
 name: Open Software License 3.0
-is_deprecated: yes
+
 category: Copyleft
 owner: Lawrence Rosen
 homepage_url: http://www.opensource.org/licenses/osl-3.0.php

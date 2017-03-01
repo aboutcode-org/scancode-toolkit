@@ -1,7 +1,7 @@
 key: itu-t
 short_name: ITU-T License
 name: ITU-T License
-is_deprecated: yes
+
 category: Free Restricted
 owner: >-
     ITU - International Telecommunications Union

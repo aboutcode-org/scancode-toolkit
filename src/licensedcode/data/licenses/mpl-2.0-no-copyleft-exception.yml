@@ -2,7 +2,7 @@ key: mpl-2.0-no-copyleft-exception
 short_name: MPL 2.0 with no copyleft exception
 name: >-
     Mozilla Public License 2.0 (no copyleft exception)
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: Mozilla
 homepage_url: http://www.mozilla.org/MPL/2.0/

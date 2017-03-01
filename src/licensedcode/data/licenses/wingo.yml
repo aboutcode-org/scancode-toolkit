@@ -1,7 +1,7 @@
 key: wingo
 short_name: wingo License
 name: wingo License
-is_deprecated: yes
+
 category: Permissive
 owner: wingo
 homepage_url: http://www.wingo.com/jt_/license.html

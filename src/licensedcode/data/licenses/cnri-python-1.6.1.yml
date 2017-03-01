@@ -2,7 +2,7 @@ key: cnri-python-1.6.1
 short_name: CNRI Python 1.6.1
 name: >-
     CNRI Open Source License Agreement for Python 1.6.1
-is_deprecated: yes
+
 category: Permissive
 owner: CNRI
 homepage_url: http://www.python.org/download/releases/1.6.1/download_win/

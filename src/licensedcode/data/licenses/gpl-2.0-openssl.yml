@@ -2,7 +2,7 @@ key: gpl-2.0-openssl
 short_name: GPL 2.0 with OpenSSL exception
 name: >-
     GNU General Public License 2.0 with OpenSSL exception
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: OpenSSL
 homepage_url: http://www.openssl.org/source/license.html

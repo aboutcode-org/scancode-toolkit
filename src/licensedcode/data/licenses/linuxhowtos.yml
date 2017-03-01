@@ -1,7 +1,7 @@
 key: linuxhowtos
 short_name: linuxhowtos License
 name: linuxhowtos License
-is_deprecated: yes
+
 category: Permissive
 owner: Linux Foundation
 homepage_url: http://www.linuxhowtos.org/category17/

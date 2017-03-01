@@ -1,7 +1,7 @@
 key: psfrag
 short_name: psfrag License
 name: psfrag License
-is_deprecated: yes
+
 category: Permissive
 owner: Craig Barratt
 homepage_url: https://fedoraproject.org/wiki/Licensing/psfrag

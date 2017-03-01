@@ -1,7 +1,7 @@
 key: com-oreilly-servlet
 short_name: com.oreilly.servlet License
 name: com.oreilly.servlet License
-is_deprecated: yes
+
 category: Commercial
 owner: Servlets.com
 homepage_url: http://www.servlets.com/cos/license.html

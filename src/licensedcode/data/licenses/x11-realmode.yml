@@ -1,6 +1,6 @@
 key: x11-realmode
 short_name: X11-Style (Realmode)
 name: X11-Style (Realmode)
-is_deprecated: yes
+
 category: Permissive
 owner: XFree86 Project, Inc

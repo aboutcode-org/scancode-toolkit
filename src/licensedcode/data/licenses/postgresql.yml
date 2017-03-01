@@ -1,7 +1,7 @@
 key: postgresql
 short_name: PostgreSQL License
 name: PostgreSQL License
-is_deprecated: yes
+
 category: Permissive
 owner: PostgreSQL
 homepage_url: http://www.postgresql.org/about/licence

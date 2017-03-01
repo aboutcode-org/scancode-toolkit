@@ -2,6 +2,6 @@ key: gpl-2.0-iolib
 short_name: GPL 2.0 with GNU IO Library exception
 name: >-
     GNU General Public License 2.0 with GNU IO Library exception
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)

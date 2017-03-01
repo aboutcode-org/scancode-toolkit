@@ -1,6 +1,6 @@
 key: broadcom-linux-timer
 short_name: Broadcom Warranty Disclaimer
 name: Broadcom Warranty Disclaimer
-is_deprecated: yes
+
 category: Permissive
 owner: Broadcom

@@ -1,7 +1,7 @@
 key: twisted-snmp
 short_name: TwistedSNMP License
 name: TwistedSNMP License
-is_deprecated: yes
+
 category: Permissive
 owner: TwistedSNMP
 other_urls:

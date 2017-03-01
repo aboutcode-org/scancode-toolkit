@@ -1,7 +1,7 @@
 key: msppl
 short_name: MSPPL
 name: Microsoft patterns & practices License
-is_deprecated: yes
+
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://msdn.microsoft.com/en-us/library/gg405489(v=pandp.40).aspx

@@ -1,7 +1,7 @@
 key: osf-1990
 short_name: OSF 1990 License
 name: OSF 1990 License
-is_deprecated: yes
+
 category: Permissive
 owner: Open Group
 homepage_url: https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#HP_Variant

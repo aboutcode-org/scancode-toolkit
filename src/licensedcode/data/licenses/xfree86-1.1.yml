@@ -1,7 +1,7 @@
 key: xfree86-1.1
 short_name: XFree86 License 1.1
 name: XFree86 License 1.1
-is_deprecated: yes
+
 category: Permissive
 owner: XFree86 Project, Inc
 homepage_url: http://www.xfree86.org/current/LICENSE4.html

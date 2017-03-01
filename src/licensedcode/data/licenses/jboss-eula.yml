@@ -1,7 +1,7 @@
 key: jboss-eula
 short_name: JBoss EULA
 name: JBoss EULA
-is_deprecated: yes
+
 category: Proprietary Free
 owner: JBoss Community
 text_urls:

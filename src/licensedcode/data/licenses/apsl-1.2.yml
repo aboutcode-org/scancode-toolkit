@@ -1,7 +1,7 @@
 key: apsl-1.2
 short_name: APSL 1.2
 name: Apple Public Source License 1.2
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: Apple
 homepage_url: http://www.opensource.apple.com/apsl/1.2.txt

@@ -1,7 +1,7 @@
 key: sybase
 short_name: Open Watcom 1.0
 name: Sybase Open Watcom Public License v1.0
-is_deprecated: yes
+
 category: Proprietary Free
 owner: Sybase, Inc. (an SAP subsidiary)
 homepage_url: http://opensource.org/licenses/sybase.php

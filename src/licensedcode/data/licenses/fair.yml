@@ -1,7 +1,7 @@
 key: fair
 short_name: Fair License
 name: Fair License
-is_deprecated: yes
+
 category: Permissive
 owner: OSI - Open Source Initiative
 homepage_url: http://opensource.org/licenses/fair.php

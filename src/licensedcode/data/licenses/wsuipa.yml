@@ -1,7 +1,7 @@
 key: wsuipa
 short_name: Wsuipa License
 name: Wsuipa License
-is_deprecated: yes
+
 category: Permissive
 owner: Washington State University
 homepage_url: https://fedoraproject.org/wiki/Licensing/Wsuipa

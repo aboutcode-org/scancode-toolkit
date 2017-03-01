@@ -1,7 +1,7 @@
 key: ati-eula
 short_name: ATI Software EULA
 name: ATI Software End User License Agreement
-is_deprecated: yes
+
 category: Proprietary Free
 owner: Advanced Micro Devices
 homepage_url: http://www.amd.com/us/pages/amdhomepage.aspx

@@ -1,7 +1,7 @@
 key: bzip2-libbzip-1.0.5
 short_name: bzip2 License
 name: bzip2 License
-is_deprecated: yes
+
 category: Permissive
 owner: bzip
 homepage_url: http://bzip.org/1.0.5/bzip2-manual-1.0.5.html

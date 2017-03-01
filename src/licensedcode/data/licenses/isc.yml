@@ -1,7 +1,7 @@
 key: isc
 short_name: ISC License
 name: ISC License
-is_deprecated: yes
+
 category: Permissive
 owner: ISC - Internet Systems Consortium
 homepage_url: https://www.isc.org/software/license

@@ -2,7 +2,7 @@ key: gpl-2.0-bison
 short_name: GPL 2.0 with Bison exception
 name: >-
     GNU General Public License 2.0 with Bison exception
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 spdx_license_key: GPL-2.0-with-bison-exception

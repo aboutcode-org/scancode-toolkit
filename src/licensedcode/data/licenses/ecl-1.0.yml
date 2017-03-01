@@ -1,7 +1,7 @@
 key: ecl-1.0
 short_name: ECL 1.0
 name: Educational Community License 1.0
-is_deprecated: yes
+
 category: Permissive
 owner: OSI - Open Source Initiative
 homepage_url: http://www.opensource.org/licenses/ecl1.php

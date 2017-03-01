@@ -1,7 +1,7 @@
 key: zed
 short_name: Zed License
 name: Zed License
-is_deprecated: yes
+
 category: Permissive
 owner: Jim Davies
 homepage_url: https://fedoraproject.org/wiki/Licensing/Zed

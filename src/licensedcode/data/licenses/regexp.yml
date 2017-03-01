@@ -1,7 +1,7 @@
 key: regexp
 short_name: Regexp License
 name: Regexp License
-is_deprecated: yes
+
 category: Permissive
 owner: Henry Spencer
 homepage_url: https://fedoraproject.org/wiki/Licensing/Henry_Spencer_Reg-Ex_Library_License

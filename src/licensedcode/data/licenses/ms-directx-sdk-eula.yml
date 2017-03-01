@@ -1,7 +1,7 @@
 key: ms-directx-sdk-eula
 short_name: MS DirectX SDK EULA
 name: Microsoft DirectX SDK EULA
-is_deprecated: yes
+
 category: Proprietary Free
 owner: Microsoft
 text_urls:

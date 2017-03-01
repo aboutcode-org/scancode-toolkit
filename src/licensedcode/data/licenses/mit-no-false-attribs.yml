@@ -1,7 +1,7 @@
 key: mit-no-false-attribs
 short_name: MIT no false attribution License
 name: MIT with no false attribution License
-is_deprecated: yes
+
 category: Permissive
 owner: npm Registry
 homepage_url: https://fedoraproject.org/wiki/Licensing/MITNFA

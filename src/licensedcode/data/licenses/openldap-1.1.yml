@@ -1,7 +1,7 @@
 key: openldap-1.1
 short_name: OpenLDAP Public License 1.1
 name: OpenLDAP Public License 1.1
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: OpenLDAP Foundation
 homepage_url: http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=806557a5ad59804ef3a44d5abfbe91d706b0791f

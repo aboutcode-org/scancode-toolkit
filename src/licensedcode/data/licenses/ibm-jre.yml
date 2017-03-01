@@ -1,7 +1,7 @@
 key: ibm-jre
 short_name: IBM JRE License
 name: IBM Java Runtime Environment License
-is_deprecated: yes
+
 category: Commercial
 owner: IBM
 homepage_url: http://www.ibm.com/developerworks/views/download.jsp?contentid=10947&filename=zip&method=ftp&locale=worldwide

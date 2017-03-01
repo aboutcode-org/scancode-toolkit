@@ -1,7 +1,7 @@
 key: mit-modern
 short_name: MIT Modern Variant
 name: MIT Modern Variant
-is_deprecated: yes
+
 category: Permissive
 owner: Fedora
 homepage_url: http://fedoraproject.org/wiki/Licensing/MIT

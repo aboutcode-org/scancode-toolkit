@@ -1,7 +1,7 @@
 key: dvipdfm
 short_name: dvipdfm License
 name: dvipdfm License
-is_deprecated: yes
+
 category: Permissive
 owner: Unspecified
 homepage_url: https://fedoraproject.org/wiki/Licensing/dvipdfm

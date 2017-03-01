@@ -1,7 +1,7 @@
 key: epics
 short_name: EPICS Open License
 name: EPICS Open License
-is_deprecated: yes
+
 category: Permissive
 owner: Argonne National Laboratory
 homepage_url: http://www.aps.anl.gov/epics/license/open.php

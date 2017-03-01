@@ -2,7 +2,7 @@ key: gpl-2.0-gcc
 short_name: GPL 2.0 with GCC exception
 name: >-
     GNU General Public License 2.0 with GCC Runtime Library exception
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 spdx_license_key: GPL-2.0-with-GCC-exception

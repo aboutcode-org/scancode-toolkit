@@ -1,7 +1,7 @@
 key: pine
 short_name: Pine License
 name: Pine License
-is_deprecated: yes
+
 category: Permissive
 owner: University of Washington IT
 homepage_url: http://www.washington.edu/pine/overview/legal.html

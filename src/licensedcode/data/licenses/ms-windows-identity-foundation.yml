@@ -2,7 +2,7 @@ key: ms-windows-identity-foundation
 short_name: MS Windows Identity Foundation License
 name: >-
     Microsoft Windows Identity Foundation License
-is_deprecated: yes
+
 category: Proprietary Free
 owner: Microsoft
 text_urls:

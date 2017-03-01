@@ -1,7 +1,7 @@
 key: osl-1.0
 short_name: OSL 1.0
 name: Open Software License 1.0
-is_deprecated: yes
+
 category: Copyleft
 owner: Lawrence Rosen
 homepage_url: http://www.opensource.org/licenses/osl-1.0.txt

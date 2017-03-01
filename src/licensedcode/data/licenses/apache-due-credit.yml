@@ -1,7 +1,7 @@
 key: apache-due-credit
 short_name: Apache Due Credit Variant
 name: Apache Due Credit Variant
-is_deprecated: yes
+
 category: Permissive
 owner: Codehaus
 other_urls:

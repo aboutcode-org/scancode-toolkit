@@ -2,7 +2,7 @@ key: ca-tosl-1.1
 short_name: CA Trusted Open Source License 1.1
 name: >-
     Computer Associates Trusted Open Source License 1.1
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: Computer Associates
 homepage_url: http://www.opensource.org/licenses/ca-tosl1.1.php

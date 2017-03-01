@@ -2,7 +2,7 @@ key: sleepycat
 short_name: Sleepycat License
 name: >-
     Sleepycat License (Berkeley Database License)
-is_deprecated: yes
+
 category: Copyleft
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/technology/software/products/berkeley-db/htdocs/oslicense.html

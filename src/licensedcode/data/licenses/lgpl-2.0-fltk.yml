@@ -2,7 +2,7 @@ key: lgpl-2.0-fltk
 short_name: LGPL 2.0 with FLTK exception
 name: >-
     GNU Library General Public License 2.0 with FLTK exception
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: FLTK
 homepage_url: http://www.fltk.org/COPYING.php

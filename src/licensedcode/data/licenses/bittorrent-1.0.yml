@@ -1,7 +1,7 @@
 key: bittorrent-1.0
 short_name: BitTorrent 1.0
 name: BitTorrent Open Source License 1.0
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: BitTorrent, Inc.
 homepage_url: http://www.bittorrent.com/license/

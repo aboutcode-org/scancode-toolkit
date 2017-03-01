@@ -1,7 +1,7 @@
 key: bsd-original
 short_name: BSD-Original
 name: BSD-Original
-is_deprecated: yes
+
 category: Permissive
 owner: Regents of the University of California
 homepage_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html

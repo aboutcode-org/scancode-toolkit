@@ -1,7 +1,7 @@
 key: netcdf
 short_name: NetCDF License
 name: NetCDF License
-is_deprecated: yes
+
 category: Permissive
 owner: Unidata
 homepage_url: http://www.unidata.ucar.edu/software/netcdf/copyright.html

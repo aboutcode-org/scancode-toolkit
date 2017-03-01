@@ -1,6 +1,6 @@
 key: cavium-targeted-hardware
 short_name: Cavium Targeted Hardware License
 name: Cavium Targeted Hardware License
-is_deprecated: yes
+
 category: Free Restricted
 owner: Cavium

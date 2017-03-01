@@ -2,6 +2,6 @@ key: ms-ws-routing-spec
 short_name: MS WS Routing Specifications License
 name: >-
     Microsoft WS Routing Specifications License
-is_deprecated: yes
+
 category: Permissive
 owner: Microsoft

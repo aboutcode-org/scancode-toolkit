@@ -1,7 +1,7 @@
 key: westhawk
 short_name: Westhawk License
 name: Westhawk License
-is_deprecated: yes
+
 category: Permissive
 owner: Westhawk
 homepage_url: http://westhawksnmp.cvs.sourceforge.net/viewvc/westhawksnmp/westhawksnmp/src/uk/co/westhawk/snmp/

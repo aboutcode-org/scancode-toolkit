@@ -1,7 +1,7 @@
 key: condor-1.1
 short_name: Condor Public License 1.1
 name: Condor Public License 1.1
-is_deprecated: yes
+
 category: Permissive
 owner: Condor Project
 homepage_url: http://www.cs.wisc.edu/condor/license.html

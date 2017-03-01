@@ -1,6 +1,6 @@
 key: intel-bsd-special
 short_name: Intel BSD - Special Disclaimer
 name: Intel BSD - Special Disclaimer
-is_deprecated: yes
+
 category: Permissive
 owner: Intel Corporation

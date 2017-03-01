@@ -1,7 +1,7 @@
 key: afl-2.0
 short_name: AFL 2.0
 name: Academic Free License 2.0
-is_deprecated: yes
+
 category: Permissive
 owner: Lawrence Rosen
 homepage_url: http://opensource.linux-mirror.org/licenses/afl-2.0.txt

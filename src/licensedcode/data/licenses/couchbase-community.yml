@@ -1,7 +1,7 @@
 key: couchbase-community
 short_name: Couchbase Community Edition License
 name: Couchbase Community Edition License
-is_deprecated: yes
+
 category: Proprietary Free
 owner: Couchbase
 homepage_url: http://www.couchbase.com/download

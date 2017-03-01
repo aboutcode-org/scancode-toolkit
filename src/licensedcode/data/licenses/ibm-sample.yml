@@ -1,7 +1,7 @@
 key: ibm-sample
 short_name: IBM Sample License
 name: IBM Sample Program License
-is_deprecated: yes
+
 category: Permissive
 owner: IBM
 text_urls:

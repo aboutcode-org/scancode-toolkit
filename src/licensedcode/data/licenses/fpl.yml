@@ -1,7 +1,7 @@
 key: fpl
 short_name: Freeware Public License (FPL)
 name: Freeware Public License (FPL)
-is_deprecated: yes
+
 category: Permissive
 owner: Packetizer
 homepage_url: https://github.com/abahdanovich/sha1/blob/master/c/license.txt

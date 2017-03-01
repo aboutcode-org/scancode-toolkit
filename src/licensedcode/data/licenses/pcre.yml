@@ -1,7 +1,7 @@
 key: pcre
 short_name: PCRE License
 name: PCRE License
-is_deprecated: yes
+
 category: Permissive
 owner: University of Cambridge
 homepage_url: http://www.pcre.org/licence.txt

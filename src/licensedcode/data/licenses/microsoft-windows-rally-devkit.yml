@@ -2,6 +2,6 @@ key: microsoft-windows-rally-devkit
 short_name: MS Windows Rally Development Kit License
 name: >-
     Microsoft Windows Rally Development Kit License
-is_deprecated: yes
+
 category: Proprietary Free
 owner: Microsoft

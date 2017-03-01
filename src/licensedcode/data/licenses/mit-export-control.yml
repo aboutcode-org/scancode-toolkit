@@ -1,7 +1,7 @@
 key: mit-export-control
 short_name: MIT with Export Control
 name: MIT with Export Control
-is_deprecated: yes
+
 category: Permissive
 owner: Xerox PARC
 homepage_url: https://fedoraproject.org/wiki/Licensing:Xerox?rd=Licensing/Xerox

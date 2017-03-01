@@ -1,7 +1,7 @@
 key: classic-vb
 short_name: Classic VB License
 name: Classic VB License
-is_deprecated: yes
+
 category: Permissive
 owner: Karl Peterson
 homepage_url: http://vb.mvps.org/license.asp

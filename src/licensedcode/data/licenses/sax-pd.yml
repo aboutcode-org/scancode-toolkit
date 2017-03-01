@@ -1,7 +1,7 @@
 key: sax-pd
 short_name: SAX-PD
 name: SAX Public Domain Notice
-is_deprecated: yes
+
 category: Public Domain
 owner: SAX Project
 homepage_url: http://www.saxproject.org/copying.html

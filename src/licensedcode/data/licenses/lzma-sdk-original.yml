@@ -1,7 +1,7 @@
 key: lzma-sdk-original
 short_name: LZMA SDK Original
 name: LZMA SDK Original
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: Igor Pavlov
 homepage_url: http://www.7-zip.org/sdk.html

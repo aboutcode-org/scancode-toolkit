@@ -1,7 +1,7 @@
 key: mir-os
 short_name: MirOS License
 name: MirOS License
-is_deprecated: yes
+
 category: Permissive
 owner: MirOS Project
 homepage_url: https://www.mirbsd.org/MirOS-Licence

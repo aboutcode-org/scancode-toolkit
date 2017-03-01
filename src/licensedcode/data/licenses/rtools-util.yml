@@ -1,7 +1,7 @@
 key: rtools-util
 short_name: RTools.Util License
 name: RTools.Util License
-is_deprecated: yes
+
 category: Permissive
 owner: Ryan Seghers
 other_urls:

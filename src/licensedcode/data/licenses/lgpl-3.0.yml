@@ -1,7 +1,7 @@
 key: lgpl-3.0
 short_name: LGPL 3.0
 name: GNU Lesser General Public License 3.0
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.gnu.org/licenses/lgpl-3.0.html

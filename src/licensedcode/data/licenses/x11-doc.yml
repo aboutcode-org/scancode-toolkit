@@ -1,7 +1,7 @@
 key: x11-doc
 short_name: X11 Documentation License
 name: X11 Documentation License
-is_deprecated: yes
+
 category: Permissive
 owner: XFree86 Project, Inc
 homepage_url: https://www.x.org/

@@ -2,7 +2,7 @@ key: gpl-2.0-mysql-floss
 short_name: GPL 2.0 with MySQL FLOSS exception
 name: >-
     GNU General Public License 2.0 with MySQL FLOSS exception
-is_deprecated: yes
+
 category: Copyleft
 owner: Oracle Corporation
 homepage_url: https://mariadb.com/kb/en/mariadb/mariadb-license/#the-floss-exception

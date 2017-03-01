@@ -1,7 +1,7 @@
 key: gfdl-1.2
 short_name: GFDL 1.2
 name: GNU Free Documentation License 1.2
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.gnu.org/copyleft/fdl.html

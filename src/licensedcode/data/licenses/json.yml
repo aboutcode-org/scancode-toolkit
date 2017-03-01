@@ -1,7 +1,7 @@
 key: json
 short_name: JSON License
 name: JSON License
-is_deprecated: yes
+
 category: Permissive
 owner: JSON.org
 homepage_url: http://www.json.org/license.html

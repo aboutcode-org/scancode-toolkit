@@ -1,7 +1,7 @@
 key: ijg
 short_name: JPEG License
 name: Independent JPEG Group License
-is_deprecated: yes
+
 category: Permissive
 owner: IJG - Independent JPEG Group
 homepage_url: http://fedoraproject.org/wiki/Licensing/IJG

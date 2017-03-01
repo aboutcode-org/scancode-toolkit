@@ -2,7 +2,7 @@ key: lgpl-2.0-plus
 short_name: LGPL 2.0 or later
 name: >-
     GNU Library General Public License 2.0 or later
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html

@@ -1,7 +1,7 @@
 key: snia
 short_name: SNIA Public License 1.1
 name: SNIA Public License 1.1
-is_deprecated: yes
+
 category: Copyleft
 owner: SNIA
 homepage_url: https://fedoraproject.org/wiki/Licensing/SNIA_Public_License

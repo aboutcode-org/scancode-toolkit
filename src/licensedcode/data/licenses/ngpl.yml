@@ -1,7 +1,7 @@
 key: ngpl
 short_name: Nethack General Public License
 name: Nethack General Public License
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: NetHack
 homepage_url: http://www.nethack.org/common/license.html

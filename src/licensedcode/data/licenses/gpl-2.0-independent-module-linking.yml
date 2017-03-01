@@ -3,7 +3,7 @@ short_name: >-
     GPL 2.0 with Independent Module Linking exception
 name: >-
     GPL 2.0 with Independent Module Linking exception
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: ICSharpCode
 homepage_url: http://icsharpcode.github.io/SharpZipLib/

@@ -1,7 +1,7 @@
 key: afl-3.0
 short_name: AFL 3.0
 name: Academic Free License 3.0
-is_deprecated: yes
+
 category: Permissive
 owner: Lawrence Rosen
 homepage_url: http://opensource.org/licenses/afl-3.0.php

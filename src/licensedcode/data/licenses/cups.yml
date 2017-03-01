@@ -1,7 +1,7 @@
 key: cups
 short_name: CUPS License
 name: CUPS License
-is_deprecated: yes
+
 category: Copyleft
 owner: Apple
 homepage_url: http://www.cups.org/

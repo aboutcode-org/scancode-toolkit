@@ -1,7 +1,7 @@
 key: cube
 short_name: Cube License
 name: Cube License
-is_deprecated: yes
+
 category: Permissive
 owner: Wouter van Oortmerssen
 homepage_url: https://fedoraproject.org/wiki/Licensing/Cube

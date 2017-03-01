@@ -1,7 +1,7 @@
 key: bsd-2-clause-netbsd
 short_name: BSD 2-clause "NetBSD"
 name: BSD 2-clause "NetBSD" License
-is_deprecated: yes
+
 category: Permissive
 owner: NetBSD
 homepage_url: http://www.netbsd.org/about/redistribution.html#default

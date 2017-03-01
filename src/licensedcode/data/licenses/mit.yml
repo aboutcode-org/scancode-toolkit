@@ -1,7 +1,7 @@
 key: mit
 short_name: MIT License
 name: MIT License
-is_deprecated: yes
+
 category: Permissive
 owner: MIT
 homepage_url: http://opensource.org/licenses/mit-license.php

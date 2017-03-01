@@ -1,7 +1,7 @@
 key: inno-setup
 short_name: Inno Setup License
 name: Inno Setup License
-is_deprecated: yes
+
 category: Permissive
 owner: jrsoftware.org
 homepage_url: http://www.jrsoftware.org/files/is/license.txt

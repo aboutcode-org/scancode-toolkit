@@ -1,7 +1,7 @@
 key: hp-netperf
 short_name: HP Netperf License
 name: HP Netperf License
-is_deprecated: yes
+
 category: Free Restricted
 owner: HP - Hewlett Packard
 homepage_url: http://www.netperf.org/netperf/training/Netperf.html

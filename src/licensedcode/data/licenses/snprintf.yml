@@ -1,6 +1,6 @@
 key: snprintf
 short_name: snprintf License
 name: snprintf License
-is_deprecated: yes
+
 category: Permissive
 owner: Unspecified

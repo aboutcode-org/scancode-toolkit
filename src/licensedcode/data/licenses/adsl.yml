@@ -1,7 +1,7 @@
 key: adsl
 short_name: Amazon Digital Services License
 name: Amazon Digital Services License
-is_deprecated: yes
+
 category: Permissive
 owner: Amazon Web Services
 homepage_url: https://fedoraproject.org/wiki/Licensing/AmazonDigitalServicesLicense

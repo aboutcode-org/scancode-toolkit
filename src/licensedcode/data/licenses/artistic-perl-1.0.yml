@@ -1,7 +1,7 @@
 key: artistic-perl-1.0
 short_name: Artistic-Perl-1.0
 name: Artistic License (Perl) 1.0
-is_deprecated: yes
+
 category: Copyleft Limited
 owner: Perl Foundation
 homepage_url: http://dev.perl.org/licenses/artistic.html

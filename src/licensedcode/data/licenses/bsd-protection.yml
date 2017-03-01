@@ -1,7 +1,7 @@
 key: bsd-protection
 short_name: BSD Protection License
 name: BSD Protection License
-is_deprecated: yes
+
 category: Copyleft
 owner: FreeBSD
 homepage_url: https://fedoraproject.org/wiki/Licensing/BSD_Protection_License

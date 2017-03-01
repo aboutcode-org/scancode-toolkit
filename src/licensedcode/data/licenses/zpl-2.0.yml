@@ -1,7 +1,7 @@
 key: zpl-2.0
 short_name: ZPL 2.0
 name: Zope Public License 2.0
-is_deprecated: yes
+
 category: Permissive
 owner: Zope Community
 homepage_url: http://www.zope.org/Resources/License/

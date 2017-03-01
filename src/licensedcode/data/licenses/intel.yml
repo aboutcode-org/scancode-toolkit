@@ -1,7 +1,7 @@
 key: intel
 short_name: Intel Limited Patent License
 name: Intel Limited Patent License
-is_deprecated: yes
+
 category: Proprietary Free
 owner: Intel Corporation
 homepage_url: http://www.mepis.org/node/10358
