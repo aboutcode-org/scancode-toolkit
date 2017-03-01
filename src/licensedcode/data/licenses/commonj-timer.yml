@@ -1,6 +1,7 @@
 key: commonj-timer
 short_name: CommonJ Timer License
 name: CommonJ Timer and Work Manager License
+is_deprecated: yes
 category: Permissive
 owner: Oracle Corporation
 homepage_url: http://ebr.springsource.com/repository/app/bundle/version/detail?name=com.springsource.commonj&version=1.1.0

@@ -1,6 +1,7 @@
 key: txl-10.5
 short_name: TXL 10.5 License
 name: TXL 10.5 License
+is_deprecated: yes
 category: Free Restricted
 owner: Unspecified
 homepage_url: http://fossat.googlecode.com/svn/trunk/bin/COPYRIGHT.txt

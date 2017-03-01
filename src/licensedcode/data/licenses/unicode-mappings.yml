@@ -1,5 +1,6 @@
 key: unicode-mappings
 short_name: Unicode Mappings License
 name: Unicode Mappings License
+is_deprecated: yes
 category: Permissive
 owner: Unicode Consortium

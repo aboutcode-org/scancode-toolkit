@@ -1,6 +1,7 @@
 key: openvpn-as-eula
 short_name: OpenVPN-AS EULA
 name: OpenVPN Access Server EULA
+is_deprecated: yes
 category: Proprietary Free
 owner: OpenVPN
 homepage_url: http://openvpn.net/index.php/license.html

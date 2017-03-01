@@ -1,6 +1,7 @@
 key: verisign
 short_name: VeriSign License
 name: VeriSign License
+is_deprecated: yes
 category: Proprietary Free
 owner: VeriSign, Inc.
 other_urls:

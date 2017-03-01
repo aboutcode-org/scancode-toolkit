@@ -1,6 +1,7 @@
 key: beerware
 short_name: Beer-Ware License
 name: Beer-Ware License
+is_deprecated: yes
 category: Permissive
 owner: FreeBSD
 homepage_url: http://people.freebsd.org/~phk/

@@ -1,6 +1,7 @@
 key: jgraph-general
 short_name: JGraph General License
 name: JGraph General License
+is_deprecated: yes
 category: Proprietary Free
 owner: JGraph
 homepage_url: http://dsl.serc.iisc.ernet.in/projects/PICASSO/picasso_download/doc/Installation/LibraryLicenses/licenseJGraph.htm

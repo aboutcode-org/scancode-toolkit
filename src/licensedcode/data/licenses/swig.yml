@@ -1,6 +1,7 @@
 key: swig
 short_name: SWIG Library License
 name: SWIG Library License
+is_deprecated: yes
 category: Permissive
 owner: SWIG
 homepage_url: http://www.swig.org/

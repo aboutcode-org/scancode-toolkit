@@ -1,6 +1,7 @@
 key: afl-1.2
 short_name: AFL 1.2
 name: Academic Free License 1.2
+is_deprecated: yes
 category: Permissive
 owner: Lawrence Rosen
 homepage_url: https://spdx.org/licenses/AFL-1.2.html

@@ -1,5 +1,6 @@
 key: sash
 short_name: Sash Notice
 name: Sash Notice
+is_deprecated: yes
 category: Permissive
 owner: Unspecified

@@ -1,6 +1,7 @@
 key: pygres-2.2
 short_name: PyGres License 2.2
 name: PyGres License v2.2
+is_deprecated: yes
 category: Permissive
 owner: Unspecified
 text_urls:

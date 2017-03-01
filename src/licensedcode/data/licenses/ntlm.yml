@@ -1,5 +1,6 @@
 key: ntlm
 short_name: NTLM License
 name: NTLM License
+is_deprecated: yes
 category: Permissive
 owner: Unspecified

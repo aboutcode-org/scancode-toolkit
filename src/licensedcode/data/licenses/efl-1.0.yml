@@ -1,6 +1,7 @@
 key: efl-1.0
 short_name: EFL 1.0
 name: Eiffel Forum License 1.0
+is_deprecated: yes
 category: Permissive
 owner: Eiffel NICE
 homepage_url: http://www.eiffel-nice.org/license/

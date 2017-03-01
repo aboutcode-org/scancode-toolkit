@@ -1,6 +1,7 @@
 key: cc-by-2.0
 short_name: CC-BY-2.0
 name: Creative Commons Attribution License 2.0
+is_deprecated: yes
 category: Permissive
 owner: Creative Commons
 homepage_url: http://creativecommons.org/licenses/by/2.0/

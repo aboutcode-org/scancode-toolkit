@@ -1,5 +1,6 @@
 key: kerberos
 short_name: Kerberos License
 name: Kerberos License
+is_deprecated: yes
 category: Permissive
 owner: MIT

@@ -1,6 +1,7 @@
 key: flex2sdk
 short_name: Adobe Flex 2.0.1 SDK EULA
 name: Adobe Flex 2.0.1 SDK EULA
+is_deprecated: yes
 category: Proprietary Free
 owner: Adobe Systems
 homepage_url: http://labs.adobe.com/technologies/eula/flex2sdk.html

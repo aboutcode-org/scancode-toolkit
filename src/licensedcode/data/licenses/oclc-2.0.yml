@@ -1,6 +1,7 @@
 key: oclc-2.0
 short_name: OCLC Research Public License 2.0
 name: OCLC Research Public License 2.0
+is_deprecated: yes
 category: Copyleft Limited
 owner: OCLC Research
 homepage_url: http://opensource.org/licenses/oclc2.php

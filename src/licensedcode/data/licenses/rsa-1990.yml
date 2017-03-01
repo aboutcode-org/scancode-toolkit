@@ -1,6 +1,7 @@
 key: rsa-1990
 short_name: RSA 1990
 name: RSA Data Security Notice 1990
+is_deprecated: yes
 category: Permissive
 owner: RSA (the Security Division of EMC)
 text_urls:

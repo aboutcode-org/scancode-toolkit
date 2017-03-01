@@ -1,6 +1,7 @@
 key: python
 short_name: Python License 2.0
 name: Python Software Foundation License v2
+is_deprecated: yes
 category: Permissive
 owner: Python Software Foundation (PSF)
 homepage_url: http://docs.python.org/license.html

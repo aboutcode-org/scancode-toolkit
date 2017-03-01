@@ -1,6 +1,7 @@
 key: hs-regexp
 short_name: Henry Spencer Regexp License
 name: Henry Spencer Regexp License
+is_deprecated: yes
 category: Permissive
 owner: Henry Spencer
 homepage_url: https://github.com/garyhouston/regex/blob/master/COPYRIGHT

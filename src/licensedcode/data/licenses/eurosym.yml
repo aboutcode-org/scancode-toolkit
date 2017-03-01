@@ -1,6 +1,7 @@
 key: eurosym
 short_name: Eurosym License
 name: Eurosym License
+is_deprecated: yes
 category: Copyleft Limited
 owner: Henrik Theiling
 homepage_url: https://fedoraproject.org/wiki/Licensing:Eurosym?rd=Licensing/Eurosym

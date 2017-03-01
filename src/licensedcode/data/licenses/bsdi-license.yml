@@ -1,5 +1,6 @@
 key: bsdi-license
 short_name: BSDI License
 name: BSDI License
+is_deprecated: yes
 category: Permissive
 owner: BSDI - Berkeley Software Design, Inc.

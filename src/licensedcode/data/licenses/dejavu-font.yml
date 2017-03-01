@@ -1,5 +1,6 @@
 key: dejavu-font
 short_name: DejaVu Font License
 name: DejaVu Font License
+is_deprecated: yes
 category: Permissive
 owner: Unspecified

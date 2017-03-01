@@ -1,6 +1,7 @@
 key: apsl-1.0
 short_name: APSL 1.0
 name: Apple Public Source License 1.0
+is_deprecated: yes
 category: Copyleft Limited
 owner: Apple
 homepage_url: http://www.opensource.apple.com/source/architecture/architecture-229/APPLE_LICENSE?f=text

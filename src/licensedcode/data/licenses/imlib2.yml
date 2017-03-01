@@ -1,6 +1,7 @@
 key: imlib2
 short_name: Imlib2 License
 name: Imlib2 License
+is_deprecated: yes
 category: Copyleft Limited
 owner: Enlightenment
 homepage_url: http://trac.enlightenment.org/e/browser/trunk/imlib2/COPYING

@@ -1,5 +1,6 @@
 key: proprietary
 short_name: Free Proprietary
 name: Free Proprietary license
+is_deprecated: yes
 category: Proprietary Free
 owner: nexB

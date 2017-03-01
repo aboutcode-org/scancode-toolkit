@@ -1,6 +1,7 @@
 key: nasa-1.3
 short_name: NASA 1.3
 name: NASA Open Source License v1.3
+is_deprecated: yes
 category: Copyleft Limited
 owner: OSI - Open Source Initiative
 homepage_url: http://opensource.arc.nasa.gov/static/html/NASA_Open_Source_Agreement_1.3.txt

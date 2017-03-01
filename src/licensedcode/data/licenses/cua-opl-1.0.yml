@@ -1,6 +1,7 @@
 key: cua-opl-1.0
 short_name: CUA-OPL-1.0
 name: CUA Office Public License 1.0
+is_deprecated: yes
 category: Copyleft Limited
 owner: OSI - Open Source Initiative
 homepage_url: http://www.opensource.org/licenses/cuaoffice.php

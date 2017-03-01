@@ -1,6 +1,7 @@
 key: rpl-1.5
 short_name: RPL 1.5
 name: Reciprocal Public License 1.5
+is_deprecated: yes
 category: Copyleft Limited
 owner: OSI - Open Source Initiative
 homepage_url: http://www.opensource.org/licenses/rpl1.5.txt

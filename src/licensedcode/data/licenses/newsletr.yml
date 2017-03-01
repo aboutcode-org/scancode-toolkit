@@ -1,6 +1,7 @@
 key: newsletr
 short_name: Newsletr License
 name: Newsletr License
+is_deprecated: yes
 category: Permissive
 owner: Hunter Goatley
 homepage_url: https://fedoraproject.org/wiki/Licensing/Newsletr

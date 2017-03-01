@@ -1,6 +1,8 @@
 key: cc-by-sa-3.0
 short_name: CC-BY-SA-3.0
-name: Creative Commons Attribution Share Alike License 3.0
+name: >-
+    Creative Commons Attribution Share Alike License 3.0
+is_deprecated: yes
 category: Copyleft Limited
 owner: Creative Commons
 homepage_url: http://creativecommons.org/licenses/by-sa/3.0/

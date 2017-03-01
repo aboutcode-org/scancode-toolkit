@@ -1,5 +1,6 @@
 key: asn1
 short_name: ASN.1 Object Dumping Code License
 name: ASN.1 Object Dumping Code License
+is_deprecated: yes
 category: Permissive
 owner: ASN.1 Project

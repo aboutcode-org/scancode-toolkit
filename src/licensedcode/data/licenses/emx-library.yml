@@ -1,6 +1,7 @@
 key: emx-library
 short_name: EMX Library License
 name: EMX Library License
+is_deprecated: yes
 category: Permissive
 owner: Unspecified
 faq_url: http://web.lemoyne.edu/courseinformation/emtex/emx/doc/COPYING.EMX

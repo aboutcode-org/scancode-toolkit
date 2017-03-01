@@ -1,6 +1,7 @@
 key: w3c-documentation
 short_name: W3C Documentation License
 name: W3C Documentation License
+is_deprecated: yes
 category: Free Restricted
 owner: W3C - World Wide Web Consortium
 homepage_url: http://www.w3.org/TR/REC-DOM-Level-1/copyright-notice.html

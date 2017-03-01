@@ -1,5 +1,6 @@
 key: hdparm
 short_name: HDPARM License
 name: HDPARM License
+is_deprecated: yes
 category: Permissive
 owner: Unspecified

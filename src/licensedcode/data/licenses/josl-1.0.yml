@@ -1,6 +1,7 @@
 key: josl-1.0
 short_name: Jabber 1.0
 name: Jabber Open Source License 1.0
+is_deprecated: yes
 category: Copyleft Limited
 owner: Jabber Technology
 homepage_url: http://www.opensource.org/licenses/jabberpl.php

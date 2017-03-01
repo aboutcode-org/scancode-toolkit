@@ -1,6 +1,7 @@
 key: ibmpl-1.0
 short_name: IPL 1.0
 name: IBM Public License
+is_deprecated: yes
 category: Copyleft Limited
 owner: IBM
 homepage_url: http://www.opensource.org/licenses/ibmpl.php

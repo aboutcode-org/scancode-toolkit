@@ -1,5 +1,6 @@
 key: ekioh
 short_name: Ekioh License
 name: Ekioh License
+is_deprecated: yes
 category: Permissive
 owner: Ekioh

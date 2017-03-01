@@ -1,5 +1,6 @@
 key: vixie-cron
 short_name: Vixie Cron License
 name: Vixie Cron License
+is_deprecated: yes
 category: Permissive
 owner: Unspecified

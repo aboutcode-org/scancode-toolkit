@@ -1,6 +1,7 @@
 key: csla
 short_name: CSLA License
 name: CSLA .NET License
+is_deprecated: yes
 category: Free Restricted
 owner: Marimer, LLC
 homepage_url: https://github.com/MarimerLLC/csla/blob/master/license.txt

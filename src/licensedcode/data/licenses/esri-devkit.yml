@@ -1,5 +1,6 @@
 key: esri-devkit
 short_name: Esri Developer Kit License
 name: Esri Developer Kit License
+is_deprecated: yes
 category: Proprietary Free
 owner: Esri

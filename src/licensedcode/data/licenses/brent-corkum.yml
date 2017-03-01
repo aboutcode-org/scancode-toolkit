@@ -1,5 +1,6 @@
 key: brent-corkum
 short_name: Brent Corkum License
 name: Brent Corkum License
+is_deprecated: yes
 category: Permissive
 owner: Rocscience

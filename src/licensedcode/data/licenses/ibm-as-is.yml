@@ -1,5 +1,6 @@
 key: ibm-as-is
 short_name: IBM AS-IS License
 name: IBM AS-IS License
+is_deprecated: yes
 category: Permissive
 owner: IBM

@@ -1,6 +1,7 @@
 key: cpol-1.02
 short_name: CPOL 1.02
 name: Code Project Open License (CPOL) 1.02
+is_deprecated: yes
 category: Free Restricted
 owner: Code Project
 homepage_url: http://www.codeproject.com/info/cpol10.aspx

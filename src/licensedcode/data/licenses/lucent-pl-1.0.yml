@@ -1,6 +1,7 @@
 key: lucent-pl-1.0
 short_name: Lucent Public License 1.0
 name: Lucent Public License 1.0
+is_deprecated: yes
 category: Copyleft Limited
 owner: Alcatel-Lucent
 homepage_url: http://www.opensource.org/licenses/plan9.php

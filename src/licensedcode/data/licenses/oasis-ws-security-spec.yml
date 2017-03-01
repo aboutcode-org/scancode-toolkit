@@ -1,6 +1,7 @@
 key: oasis-ws-security-spec
 short_name: Oasis WS Security Specification License
 name: Oasis WS Security Specification License
+is_deprecated: yes
 category: Permissive
 owner: OASIS
 homepage_url: http://www.oasis-open.org/org

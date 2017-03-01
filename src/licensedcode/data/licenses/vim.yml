@@ -1,6 +1,7 @@
 key: vim
 short_name: VIM License
 name: VIM License
+is_deprecated: yes
 category: Copyleft
 owner: VIM
 homepage_url: http://vimdoc.sourceforge.net/htmldoc/uganda.html

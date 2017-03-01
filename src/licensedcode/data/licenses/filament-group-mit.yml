@@ -1,6 +1,7 @@
 key: filament-group-mit
 short_name: Filament Group MIT License
 name: Filament Group MIT License
+is_deprecated: yes
 category: Permissive
 owner: Filament Group
 homepage_url: http://filamentgroup.com/examples/mit-license.txt

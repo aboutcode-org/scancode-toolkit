@@ -1,6 +1,7 @@
 key: motosoto-0.9.1
 short_name: Motosoto 0.9.1
 name: Motosoto Open Source License v0.9.1
+is_deprecated: yes
 category: Copyleft
 owner: OSI - Open Source Initiative
 homepage_url: http://opensource.org/licenses/motosoto.php

@@ -1,6 +1,7 @@
 key: ruby
 short_name: Ruby License
 name: Ruby License
+is_deprecated: yes
 category: Copyleft Limited
 owner: Ruby
 homepage_url: http://www.ruby-lang.org/en/LICENSE.txt

@@ -1,5 +1,7 @@
 key: msj-sample-code
 short_name: MS Systems Journal Sample Code License
-name: Microsoft Systems Journal Sample Code License
+name: >-
+    Microsoft Systems Journal Sample Code License
+is_deprecated: yes
 category: Permissive
 owner: Microsoft

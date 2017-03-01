@@ -1,5 +1,6 @@
 key: dual-bsd-gpl
 short_name: Dual BSD-GPL
 name: Dual BSD-GPL
+is_deprecated: yes
 category: Permissive
 owner: Motorola

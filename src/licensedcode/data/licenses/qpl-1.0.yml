@@ -1,6 +1,7 @@
 key: qpl-1.0
 short_name: QPL 1.0
 name: Q Public License Version 1.0
+is_deprecated: yes
 category: Copyleft Limited
 owner: Trolltech
 homepage_url: http://doc.trolltech.com/4.0/qpl.html

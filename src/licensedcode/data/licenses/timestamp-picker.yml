@@ -1,5 +1,6 @@
 key: timestamp-picker
 short_name: Timestamp Picker License
 name: Timestamp Picker License
+is_deprecated: yes
 category: Permissive
 owner: Unspecified

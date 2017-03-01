@@ -1,6 +1,7 @@
 key: psutils
 short_name: PS Utilities License
 name: PS Utilities License
+is_deprecated: yes
 category: Permissive
 owner: Angus J. C. Duggan
 homepage_url: https://fedoraproject.org/wiki/Licensing:Psutils?rd=Licensing/psutils

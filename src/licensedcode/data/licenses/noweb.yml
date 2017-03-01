@@ -1,6 +1,7 @@
 key: noweb
 short_name: Noweb License
 name: Noweb License
+is_deprecated: yes
 category: Copyleft Limited
 owner: Norman Ramsey
 homepage_url: https://fedoraproject.org/wiki/Licensing:Noweb?rd=Licensing/Noweb

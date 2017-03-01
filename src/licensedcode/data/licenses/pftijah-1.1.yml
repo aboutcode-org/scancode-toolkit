@@ -1,6 +1,7 @@
 key: pftijah-1.1
 short_name: PfTijah Public License 1.1
 name: PfTijah Public License v1.1
+is_deprecated: yes
 category: Copyleft Limited
 owner: University of Twente
 homepage_url: http://dbappl.cs.utwente.nl/Legal/PfTijah-1.1.html

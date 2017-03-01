@@ -1,6 +1,7 @@
 key: protobuf
 short_name: Protobuf License
 name: Protobuf License
+is_deprecated: yes
 category: Permissive
 owner: Google
 homepage_url: http://protobuf.googlecode.com/svn/trunk/COPYING.txt

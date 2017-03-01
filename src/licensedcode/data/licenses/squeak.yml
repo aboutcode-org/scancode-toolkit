@@ -1,6 +1,7 @@
 key: squeak
 short_name: Apple Squeak License
 name: Apple Squeak License
+is_deprecated: yes
 category: Proprietary Free
 owner: Apple
 homepage_url: http://squeak.org/SqueakLicense/

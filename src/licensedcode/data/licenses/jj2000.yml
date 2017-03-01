@@ -1,6 +1,7 @@
 key: jj2000
 short_name: JJ2000 License
 name: JJ2000 License
+is_deprecated: yes
 category: Free Restricted
 owner: JJ2000 Partners
 homepage_url: https://raw.githubusercontent.com/stain/jai-imageio-jpeg2000/master/LICENSE-JJ2000.txt

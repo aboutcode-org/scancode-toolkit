@@ -1,6 +1,7 @@
 key: qhull
 short_name: Qhull License
 name: Qhull License
+is_deprecated: yes
 category: Copyleft Limited
 owner: Geometry Center
 homepage_url: https://fedoraproject.org/wiki/Licensing:Qhull?rd=Licensing/Qhull

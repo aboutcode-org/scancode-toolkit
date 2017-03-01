@@ -1,6 +1,7 @@
 key: pd-programming
 short_name: PD'Programming License
 name: PD'Programming License
+is_deprecated: yes
 category: Permissive
 owner: PD'Programming
 other_urls:

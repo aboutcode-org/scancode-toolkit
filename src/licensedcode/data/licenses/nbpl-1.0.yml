@@ -1,6 +1,7 @@
 key: nbpl-1.0
 short_name: NBPL-1.0
 name: Net Boolean Public License 1.0
+is_deprecated: yes
 category: Copyleft Limited
 owner: OpenLDAP Foundation
 homepage_url: http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=37b4b3f6cc4bf34e1d3dec61e69914b9819d8894

@@ -1,6 +1,7 @@
 key: paul-hsieh-exposition
 short_name: Paul Hsieh Exposition License
 name: Paul Hsieh Exposition License
+is_deprecated: yes
 category: Free Restricted
 owner: Paul Hsieh
 homepage_url: http://www.azillionmonkeys.com/qed/weblicense.html

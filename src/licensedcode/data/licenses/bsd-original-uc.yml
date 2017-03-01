@@ -1,6 +1,7 @@
 key: bsd-original-uc
 short_name: BSD-Original-UC
 name: BSD-Original-UC
+is_deprecated: yes
 category: Permissive
 owner: Regents of the University of California
 homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change

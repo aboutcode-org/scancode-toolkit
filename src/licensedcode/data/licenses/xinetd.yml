@@ -1,6 +1,7 @@
 key: xinetd
 short_name: xinetd License
 name: xinetd License
+is_deprecated: yes
 category: Permissive
 owner: xinetd
 homepage_url: https://fedoraproject.org/wiki/Licensing/Xinetd_License

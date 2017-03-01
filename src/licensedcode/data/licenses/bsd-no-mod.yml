@@ -1,6 +1,7 @@
 key: bsd-no-mod
 short_name: Madwifi License
 name: Madwifi License Agreement
+is_deprecated: yes
 category: Free Restricted
 owner: MadWifi
 homepage_url: http://www.madwifi.org/

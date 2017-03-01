@@ -1,6 +1,7 @@
 key: boost-1.0
 short_name: Boost 1.0
 name: Boost Software License 1.0
+is_deprecated: yes
 category: Permissive
 owner: Boost
 homepage_url: http://www.boost.org/users/license.html

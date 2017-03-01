@@ -1,6 +1,7 @@
 key: odl
 short_name: Open Directory License
 name: Open Directory License
+is_deprecated: yes
 category: Permissive
 owner: Open Directory
 homepage_url: http://www.dmoz.org/license.html

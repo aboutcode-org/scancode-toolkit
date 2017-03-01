@@ -1,6 +1,7 @@
 key: intel-scl
 short_name: Intel Source Code License Agreement
 name: Intel Source Code License Agreement
+is_deprecated: yes
 category: Proprietary Free
 owner: Intel Corporation
 other_urls:

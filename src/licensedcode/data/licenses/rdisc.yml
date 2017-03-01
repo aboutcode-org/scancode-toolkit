@@ -1,6 +1,7 @@
 key: rdisc
 short_name: Rdisc License
 name: Rdisc License
+is_deprecated: yes
 category: Permissive
 owner: Oracle (Sun)
 homepage_url: https://fedoraproject.org/wiki/Licensing/Rdisc_License

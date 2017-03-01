@@ -1,6 +1,7 @@
 key: zend-2.0
 short_name: Zend Engine License 2.0
 name: Zend Engine License 2.0
+is_deprecated: yes
 category: Permissive
 owner: Zend Technologies Ltd.
 homepage_url: https://web.archive.org/web/20130517195954/http://www.zend.com/license/2_00.txt

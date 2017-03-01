@@ -1,6 +1,7 @@
 key: karl-peterson
 short_name: Karl Peterson License
 name: Karl Peterson License
+is_deprecated: yes
 category: Free Restricted
 owner: Karl Peterson
 homepage_url: http://www.mvps.org/vb

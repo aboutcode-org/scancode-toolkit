@@ -1,4 +1,6 @@
 key: commercial-license
-short_name: Commercial Contract
-name: Commercial Contract
+short_name: Commercial License
+name: Commercial License
+is_deprecated: yes
 category: Commercial
+owner: Unspecified

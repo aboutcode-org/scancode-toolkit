@@ -1,6 +1,9 @@
 key: swl
-short_name: Scheme Widget Library (SWL) Software License
-name: Scheme Widget Library (SWL) Software License Agreement
+short_name: >-
+    Scheme Widget Library (SWL) Software License
+name: >-
+    Scheme Widget Library (SWL) Software License Agreement
+is_deprecated: yes
 category: Permissive
 owner: Cadence Research Systems
 homepage_url: http://www.scheme.com/download/swl-lic.html

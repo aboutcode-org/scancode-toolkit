@@ -1,5 +1,6 @@
 key: dr-john-maddock
 short_name: Dr John Maddock License
 name: Dr John Maddock License
+is_deprecated: yes
 category: Permissive
 owner: Dr John Maddock

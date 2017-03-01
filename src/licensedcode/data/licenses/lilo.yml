@@ -1,6 +1,7 @@
 key: lilo
 short_name: LILO License
 name: LILO License
+is_deprecated: yes
 category: Permissive
 owner: Unspecified
 homepage_url: http://www.ingate.com/files/422/fwmanual-en/xx12671.html

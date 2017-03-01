@@ -1,5 +1,6 @@
 key: whistle
 short_name: Whistle Communications License
 name: Whistle Communications License
+is_deprecated: yes
 category: Permissive
 owner: FreeBSD

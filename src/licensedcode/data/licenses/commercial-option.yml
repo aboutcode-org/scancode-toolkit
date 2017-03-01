@@ -1,5 +1,6 @@
 key: commercial-option
 short_name: Commercial Option
 name: Commercial Option
+is_deprecated: yes
 category: Commercial
 owner: Unspecified

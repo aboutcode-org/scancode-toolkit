@@ -1,6 +1,7 @@
 key: stax
 short_name: Stax License
 name: Stax License
+is_deprecated: yes
 category: Copyleft Limited
 owner: Oracle Corporation
 homepage_url: https://www.jcp.org/aboutJava/communityprocess/licenses/jsr173/JSR173_Spec_License_Streaming_API_XML-1_3-10_22_13.pdf

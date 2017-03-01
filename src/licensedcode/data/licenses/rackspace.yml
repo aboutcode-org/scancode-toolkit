@@ -1,5 +1,6 @@
 key: rackspace
 short_name: Rackspace License
 name: Rackspace License
+is_deprecated: yes
 category: Free Restricted
 owner: Rackspace

@@ -1,5 +1,6 @@
 key: wide-license
 short_name: WIDE License
 name: WIDE License
+is_deprecated: yes
 category: Permissive
 owner: WIDE Project

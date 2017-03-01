@@ -1,5 +1,6 @@
 key: x11-quarterdeck
 short_name: X11-Style (Quarterdeck)
 name: X11-Style (Quarterdeck)
+is_deprecated: yes
 category: Permissive
 owner: Quarterdeck

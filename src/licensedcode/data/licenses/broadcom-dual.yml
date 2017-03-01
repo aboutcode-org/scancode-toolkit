@@ -1,5 +1,6 @@
 key: broadcom-dual
 short_name: Broadcom Dual GPL-Commercial
 name: Broadcom Dual GPL-Commercial
+is_deprecated: yes
 category: Copyleft
 owner: Broadcom

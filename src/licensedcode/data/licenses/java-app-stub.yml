@@ -1,5 +1,7 @@
 key: java-app-stub
 short_name: Java App Stub License
-name: Java Application Stub Binary Module License
+name: >-
+    Java Application Stub Binary Module License
+is_deprecated: yes
 category: Permissive
 owner: Apple

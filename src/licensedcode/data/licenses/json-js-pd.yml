@@ -1,6 +1,7 @@
 key: json-js-pd
 short_name: JSON-js-PD
 name: JSON-js Public Domain Notice
+is_deprecated: yes
 category: Public Domain
 owner: JSON.org
 homepage_url: https://github.com/douglascrockford/JSON-js

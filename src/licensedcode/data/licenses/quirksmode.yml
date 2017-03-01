@@ -1,6 +1,7 @@
 key: quirksmode
 short_name: Quirksmode Copyright Notice
 name: Quirksmode Copyright Notice
+is_deprecated: yes
 category: Permissive
 owner: Quirksmode
 homepage_url: http://www.quirksmode.org/about/copyright.html

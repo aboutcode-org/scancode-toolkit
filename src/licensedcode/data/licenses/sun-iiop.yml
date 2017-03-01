@@ -1,5 +1,6 @@
 key: sun-iiop
 short_name: Sun IIOP License
 name: Sun IIOP License
+is_deprecated: yes
 category: Proprietary Free
 owner: Oracle (Sun)

@@ -1,5 +1,6 @@
 key: 4suite-1.1
 short_name: 4Suite 1.1
 name: 4Suite License v1.1
+is_deprecated: yes
 category: Permissive
 owner: Fourthought, Inc.

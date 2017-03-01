@@ -1,6 +1,7 @@
 key: freeimage-1.0
 short_name: FreeImage Public License 1.0
 name: FreeImage Public License Version 1.0
+is_deprecated: yes
 category: Copyleft Limited
 owner: FreeImage Project
 homepage_url: http://freeimage.sourceforge.net/freeimage-license.txt

@@ -2,6 +2,7 @@ key: cecill-2.0
 short_name: CeCILL 2.0
 name: >-
     CeCILL Free Software License Agreement v2.0
+is_deprecated: yes
 category: Copyleft Limited
 owner: CeCILL
 homepage_url: http://www.cecill.info/licences.en.html

@@ -1,6 +1,7 @@
 key: epl-1.0
 short_name: EPL 1.0
 name: Eclipse Public License 1.0
+is_deprecated: yes
 category: Copyleft Limited
 owner: Eclipse Foundation
 homepage_url: http://www.eclipse.org/legal/epl-v10.html

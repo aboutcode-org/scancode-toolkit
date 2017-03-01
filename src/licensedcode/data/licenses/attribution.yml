@@ -1,6 +1,7 @@
 key: attribution
 short_name: AAL
 name: Attribution Assurance License
+is_deprecated: yes
 category: Permissive
 owner: Unspecified
 homepage_url: http://opensource.org/licenses/attribution.php

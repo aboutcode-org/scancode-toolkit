@@ -1,6 +1,7 @@
 key: xnet
 short_name: Altera License
 name: Altera License
+is_deprecated: yes
 category: Permissive
 owner: Altera Corporation
 homepage_url: http://www.opensource.org/licenses/xnet.php

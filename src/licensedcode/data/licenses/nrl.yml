@@ -1,6 +1,7 @@
 key: nrl
 short_name: NRL License
 name: NRL License
+is_deprecated: yes
 category: Permissive
 owner: NRL
 homepage_url: http://web.mit.edu/network/isakmp/nrllicense.html

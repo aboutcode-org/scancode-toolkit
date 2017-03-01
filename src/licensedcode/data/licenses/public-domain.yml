@@ -1,6 +1,7 @@
 key: public-domain
 short_name: Public Domain
 name: Public Domain
+is_deprecated: yes
 category: Public Domain
 owner: Unspecified
 homepage_url: http://www.linfo.org/publicdomain.html

@@ -1,6 +1,7 @@
 key: nist-pd
 short_name: NIST Public Domain Notice
 name: NIST Public Domain Notice
+is_deprecated: yes
 category: Public Domain
 owner: NIST
 homepage_url: https://github.com/usnistgov/jsip/blob/master/README#L122

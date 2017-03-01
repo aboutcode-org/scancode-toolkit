@@ -1,6 +1,9 @@
 key: ssleay-windows
-short_name: Original SSLeay License with Windows exception
-name: Original SSLeay License with Windows exception
+short_name: >-
+    Original SSLeay License with Windows exception
+name: >-
+    Original SSLeay License with Windows exception
+is_deprecated: yes
 category: Permissive
 owner: OpenSSL
 homepage_url: https://www.openssl.org/source/license.html

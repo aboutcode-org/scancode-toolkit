@@ -1,6 +1,7 @@
 key: lucent-pl-1.02
 short_name: Lucent Public License 1.02
 name: Lucent Public License 1.02
+is_deprecated: yes
 category: Copyleft Limited
 owner: Alcatel-Lucent
 homepage_url: http://plan9.bell-labs.com/plan9/license.html

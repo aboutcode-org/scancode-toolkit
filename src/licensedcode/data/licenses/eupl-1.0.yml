@@ -1,6 +1,7 @@
 key: eupl-1.0
 short_name: EUPL 1.0
 name: European Union Public Licence 1.0
+is_deprecated: yes
 category: Copyleft
 owner: OSOR.eu
 homepage_url: http://ec.europa.eu/idabc/en/document/7330.html

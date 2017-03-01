@@ -1,6 +1,7 @@
 key: rogue-wave
 short_name: Rogue Wave Software License
 name: Rogue Wave Software License
+is_deprecated: yes
 category: Commercial
 owner: Rogue Wave Software, Inc.
 other_urls:

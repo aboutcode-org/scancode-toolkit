@@ -1,6 +1,7 @@
 key: json-pd
 short_name: JSON-PD
 name: JSON Public Domain Notice
+is_deprecated: yes
 category: Public Domain
 owner: JSON.org
 homepage_url: http://www.json.org/js.html

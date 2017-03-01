@@ -1,6 +1,7 @@
 key: open-public
 short_name: Open Public License 1.0
 name: Open Public License v1.0
+is_deprecated: yes
 category: Copyleft Limited
 owner: Lutris Technologies, Inc.
 homepage_url: http://ksoap.objectweb.org/software/license/opl.html

@@ -1,6 +1,7 @@
 key: dmalloc
 short_name: dmalloc License
 name: dmalloc License
+is_deprecated: yes
 category: Permissive
 owner: Dmalloc
 faq_url: http://dmalloc.com/

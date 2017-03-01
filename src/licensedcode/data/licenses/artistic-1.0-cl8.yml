@@ -1,6 +1,7 @@
 key: artistic-1.0-cl8
 short_name: Artistic 1.0 w/clause 8
 name: Artistic License 1.0 w/clause 8
+is_deprecated: yes
 category: Copyleft Limited
 owner: OSI - Open Source Initiative
 homepage_url: http://spdx.org/licenses/Artistic-1.0-cl8

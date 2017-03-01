@@ -1,6 +1,7 @@
 key: treeview-developer
 short_name: TreeView Developer License
 name: TreeView Developer License
+is_deprecated: yes
 category: Proprietary Free
 owner: GubuSoft
 homepage_url: http://www.treeview.net/tv/license_dev.asp

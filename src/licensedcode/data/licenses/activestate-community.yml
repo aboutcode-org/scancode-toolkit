@@ -1,5 +1,6 @@
 key: activestate-community
 short_name: ActiveState Community License
 name: ActiveState Community License
+is_deprecated: yes
 category: Free Restricted
 owner: ActiveState Software, Inc.

@@ -1,6 +1,7 @@
 key: shavlik-eula
 short_name: Shavlik Technologies EULA
 name: Shavlik Technologies EULA
+is_deprecated: yes
 category: Commercial
 owner: Shavlik Technologies
 homepage_url: http://www.shavlik.com/

@@ -1,6 +1,7 @@
 key: gpl-2.0-plus
 short_name: GPL 2.0 or later
 name: GNU General Public License 2.0 or later
+is_deprecated: yes
 category: Copyleft
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html

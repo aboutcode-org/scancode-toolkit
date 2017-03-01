@@ -1,6 +1,7 @@
 key: boost-original
 short_name: Boost Original
 name: Boost Original
+is_deprecated: yes
 category: Permissive
 owner: Boost
 homepage_url: http://boost.org

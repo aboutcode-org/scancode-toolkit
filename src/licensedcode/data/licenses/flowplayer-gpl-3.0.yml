@@ -1,6 +1,7 @@
 key: flowplayer-gpl-3.0
 short_name: Flowplayer GPL 3.0
 name: Flowplayer GPL 3.0
+is_deprecated: yes
 category: Copyleft
 owner: Flowplayer
 homepage_url: https://flowplayer.org/license/

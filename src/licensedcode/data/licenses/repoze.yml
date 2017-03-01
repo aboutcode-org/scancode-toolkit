@@ -1,6 +1,7 @@
 key: repoze
 short_name: Repoze License
 name: Repoze License
+is_deprecated: yes
 category: Permissive
 owner: Repoze
 homepage_url: http://repoze.org/license.html

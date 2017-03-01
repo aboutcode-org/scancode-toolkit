@@ -1,6 +1,8 @@
 key: cc-by-nc-sa-2.5
 short_name: CC-BY-NC-SA-2.5
-name: Creative Commons Attribution Non-Commercial Share Alike License 2.5
+name: >-
+    Creative Commons Attribution Non-Commercial Share Alike License 2.5
+is_deprecated: yes
 category: Free Restricted
 owner: Creative Commons
 homepage_url: http://creativecommons.org/licenses/by-nc-sa/2.5/

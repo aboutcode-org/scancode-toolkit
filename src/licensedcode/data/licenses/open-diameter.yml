@@ -1,5 +1,6 @@
 key: open-diameter
 short_name: Open Diameter License
 name: Open Diameter License
+is_deprecated: yes
 category: Copyleft
 owner: Open Diameter Project

@@ -1,6 +1,7 @@
 key: nlpl
 short_name: NLPL
 name: No Limit Public License
+is_deprecated: yes
 category: Public Domain
 owner: Gilles Lamiral
 homepage_url: https://fedoraproject.org/wiki/Licensing/NLPL

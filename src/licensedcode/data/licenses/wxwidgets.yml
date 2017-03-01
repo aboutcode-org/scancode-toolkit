@@ -1,6 +1,7 @@
 key: wxwidgets
 short_name: wxWidgets Licence
 name: wxWidgets Licence
+is_deprecated: yes
 category: Permissive
 owner: wxWidgets
 homepage_url: http://www.wxwidgets.org/about/licence.htm

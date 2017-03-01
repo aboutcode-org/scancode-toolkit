@@ -1,6 +1,7 @@
 key: saxpath
 short_name: Saxpath License
 name: Saxpath License
+is_deprecated: yes
 category: Permissive
 owner: Codehaus
 homepage_url: https://fedoraproject.org/wiki/Licensing/Saxpath_License

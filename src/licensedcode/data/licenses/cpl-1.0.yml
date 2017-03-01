@@ -1,6 +1,7 @@
 key: cpl-1.0
 short_name: CPL 1.0
 name: Common Public License 1.0
+is_deprecated: yes
 category: Copyleft Limited
 owner: IBM
 homepage_url: http://www.eclipse.org/legal/cpl-v10.html

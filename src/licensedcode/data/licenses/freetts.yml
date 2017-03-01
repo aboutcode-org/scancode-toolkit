@@ -1,6 +1,7 @@
 key: freetts
 short_name: FreeTTS License
 name: FreeTTS License
+is_deprecated: yes
 category: Permissive
 owner: Oracle Corporation
 homepage_url: http://freetts.sourceforge.net/license.terms

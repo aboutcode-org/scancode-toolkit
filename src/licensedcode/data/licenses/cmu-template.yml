@@ -1,6 +1,7 @@
 key: cmu-template
 short_name: CMU License
 name: CMU License
+is_deprecated: yes
 category: Permissive
 owner: Carnegie Mellon University
 homepage_url: http://copyfree.org/licenses/cmu/license.txt

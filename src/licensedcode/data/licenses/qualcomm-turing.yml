@@ -1,6 +1,7 @@
 key: qualcomm-turing
 short_name: Qualcomm Turing License
 name: Qualcomm Turing License
+is_deprecated: yes
 category: Permissive
 owner: Qualcomm
 homepage_url: https://github.com/arantius/tivodecode/blob/master/Turing.h

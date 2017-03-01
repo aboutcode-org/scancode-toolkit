@@ -1,6 +1,7 @@
 key: mit-ack
 short_name: MIT Acknowledgment License
 name: MIT Acknowledgment License
+is_deprecated: yes
 category: Permissive
 owner: Unspecified
 homepage_url: https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#feh

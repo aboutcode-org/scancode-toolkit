@@ -1,5 +1,6 @@
 key: broadcom-cfe
 short_name: Broadcom CFE License
 name: Broadcom CFE License
+is_deprecated: yes
 category: Permissive
 owner: Broadcom

@@ -1,6 +1,7 @@
 key: tex-live
 short_name: TeX Live License
 name: TeX Live License
+is_deprecated: yes
 category: Permissive
 owner: Karl Berry
 homepage_url: ftp://tug.org/historic/systems/texlive/2007/LICENSE.TL

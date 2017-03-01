@@ -1,5 +1,6 @@
 key: ian-kaplan
 short_name: Ian Kaplan License
 name: Ian Kaplan License
+is_deprecated: yes
 category: Permissive
 owner: Bearcave.com

@@ -1,6 +1,7 @@
 key: bytemark
 short_name: BYTEmark License
 name: BYTEmark License
+is_deprecated: yes
 category: Permissive
 owner: BYTE Magazine
 notes: TODO remove extra changelog header

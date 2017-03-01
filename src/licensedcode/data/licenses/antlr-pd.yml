@@ -1,6 +1,7 @@
 key: antlr-pd
 short_name: ANTLR-PD
 name: ANTLR Software Rights Notice
+is_deprecated: yes
 category: Permissive
 owner: ANTLR
 homepage_url: http://www.antlr2.org/

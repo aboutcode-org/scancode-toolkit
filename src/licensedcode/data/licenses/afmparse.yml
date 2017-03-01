@@ -1,6 +1,7 @@
 key: afmparse
 short_name: afmparse License
 name: afmparse License
+is_deprecated: yes
 category: Permissive
 owner: Adobe Systems
 homepage_url: https://fedoraproject.org/wiki/Licensing/Afmparse

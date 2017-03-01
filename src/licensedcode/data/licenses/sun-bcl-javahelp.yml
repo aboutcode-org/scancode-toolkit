@@ -1,5 +1,6 @@
 key: sun-bcl-javahelp
 short_name: Sun BCL JavaHelp
 name: Sun BCL JavaHelp
+is_deprecated: yes
 category: Proprietary Free
 owner: Oracle (Sun)

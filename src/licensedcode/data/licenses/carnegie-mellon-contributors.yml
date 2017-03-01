@@ -1,5 +1,6 @@
 key: carnegie-mellon-contributors
 short_name: Carnegie Mellon Contributors
 name: Carnegie Mellon Contributors License
+is_deprecated: yes
 category: Permissive
 owner: Carnegie Mellon University

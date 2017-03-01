@@ -1,6 +1,8 @@
 key: ms-office-system-programs-eula
 short_name: MS Office System Programs Software EULA
-name: Microsoft Office System Programs Software EULA
+name: >-
+    Microsoft Office System Programs Software EULA
+is_deprecated: yes
 category: Commercial
 owner: Microsoft
 homepage_url: http://www.dmcwest.com/software/Microsoft/Office/Office%202003%20Interop%20Assemblies/o2003PIA_EULA.txt

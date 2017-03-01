@@ -1,6 +1,7 @@
 key: zlib
 short_name: ZLIB License
 name: ZLIB License
+is_deprecated: yes
 category: Permissive
 owner: zlib
 homepage_url: http://www.zlib.net/

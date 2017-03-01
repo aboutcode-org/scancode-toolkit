@@ -1,6 +1,7 @@
 key: bsd-ack-carrot2
 short_name: BSD Acknowledgment (Carrot2) License
 name: BSD Acknowledgment (Carrot2) License
+is_deprecated: yes
 category: Permissive
 owner: Carrot2
 homepage_url: http://www.carrot2.org/carrot2.LICENSE

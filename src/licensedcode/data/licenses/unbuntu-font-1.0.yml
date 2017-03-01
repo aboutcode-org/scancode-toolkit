@@ -1,6 +1,7 @@
 key: unbuntu-font-1.0
 short_name: Ubuntu Font 1.0
 name: Ubuntu Font Licence v1.0
+is_deprecated: yes
 category: Free Restricted
 owner: Ubuntu Font Family
 homepage_url: http://font.ubuntu.com/licence/

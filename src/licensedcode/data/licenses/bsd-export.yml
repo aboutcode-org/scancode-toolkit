@@ -1,6 +1,7 @@
 key: bsd-export
 short_name: BSD-Export
 name: BSD-Export
+is_deprecated: yes
 category: Permissive
 owner: Cavium
 text_urls:

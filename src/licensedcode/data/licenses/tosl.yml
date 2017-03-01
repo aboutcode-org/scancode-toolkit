@@ -1,6 +1,7 @@
 key: tosl
 short_name: TOSL 1.0a
 name: Trusster Open Source License 1.0a
+is_deprecated: yes
 category: Copyleft
 owner: Trusster
 homepage_url: https://fedoraproject.org/wiki/Licensing/TOSL

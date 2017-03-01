@@ -1,6 +1,8 @@
 key: cddl-1.0
 short_name: CDDL 1.0
-name: Common Development and Distribution License 1.0
+name: >-
+    Common Development and Distribution License 1.0
+is_deprecated: yes
 category: Copyleft Limited
 owner: Oracle Corporation
 homepage_url: http://www.sun.com/cddl/

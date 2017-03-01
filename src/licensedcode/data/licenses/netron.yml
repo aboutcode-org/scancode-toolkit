@@ -1,6 +1,7 @@
 key: netron
 short_name: Netron Project License
 name: Netron Project License
+is_deprecated: yes
 category: Permissive
 owner: Netron Project
 other_urls:

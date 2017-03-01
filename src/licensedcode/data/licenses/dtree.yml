@@ -1,6 +1,7 @@
 key: dtree
 short_name: Dtree License
 name: Dtree License
+is_deprecated: yes
 category: Permissive
 owner: Unspecified
 homepage_url: http://destroydrop.com/javascripts/tree/

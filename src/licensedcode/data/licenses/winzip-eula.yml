@@ -1,6 +1,7 @@
 key: winzip-eula
 short_name: WinZip EULA
 name: WinZip EULA
+is_deprecated: yes
 category: Commercial
 owner: WinZip Computing LLC.
 homepage_url: http://www.winzip.com/eula.html

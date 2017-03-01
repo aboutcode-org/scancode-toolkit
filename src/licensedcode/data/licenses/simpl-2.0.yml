@@ -1,6 +1,7 @@
 key: simpl-2.0
 short_name: SimPL 2.0
 name: Simple Public License Version 2.0
+is_deprecated: yes
 category: Copyleft
 owner: OSI - Open Source Initiative
 homepage_url: http://www.opensource.org/licenses/simpl-2.0.html

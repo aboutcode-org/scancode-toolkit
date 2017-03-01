@@ -1,6 +1,7 @@
 key: jsfromhell
 short_name: JSFromHell License
 name: JSFromHell License
+is_deprecated: yes
 category: Permissive
 owner: JSFromHell
 homepage_url: http://jsfromhell.com/

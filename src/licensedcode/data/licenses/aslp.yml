@@ -1,6 +1,8 @@
 key: aslp
 short_name: Artop ASLP
-name: Artop Software License for Preparatory Development
+name: >-
+    Artop Software License for Preparatory Development
+is_deprecated: yes
 category: Free Restricted
 owner: Artop
 homepage_url: http://www.artop.org/aslp.html

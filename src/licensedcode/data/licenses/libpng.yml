@@ -1,6 +1,7 @@
 key: libpng
 short_name: Libpng License
 name: Libpng License
+is_deprecated: yes
 category: Permissive
 owner: libpng
 homepage_url: http://www.libpng.org/pub/png/libpng.html

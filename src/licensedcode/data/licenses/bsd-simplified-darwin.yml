@@ -1,5 +1,6 @@
 key: bsd-simplified-darwin
 short_name: BSD Simplified Darwin
 name: BSD Simplified Darwin
+is_deprecated: yes
 category: Permissive
 owner: Ian Darwin

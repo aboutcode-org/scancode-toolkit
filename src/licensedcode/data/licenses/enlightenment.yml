@@ -1,6 +1,7 @@
 key: enlightenment
 short_name: EFL MIT-Style License
 name: Enlightenment (EFL) MIT-Style License
+is_deprecated: yes
 category: Permissive
 owner: Enlightenment
 homepage_url: http://www.enlightenment.org/

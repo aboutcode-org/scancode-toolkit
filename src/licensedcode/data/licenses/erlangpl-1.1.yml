@@ -1,6 +1,7 @@
 key: erlangpl-1.1
 short_name: Erlang Public License 1.1
 name: Erlang Public License v1.1
+is_deprecated: yes
 category: Copyleft
 owner: Erlang
 homepage_url: http://www.erlang.org/EPLICENSE

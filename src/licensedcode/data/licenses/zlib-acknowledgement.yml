@@ -1,6 +1,7 @@
 key: zlib-acknowledgement
 short_name: ZLIB License with Acknowledgment
 name: ZLIB License with Acknowledgment
+is_deprecated: yes
 category: Permissive
 owner: Charlie Poole
 homepage_url: https://fedoraproject.org/wiki/Licensing:ZlibWithAcknowledgement?rd=Licensing/ZlibWithAcknowledgement

@@ -1,6 +1,7 @@
 key: classworlds
 short_name: Classworlds License
 name: Classworlds License
+is_deprecated: yes
 category: Permissive
 owner: Codehaus
 homepage_url: http://classworlds.codehaus.org/license.html

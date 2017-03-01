@@ -1,6 +1,7 @@
 key: itunes
 short_name: Apple iTunes License
 name: Apple iTunes License
+is_deprecated: yes
 category: Proprietary Free
 owner: Apple
 homepage_url: http://images.apple.com/legal/sla/docs/itunes.pdf

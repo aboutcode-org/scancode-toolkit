@@ -1,11 +1,11 @@
 licenses:
-    - 3pp-proprietary-08
-    - 3pp-proprietary-08
-    - 3pp-proprietary-08
-    - 3pp-proprietary-08
-    - 3pp-proprietary-08
-    - 3pp-proprietary-08
-    - 3pp-proprietary-08
+    - proprietary
+    - proprietary
+    - proprietary
+    - proprietary
+    - proprietary
+    - proprietary
+    - proprietary
     - bsd-original
     - x11-lucent
     - bsd-new

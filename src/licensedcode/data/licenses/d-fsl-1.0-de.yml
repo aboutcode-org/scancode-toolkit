@@ -1,8 +1,10 @@
 key: d-fsl-1.0-de
 short_name: Deutsche Freie Software Lizenz
 name: Deutsche Freie Software Lizenz
+is_deprecated: yes
 category: Copyleft
-owner: Institute for Legal Issues On Free and Open Source Software
+owner: >-
+    Institute for Legal Issues On Free and Open Source Software
 homepage_url: http://www.dipp.nrw.de/d-fsl/index_html/lizenzen/de/D-FSL-1_0_de.txt
 notes: |-
     notes from SPDX:

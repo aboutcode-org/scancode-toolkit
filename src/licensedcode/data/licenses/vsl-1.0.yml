@@ -1,6 +1,7 @@
 key: vsl-1.0
 short_name: Vovida Software License 1.0
 name: Vovida Software License v. 1.0
+is_deprecated: yes
 category: Permissive
 owner: Vovida
 homepage_url: http://www.vovida.org/About/license.html

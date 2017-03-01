@@ -1,5 +1,6 @@
 key: hp-ux-jre
 short_name: HP JRE License
 name: Hewlett Packard JRE License
+is_deprecated: yes
 category: Proprietary Free
 owner: HP - Hewlett Packard

@@ -1,5 +1,6 @@
 key: d-zlib
 short_name: D Zlib
 name: Digital Mars Zlib
+is_deprecated: yes
 category: Permissive
 owner: Digital Mars

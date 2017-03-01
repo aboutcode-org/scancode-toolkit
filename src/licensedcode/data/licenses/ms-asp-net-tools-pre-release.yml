@@ -1,6 +1,8 @@
 key: ms-asp-net-tools-pre-release
 short_name: MS ASP.NET Tools Pre-Release License
-name: Microsoft ASP.NET Tools Pre-Release License
+name: >-
+    Microsoft ASP.NET Tools Pre-Release License
+is_deprecated: yes
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://www.microsoft.com/web/webpi/eula/aspnetcomponent_enu.htm

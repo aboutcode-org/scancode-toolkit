@@ -1,6 +1,8 @@
 key: cc-by-nc-sa-1.0
 short_name: CC-BY-NC-SA-1.0
-name: Creative Commons Attribution Non-Commercial Share Alike License 1.0
+name: >-
+    Creative Commons Attribution Non-Commercial Share Alike License 1.0
+is_deprecated: yes
 category: Free Restricted
 owner: Creative Commons
 homepage_url: http://creativecommons.org/licenses/by-nc-sa/1.0/

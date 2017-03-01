@@ -1,6 +1,7 @@
 key: makeindex
 short_name: MakeIndex Distribution Notice
 name: MakeIndex Distribution Notice
+is_deprecated: yes
 category: Copyleft
 owner: MakeIndex Project
 homepage_url: https://fedoraproject.org/wiki/Licensing/MakeIndex

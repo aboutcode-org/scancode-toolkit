@@ -1,6 +1,7 @@
 key: codeguru-permissions
 short_name: CodeGuru Permissions
 name: CodeGuru Permissions
+is_deprecated: yes
 category: Permissive
 owner: CodeGuru
 homepage_url: http://www.codeguru.com/submission-guidelines.php#permission

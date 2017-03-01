@@ -1,6 +1,8 @@
 key: adobe-scl
 short_name: Adobe Source Code License 2006
-name: Adobe Systems Incorporated Source Code License Agreement
+name: >-
+    Adobe Systems Incorporated Source Code License Agreement
+is_deprecated: yes
 category: Permissive
 owner: Adobe Systems
 homepage_url: http://fedoraproject.org/wiki/Licensing/AdobeLicense

@@ -1,6 +1,7 @@
 key: bigdigits
 short_name: BigDigits License
 name: BigDigits License
+is_deprecated: yes
 category: Permissive
 owner: DI Management Services
 homepage_url: http://www.di-mgt.com.au/

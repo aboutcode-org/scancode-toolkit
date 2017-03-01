@@ -1,6 +1,7 @@
 key: openldap-2.1
 short_name: OpenLDAP Public License 2.1
 name: OpenLDAP Public License 2.1
+is_deprecated: yes
 category: Permissive
 owner: OpenLDAP Foundation
 homepage_url: http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=b0d176738e96a0d3b9f85cb51e140a86f21be715

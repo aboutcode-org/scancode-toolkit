@@ -1,6 +1,7 @@
 key: cmu-computing-services
 short_name: CMU Computing Services License
 name: CMU Computing Services License
+is_deprecated: yes
 category: Permissive
 owner: Carnegie Mellon University
 homepage_url: http://www.cmu.edu/computing/

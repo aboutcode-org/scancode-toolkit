@@ -1,6 +1,7 @@
 key: sgi-fslb-1.0
 short_name: SGI Free Software License B 1.0
 name: SGI Free Software License B v1.0
+is_deprecated: yes
 category: Free Restricted
 owner: SGI - Silicon Graphics
 homepage_url: http://oss.sgi.com/projects/FreeB/SGIFreeSWLicB.1.0.html

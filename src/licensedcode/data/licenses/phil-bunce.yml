@@ -1,6 +1,7 @@
 key: phil-bunce
 short_name: Phil Bunce License
 name: Phil Bunce License
+is_deprecated: yes
 category: Public Domain
 owner: Phil Bunce
 homepage_url: http://www.philbunce.com/pmon/

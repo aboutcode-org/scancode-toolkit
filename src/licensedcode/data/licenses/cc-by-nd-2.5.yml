@@ -1,6 +1,8 @@
 key: cc-by-nd-2.5
 short_name: CC-BY-ND-2.5
-name: Creative Commons Attribution No Derivatives License 2.5
+name: >-
+    Creative Commons Attribution No Derivatives License 2.5
+is_deprecated: yes
 category: Free Restricted
 owner: Creative Commons
 homepage_url: http://creativecommons.org/licenses/by-nd/2.5/

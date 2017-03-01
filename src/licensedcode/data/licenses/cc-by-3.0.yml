@@ -1,6 +1,7 @@
 key: cc-by-3.0
 short_name: CC-BY-3.0
 name: Creative Commons Attribution License 3.0
+is_deprecated: yes
 category: Permissive
 owner: Creative Commons
 homepage_url: http://creativecommons.org/licenses/by/3.0/

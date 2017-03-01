@@ -1,6 +1,7 @@
 key: google-analytics-tos
 short_name: Google Analytics Terms of Service
 name: Google Analytics Terms of Service
+is_deprecated: yes
 category: Proprietary Free
 owner: Google
 homepage_url: http://www.google.com/analytics/terms/us.html

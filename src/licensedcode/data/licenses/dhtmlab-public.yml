@@ -1,5 +1,6 @@
 key: dhtmlab-public
 short_name: dhtmlab Public License
 name: Dynamic HTML Lab Public License
+is_deprecated: yes
 category: Permissive
 owner: DHTML Lab

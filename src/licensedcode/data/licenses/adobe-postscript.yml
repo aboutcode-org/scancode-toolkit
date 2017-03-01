@@ -1,5 +1,6 @@
 key: adobe-postscript
 short_name: Adobe PostScript License
 name: Adobe PostScript License
+is_deprecated: yes
 category: Proprietary Free
 owner: Adobe Systems

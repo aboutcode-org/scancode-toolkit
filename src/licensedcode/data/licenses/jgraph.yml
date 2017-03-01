@@ -1,6 +1,7 @@
 key: jgraph
 short_name: JGraph License
 name: JGraph License
+is_deprecated: yes
 category: Permissive
 owner: JGraph
 homepage_url: http://www.jgraph.com/jgraphdownload.html

@@ -1,6 +1,7 @@
 key: wtfpl-1.0
 short_name: WTFPL 1.0
 name: WTFPL 1.0
+is_deprecated: yes
 category: Public Domain
 owner: Sam Hocevar
 homepage_url: https://en.wikipedia.org/wiki/WTFPL#Version_1

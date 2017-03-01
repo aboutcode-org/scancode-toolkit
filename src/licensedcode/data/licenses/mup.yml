@@ -1,6 +1,7 @@
 key: mup
 short_name: Mup License
 name: Mup License
+is_deprecated: yes
 category: Permissive
 owner: Arkkra Enterprises
 homepage_url: http://www.arkkra.com/doc/license.html

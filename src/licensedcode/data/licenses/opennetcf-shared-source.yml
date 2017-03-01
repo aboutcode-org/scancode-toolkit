@@ -1,6 +1,7 @@
 key: opennetcf-shared-source
 short_name: OpenNETCF Shared Source License
 name: OpenNETCF Shared Source License
+is_deprecated: yes
 category: Proprietary Free
 owner: OpenNETCF Consulting
 homepage_url: http://www.opennetcf.com/products/licenses.aspx

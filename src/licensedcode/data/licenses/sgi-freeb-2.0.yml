@@ -1,6 +1,7 @@
 key: sgi-freeb-2.0
 short_name: SGI Free Software License B 2.0
 name: SGI Free Software License B v2.0
+is_deprecated: yes
 category: Permissive
 owner: SGI - Silicon Graphics
 homepage_url: http://oss.sgi.com/projects/FreeB/SGIFreeSWLicB.2.0.pdf

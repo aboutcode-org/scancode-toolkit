@@ -1,7 +1,9 @@
 key: x11-oar
 short_name: X11-Style (OAR)
 name: X11-Style (OAR)
+is_deprecated: yes
 category: Permissive
-owner: OAR - On-Line Applications Research Corporation
+owner: >-
+    OAR - On-Line Applications Research Corporation
 other_urls:
     - http://www.oarcorp.com/index.htm

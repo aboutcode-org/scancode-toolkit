@@ -1,6 +1,7 @@
 key: mpich
 short_name: MPICH License
 name: MPICH License
+is_deprecated: yes
 category: Permissive
 owner: University of Chicago
 homepage_url: https://svn.mcs.anl.gov/repos/mpi/mpich2/trunk/COPYRIGHT

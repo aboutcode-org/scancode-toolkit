@@ -1,6 +1,7 @@
 key: mattkruse
 short_name: Matt Kruse License
 name: Matt Kruse License
+is_deprecated: yes
 category: Permissive
 owner: MattKruse.com
 homepage_url: http://www.mattkruse.com/
