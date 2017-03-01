@@ -72,7 +72,7 @@ class License(object):
     __slots__ = (
         'key',
         'src_dir',
-        'deprecated',
+        'is_deprecated',
         'short_name',
         'name',
         'category',
@@ -103,8 +103,8 @@ class License(object):
         self.key = key or ''
         self.src_dir = src_dir
 
-        # if this is a deprecated license, contains notes explaining why
-        self.deprecated = ''
+        # if this is a deprecated license, add also notes explaining why
+        self.is_deprecated = False
 
         # commonly used short name, often abbreviated.
         self.short_name = ''
@@ -195,8 +195,8 @@ class License(object):
         if self.name:
             data['name'] = self.name
 
-        if self.deprecated:
-            data['deprecated'] = self.deprecated
+        if self.is_deprecated:
+            data['is_deprecated'] = self.is_deprecated
 
         if self.category:
             data['category'] = self.category
@@ -430,7 +430,7 @@ def load_licenses(license_dir=licenses_data_dir , with_deprecated=False):
             continue
         key = file_base_name(data_file)
         lic = License(key, license_dir)
-        if not with_deprecated and lic.deprecated:
+        if not with_deprecated and lic.is_deprecated:
             continue
         licenses[key] = lic
     return licenses
