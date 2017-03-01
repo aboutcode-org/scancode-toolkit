@@ -8,3 +8,6 @@ notes: |-
     notes from SPDX:
     This license is OSI certified. This license has been voluntarily deprecated by its author.
 spdx_license_key: HPND
+text_urls:
+    - http://www.opensource.org/licenses/historical.php
+osi_url: http://www.opensource.org/licenses/historical.php

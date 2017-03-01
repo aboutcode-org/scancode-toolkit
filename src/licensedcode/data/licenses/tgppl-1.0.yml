@@ -4,3 +4,5 @@ name: Transitive Grace Period Public Licence 1.0
 category: Copyleft
 owner: Tahoe-LAFS
 homepage_url: http://allmydata.org/source/tahoe/trunk/COPYING.TGPPL.html
+text_urls:
+    - http://allmydata.org/source/tahoe/trunk/COPYING.TGPPL.html

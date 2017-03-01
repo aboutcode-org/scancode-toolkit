@@ -13,3 +13,5 @@ text_urls:
     - https://fedoraproject.org/wiki/Licensing/Sun_Public_License
 osi_url: http://opensource.org/licenses/sunpublic.php
 faq_url: http://www.netbeans.org/kb/faqs/license.html
+other_urls:
+    - http://www.gnu.org/licenses/license-list.html#SPL

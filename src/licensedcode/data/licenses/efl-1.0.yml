@@ -9,6 +9,6 @@ notes: |-
     This license was OSI certified. This license has been superseded by v2.0
 spdx_license_key: EFL-1.0
 text_urls:
-    - https://fedoraproject.org/wiki/Licensing/Eiffel_Forum_License_V1
     - http://www.eiffel-nice.org/license/forum.txt
+    - https://fedoraproject.org/wiki/Licensing/Eiffel_Forum_License_V1
 osi_url: http://www.opensource.org/licenses/ver1_eiffel.php

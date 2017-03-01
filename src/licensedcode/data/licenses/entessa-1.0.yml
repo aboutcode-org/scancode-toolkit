@@ -9,8 +9,8 @@ notes: |-
     This license is OSI certified
 spdx_license_key: Entessa
 text_urls:
-    - http://web.archive.org/web/20040518115036/http://openseal.org/epl/index.html
     - http://openseal.org/epl/index.html
+    - http://web.archive.org/web/20040518115036/http://openseal.org/epl/index.html
 osi_url: http://opensource.org/licenses/entessa.php
 other_urls:
     - http://sourceforge.net/softwaremap/?&fq[]=trove%3A397

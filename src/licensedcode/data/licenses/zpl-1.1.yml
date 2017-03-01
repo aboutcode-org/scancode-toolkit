@@ -5,5 +5,7 @@ category: Permissive
 owner: Zope Community
 homepage_url: http://www.zope.org/Resources/License/
 spdx_license_key: ZPL-1.1
+text_urls:
+    - http://www.zope.org/Resources/License/
 other_urls:
     - http://www.zope.com/

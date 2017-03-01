@@ -8,4 +8,6 @@ notes: |-
     notes from SPDX:
     This license is OSI certified.
 spdx_license_key: MIT
+text_urls:
+    - http://opensource.org/licenses/mit-license.php
 osi_url: http://www.opensource.org/licenses/MIT

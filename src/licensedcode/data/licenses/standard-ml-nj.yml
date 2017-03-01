@@ -10,7 +10,9 @@ notes: |-
 spdx_license_key: StandardML-NJ
 text_urls:
     - http://directory.fsf.org/wiki/License:StandardMLofNJ
+    - http://www.smlnj.org//license.html
     - https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#Standard_ML_of_New_Jersey_Variant
 faq_url: http://www.gnu.org/licenses/license-list.html#StandardMLofNJ
 other_urls:
+    - "http://www.gnu.org/licenses/license-list.html#StandardMLofNJ "
     - http://www2.cs.tum.edu/projects/cup/

@@ -4,3 +4,5 @@ name: GNU General Public License 2.0 with Fedora Red Hat Exception
 category: Copyleft Limited
 owner: Fedora
 homepage_url: http://www.directory.fedora.redhat.com/wiki/GPL_Exception_License_Text
+text_urls:
+    - http://www.directory.fedora.redhat.com/wiki/GPL_Exception_License_Text

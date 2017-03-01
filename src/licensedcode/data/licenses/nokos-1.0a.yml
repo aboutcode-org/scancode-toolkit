@@ -8,3 +8,6 @@ notes: |-
     notes from SPDX:
     This license is OSI certified.
 spdx_license_key: Nokia
+text_urls:
+    - http://www.opensource.org/licenses/nokia.html
+osi_url: http://www.opensource.org/licenses/nokia.html

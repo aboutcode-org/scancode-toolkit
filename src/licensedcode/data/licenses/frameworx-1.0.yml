@@ -8,3 +8,6 @@ notes: |-
     notes from SPDX:
     This license is OSI certified. The url included in the license does not work. (15/10/10)
 spdx_license_key: Frameworx-1.0
+text_urls:
+    - http://opensource.org/licenses/frameworx.php
+osi_url: http://opensource.org/licenses/frameworx.php

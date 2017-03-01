@@ -8,3 +8,5 @@ notes: |-
     notes from SPDX:
     This license is OSI certified.
 spdx_license_key: NGPL
+text_urls:
+    - http://www.nethack.org/common/license.html

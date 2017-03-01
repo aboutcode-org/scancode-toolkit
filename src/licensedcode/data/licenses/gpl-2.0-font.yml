@@ -5,4 +5,5 @@ category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.gnu.org/licenses/gpl-faq.html#FontException
 spdx_license_key: GPL-2.0-with-font-exception
-    GNU General Public License v2.0 w/Font exception
+text_urls:
+    - http://www.gnu.org/licenses/gpl-faq.html#FontException

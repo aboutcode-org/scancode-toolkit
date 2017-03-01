@@ -4,6 +4,7 @@ name: GNU General Public License 2.0 with Autoconf exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 spdx_license_key: GPL-2.0-with-autoconf-exception
-    GNU General Public License v2.0 w/Autoconf exception
 text_urls:
+    - http://ac-archive.sourceforge.net/doc/copyright.html
+other_urls:
     - http://ac-archive.sourceforge.net/doc/copyright.html

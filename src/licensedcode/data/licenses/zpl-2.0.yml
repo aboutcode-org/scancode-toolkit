@@ -8,5 +8,7 @@ notes: |-
     notes from SPDX:
     This license is OSI certified
 spdx_license_key: ZPL-2.0
+text_urls:
+    - http://www.zope.org/Resources/License/
 other_urls:
     - http://www.zope.com/Marks

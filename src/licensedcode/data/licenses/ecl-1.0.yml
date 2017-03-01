@@ -8,4 +8,6 @@ notes: |-
     notes from SPDX:
     This license is OSI certified.
 spdx_license_key: ECL-1.0
+text_urls:
+    - http://www.opensource.org/licenses/ecl1.php
 osi_url: http://opensource.org/licenses/ecl1.php

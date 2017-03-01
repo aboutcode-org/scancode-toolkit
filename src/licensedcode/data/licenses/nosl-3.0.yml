@@ -8,3 +8,6 @@ notes: |-
     notes from SPDX:
     This license is OSI certified.
 spdx_license_key: NPOSL-3.0
+text_urls:
+    - http://www.opensource.org/licenses/NOSL3.0.html
+osi_url: http://www.opensource.org/licenses/NOSL3.0.html

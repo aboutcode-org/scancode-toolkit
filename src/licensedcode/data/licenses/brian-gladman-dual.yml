@@ -7,7 +7,7 @@ homepage_url: http://www.gladman.me.uk/
 text_urls:
     - https://github.com/basho/skerl/blob/master/c_src/brg_types.h
 other_urls:
-    - http://fp.gladman.plus.com/
     - http://brgladman.org/
-    - https://launchpad.net/ubuntu/oneiric/+source/silc-server/+copyright
+    - http://fp.gladman.plus.com/
     - http://www.ecrypt.eu.org/stream/svn/viewcvs.cgi/ecrypt/trunk/benchmarks/aes-ctr/aes-128/gladman/aes.h?diff_format=s&rev=190&view=auto
+    - https://launchpad.net/ubuntu/oneiric/+source/silc-server/+copyright

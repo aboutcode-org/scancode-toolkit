@@ -4,3 +4,5 @@ name: PCRE License
 category: Permissive
 owner: University of Cambridge
 homepage_url: http://www.pcre.org/licence.txt
+text_urls:
+    - http://www.pcre.org/licence.txt

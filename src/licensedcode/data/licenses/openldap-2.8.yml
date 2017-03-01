@@ -5,3 +5,5 @@ category: Permissive
 owner: OpenLDAP Foundation
 homepage_url: http://www.openldap.org/software/release/license.html
 spdx_license_key: OLDAP-2.8
+text_urls:
+    - http://www.openldap.org/software/release/license.html

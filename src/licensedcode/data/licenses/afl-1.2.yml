@@ -3,10 +3,14 @@ short_name: AFL 1.2
 name: Academic Free License 1.2
 category: Permissive
 owner: Lawrence Rosen
-homepage_url: http://opensource.linux-mirror.org/licenses/afl-1.2.txt
+homepage_url: https://spdx.org/licenses/AFL-1.2.html
 notes: |-
     notes from SPDX:
     This license has been superseded by later versions. This license was OSI certified.
 spdx_license_key: AFL-1.2
 text_urls:
     - http://opensource-definition.org/licenses/afl-1.2.txt
+    - http://opensource.linux-mirror.org/licenses/afl-1.2.txt
+    - https://spdx.org/licenses/AFL-1.2.html
+other_urls:
+    - http://www.gnu.org/licenses/license-list.html#AcademicFreeLicense

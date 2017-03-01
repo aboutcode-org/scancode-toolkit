@@ -4,3 +4,5 @@ name: CUPS License
 category: Copyleft
 owner: Apple
 homepage_url: http://www.cups.org/
+text_urls:
+    - http://www.cups.org/

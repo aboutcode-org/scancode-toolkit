@@ -8,6 +8,9 @@ notes: |-
     notes from SPDX:
     This license is OSI certified.
 spdx_license_key: OSL-3.0
+text_urls:
+    - http://www.opensource.org/licenses/osl-3.0.php
 osi_url: http://opensource.org/licenses/osl-3.0.php
 other_urls:
+    - http://www.gnu.org/licenses/license-list.html#OSL
     - http://www.rosenlaw.com/OSL3.0.htm

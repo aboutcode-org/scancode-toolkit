@@ -8,6 +8,9 @@ notes: |-
     notes from SPDX:
     This license was released: 26 February 2007. This license is OSI certified
 spdx_license_key: OFL-1.1
+text_urls:
+    - http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web
 faq_url: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 other_urls:
     - http://scripts.sil.org/OFL
+    - https://github.com/adobe-fonts/source-code-pro/blob/master/LICENSE.txt

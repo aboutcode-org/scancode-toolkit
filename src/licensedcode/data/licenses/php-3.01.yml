@@ -8,6 +8,8 @@ notes: |-
     notes from SPDX:
     The PHP License v3.01 is essentially the same as v3.0, with the exceoption of a couple word differences and updated url in section 6. v3.01 came into use with PHP version 4 and onward.
 spdx_license_key: PHP-3.01
+text_urls:
+    - http://www.php.net/license/3_01.txt
 other_urls:
-    - http://www.php.net/software/
+    - 'http://www.php.net/software/ '
     - http://www.zend.com

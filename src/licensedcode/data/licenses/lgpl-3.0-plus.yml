@@ -8,5 +8,7 @@ notes: |-
     notes from SPDX:
     This license was released: 29 June 2007. This license is OSI Certified.
 spdx_license_key: LGPL-3.0+
+text_urls:
+    - http://www.gnu.org/licenses/lgpl-3.0-standalone.html
 other_urls:
     - http://www.gnu.org/copyleft/lesser.html

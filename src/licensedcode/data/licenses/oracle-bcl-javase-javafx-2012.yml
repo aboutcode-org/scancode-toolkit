@@ -4,4 +4,8 @@ name: Oracle BCL for Java SE Platform Products and JavaFX 2012
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/technetwork/java/javase/terms/license/index.html
+text_urls:
+    - http://www.oracle.com/technetwork/java/javase/terms/license/index.html
 faq_url: http://www.oracle.com/technetwork/java/javase/documentation/index.html
+other_urls:
+    - http://www.oracle.com/technetwork/java/javase/documentation/index.html

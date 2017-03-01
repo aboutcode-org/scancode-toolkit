@@ -8,5 +8,7 @@ notes: |-
     notes from SPDX:
     This license was released 16 March 1999.
 spdx_license_key: APSL-1.0
+text_urls:
+    - http://www.opensource.apple.com/source/architecture/architecture-229/APPLE_LICENSE?f=text
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/Apple_Public_Source_License_1.0

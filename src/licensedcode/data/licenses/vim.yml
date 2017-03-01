@@ -5,3 +5,5 @@ category: Copyleft
 owner: VIM
 homepage_url: http://vimdoc.sourceforge.net/htmldoc/uganda.html
 spdx_license_key: Vim
+other_urls:
+    - http://www.vim.org/docs.php

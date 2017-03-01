@@ -5,3 +5,5 @@ category: Public Domain
 owner: SAX Project
 homepage_url: http://www.saxproject.org/copying.html
 spdx_license_key: SAX-PD
+text_urls:
+    - http://www.saxproject.org/copying.html

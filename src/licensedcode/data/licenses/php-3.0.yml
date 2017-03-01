@@ -8,5 +8,7 @@ notes: |-
     notes from SPDX:
     This license is OSI certified.
 spdx_license_key: PHP-3.0
+text_urls:
+    - http://www.php.net/license/
 osi_url: http://www.opensource.org/licenses/php.html
 faq_url: http://www.php.net/license/index.php#faq-lic

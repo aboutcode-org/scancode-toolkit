@@ -9,5 +9,9 @@ notes: |-
     This license is OSI certified.
 spdx_license_key: AFL-3.0
 text_urls:
+    - http://www.opensource.org/licenses/afl-3.0.php
     - http://www.rosenlaw.com/AFL3.0.htm
+osi_url: http://opensource.org/licenses/afl-3.0.php
 faq_url: http://www.rosenlaw.com/OSL3.0-explained.pdf
+other_urls:
+    - http://www.gnu.org/licenses/license-list.html#AcademicFreeLicense

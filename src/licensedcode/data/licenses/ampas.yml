@@ -5,4 +5,5 @@ category: Permissive
 owner: AMPAS
 homepage_url: https://fedoraproject.org/wiki/Licensing/BSD#AMPASBSD
 spdx_license_key: AMPAS
-    Academy of Motion Picture Arts and Sciences BSD
+text_urls:
+    - https://fedoraproject.org/wiki/Licensing/BSD#AMPASBSD

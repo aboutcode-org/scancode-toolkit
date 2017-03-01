@@ -10,6 +10,7 @@ notes: |-
 spdx_license_key: BSD-4-Clause-UC
 text_urls:
     - http://www.xfree86.org/3.3.6/COPYRIGHT2.html
+faq_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
 other_urls:
     - http://www.fsf.org/licensing/essays/bsd.html
     - http://www.gnu.org/philosophy/bsd.html

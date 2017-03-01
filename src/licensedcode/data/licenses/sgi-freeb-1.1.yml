@@ -8,5 +8,7 @@ notes: |-
     notes from SPDX:
     This license was released 22 February 2002
 spdx_license_key: SGI-B-1.1
+text_urls:
+    - http://oss.sgi.com/projects/FreeB/SGIFreeSWLicB.1.1.doc
 other_urls:
     - http://oss.sgi.com/projects/FreeB/

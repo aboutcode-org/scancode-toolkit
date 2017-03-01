@@ -5,6 +5,7 @@ category: Permissive
 owner: iMatix
 homepage_url: http://legacy.imatix.com/html/sfl/sfl4.htm
 spdx_license_key: iMatix
-    iMatix Standard Function Library Agreement
+text_urls:
+    - http://legacy.imatix.com/html/sfl/sfl4.htm
 other_urls:
     - http://www.imatix.com

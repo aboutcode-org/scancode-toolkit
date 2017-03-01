@@ -8,5 +8,5 @@ text_urls:
     - http://cygwin.com/cgi-bin/cvsweb.cgi/src/winsup/CYGWIN_LICENSE?cvsroot=src
 other_urls:
     - http://www.opensource.org/docs/osd/
-    - http://www.redhat.com/software/cygwin/
     - http://www.redhat.com/about/contact/ww/
+    - http://www.redhat.com/software/cygwin/

@@ -2,5 +2,5 @@ key: protobuf
 short_name: Protobuf License
 name: Protobuf License
 category: Permissive
-owner: Protobuf Project
+owner: Google
 homepage_url: http://protobuf.googlecode.com/svn/trunk/COPYING.txt

@@ -13,4 +13,5 @@ text_urls:
     - http://www.opensource.apple.com/source/IOSerialFamily/IOSerialFamily-7/APPLE_LICENSE
 faq_url: http://www.gnu.org/philosophy/historical-apsl.html
 other_urls:
+    - http://web.archive.org/web/20000901055846/http://www.opensource.apple.com/apsl/
     - https://fedoraproject.org/wiki/Licensing/Apple_Public_Source_License_1.1

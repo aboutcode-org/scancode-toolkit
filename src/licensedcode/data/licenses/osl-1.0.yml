@@ -8,3 +8,8 @@ notes: |-
     notes from SPDX:
     This license was OSI certified. This license has been superseded.
 spdx_license_key: OSL-1.0
+text_urls:
+    - http://www.opensource.org/licenses/osl-1.0.txt
+osi_url: http://www.opensource.org/licenses/osl-1.0.txt
+other_urls:
+    - http://www.gnu.org/licenses/license-list.html#OSL

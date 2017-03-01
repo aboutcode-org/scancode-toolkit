@@ -5,4 +5,6 @@ category: Copyleft
 owner: Red Hat
 homepage_url: http://ecos.sourceware.org/old-license.html
 spdx_license_key: RHeCos-1.1
+text_urls:
+    - http://ecos.sourceware.org/old-license.html
 faq_url: http://ecos.sourceware.org/license-overview.html

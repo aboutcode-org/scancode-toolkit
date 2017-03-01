@@ -8,5 +8,8 @@ notes: |-
     notes from SPDX:
     This license is OSI certified
 spdx_license_key: RPSL-1.0
+text_urls:
+    - http://opensource.org/licenses/real.php
+osi_url: http://opensource.org/licenses/real.php
 other_urls:
-    - https://helixcommunity.org/content/rpsl
+    - 'https://helixcommunity.org/content/rpsl '

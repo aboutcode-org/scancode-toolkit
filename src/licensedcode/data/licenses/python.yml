@@ -9,7 +9,8 @@ notes: |-
     http://www.opensource.org/licenses/Python-2.0 overall Python license
 spdx_license_key: Python-2.0
 text_urls:
-    - https://spdx.org/licenses/Python-2.0
+    - http://spdx.org/licenses/Python-2.0
 osi_url: http://www.opensource.org/licenses/Python-2.0
 other_urls:
     - http://opensource.org/licenses/PythonSoftFoundation.php
+    - http://www.gnu.org/licenses/license-list.html#PythonOld

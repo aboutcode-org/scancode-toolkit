@@ -2,6 +2,7 @@ key: diffmark
 short_name: diffmark License
 name: diffmark License
 category: Public Domain
+owner: Unspecified
 homepage_url: https://fedoraproject.org/wiki/Licensing/diffmark
 notes: |-
     notes from SPDX:

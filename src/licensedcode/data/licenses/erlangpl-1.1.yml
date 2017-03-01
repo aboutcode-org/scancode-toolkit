@@ -5,3 +5,5 @@ category: Copyleft
 owner: Erlang
 homepage_url: http://www.erlang.org/EPLICENSE
 spdx_license_key: ErlPL-1.1
+text_urls:
+    - http://www.erlang.org/EPLICENSE

@@ -4,3 +4,5 @@ name: University of British Columbia License
 category: Permissive
 owner: University of British Columbia
 homepage_url: https://raw.github.com/orgcandman/esnacc-ng/master/c++-lib/src/asn-len.cpp
+text_urls:
+    - https://raw.github.com/orgcandman/esnacc-ng/master/c++-lib/src/asn-len.cpp

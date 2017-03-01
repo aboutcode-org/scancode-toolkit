@@ -7,7 +7,6 @@ homepage_url: http://creativecommons.org/licenses/by-nc/2.5/
 notes: |-
     notes from SPDX:
     None
-spdx_license_key: >-
-    CC-BY-NC-2.5 Creative Commons Attribution Non Commercial 2.5
+spdx_license_key: CC-BY-NC-2.5
 text_urls:
     - http://creativecommons.org/licenses/by-nc/2.5/legalcode

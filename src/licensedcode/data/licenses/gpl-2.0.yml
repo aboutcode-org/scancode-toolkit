@@ -27,7 +27,7 @@ text_urls:
 osi_url: http://opensource.org/licenses/gpl-license.php
 faq_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-faq.html
 other_urls:
-    - http://creativecommons.org/licenses/GPL/2.0/
     - http://creativecommons.org/choose/cc-gpl
     - http://creativecommons.org/images/public/cc-GPL-a.png
+    - http://creativecommons.org/licenses/GPL/2.0/
     - http://creativecommons.org/licenses/GPL/2.0/legalcode.pt

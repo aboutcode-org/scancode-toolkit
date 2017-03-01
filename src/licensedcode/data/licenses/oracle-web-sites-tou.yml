@@ -4,3 +4,5 @@ name: Oracle Web Sites Terms of Use
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/html/terms.html
+text_urls:
+    - http://www.oracle.com/html/terms.html

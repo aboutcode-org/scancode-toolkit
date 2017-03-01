@@ -9,7 +9,7 @@ notes: |-
     This version was released: 2006 This license is OSI certifified.
 spdx_license_key: Artistic-2.0
 text_urls:
-    - http://www.perlfoundation.org/attachment/legal/artistic-2_0.txt
     - http://www.perlfoundation.org/artistic_license_2_0
+    - http://www.perlfoundation.org/attachment/legal/artistic-2_0.txt
 osi_url: http://www.opensource.org/licenses/artistic-license-2.0.php
 faq_url: http://www.perlfoundation.org/artistic-2-0-notes

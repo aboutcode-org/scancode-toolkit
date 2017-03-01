@@ -5,4 +5,6 @@ category: Permissive
 owner: ImageMagick
 homepage_url: http://www.imagemagick.org/script/license.php
 spdx_license_key: ImageMagick
+text_urls:
+    - http://www.imagemagick.org/script/license.php
 faq_url: http://www.imagemagick.org/script/export.php

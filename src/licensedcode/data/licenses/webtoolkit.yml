@@ -4,3 +4,5 @@ name: webtoolkit License
 category: Permissive
 owner: WebToolKit
 homepage_url: http://www.webtoolkit.info/license
+text_urls:
+    - http://www.webtoolkit.info/license

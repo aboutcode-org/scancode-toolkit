@@ -8,3 +8,6 @@ notes: |-
     notes from SPDX:
     This license is OSI certified. This license was superseded by CPL.
 spdx_license_key: IPL-1.0
+text_urls:
+    - http://www.opensource.org/licenses/ibmpl.php
+osi_url: http://www.opensource.org/licenses/ibmpl.php

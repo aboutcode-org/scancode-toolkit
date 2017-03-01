@@ -4,3 +4,6 @@ name: FreeImage Public License Version 1.0
 category: Copyleft Limited
 owner: FreeImage Project
 homepage_url: http://freeimage.sourceforge.net/freeimage-license.txt
+spdx_license_key: FreeImage
+text_urls:
+    - http://freeimage.sourceforge.net/freeimage-license.txt

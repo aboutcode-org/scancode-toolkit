@@ -9,3 +9,5 @@ notes: |-
     notes from SPDX:
     NetBSD adopted this 2-clause license in 2008 for code contributed to NetBSD Foundation.
 spdx_license_key: BSD-2-Clause-NetBSD
+text_urls:
+    - http://www.netbsd.org/about/redistribution.html#default

@@ -9,5 +9,11 @@ notes: |-
     This license has been superseded by later versions.
 spdx_license_key: AFL-1.1
 text_urls:
+    - http://open2.mirrors-r-us.net/licenses/afl-1.1.txt
+    - http://opensource.linux-mirror.org/licenses/afl-1.1.txt
+    - http://spdx.org/licenses/AFL-1.1
+    - http://web.archive.org/web/20060924134536/http://www.opensource.org/licenses/afl-1.1.txt
     - http://www.opensource.org/licenses/afl-1.1.txt
 osi_url: http://web.archive.org/web/20060924134536/http://www.opensource.org/licenses/afl-1.1.txt
+other_urls:
+    - http://www.gnu.org/licenses/license-list.html#AcademicFreeLicense

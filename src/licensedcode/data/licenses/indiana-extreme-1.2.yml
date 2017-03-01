@@ -6,4 +6,5 @@ owner: Indiana University
 homepage_url: http://www.extreme.indiana.edu/license.txt
 spdx_license_key: xpp
 text_urls:
+    - http://www.extreme.indiana.edu/license.txt
     - https://fedoraproject.org/wiki/Licensing/xpp

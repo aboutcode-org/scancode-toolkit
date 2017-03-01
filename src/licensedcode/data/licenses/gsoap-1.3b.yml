@@ -5,3 +5,5 @@ category: Copyleft Limited
 owner: Genivia
 homepage_url: http://www.cs.fsu.edu/~engelen/license.html
 spdx_license_key: gSOAP-1.3b
+text_urls:
+    - http://www.cs.fsu.edu/~engelen/license.html

@@ -32,6 +32,7 @@ from collections import Counter
 from collections import defaultdict
 from collections import namedtuple
 from collections import OrderedDict
+from copy import copy
 from itertools import chain
 from operator import itemgetter
 from os.path import exists
@@ -49,6 +50,7 @@ from licensedcode import rules_data_dir
 from licensedcode import saneyaml
 from licensedcode.tokenize import rule_tokenizer
 from licensedcode.tokenize import query_tokenizer
+from commoncode import fileutils
 
 
 """
@@ -139,11 +141,39 @@ class License(object):
         self.standard_notice = ''
 
         # data file paths and known extensions
+        self.data_file = ''
+        self.text_file = ''
+        if self.src_dir:
+            self.set_file_paths()
+
+            if exists(self.data_file):
+                self.load(src_dir)
+
+    def set_file_paths(self):
         self.data_file = join(self.src_dir, self.key + '.yml')
         self.text_file = join(self.src_dir, self.key + '.LICENSE')
 
-        if src_dir and exists(self.data_file):
-            self.load(src_dir)
+    def relocate(self, src_dir):
+        """
+        Return a copy of this license object relocated to a new `src_dir`.
+        Also copy the LICENSE file.
+        """
+        newl = copy(self)
+        newl.src_dir = src_dir
+        newl.set_file_paths()
+        if self.text:
+            fileutils.copyfile(self.text_file, newl.text_file)
+        return newl
+
+    def update(self, mapping):
+        for k, v in mapping.items():
+            setattr(self, k, v)
+
+    def __copy__(self):
+        oldl = self.asdict()
+        newl = License(key=self.key)
+        newl.update(oldl)
+        return newl
 
     @property
     def text(self):
@@ -246,6 +276,9 @@ class License(object):
             if k in numeric_keys:
                 v = int(v)
 
+            if k == 'key':
+                assert self.key == v, 'Inconsistent YAML key and file names for %r' % self.key
+
             setattr(self, k, v)
 
     def _read_text(self, location):
@@ -257,7 +290,7 @@ class License(object):
         return text
 
     @staticmethod
-    def validate(licenses, verbose=False):
+    def validate(licenses, verbose=False, no_dupe_urls=False):
         """
         Check that licenses are valid. `licenses` is a mapping of key ->
         License. Return dictionaries of infos, errors and warnings mapping a
@@ -294,32 +327,34 @@ class License(object):
                 err('Base license for an "or later" license is unknown')
 
             # URLS dedupe and consistency
-            if lic.text_urls and not all(lic.text_urls):
-                warn('Some empty license text_urls')
-            if lic.other_urls and not all(lic.other_urls):
-                warn('Some empty license other_urls')
+            if no_dupe_urls:
+                if lic.text_urls and not all(lic.text_urls):
+                    warn('Some empty license text_urls')
 
-            # redundant URLs used multiple times
-            if lic.homepage_url:
-                if lic.homepage_url in lic.text_urls:
-                    warn('Homepage URL also in text_urls')
-                if lic.homepage_url in lic.other_urls:
-                    warn('Homepage URL also in other_urls')
-                if lic.homepage_url == lic.faq_url:
-                    warn('Homepage URL same as faq_url')
-                if lic.homepage_url == lic.osi_url:
-                    warn('Homepage URL same as osi_url')
+                if lic.other_urls and not all(lic.other_urls):
+                    warn('Some empty license other_urls')
 
-            if lic.osi_url or lic.faq_url:
-                if lic.osi_url == lic.faq_url:
-                    warn('osi_url same as faq_url')
-
-            all_licenses = lic.text_urls + lic.other_urls
-            for url in lic.osi_url, lic.faq_url, lic.homepage_url:
-                if url: all_licenses.append(url)
-
-            if not len(all_licenses) == len(set(all_licenses)):
-                warn('Some duplicated URLs')
+                # redundant URLs used multiple times
+                if lic.homepage_url:
+                    if lic.homepage_url in lic.text_urls:
+                        warn('Homepage URL also in text_urls')
+                    if lic.homepage_url in lic.other_urls:
+                        warn('Homepage URL also in other_urls')
+                    if lic.homepage_url == lic.faq_url:
+                        warn('Homepage URL same as faq_url')
+                    if lic.homepage_url == lic.osi_url:
+                        warn('Homepage URL same as osi_url')
+    
+                if lic.osi_url or lic.faq_url:
+                    if lic.osi_url == lic.faq_url:
+                        warn('osi_url same as faq_url')
+    
+                all_licenses = lic.text_urls + lic.other_urls
+                for url in lic.osi_url, lic.faq_url, lic.homepage_url:
+                    if url: all_licenses.append(url)
+    
+                if not len(all_licenses) == len(set(all_licenses)):
+                    warn('Some duplicated URLs')
 
             # local text consistency
             text = lic.text
@@ -449,7 +484,8 @@ def build_rules_from_licenses(licenses=None):
         minimum_coverage = license_obj.minimum_coverage
 
         if exists(tfile):
-            yield Rule(text_file=tfile, licenses=[license_key], minimum_coverage=minimum_coverage)
+            yield Rule(text_file=tfile, licenses=[license_key],
+                       minimum_coverage=minimum_coverage, is_license=True)
 
 
 def load_rules(rule_dir=rules_data_dir):
@@ -516,11 +552,13 @@ class Rule(object):
                  'data_file', 'text_file', '_text',
                  'length', 'low_length', 'high_length', '_thresholds',
                  'length_unique', 'low_unique', 'high_unique', '_thresholds_unique',
-                 'minimum_coverage', 'relevance', 'has_stored_relevance'
+                 'minimum_coverage', 'relevance', 'has_stored_relevance',
+                 'is_license'
                  )
 
     def __init__(self, data_file=None, text_file=None, licenses=None,
-                 license_choice=False, notes=None, minimum_coverage=0, _text=None):
+                 license_choice=False, notes=None, minimum_coverage=0,
+                 is_license=False, _text=None):
 
         ###########
         # FIXME: !!! TWO RULES MAY DIFFER BECAUSE THEY ARE UPDATED BY INDEXING
@@ -563,6 +601,9 @@ class Rule(object):
         # false positive matches automatically.
         self.relevance = 100
         self.has_stored_relevance = False
+
+        # set to True if the rule is built from a .LICENSE full text
+        self.is_license = is_license
 
         # path to the YAML data file for this rule
         self.data_file = data_file

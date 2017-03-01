@@ -3,3 +3,7 @@ short_name: Mozilla GC License
 name: Mozilla GC License
 category: Permissive
 owner: Mozilla
+text_urls:
+    - http://www.hboehm.info/gc/license.txt
+other_urls:
+    - http://www.hboehm.info/gc/

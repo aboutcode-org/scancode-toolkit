@@ -10,7 +10,10 @@ notes: |-
 spdx_license_key: APSL-1.2
 text_urls:
     - http://web.archive.org/web/20010302160215/http://www.opensource.apple.com/apsl/
+    - http://www.samurajdata.se/opensource/mirror/licenses/apsl.php
 osi_url: http://web.archive.org/web/20020203232348/http://www.opensource.org/licenses/apsl.html
 faq_url: http://www.gnu.org/philosophy/historical-apsl.html
 other_urls:
+    - http://opensource-definition.org/licenses/apsl.html
+    - http://web.archive.org/web/20020203232348/http://www.opensource.org/licenses/apsl.html
     - https://fedoraproject.org/wiki/Licensing/Apple_Public_Source_License_1.2

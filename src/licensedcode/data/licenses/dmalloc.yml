@@ -4,3 +4,5 @@ name: dmalloc License
 category: Permissive
 owner: Dmalloc
 faq_url: http://dmalloc.com/
+other_urls:
+    - http://dmalloc.com/

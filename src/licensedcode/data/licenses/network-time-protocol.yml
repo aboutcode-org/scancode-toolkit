@@ -4,3 +4,5 @@ name: Network Time Protocol License
 category: Permissive
 owner: University of Delaware
 homepage_url: http://www.eecis.udel.edu/~mills/ntp/html/copyright.html
+text_urls:
+    - http://www.eecis.udel.edu/~mills/ntp/html/copyright.html

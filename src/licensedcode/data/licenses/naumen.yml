@@ -8,3 +8,6 @@ notes: |-
     notes from SPDX:
     This license is OSI certified.
 spdx_license_key: Naumen
+text_urls:
+    - http://www.opensource.org/licenses/naumen.php
+osi_url: http://www.opensource.org/licenses/naumen.php

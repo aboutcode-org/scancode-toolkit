@@ -8,3 +8,5 @@ notes: |-
     notes from SPDX:
     This license was released 28 July 2000.
 spdx_license_key: OLDAP-2.2.2
+text_urls:
+    - http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=df2cc1e21eb7c160695f5b7cffd6296c151ba188

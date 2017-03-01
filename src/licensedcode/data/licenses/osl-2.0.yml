@@ -5,6 +5,9 @@ category: Copyleft
 owner: Lawrence Rosen
 homepage_url: http://www.nexb.com/license/LICENSE-OSL-2.0.html
 spdx_license_key: OSL-2.0
+text_urls:
+    - http://www.nexb.com/license/LICENSE-OSL-2.0.html
 osi_url: http://www.opensource.org/licenses/osl-2.0.php
 other_urls:
     - http://web.archive.org/web/20041020171434/http://www.rosenlaw.com/osl2.0.html
+    - http://www.gnu.org/licenses/license-list.html#OSL

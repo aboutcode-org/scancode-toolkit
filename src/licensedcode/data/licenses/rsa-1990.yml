@@ -5,4 +5,4 @@ category: Permissive
 owner: RSA (the Security Division of EMC)
 text_urls:
     - "http://svn.apache.org/repos/asf/apr/apr/trunk/test/testmd4.c "
-    - http://www.opensource.apple.com/source/libmd/libmd-3/mddriver.c?txt
+    - "http://www.opensource.apple.com/source/libmd/libmd-3/mddriver.c?txt "

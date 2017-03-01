@@ -5,6 +5,8 @@ category: Permissive
 owner: IJG - Independent JPEG Group
 homepage_url: http://fedoraproject.org/wiki/Licensing/IJG
 spdx_license_key: IJG
+text_urls:
+    - http://fedoraproject.org/wiki/Licensing/IJG
 other_urls:
-    - http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses
     - http://dev.w3.org/cvsweb/Amaya/libjpeg/Attic/README?rev=1.2
+    - "http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses  "

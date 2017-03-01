@@ -4,3 +4,5 @@ name: MediaInfo(Lib) License
 category: Permissive
 owner: MediaArea.net SARL
 homepage_url: http://mediainfo.sourceforge.net/en
+text_urls:
+    - http://mediainfo.sourceforge.net/en

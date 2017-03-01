@@ -6,3 +6,5 @@ owner: Intel Corporation
 homepage_url: http://opensource.org/licenses/intel-open-source-license.html
 spdx_license_key: Intel
 osi_url: http://www.opensource.org/licenses/intel-open-source-license.html
+other_urls:
+    - https://opensource.org/licenses/intel-open-source-license.php

@@ -9,10 +9,10 @@ notes: |-
     This license is OSI certified
 spdx_license_key: EFL-2.0
 text_urls:
-    - http://www.opensource-definition.org/licenses/ver2_eiffel.html
     - http://www.eiffel-nice.org/license/eiffel-forum-license-2.txt
+    - http://www.opensource-definition.org/licenses/ver2_eiffel.html
 osi_url: http://www.opensource.org/licenses/ver2_eiffel.php
 faq_url: http://inamidst.com/stuff/eiffel/
 other_urls:
-    - http://en.wikipedia.org/wiki/Eiffel_Forum_License
     - http://amalasoft.com/downloads/ael/ds/LICENSE.txt
+    - http://en.wikipedia.org/wiki/Eiffel_Forum_License

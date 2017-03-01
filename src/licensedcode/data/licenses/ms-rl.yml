@@ -8,6 +8,8 @@ notes: |-
     notes from SPDX:
     This license is OSI certified.
 spdx_license_key: MS-RL
+text_urls:
+    - http://www.microsoft.com/opensource/licenses.mspx#Ms-RL
 osi_url: http://www.opensource.org/licenses/ms-rl.html
 other_urls:
     - http://www.microsoft.com/en-us/openness/licenses.aspx#MRL

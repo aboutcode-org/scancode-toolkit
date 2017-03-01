@@ -4,3 +4,5 @@ name: Qualcomm Turing License
 category: Permissive
 owner: Qualcomm
 homepage_url: https://github.com/arantius/tivodecode/blob/master/Turing.h
+text_urls:
+    - https://github.com/arantius/tivodecode/blob/master/Turing.h

@@ -8,5 +8,8 @@ notes: |-
     notes from SPDX:
     This license is OSI certified.
 spdx_license_key: OGTSL
+text_urls:
+    - http://opensource.org/licenses/opengroup.php
+osi_url: http://opensource.org/licenses/opengroup.php
 other_urls:
     - http://www.opengroup.org/testing/downloads/The_Open_Group_TSL.txt

@@ -4,3 +4,5 @@ name: Amazon Software License
 category: Proprietary Free
 owner: Amazon Web Services
 homepage_url: http://aws.amazon.com/asl/
+text_urls:
+    - http://aws.amazon.com/asl/

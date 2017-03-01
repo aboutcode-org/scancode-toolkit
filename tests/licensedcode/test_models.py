@@ -77,15 +77,9 @@ class TestLicense(FileBasedTesting):
         errors, warnings, infos = models.License.validate(models.get_licenses())
         assert {} == errors
         assert {} == warnings
-
         expected = {
-            'GLOBAL': [
-                'SPDX key: LGPL-2.1 used in multiple licenses: lgpl-2.1, lgpl-2.1-fabrice_bellard',
-                'SPDX key: GPL-1.0+ used in multiple licenses: gpl, gpl-1.0-plus',
-                'SPDX key: BSD-3-Clause used in multiple licenses: bsd-new, bsd-new-link',
-                'SPDX key: LGPL-3.0 used in multiple licenses: lgpl-3.0, lgpl-3.0-notice',
-                'SPDX key: LGPL-2.0+ used in multiple licenses: lgpl, lgpl-2.0-plus'
-            ],
+            'GLOBAL': ['SPDX key: GPL-1.0+ used in multiple licenses: gpl, gpl-1.0-plus',
+                        'SPDX key: LGPL-2.0+ used in multiple licenses: lgpl, lgpl-2.0-plus'],
             'free-unknown': ['No license text'],
             'generic-cla': ['No license text'],
             'gfdl': ['No license text'],

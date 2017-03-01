@@ -6,4 +6,5 @@ owner: FreeBSD
 homepage_url: http://people.freebsd.org/~phk/
 spdx_license_key: Beerware
 text_urls:
+    - http://people.freebsd.org/~phk/
     - https://fedoraproject.org/wiki/Licensing/Beerware

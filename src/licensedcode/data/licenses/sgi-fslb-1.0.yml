@@ -8,3 +8,5 @@ notes: |-
     notes from SPDX:
     This license was released 25 January 2000
 spdx_license_key: SGI-B-1.0
+text_urls:
+    - http://oss.sgi.com/projects/FreeB/SGIFreeSWLicB.1.0.html

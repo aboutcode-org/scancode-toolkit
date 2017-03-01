@@ -8,7 +8,9 @@ notes: |-
     notes from SPDX:
     This license is OSI certified
 spdx_license_key: NCSA
+text_urls:
+    - http://www.otm.illinois.edu/faculty/forms/opensource.asp
 osi_url: http://www.opensource.org/licenses/UoI-NCSA.php
 other_urls:
-    - http://www.stlinux.com/node/140
     - http://www.ncsa.uiuc.edu/
+    - http://www.stlinux.com/node/140

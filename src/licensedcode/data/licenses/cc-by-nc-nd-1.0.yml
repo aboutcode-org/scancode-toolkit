@@ -8,3 +8,5 @@ notes: |-
     notes from SPDX:
     NOT FOUND
 spdx_license_key: CC-BY-NC-ND-1.0
+text_urls:
+    - http://creativecommons.org/licenses/by-nd-nc/1.0/
