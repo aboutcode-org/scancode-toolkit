@@ -69,7 +69,7 @@ These scans are for now only available in the JSON output
    https://github.com/nexB/scancode-toolkit/issues/12
  * New and improved licenses rules and licenses.
  * Added support for nuget .nupkg as archives.
- * Created new extractcode standlone command for
+ * Created new extractcode standalone command for
    https://github.com/nexB/scancode-toolkit/issues/52
    Extracting archives is no longer part of the scancode command.
  * Scancode can now be called from anywhere.
@@ -160,6 +160,6 @@ These scans are for now only available in the JSON output
 * Initial release.
 
  * support for scanning licenses and copyrights
- * simple command line with html, htaml-app and JSON formats output
+ * simple command line with html, html-app and JSON formats output
 
  
