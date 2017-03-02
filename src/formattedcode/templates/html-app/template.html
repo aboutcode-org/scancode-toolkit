@@ -50,42 +50,34 @@
   </nav>
 
   <div class="container-fluid">
-      <!--
-      <div class="container-fluid">
-        <div class="row">
-          <button id="button" class="btn btn-default" type="button" style="margin:10px">Toggle Path</button>
-            <div id="selected"></div>
+    <div class="row">
+      <div class="row" id = "scan-result-header">
+        <div class="col-md-4">
+          <strong>scan results for:</strong>
+        </div>
+        <div class = "col-md-8" id = "file-path">
+          <p>{{ scanned_path }}</p>
         </div>
       </div>
-      -->
-      <div class="row">
-        <div class="row" id = "scan-result-header">
-          <div class="col-md-4">
-            <strong>scan results for:</strong>
-          </div>
-          <div class = "col-md-8" id = "file-path">
-            <p>{{ scanned_path }}</p>
-          </div>
-        </div>
       <div class="col-md-4" id="leftCol">
         <div id="tree" style="overflow-x:scroll; overflow-y:auto;"></div>
       </div>
 
       <div id="tabbar" class="col-md-8">
-          <ul class="nav nav-tabs">
-              <li id="tab4" class="active"><a data-toggle="tab" href="#chart">License Summary</a></li>
-              <li id="tab5"><a data-toggle="tab" href="#">Copyright Summary</a></li>
-              <li id="tab1"><a data-toggle="tab" href="#">Clues</a></li>
-              <li id="tab2"><a data-toggle="tab" href="#">File Details</a></li>
-              <li id="tab3"><a data-toggle="tab" href="#">Packages</a></li>
-          </ul>
-          <div id="summary">
-              <p class="total-files"></p>
-              <svg class="chart"></svg>
-          </div>
-          <div id="details">
-              <table id="data_table" class="data_table display table-wrap" cellspacing="0" width="100%"></table>
-          </div>
+        <ul class="nav nav-tabs">
+            <li id="tab4" class="active"><a data-toggle="tab" href="#chart">License Summary</a></li>
+            <li id="tab5"><a data-toggle="tab" href="#">Copyright Summary</a></li>
+            <li id="tab1"><a data-toggle="tab" href="#">Clues</a></li>
+            <li id="tab2"><a data-toggle="tab" href="#">File Details</a></li>
+            <li id="tab3"><a data-toggle="tab" href="#">Packages</a></li>
+        </ul>
+        <div id="summary">
+            <p class="total-files"></p>
+            <svg class="chart"></svg>
+        </div>
+        <div id="details">
+            <table id="data_table" class="data_table display table-wrap" cellspacing="0" width="100%"></table>
+        </div>
       </div>
     </div>
   </div>
