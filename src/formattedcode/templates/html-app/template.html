@@ -59,16 +59,13 @@
       </div>
       -->
       <div class="row">
-        <div class="row">
-          <div class="col-md-12" style = "margin: 0px 0px 20px 10px;">
-             <strong>scan results for:
-               <br>
-               <div class = "col-md-4" style="border: 1px solid #ccc; border-radius: 5px; padding: 2px 20px 2px 20px; margin-top:5px; ">
-                 {{ scanned_path }}
-               </div>
-             </strong>
+        <div class="row" id = "scan-result-header">
+          <div class="col-md-4">
+            <strong>scan results for:</strong>
           </div>
-
+          <div class = "col-md-8" id = "file-path">
+            <p>{{ scanned_path }}</p>
+          </div>
         </div>
       <div class="col-md-4" id="leftCol">
         <div id="tree" style="overflow-x:scroll; overflow-y:auto;"></div>
