@@ -168,7 +168,7 @@
           "category": "Permissive", 
           "owner": "Regents of the University of California", 
           "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause", 
-          "text_url": "", 
+          "text_url": "http://www.opensource.org/licenses/BSD-3-Clause", 
           "dejacode_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bsd-new", 
           "spdx_license_key": "BSD-3-Clause", 
           "spdx_url": "https://spdx.org/licenses/BSD-3-Clause", 
