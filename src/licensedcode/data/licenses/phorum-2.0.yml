@@ -1,8 +1,11 @@
 key: phorum-2.0
 short_name: Phorum License 2.0
 name: Phorum License 2.0
+
 category: Permissive
 owner: Phorum
 homepage_url: http://www.phorum.org/license.txt
+text_urls:
+    - http://www.phorum.org/license.txt
 other_urls:
     - http://phorum.org/

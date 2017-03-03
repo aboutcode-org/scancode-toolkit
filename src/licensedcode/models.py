@@ -23,6 +23,7 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
+from __future__ import unicode_literals
 from __future__ import print_function
 from __future__ import division
 
@@ -31,6 +32,7 @@ from collections import Counter
 from collections import defaultdict
 from collections import namedtuple
 from collections import OrderedDict
+from copy import copy
 from itertools import chain
 from operator import itemgetter
 from os.path import exists
@@ -39,15 +41,16 @@ from os.path import join
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import file_iter
+from textcode.analysis import text_lines
 
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import licenses_data_dir
-from licensedcode import saneyaml
 from licensedcode import rules_data_dir
+from licensedcode import saneyaml
 from licensedcode.tokenize import rule_tokenizer
 from licensedcode.tokenize import query_tokenizer
-from textcode.analysis import text_lines
+from commoncode import fileutils
 
 
 """
@@ -64,37 +67,31 @@ class License(object):
     A license consists of these files, where <key> is the license key:
         - <key>.yml : the license data in YAML
         - <key>.LICENSE: the license text
-        - <key>.SPDX: the SPDX license text
     """
     # we do not really need slots but they help keep the attributes in check
     __slots__ = (
         'key',
         'src_dir',
-        'deprecated',
+        'is_deprecated',
         'short_name',
         'name',
         'category',
         'owner',
         'homepage_url',
         'notes',
-        'versions',
-        'or_later_version',
-        'any_version',
-        'any_version_default',
-        'exception_to',
+        'is_exception',
+        'next_version',
+        'is_or_later',
+        'base_license',
         'spdx_license_key',
-        'spdx_full_name',
-        'spdx_url',
-        'spdx_notes',
         'text_urls',
         'osi_url',
         'faq_url',
         'other_urls',
         'data_file',
         'text_file',
-        'notice_file',
-        'spdx_file',
-        'minimum_coverage'
+        'minimum_coverage',
+        'standard_notice',
     )
 
     def __init__(self, key=None, src_dir=licenses_data_dir):
@@ -103,65 +100,80 @@ class License(object):
         directory. Key is a lower-case unique ascii string.
         """
         # unique key: lower case ASCII characters, digits, underscore and dots.
-        self.key = key or u''
+        self.key = key or ''
         self.src_dir = src_dir
 
-        # if this is a deprecated license, contains notes explaining why
-        self.deprecated = u''
+        # if this is a deprecated license, add also notes explaining why
+        self.is_deprecated = False
 
         # commonly used short name, often abbreviated.
-        self.short_name = u''
+        self.short_name = ''
         # full name.
-        self.name = u''
+        self.name = ''
 
         # Permissive, Copyleft, etc
-        self.category = u''
+        self.category = ''
 
-        self.owner = u''
-        self.homepage_url = u''
-        self.notes = u''
-
-        # an ordered list of license keys for all the versions of this license
-        # Must be including this license key
-        self.versions = []
-
-        # True if this license allows later versions to be used
-        self.or_later_version = False
-
-        # True if this license allows any version to be used
-        self.any_version = False
-        # if any_version, what is the license key to pick by default?
-        self.any_version_default = u''
+        self.owner = ''
+        self.homepage_url = ''
+        self.notes = ''
 
         # if this is a license exception, the license key this exception applies to
-        self.exception_to = u''
+        self.is_exception = False
 
-        # SPDX information if present for SPDX licenses
-        self.spdx_license_key = u''
-        self.spdx_full_name = u''
-        self.spdx_url = u''
-        self.spdx_notes = u''
+        # license key for the next version of this license if any
+        self.next_version = ''
+        # True if this license allows later versions to be used
+        self.is_or_later = False
+        # If is_or_later is True, license key for the not "or later" variant if any
+        self.base_license = ''
+
+        # SPDX key for SPDX licenses
+        self.spdx_license_key = ''
 
         # Various URLs for info
         self.text_urls = []
-        self.osi_url = u''
-        self.faq_url = u''
+        self.osi_url = ''
+        self.faq_url = ''
         self.other_urls = []
 
-        # data file paths and known extensions
-        self.data_file = join(self.src_dir, self.key + u'.yml')
-        self.text_file = join(self.src_dir, self.key + u'.LICENSE')
-        # note: we do not keep a notice if there is no standard notice or if
-        # this is the same as a the license text
-        self.notice_file = join(self.src_dir, self.key + u'.NOTICE')
-        # note: we do not keep the SPDX text if it is identical to the license
-        # text
-        self.spdx_file = join(self.src_dir, self.key + u'.SPDX')
-
         self.minimum_coverage = 0
+        self.standard_notice = ''
 
-        if src_dir:
-            self.load(src_dir)
+        # data file paths and known extensions
+        self.data_file = ''
+        self.text_file = ''
+        if self.src_dir:
+            self.set_file_paths()
+
+            if exists(self.data_file):
+                self.load(src_dir)
+
+    def set_file_paths(self):
+        self.data_file = join(self.src_dir, self.key + '.yml')
+        self.text_file = join(self.src_dir, self.key + '.LICENSE')
+
+    def relocate(self, src_dir):
+        """
+        Return a copy of this license object relocated to a new `src_dir`.
+        Also copy the LICENSE file.
+        """
+        newl = copy(self)
+        newl.src_dir = src_dir
+        newl.set_file_paths()
+        if self.text:
+            fileutils.copyfile(self.text_file, newl.text_file)
+        return newl
+
+    def update(self, mapping):
+        for k, v in mapping.items():
+            setattr(self, k, v)
+
+    def __copy__(self):
+        oldl = self.asdict()
+        newl = License(key=self.key)
+        newl.update(oldl)
+        return newl
 
     @property
     def text(self):
@@ -170,23 +182,6 @@ class License(object):
         """
         return self._read_text(self.text_file)
 
-    @property
-    def notice_text(self):
-        """
-        Notice text, re-loaded on demand.
-        """
-        return self._read_text(self.notice_file)
-
-    @property
-    def spdx_license_text(self):
-        """
-        SPDX license text, re-loaded on demand.
-
-        Note that even though a license may be in the SPDX list, we only keep
-        its text if it is different from our standard .LICENSE text.
-        """
-        return self.spdx_license_key and self._read_text(self.spdx_file) or u''
-
     def asdict(self):
         """
         Return an OrderedDict of license data (excluding texts).
@@ -194,54 +189,51 @@ class License(object):
         """
         data = OrderedDict()
 
-        data[u'key'] = self.key
+        data['key'] = self.key
         if self.short_name:
-            data[u'short_name'] = self.short_name
+            data['short_name'] = self.short_name
         if self.name:
-            data[u'name'] = self.name
+            data['name'] = self.name
 
-        if self.deprecated:
-            data[u'deprecated'] = self.deprecated
+        if self.is_deprecated:
+            data['is_deprecated'] = self.is_deprecated
 
         if self.category:
-            data[u'category'] = self.category
+            data['category'] = self.category
 
         if self.owner:
-            data[u'owner'] = self.owner
+            data['owner'] = self.owner
         if self.homepage_url:
-            data[u'homepage_url'] = self.homepage_url
+            data['homepage_url'] = self.homepage_url
         if self.notes:
-            data[u'notes'] = self.notes
+            data['notes'] = self.notes
 
-        if self.versions:
-            data[u'versions'] = self.versions
-            if self.or_later_version:
-                data[u'or_later_version'] = self.or_later_version
-            if self.any_version:
-                data[u'any_version'] = self.any_version
-            if self.any_version_default:
-                data[u'any_version_default'] = self.any_version_default
+        if self.is_exception:
+            data['is_exception'] = self.is_exception
 
-        if self.exception_to:
-            data[u'exception_to'] = self.exception_to
+        if self.next_version:
+            data['next_version'] = self.next_version
+
+        if self.is_or_later:
+            data['is_or_later'] = self.is_or_later
+            if self.base_license:
+                data['base_license'] = self.base_license
 
         if self.spdx_license_key:
-            data[u'spdx_license_key'] = self.spdx_license_key
-            data[u'spdx_full_name'] = self.spdx_full_name
-            data[u'spdx_url'] = self.spdx_url
-            if self.spdx_notes:
-                data[u'spdx_notes'] = self.spdx_notes
+            data['spdx_license_key'] = self.spdx_license_key
 
         if self.text_urls:
-            data[u'text_urls'] = self.text_urls
+            data['text_urls'] = self.text_urls
         if self.osi_url:
-            data[u'osi_url'] = self.osi_url
+            data['osi_url'] = self.osi_url
         if self.faq_url:
-            data[u'faq_url'] = self.faq_url
+            data['faq_url'] = self.faq_url
         if self.other_urls:
-            data[u'other_urls'] = self.other_urls
+            data['other_urls'] = self.other_urls
         if self.minimum_coverage:
-            data[u'minimum_coverage'] = int(self.minimum_coverage)
+            data['minimum_coverage'] = int(self.minimum_coverage)
+        if self.standard_notice:
+            data['standard_notice'] = self.standard_notice
         return data
 
     def dump(self):
@@ -250,17 +242,11 @@ class License(object):
         this way:
          - <key>.yml : the license data in YAML
          - <key>.LICENSE: the license text
-         - <key>.NOTICE: the standard notice text if any
-         - <key>.SPDX: the SPDX license text if any
         """
         as_yaml = saneyaml.dump(self.asdict())
         self._write(self.data_file, as_yaml)
         if self.text:
             self._write(self.text_file, self.text)
-        if self.spdx_license_text:
-            self._write(self.spdx_file, self.spdx_license_text)
-        if self.notice_text:
-            self._write(self.notice_file, self.notice_text)
 
     def _write(self, f, d):
         with codecs.open(f, 'wb', encoding='utf-8') as of:
@@ -272,35 +258,39 @@ class License(object):
         Does not load text files.
         Unknown fields are ignored and not bound to the License object.
         """
-        data_file = join(src_dir, self.data_file)
         try:
-            with codecs.open(data_file, encoding='utf-8') as f:
+            with codecs.open(self.data_file, encoding='utf-8') as f:
                 data = saneyaml.load(f.read())
         except Exception, e:
             # this is a rare case: fail loudly
             print()
             print('#############################')
-            print('INVALID LICENSE YAML FILE:', data_file)
+            print('INVALID LICENSE YAML FILE:', self.data_file)
             print('#############################')
             print(e)
             print('#############################')
             raise
+
         numeric_keys = ('minimum_coverage',)
         for k, v in data.items():
             if k in numeric_keys:
                 v = int(v)
+
+            if k == 'key':
+                assert self.key == v, 'Inconsistent YAML key and file names for %r' % self.key
+
             setattr(self, k, v)
 
     def _read_text(self, location):
         if not exists(location):
-            text = u''
+            text = ''
         else:
             with codecs.open(location, encoding='utf-8') as f:
                 text = f.read()
         return text
 
     @staticmethod
-    def validate(licenses, verbose=False):
+    def validate(licenses, verbose=False, no_dupe_urls=False):
         """
         Check that licenses are valid. `licenses` is a mapping of key ->
         License. Return dictionaries of infos, errors and warnings mapping a
@@ -328,68 +318,46 @@ class License(object):
             if not lic.category:
                 warn('No category')
 
-            # keys consistency for exceptions and multiple versions
-            if lic.exception_to:
-                if not lic.exception_to in licenses:
-                    err('Unknown exception_to license key')
+            if lic.next_version and lic.next_version not in licenses:
+                err('License next version is unknown')
 
-            if lic.versions:
-                if not any(lic.versions):
-                    err('Empty versions list')
-                if key not in lic.versions:
-                    info('License key not in its own versions list')
-
-                for vkey in lic.versions:
-                    if  vkey not in licenses:
-                        err('Unknown license in versions. Not a lic: ' + vkey)
-
-                if lic.or_later_version or lic.any_version or lic.any_version_default:
-                    warn('No additional flags or default defined with a versions list')
-                if len(lic.versions) != len(set(lic.versions)):
-                    warn('Duplicated license keys in versions list')
-
-            if not lic.versions and (lic.or_later_version or lic.any_version or lic.any_version_default) :
-                err('Inconsistent or_later_version or any_version flag or any_version_default: no versions list')
-
-            if not lic.any_version and lic.any_version_default:
-                err('Inconsistent any_version_default: any_version flag not set')
-            if lic.any_version_default and lic.any_version_default not in licenses:
-                err('Unknown lic in any_version_default')
-            if lic.any_version_default and lic.any_version_default not in lic.versions:
-                err('Inconsistent any_version_default: not listed in versions')
+            if (lic.is_or_later and
+                lic.base_license and
+                lic.base_license not in licenses):
+                err('Base license for an "or later" license is unknown')
 
             # URLS dedupe and consistency
-            if lic.text_urls and not all(lic.text_urls):
-                warn('Some empty license text_urls')
-            if lic.other_urls and not all(lic.other_urls):
-                warn('Some empty license other_urls')
+            if no_dupe_urls:
+                if lic.text_urls and not all(lic.text_urls):
+                    warn('Some empty license text_urls')
 
-            # redundant URLs used multiple times
-            if lic.homepage_url:
-                if lic.homepage_url in lic.text_urls:
-                    warn('Homepage URL also in text_urls')
-                if lic.homepage_url in lic.other_urls:
-                    warn('Homepage URL also in other_urls')
-                if lic.homepage_url == lic.faq_url:
-                    warn('Homepage URL same as faq_url')
-                if lic.homepage_url == lic.osi_url:
-                    warn('Homepage URL same as osi_url')
+                if lic.other_urls and not all(lic.other_urls):
+                    warn('Some empty license other_urls')
 
-            if lic.osi_url or lic.faq_url:
-                if lic.osi_url == lic.faq_url:
-                    warn('osi_url same as faq_url')
-
-            all_licenses = lic.text_urls + lic.other_urls
-            for url in lic.osi_url, lic.faq_url, lic.homepage_url:
-                if url: all_licenses.append(url)
-
-            if not len(all_licenses) == len(set(all_licenses)):
-                warn('Some duplicated URLs')
+                # redundant URLs used multiple times
+                if lic.homepage_url:
+                    if lic.homepage_url in lic.text_urls:
+                        warn('Homepage URL also in text_urls')
+                    if lic.homepage_url in lic.other_urls:
+                        warn('Homepage URL also in other_urls')
+                    if lic.homepage_url == lic.faq_url:
+                        warn('Homepage URL same as faq_url')
+                    if lic.homepage_url == lic.osi_url:
+                        warn('Homepage URL same as osi_url')
+    
+                if lic.osi_url or lic.faq_url:
+                    if lic.osi_url == lic.faq_url:
+                        warn('osi_url same as faq_url')
+    
+                all_licenses = lic.text_urls + lic.other_urls
+                for url in lic.osi_url, lic.faq_url, lic.homepage_url:
+                    if url: all_licenses.append(url)
+    
+                if not len(all_licenses) == len(set(all_licenses)):
+                    warn('Some duplicated URLs')
 
             # local text consistency
-            spdx_license_text = lic.spdx_license_text
             text = lic.text
-            notice_text = lic.notice_text
 
             license_qtokens = tuple(query_tokenizer(text, lower=True))
             license_rtokens = tuple(rule_tokenizer(text, lower=True))
@@ -401,40 +369,9 @@ class License(object):
                 # for global dedupe
                 by_text[license_qtokens].append(key + ': TEXT')
 
-            if spdx_license_text:
-                spdx_qtokens = tuple(query_tokenizer(spdx_license_text, lower=True))
-                spdx_rtokens = tuple(rule_tokenizer(spdx_license_text, lower=True))
-                if spdx_qtokens:
-                    if spdx_qtokens != spdx_rtokens:
-                        info('SPDX text contains rule templated region with  {{}}')
-
-                    if spdx_qtokens == license_qtokens:
-                        err('License text same as SPDX text')
-                    else:
-                        by_text[spdx_qtokens].append(key + ': SPDX')
-
-            if notice_text:
-                notice_qtokens = tuple(query_tokenizer(notice_text, lower=True))
-                notice_rtokens = tuple(rule_tokenizer(notice_text, lower=True))
-                if notice_qtokens:
-                    if notice_qtokens != notice_rtokens:
-                        info('NOTICE text contains rule templated region with {{}}')
-                    if notice_qtokens == license_qtokens:
-                        err('License text same as NOTICE text')
-                    else:
-                        by_text[notice_qtokens].append(key + ': NOTICE')
 
             # SPDX consistency
-            if not lic.spdx_license_key:
-                if lic.spdx_full_name:
-                    err('spdx_full_name defined with no spdx_license_key')
-                if lic.spdx_url:
-                    err('spdx_url defined with no spdx_license_key')
-                if lic.spdx_notes:
-                    err('spdx_notes defined with no spdx_license_key')
-                if spdx_license_text:
-                    err('spdx_license_text defined with no spdx_license_key')
-            else:
+            if lic.spdx_license_key:
                 by_spdx_key[lic.spdx_license_key].append(key)
 
         # global SPDX consistency
@@ -493,7 +430,7 @@ def load_licenses(license_dir=licenses_data_dir , with_deprecated=False):
             continue
         key = file_base_name(data_file)
         lic = License(key, license_dir)
-        if not with_deprecated and lic.deprecated:
+        if not with_deprecated and lic.is_deprecated:
             continue
         licenses[key] = lic
     return licenses
@@ -535,9 +472,9 @@ def check_rules_integrity(rules):
 
 def build_rules_from_licenses(licenses=None):
     """
-    Return an iterable of rules built from each license text, notice and spdx
-    text from a `licenses` iterable of license objects. Use the reference list
-    if `licenses` is not provided.
+    Return an iterable of rules built from each license text from a `licenses`
+    iterable of license objects. Use the reference list if `licenses` is not
+    provided.
 
     Load the reference license list from disk if `licenses` is not provided.
     """
@@ -547,15 +484,8 @@ def build_rules_from_licenses(licenses=None):
         minimum_coverage = license_obj.minimum_coverage
 
         if exists(tfile):
-            yield Rule(text_file=tfile, licenses=[license_key], minimum_coverage=minimum_coverage)
-
-        nfile = join(license_obj.src_dir, license_obj.notice_file)
-        if exists(nfile):
-            yield Rule(text_file=nfile, licenses=[license_key], minimum_coverage=minimum_coverage)
-
-        sfile = join(license_obj.src_dir, license_obj.spdx_file)
-        if exists(sfile):
-            yield Rule(text_file=sfile, licenses=[license_key], minimum_coverage=minimum_coverage)
+            yield Rule(text_file=tfile, licenses=[license_key],
+                       minimum_coverage=minimum_coverage, is_license=True)
 
 
 def load_rules(rule_dir=rules_data_dir):
@@ -622,11 +552,13 @@ class Rule(object):
                  'data_file', 'text_file', '_text',
                  'length', 'low_length', 'high_length', '_thresholds',
                  'length_unique', 'low_unique', 'high_unique', '_thresholds_unique',
-                 'minimum_coverage', 'relevance', 'has_stored_relevance'
+                 'minimum_coverage', 'relevance', 'has_stored_relevance',
+                 'is_license'
                  )
 
     def __init__(self, data_file=None, text_file=None, licenses=None,
-                 license_choice=False, notes=None, minimum_coverage=0, _text=None):
+                 license_choice=False, notes=None, minimum_coverage=0,
+                 is_license=False, _text=None):
 
         ###########
         # FIXME: !!! TWO RULES MAY DIFFER BECAUSE THEY ARE UPDATED BY INDEXING
@@ -648,7 +580,7 @@ class Rule(object):
 
         # License expression
         # TODO: implement me.
-        self.license = u''
+        self.license = ''
 
         # is this rule text a false positive when matched? (filtered out) FIXME: this
         # should be unified with the relevance: a false positive match is a a match
@@ -669,6 +601,9 @@ class Rule(object):
         # false positive matches automatically.
         self.relevance = 100
         self.has_stored_relevance = False
+
+        # set to True if the rule is built from a .LICENSE full text
+        self.is_license = is_license
 
         # path to the YAML data file for this rule
         self.data_file = data_file
@@ -739,7 +674,7 @@ class Rule(object):
         elif self.text_file and exists(self.text_file):
             # IMPORTANT: use the same process as query text loading for symmetry
             lines = text_lines(self.text_file, demarkup=False)
-            return u' '.join(lines)
+            return ' '.join(lines)
         else:
             raise Exception('Inconsistent rule text for:', self.identifier)
 

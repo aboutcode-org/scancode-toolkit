@@ -1,6 +1,10 @@
 key: sendmail
 short_name: Sendmail License
 name: Sendmail License
+
 category: Permissive
 owner: Sendmail
 homepage_url: http://www.sendmail.com/
+spdx_license_key: Sendmail
+text_urls:
+    - http://www.sendmail.com/pdfs/open_source/sendmail_license.pdf

@@ -24,6 +24,7 @@
 
 from __future__ import print_function
 from __future__ import absolute_import
+from __future__ import unicode_literals
 
 from collections import OrderedDict
 
@@ -102,6 +103,7 @@ def get_urls(location):
 
 
 DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
+SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 
 
 def get_licenses(location, min_score=0, include_text=False, diag=False):
@@ -137,8 +139,14 @@ def get_licenses(location, min_score=0, include_text=False, diag=False):
             result['homepage_url'] = lic.homepage_url
             result['text_url'] = lic.text_urls[0] if lic.text_urls else ''
             result['dejacode_url'] = DEJACODE_LICENSE_URL.format(lic.key)
-            result['spdx_license_key'] = lic.spdx_license_key
-            result['spdx_url'] = lic.spdx_url
+            spdx_key = lic.spdx_license_key
+            result['spdx_license_key'] = spdx_key
+            if spdx_key:
+                spdx_key = lic.spdx_license_key.rstrip('+')
+                spdx_url = SPDX_LICENSE_URL.format(spdx_key)
+            else:
+                spdx_url = ''
+            result['spdx_url'] = spdx_url
             result['start_line'] = match.start_line
             result['end_line'] = match.end_line
             matched_rule = result['matched_rule'] = OrderedDict()

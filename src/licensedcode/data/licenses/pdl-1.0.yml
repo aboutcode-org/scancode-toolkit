@@ -6,5 +6,5 @@ owner: Apache
 homepage_url: https://www.openoffice.org/licenses/PDL.html
 notes: this is a derivative of the MPL used in legacy OpenOffice.
 other_urls:
-    - https://www.openoffice.org/licenses/pdl.pdf
     - https://www.openoffice.org/licenses/PDL.rtf
+    - https://www.openoffice.org/licenses/pdl.pdf

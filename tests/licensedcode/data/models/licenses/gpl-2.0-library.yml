@@ -1,0 +1,8 @@
+key: gpl-2.0-library
+short_name: GPL 2.0 with Library exception
+name: GNU General Public License 2.0 with Library exception
+category: Copyleft Limited
+owner: Grammatica
+other_urls:
+    - http://grammatica.percederberg.net/index.html
+is_exception: yes
