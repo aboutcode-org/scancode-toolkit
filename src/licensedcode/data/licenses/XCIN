@@ -1,0 +1,77 @@
+
+			      XCIN 版權宣告
+
+
+XCIN 是一個自由軟體，包含主程式與外來程式碼兩部分。主程式部分主要由 XCIN
+小組所撰寫與維護，您可以在 GNU General Public License (請見 COPYING 一文)
+的規範下散佈、修改、使用 XCIN 主程式原始碼。至於外來程式碼部分，其原始作者
+並非 XCIN 小組，這些程式碼是直接引用自其他的自由軟體套件，經過修改後以適合
+XCIN 使用。它們各自有自己的版權宣告，且其版權宣告內容亦同意與 XCIN 主程式
+碼一同散佈與使用。故如果您想要各別散佈、修改、使用這些外來程式碼的話，請您
+自行下載它們的原始版本，並遵照其原有的版權宣告與規範。這類外來程式碼包括:
+
+1. IMdkit: (ftp://xcin.linux.org.tw/pub/xcin/misc/IMdkit.tar.gz)
+   a. src/lib/IMdkit/ 及其底下所有檔案。
+   b. src/xim_IC.c: 直接修改自 IMdkit 的範例程式。
+   c. src/include/IC.h: 直接修改自 IMdkit 的範例程式。
+
+2. siod: (http://people.delphi.com/gjc/siod.html,
+	  ftp://xcin.linux.org.tw/pub/xcin/misc/siod.tar.gz)
+   src/lib/siod/ 及其底下所有檔案。
+
+而除了上述的外來程式碼以外者，均屬 XCIN 主程式碼。
+
+另外， src/include/module.h 與 src/include/xcintool.h 定義了 XCIN 的輸入法
+模組與相關工具函式的溝通介面與資料結構，它們除了可以在 GNU General Public
+License 的規範下散佈、修改、使用以外，如果您願意為 XCIN 撰寫新的輸入法模組，
+您可以以任何形式自由引用這兩個檔的內容，而不會影響您的程式原有的版權宣告。
+詳見它們開頭的版權聲明。
+
+我們希望 XCIN 的散佈，能使它成為有用的程式，但沒有任何保證，如果您不幸因為
+使用 XCIN 造成任何形式的損失，我們不負任何法律責任。相關的條文細節，請您參
+考 GNU General Public License, COPYING 一文的內容。
+
+
+============================================================================
+
+   Copyright (C) 1999 XCIN Team, Taiwan
+
+XCIN is a free software. It contains the "main program" and the "external
+source" parts. The "main program" part is mainly maintained by the XCIN
+Team. You can redistribute, modify, and use the source code of XCIN "main
+program" part under the guideline of GNU General Public License (see the
+document COPYING for details). For the "external source" part, it is not
+originally written by the XCIN Team. These source codes are adopted directly
+from other free (Freedom) software packages and are modified such that they
+are suitable for XCIN usage. They have their own license and copyright, and
+their license announcements also permit to be redistributed and used with
+the XCIN "main program". Hence if you want to redistribute, modify, or use
+these "external source" respectively, please download their original versions
+and follow their original license announcement and guideline. These "external
+source" includes
+
+1. IMdkit: (ftp://xcin.linux.org.tw/pub/xcin/misc/IMdkit.tar.gz)
+   a. src/lib/IMdkit/ and all the files and directories below.
+   b. src/xim_IC.c: which is modified from the IMdkit example program.
+   c. src/include/IC.h: which is modified from the IMdkit example program.
+
+2. siod: (http://people.delphi.com/gjc/siod.html,
+          ftp://xcin.linux.org.tw/pub/xcin/misc/siod.tar.gz)
+   src/lib/siod/ and all the files and directories below.
+
+Besides the "external source" mentioned above, all the others are belong
+the XCIN "main program".
+
+Besides, the two header files src/include/module.h and src/include/xcintool.h
+define the interface and data structers of IM (Input Method) module of XCIN
+and some other related tool functions. They can be redistributed, modified,
+and used under the terms of GNU General Public License, and in addition if
+you want to write new IM modules for XCIN, you can freely adopt the contents
+of the two files in any form, and the adoption will not affect the original
+license terms of your program. Please see the license notes in the head of
+them for details.
+
+XCIN is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY. If unfortranatly you get any loss by using XCIN, we will not
+take any responsability in law. For detailed guideline, please check the
+GNU General Public License, the document "COPYING".

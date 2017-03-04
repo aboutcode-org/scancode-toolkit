@@ -1,0 +1,17 @@
+**********************************************************
+*** 7PLUS ASCII-Encoder/Decoder, (c) Axel Bauda, DG1BBQ ***
+**********************************************************
+***
+*** File converter for transfer of arbitrary binary data
+*** via store & forward.
+***
+*** 7PLUS is HAMWARE. No commercial use. No Sale. Pass on only in it's
+*** entirety! There is no warranty for the proper functioning. Use at own
+*** risk.
+***
+*** TABSIZE when editing: 2; don't insert real TABs (^I), use spaces instead.
+***
+*** When porting or modifying this source, make SURE it can still be compiled
+*** on all systems! Do this by using #ifdef directives! Please let me know
+*** about the modifications or portations, so I can include them in the origi-
+*** nal 7PLUS source.

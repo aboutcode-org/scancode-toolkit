@@ -1,0 +1,78 @@
+
+=============================================================================
+=====================  BioAPI Consortium Disclaimer =========================
+=============================================================================
+
+BioAPI Reference Implementation IMPORTANT: READ BEFORE DOWNLOADING, COPYING,
+INSTALLING OR USING.
+
+By downloading, copying, installing or using the software you agree to this
+license. If you do not agree to this license, do not download, install, copy
+or use the software. Copyright (c) 2000, BioAPI Consortium All rights
+reserved. Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+Redistributions of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.
+
+Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation
+and/or other materials provided with the distribution.
+
+Neither the name of the BioAPI Consortium nor the names of its contributors
+may be used to endorse or promote products derived from this software without
+specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS ``AS IS''
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+==============================================================================
+====== National Institute of Standards and Technology (NIST) Disclaimer ======
+==============================================================================
+
+NOTICE OF SOFTWARE DISCLAIMER AND USE 
+
+The NIST BioAPI Reference Implementation (NIST BioAPI software) provided 
+herein is released to any person, company or other legal entity (Experimenter) 
+by the National Institute of Standards and Technology (NIST), an agency of the 
+U.S. Department of Commerce, Gaithersburg MD 20899, USA. The NIST BioAPI 
+software presented here is intended for the following purposes: (1) internal 
+research and development by any Experimenter or (2) subsequent integration 
+into an Experimenter's BioAPI commercial product. The NIST BioAPI software IS 
+PROVIDED "AS IS" and bears NO WARRANTY, NEITHER EXPRESS, IMPLIED NOR FITNESS 
+FOR A PARTICULAR PURPOSE. NIST does not assume liability or responsibility for 
+any Experimenter's use of NIST-derived software product or the results of such 
+use. By using this software product you agree to assume any and all liabilities
+which may arise out of your use of the software. The U.S. Government shall not 
+be responsible for damages or liability of any kind arising out of the use of 
+any of this NIST BioAPI software by the Experimenter or any party acting on 
+the experimenter's behalf. In no case shall any Experimenter state or imply 
+endorsement, approval, or evaluation of its product by NIST or the U.S. 
+Government. 
+
+Please note that the NIST BioAPI software contains Intellectual Property from 
+other (non government) entities and it is the Experimenter's responsibility 
+to fully comply with existing laws before using the NIST BioAPI software, or 
+any derivation, in any commercial product. 
+
+Please note that within the United States, copyright protection, under Section 
+105 of the United States Code, Title 17, is not available for any work of the 
+United States Government and/or for any works created by United States 
+Government employees.  Experimenters acknowledge that the NIST BioAPI software 
+contains work which was created by NIST employees and is therefore in the 
+public domain and is not subject to copyright. The Experimenter may use, 
+distribute or incorporate this code, or any part of it, provided the 
+Experimenter acknowledges this via an explicitit acknowledgment of NIST-related
+contributions to the Experimenter's work. The Experimenter also agrees to 
+acknowledge, via an explicit acknowledgment, that modifications or alterations 
+have been made to this software by the Experimenter before redistribution. 
+
+==============================================================================

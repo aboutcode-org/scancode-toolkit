@@ -1,0 +1,6 @@
+This is a metapackage that (itself) installs no files, therefore no
+license is needed.
+
+This does not in any way imply under which licenses the packages in it
+are distributed. Check the metapackage's dependencies for their actual
+license terms.

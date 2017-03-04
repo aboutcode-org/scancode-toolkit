@@ -1,0 +1,45 @@
+D1x License 
+
+Preamble
+--------
+
+This License is designed to allow the Descent programming community to
+continue to have the Descent source open and available to anyone.
+
+Original Parallax License
+-------------------------
+
+THE COMPUTER CODE CONTAINED HEREIN IS THE SOLE PROPERTY OF PARALLAX
+SOFTWARE CORPORATION ("PARALLAX").  PARALLAX, IN DISTRIBUTING THE CODE TO
+END-USERS, AND SUBJECT TO ALL OF THE TERMS AND CONDITIONS HEREIN, GRANTS A
+ROYALTY-FREE, PERPETUAL LICENSE TO SUCH END-USERS FOR USE BY SUCH END-USERS
+IN USING, DISPLAYING,  AND CREATING DERIVATIVE WORKS THEREOF, SO LONG AS
+SUCH USE, DISPLAY OR CREATION IS FOR NON-COMMERCIAL, ROYALTY OR REVENUE
+FREE PURPOSES.  IN NO EVENT SHALL THE END-USER USE THE COMPUTER CODE
+CONTAINED HEREIN FOR REVENUE-BEARING PURPOSES.  THE END-USER UNDERSTANDS
+AND AGREES TO THE TERMS HEREIN AND ACCEPTS THE SAME BY USE OF THIS FILE.  
+COPYRIGHT 1993-1998 PARALLAX SOFTWARE CORPORATION.  ALL RIGHTS RESERVED.
+
+We make no warranties as to the usability or correctness of this code.
+-------------------------
+
+The D1x project is the combination of the original Parallax code and the 
+modifications and additions made to source code.  While the original code is 
+only under the Original Parallax License the D1x project contains original 
+code that was not made by Parallax.  This ADDED and/or CHANGED code has the 
+following added restrictions:
+
+1) By using this source you are agreeing to these terms.  
+
+2) D1x and derived works may only be modified if ONE of the following is done:
+	
+	a) The modified version is placed under this license.  The source 
+	code used to create the modified version is freely and publicly 
+	available under this license.  
+
+	b) The modified version is only used by the developer.
+
+3) D1X IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+

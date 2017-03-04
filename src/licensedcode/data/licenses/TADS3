@@ -1,0 +1,47 @@
+TADS 3 FREEWARE SOURCE CODE LICENSE
+
+The TADS 3 source code is Copyright 1998, 2003 by Michael J. Roberts.
+
+The author hereby grants you permission to use, copy, and distribute
+this software, if you agree to the following conditions:
+
+    1. You must include this license and the copyright notice with
+       all copies.
+    2. You may not require or collect a fee for copies of this
+       software, or any part of this software, that you give to
+       other people.
+    3. You may not include this software with any other software
+       for which a fee is collected.
+    4. You may not modify this software except as permitted below
+       (see "derivative works"), and each copy you make and
+       distribute must be a full and complete copy of the software
+       you originally received.
+    5. Anyone to whom you give a copy of this software receives
+       all of the same permissions that you did under this license
+       and is subject to all of the same restrictions.
+    6. You are not allowed to create derivative works, which are
+       works that contain or are based on all or part of this work,
+       except under the conditions described below.
+    7. Any derivative works are subject to this same license.
+
+
+Derivative Works
+----------------
+
+This source code is distributed for the specific purpose of porting
+TADS, so that you can run the software on any system of your choosing.
+All other derivative works are prohibited without the written
+permission of the author.  I want to avoid the creation of variations
+on the system, because it leads to confusion on the part of users if
+there are multiple incompatible flavors floating around.  However, if
+you have a specific idea in mind, I'd be happy to at least consider
+it.  Please contact the author if you have any questions about this or
+if you would like permission to create a derived work.  
+
+If you port TADS to a new platform, the author does grant permission
+for you to distribute your ported version - I encourage it, in fact.
+I ask that you include your contact information in any distribution
+package you create, so that users of your version will know how to
+contact you if they have any questions relating specifically to your
+version.
+

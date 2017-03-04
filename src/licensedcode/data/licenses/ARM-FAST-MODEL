@@ -1,0 +1,69 @@
+END USER LICENCE AGREEMENT FOR FOUNDATION MODELS AND ASSOCIATED DELIVERABLES
+
+THIS END USER LICENCE AGREEMENT ("LICENCE") IS A LEGAL AGREEMENT BETWEEN YOU (EITHER A SINGLE INDIVIDUAL, OR SINGLE LEGAL ENTITY) AND ARM LIMITED ("ARM") FOR THE USE OF THE SOFTWARE (DEFINED BELOW) ACCOMPANYING THIS LICENCE. ARM IS ONLY WILLING TO LICENSE THE SOFTWARE TO YOU ON CONDITION THAT YOU ACCEPT ALL OF THE TERMS IN THIS LICENCE. BY CLICKING "I AGREE" OR BY INSTALLING OR OTHERWISE USING OR COPYING THE SOFTWARE YOU INDICATE THAT YOU AGREE TO BE BOUND BY ALL THE TERMS OF THIS LICENCE. IF YOU DO NOT AGREE TO THE TERMS OF THIS LICENCE, ARM IS UNWILLING TO LICENSE THE SOFTWARE TO YOU AND YOU MAY NOT INSTALL, USE OR COPY THE SOFTWARE, BUT YOU SHOULD PROMPTLY DELETE THE SOFTWARE.
+
+        "Software" means any software, firmware and data accompanying this Licence, any printed, electronic or online documentation supplied with it, and any updates, patches and modifications ARM may agree to make available to you under the terms of this Licence in respect of: (i) one or more real time system model(s) of the ARM architecture ( "Foundation Models"); and (ii) example application code ("Example Code").
+
+        "Separate Files" means the separate files identified in the Schedule.
+
+1. LICENCE GRANTS.
+FOUNDATION MODELS: ARM hereby grants to you, subject to the terms and conditions of this Licence, a non-exclusive, non-transferable licence, to use and copy the Software or certain components of the Software internally: (i) to run your software applications on the Foundation Models; and (ii) to test, debug and analyse your software applications that are running on the Foundation Models. Except as provided in the Example Code paragraph below, you shall not modify the Software or redistribute any of the Foundation Models.
+
+EXAMPLE CODE: ARM hereby grants to you, subject to the terms and conditions of this Licence, a non-exclusive, non-transferable licence, to use, copy and modify the Example Code for the purposes of verifying the Foundation models are installed and running correctly on your computer.  You shall not redistribute any of the Example Code.
+
+For the avoidance of any doubt, you are permitted to make as many copies of the entire Software package as you like within a legal entity, including any academic or educational institution, subject to anyone who uses the Software agreeing to the terms and conditions of this Licence.
+
+2. RESTRICTIONS ON USE OF THE SOFTWARE
+REVERSE ENGINEERING: Except to the extent that such activity is permitted by applicable law you shall not reverse engineer, decompile or disassemble any of the Software. If the Software was provided to you in Europe you shall not reverse engineer, decompile or disassemble any of the Software for the purposes of error correction.
+
+BENCHMARKING: This Licence does not prevent you from using the Software for internal benchmarking purposes. However, you shall treat any and all benchmarking data relating to the Software, and any other results of your use or testing of the Software which are indicative of its performance, efficacy, reliability or quality, as confidential information and you shall not disclose such information to any third party without the express written permission of ARM.
+
+RESTRICTIONS ON TRANSFER OF LICENSED RIGHTS: The rights granted to you under this Licence may not be assigned, sublicensed or otherwise transferred by you to any third party without the prior written consent of ARM. An assignment shall be deemed to include, without limitation; (i) any transaction or series of transactions whereby a third party acquires, directly or indirectly, the power to control the management and policies of you, whether through the acquisition of voting securities, by contract or otherwise; or (ii) the sale of more than fifty percent (50%) of the your assets whether in a single transaction or series of transactions.  You shall not rent or lease the Software.
+
+COPYRIGHT AND RESERVATION OF RIGHTS: The Software is owned by ARM or its licensors and is protected by copyright and other intellectual property laws and international treaties. The Software is licensed not sold. You acquire no rights to the Software other than as expressly provided by this Licence. You shall not remove from the Software any copyright notice or other notice and shall ensure that any such notice is reproduced in any copies of the whole or any part of the Software made by you.
+
+3. SUPPORT.
+ARM may, at its sole discretion provide limited e-mail and telephone support to you, however, ARM is under no obligation to do so.
+
+4. CONFIDENTIALITY.
+You acknowledge that the Software and any benchmarking data and related information mentioned in Clause 2 contain trade secrets and confidential material, and you agree to maintain them in confidence and apply security measures no less stringent than the measures which you apply to protect your own like information, but not less than a reasonable degree of care, to prevent their unauthorised disclosure and use. Subject to any restrictions imposed by applicable law, the period of confidentiality shall be indefinite. You agree that you shall not use any such information other than in normal use of the Software under the licences granted in this Licence.
+
+5. NO WARRANTIES.
+YOU AGREE THAT THE SOFTWARE IS LICENSED "AS IS", AND THAT ARM EXPRESSLY DISCLAIMS ALL REPRESENTATIONS, WARRANTIES, CONDITIONS OR OTHER TERMS, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, SATISFACTORY QUALITY, AND FITNESS FOR A PARTICULAR PURPOSE.
+
+YOU EXPRESSLY ASSUME ALL LIABILITIES AND RISKS, FOR USE OR OPERATION OF SOFTWARE APPLICATIONS, INCLUDING WITHOUT LIMITATION, APPLICATIONS DESIGNED OR INTENDED FOR MISSION CRITICAL APPLICATIONS, SUCH AS PACEMAKERS, WEAPONARY, AIRCRAFT NAVIGATION, FACTORY CONTROL SYSTEMS, ETC. SHOULD THE SOFTWARE PROVE DEFECTIVE, YOU ASSUME THE ENTIRE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+6. LIMITATION OF LIABILITY.
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL ARM BE LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES (INCLUDING LOSS OF PROFITS) ARISING OUT OF THE USE OR INABILITY TO USE THE SOFTWARE WHETHER BASED ON A CLAIM UNDER CONTRACT, TORT OR OTHER LEGAL THEORY, EVEN IF ARM WAS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+ARM does not seek to limit or exclude liability for death or personal injury arising from ARM's negligence or ARM's fraud and because some jurisdictions do not permit the exclusion or limitation of liability for consequential or incidental damages the above limitation relating to liability for consequential damages may not apply to you.
+
+NOTWITHSTANDING ANYTHING TO THE CONTRARY CONTAINED IN THIS LICENCE, THE MAXIMUM LIABILITY OF ARM TO YOU IN AGGREGATE FOR ALL CLAIMS MADE AGAINST ARM IN CONTRACT TORT OR OTHERWISE UNDER OR IN CONNECTION WITH THE SUBJECT MATTER OF THIS LICENCE SHALL NOT EXCEED THE TOTAL OF SUMS PAID BY YOU TO ARM (IF ANY) FOR THIS LICENCE.  THE EXISTENCE OF MORE THAN ONE CLAIM WILL NOT ENLARGE OR EXTEND THE LIMIT.
+
+7. THIRD PARTY RIGHTS.
+The Separate Files are delivered to you and your use is governed by their own separate licence agreements. This Licence does not apply to such Separate Files and they are not included in the term "Software" under this Licence. You agree to comply with all terms and conditions imposed on you in respect of such Separate Files including those identified in the Schedule ("Third Party Terms").
+
+ARM HEREBY DISCLAIMS ANY AND ALL WARRANTIES EXPRESS OR IMPLIED FROM ANY THIRD PARTIES REGARDING ANY SEPARATE FILES, ANY THIRD PARTY MATERIALS INCLUDED IN THE SOFTWARE, ANY THIRD PARTY MATERIALS FROM WHICH THE SOFTWARE IS DERIVED (COLLECTIVELY "OTHER CODE"), AND THE USE OF ANY OR ALL THE OTHER CODE IN CONNECTION WITH THE SOFTWARE, INCLUDING (WITHOUT LIMITATION) ANY WARRANTIES OF SATISFACTORY QUALITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+NO THIRD PARTY LICENSORS OF OTHER CODE SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND WHETHER MADE UNDER CONTRACT, TORT OR OTHER LEGAL THEORY, ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE OTHER CODE OR THE EXERCISE OF ANY RIGHTS GRANTED UNDER EITHER OR BOTH THIS LICENCE AND THE LEGAL TERMS APPLICABLE TO ANY SEPARATE FILES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+8. U.S. GOVERNMENT END USERS.
+US Government Restrictions: Use, duplication, reproduction, release, modification, disclosure or transfer of this commercial product and accompanying documentation is restricted in accordance with the terms of this Licence.
+
+9. TERM AND TERMINATION.
+This Licence shall remain in force until terminated by you or by ARM. Either party may terminate this Licence at any time upon giving written notice to the other party. Upon termination of this Licence either by you or by ARM, you shall stop using the Software and confidential information in your possession, together with all documentation and related materials. Where the licence is terminated for your breach, you shall also destroy any work that you have developed using the Software, documentation and related materials.  The provisions of clauses 4, 5, 6, 7, 8, 9 and 10 shall survive termination of this Licence.
+
+10. GENERAL.
+This Licence is governed by English Law. Except where ARM agrees otherwise in; (i) a written contract signed by you and ARM or (ii) a written contract provided by ARM and accepted by you, this is the only Licence between you and ARM relating to the Software and it may only be modified by written agreement between you and ARM. Except as expressly agreed in writing, this Licence may not be modified by purchase orders, advertising or other representation by any person. If any clause or sentence in this Licence is held by a court of law to be illegal or unenforceable the remaining provisions of this Licence shall not be affected thereby. The failure by ARM to enforce any of the provisions of this Licence, unless waived in writing, shall not constitute a waiver of ARM's rights to enforce such provision or any other provision of this Licence in the future.
+
+The Software provided under this Licence is subject to U.S. export control laws, including the U.S. Export Administration Act and its associated regulations, and may be subject to export or import regulations in other countries. You agree to comply fully with all laws and regulations of the United States and other countries ("Export Laws") to assure that the Software, is not (1) exported, directly or indirectly, in violation of Export Laws, either to any countries that are subject to U.S.A. export restrictions or to any end user who has been prohibited from participating in the U.S.A. export transactions by any federal agency of the U.S.A. government; or (2) intended to be used for any purpose prohibited by Export Laws, including, without limitation, nuclear, chemical, or biological weapons proliferation.
+
+THE SCHEDULE - SEPARATE FILES
+
+Zlib BSD license v1.2.3 licensed to you under the Zlib license.
+
+
+/end
+
+Foundation models - v1.0
+17 September 2012 CONFIDENTIAL LES-PRE-20164 SP-Version: 1.0

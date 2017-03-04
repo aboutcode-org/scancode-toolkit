@@ -1,0 +1,52 @@
+
+SIFT feature detection implementation
+Copyright (C) 2004, Sebastian Nowozin (nowozin@cs.tu-berlin.de)
+
+All rights reserved.
+
+
+There follows a formal license for this software, please read it carefully.
+Probably the most important part for the user is its restriction to
+non-commercial use only. The license used the BSD license as template.
+
+
+LICENSE
+
+Use of this software and redistribution in source and binary forms, with or
+without modification, are permitted provided that the following conditions are
+met:
+
+    * Any redistribution must contain the complete source code, including all
+      modifications. Alternatively, the redistribution may contain a permanent
+      pointer to an Internet address where the full modified source code is
+      available for download free of charge.
+
+    * The redistributed software contains the following text as prominent
+      notice in the source code and as displayed program output whenever the
+      program is run:
+
+	"This software is provided for non-commercial use only. The University
+	 of British Columbia has applied for a patent on the SIFT algorithm in
+	 the United States. Commercial applications of this software may
+         require a license from the University of British Columbia."
+
+    * Neither the name of the authors nor the names of its contributors
+      may be used to endorse or promote products derived from this software
+      without specific prior written permission.
+
+    * The redistributed software must retain the above copyright notice,
+      this list of conditions and the following disclaimer.
+
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+

@@ -1,0 +1,141 @@
+IMPORTANT NOTICE: PLEASE READ CAREFULLY BEFORE CONTINUING WITH YOUR INSTALLATION OF EAGLE
+
+This license agreement ('License') is a legal agreement between you ('Licensee' or 'you') and CadSoft Computer GmbH of Pleidolfweg 15, Pleiskirchen, D-84568, Germany ('Licensor' or 'we') for this EAGLE software product ('Software'), which includes computer software and any data supplied with it (such as electronic manuals or tutorials) ('Documentation').
+BY CLICKING ON THE 'YES' OR 'AGREE' BUTTON BELOW YOU AGREE TO THE TERMS OF THIS LICENSE (INCLUDING THE RELEVANT SCHEDULES TO IT) WHICH WILL BIND YOU AND ANYONE WHO USES THE COPY OF EAGLE LICENSED TO YOU. IF YOU DO NOT AGREE TO THE TERMS OF THIS LICENSE, WE ARE UNWILLING TO LICENSE THE SOFTWARE TO YOU. YOU SHOULD NOT IN THIS EVENT CLICK THE 'YES' OR 'AGREE' BUTTON AND THE INSTALLATION PROCESS WILL NOT CONTINUE. .
+
+1. GRANT AND SCOPE OF LICENSE
+1.1 In consideration of your agreeing to abide by the terms of this License, the Licensor hereby grants to you a non-exclusive, non-transferable license to use the Software and the Documentation on the terms of this License.
+1.2 The terms on which you are licensed to use the Software vary according to the edition licensed to you. Please see the Schedules to this License for any terms applicable to the Software edition licensed to you which are in addition to or amend those set out below. The Schedule relevant to the edition of EAGLE licensed to you (in each case the 'Applicable Schedule') will form part of this License. In the event of any conflict between conditions 1 to 14 of this License and the provisions of the Applicable Schedule, the provisions of the Applicable Schedule will prevail.
+1.3 You may:
+(a) use the Software for your purposes only, either:
+(i) on one computer if the License is a single-user license or the Software is for single use; or
+(ii) if the License is a multi-user license, by the number of concurrent users agreed between you and us
+provided that, in either case and save where prohibited in the Applicable Schedule, the Software may be installed on more than one computer or file server simultaneously provided that it is not used concurrently on more than the number of computers for which use is licensed in accordance with (i) or (ii) above, whichever is appropriate.
+(b) transfer the Software from one computer to another provided it is used only on the number of computers for which use is licensed in accordance with condition 1.3 (a);
+(c) make up one copy of the Software for back-up purposes only, provided that this is necessary for the activities permitted under condition 2.1;
+(d) receive and use any free supplementary software code or update of the Software incorporating "patches" and corrections of errors as may be provided by us from time to time;
+(e) use any Documentation in support of the use permitted under condition 1.2.
+
+We reserve the right to use a license management tool to ensure compliance with the terms of this License. We furthermore reserve the right to use such a tool in future, for example together with an updated or upgraded version or any new release of the Software, in case the version you have bought does not include such a license management tool.
+
+2. LICENSEE'S UNDERTAKINGS
+2.1 Except as expressly set out in this License or as permitted by any local law, you undertake:
+(a) not to copy the Software or Documentation except where such copying is incidental to normal use of the Software, or where it is necessary for the purpose of back-up;
+(b) not to rent, lease, sub-license, loan, translate, merge, adapt, vary or modify the Software or Documentation;
+(c) not to make alterations to, or modifications of, the whole or any part of the Software, nor permit the Software or any part of it to be combined with, or become incorporated in, any other programs;
+(d) not to disassemble, decompile, reverse engineer or create derivative works based on the whole or any part of the Software nor attempt to do any such thing except to the extent that such actions cannot be prohibited because they are essential for the purpose of achieving inter-operability of the Software with another software program, and provided that the information obtained by you during such activities:
+(i) is used only for the purpose of achieving inter-operability of the Software with another software program; and
+(ii) is not unnecessarily disclosed or communicated without the Licensor's prior written consent to any third party; and
+(iii) is not used to create any software which is substantially similar to the Software;
+(e) to keep all copies of the Software secure and to maintain accurate and up-to-date records of the number and locations of all copies of the Software;
+(f) to supervise and control use of the Software and ensure that the Software is only used in accordance with the terms of this License;
+(g) to include the copyright notice of the Licensor on all copies (entire or partial) you make of the Software on any medium;
+(h) to replace the current version of the Software with any updated or upgraded version or any new release provided by the Licensor under the terms of this License immediately on receipt; and
+(i) not to provide or otherwise make available the Software in whole or in part (including but not limited to program listings, object and source program listings, object code and source code), in any form to any person (other than, in the case of a multi-user license only, such number of your employees or authorised representatives as are permitted to use the Software at any time under the terms of this License) without prior written consent from the Licensor.
+2.2 The Licensor may at any time request you to provide a certificate of confirmation of your compliance with the terms of this License and you will provide such certificate on request.
+
+3. SUPPORT
+As any support provided for the Software is provided free of charge, we provide only such support for it as we see fit and that support may vary according to the edition of the Software licensed to you. The extent of support provided (if any) is detailed on our website or those of our associated companies. We reserve the right to change the support provided or the means by which it may be accessed or remove the support altogether at any time without notice.
+
+4. INTELLECTUAL PROPERTY RIGHTS
+4.1 You acknowledge that all intellectual property rights in the Software and the Documentation anywhere in the world belong to the Licensor, that rights in the Software are licensed (not sold) to you, and that you have no rights in, or to, the Software or the Documentation other than the right to use them in accordance with the terms of this License.
+4.2 You acknowledge that you have no right to have access to the Software in source code form or in unlocked coding or with comments.
+4.3 The integrity of this Software is protected by technical protection measures (TPM) so that the intellectual property rights, including copyright, in the Software of the Licensor are not misappropriated. You must not attempt in any way to remove or circumvent any such TPM, nor apply or manufacture for sale or hire, import, distribute, sell or let for hire, offer or expose for sale or hire, advertise for sale or hire or have in your possession for private or commercial purposes any means the sole intended purpose of which is to facilitate the unauthorised removal or circumvention of such TPM.
+
+5. LIMITED WARRANTY
+5.1 Further details as to the extent of any warranty applicable to the edition of the Software licensed to you are as set out in the Schedule relevant to that edition.
+5.2 Save as may be set out in the Applicable Schedule, we make no representation or warranty as to the suitability or fitness for purpose of the Software, whether your purpose or any other and regardless of whether that purpose has been disclosed to us and save as above, we make no warranties or representations as to the Software or the Documentation or as to the performance, accuracy, quality, condition, completeness, compliance with statement or description of either of them and all such warranties and representations are excluded to the fullest extent permitted by law.
+5.3 You acknowledge that:
+(a) the Software has not been developed to meet your individual requirements, and that it is therefore your responsibility to ensure that the facilities and functions of the Software as described in the Documentation meet your requirements; and
+(b) that the Software may not be free of bugs or errors, and you agree that the existence of minor errors shall not constitute a breach of this License.
+5.4 It is your responsibility to ensure that you make regular and frequent back-ups of all designs, files and other work produced with Software. As set out below, we can accept no liability for any loss of designs, files or other data.
+
+6. LICENSOR'S LIABILITY
+6.1 Nothing in this License shall limit or exclude the liability of either party for death or personal injury resulting from negligence, fraud or fraudulent misrepresentation.
+6.2 Subject to condition 6.1, the Licensor's liability for losses suffered by you arising out of or in connection with this License (including any liability for the acts or omissions of its employees, agents and subcontractors), however such losses may arise, whether in contract, tort (including negligence), misrepresentation or otherwise, shall be limited as set out in the Applicable Schedule and shall in any event exclude any liability for:
+(a) loss of income;
+(b) loss of business profits or contracts;
+(c) business interruption;
+(d) loss of the use of money or anticipated savings;
+(e) loss of information, data or designs;
+(f) loss of opportunity, goodwill or reputation;
+(g) loss of, damage to or corruption of data; or
+(h) any indirect or consequential loss or damage of any kind
+even if such losses, claims or damages result from the Licensor's deliberate personal repudiatory breach of this License and all and any such liability is hereby expressly excluded to the fullest extent permitted by law.
+6.3 This License sets out the full extent of the Licensor's obligations and liabilities in respect of the supply of the Software and Documentation. In particular, there are no conditions, warranties, representations or other terms, express or implied, that are binding on the Licensor except as specifically stated in this License. Any condition, warranty, representation or other term concerning the supply of the Software and Documentation which might otherwise be implied into, or incorporated in, this License, or any collateral contract, whether by statute, common law or otherwise, is hereby excluded to the fullest extent permitted by law.
+6.4 Any reference to loss or liability arising out of or in connection with this License shall be deemed to include any loss, claim, liability or damage arising out of or in connection with the Software, its availability or otherwise, its performance, operability, functionality or in connection with the loss of any designs, data or information or the accuracy or validity of any designs produced using the Software.
+
+7. TERMINATION
+7.1 The Licensor may terminate this License immediately by written notice to you if you commit a material or persistent breach of this License which you fail to remedy (if remediable) within 14 days after the service of written notice requiring you to do so.
+7.2 Upon termination for any reason:
+(a) all rights granted to you under this License shall cease;
+(b) you must cease all activities authorised by this License; and
+(c) you must immediately delete or remove the Software from all computer equipment in your possession, and immediately destroy or return to the Licensor (at the Licensor's option) all copies of the Software then in your possession, custody or control and, in the case of destruction, certify to the Licensor that you have done so.
+
+8. TRANSFER OF RIGHTS AND OBLIGATIONS
+8.1 This License is binding on you and us, and on our respective successors and assigns.
+8.2 You may not transfer, assign, charge or otherwise dispose of this License, or any of your rights or obligations arising under it, without our prior written consent.
+8.3 We may transfer, assign, charge, sub-contract or otherwise dispose of this License, or any of our rights or obligations arising under it, at any time during the term of the License.
+
+9. NOTICES
+All notices given by you to us must be given to CadSoft Computer GmbH at Pleidolfweg 15, Pleiskirchen, Germany. We may give notice to you in accordance with the Applicable Schedule. Notice will be deemed received and properly served immediately when posted on the Websites or any of them, 24 hours after an e-mail is sent, or three days after the date of posting of any letter. In proving the service of any notice, it will be sufficient to prove, in the case of a letter, that such letter was properly addressed, stamped and placed in the post and, in the case of an e-mail, that such e-mail was sent to the specified e-mail address of the addressee.
+
+10. EVENTS OUTSIDE OUR CONTROL
+10.1 We will not be liable or responsible for any failure to perform, or delay in performance of, any of our obligations under this License or any unavailability of the Software that is caused by events outside our reasonable control (Force Majeure Event).
+10.2 A Force Majeure Event includes any act, event, non-happening, omission or accident beyond our reasonable control and includes in particular (without limitation) the following:
+(a) strikes, lock-outs or other industrial action;
+(b) civil commotion, riot, invasion, terrorist attack or threat of terrorist attack, war (whether declared or not) or threat or preparation for war;
+(c) fire, explosion, storm, flood, earthquake, subsidence, epidemic or other natural disaster;
+(d) impossibility of the use of railways, shipping, aircraft, motor transport or other means of public or private transport;
+(e) impossibility of the use of public or private telecommunications networks or
+(f) the acts, decrees, legislation, regulations or restrictions of any government.
+
+11. WAIVER
+11.1 If we fail, at any time during the term of this License, to insist upon strict performance of any of your obligations under this License, or if we fail to exercise any of the rights or remedies to which we are entitled under this License, this shall not constitute a waiver of such rights or remedies and shall not relieve you from compliance with such obligations.
+11.2 A waiver by us of any default shall not constitute a waiver of any subsequent default.
+11.3 No waiver by us of any of these terms and conditions shall be effective unless it is expressly stated to be a waiver and is communicated to you in writing.
+
+12. SEVERABILITY
+If any of the terms of this License are determined by any competent authority to be invalid, unlawful or unenforceable to any extent, such term, condition or provision will to that extent be severed from the remaining terms, conditions and provisions which will continue to be valid to the fullest extent permitted by law.
+
+13. ENTIRE AGREEMENT
+13.1 This License and any document expressly referred to in it represents the entire agreement between us in relation to the licensing of the Software and Documentation and supersedes any prior agreement, understanding or arrangement between us, whether oral or in writing.
+13.2 We each acknowledge that, in entering into this License, neither of us has relied on any representation, undertaking or promise given by the other or be implied from anything said or written in negotiations between us prior to entering into this License except as expressly stated in this License.
+13.3 Neither of us shall have any remedy in respect of any untrue statement made by the other, whether orally or in writing, prior to the date we entered into this License (unless such untrue statement was made fraudulently) and the other party's only remedy shall be for breach of contract as provided in these terms and conditions.
+
+14. LAW AND JURISDICTION
+This License, its subject matter or its formation (including non-contractual disputes or claims) shall be governed by and construed in accordance with German law and submitted to the non-exclusive jurisdiction of the German courts.
+
+SCHEDULE 1
+CONDITIONS APPLICABLE TO THE LIGHT, STANDARD AND PROFESSIONAL EDITIONS OF EAGLE (TOGETHER WITH ANY OTHER COMMERCIAL EDITION OF EAGLE ISSUED BY US FROM TIME TO TIME TO WHICH THE FOLLOWING SCHEDULES DO NOT APPLY)
+1 Reference in this Schedule 1 to the Software is reference to the commercial edition of EAGLE licensed to you.
+2 The Licensor warrants that for a period of 30 days from the date of installation ('Warranty Period') the Software will, when properly used, perform substantially in accordance with the functions described in the Documentation (provided that the Software is properly used on the computer and with the operating system for which it was designed, as specified by us) and the Documentation correctly describes the operation of the Software in all material respects.
+3 If, within the Warranty Period, you notify the Licensor in writing of any defect or fault in the Software in consequence of which it fails to perform substantially in accordance with the Documentation, and such defect or fault does not result from you having amended the Software or used it in contravention of the terms of this License, the Licensor will, at its sole option, either repair or replace the Software, provided that you make available all the information that may be necessary to help the Licensor to remedy the defect or fault, including sufficient information to enable the Licensor to recreate the defect or fault.
+4 Subject to condition 6.1 and 6.2 of the License above, the Licensor's maximum aggregate liability under or in connection with this License, or any collateral contract, whether in contract, tort (including negligence) or otherwise, shall be limited to a sum equal to the amount received by us by way of license fee for the Software.
+5 Subject to condition 6.1 and 6.2 of the License and clause 4 of this Schedule 1 above, the Licensor's liability for infringement of third-party intellectual property rights shall be limited to breaches of rights subsisting in the USA and/or Germany.
+6 Notice in connection with this License may be given by us to you at either the e-mail, fax or postal address you provided to us or our representative at the time of order of the Software or where such information is generic and not specific to you by displaying on our website or that of any of our associated companies or undertakings.
+
+SCHEDULE 2
+CONDITIONS APPLICABLE TO THE Free Trial EDITION ONLY
+1 The Free Trial edition requires access to the internet to operate. The computer on which the Free Trial edition is run must have access to the internet on each occasion on which you launch EAGLE in order for the Free Trial edition to open and operate. Reference in this Schedule 2 to the Software is reference to the Free Trial edition of EAGLE.
+2 All licenses of the Free Trial edition are for single use only. The Free Trial edition may be downloaded to and used only on the computer licensed to run the Software at the time you activated the Free Trial edition.
+3 The Free Trial edition is licensed for use for evaluation or not for profit purposes only. 'Evaluation' allows you to use the Software in a commercial environment but purely for the purposes of evaluating the functionality and suitability for your purposes of the Software. 'Not for profit' allows you to use the Software for personal use or in the course of your studies if you are in education or for any other not-for-profit aim. In no case must the Software be used in order to generate revenue (whether directly or by way of costs savings).
+4 This license of the Software is for a period of sixty (60) days from the date of its download by you. On expiry of this sixty (60) day period, this license and your right to use the Software under it shall cease and the Software shall cease to operate. At that time you should delete the Software from any computer onto which it is loaded. You may apply to download and be licensed to use the Free Trial edition under the terms of a separate license between you and us at any time after the expiry of this license but we may apply restrictions as to the frequency with which such downloads may be available and may amend, revise, supplement or remove those restrictions from time to time. We shall endeavour to publish the terms of those restrictions on our website or those of our associated companies or undertakings or any other website(s) on which we make the Software available but shall have no liability to you in the event that we do not do so for any reason and failing to do so shall not affect the efficacy of those restrictions.
+5 You acknowledge that the Software is licensed to you free of charge and that accordingly we make no representation or warranty as to:
+(i) the suitability or fitness for purpose of the Software, whether your purpose or any other and regardless of whether that purpose has been disclosed to us;
+(ii) the performance or functionality of the Software, whether in accordance with any statements made, materials published or the Documentation or otherwise;
+(iii) the availability or functionality of any server or system to allow registration for, download or communication with the Software;
+(iv) whether the Software infringes the intellectual property rights of any third party anywhere in the world.
+6 You further acknowledge that the Software will not operate without access to the internet, such that the Software is able to communicate with our servers, and that it is your responsibility to ensure that you have such access at all times when starting the Software; and that that access is adequate and uninterrupted throughout the start-up process.
+7 Notice in connection with this License may be given by us to you at either the e-mail or postal address you provided to us or our representative when registering to receive the Software or by displaying such notice on our website or that of any of our associated companies or undertakings or any other website(s) on which we make the Software available.
+
+SCHEDULE 3
+CONDITIONS APPLICABLE TO THE FREEWARE EDITION ONLY
+1 Reference in this Schedule 3 to the Software is reference to the Freeware edition of EAGLE.
+2 All licenses of the Freeware edition are for single use only.
+3 The Freeware edition is licensed for use for evaluation or not for profit purposes only. 'Evaluation' allows you to use the Software in a commercial environment but purely for the purposes of evaluating the functionality and suitability for your purposes of the Software. 'Not for profit' allows you to use the Software for personal use or in the course of your studies if you are in education or for any other not-for-profit aim. In no case must the Software be used in order to generate revenue (whether directly or by way of costs savings). The Freeware edition may also be used by a PCB manufacturer to determine production data necessary for the manufacture of a PCB where that PCB manufacturer has been commissioned by the third party designer of that PCB to produce a PCB to that design on his or her behalf.
+4 You acknowledge that the Software is licensed to you free of charge and that accordingly we make no representation or warranty as to:
+(i) the suitability or fitness for purpose of the Software, whether your purpose or any other and regardless of whether that purpose has been disclosed to us;
+(ii) the performance or functionality of the Software, whether in accordance with any statements made, materials published or the Documentation or otherwise;
+(iii) whether the Software infringes the intellectual property rights of any third party anywhere in the world.
+6 Notice in connection with this License may be given by us to you or by displaying such notice on our websites or that of any of our associated companies or undertakings.

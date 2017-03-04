@@ -1,0 +1,242 @@
+          C O I N   P R O F E S S I O N A L   E D I T I O N
+              L I C E N S E   A G R E E M E N T   V 2.0
+
+
+Copyright (C) 1999-2004 Systems in Motion AS. All rights reserved.
+
+
+S O F T W A R E   C O V E R E D   B Y   T H I S L I C E N S E -
+T H I R D   P A R T Y   L I A B R A R I E S
+
+This License Agreement ("License") is between you ("Licensee") - either an
+individual or a legal entity - and Systems in Motion AS ("SIM"). It pertains to
+the Coin library and the associated GUI interface libraries (SoQt, SoWin, SoXt,
+SoGTK, and Sc21) and the Dime and Profit libraries and simage, or parts thereof,
+including the source code, example programs and the documentation
+("Documentation"). Certain exceptions to this are found, cf the information on
+Third Party Libraries below.
+
+The software referred to above may contain, or provide links to, third party
+libraries or code (collectively "Third Party Libraries") to implement various
+functions. Third Party Libraries are not prepared by or owned by SIM, and they
+are not covered by this License. Any use of Third Party Libraries is entirely at
+the risk and responsibility of Licensee.
+
+Licensee acknowledges (1) that some Third Party Libraries may require additional
+licensing of copyright and patents from the owners of such, and (2) that
+distribution of any of the Licensed Software referencing any portion of a Third
+Party Library may require appropriate licensing from such third parties.
+
+An updated list of what Third Party libraries are included in the software
+provided by SIM, and thus what software is not covered by this License, is
+available at SIM's website:
+http://www.sim.no/products/Coin3D/licensing/3rdPartyLibs/
+
+When the term "Software" is used below in this License, it refers only to the
+software covered by the License, and not the software that is part of the Third
+Party Libraries.
+
+
+B I N D I N G   T E R M S   -   N E W   V E R S I O N S
+
+By installing, copying, or otherwise using the Software or Documentation,
+Licensee agrees to be bound by the terms of this License. This paragraph does
+not exclude Licensee from using the Software under the GPL or the Coin
+Evaluation License, provided that the terms and conditions of the GPL or the
+Coin Evaluation License are observed.
+
+If SIM replaces this License Version 2.0 with a new Version during the term of
+the License, Licensee shall be entitled to receive and use such new Version on
+the terms and conditions then applicable to such new Version, without having to
+pay further compensation. Licensee may choose to continue using this Version 2.0
+instead, in which case the terms and conditions in this License shall apply for
+the remainder of the License term.  Receipt of a new Version and acceptance of
+the licensing terms for such new Version, shall not in it self extend the term
+of the initial License.
+
+A "Version" of the Software refers to a release with a unique version number,
+e.g. 1.0.0 and 1.0.1 being different Versions.
+
+
+C O P Y R I G H T   A N D   R E S T R I C T I O N S
+
+All intellectual property rights in the Software and Documentation are owned by
+SIM, and are protected by Norwegian copyright laws, other applicable copyright
+laws, and international treaty provisions. SIM reserves all rights not expressly
+granted in this License. No title, property rights or copyright in the Software
+or in any modifications to the Software or Documentation shall pass to Licensee
+under any circumstances. Licensee may not loan, rent, lease, or license the
+Software or any copy hereof, unless expressly provided for in this License.
+Licensee may not alter or remove any details of ownership, copyright, trade mark
+or other property right connected with the Software.
+
+Licensee as an individual is granted a personal, nonexclusive, non-transferable
+license to use the Software in the manner provided below. If Licensee is an
+entity, SIM grants Licensee the right to designate one, and only one, individual
+within Licensee's organization, who shall have the sole right to use the
+Software in the manner provided below. The name of this individual must be
+reported to SIM, and may be changed at any time, but not more frequently than
+once every six months. The individual may also be a consultant, freelance
+worker, or otherwise doing project-work for the company, as long as the Software
+is only used in work for Licensee.
+
+
+D U R A T I O N
+
+This License is valid for one year from the date that SIM has sent out an order
+confirmation. A renewal offer stating the terms and conditions for an extension
+of the License will be sent to Licensee by SIM. If Licensee does not accept this
+offer, or SIM chooses not to provide such offer, the License will expire at the
+end of the one year period referred to above.
+
+If the License expires, the rights to updates and support (subsections (6) and
+(7) under "Licensee's rights" below) shall cease. Licensee retains the right to
+create and distribute applications (as stated in subsections (1), (2), (3), (4)
+and (5) under "Licensee's rights" below), but only for use of the last Version
+of the Software that was released while the License was valid.
+
+
+L I C E N S E E ' S   R I G H T S
+
+(1) Using and modifying the Software: Licensee may freely use and modify the
+Software to develop any kind of product on any platform, except products which
+would 1) compete directly with the Software or 2) pass on functionality which
+makes it possible for others to create software competing with the Software.
+Licensee may make and install copies of the Software on an unlimited number of
+computers on any number of development platforms, provided that Licensee, or the
+person designated by Licensee as the user in accordance with the section above,
+is the only individual using the Software.
+
+(2) Redistribution of the original Software: Licensee is granted a nonexclusive,
+royalty-free right to redistribute the unchanged Software as part of Licensee's
+own product in source or binary form, but only if the Software has in its
+entirety been obtained under a valid Coin Professional Edition License or a Coin
+Evaluation License.
+
+(3) Distribution of modified Software: Licensee is granted a nonexclusive,
+royalty-free right to copy and distribute Software which has been modified as
+allowed under section (1) above, as part of his product. This can be done in one
+of the following two ways: (a) in the form of source code patches to the
+original unmodified Software; (b) in binary form, provided that the binary is
+named in such a manner that it cannot be confused with the original Software.
+Such copying and distribution may only take place if any and all modifications
+to the original Software have in their entireties been developed by Licensee on
+basis of and in accordance with the provisions of a valid Coin Professional
+Edition License or a Coin Evaluation License.
+
+(4) The right to distribution as referred to under (2) and (3) above also
+applies to the Documentation, but only to the extent the Documentation is
+distributed as an integrated part of the Software.
+
+The right to distribute the Software as described under (2) and (3) above does
+not authorize Licensee to give any third parties any rights to the Software,
+except the right to use the Software or modified Software as an integrated part
+of the products sold by Licensee.
+
+(5) The above provisions do not exclude Licensee from re-distributing the
+Software in accordance with the GPL, but in such case, the terms and conditions
+of the GPL must be observed. If Licensee has made any modifications to the
+Software under the GPL license, such modified Software must, if re-distributed,
+either a) be re-distributed on the terms and conditions set by the GPL, or b) be
+re-distributed under a Coin Professional Edition License, but so that a Coin
+Professional Edition License must be purchased from SIM with retrospective
+effect, meaning that all previous development work under the GPL which is
+intended distributed must be paid for as if developed under the under the Coin
+Professional Edition License.  SIM is not obliged to sell such licenses with
+retrospective effect, but may do so, at its own discretion.
+
+(6) Upgrades: Licensee is granted the right to free upgrades to all new Versions
+of the Software, through the www.coin3d.org website and/or the Coin CVS
+repository for the duration of the License (one year), in accordance with SIM's
+licensing terms and conditions then applicable to the upgrades.
+
+(7) Support: Licensee has the right to prioritized email software developer
+support with no additional cost for the duration of the License (one year).
+
+Licensee's rights are non-exclusive.
+
+
+P R I C E S   A N D   P A Y M E N T
+
+As consideration for the rights given to Licensee under this License, Licensee
+shall pay to SIM the license fees applicable at the time of ordering. The
+License is not valid until such order has been placed with SIM, and SIM has
+accepted the order in writing.
+
+
+"A S   I S"   P U R C H A S E   -   D I S C L A I M E R   O F   
+W A R R A N T IE S
+
+THIS SOFTWARE IS PROVIDED "AS IS" AND EXCEPT AS SPECIFICALLY PROVIDED HEREIN,
+SIM MAKES NO WARRANTIES OR REPRESENTATIONS, EITHER EXPRESSED OR IMPLIED, WITH
+RESPECT TO THE SOFTWARE OR DOCUMENTATION, INCLUDING, BUT NOT LIMITED TO, THEIR
+QUALITY, PERFORMANCE, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR PURPOSE. TO
+THE EXTENT THAT ANY WARRANTIES WOULD OTHERWISE BE IMPLIED BY LAW, SIM HEREBY
+DISCLAIMS ALL SUCH WARRANTIES, AND LICENSEE ACCEPTS THAT NO SUCH WARRANTIES
+SHALL APPLY.
+
+Because software is inherently complex and cannot be expected to be free of
+errors, Licensee is advised to verify his work and make backup copies where
+appropriate. Any and all use of the Software or modified versions of the
+Software is at the risk of Licensee.
+
+
+L I M I T A T I O N   O F   L I A B I L I T Y
+
+IF, SIM'S WARRANTY DISCLAIMER NOTWITHSTANDING, SIM IS HELD LIABLE TO LICENSEE,
+ANY AWARD OF DAMAGES FROM SIM TO LICENSEE SHALL NOT EXCEED THE TOTAL AMOUNT THAT
+LICENSEE HAS PAID TO SIM IN CONNECTION WITH THIS LICENSE. IN NO EVENT SHALL SIM
+BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OR
+CORRUPTION OF DATA, AND LOSS OF PROFITS OR INTERRUPTION OF BUSINESS), HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES. TO THE EXTENT THAT THE APPLICABLE LAW DOES NOT ALLOW THE EXCLUSION
+OR LIMITATION OF IMPLIED WARRANTIES OR LIMITATION OF LIABILITY FOR INCIDENTAL OR
+CONSEQUENTIAL DAMAGES, THE ABOVE LIMITATION OR EXCLUSION SHALL APPLY TO THE
+MAXIMUM EXTENT ALLOWED.
+
+
+V E R I F I C A T I O N
+
+SIM may, upon its reasonable request and at its expense, audit Licensee with
+respect to the use of the Licensed Software. Any such audit shall be conducted
+during regular business hours at Licensee's facilities and shall not
+unreasonably interfere with Licensee's business activities. SIM will not remove,
+copy, or redistribute any electronic material during the course of an audit. If
+an audit reveals that Licensee is using the Licensed Software in a way that is
+in material violation of the terms of the License, then Licensee shall pay SIM's
+reasonable costs of conducting the audit. In the case of a material violation,
+Licensee agrees to pay SIM any amounts owing that are attributable to the
+unauthorized use. In the alternative, SIM reserves the right, at SIM's sole
+option, to terminate the licenses for the Licensed Software.
+
+
+T E R M I N A T I O N
+
+SIM may terminate the License at any time immediately upon written notice by SIM
+to Licensee if Licensee breaches this License, fails to pay the fees for the
+Licensed Software, or infringes SIM's intellectual property in or to the
+Licensed Software. Upon termination of the Licenses, Licensee shall return to
+SIM all copies of Licensed Software that were supplied by SIM. All other copies
+of Licensed Software in the possession or control of Licensee must be erased or
+destroyed. An officer of Licensee must promptly deliver to SIM a written
+confirmation that this has occurred.
+
+
+E N T I R E   C O N T R A C T   A N D   S E V E R A B I L I T Y
+
+This License represents the complete agreement concerning subject matter hereof.
+If any provision of this License is held to be unenforceable, such provision
+shall be reformed only to the extent necessary to make it enforceable. The
+remainder will remain valid and enforceable according to its terms.
+
+
+G O V E R N I N G   L A W   A N D   D I S P U T E S
+
+This License shall be governed by Norwegian law.  Unless otherwise agreed in
+writing, all disputes arising out of or in connection with this License shall be
+brought before the Oslo City Court as the exclusive legal venue.
+
+In addition, SIM shall be entitled to seek interlocutory injunctions in any
+court of law worldwide, to the extent allowed by the procedural law of the
+relevant jurisdiction.

@@ -1,0 +1,14 @@
+Unix
+    I have compiled VGBA for several different flavors of Unix and made the binaries available 
+for free at the VGBA homepage. The current VGBA-Unix has several important requirements 
+though:
+
+* Current VGBA core code will only run on low-endian systems. This excludes SPARC, 
+  680x0, and some other architectures from the list of possible ports. I'm hoping to add 
+  high-endian support in the future.
+* As GBA video hardware is capable of displaying 32768 colors, and GBA programs use 
+  this capability extensively, I am only providing VGBA-Unix binary compiled for the 16bit 
+  color. If your Xserver is unable to support this resolution, VGBA-Unix will not run on it.
+* Since version 1.2, VGBA-Unix uses threaded sound driver. This means that your Unix 
+  must support POSIX Threads, or VGBA-Unix will not run. On the systems with optional threads 
+  support, please, add this support prior to running VGBA-Unix. 

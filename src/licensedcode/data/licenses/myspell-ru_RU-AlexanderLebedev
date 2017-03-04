@@ -1,0 +1,20 @@
+LICENSE Txt
+============
+The main components of RUS-ISPELL package:
+
+    * the Russian affix file (russian.aff.koi) and
+    * a set of dictionaries (base.koi, abbrev.koi, computer.koi,
+      for_name.koi, geography.koi, rare.koi, science.koi)
+
+in their original encoding (koi8-r) and any other encoding produced
+from it as well as affix file and dictionaries prepared from the
+above files for MySpell spell checker are copyright (c) 1997-2004
+by Alexander Lebedev.
+
+Permission to use, copy, redistribute is granted.  Permission to
+redistribute modifications in patch form is granted.  Permission
+to redistribute binaries made of modified sources is granted.
+All other rights reserved.
+
+Alexander Lebedev
+<swan@scon155.phys.msu.su>

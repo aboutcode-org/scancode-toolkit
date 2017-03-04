@@ -1,0 +1,222 @@
+HSL ACADEMIC LICENCE VERSION 1.2 MAY 2011
+
+
+1 DEFINITIONS AND INTERPRETATION
+
+In this Agreement the following expressions have the following meanings:
+
+   "Harmful             means any virus, worm, time bomb, time lock, drop dead
+    Element"            device, trap and access code or anything else that
+                        might disrupt, disable, harm or impede the operation of
+                        any information system, or that might corrupt, damage,
+                        destroy or render inaccessible any software, data or
+                        file, or that may allow any unauthorised person to gain
+                        access to, any information system or any software, data
+                        or file on it;
+
+   "Intellectual        means patents, trade marks, service marks, registered
+    Property"           designs, copyrights, database rights, design rights,
+                        know-how, confidential information, applications for
+                        any of the above, trade secrets and any similar right
+                        recognised from time to time in any jurisdiction,
+                        together with all rights of action in relation to the
+                        infringement of any of the above;
+
+   "Software"           means the software and any accompanying documentation
+                        downloaded by the Licensee; and
+
+   "STFC"               means the Science and Technology Facilities Council,
+                        one of whose principal offices is at Rutherford
+                        Appleton Laboratory, Harwell Oxford, Didcot, OX11 0QX.
+
+2 LICENCE
+
+2.1   In consideration of the confidentiality undertakings given by the Licensee
+      pursuant to Clause 4, STFC grants the Licensee, for the duration of this
+      agreement, an indefinite, non-exclusive, non-transferable licence to use
+      the Software solely for personal use on the terms and conditions of this
+      Agreement provided that:
+
+      2.1.1 the Licensee must be employed by, or a student of, a non-profit
+            educational, academic or research institute;
+
+      2.1.2 the Licensee may not distribute any of the Software to any third
+            party, or share its use with any third party (regardless of whether
+            such third party is from the same institution), and the Licensee
+            may not sub-license the use of any of the Software;
+
+      2.1.3 the Licensee may not use the Software for any commercial purposes;
+            and
+
+      2.1.4 the Licensee may not copy any of the Software except for the
+            purposes of making a reasonable number of back-up copies, nor may
+            the Licensee modify the Software or incorporate or imbed it into
+            any other software products, except to optimise its performance for
+            the Licensee's use on a particular platform.
+
+2.2   The licence granted in clause 2.1 relates only to the release of the
+      Software at the date of this Agreement.  The Licensee must acquire a new
+      licence from STFC to use any future release of the Software.
+
+2.3   The Licensee will not tamper with or remove any copyright or other
+      proprietary notice or any disclaimer that appears on or in any part of
+      the Software and will reproduce the same in all copies of the Software.
+
+2.4   In any published work produced by the Licensee which includes results
+      achieved by using the Software, the Licensee shall acknowledge that the
+      Software was used in producing the results contained in such publication
+      by including the following citation: "HSL, a collection of Fortran codes
+      for large-scale scientific computation. See http://www.hsl.rl.ac.uk/".
+
+3 WARRANTIES AND LIABILITY
+
+3.1   The Software is supplied as is, including any faults.
+
+3.2   To the maximum extent permitted by the law, STFC excludes all warranties
+      conditions or other terms that may be implied into this Agreement whether
+      by law, statute or otherwise.
+
+3.3   STFC gives no condition, warranty or other term whatsoever, either
+      express or implied including, without limitation, any condition, warranty
+      or other term as to the condition of the Software, that the Software is
+      free from any Harmful Element, or as to satisfactory quality, fitness for
+      a particular purpose, non-infringement, or use of reasonable care and
+      skill.
+
+3.4   To the extent permitted under applicable law, STFC shall not be liable in
+      contract, tort or otherwise for any loss or damage, howsoever arising in
+      connection with the Software. Accordingly, the Licensee acknowledges and
+      accepts that it uses the Software at its own risk.
+
+3.5   STFC shall not be liable for any indirect, special, or consequential
+      damages, or loss of profit, whether such damages or losses are known,
+      foreseen, foreseeable or unforeseen. Nothing in this Agreement shall
+      limit STFC's liability for negligently caused death or personal injury
+      or fraud.
+
+4 NON-DISCLOSURE AGREEMENT
+
+4.1   In consideration of the disclosure by STFC to the Licensee of the
+      Software, the Licensee undertakes that it will respect and preserve the
+      confidentiality of the Software for a period of five years after the date
+      of such disclosure (subject to clause 4.2 below).
+
+4.2   The obligations contained in this clause 4 shall not apply, or shall
+      cease to apply, to such part of the Software as the Licensee can show to
+      the reasonable satisfaction of STFC:
+
+4.2.1 has become public knowledge other than through the fault of the Licensee;
+      or
+
+4.2.2 was already known to the Licensee prior to disclosure to it by STFC; or
+
+4.2.3 has been received from a third party who neither acquired it in
+      confidence from STFC, nor owed STFC a duty of confidence in respect of it.
+
+5 PROPERTY RIGHTS
+
+5.1   The Software is proprietary to STFC. The Licensee acknowledges that any
+      disclosure pursuant to this agreement shall not confer on the Licensee
+      any Intellectual Property or other rights in relation to the Software.
+
+5.2   Ownership of all complete or partial copies of the Software shall at all
+      times remain with STFC. The Licensee agrees to mark any copies of the
+      Software which it may make in any tangible medium with a notice that such
+      copy belongs to STFC.
+
+6 TERMINATION
+
+6.1   The Licensee may terminate the Agreement at any time by giving at least
+      30 days' prior written notice to STFC.
+
+6.2   The Agreement shall terminate automatically in the event that the
+      Licensee no longer fulfils the requirements of clause 2.1.1.
+
+6.3   STFC may terminate the Agreement immediately on giving notice in writing
+      to the Licensee if the Licensee commits any serious breach of any term of
+      this Agreement and fails (in the case of a breach capable of being
+      remedied), within 10 days after the receipt of a request in writing from
+      the STFC to do so, to remedy the breach (such request to contain a
+      warning of the STFC's intention to terminate).
+
+6.4   Immediately upon the termination of the Agreement the Licensee shall
+      destroy the Software and all copies of the whole or any part thereof and
+      certify in writing to STFC that they have been destroyed.
+
+6.5   Any termination of this Agreement (howsoever occasioned) shall not affect
+      any accrued rights or liabilities of either party nor shall it affect the
+      coming into force or the continuance in force of any provision in this
+      Agreement which is expressly or by implication intended to come into or
+      continue in force on or after such termination.
+
+7 GENERAL
+
+7.1   STFC may assign any of its rights and obligations under this Agreement,
+      upon written notice, to any affiliated organization or to a statutory
+      successor. Any assignment shall be subject to the assignee undertaking to
+      observe the terms and conditions of this Agreement.
+
+7.2   The Licensee may not assign, transfer, charge, sublicense or otherwise
+      deal in or dispose of in whole or in part any of its rights or
+      obligations under this Agreement without the prior written consent of
+      STFC (such consent not to be unreasonably withheld or delayed).
+
+7.3   Nothing in this Agreement will constitute or will be deemed to constitute
+      between the parties a partnership, association, joint venture or other
+      co-operative entity, or constitute the relationship of principal and
+      agent.
+
+7.4   Neither party shall have any liability under or be deemed in breach of
+      this Agreement for any delays or failures in performance of this
+      Agreement which result from circumstances beyond the reasonable control
+      of that party including, without limitation, fire, explosion, flood,
+      tempest, unusually adverse weather conditions, failure or shortage of
+      power supplies, war, hostilities, riot or acts of terrorism. The party
+      affected by such circumstances shall promptly notify the other party in
+      writing when such circumstances cause a delay or failure in performance
+      and when they cease to do so. If circumstances continue for a continuous
+      period of one (1) month, either party may terminate this Agreement by
+      written notice to the other party.
+
+7.5   No forbearance, delay or indulgence by either party in enforcing the
+      provisions of this Agreement shall prejudice or restrict the rights of
+      that party nor shall any waiver of its rights operate as a waiver of any
+      subsequent breach and no right, power or remedy herein conferred upon or
+      reserved for either party is exclusive of any other right, power or
+      remedy available to that party and each such right, power or remedy shall
+      be cumulative.
+
+7.6   This Agreement supersedes all prior agreements, arrangements and
+      understandings between the parties and constitutes the entire agreement
+      between the parties relating to the subject matter hereof (save that
+      neither party seeks to exclude liability for any fraudulent
+      pre-contractual misrepresentation upon which the other party can be shown
+      to have relied). The Licensee hereby warrants to STFC that the Licensee
+      has not been induced to enter into this Agreement by any prior
+      representations or warranties, whether oral or in writing, except as
+      specifically contained in this Agreement and the Licensee hereby
+      irrevocably and unconditionally waives any right it may have to claim
+      damages for any misrepresentation not contained in this Agreement or for
+      breach of any warranty not contained herein (unless such
+      misrepresentation or warranty was made fraudulently and was relied upon
+      by the Licensee) and/or to rescind this Agreement. No addition to or
+      modification of any provision of this Agreement shall be binding upon the
+      parties unless made by a written instrument signed by a duly authorised
+      representative of each of the parties.
+
+7.7   Notwithstanding that the whole or any part of any provision of this
+      Agreement may prove to be illegal or unenforceable the other provisions
+      of this Agreement and the remainder of the provision in question shall
+      remain in full force and effect.
+
+7.8   The parties confirm their intent not to confer any rights on any third
+      parties by virtue of this Agreement and accordingly the Contracts (Rights
+      of Third parties) Act 1999 shall not apply to this Agreement.
+
+7.9   This agreement shall be interpreted and construed in accordance with the
+      laws of England and Wales. The English Courts will have exclusive
+      jurisdiction to deal with any dispute which has arisen or may arise out
+      of or in connection with this Agreement, however STFC may enforce the
+      Licensee's obligation of confidence in the courts of any jurisdiction
+      having competence to issue an injunction directly enforceable against
+      the Licensee.

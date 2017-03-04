@@ -1,0 +1,638 @@
+Informix JDBC Driver
+
+International Program License Agreement
+
+
+Part 1 - General Terms
+
+
+PLEASE READ THIS AGREEMENT CAREFULLY BEFORE USING THE PROGRAM. IBM WILL LICENSE
+THE PROGRAM TO YOU ONLY IF YOU FIRST ACCEPT THE TERMS OF THIS AGREEMENT. BY
+USING THE PROGRAM YOU AGREE TO THESE TERMS. IF YOU DO NOT AGREE TO THE TERMS OF
+THIS AGREEMENT, PROMPTLY RETURN THE UNUSED PROGRAM TO THE PARTY (EITHER IBM OR
+ITS RESELLER) FROM WHOM YOU ACQUIRED IT TO RECEIVE A REFUND OF THE AMOUNT YOU
+PAID.
+
+The Program is owned by International Business Machines Corporation or one of
+its subsidiaries (IBM) or an IBM supplier, and is copyrighted and licensed, not
+sold.
+
+The term "Program" means the original program and all whole or partial copies of
+it. A Program consists of machine-readable instructions, its components, data,
+audio-visual content (such as images, text, recordings, or pictures), and
+related licensed materials.
+
+This Agreement includes Part 1 - General Terms, Part 2 - Country-unique Terms,
+and "License Information" and is the complete agreement regarding the use of
+this Program, and replaces any prior oral or written communications between you
+and IBM. The terms of Part 2 and License Information may replace or modify those
+of Part 1.
+
+
+1. License
+
+Use of the Program
+
+IBM grants you a nonexclusive license to use the Program.
+
+You may 1) use the Program to the extent of authorizations you have acquired and
+2) make and install copies to support the level of use authorized, providing you
+reproduce the copyright notice and any other legends of ownership on each copy,
+or partial copy, of the Program.
+
+If you acquire this Program as a program upgrade, your authorization to use the
+Program from which you upgraded is terminated.
+
+You will ensure that anyone who uses the Program does so only in compliance with
+the terms of this Agreement.
+
+You may not 1) use, copy, modify, or distribute the Program except as provided
+in this Agreement; 2) reverse assemble, reverse compile, or otherwise translate
+the Program except as specifically permitted by law without the possibility of
+contractual waiver; or 3) sublicense, rent, or lease the Program.
+
+Transfer of Rights and Obligations
+
+You may transfer all your license rights and obligations under a Proof of
+Entitlement for the Program to another party by transferring the Proof of
+Entitlement and a copy of this Agreement and all documentation. The transfer of
+your license rights and obligations terminates your authorization to use the
+Program under the Proof of Entitlement.
+
+
+2. Proof of Entitlement
+
+The Proof of Entitlement for this Program is evidence of your authorization to
+use this Program and of your eligibility for warranty services, future upgrade
+program prices (if announced), and potential special or promotional
+opportunities.
+
+
+3. Charges and Taxes
+
+IBM defines use for the Program for charging purposes and specifies it in the
+Proof of Entitlement. Charges are based on extent of use authorized. If you wish
+to increase the extent of use, notify IBM or its reseller and pay any applicable
+charges. IBM does not give refunds or credits for charges already due or paid.
+
+If any authority imposes a duty, tax, levy or fee, excluding those based on
+IBM's net income, upon the Program supplied by IBM under this Agreement, then
+you agree to pay that amount as IBM specifies or supply exemption documentation.
+
+
+4. Limited Warranty
+
+IBM warrants that when the Program is used in the specified operating
+environment it will conform to its specifications. IBM does not warrant
+uninterrupted or error-free operation of the Program or that we will correct all
+Program defects. You are responsible for the results obtained from the use of
+the Program. The warranty period for the Program expires when its Program
+services are no longer available. The License Information specifies the duration
+of Program services.
+
+During the warranty period warranty service is provided without charge for the
+unmodified portion of the Program through defect-related Program services.
+Program services are available for at least one year following the Program's
+general availability. Therefore, the duration of warranty service depends on
+when you obtain your license. If the Program does not function as warranted
+during the first year after you obtain your license and IBM is unable to resolve
+the problem by providing a correction, restriction, or bypass, you may return
+the Program to the party (either IBM or its reseller) from whom you acquired it
+and receive a refund in the amount you paid for it. To be eligible, you must
+have acquired the Program while Program services (regardless of the remaining
+duration) were available for it.
+
+THESE WARRANTIES ARE YOUR EXCLUSIVE WARRANTIES AND REPLACE ALL OTHER WARRANTIES
+OR CONDITIONS, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OR CONDITIONS OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE.
+
+These warranties give you specific legal rights, and you may also have other
+rights which vary from jurisdiction to jurisdiction. Some jurisdictions do not
+allow the exclusion or limitation of implied warranties, so the above exclusion
+or limitation may not apply to you. In that event such warranties are limited in
+duration to the warranty period. No warranties apply after that period.
+
+
+5. Limitation of Liability
+
+Circumstances may arise where, because of a default on IBM's part or other
+liability, you are entitled to recover damages from IBM. In each such instance,
+regardless of the basis on which you may be entitled to claim damages from IBM,
+(including fundamental breach, negligence, misrepresentation, or other contract
+or tort claim), IBM is liable for no more than 1) damages for bodily injury
+(including death) and damage to real property and tangible personal property and
+2) the amount of any other actual direct damages up to the greater of U.S.
+$100,000 (or equivalent in your local currency) or the charges for the Program
+that is the subject of the claim.
+
+IBM WILL NOT BE LIABLE FOR ANY SPECIAL, INCIDENTAL, OR INDIRECT DAMAGES OR FOR
+ANY ECONOMIC CONSEQUENTIAL DAMAGES (INCLUDING LOST PROFITS OR SAVINGS), EVEN IF
+IBM, OR ITS RESELLER, HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. SOME
+JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR
+CONSEQUENTIAL DAMAGES, SO THE ABOVE LIMITATION OR EXCLUSION MAY NOT APPLY TO
+YOU.
+
+IBM will not be liable for 1) loss of, or damage to, your records or data or 2)
+any damages claimed by you based on any third party claim.
+
+This limitation of liability also applies to any developer of a Program supplied
+to IBM. It is the maximum for which IBM and its suppliers are collectively
+responsible.
+
+
+6. General
+
+Nothing in this Agreement affects any statutory rights of consumers that cannot
+be waived or limited by contract.
+
+IBM may terminate your license if you fail to comply with the terms of this
+Agreement. If IBM does so, your authorization to use the Program is also
+terminated.
+
+You agree to comply with applicable export laws and regulations.
+
+Neither you nor IBM will bring a legal action under this Agreement more than two
+years after the cause of action arose unless otherwise provided by local law
+without the possibility of contractual waiver or limitation.
+
+Neither you nor IBM is responsible for failure to fulfill any obligations due to
+causes beyond its control.
+
+The laws of the country in which you acquire the Program govern this Agreement,
+except 1) in Australia, the laws of the State or Territory in which the
+transaction is performed govern this Agreement; 2) in Albania, Armenia, Belarus,
+Bosnia/Herzegovina, Bulgaria, Croatia, Czech Republic, Georgia, Hungary,
+Kazakhstan, Kirghizia, Former Yugoslav Republic of Macedonia (FYROM), Moldova,
+Poland, Romania, Russia, Slovak Republic, Slovenia, Ukraine, and Federal
+Republic of Yugoslavia, the laws of Austria govern this Agreement; 3) in the
+United Kingdom, all disputes relating to this Agreement will be governed by
+English Law and will be submitted to the exclusive jurisdiction of the English
+courts; 4) in Canada, the laws in the Province of Ontario govern this Agreement;
+and 5) in the United States and Puerto Rico, and People's Republic of China, the
+laws of the State of New York govern this Agreement.
+
+
+
+Part 2 - Country-unique Terms
+
+
+AUSTRALIA:
+
+Limited Warranty (Section 4):
+
+The following paragraph is added to this Section:
+
+The warranties specified in this Section are in addition to any rights you may
+have under the Trade Practices Act 1974 or other legislation and are only
+limited to the extent permitted by the applicable legislation.
+
+Limitation of Liability (Section 5):
+
+The following paragraph is added to this Section:
+
+Where IBM is in breach of a condition or warranty implied by the Trade Practices
+Act 1974, IBM's liability is limited to the repair or replacement of the goods,
+or the supply of equivalent goods. Where that condition or warranty relates to
+right to sell, quiet possession or clear title, or the goods are of a kind
+ordinarily acquired for personal, domestic or household use or consumption, then
+none of the limitations in this paragraph apply.
+
+
+EGYPT:
+
+Limitation of Liability (Section 5):
+
+The following replaces item 2 in the first paragraph of this Section:
+
+2) as to any other actual direct damages, IBM's liability will be limited to the
+total amount you paid for the Program that is the subject of the claim.
+
+
+FRANCE :
+
+Limitation of Liability (Section 5):
+
+The following replaces the second sentence in the first paragraph of this
+Section:
+
+In such instances, regardless of the basis on which you are entitled to claim
+damages from IBM, IBM is liable for no more than 1) damages for bodily injury
+(including death) and damage to real property and tangible personal property;
+and 2) the amount of any other actual direct damages up to the greater of a) EUR
+100,000 (or equivalent in local currency) or b) the charges for the Program
+which is the subject of the claim.
+
+
+GERMANY:
+
+Limited Warranty (Section 4):
+
+The following paragraphs are added to this Section:
+
+The minimum warranty period for Programs is six months.
+
+In case a Program is delivered without Specifications, we will only warrant that
+the Program information correctly describes the Program and that the Program can
+be used according to the Program information. You have to check the usability
+according to the Program information within the "money-back guaranty" period.
+
+The following replaces the first sentence of the first paragraph of this
+Section:
+
+The warranty for an IBM Program covers the functionality of the Program for its
+normal use and the Program's conformity to its Specifications.
+
+Limitation of Liability (Section 5):
+
+The following paragraph is added to the Section:
+
+The limitations and exclusions specified in the Agreement will not apply to
+damages caused by IBM with fraud or gross negligence, and for express warranty.
+
+In item 2, replace "U.S. $100,000" with "EUR 500,000".
+
+The following sentence is added to the end of item 2 of the first paragraph:
+
+IBM's liability under this item is limited to the violation of essential
+contractual terms in cases of ordinary negligence.
+
+
+INDIA:
+
+Limitation of Liability (Section 5):
+
+The following replaces items 1 and 2 in the first paragraph:
+
+1) liability for bodily injury (including death) or damage to real property and
+tangible personal property will be limited to that caused by IBM's negligence;
+and 2) as to any other actual damage arising in any situation involving
+nonperformance by IBM pursuant to, or in any way related to the subject of this
+Agreement, IBM's liability will be limited to the charge paid by you for the
+individual Program that is the subject of the claim.
+
+General (Section 6):
+
+The following replaces the fourth paragraph of this Section:
+
+If no suit or other legal action is brought, within two years after the cause of
+action arose, in respect of any claim that either party may have against the
+other, the rights of the concerned party in respect of such claim will be
+forfeited and the other party will stand released from its obligations in
+respect of such claim.
+
+
+IRELAND:
+
+Limited Warranty (Section 4):
+
+The following paragraph is added to this Section:
+
+Except as expressly provided in these terms and conditions, all statutory
+conditions, including all warranties implied, but without prejudice to the
+generality of the foregoing, all warranties implied by the Sale of Goods Act
+1893 or the Sale of Goods and Supply of Services Act 1980 are hereby excluded.
+
+Limitation of Liability (Section 5):
+
+The following replaces items 1 and 2 in the first paragraph of this Section:
+
+1) death or personal injury or physical damage to your real property solely
+caused by IBM's negligence; and 2) the amount of any other actual direct
+damages, up to the greater of EUR 100,000 in respect of Programs or 125 percent
+of the charges for the Program that is the subject of the claim or which
+otherwise gives rise to the claim.
+
+The following paragraph is added at the end of this Section:
+
+IBM's entire liability and your sole remedy, whether in contract or in tort, in
+respect of any default will be limited to damages.
+
+
+ITALY:
+
+Limitation of Liability (Section 5):
+
+The following replaces the second sentence in the first paragraph:
+
+In each such instance unless otherwise provided by mandatory law, IBM is liable
+for no more than damages for bodily injury (including death) and damage to real
+property and tangible personal property and 2) as to any other actual damage
+arising in all situations involving non-performance by IBM pursuant to, or in
+any way related to the subject matter of this Agreement, IBM's liability, will
+be limited to the total amount you paid for the Program that is the subject of
+the claim.
+
+
+NEW ZEALAND:
+
+Limited Warranty (Section 4):
+
+The following paragraph is added to this Section:
+
+The warranties specified in this Section are in addition to any rights you may
+have under the Consumer Guarantees Act 1993 or other legislation which cannot be
+excluded or limited. The Consumer Guarantees Act 1993 will not apply in respect
+of any goods or services which IBM provides, if you require the goods or
+services for the purposes of a business as defined in that Act.
+
+Limitation of Liability (Section 5):
+
+The following paragraph is added to this Section:
+
+Where Programs are not acquired for the purposes of a business as defined in the
+Consumer Guarantees Act 1993, the limitations in this Section are subject to the
+limitations in that Act.
+
+
+PEOPLE'S REPUBLIC OF CHINA:
+
+Charges (Section 3):
+
+The following paragraph is added to the Section:
+
+All banking charges incurred in the People's Republic of China will be borne by
+you and those incurred outside the People's Republic of China will be borne by
+IBM.
+
+
+UNITED KINGDOM:
+
+Limitation of Liability (Section 5):
+
+The following replaces items 1 and 2 in the first paragraph of this Section:
+
+1) death or personal injury or physical damage to your real property solely
+caused by IBM's negligence; 2) the amount of any other actual direct damages, up
+to the greater of Pounds Sterling 75,000 in respect of Programs or 125 percent
+of the charges for the Program that is the subject of the claim or which
+otherwise gives rise to the claim.
+
+The following item is added:
+
+3) breach of IBM's obligations implied by Section 12 of the Sale of Goods Act
+1979 or Section 2 of the Supply of Goods and Services Act 1982.
+
+The following paragraph is added at the end of this Section:
+
+IBM's entire liability and your sole remedy, whether in contract or in tort, in
+respect of any default will be limited to damages.
+
+
+Z125-3301-10 12/01 (Euro)
+
+LICENSE INFORMATION
+
+The Programs listed below are licensed under the following terms and conditions
+in addition to those of the International Program License Agreement.
+
+Program Name: IBM Informix C-ISAM V5.10
+Program Number: 5724-C42
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix C-ISAM V7.20, V7.21, V7.22, V7.23, V7.24, V7.26
+Program Number: 5724-C41
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix C-ISAM DataBlade Module V1.10
+Program Number: 5724-C57
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix Connect Runtime V2.50, V2.60, V2.70
+Program Number: 5724-C24
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix Data Director for Web V2.00
+Program Number: 5724-C20
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix Database Administrator V1.00
+Program Number: 5724-C53
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix Enterprise Gateway Manager V7.21
+Program Number: 5724-C31
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix Enterprise Gateway with DRDA V7.31
+Program Number: 5724-C31
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix ESQL for COBOL V5.10
+Program Number: 5724-C67
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix ESQL for COBOL V7.25
+Program Number: 5724-C68
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix ESQL/C Development and Runtime V5.10, V5.11
+Program Number: 5724-C67
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix Excalibur Text Search DataBlade Module V1.30
+Program Number: 5724-C29
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix Extended Parallel Server V8.32
+Program Number: 5724-C19
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix Image Foundation DataBlade Module V2.00
+Program Number: 5724-C59
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix I-Spy V2.00
+Program Number: 5724-C32
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix JDBC Driver V1.50
+Program Number: 5724-C48
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix JDBC Driver / Embedded SQLJ V2.00, V2.11, V2.20
+Program Number: 5724-C25
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix MaxConnect V1.00
+Program Number: 5724-C56
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix MetaCube ROLAP Option Agents, Direct Clients,
+Indirect Clients V4.20
+Program Number: 5724-C52
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix NAG Finance DataBlade Module V1.10
+Program Number: 5724-C60
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix NET V5.10, V5.11
+Program Number: 5724-C45
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix Object Translator V2.00
+Program Number: 5724-C26
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix OnLine V5.10, V5.11
+Program Number: 5724-C47
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix SE V5.10
+Program Number: 5724-C44
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix SE V7.20, V7.21, V7.22, V7.23, V7.24, V7.25
+Program Number: 5724-C43
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix Server Administrator V1.40
+Program Number: 5724-C27
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix Spatial DataBlade Module V8.11
+Program Number: 5724-C61
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix STAR V5.10, V5.11
+Program Number: 5724-C46
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix TimeSeries DataBlade Module V4.01, V4.02
+Program Number: 5724-C62
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix TimeSeries Real Time Loader Bundle V1.00, V1.01,
+V1.02
+Program Number: 5724-C63
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix Video Foundation DataBlade Module V2.00
+Program Number: 5724-C64
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Informix Web DataBlade Module V4.12, V4.13
+Program Number: 5724-C30
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+Program Name: IBM Office Connect Enterprise Web Edition, Professional Web
+Edition, Personal Edition V3.00
+Program Number: 5724-C15
+Authorization for Use on Home/Portable Computer: 2
+Program Services End Date: 2003/04/05
+
+EXPLANATIONS OF TERMS:
+
+Authorization for Use on Home/Portable Computer:
+"1" means that the Program may be stored on the primary machine and another
+machine, provided that the Program is not in active use on both machines at the
+same time.
+"2" means that you may not copy and use this Program on another computer without
+paying additional license fees.
+
+Program Services End Date:
+The Program is warranted and program services will be available until the end
+date specified above.
+
+Money-back Guarantee
+
+If for any reason you are dissatisfied with the Program, return it within 30
+days from the invoice date, to the party (either IBM or its reseller) from whom
+you acquired it, for a refund. This applies only to your first acquisition of
+the Program.
+
+Specified Operating Environment
+
+The Program's specifications and specified operating environment information may
+be found in documentation accompanying the Program, if available, such as a
+read-me file, or other information published by IBM, such as an announcement
+letter.
+
+Program-unique Terms
+
+Program Services End Date
+
+Program Services are available at least until the end date specified above, and
+will end on a later date if indicated on the IBM Informix Product and Support
+area at http://www.ibm.com/software/data/informix. To locate the Product
+Lifecycle, click on Support from the left navigation bar to access TechInfo
+Center and other IBM support information. When prompted, enter your TechInfo
+Center User Name and Password.
+
+Level of Use
+
+Your use of a Program may not exceed the level defined by the number of use
+authorizations you have acquired. The level of use of a Program is specified by
+one of the following:
+
+- Server - "Server" means a server on which the Program is installed or
+executed.
+
+- Processor - "Processor" means a processor that forms part of the server on
+which the Program is installed or executed. You must acquire a use authorization
+for each such Processor.
+
+- Concurrent Session - A Concurrent Session, at a given point in time, is each
+logical connection, existing at that time, between the Program and an end user
+interface device. Each such existing connection is counted as a Concurrent
+Session whether or not it is actually in use. If an individual end user
+establishes multiple connections, each one is counted as a separate Concurrent
+Session, even if they share a common physical pathway. The number of connections
+is not reduced by any program or machine, such as a front-end server or
+multiplexer, which may be used to concentrate the connections. Each batch
+process being executed at the same time is also considered to be a Concurrent
+Session.
+
+- Registered User - A Registered User of a Program is a specific individual
+authorized by you to use the Program. Such an individual is a Registered User
+whether or not they are actually using the Program.
+
+Runtime Programs
+
+The following term applies only to the IBM Informix Connect Runtime and IBM
+Informix ESQL/C Runtime Programs.
+
+You may only use the Program for production.
+
+
+
+U.S. Government Users Restricted Rights
+
+U.S. Government Users Restricted Rights - Use, duplication, or disclosure
+restricted by the GSA ADP Schedule Contract with the IBM Corporation.
+
+D/N: SCT1-F8ML-00
+P/N: CT1F8ML

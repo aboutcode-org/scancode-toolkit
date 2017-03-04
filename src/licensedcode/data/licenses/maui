@@ -1,0 +1,155 @@
+Moab Scheduling System - End User Open Source License
+
+This software is based on the Moab Scheduling System which was created by 
+Cluster Resources, Inc.  
+
+Copyright (C) 1999-2005 Cluster Resources, Inc., all rights reserved.
+
+Moab Scheduling System is a trademark of Cluster Resources, Inc.
+
+This SOFTWARE is bound by an 'End User Open Source' LICENSE from Cluster
+Resources Inc.  The conditions of the 'End User Open Source' LICENSE include,
+but are not limited to the conditions described below.
+
+THE SOFTWARE IS PROVIDED AS IS, AND CLUSTER RESOURCES, INC. (CRI) AND ALL 
+CONTRIBUTING PARTIES DISCLAIM ALL WARRANTIES RELATING TO THE SOFTWARE, 
+WHETHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  NEITHER
+CRI NOR ANYONE INVOLVED IN THE CREATION, PRODUCTION, OR DELIVERY OF THE 
+SOFTWARE SHALL BE LIABLE FOR ANY INDIRECT, CONSEQUENTIAL, OR INCIDENTAL 
+DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE SOFTWARE EVEN IF CRI 
+HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES OR CLAIMS.  IN NO EVENT 
+SHALL CRI'S LIABILITY FOR ANY DAMAGES EXCEED THE CONSIDERATION PAID FOR THE 
+LICENSE TO USE THE SOFTWARE, REGARDLESS OF THE FORM OF CLAIM.  THE PERSON OR
+ENTITY USING THE SOFTWARE BEARS ALL RISK AS TO THE QUALITY AND PERFORMANCE 
+OF THE SOFTWARE.
+
+By installing or using this SOFTWARE you are accepting a non-exclusive 'End
+User Open Source' LICENSE from Cluster Resources Inc. and are bound to abide by the following conditions:
+
+1.  Inclusion of Notice and Disclaimer
+
+  All copies of the SOFTWARE, whether or not for redistribution and whether 
+or not in source code or in binary form must include a conspicuous and 
+appropriate publication of the above copyright notice and disclaimer.
+
+2. Usage
+
+  Source and/or binary forms of this SOFTWARE may be used by any 'End User'
+organization pursuant to the conditions of this and other associated LICENSES
+at no charge and for an unlimited period of time.  An 'End User' organization
+is defined as an organization that is using this SOFTWARE on their own 
+systems and is not commercially redistributing, modifying, supporting, or 
+providing other services specific to this SOFTWARE to other organizations 
+for profit.
+
+3.  Modifications
+
+  SOFTWARE may be freely modified by the 'End User' as necessary to meet the
+needs of the 'End User' LICENSEE'S system.  'End User' may solicit the
+services of Cluster Resources Inc. or 'Authorized Distribution and Services
+Partners' of Cluster Resources Inc. that have received express prior written
+authorization to redistribute, modify or provide services for SOFTWARE.
+Available services include but are not limited to technical support, 
+training, consultation or optimization services.  'End User' may not 
+solicit or receive this SOFTWARE or services associated to the use, 
+customization, training, development, or support on this SOFTWARE from any 
+organization that is not an 'Authorized Distribution and Services Partner' 
+of Cluster Resources Inc.  Any organization that desires to become an 
+'Authorized Distribution and Services Partner' of Cluster Resources, Inc. 
+may contact us at support@clusterresources.com.  'End User' organizations 
+that desire services from Cluster Resources Inc., or an 'Authorized 
+Distribution and Services Partner' may contact us using the same email 
+listed above.
+
+4.  Distribution
+
+  'End User' organizations that are academic and government agencies may 
+redistribute this SOFTWARE subject to the condition that the distribution 
+contains conspicuous publication of the acknowledgement statement found 
+within the LICENSE agreement distributed with this SOFTWARE.
+
+  Organizations that are not academic and government agencies including 
+commercial and other for-profit organizations may not redistribute this code
+or derivations of this code in any form whatsoever, including parts of 
+SOFTWARE incorporated into other software programs without express written 
+permission from Cluster Resources, Inc.
+
+  Redistribution of the SOFTWARE in any form whatsoever, including parts of 
+the code that are incorporated into other software programs, must include a 
+conspicuous and appropriate publication of the following acknowledgement:
+
+  'This product was developed by Cluster Resources, Inc.  Moab Scheduling
+System is a trademark of Cluster Resources, Inc.'
+
+  Any redistribution or modification of the SOFTWARE must, when installed, 
+display the above language, the copyright notice, and the warranty 
+disclaimer.
+
+  Each time the SOFTWARE (or any work based on the SOFTWARE) is 
+redistributed, the recipient must automatically receive this LICENSE, 
+copyright notice, and the warranty disclaimer as described in this license 
+agreement, which govern the ability to copy, distribute or modify the 
+SOFTWARE subject to these terms and conditions, and have the choice of 
+accepting or declining the LICENSE.  
+
+  As the LICENSEE, you shall automatically provide the recipient with a 
+copy of this LICENSE.  Further restrictions are not to be imposed on 
+recipients of the SOFTWARE by the LICENSEE beyond those expressly described 
+herein.
+
+5.  Use of Modifications
+
+  LICENSEES with a redistribution agreement that wish to distribute their 
+modifications (including government and academic institutions) must first 
+send a copy of the modifications along with a brief explanation of why the 
+modification was made and the resulting performance or functionality of the 
+modifications to Cluster Resources, Inc. at support@clusterresources.com.  
+Failure to send a copy of distributed modifications renders the LICENSE 
+invalid, as well as any LICENSES granted to third parties subsequent to the 
+incorporation of the modifications into SOFTWARE.  Any such modification of 
+the SOFTWARE must, when installed, display the LICENSE, the copyright 
+notice, and the warranty disclaimer as described in the LICENSE agreement/s 
+distributed with this SOFTWARE. Those without a LICENSE to redistribute may 
+send modifications to Cluster Resources for evaluation and possible 
+incorporation into SOFTWARE.
+
+  Copyright owners of modifications to SOFTWARE hereby grant Cluster 
+Resources, Inc. a non-exclusive, royalty-free, worldwide, irrevocable right 
+and LICENSE to install, use, distribute, sublicense, and prepare derivative 
+works of said modifications.  Only organizations receiving an express prior 
+written exclusion to this condition are exempted from providing these 
+non-exclusive rights to Cluster Resources, Inc.
+
+6. Communications about and Endorsement of SOFTWARE and Products/Software 
+Derived from the SOFTWARE
+
+  The name 'Moab Scheduling System', 'Moab Scheduler', or any of its 
+variants must not otherwise be used to endorse or to promote products 
+derived from the SOFTWARE without prior written permission from CRI.
+
+  Products derived from or incorporating the SOFTWARE in whole or in part
+shall not contain as part of the product's name any form of the terms 
+'Cluster Resources, Inc.', 'CRI', 'Moab', 'Moab Scheduling System', 
+'Moab Scheduler', or 'Supercluster Development Group' unless prior written 
+permission has been received from Cluster Resources, Inc.
+
+  All advertising materials for products that use or incorporate features of
+the SOFTWARE must display the following acknowledgement: 'This product
+includes software developed by Cluster Resources, Inc. for use in the Moab
+Scheduling System.'
+
+7.  Acceptance of this LICENSE
+
+  It is not required that you accept this LICENSE; however, if you do not 
+accept the terms of this LICENSE, you are prohibited by law from installing,
+using, modifying or distributing the SOFTWARE or any of its derivative 
+works.  Therefore, by installing, using, modifying or distributing the 
+SOFTWARE (or any of its derivative works), you have agreed to this LICENSE 
+and have accepted all its terms and conditions.
+
+  If any portion of this LICENSE is held invalid or unenforceable under any 
+particular circumstance, the balance of the LICENSE will continue to apply.
+
+
+

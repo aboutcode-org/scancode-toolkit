@@ -1,0 +1,73 @@
+Software End User License Agreement ("EULA")
+
+* This EULA applies to all versions of GIMPS Prime95 and MPrime
+  software and source code ("Software").
+* Software is free to download and use indefinitely on any computer(s)
+  you own or for which you have permission and authority to install
+  and run Software. Software is not export-restricted.
+* To use the Software you agree to be bound by this EULA and the Terms
+  and Conditions of Use.
+* GIMPS reserves the right to change this EULA without notice and with
+  reasonable retroactive effect. Last updated 15 October 2008.
+* GIMPS not responsible for any damages or losses arising from use of
+  Software. SOFTWARE AND INFORMATION IS PROVIDED "AS IS" WITHOUT
+  WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT
+  LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
+  FOR A PARTICULAR PURPOSE.
+
+Terms and Conditions of Use ("TCU")
+
+* GIMPS participation is free of charge and open to the public
+  internationally.
+* Web Site. The GIMPS "Web Site" is understood to include all
+  Mersenne.org Internet web site domains, web content and services,
+  PrimeNet APIs, data, downloads, etc., regardless of means of access.
+* Non-Participants. Viewing the Web Site does not necessarily make you
+  a Participant; non-Participants are not bound by this TCU.
+* Participation Constitutes Agreement. "Participant" is understood to
+  be an individual person, or a single individual person designated as
+  the authorized representative of any group, team, organization or
+  legal entity, who personally, or whose computer(s), accesses and/or
+  communicates with the Web Site to perform, or cause to perform,
+  mathematical calculations that are, or typically, systematically
+  organized by GIMPS. This includes, but is not restricted to, use of
+  Prime95, MPrime, GLucas, or similar software, automatically over the
+  Internet or using the Web Site (manual testing forms, reports, APIs,
+  etc.), to get data or work assignments or to upload results or other
+  data. Participation constitutes agreement with the TCU by that
+  individual and any group, team, organization or legal entity the
+  Participant represents.
+* Participant Identifiers. Participant's user ID, password and email
+  address are the primary unique identifiers used by GIMPS to
+  communicate and confirm Participant's identity. Secondary
+  identifiers may include unique computer identifiers known as a
+  "GUID". The "Anonymous" or "ANONYMOUS" user ID is owned by GIMPS,
+  but may be used by Participants who do not wish to be publically
+  identified.
+* Award Rules. Participant agrees to the Research Discovery Award
+  Rules [1].
+* Award Refusal. Participant may at their option decline any award.
+  Research Discovery Award Rules apply even if an award is unclaimed
+  or optionally declined by the Participant.
+* Data Ownership and Privacy. GIMPS owns all collected data, and may
+  publish or make available certain limited subset(s) of that data for
+  public reference, excluding personally identifiable data according
+  to the Privacy Policy [2]. Examples of published data are stats,
+  standings, charts and other derived charts or tables.
+* Disclaimer. GIMPS is not responsible for any losses due to Web Site
+  errors, electronic transmission errors, omissions or unauthorized
+  disclosures, failure of any software to correctly find and timely
+  report a new prime number, or any other research discovery, or for
+  someone "poaching" or "stealing" your assignment (performing work on
+  it without it being assigned to them by GIMPS) and subsequently
+  making a discovery.
+* Terms and Conditions of Use Changes. GIMPS reserves the right to
+  change this TCU without notice. Last updated 15 October 2008.
+* Jurisdiction. Jurisdiction of law shall be the State of California
+  and the United States of America. Participant agrees to settle all
+  disputes through a good faith effort directly with GIMPS officers
+  and directors, or as a last resort, by third-party binding
+  arbitration through a certified arbitrator of GIMPS' choosing.
+
+[1] http://mersenne.org/legal/#rules
+[2] http://mersenne.org/legal/#privacy

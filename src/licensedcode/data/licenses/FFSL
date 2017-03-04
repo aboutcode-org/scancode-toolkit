@@ -1,0 +1,261 @@
+                         Floodgap Free Software License
+
+   The author of your software has chosen to distribute it under the
+   Floodgap Free Software License. Although this software is without cost,
+   it is not released under Copyleft or GPL, and there are differences
+   which you should read. Your use of this software package constitutes
+   your binding acceptance without restriction.
+
+  This software is without cost
+
+   The Floodgap Free Software License (FFSL) has one overriding mandate:
+   that software using it, or derivative works based on software that uses
+   it, must be free. By free we mean simply "free as in beer" -- you may
+   put your work into open or closed source packages as you see fit,
+   whether or not you choose to release your changes or updates publicly,
+   but you must not ask any fee for it. (There are certain exceptions for
+   for-profit use which we will discuss below.)
+
+  Definitions and terms
+
+   Author
+          The declared copyright owner of this software package.
+
+   Binary
+          A pre-compiled or pre-interpreted bytecode or machine language
+          representation of a software package not designed for further
+          modification and tied to a particular platform or architecture.
+
+   Derivative work
+          Any distribution (q.v.) that contains any modification to or
+          deviation from the official reference distribution (q.v.); or
+          any software package significantly based on or integrally
+          including the source code for its features, including but not
+          limited to supersets; subsets of a significant proportion;
+          in-place patched changes to source or binary files; linking in
+          as a library; binary-only distributions if the original package
+          included source (even if the source was not modified prior to
+          compilation); or translations to another programming language,
+          architecture or operating system environment. Derivative works
+          of packages released under this license are also considered
+          subject to this license.
+
+          However, a software package that requires this package but does
+          not include it or is not based upon it, even if it will not
+          operate without it, is not considered a derivative work. For
+          example, interpreted programs requiring an interpreter issued
+          under this license, assuming they are not distributed with any
+          portion of the interpreter, are not derivative works.
+
+   Distribution
+          A packaged release of this software, either the author's
+          original work (the "reference distribution") or a derivative
+          work based upon it.
+
+   Reference distribution
+          A packaged release of this software explicitly designated as the
+          official release, written by or on behalf of the Author with his
+          or her explicit designation as official. Only exact copies of
+          the reference distribution may be called reference
+          distributions; all other forms are derivative works.
+
+   Source code
+          The human-readable programming instructions of the package which
+          might be easily read as text and subsequently edited, but
+          requiring compilation or interpretation into binary before being
+          directly useable.
+
+  What you are permitted to do under this license
+
+   Pursuant to the remainder of the terms below,
+     * You may freely use, copy, and disseminate this software package for
+       any non-commercial purpose as well as the commercial purposes
+       permitted below.
+     * You may freely modify this package, including source code if
+       available. Your modifications need not be released, although you
+       are encouraged to do so.
+     * You may release your derivative works based upon this software in
+       purely binary (non-source) form if you choose. You are not
+       obligated to release any portion of your source code openly,
+       although you are encouraged to do so.
+     * If this package is a tool used for generation, compilation or
+       maintenance of works, including but not limited to readable
+       documents, software packages or images (for example, compilers,
+       interpreters, translators, linkers, editors, assemblers or
+       typesetters), you may freely use it for that purpose, commercial or
+       otherwise, as the works made by this package are not considered
+       subject to this license unless specified otherwise within and may
+       be distributed under any desired license and/or offered for sale or
+       rental. Any run-time library or run-time code section linked into
+       the output by a compiler or similar code-generating tool governed
+       by this license is considered to be an integral part of the output,
+       and its presence does not subject the generated work to this
+       license either. (This is, of course, assuming you are not using
+       said tools to generate a derivative work based on this package in
+       violation of the other license terms.)
+       However, if you are linking or including a separately distributed
+       library that is under this license, no matter what tool you are
+       using to do the linking or inclusion, you are then considered to be
+       making a derivative work based on that library and your work does
+       fall under this license. To avoid this, do not include the library
+       with your work (even though it needs the library to function) and
+       instead offer the library separately without cost.
+     * In addition to non-commercial use and the uses permitted above, you
+       may use this software package in any for-profit endeavour as long
+       as it does not involve the specific sale or rental of this package.
+       Some specific but by no means exhaustive examples are listed below.
+       Note that some of these situations may require additional action be
+       taken to ensure compliance.
+          + If this package or a derivative work allows you to serve data
+            or make data available to others (for example, web servers,
+            mail servers, gopher servers, etc.), you may use it to serve
+            any commercial content or in any commercial setting whether
+            you choose to charge a fee or not, as you are considered to be
+            earning income from the content you serve and/or the services
+            facilitated by your business and not from the sale of this
+            package itself. (This is, of course, assuming that you are not
+            charging a fee for sale or rental of this package or a
+            derivative work based on this package in violation of the
+            other license terms.) Similarly, any data you may acquire from
+            the use of this package is yours, and not governed by this
+            license in any way even if for-profit.
+          + If you are selling a product that includes this package or a
+            derivative work either as part of your product's requirements
+            for function or as a bundled extra, such as an operating
+            system distribution, you may charge a fee for your product as
+            long as you also make this package or said derivative work
+            available for free separately (such as by download or link
+            back to this package's site), as you are considered to be
+            requesting a fee for your own product and the package is
+            merely included as a convenience to your users.
+          + If you offer installation of this package or a derivative work
+            as a service, you may charge a fee for the act of installation
+            as long as you also make this package or said derivative work
+            available for free (such as by download or link back to this
+            package's site), as you are considered to be requesting a fee
+            for the act of installation and not for the software you are
+            installing.
+          + The Author may also grant, in writing, other specified
+            exemptions for your particular commercial purpose that do not
+            contravene the spirit of this license or any license terms
+            this package additionally carries.
+     * In your derivative works based on this package, you may choose to
+       offer warranty support or guarantees of performance. This does not
+       in any way make the original Author legally, financially or in any
+       other respect liable for claims issued under your warranty or
+       guarantee, and you are solely responsible for the fulfillment of
+       your terms even if the Author of the work you have based your work
+       upon offers his or her own.
+     * In your derivative works based on this package, you may further
+       restrict the acceptable uses of your package or situations in which
+       it may be employed as long as you clearly state that your terms
+       apply only to your derivative work and not to the original
+       reference distribution. However, you may not countermand or ignore,
+       directly or otherwise, any restriction already made in the
+       reference distribution's license, including in this document
+       itself, in similar fashion to other licenses allowing compatible
+       licenses to co-govern a particular package's use.
+
+  What you must not do under this license
+
+   Remember that these limits apply only to redistribution of a reference
+   distribution, or to a true derivative work. If your project does not
+   include this package or code based upon it, even if it requires this
+   package to function, it is not considered subject to this license or
+   these restrictions.
+     * You must not charge a fee for purchase or rental of this package or
+       any derivative work based on this package. It is still possible to
+       use this package in a commercial environment, however -- see What
+       you are permitted to do under this license.
+     * You must not countermand or ignore, directly or otherwise, the
+       restrictions already extant in this package's license in your
+       derivative work based on it. As a corollary, you must not place
+       your derivative work under a secondary license or description of
+       terms that conflicts with it (for example, this license is not
+       compatible with the GNU Public License).
+     * You must not label any modified distribution of this package as a
+       reference or otherwise official distribution without the permission
+       of the original Author or Authors. You must clearly specify that
+       your modified work is a derivative work, including binary-only
+       releases if the original included source code and you do not even
+       if you did not modify the source prior to compilation.
+
+  What you must do under this license
+
+     * You must agree to all terms specified (agreement to which is
+       unconditionally signified by your usage, modification or
+       repurposing of this package), or to remove the package from your
+       computer and not use it further.
+     * In the absence of any specific offer for redress or assistance
+       under warranty or guarantee of performance that the Author of this
+       package might make, you must agree to accept any and all liability
+       that may come from the use of this package, proper or improper,
+       real or imagined, and certify without condition that you use this
+       product at your own risk with no guarantee of function,
+       merchantability or fitness for a particular purpose. If such offer
+       of redress or assistance is extended, it is fulfillable only by the
+       Author who extended the offer, which might not necessarily be this
+       Author, nor might it be the Authors of any packages it might be
+       based upon.
+     * If you choose to publicly redistribute this package or create a
+       derivative work based on this package, you must make it available
+       without any purchase or rental fee of any kind.
+     * If you choose to create a derivative work based on this package,
+       your derivative work must be copyrighted, and must be governed
+       under (at a minimum) the original package's license, which will
+       necessarily include all terms noted here. As such, if you choose to
+       distribute your derivative work, you must include a human-readable
+       license in your distribution containing all restrictions of use,
+       necessarily including this license, and any additional restrictions
+       the Author has mandated that do not contravene this license which
+       you and users of your derivative work must also honour.
+     * If you choose to create and distribute a derivative work based on
+       this package, your derivative work must clearly make reference to
+       this package, any other packages your work or the original work
+       might be based on, and all applicable copyrights, either in your
+       documentation, your work's standard human-readable output, or both.
+       A suggested method might be
+
+     Contains or is based on the Foo software package.
+     Copyright (C) 2112 D. Original Author. All rights reserved.
+     http://their.web.site.invalid/
+
+  Additional notes
+
+   Enforcement is the responsibility of the Author. However, violation of
+   this license may subject you to criminal and civil penalties depending
+   on your country.
+
+   This package is bound by the version of license that accompanies it.
+   Future official versions of a particular package may use a more updated
+   license, and you should always review the license before use. This
+   license's most current version is always available from the following
+   locations:
+
+     [1]http://www.floodgap.com/software/ffsl/
+     [2]gopher://gopher.floodgap.com/1/ffsl/
+
+   This license is version 1, dated 19 November 2006.
+
+   This license is copyright © 2006 Cameron Kaiser. All rights reserved.
+   The text of this license is available for re-use and re-distribution
+   under the Creative Commons. The use of the term "Floodgap Free Software
+   License" does not imply endorsement of packages using this license by
+   Floodgap Systems or by Cameron Kaiser. Modified licenses using portions
+   of these terms may refer to themselves as modified FFSL, with the
+   proviso that their modifications be clearly marked, as specified below:
+
+              [3]Creative Commons License-[4][somerights20.png]
+              This work is licensed under a [5]Creative Commons
+                     Attribution-ShareAlike 2.5 License.
+
+   Only the text of this license, and not programs covered by this
+   license, is so offered under Creative Commons.
+
+References
+
+   1. http://www.floodgap.com/software/ffsl/
+   2. gopher://gopher.floodgap.com/1/ffsl/
+   3. http://creativecommons.org/licenses/by-sa/2.5/
+   4. http://creativecommons.org/images/public/somerights20.png
+   5. http://creativecommons.org/licenses/by-sa/2.5/

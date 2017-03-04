@@ -1,0 +1,248 @@
+ MONASH UNIVERSITY
+ SCHOOL OF COMPUTER SCIENCE AND SOFTWARE ENGINEERING
+ ELECTRONIC DICTIONARY RESEARCH AND DEVELOPMENT GROUP
+ 
+ GENERAL DICTIONARY LICENCE STATEMENT
+ Copyright (C) 2003 The Electronic Dictionary Research and Development
+Group, Monash University.
+
+EDRDG Home Page
+
+1. Introduction
+
+In March 2000, James William Breen assigned ownership of the copyright of
+the dictionary files assembled, coordinated and edited by him to the The
+Electronic Dictionary Research and Development Group at Monash University
+(hereafter "the Group"), on the understanding that the Group will foster the
+development of the dictionary files, and will utilize all monies received
+for use of the files for the further development of the files, and for
+research into computer lexicography and electronic dictionaries.
+
+This document outlines the licence arrangement put in place by The Group for
+usage of the files. It replaces all previous copyright and licence
+statements applying to the files.
+
+2. Application
+
+This licence statement and copyright notice applies to the following
+dictionary files, the associated documentation files, and any data files
+which are derived from them.
+
+    *
+	
+	      JMDICT - Japanese-Multilingual Dictionary File - the Japanese and
+English components (the German, French and Russian translational equivalents
+are covered by separate copyright held by the compilers of that material.)
+    *
+	
+	      EDICT - Japanese-English Electronic DICTionary File
+		      *
+			  
+			        ENAMDICT - Japanese Names File
+					    *
+						
+						      COMPDIC - Japanese-English Computing and
+Telecommunications Terminology File
+    *
+	
+	      KANJIDIC - File of Information about the 6,355 Kanji in the JIS X
+0208 Standard (special conditions apply)
+    *
+	
+	      KANJD212 - File of Information about the 5,801 Supplementary Kanji
+in the JIS X 0212 Standard
+    *
+	
+	      EDICT-R - romanized version of the EDICT file. (NB: this file has
+been withdrawn from circulation, and all sites carrying it are requested to
+remove their copies.)
+
+Copyright over the documents covered by this statement is held by James
+William BREEN and The Electronic Dictionary Research and Development Group
+at Monash University.
+
+3. Usage, Copying and Distribution Permission and Restrictions
+
+Any person or organization in possession of a copy of any of the files
+covered by this statement, whether they have received the copy via free
+distribution or purchase:
+
+   1.
+   
+         must as part of the receiving of the copy undertake to be bound by
+all the conditions in this document relating to the distribution or usage of
+the files.
+
+   2.
+   
+         must undertake not to assert copyright over any portion of the files.
+		 
+		    3.
+			
+			      may use the file for personal purposes such as to assist
+with reading texts, research, translation services, etc.
+
+   4.
+   
+         may supply extracts or small portions of the files to other persons
+or organizations in the form of written documents, electronic mail, etc.
+
+   5.
+   
+         may make and distribute verbatim copies of these files provided the
+full documentation of the files and this copyright notice and permission
+notice are distributed with all copies.
+
+   6.
+   
+         may place copies of these files on WWW, ftp and equivalent servers
+for subsequent distribution provided the full documentation of the files and
+this copyright notice and permission notice are also made available on the
+servers, and are given equivalent notification to potential down-loaders of
+the files. For WWW distribution, there must be links to either local copies
+of the documentation and licence files or to the locations of the files at
+Monash University, and acknowledgement must be made of the source of the
+files.
+
+   7.
+   
+         may make and distribute extracts or subsets of the files, or files
+in other formats and codings containing material selected from the files,
+under the same conditions applying to verbatim copies. Where a subset of a
+file is being made, either by reducing the number of entries or by reducing
+the amount of information in entries or both, the nature of the subset must
+be made clear in documentation accompanying the distribution of the subset.
+
+   8.
+   
+         must either make every endeavour to ensure that the versions of the
+files they distribute are the most recent available, or must make the
+version and date clear and prominent in their documentation, WWW page, etc.
+and supply information as to where and how the most recent version may be
+obtained.
+
+   9.
+   
+         may translate elements of the files into other languages, and to
+make and distribute copies of those translations under the same conditions
+applying to verbatim copies.
+
+  10.
+  
+        may use these files as part of, or in association with a software
+package or system. Full acknowledgement of the source of the files must be
+made both in the promotional material, WWW pages and software documentation,
+and where the files play a major part in the package, e.g. in the case of
+the package being a dictionary system based on the files, prominent
+reference to the source and status of the files must be made on any GUI
+screens, etc. associated with using the files. In the case of the EDICT,
+JMdict and KANJIDIC files, the following URLs must be used or quoted:
+          * http://www.csse.monash.edu.au/~jwb/edict.html
+          * http://www.csse.monash.edu.au/~jwb/jmdict.html
+          * http://www.csse.monash.edu.au/~jwb/kanjidic.html
+																  
+   11.
+																	
+
+may publish all or part of the files on paper or digital media such as
+CD-ROM, provided clear and prominent acknowledgement of the source is made
+in the publication.
+
+Note that in all cases, the addition of material to the files or to extracts
+from the files does not remove or in any way diminish the Group's copyright
+over the files.
+
+Note also that there is no restriction placed on commercial use of the
+files. Where use of the files results in a financial return to the user, it
+is suggested that the user make a donation to the Group to assist with the
+continued development of the files.
+
+4. Warranty and Liability
+
+While every effort has been made to ensure the accuracy of the information
+in the files, it is possible that errors may still be included. The files
+are made available without any warranty whatsoever as to their accuracy or
+suitability for a particular application.
+
+Any individual or organization making use of the files must agree:
+
+   1.
+   
+         to assume all liability for the use or misuse of the files, and
+must agree not to hold Monash University or the Group liable for any actions
+or events resulting from use of the files.
+
+   2.
+   
+         to refrain from bringing action or suit or claim against Monash
+University or the Group on the basis of the use of the files, or any
+information included in the files.
+
+   3.
+   
+         to indemnify Monash University or the Group in the case of action
+by a third party on the basis of the use of the files, or any information
+included in the files.
+
+5. Copyright
+
+Every effort has been made in the compilation of these files to ensure that
+the copyright of other compilers of dictionaries and lexicographic material
+has not been infringed. The Group asserts its intention to rectify
+immediately any breach of copyright brought to its attention.
+
+Any individual or organization in possession of copies of the files, upon
+becoming aware that a possible copyright infringement may be present in the
+files, must undertake to contact the Group immediately with details of the
+possible infringement.
+
+6. Prior Permission
+
+All permissions for use of the files granted by James William Breen prior to
+March 2000 will be honoured and maintained, however the placing of the
+KANJD212 and EDICTH files under the GNU GPL has been withdrawn as of 25
+March 2000.
+
+7. Special Conditions for the KANJIDIC File
+
+In addition to licensing arrangements described above, the following
+additional conditions apply to the KANJIDIC file.
+
+The following people have granted permission for material for which they
+hold copyright to be included in the files, and distributed under the above
+conditions, while retaining their copyright over that material:
+
+Jack HALPERN: The SKIP codes and Frequency codes in the KANJIDIC file.
+
+With regard to the Frequency codes, Mr Halpern has stated as follows: "The
+commercial utilization of the frequency numbers is prohibited without
+written permission from Jack Halpern. Use by individuals and small groups
+for reference and research purposes is permitted, on condition that
+acknowledgement of the source and this notice are included."
+
+With regard to the SKIP codes, Mr Halpern draws your attention to the
+statement he has prepared on the matter.
+
+Christian WITTERN and Koichi YASUOKA: The Pinyin information in the KANJIDIC
+file.
+
+Urs APP: the Four Corner codes and the Morohashi information in the KANJIDIC
+file.
+
+Mark SPAHN and Wolfgang HADAMITZKY: the kanji descriptors from their
+dictionary.
+
+Charles MULLER: the Korean readings.
+
+Joseph DE ROO: the De Roo codes.
+
+8. Enquiries
+
+All enquiries to:
+
+The Electronic Dictionary Research and Development Group
+(Attn: Assoc. Prof. Jim Breen)
+School of Computer Science and Software Engineering
+Monash University
+CLAYTON VIC 3168
+AUSTRALIA

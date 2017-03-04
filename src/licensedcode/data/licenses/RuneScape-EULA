@@ -1,0 +1,193 @@
+END USER LICENCE AGREEMENT FOR RUNESCAPE CLIENT
+
+PLEASE READ CAREFULLY BEFORE INSTALLING THE SOFTWARE
+
+This licence agreement (Licence) is a legal agreement between you (Licensee or you) and Jagex Limited of St John's Innovation Centre Cowley Road, Cambridge, CB4 0WS (Jagex, us or we) for the software program, and any files delivered to you to "patch", update or otherwise modify the software program known as RuneScape Client (Software).  We licence use of the Software to you on the basis of this Licence. We do not sell the Software to you and we remain the owners of the Software at all times.
+
+IMPORTANT NOTICE TO ALL USERS:
+* BY INSTALLING THE SOFTWARE OR OTHERWISE USING THE SOFTWARE YOU AGREE TO THE TERMS OF THIS LICENCE WHICH WILL BIND YOU.
+* IF YOU DO NOT AGREE TO THE TERMS OF THIS LICENCE, WE WILL NOT LICENCE THE SOFTWARE TO YOU AND YOU ARE NOT PERMITTED TO INSTALL, COPY OR USE THE SOFTWARE.
+
+In addition to the terms of this Licence, any and all uses of the Software are subject to the Privacy Policy located at http://www.jagex.com/privacy/privacy.ws; and the Terms and Conditions of use available at: http://www.jagex.com/terms/terms.ws, both of which are incorporated into this Licence by reference.
+
+1   GRANT AND SCOPE OF LICENCE
+
+1.1 Subject to you complying with this Licence, Jagex hereby grant to you a non-exclusive, non-transferable, limited, revocable licence to: (a) download, install and use the Software on one or more computers owned by you or under your legitimate control; and (b) use the Software for your non-commercial, personal purposes only.
+
+2   RESTRICTIONS
+
+2.1 Except as expressly set out in this Licence or as permitted by any local law, you undertake:
+a.  not to, in whole or in part, copy, reproduce, disassemble, decompile, reverse-engineer or create derivative works of the Software; except where such copying is incidental to normal use of the Software;
+b.  not to rent, sell, lease, sub-licence, loan, publish, display, distribute or otherwise transfer to a third party the Software, any copy thereof, in whole or in part;
+c.  not to translate, merge, adapt, vary or make alterations to, or modifications of, the whole or any part of the Software, nor permit the Software or any part of it to be combined with, or become incorporated in, any other programs; and
+d.  not to exploit the Software or any of its parts for any commercial purpose.
+
+2.2 Any use of the Software in violation of the Licence and restrictions will be regarded as an infringement of Jagex's copyrights in and to the Software and any use of the Software not expressly authorised by the terms of the Licence is expressly prohibited.
+
+3   INTELLECTUAL PROPERTY RIGHTS
+
+3.1 You acknowledge that all title, ownership rights and intellectual property rights in and to the Software and all copies thereof (including without limitation any titles, computer code, themes, objects, characters, storylines, catch phrases, locations, concepts, artwork, landscape designs, animations, sounds, musical compositions, recordings and audio-visual effects) anywhere in the world belong to us.
+
+3.2 You acknowledge that rights in the Software are licensed (not sold) to you, and that you have no rights in, or to, the Software other than the right to use them in accordance with the terms of this Licence.
+
+4   DISCLAIMER OF WARRANTIES
+
+4.1 TO THE FULLEST EXTENT PERMISSIBLE UNDER APPLICABLE LAW, THE SOFTWARE IS PROVIDED "AS IS" WITH ALL FAULTS, WITHOUT WARRANTY, PERFORMANCE ASSURANCES OR GUARANTEES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTIES OF CONDITION, QUALITY, SATISFACTION, UNINTERRUPTED USE, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NONINFRINGEMENT. YOUR USE IS AT YOUR SOLE RISK. JAGEX DOES NOT WARRANT THAT THE SOFTWARE WILL BE ERROR-FREE, OR THAT THE SOFTWARE WILL INTEROPERATE OR BE COMPATIBLE WITH ANY OTHER SOFTWARE OR THAT ANY ERRORS IN THE SOFTWARE WILL BE CORRECTED.
+
+5   LIMITATION OF LIABILITY
+
+5.1 SUBJECT TO SECTION 5.3, JAGEX SHALL NOT BE LIABLE IN ANY WAY FOR ANY LOSS OR DAMAGE OF ANY KIND ARISING OUT OF THE SOFTWARE OR ANY USE OF THE SOFTWARE, INCLUDING WITHOUT LIMITATION LOSS OF DATA, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR LOSSES. FURTHER, JAGEX SHALL NOT BE LIABLE IN ANY WAY FOR ANY LOSS OR DAMAGE TO PLAYER CHARACTERS, VIRTUAL GOODS OR CURRENCY, ACCOUNTS OR STATISTICS. JAGEX SHALL NOT BE RESPONSIBLE FOR ANY INTERRUPTIONS OF SERVICE, INCLUDING WITHOUT LIMITATION ISP DISRUPTIONS, SOFTWARE OR HARDWARE FAILURES, OR ANY OTHER EVENT WHICH MAY RESULT IN A LOSS OF DATA OR DISRUPTION OF SERVICE. IN NO EVENT WILL JAGEX BE LIABLE TO YOU FOR ANY INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES.
+
+5.2 In no event shall Jagex's liability, whether arising in contract, tort, strict liability or otherwise, exceed (in the aggregate) the total fees paid by you for the Software.
+
+5.3 Nothing in this Licence shall limit or exclude our liability for: (a) death or personal injury resulting from our negligence; (b) fraud or fraudulent misrepresentation; or (c) any other liability that cannot be excluded or limited by English law.
+
+6   TERMINATION
+
+6.1 We may terminate this Licence immediately if you commit a material or persistent breach of this Licence.
+
+6.2 Upon termination for any reason: (a) all rights granted to you under this Licence shall cease; (b) you must immediately cease all activities authorised by this Licence; and (c) you must immediately delete or remove the Software from all computer equipment in your possession.
+
+7   THIRD PARTY ACKNOWLEDGMENTS
+
+7.1 The Software may use or include third-party software ("Third Party Software"). A list of the Third Party Software used in the Software is included at Annex A to this Licence, along with any conditions or restrictions to use. In no event will the Software be deemed to be "open-source" or "publicly available" software.
+
+8   GENERAL
+
+8.1 We may transfer our rights and obligations under this Licence to another organisation, but this will not affect your rights or our obligations under this Licence.
+
+8.2 If we fail to insist that you perform any of your obligations under this Licence, or if we do not enforce our rights against you, or if we delay in doing so, that will not mean that we have waived our rights against you and will not mean that you do not have to comply with those obligations.
+
+8.3 Each of the conditions of this Licence operates separately. If any court or competent authority decides that any of them are unlawful or unenforceable, the remaining conditions will remain in full force and effect.
+
+8.4 This Licence, its subject matter and its formation, are governed by English law. You and we both agree that the courts of England and Wales will have exclusive jurisdiction.
+
+8.5 We may replace this Licence with new versions (each a "New EULA") over time as the Software and the law evolve. Jagex may change, modify, suspend, or discontinue any aspect of the Software at any time.
+
+8.6 This Licence constitutes and contains the entire agreement between the parties with respect to the subject matter hereof, provided, however, that this Licence shall coexist with, and shall not supersede, the Terms and Conditions of use and the Privacy Policy.
+
+=================================================================
+ANNEX A
+
+This Software uses various Third Party Software libraries and we are grateful to their authors for their work.
+
+-----------------------------------------------------------------
+General thanks to:
+
+* LibTomMath author Tom St Denis
+* LZMA SDK author Igor Pavlov
+* ZLib General Purpose Compression Library authors Jean-loup Gailly and Mark Adler
+* LibBZip author Julian Seward
+* LibPNG Contributing Authors and Group 42, Inc.
+* Paul Bourke for his RGB colour space work http://paulbourke.net/texture_colour/colourspace/
+
+(Used during development, but not part of this distribution):
+* CMake contributors
+* vera++ contributors
+
+-----------------------------------------------------------------
+Conditions or restrictions attaching to use of some of the Third Party Software follows below:
+
+-----------------------------------------------------------------
+ANGLE:
+
+Copyright (C) 2002-2013 The ANGLE Project Authors.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+Neither the name of TransGaming Inc., Google Inc., 3DLabs Inc. Ltd., nor the names of their contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-----------------------------------------------------------------
+cURL:
+
+COPYRIGHT AND PERMISSION NOTICE
+
+Copyright (c) 1996 - 2015, Daniel Stenberg, daniel@haxx.se.
+
+All rights reserved.
+
+Permission to use, copy, modify, and distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Except as contained in this notice, the name of a copyright holder shall not be used in advertising or otherwise to promote the sale, use or other dealings in
+this Software without prior written authorization of the copyright holder.
+
+-----------------------------------------------------------------
+EASTL:
+
+Copyright (C) 2009-2010 Electronic Arts, Inc.  All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions
+are met:
+
+1.  Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+2.  Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+3.  Neither the name of Electronic Arts, Inc. ("EA") nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY ELECTRONIC ARTS AND ITS CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL ELECTRONIC ARTS OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-----------------------------------------------------------------
+GLEW:
+
+The OpenGL Extension Wrangler Library
+Copyright (C) 2002-2007, Milan Ikits <milan ikits[]ieee org>
+Copyright (C) 2002-2007, Marcelo E. Magallon <mmagallo[]debian org>
+Copyright (C) 2002, Lev Povalahev
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+* The name of the author may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Mesa 3-D graphics library
+Version:  7.0
+
+Copyright (C) 1999-2007  Brian Paul   All Rights Reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL BRIAN PAUL BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+Copyright (c) 2007 The Khronos Group Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and/or associated documentation files (the "Materials"), to deal in the Materials without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Materials, and to permit persons to whom the Materials are furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Materials.
+
+THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
+
+-----------------------------------------------------------------
+Paul Bourke's RGB colour space work http://paulbourke.net/texture_colour/colourspace/
+
+(C) Copyright Paul Bourke. All rights reserved
+
+-----------------------------------------------------------------
+FXAA algorithm and shader code:
+
+Based on standard FXAA algorithm by Timothy Lottes at NVIDIA, WebGL GLSL port from Florian Boesch:
+https://github.com/pyalot/webgl-deferred-irradiance-volumes/blob/master/README.md
+
+MIT Licensed:
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

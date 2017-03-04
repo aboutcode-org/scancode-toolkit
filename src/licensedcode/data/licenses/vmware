@@ -1,0 +1,221 @@
+                   END USER LICENSE AGREEMENT
+             FOR VMWARE(TM) DESKTOP SOFTWARE PRODUCT
+
+
+VMWARE, INC. LICENSES THIS DESKTOP SOFTWARE PRODUCT TO YOU SUBJECT TO
+YOUR ACCEPTANCE OF ALL OF THE TERMS CONTAINED IN THIS END USER LICENSE
+AGREEMENT ("EULA").  READ THE TERMS OF THIS EULA CAREFULLY.  IF YOU DO
+NOT ACCEPT THIS AGREEMENT AND YOU HAVE PROOF OF PAYMENT, YOU MAY RETURN
+THE UNOPENED SOFTWARE TO THE LOCATION AT WHICH YOU ACQUIRED IT WITHIN
+THIRTY  (30) DAYS FOR A REFUND OF THE LICENSE FEE.  IF YOU ARE VIEWING
+THIS EULA ELECTRONICALLY, SELECT THE "YES" BUTTON AT THE BOTTOM OF THIS
+PAGE TO INDICATE YOUR AGREEMENT TO THE TERMS OF THIS EULA.  IF YOU ARE NOT
+WILLING TO BE BOUND BY ITS TERMS, SELECT THE "NO" BUTTON AT THE BOTTOM OF
+THIS PAGE AND THE REGISTRATION OR INSTALLATION PROCESS WILL NOT CONTINUE.
+
+NOTICE TO CUSTOMER
+If you do not agree to the terms of this EULA, do not install, activate,
+or use this software.  This EULA is a contract between you (either an
+individual or an entity) and VMware, Inc. ("VMware"), which governs
+your use of the VMware software product that accompanies this EULA
+and related software components, which may include associated media,
+printed materials, and online or electronic documentation.
+
+DEFINITIONS
+In this EULA, the Desktop software and associated media, printed
+materials, and online or electronic documentation are collectively
+referred to as the "Software."  When installed, the Software enables
+you to run one or more instances of third-party operating systems
+("Guest Operating Systems") and applications on a single computer system.
+A software activation file and a serial number ("Software License Key")
+issued to you by VMware are required to use the Software.  The term
+"Number of Licensed Users" means the number one (1), unless you received
+a VMware License Certificate with this software product, in which case
+the term "Number of Licensed Users" means the Number of Licensed Users
+set forth on the VMware License Certificate.
+
+WARNING FOR EVALUATION LICENSEES
+The Software can be activated with a no-cost evaluation Software
+License Key.  Evaluation Software License Keys have an expiration date
+("Expiration Date").  If you activate the Software with an evaluation
+Software License Key: (i) you may use the Software until the Expiration
+Date only to evaluate the suitability of the Software for licensing
+on a for-fee basis; (ii) the limited 90-day warranty below is not
+applicable to you; and (iii) THE SOFTWARE IS PROVIDED TO YOU "AS IS"
+WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR
+OTHERWISE.  VMWARE BEARS NO LIABILITY FOR ANY DAMAGES RESULTING FROM USE
+(OR ATTEMPTED USE) OF THE SOFTWARE THROUGH OR AFTER THE EXPIRATION DATE,
+AND HAS NO DUTY TO PROVIDE SUPPORT TO YOU.
+
+LICENSE
+The Software is licensed, not sold.  Subject to the terms and limitations
+of this EULA, VMware hereby grants you a nonexclusive, nontransferable
+license, without rights to sublicense, to (i) make a number of copies
+of the Software less than or equal to the Number of Licensed Users for
+the purpose of installing a single copy of the Software on an equivalent
+number of computers, each of which is running a validly licensed copy
+of the operating system for which the Software is designed; (ii) use
+the Software License Key to activate each copy of the Software made in
+accordance with sub-clause (i); (iii) have up to the Number of Licensed
+Users use the Software (in object code form only) solely for your
+own internal information processing services and computing needs; and
+(iv) use the documentation accompanying the Software in connection with
+permitted uses of the Software.  If you are an entity, each copy of the
+Software may be used by one designated individual user only.  The total
+number of designated users may not exceed the Number of Licensed Users.
+Each copy of the Software may not be used by any other person, whether or
+not such person is employed by or otherwise associated with your entity.
+
+LIMITED SHARED USE LICENSE
+For shared use computing laboratory environments within academic
+institutions, the license grant above shall be modified to permit use
+of the Software on a single computer system without the limitation
+that such use be limited to the designated user(s); provided that any
+such user(s) agree to and abide by the terms of this EULA; provided
+further that you must acquire and dedicate a Software License Key for
+each separate computer system on which the Software is installed. Under
+this shared computing laboratory use license, a computing laboratory at
+an academic institution having ten computers loaded with the Software
+on which no more than five users would concurrently access and use the
+Software, for example, would require ten Software License Keys. Unless
+the computing laboratory is operated and maintained by and within an
+academic institution, this limited shared use license does not apply.
+
+LICENSE LIMITATIONS
+You may not copy the Software except for a reasonable number of
+machine-readable copies of the Software for backup or archival purposes
+and except as expressly permitted in the License section above.  You may
+not share or use concurrently the Software except as expressly permitted
+in the Limited Shared Use License section above.  You may not remove
+any titles, trademarks or trade names, copyright notices, legends, or
+other proprietary markings on the Software.  You are not granted any
+rights to any trademarks or service marks of VMware.  VMware retains
+all rights not expressly granted to you.
+
+LICENSE AS UPGRADE OF PREVIOUSLY LICENSED PRODUCT
+If you purchased this Desktop software product as an upgrade at the
+applicable upgrade price, then you must have previously purchased a
+prior version of this Desktop software product at the applicable product
+(not upgrade) price.  If you have not purchased a prior version at the
+applicable product price, then please contact the vendor from whom you
+purchased the upgrade, or, if you are unable to contact your vendor,
+VMware, to make payment for the difference between the upgrade price
+and the product price within thirty (30) days of the date you purchased
+the upgrade.  If you do not make the appropriate payment to your vendor
+or VMware within thirty (30) days, this EULA will automatically terminate
+and you must comply with the termination provisions below.
+
+LICENSES REQUIRED FOR THIRD-PARTY SOFTWARE
+The Software allows multiple Guest Operating Systems and applications to
+run on a single computer system. You are responsible for obtaining any
+licenses necessary to operate any such third-party software, including
+Guest Operating Systems. In the event that the Software includes a valid
+licensed copy of a Guest Operating System for pre-installation with
+the Software, the use of such Guest Operating System shall be defined
+by the end user license agreement for that Guest Operating System.
+By explicitly accepting this EULA, or by installing, copying, downloading,
+accessing, or otherwise using the Software and/or Software License Key,
+you are acknowledging and agreeing to be bound by the terms of the end
+user license agreement for the pre-installed Guest Operating System,
+which terms accompany the Guest Operating System.
+
+PROPRIETARY RIGHTS RESERVED BY VMWARE
+VMware retains all right, title, and interest in and to the Software and
+the Software License Key and in all related copyrights, trade secrets,
+patents, trademarks, and any other intellectual and industrial property
+and proprietary rights, including registrations, applications, renewals,
+and extensions of such rights.
+
+RESTRICTIONS
+You may not (i) sell, lease, license, sublicense, or otherwise transfer
+in whole or in part the Software or the Software License Key to another
+party; (ii) provide, disclose, divulge or make available to, or permit
+use of the Software in whole or in part by, any third party, including
+contractors, without VMware's prior written consent; (iii) decompile,
+disassemble, reverse engineer, or otherwise attempt to derive source code
+from the Software, in whole or in part; (iv) modify or create derivative
+works based upon the Software; or (v) use the Software to provide network,
+application hosting or other services to third parties, or otherwise
+use the Software on a service bureau or hosting basis for your customers.
+
+SUPPORT SERVICES
+VMware may provide limited web-based support services related to
+the Software for a period of thirty (30) days after the date of
+purchase. Additional support services may be purchased separately.
+Any such support services provided by VMware will be governed by the
+VMware polices and programs described in online documentation and other
+VMware provided materials.  Any supplemental software code or related
+materials that VMware provides to you as part of any support services are
+to be considered part of the Software and are subject to the terms and
+conditions of this EULA.  VMware may use any technical information you
+provide to VMware for any VMware business purposes without restriction,
+including for product support and development. VMware will not use
+information in a form that personally identifies you.
+
+UPDATES AND UPGRADES NOT INCLUDED
+This EULA does not give you any rights to any updates or upgrades to the
+Software or to any extensions or enhancements to the Software developed
+by VMware at any time in the future.  Rights to any future developments
+will be governed by a separate subscription contract that you may sign
+with VMware or by the end user license agreement relating to those
+developments, in each case as described in the online documentation or
+other VMware provided materials.
+
+TERMINATION
+VMware may terminate this EULA if you fail to comply with any term of
+this EULA.  In the event of termination, you must destroy all copies of
+the Software and Software License Key.  In addition you must remove all
+copies of the Software from the computer(s) on which it is installed.
+
+GOVERNMENT RESTRICTIONS
+You may not export or re-export the Software except in compliance with
+the United States Export Administration Act and the related rules and
+regulations and similar non-U.S. government restrictions, if applicable.
+The Software and accompanying documentation are deemed to be "commercial
+computer software" and "commercial computer software documentation,"
+respectively, pursuant to DFAR Section 227.7202 and FAR Section 12.212(b),
+as applicable.  Any use, modification, reproduction, release, performing,
+displaying, or disclosing of the Software by the U.S. Government shall
+be governed solely by the terms of this EULA.
+
+LIMITED WARRANTY
+VMware warrants that the media, if any, on which the Software is delivered
+will be free of defects and that the Software will substantially conform
+to the description contained in the applicable documentation, in each
+case for a period of 90 days after the date of delivery of the Software
+License Key.  EXCEPT FOR THE PRECEDING EXPRESS LIMITED WARRANTY, VMWARE
+MAKES AND YOU RECEIVE NO WARRANTIES  ON THE SOFTWARE, EXPRESS, IMPLIED,
+STATUTORY, OR IN ANY OTHER PROVISION OF THIS EULA OR COMMUNICATION
+WITH YOU, AND VMWARE SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+LIMITATION OF LIABILITY
+IN NO EVENT WILL VMWARE BE LIABLE FOR ANY LOST PROFITS OR BUSINESS
+OPPORTUNITIES, LOSS OF USE, BUSINESS INTERRUPTION, LOSS OF DATA, OR
+ANY OTHER INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES
+UNDER ANY THEORY OF LIABILITY, WHETHER BASED IN CONTRACT, TORT,
+NEGLIGENCE, PRODUCT LIABILITY, OR OTHERWISE.  THIS LIMITATION SHALL
+APPLY REGARDLESS OF WHETHER VMWARE HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES. VMWARE'S LIABILITY UNDER THIS EULA WILL NOT, IN ANY EVENT,
+EXCEED THE LICENSE FEES, IF ANY, PAID BY YOU TO VMWARE FOR THE SOFTWARE
+LICENSED BY YOU UNDER THIS EULA.
+
+GENERAL
+This EULA is governed by the laws of the State of California,
+U.S.A. without regard to conflict of law principles. The United Nations
+Convention for the International Sale of Goods shall not apply.  This EULA
+is the entire agreement between us and supersedes any other communications
+or advertising with respect to the Software.  If any provision of this
+EULA is held invalid, the remainder of this EULA shall continue in full
+force and effect.  This EULA may be modified only by written agreement
+signed by authorized representatives of you and VMware.
+
+CONTACT INFORMATION
+If you have any questions about this EULA, or if you want to contact
+VMware for any reason, please direct all correspondence to: VMware,
+Inc., 3145 Porter Drive, Building F, Palo Alto, CA 94304, United States
+of America or email info@vmware.com.
+
+VMware is a trademark of VMware, Inc.
+
+

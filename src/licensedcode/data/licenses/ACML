@@ -1,0 +1,186 @@
+LICENSE AGREEMENT
+AMD CORE MATH LIBRARY
+
+IMPORTANT: This is a legal agreement ("Agreement") between you, either
+as an individual or an entity, (the "USER") and Advanced Micro Devices,
+Inc. ("AMD").  By loading the software or any portion thereof
+("Software"), and any related documentation ("Documentation"), USER
+agrees to all of the terms of this Agreement.  Additionally, USER
+remains subject to the original terms and conditions of any other
+software license agreements entered into by USER and a third party.
+USER is responsible for ensuring that use of the Software provided by
+AMD is not in violation of any such agreement.
+
+DO NOT LOAD THIS SOFTWARE UNTIL YOU HAVE CAREFULLY READ
+AND AGREED TO THE FOLLOWING TERMS AND CONDITIONS.
+LOADING OR OTHERWISE USING THE SOFTWARE OR DOCUMENTATION
+CONSTITUTES ACCEPTANCE OF THE TERMS AND CONDITIONS SET
+FORTH IN THIS AGREEMENT.  IF YOU DO NOT AGREE TO THE
+TERMS OF THIS AGREEMENT, DO NOT INSTALL OR USE THIS
+SOFTWARE, DOCUMENTATION OR ANY PORTION THEREOF.
+
+NOW THEREFORE, the parties hereto agree as follows:
+
+1. Definitions.
+  a. "Updates" shall mean updated versions of the Software or
+     Documentation that AMD may provide, in its sole discretion, to USER
+     from time to time under the terms and conditions of this Agreement.
+  b. "Executable Code" shall mean all software in a machine-readable,
+     binary or executable form.
+  c. "Source Code" shall mean all software in human-readable or source form.
+  d. "Licensed Materials" shall mean the Source Code and Executable Code
+     of the Software as provided to USER by AMD, including Documentation and
+     Updates.
+  e. "Effective Date" shall mean a date upon which USER uses the Software
+     or accesses the Documentation.
+
+2. License.
+  a. Subject to the terms of this Agreement, AMD hereby grants to
+     USER a limited, non-exclusive, non-transferable, royalty-free
+     copyright license to only use the Licensed Materials for the
+     purpose of executing software on AMD64 processor-based computer
+     systems and for evaluating the performance of such software on
+     AMD64 processor-based computer systems. Except for the limited
+     licenses granted in this Section 2.a., USER shall have no other
+     rights in the Licensed Materials, whether express, implied,
+     arising by estoppel or otherwise. If USER desires to distribute
+     any of the Licensed Materials, USER shall enter into a separate
+     written agreement with AMD.
+  b. Without limiting Section 2.a. above, USER does NOT have the right:
+      (i) to modify, adapt, translate, or create derivative works based
+          upon the Licensed Materials or any part thereof; or
+     (ii) to modify, disassemble, reverse engineer, decompile, or otherwise
+          reduce to source code or any human perceivable form any part of the
+          Software or Updates thereto that are not already Source Code; or
+    (iii) to remove proprietary legends in the Licensed Materials, including
+          but not limited to legends that protect AMD's patent, trade secret,
+          copyright and other proprietary rights in the Licensed Materials.
+
+3. Ownership and Copyright of Material.
+  The Licensed Materials are owned by AMD and its licensors and are
+  protected by United States intellectual property laws and international
+  treaty provisions.  Except as expressly provided herein, AMD does not
+  grant any express or implied right to USER under AMD patents,
+  copyrights, trademarks, or trade secret information.
+
+4. Obligations of the Parties.
+  a. Licensed Materials.
+     USER may use the Licensed Materials only in accordance with the terms
+     and conditions of this Agreement.
+  b. Feedback.
+     During the term of this Agreement, USER may inform AMD of all errors,
+     difficulties or other problems with the Licensed Materials, collectively
+     referred to as "feedback". AMD may use for any purpose whatsoever, any
+     feedback USER provides regarding the Licensed Materials, including, but
+     not limited to, usability, bug reports and test reports.
+  c. Issuance of Software.
+     AMD shall not be obligated to make the Licensed Materials publicly
+     available, in whole or in part.
+  d. Support.
+     AMD may, in its sole discretion, provide to USER Updates to the Software
+     and Documentation, and such Updates will be covered under this
+     Agreement.  AMD is under no obligation to provide USER with any Updates,
+     support, or maintenance of the Software or Documentation.
+
+5. Disclaimer of Warranty.
+  AMD MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE
+  PERFORMANCE OF THE LICENSED MATERIALS IN ANY WAY.
+  FURTHERMORE, NO WARRANTIES, EXPRESS OR IMPLIED, ARE MADE
+  WITH RESPECT TO THE LICENSED MATERIALS, INCLUDING BUT NOT
+  LIMITED TO, MERCHANTABILITY OR FITNESS FOR A PARTICULAR
+  PURPOSE, ANY WARRANTIES THAT MAY ARISE FROM USAGE OF
+  TRADE OR COURSE OF DEALING, AND ANY IMPLIED WARRANTIES OF
+  TITLE OR NON-INFRINGEMENT.  IN NO EVENT SHALL AMD BE
+  LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, INCIDENTAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES, EXPENSES, LOST
+  PROFITS, LOST SAVINGS, BUSINESS INTERRUPTION, LOST
+  BUSINESS INFORMATION, OR ANY OTHER DAMAGES ARISING OUT OF
+  THE USE OR INABILITY TO USE THE SOFTWARE, EVEN IF AMD HAS
+  BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  USER
+  acknowledges that its use of the Software without charge
+  reflects this allocation of risk.  Some states or
+  jurisdictions do not allow the exclusion or limitation of
+  incidental, consequential or special damages, or the
+  exclusion or implied warranties, and therefore, the above
+  limitations might not apply to USER.  In addition to the
+  disclaimer of warranties set forth above, it is
+  understood that AMD makes no representations concerning
+  the completeness, accuracy or operation of the Licensed
+  Materials.  Furthermore, USER shall have the sole
+  responsibility for adequate protection and backup of its
+  data used in connection with the licensed materials, and
+  USER shall not make any claim against AMD for lost data,
+  re-run time, inaccurate input, work delays or lost
+  profits resulting from the use of the Licensed Materials.
+
+6. Limitation of Liability.
+  If, notwithstanding the provisions of this Agreement, AMD shall at any
+  time have any liability arising from or by virtue of this Agreement,
+  whether due to AMD's gross negligence, AMD's breach of its obligations
+  under this Agreement, or otherwise, USER agrees that in no event will
+  the total aggregate liability of AMD for any claims, losses, or
+  damages exceed $10,000.  This limitation of liability is complete and
+  exclusive, shall apply even if AMD has been advised of the possibility
+  of such potential claims, losses, or damages, and shall apply
+  regardless of the success or effectiveness of any other remedies
+  possessed by USER, USER's customers, or any third parties.  This
+  limitation of liability reflects an agreed upon allocation of risk
+  between AMD and USER in view of the nature of this transaction.  AMD
+  assumes no liability that may arise out of the use or possession of
+  the Licensed Materials.
+
+7. Termination.
+  This Agreement shall expire in one (1) year or within five (5)
+  business days of written notice by AMD.  If USER fails to comply with
+  any of its obligations hereunder, AMD shall have the right, at any
+  time, to terminate the Agreement, and within five (5) days after
+  termination of the Agreement for any reason other than the Licensed
+  Materials being released as a standard AMD product, USER will remove
+  or certify to the destruction of, the Licensed Materials from its
+  computer systems and return to AMD the Licensed Materials in the form
+  provided by AMD.
+
+8. General
+  a. Entire Agreement.
+     This Agreement constitutes the entire agreement between the parties
+     and supersedes all prior agreements concerning the subject matter
+     herein and may not be changed or terminated except by a written
+     communication signed by the party against whom the same is sought to
+     be enforced.
+  b. Severability.
+     If any of the provisions of this Agreement are invalid under any
+     applicable statute or rule of law, such provisions or portions thereof
+     are to that extent deemed to be omitted.  The waiver or failure of
+     either party to exercise in any respect any right provided for herein
+     shall not be deemed a waiver of any further right hereunder.  The
+     USER's remedies in this Agreement are exclusive.
+  c. Governing Law, Venue.
+     This Agreement shall be governed by the laws of the State of
+     California.  Each party hereto submits to the jurisdiction of the
+     state and federal courts of Santa Clara County and the Northern
+     District of California for the purposes of all legal proceedings
+     arising out of or relating to this Agreement or the subject matter
+     hereof.  Each party waives any objection which it may have to contest
+     such forum.
+  d. Export.
+     USER shall comply with any applicable laws regarding the use, export
+     or re-export of the Licensed Materials and any other information
+     contained herein, including all applicable regulations of the
+     U.S. Department of Commerce and/or the U.S. State Department.
+  e. Government Users.
+     If USER is a U.S. Government USER, then the Software is provided with
+     "RESTRICTED RIGHTS" as set forth in subparagraphs (c) (1) and (2) of
+     the Commercial Computer Software-Restricted Rights clause at FAR
+     52.227-14 or subparagraph (c) (1)(ii) of the Rights in Technical Data
+     and Computer Software clause at DFARS 252.277-7013, as applicable.
+  f. No waiver.
+     The failure of AMD to enforce any rights granted hereunder or to take
+     action against USER in the event of any breach hereunder shall not be
+     deemed a waiver by AMD as to subsequent enforcement of rights or
+     subsequent actions in the event of future breaches.
+
+If you agree to abide by the terms and conditions of this Agreement,
+please click "Accept."  IF YOU DO NOT AGREE TO ABIDE BY THE TERMS
+AND CONDITIONS OF THIS AGREEMENT AND CLICK "DECLINE," YOU MAY NOT
+USE THE LICENSED MATERIALS AND MUST DESTROY THEM OR RETURN THEM
+TO AMD IMMEDIATELY.

@@ -1,0 +1,126 @@
+Copyright (c) 2000-2003, Whitehead Institute for Biomedical 
+Research; 2003-2006 Massachusetts Institute of Technology.
+
+Redistribution and use in source and binary forms are subject to the 
+terms of the following license agreement.
+
+----------------------------------------------------------------
+             *** (PROGRAM NAME) LICENSE AGREEMENT ***
+
+This License Agreement (the "Agreement") is made between the 
+Massachusetts Institute of Technology, a not-for-profit organization 
+and the licensing agent for the Whitehead Institute for Biomedical 
+Research ("WHITEHEAD") with a principal address at 77 Massachusetts 
+Avenue, Cambridge, MA 02139 ("M.I.T."), and the individual 
+downloading this program ("YOU"), and is effective at the date the 
+downloading is completed ("Effective Date").  WHITEHEAD and M.I.T. 
+are the owners of certain rights, title, and interest in the 
+computer program entitled (PROGRAM NAME) and related documentation, if 
+any, as they exist on the Effective Date and as can be downloaded 
+from http://www.broad.mit.edu/wga/ on the Effective Date (the 
+"Program").  YOU wish to obtain and M.I.T. agrees to grant, on its 
+own behalf and on behalf of WHITEHEAD, a non-exclusive license to 
+use and modify the program for internal research and educational 
+purposes only under the terms of the Agreement.  M.I.T. and YOU, in 
+consideration of the above, agree as follows:
+
+1. M.I.T. hereby grants to YOU, on the Effective Date, nonexclusive 
+rights to use, reproduce, modify, and display the source code and 
+executable code of the Program for internal research and educational 
+purposes only, without any rights whatsoever to redistribute the 
+program, under the terms and conditions of the Agreement.  WHITEHEAD 
+and M.I.T. retain all ownership rights in the Program, including 
+patent rights, copyrights, and licensing rights.  YOU may retain 
+ownership in Modifications created by YOU, provided that YOU hereby 
+grant to WHITEHEAD and M.I.T. a non-exclusive, royalty-free, 
+irrevocable, perpetual license to use reproduce, modify, display, 
+and distribute the source code and executable code in all such 
+Modifications.  YOU agree to forward to M.I.T. any and all 
+Modifications, sending such Modifications to: (PROGRAM NAME), Broad 
+Institute, 7 Cambridge Center, Cambridge, MA  02142, or in 
+electronic form to: wga@broad.mit.edu.  YOU shall be entitled to 
+establish all proprietary rights for itself in the Modifications, 
+provided that proper copyright attributions are maintained.  No 
+rights, express or implied, for use other than specified in this 
+Agreement are transferred.
+
+2. YOU agree to restrict the use of the Program to yourself for 
+research and educational purposes only.  YOU agree to use the 
+Program only at the site where the Program is downloaded.  YOU agree 
+that the Program will not be used as the basis of a commercial 
+software or hardware product and that the same will not be rewritten 
+in another computer language or otherwise adapted to circumvent the 
+need for obtaining a license from M.I.T. for use of the Program 
+other than as specified by this Agreement.
+
+3. The name of the Whitehead Institute, the "Broad Institute" or 
+M.I.T. may not be used to endorse or promote products derived from 
+this software.  YOU agree to acknowledge use of the Program in any 
+publication resulting from use of the Program according to academic 
+tradition.
+
+4. YOU acknowledge that title to the Program (including copyright) 
+will remain with WHITEHEAD and M.I.T. and that any copies of the 
+Program or portions of the Program made by YOU shall include 
+WHITEHEAD and M.I.T. copyright notices in the same format and 
+location as the copy received by YOU under this agreement.
+
+5. YOU accept the above materials on an "AS IS" basis. M.I.T. and 
+WHITEHEAD are under no obligation to load the Program onto YOUR 
+machines, test for proper operation, perform any debugging, make any 
+corrections, provide maintenance, provide any updates, or assist in 
+the understanding or use of the Program.  The Program is a research 
+program, and M.I.T. and WHITEHEAD do not represent that it is free 
+of errors or bugs or suitable for any particular tasks.
+
+6. YOU AGREE THAT THE RIGHTS GRANTED HEREUNDER ARE MADE AVAILABLE 
+WITHOUT WARRANTY OF ANY KIND, EXPRESSED OR IMPLIED, INCLUDING, BUT 
+NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS 
+FOR A PARTICULAR PURPOSE, AND FURTHER INCLUDING NO WARRANTY AS TO 
+CONFORMITY WITH WHATEVER USER MANUALS OR OTHER LITERATURE MAY BE 
+ISSUED FROM TIME TO TIME.  NOTHING IN THIS AGREEMENT SHALL BE 
+CONSTRUED AS A REPRESENTATION MADE OR WARRANTY GIVEN BY M.I.T. OR 
+WHITEHEAD THAT THE PRACTICE BY YOU OF THE LICENSE GRANTED HEREUNDER 
+SHALL NOT INFRINGE THE PATENT RIGHTS, COPYRIGHTS, OR OTHER 
+INTELLECTUAL PROPERTY RIGHTS OF M.I.T., WHITEHEAD, OR ANY THIRD 
+PARTY.
+
+IN NO EVENT SHALL M.I.T., WHITEHEAD, OR THEIR RESPECTIVE TRUSTEES, 
+DIRECTORS, OFFICERS, EMPLOYEES, AGENTS AND ASSOCIATES BE LIABLE FOR 
+INCIDENTAL OR CONSEQUENTIAL DAMAGES OF ANY KIND, INCLUDING ECONOMIC 
+DAMAGE OR INJURY TO PROPERTY AND LOST PROFITS, REGARDLESS OF WHETHER 
+M.I.T. OR WHITEHEAD SHALL BE ADVISED, SHALL HAVE OTHER REASON TO 
+KNOW, OR IN FACT SHALL KNOW OF THE POSSIBILITY.
+
+7. To the extent allowed by law, YOU shall at all times during the 
+term of this Agreement and thereafter, indemnify, defend and hold 
+harmless M.I.T., WHITEHEAD, and their respective trustees, 
+directors, officers, employees, agents and affiliates, against all 
+claims, proceedings, demands, and liabilities of any kind 
+whatsoever, including legal expenses and reasonable attorneys fees, 
+arising out of, connected with, resulting from or sustained as a 
+result of use of the Program by YOU.  In no event shall M.I.T. or 
+WHITEHEAD be liable for special, direct, indirect or consequential 
+damages, losses, costs, charges, claims, demands, fees, or expenses 
+of any nature or kind.
+
+8. This Agreement shall be construed, governed, interpreted, and 
+applied in accordance with the laws of the Commonwealth of 
+Massachusetts, U.S.A.
+
+9. The term of this Agreement is one year (the "Term").  At the end 
+of the Term, the Agreement shall be automatically renewed under the 
+same terms and conditions unless M.I.T. indicates otherwise.  M.I.T. 
+shall have the right to terminate this Agreement for any reason by 
+giving thirty (30) days written notice to YOU.  Upon termination for 
+any reason, YOU agree to destroy the original and all copies, 
+including partial copies, of the Program.
+
+10. The parties agree that this Agreement is the entire Agreement, 
+and shall not be subject to any change or modification except in 
+writing by both parties.
+
+11. The provisions of this Agreement are severable, and if any 
+provisions of this Agreement are determined to be invalid or 
+unenforceable, such determination shall not in any way affect the 
+validity or enforceability of the remaining provisions.

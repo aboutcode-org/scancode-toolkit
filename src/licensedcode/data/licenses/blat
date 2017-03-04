@@ -1,0 +1,9 @@
+CONTENTS AND COPYRIGHT
+
+This directory contains the entire source tree for Jim Kent and the
+UCSC Genome Bioinformatics Group's suite of biological analysis
+and web display programs.  All files are copyrighted, but license
+is hereby granted for personal, academic, and non-profit use.
+A license is also granted for the contents of the top level lib
+directory for commercial users.  Commercial users should contact
+kent@soe.ucsc.edu for access to other modules.

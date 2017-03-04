@@ -1,0 +1,80 @@
+End-User Software License Agreement for Caver
+
+1.
+National Centre for Biomolecular Research, Faculty of Science,
+Masaryk University Brno, The Czech Republic (``LICENSOR'') grants
+to (``LICENSEE'') non-exclusive, and non-transferable license to use
+the ``CAVER'' computer software program.
+Institute of Computer Science, Masaryk University Brno,
+The Czech Republic (``LICENSOR'') grants to (``LICENSEE'') non-exclusive.
+Using of the associated documentation furnished hereunder (hereinafter
+called the ``PROGRAM'') is also granted upon the terms and conditions
+hereinafter set out and until termination of this license as set forth below.
+LICENSEE will be furnished only by binaries of the program.
+No source code will be provided.
+
+2.
+LICENSEE understands that this Agreement is license for use of, not sale of,
+the PROGRAM. Consequently, no Purchase Orders can be accepted by LICENSOR.
+
+3.
+LICENSEE acknowledges that the PROGRAM is a research tool still in the
+development stage, that is being supplied ``as is'', without any accompanying
+services or improvements from LICENSOR and that this license is entered
+into in order to enable others to utilize the PROGRAM in their scholarly
+activities.
+
+4.
+LICENSEE agrees that PROGRAM will be properly cited whenever results
+obtained using it will be published (for details see the manual).
+
+5.
+LICENSOR MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED.
+By way of example, but not limitation, LICENSOR MAKES NO REPRESENTATIONS
+OR WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE
+OR THAT THE USE OF THE PROGRAM WILL NOT INFRINGE ANY PATENTS, COPYRIGHTS,
+TRADEMARKS OR OTHER RIGHTS. LICENSOR shall have no liability nor be liable
+for an direct, indirect or consequential damages with respect to any claim
+by LICENSEE or any third party on account of or arising from this Agreement
+or use of the PROGRAM.
+
+6.
+LICENSEE agrees that it will use the PROGRAM, and any modifications,
+improvements, or derivatives to PROGRAM that LICENSEE may create
+(collectively, ``IMPROVEMENTS'') solely for internal, non-commercial
+purposes and shall not distribute or transfer the PROGRAM OR
+IMPROVEMENTS to any person without prior written permission from
+LICENSOR. The term ``non-commercial'', as used in this Agreement,
+means academic or other scholarly research which (a) is not undertaken
+for profit, or (b) is not intended to produce works, services, or data for
+commercial use, or (c) is neither conducted, nor funded, by a person or
+an entity engaged in the commercial use, application or exploitation
+of works similar to the PROGRAM.
+
+7.
+LICENSEE agrees to notify LICENSOR of any IMPROVEMENTS made
+to the PROGRAM, as described in Section 5, above, and hereby (a)
+agrees to supply LICENSOR with a copy of same, and (b) grants
+LICENSOR a worldwide, perpetual license, with the right to sublicense
+(at any tier), such IMPROVEMENTS without any royalty or other
+obligation to LICENSEE.
+
+8.
+Ownership of all rights, including copyright in the PROGRAM and in any
+material associated therewith, shall at all times remain with LICENSOR
+and LICENSEE agrees to preserve same. LICENSEE agrees not to use
+any portion of the PROGRAM in any machine-readable form outside
+the PROGRAM, nor to make any copies except for its internal use,
+without prior written consent of LICENSOR. LICENSEE agrees to place
+the appropriate copyright notice on any such copies.
+
+9.
+This Agreement shall be construed, interpreted and applied in accordance
+with the law of the Czech Republic and any legal action arising
+out of this Agreement or use of the PROGRAM shall be filed in a court
+in the Czech Republic.
+
+10.
+This license shall be for a term of 5 years except that upon any breach
+of this Agreement by LICENSEE, LICENSOR shall have the right to
+terminate this license immediately upon notice to LICENSEE.

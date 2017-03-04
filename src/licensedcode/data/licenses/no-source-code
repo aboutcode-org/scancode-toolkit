@@ -1,0 +1,14 @@
+Gentoo license note: This package is distributed in binary form and
+its source code is not made available. This renders the package
+non-free in terms of the Free Software Definition [1], the Open Source
+Definition [2], or (for works other than software) the Definition of
+Free Cultural Works [3], even if it is distributed under a free
+software license. Source code is the preferred form in which a
+programmer would modify the work.
+
+The "no-source-code" license label must never be used on its own, but
+only along with the license under which the package is distributed.
+
+[1] http://www.gnu.org/philosophy/free-sw.html
+[2] http://opensource.org/osd
+[3] http://freedomdefined.org/

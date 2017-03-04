@@ -1,0 +1,25 @@
+The Institute of Electrical and Electronics Engineers (IEEE) and
+The Open Group, have given us permission to reprint portions of
+their documentation.
+
+In the following statement, the phrase ``this text'' refers to
+portions of the system documentation.
+
+Portions of this text are reprinted and reproduced in electronic form
+in the linux-manpages package, from IEEE Std 1003.1 (TM), 2003 Edition,
+Standard for Information Technology -- Portable Operating System
+Interface (POSIX (R)), The Open Group Base Specifications Issue 6,
+Copyright (C) 2001-2003 by the Institute of Electrical and Electronics
+Engineers, Inc and The Open Group.  In the event of any discrepancy
+between these versions and the original IEEE and The Open Group
+Standard, the original IEEE and The Open Group Standard is the referee
+document.  The original Standard can be obtained online at
+http://www.opengroup.org/unix/online.html .
+
+This notice shall appear on any product containing this material.
+
+Redistribution of this material is permitted so long as this notice and
+the corresponding notices within each POSIX manual page are retained on
+any distribution, and the nroff source is included.  Modifications to
+the text are permitted so long as any conflicts with the standard
+are clearly marked as such in the text.

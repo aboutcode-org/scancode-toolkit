@@ -1,0 +1,223 @@
+                                MOLMOL 2.6
+                      Copyright and Legal Information
+
+
+Date: May 22, 1998
+
+MOLMOL is a molecular graphics program for displaying, analysing, and
+manipulating the three-dimensional structure of biological macromolecules,
+with special emphasis on the study of protein or DNA structures determined
+by NMR. The following is legal information pertaining to the use of the
+MOLMOL program. It applies to all MOLMOL source files, executable (binary)
+files, configuration files, documentation files contained in the official
+MOLMOL archives. (Certain portions refer to custom versions of the
+software, there are specific rules listed below for these versions also.)
+All of these are referred to here as "the software".
+
+THIS NOTICE MUST ACCOMPANY ALL OFFICIAL OR CUSTOM MOLMOL FILES. IT MAY NOT
+BE REMOVED OR MODIFIED. THIS INFORMATION PERTAINS TO ALL USE OF THE PACKAGE
+WORLDWIDE. THIS DOCUMENT SUPERSEDES ALL PREVIOUS LICENSES OR DISTRIBUTION
+POLICIES.
+
+
+                        IMPORTANT LEGAL INFORMATION
+
+Permission is granted to the user to use the MOLMOL program and all
+associated files in this package for making calculations and creating
+images. The use of the software for this purpose is free. The user retains
+all rights to these results and may use them for any purpose commercial or
+noncommercial. When plots prepared by MOLMOL are used in lectures,
+publications or other similar occasions, then a reference to the authors
+and the following paper is to be made:
+
+   Koradi, R., Billeter, M., and Wüthrich, K. (1996)
+   J Mol Graphics, 14, 51-55.
+   MOLMOL: a program for display and analysis of
+   macromolecular structures.
+
+This software package and all of the files in this archive are copyrighted
+by BRUKER/Spectrospin and ETH Zurich. They may only be distributed and/or
+modified according to the guidelines listed below. The spirit of the
+guidelines below is to provide the full MOLMOL package freely to as many
+users as possible, prevent MOLMOL users and developers from being taken
+advantage of, enhance the life quality of those who come in contact with
+MOLMOL. This legal document was created so these goals could be realized.
+You are legally bound to follow these rules, but we hope you will follow
+them as a matter of ethics, rather than fear of litigation.
+
+No portion of this package may be separated from the package and
+distributed separately other than under the conditions specified in the
+guidelines below.
+
+This package may only be bundled in other software packages with the
+explicit permission of the copyright holders.
+
+This package may only be included in software compilations using media such
+as, but not limited to, floppy disk, CD-ROM, tape backup, optical disks,
+hard disks, or memory cards with the explicit permission of the copyright
+holders.
+
+The user is granted the privilege to modify and compile the source for
+their own personal use in any fashion they see fit. What you do with the
+software in your own home is your business.
+
+If the user wishes to distribute a modified version of the software,
+documentation or other parts of the package (here after referred to as
+a "custom version") they must follow the guidelines listed below. These
+guidelines have been established to promote the growth of MOLMOL and
+prevent difficulties for users and developers alike. Please follow them
+carefully for the benefit of all concerned when creating a custom version.
+
+You may not incorporate any portion of the MOLMOL source code in any
+software other than a custom version of MOLMOL without the explicit
+permission of the copyright holders. However authors who contribute source
+to MOLMOL may still retain all rights to use their contributed code for any
+purpose as described below.
+
+The user is encouraged to send enhancements and bug fixes to the MOLMOL
+authors, but the authors are in no way required to utilize these
+enhancements or fixes. By sending material to the authors, the contributor
+asserts that he owns the materials or has the right to distribute these
+materials. He authorizes the MOLMOL authors to use the materials any way
+they like. The contributor still retains rights to the donated material,
+but by donating you grant equal rights to the MOLMOL authors. The MOLMOL
+authors don't have to use the material, but if we do, you do not acquire
+any rights related to MOLMOL. We will give you credit if applicable.
+
+
+                    GENERAL RULES FOR ALL DISTRIBUTION
+
+The permission to distribute this package under certain very specific
+conditions is granted in advance, provided that the above and following
+conditions are met.
+
+These archives must not be re-archived using a different method without the
+explicit permission of the authors. You may rename the archives only to
+meet the file name conventions of your system or to avoid file name
+duplications but we ask that you try to keep file names as similar to the
+originals as possible.
+
+You must distribute a full package of archives as described in the next
+section.
+
+Noncommercial distribution (such as a user copying the software for a
+personal friend or colleague and not charging money or services for that
+copy) has no other restrictions. All forms of commercial distribution
+are only allowed with explicit permission of the copyright holders.
+
+The copyright holders reserve the right to withdraw distribution privileges
+from any group, individual, or organization for any reason.
+
+
+                       DEFINITION OF "FULL PACKAGE"
+
+MOLMOL is contained in 3 archives for each hardware platform. 1) An
+executable archive, 2) A documentation archive, 3) Source code archive.
+
+A "full package" is defined as one of the following bundle options:
+   1  All archives (executable, docs, source)
+   2  User archives (executable, docs but no source)
+   3  Programmer archives (source, docs but no executable)
+
+MOLMOL is officially distributed for SGI running IRIX; Sun running SunOS;
+IBM running AIX; and DEC running Digital UNIX. Other systems may be added
+in the future.
+
+Distributors need not support all platforms but for each platform you
+support you must distribute a full package.
+
+
+              CONDITIONS FOR DISTRIBUTION OF ORIGINAL VERSION
+
+On-line services may distribute the MOLMOL archives under the conditions
+following this section.
+
+The archives must all be easily available on the service and should be
+grouped together in a similar on-line area.
+
+It is strongly requested that operators remove prior versions of MOLMOL to
+avoid user confusion and simplify or minimize our support efforts. They
+should also notify the MOLMOL authors so that they can be informed about
+new versions.
+
+The on-line service may only charge standard usage rates for the time
+required to download this software. A premium may not be charged for this
+package.
+
+
+              CONDITIONS FOR DISTRIBUTION OF CUSTOM VERSIONS
+
+You may distribute custom compiled versions only if you comply with the
+following conditions. These conditions also apply to custom documentation
+based on our files.
+
+     Mark your version clearly on all modified files stating this to be a
+modified and unofficial version.
+     Make all of your modifications to MOLMOL freely and publicly
+available.
+     You must provide all MOLMOL support for all users who use your custom
+version. The MOLMOL authors are not obligated to provide you or your users
+any technical support.
+     You must provide documentation for any and all modifications that you
+have made to the program that you are distributing.
+     Include clear and obvious information on how to obtain the official
+MOLMOL.
+     Include contact and support information for your version. Include
+this information in the printMsg() funtion of the source file MolMol.c
+and insure that the program prominently displays this information. Include
+all credits and credit screens for the official version.
+     Include a copy of this document.
+
+
+                                DISCLAIMER
+
+This software is provided as is without any guarantees or warranty.
+Although the authors have attempted to find and correct any bugs in the
+package, they are not responsible for any damage or losses of any kind
+caused by the use or misuse of the package. The authors are under no
+obligation to provide service, corrections, or upgrades to this package.
+
+
+[End of Legal Information]
+
+
+If you have any problems with the program, the MOLMOL people would like
+to hear about them. Also, if you have any comments, questions or
+enhancements, please contact the MOLMOL authors under the E-mail address
+molmol@mol.biol.ethz.ch.
+
+   Inquiries may be made to:
+
+   Spectrospin AG
+   Reto Koradi
+   Industriestr. 26
+   CH-8117 Faellanden
+   Switzerland
+
+   or:
+
+   Institut fuer Molekularbiologie und Biophysik
+   Reto Koradi or Martin Billeter
+   ETH Hoenggerberg
+   CH-8093 Zuerich
+   Switzerland
+
+The current version of MOLMOL is always available on the following master
+servers:
+
+   ftp://ftp.mol.biol.ethz.ch
+   ftp://ftp.spectrospin.ch
+   ftp://ftp.bruker.de
+
+See the README file for more detailed instructions about downloading and
+installing the program.
+
+Tapes and printed manuals are available on request from the second address
+given above.
+
+More information can be found at:
+
+   http://www.mol.biol.ethz.ch/wuthrich/software/molmol/
+
+Users are encouraged to register at molmol@mol.biol.ethz.ch, so that they
+can be informed of new versions.

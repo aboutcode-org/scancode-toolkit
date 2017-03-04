@@ -1,0 +1,61 @@
+JetBrains Technology Preview License Agreement
+
+IMPORTANT! READ CAREFULLY: THIS IS A LEGAL AGREEMENT WHICH COVERS YOUR USE OF UNRELEASED SOFTWARE PROVIDED BY JETBRAINS S.R.O. ("LICENSOR") REFERENCED HEREIN AS JETBRAINS TECHNOLOGY. BY DOWNLOADING, INSTALLING, COPYING, SAVING ON YOUR COMPUTER, OR OTHERWISE USING JETBRAINS TECHNOLOGY, YOU (EITHER AN INDIVIDUAL OR AN ENTITY) ARE BECOMING A PARTY TO THIS AGREEMENT AND YOU ARE CONSENTING TO BE BOUND BY ALL THE TERMS AND CONDITIONS OF THIS AGREEMENT.
+
+IF YOU DO NOT AGREE TO THE TERMS AND CONDITIONS OF THIS AGREEMENT, YOU SHOULD NOT DOWNLOAD, INSTALL AND USE JETBRAINS TECHNOLOGY.
+
+1. DEFINITIONS
+
+(a) "Evaluation Period" means forty five (45) days from the date of installation of JetBrains Technology on Your computer.
+
+(b) "JetBrains Technology" means a preview version of software program known as PyCharm which is not generally available, including its documentation, any modifications, and any Third Party Software.
+
+(c) Third Party Software means software programs that are owned and licensed by parties other than Licensor and that either integrated with or made part of JetBrains Technology.
+
+2. JETBRAINS TECHNOLOGY OWNERSHIP, LICENSE GRANT AND USE
+
+(a) JetBrains Technology is the property of Licensor or its suppliers. Title and copyrights to JetBrains Technology, in whole and in part and all copies thereof, and all modifications, enhancements, derivatives and other alterations of JetBrains Technology regardless of who made any modifications, if any, are, and will remain, the sole and exclusive property of Licensor and its suppliers.
+
+(b) Subject to the terms, conditions, and limitations set forth in Section 2 (c) of this Agreement, Licensor hereby grants to You a limited, non-exclusive, non-transferable, royalty-free license to:
+
+(i) use JetBrains Technology in accordance with its documentation during Evaluation Period;
+
+(ii) copy JetBrains Technology for archival or backup purposes, provided that all titles and trademarks, copyright, and restricted rights notices are reproduced on such copies.
+
+(c) You are not expressly permitted to:
+
+(i) sell, redistribute, encumber, give, lend, rent, lease, sublicense, or otherwise transfer JetBrains Technology, or any portions of JetBrains Technology;
+
+(ii) reverse engineer, decompile, disassemble, modify, translate, make any attempt to discover the source code of JetBrains Technology, or create derivative works from JetBrains Technology;
+
+(iii) continue using JetBrains Technology upon termination of this Agreement as set forth in Section 5 herein.
+
+(d) You can provide to Licensor Your feedback, suggestions or ideas concerning the functionality and performance of JetBrains Technology (collectively, "Feedback"). You agree that Your Feedback will automatically become the property of Licensor and may be used by Licensor to improve JetBrains Technology or other Licensor's products. Licensor shall have a non-exclusive, perpetual, irrevocable, royalty-free, worldwide right and license to use, reproduce, disclose, sublicense, distribute, modify, and otherwise exploit Feedback without restriction. No obligation is assumed or may be implied on Licensor by receipt, examination or use of Feedback. For the avoidance of any doubt, this Section 2(d) does not apply to any Third Party Software.
+
+(e) You acknowledge that Licensor shall be under no obligation to provide technical support or upgrades for JetBrains Technology.
+
+3. LIMITATION OF LIABILITY
+
+(a) You understand that JetBrains Technology is only a preview version of the software product which has not been publicly announced or made available by Licensor, and that Licensor has no express or implied obligation to publicly announce or make available any production version of JetBrains Technology, or any product similar to or compatible with JetBrains Technology. You also understand that JetBrains Technology may contain errors, and that Licensor has no express or implied obligation to fix such errors. JetBrains Technology may contain features, functionality or modules that will not necessary be included in the production version of JetBrains Technology. You acknowledge that You use JetBrains Technology at Your own risk.
+
+(b) JETBRAINS TECHNOLOGY IS PROVIDED TO YOU "AS IS" WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE.
+
+4. DISCLAIMER OF DAMAGES
+
+REGARDLESS OF WHETHER ANY REMEDY SET FORTH HEREIN FAILS OF ITS ESSENTIAL PURPOSE, IN NO EVENT WILL LICENSOR BE LIABLE TO YOU UNDER ANY THEORY FOR ANY DAMAGES SUFFERED BY YOU OR ANY USER OF THE JETBRAINS TECHNOLOGY, OR FOR ANY SPECIAL, INCIDENTAL, INDIRECT, CONSEQUENTIAL, OR SIMILAR DAMAGES (INCLUDING WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OR INABILITY TO USE THE JETBRAINS TECHNOLOGY, OR THE PROVISION OF OR FAILURE TO PROVIDE SUPPORT SERVICES, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, AND REGARDLESS OF THE LEGAL OR EQUITABLE THEORY (CONTRACT, TORT OR OTHERWISE) UPON WHICH THE CLAIM IS BASED.
+
+5. TERMINATION
+
+This Agreement shall terminate upon the earlier of (a) automatic expiration of Evaluation Period based on the system date; (b) public release of any production version of JetBrains Technology, or (c) termination by Licensor, in its sole discretion, upon notice on Licensor's website. Upon termination of this Agreement, rights to use JetBrains Technology granted to You under this Agreement shall immediately terminate, and You shall immediately cease using JetBrains Technology.
+
+6. GENERAL
+
+(a) This Agreement, including the Third Party Software license agreements, constitutes the entire agreement between You and Licensor concerning Your use of JetBrains Technology, and supersedes any and all prior or contemporaneous oral or written representations, communications, or advertising with respect to JetBrains Technology.
+
+(b) A waiver by either party of any term or condition of this Agreement or any breach thereof, in any one instance, will not waive such term or condition or any subsequent breach. The provisions of this Agreement which require or contemplate performance after the expiration or termination of this Agreement will be enforceable notwithstanding said expiration or termination.
+
+(c) This Agreement will be governed by the laws of Czech Republic, without reference to conflict of laws principles. You agree that any litigation relating to this Agreement may only be brought in, and will be subject to the jurisdiction of, any Court of Czech Republic.
+
+(d) Titles are inserted for convenience only and will not affect in any way the meaning or interpretation of this Agreement. If any provision of this Agreement is held invalid, the remainder of this Agreement will continue in full force and effect. Either Licensor or You may assign this Agreement in the case of a merger or sale of substantially all of its respective assets to another entity. This Agreement will be binding upon and will inure to the benefit of the parties, their successors and assigns.
+
+For any questions regarding this Agreement, please contact JetBrains at sales@jetbrains.com.

@@ -1,0 +1,27 @@
+This license explanation was derived from the copyright notice distributed
+with the Debian package maintained by Atsushi KAMOSHIDA <kamop@post1.com>.
+
+Upstream Author: Tsugio Okamoto <tsugio@muc.biglobe.ne.jp>
+
+Copyright:
+
+ Original License Statement (in Japanese):
+
+   なお、ネットでの配付は自由ですが、ネットにアクセスできない方（雑誌および、
+   CD-ROM などによる）への配付は、配付前にこちらに Inter-Net の方にE-Mail
+   を お願いします。 どこそこに、掲載するという旨があれば結構ですので。
+   また、それも出来ない際には、後日 E-Mail を必ずお願いします。
+
+ Translated License Statement (translated by GOTO Masanori <gotom@debian.org>):
+
+   It's free to distribute on the network, but if you distribute for
+   the people who cannot access the network (by magazine or CD-ROM),
+   please send E-Mail (Inter-Net address) to the author before the
+   distribution. That's well where this software is appeard.
+   If you cannot do, you must send me the E-Mail later.
+
+ Original Source Code License Statement:
+
+   /*    Copyright (C) MCMLXXXIX Yooichi.Tagawa                      */
+   /*    Modified                Nobutaka Watazaki                   */
+   /*                   Thanks to H.Yoshizaki. (MS-DOS LHarc)        */

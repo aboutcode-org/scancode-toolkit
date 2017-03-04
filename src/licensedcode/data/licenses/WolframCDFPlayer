@@ -1,0 +1,108 @@
+[ Source: http://www.wolfram.com/legal/agreements/wolfram-cdf-player.html ]
+
+Wolfram CDF Player License Agreement
+
+Acceptance
+
+This is a binding agreement: read all terms; retain a copy.
+
+The terms and conditions of this License Agreement are subject to change without notice from time to time in our sole discretion. We will notify You of amendments to these terms 
+and conditions by posting them at http://www.wolfram.com/legal/agreements/wolfram-cdf-player.html.
+
+Carefully read the following terms and conditions before accessing, installing, or using the Software. By clicking the "I Agree" button, downloading the Product, or 
+installing/using the Product, You are consenting to be bound by this Wolfram CDF Player License Agreement ("Agreement"). If You are not willing to accept the terms and 
+conditions of this Agreement, You may not access, copy, install, or use the Product. You should discontinue use/installation, and immediately uninstall/remove/destroy any 
+existing or additional copies of the Product.
+
+Definitions
+
+WRI: Wolfram Research, Inc., 100 Trade Center Drive, Champaign, IL 61820-7237, USA.
+
+You/Licensee: The individual or organization obtaining the Product. If You/Licensee agree to these terms on behalf of an organization, You represent to WRI that You are 
+authorized to accept these terms on the organization's behalf.
+
+Software: The computer programs provided by WRI under this Agreement, known as CDF Player.
+
+Product: All the materials, including the Software, provided by WRI under this Agreement (whether by download or physical storage media), and data accessed on WRI's servers.
+
+Intellectual Property Rights: Any and all rights existing from time to time under patent law, copyright law, trade secret law, trademark law, unfair competition law, and any and 
+all other proprietary rights, and any and all applications, renewals, extensions, and restorations thereof.
+
+Ownership
+
+WRI is the sole owner of the Product as provided by WRI with the exception of the portions of the Product licensed by WRI from third parties. WRI is the holder of the 
+Intellectual Property Rights in the Product, including, without limitation, such aspects of the Software as its code, structure, sequence, organization, "look and feel", 
+programming language, and compilations of command names, descriptors, and data. Use of the Product, unless pursuant to the terms of a license granted by WRI or as otherwise 
+authorized by law, is an infringement of Intellectual Property Rights.
+
+Product Use
+
+Subject to the terms of this Agreement and Your acceptance thereof, WRI grants You a non-exclusive license to install and use the Product on a single online storage device 
+solely in accordance with the terms of this Agreement. Provisions of this Agreement that by their nature express ongoing rights or obligations shall survive the expiration or 
+termination of this Agreement. Other than this express Agreement, no other right, title, or interest in or to any tangible or intangible property right of WRI is granted, and is 
+expressly reserved by WRI.
+
+Prohibited Uses
+
+All uses of the Software and other elements of the Product not specifically allowed under this Agreement are prohibited, including, without limitation:
+
+    a. decompiling, disassembling, or reverse engineering the Software;
+
+    b. modifying the Product in any manner;
+
+    c. distributing, publishing, transferring, sublicensing, lending, leasing, renting, or otherwise making available any portion of the Software, including collections of data;
+
+    d. copying or allowing copying of the Product or any elements of the Product, except as permitted for the maintenance of a single archival copy of the Product;
+
+    e. using the Product for anything other than (i) passively viewing .cdf or .nb files and/or (ii) actively running .cdf files; and
+
+    f. removing or obscuring any copyright, trademark, logo, watermark, or other proprietary notices from the Product.
+
+Term and Termination
+
+This Agreement is effective upon Your acceptance of this Agreement, and shall continue in effect until terminated. WRI may terminate this Agreement immediately in the event of 
+any breach by You of any term herein.
+
+Online Services and Data
+
+Certain functionality in the Product may require the Software to access collections of data available through external servers. WRI makes no warranty that access to such data 
+will be uninterrupted or that the data itself will be error free. WRI reserves the right to restrict access to, add, update, modify, or remove collections of data based on 
+availability, Your service subscription, or otherwise at WRI's discretion. You agree all data access and use shall be in accordance with this Agreement, and not to access or use 
+data collections in such a manner that could damage, disable, overburden, or impair the servers providing such data. You shall only access collections of data through the 
+intended CDF Player interface. Data provided through WRI's online services constitute protected intellectual property and may not be copied, distributed, used to construct a 
+database, stored (in whole or in part) in databases for access by You or any third party, or provided or distributed through any database services containing all or part of such 
+data. Access to the online services is provided to You at WRI's discretion and may be terminated or restricted at any time.
+
+Additional functionality in the Product allows You to access Wolfram|Alpha® data from within the Software. In addition to the general Online Services and Data terms and 
+restrictions listed above, data and other results obtained through the Wolfram|Alpha functionality are subject to the Wolfram|Alpha Terms of Use at 
+http://www.wolframalpha.com/termsofuse.html. Your use of this functionality indicates your acceptance of these Terms.
+
+No Warranty and Disclaimer
+
+WRI does not warrant that the Product is free from all errors and/or omissions, and in fact it may contain them. Except as specifically set forth above, the Product is provided 
+"as is". WRI makes no representations or warranties, express, statutory, or implied, with respect to the Product or the Software contained in the Product or data accessed 
+thereby, including, without limitation, any implied warranties of merchantability, interoperability, or fitness for a particular purpose, all of which are expressly disclaimed. 
+WRI does not warrant that the functions contained in the Product will meet Your requirements, or that the operation of the Product will be uninterrupted or error free.
+
+WRI, and its agents, representatives, and independent contractors, shall not be obligated to provide or liable, under any circumstances, for providing information on or 
+corrections to errors and/or omissions discovered at any time in the Product, whether or not they were aware of the errors and/or omissions.
+
+WRI does not recommend the use of the Product for applications in which errors and/or omissions could threaten life, injury, or significant loss. Some states do not allow the 
+exclusion of implied warranties, so this may not apply to You. This warranty gives You specific legal rights, and You may also have other rights that vary from state to state. 
+This Agreement is governed by the laws of the State of Illinois without effect to any choice of law provisions.
+
+Limited Damages
+
+In no event shall WRI or its agents, representatives, and independent contractors be liable for any lost profits, lost use, lost benefits, or any consequential, indirect, 
+incidental, special, or punitive damages, whether in contract, tort, or otherwise, even if WRI has been advised of the possibility of such damages. WRI's cumulative liability to 
+You or any other party for any loss or damages resulting from any claims, demands, actions, or otherwise arising out of or relating to this Agreement shall not exceed the 
+license fee paid for the Product. Some states do not allow certain limitations of damages, so the above limitations may not apply to You.
+
+United States Federal Government Restricted Rights
+
+If this Software is acquired by or on behalf of the US federal government, this provision applies. Use, duplication, or disclosure of this Software is subject to restrictions 
+set forth in FAR 52.227-19 and DFAR 227.7200 - 227.7202-4, as applicable. The Software is "commercial computer software" and is licensed with only "Restricted Rights".
+
+Information on enhanced licensing/distribution options is available upon request from WRI.
+
+Wolfram CDF Player is a trademark of Wolfram Research, Inc. Wolfram|Alpha is a registered trademark of Wolfram Alpha LLC.

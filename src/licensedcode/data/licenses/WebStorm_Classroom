@@ -1,0 +1,119 @@
+LICENSE AGREEMENT FOR WEBSTORM
+     (Classroom License) 
+     
+       Version 11, Effective as of  16 May 2013
+
+IMPORTANT! READ CAREFULLY: THIS IS A LEGAL AGREEMENT. BY DOWNLOADING, INSTALLING, COPYING, SAVING ON YOUR COMPUTER, OR OTHERWISE USING THIS SOFTWARE, YOU (LICENSEE, AS DEFINED BELOW) ARE BECOMING A PARTY TO THIS AGREEMENT AND YOU ARE CONSENTING TO BE BOUND BY ALL THE TERMS AND CONDITIONS OF THIS AGREEMENT.
+IF YOU DO NOT AGREE TO THE TERMS AND CONDITIONS OF THIS AGREEMENT, YOU SHOULD NOT DOWNLOAD, INSTALL AND USE THE SOFTWARE.
+
+1. PARTIES
+ 
+(a) "Licensor" means JetBrains s.r.o., having its principal place of business at Na h?ebenech II 1718/10, Prague, 14700, Czech Republic, registered with Commercial Register kept by the Municipal Court of Prague, Section C, file 86211, ID.Nr.: 265 02 275.
+
+(b) "Licensee" means a public or private school, college, training courses, university and other post secondary educational establishment specified in the License Certificate, exercising rights under, and complying with the terms of this Agreement.
+
+2. DEFINITIONS
+
+(a) "Authorized User" means any student, faculty or staff member authorized by Licensee to use the Software while performing duties within the scope of their employment or assignment.
+
+(b) "Software" means software program known as IntelliJ IDEA in binary form, including its documentation, upgrades provided pursuant to Section 7 of this Agreement, and any third party software programs that are owned and licensed pursuant to Section 6 of this Agreement by parties other than Licensor and that either integrated with or made part of IntelliJ IDEA (collectively, "Third Party Software").
+
+(c) "License Certificate" means evidence of a license provided by Licensor to Licensee in electronic or printed form.
+
+(d) "License Key" means a unique key-code that enables Licensee to use the Software by multiple Authorized Users at a time. Only Licensor and/or its representatives are permitted to produce License Keys for the Software.
+
+(e) "Client" means a computer device owned, leased or otherwise directly controlled by Licensee; that is part of Licensee's internal network domain, located at Licensee's permanent facilities, and used by Authorized User for running the Software.
+
+(f) "License Server" means a software program that issues and revokes License Tickets to/from Clients based on installed License Key.
+
+(g) "License ticket" means a token granted to a Client by the License Server in order to activate the Software installed on the Client.
+
+3. OWNERSHIP
+
+(a) The Software is the property of Licensor or its suppliers. The Software is licensed, not sold. Title and copyrights to the Software, in whole and in part and all copies thereof, and all modifications, enhancements, derivatives and other alterations of the Software regardless of who made any modifications, if any, are, and will remain, the sole and exclusive property of Licensor and its suppliers.
+
+(b) The Software is protected by United States Copyright Law and International Treaty provisions. Further, the structure, organization, and code embodied in the Software are the valuable and confidential trade secrets of Licensor and its suppliers and are protected by intellectual property laws and treaties. Licensee agrees to abide by the copyright law and all other applicable laws of the United States including, but not limited to, export control laws.
+
+4. GRANT OF LICENSE
+
+Subject to the terms, conditions, and limitations set forth in this Agreement, including any amendments thereto, Licensor hereby grants to Licensee a limited, non-exclusive, non-transferable, royalty-free license to use the Software for a period of 1 (one) year as follows:
+
+(a) Licensee may:
+
+(i) install and use the version of the Software that has been specified in License Certificate on any number of Clients;
+
+(ii) use the Software by Authorized Users solely in support of classroom instruction of students. The right to use the Software for any other purposes is expressly prohibited;
+
+(iii) allow Authorized Users to install and use the Software for homework at their residencies on personally owned computers and process respective License Tickets, provided that they agree to all provisions of this Agreement;
+
+(iv) install License Server solely on its own Clients (in such a case the Section 4 letter a) iii) of this Agreement shall not apply);
+
+(v) process License Tickets to Clients;
+and
+
+(vi) make one back-up copy of the Software for archival purposes.
+(b) Licensee may not:
+
+(i) sell, redistribute (except as set forth in Paragraph 5 herein), encumber, give, lend, rent, lease, sublicense, or otherwise transfer the Software, or any portions of the Software, to anyone without the prior written consent of Licensor;
+
+(ii) reverse engineer, decompile, disassemble, modify, translate, make any attempt to discover the source code of the Software, or create derivative works from the Software; or
+
+(iii) use the Software for any commercial purposes.
+
+Licensee agrees to comply with the terms of this Agreement, and to take reasonable measures to prevent use of the Software by Authorized Users in an inappropriate manner or access to the Software by unauthorized users.
+
+5. THIRD PARTY SOFTWARE LICENSE
+
+(a) Licensee agrees to comply with the terms and conditions contained in Third-Party Software license agreements with respect to the applicable Third-Party Software.
+
+(b) Licensee agrees and acknowledges that Sections 7 and 8 of this Agreement shall also govern Licensee's use of the Third-Party Software. Licensor will have no responsibility with respect to any Third Party Software, and Licensee will look solely to the licensor(s) of the Third Party Software for any remedy. Licensor claims no right in the Third Party Software, and the same is owned exclusively by the licensor(s) of the Third Party Software.
+
+(c) LICENSOR PROVIDES NO WARRANTY, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT, WITH RESPECT TO ANY THIRD PARTY SOFTWARE.
+
+6. UPGRADES AND LICENSE RENEWAL
+
+(a)Upgrades to new versions of Software are optional and free of charge during the 1-year license term. Licensee may obtain the generally available new versions of Software by downloading them from Licensor's web site atwww.jetbrains.com. Licensee may renew its license for another year by submitting a written request to Licensor 30 (thirty) days prior to the license expiration date.
+
+(b) If not agreed otherwise in writing between Licensor and Licensee, upon upgrading to new version of Software the relationship between parties shall be governed and amended (if applicable) by the terms and conditions of License agreement related to Software available at www.jetbrains.com on the day of upgrade download or license renewal.
+
+7. LIMITED WARRANTY
+
+SOFTWARE IS PROVIDED TO LICENSEE "AS IS" AND WITHOUT WARRANTIES. LICENSOR MAKES NO WARRANTY AS TO ITS USE OR PERFORMANCE. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, LICENSOR, AND ITS AFFILIATES, SUPPLIERS AND RESELLERS, DISCLAIM ALL OTHER WARRANTIES AND CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT, WITH REGARD TO SOFTWARE, AND THE PROVISION OF OR FAILURE TO PROVIDE SUPPORT SERVICES.
+
+8. DISCLAIMER OF DAMAGES
+
+(a) TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL LICENSOR OR ITS AFFILIATES, LICENSORS, SUPPLIERS OR RESELLERS BE LIABLE TO LICENSEE UNDER ANY THEORY FOR ANY DAMAGES SUFFERED BY LICENSEE OR ANY USER OF SOFTWARE, OR FOR ANY SPECIAL, INCIDENTAL, INDIRECT, CONSEQUENTIAL, OR SIMILAR DAMAGES (INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS OR CONFIDENTIAL OR OTHER INFORMATION, FOR BUSINESS INTERRUPTION, FOR PERSONAL INJURY, FOR LOSS OF PRIVACY, FOR FAILURE TO MEET ANY DUTY INCLUDING OF GOOD FAITH OR OF REASONABLE CARE, FOR NEGLIGENCE, AND FOR ANY OTHER PECUNIARY OR OTHER LOSS WHATSOEVER ) ARISING OUT OF THE USE OR INABILITY TO USE SOFTWARE, OR THE PROVISION OF OR FAILURE TO PROVIDE SUPPORT SERVICES, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, AND REGARDLESS OF THE LEGAL OR EQUITABLE THEORY (CONTRACT, TORT OR OTHERWISE) UPON WHICH THE CLAIM IS BASED.
+
+(b) IN ANY CASE, LICENSOR'S ENTIRE LIABILITY UNDER ANY PROVISION OF THIS AGREEMENT WILL BE LIMITED TO THE AMOUNT ACTUALLY PAID BY LICENSEE FOR SOFTWARE UNDER THIS AGREEMENT.
+
+9. EXPORT REGULATIONS
+
+Licensee agrees and accepts that Software may be subject to import and export laws of any country, including those of the European Union and United States (specifically the Export Administration Regulations (EAR)). Licensee acknowledges that it is not a citizen, national, or resident of, and is not under control of the governments of Cuba, Iran, North Korea, Sudan or Syria and is not otherwise a restricted end-user as defined by applicable export control laws. Further, Licensee acknowledges that it will not download or otherwise export or re-export Software or any related technical data directly or indirectly to the above-mentioned countries or to citizens, nationals, or residents of those countries, or to any other restricted end user or for any restricted end-use.
+
+10. TERMINATION
+
+If Licensee fails to comply with the terms and conditions of this Agreement, this Agreement and Licensee's right and license to use Software will terminate immediately. Licensee may terminate this Agreement at any time by notifying Licensor. Upon the termination of this Agreement, Licensee must delete Software from its computers and archives, and also ensure that it is deleted by Authorized Users.
+LICENSEE AGREES THAT UPON TERMINATION OF THIS AGREEMENT FOR ANY REASON, LICENSOR MAY TAKE ACTIONS SO THAT SOFTWARE NO LONGER OPERATES.
+
+11. MARKETING
+
+Licensee agree to be identified as a customer of Licensor and that Licensor may refer to Licensee by name, trade name and trademark, if applicable, and may briefly describe Licensee's business in Licensor's marketing materials, on Licensor's web site, in public or legal documents. Licensee hereby grants Licensor a license to use Licensee's name and any of Licensee's trade names and trademarks solely pursuant to this marketing section.
+
+12. GENERAL
+
+(a) Licensor reserves the right at any time to cease the support of Software and to alter prices, features, specifications, capabilities, functions, licensing terms, release dates, general availability or other characteristics of Software.
+
+(b) This Agreement, including the Third Party Software license agreements, constitutes the entire agreement between the parties concerning Licensee's use of Software, and supersedes any and all prior or contemporaneous oral or written representations, communications, or advertising with respect to Software. No purchase order, other ordering document or any hand written or typewritten text which purports to modify or supplement the printed text of this Agreement or any schedule will add to or vary the terms of this Agreement unless signed by both Licensee and Licensor.
+
+(c) A waiver by either party of any term or condition of this Agreement or any breach thereof, in any one instance, will not waive such term or condition or any subsequent breach. The provisions of this Agreement which require or contemplate performance after the expiration or termination of this Agreement will be enforceable notwithstanding said expiration or termination.
+
+(d) This Agreement will be governed by the laws of Czech Republic, without reference to conflict of laws principles. Licensee agrees that any litigation relating to this Agreement may only be brought in, and will be subject to the jurisdiction of, any Court of Czech Republic.
+
+(e) Titles are inserted for convenience only and will not affect in any way the meaning or interpretation of this Agreement. If any provision of this Agreement is held invalid, the remainder of this Agreement will continue in full force and effect. Either Licensor or Licensee may assign this Agreement in the case of a merger or sale of substantially all of its respective assets to another entity. This Agreement will be binding upon and will inure to the benefit of the parties, their successors and assigns.
+
+
+For exceptions or modifications to this Agreement, please contact Licensor at:
+
+Address: Na hrebenech II 1718/10, Prague, 14700, Czech Republic
+Fax: +420 241 722 540
+E-mail: sales@jetbrains.com

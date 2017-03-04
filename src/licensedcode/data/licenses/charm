@@ -1,0 +1,148 @@
+Charm++/Converse License
+
+University of Illinois
+
+University of Illinois
+Charm++/Converse Parallel Programming System Software
+Non-Exclusive, Non-Commercial Use License
+
+Upon execution of this Agreement by the party identified below ("Licensee"),
+The Board of Trustees of the University of Illinois  ("Illinois"), on behalf of
+The Parallel Programming Laboratory ("PPL") in the Department of Computer
+Science, will provide the Charm++/Converse Parallel Programming System software
+("Charm++") in Binary Code and/or Source Code form ("Software") to Licensee,
+subject to the following terms and conditions. For purposes of this Agreement,
+Binary Code is the compiled code, which is ready to run on Licensee's computer.
+Source code consists of a set of files which contain the actual program
+commands that are compiled to form the Binary Code.
+
+1. The Software is intellectual property owned by Illinois, and all right,
+title and interest, including copyright, remain with Illinois.  Illinois
+grants, and Licensee hereby accepts, a restricted, non-exclusive,
+non-transferable license to use the Software for academic, research and
+internal business purposes only, e.g. not for commercial use (see Clause 7
+below), without a fee.
+
+2. Licensee may, at its own expense, create and freely distribute complimentary
+works that interoperate with the Software, directing others to the PPL server
+(http://charm.cs.uiuc.edu) to license and obtain the Software itself. Licensee
+may, at its own expense, modify the Software to make derivative works.  Except
+as explicitly provided below, this License shall apply to any derivative work
+as it does to the original Software distributed by Illinois.  Any derivative
+work should be clearly marked and renamed to notify users that it is a modified
+version and not the original Software distributed by Illinois.  Licensee agrees
+to reproduce the copyright notice and other proprietary markings on any
+derivative work and to include in the documentation of such work the
+acknowledgement:
+
+"This software includes code developed by the Parallel Programming Laboratory
+in the Department of Computer Science at the University of Illinois at
+Urbana-Champaign."
+
+Licensee may redistribute without restriction works with up to 1/2 of their
+non-comment source code derived from at most 1/10 of the non-comment source
+code developed by Illinois and contained in the Software, provided that the
+above directions for notice and acknowledgement are observed.  Any other
+distribution of the Software or any derivative work requires a separate license
+with Illinois.  Licensee may contact Illinois (kale@cs.uiuc.edu) to negotiate
+an appropriate license for such distribution.
+
+3. Except as expressly set forth in this Agreement, THIS SOFTWARE IS PROVIDED
+"AS IS" AND ILLINOIS MAKES NO REPRESENTATIONS AND EXTENDS NO WARRANTIES OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OR
+MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR THAT THE USE OF THE
+SOFTWARE WILL NOT INFRINGE ANY PATENT, TRADEMARK, OR OTHER RIGHTS.  LICENSEE
+ASSUMES THE ENTIRE RISK AS TO THE RESULTS AND PERFORMANCE OF THE SOFTWARE
+AND/OR ASSOCIATED MATERIALS.  LICENSEE AGREES THAT UNIVERSITY SHALL NOT BE HELD
+LIABLE FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, OR INCIDENTAL DAMAGES WITH
+RESPECT TO ANY CLAIM BY LICENSEE OR ANY THIRD PARTY ON ACCOUNT OF OR ARISING
+FROM THIS AGREEMENT OR USE OF THE SOFTWARE AND/OR ASSOCIATED MATERIALS.
+
+4. Licensee understands the Software is proprietary to Illinois. Licensee
+agrees to take all reasonable steps to insure that the Software is  protected
+and secured from unauthorized disclosure, use, or release and  will treat it
+with at least the same level of care as Licensee would use to  protect and
+secure its own proprietary computer programs and/or information, but using no
+less than a reasonable standard of care.  Licensee agrees to provide the
+Software only to any other person or entity who has registered with Illinois.
+If licensee is not registering as an individual but as an institution or
+corporation each member of the institution or corporation who has access to or
+uses Software must agree to and abide by the terms of this license. If Licensee
+becomes aware of any unauthorized licensing, copying or use of the Software,
+Licensee shall promptly notify Illinois in writing. Licensee expressly agrees
+to use the Software only in the manner and for the specific uses authorized in
+this Agreement.
+
+5. By using or copying this Software, Licensee agrees to abide by the
+copyright law and all other applicable laws of the U.S. including, but not
+limited to, export control laws and the terms of this license. Illinois  shall
+have the right to terminate this license immediately by written  notice upon
+Licensee's breach of, or non-compliance with, any terms of the license.
+Licensee may be held legally responsible for any  copyright infringement that
+is caused or encouraged by its failure to  abide by the terms of this license.
+Upon termination, Licensee agrees to  destroy all copies of the Software in its
+possession and to verify such  destruction in writing.
+
+6. The user agrees that any reports or published results obtained with  the
+Software will acknowledge its use by the appropriate citation as  follows:
+
+"Charm++/Converse was developed by the Parallel Programming Laboratory in the
+Department of Computer Science at the University of  Illinois at
+Urbana-Champaign."
+
+Any published work which utilizes Charm++ shall include the following
+reference:
+
+"L. V. Kale and S. Krishnan. Charm++: Parallel Programming with Message-Driven
+Objects. In 'Parallel Programming using C++' (Eds. Gregory V. Wilson and Paul
+Lu), pp 175-213, MIT Press, 1996."
+
+Any published work which utilizes Converse shall include the following
+reference:
+
+"L. V. Kale, Milind Bhandarkar, Narain Jagathesan, Sanjeev Krishnan and Joshua
+Yelon. Converse: An Interoperable Framework for Parallel Programming.
+Proceedings of the 10th International Parallel Processing Symposium, pp
+212-217, April 1996."
+
+Electronic documents will include a direct link to the official Charm++ page
+at http://charm.cs.uiuc.edu/
+
+7. Commercial use of the Software, or derivative works based thereon,  REQUIRES
+A COMMERCIAL LICENSE.  Should Licensee wish to make commercial use of the
+Software, Licensee will contact Illinois (kale@cs.uiuc.edu) to negotiate an
+appropriate license for such use. Commercial use includes: 
+(1) integration of all or part of the Software into a product for sale, lease
+or license by or on behalf of Licensee to third parties, or 
+(2) distribution of the Software to third parties that need it to commercialize
+product sold or licensed by or on behalf of Licensee.
+
+8. Government Rights. Because substantial governmental funds have been  used in
+the development of Charm++/Converse, any possession, use or sublicense of the
+Software by or to the United States government shall be subject to such
+required restrictions.
+
+9. Charm++/Converse is being distributed as a research and teaching tool and as
+such, PPL encourages contributions from users of the code that might, at
+Illinois' sole discretion, be used or incorporated to make the basic  operating
+framework of the Software a more stable, flexible, and/or useful  product.
+Licensees who contribute their code to become an internal  portion of the
+Software agree that such code may be distributed by  Illinois under the terms
+of this License and may be required to sign an  "Agreement Regarding
+Contributory Code for Charm++/Converse Software" before Illinois  can accept it
+(contact kale@cs.uiuc.edu for a copy).
+
+UNDERSTOOD AND AGREED.
+
+
+Contact Information:
+
+The best contact path for licensing issues is by e-mail to  kale@cs.uiuc.edu or
+send correspondence to:
+
+Prof. L. V. Kale
+Dept. of Computer Science
+University of Illinois
+1304 W. Springfield Ave
+Urbana, Illinois 61801 USA
+FAX: (217) 333-3501

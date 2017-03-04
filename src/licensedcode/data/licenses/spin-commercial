@@ -1,0 +1,294 @@
+LUCENT TECHNOLOGIES INC.
+SPIN SOFTWARE PUBLIC LICENSE AGREEMENT
+
+PLEASE READ THIS AGREEMENT CAREFULLY BEFORE PROCEEDING.
+BY CLICKING ON THE "ACCEPT" BUTTON BELOW, OR BY DOWNLOADING,
+INSTALLING, USING, COPYING, MODIFYING OR DISTRIBUTING THE
+SOFTWARE OR DERIVATIVE WORKS THEREOF, YOU ARE CONSENTING TO
+BE BOUND BY THIS AGREEMENT.
+IF YOU DO NOT AGREE TO ALL OF THE TERMS OF THIS AGREEMENT,
+CLICK ON THE "DO NOT ACCEPT" BUTTON BELOW AND THE
+INSTALLATION/DOWNLOAD PROCESS WILL NOT CONTINUE.
+
+1. DEFINITIONS
+1.1
+"Agreement" means this Lucent Technologies Inc. SPIN Software Public License Agreement.
+
+1.2
+"Contributor(s)" means any individual or entity that creates or contributes to a
+Modification of the Original Software.
+
+1.3 
+"Licensee" means an individual or a legal entity entering into and exercising rights
+under this Agreement or future versions thereof.
+For the purposes hereunder, Licensee includes any entity that controls, is controlled by,
+or is under common control with Licensee.  For purposes of this definition, "control"
+means (i) the power, direct or indirect, to cause the direction or management of such
+entity, whether by contract or otherwise;
+or (ii) ownership of fifty percent (50%) or more of the controlling shares or beneficial
+ownership of such entity.  Licensee is also referred to herein as "You".
+
+1.4
+"Licensed Software" means the Original Software, Modifications, or any combination
+of the Original Software and Modifications.
+
+1.5
+"LUCENT" means Lucent Technologies Inc., a Delaware corporation having an office
+at 600 Mountain Ave., Murray Hill, NJ 07974, its related companies and/or affiliates.
+
+1.6
+"SPIN Software" means the source code for the logic model checking system named SPIN,
+developed, copyrighted, and distributed by LUCENT.
+
+1.7
+"Modification(s)" means any addition, deletion, change, or improvement to the Original
+Software or prior Modifications thereto.  Modifications do not include additions to the
+Original Software or prior Modifications which (i) are separate modules of software which
+may be distributed in conjunction with Licensed Software; or (ii) are not derivative works
+of the Licensed Software itself.
+
+1.8
+"Object Code" means machine readable software code.
+
+1.9
+"Original Contributor" means LUCENT.
+
+1.10
+"Original Software" means the SPIN Software, in both Source Code form and Object Code
+form, and any associated documentation as originally developed by Original Contributor,
+and as originally furnished under this Agreement.
+
+1.11
+"Recipient" means any individual or legal entity receiving the Licensed Software under
+this Agreement, including all Contributors, or receiving the Licensed Software under
+another license agreement as authorized herein.
+
+1.12
+"Source Code" means human readable software code.
+
+2.0 GRANT of Rights
+2.1
+Subject to the terms of this Agreement, Original Contributor grants to Licensee, a royalty-free, nonexclusive,
+non-transferable, worldwide license, subject to third party intellectual property claims, to use, reproduce,
+modify, execute, display, perform, distribute and sublicense, the Original Software (with or without
+Modifications) in Source Code form and/or Object Code form for commercial and/or non-commercial purposes
+subject to the terms of this Agreement.  This grant includes a nonexclusive and non-transferable license under
+any patents which Original Contributor has a right to license and which, but for this license, are unavoidably
+and necessarily infringed by the execution of the inherent functionality of the Original Software in the form
+furnished under this Agreement. Nothing contained herein shall be construed as conferring by implication,
+estoppel or otherwise any license or right under any existing or future patent claim which is directed to a
+combination of the functionality of the Original Software with the functionality of any other software programs,
+or a combination of hardware systems other than the combination of the Original Software and the hardware or
+firmware into which the Original Software is loaded. Distribution of Licensed Software to third parties pursuant
+to this grant shall be subject to the same terms and conditions as set forth in this Agreement, and may, at your
+option, include a reasonable charge for the cost of any media.  You may also, at your option, charge for any
+other software, product or service which includes or incorporates the Original Software as a part thereof.
+
+2.2
+Subject to the terms of this Agreement, each Contributor grants to Licensee, a royalty-free, nonexclusive, non-
+transferable, worldwide license, subject to third party intellectual property claims, to use, reproduce, modify,
+execute, display, perform, distribute and sublicense, Modifications created by such Contributor in Source Code
+form and/or Object Code form for commercial and/or non-commercial purposes subject to the terms of this
+Agreement.  This grant includes a nonexclusive and non-transferable license under any patents which such
+Contributor has a right to license and which, but for this license, are unavoidably and necessarily infringed by
+the execution of the inherent functionality of the Modifications in the form furnished under this Agreement.
+Nothing contained herein shall be construed as conferring by implication, estoppel or otherwise any license or
+right under any existing  or future patent claim which is directed to a combination of the functionality of the
+Modifications with the functionality of any other software programs, or a combination of hardware systems
+other than the combination of Modifications and the hardware or firmware into which the Modifications are
+loaded.   Distribution of Modifications to third parties pursuant to this grant shall be subject to the same terms
+and conditions as set forth in this Agreement, and may, at your option, include a reasonable charge for the cost
+of any media.  You may also, at your option, charge for any other software, product or service which includes or
+incorporates the Original Software as a part thereof.
+
+3.0 DISTRIBUTION OBLIGATIONS
+3.1
+Modifications which You create or to which You contribute are governed by the terms of this Agreement and
+must be made available under the terms this Agreement in at least the same form as the Source Code version of
+Licensed Software furnished hereunder.  Any distribution by You of the Source Code version of Licensed
+Software must be made under the terms of this Agreement or any future version of this Agreement under
+Section 11.0, and You must include a copy of this Agreement with each and every copy of such Source Code
+version of Licensed Software which You distribute.  You may not offer or impose any terms on any such
+Source Code version of Licensed Software that alters or restricts the terms of the applicable version of this
+Agreement or the Recipients" rights and obligations hereunder.
+
+3.2
+You must cause all Licensed Software to which You contribute, i.e. Your Modifications, to contain a clear
+identification, e.g., a separate file, documenting the changes made by You and identifying You as the
+Contributor that reasonably allows subsequent Recipients to identify the originator of the Modification.  To the
+extent You create at least one Modification, You may add Your name as a Contributor to the requisite notice
+described in Section 3.3.
+
+3.3
+With respect to Your distribution of Licensed Software (or any portion thereof), You must include the following
+information in a conspicuous location governing such distribution (e.g., a separate file) and on all copies of any
+Source Code version of Licensed Software You distribute:
+"The contents herein includes software initially developed by Bell Laboratories, Lucent Technologies Inc.,
+and is subject to the terms of the Lucent Technologies Inc. SPIN Software Public License Agreement.
+A copy of the SPIN Software Public License Agreement is available at:
+
+http://cm.bell-labs.com/cm/cs/what/spin/SPIN_public_license.txt
+
+or by contacting Lucent Technologies at spin_list@research.bell-labs.com.
+
+All software distributed under such Agreement is distributed on an "AS IS" basis,
+WITHOUT WARRANTY OF ANY KIND, either express or implied.  See the SPIN Software
+Public License Agreement for the specific language governing all rights, obligations
+and limitations under such Agreement.
+Portions of the software developed by Lucent Technologies Inc. are Copyright 1989-2001.
+All rights reserved.
+Contributor(s):___________________________"
+
+3.4
+You may distribute Licensed Software in Object Code form using this Agreement, or under a license of Your
+choice provided that You are in compliance with this Agreement and Your license: (a) complies with the terms
+and conditions of this Agreement; (b) does not limit or alter the Recipient"s rights and obligations in the Source
+Code version of the Licensed Software set forth in this Agreement; (c) states that the Source Code version of
+the Licensed Software is available from You, and describes how to it may be obtained by Recipient; (d)
+effectively disclaims on behalf of Original Contributor and all Contributors all warranties and conditions,
+express or implied, including warranties or conditions of title or non-infringement, and implied warranties or
+conditions of merchantability and fitness for a particular purpose; (e) effectively excludes on behalf of Original
+Contributor and all Contributors all liability for damages, including direct, indirect, special, incidental, and
+consequential damages; and (f) clearly states that any terms which differ from this Agreement are offered by
+You alone, not by Original Contributor or any other Contributor.  You hereby agree to indemnify Original
+Contributor or any other Contributor for any liability incurred by Original Contributor or any other Contributor
+as result of any such differing terms You offer in Your license.
+
+3.5
+You may not use the names "Lucent Technologies", "Bell Labs" or any other name associated with LUCENT
+or any LUCENT trademark for any purposes other than as specifically provided in Section 3.0.
+
+3.6
+You must include all of the original copyright, labels or other notices on the Licensed Software on any copies of
+the Licensed Software which You make; and include with the distribution of any Modifications You create a
+copy (or an offer to provide such a copy at no charge) of the Licensed Software, on the same terms as set forth
+in this Agreement.
+
+3.7
+While this Agreement contemplates the commercial use and distribution of Licensed Software, commercial
+distributors of software may, for a variety of reasons, accept certain responsibilities with respect to customers,
+licensees, business partners and the like.  As such, if You or any Contributor include Licensed Software in a
+commercial offering ("Commercial Contributor"), such Commercial Contributor agrees to defend and
+indemnify Original Contributor and all other Contributors  (collectively "Indemnified Contributors") against
+any liability, losses, damages and costs arising from claims, lawsuits and other legal actions brought by any
+third party against the Indemnified Contributors to the extent caused by the acts or omissions of such
+Commercial Contributor in connection with its use or distribution of Licensed Software in a commercial
+offering of any kind.
+
+4.0 MODIFICATIONS.
+You agree to provide the Original Contributor, at its request, with a copy of the complete
+Source Code version, Object Code version and related documentation for Modifications created or contributed to by
+You.  Original Contributor and/or other Contributors shall have unrestricted, nonexclusive, worldwide, perpetual,
+royalty-free rights, to use, reproduce, modify, display, perform, sublicense and distribute Your Modifications, and to
+grant third parties the right to do so, including without limitation as a part of or with the Licensed Software; and
+Original Contributor and/or other Contributors shall have the right to license or to otherwise transfer to third parties
+Your  Modifications without notice, obligation or recourse to You.  You grant to Original Contributor, Contributors
+and their respective licensees all rights and licenses (including patents) as are necessary to incorporate the
+Modifications created or contribute by You into the Licensed Software and to use, distribute or otherwise exploit
+such Licensed Software without payment or accounting to You.
+
+5.0  TITLE.
+Title, ownership rights, and intellectual property rights in the Original Software shall remain in the
+Original Contributor. Original Contributor and/or the other Contributors reserve all rights not expressly granted to
+You, and no other licenses are granted or implied.
+The Licensed Software is protected by copyright laws and treaties.
+
+6.0  TERMINATION
+6.1
+The licenses and rights granted under this Agreement shall terminate automatically if (i) You fail to comply
+with all of the terms and conditions herein; or (ii) You initiate or participate in any intellectual property action
+against Original Contributor and/or another Contributor.
+
+6.2
+The rights and obligations of the parties hereto which by their nature would continue beyond termination of this
+Agreement shall survive and continue after any such termination of this Agreement.
+
+6.3
+Upon termination for any reason, You must destroy all copies of the Licensed Software in your possession.  All
+sublicenses of Licensed Software which were validly granted by You to third parties under this Agreement shall
+survive such termination.
+
+7.0 DISCLAIMER OF WARRANTY.
+YOU UNDERSTAND AND ACKNOWLEDGE THAT, TO THE
+FULLEST EXTENT PERMITTED BY LAW, THE LICENSED SOFTWARE IS LICENSED UNDER THIS
+AGREEMENT FREE OF CHARGE ON AN "AS IS" BASIS WITH ALL FAULTS, LATENT AND PATENT
+AND WITHOUT ANY WARRANTY OF ANY TYPE. ORIGINAL CONTRIBUTOR AND THE OTHER
+CONTRIBUTORS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESSED OR IMPLIED.  BY
+WAY OF EXAMPLE, BUT NOT OF LIMITATION, ORIGINAL CONTRIBUTOR AND THE OTHER
+CONTRIBUTORS MAKE NO REPRESENTATIONS OF MERCHANTABILITY OR FITNESS FOR A
+PARTICULAR PURPOSE OR THAT THE USE OF THE LICENSED SOFTWARE WILL NOT INFRINGE ANY
+PATENT OR OTHER INTELLECTUAL PROPERTY RIGHT OF ANY THIRD PARTY AND IT SHALL BE
+THE SOLE RESPONSIBILITY OF YOU TO MAKE SUCH DETERMINATION AS IS NECESSARY WITH
+RESPECT TO THE ACQUISITION OF LICENSES UNDER PATENTS OR OTHER INTELLECTUAL
+PROPERTY RIGHTS OF THIRD PARTIES. ORIGINAL CONTRIBUTOR AND THE OTHER
+CONTRIBUTORS DO NOT WARRANT THAT THE FUNCTIONS OF THE LICENSED SOFTWARE WILL
+MEET YOUR REQUIREMENTS OR THAT LICENSED SOFTWARE OPERATION WILL BE ERROR-FREE
+OR UNINTERRUPTED.  YOU ASSUME THE RISK OF ANY AND ALL DAMAGE OR LOSS FROM USE, OR
+INABILITY TO USE, THE LICENSED SOFTWARE.  ORIGINAL CONTRIBUTOR AND THE OTHER
+CONTRIBUTORS BEAR NO RESPONSIBILITY FOR CORRECTING THE LICENSED SOFTWARE,
+SUPPLYING ASSISTANCE FOR FIXING, OR FOR COMMUNICATING KNOWN ERRORS TO YOU
+PERTAINING TO THE LICENSED SOFTWARE FURNISHED HEREUNDER.
+
+ORIGINAL CONTRIBUTOR AND THE OTHER CONTRIBUTORS SHALL NOT BE HELD TO ANY
+LIABILITY WITH RESPECT TO ANY PATENT INFRINGEMENT OR ANY OTHER CLAIM MADE BY YOU
+OR ANY THIRD PARTY ON ACCOUNT OF, OR ARISING FROM THE USE OF, THE LICENSED
+SOFTWARE PROVIDED HEREUNDER.
+
+SOME STATES DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO THE ABOVE
+EXCLUSION MAY NOT APPLY TO YOU.  YOU MAY ALSO HAVE OTHER RIGHTS WHICH VARY FROM
+JURISDICTION TO JURISDICTION.
+
+8.0  LIMITATION OF LIABILITY.
+UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY,
+TORT, CONTRACT, OR OTHERWISE, SHALL ORIGINAL CONTRIBUTOR AND/OR THE OTHER
+CONTRIBUTORS BE LIABLE TO YOU OR ANY OTHER THIRD PARTY FOR DAMAGES OF ANY KIND
+INCLUDING, BUT NOT LIMITED TO, ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR
+CONSEQUENTIAL DAMAGES OF ANY CHARACTER WHATSOEVER INCLUDING, WITHOUT
+LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR
+MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES, EVEN IF THE
+ORIGINAL CONTRIBUTOR AND/OR ANY OTHER CONTRIBUTORS SHALL HAVE BEEN INFORMED OF
+THE POSSIBILITY OF SUCH DAMAGES, OR FOR ANY CLAIM BY ANY OTHER PARTY.
+FURTHERMORE, SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF
+INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION AND EXCLUSION MAY NOT
+APPLY TO YOU.  TO THE EXTENT THAT ANY EXCLUSION OF DAMAGES ABOVE IS NOT VALID, YOU
+AGREE THAT IN NO EVENT WILL ORIGINAL CONTRIBUTOR"S AND ALL OTHER CONTRIBUTORS"
+TOTAL LIABILITY UNDER OR RELATED TO THIS AGREEMENT EXCEED ONE THOUSAND DOLLARS
+($1000.00 US).
+
+9.0  EXPORT CONTROL.
+You acknowledge that the Licensed Software hereunder is "publicly available" as the
+term is defined under the United States export administration regulations and is not subject to export control under
+such laws and regulations.  However, if You modify the Licensed Software to change (or otherwise affect) such
+publicly available status You agree that You alone are responsible for compliance with the United States export
+administration regulations and hereby indemnify the Original Contributor and all other Contributors for any liability
+incurred as a result of Your actions which resulted in any change in the export status of the Licensed Software as
+furnished hereunder.
+
+10.0  U.S. GOVERNMENT RIGHTS.
+You may only acquire the Licensed Software on behalf of, or for delivery
+to, any part of the United States Government, if the Licensed Software is treated as commercial computer software
+and licensed to the Government under the terms and conditions of this Agreement, pursuant to the policies stated in
+48 C.F.R. Section 12.212 (October 1995) or 48 C.F.R. Section 227.7202 (June 1995), as applicable.
+
+11.0 LICENSE VERSIONS.
+LUCENT, at its sole discretion, may from time to time publish a revised and/or new
+version of this Agreement (each such revised or new version shall carry a distinguishing version number) which
+shall govern  all copies of Licensed Software downloaded after the posting of such revised or new version of this
+Agreement.
+
+12.0  MISCELLANEOUS.
+This Agreement sets forth the entire agreement and understanding between the parties
+as to the subject matter hereof and merges all prior discussions between them. This Agreement shall be governed by
+the laws of the State of New York, USA, excluding its conflict of law provisions.  The application of the United
+Nations Convention of Contracts for the International Sale of Goods is expressly excluded.
+YOUR DOWNLOAD, INSTALLATION AND USE, MODIFICATION OR DISTRIBUTION OF THE LICENSED SOFTWARE IS
+EXPRESSLY MADE CONDITIONAL ON YOUR ASSENT TO THE TERMS SET FORTH HEREIN. You further
+agree and acknowledge that by clicking on the "ACCEPT" button below, You shall have manifested acceptance to
+enter into this Agreement and shall be deemed to have manually signed and executed this Agreement making this an
+enforceable Agreement between the parties.  If any provision of this Agreement is held to be unenforceable, such
+provision shall be reformed only to the extent necessary to make it enforceable.
+YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT AND UNDERSTAND IT, AND THAT
+BY CLICKING ON THE "ACCEPT" BUTTON BELOW AND INSTALLING/DOWNLOADING THE
+SOFTWARE YOU ACCEPT AND AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS AGREEMENT.
+
+SPIN Software Public License " Version 1.0 " 05/15/01

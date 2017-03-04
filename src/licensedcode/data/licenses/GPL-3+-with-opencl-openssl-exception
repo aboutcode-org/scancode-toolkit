@@ -1,0 +1,21 @@
+GNU General Public License, version 3 or any later version.
+See GPL-3 for the full text of this license.
+
+Additional permission under GNU GPL version 3 section 7
+
+If you modify this Program, or any covered work, by linking or
+combining it with the OpenSSL project's "OpenSSL" library (or a
+modified version of that library), containing parts covered by
+the terms of OpenSSL/SSLeay license, the licensors of this
+Program grant you additional permission to convey the resulting
+work. Corresponding Source for a non-source form of such a
+combination shall include the source code for the parts of the
+OpenSSL library used as well as that of the covered work.
+
+If you modify this Program, or any covered work, by linking or
+combining it with any library or libraries implementing the
+Khronos Group OpenCL Standard v1.0 or later (or modified
+versions of those libraries), containing parts covered by the
+terms of the licenses of their respective copyright owners,
+the licensors of this Program grant you additional permission
+to convey the resulting work.

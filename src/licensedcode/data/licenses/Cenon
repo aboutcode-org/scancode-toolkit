@@ -1,0 +1,103 @@
+                          vhf Public License
+
+Below is a version of the license for the vhf Free Software. The license is
+called the vhf Public License (or "vhfPL"), and is an Open Source license.
+It is thus appropriate for people wishing to write software as Open Source
+where all source code to the software is made available to all users and can
+be freely modified and redistributed.
+
+To use the vhf software or develop software based on vhf software, you have
+to meet the requirements in the vhfPL.
+
+----------------------------------------------------------------------------
+
+                       vhf PUBLIC LICENSE (vhfPL)
+                       Version 1.1, February 2004
+
+Copyright (C) 2003/2004 vhf interservice GmbH,
+                        Im Marxle 3, 72119 Altingen, Germany.
+Everyone is permitted to copy and distribute verbatim copies
+of this license document, but changing it is not allowed.
+
+This license applies to any software containing a notice placed by the
+copyright holder saying that it may be distributed under the terms of this
+vhf Public License. Such software is herein referred to as vhf Software.
+This license covers modification and distribution of the vhf software, use
+of third-party application programs based on the vhf software, and
+development of free software which uses the vhf software.
+
+                               Granted Rights
+
+1. You are granted the rights set forth in this license provided you agree
+   to any and all conditions in this license. Whole or partial distribution
+   of the vhf software in any form signifies acceptance of this license.   
+
+2. You may copy and distribute the vhf software provided that
+   the entire package is distributed, including this License.
+
+3. You may make modifications to the vhf software files and distribute your
+   modifications. The following restrictions apply to modifications:
+
+     a. You must cause the modified files to carry prominent notices
+        stating that you changed the files and the date of any change.
+
+     b. Modifications must not alter or remove any copyright notices in the
+        vhf software.
+
+4. You may distribute the vhf software (or work based on it) in
+   objective code or machine-executable forms, provided that you
+   meet these restrictions:
+
+     a. You accompany the vhf software with this license.
+
+     b. You must ensure that all recipients of the machine-executable
+        forms are also able to receive the complete machine-readable
+        source code to the distributed vhf software, including all
+        modifications, without any charge beyond the costs of data
+        transfer.
+
+     c. You ensure that all modifications included in the
+        machine-executable forms are available under the terms of this
+        license.
+
+5. You may use the original or modified versions of the vhf software
+   to compile, link and run application programs developed by you or
+   third parties under this license.
+
+6. You may develop application programs, reusable components (eg. Bundles)
+   and other software items that link with the original or modified
+   versions of the vhf software. These items, when distributed in
+   machine-executable form, have the following restrictions:
+
+     a. You must ensure that all recipients of the machine-executable
+        forms of these items are also able to receive the complete
+        source code to the items without any charge beyond the costs of
+        data transfer.
+
+     b. You must explicitly license all recipients of your items to use
+        and re-distribute original and modified versions of the items
+        under terms identical to those under which they received the items.
+
+7. The trademarks or software titles 'vhf', 'Cenon' etc. may be used for
+   promoting software, products or services which use or contain the
+   vhf software.
+   The associated names of the authors of the vhf software may not be used
+   to endorse or promote products or services derived from or linking the
+   vhf Software without specific prior written permission.
+
+
+                          Limitations of Liability
+
+In no event shall the authors of the vhf software or the copyright holder
+or their employers be liable for any lost revenue or profits or other
+direct, indirect, special, incidental or consequential damages, even if
+they have been advised of the possibility of such damages.
+
+                                No Warranty
+
+The vhf software is provided AS IS with NO WARRANTY OF ANY KIND,
+INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A
+PARTICULAR PURPOSE.
+
+----------------------------------------------------------------------------
+Copyright (C) 2003 vhf interservice GmbH                      service@vhf.de

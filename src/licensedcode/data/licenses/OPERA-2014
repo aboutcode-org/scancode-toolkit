@@ -1,0 +1,101 @@
+Format: Mostly copyright-format 1.0
+# http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+# Making this file match the format entirely would require
+# reformatting the Opera license.
+
+Upstream-Name: opera/opera-next/opera-developer
+Source: http://www.opera.com
+
+Files: *
+Copyright: 2014 Opera Software
+License: Proprietary
+End-user license agreement and terms of service for Opera for desktop for Open Source operating systems
+
+Please read this carefully. This software license agreement and terms of service (“Terms”), including the privacy provisions in section 7 of these Terms, form a binding contract between you and Opera Software ASA (“Opera”), whose principal place of business is Gjerdrums vei 19, 0484, Oslo, Norway. By acceptance of delivery of the software and services you (“you”) hereby agree to be bound by these Terms. Otherwise, please discontinue the use of the software and services.
+
+These Terms govern your use of the software in executable form and your use of the associated services. Source code used in the software, under open source license agreements, can be obtained at http://sourcecode.opera.com or by sending an email message to opensource@opera.com.
+
+1	Acceptance of terms
+
+You can accept the Terms by selecting to accept or to agree to the Terms during the installation process or when the dialog is displayed in the user interface, or by your use of the Software and Services.
+
+You declare by acceptance of the Terms that you are of legal age to use the Software and Services.
+
+2	Definitions
+
+2.1 “You” (or “your”) means the legal entity or person who orders or downloads the Software and/or activates the Services.
+
+2.2 “Documentation” means the standard end-user technical documentation, specifications, materials and other information Opera supplies with the Software and/or Services.
+
+2.3 "Services" means the various services to which Opera provides users with access, including without limitation, the Opera Turbo feature, Discover feature, search services, automatic updates, personalized content and branded offerings.
+
+2.4 “Software” means Opera’s software products (in object code format only) delivered to you (including but not limited to the Opera browser), together with any update or upgrade, when and if made available to you by Opera. Software does not include Third-Party Software.
+
+2.5 “Third-Party Software” means the software of certain third parties that Opera may deliver with the Software, including but not limited to any third-party open source components.
+
+2.6 “Use” (or “use”) means to cause a computer system to execute any machine-executable portion of the Software in accordance with the documentation or to make use of any documentation or related materials in connection with the execution of any machine-executable portion of the Software, and to make use of any of the Services.
+
+3	License
+
+Subject to the terms and conditions of these Terms, Opera hereby grants you a limited, non-exclusive, non-transferable, non-sublicensable license; (i) to use the Services and to install and use the Software supplied to you hereunder, as installed on your personal computer, including your laptop, desktop, or on computers within your organization; and (ii) to reproduce and distribute the Software without modification, provided that any such reproduction or distribution of the Software by you: (a) must be in an application repository for a desktop Open Source OS distribution (expressly excluding distribution for embedded Open Source OS); (b) must be made available free of charge for end-users; (c) must be subject to and distributed with a copy of this Agreement; and (d) no automatic modification of the default search engines in the Software settings is done at any time, including but not limited to after the Software is installed.
+
+4	License restrictions and Third-Party Software
+
+4.1 You shall not and shall not allow any third party to: (a) Use the Software or Services except as expressly permitted under Section 3; (b) separate the component programs of the Software for use on different computers; (c) adapt, alter, publicly display, publicly perform, translate, embed into any other product, or otherwise create derivative works of, or otherwise modify the Software or Services; (d) sublicense, lease, rent, loan, or distribute the Software or Services to any third party; (e) transfer the Software or Services to any third party; (f) reverse engineer, decompile, disassemble, or otherwise attempt to derive the source code for the Software, (i) except as permitted by applicable law, or (ii) to the extent as may be permitted by the license of any included Third-Party Software; (g) remove, alter or obscure any proprietary notices on the Software or Services, or the applicable documentation therefore; or (h) allow third parties to access or use the Software or Services, including without limitation any use in any application service provider environment, service bureau, or time-sharing arrangements.
+
+4.2 Third-Party Software is subject to separate terms and conditions included with, or contained in the setup installation segments of such Third-Party Software. The license restrictions contained in these Terms do not apply to Third-Party Software to the extent they are inconsistent with such Third-Party Software terms. Opera shall not be responsible for any Third-Party Software.
+
+5	Use of services
+
+5.1 Opera reserves the right at any time and from time to time to modify or discontinue, temporarily or permanently, the Services (or any part thereof) with or without notice. You agree that Opera shall not be liable to you or to any third party for any modification, suspension or discontinuance of the Services. Opera reserves the right to change, limit usage of, charge for continued usage of (of course require you to opt in before incurring any charges), and/or discontinue any service at any point in time.
+
+5.2 Opera Turbo: When Opera Turbo is enabled, the Software will request normal web content through an Opera proxy server. The browsing experience may change due to increased webpage loading speeds when using the Opera Turbo feature.
+
+5.3 Discover: The Discover feature helps you to discover and access content made available by third parties on the internet. Opera exercises no editorial control over any content that you access through the Discover feature.
+
+5.4 Synchronization: Opera allows you to enable synchronization of browser data such as your speed dials between Opera browsers on the devices you are using. The service requires that you login a social network service or by creating an Opera account.
+
+6	Proprietary rights
+
+You acknowledge and agree that the Services and the Software, including without limitation the Software’s sequence, structure, organization, source code and applicable documentation contains valuable trade secrets and other intellectual property of Opera and its suppliers and is considered Opera’s confidential information. The Software and Services are licensed and not sold to you, and no title or ownership to such Software or Services or the intellectual property rights embodied therein passes as a result of these Terms or any act pursuant to these Terms. The Software and Services and all intellectual property rights therein are the exclusive property of Opera and its suppliers, and all rights in and to the Software and Services not expressly granted to you in this Agreement are reserved. Opera owns all copies of the Software, however made. Nothing in these Terms will be deemed to grant, by implication, estoppel or otherwise, a license under any existing or future patents of Opera, except to the extent necessary for User to use the Software or Services as expressly permitted under these Terms.
+
+7	Privacy and personal information
+
+7.1 General: No personal identifiable information is collected. Your installation of the Software contains a unique ID that can not be linked to you as an individual person. This unique ID is required for auto-updates of the Software and any installed extensions. Data about the features (not websites) used in the Software is collected with the purpose to improve the Software and Services. The Software also creates a unique ID that is linked to your computer. This unique ID is processed with the sole purpose to measure marketing campaigns and distribution partners. Any crash logs sent by the Software will include the version number of the Software and information about the operating system. This information is collected with the sole purpose to improve the Software or the Services. Opera’s privacy policy located at http://www.opera.com/privacy (“Privacy Policy”) is incorporated by reference.
+
+7.2 Opera Turbo is a web browsing service relying on web content being compressed on Opera proxy and video compression servers and then sent to the Software installed on your device. Opera is not able to link usage related data in Opera proxy servers to individual persons. Opera proxy servers log in addition to the web addresses (not content of the web pages), IP-addresses, Operating system, any campaign reference for the Software and a randomly generated identifier for the Software. Opera stores and processes usage related log data to provide, debug, maintain, and optimize the service. Opera server logs are kept for up to six months. Usage-related log data is also used to generate aggregated and anonymized statistics for Opera’s own use and for reporting usage to Opera’s customers.
+
+7.3 Discover: Opera is not able to link any usage related data to individual persons.  The service collects the web addresses (not content of the webpages), IP-addresses, the end-user device make and model, and a randomly generated identifier for the Software. Opera stores and processes usage related log data to provide, debug, maintain and optimize the service. Opera server logs are kept for up to six months. Usage related log data are also used to generate aggregated and anonymized statistics for Opera’s own use, and for reporting usage to Opera’s customers.
+
+7.4 Synchronization: Opera allows you to enable synchronization of browser data such as your speed dials between Opera browsers on the devices you are using, by logging in using Facebook, Google, Twitter or by creating an Opera account. Opera collects data submitted by you, and your name, username, email address and language if provided by the social service you use to login. The data is processed with the sole purpose to enable synchronization of browser data, including debugging, improvements and optimization. Data received for a social service may be retained for up to six months after you stopped using the synchronization feature. The data in your Opera account can be modified and deleted with the tools we provide.
+
+7.5 Built-in web search: The Software has a built-in, web search feature. This gives you the option to utilize external web search engines directly from the browser interface. Opera relies on third parties for this service. The Software sends the your search requests (in a specially designed URL string) directly to third-party websites that handle the actual search queries. What is sent to the third-party site is the special search string along with the text terms needed to perform the particular search query. No personal information is sent.
+
+7.6 Some third-party sites may monitor data traffic from the Software, such as numbers of hits and the search terms used. No personally identifiable information is made available to these services by the Software, and not by Opera. Please note: Opera does not control the privacy and security practices and policies of these third parties and their sites. Check the particular site and/or business for more information. It is your responsibility to use caution before sharing personal information via forms and other methods used by third parties and their websites.
+
+7.7 Opera reserves the right to disclose any information we have as required by law and when we believe that disclosure is necessary to protect our rights and/or comply with a judicial proceeding, court order, or legal process. Opera restricts internal access to data that is not aggregated or further anonymized, exclusively to those who need it for the operation of the services. Information may be stored outside of the country in which the user resides, and user hereby consents to such storage and transfer of information between jurisdictions. Any updates or changes to these privacy provisions will be included in Opera’s Privacy Policy available at http://www.opera.com/privacy/.
+
+8	Term and termination
+
+These Terms will commence upon your download of the Software and/or your commencement of the Services and, unless earlier terminated as provided in this Section 8, will continue in perpetuity. These terms will immediately terminate upon your breach of these Terms, unless such breach is curable and is actually and immediately cured by you after Opera provides notice of breach to you. Upon the termination of these Terms, you will discontinue all use of the Software and/or Services, promptly destroy or have destroyed the Software and any copies thereof, and, upon request by Opera, certify in writing to Opera that such destruction has taken place. These remedies are cumulative and in addition to any other remedies available to Opera. Sections 2, 4, 6, 7, 8, 9, 10, 11, 12, and 13, shall survive such termination.
+
+9	Disclaimer of warranties
+
+THE SOFTWARE AND SERVICES ARE PROVIDED “AS IS,” AND ALL WARRANTIES AND CONDITIONS, EXPRESS, IMPLIED, AND STATUTORY, INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR USE, ACCURACY OR COMPLETENESS, SATISFACTORY QUALITY, AND QUIET ENJOYMENT, OR OTHER WARRANTIES OR CONDITIONS ARISING BY STATUTE, OPERATION OR LAW, COURSE OF DEALING, USAGE OF TRADE OR OTHERWISE ARE HEREBY DISCLAIMED. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF IMPLIED WARRANTIES, SO THE ABOVE LIMITATIONS MAY NOT APPLY TO USER. OPERA DOES NOT WARRANT THAT THE USE OF THE SOFTWARE OR SERVICES WILL BE UNINTERRUPTED OR ERROR FREE OR THAT THE SOFTWARE OR SERVICES DO NOT CONTAIN ANY VIRUSES. THIS WARRANTY DISCLAIMER IS A FUNDAMENTAL ELEMENT OF THE BASIS OF THE BARGAIN BETWEEN USER AND OPERA. OPERA WOULD NOT PROVIDE THE SOFTWARE OR SERVICES ABSENT SUCH DISCLAIMER. NO REPRESENTATIONS OR WARRANTIES ARE MADE BY ANY SUPPLIERS TO OPERA UNDER OR BY VIRTUE OF THIS AGREEMENT.
+
+10	Limitation of liability
+
+IN NO EVENT SHALL OPERA BE LIABLE FOR ANY INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR INDIRECT DAMAGES OF ANY KIND (INCLUDING WITHOUT LIMITATION DAMAGES FOR INTERRUPTION OF BUSINESS, LOST DATA, LOST PROFITS, OR THE LIKE) REGARDLESS OF THE FORM OF ACTION, WHETHER IN CONTRACT, TORT (INCLUDING WITHOUT LIMITATION NEGLIGENCE), STRICT PRODUCT LIABILITY, OR OTHER THEORY, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN NO EVENT WILL THE CUMULATIVE LIABILITY OF OPERA ARISING OUT OF OR RELATED TO THIS AGREEMENT EXCEED THE AMOUNT PAID TO OPERA IN RESPECT OF THE SOFTWARE GIVING RISE TO THE CLAIM OR IF NO FEES WERE PAID THEN FIVE HUNDRED EUROS. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE FOREGOING EXCLUSION AND LIMITATION MAY NOT APPLY TO YOU. THIS LIMITATION OF LIABILITY WILL APPLY NOTWITHSTANDING THE FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY SET FORTH HEREIN. IN NO EVENT WILL ANY SUPPLIER TO OPERA HAVE ANY LIABILITY TO YOU UNDER THIS AGREEMENT. THIS LIMITATION OF LIABILITY IS A FUNDAMENTAL ELEMENT OF THE BASIS OF THE BARGAIN BETWEEN YOU AND OPERA. OPERA WOULD NOT PROVIDE THE SOFTWARE TO YOU ABSENT SUCH LIMITATION.
+
+11	Notices
+
+All notices required under these Terms will be given as follows: (a) in the case of notices to Opera, by certified mail, return receipt requested, to the following address: Chief Operating Officer, Opera Software ASA, Gjerdrums vei 19, 0484 Oslo, Norway, such notice to be deemed effective upon receipt by Opera; and (b) in the case of notices to you, by email to the email address that you provided to Opera prior to initiating the download of the Software or start of the Services, such notice to be deemed effective upon the earlier of (i) twenty-four (24) hours after sending, or (ii) your actual receipt of any such email. Source code used in the software, under open source license agreements, can be obtained by sending an email message to opensource@opera.com.
+
+12	Injunctive relief
+
+You acknowledge and agree that the Software and Services contain valuable trade secrets, confidential information and proprietary information of Opera. You further acknowledge that any actual or threatened breach or violation of Section 3 or Section 4 of these Terms will constitute immediate, irreparable harm to Opera for which monetary damages would be an inadequate remedy, and that injunctive relief is an appropriate remedy for any such breach or violation.
+
+13	General
+
+You acknowledge and agree that the Software may contain cryptographic functionality the export of which is restricted under applicable export control law. You will comply with all applicable laws and regulations in your activities under these Terms. You will not export or re-export the Software in violation of such laws or regulations or without all required licenses and authorizations. The laws of Norway will govern these Terms without giving effect to any conflicts of law principles that may require the application of the laws of a different country. The United Nations Convention on Contracts for the International Sale of Goods does not apply to this Agreement. All actions or proceedings arising under or related to these Terms must be brought in the Oslo City Court, and each party hereby agrees to irrevocably submit to the jurisdiction and venue of any such court in all such actions or proceedings. If any provision of these Terms is determined by a court of competent jurisdiction to be invalid, illegal, or unenforceable, the remaining provisions of these Terms shall not be affected or impaired thereby. You may not assign or transfer this contract without obtaining Opera’s prior written consent, and any purported assignment or transfer in violation of this Section 13 will be null and void. Opera may update the Terms of this agreement if and when you install and update or upgrade to the Software and/or Services. You will be responsible for all of your access and data charges from your internet service provider or mobile operator. Applications you download or that are made available to you may automatically connect to the Internet to update information or provide a service to you.
+

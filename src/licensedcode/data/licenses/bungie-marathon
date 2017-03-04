@@ -1,0 +1,31 @@
+From the original Marathon Trilogy Box Set License-
+
+(c) 1997 Bungie Software Products Corporation
+All Rights Reserved. PO Box 7877, Chicago, IL 60680-7877
+Marathon is a trademark of Bungie Software Products Corporation
+All other trademarks are the properties of their respective owners.
+
+From http://trilogyrelease.bungie.org/faq.html
+
+Q: Hey, I thought Marathon needed serial numbers!
+A: The versions released with the Trilogy Box Set were stripped of the serial number code. These will work fine - as long as you're not trying to play with folks who are using older versions.
+
+Q: Wow... can I do whatever I want with this stuff?
+A: NO. Bungie still holds the copyrights to these files. They're allowing them to be distributed for free (mostly because you can't buy them any more) - but they're still Bungie's intellectual property. You can't, for example, sell them.
+
+I really want more info about Marathon, and running it on my computer! Where can I go?
+There are a number of sites devoted to this game:
+
+* Marathon Open Source is the grandfather of Aleph One sites
+  - http://source.bungie.org/
+* Aleph One/SDL is devoted to... well, Aleph One/SDL
+  - http://www.uni-mainz.de/~bauec002/A1Main.html
+* OrbitalArm was set up to help Windows players play Marathon
+  - http://orbitalarm.bungie.org/
+* AlephOne has a SourceForge site
+  - http://sourceforge.net/projects/marathon/
+* Fileball and The Archives contain many Aleph One files 
+  - http://fileball.net/marathon/
+  - http://archives.bungie.org/
+
+NOTE: Until we get something more concrete, I'm marking any builds that depend on this license- RESTRICT="nomirror"

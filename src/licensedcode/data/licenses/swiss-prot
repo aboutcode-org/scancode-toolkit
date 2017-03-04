@@ -1,0 +1,142 @@
+Background and rationale
+
+ Almost since its creation by Amos Bairoch in 1986, the SWISS-PROT protein sequence database has been a collaborative effort of the Department of Medical Biochemistry of the University of Geneva and what was then called the Data Library group of the European Molecular Biology Laboratory (EMBL) in Heidelberg (Germany). In 1994, the activities of the Data Library were broadened and incorporated in a new Outstation of EMBL, the European Bioinformatics Institute (EBI) in Hinxton (UK). In April this year, the SWISS-PROT group in Geneva joined a new academic institution, the Swiss Institute of Bioinformatics (SIB), which it helped to create. SWISS-PROT is therefore an equal partnership of the SIB and EBI/EMBL. The founder, Amos Bairoch, is ultimately responsible for the scientific content and format of SWISS-PROT.
+
+ The enormous growth in the quantity of sequence and characterization data has made the task of producing an annotated and comprehensive protein sequence database a major challenge. While automation of some aspects of this work has made it possible to obtain significant progress in productivity, it nonetheless remains a task which is intensive in terms of human resources, and which requires an increasing amount of expertise. Recent years have shown that public funding for such an activity is not going to keep pace with its financial requirements. During the same period, the importance of high quality annotation for all kinds of life sciences research activities has grown. We are therefore faced with the paradoxical situation where no major life sciences research lab can function without a database such as SWISS-PROT, yet the existence and continued development of such a resource is in jeopardy.
+
+ We believe that the only feasible solution to this problem is to obtain additional funds through the payment of yearly license fees by non-academic users for access to SWISS-PROT. We have, therefore, explored legal and organizational solutions to achieve this goal. After careful consideration of all potential options, we have planned the following solution:
+
+ Starting in September 1998, we intend to implement a system of an annual subscription fee for commercial use of the database. Both SIB and EBI will mandate a new company, Geneva Bioinformatics (GeneBio) to act as their representative for the purpose of concluding the necessary license agreements and levying the fees.
+
+ We will describe here in detail the consequences of this change. The most important take-home message is that these changes should not have any impact on the way SWISS-PROT is accessed or redistributed. Academic users will not be affected by these changes. Industrial end-users will also not directly be affected as long as their employer pays the license fee. The same holds true for bioinformatics companies. Academic software or database developers as well as providers of database distribution services will be only minimally affected by these changes. We hope to be able to keep the spirit of SWISS-PROT alive and at the same time ensure its long-term financial survival. We sincerely hope and believe that in the next two years the only change that will matter will be the increase in scope and timeliness of the database.
+
+How are these new funds going to be used?
+
+ The funds obtained through licensing of SWISS-PROT to industrial users will be used by both SIB and EBI to contribute to the further development of the database. In particular, new annotation and programming support positions will be created. We will also hire persons whose task will be to interact with users and to further enhance the successful dialog that has been established between SWISS-PROT and the scientists who are contributing the information that is used to build the database. The growth of the SWISS-PROT staff will allow us to hire specialized annotators with a larger knowledge spread (medicine, pharmacology, virology, etc.) than is currently represented among our staff.
+
+When can you expect these new developments to enhance the impact of SWISS-PROT?
+
+ It takes about a year to train an annotator. As new funds will not be generated before the last quarter of 1998, most changes will only be apparent in the last months of 1999. Nevertheless, we believe that before the release of "SWISS-PROT 2000", we will have achieved a number of specific goals. We will have among other things:
+
+  Finished the first pass of the complete annotation of the proteins encoded in a number of complete genomes, and in particular those of E.coli, B.subtilis, M.jannaschii and yeast (S.cerevisiae);
+
+  Made a substantial effort toward the full annotation of human and rodent proteins;
+
+  Significantly increased the speed of annotation so as to be able to annotate key members of new protein families as soon as they become available;
+
+  Changed the taxonomy currently used in SWISS-PROT to that used by the DNA databases
+
+  Converted the "ALL UPPER CASE" format currently used to a more appealing and user-readable "Mixed Case" format;
+
+  Created mirror sites of the WWW ExPASy server so as to provide users in every part of the world with a comprehensive database and software environment for protein studies.
+
+Why the funding model of SWISS-PROT is not applicable to nucleotide sequence databases
+
+ We consider that the funding model that has to be adopted to secure the viability of SWISS-PROT is not applicable to the international nucleotide sequence databases (EMBL/GenBank/DDBJ), even though these are also curated. Nucleotide sequences, from which SWISS-PROT entries are derived, must remain in the public domain in recognition of the fact that they are the primary data, and have been submitted to public-domain collections by individual scientists. This same consideration holds for primary databases of macromolecular structures (such as PDB).
+
+Will there be changes on the way SWISS-PROT can be accessed?
+
+ The take-home message is: if you are a user of SWISS-PROT from a non-profit organization, you will not be affected by these changes. If you are a for-profit user, you should not be directly affected, but your company will have to pay a yearly license fee to allow you and your colleagues to make use of the database. Legally, SWISS-PROT will be copyrighted, so that it can be legally protected against unauthorized use.
+
+ We are planning no major changes in the procedures currently used for access. We are aware that SWISS-PROT is redistributed in many different forms and media by numerous organizations and bioinformatics companies around the world, and we have decided to keep the current system in place. There will be no password scheme and no limitation on access. The whole system will be based on trust. What this means is that we trust commercial companies to contribute to the financial health of the database by paying their yearly subscription. We will, of course, check any examples of flagrant abuse. If you are an academic user of SWISS-PROT you should not see any changes other than improvements such as those listed above and the fact that SWISS-PROT entries will now contain a statement which will probably look very much like this one:
+
+  CC   --------------------------------------------------------------------------
+  CC   This SWISS-PROT entry is copyright. It is produced through a collaboration
+  CC   between  the Swiss Institute of Bioinformatics  and the  EMBL Outstation -
+  CC   the European Bioinformatics Institute.  There are no  restrictions on  its
+  CC   use  by  non-profit  institutions as long  as its content  is  in  no  way
+  CC   modified and this statement is not removed.  Usage  by  and for commercial
+  CC   entities requires a license agreement (See http://www.isb-sib.ch/announce/
+  CC   or send an email to license@isb-sib.ch).
+  CC   --------------------------------------------------------------------------
+
+ Such a statement will appear in the majority of SWISS-PROT entries, however it will not appear in any entry whose sequence originates solely from direct protein sequencing or from the translation of a DNA sequence which is not available in the international nucleotide sequence database (EMBL/GenBank/DDBJ). This decision was taken to allow industrial users that have submitted protein sequences to retrieve them without any legal consequences.
+
+Is SWISS-PROT release 36 still in public domain?
+
+ To facilitate the transition for all users, the SWISS-PROT release 36 will remain completely in the public domain and is not subject to any of the changes mentioned in this document.
+
+Redistribution of SWISS-PROT
+
+ There are many ways in which all or part of SWISS-PROT can be redistributed. The most common cases are the following:
+
+  Distribution of the entire database by FTP;
+
+  Distribution of the entire database on CD-ROM, either in its original format or reformatted and indexed to be used with a specific software package;
+
+  Access to specific entries using a WWW server.
+
+ We are aware that many academic institutions and software companies redistribute SWISS-PROT and we therefore want to minimize disruption of the existing schemes. If you are redistributing SWISS-PROT or making it available to all users on the Internet you need to explicitly ask permission to do so by registering your service with either the SIB or the EBI. Such a permission will be granted if you agree to observe the following rules:
+
+  In the case of a WWW or FTP server, you are asked to make available to SIB or the EBI that part of your log files that specifically deals with access to SWISS-PROT. Such information should be provided at least twice a year. SIB and EBI will then inform GeneBio of access to SWISS-PROT by companies that have not yet paid their yearly license fee. Apart from this specific use and that of building statistics of global usage of SWISS-PROT, this information will not be used in any other way, nor will it be made available to third parties.
+
+  In the case of CD-ROM distribution, you are asked to provide the list of the for-profit institutions to which such CD-ROMS were distributed. Such a list should be provided at least twice a year.
+
+  You must update the copy of SWISS-PROT that you make available on a timely basis. For an FTP service, you should provide the last full update of the database at the latest three weeks after it has been released. For CD-ROM distribution, you should provide a minimum of two updates per year. For a WWW server you should provide the latest database no more than one month after it becomes available on the official WWW servers of SIB and EBI. It goes without saying that by registering your service, you will directly receive from SIB or EBI information about the availability of major and weekly releases so as to help you to comply with this request. This condition is purely made on behalf of users of the database: most existing servers already provide up-to-date information, but in a recent survey, we found one or two services that were offering releases dating back more than 18 months.
+
+  You should not redistribute SWISS-PROT in a format other than those listed hereafter without the explicit consent of SIB/EBI. The formats that are accepted by default, in addition to the original format, are those known as 'ASN.1' and as 'GCG'. You can also make SWISS-PROT available in 'FASTA' or 'Blast' formats as long as you also provide a version that includes all annotations in the agreed formats. Again, this request is made on behalf of users, who are confused as to what type of information is available in SWISS-PROT when the database is reformatted and some of its structure is lost after such a transformation. It is fair to say that SIB/EBI will look positively into any request for redistribution which keeps the structure of the database, and will respond negatively only in the rare cases where the integrity of the structure is degraded.
+
+  You should make available to users of SWISS-PROT to whom you redistribute the database some information items that will be provided by SIB and EBI. These information items are meant to briefly describe the database and its content; to point out the original sites (SIB and EBI) where the database can be obtained; and to summarize the principle of the new licensing system. We will tailor these information items to the specific technical requirements of your distribution system. For example: if you have a WWW server running SRS, we will provide the 'IT' file that describes SWISS-PROT or, if you have a FTP server, we will provide the 'readme' file to be stored in the SWISS-PROT directory.
+
+Incorporation of SWISS-PROT in a similarity search service
+
+ What we discuss here are services that allow users to detect similarities between a 'test' sequence and the sequences stored in one or more sequence databases. Most services of that kind are those based on the well-known FASTA or Blast series of programs. The same conditions also apply to protein identification services (e.g. proteomics tools used in the context of mass spectrometry (MS) or 2D-PAGE) as well as services based on the identification of protein families (e.g. PROSITE, BLOCKS, Pfam, etc.).
+
+ There are a number of cases to consider:
+
+  If you are an academic institution providing such a service to internal users of your institution, you do not need to do anything, not even register your service;
+
+  If you are an academic institution providing such a service on the Internet to any users either academic or industrial, you need to register your service with SIB/EBI and observe the following rules:
+
+   Your search service should offer a version of SWISS-PROT that is not more than 2 months older than that available on the official WWW servers of SIB and EBI. If for technical reasons, you are not able to comply with this request, we may, on a case by case basis, decide to relax this rule.
+
+  The output produced by your search engine should explicitly state what version of SWISS-PROT was used to do the search (Example: 'Release 36 with updates up to October 24, 1998').
+
+ While this seems similar to the case discussed previously (services redistributing or providing access to SWISS-PROT entries), there is an important difference. You do not need to provide to SIB or EBI the log file of such a service as long as your similarity search service does not directly provide, as its output, any SWISS-PROT entry. This is the case of most existing programs, such as Blast or FASTA.
+
+ If you want to create links from the results of a search to the full display of the relevant SWISS-PROT entries, you are encouraged to do so. We specifically encourage you to make these links to the original entries on the SIB or EBI WWW servers, as these will always contain the most up-to-date information. However, if you want to provide links to a copy of SWISS-PROT stored on your local server, you can also do so, but in that case you will become a redistributor of SWISS-PROT and the rules in the relevant section of this document will be applicable.
+
+
+Use of SWISS-PROT as the primary resource for a derived database or information service
+
+ We distinguish here three types of usage:
+
+  integration of all of SWISS-PROT into another database (example: Entrez or OWL);
+
+  integration of part of SWISS-PROT into a specialized database (examples: AmsDb, GeneCards, EcoGene, etc.);
+
+  integration of SWISS-PROT into a specialized information service. Examples: ProDom, which shows the domain organization of SWISS-PROT entries, or ProtoMap which clusters entries by families on the basis of similarity.
+
+ Integration of all of SWISS-PROT into another database will require explicit permission from SIB/EBI. Such permission will only be granted if there is a valid scientific or technical reason to encapsulate the entire content of SWISS-PROT into a new resource. In the event that such permission is granted you will become a redistributor of SWISS-PROT and the rules in the relevant section of this document will be applicable.
+
+
+ Integration of part of SWISS-PROT into a specialized database is encouraged. However, if you are using or intend to use SWISS-PROT entries or part of SWISS-PROT entries, you need to contact SIB or EBI to get an explicit permission to do so. You will be asked to describe the scope of your database, what part of SWISS-PROT you want to incorporate and how the information will be presented and distributed.
+
+
+ Services that make use of SWISS-PROT to build an information resource are bound by the same rules as those described for similarity search services. However we do not want to hinder services such as ProDom or ProtoMap, which requires huge computing resources to produce a new release. We will therefore consider relaxing the time constraints for such services on a case per case basis, on explicit request.
+
+
+Use of SWISS-PROT in an educational context
+
+ Use of SWISS-PROT for educational purpose is actively encouraged. As a member of an academic institution you can use SWISS-PROT in any courses or seminars with no restriction whatsoever. If you organize courses that are attended by industrial users you can make them aware of the following statement:
+
+ Industrial participants in courses and seminars are free to make use of SWISS-PROT during the course or seminar irrespective of whether or not their employer is currently subscribing to the database.
+
+ We also encourage use of the databases for educational purpose by exempting companies whose purpose is to organize courses and/or seminars for the Life Sciences community from the obligation of paying for a yearly subscription. Such companies need to contact SIB or EBI to register. They are asked to provide the charter of their organization so as to ensure that they are actively engaged in such educational activities and that they are not using a peripheral educational activity as to get exempted from paying their subscription!
+
+Making reference to SWISS-PROT entries
+
+ There are no restrictions on either academic or industrial users making references to SWISS-PROT entries in any form of publications, printed or electronic. We only want to take this opportunity to remind you again (but believe us, this is needed!) that when you cite a database entry you need to cite the primary accession number of that entry. Accession numbers are fixed identifiers, entry names are not. Of course, you can include the entry name in the citation of an entry, but the accession number is the primary mean of identification of an entry and should always be used.
+
+Incorporating SWISS-PROT information or entries in printed publications
+
+ If you are writing a book, a book chapter or an article and you want to illustrate it with one or more figures representing SWISS-PROT entries or excerpts of entries, you are encouraged to do so and do not need to ask for permission. However if you intend to publish a book which contains the printout of a significant number of entries from the database, you need to ask explicitly for permission. We intend to grant permissions, but we want to make a distinction between illustrating an article or a book with excerpts from the database (which is encouraged) and printing a book which solely or substantially consists of printouts from the database.
+
+
+For more information...
+
+ If after having read this document, you still have questions, you can send an email to the following addresses:
+
+  General information: info@isb-sib.ch
+
+  Licensing information: license@isb-sib.ch

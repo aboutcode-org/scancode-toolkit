@@ -1,0 +1,74 @@
+
+                The Elm(tm) Mail System General Public License
+  		 
+
+                    (C) Copyright 1988-1992, USENET Community Trust
+		    (C) Copyright 1986,1987, by Dave Taylor
+
+
+			  	COPYING POLICIES
+
+     Permission is hereby granted for copying and distribution of copies of
+  the Elm source files, and that of any part thereof, subject to the following 
+  license conditions:
+
+        1. You may, without additional permission from the authors, distribute 
+           Elm or components of Elm, with or without additions developed by 
+           you or by others at no charge.  You may also distribute Elm along 
+           with any other product for sale, provided that the cost of the 
+           bundled package is the same regardless of whether Elm is included,
+           and provided that those interested only in Elm must be notified 
+           that it is a product freely available from the Elm Development Group.
+
+        2. You may, without additional permission from the authors, distribute 
+	   copies of the Elm Documentation, with or without additions developed by 
+           you or by others at no charge or at a charge that covers the cost of
+	   reproducing the copies, provided that the Elm copyright notice is
+	   retained.
+
+        3. Furthermore, if you distribute Elm software or parts of Elm, with 
+           or without additions developed by you or others, then you must 
+           either make available the source to all portions of the Elm system 
+           (exclusive of any additions made by you or by others) upon request, 
+           or instead you may notify anyone requesting source that it is 
+           freely available from the Elm Development Group.
+
+        4. In addition, you may not omit any of the copyright notices
+           on either the source files, the executable file, or the 
+           documentation, and
+
+        5. Also, you may not omit transmission of this License agreement with 
+           whatever portions of Elm that are distributed.
+
+        6. Lastly, any users of this software must be notified that it is
+           without warrantee or guarantee of any nature, express or implied, 
+           nor is there any fitness for use represented.
+
+Software is a malleable thing - especially UNIX - and the authors can in no
+way guarantee that using this program will not cause grievous damage to your
+system.  Of course this isn't anticipated, but if it does happen, the authors
+cannot be held liable for any damages either directly or indirectly caused
+by this event.
+
+Modification of the system is encouraged, providing that the portions of 
+the system that are from the original still carry the appropriate copyright
+notices and that the changed sections are clearly delimited as such.  The
+authors requests copies of any changes made to ensure that the various versions
+stay reasonably in sync with each other.  Please send all revisions to
+elm@DSI.COM.
+
+NOTE that it is not permitted to copy, sublicense, distribute or transfer any
+of the Elm software except as expressly indicated herein.  Any attempts to
+do otherwise will be considered a violation of this license and your rights
+to the Elm software will be voided.
+
+
+Comments on the system and/or this licensing agreement is encouraged.  Send
+electronic mail to "taylor@intuitive.com".  This license was written with
+help from Scott McGregor.  Thanks Scott!
+
+----
+Elm is a trademark of Dave Taylor. 
+
+NOTE: Elm is now in the public trust. Comments, suggestions, bug reports and the
+like should be sent to Syd Weinstein; elm@DSI.COM (dsinc!elm)
