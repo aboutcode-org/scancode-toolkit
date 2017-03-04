@@ -407,6 +407,8 @@ def scan(input_path,
                 if item:
                     _scan_success, _scanned_path = item
                     _progress_line = verbose and _scanned_path or fileutils.file_name(_scanned_path)
+                    if not verbose:
+                    	_progress_line = shorten_filename(_progress_line)
                     return style('Scanned: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
 
             scanning_errors = []
@@ -465,6 +467,26 @@ def scan(input_path,
     cached_scan = scans_cache_class()
     root_dir = _get_root_dir(input_path, strip_root)
     return files_count, cached_scan.iterate(scans, root_dir)
+
+
+def shorten_filename(filename='', max_length=25, number_of_dots=3):
+    """
+    Return the original filename if it is short enough
+    otherwise return its shortened version
+    """
+    if filename is None:
+        return ''
+    filename = fileutils.file_name(filename)
+    if len(filename) <= max_length:
+        return filename
+    base_name, extension = fileutils.splitext(filename)
+    remaining_length = max_length - len(extension) - number_of_dots
+    prefix_and_suffix_length = abs(remaining_length // 2)
+    prefix = base_name[:prefix_and_suffix_length]
+    ellipsis = number_of_dots*'.'
+    suffix = base_name[-prefix_and_suffix_length:]
+    shortened_filename = "{prefix}{ellipsis}{suffix}{extension}".format(**locals())
+    return shortened_filename
 
 
 def _get_root_dir(input_path, strip_root=False):
