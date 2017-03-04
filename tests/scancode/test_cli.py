@@ -28,6 +28,7 @@ from __future__ import division
 
 import json
 import os
+from unittest import TestCase
 from unittest.case import skipIf
 
 import click
@@ -102,6 +103,17 @@ def test_verbose_option_with_copyrights(monkeypatch):
     assert 'copyright_acme_c-c.c' in result.output
     assert os.path.exists(result_file)
     assert len(open(result_file).read()) > 10
+
+
+def test_scan_can_handle_long_file_names(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.get_test_loc('long_file_name/0123456789012345678901234567890123456789.c')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['--copyright', test_dir, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    assert '0123456789...0123456789.c' in result.output
 
 
 def test_license_option_detects_licenses(monkeypatch):
@@ -452,3 +464,41 @@ def test_scan_can_run_from_other_directory():
         print(stderr)
     assert rc == 0
     check_scan(test_env.get_test_loc(expected_file), result_file, strip_dates=True, regen=False)
+
+
+class TestShortenFilename(TestCase):
+
+    def test_filename_is_shortened(self):
+        test = cli.shorten_filename(filename='012345678901234567890123.c')
+        expected = '0123456789...4567890123.c'
+        assert expected == test
+
+
+    def test_filename_is_not_shortened(self):
+        test = cli.shorten_filename(filename='01234567890123456789012.c')
+        expected = '01234567890123456789012.c'
+        assert expected == test
+
+
+    def test_with_empty_args(self):
+        test = cli.shorten_filename()
+        expected = ''
+        assert expected == test
+
+
+    def test_with_none_filename(self):
+        test = cli.shorten_filename(filename=None)
+        expected = ''
+        assert expected == test
+
+
+    def test_without_extension(self):
+        test = cli.shorten_filename(filename='012345678901234567890123456')
+        expected = '01234567890...67890123456'
+        assert expected == test
+
+
+    def test_with_full_path(self):
+        test = cli.shorten_filename(filename='C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/drupal.js')
+        expected = 'drupal.js'
+        assert expected == test
