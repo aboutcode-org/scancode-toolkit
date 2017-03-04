@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -276,7 +276,19 @@ class LicenseMatch(object):
         if not coverage or not relevance:
             return 0
 
-        return round(coverage * relevance * 100, 2)
+        score = coverage * relevance
+        if score == 1:
+            # Is the match a contiguous match or not? If not, recompute the score
+            # with an alternative approach to avoid the case where a 100% match that
+            # is not covering ALL of the query side region (e.g. a non-contiguous
+            # match) can contain extra misleading words.
+            # see https://github.com/nexB/scancode-toolkit/issues/534
+            matched_and_unmatched = self.qspan.magnitude()
+            matched = self.qlen()
+            if matched != matched_and_unmatched:
+                score = matched / matched_and_unmatched
+
+        return  round(score * 100, 2)
 
     def surround(self, other):
         """

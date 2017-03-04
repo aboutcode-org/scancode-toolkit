@@ -619,6 +619,21 @@ class TestLicenseMatchScore(FileBasedTesting):
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
         assert m1.score() == 0
 
+    def test_LicenseMatch_score_100_contiguous(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0'])
+        r1.relevance = 100
+        r1.length = 42
+
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 41), ispan=Span(0, 41))
+        assert m1.score() == 100
+
+    def test_LicenseMatch_score_100_non_contiguous(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0'])
+        r1.relevance = 100
+        r1.length = 42
+
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 19) | Span(30, 51), ispan=Span(0, 41))
+        assert m1.score() == 80.77
 
 class TestCollectLicenseMatchTexts(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
