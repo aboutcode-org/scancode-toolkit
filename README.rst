@@ -77,6 +77,25 @@ See more command examples::
     ./scancode --examples
 
 
+Support
+=======
+
+If you have a problem, a suggestion or found a bug, please enter a ticket at:
+https://github.com/nexB/scancode-toolkit/issues
+
+For other questions, discussions and chats, we have:
+
+- a mailing list at https://lists.sourceforge.net/lists/listinfo/aboutcode-discuss
+
+- an official #aboutcode IRC channel on freenode 
+  (server chat.freenode.net) for scancode and other related tools. 
+  You can use your favorite IRC client or use the web chat at 
+  https://webchat.freenode.net/
+
+- an official Gitter channel at https://gitter.im/aboutcode-org/discuss
+  Gitter also has an IRC bridge at https://irc.gitter.im/
+
+
 About archives
 ==============
 All code must be extracted before running ScanCode since ScanCode will not extract files from tarballs, zip files, etc.  However, the ScanCode Toolkit comes with a utility called extractcode that does recursive archive extraction.
@@ -100,25 +119,6 @@ License
 * Multiple licenses (GPL2/3, LGPL, MIT, BSD, etc.) for third-party components. 
 
 See the NOTICE file for more details.
-
-
-Support
-=======
-
-If you have a proble, a suggestion or found a bug, please enter a ticket at:
-https://github.com/nexB/scancode-toolkit/issues
-
-For other questions, discussions and chats, we have:
-
-- a mailing list at https://lists.sourceforge.net/lists/listinfo/aboutcode-discuss
-
-- an official #aboutcode IRC channel on freenode 
-  (server chat.freenode.net) for scancode and other related tools. 
-  You can use your favorite IRC client or use the web chat at 
-  https://webchat.freenode.net/
-
-- an official Gitter channel at https://gitter.im/aboutcode-org/discuss
-  Gitter also has an IRC bridge at https://irc.gitter.im/
 
 
 Documentation
