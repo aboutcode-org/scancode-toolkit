@@ -105,13 +105,20 @@ See the NOTICE file for more details.
 Support
 =======
 
-If you have a question, a suggestion or find a bug, enter a ticket at:
+If you have a proble, a suggestion or found a bug, please enter a ticket at:
 https://github.com/nexB/scancode-toolkit/issues
 
-For questions and chats, there is an official #aboutcode IRC channel on freenode 
-(server chat.freenode.net) for scancode and other related tools. 
-You can use your favorite IRC client or use the web chat at https://webchat.freenode.net/
+For other questions, discussions and chats, we have:
 
+- a mailing list at https://lists.sourceforge.net/lists/listinfo/aboutcode-discuss
+
+- an official #aboutcode IRC channel on freenode 
+  (server chat.freenode.net) for scancode and other related tools. 
+  You can use your favorite IRC client or use the web chat at 
+  https://webchat.freenode.net/
+
+- an official Gitter channel at https://gitter.im/aboutcode-org/discuss
+  Gitter also has an IRC bridge at https://irc.gitter.im/
 
 
 Documentation
