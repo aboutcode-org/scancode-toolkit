@@ -73,6 +73,7 @@ from scancode import utils
 from extractcode.extract import extract
 from extractcode import default_kinds
 from extractcode import archive
+from extractcode.extract_directory import extract_directory
 
 echo_stderr = partial(click.secho, err=True)
 
@@ -284,20 +285,16 @@ def scancode(ctx,
     scans_cache_class = get_scans_cache_class()
 
     try:
-        #Search for archives recursively in the input path and extract them
-        #After extracting the archives, Scancode can also search for licenses within the files of archives as well
-        abs_input = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(input)))
-        original_input = fileutils.as_posixpath(input)
-        abs_input = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(input)))
-        ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
-        resources = fileutils.resource_iter(abs_input, ignored=ignored)
-        for x in resources:
-            if archive.can_extract(x):
-                #TODO : Implement Extraction of Files without printing to the Terminal
-                for y in extract(x, kinds=default_kinds, recurse=True):
-                    print(y)
-                #TODO : Implement Extraction at a temporary location, and then delete the extracted archives after scanning is complete
+        #We could call the below function if required to first extract all the archives, and then start scanning
 
+
+        #extract_directory(input)
+
+
+        #This achieves silent extraction of archives before starting the scanning
+        #TODO: Delete the extracted files after the scanning process is complete.
+        #TODO: Implement a seperate option in the helper script like --extractandrecurse to call extract_directory
+        #before beginning the scanning process just like other options like --info and others.
         files_count, results = scan(input_path=input,
                                     scanners=scanners,
                                     license_score=license_score,
