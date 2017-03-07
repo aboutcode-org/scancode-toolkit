@@ -1688,6 +1688,14 @@ class TestSevenZip(BaseArchiveTestCase):
         except libarchive2.ArchiveError, e:
             assert 'Damaged 7-Zip archive' in e.msg
 
+    def test_extract_7z_basic_with_space_in_file_name(self):
+        test_file = self.get_test_loc('archive/7z/t .7z')
+        test_dir = self.get_temp_dir()
+        result = archive.extract_7z(test_file, test_dir)
+        assert [] == result
+        expected = ['t/t.txt']
+        check_files(test_dir, expected)
+
 
 class TestIso(BaseArchiveTestCase):
     def test_extract_iso_basic(self):
