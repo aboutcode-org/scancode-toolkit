@@ -70,6 +70,10 @@ from scancode.interrupt import DEFAULT_MAX_MEMORY
 
 from scancode import utils
 
+from extractcode.extract import extract
+from extractcode import default_kinds
+from extractcode import archive
+
 echo_stderr = partial(click.secho, err=True)
 
 
@@ -280,6 +284,20 @@ def scancode(ctx,
     scans_cache_class = get_scans_cache_class()
 
     try:
+        #Search for archives recursively in the input path and extract them
+        #After extracting the archives, Scancode can also search for licenses within the files of archives as well
+        abs_input = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(input)))
+        original_input = fileutils.as_posixpath(input)
+        abs_input = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(input)))
+        ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
+        resources = fileutils.resource_iter(abs_input, ignored=ignored)
+        for x in resources:
+            if archive.can_extract(x):
+                #TODO : Implement Extraction of Files without printing to the Terminal
+                for y in extract(x, kinds=default_kinds, recurse=True):
+                    print(y)
+                #TODO : Implement Extraction at a temporary location, and then delete the extracted archives after scanning is complete
+
         files_count, results = scan(input_path=input,
                                     scanners=scanners,
                                     license_score=license_score,
