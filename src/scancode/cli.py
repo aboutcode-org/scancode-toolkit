@@ -229,14 +229,18 @@ def validate_formats(ctx, param, value):
 @click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=int, show_default=True, help='Stop scanning a file if scanning takes longer than a timeout in seconds.')
 @click.option('--max-memory', is_flag=False, default=DEFAULT_MAX_MEMORY, type=int, show_default=True, help='Stop scanning a file if scanning requires more than a maximum amount of memory in megabytes.')
 
+#--ignore accounts for ignoring user-specified files during the scanning process.
+@click.option('--ignore', show_default=True, default='', metavar='<pattern>', multiple=True, help='Ignore files mentioned with --ignore while scanning.')
+
 def scancode(ctx,
              input, output_file,
              copyright, license, package,
              email, url, info,
              license_score, license_text, only_findings, strip_root,
              format, verbose, quiet, processes,
-             diag, timeout, max_memory,
+             diag, timeout, max_memory,ignore,
              *args, **kwargs):
+    #Passing a new argument ignore to scancode() to account for ignoring files specified by user
     """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
 
     The scan results are printed to stdout if <output_file> is not provided.
@@ -278,6 +282,8 @@ def scancode(ctx,
     scanners = OrderedDict(zip(possible_scans.keys(), zip(possible_scans.values(), scan_functions)))
 
     scans_cache_class = get_scans_cache_class()
+    #Forms a dictionary of inputs provided with --ignore
+    user_ignore = dict((inputs, 'User ignore files while scanning: Supplied by --ignore') for inputs in ignore)
 
     try:
         files_count, results = scan(input_path=input,
@@ -289,6 +295,8 @@ def scancode(ctx,
                                     processes=processes,
                                     timeout=timeout, max_memory=max_memory,
                                     diag=diag,
+                                    #Passing a new argument to scan, to ignore files specified by user
+                                    ignore = user_ignore,
                                     scans_cache_class=scans_cache_class,
                                     strip_root=strip_root)
         if not quiet:
@@ -313,6 +321,7 @@ def scan(input_path,
          processes=1, timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY,
          diag=False,
          scans_cache_class=None,
+         ignore={},
          strip_root=False):
     """
     Return a tuple of (files_count, scan_results) where
@@ -357,7 +366,8 @@ def scan(input_path,
 
     # maxtasksperchild helps with recycling processes in case of leaks
     pool = get_pool(processes=processes, maxtasksperchild=1000)
-    resources = resource_paths(input_path)
+    #Passing a new argument to resource_paths to count for ignoring the files
+    resources = resource_paths(input_path, ignore)
     logfile_path = scans_cache_class().cache_files_log
     with open(logfile_path, 'wb') as logfile_fd:
 
@@ -518,21 +528,27 @@ def _scanit(paths, scanners, scans_cache_class, diag,
     return success, rel_path
 
 
-def resource_paths(base_path):
+def resource_paths(base_path, user_ignore):
     """
     Yield tuples of (absolute path, base_path-relative path) for all the files found
     at base_path (either a directory or file) given an absolute base_path. Only yield
     Files, not directories.
     absolute path is a native OS path.
     base_path-relative path is a POSIX path.
-
+    user_ignore- A dictionary, which contains file names, that need to be ignored while scanning
     The relative path is guaranted to be unicode and may be URL-encoded and may not
     be suitable to address an actual file.
     """
+
     base_path = os.path.abspath(os.path.normpath(os.path.expanduser(base_path)))
     base_is_dir = filetype.is_dir(base_path)
     len_base_path = len(base_path)
-    ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
+    user_ignore.update(ignore.ignores_VCS)
+    #Checks if any argument is supplied with --ignore, and if provided, then ignores the files
+    if any(user_ignore):
+        ignored = partial(ignore.is_ignored, ignores=user_ignore, unignores={})
+    else:
+        ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
     resources = fileutils.resource_iter(base_path, ignored=ignored)
 
     for abs_path in resources:
