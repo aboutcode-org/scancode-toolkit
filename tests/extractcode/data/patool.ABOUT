@@ -1,0 +1,10 @@
+about_resource: archive/7z/t .7z
+
+version: 1.12
+name: patool
+home_url: http://wummel.github.io/patool/ 
+
+owner: Bastian Kleineidam
+author_url: https://github.com/wummel
+
+license_text_file: gpl-3.0.LICENSE
