@@ -70,9 +70,6 @@ from scancode.interrupt import DEFAULT_MAX_MEMORY
 
 from scancode import utils
 
-from extractcode.extract import extract
-from extractcode import default_kinds
-from extractcode import archive
 from extractcode.extract_directory import extract_directory
 
 echo_stderr = partial(click.secho, err=True)

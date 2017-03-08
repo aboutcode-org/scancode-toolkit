@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -47,54 +47,6 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
 
-"""
-Extract archives and compressed files recursively to get the file content available for
-further processing. This the high level extraction entry point.
-
-This is NOT a general purpose un-archiver. The code tries hard to do the right
-thing, BUT the extracted files are not meant to be something that can be
-faithfully re-archived to get an equivalent archive. The purpose instead is
-to extract the content of the archives as faithfully and safely as possible to
-make this content available for scanning: some paths may be altered. Some files
-may be altered or skipped entirely.
-
-In particular:
-
- - Permissions and owners stored in archives are ignored entirely: The extracted
-   content is always owned and readable by the user who ran the extraction.
-
- - Special files are never extracted (such as FIFO, character devices, etc)
-
- - Symlinks may be replaced by plain file copies as if they were regular files.
-   Hardlinks may be recreated as regular files, not as hardlinks to the original
-   file.
-
- - Files and directories may be renamed when their name is a duplicate. And a
-   name may be considered a duplicate ignore upper and lower case mixes even
-   on case-sensitive file systems. In particular when an archive contains the
-   same file path several times, every paths will be extracted with different
-   files names, even though using a regular tool for extraction would have
-   overwritten previous paths with the last path.
-
- - Paths may be converted to a safe ASCII alternative that is portable across
-   OSes.
-
- - Symlinks, relative paths and absolute paths pointing outside of the archive
-   are replaced and renamed in such a way that all the extract content of an
-   archive exist under a single target extraction directory. This process
-   includes eventually creating "synthetic" or dummy paths that did not exist in
-   the original archive.
-"""
-
-
-"""
-An ExtractEvent contains data about an archive extraction progress:
- - `source` is the location of the archive being extracted
- - `target` is the target location where things are extracted
- - `done` is a boolean set to True when the extraction is done (even if failed).
- - `warnings` is a mapping of extracted paths to a list of warning messages.
- - `errors` is a list of error messages.
-"""
 def extract_directory(location, kinds=extractcode.default_kinds, recurse=False):
     """
     Walk and extract any archives found at `location` (either a file or
@@ -127,5 +79,5 @@ def extract_directory(location, kinds=extractcode.default_kinds, recurse=False):
         if archive.can_extract(file):
             #TODO : Implement Extraction of Files without printing to the Terminal
             for y in extract(file, kinds=default_kinds, recurse=True):
-                print (y)
+                # print (y)
                 pass
