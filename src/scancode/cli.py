@@ -70,6 +70,9 @@ from scancode.interrupt import DEFAULT_MAX_MEMORY
 
 from scancode import utils
 
+from extractcode.extract import extract
+from extractcode import default_kinds
+from extractcode import archive
 from extractcode.extract_directory import extract_directory
 
 echo_stderr = partial(click.secho, err=True)
@@ -284,8 +287,16 @@ def scancode(ctx,
     try:
         #We could call the below function if required to first extract all the archives, and then start scanning
 
+        '''
+        abs_input = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(location)))
+        original_input = fileutils.as_posixpath(location)
+        abs_input = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(location)))
+        ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
+        resources = fileutils.resource_iter(abs_input, ignored=ignored)
 
-        #extract_directory(input)
+        extract_directory(resources)
+
+        '''
 
 
         #This achieves silent extraction of archives before starting the scanning

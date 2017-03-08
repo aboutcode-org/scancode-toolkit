@@ -47,7 +47,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
 
-def extract_directory(location, kinds=extractcode.default_kinds, recurse=False):
+def extract_directory(resources, kinds=extractcode.default_kinds, recurse=True):
     """
     Walk and extract any archives found at `location` (either a file or
     directory). Extract only archives of a kind listed in the `kinds` kind tuple.
@@ -70,14 +70,8 @@ def extract_directory(location, kinds=extractcode.default_kinds, recurse=False):
     if recurse and a nested archive is found, it is extracted to full depth
     first before resuming the file system walk.
     """
-    abs_input = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(location)))
-    original_input = fileutils.as_posixpath(location)
-    abs_input = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(location)))
-    ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
-    resources = fileutils.resource_iter(abs_input, ignored=ignored)
     for file in resources:
         if archive.can_extract(file):
             #TODO : Implement Extraction of Files without printing to the Terminal
-            for y in extract(file, kinds=default_kinds, recurse=True):
-                # print (y)
+            for y in extract(file, kinds=kinds, recurse=recurse):
                 pass
