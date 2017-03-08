@@ -230,7 +230,7 @@ def validate_formats(ctx, param, value):
 @click.option('--max-memory', is_flag=False, default=DEFAULT_MAX_MEMORY, type=int, show_default=True, help='Stop scanning a file if scanning requires more than a maximum amount of memory in megabytes.')
 
 #--ignore accounts for ignoring user-specified files during the scanning process.
-@click.option('--ignore', show_default=True, default='', metavar='<pattern>', multiple=True, help='Ignore files mentioned with --ignore while scanning.')
+@click.option('--ignore', show_default=True, is_flag=False, default='', metavar='<pattern>', multiple=True, help='Ignore the specified file patterns when scanning.')
 
 def scancode(ctx,
              input, output_file,
@@ -282,8 +282,7 @@ def scancode(ctx,
     scanners = OrderedDict(zip(possible_scans.keys(), zip(possible_scans.values(), scan_functions)))
 
     scans_cache_class = get_scans_cache_class()
-    #Forms a dictionary of inputs provided with --ignore
-    user_ignore = dict((inputs, 'User ignore files while scanning: Supplied by --ignore') for inputs in ignore)
+    user_ignore = dict((inputs, 'Ignore files while scanning, that are supplied by --ignore') for inputs in ignore)
 
     try:
         files_count, results = scan(input_path=input,
@@ -295,7 +294,6 @@ def scancode(ctx,
                                     processes=processes,
                                     timeout=timeout, max_memory=max_memory,
                                     diag=diag,
-                                    #Passing a new argument to scan, to ignore files specified by user
                                     ignore = user_ignore,
                                     scans_cache_class=scans_cache_class,
                                     strip_root=strip_root)
@@ -366,7 +364,6 @@ def scan(input_path,
 
     # maxtasksperchild helps with recycling processes in case of leaks
     pool = get_pool(processes=processes, maxtasksperchild=1000)
-    #Passing a new argument to resource_paths to count for ignoring the files
     resources = resource_paths(input_path, ignore)
     logfile_path = scans_cache_class().cache_files_log
     with open(logfile_path, 'wb') as logfile_fd:
@@ -544,11 +541,7 @@ def resource_paths(base_path, user_ignore):
     base_is_dir = filetype.is_dir(base_path)
     len_base_path = len(base_path)
     user_ignore.update(ignore.ignores_VCS)
-    #Checks if any argument is supplied with --ignore, and if provided, then ignores the files
-    if any(user_ignore):
-        ignored = partial(ignore.is_ignored, ignores=user_ignore, unignores={})
-    else:
-        ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
+    ignored = partial(ignore.is_ignored, ignores=user_ignore, unignores={})
     resources = fileutils.resource_iter(base_path, ignored=ignored)
 
     for abs_path in resources:
