@@ -525,7 +525,7 @@ def _scanit(paths, scanners, scans_cache_class, diag,
     return success, rel_path
 
 
-def resource_paths(base_path, user_ignore):
+def resource_paths(base_path, user_ignore={}):
     """
     Yield tuples of (absolute path, base_path-relative path) for all the files found
     at base_path (either a directory or file) given an absolute base_path. Only yield
