@@ -135,6 +135,8 @@ setup(
         # caching
         'zc.lockfile >= 1.0.0, < 2.0.0',
         'yg.lockfile >= 2.0.0, < 3.0.0',
+            # used by yg.lockfile 
+            'contextlib2', 'pytz', 'tempora', 'jaraco.timing', 
         'psutil >= 5.0.0, < 6.0.0',
 
         # textcode

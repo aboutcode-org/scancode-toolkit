@@ -1,0 +1,18 @@
+about_resource: contextlib2-0.5.4-py2.py3-none-any.whl
+version: 0.5.4
+
+download_url: https://pypi.python.org/packages/8d/04/b7674bf5da1e1c19032b81cbb8d14ec42b588d8a2015c895c60bb414df5f/contextlib2-0.5.4-py2.py3-none-any.whl#md5=cc0e8099a78d6e61cb58e322129137e8
+
+name: yg.lockfile
+home_url: https://github.com/ncoghlan/contextlib2
+owner: Nick Goghlan
+
+dje_license: psf
+license_text_file: contextlib2.LICENSE
+copyright: Copyright (c) Python contributors
+
+vcs_tool: git
+vcs_repository: https://github.com/ncoghlan/contextlib2.git
+
+download_url: https://pypi.python.org/packages/b3/47/0716ae00102fe4724c3d697748c193eb861e63558b264878910a466ecf41/tempora-1.6.1-py2.py3-none-any.whl#md5=4e419879b29583a6a8948344c20b7beb
+
