@@ -1,0 +1,6 @@
+licenses:
+    - gpl
+    - lgpl
+false_positive: yes
+notes: a simple mention of COPYING files alone is not enough of a proof of license.
+ It may still be detected elsewhere as a bare LGPL or GPL mention though.
