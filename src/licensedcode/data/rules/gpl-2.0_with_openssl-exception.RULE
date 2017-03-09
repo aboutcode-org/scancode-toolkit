@@ -1,0 +1,9 @@
+is licensed under the GNU General Public License version 2
+or later. The text of the GNU General Public License can be viewed at
+http://www.gnu.org/licenses/gpl.html
+
+As a special exception, you have permission to link this program
+with the following libraries and distribute executables, as long as you
+follow the requirements of the GNU GPL in regard to all of the
+software in the executable aside from the following libraries:
+- OpenSSL (http://www.openssl.org)
