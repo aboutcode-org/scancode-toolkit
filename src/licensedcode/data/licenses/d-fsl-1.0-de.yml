@@ -16,3 +16,4 @@ faq_url: http://www.d-fsl.org/
 other_urls:
     - http://www.dipp.nrw.de/d-fsl/index_html/lizenzen/en/D-FSL-1_0_en.txt
     - http://www.dipp.nrw.de/d-fsl/nutzer/
+minimum_coverage: 10
