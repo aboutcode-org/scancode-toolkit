@@ -1354,6 +1354,15 @@ class TestCpio(BaseArchiveTestCase):
         assert os.path.exists(result)
 
 
+    def test_extract_cpio_with_weird_filename_extension(self):
+        test_file = self.get_test_loc('archive/cpio/t.cpio.foo')
+        test_dir = self.get_temp_dir()
+        result = archive.extract_cpio(test_file, test_dir)
+        assert [] == result
+        extracted = self.collect_extracted_path(test_dir)
+        expected = ['/t/', '/t/t.txt']
+        assert expected == extracted
+        
 class TestRpm(BaseArchiveTestCase):
 
     def test_extract_rpm_basic_1(self):
@@ -1717,6 +1726,14 @@ class TestIso(BaseArchiveTestCase):
         extractor = archive.get_extractor(test_file)
         assert not extractor
 
+    def test_extract_iso_basic_with_with_weird_filename_extension(self):
+        test_file = self.get_test_loc('archive/iso/t.iso.foo')
+        test_dir = self.get_temp_dir()
+        archive.extract_iso(test_file, test_dir)
+        extracted = self.collect_extracted_path(test_dir)
+        expected = ['/t/', '/t/t.txt']
+        assert expected == extracted
+
 
 class TestXzLzma(BaseArchiveTestCase):
     def check_lzma_extract(self, extract_fun, test_file, expected):
@@ -1892,6 +1909,120 @@ class TestXar(BaseArchiveTestCase):
         assert os.path.exists(result)
 
 
+class TestCb7(BaseArchiveTestCase):
+    def test_get_extractor_cb7(self):
+        test_file = self.get_test_loc('archive/cb7/t .cb7')
+        result = archive.get_extractor(test_file)
+        expected = archive.extract_7z
+        assert expected == result
+
+    def test_extract_cb7_basic_with_space_in_file_name(self):
+        test_file = self.get_test_loc('archive/cb7/t .cb7')
+        test_dir = self.get_temp_dir()
+        archive.extract_7z(test_file, test_dir)
+        extracted = self.collect_extracted_path(test_dir)
+        expected = ['/t/', '/t/t.txt']
+        assert expected == extracted
+
+    def test_extract_cb7_basic_with_weird_filename_extension(self):
+        test_file = self.get_test_loc('archive/cb7/t.cb7.foo')
+        test_dir = self.get_temp_dir()
+        archive.extract_7z(test_file, test_dir)
+        extracted = self.collect_extracted_path(test_dir)
+        expected = ['/t/', '/t/t.txt']
+        assert expected == extracted
+
+class TestCab(BaseArchiveTestCase):
+    def test_get_extractor_cab(self):
+        test_file = self.get_test_loc('archive/cab/basic.cab')
+        result = archive.get_extractor(test_file)
+        expected = archive.extract_cab
+        assert expected == result
+
+    def test_extract_cab_basic(self):
+        test_file = self.get_test_loc('archive/cab/basic.cab')
+        test_dir = self.get_temp_dir()
+        archive.extract_cab(test_file, test_dir)
+        extracted = self.collect_extracted_path(test_dir)
+        expected = ['/TREEHELP.TXT']
+        assert expected == extracted
+
+    def test_extract_cab_basic_with_weird_filename_extension(self):
+        test_file = self.get_test_loc('archive/cab/t.cab.foo')
+        test_dir = self.get_temp_dir()
+        archive.extract_cab(test_file, test_dir)
+        extracted = self.collect_extracted_path(test_dir)
+        expected = ['/t/', '/t/t.txt']
+        assert expected == extracted
+
+class TestCbr(BaseArchiveTestCase):
+    def test_get_extractor_cbr(self):
+        test_file = self.get_test_loc('archive/cbr/t.cbr')
+        result = archive.get_extractor(test_file)
+        expected = archive.extract_rar
+        assert expected == result
+
+    def test_extract_cbr_basic(self):
+        test_file = self.get_test_loc('archive/cbr/t.cbr')
+        test_dir = self.get_temp_dir()
+        archive.extract_cab(test_file, test_dir)
+        extracted = self.collect_extracted_path(test_dir)
+        expected = ['/t/', '/t/t.txt']
+        assert expected == extracted
+
+    def test_extract_cbr_basic_with_weird_filename_extension(self):
+        test_file = self.get_test_loc('archive/cbr/t.cbr.foo')
+        test_dir = self.get_temp_dir()
+        archive.extract_cab(test_file, test_dir)
+        extracted = self.collect_extracted_path(test_dir)
+        expected = ['/t/', '/t/t.txt']
+        assert expected == extracted
+
+class TestCbt(BaseArchiveTestCase):
+    def test_get_extractor_cbt(self):
+        test_file = self.get_test_loc('archive/cbt/t.cbt')
+        result = archive.get_extractor(test_file)
+        expected = archive.extract_tar
+        assert expected == result
+
+    def test_extract_cbt_basic(self):
+        test_file = self.get_test_loc('archive/cbt/t.cbt')
+        test_dir = self.get_temp_dir()
+        archive.extract_tar(test_file, test_dir)
+        extracted = self.collect_extracted_path(test_dir)
+        expected = ['/t/', '/t/t.txt']
+        assert expected == extracted
+
+    def test_extract_cbt_basic_with_weird_filename_extension(self):
+        test_file = self.get_test_loc('archive/cbt/t.cbt.foo')
+        test_dir = self.get_temp_dir()
+        archive.extract_tar(test_file, test_dir)
+        extracted = self.collect_extracted_path(test_dir)
+        expected = ['/t/', '/t/t.txt']
+        assert expected == extracted
+
+class TestCbz(BaseArchiveTestCase):
+    def test_get_extractor_cbz(self):
+        test_file = self.get_test_loc('archive/cbz/t.cbz')
+        result = archive.get_extractor(test_file)
+        expected = archive.extract_zip
+        assert expected == result
+
+    def test_extract_cbz_basic(self):
+        test_file = self.get_test_loc('archive/cbz/t.cbz')
+        test_dir = self.get_temp_dir()
+        archive.extract_zip(test_file, test_dir)
+        extracted = self.collect_extracted_path(test_dir)
+        expected = ['/t/', '/t/t.txt']
+        assert expected == extracted
+
+    def test_extract_cbz_basic_with_weird_filename_extension(self):
+        test_file = self.get_test_loc('archive/cbz/t.cbz.foo')
+        test_dir = self.get_temp_dir()
+        archive.extract_zip(test_file, test_dir)
+        extracted = self.collect_extracted_path(test_dir)
+        expected = ['/t/', '/t/t.txt']
+        assert expected == extracted
 
 # Note: this series of test is not easy to grasp but unicode archives on multiple OS
 # are hard to tests. So we have one test class for each libarchive and sevenzip on
