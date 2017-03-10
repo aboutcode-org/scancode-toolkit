@@ -5,7 +5,7 @@ from __future__ import division
 from __future__ import unicode_literals
 
 """
-Utilities and patches to create multiprocessing Process and Thread pools.
+Utilities and patches to create multiprocessing Process pools.
 Apply proper monkeypatch to work around some bugs or limitations.
 """
 
@@ -39,7 +39,6 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from multiprocessing import pool
 
-
 def wrapped(func):
     # ensure that we do not double wrap
     if func.func_name != 'wrap':
@@ -55,8 +54,6 @@ pool.IMapUnorderedIterator.next = wrapped(pool.IMapUnorderedIterator.next)
 pool.IMapUnorderedIterator.__next__ = pool.IMapUnorderedIterator.next
 
 
-def get_pool(processes=None, initializer=None, initargs=(), maxtasksperchild=None):
-    """
-    Return a properly patched multiprocessing Pool.
-    """
+def get_pool(processes=None, initializer=None, initargs=(), 
+             maxtasksperchild=None):
     return pool.Pool(processes, initializer, initargs, maxtasksperchild)

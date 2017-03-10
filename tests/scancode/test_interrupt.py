@@ -48,8 +48,7 @@ class TestInterrupt(FileBasedTesting):
             sleep(exec_time)
             return 'OK'
 
-        result = interrupt.interruptible(some_long_function, args=(0.01,),
-                                         timeout=10, max_memory=1024)
+        result = interrupt.interruptible(some_long_function, args=(0.01,), timeout=10)
         assert (True, 'OK') == result
 
         after = threading.active_count()
@@ -65,22 +64,6 @@ class TestInterrupt(FileBasedTesting):
 
         result = interrupt.interruptible(some_long_function, args=(20,), timeout=0.00001)
         assert (False, 'ERROR: Processing interrupted: timeout after 0 seconds.') == result
-
-        after = threading.active_count()
-        assert before == after
-
-    def test_interruptible_stops_execution_on_excessive_memory_usage(self):
-        before = threading.active_count()
-
-        def some_hungry_function(exec_time):
-            sleep(exec_time)
-            # consume some memory
-            _ram = list(range(1000000))
-            return 'OK'
-
-        success, result = interrupt.interruptible(some_hungry_function, args=(5,), timeout=5, max_memory=0.0001)
-        assert success == False
-        assert 'Processing interrupted: excessive memory usage of more than' in result
 
         after = threading.active_count()
         assert before == after
