@@ -1,8 +1,8 @@
-about_resource: setuptools-32.3.1-py2.py3-none-any.whl
+about_resource: setuptools-34.3.1-py2.py3-none-any.whl
 name: setuptools
-version: 32.3.1
+version: 34.3.1
 
-download_url: https://pypi.python.org/packages/69/19/b1dff551058ce79d88b1e3688f1c735590d7ddf44d10681512133b35019f/setuptools-32.3.1-py2.py3-none-any.whl#md5=9fe4e32f20a9b13c206c1bdc4c9feaf4
+download_url: https://pypi.python.org/packages/49/09/68b43c68492a9d437c137892d11427ac45a1497812c8a8ce2cd17649a27c/setuptools-34.3.1-py2.py3-none-any.whl#md5=ea9c9c51767f5037754dc6228cdeb607
 
 home_url: https://pypi.python.org/pypi/setuptools
 owner: Python Packaging Authority
@@ -11,3 +11,8 @@ dje_license: psf and mit
 license_text_file: 
     - PSF.LICENSE
     - setuptools.LICENSE
+    
+    
+download_url: https://pypi.python.org/packages/56/eb/810e700ed1349edde4cbdc1b2a21e28cdf115f9faf263f6bbf8447c1abf3/appdirs-1.4.3-py2.py3-none-any.whl#md5=9ed4b51c9611775c3078b3831072e153
+download_url: https://pypi.python.org/packages/87/1b/c39b7c65b5612812b83d6cab7ef2885eac9f6beb0b7b8a7071a186aea3b1/packaging-16.8-py2.py3-none-any.whl#md5=c7326351bf015fa53c74b0075923ab02
+download_url: https://pypi.python.org/packages/6a/8a/718fd7d3458f9fab8e67186b00abdd345b639976bc7fb3ae722e1b026a50/pyparsing-2.2.0-py2.py3-none-any.whl#md5=7247e7896688eff4bc8c7fc5d0cdd2b0
