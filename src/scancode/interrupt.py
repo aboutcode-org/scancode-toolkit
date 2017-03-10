@@ -25,94 +25,56 @@
 from __future__ import print_function
 from __future__ import absolute_import
 
-import os
+import multiprocessing
 import Queue
 import thread
 
-import psutil
-
 from scancode.thread2 import async_raise
 
-
 DEFAULT_TIMEOUT = 120  # seconds
-DEFAULT_MAX_MEMORY = 1000  # in megabytes. 0 is unlimited.
 
 """
-Run a function in an interruptible thread with a timeout and memory quota.
+Run a function in an interruptible thread with a timeout..
 Based on an idea of dano "Dan O'Reilly"  http://stackoverflow.com/users/2073595/dano
 But not code has been reused from this post.
 """
 
-def interruptible(func, args=(), kwargs={},
-                  timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY):
 
-    try:
-        return _interruptible(func, args, kwargs, timeout, max_memory)
-    except:
-        import traceback
-        print('#############ERROR##################')
-        print(traceback.format_exc())
-        print('###################################')
-        raise
-
-
-def _interruptible(func, args=(), kwargs={},
-                  timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY):
+def interruptible(func, args=(), kwargs={}, timeout=DEFAULT_TIMEOUT):
     """
     Call `func` function with `args` and `kwargs` arguments and return a tuple of
     (success, return value). `func` is invoked through a wrapper in a thread and
-    will be interrupted if it does not return within `timeout` seconds of execution
-    or uses more than 'max_memory` MEGABYTES of memory.
+    will be interrupted if it does not return within `timeout` seconds.
 
     `func` returned results must be pickable.
     `timeout` in seconds defaults to DEFAULT_TIMEOUT.
-
-    `max_memory` is the memory quota in megabytes and defaults to DEFAULT_MAX_MEMORY.
-    If zero, then no memory quota is enforced.
 
     `args` and `kwargs` are passed to `func` as *args and **kwargs.
 
     In the returned tuple of (success, value), success is True or False.
     If success is True, the call was successful and the second item in the tuple is
     the returned value of `func`.
-    If success is False, the call did not complete within `timeout` seconds or
-    exceeded `max_memory` memory usage and was interrupted. In this case, the second
-    item in the tuple is an error message string.
+    
+    If success is False, the call did not complete within `timeout`
+    seconds and was interrupted. In this case, the second item in the
+    tuple is an error message string.
     """
-    # We run `func` in a thread and run a loop until timeout to check memory
-    # usage of the runner
+    # We run `func` in a thread and run a loop until timeout
     results = Queue.Queue()
 
     def _runner():
-        res = func(*args, **kwargs)
-        results.put(res)
+        results.put(func(*args, **kwargs))
 
     tid = thread.start_new_thread(_runner, ())
 
-    # only check for memory if asked for a quota
-    max_bytes = max_memory * 1024 * 1024
-    get_memory_in_use = None
-    if max_bytes:
-        get_memory_in_use = psutil.Process(os.getpid()).memory_info
-
-    interval = 0.2  # second
     try:
-        while timeout > 0:
-            if max_bytes and get_memory_in_use().rss > max_bytes:
-                return False, ('ERROR: Processing interrupted: excessive memory usage '
-                               'of more than %(max_memory)dMB.' % locals())
-
-            try:
-                # blocking get for interval which is a slice of the timeout
-                res = results.get(timeout=interval)
-                return True, res
-            except Queue.Empty:
-                timeout -= interval
-
+        res = results.get(timeout=timeout)
+        return True, res
+    except (Queue.Empty, multiprocessing.TimeoutError):
         return False, ('ERROR: Processing interrupted: timeout after '
                        '%(timeout)d seconds.' % locals())
     finally:
         try:
             async_raise(tid, Exception)
-        except (SystemExit, ValueError, Exception):
+        except (SystemExit, ValueError):
             pass

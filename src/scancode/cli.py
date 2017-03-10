@@ -66,7 +66,6 @@ from formattedcode.format import as_template
 
 from scancode.interrupt import interruptible
 from scancode.interrupt import DEFAULT_TIMEOUT
-from scancode.interrupt import DEFAULT_MAX_MEMORY
 
 from scancode import utils
 
@@ -227,7 +226,6 @@ def validate_formats(ctx, param, value):
 
 @click.option('--diag', is_flag=True, default=False, help='Include additional diagnostic information such as error messages or result details.')
 @click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=int, show_default=True, help='Stop scanning a file if scanning takes longer than a timeout in seconds.')
-@click.option('--max-memory', is_flag=False, default=DEFAULT_MAX_MEMORY, type=int, show_default=True, help='Stop scanning a file if scanning requires more than a maximum amount of memory in megabytes.')
 
 def scancode(ctx,
              input, output_file,
@@ -235,8 +233,7 @@ def scancode(ctx,
              email, url, info,
              license_score, license_text, only_findings, strip_root,
              format, verbose, quiet, processes,
-             diag, timeout, max_memory,
-             *args, **kwargs):
+             diag, timeout, *args, **kwargs):
     """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
 
     The scan results are printed to stdout if <output_file> is not provided.
@@ -287,7 +284,7 @@ def scancode(ctx,
                                     verbose=verbose,
                                     quiet=quiet,
                                     processes=processes,
-                                    timeout=timeout, max_memory=max_memory,
+                                    timeout=timeout,
                                     diag=diag,
                                     scans_cache_class=scans_cache_class,
                                     strip_root=strip_root)
@@ -310,7 +307,7 @@ def scan(input_path,
          scanners,
          license_score=0, license_text=False,
          verbose=False, quiet=False,
-         processes=1, timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY,
+         processes=1, timeout=DEFAULT_TIMEOUT,
          diag=False,
          scans_cache_class=None,
          strip_root=False):
@@ -364,7 +361,7 @@ def scan(input_path,
         logged_resources = _resource_logger(logfile_fd, resources)
 
         scanit = partial(_scanit, scanners=scanners, scans_cache_class=scans_cache_class,
-                         diag=diag, timeout=timeout, max_memory=max_memory)
+                         diag=diag, timeout=timeout)
 
         try:
             # Using chunksize is documented as much more efficient in the Python doc.
@@ -471,8 +468,7 @@ def _resource_logger(logfile_fd, resources):
         yield posix_path, rel_path
 
 
-def _scanit(paths, scanners, scans_cache_class, diag,
-            timeout=DEFAULT_TIMEOUT, max_memory=DEFAULT_MAX_MEMORY):
+def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT):
     """
     Run scans and cache results on disk. Return a tuple of (success, scanned relative
     path) where sucess is True on success, False on error. Note that this is really
@@ -500,9 +496,7 @@ def _scanit(paths, scanners, scans_cache_class, diag,
             # run the scan as an interruptiple task
             scans_runner = partial(scan_one, abs_path, scanners, diag)
             # quota keyword args for interruptible
-            success, scan_result = interruptible(scans_runner,
-                                                 timeout=timeout,
-                                                 max_memory=max_memory)
+            success, scan_result = interruptible(scans_runner, timeout=timeout)
             if not success:
                 # Use scan errors as the scan result for that file on failure this is
                 # a top-level error not attachedd to a specific scanner, hence the
