@@ -1,0 +1,47 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.codehaus.plexus", 
+  "artifact_id": "plexus-compiler-manager", 
+  "version": "1.5.3", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.codehaus.plexus", 
+    "artifact_id": "plexus-compiler", 
+    "version": "1.5.3", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Plexus Compiler Manager", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-compiler-api", 
+        "version": "1.5.3", 
+        "required": true
+      }
+    ]
+  }
+}

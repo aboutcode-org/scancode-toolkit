@@ -1,0 +1,44 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.scm", 
+  "artifact_id": "maven-scm-managers", 
+  "version": "1.0-beta-3", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache.maven.scm", 
+    "artifact_id": "maven-scm", 
+    "version": "1.0-beta-3", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven SCM Managers", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [
+    "maven-scm-manager-plexus"
+  ], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.apache.maven.scm", 
+        "artifact_id": "maven-scm-api", 
+        "version": "1.0-beta-3", 
+        "required": true
+      }
+    ]
+  }
+}

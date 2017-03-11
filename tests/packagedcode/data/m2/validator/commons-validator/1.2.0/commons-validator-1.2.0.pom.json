@@ -1,0 +1,389 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "commons-validator", 
+  "artifact_id": "commons-validator", 
+  "version": "1.2.0", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Validator", 
+  "description": "Commons Validator provides the building blocks for both client side validation\n    and server side data validation. It may be used standalone or with a framework like\n    Struts.", 
+  "inception_year": "2002", 
+  "url": "http://jakarta.apache.org/commons/validator/", 
+  "organization_name": "The Apache Software Foundation", 
+  "organization_url": "http://jakarta.apache.org", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "/LICENSE.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [
+    {
+      "id": "mrdon", 
+      "name": "Don Brown", 
+      "email": "mrdon@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "martinc", 
+      "name": "Martin Cooper", 
+      "email": "martinc@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "dgraham", 
+      "name": "David Graham", 
+      "email": "dgraham@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "husted", 
+      "name": "Ted Husted", 
+      "email": "husted@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "rleland", 
+      "name": "Rob Leland", 
+      "email": "rleland at apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "craigmcc", 
+      "name": "Craig McClanahan", 
+      "email": "craigmcc@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jmitchell", 
+      "name": "James Mitchell", 
+      "email": "jmitchell NOSPAM apache.org", 
+      "url": null, 
+      "organization": "EdgeTech, Inc", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "niallp", 
+      "name": "Niall Pemberton", 
+      "email": "niallp NOSPAM apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "turner", 
+      "name": "James Turner", 
+      "email": "turner@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "dwinterfeldt", 
+      "name": "David Winterfeldt", 
+      "email": "dwinterfeldt@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "Saul Q Yuan Add", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Shane Bailey", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Dave Derry", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Tim O'Brien", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Scott Clasen", 
+      "email": "ticktock@speakeasy.net>", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Marcus Brito Finish", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Padma Ginnaram", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Thomas Jacob", 
+      "email": "thomas.jacob@sinnerschrader.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Adam Kramer", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Greg Ludington", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Bjorn-H. Moritz", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "David Neuer", 
+      "email": "DavidNeuer@nascopgh.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Kurt Post", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Arun Mammen Thomas", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Steven Fines", 
+      "email": "steven.fines@cotelligent.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Didier Romelot", 
+      "email": "didier.romelot@renault.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Steve Stair", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Jeremy Tan", 
+      "email": "jeremytan@scualum.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "94RGt2", 
+      "email": "lmagee@biziworks.com.au", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Nacho G. Mac Dowell", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Mark Lowe", 
+      "email": "mark.lowe@boxstuff.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Commons Dev List", 
+      "archive_url": "http://mail-archives.apache.org/eyebrowse/SummarizeList?listName=commons-dev@jakarta.apache.org"
+    }, 
+    {
+      "name": "Commons User List", 
+      "archive_url": "http://mail-archives.apache.org/eyebrowse/SummarizeList?listName=commons-user@jakarta.apache.org"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/jakarta/commons/proper/validator/trunk", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewcvs.cgi", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": null, 
+    "url": "http://issues.apache.org/bugzilla/"
+  }, 
+  "ci_management": {
+    "system": null, 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "default", 
+      "name": "Default Site", 
+      "url": "scp://jakarta.apache.org//www/jakarta.apache.org/commons/${pom.artifactId.substring(8)}/"
+    }, 
+    "repository": {
+      "id": "default", 
+      "name": "Default Repository", 
+      "url": "file:///www/jakarta.apache.org/builds/jakarta-commons/${pom.artifactId.substring(8)}/"
+    }, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "commons-beanutils", 
+        "artifact_id": "commons-beanutils", 
+        "version": "1.7.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-digester", 
+        "artifact_id": "commons-digester", 
+        "version": "1.6", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-logging", 
+        "artifact_id": "commons-logging", 
+        "version": "1.0.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "oro", 
+        "artifact_id": "oro", 
+        "version": "2.0.8", 
+        "required": true
+      }, 
+      {
+        "group_id": "xml-apis", 
+        "artifact_id": "xml-apis", 
+        "version": "2.0.2", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

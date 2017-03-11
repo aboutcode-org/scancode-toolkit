@@ -1,0 +1,332 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.acegisecurity", 
+  "artifact_id": "acegi-security-parent", 
+  "version": "1.0.5", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {}, 
+  "name": "Acegi Security", 
+  "description": "Acegi Security System for Spring", 
+  "inception_year": "2004", 
+  "url": "http://acegisecurity.org/", 
+  "organization_name": "Interface21, Inc", 
+  "organization_url": "http://sourceforge.net/projects/acegisecurity", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [
+    {
+      "id": "benalex", 
+      "name": "Ben Alex", 
+      "email": "benalex at users.sourceforge.net", 
+      "url": null, 
+      "organization": "Acegi Technology Pty Limited (http://www.acegi.com.au)", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "colins", 
+      "name": "Colin Sampaleanu", 
+      "email": "colinml1 at exis.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "carlossg", 
+      "name": "Carlos Sanchez", 
+      "email": "carlossg at users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "luke_t", 
+      "name": "Luke Taylor", 
+      "email": "luke_t at users.sourceforge.net", 
+      "url": null, 
+      "organization": "Monkey Machine Ltd. (http://monkeymachine.ltd.uk)", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "raykrueger", 
+      "name": "Ray Krueger", 
+      "email": "raykrueger at users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "robertsanders", 
+      "name": "Robert Sanders", 
+      "email": "robertsanders at users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "markstg", 
+      "name": "Mark St.Godard", 
+      "email": "markstg at users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "johnalewis", 
+      "name": "John A. Lewis", 
+      "email": "johnalewis at users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "Alan Stewart", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Cameron Braid", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Patrick Burleson", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Francois Beausoleil", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Wesley Hall", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Scott Evans", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Travis Gregg", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Karel Miarka", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "James Monaghan", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Andrew Petro", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Aaron Tang", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Orlando Garcia Carmona", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Joni Suominen", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Sergio Berna", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Paulo Neves", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Mike Perham", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Robin Bramley", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Robert Sanders", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Vishal Puri", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Martin Algesten", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "modules": [
+    "core", 
+    "core-tiger", 
+    "adapters", 
+    "samples"
+  ], 
+  "mailing_lists": [
+    {
+      "name": "Acegi Developer List", 
+      "archive_url": "http://sourceforge.net/mailarchive/forum.php?forum_id=40659"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:https://acegisecurity.svn.sourceforge.net/svnroot/acegisecurity/trunk/acegisecurity", 
+    "developer_connection": null, 
+    "url": "http://acegisecurity.svn.sourceforge.net/viewcvs.cgi/acegisecurity/trunk/acegisecurity/", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://opensource.atlassian.com/projects/spring/browse/SEC"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "local", 
+      "name": "Local Site Directory", 
+      "url": "${siteDirectory}"
+    }, 
+    "repository": {
+      "id": "sourceforge.net", 
+      "name": "Acegi Releases Repository at Sourceforge", 
+      "url": "scp://shell.sourceforge.net/home/groups/a/ac/acegisecurity/htdocs/repository/releases"
+    }, 
+    "snapshot_repository": {
+      "id": "sourceforge.net", 
+      "name": "Acegi Snapshots Repository at Sourceforge", 
+      "url": "scp://shell.sourceforge.net/home/groups/a/ac/acegisecurity/htdocs/repository/snapshots"
+    }
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

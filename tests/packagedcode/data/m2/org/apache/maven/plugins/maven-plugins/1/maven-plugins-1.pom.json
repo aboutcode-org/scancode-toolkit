@@ -1,0 +1,82 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.plugins", 
+  "artifact_id": "maven-plugins", 
+  "version": "1", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache.maven", 
+    "artifact_id": "maven-parent", 
+    "version": "1", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Plugins", 
+  "description": "Maven Plugins", 
+  "inception_year": null, 
+  "url": "http://maven.apache.org/plugins/", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [
+    "maven-ant-plugin", 
+    "maven-antrun-plugin", 
+    "maven-assembly-plugin", 
+    "maven-checkstyle-plugin", 
+    "maven-clean-plugin", 
+    "maven-clover-plugin", 
+    "maven-compiler-plugin", 
+    "maven-deploy-plugin", 
+    "maven-eclipse-plugin", 
+    "maven-ear-plugin", 
+    "maven-ejb-plugin", 
+    "maven-help-plugin", 
+    "maven-idea-plugin", 
+    "maven-install-plugin", 
+    "maven-jar-plugin", 
+    "maven-javadoc-plugin", 
+    "maven-plugin-plugin", 
+    "maven-pmd-plugin", 
+    "maven-project-info-reports-plugin", 
+    "maven-rar-plugin", 
+    "maven-release-plugin", 
+    "maven-repository-plugin", 
+    "maven-resources-plugin", 
+    "maven-site-plugin", 
+    "maven-source-plugin", 
+    "maven-surefire-plugin", 
+    "maven-war-plugin", 
+    "maven-verifier-plugin"
+  ], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/maven/plugins/trunk/", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewcvs.cgi/maven/plugins/trunk/", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "apache.website", 
+      "name": null, 
+      "url": "scp://minotaur.apache.org/www/maven.apache.org/plugins/"
+    }, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [
+    {
+      "id": "snapshots", 
+      "name": "Maven Central Development Repository", 
+      "url": "http://snapshots.maven.codehaus.org/maven2"
+    }
+  ], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

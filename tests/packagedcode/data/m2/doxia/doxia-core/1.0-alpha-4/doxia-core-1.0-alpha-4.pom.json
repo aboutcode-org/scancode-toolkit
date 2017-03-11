@@ -1,0 +1,136 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "doxia", 
+  "artifact_id": "doxia-core", 
+  "version": "1.0-alpha-4", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Doxia Core", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": null, 
+      "name": "Jason van Zyl", 
+      "email": "jason@maven.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Emmanuel Evenisse", 
+      "email": "emmanuel@venisse.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Doxia Announce List", 
+      "archive_url": "http://archive.doxia.codehaus.org/announce/"
+    }, 
+    {
+      "name": "Doxia Developer List", 
+      "archive_url": "http://archive.doxia.codehaus.org/dev/"
+    }, 
+    {
+      "name": "Doxia User List", 
+      "archive_url": "http://archive.doxia.codehaus.org/user/"
+    }, 
+    {
+      "name": "Doxia Commits List", 
+      "archive_url": "http://archive.doxia.codehaus.org/scm/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:https://svn.codehaus.org/doxia/doxia-core/tags/doxia-core-1.0-alpha-4", 
+    "developer_connection": null, 
+    "url": "http://svn.doxia.codehaus.org/", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://jira.codehaus.org/browse/DOXIA"
+  }, 
+  "ci_management": {
+    "system": "continuum", 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "website", 
+      "name": null, 
+      "url": "scp://beaver.codehaus.org/home/projects/doxia/public_html"
+    }, 
+    "repository": {
+      "id": "repo1", 
+      "name": "Maven Central Repository", 
+      "url": "scp://repo1.maven.org/home/projects/maven/repository-staging/to-ibiblio/maven2"
+    }, 
+    "snapshot_repository": {
+      "id": "snapshots", 
+      "name": "Maven Central Development Repository", 
+      "url": "scp://repo1.maven.org/home/projects/maven/repository-staging/snapshots/maven2"
+    }
+  }, 
+  "repositories": [
+    {
+      "id": "snapshots", 
+      "name": "Maven Snapshot Development Repository", 
+      "url": "http://snapshots.maven.codehaus.org/maven2"
+    }
+  ], 
+  "plugin_repositories": [
+    {
+      "id": "snapshots-plugins", 
+      "name": "Maven Snapshot Plugins Development Repository", 
+      "url": "http://snapshots.maven.codehaus.org/maven2/plugins"
+    }
+  ], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "oro", 
+        "artifact_id": "oro", 
+        "version": "2.0.7", 
+        "required": true
+      }, 
+      {
+        "group_id": "plexus", 
+        "artifact_id": "plexus-utils", 
+        "version": "1.0.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "doxia", 
+        "artifact_id": "doxia-sink-api", 
+        "version": "1.0-alpha-4", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "plexus", 
+        "artifact_id": "plexus-container-default", 
+        "version": "1.0-alpha-6", 
+        "required": true
+      }
+    ]
+  }
+}

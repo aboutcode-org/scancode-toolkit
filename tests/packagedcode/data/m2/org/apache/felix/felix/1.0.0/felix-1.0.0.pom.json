@@ -1,0 +1,84 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.felix", 
+  "artifact_id": "felix", 
+  "version": "1.0.0", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache", 
+    "artifact_id": "apache", 
+    "version": "4", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Apache Felix", 
+  "description": "Apache felix is an OSGi implementation.", 
+  "inception_year": "2006", 
+  "url": "http://felix.apache.org/", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Felix Dev", 
+      "archive_url": "http://www.mail-archive.com/dev%40felix.apache.org/"
+    }, 
+    {
+      "name": "Felix Commits", 
+      "archive_url": "http://www.mail-archive.com/commits%40felix.apache.org/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/felix/trunk", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewvc/felix/trunk/?root=Apache-SVN", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "Jira", 
+    "url": "http://issues.apache.org/jira/browse/FELIX"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "felix website", 
+      "name": null, 
+      "url": "file:///${user.dir}/target/site-deployed/"
+    }, 
+    "repository": {
+      "id": "apache.incubator.releases", 
+      "name": "Apache Incubator Release Distribution Repository", 
+      "url": "scp://people.apache.org/www/people.apache.org/repo/m2-incubating-repository"
+    }, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [
+    {
+      "id": "apache.snapshots", 
+      "name": "snapshot plugins", 
+      "url": "http://people.apache.org/repo/m2-snapshot-repository"
+    }
+  ], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "easymock", 
+        "artifact_id": "easymock", 
+        "version": "1.2_Java1.3", 
+        "required": true
+      }
+    ]
+  }
+}

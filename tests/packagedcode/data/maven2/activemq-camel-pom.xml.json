@@ -1,0 +1,104 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.activemq", 
+  "artifact_id": "activemq-camel", 
+  "version": "5.4.2", 
+  "classifier": null, 
+  "packaging ": "bundle", 
+  "parent": {
+    "group_id": "org.apache.activemq", 
+    "artifact_id": "activemq-parent", 
+    "version": "5.4.2", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "ActiveMQ :: Camel", 
+  "description": "ActiveMQ component for Camel", 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "commons-logging", 
+        "artifact_id": "commons-logging-api", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.camel", 
+        "artifact_id": "camel-jms", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.activemq", 
+        "artifact_id": "activemq-core", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.activemq", 
+        "artifact_id": "activemq-pool", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.geronimo.specs", 
+        "artifact_id": "geronimo-annotation_1.0_spec", 
+        "version": "latest.release", 
+        "required": false
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "org.apache.activemq", 
+        "artifact_id": "activemq-core", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.camel", 
+        "artifact_id": "camel-core", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.camel", 
+        "artifact_id": "camel-spring", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-test", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.hamcrest", 
+        "artifact_id": "hamcrest-all", 
+        "version": "latest.release", 
+        "required": true
+      }
+    ]
+  }
+}

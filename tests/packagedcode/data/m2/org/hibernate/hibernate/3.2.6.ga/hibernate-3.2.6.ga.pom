@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate</artifactId>
+	<packaging>jar</packaging>
+	<version>3.2.6.ga</version>
+
+	<name>Hibernate</name>
+	<description>Relational Persistence for Java</description>
+	<url>http://www.hibernate.org</url>
+
+	<organization>
+		<name>JBoss Inc.</name>
+		<url>http://www.jboss.com</url>
+	</organization>
+
+	<issueManagement>
+		<system>Jira</system>
+		<url>http://opensource.atlassian.com/projects/hibernate/browse/HHH</url>
+	</issueManagement>
+
+	<scm>
+		<url>http://cvs.sourceforge.net/viewcvs.py/hibernate/Hibernate3/</url>
+		<connection>scm:svn:http://anonhibernate.labs.jboss.com/trunk/Hibernate3</connection>
+		<developerConnection>scm:svn:https://hibernate.labs.jboss.com/repos/hibernate</developerConnection>
+	</scm>
+
+	<licenses>
+		<license>
+			<name>GNU LESSER GENERAL PUBLIC LICENSE</name>
+			<url>http://www.gnu.org/licenses/lgpl.txt</url>
+		</license>
+	</licenses>
+
+	<dependencies>
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>swarmcache</groupId>
+			<artifactId>swarmcache</artifactId>
+			<version>1.0RC2</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>jboss</groupId>
+			<artifactId>jboss-cache</artifactId>
+			<version>1.2.2</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>jgroups</groupId>
+			<artifactId>jgroups-all</artifactId>
+			<version>2.2.8</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>1.0.1B</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>c3p0</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.1</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>asm</groupId>
+			<artifactId>asm-attrs</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.security</groupId>
+			<artifactId>jacc</artifactId>
+			<version>1.0</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>xml-apis</groupId>
+					<artifactId>xml-apis</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>antlr</groupId>
+			<artifactId>antlr</artifactId>
+			<version>2.7.6</version>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.1_3</version>
+		</dependency>
+		<dependency>
+			<groupId>opensymphony</groupId>
+			<artifactId>oscache</artifactId>
+			<version>2.1</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>asm</groupId>
+			<artifactId>asm</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>ant</groupId>
+			<artifactId>ant</artifactId>
+			<version>1.6.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>proxool</groupId>
+			<artifactId>proxool</artifactId>
+			<version>0.8.3</version>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+	
+</project>

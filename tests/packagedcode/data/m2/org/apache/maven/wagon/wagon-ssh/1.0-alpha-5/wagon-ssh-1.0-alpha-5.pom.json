@@ -1,0 +1,169 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.wagon", 
+  "artifact_id": "wagon-ssh", 
+  "version": "1.0-alpha-5", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Maven Wagon SSH Provider", 
+  "description": "Tools to manage artifacts and deployment", 
+  "inception_year": "2003", 
+  "url": null, 
+  "organization_name": "Apache Software Foundation", 
+  "organization_url": "http://www.apache.org/", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [
+    {
+      "id": "michal", 
+      "name": "Michal Maczka", 
+      "email": "michal@codehaus.com", 
+      "url": null, 
+      "organization": "Codehaus", 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "brett", 
+      "name": "Brett Porter", 
+      "email": "brett@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "jvanzyl", 
+      "name": "Jason van Zyl", 
+      "email": "jason@maven.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Maven Wagon User List", 
+      "archive_url": "http://nagoya.apache.org/eyebrowse/SummarizeList?listName=wagon-users@maven.apache.org"
+    }, 
+    {
+      "name": "Maven Wagon Developer List", 
+      "archive_url": "http://nagoya.apache.org/eyebrowse/SummarizeList?listName=wagon-dev@maven.apache.org"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/maven/wagon/trunk/wagon-providers/wagon-ssh", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewcvs.cgi/maven/wagon/wagon-providers/wagon-ssh", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {
+    "system": "wagon-dev@maven.apache.org", 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {
+      "id": "repo1", 
+      "name": null, 
+      "url": "scp://beaver.codehaus.org/home/projects/maven/repository-staging/to-ibiblio/maven2"
+    }, 
+    "snapshot_repository": {
+      "id": "snapshots", 
+      "name": null, 
+      "url": "scp://beaver.codehaus.org/home/projects/maven/repository-staging/snapshots/maven2"
+    }
+  }, 
+  "repositories": [
+    {
+      "id": "central", 
+      "name": "Maven Repository Switchboard", 
+      "url": "http://repo1.maven.org/maven2"
+    }
+  ], 
+  "plugin_repositories": [
+    {
+      "id": "central", 
+      "name": "Maven Plugin Repository", 
+      "url": "http://repo1.maven.org/maven2"
+    }
+  ], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "com.jcraft", 
+        "artifact_id": "jsch", 
+        "version": "0.1.23", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-utils", 
+        "version": "1.0.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.wagon", 
+        "artifact_id": "wagon-provider-api", 
+        "version": "1.0-alpha-5", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-container-default", 
+        "version": "1.0-alpha-8", 
+        "required": true
+      }, 
+      {
+        "group_id": "classworlds", 
+        "artifact_id": "classworlds", 
+        "version": "1.1-alpha-2", 
+        "required": true
+      }, 
+      {
+        "group_id": "plexus", 
+        "artifact_id": "plexus-utils", 
+        "version": "1.0.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-interactivity-api", 
+        "version": "1.0-alpha-4", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.wagon", 
+        "artifact_id": "wagon-provider-test", 
+        "version": "1.0-alpha-5", 
+        "required": true
+      }
+    ]
+  }
+}

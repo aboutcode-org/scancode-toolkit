@@ -1,0 +1,110 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.ajax4jsf", 
+  "artifact_id": "master", 
+  "version": "1.1.1", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {}, 
+  "name": "Ajax for Java Server faces core project", 
+  "description": null, 
+  "inception_year": null, 
+  "url": "http://labs.jboss.com/jbossajax4jsf", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [
+    {
+      "name": "LGPL 2.1", 
+      "url": "http://www.gnu.org/licenses/lgpl.html", 
+      "comments": "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1", 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [
+    {
+      "id": "alexsmirnov", 
+      "name": "Alexander Smirnov", 
+      "email": "alexsmirnov@exadel.com", 
+      "url": null, 
+      "organization": "Exadel Inc.", 
+      "organization_url": "http://www.exadel.com", 
+      "roles": [
+        "architect", 
+        "developer"
+      ]
+    }, 
+    {
+      "id": "ishabalov", 
+      "name": "Igor Shabalov", 
+      "email": "ishabalov@exadel.com", 
+      "url": null, 
+      "organization": "Exadel Inc.", 
+      "organization_url": "http://www.exadel.com", 
+      "roles": [
+        "architect", 
+        "developer"
+      ]
+    }, 
+    {
+      "id": "sergeysmirnov", 
+      "name": "Sergey Smirnov", 
+      "email": "sergeysmirnov@exadel.com", 
+      "url": null, 
+      "organization": "Exadel Inc.", 
+      "organization_url": "http://www.exadel.com", 
+      "roles": [
+        "architect", 
+        "developer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [
+    "framework", 
+    "test", 
+    "cdk", 
+    "a4j-portlet"
+  ], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://anonsvn.jboss.org/repos/ajax4jsf/tags/ajax4jsf_1_1_1", 
+    "developer_connection": null, 
+    "url": "http://anonsvn.jboss.org/repos/ajax4jsf/tags/ajax4jsf_1_1_1", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "JIRA", 
+    "url": "http://jira.jboss.org/jira/browse/AJSF"
+  }, 
+  "ci_management": {
+    "system": "cruisecontrol", 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": "http://labs.jboss.com/portal/jbossajax4jsf/downloads", 
+    "site": {
+      "id": "ajax4jsf-site", 
+      "name": null, 
+      "url": "ajax4jsf/"
+    }, 
+    "repository": {
+      "id": "release-repository", 
+      "name": null, 
+      "url": "${releaseRepository}"
+    }, 
+    "snapshot_repository": {
+      "id": "snap-repository", 
+      "name": null, 
+      "url": "${snapshotRepository}"
+    }
+  }, 
+  "repositories": [
+    {
+      "id": "maven-repository.dev.java.net", 
+      "name": "Java.net Repository for Maven", 
+      "url": "https://maven-repository.dev.java.net/nonav/repository"
+    }
+  ], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

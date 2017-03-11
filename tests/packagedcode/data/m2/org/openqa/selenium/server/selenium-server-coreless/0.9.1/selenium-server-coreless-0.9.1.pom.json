@@ -1,0 +1,68 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.openqa.selenium.server", 
+  "artifact_id": "selenium-server-coreless", 
+  "version": "0.9.1", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.openqa.selenium", 
+    "artifact_id": "selenium-rc", 
+    "version": "0.9.1", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Selenium RC Server (Coreless)", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "ant", 
+        "artifact_id": "ant", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "jetty", 
+        "artifact_id": "org.mortbay.jetty", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-logging", 
+        "artifact_id": "commons-logging", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "servlet-api", 
+        "version": "latest.release", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "latest.release", 
+        "required": true
+      }
+    ]
+  }
+}

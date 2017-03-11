@@ -1,0 +1,61 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.shared", 
+  "artifact_id": "maven-osgi", 
+  "version": "0.2.0", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.apache.maven.shared", 
+    "artifact_id": "maven-shared-components", 
+    "version": "8", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven OSGi integration", 
+  "description": "Library for Maven-OSGi integration", 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/maven/shared/tags/maven-osgi-0.2.0", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewcvs.cgi/maven/shared/tags/maven-osgi-0.2.0", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-project", 
+        "version": "2.0.6", 
+        "required": true
+      }, 
+      {
+        "group_id": "biz.aQute", 
+        "artifact_id": "bndlib", 
+        "version": "0.0.203", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "org.apache.maven.shared", 
+        "artifact_id": "maven-plugin-testing-harness", 
+        "version": "1.0", 
+        "required": true
+      }
+    ]
+  }
+}

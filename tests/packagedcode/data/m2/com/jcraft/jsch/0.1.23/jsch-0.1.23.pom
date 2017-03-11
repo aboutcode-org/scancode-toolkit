@@ -1,0 +1,18 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.jcraft</groupId>
+  <artifactId>jsch</artifactId>
+  <name>jsch</name>
+  <version>0.1.23</version>
+  <licenses>
+    <license>
+      <name>BSD</name>
+      <url>http://www.jcraft.com/jsch/LICENSE.txt</url>
+      <comments>License information from http://www.jcraft.com/jsch</comments>
+    </license>
+  </licenses>
+  <organization>
+    <name>jcraft</name>
+    <url>http://www.jcraft.com/jsch</url>
+  </organization>
+</project>

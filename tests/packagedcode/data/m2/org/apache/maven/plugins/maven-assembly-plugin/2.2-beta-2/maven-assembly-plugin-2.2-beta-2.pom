@@ -1,0 +1,504 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>maven-plugins</artifactId>
+    <groupId>org.apache.maven.plugins</groupId>
+    <version>8</version>
+  </parent>
+
+  <artifactId>maven-assembly-plugin</artifactId>
+  <version>2.2-beta-2</version>
+  <packaging>maven-plugin</packaging>
+  <name>Maven Assembly Plugin</name>
+
+  <prerequisites>
+    <maven>2.0.6</maven>
+  </prerequisites>
+
+  <repositories>
+    <repository>
+      <id>codehaus.org</id>
+      <url>http://snapshots.repository.codehaus.org</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>codehaus.snapshots</id>
+      <url>http://snapshots.repository.codehaus.org</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <issueManagement>
+    <system>jira</system>
+    <url>http://jira.codehaus.org/browse/MASSEMBLY</url>
+  </issueManagement>
+  
+  <properties>
+    <mdoVersion>1.1.0</mdoVersion>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-maven-plugin</artifactId>
+        <version>1.3.5</version>
+        <executions>
+          <execution>
+            <id>create-component-descriptor</id>
+            <goals>
+              <goal>descriptor</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>merge</id>
+            <configuration>
+              <output>${project.build.outputDirectory}/META-INF/plexus/components.xml</output>
+              <descriptors>
+                <descriptor>${project.build.directory}/generated-resources/plexus/META-INF/plexus/components.xml</descriptor>
+                <descriptor>src/main/resources/META-INF/plexus/components.xml</descriptor>
+
+                <!--  This is a separate artifact also, but we need access to
+                      the ArtifactHandlers from the assembly plugin to enable
+                      attachment of these artifacts without requiring weird
+                      configurations. -->
+                <descriptor>maven-assembly-artifact-types/src/main/resources/META-INF/plexus/components.xml</descriptor>
+              </descriptors>
+            </configuration>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>merge-descriptors</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.modello</groupId>
+        <artifactId>modello-maven-plugin</artifactId>
+        <version>1.0-alpha-18</version>
+        <configuration>
+          <version>${mdoVersion}</version>
+        </configuration>
+        <executions>
+          <execution>
+            <id>mdo</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>xpp3-reader</goal>
+              <goal>xpp3-writer</goal>
+              <goal>java</goal>
+              <goal>xsd</goal>
+            </goals>
+            <configuration>
+              <models>
+                <model>src/main/mdo/descriptor.mdo</model>
+                <model>src/main/mdo/component.mdo</model>
+              </models>
+            </configuration>
+          </execution>
+          <execution>
+            <id>mdo-site</id>
+            <phase>pre-site</phase>
+            <goals>
+              <goal>xdoc</goal>
+              <goal>xsd</goal>
+            </goals>
+            <configuration>
+              <models>
+                <model>src/main/mdo/descriptor.mdo</model>
+                <model>src/main/mdo/component.mdo</model>
+              </models>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.3.1</version>
+          <configuration>
+            <excludes>
+              <exclude>**/BasicAbstractAssemblyMojoFeaturesTest*</exclude>
+              <exclude>**/AllTests*</exclude>
+              <exclude>**/testutils/*</exclude>
+            </excludes>
+            <redirectTestOutputToFile>true</redirectTestOutputToFile>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>integration-tests</id>
+      <activation>
+        <property>
+          <name>integration-tests</name>
+          <value>true</value>
+        </property>
+      </activation>
+
+      <pluginRepositories>
+        <pluginRepository>
+          <id>apache.snapshots</id>
+          <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+        </pluginRepository>
+      </pluginRepositories>
+
+      <properties>
+        <test.remote.repo.url>file://${project.build.testOutputDirectory}/remote-repository</test.remote.repo.url>
+        <it.pomIncludes>**/pom.xml</it.pomIncludes>
+        <it.streamLogs>false</it.streamLogs>
+      </properties>
+
+      <build>
+        <testResources>
+          <testResource>
+            <directory>src/it/projects</directory>
+            <targetPath>projects</targetPath>
+          </testResource>
+          <testResource>
+            <directory>src/it/it-project-parent</directory>
+            <targetPath>it-project-parent</targetPath>
+            <filtering>true</filtering>
+          </testResource>
+          <testResource>
+            <directory>src/it/remote-repository</directory>
+            <targetPath>remote-repository</targetPath>
+          </testResource>
+        </testResources>
+
+        <plugins>
+          <plugin>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>2.1</version>
+            <configuration>
+              <filesets>
+                <fileset>
+                  <directory>src/it</directory>
+                  <includes>
+                    <include>**/target</include>
+                    <include>**/build.log</include>
+                  </includes>
+                </fileset>
+              </filesets>
+            </configuration>
+          </plugin>
+          <plugin>
+            <artifactId>maven-component-it-plugin</artifactId>
+            <version>1.0-SNAPSHOT</version>
+
+            <configuration>
+              <pluginVersion>testing</pluginVersion>
+              <repositoryDirectory>${project.build.directory}/local-repository</repositoryDirectory>
+              <skipUnitTests>true</skipUnitTests>
+            </configuration>
+
+            <executions>
+              <execution>
+                <id>inject-localrepo-path</id>
+                <phase>initialize</phase>
+                <goals>
+                  <goal>inject-local-repository-path</goal>
+                </goals>
+                <configuration>
+                  <property>local.repo.path</property>
+                </configuration>
+              </execution>
+              <execution>
+                <id>stage-artifact-types</id>
+                <phase>pre-integration-test</phase>
+                <goals>
+                  <goal>stage</goal>
+                </goals>
+                <configuration>
+                  <pomFile>maven-assembly-artifact-types/pom.xml</pomFile>
+                </configuration>
+              </execution>
+              <execution>
+                <id>stage-plugin</id>
+                <phase>pre-integration-test</phase>
+                <goals>
+                  <goal>stage</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-invoker-plugin</artifactId>
+            <version>1.1</version>
+            <executions>
+              <execution>
+                <id>setup-integration-test-parent</id>
+                <phase>pre-integration-test</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <suppressSummaries>true</suppressSummaries>
+                  <goals>
+                    <goal>install</goal>
+                  </goals>
+                  <localRepositoryPath>${project.build.directory}/local-repository</localRepositoryPath>
+                  <pom>${project.build.testOutputDirectory}/it-project-parent/pom.xml</pom>
+                  <streamLogs>true</streamLogs>
+                </configuration>
+              </execution>
+              <execution>
+                <id>integration-test</id>
+                <phase>integration-test</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <projectsDirectory>${project.build.testOutputDirectory}/projects</projectsDirectory>
+                  <testPropertiesFile>test.properties</testPropertiesFile>
+                  <debug>true</debug>
+
+                  <pomIncludes>
+                    <pomInclude>${it.pomIncludes}</pomInclude>
+                  </pomIncludes>
+                  <streamLogs>${it.streamLogs}</streamLogs>
+                  <pomExcludes>
+                    <pomExclude>repositories/repo-with-snapshot-parents/pom.xml</pomExclude>
+
+                    <pomExclude>**/child*/pom.xml</pomExclude>
+                    <pomExclude>**/module*/pom.xml</pomExclude>
+                    <pomExclude>**/descriptor/pom.xml</pomExclude>
+                    <pomExclude>**/handler-def/pom.xml</pomExclude>
+                    <pomExclude>**/assembly/pom.xml</pomExclude>
+
+                    <!-- MASSEMBLY-233 -->
+<!--
+                    <pomExclude>**/container-descriptors/**</pomExclude>
+ -->
+                  </pomExcludes>
+                  <postBuildHookScript>verify.bsh</postBuildHookScript>
+                  <localRepositoryPath>${project.build.directory}/local-repository</localRepositoryPath>
+                </configuration>
+              </execution>
+           </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>aspects</id>
+
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>aspectj-maven-plugin</artifactId>
+            <version>1.0-beta-2</version>
+
+            <executions>
+              <execution>
+                <id>weave</id>
+                <goals>
+                  <goal>compile</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+  <dependencies>
+    <dependency>
+      <groupId>aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
+      <version>1.5.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-archiver</artifactId>
+      <version>1.0-alpha-10</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.codehaus.plexus</groupId>
+          <artifactId>plexus-component-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>file-management</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-shared-io</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-active-collections</artifactId>
+      <version>1.0-beta-2</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.codehaus.plexus</groupId>
+          <artifactId>plexus-component-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-io</artifactId>
+      <version>1.0-alpha-2</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.codehaus.plexus</groupId>
+          <artifactId>plexus-component-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-plugin-api</artifactId>
+      <version>2.0.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-project</artifactId>
+      <version>2.0.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-archiver</artifactId>
+      <version>2.2</version>
+    </dependency>
+    <!-- FIXME: I'm specifying a dependency on plexus-container-default
+                in order to force the version to be compatible with maven
+                2.0.5.
+    -->
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-container-default</artifactId>
+      <version>1.0-alpha-9-stable-1</version>
+    </dependency>
+        <!-- FIXME: upgrade to p-u 1.4 when available, to fix
+         workaround in DefaultAssemblyReader for NPE caused
+         by DirectoryScanner.scandir(..) and UnixFileSystem's
+         implementation of File.list().
+
+    -->
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-utils</artifactId>
+      <version>1.5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-artifact</artifactId>
+      <version>2.0.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-model</artifactId>
+      <version>2.0.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-repository-builder</artifactId>
+      <version>1.0-alpha-2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-common-artifact-filters</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-plugin-testing-tools</artifactId>
+      <version>1.0-alpha-1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-test-tools</artifactId>
+      <version>1.0-alpha-1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>easymock</groupId>
+      <artifactId>easymock</artifactId>
+      <version>1.2_Java1.3</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>jdom</groupId>
+      <artifactId>jdom</artifactId>
+      <version>1.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>jaxen</groupId>
+      <artifactId>jaxen</artifactId>
+      <version>1.0-FCS</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>saxpath</groupId>
+      <artifactId>saxpath</artifactId>
+      <version>1.0-FCS</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>apache.snapshots</id>
+      <url>scp://people.apache.org/www/people.apache.org/repo/m2-snapshot-repository</url>
+    </snapshotRepository>
+    <repository>
+      <id>apache</id>
+      <url>scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository</url>
+    </repository>
+  </distributionManagement>
+
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/plugins/tags/maven-assembly-plugin-2.2-beta-2</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/plugins/tags/maven-assembly-plugin-2.2-beta-2</developerConnection>
+    <url>http://svn.apache.org/viewcvs.cgi/maven/plugins/tags/maven-assembly-plugin-2.2-beta-2</url>
+  </scm>
+</project>

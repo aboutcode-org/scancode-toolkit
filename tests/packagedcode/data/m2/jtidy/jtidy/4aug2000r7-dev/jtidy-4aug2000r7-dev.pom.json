@@ -1,0 +1,39 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "jtidy", 
+  "artifact_id": "jtidy", 
+  "version": "4aug2000r7-dev", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "JTidy", 
+  "description": "JTidy is a Java port of HTML Tidy, a HTML syntax checker and pretty printer. Like its non-Java cousin, JTidy can be used as a tool for cleaning up malformed and faulty HTML. In addition, JTidy provides a DOM parser for real-world HTML.", 
+  "inception_year": null, 
+  "url": "http://jtidy.sourceforge.net", 
+  "organization_name": "JTidy", 
+  "organization_url": "http://jtidy.sf.net", 
+  "licenses": [
+    {
+      "name": "Java HTML Tidy License", 
+      "url": "http://svn.sourceforge.net/viewvc/*checkout*/jtidy/trunk/jtidy/LICENSE.txt?revision=95", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:https://svn.sourceforge.net/svnroot/jtidy/trunk/jtidy/", 
+    "developer_connection": null, 
+    "url": "http://svn.sourceforge.net/viewcvs.cgi/jtidy/trunk/jtidy/", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

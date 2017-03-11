@@ -1,0 +1,102 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "com.idega.block.addon", 
+  "artifact_id": "com.idega.block.contract", 
+  "version": "4.1.3-SNAPSHOT", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "com.idega.block.addon", 
+    "artifact_id": "com.idega.block.addon", 
+    "version": "4.1.3-SNAPSHOT", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "idegaWeb Contract Block", 
+  "description": "Contract", 
+  "inception_year": "2000", 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "tryggvil", 
+      "name": "Tryggvi Larusson", 
+      "email": "tryggvi@idega.is", 
+      "url": null, 
+      "organization": "idega software", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "palli", 
+      "name": "Pall Helgason", 
+      "email": "palli@idega.is", 
+      "url": null, 
+      "organization": "idega software", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "eiki", 
+      "name": "Eirikur Sveinn Hrafnsson", 
+      "email": "eiki@idega.is", 
+      "url": null, 
+      "organization": "idega software", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "laddi", 
+      "name": "Thorhallur Helgason", 
+      "email": "laddi@idega.is", 
+      "url": null, 
+      "organization": "idega software", 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:cvs:ext:idegaweb@code.idega.com:/idega/cvs:com.idega.block.addon/com.idega.block.contract/", 
+    "developer_connection": null, 
+    "url": null, 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "com.idega.block.platform", 
+        "artifact_id": "com.idega.core", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "com.idega.block.platform", 
+        "artifact_id": "com.idega.block.media", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "itextpdf", 
+        "artifact_id": "itext-paulo", 
+        "version": "${itextpdf-itext-paulo-version}", 
+        "required": true
+      }, 
+      {
+        "group_id": "itext", 
+        "artifact_id": "itext-xml", 
+        "version": "${itext-itext-xml-version}", 
+        "required": true
+      }
+    ]
+  }
+}

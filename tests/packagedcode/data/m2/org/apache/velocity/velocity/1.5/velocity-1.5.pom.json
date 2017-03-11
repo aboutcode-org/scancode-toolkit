@@ -1,0 +1,180 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.velocity", 
+  "artifact_id": "velocity", 
+  "version": "1.5", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {}, 
+  "name": "Apache Velocity", 
+  "description": "Apache Velocity is a general purpose template engine.", 
+  "inception_year": "2000", 
+  "url": "http://velocity.apache.org/engine/releases/velocity-1.5/", 
+  "organization_name": "The Apache Software Foundation", 
+  "organization_url": "http://www.apache.org/", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [
+    {
+      "id": "wglass", 
+      "name": "Will Glass-Husain", 
+      "email": "wglass@forio.com", 
+      "url": null, 
+      "organization": "Forio Business Simulations", 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "geirm", 
+      "name": "Geir Magnusson Jr.", 
+      "email": "geirm@optonline.net", 
+      "url": null, 
+      "organization": "Independent (DVSL Maven)", 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "dlr", 
+      "name": "Daniel Rall", 
+      "email": "dlr@finemaltcoding.com", 
+      "url": null, 
+      "organization": "CollabNet, Inc.", 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "henning", 
+      "name": "Henning P. Schmiedehausen", 
+      "email": "hps@intermeta.de", 
+      "url": null, 
+      "organization": "INTERMETA - Gesellschaft f\u00fcr Mehrwertdienste mbH", 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "nbubna", 
+      "name": "Nathan Bubna", 
+      "email": "nathan@esha.com", 
+      "url": null, 
+      "organization": "ESHA Research", 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/velocity/engine/tags/Velocity_1.5", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewvc/velocity/engine/tags/Velocity_1.5", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "JIRA", 
+    "url": "https://issues.apache.org/jira/browse/VELOCITY"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "velocity.apache.org", 
+      "name": null, 
+      "url": "scpexe://people.apache.org/www/velocity.apache.org/engine/releases/velocity-1.5/"
+    }, 
+    "repository": {
+      "id": "apache.releases", 
+      "name": "Apache Release Distribution Repository", 
+      "url": "scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository"
+    }, 
+    "snapshot_repository": {
+      "id": "apache.snapshots", 
+      "name": "Apache Development Snapshot Repository", 
+      "url": "scp://people.apache.org/www/people.apache.org/repo/m2-snapshot-repository"
+    }
+  }, 
+  "repositories": [
+    {
+      "id": "apache.snapshots", 
+      "name": "Apache Snapshot Repository", 
+      "url": "http://people.apache.org/repo/m2-snapshot-repository"
+    }
+  ], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "commons-collections", 
+        "artifact_id": "commons-collections", 
+        "version": "3.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-lang", 
+        "artifact_id": "commons-lang", 
+        "version": "2.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "oro", 
+        "artifact_id": "oro", 
+        "version": "2.0.8", 
+        "required": true
+      }
+    ], 
+    "provided": [
+      {
+        "group_id": "jdom", 
+        "artifact_id": "jdom", 
+        "version": "1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "log4j", 
+        "artifact_id": "log4j", 
+        "version": "1.2.12", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "servlet-api", 
+        "version": "2.3", 
+        "required": true
+      }, 
+      {
+        "group_id": "logkit", 
+        "artifact_id": "logkit", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "ant", 
+        "artifact_id": "ant", 
+        "version": "1.6", 
+        "required": true
+      }, 
+      {
+        "group_id": "werken-xpath", 
+        "artifact_id": "werken-xpath", 
+        "version": "0.9.4", 
+        "required": true
+      }
+    ]
+  }
+}

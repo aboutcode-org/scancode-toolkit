@@ -1,0 +1,123 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.springframework", 
+  "artifact_id": "spring-context", 
+  "version": "2.5.3", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Spring Framework: Context", 
+  "description": "Spring Framework: Context", 
+  "inception_year": null, 
+  "url": "http://www.springframework.org", 
+  "organization_name": "Spring Framework", 
+  "organization_url": "http://www.springframework.org/", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:cvs:pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring", 
+    "developer_connection": null, 
+    "url": "http://springframework.cvs.sourceforge.net/springframework/", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {
+      "id": "spring-release", 
+      "name": "Spring Release Repository", 
+      "url": "file:///Users/benhale/development/public/repos/repo"
+    }, 
+    "snapshot_repository": {
+      "id": "spring-snapshot", 
+      "name": "Spring Snapshot Repository", 
+      "url": "s3://maven.springframework.org/snapshot"
+    }
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "aopalliance", 
+        "artifact_id": "aopalliance", 
+        "version": "1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "backport-util-concurrent", 
+        "artifact_id": "backport-util-concurrent", 
+        "version": "3.0", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-logging", 
+        "artifact_id": "commons-logging", 
+        "version": "1.1.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "com.bea.wlplatform", 
+        "artifact_id": "commonj-twm", 
+        "version": "1.1", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-agent", 
+        "version": "2.5.3", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-aop", 
+        "version": "2.5.3", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-beans", 
+        "version": "2.5.3", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-core", 
+        "version": "2.5.3", 
+        "required": true
+      }
+    ], 
+    "provided": [
+      {
+        "group_id": "javax.ejb", 
+        "artifact_id": "ejb", 
+        "version": "3.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.jms", 
+        "artifact_id": "jms", 
+        "version": "1.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.xml", 
+        "artifact_id": "jaxrpc-api", 
+        "version": "1.1", 
+        "required": true
+      }
+    ]
+  }
+}

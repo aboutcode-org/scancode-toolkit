@@ -1,0 +1,298 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "commons-digester", 
+  "artifact_id": "commons-digester", 
+  "version": "1.8", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Digester", 
+  "description": "The Digester package lets you configure an XML->Java object mapping module\n    which triggers certain actions called rules whenever a particular \n    pattern of nested XML elements is recognized.", 
+  "inception_year": "2001", 
+  "url": "http://jakarta.apache.org/commons/digester/", 
+  "organization_name": "The Apache Software Foundation", 
+  "organization_url": "http://jakarta.apache.org", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "/LICENSE.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [
+    {
+      "id": "craigmcc", 
+      "name": "Craig McClanahan", 
+      "email": "craigmcc@apache.org", 
+      "url": null, 
+      "organization": "Sun Microsystems", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "rdonkin", 
+      "name": "Robert Burrell Donkin", 
+      "email": "rdonkin@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "sanders", 
+      "name": "Scott Sanders", 
+      "email": "sanders@totalsync.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jstrachan", 
+      "name": "James Strachan", 
+      "email": "jstrachan@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jvanzyl", 
+      "name": "Jason van Zyl", 
+      "email": "jvanzyl@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "tobrien", 
+      "name": "Tim OBrien", 
+      "email": "tobrien@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jfarcand", 
+      "name": "Jean-Francois Arcand", 
+      "email": "jfarcand@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "skitching", 
+      "name": "Simon Kitching", 
+      "email": "skitching@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "rahul", 
+      "name": "Rahul Akolkar", 
+      "email": "rahul AT apache DOT org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "Bradley M. Handy", 
+      "email": "bhandy@users.sf.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Christopher Lenz", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Ted Husted", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "David H. Martin", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Henri Chen", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Janek Bogucki", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Mark Huisman", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Paul Jack", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Anton Maslovsky", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Matt Cleveland", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Gabriele Carcassi", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Wendy Smoak", 
+      "email": "java@wendysmoak.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Kevin Ross", 
+      "email": "kevin.ross@iverticalleap.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Commons Dev List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/jakarta-commons-dev/"
+    }, 
+    {
+      "name": "Commons User List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/jakarta-commons-user/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/jakarta/commons/proper/digester/trunk", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/repos/asf/jakarta/commons/proper/digester/trunk", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": null, 
+    "url": "http://issues.apache.org/jira/"
+  }, 
+  "ci_management": {
+    "system": null, 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "default", 
+      "name": "Default Site", 
+      "url": "scp://people.apache.org//www/jakarta.apache.org/commons/digester/"
+    }, 
+    "repository": {
+      "id": "default", 
+      "name": "Default Repository", 
+      "url": "file:///www/jakarta.apache.org/builds/jakarta-commons/digester/"
+    }, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "commons-beanutils", 
+        "artifact_id": "commons-beanutils", 
+        "version": "1.7.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-logging", 
+        "artifact_id": "commons-logging", 
+        "version": "1.1", 
+        "required": true
+      }
+    ], 
+    "provided": [
+      {
+        "group_id": "xml-apis", 
+        "artifact_id": "xml-apis", 
+        "version": "1.0.b2", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.slf4j", 
+  "artifact_id": "slf4j-parent", 
+  "version": "1.4.2", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {}, 
+  "name": "SLF4J", 
+  "description": null, 
+  "inception_year": "2005", 
+  "url": "http://www.slf4j.org", 
+  "organization_name": "QOS.ch", 
+  "organization_url": "http://www.qos.ch", 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [
+    "slf4j-api", 
+    "slf4j-simple", 
+    "slf4j-nop", 
+    "slf4j-jdk14", 
+    "slf4j-log4j12", 
+    "slf4j-jcl", 
+    "jcl104-over-slf4j", 
+    "log4j-over-slf4j", 
+    "slf4j-site", 
+    "slf4j-archetype"
+  ], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.slf4j.org/repos/slf4j/trunk", 
+    "developer_connection": null, 
+    "url": "http://svn.slf4j.org/viewvc/slf4j/trunk/", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "pixie", 
+      "name": null, 
+      "url": "scp://pixie/var/www/www.slf4j.org/htdocs/"
+    }, 
+    "repository": {
+      "id": "pixie", 
+      "name": null, 
+      "url": "scp://pixie/var/mvnrepo/"
+    }, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [
+    {
+      "id": "apache.snapshots", 
+      "name": "Apache Snapshot Plugin Repository", 
+      "url": "http://people.apache.org/repo/m2-snapshot-repository"
+    }
+  ], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

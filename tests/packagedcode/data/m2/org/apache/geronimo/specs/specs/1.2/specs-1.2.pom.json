@@ -1,0 +1,62 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.geronimo.specs", 
+  "artifact_id": "specs", 
+  "version": "1.2", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache.geronimo.genesis.config", 
+    "artifact_id": "project-config", 
+    "version": "1.1", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Geronimo Specifications", 
+  "description": "Provides open-source implementations of Sun specifications.", 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/geronimo/specs/trunk/", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewvc/geronimo/specs/trunk/", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "geronimo-website", 
+      "name": null, 
+      "url": "scp://people.apache.org/www/geronimo.apache.org/maven/specs"
+    }, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [
+    {
+      "id": "apache-snapshots", 
+      "name": "Apache Snapshots Repository", 
+      "url": "http://people.apache.org/repo/m2-snapshot-repository"
+    }
+  ], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

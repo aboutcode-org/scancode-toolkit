@@ -1,0 +1,202 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.plugins", 
+  "artifact_id": "maven-plugin-parent", 
+  "version": "2.0.1", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {}, 
+  "name": "Maven Plugins", 
+  "description": "Maven Plugins", 
+  "inception_year": null, 
+  "url": "http://maven.apache.org/plugins/", 
+  "organization_name": "Apache Software Foundation", 
+  "organization_url": "http://www.apache.org/", 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "jvanzyl", 
+      "name": "Jason van Zyl", 
+      "email": "jason@maven.org", 
+      "url": null, 
+      "organization": "Maven", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Chair"
+      ]
+    }, 
+    {
+      "id": "brett", 
+      "name": "Brett Porter", 
+      "email": "brett@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "evenisse", 
+      "name": "Emmanuel Venisse", 
+      "email": "evenisse@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "kenney", 
+      "name": "Kenney Westerhof", 
+      "email": "kenney@apache.org", 
+      "url": null, 
+      "organization": "Neonics", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "snicoll", 
+      "name": "Stephane Nicoll", 
+      "email": "snicoll@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "vmassol", 
+      "name": "Vincent Massol", 
+      "email": "vmassol@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "fgiust", 
+      "name": "Fabrizio Giustina", 
+      "email": "fgiust@apache.org", 
+      "url": null, 
+      "organization": "openmind", 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "epunzalan", 
+      "name": "Edwin Punzalan", 
+      "email": "epunzalan@mergere.com", 
+      "url": null, 
+      "organization": "Mergere", 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [
+    "maven-ant-plugin", 
+    "maven-antrun-plugin", 
+    "maven-assembly-plugin", 
+    "maven-checkstyle-plugin", 
+    "maven-clean-plugin", 
+    "maven-clover-plugin", 
+    "maven-compiler-plugin", 
+    "maven-deploy-plugin", 
+    "maven-eclipse-plugin", 
+    "maven-ear-plugin", 
+    "maven-ejb-plugin", 
+    "maven-help-plugin", 
+    "maven-idea-plugin", 
+    "maven-install-plugin", 
+    "maven-jar-plugin", 
+    "maven-javadoc-plugin", 
+    "maven-plugin-plugin", 
+    "maven-pmd-plugin", 
+    "maven-project-info-reports-plugin", 
+    "maven-rar-plugin", 
+    "maven-release-plugin", 
+    "maven-repository-plugin", 
+    "maven-resources-plugin", 
+    "maven-site-plugin", 
+    "maven-source-plugin", 
+    "maven-surefire-plugin", 
+    "maven-war-plugin", 
+    "maven-verifier-plugin"
+  ], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/maven/plugins/trunk/", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewcvs.cgi/maven/plugins/trunk/", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://jira.codehaus.org/browse/MNG"
+  }, 
+  "ci_management": {
+    "system": "continuum", 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "website", 
+      "name": null, 
+      "url": "scp://minotaur.apache.org/www/maven.apache.org/plugins/"
+    }, 
+    "repository": {
+      "id": "repo1", 
+      "name": "Maven Central Plugins Repository", 
+      "url": "scpexe://repo1.maven.org/home/projects/maven/repository-staging/to-ibiblio/maven2"
+    }, 
+    "snapshot_repository": {
+      "id": "snapshots", 
+      "name": "Maven Central Plugins Development Repository", 
+      "url": "scpexe://repo1.maven.org/home/projects/maven/repository-staging/snapshots/maven2"
+    }
+  }, 
+  "repositories": [
+    {
+      "id": "snapshots", 
+      "name": "Maven Central Development Repository", 
+      "url": "http://snapshots.maven.codehaus.org/maven2"
+    }
+  ], 
+  "plugin_repositories": [
+    {
+      "id": "snapshots", 
+      "name": "Maven Central Plugins Development Repository", 
+      "url": "http://snapshots.maven.codehaus.org/maven2"
+    }
+  ], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ], 
+    "compile": [
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-plugin-api", 
+        "version": "2.0.1", 
+        "required": true
+      }
+    ]
+  }
+}

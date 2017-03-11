@@ -1,0 +1,165 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.codehaus.mojo", 
+  "artifact_id": "cobertura-maven-plugin", 
+  "version": "2.2", 
+  "classifier": null, 
+  "packaging ": "maven-plugin", 
+  "parent": {
+    "group_id": "org.codehaus.mojo", 
+    "artifact_id": "mojo", 
+    "version": "16", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Cobertura Maven Plugin", 
+  "description": "Cobertura plugin for maven 2. Cobertura is a free Java tool that calculates the percentage of code accessed by\n    tests. It can be used to identify which parts of your Java program are lacking test coverage.", 
+  "inception_year": "2005", 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [
+    {
+      "id": "joakime", 
+      "name": "Joakim Erdfelt", 
+      "email": "joakim@erdfelt.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "wgwaltney", 
+      "name": "Will Gwaltney", 
+      "email": "will.gwaltney@sas.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "fgiust", 
+      "name": "Fabrizio Giustina", 
+      "email": "fgiust@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.codehaus.org/mojo/tags/cobertura-maven-plugin-2.2", 
+    "developer_connection": null, 
+    "url": "http://svn.codehaus.org/mojo/tags/cobertura-maven-plugin-2.2", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "JIRA", 
+    "url": "http://jira.codehaus.org/browse/MCOBERTURA"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "net.sourceforge.cobertura", 
+        "artifact_id": "cobertura", 
+        "version": "1.9", 
+        "required": true
+      }, 
+      {
+        "group_id": "net.sourceforge.cobertura", 
+        "artifact_id": "cobertura-runtime", 
+        "version": "1.9", 
+        "required": true
+      }, 
+      {
+        "group_id": "urbanophile", 
+        "artifact_id": "java-getopt", 
+        "version": "1.0.9", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-artifact", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-plugin-api", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.reporting", 
+        "artifact_id": "maven-reporting-api", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-project", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.reporting", 
+        "artifact_id": "maven-reporting-impl", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-container-default", 
+        "version": "1.0-alpha-9", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-utils", 
+        "version": "1.1", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "httpunit", 
+        "artifact_id": "httpunit", 
+        "version": "1.6", 
+        "required": true
+      }, 
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.shared", 
+        "artifact_id": "maven-plugin-testing-harness", 
+        "version": "1.0-beta-1", 
+        "required": true
+      }
+    ]
+  }
+}

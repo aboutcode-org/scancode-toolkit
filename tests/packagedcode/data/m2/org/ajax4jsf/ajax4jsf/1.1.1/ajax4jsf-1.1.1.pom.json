@@ -1,0 +1,138 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.ajax4jsf", 
+  "artifact_id": "ajax4jsf", 
+  "version": "1.1.1", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.ajax4jsf", 
+    "artifact_id": "master", 
+    "version": "1.1.1", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Java Server Faces AJAX framework", 
+  "description": null, 
+  "inception_year": null, 
+  "url": "http://labs.jboss.com/wiki/Ajax4jsf/framework", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ], 
+    "compile": [
+      {
+        "group_id": "opensymphony", 
+        "artifact_id": "oscache", 
+        "version": "2.3", 
+        "required": false
+      }, 
+      {
+        "group_id": "com.sun.facelets", 
+        "artifact_id": "jsf-facelets", 
+        "version": "1.1.11", 
+        "required": false
+      }, 
+      {
+        "group_id": "nekohtml", 
+        "artifact_id": "nekohtml", 
+        "version": "0.9.5", 
+        "required": false
+      }, 
+      {
+        "group_id": "net.sf.json-lib", 
+        "artifact_id": "json-lib", 
+        "version": "0.9", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-logging", 
+        "artifact_id": "commons-logging", 
+        "version": "1.0.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "log4j", 
+        "artifact_id": "log4j", 
+        "version": "1.2.14", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-beanutils", 
+        "artifact_id": "commons-beanutils", 
+        "version": "1.7.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-digester", 
+        "artifact_id": "commons-digester", 
+        "version": "1.8", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-collections", 
+        "artifact_id": "commons-collections", 
+        "version": "3.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.faces", 
+        "artifact_id": "jsf-api", 
+        "version": "1.1_02", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "jstl", 
+        "version": "1.0", 
+        "required": true
+      }
+    ], 
+    "provided": [
+      {
+        "group_id": "javax.el", 
+        "artifact_id": "el-api", 
+        "version": "1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "servlet-api", 
+        "version": "2.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "jsp-api", 
+        "version": "2.0", 
+        "required": true
+      }
+    ], 
+    "runtime": [
+      {
+        "group_id": "javax.faces", 
+        "artifact_id": "jsf-impl", 
+        "version": "1.1_02", 
+        "required": true
+      }
+    ]
+  }
+}

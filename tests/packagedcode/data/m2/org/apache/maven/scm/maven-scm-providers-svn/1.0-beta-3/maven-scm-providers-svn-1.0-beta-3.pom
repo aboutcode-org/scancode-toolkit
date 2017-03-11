@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>maven-scm-providers</artifactId>
+    <groupId>org.apache.maven.scm</groupId>
+    <version>1.0-beta-3</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>maven-scm-providers-svn</artifactId>
+  <packaging>pom</packaging>
+  <name>Maven SCM Subversion Provider - Parent</name>
+  <version>1.0-beta-3</version>
+  <modules>
+    <module>maven-scm-provider-svn-commons</module>
+    <module>maven-scm-provider-svnexe</module>
+    <module>maven-scm-provider-svntest</module>
+  </modules>
+</project>

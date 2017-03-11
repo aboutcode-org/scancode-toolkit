@@ -1,0 +1,105 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "commons-beanutils", 
+  "artifact_id": "commons-beanutils", 
+  "version": "1.6", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "BeanUtils", 
+  "description": "Java Bean Utililities", 
+  "inception_year": "2000", 
+  "url": "http://jakarta.apache.org/commons/beanutils/", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "rdonkin", 
+      "name": "Robert Burrell Donkin", 
+      "email": "rdonkin@apache.org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "dion", 
+      "name": "dIon Gillard", 
+      "email": "dion@apache.org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "craigmcc", 
+      "name": "Craig McClanahan", 
+      "email": "craigmcc@apache.org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "geirm", 
+      "name": "Geir Magnusson Jr.", 
+      "email": "geirm@apache.org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "sanders", 
+      "name": "Scott Sanders", 
+      "email": "sanders@apache.org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "rwaldhoff", 
+      "name": "Rodney Waldhoff", 
+      "email": "rwaldhoff@apache.org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "commons-logging", 
+        "artifact_id": "commons-logging", 
+        "version": "1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-collections", 
+        "artifact_id": "commons-collections", 
+        "version": "2.0", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.7", 
+        "required": true
+      }
+    ]
+  }
+}

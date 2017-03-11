@@ -1,0 +1,11 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>bcel</groupId>
+  <artifactId>bcel</artifactId>
+  <version>5.1</version>
+  <dependencies>
+    <groupId>regexp</groupId>
+    <artifactId>regexp</artifactId>
+    <version>1.2</version>
+  </dependencies>
+</project>

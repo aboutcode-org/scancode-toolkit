@@ -1,0 +1,34 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "jboss", 
+  "artifact_id": "javassist", 
+  "version": "3.3.ga", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Javassist", 
+  "description": "Javassist (Java programming assistant) is a load-time reflective system for Java.", 
+  "inception_year": null, 
+  "url": "http://www.jboss.org/products/javassist", 
+  "organization_name": "Shigeru Chiba / JBoss", 
+  "organization_url": "http://www.jboss.org/products/javassist.html", 
+  "licenses": [
+    {
+      "name": "MPL 1.1", 
+      "url": "http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html", 
+      "comments": "Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.", 
+      "distribution": null
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

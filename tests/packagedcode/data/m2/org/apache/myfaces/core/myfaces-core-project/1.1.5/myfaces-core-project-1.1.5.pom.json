@@ -1,0 +1,50 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.myfaces.core", 
+  "artifact_id": "myfaces-core-project", 
+  "version": "1.1.5", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache.myfaces.maven", 
+    "artifact_id": "myfaces-master", 
+    "version": "1.0.5", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Core Project", 
+  "description": null, 
+  "inception_year": null, 
+  "url": "http://myfaces.apache.org/projects", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [
+    "api", 
+    "impl"
+  ], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:https://svn.apache.org/repos/asf/myfaces/core/branches/1_1_5", 
+    "developer_connection": null, 
+    "url": "https://svn.apache.org/repos/asf/myfaces/core/branches/1_1_5", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://issues.apache.org/jira/secure/BrowseProject.jspa?id=10600"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [
+    {
+      "id": "apache.snapshots", 
+      "name": null, 
+      "url": "http://people.apache.org/repo/m2-snapshot-repository"
+    }
+  ], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

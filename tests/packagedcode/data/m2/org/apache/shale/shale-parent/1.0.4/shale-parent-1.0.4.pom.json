@@ -1,0 +1,66 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.shale", 
+  "artifact_id": "shale-parent", 
+  "version": "1.0.4", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache.shale", 
+    "artifact_id": "shale-master", 
+    "version": "2", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Apache Shale Framework Parent POM", 
+  "description": "The Apache Shale Framework", 
+  "inception_year": null, 
+  "url": "http://shale.apache.org", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [
+    "shale-application", 
+    "shale-clay", 
+    "shale-core", 
+    "shale-dialog", 
+    "shale-dialog-basic", 
+    "shale-dialog-scxml", 
+    "shale-remoting", 
+    "shale-spring", 
+    "shale-test", 
+    "shale-tiles", 
+    "shale-validator", 
+    "shale-view"
+  ], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/shale/framework/trunk", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewvc/shale/framework/trunk", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "apache-site", 
+      "name": null, 
+      "url": "scp://people.apache.org/www/shale.apache.org"
+    }, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [
+    {
+      "id": "apache.snapshots", 
+      "name": "Apache Development Snapshot Repository", 
+      "url": "http://people.apache.org/repo/m2-snapshot-repository"
+    }
+  ], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

@@ -1,0 +1,87 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "httpunit", 
+  "artifact_id": "httpunit", 
+  "version": "1.6.2", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "HttpUnit", 
+  "description": "A Java library for the automatic stimulation and testing of web applications.", 
+  "inception_year": null, 
+  "url": "http://httpunit.sourceforge.net", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [
+    {
+      "name": "MIT License", 
+      "url": "http://httpunit.sourceforge.net/doc/license.html", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "xerces", 
+        "artifact_id": "xmlParserAPIs", 
+        "version": "2.2.1", 
+        "required": false
+      }, 
+      {
+        "group_id": "xerces", 
+        "artifact_id": "xercesImpl", 
+        "version": "2.6.2", 
+        "required": false
+      }, 
+      {
+        "group_id": "nekohtml", 
+        "artifact_id": "nekohtml", 
+        "version": "0.9.1", 
+        "required": false
+      }, 
+      {
+        "group_id": "rhino", 
+        "artifact_id": "js", 
+        "version": "1.5R4.1", 
+        "required": false
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "servlet-api", 
+        "version": "2.3", 
+        "required": true
+      }, 
+      {
+        "group_id": "jtidy", 
+        "artifact_id": "jtidy", 
+        "version": "4aug2000r7-dev", 
+        "required": true
+      }, 
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": false
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "javax.mail", 
+        "artifact_id": "mail", 
+        "version": "1.4", 
+        "required": true
+      }
+    ]
+  }
+}

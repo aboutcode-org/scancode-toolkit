@@ -1,0 +1,77 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.shale", 
+  "artifact_id": "shale-test", 
+  "version": "1.0.4", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.apache.shale", 
+    "artifact_id": "shale-parent", 
+    "version": "1.0.4", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Shale Test Framework", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "htmlunit", 
+        "artifact_id": "htmlunit", 
+        "version": "latest.release", 
+        "required": false
+      }, 
+      {
+        "group_id": "jmock", 
+        "artifact_id": "jmock", 
+        "version": "1.0.1", 
+        "required": false
+      }, 
+      {
+        "group_id": "jmock", 
+        "artifact_id": "jmock-cglib", 
+        "version": "1.0.1", 
+        "required": false
+      }, 
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.cargo", 
+        "artifact_id": "cargo-core-uberjar", 
+        "version": "0.8", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.codehaus.cargo", 
+        "artifact_id": "cargo-ant", 
+        "version": "0.8", 
+        "required": false
+      }
+    ]
+  }
+}

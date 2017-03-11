@@ -1,0 +1,29 @@
+<?xml version="1.0"?><project>
+  <parent>
+    <artifactId>maven-native</artifactId>
+    <groupId>org.codehaus.mojo.natives</groupId>
+    <version>1.0-alpha-2</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>maven-native-api</artifactId>
+  <name>Maven Native API</name>
+  <version>1.0-alpha-2</version>
+  <dependencies>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-container-default</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-utils</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>bcel</groupId>
+      <artifactId>bcel</artifactId>
+      <version>5.1</version>
+    </dependency>
+  </dependencies>
+  <distributionManagement>
+    <status>deployed</status>
+  </distributionManagement>
+</project>

@@ -1,0 +1,50 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.wagon", 
+  "artifact_id": "wagon-http-shared", 
+  "version": "1.0-beta-2", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.apache.maven.wagon", 
+    "artifact_id": "wagon-providers", 
+    "version": "1.0-beta-2", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Wagon HTTP Shared Library", 
+  "description": "Shared Library for the wagon-http, and wagon-http-lightweight wagon providers.", 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://jira.codehaus.org/browse/WAGONHTTP"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "jtidy", 
+        "artifact_id": "jtidy", 
+        "version": "4aug2000r7-dev", 
+        "required": true
+      }
+    ]
+  }
+}

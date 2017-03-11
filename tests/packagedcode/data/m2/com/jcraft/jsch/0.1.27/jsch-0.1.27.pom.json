@@ -1,0 +1,43 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "com.jcraft", 
+  "artifact_id": "jsch", 
+  "version": "0.1.27", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "JSch", 
+  "description": "JSch is a pure Java implementation of SSH2", 
+  "inception_year": null, 
+  "url": "http://www.jcraft.com/jsch/", 
+  "organization_name": "jcraft", 
+  "organization_url": "http://www.jcraft.com/jsch", 
+  "licenses": [
+    {
+      "name": "BSD", 
+      "url": "http://www.jcraft.com/jsch/LICENSE.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "com.jcraft", 
+        "artifact_id": "jzlib", 
+        "version": "1.0.7", 
+        "required": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "commons-el", 
+  "artifact_id": "commons-el", 
+  "version": "1.0", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "EL", 
+  "description": "JSP 2.0 Expression Language Interpreter Implementation", 
+  "inception_year": "2003", 
+  "url": "http://jakarta.apache.org/commons/el/", 
+  "organization_name": "The Apache Software Foundation", 
+  "organization_url": "http://jakarta.apache.org", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "/LICENSE.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [
+    {
+      "id": "arista", 
+      "name": "Nathan Abramson", 
+      "email": "arista@alum.mit.edu", 
+      "url": null, 
+      "organization": "Massachusetts Institute of Technology", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "shawn", 
+      "name": "Shawn Bayern", 
+      "email": "shawn@apache.org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "pierred", 
+      "name": "Pierre Delisle", 
+      "email": "pierre.delisle@sun.com", 
+      "url": null, 
+      "organization": "Sun Microsystems, Inc.", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "craigmcc", 
+      "name": "Craig McClanahan", 
+      "email": "craigmcc@apache.org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "luehe", 
+      "name": "Jan Luehe", 
+      "email": "jan.luehe@sun.com", 
+      "url": null, 
+      "organization": "Sun Microsystems, Inc.", 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Commons Dev List", 
+      "archive_url": "http://mail-archives.apache.org/eyebrowse/SummarizeList?listName=commons-dev@jakarta.apache.org"
+    }, 
+    {
+      "name": "Commons User List", 
+      "archive_url": "http://mail-archives.apache.org/eyebrowse/SummarizeList?listName=commons-user@jakarta.apache.org"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/jakarta/commons/proper/el/trunk", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/repos/asf/jakarta/commons/proper/el/trunk", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": null, 
+    "url": "http://issues.apache.org/bugzilla/"
+  }, 
+  "ci_management": {
+    "system": null, 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "default", 
+      "name": "Default Site", 
+      "url": "scp://jakarta.apache.org//www/jakarta.apache.org/commons/el/"
+    }, 
+    "repository": {
+      "id": "default", 
+      "name": "Default Repository", 
+      "url": "file:///www/jakarta.apache.org/builds/jakarta-commons/el/"
+    }, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "provided": [
+      {
+        "group_id": "servletapi", 
+        "artifact_id": "servletapi", 
+        "version": "2.4-20040521", 
+        "required": true
+      }, 
+      {
+        "group_id": "jspapi", 
+        "artifact_id": "jsp-api", 
+        "version": "2.0-20040521", 
+        "required": true
+      }
+    ], 
+    "compile": [
+      {
+        "group_id": "commons-logging", 
+        "artifact_id": "commons-logging", 
+        "version": "1.0.3", 
+        "required": true
+      }
+    ]
+  }
+}

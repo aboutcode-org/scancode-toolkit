@@ -1,0 +1,91 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>asm-parent</artifactId>
+  <groupId>asm</groupId>
+  <version>3.0</version>
+  <packaging>pom</packaging>
+
+  <name>ASM</name>
+  <description>A very small and fast Java bytecode manipulation framework</description>
+  <url>http://asm.objectweb.org/</url>
+  
+  <organization>
+    <name>ObjectWeb</name>
+    <url>http://www.objectweb.org/</url>
+  </organization>
+  <inceptionYear>2000</inceptionYear>
+
+  <developers>
+    <developer>
+      <name>Eric Bruneton</name>
+      <id>ebruneton</id>
+      <email>Eric.Bruneton@rd.francetelecom.com</email>
+      <roles>
+        <role>Creator</role>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Eugene Kuleshov</name>
+      <id>eu</id>
+      <email>eu@javatx.org</email>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:cvs:pserver:anonymous@cvs.forge.objectweb.org:/cvsroot/asm:asm</connection>
+    <developerConnection>scm:cvs:ext:${maven.username}@cvs.forge.objectweb.org:/cvsroot/asm:asm</developerConnection>
+    <url>http://cvs.forge.objectweb.org/cgi-bin/viewcvs.cgi/asm/asm/</url>
+  </scm>
+  
+  <issueManagement>
+    <url>http://forge.objectweb.org/tracker/?group_id=23</url>
+  </issueManagement>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <artifactId>asm</artifactId>
+        <groupId>${project.groupId}</groupId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <artifactId>asm-tree</artifactId>
+        <groupId>${project.groupId}</groupId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <artifactId>asm-analysis</artifactId>
+        <groupId>${project.groupId}</groupId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <artifactId>asm-commons</artifactId>
+        <groupId>${project.groupId}</groupId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <artifactId>asm-util</artifactId>
+        <groupId>${project.groupId}</groupId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <artifactId>asm-xml</artifactId>
+        <groupId>${project.groupId}</groupId>
+        <version>${project.version}</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+</project>

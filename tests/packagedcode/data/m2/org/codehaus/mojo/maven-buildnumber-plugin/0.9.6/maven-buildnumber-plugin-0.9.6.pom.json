@@ -1,0 +1,145 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.codehaus.mojo", 
+  "artifact_id": "maven-buildnumber-plugin", 
+  "version": "0.9.6", 
+  "classifier": null, 
+  "packaging ": "maven-plugin", 
+  "parent": {}, 
+  "name": "Maven Build Number Plugin", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [
+    {
+      "name": "The MIT License", 
+      "url": "http://commons.ucalgary.ca/projects/licenses/mit-license.txt", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [
+    {
+      "id": "woodj", 
+      "name": "Julian Wood", 
+      "email": "woodj@ucalgary.ca", 
+      "url": null, 
+      "organization": "Learning Commons, University of Calgary", 
+      "organization_url": "http://commons.ucalgary.ca", 
+      "roles": [
+        "Programmer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://woodj@apollo.ucalgary.ca:8800/maven-buildnumber-plugin/tags/maven-buildnumber-plugin-0.9.6", 
+    "developer_connection": null, 
+    "url": "http://woodj@apollo.ucalgary.ca:8800/maven-buildnumber-plugin/tags/maven-buildnumber-plugin-0.9.6", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "mantis", 
+    "url": "http://commons.ucalgary.ca/mantis/set_project.php?project_id=36"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "commons.ucalgary.ca", 
+      "name": "Learning Commons", 
+      "url": "scp://commons.ucalgary.ca/Library/WebServer/Documents/projects/${project.artifactId}/"
+    }, 
+    "repository": {
+      "id": "commons.ucalgary.ca", 
+      "name": "Learning Commons Server", 
+      "url": "sftp://commons.ucalgary.ca/Library/WebServer/Documents/pub/m2"
+    }, 
+    "snapshot_repository": {
+      "id": "tlc-snapshots", 
+      "name": "TLC Snapshot Development Repository", 
+      "url": "sftp://commons.ucalgary.ca/Library/WebServer/Documents/pub/m2-snapshots"
+    }
+  }, 
+  "repositories": [
+    {
+      "id": "tlc-snapshots", 
+      "name": "TLC Snapshot Development Repository", 
+      "url": "http://commons.ucalgary.ca/pub/m2-snapshots"
+    }, 
+    {
+      "id": "snapshots", 
+      "name": "Maven Snapshot Development Repository", 
+      "url": "http://snapshots.maven.codehaus.org/maven2"
+    }
+  ], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-project", 
+        "version": "2.0.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-settings", 
+        "version": "2.0.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-plugin-api", 
+        "version": "2.0.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.scm", 
+        "artifact_id": "maven-scm-api", 
+        "version": "1.0-beta-3", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.scm", 
+        "artifact_id": "maven-scm-manager-plexus", 
+        "version": "1.0-beta-3", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.scm", 
+        "artifact_id": "maven-scm-provider-svnexe", 
+        "version": "1.0-beta-3", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.scm", 
+        "artifact_id": "maven-scm-provider-cvsexe", 
+        "version": "1.0-beta-3", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.scm", 
+        "artifact_id": "maven-scm-provider-starteam", 
+        "version": "1.0-beta-3", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.scm", 
+        "artifact_id": "maven-scm-provider-clearcase", 
+        "version": "1.0-beta-3", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.scm", 
+        "artifact_id": "maven-scm-provider-perforce", 
+        "version": "1.0-beta-3", 
+        "required": true
+      }
+    ]
+  }
+}

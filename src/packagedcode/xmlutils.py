@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,12 +22,15 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
+
+import chardet
 from lxml import etree
 
 from textcode import analysis
-import chardet
 
 
 """
@@ -37,48 +40,32 @@ Utility functions for dealing with XML.
 
 def parse(location, handler):
     """
-    Given the location of an XML file and a handler function accepting a etree
-    document, parse the file at location and invoke the handler on the etree
-    doc. If parsing fails while calling handler, another approach to parsing is
-    used.
+    Given the location of an XML file and a handler function accepting a
+    etree document, parse the file at location and invoke the handler on
+    the etree doc. If parsing fails while calling handler, another
+    approach to parsing is used.
 
-    This is a workaround some lxml bug/weirdness wrt unicode in the 2.3 version
-    in use.
+    This is a workaround some lxml bug/weirdness wrt unicode in the 2.3
+    version in use.
 
-    The `handler` function must have no side effects and can be called again on
-    failures without risk.
+    The `handler` function must have no side effects and can be called
+    again on failures without risk.
 
-    We try first to call lxml from a location then we try from a string we
-    loaded ourselves to deal with weird encodings
+    Try first to call lxml from a location then try from a string to
+    deal with weird encodings
     """
     try:
-        xdoc = _parse_as_file(location)
+        parser = etree.XMLParser(recover=True, remove_blank_text=True, resolve_entities=False)
+        xdoc = etree.parse(location, parser)
         return handler(xdoc)
     except:
-        xdoc = _parse_as_string(location)
+        parser = etree.XMLParser(recover=True, remove_blank_text=True, resolve_entities=False)
+        text = analysis.unicode_text(location)
+        xdoc= etree.fromstring(_as_unicode_bytes(text), parser)
         return handler(xdoc)
 
 
-def _parse_as_file(location):
-    """
-    Return an etree doc from the XML file at `location`.
-    """
-    parser = etree.XMLParser(recover=True, remove_blank_text=True,
-                             resolve_entities=False)
-    return etree.parse(location, parser)
-
-
-def _parse_as_string(location):
-    """
-    Return an etree doc from the XML file at `location` trying hard to get
-    unicode.
-    """
-    parser = etree.XMLParser(recover=True, remove_blank_text=True,
-                             resolve_entities=False)
-    text = analysis.unicode_text(location)
-    return etree.fromstring(_as_unicode_bytes(text), parser)
-
-
+# FIXME: encoding should be processed/detected elsewhere
 def _as_unicode_bytes(text):
     """
     Given a unicode text, return a unicode encoded byte string.
@@ -98,8 +85,8 @@ def _as_unicode_bytes(text):
 
 def find_text(xdoc, xpath):
     """
-    Return a list of text values from an `xpath` expression found in an etree
-    `xdoc`.
+    Return a list of text values from an `xpath` expression found in an
+    etree `xdoc`.
     """
     result = xdoc.xpath(xpath)
     # xpath can return a list (nodeset), bool, float or string
@@ -128,9 +115,8 @@ def namespace_unaware(xpath):
 
     For example:
     >>> simple_xpath = '/project/organization/url'
-    >>> namespace_unaware(simple_xpath)
-    "/*[local-name()='project']/*[local-name()='organization']/*[local-name()='url']"
-
+    >>> expected = "/*[local-name()='project']/*[local-name()='organization']/*[local-name()='url']"
+    >>> assert expected == namespace_unaware(simple_xpath)
     """
     # Search * and then a local-name in the returned elements
     ignore_namespace = "*[local-name()='%s']"
@@ -150,8 +136,8 @@ def strip_namespace(tag_name):
 
     For example:
     >>> tag_name = '{http://maven.apache.org/POM/4.0.0}geronimo.osgi.export.pkg'
-    >>> strip_namespace(tag_name)
-    'geronimo.osgi.export.pkg'
+    >>> expected = 'geronimo.osgi.export.pkg'
+    >>> assert expected == strip_namespace(tag_name)
     """
     head, brace, tail = tag_name.rpartition('}')
     return tail if brace else head

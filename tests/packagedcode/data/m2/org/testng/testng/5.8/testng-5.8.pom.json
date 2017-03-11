@@ -1,0 +1,68 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.testng", 
+  "artifact_id": "testng", 
+  "version": "5.8", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "TestNG", 
+  "description": "TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionalities that make it more powerful and easier to use.", 
+  "inception_year": null, 
+  "url": "http://testng.org", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [
+    {
+      "name": "Apache License, Version 2.0", 
+      "url": "http://apache.org/licenses/LICENSE-2.0", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://testng.googlecode.com/svn/trunk/", 
+    "developer_connection": null, 
+    "url": "http://testng.googlecode.com/svn/trunk", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "ant", 
+        "artifact_id": "ant", 
+        "version": "1.6.5", 
+        "required": false
+      }, 
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ], 
+    "provided": [
+      {
+        "group_id": "qdox", 
+        "artifact_id": "qdox", 
+        "version": "1.6.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.beanshell", 
+        "artifact_id": "bsh", 
+        "version": "2.0b4", 
+        "required": true
+      }
+    ]
+  }
+}

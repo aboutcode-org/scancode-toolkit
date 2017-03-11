@@ -483,24 +483,26 @@ def test_scan_can_run_from_other_directory():
 def test_scan_logs_errors_messages():
     import scancode
     from commoncode.command import execute
-    test_file = test_env.get_test_loc('errors/illegal.pom.xml')
+    test_file = test_env.get_test_loc('errors', copy=True)
     scan_cmd = os.path.join(scancode.root_dir, 'scancode')
     rc, stdout, stderr = execute(scan_cmd, ['-pi', test_file, ])
     assert rc == 1
-    assert 'illegal.pom.xml' in stderr
-    assert 'sequence item 0: expected string, NoneType found' in stdout
+    assert 'package.json' in stderr
+    assert 'delimiter: line 5 column 12' in stdout
+    assert 'ValueError: Expecting' not in stdout
 
 
 def test_scan_logs_errors_messages_with_diag():
     import scancode
     from commoncode.command import execute
-    test_file = test_env.get_test_loc('errors/illegal.pom.xml')
+    test_file = test_env.get_test_loc('errors', copy=True)
     scan_cmd = os.path.join(scancode.root_dir, 'scancode')
     rc, stdout, stderr = execute(scan_cmd, ['-pi', '--diag', test_file, ])
     assert rc == 1
-    assert 'illegal.pom.xml' in stderr
-    assert 'TypeError: sequence item 0: expected string, NoneType found' in stderr
-    assert 'TypeError: sequence item 0: expected string, NoneType found' in stdout
+    assert 'package.json' in stderr
+    assert 'delimiter: line 5 column 12' in stderr
+    assert 'ValueError: Expecting' in stdout
+    assert 'delimiter: line 5 column 12' in stdout
 
 
 def test_scan_progress_display_is_not_damaged_with_long_file_names_orig(monkeypatch):

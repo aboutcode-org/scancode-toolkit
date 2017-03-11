@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>jboss</groupId>
+	<artifactId>javassist</artifactId>
+	<packaging>jar</packaging>
+	<version>3.3.ga</version>
+
+	<name>Javassist</name>
+	<url>http://www.jboss.org/products/javassist</url>
+	<description>Javassist (Java programming assistant) is a load-time reflective system for Java.</description>
+	
+	<licenses>
+		<license>
+			<name>MPL 1.1</name>
+			<url>http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&amp;content-type=text/html</url>
+			<comments>Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.</comments>
+		</license>
+	</licenses>
+	
+	<organization>
+		<name>Shigeru Chiba / JBoss</name>
+		<url>http://www.jboss.org/products/javassist.html</url>
+	</organization>
+	
+</project>

@@ -1,0 +1,22 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>hsqldb</groupId>
+  <artifactId>hsqldb</artifactId>
+  <packaging>jar</packaging>
+  <name>HSQLDB</name>
+  <version>1.8.0.7</version>
+  <url>http://hsqldb.org/</url>
+  <description>Lightweight 100% Java SQL Database Engine</description>
+  <licenses>
+    <license>
+      <name>HSQLDB License</name>
+      <url>http://hsqldb.org/web/hsqlLicense.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>http://sourceforge.net/cvs/?group_id=23316</url>
+  </scm>
+  <dependencies>
+  </dependencies>
+</project>

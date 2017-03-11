@@ -1,0 +1,204 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "easyconf", 
+  "artifact_id": "easyconf", 
+  "version": "0.9.0", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Easyconf library", 
+  "description": "EasyConf is a library to access configuration of software components and applications. \n     It defines simple conventions to make it easier to use. It was born in a portlets-based \n     portal and has several features useful for this and similar environments.", 
+  "inception_year": "2005", 
+  "url": "http://easyconf.sourceforge.net", 
+  "organization_name": "EasyConf team", 
+  "organization_url": "http://www.sourceforge.net/projects/easyconf", 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "jferrer", 
+      "name": "Jorge Ferrer", 
+      "email": "jferrer germinus.com", 
+      "url": null, 
+      "organization": "Germinus XXI", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jjaimez", 
+      "name": "Jes\u00fas Jaimez", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "ifolmedo", 
+      "name": "Ismael Ferrer", 
+      "email": "iferrer germinus.com", 
+      "url": null, 
+      "organization": "Germinus XXI", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "agonzalez", 
+      "name": "\u00c3?lvaro Gonz\u00c3\u00a1lez", 
+      "email": "agonzalez germinus.com", 
+      "url": null, 
+      "organization": "Germinus XXI", 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "easyconf-users", 
+      "archive_url": "http://sourceforge.net/mailarchive/forum.php?forum=easyconf-users"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:cvs:pserver:anonymous@cvs.sourceforge.net:/cvsroot/easyconf:easyconf", 
+    "developer_connection": null, 
+    "url": "http://cvs.sourceforge.net/viewcvs.py/easyconf/", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": null, 
+    "url": "https://sourceforge.net/tracker/?group_id=131552&atid=721404"
+  }, 
+  "ci_management": {
+    "system": null, 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "default", 
+      "name": "Default Site", 
+      "url": "scp://shell.sourceforge.net//home/groups/e/ea/easyconf/htdocs"
+    }, 
+    "repository": {
+      "id": "default", 
+      "name": "Default Repository", 
+      "url": "file:///www/easyconf/builds/"
+    }, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "log4j", 
+        "artifact_id": "log4j", 
+        "version": "1.2.8", 
+        "required": true
+      }, 
+      {
+        "group_id": "servletapi", 
+        "artifact_id": "servletapi", 
+        "version": "2.3", 
+        "required": true
+      }, 
+      {
+        "group_id": "struts", 
+        "artifact_id": "struts", 
+        "version": "1.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-configuration", 
+        "artifact_id": "commons-configuration", 
+        "version": "1.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-collections", 
+        "artifact_id": "commons-collections", 
+        "version": "3.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-lang", 
+        "artifact_id": "commons-lang", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "dom4j", 
+        "artifact_id": "dom4j", 
+        "version": "1.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-logging", 
+        "artifact_id": "commons-logging", 
+        "version": "1.0.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-digester", 
+        "artifact_id": "commons-digester", 
+        "version": "1.6", 
+        "required": true
+      }, 
+      {
+        "group_id": "xerces", 
+        "artifact_id": "xerces", 
+        "version": "2.2.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "xml-apis", 
+        "artifact_id": "xml-apis", 
+        "version": "2.0.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "xdoclet", 
+        "artifact_id": "xdoclet", 
+        "version": "1.2.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-beanutils", 
+        "artifact_id": "commons-beanutils-core", 
+        "version": "1.7.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-beanutils", 
+        "artifact_id": "commons-beanutils-bean-collections", 
+        "version": "1.7.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "xdoclet", 
+        "artifact_id": "xdoclet-web-module", 
+        "version": "1.2.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "mx4j", 
+        "artifact_id": "mx4j-jmx", 
+        "version": "2.1.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "mx4j", 
+        "artifact_id": "mx4j-impl", 
+        "version": "2.1.1", 
+        "required": true
+      }
+    ]
+  }
+}

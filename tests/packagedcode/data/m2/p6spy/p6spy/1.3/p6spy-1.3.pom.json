@@ -1,0 +1,124 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "p6spy", 
+  "artifact_id": "p6spy", 
+  "version": "1.3", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "P6Spy", 
+  "description": "P6Spy is an open source framework for applications that intercept and optionally modify database statements.", 
+  "inception_year": null, 
+  "url": "http://www.p6spy.com/", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [
+    {
+      "name": "The P6Spy Software License, Version 1.1", 
+      "url": "http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [
+    {
+      "id": "aarvesen", 
+      "name": "Alan Arvesen", 
+      "email": "aarvesen@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "bradleydot", 
+      "name": "Bradley Johnson", 
+      "email": "bradleydot@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "cheechq", 
+      "name": "Frank Quatro", 
+      "email": "cheechq@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jeffgoke", 
+      "name": "Jeff Goke", 
+      "email": "jeffgoke@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "Caleb Cranford", 
+      "name": "thinknot", 
+      "email": "thinknot@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:cvs:pserver:anonymous@cvs.sourceforge.net:/cvsroot/p6spy:p6spy", 
+    "developer_connection": null, 
+    "url": "http://cvs.sourceforge.net/viewcvs.py/p6spy", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "regexp", 
+        "artifact_id": "regexp", 
+        "version": "1.3", 
+        "required": false
+      }, 
+      {
+        "group_id": "gnu-regexp", 
+        "artifact_id": "gnu-regexp", 
+        "version": "1.1.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "log4j", 
+        "artifact_id": "log4j", 
+        "version": "1.2.8", 
+        "required": false
+      }, 
+      {
+        "group_id": "ant", 
+        "artifact_id": "ant", 
+        "version": "1.6.2", 
+        "required": false
+      }, 
+      {
+        "group_id": "oracle", 
+        "artifact_id": "classes12", 
+        "version": "9.2.0.5", 
+        "required": false
+      }, 
+      {
+        "group_id": "jboss", 
+        "artifact_id": "jboss", 
+        "version": "2.4.6", 
+        "required": false
+      }
+    ]
+  }
+}

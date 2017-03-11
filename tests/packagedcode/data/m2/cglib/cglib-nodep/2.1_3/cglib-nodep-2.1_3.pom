@@ -1,0 +1,8 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cglib</groupId>
+  <artifactId>cglib-nodep</artifactId>
+  <name>cglib</name>
+  <version>2.1_3</version>
+  <url>http://cglib.sourceforge.net/</url>
+</project>

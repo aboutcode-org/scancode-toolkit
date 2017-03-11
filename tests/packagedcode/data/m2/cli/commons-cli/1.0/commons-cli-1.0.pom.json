@@ -1,0 +1,101 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "commons-cli", 
+  "artifact_id": "commons-cli", 
+  "version": "1.0", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "CLI", 
+  "description": "Commons CLI provides a simple API for working with the command line arguments and options.", 
+  "inception_year": "2002", 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "jstrachan", 
+      "name": "James Strachan", 
+      "email": "jstrachan@apache.org", 
+      "url": null, 
+      "organization": "SpiritSoft, Inc.", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "bob", 
+      "name": "bob mcwhirter", 
+      "email": "bob@werken.com", 
+      "url": null, 
+      "organization": "Werken", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jkeyes", 
+      "name": "John Keyes", 
+      "email": "jbjk@mac.com", 
+      "url": null, 
+      "organization": "integral Source", 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "Berin Loritsch", 
+      "email": "bloritsch@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "helped in the Avalon CLI merge"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Peter Maddocks", 
+      "email": "peter_maddocks@hp.com", 
+      "url": null, 
+      "organization": "Hewlett-Packard", 
+      "organization_url": null, 
+      "roles": [
+        "supplied patch"
+      ]
+    }
+  ], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "commons-logging", 
+        "artifact_id": "commons-logging", 
+        "version": "1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-lang", 
+        "artifact_id": "commons-lang", 
+        "version": "1.0", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.7", 
+        "required": true
+      }
+    ]
+  }
+}

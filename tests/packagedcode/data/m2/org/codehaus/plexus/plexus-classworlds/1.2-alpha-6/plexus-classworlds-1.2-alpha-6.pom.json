@@ -1,0 +1,52 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.codehaus.plexus", 
+  "artifact_id": "plexus-classworlds", 
+  "version": "1.2-alpha-6", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.codehaus.plexus", 
+    "artifact_id": "plexus", 
+    "version": "1.0.9", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Plexus Classworlds", 
+  "description": null, 
+  "inception_year": "2002", 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.codehaus.org/plexus/plexus-classworlds/tags/plexus-classworlds-1.2-alpha-6", 
+    "developer_connection": null, 
+    "url": "http://fisheye.codehaus.org/browse/plexus/plexus-classworlds/tags/plexus-classworlds-1.2-alpha-6", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "commons-logging", 
+  "artifact_id": "commons-logging", 
+  "version": "1.1", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Logging", 
+  "description": "Commons Logging is a thin adapter allowing configurable bridging to other,\n    well known logging systems.", 
+  "inception_year": "2001", 
+  "url": "http://jakarta.apache.org/commons/logging/", 
+  "organization_name": "The Apache Software Foundation", 
+  "organization_url": "http://jakarta.apache.org", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "/LICENSE.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [
+    {
+      "id": "morgand", 
+      "name": "Morgan Delagrange", 
+      "email": "morgand at apache dot org", 
+      "url": null, 
+      "organization": "Apache", 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "rwaldhoff", 
+      "name": "Rodney Waldhoff", 
+      "email": "rwaldhoff at apache org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "craigmcc", 
+      "name": "Craig McClanahan", 
+      "email": "craigmcc at apache org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "sanders", 
+      "name": "Scott Sanders", 
+      "email": "sanders at apache dot org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "rdonkin", 
+      "name": "Robert Burrell Donkin", 
+      "email": "rdonkin at apache dot org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "donaldp", 
+      "name": "Peter Donald", 
+      "email": "donaldp at apache dot org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "costin", 
+      "name": "Costin Manolache", 
+      "email": "costin at apache dot org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "rsitze", 
+      "name": "Richard Sitze", 
+      "email": "rsitze at apache dot org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "baliuka", 
+      "name": "Juozas Baliuka", 
+      "email": "baliuka@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "skitching", 
+      "name": "Simon Kitching", 
+      "email": "skitching@apache.org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "dennisl", 
+      "name": "Dennis Lundberg", 
+      "email": "dennisl@apache.org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "bstansberry", 
+      "name": "Brian Stansberry", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Commons Dev List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/jakarta-commons-dev/"
+    }, 
+    {
+      "name": "Commons User List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/jakarta-commons-user/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/jakarta/commons/proper/logging/trunk", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/repos/asf/jakarta/commons/proper/logging/trunk", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": null, 
+    "url": "http://issues.apache.org/bugzilla/"
+  }, 
+  "ci_management": {
+    "system": null, 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "default", 
+      "name": "Default Site", 
+      "url": "scp://cvs.apache.org//www/jakarta.apache.org/commons/${pom.artifactId.substring(8)}/"
+    }, 
+    "repository": {
+      "id": "default", 
+      "name": "Default Repository", 
+      "url": "file:///www/jakarta.apache.org/builds/jakarta-commons/${pom.artifactId.substring(8)}/"
+    }, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "log4j", 
+        "artifact_id": "log4j", 
+        "version": "1.2.12", 
+        "required": true
+      }, 
+      {
+        "group_id": "logkit", 
+        "artifact_id": "logkit", 
+        "version": "1.0.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "avalon-framework", 
+        "artifact_id": "avalon-framework", 
+        "version": "4.1.3", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "servlet-api", 
+        "version": "2.3", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

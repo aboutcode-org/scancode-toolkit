@@ -1,0 +1,88 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "no.knowit.seam", 
+  "artifact_id": "root", 
+  "version": "2.2.0-SNAPSHOT", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.jboss.seam", 
+    "artifact_id": "root", 
+    "version": "2.2.0.GA", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "no.knowit.seam : root : 2.2.0-SNAPSHOT", 
+  "description": "The Seam Maven Reference implementation root POM. \n    You can use this POM as a template for your own root pom.", 
+  "inception_year": null, 
+  "url": "http://code.google.com/p/seam-maven-refimpl/", 
+  "organization_name": "Know IT Objectnet AS", 
+  "organization_url": "http://www.knowit.no/", 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "loo@knowit.no", 
+      "name": "Leif Olsen", 
+      "email": "loo@knowit.no", 
+      "url": null, 
+      "organization": "Know IT Objectnet Kristiansand", 
+      "organization_url": "http://www.knowit.no", 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "krg@knowit.no", 
+      "name": "Ken Gullaksen", 
+      "email": "krg@knowit.no", 
+      "url": null, 
+      "organization": "Know IT Objectnet Oslo", 
+      "organization_url": "http://www.knowit.no", 
+      "roles": [
+        "Developer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://seam-maven-refimpl.googlecode.com/svn/trunk", 
+    "developer_connection": null, 
+    "url": "http://code.google.com/p/seam-maven-refimpl/source/browse/#svn/trunk", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [
+    {
+      "id": "repository.jboss.org", 
+      "name": "JBoss Repository", 
+      "url": "http://repository.jboss.org/maven2"
+    }, 
+    {
+      "id": "repository.codehaus", 
+      "name": "Codehaus Repository", 
+      "url": "http://repository.codehaus.org"
+    }, 
+    {
+      "id": "snapshots.jboss.org", 
+      "name": "JBoss Snapshot Repository", 
+      "url": "http://snapshots.jboss.org/maven2"
+    }, 
+    {
+      "id": "apache-m2-snapshot", 
+      "name": "Apache Snapshot Repository", 
+      "url": "http://repository.apache.org/snapshots"
+    }
+  ], 
+  "plugin_repositories": [
+    {
+      "id": "repository.codehaus", 
+      "name": "Codehaus Repository", 
+      "url": "http://repository.codehaus.org"
+    }
+  ], 
+  "dependencies": {}
+}

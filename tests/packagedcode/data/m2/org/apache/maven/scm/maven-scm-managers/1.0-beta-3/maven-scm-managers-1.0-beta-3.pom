@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>maven-scm</artifactId>
+    <groupId>org.apache.maven.scm</groupId>
+    <version>1.0-beta-3</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>maven-scm-managers</artifactId>
+  <packaging>pom</packaging>
+  <name>Maven SCM Managers</name>
+  <version>1.0-beta-3</version>
+  <modules>
+    <module>maven-scm-manager-plexus</module>
+  </modules>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.maven.scm</groupId>
+      <artifactId>maven-scm-api</artifactId>
+      <version>1.0-beta-3</version>
+    </dependency>
+  </dependencies>
+</project>

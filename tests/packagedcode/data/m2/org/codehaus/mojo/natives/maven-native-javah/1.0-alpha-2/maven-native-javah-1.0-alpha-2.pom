@@ -1,0 +1,14 @@
+<?xml version="1.0"?><project>
+  <parent>
+    <artifactId>maven-native-components</artifactId>
+    <groupId>org.codehaus.mojo.natives</groupId>
+    <version>1.0-alpha-2</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>maven-native-javah</artifactId>
+  <name>Maven Native Javah</name>
+  <version>1.0-alpha-2</version>
+  <distributionManagement>
+    <status>deployed</status>
+  </distributionManagement>
+</project>

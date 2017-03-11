@@ -1,0 +1,58 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache", 
+  "artifact_id": "apache", 
+  "version": "1", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {}, 
+  "name": "The Apache Software Foundation", 
+  "description": "The Apache Software Foundation provides support for the Apache community of open-source software projects.\n    The Apache projects are characterized by a collaborative, consensus based development process, an open and\n    pragmatic software license, and a desire to create high quality software that leads the way in its field.\n    We consider ourselves not simply a group of projects sharing a server, but rather a community of developers\n    and users.", 
+  "inception_year": null, 
+  "url": "http://www.apache.org/", 
+  "organization_name": "Apache Software Foundation", 
+  "organization_url": "http://www.apache.org/", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Apache Announce List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/www-announce/"
+    }
+  ], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {
+      "id": "apache.releases", 
+      "name": "Apache Release Distribution Repository", 
+      "url": "scp://minotaur.apache.org/www/www.apache.org/dist/maven-repository"
+    }, 
+    "snapshot_repository": {
+      "id": "apache.snapshots", 
+      "name": "Apache Development Snapshot Repository", 
+      "url": "scp://minotaur.apache.org/www/cvs.apache.org/maven-snapshot-repository"
+    }
+  }, 
+  "repositories": [
+    {
+      "id": "apache.snapshots", 
+      "name": "Apache Snapshot Repository", 
+      "url": "http://svn.apache.org/maven-snapshot-repository"
+    }
+  ], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

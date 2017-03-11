@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>javassist</groupId>
+  <artifactId>javassist</artifactId>
+  <name>Javassist</name>
+  <version>3.4.GA</version>
+  <url>http://www.jboss.org/products/javassist</url>
+  <description>Simple Java bytecode manipulation</description>
+  <licenses>
+   <license>
+     <name>lgpl</name>
+     <url>http://repository.jboss.com/licenses/lgpl.txt</url>
+   </license>
+  </licenses>      
+</project>

@@ -149,6 +149,9 @@ setup(
         'pygments >= 2.0.0, <3.0.0',
         'pdfminer >= 20140328',
 
+        # pymaven
+        'pymaven >= 0.1.0',
+
         # typecode
         'chardet >= 3.0.0, <4.0.0',
         'binaryornot >= 0.4.0',

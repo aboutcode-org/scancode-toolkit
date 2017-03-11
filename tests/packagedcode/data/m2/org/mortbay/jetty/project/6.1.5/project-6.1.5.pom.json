@@ -1,0 +1,194 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.mortbay.jetty", 
+  "artifact_id": "project", 
+  "version": "6.1.5", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {}, 
+  "name": "Jetty Server Project", 
+  "description": null, 
+  "inception_year": null, 
+  "url": "http://jetty.mortbay.org", 
+  "organization_name": "Mort Bay Consulting", 
+  "organization_url": "http://www.mortbay.com", 
+  "licenses": [
+    {
+      "name": "Apache License Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [
+    {
+      "id": "gregw", 
+      "name": "Greg Wilkins", 
+      "email": "gregw@apache.org", 
+      "url": "http://www.mortbay.com/mortbay/people/gregw", 
+      "organization": "Mort Bay Consulting", 
+      "organization_url": "http://www.mortbay.com", 
+      "roles": []
+    }, 
+    {
+      "id": "janb", 
+      "name": "Jan Bartel", 
+      "email": "janb@apache.org", 
+      "url": "http://www.mortbay.com/people/janb", 
+      "organization": "Mort Bay Consulting", 
+      "organization_url": "http://www.mortbay.com", 
+      "roles": []
+    }, 
+    {
+      "id": "jules", 
+      "name": "Jules Gosnell", 
+      "email": "jules@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jstrachan", 
+      "name": "James Strachan", 
+      "email": "jstrachan@apache.org", 
+      "url": null, 
+      "organization": "Logic Blaze", 
+      "organization_url": "http://www.logicblaze.com", 
+      "roles": []
+    }, 
+    {
+      "id": "sbordet", 
+      "name": "Simone Bordet", 
+      "email": "simone.bordet@simulalabs.com", 
+      "url": null, 
+      "organization": "Simula Labs", 
+      "organization_url": "http://www.simulalabs.com", 
+      "roles": []
+    }, 
+    {
+      "id": "tvernum", 
+      "name": "Tim Vernum", 
+      "email": "tim@adjective.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "ngonzalez", 
+      "name": "Nik Gonzalez", 
+      "email": "ngonzalez@exist.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jfarcand", 
+      "name": "Jeanfrancois Arcand", 
+      "email": "jfarcand@apache.org", 
+      "url": null, 
+      "organization": "Sun Microsystems", 
+      "organization_url": "http://www.sun.com", 
+      "roles": []
+    }
+  ], 
+  "contributors": [], 
+  "modules": [
+    "modules/servlet-api-2.5", 
+    "modules/util", 
+    "modules/jetty", 
+    "modules/jsp-api-2.1", 
+    "modules/jsp-2.1", 
+    "modules/jsp-api-2.0", 
+    "modules/jsp-2.0", 
+    "modules/management", 
+    "modules/start", 
+    "modules/maven-plugin", 
+    "modules/jspc-maven-plugin", 
+    "modules/naming", 
+    "modules/plus", 
+    "modules/html", 
+    "modules/annotations", 
+    "extras/servlet-tester", 
+    "extras/xbean", 
+    "extras/spring", 
+    "extras/sslengine", 
+    "extras/ajp", 
+    "extras/setuid", 
+    "extras/win32service", 
+    "extras/threadpool", 
+    "examples/test-webapp", 
+    "examples/test-jaas-webapp", 
+    "examples/test-jndi-webapp", 
+    "examples/embedded", 
+    "extras/tests", 
+    "contrib/client", 
+    "contrib/cometd", 
+    "contrib/jetty-ant"
+  ], 
+  "mailing_lists": [
+    {
+      "name": "Jetty Discuss List", 
+      "archive_url": "http://lists.sourceforge.net/lists/listinfo/jetty-discuss"
+    }, 
+    {
+      "name": "Jetty Support List", 
+      "archive_url": "http://lists.sourceforge.net/lists/listinfo/jetty-support"
+    }, 
+    {
+      "name": "Jetty Announce List", 
+      "archive_url": "http://lists.sourceforge.net/lists/listinfo/jetty-announce"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:https://svn.codehaus.org/jetty/jetty/trunk", 
+    "developer_connection": null, 
+    "url": "http://fisheye.codehaus.org/viewrep/jetty/", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://jira.codehaus.org/browse/Jetty"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "codehaus.org", 
+      "name": null, 
+      "url": "dav:https://dav.codehaus.org/jetty/"
+    }, 
+    "repository": {
+      "id": "codehaus.org", 
+      "name": "Jetty Repository", 
+      "url": "dav:https://dav.codehaus.org/repository/jetty/"
+    }, 
+    "snapshot_repository": {
+      "id": "codehaus.org", 
+      "name": "Jetty Snapshot Repository", 
+      "url": "dav:https://dav.codehaus.org/snapshots.repository/jetty/"
+    }
+  }, 
+  "repositories": [
+    {
+      "id": "codehaus.org", 
+      "name": "Jetty snapshots", 
+      "url": "http://snapshots.repository.codehaus.org"
+    }, 
+    {
+      "id": "apache.m2.incubator", 
+      "name": "Apache M2 Incubator Repository", 
+      "url": "http://people.apache.org/repo/m2-snapshot-repository/"
+    }
+  ], 
+  "plugin_repositories": [
+    {
+      "id": "apache.m2.incubator", 
+      "name": "Apache M2 Incubator Repository", 
+      "url": "http://people.apache.org/repo/m2-snapshot-repository/"
+    }
+  ], 
+  "dependencies": {}
+}

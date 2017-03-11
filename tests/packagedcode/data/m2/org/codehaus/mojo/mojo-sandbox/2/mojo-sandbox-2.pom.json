@@ -1,0 +1,69 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.codehaus.mojo", 
+  "artifact_id": "mojo-sandbox", 
+  "version": "2", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.codehaus.mojo", 
+    "artifact_id": "mojo", 
+    "version": "11", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Codehaus Mojo Sandbox Parent", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [
+    "apidocs-maven-plugin", 
+    "batik-maven-plugin", 
+    "docbook-maven-plugin", 
+    "ejbdoclet-maven-plugin", 
+    "findbugs-maven-plugin", 
+    "graphing-maven-plugin", 
+    "groovy-maven-plugin", 
+    "hibernatedoclet-maven-plugin", 
+    "idlj-maven-plugin", 
+    "jasperreports-maven-plugin", 
+    "jboss-sar-maven-plugin", 
+    "jdbc-maven-plugin", 
+    "mant-maven-plugin", 
+    "minijar-maven-plugin", 
+    "retrotranslator-maven-plugin", 
+    "retroweaver-maven-plugin", 
+    "rubyscript-maven-plugin", 
+    "rubyscript-maven-tools", 
+    "springdoclet-maven-plugin", 
+    "tomcat-maven-plugin", 
+    "webdoclet-maven-plugin", 
+    "xml-maven-plugin"
+  ], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "codehaus.org", 
+      "name": "Mojo Website", 
+      "url": "dav:https://dav.codehaus.org/mojo/"
+    }, 
+    "repository": {
+      "id": "repo1", 
+      "name": "Redirected Snapshots repository", 
+      "url": "scp://localhost"
+    }, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

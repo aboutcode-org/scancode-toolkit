@@ -1,0 +1,91 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "classworlds", 
+  "artifact_id": "classworlds", 
+  "version": "1.1", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "classworlds", 
+  "description": null, 
+  "inception_year": "2002", 
+  "url": "http://classworlds.codehaus.org/", 
+  "organization_name": "The Codehaus", 
+  "organization_url": "http://codehaus.org/", 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "bob", 
+      "name": "bob mcwhirter", 
+      "email": "bob@werken.com", 
+      "url": null, 
+      "organization": "The Werken Company", 
+      "organization_url": null, 
+      "roles": [
+        "Founder"
+      ]
+    }, 
+    {
+      "id": "jvanzyl", 
+      "name": "Jason van Zyl", 
+      "email": "jason@zenplex.com", 
+      "url": null, 
+      "organization": "Zenplex", 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "bwalding", 
+      "name": "Ben Walding", 
+      "email": "ben@walding.com", 
+      "url": null, 
+      "organization": "Walding Consulting Services", 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "classworlds users", 
+      "archive_url": "http://lists.codehaus.org/pipermail/classworlds-user/"
+    }, 
+    {
+      "name": "classworlds developers", 
+      "archive_url": "http://lists.codehaus.org/pipermail/classworlds-dev/"
+    }, 
+    {
+      "name": "classworlds commit messages", 
+      "archive_url": "http://lists.codehaus.org/pipermail/classworlds-scm/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:cvs:pserver:anonymous@cvs.classworlds.codehaus.org:/home/projects/classworlds/scm/:classworlds", 
+    "developer_connection": null, 
+    "url": "http://cvs.classworlds.codehaus.org/", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {
+    "system": null, 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "default", 
+      "name": "Default Site", 
+      "url": "scp://classworlds.codehaus.org//www/classworlds.codehaus.org"
+    }, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

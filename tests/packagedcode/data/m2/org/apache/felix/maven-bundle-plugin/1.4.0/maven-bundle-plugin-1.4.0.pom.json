@@ -1,0 +1,157 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.felix", 
+  "artifact_id": "maven-bundle-plugin", 
+  "version": "1.4.0", 
+  "classifier": null, 
+  "packaging ": "maven-plugin", 
+  "parent": {
+    "group_id": "org.apache.felix", 
+    "artifact_id": "felix", 
+    "version": "1.0.2", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Bundle Plugin", 
+  "description": "Provides a maven plugin that supports creating an OSGi bundle\n  from the contents of the compilation classpath along with its\n  resources and dependencies. Plus a zillion other features.\n  The plugin uses the Bnd tool (http://www.aqute.biz/Code/Bnd)", 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:https://svn.apache.org/repos/asf/felix/releases/maven-bundle-plugin-1.4.0", 
+    "developer_connection": null, 
+    "url": "scm:svn:https://svn.apache.org/repos/asf/felix/releases/maven-bundle-plugin-1.4.0", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "biz.aQute", 
+        "artifact_id": "bndlib", 
+        "version": "0.0.238", 
+        "required": true
+      }, 
+      {
+        "group_id": "net.sf.kxml", 
+        "artifact_id": "kxml2", 
+        "version": "2.2.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "xmlpull", 
+        "artifact_id": "xmlpull", 
+        "version": "1.1.3.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.felix", 
+        "artifact_id": "org.osgi.core", 
+        "version": "1.0.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.felix", 
+        "artifact_id": "org.osgi.service.obr", 
+        "version": "1.0.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-project", 
+        "version": "2.0.7", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-model", 
+        "version": "2.0.7", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-plugin-api", 
+        "version": "2.0.7", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-artifact", 
+        "version": "2.0.7", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-archiver", 
+        "version": "2.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-artifact-manager", 
+        "version": "2.0.7", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-settings", 
+        "version": "2.0.7", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.shared", 
+        "artifact_id": "maven-dependency-tree", 
+        "version": "1.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.shared", 
+        "artifact_id": "maven-osgi", 
+        "version": "0.2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.wagon", 
+        "artifact_id": "wagon-provider-api", 
+        "version": "1.0-beta-2", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-container-default", 
+        "version": "1.0-alpha-9-stable-1", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-archiver", 
+        "version": "1.0-alpha-7", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-utils", 
+        "version": "1.4.7", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "org.apache.maven.shared", 
+        "artifact_id": "maven-plugin-testing-harness", 
+        "version": "1.1", 
+        "required": true
+      }
+    ]
+  }
+}

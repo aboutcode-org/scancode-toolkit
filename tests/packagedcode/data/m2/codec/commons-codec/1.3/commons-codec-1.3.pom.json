@@ -1,0 +1,231 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "commons-codec", 
+  "artifact_id": "commons-codec", 
+  "version": "1.3", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Codec", 
+  "description": "The codec package contains simple encoder and decoders for\n   various formats such as Base64 and Hexadecimal.  In addition to these\n   widely used encoders and decoders, the codec package also maintains a\n   collection of phonetic encoding utilities.", 
+  "inception_year": "2002", 
+  "url": "http://jakarta.apache.org/commons/codec/", 
+  "organization_name": "The Apache Software Foundation", 
+  "organization_url": "http://jakarta.apache.org", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "/LICENSE.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [
+    {
+      "id": "bayard", 
+      "name": "Henri Yandell", 
+      "email": "bayard@generationjava.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "tobrien", 
+      "name": "Tim OBrien", 
+      "email": "tobrien@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "sanders", 
+      "name": "Scott Sanders", 
+      "email": "sanders@totalsync.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "rwaldhoff", 
+      "name": "Rodney Waldhoff", 
+      "email": "rwaldhoff@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "dlr", 
+      "name": "Daniel Rall", 
+      "email": "dlr@finemaltcoding.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jon", 
+      "name": "Jon S. Stevens", 
+      "email": "jon@collab.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "ggregory", 
+      "name": "Gary D. Gregory", 
+      "email": "ggregory@seagullsw.com", 
+      "url": null, 
+      "organization": "Seagull Software", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "dgraham", 
+      "name": "David Graham", 
+      "email": "dgraham@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "Christopher O'Brien", 
+      "email": "siege@preoccupied.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Martin Redington", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Jeffery Dever", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Steve Zimmermann", 
+      "email": "steve.zimmermann@heii.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Benjamin Walstrum", 
+      "email": "ben@walstrum.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Oleg Kalnichevski", 
+      "email": "oleg@ural.ru", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Dave Dribin", 
+      "email": "apache@dave.dribin.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Alex Karasulu", 
+      "email": "aok123 at bellsouth.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Matthew Inger", 
+      "email": "mattinger at yahoo.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Commons Dev List", 
+      "archive_url": "http://nagoya.apache.org/eyebrowse/SummarizeList?listName=commons-dev@jakarta.apache.org"
+    }, 
+    {
+      "name": "Commons User List", 
+      "archive_url": "http://nagoya.apache.org/eyebrowse/SummarizeList?listName=commons-user@jakarta.apache.org"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:cvs:pserver:anoncvs@cvs.apache.org:/home/cvspublic:jakarta-commons/codec", 
+    "developer_connection": null, 
+    "url": "http://cvs.apache.org/viewcvs/jakarta-commons/codec/", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": null, 
+    "url": "http://nagoya.apache.org/bugzilla/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=Commons&component=Codec&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&bug_file_loc=&bug_file_loc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&newqueryname=&order=Reuse+same+sort+as+last+time"
+  }, 
+  "ci_management": {
+    "system": null, 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "default", 
+      "name": "Default Site", 
+      "url": "scp://jakarta.apache.org//www/jakarta.apache.org/commons/codec/"
+    }, 
+    "repository": {
+      "id": "default", 
+      "name": "Default Repository", 
+      "url": "file:///www/jakarta.apache.org/builds/jakarta-commons/codec/"
+    }, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate-commons-annotations</artifactId>
+	<packaging>jar</packaging>
+	<name>Hibernate Commons Annotations</name>
+	<version>3.0.0.ga</version>
+	<licenses>
+		<license>
+			<name>GNU LESSER GENERAL PUBLIC LICENSE</name>
+			<url>http://www.gnu.org/licenses/lgpl.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<description>Hibernate Commons Annotations is a utility project used by annotations based Hibernate sub-projects.</description>
+	<scm>
+		<url>scm:svn:http://anonsvn.jboss.org/repos/hibernate/commons-annotations</url>
+	</scm>
+<!-- From lib/README.txt
+Hibernate Commons Annotations dependencies
+==========================================
+
+Core
+====
+commons-logging.jar (see Hibernate Core version): required
+log4j.jar (see Hibernate Core version): optional
+
+Test
+====
+ejb3-persistence.jar (final release version): required
+-->
+	<dependencies>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.15</version>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+</project>

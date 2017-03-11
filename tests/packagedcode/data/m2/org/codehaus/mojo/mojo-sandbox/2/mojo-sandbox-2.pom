@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>mojo</artifactId>
+    <version>11</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>mojo-sandbox</artifactId>
+  <version>2</version>
+  <packaging>pom</packaging>
+  <name>Codehaus Mojo Sandbox Parent</name>
+  <distributionManagement>
+    <!--Prevent accidental release of official version from sandbox -->
+    <repository>
+      <id>repo1</id>
+      <name>Redirected Snapshots repository</name>
+      <url>scp://localhost</url>
+    </repository>
+    <!-- force official and sandbox plugins to appear at the same level -->
+    <site>
+      <id>codehaus.org</id>
+      <name>Mojo Website</name>
+      <url>dav:https://dav.codehaus.org/mojo/</url>
+    </site>
+  </distributionManagement>
+
+  <modules>
+    <module>apidocs-maven-plugin</module>
+    <!--Doesn't compile <module>aspectj-maven-plugin</module>-->
+    <module>batik-maven-plugin</module>
+    <!--Doesn't compile<module>deb-maven-plugin</module>-->
+    <!--Doesn't compile <module>delicious-maven-plugin</module>-->
+    <module>docbook-maven-plugin</module>
+    <module>ejbdoclet-maven-plugin</module>
+    <!--Missing Dependency<module>eve-maven-plugin</module>-->
+    <module>findbugs-maven-plugin</module>
+    <module>graphing-maven-plugin</module>
+    <module>groovy-maven-plugin</module>
+<!--
+    <module>hibernate3-maven-plugin</module>
+-->
+    <module>hibernatedoclet-maven-plugin</module>
+    <module>idlj-maven-plugin</module>
+    <module>jasperreports-maven-plugin</module>
+   <!--Not a maven project <module>jarjar-maven-plugin</module>-->
+    <module>jboss-sar-maven-plugin</module>
+    <module>jdbc-maven-plugin</module>
+<!--
+    <module>kodo-maven-plugin</module>
+-->
+    <module>mant-maven-plugin</module>
+    <module>minijar-maven-plugin</module>
+    <!--Fails Tests<module>netbeans-freeform-maven-plugin</module>-->
+    <!--Doesn't compile <module>pomtools-maven-plugin</module>-->
+    <module>retrotranslator-maven-plugin</module>
+    <module>retroweaver-maven-plugin</module>
+    <!--Doesn't compile <module>rmic-maven-plugin</module>-->
+    <!--Doesn't compile <module>rpm-maven-plugin</module>-->
+    <module>rubyscript-maven-plugin</module>
+    <module>rubyscript-maven-tools</module>
+    <!--Doesn't compile <module>runtime-maven-plugin</module>-->
+    <!--Missing dependency 
+     <module>slimdog-maven-plugin</module>-->
+    <module>springdoclet-maven-plugin</module>
+    <module>tomcat-maven-plugin</module>
+    <module>webdoclet-maven-plugin</module>
+    <module>xml-maven-plugin</module>
+    <!--Missing jaxb <module>xjc-maven-plugin</module> -->
+    </modules>
+  </project>

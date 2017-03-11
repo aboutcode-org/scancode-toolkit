@@ -1,0 +1,461 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.shale", 
+  "artifact_id": "shale-master", 
+  "version": "2", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache", 
+    "artifact_id": "apache", 
+    "version": "3", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Apache Shale Framework Master POM", 
+  "description": "Apache Shale", 
+  "inception_year": "2004", 
+  "url": "http://shale.apache.org", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "rahul", 
+      "name": "Rahul Akolkar", 
+      "email": "rahul at apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "dgeary", 
+      "name": "David Geary", 
+      "email": "dgeary at apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "craigmcc", 
+      "name": "Craig R. McClanahan", 
+      "email": "craigmcc at apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "jmitchell", 
+      "name": "James Mitchell", 
+      "email": "jmitchell at apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "greddin", 
+      "name": "Greg Reddin", 
+      "email": "greddin at apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "schof", 
+      "name": "Sean Schofield", 
+      "email": "schof at apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "wsmoak", 
+      "name": "Wendy Smoak", 
+      "email": "wsmoak at apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "gvanmatre", 
+      "name": "Gary VanMatre", 
+      "email": "gvanmatre at apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "matzew", 
+      "name": "Matthias Wessendorf", 
+      "email": "matzew at apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }
+  ], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "Walied Amer", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Duncan Mills", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Ronald Holshausen", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Manfred Klug", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "David DeWolf", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Keijo Nurmes", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Shane Bryzak", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Ted Husted", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Dennis Byrne", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Richarad Wallace", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Bill Young", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Alexandre Poitras", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Hubert Rabago", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "David Thielen", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Ed Burns", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Ingo Dueppe", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Jack Cheng", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Niall Pemberton", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Marcello Teodori", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Reind", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Mike Kienenberger", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Andrew Gilette", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Ryan Lubke", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Shinsuke Sugaya", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Mario Ivankovits", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Hermod Opstvedt", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Mike Meessen", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Luis Parravicini", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Ryan Wynn", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Rene Zanner", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Adrian Mitev", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Simon Kitching", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Shale User Mailing List (general questions about using Shale)", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/shale-user/"
+    }, 
+    {
+      "name": "Shale Developer Mailing List (questions about developing Shale itself)", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/shale-dev/"
+    }, 
+    {
+      "name": "Shale Commit Notifications (Subversion commit logs)", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/shale-commits/"
+    }, 
+    {
+      "name": "Shale Issue Tracking Notifications (JIRA issue update logs)", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/shale-issues/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/shale/maven/trunk/master-pom", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewcvs.cgi/shale/maven/trunk/master-pom", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "apache-site", 
+      "name": "Apache Shale Website", 
+      "url": "scpexe://people.apache.org/www/shale.apache.org"
+    }, 
+    "repository": {
+      "id": "shale-staging", 
+      "name": "Apache Shale Staging Repository", 
+      "url": "scpexe://people.apache.org/www/people.apache.org/builds/shale/m2-staging-repository"
+    }, 
+    "snapshot_repository": {
+      "id": "apache.snapshots", 
+      "name": "Apache Development Snapshot Repository", 
+      "url": "scpexe://people.apache.org/www/people.apache.org/repo/m2-snapshot-repository"
+    }
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

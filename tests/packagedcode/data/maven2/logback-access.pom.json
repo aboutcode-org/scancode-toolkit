@@ -1,0 +1,78 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "ch.qos.logback", 
+  "artifact_id": "logback-access", 
+  "version": "0.2.5", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "ch.qos.logback", 
+    "artifact_id": "logback", 
+    "version": "0.2.5", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Logback Access Module", 
+  "description": "Logback: the generic, reliable, fast and flexible logging library for Java.", 
+  "inception_year": null, 
+  "url": "http://logback.qos.ch/access", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [
+    {
+      "name": "GNU Lesser General Public License", 
+      "url": "http://www.gnu.org/licenses/lgpl.html", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "http://svn.qos.ch/repos/logback/access/trunk/", 
+    "developer_connection": null, 
+    "url": "http://svn.qos.ch/viewcvs/logback/access/trunk/", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "ch.qos.logback", 
+        "artifact_id": "logback-core", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "tomcat", 
+        "artifact_id": "catalina", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.mortbay.jetty", 
+        "artifact_id": "jetty", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "com.caucho", 
+        "artifact_id": "resin", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.mortbay.jetty", 
+        "artifact_id": "servlet-api-2.5", 
+        "version": "latest.release", 
+        "required": true
+      }
+    ]
+  }
+}

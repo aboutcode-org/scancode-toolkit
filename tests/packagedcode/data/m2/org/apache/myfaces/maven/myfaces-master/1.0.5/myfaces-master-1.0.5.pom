@@ -1,0 +1,577 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.apache.myfaces.maven</groupId>
+    <artifactId>myfaces-master</artifactId>
+    <packaging>pom</packaging>
+    <name>Master POM</name>
+    <version>1.0.5</version>
+    <description>This is a master POM that is meant to be used by the various MyFaces modules.  It contains information that is
+        common to all projects.</description>
+    <url>http://myfaces.apache.org/projects</url>
+    <issueManagement>
+        <system>jira</system>
+        <url>http://issues.apache.org/jira/secure/BrowseProject.jspa?id=10600</url>
+    </issueManagement>
+    <ciManagement>
+        <system>continuum</system>
+        <notifiers>
+            <notifier>
+                <type>mail</type>
+                <configuration>
+                    <address>commits@myfaces.apache.org</address>
+                </configuration>
+            </notifier>
+        </notifiers>
+    </ciManagement>
+    <mailingLists>
+        <mailingList>
+            <name>Myfaces User List</name>
+            <subscribe>users-subscribe@myfaces.apache.org</subscribe>
+            <unsubscribe>users-unsubscribe@myfaces.apache.org</unsubscribe>
+            <post>do not post to users@myfaces.apache.org unless subscribed</post>
+            <archive>http://mail-archives.apache.org/mod_mbox/myfaces-users</archive>
+            <otherArchives>
+                <otherArchive>http://www.mail-archive.com/users@myfaces.apache.org/</otherArchive>
+                <otherArchive>http://www.nabble.com/MyFaces---Users-f181.html</otherArchive>
+            </otherArchives>
+        </mailingList>
+        <mailingList>
+            <name>Myfaces Developer List</name>
+            <subscribe>dev-subscribe@myfaces.apache.org</subscribe>
+            <unsubscribe>dev-unsubscribe@myfaces.apache.org</unsubscribe>
+            <post>do not post to dev@myfaces.apache.org unless subscribed</post>
+            <archive>http://mail-archives.apache.org/mod_mbox/myfaces-dev</archive>
+            <otherArchives>
+                <otherArchive>http://www.mail-archive.com/dev@myfaces.apache.org/</otherArchive>
+                <otherArchive>http://www.nabble.com/My-Faces---Dev-f182.html</otherArchive>
+            </otherArchives>
+        </mailingList>
+        <mailingList>
+            <name>Myfaces Commits List</name>
+            <subscribe>commits-subscribe@myfaces.apache.org</subscribe>
+            <unsubscribe>commits-unsubscribe@myfaces.apache.org</unsubscribe>
+            <post>do not post</post>
+            <archive>http://mail-archives.apache.org/mod_mbox/myfaces-commits</archive>
+        </mailingList>
+        <mailingList>
+            <name>Myfaces Announcements List</name>
+            <subscribe>announce-subscribe@myfaces.apache.org</subscribe>
+            <unsubscribe>announce-unsubscribe@myfaces.apache.org</unsubscribe>
+            <post>do not post</post>
+            <archive>http://mail-archives.apache.org/mod_mbox/myfaces-announce</archive>
+        </mailingList>
+    </mailingLists>
+    <developers>
+        <developer>
+            <id>koinov</id>
+            <name>Anton Koinov</name>
+            <email>koinov@apache.org</email>
+            <organization />
+            <roles>
+                <role>PMC</role>
+            </roles>
+            <timezone />
+        </developer>
+        <developer>
+            <id>bdudney</id>
+            <name>Bill Dudney</name>
+            <email>bdudney@apache.org</email>
+            <organization />
+            <roles>
+                <role>PMC</role>
+            </roles>
+            <timezone />
+        </developer>
+        <developer>
+            <id>grantsmith</id>
+            <name>Grant Smith</name>
+            <email>grantsmith@apache.org</email>
+            <organization>Marathon Computer Systems, USA</organization>
+            <roles>
+                <role>PMC</role>
+            </roles>
+            <timezone />
+        </developer>
+        <developer>
+            <id>manolito</id>
+            <name>Manfred Geiler</name>
+            <email>manolito@apache.org</email>
+            <organization>Oesterreichische Kontrollbank AG, Austria</organization>
+            <organizationUrl>http://www.oekb.at/</organizationUrl>
+            <roles>
+                <role>Founder of MyFaces</role>
+                <role>PMC Chair</role>
+                <role>JSR-252 JSF 1.2 EG member</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <id>mmarinschek</id>
+            <name>Martin Marinschek</name>
+            <email>mmarinschek@apache.org</email>
+            <organization>IRIAN.at, Austria</organization>
+            <organizationUrl>http://www.irian.at/index.jsp?lang=en</organizationUrl>
+            <roles>
+                <role>PMC</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <id>matzew</id>
+            <name>Matthias Wessendorf</name>
+            <email>matzew@apache.org</email>
+            <organization>Oracle, Germany</organization>
+            <organizationUrl>http://www.oracle.com/</organizationUrl>
+            <roles>
+                <role>PMC</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <id>oros</id>
+            <name>Oliver Rossmueller</name>
+            <email>oros@apache.org</email>
+            <organization />
+            <roles>
+                <role>PMC</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <id>schof</id>
+            <name>Sean Schofield</name>
+            <email>schof@apache.org</email>
+            <organization />
+            <roles>
+                <role>PMC</role>
+            </roles>
+            <timezone>-5</timezone>
+        </developer>
+        <developer>
+            <id>svieujot</id>
+            <name>Sylvain Vieujot</name>
+            <email>svieujot@apache.org</email>
+            <organization />
+            <roles>
+                <role>PMC</role>
+            </roles>
+            <timezone>+4</timezone>
+        </developer>
+        <developer>
+            <id>husted</id>
+            <name>Ted Husted</name>
+            <email>husted@apache.org</email>
+            <organization />
+            <roles>
+                <role>PMC</role>
+                <role>ASF Member</role>
+                <role>Struts PMC</role>
+                <role>Jakarta PMC</role>
+            </roles>
+            <timezone />
+        </developer>
+        <developer>
+            <id>tomsp</id>
+            <name>Thomas Spiegl</name>
+            <email>tomsp@apache.org</email>
+            <organization>IRIAN.at, Austria</organization>
+            <organizationUrl>http://www.irian.at/index.jsp?lang=en</organizationUrl>
+            <roles>
+                <role>PMC</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <id>prophecy</id>
+            <name>Travis Reeder</name>
+            <email>prophecy@apache.org</email>
+            <organization />
+            <roles>
+                <role>PMC</role>
+            </roles>
+            <timezone />
+        </developer>
+        <developer>
+            <id>baranda</id>
+            <name>Bruno Aranda</name>
+            <email>baranda@apache.org</email>
+            <organization>European Bioinformatics Institute, EMBL, UK</organization>
+            <organizationUrl>http://www.ebi.ac.uk</organizationUrl>
+            <roles>
+                <role>PMC</role>
+            </roles>
+            <timezone>0</timezone>
+        </developer>
+        <developer>
+            <id>jmitchell</id>
+            <name>James Mitchell</name>
+            <email>jmitchell@apache.org</email>
+            <organization>EdgeTech, Inc.,United States of America</organization>
+            <organizationUrl>www.edgetechservices.net</organizationUrl>
+            <timezone>-5</timezone>
+        </developer>
+        <developer>
+            <id>mbr</id>
+            <name>Mathias Broekelmann</name>
+            <email>mbr@apache.org</email>
+            <organization>PSI Information Management GmbH, Germany</organization>
+            <organizationUrl>http://www.psi-im.de</organizationUrl>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <id>werpu</id>
+            <name>Werner Punz</name>
+            <email>werpu@apache.org</email>
+            <organization>Media Data GmbH, Austria</organization>
+            <roles>
+                <role>Mister "Ajax"</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <id>ssilvert</id>
+            <name>Stan Silvert</name>
+            <email>ssilvert@apache.org</email>
+            <organization>JBoss/Blog/organization</organization>
+            <organizationUrl>http://jboss.org/jbossBlog/blog/Stan%20Silvert/</organizationUrl>
+            <roles>
+                <role>Portlets Guru</role>
+            </roles>
+            <timezone />
+        </developer>
+        <developer>
+            <id>mkienenb</id>
+            <name>Mike Kienenberger</name>
+            <email>mkienenb@apache.org</email>
+            <organization />
+            <roles>
+                <role>PMC</role>
+            </roles>
+            <timezone />
+        </developer>
+        <developer>
+            <id>skitching</id>
+            <name>Simon Kitching</name>
+            <email>skitching@apache.org</email>
+            <organization />
+            <timezone>+12</timezone>
+        </developer>
+        <developer>
+            <id>weber</id>
+            <name>Volker Weber</name>
+            <email>weber@apache.org</email>
+            <organization>inexso GmbH, Germany</organization>
+            <organizationUrl>http://www.inexso.de</organizationUrl>
+            <roles>
+                <role>PMC</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <id>dennisbyrne</id>
+            <name>Dennis Byrne</name>
+            <email>dennisbyrne@apache.org</email>
+            <organization>ThoughtWorks</organization>
+            <organizationUrl>http://www.thoughtworks.com</organizationUrl>
+            <roles>
+                <role>PMC</role>
+            </roles>
+            <timezone>-6</timezone>
+        </developer>
+        <developer>
+            <id>bommel</id>
+            <name>Bernd Bohmann</name>
+            <email>bommel@apache.org</email>
+            <organization>atanion GmbH, Germany</organization>
+            <organizationUrl>http://www.atanion.com</organizationUrl>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <id>imario</id>
+            <name>Mario Ivankovits</name>
+            <email>imario@apache.org</email>
+            <organization>OPS EDV GmbH</organization>
+            <organizationUrl>http://www.ops.co.at</organizationUrl>
+            <timezone>+1</timezone>
+        </developer>
+		<developer>
+            <id>cagatay</id>
+            <name>Cagatay Civici</name>
+            <email>cagatay@apache.org</email>
+            <organization />
+            <organizationUrl />
+            <timezone>+2</timezone>
+        </developer>
+        <developer>
+            <id>sharathreddy</id>
+            <name>Sharath Reddy</name>
+            <email>sharathreddy@yahoo.com</email>
+            <organization>N.A.</organization>
+            <organizationUrl>N.A.</organizationUrl>
+            <timezone>+5.5</timezone>
+        </developer>
+        <developer>
+            <id>jlust</id>
+            <name>Jurgen Lust</name>
+            <email>jlust@apache.org</email>
+            <organization>Ghent University</organization>
+            <organizationUrl>http://www.UGent.be</organizationUrl>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <id>gmuellan</id>
+            <name>Gerald Muellan</name>
+            <email>gmuellan@apache.org</email>
+            <organization>IRIAN.at, Austria</organization>
+            <organizationUrl>http://www.irian.at/index.jsp?lang=en</organizationUrl>
+            <roles>
+                <role>PMC</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+	      <developer>
+            <id>ckormos</id>
+            <name>Catalin Kormos</name>
+            <email>ckormos@apache.org</email>
+            <organization>CODEBEAT S.R.L, Romania</organization>
+            <timezone>+2</timezone>
+        </developer>
+        <developer>
+            <id>wsmoak</id>
+            <name>Wendy Smoak</name>
+            <email>wsmoak@apache.org</email>
+            <organization />
+            <timezone>-7</timezone>
+        </developer>
+		<developer>
+            <id>lfrohman</id>
+            <name>Lance Frohman</name>
+            <email>lfrohman@apache.org</email>
+            <organization />
+            <organizationUrl />
+            <timezone>-8</timezone>
+        </developer>
+        <developer>
+            <id>paulsp</id>
+            <name>Paul Spencer</name>
+            <email>paulsp@apache.org</email>
+            <organization />
+            <timezone>-5</timezone>
+        </developer>
+    </developers>
+    <contributors>
+        <contributor>
+            <name>Matt Blum</name>
+            <roles>
+                <role>Portlets Guru</role>
+            </roles>
+        </contributor>
+        <contributor>
+            <name>Jiri Zaloudek</name>
+            <roles>
+                <role>WML RenderKit</role>
+            </roles>
+        </contributor>
+        <contributor>
+            <name>Joerg Artaker</name>
+            <roles>
+                <role>AutoupdateDataTable</role>
+            </roles>
+        </contributor>
+        <contributor>
+            <name>Thomas Huber</name>
+            <roles>
+                <role>AutoupdateDataTable</role>
+            </roles>
+        </contributor>
+        <contributor>
+            <name>Thomas Obereder</name>
+            <roles>
+                <role>InputTextHelp</role>
+            </roles>
+        </contributor>
+        <contributor>
+            <name>Jesse Wilson</name>
+            <roles>
+                <role>NewspaperDataTable</role>
+            </roles>
+        </contributor>
+    </contributors>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:svn:https://svn.apache.org/repos/asf/myfaces/maven/branches/1_0_5</connection>
+        <developerConnection>scm:svn:https://svn.apache.org/repos/asf/myfaces/maven/branches/1_0_5</developerConnection>
+        <url>https://svn.apache.org/repos/asf/myfaces/maven/branches/1_0_5</url>
+    </scm>
+    <organization>
+        <name>Apache Software Foundation</name>
+        <url>http://www.apache.org/</url>
+    </organization>
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh-external</artifactId>
+                <version>1.0-alpha-5</version>
+            </extension>
+            <extension>
+                <groupId>org.apache.myfaces.maven</groupId>
+                <artifactId>build-tools</artifactId>
+                <version>1.0.5</version>
+            </extension>
+        </extensions>
+        <defaultGoal>install</defaultGoal>
+        <!-- for better development process: follow instructions under http://wiki.apache.org/myfaces/JetBrains_IntelliJ_IDEA 
+             and then comment the following lines -->
+        <!--
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-idea-plugin</artifactId>
+                    <version>2.1-SNAPSHOT</version>
+                    <configuration>
+                        <jdkLevel>1.3</jdkLevel>
+                        <useClassifiers>true</useClassifiers>
+                        <linkModules>true</linkModules>
+                        <linkModulesExcept>myfaces-shared-core,myfaces-shared-impl,myfaces-shared-tomahawk,myfaces-shared-project</linkModulesExcept>
+                        <downloadSources>true</downloadSources>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        -->
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.3</source>
+                    <target>1.3</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <configLocation>config/myfaces-checks.xml</configLocation>
+                    <headerLocation>config/myfaces-header.txt</headerLocation>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <repositories>
+        <repository>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>apache.snapshots</id>
+            <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+        </repository>
+    </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <reporting>
+        <plugins>
+            <plugin>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>2.0</version>
+                <configuration>
+                    <rulesets>
+                        <ruleset>/rulesets/basic.xml</ruleset>
+                        <ruleset>/rulesets/unusedcode.xml</ruleset>
+                    </rulesets>
+                    <linkXref>true</linkXref>
+                    <minimumTokens>100</minimumTokens>
+                    <targetJdk>1.3</targetJdk>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>1.0-beta-1</version>
+                <configuration>
+                    <threshold>Low</threshold>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jdepend-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <configuration>
+                    <configLocation>config/myfaces-checks.xml</configLocation>
+                    <headerLocation>config/myfaces-header.txt</headerLocation>
+                </configuration>
+                <version>2.1</version>
+            </plugin>
+      </plugins>
+    </reporting>
+    <distributionManagement>
+        <repository>
+            <id>myfaces-staging</id>
+            <name>Apache MyFaces Staging Repository</name>
+            <url>scpexe://people.apache.org/www/people.apache.org/builds/myfaces/m2-staging-repository</url>
+        </repository>
+        <snapshotRepository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>apache-maven-snapshots</id>
+            <name>Apache Maven Snapshot Repository</name>
+            <url>scpexe://people.apache.org/www/people.apache.org/repo/m2-snapshot-repository</url>
+        </snapshotRepository>
+        <site>
+            <id>apache-site</id>
+            <name>Apache Website</name>
+            <url>scpexe://minotaur.apache.org/www/myfaces.apache.org</url>
+        </site>
+    </distributionManagement>
+
+  <profiles>
+    <profile>
+      <id>sign-artifacts</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+    
+</project>

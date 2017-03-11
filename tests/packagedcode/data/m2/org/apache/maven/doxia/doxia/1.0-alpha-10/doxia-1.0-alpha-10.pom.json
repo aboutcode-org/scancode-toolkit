@@ -1,0 +1,90 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.doxia", 
+  "artifact_id": "doxia", 
+  "version": "1.0-alpha-10", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache.maven", 
+    "artifact_id": "maven-parent", 
+    "version": "6", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Doxia", 
+  "description": "Doxia is a content generation framework that provides powerful techniques for generating static and dynamic content, supporting a variety of markup languages.", 
+  "inception_year": null, 
+  "url": "http://maven.apache.org/doxia/doxia", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [
+    "doxia-core", 
+    "doxia-sink-api", 
+    "doxia-modules", 
+    "doxia-book", 
+    "doxia-maven-plugin"
+  ], 
+  "mailing_lists": [
+    {
+      "name": "Doxia Developer List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-doxia-dev/"
+    }, 
+    {
+      "name": "Doxia User List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-doxia-users/"
+    }, 
+    {
+      "name": "Doxia Commits List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-doxia-commits/"
+    }, 
+    {
+      "name": "Maven Announcements List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-announce/"
+    }, 
+    {
+      "name": "Maven Issues List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-issues/"
+    }, 
+    {
+      "name": "Maven Notifications List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-notifications/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:https://svn.apache.org/repos/asf/maven/doxia/doxia/tags/doxia-1.0-alpha-10", 
+    "developer_connection": null, 
+    "url": "https://svn.apache.org/repos/asf/maven/doxia/doxia/tags/doxia-1.0-alpha-10", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://jira.codehaus.org/browse/DOXIA"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "apache.website", 
+      "name": null, 
+      "url": "scp://people.apache.org/www/maven.apache.org/doxia/doxia"
+    }, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.2", 
+        "required": true
+      }
+    ]
+  }
+}

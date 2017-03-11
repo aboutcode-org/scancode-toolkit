@@ -1,0 +1,381 @@
+<?xml version="1.0"?>
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-parent</artifactId>
+    <version>7</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>commons-math</groupId>
+  <artifactId>commons-math</artifactId>
+  <version>1.2</version>
+  <name>Commons Math</name>
+
+  <inceptionYear>2003</inceptionYear>
+  <description>The Math project is a library of lightweight, self-contained mathematics and statistics components addressing the most common practical problems not immediately available in the Java programming language or commons-lang.</description>
+
+  <url>http://commons.apache.org/math/</url>
+
+  <issueManagement>
+    <system>jira</system>
+    <url>http://issues.apache.org/jira/browse/MATH</url>
+  </issueManagement>
+
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/commons/proper/math/trunk</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/commons/proper/math/trunk</developerConnection>
+    <url>http://svn.apache.org/viewvc/commons/proper/math/trunk</url>
+  </scm>
+  
+  <distributionManagement>
+    <site>
+      <id>people.apache.org</id>
+      <name>Commons Math</name>
+      <url>scp://people.apache.org/www/commons.apache.org/math</url>
+    </site>
+  </distributionManagement>
+
+  <developers>
+    <developer>
+      <name>Albert Davidson Chou</name>
+      <id>achou</id>
+      <email>achou at apache dot org</email>
+    </developer>
+    <developer>
+      <name>Mark Diggory</name>
+      <id>mdiggory</id>
+      <email>mdiggory at apache dot org</email>
+    </developer>
+    <developer>
+      <name>Robert Burrell Donkin</name>
+      <id>rdonkin</id>
+      <email>rdonkin at apache dot org</email>
+    </developer>
+    <developer>
+      <name>Tim O'Brien</name>
+      <id>tobrien</id>
+      <email>tobrien at apache dot org</email>
+    </developer>
+    <developer>
+      <name>Luc Maisonobe</name>
+      <id>luc</id>
+      <email>luc at apache dot org</email>
+    </developer>
+    <developer>
+      <name>J. Pietschmann</name>
+      <id>pietsch</id>
+      <email>j3322ptm at yahoo dot de</email>
+    </developer>
+    <developer>
+      <name>Phil Steitz</name>
+      <id>psteitz</id>
+      <email>psteitz at apache dot org</email>
+    </developer>
+    <developer>
+      <name>Brent Worden</name>
+      <id>brentworden</id>
+      <email>brentworden at apache dot org</email>
+    </developer>
+  </developers>
+  <contributors>
+    <contributor>
+      <name>C. Scott Ananian</name>
+    </contributor>
+    <contributor>
+      <name>Rodrigo di Lorenzo Lopes</name>
+    </contributor>
+    <contributor>
+      <name>Hasan Diwan</name>
+    </contributor>
+    <contributor>
+      <name>Ken Geis</name>
+    </contributor>
+    <contributor>
+      <name>Elliotte Rusty Harold</name>
+    </contributor>
+    <contributor>
+      <name>Matthias Hummel</name>
+    </contributor>
+    <contributor>
+      <name>Piotr Kochanski</name>
+    </contributor>
+    <contributor>
+      <name>Bob MacCallum</name>
+    </contributor>
+    <contributor>
+      <name>Fredrik Norin</name>
+    </contributor>
+    <contributor>
+      <name>Todd C. Parnell</name>
+    </contributor>
+    <contributor>
+      <name>Joni Salonen</name>
+    </contributor>
+    <contributor>
+      <name>Christopher Schuck</name>
+    </contributor>
+    <contributor>
+      <name>Mauro Talevi</name>
+    </contributor>
+    <contributor>
+      <name>Kim van der Linde</name>
+    </contributor>
+    <contributor>
+      <name>J&#246;rg Weimar</name>
+    </contributor>
+    <contributor>
+      <name>Xiaogang Zhang</name>
+    </contributor>
+  </contributors>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.2</version>
+      <scope>test</scope>
+    </dependency>
+     <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+       <version>1.0.4</version>
+       <!--
+       <properties>
+       <comment>
+        Only required when commons-discovery is used for class factory
+        configuration. No hard compile or runtime dependency.
+       </comment>
+      </properties>
+      -->
+      <optional>true</optional>
+     </dependency>
+     <dependency>
+      <groupId>commons-discovery</groupId>
+      <artifactId>commons-discovery</artifactId>
+      <version>0.2</version>
+      <!--
+      <properties>
+       <comment>
+        Only required when commons-discovery is used for class
+        factory configuration. No hard compile or runtime dependency.
+       </comment>
+      </properties>
+      -->
+      <optional>true</optional>
+     </dependency>
+   </dependencies>
+  <build>
+    <sourceDirectory>src/java</sourceDirectory>
+    <testSourceDirectory>src/test</testSourceDirectory>
+      <testResources>
+        <testResource>
+          <directory>src/test</directory>
+          <includes>
+            <include>**/*.xml</include>
+            <include>**/*.txt</include>
+          </includes>
+        </testResource>
+      </testResources>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <includes>
+                <include>**/*Test.java</include>
+              </includes>
+              <excludes>
+                <exclude>**/*AbstractTest.java</exclude>
+              </excludes>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <configuration>
+            <archive>
+            <!--
+                 Configure OSGi bundle information
+                 (remove when maven bundle plugin is added to commons-parent pom)
+             -->
+              <manifestEntries>
+                <Bundle-SymbolicName>org.apache.commons.math</Bundle-SymbolicName>
+                <Bundle-License>http://www.apache.org/licenses/LICENSE-2.0.txt</Bundle-License>
+                <Bundle-ManifestVersion>2</Bundle-ManifestVersion>
+                <Bundle-Name>Apache Commons Math Bundle</Bundle-Name>
+                <Bundle-Vendor>${project.organization.name}</Bundle-Vendor>
+                <Bundle-Version>${project.version}</Bundle-Version>
+                <Export-Package>
+org.apache.commons.math;version=${project.version},
+org.apache.commons.math.analysis;version=${project.version},
+org.apache.commons.math.complex;version=${project.version},
+org.apache.commons.math.distribution;version=${project.version},
+org.apache.commons.math.estimation;version=${project.version},
+org.apache.commons.math.fraction;version=${project.version},
+org.apache.commons.math.geometry;version=${project.version},
+org.apache.commons.math.linear;version=${project.version},
+org.apache.commons.math.ode;version=${project.version},
+org.apache.commons.math.optimization;version=${project.version},
+org.apache.commons.math.random;version=${project.version},
+org.apache.commons.math.special;version=${project.version},
+org.apache.commons.math.stat;version=${project.version},
+org.apache.commons.math.stat.descriptive;version=${project.version},
+org.apache.commons.math.stat.descriptive.moment;version=${project.version},
+org.apache.commons.math.stat.descriptive.rank;version=${project.version},
+org.apache.commons.math.stat.descriptive.summary;version=${project.version},
+org.apache.commons.math.stat.inference;version=${project.version},
+org.apache.commons.math.stat.regression;version=${project.version},
+org.apache.commons.math.transform;version=${project.version},
+org.apache.commons.math.util;version=${project.version}
+                </Export-Package>
+                <Import-Package>
+org.apache.commons.discovery.tools,
+org.apache.commons.math;version=${project.version},
+org.apache.commons.math.analysis;version=${project.version},
+org.apache.commons.math.complex;version=${project.version},
+org.apache.commons.math.distribution;version=${project.version},
+org.apache.commons.math.estimation;version=${project.version},
+org.apache.commons.math.fraction;version=${project.version},
+org.apache.commons.math.geometry;version=${project.version},
+org.apache.commons.math.linear;version=${project.version},
+org.apache.commons.math.ode;version=${project.version},
+org.apache.commons.math.optimization;version=${project.version},
+org.apache.commons.math.random;version=${project.version},
+org.apache.commons.math.special;version=${project.version},
+org.apache.commons.math.stat;version=${project.version},
+org.apache.commons.math.stat.descriptive;version=${project.version},
+org.apache.commons.math.stat.descriptive.moment;version=${project.version},
+org.apache.commons.math.stat.descriptive.rank;version=${project.version},
+org.apache.commons.math.stat.descriptive.summary;version=${project.version},
+org.apache.commons.math.stat.inference;version=${project.version},
+org.apache.commons.math.stat.regression;version=${project.version},
+org.apache.commons.math.transform;version=${project.version},
+org.apache.commons.math.util;version=${project.version}
+                </Import-Package>
+                <!-- blank by default, use -DbuiltBy on command line -->
+                <Built-By>${builtBy}</Built-By>
+              </manifestEntries>
+            </archive>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.2-beta-1</version>
+          <configuration>
+            <descriptors>
+              <descriptor>src/assembly/src.xml</descriptor>
+              <descriptor>src/assembly/bin.xml</descriptor>
+            </descriptors>
+          </configuration>
+        </plugin>
+        <!--
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>cobertura-maven-plugin</artifactId>
+          <version>2.0</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>clean</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        -->
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>clirr-maven-plugin</artifactId>
+          <version>2.1.1</version>
+          <executions>
+            <execution>
+              <goals>
+                <!-- <goal>check</goal> -->
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+  </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>1.0.0</version>
+        <configuration>
+          <threshold>Normal</threshold>
+          <effort>Default</effort>
+          <excludeFilterFile>${basedir}/findbugs-exclude-filter.xml</excludeFilterFile>
+       </configuration>
+      </plugin>
+      <!--
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <version>2.0</version>
+      </plugin>
+      -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-changes-plugin</artifactId>
+        <version>2.0-beta-2</version>
+        <configuration>
+          <xmlPath>${basedir}/src/site/xdoc/changes.xml</xmlPath>
+          <issueLinkTemplate>%URL%/%ISSUE%</issueLinkTemplate>
+        </configuration>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>changes-report</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>2.1</version>
+        <configuration>
+          <configLocation>checkstyle.xml</configLocation>
+          <enableRulesSummary>false</enableRulesSummary>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <rulesets>
+            <ruleset>checkstyle.xml</ruleset>
+          </rulesets>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>clirr-maven-plugin</artifactId>
+        <version>2.1.1</version>
+        <configuration>
+          <minSeverity>info</minSeverity>
+         </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>

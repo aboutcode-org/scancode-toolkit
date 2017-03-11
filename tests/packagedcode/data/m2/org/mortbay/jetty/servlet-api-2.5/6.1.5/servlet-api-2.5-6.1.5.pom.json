@@ -1,0 +1,52 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.mortbay.jetty", 
+  "artifact_id": "servlet-api-2.5", 
+  "version": "6.1.5", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.mortbay.jetty", 
+    "artifact_id": "project", 
+    "version": "6.1.5", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Servlet Specification 2.5 API", 
+  "description": "Servlet Specification 2.5 API", 
+  "inception_year": null, 
+  "url": "http://jetty.mortbay.org", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [
+    {
+      "name": "CDDL 1.0", 
+      "url": "https://glassfish.dev.java.net/public/CDDLv1.0.html", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [
+    {
+      "id": "apache.m2.incubator", 
+      "name": "Apache M2 Incubator Repository", 
+      "url": "http://people.apache.org/repo/m2-snapshot-repository/"
+    }
+  ], 
+  "plugin_repositories": [
+    {
+      "id": "apache.m2.incubator", 
+      "name": "Apache M2 Incubator Repository", 
+      "url": "http://people.apache.org/repo/m2-snapshot-repository/"
+    }
+  ], 
+  "dependencies": {}
+}

@@ -1,0 +1,34 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "javassist", 
+  "artifact_id": "javassist", 
+  "version": "3.4.GA", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Javassist", 
+  "description": "Simple Java bytecode manipulation", 
+  "inception_year": null, 
+  "url": "http://www.jboss.org/products/javassist", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [
+    {
+      "name": "lgpl", 
+      "url": "http://repository.jboss.com/licenses/lgpl.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

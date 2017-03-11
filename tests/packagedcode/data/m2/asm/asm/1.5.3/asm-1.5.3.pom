@@ -1,0 +1,33 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>asm</groupId>
+  <artifactId>asm</artifactId>
+  <name>asm</name>
+  <version>1.5.3</version>
+  <url>http://asm.objectweb.org/</url>
+  <inceptionYear>2000</inceptionYear>
+  <developers>
+    <developer>
+      <id>ebruneton</id>
+      <name>Eric Bruneton</name>
+      <email>Eric.Bruneton@rd.francetelecom.com</email>
+      <roles>
+        <role>Creator</role>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>eu</id>
+      <name>Eugene Kuleshov</name>
+      <email>eu@javatx.org</email>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <organization>
+    <name>ObjectWeb</name>
+    <url>http://www.objectweb.org/</url>
+  </organization>
+  <build />
+</project>

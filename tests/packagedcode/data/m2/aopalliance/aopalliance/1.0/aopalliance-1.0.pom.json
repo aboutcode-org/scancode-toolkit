@@ -1,0 +1,34 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "aopalliance", 
+  "artifact_id": "aopalliance", 
+  "version": "1.0", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "AOP alliance", 
+  "description": "AOP Alliance", 
+  "inception_year": null, 
+  "url": "http://aopalliance.sourceforge.net", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [
+    {
+      "name": "Public Domain", 
+      "url": null, 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

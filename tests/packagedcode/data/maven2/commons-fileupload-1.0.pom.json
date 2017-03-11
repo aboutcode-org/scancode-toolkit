@@ -1,0 +1,111 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "commons-fileupload", 
+  "artifact_id": "commons-fileupload", 
+  "version": "1.0", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "FileUpload", 
+  "description": "The FileUpload component provides a simple yet flexible means of adding\n    support for multipart file upload functionality to servlets and web\n    applications.", 
+  "inception_year": "2002", 
+  "url": "http://jakarta.apache.org/commons/fileupload/", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "martinc", 
+      "name": "Martin Cooper", 
+      "email": "martinc@apache.org", 
+      "url": null, 
+      "organization": "Tumbleweed Communications", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "dion", 
+      "name": "dIon Gillard", 
+      "email": "dion@apache.org", 
+      "url": null, 
+      "organization": "Multitask Consulting", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jmcnally", 
+      "name": "John McNally", 
+      "email": "jmcnally@collab.net", 
+      "url": null, 
+      "organization": "CollabNet", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "dlr", 
+      "name": "Daniel Rall", 
+      "email": "dlr@finemaltcoding.com", 
+      "url": null, 
+      "organization": "CollabNet", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jvanzyl", 
+      "name": "Jason van Zyl", 
+      "email": "jason@zenplex.com", 
+      "url": null, 
+      "organization": "Zenplex", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "rdonkin", 
+      "name": "Robert Burrell Donkin", 
+      "email": "rdonkin@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "sullis", 
+      "name": "Sean C. Sullivan", 
+      "email": "sean |at| seansullivan |dot| com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {
+    "system": null, 
+    "url": "http://nagoya.apache.org/bugzilla/"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "provided": [
+      {
+        "group_id": "servletapi", 
+        "artifact_id": "servletapi", 
+        "version": "2.3", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

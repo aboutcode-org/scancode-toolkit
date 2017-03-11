@@ -1,0 +1,189 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.springframework", 
+  "artifact_id": "spring-webmvc", 
+  "version": "2.5.3", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Spring Framework: Web MVC", 
+  "description": "Spring Framework: Web MVC", 
+  "inception_year": null, 
+  "url": "http://www.springframework.org", 
+  "organization_name": "Spring Framework", 
+  "organization_url": "http://www.springframework.org/", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:cvs:pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring", 
+    "developer_connection": null, 
+    "url": "http://springframework.cvs.sourceforge.net/springframework/", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {
+      "id": "spring-release", 
+      "name": "Spring Release Repository", 
+      "url": "file:///Users/benhale/development/public/repos/repo"
+    }, 
+    "snapshot_repository": {
+      "id": "spring-snapshot", 
+      "name": "Spring Snapshot Repository", 
+      "url": "s3://maven.springframework.org/snapshot"
+    }
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "commons-attributes", 
+        "artifact_id": "commons-attributes-api", 
+        "version": "2.2", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-attributes", 
+        "artifact_id": "commons-attributes-compiler", 
+        "version": "2.2", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-logging", 
+        "artifact_id": "commons-logging", 
+        "version": "1.1.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "com.lowagie", 
+        "artifact_id": "itext", 
+        "version": "2.0.7", 
+        "required": false
+      }, 
+      {
+        "group_id": "freemarker", 
+        "artifact_id": "freemarker", 
+        "version": "2.3.12", 
+        "required": false
+      }, 
+      {
+        "group_id": "jasperreports", 
+        "artifact_id": "jasperreports", 
+        "version": "2.0.2", 
+        "required": false
+      }, 
+      {
+        "group_id": "jexcelapi", 
+        "artifact_id": "jxl", 
+        "version": "2.6.6", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.apache.tiles", 
+        "artifact_id": "tiles-api", 
+        "version": "2.0.5", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.apache.tiles", 
+        "artifact_id": "tiles-core", 
+        "version": "2.0.5", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.apache.tiles", 
+        "artifact_id": "tiles-jsp", 
+        "version": "2.0.5", 
+        "required": false
+      }, 
+      {
+        "group_id": "poi", 
+        "artifact_id": "poi", 
+        "version": "3.0.1", 
+        "required": false
+      }, 
+      {
+        "group_id": "velocity", 
+        "artifact_id": "velocity", 
+        "version": "1.5", 
+        "required": false
+      }, 
+      {
+        "group_id": "velocity-tools", 
+        "artifact_id": "velocity-tools-generic", 
+        "version": "1.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "velocity-tools", 
+        "artifact_id": "velocity-tools-view", 
+        "version": "1.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-beans", 
+        "version": "2.5.3", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-context", 
+        "version": "2.5.3", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-context-support", 
+        "version": "2.5.3", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-core", 
+        "version": "2.5.3", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-web", 
+        "version": "2.5.3", 
+        "required": true
+      }
+    ], 
+    "provided": [
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "jsp-api", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "jstl", 
+        "version": "1.1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "servlet-api", 
+        "version": "2.4", 
+        "required": true
+      }
+    ]
+  }
+}
