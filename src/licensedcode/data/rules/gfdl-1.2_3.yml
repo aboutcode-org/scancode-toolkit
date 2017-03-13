@@ -1,3 +1,4 @@
 licenses:
     - gfdl-1.2
+minimum_coverage: 15
 notes: GFDL notice, debian style
