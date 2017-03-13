@@ -92,7 +92,7 @@ class LicenseTest(object):
         # True if the test should be skipped
         self.skip = data.get('skip', False)
 
-    def asdict(self):
+    def to_dict(self):
         dct = OrderedDict()
         if self.licenses:
             dct['licenses'] = self.licenses
@@ -114,7 +114,7 @@ class LicenseTest(object):
          - a .yml for the rule data in YAML block format
          - a .RULE: the rule text as a UTF-8 file
         """
-        as_yaml = saneyaml.dump(self.asdict())
+        as_yaml = saneyaml.dump(self.to_dict())
         with codecs.open(self.data_file, 'wb', encoding='utf-8') as df:
             df.write(as_yaml)
 

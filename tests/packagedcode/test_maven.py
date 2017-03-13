@@ -437,7 +437,7 @@ class TestMavenPackage(BaseMavenCase):
             ('dependencies', {}),
             ('related_packages', [])
         ]
-        assert expected == package.as_dict().items()
+        assert expected == package.to_dict().items()
         package.validate()
 
 

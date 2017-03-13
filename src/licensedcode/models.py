@@ -170,7 +170,7 @@ class License(object):
             setattr(self, k, v)
 
     def __copy__(self):
-        oldl = self.asdict()
+        oldl = self.to_dict()
         newl = License(key=self.key)
         newl.update(oldl)
         return newl
@@ -182,7 +182,7 @@ class License(object):
         """
         return self._read_text(self.text_file)
 
-    def asdict(self):
+    def to_dict(self):
         """
         Return an OrderedDict of license data (excluding texts).
         Fields with empty values are not included.
@@ -243,7 +243,7 @@ class License(object):
          - <key>.yml : the license data in YAML
          - <key>.LICENSE: the license text
         """
-        as_yaml = saneyaml.dump(self.asdict())
+        as_yaml = saneyaml.dump(self.to_dict())
         self._write(self.data_file, as_yaml)
         if self.text:
             self._write(self.text_file, self.text)
@@ -787,7 +787,7 @@ class Rule(object):
                 self.small(), min_high, min_len)
         return self._thresholds_unique
 
-    def asdict(self):
+    def to_dict(self):
         """
         Return an OrderedDict of self, excluding texts. Used for serialization.
         Empty values are not included.
@@ -816,7 +816,7 @@ class Rule(object):
          - a .RULE: the rule text as a UTF-8 file
         """
         if self.data_file:
-            as_yaml = saneyaml.dump(self.asdict())
+            as_yaml = saneyaml.dump(self.to_dict())
             with codecs.open(self.data_file, 'wb', encoding='utf-8') as df:
                 df.write(as_yaml)
             with codecs.open(self.text_file, 'wb', encoding='utf-8') as tf:

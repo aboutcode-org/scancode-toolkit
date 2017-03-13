@@ -87,7 +87,7 @@ class TestRpm(FileBasedTesting):
              [OrderedDict([('type', u'RPM'), ('name', u'libproxy'), ('version', u'0.3.0-4.el6_3'), ('payload_type', 'source')])])
         ]
 
-        assert expected == package.as_dict().items()
+        assert expected == package.to_dict().items()
         package.validate()
 
     def test_pyrpm_basic(self):

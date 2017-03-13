@@ -137,4 +137,4 @@ class TestNuget(FileBasedTesting):
             ('dependencies', {}), ('related_packages', [])])
 
 
-        assert expected == package.as_dict()
+        assert expected == package.to_dict()

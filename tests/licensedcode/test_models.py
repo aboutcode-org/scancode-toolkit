@@ -55,7 +55,7 @@ class TestLicense(FileBasedTesting):
         test_dir = self.get_test_loc('models/licenses')
         lics = models.load_licenses(test_dir)
         # Note: one license is obsolete and not loaded. Other are various exception/version cases
-        results = sorted(l.asdict() for l in lics.values())
+        results = sorted(l.to_dict() for l in lics.values())
         expected = self.get_test_loc('models/licenses.expected.json')
         check_json(expected, results)
 
@@ -69,7 +69,7 @@ class TestLicense(FileBasedTesting):
         test_dir = self.get_test_loc('models/licenses')
         lics = models.load_licenses(test_dir)
         rules = models.build_rules_from_licenses(lics)
-        results = sorted(r.asdict() for r in rules)
+        results = sorted(r.to_dict() for r in rules)
         expected = self.get_test_loc('models/rules.expected.json')
         check_json(expected, results)
 

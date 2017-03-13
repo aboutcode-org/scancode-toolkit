@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -76,6 +76,7 @@ modules that implement a matching strategy.
 TRACE = False
 
 TRACE_QUERY_RUN = False
+TRACE_QUERY_RUN_SIMPLE = False
 
 TRACE_MATCHES = False
 TRACE_MATCHES_TEXT = False
@@ -92,7 +93,7 @@ TRACE_INDEXING_CHECK = False
 def logger_debug(*args):
     pass
 
-if TRACE or TRACE_INDEXING_PERF or os.environ.get('SCANCODE_LICENSE_DEBUG'):
+if TRACE or TRACE_INDEXING_PERF or TRACE_QUERY_RUN_SIMPLE or os.environ.get('SCANCODE_LICENSE_DEBUG'):
     import logging
 
     logger = logging.getLogger(__name__)
@@ -484,12 +485,12 @@ class LicenseIndex(object):
         negative = []
         # note: detect_negative is false only to test negative rules detection proper
         if detect_negative and self.negative_rids:
-            logger_debug('#match: NEGATIVE')
+            if TRACE: logger_debug('#match: NEGATIVE')
             negative = self.negative_match(whole_query_run)
             for neg in negative:
                 if TRACE_NEGATIVE: self.debug_matches(negative, '   ##match: NEGATIVE subtracting #:', location, query_string)
                 whole_query_run.subtract(neg.qspan)
-            logger_debug('     #match: NEGATIVE found', negative)
+            if TRACE_NEGATIVE: logger_debug('     #match: NEGATIVE found', negative)
 
         # exact matches
         if TRACE_EXACT: logger_debug('#match: EXACT')
@@ -519,7 +520,9 @@ class LicenseIndex(object):
             rules_subset = (self.regular_rids | self.small_rids)
 
             for qrnum, query_run in enumerate(qry.query_runs, 1):
-                if TRACE: logger_debug('#match: ===> processing query run #:', qrnum)
+                if TRACE_QUERY_RUN_SIMPLE:
+                    logger_debug('#match: ===> processing query run #:', qrnum)
+                    logger_debug('  #match:', query_run)
 
                 if not query_run.is_matchable(include_low=True):
                     if TRACE: logger_debug('#match: query_run NOT MATCHABLE')
@@ -644,7 +647,7 @@ class LicenseIndex(object):
         print('    TOTAL internals in MB:', round(total_size / (1024 * 1024), 2))
         print('    TOTAL real size in MB:', round(size_of(self) / (1024 * 1024), 2))
 
-    def _as_dict(self, all_tokens=False):
+    def to_dict(self, all_tokens=False):
         """
         Return a human readable dictionary representing the index replacing
         token ids and rule ids with their string values and the postings by

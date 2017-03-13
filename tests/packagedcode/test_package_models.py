@@ -83,7 +83,7 @@ class TestModels(FileBasedTesting):
             ('dependencies', {}),
             ('related_packages', [])
         ]
-        assert expected == package.as_dict().items()
+        assert expected == package.to_dict().items()
         package.validate()
 
     def test_validate_package(self):
@@ -147,5 +147,5 @@ class TestModels(FileBasedTesting):
             ('dependencies', {}),
             ('related_packages', [])
         ]
-        assert expected == package.as_dict().items()
+        assert expected == package.to_dict().items()
         package.validate()

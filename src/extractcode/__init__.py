@@ -248,7 +248,7 @@ class Entry(object):
         d['__name__'] = self.__class__.__name__
         return msg % d
 
-    def asdict(self):
+    def to_dict(self):
         return {
             'path':self.path,
             'size': self.size,

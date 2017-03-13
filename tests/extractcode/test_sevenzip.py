@@ -101,7 +101,7 @@ Compressed: 7674
             dict(path=u'S-SPARSE', size=u'49152', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
             dict(path=u'S-SPARSE-WITH-NULLS', size=u'49152', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False)
         ]
-        result = [e.asdict() for e in sevenzip.list_entries(test_file)]
+        result = [e.to_dict() for e in sevenzip.list_entries(test_file)]
         assert expected == result
 
     def test_parse_7z_listing_linux(self):
@@ -116,7 +116,7 @@ Compressed: 7674
             dict(path='../../2folder/relative_file', size='14', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
             dict(path='../../relative_file', size='14', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False)
         ]
-        result = [e.asdict() for e in sevenzip.parse_7z_listing(test_file, False)]
+        result = [e.to_dict() for e in sevenzip.parse_7z_listing(test_file, False)]
         assert expected == result
 
     def test_parse_7z_listing_win(self):
@@ -131,5 +131,5 @@ Compressed: 7674
             dict(path=u'..\\..\\2folder\\relative_file', size=u'14', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
             dict(path=u'..\\..\\relative_file', size=u'14', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False)
         ]
-        result = [e.asdict() for e in sevenzip.parse_7z_listing(test_file, True)]
+        result = [e.to_dict() for e in sevenzip.parse_7z_listing(test_file, True)]
         assert expected == result

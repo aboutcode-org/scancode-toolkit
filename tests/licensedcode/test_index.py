@@ -55,7 +55,7 @@ class IndexTesting(FileBasedTesting):
 class TestIndexing(IndexTesting):
 
     def check_index_as_dict(self, idx, expected, regen=False):
-        as_dict = idx._as_dict()
+        as_dict = idx.to_dict()
         expected = self.get_test_loc(expected)
         if regen:
             with open(expected, 'wb') as jx:
@@ -158,7 +158,7 @@ class TestIndexing(IndexTesting):
             '_tst_7_9': {u'bsd': [1]},
             '_tst_8_10': {u'lgpl': [1]}}
 
-        assert expected_as_dict == idx._as_dict()
+        assert expected_as_dict == idx.to_dict()
 
     def test_index_structures_with__add_rules(self):
         base = self.get_test_loc('index/tokens_count')
@@ -189,7 +189,7 @@ class TestIndexing(IndexTesting):
             'tmpl8_13': {u'is': [1], u'redistribution': [0]},
             'tmpl9_14': {u'any': [8], u'is': [1], u'redistribution': [0]}
         }
-        assert expected_index == idx._as_dict()
+        assert expected_index == idx.to_dict()
 
         expected_dict = {
             u'all': 1,
@@ -598,7 +598,7 @@ No part of match        '''
         rule = models.Rule(licenses=licenses, _text=_text)
         idx = index.LicenseIndex([rule])
         expected_idx = {'_tst_73_0': {u'copyright': [0, 5], u'license': [4, 9], u'mit': [2, 7]}}
-        assert expected_idx == idx._as_dict()
+        assert expected_idx == idx.to_dict()
 
         querys = u'Hi my copyright reserved mit is license is the copyright reserved mit is license yes.'
         #           0  1         2        3   4  5       6  7   8         9       10  11 12      13  14

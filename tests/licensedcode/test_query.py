@@ -115,7 +115,7 @@ class TestQueryWithSingleRun(IndexTesting):
             Always'''
 
         qry = Query(query_string=querys, idx=idx, _test_mode=True)
-        qry.tokenize(qry.tokens_by_line())
+        qry.tokenize_and_build_runs(qry.tokens_by_line())
         # convert tid to actual token strings
         tks_as_str = lambda tks: [None if tid is None else idx.tokens_by_tid[tid] for tid  in tks]
 
@@ -217,7 +217,7 @@ class TestQueryWithSingleRun(IndexTesting):
         query_loc = self.get_test_loc('index/querytokens')
 
         qry = Query(location=query_loc, idx=idx, line_threshold=4)
-        result = [qr._as_dict() for qr in qry.query_runs]
+        result = [qr.to_dict() for qr in qry.query_runs]
         expected = [
             {'end': 35,
              'start': 0,
@@ -368,7 +368,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
         idx = index.LicenseIndex(self.get_test_rules('index/bsd'))
         query_loc = self.get_test_loc('index/querytokens')
         qry = Query(location=query_loc, idx=idx, line_threshold=3)
-        result = [q._as_dict(brief=True) for q in qry.query_runs]
+        result = [q.to_dict(brief=True) for q in qry.query_runs]
 
         expected = [
             {
@@ -396,7 +396,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
             {'end': 98, 'start': 98, 'tokens': u'redistributions'}
         ]
 
-        result = [q._as_dict(brief=True) for q in qry.query_runs]
+        result = [q.to_dict(brief=True) for q in qry.query_runs]
         assert expected == result
 
     def test_QueryRun(self):
@@ -475,7 +475,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
 
         query_loc = self.get_test_loc('detect/simple_detection/x11-xconsortium_text.txt')
         qry = Query(location=query_loc, idx=idx)
-        result = [q._as_dict(brief=False) for q in qry.query_runs]
+        result = [q.to_dict(brief=False) for q in qry.query_runs]
         expected = [{
             'start': 0,
             'end': 216,
@@ -511,7 +511,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
         idx = index.LicenseIndex(rules)
         query_doc = self.get_test_loc('query/runs/query.txt')
         q = Query(location=query_doc, idx=idx, line_threshold=4)
-        result = [qr._as_dict() for qr in q.query_runs]
+        result = [qr.to_dict() for qr in q.query_runs]
         expected = [
             {'end': 0, 'start': 0, 'tokens': u'inc'},
             {
