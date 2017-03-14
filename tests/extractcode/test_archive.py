@@ -620,7 +620,6 @@ class TestZip(BaseArchiveTestCase):
         result = os.path.join(test_dir, 'this/that')
         assert os.path.exists(result)
 
-    @expectedFailure
     def test_extract_zip_with_trailing_data(self):
         test_file = self.get_test_loc('archive/zip/zip_trailing_data.zip')
         test_dir = self.get_temp_dir()
@@ -633,7 +632,6 @@ class TestZip(BaseArchiveTestCase):
         result = os.path.join(test_dir, 'a.txt')
         assert os.path.exists(result)
 
-    @expectedFailure
     def test_extract_zip_with_trailing_data2(self):
         # test archive created on cygwin with:
         # $ echo "test content" > f1
@@ -745,9 +743,8 @@ class TestZip(BaseArchiveTestCase):
         try:
             archive.extract_zip(test_file, test_dir)
         except Exception, e:
-            assert isinstance(e, libarchive2.ArchiveError)
-            assert 'Encrypted file is unsupported' in str(e)
-        # self.assertRaisesI(libarchive2.ArchiveError, archive.extract_zip, test_file, test_dir)
+            assert isinstance(e, ExtractErrorFailedToExtract)
+            assert 'Password protected archive, unable to extract' in str(e)
 
     def test_extract_zip_java_jar(self):
         test_file = self.get_test_loc('archive/zip/jar/simple.jar')
@@ -888,6 +885,14 @@ class TestZip(BaseArchiveTestCase):
         result = archive.extract_zip(test_file, test_dir)
         assert [] == result
         assert os.listdir(test_dir)
+
+    def test_extract_zip_can_extract_zip_with_directory_not_marked_with_trailing_slash(self):
+        test_file = self.get_test_loc('archive/zip/directory-with-no-trailing-slash.zip')
+        test_dir = self.get_temp_dir()
+        result = archive.extract_zip(test_file, test_dir)
+        assert [] == result
+        expected = ['online_upgrade_img/machine_type']
+        check_files(test_dir, expected)
 
 
 class TestLibarch(BaseArchiveTestCase):

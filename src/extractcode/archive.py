@@ -366,7 +366,9 @@ extract_cpio = libarchive2.extract
 # sevenzip should be best at extracting 7zip but most often libarchive is better first
 extract_7z = functools.partial(extract_with_fallback, extractor1=libarchive2.extract, extractor2=sevenzip.extract)
 
-extract_zip = libarchive2.extract
+# libarchive is best for the run of the mill zips, but sevenzip sometimes is better
+extract_zip = functools.partial(extract_with_fallback, extractor1=libarchive2.extract, extractor2=sevenzip.extract)
+
 extract_iso = sevenzip.extract
 extract_rar = sevenzip.extract
 extract_rpm = sevenzip.extract
