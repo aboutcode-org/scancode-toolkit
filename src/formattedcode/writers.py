@@ -38,7 +38,7 @@ from formattedcode.format import HtmlAppAssetCopyWarning
 from formattedcode.format import HtmlAppAssetCopyError
 
 
-def write_formatted_output(scanners, files_count, version, notice, scanned_files, format, input, output_file, _echo):
+def write_formatted_output(scanners, files_count, version, notice, scanned_files, format, options, input, output_file, _echo):
     """
     Save scan results to file or screen.
     """
@@ -68,8 +68,8 @@ def write_formatted_output(scanners, files_count, version, notice, scanned_files
         meta = OrderedDict()
         meta['scancode_notice'] = notice
         meta['scancode_version'] = version
+        meta['scancode_options'] = options
         meta['files_count'] = files_count
-        # TODO: add scanning options to meta
         meta['files'] = scanned_files
         if format == 'json-pp':
             output_file.write(unicode(json.dumps(meta, indent=2 * ' ', iterable_as_array=True, encoding='utf-8')))
