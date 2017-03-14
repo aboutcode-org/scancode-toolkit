@@ -9887,9 +9887,6 @@ Switzerland
 Ukraine
 United Kingdom
 Vatican City
-votre
-vous
-pouvez
 Oracle
 jdbc
 driver
@@ -9905,6 +9902,7 @@ php
 party
 changes
 change
+Philip Hazel ph10
 '''
 
 
@@ -9923,6 +9921,9 @@ qu
 ils
 il
 et
+votre
+vous
+pouvez
 le
 la
 de
