@@ -25,25 +25,20 @@
 from __future__ import print_function
 from __future__ import absolute_import
 
-import multiprocessing
-import Queue
-import thread
+from scancode.timeouts import Timeout
 
-from scancode.thread2 import async_raise
 
 DEFAULT_TIMEOUT = 120  # seconds
 
-"""
-Run a function in an interruptible thread with a timeout..
-Based on an idea of dano "Dan O'Reilly"  http://stackoverflow.com/users/2073595/dano
-But not code has been reused from this post.
-"""
+
+class TimeoutError(Exception):
+    pass
 
 
 def interruptible(func, args=(), kwargs={}, timeout=DEFAULT_TIMEOUT):
     """
     Call `func` function with `args` and `kwargs` arguments and return a tuple of
-    (success, return value). `func` is invoked through a wrapper in a thread and
+    (success, return value). `func` is invoked through an OS-specific wrapper and
     will be interrupted if it does not return within `timeout` seconds.
 
     `func` returned results must be pickable.
@@ -59,22 +54,16 @@ def interruptible(func, args=(), kwargs={}, timeout=DEFAULT_TIMEOUT):
     seconds and was interrupted. In this case, the second item in the
     tuple is an error message string.
     """
-    # We run `func` in a thread and run a loop until timeout
-    results = Queue.Queue()
 
-    def _runner():
-        results.put(func(*args, **kwargs))
+    runner = Timeout(timeout, TimeoutError)
 
-    tid = thread.start_new_thread(_runner, ())
+    def runnable(): 
+        return func(*args, **kwargs)
 
     try:
-        res = results.get(timeout=timeout)
-        return True, res
-    except (Queue.Empty, multiprocessing.TimeoutError):
+        return True, runner.execute(runnable)
+    except:
+        import traceback
+        traceback.print_exc()
         return False, ('ERROR: Processing interrupted: timeout after '
                        '%(timeout)d seconds.' % locals())
-    finally:
-        try:
-            async_raise(tid, Exception)
-        except (SystemExit, ValueError):
-            pass

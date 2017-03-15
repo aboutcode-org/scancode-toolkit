@@ -54,6 +54,5 @@ pool.IMapUnorderedIterator.next = wrapped(pool.IMapUnorderedIterator.next)
 pool.IMapUnorderedIterator.__next__ = pool.IMapUnorderedIterator.next
 
 
-def get_pool(processes=None, initializer=None, initargs=(), 
-             maxtasksperchild=None):
+def get_pool(processes=None, initializer=None, initargs=(), maxtasksperchild=None):
     return pool.Pool(processes, initializer, initargs, maxtasksperchild)
