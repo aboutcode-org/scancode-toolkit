@@ -452,3 +452,25 @@ def test_scan_can_run_from_other_directory():
         print(stderr)
     assert rc == 0
     check_scan(test_env.get_test_loc(expected_file), result_file, strip_dates=True, regen=False)
+
+def test_scan_can_ignore_multiple_files(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.extract_test_tar('ignore_files/vcs.tgz')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['--ignore', '*.txt','--format', 'json', test_dir, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    scan_result = _load_json_result(result_file)
+    print (scan_result)
+    assert 0 == scan_result['files_count']
+
+def test_scan_can_ignore_single_file(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.extract_test_tar('ignore_files/vcs.tgz')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['--ignore', 'test.txt','--format', 'json', test_dir, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    scan_result = _load_json_result(result_file)
+    print (scan_result)
+    assert 0 == scan_result['files_count']
