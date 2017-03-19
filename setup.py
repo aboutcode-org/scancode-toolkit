@@ -21,10 +21,7 @@ setup(
     url="https://github.com/wolever/pip2pi",
     author="David Wolever",
     author_email="david@wolever.net",
-    description="""
-        pip2pi builds a PyPI-compatible package repository from pip
-        requirements
-    """,
+    description="pip2pi builds a PyPI-compatible package repository from pip requirements",
     long_description=long_description,
     packages=find_packages(),
     entry_points={
