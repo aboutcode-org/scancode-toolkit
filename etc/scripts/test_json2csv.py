@@ -183,7 +183,7 @@ class TestJson2CSV(FileBasedTesting):
 
         expected = [
             OrderedDict([
-                ('Resource', '/code/srp_vfy.c'),
+                ('Resource', '/srp_vfy.c'),
                 ('type', 'file'),
                 ('name', 'srp_vfy.c'),
                 ('extension', '.c'),
@@ -204,7 +204,7 @@ class TestJson2CSV(FileBasedTesting):
                 ('scan_errors', '')
             ]),
             OrderedDict([
-                ('Resource', '/code/srp_lib.c'),
+                ('Resource', '/srp_lib.c'),
                 ('type', 'file'),
                 ('name', 'srp_lib.c'),
                 ('extension', '.c'),
@@ -225,7 +225,7 @@ class TestJson2CSV(FileBasedTesting):
                 ('scan_errors', '')
             ]),
             OrderedDict([
-                ('Resource', '/code/build.info'),
+                ('Resource', '/build.info'),
                 ('type', 'file'),
                 ('name', 'build.info'),
                 ('extension', '.info'),
