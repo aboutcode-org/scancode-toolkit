@@ -1,6 +1,7 @@
 key: ibm-dhcp
 short_name: IBM DHCP License
 name: IBM DHCP License
+
 category: Permissive
 owner: IBM
 other_urls:

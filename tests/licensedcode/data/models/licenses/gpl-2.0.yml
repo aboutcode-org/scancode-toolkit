@@ -1,0 +1,21 @@
+key: gpl-2.0
+short_name: GPL 2.0
+name: GNU General Public License 2.0
+category: Copyleft
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
+notes: >
+    This is the last version of the GPL text as published by the FSF.
+    This license was released: June 1991 This license is OSI certified.
+spdx_license_key: GPL-2.0
+text_urls:
+    - http://www.gnu.org/licenses/gpl-2.0.txt
+    - http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
+osi_url: http://opensource.org/licenses/gpl-license.php
+faq_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-faq.html
+other_urls:
+    - http://creativecommons.org/licenses/GPL/2.0/
+    - http://creativecommons.org/choose/cc-gpl
+    - http://creativecommons.org/images/public/cc-GPL-a.png
+    - http://creativecommons.org/licenses/GPL/2.0/legalcode.pt
+next_version: gpl-3.0

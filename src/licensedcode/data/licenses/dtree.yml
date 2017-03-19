@@ -1,5 +1,9 @@
 key: dtree
 short_name: Dtree License
 name: Dtree License
+
 category: Permissive
+owner: Unspecified
 homepage_url: http://destroydrop.com/javascripts/tree/
+other_urls:
+    - http://destroydrop.com/javascripts/tree/

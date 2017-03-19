@@ -1,7 +1,10 @@
 key: itu
 short_name: ITU License
 name: ITU License
+
 category: Permissive
 owner: >-
     ITU - International Telecommunications Union
 homepage_url: http://www.itu.int/
+text_urls:
+    - http://www.itu.int/

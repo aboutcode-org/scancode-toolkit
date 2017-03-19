@@ -4,8 +4,6 @@ name: Free Software Foundation - All Permissive License
 category: Permissive
 owner: Free Software Foundation (FSF)
 spdx_license_key: FSFAP
-spdx_full_name: FSF All Permissive License
-spdx_url: http://spdx.org/licenses/FSFAP
 other_urls:
     - http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html
     - http://www.gnu.org/software/autoconf-archive/ax_lib_readline.html

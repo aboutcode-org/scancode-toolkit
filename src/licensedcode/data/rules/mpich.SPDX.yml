@@ -1,0 +1,4 @@
+licenses:
+    - mpich
+notes: license text as published by SPDX
+minimum_coverage: 10

@@ -1,6 +1,6 @@
 about_resource: virtualenv.py
-version: 15.0.2
-download_url: https://raw.githubusercontent.com/pypa/virtualenv/15.0.2/virtualenv.py
+version: 15.1.0
+download_url: https://raw.githubusercontent.com/pypa/virtualenv/15.1.0/virtualenv.py
 
 vcs_tool: git
 vcs_repository: https://github.com/pypa/virtualenv.git
@@ -14,4 +14,4 @@ license_text_file: virtualenv.LICENSE
 dje_license: mit
 copyright: Copyright (c) 2007 Ian Bicking and Contributors
  Copyright (c) 2009 Ian Bicking, The Open Planning Project
- Copyright (c) 2011-2015 The virtualenv developers
+ Copyright (c) 2011-2016 The virtualenv developers

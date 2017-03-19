@@ -1,0 +1,6 @@
+licenses:
+    - gfdl-1.1
+minimim_coverage: 10
+language: fr
+notes: plain text conversion with pandoc of desktop-docs/fdl/fr/index.docbook
+ from https://download.gnome.org/sources/gnome-desktop/3.14/gnome-desktop-3.14.2.tar.xz

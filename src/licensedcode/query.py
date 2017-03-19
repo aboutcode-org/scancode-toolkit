@@ -178,7 +178,7 @@ class Query(object):
         if _test_mode:
             return
 
-        self.tokenize(self.tokens_by_line(tokenizer=tokenizer), line_threshold=line_threshold)
+        self.tokenize_and_build_runs(self.tokens_by_line(tokenizer=tokenizer), line_threshold=line_threshold)
 
         # sets of integers initialized after query tokenization
         len_junk = idx.len_junk
@@ -262,7 +262,7 @@ class Query(object):
                 line_tokens_append(tid)
             yield line_tokens
 
-    def tokenize(self, tokens_by_line, line_threshold=4):
+    def tokenize_and_build_runs(self, tokens_by_line, line_threshold=4):
         """
         Tokenize this query and populate tokens and query_runs at each break point.
         Only keep known token ids but consider unknown token ids to break a query in
@@ -327,6 +327,10 @@ class Query(object):
         if len(query_run) > 0:
             self.query_runs.append(query_run)
 
+        if TRACE:
+            logger_debug('Query runs for query:', self.location)
+            map(print, self.query_runs)
+
 
 class QueryRun(object):
     """
@@ -354,13 +358,17 @@ class QueryRun(object):
     @property
     def low_matchables(self):
         if not self._low_matchables:
-            self._low_matchables = intbitset([pos for pos in self.query.low_matchables if self.start <= pos <= self.end])
+            self._low_matchables = intbitset(
+                [pos for pos in self.query.low_matchables
+                 if self.start <= pos <= self.end])
         return self._low_matchables
 
     @property
     def high_matchables(self):
         if not self._high_matchables:
-            self._high_matchables = intbitset([pos for pos in self.query.high_matchables if self.start <= pos <= self.end])
+            self._high_matchables = intbitset(
+                [pos for pos in self.query.high_matchables
+                 if self.start <= pos <= self.end])
         return self._high_matchables
 
     def __len__(self):
@@ -369,11 +377,21 @@ class QueryRun(object):
         return self.end - self.start + 1
 
     def __repr__(self):
-        data = self.start, len(self)
-        if TRACE_REPR:
-            data += (u' '.join('None' if tid is None else self.query.idx.tokens_by_tid[tid] for tid in self.tokens),)
-            return 'QueryRun<start=%d, len=%d, tokens=%r>' % data
-        return 'QueryRun<start=%d, len=%d>' % data
+        base = ('QueryRun('
+            'start={start}, len={length}, '
+            'start_line={start_line}, end_line={end_line}, '
+            'tokens={tokens}' if TRACE_REPR else ''
+            ')'
+        )
+        return base.format(**self.to_dict(brief=False, comprehensive=True))
+
+    @property
+    def start_line(self):
+        return self.query.line_by_pos[self.start]
+
+    @property
+    def end_line(self):
+        return self.query.line_by_pos[self.end]
 
     @property
     def tokens(self):
@@ -436,7 +454,8 @@ class QueryRun(object):
         high_matchables = self.high_matchables
         if not high_matchables:
             return []
-        return (tid if pos in (high_matchables | self.low_matchables) else -1 for pos, tid in self.tokens_with_pos())
+        return (tid if pos in (high_matchables | self.low_matchables) else -1
+                for pos, tid in self.tokens_with_pos())
 
     def subtract(self, qspan):
         """
@@ -453,7 +472,7 @@ class QueryRun(object):
             self.low_matchables
             self._low_matchables.difference_update(qspan)
 
-    def _as_dict(self, brief=False):
+    def to_dict(self, brief=False, comprehensive=False):
         """
         Return a human readable dictionary representing the query run replacing
         token ids with their string values. If brief is True, the tokens
@@ -464,16 +483,22 @@ class QueryRun(object):
 
         def tokens_string(tks):
             "Return a string from a token id seq"
-            return u' '.join(tokens_by_tid[tid] for tid in tks)
+            return u' '.join('None' if tid is None else tokens_by_tid[tid] for tid in tks)
 
         if brief and len(self.tokens) > 10:
             tokens = tokens_string(self.tokens[:5]) + u' ... ' + tokens_string(self.tokens[-5:])
         else:
             tokens = tokens_string(self.tokens)
 
-        dct = {
-            'start': self.start,
-            'end': self.end,
-            'tokens': tokens,
-        }
-        return dct
+        to_dict = dict(
+            start=self.start,
+            end=self.end,
+            tokens=tokens,
+        )
+        if comprehensive:
+            to_dict.update(dict(
+                start_line=self.start_line,
+                end_line=self.end_line,
+                length=len(self),
+            ))
+        return to_dict

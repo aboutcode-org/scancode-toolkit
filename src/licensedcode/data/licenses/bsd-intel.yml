@@ -1,5 +1,5 @@
-key: bsdi-license
-short_name: BSDI License
-name: BSDI License
+key: bsd-intel
+short_name: BSD Intel License
+name: BSD Intel License
 category: Permissive
-owner: BSDI - Berkeley Software Design, Inc.
+owner: Intel

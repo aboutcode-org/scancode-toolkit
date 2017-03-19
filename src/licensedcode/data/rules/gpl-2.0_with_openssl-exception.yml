@@ -1,0 +1,4 @@
+licenses:
+    - gpl-2.0
+    - gpl-2.0-openssl
+license_expression: gpl-2.0 with gpl-2.0-openssl

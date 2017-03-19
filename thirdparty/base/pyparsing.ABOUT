@@ -1,0 +1,13 @@
+about_resource: pyparsing-2.2.0-py2.py3-none-any.whl
+name: pyparsing
+version: 2.2.0
+home_url: http://pyparsing.wikispaces.com/
+download_url: download_url: https://pypi.python.org/packages/6a/8a/718fd7d3458f9fab8e67186b00abdd345b639976bc7fb3ae722e1b026a50/pyparsing-2.2.0-py2.py3-none-any.whl#md5=7247e7896688eff4bc8c7fc5d0cdd2b0
+owner: Paul McGuire
+copyright: Copyright (c) 2003-2016 Paul T. McGuire
+
+vcs_tool: svn
+vcs_repository: http://svn.code.sf.net/p/pyparsing/code/tags/pyparsing_2.1.9/
+
+dje_license: mit
+license_text_file: pyparsing.LICENSE

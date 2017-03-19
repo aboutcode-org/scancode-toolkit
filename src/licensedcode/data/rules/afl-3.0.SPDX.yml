@@ -1,0 +1,4 @@
+licenses:
+    - afl-3.0
+notes: license text as published by SPDX
+minimum_coverage: 10

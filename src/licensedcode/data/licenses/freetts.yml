@@ -1,7 +1,10 @@
 key: freetts
 short_name: FreeTTS License
 name: FreeTTS License
+
 category: Permissive
 owner: Oracle Corporation
 homepage_url: http://freetts.sourceforge.net/license.terms
+text_urls:
+    - http://freetts.sourceforge.net/license.terms
 faq_url: http://freetts.sourceforge.net/docs/index.php

@@ -3,6 +3,5 @@ short_name: Nokia Qt LGPL Exception 1.0
 name: Nokia Qt LGPL Exception v1.0
 category: Copyleft Limited
 owner: Nokia
-exception_to: lgpl-2.1
 notes: the 5% limit in this license is quite impractical.
  This exception is exactly the same as a the The Qt Company Qt LGPL Exception v1.1

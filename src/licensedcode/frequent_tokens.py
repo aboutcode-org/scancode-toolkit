@@ -23,7 +23,10 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+
+import itertools
 
 # This is a list of top common words sorted by decreasing frequency and was
 # borrowed (and heavily modified) from http://norvig.com/ngrams/count_1w100k.txt
@@ -34,8 +37,8 @@ from __future__ import absolute_import, print_function
 # common in our set and not in the global set.
 
 
-def global_tokens_by_ranks():
-    return frequent_names_and_misc() + u'''
+def frequent_global_words():
+    return u'''
 the
 of
 and
@@ -1251,6 +1254,7 @@ sector
 un
 fat
 fully
+blockquote
 father
 saw
 quotes
@@ -1483,6 +1487,7 @@ generation
 miss
 chemical
 doctor
+DocBook
 task
 reduce
 brought
@@ -6263,6 +6268,7 @@ remix
 alias
 insert
 hyperlink
+linkend
 thesaurus
 individually
 battlefield
@@ -9344,7 +9350,7 @@ voyage
 een
 rdf
 colonel
-'''.lower().split()
+'''
 
 
 def frequent_names_and_misc():
@@ -9881,9 +9887,6 @@ Switzerland
 Ukraine
 United Kingdom
 Vatican City
-votre
-vous
-pouvez
 Oracle
 jdbc
 driver
@@ -9899,4 +9902,46 @@ php
 party
 changes
 change
-'''.lower().split()
+Philip Hazel ph10
+'''
+
+
+def frequent_french():
+    """
+    Frequent French words .
+    """
+    return u'''
+les
+même
+ou
+autre
+tout
+de
+qu
+ils
+il
+et
+votre
+vous
+pouvez
+le
+la
+de
+des
+un
+une
+de
+cette
+si
+pas
+texte
+'''
+
+
+def global_tokens_by_ranks():
+    return itertools.chain.from_iterable(
+    words.lower().split()  for words in [
+        frequent_names_and_misc(),
+        frequent_global_words(),
+        frequent_french()
+    ])

@@ -1,0 +1,4 @@
+licenses:
+    - bzip2-libbzip-1.0.5
+notes: license text as published by SPDX
+minimum_coverage: 10

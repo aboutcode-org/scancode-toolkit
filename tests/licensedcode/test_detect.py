@@ -202,7 +202,7 @@ class TestIndexMatch(FileBasedTesting):
         matches = idx.match(query_string='MIT License')
         assert 1 == len(matches)
 
-        assert {'_tst_11_0': {'mit': [0]}} == idx._as_dict()
+        assert {'_tst_11_0': {'mit': [0]}} == idx.to_dict()
 
         qtext, itext = get_texts(matches[0], query_string='MIT License', idx=idx)
         assert 'MIT License' == qtext

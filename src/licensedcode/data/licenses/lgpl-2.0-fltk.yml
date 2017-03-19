@@ -1,7 +1,8 @@
 key: lgpl-2.0-fltk
-short_name: FLTK LGPL exception
-name: FLTK LGPL exception
+short_name: LGPL 2.0 with FLTK exception
+name: >-
+    GNU Library General Public License 2.0 with FLTK exception
+
 category: Copyleft Limited
-owner: Fast Light Toolkit
-exception_to: lgpl-2.0
+owner: FLTK
 homepage_url: http://www.fltk.org/COPYING.php

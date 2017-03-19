@@ -1,8 +1,3 @@
-* WIDE Project DHCP Implementation 
-* Copyright (c) 1995 Akihiro Tominaga 
-* Copyright (c) 1995 WIDE Project 
-* All rights reserved. 
-* 
 * Permission to use, copy, modify and distribute this software and its 
 * documentation is hereby granted, provided only with the following 
 * conditions are satisfied: 
@@ -29,10 +24,3 @@
 * Feedback of the results generated from any improvements or 
 * extensions made to this software would be much appreciated. 
 * Any such feedback should be sent to: 
-* 
-* Akihiro Tominaga 
-* WIDE Project 
-* Keio University, Endo 5322, Kanagawa, Japan 
-* (E-mail: dhcp-dist@wide.ad.jp) 
-* 
-* WIDE project has the rights to redistribute these changes.

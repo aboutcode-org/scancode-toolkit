@@ -1,0 +1,425 @@
+The GNU Free Documentation License 1.1 in DocBook
+
+Licence de Documentation Libre GNU 
+Version 1.1, Mars 2000
+
+2000
+Free Software Foundation, Inc.
+
+Free Software Foundation
+
+Projet de documentation GNOME
+
+Free Software Foundation, Inc. 
+51 Franklin Street, Fifth Floor
+Boston MA 02110-1301 USA
+
+Chacun est libre de copier et de distribuer des copies conformes de
+cette Licence, mais nul n'est autorisé à la modifier.
+
+L'objet de cette Licence est de rendre tout manuel, livre ou autre
+document écrit « libre » au sens de la liberté d'utilisation, à savoir :
+assurer à chacun la liberté effective de le copier ou de le
+redistribuer, avec ou sans modifications, commercialement ou non. En
+outre, cette Licence garantit à l'auteur et à l'éditeur la
+reconnaissance de leur travail, sans qu'ils soient pour autant
+considérés comme responsables des modifications réalisées par des tiers.
+
+PRÉAMBULE
+=========
+
+L'objet de cette Licence est de rendre tout manuel, livre ou autre
+document écrit « libre » au sens de la liberté d'utilisation, à savoir :
+assurer à chacun la liberté effective de le copier ou de le
+redistribuer, avec ou sans modifications, commercialement ou non. En
+outre, cette Licence garantit à l'auteur et à l'éditeur la
+reconnaissance de leur travail, sans qu'ils soient pour autant
+considérés comme responsables des modifications réalisées par des tiers.
+
+Cette Licence est une sorte de « copyleft », ce qui signifie que les
+travaux dérivés du document d'origine sont eux-mêmes « libres » selon
+les mêmes termes. Elle complète la Licence Publique Générale GNU, qui
+est également une Licence copyleft, conçue pour les logiciels libres.
+
+Nous avons conçu cette Licence pour la documentation des logiciels
+libres, car les logiciels libres ont besoin d'une documentation
+elle-même libre : un logiciel libre doit être accompagné d'un manuel
+garantissant les mêmes libertés que celles accordées par le logiciel
+lui-même. Mais cette Licence n'est pas limitée aux seuls manuels des
+logiciels ; elle peut être utilisée pour tous les documents écrits, sans
+distinction particulière relative au sujet traité ou au mode de
+publication. Nous recommandons l'usage de cette Licence principalement
+pour les travaux destinés à des fins d'enseignement ou devant servir de
+documents de référence.
+
+APPLICABILITÉ ET DÉFINITIONS
+============================
+
+Cette Licence couvre tout manuel ou tout autre travail écrit contenant
+une notice de copyright autorisant la redistribution selon les termes de
+cette Licence. Le mot Document se réfère ci-après à un tel manuel ou
+travail. Toute personne en est par définition concessionnaire et est
+référencée ci-après par le terme Vous .
+
+Une Version modifiée du Document désigne tout travail en contenant la
+totalité ou seulement une portion de celui-ci, copiée mot pour mot,
+modifiée et/ou traduite dans une autre langue.
+
+Une Section secondaire désigne une annexe au Document, ou toute
+information indiquant les rapports entre l'auteur ou l'éditeur et le
+sujet (ou tout autre sujet connexe) du Document, sans toutefois être en
+rapport direct avec le sujet lui-même (par exemple, si le Document est
+un manuel de mathématiques, une Section secondaire ne traitera d'aucune
+notion mathématique). Cette section peut contenir des informations
+relatives à l'historique du Document, des sources documentaires, des
+dispositions légales, commerciales, philosophiques, ou des positions
+éthiques ou politiques susceptibles de concerner le sujet traité.
+
+Les Sections inaltérables sont des sections secondaires considérées
+comme ne pouvant être modifiées et citées comme telles dans la notice
+légale qui place le Document sous cette Licence.
+
+Les Textes de couverture sont les textes courts situés sur les pages
+de couverture avant et arrière du Document, et cités comme tels dans la
+mention légale de ce Document.
+
+Le terme Copie transparente désigne une version numérique du Document
+représentée dans un format dont les spécifications sont publiquement
+disponibles et dont le contenu peut être visualisé et édité directement
+et immédiatement par un éditeur de texte quelconque, ou (pour les images
+composées de pixels) par un programme de traitement d'images quelconque,
+ou (pour les dessins) par un éditeur de dessins courant. Ce format doit
+pouvoir être accepté directement ou être convertible facilement dans des
+formats utilisables directement par des logiciels de formatage de texte.
+Une copie publiée dans un quelconque format numérique ouvert mais dont
+la structure a été conçue dans le but exprès de prévenir les
+modifications ultérieures du Document ou dans le but d'en décourager les
+lecteurs n'est pas considérée comme une Copie Transparente. Une copie
+qui n'est pas Transparente est considérée, par opposition, comme
+Opaque .
+
+Le format de fichier texte codé en ASCII générique et n'utilisant pas de
+balises, les formats de fichiers Texinfo ou LaTeX, les formats de
+fichiers SGML ou XML utilisant une DTD publiquement accessible, ainsi
+que les formats de fichiers HTML simple et standard, écrits de telle
+sorte qu'ils sont modifiables sans outil spécifique, sont des exemples
+de formats acceptables pour la réalisation de Copies Transparentes. Les
+formats suivants sont opaques : PostScript, PDF, formats de fichiers
+propriétaires qui ne peuvent être visualisés ou édités que par des
+traitements de textes propriétaires, SGML et XML utilisant des DTD et/ou
+des outils de formatage qui ne sont pas disponibles publiquement, et du
+code HTML généré par une machine à l'aide d'un traitement de texte
+quelconque et dans le seul but de la génération d'un format de sortie.
+
+La Page de titre désigne, pour les ouvrages imprimés, la page de titre
+elle-même, ainsi que les pages supplémentaires nécessaires pour fournir
+clairement les informations dont cette Licence impose la présence sur la
+page de titre. Pour les travaux n'ayant pas de Page de titre comme
+décrit ci-dessus, la Page de titre désigne le texte qui s'apparente le
+plus au titre du document et situé avant le texte principal.
+
+COPIES CONFORMES
+================
+
+Vous pouvez copier et distribuer le Document sur tout type de support,
+commercialement ou non, à condition que cette Licence, la notice de
+copyright et la notice de la Licence indiquant que cette Licence
+s'applique à ce Document soient reproduits dans toutes les copies, et
+que vous n'y ajoutiez aucune condition restrictive supplémentaire. Vous
+ne pouvez pas utiliser un quelconque moyen technique visant à empêcher
+ou à contrôler la lecture ou la reproduction ultérieure des copies que
+vous avez créées ou distribuées. Toutefois, vous pouvez solliciter une
+rétribution en échange des copies. Si vous distribuez une grande
+quantité de copies, référez-vous aux dispositions de la section 3.
+
+Vous pouvez également prêter des copies, sous les mêmes conditions que
+celles suscitées, et vous pouvez afficher publiquement des copies de ce
+Document.
+
+COPIES EN NOMBRE
+================
+
+Si vous publiez des copies imprimées de ce Document à plus de 100
+exemplaires et que la Licence du Document indique la présence de Textes
+de couverture, vous devez fournir une couverture pour chaque copie, qui
+présente les Textes de couverture des première et dernière pages de
+couverture du Document. Les première et dernière pages de couverture
+doivent également vous identifier clairement et sans ambiguïté comme
+étant l'éditeur de ces copies. La première page de couverture doit
+comporter le titre du Document en mots d'importance et de visibilité
+égales. Vous pouvez ajouter des informations complémentaires sur les
+pages de couverture. Les copies du Document dont seule la couverture a
+été modifiée peuvent être considérées comme des copies conformes, à
+condition que le titre du Document soit préservé et que les conditions
+indiquées précédemment soient respectées.
+
+Si les textes devant se trouver sur la couverture sont trop importants
+pour y tenir de manière claire, vous pouvez ne placer que les premiers
+sur la première page et placer les suivants sur les pages consécutives.
+
+Si vous publiez plus de 100 Copies opaques du Document, vous devez soit
+fournir une Copie transparente pour chaque Copie opaque, soit préciser
+ou fournir avec chaque Copie opaque une adresse réseau publiquement
+accessible d'une Copie transparente et complète du Document, sans aucun
+ajout ou modification, et à laquelle tout le monde peut accéder en
+téléchargement anonyme et sans frais, selon des protocoles réseau
+communs et standard. Si vous choisissez cette dernière option, vous
+devez prendre les dispositions nécessaires, dans la limite du
+raisonnable, afin de garantir l'accès non restrictif à la Copie
+transparente durant une année pleine après la diffusion publique de la
+dernière Copie opaque(directement ou via vos revendeurs).
+
+Nous recommandons, mais ce n'est pas obligatoire, que vous contactiez
+l'auteur du Document suffisamment tôt avant toute publication d'un grand
+nombre de copies, afin de lui permettre de vous donner une version à
+jour du Document.
+
+MODIFICATIONS
+=============
+
+Vous pouvez copier et distribuer une Version modifiée du Document en
+respectant les conditions des sections 2 et 3 précédentes, à condition
+de placer cette Version modifiée sous la présente Licence, dans laquelle
+le terme « Document » doit être remplacé par les termes « Version
+modifiée », donnant ainsi l'autorisation de redistribuer et de modifier
+cette Version modifiée à quiconque en possède une copie. De plus, vous
+devez effectuer les actions suivantes dans la Version modifiée :
+
+- Utiliser sur la Page de titre (et sur la page de couverture
+ éventuellement présente) un titre distinct de celui du Document
+ d'origine et de toutes ses versions antérieures (qui, si elles
+ existent, doivent être mentionnées dans la section Historique du
+ Document). Vous pouvez utiliser le même titre si l'éditeur d'origine
+ vous en a donné expressément la permission.
+
+- Mentionner sur la Page de titre en tant qu'auteurs une ou plusieurs
+ des personnes ou entités responsables des modifications de la
+ Version modifiée, avec au moins les cinq principaux auteurs du
+ Document (ou tous les auteurs s'il y en a moins de cinq).
+
+- Préciser sur la Page de titre le nom de l'éditeur de la Version
+ modifiée, en tant qu'éditeur du Document.
+
+- Préserver intégralement toutes les notices de copyright du Document.
+
+- Ajouter une notice de copyright adjacente aux autres notices pour
+ vos propres modifications.
+
+- Inclure immédiatement après les notices de copyright une notice
+ donnant à quiconque l'autorisation d'utiliser la Version modifiée
+ selon les termes de cette Licence, sous la forme présentée dans
+ l'annexe indiquée ci-dessous.
+
+- Préserver dans cette notice la liste complète des Sections
+ inaltérables et les Textes de couverture donnés avec la notice de la
+ Licence du Document.
+
+- Inclure une copie non modifiée de cette Licence.
+
+- Préserver la section nommée Historique et son titre, et y ajouter
+ une nouvelle entrée décrivant le titre, l'année, les nouveaux
+ auteurs et l'éditeur de la Version modifiée, tels que décrits sur la
+ Page de titre, ainsi qu'un descriptif des modifications apportées
+ depuis la précédente version. S'il n'y a pas de section nommée
+ Historique dans le Document, créer une telle section précisant le
+ titre, l'année, les auteurs et l'éditeur du Document tel que précisé
+ sur la Page de titre, et ajouter une entrée décrivant la Version
+ modifiée tel que précisé dans la phrase précédente.
+
+- Conserver l'adresse réseau éventuellement indiquée dans le Document
+ permettant à quiconque d'accéder à une Copie transparente du
+ Document, ainsi que les adresses réseau indiquées dans le Document
+ pour les versions précédentes sur lesquelles le Document se base.
+ Ces liens peuvent être placés dans la section Historique . Vous
+ pouvez ne pas conserver les liens pour un travail datant de plus de
+ quatre ans avant la version courante ou si l'éditeur d'origine vous
+ en accorde la permission.
+
+- Si une section Dédicaces ou une section Remerciements sont
+ présentes, les informations et les appréciations concernant les
+ contributeurs et les personnes auxquelles s'adressent ces
+ remerciements doivent être conservées, ainsi que le titre de ces
+ sections.
+
+- Conserver sans modification les Sections inaltérables du Document,
+ ni dans leurs textes, ni dans leurs titres. Les numéros de sections
+ ne sont pas considérés comme faisant partie du texte des sections.
+
+- Effacer toute section intitulée Approbations . Une telle section ne
+ peut pas être incluse dans une Version modifiéen.
+
+- Ne pas renommer une section existante sous le titre Approbations 
+ ou sous un autre titre entrant en conflit avec le titre d'une
+ Section inaltérablen.
+
+Si la Version modifiée contient de nouvelles sections préliminaires ou
+de nouvelles annexes considérées comme des Sections secondaires et que
+celles-ci ne contiennent aucun élément copié à partir du Document, vous
+pouvez à votre convenance en désigner une ou plusieurs comme étant des
+Sections inaltérables. Pour ce faire, ajoutez leurs titres dans la liste
+des Sections inaltérables au sein de la notice de Licence de la Version
+modifiée. Ces titres doivent êtres distincts des titres des autres
+sections.
+
+Vous pouvez ajouter une section nommée Approbations à condition que
+ces approbations ne concernent que les modifications ayant donné
+naissance à la Version modifiée (par exemple, comptes rendus de revue du
+document ou acceptation du texte par une organisation le reconnaissant
+comme étant la définition d'un standard).
+
+Vous pouvez ajouter un passage comprenant jusqu'à cinq mots en première
+page de couverture, et jusqu'à vingt-cinq mots en dernière page de
+couverture, à la liste des Textes de couverture de la Version modifiée.
+Il n'est autorisé d'ajouter qu'un seul passage en première et en
+dernière pages de couverture par personne ou groupe de personnes ou
+organisation ayant contribué à la modification du Document. Si le
+Document comporte déjà un passage sur la même couverture, ajouté en
+votre nom ou au nom de l'organisation au nom de laquelle vous agissez,
+vous ne pouvez pas ajouter de passage supplémentaire ; mais vous pouvez
+remplacer un ancien passage si vous avez expressément obtenu
+l'autorisation de l'éditeur de celui-ci.
+
+Cette Licence ne vous donne pas le droit d'utiliser le nom des auteurs
+et des éditeurs de ce Document à des fins publicitaires ou pour
+prétendre à l'approbation d'une Version modifiée.
+
+FUSION DE DOCUMENTS
+===================
+
+Vous pouvez fusionner le Document avec d'autres documents soumis à cette
+Licence, suivant les spécifications de la section 4 pour les Versions
+modifiées, à condition d'inclure dans le document résultant toutes les
+Sections inaltérables des documents originaux sans modification, et de
+toutes les lister dans la liste des Sections inaltérables de la notice
+de Licence du document résultant de la fusion.
+
+Le document résultant de la fusion n'a besoin que d'une seule copie de
+cette Licence, et les Sections inaltérables existant en multiples
+exemplaires peuvent être remplacées par une copie unique. S'il existe
+plusieurs Sections inaltérables portant le même nom mais de contenu
+différent, rendez unique le titre de chaque section en ajoutant, à la
+fin de celui-ci, entre parenthèses, le nom de l'auteur ou de l'éditeur
+d'origine, ou, à défaut, un numéro unique. Les mêmes modifications
+doivent être réalisées dans la liste des Sections inaltérables de la
+notice de Licence du document final.
+
+Dans le document résultant de la fusion, vous devez rassembler en une
+seule toutes les sections Historique des documents d'origine. De même,
+vous devez rassembler les sections Remerciements et Dédicaces . Vous
+devez supprimer toutes les sections Approbations .
+
+REGROUPEMENTS DE DOCUMENTS
+==========================
+
+Vous pouvez créer un regroupement de documents comprenant le Document et
+d'autres documents soumis à cette Licence, et remplacer les copies
+individuelles de cette Licence des différents documents par une unique
+copie incluse dans le regroupement de documents, à condition de
+respecter pour chacun de ces documents l'ensemble des règles de cette
+Licence concernant les copies conformes.
+
+Vous pouvez extraire un document d'un tel regroupement et le distribuer
+individuellement sous couvert de cette Licence, à condition d'y inclure
+une copie de cette Licence et d'en respecter l'ensemble des règles
+concernant les copies conformes.
+
+AGRÉGATION AVEC DES TRAVAUX INDÉPENDANTS
+========================================
+
+La compilation du Document ou de ses dérivés avec d'autres documents ou
+travaux séparés et indépendants sur un support de stockage ou sur un
+média de distribution quelconque ne représente pas une Version modifiée
+du Document tant qu'aucun copyright n'est déposé pour cette compilation.
+Une telle compilation est appelée agrégat et cette Licence ne
+s'applique pas aux autres travaux indépendants compilés avec le Document
+s'ils ne sont pas eux-mêmes des travaux dérivés du Document. Si les
+exigences de la section 3 concernant les Textes de couverture sont
+applicables à ces copies du Document, et si le Document représente un
+volume inférieur à un quart du volume total de l'agrégat, les Textes de
+couverture du Document peuvent être placés sur des pages de couverture
+qui n'encadrent que le Document au sein de l'agrégat. Dans le cas
+contraire, ils doivent apparaître sur les pages de couverture de
+l'agrégat complet.
+
+TRADUCTION
+==========
+
+La traduction est considérée comme une forme de modification, vous
+pouvez donc distribuer les traductions du Document selon les termes de
+la section 4. Vous devez obtenir l'autorisation spéciale des auteurs des
+Sections inaltérables pour les remplacer par des traductions, mais vous
+pouvez inclure les traductions des Sections inaltérables en plus des
+textes originaux. Vous pouvez inclure une traduction de cette Licence à
+condition d'inclure également la version originale en anglais. En cas de
+contradiction entre la traduction et la version originale en anglais,
+c'est cette dernière qui prévaut.
+
+RÉVOCATION
+==========
+
+Vous ne pouvez pas copier, modifier, sous-licencier ou distribuer le
+Document autrement que selon les termes de cette Licence. Tout autre
+acte de copie, modification, sous-Licence ou distribution du Document
+est sans objet et vous prive automatiquement des droits que cette
+Licence vous accorde. En revanche, les personnes qui ont reçu de votre
+part des copies ou les droits sur le document sous couvert de cette
+Licence ne voient pas leurs droits révoqués tant qu'elles en respectent
+les principes.
+
+
+
+ RÉVISIONS FUTURES DE CETTE LICENCE 
+ La http://www.gnu.org/fsf/fsf.html Free Software Foundation
+peut publier de temps en temps de nouvelles versions révisées de cette
+Licence. Ces nouvelles versions seront semblables à la présente version
+dans l'esprit, mais pourront différer sur des points particuliers en
+fonction de nouvelles questions ou nouveaux problèmes. Voyez 
+http://www.gnu.org/copyleft http://www.gnu.org/copyleft/
+pour plus de détails.
+
+Chaque version de cette Licence est dotée d'un numéro de version
+distinct. Si un Document spécifie un
+numéro de version particulier de cette Licence, et porte la mention
+ou toute autre version ultérieure, vous pouvez choisir de
+suivre les termes de la version spécifiée ou ceux de n'importe quelle
+version ultérieure publiée par la Free Software Foundation. Si aucun
+numéro de version n'est spécifié, vous pouvez choisir n'importe quelle
+version officielle publiée par la Free Software Foundation.
+
+
+
+
+Addendum
+========
+
+Pour utiliser cette Licence avec un document que vous avez écrit,
+incorporez une copie du texte de cette Licence en anglais et placez le
+texte ci-dessous juste après la page de titre :
+
+Copyright © ANNÉE VOTRE NOM. Permission vous
+est donnée de copier, distribuer et/ou modifier ce document selon
+les termes de la Licence GNU Free Documentation License, Version
+1.1 ou ultérieure publiée par la Free Software Foundation ; avec
+les sections inaltérables
+suivantes 
+
+LISTE DES TITRES DES SECTIONS INALTÉRABLES, avec le texte de première
+page de couverture suivant TEXTE DE PREMIÈRE PAGE DE COUVERTURE et avec
+le texte de dernière page de couverture suivant TEXTE DE DERNIÈRE PAGE
+DE COUVERTURE. Une copie de cette Licence est incluse dans la section
+appelée GNU Free Documentation License de ce document.
+
+Si votre Document ne comporte pas de section inaltérable 
+écrivez pas de section
+inaltérable au lieu de la liste des sections inaltérables.
+Si votre Document ne comporte pas de texte de première page de couverture, écrivez
+pas de texte de première page de couverture au lieu
+de texte de première page de couverture suivant TEXTE DE
+PREMIÈRE PAGE DE COUVERTURE ; de même pour le texte de dernière page de
+couverture.
+
+Si votre Document contient des exemples non triviaux de code
+programme, nous recommandons de distribuer ces exemples en parallèle
+sous http://www.gnu.org/copyleft/gpl.html Licence GNU General
+Public License, qui permet leur usage dans les logiciels
+libres.

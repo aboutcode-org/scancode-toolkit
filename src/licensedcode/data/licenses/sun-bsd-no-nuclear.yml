@@ -1,5 +1,6 @@
 key: sun-bsd-no-nuclear
 short_name: Sun BSD-Style with Nuclear Restrictions
 name: Sun BSD-Style with Nuclear Restrictions
-category: Permissive
+
+category: Free Restricted
 owner: Oracle (Sun)

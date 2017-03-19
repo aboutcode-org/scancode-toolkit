@@ -57,7 +57,7 @@ class PackageTester(testcase.FileBasedTesting):
         """
         expected_loc = self.get_test_loc(expected_loc)
 
-        results = self.make_locations_relative(package.as_dict())
+        results = self.make_locations_relative(package.to_dict())
 
         if regen:
             regened_exp_loc = self.get_temp_file()

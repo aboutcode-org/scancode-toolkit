@@ -1,8 +1,11 @@
 key: openpub
 short_name: Open Publication License 1.0
 name: Open Publication License v1.0
+
 category: Permissive
 owner: OpenContent
 homepage_url: http://opencontent.org/openpub/
+text_urls:
+    - http://opencontent.org/openpub/
 other_urls:
     - http://www.opencontent.org/openpub/

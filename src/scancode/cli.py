@@ -252,15 +252,39 @@ def scancode(ctx,
         ('urls', url)
     ])
 
+    options = OrderedDict([
+        ('--copyright', copyright),
+        ('--license', license),
+        ('--package', package),
+        ('--email', email),
+        ('--url', url),
+        ('--info', info),
+        ('--license-score', license_score),
+        ('--license-text', license_text),
+        ('--only-findings', only_findings),
+        ('--strip-root', strip_root),
+        ('--format', format),
+        ('--diag', diag),
+    ])
+
     # Use default scan options when no options are provided on the command line.
     if not any(possible_scans.values()):
         possible_scans['copyrights'] = True
         possible_scans['licenses'] = True
         possible_scans['packages'] = True
+        options['--copyright'] = True
+        options['--license'] = True
+        options['--package'] = True
 
     # A hack to force info being exposed for SPDX output in order to reuse calculated file SHA1s.
     if format in ('spdx-tv', 'spdx-rdf'):
         possible_scans['infos'] = True
+
+    for key in options:
+        if key == "--license-score":
+            continue
+        if options[key] == False:
+            del options[key]
 
     get_licenses_with_score = partial(get_licenses, min_score=license_score, include_text=license_text, diag=diag)
 
@@ -294,7 +318,7 @@ def scancode(ctx,
         if not quiet:
             echo_stderr('Saving results.', fg='green')
 
-        save_results(scanners, only_findings, files_count, results, format, input, output_file)
+        save_results(scanners, only_findings, files_count, results, format, options, input, output_file)
 
     finally:
         # cleanup
@@ -600,7 +624,7 @@ def has_findings(active_scans, file_data):
     return any(file_data.get(scan_name) for scan_name in active_scans)
 
 
-def save_results(scanners, only_findings, files_count, results, format, input, output_file):
+def save_results(scanners, only_findings, files_count, results, format, options, input, output_file):
     """
     Save scan results to file or screen.
     """
@@ -643,4 +667,4 @@ def save_results(scanners, only_findings, files_count, results, format, input, o
                     raise e
         return
 
-    write_formatted_output(scanners, files_count, version, notice, results, format, input, output_file, echo_stderr)
+    write_formatted_output(scanners, files_count, version, notice, results, format, options, input, output_file, echo_stderr)

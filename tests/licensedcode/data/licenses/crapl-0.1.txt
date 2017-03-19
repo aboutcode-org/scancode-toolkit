@@ -1,0 +1,9 @@
+# Lambda calculus typechecker and interpreter
+
+The code here implements a typechecker and interpreters based off three different dynamic semantics for the lambda calculus, extended with integers and four binary integer operations.  I wrote this for a class I taught at the University of Maryland, and figured I'd stick it here for posterity's sake.
+
+## License
+
+This code is released under the [CRAPL][crapl]. See [CRAPL-LICENSE.txt](CRAPL-LICENSE.txt) for more details.
+
+[crapl]: http://matt.might.net/articles/crapl/ "the Community Research and Academic Programming License"

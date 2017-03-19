@@ -294,7 +294,7 @@ class BaseModel(Model):
     def __init__(self, **kwargs):
         super(BaseModel, self).__init__(raw_data=kwargs)
 
-    def as_dict(self, **kwargs):
+    def to_dict(self, **kwargs):
         """
         Return a dict of primitive Python types for this model instance.
         This is an OrderedDict because each model has a 'field_order' option.

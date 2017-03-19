@@ -5,5 +5,5 @@ category: Permissive
 owner: info-zip
 homepage_url: http://www.info-zip.org/
 text_urls:
-    - http://www.info-zip.org/doc/LICENSE.20050210
     - ftp://ftp.info-zip.org/pub/infozip/doc/license
+    - http://www.info-zip.org/doc/LICENSE.20050210
