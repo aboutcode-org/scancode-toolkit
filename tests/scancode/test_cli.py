@@ -468,37 +468,47 @@ def test_scan_can_run_from_other_directory():
 
 class TestShortenFilename(TestCase):
 
-    def test_filename_is_shortened(self):
-        test = cli.shorten_filename(filename='012345678901234567890123.c')
-        expected = '0123456789...4567890123.c'
+    def test_filename_larger_than_max_length_shortened(self):
+        test = cli.shorten_filename(filename='0123456789012345678901234.c')
+        expected = '0123456789...5678901234.c'
         assert expected == test
 
-
-    def test_filename_is_not_shortened(self):
+    def test_filename_at_max_length_not_shortened(self):
         test = cli.shorten_filename(filename='01234567890123456789012.c')
         expected = '01234567890123456789012.c'
         assert expected == test
 
-
-    def test_with_empty_args(self):
-        test = cli.shorten_filename()
-        expected = ''
+    def test_filename_smaller_than_max_length_not_shortened(self):
+        test = cli.shorten_filename(filename='0123456789012345678901.c')
+        expected = '0123456789012345678901.c'
         assert expected == test
-
 
     def test_with_none_filename(self):
         test = cli.shorten_filename(filename=None)
         expected = ''
         assert expected == test
 
-
-    def test_without_extension(self):
+    def test_filename_without_extension(self):
         test = cli.shorten_filename(filename='012345678901234567890123456')
         expected = '01234567890...67890123456'
         assert expected == test
 
-
-    def test_with_full_path(self):
+    def test_posix_path_without_shortening(self):
         test = cli.shorten_filename(filename='C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/drupal.js')
         expected = 'drupal.js'
+        assert expected == test
+
+    def test_posix_path_with_shortening(self):
+        test = cli.shorten_filename(filename='C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/012345678901234567890123.c')
+        expected = '0123456789...4567890123.c'
+        assert expected == test
+
+    def test_non_posix_path_without_shortening(self):
+        test = cli.shorten_filename(filename='C\\Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\drupal.js')
+        expected = 'drupal.js'
+        assert expected == test
+
+    def test_non_posix_path_with_shortening(self):
+        test = cli.shorten_filename(filename='C\\Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\012345678901234567890123.c')
+        expected = '0123456789...4567890123.c'
         assert expected == test

@@ -466,10 +466,9 @@ def scan(input_path,
     return files_count, cached_scan.iterate(scans, root_dir)
 
 
-def shorten_filename(filename='', max_length=25, number_of_dots=3):
+def shorten_filename(filename, max_length=25):
     """
-    Return the original filename if it is short enough
-    otherwise return its shortened version
+    Return a truncated `filename` usable for fixed width display if `filename` is longer than `max_length`.
     """
     if filename is None:
         return ''
@@ -477,6 +476,7 @@ def shorten_filename(filename='', max_length=25, number_of_dots=3):
     if len(filename) <= max_length:
         return filename
     base_name, extension = fileutils.splitext(filename)
+    number_of_dots = 3
     remaining_length = max_length - len(extension) - number_of_dots
     prefix_and_suffix_length = abs(remaining_length // 2)
     prefix = base_name[:prefix_and_suffix_length]
