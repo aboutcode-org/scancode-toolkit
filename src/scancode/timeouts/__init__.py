@@ -22,48 +22,12 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import print_function
+from __future__ import absolute_import
 
-import os
-import threading
-from time import sleep
+from commoncode.system import on_windows
 
-from commoncode.testcase import FileBasedTesting
-
-from scancode import interrupt
-
-"""
-Note that these tests check the active threads count before and after each test to
-verify there is no thread leak.
-"""
-
-class TestInterrupt(FileBasedTesting):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
-
-    def test_interruptible_can_run_function(self):
-        before = threading.active_count()
-
-        def some_long_function(exec_time):
-            sleep(exec_time)
-            return 'OK'
-
-        result = interrupt.interruptible(some_long_function, args=(0.01,), timeout=10)
-        assert (True, 'OK') == result
-
-        after = threading.active_count()
-        assert before == after
-
-    def test_interruptible_stops_execution_on_timeout(self):
-        before = threading.active_count()
-
-        def some_long_function(exec_time):
-            for i in range(exec_time):
-                sleep(i)
-            return 'OK'
-
-        result = interrupt.interruptible(some_long_function, args=(20,), timeout=0.00001)
-        assert (False, 'ERROR: Processing interrupted: timeout after 0 seconds.') == result
-
-        after = threading.active_count()
-        assert before == after
+if on_windows:
+    from scancode.timeouts.windows import Timeout
+else:
+    from scancode.timeouts.posix import Timeout

@@ -18,7 +18,9 @@ notes: >
     > Let’s go with MIT license.
     > Alexander
 
-copyright: Copyright (c) Alexander Ljungberg. All rights reserved.
+copyright: >
+    Copyright (c) Alexander Ljungberg. All rights reserved.
+    Copyright (c) Chris Arndt. All rights reserved.
 
 license: mit
 license_text_file: pool.py.LICENSE
