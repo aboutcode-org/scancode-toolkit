@@ -65,13 +65,15 @@ def extract_directory(resources, kinds=extractcode.default_kinds, recurse=True):
     If `recurse` is True, extract recursively archives nested inside other
     archives If `recurse` is false, then do not extract further an already
     extracted archive identified by the corresponding extract suffix location.
-
+for y in
     Note that while the original file system is walked top-down, breadth-first,
     if recurse and a nested archive is found, it is extracted to full depth
     first before resuming the file system walk.
     """
     for file in resources:
         if archive.can_extract(file):
-            #TODO : Implement Extraction of Files without printing to the Terminal
             for y in extract(file, kinds=kinds, recurse=recurse):
                 pass
+            return extract_directory(file)
+		else:
+			yield file
