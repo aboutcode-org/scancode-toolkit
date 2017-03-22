@@ -42,38 +42,35 @@ logger = logging.getLogger(__name__)
 TRACE = False
 
 if TRACE:
-    import sys
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
+	import sys
+	logging.basicConfig(stream=sys.stdout)
+	logger.setLevel(logging.DEBUG)
 
 
 def extract_directory(resources, kinds=extractcode.default_kinds, recurse=True):
-    """
-    Walk and extract any archives found at `location` (either a file or
-    directory). Extract only archives of a kind listed in the `kinds` kind tuple.
+	"""
+	Walk and extract any archives found at `location` (either a file or
+	directory). Extract only archives of a kind listed in the `kinds` kind tuple.
 
-    Return an iterable of ExtractEvent tuples for each extracted archive. This
-    can be used to track extraction progress:
+	Return an iterable of ExtractEvent tuples for each extracted archive. This
+	can be used to track extraction progress:
 
-     - one event is emitted just before extracting an archive. The ExtractEvent
-       warnings and errors are empty. The `done` flag is False.
+	 - one event is emitted just before extracting an archive. The ExtractEvent
+	   warnings and errors are empty. The `done` flag is False.
 
-     - one event is emitted right after extracting an archive. The ExtractEvent
-       warnings and errors contains warnings and errors if any. The `done` flag
-       is True.
+	 - one event is emitted right after extracting an archive. The ExtractEvent
+	   warnings and errors contains warnings and errors if any. The `done` flag
+	   is True.
 
-    If `recurse` is True, extract recursively archives nested inside other
-    archives If `recurse` is false, then do not extract further an already
-    extracted archive identified by the corresponding extract suffix location.
-for y in
-    Note that while the original file system is walked top-down, breadth-first,
-    if recurse and a nested archive is found, it is extracted to full depth
-    first before resuming the file system walk.
-    """
-    for file in resources:
-        if archive.can_extract(file):
-            for y in extract(file, kinds=kinds, recurse=recurse):
-                pass
-            return extract_directory(file)
-		else:
-			yield file
+	If `recurse` is True, extract recursively archives nested inside other
+	archives If `recurse` is false, then do not extract further an already
+	extracted archive identified by the corresponding extract suffix location.
+	Note that while the original file system is walked top-down, breadth-first,
+	if recurse and a nested archive is found, it is extracted to full depth
+	first before resuming the file system walk.
+	"""
+	for file in resources:
+		if archive.can_extract(file):
+			extract(file, kinds=kinds, recurse=recurse)
+			yield extract_directory(file)
+		yield file
