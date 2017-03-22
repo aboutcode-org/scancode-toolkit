@@ -512,3 +512,6 @@ class TestShortenFilename(TestCase):
         test = cli.shorten_filename(filename='C\\Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\012345678901234567890123.c')
         expected = '0123456789...4567890123.c'
         assert expected == test
+
+    def test_with_no_args(self):
+        self.assertRaises(Exception, cli.shorten_filename)
