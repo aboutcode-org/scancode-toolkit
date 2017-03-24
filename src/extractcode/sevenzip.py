@@ -54,6 +54,8 @@ sevenzip_errors = [
     ('can not open file as archive', None),
     ]
 
+UNKNOWN_ERROR = 'Unknown extraction error'
+
 
 def get_7z_errors(stdout):
     """
@@ -171,7 +173,7 @@ def extract(location, target_dir, arch_type='*'):
     )
 
     if rc != 0:
-        error = get_7z_errors(stdout) or 'No error returned'
+        error = get_7z_errors(stdout) or UNKNOWN_ERROR
         raise ExtractErrorFailedToExtract(error)
 
     extractcode.remove_backslashes_and_dotdots(abs_target_dir)
@@ -216,10 +218,9 @@ def list_entries(location, arch_type='*'):
                                           root_dir=root_dir,
                                           to_files=True)
     if rc != 0:
-        _error = get_7z_errors(stdout) or 'No error returned'
-        # still try to get the listing?
-        # print(Exception(error))
-        pass
+        # FIXME: this test is useless
+        _error = get_7z_errors(stdout) or UNKNOWN_ERROR
+        # print(_error)
 
     # the listing was produced as UTF on windows to avoid damaging binary
     # paths in console outputs
@@ -230,7 +231,7 @@ def list_entries(location, arch_type='*'):
 
 def as_entry(infos):
     """
-    Return an Entry built from 7zip path data
+    Return an Entry built from 7zip path data.
     """
     e = extractcode.Entry()
     e.path = infos.get('Path')
