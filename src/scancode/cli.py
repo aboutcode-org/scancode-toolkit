@@ -181,7 +181,7 @@ def validate_formats(ctx, param, value):
         return value_lower
     # render using a user-provided custom format template
     if not os.path.isfile(value):
-        raise click.BadParameter('Invalid template file: "%(value)s" does not exists or is not readable.' % locals())
+        raise click.BadParameter('Invalid template file: "%(value)s" does not exist or is not readable.' % locals())
     return value
 
 
@@ -403,9 +403,7 @@ def scan(input_path,
                     return ''
                 if item:
                     _scan_success, _scanned_path = item
-                    _progress_line = verbose and _scanned_path or fileutils.file_name(_scanned_path)
-                    if not verbose:
-                    	_progress_line = shorten_filename(_progress_line)
+                    _progress_line = verbose and _scanned_path or fixed_width_file_name(_scanned_path)
                     return style('Scanned: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
 
             scanning_errors = []
@@ -466,13 +464,21 @@ def scan(input_path,
     return files_count, cached_scan.iterate(scans, root_dir)
 
 
-def shorten_filename(filename, max_length=25):
+def fixed_width_file_name(path, max_length=25):
     """
-    Return a truncated `filename` usable for fixed width display if `filename` is longer than `max_length`.
+    Return a fixed width file_name of at most `max_length` characters
+    extracted from the `path` string usable for fixed width display. If
+    the file_name is longer than `max_length`, it is truncated in the
+    middle with using three dots "..." as an ellipsis.
+
+    For example:
+    >>> short = fixed_width_file_name('0123456789012345678901234.c')
+    >>> assert '0123456789...5678901234.c' == short
     """
-    if filename is None:
+    if not path:
         return ''
-    filename = fileutils.file_name(filename)
+
+    filename = fileutils.file_name(path)
     if len(filename) <= max_length:
         return filename
     base_name, extension = fileutils.splitext(filename)
@@ -480,10 +486,9 @@ def shorten_filename(filename, max_length=25):
     remaining_length = max_length - len(extension) - number_of_dots
     prefix_and_suffix_length = abs(remaining_length // 2)
     prefix = base_name[:prefix_and_suffix_length]
-    ellipsis = number_of_dots*'.'
+    ellipsis = number_of_dots * '.'
     suffix = base_name[-prefix_and_suffix_length:]
-    shortened_filename = "{prefix}{ellipsis}{suffix}{extension}".format(**locals())
-    return shortened_filename
+    return "{prefix}{ellipsis}{suffix}{extension}".format(**locals())
 
 
 def _get_root_dir(input_path, strip_root=False):

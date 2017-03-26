@@ -45,6 +45,7 @@ from scancode.cli_test_utils import _load_json_result
 from scancode.cli_test_utils import check_scan
 
 from scancode import cli
+from unittest.case import expectedFailure
 
 
 test_env = FileDrivenTesting()
@@ -106,9 +107,9 @@ def test_verbose_option_with_copyrights(monkeypatch):
     assert len(open(result_file).read()) > 10
 
 
-def test_scan_can_handle_long_file_names(monkeypatch):
+def test_scan_progress_display_is_not_damaged_with_long_file_names(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    test_dir = test_env.get_test_loc('long_file_name/0123456789012345678901234567890123456789.c')
+    test_dir = test_env.get_test_loc('long_file_name')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
     result = runner.invoke(cli.scancode, ['--copyright', test_dir, result_file], catch_exceptions=True)
@@ -444,49 +445,61 @@ def test_scan_can_run_from_other_directory():
     check_scan(test_env.get_test_loc(expected_file), result_file, strip_dates=True, regen=False)
 
 
-class TestShortenFilename(TestCase):
+class TestFixedWidthFilename(TestCase):
 
-    def test_filename_larger_than_max_length_shortened(self):
-        test = cli.shorten_filename(filename='0123456789012345678901234.c')
+    def test_fixed_width_file_name_with_file_name_larger_than_max_length_is_shortened(self):
+        test = cli.fixed_width_file_name('0123456789012345678901234.c')
         expected = '0123456789...5678901234.c'
         assert expected == test
 
-    def test_filename_at_max_length_not_shortened(self):
-        test = cli.shorten_filename(filename='01234567890123456789012.c')
+    def test_fixed_width_file_name_with_file_name_smaller_than_max_length_is_not_shortened(self):
+        file_name = '0123456789012345678901234.c'
+        test = cli.fixed_width_file_name(file_name, max_length=50)
+        assert file_name == test
+
+    def test_fixed_width_file_name_with_file_name_at_max_length_is_not_shortened(self):
+        test = cli.fixed_width_file_name('01234567890123456789012.c')
         expected = '01234567890123456789012.c'
         assert expected == test
 
-    def test_filename_smaller_than_max_length_not_shortened(self):
-        test = cli.shorten_filename(filename='0123456789012345678901.c')
+    def test_fixed_width_file_name_with_file_name_smaller_than_max_length_not_shortened(self):
+        test = cli.fixed_width_file_name('0123456789012345678901.c')
         expected = '0123456789012345678901.c'
         assert expected == test
 
-    def test_with_none_filename(self):
-        test = cli.shorten_filename(filename=None)
+    def test_fixed_width_file_name_with_none_filename_return_empty_string(self):
+        test = cli.fixed_width_file_name(None)
         expected = ''
         assert expected == test
 
-    def test_filename_without_extension(self):
-        test = cli.shorten_filename(filename='012345678901234567890123456')
+    def test_fixed_width_file_name_without_extension(self):
+        test = cli.fixed_width_file_name('012345678901234567890123456')
         expected = '01234567890...67890123456'
         assert expected == test
 
-    def test_posix_path_without_shortening(self):
-        test = cli.shorten_filename(filename='C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/drupal.js')
+    def test_fixed_width_file_name_with_posix_path_without_shortening(self):
+        test = cli.fixed_width_file_name('C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/drupal.js')
         expected = 'drupal.js'
         assert expected == test
 
-    def test_posix_path_with_shortening(self):
-        test = cli.shorten_filename(filename='C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/012345678901234567890123.c')
+    def test_fixed_width_file_name_with_posix_path_with_shortening(self):
+        test = cli.fixed_width_file_name('C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/012345678901234567890123.c')
         expected = '0123456789...4567890123.c'
         assert expected == test
 
-    def test_non_posix_path_without_shortening(self):
-        test = cli.shorten_filename(filename='C\\Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\drupal.js')
+    def test_fixed_width_file_name_with_win_path_without_shortening(self):
+        test = cli.fixed_width_file_name('C\\:Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\drupal.js')
         expected = 'drupal.js'
         assert expected == test
 
-    def test_non_posix_path_with_shortening(self):
-        test = cli.shorten_filename(filename='C\\Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\012345678901234567890123.c')
+    def test_fixed_width_file_name_with_win_path_with_shortening(self):
+        test = cli.fixed_width_file_name('C\\:Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\012345678901234567890123.c')
         expected = '0123456789...4567890123.c'
+        assert expected == test
+
+    @expectedFailure
+    def test_fixed_width_file_name_with_very_small_file_name_and_long_extension(self):
+        test = cli.fixed_width_file_name('abc.abcdef', 5)
+        # FIXME: what is expected is TBD
+        expected = ''
         assert expected == test
