@@ -68,9 +68,15 @@ To set up ScanCode for local development:
 1. Fork the scancode-toolkit on GitHub at 
    https://github.com/nexb/scancode-toolkit/fork
 
-2. Clone your fork locally::
+2. Clone your fork locally:
+
+   Use SSH::
 
     git clone git@github.com:your_name_here/scancode-toolkit.git
+
+   Or use HTTPS::
+
+    git clone https://github.com/your_name_here/scancode-toolkit.git
 
 3. Create a branch for local development::
 
