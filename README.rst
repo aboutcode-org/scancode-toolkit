@@ -43,7 +43,7 @@ https://github.com/nexB/scancode-toolkit/wiki/Roadmap
 Quick Start
 ===========
 
-For Windows, please go to the Comprehensive Installation section instead.
+For Windows, please go to the `Comprehensive Installation <https://github.com/nexB/scancode-toolkit/wiki/Comprehensive-Installation>`_ section instead.
 
 Make sure you have Python 2.7 installed:
  * Download and install Python 2.7 32 bits for Windows https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi
@@ -64,7 +64,6 @@ directory and run this command to display the command help. ScanCode will
 self-configure if needed::
 
     ./scancode --help
-
 
 Run a sample scan saved to the `samples.html` file::
 
@@ -103,7 +102,6 @@ For example, this command will recursively extract the mytar.tar.bz2 tarball in 
     ./extractcode mytar.tar.bz2
 
 
-
 Source code
 ===========
 
@@ -138,8 +136,8 @@ Run this command for a list of command line examples::
 
     ./scancode --examples
 
-To run a scan on sample data, run this::
+To run a scan on sample data, first run this::
 
     ./scancode --format html-app samples samples.html
 
-Then open samples.html in your web browser.
+Then open samples.html in your web browser to see the results.
