@@ -1,35 +1,35 @@
-language: cpp
+language: python
 
-os: 
-    - osx
-    - linux 
+python:
+  - 2.7.13
 
-env:
-    matrix:
-        - TEST_SUITE="bin/py.test -n 2 -vvs --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
-        - TEST_SUITE="bin/py.test -n 2 -vvs tests/scancode"
-        - TEST_SUITE="bin/py.test -n 2 -vvs tests/extractcode"
-        - TEST_SUITE="bin/py.test -n 2 -s tests/licensedcode"
-        - TEST_SUITE="bin/py.test -n 2 -s tests/cluecode"
-        - TEST_SUITE="bin/py.test -n 2 -s tests/packagedcode"
-        - TEST_SUITE="./etc/release/release.sh"
-
+matrix:
+  include:
+    - os: osx
+      language: generic
+      python:
+      osx_image: xcode7.3
 
 install:
-    - ./configure
+  - ./configure
+  - ./bin/pip install pytest-cov coveralls
 
 script:
-    - $TEST_SUITE
+  # If debugging, use a subset of tests to reduce wait:
+  # - ./bin/py.test -n 2 -vvs --cov=src/scancode tests/scancode
+  - ./bin/py.test -n 2 -s --cov=src
+
+after_success:
+  - ./bin/coveralls
+  - ./etc/release/release.sh
 
 notifications:
-    irc:
-        channels:
-          - "chat.freenode.net#aboutcode"
-    on_success: change
-    on_failure: always
-    use_notice: true
-    skip_join: true
-    template:
-        - "%{repository_slug}#%{build_number} (%{branch}-%{commit}:%{author})-%{message}- %{build_url}"
-        - 
-        - 
+  irc:
+    channels:
+      - "chat.freenode.net#aboutcode"
+  on_success: change
+  on_failure: always
+  use_notice: true
+  skip_join: true
+  template:
+    - "%{repository_slug}#%{build_number} (%{branch}-%{commit}:%{author})-%{message}- %{build_url}"
