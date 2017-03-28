@@ -1,23 +1,22 @@
-===============================
+================
 ScanCode toolkit
-===============================
+================
 
 
 Build and tests status
 ======================
 
-+-------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
-|Branch |                         **Linux (Travis)**                                  |                         **MacOSX (Travis)**                                 |                         **Windows (AppVeyor)**                                                |
-+=======+=============================================================================+=============================================================================+===============================================================================================+
-|       |.. image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=master |.. image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=master |.. image:: https://ci.appveyor.com/api/projects/status/4webymu0l2ip8utr/branch/master?png=true |
-|Master |   :target: https://travis-ci.org/nexB/scancode-toolkit                      |   :target: https://travis-ci.org/nexB/scancode-toolkit                      |   :target: https://ci.appveyor.com/project/nexB/scancode-toolkit                              |
-|       |   :alt: Linux Master branch tests status                                    |   :alt: MacOSX Master branch tests status                                   |   :alt: Windows Master branch tests status                                                    |
-+-------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
-|       |.. image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=develop|.. image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=develop|.. image:: https://ci.appveyor.com/api/projects/status/4webymu0l2ip8utr/branch/develop?png=true|
-|Develop|   :target: https://travis-ci.org/nexB/scancode-toolkit                      |   :target: https://travis-ci.org/nexB/scancode-toolkit                      |   :target: https://ci.appveyor.com/project/nexB/scancode-toolkit                              |
-|       |   :alt: Linux Develop branch tests status                                   |   :alt: MacOSX Develop branch tests status                                  |   :alt: Windows Develop branch tests status                                                   |
-+-------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
-
++-------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+|Branch |                                        **Coverage**                                        |                         **Linux (Travis)**                                  |                         **MacOSX (Travis)**                                 |                         **Windows (AppVeyor)**                                                |
++=======+============================================================================================+=============================================================================+=============================================================================+===============================================================================================+
+|       |.. image:: https://coveralls.io/repos/github/nexB/scancode-toolkit/badge.svg?branch=master  |.. image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=master |.. image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=master |.. image:: https://ci.appveyor.com/api/projects/status/4webymu0l2ip8utr/branch/master?png=true |
+|Master |   :target: https://coveralls.io/github/nexB/scancode-toolkit?branch=master                 |   :target: https://travis-ci.org/nexB/scancode-toolkit                      |   :target: https://travis-ci.org/nexB/scancode-toolkit                      |   :target: https://ci.appveyor.com/project/nexB/scancode-toolkit                              |
+|       |   :alt: Linux Master branch test coverage                                                  |   :alt: Linux Master branch tests status                                    |   :alt: MacOSX Master branch tests status                                   |   :alt: Windows Master branch tests status                                                    |
++-------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+|       |.. image:: https://coveralls.io/repos/github/nexB/scancode-toolkit/badge.svg?branch=develop |.. image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=develop|.. image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=develop|.. image:: https://ci.appveyor.com/api/projects/status/4webymu0l2ip8utr/branch/develop?png=true|
+|Develop|   :target: https://coveralls.io/github/nexB/scancode-toolkit?branch=develop                |   :target: https://travis-ci.org/nexB/scancode-toolkit                      |   :target: https://travis-ci.org/nexB/scancode-toolkit                      |   :target: https://ci.appveyor.com/project/nexB/scancode-toolkit                              |
+|       |   :alt: Linux Develop branch test coverage                                                 |   :alt: Linux Develop branch tests status                                   |   :alt: MacOSX Develop branch tests status                                  |   :alt: Windows Develop branch tests status                                                   |
++-------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 
 
 ScanCode is a suite of utilities used to scan a codebase for license, copyright
