@@ -20,10 +20,10 @@ Build and tests status
 
 
 
-ScanCode is a suite of utilities used to scan a codebase for license, copyright
+ScanCode is a suite of utilities used to scan a codebase for license, copyright,
 and other interesting information that can be discovered in files.
 
-A typical software project often reuses hundreds of thirdparty components. 
+A typical software project often reuses hundreds of third-party components. 
 License and origin information is often scattered and not easy to find:
 ScanCode discovers this data for you.
 
@@ -55,7 +55,7 @@ On Linux install Python 2.7 "devel" and a few extra packages:
  * ``sudo yum install python-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel`` for RPM distros
  * See the Comprehensive Installation for additional details and other Linux installations: https://github.com/nexB/scancode-toolkit/wiki/Comprehensive-Installation
 
-Then download and extract the latest ScanCode release from::
+Next, download and extract the latest ScanCode release from::
 
     https://github.com/nexB/scancode-toolkit/releases/latest
 
@@ -82,7 +82,7 @@ Support
 If you have a problem, a suggestion or found a bug, please enter a ticket at:
 https://github.com/nexB/scancode-toolkit/issues
 
-For other questions, discussions and chats, we have:
+For other questions, discussions, and chats, we have:
 
 - a mailing list at https://lists.sourceforge.net/lists/listinfo/aboutcode-discuss
 
@@ -97,7 +97,7 @@ For other questions, discussions and chats, we have:
 
 About archives
 ==============
-All code must be extracted before running ScanCode since ScanCode will not extract files from tarballs, zip files, etc.  However, the ScanCode Toolkit comes with a utility called extractcode that does recursive archive extraction.
+All code must be extracted before running ScanCode since ScanCode will not extract files from tarballs, zip files, etc. However, the ScanCode Toolkit comes with a utility called extractcode that does recursive archive extraction.
 For example, this command will recursively extract the mytar.tar.bz2 tarball in the mytar.tar.bz2-extract directory::
     ./extractcode mytar.tar.bz2
 
