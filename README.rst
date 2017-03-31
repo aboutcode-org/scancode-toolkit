@@ -49,8 +49,8 @@ Make sure you have Python 2.7 installed:
  * Download and install Python 2.7 for Mac https://www.python.org/ftp/python/2.7.13/python-2.7.13-macosx10.6.pkg
 
 On Linux install Python 2.7 "devel" and a few extra packages:
- * ``sudo apt-get install python-dev libbz2 xzutils zlib1g libxml2-dev libxslt1-dev`` for most Debian/Ubuntu
- * ``sudo apt-get install python-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-dev`` for Debian Jessie/8
+ * ``sudo apt-get install python-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev`` for Ubuntu 12.04, 14.04 and 16.04
+ * ``sudo apt-get install python-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-dev`` for Debian and Debian-based distros
  * ``sudo yum install python-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel`` for RPM distros
  * See the Comprehensive Installation for additional details and other Linux installations: https://github.com/nexB/scancode-toolkit/wiki/Comprehensive-Installation
 
