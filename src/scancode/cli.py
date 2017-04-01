@@ -285,8 +285,6 @@ def scancode(ctx,
     scans_cache_class = get_scans_cache_class()
 
     try:
-        #We could call the below function if required to first extract all the archives, and then start scanning
-
         '''
         abs_input = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(location)))
         original_input = fileutils.as_posixpath(location)
