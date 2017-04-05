@@ -1,0 +1,5 @@
+licenses:
+    - gpl-2.0
+    - gpl-2.0-glibc
+license_expresion: gpl-2.0 with gpl-2.0-glibc
+notes: seen in U-Boot and dthe kernel

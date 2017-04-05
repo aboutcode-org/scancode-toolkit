@@ -1,0 +1,8 @@
+key: softfloat
+short_name: SoftFloat
+name: SoftFloat Legal Notice
+
+category: Permissive
+owner: John R. Hauser
+homepage_url: http://www.jhauser.us/arithmetic/SoftFloat.html
+minimum_coverage: 90

@@ -1,0 +1,4 @@
+licenses:
+    - gpl-2.0-plus
+license_choice: no
+notes: based on the set of SPDX-License-Identifier tas used in U-Boot which predated using SPDX expressions in some cases

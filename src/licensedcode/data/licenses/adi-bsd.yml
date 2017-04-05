@@ -1,0 +1,20 @@
+key: adi-bsd
+short_name: ADI BSD
+name: ADI BSD License
+
+category: Permissive
+owner: Analog Devices, Inc.
+homepage_url: https://docs.blackfin.uclinux.org/doku.php?id=adi_bsd
+notes:  the home page contains these comments.
+ This is a slightly modified version of the three clause BSD license. 
+ It adds a clause to explicitly state the patent protection that this
+ license provides (which is none). The ADI BSD License is similar to the
+ Clear BSD License, which the Free Software Foundation indicates is
+ compatible with both GPLv2 and GPLv3. If you have any questions about
+ license compatibility - consult your nearest lawyer. Before
+ incorporating code licensed under the ADI BSD license into projects
+ which you are going to ship in a end product, you must ensure that you
+ have the patent rights to do.
+
+text_urls:
+    - https://docs.blackfin.uclinux.org/doku.php?id=adi_bsd

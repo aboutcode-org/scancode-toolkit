@@ -1,0 +1,3 @@
+this approach may be used in non-GPL software, if desired.
+(In contrast, implementation of RCU is permitted only in software licensed
+under either GPL or LGPL.

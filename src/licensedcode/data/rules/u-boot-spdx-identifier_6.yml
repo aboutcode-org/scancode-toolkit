@@ -1,0 +1,5 @@
+licenses:
+    - gpl-2.0
+    - ibm-pibs
+license_choice: yes
+notes: based on the set of SPDX-License-Identifier tas used in U-Boot which predated using SPDX expressions in some cases

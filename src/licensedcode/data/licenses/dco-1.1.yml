@@ -1,0 +1,10 @@
+key: dco-1.1
+short_name: DCO 1.1
+name: Developer's Certificate of Origin 1.1
+
+category: Permissive
+owner: Linux Foundation
+homepage_url: https://developercertificate.org/
+text_urls:
+    - https://developercertificate.org/
+minimum_coverage: 90

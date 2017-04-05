@@ -1,0 +1,10 @@
+LICENSING
+
+Code is contributed to the Linux kernel under a number of licenses, but all
+code must be compatible with version 2 of the GNU General Public License
+(GPLv2), which is the license covering the kernel distribution as a whole.
+In practice, that means that all code contributions are covered either by
+GPLv2 (with, optionally, language allowing distribution under later
+versions of the GPL) or the three-clause BSD license.  Any contributions
+which are not covered by a compatible license will not be accepted into the
+kernel.
