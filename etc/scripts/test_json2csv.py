@@ -61,7 +61,7 @@ def check_csvs(result_file, expected_file, ignore_keys=('date', 'file_type', 'mi
     expected_fields, expected = load_csv(expected_file)
     assert expected_fields == result_fields
     # then check results line by line for more compact results
-    for exp, res in zip(expected, results):
+    for exp, res in zip(sorted(expected), sorted(results)):
         for ign in ignore_keys:
             exp.pop(ign, None)
             res.pop(ign, None)
