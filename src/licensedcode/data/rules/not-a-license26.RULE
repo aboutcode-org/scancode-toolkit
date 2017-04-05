@@ -1,0 +1,6 @@
+What:   GPL cleanup
+When:   August 2009
+Why:    Over time, a couple of files have sneaked in into the U-Boot
+        source code that are either missing a valid GPL license
+        header or that carry a license that is incompatible with the
+        GPL.
