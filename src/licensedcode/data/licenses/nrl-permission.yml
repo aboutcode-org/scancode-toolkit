@@ -1,0 +1,7 @@
+key: nrl-permission
+short_name: NRL permission
+name: NRL permission
+
+category: Permissive
+owner: NRL
+homepage_url: https://web.mit.edu/kerberos/krb5-1.14/doc/mitK5license.html

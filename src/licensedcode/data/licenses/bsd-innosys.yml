@@ -1,0 +1,8 @@
+key: bsd-innosys
+short_name: BSD-InnoSys
+name: BSD-InnoSys
+
+category: Permissive
+owner: InnoSys Incorporated.
+
+notes: This is a variant with extra conditions on the placement of the notice

@@ -1,0 +1,7 @@
+licenses:
+    - openssl
+    - bsd-new
+    - gpl
+    - gpl-2.0
+license_choice: yes
+license_expression: gpl-2.0

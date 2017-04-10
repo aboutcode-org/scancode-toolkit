@@ -1,0 +1,7 @@
+key: 3com-microcode
+short_name: 3Com Microcode
+name: 3Com 3Com Microcode
+
+category: Permissive
+owner: 3Com
+notes: this is a Linux firmware BSD-like license with some weird extra terms

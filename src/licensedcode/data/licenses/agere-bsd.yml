@@ -1,0 +1,32 @@
+key: agere-bsd
+short_name: Agere BSD
+name: Agere Systems BSD Software license
+
+category: Permissive
+owner:  Agere Systems Inc.
+other_urls:
+    - https://github.com/mdamt/linux-firmware/blob/bf9f8648fdf1d1d63db471554781f897d219bd62/LICENCE.agere
+
+notes: commonly found in Linux
+    The driver is coverred by the
+    following copyright and software license.
+    ... license text ...
+    The following statement from Agere clarifies the status of the firmware
+    I would like to confirm that the two drivers; Linux LKM Wireless Driver
+    Source Code, Version 7.18 and Linux LKM Wireless Driver Source Code,
+    Version 7.22 comply with Open Source BSD License. Therefore the source
+    code can be distributed in unmodified or modified form consistent with
+    the terms of the license.
+    The Linux driver architecture was based on two modules, the MSF (Module
+    specific functions) and the HCF (Hardware Control Functions).  Included
+    in the HCF is run-time firmware (binary format) which is downloaded into
+    the RAM of the Hermes 1/2/2.5 WMAC.
+    This hex coded firmware is not based on any open source software and
+    hence it is not subject to any Open Source License.  The firmware was
+    developed by Agere and runs on the DISC processor embedded within the
+    Hermes 1/2/2.5 Wireless MAC devices. 
+    Hope this helps.
+    Sincerely,
+    Viren Pathare
+    Intellectual Property Licensing Manager
+    Agere

@@ -1,0 +1,6 @@
+Licence: Unknown
+
+Found in alsa- in hex form with a comment claiming to
+be GPLv2+, but without source -- and with another comment saying "ESS
+drops binary dsp code images on our heads, but we don't get to see
+specs on the dsp."
