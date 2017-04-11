@@ -76,11 +76,14 @@ def ping_url(url):
     Returns True is `url` is reachable.
     """
     import urllib2
-
-    # FIXME: if there is no 200 HTTP status, then the ULR may not be reachable.
+    # If there is no 200 HTTP status, then the URL may not be reachable.
+    request = urllib2.Request(url)
     try:
-        urllib2.urlopen(url)
-    except Exception:
+        response = urllib2.urlopen(request)
+    except urllib2.HTTPError as e: #404
+        if e.code == 404:
+            return False
+    except urllib2.URLError as e: # Not an HTTP-specific error (e.g. connection refused)
         return False
-    else:
+    else: #200
         return True
