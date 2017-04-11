@@ -84,6 +84,8 @@ def ping_url(url):
     except urllib2.HTTPError as e:
         if e.code == any(http_url_error_list):
             return False
+        else
+            return True
     except urllib2.URLError as e: # Not an HTTP-specific error (e.g. connection refused)
         return False
     else:
