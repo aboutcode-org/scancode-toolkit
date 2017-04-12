@@ -1,0 +1,6 @@
+This driver consists of two parts.  The first part  provides
+the basic interfaces, is derived in part from the driver and
+ drivers, and is covered by the GPL.  The second part 
+provides the code to program the hardware.  Most of it is derived from
+the  XFree86 driver.  The HW-specific code is covered here
+under a dual license (GPL and MIT/XFree86 license).

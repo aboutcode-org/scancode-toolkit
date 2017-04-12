@@ -2644,6 +2644,8 @@ oak
 vat
 awareness
 vancouver
+terms
+term
 beer
 seemed
 measurement
@@ -3614,6 +3616,7 @@ emerging
 worship
 ak
 fe
+bsd
 herself
 churches
 precision
@@ -9806,7 +9809,7 @@ mmddyyyy
 hhmmss
 hpp
 cpp
-
+Freescale Semiconductor
 hh mm ss
 ©
 Sam Leffler Silicon Graphics

@@ -1,0 +1,8 @@
+key: cmu-simple
+short_name: CMU Simple License
+name: CMU Simple License
+
+category: Permissive
+owner: Carnegie Mellon University
+notes: this is a simplified variant of license with a text otherwise
+ borrowed from the cmu-template license

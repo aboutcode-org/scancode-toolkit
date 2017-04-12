@@ -1,0 +1,5 @@
+licenses:
+    - bsd-new
+    - gpl
+license_choice: yes
+notes: Dual licenses for GPL and BSD-NEW

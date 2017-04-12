@@ -1,0 +1,6 @@
+This driver consists of two parts.  The first part (intelfbdrv.c) provides
+the basic fbdev interfaces, is derived in part from the radeonfb and
+vesafb drivers, and is covered by the GPL.  The second part (intelfbhw.c)
+provides the code to program the hardware.  Most of it is derived from
+the i810/i830 XFree86 driver.  The HW-specific code is covered here
+under a dual license (GPL and MIT/XFree86 license).
