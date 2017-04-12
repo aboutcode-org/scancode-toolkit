@@ -78,8 +78,8 @@ def ping_url(url):
     import urllib2
     # If there is no 200 HTTP status, then the URL may not be reachable.
     http_url_error_list = [400,401,403,404,408,500,501,502,503,504,505]
+    request = urllib2.Request(url)
     try:
-        request = urllib2.Request(url)
         response = urllib2.urlopen(request)
     except urllib2.HTTPError as e:
         if e.code == any(http_url_error_list):
