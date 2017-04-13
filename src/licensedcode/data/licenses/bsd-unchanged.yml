@@ -6,3 +6,5 @@ owner: Dag-Erling Coïdan Smørgrav
 notes: >
     Contains this extra text "in this position and unchanged" when
     compared with a bsd-simplified.
+
+minimum_coverage: 98

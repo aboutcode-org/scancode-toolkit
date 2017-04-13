@@ -1,0 +1,1 @@
+MODULE_LICENSE("GPL");  /* combination of LGPL + GPL source behaves as GPL */

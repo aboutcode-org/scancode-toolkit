@@ -1,0 +1,10 @@
+key: mit-no-advert-export-control
+short_name: MIT no advertising with Export Control
+name: MIT no advertising with Export Control
+
+category: Permissive
+homepage_url: https://fedoraproject.org/wiki/Licensing:Xerox?rd=Licensing/Xerox
+notes: 
+    Per Fedora this license is very similar to MIT, except that it
+    requires that US Export Control laws be followed, which makes it
+    GPL-Incompatible."
