@@ -63,7 +63,7 @@ def load_scan(json_input):
     return scan_results
 
 
-def json_scan_to_csv(json_input, csv_output):
+def json_scan_to_csv(json_input, csv_output, prefix_path=False):
     """
     Convert a scancode JSON output file to a nexb-toolkit-like CSV.
     csv_output is an open file descriptor.
@@ -77,7 +77,11 @@ def json_scan_to_csv(json_input, csv_output):
         ('url', []),
         ('package', []),
         ])
-    rows = list(flatten_scan(scan_results, headers))
+
+    if prefix_path:
+        rows = list(flatten_scan(scan_results, headers, True))
+    else:
+        rows = list(flatten_scan(scan_results, headers))
 
     ordered_headers = []
     for key_group in headers.values():
@@ -89,7 +93,7 @@ def json_scan_to_csv(json_input, csv_output):
         w.writerow(r)
 
 
-def flatten_scan(scan, headers):
+def flatten_scan(scan, headers, prefix_path=False):
     """
     Yield ordered dictionaries of key/values flattening the data and
     keying always by path, given a ScanCode scan results list.
@@ -114,8 +118,9 @@ def flatten_scan(scan, headers):
             if not path.endswith('/'):
                 path = path + '/'
 
-        # alway create a root directory
-        path = '/code' + path
+        if prefix_path:
+            # Create a root directory if option is selected
+            path = '/code' + path
 
         errors = scanned_file.pop('scan_errors', [])
 
@@ -240,7 +245,8 @@ def flatten_scan(scan, headers):
 @click.argument('json_input', type=click.Path(exists=True, readable=True))
 @click.argument('csv_output', type=click.File('wb', lazy=False))
 @click.help_option('-h', '--help')
-def cli(json_input, csv_output):
+@click.option('--prefix_path', is_flag=True, default=False, help='Prefix a root directory to resource paths')
+def cli(json_input, csv_output, prefix_path=False):
     """
     Convert a ScanCode JSON scan file to a nexb-toolkit-like CSV.
 
@@ -249,7 +255,7 @@ def cli(json_input, csv_output):
     Paths will be prefixed with '/code/' to provide a common base directory for scanned resources.
     """
     json_input = os.path.abspath(os.path.expanduser(json_input))
-    json_scan_to_csv(json_input, csv_output)
+    json_scan_to_csv(json_input, csv_output, prefix_path)
 
 
 if __name__ == '__main__':

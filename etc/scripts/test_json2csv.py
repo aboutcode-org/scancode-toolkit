@@ -182,7 +182,7 @@ class TestJson2CSV(FileBasedTesting):
 
         expected = [
             OrderedDict([
-                ('Resource', '/code/srp_vfy.c'),
+                ('Resource', '/srp_vfy.c'),
                 ('type', 'file'),
                 ('name', 'srp_vfy.c'),
                 ('extension', '.c'),
@@ -203,7 +203,7 @@ class TestJson2CSV(FileBasedTesting):
                 ('scan_errors', '')
             ]),
             OrderedDict([
-                ('Resource', '/code/srp_lib.c'),
+                ('Resource', '/srp_lib.c'),
                 ('type', 'file'),
                 ('name', 'srp_lib.c'),
                 ('extension', '.c'),
@@ -224,7 +224,7 @@ class TestJson2CSV(FileBasedTesting):
                 ('scan_errors', '')
             ]),
             OrderedDict([
-                ('Resource', '/code/build.info'),
+                ('Resource', '/build.info'),
                 ('type', 'file'),
                 ('name', 'build.info'),
                 ('extension', '.info'),
@@ -299,6 +299,7 @@ class TestJson2CSV(FileBasedTesting):
         expected = self.get_test_loc('json2csv/package_license_value_null.json-expected')
         expected = json.load(codecs.open(expected, encoding='utf-8'), object_pairs_hook=OrderedDict)
         assert expected == result
+
 
 class TestJson2CSVWithLiveScans(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'testdata')
