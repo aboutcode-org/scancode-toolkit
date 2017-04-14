@@ -1,0 +1,4 @@
+licenses:
+    - gpl-2.0-plus
+    - isc
+minimum_coverage: 70

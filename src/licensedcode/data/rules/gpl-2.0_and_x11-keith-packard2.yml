@@ -1,0 +1,5 @@
+licenses:
+    - gpl-2.0
+    - x11-keith-packard
+license_expression: gpl-2.0 and x11-keith-packard
+minimum_coverage: 80

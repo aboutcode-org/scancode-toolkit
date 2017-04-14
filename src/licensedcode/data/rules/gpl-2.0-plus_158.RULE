@@ -1,0 +1,2 @@
+The method for actual interception of syscall entry and exit (not in
+this file -- see entry.S) is based on a GPL'd patch written by

@@ -1,0 +1,5 @@
+licenses:
+    - gpl-2.0-plus
+    - proprietary
+license_choice: no
+minimum_coverage: 80

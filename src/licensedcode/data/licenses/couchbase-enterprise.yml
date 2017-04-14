@@ -5,3 +5,4 @@ name: Couchbase Enterprise Edition License
 category: Proprietary Free
 owner: Couchbase
 homepage_url: http://www.couchbase.com/download
+minimum_coverage: 20

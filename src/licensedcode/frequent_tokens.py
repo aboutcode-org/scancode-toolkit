@@ -9916,6 +9916,21 @@ Philip Hazel ph10
 LZMA SDK
 XFree86
 Lustre
+Brian Gladman
+dr
+ Worcester
+eCryptfs
+MICRONAS
+USA
+HEWLETT-PACKARD
+GTCO-CALCOMP
+sha256
+libtomcrypt
+Tom st Denis
+Tmis
+XILINX
+exofs
+GDB GAS binutils
 '''
 
 
