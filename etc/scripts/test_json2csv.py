@@ -300,6 +300,35 @@ class TestJson2CSV(FileBasedTesting):
         expected = json.load(codecs.open(expected, encoding='utf-8'), object_pairs_hook=OrderedDict)
         assert expected == result
 
+    def test_prefix_path(self):
+        test_json = self.get_test_loc('json2csv/minimal.json')
+        scan = json2csv.load_scan(test_json)
+        headers = OrderedDict([
+            ('info', []),
+            ('license', []),
+            ('copyright', []),
+            ('email', []),
+            ('url', []),
+            ('package', []),
+            ])
+        result = list(json2csv.flatten_scan(scan, headers, True))
+        expected_headers = OrderedDict([
+            ('info', ['Resource', 'scan_errors']),
+            ('license', ['license__key', 'license__score', 'license__short_name',
+                          'license__category', 'license__owner', 'license__homepage_url',
+                          'license__text_url', 'license__dejacode_url',
+                          'license__spdx_license_key', 'license__spdx_url',
+                          'start_line', 'end_line']),
+            ('copyright', ['copyright', 'copyright_holder']),
+            ('email', []), ('url', []),
+            ('package', [])
+        ])
+        assert expected_headers == headers
+
+        expected = self.get_test_loc('json2csv/minimal.json-prefix-path-expected')
+        expected = json.load(codecs.open(expected, encoding='utf-8'), object_pairs_hook=OrderedDict)
+        assert expected == result
+
 
 class TestJson2CSVWithLiveScans(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'testdata')
