@@ -1,3 +1,4 @@
 licenses:
     - bsd-simplified
 notes: cryptix
+minimum_coverage: 95

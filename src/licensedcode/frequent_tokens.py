@@ -5960,6 +5960,7 @@ beans
 ellis
 snake
 succeed
+emphasis
 leonard
 lending
 oops
@@ -9931,6 +9932,39 @@ Tmis
 XILINX
 exofs
 GDB GAS binutils
+qla2xxx 
+qla3xxx 
+qla4xxx
+qlge
+qlcnic
+QLOGIC
+reiserfs
+hans
+reiser
+alsa
+3c990img
+3Com
+Marvell International
+Ltd
+oss
+USS
+Lite
+Michael Morrow
+ Intel
+CRYPTOGAMS
+appro
+slram
+pt
+regs
+Cavium
+Atmel
+AtmelMACFW
+portals
+NetLogic
+exofs
+Keyspan USB Async Anchor FX1
+James Woods Spencer Thomas
+ Joseph Orost
 '''
 
 

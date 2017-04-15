@@ -1,0 +1,3 @@
+Note also that all of these calls are exported
+GPL-only, so they will not be available to non-GPL kernel modules.
+
