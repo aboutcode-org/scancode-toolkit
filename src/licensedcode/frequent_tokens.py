@@ -9965,6 +9965,12 @@ exofs
 Keyspan USB Async Anchor FX1
 James Woods Spencer Thomas
  Joseph Orost
+ aic94xx
+SCTP
+device structures
+vectors
+wireless lan
+ GnuPG
 '''
 
 
