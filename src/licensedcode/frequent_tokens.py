@@ -7314,6 +7314,7 @@ inbox
 focal
 bibliographic
 vagina
+ulink
 eden
 distant
 incl
@@ -9971,6 +9972,14 @@ device structures
 vectors
 wireless lan
  GnuPG
+Jean loup Gailly
+Mark Adler
+jloup
+gzip
+madler
+alumni
+caltech
+edu
 '''
 
 
