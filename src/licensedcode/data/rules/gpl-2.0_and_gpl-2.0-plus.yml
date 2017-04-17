@@ -1,0 +1,6 @@
+licenses:
+    - gpl-2.0
+    - gpl-2.0-plus
+license_choice: no
+license_expression: gpl-2.0 and gpl-2.0-plus
+minimum_coverage: 80
