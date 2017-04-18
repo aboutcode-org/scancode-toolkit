@@ -256,4 +256,4 @@ require_once(dirname(__FILE__) . "/includes/jsonrpc.inc");
  */
 class BitcoinClient extends jsonrpc_client {
 
-
+}

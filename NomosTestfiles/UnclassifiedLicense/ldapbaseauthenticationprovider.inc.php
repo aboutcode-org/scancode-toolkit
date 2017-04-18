@@ -35,7 +35,8 @@ class KTLDAPBaseAuthenticationProvider extends KTAuthenticationProvider {
     var $aMembershipAttributes = array ("memberOf");
 
     // {{{ KTLDAPBaseAuthenticationProvider
-    function KTLDAPBaseAuthenticationProvider() {
+    // function KTLDAPBaseAuthenticationProvider() {
+    public function __construct() {
         parent::KTAuthenticationProvider();
         $this->aConfigMap = array(
             'servername' => _kt('LDAP Server'),
@@ -578,7 +579,8 @@ class KTLDAPBaseAuthenticator extends Authenticator {
      */
     var $oLdap;
 
-    function KTLDAPBaseAuthenticator($oSource) {
+    // function KTLDAPBaseAuthenticator($oSource) {
+    public function __construct($oSource) {
         $this->oSource =& KTUtil::getObject('KTAuthenticationSource', $oSource);
         $aConfig = unserialize($this->oSource->getConfig());
         $this->sLdapServer = $aConfig['servername'];

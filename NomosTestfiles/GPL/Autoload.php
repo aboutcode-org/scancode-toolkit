@@ -27,4 +27,6 @@ $wgAutoloadClasses += array(
     'LU_JSONReader' => "$dir/reader/JSONReader.php",
     'LU_PHPReader' => "$dir/reader/PHPReader.php",
     'LU_Reader' => "$dir/reader/Reader.php",
-    'LU_ReaderFactory' => "$dir/reader/ReaderFactory.php",
+    'LU_ReaderFactory' => "$dir/reader/ReaderFactory.php"
+)
+?>
