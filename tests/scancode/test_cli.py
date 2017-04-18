@@ -33,7 +33,6 @@ from unittest.case import skipIf
 
 import click
 from click.testing import CliRunner
-import pytest
 
 from commoncode import fileutils
 from commoncode.testcase import FileDrivenTesting
@@ -294,7 +293,6 @@ def test_scan_works_with_multiple_processes(monkeypatch):
     assert sorted(res1['files']) == sorted(res3['files'])
 
 
-@pytest.mark.xfail
 def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     # this contains test files with a lot of 100+ small licenses mentions that should
@@ -312,7 +310,7 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
 
     result = runner.invoke(
         cli.scancode,
-        [ '--copyright', '--license', '--processes', '2', '--timeout', '1', '--strip-root', '--format', 'json', test_dir, result_file],
+        [ '--copyright', '--processes', '2', '--timeout', '0.01', '--strip-root', '--format', 'json', test_dir, result_file],
         catch_exceptions=True)
 
     assert result.exit_code == 0
