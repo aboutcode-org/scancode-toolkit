@@ -39,6 +39,11 @@ logger = logging.getLogger(__name__)
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 # logger.setLevel(logging.DEBUG)
 
+def test_download(url):
+    if ping_url(url) == True:
+        download_url(url, file_name=None, verify=True, timeout=10)
+    else:
+        print('Failed to start download for', url)
 
 def download_url(url, file_name=None, verify=True, timeout=10):
     """
@@ -73,20 +78,25 @@ def download_url(url, file_name=None, verify=True, timeout=10):
 
 def ping_url(url):
     """
-    Returns True is `url` is reachable.
+    Returns True if `url` is reachable.
     """
     import urllib2
-    # If there is no 200 HTTP status, then the URL may not be reachable.
+
+    http_responses_codes = [100, 101, 102]
+    http_success_codes = [201, 202, 203, 204, 205, 206, 207, 208, 226]
+    http_redirection_codes = [300, 301, 302, 303, 304, 305, 306, 307, 308]
     request = urllib2.Request(url)
     try:
         response = urllib2.urlopen(request)
-    except urllib2.HTTPError as e:  # HTTP error like 404, 501, etc.
-        msg = 'HTTP error response code is %d' % e.code
-        print (msg)
+    except urllib2.HTTPError as e:
         return False
-    except urllib2.URLError as e:  # Not an HTTP-specific error (e.g. connection refused)
-        msg = 'Connection refused or no connection available'
-        print (msg)
+    except urllib2.URLError as e:
         return False
     else:
-        return True
+        if response in (http_responses_codes + http_success_codes):
+            return False
+        if response in http_redirection_codes:
+            r = requests.head(url, allow_redirects=False)
+            return False
+        else:
+            return True
