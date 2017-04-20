@@ -410,6 +410,18 @@ class TestQueryWithMultipleRuns(IndexTesting):
         expected = ['redistributions', 'in', 'binary', 'form', 'must', 'redistributions', 'in']
         assert expected == result
 
+    def test_QueryRun_repr(self):
+        idx = index.LicenseIndex([Rule(_text='redistributions in binary form must redistributions in')])
+        qry = Query(query_string='redistributions in binary form must redistributions in', idx=idx)
+        qruns = qry.query_runs
+        qr = qruns[0]
+        # test
+        expected ='QueryRun(start=0, len=7, start_line=1, end_line=1)'
+        assert expected == repr(qr)
+
+        expected ='QueryRun(start=0, len=7, start_line=1, end_line=1, tokens="redistributions in binary form must redistributions in")'
+        assert expected == qr.__repr__(trace_repr=True)
+
     def test_query_runs_text_is_correct(self):
         test_rules = self.get_test_rules('query/full_text/idx',)
         idx = index.LicenseIndex(test_rules)
