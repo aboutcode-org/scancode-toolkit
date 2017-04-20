@@ -68,6 +68,7 @@ from scancode.interrupt import interruptible
 from scancode.interrupt import DEFAULT_TIMEOUT
 
 from scancode import utils
+from scancode.interrupt import TimeoutError
 
 echo_stderr = partial(click.secho, err=True)
 
@@ -225,7 +226,7 @@ def validate_formats(ctx, param, value):
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
 
 @click.option('--diag', is_flag=True, default=False, help='Include additional diagnostic information such as error messages or result details.')
-@click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=int, show_default=True, help='Stop scanning a file if scanning takes longer than a timeout in seconds.')
+@click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=float, show_default=True, help='Stop scanning a file if scanning takes longer than a timeout in seconds.')
 
 def scancode(ctx,
              input, output_file,
@@ -626,6 +627,8 @@ def scan_one(input_file, scanners, diag=False):
             if isinstance(scan_details, GeneratorType):
                 scan_details = list(scan_details)
             scan_result[scan_name] = scan_details
+        except TimeoutError:
+            raise
         except Exception as e:
             # never fail but instead add an error message and keep an empty scan:
             scan_result[scan_name] = []
@@ -633,6 +636,7 @@ def scan_one(input_file, scanners, diag=False):
             if diag:
                 messages.append('ERROR: ' + scan_name + ': ' + traceback.format_exc())
             scan_errors.extend(messages)
+
     # put errors last, after scans proper
     scan_result['scan_errors'] = scan_errors
     return scan_result
