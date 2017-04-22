@@ -1,0 +1,108 @@
+.. _copyright-license-patents:
+
+Copyright, License, and Patents
+===============================
+
+.. note::
+
+   This section deals with legal matters but does not provide legal advice.  We
+   are not lawyers --- please seek legal counsel from an attorney.
+
+This section addresses the issues of copyright, license and patents for the LLVM
+project.  The copyright for the code is held by the individual contributors of
+the code and the terms of its license to LLVM users and developers is the
+`University of Illinois/NCSA Open Source License
+<http://www.opensource.org/licenses/UoI-NCSA.php>`_ (with portions dual licensed
+under the `MIT License <http://www.opensource.org/licenses/mit-license.php>`_,
+see below).  As contributor to the LLVM project, you agree to allow any
+contributions to the project to licensed under these terms.
+
+Copyright
+---------
+
+The LLVM project does not require copyright assignments, which means that the
+copyright for the code in the project is held by its respective contributors who
+have each agreed to release their contributed code under the terms of the `LLVM
+License`_.
+
+An implication of this is that the LLVM license is unlikely to ever change:
+changing it would require tracking down all the contributors to LLVM and getting
+them to agree that a license change is acceptable for their contribution.  Since
+there are no plans to change the license, this is not a cause for concern.
+
+As a contributor to the project, this means that you (or your company) retain
+ownership of the code you contribute, that it cannot be used in a way that
+contradicts the license (which is a liberal BSD-style license), and that the
+license for your contributions won't change without your approval in the
+future.
+
+.. _LLVM License:
+
+License
+-------
+
+We intend to keep LLVM perpetually open source and to use a liberal open source
+license. **As a contributor to the project, you agree that any contributions be
+licensed under the terms of the corresponding subproject.** All of the code in
+LLVM is available under the `University of Illinois/NCSA Open Source License
+<http://www.opensource.org/licenses/UoI-NCSA.php>`_, which boils down to
+this:
+
+* You can freely distribute LLVM.
+* You must retain the copyright notice if you redistribute LLVM.
+* Binaries derived from LLVM must reproduce the copyright notice (e.g. in an
+  included readme file).
+* You can't use our names to promote your LLVM derived products.
+* There's no warranty on LLVM at all.
+
+We believe this fosters the widest adoption of LLVM because it **allows
+commercial products to be derived from LLVM** with few restrictions and without
+a requirement for making any derived works also open source (i.e.  LLVM's
+license is not a "copyleft" license like the GPL). We suggest that you read the
+`License <http://www.opensource.org/licenses/UoI-NCSA.php>`_ if further
+clarification is needed.
+
+In addition to the UIUC license, the runtime library components of LLVM
+(**compiler_rt, libc++, and libclc**) are also licensed under the `MIT License
+<http://www.opensource.org/licenses/mit-license.php>`_, which does not contain
+the binary redistribution clause.  As a user of these runtime libraries, it
+means that you can choose to use the code under either license (and thus don't
+need the binary redistribution clause), and as a contributor to the code that
+you agree that any contributions to these libraries be licensed under both
+licenses.  We feel that this is important for runtime libraries, because they
+are implicitly linked into applications and therefore should not subject those
+applications to the binary redistribution clause. This also means that it is ok
+to move code from (e.g.)  libc++ to the LLVM core without concern, but that code
+cannot be moved from the LLVM core to libc++ without the copyright owner's
+permission.
+
+Note that the LLVM Project does distribute llvm-gcc and dragonegg, **which are
+GPL.** This means that anything "linked" into llvm-gcc must itself be compatible
+with the GPL, and must be releasable under the terms of the GPL.  This implies
+that **any code linked into llvm-gcc and distributed to others may be subject to
+the viral aspects of the GPL** (for example, a proprietary code generator linked
+into llvm-gcc must be made available under the GPL).  This is not a problem for
+code already distributed under a more liberal license (like the UIUC license),
+and GPL-containing subprojects are kept in separate SVN repositories whose
+LICENSE.txt files specifically indicate that they contain GPL code.
+
+We have no plans to change the license of LLVM.  If you have questions or
+comments about the license, please contact the `LLVM Developer's Mailing
+List <mailto:llvmdev@cs.uiuc.edu>`_.
+
+Patents
+-------
+
+To the best of our knowledge, LLVM does not infringe on any patents (we have
+actually removed code from LLVM in the past that was found to infringe).  Having
+code in LLVM that infringes on patents would violate an important goal of the
+project by making it hard or impossible to reuse the code for arbitrary purposes
+(including commercial use).
+
+When contributing code, we expect contributors to notify us of any potential for
+patent-related trouble with their changes (including from third parties).  If
+you or your employer own the rights to a patent and would like to contribute
+code to LLVM that relies on it, we require that the copyright owner sign an
+agreement that allows any other user of LLVM to freely use your patent.  Please
+contact the `oversight group <mailto:llvm-oversight@cs.uiuc.edu>`_ for more
+details.
