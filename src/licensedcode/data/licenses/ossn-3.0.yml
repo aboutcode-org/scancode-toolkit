@@ -1,0 +1,11 @@
+key: ossn-3.0
+short_name: OSSN-3.0
+name: OPEN SOURCE SOCIAL NETWORK LICENSE v3.0
+
+category: Proprietary
+owner: OPEN SOURCE SOCIAL NETWORK
+homepage_url: http://www.opensource.org/licenses/osl-3.0.php
+text_urls:
+    - http://www.opensource-socialnetwork.org/licence/
+    - https://github.com/opensource-socialnetwork/opensource-socialnetwork/blob/v4.x/LICENSE.txt
+minimum_coverage: 90

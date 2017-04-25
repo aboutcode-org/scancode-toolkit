@@ -1,0 +1,41 @@
+OPEN SOURCE SOCIAL NETWORK LICENSE (OSSN LICENSE) v3.0
+Copyright (C) 2014-2017 OPEN SOURCE SOCIAL NETWORK. <https://www.opensource-socialnetwork.org/>
+
+The Open Source Social Network License does not permit incorporating your program/software into proprietary program/software.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this Program/Software and associated documentation files (the "Program/Software"), to deal in the Program/Software with restriction, including limitation the rights to use, copy, modify, distribute, or sell copies of the Program/Software.
+
+1. Definitions
+
+"Copyright" also means copyright-like laws that apply to other kinds of works, such as semiconductor masks.
+To "modify" a work means to copy from or adapt all or part of the work in a fashion requiring copyright permission, other than the making of an exact copy.  The resulting work is called a "modified version" of the earlier work or a work "based on" the earlier work.
+"You" refers to the individual/organization that uses the program/software.
+
+2. Modifying,  copy, distribution/selling of Program.
+
+2.1 You are allowed to modify the program/software subject to the following conditions:
+       2.1.0 You shall not remove the copyrights including powered by notice/links.
+       2.1.1 You shall not try to apply any techniques that hides copyright,  'powered by' notice/links.
+2.2 You are allowed to distribute/sell the copies of product keeping the section 2.1 in mind.
+
+3. Other 3rd party open source program/software
+
+Some of other open source program/software within this program/software released under different license like GPL, LGPL, MIT etc,  you shall agree to the respective license. We tried to put the license name in the comment section of respective file or sub-program/software.
+
+4. Violation and Termination of License.
+
+If your use of program/software violates the license,  the license and the use of program/software shall terminated immediately. 
+5. Revised Versions of this License.
+The Open Source Social Network Authors may publish revised and/or new versions of the Open Source Social Network License from time to time.  Such new versions will be similar to the present version, but may differ in detail to address new problems or concerns. Each version is given a distinguishing version number. 
+
+6. Disclaimer of Warranty.
+
+THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+7. Limitation of Liability.
+
+IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+8. Interpretation of Sections 6 and 7
+
+If the disclaimer of warranty and limitation of liability provided above cannot be given local legal effect according to their terms, reviewing courts shall apply local law that most closely approximates an absolute waiver of all civil liability in connection with the Program, unless a warranty or assumption of liability accompanies a copy of the Program in return for a fee.

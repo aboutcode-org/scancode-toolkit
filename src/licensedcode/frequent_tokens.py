@@ -9983,6 +9983,7 @@ edu
 net2big
 LLVM
 autoconf
+clang
 '''
 
 
