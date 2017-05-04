@@ -9841,6 +9841,9 @@ Wasabi
 bob mcwhirter bob werken com and James Strachan jstrachan
 apache org
 more information on the
+sax
+usm
+LIother
 SAXPath Project please
 Paragraphs Subparagraphs
 CompanyName
@@ -9951,7 +9954,6 @@ oss
 USS
 Lite
 Michael Morrow
- Intel
 CRYPTOGAMS
 appro
 slram
@@ -9986,6 +9988,10 @@ autoconf
 clang
 stages command optional
 od
+WebM
+Ahem
+Computer Systems and Communication Lab
+TaBE
 '''
 
 
