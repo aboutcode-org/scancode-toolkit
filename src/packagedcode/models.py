@@ -42,8 +42,8 @@ from schematics.types import BooleanType
 from schematics.types import DateTimeType
 from schematics.types import EmailType
 from schematics.types import HashType
+from schematics.types import LongType
 from schematics.types import MD5Type
-from schematics.types import NumberType
 from schematics.types import SHA1Type
 from schematics.types import StringType
 from schematics.types import URLType
@@ -525,11 +525,11 @@ class Package(BaseModel):
     description = StringType()
     # the type of payload in this package. one of PAYLOADS or none
     payload_type = StringType(choices=PAYLOADS)
-
+    # size of the package, use LongType instead of IntType is because IntType 2147483647 is the max size which means we cannot store more than 2GB files 
+    size = LongType()
     # origin date of the package
     origin_date = DateTimeType()
-    # size of the package, use  NumberType instead of IntType is because IntType 2147483647 is the max size which means we cannot store more than 2GB files 
-    size = NumberType()
+
 
     # list of Parties: authors, packager, maintainers, contributors, distributor, vendor, etc
     # FIXME: this would be simpler as a list where each Party has also a type
@@ -625,7 +625,7 @@ class Package(BaseModel):
             'description',
             'payload_type',
             'size',
-            'origin_date'
+            'origin_date',
 
             'authors',
             'maintainers',

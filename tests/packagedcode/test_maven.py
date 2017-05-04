@@ -404,6 +404,8 @@ class TestMavenPackage(BaseMavenCase):
             ('summary', u'Spring Beans'),
             ('description', u'Spring Beans'),
             ('payload_type', None),
+            ('size', None),
+            ('origin_date', None),
             ('authors', [OrderedDict([('type', u'person'), ('name', u'Juergen Hoeller'), ('email', u'jhoeller@pivotal.io'), ('url', None)])]),
             ('maintainers', []),
             ('contributors', []),
