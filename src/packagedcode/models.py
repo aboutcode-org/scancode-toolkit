@@ -39,15 +39,14 @@ from schematics.types import random_string
 
 from schematics.types import BaseType
 from schematics.types import BooleanType
-from schematics.types import EmailType
 from schematics.types import DateTimeType
+from schematics.types import EmailType
 from schematics.types import HashType
 from schematics.types import MD5Type
 from schematics.types import NumberType
 from schematics.types import SHA1Type
 from schematics.types import StringType
 from schematics.types import URLType
-
 
 from schematics.types.compound import DictType
 from schematics.types.compound import ListType
@@ -493,7 +492,6 @@ class Package(BaseModel):
     mimetypes = tuple()
     extensions = tuple()
 
-
     # list of known metafiles for a package type, to recognize a package
     metafiles = []
 
@@ -511,7 +509,6 @@ class Package(BaseModel):
 
     name = StringType(required=True)
     version = VersionType()
-
 
     # primary programming language for a package type
     # i.e. RubyGems are primarily ruby, etc
