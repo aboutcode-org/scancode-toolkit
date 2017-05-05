@@ -56,7 +56,7 @@ On Linux install Python 2.7 "devel" and a few extra packages:
 
 Next, download and extract the latest ScanCode release from::
 
-    https://github.com/nexB/scancode-toolkit/releases/latest
+    https://github.com/nexB/scancode-toolkit/releases/
 
 Open a terminal, extract the downloaded release archive, then `cd` to the extracted
 directory and run this command to display the command help. ScanCode will
