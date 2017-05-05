@@ -3664,15 +3664,6 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/chromium-base-i18n/icu_string_conversions.cc')
         expected = [
             u'Copyright (c) 2009 The Chromium Authors.',
-            u'Copyright (c) 1995-2006 International Business Machines Corporation',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
-    def test_ics_chromium_base_i18n_icu_string_conversions_cc_trail_other(self):
-        test_file = self.get_test_loc('ics/chromium-base-i18n/icu_string_conversions.cc')
-        expected = [
-            u'Copyright (c) 2009 The Chromium Authors.',
             u'Copyright (c) 1995-2006 International Business Machines Corporation and others',
         ]
         check_detection(expected, test_file)
@@ -3749,14 +3740,6 @@ class TestCopyright(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    def test_ics_chromium_base_third_party_icu_license(self):
-        test_file = self.get_test_loc('ics/chromium-base-third_party-icu/LICENSE')
-        expected = [
-            u'Copyright (c) 1995-2009 International Business Machines Corporation',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
     def test_ics_chromium_base_third_party_icu_license_trail_other(self):
         test_file = self.get_test_loc('ics/chromium-base-third_party-icu/LICENSE')
         expected = [
@@ -3953,12 +3936,12 @@ class TestCopyright(FileBasedTesting):
             u'Copyright (c) 2006 IBM Corporation',
             u'Copyright (c) 2000, 2006 Sun Microsystems, Inc.',
             u'copyright (c) 1991-1998, Thomas G. Lane.',
-            u'Copyright (c) 1995-2009 International Business Machines Corporation',
+            u'Copyright (c) 1995-2009 International Business Machines Corporation and others',
             u'(c) 1999 TaBE Project.',
             u'Copyright (c) 1999 Pai-Hsiang Hsiao.',
-            u'Copyright (c) 1999 Computer',
+            u'Copyright (c) 1999 Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica.',
             u'Copyright 1996 Chih-Hao Tsai Beckman Institute, University of Illinois',
-            u'Copyright 2000, 2001, 2002, 2003 Nara',
+            u'Copyright 2000, 2001, 2002, 2003 Nara Institute of Science and Technology.',
             u'Copyright (c) 2002 the Initial Developer.',
             u'Copyright (c) 2006-2008 Jason Evans',
             u'COPYRIGHT HOLDER(S) AS',
@@ -4006,7 +3989,7 @@ class TestCopyright(FileBasedTesting):
             u'Copyright 2002-2008 Xiph.org',
             u'Copyright 2002-2008 Jean-Marc Valin',
             u'Copyright 2005-2007 Analog Devices Inc.',
-            u'Copyright 2005-2008 Commonwealth',
+            u'Copyright 2005-2008 Commonwealth Scientific and Industrial Research Organisation (CSIRO)',
             u'Copyright 1993, 2002, 2006 David Rowe',
             u'Copyright 2003 EpicGames',
             u'Copyright 1992-1994 Jutta Degener, Carsten Bormann',
@@ -4024,7 +4007,6 @@ class TestCopyright(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    @expectedFailure
     def test_ics_chromium_chrome_browser_resources_about_credits_corrected(self):
         test_file = self.get_test_loc('ics/chromium-chrome-browser-resources/about_credits.html')
         expected = [
@@ -4047,7 +4029,7 @@ class TestCopyright(FileBasedTesting):
             u'copyrighted by the Free Software Foundation',
             u'Copyright (c) 2002-2010 The ANGLE Project',
             u'Copyright (c) 2009 Apple Inc.',
-            u'Copyright (c) 1999-2007 Apple Inc.',
+            u'Portions Copyright (c) 1999-2007 Apple Inc.',
             u'copyright (c) 1996-2010 Julian R Seward.',
             u'Copyright (c) 2010 The Chromium Authors.',
             u'Copyright (c) 1998-1999 Netscape Communications Corporation.',
@@ -4065,7 +4047,7 @@ class TestCopyright(FileBasedTesting):
             u'Copyright (c) 1999 Pai-Hsiang Hsiao.',
             u'Copyright (c) 1999 Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica.',
             u'Copyright 1996 Chih-Hao Tsai Beckman Institute, University of Illinois',
-            u'Copyright 2000, 2001, 2002, 2003 Nara Institute of Science and Technology. ',
+            u'Copyright 2000, 2001, 2002, 2003 Nara Institute of Science and Technology.',
             u'Copyright (c) 2002 the Initial Developer.',
             u'Copyright (c) 2006-2008 Jason Evans',
             u'COPYRIGHT HOLDER(S) AS',
@@ -4092,7 +4074,7 @@ class TestCopyright(FileBasedTesting):
             u'Copyright (c) 2005, 2006 Nick Galbreath',
             u'Copyright 2008 MolokoCacao',
             u'Copyright (c) 2004-2009 Sergey Lyubka',
-            u'Copyright (c) 2009 Gilbert Wellisch',
+            u'Portions Copyright (c) 2009 Gilbert Wellisch',
             u'Copyright (c) 2002 the Initial Developer.',
             u'Copyright (c) 1998 the Initial Developer.',
             u'Copyright (c) 2004-2009 by Mulle Kybernetik.',
@@ -4125,7 +4107,7 @@ class TestCopyright(FileBasedTesting):
             u'Copyright (c) 2005, Google Inc.',
             u'Copyright (c) 2007 Free Software Foundation, Inc.',
             u'Copyright (c) 1998-1999 Netscape Communications Corporation.',
-            u'Copyright (c) 2001-2010 Peter Johnson',
+            u'Copyright (c) 2001-2010 Peter Johnson and other Yasm', #developers
             u'Copyright (c) 1995-2010 Jean-loup Gailly and Mark Adler',
             u'Copyright (c) 1994-2006 Sun Microsystems Inc.',
         ]
@@ -4582,7 +4564,7 @@ class TestCopyright(FileBasedTesting):
     def test_ics_chromium_net_tools_spdyshark_plugin_rc_in(self):
         test_file = self.get_test_loc('ics/chromium-net-tools-spdyshark/plugin.rc.in')
         expected = [
-            u'Copyright (c) 1998 Gerald Combs <gerald@wireshark.org>, Gilbert Ramirez <gram@alumni.rice.edu>',
+            u'Copyright (c) 1998 Gerald Combs <gerald@wireshark.org>, Gilbert Ramirez <gram@alumni.rice.edu> and others',
         ]
         check_detection(expected, test_file)
 
@@ -5616,7 +5598,7 @@ class TestCopyright(FileBasedTesting):
         test_file = self.get_test_loc('ics/dbus-bus/main.c')
         expected = [
             u'Copyright (c) 2003 Red Hat, Inc.',
-            u'Copyright (c) 2002, 2003 Red Hat, Inc., CodeFactory AB',
+            u'Copyright (c) 2002, 2003 Red Hat, Inc., CodeFactory AB, and others',
         ]
         check_detection(expected, test_file)
 
@@ -18450,16 +18432,6 @@ class TestCopyright(FileBasedTesting):
     def test_ics_tcpdump_dccp_h(self):
         test_file = self.get_test_loc('ics/tcpdump/dccp.h')
         expected = [
-            u'Copyright (c) Arnaldo',
-            u'Copyright (c) Ian McDonald 2005 <iam4@cs.waikato.ac.nz>',
-            u'Copyright (c) Yoshifumi Nishida 2005',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
-    def test_ics_tcpdump_dccp_h_trail_name(self):
-        test_file = self.get_test_loc('ics/tcpdump/dccp.h')
-        expected = [
             u'Copyright (c) Arnaldo Carvalho de Melo 2004',
             u'Copyright (c) Ian McDonald 2005 <iam4@cs.waikato.ac.nz>',
             u'Copyright (c) Yoshifumi Nishida 2005',
@@ -18689,16 +18661,6 @@ class TestCopyright(FileBasedTesting):
         check_detection(expected, test_file)
 
     def test_ics_tcpdump_print_dccp_c(self):
-        test_file = self.get_test_loc('ics/tcpdump/print-dccp.c')
-        expected = [
-            u'Copyright (c) Arnaldo',
-            u'Copyright (c) Ian McDonald 2005',
-            u'Copyright (c) Yoshifumi Nishida 2005',
-        ]
-        check_detection(expected, test_file)
-
-    @expectedFailure
-    def test_ics_tcpdump_print_dccp_c_trail_name(self):
         test_file = self.get_test_loc('ics/tcpdump/print-dccp.c')
         expected = [
             u'Copyright (c) Arnaldo Carvalho de Melo 2004',

@@ -1641,7 +1641,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright 2002-2007 Xiph.org',
             u'Copyright 2002-2007 Jean-Marc Valin',
             u'Copyright 2005-2007 Analog Devices Inc.',
-            u'Copyright 2005-2007 Commonwealth',
+            u'Copyright 2005-2007 Commonwealth Scientific and Industrial Research Organisation (CSIRO)',
             u'Copyright 1993, 2002, 2006 David Rowe',
             u'Copyright 2003 EpicGames',
             u'Copyright 1992-1994 Jutta Degener , Carsten Bormann',
@@ -2295,7 +2295,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_license_text_mit_icu(self):
         test_file = self.get_test_loc('copyrights/copyright_license_text_mit_icu-MIT_ICU')
         expected = [
-            u'Copyright (c) 1995-2006 International Business Machines Corporation',
+            u'Copyright (c) 1995-2006 International Business Machines Corporation and others',
         ]
         check_detection(expected, test_file)
 
@@ -3107,7 +3107,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) 2001 ALTLinux, Moscow',
             u'Copyright (c) 2006, 2007, 2008 Laszlo Nemeth',
             u'Copyright (c) 2003-2006 The International Color Consortiu',
-            u'Copyright (c) 1995-2008 International Business Machines Corporation',
+            u'Copyright (c) 1995-2008 International Business Machines Corporation and others',
             u'Copyright 2000-2005, by Object Refinery Limited',
             u'Copyright 2005-2007, by Pentaho Corporation',
             u'Copyright 1994-2002 World Wide Web Consortium',
@@ -4027,3 +4027,34 @@ class TestCopyrightDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights/access_strings.txt')
         expected = []
         check_detection(expected, test_file)
+
+    def test_copyright_chromium_authors(self):
+        test_lines = [u'© 2017 The Chromium Authors']
+        expected = [u'(c) 2017 The Chromium Authors']
+        check_detection(expected, test_lines)
+
+    def test_copyright_rim(self):
+        test_lines = [u'Copyright (C) Research In Motion Limited 2010. All rights reserved.']
+        expected = [u'Copyright (c) Research In Motion Limited 2010.']
+        check_detection(expected, test_lines)
+
+    def test_copyright_sinica(self):
+        test_lines = [u'''
+            #  Copyright (c) 1999 Computer Systems and Communication Lab,
+            #                    Institute of Information Science, Academia Sinica.
+
+            some junk
+        ''']
+        expected = [u'Copyright (c) 1999 Computer Systems']
+        check_detection(expected, test_lines)
+
+    @expectedFailure
+    def test_copyright_sinica_correct(self):
+        test_lines = [u'''
+            #  Copyright (c) 1999 Computer Systems and Communication Lab,
+            #                    Institute of Information Science, Academia Sinica.
+
+            some junk
+        ''']
+        expected = [u'Copyright (c) 1999 Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica.']
+        check_detection(expected, test_lines)

@@ -1,4 +1,3 @@
-#
 # Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
@@ -123,7 +122,7 @@ _PUNCT = (r'('
         '\W'  # not a word (word includes underscore)
         '\D'  # not a digit
         '\_'  # underscore
-        'i'   # oddity
+        'i'  # oddity
         '\?'
     ']'
     '|'
@@ -293,20 +292,20 @@ patterns = [
     # multi years
     # dual years with second part abbreviated
     # 1994/95. or 2002-04 or 1991-9
-    (r'^' + _PUNCT + _YEAR_OR_YEAR_YEAR_WITH_PUNCT + '+'+
-        '('+
+    (r'^' + _PUNCT + _YEAR_OR_YEAR_YEAR_WITH_PUNCT + '+' +
+        '(' +
             _YEAR_OR_YEAR_YEAR_WITH_PUNCT +
-        '|' + 
-            _YEAR_THEN_YEAR_SHORT + 
+        '|' +
+            _YEAR_THEN_YEAR_SHORT +
         ')*' + '$', 'YR'),
 
-    (r'^' + _PUNCT + _YEAR_OR_YEAR_YEAR_WITH_PUNCT + '+'+
-        '('+
+    (r'^' + _PUNCT + _YEAR_OR_YEAR_YEAR_WITH_PUNCT + '+' +
+        '(' +
             _YEAR_OR_YEAR_YEAR_WITH_PUNCT +
-        '|' + 
-            _YEAR_THEN_YEAR_SHORT + 
-        '|' + 
-            _YEAR_SHORT_PUNCT + 
+        '|' +
+            _YEAR_THEN_YEAR_SHORT +
+        '|' +
+            _YEAR_SHORT_PUNCT +
         ')*' + '$', 'YR'),
 
     # cardinal numbers
@@ -484,6 +483,16 @@ grammar = """
 # John Doe and Myriam Doe
     NAME: {<NAME|NNP> <CC> <NNP|NAME>}
 
+# International Business Machines Corporation and others
+    COMPANY: {<COMPANY> <CC> <OTH>}
+    COMPANY: {<NAME3> <CC> <OTH>}
+
+# Nara Institute of Science and Technology.
+    COMPANY: {<NNP> <COMPANY> <CC> <COMP>}
+
+# Commonwealth Scientific and Industrial Research Organisation (CSIRO)
+    COMPANY: {<NNP> <COMPANY> <NAME>}
+
 
 # Various forms of copyright statements
     COPYRIGHT: {<COPY> <NAME> <COPY> <YR-RANGE>}
@@ -532,6 +541,16 @@ grammar = """
     # Copyright 2007-2010 the original author or authors.
     # Copyright (c) 2007-2010 the original author or authors.
     COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <NN> <JUNK> <AUTH> <NN> <AUTH>}
+
+    #(c) 2017 The Chromium Authors
+    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <NN> <NNP> <NN>}
+
+    # Copyright (C) Research In Motion Limited 2010. All rights reserved.
+    COPYRIGHT2: {<COPYRIGHT> <COMPANY> <YR-RANGE>}
+
+    #  Copyright (c) 1999 Computer Systems and Communication Lab,
+    #                    Institute of Information Science, Academia Sinica.
+    COPYRIGHT2: {<COPYRIGHT> <COMPANY> <COMPANY>}
 
     COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <BY> <NN> <NN> <NAME>}
     COPYRIGHT2: {<COPY> <YR-RANGE> <BY> <NN> <NN> <NAME>}
@@ -600,7 +619,7 @@ grammar = """
 
     COPYRIGHT: {<AUTHOR> <COPYRIGHT2>}
     COPYRIGHT: {<AUTHOR> <YR-RANGE>}
-    
+
     COPYRIGHT: {<COPYRIGHT> <NAME3>}
 
 """
