@@ -3,25 +3,91 @@ language: python
 python:
   - 2.7.13
 
+# Use a matrix of TEST_SUITE variables to distribute tests to several machines
+# Use a global PYTEST variable to run all of the tests in a uniform fashion
+# The --cov-report=term option displays coverage in CI logs
+# The --cov-report=xml option is important for codecov.io
+env:
+  global:
+    - PYTEST="bin/py.test -n 2 -vvs --cov=src --cov-report=term --cov-report=xml"
+  matrix:
+    - TEST_SUITE="$PYTEST --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
+    - TEST_SUITE="$PYTEST tests/scancode"
+    - TEST_SUITE="$PYTEST tests/extractcode"
+    - TEST_SUITE="$PYTEST tests/licensedcode"
+    - TEST_SUITE="$PYTEST tests/cluecode"
+    - TEST_SUITE="$PYTEST tests/packagedcode"
+    - TEST_SUITE="./etc/release/release.sh"
+
+# Travis does not offer OSX with arbitrary python versions (like 2.7.13 above)
+# So, you can not simply have the following section in your build matrix:
+# os:
+#   - linux
+#   - osx
+# Instead, you have to include OSX entries into the build matrix manually.
+# In particular, this means specifying the environment variables again.
+
+# The following was adapted from here:
+#   https://docs.travis-ci.com/user/multi-os/
+# Set TEST_SUITE in `env:` so that the `script:` section below works
+# Set `language: generic` to clear `language: python` from above
+# Set `python:` (to empty) to clear it from the travis-ci web interface
+# Set `osx_image: xcode7.3` to pin OSX and Python versions, see here:
+#   https://docs.travis-ci.com/user/osx-ci-environment/
 matrix:
   include:
     - os: osx
+      env: TEST_SUITE="$PYTEST --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
+      language: generic
+      python:
+      osx_image: xcode7.3
+    - os: osx
+      env: TEST_SUITE="$PYTEST tests/scancode"
+      language: generic
+      python:
+      osx_image: xcode7.3
+    - os: osx
+      env: TEST_SUITE="$PYTEST tests/extractcode"
+      language: generic
+      python:
+      osx_image: xcode7.3
+    - os: osx
+      env: TEST_SUITE="$PYTEST tests/licensedcode"
+      language: generic
+      python:
+      osx_image: xcode7.3
+    - os: osx
+      env: TEST_SUITE="$PYTEST tests/cluecode"
+      language: generic
+      python:
+      osx_image: xcode7.3
+    - os: osx
+      env: TEST_SUITE="$PYTEST tests/packagedcode"
+      language: generic
+      python:
+      osx_image: xcode7.3
+    - os: osx
+      env: TEST_SUITE="./etc/release/release.sh"
       language: generic
       python:
       osx_image: xcode7.3
 
+# TODO: ship pytest-cov and (both?) coveralls and codecov with scancode-toolkit
 install:
   - ./configure
-  - ./bin/pip install pytest-cov coveralls
+  - ./bin/pip install pytest-cov coveralls codecov
 
 script:
-  # If debugging, use a subset of tests to reduce wait:
-  # - ./bin/py.test -n 2 -vvs --cov=src/scancode tests/scancode
-  - ./bin/py.test -n 2 -s --cov=src
+  # If debugging, use a subset of tests to wait less:
+  # - ./bin/py.test -n 2 -vvs --cov=src tests/scancode
+  # - echo $TEST_SUITE
+  - $TEST_SUITE
 
+# Pay attention to both calls below. They will succeed even if there
+# is no coverage information or connection to reporting website fails.
 after_success:
   - ./bin/coveralls
-  - ./etc/release/release.sh
+  - ./bin/codecov
 
 notifications:
   irc:
