@@ -114,8 +114,10 @@ def flatten_scan(scan, headers):
             if not path.endswith('/'):
                 path = path + '/'
 
-        # alway create a root directory
-        path = '/code' + path
+        # create a root directory if legacy compatibility is required
+        bool legacy_compatibility = False;
+        if legacy_compatibility:
+            path = '/code' + path
 
         errors = scanned_file.pop('scan_errors', [])
 
