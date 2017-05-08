@@ -49,7 +49,7 @@ def load_csv(location):
         return fields, values
 
 
-def check_csvs(result_file, expected_file, ignore_keys=('date', 'file_type', 'mime_type',), regen=False):
+def check_csvs(result_file, expected_file, ignore_keys=('date', 'file_type', 'mime_type', 'package__size', 'package__origin_date'), regen=False):
     """
     Load and compare two CSVs.
     `ignore_keys` is a tuple of keys that will be ignored in the comparisons.
