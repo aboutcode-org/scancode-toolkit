@@ -49,7 +49,7 @@ def load_csv(location):
         return fields, values
 
 
-def check_csvs(result_file, expected_file, ignore_keys=('date', 'file_type', 'mime_type', 'package__size', 'package__origin_date'), regen=False):
+def check_csvs(result_file, expected_file, ignore_keys=('date', 'file_type', 'mime_type'), regen=False):
     """
     Load and compare two CSVs.
     `ignore_keys` is a tuple of keys that will be ignored in the comparisons.
@@ -299,6 +299,7 @@ class TestJson2CSV(FileBasedTesting):
         expected = self.get_test_loc('json2csv/package_license_value_null.json-expected')
         expected = json.load(codecs.open(expected, encoding='utf-8'), object_pairs_hook=OrderedDict)
         assert expected == result
+
 
 class TestJson2CSVWithLiveScans(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'testdata')
