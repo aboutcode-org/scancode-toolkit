@@ -398,6 +398,15 @@ def test_scan_quiet_to_stdout_only_echoes_json_results(monkeypatch):
     assert result1_output == result2.output
 
 
+def test_scan_verbose_does_not_echo_ansi_escapes(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.extract_test_tar('info/basic.tgz')
+    runner = CliRunner()
+    result = runner.invoke(cli.scancode, ['--verbose', '--info', test_dir], catch_exceptions=True)
+    assert result.exit_code == 0
+    assert '[?' not in result.output
+
+
 def test_scan_can_return_matched_license_text(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_file = test_env.get_test_loc('license_text/test.txt')

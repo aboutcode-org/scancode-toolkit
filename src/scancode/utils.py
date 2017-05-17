@@ -116,6 +116,9 @@ class ProgressLogger(ProgressBar):
         if item_info:
             return item_info
 
+    def render_finish(self):
+        self.file.flush()
+
 
 def progressmanager(iterable=None, length=None, label=None, show_eta=True,
                     show_percent=None, show_pos=False, item_show_func=None,
