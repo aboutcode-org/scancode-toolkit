@@ -403,7 +403,7 @@ def scan(input_path,
                 if quiet:
                     return ''
                 if item:
-                    _scan_success, _scanned_path = item
+                    _scan_success, _scanned_path, _scan_result = item
                     _progress_line = verbose and _scanned_path or fixed_width_file_name(_scanned_path)
                     return style('Scanned: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
 
@@ -414,10 +414,10 @@ def scan(input_path,
                                        file=sys.stderr) as scanned:
                 while True:
                     try:
-                        result = scanned.next()
-                        scan_success, scanned_rel_path = result
+                        scan_success, scanned_rel_path, scan_result = scanned.next()
                         if not scan_success:
-                            scanning_errors.append(scanned_rel_path)
+                            reason = ', '.join(scan_result['scan_errors'])
+                            scanning_errors.append(scanned_rel_path + ' (' + reason + ')')
                         files_count += 1
                     except StopIteration:
                         break
@@ -535,6 +535,7 @@ def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT):
     success = True
     scans_cache = scans_cache_class()
     is_cached = scans_cache.put_info(rel_path, infos)
+    scan_result = {}
 
     # note: "flag and function" expressions return the function if flag is True
     # note: the order of the scans matters to show things in logical order
@@ -561,7 +562,7 @@ def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT):
             if scan_result.get('scan_errors'):
                 success = False
 
-    return success, rel_path
+    return success, rel_path, scan_result
 
 
 def resource_paths(base_path):
