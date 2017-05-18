@@ -212,6 +212,10 @@ def validate_formats(ctx, param, value):
               help='Strip the root directory segment of all paths. The default is to always '
                    'include the last directory segment of the scanned path such that all paths have a common root directory.')
 
+@click.option('--full-root', is_flag=True, default=False,
+              help='Print the full path. The default is to always '
+                   'include the last directory segment of the scanned path such that all paths have a common root directory.')
+
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
               help=('Set <output_file> format <style> to one of the standard formats: %s '
                     'or the path to a custom template' % ' or '.join(formats)),
@@ -232,7 +236,7 @@ def scancode(ctx,
              input, output_file,
              copyright, license, package,
              email, url, info,
-             license_score, license_text, only_findings, strip_root,
+             license_score, license_text, only_findings, strip_root, full_root,
              format, verbose, quiet, processes,
              diag, timeout, *args, **kwargs):
     """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
@@ -261,6 +265,7 @@ def scancode(ctx,
         ('--license-text', license_text),
         ('--only-findings', only_findings),
         ('--strip-root', strip_root),
+        ('--full-root', full_root),
         ('--format', format),
         ('--diag', diag),
     ])
@@ -312,7 +317,8 @@ def scancode(ctx,
                                     timeout=timeout,
                                     diag=diag,
                                     scans_cache_class=scans_cache_class,
-                                    strip_root=strip_root)
+                                    strip_root=strip_root,
+                                    full_root=full_root)
         if not quiet:
             echo_stderr('Saving results.', fg='green')
 
@@ -335,7 +341,8 @@ def scan(input_path,
          processes=1, timeout=DEFAULT_TIMEOUT,
          diag=False,
          scans_cache_class=None,
-         strip_root=False):
+         strip_root=False,
+         full_root=False):
     """
     Return a tuple of (files_count, scan_results) where
     scan_results is an iterable. Run each requested scan proper: each individual file
@@ -461,7 +468,7 @@ def scan(input_path,
 
     # finally return an iterator on cached results
     cached_scan = scans_cache_class()
-    root_dir = _get_root_dir(input_path, strip_root)
+    root_dir = _get_root_dir(input_path, strip_root, full_root)
     return files_count, cached_scan.iterate(scans, root_dir)
 
 
@@ -492,7 +499,7 @@ def fixed_width_file_name(path, max_length=25):
     return "{prefix}{ellipsis}{suffix}{extension}".format(**locals())
 
 
-def _get_root_dir(input_path, strip_root=False):
+def _get_root_dir(input_path, strip_root=False, full_root=False):
     """
     Return a root dir name or None.
     """
@@ -503,8 +510,11 @@ def _get_root_dir(input_path, strip_root=False):
         if filetype.is_dir(_scanned_path):
             root_dir = _scanned_path
         else:
-            root_dir = fileutils.parent_directory(_scanned_path)
-        root_dir = fileutils.file_name(root_dir)
+            if full_root:
+                root_dir = _scanned_path
+            else:
+                root_dir = fileutils.parent_directory(_scanned_path)
+                root_dir = fileutils.file_name(root_dir)
 
     return root_dir
 
