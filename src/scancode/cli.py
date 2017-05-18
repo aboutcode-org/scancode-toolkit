@@ -177,6 +177,9 @@ Try 'scancode --help' for help on options and arguments.'''
 formats = ('json', 'json-pp', 'html', 'html-app', 'spdx-tv', 'spdx-rdf')
 
 def validate_formats(ctx, param, value):
+    """
+    Validate formats and template files. Raise a BadParameter on errors.
+    """
     value_lower = value.lower()
     if value_lower in formats:
         return value_lower
@@ -184,6 +187,19 @@ def validate_formats(ctx, param, value):
     if not os.path.isfile(value):
         raise click.BadParameter('Invalid template file: "%(value)s" does not exist or is not readable.' % locals())
     return value
+
+
+def validate_exclusive(ctx, exclusive_options):
+    """
+    Validate mutually exclusive options.
+    Raise a UsageError with on errors.
+    """
+    ctx_params = ctx.params
+    selected_options = [ctx_params[eop] for eop in exclusive_options if ctx_params[eop]]
+    if len(selected_options) > 1:
+        msg = ' and '.join('`' + eo.replace('_', '-') + '`' for eo in exclusive_options)
+        msg += ' are mutually exclusion options. You can use only one of them.'
+        raise click.UsageError(msg)
 
 
 @click.command(name='scancode', epilog=epilog_text, cls=ScanCommand)
@@ -210,11 +226,12 @@ def validate_formats(ctx, param, value):
               help='Only return files or directories with findings for the requested scans. Files without findings are omitted.')
 @click.option('--strip-root', is_flag=True, default=False,
               help='Strip the root directory segment of all paths. The default is to always '
-                   'include the last directory segment of the scanned path such that all paths have a common root directory.')
-
+                   'include the last directory segment of the scanned path such that all paths have a common root directory. '
+                   'This cannot be combined with `--full-root` option.')
 @click.option('--full-root', is_flag=True, default=False,
-              help='Print the full path. The default is to always '
-                   'include the last directory segment of the scanned path such that all paths have a common root directory.')
+              help='Report full, absolute paths. The default is to always '
+                   'include the last directory segment of the scanned path such that all paths have a common root directory. '
+                   'This cannot be combined with the `--strip-root` option.')
 
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
               help=('Set <output_file> format <style> to one of the standard formats: %s '
@@ -244,6 +261,8 @@ def scancode(ctx,
     The scan results are printed to stdout if <output_file> is not provided.
     Error and progress is printed to stderr.
     """
+
+    validate_exclusive(ctx, ['strip_root', 'full_root'])
 
     possible_scans = OrderedDict([
         ('infos', info),
@@ -504,19 +523,17 @@ def _get_root_dir(input_path, strip_root=False, full_root=False):
     Return a root dir name or None.
     """
     if strip_root:
-        root_dir = None
-    else:
-        _scanned_path = os.path.abspath(os.path.normpath(os.path.expanduser(input_path)))
-        if filetype.is_dir(_scanned_path):
-            root_dir = _scanned_path
-        else:
-            if full_root:
-                root_dir = _scanned_path
-            else:
-                root_dir = fileutils.parent_directory(_scanned_path)
-                root_dir = fileutils.file_name(root_dir)
+        return
 
-    return root_dir
+    scanned_path = os.path.abspath(os.path.normpath(os.path.expanduser(input_path)))
+    if full_root:
+        return scanned_path
+
+    if filetype.is_dir(scanned_path):
+        root_dir = scanned_path
+    else:
+        root_dir = fileutils.parent_directory(scanned_path)
+    return fileutils.file_name(root_dir)
 
 
 def _resource_logger(logfile_fd, resources):

@@ -183,6 +183,16 @@ def test_scan_info_does_collect_infos_with_root(monkeypatch):
     check_scan(test_env.get_test_loc('info/basic.rooted.expected.json'), result_file, regen=False)
 
 
+def test_scan_info_returns_full_root(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.extract_test_tar('info/basic.tgz')
+    runner = CliRunner()
+    result = runner.invoke(cli.scancode, ['--info', '--full-root', test_dir], catch_exceptions=True)
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    assert test_dir in result.output
+
+
 def test_scan_info_license_copyrights(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.extract_test_tar('info/basic.tgz')
