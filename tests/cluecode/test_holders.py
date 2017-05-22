@@ -63,36 +63,34 @@ class TestHolders(FileBasedTesting):
         expected = [
             u'AudioCodes, DSP Group',
             u'France Telecom, Universite de Sherbrooke.',
-            u'France Telecom',
-            u'Universite de Sherbrooke.',
         ]
         check_detection(expected, test_file, what='holders')
 
     def test_holder_basic(self):
         test_file = self.get_test_loc('holders/holder_basic-copy_c.c')
         expected = [
-            'Markus Franz Xaver Johannes Oberhumer',
-            'Markus Franz Xaver Johannes Oberhumer',
-            'Markus Franz Xaver Johannes Oberhumer',
-            'Markus Franz Xaver Johannes Oberhumer',
-            'Markus Franz Xaver Johannes Oberhumer',
-            'Markus Franz Xaver Johannes Oberhumer',
-            'Markus Franz Xaver Johannes Oberhumer',
-            'Markus Franz Xaver Johannes Oberhumer',
-            'Markus Franz Xaver Johannes Oberhumer',
-            'Markus Franz Xaver Johannes Oberhumer',
-            'Markus Franz Xaver Johannes Oberhumer',
-            'Markus Franz Xaver Johannes Oberhumer',
-            'Markus Franz Xaver Johannes Oberhumer',
-            'Markus Franz Xaver Johannes Oberhumer',
-        ]
+            u'Markus Franz Xaver Johannes Oberhumer',
+            u'Markus Franz Xaver Johannes Oberhumer',
+            u'Markus Franz Xaver Johannes Oberhumer',
+            u'Markus Franz Xaver Johannes Oberhumer',
+            u'Markus Franz Xaver Johannes Oberhumer',
+            u'Markus Franz Xaver Johannes Oberhumer',
+            u'Markus Franz Xaver Johannes Oberhumer',
+            u'Markus Franz Xaver Johannes Oberhumer',
+            u'Markus Franz Xaver Johannes Oberhumer',
+            u'Markus Franz Xaver Johannes Oberhumer',
+            u'Markus Franz Xaver Johannes Oberhumer',
+            u'Markus Franz Xaver Johannes Oberhumer',
+            u'Markus Franz Xaver Johannes Oberhumer',
+            u'Markus Franz Xaver Johannes Oberhumer',
+            u'http://www.oberhumer.com'
+         ]
         check_detection(expected, test_file, what='holders')
 
     def test_holder_complex(self):
         test_file = self.get_test_loc('holders/holder_complex-strtol_c.c')
         expected = [
-            'Regents of the University of California.',
-            'University of California.',
+            u'The Regents of the University of California.',
         ]
         check_detection(expected, test_file, what='holders')
 
@@ -170,8 +168,8 @@ class TestHolders(FileBasedTesting):
     def test_holder_in_license(self):
         test_file = self.get_test_loc('holders/holder_in_license-COPYING_gpl.gpl')
         expected = [
-            'Free Software Foundation, Inc.',
-            'Free Software Foundation',
+            u'Free Software Foundation, Inc.',
+            u'the Free Software Foundation',
         ]
         check_detection(expected, test_file, what='holders')
 
@@ -266,12 +264,8 @@ class TestHolders(FileBasedTesting):
     def test_holder_somefile_cpp(self):
         test_file = self.get_test_loc('holders/holder_somefile_cpp-somefile_cpp.cpp')
         expected = [
-            u'Private Company',
-            u'(PC) Property of Private Company',
-            u'(PC) Property',
-            u'Private Company',
-            u'Private Company'
-        ]
+            u'Private Company (PC) Property of Private Company',
+            u'Private Company'        ]
         check_detection(expected, test_file, what='holders')
 
     def test_holder_stacktrace_cpp(self):
@@ -284,8 +278,7 @@ class TestHolders(FileBasedTesting):
     def test_holder_super_c(self):
         test_file = self.get_test_loc('holders/holder_super_c-c.c')
         expected = [
-            u'Super Technologies Corporation',
-            u'Cedar Rapids, Iowa',
+            u'Super Technologies Corporation, Cedar Rapids, Iowa, U.S.A.',
             u'Benjamin Herrenschmuidt',
             u'IBM Corp.',
         ]
