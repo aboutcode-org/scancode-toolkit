@@ -114,9 +114,6 @@ def flatten_scan(scan, headers):
             if not path.endswith('/'):
                 path = path + '/'
 
-        # alway create a root directory
-        path = '/code' + path
-
         errors = scanned_file.pop('scan_errors', [])
 
         file_info = OrderedDict()
@@ -245,8 +242,6 @@ def cli(json_input, csv_output):
     Convert a ScanCode JSON scan file to a nexb-toolkit-like CSV.
 
     JSON_INPUT is either a ScanCode json format scan or the data.json file from a ScanCode html-app format scan.
-
-    Paths will be prefixed with '/code/' to provide a common base directory for scanned resources.
     """
     json_input = os.path.abspath(os.path.expanduser(json_input))
     json_scan_to_csv(json_input, csv_output)
