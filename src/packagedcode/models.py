@@ -40,11 +40,14 @@ from schematics.types import random_string
 from schematics.types import BaseType
 from schematics.types import BooleanType
 from schematics.types import EmailType
+from schematics.types import DateTimeType
 from schematics.types import HashType
+from schematics.types import LongType
 from schematics.types import MD5Type
 from schematics.types import SHA1Type
 from schematics.types import StringType
 from schematics.types import URLType
+
 
 from schematics.types.compound import DictType
 from schematics.types.compound import ListType
@@ -478,7 +481,7 @@ class RelatedPackage(BaseModel):
 
 class Package(BaseModel):
     """
-    A package base class. Override for specific pacakge behaviour. The way a
+    A package base class. Override for specific package behaviour. The way a
     package is created and serialized should be uniform across all Package
     types.
     """
@@ -489,6 +492,7 @@ class Package(BaseModel):
     filetypes = tuple()
     mimetypes = tuple()
     extensions = tuple()
+
 
     # list of known metafiles for a package type, to recognize a package
     metafiles = []
@@ -508,6 +512,7 @@ class Package(BaseModel):
     name = StringType(required=True)
     version = VersionType()
 
+
     # primary programming language for a package type
     # i.e. RubyGems are primarily ruby, etc
     primary_language = StringType()
@@ -523,6 +528,11 @@ class Package(BaseModel):
     description = StringType()
     # the type of payload in this package. one of PAYLOADS or none
     payload_type = StringType(choices=PAYLOADS)
+    # size of the package, use LongType instead of IntType is because IntType 2147483647 is the max size which means we cannot store more than 2GB files 
+    size = LongType()
+    # origin date of the package
+    origin_date = DateTimeType()
+
 
     # list of Parties: authors, packager, maintainers, contributors, distributor, vendor, etc
     # FIXME: this would be simpler as a list where each Party has also a type
@@ -617,6 +627,8 @@ class Package(BaseModel):
             'summary',
             'description',
             'payload_type',
+            'size',
+            'origin_date',
 
             'authors',
             'maintainers',
