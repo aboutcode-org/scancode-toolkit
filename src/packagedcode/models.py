@@ -525,11 +525,12 @@ class Package(BaseModel):
     description = StringType()
     # the type of payload in this package. one of PAYLOADS or none
     payload_type = StringType(choices=PAYLOADS)
-    # size of the package, use LongType instead of IntType is because IntType 2147483647 is the max size which means we cannot store more than 2GB files 
+    # size of the package in bytes, use LongType instead of IntType is because
+    # IntType 2147483647 is the max size which means we cannot store
+    # more than 2GB files
     size = LongType()
-    # origin date of the package
-    origin_date = DateTimeType()
-
+    # release date of the package
+    release_date = DateTimeType()
 
     # list of Parties: authors, packager, maintainers, contributors, distributor, vendor, etc
     # FIXME: this would be simpler as a list where each Party has also a type
@@ -625,7 +626,7 @@ class Package(BaseModel):
             'description',
             'payload_type',
             'size',
-            'origin_date',
+            'release_date',
 
             'authors',
             'maintainers',

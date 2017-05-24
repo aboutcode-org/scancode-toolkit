@@ -50,7 +50,7 @@ class TestRpm(FileBasedTesting):
              u'The libproxy-bin package contains the proxy binary for libproxy'),
             ('payload_type', None),
             ('size', None),
-            ('origin_date', None),
+            ('release_date', None),
             ('authors', []),
             ('maintainers', []),
             ('contributors', []),
