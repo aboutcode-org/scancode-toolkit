@@ -221,7 +221,7 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     runner = CliRunner()
     result_file = test_env.get_temp_file('test.json')
     result = runner.invoke(cli.scancode, [ '--copyright', '--strip-root', test_file, result_file], catch_exceptions=True)
-    assert result.exit_code == 0
+    assert result.exit_code == 1
     assert 'Scanning done' in result.output
     check_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file)
     assert 'Some files failed to scan' in result.output
@@ -233,7 +233,7 @@ def test_scan_with_errors_and_diag_option_includes_full_traceback():
     runner = CliRunner()
     result_file = test_env.get_temp_file('test.json')
     result = runner.invoke(cli.scancode, [ '--copyright', '--diag', test_file, result_file], catch_exceptions=True)
-    assert result.exit_code == 0
+    assert result.exit_code == 1
     assert 'Scanning done' in result.output
     assert 'Some files failed to scan' in result.output
     assert 'patchelf.pdf' in result.output
@@ -250,8 +250,7 @@ def test_failing_scan_return_proper_exit_code():
     runner = CliRunner()
     result_file = test_env.get_temp_file('test.json')
     result = runner.invoke(cli.scancode, [ '--copyright', test_file, result_file], catch_exceptions=True)
-    # this will start failing when the proper return code is there, e.g. 1.
-    assert result.exit_code != 1
+    assert result.exit_code == 1
 
 
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html():
@@ -259,7 +258,7 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     runner = CliRunner()
     result_file = test_env.get_temp_file('test.html')
     result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html', test_file, result_file], catch_exceptions=True)
-    assert result.exit_code == 0
+    assert result.exit_code == 1
     assert 'Scanning done' in result.output
 
 
@@ -268,7 +267,7 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     runner = CliRunner()
     result_file = test_env.get_temp_file('test.app.html')
     result = runner.invoke(cli.scancode, [ '--copyright', '--format', 'html-app', test_file, result_file], catch_exceptions=True)
-    assert result.exit_code == 0
+    assert result.exit_code == 1
     assert 'Scanning done' in result.output
 
 
@@ -306,7 +305,7 @@ def test_scan_works_with_multiple_processes_and_timeouts():
         [ '--copyright', '--processes', '2', '--timeout', '0.01', '--strip-root', '--format', 'json', test_dir, result_file],
         catch_exceptions=True)
 
-    assert result.exit_code == 0
+    assert result.exit_code == 1
     assert 'Scanning done' in result.output
     expected = [
         [(u'path', u'test1.txt'), (u'scan_errors', [u'ERROR: Processing interrupted: timeout after 0 seconds.'])],
@@ -436,6 +435,28 @@ def test_scan_can_run_from_other_directory():
         print(stderr)
     assert rc == 0
     check_scan(test_env.get_test_loc(expected_file), result_file, strip_dates=True, regen=False)
+
+
+def test_scan_logs_errors_messages():
+    import scancode
+    from commoncode.command import execute
+    test_file = test_env.get_test_loc('errors/illegal.pom.xml')
+    scan_cmd = os.path.join(scancode.root_dir, 'scancode')
+    rc, stdout, stderr = execute(scan_cmd, ['-pi', test_file, ])
+    assert rc == 1
+    assert 'illegal.pom.xml' in stderr
+    assert 'sequence item 0: expected string, NoneType found' in stdout
+
+def test_scan_logs_errors_messages_with_diag():
+    import scancode
+    from commoncode.command import execute
+    test_file = test_env.get_test_loc('errors/illegal.pom.xml')
+    scan_cmd = os.path.join(scancode.root_dir, 'scancode')
+    rc, stdout, stderr = execute(scan_cmd, ['-pi', '--diag', test_file, ])
+    assert rc == 1
+    assert 'illegal.pom.xml' in stderr
+    assert 'TypeError: sequence item 0: expected string, NoneType found' in stderr
+    assert 'TypeError: sequence item 0: expected string, NoneType found' in stdout
 
 
 class TestFixedWidthFilename(TestCase):
