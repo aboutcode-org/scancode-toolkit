@@ -249,17 +249,22 @@ class ScanFileCache(object):
             with codecs.open(scan_path, 'r', encoding='utf-8') as cs:
                 return json.load(cs, object_pairs_hook=OrderedDict)
 
-    def iterate(self, scan_names, root_dir=None):
+    def iterate(self, scan_names, root_dir=None, paths_subset=tuple()):
         """
-        Yield scan data for all cached scans e.g. the whole cache given a list of
-        scan names.
+        Yield scan data for all cached scans e.g. the whole cache given
+        a list of scan names.
+        If a `paths_subset` sequence of paths is provided, then only
+        these paths are iterated.
 
         The logfile MUST have been closed before calling this method.
         """
+        paths_subset = set(paths_subset)
         with codecs.open(self.cache_files_log, 'r', encoding='utf-8') as cached_files:
             # iterate the list of (path, (info keys)), one by line
             for file_log in cached_files:
                 path = file_log.rstrip('\n')
+                if paths_subset and path not in paths_subset:
+                    continue
                 file_info = self.get_info(path)
 
                 if root_dir:
