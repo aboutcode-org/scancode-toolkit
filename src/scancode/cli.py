@@ -422,6 +422,8 @@ def scan(input_path,
     pool = get_pool(processes=processes, maxtasksperchild=1000)
     resources = resource_paths(input_path)
     logfile_path = scans_cache_class().cache_files_log
+    paths_with_error = []
+    files_count = 0
     with codecs.open(logfile_path, 'w', encoding='utf-8') as logfile_fd:
 
         logged_resources = _resource_logger(logfile_fd, resources)
@@ -458,7 +460,7 @@ def scan(input_path,
                         result = scanned.next()
                         scan_success, scanned_rel_path = result
                         if not scan_success:
-                            scanning_errors.append(scanned_rel_path)
+                            paths_with_error.append(scanned_rel_path)
                         files_count += 1
                     except StopIteration:
                         break
@@ -476,7 +478,7 @@ def scan(input_path,
     # Compute stats
     ##########################
     scan_summary['files_count'] = files_count
-    scan_summary['files_with_errors'] = scanning_errors
+    scan_summary['files_with_errors'] = paths_with_error
     total_time = time() - scan_start
     scanning_time = total_time - indexing_time
     scan_summary['total_time'] = total_time
@@ -488,11 +490,25 @@ def scan(input_path,
     if not quiet:
         # Display stats
         ##########################
-        echo_stderr('Scanning done.', fg=scanning_errors and 'red' or 'green')
-        if scanning_errors:
-            echo_stderr('Some files failed to scan properly. See scan for details:', fg='red')
-            for errored_path in scanning_errors:
-                echo_stderr(' ' + errored_path, fg='red')
+        echo_stderr('Scanning done.', fg=paths_with_error and 'red' or 'green')
+        if paths_with_error:
+            if diag:
+                echo_stderr('Some files failed to scan properly:', fg='red')
+                # iterate cached results to collect all scan errors
+                cached_scan = scans_cache_class()
+                root_dir = _get_root_dir(input_path, strip_root, full_root)
+                scan_results = cached_scan.iterate(scans, root_dir, paths_subset=paths_with_error)
+                for scan_result in scan_results:
+                    errored_path = scan_result.get('path', '')
+                    echo_stderr('Path: ' + errored_path, fg='red')
+                    for error in scan_result.get('scan_errors', []):
+                        for emsg in error.splitlines(False):
+                            echo_stderr('  ' + emsg)
+                    echo_stderr('')
+            else:
+                echo_stderr('Some files failed to scan properly. Use the --diag option for additional details:', fg='red')
+                for errored_path in paths_with_error:
+                    echo_stderr(' ' + errored_path, fg='red')
 
         echo_stderr('Scan statistics: %(files_count)d files scanned in %(total_time)ds.' % locals())
         echo_stderr('Scan options:    %(_scans)s with %(processes)d process(es).' % locals())
@@ -634,9 +650,10 @@ def resource_paths(base_path):
 
 def scan_infos(input_file, diag=False):
     """
-    Scan one file or directory and return file_infos data.
-    This always contains an extra 'errors' key with a list of error messages,
-    possibly empty.
+    Scan one file or directory and return file_infos data. This always
+    contains an extra 'errors' key with a list of error messages,
+    possibly empty. If `diag` is True, additional diagnostic messages
+    are included.
     """
     errors = []
     try:
@@ -709,7 +726,7 @@ def save_results(scanners, only_findings, files_count, results, format, options,
         # and defeats lazy loading from cache
         results = [file_data for file_data in results if has_findings(active_scans, file_data)]
         # FIXME: computing len before hand will need a list and therefore need loding
-        # it all aheaed of time
+        # it all ahead of time
         files_count = len(results)
 
     # note: in tests, sys.stdout is not used, but some io wrapper with no name
