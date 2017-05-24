@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
 
+from collections import OrderedDict
 import json
 import os
 from unittest import TestCase
@@ -313,7 +314,7 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
     import time, random
     for tf in fileutils.file_iter(test_dir):
         with open(tf, 'ab') as tfh:
-            tfh.write(str(time.time() + random.randint(0, 10 ** 6)))
+            tfh.write('(c)' + str(time.time() + random.randint(0, 10 ** 6)) + '(c)')
 
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
@@ -326,12 +327,12 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     expected = [
-        {u'path': u'test1.txt', u'scan_errors': [u'ERROR: Processing interrupted: timeout after 0 seconds.']},
-        {u'path': u'test2.txt', u'scan_errors': [u'ERROR: Processing interrupted: timeout after 0 seconds.']},
-        {u'path': u'test3.txt', u'scan_errors': [u'ERROR: Processing interrupted: timeout after 0 seconds.']}
+        OrderedDict([(u'path', u'test1.txt'), (u'scan_errors', [u'ERROR: Processing interrupted: timeout after 0 seconds.'])]),
+        OrderedDict([(u'path', u'test2.txt'), (u'scan_errors', [u'ERROR: Processing interrupted: timeout after 0 seconds.'])]),
+        OrderedDict([(u'path', u'test3.txt'), (u'scan_errors', [u'ERROR: Processing interrupted: timeout after 0 seconds.'])]),
     ]
 
-    result_json = json.loads(open(result_file).read())
+    result_json = json.loads(open(result_file).read(),object_pairs_hook=OrderedDict)
     assert sorted(expected) == sorted(result_json['files'])
 
 
