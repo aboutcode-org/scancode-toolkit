@@ -24,18 +24,19 @@
 
 from __future__ import absolute_import, print_function
 
+from collections import OrderedDict
 import os
 
 from commoncode.testcase import FileBasedTesting
 
-from commoncode.hash import b64sha1
+from commoncode.hash import checksum
 from commoncode.hash import get_hasher
+from commoncode.hash import b64sha1
 from commoncode.hash import md5
 from commoncode.hash import sha1
 from commoncode.hash import sha256
 from commoncode.hash import sha512
-from commoncode.hash import checksum
-from collections import OrderedDict
+from commoncode.hash import sha1_git
 from commoncode.hash import multi_checksums
 
 
@@ -99,13 +100,13 @@ class TestHash(FileBasedTesting):
         test_file = self.get_test_loc('hash/dir1/a.png')
         assert sha512(test_file) == '5be9e01cd20ff288fd3c3fc46be5c2747eaa2c526197125330947a95cdb418222176b182a4680f0e435ba8f114363c45a67b30eed9a9222407e63ccbde46d3b4'
 
-    def test_checksum_160(self):
+    def test_checksum_sha1(self):
         test_file = self.get_test_loc('hash/dir1/a.txt')
-        assert checksum(test_file, 160) == '3ca69e8d6c234a469d16ac28a4a658c92267c423'
+        assert checksum(test_file, 'sha1') == '3ca69e8d6c234a469d16ac28a4a658c92267c423'
 
-    def test_checksum_128(self):
+    def test_checksum_md5(self):
         test_file = self.get_test_loc('hash/dir1/a.txt')
-        assert checksum(test_file, 128) == '40c53c58fdafacc83cfff6ee3d2f6d69'
+        assert checksum(test_file, 'md5') == '40c53c58fdafacc83cfff6ee3d2f6d69'
 
     def test_multi_checksums(self):
         test_file = self.get_test_loc('hash/dir1/a.png')
@@ -128,10 +129,11 @@ class TestHash(FileBasedTesting):
     def test_multi_checksums_shattered1(self):
         test_file = self.get_test_loc('hash/sha1-collision/shattered-1.pdf')
         expected = OrderedDict([
-            ('md5', 'ee4aa52b139d925f8d8884402b0a750c'), 
-            ('sha1', '38762cf7f55934b34d179ae6a4c80cadccbb7f0a'), 
-            ('sha256', '2bb787a73e37352f92383abe7e2902936d1059ad9f1ba6daaa9c1e58ee6970d0'), 
-            ('sha512', '3c19b2cbcf72f7f5b252ea31677b8f2323d6119e49bcc0fb55931d00132385f1e749bb24cbd68c04ac826ae8421802825d3587fe185abf709669bb9693f6b416')
+            ('md5', 'ee4aa52b139d925f8d8884402b0a750c'),
+            ('sha1', '38762cf7f55934b34d179ae6a4c80cadccbb7f0a'),
+            ('sha256', '2bb787a73e37352f92383abe7e2902936d1059ad9f1ba6daaa9c1e58ee6970d0'),
+            ('sha512', '3c19b2cbcf72f7f5b252ea31677b8f2323d6119e49bcc0fb55931d00132385f1e749bb24cbd68c04ac826ae8421802825d3587fe185abf709669bb9693f6b416'),
+            ('sha1_git', 'ba9aaa145ccd24ef760cf31c74d8f7ca1a2e47b0'),
         ])
         result = multi_checksums(test_file)
         assert expected == result
@@ -139,10 +141,18 @@ class TestHash(FileBasedTesting):
     def test_multi_checksums_shattered2(self):
         test_file = self.get_test_loc('hash/sha1-collision/shattered-2.pdf')
         expected = OrderedDict([
-            ('md5', '5bd9d8cabc46041579a311230539b8d1'), 
-            ('sha1', '38762cf7f55934b34d179ae6a4c80cadccbb7f0a'), 
-            ('sha256', 'd4488775d29bdef7993367d541064dbdda50d383f89f0aa13a6ff2e0894ba5ff'), 
-            ('sha512', 'f39a04842e4b28e04558496beb7cb84654ded9c00b2f873c3ef64f9dfdbc760cd0273b816858ba5b203c0dd71af8b65d6a0c1032e00e48ace0b4705eedcc1bab')
+            ('md5', '5bd9d8cabc46041579a311230539b8d1'),
+            ('sha1', '38762cf7f55934b34d179ae6a4c80cadccbb7f0a'),
+            ('sha256', 'd4488775d29bdef7993367d541064dbdda50d383f89f0aa13a6ff2e0894ba5ff'),
+            ('sha512', 'f39a04842e4b28e04558496beb7cb84654ded9c00b2f873c3ef64f9dfdbc760cd0273b816858ba5b203c0dd71af8b65d6a0c1032e00e48ace0b4705eedcc1bab'),
+            # Note: this is not the same as the sha1_git for shattered-1.pdf ;)
+            ('sha1_git', 'b621eeccd5c7edac9b7dcba35a8d5afd075e24f2'),
         ])
         result = multi_checksums(test_file)
         assert expected == result
+
+    def test_sha1_git_checksum(self):
+        test_file = self.get_test_loc('hash/dir1/a.png')
+        # test that we match the git hash-object
+        # tests/commoncode/data/hash/dir1/a.png ouput as of git 1.9.1
+        assert sha1_git(test_file) == '5f212358671a3ada8794cb14fb5227f596447a8c'
