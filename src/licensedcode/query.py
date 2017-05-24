@@ -376,13 +376,15 @@ class QueryRun(object):
             return 0
         return self.end - self.start + 1
 
-    def __repr__(self):
-        base = ('QueryRun('
-            'start={start}, len={length}, '
-            'start_line={start_line}, end_line={end_line}, '
-            'tokens={tokens}' if TRACE_REPR else ''
-            ')'
+    def __repr__(self, trace_repr=TRACE_REPR):
+        base = (
+            'QueryRun('
+                'start={start}, len={length}, '
+                'start_line={start_line}, end_line={end_line}'
         )
+        if trace_repr:
+            base += ', tokens="{tokens}"'
+        base += ')'
         return base.format(**self.to_dict(brief=False, comprehensive=True))
 
     @property

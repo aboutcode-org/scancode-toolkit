@@ -1,0 +1,7 @@
+key: qlogic-microcode
+short_name: QLogic Microcode
+name: QLogic Microcode
+
+category: Permissive
+owner: QLogic Corporation
+notes: this is a Linux firmware BSD-like license with some weird extra terms

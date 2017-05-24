@@ -1,0 +1,4 @@
+licenses:
+    - gpl-2.0-plus
+    - crypto-keys-redistribution
+notes: Linux driver GPL with crypto clarification

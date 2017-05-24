@@ -7,6 +7,8 @@
   "summary": "Sign and unsign cookies", 
   "description": null, 
   "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
   "authors": [
     {
       "type": "person", 

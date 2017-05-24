@@ -1,0 +1,7 @@
+key: arm-llvm-sga
+short_name: ARM LLVM Grant
+name: ARM LLVM Software Grant License Agreement
+
+category: Permissive
+owner: ARM Limited.
+minimum_coverage: 80

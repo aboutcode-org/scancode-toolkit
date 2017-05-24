@@ -1,0 +1,17 @@
+Original licence information:
+
+
+        as an unpublished work. This notice does not imply unrestricted or
+        public access to the source code from which this firmware image is
+        derived.  Except as noted below this firmware image may not be
+        reproduced, used, sold or transferred to any third party without
+        Keyspan's prior written consent.  All Rights Reserved.
+
+        Permission is hereby granted for the distribution of this firmware
+        image as part of a Linux or other Open Source operating system kernel
+        in text or binary form as required.
+
+        This firmware may not be modified and may only be used with
+        Keyspan hardware.  Distribution and/or Modification of the
+        keyspan.c driver which includes this firmware, in whole or in
+        part, requires the inclusion of this statement."

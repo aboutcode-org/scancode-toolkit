@@ -1,0 +1,5 @@
+/* a few non-GPL license types are also allowed */
+MODULE_LICENSE("GPL");
+
+
+Power Management

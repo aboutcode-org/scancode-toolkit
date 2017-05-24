@@ -1,0 +1,16 @@
+key: crypto-keys-redistribution
+short_name: Cryptograpic keys redistribution
+name: Cryptograpic keys redistribution 
+
+category: Copyleft
+owner: kernel.org
+notes: this is found as a linux addition to the GPL such as in
+ drivers/scsi/aha1740.c 
+ drivers/message/i2o/i2o_scsi.c 
+ drivers/ide/cs5520.c
+ drivers/ide/ide-pci-generic.c
+ drivers/ide/ide-io.c
+ drivers/scsi/eata_pio.c
+ drivers/scsi/in2000.c 
+ drivers/scsi/qlogicfas.c
+ drivers/scsi/qlogicfas408.c

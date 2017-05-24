@@ -33,7 +33,6 @@ from unittest.case import skipIf
 
 import click
 from click.testing import CliRunner
-import pytest
 
 from commoncode import fileutils
 from commoncode.testcase import FileDrivenTesting
@@ -184,6 +183,16 @@ def test_scan_info_does_collect_infos_with_root(monkeypatch):
     check_scan(test_env.get_test_loc('info/basic.rooted.expected.json'), result_file, regen=False)
 
 
+def test_scan_info_returns_full_root(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.extract_test_tar('info/basic.tgz')
+    runner = CliRunner()
+    result = runner.invoke(cli.scancode, ['--info', '--full-root', test_dir], catch_exceptions=True)
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    assert test_dir in result.output
+
+
 def test_scan_info_license_copyrights(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.extract_test_tar('info/basic.tgz')
@@ -294,7 +303,6 @@ def test_scan_works_with_multiple_processes(monkeypatch):
     assert sorted(res1['files']) == sorted(res3['files'])
 
 
-@pytest.mark.xfail
 def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     # this contains test files with a lot of 100+ small licenses mentions that should
@@ -312,7 +320,7 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
 
     result = runner.invoke(
         cli.scancode,
-        [ '--copyright', '--license', '--processes', '2', '--timeout', '1', '--strip-root', '--format', 'json', test_dir, result_file],
+        [ '--copyright', '--processes', '2', '--timeout', '0.01', '--strip-root', '--format', 'json', test_dir, result_file],
         catch_exceptions=True)
 
     assert result.exit_code == 0
@@ -388,6 +396,15 @@ def test_scan_quiet_to_stdout_only_echoes_json_results(monkeypatch):
     # outputs to file or stdout should be identical
     result1_output = open(result1_file).read()
     assert result1_output == result2.output
+
+
+def test_scan_verbose_does_not_echo_ansi_escapes(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.extract_test_tar('info/basic.tgz')
+    runner = CliRunner()
+    result = runner.invoke(cli.scancode, ['--verbose', '--info', test_dir], catch_exceptions=True)
+    assert result.exit_code == 0
+    assert '[?' not in result.output
 
 
 def test_scan_can_return_matched_license_text(monkeypatch):

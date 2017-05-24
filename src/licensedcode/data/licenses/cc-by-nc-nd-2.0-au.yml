@@ -1,0 +1,10 @@
+key: cc-by-nc-nd-2.0-au
+short_name: CC-BY-NC-ND-2.0-AU
+name: Creative Commons Attribution-NonCommercial-NoDerivs 2.0 Australia
+
+category: Copyleft Limited
+owner: Creative Commons
+homepage_url: https://creativecommons.org/licenses/by-nc-nd/2.0/
+spdx_license_key: CC-BY-NC-ND-2.0
+text_urls:
+    - https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode.au

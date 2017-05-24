@@ -1,0 +1,9 @@
+key: other-permissive
+short_name: Other Permissive Licenses
+name: Oswego Other Permissive Licenses
+
+category: Permissive
+owner: nexB Inc.
+notes: this is a catch all and ellipsis to deal with some cases when a
+ large number of ancillary yet similar licenses may be reported as one.
+minimum_coverage: 100

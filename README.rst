@@ -56,7 +56,7 @@ On Linux install Python 2.7 "devel" and a few extra packages:
 
 Next, download and extract the latest ScanCode release from::
 
-    https://github.com/nexB/scancode-toolkit/releases/latest
+    https://github.com/nexB/scancode-toolkit/releases/
 
 Open a terminal, extract the downloaded release archive, then `cd` to the extracted
 directory and run this command to display the command help. ScanCode will
@@ -85,13 +85,14 @@ For other questions, discussions, and chats, we have:
 
 - a mailing list at https://lists.sourceforge.net/lists/listinfo/aboutcode-discuss
 
-- an official #aboutcode IRC channel on freenode 
-  (server chat.freenode.net) for scancode and other related tools. 
-  You can use your favorite IRC client or use the web chat at 
-  https://webchat.freenode.net/
-
 - an official Gitter channel at https://gitter.im/aboutcode-org/discuss
   Gitter also has an IRC bridge at https://irc.gitter.im/
+
+- an official #aboutcode IRC channel on freenode (server chat.freenode.net)
+  for scancode and other related tools. Note that this receives notifactions from
+  repos so it can be a tad noisy.
+  You can use your favorite IRC client or use the web chat at 
+  https://webchat.freenode.net/
 
 
 About archives

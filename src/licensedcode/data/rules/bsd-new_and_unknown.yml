@@ -1,0 +1,9 @@
+licenses:
+    - bsd-new
+    - unknown
+minimum_coverage: 99
+notes: found in u-boot with this note
+ Although it is very similar, this license text is not identical
+ to the "BSD-3-Clause", therefore, DO NOT MODIFY THIS LICENSE TEXT!
+
+

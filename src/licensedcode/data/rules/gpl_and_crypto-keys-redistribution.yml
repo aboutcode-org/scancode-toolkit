@@ -1,0 +1,4 @@
+licenses:
+    - gpl
+    - crypto-keys-redistribution
+minimum_coverage: 90

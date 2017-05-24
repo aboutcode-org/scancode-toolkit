@@ -68,6 +68,7 @@ from scancode.interrupt import interruptible
 from scancode.interrupt import DEFAULT_TIMEOUT
 
 from scancode import utils
+from scancode.interrupt import TimeoutError
 
 echo_stderr = partial(click.secho, err=True)
 
@@ -176,6 +177,9 @@ Try 'scancode --help' for help on options and arguments.'''
 formats = ('json', 'json-pp', 'html', 'html-app', 'spdx-tv', 'spdx-rdf')
 
 def validate_formats(ctx, param, value):
+    """
+    Validate formats and template files. Raise a BadParameter on errors.
+    """
     value_lower = value.lower()
     if value_lower in formats:
         return value_lower
@@ -183,6 +187,19 @@ def validate_formats(ctx, param, value):
     if not os.path.isfile(value):
         raise click.BadParameter('Invalid template file: "%(value)s" does not exist or is not readable.' % locals())
     return value
+
+
+def validate_exclusive(ctx, exclusive_options):
+    """
+    Validate mutually exclusive options.
+    Raise a UsageError with on errors.
+    """
+    ctx_params = ctx.params
+    selected_options = [ctx_params[eop] for eop in exclusive_options if ctx_params[eop]]
+    if len(selected_options) > 1:
+        msg = ' and '.join('`' + eo.replace('_', '-') + '`' for eo in exclusive_options)
+        msg += ' are mutually exclusion options. You can use only one of them.'
+        raise click.UsageError(msg)
 
 
 @click.command(name='scancode', epilog=epilog_text, cls=ScanCommand)
@@ -209,7 +226,12 @@ def validate_formats(ctx, param, value):
               help='Only return files or directories with findings for the requested scans. Files without findings are omitted.')
 @click.option('--strip-root', is_flag=True, default=False,
               help='Strip the root directory segment of all paths. The default is to always '
-                   'include the last directory segment of the scanned path such that all paths have a common root directory.')
+                   'include the last directory segment of the scanned path such that all paths have a common root directory. '
+                   'This cannot be combined with `--full-root` option.')
+@click.option('--full-root', is_flag=True, default=False,
+              help='Report full, absolute paths. The default is to always '
+                   'include the last directory segment of the scanned path such that all paths have a common root directory. '
+                   'This cannot be combined with the `--strip-root` option.')
 
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
               help=('Set <output_file> format <style> to one of the standard formats: %s '
@@ -225,13 +247,13 @@ def validate_formats(ctx, param, value):
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
 
 @click.option('--diag', is_flag=True, default=False, help='Include additional diagnostic information such as error messages or result details.')
-@click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=int, show_default=True, help='Stop scanning a file if scanning takes longer than a timeout in seconds.')
+@click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=float, show_default=True, help='Stop scanning a file if scanning takes longer than a timeout in seconds.')
 
 def scancode(ctx,
              input, output_file,
              copyright, license, package,
              email, url, info,
-             license_score, license_text, only_findings, strip_root,
+             license_score, license_text, only_findings, strip_root, full_root,
              format, verbose, quiet, processes,
              diag, timeout, *args, **kwargs):
     """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
@@ -239,6 +261,8 @@ def scancode(ctx,
     The scan results are printed to stdout if <output_file> is not provided.
     Error and progress is printed to stderr.
     """
+
+    validate_exclusive(ctx, ['strip_root', 'full_root'])
 
     possible_scans = OrderedDict([
         ('infos', info),
@@ -260,6 +284,7 @@ def scancode(ctx,
         ('--license-text', license_text),
         ('--only-findings', only_findings),
         ('--strip-root', strip_root),
+        ('--full-root', full_root),
         ('--format', format),
         ('--diag', diag),
     ])
@@ -311,7 +336,8 @@ def scancode(ctx,
                                     timeout=timeout,
                                     diag=diag,
                                     scans_cache_class=scans_cache_class,
-                                    strip_root=strip_root)
+                                    strip_root=strip_root,
+                                    full_root=full_root)
         if not quiet:
             echo_stderr('Saving results.', fg='green')
 
@@ -334,7 +360,8 @@ def scan(input_path,
          processes=1, timeout=DEFAULT_TIMEOUT,
          diag=False,
          scans_cache_class=None,
-         strip_root=False):
+         strip_root=False,
+         full_root=False):
     """
     Return a tuple of (files_count, scan_results) where
     scan_results is an iterable. Run each requested scan proper: each individual file
@@ -460,7 +487,7 @@ def scan(input_path,
 
     # finally return an iterator on cached results
     cached_scan = scans_cache_class()
-    root_dir = _get_root_dir(input_path, strip_root)
+    root_dir = _get_root_dir(input_path, strip_root, full_root)
     return files_count, cached_scan.iterate(scans, root_dir)
 
 
@@ -491,21 +518,22 @@ def fixed_width_file_name(path, max_length=25):
     return "{prefix}{ellipsis}{suffix}{extension}".format(**locals())
 
 
-def _get_root_dir(input_path, strip_root=False):
+def _get_root_dir(input_path, strip_root=False, full_root=False):
     """
     Return a root dir name or None.
     """
     if strip_root:
-        root_dir = None
-    else:
-        _scanned_path = os.path.abspath(os.path.normpath(os.path.expanduser(input_path)))
-        if filetype.is_dir(_scanned_path):
-            root_dir = _scanned_path
-        else:
-            root_dir = fileutils.parent_directory(_scanned_path)
-        root_dir = fileutils.file_name(root_dir)
+        return
 
-    return root_dir
+    scanned_path = os.path.abspath(os.path.normpath(os.path.expanduser(input_path)))
+    if full_root:
+        return scanned_path
+
+    if filetype.is_dir(scanned_path):
+        root_dir = scanned_path
+    else:
+        root_dir = fileutils.parent_directory(scanned_path)
+    return fileutils.file_name(root_dir)
 
 
 def _resource_logger(logfile_fd, resources):
@@ -626,6 +654,8 @@ def scan_one(input_file, scanners, diag=False):
             if isinstance(scan_details, GeneratorType):
                 scan_details = list(scan_details)
             scan_result[scan_name] = scan_details
+        except TimeoutError:
+            raise
         except Exception as e:
             # never fail but instead add an error message and keep an empty scan:
             scan_result[scan_name] = []
@@ -633,6 +663,7 @@ def scan_one(input_file, scanners, diag=False):
             if diag:
                 messages.append('ERROR: ' + scan_name + ': ' + traceback.format_exc())
             scan_errors.extend(messages)
+
     # put errors last, after scans proper
     scan_result['scan_errors'] = scan_errors
     return scan_result

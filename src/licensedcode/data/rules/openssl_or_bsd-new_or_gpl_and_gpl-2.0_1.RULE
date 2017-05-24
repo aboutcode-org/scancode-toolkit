@@ -1,0 +1,9 @@
+====================================================================
+Written for the OpenSSL
+project. The module is, however, dual licensed under OpenSSL and
+CRYPTOGAMS licenses depending on where you obtain it. For further
+details see http://www.openssl.org/~appro/cryptogams/.
+
+Specific modes and adaptation for Linux kernel 
+. Permission to use under GPL terms is
+granted.

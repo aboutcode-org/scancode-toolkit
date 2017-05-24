@@ -1,0 +1,36 @@
+Source code files that contain the phrase "licensing governed by
+reiserfs/README" are "governed files" throughout this file.  Governed
+files are licensed under the GPL.  The portions of them owned by Hans
+Reiser, or authorized to be licensed by him, have been in the past,
+and likely will be in the future, licensed to other parties under
+other licenses.  If you add your code to governed files, and don't
+want it to be owned by Hans Reiser, put your copyright label on that
+code so the poor blight and his customers can keep things straight.
+All portions of governed files not labeled otherwise are owned by Hans
+Reiser, and by adding your code to it, widely distributing it to
+others or sending us a patch, and leaving the sentence in stating that
+licensing is governed by the statement in this file, you accept this.
+It will be a kindness if you identify whether Hans Reiser is allowed
+to license code labeled as owned by you on your behalf other than
+under the GPL, because he wants to know if it is okay to do so and put
+a check in the mail to you (for non-trivial improvements) when he
+makes his next sale.  He makes no guarantees as to the amount if any,
+though he feels motivated to motivate contributors, and you can surely
+discuss this with him before or after contributing.  You have the
+right to decline to allow him to license your code contribution other
+than under the GPL.
+
+Further licensing options are available for commercial and/or other
+interests directly from Hans Reiser: hans@reiser.to.  If you interpret
+the GPL as not allowing those additional licensing options, you read
+it wrongly, and Richard Stallman agrees with me, when carefully read
+you can see that those restrictions on additional terms do not apply
+to the owner of the copyright, and my interpretation of this shall
+govern for this license.
+
+Finally, nothing in this license shall be interpreted to allow you to
+fail to fairly credit me, or to remove my credits, without my
+permission, unless you are an end user not redistributing to others.
+If you have doubts about how to properly do that, or about what is
+fair, ask.  (Last I spoke with him Richard was contemplating how best
+to address the fair crediting issue in the next GPL version.)

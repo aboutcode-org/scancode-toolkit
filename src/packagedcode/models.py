@@ -39,8 +39,10 @@ from schematics.types import random_string
 
 from schematics.types import BaseType
 from schematics.types import BooleanType
+from schematics.types import DateTimeType
 from schematics.types import EmailType
 from schematics.types import HashType
+from schematics.types import LongType
 from schematics.types import MD5Type
 from schematics.types import SHA1Type
 from schematics.types import StringType
@@ -478,7 +480,7 @@ class RelatedPackage(BaseModel):
 
 class Package(BaseModel):
     """
-    A package base class. Override for specific pacakge behaviour. The way a
+    A package base class. Override for specific package behaviour. The way a
     package is created and serialized should be uniform across all Package
     types.
     """
@@ -523,6 +525,12 @@ class Package(BaseModel):
     description = StringType()
     # the type of payload in this package. one of PAYLOADS or none
     payload_type = StringType(choices=PAYLOADS)
+    # size of the package in bytes, use LongType instead of IntType is because
+    # IntType 2147483647 is the max size which means we cannot store
+    # more than 2GB files
+    size = LongType()
+    # release date of the package
+    release_date = DateTimeType()
 
     # list of Parties: authors, packager, maintainers, contributors, distributor, vendor, etc
     # FIXME: this would be simpler as a list where each Party has also a type
@@ -617,6 +625,8 @@ class Package(BaseModel):
             'summary',
             'description',
             'payload_type',
+            'size',
+            'release_date',
 
             'authors',
             'maintainers',
