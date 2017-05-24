@@ -341,18 +341,20 @@ def scancode(ctx,
     scans_cache_class = get_scans_cache_class()
 
     try:
-        files_count, results = scan(input_path=input,
-                                    scanners=scanners,
-                                    license_score=license_score,
-                                    license_text=license_text,
-                                    verbose=verbose,
-                                    quiet=quiet,
-                                    processes=processes,
-                                    timeout=timeout,
-                                    diag=diag,
-                                    scans_cache_class=scans_cache_class,
-                                    strip_root=strip_root,
-                                    full_root=full_root)
+        files_count, results, success = scan(
+            input_path=input,
+            scanners=scanners,
+            license_score=license_score,
+            license_text=license_text,
+            verbose=verbose,
+            quiet=quiet,
+            processes=processes,
+            timeout=timeout,
+            diag=diag,
+            scans_cache_class=scans_cache_class,
+            strip_root=strip_root,
+            full_root=full_root)
+
         if not quiet:
             echo_stderr('Saving results.', fg='green')
 
@@ -363,9 +365,8 @@ def scancode(ctx,
         cache = scans_cache_class()
         cache.clear()
 
-    # TODO: add proper return code
-    # rc = 1 if has__errors else 0
-    # ctx.exit(rc)
+    rc = 0 if success else 1
+    ctx.exit(rc)
 
 
 def scan(input_path,
@@ -378,9 +379,11 @@ def scan(input_path,
          strip_root=False,
          full_root=False):
     """
-    Return a tuple of (files_count, scan_results) where
-    scan_results is an iterable. Run each requested scan proper: each individual file
-    scan is cached on disk to free memory. Then the whole set of scans is loaded from
+    Return a tuple of (files_count, scan_results, success) where
+    scan_results is an iterable and success is a boolean.
+
+    Run each requested scan proper: each individual file scan is cached
+    on disk to free memory. Then the whole set of scans is loaded from
     the cache and streamed at the end.
     """
     assert scans_cache_class
@@ -516,10 +519,11 @@ def scan(input_path,
         echo_stderr('Scanning time:   %(scanning_time)ds.' % locals())
         echo_stderr('Indexing time:   %(indexing_time)ds.' % locals(), reset=True)
 
+    success = not paths_with_error
     # finally return an iterator on cached results
     cached_scan = scans_cache_class()
     root_dir = _get_root_dir(input_path, strip_root, full_root)
-    return files_count, cached_scan.iterate(scans, root_dir)
+    return files_count, cached_scan.iterate(scans, root_dir), success
 
 
 def fixed_width_file_name(path, max_length=25):
