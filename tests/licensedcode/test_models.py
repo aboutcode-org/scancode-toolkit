@@ -32,8 +32,8 @@ import os
 
 from commoncode.testcase import FileBasedTesting
 
-from licensedcode import models
 from licensedcode import index
+from licensedcode import models
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')

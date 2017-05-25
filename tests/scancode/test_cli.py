@@ -25,6 +25,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
+from __future__ import unicode_literals
 
 from collections import OrderedDict
 import json
@@ -69,8 +70,7 @@ def test_package_option_detects_packages(monkeypatch):
     assert len(open(result_file).read()) > 10
 
 
-def test_verbose_option_with_packages(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_verbose_option_with_packages():
     test_dir = test_env.get_test_loc('package', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
@@ -82,8 +82,7 @@ def test_verbose_option_with_packages(monkeypatch):
     assert len(open(result_file).read()) > 10
 
 
-def test_copyright_option_detects_copyrights(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_copyright_option_detects_copyrights():
     test_dir = test_env.get_test_loc('copyright', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
@@ -94,8 +93,7 @@ def test_copyright_option_detects_copyrights(monkeypatch):
     assert len(open(result_file).read()) > 10
 
 
-def test_verbose_option_with_copyrights(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_verbose_option_with_copyrights():
     test_dir = test_env.get_test_loc('copyright', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
@@ -118,8 +116,7 @@ def test_scan_progress_display_is_not_damaged_with_long_file_names(monkeypatch):
     assert '0123456789...0123456789.c' in result.output
 
 
-def test_license_option_detects_licenses(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_license_option_detects_licenses():
     test_dir = test_env.get_test_loc('license', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
@@ -130,8 +127,7 @@ def test_license_option_detects_licenses(monkeypatch):
     assert len(open(result_file).read()) > 10
 
 
-def test_scancode_skip_vcs_files_and_dirs_by_default(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scancode_skip_vcs_files_and_dirs_by_default():
     test_dir = test_env.extract_test_tar('ignore/vcs.tgz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
@@ -144,8 +140,7 @@ def test_scancode_skip_vcs_files_and_dirs_by_default(monkeypatch):
     assert [u'vcs', u'vcs/test.txt'] == scan_locs
 
 
-def test_usage_and_help_return_a_correct_script_name_on_all_platforms(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_usage_and_help_return_a_correct_script_name_on_all_platforms():
     runner = CliRunner()
     result = runner.invoke(cli.scancode, ['--help'])
     assert 'Usage: scancode [OPTIONS]' in result.output
@@ -162,8 +157,7 @@ def test_usage_and_help_return_a_correct_script_name_on_all_platforms(monkeypatc
     assert 'scancode-script.py' not in result.output
 
 
-def test_scan_info_does_collect_infos(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_info_does_collect_infos():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
@@ -173,8 +167,7 @@ def test_scan_info_does_collect_infos(monkeypatch):
     check_scan(test_env.get_test_loc('info/basic.expected.json'), result_file)
 
 
-def test_scan_info_does_collect_infos_with_root(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_info_does_collect_infos_with_root():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
@@ -184,8 +177,7 @@ def test_scan_info_does_collect_infos_with_root(monkeypatch):
     check_scan(test_env.get_test_loc('info/basic.rooted.expected.json'), result_file, regen=False)
 
 
-def test_scan_info_returns_full_root(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_info_returns_full_root():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     runner = CliRunner()
     result = runner.invoke(cli.scancode, ['--info', '--full-root', test_dir], catch_exceptions=True)
@@ -194,8 +186,7 @@ def test_scan_info_returns_full_root(monkeypatch):
     assert test_dir in result.output
 
 
-def test_scan_info_license_copyrights(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_info_license_copyrights():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
@@ -205,8 +196,7 @@ def test_scan_info_license_copyrights(monkeypatch):
     check_scan(test_env.get_test_loc('info/all.expected.json'), result_file)
 
 
-def test_scan_noinfo_license_copyrights_with_root(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_noinfo_license_copyrights_with_root():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
@@ -216,8 +206,7 @@ def test_scan_noinfo_license_copyrights_with_root(monkeypatch):
     check_scan(test_env.get_test_loc('info/all.rooted.expected.json'), result_file, regen=False)
 
 
-def test_scan_email_url_info(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_email_url_info():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
@@ -227,8 +216,7 @@ def test_scan_email_url_info(monkeypatch):
     check_scan(test_env.get_test_loc('info/email_url_info.expected.json'), result_file)
 
 
-def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_json(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_json():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     runner = CliRunner()
     result_file = test_env.get_temp_file('test.json')
@@ -240,8 +228,7 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     assert 'patchelf.pdf' in result.output
 
 
-def test_scan_with_errors_and_diag_option_includes_full_traceback(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_with_errors_and_diag_option_includes_full_traceback():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     runner = CliRunner()
     result_file = test_env.get_temp_file('test.json')
@@ -258,8 +245,7 @@ def test_scan_with_errors_and_diag_option_includes_full_traceback(monkeypatch):
     assert result_json['files'][0]['scan_errors'][1].startswith('ERROR: copyrights: Traceback (most recent call')
 
 
-def test_failing_scan_return_proper_exit_code(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_failing_scan_return_proper_exit_code():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     runner = CliRunner()
     result_file = test_env.get_temp_file('test.json')
@@ -268,8 +254,7 @@ def test_failing_scan_return_proper_exit_code(monkeypatch):
     assert result.exit_code != 1
 
 
-def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     runner = CliRunner()
     result_file = test_env.get_temp_file('test.html')
@@ -278,8 +263,7 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     assert 'Scanning done' in result.output
 
 
-def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html_app(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html_app():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     runner = CliRunner()
     result_file = test_env.get_temp_file('test.app.html')
@@ -288,8 +272,7 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     assert 'Scanning done' in result.output
 
 
-def test_scan_works_with_multiple_processes(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_works_with_multiple_processes():
     test_dir = test_env.get_test_loc('multiprocessing', copy=True)
     runner = CliRunner()
     # run the same scan with one or three processes
@@ -304,8 +287,7 @@ def test_scan_works_with_multiple_processes(monkeypatch):
     assert sorted(res1['files']) == sorted(res3['files'])
 
 
-def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_works_with_multiple_processes_and_timeouts():
     # this contains test files with a lot of 100+ small licenses mentions that should
     # take more thant timeout to scan
     test_dir = test_env.get_test_loc('timeout', copy=True)
@@ -314,7 +296,7 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
     import time, random
     for tf in fileutils.file_iter(test_dir):
         with open(tf, 'ab') as tfh:
-            tfh.write('(c)' + str(time.time() + random.randint(0, 10 ** 6)) + '(c)')
+            tfh.write('(c)' + str(time.time()) + repr([random.randint(0, 10 ** 6) for _ in range(10000)]) + '(c)')
 
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
@@ -327,23 +309,22 @@ def test_scan_works_with_multiple_processes_and_timeouts(monkeypatch):
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     expected = [
-        OrderedDict([(u'path', u'test1.txt'), (u'scan_errors', [u'ERROR: Processing interrupted: timeout after 0 seconds.'])]),
-        OrderedDict([(u'path', u'test2.txt'), (u'scan_errors', [u'ERROR: Processing interrupted: timeout after 0 seconds.'])]),
-        OrderedDict([(u'path', u'test3.txt'), (u'scan_errors', [u'ERROR: Processing interrupted: timeout after 0 seconds.'])]),
+        [(u'path', u'test1.txt'), (u'scan_errors', [u'ERROR: Processing interrupted: timeout after 0 seconds.'])],
+        [(u'path', u'test2.txt'), (u'scan_errors', [u'ERROR: Processing interrupted: timeout after 0 seconds.'])],
+        [(u'path', u'test3.txt'), (u'scan_errors', [u'ERROR: Processing interrupted: timeout after 0 seconds.'])],
     ]
 
-    result_json = json.loads(open(result_file).read(),object_pairs_hook=OrderedDict)
-    assert sorted(expected) == sorted(result_json['files'])
+    result_json = json.loads(open(result_file).read(), object_pairs_hook=OrderedDict)
+    assert sorted(expected) == sorted(x.items() for x in result_json['files'])
 
 
-def test_scan_does_not_fail_when_scanning_unicode_files_and_paths(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
     test_dir = test_env.get_test_loc(u'unicodepath/uc')
 
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
     result = runner.invoke(cli.scancode, ['--info', '--license', '--copyright',
-                                          '--package', '--email', '--url', '--strip-root', test_dir , result_file], catch_exceptions=True)
+                                          '--package', '--email', '--url', '--strip-root', test_dir , result_file], catch_exceptions=False)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
@@ -360,8 +341,7 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths(monkeypatch):
     check_scan(test_env.get_test_loc(expected), result_file, strip_dates=True, regen=False)
 
 
-def test_scan_can_handle_licenses_with_unicode_metadata(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_can_handle_licenses_with_unicode_metadata():
     test_dir = test_env.get_test_loc('license_with_unicode_meta')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
@@ -370,8 +350,7 @@ def test_scan_can_handle_licenses_with_unicode_metadata(monkeypatch):
     assert 'Scanning done' in result.output
 
 
-def test_scan_quiet_to_file_does_not_echo_anything(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_quiet_to_file_does_not_echo_anything():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     runner = CliRunner()
     result1_file = test_env.get_temp_file('json')
@@ -380,8 +359,7 @@ def test_scan_quiet_to_file_does_not_echo_anything(monkeypatch):
     assert not result1.output
 
 
-def test_scan_quiet_to_stdout_only_echoes_json_results(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_quiet_to_stdout_only_echoes_json_results():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     runner = CliRunner()
     result1_file = test_env.get_temp_file('json')
@@ -399,8 +377,7 @@ def test_scan_quiet_to_stdout_only_echoes_json_results(monkeypatch):
     assert result1_output == result2.output
 
 
-def test_scan_verbose_does_not_echo_ansi_escapes(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_verbose_does_not_echo_ansi_escapes():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     runner = CliRunner()
     result = runner.invoke(cli.scancode, ['--verbose', '--info', test_dir], catch_exceptions=True)
@@ -408,8 +385,7 @@ def test_scan_verbose_does_not_echo_ansi_escapes(monkeypatch):
     assert '[?' not in result.output
 
 
-def test_scan_can_return_matched_license_text(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_can_return_matched_license_text():
     test_file = test_env.get_test_loc('license_text/test.txt')
     expected_file = test_env.get_test_loc('license_text/test.expected')
     runner = CliRunner()
@@ -421,8 +397,7 @@ def test_scan_can_return_matched_license_text(monkeypatch):
 
 
 @skipIf(on_windows, 'This test cannot run on windows as these are not legal file names.')
-def test_scan_can_handle_weird_file_names(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+def test_scan_can_handle_weird_file_names():
     test_dir = test_env.extract_test_tar('weird_file_name/weird_file_name.tar.gz')
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')

@@ -2,7 +2,7 @@
 #-------------------------------------------------------------------
 # tarfile.py
 #-------------------------------------------------------------------
-# Copyright (C) 2002 Lars Gustäbel <lars@gustaebel.de>
+# Copyright (C) 2002 Lars Gustï¿½bel <lars@gustaebel.de>
 # All rights reserved.
 #
 # Permission  is  hereby granted,  free  of charge,  to  any person
@@ -33,10 +33,10 @@ __version__ = "$Revision: 85213 $"
 # $Source$
 
 version = "0.9.0"
-__author__ = "Lars Gustäbel (lars@gustaebel.de)"
+__author__ = "Lars Gustï¿½bel (lars@gustaebel.de)"
 __date__ = "$Date$"
 __cvsid__ = "$Id$"
-__credits__ = "Gustavo Niemeyer, Niels Gustäbel, Richard Townsend."
+__credits__ = "Gustavo Niemeyer, Niels Gustï¿½bel, Richard Townsend."
 
 #---------
 # Imports
@@ -56,6 +56,15 @@ try:
     import grp, pwd
 except ImportError:
     grp = pwd = None
+
+from commoncode.text import as_unicode
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+except NameError:
+    # Python 3
+    unicode = str
 
 # from tarfile import *
 __all__ = ["TarFile", "TarInfo", "is_tarfile", "TarError"]
@@ -1416,8 +1425,8 @@ class TarInfo(object):
             length = int(length)
             value = buf[match.end(2) + 1:match.start(1) + length - 1]
 
-            keyword = keyword.decode("utf8")
-            value = value.decode("utf8")
+            keyword = as_unicode(keyword)
+            value = as_unicode(value)
 
             pax_headers[keyword] = value
             pos += length

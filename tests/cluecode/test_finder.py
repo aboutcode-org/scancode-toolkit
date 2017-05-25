@@ -483,7 +483,7 @@ class TestUrl(FileBasedTesting):
         assert expected == result
 
     def test_find_urls_finds_git_urls(self):
-        lines = ['git@github.com:christophercantu/pipeline.git',]
+        lines = ['git@github.com:christophercantu/pipeline.git', ]
         expected = ['git@github.com:christophercantu/pipeline.git']
         result = find_urls_tester(lines)
         assert expected == result

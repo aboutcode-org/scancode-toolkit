@@ -30,7 +30,7 @@ from __future__ import unicode_literals
 # Import early because this import has monkey-patching side effects
 from scancode.pool import get_pool
 
-
+import codecs
 from collections import OrderedDict
 from functools import partial
 import os
@@ -42,6 +42,8 @@ import traceback
 from types import GeneratorType
 
 import click
+click.disable_unicode_literals_warning = True
+
 from click.termui import style
 
 from commoncode import filetype
@@ -71,6 +73,18 @@ from scancode import utils
 from scancode.interrupt import TimeoutError
 
 echo_stderr = partial(click.secho, err=True)
+
+
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+    str_orig = str
+    bytes = str
+    str = unicode
+except NameError:
+    # Python 3
+    unicode = str
 
 
 info_text = '''
@@ -205,7 +219,8 @@ def validate_exclusive(ctx, exclusive_options):
 @click.command(name='scancode', epilog=epilog_text, cls=ScanCommand)
 @click.pass_context
 
-@click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True))
+# ensure that the input path is always Unicode
+@click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True, path_type=str))
 @click.argument('output_file', default='-', metavar='<output_file>', type=click.File('w', encoding='utf-8'))
 
 # Note that click's 'default' option is set to 'false' here despite these being documented to be enabled by default in
@@ -407,7 +422,7 @@ def scan(input_path,
     pool = get_pool(processes=processes, maxtasksperchild=1000)
     resources = resource_paths(input_path)
     logfile_path = scans_cache_class().cache_files_log
-    with open(logfile_path, 'wb') as logfile_fd:
+    with codecs.open(logfile_path, 'w', encoding='utf-8') as logfile_fd:
 
         logged_resources = _resource_logger(logfile_fd, resources)
 

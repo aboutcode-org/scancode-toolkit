@@ -26,6 +26,9 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 from functools import partial
 import locale
@@ -105,7 +108,7 @@ def load_lib():
         lib = ctypes.CDLL(libarchive)
         if lib and lib._name:
             return lib
-    raise ImportError('Failed to load libarchive: %(libarchive)r' % locals())
+    raise ImportError('Failed to load libarchive: %(libarchive)s' % locals())
 
 
 # NOTE: this is important to avoid timezone differences
@@ -357,7 +360,7 @@ class Entry(object):
             return target_path
 
         except ArchiveWarning, aw:
-            msg = str(aw).strip('\'" ') or 'No message provided.'
+            msg = aw.args and '\n'.join(aw.args) or 'No message provided.'
             if msg not in self.warnings:
                 self.warnings.append(msg)
             return target_path
@@ -376,16 +379,16 @@ class ArchiveException(ExtractError):
         if root_ex and isinstance(root_ex, ArchiveException):
             self.rc = root_ex.rc
             self.errno = root_ex.errno
-            self.msg = str(root_ex).strip('\'" ')
+            self.msg = root_ex.args and '\n'.join(root_ex.args)
             self.func = root_ex.func
         else:
             self.rc = rc
             self.errno = archive_struct and errno(archive_struct) or None
-            self.msg = archive_struct and err_msg(archive_struct).strip('\'" ') or None
+            self.msg = archive_struct and err_msg(archive_struct) or None
             self.func = archive_func and archive_func.__name__ or None
 
     def __str__(self):
-        msg = '%(msg)r'
+        msg = '%(msg)s'
         if DEBUG:
             msg += (': in function %(func)r with rc=%(rc)r, errno=%(errno)r, '
                     'root_ex=%(root_ex)s')

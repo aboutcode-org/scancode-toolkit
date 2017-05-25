@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import os
 
@@ -228,9 +230,9 @@ class TestQueryWithSingleRun(IndexTesting):
              },
             {'end': 36, 'start': 36, 'tokens': u'redistributions'}]
         assert expected == result
- 
+
         expected_lbp = [
-            4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 
+            4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8,
             9, 9, 9, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 15
         ]
         assert expected_lbp == qry.line_by_pos
@@ -416,10 +418,10 @@ class TestQueryWithMultipleRuns(IndexTesting):
         qruns = qry.query_runs
         qr = qruns[0]
         # test
-        expected ='QueryRun(start=0, len=7, start_line=1, end_line=1)'
+        expected = 'QueryRun(start=0, len=7, start_line=1, end_line=1)'
         assert expected == repr(qr)
 
-        expected ='QueryRun(start=0, len=7, start_line=1, end_line=1, tokens="redistributions in binary form must redistributions in")'
+        expected = 'QueryRun(start=0, len=7, start_line=1, end_line=1, tokens="redistributions in binary form must redistributions in")'
         assert expected == qr.__repr__(trace_repr=True)
 
     def test_query_runs_text_is_correct(self):

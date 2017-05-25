@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import logging
 import os
@@ -158,7 +160,7 @@ def new_name(location, is_dir=False):
     assert location
     location = location.rstrip('\\/')
     assert location
-        
+
     parent = fileutils.parent_directory(location)
 
     # all existing files or directory as lower case
@@ -195,7 +197,6 @@ def new_name(location, is_dir=False):
             break
         counter += 1
     return os.path.join(parent, filename)
-
 
 
 # TODO: use attrs and slots

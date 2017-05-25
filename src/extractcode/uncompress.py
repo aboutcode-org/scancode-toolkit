@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import logging
 import os
@@ -114,7 +116,7 @@ class GzipFileWithTrailing(gzip.GzipFile):
     """
     # TODO: what is first_file??
     first_file = True
-    gzip_magic = '\037\213'
+    gzip_magic = b'\037\213'
     has_trailing_garbage = False
 
     def _read_gzip_header(self):
@@ -126,7 +128,7 @@ class GzipFileWithTrailing(gzip.GzipFile):
         if is_gzip and not self.first_file:
             self.first_file = False
             self.has_trailing_garbage = True
-            raise EOFError, 'Trailing garbage found'
+            raise EOFError('Trailing garbage found')
 
         self.first_file = False
         gzip.GzipFile._read_gzip_header(self)

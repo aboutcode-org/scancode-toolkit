@@ -9936,8 +9936,8 @@ Tmis
 XILINX
 exofs
 GDB GAS binutils
-qla2xxx 
-qla3xxx 
+qla2xxx
+qla3xxx
 qla4xxx
 qlge
 qlcnic

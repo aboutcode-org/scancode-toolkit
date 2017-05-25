@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,17 +22,19 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function, unicode_literals
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 
-import os
-
-from commoncode.testcase import FileBasedTesting
-
-from extractcode import patch
-from unittest.case import expectedFailure
 import codecs
 import json
+import os
+from unittest.case import expectedFailure
+
+from commoncode.testcase import FileBasedTesting
+from commoncode.text import as_unicode
+from extractcode import patch
 
 
 class TestIsPatch(FileBasedTesting):
@@ -56,6 +58,10 @@ class TestIsPatch(FileBasedTesting):
 
 def check_patch(test_file, expected_file, regen=False):
     result = [list(pi) for pi in patch.patch_info(test_file)]
+
+    result = [[as_unicode(s), as_unicode(t), map(as_unicode, lines)]
+              for s, t, lines in result]
+
     if regen:
         with codecs.open(expected_file, 'wb', encoding='utf-8') as regened:
             json.dump(result, regened, indent=2)

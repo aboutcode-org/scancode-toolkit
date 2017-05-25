@@ -22,16 +22,25 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 from unittest.case import expectedFailure
 from unittest.case import skip
 
 from commoncode import functional
-
+from commoncode.text import python_safe_name
 from licensedcode import index
 from licensedcode.match import get_texts
-from commoncode.text import python_safe_name
+
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+except NameError:
+    # Python 3
+    unicode = str
 
 
 """
@@ -49,6 +58,9 @@ def make_license_test_function(
     """
     Build and return a test function closing on tests arguments.
     """
+    if isinstance(test_name, unicode):
+        test_name = test_name.encode('utf-8')
+
     if not isinstance(expected_licenses, list):
         expected_licenses = [expected_licenses]
 

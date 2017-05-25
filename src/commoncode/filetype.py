@@ -24,6 +24,7 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 import os
 from collections import OrderedDict
@@ -166,7 +167,7 @@ def is_executable(location):
 
 def is_rwx(location):
     """
-    Return True if the file at location has read, write and executable 
+    Return True if the file at location has read, write and executable
     permission set. Does not follow links.
     """
     return is_readable(location) and is_writable(location) and is_executable(location)

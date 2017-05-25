@@ -167,7 +167,7 @@ JUNK_URL_PREFIXES = tuple(set_from_text('''
     http://www.jboss.org/j2ee/dtd/
     http://glassfish.org/dtds/
     http://docbook.org/xml/simple/
-    http://www.oasis-open.org/docbook/xml/    
+    http://www.oasis-open.org/docbook/xml/
 '''))
 
 

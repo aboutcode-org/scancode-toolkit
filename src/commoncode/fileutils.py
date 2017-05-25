@@ -22,7 +22,19 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import unicode_literals
+from __future__ import print_function
+
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+    str = unicode
+except NameError:
+    # Python 3
+    unicode = str
+
 
 import codecs
 import errno
@@ -220,7 +232,7 @@ def resource_name(path, force_posix=False):
     Return the resource name (file name or directory name) from `path` which
     is the last path segment.
     """
-    _left, right = split_parent_resource(path,force_posix)
+    _left, right = split_parent_resource(path, force_posix)
     return right or  ''
 
 
@@ -236,7 +248,7 @@ def parent_directory(path, force_posix=False):
     Return the parent directory path of a file or directory `path`.
     """
     left, _right = split_parent_resource(path, force_posix)
-    use_posix = force_posix or is_posixpath(path) 
+    use_posix = force_posix or is_posixpath(path)
     sep = use_posix and '/' or '\\'
     trail = sep if left != sep else ''
     return left + trail
@@ -263,32 +275,32 @@ def splitext(path, force_posix=False):
     the file name minus its extension. Return an empty extension string for a
     directory. A directory is identified by ending with a path separator. Not
     the same as os.path.splitext.
-    
+
     For example:
-    >>> splitext('C:\\dir\path.ext')
-    ('path', '.ext')
+    >>> expected = 'path', '.ext'
+    >>> assert expected == splitext('C:\\dir\path.ext')
 
     Directories even with dotted names have no extension:
     >>> import ntpath
-    >>> splitext('C:\\dir\\path.ext' + ntpath.sep)
-    ('path.ext', '')
+    >>> expected = 'path.ext', ''
+    >>> assert expected == splitext('C:\\dir\\path.ext' + ntpath.sep)
 
-    >>> splitext('/dir/path.ext/')
-    ('path.ext', '')
+    >>> expected = 'path.ext', ''
+    >>> assert expected == splitext('/dir/path.ext/')
 
-    >>> splitext('/some/file.txt')
-    ('file', '.txt')
-    
+    >>> expected = 'file', '.txt'
+    >>> assert expected == splitext('/some/file.txt')
+
     Composite extensions for tarballs are properly handled:
-    >>> splitext('archive.tar.gz')
-    ('archive', '.tar.gz')
+    >>> expected = 'archive', '.tar.gz'
+    >>> assert expected == splitext('archive.tar.gz')
     """
     base_name = ''
     extension = ''
     if not path:
         return base_name, extension
 
-    ppath= as_posixpath(path)    
+    ppath = as_posixpath(path)
     name = resource_name(path, force_posix)
     name = name.strip('\\/')
     if ppath.endswith('/'):

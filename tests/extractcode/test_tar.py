@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 
 import os
@@ -110,7 +112,7 @@ class TestTarGzip(BaseArchiveTestCase):
             'skinenigmang/hqlogos/Disney Channel.xpm: Skipping duplicate file name.',
             'skinenigmang/hqlogos/EuroNews.xpm: Skipping duplicate file name.',
             'skinenigmang/hqlogos/Jetix.xpm: Skipping duplicate file name.',
-            "skinenigmang/hqlogos/MTV France.xpm: Skipping link to special file: 'skinenigmang/hqlogos/MTV F.xpm'"
+            "skinenigmang/hqlogos/MTV France.xpm: Skipping link to special file: skinenigmang/hqlogos/MTV F.xpm"
         ]
         result = tar.extract(test_file, test_dir)
         result = [m.replace(test_dir, '').strip('\\/') for m in result]
@@ -294,14 +296,14 @@ class TestTar(BaseArchiveTestCase):
         ]
         check_files(test_dir, expected)
 
-        expected_warnings =  [
-            "2-SYMTYPE: Skipping broken link to: 'testtar/0-REGTYPE'",
+        expected_warnings = [
+            "2-SYMTYPE: Skipping broken link to: testtar/0-REGTYPE",
             '3-CHRTYPE: Skipping special file.',
             '6-FIFOTYPE: Skipping special file.'
         ]
         assert sorted(expected_warnings) == sorted(result)
 
-    @skipIf(True, 'Unicode tar paths are not handled well yet')
+    @skipIf(True, 'Unicode tar paths are not handled well yet: we use libarchive instead')
     def test_extract_python_testtar_tar_archive_with_special_files(self):
         test_file = self.get_test_loc('archive/tar/testtar.tar')
         # this is from:
@@ -309,7 +311,7 @@ class TestTar(BaseArchiveTestCase):
         test_dir = self.get_temp_dir()
         result = tar.extract(test_file, test_dir)
         expected_warnings = []
-#             "Skipping broken link to: 'testtar/0-REGTYPE'",
+#             "Skipping broken link to: testtar/0-REGTYPE",
 #             'Skipping special file.',
 #             'Skipping special file.'
 #         ]

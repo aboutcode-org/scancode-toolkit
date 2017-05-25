@@ -22,20 +22,32 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import absolute_import
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
-from urllib import quote_plus
+import sys
 
 import click
-from click._termui_impl import ProgressBar
 from click.utils import echo
+from click._termui_impl import ProgressBar
 
 from commoncode import fileutils
+from commoncode.text import as_unicode
 
 
 """
 Various CLI UI utilities, many related to Click and progress reporting.
 """
+
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+except NameError:
+    # Python 3
+    unicode = str
 
 
 class BaseCommand(click.Command):
@@ -152,26 +164,34 @@ def progressmanager(iterable=None, length=None, label=None, show_eta=True,
                           width=width, color=color)
 
 
-def encode_path(path):
+def get_fs_encoding():
     """
-    Return a path as ASCII possibly URL-encoded if it cannot be decoded as UTF-8.
+    Return the current filesystem encoding or default encoding
+    """
+    return sys.getfilesystemencoding() or sys.getdefaultencoding()
+
+
+def path_as_unicode(path):
+    """
+    Return path as unicode.
     """
     if isinstance(path, unicode):
-        path = path.encode('utf-8')
-    return quote_plus(path)
-
+        return path
+    try:
+        return path.decode(get_fs_encoding())
+    except UnicodeDecodeError:
+        return as_unicode(path)
 
 def get_relative_path(path, len_base_path, base_is_dir):
     """
-    Return a posix relative path from the posix 'path' relative to a base path of
-    `len_base_path` length where the base is a directory if `base_is_dir` True or a
-    file otherwise.
+    Return a posix relative path from the posix 'path' relative to a
+    base path of `len_base_path` length where the base is a directory if
+    `base_is_dir` True or a file otherwise.
     """
+    path = path_as_unicode(path)
     if base_is_dir:
         rel_path = path[len_base_path:]
     else:
         rel_path = fileutils.file_name(path)
 
-    encoded_segments = [encode_path(p) for p in rel_path.split('/')]
-
-    return '/'.join(encoded_segments).lstrip('/')
+    return rel_path.lstrip('/')

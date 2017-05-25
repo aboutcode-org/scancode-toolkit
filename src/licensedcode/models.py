@@ -344,15 +344,15 @@ class License(object):
                         warn('Homepage URL same as faq_url')
                     if lic.homepage_url == lic.osi_url:
                         warn('Homepage URL same as osi_url')
-    
+
                 if lic.osi_url or lic.faq_url:
                     if lic.osi_url == lic.faq_url:
                         warn('osi_url same as faq_url')
-    
+
                 all_licenses = lic.text_urls + lic.other_urls
                 for url in lic.osi_url, lic.faq_url, lic.homepage_url:
                     if url: all_licenses.append(url)
-    
+
                 if not len(all_licenses) == len(set(all_licenses)):
                     warn('Some duplicated URLs')
 
