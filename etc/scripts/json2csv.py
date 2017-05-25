@@ -33,6 +33,8 @@ import json
 import os
 
 import click
+click.disable_unicode_literals_warning = True
+
 import unicodecsv
 
 """
