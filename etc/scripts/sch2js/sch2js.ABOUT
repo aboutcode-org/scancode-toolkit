@@ -1,0 +1,5 @@
+about_resource: sch2js.py
+name: jsonschematics
+download_url: https://raw.githubusercontent.com/boblannon-picwell/jsonschematics/ac24246459c51ad730d008a4e97c2f16a115dd2c/jsonschematics/__init__.py
+license_file: sch2js.LICENSE
+license: mit

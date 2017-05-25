@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,6 +24,7 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 from collections import namedtuple
 import string
@@ -229,6 +230,10 @@ class VersionType(BaseType):
     instance when storing a tuple, namedtuple or list for each each version
     parts or parsing the version in parts or exposiing parts.
     """
+    metadata = dict(
+        label='version',
+        description='The version of the package as a string. '
+        'Package types may implement specialized handling for versions, but this seralizes as a string')
 
     def __init__(self, separator=None, **kwargs):
         if not separator:
@@ -336,17 +341,36 @@ REPO_TYPES = (
 
 
 class Repository(BaseModel):
-    """
-    A package repository.
-    """
+    metadata = dict(
+        label='package repository',
+        description='Represents a package repository.')
+
     type = StringType(choices=REPO_TYPES)
+    type.metadata = dict(
+        label='package repository type',
+        description='The type of package repository for this repository. '
+        'One of: ' + ', '.join(REPO_TYPES))
+
     url = URIType()
-    # True if this is a public repository
+    url.metadata = dict(
+        label='url',
+        description='URL to this repository.')
+
     public = BooleanType(default=False)
+    public.metadata = dict(
+        label='public repository',
+        description='A flag set to true if this is a public repository.')
+
     mirror_urls = ListType(URIType)
-    # optional: nickname used for well known "named" public repos such as:
-    # Maven Central, Pypi, RubyGems, npmjs.org or their mirrors
+    mirror_urls.metadata = dict(
+        label='repository mirror urls',
+        description='A list of URLs for mirrors of this repository.')
+
     nickname = StringType()
+    nickname.metadata = dict(
+        label='repository nickname',
+        description='nickname used for well known "named" public repos such as: '
+        'Maven Central, Pypi, RubyGems, npmjs.org or their mirrors')
 
     class Options:
         fields_order = 'type', 'url', 'public', 'mirror_urls', 'name'
@@ -365,13 +389,29 @@ class Repository(BaseModel):
 
 
 class AssertedLicense(BaseModel):
-    """
-    License as asserted in a package metadata.
-    """
+    metadata = dict(
+        label='asserted license',
+        description='Represents the licensing as asserted in a package metadata.')
+
     license = StringType()
+    license.metadata = dict(
+        label='license',
+        description='license as asserted. This can be a text, a name or anything.')
+
     url = URIType()
+    url.metadata = dict(
+        label='url',
+        description='URL to a web page for this license.')
+
     text = StringType()
+    text.metadata = dict(
+        label='license text',
+        description='license text as asserted.')
+
     notice = StringType()
+    notice.metadata = dict(
+        label='notice',
+        description='a license notice for this package')
 
     class Options:
         fields_order = 'license', 'url', 'text', 'notice'
@@ -386,13 +426,29 @@ PARTY_TYPES = (party_person, party_project, party_org,)
 
 
 class Party(BaseModel):
-    """
-    A party is a person, project or organization.
-    """
+    metadata = dict(
+        label='party',
+        description='A party is a person, project or organization related to a package.')
+
     type = StringType(choices=PARTY_TYPES)
+    type.metadata = dict(
+        label='party type',
+        description='the type of this party: One of: ' + ', '.join(PARTY_TYPES))
+
     name = StringType()
+    name.metadata = dict(
+        label='name',
+        description='Name of this party.')
+
     url = URLType()
+    name.metadata = dict(
+        label='url',
+        description='URL to a primary web page for this party.')
+
     email = EmailType()
+    email.metadata = dict(
+        label='email',
+        description='Email for this party.')
 
     class Options:
         fields_order = 'type', 'name', 'email', 'url'
@@ -410,22 +466,31 @@ dep_ci = 'continuous integration'
 DEPENDENCY_GROUPS = (dep_runtime, dep_dev, dep_optional, dep_test, dep_build, dep_ci, dep_bundled,)
 
 
-# FIXME: this is broken ... Debs and RPMs use file deps as an indirection and not directly package deps.
+# FIXME: this is broken ... OSGi uses "Java packages" deps as an indirection and not directly package deps.
 class Dependency(BaseModel):
-    """
-    A dependency points to a Package via a package name and a version constraint
-    (such as ">= 3.4"). The version is the effective version that has been
-    picked and resolved.
-    """
-    # package name for this dependency
+    metadata = dict(
+        label='dependency',
+        description='A dependency points to a Package via a package name and a version constraint '
+        '(such as ">= 3.4"). The version is the effective version that has been '
+        'picked and resolved.')
+
     name = StringType(required=True)
+    name.metadata = dict(
+        label='name',
+        description='Name of the package for this dependency.')
 
-    # The effective or concrete resolved and used version
     version = VersionType()
+    version.metadata = dict(
+        label='version',
+        description='Version of this dependent package: '
+        'The effective or concrete resolved and used version.')
 
-    # The version constraints (aka. possible versions) for this dep.
-    # The meaning is package type-specific
     version_constraint = StringType()
+    version_constraint.metadata = dict(
+        label='version',
+        description='The version constraints (aka. possible versions) '
+        'for this dependent package: The meaning of this constraings is '
+        'package type-specific. ')
 
     class Options:
         fields_order = 'type', 'name', 'version', 'version_constraint'
@@ -461,18 +526,30 @@ PACKAGINGS = (as_archive, as_dir, as_file)
 
 
 class RelatedPackage(BaseModel):
-    """
-    A generic related package.
-    """
-    # Descriptive name of the type of package:
-    # RubyGem, Python Wheel, Maven Jar, etc.
-    type = StringType(choices=PARTY_TYPES)
+    metadata = dict(
+        label='related package',
+        description='A generic related package.')
+
+    type = StringType(required=True)
+    type.metadata = dict(
+        label='type',
+        description='Descriptive name of the type of package: '
+        'RubyGem, Python Wheel, Java Jar, Debian package, etc.')
 
     name = StringType(required=True)
-    version = VersionType()
+    name.metadata = dict(
+        label='name',
+        description='Name of the package.')
 
-    # the type of payload in this package. one of PAYLOADS or none
+    version = VersionType()
+    version.metadata = dict(
+        label='version',
+        description='Version of the package')
+
     payload_type = StringType(choices=PAYLOADS)
+    payload_type.metadata = dict(
+        label='Payload type',
+        description='The type of payload for this package. One of: ' + ', '.join(PAYLOADS))
 
     class Options:
         fields_order = 'type', 'name', 'version', 'payload_type'
@@ -480,10 +557,15 @@ class RelatedPackage(BaseModel):
 
 class Package(BaseModel):
     """
-    A package base class. Override for specific package behaviour. The way a
+    A package object.
+    Override for specific package behaviour. The way a
     package is created and serialized should be uniform across all Package
     types.
     """
+    metadata = dict(
+        label='package',
+        description='A package object.')
+
     ###############################
     # real class-level attributes
     ###############################
@@ -491,7 +573,6 @@ class Package(BaseModel):
     filetypes = tuple()
     mimetypes = tuple()
     extensions = tuple()
-
     # list of known metafiles for a package type, to recognize a package
     metafiles = []
 
@@ -503,116 +584,236 @@ class Package(BaseModel):
     ###############################
     # from here on, these are actual instance attributes, using descriptors
 
-    # Descriptive name of the type of package:
-    # RubyGem, Python Wheel, Maven Jar, etc.
     type = StringType(required=True)
+    type.metadata = dict(
+        label='package type',
+        description='Descriptive name of the type of package: '
+        'RubyGem, Python Wheel, Java Jar, Debian package, etc.')
 
     name = StringType(required=True)
+    name.metadata = dict(
+        label='package name',
+        description='Name of the package.')
+
     version = VersionType()
+    version.metadata = dict(
+        label='package version',
+        description='Version of the package. '
+        'Package types may implement specific handling for versions but this is always serialized as a string.')
 
-    # primary programming language for a package type
-    # i.e. RubyGems are primarily ruby, etc
     primary_language = StringType()
+    primary_language.metadata = dict(
+        label='Primary programming language',
+        description='Primary programming language of the package, such as Java, C, C++. '
+        'Derived from the package type: i.e. RubyGems are primarily ruby, etc.')
 
-    # type of packaging of this Package
     packaging = StringType(choices=PACKAGINGS)
+    packaging.metadata = dict(
+        label='Packaging',
+        description='How a package is packaged. One of: ' + ', '.join(PACKAGINGS))
 
     # TODO: add os and arches!!
 
-    # this is a "short" description.
     summary = StringType()
-    # this is a "long" description, often several pages of text.
+    summary.metadata = dict(
+        label='Summary',
+        description='Summary for this package i.e. a short description')
+
     description = StringType()
-    # the type of payload in this package. one of PAYLOADS or none
+    description.metadata = dict(
+        label='Description',
+        description='Description for this package '
+        'i.e. a long description, often several pages of text')
+
     payload_type = StringType(choices=PAYLOADS)
-    # size of the package in bytes, use LongType instead of IntType is because
+    payload_type.metadata = dict(
+        label='Payload type',
+        description='The type of payload for this package. One of: ' + ', '.join(PAYLOADS))
+
+    # we useLongType instead of IntType is because
     # IntType 2147483647 is the max size which means we cannot store
     # more than 2GB files
     size = LongType()
-    # release date of the package
-    release_date = DateTimeType()
+    size.metadata = dict(
+        label='size',
+        description='size of the package download in bytes')
 
-    # list of Parties: authors, packager, maintainers, contributors, distributor, vendor, etc
+    release_date = DateTimeType()
+    release_date.metadata = dict(
+        label='release date',
+        description='Release date of the package')
+
     # FIXME: this would be simpler as a list where each Party has also a type
     authors = ListType(ModelType(Party))
+    authors.metadata = dict(
+        label='authors',
+        description='A list of party objects. Note: this model schema will change soon.')
+
     maintainers = ListType(ModelType(Party))
+    maintainers.metadata = dict(
+        label='maintainers',
+        description='A list of party objects. Note: this model schema will change soon.')
+
     contributors = ListType(ModelType(Party))
+    contributors.metadata = dict(
+        label='contributors',
+        description='A list of party objects. Note: this model schema will change soon.')
+
     owners = ListType(ModelType(Party))
+    owners.metadata = dict(
+        label='owners',
+        description='A list of party objects. Note: this model schema will change soon.')
+
     packagers = ListType(ModelType(Party))
+    packagers.metadata = dict(
+        label='owners',
+        description='A list of party objects. Note: this model schema will change soon.')
+
     distributors = ListType(ModelType(Party))
+    distributors.metadata = dict(
+        label='distributors',
+        description='A list of party objects. Note: this model schema will change soon.')
+
     vendors = ListType(ModelType(Party))
+    vendors.metadata = dict(
+        label='vendors',
+        description='A list of party objects. Note: this model schema will change soon.')
 
-    # keywords or tags
     keywords = ListType(StringType())
+    keywords.metadata = dict(
+        label='keywords',
+        description='A list of keywords or tags.')
 
-    # url to a reference documentation for keywords or tags (such as a Pypi or SF.net Trove map)
     # FIXME: this is a Package-class attribute
     keywords_doc_url = URLType()
+    keywords_doc_url.metadata = dict(
+        label='keywords documentation URL',
+        description='URL to a reference documentation for keywords or '
+        'tags (such as a Pypi or SF.net Trove map)')
 
-    # Paths to actual metadata files for this package, if any.
-    # Relative to the package root directory or archive root.
     metafile_locations = ListType(StringType())
+    metafile_locations.metadata = dict(
+        label='metafile locations',
+        description='A list of metafile locations for this package '
+        '(such as a package.json, a setup.py). '
+        'Relative to the package root directory or archive root')
 
-    # URLs to remote metadata files for this package if available
     metafile_urls = ListType(URIType())
+    metafile_urls.metadata = dict(
+        label='metafile URLs',
+        description='A list of metafile remote URLs for this package '
+        '(such as a package.json, a setup.py)')
 
     homepage_url = URIType()
+    homepage_url.metadata = dict(
+        label='homepage URL',
+        description='URL to the homepage for this package')
+
     notes = StringType()
+    notes.metadata = dict(
+        label='Notes',
+        description='Notes, free text about this package')
 
-    # one or more direct download urls, possibly in SPDX vcs url form
-    # the first one is considered to be the primary
     download_urls = ListType(URIType())
+    download_urls.metadata = dict(
+        label='Download URLs',
+        description='A list of direct download URLs, possibly in SPDX VCS url form. '
+        'The first item is considered to be the primary download URL')
 
-    # checksums for the download
     download_sha1 = SHA1Type()
+    download_sha1.metadata = dict(label='Download SHA1', description='Shecksum for the download')
     download_sha256 = SHA256Type()
+    download_sha256.metadata = dict(label='Download SHA256', description='Shecksum for the download')
     download_md5 = MD5Type()
+    download_md5.metadata = dict(label='Download MD5', description='Shecksum for the download')
 
-    # issue or bug tracker
     bug_tracking_url = URLType()
+    bug_tracking_url.metadata = dict(
+        label='bug tracking URL',
+        description='URL to the issue or bug tracker for this package')
 
-    # strings (such as email, urls, etc)
     support_contacts = ListType(StringType())
+    support_contacts.metadata = dict(
+        label='Support contacts',
+        description='A list of strings (such as email, urls, etc) for support contacts')
 
-    # a URL where the code can be browsed online
     code_view_url = URIType()
+    code_view_url.metadata = dict(
+        label='code view URL',
+        description='a URL where the code can be browsed online')
 
-    # one of git, svn, hg, etc
-    vcs_tool = StringType(choices=['git', 'svn', 'hg', 'bzr', 'cvs'])
-    # a URL in the SPDX form of:
-    # git+https://github.com/nexb/scancode-toolkit.git
+    VCS_CHOICES = ['git', 'svn', 'hg', 'bzr', 'cvs']
+    vcs_tool = StringType(choices=VCS_CHOICES)
+    vcs_tool.metadata = dict(
+        label='Version control system tool',
+        description='The type of VCS tool for this package. One of: ' + ', '.join(VCS_CHOICES))
+
     vcs_repository = URIType()
-    # a revision, branch, tag reference, etc (can also be included in the URL
+    vcs_repository.metadata = dict(
+        label='VCS Repository URL',
+        description='a URL to the VCS repository in the SPDX form of:'
+        'git+https://github.com/nexb/scancode-toolkit.git')
+
     vcs_revision = StringType()
+    vcs_revision.metadata = dict(
+        label='VCS revision',
+        description='a revision, commit, branch or tag reference, etc. '
+        '(can also be included in the URL)')
 
-    # a top level copyright often asserted in metadata
     copyright_top_level = StringType()
-    # effective copyrights as detected and eventually summarized
+    copyright_top_level.metadata = dict(
+        label='Top level Copyright',
+        description='a top level copyright often asserted in package metadata')
+
     copyrights = ListType(StringType())
+    copyrights.metadata = dict(
+        label='Copyrights',
+        description='A list of effective copyrights as detected and eventually summarized')
 
-    # as asserted licensing information
-    # a list of AssertLicense objects
     asserted_licenses = ListType(ModelType(AssertedLicense))
+    asserted_licenses.metadata = dict(
+        label='asserted licenses',
+        description='A list of asserted license objects representing '
+        'the asserted licensing information for this package')
 
-    # List of paths legal files  (such as COPYING, NOTICE, LICENSE, README, etc.)
-    # Paths are relative to the root of the package
     legal_file_locations = ListType(StringType())
+    legal_file_locations.metadata = dict(
+        label='legal file locations',
+        description='A list of paths to legal files '
+        '(such as COPYING, NOTICE, LICENSE, README, etc.). '
+        'Paths are relative to the root of the package')
 
-    # Resolved or detected license expressions
     license_expression = StringType()
-    # list of license texts
-    license_texts = ListType(StringType())
+    license_expression.metadata = dict(
+        label='license expression',
+        description='license expression: either resolved or detected license expression')
 
-    # list of notices texts
+    license_texts = ListType(StringType())
+    license_texts.metadata = dict(
+        label='license texts',
+        description='A list of license texts for this package.')
+
     notice_texts = ListType(StringType())
+    license_texts.metadata = dict(
+        label='notice texts',
+        description='A list of notice texts for this package.')
 
     # Map a DEPENDENCY_GROUPS group name to a list of Dependency
-    # FIXME: we should instead just have a plain list where each dep contain a groups list.
+    # FIXME: we should instead just have a plain list where each dep contain a group.
     dependencies = DictType(ListType(ModelType(Dependency)), default={})
+    dependencies.metadata = dict(
+        label='dependencies',
+        description='An object mapping a dependency group to a '
+        'list of dependency objects for this package. '
+        'Note: the schema for this will change soon.'
+        'The possible values for dependency grousp are:' + ', '.join(DEPENDENCY_GROUPS)
+        )
 
-    # List of related packages and the corresponding payload.
-    # For instance the SRPM of an RPM
     related_packages = ListType(ModelType(RelatedPackage))
+    related_packages.metadata = dict(
+        label='related packages',
+        description='A list of related_package objects for this package. '
+        'For instance the SRPM source of a binary RPM.')
 
     class Options:
         # this defines the important serialization order

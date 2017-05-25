@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#", 
+  "id": "", 
+  "type": "object", 
+  "title": "package repository", 
+  "description": "Represents a package repository.", 
+  "properties": {
+    "type": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "package repository type", 
+          "description": "The type of package repository for this repository. One of: Bower, CPAN, Debian, Rubygems, Godoc, IVY, Maven, NPM, Packagist, Nuget, Pypi, YUM", 
+          "enum": [
+            "Bower", 
+            "CPAN", 
+            "Debian", 
+            "Rubygems", 
+            "Godoc", 
+            "IVY", 
+            "Maven", 
+            "NPM", 
+            "Packagist", 
+            "Nuget", 
+            "Pypi", 
+            "YUM"
+          ]
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "url": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "url", 
+          "description": "URL to this repository."
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "public": {
+      "oneOf": [
+        {
+          "type": "boolean", 
+          "title": "public repository", 
+          "description": "A flag set to true if this is a public repository."
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "mirror_urls": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "repository mirror urls", 
+          "description": "A list of URLs for mirrors of this repository.", 
+          "items": {
+            "type": "string"
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "nickname": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "repository nickname", 
+          "description": "nickname used for well known \"named\" public repos such as: Maven Central, Pypi, RubyGems, npmjs.org or their mirrors"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}
