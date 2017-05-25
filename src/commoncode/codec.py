@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,15 +22,17 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 """
 Numbers to bytes or strings and URLs coder/decoders.
 """
 
-padding = '/'
+padding = b'/'
 
-b85_symbols = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&()*+-;<=>?@^_`{|}~'
+b85_symbols = b'0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&()*+-;<=>?@^_`{|}~'
 len_b85_symbols = len(b85_symbols)
 
 
@@ -44,11 +46,11 @@ def to_base_n(num, base):
     # ensure that base is within bounds
     assert base >= 2 and base <= len_b85_symbols
     if num == 0:
-        return '0'
+        return b'0'
     # recurse with a floor division to encode from left to right
     based = to_base_n(num // base, base)
     # remove leading zeroes resulting from floor-based encoding
-    stripped = based.lstrip('0')
+    stripped = based.lstrip(b'0')
     # pick the symbol in the symbol table using a modulo
     encoded = b85_symbols[num % base]
     return stripped + encoded
@@ -83,11 +85,11 @@ def to_base85(num):
 def to_base10(s, b=36):
     """
     Convert a string s representing a number in base b back to an integer where base <= 85.
-
     """
+
     assert b <= len(b85_symbols) and b >= 2, 'Base must be in range(2, %d)' % (len(b85_symbols))
     # strip padding
-    s = s.replace(padding, '')
+    s = s.replace(padding, b'')
 
     base10_num = 0
     i = len(s) - 1
@@ -111,7 +113,7 @@ def num_to_bin(num):
 
     # Zero is not encoded but returned as an empty value
     if num == 0:
-        return '\x00'
+        return b'\x00'
 
     while num > 0:
         # add the least significant byte value
@@ -121,7 +123,7 @@ def num_to_bin(num):
 
     # reverse the list now such that the most significant
     # byte is at the start of this string to speed decoding
-    return ''.join(reversed(binstr))
+    return b''.join(reversed(binstr))
 
 
 def bin_to_num(binstr):
@@ -154,7 +156,7 @@ def urlsafe_b64decode(b64):
     Decode a url safe base64-encoded string.
     Note that we use stddecode to work around a bug in the standard library.
     """
-    b = b64.replace('-', '+').replace('_', '/')
+    b = b64.replace(b'-', b'+').replace(b'_', b'/')
     return stddecode(b)
 
 

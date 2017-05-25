@@ -24,16 +24,18 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
-from os.path import commonprefix
 import ntpath
+from os.path import commonprefix
 import posixpath
 import re
 
-from commoncode.fileutils import is_posixpath
+from commoncode.text import as_unicode
 from commoncode.text import toascii
-from commoncode.fileutils import as_winpath
 from commoncode.fileutils import as_posixpath
+from commoncode.fileutils import as_winpath
+from commoncode.fileutils import is_posixpath
 
 
 """
@@ -55,10 +57,7 @@ def safe_path(path, posix=False):
     """
     # if the path is UTF, try to use unicode instead
     if not isinstance(path, unicode):
-        try:
-            path = unicode(path, 'utf-8')
-        except:
-            pass
+        path = as_unicode(path)
 
     path = path.strip()
 
@@ -185,19 +184,17 @@ def portable_filename(filename):
     https://raw.githubusercontent.com/pallets/werkzeug/8c2d63ce247ba1345e1b9332a68ceff93b2c07ab/werkzeug/utils.py
 
     For example:
-    >>> portable_filename("A:\\ file/ with Spaces.mov")
-    'A___file__with_Spaces.mov'
+    >>> expected = 'A___file__with_Spaces.mov'
+    >>> assert expected == portable_filename("A:\\ file/ with Spaces.mov")
 
-    Unresolved reslative paths will be trated as a single filename. Use resolve
-    instead if you want to resolve paths:
-
-    >>> portable_filename("../../../etc/passwd")
-    '___.._.._etc_passwd'
+    Unresolved relative paths will be trated as a single filename. Use
+    resolve instead if you want to resolve paths:
+    >>> expected = '___.._.._etc_passwd'
+    >>> assert expected == portable_filename("../../../etc/passwd")
 
     Unicode name are transliterated:
-
-    >>> portable_filename(u'This contain UMLAUT \xfcml\xe4uts.txt')
-    'This_contain_UMLAUT_umlauts.txt'
+    >>> expected = 'This_contain_UMLAUT_umlauts.txt'
+    >>> assert expected == portable_filename(u'This contain UMLAUT \xfcml\xe4uts.txt')
     """
     filename = toascii(filename, translit=True)
 

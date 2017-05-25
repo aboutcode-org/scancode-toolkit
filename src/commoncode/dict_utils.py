@@ -28,7 +28,9 @@
 # entries to a densely packed array keeping only a sparse array of indices. This
 # eliminates wasted space without requiring any algorithmic changes.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import array
 import collections

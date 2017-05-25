@@ -28,7 +28,7 @@ from __future__ import absolute_import, print_function
 from datetime import datetime, tzinfo
 
 """
-Time is of the essence: path safe time stamps creation and conversion to 
+Time is of the essence: path safe time stamps creation and conversion to
 datetime objects.
 """
 

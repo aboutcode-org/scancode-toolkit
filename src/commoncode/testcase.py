@@ -22,12 +22,11 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-"""
-FIXME: TEMPORARY COPY of commoncode.testcase to handle new semantics for get_test_loc
-"""
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import division
+from __future__ import unicode_literals
 
 from unittest import TestCase as TestCaseClass
 
@@ -372,14 +371,14 @@ def file_cmp(file1, file2, ignore_line_endings=False):
     Compare two files content.
     Return False if they differ, True is they are the same.
     """
-    with open(file1) as f1:
+    with open(file1, 'rb') as f1:
         f1c = f1.read()
         if ignore_line_endings:
-            f1c = '\n'.join(f1c.splitlines(False))
-    with open(file2) as f2:
+            f1c = b'\n'.join(f1c.splitlines(False))
+    with open(file2, 'rb') as f2:
         f2c = f2.read()
         if ignore_line_endings:
-            f2c = '\n'.join(f2c.splitlines(False))
+            f2c = b'\n'.join(f2c.splitlines(False))
     assert f1c == f2c
 
 
