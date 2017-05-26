@@ -1,16 +1,16 @@
 {
   "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
   "scancode_options": {
-      "--copyright": true,
-      "--email": true,
-      "--format": "json",
-      "--info": true,
-      "--license": true,
-      "--license-score": 0,
-      "--package": true,
-      "--strip-root": true,
-      "--url": true
-  }, 
+    "--copyright": true,
+    "--license": true,
+    "--package": true,
+    "--email": true,
+    "--url": true,
+    "--info": true,
+    "--license-score": 0,
+    "--strip-root": true,
+    "--format": "json"
+  },
   "files_count": 4,
   "files": [
     {
@@ -40,9 +40,9 @@
       "urls": []
     },
     {
-      "path": "unicodepath/%CF%A8%CE%BF%CC%93%E2%8C%A8",
+      "path": "unicodepath/%A4%BF\u07e2%C7%D4%EE%BF",
       "type": "file",
-      "name": "%CF%A8%CE%BF%CC%93%E2%8C%A8",
+      "name": "%A4%BF\u07e2%C7%D4%EE%BF",
       "extension": "",
       "date": "2016-12-05",
       "size": 9,
@@ -66,9 +66,9 @@
       "urls": []
     },
     {
-      "path": "unicodepath/%CF%A8%CE%BF%CC%93%E2%8C%A8a",
+      "path": "unicodepath/%A4%BF\u07e2%C7%D4%EE%BFa",
       "type": "file",
-      "name": "%CF%A8%CE%BF%CC%93%E2%8C%A8a",
+      "name": "%A4%BF\u07e2%C7%D4%EE%BFa",
       "extension": "",
       "date": "2016-12-05",
       "size": 9,
@@ -92,9 +92,9 @@
       "urls": []
     },
     {
-      "path": "unicodepath/Izgradnja+sufiksnog+polja+koris%CC%8Ctenjem+Ka%CC%88rkka%CC%88inen+%E2%80%93+Sandersovog+algoritma.pdf",
+      "path": "unicodepath/Izgradnja sufiksnog polja kori+%EDtenjem K+%F1rkk+%F1inen %D4%C7%F4 Sandersovog algoritma.pdf",
       "type": "file",
-      "name": "Izgradnja+sufiksnog+polja+koris%CC%8Ctenjem+Ka%CC%88rkka%CC%88inen+%E2%80%93+Sandersovog+algoritma.pdf",
+      "name": "Izgradnja sufiksnog polja kori+%EDtenjem K+%F1rkk+%F1inen %D4%C7%F4 Sandersovog algoritma.pdf",
       "extension": ".pdf",
       "date": "2016-12-05",
       "size": 2,
