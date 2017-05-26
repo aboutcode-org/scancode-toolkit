@@ -123,7 +123,7 @@ def remove_backslashes_and_dotdots(directory):
     Return a list of errors if any.
     """
     errors = []
-    for top, _, files in os.walk(str(directory)):
+    for top, _, files in os.walk(directory):
         for filename in files:
             if not ('\\' in filename or '..' in filename):
                 continue
