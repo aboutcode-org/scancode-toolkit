@@ -1,0 +1,230 @@
+
+
+	  PROCHECK - Stereochemical Quality of Protein Structures
+          -------------------------------------------------------
+			and AQUA for PROCHECK-NMR
+                        -------------------------
+
+			CONFIDENTIALITY AGREEMENT
+			-------------------------
+
+
+
+In regard to the PROCHECK suite of programs, specified in Appendix 1
+herewith and the AQUA suite of programs specified in Appendix 2 herewith
+(the Software) supplied to us, the copyright and other intellectual
+property rights to which belong to the authors, we
+
+    __________________________________________________________________
+
+undertake to the authors that we shall be bound by the following terms and
+conditions:-
+
+1. We will receive the Software and any related documentation in confidence
+and will not use the same except for the purpose of the department's own 
+research. The Software will be used only by such of our officers or
+employees to whom it must reasonably be communicated to enable us to
+undertake our research and who agree to be bound by the same confidence.
+The department shall procure and enforce such agreement from its staff for
+the benefit of the authors.
+
+2. The publication of research using the Software must reference
+
+   "Laskowski R A, MacArthur M W, Moss D S & Thornton J M (1993). PROCHECK:
+   a program to check the stereochemical quality of protein
+   structures. J. Appl.  Cryst., 26, 283-291."
+
+and
+
+   "Rullmann J A C (1996). AQUA, Computer Program, Department of NMR
+   Spectroscopy, Bijvoet Center for Biomolecular Research, Utrecht
+   University, The Netherlands."
+
+
+3. Research shall take place solely at the department's premises at
+
+    __________________________________________________________________
+
+4. All forms of the Software will be kept in a reasonably secure place to
+prevent unauthorised access.
+
+5. Each copy of the Software or, if not practicable then, any package
+associated therewith shall be suitably marked (and such marking maintained) 
+with the following copyright notice: " Copyright 1992 M W MacArthur, R A
+Laskowski, D S Moss, J A C Rullmann & J M Thornton All Rights Reserved".
+
+6. The Software may be modified but any changes made shall be made
+available to the authors.
+
+7. The Software shall be used exclusively for academic teaching and
+research. The Software will not be used for any commercial research or
+research associated with an industrial company.
+
+8. The confidentiality obligation in paragraph one shall not apply:
+
+   (i)  to information and data known to the department at the time of
+	receipt hereunder (as evidenced by its written records);
+
+  (ii)	to information and data which was at the time of receipt in the 
+	public domain or thereafter becomes so through no wrongful act of
+	the department;
+
+ (iii)	to information and data which the department receives from a third
+	party not in breach of any obligation of confidentiality owed to
+	the authors.
+
+
+
+Please sign this Undertaking and return a copy of it to indicate that you 
+have read, understood and accepted the above terms.
+
+
+
+		      For and on behalf of _____________________________
+
+		      _________________________________________________
+		     
+		      ..................................................
+
+		      Dated ............................................
+
+
+
+
+APPENDIX 1 - DETAILS OF THE PROCHECK SUITE OF PROGRAMS PROVIDED (v.3.4.3)
+---------------------------------------------------------------
+
+Files to be included
+--------------------
+
+         1. anglen.f            }
+         2. anglen.inc          }
+         3. bplot.f             }
+         4. bplot.inc           }
+         5. brkcln.par          }
+         6. clean.f             }
+         7. gfac2pdb.f          }
+         8. gfac2pdb.inc        }
+         9. mplot.f             }
+        10. mplot.inc           } Source program files
+        11. nb.c                }
+        12. pplot.f             }
+        13. pplot.inc           }
+        14. ps.f                }
+        15. rmsdev.f            }
+        16. rmsdev.inc          }
+        17. secstr.f            }
+        18. sstruc.par          }
+        19. tplot.f             }
+        20. tplot.inc           }
+        21. viol2pdb.f          }
+        22. viol2pdb.inc        }
+        23. vplot.f             }
+        24. vplot.inc           }
+        25. gfac2pdb.scr        }
+        26. procheck.com      }
+        27. procheck.scr      }
+        28. procheck_comp.com }
+        29. procheck_comp.scr }
+        30. procheck_nmr.scr  }
+        31. proplot.com       }
+        32. proplot.scr       } Script files
+        33. proplot_comp.scr  }
+        34. proplot_nmr.scr   }
+        35. proplot_comp.com  }
+        36. prosub.com        }
+        37. setup.com         }
+        38. setup.scr         }
+        39. viol2pdb.scr      }
+        40. convax.for         }
+        41. procomp.com        } Installation files
+        42. procomp.scr        }
+        43. maninst.ps       }
+        44. manual.tar.Z     } Documentation files
+        45. nmr_manual.tar.Z }
+        46. procheck.dat       }
+        47. procheck.prm       } Data
+        48. procheck_comp.prm  } files
+        49. procheck_nmr.prm   }
+
+
+APPENDIX 2 - DETAILS OF THE AQUA SUITE OF PROGRAMS PROVIDED (v.0.40)
+-----------------------------------------------------------
+
+Files to be included
+--------------------
+
+Source files:-
+------------
+
+AquaCalc.c            AquaCalc.h
+                      AquaData.h
+AquaDist.c            AquaDist.h    
+AquaFiles.c           AquaFiles.h     
+AquaFuncts.c          AquaFuncts.h      
+AquaFuncts_biosym.c   AquaFuncts_biosym.h             
+AquaFuncts_cv.c       AquaFuncts_cv.h         
+AquaFuncts_io.c       AquaFuncts_io.h         
+AquaFuncts_pdb.c      AquaFuncts_pdb.h          
+AquaFuncts_pdbmr.c    AquaFuncts_pdbmr.h            
+AquaHow.c             AquaHow.h
+                      AquaMacros.h   
+AquaPseudo.c          AquaPseudo.h      
+AquaStrucset.c        AquaStrucset.h
+                      AquaTypes.h        
+AquaWhat.c            AquaWhat.h    
+Qext.c                Qext.h
+Range.c               Range.h
+                      cv_subs.h 
+
+Script files:-
+------------
+ReadNrv.pm*           convDIANAtorsrestr    qdbext*
+aqdrst*               convDISGEOdistrestr   qguessc*
+aqpc*                 convDISGEOtorsrestr   qguessr*
+aqpcsel               convMRTABLE           qhelp*
+aquanal.pl*           convXPLORdistrestr    qmodr*
+clean0*               convXPLORtorsrestr    qsplitr*
+convBIOSYMdistrestr   makecmm*              qsumm*
+convBIOSYMtorsrestr   qconvert*             qsumm_aux1*
+convDIANAdistrestr    qconvr*               qsumm_aux2*
+
+Documentation:-
+-------------
+README                 models.txt             qconvr.txt
+aqpc.txt               mr.txt                 qdbext.txt
+aqua_setup.txt         names.txt              qext.txt
+biosym.txt             overview.txt           qhelp.txt
+chains.txt             perl.txt               qsumm.txt
+conversion.txt         procheck.txt           restraint_format.txt
+dbas.txt               qanal.txt              setup.txt
+intro.txt              qclean.txt             torsion.txt
+log.txt                qconvert.txt           xplor.txt
+
+Extras:-
+------
+joinpdb*               splitpdb*
+
+
+
+Please complete the above form, sign it, and then send or fax to:-
+
+
+Roman Laskowski
+European Bioinformatics Institute,
+Wellcome Trust Genome Campus,
+Hinxton,
+Cambridge, CB10 1SD,
+United Kingdom
+ 
+Fax:- +44 (0)1223 494 468
+
+If you have any problems either installing the software or running it,
+please e-mail your problems to:-
+
+    roman@ebi.ac.uk
+
+Questions about AQUA should be directed to Ton Rullmann at
+
+      rull@nmr.chem.ruu.nl
+

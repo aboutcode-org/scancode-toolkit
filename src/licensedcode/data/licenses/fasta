@@ -1,0 +1,26 @@
+     Copyright 1988, 1991, 1992, 1993, 1994 1995, by William
+     R. Pearson and the University of Virginia.  All rights
+     reserved. The FASTA program and documentation may not be sold or
+     incorporated into a commercial product, in whole or in part,
+     without written consent of William R. Pearson and the University
+     of Virginia.  For further information regarding permission for
+     use or reproduction, please contact:
+
+	     David Hudson
+	     Assistant Provost for Research
+	     University of Virginia
+	     P.O. Box 400301
+	     Charlottesville, VA  22906-9025
+
+	     (434) 924-3606
+
+     Code in the smith_waterman_sse2.c and smith_waterman_sse2.h files
+     is copyright (c) 2006 by Michael Farrar.
+
+     This program may not be sold or incorporated into a commercial
+     product, in whole or in part, without written consent of Michael
+     Farrar.  For further information regarding permission for use or
+     reproduction, please contact: Michael Farrar at
+     farrar.michael@gmail.com.
+
+

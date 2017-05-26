@@ -1,0 +1,140 @@
+
+	    HylaFAX Facsimile Software
+
+	Copyright (c) 1990-1996 Sam Leffler
+	Copyright (c) 1991-1996 Silicon Graphics, Inc.
+	HylaFAX is a trademark of Silicon Graphics, Inc.
+
+Permission to use, copy, modify, distribute, and sell this software and 
+its documentation for any purpose is hereby granted without fee, provided
+that (i) the above copyright notices and this permission notice appear in
+all copies of the software and related documentation, and (ii) the names of
+Sam Leffler and Silicon Graphics may not be used in any advertising or
+publicity relating to the software without the specific, prior written
+permission of Sam Leffler and Silicon Graphics.
+
+THE SOFTWARE IS PROVIDED "AS-IS" AND WITHOUT WARRANTY OF ANY KIND, 
+EXPRESS, IMPLIED OR OTHERWISE, INCLUDING WITHOUT LIMITATION, ANY 
+WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.  
+
+IN NO EVENT SHALL SAM LEFFLER OR SILICON GRAPHICS BE LIABLE FOR
+ANY SPECIAL, INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND,
+OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+WHETHER OR NOT ADVISED OF THE POSSIBILITY OF DAMAGE, AND ON ANY THEORY OF 
+LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE 
+OF THIS SOFTWARE.
+
+
+Acknowledgements
+----------------
+The regular expression support is based on Henry Spencer's POSIX 1003.2
+compliant regex package that has ``Copyright 1992, 1993, 1994 Henry
+Spencer.  All rights reserved.'' Consult regex/COPYRIGHT for the full
+copyright notice associated with this software.
+
+The code to read PCF fonts is distantly related to the X11R5 code
+that is ``Copyright 1990 Massachusetts Institute of Technology''; consult
+faxd/PCFFont.c++ for the full copyright notice.
+
+The textfmt program is distantly related to the lptops program written
+by Nelson Beebe; there was no copyright notice on the version of the code
+that textfmt grew out of.
+
+The config.guess and config.sub scripts are part of the GNU autoconf
+package and covered by the GNU Public License (GPL).  Several ideas
+in the configure script are directly "borrowed" from autoconf (and I
+have tried to maintain as much compatibility as possible).
+
+The PCF font etc/lutRS18.pcf included for use with tag lines is a
+compiled version of a LucidaTypewriter font that was contributed to X11
+by Bigelow & Holmes.  Redistribution of this font requires inclusion of
+this copyright notice:
+
+
+    NOTICE TO USER: The source code, including the glyphs or icons 
+    forming a par of the OPEN LOOK TM Graphic User Interface, on this 
+    tape and in these files is copyrighted under U.S. and international
+    laws. Sun Microsystems, Inc. of Mountain View, California owns
+    the copyright and has design patents pending on many of the icons. 
+    AT&T is the owner of the OPEN LOOK trademark associated with the
+    materials on this tape. Users and possessors of this source code 
+    are hereby granted a nonexclusive, royalty-free copyright and 
+    design patent license to use this code in individual and 
+    commercial software. A royalty-free, nonexclusive trademark
+    license to refer to the code and output as "OPEN LOOK" compatible 
+    is available from AT&T if, and only if, the appearance of the 
+    icons or glyphs is not changed in any manner except as absolutely
+    necessary to accommodate the standard resolution of the screen or
+    other output device, the code and output is not changed except as 
+    authorized herein, and the code and output is validated by AT&T. 
+    Bigelow & Holmes is the owner of the Lucida (R) trademark for the
+    fonts and bit-mapped images associated with the materials on this 
+    tape. Users are granted a royalty-free, nonexclusive license to use
+    the trademark only to identify the fonts and bit-mapped images if, 
+    and only if, the fonts and bit-mapped images are not modified in any
+    way by the user. 
+
+
+    Any use of this source code must include, in the user documentation 
+    and internal comments to the code, notices to the end user as  
+    follows:
+
+
+    (c) Copyright 1989 Sun Microsystems, Inc. Sun design patents
+    pending in the U.S. and foreign countries. OPEN LOOK is a 
+    trademark of AT&T. Used by written permission of the owners.
+
+
+    (c) Copyright Bigelow & Holmes 1986, 1985. Lucida is a registered 
+    trademark of Bigelow & Holmes. Permission to use the Lucida 
+    trademark is hereby granted only in association with the images 
+    and fonts described in this file.
+
+
+
+    SUN MICROSYSTEMS, INC., AT&T, AND BIGELOW & HOLMES
+    MAKE NO REPRESENTATIONS ABOUT THE SUITABILITY OF
+    THIS SOURCE CODE FOR ANY PURPOSE. IT IS PROVIDED "AS IS" 
+    WITHOUT EXPRESS OR IMPLIED WARRANTY OF ANY KIND. 
+    SUN  MICROSYSTEMS, INC., AT&T AND BIGELOW  & HOLMES, 
+    SEVERALLY AND INDIVIDUALLY, DISCLAIM ALL WARRANTIES 
+    WITH REGARD TO THIS SOURCE CODE, INCLUDING ALL IMPLIED
+    WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+    PARTICULAR PURPOSE. IN NO EVENT SHALL SUN MICROSYSTEMS,
+    INC., AT&T OR BIGELOW & HOLMES BE LIABLE FOR ANY
+    SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES,
+    OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA      
+    OR PROFITS, WHETHER IN AN ACTION OF  CONTRACT, NEGLIGENCE
+    OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
+    WITH THE USE OR PERFORMANCE OF THIS SOURCE CODE.
+
+
+The files ramps.jpg, itufaxicc.c++, and itufaxicc.h came with the
+following copyright and license.
+
+---------------------------------
+ITUFAXICC
+Copyright (c) 2009 Marti Maria Saguer
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+---------------------------------
+
+The genfontmap.ps file is copyrighted... "Copyright (C) 2003 Artifex
+Software, Inc.  All rights reserved."  It is licensed under terms of the
+GPL version 2.

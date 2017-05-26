@@ -1,0 +1,25 @@
+The Institute of Electrical and Electronics Engineers (IEEE) and
+The Open Group, have given us permission to reprint portions of
+their documentation.
+
+In the following statement, the phrase ``this text'' refers to
+portions of the system documentation.
+
+Portions of this text are reprinted and reproduced in electronic form
+from IEEE Std 1003.1, 2013 Edition, Standard for Information Technology
+-- Portable Operating System Interface (POSIX), The Open Group Base
+Specifications Issue 7, Copyright (C) 2013 by the Institute of Electri-
+cal and Electronics Engineers, Inc and The Open Group.  (This is
+POSIX.1-2008 with the 2013 Technical Corrigendum 1 applied.) In the
+event of any discrepancy between this version and the original IEEE and
+The Open Group Standard, the original IEEE and The Open Group Standard
+is the referee document.  The original Standard can be obtained online
+at http://www.unix.org/online.html .
+
+This notice shall appear on any product containing this material.
+
+Redistribution of this material is permitted so long as this notice and
+the corresponding notices within each POSIX manual page are retained on
+any distribution, and the nroff source is included. Modifications to
+the text are permitted so long as any conflicts with the standard
+are clearly marked as such in the text.

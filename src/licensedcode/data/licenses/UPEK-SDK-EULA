@@ -1,0 +1,312 @@
+                      END-USER LICENSE AGREEMENT
+                                 for
+                   UPEK, INC. SDK SOFTWARE PRODUCTS
+
+                   IMPORTANT, PLEASE READ CAREFULLY
+
+YOU MAY NOT INSTALL OR USE THIS UPEK SOFTWARE PRODUCT UNLESS YOU HAVE
+CAREFULLY READ THE TERMS AND CONDITIONS SET FORTH BELOW AND INDICATE
+YOUR ACCEPTANCE OF SUCH TERMS AND CONDITIONS BY CLICKING ON THE "I
+ACCEPT" BUTTON AT THE END OF THIS SCREEN.
+
+This End-User License Agreement ("EULA") represents the understanding
+between UPEK, Inc. and its successors and assigns ("UPEK") and you
+(either an individual person or a single legal entity, referred to in
+this EULA as "You" or "Your") and governs the use of the UPEK software
+product that accompanies this EULA, including any associated media,
+printed materials and electronic documentation (the "Software
+Product"), except to the extent a particular program is the subject of
+a separate written agreement with UPEK. The Software Product may also
+include any software updates, add-on components, stencils, templates,
+shapes, symbols, web services and/or supplements that UPEK may provide
+to You or make available to You, or that You obtain from the use of
+features or functionality of the Software Product, after the date You
+obtain Your initial copy of the Software Product (whether by delivery
+of a CD, permitted downloading from the Internet or a dedicated web
+site, or otherwise), to the extent that such items are not accompanied
+by a separate license agreement or terms of use.
+
+BY INSTALLING OR USING THE SOFTWARE PRODUCT, YOU ARE CONSENTING TO BE
+BOUND BY THIS EULA. IF YOU DO NOT AGREE TO ALL OF THE TERMS AND
+CONDITIONS OF THIS EULA, THEN (A) DO NOT INSTALL OR USE THE SOFTWARE
+PRODUCT, AND (B) YOU MAY RETURN THE SOFTWARE PRODUCT TO THE PERSON WHO
+PROVIDED IT TO YOU FOR A FULL REFUND. Should You have any questions
+concerning this EULA, or if You desire to contact UPEK for any reason,
+please contact the UPEK subsidiary serving Your country/region.
+
+1. GRANT OF LICENSE. Subject to the terms and conditions of this EULA
+and Your payment of all applicable fees for the Software Product, UPEK
+and its suppliers hereby grant to You, and You hereby accept a
+nonexclusive license to install and use copies of the Software
+Product, on a device, workstation, terminal, PC peripheral or other
+digital, electronic or analog device embedding a UPEK fingerprint
+sensor (a "UPEK-Enabled Device"), for the purpose of designing,
+creating testing, and distributing Your software product(s). If this
+Software Product contains documentation that is provided only in
+electronic form, You may print one copy of such electronic
+documentation; provided, however, that You may not copy the printed
+materials accompanying the Software Product.
+
+2. ADDITIONAL LICENSE RIGHTS - REDISTRIBUTABLE CODE. In addition to
+the rights granted in section 1, certain portions of the product are
+redistributable by You as part of Your copyrighted software
+application. These additional license rights are conditioned upon your
+compliance with the distribution requirements and license restrictions
+described in Section 3.
+
+2.1 Sample Code. UPEK grants you the right to use and modify the
+source code version of those portions of the Product identified as
+"Samples" in REDISTRIBUTABLES.TXT or elsewhere in the Product ("Sample
+Code") for the sole purposes of designing, developing, testing and
+distributing your software product(s), and to reproduce and distribute
+the Sample Code, along with any modifications thereof, in object
+and/or source code form. For applicable redistribution requirements
+for Sample Code, see Section 3.1 below.
+
+2.2 Redistributable Object-Code. UPEK grants you a nonexclusive right
+to reproduce and distribute the object code of any portion of the
+Product listed in REDISTRIBUTABLES.TXT ("Redistributable Code"). For
+applicable redistribution requirements for Redistributable Code, see
+Section 3.1, below.
+
+3. LICENSE RESTRICTIONS -- DISTRIBUTION REQUIREMENTS. If you choose to
+exercise your rights under Section 2, any redistribution by you
+requires compliance with the following terms, as appropriate.
+
+3.1 Redistributable Code-Standard.
+
+(a) If you are authorized and choose to redistribute Sample Code
+and/or Redistributable Object- Code, as described in Section 2, you
+agree: (i) except as otherwise noted in Section 2.1 (Sample Code), to
+distribute the Redistributables only in object code form and in
+conjunction with and as a part of a copyrighted software application
+product developed by you that adds significant and primary
+functionality to the Redistributables ("Licensed Product"); (ii) to
+display your own valid copyright notice which shall be sufficient to
+protect UPEK's copyright in the Product; (iii) not to remove or
+obscure any copyright, trademark or patent notices that appear on the
+Product as delivered to you; (iv) to indemnify, hold harmless, and
+defend UPEK from and against any claims or lawsuits, including
+attorney's fees, that arise or result from the use or distribution of
+the Licensed Product; (v) otherwise comply with the terms of this
+EULA; and (vi) agree that UPEK reserves all rights not expressly
+granted.
+
+(b) You also agree not to permit further distribution of the
+Redistributables by your end users except: (1) you may permit further
+redistribution of the Redistributables by your distributors to your
+end-user customers if your distributors only distribute the
+Redistributables in conjunction with, and as part of, the Licensed
+Product and You and Your distributors comply with all other terms of
+this EULA.
+
+4. RESERVATION OF RIGHTS; RESTRICTIONS. All rights not expressly
+granted by UPEK in this EULA are reserved. Except as otherwise
+expressly provided under this EULA, You shall not, and shall not allow
+any third party to:
+
+(a) transfer, assign, sublicense, resell, re-license or provide,
+lease, lend or allow access to the Software Product to any other
+person or entity, except as otherwise provided herein;
+
+(b) make error corrections or create derivative works based upon the
+Software Product;
+
+(c) copy (except to make a single back-up copy to replace an unusable
+copy of the Software Product), modify, prepare derivative works based
+upon, decompile, decrypt, reverse engineer or attempt to reconstruct
+or discover any source code or underlying ideas or algorithms of the
+Software Product by any means whatsoever (except to the extent
+applicable laws specifically prohibit such restriction), disassemble
+or otherwise reduce the Software Product to human-readable form to
+gain access to trade secrets or confidential information in the
+Software Product;
+
+(d) use the Software Product for timesharing, hosting or service
+bureau purposes; or
+
+(e) remove, obscure, or alter UPEK's (or its third party licensors')
+copyright notices, trademarks, or other proprietary rights notices
+affixed to or contained within the Software Product (and any copies
+thereof, including the back-up copy) or use such notices, trademarks
+or service marks for any other purpose.
+
+You understand and agree that (i) the Software Product is licensed to
+You and not sold, (ii) your license to the individual components of
+the Software Product is limited to use of the Software Product as a
+whole, and You may not use or seek to use software code incorporated
+therein on a stand-alone basis, and (iii) the individual components of
+the Software Product may not be separated for use on more than one
+UPEK- Enabled Device, unless expressly permitted by this EULA. UPEK
+retains title to all copies of the Software Product and all associated
+intellectual property rights therein, and any and all documentation
+thereof.
+
+5. PROPRIETARY NOTICES; TRADEMARKS. You agree to maintain and
+reproduce all copyright and other proprietary notices on all copies,
+in any form, of the Software Product in the same form and manner that
+such copyright and other proprietary notices are included on the
+Software Product, including on any back-up copy of the Software
+Product. This EULA does not grant You any rights in connection with
+any trademarks or service marks of UPEK.
+
+6. SUPPORT SERVICES. UPEK may provide You with support services
+related to the Software Product ("Support Services"). Use of Support
+Services, if any, is governed by the UPEK policies and terms described
+in other UPEK-provided materials. Any supplemental software code
+provided to You as part of the Support Services is considered part of
+the Software Product and subject to the terms and conditions of this
+EULA.
+
+7. LIMITED WARRANTY.
+
+(a) UPEK warrants that during the "Warranty Period" (as defined
+below): (i) the media on which the Software Product is furnished, if
+any, will be free of defects in materials and workmanship under normal
+use; and (ii) the Software Product will substantially conform to its
+published specifications (the "Limited Warranty"). The "Warranty
+Period" means a period beginning on the date of Your receipt of the
+Software Product, as applicable, and ending on the later of (i) thirty
+(30) days from the date of delivery of such Software Product, as
+applicable, or (ii) the end of the minimum period required by the law
+of the applicable jurisdiction. The Limited Warranty extends only to
+You as the original licensee. This Limited Warranty does not cover
+anything caused by accident or abuse or by use of the Software Product
+other than for its reasonably intended purposes and as recommended in
+the accompanying user documentation. Updates are covered by this
+warranty only if provided to You during the Warranty Period. Your sole
+and exclusive remedy and the entire liability of UPEK and its
+suppliers under this Limited Warranty will be, at UPEK's option, to
+repair, replace, or refund the purchase price for the Software Product
+that is returned to UPEK, as applicable, provided that you report the
+defects to UPEK or its designee within the Warranty Period. Any breach
+of the Limited Warranty related to an error or defect in the media
+containing the Software Product shall be remedied solely with the
+replacement of the media containing the Software Product. You shall
+pay shipping or freight charges, including, without limitation,
+obtaining full value replacement insurance, for any returns, whether
+for repair, replacement, or refund, to UPEK or its designee.
+
+(b) This warranty does not apply if the Software Product (i) is
+licensed for beta, evaluation, testing, demonstration or other
+purposes for which UPEK does not receive a license fee, (ii) has been
+altered, except by UPEK, (iii) has not been installed, operated,
+repaired, or maintained by UPEK or in accordance with instructions
+supplied by UPEK, (iv) has been subjected to abnormal physical or
+electrical stress, misuse, negligence, or accident, or (v) is used in
+ultrahazardous activities.
+
+8. DISCLAIMER OF WARRANTIES.
+
+(a) EXCEPT FOR THE EXPRESS WARRANTIES SET FORTH IN SECTION 7, UPEK AND
+ITS SUPPLIERS PROVIDE THE SOFTWARE PRODUCT AND SUPPORT SERVICES (IF
+ANY) TO YOU "AS IS," AND YOUR USE IS AT YOUR OWN RISK. UPEK DOES NOT
+MAKE, AND HEREBY DISCLAIMS, ANY AND ALL OTHER EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT OF
+THIRD PARTY RIGHTS, AND ANY WARRANTIES ARISING FROM A COURSE OF
+DEALING, USAGE, OR TRADE PRACTICE. THE DURATION OF ANY IMPLIED
+WARRANTY THAT IS NOT EFFECTIVELY DISCLAIMED WILL BE LIMITED TO THE
+WARRANTY PERIOD. SOME STATES DO NOT ALLOW LIMITATIONS ON HOW LONG AN
+IMPLIED WARRANTY LASTS, SO THE ABOVE LIMITATION MAY NOT APPLY TO YOU.
+
+(b) UPEK DOES NOT WARRANT THAT THE SOFTWARE PRODUCT IS ERROR FREE OR
+THAT YOU WILL BE ABLE TO OPERATE THE SOFTWARE WITHOUT PROBLEMS OR
+INTERRUPTIONS.
+
+9. LIMITATION OF LIABILITY.
+
+(a) TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, YOU EXPRESSLY
+ACKNOWLEDGE AND AGREE THAT NEITHER UPEK NOR ITS AFFILIATES, RESELLERS
+OR LICENSORS WILL BE LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL,
+CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES ARISING OUT OF OR IN
+CONNECTION WITH THIS EULA, HOWSOEVER CAUSED BY ANY THEORY OF
+LIABILITY, INCLUDING BUT NOT LIMITED TO, CONTRACTS, PRODUCTS
+LIABILITY, STRICT LIABILITY AND NEGLIGENCE, AND WHETHER OR NOT UPEK OR
+ITS SUPPLIERS OR LICENSORS HAVE BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES. WITHOUT LIMITING THE FOREGOING AND TO THE MAXIMUM EXTENT
+PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL THE TOTAL LIABILITY OF
+UPEK OR ANY OF ITS AFFILIATES, SUPPLIERS OR LICENSORS ARISING OUT OF
+OR RELATED TO THIS EULA EXCEED THE FEES ACTUALLY PAID TO UPEK FOR THE
+SOFTWARE PRODUCT.
+
+(b) YOU ACKNOWLEDGE AND AGREE THAT THE PROVISIONS UNDER THIS EULA THAT
+LIMIT LIABILITY, DISCLAIM WARRANTIES, OR EXCLUDE CONSEQUENTIAL DAMAGES
+OR OTHER DAMAGES OR REMEDIES ARE ESSENTIAL TERMS OF THIS EULA THAT ARE
+FUNDAMENTAL TO THE PARTIES' UNDERSTANDING REGARDING ALLOCATION OF
+RISK. ACCORDINGLY, SUCH PROVISIONS SHALL BE SEVERABLE AND INDEPENDENT
+OF ANY OTHER PROVISIONS AND SHALL BE ENFORCED AS SUCH, REGARDLESS OF
+ANY BREACH OR OTHER OCCURRENCE HEREUNDER, AND EVEN UNDER CIRCUMSTANCES
+THAT CAUSE ANY EXCLUSIVE REMEDY UNDER THIS EULA TO FAIL OF ITS
+ESSENTIAL PURPOSE.
+
+10. TERM AND TERMINATION.
+
+(a) The term of this EULA shall commence upon the date You accept the
+terms and conditions of this EULA, and shall continue in full force
+and effect thereafter unless terminated by UPEK as provided herein.
+UPEK may, at its option, terminate this EULA immediately upon notice
+to You, if You fail to comply with any terms and conditions of this
+EULA.
+
+(b) Upon termination, all license rights under this EULA will
+terminate and You must promptly destroy all copies of the Software
+Product in Your possession or control. Upon UPEK's request, You shall
+certify in writing that You have complied with Your obligations under
+this Section and otherwise under this EULA. Termination by UPEK will
+not limit any of UPEK's other rights or remedies under this EULA or at
+law or in equity.
+
+11. MISCELLANEOUS.
+
+(a) LIMITS ON YOUR RIGHT TO TRANSFER. You may not assign, sublicense,
+rent, lease, lend, sell, grant a security interest in, or otherwise
+transfer the Software Product or any rights under this EULA without
+the prior written consent of UPEK.
+
+(b) APPLICABLE LAW. This EULA is governed by the laws of the United
+States and the State of California, without regard to the conflict of
+laws principles thereof. In relation to any legal action or proceeding
+arising out of this EULA, You hereby irrevocably consent and submit to
+the exclusive jurisdiction of the competent federal and state courts
+having jurisdiction in San Francisco County, California, and waive any
+objection to proceedings in such courts. If this EULA is translated
+into a language other than English and there is a conflict between the
+terms of the EULA in English and the EULA in the other language, the
+terms of the terms of the EULA in English shall prevail. The EULA in
+English may be downloaded from the UPEK website.
+
+(c) COMPLIANCE WITH LAWS. You agree to use the Software Product in
+compliance with all applicable laws, statutes, rules and regulations,
+including, without limitation, U.S. export laws and regulations.
+
+(d) SEVERABILITY AND SURVIVAL. If any provision of this EULA is
+illegal or unenforceable under applicable law, the remaining
+provisions of this EULA will remain valid and fully enforceable. If
+any provision is in part enforceable and in part unenforceable, it
+will be enforced to the extent permitted under applicable law.
+Sections 4, 5, 7, 8, 9, 10 and 11 shall survive the termination of
+this EULA.
+
+(e) INJUNCTIVE RELIEF. You agree that a breach of this EULA adversely
+affecting UPEK's proprietary rights in the Software Product or any
+UPEK-Enabled Device may cause irreparable injury to UPEK for which
+monetary damages would not be an adequate remedy and UPEK shall be
+entitled to equitable relief in addition to any remedies it may have
+hereunder or at law.
+
+(f) ENTIRE AGREEMENT. This EULA (including any addendum or amendment
+to this EULA which is included with the Software Product) is the
+entire agreement between You and UPEK relating to the Software Product
+and the Support Services (if any) and they supersede all prior or
+contemporaneous oral or written communications, proposals and
+representations with respect to the Software Product or any other
+subject matter covered by this EULA. No amendment to or modification
+of this EULA will be binding unless made in writing and signed by
+UPEK. No failure to exercise, and no delay in exercising, on the part
+of either party, any right or any power hereunder shall operate as a
+waiver thereof, nor shall any single or partial exercise of any right
+or power hereunder preclude further exercise of any other right
+hereunder. In the event of any conflict between this EULA and any
+applicable purchase terms or UPEK's policies and terms for Support
+Services, the terms of this EULA shall control.

@@ -1,0 +1,137 @@
+                               Bertini(TM) version 1.4
+          Authors: D.J. Bates, J.D. Hauenstein, A.J. Sommese, C.W. Wampler
+                                http://bertini.nd.edu
+                                 Copyright (C) 2013
+
+                                     *NOTICE*
+
+This program is free software in that it is free to download (as source code or as a binary) 
+and free to use on the computer(s) to which it was downloaded.  However, there are several 
+restrictions on its redistribution and its use in other programs, as indicated below. 
+
+The following software modules shipped with Bertini have their own copyright:  the 
+GNU Multiple Precision Library (GMP) and the GNU MPFR Library (MPFR).  This license covers 
+those parts of Bertini's source code written by the Authors, excluding these particular 
+modules.  Copyrights and licenses for these modules have been included in the directory LICENSES. 
+
+0. Definitions
+
+"The Program" refers to any copyrightable work licensed under this licence.  Each licensee 
+is addressed as "you" and may be any individual or an organization.
+
+To "modify" a work means to copy from or adapt all or part of the work in a fashion requiring 
+copyright permission, other than the making of an exact copy. The resulting work is called a 
+“modified version” of the earlier work or a work “based on” the earlier work.
+
+To "propagate" a work means to do anything with it that, without permission, would make you 
+directly or secondarily liable for infringement under applicable copyright law, except executing 
+it on a computer or modifying a private copy. Propagation includes copying, distribution (with or 
+without modification), or making available to the public.
+
+To "convey" a work means any kind of propagation that enables other parties to make or receive 
+copies. Mere interaction with a user through a computer network, with no transfer of a copy, is 
+not conveying.
+
+A "Standard Interface" means an interface that either is an official standard defined by a 
+recognized standards body, or, in the case of interfaces specified for a particular programming 
+language, one that is widely used among developers working in that language.
+
+A "covered work" means any work that in any way makes use of any part of the Program.  This 
+includes, but is not restricted to, software that makes calls to any part of the Bertini 
+software package, in any form.
+
+1. Basic Permissions.
+
+All rights granted under this License are granted for the term of copyright on the Program, 
+and are irrevocable provided the stated conditions are met. This License explicitly affirms 
+your unlimited permission to run the unmodified Program.
+
+2. Conveying Verbatim Copies.
+
+You may convey verbatim copies of the Program's source code as you receive it, in any 
+medium, provided that you conspicuously and appropriately publish on each copy an appropriate 
+copyright notice; keep intact all notices stating that this License applies to the Program; 
+keep intact all notices of the absence of any warranty; and give all recipients a copy of 
+this License along with the Program.  
+
+You may not charge a fee for any copy that you convey, and you may not offer support or 
+warranty protection for a fee. 
+
+3. Conveying Modified Versions.
+
+You may modify the Program for your private use only.  You may not convey, in any manner, a 
+modified version of the Program without written consent of all Authors of the Program.   
+
+4. Conveying Covered Work.
+
+The Program may be used in covered work.  However, the following must be 
+displayed in the Standard Interface of the covered work:
+
+Bertini(TM) version 1.4
+Authors: D.J. Bates, J.D. Hauenstein, A.J. Sommese, C.W. Wampler
+Copyright (C) 2013
+
+Furthermore, if a covered work is conveyed, a verbatim copy of the Program's 
+source code must be conveyed simultaneously, as described in Section 2 of this License.
+
+You may not charge a fee for any copy of any covered work without the written permission of 
+all Authors of the Program.
+
+5. Termination.
+
+You may not propagate, modify, or convey a covered work except as expressly provided under 
+this License. Any attempt otherwise to propagate, modify, or convey it will automatically 
+terminate your rights under this License.
+
+6. No Surrender of Others' Freedom.
+
+If conditions are imposed on you (whether by court order, agreement or otherwise) that 
+contradict the conditions of this License, they do not excuse you from the conditions of this 
+License. If you cannot convey a covered work so as to satisfy simultaneously your obligations 
+under this License and any other pertinent obligations, then as a consequence you may not 
+convey it at all. 
+
+7. Disclaimer of Warranty.
+
+THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAWS OF
+THE STATE OF INDIANA. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS 
+AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, 
+EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE 
+RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE 
+DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+8. Limitation of Liability
+
+IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAWS OF THE STATE OF INDIANA, OR AGREED TO 
+IN WRITING, WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS THE 
+PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, 
+INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE 
+PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE 
+OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH 
+ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE 
+POSSIBILITY OF SUCH DAMAGES.
+
+9. Interpretation of Sections 7 and 8.
+
+If the disclaimer of warranty and limitation of liability provided above cannot be given local 
+legal effect according to their terms, reviewing courts shall apply local law that most closely 
+approximates an absolute waiver of all civil liability in connection with the Program, unless a 
+warranty or assumption of liability accompanies a copy of the Program in return for a fee.
+
+END OF TERMS AND CONDITIONS
+
+In addition to the stated license, we ask that any publications which made use of Bertini, 
+directly or indirectly via a covered work, include an appropriate citation to Bertini, as 
+described on the website http://bertini.nd.edu/policy.html, or any future Bertini 
+page created by the Authors.
+
+Acknowledgements
+================
+
+The Authors would like to express our gratitude for the financial support of the National 
+Science Foundation.  
+
+Any opinions, findings, and conclusions or recommendations expressed in this material are 
+those of the Authors and do not necessarily reflect those of the National Science Foundation.
+

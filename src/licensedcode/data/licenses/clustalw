@@ -1,0 +1,34 @@
+Licensing ClustalW and ClustalX
+
+Date:29 November 2007
+
+The copyright for ClustalW and ClustalX is held by Des Higgins, Julie Thompson and Toby Gibson
+
+The binaries and source code are made available and can be distributed subject to the following conditions:
+
+Users are free to redistribute ClustalW or ClustalX in it's unmodified form as long as it is not for commercial gain.
+
+Anyone wishing to redistribute Clustal commercially should contact Toby Gibson at gibson@embl.de
+
+
+If users make changes/have ideas that they believe would be useful to the broader research community they can send their suggestions to the clustal development team at clustalw@ucd.ie where they will be considered for inclusion in future releases.
+
+
+
+Frequently asked questions about Clustal licensing?
+---------------------------------------------------
+
+1. Do I have to pay to use ClustalW or ClustalX?
+No - unless you wish to redistribute Clustal for profit. In this case see question 4.
+
+2. Can I redistribute the Clustal binaries and source code?
+Yes. We have always wanted to see Clustal have as wide a userbase and distribution network as possible and are happy to see other sites host copies of the official Clustal code.
+
+3. Can I make changes to the source code?
+You can make changes for your own purposes but you should not redistribute the changed code.
+
+4. I want to include ClustalW/ClustalX in a commercial application who should I contact?
+Toby Gibson at gibson@embl.de (also cc des.higgins@ucd.ie)
+
+5. There is no Clustal distribution for platform X. I have changed the code in order to compile Clustal on this platform. Can I redistribute it?
+Ideally you should send us a copy of your source code changes as well as a binary. We will include it in our contributed binaries section on our FTP site along with an acknowledgement of your contribution.

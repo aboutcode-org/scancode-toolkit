@@ -1,0 +1,490 @@
+#######################################################################
+#
+# ./zUrT42_0005.pk3/maps/ut4_abbeyctf.txt
+# ./zUrT42_0005.pk3/maps/ut4_abbey.txt
+# ./zUrT42_0005.pk3/maps/ut4_austria.txt
+# ./zUrT42_0005.pk3/maps/ut4_algiers.txt
+#
+Copyright = mine!
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0005.pk3/maps/ut4_harbortown.txt
+# ./zUrT42_0005.pk3/maps/ut4_kingdom.txt
+# ./zUrT42_0005.pk3/maps/ut4_mandolin.txt
+# ./zUrT42_0005.pk3/maps/ut4_ambush.txt
+# ./zUrT42_0005.pk3/maps/ut4_horror.txt
+# ./zUrT42_0005.pk3/maps/ut4_crossing.txt
+# ./zUrT42_0005.pk3/maps/ut4_casa.txt
+# ./zUrT42_0005.pk3/maps/ut4_dressingroom.txt
+# ./zUrT42_0005.pk3/maps/ut4_kingpin.txt
+# ./zUrT42_0005.pk3/maps/ut4_company.txt
+# ./zUrT42_0005.pk3/maps/ut4_raiders.txt
+# ./zUrT42_0010.pk3/maps/ut4_kingdom.txt
+# ./zUrT42_0010.pk3/maps/ut4_raiders.txt
+# ./zUrT42_0006.pk3/models/trees/FS_trees.txt
+# ./zUrT42_0006.pk3/maps/ut4_snoppis.txt
+# ./zUrT42_0006.pk3/maps/ut4_riyadh.txt
+# ./zUrT42_0006.pk3/maps/ut4_turnpike.txt
+# ./zUrT42_0006.pk3/maps/ut4_tombs.txt
+# ./zUrT42_0006.pk3/maps/ut4_tunis.txt
+# ./zUrT42_0006.pk3/maps/ut4_toxic.txt
+# ./zUrT42_0021.pk3/maps/ut4_prague_v2.rtf
+# ./zUrT42_0020.pk3/maps/ut4_prague_v2.rtf
+#
+-----------------------------------------------------------------
+* COPYRIGHT / PERMISSIONS *
+-----------------------------------------------------------------
+Authors MAY NOT use this level as a base to build additional levels.
+This map MAY NOT be sold, or in any other way turn into profit for any
+other person than the author. This map MAY be distributed on any media
+as long as this media is distributed freely without anyone having to pay
+for it. This level is designed for the Quake 3 Total Conversion
+"Urban Terror" and is not to be used, replicated or edited for any other
+Mod, Total Conversion, Game or Game Engine.
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0005.pk3/maps/ut4_oildepot.txt
+#
+=================================================================
+This map is � 2004 & 2007 Martti Ekstrand and may only be distributed by
+electronic means (e.a. Internet or BBS). CD distribution is not allowed
+without permission. You may NOT distribute this map/.pk3 file/.bsp file
+commercially in any way or form without my expressed WRITTEN permission.
+Authors MAY NOT use this level as a base to build additional levels, and
+the geometry CANNOT be changed in any way. If you wish to recreate this
+level for another game or mod, please inform me be e-mail, just so I know
+it's out there in other forms, and I might even help. Please retain this
+text file if you do.
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0001.pk3/u_readme_herring.txt
+#
+=================================================================
+This map is © 2008-2009 Martti Ekstrand and may only be distributed by
+electronic means (e.a. Internet or BBS). CD distribution is not allowed
+without permission. You may NOT distribute this map/.pk3 file/.bsp file
+commercially in any way or form nor decompile the bsp without my
+expressed WRITTEN permission. Authors MAY NOT use this level as a base
+to build additional levels, and the geometry CANNOT be changed in any
+way. If you wish to recreate this level for another game or mod, please
+inform me be e-mail, just so I know it's out there in other forms, and
+I might even help.
+
+Please retain this text file if you do.
+Theme music is @ 2008 nonoman -  and may not be used anywhere else
+without written permission.
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0005.pk3/maps/ut4_eagle.txt
+#
+=================================================================
+* COPYRIGHT / PERMISSIONS *
+-----------------------------------------------------------------
+
+Authors MAY NOT use this level as a base to build additional
+levels, and the geometry CANNOT be changed in any way. If you
+wish to modify the entities for use with a non-standard CTF Mod,
+please inform me be e-mail, just so I know it's out there in
+other forms. Please retain this text file if you do.
+
+You CAN create prefabs from this level though, just please give
+the original author the credit for the original construction!
+
+This .pk3 may be distributed over the Internet and/or BBS
+systems(like these exist anymore) as long as the ORIGINAL(this)
+text file is included in the .zip file.
+
+You may NOT distribute this map/.pk3 file/.bsp file commercially
+without my expressed WRITTEN permission. If you wish to include
+this in a compilation of some form, have your people contact my
+people and they'll talk, or just send me an e-mail and we'll talk. ;)
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0005.pk3/maps/BFP_Model\ Readme.txt
+#
+This mapobject may be distrubuted freely over the internet, as long as
+this readme is included and the contents of the archive DOES NOT change.
+
+Quake 3 Arena And Team Arena are trademarks of id Software CopyRight
+All rights reserved
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0005.pk3/maps/ut4_maya.txt
+#
+=================================================================
+* COPYRIGHT / PERMISSIONS *
+-----------------------------------------------------------------
+
+sock_pom-src.map by Simon O'Callaghan was used in the creation of
+Mayan Standoff, released under the ..::LvL Open Game Source License'
+
+Authors MAY NOT use this level as a base to build additional levels.
+This map MAY NOT be sold, or in any other way turn into profit for
+any person. This map MAY be distributed on any media as long as this
+media is distributed freely without anyone having to pay for it and
+this text file is included. This level was converted for the Quake 3
+Total Conversion "Urban Terror" and is not to be used, replicated or
+edited for any other Mod, Total Conversion, Game or Game Engine. If
+you want the original file used in this creation, you may download it
+at http://simonoc.com/pages/design/maps_q3/pom.htm
+
+Copyright (c) 2004 sock
+Changes Copyright (c) 2007 Raymond Ritzmann
+All rights reserved.
+
+Quake III Arena is a registered trademark of iD Software, Inc.
+
+Urban Terror is the property of Frozen Sand, LLC.
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0007.pk3/models/mapobjects/masheen/readme.txt
+#
+flourescent light models (c) 2004 ShminkyBoy.
+
+  This game componant is created and owned by me. No modifications on
+  any part of it are allowed. You may not use this object as a base to
+  create another one. You can use it freely in any games as long as
+  you include a note indicating you got it from me. For any
+  troubleshooting or inquiry, feel free to contact me.
+
+E-mail: shminkyboy@yahoo.com
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0007.pk3/models/mapobjects/baskets/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/humvee/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_briefcase/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_washerdryer/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_alcohol/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_computers/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/firetruck/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_hometheatre/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_table/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_pcs1/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_officechair/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_lighting1/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/woodencart/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_cleaning/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/planters/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/bk_couch/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/axe/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_casa/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/ashtray/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_flowers/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_chest/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/copcar/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/cashregister/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_horror/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_casabench/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/swords/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/newspaper/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/billboards/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_flourlight/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/copymachine/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_satdish/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_bath/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/truck1/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_couches/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_baskets/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_industriallights/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/ambulance/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_fountain/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_egypt/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_apple/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/market/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/honda/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_shrine/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/garbagecans/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/lighthouse/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_trash/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/landscapelighting/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_palms/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/toxiclight/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_weedpak/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/lt1_computers/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/kitchen/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/playground/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_steeldrums/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_deliverytruck/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_pooltable/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/nuclearfurniture/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/tub_light/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_rubberduck/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/cart/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/br_dville/readme.txt
+# ./zUrT42_0006.pk3/models/null_beach/tires/lt1_tires_readme.txt
+# ./zUrT42_0006.pk3/models/br_readme.txt
+# ./zUrT42_0006.pk3/models/br_nuke.txt
+#
+This Model was created by Lt1 and Black Rayne Studios.
+
+--------------------------------------------------------------
+if  you need anything made or this object modified or skinned
+differently please let me know and it will be done. feel free
+to contact me at:
+
+------------------blackraynestudios@gmail.com-----------------
+
+also there is a forum on my website for suggestions and requests
+--------------------------------------------------------------
+http://www.blackrayne.net
+
+Copyrights :
+  This game component is created and owned by Lt1 and Black rayne Studios.
+  No modifications on any part of it are allowed unless indicated.
+  You may not use this object as base to create another one. It must be
+  used as is. You can use it freely in any games as long as you include
+  a note indicating you got it from me. For any troubleshooting or
+  inquiry, feel free to contact me.
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0007.pk3/models/mapobjects/toxicprops/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/portopotty/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/barrell/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/bulldozer/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/toxiclogs/readme.txt
+#
+This Model was created by Lt1 and Urban Terror Operations.
+
+--------------------------------------------------------------
+if  you need anything made or this object modified or skinned differently
+please let me know and it will be done. feel free to contact me at:
+
+-----------------rbergman@lt1productions.com------------------
+
+
+--------------------------------------------------------------
+http://www.lt1productions.com/utops.php
+
+Copyrights :
+  This game component is created and owned by Lt1 and Urban Terror
+  Operations. No modifications on any part of it are allowed unless
+  indicated.
+  You may not use this object as base to create another one. It must
+  be used as is. You can use it freely in any games as long as you
+  include a note indicating you got it from me. For any troubleshooting
+  or inquiry, feel free to contact me.
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0007.pk3/models/mapobjects/shminkylights/readme.txt
+#
+flourescent light models (c) 2004 ShminkyBoy.
+
+  This game componant is created and owned by me. No modifications on
+  any part of it are allowed. You may not use this object as a base to
+  create another one. You can use it freely in any games as long as you
+  include a note indicating you got it from me. For any troubleshooting
+  or inquiry, feel free to contact me.
+
+E-mail: shminkyboy@yahoo.com
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0007.pk3/models/mapobjects/switcher/omita-readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/junker/omita-readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/roman_armor/oak-shiro-readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/eagle/omita-readme.txt
+#
+=================================================================
+* Permissions *
+=================================================================
+
+This mapobject may be electronically distributed only at no charge to
+the recipient, and may not be modified in any way.  This text file
+must be included with the level.
+This mapobject may not be distributed on any CD-ROM without the prior,
+explicit consent of its author.
+You may run this mapobject on your server as long as no money is charged
+to players for playing on you server.
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0007.pk3/models/mapobjects/Phones/ReadMe.txt
+#
+Special notes :
+  n/a
+
+Copyrights :
+  This game componant is created and own by Browser [ICE]. No
+  modifications on any part of it are allowed unless indicated in the
+  Special Notes section.
+  You may not use this object as base to create another one. It must be
+  used as is. You can use it freely in any games as long as you include
+  a note indicating you got it from me. For any troubleshooting or
+  inquiry, feel free to contact me.
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0007.pk3/models/mapobjects/computer_01/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/crossing/kamaz_truck/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/crossing/tgb11_rus/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/crossing/kamaz_tanker/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/diesel_generator_01/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/gmc_van/readme.txt
+# ./zUrT42_0007.pk3/models/mapobjects/trash/readme.txt
+#
+Boring copyright notice:
+
+You may use this model for non-profit purposes only. If you do, please
+notify the author.
+You may NOT modify, sell or redistribute it without the authors
+permission.
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0007.pk3/models/mapobjects/oldtruck/readme_oldtruckmodel.txt
+#
+=================================================================
+* COPYRIGHT / PERMISSIONS *
+-----------------------------------------------------------------
+Authors Do whatever the hell you want with these models except sell them.
+These models and skins MAY NOT be sold, or in any other way turn into
+profit for any other person than the authors.  These models MAY be
+distributed on any media as long as this media is distributed freely
+without anyone having to pay for it. These models were designed for the
+Quake 3 Total Conversion "Urban Terror" If you want to use them for
+another Mod, Total Conversion, Game or Game Engine let us know, and send
+us screenshots, and leave this README intact. We didnt make this for
+money, we made it because we love to game just as much as you do.
+P.S. If I find you have used any of these models and changed the
+README's and cut me out of them after all my hard work, I will hunt you
+down and beat the living Dogshit outta you!!
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0007.pk3/models/mapobjects/imperium/drahd-readme.txt
+#
+- Distribution -
+
+Feel free to distribute this file in any form, incl. on CD media,
+as long as proper credit is given and this text file, or the model file
+has not been edited in any way.
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0007.pk3/models/mapobjects/o3-angel/angel.txt
+#
+* Copyright / Permissions *
+Include authors name and email address in the credits for there work..
+
+QUAKE(R) and QUAKE III Arena(R) are registered trademarks of id Software,
+Inc.
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0007.pk3/models/mapobjects/urbanterror/trees/readme.txt
+#
+* Silicon Ice Development Tree mapobject pak *
+-----------------------------------------------------------------
+
+For use with Urban Terror level design
+only unless by express permission of authors.
+
+10/10/2002
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0007.pk3/models/mapobjects/mustang/readme.txt
+#
+*****************************************************************
+COPYWRITE NOTICE
+*****************************************************************
+DO NOT EDIT, DISTRIBUTE, MODIFY, OR SELL THIS MODEL WITHOUT PRIOR
+PERMISSION. IF YOU PLAN TO USE THIS MODEL IN ANOTHER GAME/MOD, YOU
+NEED TO NOTIFY/SEEK AUTHORS PERMISSION. FOR ANY OTHER USE PLEASE
+INQUIRE WITH THE AUTHOR FIRST.
+
+Send comments at gusher@planetunreal.com icq 104359090
+
+
+
+
+
+#######################################################################
+#
+# ./zUrT42_0006.pk3/maps/ut4_suburbs.TXT
+#
+Suburbs by ShminkyBoy
+
+(Copyright 2007 David Snyder)

@@ -1,0 +1,28 @@
+This document must be used as reference. Please consult 
+/usr/share/doc/ja-ipafonts-[version]/license-ipafonts.eucjp.gz.
+
+--
+
+Terms of redistribution of IPA (Information-technology Promotion Agency,
+Japan) fonts
+
+"GRASS Japan web site" (http://www.grass-japan.org/FOSS4G/) administrator
+                                                      Orkney Inc., Japan
+
+Redistribution of IPA fonts (hereinafter referred to as the "fonts"),
+which is delivered or distributed by "GRASS Japan web site"
+(http://www.grass-japan.org/FOSS4G/) administrator and Orkney Inc.,
+provided as a part of GRASS GIS / MapServer / PostGIS (hereinafter
+referred to as the "software"), achievements of "Open Source GIS Platform
+Development" (Information-technology Promotion Agency, Japan, Open
+Software Utilization Infrastructure Improvement Program, 2003) is
+permitted provided that the following conditions are met:
+
+1) Redistribution of Fonts is allowed only when users bundle the fonts
+to redistributed software and attach this document.
+2) When redistributing, users must express that the fonts being
+redistributed is IPA fonts clearly.
+3) 1) and 2) also apply to modified IPA fonts or derivatives.
+4) "GRASS Japan web site" administrator, Orkney Inc., and
+Information-technology Promotion Agency, Japan are not liable for
+any problem caused by the fonts.

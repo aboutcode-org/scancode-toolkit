@@ -1,0 +1,14 @@
+Copyright \copyright 1985 by Van Jacobson, Lawrence Berkeley Laboratory
+This program may be freely used and copied but {\bf may not be sold}
+without the author's {\bf written permission}. This notice must remain
+in any copy or derivative.
+
+This program is an adaptation of "vfontedpr" v4.2 (12/11/84) from
+the 4.2bsd Unix distribution.  Vfontedpr was written by Dave
+Presotto (based on an earlier program of the same name written by
+Bill Joy).
+
+I would welcome comments, enhancements, bug fixes, etc.  Please
+mail them to:
+	van@lbl-rtsg.arpa	(from arpanet, milnet, csnet, etc.)
+	..!ucbvax!lbl-csam!van	(from Usenet/UUCP)

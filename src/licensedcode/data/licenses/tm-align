@@ -1,0 +1,39 @@
+TMalign.f:
+
+This program is to identify the best alignment of two protein
+structures that gives the highest TM-score. Input structures must
+be in the PDB format. By default, TM-score is normalized by the
+second protein. Users can obtain a brief instruction by simply
+running the program without arguments. For comments/suggestions,
+please contact email: zhng@umich.edu.
+
+Reference to cite:
+Yang Zhang, Jeffrey Skolnick, Nucl. Acid Res. 2005 33: 2303-9
+
+Permission to use, copy, modify, and distribute this program for
+any purpose, with or without fee, is hereby granted, provided that
+the notices on the head, the reference information, and this
+copyright notice appear in all copies or substantial portions of
+the Software. It is provided "as is" without express or implied
+warranty.
+
+---
+
+TMscore.f:
+
+This program is to compare two protein structures and identify the
+best superposition that has the highest TM-score. Input structures
+must be in the PDB format. By default, TM-score is normalized by
+the second protein. Users can obtain a brief instruction by simply
+running the program without arguments. For comments/suggestions,
+please contact email: zhng@umich.edu.
+
+Reference:
+Yang Zhang, Jeffrey Skolnick, Proteins, 2004 57:702-10.
+
+Permission to use, copy, modify, and distribute this program for
+any purpose, with or without fee, is hereby granted, provided that
+the notices on the head, the reference information, and this
+copyright notice appear in all copies or substantial portions of
+the Software. It is provided "as is" without express or implied
+warranty.

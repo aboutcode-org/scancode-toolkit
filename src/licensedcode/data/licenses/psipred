@@ -1,0 +1,89 @@
+PLEASE READ THE FOLLOWING LICENSE AGREEMENT. BY USING THE PROGRAM YOU ARE
+ACKNOWLEDGING THE FACT THAT YOU AGREE TO THE TERMS OUTLINED IN THIS
+AGREEMENT. USERS WISHING TO USE THE SOFTWARE FOR COMMERCIAL ACTIVITIES
+NOT COVERED BY THIS AGREEMENT SHOULD SEND E-MAIL TO: dtj@cs.ucl.ac.uk
+
+* NOTE RECENT CHANGES TO PARAGRAPH 8 *
+
+
+
+ PSIPRED2 - PROTEIN SECONDARY STRUCTURE PREDICTION PROGRAM BY D.T.JONES
+ ----------------------------------------------------------------------
+
+                          GENERAL LICENSE &
+                          -----------------
+
+		     CONFIDENTIALITY AGREEMENT
+		     -------------------------
+
+
+
+In regard to the protein structure prediction program (PSIPRED2)
+herewith (the Software) the copyright and other intellectual property
+rights to which belong to the Author(s).
+
+Any user (the User) of the program undertakes to the Copyright holder that he
+or she shall be bound by the following terms and conditions:-
+
+1. The User will receive the Software and any related documentation in
+confidence and will not use the same except for the purpose of their own 
+research. The Software will be used only by such of the User's officers or
+employees to whom it must reasonably be communicated to enable them to
+undertake their research and who agree to be bound by the same confidence.
+The User shall procure and enforce such agreement from his or her staff for
+the benefit of the Copyright holder.
+
+2. The publication of research using the Software must include an
+appropriate citation to the method:
+
+Jones, D.T. (1999) Protein secondary structure prediction based on
+position-specific scoring matrices. J. Mol. Biol. 292:195-202.
+
+3. All forms of the Software will be kept in a reasonably secure place to
+prevent unauthorised access.
+
+4. Each copy of the Software or, if not practicable then, any package
+associated therewith shall be suitably marked (and such marking maintained) 
+with the following copyright notice: "Copyright 2000 D.T.Jones. All Rights
+Reserved.".
+
+5. The Software may be modified, but any changes made shall be communicated
+to the Author(s) and made freely available.
+
+6. The Software may not be sold as a standalone package, or incorporated into
+a commercial software package without the written permission of the Copyright
+holder. The Software may be used freely for individual academic or commercial
+research. The Software may also be made freely available for training or
+teaching purposes.
+
+7. The results produced by the Software may not be incorporated into any
+data banks or databases which are subject to the payment of access or
+license fees without the written permission of the Copyright holder.
+
+8. The Software may be made available to users over a local network or
+wide area network (including the Internet), but only if access is granted
+free of charge to all authorised users. Incorporation of the Software into
+a commercial Web site or other fee paying service is not allowed without
+the written permission of the Copyright holder. If PSIPRED results are
+returned to the user via such a network service, then a suitable
+acknowledgement of the PSIPRED method must be returned somewhere in the
+output text.
+
+9. The confidentiality obligation in paragraph one shall not apply:
+
+   (i)  to information and data known to the User at the time of
+	receipt hereunder (as evidenced by its written records);
+
+  (ii)	to information and data which was at the time of receipt in the 
+	public domain or thereafter becomes so through no wrongful act of
+	the User;
+
+ (iii)	to information and data which the User receives from a third
+	party not in breach of any obligation of confidentiality owed to
+	the Author(s).
+
+10. The User understands that the Software is supplied "as is". No warranty
+   as to its fitness or suitability for any purpose whatsoever is made or
+   implied. In no event shall the Author(s) or Copyright holder be held
+   responsible for any direct or indirect damages arising through the use
+   of the Software.

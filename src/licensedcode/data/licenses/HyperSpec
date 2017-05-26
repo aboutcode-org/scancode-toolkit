@@ -1,0 +1,148 @@
+(from http://www.lispworks.com/reference/HyperSpec/Front/Help.htm#Legal)
+
+Authorship Information
+
+The Common Lisp HyperSpec is not the ANSI Common Lisp standard, but is
+based on that standard (with permission from ANSI and X3).
+
+As an official reference to the Common Lisp language, hardcopy
+documentation of ANSI Common Lisp, (American National Standard X3.226)
+from ANSI is always definitive.
+
+The hypertext markup for this document was created by Kent Pitman,
+with the aid of a custom program written in Common Lisp and created
+specifically for this task. Funding for the markup task was provided
+by and copyright of the result is owned by Xanalys Incorporated.  Some
+additional design documents have been included in marked up form and
+cross-referenced which are not part of the standard but may be useful
+in understanding it. Plaintext versions of these documents, which
+offer a useful historical perspective, are available to anyone by
+anonymous public FTP from ftp://parcftp.xerox.com/pub/cl/cleanup/.
+
+The Java applet used in the Symbol Index (visible only in some
+browsers) was written by Evan Williams. Its copyright is owned by
+Xanalys Incorporated.
+
+Important Legal Notices
+
+Copyright and Conditions of Use
+Copyright 1996-2001, Xanalys Incorporated. All Rights Reserved.
+
+The HTML hypertext markup that implements the hypertext features of
+these World Wide Web pages of the Common Lisp specification,
+collectively the Common Lisp HyperSpec, is the property of Xanalys
+Incorporated.
+
+Distribution of the Common Lisp HyperSpec as a hypertext document on
+the Internet does not constitute consent to any use of the underlying
+hypertext markup for redistribution of any kind, commercial or
+otherwise, either via the Internet or using some other form of
+distribution, in hypertext or otherwise.
+
+Permission to copy, distribute, display, and transmit the Common Lisp
+HyperSpec is granted provided that copies are not made or distributed
+or displayed or transmitted for direct commercial advantage, that
+notice is given that copying, distribution, display, and/or
+transmission is by permission of Xanalys Incorporated, and that any
+copy made is COMPLETE and UNMODIFIED. IN PARTICULAR, the material that
+MUST appear in the copy includes:
+
+   1. this copyright notice and its date;
+
+   2. the main index page, ../Front/index.htm;
+
+   3. all HTML pages to which the main index page links using relative links;
+
+   4. all graphical (GIF) images to which it links using relative
+      links, such as the Harlequin logo that appears on each page; and
+
+   5. all hypertext links, relative or absolute, such as the link to
+      http://www.harlequin.com/ that appears on each page.
+
+Permissions related to performance and to creation of derivative works
+are expressly NOT granted.
+
+Permission to make partial copies is expressly NOT granted, EXCEPT
+that limited permission is granted to transmit and display a partial
+copy the Common Lisp HyperSpec for the ordinary purpose of direct
+viewing by a human being in the usual manner that hypertext browsers
+permit the viewing of such a complete document, provided that no
+recopying, redistribution, redisplay, or retransmission is made of any
+such partial copy.
+
+Permission to make modified copies is expressly NOT granted.
+
+Permission to add or replace any links or any graphical images to any
+of these pages is expressly NOT granted.
+
+Permission to use any of the included graphical (GIF) images in any
+document other than the Common Lisp HyperSpec is expressly NOT
+granted.
+
+Acknowledgments
+
+Parts of this work incorporate material taken from American National
+Standard X3.226, copyright 1994, and is used with permission of the X3
+Secretariat, ITI, 1250 Eye St., NW., Suite 200, Washington, DC 20005
+and of the copyright holder, American National Standards
+Institute. ANSI/X3.226 was developed by Technical Committee X3J13,
+Common Lisp.
+
+Copies of the ANSI/X3.226 standard may be purchased from the American
+National Standards Institute, 11 West 42nd Street, New York, NY 10036.
+
+Restricted Rights Legend
+
+The Common Lisp HyperSpec is subject to the following Restricted Rights Legend:
+
+    ``Use, duplication, or disclosure by the United States Government
+    is subject to the restrictions set forth in (i) FAR 52.227-14 Alt
+    III, (ii) FAR 52.227-19, (iii) DFARS 252.7013(c)(1)(ii), or (iv)
+    the accompanying license Agreement, as applicable. For purposes of
+    the FAR, the Software shall be deemed to be ``unpublished'' and
+    licensed with disclosure prohibitions, rights reserved under the
+    copyright laws of the United States. Harlequin Incorporated, One
+    Cambridge Center, Cambridge, Massachusetts 02142.''
+
+Warranty disclaimer
+
+THIS DOCUMENT IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
+NON-INFRINGEMENT. IN NO EVENT WILL HARLEQUIN BE LIABLE FOR DIRECT,
+INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES RESULTING FROM
+ANY INACCURACY OR ERROR IN THIS DOCUMENT, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES.
+
+Additional Disclaimers
+
+Not all notations in that TeX-based document were possible to
+represent exactly in HTML, although an attempt has been made to be as
+accurate as possible. Nevertheless, the process of translation was
+heuristic, and discrepancies might have resulted. Formally, the
+official ANSI printed document is always the definitive reference.
+
+The X3J13 issue documents are not part of the standard and are
+provided purely for historical perspective. It is possible that some
+of the documents, as included, are not the final form that X3J13
+voted, or that some which were voted were omitted, or that references
+from these documents into the source text are not complete, or that
+some edits prescribed by these documents were incorrectly implemented,
+or that other discrepancies exist between these documents and the
+specification. These documents have no formal weight, and in all
+cases, the hardcopy specification is definitive.  Trademarks LispWorks
+is a registered trademark of Xanalys Incorporated.
+
+PostScript is a registered trademark of Adobe Systems, Inc.
+
+Common Lisp Hyperspec; Transducer; Liquid Common Lisp; Watson;
+KnowledgeWorks; and FreeLisp are trademarks of Xanalys Incorporated.
+
+Harpoon; Harlequin Screening Library; HSL; Harlequin Dispersed
+Screening; HDS; Harlequin Chain Screening; HCS; Harlequin Micro
+Screening; HMS; Harlequin Precision Screening; HPS; ScriptWorks
+MicroRIP; Harlequin Color Management; HCMS; are trademarks of
+Harlequin Limited.
+
+All other brand and product names mentioned herein are trademarks or
+registered trademark

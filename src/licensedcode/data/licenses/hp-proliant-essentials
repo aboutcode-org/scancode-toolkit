@@ -1,0 +1,338 @@
+
+
+		PROLIANT ESSENTIALS SOFTWARE
+
+		END USER LICENSE AGREEMENT
+
+PLEASE READ THIS END USER LICENSE AGREEMENT ("AGREEMENT") CAREFULLY.  THIS
+AGREEMENT IS A LEGAL AGREEMENT BETWEEN YOU (EITHER AN INDIVIDUAL OR SINGLE
+ENTITY) ("YOU") AND HEWLETT-PACKARD COMPANY ("HP").  BY CLICKING THE "AGREE"
+BUTTON BELOW, COPYING, INSTALLING, OR OTHERWISE USING THE SOFTWARE,
+(i) YOU DO SO WITH THE INTENT TO ELECTRONICALLY "EXECUTE" THIS AGREEMENT, AND
+(ii) YOU AGREE TO BE BOUND BY AND COMPLY WITH THE FOLLOWING TERMS AND
+CONDITIONS, INCLUDING THE WARRANTY STATEMENT, AS WELL AS ANY TERMS AND
+CONDITIONS CONTAINED IN THE "ANCILLARY SOFTWARE" LIST.
+
+IF YOU DO NOT AGREE TO THE TERMS AND CONDITIONS OF THIS AGREEMENT,
+(A) IF THIS AGREEMENT IS DISPLAYED ELECTRONICALLY, YOU MAY INDICATE REJECTION
+    OF THIS AGREEMENT BY CLICKING THE "DISAGREE" BUTTON;
+(B) YOU SHALL NOT INSTALL THE SOFTWARE; AND
+(C) HP DOES NOT GRANT YOU ANY RIGHTS TO USE THE SOFTWARE.
+NOTWITHSTANDING THE FOREGOING, INSTALLING OR OTHERWISE USING THE SOFTWARE
+INDICATES YOUR ACCEPTANCE OF THE TERMS AND CONDITIONS OF THIS AGREEMENT.
+IF YOU PURCHASED THE SOFTWARE, YOU MAY RETURN THE SOFTWARE TO THE PLACE OF
+PURCHASE FOR A FULL REFUND.
+
+THE SOFTWARE PROVIDED HEREIN, IS PROVIDED BY HP AND BY THIRD PARTIES, INCLUDING
+THE OPEN SOURCE COMMUNITY ("ANCILLARY SOFTWARE").  USE OF THE HP SOFTWARE, THE
+ANCILLARY SOFTWARE, ACCOMPANYING PRINTED MATERIALS, AND THE "ONLINE" OR
+ELECTRONIC DOCUMENTATION (COLLECTIVELY THE "PRODUCT") IS CONDITIONED UPON AND
+LIMITED BY THE FOLLOWING TERMS AND CONDITIONS, INCLUDING THE "AS IS WARRANTY
+STATEMENT" AND THE TERMS AND CONDITIONS OF THE ANCILLARY SOFTWARE LICENSE
+AGREEMENTS ("ANCILLARY SOFTWARE LICENSES").
+
+USE OF ANCILLARY SOFTWARE SHALL BE GOVERNED BY THE ANCILLARY SOFTWARE LICENSE,
+EXCEPT THAT THE DISCLAIMER OF WARRANTIES AND LIMITATION OF LIABILITIES
+PROVISIONS CONTAINED IN THE "AS-IS WARRANTY STATEMENT" OF THIS AGREEMENT SHALL
+ALSO APPLY TO SUCH ANCILLARY SOFTWARE.  HP HAS IDENTIFIED ANCILLARY SOFTWARE
+BY EITHER NOTING THE ANCILLARY SOFTWARE PROVIDER"S OWNERSHIP WITHIN EACH
+ANCILLARY SOFTWARE PROGRAM FILE AND/OR BY PROVIDING LICENSING INFORMATION IN
+THE "ANCILLARY SOFTWARE" LIST. BY ACCEPTING THE TERMS AND CONDITIONS OF THIS
+AGREEMENT, YOU ARE ALSO ACCEPTING THE TERMS AND CONDITIONS OF EACH ANCILLARY
+SOFTWARE LICENSE IN THE ANCILLARY SOFTWARE LIST.
+
+IF AND ONLY IF THE PRODUCT INCLUDES SOFTWARE LICENSED UNDER THE GNU GENERAL
+PUBLIC LICENSE ("GPL SOFTWARE"), YOU MAY OBTAIN A COMPLETE MACHINE-READABLE
+COPY OF THE GPL SOFTWARE SOURCE CODE ("GPL SOURCE CODE") BY DOWNLOAD FROM A
+SITE SPECIFIED IN THE FOLLOWING HP WEBSITE:
+HTTP://H18004.WWW1.HP.COM/PRODUCTS/SERVERS/PROLIANTESSENTIALS/VALUEPACK/LICENSING.HTML.
+UPON YOUR WRITTEN REQUEST, HP WILL PROVIDE, FOR A FEE COVERING THE COST OF
+DISTRIBUTION, A COMPLETE MACHINE-READABLE COPY OF THE GPL SOURCE CODE, BY MAIL,
+TO YOU.  INFORMATION ABOUT HOW TO MAKE A WRITTEN REQUEST FOR GPL SOURCE CODE
+MAY BE FOUND AT THE FOLLOWING WEBSITE:
+HTTP://H18004.WWW1.HP.COM/PRODUCTS/SERVERS/PROLIANTESSENTIALS/VALUEPACK/LICENSING.HTML .
+
+
+LICENSE TERMS
+
+SUBJECT TO THE TERMS AND CONDITIONS OF THIS AGREEMENT AND ANY RIGHTS,
+LIMITATIONS AND OBLIGATIONS SET FORTH IN THE ANCILLARY SOFTWARE LICENSES:
+
+1.	LICENSE GRANT
+
+a.	IF SOFTWARE DOES NOT REQUIRE AN ACTIVATION KEY.  If the Software does
+not require an Activation Key and provided that You comply with all the terms
+and conditions of this Agreement, HP grants You a non-exclusive,
+non-transferable (except as provided in Section 16), worldwide (except for the
+countries referenced  in Section 12) license under HP's copyrights, to install,
+copy on as many computers as you need for your business, use, execute, make
+archival or backup copies, and display ("Use") the object code version of the
+Product on the computer(s) on which this Product is installed and in the
+operating environment as identified by HP in the accompanying materials.
+
+b.	IF SOFTWARE REQUIRES AN ACTIVATION KEY.  If the Software requires an
+Activation Key, and provided that You comply with all terms and conditions of
+this Agreement, then depending upon the specific hardware configuration You
+employ, HP grants You the following license  ("License Type") and rights:
+
+	Authorized Copies.  You are licensed to install, make Authorized Copies
+of (as defined in this section), execute, and display ("Use") the object code
+version of the Product on an equivalent number of Computers, Host/Client Pairs,
+Computer Nodes, or Clustered Computers (as defined in the table below) as you
+have Authorized Copies.  Authorized Copies is defined as the number of copies
+that you have paid for as stated in the invoice or comparable document
+evidencing an authorized quantity.
+
+LICENSE TYPE 	SOFTWARE INSTALLS TO:		LICENSED RIGHTS
+		(hardware configuration)
+------------------------------------------------------------------------------
+Computer	A computer 			You have a right to install
+						and Use the Product on a single
+						computer. The installed copy
+						may not be transferred to or
+						used on any other computer.
+
+------------------------------------------------------------------------------
+Node/Client	A set of computers with a	You have a right to install and
+		minimum of one host and one	Use the Product on a Host/Client
+		client connected to each	Pair or a Single Node.  Copies
+		other ("Host/Client Pair"),	of the Product installed on a
+		or in certain instances, a	Host/Client Pair or Single Node
+		single computer			may not be transferred to any
+		("Single Node")			other host or client computers
+						or other single nodes. You can
+						continue to Use the Product on
+						licensed clients when a new
+						server is introduced to the
+						licensed clients.
+
+------------------------------------------------------------------------------
+Cluster		More than two computers		You have a right to install and
+		physically connected together	Use the Product on each
+		in a cluster configuration	Clustered Computer. The
+		(each of which is referred to	installed copy may not be
+		as "Clustered Computer")	transferred to or used on any
+						other computer.
+
+		
+	Storage.  You may copy the Product into the local memory or storage
+device of the hardware configuration loaded with the Authorized Copies. You may
+copy the Product onto a reasonable number of network servers or a secure
+intranet for the sole purpose of distributing the Product to the Computers,
+Host/Client Pairs, Computer Nodes, or Clustered Computers.  You may make
+archival or back-up copies of the Product. You shall keep the activation key
+with the hardware configuration to which the activation key is licensed. You
+should keep copies of the activation key information for future retrieval
+purposes.
+
+2.	 NEW RELEASES.  "New Release" means a release of the Product that may
+contain fixes, corrections, or minor improvements to the Product.  New Releases
+are distributed from time to time solely at the option of HP.  If HP offers a
+New Release, it may come with its own terms and conditions, however if it does
+not, You may use the New Release only under the terms and conditions of this
+Agreement.
+3.	NEW VERSIONS.  "New Version" means a version of the Product that may
+contain significant changes, enhancements, and/or functional improvements to
+the Product.  New Versions are distributed solely at the option of HP.  If HP
+offers a New Version, it may come with its own terms and conditions, however
+if it does not, You may use the New Version only under the terms and conditions
+of this Agreement.
+4.	OWNERSHIP.   The Product is owned and copyrighted by Hewlett-Packard
+Development Company, L.P., HP's intellectual property management company, and
+by third party suppliers, except for the Ancillary Software, which is owned and
+copyrighted by the Ancillary Software providers indicated in the ANCILLARY
+SOFTWARE list.  Your right to Use the Product confers no title or ownership and
+is not a sale of the Product or any part thereof.  Third party suppliers and
+Ancillary Software providers are intended beneficiaries under this Agreement
+and may protect their rights in their respective portions of the Product
+directly against You.
+5.	TRANSFER. Without the prior written consent of HP, or unless
+specifically permitted in the Ancillary Software License,  You have no right
+(a) to rent, lease, lend, or otherwise transfer the rights to the Product to
+anyone else; (b) to Use the Product for commercial timesharing or bureau use;
+or (c) to copy the Product onto any public or distributed network.
+6.	 COPYRIGHT.  United States copyright laws, other countries' copyright
+laws, and international treaty provisions protect the Product.  You shall not
+remove any product identification, copyright notices, or proprietary notices
+from the Product.
+7.	SUPPORT.  Support terms and conditions and contact information are
+detailed in the Worldwide Limited Warranty and Technical Support for Industry
+Standard Server Products statement ("Support Statement"), a copy of which is
+available on the HP web site at www.hp.com.  Subject to the terms of the
+Support Statement, for HP software products installed on HP computers,
+technical support for questions regarding media and Product installation may
+be available for a ninety (90) day period from the date of purchase of the HP
+computer on which this Product is installed ("Support Term").  To access this
+support in North America, call the HP Technical Support Phone Center at
+1-800-652-6672.  This service is available during normal business hours,
+Monday through Friday, during the Support Term.  Outside North America, call
+the nearest HP Technical Support Center.  No other support, including
+without limitation any on-site support, is provided under this Agreement.
+8.	LIMITATION ON REVERSE ENGINEERING.  Reverse engineering of Ancillary
+Software shall be governed by its respective Ancillary Software License. As
+for the remainder of the Product, You shall not modify, disassemble, reverse
+engineer, decompile, decrypt, or otherwise attempt to access or determine the
+source code of the Product without HP's prior written consent.  Where You have
+other statutory rights with regard to software, You shall provide HP with
+reasonably detailed information regarding any intended disassembly or
+decompilation of the Product prior to performing such disassembly or
+decompilation.  You shall not decrypt the Product unless necessary for the
+licensed Use of the Product.
+9.	RESERVATION OF RIGHTS.  HP, its third party suppliers, and Ancillary
+Software providers reserve all rights not expressly granted to You in this
+Agreement.
+10.	TERM AND TERMINATION.  You may exercise the rights of this Agreement
+and of the Ancillary Software Licenses for a period of time starting at Your
+acceptance of the terms and conditions of this Agreement and for so long as
+You meet such terms and conditions ("Term").  Notwithstanding the foregoing,
+HP may terminate Your right to Use the Product, upon notice, for Your failure
+to comply with any such term or condition.  Immediately upon termination, You
+shall remove, destroy, or return to HP all copies of the Product, including
+those copies of the Product that are merged into Your adaptations, except for
+individual pieces of data in Your database.  With HP's prior written consent,
+one copy of the Product may be retained, for archival purposes only, subsequent
+to termination.  You may terminate this Agreement at any time by returning or
+destroying the Product together with merged portions in any form.
+11.	CONFIDENTIAL COMPUTER SOFTWARE.  Valid license from HP required for
+possession, use, or copying.  Consistent with FAR 12.211 and 12.212, Commercial
+Computer Software, Computer Software Documentation, and Technical Data for
+Commercial Items are licensed to the U.S. Government under vendor's standard
+commercial license.
+12.	COMPLIANCE WITH LAW.  The Product and any associated hardware,
+software, technology or services may not be exported, reexported, transferred
+or downloaded to persons or entities listed on the U.S. Department of Commerce
+Denied Persons List, Entity List of proliferation concern, or on any U.S.
+Treasury Department Designated Nationals exclusion list, any country under
+U.S. economic embargo, or to parties directly or indirectly involved in the
+development or production of nuclear, chemical, biological weapons or in
+missile technology programs as specified in the U.S. Export Administration
+Regulations (15 CFR 744).  By accepting this Agreement You confirm that You
+are not (i) located in (or a national resident of) any country under U.S.
+economic embargo, (ii) identified on any U.S. Department of Commerce Denied
+Persons List, Entity List or Treasury Department Designated Nationals exclusion
+list, and (iii) directly or indirectly involved in the development or
+production of nuclear, chemical, biological weapons or in missile technology
+programs as specified in the U.S. Export Administration Regulations.
+13.	APPLICABLE LAW. This Agreement shall be construed in accordance with
+the laws of the State of Texas, without regard to conflict of laws principles.
+The United Nations Convention on Contracts for the International Sale of Goods
+is specifically disclaimed.  If the Product was acquired outside the United
+States, then local law may apply.
+14.	SEVERABILITY.  If any term or provision of this Agreement is determined
+to be illegal or unenforceable, the validity or enforceability of the remainder
+of the terms or provisions herein will remain valid and in full force and
+effect. Failure or delay in enforcing any right or provision of this Agreement
+shall not be deemed a waiver of such right or provision with respect to any
+subsequent breach. Provisions herein, which by their nature extend beyond the
+termination of the license in the Product, will remain in effect until
+fulfilled.
+15.	CONSENT TO USE OF DATA. You agree that HP may collect and use technical
+information that You provide in connection with Your Use and request for
+technical support of the Product from HP, however, HP will not use this
+information in a form that personally identifies You.
+16.	ASSIGNMENT.  You may not assign, sublicense or transfer this Agreement,
+the Product, or any rights or obligations hereunder without the prior written
+consent of HP.  Any such attempted assignment, sublicense, or transfer will be
+null and void, and in such event, HP may terminate this Agreement immediately.
+Notwithstanding the foregoing, You may assign this Agreement and the rights
+granted hereunder with the transfer of all or substantially all of Your
+business.  The right to assign or transfer Ancillary Software is governed by
+the terms and conditions of the Ancillary Software Licenses.
+17.	ENTIRE AGREEMENT.  This Agreement, including all Ancillary Software
+Licenses in the ANCILLARY SOFTWARE list, is the final, complete and exclusive
+agreement between You and HP relating to the Product, and supersedes any
+previous communications, representations, or agreements between the parties,
+whether oral or written, regarding the subject matter hereof.  Any additional
+or different terms and conditions not expressly set forth herein will not
+apply.  This Agreement may not be changed except by an amendment signed by an
+authorized representative of both You and HP.  To the extent the terms of any
+HP policies or programs for support services conflict with the terms of this
+Agreement, the terms of this Agreement shall control.
+18.	WARRANTY
+
+	a.	NO ACTIVATION KEY REQUIRED SOFTWARE - AS-IS WARRANTY STATEMENT:
+
+	DISCLAIMER.  TO THE EXTENT ALLOWED BY APPLICABLE LAW, THIS PRODUCT AND
+SUPPORT SERVICES, IF ANY, ARE PROVIDED TO YOU "AS IS" WITHOUT WARRANTIES OF
+ANY KIND, WHETHER ORAL OR WRITTEN, EXPRESS OR IMPLIED.  HP SPECIFICALLY
+DISCLAIMS ANY IMPLIED WARRANTIES OF ANY KIND, INCLUDING WITHOUT LIMITATION,
+WARRANTY OF MERCHANTABILITY, SATISFACTORY QUALITY, NON-INFRINGEMENT, TITLE,
+ACCURACY OF INFORMATIONAL CONTENT, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY
+OR COMPLETENESS OF RESPONSES, RESULTS, OR WORKMANLIKE EFFORT, LACK OF VIRUSES,
+AND LACK OF NEGLIGENCE, ALL WITH REGARD TO THE PRODUCT, AND THE PROVISION OF
+OR FAILURE TO PROVIDE SUPPORT SERVICES.  IN ADDITION, WITHOUT LIMITATION,
+THERE IS NO WARRANTY OF QUIET ENJOYMENT, QUIET POSSESSION AND CORRESPONDENCE
+TO DESCRIPTION WITH REGARD TO THE PRODUCT.  YOU ASSUME THE ENTIRE RISK AS TO
+THE RESULTS AND PERFORMANCE OF THE PRODUCT.  NO ORAL OR WRITTEN INFORMATION OR
+ADVICE GIVEN BY HP, HP"S AUTHORIZED REPRESENTATIVES, OR ANY OTHER PARTY SHALL
+CREATE A WARRANTY OR AMEND THIS "AS IS" WARRANTY.  Some jurisdictions do not
+allow exclusions of implied warranties or conditions, so the above exclusion
+may not apply to You to the extent prohibited by such local laws. You may have
+other rights that vary from country to country, state to state, or province to
+province.
+
+	b.	ACTIVATION KEY REQUIRED SOFTWARE - LIMITED WARRANTY.
+
+HP warrants that the Product will perform substantially in accordance with the
+accompanying materials for a period of ninety (90) days from the date of
+purchase.  If an implied warranty or condition is created by Your
+state/jurisdiction and federal or state/provincial law prohibits disclaimer of
+it, You also have an implied warranty or condition, BUT ONLY AS TO DEFECTS FOR
+WHICH CLAIMS ARE MADE WITHIN NINETY (90) DAYS FROM THE DATE OF PURCHASE. AS TO
+ANY DEFECTS DISCOVERED FOR WHICH A CLAIM IS NOT MADE WITHIN THE NINETY-DAY
+PERIOD, THERE IS NO WARRANTY OR CONDITION OF ANY KIND.
+Some states/jurisdictions do not allow limitations on how long an implied
+warranty or condition lasts, so the above limitation may not apply to You.
+
+	DISCLAIMER.  The Limited Warranty that appears above is the only
+express warranty made to You and is provided in lieu of any other express
+warranties or implied warrantees (if any) created by any documentation,
+packaging or otherwise.  EXCEPT FOR THE LIMITED WARRANTY, AND TO THE MAXIMUM
+EXTENT PERMITTED BY APPLICABLE LAW, HP AND ITS SUPPLIERS PROVIDE THE PRODUCT
+AND SUPPORT SERVICES (IF ANY) "AS IS" AND WITH ALL FAULTS, AND HEREBY DISCLAIM
+ALL OTHER WARRANTIES AND CONDITIONS, EITHER EXPRESS, IMPLIED OR STATUTORY,
+INCLUDING, BUT NOT LIMITED TO, ANY (IF ANY) IMPLIED WARRANTIES, DUTIES OR
+CONDITIONS OF MERCHANTABILITY, OF FITNESS FOR A PARTICULAR PURPOSE,
+SATISFACTORY QUALITY, NON-INFRINGEMENT OF TITLE, OF ACCURACY OR COMPLETENESS
+OF RESPONSES, OF RESULTS, OF WORKMANLIKE EFFORT, OF LACK OF VIRUSES, AND OF
+LACK OF NEGLIGENCE, ALL WITH REGARD TO THE PRODUCT, AND THE PROVISIONS OF OR
+FAILURE TO PROVIDE SUPPORT SERVICES.  ALSO, THERE IS NO WARRANTY OR CONDITION
+OF TITLE, QUIET ENJOYMENT, QUIET POSSESSION, CORRESPONDENCE TO DESCRIPTION,
+OR NON-INFRINGEMENT WITH REGARD TO THE PRODUCT.
+
+19.	LIMITATION OF LIABILITY.
+
+	a.	 FOR ALL SOFTWARE WHETHER OR NOT AN ACTIVATION KEY IS REQUIRED
+
+EXCEPT TO THE EXTENT PROHIBITED BY LOCAL LAW, IN NO EVENT WILL HP OR ITS
+SUBSIDIARIES, AFFILIATES, DIRECTORS, OFFICERS, EMPLOYEES, AGENTS OR SUPPLIERS
+BE LIABLE FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE,
+OR OTHER DAMAGES (INCLUDING LOST PROFIT, LOST DATA, OR DOWNTIME COSTS) ARISING
+OUT OF THE USE, THE INABILITY TO USE, OR THE RESULTS OF USE OF THE PRODUCT,
+WHETHER BASED IN WARRANTY, CONTRACT, TORT OR OTHER LEGAL THEORY, AND WHETHER
+OR NOT HP WAS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  THE PRODUCT IS NOT
+DESIGNED, MANUFACTURED OR INTENDED FOR USE IN THE PLANNING, CONSTRUCTION,
+MAINTENANCE, OR OPERATION OF A NUCLEAR FACILITY, AIRCRAFT NAVIGATION OR
+AIRCRAFT COMMUNICATION SYSTEMS, AIR TRAFFIC CONTROL, LIFE SUPPORT MACHINES,
+OR WEAPONS SYSTEMS (COLLECTIVELY "HIGH RISK APPLICATIONS").  YOU ARE SOLELY
+LIABLE IF THE PRODUCT IS USED FOR HIGH RISK APPLICATIONS, AND YOU SHALL
+INDEMNIFY, DEFEND AND HOLD HP HARMLESS FROM ALL LOSS, DAMAGE, EXPENSE OR
+LIABILITY IN CONNECTION WITH SUCH USE.   YOU ASSUME THE ENTIRE RISK AS TO YOUR
+USE OF THE PRODUCT.  SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR
+LIMITATION OF LIABILITY FOR INCIDENTIAL OR CONSEQUENTIAL DAMAGES, SO THE ABOVE
+LIMITATION MAY NOT APPLY TO YOU TO THE EXTENT PROHIBITED BY SUCH LOCAL LAWS.
+
+	b.	FOR SOFTWARE REQUIRING AN ACTIVATION KEY
+
+Notwithstanding any damages that You might incur for any reason whatsoever
+(including, without limitation, all damages referenced above and all direct
+or general damages), the entire liability of HP and any of its suppliers under
+any provision of this EULA and Your exclusive remedy for all of the foregoing
+(except for any remedy of repair or replacement if elected by HP with respect
+to any breach of the Limited Warranty) shall be limited to the greater of the
+amount actually paid by You for the Product or U.S. $5.00.  The foregoing
+limitations, exclusions and disclaimers (including Warranty above) shall apply
+to the maximum extent permitted by applicable law, even if any remedy fails of
+its essential purpose.
+
+REV08/51/03	End User License Agreement

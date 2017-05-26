@@ -1,0 +1,100 @@
+*** This is English translation of the Japanese original for reference ***
+
+
+     Large Vocabulary Continuous Speech Recognition Engine Julius
+
+
+ Copyright (c) 1997-2000 Information-technology Promotion Agency, Japan
+ Copyright (c) 1991-2008 Kawahara Lab., Kyoto University
+ Copyright (c) 2000-2005 Shikano Lab., Nara Institute of Science and Technology
+ Copyright (c) 2005-2008 Julius project team, Nagoya Institute of Technology
+
+"Large Vocabulary Continuous Speech Recognition Engine Julius",
+including Julian, is being developed at Kawahara Lab., Kyoto
+University, Shikano Lab., Nara Institute of Science and Technology,
+and Julius project team, Nagoya Institute of Technology (collectively
+referred to herein as the "Licensers").  Julius was funded by the
+Advanced Information Technology Program Project of
+Information-technology Promotion Agency (IPA), Japan for three years
+since 1997.
+
+The Licensers reserve the copyright thereto.  However, as long as you
+accept and remain in strict compliance with the terms and conditions
+of the license set forth herein, you are hereby granted a royalty-free
+license to use "Large Vocabulary Continuous Speech Recognition Engine
+Julius" including the source code thereof and the documentation
+thereto (collectively referred to herein as the "Software").  Use by
+you of the Software shall constitute acceptance by you of all terms
+and conditions of the license set forth herein.
+
+	      TERMS AND CONDITIONS OF LICENSE
+
+1. So long as you accept and strictly comply with the terms and
+conditions of the license set forth herein, the Licensers will not
+enforce the copyright or moral rights in respect of the Software, in
+connection with the use, copying, duplication, adaptation,
+modification, preparation of a derivative work, aggregation with
+another program, or insertion into another program of the Software or
+the distribution or transmission of the Software.  However, in the
+event you or any other user of the Software revises all or any portion
+of the Software, and such revision is distributed, then, in addition
+to the notice required to be affixed pursuant to paragraph 2 below, a
+notice shall be affixed indicating that the Software has been revised,
+and indicating the date of such revision and the name of the person or
+entity that made the revision.
+
+2. In the event you provide to any third party all or any portion of
+the Software, whether for copying, duplication, adaptation,
+modification, preparation of a derivative work, aggregation with
+another program, insertion into another program, or other use, you
+shall affix the following copyright notice and all terms and
+conditions of this license (both the Japanese original and English
+translation) as set forth herein, without any revision or change
+whatsoever.
+
+                      Form of copyright notice:
+
+ Copyright (c) 1997-2000 Information-technology Promotion Agency, Japan
+ Copyright (c) 1991-2008 Kawahara Lab., Kyoto University
+ Copyright (c) 2000-2005 Shikano Lab., Nara Institute of Science and Technology
+ Copyright (c) 2005-2008 Julius project team, Nagoya Institute of Technology
+
+3. When you publish or present any results by using the Software, you
+must explicitly mention your use of "Large Vocabulary Continuous
+Speech Recognition Engine Julius".
+
+4. The Licensers are licensing the Software, which is the trial
+product of research and project, on an "as is" and royalty-free basis,
+and makes no warranty or guaranty whatsoever with respect to the
+Software, whether express or implied, irrespective of the nation where
+used, and whether or not arising out of statute or otherwise,
+including but not limited to any warranty or guaranty with respect to
+quality, performance, merchantability, fitness for a particular
+purpose, absence of defects, or absence of infringement of copyright,
+patent rights, trademark rights or other intellectual property rights,
+trade secrets or proprietary rights of any third party.  You and every
+other user of the Software hereby acknowledge that the Software is
+licensed without any warranty or guaranty, and assume all risks
+arising out of the absence of any warranty or guaranty.  In the event
+the terms and conditions of this license are inconsistent with the
+obligations imposed upon you by judgment of a court or for any other
+reason, you may not use the Software.
+
+The Licensers shall not have any liability to you or to any third
+party for damages or liabilities of any nature whatsoever arising out
+of your use of or inability to use the Software, whether of an
+ordinary, special, direct, indirect, consequential or incidental
+nature (including without limitation lost profits) or otherwise, and
+whether arising out of contract, negligence, tortuous conduct, product
+liability or any other legal theory or reason whatsoever of any nation
+or jurisdiction.
+
+5. This license of use of the Software shall be governed by the laws
+of Japan, and the Kyoto District Court shall have exclusive primary
+jurisdiction with respect to all disputes arising with respect
+thereto.
+
+6. Inquiries for support or maintenance of the Software, or inquiries
+concerning this license of use besides the conditions above, may be
+sent to Julius project team, Nagoya Institute of Technology, or
+Kawahara Lab., Kyoto University.

@@ -1,0 +1,296 @@
+Copyrights
+
+ARB copyright and license information
+
+    COPYRIGHTS
+
+        The ARB software and documentation are not in the public
+        domain.
+
+        External programs distributed together with ARB are
+        copyrighted by and are the property of their respective
+        authors unless otherwise stated.
+
+        All other copyrights are owned by Lehrstuhl fuer
+        Mikrobiologie, TU Muenchen.
+
+    USAGE LICENSE
+
+        You have the right to use this version of ARB for free.
+        Please read as well the attached copyright notices below
+        whether you may or may not install this package.
+
+        Since many of the included programs is free software and
+        nobody is allowed to sell that software you may safely assume
+        ARB will never become a commercial product.
+
+    REDISTRIBUTION LICENSE
+
+        This release of the ARB program and documentation may not be
+        sold or incorporated into a commercial product, in whole or in
+        part, without the expressed written consent of the Technical
+        University of Munich and of its supervisors Ralf Westram or
+        Wolfgang Ludwig.
+
+        All interested parties may redistribute and modify ARB as long
+        as all copies are accompanied by this license information and
+        all copyright notices remain intact.  Parties redistributing
+        ARB must do so on a non-profit basis, charging only for cost
+        of media or distribution.
+
+        If you modify parts of ARB and redistribute these changes the
+        'Lehrstuhl fuer Mikrobiologie' of the TU Muenchen gains the
+        right to incorporate these changes into ARB and to redistribute
+        them with future versions of ARB.
+
+    DEBIAN DISTRIBUTION
+
+        Hereby anybody is granted the right to build debian-pakets
+        of the ARB software package (http:://www.arb-home.de/) and
+        publish them on debian mirrors (or any other way of
+        debian-distribution).
+
+        This includes any debian derivates like ubuntu.
+
+        The ARB developers may (but most likely wont ever) revoke
+        this granting. If really done so, it'll only affect ARB
+        versions released after such a revocation.
+
+    DISCLAIMER
+
+        THE TU MUENCHEN AND THE VARIOUS AUTHORS OF ARB GIVE NO
+        WARRANTIES, EXPRESSED OR IMPLIED FOR THE SOFTWARE AND
+        DOCUMENTATION PROVIDED, INCLUDING, BUT NOT LIMITED TO WARRANTY
+        OF MERCHANTABILITY AND WARRANTY OF FITNESS FOR A PARTICULAR
+        PURPOSE.  User understands the software is a research tool for
+        which no warranties as to capabilities or accuracy are made,
+        and user accepts the software "as is." User assumes the entire
+        risk as to the results and performance of the software and
+        documentation. The above parties cannot be held liable for any
+        direct, indirect, consequential or incidental damages with
+        respect to any claim by user or any third party on account of,
+        or arising from the use of software and associated
+        materials. This disclaimer covers both the ARB core
+        applications and all external programs used by ARB.
+
+
+Copyright notices for programs distributes together with ARB
+
+    GDE
+
+        The Genetic Data Environment (GDE) software and documentation
+        are not in the public domain. Portions of this code are owned
+        and copyrighted by the The Board of Trustees of the University
+        of Illinois and by Steven Smith. External functions used by
+        GDE are the property of their authors. This release of the GDE
+        program and documentation may not be sold, or incorporated
+        into a commercial product, in whole or in part without the
+        expressed written consent of the University of Illinois and of
+        its author, Steven Smith.
+
+        All interested parties may redistribute the GDE as long as all
+        copies are accompanied by this documentation, and all
+        copyright notices remain intact.  Parties interested in
+        redistribution must do so on a non-profit basis, charging only
+        for cost of media.  Modifications to the GDE core editor
+        should be forwarded to the author Steven Smith.  External
+        programs used by the GDE are copyrighted by, and are the
+        property of their respective authors unless otherwise stated.
+
+
+
+    PHYLIP
+
+        (c) Copyright 1986-1993 by Joseph Felsenstein and the
+        University of Washington. Permission is granted to copy this
+        document provided that no fee is charged for it and that this
+        copyright notice is not removed.
+
+    LSADT
+
+        LEAST SQUARES ALGORITHM FOR FITTING ADDITIVE TREES TO
+        PROXIMITY DATA
+
+        GEERT DE SOETE  --  VERSION 1.01 - FEB. 1983
+                            VERSION 1.02 - JUNE 1983
+                            VERSION 1.03 - JULY 1983
+
+      - 'C' version by Michael Macuikenas, University of Illinois
+
+        REFERENCE: DE SOETE, G. A LEAST SQUARES ALGORITHM FOR FITTING
+           ADDITIVE TREES TO PROXIMITY DATA. PSYCHOMETRIKA, 1983, 48,
+           621-626.
+           DE SOETE, G. ADDITIVE TREE REPRESENTATIONS OF INCOMPLETE
+           DISSIMILARITY DATA. QUALITY AND QUANTITY, 1984, 18,
+           387-393.
+
+      - REMARKS
+
+            ------
+
+        1) THE PROGRAM USES SUBROUTINES FROM THE PORT LIBRARY FOR
+           ERROR HANDLING, DYNAMIC STORAGE ALLOCATION AND SPECIFICA-
+           TION OF MACHINE-DEPENDENT CONSTANTS.
+           CF. FOX, P.A., HALL, A.D., & SCHRYER, N.L.
+
+            THE PORT MATHEMATICAL SUBROUTINE LIBRAY. ACM TRANS. ON MATH.
+            SOFTW., 1978, 4, 104-126.
+
+                 ALGORITHM 528. FRAMEWORK FOR A PORTABLE LIBRARY.
+                 ACM TRANS. ON MATH. SOFTW., 1978, 4, 177-188.
+        2) UNIFORMLY DISTRIBUTED RANDOM NUMBERS ARE GENERATED BY A
+           PROCEDURE DUE TO SCHRAGE. CF.
+           SCHRAGE, L.  A MORE PORTABLE FORTRAN RANDOM NUMBER GENERATOR.
+           ACM TRANS. ON MATH. SOFTW., 1979, 5, 132-138.
+        3) SUBROUTINES VA14AD AND VA14AC ARE ADAPTED FROM THE
+           HARWELL SUBROUTINE LIBRARY (1979 EDITION).
+        4) ALTHOUGH THIS PROGRAM HAS BEEN CAREFULLY TESTED, THE
+           AUTHOR DISCLAIMS ANY RESPONSABILITY FOR POSSIBLE
+           ERRORS.
+
+    BLAST
+
+        /* ===========================================================================
+        *
+        *                            PUBLIC DOMAIN NOTICE
+        *               National Center for Biotechnology Information
+        *
+        *  This software/database is a "United States Government Work" under the
+        *  terms of the United States Copyright Act.  It was written as part of
+        *  the author's official duties as a United States Government employee and
+        *  thus cannot be copyrighted.  This software/database is freely available
+        *  to the public for use. The National Library of Medicine and the U.S.
+        *  Government have not placed any restriction on its use or reproduction.
+        *
+        *  Although all reasonable efforts have been taken to ensure the accuracy
+        *  and reliability of the software and data, the NLM and the U.S.
+        *  Government do not and cannot warrant the performance or results that
+        *  may be obtained by using this software or data. The NLM and the U.S.
+        *  Government disclaim all warranties, express or implied, including
+        *  warranties of performance, merchantability or fitness for any particular
+        *  purpose.
+        *
+        *  Please cite the author in any work or product based on this material.
+        *
+        * ===========================================================================*/
+        Warren Gish
+        NCBI/NLM
+
+    CONVERT_ALN
+
+        convert_aln --  an alignment(or sequence) converter written by Wen-Min Kuan
+                        for the Ribosomal Database Project(RDP), April 28, 1992.
+
+
+    fastdnaml
+
+        fastDNAml, a program for estimation of phylogenetic trees from
+        sequences. Copyright (C) 1998, 1999, 2000 by Gary J. Olsen
+
+        This program is free software; you may redistribute it and/or
+        modify it under the terms of the GNU General Public License as
+        published by the Free Software Foundation; either version 2 of
+        the License, or (at your option) any later version.
+
+        This program is distributed in the hope that it will be
+        useful, but WITHOUT ANY WARRANTY; without even the implied
+        warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+        PURPOSE.  See the GNU General Public License for more details.
+
+        You should have received a copy of the GNU General Public License along
+        with this program; if not, write to the Free Software Foundation, Inc.,
+        59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+        For any other enquiries write to Gary J. Olsen, Department of
+        Microbiology, University of Illinois, Urbana, IL 61801, USA
+
+        Or send E-mail to gary@phylo.life.uiuc.edu
+
+        fastDNAml is based in part on the program dnaml by Joseph Felsenstein.
+
+        Copyright notice from dnaml:
+
+            version 3.3. (c) Copyright 1986, 1990 by the University of
+            Washington and Joseph Felsenstein.  Written by Joseph
+            Felsenstein.  Permission is granted to copy and use this
+            program provided no fee is charged for it and provided
+            that this copyright notice is not removed.
+
+        When publishing work that based on results from fastDNAml please cite:
+
+            Felsenstein, J.  1981.  Evolutionary trees from DNA
+            sequences: A maximum likelihood approach.
+            J. Mol. Evol. 17: 368-376.
+
+            and
+
+            Olsen, G. J., Matsuda, H., Hagstrom, R., and Overbeek, R.
+            1994.  fastDNAml: A tool for construction of phylogenetic
+            trees of DNA sequences using maximum likelihood.
+            Comput. Appl. Biosci. 10: 41-48.
+
+
+    treepuzzle
+
+        treepuzzle is published under the GPL (GNU GENERAL PUBLIC LICENSE)
+        which is provided in 'lib/GPL.txt'.
+
+    molphy
+
+        MOLPHY: A Computer Program Package for Molecular Phylogenetics
+
+        Readme
+               This is the MOLPHY (ProtML) distribution,  version 2.3.
+                Copyright (c) 1992-1996, Jun Adachi & Masami Hasegawa.
+                                 All rights reserved.
+
+                MOLPHY is a program package for MOLecular PHYlogenetics.
+
+        ProtML is a main program in MOLPHY for inferring evolutionary trees from
+        PROTein (amino acid) sequences by using the Maximum Likelihood method.
+
+        Programs (C language)
+          ProtML: Maximum Likelihood Inference of Protein Phylogeny
+          NucML:  Maximum Likelihood Inference of Nucleic Acid Phylogeny
+          ProtST: Basic Statistics of Protein Sequences
+          NucST:  Basic Statistics of Nucleic Acid Sequences
+          NJdist: Neighbor Joining Phylogeny from Distance Matrix
+        Utilities (Perl)
+          mollist:  get identifiers list        molrev:   reverse DNA sequences
+          molcat:   concatenate sequences       molcut:   get partial sequences
+          molmerge: merge sequences             nuc2ptn:  DNA -> Amino acid
+          rminsdel: remove INS/DEL sites        molcodon: get specified codon sites
+          molinfo:  get varied sites            mol2mol:  MOLPHY format beautifer
+          inl2mol:  Interleaved -> MOLPHY       mol2inl:  MOLPHY -> Interleaved
+          mol2phy:  MOLPHY -> Sequential        phy2mol:  Sequential -> MOLPHY
+          must2mol: MUST -> MOLPHY              etc.
+
+        MOLPHY is a free software, and you can use and redistribute it.
+        The programs are written in a standard subset of C with UNIX-like OS.
+        The utilities are written in the "Perl" (Ver.4.036) with UNIX-like OS.
+        MOLPHY has been tested on SUN4's (cc & gcc with SUN-OS 4.1.3) and
+        HP9000/700 (cc, c89 & gcc with HP-UX 9.05).
+        However, MOLPHY has NOT been tested on VAX, IBM-PC, and Macintosh.
+
+        NETWORK DISTRIBUTION ONLY: The latest version of MOLPHY is always available
+        by anonymous ftp in ftp.ism.ac.jp: /pub/ISMLIB/MOLPHY/.
+
+    readseq
+
+
+         ReadSeq  -- 1 Feb 93
+
+         Reads and writes nucleic/protein sequences in various
+         formats. Data files may have multiple sequences.
+
+         Copyright 1990 by d.g.gilbert
+         biology dept., indiana university, bloomington, in 47405
+         e-mail: gilbertd@bio.indiana.edu
+
+         This program may be freely copied and used by anyone.
+         Developers are encourged to incorporate parts in their
+         programs, rather than devise their own private sequence
+         format.
+
+         This should compile and run with any ANSI C compiler.
+         Please advise me of any bugs, additions or corrections.

@@ -1,0 +1,36 @@
+Copyright (c) 2005 Genentech, Inc.  All rights reserved.
+
+The Developers of this software are Thomas D. Wu <twu@gene.com> and
+Colin K. Watanabe <ckw@gene.com>.
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Package"), to use, copy, and distribute copies of the Package,
+without modifications, provided that the above copyright notice and
+this permission notice are included in all copies or substantial
+portions of the Package.  Distribution of this Package as part of a
+commercial software product requires prior arrangement with the
+Developers.
+
+Permission is also hereby granted, free of charge, to any person
+obtaining a copy of this Package, to modify your copy or copies of the
+Package or any portion of it, provided that you use the modified
+Package only within your corporation or organization.  Distribution of
+a modified version of this Package requires prior arrangement with the
+Developers.
+
+Genome databases, map files, and other result files produced as output
+from software in this Package do not automatically fall under the
+copyright of this Package, but belong to whoever generated them, and
+may be distributed freely.
+
+IN NO EVENT SHALL GENENTECH, INC. BE LIABLE TO ANY PARTY FOR DIRECT,
+INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, OR OTHER
+LIABILITY, INCLUDING LOST PROFITS, ARISING FROM THE USE OF THIS
+SOFTWARE.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+GENENTECH, INC. HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT,
+UPDATES, ENHANCEMENTS, OR MODIFICATIONS.

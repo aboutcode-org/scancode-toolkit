@@ -1,0 +1,78 @@
+This program and object code is being provided to "you", the licensee,
+by Thierry  Dutoit, the "author",  under  the following license, which
+applies to any  program, object code or other   work which contains  a
+notice placed  by  the copyright holder saying  it  may be distributed
+under the terms of this license.   The "program", below, refers to any
+such program, object code or work.
+
+By obtaining,  using and/or copying  this program, you  agree that you
+have   read,  understood,  and   will  comply   with  these  terms and
+conditions:
+
+Terms and conditions for the distribution of the program
+--------------------------------------------------------
+
+This program may not be sold or incorporated into any product which is
+sold without prior permission from the author.
+
+When no  charge is made, this  program  may be copied  and distributed
+freely, provided that   this notice  is  copied  and distributed  with
+it. Each time you redistribute  the program (or any  work based on the
+program), the recipient   automatically receives  a license from   the
+original  licensor to copy or distribute  the program subject to these
+terms and conditions.  You may  not impose any further restrictions on
+the recipients' exercise of   the rights granted  herein. You  are not
+responsible for enforcing compliance by third parties to this License.
+
+If you wish to incorporate the program  into other free programs whose
+distribution conditions are different, write to  the author to ask for
+permission.
+
+If, as   a consequence of a   court judgment  or  allegation of patent
+infringement or  for any other reason  (not limited to patent issues),
+conditions are imposed  on you (whether  by court order,  agreement or
+otherwise) that contradict the conditions of this license, they do not
+excuse   you from the   conditions  of this  license.    If you cannot
+distribute so as to satisfy simultaneously your obligations under this
+license and any other pertinent obligations, then as a consequence you
+may   not distribute the  program at  all.    For example, if a patent
+license would not permit royalty-free redistribution of the program by
+all those who receive copies directly or  indirectly through you, then
+the only way you  could satisfy both it and  this license would be  to
+refrain entirely from distribution of the program.
+
+Terms and conditions on the use of the program
+----------------------------------------------
+
+Permission  is  granted   to use  this   software  for non-commercial,
+non-military purposes,  with and  only  with  the voice   and language
+databases  made available by  the author  from the  MBROLA project www
+homepage:
+
+         http://tcts.fpms.ac.be/synthesis
+
+In return, the author asks you to mention the MBROLA reference paper:
+
+T. DUTOIT, V. PAGEL, N. PIERRET, F.  BATAILLE, O. VAN DER VRECKEN
+"The MBROLA Project: Towards a Set of High-Quality Speech
+Synthesizers Free of Use for Non-Commercial Purposes"
+Proc. ICSLP'96, Philadelphia, vol. 3, pp. 1393-1396.  
+
+or,  for a more general  reference   to Text-To-Speech synthesis,  the
+book:
+
+An Introduction to Text-To-Speech Synthesis,
+T. DUTOIT, Kluwer Academic Publishers, Dordrecht 
+Hardbound, ISBN 0-7923-4498-7
+April 1997, 312 pp. 
+
+in any scientific publication referring to work for which this program
+has been used.
+
+Disclaimer
+----------
+
+THIS  SOFTWARE CARRIES NO   WARRANTY, EXPRESSED OR IMPLIED.  THE  USER
+ASSUMES ALL RISKS, KNOWN OR UNKNOWN, DIRECT OR INDIRECT, WHICH INVOLVE
+THIS SOFTWARE IN ANY WAY. IN PARTICULAR, THE  AUTHOR DOES NOT TAKE ANY
+COMMITMENT IN VIEW OF ANY POSSIBLE THIRD PARTY RIGHTS.

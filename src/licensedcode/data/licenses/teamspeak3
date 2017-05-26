@@ -1,0 +1,443 @@
+TeamSpeak 3.x - End User License Agreement
+Revised: February 2nd, 2010
+
+THIS IS A LEGAL AGREEMENT between "you", the individual, company, or
+organization utilizing TeamSpeak brand software, TeamSpeak Systems GmbH,
+a Kruen, Germany based company, and Triton CI & Associates, Inc., a
+California, USA based Corporation.
+
+USE OF TEAMSPEAK SOFTWARE INDICATES YOUR ACCEPTANCE OF THESE TERMS.
+
+As used in this Agreement, the term "TeamSpeak software" means TeamSpeak
+version 3.x voice communication software, both client and server, as
+made available from www.TeamSpeak.com together with any and all
+enhancements, upgrades, or updates that may be provided to you by
+TeamSpeak Systems GmbH.
+
+1. APPLICABLE LAW
+
+All terms in this Agreement relating to ownership, distribution,
+prohibited conduct, or upgrades to TeamSpeak software, specifically
+Sections 2, 6, 11, and 12, will be handled by TeamSpeak Systems GmbH in
+accordance with the laws of Kruen, Germany.
+
+Triton CI & Associates, Inc., is TeamSpeak Systems GmbH's official
+sales, licensing, and billing partner for TeamSpeak software. As such,
+all terms in this Agreement relating to TeamSpeak sales, billing,
+compliance with licensing, including related issues such as piracy or
+banning of servers, will be handled by Triton CI & Associates, Inc. in
+accordance with the laws within the State of California, USA.
+
+2. OWNERSHIP
+
+Ownership of TeamSpeak software and any accompanying documentation shall
+at all times remain with TeamSpeak Systems GmbH. This Agreement does not
+constitute the sale of TeamSpeak software or any accompanying
+documentation, or any portion thereof. Without limiting the generality
+of the foregoing, you do not receive any rights to any patents,
+copyrights, trade secrets, trademarks or other intellectual property
+rights relating to TeamSpeak software or any accompanying documentation.
+All rights not expressly granted to you under this Agreement are
+reserved by TeamSpeak Systems GmbH.
+
+3. DEFINITIONS
+
+3.1 TeamSpeak Client and Server
+TeamSpeak software consists of both a TeamSpeak Client and TeamSpeak
+Server application. The TeamSpeak Server is the application which acts
+as a host and allows two or more client connections to communicate with
+one another. The TeamSpeak Client is the application which connects to
+the TeamSpeak Server and contains end-user functionality which includes
+initiating a data stream for voice communication with another client
+connection. Sample screenshots of both the TeamSpeak Client and Server
+applications can be found at http://www.teamspeak.com/?page=screenshots.
+
+3.2 TeamSpeak Software Development Kit (TeamSpeak SDK)
+TeamSpeak software may also consist of a Software Development Kit or
+SDK. The TeamSpeak SDK is a set of development tools and documentation
+which allows software engineers to create customized or integrated
+applications typically as part of an existing product or service. The
+TeamSpeak SDK includes API information, sample code, tools,
+documentation, and other related items.
+
+3.3 TeamSpeak Virtual Server
+A TeamSpeak Virtual Server is any instance within the TeamSpeak Server
+application (binary executable) which allows the TeamSpeak Client
+application to connect. A single executed TeamSpeak Server application
+(binary executable) will by default create a single Virtual Server.
+However, the TeamSpeak Server application is capable of creating and
+hosting multiple Virtual Servers within any single running binary
+executable, where each server contains its own configuration properties
+which to the end-user may appear to act as a stand-alone server.
+
+3.4 TeamSpeak Server Slot
+A TeamSpeak Server Slot (or just "slot") is utilized when a single
+TeamSpeak Client connection is established to any given TeamSpeak
+Virtual Server. The maximum "slots" or "slot count" can be individually
+configured for each Virtual Server and defines the maximum number of
+users that can simultaneously connect to that Virtual Server at any
+given time. For example, a Virtual Server configured for 10 slots will
+allow up to 10 simultaneous user connections before it generates a
+"server full" error message to the 11th user attempting to connect to
+the same Virtual Server.
+
+3.5 Commercial Entity
+A commercial entity is an individual, company, or organization which
+demonstrates (typically via but not limited to a website) that it is in
+business to turn a profit of any kind; be it monetary, from direct sales
+or rental fees, advertising profit, or through the privileged use of
+intangible goods and services.
+
+Example of a Commercial Entity:
+A hosting company or organization which charges a monthly fee for the
+use of a TeamSpeak server OR a hosting company or organization which
+does NOT charge a monthly fee for the use of a TeamSpeak server but
+earns substantial profit from advertising, or from other products or
+services of any kind.
+
+Example of a Commercial Entity profiting from advertising:
+An organization advertising for products or services offered by a
+hosting company in exchange for the use of a TeamSpeak server means the
+hosting company will be considered to be a commercial entity, even if
+they choose not to charge anything at all for the use of any of their
+TeamSpeak servers. This situation is commonly referred to as a clan or
+guild "sponsorship".
+
+Example of a Commercial Entity profiting from intangible goods:
+A "payment" is made to an individual or hosting company using virtual
+currency (gold, etc.) within a popular massively multiplayer online game
+(MMOG) in exchange for the use of a TeamSpeak server means the
+individual or hosting company will be considered to be a commercial entity.
+
+3.6 Non-Profit Entity
+A non-profit entity is an individual or organization which does NOT
+utilize TeamSpeak software for profit of any kind; be it monetary, from
+direct sales or rental fees, advertising profit, or intangible goods and
+services.
+
+Example 1: A clan or guild hosting a TeamSpeak server for their own
+private use while complying with all terms and conditions set forth in
+Section 5.1 of this Agreement.
+
+Example 2: An individual hosting a TeamSpeak server for private use to
+communicate with friends or family over the Internet while complying
+with all terms and conditions set forth in Section 5.1 of this Agreement.
+
+4. LICENSE FEES
+
+Based on the definitions above, license fees may be applicable to
+entities utilizing the TeamSpeak Server application. License fees are
+NOT applicable to the TeamSpeak Client application. All Commercial
+Entities using the TeamSpeak Server application for any reason must pay
+a license fee, regardless of whether or not they choose to charge fees
+for the use of their servers. Non-Profit Entities using the TeamSpeak
+Server application do not need to pay a license fee; however, these
+entities must comply with the terms and conditions set forth in the
+License Types applicable to Non-Profit Entities below. If you are
+uncertain as to whether you qualify as a Non-Profit Entity you must
+contact Triton CI & Associates, Inc. via e-mail at sales@tritoncia.com
+or via http://support.tritoncia.com.
+
+5. LICENSE TYPES
+
+5.1. Non-Profit License: Unregistered
+This license type is for an individual or organization which is
+non-profit in nature, and does not require registration on our website
+nor a license key. An individual or organization operating under this
+license may install and use TeamSpeak software on one or more physical
+machines, without paying a license fee, provided that the following
+conditions are met:
+a. The individual or organization must be non-profit in nature.
+TeamSpeak Systems GmbH and Triton CI & Associates, Inc. reserve the
+right to assess and determine if any individual or organization is
+non-profit in nature.
+b. The individual or organization may host up to 32 slots using only 1
+Virtual Server for their entire operation. Exceeding the use of 32 slots
+or 1 Virtual Server over multiple physical machines operated by the same
+individual or organization is strictly prohibited.
+
+5.2. Non-Profit License: Registered
+This license type is for an individual or organization which is
+non-profit in nature, and requires registration on our website and the
+use of a license key. An individual or organization operating under this
+license may install and use TeamSpeak software on one or more physical
+machines, without paying a license fee, provided that the following
+conditions are met:
+a. The individual or organization must register their operation and
+apply for this license type via Triton CI & Associates, Inc.'s website
+at https://sales.tritoncia.com/users/register.php.
+b. The individual or organization must be non-profit in nature.
+TeamSpeak Systems GmbH and Triton CI & Associates, Inc. reserve the
+right to assess and determine if any individual or organization is
+non-profit in nature.
+c. The individual or organization may host up to 512 slots using a
+maximum of 10 Virtual Servers for their entire operation. Any
+combination of slots or Virtual Servers over multiple physical machines
+is allowed, as long as the individual or organization does not exceed
+512 slots or 10 Virtual Servers. This is also enforced by the license
+key which is issued after the registration and approval process has been
+completed.
+
+5.3. Commercial License for ATHPs (Authorized TeamSpeak Host Providers):
+Recurs Monthly
+An Authorized TeamSpeak Host Provider License or ATHP License is a
+license requiring recurring monthly fees. ATHP Licenses are issued to
+Commercial Entities (an individual, company, or organization) which rent
+TeamSpeak servers to others for profit of any kind; be it monetary, from
+direct sales or rental fees, advertising profit, or through the
+privileged use of intangible goods and services. ATHPs are Commercial
+Entities which typically charge their customers a monthly fee for the
+use of a TeamSpeak Virtual Server or include the Virtual Server as part
+of other services or offerings to their customers free of charge.
+Commercial Entities operating under the Authorized TeamSpeak Host
+Provider License may install and use TeamSpeak software on one or more
+physical machines, and must adhere to the following conditions:
+a. ATHPs must register for an account on Triton CI & Associates, Inc.'s
+website at https://sales.tritoncia.com/users/register.php.
+b. ATHPs are subject to recurring, monthly licensing fees based on the
+average slot count configured on each Virtual Server hosted by the ATHP
+during the previous month (e.g. - if a Virtual Server reports being
+configured for 50 Slots during 15 out of 30 days of the previous month,
+the Virtual Server will be billed at 25 Slots). These licensing fees are
+completely indifferent to whether or not an ATHP's customer makes use of
+their Virtual Server.
+c. ATHPs are billed monthly, in arrears, by Triton CI & Associates, Inc.
+All invoices are typically sent on the 1st or 2nd day of every month via
+email and are also posted to the ATHP's online account via Triton CI &
+Associates, Inc.'s website at http://sales.tritoncia.com.
+d. Payments are due 15 days after any invoice is generated (NET 15). It
+is the ATHP's responsibility to ensure that their invoice is received;
+whether by the primary email address registered to the ATHP's online
+account or by a representative of the ATHP ensuring that the ATHP's
+online account is logged into or checked each month for new invoices.
+e. ATHPs who become 30 or more days past due on their invoice may have
+their TeamSpeak Servers banned due to non-payment.
+f. ATHPs who consistently fail to pay their invoices on time are subject
+to having their account or license suspended or revoked.
+g. New ATHPs acknowledge that there will be a $50 setup fee in addition
+to a minimum monthly license fee of $25 for a minimum slot count of 200.
+h. ATHPs acknowledge that invoices may occasionally reflect inaccurate
+data due to incorrectly configured slot counts on licensed Virtual
+Servers (e.g. - test servers accidentally created with high slot counts,
+or duplicate data reported back to TeamSpeak Systems GmbH during data
+center migrations, etc.). As such, invoices are subject to review by
+both the ATHP and Triton CI & Associates, Inc. Every effort will be made
+by Triton CI & Associates, Inc. to determine the best course of action
+when correcting or modifying an invoice.
+i. ATHPs acknowledge that slot count data for each Virtual Server hosted
+by the ATHP is reported daily to TeamSpeak Systems GmbH's tracking
+server located at accounting.teamspeak.com (IP 62.146.63.84) for the
+purpose of tracking and billing the ATHP accordingly.
+j. ATHPs may not utilize firewalls or any other tools to prevent
+communication from their licensed Virtual Servers to TeamSpeak Systems
+GmbH's tracking server located at accounting.teamspeak.com (IP
+62.146.63.84). All outbound traffic, both TCP and UDP, must be made
+available to the tracking server AND the organization must ensure that
+DNS is functioning properly and is able to resolve the hostname
+accounting.teamspeak.com at all times on all physical machines where
+Virtual Servers are being hosted.
+k. ATHPs may not alter each individual Virtual Server's slot count on a
+daily basis (e.g. - via an automated script or third party utility) in
+order to deliberately or otherwise alter the daily slot count
+configuration data which is reported to TeamSpeak Systems GmbH's
+tracking server located at accounting.teamspeak.com (IP 62.146.63.84).
+l. ATHPs may allow resellers to sell their TeamSpeak Virtual Servers;
+however, the ATHP must ensure that all of their Virtual Server IPs are
+licensed at all times. Resellers are not required to register and
+purchase a separate ATHP license for themselves as long as all Virtual
+Servers sold by the reseller are licensed through the ATHP.
+
+5.4. Commercial License: Annual Activation
+A Commercial License is a license requiring annual activation.
+Commercial Licenses are issued to Commercial Entities (an individual,
+company, or organization) which utilize TeamSpeak servers in a
+commercial environment but are not in the business of hosting or renting
+servers to others for a recurring fee. Examples include, but are not
+limited to, Internet Cafes or small businesses using TeamSpeak for
+internal communication. Commercial Entities operating under the
+Commercial License must adhere to the following conditions:
+a. Commercial Entities must register for an account on Triton CI &
+Associates, Inc.'s website at
+https://sales.tritoncia.com/users/register.php.
+b. Upon expiration of the annual licensed term, the Commercial Entity
+must purchase an additional year of activation in order to continue
+using TeamSpeak.
+c. Commercial Entities may utilize their license on multiple physical
+machines, provided the Commercial Entity abides by the limitations on
+its purchased slots and the maximum number of Virtual Servers for which
+they are licensed.
+d. Commercial Entities cannot re-sell any portion of their licensed
+slots or Virtual Servers to others for a recurring fee of any kind.
+
+5.5 Software Development Kit Integration License or "SDK Integration
+License"
+A Software Development Kit Integration License or SDK Integration
+License is a license which may require a one-time fee, recurring fees,
+or other pre-determined fees. SDK Integration Licenses are typically
+issued to Commercial Entities (an individual, company, or organization)
+which utilize TeamSpeak software to create customized or integrated
+applications as part of an existing product or service. Commercial
+Entities operating under the SDK Integration License must adhere to the
+following conditions:
+a. You may use the TeamSpeak SDK with only one product at a time. Any
+intent to utilize the TeamSpeak SDK with a different product will
+constitute a new Agreement, and new license fees may apply.
+b. You may NOT distribute, sell, lease, rent, lend, or sublicense any
+part of the TeamSpeak SDK to any third party without prior written
+consent from TeamSpeak Systems GmbH or Triton CI & Associates, Inc.
+c. You may NOT use the TeamSpeak SDK to design or develop software to
+upload or otherwise transmit any material containing software viruses or
+other computer code, files or programs designed to interrupt, destroy,
+or limit the functionality of any software or hardware.
+d. You may NOT represent that the programs you develop using the
+TeamSpeak SDK are certified or otherwise endorsed by either TeamSpeak
+Systems GmbH or Triton CI & Associates, Inc.
+e. You may NOT use the TeamSpeak name or any other trademarks of
+TeamSpeak Systems GmbH in connection with programs that you develop
+using the TeamSpeak SDK without prior written consent from TeamSpeak
+Systems GmbH or Triton CI & Associates, Inc.
+
+6. DISTRIBUTION VIA THE INTERNET
+
+The preferred method of distribution of TeamSpeak software over the
+Internet is via TeamSpeak Systems GmbH's official website at
+www.TeamSpeak.com. You may not distribute TeamSpeak software otherwise
+over the Internet, unless you obtain prior written consent from
+TeamSpeak Systems GmbH or Triton CI & Associates, Inc. to do so.
+
+7. THIRD PARTY DISTRIBUTION PROHIBITED
+
+Distribution of TeamSpeak software by you to third parties (e.g. -
+publishers, magazines, third party products, etc.) is also hereby
+expressly prohibited unless you obtain prior written consent from
+TeamSpeak Systems GmbH or Triton CI & Associates, Inc. to do so.
+
+8. TERMINATION
+TeamSpeak Systems GmbH or Triton CI & Associates, Inc. reserves the
+right to terminate your license for TeamSpeak software at any time or
+for any reason. Your license may also be terminated if you are in breach
+of any of the terms and conditions set forth in this Agreement. Upon
+termination, you shall immediately discontinue using TeamSpeak software
+and destroy all copies and related intellectual property in your
+possession, custody or control.
+
+9. BILLING
+Triton CI & Associates, Inc., is TeamSpeak Systems GmbH's official
+sales, licensing, and billing partner for TeamSpeak software. As such,
+all billing matters for Commercial Entities are handled by Triton CI &
+Associates, Inc. Any inquiries relating to billing must be e-mailed to
+sales@tritoncia.com or submitted via Triton CI & Associates, Inc.'s
+ticket system at http://support.tritoncia.com.
+
+10. PRICING
+TeamSpeak software pricing information for Commercial Entities can be
+found on Triton CI & Associates, Inc.'s website at
+http://sales.tritoncia.com/pricing.php.
+
+11. PROHIBITED CONDUCT
+
+You represent and warrant that you will not violate any of the terms and
+conditions set forth in this Agreement and that:
+
+a. You will not: (I) reverse engineer, decompile, disassemble, derive
+the source code of, modify, or create derivative works from TeamSpeak
+software; or (II) use, copy, modify, alter, or transfer, electronically
+or otherwise, TeamSpeak software or any of the accompanying
+documentation except as expressly permitted in this Agreement; or (III)
+redistribute, sell, rent, lease, sublicense, or otherwise transfer
+rights to TeamSpeak software whether in a stand-alone configuration or
+as incorporated with other software code written by any party except as
+expressly permitted in this Agreement.
+b. You will not use TeamSpeak software to engage in or allow others to
+engage in any illegal activity.
+c. You will not engage in use of TeamSpeak software that will interfere
+with or damage the operation of the services of third parties by
+overburdening or disabling network resources through automated queries,
+excessive usage or similar conduct.
+d. You will not use TeamSpeak software to engage in any activity that
+will violate the rights of third parties, including, without limitation,
+through the use, public display, public performance, reproduction,
+distribution, or modification of communications or materials that
+infringe copyrights, trademarks, publicity rights, privacy rights, other
+proprietary rights, or rights against defamation of third parties.
+e. You will not transfer TeamSpeak software or utilize TeamSpeak
+software in combination with third party software authored by you or
+others to create an integrated software program which you transfer to
+unrelated third parties unless you obtain prior written consent from
+TeamSpeak Systems GmbH or Triton CI & Associates, Inc. to do so.
+
+12. UPGRADES, UPDATES AND ENHANCEMENTS
+
+All upgrades, updates or enhancements of TeamSpeak software shall be
+deemed to be part of TeamSpeak software and will be subject to this
+Agreement.
+
+13. LEGENDS AND NOTICES
+
+You agree that you will not remove or alter any trademark, logo,
+copyright or other proprietary notices, legends, symbols or labels in
+TeamSpeak software or any accompanying documentation.
+
+14. TERM AND TERMINATION
+
+This Agreement is effective upon your acceptance as provided herein and
+will remain in force until terminated. Non-Profit Entities may terminate
+the licenses granted in this Agreement at any time by destroying
+TeamSpeak software and any accompanying documentation, together with any
+and all copies thereof. Commercial Entities may terminate the licenses
+granted in this Agreement at any time by contacting Triton CI &
+Associates, Inc. via e-mail at sales@tritoncia.com or via
+http://support.tritoncia.com. The licenses granted in this Agreement
+will terminate automatically if you breach any of its terms or
+conditions or any of the terms or conditions of any other agreement
+between you and TeamSpeak Systems GmbH or Triton CI & Associates, Inc.
+
+15. SOFTWARE SUGGESTIONS
+
+TeamSpeak Systems GmbH welcomes suggestions for enhancing TeamSpeak
+software and any accompanying documentation that may result in computer
+programs, reports, presentations, documents, ideas or inventions
+relating or useful to TeamSpeak Systems GmbH's business. You acknowledge
+that all title, ownership rights, and intellectual property rights
+concerning such suggestions shall become the exclusive property of
+TeamSpeak Systems GmbH and may be used for its business purposes in its
+sole discretion without any payment or accounting to you.
+
+16. MISCELLANEOUS
+
+This Agreement constitutes the entire agreement between the parties
+concerning TeamSpeak software, and is subject to change by TeamSpeak
+Systems GmbH or Triton CI & Associates, Inc. at any time. If any
+provision in this Agreement should be held illegal or unenforceable by a
+court of competent jurisdiction, such provision shall be modified to the
+extent necessary to render it enforceable without losing its intent, or
+severed from this Agreement if no such modification is possible, and
+other provisions of this Agreement shall remain in full force and
+effect. A waiver by either party of any term or condition of this
+Agreement or any breach thereof, in any one instance, shall not waive
+such term or condition or any subsequent breach thereof.
+
+17. DISCLAIMER OF WARRANTY
+
+TEAMSPEAK SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTY OF
+ANY KIND, EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, THE
+WARRANTIES THAT IT IS FREE OF DEFECTS, VIRUS FREE, ABLE TO OPERATE ON AN
+UNINTERRUPTED BASIS, MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR
+NON-INFRINGING. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL
+PART OF THIS LICENSE AND AGREEMENT. NO USE OF TEAMSPEAK SOFTWARE IS
+AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER.
+
+18. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL
+TEAMSPEAK SYSTEMS GMBH NOR TRITON CI & ASSOCIATES, INC. BE LIABLE FOR
+ANY INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT
+OF THE USE OF OR INABILITY TO USE TEAMSPEAK SOFTWARE, INCLUDING, WITHOUT
+LIMITATION, DAMAGES FOR LOST PROFITS, LOSS OF GOODWILL, WORK STOPPAGE,
+COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES
+OR LOSSES, EVEN IF ADVISED OF THE POSSIBILITY THEREOF, AND REGARDLESS OF
+THE LEGAL OR EQUITABLE THEORY (CONTRACT, TORT OR OTHERWISE) UPON WHICH
+THE CLAIM IS BASED. IN ANY CASE, TEAMSPEAK SYSTEMS' OR TRITON CI &
+ASSOCIATES, INC.'S COLLECTIVE LIABILITY UNDER ANY PROVISION OF THIS
+LICENSE SHALL NOT EXCEED IN THE AGGREGATE THE SUM OF THE FEES (IF ANY)
+YOU PAID FOR THIS LICENSE.

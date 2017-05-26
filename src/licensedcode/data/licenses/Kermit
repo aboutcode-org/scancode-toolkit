@@ -1,0 +1,106 @@
+THE C-KERMIT 7.0 AND 8.0 LICENSE
+
+  Last update: Thu Feb  8 17:41:07 2002
+
+This is the new C-Kermit 7.0 and 8.0 license.  The intention is to allow
+C-Kermit to be distributed with "free" operating systems such as GNU/Linux,
+FreeBSD, NetBSD, OpenBSD, The Hurd, etc, even when the distributions
+themselves (such as Red Hat or Caldera) might be sold and/or might include
+applications that are not free, and yet still require a license to include
+C-Kermit in or with "non-free" products such as commercial OS's, commercial
+software packages, embedded systems, and hardware (other than general-purpose
+computers preloaded with "free" operating systems), since these licenses
+furnish a large portion of the Kermit Project's funding.
+
+There have been some questions about the provision in Clause (A) that:
+
+                                                                  The
+    C-Kermit source code may not be changed without the consent of the
+    Kermit Project, which will not be unreasonably withheld (this is
+    simply a matter of keeping a consistent and supportable code base).
+
+The intention of this clause is primarily to make sure that anybody who
+makes modifications sends them back to us, since we are the ones have to
+support C-Kermit, and so we can carry them through to future releases (so
+you don't have to make the same changes again and again).
+
+Secondarily it is to protect Columbia University in the unlikely event of
+modifications made with deliberate intent to offend or cause damage.
+
+Any redistributor of C-Kermit under Clause (A) below should rest assured
+there is no intention of preventing them from constructing a distribution in
+the appropriate format (RPM or whatever) for their product or from issuing
+any patches required for their products; we simply want to be informed so we
+can maintain a consistent code base and a solid, supportable software
+package.  We are happy to work with any redistributor an any issues that
+concern them.  If you have questions, send them to kermit@columbia.edu.
+
+Note: All changes to this file since 1 January 2000 (the C-Kermit 7.0
+release date) are above; the license itself has not changed, except to
+update the most recent copyright date.
+
+(Begin)
+
+Copyright (C) 1985, 2002,
+  The Trustees of Columbia University in the City of New York.
+  All rights reserved.
+
+PERMISSIONS:
+
+The C-Kermit software may be obtained directly from the Kermit Project at
+Columbia University (or from any source explicitly licensed by the Kermit
+Project or implicitly licensed by Clause (A) below) by any individual for
+his or her OWN USE, and by any company or other organization for its own
+INTERNAL DISTRIBUTION and use, including installation on servers that are
+accessed by customers or clients, WITHOUT EXPLICIT LICENSE.
+
+Conditions for REDISTRIBUTION are as follows:
+
+(A) The C-Kermit software, in source and/or binary form, may be
+    included WITHOUT EXPLICIT LICENSE in distributions of OPERATING
+    SYSTEMS that have OSI (Open Source Initiative, www.opensource.org)
+    approved licenses, even if non-Open-Source applications (but not
+    operating systems) are included in the same distribution.  Such
+    distributions include, but are not limited to, CD-ROM, FTP site,
+    Web site, or preinstalled software on a new GENERAL-PURPOSE
+    computer, as long as the primary character of the distribution is
+    an Open Source operating system with accompanying utilities.  The
+    C-Kermit source code may not be changed without the consent of the
+    Kermit Project, which will not be unreasonably withheld (this is
+    simply a matter of keeping a consistent and supportable code base).
+
+(B) Inclusion of C-Kermit software in whole or in part, in any form, in
+    or with any product not covered by Clause (A), or its distribution
+    by any commercial enterprise to its actual or potential customers
+    or clients except as in Clause (A), requires a license from the
+    Kermit Project, Columbia University; contact kermit@columbia.edu.
+
+The name of Columbia University may not be used to endorse or promote
+products derived from or including the C-Kermit software without specific
+prior written permission.
+
+DISCLAIMER:
+
+  THIS SOFTWARE IS PROVIDED AS IS, WITHOUT REPRESENTATION FROM THE
+  TRUSTEES OF COLUMBIA UNIVERSITY IN THE CITY OF NEW YORK AS TO ITS
+  FITNESS FOR ANY PURPOSE, AND WITHOUT WARRANTY BY THE TRUSTEES OF
+  COLUMBIA UNIVERSITY IN THE CITY OF NEW YORK OF ANY KIND, EITHER
+  EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  THE TRUSTEES OF COLUMBIA UNIVERSITY IN THE CITY OF NEW YORK SHALL NOT
+  BE LIABLE FOR ANY DAMAGES, INCLUDING SPECIAL, INDIRECT, INCIDENTAL,
+  OR CONSEQUENTIAL DAMAGES, WITH RESPECT TO ANY CLAIM ARISING OUT OF OR
+  IN CONNECTION WITH THE USE OF THE SOFTWARE, EVEN IF IT HAS BEEN OR IS
+  HEREAFTER ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  YOU SHALL
+  INDEMNIFY AND HOLD HARMLESS THE TRUSTEES OF COLUMBIA UNIVERSITY IN
+  THE CITY OF NEW YORK, ITS EMPLOYEES AND AGENTS FROM AND AGAINST ANY
+  AND ALL CLAIMS, DEMANDS, LOSS, DAMAGE OR EXPENSE (INCLUDING
+  ATTORNEYS' FEES) ARISING OUT OF YOUR USE OF THIS SOFTWARE.
+
+The above copyright notice, permissions notice, and disclaimer may not be
+removed, altered, or obscured and shall be included in all copies of the
+C-Kermit software.  The Trustees of Columbia University in the City of
+New York reserve the right to revoke this permission if any of the terms
+of use set forth above are breached.
+
+(End)

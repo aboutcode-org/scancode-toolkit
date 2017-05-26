@@ -1,0 +1,56 @@
+This translation is informal, and *not* officially approved by The Maintainer
+as valid.  To be completely sure of what is permitted, refer to the original
+Japanese license file in /usr/share/doc/cmigemo-${PV}/LICENSE_j.txt.
+
+TERMS AND CONDITIONS OF USE
+  The meanings of each term are defined as following.
+      This Software     : C/Migemo (including binary files and source code,
+                                    excluding data of dictionaries)
+      Illegal Actions   : Actions which are different from descriptions in
+                          document or which are not in document
+      The Maintainer    : An individual who posses This Software
+                              (The Creator, The Copyright Holder)
+                          (At the time when these conditions are created:
+                              MURAOKA Taro <koron@tka.att.ne.jp>)
+      End User          : An individual who uses or used This Software
+      Third Parties     : Other individuals who do not correspond to neither
+                          The Maintainer nor End User
+                          (Especially including creators and copyright holders
+                           of data of dictionaries)
+
+  The use of This Software is permitted to only those who accept the following
+  conditions.  If End User does not agree to them, he must stop using This
+  Software and must delete related files from his storage media.
+
+  (Conditions concerning to The Maintainer)
+  The Maintainer has the right to change these conditions.
+
+  The Maintainer has the following rights concerning to This Software.
+            - The right to modify this software
+            - The right to distribute This Software
+            - The right to permit use of This Software
+            - The right to transfer some or all of the above rights
+
+  The Maintainer has the obligation to correct Illegal Actions of This
+  Software.
+
+  The Maintainer is immuned from the loss which End Users had or the damage
+  which End Users suffered.
+
+  (Conditions according to End Users)
+  End Users have the following obligations when using This Software.
+            - The obligation to pay charge according to the regulations laid 
+              down separately.
+            - The obligation to protect the rights of The Maintainer
+            - The obligation to protect the rights of Third Parties
+
+  End Users have the right to use This Software for any purpose as long as
+  there is no contradiction to other conditions.
+
+  (Condition according to royalty)
+  The charge for using This Software is laid down as following:
+            - zero Yen
+
+  (End Of Conditions)
+  If End User does not agree to the above conditions, he must stop using This
+  Software.

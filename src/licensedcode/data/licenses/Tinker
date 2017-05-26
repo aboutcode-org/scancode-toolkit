@@ -1,0 +1,38 @@
+TINKER – Software Tools for Molecular Design
+ 
+Version 4.2   June 2004
+Copyright © 1990-2004   Jay William Ponder
+ 
+TINKER is a modular program package for molecular mechanics-based potential 
+energy calculations, geometry optimization, molecular dynamics simulation, 
+distance geometry and structural analysis.
+ 
+Selected References for the TINKER Package:
+ 
+P. Ren and J. W. Ponder, J. Phys. Chem. B, 107, 5933-5947 (2003)
+P. Ren and J. W. Ponder, J. Comput. Chem., 23, 1497-1506 (2002)
+R. V. Pappu, R. K. Hart and J. W. Ponder, J. Phys. Chem. B, 102, 9725-9742 
+(1998)
+M. E. Hodsdon, J. W. Ponder and D. P. Cistola, J. Mol. Biol., 264, 585-602 
+(1996)
+C. E. Kundrot, J. W. Ponder and F. M. Richards, J. Comput. Chem., 12, 402-409 
+(1991)
+J. W. Ponder and F. M. Richards, J. Comput. Chem., 8, 1016-1024 (1987)
+ 
+Conditions for Use of the TINKER Package:
+ 
+The TINKER software is registered under U.S. Copyright Law. The source code was 
+developed by the author and is distributed solely through the Department of 
+Biochemistry and Molecular Biophysics at Washington University. Its use is 
+subject to the following conditions:
+ 
+(1)    Use of this software is restricted to the individual, laboratory or 
+organization to which it is supplied. The package and portions thereof may not 
+be sold nor may copies be distributed to third parties without the express 
+permission of the author and Washington University.
+(2)    This software package is provided on an "as is" basis. The author in no 
+way warrants either this software or results it may produce.
+(3)    The author is under no obligation to provide any services by way of 
+maintenance, updates or corrections for this software.
+(4)    Reports or publications resulting from use of this software package must 
+contain an acknowledgment in the form commonly used in academic research.

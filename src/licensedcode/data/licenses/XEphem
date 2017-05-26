@@ -1,0 +1,33 @@
+XEphem Version 3.7.5
+Copyright (c) 1190-2011 by Elwood Charles Downey
+
+Permission to build and run XEphem from this source code is granted only for
+personal use or for bona fide educational situations or research funded by
+public funds. Permission is expressly prohibited in commercial or military
+situations without prior agreement.
+
+XEphem source code may not be used, in whole or in part, to build other
+computer programs under any circumstances without prior agreement.
+
+Redistribution rights: You may redistribute XEphem source code only in its
+entirety and without modification. You may redistribute binaries only if they
+were built from the original source code, or from source code with very minor
+changes made for the purpose of porting and not for the purposes of changing
+functionality.
+
+XEphem output products may be used without restriction as long as they are
+accompanied by the following reference:
+
+    "Created by XEphem, for more information go to http://www.xephem.com"
+
+Furthermore:
+
+	THE AUTHOR DISCLAIMS ALL  WARRANTIES  WITH  REGARD  TO  THIS
+	SOFTWARE,  INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABIL-
+	ITY AND FITNESS.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+	ANY  SPECIAL,  INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAM-
+	AGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+	WHETHER  IN  AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TOR-
+	TIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH  THE  USE
+	OR PERFORMANCE OF THIS SOFTWARE.
+

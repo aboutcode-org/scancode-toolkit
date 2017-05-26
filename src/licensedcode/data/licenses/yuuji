@@ -1,0 +1,28 @@
+;;; (c) 1993-2005 by HIROSE Yuuji
+
+;;;	  This program is distributed as a free  software. The author is
+;;;	not responsible  for  any  possible   defects   caused  by  this
+;;;	software.
+;;;
+;;;	  Comments and bug reports  are  welcome.   Don't  hesitated  to
+;;;	report.  My possible e-mail address is following.
+;;;
+;;;							yuuji@gentei.org
+
+The author has clarified his definition of free software by providing this
+explanation:
+
+;;  * Can I incorporate this program into Debian package?
+;;
+;;	Yes.
+;;	This  "Yes"  is  NOT  a  special answer  only  for  Debian.
+;;	My  recognition  on  `free  software'  is  not  the  permanently
+;;	constant  notion.  Therefore  I won't  define the  fixed license
+;;	sentences at any moment of my life.  All I can say now is I hope
+;;	the free  software be; freely  usable, freely (re-)distributable
+;;	without  any charge  for  itself, freely  modifiable unless  the
+;;	original  author(=me)'s copyrights  are infringed  or neglected,
+;;	absolutely not responsible to  any result from itself.  If there
+;;	is A  license clauses which  implies these points above  in some
+;;	era, this  software can  be classified into  the group  that the
+;;	clauses want to assume as `free'.

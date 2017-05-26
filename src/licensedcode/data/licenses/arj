@@ -1,0 +1,17 @@
+Copyright (c) 1991-2000 by ARJ Software, Inc.  All rights reserved.
+
+   This code may be freely used in programs that are NOT ARJ archivers
+   (both compress and extract ARJ archives).
+
+   If you wish to distribute a modified version of this program, you
+   MUST indicate that it is a modified version both in the program and
+   source code.
+
+   We are holding the copyright on the source code, so please do not
+   delete our name from the program files or from the documentation.
+
+   We wish to give credit to Haruhiko Okumura for providing the
+   basic ideas for ARJ and UNARJ in his program AR.  Please note
+   that UNARJ is significantly different from AR from an archive
+   structural point of view.
+

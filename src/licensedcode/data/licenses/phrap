@@ -1,0 +1,210 @@
+ACADEMIC USER AGREEMENT
+
+Please read the entire agreement, fill in the information in the
+indicated positions (such as "NAME:"), and return the entire document
+to the indicated people.  Please send the document as the message--not
+as an attachment.
+
+Phrap:  A program for assembling DNA sequence data.
+
+Swat:  A program for searching one or more DNA or protein query sequences
+against a sequence database, using (an efficient implementation of) the
+Smith-Waterman-Gotoh algorithm.
+
+Cross_Match:  A general-purpose utility based on Swat for comparing any
+two sets of (long or short) DNA sequences.
+
+Phred:  A program that reads DNA sequencer trace data, calls bases,
+assigns quality values to the bases, and writes the base calls and quality
+values to output files.
+
+Consed:  A program for viewing and editing Phrap assemblies.
+
+To receive any of these programs you will need to agree to the following
+conditions. They should be taken seriously!
+
+1) You agree to read the documentation.  We welcome feedback on any
+inaccuracies.
+
+2) You agree to report any bugs to us.  (To fix bugs, we will need
+from you a dataset and a procedure that reproduces the problem; but do
+not send datasets without first emailing us to describe the nature of
+the bug.)
+
+3) You agree not to make the programs (including source code,
+executables, or any part thereof, in modified or unmodified form)
+available to anyone outside your group, and not to put them where they
+may be accessible to outside individuals without your direct knowledge
+(e.g. on a computer to which people outside your group have login
+privileges).  The documentation however may be freely distributed.
+Refer any requests for the programs to the authors.  If you are
+operating a computer facility which provides access to several
+independent investigators, you agree to set the permissions on the
+executables and source code to allow execute but not read access, so
+that the programs may not be copied. Investigators who want copies of
+the software for their own use must return a separate copy of this
+agreement.
+
+4) You agree not to use the programs for any commercial purpose,
+including but not limited to commercially restricted sequencing
+(defined as sequencing for which a company retains patenting or
+licensing rights regarding the sequence, or the right to restrict or
+delay dissemination of the sequence; with the sole exception that
+sequencing is not considered to be commercially restricted if it is
+federally funded and the investigators adopt the data release policies
+endorsed at the Wellcome Trust-sponsored Bermuda meeting,
+i.e. immediate release of data as it is generated).
+ [If you wish to obtain the software for commercially restricted
+sequencing or any other commercial purposes, you will need to execute
+a separate licensing agreement with the University of Washington and
+pay a fee. In that case please contact:
+
+Lisa Heinz
+University of Washington TechTransfer, Digital Ventures
+Box 354990
+4311-11th Avenue NE, Suite 500
+Seattle, WA  98105-4608
+
+http://depts.washington.edu/techtran
+
+206-616-3451  FAX: 206-616-3322
+swxfr@u.washington.edu
+
+Do not contact her if the academic license applies.]
+
+5) You acknowledge that the software is experimental in nature and is
+supplied "AS IS", without obligation by the authors or the University
+of Washington to provide accompanying services or support.  The entire
+risk as to the quality and performance of the Software is with you.
+UW AND THE AUTHORS EXPRESSLY DISCLAIM ANY AND ALL WARRANTIES
+REGARDING THE SOFTWARE, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES PERTAINING TO MERCHANTABILITY OR FITNESS FOR A
+PARTICULAR PURPOSE.
+
+6) All members of your group with access to the software agree to the
+same conditions.
+
+
+
+Having read the above, if you are still interested in obtaining the
+programs, please return a copy of this entire message (which MUST be
+included so that it is clear what you are agreeing to) by email
+together with the following information:
+
+NAME: Your name in first name/last name order.
+
+NAME:  
+
+
+Example:
+NAME: John Dracula
+(Please do not use all capitals such as John DRACULA)
+
+ACKNOWLEDGEMENT: An acknowledgement that you and the members of your
+group agree to these conditions.
+
+ACKNOWLEDGEMENT:
+
+Example:
+ACKNOWLEDGEMENT: I agree to the license.
+
+PROGRAMS: Which programs you want (phrap,cross_match, and swat are
+distributed together). You must cc the message to each appropriate
+individual (Brent Ewing, David Gordon, and/or Phil Green) at the email
+addresses below so that they will know to send you the appropriate
+program.
+
+PROGRAMS:
+
+Example:
+PROGRAMS: phred, phrap, consed
+
+INSTITUTION: Your academic or government institution (give full name,
+not abbreviation)
+
+INSTITUTION: 
+
+Example:
+INSTITUTION:  University of Lower Transylvania
+
+DEPARTMENT: Your department
+
+DEPARTMENT:
+
+Example:
+DEPARTMENT:  Department of Hematology
+
+EMAIL: Your email address for all future correspondence. Ideally this
+should be a Unix computer running a generic mail program, since
+several of the programs are sent as uuencoded files which may be
+corrupted by some mail programs.
+  If this address is not at the institution & department listed above,
+please explain the discrepancy.
+
+EMAIL: 
+
+Example:
+EMAIL: john.dracula@utrans.edu
+
+OS: (Consed requestors only) Which platform(s) you want Consed for:
+solaris 2.5.1, solaris 2.6, solaris 2.7 (solaris 7), solaris 8,
+solaris 9, digital unix 4.0 (or better), hp-ux 11.x, sgi irix 6.2,
+6.3, 6.4, or 6.5, linux (normal 32 bit) (Redhat 7.1-1 or better),
+linux (Itanium), linux (AMD64), ibm aix 5.2 (or better), macosx 10.2
+(Darwin kernel 6.0) (or better), or solaris-intel (2.8 or better).
+
+OS:
+
+Example:
+OS: hpux
+
+Note: Consed is not available for PC's running Windows, XP, NT, or
+2000.
+
+IP: (Consed requestors only) The ip address of the computer on which
+you will be running a web browser to download consed.  This does not
+have to be the same computer as the one on which you will run consed.
+Please view page
+http://bozeman.mbt.washington.edu/consed/find_ip_address.html
+which will tell you what my computer thinks is your ip address.
+
+(Even if you think you know your ip address, firewalls and proxies can
+cause your browser to transmit a different ip address, and thus my
+webserver would deny you access to consed.  So it would be a good idea
+to view the page above and send me the ip address it shows, even if
+this isn't your real ip address.)
+
+IP:
+
+Example:
+IP: 123.49.74.80
+
+
+If you want Consed/Autofinish, you must include OS and IP (above).
+Consed cannot be obtained without them.
+
+Please return this entire agreement so it is clear what you are
+agreeing to.
+
+Please send all of this, including the agreement, as part of the
+email message--not as an attachment.  
+
+Send it to each of the relevant individuals below:
+
+Contacts for obtaining the programs and for questions, bug reports,
+suggestions:
+
+      Phrap/cross_match/swat:  Phil Green, phg (at) u.washington.edu
+      Phred: Brent Ewing, bge (at) u.washington.edu
+      Consed: David Gordon, gordon (at) genome.washington.edu
+
+where the " (at) " is replaced by "@".
+
+It can take up to 2 weeks for a license application to be processed,
+so please be patient.
+
+
+
+
+
+

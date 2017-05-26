@@ -1,0 +1,332 @@
+JAVA DISTRIBUTION LICENSE (VER. 1.0)
+Java 3D
+
+I. LICENSE GRANTS, TERMS AND RESTRICTIONS
+
+1.0 General License Terms. This Java Distribution License ("JDL") is
+between Sun Microsystems, Inc. ("Sun") and You where "You" means the
+individual or legal entity exercising rights under this
+JDL. "Technology" means the following as provided under this JDL: (i)
+the source code and binary code from the Reference Implementation
+("RI") of the Java 3DTM version 1.3 Specification (the
+"Specification") and related documentation, all as revised or upgraded
+and made available hereunder; and (ii) the associated technology
+compatibility kit ("TCK"). The TCK contains the TCK documentation,
+user's guide ("TCK User's Guide"), test tools and test suite
+associated with the Specification, as revised or upgraded by Sun. The
+TCK is provided so that You may determine if Your implementation is
+compliant with the Specification. "Modifications" means any (i) change
+or addition to or derivative of the Technology; or (ii) new source or
+object code implementing the Specification for the
+Technology. "Commercial Use" means: (i) Your use of the RI and/or
+Modifications as part of a Compatible Implementation within Your
+business or organization, but only by Your employees or agents; and/or
+(ii) any use or distribution, directly or indirectly by You of the RI
+and/or Modifications as part of a Compatible Implementation to any
+third party, alone or bundled with any other software or hardware, for
+direct or indirect commercial or strategic gain or advantage. By Your
+use or distribution of the Technology and Modifications, You agree to
+the terms of this JDL.
+
+2.0 License Grants, Restrictions and Termination.
+
+2.1 Commercial Use and Internal Deployment License Grants. Subject to
+the terms of this JDL, Sun grants to You, to the extent of Sun's
+licensable copyrights, patents and trade secrets in the RI, a limited,
+non-exclusive, non-transferable, worldwide and royalty-free license to
+modify, compile, reproduce, distribute, internally use and internally
+deploy code and related documentation from the RI and/or Modifications
+for Commercial Use, but only as part of Your own Compatible
+Implementation (as defined below), and only if You make such
+distributions as follows:
+
+(i) Source Code. You can only distribute source code for the RI and
+Modifications under all of the following conditions: (a) You make such
+distribution under the terms of this JDL; (b) without offering or
+imposing any different terms; (c) to a receipient who has accepted the
+terms of this JDL; and (d) You provide a copy of this JDL to each such
+receipient;
+
+(ii) Binary Code. You can distribute binary code for the RI and
+Modifications but only under license terms which (a) have been
+accepted by the receipient; (b) are consistent, and not conflicting,
+with the terms of the JDL; and (c) where such terms are no less
+protective of Sun than the terms of this JDL.
+
+2.2 TCK License Grant. Subject to the terms of this JDL, Sun grants to
+You, to the extent of Sun's licensable copyrights, patents and trade
+secrets in the TCK, a limited, non-exclusive, non-transferable,
+worldwide and royalty-free license to internally use the TCK for the
+sole purpose of developing and testing Your Compatible Implementations
+(as defined below).
+
+2.2.1 TCK Master Support Agreement. If you desire support for the TCK,
+You may execute a separate TCK master support with Sun as described on
+the Technology Site or on such other URL as Sun may designate from
+time to time.
+
+2.2.2 TCK Use Terms. Your TCK license grant hereunder is expressly
+conditioned upon your continued adherance to the following
+restrictions:
+
+(i) You may not sublicense or distribute the TCK to any third party
+except for any specific TCK code files identified as redistributables
+in the TCK User's Guide ("Redistributables"), but only: (a) as part of
+a TCK Adaptor accompanying a Compatible Implementation (where a "TCK
+Adaptor" means a program that effects interoperability between the TCK
+and the Compatible Implementation); and (b) pursuant to a license
+agreement that protects Sun's interests consistent with the terms of
+the JDL;
+
+(ii) You may not create derivative works of the TCK nor of any of its
+components except for the Redistributables in a TCK Adaptor;
+
+(iii) You may not disassemble or decompile binary portions of the
+TCK's test suites or test tools or otherwise attempt to derive the
+source code from such binary portions;
+
+(iv) You may not develop other test suites intended to validate
+compatibility with the Specification to which the TCK licensed
+hereunder corresponds;
+
+(v) You may not use the TCK to test a third party's product;
+
+(vi) You may not make Commercial Use of code which implements any
+portion of the Specification unless such code is included in a
+Compatible Implementation;
+
+(vii) You may disclose Test Reports (where "Test Reports" means those
+reports generated by the TCK which identify only configuration
+information and the status of individual or aggregate test executions)
+for an implementation which You are attempting to certified in
+accordance with the terms of this JDL for the sole purpose of making
+Your implementation a Compatible Implementation, but you may not make
+any claims of comparative compatibility nor disclose any other TCK
+testing information to any party. For example, You cannot claim that
+Your implementation is "nearly compatible" or "98% compatible." When
+You share Test Reports in any public forum, including mailing lists,
+marketing material or press releases, and Your implementation is not a
+Compatible Implementation, You must state that Your implementation is
+"not compatible;" and
+
+(viii) You will protect the TCK as confidential information of Sun
+and, except as expressly authorized herein, You may not disclose the
+TCK to any third party. This obligation of confidentiality with
+respect to the TCK will survive any termination or expiration of this
+JDL.
+
+2.3 Term and Termination. This JDL shall have an initial term of two
+(2) years after your acceptance of this JDL and shall thereafter
+automatically renew for additional one year terms unless either party
+provides notice to the other party sixty (60) days prior to an
+anniversary date. The license grants of this JDL, are expressly
+conditioned upon Your not acting outside their scope, and Your
+continued compliance with the material provisions of this JDL. All
+license grants under this JDL will automatically and immediately be
+revoked without notice if You fail to so comply. Upon termination or
+expiration of this JDL, You must discontinue all use and distribution
+of the Technology and any Compatible Implementation licensed under
+this JDL. All sublicenses You have properly granted hereunder shall
+survive termination or expiration of Your rights under the
+JDL. Provisions which should, by their nature, remain in effect after
+termination or expiration shall survive, including, without
+limitation, the provisions of Article II (General Terms) and the TCK
+confidentiality obligations under this JDL.
+
+2.4 General License Restrictions. Some portions of the Technology are
+provided with notices and/or open source or other licenses from other
+parties which govern the use of those portions. Your use or
+distribution of encryption technology contained within the Technlogy
+is subject to all applicable governmental regulations of the United
+States of America and the country where the Technology is
+deployed. You agree to comply with the U.S. export controls and trade
+laws of other countries that apply to the Technology and Compatible
+Implementations. You acknowledge that the Technology is not designed,
+licensed or intended for use in the design, construction, operation or
+maintenance of any nuclear facility. Other than the rights granted
+herein, Sun retains all rights, title, and interest in the Technlogy.
+
+3.0 Compatibility and Use of the TCK.
+
+3.1 Compatible Implementation TCK Requirements. Your use of the RI
+and/or Modifications as part of an implementation of the Specification
+is a "Compatible Implementation" if the implementation meets the
+following requirements:
+
+3.1.1 A Compatible Implementation must comply with the full
+Specification, including all its required interfaces and
+functionality;
+
+3.1.2 A Compatible Implementation must either: (i) pass the most
+current compatibility requirements (as defined by the TCK User's
+Guide) which were made available by Sun one hundred twenty (120) days
+before first commercial shipment ("FCS") of each version of the
+Compatible Implementation (eg. if Your FCS was December 31, 2003, You
+must have passed the most current version of the TCK as of September
+2, 2003); or (ii) at Your option, pass all the compatibility
+requirements of a newer version of the TCK and its associated TCK
+User's Guide;
+
+3.1.3 A Compatible Implementation may not modify the functional
+behavior of the "Java Classes" which means the specific class
+libraries associated with the Technology; and
+
+3.1.4 A Compatible Implementation may not modify, subset, superset or
+otherwise extend the Licensor Name Space, nor include any public or
+protected packages, classes, Java interfaces, fields or methods within
+the Licensor Name Space other than those required and/or authorized by
+the Specification. "Licensor Name Space" means the public class or
+interface declarations whose names begin with "java", "javax",
+"com.sun" or their equivalents in any subsequent naming convention
+adopted by Sun through the Java Community Process, or any recognized
+successors or replacements thereof.
+
+3.2 Self-Certification for Compatibility. You shall self-certify that
+Your Compatible Implementation passes the applicable TCK as set forth
+above, if and when Your Compatible Implementation in fact does so,
+provided that:
+
+3.2.1 If Sun policy also requires verification of compatibility for
+Your Compatible Implementation then You shall, prior to the FCS of the
+Compatible Implementation, submit verification of compatibility to Sun
+or to an independent test facility designated by Sun. If such
+verification is by an independent test facility, then the reasonable
+costs of such activity (including any applicable fees) shall be at
+Your expense. Sun may publish or otherwise disclose Your test results.
+
+3.2.2 Upon thirty (30) days written notice by Sun, and no more than
+two (2) times per calendar year, You shall permit Sun or its
+authorized representative to inspect and test any Compatible
+Implementation which has been self-certified per this subsection 3.2
+to ensure that such Compatible Implementation meets the compatibility
+and other requirements for a Compatible Implementation as set forth
+herein. The reasonable costs of such inspection shall be at Sun's
+expense; provided, however, that You shall reimburse Sun for such
+costs if the inspection reveals that the Compatible Implementation
+does not meet such requirements and these deficiencies are not cured
+within thirty (30) days.
+
+4.0 Fees and Royalties. There are no fees or royalites associated with
+the license grants for the Technology licensed under this JDL.
+
+II. GENERAL TERMS
+
+5.0 No Warranty. THE TECHNOLOGY AND/OR MODIFICATIONS ARE PROVIDED "AS
+IS", WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS, IMPLIED OR
+STATUTORY INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE
+TECHNOLOGY AND/OR MODIFICATIONS ARE FREE OF DEFECTS, MERCHANTABLE, FIT
+FOR A PARTICULAR PURPOSE, OR NON-INFRINGING OF THIRD PARTY RIGHTS. YOU
+AGREE THAT YOU BEAR THE ENTIRE RISK IN CONNECTION WITH YOUR USE AND
+DISTRIBUTION OF ANY AND ALL TECHNOLOGY AND/OR MODIFICATIONS ARE UNDER
+THIS JDL. SOME JURISDICTIONS DO NOT PERMIT THE EXCLUSION OF IMPLIED
+WARRANTIES SO THE ABOVE EXCLUSIONS MAY NOT APPLY TO YOU
+
+6.0 Infringement Claims. Sun may terminate this JDL, in Sun's sole
+discretion, upon any action initiated by You alleging that the use or
+distribution of the Technology and/or Modifications by Sun, or any
+other licensee of the Technology and/or Modifications, infringes a
+patent owned or controlled by You. In addition, if any portion of, or
+functionality implemented by, the Technology becomes the subject of a
+claim or threatened claim of infringement ("Affected Materials"), Sun
+may, at its sole option, (i) attempt to procure the rights necessary
+for You to continue using the Affected Materials, (ii) modify the
+Affected Materials so that they are no longer infringing, or (iii)
+immediately suspend Your rights to use and distribute the Affected
+Materials under this JDL by posting of notice of suspension on the
+Technology Site, and refund toYou the amount, if any, having then
+actually been paid by You to Sun under this JDL, on a straight line,
+five year basis .
+
+7.0 Limitation of Liability. Sun will be not be liable for any claims
+relating to, or arising out of, this JDL, whether in tort, contract or
+otherwise, in an amount in excess of any annual license fees You paid
+to Sun for the Technology. IN NO EVENT WILL SUN BE LIABLE FOR ANY
+INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL OR PUNITIVE DAMAGES IN
+CONNECTION WITH OR ARISING OUT OF THIS JDL (INCLUDING, WITHOUT
+LIMITATION, LOSS OF PROFITS, USE, DATA, OR ECONOMIC ADVANTAGE OF ANY
+SORT), HOWEVER IT ARISES AND UNDER ANY THEORY OF LIABILITY (including
+negligence), REGARDLESS OF WHETHER OR NOT SUN HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE. FURTHERMORE, LIABILITY UNDER THIS JDL
+SHALL BE SO LIMITED AND EXCLUDED, NOTWITHSTANDING FAILURE OF THE
+ESSENTIAL PURPOSE OF ANY REMEDY. TO THE EXTENT ANY INDIRECT, PUNITIVE,
+SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES YOU INCUR FOR ANY REASON
+WHATSOEVER CANNOT BE DISCLAIMED THEN THE ENTIRE LIABILITY OF SUN UNDER
+ANY PROVISION OF THIS JDL, AND YOUR EXCLUSIVE REMEDY FOR ANY SUCH
+DAMAGES, SHALL BE LIMITED TO THE GREATER OF THE AMOUNT ACTALLY PAID BY
+YOU FOR THE TECHNOLOGY OR FIVE HUNDRED US DOLLARS, WHICHEVER IS
+GREATER. SOME JURISDICTIONS DO NOT PERMIT THE EXCLUSION OR LIMITATION
+OF INCIDENTALS OR CONSEQUENTIAL DAMAGES SO THE ABOVE EXCLUSION AND
+LIMITATION MAY NOT APPLY TO YOU.
+
+8.0 Support. Sun does not provide any support for the Technology or
+the TCK to either You or Your customers under this JDL. Support for
+the TCK is provided under a separate TCK master support agreement. If
+You desire support for the RI, You may contact Sun. You are solely
+reponsible for providing all support to Your customers with respect to
+the Technology, TCK, Modifications and/or Compatible Implementation.
+
+9.0 Marketing and Press Announcements. Your initial press announcement
+concerning execution of this JDL must be reviewed and approved by Sun
+prior to its release. You hereby authorizes Sun to include You in a
+published list of licensees of the Technology. Sun shall also be
+authorized to use Your name in advertising, marketing collateral, and
+customer success stories prepared by or on behalf of Sun for the
+Technology subject to Your prior approval, such approval not to be
+unreasonably withheld or delayed.
+
+10.0 Notices. All notices required by this JDL must be in writing. Sun
+shall deliver notice to You via either e-mail or by physical mail
+based on the information You provided to Sun when you accepted this
+JDL. Notices by You to Sun will be effective only upon receipt by Sun
+at the following physical addresses: Sun Microsystems, Inc., 4150
+Network Circle, Santa Clara, California 95054, Attn.: Sun Software VP
+of Sales, cc: General Counsel, cc: Product Law Legal Department or to
+such different address as Sun provides on the Technology Site for such
+purpose.
+
+11.0 Proprietary Rights Notices and Branding Requirements. There are
+no specific branding requirements associated with the Technology under
+this JDL. You may not remove any copyright notices, trademark notices
+or other proprietary legends of Sun or its suppliers contained on or
+in the Technology, including any notices of licenses for open source
+components. You agree to comply with the Sun Trademark and Logo Usage
+Requirements currently located at
+http://www.sun.com/policies/trademarks. Except as provided in this
+JDL, no right, title or interest to Sun's trademarks, brands or logos
+is granted herein.
+
+12.0 U.S. Government End Users. The Technology and Modifications are a
+"commercial item," as that term is defined in 48 C.F.R. 2.101
+(Oct. 1995), consisting of "commercial computer software" and
+"commercial computer software documentation," as such terms are used
+in 48 C.F.R. 12.212 (Sept. 1995). Consistent with 48 C.F.R. 12.212 and
+48 C.F.R. 227.7202-1 through 227.7202-4 (June 1995), all
+U.S. Government End Users acquire Technology and/or Modifications with
+only those rights set forth herein. You agree to pass this notice to
+Your licensees.
+
+13.0 Miscellaneous. This JDL is governed by the laws of the United
+States and the State of California, as applied to contracts entered
+into and performed in California between California residents. The
+relationship created under this JDL is that of licensor and licensee
+and does not create any other relationship such as a partnership,
+franchise, joint venture, agency or employment relationship between
+the parties. This JDL may not be assigned or transferred by either
+party without the prior written consent of the other party, which
+consent shall not be unreasonably withheld or delayed, except that Sun
+may assign: (i) to an affiliated company, or (ii) in the event of a
+merger, acquisition or sale of all or substantially all of the assets
+of Sun. Any express waiver or failure to exercise promptly any right
+under this Agreement will not create a continuing waiver nor any
+expectation of non-enforcement. The disclaimer of warranties and
+limitations of liability constitute an essential basis of the bargain
+in this JDL. This JDL represents the complete agreement of the parties
+concerning the subject matter hereof and may not be modified or
+amended in whole or part, except by a written instrument signed by the
+parties' authorized representatives. Nothing herein shall supersede or
+modify the terms of any separate signed written license agreement You
+may have executed with Sun regarding the Technology.
+
+YOU:    By:  ___________________________________        Name:  ___________________________________
+
+        Title: __________________________________       Date: _____________________________________

@@ -1,0 +1,198 @@
+SILK PATENT LICENSE
+
+PLEASE READ THIS SKYPE SILK PATENT LICENSE AGREEMENT (THE "LICENSE
+AGREEMENT") CAREFULLY BEFORE USING OR EXPLOITING THE SKYPE SILK CODEC
+(THE "SILK CODEC"). THIS LICENSE AGREEMENT GRANTS YOU CERTAIN LIMITED
+RIGHTS UNDER SKYPE PATENTS TO USE AND EXPLOIT THE SILK CODEC. THE
+SOFTWARE CODE AND COPYRIGHTS FOR SKYPE'S SOFTWARE IMPLEMENTATION OF
+THE SILK CODEC (THE "SKYPE SILK SOFTWARE") ARE LICENSED SEPARATELY,
+AND THIS LICENSE AGREEMENT APPLIES ONLY TO SKYPE'S PATENT RIGHTS IN
+THE SILK CODEC.
+
+NO OTHER SKYPE AGREEMENT GRANTS YOU ANY RIGHT, EXPRESS OR IMPLIED,
+UNDER SKYPE PATENTS WITH RESPECT TO THE SILK CODEC. SKYPE IS WILLING
+TO GRANT YOU THE LIMITED PATENT LICENSE SET FORTH HEREIN ONLY UPON THE
+CONDITION THAT YOU EXPRESSLY ACCEPT AND COMPLY WITH THE TERMS AND
+CONDITIONS OF THIS LICENSE AGREEMENT.
+
+BY CLICKING "I AGREE" BELOW, YOU INDICATE THAT YOU UNDERSTAND THIS
+LICENSE AGREEMENT AND AGREE TO ALL OF ITS TERMS. IF YOU DO NOT ACCEPT
+AND AGREE TO ALL OF THE TERMS OF THIS LICENSE AGREEMENT, THEN SKYPE IS
+UNWILLING TO GRANT YOU ANY RIGHTS UNDER SKYPE PATENTS WITH RESPECT TO
+THE SILK CODEC AND SKYPE RESERVES THE RIGHT TO ENFORCE ITS PATENT
+RIGHTS AGAINST YOU AND ANY USE OR EXPLOITATION YOU MAY MAKE OF THE
+SILK CODEC.
+
+1. Definitions
+
+"Affiliate" means, with respect to any entity, any other entity
+directly or indirectly controlling or controlled by, or under direct
+or indirect common control with such entity.
+
+"Compare Tool" means the tool supplied with the Skype Silk Software
+for comparing the decoder output Test Vectors provided by Skype with
+the output of a decoder part of a Licensed Product to determine
+whether the Licensed Product is Fully Compatible. The output of the
+Compare Tool will be either a "pass" or "fail" based on fixed
+thresholds hardcoded into the Compare Tool.
+
+"Compatibility Test" means the test script supplied with the Skype
+Silk Software to determine whether a Licensed Product is Fully
+Compatible. At the user's request, the test script will invoke the
+decoder of the Licensed Product, input the encoder output Test
+Vectors, and compare the output from the Licensed Product with the
+decoder output Test Vectors using the Compare Tool.
+
+"Fully Compatible" means that (i) upon successfully running the
+Compatibility Test on a Licensed Product, the Compare Tool indicates
+that the Licensed Product has passed the test; and (ii) the use of
+such Licensed Product with the Skype Silk Software does not create or
+result in any errors or bugs or otherwise negatively impair or
+negatively impact the functioning or operation of the Skype Silk
+Software.
+
+"Licensed Patents" means patents, patent applications and other patent
+rights owned or controlled by Skype or its Affiliates that would be
+infringed by any unlicensed manufacture, use, sale, offer for sale or
+importation of the Silk Codec that is implemented by the Skype Silk
+Software made publicly available by Skype at
+http://developer.skype.com/silk.
+
+"Licensed Products" means products having encoder and/or decoder
+functionality based on a version of the Silk Codec released prior to
+the date set forth at the top of this License Agreement (a) the
+unlicensed manufacture, use, sale, offer for sale or importation of
+which would infringe any issued, unexpired claim or pending claim
+contained in the Licensed Patents in the country in which any such
+product is made, used, imported, offered for sale or sold and (b) that
+are Fully Compatible with the most current version of the Skype Silk
+Software made publicly available by Skype at
+http://developer.skype.com/silk at the time you entered into this
+License Agreement.
+
+"Skype" means Skype Software S.a.r.l., a Luxembourg corporation.
+
+"Test Vector" means the bit representation of a signal provided by
+Skype with the Skype Silk Software.
+
+2. License and Restrictions
+
+2.1 License Grant. Subject to your compliance with the terms and
+conditions of this License Agreement, Skype hereby grants you a
+non-exclusive, non-transferable license under the Licensed Patents to
+use, make, have made, sell, offer for sale, and import Licensed
+Products. The license rights granted under this Section 2.1 will
+remain in force and effect until the earlier of (i) termination of
+this License Agreement in accordance with its terms or (ii) expiration
+of the last to expire of the Licensed Patents.
+
+2.2 No Technology Transfer Obligation. Nothing in this License
+Agreement will be deemed to require Skype to furnish any technology,
+information, materials or services of any kind.
+
+2.3 No Other Rights. Nothing in this License Agreement will be deemed
+to confer on you, by implication, estoppel or otherwise, any license
+or other right under any patent or other intellectual property rights
+of Skype, except as expressly granted herein.
+
+3. Non-Assert
+
+3.1 You agree that you will not, and you will procure that your
+Affiliates, officers, employees and assignees will not, assert or
+otherwise claim or allege infringement of any patents or patent rights
+capable of being infringed by use, manufacture, marketing, making,
+having made, keeping, disposing of, offering to dispose of,
+distribution, sale, offering for sale or importation of (i) the Silk
+Codec or any other or modified version thereof as such or on any
+device or (ii) any combination of the Silk Codec or any other or
+modified version thereof with any hardware and/or software, against
+(a) Skype or its Affiliates, (b) any direct or indirect licensee of
+Skype or any Affiliate of Skype, or (c) distributors, customers and
+end users of any of the foregoing.
+
+3.2 You shall be released from the non-assertion obligation under
+Section 3.1 in relation to any beneficiary (but not in relation to
+other beneficiaries) of Section 3.1 that asserts any patent against
+you for your use of the Skype Silk Software.
+
+4. No Warranty
+
+4.1 Skype, its Affiliates, officers, employees and agents, make no
+representations or warranties that Licensed Patents are or will be
+held valid or enforceable, or that the manufacture, importation, use,
+offer for sale, sale or other distribution of any Licensed Products
+will not infringe upon any patent or other rights.
+
+4.2 SKYPE, ITS AFFILIATES, OFFICERS, EMPLOYEES AND AGENTS, MAKE NO
+REPRESENTATIONS, EXTEND NO WARRANTIES OF ANY KIND, EITHER EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, AND ASSUME NO
+RESPONSIBILITIES WHATEVER WITH RESPECT TO DESIGN, DEVELOPMENT,
+MANUFACTURE, USE, SALE OR OTHER DISPOSITION OF ANY LICENSED PRODUCTS.
+
+4.3 YOU ASSUME THE ENTIRE RISK AS TO PERFORMANCE OF LICENSED PRODUCTS.
+In no event shall Skype, its Affiliates, officers, employees and
+agents, be responsible or liable for any direct, indirect, special,
+incidental, or consequential damages or lost profits or other economic
+loss or damage with respect to Licensed Products or your exercise of
+any rights granted herein, regardless of legal or equitable theory.
+The above limitations on liability apply even though Skype, its
+Affiliates, officers, employees or agents may have been advised of the
+possibility of such damage.
+
+4.4 You agree not to make any statements, representations or
+warranties whatsoever to any person or entity, or accept any
+liabilities or responsibilities whatsoever from any person or entity
+that are inconsistent with any disclaimer or limitation included in
+this Section 4.
+
+5. Termination
+
+5.1 Skype may terminate this License Agreement and any rights granted
+hereunder in the event that you or any of your Affiliates (i)
+materially breaches any of the terms and conditions of this Agreement;
+or (ii) asserts any patent or patent rights against Skype, its
+Affiliates, or its or their successors or assigns.
+
+5.2 Sections 1, 3, 4, 5.2, 6, and 7 will survive any termination or
+expiration of this Agreement.
+
+6. Governing Law
+
+This License Agreement will be governed by and construed in accordance
+with the laws of the State of California and the United States of
+America, without regard to or application of conflicts of law rules or
+principles. The United Nations Convention on Contracts for the
+International Sale of Goods will not apply. Any dispute, controversy
+or claim arising out of or relating to this License Agreement shall be
+adjudicated in the state or federal courts located in Santa Clara
+County, California, and you expressly consent to the exclusive
+personal jurisdiction and venue therein. Notwithstanding the
+foregoing, Skype shall have the right to seek injunction or any other
+equitable or similar relief from any court of competent jurisdiction.
+Any monetary award shall be payable in United States dollars.
+
+7. General
+
+You may not assign, novate or transfer this License Agreement or any
+rights granted hereunder, by operation of law or otherwise, without
+Skype's prior written consent, and any attempt by you to do so,
+without such consent, will be void and of no effect. Skype may assign,
+transfer or otherwise dispose of any rights or obligations under this
+Agreement or novate this License Agreement to any third party. Except
+as expressly set forth in this License Agreement, the exercise by
+either party of any of its remedies under this License Agreement will
+be without prejudice to its other remedies under this License
+Agreement or otherwise. The failure by Skype to enforce any provision
+of this License Agreement will not constitute a waiver of future
+enforcement of that or any other provision. Any waiver, modification
+or amendment of any provision of this License Agreement will be
+effective only if in writing and signed by authorized representatives
+of both parties. If any provision of this License Agreement is held to
+be unenforceable or invalid, that provision will be enforced to the
+maximum extent possible and the other provisions will remain in full
+force and effect. This License Agreement is the complete and exclusive
+understanding and agreement between the parties regarding its subject
+matter, and supersedes all proposals, understandings or communications
+between the parties, oral or written, regarding its subject matter,
+unless you and Skype have executed a separate agreement.

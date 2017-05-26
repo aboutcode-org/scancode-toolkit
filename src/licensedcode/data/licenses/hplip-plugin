@@ -1,0 +1,24 @@
+LICENSE TERMS FOR HP Linux Imaging and Printing (HPLIP) Driver Plug-in
+
+These License Terms govern your Use of the HPLIP Driver Plug-in Software (the "Software"). USE OF THE SOFTWARE INCLUDING, WITHOUT LIMITATION, ANY DOCUMENTATION, IS SUBJECT TO THESE LICENSE TERMS AND THE APPLICABLE AS-IS WARRANTY STATEMENT.  BY DOWNLOADING AND INSTALLING THE SOFTWARE, YOU ARE AGREEING TO BE BOUND BY THESE TERMS. IF YOU DO NOT AGREE TO ALL OF THESE TERMS, DO NOT DOWNLOAD AND INSTALL THE SOFTWARE ON YOUR SYSTEM.
+
+1. License Grant.   HP grants you a license to Use one copy of the Software with HP printing products only.  "Use" includes using, storing, loading, installing, executing, and displaying the Software.  You may not modify the Software or disable any licensing or control features of the Software.
+
+2. Ownership.   The Software is owned and copyrighted by HP or its third party suppliers.  Your license confers no title to, or ownership in, the Software and is not a sale of any rights in the Software.  HP's third party suppliers may protect their rights in the Software in the event of any violation of these license terms.
+
+3. Copies and Adaptations.   You may only make copies or adaptations of the Software for archival purposes or when copying or adaptation is an essential step in the authorized Use of the Software. You must reproduce all copyright notices in the original Software on all copies or adaptations. You may not copy the Software onto any public network.
+
+4. No Disassembly.   You may not Disassemble the Software unless HP's prior written consent is obtained.  "Disassemble" includes disassembling, decompiling, decrypting, and reverse engineering.  In some jurisdictions, HP's consent may not be required for limited Disassembly.  Upon request, you will provide HP with reasonably detailed information regarding any Disassembly. 
+
+5. No Transfer.   You may not assign, sublicense or otherwise transfer all or any part of these License Terms or the Software.
+
+6. Termination.   HP may terminate your license, upon notice, for failure to comply with any of these License Terms.  Upon termination, you must immediately destroy the Software, together with all copies, adaptations and merged portions in any form.
+
+7. Export Requirements.   You may not export or re-export the Software or any copy or adaptation in violation of any applicable laws or regulations.
+
+8. U.S. Government Restricted Rights.  The Software has been developed entirely at private expense.  It is delivered and licensed, as defined in any applicable DFARS, FARS, or other equivalent federal agency regulation or contract clause, as either "commercial computer software" or "restricted computer software", whichever is applicable.  You have only those rights provided for such Software by the applicable clause or regulation or by these License Terms. 
+
+9. DISCLAIMER OF WARRANTIES.  TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, HP AND ITS SUPPLIERS PROVIDE THE SOFTWARE "AS IS" AND WITH ALL FAULTS, AND HEREBY DISCLAIM ALL OTHER WARRANTIES AND CONDITIONS, EITHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF TITLE AND NON-INFRINGEMENT, ANY IMPLIED WARRANTIES, DUTIES OR CONDITIONS OF MERCHANTABILITY, OF FITNESS FOR A PARTICULAR PURPOSE, AND OF LACK OF VIRUSES ALL WITH REGARD TO THE SOFTWARE.  Some states/jurisdictions do not allow exclusion of implied warranties or limitations on the duration of implied warranties, so the above disclaimer may not apply to you in its entirety.
+
+10. LIMITATION OF LIABILITY.  Notwithstanding any damages that you might incur, the entire liability of HP and any of its suppliers under any provision of this agreement and your exclusive remedy for all of the foregoing shall be limited to the greater of the amount actually paid by you separately for the Software or U.S. $5.00.  TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL HP OR ITS SUPPLIERS BE LIABLE FOR ANY SPECIAL, INCIDENTAL,
+INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS OR CONFIDENTIAL OR OTHER INFORMATION, FOR BUSINESS INTERRUPTION, FOR PERSONAL INJURY, FOR LOSS OF PRIVACY ARISING OUT OF OR IN ANY WAY RELATED TO THE USE OF OR INABILITY TO USE THE SOFTWARE, OR OTHERWISE IN CONNECTION WITH ANY PROVISION OF THIS AGREEMENT, EVEN IF HP OR ANY SUPPLIER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND EVEN IF THE REMEDY FAILS OF ITS ESSENTIAL PURPOSE.  Some states/jurisdictions do not allow the exclusion or limitation of incidental or consequential damages, so the above limitation or exclusion may not apply to you.

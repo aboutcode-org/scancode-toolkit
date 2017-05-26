@@ -1,0 +1,8 @@
+Special permission is hereby granted to the Gentoo project to provide an
+automated installer package which downloads and installs the Folding@home client
+software. Permission is also granted for future Gentoo installer packages on the
+condition that they continue to adhere to all of the terms of the accompanying
+Folding@home license agreements and display this notice.
+-- Vijay S. Pande, Stanford University, 07 May 2013
+
+(ref: http://foldingforum.org/viewtopic.php?f=16&t=22524&p=241992#p241992 )

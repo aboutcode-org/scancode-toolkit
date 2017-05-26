@@ -1,0 +1,16 @@
+http://packages.debian.org/changelogs/pool/non-free/b/bluez-firmware/current/copyright
+
+The BlueZ project has permission from Broadcom Corporation to
+distribute this firmware, as long as the notice contained in
+broadcom/BCM-LEGAL.txt accompanies the firmware. 
+
+This arrangement was made with BlueZ author Max Krasnyansky
+<maxk@qualcomm.com>.
+
+BCM-LEGAL.txt content:
+
+BCM firmware version 2.16
+Copyright (c) 2000-2003 Broadcom Corporation
+
+Contact info:
+	bluetooth_help@broadcom.com

@@ -1,0 +1,56 @@
+ITS4 Security Scanner 
+NON-COMMERCIAL LICENSE (Version 1, Feb 17, 2000)
+
+Copyright (C) 2000, Cigital, Inc.
+All rights reserved.
+
+For commercial licensing please contact Cigital, Inc.  Cigital, Inc. has exclusive licensing rights for the technology for commercial purposes.  You can contact Cigital, Inc. at <its4@cigital.com>.
+
+This License applies to the computer program(s) known as "ITS4" The "Program", below, refers to such program, and a "work based on the Program" means either the Program or any derivative work of the Program, such as a translation or a modification.  The Program is a copyrighted work whose copyright is held by Cigital, Inc. (the "Licensor").
+
+BY USING, MODIFYING AND/OR DISTRIBUTING THE PROGRAM (OR ANY WORK BASED ON THE PROGRAM), YOU INDICATE YOUR ACCEPTANCE OF THIS LICENSE, AND ALL ITS TERMS AND CONDITIONS FOR COPYING, DISTRIBUTING OR MODIFYING THE PROGRAM OR WORKS BASED ON IT.  NOTHING OTHER THAN THIS LICENSE GRANTS YOU PERMISSION TO USE, MODIFY AND/OR DISTRIBUTE THE PROGRAM OR ITS DERIVATIVE WORKS. THESE ACTIONS ARE PROHIBITED BY LAW.  IF YOU DO NOT ACCEPT THESE TERMS AND CONDITIONS, DO NOT USE, MODIFY AND/OR DISTRIBUTE THE PROGRAM. 
+
+1. Licenses. 
+
+Licensor hereby grants you the following rights, provided that you comply with all of the restrictions set forth in this License and provided, further, that you distribute an unmodified copy of this License with the Program: 
+
+(a) You may copy and distribute literal (i.e., verbatim) copies of the Program's source code as you receive it throughout the world, in any medium. 
+
+(b) You may not use the program for commercial purposes under some circumstances.  Primarily, the program must not be sold commercially as a separate product, as part of a bigger product or project, or used in third party work-for-hire situations. Please see Section 2, Restrictions, for more details.
+
+Use by individuals and non-profit organizations is always allowed. Companies are permitted to use this program as long as it is not used for revenue-generating purposes.  It may be used to audit revenue-generating source code, provided the audit is performed solely by the company that owns the source code.
+
+(c) You may build derived versions of this software under the restrictions stated in Section 2, Restrictions, of this license. The derived versions must be clearly marked as such and must be called by a name other than ITS4. ITS4 is a  trademark of Cigital, Inc.
+
+All derived versions of the Program must be made freely available under the terms of this license. Cigital, Inc. must be given the right to use the modified source code in their products without any compensation and without being required to separately name the parties whose modifications are being used.
+
+2. Restrictions. 
+
+(a) Distribution of the Program or any work based on the Program by a commercial organization to any third party is prohibited if any payment is made in connection with such distribution, whether directly (as in payment for a copy of the Program) or indirectly (as in payment for some service related to the Program, or payment for some product or service that includes a copy of the Program "without charge", or payment for some product or service the delivery of which requires for the recipient to retrieve/download or otherwise obtain a copy of the Program; these are only examples, and not an exhaustive enumeration of prohibited activities). 
+
+As an exception to the above rule, putting this program on CD-ROMs containing other free software is explicitly permitted even when a modest distribution fee is charged for the CD, as long as this software is not a primary selling argument for the CD. 
+
+(b) You must meet all of the following conditions with respect to the distribution of any work based on the Program: 
+
+(i) All modified versions of the Program, must carry prominent notice stating that the Program has been modified. The notice must indicate who made the modifications and how the Program's files were modified and the date of any change; 
+
+(ii) You must cause any work that you distribute or publish, that in whole or in part contains or is derived from the Program or any part thereof, to be licensed as a whole and at no charge to all third parties under the terms of this License; 
+
+(iii) You must cause the Program, at each time it commences operation, to print or display an announcement including an appropriate copyright notice and a notice that there is no warranty (or else, saying that you provide a warranty).  The notice must also tell the user how to view the copy of the License included with the Program, and state that users may redistribute the Program only under the terms of this License; 
+
+(iv) You must accompany any such work based on the Program with the complete corresponding machine-readable source code, delivered on a medium customarily used for software interchange. The source code for a work means the preferred form of the work for making modifications to it; 
+
+(v) If you distribute any written or printed material at all with the Program or any work based on the Program, such material must include either a written copy of this License, or a prominent written indication that the Program or the work based on the Program is covered by this License and written instructions for printing and/or displaying the copy of the License on the distribution medium; 
+
+(vi) You may not change the terms in this License or impose any further restrictions on the recipient's exercise of the rights granted herein. 
+
+3. Reservation of Rights. 
+
+No rights are granted to the Program except as expressly set forth herein. You may not copy, modify, sublicense, or distribute the Program except as expressly provided under this License.  Any attempt otherwise to copy, modify, sublicense or distribute the Program is void, and will automatically terminate your rights under this License.  However, parties who have received copies, or rights, from you under this License will not have their licenses terminated so long as such parties remain in full compliance. 
+
+4. Limitations. 
+
+BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION. 
+
+IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY USE, MODIFY AND/OR REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. 
+

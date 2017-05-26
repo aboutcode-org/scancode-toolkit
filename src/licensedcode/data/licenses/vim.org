@@ -1,0 +1,6 @@
+Gentoo license note:
+
+The exact licensing terms of this package are not known. Since it has
+been posted at vim.org, we assume in good faith that at least use and
+distribution are permitted. All copyright of this package is owned by
+its author.

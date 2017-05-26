@@ -1,0 +1,77 @@
+* Permission is hereby granted to use, copy, modify, and distribute this
+source code, or portions hereof,  with or without modifications, for any
+purpose and without fee or royalty, subject to the following
+restrictions:
+
+1. The origin of this source code or any portion of this source code must
+   be attributed to the Digital Imaging Group Inc. and the contributors of
+   the Flashpix toolkit source code -- Eastman Kodak Company.
+
+2. Altered versions must be plainly marked as such and must not be
+   misrepresented as being the original source.
+
+3. This Copyright notice may not be removed or altered from any source or
+   altered source distribution.
+
+4. All advertising materials mentioning features or use of this software
+   must display the following acknowledgement:  "This product includes
+   software developed by the contributors and Digital Imaging Group, Inc.
+   (http://www.digitalimaging.org/) for use in the Flashpix Toolkit
+    Project."
+
+5. The names "Digital Imaging Group", "DIG", and any other marks
+   identified as trademarks or service marks of DIG must not be used to
+   endorse or promote products derived from this software without prior
+   written permission. For written permission please contact
+   admin@digitalimaging.org. Certification marks owned by DIG may only be
+   used in connection with a signed certification agreement.  The term
+  "Flashpix Toolkit" may only be used to refer to the specification owned
+   by the DIG.
+
+6. AS IS - NO WARRANTY
+   The Software is provided "AS IS" and without warranty. Neither DIG
+   nor its contributors warrant that the functions contained in the
+   Software will meet your requirements or that the operation of the
+   Software will be uninterrupted or error free. Neither DIG nor its
+   contributors makes any representation or warranty as to whether the
+   Software, or the operation of the Software, infringes any patent,
+   copyright, trademark or other right of any third party. You assume
+   responsibility for operation of the Software to achieve your intended
+   results, and for the installation,use,and results obtained from the
+   Software.
+
+7. Subject to any applicable legislation which prohibits the following
+   exclusions, NEITHER DIG NOR ITS CONTRIBUTORS MAKE
+   ANY OTHER WARRANTIES OF ANY KIND, EITHER
+   EXPRESS OR IMPLIED, INCLUDING THE IMPLIED
+   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+   PARTICULAR PURPOSE OR NONINFRINGEMENT. Some
+   jurisdictions do not allow the exclusion of implied warranties, or have
+   legislation that imposes certain statutory warranties that cannot be
+   excluded, so the above exclusion may not apply to you. This warranty
+   gives you specific legal rights and you may also have other rights.
+
+8. LIMITATIONS OF REMEDIES
+   IN NO EVENT WILL DIG OR ITS CONTRIBUTORS OR
+   SUPPLIERS BE LIABLE TO YOU FOR ANY INCIDENTAL OR
+   CONSEQUENTIAL DAMAGES, INCLUDING ANY LOST
+   PROFITS, LOST SAVINGS, OR OTHER DAMAGES ARISING
+   OUT OF THE USE OR INABILITY TO USE THE SOFTWARE
+   EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+   DAMAGES.
+
+9. You will be responsible for complying with all applicable laws relating
+   to your use of the software including, without limitation, export laws.
+
+This Agreement constitutes the  entire agreement between you and DIG
+with reference to this transaction. If the Software was acquired
+in the United States, this Agreement is governed by the laws of the State
+of New York. If acquired outside the United States, this
+Agreement is governed by the laws of the country in which it
+was acquired.
+
+The contributing authors and Digital Imaging Group specifically permit,
+without fee, and encourage the use of this source code as a component to
+supporting the Flashpix file format  in commercial products.  If
+you use this source code in a product, acknowledgment is not required  but
+would be appreciated.

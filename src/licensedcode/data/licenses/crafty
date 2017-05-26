@@ -1,0 +1,39 @@
+ *******************************************************************************
+ *                                                                             *
+ *  Crafty, copyright 1996-2001 by Robert M. Hyatt, Ph.D., Associate Professor *
+ *  of Computer and Information Sciences, University of Alabama at Birmingham. *
+ *                                                                             *
+ *  All rights reserved.  No part of this program may be reproduced in any     *
+ *  form or by any means, for other than your personal use, without the        *
+ *  express written permission of the author.  This program may not be used in *
+ *  whole, nor in part, to enter any computer chess competition without        *
+ *  written permission from the author.  Such permission will include the      *
+ *  requirement that the program be entered under the name "Crafty" so that    *
+ *  the program's ancestry will be known.                                      *
+ *                                                                             *
+ *  Copies of the source must contain the original copyright notice intact.    *
+ *                                                                             *
+ *  Any changes made to this software must also be made public to comply with  *
+ *  the original intent of this software distribution project.  These          *
+ *  restrictions apply whether the distribution is being done for free or as   *
+ *  part or all of a commercial product.  The author retains sole ownership    *
+ *  and copyright on this program except for 'personal use' explained below.   *
+ *                                                                             *
+ *  personal use includes any use you make of the program yourself, either by  *
+ *  playing games with it yourself, or allowing others to play it on your      *
+ *  machine,  and requires that if others use the program, it must be clearly  *
+ *  identified as "Crafty" to anyone playing it (on a chess server as one      *
+ *  example).  Personal use does not allow anyone to enter this into a chess   *
+ *  tournament where other program authors are invited to participate.  IE you *
+ *  can do your own local tournament, with Crafty + other programs, since this *
+ *  is for your personal enjoyment.  But you may not enter Crafty into an      *
+ *  event where it will be in competition with other programs/programmers      *
+ *  without permission as stated previously.                                   *
+ *                                                                             *
+ *  Crafty is the "son" (direct descendent) of Cray Blitz.  it is designed     *
+ *  totally around the bit-board data structure for reasons of speed of ex-    *
+ *  ecution, ease of adding new knowledge, and a *significantly* cleaner       *
+ *  overall design.  it is written totally in ANSI C with some few UNIX system *
+ *  calls required for I/O, etc.                                               *
+ *                                                                             *
+ *******************************************************************************

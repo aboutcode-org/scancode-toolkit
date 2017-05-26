@@ -1,0 +1,58 @@
+AICCU LICENSE
+~~~~~~~~~~~~~
+
+For the quick reader this is a slightly modified BSD license:
+ - names changed from Regents/University to SixXS.
+ - point 3 -'written', for us an email will suffice.
+ - point 4 and 5 added.
+
+Basically we thus allow anybody to use it in any way, but we would like
+to be notified when you are using it for not connecting to SixXS.
+The meaning of 'SHOULD' is described in IETF's RFC 2119 / BCP 14.
+--
+
+Copyright (C) SixXS
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. Neither the name of SixXS nor the names of its contributors
+   may be used to endorse or promote products derived from this software
+   without specific prior permission.
+4. One should not remove any reference to, or logo of, SixXS.
+5. When the software is altered to not use SixXS services, one is kindly
+   asked to notify SixXS of this by sending an email to the SixXS Staff
+   at info@sixxs.net, containing at least the following details:
+   8<--------
+   Organisation : Organisation Name
+   Email        : mailbox@example.com
+   Website      : http://www.example.com
+   is using software <Software Name> for:
+   <
+    description of:
+       the usage
+       the reason why it was modified
+   >
+   -------->8
+   Additional information details may of course be provided.
+   We request this to be able to know why people would choose not to
+   use the services provided by SixXS and the participating ISP's.
+
+THIS SOFTWARE IS PROVIDED BY SIXXS AND CONTRIBUTORS ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL SIXXS OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+

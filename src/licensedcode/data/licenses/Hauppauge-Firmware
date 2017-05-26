@@ -1,0 +1,280 @@
+END-USER FIRMWARE LICENSE AGREEMENT
+
+IMPORTANT - PLEASE READ BEFORE COPYING, INSTALLING OR USING.
+
+Do not use or load this firmware image (the "Firmware") until you have
+carefully read the following terms and conditions. By loading or using
+the Firmware, you agree to the terms of this Agreement. If you do not
+wish to so agree, do not install or use the Firmware.
+
+LICENSEES: Please note:
+
+* If you are an End-User, only the END-USER FIRMWARE LICENSE AGREEMENT
+  applies (this license).
+
+* If you are an Original Equipment Manufacturer (OEM), Independent
+  Hardware Vendor (IHV), or Independent Firmware Vendor (ISV), the
+  OEM/IHV/ISVFIRMWARE LICENSE AGREEMENT applies, as well as the
+  END-USER FIRMWARE LICENSE AGREEMENT (this license).
+
+LICENSE. You may copy and use the Firmware, subject to these conditions:
+
+1. This Firmware is licensed for use only in conjunction with
+   Hauppauge component products. Use of the Firmware in conjunction
+   with non-Hauppauge component products is not licensed hereunder.
+
+2. You may not copy, modify, rent, sell, distribute or transfer any
+   part of the Firmware except as provided in this Agreement, and you
+   agree to prevent unauthorized copying of the Firmware.
+
+3. You may not reverse engineer, decompile, or disassemble the Firmware.
+
+4. You may not sublicense the Firmware.
+
+5. The Firmware may contain the firmware or other property of third party
+   suppliers.
+
+TRADEMARKS. Except as expressly provided herein, you shall not use
+Hauppauge's name in any publications, advertisements, or other
+announcements without Hauppauge's prior written consent. You do not
+have any rights to use any Hauppauge trademarks or logos.
+
+OWNERSHIP OF FIRMWARE AND COPYRIGHTS. Title to all copies of the
+Firmware remains with Hauppauge or its suppliers. The Firmware is
+copyrighted and protected by the laws of the United States and other
+countries, and international treaty provisions. You may not remove any
+copyright notices from the Firmware. Hauppauge may make changes to the
+Firmware, or items referenced therein, at any time without notice, but
+is not obligated to support or update the Firmware. Except as
+otherwise expressly provided, Hauppauge grants no express or implied
+right under Hauppauge patents, copyrights, trademarks, or other
+intellectual property rights. You may transfer the Firmware only if a
+copy of this license accompanies the Firmware and the recipient agrees
+to be fully bound by these terms.
+
+EXCLUSION OF WARRANTIES.
+THE FIRMWARE IS PROVIDED "AS IS" AND POSSIBLY WITH FAULTS. UNLESS
+EXPRESSLY AGREED OTHERWISE, HAUPPAUGE AND ITS SUPPLIERS AND LICENSORS
+DISCLAIM ANY AND ALL WARRANTIES AND GUARANTEES, EXPRESS, IMPLIED OR
+OTHERWISE, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, NONINFRINGEMENT, OR FITNESS FOR A PARTICULAR PURPOSE.
+Hauppauge does not warrant or assume responsibility for the accuracy
+or completeness of any information, text, graphics, links or other
+items contained within the Firmware. You assume all liability,
+financial or otherwise, associated with Your use or disposition of the
+Firmware.
+
+LIMITATION OF LIABILITY. IN NO EVENT SHALL HAUPPAUGE OR ITS SUPPLIERS
+AND LICENSORS BE LIABLE FOR ANY DAMAGES WHATSOEVER FROM ANY CAUSE OF
+ACTION OF ANY KIND (INCLUDING, WITHOUT LIMITATION, LOST PROFITS,
+BUSINESS INTERRUPTION, OR LOST INFORMATION) ARISING OUT OF THE USE,
+MODIFICATION, OR INABILITY TO USE THE FIRMWARE, OR OTHERWISE, NOR FOR
+PUNITIVE, INCIDENTAL, CONSEQUENTIAL, OR SPECIAL DAMAGES OF ANY KIND,
+EVEN IF HAUPPAUGE OR ITS SUPPLIERS AND LICENSORS HAVE BEEN ADVISED OF
+THE POSSIBILITY OF SUCH DAMAGES. SOME JURISDICTIONS PROHIBIT EXCLUSION
+OR LIMITATION OF LIABILITY FOR IMPLIED WARRANTIES OR CONSEQUENTIAL OR
+INCIDENTAL DAMAGES, SO CERTAIN LIMITATIONS MAY NOT APPLY. YOU MAY ALSO
+HAVE OTHER LEGAL RIGHTS THAT VARY BETWEEN JURISDICTIONS.
+
+WAIVER AND AMENDMENT. No modification, amendment or waiver of any
+provision of this Agreement shall be effective unless in writing and
+signed by an officer of Hauppauge. No failure or delay in exercising
+any right, power, or remedy under this Agreement shall operate as a
+waiver of any such right, power or remedy. Without limiting the
+foregoing, terms and conditions on any purchase orders or similar
+materials submitted by you to Hauppauge, and any terms contained in
+Hauppauges standard acknowledgment form that are in conflict with
+these terms, shall be of no force or effect.
+
+SEVERABILITY. If any provision of this Agreement is held by a court of
+competent jurisdiction to be contrary to law, such provision shall be
+changed and interpreted so as to best accomplish the objectives of the
+original provision to the fullest extent allowed by law and the
+remaining provisions of this Agreement shall remain in full force and
+effect.
+
+EXPORT RESTRICTIONS. Each party acknowledges that the Firmware is
+subject to applicable import and export regulations of the United
+States and of the countries in which each party transacts business,
+specifically including U.S. Export Administration Act and Export
+Administration Regulations. Each party shall comply with such laws and
+regulations, as well as all other laws and regulations applicable to
+the Firmware. Without limiting the generality of the foregoing, each
+party agrees that it will not export, re-export, transfer or divert
+any of the Firmware or the direct programs thereof to any restricted
+place or party in accordance with U.S. export regulations. Note that
+Firmware containing encryption may be subject to additional
+restrictions.
+
+APPLICABLE LAWS. Claims arising under this Agreement shall be governed
+by the laws of New York, excluding its principles of conflict of laws
+and the United Nations Convention on Contracts for the Sale of
+Goods. You may not export the Firmware in violation of applicable
+export laws and regulations. Hauppauge is not obligated under any
+other agreements unless they are in writing and signed by an
+authorized representative of Hauppauge.
+
+GOVERNMENT RESTRICTED RIGHTS. The Firmware is provided with
+"RESTRICTED RIGHTS." Use, duplication, or disclosure by the Government
+is subject to restrictions as set forth in FAR52.227-14 and
+DFAR252.227-7013 et seq. or their successors. Use of the Firmware by
+the Government constitutes acknowledgment of Hauppauge's proprietary
+rights therein. Contractor or Manufacturer is Hauppauge Computer
+Works, Inc.  91 Cabot Court Hauppauge, NY 11788
+
+TERMINATION OF THIS AGREEMENT. Hauppauge may terminate this Agreement
+at any time if you violate its terms. Upon termination, you will
+immediately destroy the Firmware or return all copies of the Firmware
+to Hauppauge.
+
+
+
+OEM/IHV/ISV FIRMWARE LICENSE AGREEMENT
+
+IMPORTANT - PLEASE READ BEFORE INSTALLING OR USING THIS FIRMWARE
+
+Do not use or load this firmware image (the "Firmware") until you have
+carefully read the following terms and conditions. By loading or using
+the Firmware, you agree to the terms of this Agreement. If you do not
+wish to so agree, do not install or use the Firmware.
+
+LICENSEES: Please note:
+
+* If you are an End-User, only the END-USER FIRMWARE LICENSE AGREEMENT
+  applies.
+
+* If you are an Original Equipment Manufacturer (OEM), Independent
+  Hardware Vendor (IHV), or Independent Firmware Vendor (ISV), the
+  OEM/IHV/ISV FIRMWARE LICENSE AGREEMENT applies (this license), as
+  well as the END-USER FIRMWARE LICENSE AGREEMENT.
+
+LICENSE. This Firmware is licensed for use only in conjunction with
+Hauppauge component products. Use of the Firmware in conjunction with
+non-Hauppauge component products is not licensed hereunder. Subject to
+the terms of this Agreement, Hauppauge grants to you a nonexclusive,
+nontransferable, worldwide, fully paid-up license under Hauppauge's
+copyrights to: (i) copy the Firmware internally for your own
+development and maintenance purposes; (ii) copy and distribute the
+Firmware to your end-users, but only under a license agreement with
+terms at least as restrictive as those contained in Hauppauge's
+END-USER FIRMWARE LICENSE AGREEMENT; and (iii) modify, copy and
+distribute the end-user documentation which may accompany the
+Firmware, but only in association with the Firmware.
+
+If you are not the final manufacturer or vendor of a computer system
+or firmware program incorporating the Firmware, then you may transfer
+a copy of the Firmware, including any related documentation (modified
+or unmodified) to your recipient for use in accordance with the terms
+of this Agreement, provided such recipient agrees to be fully bound by
+the terms hereof. You shall not otherwise assign, sublicense, lease,
+or in any other way transfer or disclose Firmware to any third
+party. You may not, nor may you assist any other person or entity to
+modify, translate, convert to another programming language, decompile,
+reverse engineer, or disassemble any portion of the Firmware or
+otherwise attempt to derive source code from any object code modules
+of the Firmware or any internal data files generated by the
+Firmware. Your rights to redistribute the Firmware shall be contingent
+upon your installation of this Agreement in its entirety in the same
+directory as the Firmware.
+
+CONTRACTORS. For the purpose of this Agreement, and notwithstanding
+anything to the contrary hereunder, solely with respect to the
+requirements for compliance with the terms hereunder, any contractors
+or consultants that You use to perform the work or otherwise assist
+You in the development or products using this Firmware shall be deemed
+to be End Users and accordingly, upon receipt of the Firmware, shall
+be bound by the terms of the END-USER FIRMWARE LICENSE AGREEMENT. No
+additional agreement between You and such consultants or contractors
+is required under this Agreement to detail such compliance.
+
+TRADEMARKS. Except as expressly provided herein, you shall not use
+Hauppauge's name in any publications, advertisements, or other
+announcements without Hauppauge's prior written consent. You do not
+have any rights to use any Hauppauge trademarks or logos.
+
+OWNERSHIP OF FIRMWARE AND COPYRIGHTS. Firmware and accompanying
+materials, if any, are owned by Hauppauge or its suppliers and
+licensors and may be protected by copyright, trademark, patent and
+trade secret law and international treaties. Any rights, express or
+implied, in the intellectual property embodied in the foregoing, other
+than those specified in this Agreement, are reserved by Hauppauge and
+its suppliers and licensors or otherwise as set forth in any
+applicable open source license agreement. You will keep the Firmware
+free of liens, attachments, and other encumbrances. You agree not to
+remove any proprietary notices and/or any labels from the Firmware and
+accompanying materials without prior written approval by Hauppauge
+
+EXCLUSION OF WARRANTIES.
+THE FIRMWARE IS PROVIDED "AS IS" AND POSSIBLY WITH FAULTS. UNLESS
+EXPRESSLY AGREED OTHERWISE, HAUPPAUGE AND ITS SUPPLIERS AND LICENSORS
+DISCLAIM ANY AND ALL WARRANTIES AND GUARANTEES, EXPRESS, IMPLIED OR
+OTHERWISE, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, NONINFRINGEMENT, OR FITNESS FOR A PARTICULAR PURPOSE.
+Hauppauge does not warrant or assume responsibility for the accuracy
+or completeness of any information, text, graphics, links or other
+items contained within the Firmware. You assume all liability,
+financial or otherwise, associated with Your use or disposition of the
+Firmware.
+
+LIMITATION OF LIABILITY. IN NO EVENT SHALL HAUPPAUGE OR ITS SUPPLIERS
+AND LICENSORS BE LIABLE FOR ANY DAMAGES WHATSOEVER FROM ANY CAUSE OF
+ACTION OF ANY KIND (INCLUDING, WITHOUT LIMITATION, LOST PROFITS,
+BUSINESS INTERRUPTION, OR LOST INFORMATION) ARISING OUT OF THE USE,
+MODIFICATION, OR INABILITY TO USE THE FIRMWARE, OR OTHERWISE, NOR FOR
+PUNITIVE, INCIDENTAL, CONSEQUENTIAL, OR SPECIAL DAMAGES OF ANY KIND,
+EVEN IF HAUPPAUGE OR ITS SUPPLIERS AND LICENSORS HAVE BEEN ADVISED OF
+THE POSSIBILITY OF SUCH DAMAGES. SOME JURISDICTIONS PROHIBIT EXCLUSION
+OR LIMITATION OF LIABILITY FOR IMPLIED WARRANTIES OR CONSEQUENTIAL OR
+INCIDENTAL DAMAGES, SO CERTAIN LIMITATIONS MAY NOT APPLY. YOU MAY ALSO
+HAVE OTHER LEGAL RIGHTS THAT VARY BETWEEN JURISDICTIONS.
+
+WAIVER AND AMENDMENT. No modification, amendment or waiver of any
+provision of this Agreement shall be effective unless in writing and
+signed by an officer of Hauppauge. No failure or delay in exercising
+any right, power, or remedy under this Agreement shall operate as a
+waiver of any such right, power or remedy. Without limiting the
+foregoing, terms and conditions on any purchase orders or similar
+materials submitted by you to Hauppauge, and any terms contained in
+Hauppauges standard acknowledgment form that are in conflict with
+these terms, shall be of no force or effect.
+
+SEVERABILITY. If any provision of this Agreement is held by a court of
+competent jurisdiction to be contrary to law, such provision shall be
+changed and interpreted so as to best accomplish the objectives of the
+original provision to the fullest extent allowed by law and the
+remaining provisions of this Agreement shall remain in full force and
+effect.
+
+EXPORT RESTRICTIONS. Each party acknowledges that the Firmware is
+subject to applicable import and export regulations of the United
+States and of the countries in which each party transacts business,
+specifically including U.S. Export Administration Act and Export
+Administration Regulations. Each party shall comply with such laws and
+regulations, as well as all other laws and regulations applicable to
+the Firmware. Without limiting the generality of the foregoing, each
+party agrees that it will not export, re-export, transfer or divert
+any of the Firmware or the direct programs thereof to any restricted
+place or party in accordance with U.S. export regulations. Note that
+Firmware containing encryption may be subject to additional
+restrictions.
+
+APPLICABLE LAWS. Claims arising under this Agreement shall be governed
+by the laws of New York, excluding its principles of conflict of laws
+and the United Nations Convention on Contracts for the Sale of
+Goods. You may not export the Firmware in violation of applicable
+export laws and regulations. Hauppauge is not obligated under any
+other agreements unless they are in writing and signed by an
+authorized representative of Hauppauge.
+
+GOVERNMENT RESTRICTED RIGHTS. The Firmware is provided with
+"RESTRICTED RIGHTS." Use, duplication, or disclosure by the Government
+is subject to restrictions as set forth in FAR52.227-14 and
+DFAR252.227-7013 et seq. or their successors. Use of the Firmware by
+the Government constitutes acknowledgment of Hauppauge's proprietary
+rights therein. Contractor or Manufacturer is Hauppauge Computer
+Works, Inc.  91 Cabot Court Hauppauge, NY 11788
+
+TERMINATION OF THIS AGREEMENT. Hauppauge may terminate this Agreement
+at any time if you violate its terms. Upon termination, you will
+immediately destroy the Firmware or return all copies of the Firmware
+to Hauppauge.

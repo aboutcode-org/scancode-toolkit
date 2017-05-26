@@ -1,0 +1,177 @@
+
+  Copyright Information
+
+NetLogo 2.1.0 User Manual   
+
+Copyright 1999 by Uri Wilensky. All rights reserved.
+
+The NetLogo software, models and documentation are distributed free of
+charge for use by the public to explore and construct models. Permission
+to copy or modify the NetLogo software, models and documentation for
+educational and research purposes only and without fee is hereby
+granted, provided that this copyright notice and the original author's
+name appears on all copies and supporting documentation. For any other
+uses of this software, in original or modified form, including but not
+limited to distribution in whole or in part, specific prior permission
+must be obtained from Uri Wilensky. The software, models and
+documentation shall not be used, rewritten, or adapted as the basis of a
+commercial software or hardware product without first obtaining
+appropriate licenses from Uri Wilensky. We make no representations about
+the suitability of this software for any purpose. It is provided "as is"
+without express or implied warranty.
+
+To reference this software in academic publications, please use:
+Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/.
+Center for Connected Learning and Computer-Based Modeling, Northwestern
+University, Evanston, IL.
+
+The project gratefully acknowledges the support of the National Science
+Foundation (REPP and ROLE Programs) -- grant numbers REC #9814682 and
+REC #0126227.
+
+------------------------------------------------------------------------
+
+For random number generation, NetLogo uses the MersenneTwisterFast class
+by Sean Luke. The copyright for that code is as follows:
+
+Copyright (c) 2003 by Sean Luke.
+Portions copyright (c) 1993 by Michael Lecuyer.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in
+      the documentation and/or other materials provided with the
+      distribution.
+    * Neither the name of the copyright owners, their employers, nor the
+      names of its contributors may be used to endorse or promote
+      products derived from this software without specific prior written
+      permission. 
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+OWNERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+------------------------------------------------------------------------
+
+Parts of NetLogo (specifically, the random-gamma primitive) are based on
+code from the Colt library (http://hoschek.home.cern.ch/hoschek/colt/).
+The copyright for that code is as follows:
+
+Copyright 1999 CERN - European Organization for Nuclear Research.
+Permission to use, copy, modify, distribute and sell this software and
+its documentation for any purpose is hereby granted without fee,
+provided that the above copyright notice appear in all copies and that
+both that copyright notice and this permission notice appear in
+supporting documentation. CERN makes no representations about the
+suitability of this software for any purpose. It is provided "as is"
+without expressed or implied warranty.
+
+------------------------------------------------------------------------
+
+NetLogo uses the MRJ Adapter library, which is Copyright (c) 2003 Steve
+Roy <sroy@roydesign.net>. The library is covered by the GNU LGPL (Lesser
+General Public License). The text of that license is included in the
+"docs" folder which accompanies the NetLogo download, and is also
+available from http://www.gnu.org/copyleft/lesser.html.
+
+------------------------------------------------------------------------
+
+For movie-making, NetLogo uses code adapted from
+sim.util.media.MovieEncoder.java by Sean Luke, distributed under the
+MASON Open Source License. The copyright for that code is as follows:
+
+This software is Copyright 2003 by Sean Luke. Portions Copyright 2003 by
+Gabriel Catalin Balan, Liviu Panait, Sean Paus, and Dan Kuebrich. All
+Rights Reserved.
+
+Developed in Conjunction with the George Mason University Center for
+Social Complexity
+
+By using the source code, binary code files, or related data included in
+this distribution, you agree to the following terms of usage for this
+software distribution. All but a few source code files in this
+distribution fall under this license; the exceptions contain open source
+licenses embedded in the source code files themselves. In this license
+the Authors means the Copyright Holders listed above, and the license
+itself is Copyright 2003 by Sean Luke.
+
+The Authors hereby grant you a world-wide, royalty-free, non-exclusive
+license, subject to third party intellectual property claims:
+
+to use, reproduce, modify, display, perform, sublicense and distribute
+all or any portion of the source code or binary form of this software or
+related data with or without modifications, or as part of a larger work;
+and under patents now or hereafter owned or controlled by the Authors,
+to make, have made, use and sell ("Utilize") all or any portion of the
+source code or binary form of this software or related data, but solely
+to the extent that any such patent is reasonably necessary to enable you
+to Utilize all or any portion of the source code or binary form of this
+software or related data, and not to any greater extent that may be
+necessary to Utilize further modifications or combinations.
+
+In return you agree to the following conditions:
+
+If you redistribute all or any portion of the source code of this
+software or related data, it must retain the above copyright notice and
+this license and disclaimer. If you redistribute all or any portion of
+this code in binary form, you must include the above copyright notice
+and this license and disclaimer in the documentation and/or other
+materials provided with the distribution, and must indicate the use of
+this software in a prominent, publically accessible location of the
+larger work. You must not use the Authors's names to endorse or promote
+products derived from this software without the specific prior written
+permission of the Authors.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS, NOR THEIR EMPLOYERS,
+NOR GEORGE MASON UNIVERSITY, BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+
+------------------------------------------------------------------------
+
+For movie-making, NetLogo uses code adapted from JpegImagesToMovie.java
+by Sun Microsystems. The copyright for that code is as follows:
+
+Copyright (c) 1999-2001 Sun Microsystems, Inc. All Rights Reserved.
+
+Sun grants you ("Licensee") a non-exclusive, royalty free, license to
+use, modify and redistribute this software in source and binary code
+form, provided that i) this copyright notice and license appear on all
+copies of the software; and ii) Licensee does not utilize the software
+in a manner which is disparaging to Sun.
+
+This software is provided "AS IS," without a warranty of any kind. ALL
+EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, INCLUDING
+ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE OR NON-INFRINGEMENT, ARE HEREBY EXCLUDED. SUN AND ITS LICENSORS
+SHALL NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF
+USING, MODIFYING OR DISTRIBUTING THE SOFTWARE OR ITS DERIVATIVES. IN NO
+EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR ANY LOST REVENUE, PROFIT
+OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL OR
+PUNITIVE DAMAGES, HOWEVER CAUSED AND REGARDLESS OF THE THEORY OF
+LIABILITY, ARISING OUT OF THE USE OF OR INABILITY TO USE SOFTWARE, EVEN
+IF SUN HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+This software is not designed or intended for use in on-line control of
+aircraft, air traffic, aircraft navigation or aircraft communications;
+or in the design, construction, operation or maintenance of any nuclear
+facility. Licensee represents and warrants that it will not use or
+redistribute the Software for such purposes.
+

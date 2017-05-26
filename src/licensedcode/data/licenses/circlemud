@@ -1,0 +1,239 @@
+/* ************************************************************************
+*  Copyright (C) 1995 by Jeremy Elson                                     *
+*  All Rights Reserved                                                    *
+************************************************************************ */
+
+                             CircleMUD License
+
+CircleMUD was created by:
+
+Jeremy Elson
+Department of Computer Science
+Johns Hopkins University
+Baltimore, MD  21218  USA
+jelson@circlemud.org
+
+
+
+CircleMUD is licensed software.  This file contains the text of the CircleMUD
+license.  If you wish to use the CircleMUD system in any way, or use any of
+its source code, you must read this license and are legally bound to comply
+with it.
+
+CircleMUD is a derivative work based on the DikuMUD system written by Hans
+Henrik Staerfeldt, Katja Nyboe, Tom Madsen, Michael Seifert, and Sebastian
+Hammer.  DikuMUD is also licensed software; you are legally bound to comply
+with the original DikuMUD license as well as the CircleMUD license if you
+wish to use CircleMUD.
+
+Use of the CircleMUD code in any capacity implies that you have read,
+understood, and agreed to abide by the terms and conditions set down by this
+license and the DikuMUD license.  If you use CircleMUD without complying with
+the license, you are breaking the law.
+
+Using CircleMUD legally is easy.  In short, the license requires three things:
+
+1) You must not use CircleMUD to make money or be compensated in any way.
+2) You must give the authors credit for their work.
+3) You must comply with the DikuMUD license.
+
+That's it -- those are the main conditions set down by this license.
+Unfortunately, past experience has shown that many people are not willing
+to follow the spirit of the license, so the remainder of this document will
+clearly define those conditions in an attempt to prevent people from
+circumventing them.
+
+The first condition says that you must not use CircleMUD to make money in
+any way or be otherwise compensated.  CircleMUD was developed in people's
+uncompensated spare time and was given to you free of charge, and you must
+not use it to make money.  CircleMUD must not in any way be used to
+facilitate your acceptance of fees, donations, or other compensation.
+Examples include, but are not limited to the following:
+
+-- If you run CircleMUD, you must not require any type of fee or donation
+   in exchange for being able to play CircleMUD.  You must not solicit,
+   offer or accept any kind of donation from your players in exchange for
+   enhanced status in the game such as increased levels, character stats,
+   gold, or equipment.
+
+-- You must not solicit or accept money or other donations in exchange for
+   running CircleMUD.  You must not accept money or other donations from
+   your players for purposes such as hardware upgrades for running
+   CircleMUD.
+
+-- You must not sell CircleMUD.  You must not accept any type of fee in
+   exchange for distributing or copying CircleMUD.
+
+-- If you are a CircleMUD administrator, You must not accept any type of
+   reimbursement for money spent out of pocket for running CircleMUD, i.e.,
+   for equipment expenses or fees incurred from service providers.
+
+
+The second part of the license states that you must give credit to the
+creators of CircleMUD.  A great deal of work went into the creation of
+CircleMUD, and it was given to you completely free of charge; claiming that
+you wrote the MUD yourself is a slap in the face to everyone who worked to
+bring you a high quality product while asking for nothing but credit for
+their work in return.
+
+Specifically, the following are required:
+
+-- The text in the 'credits' file distributed with CircleMUD must be
+   preserved.  You may add your own credits to the file, but the existing
+   text must not be removed, abridged, truncated, or changed in any way.
+   This file must be displayed when the 'credits' command is used from
+   within the MUD.
+
+-- The "CIRCLEMUD" help entry must be maintained intact and unchanged, and
+   displayed in its entirety when the 'help circlemud' command is used.
+
+-- The login sequence must contain the names of the DikuMUD and CircleMUD
+   creators.  The 'login sequence' is defined as the text seen by players
+   between the time they connect to the MUD and when they start to play
+   the game itself.
+
+-- This license must be distributed AS IS with all copies or portions of
+   the CircleMUD that you distribute, if any, including works derived from
+   CircleMUD.
+
+-- You must not remove, change, or modify any notices of copyright,
+   licensing or authorship found in any CircleMUD source code files.
+
+-- Claims that any of the above requirements are inapplicable to a particular
+   MUD for reasons such as "our MUD is totally rewritten" or similar are
+   completely invalid.  If you can write a MUD completely from scratch then
+   you are encouraged to do so by all means, but use of any part of the
+   CircleMUD or DikuMUD source code requires that their respective licenses
+   be followed, including the crediting requirements.
+   
+   
+The third part of the license simply states that you must comply with the
+DikuMUD license.  This is required because CircleMUD is a DikuMUD derivative.
+The DikuMUD license is included below.
+
+
+You are allowed to use, modify and redistribute all CircleMUD source code
+and documentation as long as such use does not violate any of the rules
+set down by this license.
+
+
+--Jeremy Elson
+
+CircleMUD 3 -- Copyright (C) 1994-2001, The CircleMUD Group
+Other portions copyright by authors as noted in ChangeLog and source code.
+
+
+
+===========================================================================
+
+
+Everything below this line is the original, unmodified DikuMUD license.
+You must comply with the CircleMUD license above, as well as the DikuMUD
+license below.
+
+---------------------------------------------------------------------------
+
+
+/* ************************************************************************
+*  Copyright (C) 1990, 1991                                               *
+*  All Rights Reserved                                                    *
+************************************************************************* */
+
+                             DikuMud License
+
+                      Program & Concept created by
+
+
+Sebastian Hammer
+Prss. Maries Alle 15, 1
+1908 Frb. C.
+DENMARK
+(email quinn@freja.diku.dk)
+
+Michael Seifert
+Nr. Soeg. 37C, 1, doer 3
+1370 Copenhagen K.
+DENMARK
+(email seifert@freja.diku.dk)
+
+Hans Henrik St{rfeldt
+Langs} 19
+3500 V{rl|se
+DENMARK
+(email bombman@freja.diku.dk)
+
+Tom Madsen
+R|de Mellemvej 94B, 64
+2300 Copenhagen S.
+DENMARK
+(email noop@freja.diku.dk)
+
+Katja Nyboe
+Kildeg}rdsvej 2
+2900 Hellerup
+31 62 82 84
+DENMARK
+(email katz@freja.diku.dk)
+
+
+This document contains the rules by which you can use, alter or publish
+parts of DikuMud. DikuMud has been created by the above five listed persons
+in their spare time, at DIKU (Computer Science Instutute at Copenhagen
+University). You are legally bound to follow the rules described in this
+document.
+
+Rules:
+
+   !! DikuMud is NOT Public Domain, shareware, careware or the like !!
+
+   You may under no circumstances make profit on *ANY* part of DikuMud in
+   any possible way. You may under no circumstances charge money for
+   distributing any part of dikumud - this includes the usual $5 charge
+   for "sending the disk" or "just for the disk" etc.
+   By breaking these rules you violate the agreement between us and the
+   University, and hence will be sued.
+
+   You may not remove any copyright notices from any of the documents or
+   sources given to you.
+
+   This license must *always* be included "as is" if you copy or give
+   away any part of DikuMud (which is to be done as described in this
+   document).
+
+   If you publish *any* part of dikumud, we as creators must appear in the
+   article, and the article must be clearly copyrighted subject to this
+   license. Before publishing you must first send us a message, by
+   snail-mail or e-mail, and inform us what, where and when you are
+   publishing (remember to include your address, name etc.)
+
+   If you wish to setup a version of DikuMud on any computer system, you
+   must send us a message , by snail-mail or e-mail, and inform us where
+   and when you are running the game. (remember to include 
+   your address, name etc.)
+
+
+   Any running version of DikuMud must include our names in the login
+   sequence. Furthermore the "credits" command shall always cointain
+   our name, addresses, and a notice which states we have created DikuMud.
+
+   You are allowed to alter DikuMud, source and documentation as long as
+   you do not violate any of the above stated rules.
+
+
+Regards,
+
+
+
+The DikuMud Group
+
+
+Note:
+
+We hope you will enjoy DikuMud, and encourage you to send us any reports
+on bugs (when you find 'it'). Remember that we are all using our spare
+time to write and improve DikuMud, bugs, etc. - and changes will take their
+time. We have so far put extremely many programming hours into this project.
+If you make any major improvements on DikuMud we would be happy to
+hear from you. As you will naturally honor the above rules, you will receive
+new updates and improvements made to the game.
+

@@ -1,0 +1,199 @@
+Sun Microsystems, Inc. 
+Binary Code License Agreement
+
+READ THE TERMS OF THIS AGREEMENT AND ANY PROVIDED SUPPLEMEN
+TAL LICENSE TERMS (COLLECTIVELY "AGREEMENT") CAREFULLY BEFO
+RE OPENING THE SOFTWARE MEDIA PACKAGE.  BY OPENING THE SOFT
+WARE MEDIA PACKAGE, YOU AGREE TO THE TERMS OF THIS AGREEMEN
+T.  IF YOU ARE ACCESSING THE SOFTWARE ELECTRONICALLY, INDIC
+ATE YOUR ACCEPTANCE OF THESE TERMS BY SELECTING THE "ACCEPT
+" BUTTON AT THE END OF THIS AGREEMENT.  IF YOU DO NOT AGREE
+ TO ALL THESE TERMS, PROMPTLY RETURN THE UNUSED SOFTWARE TO
+ YOUR PLACE OF PURCHASE FOR A REFUND OR, IF THE SOFTWARE IS
+ ACCESSED ELECTRONICALLY, SELECT THE "DECLINE" BUTTON AT TH
+E END OF THIS AGREEMENT. 
+
+1.  LICENSE TO USE.  Sun grants you a non-exclusive and non
+-transferable license for the internal use only of the acco
+mpanying software and documentation and any error correctio
+ns provided by Sun (collectively "Software"), by the number
+ of users and the class of computer hardware for which the 
+corresponding fee has been paid. 
+
+2.  RESTRICTIONS.  Software is confidential and copyrighted
+. Title to Software and all associated intellectual propert
+y rights is retained by Sun and/or its licensors.  Except a
+s specifically authorized in any Supplemental License Terms
+, you may not make copies of Software, other than a single 
+copy of Software for archival purposes.  Unless enforcement
+ is prohibited by applicable law, you may not modify, decom
+pile, or reverse engineer Software.  Licensee acknowledges 
+that Licensed Software is not designed or intended for use 
+in the design, construction, operation or maintenance of an
+y nuclear facility. Sun Microsystems, Inc. disclaims any ex
+press or implied warranty of fitness for such uses.   No ri
+ght, title or interest in or to any trademark, service mark
+, logo or trade name of Sun or its licensors is granted und
+er this Agreement. 
+
+3.  LIMITED WARRANTY.  Sun warrants to you that for a perio
+d of ninety (90) days from the date of purchase, as evidenc
+ed by a copy of the receipt, the media on which Software is
+ furnished (if any) will be free of defects in materials an
+d workmanship under normal use.  Except for the foregoing, 
+Software is provided "AS IS".  Your exclusive remedy and Su
+n's entire liability under this limited warranty will be at
+ Sun's option to replace Software media or refund the fee p
+aid for Software. 
+
+4.  DISCLAIMER OF WARRANTY.  UNLESS SPECIFIED IN THIS AGREE
+MENT, ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AN
+D WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABI
+LITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT 
+ARE DISCLAIMED, EXCEPT TO THE EXTENT THAT THESE DISCLAIMERS
+ ARE HELD TO BE LEGALLY INVALID. 
+
+5.  LIMITATION OF LIABILITY.  TO THE EXTENT NOT PROHIBITED 
+BY LAW, IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR
+ ANY LOST REVENUE, PROFIT OR DATA, OR FOR SPECIAL, INDIRECT
+, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CA
+USED REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF 
+OR RELATED TO THE USE OF OR INABILITY TO USE SOFTWARE, EVEN
+ IF SUN HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES
+.  In no event will Sun's liability to you, whether in cont
+ract, tort (including negligence), or otherwise, exceed the
+ amount paid by you for Software under this Agreement.  The
+ foregoing limitations will apply even if the above stated 
+warranty fails of its essential purpose. 
+
+6.  Termination.  This Agreement is effective until termina
+ted.  You may terminate this Agreement at any time by destr
+oying all copies of Software.  This Agreement will terminat
+e immediately without notice from Sun if you fail to comply
+ with any provision of this Agreement.  Upon Termination, y
+ou must destroy all copies of Software. 
+
+7.  Export Regulations. All Software and technical data del
+ivered under this Agreement are subject to US export contro
+l laws and may be subject to export or import regulations i
+n other countries.  You agree to comply strictly with all s
+uch laws and regulations and acknowledge that you have the 
+responsibility to obtain such licenses to export, re-export
+, or import as may be required after delivery to you. 
+
+8.  U.S. Government Restricted Rights.  If Software is bein
+g acquired by or on behalf of the U.S. Government or by a U
+.S. Government prime contractor or subcontractor (at any ti
+er), then the Government's rights in Software and accompany
+ing documentation will be only as set forth in this Agreeme
+nt; this is in accordance with 48 CFR 227.7201 through 227.
+7202-4 (for Department of Defense (DOD) acquisitions) and w
+ith 48 CFR 2.101 and 12.212 (for non-DOD acquisitions). 
+
+9.  Governing Law.  Any action related to this Agreement wi
+ll be governed by California law and controlling U.S. feder
+al law.  No choice of law rules of any jurisdiction will ap
+ply. 
+
+10. Severability. If any provision of this Agreement is hel
+d to be unenforceable, this Agreement will remain in effect
+ with the provision omitted, unless omission would frustrat
+e the intent of the parties, in which case this Agreement w
+ill immediately terminate. 
+
+11. Integration.  This Agreement is the entire agreement be
+tween you and Sun relating to its subject matter.  It super
+sedes all prior or contemporaneous oral or written communic
+ations, proposals, representations and warranties and preva
+ils over any conflicting or additional terms of any quote, 
+order, acknowledgment, or other communication between the p
+arties relating to its subject matter during the term of th
+is Agreement.  No modification of this Agreement will be bi
+nding, unless in writing and signed by an authorized repres
+entative of each party. 
+
+JAVA(TM) INTERFACE CLASSES 
+J2EE(TM) DEPLOYMENT SPECIFICATION INTERFACE CLASSES 1.1
+SUPPLEMENTAL LICENSE TERMS
+
+These supplemental license terms ("Supplemental Terms") add
+ to or modify the terms of the Binary Code License Agreemen
+t (collectively, the "Agreement"). Capitalized terms not de
+fined in these Supplemental Terms shall have the same meani
+ngs ascribed to them in the Agreement. These Supplemental T
+erms shall supersede any inconsistent or conflicting terms 
+in the Agreement, or in any license contained within the So
+ftware. 
+
+1. Software Internal Use and Development License Grant. Sub
+ject to the terms and conditions of this Agreement, includi
+ng, but not limited to Section 3 (Java(TM) Technology Restr
+ictions) of these Supplemental Terms, Sun grants you a non-
+exclusive, non-transferable, limited license to reproduce i
+nternally and use internally the binary form of the Softwar
+e, complete and unmodified, for the sole purpose of designi
+ng, developing and testing your Java applets and applicatio
+ns ("Programs"). 
+
+2. License to Distribute Software.  In addition to the lice
+nse granted in Section 1 (Software Internal Use and Develop
+ment License Grant) of these Supplemental Terms, subject to
+ the terms and conditions of this Agreement, including but 
+not limited to Section 3 (Java Technology Restrictions), Su
+n grants you a non-exclusive, non-transferable, limited lic
+ense to reproduce and distribute the Software in binary for
+m only, provided that you (i) distribute the Software compl
+ete and unmodified and only bundled as part of your Program
+s, (ii) do not distribute additional software intended to r
+eplace any component(s) of the Software, (iii) do not remov
+e or alter any proprietary legends or notices contained in 
+the Software, (iv) only distribute the Software subject to 
+a license agreement that protects Sun's interests consisten
+t with the terms contained in this Agreement, and (v) agree
+ to defend and indemnify Sun and its licensors from and aga
+inst any damages, costs, liabilities, settlement amounts an
+d/or expenses (including attorneys' fees) incurred in conne
+ction with any claim, lawsuit or action by any third party 
+that arises or results from the use or distribution of any 
+and all Programs and/or Software. 
+
+3. Java Technology Restrictions. You may not modify the Jav
+a Platform Interface ("JPI", identified as classes containe
+d within the "java" package or any subpackages of the "java
+" package), by creating additional classes within the JPI o
+r otherwise causing the addition to or modification of the 
+classes in the JPI.  In the event that you create an additi
+onal class and associated API(s) which (i) extends the func
+tionality of the Java Platform, and (ii) is exposed to thir
+d party software developers for the purpose of developing a
+dditional software which invokes such additional API, you m
+ust promptly publish broadly an accurate specification for 
+such API for free use by all developers. You may not create
+, or authorize your licensees to create additional classes,
+ interfaces, or subpackages that are in any way identified 
+as "java", "javax", "sun" or similar convention as specifie
+d by Sun in any naming convention designation. 
+
+4. Trademarks and Logos. You acknowledge and agree as betwe
+en you and Sun that Sun owns the SUN, SOLARIS, JAVA, JINI, 
+FORTE, and iPLANET trademarks and all SUN, SOLARIS, JAVA, J
+INI, FORTE, and iPLANET-related trademarks, service marks, 
+logos and other brand designations ("Sun Marks"), and you a
+gree to comply with the Sun Trademark and Logo Usage Requir
+ements currently located at http://www.sun.com/policies/tra
+demarks. Any use you make of the Sun Marks inures to Sun's 
+benefit. 
+
+5. Source Code. Software may contain source code that is pr
+ovided solely for reference purposes pursuant to the terms 
+of this Agreement.  Source code may not be redistributed un
+less expressly provided for in this Agreement. 
+
+6.  Termination for Infringement.  Either party may termina
+te this Agreement immediately should any Software become, o
+r in either party's opinion be likely to become, the subjec
+t of a claim of infringement of any intellectual property r
+ight. 
+
+For inquiries please contact: Sun Microsystems, Inc. 4150 N
+etwork Circle, Santa Clara, California 95054. 
