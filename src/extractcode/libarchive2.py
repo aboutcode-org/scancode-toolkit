@@ -26,14 +26,13 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-from __future__ import absolute_import
-from __future__ import print_function
 from __future__ import unicode_literals
 
 from functools import partial
 import locale
 import logging
 import os
+import sys
 
 import ctypes
 from ctypes import c_char_p, c_wchar_p
@@ -105,6 +104,9 @@ def load_lib():
         os.environ['PATH'] = new_path
 
     if os.path.exists(libarchive):
+        if not isinstance(libarchive, bytes):
+            # ensure that the path is not Unicode...
+            libarchive = libarchive.encode(sys.getfilesystemencoding() or sys.getdefaultencoding())
         lib = ctypes.CDLL(libarchive)
         if lib and lib._name:
             return lib
