@@ -510,6 +510,14 @@ def test_scan_logs_errors_messages_with_diag():
 
 class TestFixedWidthFilename(TestCase):
 
+    def test_fixed_width_file_name_with_click_get_terminal_size(self):
+        terminal_width = click.get_terminal_size()[0]
+        max_length = terminal_width - 60
+        test = cli.fixed_width_file_name('0123456789012345678901234.c')
+        assert len(test) <= max_length
+        expected = ''
+        assert expected == test
+
     def test_fixed_width_file_name_with_file_name_larger_than_max_length_is_shortened(self):
         test = cli.fixed_width_file_name('0123456789012345678901234.c')
         expected = '0123456789...5678901234.c'

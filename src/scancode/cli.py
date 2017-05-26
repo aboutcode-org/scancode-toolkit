@@ -470,6 +470,8 @@ def scan(input_path,
         scanit = partial(_scanit, scanners=scanners, scans_cache_class=scans_cache_class,
                          diag=diag, timeout=timeout)
 
+
+        max_file_name_len = compute_file_name_max_len_from_current_terminal_width()
         try:
             # Using chunksize is documented as much more efficient in the Python doc.
             # Yet "1" still provides a better and more progressive feedback.
@@ -482,12 +484,11 @@ def scan(input_path,
 
             def scan_event(item):
                 """Progress event displayed each time a file is scanned"""
-                if quiet:
+                if quiet or not item:
                     return ''
-                if item:
-                    _scan_success, _scanned_path = item
-                    _progress_line = verbose and _scanned_path or fixed_width_file_name(_scanned_path)
-                    return style('Scanned: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
+                _scan_success, _scanned_path = item
+                _progress_line = verbose and _scanned_path or fixed_width_file_name(_scanned_path, max_file_name_len)
+                return style('Scanned: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
 
             scanning_errors = []
             files_count = 0
@@ -564,10 +565,11 @@ def scan(input_path,
 
 def fixed_width_file_name(path, max_length=25):
     """
-    Return a fixed width file_name of at most `max_length` characters
-    extracted from the `path` string usable for fixed width display. If
-    the file_name is longer than `max_length`, it is truncated in the
-    middle with using three dots "..." as an ellipsis.
+    Return a fixed width file name of at most `max_length` characters
+    extracted from the `path` string and usable for fixed width display.
+    If the file_name is longer than `max_length`, it is truncated in the
+    middle with using three dots "..." as an ellipsis and the extension
+    is kept.
 
     For example:
     >>> short = fixed_width_file_name('0123456789012345678901234.c')
@@ -587,6 +589,34 @@ def fixed_width_file_name(path, max_length=25):
     ellipsis = number_of_dots * '.'
     suffix = base_name[-prefix_and_suffix_length:]
     return "{prefix}{ellipsis}{suffix}{extension}".format(**locals())
+
+
+def compute_file_name_max_len_from_current_terminal_width(used_width=60):
+    """
+    Return the max length of a path given the current terminal width.
+
+    A progress bar is composed of these elements:
+      [-----------------------------------#]  1667  Scanned: tu-berlin.yml
+    - 2  : two spaces
+    - 40 : the bar proper which is 38 characters
+    - 42 : two spaces
+    - ( ): the number of files, with a varying length
+    - 44 : two spaces
+    - 52 : the word Scanned: 8 chars
+    - 53 : one space
+    - ( ):the file name proper
+    The space usage is therefore:
+    Base fixed (53) + variable files count + truncated file name up to term width
+    We support without bar spillage up to 9 999 999 files, e.g. 7 characters.
+    Therefore the base width already used is 60.
+    """
+    term_width, _height = click.get_terminal_size()
+    max_filename_length = term_width - used_width
+    if term_width < 70:
+        # if we have a small term width that is less than 70 column, we
+        # may spill over and damage the progress bar...
+        max_filename_length = 10
+    return max_filename_length
 
 
 def _get_root_dir(input_path, strip_root=False, full_root=False):
