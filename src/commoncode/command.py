@@ -236,6 +236,12 @@ def get_env(base_vars=None, lib_dir=None):
         env_vars['LD_LIBRARY_PATH'] = path_var
         # on Mac
         env_vars['DYLD_LIBRARY_PATH'] = path_var
+
+    # ensure that we use bytes, not unicode
+    def to_bytes(s):
+        return s if isinstance(s, bytes) else s.encode('utf-8')
+
+    env_vars = {to_bytes(k): to_bytes(v) for k, v in env_vars.items()}
     return env_vars
 
 
