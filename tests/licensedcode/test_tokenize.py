@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import codecs
 import itertools
@@ -474,7 +476,7 @@ class MatchedTextTokenizer(FileBasedTesting):
 
         result_as_text = u''.join(itertools.chain.from_iterable([v for v in m.groupdict().values() if v] for m in tokens_and_non_tokens(text)))
         assert text == result_as_text
-        
+
     def matched_query_text_tokenizer_yield_properly_all_texts(self):
         text = u'''Redistribution+ ;and use in! 2003 source and binary forms, 
         ()with or without modification, are permitted.\t\n

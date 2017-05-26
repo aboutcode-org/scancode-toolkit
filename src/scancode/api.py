@@ -182,7 +182,7 @@ def get_file_infos(location, as_list=True):
     T = contenttype.get_type(location)
 
     infos['type'] = filetype.get_type(location, short=False)
-    infos['name'] = utils.encode_path(fileutils.file_name(location))
+    infos['name'] = fileutils.file_name(location)
     infos['extension'] = is_file and fileutils.file_extension(location) or ''
     infos['date'] = is_file and filetype.get_last_modified_date(location) or None
     infos['size'] = T.size

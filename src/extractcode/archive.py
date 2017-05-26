@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 from collections import namedtuple
 import functools
@@ -515,7 +517,7 @@ SpringBootShellJarHandler = Handler(
     name='Springboot Java Jar package',
     filetypes=('Bourne-Again shell script executable (binary data)',),
     mimetypes=('text/x-shellscript',),
-    extensions=('.jar', ),
+    extensions=('.jar',),
     kind=package,
     extractors=[extract_zip],
     strict=False
@@ -601,7 +603,7 @@ TarGzipHandler = Handler(
     strict=False
 )
 
-#https://wiki.openwrt.org/doc/techref/opkg: ipk
+# https://wiki.openwrt.org/doc/techref/opkg: ipk
 # http://downloads.openwrt.org/snapshots/trunk/x86/64/packages/base/
 
 OpkgHandler = Handler(
@@ -743,7 +745,7 @@ DebHandler = Handler(
     name='Debian package',
     filetypes=('debian binary package',),
     mimetypes=('application/x-archive', 'application/vnd.debian.binary-package',),
-    extensions=('.deb','.udeb',),
+    extensions=('.deb', '.udeb',),
     kind=package,
     extractors=[extract_deb],
     strict=True

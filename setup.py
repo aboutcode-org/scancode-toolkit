@@ -119,7 +119,7 @@ setup(
         'nltk >= 3.2, < 4.0',
 
         # extractcode
-        'patch >= 1.14.2, < 1.15 ',
+        'patch >= 1.15, < 1.20 ',
         # to work around bug http://bugs.python.org/issue19839
         # on multistream bzip2 files: this can removed in Python 3.
         'bz2file >= 0.98',
@@ -154,7 +154,7 @@ setup(
         'binaryornot >= 0.4.0',
 
         # scancode and AboutCode
-        'click >= 4.0.0, < 5.0.0',
+        'click >= 6.0.0, < 7.0.0',
         'jinja2 >= 2.7.0, < 3.0.0',
         'MarkupSafe >= 0.23',
         'colorama',

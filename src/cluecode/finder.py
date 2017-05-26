@@ -342,10 +342,10 @@ def canonical_url(uri):
     """
     Return the canonical representation of a given URI.
     This assumes the `uri` has a scheme.
-    
+
     * When a default port corresponding for the scheme is explicitly declared
       (such as port 80 for http), the port will be removed from the output.
-    * Fragments '#' are not removed. 
+    * Fragments '#' are not removed.
      * Params and query string arguments are not reordered.
     """
     normalized = urlpy.parse(uri).sanitize().punycode()

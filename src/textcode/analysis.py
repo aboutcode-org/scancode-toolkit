@@ -22,16 +22,18 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import unicodedata
 
 import chardet
 
-import typecode
 from textcode import pdf
 from textcode import markup
 from textcode import strings
+import typecode
 
 """
 Utilities to analyze text. Files are the input.
@@ -133,14 +135,16 @@ def as_unicode(line):
 
     TODO: Add file/magic detection, unicodedmanit/BS3/4
     """
+    if isinstance(line, unicode):
+        return line
     unicodedata_normalize = unicodedata.normalize
     chardet_detect = chardet.detect
     try:
-        s = unicode(line, 'UTF-8')
+        s = line.decode('UTF-8')
     except UnicodeDecodeError:
         try:
             # FIXME: latin-1 may never fail
-            s = unicode(line, 'LATIN-1')
+            s = line.decode('LATIN-1')
         except UnicodeDecodeError:
             try:
                 # Convert some byte string to ASCII characters as Unicode including

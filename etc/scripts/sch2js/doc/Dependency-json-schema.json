@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#", 
+  "id": "", 
+  "type": "object", 
+  "title": "dependency", 
+  "description": "A dependency points to a Package via a package name and a version constraint (such as \">= 3.4\"). The version is the effective version that has been picked and resolved.", 
+  "required": [
+    "name"
+  ], 
+  "properties": {
+    "name": {
+      "type": "string", 
+      "title": "name", 
+      "description": "Name of the package for this dependency."
+    }, 
+    "version": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "version", 
+          "description": "Version of this dependent package: The effective or concrete resolved and used version."
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "version_constraint": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "version", 
+          "description": "The version constraints (aka. possible versions) for this dependent package: The meaning of this constraings is package type-specific. "
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

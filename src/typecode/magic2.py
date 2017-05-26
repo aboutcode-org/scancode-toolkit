@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -48,6 +48,7 @@
 
 import os.path
 import ctypes
+import sys
 
 from commoncode import system
 from commoncode import command
@@ -170,6 +171,7 @@ class Detector(object):
             # location string may therefore be mangled and the file not accessible
             # anymore by libmagic in some cases.
             try:
+                # FIXME: use filesystem encoding instead
                 uloc = location.encode('utf-8')
                 return  _magic_file(self.cookie, uloc)
             except:
@@ -200,6 +202,9 @@ def load_lib():
     os.environ['PATH'] = new_path
 
     if os.path.exists(magic_so):
+        if not isinstance(magic_so, bytes):
+            # ensure that the path is not Unicode...
+            magic_so = magic_so.encode(sys.getfilesystemencoding() or sys.getdefaultencoding())
         lib = ctypes.CDLL(magic_so)
         if lib and lib._name:
             return lib

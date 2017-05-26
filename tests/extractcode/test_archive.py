@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import codecs
 import ntpath
@@ -319,7 +321,7 @@ class TestTarGzip(BaseArchiveTestCase):
     def test_extract_targz_broken(self):
         test_file = self.get_test_loc('archive/tgz/broken.tar.gz')
         test_dir = self.get_temp_dir()
-        expected = Exception("'Unrecognized archive format'")
+        expected = Exception("Unrecognized archive format")
         self.assertRaisesInstance(expected, archive.extract_tar, test_file, test_dir)
 
     def test_extract_targz_with_absolute_path(self):
@@ -428,7 +430,7 @@ class TestGzip(BaseArchiveTestCase):
         warnings = archive.uncompress_gzip(test_file, test_dir)
         result = os.path.join(test_dir, 'twofiles.gz-extract')
         assert os.path.exists(result)
-        assert 'f1content\nf2content\n' == open(result, 'rb').read()
+        assert b'f1content\nf2content\n' == open(result, 'rb').read()
         assert [] == warnings
 
     def test_uncompress_gzip_with_trailing_data(self):
@@ -495,7 +497,7 @@ class TestTarBz2(BaseArchiveTestCase):
     def test_extract_tar_bz2_broken(self):
         test_file = self.get_test_loc('archive/tbz/tarred_bzipped_broken.tar.bz2')
         test_dir = self.get_temp_dir()
-        expected = Exception("'bzip decompression failed'")
+        expected = Exception("bzip decompression failed")
         self.assertRaisesInstance(expected, archive.extract_tar, test_file, test_dir)
 
     def test_extract_tar_bz2_absolute_path(self):
@@ -922,7 +924,7 @@ class TestTar(BaseArchiveTestCase):
     def test_extract_tar_broken(self):
         test_file = self.get_test_loc('archive/tar/tarred_broken.tar')
         test_dir = self.get_temp_dir()
-        expected = Exception("'Unrecognized archive format'")
+        expected = Exception("Unrecognized archive format")
         self.assertRaisesInstance(expected, archive.extract_tar,
                                   test_file, test_dir)
 
@@ -1367,7 +1369,7 @@ class TestCpio(BaseArchiveTestCase):
         extracted = self.collect_extracted_path(test_dir)
         expected = ['/t/', '/t/t.txt']
         assert expected == extracted
-        
+
 class TestRpm(BaseArchiveTestCase):
 
     def test_extract_rpm_basic_1(self):

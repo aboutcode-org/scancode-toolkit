@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 from collections import OrderedDict
 import os.path
@@ -463,6 +465,10 @@ def relative_walk(dir_path, extension):
 
 
 def make_test_function(test_pom_loc, expected_json_loc, regen, test_name):
+
+    if isinstance(test_name, unicode):
+        test_name = test_name.encode('utf-8')
+
     # closure on the test params
     def test_pom(self):
         self.check_pom(test_pom_loc, expected_json_loc, regen)

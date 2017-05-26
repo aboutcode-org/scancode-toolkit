@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import posixpath
 import logging
@@ -150,6 +152,5 @@ def patch_info(location):
     for ptch in patchset.items:
         src = fileutils.as_posixpath(ptch.source.strip())
         tgt = fileutils.as_posixpath(ptch.target.strip())
-        text = [unicode(l.strip(), encoding='utf-8', errors='replace')
-                for l in patch_text(ptch) if l]
+        text = [l.strip() for l in patch_text(ptch) if l]
         yield src, tgt, text

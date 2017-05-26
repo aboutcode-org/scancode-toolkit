@@ -33,7 +33,7 @@ def check_detection(expected, test_file,
                     what='copyrights'):
     """
     Run detection of copyright on the test_file, checking the results
-    match the expected list of values. 
+    match the expected list of values.
 
     If expected_in_results and results_in_expected are True (the default),
     then expected and test results are tested for equality. To accommodate

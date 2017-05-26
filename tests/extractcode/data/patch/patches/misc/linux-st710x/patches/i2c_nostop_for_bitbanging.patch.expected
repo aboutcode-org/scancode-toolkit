@@ -11,7 +11,7 @@
       "Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.\t\t     */", 
       "/* ------------------------------------------------------------------------- */", 
       "", 
-      "-/* With some changes from Frodo Looijaard <frodol@dds.nl>, Ky\ufffdsti M\ufffdlkki", 
+      "-/* With some changes from Frodo Looijaard <frodol@dds.nl>, Ky\u00f6sti M\u00e4lkki", 
       "+/* With some changes from Frodo Looijaard <frodol@dds.nl>, Ky\ufffdsti M\ufffdlkki", 
       "<kmalkki@cc.hut.fi> and Jean Delvare <khali@linux-fr.org> */", 
       "", 

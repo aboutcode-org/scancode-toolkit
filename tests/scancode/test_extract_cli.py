@@ -22,7 +22,10 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import division
+from __future__ import unicode_literals
 
 import os
 
@@ -62,13 +65,18 @@ def test_extractcode_command_does_extract_verbose(monkeypatch):
     result = runner.invoke(extract_cli.extractcode, ['--verbose', test_dir])
     assert result.exit_code == 1
     assert os.path.exists(os.path.join(test_dir, 'some.tar.gz-extract'))
+    print()
+    print(result.output)
+    print()
+    print(repr(result.output))
+    print()
     expected = [
         'Extracting archives...',
         'some.tar.gz',
         'broken.tar.gz',
         'tarred_gzipped.tgz',
         'ERROR extracting',
-        "broken.tar.gz: 'Unrecognized archive format'",
+        "broken.tar.gz: Unrecognized archive format",
         'Extracting done.',
     ]
     for e in expected:

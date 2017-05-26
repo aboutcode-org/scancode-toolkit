@@ -90,17 +90,41 @@ def get_hasher(bitsize):
     return _hashmodules_by_bitsize[bitsize]
 
 
+class sha1_git_hasher(object):
+    """
+    Hash content using the git blob SHA1 convention.
+    """
+    def __init__(self, msg=None):
+        self.digest_size = 160 // 8
+        self.h = msg and self._compute(msg) or None
+
+    def _compute(self, msg):
+        return hashlib.sha1(b'blob ' + bytes(len(msg)) + b'\0' + msg).digest()
+
+    def digest(self):
+        return self.h
+
+    def hexdigest(self):
+        return self.h and self.h.encode('hex')
+
+    def b64digest(self):
+        return self.h and urlsafe_b64encode(self.h)
+
+    def intdigest(self):
+        return self.h and bin_to_num(self.h)
+
+
 _hashmodules_by_name = {
     'md5': get_hasher(128),
     'sha1': get_hasher(160),
+    'sha1_git': sha1_git_hasher,
     'sha256': get_hasher(256),
     'sha384': get_hasher(384),
     'sha512': get_hasher(512)
 }
 
 
-
-def checksum(location, bitsize, base64=False):
+def checksum(location, name, base64=False):
     """
     Return a checksum of `bitsize` length from the content of the file at
     `location`. The checksum is a hexdigest or base64-encoded is `base64` is
@@ -108,9 +132,9 @@ def checksum(location, bitsize, base64=False):
     """
     if not filetype.is_file(location):
         return
-    hasher = get_hasher(bitsize)
+    hasher = _hashmodules_by_name[name]
 
-    # fixme: we should read in chunks
+    # fixme: we should read in chunks?
     with open(location, 'rb') as f:
         hashable = f.read()
 
@@ -122,22 +146,25 @@ def checksum(location, bitsize, base64=False):
 
 
 def md5(location):
-    return checksum(location, bitsize=128, base64=False)
+    return checksum(location, name='md5', base64=False)
 
 def sha1(location):
-    return checksum(location, bitsize=160, base64=False)
+    return checksum(location, name='sha1', base64=False)
 
 def b64sha1(location):
-    return checksum(location, bitsize=160, base64=True)
+    return checksum(location, name='sha1', base64=True)
 
 def sha256(location):
-    return checksum(location, bitsize=256, base64=False)
+    return checksum(location, name='sha256', base64=False)
 
 def sha512(location):
-    return checksum(location, bitsize=512, base64=False)
+    return checksum(location, name='sha512', base64=False)
+
+def sha1_git(location):
+    return checksum(location, name='sha1_git', base64=False)
 
 
-def multi_checksums(location, checksum_names=('md5', 'sha1', 'sha256', 'sha512')):
+def multi_checksums(location, checksum_names=('md5', 'sha1', 'sha256', 'sha512', 'sha1_git')):
     """
     Return a mapping of hexdigest checksums keyed by checksum name from the content
     of the file at `location`. Use the `checksum_names` list of checksum names.
@@ -148,7 +175,7 @@ def multi_checksums(location, checksum_names=('md5', 'sha1', 'sha256', 'sha512')
     if not filetype.is_file(location):
         return results
 
-    # fixme: we should read in chunks
+    # fixme: we should read in chunks?
     with open(location, 'rb') as f:
         hashable = f.read()
 

@@ -28,7 +28,7 @@ from commoncode import fileutils
 
 
 """
-Recognition of typical "legal" files such as "LICENSE", "COPYING", etc. 
+Recognition of typical "legal" files such as "LICENSE", "COPYING", etc.
 """
 
 
