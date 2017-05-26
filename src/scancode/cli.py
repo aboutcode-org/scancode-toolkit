@@ -536,11 +536,13 @@ def fixed_width_file_name(path, max_length=25):
 def _get_root_dir(input_path, strip_root=False, full_root=False):
     """
     Return a root dir name or None.
+    On Windows, the path uses POSIX (forward slash) separators.
     """
     if strip_root:
         return
 
     scanned_path = os.path.abspath(os.path.normpath(os.path.expanduser(input_path)))
+    scanned_path = fileutils.as_posixpath(scanned_path)
     if full_root:
         return scanned_path
 

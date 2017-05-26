@@ -183,7 +183,7 @@ def test_scan_info_returns_full_root():
     result = runner.invoke(cli.scancode, ['--info', '--full-root', test_dir], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    assert test_dir in result.output
+    assert fileutils.as_posixpath(test_dir) in result.output
 
 
 def test_scan_info_license_copyrights():
