@@ -1,0 +1,1 @@
+$ makeself tst tst.makeself test ./tst/abc

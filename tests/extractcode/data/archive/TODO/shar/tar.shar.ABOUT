@@ -1,0 +1,1 @@
+shar -z tst.tar > tar.shar
