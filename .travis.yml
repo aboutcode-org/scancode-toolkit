@@ -72,10 +72,10 @@ matrix:
       python:
       osx_image: xcode7.3
 
-# TODO: ship pytest-cov and (both?) coveralls and codecov with scancode-toolkit
+# TODO: ship pytest-cov and codecov with scancode-toolkit
 install:
   - ./configure
-  - ./bin/pip install pytest-cov coveralls codecov
+  - ./bin/pip install pytest-cov codecov
 
 script:
   # If debugging, use a subset of tests to wait less:
@@ -86,7 +86,6 @@ script:
 # Pay attention to both calls below. They will succeed even if there
 # is no coverage information or connection to reporting website fails.
 after_success:
-  - ./bin/coveralls
   - ./bin/codecov
 
 notifications:
