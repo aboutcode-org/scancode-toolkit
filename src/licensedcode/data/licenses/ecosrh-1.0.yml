@@ -10,5 +10,7 @@ text_urls:
     - http://sourceware.cygnus.com/ecos/license-overview.html
 
 notes: this predates the 1.1 version that Red Hat created when they
- acquired Cygnus but since the tersm are similar we used the same license
+ acquired Cygnus but since the terms are similar we used the same license
  key as this is also a rare license.
+
+minimum_coverage: 70

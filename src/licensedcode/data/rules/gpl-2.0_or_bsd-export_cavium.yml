@@ -1,0 +1,6 @@
+licenses:
+    - gpl-2.0
+    - bsd-export
+license_choice: yes
+license: gpl-2.0 or bsd-export
+minimum_coverage: 70

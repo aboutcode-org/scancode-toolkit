@@ -1,5 +1,4 @@
 licenses:
     - openssl
     - bsd-new
-    - gpl
 license_choice: yes

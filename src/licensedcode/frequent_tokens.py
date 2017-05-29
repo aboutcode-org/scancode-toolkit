@@ -9782,6 +9782,14 @@ lizardtech2002
 DjVu
 NCursesException
 cygwin
+cygnus
+llc
+OpenFabrics
+Fabrics
+microcode
+cc
+definition
+definitions
 configure
 distributed
 Julian Seward Cambridge UK jseward acm org
@@ -9968,7 +9976,6 @@ exofs
 Keyspan USB Async Anchor FX1
 James Woods Spencer Thomas
  Joseph Orost
- aic94xx
 SCTP
 device structures
 vectors
@@ -9993,6 +10000,7 @@ Ahem
 Computer Systems and Communication Lab
 TaBE
 Fuchsia
+Synopsys
 '''
 
 

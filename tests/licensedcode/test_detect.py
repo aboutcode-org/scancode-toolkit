@@ -994,8 +994,8 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         expected = [
               # detected, match.lines(), match.qspan,
             (u'gpl-2.0-plus', (12, 25), Span(48, 159)),
-            (u'fsf-mit', (231, 238), Span(954, 1018)),
-            (u'free-unknown', (306, 307), Span(1305, 1328))
+            (u'fsf-mit', (231, 238), Span(957, 1021)),
+            (u'free-unknown', (306, 307), Span(1308, 1331))
         ]
         self.check_position('positions/automake.pl', expected)
 
