@@ -142,7 +142,9 @@ def test_scanned_path_is_present_in_html_app_output(monkeypatch):
     assert 'Scanning done' in result.output
     html_file = open(result_file).read()
     assert '<title>ScanCode scan results for: %(test_dir)s</title>' % locals() in html_file
-    assert 'ScanCode</a> scan results for: %(test_dir)s</span>' % locals() in html_file
+    assert '<div class="row" id = "scan-result-header">' % locals() in html_file
+    assert '<strong>scan results for:</strong>' % locals() in html_file
+    assert '<p>%(test_dir)s</p>' % locals() in html_file
 
 
 def test_scan_html_output_does_not_truncate_copyright(monkeypatch):
