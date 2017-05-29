@@ -596,6 +596,17 @@ class TestBz2(BaseArchiveTestCase):
         assert  expected_extracted == expected_result
 
 
+class TestShellArchives(BaseArchiveTestCase):
+    def test_extract_springboot(self):
+        # a self executable springboot Jar is a zip with a shell script prefix
+        test_file = self.get_test_loc('archive/shar/demo-spring-boot.jar')
+        test_dir = self.get_temp_dir()
+        result = archive.extract_springboot(test_file, test_dir)
+        assert [] == result
+        expected = ['META-INF/MANIFEST.MF', 'application.properties']
+        check_files(test_dir, expected)
+
+
 class TestZip(BaseArchiveTestCase):
     def test_extract_zip_basic(self):
         test_file = self.get_test_loc('archive/zip/basic.zip')
@@ -1310,7 +1321,7 @@ class TestCpio(BaseArchiveTestCase):
     def test_extract_cpio_broken_7z(self):
         test_file = self.get_test_loc('archive/cpio/cpio_broken.cpio')
         test_dir = self.get_temp_dir()
-        self.assertRaisesInstance(Exception('No error returned'), sevenzip.extract, test_file, test_dir)
+        self.assertRaisesInstance(Exception('Unknown extraction error'), sevenzip.extract, test_file, test_dir)
 
     def test_extract_cpio_broken2(self):
         test_file = self.get_test_loc('archive/cpio/cpio_broken.cpio')
@@ -1413,7 +1424,7 @@ class TestRpm(BaseArchiveTestCase):
     def test_extract_rpm_broken(self):
         test_file = self.get_test_loc('archive/rpm/broken.rpm')
         test_dir = self.get_temp_dir()
-        expected = Exception('No error returned')
+        expected = Exception('Unknown extraction error')
         self.assertRaisesInstance(expected, archive.extract_rpm,
                                   test_file, test_dir)
 
@@ -1541,7 +1552,7 @@ class TestRar(BaseArchiveTestCase):
     def test_extract_rar_with_trailing_data(self):
         test_file = self.get_test_loc('archive/rar/rar_trailing.rar')
         test_dir = self.get_temp_dir()
-        Exception('No error returned')
+        Exception('Unknown extraction error')
         archive.extract_rar(test_file, test_dir)
         result = os.path.join(test_dir, 'd', 'b', 'a.txt')
         assert os.path.exists(result)
@@ -1549,7 +1560,7 @@ class TestRar(BaseArchiveTestCase):
     def test_extract_rar_broken(self):
         test_file = self.get_test_loc('archive/rar/broken.rar')
         test_dir = self.get_temp_dir()
-        expected = Exception('No error returned')
+        expected = Exception('Unknown extraction error')
         self.assertRaisesInstance(expected, archive.extract_rar, test_file, test_dir)
 
     def test_extract_rar_with_relative_path(self):
@@ -1590,7 +1601,7 @@ class TestRar(BaseArchiveTestCase):
         test_file = unicode(test_file)
         test_dir = self.get_temp_dir()
         # raise an exception but still extracts some
-        expected = Exception('No error returned')
+        expected = Exception('Unknown extraction error')
         self.assertRaisesInstance(expected, archive.extract_rar,
                                   test_file, test_dir)
         result = os.path.join(test_dir, 'EdoProject_java/WebContent'
@@ -1618,19 +1629,19 @@ class TestSevenZip(BaseArchiveTestCase):
     def test_extract_7z_with_broken_archive_with7z(self):
         test_file = self.get_test_loc('archive/7z/corrupted7z.7z')
         test_dir = self.get_temp_dir()
-        msg = 'No error returned'
+        msg = 'Unknown extraction error'
         self.assertRaisesInstance(ExtractErrorFailedToExtract(msg), sevenzip.extract, test_file, test_dir)
 
     def test_extract_7z_with_broken_archive_does_not_fail_when_using_fallback(self):
         test_file = self.get_test_loc('archive/7z/corrupted7z.7z')
         test_dir = self.get_temp_dir()
-        msg = 'No error returned'
+        msg = 'Unknown extraction error'
         self.assertRaisesInstance(ExtractErrorFailedToExtract(msg), archive.extract_7z, test_file, test_dir)
 
     def test_extract_7z_with_non_existing_archive(self):
         test_file = 'archive/7z/I_DO_NOT_EXIST.zip'
         test_dir = self.get_temp_dir()
-        msg = 'No error returned'
+        msg = 'Unknown extraction error'
         self.assertExceptionContains(msg, sevenzip.extract, test_file, test_dir)
 
     def test_extract_7z_with_invalid_path_using_7z(self):
