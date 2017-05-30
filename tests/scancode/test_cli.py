@@ -287,7 +287,7 @@ def test_scan_works_with_multiple_processes():
 
 
 def test_scan_works_with_multiple_processes_and_timeouts():
-    # this contains test files with a lot of 100+ small licenses mentions that should
+    # this contains test files with a lot of copyrights that should
     # take more thant timeout to scan
     test_dir = test_env.get_test_loc('timeout', copy=True)
     # add some random bytes to the test files to ensure that the license results will
@@ -302,7 +302,7 @@ def test_scan_works_with_multiple_processes_and_timeouts():
 
     result = runner.invoke(
         cli.scancode,
-        [ '--copyright', '--processes', '2', '--timeout', '0.01', '--strip-root', '--format', 'json', test_dir, result_file],
+        [ '--copyright', '--processes', '2', '--timeout', '0.000001', '--strip-root', '--format', 'json', test_dir, result_file],
         catch_exceptions=True)
 
     assert result.exit_code == 1
@@ -446,6 +446,7 @@ def test_scan_logs_errors_messages():
     assert rc == 1
     assert 'illegal.pom.xml' in stderr
     assert 'sequence item 0: expected string, NoneType found' in stdout
+
 
 def test_scan_logs_errors_messages_with_diag():
     import scancode
