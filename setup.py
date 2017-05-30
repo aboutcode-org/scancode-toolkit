@@ -150,7 +150,7 @@ setup(
         'pdfminer >= 20140328',
 
         # typecode
-        'chardet >= 2.1.1, <3.0.0',
+        'chardet >= 3.0.0, <4.0.0',
         'binaryornot >= 0.4.0',
 
         # scancode and AboutCode

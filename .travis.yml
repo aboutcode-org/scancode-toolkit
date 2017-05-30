@@ -75,7 +75,6 @@ matrix:
 # TODO: ship pytest-cov and codecov with scancode-toolkit
 install:
   - ./configure
-  - ./bin/pip install pytest-cov codecov
 
 script:
   # If debugging, use a subset of tests to wait less:

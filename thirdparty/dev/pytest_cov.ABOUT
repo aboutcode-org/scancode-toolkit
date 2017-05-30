@@ -1,0 +1,10 @@
+about_resource: pytest_cov-2.5.1-py2.py3-none-any.whl
+version: 2.5.1
+download_url: https://pypi.python.org/packages/30/7d/7f6a78ae44a1248ee28cc777586c18b28a1df903470e5d34a6e25712b8aa/pytest_cov-2.5.1-py2.py3-none-any.whl
+
+name: pytest-cov
+home_url: https://github.com/pytest-dev/pytest-cov
+owner: Meme Dough and contributors
+dje_license: mit
+copyright: Copyright (c) 2010 Meme Dough
+license_text_file: pytest_cov.LICENSE

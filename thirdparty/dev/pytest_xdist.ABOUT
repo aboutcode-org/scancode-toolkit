@@ -1,6 +1,6 @@
-about_resource: pytest_xdist-1.15.0-py2.py3-none-any.whl
-version: 1.15
-download_url: https://pypi.python.org/packages/dc/b2/a59db3ef996b93c3ef35dbbc33557a71ef67a6839d94a52c88eeb1086002/pytest-xdist-1.15.0.tar.gz#md5=84fe5080fb0aa525b0c3ddd5e9b7eb56
+about_resource: pytest_xdist-1.16.0-py2.py3-none-any.whl
+version: 1.16
+download_url: "https://pypi.python.org/packages/0d/d0/58cacddb34f35dd3d447525061e431b00d842eef72d585cc1c9a97abec90/pytest-xdist-1.16.0.tar.gz
 
 name: pytest-xdist
 description: py.test xdist plugin for distributed testing and loop-on-failing modes

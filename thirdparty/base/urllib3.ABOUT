@@ -1,0 +1,14 @@
+about_resource: urllib3-1.21.1-py2.py3-none-any.whl
+version: 1.21.1
+download_url: "https://pypi.python.org/packages/24/53/f397db567de0aa0e81b211d81c13c41a779f14893e42189cf5bdb97611b2/urllib3-1.21.1-py2.py3-none-any.whl
+
+name: urllib3
+home_url: https://github.com/shazow/urllib3
+dje_license: mit
+license_text_file: urllib3.LICENSE
+
+owner: Andrey Petrov
+copyright: Copyright 2008-2016 Andrey Petrov and contributors
+
+vcs_tool: git
+vcs_repository: https://github.com/shazow/urllib3.git

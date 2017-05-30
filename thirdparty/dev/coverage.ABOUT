@@ -1,0 +1,25 @@
+about_resource: 
+    - coverage-4.4.1-cp27-cp27m-macosx_10_10_x86_64.whl
+    - coverage-4.4.1-cp27-cp27m-macosx_10_12_intel.whl
+    - coverage-4.4.1-cp27-cp27m-win_amd64.whl
+    - coverage-4.4.1-cp27-cp27m-win32.whl
+    - coverage-4.4.1-cp27-cp27mu-manylinux1_i686.whl
+    - coverage-4.4.1-cp27-cp27mu-manylinux1_x86_64.whl
+    - coverage-4.4.1.tar.gz
+
+download_url: 
+    - https://pypi.python.org/packages/36/db/690ee79312bb60f121c0da1c973856ddb751afe09cc10caec1452208eaf4/coverage-4.4.1.tar.gz#md5=4c4d997cb32be4703f1fde54e6cd1b1c
+    - https://pypi.python.org/packages/0c/1e/e6184bd25266554d1443393b36163680689e988266550f4560d16e814ba2/coverage-4.4.1-cp27-cp27mu-manylinux1_x86_64.whl
+    - https://pypi.python.org/packages/c1/d9/b5139059d7e9ae844afca10df5b729da1f982ef19f91a7d59e45c62a7a26/coverage-4.4.1-cp27-cp27mu-manylinux1_i686.whl#md5=24c87d60d3250dfd9a86e41485564a7d
+    - https://pypi.python.org/packages/2d/e1/8e9c43128d459a386e8340dbb5ffeb38c467b18abaf9687b041c726e5796/coverage-4.4.1-cp27-cp27m-macosx_10_10_x86_64.whl#md5=6bb85840b6cb43285ff85c801f156e3b
+    - https://pypi.python.org/packages/27/7d/a4c959bd6086f3d45cedbf2b7952f3dbbced42ad30e4079eeebb43e7061f/coverage-4.4.1-cp27-cp27m-macosx_10_12_intel.whl#md5=428602de590d0cb945be2f0ea089c686
+    - https://pypi.python.org/packages/71/1f/a6c61366e325756f7573c678696586199209e2bb013e946aa33cf66abe93/coverage-4.4.1-cp27-cp27m-win_amd64.whl#md5=dd3f4464ae70cf4881b548d28530721d
+    - https://pypi.python.org/packages/8d/3d/a76fda010c7a51273b772852187fcb5acb586f1bc1fcc980d3f82c751fd8/coverage-4.4.1-cp27-cp27m-win32.whl#md5=d221d8fe692e27f24d630ace89d6e6c6
+version: 4.4.1
+
+name: coverage
+home_url: https://coverage.readthedocs.io
+owner: Ned Batchelder and others
+dje_license: apache-2.0
+license_text_file: apache-2.0.LICENSE
+copyright: Copyright (c) Ned Batchelder and others
