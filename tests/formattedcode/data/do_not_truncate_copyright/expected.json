@@ -7,7 +7,8 @@
     "--license": true,
     "--license-score": 0,
     "--package": true,
-    "--strip-root": true
+    "--strip-root": true,
+    "--ignore": [],
   },
   "files_count": 8,
   "files": [
