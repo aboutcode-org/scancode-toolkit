@@ -1,0 +1,15 @@
+key: bsd-plus-patent
+short_name: BSD+Patent
+name: BSD+Patent
+
+category: Permissive
+owner: OSI
+homepage_url: https://opensource.org/licenses/BSDplusPatent
+text_urls:
+    - https://opensource.org/licenses/BSDplusPatent
+osi_url: https://opensource.org/licenses/BSDplusPatent
+
+notes: per the OSI, this license is designed to provide a) a simple
+ permissive license; b) that is compatible with the GNU General Public
+ License (GPL), version 2; and c) which also has an express patent grant
+ included.
