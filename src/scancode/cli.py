@@ -34,6 +34,7 @@ import codecs
 from collections import OrderedDict
 from functools import partial
 import os
+import datetime
 from os.path import expanduser
 from os.path import abspath
 import sys
@@ -534,7 +535,14 @@ def scan(input_path,
 
     files_scanned_per_second = round(float(files_count) / scanning_time , 2)
     scan_summary['files_scanned_per_second'] = files_scanned_per_second
-
+    
+    if not scanning_errors:
+        #Log file containing timestamp & Project's name.
+        log = open (input_path + "_log.txt", "a+")
+        day = datetime.datetime.today().replace(microsecond=0)
+        msg = ("ScanCode processed this on: {} \n").format(day)
+        log.write (msg)
+    
     if not quiet:
         # Display stats
         ##########################
