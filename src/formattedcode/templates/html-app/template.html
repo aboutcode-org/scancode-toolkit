@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 {#
 <!--
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -29,6 +29,9 @@
 -->
 #}
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>ScanCode scan results for: {{ scanned_path }}</title>
     <link href="{{ assets_dir }}/style.min.css" rel="stylesheet"/>
     <link href="{{ assets_dir }}/bootstrap.min.css" rel="stylesheet"/>
@@ -188,7 +191,7 @@
           return $.map(data, function(item){
               var pattern = '^' + nodeData.selected[0];
               pattern += nodeData.node.children.length > 0 ? '/' : '';
-              if (item.location.match(pattern)){
+              if (item.path.match(pattern)){
                   return item;
               } else {
                   return;
