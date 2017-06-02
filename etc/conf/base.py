@@ -49,7 +49,7 @@ def build_license_cache():
     """
     from licensedcode import cache
     print('* Building license index...')
-    cache.get_or_build_index_from_cache(bypass_validity_check=False)
+    cache.reindex()
 
 
 build_license_cache()

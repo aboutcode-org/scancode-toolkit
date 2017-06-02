@@ -194,6 +194,16 @@ def print_version(ctx, param, value):
     ctx.exit()
 
 
+def reindex_licenses(ctx, param, value):
+    if not value or ctx.resilient_parsing:
+        return
+    from licensedcode import cache
+    click.echo('Checking and rebuilding the license index...')
+    cache.reindex()
+    click.echo('Done.')
+    ctx.exit()
+
+
 epilog_text = '''\b\bExamples (use --examples for more):
 
 \b
@@ -296,6 +306,7 @@ def validate_exclusive(ctx, exclusive_options):
 
 @click.option('--diag', is_flag=True, default=False, help='Include additional diagnostic information such as error messages or result details.')
 @click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=float, show_default=True, help='Stop scanning a file if scanning takes longer than a timeout in seconds.')
+@click.option('--reindex-licenses', is_flag=True, default=False, is_eager=True, callback=reindex_licenses, help='Force a check and possible reindexing of the cached license index.')
 
 def scancode(ctx,
              input, output_file,

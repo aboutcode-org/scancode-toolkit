@@ -77,11 +77,11 @@ LICENSE_INDEX_LOCK_TIMEOUT = 60 * 3
 DEV_MODE = os.environ.has_key('SCANCODE_DEV_MODE')
 
 
-def get_or_build_index_from_cache(bypass_validity_check=True, dev_mode=DEV_MODE):
+def get_or_build_index_from_cache(bypass_validity_check=True, return_index=True, dev_mode=DEV_MODE):
     """
     Return a LicenseIndex loaded from cache. If the index is stale or
-    does not exist, build a new index and caches it based on the
-    provided arguments.
+    does not exist, build a new index and caches it.
+    If return_index is False, None is returned instead.
 
     If `bypass_validity_check` is True, the cache is NOT checked for
     validity. Only its presence is checked and it is built only if it
@@ -110,7 +110,7 @@ def get_or_build_index_from_cache(bypass_validity_check=True, dev_mode=DEV_MODE)
                 if current_checksum == existing_checksum:
                     # The cache is consistent with the latest code and data:
                     # we load index from cache
-                    return load_cache()
+                    return load_cache() if return_index else None
 
             # Here, the cache is not consistent with the latest code and data:
             # It is either stale or non-existing: we need to cleanup/regen
@@ -123,7 +123,7 @@ def get_or_build_index_from_cache(bypass_validity_check=True, dev_mode=DEV_MODE)
             with open(tree_checksum_file, 'wb') as ctcs:
                 ctcs.write(current_checksum or tree_checksum())
 
-            return idx
+            return idx if return_index else None
 
     except yg.lockfile.FileLockTimeout:
         # TODO: unable to lock in a nicer way
@@ -139,4 +139,11 @@ def load_cache():
         # Note: weird but read() + loads() is much (twice++???) faster than load()
         idx = LicenseIndex.loads(ifc.read())
     return idx
+
+
+def reindex():
+    """
+    Reindex if needed the license index. 
+    """
+    get_or_build_index_from_cache(bypass_validity_check=False, return_index=False)
 
