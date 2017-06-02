@@ -46,7 +46,6 @@ from scancode.cli_test_utils import _load_json_result
 from scancode.cli_test_utils import check_scan
 
 from scancode import cli
-from unittest.case import expectedFailure
 
 
 test_env = FileDrivenTesting()
@@ -59,18 +58,21 @@ actual command outputs as if using a real command line call.
 """
 def test_package_option_detects_packages(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    monkeypatch.setattr(click , 'get_terminal_size', lambda : (80, 43,))
     test_dir = test_env.get_test_loc('package', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
     result = runner.invoke(cli.scancode, ['--package', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    assert 'package.json' in result.output
     assert os.path.exists(result_file)
-    assert len(open(result_file).read()) > 10
+    result = open(result_file).read()
+    assert 'package.json' in result
 
 
-def test_verbose_option_with_packages():
+def test_verbose_option_with_packages(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    monkeypatch.setattr(click , 'get_terminal_size', lambda : (80, 43,))
     test_dir = test_env.get_test_loc('package', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
@@ -79,7 +81,8 @@ def test_verbose_option_with_packages():
     assert 'Scanning done' in result.output
     assert 'package.json' in result.output
     assert os.path.exists(result_file)
-    assert len(open(result_file).read()) > 10
+    result = open(result_file).read()
+    assert 'package.json' in result
 
 
 def test_copyright_option_detects_copyrights():
@@ -93,15 +96,18 @@ def test_copyright_option_detects_copyrights():
     assert len(open(result_file).read()) > 10
 
 
-def test_verbose_option_with_copyrights():
+def test_verbose_option_with_copyrights(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    monkeypatch.setattr(click , 'get_terminal_size', lambda : (80, 43,))
+
     test_dir = test_env.get_test_loc('copyright', copy=True)
     runner = CliRunner()
     result_file = test_env.get_temp_file('json')
     result = runner.invoke(cli.scancode, ['--copyright', '--verbose', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    assert 'copyright_acme_c-c.c' in result.output
     assert os.path.exists(result_file)
+    assert 'copyright_acme_c-c.c' in result.output
     assert len(open(result_file).read()) > 10
 
 
@@ -505,21 +511,13 @@ def test_scan_progress_display_is_not_damaged_with_long_file_names_orig(monkeypa
     result_file = test_env.get_temp_file('json')
     result = runner.invoke(cli.scancode, ['--copyright', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
-    expected1 = '[--------------------] 1 Scanned: abcdefghijklmnopqr...234567890123456789.c'
-    expected2 = '[--------------------] 2 Scanned: 0123456789012345678901234567890123456789.c'
+    expected1 = 'Scanned: abcdefghijklmnopqr...234567890123456789.c'
+    expected2 = 'Scanned: 0123456789012345678901234567890123456789.c'
     assert expected1 in result.output
     assert expected2 in result.output
 
 
 class TestFixedWidthFilename(TestCase):
-
-    def test_fixed_width_file_name_with_click_get_terminal_size(self):
-        terminal_width, _ = click.get_terminal_size()
-        max_length = terminal_width - 60
-        test = cli.fixed_width_file_name('0123456789012345678901234.c', 25)
-        assert len(test) <= max_length
-        expected = '0123456789...5678901234.c'
-        assert expected == test
 
     def test_fixed_width_file_name_with_file_name_larger_than_max_length_is_shortened(self):
         test = cli.fixed_width_file_name('0123456789012345678901234.c', 25)

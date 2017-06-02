@@ -56,7 +56,6 @@ def test_json_pretty_print_option(monkeypatch):
     result = runner.invoke(cli.scancode, ['--copyright', '--format', 'json-pp', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    assert 'copyright_acme_c-c.c' in result.output
     assert os.path.exists(result_file)
     assert len(open(result_file).read()) > 10
     assert len(open(result_file).readlines()) > 1
@@ -70,7 +69,6 @@ def test_json_output_option_is_minified(monkeypatch):
     result = runner.invoke(cli.scancode, ['--copyright', '--format', 'json', test_dir, result_file], catch_exceptions=True)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    assert 'copyright_acme_c-c.c' in result.output
     assert os.path.exists(result_file)
     assert len(open(result_file).read()) > 10
     assert len(open(result_file).readlines()) == 1
