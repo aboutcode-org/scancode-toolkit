@@ -105,17 +105,6 @@ def test_verbose_option_with_copyrights():
     assert len(open(result_file).read()) > 10
 
 
-def test_scan_progress_display_is_not_damaged_with_long_file_names(monkeypatch):
-    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-    test_dir = test_env.get_test_loc('long_file_name')
-    runner = CliRunner()
-    result_file = test_env.get_temp_file('json')
-    result = runner.invoke(cli.scancode, ['--copyright', test_dir, result_file], catch_exceptions=True)
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-    assert '0123456789...0123456789.c' in result.output
-
-
 def test_license_option_detects_licenses():
     test_dir = test_env.get_test_loc('license', copy=True)
     runner = CliRunner()
@@ -508,18 +497,32 @@ def test_scan_logs_errors_messages_with_diag():
     assert 'TypeError: sequence item 0: expected string, NoneType found' in stdout
 
 
+def test_scan_progress_display_is_not_damaged_with_long_file_names_orig(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    monkeypatch.setattr(click , 'get_terminal_size', lambda : (80, 43,))
+    test_dir = test_env.get_test_loc('long_file_name')
+    runner = CliRunner()
+    result_file = test_env.get_temp_file('json')
+    result = runner.invoke(cli.scancode, ['--copyright', test_dir, result_file], catch_exceptions=True)
+    assert result.exit_code == 0
+    expected1 = '[--------------------] 1 Scanned: abcdefghijklmnopqr...234567890123456789.c'
+    expected2 = '[--------------------] 2 Scanned: 0123456789012345678901234567890123456789.c'
+    assert expected1 in result.output
+    assert expected2 in result.output
+
+
 class TestFixedWidthFilename(TestCase):
 
     def test_fixed_width_file_name_with_click_get_terminal_size(self):
-        terminal_width = click.get_terminal_size()[0]
+        terminal_width, _ = click.get_terminal_size()
         max_length = terminal_width - 60
-        test = cli.fixed_width_file_name('0123456789012345678901234.c')
+        test = cli.fixed_width_file_name('0123456789012345678901234.c', 25)
         assert len(test) <= max_length
-        expected = ''
+        expected = '0123456789...5678901234.c'
         assert expected == test
 
     def test_fixed_width_file_name_with_file_name_larger_than_max_length_is_shortened(self):
-        test = cli.fixed_width_file_name('0123456789012345678901234.c')
+        test = cli.fixed_width_file_name('0123456789012345678901234.c', 25)
         expected = '0123456789...5678901234.c'
         assert expected == test
 
@@ -529,46 +532,45 @@ class TestFixedWidthFilename(TestCase):
         assert file_name == test
 
     def test_fixed_width_file_name_with_file_name_at_max_length_is_not_shortened(self):
-        test = cli.fixed_width_file_name('01234567890123456789012.c')
+        test = cli.fixed_width_file_name('01234567890123456789012.c', 25)
         expected = '01234567890123456789012.c'
         assert expected == test
 
     def test_fixed_width_file_name_with_file_name_smaller_than_max_length_not_shortened(self):
-        test = cli.fixed_width_file_name('0123456789012345678901.c')
+        test = cli.fixed_width_file_name('0123456789012345678901.c', 25)
         expected = '0123456789012345678901.c'
         assert expected == test
 
     def test_fixed_width_file_name_with_none_filename_return_empty_string(self):
-        test = cli.fixed_width_file_name(None)
+        test = cli.fixed_width_file_name(None, 25)
         expected = ''
         assert expected == test
 
     def test_fixed_width_file_name_without_extension(self):
-        test = cli.fixed_width_file_name('012345678901234567890123456')
+        test = cli.fixed_width_file_name('012345678901234567890123456', 25)
         expected = '01234567890...67890123456'
         assert expected == test
 
     def test_fixed_width_file_name_with_posix_path_without_shortening(self):
-        test = cli.fixed_width_file_name('C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/drupal.js')
+        test = cli.fixed_width_file_name('C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/drupal.js', 25)
         expected = 'drupal.js'
         assert expected == test
 
     def test_fixed_width_file_name_with_posix_path_with_shortening(self):
-        test = cli.fixed_width_file_name('C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/012345678901234567890123.c')
+        test = cli.fixed_width_file_name('C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/012345678901234567890123.c', 25)
         expected = '0123456789...4567890123.c'
         assert expected == test
 
     def test_fixed_width_file_name_with_win_path_without_shortening(self):
-        test = cli.fixed_width_file_name('C\\:Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\drupal.js')
+        test = cli.fixed_width_file_name('C\\:Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\drupal.js', 25)
         expected = 'drupal.js'
         assert expected == test
 
     def test_fixed_width_file_name_with_win_path_with_shortening(self):
-        test = cli.fixed_width_file_name('C\\:Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\012345678901234567890123.c')
+        test = cli.fixed_width_file_name('C\\:Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\012345678901234567890123.c', 25)
         expected = '0123456789...4567890123.c'
         assert expected == test
 
-    @expectedFailure
     def test_fixed_width_file_name_with_very_small_file_name_and_long_extension(self):
         test = cli.fixed_width_file_name('abc.abcdef', 5)
         # FIXME: what is expected is TBD

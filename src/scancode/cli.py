@@ -43,7 +43,6 @@ from types import GeneratorType
 
 import click
 click.disable_unicode_literals_warning = True
-
 from click.termui import style
 
 from commoncode import filetype
@@ -55,22 +54,26 @@ from scancode import __version__ as version
 from scancode.api import get_copyrights
 from scancode.api import get_emails
 from scancode.api import get_file_infos
+from scancode.api import _empty_file_infos
 from scancode.api import get_licenses
 from scancode.api import get_package_infos
 from scancode.api import get_urls
-from scancode.api import _empty_file_infos
 
 from scancode.cache import ScanFileCache
 from scancode.cache import get_scans_cache_class
 
-from formattedcode.writers import write_formatted_output
 from formattedcode.format import as_template
+from formattedcode.writers import write_formatted_output
 
-from scancode.interrupt import interruptible
 from scancode.interrupt import DEFAULT_TIMEOUT
-
-from scancode import utils
+from scancode.interrupt import interruptible
 from scancode.interrupt import TimeoutError
+
+from scancode.utils import BaseCommand
+from scancode.utils import compute_fn_max_len
+from scancode.utils import fixed_width_file_name
+from scancode.utils import get_relative_path
+from scancode.utils import progressmanager
 
 echo_stderr = partial(click.secho, err=True)
 
@@ -211,7 +214,7 @@ number of files processed. Use --verbose to display file-by-file progress.
 '''
 
 
-class ScanCommand(utils.BaseCommand):
+class ScanCommand(BaseCommand):
     short_usage_help = '''
 Try 'scancode --help' for help on options and arguments.'''
 
@@ -471,7 +474,9 @@ def scan(input_path,
                          diag=diag, timeout=timeout)
 
 
-        max_file_name_len = compute_file_name_max_len_from_current_terminal_width()
+        max_file_name_len = compute_fn_max_len()
+        # do not display a file name in progress bar if there is less than 5 chars available.
+        display_fn = bool(max_file_name_len > 10)
         try:
             # Using chunksize is documented as much more efficient in the Python doc.
             # Yet "1" still provides a better and more progressive feedback.
@@ -484,17 +489,20 @@ def scan(input_path,
 
             def scan_event(item):
                 """Progress event displayed each time a file is scanned"""
-                if quiet or not item:
+                if quiet or not item or not display_fn:
                     return ''
                 _scan_success, _scanned_path = item
-                _progress_line = verbose and _scanned_path or fixed_width_file_name(_scanned_path, max_file_name_len)
+                if verbose:
+                    _progress_line = _scanned_path
+                else:
+                    _progress_line = fixed_width_file_name(_scanned_path, max_file_name_len)
                 return style('Scanned: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
 
             scanning_errors = []
             files_count = 0
-            with utils.progressmanager(scanned_files, item_show_func=scan_event,
-                                       show_pos=True, verbose=verbose, quiet=quiet,
-                                       file=sys.stderr) as scanned:
+            with progressmanager(
+                scanned_files, item_show_func=scan_event, show_pos=True,
+                verbose=verbose, quiet=quiet, file=sys.stderr) as scanned:
                 while True:
                     try:
                         result = scanned.next()
@@ -561,62 +569,6 @@ def scan(input_path,
     cached_scan = scans_cache_class()
     root_dir = _get_root_dir(input_path, strip_root, full_root)
     return files_count, cached_scan.iterate(scans, root_dir), success
-
-
-def fixed_width_file_name(path, max_length=25):
-    """
-    Return a fixed width file name of at most `max_length` characters
-    extracted from the `path` string and usable for fixed width display.
-    If the file_name is longer than `max_length`, it is truncated in the
-    middle with using three dots "..." as an ellipsis and the extension
-    is kept.
-
-    For example:
-    >>> short = fixed_width_file_name('0123456789012345678901234.c')
-    >>> assert '0123456789...5678901234.c' == short
-    """
-    if not path:
-        return ''
-
-    filename = fileutils.file_name(path)
-    if len(filename) <= max_length:
-        return filename
-    base_name, extension = fileutils.splitext(filename)
-    number_of_dots = 3
-    remaining_length = max_length - len(extension) - number_of_dots
-    prefix_and_suffix_length = abs(remaining_length // 2)
-    prefix = base_name[:prefix_and_suffix_length]
-    ellipsis = number_of_dots * '.'
-    suffix = base_name[-prefix_and_suffix_length:]
-    return "{prefix}{ellipsis}{suffix}{extension}".format(**locals())
-
-
-def compute_file_name_max_len_from_current_terminal_width(used_width=60):
-    """
-    Return the max length of a path given the current terminal width.
-
-    A progress bar is composed of these elements:
-      [-----------------------------------#]  1667  Scanned: tu-berlin.yml
-    - 2  : two spaces
-    - 40 : the bar proper which is 38 characters
-    - 42 : two spaces
-    - ( ): the number of files, with a varying length
-    - 44 : two spaces
-    - 52 : the word Scanned: 8 chars
-    - 53 : one space
-    - ( ):the file name proper
-    The space usage is therefore:
-    Base fixed (53) + variable files count + truncated file name up to term width
-    We support without bar spillage up to 9 999 999 files, e.g. 7 characters.
-    Therefore the base width already used is 60.
-    """
-    term_width, _height = click.get_terminal_size()
-    max_filename_length = term_width - used_width
-    if term_width < 70:
-        # if we have a small term width that is less than 70 column, we
-        # may spill over and damage the progress bar...
-        max_filename_length = 10
-    return max_filename_length
 
 
 def _get_root_dir(input_path, strip_root=False, full_root=False):
@@ -717,7 +669,7 @@ def resource_paths(base_path, user_ignores):
     for abs_path in resources:
         posix_path = fileutils.as_posixpath(abs_path)
         # fix paths: keep the path as relative to the original base_path
-        rel_path = utils.get_relative_path(posix_path, len_base_path, base_is_dir)
+        rel_path = get_relative_path(posix_path, len_base_path, base_is_dir)
         yield abs_path, rel_path
 
 
