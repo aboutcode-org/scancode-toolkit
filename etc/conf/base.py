@@ -30,8 +30,8 @@ else:
 
 supported_combos = {
     'linux': ['32', '64'],
-    'win': ['32', ],
-    'mac': ['64', ],
+    'win': ['32',],
+    'mac': ['64',],
 }
 
 arches = supported_combos[os]
@@ -48,6 +48,7 @@ def build_license_cache():
     Force a rebuild of the license cache on configure.
     """
     from licensedcode import cache
+    print('* Building license index...')
     cache.get_or_build_index_from_cache(bypass_validity_check=False)
 
 
