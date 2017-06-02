@@ -141,6 +141,9 @@ setup(
         'bz2file >= 0.98',
         'text-unidecode >= 1.0, < 2.0',
 
+        # extractcode and scancode
+        'pluggy >= 0.4.0',
+
         # licensedcode
         'PyYAML >= 3.0, <4.0',
         'bitarray >= 0.8.1, < 1.0.0',
