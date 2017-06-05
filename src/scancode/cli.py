@@ -391,8 +391,6 @@ def scancode(ctx,
         files_count, results, success = scan(
             input_path=input,
             scanners=scanners,
-            license_score=license_score,
-            license_text=license_text,
             verbose=verbose,
             quiet=quiet,
             processes=processes,
@@ -419,7 +417,6 @@ def scancode(ctx,
 
 def scan(input_path,
          scanners,
-         license_score=0, license_text=False,
          verbose=False, quiet=False,
          processes=1, timeout=DEFAULT_TIMEOUT,
          diag=False,
@@ -439,11 +436,10 @@ def scan(input_path,
     scan_summary = OrderedDict()
     scan_summary['scanned_path'] = input_path
     scan_summary['processes'] = processes
-    get_licenses_with_score = partial(get_licenses, min_score=license_score, include_text=license_text, diag=diag)
 
     # Display scan start details
     ############################
-    # FIXME: this is does not make sense to use tuple and positional values
+    # FIXME: it does not make sense to use tuple and positional values
     scans = [k for k, v in scanners.items() if v[0]]
     _scans = ', '.join(scans)
     if not quiet:
@@ -452,10 +448,10 @@ def scan(input_path,
     scan_summary['scans'] = scans[:]
     scan_start = time()
     indexing_time = 0
-    # FIXME: this is does not make sense to use tuple and positional values
+    # FIXME: It does not make sense to use tuple and positional values
     with_licenses, _ = scanners.get('licenses', (False, ''))
     if with_licenses:
-        # build index outside of the main loop
+        # build index outside of the main loop for speed
         # this also ensures that forked processes will get the index on POSIX naturally
         if not quiet:
             echo_stderr('Building license detection index...', fg='green', nl=False)
