@@ -29,5 +29,6 @@ include extractcode
 include extractcode.bat
 
 include .travis.yml appveyor.yml
+exclude SCANCODE_DEV_MODE
 
 global-exclude *.py[co] __pycache__ *.*~
