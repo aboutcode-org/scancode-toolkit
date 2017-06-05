@@ -1,6 +1,6 @@
-about_resource: yg.tempora-1.6.1-py2.py3-none-any.whl
-version: 1.6.1
-download_url: https://pypi.python.org/packages/b3/47/0716ae00102fe4724c3d697748c193eb861e63558b264878910a466ecf41/tempora-1.6.1-py2.py3-none-any.whl#md5=4e419879b29583a6a8948344c20b7beb
+about_resource: "https://pypi.python.org/packages/49/47/cf763cf33f914a2a48bc2e0d16afc314a2eeb94165131ce1bdde298d97f8/tempora-1.7-py2.py3-none-any.whl
+version: 1.7
+download_url: "https://pypi.python.org/packages/49/47/cf763cf33f914a2a48bc2e0d16afc314a2eeb94165131ce1bdde298d97f8/"https://pypi.python.org/packages/49/47/cf763cf33f914a2a48bc2e0d16afc314a2eeb94165131ce1bdde298d97f8/tempora-1.7-py2.py3-none-any.whl
 
 name: tempora
 home_url: https://github.com/jaraco/tempora/
