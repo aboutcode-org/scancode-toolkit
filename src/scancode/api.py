@@ -117,12 +117,12 @@ def get_licenses(location, min_score=0, include_text=False, diag=False):
     If `diag` is True, additional match details are returned with the matched_rule
     key of the returned mapping.
     """
-    from licensedcode.index import get_index
+    from licensedcode.cache import get_index
+    from licensedcode.cache import get_licenses_db
     from licensedcode.match import get_full_matched_text
-    from licensedcode.models import get_licenses as licenses_details
 
     idx = get_index()
-    licenses = licenses_details()
+    licenses = get_licenses_db()
 
     for match in idx.match(location=location, min_score=min_score):
         if include_text:

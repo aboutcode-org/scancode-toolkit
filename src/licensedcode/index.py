@@ -42,6 +42,8 @@ from commoncode.dict_utils import sparsify
 
 from licensedcode import MAX_DIST
 
+from licensedcode.cache import get_index
+
 from licensedcode.frequent_tokens import global_tokens_by_ranks
 
 from licensedcode.match import get_texts
@@ -118,22 +120,6 @@ def get_license_matches(location=None, query_string=None, min_score=0):
     Spurrious matched are always filtered.
     """
     return get_index().match(location=location, query_string=query_string, min_score=min_score)
-
-
-# global in-memory cache of the license index
-_LICENSES_INDEX = None
-
-
-def get_index():
-    """
-    Return and eventually cache an index built from an iterable of rules.
-    Build the index from the built-in rules dataset.
-    """
-    global _LICENSES_INDEX
-    if not _LICENSES_INDEX:
-        from licensedcode.cache import get_or_build_index_from_cache
-        _LICENSES_INDEX = get_or_build_index_from_cache()
-    return _LICENSES_INDEX
 
 
 # Feature switch to enable or not ngram fragments detection

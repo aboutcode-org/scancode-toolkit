@@ -459,8 +459,8 @@ def scan(input_path,
         # this also ensures that forked processes will get the index on POSIX naturally
         if not quiet:
             echo_stderr('Building license detection index...', fg='green', nl=False)
-        from licensedcode.index import get_index
-        _idx = get_index()
+        from licensedcode.cache import get_index
+        get_index(False)
         indexing_time = time() - scan_start
         if not quiet:
             echo_stderr('Done.', fg='green', nl=True)

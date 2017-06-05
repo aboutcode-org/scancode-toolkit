@@ -32,6 +32,7 @@ import os
 
 from commoncode.testcase import FileBasedTesting
 
+from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
 
@@ -74,7 +75,7 @@ class TestLicense(FileBasedTesting):
         check_json(expected, results)
 
     def test_validate_licenses(self):
-        errors, warnings, infos = models.License.validate(models.get_licenses())
+        errors, warnings, infos = models.License.validate(cache.get_licenses_db())
         assert {} == errors
         assert {} == warnings
         assert infos
