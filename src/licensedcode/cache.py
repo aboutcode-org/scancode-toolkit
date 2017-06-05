@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -26,6 +26,7 @@ from __future__ import absolute_import, print_function
 
 from functools import partial
 from hashlib import md5
+import os
 from os.path import exists
 from os.path import getmtime
 from os.path import getsize
@@ -36,6 +37,7 @@ import yg.lockfile  # @UnresolvedImport
 from commoncode.fileutils import file_iter
 from commoncode import ignore
 
+from licensedcode import root_dir
 from licensedcode import src_dir
 from licensedcode import license_index_cache_dir
 
@@ -51,64 +53,155 @@ tree_checksum_file = join(license_index_cache_dir, 'tree_checksums')
 index_cache_file = join(license_index_cache_dir, 'index_cache')
 
 
-_ignored_from_hash = partial(ignore.is_ignored, ignores={'*.pyc': 'pyc files'}, unignores={})
+_ignored_from_hash = partial(
+    ignore.is_ignored,
+    ignores={'*.pyc': 'pyc files', '*~': 'temp gedit files', '*.swp': 'vi swap files'},
+    unignores={}
+)
 
 
-def tree_checksum(base_dir=src_dir, ignored=_ignored_from_hash):
+def tree_checksum(tree_base_dir=src_dir, _ignored=_ignored_from_hash):
     """
-    Return a checksum computed from a file tree using the file paths, size and
-    last modified time stamps.
-
-    The purpose is to detect is there has been any modification to source code,
-    compiled code or licenses or rule files and use this as a proxy to verify the
+    Return a checksum computed from a file tree using the file paths,
+    size and last modified time stamps.
+    The purpose is to detect is there has been any modification to
+    source code or data files and use this as a proxy to verify the
     cache consistency.
+
+    NOTE: this is not 100% fool proof but good enough in practice.
     """
-    hashable = [''.join([loc, str(getmtime(loc)), str(getsize(loc))])
-                for loc in file_iter(base_dir, ignored=_ignored_from_hash)]
-    return md5(''.join(hashable)).hexdigest()
+    hashable = (pth + str(getmtime(pth)) + str(getsize(pth))
+                for pth in file_iter(tree_base_dir, ignored=_ignored))
+    return md5(''.join(sorted(hashable))).hexdigest()
 
 
 LICENSE_INDEX_LOCK_TIMEOUT = 60 * 3
 
 
-def get_or_build_index_from_cache(force_clear=False):
+# If this file exists at the root, the cache is always checked for consistency
+DEV_MODE = os.path.exists(os.path.join(root_dir, 'SCANCODE_DEV_MODE'))
+
+
+def get_or_build_index_through_cache(
+        check_consistency=DEV_MODE,
+        return_index=True,
+        # used for testing only
+        _tree_base_dir=src_dir,
+        _tree_checksum_file=tree_checksum_file,
+        _index_lock_file=index_lock_file,
+        _index_cache_file=index_cache_file,
+        _licenses_data_dir=None,
+        _rules_data_dir=None,
+        _timeout=LICENSE_INDEX_LOCK_TIMEOUT,
+        ):
     """
-    Return a LicenseIndex loaded from cache. If the index is stale or does not exist,
-    build a new index and caches it. Clear or purge the LicenseMatch cache as needed.
+    Check and build or rebuild the LicenseIndex cache.
+    If the cache does not exist, a new index is built an cached.
+    Return the LicenseIndex if return_index is True.
+
+    If `check_consistency` is True, the cache is checked for consistency
+    and rebuilt if inconsistent or stale.
+
+    If `check_consistency` is False, the cache is NOT checked for consistency
+    If the cache files exist but stale, the cache WILL NOT be rebuilt
     """
     from licensedcode.index import LicenseIndex
     from licensedcode.models import get_rules
+    from licensedcode.models import licenses_data_dir
+    from licensedcode.models import rules_data_dir
+    _licenses_data_dir = _licenses_data_dir or licenses_data_dir
+    _rules_data_dir = _rules_data_dir or rules_data_dir
+
+    has_cache = exists(_index_cache_file)
+    has_tree_checksum =  exists(_tree_checksum_file)
+
+    # bypass check if no consistency check is needed
+    if has_cache and has_tree_checksum and not check_consistency:
+        return return_index and _load_index(_index_cache_file)
+
+    # here, we have no cache or we want a validity check: lock, check
+    # and build or rebuild as needed
     try:
         # acquire lock and wait until timeout to get a lock or die
-        with yg.lockfile.FileLock(index_lock_file, timeout=LICENSE_INDEX_LOCK_TIMEOUT):
+        with yg.lockfile.FileLock(_index_lock_file, timeout=_timeout):
             current_checksum = None
-            # if we have a saved cached index
-            if exists(tree_checksum_file) and exists(index_cache_file):
+            # is the current cache consistent or stale?
+            if has_cache and has_tree_checksum:
+                # if we have a saved cached index
                 # load saved tree_checksum and compare with current tree_checksum
-                with open(tree_checksum_file, 'rb') as etcs:
+                with open(_tree_checksum_file, 'rb') as etcs:
                     existing_checksum = etcs.read()
-                current_checksum = tree_checksum()
+                current_checksum = tree_checksum(tree_base_dir=_tree_base_dir)
                 if current_checksum == existing_checksum:
-                    # The cache is consistent with the latest code and data:
-                    # we load index from cache
-                    with open(index_cache_file, 'rb') as ifc:
-                        # Note: loads() is much (twice++???) faster than load()
-                        idx = LicenseIndex.loads(ifc.read())
-                    return idx
+                    # The cache is consistent with the latest code and data
+                    # load and return
+                    return return_index and _load_index(_index_cache_file)
 
-            # Here, the cache is not consistent with the latest code and data:
-            # It is either stale or non-existing: we need to cleanup/regen
-            # regen the index
-            idx = LicenseIndex(get_rules())
-            with open(index_cache_file, 'wb') as ifc:
+            # Here, the cache is not consistent with the latest code and
+            # data: It is either stale or non-existing: we need to
+            # rebuild the index and cache it
+            rules = get_rules(
+                licenses_data_dir=_licenses_data_dir,
+                rules_data_dir=_rules_data_dir)
+            idx = LicenseIndex(rules)
+            with open(_index_cache_file, 'wb') as ifc:
                 ifc.write(idx.dumps())
 
             # save the new checksums tree
-            with open(tree_checksum_file, 'wb') as ctcs:
-                ctcs.write(current_checksum or tree_checksum())
+            with open(_tree_checksum_file, 'wb') as ctcs:
+                ctcs.write(current_checksum or tree_checksum(tree_base_dir=_tree_base_dir))
 
-            return idx
+            return return_index and idx
 
     except yg.lockfile.FileLockTimeout:
-        # TODO: unable to lock in a nicer way
+        # TODO: handle unable to lock in a nicer way
         raise
+
+
+def _load_index(_index_cache_file=index_cache_file):
+    """
+    Return a LicenseIndex loaded from cache.
+    """
+    from licensedcode.index import LicenseIndex
+
+    with open(_index_cache_file, 'rb') as ifc:
+        # Note: weird but read() + loads() is much (twice++???) faster than load()
+        idx = LicenseIndex.loads(ifc.read())
+    return idx
+
+
+"""Check the license index and reindex if needed."""
+reindex = partial(get_or_build_index_through_cache, check_consistency=True, return_index=False)
+
+
+# global in-memory license index instance
+_LICENSES_INDEX = None
+
+
+def get_index(_return_index=True):
+    """
+    Return and eventually cache an index built from an iterable of rules.
+    Build the index from the built-in rules dataset.
+    """
+    global _LICENSES_INDEX
+    if not _LICENSES_INDEX:
+        _LICENSES_INDEX = get_or_build_index_through_cache()
+    return _return_index and _LICENSES_INDEX
+
+
+# global cache of licenses as mapping of lic key -> lic object
+_LICENSES = {}
+
+
+def get_licenses_db(licenses_data_dir=None):
+    """
+    Return a mapping of license key -> license object.
+    """
+    global _LICENSES
+    if not _LICENSES :
+        from licensedcode.models import load_licenses
+        if not licenses_data_dir:
+            from licensedcode.models import licenses_data_dir as ldd
+            licenses_data_dir = ldd
+        _LICENSES = load_licenses(licenses_data_dir)
+    return _LICENSES

@@ -1,3 +1,7 @@
+# ScanCode special files
+/SCANCODE_DEV_MODE
+
+# Python compiled files
 *.py[cod]
 
 # virtualenv and other misc bits
@@ -16,6 +20,10 @@
 /Include
 /local
 */local/*
+/local/
+/share/
+/tcl/
+/.eggs/
 
 # Installer logs
 pip-log.txt
@@ -39,6 +47,7 @@ org.eclipse.core.resources.prefs
 # Sphinx
 docs/_build
 
+# Various junk and temp files
 .DS_Store
 *~
 .*.sw[po]
@@ -55,7 +64,3 @@ docs/_build
 !/tests/typecode/data/contenttype/compiled/win/*
 !/tests/typecode/data/contenttype/package/*
 
-/local/
-/share/
-/tcl/
-/.eggs/

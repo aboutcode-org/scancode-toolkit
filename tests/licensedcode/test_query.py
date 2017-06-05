@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -30,11 +30,11 @@ import os
 
 from commoncode.testcase import FileBasedTesting
 
+from licensedcode import cache
 from licensedcode import index
-from licensedcode.models import Rule
-
-from licensedcode.query import Query
 from licensedcode import models
+from licensedcode.models import Rule
+from licensedcode.query import Query
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -553,13 +553,13 @@ class TestQueryWithFullIndex(FileBasedTesting):
 
     def test_query_from_binary_lkms_1(self):
         location = self.get_test_loc('query/ath_pci.ko')
-        idx = index.get_index()
+        idx = cache.get_index()
         result = Query(location, idx=idx)
         assert len(result.query_runs) < 15
 
     def test_query_from_binary_lkms_2(self):
         location = self.get_test_loc('query/eeepc_acpi.ko')
-        idx = index.get_index()
+        idx = cache.get_index()
         result = Query(location, idx=idx)
         assert len(result.query_runs) < 500
         qrs = result.query_runs[5:10]
@@ -568,7 +568,7 @@ class TestQueryWithFullIndex(FileBasedTesting):
 
     def test_query_from_binary_lkms_3(self):
         location = self.get_test_loc('query/wlan_xauth.ko')
-        idx = index.get_index()
+        idx = cache.get_index()
         result = Query(location, idx=idx)
         assert len(result.query_runs) < 900
         qr = result.query_runs[0]
@@ -585,7 +585,7 @@ class TestQueryWithFullIndex(FileBasedTesting):
         include asm generic include acpi acpi c posix types 32 h types h types h h h
         h h
         '''.split())
-        idx = index.get_index()
+        idx = cache.get_index()
         result = Query(query_string=query_s, idx=idx)
         assert 1 == len(result.query_runs)
         qr = result.query_runs[0]
@@ -607,7 +607,7 @@ class TestQueryWithFullIndex(FileBasedTesting):
         linux include asm include asm generic include acpi acpi c posix types 32 h
         types h types h h h h h
         '''.split())
-        idx = index.get_index()
+        idx = cache.get_index()
         result = Query(query_string=query_s, idx=idx)
 
         assert 1 == len(result.query_runs)

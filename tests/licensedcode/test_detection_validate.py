@@ -30,6 +30,7 @@ import os
 import unittest
 
 from commoncode import text
+from licensedcode import cache
 from licensedcode import models
 
 from license_test_utils import make_license_test_function
@@ -58,7 +59,7 @@ class TestValidateLicenseTextDetection(unittest.TestCase):
     pass
 
 
-build_license_validation_tests(models.get_licenses(), TestValidateLicenseTextDetection)
+build_license_validation_tests(cache.get_licenses_db(), TestValidateLicenseTextDetection)
 
 
 def build_rule_validation_tests(rules, cls):

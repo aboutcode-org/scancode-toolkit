@@ -155,7 +155,7 @@ def as_template(scanned_files, template='html'):
     The template defaults to the standard HTML template format or can point to
     the path of a custom template file.
     """
-    from licensedcode.models import get_licenses
+    from licensedcode.cache import get_licenses_db
 
     if template == 'html':
         template = get_template(get_template_dir('html'))
@@ -202,7 +202,7 @@ def as_template(scanned_files, template='html'):
 
                 if entry['key'] not in licenses:
                     licenses[entry['key']] = entry
-                    entry['object'] = get_licenses().get(entry['key'])
+                    entry['object'] = get_licenses_db().get(entry['key'])
         if results:
             converted[path] = sorted(results, key=itemgetter('start'))
 

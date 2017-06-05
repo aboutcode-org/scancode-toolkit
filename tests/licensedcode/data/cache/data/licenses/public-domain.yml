@@ -1,0 +1,12 @@
+key: public-domain
+short_name: Public Domain
+name: Public Domain
+
+category: Public Domain
+owner: Unspecified
+homepage_url: http://www.linfo.org/publicdomain.html
+faq_url: http://www.linfo.org/publicdomain.html
+other_urls:
+    - http://creativecommons.org/licenses/publicdomain/
+    - http://en.wikipedia.org/wiki/Public_domain
+    - http://www.linfo.org/publicdomain.html

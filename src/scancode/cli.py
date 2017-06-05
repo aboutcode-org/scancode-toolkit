@@ -194,6 +194,16 @@ def print_version(ctx, param, value):
     ctx.exit()
 
 
+def reindex_licenses(ctx, param, value):
+    if not value or ctx.resilient_parsing:
+        return
+    from licensedcode import cache
+    click.echo('Checking and rebuilding the license index...')
+    cache.reindex()
+    click.echo('Done.')
+    ctx.exit()
+
+
 epilog_text = '''\b\bExamples (use --examples for more):
 
 \b
@@ -296,6 +306,7 @@ def validate_exclusive(ctx, exclusive_options):
 
 @click.option('--diag', is_flag=True, default=False, help='Include additional diagnostic information such as error messages or result details.')
 @click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=float, show_default=True, help='Stop scanning a file if scanning takes longer than a timeout in seconds.')
+@click.option('--reindex-licenses', is_flag=True, default=False, is_eager=True, callback=reindex_licenses, help='Force a check and possible reindexing of the cached license index.')
 
 def scancode(ctx,
              input, output_file,
@@ -380,8 +391,6 @@ def scancode(ctx,
         files_count, results, success = scan(
             input_path=input,
             scanners=scanners,
-            license_score=license_score,
-            license_text=license_text,
             verbose=verbose,
             quiet=quiet,
             processes=processes,
@@ -408,7 +417,6 @@ def scancode(ctx,
 
 def scan(input_path,
          scanners,
-         license_score=0, license_text=False,
          verbose=False, quiet=False,
          processes=1, timeout=DEFAULT_TIMEOUT,
          diag=False,
@@ -428,11 +436,10 @@ def scan(input_path,
     scan_summary = OrderedDict()
     scan_summary['scanned_path'] = input_path
     scan_summary['processes'] = processes
-    get_licenses_with_score = partial(get_licenses, min_score=license_score, include_text=license_text, diag=diag)
 
     # Display scan start details
     ############################
-    # FIXME: this is does not make sense to use tuple and positional values
+    # FIXME: it does not make sense to use tuple and positional values
     scans = [k for k, v in scanners.items() if v[0]]
     _scans = ', '.join(scans)
     if not quiet:
@@ -441,15 +448,15 @@ def scan(input_path,
     scan_summary['scans'] = scans[:]
     scan_start = time()
     indexing_time = 0
-    # FIXME: this is does not make sense to use tuple and positional values
+    # FIXME: It does not make sense to use tuple and positional values
     with_licenses, _ = scanners.get('licenses', (False, ''))
     if with_licenses:
-        # build index outside of the main loop
+        # build index outside of the main loop for speed
         # this also ensures that forked processes will get the index on POSIX naturally
         if not quiet:
             echo_stderr('Building license detection index...', fg='green', nl=False)
-        from licensedcode.index import get_index
-        _idx = get_index()
+        from licensedcode.cache import get_index
+        get_index(False)
         indexing_time = time() - scan_start
         if not quiet:
             echo_stderr('Done.', fg='green', nl=True)
