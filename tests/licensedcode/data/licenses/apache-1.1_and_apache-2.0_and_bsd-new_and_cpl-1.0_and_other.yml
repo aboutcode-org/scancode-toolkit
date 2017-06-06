@@ -1,12 +1,18 @@
 licenses:
     - bsd-new
+    - apache-2.0
+    - public-domain
+    - bsd-new
+    - bsd-new
     - apache-1.1
     - apache-2.0
-    - bsd-new
+    - apache-2.0
+    - apache-1.1
+    - apache-2.0
     - cpl-1.0
+    - bsd-new
     - lgpl
-    - public-domain
-    - sun-bcl-11-06
-notes: TODO refine expectations
-expected_failure: yes
+    - sun-bcl-sdk-5.0
+    - apache-2.0
+    - apache-2.0
 
