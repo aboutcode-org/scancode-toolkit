@@ -31,11 +31,14 @@ from collections import OrderedDict
 import os
 from os.path import abspath
 
+import pluggy
+
 from formattedcode.format import as_template
 from formattedcode.format import as_html_app
 from formattedcode.format import create_html_app_assets
 from formattedcode.format import HtmlAppAssetCopyWarning
 from formattedcode.format import HtmlAppAssetCopyError
+from _pluggy.hookspec import PrintOutput
 
 
 def write_formatted_output(
@@ -47,6 +50,9 @@ def write_formatted_output(
 
     # FIXME: carrying an echo function does not make sense
     # FIXME: do not use input as a variable name
+
+    pm = pluggy.PluginManager('post_scan')
+    pm.add_hookspecs(PrintOutput)
 
     if format == 'html':
         write_html(scanned_files, output_file, _echo)
