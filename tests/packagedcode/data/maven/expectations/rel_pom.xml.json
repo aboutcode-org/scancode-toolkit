@@ -7,8 +7,10 @@
   "maven_project_short_description_1": [], 
   "maven_license_url": [], 
   "maven_repository_url_1": [], 
+  "maven_issue_url": [], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [], 
   "maven_repository_url": [], 
   "maven_distribution_management_repository_url": [], 
   "maven_scm_connection": [], 
@@ -27,10 +29,59 @@
   "maven_component_group_id": [
     "org.modeler"
   ], 
+  "maven_contributor_email": [], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [], 
   "maven_component_extend_1": [], 
   "maven_developer_name": [], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [
+    {
+      "version": "1.7.0", 
+      "groupId": "org.apache.ant", 
+      "artifactId": "ant"
+    }, 
+    {
+      "version": "2.0", 
+      "groupId": "commons-lang", 
+      "artifactId": "commons-lang"
+    }, 
+    {
+      "version": "2.0", 
+      "groupId": "commons-digester", 
+      "artifactId": "commons-digester"
+    }, 
+    {
+      "version": "1.6.1", 
+      "groupId": "dom4j", 
+      "artifactId": "dom4j"
+    }, 
+    {
+      "version": "3.4.0.GA", 
+      "groupId": "org.hibernate", 
+      "artifactId": "hibernate-annotations"
+    }, 
+    {
+      "version": "3.4.0.GA", 
+      "groupId": "org.hibernate", 
+      "artifactId": "hibernate-entitymanager"
+    }, 
+    {
+      "version": "3.3.2.Beta1", 
+      "groupId": "org.hibernate", 
+      "artifactId": "ejb3-persistence"
+    }, 
+    {
+      "version": "1.4.2", 
+      "groupId": "org.slf4j", 
+      "artifactId": "slf4j-jcl"
+    }, 
+    {
+      "version": "8.3-603.jdbc4", 
+      "groupId": "postgresql", 
+      "artifactId": "postgresql"
+    }
+  ], 
   "maven_license": [], 
   "maven_component_packaging": [
     "jar"
@@ -43,8 +94,10 @@
   "maven_distribution_management_directory_1": [], 
   "maven_organization_url": [], 
   "maven_repository_id": [], 
+  "maven_developer_organization": [], 
   "maven_project_description": [], 
   "maven_repository_connection_1": [], 
+  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "org.modeler~modeler"

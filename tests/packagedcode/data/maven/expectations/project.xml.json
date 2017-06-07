@@ -9,8 +9,10 @@
   "maven_repository_url_1": [
     "http://cvs.apache.org/viewcvs/maven-plugins/abbot/"
   ], 
+  "maven_issue_url": [], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [], 
   "maven_repository_url": [], 
   "maven_distribution_management_repository_url": [], 
   "maven_scm_connection": [], 
@@ -25,6 +27,7 @@
   "maven_component_version": [], 
   "maven_distribution_management_site_url": [], 
   "maven_component_group_id": [], 
+  "maven_contributor_email": [], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [], 
   "maven_component_extend_1": [
@@ -33,6 +36,59 @@
   "maven_developer_name": [
     "Christian Blavier", 
     "Vincent Massol"
+  ], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [
+    {
+      "version": "0.13.0", 
+      "groupId": "abbot", 
+      "artifactId": "abbot"
+    }, 
+    {
+      "version": "b10", 
+      "groupId": "jdom", 
+      "artifactId": "jdom"
+    }, 
+    {
+      "version": "1.0", 
+      "groupId": "mrj", 
+      "artifactId": "MRJToolkitStubs"
+    }, 
+    {
+      "version": "1.1.4", 
+      "groupId": "gnu-regexp", 
+      "artifactId": "gnu-regexp"
+    }, 
+    {
+      "version": "3.8.1", 
+      "groupId": "junit", 
+      "artifactId": "junit"
+    }, 
+    {
+      "version": "2.4.0", 
+      "groupId": "xerces", 
+      "artifactId": "xerces"
+    }, 
+    {
+      "version": "2.2.1", 
+      "groupId": "xerces", 
+      "artifactId": "xmlParserAPIs"
+    }, 
+    {
+      "version": "1.5.3-1", 
+      "groupId": "ant", 
+      "artifactId": "ant"
+    }, 
+    {
+      "version": "1.5.3-1", 
+      "groupId": "ant", 
+      "artifactId": "ant-optional"
+    }, 
+    {
+      "version": "20030211.142705", 
+      "groupId": "commons-jelly", 
+      "artifactId": "commons-jelly-tags-xml"
+    }
   ], 
   "maven_license": [], 
   "maven_component_packaging": [], 
@@ -49,12 +105,17 @@
   "maven_distribution_management_directory_1": [], 
   "maven_organization_url": [], 
   "maven_repository_id": [], 
+  "maven_developer_organization": [
+    "Octo Technology", 
+    "Pivolis"
+  ], 
   "maven_project_description": [
     "Run Abbot tests"
   ], 
   "maven_repository_connection_1": [
     "scm:cvs:pserver:anoncvs@cvs.apache.org:/home/cvspublic:maven-plugins/abbot/"
   ], 
+  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [
     "scm:cvs:ext:${maven.username}@cvs.apache.org:/home/cvs:maven-plugins/abbot/"
   ], 

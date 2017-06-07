@@ -28,6 +28,7 @@ from lxml import etree
 
 from textcode import analysis
 import chardet
+import lxml
 
 
 """
@@ -111,6 +112,31 @@ def find_text(xdoc, xpath):
     else:
         # FIXME: this could fail
         texts.append(unicode(result).strip())
+    return texts
+
+
+def find_parent_text(xdoc, xpath, sub_list):
+    """
+    Return a dictionary of text values from an `xpath` expression found in an etree
+    `xdoc`.
+
+    And the xpath means a parent node, which has "//" in the xpath expression
+    """
+    if '//' not in str(xpath):
+        return  # return if there is no "//" in the xpath
+    result = xdoc.xpath(xpath)
+    texts = []
+    if isinstance(result, list):
+        for element in result:
+            text = {}
+            for index, val in enumerate(sub_list):
+                children = element.getchildren()
+                for child in children:
+                    if val in text and text[val]:
+                        break
+                    elif child.tag and str(child.tag).endswith(val):
+                        text[val] = child.text
+            texts.append(text)
     return texts
 
 

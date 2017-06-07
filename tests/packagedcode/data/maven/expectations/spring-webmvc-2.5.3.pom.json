@@ -11,8 +11,10 @@
     "http://www.apache.org/licenses/LICENSE-2.0.txt"
   ], 
   "maven_repository_url_1": [], 
+  "maven_issue_url": [], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [], 
   "maven_repository_url": [], 
   "maven_distribution_management_repository_url": [
     "file:///Users/benhale/development/public/repos/repo"
@@ -37,12 +39,142 @@
   "maven_component_group_id": [
     "org.springframework"
   ], 
+  "maven_contributor_email": [], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [
     "scm:cvs:ext:username@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring"
   ], 
   "maven_component_extend_1": [], 
   "maven_developer_name": [], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [
+    {
+      "version": "2.2", 
+      "optional": "true", 
+      "groupId": "commons-attributes", 
+      "artifactId": "commons-attributes-api"
+    }, 
+    {
+      "version": "2.2", 
+      "optional": "true", 
+      "groupId": "commons-attributes", 
+      "artifactId": "commons-attributes-compiler"
+    }, 
+    {
+      "version": "1.1.1", 
+      "groupId": "commons-logging", 
+      "artifactId": "commons-logging"
+    }, 
+    {
+      "version": "2.0.7", 
+      "optional": "true", 
+      "groupId": "com.lowagie", 
+      "artifactId": "itext"
+    }, 
+    {
+      "version": "2.3.12", 
+      "optional": "true", 
+      "groupId": "freemarker", 
+      "artifactId": "freemarker"
+    }, 
+    {
+      "version": "2.0.2", 
+      "optional": "true", 
+      "groupId": "jasperreports", 
+      "artifactId": "jasperreports"
+    }, 
+    {
+      "scope": "provided", 
+      "version": "2.0", 
+      "groupId": "javax.servlet", 
+      "artifactId": "jsp-api"
+    }, 
+    {
+      "scope": "provided", 
+      "version": "1.1.0", 
+      "groupId": "javax.servlet", 
+      "artifactId": "jstl"
+    }, 
+    {
+      "scope": "provided", 
+      "version": "2.4", 
+      "groupId": "javax.servlet", 
+      "artifactId": "servlet-api"
+    }, 
+    {
+      "version": "2.6.6", 
+      "optional": "true", 
+      "groupId": "jexcelapi", 
+      "artifactId": "jxl"
+    }, 
+    {
+      "version": "2.0.5", 
+      "optional": "true", 
+      "groupId": "org.apache.tiles", 
+      "artifactId": "tiles-api"
+    }, 
+    {
+      "version": "2.0.5", 
+      "optional": "true", 
+      "groupId": "org.apache.tiles", 
+      "artifactId": "tiles-core"
+    }, 
+    {
+      "version": "2.0.5", 
+      "optional": "true", 
+      "groupId": "org.apache.tiles", 
+      "artifactId": "tiles-jsp"
+    }, 
+    {
+      "version": "3.0.1", 
+      "optional": "true", 
+      "groupId": "poi", 
+      "artifactId": "poi"
+    }, 
+    {
+      "version": "1.5", 
+      "optional": "true", 
+      "groupId": "velocity", 
+      "artifactId": "velocity"
+    }, 
+    {
+      "version": "1.4", 
+      "optional": "true", 
+      "groupId": "velocity-tools", 
+      "artifactId": "velocity-tools-generic"
+    }, 
+    {
+      "version": "1.4", 
+      "optional": "true", 
+      "groupId": "velocity-tools", 
+      "artifactId": "velocity-tools-view"
+    }, 
+    {
+      "version": "${project.version}", 
+      "groupId": "${project.groupId}", 
+      "artifactId": "spring-beans"
+    }, 
+    {
+      "version": "${project.version}", 
+      "groupId": "${project.groupId}", 
+      "artifactId": "spring-context"
+    }, 
+    {
+      "version": "${project.version}", 
+      "groupId": "${project.groupId}", 
+      "artifactId": "spring-context-support"
+    }, 
+    {
+      "version": "${project.version}", 
+      "groupId": "${project.groupId}", 
+      "artifactId": "spring-core"
+    }, 
+    {
+      "version": "${project.version}", 
+      "groupId": "${project.groupId}", 
+      "artifactId": "spring-web"
+    }
+  ], 
   "maven_license": [
     "The Apache Software License, Version 2.0"
   ], 
@@ -63,10 +195,14 @@
     "http://www.springframework.org/"
   ], 
   "maven_repository_id": [], 
+  "maven_developer_organization": [], 
   "maven_project_description": [
     "Spring Framework: Web MVC"
   ], 
   "maven_repository_connection_1": [], 
+  "maven_license_name": [
+    "The Apache Software License, Version 2.0"
+  ], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": [
     "Spring Framework: Web MVC"

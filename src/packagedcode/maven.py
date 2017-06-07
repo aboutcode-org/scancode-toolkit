@@ -95,6 +95,11 @@ MAVEN2_FIELDS = [
 
     ('developer_email', '/project/developers/developer/email'),
     ('developer_name', '/project/developers/developer/name'),
+    ('developer_organization', '/project/developers/developer/organization'),
+
+    ('contributor_email', '/project/contributors/contributor/email'),
+    ('contributor_name', '/project/contributors/contributor/name'),
+    ('contributor_organization', '/project/contributors/contributor/organization'),
 
     ('distribution_management_site_url', '/project/distributionManagement/site/url'),
     ('distribution_management_repository_url', '/project/distributionManagement/repository/url'),
@@ -102,10 +107,13 @@ MAVEN2_FIELDS = [
     ('license', '/project/licenses/license/name'),
     ('license_comments', '/project/licenses/license/comments'),
     ('license_distribution', '/project/licenses/license/distribution'),
+    ('license_name', '/project/licenses/license/name'),
     ('license_url', '/project/licenses/license/url'),
 
     ('organization_name', '/project/organization/name'),
     ('organization_url', '/project/organization/url'),
+
+    ('issue_url', '/project/issueManagement/url'),
 
     ('project_name', '/project/name'),
     ('project_description', '/project/description'),
@@ -122,11 +130,18 @@ MAVEN2_FIELDS = [
     ('scm_url', '/project/scm/url'),
 
     ('distribution_management_group_id', '/project/distributionManagement/relocation/groupId'),
-    ('model_version', '/project/modelVersion')
+    ('model_version', '/project/modelVersion'),
 ]
 
-
 MAVEN_FIELDS = [('maven_' + key, xmlutils.namespace_unaware(xpath)) for key, xpath in (MAVEN2_FIELDS + MAVEN1_FIELDS)]
+
+
+# TODO: these tow data structures do not make sense.
+MAVEN2_PARENT_FIELDS = [(
+    ('dependency', '/project/dependencies//dependency'),
+    ('artifactId', 'groupId', 'version', 'scope', 'type', 'optional')),
+]
+MAVEN_PARENT_FIELDS = [('maven_' + key[0], xmlutils.namespace_unaware(key[1]), sub_xpath_list) for key, sub_xpath_list in MAVEN2_PARENT_FIELDS]
 
 
 # Common Maven property keys and corresponding XPath to the value
@@ -478,7 +493,7 @@ def parse_pom(location, fields=MAVEN_FIELDS):
     return pom
 
 
-def extract_pom_data(xdoc, fields=MAVEN_FIELDS):
+def extract_pom_data(xdoc, fields=MAVEN_FIELDS, parent_fields=MAVEN_PARENT_FIELDS):
     """
     Extract POM data from an etree document using a `fields` mapping of field
     name -> xpath.
@@ -499,6 +514,10 @@ def extract_pom_data(xdoc, fields=MAVEN_FIELDS):
             logger.debug(' extract_pom_data: found: {resolved}'.format(**locals()))
         # FIXME: this is grossly incorrect!
         pom_data[name] = resolved or []
+
+    for name, xpath, sub_list in parent_fields:
+        values = xmlutils.find_parent_text(xdoc, xpath, sub_list)
+        pom_data[name] = values or []
 
     # logger.debug(' found: {pom_data}'.format(**locals()))
     pom_data = inherit_from_parent(pom_data)

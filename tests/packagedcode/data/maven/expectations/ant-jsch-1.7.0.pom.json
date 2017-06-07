@@ -7,8 +7,10 @@
   "maven_project_short_description_1": [], 
   "maven_license_url": [], 
   "maven_repository_url_1": [], 
+  "maven_issue_url": [], 
   "maven_repository_name": [], 
   "maven_component_classifier": [], 
+  "maven_contributor_name": [], 
   "maven_repository_url": [], 
   "maven_distribution_management_repository_url": [], 
   "maven_scm_connection": [], 
@@ -31,10 +33,26 @@
   "maven_component_group_id": [
     "org.apache.ant"
   ], 
+  "maven_contributor_email": [], 
   "maven_distribution_management_group_id": [], 
   "maven_scm_developer_connection": [], 
   "maven_component_extend_1": [], 
   "maven_developer_name": [], 
+  "maven_contributor_organization": [], 
+  "maven_dependency": [
+    {
+      "scope": "compile", 
+      "version": "1.7.0", 
+      "groupId": "org.apache.ant", 
+      "artifactId": "ant"
+    }, 
+    {
+      "scope": "compile", 
+      "version": "0.1.29", 
+      "groupId": "com.jcraft", 
+      "artifactId": "jsch"
+    }
+  ], 
   "maven_license": [], 
   "maven_component_packaging": [], 
   "maven_developer_email": [], 
@@ -45,10 +63,12 @@
   "maven_distribution_management_directory_1": [], 
   "maven_organization_url": [], 
   "maven_repository_id": [], 
+  "maven_developer_organization": [], 
   "maven_project_description": [
     "contains the sshexec and scp tasks\n  jsch 0.1.29 might not be available from maven"
   ], 
   "maven_repository_connection_1": [], 
+  "maven_license_name": [], 
   "maven_repository_developer_connection_1": [], 
   "maven_project_name": []
 }
