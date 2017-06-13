@@ -19,6 +19,7 @@ env:
     - TEST_SUITE="$PYTEST tests/packagedcode"
     - TEST_SUITE="./etc/release/release.sh"
 
+
 # Travis does not offer OSX with arbitrary python versions (like 2.7.13 above)
 # So, you can not simply have the following section in your build matrix:
 # os:
