@@ -42,6 +42,7 @@ import traceback
 from types import GeneratorType
 
 import click
+import pluggy
 click.disable_unicode_literals_warning = True
 from click.termui import style
 
@@ -74,6 +75,8 @@ from scancode.utils import compute_fn_max_len
 from scancode.utils import fixed_width_file_name
 from scancode.utils import get_relative_path
 from scancode.utils import progressmanager
+
+from _pluggy import hookspec
 
 echo_stderr = partial(click.secho, err=True)
 
@@ -256,7 +259,6 @@ def validate_exclusive(ctx, exclusive_options):
         msg += ' are mutually exclusion options. You can use only one of them.'
         raise click.UsageError(msg)
 
-
 @click.command(name='scancode', epilog=epilog_text, cls=ScanCommand)
 @click.pass_context
 
@@ -320,6 +322,10 @@ def scancode(ctx,
     The scan results are printed to stdout if <output_file> is not provided.
     Error and progress is printed to stderr.
     """
+
+    pm = pluggy.PluginManager('scan_proper')
+    pm.add_hookspecs(hookspec)
+    pm.load_setuptools_entrypoints('scancode_plugins')
 
     validate_exclusive(ctx, ['strip_root', 'full_root'])
 

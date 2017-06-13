@@ -38,7 +38,8 @@ from formattedcode.format import as_html_app
 from formattedcode.format import create_html_app_assets
 from formattedcode.format import HtmlAppAssetCopyWarning
 from formattedcode.format import HtmlAppAssetCopyError
-from _pluggy.hookspec import PrintOutput
+
+from _pluggy import hookspec
 
 
 def write_formatted_output(
@@ -52,7 +53,7 @@ def write_formatted_output(
     # FIXME: do not use input as a variable name
 
     pm = pluggy.PluginManager('post_scan')
-    pm.add_hookspecs(PrintOutput)
+    pm.add_hookspecs(hookspec)
 
     if format == 'html':
         write_html(scanned_files, output_file, _echo)
