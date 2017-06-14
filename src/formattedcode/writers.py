@@ -206,20 +206,20 @@ def write_formatted_output(scanners, files_count, version, notice, scanned_files
         doc.package.license_declared = NoAssert()
         doc.package.conc_lics = NoAssert()
 
-        # As the spdx-tools package can only write the document to a "str" file but ScanCode provides a "unicode" file,
-        # write to a "str" buffer first and then manually write the value to a "unicode" file.
-        from StringIO import StringIO
-
-        str_buffer = StringIO()
-
         if format == 'spdx-tv':
             from spdx.writers.tagvalue import write_document
-            write_document(doc, str_buffer)
-        else:
+        elif format == 'spdx-rdf':
             from spdx.writers.rdf import write_document
-            write_document(doc, str_buffer)
 
-        output_file.write(str_buffer.getvalue())
+        # As the spdx-tools package can only write the document to a
+        # "str" file but ScanCode provides a "unicode" file, write to a
+        # "str" buffer first and then manually write the value to a
+        # "unicode" file.
+        from StringIO import StringIO
+        str_buffer = StringIO()
+        write_document(doc, str_buffer)
+        as_unicode = str_buffer.getvalue().decode('utf-8')
+        output_file.write(as_unicode)
 
     else:
         raise Exception('Unknown format')
