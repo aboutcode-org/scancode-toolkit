@@ -1,0 +1,25 @@
+//-----------------------------------------------------------------------------
+//
+// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+// PARTICULAR PURPOSE.
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+//
+//
+//-----------------------------------------------------------------------------
+
+using System;
+using System.Security.Cryptography.X509Certificates;
+
+/// <summary>
+/// A utility class which helps to retrieve an x509 certificate
+/// </summary>
+public class CertificateUtil
+{
+    public static X509Certificate2 GetCertificate( StoreName name, StoreLocation location, string subjectName )
+    {
+        X509Store store = new X509Store( name, location );
+        X509Certificate2Collection certificates = null;
+        store.Open( OpenFlags.ReadOnly );
