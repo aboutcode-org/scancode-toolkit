@@ -259,8 +259,8 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_apostrophe_in_name(self):
         test_file = self.get_test_loc('copyrights/copyright_with_apos.txt')
         expected = [
-            u"Copyright Marco d'Itri <md@Linux.IT>",
-            u"Copyright Marco d'Itri",
+            "Copyright Marco d'Itri <md@Linux.IT>",
+            "Copyright Marco d'Itri",
         ]
         check_detection(expected, test_file)
 
@@ -292,7 +292,7 @@ class TestCopyrightDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights/copyright_andre_darcy-c.c')
         expected = [
             'Copyright (c) 1995, Pascal Andre (andre@via.ecp.fr).',
-            u"copyright 1997, 1998, 1999 by D'Arcy J.M. Cain (darcy@druid.net)",
+            "copyright 1997, 1998, 1999 by D'Arcy J.M. Cain (darcy@druid.net)",
         ]
         check_detection(expected, test_file)
 
@@ -1575,7 +1575,7 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright (c) 2007, Hubert Figuiere <hub@figuiere.net>',
             '(c) 1994, Kongji Huang and Brian C. Smith , Cornell University',
             '(c) 1993, Brian C. Smith , The Regents of the University of California',
-            u"(c) 1991-1992, Thomas G. Lane , Part of the Independent JPEG Group's",
+            "(c) 1991-1992, Thomas G. Lane , Part of the Independent JPEG Group's",
             'Copyright (c) 2005, Hubert Figuiere <hub@figuiere.net>',
             'Copyright (c) 2007, Hubert Figuiere <hub@figuiere.net>',
         ]
@@ -3006,7 +3006,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_o_brien_style_name(self):
         test_file = self.get_test_loc('copyrights/copyright_o_brien_style_name.txt')
         expected = [
-            u"Copyright (c) 2001-2003, Patrick K. O'Brien",
+            "Copyright (c) 2001-2003, Patrick K. O'Brien",
         ]
         check_detection(expected, test_file)
 
@@ -4097,4 +4097,10 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_copr5_correct(self):
         test_lines = ['Copyright or Copr. Mines Paristech, France - Mark NOBLE, Alexandrine GESRET']
         expected = ['Copyright or Copr. Mines Paristech, France - Mark NOBLE, Alexandrine GESRET']
+        check_detection(expected, test_lines)
+
+    def test_copyright_oracle(self):
+        test_lines =['Copyright (c) 1997-2015 Oracle and/or its affiliates. All rights reserved.']
+
+        expected = ['Copyright (c) 1997-2015 Oracle and/or its affiliates.']
         check_detection(expected, test_lines)
