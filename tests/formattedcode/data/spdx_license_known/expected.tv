@@ -1,0 +1,26 @@
+# Document Information
+SPDXVersion: SPDX-2.1
+DataLicense: CC0-1.0
+# Creation Info
+# Package
+PackageName: scan
+PackageDownloadLocation: NOASSERTION
+PackageVerificationCode: 517c26f04b5a3edaaa0c17bf1a6571953209e209
+PackageLicenseDeclared: NOASSERTION
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseInfoFromFiles: Apache-2.0
+PackageLicenseInfoFromFiles: CC0-1.0
+PackageCopyrightText: NONE
+# File
+FileName: ./scan/cc0-1.0.LICENSE
+FileChecksum: SHA1: 172444e7c137eb5cd3cae530aca0879c90f7fada
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: CC0-1.0
+FileCopyrightText: NONE
+# File
+FileName: ./scan/apache-2.0.LICENSE
+FileChecksum: SHA1: 2b8b815229aa8a61e483fb4ba0588b8b6c491890
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: Apache-2.0
+FileCopyrightText: NONE
+# Extracted Licenses

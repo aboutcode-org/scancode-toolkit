@@ -1,0 +1,25 @@
+# Document Information
+SPDXVersion: SPDX-2.1
+DataLicense: CC0-1.0
+# Creation Info
+# Package
+PackageName: scan
+PackageDownloadLocation: NOASSERTION
+PackageVerificationCode: b49eeefd776fb76555378d07fd05d986a249a2b3
+PackageLicenseDeclared: NOASSERTION
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseInfoFromFiles: Apache-2.0
+PackageLicenseInfoFromFiles: CC0-1.0
+PackageLicenseInfoFromFiles: LicenseRef-scancode-acknowledgment
+PackageCopyrightText: <text>Copyright (c) 2017 nexB Inc. and others.
+</text>
+# File
+FileName: ./scan/NOTICE
+FileChecksum: SHA1: f9c28fa2714ad0c2e36d3e5561afb0031fa76831
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: Apache-2.0
+LicenseInfoInFile: LicenseRef-scancode-acknowledgment
+LicenseInfoInFile: CC0-1.0
+FileCopyrightText: <text>Copyright (c) 2017 nexB Inc. and others.
+</text>
+# Extracted Licenses

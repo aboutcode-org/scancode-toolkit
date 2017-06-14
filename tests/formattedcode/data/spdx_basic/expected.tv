@@ -1,0 +1,19 @@
+# Document Information
+SPDXVersion: SPDX-2.1
+DataLicense: CC0-1.0
+# Creation Info
+# Package
+PackageName: spdx_basic
+PackageDownloadLocation: NOASSERTION
+PackageVerificationCode: a83523bcfc10441aa94a575b88aa1d3269902485
+PackageLicenseDeclared: NOASSERTION
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseInfoFromFiles: NONE
+PackageCopyrightText: NONE
+# File
+FileName: ./spdx_basic/test.txt
+FileChecksum: SHA1: b8a793cce3c3a4cd3a4646ddbe86edd542ed0cd8
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NONE
+FileCopyrightText: NONE
+# Extracted Licenses

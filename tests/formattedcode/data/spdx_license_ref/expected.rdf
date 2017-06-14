@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:ns1="http://spdx.org/rdf/terms#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <ns1:SpdxDocument rdf:about="http://www.spdx.org/tools#SPDXANALYSIS">
+    <ns1:creationInfo>
+      <ns1:CreationInfo rdf:nodeID="Nd2dd4be3070a4b9687aa5180a2f8de24">
+        <ns1:created>2017-06-14T12:03:18Z</ns1:created>
+        <ns1:creator>Tool: ScanCode 2.0.0.rc2.post346.9c8d5a8.dirty.20170613213304</ns1:creator>
+      </ns1:CreationInfo>
+    </ns1:creationInfo>
+    <ns1:specVersion>SPDX-2.1</ns1:specVersion>
+    <ns1:referencesFile>
+      <ns1:File rdf:nodeID="N34e1259cca4046828dd5bc099921d604">
+        <ns1:copyrightText rdf:resource="http://spdx.org/rdf/terms#none"/>
+        <ns1:licenseConcluded rdf:resource="http://spdx.org/rdf/terms#noassertion"/>
+        <ns1:checksum>
+          <ns1:Checksum rdf:nodeID="N131efbf7927a45edbedca5b8a9779135">
+            <ns1:algorithm>SHA1</ns1:algorithm>
+            <ns1:checksumValue>b8a793cce3c3a4cd3a4646ddbe86edd542ed0cd8</ns1:checksumValue>
+          </ns1:Checksum>
+        </ns1:checksum>
+        <ns1:licenseInfoInFile rdf:resource="http://spdx.org/rdf/terms#none"/>
+        <ns1:fileName>./spdx-rdf/test.txt</ns1:fileName>
+      </ns1:File>
+    </ns1:referencesFile>
+    <ns1:describesPackage>
+      <ns1:Package rdf:nodeID="Nfcd5f8c4a69845628d327a91632ad8cc">
+        <ns1:copyrightText rdf:resource="http://spdx.org/rdf/terms#none"/>
+        <ns1:downloadLocation rdf:resource="http://spdx.org/rdf/terms#noassertion"/>
+        <ns1:name>spdx-rdf</ns1:name>
+        <ns1:licenseInfoFromFiles rdf:resource="http://spdx.org/rdf/terms#none"/>
+        <ns1:licenseDeclared rdf:resource="http://spdx.org/rdf/terms#noassertion"/>
+        <ns1:hasFile rdf:nodeID="N34e1259cca4046828dd5bc099921d604"/>
+        <ns1:licenseConcluded rdf:resource="http://spdx.org/rdf/terms#noassertion"/>
+        <ns1:packageVerificationCode>
+          <ns1:PackageVerificationCode rdf:nodeID="N52bea8bc51b34d02888b86329e66f0de">
+            <ns1:packageVerificationCodeValue>a83523bcfc10441aa94a575b88aa1d3269902485</ns1:packageVerificationCodeValue>
+          </ns1:PackageVerificationCode>
+        </ns1:packageVerificationCode>
+      </ns1:Package>
+    </ns1:describesPackage>
+    <ns1:dataLicense rdf:resource="http://spdx.org/licenses/CC0-1.0"/>
+  </ns1:SpdxDocument>
+</rdf:RDF>
