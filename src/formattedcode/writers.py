@@ -106,7 +106,9 @@ def write_spdx(version, notice, scanned_files, format, input, output_file):
 
     from spdx.checksum import Algorithm
     from spdx.creationinfo import Tool
-    from spdx.document import Document, License
+    from spdx.document import Document
+    from spdx.document import License
+    from spdx.document import ExtractedLicense
     from spdx.file import File
     from spdx.package import Package
     from spdx.utils import NoAssert
@@ -120,8 +122,8 @@ def write_spdx(version, notice, scanned_files, format, input, output_file):
     else:
         input_path = os.path.dirname(absinput)
 
-    # TODO: add disclaimer as comment
     doc = Document(Version(2, 1), License.from_identifier('CC0-1.0'))
+    doc.comment = notice
 
     doc.creation_info.add_creator(Tool('ScanCode ' + version))
     doc.creation_info.set_created_now()
@@ -161,21 +163,31 @@ def write_spdx(version, notice, scanned_files, format, input, output_file):
                 if spdx_id:
                     spdx_license = License.from_identifier(spdx_id)
                 else:
-                    license_key = 'LicenseRef-' + file_license.get('key')
-                    spdx_license = License(file_license.get('short_name'), license_key)
+                    license_key = file_license.get('key')
+                    # FIXME: we should prefix this with ScanCode-
+                    licenseref_id = 'LicenseRef-' + license_key
+                    spdx_license = ExtractedLicense(licenseref_id)
+                    spdx_license.name = file_license.get('short_name')
+                    comment = 'See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/%s.yml\n' % license_key
+                    spdx_license.comment = comment
+                    text = file_license.get('matched_text')
+                    # always set some text, even if we did not extract the matched text
+                    if not text:
+                        text = comment
+                    spdx_license.text = text
+                    doc.add_extr_lic(spdx_license)
 
                 # Add licenses in the order they appear in the file. Maintaining the order
                 # might be useful for provenance purposes.
                 file_entry.add_lics(spdx_license)
                 doc.package.add_lics_from_file(spdx_license)
-        else:
-            if file_licenses == None:
-                all_files_have_no_license = False
-                spdx_license = NoAssert()
-            else:
-                spdx_license = SPDXNone()
 
-            file_entry.add_lics(spdx_license)
+        elif file_licenses is None:
+            all_files_have_no_license = False
+            file_entry.add_lics(NoAssert())
+
+        else:
+            file_entry.add_lics(SPDXNone())
 
         file_entry.conc_lics = NoAssert()
 
@@ -191,14 +203,14 @@ def write_spdx(version, notice, scanned_files, format, input, output_file):
             # Create a text of copyright statements in the order they appear in the file.
             # Maintaining the order might be useful for provenance purposes.
             file_entry.copyright = '\n'.join(file_entry.copyright) + '\n'
-        else:
-            if file_copyrights == None:
-                all_files_have_no_copyright = False
-                spdx_copyright = NoAssert()
-            else:
-                spdx_copyright = SPDXNone()
 
-            file_entry.copyright = spdx_copyright
+        elif file_copyrights is None:
+            all_files_have_no_copyright = False
+            file_entry.copyright = NoAssert()
+
+        else:
+            file_entry.copyright = SPDXNone()
+
 
         doc.package.add_file(file_entry)
 
@@ -244,6 +256,6 @@ def write_spdx(version, notice, scanned_files, format, input, output_file):
     # "unicode" file.
     from StringIO import StringIO
     str_buffer = StringIO()
-    write_document(doc, str_buffer)
+    write_document(doc, str_buffer, validate=True)
     as_unicode = str_buffer.getvalue().decode('utf-8')
     output_file.write(as_unicode)

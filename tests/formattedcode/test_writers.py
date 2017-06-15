@@ -149,8 +149,7 @@ def test_scan_output_does_not_truncate_copyright_json():
     assert 'Scanning done' in result.output
 
     expected = test_env.get_test_loc('basic/expected.json')
-    check_json_scan(test_env.get_test_loc(expected), result_file,
-                    strip_dates=True, regen=False)
+    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True)
 
 
 def test_scan_output_does_not_truncate_copyright_json_stdout():
@@ -158,14 +157,12 @@ def test_scan_output_does_not_truncate_copyright_json_stdout():
     result_file = test_env.get_temp_file('test.json')
 
     result = run_scan_click(
-        ['-clip', '--strip-root', '--format', 'json', test_dir, result_file],
-        catch_exceptions=True)
+        ['-clip', '--strip-root', '--format', 'json', test_dir, result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
     expected = test_env.get_test_loc('basic/expected.json')
-    check_json_scan(test_env.get_test_loc(expected), result_file,
-                    strip_dates=True, regen=False)
+    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True)
 
 
 def test_scan_html_output_does_not_truncate_copyright_html():
@@ -279,21 +276,19 @@ def check_rdf_scan(expected_file, result_file, regen=False):
             json.dump(expected, o, indent=2)
     else:
         with codecs.open(expected_file, 'r', encoding='utf-8') as i:
-            expected = json.load(i)
+            expected = sort_nested(json.load(i))
     assert expected == result
 
 
 def load_and_clean_tv(location):
     """
-    Return the text for the SPDX TV file at location suitable for
+    Return a mapping for the SPDX TV file at location suitable for
     comparison. The file content is cleaned from variable parts such as
     dates, generated UUIDs and versions
     """
     content = codecs.open(location, encoding='utf-8').read()
-    content = [
-        l for l in content.splitlines(False)
-        if l and l.strip() and not l.startswith(('Creator: ', 'Created: ',))
-    ]
+    content = [l for l in content.splitlines(False)
+        if l and l.strip() and not l.startswith(('Creator: ', 'Created: ',))]
     return '\n'.join(content)
 
 
@@ -342,7 +337,7 @@ def test_spdx_rdf_with_license_ref():
     test_dir = test_env.get_test_loc('spdx_license_ref/scan')
     result_file = test_env.get_temp_file('rdf')
     expected_file = test_env.get_test_loc('spdx_license_ref/expected.rdf')
-    result = run_scan_click(['--format', 'spdx-rdf', test_dir, result_file], catch_exceptions=True)
+    result = run_scan_click(['--format', 'spdx-rdf', test_dir, result_file])
     assert result.exit_code == 0
     check_rdf_scan(expected_file, result_file)
 
@@ -361,6 +356,42 @@ def test_spdx_tv_with_license_ref():
     result_file = test_env.get_temp_file('tv')
     expected_file = test_env.get_test_loc('spdx_license_ref/expected.tv')
     result = run_scan_click(['--format', 'spdx-tv', test_dir, result_file])
+    assert result.exit_code == 0
+    check_tv_scan(expected_file, result_file)
+
+
+def test_spdx_rdf_with_known_licenses_with_text():
+    test_dir = test_env.get_test_loc('spdx_license_known/scan')
+    result_file = test_env.get_temp_file('rdf')
+    expected_file = test_env.get_test_loc('spdx_license_known/expected_with_text.rdf')
+    result = run_scan_click(['--format', 'spdx-rdf', '--license-text', test_dir, result_file])
+    assert result.exit_code == 0
+    check_rdf_scan(expected_file, result_file)
+
+
+def test_spdx_rdf_with_license_ref_with_text():
+    test_dir = test_env.get_test_loc('spdx_license_ref/scan')
+    result_file = test_env.get_temp_file('rdf')
+    expected_file = test_env.get_test_loc('spdx_license_ref/expected_with_text.rdf')
+    result = run_scan_click(['--format', 'spdx-rdf', '--license-text', test_dir, result_file])
+    assert result.exit_code == 0
+    check_rdf_scan(expected_file, result_file)
+
+
+def test_spdx_tv_with_known_licenses_with_text():
+    test_dir = test_env.get_test_loc('spdx_license_known/scan')
+    result_file = test_env.get_temp_file('tv')
+    expected_file = test_env.get_test_loc('spdx_license_known/expected_with_text.tv')
+    result = run_scan_click(['--format', 'spdx-tv', '--license-text', test_dir, result_file])
+    assert result.exit_code == 0
+    check_tv_scan(expected_file, result_file)
+
+
+def test_spdx_tv_with_license_ref_with_text():
+    test_dir = test_env.get_test_loc('spdx_license_ref/scan')
+    result_file = test_env.get_temp_file('tv')
+    expected_file = test_env.get_test_loc('spdx_license_ref/expected_with_text.tv')
+    result = run_scan_click(['--format', 'spdx-tv', '--license-text', test_dir, result_file])
     assert result.exit_code == 0
     check_tv_scan(expected_file, result_file)
 
