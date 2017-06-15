@@ -1,6 +1,6 @@
-about_resource: spdx_tools-0.5.1-py2.py3-none-any.whl
-version: 0.5.1
-download_url: https://pypi.python.org/packages/31/b4/d298a950eb8dca99d6ce121949952141d7cbe9832f3f87f0dc5d3a4cbf46/spdx_tools-0.5.1-py2.py3-none-any.whl#md5=264f9c513adaf7a97015766c925b5047
+about_resource: spdx_tools-0.5.2-py2.py3-none-any.whl
+version: 0.5.2
+download_url: https://pypi.python.org/packages/0a/63/c2fc3cc70454d379666b4b3fb7a5ae31145d759cc54c953ec8edae00d465/spdx_tools-0.5.2-py2.py3-none-any.whl#md5=d34655dbf2096cd8a1ccadd774aebb19
 
 name: spdx-tools
 home_url: https://github.com/spdx/tools-python
@@ -12,4 +12,4 @@ vcs_tool: git
 vcs_repository: https://github.com/spdx/tools-python.git
 
 owner: Philippe Ombredanne
-copyright: Copyright (c) 2014 Ahmed H. Ismail
+copyright: Copyright (c) 2014 Ahmed H. Ismail and others
