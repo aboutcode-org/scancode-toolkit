@@ -41,7 +41,7 @@ if os.environ.get('SCANCODE_COPYRIGHT_DEBUG'):
     import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
-    COPYRIGHT_TRACE = 2
+    COPYRIGHT_TRACE = 0
 
 """
 Detect and collect copyright statements.
@@ -257,6 +257,8 @@ patterns = [
     (r'^[Ii]nstitut(s|o|os|e|es|et|a|at|as|u|i)?$', 'NNP'),
     # "holders" is considered as a common noun
     (r'^([Hh]olders?|HOLDERS?|[Rr]espective)$', 'NN'),
+    # affiliates
+    (r'^[Aa]ffiliates?\.?$', 'NNP'),
 
     # OU as in Org unit, found in some certficates
     (r'^OU$', 'OU'),
@@ -286,7 +288,8 @@ patterns = [
     (r'^following$', 'FOLLOW'),
 
     # conjunction: and
-    (r'^([Aa]nd|&|[Uu]nd|ET|[Ee]t|at)$', 'CC'),
+    (r'^([Aa]nd|&|[Uu]nd|ET|[Ee]t|at|and/or)$', 'CC'),
+
     # conjunction: or. Even though or is not conjunctive ....
     # (r'^or$', 'CC'),
     # conjunction: or. Even though or is not conjunctive ....
@@ -560,6 +563,7 @@ grammar = """
 # XZY emails
     COMPANY: {<COMPANY> <EMAIL>+}        #1400
 
+
 # "And" some name
     ANDCO: {<CC>+ <NN> <NNP>+<UNI|COMP>?}        #1430
     ANDCO: {<CC>+ <NNP> <NNP>+<UNI|COMP>?}        #1440
@@ -567,6 +571,9 @@ grammar = """
     COMPANY: {<COMPANY|NAME|NAME2|NAME3> <ANDCO>+}        #1460
 
     COMPANY: {<COMPANY><COMPANY>+}        #1480
+
+# Oracle and/or its affiliates.
+    NAME: {<NNP> <ANDCO>}        #1410
 
 # Various forms of copyright statements
     COPYRIGHT: {<COPY> <NAME> <COPY> <YR-RANGE>}        #1510
