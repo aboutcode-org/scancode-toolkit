@@ -16,10 +16,10 @@ For commits, it is best to simply add a line like this to your commit message,
 with your name and email::
 
     Signed-off-by: Jane Doe <developer@example.com>
-    
+
 Please try to write a good commit message.
 See https://github.com/nexB/aboutcode/wiki/Writing-good-commit-messages for details.
-    
+
 
 
 Feature requests and feedback
