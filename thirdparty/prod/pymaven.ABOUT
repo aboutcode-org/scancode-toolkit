@@ -1,7 +1,7 @@
-about_resource: pymaven-0.2.3-py2-none-any.whl
+about_resource: pymaven_patch-0.2.4-py2-none-any.whl
 name: pymaven
-version: 0.2.3
-download_url: https://github.com/nexB/pymaven/archive/ca21ca55837c28249c910d8a99c0315ab632476c.zip
+version: 0.2.4
+download_url: https://pypi.python.org/packages/6f/e8/f48d6749dd1fe20fbd8a98981d3993f8c1a7fcc9e0268d6a218bb2556aff/pymaven_patch-0.2.4-py2.py3-none-any.whl#md5=dde58c256a0df5344620b1987e696e04
 home_url: https://github.com/sassoftware/pymaven 
 owner: SAS Institute Inc.
 copyright: Copyright (c) SAS Institute Inc.
@@ -12,4 +12,5 @@ vcs_repository: https://github.com/sassoftware/pymaven
 dje_license: apache-2.0
 license_text_file: apache-2.0.LICENSE
 
-notes: this is temp patched version built from https://github.com/nexB/pymaven/archive/ca21ca55837c28249c910d8a99c0315ab632476c.zip
+notes: this is temp patched version built from https://github.com/nexB/pymaven/
+ while patches are submitted and accepted upsrteam

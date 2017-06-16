@@ -150,7 +150,7 @@ setup(
         'pdfminer >= 20140328',
 
         # pymaven
-        'pymaven >= 0.1.0',
+        'pymaven-patch >= 0.2.4',
 
         # typecode
         'chardet >= 3.0.0, <4.0.0',
