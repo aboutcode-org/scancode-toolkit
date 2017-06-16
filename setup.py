@@ -11,6 +11,7 @@ from os.path import dirname
 from os.path import join
 from os.path import splitext
 import re
+import sys
 
 from setuptools import find_packages
 from setuptools import setup
@@ -19,11 +20,26 @@ from setuptools import setup
 version = '2.0.0rc3'
 
 
-def get_version(default=version, template='{tag}.{distance}.{commit}{dirty}'):
+#### Small hack to force using a plain version number if the option
+#### --plain-version is passed to setup.py
+
+USE_DEFAULT_VERSION = False
+try:
+    sys.argv.remove('--use-default-version')
+    USE_DEFAULT_VERSION = True
+except ValueError:
+    pass
+####
+
+def get_version(default=version, template='{tag}.{distance}.{commit}{dirty}',
+                use_default=USE_DEFAULT_VERSION):
     """
-    Return a version collected from git if possible or fall back to an hard-coded
-    version otherwise.
+    Return a version collected from git if possible or fall back to an
+    hard-coded default version otherwise. If `use_default` is True,
+    always use the default version.
     """
+    if use_default:
+        return default
     try:
         tag, distance, commit, dirty = get_git_version()
         if not distance and not dirty:
@@ -135,8 +151,8 @@ setup(
         # caching
         'zc.lockfile >= 1.0.0, < 2.0.0',
         'yg.lockfile >= 2.0.0, < 3.0.0',
-            # used by yg.lockfile 
-            'contextlib2', 'pytz', 'tempora', 'jaraco.timing', 
+            # used by yg.lockfile
+            'contextlib2', 'pytz', 'tempora', 'jaraco.timing',
         'psutil >= 5.0.0, < 6.0.0',
 
         # textcode
