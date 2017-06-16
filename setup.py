@@ -16,7 +16,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-version = '2.0.0rc3'
+version = '2.0.0rc4'
 
 
 def get_version(default=version, template='{tag}.{distance}.{commit}{dirty}'):
@@ -133,8 +133,8 @@ setup(
         'attrs >=16.0, < 17.0',
 
         # caching
-        'zc.lockfile >= 1.0.0, < 2.0.0',
-        'yg.lockfile >= 2.0.0, < 3.0.0',
+        'zc.lockfile >= 1.0.0, < 2.0.1',
+        'yg.lockfile >= 2.0.1, < 3.0.0',
             # used by yg.lockfile 
             'contextlib2', 'pytz', 'tempora', 'jaraco.timing', 
         'psutil >= 5.0.0, < 6.0.0',
@@ -146,7 +146,7 @@ setup(
         'six',
 
         # typecode and textcode
-        'pygments >= 2.0.0, <3.0.0',
+        'pygments >= 2.0.1, <3.0.0',
         'pdfminer >= 20140328',
 
         # pymaven

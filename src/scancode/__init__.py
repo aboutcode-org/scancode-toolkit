@@ -50,4 +50,4 @@ try:
     __version__ = get_distribution('scancode-toolkit').version
 except DistributionNotFound:
     # package is not installed ??
-    __version__ = '2.0.0rc3'
+    __version__ = '2.0.0rc4'
