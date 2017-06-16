@@ -73,9 +73,11 @@ function test_scan {
 
 cd dist
 echo "  RELEASE: Testing..."
-test_scan gz "tar -xf"
-test_scan bz2 "tar -xf"
-test_scan zip "unzip -q"
+if [ "$1" != "--no-tests" ]; then
+    test_scan gz "tar -xf"
+    test_scan bz2 "tar -xf"
+    test_scan zip "unzip -q"
+fi
 
 
 echo "###  RELEASE is ready for publishing ###"
