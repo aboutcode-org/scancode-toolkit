@@ -141,8 +141,7 @@ setup(
         'bz2file >= 0.98',
         'text-unidecode >= 1.0, < 2.0',
 
-        # extractcode and scancode
-        'pluggy >= 0.4.0',
+        'pluggy >= 0.4.0, < 1.0',
 
         # licensedcode
         'PyYAML >= 3.0, <4.0',
@@ -201,5 +200,7 @@ setup(
             'scancode = scancode.cli:scancode',
             'extractcode = scancode.extract_cli:extractcode',
         ],
+        'scancode_plugins': [
+        ]
     },
 )

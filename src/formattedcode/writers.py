@@ -39,7 +39,7 @@ from formattedcode.format import create_html_app_assets
 from formattedcode.format import HtmlAppAssetCopyWarning
 from formattedcode.format import HtmlAppAssetCopyError
 
-from _pluggy import hookspec
+from plugincode import hookspec
 
 
 def write_formatted_output(

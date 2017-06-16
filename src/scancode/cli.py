@@ -76,7 +76,7 @@ from scancode.utils import fixed_width_file_name
 from scancode.utils import get_relative_path
 from scancode.utils import progressmanager
 
-from _pluggy import hookspec
+from plugincode import hookspec
 
 echo_stderr = partial(click.secho, err=True)
 
@@ -111,6 +111,11 @@ delimiter = '\n\n  '
 acknowledgment_text = delimiter + acknowledgment_text
 
 notice = acknowledgment_text.strip().replace('  ', '')
+
+pm = pluggy.PluginManager('scan_proper')
+pm.add_hookspecs(hookspec)
+pm.load_setuptools_entrypoints('scancode_plugins')
+options = [ op for op in pm.hook.add_cmdline_option() if isinstance(op, click.Option) ]
 
 
 def print_about(ctx, param, value):
@@ -231,6 +236,12 @@ class ScanCommand(BaseCommand):
     short_usage_help = '''
 Try 'scancode --help' for help on options and arguments.'''
 
+    def get_params(self, ctx):
+        """
+        Add options returned by plugins to the params list
+        """
+        return super(BaseCommand, self).get_params(ctx) + options
+
 
 formats = ('json', 'json-pp', 'html', 'html-app', 'spdx-tv', 'spdx-rdf')
 
@@ -322,10 +333,6 @@ def scancode(ctx,
     The scan results are printed to stdout if <output_file> is not provided.
     Error and progress is printed to stderr.
     """
-
-    pm = pluggy.PluginManager('scan_proper')
-    pm.add_hookspecs(hookspec)
-    pm.load_setuptools_entrypoints('scancode_plugins')
 
     validate_exclusive(ctx, ['strip_root', 'full_root'])
 
