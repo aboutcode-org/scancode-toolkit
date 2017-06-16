@@ -117,7 +117,7 @@ setup(
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
-        'License :: OSI Approved :: CC0',
+        'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
         'Topic :: Utilities',
