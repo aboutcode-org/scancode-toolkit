@@ -198,6 +198,10 @@ patterns = [
     (r'^AppPublisher$', 'JUNK'),
     (r'^DISCLAIMS?|SPECIFICALLY|WARRANT(Y|I)E?S?$', 'JUNK'),
     (r'^(hispagestyle|Generic|Change|Add|Generic|Average|Taken|LAWS\.?|design|Driver)$', 'JUNK'),
+    # Windows XP
+    (r'^(Windows|XP|SP1|SP2|SP3|SP4)$', 'JUNK'),
+
+    (r'^example\.com$', 'JUNK'),
 
     # various trailing words that are junk
     (r'^(?:Copyleft|LegalCopyright|AssemblyCopyright|Distributed|Report|'

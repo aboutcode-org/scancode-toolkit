@@ -4100,7 +4100,25 @@ class TestCopyrightDetection(FileBasedTesting):
         check_detection(expected, test_lines)
 
     def test_copyright_oracle(self):
-        test_lines =['Copyright (c) 1997-2015 Oracle and/or its affiliates. All rights reserved.']
+        test_lines = ['Copyright (c) 1997-2015 Oracle and/or its affiliates. All rights reserved.']
 
         expected = ['Copyright (c) 1997-2015 Oracle and/or its affiliates.']
+        check_detection(expected, test_lines)
+
+    def test_copyright_windows(self):
+        test_lines = ['This release supports NT-based Windows releases like Windows 2000 SP4, Windows XP, and Windows 2003.']
+
+        expected = []
+        check_detection(expected, test_lines)
+
+    def test_copyright_in_binary_sql_server(self):
+        test_lines = ['2005charchar? 7 DDLSQL Server 2005smalldatetimedatetimeLDDDDDD7']
+
+        expected = []
+        check_detection(expected, test_lines)
+
+    def test_copyright_with_example_com_url(self):
+        test_lines = ['"domain": function(c) { assert.equal(c.domain, "example.com") },']
+
+        expected = []
         check_detection(expected, test_lines)
