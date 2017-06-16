@@ -64,3 +64,5 @@ docs/_build
 !/tests/typecode/data/contenttype/compiled/win/*
 !/tests/typecode/data/contenttype/package/*
 
+# pyenv
+/.python-version
