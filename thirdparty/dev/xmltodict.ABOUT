@@ -1,0 +1,12 @@
+about_resource: xmltodict-0.11.0-py2.py3-none-any.whl
+download_url: https://pypi.python.org/packages/42/a9/7e99652c6bc619d19d58cdd8c47560730eb5825d43a7e25db2e1d776ceb7/xmltodict-0.11.0-py2.py3-none-any.whl#md5=feb9f31561d6f0f777da1f96552feadc
+version: 0.11.0
+
+name: xmltodict
+home_url: https://github.com/martinblech/xmltodict/
+owner: Martin Blech
+dje_license: mit
+license_text_file: xmltodict.LICENSE
+copyright: Copyright (C) 2012 Martin Blech and individual contributors.
+vcs_tool: git
+vcs_repo: https://github.com/martinblech/xmltodict.git

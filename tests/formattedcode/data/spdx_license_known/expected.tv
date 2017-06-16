@@ -1,0 +1,32 @@
+# Document Information
+SPDXVersion: SPDX-2.1
+DataLicense: CC0-1.0
+DocumentComment: <text>Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
+OR CONDITIONS OF ANY KIND, either express or implied. No content created from
+ScanCode should be considered or used as legal advice. Consult an Attorney
+for any legal advice.
+ScanCode is a free software code scanning tool from nexB Inc. and others.
+Visit https://github.com/nexB/scancode-toolkit/ for support and download.</text>
+# Creation Info
+# Package
+PackageName: scan
+PackageDownloadLocation: NOASSERTION
+PackageVerificationCode: 517c26f04b5a3edaaa0c17bf1a6571953209e209
+PackageLicenseDeclared: NOASSERTION
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseInfoFromFiles: Apache-2.0
+PackageLicenseInfoFromFiles: CC0-1.0
+PackageCopyrightText: NONE
+# File
+FileName: ./scan/apache-2.0.LICENSE
+FileChecksum: SHA1: 2b8b815229aa8a61e483fb4ba0588b8b6c491890
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: Apache-2.0
+FileCopyrightText: NONE
+# File
+FileName: ./scan/cc0-1.0.LICENSE
+FileChecksum: SHA1: 172444e7c137eb5cd3cae530aca0879c90f7fada
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: CC0-1.0
+FileCopyrightText: NONE
+# Extracted Licenses
