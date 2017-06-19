@@ -105,6 +105,22 @@ class TestTextPreparation(FileBasedTesting):
         result = list(cluecode.copyrights.candidate_lines(lines))
         assert expected == result
 
+    def test_is_candidates_should_select_line_with_full_year(self):
+        line = '2012'
+        assert cluecode.copyrights.is_candidate(line)
+
+    def test_is_candidates_should_not_select_line_with_full_year_before_160_and_after_2018(self):
+        line = '1959 2019'
+        assert not cluecode.copyrights.is_candidate(line)
+
+    def test_is_candidate_should_not_select_line_with_only_two_digit_numbers(self):
+        line = 'template<class V> struct v_iter<V, mpl::int_<10> > { typedef typename V::item10 type; typedef v_iter<V, mpl::int_<10 + 1> > next; };'
+        assert not cluecode.copyrights.is_candidate(line)
+
+    def test_is_candidate_should_select_line_with_copyright_sign(self):
+        line = 'template<class V> struct v_iter<V, mpl::int_<10> (c) { typedef typename V::item10 type; typedef v_iter<V, mpl::int_<10 + 1> > next; };'
+        assert cluecode.copyrights.is_candidate(line)
+
 
 class TestCopyrightDetector(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

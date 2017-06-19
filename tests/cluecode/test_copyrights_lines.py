@@ -85,13 +85,10 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_03e16f6c_0(self):
         test_file = self.get_test_loc('copyrights/copyright_03e16f6c_0-e_f_c.0')
         expected = [
-            (
-             [u'Copyright (c) 1997 Microsoft Corp., OU Microsoft Corporation, CN Microsoft Root',
-              u'Copyright (c) 1997 Microsoft Corp., OU Microsoft Corporation, CN Microsoft Root',
-              u'(c) 1997 Microsoft'
-             ],
-             28, 78
-            )
+            ([u'Copyright (c) 1997 Microsoft Corp., OU Microsoft Corporation, CN Microsoft Root',
+              u'Copyright (c) 1997 Microsoft Corp., OU Microsoft Corporation, CN Microsoft Root'],
+              30, 37),
+            ([u'(c) 1997 Microsoft'], 60, 63)
         ]
         check_detection(expected, test_file)
 
@@ -103,8 +100,13 @@ class TestCopyrightLinesDetection(FileBasedTesting):
                 u'Copyright (c) 2005, OU OISTE Foundation Endorsed, CN OISTE WISeKey Global Root',
                 u'Copyright (c) 2005, OU OISTE Foundation Endorsed, CN OISTE WISeKey Global Root'
             ],
-            28, 66
+            30, 37
         )]
+        check_detection(expected, test_file)
+
+    def test_copyright_boost_vector(self):
+        test_file = self.get_test_loc('copyrights/vector50.hpp')
+        expected = [([u'Copyright (c) 2005 Arkadiy Vertleyb', u'Copyright (c) 2005 Peder Holt'], 2, 3)]
         check_detection(expected, test_file)
 
     def test_copyright_ABC_cpp(self):

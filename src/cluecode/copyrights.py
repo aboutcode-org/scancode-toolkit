@@ -203,6 +203,9 @@ patterns = [
 
     (r'^example\.com$', 'JUNK'),
 
+    # C/C++
+    (r'^(template|struct|typedef|type|next|typename|namespace|type_of|begin|end)$', 'JUNK'),
+
     # various trailing words that are junk
     (r'^(?:Copyleft|LegalCopyright|AssemblyCopyright|Distributed|Report|'
      r'Available|true|false|node|jshint|node\':true|node:true)$', 'JUNK'),
@@ -1065,7 +1068,11 @@ def is_candidate(line):
     """
     line = line.lower()
     line = prepare_text_line(line)
-    return (has_content(line) and any(s in line for s in copyrights_hint.statement_markers))
+    if has_content(line):
+        for marker in copyrights_hint.statement_markers:
+            if marker in line:
+                logger.debug('is_candidate: %(marker)r in line:\n%(line)r' % locals())
+                return True
 
 
 def has_content(line):
