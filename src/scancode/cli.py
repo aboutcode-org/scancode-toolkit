@@ -112,10 +112,11 @@ acknowledgment_text = delimiter + acknowledgment_text
 
 notice = acknowledgment_text.strip().replace('  ', '')
 
-pm = pluggy.PluginManager('scan_proper')
-pm.add_hookspecs(hookspec)
-pm.load_setuptools_entrypoints('scancode_plugins')
-options = [ op for op in pm.hook.add_cmdline_option() if isinstance(op, click.Option) ]
+scan_proper_pm = pluggy.PluginManager('scan_proper')
+post_scan_pm = pluggy.PluginManager('post_scan')
+scan_proper_pm.add_hookspecs(hookspec)
+post_scan_pm.add_hookspecs(hookspec)
+scan_proper_pm.load_setuptools_entrypoints('scancode_plugins')
 
 
 def print_about(ctx, param, value):
@@ -231,26 +232,33 @@ Note: when you run scancode, a progress bar is displayed with a counter of the
 number of files processed. Use --verbose to display file-by-file progress.
 '''
 
+formats = ('json', 'json-pp', 'html', 'html-app', 'spdx-tv', 'spdx-rdf')
+plugin_formats = {}
 
 class ScanCommand(BaseCommand):
     short_usage_help = '''
 Try 'scancode --help' for help on options and arguments.'''
 
-    def get_params(self, ctx):
-        """
-        Add options returned by plugins to the params list
-        """
-        return super(BaseCommand, self).get_params(ctx) + options
+    options = [ op for op in scan_proper_pm.hook.add_cmdline_option() if isinstance(op, click.Option) ]
 
+    def __init__(self, name, context_settings=None, callback=None,
+                 params=None, help=None, epilog=None, short_help=None,
+                 options_metavar='[OPTIONS]', add_help_option=True):
+        BaseCommand.__init__(self, name, context_settings, callback,
+                 params, help, epilog, short_help,
+                 options_metavar, add_help_option)
+        plugins_ret_list = scan_proper_pm.hook.add_format()
+        for plugin_ret in plugins_ret_list:
+            if (len(plugin_ret) == 2 and plugin_ret[0] not in plugin_formats):
+                plugin_formats[plugin_ret[0]] = plugin_ret[1]
 
-formats = ('json', 'json-pp', 'html', 'html-app', 'spdx-tv', 'spdx-rdf')
 
 def validate_formats(ctx, param, value):
     """
     Validate formats and template files. Raise a BadParameter on errors.
     """
     value_lower = value.lower()
-    if value_lower in formats:
+    if value_lower in formats or value_lower in plugin_formats:
         return value_lower
     # render using a user-provided custom format template
     if not os.path.isfile(value):
@@ -783,7 +791,7 @@ def save_results(scanners, only_findings, files_count, results, format, options,
         if parent_dir:
             fileutils.create_dir(abspath(expanduser(parent_dir)))
 
-    if format not in formats:
+    if format not in formats and format not in plugin_formats:
         # render using a user-provided custom format template
         if not os.path.isfile(format):
             echo_stderr('\nInvalid template passed.', fg='red')
@@ -798,4 +806,4 @@ def save_results(scanners, only_findings, files_count, results, format, options,
                     raise e
         return
 
-    write_formatted_output(scanners, files_count, version, notice, results, format, options, input, output_file, echo_stderr)
+    write_formatted_output(scanners, files_count, version, notice, results, format, options, input, output_file, echo_stderr, plugin_formats, post_scan_pm)

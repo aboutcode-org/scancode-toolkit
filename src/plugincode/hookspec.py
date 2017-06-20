@@ -38,12 +38,19 @@ def extract_archive():
     pass
 
 @post_scan
-def print_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
+def print_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
     pass
 
 @scan_proper
 def add_cmdline_option():
     """
     Return a click.Option instance which will be added to scancode.cli.ScanCommand
+    """
+    pass
+
+@scan_proper
+def add_format():
+    """
+    Return a unique format name and a plugin to act as a callback for that format
     """
     pass

@@ -59,12 +59,20 @@ class BaseCommand(click.Command):
     # "Try 'scancode --help' for help on options and arguments."
     short_usage_help = ''
 
+    options = []
+
     def get_usage(self, ctx):
         """
         Ensure that usage points to the --help option explicitly.
         Workaround click issue https://github.com/mitsuhiko/click/issues/393
         """
         return super(BaseCommand, self).get_usage(ctx) + self.short_usage_help
+
+    def get_params(self, ctx):
+        """
+        Add options returned by plugins to the params list
+        """
+        return super(BaseCommand, self).get_params(ctx) + self.options
 
     def main(self, args=None, prog_name=None, complete_var=None,
              standalone_mode=True, **extra):
