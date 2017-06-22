@@ -251,6 +251,12 @@ Try 'scancode --help' for help on options and arguments.'''
         for plugin_ret in plugins_ret_list:
             if (len(plugin_ret) == 2 and plugin_ret[0] not in plugin_formats):
                 plugin_formats[plugin_ret[0]] = plugin_ret[1]
+        if plugin_formats:
+            for param in self.params:
+                if param.human_readable_name == 'format':
+                    param.help = param.help.replace(
+                        'the path to a custom template',
+                        '%s or the path to a custom template' % ' or '.join(plugin_formats.keys()))
 
 
 def validate_formats(ctx, param, value):
