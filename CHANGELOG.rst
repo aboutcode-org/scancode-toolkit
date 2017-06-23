@@ -1,12 +1,132 @@
-
 Changelog
 =========
 
 
-2.0.0
+2.0.0 (2017-06-23)
 ------------------
-* New features
- *  
+
+ This is a major release with several new and improved features and bug
+ fixes.
+ 
+ Some of the key highlights include:
+
+ * License:
+
+   * Brand new, faster and accurate detection engine using multiple
+     techniques eventually doing multiple exhaustive comparisons of
+     a scanned file content against all the license and rule texts.
+
+   * Several new licenses and over 2500+ new and improved licenses
+     detection rules have been added making the detection significantly
+     better (and weirdly enough faster too as a side-effect of the new
+     detection engine)
+
+   * the matched license text can be optionally returned with the
+     `--license-text` option
+
+   * The detection accuracy has been benchmarked against other detection
+     engine and ScanCode has shown to be more accurate and
+     comprehensive than all the other engines reviewed.
+
+   * improved scoring of license matches
+
+
+ * Package and dependencies:
+
+  * new and improved detection of multiple package formats: NPM, Maven,
+    NuGet, PHP Composer, Python Pypi and RPM. In most cases direct,
+    declared dependencies are also reported.
+
+  * several additional package formats will be reported in the future
+    version.
+
+  * note: the structure of Packages data is evolving and should not be
+    considered API at this stage
+
+
+ * Scan outputs: 
+
+  * New SPDX tag/values and RDF outputs.
+
+  * new compact JSON format (the pretty printed format is still
+    available with the the `json-pp` format).
+    The JSON format has been changed significantly and is closer to a
+    documented, standard format that we call the ABC data format.
+
+  * Minor refinements on the html and html-app format. Note that the
+    html-app format will be deprecated and replaced by the new AboutCode
+    Manager desktop app (electron-based) in future versions.
+
+
+ * Copyright: Improved copyright detection: several false positive are
+   no longer returned and copyright s are more accurate
+
+
+ * Archive: support for shallow extraction and support for new archive
+   types (such as Spring boot shell archives)
+
+
+ * Performance:
+
+  * Everything is generally faster, and license detection performance
+    has been significantly improved.
+
+  * Scans can run on multiple processes in parallel with the new 
+    `--processes` option speeding up things even further. A scan of a
+    full Debian pool of source packages was reported to scan in about
+    11 hours (on a rather beefy 144 cores, 256GB machine)
+
+  * Reduced memory usage with the use of caching
+
+ * Other notes:
+
+   * This is the last release with Linux 32 bits architecture support
+   * The scan of a file can be interrupted after a timeout with a 120
+     seconds default
+   * ScanCode is now available as a library on the Pypi Python package
+     index for use as a library. The documentation for the library usage
+     will follow in future versions
+   * New `--ignore` option: You can optionally ignore certain file and
+     paths during a scan
+   * New `--diag option`: display additional debug and diagnostic data
+   * The scanned file paths can now reported as relative, rooted or
+     absolute with new command line options with a default to a rooted
+     path. 
+
+
+ Thank you to all contributors to this release and the 200+ stars
+ and 60+ forks on GitHub!
+
+ * Credits in alphabetic order:
+
+  Alexander Lisianoi
+  Avi Aryan
+  Benedikt Spranger
+  Chin Yeung
+  Dennis Clark
+  Hugo Jacob
+  Jakub Wilk
+  Jericho @attritionorg
+  Jillian Daguil
+  Jiri Popelka
+  John M. Horan
+  Jonathan "Jono" Yang
+  Li Ha
+  Michael Herzog
+  Michael Rupprecht
+  Nusrat Sultana
+  Paul Kunz
+  Philippe Ombredanne
+  Rakesh Balusa
+  Ranvir Singh
+  Richard Fontana
+  Sebastian Schuberth
+  Steven Esser
+  Thomas Gleixner
+  Tisoga @forrestchang
+  Yash D. Saraf
+  Yash Sharma
+
 
 1.6.0 (2016-01-29)
 ------------------
