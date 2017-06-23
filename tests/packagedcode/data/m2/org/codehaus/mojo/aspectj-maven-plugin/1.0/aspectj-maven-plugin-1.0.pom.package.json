@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.codehaus.mojo:aspectj-maven-plugin", 
   "version": "1.0", 
   "primary_language": "Java", 

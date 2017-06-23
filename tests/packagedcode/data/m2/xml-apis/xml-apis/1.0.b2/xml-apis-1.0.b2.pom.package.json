@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "xml-apis:xml-apis", 
   "version": "1.0.b2", 
   "primary_language": "Java", 

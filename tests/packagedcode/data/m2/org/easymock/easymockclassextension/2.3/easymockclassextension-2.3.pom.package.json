@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.easymock:easymockclassextension", 
   "version": "2.3", 
   "primary_language": "Java", 

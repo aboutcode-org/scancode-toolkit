@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "javax.transaction:jta", 
   "version": "1.0.1B", 
   "primary_language": "Java", 

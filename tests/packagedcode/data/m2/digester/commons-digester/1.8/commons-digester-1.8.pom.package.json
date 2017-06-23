@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "commons-digester:commons-digester", 
   "version": "1.8", 
   "primary_language": "Java", 

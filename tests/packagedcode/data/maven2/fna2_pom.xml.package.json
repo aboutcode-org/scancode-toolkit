@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "com.adobe.ac.samples.lcds:flex_app", 
   "version": "1.0-SNAPSHOT", 
   "primary_language": "Java", 

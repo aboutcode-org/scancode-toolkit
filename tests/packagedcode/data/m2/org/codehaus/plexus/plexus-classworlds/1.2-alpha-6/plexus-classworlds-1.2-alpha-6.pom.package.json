@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.codehaus.plexus:plexus-classworlds", 
   "version": "1.2-alpha-6", 
   "primary_language": "Java", 

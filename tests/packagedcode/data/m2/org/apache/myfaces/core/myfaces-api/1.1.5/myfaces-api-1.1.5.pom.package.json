@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.apache.myfaces.core:myfaces-api", 
   "version": "1.1.5", 
   "primary_language": "Java", 

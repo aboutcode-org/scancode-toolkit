@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "aspectj:aspectjrt", 
   "version": "1.5.3", 
   "primary_language": "Java", 

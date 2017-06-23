@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.codehaus.plexus:plexus", 
   "version": "1.0.10", 
   "primary_language": "Java", 

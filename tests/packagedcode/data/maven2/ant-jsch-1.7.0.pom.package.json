@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.apache.ant:ant-jsch", 
   "version": "1.7.0", 
   "primary_language": "Java", 

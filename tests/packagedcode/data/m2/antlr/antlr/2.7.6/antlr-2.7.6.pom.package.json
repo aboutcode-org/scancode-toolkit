@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "antlr:antlr", 
   "version": "2.7.6", 
   "primary_language": "Java", 

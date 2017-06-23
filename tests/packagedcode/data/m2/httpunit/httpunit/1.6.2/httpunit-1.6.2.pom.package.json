@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "httpunit:httpunit", 
   "version": "1.6.2", 
   "primary_language": "Java", 

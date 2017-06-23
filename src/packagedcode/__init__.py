@@ -37,7 +37,7 @@ PACKAGE_TYPES = [
     models.JavaJar,
     models.JavaEar,
     models.JavaWar,
-    maven.MavenJar,
+    maven.MavenPomPackage,
     models.IvyJar,
     models.JBossSar,
     models.Axis2Mar,

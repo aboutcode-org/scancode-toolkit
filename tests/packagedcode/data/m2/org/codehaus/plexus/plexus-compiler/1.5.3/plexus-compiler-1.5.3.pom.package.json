@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.codehaus.plexus:plexus-compiler", 
   "version": "1.5.3", 
   "primary_language": "Java", 

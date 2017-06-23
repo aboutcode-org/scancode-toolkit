@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.hibernate:hibernate-entitymanager", 
   "version": "3.2.1.ga", 
   "primary_language": "Java", 

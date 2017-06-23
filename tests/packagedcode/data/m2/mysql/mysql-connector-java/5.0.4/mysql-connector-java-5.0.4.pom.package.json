@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "mysql:mysql-connector-java", 
   "version": "5.0.4", 
   "primary_language": "Java", 

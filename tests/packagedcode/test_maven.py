@@ -135,9 +135,9 @@ class TestMavenMisc(testcase.FileBasedTesting):
         test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')
         package = maven.parse(test_file)
 
-        assert isinstance(package, maven.MavenJar)
+        assert isinstance(package, maven.MavenPomPackage)
         expected = [
-            ('type', u'Apache Maven'),
+            ('type', u'Apache Maven POM'),
             ('name', u'org.springframework:spring-beans'),
             ('version', u'4.2.2.RELEASE'),
             ('primary_language', u'Java'),

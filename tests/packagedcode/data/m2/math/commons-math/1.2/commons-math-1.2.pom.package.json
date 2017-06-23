@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "commons-math:commons-math", 
   "version": "1.2", 
   "primary_language": "Java", 

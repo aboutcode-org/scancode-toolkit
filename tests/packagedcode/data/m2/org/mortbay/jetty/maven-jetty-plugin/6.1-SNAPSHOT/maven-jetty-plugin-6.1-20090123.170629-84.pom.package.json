@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.mortbay.jetty:maven-jetty-plugin", 
   "version": "6.1-SNAPSHOT", 
   "primary_language": "Java", 

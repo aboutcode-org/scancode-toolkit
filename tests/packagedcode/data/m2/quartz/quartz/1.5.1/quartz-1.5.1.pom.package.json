@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "quartz:quartz", 
   "version": "1.5.1", 
   "primary_language": "Java", 

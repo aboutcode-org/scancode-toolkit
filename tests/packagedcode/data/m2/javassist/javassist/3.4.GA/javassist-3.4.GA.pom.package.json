@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "javassist:javassist", 
   "version": "3.4.GA", 
   "primary_language": "Java", 

@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.acegisecurity:acegi-security", 
   "version": "1.0.5", 
   "primary_language": "Java", 

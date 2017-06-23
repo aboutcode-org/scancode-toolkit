@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.apache.maven:maven-profile", 
   "version": "2.0.4", 
   "primary_language": "Java", 

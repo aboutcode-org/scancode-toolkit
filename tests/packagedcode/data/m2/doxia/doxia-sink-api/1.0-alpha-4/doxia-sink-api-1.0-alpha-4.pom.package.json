@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "doxia:doxia-sink-api", 
   "version": "1.0-alpha-4", 
   "primary_language": "Java", 

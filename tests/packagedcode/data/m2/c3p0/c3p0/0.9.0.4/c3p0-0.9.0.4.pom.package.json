@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "c3p0:c3p0", 
   "version": "0.9.0.4", 
   "primary_language": "Java", 

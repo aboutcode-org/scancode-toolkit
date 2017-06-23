@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.apache.maven.plugins:maven-site-plugin", 
   "version": "2.0-beta-6", 
   "primary_language": "Java", 

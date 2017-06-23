@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.hibernate:ejb3-persistence", 
   "version": "1.0.1.GA", 
   "primary_language": "Java", 

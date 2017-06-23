@@ -41,7 +41,7 @@ Recognize packages in files or directories.
 """
 
 
-def recognize_packaged_archives(location):
+def recognize_package(location):
     """
     Return a Package object if one was recognized or None for this `location`.
     """

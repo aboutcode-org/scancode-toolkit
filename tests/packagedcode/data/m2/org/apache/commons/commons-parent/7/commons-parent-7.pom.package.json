@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.apache.commons:commons-parent", 
   "version": "7", 
   "primary_language": "Java", 

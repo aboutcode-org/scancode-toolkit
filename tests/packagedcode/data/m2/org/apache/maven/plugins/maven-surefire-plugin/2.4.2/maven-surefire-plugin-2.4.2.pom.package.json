@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.apache.maven.plugins:maven-surefire-plugin", 
   "version": "2.4.2", 
   "primary_language": "Java", 

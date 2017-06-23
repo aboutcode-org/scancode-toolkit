@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.hibernate:hibernate-annotations", 
   "version": "3.3.1.GA", 
   "primary_language": "Java", 

@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "no.knowit.seam:root", 
   "version": "2.2.0-SNAPSHOT", 
   "primary_language": "Java", 

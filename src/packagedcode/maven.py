@@ -56,11 +56,13 @@ Support Maven2 POMs.
 Attempts to resolve Maven properties when possible.
 """
 
-
-class MavenJar(models.JavaJar):
-    metafiles = ('META-INF/**/*.pom', 'pom.xml',)
+class MavenPomPackage(models.Package):
+    metafiles = ('.pom', 'pom.xml',)
+    extensions = ('.pom','.xml', )
     repo_types = (models.repo_maven,)
-    type = models.StringType(default='Apache Maven')
+    type = models.StringType(default='Apache Maven POM')
+    packaging = models.StringType(default=models.as_archive)
+    primary_language = models.StringType(default='Java')
 
     @classmethod
     def recognize(cls, location):
@@ -650,7 +652,7 @@ def parse(location):
             ))
 
     # FIXME: there are still a lot of other data to map in a Package
-    package = MavenJar(
+    package = MavenPomPackage(
         location=location,
         name='{group_id}:{artifact_id}'.format(**pom),
         version=pom['version'],

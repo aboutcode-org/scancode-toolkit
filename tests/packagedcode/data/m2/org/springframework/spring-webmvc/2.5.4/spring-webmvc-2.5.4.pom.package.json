@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.springframework:spring-webmvc", 
   "version": "2.5.4", 
   "primary_language": "Java", 

@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.aspectj:aspectjtools", 
   "version": "1.6.0", 
   "primary_language": "Java", 

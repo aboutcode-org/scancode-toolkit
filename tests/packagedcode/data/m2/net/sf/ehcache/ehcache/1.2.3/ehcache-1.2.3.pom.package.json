@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "net.sf.ehcache:ehcache", 
   "version": "1.2.3", 
   "primary_language": "Java", 

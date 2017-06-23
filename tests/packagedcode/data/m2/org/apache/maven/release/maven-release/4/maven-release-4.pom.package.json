@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.apache.maven.release:maven-release", 
   "version": "4", 
   "primary_language": "Java", 

@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.codehaus.mojo.natives:maven-native-components", 
   "version": "1.0-alpha-2", 
   "primary_language": "Java", 

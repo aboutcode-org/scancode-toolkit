@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.apache.geronimo.bundles:axis", 
   "version": "1.4_1-SNAPSHOT", 
   "primary_language": "Java", 

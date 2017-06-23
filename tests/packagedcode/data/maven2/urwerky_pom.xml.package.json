@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "ur.urwerk.test:ur.urwerk.test.module-y", 
   "version": "1.0.0", 
   "primary_language": "Java", 

@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "ch.qos.logback:logback-access", 
   "version": "0.2.5", 
   "primary_language": "Java", 

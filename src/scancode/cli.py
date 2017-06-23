@@ -689,7 +689,7 @@ def scan_infos(input_file, diag=False):
     """
     errors = []
     try:
-        infos = get_file_infos(input_file, as_list=False)
+        infos = get_file_infos(input_file)
     except Exception as e:
         # never fail but instead add an error message.
         infos = _empty_file_infos()

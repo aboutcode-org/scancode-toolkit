@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.testng:testng", 
   "version": "5.8", 
   "primary_language": "Java", 

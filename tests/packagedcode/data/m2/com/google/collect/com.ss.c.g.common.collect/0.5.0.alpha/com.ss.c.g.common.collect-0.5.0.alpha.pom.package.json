@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "com.google.collect:com.ss.c.g.common.collect", 
   "version": "0.5.0.alpha", 
   "primary_language": "Java", 

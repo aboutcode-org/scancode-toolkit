@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.openqa.selenium:selenium-rc", 
   "version": "0.9.1", 
   "primary_language": "Java", 

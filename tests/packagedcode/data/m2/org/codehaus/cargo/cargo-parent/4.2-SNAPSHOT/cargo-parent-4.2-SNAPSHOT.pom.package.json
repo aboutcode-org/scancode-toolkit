@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.codehaus.cargo:cargo-parent", 
   "version": "4.2-SNAPSHOT", 
   "primary_language": "Java", 

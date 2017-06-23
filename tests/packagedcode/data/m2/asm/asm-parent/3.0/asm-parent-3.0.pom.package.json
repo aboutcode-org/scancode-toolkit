@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "asm:asm-parent", 
   "version": "3.0", 
   "primary_language": "Java", 

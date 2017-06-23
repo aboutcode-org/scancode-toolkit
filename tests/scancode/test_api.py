@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -53,6 +53,20 @@ class TestAPI(FileBasedTesting):
     def test_get_file_infos_has_no_nulls(self):
         # note the test file is EMPTY on purpose to generate all False is_* flags
         test_dir = self.get_test_loc('api/info')
-        info = api.get_file_infos(test_dir, as_list=False)
+        info = api.get_file_infos(test_dir)
         is_key_values = [v for k, v in info.items() if k.startswith('is_')]
         assert all(v is not None for v in is_key_values)
+
+    def test_get_package_infos_works_for_maven_dot_pom(self):
+        test_file = self.get_test_loc('api/package/p6spy-1.3.pom')
+        packages = api.get_package_infos(test_file)
+        assert len(packages) == 1
+        package = packages[0]
+        assert package['version'] == '1.3'
+
+    def test_get_package_infos_works_for_maven_pom_dot_xml(self):
+        test_file = self.get_test_loc('api/package/pom.xml')
+        packages = api.get_package_infos(test_file)
+        assert len(packages) == 1
+        package = packages[0]
+        assert package['version'] == '1.3'

@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "com.jcraft:jsch", 
   "version": "0.1.23", 
   "primary_language": "Java", 

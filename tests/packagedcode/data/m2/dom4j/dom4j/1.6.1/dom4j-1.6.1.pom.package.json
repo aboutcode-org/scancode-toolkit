@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "dom4j:dom4j", 
   "version": "1.6.1", 
   "primary_language": "Java", 

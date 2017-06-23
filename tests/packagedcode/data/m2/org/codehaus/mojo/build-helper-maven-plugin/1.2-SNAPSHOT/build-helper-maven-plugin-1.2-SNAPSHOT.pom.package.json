@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.codehaus.mojo:build-helper-maven-plugin", 
   "version": "1.2-SNAPSHOT", 
   "primary_language": "Java", 

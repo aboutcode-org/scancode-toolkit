@@ -1,5 +1,5 @@
 {
-  "type": "Apache Maven", 
+  "type": "Apache Maven POM", 
   "name": "org.apache.maven.shared:file-management", 
   "version": "1.2", 
   "primary_language": "Java", 
