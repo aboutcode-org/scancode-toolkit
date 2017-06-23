@@ -110,9 +110,9 @@ def get_link_target(location):
 # The order of types check matters: link -> file -> directory -> special
 TYPES = OrderedDict([
     (is_link, ('l', 'link',)),
-     (is_file, ('f', 'file',)),
-     (is_dir, ('d', 'directory',)),
-     (is_special, ('s', 'special',))
+    (is_file, ('f', 'file',)),
+    (is_dir, ('d', 'directory',)),
+    (is_special, ('s', 'special',))
 ])
 
 
