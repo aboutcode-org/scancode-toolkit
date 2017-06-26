@@ -201,6 +201,7 @@ setup(
             'extractcode = scancode.extract_cli:extractcode',
         ],
         'scancode_plugins': [
+            'formats = plugincode.formats',
         ]
     },
 )

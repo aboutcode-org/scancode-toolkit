@@ -26,31 +26,47 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import os
+
 import pluggy
+import click
 
 
-post_scan = pluggy.HookspecMarker('post_scan')
-scan_proper = pluggy.HookspecMarker('scan_proper')
-pre_scan = pluggy.HookspecMarker('pre_scan')
+hookimpl = pluggy.HookimplMarker('scan_proper')
 
-@pre_scan
-def extract_archive():
-    pass
+formats = ['json', 'json-pp', 'html', 'html-app', 'spdx-tv', 'spdx-rdf']
+plugin_formats = {}
 
-@scan_proper
+@hookimpl
 def add_cmdline_option(post_scan_plugins):
     """
-    Return a click.Option instance which will be added to scancode.cli.ScanCommand
+    Add --format option to scancode
     """
-    pass
+    plugins = post_scan_plugins.hook.add_format()
+    for format, plugin in plugins:
+            if (plugin not in plugin_formats):
+                plugin_formats[format] = plugin
 
-@post_scan
-def print_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
-    pass
+    option = click.Option(('-f', '--format',), is_flag=False, default='json', show_default=True, metavar='<style>',
+              help=('Set <output_file> format <style> to one of the standard formats: %s '
+                    'or the path to a custom template' % ' or '.join(formats + plugin_formats.keys())),
+              callback=validate_formats)
+    return option
 
-@post_scan
-def add_format():
+def validate_formats(ctx, param, value):
     """
-    Return a unique format name and a plugin to act as a callback for that format
+    Validate formats and template files. Raise a BadParameter on errors.
     """
-    pass
+    if check_if_template(value):
+        return value
+    else:
+        return value.lower()
+
+def check_if_template(format):
+    format_lower = format.lower()
+    if format_lower in plugin_formats or format_lower in formats:
+        return False
+    # render using a user-provided custom format template
+    if not os.path.isfile(format):
+        raise click.BadParameter('Invalid template file: "%(format)s" does not exist or is not readable.' % locals())
+    return True

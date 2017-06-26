@@ -31,8 +31,6 @@ from collections import OrderedDict
 import os
 from os.path import abspath
 
-import pluggy
-
 from formattedcode.format import as_template
 from formattedcode.format import as_html_app
 from formattedcode.format import create_html_app_assets
@@ -44,7 +42,7 @@ from plugincode import hookspec
 
 def write_formatted_output(
         scanners, files_count, version, notice, scanned_files,
-        format, options, input, output_file, _echo, plugin_formats, pm):
+        format, options, input, output_file, _echo):
     """
     Save scan results to file or screen.
     """
@@ -63,12 +61,6 @@ def write_formatted_output(
 
     elif format in ('spdx-tv', 'spdx-rdf'):
         write_spdx(version, notice, scanned_files, format, input, output_file)
-
-    elif format in plugin_formats:
-        pm.register(plugin_formats[format])
-        pm.hook.print_output(format=format, files_count=files_count, version=version,
-                         notice=notice, scanned_files=scanned_files, options=options,
-                         input=input, output_file=output_file, _echo=_echo)
 
     else:
         raise Exception('Unknown format')
