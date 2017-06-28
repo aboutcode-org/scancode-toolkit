@@ -130,6 +130,7 @@ def test_scancode_skip_vcs_files_and_dirs_by_default():
     scan_locs = [x['path'] for x in scan_result['files']]
     assert [u'vcs', u'vcs/test.txt'] == scan_locs
 
+
 def test_scancode_skip_single_file(monkeypatch):
     test_dir = test_env.extract_test_tar('ignore/user.tgz')
     result_file = test_env.get_temp_file('json')
@@ -152,6 +153,7 @@ def test_scancode_skip_single_file(monkeypatch):
     ]
     assert expected == scan_locs
 
+
 def test_scancode_skip_multiple_files(monkeypatch):
     test_dir = test_env.extract_test_tar('ignore/user.tgz')
     result_file = test_env.get_temp_file('json')
@@ -163,6 +165,7 @@ def test_scancode_skip_multiple_files(monkeypatch):
     scan_locs = [x['path'] for x in scan_result['files']]
     assert [u'user', u'user/src', u'user/src/test', u'user/src/test/sample.doc', u'user/src/test/sample.txt'] == scan_locs
 
+
 def test_scancode_skip_glob_files(monkeypatch):
     test_dir = test_env.extract_test_tar('ignore/user.tgz')
     result_file = test_env.get_temp_file('json')
@@ -173,6 +176,7 @@ def test_scancode_skip_glob_files(monkeypatch):
     assert 4 == scan_result['files_count']
     scan_locs = [x['path'] for x in scan_result['files']]
     assert [u'user', u'user/src', u'user/src/test', u'user/src/test/sample.txt'] == scan_locs
+
 
 def test_scancode_skip_glob_path(monkeypatch):
     test_dir = test_env.extract_test_tar('ignore/user.tgz')

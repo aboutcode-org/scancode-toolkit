@@ -61,7 +61,7 @@ class TestIndexing(IndexTesting):
         expected = self.get_test_loc(expected)
         if regen:
             with open(expected, 'wb') as jx:
-                jx.write(json.dumps(as_dict, indent=2))
+                jx.write(json.dumps(as_dict, indent=2, separators=(',', ': ')))
 
         expected_as_dict = json.load(open(expected))
         assert expected_as_dict == as_dict

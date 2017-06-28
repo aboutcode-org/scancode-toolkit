@@ -300,7 +300,7 @@ class BaseMavenCase(testcase.FileBasedTesting):
 
         if regen:
             with codecs.open(expected_json_loc, 'wb', encoding='utf-8') as ex:
-                json.dump(parsed_pom, ex, indent=2)
+                json.dump(parsed_pom, ex, indent=2, separators=(',', ': '))
 
         with codecs.open(expected_json_loc, encoding='utf-8') as ex:
             expected = json.load(ex, object_pairs_hook=OrderedDict)
@@ -318,7 +318,7 @@ class BaseMavenCase(testcase.FileBasedTesting):
 
         if regen:
             with codecs.open(expected_json_loc, 'wb', encoding='utf-8') as ex:
-                json.dump(package, ex, indent=2)
+                json.dump(package, ex, indent=2, separators=(',', ': '))
 
         with codecs.open(expected_json_loc, encoding='utf-8') as ex:
             expected = json.load(ex, object_pairs_hook=OrderedDict)

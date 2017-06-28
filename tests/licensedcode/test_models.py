@@ -43,7 +43,7 @@ TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 def check_json(expected, results, regen=False):
     if regen:
         with open(expected, 'wb') as ex:
-            json.dump(results, ex, indent=2)
+            json.dump(results, ex, indent=2, separators=(',', ': '))
     with open(expected) as ex:
         expected = json.load(ex, object_pairs_hook=OrderedDict)
     assert expected == results
