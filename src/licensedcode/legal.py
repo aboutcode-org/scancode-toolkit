@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import print_function
+from __future__ import absolute_import
+from __future__ import unicode_literals
 
 from commoncode import fileutils
 
@@ -32,29 +34,33 @@ Recognition of typical "legal" files such as "LICENSE", "COPYING", etc.
 """
 
 
-special_names = ('COPYING', 'COPYRIGHT', 'NOTICE', 'LICENSE', 'LICENCE',
-                 'LEGAL', 'EULA', 'AGREEMENT', 'ABOUT', 'COPYLEFT', 'LICENSING')
+special_names = (
+    'COPYING', 'COPYRIGHT', 'NOTICE', 'LICENSE', 'LICENCE',
+    'LEGAL', 'EULA', 'AGREEMENT', 'ABOUT', 'COPYLEFT', 'LICENSING')
 
 
 special_names_lower = tuple(x.lower() for x in special_names)
 
 
 def is_special_legal_file(location):
-        file_base_name = fileutils.file_base_name(location).lower()
-        file_extension = fileutils.file_extension(location).lower()
+    """
+    Return an indication that a file may be a "special" legal-like file.
+    """
+    file_base_name = fileutils.file_base_name(location).lower()
+    file_extension = fileutils.file_extension(location).lower()
 
-        if (any(special_name == file_base_name
-                or special_name == file_extension
-                for special_name in special_names_lower)
-         or any(special_name in file_base_name
-                or special_name in file_extension
-                for special_name in special_names)):
-            return 'yes'
+    if (any(special_name == file_base_name
+            or special_name == file_extension
+            for special_name in special_names_lower)
+     or any(special_name in file_base_name
+            or special_name in file_extension
+            for special_name in special_names)):
+        return 'yes'
 
-        elif any(special_name in file_base_name
-                 or special_name in file_extension
-                for special_name in special_names_lower):
-            return 'maybe'
-        else:
-            # return False for now?
-            pass
+    elif any(special_name in file_base_name
+             or special_name in file_extension
+            for special_name in special_names_lower):
+        return 'maybe'
+    else:
+        # return False for now?
+        pass
