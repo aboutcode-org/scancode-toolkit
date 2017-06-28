@@ -55,7 +55,9 @@ TRACE_SPAN_DETAILS = False
 
 def logger_debug(*args): pass
 
-if TRACE or TRACE_FILTER_CONTAINS or TRACE_MERGE or TRACE_REFINE_RULE_MIN_COVERAGE or TRACE_REFINE_SINGLE:
+if (TRACE or TRACE_FILTER_CONTAINS or TRACE_MERGE
+    or TRACE_REFINE_RULE_MIN_COVERAGE or TRACE_REFINE_SINGLE
+    or TRACE_REFINE_SMALL):
     import logging
     import sys
 
@@ -83,9 +85,9 @@ class LicenseMatch(object):
     account both the query and index Span.
     """
 
-    __slots__ = 'rule', 'qspan', 'ispan', 'hispan', 'query_run_start', 'matcher', 'start_line', 'end_line'
+    __slots__ = 'rule', 'qspan', 'ispan', 'hispan', 'query_run_start', 'matcher', 'start_line', 'end_line', 'query'
 
-    def __init__(self, rule, qspan, ispan, hispan=None, query_run_start=0, matcher='', start_line=0, end_line=0):
+    def __init__(self, rule, qspan, ispan, hispan=None, query_run_start=0, matcher='', start_line=0, end_line=0, query=None):
         """
         Create a new match from:
          - rule: matched Rule object
@@ -108,6 +110,7 @@ class LicenseMatch(object):
         self.matcher = matcher
         self.start_line = start_line
         self.end_line = end_line
+        self.query = query
 
     def __repr__(self, trace=TRACE_SPAN_DETAILS):
 
@@ -134,11 +137,11 @@ class LicenseMatch(object):
             ireg=(self.istart, self.iend),
             lines=self.lines(),
         )
-        return ('LicenseMatch<%(matcher)r, lines=%(lines)r, '
-                '%(rule_id)r, %(licenses)r, choice=%(choice)r, '
-                'sc=%(score)r, cov=%(coverage)r, qlen=%(qlen)r, ilen=%(ilen)r, hilen=%(hilen)r, rlen=%(rlen)r, '
-                'qreg=%(qreg)r, ireg=%(ireg)r'
-                '%(spans)s>') % rep
+        return (
+            'LicenseMatch<%(matcher)r, lines=%(lines)r, %(rule_id)r, '
+            '%(licenses)r, choice=%(choice)r, sc=%(score)r, cov=%(coverage)r, '
+            'qlen=%(qlen)r, ilen=%(ilen)r, hilen=%(hilen)r, rlen=%(rlen)r, '
+            'qreg=%(qreg)r, ireg=%(ireg)r %(spans)s>') % rep
 
     def __eq__(self, other):
         """
@@ -240,52 +243,62 @@ class LicenseMatch(object):
 
     def coverage(self):
         """
-        Return the coverage of this match to the matched rule as a rounded float between 0 and 100.
-        """
-        return round(self._coverage() * 100, 2)
-
-    def _coverage(self):
-        """
-        Return the coverage of this match to the matched rule as a float between 0 and 1.
+        Return the coverage of this match to the matched rule as a
+        rounded float between 0 and 100.
         """
         if not self.rule.length:
             return 0
-        return self.ilen() / self.rule.length
+        return round(self.ilen() / self.rule.length * 100, 2)
 
     def score(self):
         """
-        Return the score for this match as a rounded float between 0 and 100.
+        Return the score for this match as a rounded float between 0 and
+        100.
 
-        The score is an indication of the confidence that a match is good. It is
-        computed from the number of matched tokens, the number of rule tokens and the
-        matched rule relevance.
+        The score is an indication of the confidence that a match is
+        good. It is computed from the number of matched tokens, the
+        number of query tokens in the matched range (including unknowns
+        and unmatched) and the matched rule relevance.
         """
-        # _coverage is a value between 0 and 1
-        coverage = self._coverage()
-        if not coverage:
-            return 0
-
         # relevance is a number between 0 and 100. Divide by 100
         relevance = self.rule.relevance / 100
         if not relevance:
             return 0
 
-        if not coverage or not relevance:
+        # The query side of the match may not be contiguous and may
+        # contains unmatched known tokens or unknown tokens.
+        # Therefore we need to compute the real portion query length
+        # including unknown tokens that is included in this match, for
+        # both matches and unmatched tokens
+
+        qspan = self.qspan
+        magnitude = qspan.magnitude()
+        query = self.query
+        # note: to avoid breaking many tests we check query presence
+        if query:
+            # Compute a count of unknowns tokens that are inside the
+            # matched range, ignoring end position of the query span:
+            # unknowns here do not matter as they are never in the match
+            unknowns_pos = qspan & query.unknowns_span
+            qspe = qspan.end
+            unknowns_pos = (pos for pos in unknowns_pos if pos != qspe)
+            unkxpos = query.unknowns_by_pos
+            unknowns_in_match = sum(unkxpos[pos] for pos in unknowns_pos)
+
+            # Fixup the magnitude by adding the count of
+            # unknowns in the match. This number represents the full
+            # extent of the matched query region including matched,
+            # unmatched and unknown tokens.
+            magnitude += unknowns_in_match
+
+        # Compute the score as the ration of the matched query length to
+        # the magnitude, e.g. the length of the matched region
+        if not magnitude:
             return 0
 
-        score = coverage * relevance
-        if score == 1:
-            # Is the match a contiguous match or not? If not, recompute the score
-            # with an alternative approach to avoid the case where a 100% match that
-            # is not covering ALL of the query side region (e.g. a non-contiguous
-            # match) can contain extra misleading words.
-            # see https://github.com/nexB/scancode-toolkit/issues/534
-            matched_and_unmatched = self.qspan.magnitude()
-            matched = self.qlen()
-            if matched != matched_and_unmatched:
-                score = matched / matched_and_unmatched
-
-        return  round(score * 100, 2)
+        # FIXME: this should exposed as an icoverage() method instead
+        query_coverage = self.qlen() / magnitude
+        return  round(query_coverage * relevance * 100, 2)
 
     def surround(self, other):
         """
@@ -308,19 +321,23 @@ class LicenseMatch(object):
         Return a new match object combining self and an other match.
         """
         if self.rule != other.rule:
-            raise TypeError('Cannot combine matches with different rules: from: %(self)r, to: %(other)r' % locals())
+            raise TypeError(
+                'Cannot combine matches with different rules: '
+                'from: %(self)r, to: %(other)r' % locals())
 
         if other.matcher not in self.matcher:
             newmatcher = ' '.join([self.matcher, other.matcher])
         else:
             newmatcher = self.matcher
 
-        combined = LicenseMatch(rule=self.rule,
-                                qspan=Span(self.qspan | other.qspan),
-                                ispan=Span(self.ispan | other.ispan),
-                                hispan=Span(self.hispan | other.hispan),
-                                query_run_start=min(self.query_run_start, other.query_run_start),
-                                matcher=newmatcher)
+        combined = LicenseMatch(
+            rule=self.rule,
+            qspan=Span(self.qspan | other.qspan),
+            ispan=Span(self.ispan | other.ispan),
+            hispan=Span(self.hispan | other.hispan),
+            query_run_start=min(self.query_run_start, other.query_run_start),
+            matcher=newmatcher,
+            query=self.query)
         return combined
 
     def update(self, other):
@@ -346,15 +363,23 @@ class LicenseMatch(object):
         hilen = self.hilen()
         ilen = self.ilen()
         if TRACE_REFINE_SMALL:
-            logger_debug('LicenseMatch.small(): hilen=%(hilen)r, ilen=%(ilen)r, thresholds=%(thresholds)r' % locals(),)
-        if thresholds.small and self.coverage() < 50 and (hilen < min_ihigh or ilen < min_ilen):
+            coverage = self.coverage()
+            logger_debug('LicenseMatch.small(): hilen=%(hilen)r, ilen=%(ilen)r, thresholds=%(thresholds)r coverage=%(coverage)r' % locals(),)
+
+        if thresholds.small and (hilen < min_ihigh or ilen < min_ilen) and self.coverage() < 50:
             if TRACE_REFINE_SMALL:
                 logger_debug('LicenseMatch.small(): CASE 1 thresholds.small and self.coverage() < 50 and (hilen < min_ihigh or ilen < min_ilen)')
             return True
+
         if hilen < min_ihigh or ilen < min_ilen:
             if TRACE_REFINE_SMALL:
                 logger_debug('LicenseMatch.small(): CASE 2 hilen < min_ihigh or ilen < min_ilen')
             return True
+
+        if TRACE_REFINE_SMALL:
+            logger_debug('LicenseMatch.small(): not small')
+
+        return False
 
     def false_positive(self, idx):
         """
@@ -762,7 +787,7 @@ def filter_low_score(matches, min_score=100):
     return kept, discarded
 
 
-def filter_spurious_single_token(matches, query=None, idx=None, unknown_count=5):
+def filter_spurious_single_token(matches, query=None, unknown_count=5):
     """
     Return a list of matches without "spurious" single token matches and a list of
     "spurious" single token matches.
@@ -897,7 +922,7 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST):
     if TRACE: logger_debug('   #####refine_matches: UNDER MIN COVERAGE discarded#', len(discarded))
     if TRACE_REFINE: map(logger_debug, discarded)
 
-    matches, discarded = filter_spurious_single_token(matches, query, idx)
+    matches, discarded = filter_spurious_single_token(matches, query)
     all_discarded.extend(discarded)
     if TRACE: logger_debug('   #####refine_matches: NOT SINGLE TOKEN #', len(matches))
     if TRACE_REFINE: map(logger_debug, matches)

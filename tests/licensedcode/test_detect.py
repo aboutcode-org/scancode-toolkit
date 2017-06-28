@@ -181,7 +181,7 @@ class TestIndexMatch(FileBasedTesting):
 
         assert Span(0, 86) == match.qspan
         assert Span(0, 86) == match.ispan
-        assert 100 == match.score()
+        assert 95.6 == match.score()
 
     def test_match_can_match_approximately(self):
         rule_file = self.get_test_loc('approx/mit/mit.c')
@@ -197,8 +197,8 @@ class TestIndexMatch(FileBasedTesting):
         assert rule == m2.rule
         assert 100 == m1.coverage()
         assert 100 == m2.coverage()
-        assert 100 == m1.score()
-        assert 100 == m2.score()
+        assert 95.6 == m1.score()
+        assert 93.55 == m2.score()
 
     def test_match_return_correct_positions_with_short_index_and_queries(self):
         idx = index.LicenseIndex([Rule(_text='MIT License', licenses=['mit'])])
@@ -673,7 +673,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         assert 1 == len(matches)
         match = matches[0]
         assert 100 == match.coverage()
-        assert 50 == match.score()
+        assert 33.33 == match.score()
         assert Span(0, 9) == match.qspan
         assert Span(0, 9) == match.ispan
 
@@ -692,7 +692,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
 
         match = matches[0]
         assert 100 == match.coverage()
-        assert 55 == match.score()
+        assert 37.81 == match.score()
         assert Span(0, 10) == match.qspan
         assert Span(0, 10) == match.ispan
 
@@ -752,8 +752,8 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         '''.split()
         assert expected_itext == itext.split()
 
-        assert 80 < match.coverage()
-        assert 84 == match.score()
+        assert 84 == match.coverage()
+        assert 70 == match.score()
         assert Span(0, 6) | Span(13, 26) == match.qspan
         assert Span(0, 6) | Span(11, 24) == match.ispan
 
@@ -844,8 +844,8 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         assert expected_qtokens == qtext.split()
         assert expected_itokens == itext.split()
 
-        assert 97 < match.coverage()
-        assert 97 < match.score()
+        assert 97.55 == match.coverage()
+        assert 92.64 == match.score()
         expected = Span(2, 98) | Span(100, 125) | Span(127, 131) | Span(133, 139) | Span(149, 178) | Span(180, 253)
         assert expected == match.qspan
         assert  Span(1, 135) | Span(141, 244) == match.ispan

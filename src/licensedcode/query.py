@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -31,6 +31,7 @@ from intbitset import intbitset
 
 import typecode
 
+from licensedcode.spans import Span
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
 
@@ -98,7 +99,7 @@ if TRACE:
 
 def build_query(location=None, query_string=None, idx=None):
     """
-    Return a Query built from location or querty string given an index.
+    Return a Query built from location or query string given an index.
     """
     if location:
         T = typecode.get_type(location)
@@ -137,6 +138,7 @@ class Query(object):
         'tokens',
         'line_by_pos',
         'unknowns_by_pos',
+        'unknowns_span',
         'shorts_and_digits_pos',
         'query_runs',
         'high_matchables',
@@ -169,6 +171,9 @@ class Query(object):
         # index of known position -> number of unknown tokens after that pos
         # for unknowns at the start, the pos is -1
         self.unknowns_by_pos = defaultdict(int)
+
+        # Span of known positions followed by unknown token(s)
+        self.unknowns_span = None
 
         # set of query position were there is a short, single letter token or digits-only token
         # TODO: consider using an intbitset
@@ -206,6 +211,7 @@ class Query(object):
         """
         return self.low_matchables | self.high_matchables
 
+    # FIXME: this is not used anywhere
     def tokens_with_unknowns(self):
         """
         Yield the original tokens stream with unknown tokens represented by None.
@@ -229,6 +235,8 @@ class Query(object):
         # bind frequently called functions to local scope
         line_by_pos_append = self.line_by_pos.append
         self_unknowns_by_pos = self.unknowns_by_pos
+        unknowns_pos = set()
+        unknowns_pos_add = unknowns_pos.add
         self_shorts_and_digits_pos_add = self.shorts_and_digits_pos.add
         dic_get = self.idx.dictionary.get
 
@@ -259,8 +267,13 @@ class Query(object):
                         self_unknowns_by_pos[-1] += 1
                     else:
                         self_unknowns_by_pos[known_pos] += 1
+                        unknowns_pos_add(known_pos)
                 line_tokens_append(tid)
             yield line_tokens
+
+        # finally create a Span of positions followed by unknwons, used
+        # for intersection with the query span for scoring matches
+        self.unknowns_span = Span(unknowns_pos)
 
     def tokenize_and_build_runs(self, tokens_by_line, line_threshold=4):
         """
@@ -401,6 +414,7 @@ class QueryRun(object):
             return []
         return self.query.tokens[self.start: self.end + 1]
 
+    # FIXME: this is not used anywhere
     def tokens_with_unknowns(self):
         """
         Yield the original tokens stream including unknown tokens (represented

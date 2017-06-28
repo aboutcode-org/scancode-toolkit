@@ -72,6 +72,7 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
     qbegin = query_run.start + start_offset
     qfinish = query_run.end
     qtokens = query_run.query.tokens
+    query = query_run.query
 
     matches = []
     qstart = qbegin
@@ -79,8 +80,8 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
 
     # match as long as long we find alignments and have high matchable tokens
     # this allows to find repeated instances of the same rule in the query run
-
     query_run_matchables = query_run.matchables
+
     while qstart <= qfinish:
         if not query_run_matchables:
             break
@@ -102,9 +103,10 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
             iposses = range(ipos, ipos + mlen)
             hispan = Span(p for p in iposses if itokens[p] >= len_junk)
             ispan = Span(iposses)
-            match = LicenseMatch(rule, qspan, ispan, hispan, qbegin, MATCH_SEQ)
+            match = LicenseMatch(rule, qspan, ispan, hispan, qbegin, matcher=MATCH_SEQ, query=query)
             if TRACE2:
-                qt, it = get_texts(match, location=query_run.query.location, query_string=query_run.query.query_string, idx=idx)
+                qt, it = get_texts(
+                    match, location=query.location, query_string=query.query_string, idx=idx)
                 print('###########################')
                 print(match)
                 print('###########################')
@@ -112,6 +114,7 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
                 print('###########################')
                 print(it)
                 print('###########################')
+
             matches.append(match)
             qstart = max([qstart, qspan.end + 1])
 

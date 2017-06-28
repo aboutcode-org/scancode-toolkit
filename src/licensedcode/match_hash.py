@@ -72,7 +72,7 @@ def index_hash(rule_tokens):
     return tokens_hash(rule_tokens)
 
 
-def match_hash(idx, query_run):
+def hash_match(idx, query_run):
     """
     Return a sequence of LicenseMatch by matching the query_tokens sequence
     against the idx index.
@@ -89,6 +89,6 @@ def match_hash(idx, query_run):
         qspan = Span(range(query_run.start, query_run.end + 1))
         ispan = Span(range(0, rule.length))
         hispan = Span(p for p in ispan if itokens[p] >= len_junk)
-        match = LicenseMatch(rule, qspan, ispan, hispan=hispan, query_run_start=query_run.start, matcher=MATCH_HASH)
+        match = LicenseMatch(rule, qspan, ispan, hispan, query_run.start, matcher=MATCH_HASH, query=query_run.query)
         matches.append(match)
     return matches
