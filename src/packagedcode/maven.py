@@ -58,7 +58,7 @@ Attempts to resolve Maven properties when possible.
 
 class MavenPomPackage(models.Package):
     metafiles = ('.pom', 'pom.xml',)
-    extensions = ('.pom','.xml', )
+    extensions = ('.pom', '.xml',)
     repo_types = (models.repo_maven,)
     type = models.StringType(default='Apache Maven POM')
     packaging = models.StringType(default=models.as_archive)
@@ -73,6 +73,19 @@ class ParentPom(artifact.Artifact):
     """
     A minimal Artifact subclass used to store parent poms when no POM file is available for these.
     """
+
+    def __init__(self, coordinate):
+        super(ParentPom, self).__init__(coordinate)
+
+        # add empty, pom.Pom-class-like empty attributes
+        self.client = None
+        self.dependencies = {}
+        self.dependency_management = {}
+        self.parent = None
+        self.properties = {}
+        # TODO: ????
+        # self.pom_data/self._xml = None
+
     def to_dict(self):
         """
         Return a mapping representing this POM
@@ -86,15 +99,8 @@ class ParentPom(artifact.Artifact):
         ])
 
 
-
-POM_PARSER = etree.XMLParser(
-    recover=True,
-    remove_comments=True,
-    remove_pis=True,
-    remove_blank_text=True, resolve_entities=False
-    )
-
 STRIP_NAMESPACE_RE = re.compile(r"<project(.|\s)*?>", re.UNICODE)
+
 
 class MavenPom(pom.Pom):
     def __init__(self, location):
@@ -108,7 +114,14 @@ class MavenPom(pom.Pom):
         xml = xml[xml.find('<project'):]
         xml = STRIP_NAMESPACE_RE.sub('<project>', xml, 1)
 
-        self._xml = etree.fromstring(xml, parser=POM_PARSER)
+        parser = etree.XMLParser(
+            recover=True,
+            remove_comments=True,
+            remove_pis=True,
+            remove_blank_text=True, resolve_entities=False
+        )
+
+        self._xml = etree.fromstring(xml, parser=parser)
 
         # FXIME: we do not use a client for now. there are pending issues at pymaven to address this
         self._client = None
@@ -603,7 +616,7 @@ def parse(location):
     mavenpom = _get_mavenpom(location, check_is_pom=True)
     if not mavenpom:
         return
-    
+
     pom = mavenpom.to_dict()
 
     licenses = []

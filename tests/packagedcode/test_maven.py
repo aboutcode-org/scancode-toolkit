@@ -289,7 +289,7 @@ class TestPomProperties(testcase.FileBasedTesting):
 class BaseMavenCase(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_pom(self, test_pom, regen=True):
+    def check_pom(self, test_pom, regen=False):
         """
         Test the parsing of POM at test_pom against an expected JSON
         from the same name with a .json extension.
@@ -307,7 +307,7 @@ class BaseMavenCase(testcase.FileBasedTesting):
 
         assert expected == parsed_pom
 
-    def check_package(self, test_pom, regen=True):
+    def check_package(self, test_pom, regen=False):
         """
         Test the creation of a Package from a POM at test_pom against an
         expected JSON from the same name with a .package.json extension.
@@ -340,7 +340,7 @@ def relative_walk(dir_path):
             yield file_path
 
 
-def create_test_function(test_pom_loc, test_name, check_pom=True, regen=True):
+def create_test_function(test_pom_loc, test_name, check_pom=True, regen=False):
     """
     Return a test function closed on test arguments.
     If check_pom is True, test the POM parsing; otherwise, test Package creation
@@ -361,7 +361,7 @@ def create_test_function(test_pom_loc, test_name, check_pom=True, regen=True):
     return test_pom
 
 
-def build_tests(test_dir, clazz, prefix='test_maven2_parse_', check_pom=True, regen=True):
+def build_tests(test_dir, clazz, prefix='test_maven2_parse_', check_pom=True, regen=False):
     """
     Dynamically build test methods for each POMs in `test_dir`  and
     attach the test method to the `clazz` class.
