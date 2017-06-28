@@ -535,16 +535,17 @@ class Rule(object):
     detected licenses and metadata. A rule text can contain variable parts
     marked with double curly braces {{ }}.
     """
-    __slots__ = ('rid', 'identifier',
-                 'licenses', 'license_choice', 'license', 'licensing_identifier',
-                 'false_positive',
-                 'notes',
-                 'data_file', 'text_file', '_text',
-                 'length', 'low_length', 'high_length', '_thresholds',
-                 'length_unique', 'low_unique', 'high_unique', '_thresholds_unique',
-                 'minimum_coverage', 'relevance', 'has_stored_relevance',
-                 'is_license'
-                 )
+    __slots__ = (
+        'rid', 'identifier',
+         'licenses', 'license_choice', 'license', 'licensing_identifier',
+         'false_positive',
+         'notes',
+         'data_file', 'text_file', '_text',
+         'length', 'low_length', 'high_length', '_thresholds',
+         'length_unique', 'low_unique', 'high_unique', '_thresholds_unique',
+         'minimum_coverage', 'relevance', 'has_stored_relevance',
+         'is_license'
+    )
 
     def __init__(self, data_file=None, text_file=None, licenses=None,
                  license_choice=False, notes=None, minimum_coverage=0,
@@ -714,13 +715,14 @@ class Rule(object):
 
     def thresholds(self):
         """
-        Return a Thresholds tuple considering every token occurrence.
+        Return a Thresholds tuple considering the occurrence of all tokens.
         """
         if not self._thresholds:
             min_high = min([self.high_length, MIN_MATCH_HIGH_LENGTH])
             min_len = MIN_MATCH_LENGTH
 
             # note: we cascade ifs from largest to smallest lengths
+            # FIXME: this is not efficient
             if self.length < 30:
                 min_len = self.length // 2
 
@@ -746,7 +748,7 @@ class Rule(object):
 
     def thresholds_unique(self):
         """
-        Return a Thresholds tuple considering only unique token occurrence.
+        Return a Thresholds tuple considering the occurrence of only unique tokens.
         """
         if not self._thresholds_unique:
             highu = (int(self.high_unique // 2)) or self.high_unique
@@ -850,17 +852,17 @@ class Rule(object):
 
     def compute_relevance(self):
         """
-        Compute and set the `relevance` attribute for this rule. The relevance is a
-        float between 0 and 100 where 100 means highly relevant and 0 means not
-        relevant at all.
+        Compute and set the `relevance` attribute for this rule. The
+        relevance is a float between 0 and 100 where 100 means highly
+        relevant and 0 means not relevant at all.
 
-        It is either defined in the rule YAML data file or computed here using this
-        approach:
+        It is either pre-defined in the rule YAML data file with the
+        relevance attribute or computed here using this approach:
 
         - a rule of length up to 20 receives 5 relevance points per token (so a rule
           of length 1 has a 5 relevance and a rule of length 20 has a 100 relevance)
         - a rule of length over 20 has a 100 relevance
-        - a false positive rule has a relevance of zero.
+        - a false positive or a negative rule has a relevance of zero.
 
         For instance a match to the "gpl" or the "cpol" words have a fairly low
         relevance as they are a weak indication of an actual license and could be a
@@ -883,9 +885,9 @@ class Rule(object):
             self.relevance = 0
             return
 
-        # general case
         length = self.length
         if length >= 20:
+            # general case
             self.relevance = 100
         else:
             self.relevance = length * 5
