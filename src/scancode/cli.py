@@ -42,9 +42,9 @@ import traceback
 from types import GeneratorType
 
 import click
-import pluggy
 click.disable_unicode_literals_warning = True
 from click.termui import style
+from pluggy import PluginManager
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -77,7 +77,7 @@ from scancode.utils import get_relative_path
 from scancode.utils import progressmanager
 
 from plugincode import hookspec
-from plugincode.formats import check_if_template
+from plugincode.formats import is_template
 
 echo_stderr = partial(click.secho, err=True)
 
@@ -113,8 +113,8 @@ acknowledgment_text = delimiter + acknowledgment_text
 
 notice = acknowledgment_text.strip().replace('  ', '')
 
-scan_proper_pm = pluggy.PluginManager('scan_proper')
-post_scan_pm = pluggy.PluginManager('post_scan')
+scan_proper_pm = PluginManager('scan_proper')
+post_scan_pm = PluginManager('post_scan')
 scan_proper_pm.add_hookspecs(hookspec)
 post_scan_pm.add_hookspecs(hookspec)
 scan_proper_pm.load_setuptools_entrypoints('scancode_plugins')
@@ -761,7 +761,7 @@ def save_results(scanners, only_findings, files_count, results, format, options,
         if parent_dir:
             fileutils.create_dir(abspath(expanduser(parent_dir)))
 
-    if check_if_template(format):
+    if is_template(format):
         # render using a user-provided custom format template
         if not os.path.isfile(format):
             echo_stderr('\nInvalid template passed.', fg='red')
@@ -776,4 +776,4 @@ def save_results(scanners, only_findings, files_count, results, format, options,
                     raise e
         return
 
-    write_formatted_output(scanners, files_count, version, notice, results, format, options, input, output_file, echo_stderr)
+    write_formatted_output(scanners, files_count, version, notice, results, format, options, input, output_file, echo_stderr, post_scan_pm)

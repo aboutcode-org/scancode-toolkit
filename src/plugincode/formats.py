@@ -26,15 +26,16 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from functools import partial
 import os
 
-import pluggy
+from pluggy import HookimplMarker
 import click
 
 
-hookimpl = pluggy.HookimplMarker('scan_proper')
+echo_stderr = partial(click.secho, err=True)
+hookimpl = HookimplMarker('scan_proper')
 
-formats = ['json', 'json-pp', 'html', 'html-app', 'spdx-tv', 'spdx-rdf']
 plugin_formats = {}
 
 @hookimpl
@@ -43,13 +44,23 @@ def add_cmdline_option(post_scan_plugins):
     Add --format option to scancode
     """
     plugins = post_scan_plugins.hook.add_format()
-    for format, plugin in plugins:
-            if (plugin not in plugin_formats):
-                plugin_formats[format] = plugin
 
-    option = click.Option(('-f', '--format',), is_flag=False, default='json', show_default=True, metavar='<style>',
+    try:
+        for formats, plugin in plugins:
+                for format in formats:
+                    if format not in plugin_formats:
+                        plugin_formats[format] = plugin
+                    else:
+                        raise Exception('Invalid plugin found: Duplicate format passed')
+    except ValueError:
+        # echo_stderr('Invalid plugin found: add_format returned too many values', fg='red')
+        raise ValueError('Invalid plugin found: add_format returned too many values')
+    except Exception as e:
+        raise
+
+    option = click.Option(('-f', '--format'), is_flag=False, default='json', show_default=True, metavar='<style>',
               help=('Set <output_file> format <style> to one of the standard formats: %s '
-                    'or the path to a custom template' % ' or '.join(formats + plugin_formats.keys())),
+                    'or the path to a custom template' % ' or '.join(plugin_formats.keys())),
               callback=validate_formats)
     return option
 
@@ -57,14 +68,14 @@ def validate_formats(ctx, param, value):
     """
     Validate formats and template files. Raise a BadParameter on errors.
     """
-    if check_if_template(value):
+    if is_template(value):
         return value
     else:
         return value.lower()
 
-def check_if_template(format):
+def is_template(format):
     format_lower = format.lower()
-    if format_lower in plugin_formats or format_lower in formats:
+    if format_lower in plugin_formats:
         return False
     # render using a user-provided custom format template
     if not os.path.isfile(format):

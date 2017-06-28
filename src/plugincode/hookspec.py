@@ -26,12 +26,12 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import pluggy
+from pluggy import HookspecMarker
 
 
-post_scan = pluggy.HookspecMarker('post_scan')
-scan_proper = pluggy.HookspecMarker('scan_proper')
-pre_scan = pluggy.HookspecMarker('pre_scan')
+post_scan = HookspecMarker('post_scan')
+scan_proper = HookspecMarker('scan_proper')
+pre_scan = HookspecMarker('pre_scan')
 
 @pre_scan
 def extract_archive():
@@ -45,7 +45,7 @@ def add_cmdline_option(post_scan_plugins):
     pass
 
 @post_scan
-def print_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
+def write_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
     pass
 
 @post_scan

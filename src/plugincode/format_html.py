@@ -27,23 +27,24 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
-from plugincode.formats import plugin_formats
+from pluggy import HookimplMarker
+
+from formattedcode.format import as_template
 
 
-def write_formatted_output(
-        scanners, files_count, version, notice, scanned_files,
-        format, options, input, output_file, _echo, post_scan_plugins):
-    """
-    Save scan results to file or screen.
-    """
+hookimpl = HookimplMarker('post_scan')
 
-    # FIXME: carrying an echo function does not make sense
-    # FIXME: do not use input as a variable name
+@hookimpl
+def add_format():
+    return (('html',), 'format_html')
 
-    if format in plugin_formats:
-        post_scan_plugins.get_plugin(plugin_formats[format]).write_output(
-            format=format, files_count=files_count, version=version, notice=notice,
-            scanned_files=scanned_files, options=options, input=input, output_file=output_file, _echo=_echo)
-
-    else:
-        raise Exception('Unknown format')
+@hookimpl
+def write_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
+    for template_chunk in as_template(scanned_files):
+        try:
+            output_file.write(template_chunk)
+        except Exception as e:
+            extra_context = 'ERROR: Failed to write output to HTML for: ' + repr(template_chunk)
+            _echo(extra_context, fg='red')
+            e.args += (extra_context,)
+            raise e

@@ -27,23 +27,26 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
-from plugincode.formats import plugin_formats
+from pluggy import HookimplMarker
+
+from formattedcode.format import as_html_app
+from formattedcode.format import create_html_app_assets
+from formattedcode.format import HtmlAppAssetCopyWarning
+from formattedcode.format import HtmlAppAssetCopyError
 
 
-def write_formatted_output(
-        scanners, files_count, version, notice, scanned_files,
-        format, options, input, output_file, _echo, post_scan_plugins):
-    """
-    Save scan results to file or screen.
-    """
+hookimpl = HookimplMarker('post_scan')
 
-    # FIXME: carrying an echo function does not make sense
-    # FIXME: do not use input as a variable name
+@hookimpl
+def add_format():
+    return (('html-app',), 'format_html_app')
 
-    if format in plugin_formats:
-        post_scan_plugins.get_plugin(plugin_formats[format]).write_output(
-            format=format, files_count=files_count, version=version, notice=notice,
-            scanned_files=scanned_files, options=options, input=input, output_file=output_file, _echo=_echo)
-
-    else:
-        raise Exception('Unknown format')
+@hookimpl
+def write_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
+    output_file.write(as_html_app(input, output_file))
+    try:
+        create_html_app_assets(scanned_files, output_file)
+    except HtmlAppAssetCopyWarning:
+        _echo('\nHTML app creation skipped when printing to stdout.', fg='yellow')
+    except HtmlAppAssetCopyError:
+        _echo('\nFailed to create HTML app.', fg='red')
