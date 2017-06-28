@@ -2,6 +2,18 @@ Changelog
 =========
 
 
+2.1.0 (NEXT)
+------------------
+
+ This is a minor release with minor new and improved features and bug
+ fixes.
+
+ * New and improved license detection, including refined match scoring
+   for #534
+ * New "base_name" attribute returned with file information 
+ * Fix bug in Maven POM package detection
+
+
 2.0.0 (2017-06-23)
 ------------------
 
