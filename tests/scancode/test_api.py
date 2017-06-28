@@ -50,7 +50,7 @@ class TestAPI(FileBasedTesting):
             _pickled = pickle.dumps(package)
             _cpickled = cPickle.dumps(package)
 
-    def test_get_file_infos_has_no_nulls(self):
+    def test_get_file_infos_flag_are_not_null(self):
         # note the test file is EMPTY on purpose to generate all False is_* flags
         test_dir = self.get_test_loc('api/info')
         info = api.get_file_infos(test_dir)
@@ -70,3 +70,8 @@ class TestAPI(FileBasedTesting):
         assert len(packages) == 1
         package = packages[0]
         assert package['version'] == '1.3'
+
+    def test_get_file_infos_include_base_name(self):
+        test_dir = self.get_test_loc('api/info/test.txt')
+        info = api.get_file_infos(test_dir)
+        assert 'test' == info['base_name']

@@ -178,8 +178,15 @@ def get_file_infos(location):
     T = contenttype.get_type(location)
 
     infos['type'] = filetype.get_type(location, short=False)
+    name = fileutils.file_name(location)
     infos['name'] = fileutils.file_name(location)
-    infos['extension'] = is_file and fileutils.file_extension(location) or ''
+    if is_file:
+        base_name, extension = fileutils.splitext(location)
+    else:
+        base_name = name
+        extension =  ''
+    infos['base_name'] = base_name
+    infos['extension'] = extension
     infos['date'] = is_file and filetype.get_last_modified_date(location) or None
     infos['size'] = T.size
     infos.update(multi_checksums(location, ('sha1', 'md5',)))

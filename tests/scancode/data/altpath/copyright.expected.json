@@ -14,6 +14,7 @@
       "path": "copyright.c",
       "type": "file",
       "name": "copyright.c",
+      "base_name": "copyright",
       "extension": ".c",
       "size": 55,
       "sha1": "e2466d5b764d27fb301ceb439ffb5da22e43ab1d",
