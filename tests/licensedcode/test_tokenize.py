@@ -28,6 +28,7 @@ from __future__ import unicode_literals
 
 import codecs
 import itertools
+from time import time
 import os
 
 from commoncode.testcase import FileBasedTesting
@@ -367,6 +368,27 @@ class TestRuleTokenizer(FileBasedTesting):
     def test_rule_tokenizer_handles_combination_of_well_formed_and_ill_formed_templates_2(self):
         text = u'}}{{{{abcd}}ddd}}{{'
         assert [u'ddd'] == list(rule_tokenizer(text))
+
+    def test_tokenizers_regex_do_not_choke_on_some_text(self):
+        # somehow this text was making the regex choke.
+        tf = self.get_test_loc('tokenize/parser.js')
+        with codecs.open(tf, 'rb', encoding='utf-8') as text:
+            content = text.read()
+
+        start = time()
+        list(rule_tokenizer(content))
+        duration = time() - start
+        assert duration < 5
+
+        start = time()
+        list(query_tokenizer(content))
+        duration = time() - start
+        assert duration < 5
+
+        start = time()
+        list(matched_query_text_tokenizer(content))
+        duration = time() - start
+        assert duration < 5
 
 
 class TestNgrams(FileBasedTesting):

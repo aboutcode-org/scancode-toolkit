@@ -528,9 +528,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
         result = [qr.to_dict() for qr in q.query_runs]
         expected = [
             {'end': 0, 'start': 0, 'tokens': u'inc'},
-            {
-            'end': 123,
-            'start': 1,
+            {'end': 123, 'start': 1,
             'tokens': (
                 u'this library is free software you can redistribute it and or modify '
                 u'it under the terms of the gnu library general public license as '
@@ -542,10 +540,43 @@ class TestQueryWithMultipleRuns(IndexTesting):
                 u'license for more details you should have received a copy of the gnu '
                 u'library general public license along with this library see the file '
                 u'copying lib if not write to the free software foundation inc 51 '
-                u'franklin street fifth floor boston ma 02110 1301 usa'
-            )
-        }]
+                u'franklin street fifth floor boston ma 02110 1301 usa')
+             }
+        ]
         assert expected == result
+
+    def test_query_run_and_tokenizing_breaking_works__with_plus_as_expected(self):
+        rule_dir = self.get_test_loc('query/run_breaking/rules')
+        rules = list(models.load_rules(rule_dir))
+        idx = index.LicenseIndex(rules)
+        query_doc = self.get_test_loc('query/run_breaking/query.txt')
+        q = Query(query_doc, idx=idx)
+        result = [qr.to_dict() for qr in q.query_runs]
+        expected = [
+            {'end': 121, 'start': 0,
+             'tokens': 
+                'this library is free software you can redistribute it '
+                'and or modify it under the terms of the gnu library '
+                'general public license as published by the free software '
+                'foundation either version 2 of the license or at your '
+                'option any later version this library is distributed in '
+                'the hope that it will be useful but without any warranty '
+                'without even the implied warranty of merchantability or '
+                'fitness for a particular purpose see the gnu library '
+                'general public license for more details you should have '
+                'received a copy of the gnu library general public '
+                'license along with this library see the file copying lib '
+                'if not write to the free software foundation 51 franklin '
+                'street fifth floor boston ma 02110 1301 usa'}
+        ]
+
+        assert expected == result
+        q.tokens
+        # check rules token are the same exact set as the set of the last query run
+        txtid = idx.tokens_by_tid
+        qrt = [txtid[t] for t in q.query_runs[-1].tokens]
+        irt = [txtid[t] for t in idx.tids_by_rid[0]]
+        assert irt == qrt
 
 
 class TestQueryWithFullIndex(FileBasedTesting):
@@ -590,11 +621,16 @@ class TestQueryWithFullIndex(FileBasedTesting):
         assert 1 == len(result.query_runs)
         qr = result.query_runs[0]
         # NOTE: this is not a token present in any rules or licenses
-        unknown_token = u'baridationally'
-        assert unknown_token not in idx.dictionary
-        assert u' '.join([t for t in query_s.split() if t not in (unknown_token, 'proc')]) == u' '.join(idx.tokens_by_tid[t] for t in qr.tokens)
+        unknown_tokens = ('baridationally',)
+        assert unknown_tokens not in idx.dictionary
+        assert u' '.join([t for t in query_s.split() if t not in unknown_tokens]) == u' '.join(idx.tokens_by_tid[t] for t in qr.tokens)
 
     def test_query_run_tokens_matchable(self):
+        idx = cache.get_index()
+        # NOTE: this is not a token present in any rules or licenses
+        unknown_token = u'baridationally'
+        assert unknown_token not in idx.dictionary
+
         query_s = u' '.join(u'''
 
         3 unable to create proc entry license gpl description driver author eric
@@ -607,27 +643,24 @@ class TestQueryWithFullIndex(FileBasedTesting):
         linux include asm include asm generic include acpi acpi c posix types 32 h
         types h types h h h h h
         '''.split())
-        idx = cache.get_index()
         result = Query(query_string=query_s, idx=idx)
-
         assert 1 == len(result.query_runs)
         qr = result.query_runs[0]
         expected_qr0 = u' '.join(u'''
-        3 unable to create entry license gpl description driver author eric depends 2
-        6 24 19 generic smp mod module acpi register driver acpi disabled acpi
-        install notify acpi get status cache caches create entry generate event acpi
-        evaluate object acpi remove notify remove entry acpi driver acpi acpi gcc gnu
-        4 2 3 ubuntu 4 2 3 gcc gnu 4 2 3 ubuntu 4 2 3 current stack pointer current
-        stack pointer this module end usr src modules acpi include linux include asm
-        include asm generic include acpi acpi c posix types 32 h types h types h h h
-        h h
+        3 unable to create proc entry license gpl description driver author eric
+        depends 2 6 24 19 generic smp mod module acpi             register driver
+        proc acpi disabled acpi install notify acpi               get status cache
+        caches create proc entry                generate proc event acpi evaluate
+        object acpi remove notify remove proc entry acpi             driver acpi
+        acpi gcc gnu 4 2 3 ubuntu 4 2 3 gcc gnu 4 2 3 ubuntu 4 2 3 current stack
+        pointer current stack pointer this module end usr src modules acpi include
+        linux include asm include asm generic include acpi acpi c posix types 32 h
+        types h types h h h h h
         '''.split())
         assert expected_qr0 == u' '.join(idx.tokens_by_tid[t] for t in qr.tokens)
 
-        # NOTE: this is not a token present in any rules or licenses
-        unknown_token = u'baridationally'
-        assert unknown_token not in idx.dictionary
         assert expected_qr0 == u' '.join(idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.matchables)
 
+        # only gpl is in high matchables
         expected = u'gpl'
         assert expected == u' '.join(idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.high_matchables)

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -64,13 +64,11 @@ def query_lines(location=None, query_string=None, strip=True):
             yield line
 
 
-# Split on whitespace and punctuations: keep only characters and +.
-# Keeping the + is important for licenses name such as GPL2+.
-
-_letter_or_digit = '[a-zA-Z0-9]+ ?\+'
-_not_punctuation = '[^!\"#\$%&\'\(\)\*,\-\./:;<=>\?@\[\]\^_`\{\|\}\\\~\s\+\x92\x93\x94”“’–]'
-query_pattern = _letter_or_digit + '|' + _not_punctuation
-word_splitter = re.compile('(?:%s)+' % query_pattern, re.UNICODE).findall
+# Split on whitespace and punctuations: keep only characters
+# and + in the middle or end of a word.
+# Keeping the trailing + is important for licenses name such as GPL2+
+query_pattern = '[^\W_]+\+?[^\W_]*'
+word_splitter = re.compile(query_pattern, re.UNICODE).findall
 
 def query_tokenizer(text, lower=True):
     """
@@ -83,9 +81,10 @@ def query_tokenizer(text, lower=True):
 
 
 # Alternate pattern used for matched text collection
+not_query_pattern = '[\W_+]+[\W_]?'
+
 # collect tokens and non-token texts in two different groups
-_punctuation = '[!\"#\$%&\'\(\)\*,\-\./:;<=>\?@\[\]\^_`\{\|\}\\\~\s\+\x92\x93\x94”“’–]'
-_text_capture_pattern = '(?P<token>(?:' + query_pattern + ')+)' + '|' + '(?P<punct>' + _punctuation + '+)'
+_text_capture_pattern = '(?P<token>' + query_pattern + ')' + '|' + '(?P<punct>' + not_query_pattern + ')'
 tokens_and_non_tokens = re.compile(_text_capture_pattern, re.UNICODE).finditer
 
 def matched_query_text_tokenizer(text):
@@ -114,10 +113,8 @@ def matched_query_text_tokenizer(text):
 # {{something}} for templates. curly barces are otherwise treated as punctuation.
 # A template part is anything enclosed in double braces
 template_pattern = '\{\{[^{}]*\}\}'
-rule_pattern = '(?:%s)+|%s+' % (query_pattern, template_pattern,)
-# rule_pattern = template_pattern
+rule_pattern = '%s|%s+' % (query_pattern, template_pattern,)
 template_splitter = re.compile(rule_pattern , re.UNICODE).findall
-
 
 def rule_tokenizer(text, lower=True):
     """
