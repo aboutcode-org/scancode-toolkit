@@ -181,8 +181,8 @@ class LicenseIndex(object):
         # token id and the value the actual token string
         self.tokens_by_tid = []
 
-        # Note: all mappings of rid-> data are lists of data where the index
-        # is the rule id.
+        # Note: all the following are mappings-like (using lists) of
+        # rid-> data are lists of data where the index is the rule id.
 
         # rule objects proper
         self.rules_by_rid = []
@@ -201,6 +201,7 @@ class LicenseIndex(object):
         # (low_tids_mset, high_tids_mset)
         self.tids_msets_by_rid = []
 
+        # ---
         # mapping of hash -> single rid : duplicated rules are not allowed
         self.rid_by_hash = {}
 
