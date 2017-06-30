@@ -1,8 +1,8 @@
 licenses:
     - mit
-    - gpl
+    - gpl-1.0-plus
     - mit
     - bsd-new
-    - gpl
+    - gpl-1.0-plus
 
 notes: a full expression would be (MIT or GPL) and (MIT or BSD or  GPL)

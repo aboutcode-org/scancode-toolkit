@@ -455,8 +455,11 @@ def check_rules_integrity(rules, licenses):
             invalid_rules[rule.data_file].update(unknown_keys)
 
     if invalid_rules:
-        invalid_rules = (data_file + ': ' + ' '.join(keys)
-                         for data_file, keys in invalid_rules.iteritems() if keys)
+        invalid_rules = (
+            ' '.join(keys) + '\n' +
+            'file://' + data_file + '\n' +
+            'file://' + data_file.replace('.yml', '.RULE') + '\n'
+        for data_file, keys in invalid_rules.iteritems() if keys)
         msg = 'Rules referencing missing licenses:\n' + '\n'.join(sorted(invalid_rules))
         raise MissingLicenses(msg)
 

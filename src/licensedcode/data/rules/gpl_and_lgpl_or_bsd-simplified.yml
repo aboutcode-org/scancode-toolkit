@@ -1,6 +1,6 @@
 licenses:
-    - gpl
-    - lgpl
+    - gpl-1.0-plus
+    - lgpl-2.0-plus
     - bsd-simplified
 license_choice: yes
 

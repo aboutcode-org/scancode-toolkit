@@ -1,4 +1,4 @@
 licenses:
-    - lgpl
+    - lgpl-2.0-plus
     - sun-bcl-sdk-5.0
 notes: there is no generic "sun-bcl" so we use one of them as a proxy
