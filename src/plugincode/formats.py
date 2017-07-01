@@ -43,8 +43,16 @@ def add_cmdline_option(post_scan_plugins):
     """
     Add --format option to scancode
     """
-    plugins = post_scan_plugins.hook.add_format()
 
+    plugins = post_scan_plugins.hook.add_format()
+    validate_plugins(plugins)
+    option = click.Option(('-f', '--format'), is_flag=False, default='json', show_default=True, metavar='<style>',
+              help=('Set <output_file> format <style> to one of the standard formats: %s '
+                    'or the path to a custom template' % ' or '.join(plugin_formats.keys())),
+              callback=validate_formats)
+    return option
+
+def validate_plugins(plugins):
     try:
         for formats, plugin in plugins:
                 for format in formats:
@@ -53,16 +61,9 @@ def add_cmdline_option(post_scan_plugins):
                     else:
                         raise Exception('Invalid plugin found: Duplicate format passed')
     except ValueError:
-        # echo_stderr('Invalid plugin found: add_format returned too many values', fg='red')
         raise ValueError('Invalid plugin found: add_format returned too many values')
     except Exception as e:
         raise
-
-    option = click.Option(('-f', '--format'), is_flag=False, default='json', show_default=True, metavar='<style>',
-              help=('Set <output_file> format <style> to one of the standard formats: %s '
-                    'or the path to a custom template' % ' or '.join(plugin_formats.keys())),
-              callback=validate_formats)
-    return option
 
 def validate_formats(ctx, param, value):
     """
