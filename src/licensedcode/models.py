@@ -149,6 +149,9 @@ class License(object):
             if exists(self.data_file):
                 self.load(src_dir)
 
+    def __repr__(self, *args, **kwargs):
+        return 'License(key="{}")'.format(self.key)
+
     def set_file_paths(self):
         self.data_file = join(self.src_dir, self.key + '.yml')
         self.text_file = join(self.src_dir, self.key + '.LICENSE')
