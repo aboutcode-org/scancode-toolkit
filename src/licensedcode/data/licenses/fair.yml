@@ -1,13 +1,10 @@
 key: fair
 short_name: Fair License
 name: Fair License
-
 category: Permissive
 owner: OSI - Open Source Initiative
 homepage_url: http://opensource.org/licenses/fair.php
-notes: |-
-    notes from SPDX:
-    This license is OSI certified
+notes: Per SPDX.org, this license is OSI certified
 spdx_license_key: Fair
 text_urls:
     - http://opensource.org/licenses/fair.php

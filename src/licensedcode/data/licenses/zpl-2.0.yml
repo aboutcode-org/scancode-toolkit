@@ -1,13 +1,10 @@
 key: zpl-2.0
 short_name: ZPL 2.0
 name: Zope Public License 2.0
-
 category: Permissive
 owner: Zope Community
 homepage_url: http://www.zope.org/Resources/License/
-notes: |-
-    notes from SPDX:
-    This license is OSI certified
+notes: Per SPDX.org, this license is OSI certified
 spdx_license_key: ZPL-2.0
 text_urls:
     - http://www.zope.org/Resources/License/

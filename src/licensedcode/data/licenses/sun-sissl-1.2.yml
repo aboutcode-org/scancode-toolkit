@@ -1,9 +1,6 @@
 key: sun-sissl-1.2
-short_name: >-
-    Sun Industry Standards Source License 1.2
-name: >-
-    Sun Industry Standards Source License 1.2
-
+short_name: Sun Industry Standards Source License 1.2
+name: Sun Industry Standards Source License 1.2
 category: Proprietary Free
 owner: Oracle (Sun)
 homepage_url: http://gridscheduler.sourceforge.net/Gridengine_SISSL_license.html

@@ -1,13 +1,10 @@
 key: mir-os
 short_name: MirOS License
 name: MirOS License
-
 category: Permissive
 owner: MirOS Project
 homepage_url: https://www.mirbsd.org/MirOS-Licence
-notes: |-
-    notes from SPDX:
-    This license is OSI certified.
+notes: Per SPDX.org, this license is OSI certified.
 spdx_license_key: MirOS
 text_urls:
     - http://opensource.org/licenses/miros.html

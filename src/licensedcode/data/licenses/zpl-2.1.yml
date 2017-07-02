@@ -1,13 +1,10 @@
 key: zpl-2.1
 short_name: ZPL 2.1
 name: Zope Public License 2.1
-
 category: Permissive
 owner: Zope Community
 homepage_url: http://www.zope.org/Resources/License/
-notes: |-
-    notes from SPDX:
-    This is a generic version of the ZPL 2.0 license
+notes: Per SPDX.org, this is a generic version of the ZPL 2.0 license
 spdx_license_key: ZPL-2.1
 text_urls:
     - http://www.zope.org/Resources/License/

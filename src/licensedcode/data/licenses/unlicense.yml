@@ -1,13 +1,10 @@
 key: unlicense
 short_name: Unlicense
 name: Unlicense
-
 category: Public Domain
 owner: Unlicense
 homepage_url: http://unlicense.org/
-notes: |-
-    notes from SPDX:
-    This is a public domain dedication
+notes: Per SPDX.org, this is a public domain dedication
 spdx_license_key: Unlicense
 text_urls:
     - http://unlicense.org/

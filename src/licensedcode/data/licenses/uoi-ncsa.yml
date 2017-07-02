@@ -1,13 +1,10 @@
 key: uoi-ncsa
 short_name: NCSA Open Source License
 name: University of Illinois/NCSA Open Source License
-
 category: Permissive
 owner: NCSA - University of Illinois
 homepage_url: http://www.otm.illinois.edu/faculty/forms/opensource.asp
-notes: |-
-    notes from SPDX:
-    This license is OSI certified
+notes: Per SPDX.org, this license is OSI certified
 spdx_license_key: NCSA
 text_urls:
     - http://www.otm.illinois.edu/faculty/forms/opensource.asp

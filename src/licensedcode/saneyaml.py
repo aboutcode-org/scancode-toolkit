@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -23,7 +23,8 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 from collections import OrderedDict
 from functools import partial
@@ -68,21 +69,21 @@ def dump(obj):
     """
     Return a safe YAML unicode string representation from `obj`.
     """
-    kwargs = dict(
+    return yaml.dump(
+        obj,
         Dumper=SaneDumper,
         default_flow_style=False,
         default_style=None,
         canonical=False,
         allow_unicode=True,
-        # do not encode Unicode
+        # do not encode as Unicode
         encoding=None,
         indent=4,
-        width=80,
+        width=90,
         line_break='\n',
         explicit_start=False,
         explicit_end=False,
     )
-    return yaml.dump(obj, **kwargs)
 
 
 class SaneLoader(SafeLoader):
@@ -94,6 +95,7 @@ def string_loader(loader, node):
     Ensure that a scalar type (a value) is returned as a plain unicode string.
     """
     return loader.construct_scalar(node)
+
 
 SaneLoader.add_constructor(u'tag:yaml.org,2002:str', string_loader)
 
@@ -161,36 +163,17 @@ def string_dumper(dumper, value, _tag=u'tag:yaml.org,2002:str'):
     Ensure that all scalars are dumped as UTF-8 unicode, folded and quoted in
     the sanest and most readable way.
     """
-    style = None
-
     if not isinstance(value, basestring):
         value = repr(value)
 
     if isinstance(value, str):
         value = value.decode('utf-8')
 
-    folded_style = '>'
-    verbatim_style = '|'
-#     single_style = "'"
-#     double_style = '"'
-
-    long_lines = any(len(line) > 40 for line in value.splitlines(False)) and ' ' in value
+    style = None
     multilines = '\n' in value
-#     single_quote = "'" in value
-#     double_quote = '"' in value
-#     colon_space = ': ' in value
-#     hash_space = '# ' in value
-
-    if multilines:  # or colon_space or hash_space or (single_quote and double_quote) or double_quote:
-        style = verbatim_style
-    elif long_lines:
+    if multilines:
+        folded_style = '>'
         style = folded_style
-#     elif single_quote and double_quote:
-#         style = folded_style
-#     elif single_quote:
-#         style = double_style
-#     elif double_quote:
-#         style = single_style
 
     return dumper.represent_scalar(_tag, value, style=style)
 

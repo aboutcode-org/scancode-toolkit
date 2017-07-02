@@ -1,13 +1,10 @@
 key: entessa-1.0
 short_name: Entessa 1.0
 name: Entessa Public License v1.0
-
 category: Permissive
 owner: Entessa
 homepage_url: http://openseal.sourceforge.net/epl/index.html
-notes: |-
-    notes from SPDX:
-    This license is OSI certified
+notes: Per SPDX.org, this license is OSI certified
 spdx_license_key: Entessa
 text_urls:
     - http://openseal.org/epl/index.html

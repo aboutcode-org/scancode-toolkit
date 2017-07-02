@@ -1,14 +1,10 @@
 key: sleepycat
 short_name: Sleepycat License
-name: >-
-    Sleepycat License (Berkeley Database License)
-
+name: Sleepycat License (Berkeley Database License)
 category: Copyleft
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/technology/software/products/berkeley-db/htdocs/oslicense.html
-notes: |-
-    notes from SPDX:
-    This license is OSI certified
+notes: Per SPDX.org, this license is OSI certified
 spdx_license_key: Sleepycat
 text_urls:
     - http://www.oracle.com/technology/software/products/berkeley-db/htdocs/oslicense.html

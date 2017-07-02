@@ -1,13 +1,10 @@
 key: bsd-new
 short_name: BSD-Modified
 name: BSD-Modified
-
 category: Permissive
 owner: Regents of the University of California
 homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-notes: |-
-    notes from SPDX:
-    This license is OSI certified.
+notes: Per SPDX.org, this license is OSI certified.
 spdx_license_key: BSD-3-Clause
 text_urls:
     - http://www.opensource.org/licenses/BSD-3-Clause

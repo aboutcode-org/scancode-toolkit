@@ -1,13 +1,10 @@
 key: efl-2.0
 short_name: EFL 2.0
 name: Eiffel Forum License 2.0
-
 category: Permissive
 owner: Eiffel NICE
 homepage_url: http://www.eiffel-nice.org/license/
-notes: |-
-    notes from SPDX:
-    This license is OSI certified
+notes: Per SPDX.org, this license is OSI certified
 spdx_license_key: EFL-2.0
 text_urls:
     - http://www.eiffel-nice.org/license/eiffel-forum-license-2.txt

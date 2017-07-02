@@ -1,13 +1,10 @@
 key: isc
 short_name: ISC License
 name: ISC License
-
 category: Permissive
 owner: ISC - Internet Systems Consortium
 homepage_url: https://www.isc.org/software/license
-notes: |-
-    notes from SPDX:
-    This license is OSI certified.
+notes: Per SPDX.org, this license is OSI certified.
 spdx_license_key: ISC
 text_urls:
     - http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2

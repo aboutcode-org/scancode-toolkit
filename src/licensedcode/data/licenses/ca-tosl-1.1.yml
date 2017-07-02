@@ -1,14 +1,10 @@
 key: ca-tosl-1.1
 short_name: CA Trusted Open Source License 1.1
-name: >-
-    Computer Associates Trusted Open Source License 1.1
-
+name: Computer Associates Trusted Open Source License 1.1
 category: Copyleft Limited
 owner: Computer Associates
 homepage_url: http://www.opensource.org/licenses/ca-tosl1.1.php
-notes: |-
-    notes from SPDX:
-    This license is OSI certifified.
+notes: Per SPDX.org, this license is OSI certifified.
 spdx_license_key: CATOSL-1.1
 text_urls:
     - http://www.opensource.org/licenses/ca-tosl1.1.php

@@ -1,13 +1,10 @@
 key: multics
 short_name: Multics License
 name: Multics License
-
 category: Permissive
 owner: Multics
 homepage_url: http://www.multicians.org/
-notes: |-
-    notes from SPDX:
-    This license is OSI certified.
+notes: Per SPDX.org, this license is OSI certified.
 spdx_license_key: Multics
 text_urls:
     - http://opensource.org/licenses/multics.txt
