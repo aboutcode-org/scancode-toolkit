@@ -114,15 +114,13 @@ def get_licenses(location, min_score=0, include_text=False, diag=False):
     """
     from licensedcode.cache import get_index
     from licensedcode.cache import get_licenses_db
-    from licensedcode.match import get_full_matched_text
 
     idx = get_index()
     licenses = get_licenses_db()
 
     for match in idx.match(location=location, min_score=min_score):
         if include_text:
-            matched_text = u''.join(get_full_matched_text(match, location=location,
-                                                          idx=idx, whole_lines=False))
+            matched_text = match.matched_text(whole_lines=False)
         for license_key in match.rule.licenses:
             lic = licenses.get(license_key)
             result = OrderedDict()
@@ -148,12 +146,14 @@ def get_licenses(location, min_score=0, include_text=False, diag=False):
             matched_rule['identifier'] = match.rule.identifier
             matched_rule['license_choice'] = match.rule.license_choice
             matched_rule['licenses'] = match.rule.licenses
+            # FIXME: for sanity these should always be included???
             if diag:
                 matched_rule['matcher'] = match.matcher
                 matched_rule['rule_length'] = match.rule.length
                 matched_rule['matched_length'] = match.ilen()
                 matched_rule['match_coverage'] = match.coverage()
                 matched_rule['rule_relevance'] = match.rule.relevance
+            # FIXME: for sanity this should always be included?????
             if include_text:
                 result['matched_text'] = matched_text
             yield result
