@@ -17,7 +17,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-version = '2.0.1'
+version = '2.1.0'
 
 
 #### Small hack to force using a plain version number if the option
@@ -102,7 +102,7 @@ setup(
     name='scancode-toolkit',
     version=get_version(),
     license='Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others',
-    description='ScanCode is a tool to scan code for license, copyright and other interesting facts.',
+    description='ScanCode is a tool to scan code for license, copyright, package and their documented dependencies and other interesting facts.',
     long_description=long_description,
     author='ScanCode',
     author_email='info@aboutcode.org',
@@ -114,7 +114,7 @@ setup(
     zip_safe=False,
     classifiers=[
         # complete classifier list: http://pypi.python.org/pypi?%3Aaction=list_classifiers
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication',
@@ -123,8 +123,8 @@ setup(
         'Topic :: Utilities',
     ],
     keywords=[
-        'open source', 'scan', 'license', 'package',
-        'copyright', 'filetype', 'urn', 'date', 'codec',
+        'open source', 'scan', 'license', 'package', 'dependency',
+        'copyright', 'filetype', 'author', 'extract', 'licensing',
     ],
     install_requires=[
         # cluecode
@@ -149,8 +149,8 @@ setup(
         'attrs >=16.0, < 17.0',
 
         # caching
-        'zc.lockfile >= 1.0.0, < 2.0.1',
-        'yg.lockfile >= 2.0.1, < 3.0.0',
+        'zc.lockfile >= 1.0.0, < 2.1.0',
+        'yg.lockfile >= 2.1.0, < 3.0.0',
             # used by yg.lockfile
             'contextlib2', 'pytz', 'tempora', 'jaraco.timing',
         'psutil >= 5.0.0, < 6.0.0',
@@ -162,7 +162,7 @@ setup(
         'six',
 
         # typecode and textcode
-        'pygments >= 2.0.1, <3.0.0',
+        'pygments >= 2.1.0, <3.0.0',
         'pdfminer >= 20140328',
 
         # pymaven
