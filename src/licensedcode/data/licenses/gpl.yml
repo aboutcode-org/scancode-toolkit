@@ -3,4 +3,5 @@ short_name: GPL
 name: GPL, no version
 category: Copyleft
 owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html
 spdx_license_key: GPL-1.0+
