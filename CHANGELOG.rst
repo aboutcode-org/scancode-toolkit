@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-2.1.0 (NEXT)
+2.0.1 (2017-07-03)
 ------------------
 
  This is a minor release with minor new and improved features and bug
@@ -10,12 +10,12 @@ Changelog
 
  * New and improved license detection, including refined match scoring
    for #534
+ * Bug fixed in License detection leading to a very long scan time for some
+   rare JavaScript files. Reported by @jarnugirdhar
  * New "base_name" attribute returned with file information. Reported by
    @chinyeungli
  * Bug fixed in Maven POM package detection. Reported by @kalagp
- * Bug fixed in License detection leading to a very long scan time for some
-   rare JavaScript files. Reported by @jarnugirdhar
-
+ 
 
 2.0.0 (2017-06-23)
 ------------------
