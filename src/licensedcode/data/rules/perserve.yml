@@ -1,7 +1,7 @@
 licenses:
     - bsd-new
     - afl-2.1
-    - mpl
+    - mpl-1.0
     - lgpl-2.0-plus
     - gpl-1.0-plus
     - apache-2.0
