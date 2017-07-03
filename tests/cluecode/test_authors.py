@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -231,4 +231,9 @@ class TestAuthors(FileBasedTesting):
     def test_author_wcstok_c(self):
         test_file = self.get_test_loc('authors/wcstok.c')
         expected = [u'Wes Peters <wes@softweyr.com>']
+        check_detection(expected, test_file, what='authors')
+
+    def test_author_iproute(self):
+        test_file = self.get_test_loc('authors/iproute.c')
+        expected = [u'Authors Patrick McHardy <kaber@trash.net>']
         check_detection(expected, test_file, what='authors')
