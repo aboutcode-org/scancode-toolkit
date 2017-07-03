@@ -413,7 +413,7 @@ class LicenseMatch(object):
             self,
             location=query.location,
             query_string=query.query_string,
-            idx=query.query_string,
+            idx=query.idx,
             whole_lines=whole_lines,
             highlight_matched=highlight_matched,
             highlight_not_matched=highlight_not_matched)
