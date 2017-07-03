@@ -53,8 +53,6 @@ def get_copyrights(location):
     from cluecode.copyrights import detect_copyrights
 
     for copyrights, authors, _years, holders, start_line, end_line in detect_copyrights(location):
-        if not copyrights:
-            continue
         result = OrderedDict()
         # FIXME: we should call this copyright instead, and yield one item per statement
         result['statements'] = copyrights
@@ -184,7 +182,7 @@ def get_file_infos(location):
         base_name, extension = fileutils.splitext(location)
     else:
         base_name = name
-        extension =  ''
+        extension = ''
     infos['base_name'] = base_name
     infos['extension'] = extension
     infos['date'] = is_file and filetype.get_last_modified_date(location) or None

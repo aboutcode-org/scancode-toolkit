@@ -258,6 +258,15 @@
           "authors": [],
           "start_line": 22,
           "end_line": 23
+        },
+        {
+          "statements": [],
+          "holders": [],
+          "authors": [
+            "developed by the University of California, Berkeley and its contributors."
+          ],
+          "start_line": 34,
+          "end_line": 37
         }
       ]
     },

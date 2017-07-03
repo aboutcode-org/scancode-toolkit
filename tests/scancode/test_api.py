@@ -26,6 +26,7 @@ from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
+from collections import OrderedDict
 import os
 
 from commoncode.testcase import FileBasedTesting
@@ -75,3 +76,20 @@ class TestAPI(FileBasedTesting):
         test_dir = self.get_test_loc('api/info/test.txt')
         info = api.get_file_infos(test_dir)
         assert 'test' == info['base_name']
+
+    def test_get_copyrights_include_copyrights_and_authors(self):
+        test_file = self.get_test_loc('api/copyright/iproute.c')
+        cops = list(api.get_copyrights(test_file))
+        expected = [
+            OrderedDict([
+                (u'statements', [u'Copyright (c) 2010 Patrick McHardy']),
+                (u'holders', [u'Patrick McHardy']),
+                (u'authors', []),
+                (u'start_line', 2), (u'end_line', 2)]),
+            OrderedDict([
+                (u'statements', []),
+                (u'holders', []),
+                (u'authors', [u'Authors Patrick McHardy <kaber@trash.net>']),
+                (u'start_line', 11), (u'end_line', 11)])
+        ]
+        assert expected == cops

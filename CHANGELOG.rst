@@ -4,6 +4,8 @@ Changelog
 (NEXT)
 ------------------
 
+ * Ensure that authors are reported even if there is no copyright #669
+ * 
 
 2.0.1 (2017-07-03)
 ------------------
