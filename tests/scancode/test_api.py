@@ -89,7 +89,7 @@ class TestAPI(FileBasedTesting):
             OrderedDict([
                 (u'statements', []),
                 (u'holders', []),
-                (u'authors', [u'Authors Patrick McHardy <kaber@trash.net>']),
+                (u'authors', [u'Patrick McHardy <kaber@trash.net>']),
                 (u'start_line', 11), (u'end_line', 11)])
         ]
         assert expected == cops

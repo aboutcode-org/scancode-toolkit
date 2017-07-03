@@ -22,12 +22,14 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import os.path
 
 from commoncode.testcase import FileBasedTesting
 from cluecode_assert_utils import check_detection
+from unittest.case import expectedFailure
 
 
 class TestAuthors(FileBasedTesting):
@@ -59,7 +61,7 @@ class TestAuthors(FileBasedTesting):
     def test_author_complex_author(self):
         test_file = self.get_test_loc('authors/author_complex_author-strtol_c.c')
         expected = [
-            'developed by the University of California, Berkeley and its contributors.',
+            'the University of California, Berkeley and its contributors.',
         ]
         check_detection(expected, test_file, what='authors')
 
@@ -88,8 +90,8 @@ class TestAuthors(FileBasedTesting):
     def test_author_gthomas_c(self):
         test_file = self.get_test_loc('authors/author_gthomas_c-c.c')
         expected = [
-            u'Author(s) gthomas, sorin@netappi.com',
-            u'Contributors gthomas, sorin@netappi.com, andrew.lunn@ascom.ch',
+            u'gthomas, sorin@netappi.com',
+            u'gthomas, sorin@netappi.com, andrew.lunn@ascom.ch',
         ]
         check_detection(expected, test_file, what='authors')
 
@@ -185,7 +187,7 @@ class TestAuthors(FileBasedTesting):
     def test_author_stacktrace_cpp(self):
         test_file = self.get_test_loc('authors/author_stacktrace_cpp-stacktrace_cpp.cpp')
         expected = [
-            u'by faith@dict.org',
+            u'faith@dict.org',
         ]
         check_detection(expected, test_file, what='authors')
 
@@ -196,12 +198,21 @@ class TestAuthors(FileBasedTesting):
         ]
         check_detection(expected, test_file, what='authors')
 
+    @expectedFailure
+    def test_author_treetablemodeladapter_java_split_alright(self):
+        test_file = self.get_test_loc('authors/author_treetablemodeladapter_java-TreeTableModelAdapter_java.java')
+        expected = [
+            u'Philip Milne',
+            u'Scott Violet',
+        ]
+        check_detection(expected, test_file, what='authors')
+
     def test_author_uc(self):
         test_file = self.get_test_loc('authors/author_uc-LICENSE')
         expected = [
-            'developed by the University of California, Berkeley and its contributors.',
-            'developed by UC Berkeley and its contributors.',
-            'developed by the University of California, Berkeley and its contributors.',
+            'the University of California, Berkeley and its contributors.',
+            'UC Berkeley and its contributors.',
+            'the University of California, Berkeley and its contributors.',
         ]
         check_detection(expected, test_file, what='authors')
 
@@ -221,10 +232,10 @@ class TestAuthors(FileBasedTesting):
     def test_author_young_c(self):
         test_file = self.get_test_loc('authors/author_young_c-c.c')
         expected = [
-            u'written by Eric Young (eay@mincom.oz.au).',
+            u'Eric Young (eay@mincom.oz.au).',
             u'Tim Hudson (tjh@mincom.oz.au).',
-            u'written by Eric Young (eay@mincom.oz.au)',
-            u'written by Tim Hudson (tjh@mincom.oz.au)',
+            u'Eric Young (eay@mincom.oz.au)',
+            u'Tim Hudson (tjh@mincom.oz.au)',
         ]
         check_detection(expected, test_file, what='authors')
 
@@ -235,5 +246,5 @@ class TestAuthors(FileBasedTesting):
 
     def test_author_iproute(self):
         test_file = self.get_test_loc('authors/iproute.c')
-        expected = [u'Authors Patrick McHardy <kaber@trash.net>']
+        expected = [u'Patrick McHardy <kaber@trash.net>']
         check_detection(expected, test_file, what='authors')

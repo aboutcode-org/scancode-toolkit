@@ -882,15 +882,32 @@ def refine_copyright(c):
 
 def refine_author(c):
     """
-    Refine a detected author
+    Refine a detected author.
     FIXME: the grammar should not allow this to happen.
     """
     c = strip_some_punct(c)
     c = strip_numbers(c)
     c = strip_all_unbalanced_parens(c)
     c = c.split()
-    # this is hard to catch otherwise, unless we split the author vs copyright grammar in two
-    if c[0].lower() == 'author':
+    # FIXME: also split comma separated lists: gthomas, sorin@netappi.com, andrew.lunn@ascom.che.g.
+
+    # strip prefixes.
+    # NOTE: prefixes are hard to catch otherwise, unless we split the
+    # author vs copyright grammar in two
+    prefixes = set([
+        'author',
+        'authors',
+        'author(s)',
+        'authored',
+        'contributor',
+        'contributors',
+        'contributor(s)',
+        'by',
+        'developed',
+        'written',
+        'created',
+    ])
+    while c and c[0].lower() in prefixes:
         c = c[1:]
     c = u' '.join(c)
     return c.strip()
