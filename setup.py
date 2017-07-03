@@ -162,7 +162,7 @@ setup(
         'six',
 
         # typecode and textcode
-        'pygments >= 2.1.0, <3.0.0',
+        'pygments >= 2.0.1, <3.0.0',
         'pdfminer >= 20140328',
 
         # pymaven
