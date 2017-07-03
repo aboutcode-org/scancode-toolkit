@@ -172,8 +172,8 @@ def string_dumper(dumper, value, _tag=u'tag:yaml.org,2002:str'):
     style = None
     multilines = '\n' in value
     if multilines:
-        folded_style = '>'
-        style = folded_style
+        literal_style = '|'
+        style = literal_style
 
     return dumper.represent_scalar(_tag, value, style=style)
 
