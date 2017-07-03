@@ -10,3 +10,5 @@ spdx_license_key: Apache-1.1
 text_urls:
     - http://apache.org/licenses/LICENSE-1.1
 faq_url: http://www.apache.org/foundation/license-faq.html
+other_urls:
+    - http://opensource.org/licenses/Apache-1.1

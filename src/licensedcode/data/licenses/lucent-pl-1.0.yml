@@ -8,3 +8,5 @@ spdx_license_key: LPL-1.0
 text_urls:
     - http://www.opensource.org/licenses/plan9.php
 osi_url: http://www.opensource.org/licenses/plan9.php
+other_urls:
+    - http://opensource.org/licenses/LPL-1.0

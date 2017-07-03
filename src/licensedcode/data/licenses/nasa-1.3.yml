@@ -11,4 +11,5 @@ text_urls:
 other_urls:
     - http://ti.arc.nasa.gov/opensource/nosa/
     - http://www.gnu.org/licenses/license-list.html#NASA
+    - http://www.opensource.org/licenses/NASA-1.3
 minimum_coverage: 10

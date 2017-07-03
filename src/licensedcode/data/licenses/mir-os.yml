@@ -10,3 +10,5 @@ text_urls:
     - http://opensource.org/licenses/miros.html
     - https://www.mirbsd.org/about.htm#licence
 osi_url: http://opensource.org/licenses/miros.html
+other_urls:
+    - http://www.opensource.org/licenses/MirOS

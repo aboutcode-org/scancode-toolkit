@@ -9,3 +9,5 @@ spdx_license_key: Multics
 text_urls:
     - http://opensource.org/licenses/multics.txt
 osi_url: http://opensource.org/licenses/multics.txt
+other_urls:
+    - http://www.opensource.org/licenses/Multics

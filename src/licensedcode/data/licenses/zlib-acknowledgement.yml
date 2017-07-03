@@ -9,3 +9,5 @@ notes: Per Fedora, this license is the same as zlib, except that it requires tha
     any packages which use this license, you MUST be sure to have the appropriate acknowledgement
     in the release notes.
 spdx_license_key: zlib-acknowledgement
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/ZlibWithAcknowledgement

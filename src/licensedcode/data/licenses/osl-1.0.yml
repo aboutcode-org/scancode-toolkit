@@ -10,4 +10,5 @@ text_urls:
     - http://www.opensource.org/licenses/osl-1.0.txt
 osi_url: http://www.opensource.org/licenses/osl-1.0.txt
 other_urls:
+    - http://opensource.org/licenses/OSL-1.0
     - http://www.gnu.org/licenses/license-list.html#OSL

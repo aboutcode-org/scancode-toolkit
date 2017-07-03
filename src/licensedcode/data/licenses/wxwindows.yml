@@ -11,4 +11,5 @@ text_urls:
 osi_url: http://www.opensource.org/licenses/wxwindows.php
 faq_url: http://www.wxwidgets.org/about/licence.htm
 other_urls:
+    - http://www.opensource.org/licenses/WXwindows
     - http://www.wxwidgets.org/about/licence3.txt

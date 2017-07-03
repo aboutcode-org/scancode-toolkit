@@ -10,3 +10,6 @@ text_urls:
     - http://www.php.net/license/
 osi_url: http://www.opensource.org/licenses/php.html
 faq_url: http://www.php.net/license/index.php#faq-lic
+other_urls:
+    - http://www.opensource.org/licenses/PHP-3.0
+    - http://www.php.net/license/3_0.txt

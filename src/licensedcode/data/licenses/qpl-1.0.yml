@@ -11,3 +11,4 @@ text_urls:
 other_urls:
     - http://doc.qt.nokia.com/3.3/license.html
     - http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses
+    - http://www.opensource.org/licenses/QPL-1.0

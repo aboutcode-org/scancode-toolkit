@@ -11,3 +11,5 @@ text_urls:
     - http://www.perlfoundation.org/attachment/legal/artistic-2_0.txt
 osi_url: http://www.opensource.org/licenses/artistic-license-2.0.php
 faq_url: http://www.perlfoundation.org/artistic-2-0-notes
+other_urls:
+    - http://www.opensource.org/licenses/artistic-license-2.0

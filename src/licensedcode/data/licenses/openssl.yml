@@ -5,4 +5,7 @@ category: Permissive
 owner: OpenSSL
 homepage_url: http://openssl.org/source/license.html
 notes: This is the OpenSSL license proper, without the SSLEay part.
+spdx_license_key: OpenSSL
 faq_url: http://www.openssl.org/support/faq.html
+other_urls:
+    - http://www.openssl.org/source/license.html

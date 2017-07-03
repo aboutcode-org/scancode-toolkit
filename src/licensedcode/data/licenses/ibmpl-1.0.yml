@@ -9,3 +9,5 @@ spdx_license_key: IPL-1.0
 text_urls:
     - http://www.opensource.org/licenses/ibmpl.php
 osi_url: http://www.opensource.org/licenses/ibmpl.php
+other_urls:
+    - http://www.opensource.org/licenses/IPL-1.0

@@ -10,5 +10,6 @@ text_urls:
     - http://www.xfree86.org/3.3.6/COPYRIGHT2.html#6
 osi_url: http://www.opensource.org/licenses/bsd-license.php
 other_urls:
+    - http://directory.fsf.org/wiki/License:BSD_4Clause
     - http://www.fsf.org/licensing/essays/bsd.html
     - http://www.gnu.org/philosophy/bsd.html

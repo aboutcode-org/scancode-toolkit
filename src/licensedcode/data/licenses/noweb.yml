@@ -5,3 +5,5 @@ category: Copyleft Limited
 owner: Norman Ramsey
 homepage_url: https://fedoraproject.org/wiki/Licensing:Noweb?rd=Licensing/Noweb
 spdx_license_key: Noweb
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/Noweb

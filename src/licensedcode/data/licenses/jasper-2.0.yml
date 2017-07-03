@@ -5,3 +5,5 @@ category: Permissive
 owner: JasPer Project
 homepage_url: http://www.ece.uvic.ca/~frodo/jasper/LICENSE
 spdx_license_key: JasPer-2.0
+other_urls:
+    - http://www.ece.uvic.ca/~mdadams/jasper/LICENSE

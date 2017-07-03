@@ -9,3 +9,5 @@ spdx_license_key: Nokia
 text_urls:
     - http://www.opensource.org/licenses/nokia.html
 osi_url: http://www.opensource.org/licenses/nokia.html
+other_urls:
+    - http://www.opensource.org/licenses/nokia

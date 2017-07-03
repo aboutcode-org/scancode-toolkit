@@ -10,4 +10,5 @@ text_urls:
     - http://www.gnu.org/licenses/fdl-1.1.txt
 faq_url: http://www.fsf.org/licensing/licenses/fdl.html
 other_urls:
+    - http://www.gnu.org/licenses/old-licenses/fdl-1.1.txt
     - http://www.lysator.liu.se/~kjell-e/tekla/linux/security/fdl.html

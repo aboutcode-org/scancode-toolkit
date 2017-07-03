@@ -8,3 +8,5 @@ notes: Per SPDX.org, this license is OSI certified.
 spdx_license_key: LPL-1.02
 text_urls:
     - http://plan9.bell-labs.com/plan9/license.html
+other_urls:
+    - http://www.opensource.org/licenses/LPL-1.02

@@ -5,3 +5,5 @@ category: Copyleft
 owner: VOSTROM
 homepage_url: https://fedoraproject.org/wiki/Licensing:VOSTROM?rd=Licensing/VOSTROM
 spdx_license_key: VOSTROM
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/VOSTROM

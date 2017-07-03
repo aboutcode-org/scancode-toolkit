@@ -11,3 +11,5 @@ text_urls:
 osi_url: http://www.opensource.org/licenses/ms-pl.html
 other_urls:
     - http://www.microsoft.com/en-us/openness/licenses.aspx#MPL
+    - http://www.microsoft.com/opensource/licenses.mspx
+    - http://www.opensource.org/licenses/MS-PL

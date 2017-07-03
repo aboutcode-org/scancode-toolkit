@@ -10,3 +10,5 @@ text_urls:
     - http://www.eclipse.org/legal/epl-v10.html
 osi_url: http://opensource.org/licenses/eclipse-1.0.php
 faq_url: http://eclipse.org/legal/eplfaq.php
+other_urls:
+    - http://www.opensource.org/licenses/EPL-1.0

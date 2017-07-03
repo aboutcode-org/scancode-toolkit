@@ -10,4 +10,6 @@ spdx_license_key: Xnet
 text_urls:
     - http://www.opensource.org/licenses/xnet.php
 osi_url: http://www.opensource.org/licenses/xnet.php
+other_urls:
+    - http://opensource.org/licenses/Xnet
 minimum_coverage: 50

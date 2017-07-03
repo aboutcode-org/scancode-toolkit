@@ -5,3 +5,5 @@ category: Copyleft Limited
 owner: Henrik Theiling
 homepage_url: https://fedoraproject.org/wiki/Licensing:Eurosym?rd=Licensing/Eurosym
 spdx_license_key: Eurosym
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/Eurosym

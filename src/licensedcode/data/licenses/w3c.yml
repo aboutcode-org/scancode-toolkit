@@ -10,4 +10,6 @@ text_urls:
     - http://www.open-xchange.com/fileadmin/downloads/W3C_SOFTWARE_NOTICE_AND_LICENSE.pdf
     - http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
 other_urls:
+    - http://www.opensource.org/licenses/W3C
+    - http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231.html
     - http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231.html http://www.opensource.org/licenses/W3C.php

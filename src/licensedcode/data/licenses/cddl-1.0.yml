@@ -13,5 +13,6 @@ osi_url: http://www.opensource.org/licenses/cddl1.txt
 faq_url: http://www.opensolaris.org/os/about/faq/licensing_faq/
 other_urls:
     - http://www.gnu.org/licenses/license-list.html#CDDL
+    - http://www.opensource.org/licenses/cddl1
     - http://www.oracle.com/us/sun/index.html
     - https://glassfish.dev.java.net/public/CDDLv1.0.html

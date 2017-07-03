@@ -9,3 +9,5 @@ notes: Per Fedora, this is missing the anti-publicity-use clause, and doesn't me
 spdx_license_key: mpich2
 text_urls:
     - https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#mpich2_variant
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/MIT

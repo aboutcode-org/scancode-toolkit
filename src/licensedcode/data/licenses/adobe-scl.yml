@@ -7,3 +7,5 @@ homepage_url: http://fedoraproject.org/wiki/Licensing/AdobeLicense
 spdx_license_key: Adobe-2006
 text_urls:
     - http://fedoraproject.org/wiki/Licensing/AdobeLicense
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/AdobeLicense

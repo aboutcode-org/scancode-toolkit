@@ -9,3 +9,5 @@ spdx_license_key: Motosoto
 text_urls:
     - http://opensource.org/licenses/motosoto.php
 osi_url: http://opensource.org/licenses/motosoto.php
+other_urls:
+    - http://www.opensource.org/licenses/Motosoto

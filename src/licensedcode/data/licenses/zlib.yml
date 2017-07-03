@@ -11,4 +11,5 @@ text_urls:
 osi_url: http://www.opensource.org/licenses/zlib-license.php
 faq_url: http://www.gzip.org/zlib/zlib-faq.html
 other_urls:
+    - http://www.opensource.org/licenses/Zlib
     - http://www.zlib.net/zlib_license.html

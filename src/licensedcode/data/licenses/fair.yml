@@ -9,3 +9,5 @@ spdx_license_key: Fair
 text_urls:
     - http://opensource.org/licenses/fair.php
 osi_url: http://opensource.org/licenses/fair.php
+other_urls:
+    - http://www.opensource.org/licenses/Fair
