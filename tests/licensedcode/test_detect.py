@@ -1022,7 +1022,7 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         matches = idx.match(location=qloc)
         assert 1 == len(matches)
         match = matches[0]
-        assert ['gpl'] == match.rule.licenses
+        assert ['gpl-1.0-plus'] == match.rule.licenses
         assert match.ispan == Span(0, 1)
 
         qtext, itext = get_texts(match, location=qloc, idx=idx)
