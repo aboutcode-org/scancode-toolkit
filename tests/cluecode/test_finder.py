@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -130,6 +130,33 @@ class TestEmail(FileBasedTesting):
         lines = ['user@me.com', 'user2@me.com']
         expected = [('user@me.com', 1), ('user2@me.com', 2)]
         result = find_emails_tester(lines, with_lineno=True)
+        assert expected == result
+
+    def test_find_emails_does_not_return_junk(self):
+        lines = '''
+            (akpm@linux-foundation.org) serves as a maintainer of last resort.
+            of your patch set.  linux-kernel@vger.kernel.org functions as a list of
+            Linux kernel.  His e-mail address is <torvalds@linux-foundation.org>.
+            to security@kernel.org.  For severe bugs, a short embargo may be considered
+              Cc: stable@vger.kernel.org
+            linux-api@vger.kernel.org.
+            trivial@kernel.org which collects "trivial" patches. Have a look
+                Signed-off-by: Random J Developer <random@developer.example.org>
+                Signed-off-by: Random J Developer <random@developer.example.org>
+                [lucky@maintainer.example.org: struct foo moved from foo.c to foo.h]
+                Signed-off-by: Lucky K Maintainer <lucky@maintainer.example.org>
+                    From: Original Author <author@example.com>
+        '''.splitlines(False)
+        expected = [
+            u'akpm@linux-foundation.org',
+            u'linux-kernel@vger.kernel.org',
+            u'torvalds@linux-foundation.org',
+            u'security@kernel.org',
+            u'stable@vger.kernel.org',
+            u'linux-api@vger.kernel.org',
+            u'trivial@kernel.org'
+        ]
+        result = find_emails_tester(lines, with_lineno=False)
         assert expected == result
 
 
