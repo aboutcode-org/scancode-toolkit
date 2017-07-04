@@ -39,12 +39,12 @@ hookimpl = HookimplMarker('scan_proper')
 plugin_formats = {}
 
 @hookimpl
-def add_cmdline_option(post_scan_plugins):
+def add_cmdline_option(scan_output_plugins):
     """
     Add --format option to scancode
     """
 
-    plugins = post_scan_plugins.hook.add_format()
+    plugins = scan_output_plugins.hook.add_format()
     validate_plugins(plugins)
     option = click.Option(('-f', '--format'), is_flag=False, default='json', show_default=True, metavar='<style>',
               help=('Set <output_file> format <style> to one of the standard formats: %s '

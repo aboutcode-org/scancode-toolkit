@@ -32,7 +32,7 @@ from collections import OrderedDict
 import simplejson as json
 from pluggy import HookimplMarker
 
-hookimpl = HookimplMarker('post_scan')
+hookimpl = HookimplMarker('scan_output')
 
 @hookimpl
 def add_format():

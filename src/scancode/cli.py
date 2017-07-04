@@ -113,12 +113,12 @@ acknowledgment_text = delimiter + acknowledgment_text
 
 notice = acknowledgment_text.strip().replace('  ', '')
 
-scan_proper_pm = PluginManager('scan_proper')
-post_scan_pm = PluginManager('post_scan')
-scan_proper_pm.add_hookspecs(hookspec)
-post_scan_pm.add_hookspecs(hookspec)
-scan_proper_pm.load_setuptools_entrypoints('scancode_plugins')
-post_scan_pm.load_setuptools_entrypoints('scancode_plugins')
+scan_proper_plugins = PluginManager('scan_proper')
+scan_output_plugins = PluginManager('scan_output')
+scan_proper_plugins.add_hookspecs(hookspec)
+scan_output_plugins.add_hookspecs(hookspec)
+scan_proper_plugins.load_setuptools_entrypoints('scancode_plugins')
+scan_output_plugins.load_setuptools_entrypoints('scancode_plugins')
 
 
 def print_about(ctx, param, value):
@@ -238,7 +238,7 @@ class ScanCommand(BaseCommand):
     short_usage_help = '''
 Try 'scancode --help' for help on options and arguments.'''
 
-    options = [ op for op in scan_proper_pm.hook.add_cmdline_option(post_scan_plugins=post_scan_pm) if isinstance(op, click.Option) ]
+    options = [ op for op in scan_proper_plugins.hook.add_cmdline_option(scan_output_plugins=scan_output_plugins) if isinstance(op, click.Option) ]
 
 
 def validate_exclusive(ctx, exclusive_options):
@@ -776,4 +776,4 @@ def save_results(scanners, only_findings, files_count, results, format, options,
                     raise e
         return
 
-    write_formatted_output(scanners, files_count, version, notice, results, format, options, input, output_file, echo_stderr, post_scan_pm)
+    write_formatted_output(files_count, version, notice, results, format, options, input, output_file, echo_stderr, scan_output_plugins)

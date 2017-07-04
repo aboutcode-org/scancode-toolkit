@@ -44,7 +44,7 @@ from spdx.utils import SPDXNone
 from spdx.version import Version
 
 
-hookimpl = HookimplMarker('post_scan')
+hookimpl = HookimplMarker('scan_output')
 
 @hookimpl
 def add_format():

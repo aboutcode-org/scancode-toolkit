@@ -35,7 +35,7 @@ from formattedcode.format import HtmlAppAssetCopyWarning
 from formattedcode.format import HtmlAppAssetCopyError
 
 
-hookimpl = HookimplMarker('post_scan')
+hookimpl = HookimplMarker('scan_output')
 
 @hookimpl
 def add_format():

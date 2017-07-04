@@ -31,8 +31,8 @@ from plugincode.formats import plugin_formats
 
 
 def write_formatted_output(
-        scanners, files_count, version, notice, scanned_files,
-        format, options, input, output_file, _echo, post_scan_plugins):
+        files_count, version, notice, scanned_files,
+        format, options, input, output_file, _echo, scan_output_plugins):
     """
     Save scan results to file or screen.
     """
@@ -41,7 +41,7 @@ def write_formatted_output(
     # FIXME: do not use input as a variable name
 
     if format in plugin_formats:
-        post_scan_plugins.get_plugin(plugin_formats[format]).write_output(
+        scan_output_plugins.get_plugin(plugin_formats[format]).write_output(
             format=format, files_count=files_count, version=version, notice=notice,
             scanned_files=scanned_files, options=options, input=input, output_file=output_file, _echo=_echo)
 
