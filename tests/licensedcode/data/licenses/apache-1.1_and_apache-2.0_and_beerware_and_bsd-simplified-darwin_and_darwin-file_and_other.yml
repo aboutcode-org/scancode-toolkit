@@ -2,7 +2,7 @@ licenses:
     - apache-2.0
     - apache-2.0
     - apache-2.0
-    - darwin-file
+    - hs-regexp
     - bsd-simplified-darwin
     - x11-keith-packard
     - historical
