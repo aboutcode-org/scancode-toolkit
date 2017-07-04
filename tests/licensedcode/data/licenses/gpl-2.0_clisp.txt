@@ -81,5 +81,3 @@ Email addresses (September 1992 or newer):
   Marcus Daniels     marcus@sysc.pdx.edu
   Pierpaolo Bernardi bernardp@cli.di.unipi.it
   Sam Steingold      sds@gnu.org
-
-}}
