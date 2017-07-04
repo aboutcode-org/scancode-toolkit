@@ -1,0 +1,10 @@
+key: fsf-ap
+short_name: FSF All Permissive License
+name: FSF All Permissive License
+category: Permissive
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html
+spdx_license_key: FSFAP
+other_urls:
+    - http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html
+    - http://www.gnu.org/software/autoconf-archive/ax_lib_readline.html

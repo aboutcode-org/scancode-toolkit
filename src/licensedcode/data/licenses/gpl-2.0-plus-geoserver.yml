@@ -1,0 +1,11 @@
+key: gpl-2.0-plus-geoserver
+short_name: GPL 2.0 or later with GeoServer exception
+name: GNU General Public License 2.0 or later with GeoServer exception
+category: Copyleft Limited
+owner: Open Source Geospatial Foundation
+homepage_url: http://geoserver.org/
+text_urls:
+    - https://master.dl.sourceforge.net/project/geoserver/GeoServer/2.5/geoserver-2.5-src.zip
+other_urls:
+    - http://geoserver.org/
+    - http://openplans.org

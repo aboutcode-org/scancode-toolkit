@@ -1,0 +1,8 @@
+key: red-hat-bsd-simplified
+short_name: Red Hat BSD-Simplified
+name: Red Hat BSD-Simplified
+category: Permissive
+owner: Red Hat
+homepage_url: https://www.rpmfind.net/linux/RPM/centos/6.7/i386/Packages/fipscheck-1.2.0-7.el6.i686.html
+other_urls:
+    - https://www.rpmfind.net/linux/RPM/centos/6.7/i386/Packages/fipscheck-1.2.0-7.el6.i686.html

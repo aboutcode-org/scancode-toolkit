@@ -1,0 +1,9 @@
+key: info-zip
+short_name: Info-Zip License
+name: Info-Zip License
+category: Permissive
+owner: info-zip
+homepage_url: http://www.info-zip.org/doc/
+spdx_license_key: Info-ZIP
+text_urls:
+    - http://www.info-zip.org/license.html

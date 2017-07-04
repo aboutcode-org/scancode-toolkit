@@ -1,0 +1,7 @@
+key: smppl
+short_name: SMPPL
+name: Secure Messaging Protocol Public License
+category: Copyleft Limited
+owner: National Security Agency
+homepage_url: https://github.com/dcblake/SMP/blob/master/Documentation/License.txt
+spdx_license_key: SMPPL
