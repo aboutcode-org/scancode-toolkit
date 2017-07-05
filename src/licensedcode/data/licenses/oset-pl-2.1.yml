@@ -9,3 +9,6 @@ text_urls:
     - http://www.osetfoundation.org/s/OPL_v21-plain.txt
 osi_url: https://opensource.org/licenses/OPL-2.1
 faq_url: http://www.osetfoundation.org/public-license/
+other_urls:
+    - http://opensource.org/licenses/OPL-2.1
+    - http://www.osetfoundation.org/public-license/#
