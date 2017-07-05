@@ -57,7 +57,7 @@ Run python synclic.py -h for help.
 
 TRACE = False
 TRACE_DEEP = True
-
+TRACE_FETCH = False
 
 class ExternalLicensesSource(object):
     """
@@ -92,7 +92,7 @@ class ExternalLicensesSource(object):
 
         self.scancodes_by_key = get_licenses_db()
 
-        self.scancodes_by_spdx_key = {l.spdx_license_key.lower() 
+        self.scancodes_by_spdx_key = {l.spdx_license_key.lower(): l
             for l in self.scancodes_by_key.values()
             if l.spdx_license_key}
 
@@ -122,14 +122,17 @@ class ExternalLicensesSource(object):
         """
         Return a ScanCode license key string or None given an existing key and a license text.
         """
+
         keyl = key.lower()
-        if keyl in self.scancodes_by_key:
-            if TRACE_DEEP: print('Other license key in ScanCode:', key, end='. ')
-            return keyl
+        if self.matching_key == 'key':
+            if keyl in self.scancodes_by_key:
+                if TRACE_DEEP: print('Other license key in ScanCode:', key, end='. ')
+                return keyl
 
         if keyl in self.scancodes_by_spdx_key:
-            if TRACE_DEEP: print('Other license key in ScanCode as SPDX:', key, end='. ')
-            return keyl
+            sckey = self.scancodes_by_spdx_key[keyl].key
+            if TRACE_DEEP: print('Other license key in ScanCode as:', sckey, 'for SPDX:', key, end='. ')
+            return sckey
 
         if TRACE_DEEP: print('Matching text for:', key, end='. ')
         new_key, exact, score = get_match(text)
@@ -152,14 +155,18 @@ class ExternalLicensesSource(object):
             if TRACE_DEEP: print('Other license key not in ScanCode: JUNK MATCH to:', new_key, 'with score:', score, end='. ')
             return new_key
 
-
     def save_license(self, key, mapping, text):
         """
         Return a ScanCode License for `key` constructed from a `mapping`
         of attributes and a license `text`. Save the license metadata
         and its text in the `self.src_dir`.
         """
-        new_key = self.find_key(key, text)
+        new_key =None
+        if self.matching_key=='key':
+            new_key = self.find_key(key, text)
+        elif self.matching_key=='spdx_license_key':
+            new_key = self.find_key(mapping['spdx_license_key'], text)
+
         if not new_key:
             key = key.lower()
             if TRACE: print('  No Scancode key found. USING key as:', key)
@@ -167,8 +174,8 @@ class ExternalLicensesSource(object):
             if key == new_key:
                 if TRACE: print('  Scancode key found:', key)
             else:
-                key = key.lower()
                 if TRACE: print('  Scancode key found:', new_key, 'CHANGED from:', key)
+                key = new_key
 
         lic = License(key=key, src_dir=self.src_dir)
         for name, value in mapping.items():
@@ -198,7 +205,7 @@ def get_response(url, headers, params):
     `url` with `headers` and `params`.
     """
 
-    if TRACE: print('==> Fetching URL: %(url)s' % locals())
+    if TRACE_FETCH: print('==> Fetching URL: %(url)s' % locals())
     response = requests.get(url, headers=headers, params=params)
     status = response.status_code
     if status != requests.codes.ok:  # @UndefinedVariable
@@ -247,9 +254,18 @@ def get_match(text):
         and match.score() > 90)
     if is_weak:
         return key, None, match.score()
-    else:
-        return key, -1, match.score()
 
+    if match.score() > 85:
+        # junk match
+        return key, -1, match.score()
+    else:
+        return None, None, None
+
+# map to a number of start lines to strip from the lciense text
+# to remove junk copyrights
+STRIP_LINES_FROM={
+    'BSD-3-Clause-No-Nuclear-Warranty': 1,
+    }
 
 class SpdxSource(ExternalLicensesSource):
     """
@@ -283,14 +299,14 @@ class SpdxSource(ExternalLicensesSource):
         # fetch licenses and exceptions
         # note that exceptions data have -- weirdly enough -- a different schema
         zip_url = 'https://github.com/spdx/license-list-data/archive/%(tag)s.zip' % locals()
-        if TRACE: print('Fetching SPDX license data from:', zip_url)
+        if TRACE_FETCH: print('Fetching SPDX license data from:', zip_url)
         licenses_zip = fetch.download_url(zip_url, timeout=120)
         with zipfile.ZipFile(licenses_zip) as archive:
             for path in archive.namelist():
                 if not (path.endswith('.json')
                 and ('/json/details/' in path or '/json/exceptions/' in path)):
                     continue
-                if TRACE: print('Loading license:', path)
+                if TRACE_FETCH: print('Loading license:', path)
                 if path.endswith('+.json'):
                     # Skip the old plus licenses. We use them in
                     # ScanCode, but they are deprecated in SPDX.
@@ -299,7 +315,7 @@ class SpdxSource(ExternalLicensesSource):
                 try:
                     yield self._build_license(details)
                 except:
-                    print(json.dumps(details, ident=2))
+                    print(json.dumps(details, indent=2))
                     raise
 
     def _build_license(self, mapping):
@@ -640,17 +656,8 @@ def synchronize_licenses(
     """
 
     # mappings of key -> License
-    scancodes = load_licenses(with_deprecated=True)
-    others = external_source.get_licenses()
-
-    matching_key = external_source.matching_key
-    if matching_key != 'key':
-        # build additional lookup mappings
-        scancodes_by_key = {getattr(l, matching_key, None): l for l in scancodes.values() if getattr(l, matching_key, None)}
-        others_by_key = {getattr(l, matching_key, None): l for l in others.values() if getattr(l, matching_key, None)}
-    else:
-        scancodes_by_key = scancodes
-        others_by_key = others
+    scancodes_by_key = external_source.scancodes_by_key
+    others_by_key = external_source.get_licenses()
 
     # track changes with sets of license keys
     same = set()
@@ -711,18 +718,20 @@ def synchronize_licenses(
             sc_license = ot_license.relocate(licenses_data_dir, o_key)
             scancodes_added.add(sc_license.key)
             scancodes_by_key[sc_license.key] = sc_license
-            if TRACE: print('Other license key not in ScanCode:', ot_license.key, 'created in other.')
+            if TRACE: print('Other license key not in ScanCode:', ot_license.key, 'created in ScanCode.')
 
     # finally write changes
     for k in scancodes_changed | scancodes_added:
-        scancodes[k].dump()
+        scancodes_by_key[k].dump()
 
     if create_external:
         for k in others_changed | others_added:
-            others[k].dump()
+            others_by_key[k].dump()
 
-    # TODO: at last: print report of incorrect OTHER licenses to submit updates
-    # eg. make API calls to DejaCode to create or update licenses and submit review request
+# TODO: at last: print report of incorrect OTHER licenses to submit
+# updates eg. make API calls to DejaCode to create or update
+# licenses and submit review request e.g. submit requests to SPDX
+# for addition
 
 
 
