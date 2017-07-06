@@ -412,3 +412,11 @@ def test_spdx_rdf_tree():
     result = run_scan_click(['--format', 'spdx-rdf', test_dir, result_file])
     assert result.exit_code == 0
     check_rdf_scan(expected_file, result_file)
+
+def test_csv():
+    test_dir = test_env.get_test_loc('basic/scan')
+    result_file = test_env.get_temp_file('csv')
+    expected_file = test_env.get_test_loc('basic/expected.csv')
+    result = run_scan_click(['--format', 'csv', test_dir, result_file])
+    assert result.exit_code == 0
+    assert open(expected_file).read() == open(result_file).read()

@@ -206,6 +206,7 @@ setup(
             'format_html_app = plugincode.format_html_app',
             'format_json = plugincode.format_json',
             'format_spdx = plugincode.format_spdx',
+            'format_csv = plugincode.format_csv',
         ]
     },
 )

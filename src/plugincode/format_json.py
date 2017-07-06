@@ -40,7 +40,6 @@ def add_format():
 
 @hookimpl
 def write_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
-
     meta = OrderedDict()
     meta['scancode_notice'] = notice
     meta['scancode_version'] = version
