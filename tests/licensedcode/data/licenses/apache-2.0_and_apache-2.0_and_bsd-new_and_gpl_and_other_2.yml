@@ -1,10 +1,10 @@
 licenses:
-    - gpl
+    - gpl-1.0-plus
     - apache-2.0
     - mit
     - proprietary
-    - lgpl
-    - gpl
+    - lgpl-2.0-plus
+    - gpl-1.0-plus
     - ms-pl
     - mit
     - zlib-acknowledgement
@@ -14,6 +14,6 @@ licenses:
     - cc-by-sa-2.5
     - bsd-new
     - ms-pl
-    - gpl
+    - gpl-1.0-plus
 
 expected_failure: yes

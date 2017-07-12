@@ -1,13 +1,10 @@
 key: lppl-1.2
 short_name: LPPL 1.2
 name: LaTeX Project Public License v1.2
-
 category: Copyleft
 owner: LaTeX
 homepage_url: http://www.latex-project.org/lppl/lppl-1-2.txt
-notes: |-
-    notes from SPDX:
-    This license was released 3 Sept 1999.
+notes: Per SPDX.org, this license was released 3 Sept 1999.
 spdx_license_key: LPPL-1.2
 text_urls:
     - http://www.latex-project.org/lppl/lppl-1-2.txt

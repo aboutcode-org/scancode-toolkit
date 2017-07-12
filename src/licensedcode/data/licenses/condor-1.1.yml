@@ -1,13 +1,10 @@
 key: condor-1.1
 short_name: Condor Public License 1.1
 name: Condor Public License 1.1
-
 category: Permissive
 owner: Condor Project
 homepage_url: http://www.cs.wisc.edu/condor/license.html
-notes: |-
-    notes from SPDX:
-    This license was released 30 October 2003
+notes: Per SPDX.org, this license was released 30 October 2003
 spdx_license_key: Condor-1.1
 text_urls:
     - http://www.cs.wisc.edu/condor/license.html

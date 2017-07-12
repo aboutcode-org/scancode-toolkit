@@ -1,13 +1,11 @@
 key: classworlds
 short_name: Classworlds License
 name: Classworlds License
-
 category: Permissive
 owner: Codehaus
 homepage_url: http://classworlds.codehaus.org/license.html
-notes: |-
-    notes from SPDX:
-    Per Fedora: "This is an Apache 1.1 derived license. Unfortunately, clause 4 is too broad, making it Free but GPL-incompatible."
+notes: Per Fedora, this is an Apache 1.1 derived license. Unfortunately, clause 4 is too broad,
+    making it Free but GPL-incompatible.
 spdx_license_key: Plexus
 text_urls:
     - https://fedoraproject.org/wiki/Licensing/Plexus_Classworlds_License

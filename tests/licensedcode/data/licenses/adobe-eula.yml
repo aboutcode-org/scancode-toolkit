@@ -1,5 +1,5 @@
 licenses:
     - adobe-eula
-    - gpl
+    - gpl-1.0-plus
 license_choice: no
 notes: GPL is for the Debian packaging

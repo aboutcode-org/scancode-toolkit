@@ -1,7 +1,6 @@
 key: tiger-crypto
 short_name: Tiger Cryptography License
 name: Tiger Cryptography License
-
 category: Permissive
 owner: Tiger
 faq_url: http://www.cs.technion.ac.il/~biham/Reports/Tiger/

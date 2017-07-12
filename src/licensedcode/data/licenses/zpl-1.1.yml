@@ -1,7 +1,6 @@
 key: zpl-1.1
 short_name: ZPL 1.1
 name: Zope Public License 1.1
-
 category: Permissive
 owner: Zope Community
 homepage_url: http://www.zope.org/Resources/License/
@@ -9,4 +8,5 @@ spdx_license_key: ZPL-1.1
 text_urls:
     - http://www.zope.org/Resources/License/
 other_urls:
+    - http://old.zope.org/Resources/License/ZPL-1.1
     - http://www.zope.com/

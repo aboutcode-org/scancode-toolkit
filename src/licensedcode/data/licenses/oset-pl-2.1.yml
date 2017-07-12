@@ -1,0 +1,14 @@
+key: oset-pl-2.1
+short_name: OSET-PL-2.1
+name: OSET Public License version 2.1
+category: Copyleft Limited
+owner: OSET Foundation
+homepage_url: http://www.osetfoundation.org/public-license/
+spdx_license_key: OSET-PL-2.1
+text_urls:
+    - http://www.osetfoundation.org/s/OPL_v21-plain.txt
+osi_url: https://opensource.org/licenses/OPL-2.1
+faq_url: http://www.osetfoundation.org/public-license/
+other_urls:
+    - http://opensource.org/licenses/OPL-2.1
+    - http://www.osetfoundation.org/public-license/#

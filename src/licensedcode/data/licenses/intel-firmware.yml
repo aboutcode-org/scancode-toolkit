@@ -1,0 +1,10 @@
+key: intel-firmware
+short_name: Intel Firmware License
+name: Intel Firmware License
+category: Proprietary Free
+owner: Intel Corporation
+homepage_url: https://github.com/coreos/portage-stable/blob/master/licenses/ipw2200-fw
+text_urls:
+    - http://www.redhat.com/licenses/thirdparty/intel_ipw2100.html
+other_urls:
+    - ftp://ftp.supermicro.com/CDR-X9_1.30_for_Intel_X9_platform/Intel/ME/INTEL_SOFTWARE_LICENSE_AGREEMENT.pdf

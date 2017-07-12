@@ -1,10 +1,11 @@
 key: libpng
 short_name: Libpng License
 name: Libpng License
-
 category: Permissive
 owner: libpng
 homepage_url: http://www.libpng.org/pub/png/libpng.html
 spdx_license_key: Libpng
 text_urls:
     - http://libpng.org/pub/png/src/libpng-LICENSE.txt
+other_urls:
+    - http://www.libpng.org/pub/png/src/libpng-LICENSE.txt

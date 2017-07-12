@@ -1,0 +1,8 @@
+key: rsa-proprietary
+short_name: RSA Proprietary
+name: RSA Proprietary Shrinkwrap License
+category: Commercial
+owner: RSA (the Security Division of EMC)
+homepage_url: https://www.emc.com/collateral/legal/shrinkwrap-license-combined.pdf
+text_urls:
+    - https://www.emc.com/collateral/legal/shrinkwrap-license-combined.pdf

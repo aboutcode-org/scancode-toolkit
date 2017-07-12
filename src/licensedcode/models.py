@@ -32,7 +32,6 @@ from collections import Counter
 from collections import defaultdict
 from collections import namedtuple
 from collections import OrderedDict
-from copy import copy
 from itertools import chain
 from operator import itemgetter
 from os.path import exists
@@ -149,20 +148,39 @@ class License(object):
             if exists(self.data_file):
                 self.load(src_dir)
 
+    def __repr__(self, *args, **kwargs):
+        return 'License(key="{}")'.format(self.key)
+
     def set_file_paths(self):
         self.data_file = join(self.src_dir, self.key + '.yml')
         self.text_file = join(self.src_dir, self.key + '.LICENSE')
 
-    def relocate(self, src_dir):
+    def relocate(self, src_dir, new_key=None):
         """
         Return a copy of this license object relocated to a new `src_dir`.
-        Also copy the LICENSE file.
+        The data and license text files are persisted in the new `src_dir`.
         """
-        newl = copy(self)
-        newl.src_dir = src_dir
-        newl.set_file_paths()
+        if not src_dir or src_dir == self.src_dir:
+            raise ValueError(
+                'Cannot relocate a License to empty directory or same directory.')
+
+        if new_key:
+            key = new_key
+        else:
+            key = self.key
+
+        newl = License(key, src_dir)
+
+        # copy attributes
+        excluded_attrs = ('key', 'src_dir', 'data_file', 'text_file',)
+        attrs = [a for a in self.__slots__ if a not in excluded_attrs]
+        for name in attrs:
+            setattr(newl, name, getattr(self, name))
+
+        # save it all to files
         if self.text:
             fileutils.copyfile(self.text_file, newl.text_file)
+        newl.dump()
         return newl
 
     def update(self, mapping):
@@ -455,8 +473,11 @@ def check_rules_integrity(rules, licenses):
             invalid_rules[rule.data_file].update(unknown_keys)
 
     if invalid_rules:
-        invalid_rules = (data_file + ': ' + ' '.join(keys)
-                         for data_file, keys in invalid_rules.iteritems() if keys)
+        invalid_rules = (
+            ' '.join(keys) + '\n' +
+            'file://' + data_file + '\n' +
+            'file://' + data_file.replace('.yml', '.RULE') + '\n'
+        for data_file, keys in invalid_rules.iteritems() if keys)
         msg = 'Rules referencing missing licenses:\n' + '\n'.join(sorted(invalid_rules))
         raise MissingLicenses(msg)
 

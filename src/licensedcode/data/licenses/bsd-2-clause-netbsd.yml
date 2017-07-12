@@ -1,14 +1,12 @@
 key: bsd-2-clause-netbsd
 short_name: BSD 2-clause "NetBSD"
 name: BSD 2-clause "NetBSD" License
-
 category: Permissive
 owner: NetBSD
 homepage_url: http://www.netbsd.org/about/redistribution.html#default
-notes: |-
-    Except for the netbsd foundation name this license is identical to the bsd-simplified
-    notes from SPDX:
-    NetBSD adopted this 2-clause license in 2008 for code contributed to NetBSD Foundation.
+notes: Except for the NetBSD \Foundation name this license is identical to the bsd-simplified
+    Per SPDX.org, NetBSD adopted this 2-clause license in 2008 for code contributed to NetBSD
+    Foundation.
 spdx_license_key: BSD-2-Clause-NetBSD
 text_urls:
     - http://www.netbsd.org/about/redistribution.html#default

@@ -1,0 +1,8 @@
+key: hp-enterprise-eula
+short_name: HP Enterprise EULA
+name: HP Enterprise EULA
+category: Proprietary Free
+owner: HP - Hewlett Packard
+homepage_url: http://h20564.www2.hpe.com/hpsc/swd/public/license?sp4ts.oid=&eulaType=passive
+other_urls:
+    - http://h20564.www2.hpe.com/hpsc/swd/public/detail?swItemId=MTX_973decf09d114d81b4c97603df

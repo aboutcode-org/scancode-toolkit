@@ -1,5 +1,5 @@
 licenses:
     - proprietary
-    - gpl
-    - lgpl
+    - gpl-1.0-plus
+    - lgpl-2.0-plus
 notes: a complex proprietary license with GPL and LGPL references.

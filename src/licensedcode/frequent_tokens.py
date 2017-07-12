@@ -10003,6 +10003,10 @@ TaBE
 Fuchsia
 Synopsys
 rushing
+lisp
+clisp
+clos
+SAVEINITMEM
 '''
 
 

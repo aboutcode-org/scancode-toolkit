@@ -1,13 +1,10 @@
 key: afl-2.1
 short_name: AFL 2.1
 name: Academic Free License 2.1
-
 category: Permissive
 owner: Lawrence Rosen
 homepage_url: http://www.rosenlaw.com/afl21.htm
-notes: |-
-    notes from SPDX:
-    This license was OSI certified.
+notes: Per SPDX.org, this license was OSI certified.
 spdx_license_key: AFL-2.1
 text_urls:
     - http://opensource.linux-mirror.org/licenses/afl-2.1.txt

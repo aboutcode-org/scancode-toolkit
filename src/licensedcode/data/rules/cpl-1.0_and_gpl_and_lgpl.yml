@@ -1,6 +1,6 @@
 licenses:
     - cpl-1.0
-    - gpl
-    - lgpl
+    - gpl-1.0-plus
+    - lgpl-2.0-plus
 minimum_coverage: 10
 notes: JRuby  triple licenses

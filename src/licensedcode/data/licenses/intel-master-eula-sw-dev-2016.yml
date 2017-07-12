@@ -1,0 +1,8 @@
+key: intel-master-eula-sw-dev-2016
+short_name: Intel Master EULA for SW Dev 2016
+name: Intel Master EULA for SW Development Products March 2016
+category: Proprietary Free
+owner: Intel Corporation
+homepage_url: https://registrationcenter.intel.com/en/forms/?productid=2558&licensetype=2
+text_urls:
+    - https://software.intel.com/sites/default/files/managed/67/99/Master_EULA_for_Intel_Sw_Development_Products_March_2016.pdf

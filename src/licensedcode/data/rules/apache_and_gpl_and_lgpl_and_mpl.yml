@@ -1,6 +1,6 @@
 licenses:
-    - gpl
-    - lgpl
-    - mpl
+    - gpl-1.0-plus
+    - lgpl-2.0-plus
+    - mpl-1.0
     - apache-2.0
 

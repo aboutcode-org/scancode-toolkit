@@ -1,0 +1,9 @@
+key: nlod-1.0
+short_name: NLOD-1.0
+name: Norwegian Licence for Open Government Data
+category: Permissive
+owner: Norway
+homepage_url: http://data.norge.no/nlod/en/1.0
+spdx_license_key: NLOD-1.0
+other_urls:
+    - http://data.norge.no/nlod/no/1.0

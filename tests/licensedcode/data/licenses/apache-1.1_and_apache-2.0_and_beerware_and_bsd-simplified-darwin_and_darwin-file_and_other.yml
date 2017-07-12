@@ -2,7 +2,7 @@ licenses:
     - apache-2.0
     - apache-2.0
     - apache-2.0
-    - darwin-file
+    - hs-regexp
     - bsd-simplified-darwin
     - x11-keith-packard
     - historical
@@ -21,8 +21,8 @@ licenses:
     - mit-old-style-no-advert
     - mit-old-style-no-advert
     - pcre
-    - gpl
-    - lgpl
+    - gpl-1.0-plus
+    - lgpl-2.0-plus
     - zeusbench
     - mit
     - apache-2.0

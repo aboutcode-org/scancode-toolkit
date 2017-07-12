@@ -1,0 +1,8 @@
+key: lgpl-2.1-plus-unlimited-linking
+short_name: LGPL 2.1 or later with unlimited linking exception
+name: LGPL 2.1 or later with unlimited linking exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.eglibc.org/cgi-bin/viewvc.cgi/branches/eglibc-2_18/libc/io/stat64.c?revision=23787&view=markup
+other_urls:
+    - http://www.gnu.org/licenses/lgpl-2.1.html

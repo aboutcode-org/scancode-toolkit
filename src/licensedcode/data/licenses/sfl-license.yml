@@ -1,7 +1,6 @@
 key: sfl-license
 short_name: SFL License Agreement
 name: SFL License Agreement
-
 category: Permissive
 owner: iMatix
 homepage_url: http://legacy.imatix.com/html/sfl/sfl4.htm
@@ -9,4 +8,5 @@ spdx_license_key: iMatix
 text_urls:
     - http://legacy.imatix.com/html/sfl/sfl4.htm
 other_urls:
+    - http://legacy.imatix.com/html/sfl/sfl4.htm#license
     - http://www.imatix.com

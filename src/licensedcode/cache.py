@@ -113,7 +113,7 @@ def get_or_build_index_through_cache(
     _rules_data_dir = _rules_data_dir or rules_data_dir
 
     has_cache = exists(_index_cache_file)
-    has_tree_checksum =  exists(_tree_checksum_file)
+    has_tree_checksum = exists(_tree_checksum_file)
 
     # bypass check if no consistency check is needed
     if has_cache and has_tree_checksum and not check_consistency:
@@ -174,7 +174,7 @@ def _load_index(_index_cache_file=index_cache_file):
 reindex = partial(get_or_build_index_through_cache, check_consistency=True, return_index=False)
 
 
-# global in-memory license index instance
+# global in-memory cache of the main license index instance
 _LICENSES_INDEX = None
 
 
@@ -189,7 +189,7 @@ def get_index(_return_index=True):
     return _return_index and _LICENSES_INDEX
 
 
-# global cache of licenses as mapping of lic key -> lic object
+# global in-memory cache of a mapping of key -> license instance
 _LICENSES = {}
 
 

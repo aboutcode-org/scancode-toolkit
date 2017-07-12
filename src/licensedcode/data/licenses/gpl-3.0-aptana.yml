@@ -1,0 +1,8 @@
+key: gpl-3.0-aptana
+short_name: GPL 3.0 with Aptana exception
+name: GNU General Public License 3.0 with Aptana exception
+category: Copyleft
+owner: Appcelerator
+homepage_url: https://github.com/aptana/studio3/blob/development/README.md
+other_urls:
+    - ttp://www.aptana.com/legal/gpl

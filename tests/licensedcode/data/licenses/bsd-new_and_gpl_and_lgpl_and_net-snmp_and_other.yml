@@ -1,14 +1,14 @@
 licenses:
-    - lgpl
-    - gpl
+    - lgpl-2.0-plus
+    - gpl-1.0-plus
     - bsd-new
     - bsd-new
     - bsd-new
-    - gpl
-    - lgpl
-    - lgpl
-    - lgpl
-    - lgpl
+    - gpl-1.0-plus
+    - lgpl-2.0-plus
+    - lgpl-2.0-plus
+    - lgpl-2.0-plus
+    - lgpl-2.0-plus
     - bsd-new
     - historical
     - historical

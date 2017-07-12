@@ -1,13 +1,10 @@
 key: mpl-1.1
 short_name: MPL 1.1
 name: Mozilla Public License 1.1
-
 category: Copyleft Limited
 owner: Mozilla
 homepage_url: http://www.mozilla.org/MPL/MPL-1.1.html
-notes: |-
-    notes from SPDX:
-    This license is OSI certified.
+notes: Per SPDX.org, this license is OSI certified.
 spdx_license_key: MPL-1.1
 text_urls:
     - http://www.mozilla.com/MPL/1.1/index.html
@@ -18,3 +15,5 @@ text_urls:
     - http://www.mozilla.org/MPL/MPL-1.1.txt
 osi_url: http://opensource.org/licenses/mozilla1.1.php
 faq_url: http://www.mozilla.org/MPL/mpl-faq.html
+other_urls:
+    - http://www.opensource.org/licenses/MPL-1.1

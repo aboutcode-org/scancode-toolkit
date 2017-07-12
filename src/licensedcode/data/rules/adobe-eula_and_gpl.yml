@@ -1,4 +1,4 @@
 licenses:
     - adobe-eula
-    - gpl
+    - gpl-1.0-plus
 notes: only the packaging is under the GPL 
