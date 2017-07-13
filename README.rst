@@ -69,6 +69,9 @@ On Linux install Python 2.7 "devel" and a few extra packages:
  * ``sudo yum install python-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel``
    for RPM distros
  
+ * ``sudo dnf install python-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel``
+   for Fedora 22 and later
+
  * See the Comprehensive Installation for additional details and other
    Linux installations: https://github.com/nexB/scancode-toolkit/wiki/Comprehensive-Installation
 
