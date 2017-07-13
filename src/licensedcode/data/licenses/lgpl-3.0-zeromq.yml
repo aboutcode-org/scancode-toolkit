@@ -1,0 +1,10 @@
+key: lgpl-3.0-zeromq
+short_name: LGPL 3.0 with zeromq exception
+name: GNU Lesser General Public License 3.0 with zeromq exception
+category: Copyleft Limited
+owner: ZeroMQ
+homepage_url: https://github.com/zeromq/zeromq3-x/blob/master/COPYING.LESSER
+faq_url: https://github.com/zeromq/zeromq3-x/blob/master/README
+other_urls:
+    - https://github.com/zeromq/zeromq3-x/blob/master/COPYING
+is_exception: yes

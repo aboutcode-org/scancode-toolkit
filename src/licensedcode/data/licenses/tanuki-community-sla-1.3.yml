@@ -1,0 +1,9 @@
+key: tanuki-community-sla-1.3
+short_name: Tanuki Community SLA 1.3
+name: Tanuki Community Software License Agreement 1.3
+category: Copyleft
+owner: Tanuki Software
+homepage_url: http://wrapper.tanukisoftware.com/doc/english/licenseCommunity.html
+text_urls:
+    - http://wrapper.tanukisoftware.com/doc/english/licenseCommunity.html
+minimum_coverage: 98
