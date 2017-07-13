@@ -3,4 +3,4 @@ short_name: ComponentAce JCraft License
 name: ComponentAce JCraft License
 category: Permissive
 owner: ComponentAce
-license_expression: bsd-new and bsd-new and zlib
+notes: license_expression  bsd-new and bsd-new and zlib

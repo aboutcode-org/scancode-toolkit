@@ -5,4 +5,4 @@ category: Permissive
 owner: QOS Project
 homepage_url: http://www.slf4j.org/license.html
 notes: this is really a component-specific simple MIT license with several additional commentaries
-license_expression: mit
+notes: license_expression  mit
