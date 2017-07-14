@@ -609,11 +609,11 @@ def _get_mavenpom(location, check_is_pom=False):
     return pom
 
 
-def parse(location):
+def parse(location, check_is_pom=True):
     """
     Parse a pom file at location and return a Package or None.
     """
-    mavenpom = _get_mavenpom(location, check_is_pom=True)
+    mavenpom = _get_mavenpom(location, check_is_pom=check_is_pom)
     if not mavenpom:
         return
 
@@ -666,6 +666,7 @@ def parse(location):
 
     # FIXME: there are still a lot of other data to map in a Package
     package = MavenPomPackage(
+        # FIXME: what is this location about?
         location=location,
         name='{group_id}:{artifact_id}'.format(**pom),
         version=pom['version'],

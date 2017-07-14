@@ -285,6 +285,13 @@ class TestPomProperties(testcase.FileBasedTesting):
 
         assert expected == test
 
+    def test_parse_can_run_without_pom_check(self):
+        test_loc = self.get_test_loc('maven_misc/ant-1.6.5.maven')
+        pom = maven.parse(test_loc, check_is_pom=False)
+        assert pom
+        pom = maven.parse(test_loc, check_is_pom=True)
+        assert not pom
+
 
 class BaseMavenCase(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
