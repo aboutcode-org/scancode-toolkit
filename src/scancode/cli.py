@@ -48,7 +48,9 @@ from click.termui import style
 
 from commoncode import filetype
 from commoncode import fileutils
+from commoncode.fileutils import path_to_unicode
 from commoncode import ignore
+from commoncode.system import on_linux
 from commoncode.text import toascii
 
 import plugincode.output

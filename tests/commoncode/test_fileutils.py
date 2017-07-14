@@ -29,16 +29,19 @@ from os.path import join
 from os.path import sep
 from unittest.case import skipIf
 
-from commoncode.system import on_windows
-from commoncode.system import on_posix
-from commoncode.testcase import FileBasedTesting
-from commoncode.testcase import make_non_readable
-from commoncode.testcase import make_non_writable
-from commoncode.testcase import make_non_executable
-
 from commoncode import filetype
 from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
+from commoncode.fileutils import path_to_bytes
+from commoncode.fileutils import path_to_unicode
+from commoncode.system import on_linux
+from commoncode.system import on_posix
+from commoncode.system import on_mac
+from commoncode.system import on_windows
+from commoncode.testcase import FileBasedTesting
+from commoncode.testcase import make_non_executable
+from commoncode.testcase import make_non_readable
+from commoncode.testcase import make_non_writable
 
 
 class TestPermissions(FileBasedTesting):
@@ -331,12 +334,13 @@ class TestFileUtils(FileBasedTesting):
         test_dir = self.extract_test_zip('fileutils/walk/unicode.zip')
         test_dir = join(test_dir, 'unicode')
 
-        test_dir = unicode(test_dir)
-        result = list(fileutils.walk(test_dir))
-        expected = [
-            (unicode(test_dir), ['a'], [u'2.csv']),
-            (unicode(test_dir) + sep + 'a', [], [u'gru\u0308n.png'])
-        ]
+        if on_linux:
+            test_dir = unicode(test_dir)
+        result = list(x[-1] for x in fileutils.walk(test_dir))
+        if on_linux:
+            expected = [['2.csv'], ['gru\xcc\x88n.png']]
+        else:
+            expected = [[u'2.csv'], [u'gru\u0308n.png']]
         assert expected == result
 
     def test_fileutils_walk_can_walk_a_single_file(self):
@@ -379,6 +383,175 @@ class TestFileUtils(FileBasedTesting):
         result = list(fileutils.file_iter(test_dir))
         expected = []
         assert expected == result
+
+    def test_resource_iter_with_files_no_dir(self):
+        test_dir = self.get_test_loc('fileutils/walk')
+        base = self.get_test_loc('fileutils')
+        result = sorted([as_posixpath(f.replace(base, ''))
+                         for f in fileutils.resource_iter(test_dir, with_files=True, with_dirs=False)])
+        expected = [
+            '/walk/f',
+            '/walk/unicode.zip',
+            '/walk/d1/f1',
+            '/walk/d1/d2/f2',
+            '/walk/d1/d2/d3/f3'
+        ]
+        assert sorted(expected) == sorted(result)
+
+    def test_resource_iter_with_files_and_dir(self):
+        test_dir = self.get_test_loc('fileutils/walk')
+        base = self.get_test_loc('fileutils')
+        result = sorted([as_posixpath(f.replace(base, ''))
+                         for f in fileutils.resource_iter(test_dir, with_files=True, with_dirs=True)])
+        expected = [
+            '/walk/d1',
+            '/walk/d1/d2',
+            '/walk/d1/d2/d3',
+            '/walk/d1/d2/d3/f3',
+            '/walk/d1/d2/f2',
+            '/walk/d1/f1',
+            '/walk/f',
+            '/walk/unicode.zip'
+        ]
+        assert sorted(expected) == sorted(result)
+
+    def test_resource_iter_with_dir_only(self):
+        test_dir = self.get_test_loc('fileutils/walk')
+        base = self.get_test_loc('fileutils')
+        result = sorted([as_posixpath(f.replace(base, ''))
+                         for f in fileutils.resource_iter(test_dir, with_files=False, with_dirs=True)])
+        expected = [
+             '/walk/d1',
+             '/walk/d1/d2',
+             '/walk/d1/d2/d3',
+        ]
+        assert sorted(expected) == sorted(result)
+
+    def test_resource_iter_return_byte_on_byte_input(self):
+        test_dir = self.get_test_loc('fileutils/walk')
+        base = self.get_test_loc('fileutils')
+        result = sorted([as_posixpath(f.replace(base, ''))
+                         for f in fileutils.resource_iter(test_dir, with_files=True, with_dirs=True)])
+        expected = [
+            '/walk/d1',
+            '/walk/d1/d2',
+            '/walk/d1/d2/d3',
+            '/walk/d1/d2/d3/f3',
+            '/walk/d1/d2/f2',
+            '/walk/d1/f1',
+            '/walk/f',
+            '/walk/unicode.zip'
+        ]
+        assert sorted(expected) == sorted(result)
+        if on_linux:
+            assert all(isinstance(p, bytes) for p in result)
+        else:
+            assert all(isinstance(p, unicode) for p in result)
+
+    def test_resource_iter_return_unicode_on_unicode_input(self):
+        test_dir = self.get_test_loc('fileutils/walk')
+        base = unicode(self.get_test_loc('fileutils'))
+        result = sorted([as_posixpath(f.replace(base, ''))
+                         for f in fileutils.resource_iter(test_dir, with_files=True, with_dirs=True)])
+        expected = [
+            u'/walk/d1',
+            u'/walk/d1/d2',
+            u'/walk/d1/d2/d3',
+            u'/walk/d1/d2/d3/f3',
+            u'/walk/d1/d2/f2',
+            u'/walk/d1/f1',
+            u'/walk/f',
+            u'/walk/unicode.zip'
+        ]
+        assert sorted(expected) == sorted(result)
+        assert all(isinstance(p, unicode) for p in result)
+
+    def test_resource_iter_can_iterate_a_single_file(self):
+        test_file = self.get_test_loc('fileutils/walk/f')
+        result = [as_posixpath(f) for f in fileutils.resource_iter(test_file)]
+        expected = [as_posixpath(test_file)]
+        assert expected == result
+
+    def test_resource_iter_can_walk_an_empty_dir(self):
+        test_dir = self.get_temp_dir()
+        result = list(fileutils.resource_iter(test_dir))
+        expected = []
+        assert expected == result
+
+    def test_fileutils_resource_iter_can_walk_unicode_path_with_zip(self):
+        test_dir = self.extract_test_zip('fileutils/walk/unicode.zip')
+        test_dir = join(test_dir, 'unicode')
+
+        if on_linux:
+            EMPTY_STRING = ''
+        else:
+            test_dir = unicode(test_dir)
+            EMPTY_STRING = u''
+
+        result = sorted([p.replace(test_dir, EMPTY_STRING) for p in fileutils.resource_iter(test_dir)])
+        if on_linux:
+            expected = [
+                '/2.csv',
+                '/a',
+                '/a/gru\xcc\x88n.png'
+            ]
+        elif on_mac:
+            expected = [
+                u'/2.csv',
+                u'/a',
+                u'/a/gru\u0308n.png'
+            ]
+        elif on_windows:
+            expected = [
+                u'\\2.csv',
+                u'\\a',
+                u'\\a\\gru\u0308n.png'
+            ]
+        assert expected == result
+
+    def test_resource_iter_can_walk_non_utf8_path_from_unicode_path(self):
+        test_dir = self.extract_test_tar('fileutils/walk_non_utf8/non_unicode.tgz')
+        test_dir = join(test_dir, 'non_unicode')
+
+        if not on_linux:
+            test_dir = unicode(test_dir)
+        result = list(fileutils.resource_iter(test_dir))
+        assert 1 == len(result)
+
+    def test_walk_can_walk_non_utf8_path_from_unicode_path(self):
+        test_dir = self.extract_test_tar('fileutils/walk_non_utf8/non_unicode.tgz')
+        test_dir = join(test_dir, 'non_unicode')
+
+        if not on_linux:
+            test_dir = unicode(test_dir)
+        result = list(fileutils.walk(test_dir))
+        assert 1 == len(result)
+
+    def test_file_iter_can_walk_non_utf8_path_from_unicode_path(self):
+        test_dir = self.extract_test_tar('fileutils/walk_non_utf8/non_unicode.tgz')
+        test_dir = join(test_dir, 'non_unicode')
+
+        if not on_linux:
+            test_dir = unicode(test_dir)
+        result = list(fileutils.file_iter(test_dir))
+        assert 1 == len(result)
+
+    def test_os_walk_can_walk_non_utf8_path_from_unicode_path(self):
+        test_dir = self.extract_test_tar('fileutils/walk_non_utf8/non_unicode.tgz')
+        test_dir = join(test_dir, 'non_unicode')
+
+        if not on_linux:
+            test_dir = unicode(test_dir)
+        result = list(os.walk(test_dir))
+        assert 1 == len(result)
+
+    def test_path_to_unicode_and_path_to_bytes_are_idempotent(self):
+        a = b'foo\xb1bar'
+        b = u'foo\udcb1bar'
+        assert a == path_to_bytes(path_to_unicode(a))
+        assert a == path_to_bytes(path_to_unicode(b))
+        assert b == path_to_unicode(path_to_bytes(a))
+        assert b == path_to_unicode(path_to_bytes(b))
 
 
 class TestBaseName(FileBasedTesting):

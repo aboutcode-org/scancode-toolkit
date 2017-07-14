@@ -33,7 +33,9 @@ import click
 click.disable_unicode_literals_warning = True
 
 from commoncode import fileutils
+from commoncode.fileutils import path_to_unicode
 from commoncode import filetype
+from commoncode.system import on_linux
 from commoncode.text import toascii
 
 from scancode.api import extract_archives
@@ -94,7 +96,7 @@ Try 'extractcode --help' for help on options and arguments.'''
 @click.command(name='extractcode', epilog=epilog_text, cls=ExtractCommand)
 @click.pass_context
 
-@click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True, path_type=str))
+@click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True, path_type=fileutils.PATH_TYPE))
 
 @click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.')
 @click.option('--quiet', is_flag=True, default=False, help='Do not print any summary or progress message.')

@@ -1,0 +1,56 @@
+{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+  "scancode_options": {
+    "--info": true,
+    "--license-score": 0,
+    "--strip-root": true,
+    "--format": "json"
+  },
+  "files_count": 2,
+  "files": [
+    {
+      "path": "non_unicode",
+      "type": "directory",
+      "name": "non_unicode",
+      "base_name": "non_unicode",
+      "extension": "",
+      "date": null,
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "files_count": 1,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "scan_errors": []
+    },
+    {
+      "path": "non_unicode/foo\udcb1bar",
+      "type": "file",
+      "name": "foo\udcb1bar",
+      "base_name": "foo\udcb1bar",
+      "extension": "",
+      "date": "2017-07-14",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "files_count": null,
+      "mime_type": "inode/x-empty",
+      "file_type": "empty",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "scan_errors": []
+    }
+  ]
+}

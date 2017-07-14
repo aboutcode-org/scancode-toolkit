@@ -33,10 +33,11 @@ import re
 import shutil
 import sys
 
-from text_unidecode import unidecode
-
 from commoncode import fileutils
 from commoncode.text import toascii
+from commoncode.system import on_linux
+from commoncode.fileutils import path_to_bytes
+from commoncode.system import on_linux
 
 
 logger = logging.getLogger(__name__)
@@ -48,8 +49,17 @@ DEBUG = False
 
 root_dir = os.path.join(os.path.dirname(__file__), 'bin')
 
+
+POSIX_PATH_SEP = b'/' if on_linux else '/'
+WIN_PATH_SEP = b'\\' if on_linux else '\\'
+PATHS_SEPS = POSIX_PATH_SEP + WIN_PATH_SEP
+EMPTY_STRING = b'' if on_linux else ''
+DOT = b'.' if on_linux else '.'
+DOTDOT = DOT + DOT
+UNDERSCORE = b'_' if on_linux else '_'
+
 # Suffix added to extracted target_dir paths
-EXTRACT_SUFFIX = r'-extract'
+EXTRACT_SUFFIX = b'-extract' if on_linux else r'-extract'
 
 
 # high level archive "kinds"
@@ -92,7 +102,10 @@ def is_extraction_path(path):
     """
     Return True is the path points to an extraction path.
     """
-    return path and path.rstrip('\\/').endswith(EXTRACT_SUFFIX)
+    if on_linux:
+        path = path_to_bytes(path)
+
+    return path and path.rstrip(PATHS_SEPS).endswith(EXTRACT_SUFFIX)
 
 
 def is_extracted(location):
@@ -100,6 +113,8 @@ def is_extracted(location):
     Return True is the location is already extracted to the corresponding
     extraction location.
     """
+    if on_linux:
+        location = path_to_bytes(location)
     return location and os.path.exists(get_extraction_path(location))
 
 
@@ -107,14 +122,18 @@ def get_extraction_path(path):
     """
     Return a path where to extract.
     """
-    return path.rstrip('\\/') + EXTRACT_SUFFIX
+    if on_linux:
+        path = path_to_bytes(path)
+    return path.rstrip(PATHS_SEPS) + EXTRACT_SUFFIX
 
 
 def remove_archive_suffix(path):
     """
     Remove all the extracted suffix from a path.
     """
-    return re.sub(EXTRACT_SUFFIX, '', path)
+    if on_linux:
+        path = path_to_bytes(path)
+    return re.sub(EXTRACT_SUFFIX, EMPTY_STRING, path)
 
 
 def remove_backslashes_and_dotdots(directory):
@@ -122,19 +141,21 @@ def remove_backslashes_and_dotdots(directory):
     Walk a directory and rename the files if their names contain backslashes.
     Return a list of errors if any.
     """
+    if on_linux:
+        directory = path_to_bytes(directory)
     errors = []
     for top, _, files in os.walk(directory):
         for filename in files:
-            if not ('\\' in filename or '..' in filename):
+            if not (WIN_PATH_SEP in filename or DOTDOT in filename):
                 continue
             try:
                 new_path = fileutils.as_posixpath(filename)
-                new_path = new_path.strip('/')
+                new_path = new_path.strip(POSIX_PATH_SEP)
                 new_path = posixpath.normpath(new_path)
-                new_path = new_path.replace('..', '/')
-                new_path = new_path.strip('/')
+                new_path = new_path.replace(DOTDOT, POSIX_PATH_SEP)
+                new_path = new_path.strip(POSIX_PATH_SEP)
                 new_path = posixpath.normpath(new_path)
-                segments = new_path.split('/')
+                segments = new_path.split(POSIX_PATH_SEP)
                 directory = os.path.join(top, *segments[:-1])
                 fileutils.create_dir(directory)
                 shutil.move(os.path.join(top, filename), os.path.join(top, *segments))
@@ -158,7 +179,9 @@ def new_name(location, is_dir=False):
        the extension unchanged.
     """
     assert location
-    location = location.rstrip('\\/')
+    if on_linux:
+        location = path_to_bytes(location)
+    location = location.rstrip(PATHS_SEPS)
     assert location
 
     parent = fileutils.parent_directory(location)
@@ -169,8 +192,8 @@ def new_name(location, is_dir=False):
     filename = fileutils.file_name(location)
 
     # corner case
-    if filename in ('.', '..'):
-        filename = '_'
+    if filename in (DOT, DOT):
+        filename = UNDERSCORE
 
     # if unique, return this
     if filename.lower() not in siblings_lower:
@@ -180,19 +203,19 @@ def new_name(location, is_dir=False):
     if is_dir:
         # directories do not have an "extension"
         base_name = filename
-        ext = ''
+        ext = EMPTY_STRING
     else:
-        base_name, dot, ext = filename.partition('.')
+        base_name, dot, ext = filename.partition(DOT)
         if dot:
             ext = dot + ext
         else:
             base_name = filename
-            ext = ''
+            ext = EMPTY_STRING
 
     # find a unique filename, adding a counter int to the base_name
     counter = 1
     while 1:
-        filename = base_name + '_' + str(counter) + ext
+        filename = base_name + UNDERSCORE + str(counter) + ext
         if filename.lower() not in siblings_lower:
             break
         counter += 1

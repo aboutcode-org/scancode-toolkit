@@ -143,6 +143,7 @@ setup(
         'bz2file >= 0.98',
 
         # commoncode
+        'future >= 0.16.0, < 0.17.0',
         'text-unidecode >= 1.0, < 2.0',
 
         # licensedcode

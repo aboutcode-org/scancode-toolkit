@@ -47,6 +47,7 @@ from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
 
 from scancode import cli
+from commoncode.fileutils import path_to_bytes
 
 
 test_env = FileDrivenTesting()
@@ -420,11 +421,18 @@ def test_scan_works_with_multiple_processes_and_timeouts():
 
 def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
     test_dir = test_env.get_test_loc(u'unicodepath/uc')
-
     result_file = test_env.get_temp_file('json')
-    result = run_scan_click(
-        ['--info', '--license', '--copyright',
-         '--package', '--email', '--url', '--strip-root', test_dir , result_file])
+
+    if on_linux:
+        test_dir = path_to_bytes(test_dir)
+        result_file = path_to_bytes(result_file)
+
+    args = ['--info', '--license', '--copyright',
+            '--package', '--email', '--url', '--strip-root',
+            test_dir , result_file]
+    result = run_scan_click(args)
+    if result.exit_code != 0:
+        raise Exception(result.output, args)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
@@ -438,7 +446,7 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
     elif on_windows:
         expected = 'unicodepath/unicodepath.expected-win.json'
 
-    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True)
+    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True, regen=False)
 
 
 def test_scan_can_handle_licenses_with_unicode_metadata():
@@ -514,6 +522,29 @@ def test_scan_can_handle_weird_file_names():
         expected = 'weird_file_name/expected-win.json'
 
     check_json_scan(test_env.get_test_loc(expected), result_file)
+
+
+def test_scan_can_handle_non_utf8_file_names_on_posix():
+    test_dir = test_env.extract_test_tar('non_utf8/non_unicode.tgz')
+    result_file = test_env.get_temp_file('json')
+
+    if on_linux:
+        test_dir = path_to_bytes(test_dir)
+        result_file = path_to_bytes(result_file)
+
+    result = run_scan_click(['-i', '--strip-root', test_dir, result_file])
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+
+    # Some info vary on each OS
+    if on_linux:
+        expected = 'non_utf8/expected-linux.json'
+    elif on_mac:
+        expected = 'non_utf8/expected-mac.json'
+    elif on_windows:
+        expected = 'non_utf8/expected-win.json'
+
+    check_json_scan(test_env.get_test_loc(expected), result_file, regen=False)
 
 
 def test_scan_can_run_from_other_directory():
