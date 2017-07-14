@@ -34,8 +34,6 @@ import os
 import shutil
 import sys
 import filecmp
-import posixpath
-import ntpath
 import zipfile
 import tarfile
 import stat
@@ -44,6 +42,8 @@ from commoncode.system import on_windows
 from commoncode import fileutils
 from commoncode.system import on_posix
 from commoncode import filetype
+from commoncode.system import on_linux
+from commoncode.fileutils import path_to_bytes
 
 
 class EnhancedAssertions(TestCaseClass):
@@ -84,13 +84,26 @@ test_run_temp_dir = None
 timing_threshold = sys.maxint
 
 
+POSIX_PATH_SEP = b'/' if on_linux else '/'
+WIN_PATH_SEP = b'\\' if on_linux else '\\'
+EMPTY_STRING = b'' if on_linux else ''
+DOT = b'.' if on_linux else '.'
+
+if on_windows:
+    OS_PATH_SEP = WIN_PATH_SEP
+else:
+    OS_PATH_SEP = POSIX_PATH_SEP
+
+
 def to_os_native_path(path):
     """
     Normalize a path to use the native OS path separator.
     """
-    path = path.replace(posixpath.sep, os.path.sep)
-    path = path.replace(ntpath.sep, os.path.sep)
-    path = path.rstrip(os.path.sep)
+    if on_linux:
+        path = path_to_bytes(path)
+    path = path.replace(POSIX_PATH_SEP, OS_PATH_SEP)
+    path = path.replace(WIN_PATH_SEP, OS_PATH_SEP)
+    path = path.rstrip(OS_PATH_SEP)
     return path
 
 
@@ -99,6 +112,10 @@ def get_test_loc(test_path, test_data_dir, debug=False, exists=True):
     Given a `test_path` relative to the `test_data_dir` directory, return the
     location to a test file or directory for this path. No copy is done.
     """
+    if on_linux:
+        test_path = path_to_bytes(test_path)
+        test_data_dir = path_to_bytes(test_data_dir)
+
     if debug:
         import inspect
         caller = inspect.stack()[1][3]
@@ -135,12 +152,17 @@ class FileDrivenTesting(object):
         location to a test file or directory for this path. Copy to a temp
         test location if `copy` is True.
         """
+        test_data_dir = self.test_data_dir
+        if on_linux:
+            test_path = path_to_bytes(test_path)
+            test_data_dir = path_to_bytes(test_data_dir)
+
         if debug:
             import inspect
             caller = inspect.stack()[1][3]
             print('\nself.get_test_loc,%(caller)s,"%(test_path)s"' % locals())
 
-        test_loc = get_test_loc(test_path, self.test_data_dir, debug=debug)
+        test_loc = get_test_loc(test_path, test_data_dir, debug=debug)
         if copy:
             base_name = os.path.basename(test_loc)
             if filetype.is_file(test_loc):
@@ -166,8 +188,13 @@ class FileDrivenTesting(object):
         if extension is None:
             extension = '.txt'
 
-        if extension and not extension.startswith('.'):
-                extension = '.' + extension
+        if on_linux:
+            extension = path_to_bytes(extension)
+            dir_name = path_to_bytes(dir_name)
+            file_name = path_to_bytes(file_name)
+
+        if extension and not extension.startswith(DOT):
+                extension = DOT + extension
 
         file_name = file_name + extension
         temp_dir = self.get_temp_dir(dir_name)
@@ -184,8 +211,9 @@ class FileDrivenTesting(object):
         # ensure that we have a new unique temp directory for each test run
         global test_run_temp_dir
         if not test_run_temp_dir:
-            test_run_temp_dir = fileutils.get_temp_dir(base_dir='tst',
-                                                       prefix=' ')
+            test_run_temp_dir = fileutils.get_temp_dir(base_dir='tst', prefix=' ')
+        if on_linux:
+            test_run_temp_dir = path_to_bytes(test_run_temp_dir)
 
         new_temp_dir = fileutils.get_temp_dir(base_dir=test_run_temp_dir)
 
@@ -200,8 +228,13 @@ class FileDrivenTesting(object):
         """
         Remove some version control directories and some temp editor files.
         """
+        vcses = ('CVS', '.svn', '.git', '.hg')
+        if on_linux:
+            vcses = tuple(path_to_bytes(p) for p in vcses)
+            test_dir = path_to_bytes(test_dir)
+
         for root, dirs, files in os.walk(test_dir):
-            for vcs_dir in 'CVS', '.svn', '.git', '.hg':
+            for vcs_dir in vcses:
                 if vcs_dir in dirs:
                     for vcsroot, vcsdirs, vcsfiles in os.walk(test_dir):
                         for vcsfile in vcsdirs + vcsfiles:
@@ -210,8 +243,9 @@ class FileDrivenTesting(object):
                     shutil.rmtree(os.path.join(root, vcs_dir), False)
 
             # editors temp file leftovers
+            tilde = b'~' if on_linux else '~'
             map(os.remove, [os.path.join(root, file_loc)
-                            for file_loc in files if file_loc.endswith('~')])
+                            for file_loc in files if file_loc.endswith(tilde)])
 
 
     def __extract(self, test_path, extract_func=None, verbatim=False):
@@ -222,35 +256,98 @@ class FileDrivenTesting(object):
         If `verbatim` is True preserve the permissions.
         """
         assert test_path and test_path != ''
+        if on_linux:
+            test_path = path_to_bytes(test_path)
         test_path = to_os_native_path(test_path)
         target_path = os.path.basename(test_path)
         target_dir = self.get_temp_dir(target_path)
         origin_archive = self.get_test_loc(test_path)
-        extract_func(origin_archive, target_dir, verbatim)
+        if on_linux:
+            target_dir = path_to_bytes(target_dir)
+            origin_archive = path_to_bytes(origin_archive)
+        extract_func(origin_archive, target_dir,
+                     verbatim=verbatim)
         return target_dir
 
-    def extract_test_zip(self, test_path):
+    def extract_test_zip(self, test_path, *args, **kwargs):
         return self.__extract(test_path, extract_zip)
 
     def extract_test_tar(self, test_path, verbatim=False):
         return self.__extract(test_path, extract_tar, verbatim)
 
 
-def extract_tar(location, target_dir, verbatim=False):
+def extract_tar(location, target_dir, verbatim=False, *args, **kwargs):
     """
     Extract a tar archive at location in the target_dir directory.
     If `verbatim` is True preserve the permissions.
     """
+    # always for using bytes for paths on all OSses... tar seems to use bytes internally
+    # and get confused otherwise
+    location = path_to_bytes(location)
+    target_dir = path_to_bytes(target_dir)
+
     with open(location, 'rb') as input_tar:
-        tar = tarfile.open(fileobj=input_tar)
-        tarinfos = tar.getmembers()
-        to_extract = []
-        for tarinfo in tarinfos:
-            if tar_can_extract(tarinfo, verbatim):
-                if not verbatim:
-                    tarinfo.mode = 0700
-                to_extract.append(tarinfo)
-        tar.extractall(target_dir, members=to_extract)
+        tar = None
+        try:
+            tar = tarfile.open(fileobj=input_tar)
+            tarinfos = tar.getmembers()
+            to_extract = []
+            for tarinfo in tarinfos:
+                if tar_can_extract(tarinfo, verbatim):
+                    if not verbatim:
+                        tarinfo.mode = 0700
+                    to_extract.append(tarinfo)
+            tar.extractall(target_dir, members=to_extract)
+        finally:
+            if tar:
+                tar.close()
+
+
+def extract_zip(location, target_dir, *args, **kwargs):
+    """
+    Extract a zip archive file at location in the target_dir directory.
+    """
+    if not os.path.isfile(location) and zipfile.is_zipfile(location):
+        raise Exception('Incorrect zip file %(location)r' % locals())
+
+    if on_linux:
+        location = path_to_bytes(location)
+        target_dir = path_to_bytes(target_dir)
+
+    with zipfile.ZipFile(location) as zipf:
+        for info in zipf.infolist():
+            name = info.filename
+            content = zipf.read(name)
+            target = os.path.join(target_dir, name)
+            if not os.path.exists(os.path.dirname(target)):
+                os.makedirs(os.path.dirname(target))
+            if not content and target.endswith(os.path.sep):
+                if not os.path.exists(target):
+                    os.makedirs(target)
+            if not os.path.exists(target):
+                with open(target, 'wb') as f:
+                    f.write(content)
+
+
+def tar_can_extract(tarinfo, verbatim):
+    """
+    Return True if a tar member can be extracted to handle OS specifics.
+    If verbatim is True, always return True.
+    """
+    if tarinfo.ischr():
+        # never extract char devices
+        return False
+
+    if verbatim:
+        # extract all on all OSse
+        return True
+
+    # FIXME: not sure hard links are working OK on Windows
+    include = tarinfo.type in tarfile.SUPPORTED_TYPES
+    exclude = tarinfo.isdev() or (on_windows and tarinfo.issym())
+
+    if include and not exclude:
+        return True
 
 
 class FileBasedTesting(EnhancedAssertions, FileDrivenTesting):
@@ -282,55 +379,11 @@ class FileBasedTesting(EnhancedAssertions, FileDrivenTesting):
         """
         Check equality of two lists of lines or files lines content.
         """
-        expected = self.as_line_list(expected_list_or_file, sort,
-                                     skip_firstline)
+        expected = self.as_line_list(expected_list_or_file, sort, skip_firstline)
         result = self.as_line_list(result_list_or_file, sort, skip_firstline)
         self.failUnlessEqual(expected, result, msg)
 
     assertLinesEqual = failUnlessFilesLinesEqual
-
-
-def tar_can_extract(tarinfo, verbatim):
-    """
-    Return True if a tar member can be extracted to handle OS specifics.
-    If verbatim is True, always return True.
-    """
-    if tarinfo.ischr():
-        # never extract char devices
-        return False
-
-    if verbatim:
-        # extract all on all OSse
-        return True
-
-    # FIXME: not sure hard links are working OK on Windows
-    include = tarinfo.type in tarfile.SUPPORTED_TYPES
-    exclude = tarinfo.isdev() or (on_windows and tarinfo.issym())
-
-    if include and not exclude:
-        return True
-
-
-def extract_zip(location, target_dir, verbatim=True):
-    """
-    Extract a zip archive file at location in the target_dir directory.
-    """
-    if not os.path.isfile(location) and zipfile.is_zipfile(location):
-        raise Exception('Incorrect zip file %(location)r' % locals())
-
-    with zipfile.ZipFile(location) as zipf:
-        for info in zipf.infolist():
-            name = info.filename
-            content = zipf.read(name)
-            target = os.path.join(target_dir, name)
-            if not os.path.exists(os.path.dirname(target)):
-                os.makedirs(os.path.dirname(target))
-            if not content and target.endswith(os.path.sep):
-                if not os.path.exists(target):
-                    os.makedirs(target)
-            if not os.path.exists(target):
-                with open(target, 'wb') as f:
-                    f.write(content)
 
 
 class dircmp(filecmp.dircmp):
@@ -344,8 +397,7 @@ class dircmp(filecmp.dircmp):
         Find out differences between common files.
         Ensure we are using content comparison, not os.stat-only.
         """
-        comp = filecmp.cmpfiles(self.left, self.right, self.common_files,
-                                shallow=False)
+        comp = filecmp.cmpfiles(self.left, self.right, self.common_files, shallow=False)
         self.same_files, self.diff_files, self.funny_files = comp
 
 

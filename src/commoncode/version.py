@@ -27,6 +27,8 @@ from __future__ import absolute_import, print_function
 
 import re
 
+from commoncode.system import on_linux
+
 
 def VERSION_PATTERNS_REGEX():
     return [re.compile(x) for x in [
@@ -53,13 +55,18 @@ def VERSION_PATTERNS_REGEX():
 ]]
 
 
+POSIX_PATH_SEP = b'/' if on_linux else '/'
+EMPTY_STRING = b' ' if on_linux else ' '
+VERSION_PREFIX = b'v' if on_linux else 'v'
+
+
 def hint(path):
     """
     Return a version found in a path or None. Prefix the version with 'v ' if
     the version does not start with v.
     """
     for pattern in VERSION_PATTERNS_REGEX():
-        segments = path.split('/')
+        segments = path.split(POSIX_PATH_SEP)
         # skip the first path segment unless there's only one segment
         first_segment = 1 if len(segments) > 1 else 0
         interesting_segments = segments[first_segment:]
@@ -68,6 +75,6 @@ def hint(path):
             version = re.search(pattern, segment)
             if version:
                 v = version.group(0)
-                if not v.lower().startswith('v'):
-                    v = 'v ' + v
+                if not v.lower().startswith(VERSION_PREFIX):
+                    v = VERSION_PREFIX + EMPTY_STRING + v
                 return v

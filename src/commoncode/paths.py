@@ -36,12 +36,18 @@ from commoncode.text import toascii
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import as_winpath
 from commoncode.fileutils import is_posixpath
+from commoncode.system import on_linux
 
 
 """
 Various path utilities such as common prefix and suffix functions, conversion
 to OS-safe paths and to POSIX paths.
 """
+
+
+POSIX_PATH_SEP = b'/' if on_linux else '/'
+WIN_PATH_SEP = b'\\' if on_linux else '\\'
+EMPTY_STRING = b'' if on_linux else ''
 
 #
 # Build OS-portable and safer paths
@@ -78,9 +84,10 @@ def safe_path(path, posix=False):
         return '_'
 
     # always return posix
-    sep = isinstance(path, unicode) and u'/' or '/'
+    sep = u'/' if isinstance(path, unicode) else b'/'
     path = sep.join(segments)
     return as_posixpath(path)
+
 
 
 def path_handlers(path, posix=True):
@@ -93,7 +100,7 @@ def path_handlers(path, posix=True):
     is_posix = is_posixpath(path)
     use_posix = posix or is_posix
     pathmod = use_posix and posixpath or ntpath
-    path_sep = use_posix and '/' or '\\'
+    path_sep = POSIX_PATH_SEP if use_posix else WIN_PATH_SEP
     path_sep = isinstance(path, unicode) and unicode(path_sep) or path_sep
     return pathmod, path_sep
 
@@ -110,7 +117,7 @@ def resolve(path, posix=True):
     Windows path with blackslash separators otherwise.
     """
     is_unicode = isinstance(path, unicode)
-    dot = is_unicode and u'.' or '.'
+    dot = is_unicode and u'.' or b'.'
 
     if not path:
         return dot
@@ -129,7 +136,7 @@ def resolve(path, posix=True):
     segments = [s.strip() for s in path.split(path_sep) if s.strip()]
 
     # remove empty (// or ///) or blank (space only) or single dot segments
-    segments = [s for s in segments if s and s != '.']
+    segments = [s for s in segments if s and s != dot]
 
     path = path_sep.join(segments)
 
@@ -146,8 +153,9 @@ def resolve(path, posix=True):
         segments[0] = segments[0][:-1]
 
     # replace any remaining (usually leading) .. segment with a literal "dotdot"
-    dotdot = is_unicode and u'dotdot' or 'dotdot'
-    segments = [dotdot if s == '..' else s for s in segments if s]
+    dotdot = is_unicode and u'dotdot' or b'dotdot'
+    dd = is_unicode and u'..' or b'..'
+    segments = [dotdot if s == dd else s for s in segments if s]
     if segments:
         path = path_sep.join(segments)
     else:
@@ -280,8 +288,8 @@ def split(p):
     """
     if not p:
         return []
-    p = p.strip('/').split('/')
-    return [] if p == [''] else p
+    p = p.strip(POSIX_PATH_SEP).split(POSIX_PATH_SEP)
+    return [] if p == [EMPTY_STRING] else p
 
 
 def _common_path(p1, p2, common_func):
@@ -291,5 +299,5 @@ def _common_path(p1, p2, common_func):
     function.
     """
     common, lgth = common_func(split(p1), split(p2))
-    common = '/'.join(common) if common else None
+    common = POSIX_PATH_SEP.join(common) if common else None
     return common, lgth
