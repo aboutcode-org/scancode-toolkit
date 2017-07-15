@@ -29,22 +29,20 @@ from __future__ import unicode_literals
 
 from pluggy import HookimplMarker
 
-from formattedcode.format import as_template
+from formattedcode.format import as_html_app
+from formattedcode.format import create_html_app_assets
+from formattedcode.format import HtmlAppAssetCopyWarning
+from formattedcode.format import HtmlAppAssetCopyError
 
 
 hookimpl = HookimplMarker('scan_output')
 
 @hookimpl
-def add_format():
-    return (('html',), 'format_html')
-
-@hookimpl
 def write_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
-    for template_chunk in as_template(scanned_files):
-        try:
-            output_file.write(template_chunk)
-        except Exception as e:
-            extra_context = 'ERROR: Failed to write output to HTML for: ' + repr(template_chunk)
-            _echo(extra_context, fg='red')
-            e.args += (extra_context,)
-            raise e
+    output_file.write(as_html_app(input, output_file))
+    try:
+        create_html_app_assets(scanned_files, output_file)
+    except HtmlAppAssetCopyWarning:
+        _echo('\nHTML app creation skipped when printing to stdout.', fg='yellow')
+    except HtmlAppAssetCopyError:
+        _echo('\nFailed to create HTML app.', fg='red')

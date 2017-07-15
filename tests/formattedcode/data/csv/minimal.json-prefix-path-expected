@@ -1,0 +1,118 @@
+[
+    {
+        "Resource": "/code/srp_vfy.c",
+        "scan_errors": ""
+    },
+    {
+        "Resource": "/code/srp_vfy.c",
+        "license__key": "apache-2.0",
+        "license__score": "53.85",
+        "license__short_name": "Apache 2.0",
+        "license__category": "Permissive",
+        "license__owner": "Apache Software Foundation",
+        "license__homepage_url": "http://www.apache.org/licenses/",
+        "license__text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+        "license__dejacode_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+        "license__spdx_license_key": "Apache-2.0",
+        "license__spdx_url": "http://spdx.org/licenses/Apache-2.0",
+        "start_line": 4,
+        "end_line": 5,
+        "matched_rule__identifier": "apache-2.0_23.RULE",
+        "matched_rule__license_choice": false,
+        "matched_rule__licenses": [
+            "apache-2.0"
+        ]
+    },
+    {
+        "Resource": "/code/srp_vfy.c",
+        "license__key": "openssl-ssleay",
+        "license__score": "10.00",
+        "license__short_name": "OpenSSL/SSLeay License",
+        "license__category": "Permissive",
+        "license__owner": "OpenSSL",
+        "license__homepage_url": "http://www.openssl.org/source/license.html",
+        "license__text_url": "",
+        "license__dejacode_url": "https://enterprise.dejacode.com/urn/urn:dje:license:openssl-ssleay",
+        "license__spdx_license_key": "OpenSSL",
+        "license__spdx_url": "http://spdx.org/licenses/OpenSSL",
+        "start_line": 4,
+        "end_line": 4,
+        "matched_rule__identifier": "openssl-ssleay_2.RULE",
+        "matched_rule__license_choice": false,
+        "matched_rule__licenses": [
+            "openssl-ssleay"
+        ]
+    },
+    {
+        "Resource": "/code/srp_vfy.c",
+        "copyright": "Copyright 2011-2016 The OpenSSL Project",
+        "start_line": 2,
+        "end_line": 2
+    },
+    {
+        "Resource": "/code/srp_vfy.c",
+        "copyright_holder": "OpenSSL Project",
+        "start_line": 2,
+        "end_line": 2
+    },
+    {
+        "Resource": "/code/srp_lib.c",
+        "scan_errors": ""
+    },
+    {
+        "Resource": "/code/srp_lib.c",
+        "license__key": "apache-2.0",
+        "license__score": "53.85",
+        "license__short_name": "Apache 2.0",
+        "license__category": "Permissive",
+        "license__owner": "Apache Software Foundation",
+        "license__homepage_url": "http://www.apache.org/licenses/",
+        "license__text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+        "license__dejacode_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+        "license__spdx_license_key": "Apache-2.0",
+        "license__spdx_url": "http://spdx.org/licenses/Apache-2.0",
+        "start_line": 4,
+        "end_line": 5,
+        "matched_rule__identifier": "apache-2.0_23.RULE",
+        "matched_rule__license_choice": false,
+        "matched_rule__licenses": [
+            "apache-2.0"
+        ]
+    },
+    {
+        "Resource": "/code/srp_lib.c",
+        "license__key": "openssl-ssleay",
+        "license__score": "10.00",
+        "license__short_name": "OpenSSL/SSLeay License",
+        "license__category": "Permissive",
+        "license__owner": "OpenSSL",
+        "license__homepage_url": "http://www.openssl.org/source/license.html",
+        "license__text_url": "",
+        "license__dejacode_url": "https://enterprise.dejacode.com/urn/urn:dje:license:openssl-ssleay",
+        "license__spdx_license_key": "OpenSSL",
+        "license__spdx_url": "http://spdx.org/licenses/OpenSSL",
+        "start_line": 4,
+        "end_line": 4,
+        "matched_rule__identifier": "openssl-ssleay_2.RULE",
+        "matched_rule__license_choice": false,
+        "matched_rule__licenses": [
+            "openssl-ssleay"
+        ]
+    },
+    {
+        "Resource": "/code/srp_lib.c",
+        "copyright": "Copyright 2011-2016 The OpenSSL Project",
+        "start_line": 2,
+        "end_line": 2
+    },
+    {
+        "Resource": "/code/srp_lib.c",
+        "copyright_holder": "OpenSSL Project",
+        "start_line": 2,
+        "end_line": 2
+    },
+    {
+        "Resource": "/code/build.info",
+        "scan_errors": ""
+    }
+]

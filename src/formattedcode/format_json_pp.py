@@ -27,17 +27,20 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
+from collections import OrderedDict
 
-def write_formatted_output(
-        files_count, version, notice, scanned_files,
-        format, options, input, output_file, _echo, output_plugin):
-    """
-    Save scan results to file or screen.
-    """
+import simplejson as json
+from pluggy import HookimplMarker
 
-    # FIXME: carrying an echo function does not make sense
-    # FIXME: do not use input as a variable name
+hookimpl = HookimplMarker('scan_output')
 
-    output_plugin.write_output(
-        format=format, files_count=files_count, version=version, notice=notice,
-        scanned_files=scanned_files, options=options, input=input, output_file=output_file, _echo=_echo)
+@hookimpl
+def write_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
+    meta = OrderedDict()
+    meta['scancode_notice'] = notice
+    meta['scancode_version'] = version
+    meta['scancode_options'] = options
+    meta['files_count'] = files_count
+    meta['files'] = scanned_files
+    output_file.write(unicode(json.dumps(meta, indent=2 * ' ', iterable_as_array=True, encoding='utf-8')))
+    output_file.write('\n')

@@ -47,10 +47,6 @@ from spdx.version import Version
 hookimpl = HookimplMarker('scan_output')
 
 @hookimpl
-def add_format():
-    return (('spdx-tv', 'spdx-rdf'), 'format_spdx')
-
-@hookimpl
 def write_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
     absinput = abspath(input)
 
@@ -152,10 +148,7 @@ def write_output(format, files_count, version, notice, scanned_files, options, i
         doc.package.add_file(file_entry)
 
     if len(doc.package.files) == 0:
-        if format == 'spdx-tv':
-            output_file.write("# No results for package '{}'.\n".format(doc.package.name))
-        elif format == 'spdx-rdf':
-            output_file.write("<!-- No results for package '{}'. -->\n".format(doc.package.name))
+        output_file.write("# No results for package '{}'.\n".format(doc.package.name))
 
     # Remove duplicate licenses from the list for the package.
     unique_licenses = set(doc.package.licenses_from_files)
@@ -182,10 +175,7 @@ def write_output(format, files_count, version, notice, scanned_files, options, i
     doc.package.license_declared = NoAssert()
     doc.package.conc_lics = NoAssert()
 
-    if format == 'spdx-tv':
-        from spdx.writers.tagvalue import write_document
-    elif format == 'spdx-rdf':
-        from spdx.writers.rdf import write_document
+    from spdx.writers.tagvalue import write_document
 
     # As the spdx-tools package can only write the document to a
     # "str" file but ScanCode provides a "unicode" file, write to a

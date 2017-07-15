@@ -76,8 +76,8 @@ from scancode.utils import fixed_width_file_name
 from scancode.utils import get_relative_path
 from scancode.utils import progressmanager
 
-from plugincode import hookspec
-from plugincode.formats import is_template
+from plugincode import scan_proper_hookspec
+from plugincode import scan_output_hookspec
 
 echo_stderr = partial(click.secho, err=True)
 
@@ -115,11 +115,12 @@ notice = acknowledgment_text.strip().replace('  ', '')
 
 scan_proper_plugins = PluginManager('scan_proper')
 scan_output_plugins = PluginManager('scan_output')
-scan_proper_plugins.add_hookspecs(hookspec)
-scan_output_plugins.add_hookspecs(hookspec)
+scan_proper_plugins.add_hookspecs(scan_proper_hookspec)
+scan_output_plugins.add_hookspecs(scan_output_hookspec)
 scan_proper_plugins.load_setuptools_entrypoints('scancode_plugins')
-scan_output_plugins.load_setuptools_entrypoints('scancode_plugins')
-
+scan_output_plugins.load_setuptools_entrypoints('scancode_formats')
+formats = [scan_output_plugins.get_name(plugin) for plugin in scan_output_plugins.get_plugins()]
+options = [option for option in scan_proper_plugins.hook.add_cmdline_option() if isinstance(option, click.Option)]
 
 def print_about(ctx, param, value):
     if not value or ctx.resilient_parsing:
@@ -238,8 +239,24 @@ class ScanCommand(BaseCommand):
     short_usage_help = '''
 Try 'scancode --help' for help on options and arguments.'''
 
-    options = [ op for op in scan_proper_plugins.hook.add_cmdline_option(scan_output_plugins=scan_output_plugins) if isinstance(op, click.Option) ]
+    def get_params(self, ctx):
+        """
+        Add options returned by plugins to the params list
+        """
+        return super(BaseCommand, self).get_params(ctx) + options
 
+
+def validate_formats(ctx, param, value):
+    """
+    Validate formats and template files. Raise a BadParameter on errors.
+    """
+    value_lower = value.lower()
+    if value_lower in formats:
+        return value_lower
+    # render using a userprovided custom format template
+    if not os.path.isfile(value):
+        raise click.BadParameter('Invalid template file: "%(value)s" does not exist or is not readable.' % locals())
+    return value
 
 def validate_exclusive(ctx, exclusive_options):
     """
@@ -252,6 +269,7 @@ def validate_exclusive(ctx, exclusive_options):
         msg = ' and '.join('`' + eo.replace('_', '-') + '`' for eo in exclusive_options)
         msg += ' are mutually exclusion options. You can use only one of them.'
         raise click.UsageError(msg)
+
 
 @click.command(name='scancode', epilog=epilog_text, cls=ScanCommand)
 @click.pass_context
@@ -284,6 +302,11 @@ def validate_exclusive(ctx, exclusive_options):
               help='Report full, absolute paths. The default is to always '
                    'include the last directory segment of the scanned path such that all paths have a common root directory. '
                    'This cannot be combined with the `--strip-root` option.')
+
+@click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
+              help=('Set <output_file> format <style> to one of the standard formats: %s '
+                    'or the path to a custom template' % ' or '.join(formats)),
+                     callback=validate_formats)
 @click.option('--ignore', default=None, multiple=True, metavar='<pattern>',
               help=('Ignore files matching <pattern>.'))
 @click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.')
@@ -761,7 +784,7 @@ def save_results(scanners, only_findings, files_count, results, format, options,
         if parent_dir:
             fileutils.create_dir(abspath(expanduser(parent_dir)))
 
-    if is_template(format):
+    if format not in formats:
         # render using a user-provided custom format template
         if not os.path.isfile(format):
             echo_stderr('\nInvalid template passed.', fg='red')
@@ -776,4 +799,5 @@ def save_results(scanners, only_findings, files_count, results, format, options,
                     raise e
         return
 
-    write_formatted_output(files_count, version, notice, results, format, options, input, output_file, echo_stderr, scan_output_plugins)
+    output_plugin = scan_output_plugins.get_plugin(format)
+    write_formatted_output(files_count, version, notice, results, format, options, input, output_file, echo_stderr, output_plugin)

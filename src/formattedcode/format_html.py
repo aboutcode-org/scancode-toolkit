@@ -27,27 +27,20 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
-from collections import OrderedDict
-
-import simplejson as json
 from pluggy import HookimplMarker
+
+from formattedcode.format import as_template
+
 
 hookimpl = HookimplMarker('scan_output')
 
 @hookimpl
-def add_format():
-    return (('json', 'json-pp'), 'format_json')
-
-@hookimpl
 def write_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
-    meta = OrderedDict()
-    meta['scancode_notice'] = notice
-    meta['scancode_version'] = version
-    meta['scancode_options'] = options
-    meta['files_count'] = files_count
-    meta['files'] = scanned_files
-    if format == 'json-pp':
-        output_file.write(unicode(json.dumps(meta, indent=2 * ' ', iterable_as_array=True, encoding='utf-8')))
-    else:
-        output_file.write(unicode(json.dumps(meta, separators=(',', ':'), iterable_as_array=True, encoding='utf-8')))
-    output_file.write('\n')
+    for template_chunk in as_template(scanned_files):
+        try:
+            output_file.write(template_chunk)
+        except Exception as e:
+            extra_context = 'ERROR: Failed to write output to HTML for: ' + repr(template_chunk)
+            _echo(extra_context, fg='red')
+            e.args += (extra_context,)
+            raise e

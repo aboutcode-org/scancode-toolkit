@@ -38,10 +38,6 @@ import unicodecsv
 hookimpl = HookimplMarker('scan_output')
 
 @hookimpl
-def add_format():
-    return (('csv',), 'format_csv')
-
-@hookimpl
 def write_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
     """
     Convert a ScanCode JSON scan file to a nexb-toolkit-like CSV.

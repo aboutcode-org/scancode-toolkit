@@ -30,6 +30,8 @@ from __future__ import unicode_literals
 import codecs
 import os
 import re
+import json
+from collections import OrderedDict
 
 import xmltodict
 
@@ -37,6 +39,7 @@ from commoncode import fileutils
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
+from formattedcode.format_csv import flatten_scan
 
 
 test_env = FileDrivenTesting()
@@ -413,10 +416,166 @@ def test_spdx_rdf_tree():
     assert result.exit_code == 0
     check_rdf_scan(expected_file, result_file)
 
-def test_csv():
+
+def load_scan(json_input):
+    """
+    Return a list of scan results loaded from a json_input, either in
+    ScanCode standard JSON format or the data.json html-app format.
+    """
+    with codecs.open(json_input, 'rb', encoding='utf-8') as jsonf:
+        scan = jsonf.read()
+
+    scan_results = json.loads(scan, object_pairs_hook=OrderedDict)
+    scan_results = scan_results['files']
+    return scan_results
+
+
+def check_json(result, expected_file, regen=False):
+    if regen:
+        with codecs.open(expected_file, 'wb', encoding='utf-8') as reg:
+            reg.write(json.dumps(result, indent=4, separators=(',', ': ')))
+    expected = json.load(
+        codecs.open(expected_file, encoding='utf-8'), object_pairs_hook=OrderedDict)
+    assert expected == result
+
+
+def check_csvs(
+        result_file, expected_file,
+        ignore_keys=('date', 'file_type', 'mime_type',),
+        regen=False):
+    """
+    Load and compare two CSVs.
+    `ignore_keys` is a tuple of keys that will be ignored in the comparisons.
+    """
+    result_fields, results = load_csv(result_file)
+    if regen:
+        import shutil
+        shutil.copy2(result_file, expected_file)
+    expected_fields, expected = load_csv(expected_file)
+    assert expected_fields == result_fields
+    # then check results line by line for more compact results
+    for exp, res in zip(sorted(expected), sorted(results)):
+        for ign in ignore_keys:
+            exp.pop(ign, None)
+            res.pop(ign, None)
+        assert exp == res
+
+
+def load_csv(location):
+    """
+    Load a CSV file at location and return a tuple of (field names, list of rows as
+    mappings field->value).
+    """
+    with codecs.open(location, 'rb', encoding='utf-8') as csvin:
+        reader = unicodecsv.DictReader(csvin)
+        fields = reader.fieldnames
+        values = sorted(reader)
+        return fields, values
+
+
+def test_flatten_scan_minimal():
+    test_json = test_env.get_test_loc('csv/minimal.json')
+    scan = load_scan(test_json)
+    headers = OrderedDict([
+        ('info', []),
+        ('license', []),
+        ('copyright', []),
+        ('email', []),
+        ('url', []),
+        ('package', []),
+        ])
+    result = list(flatten_scan(scan, headers))
+    expected_file = test_env.get_test_loc('csv/minimal.json-expected')
+    check_json(result, expected_file)
+
+
+def test_flatten_scan_full():
+    test_json = test_env.get_test_loc('csv/full.json')
+    scan = load_scan(test_json)
+    headers = OrderedDict([
+        ('info', []),
+        ('license', []),
+        ('copyright', []),
+        ('email', []),
+        ('url', []),
+        ('package', []),
+        ])
+    result = list(flatten_scan(scan, headers))
+    expected_file = test_env.get_test_loc('csv/full.json-expected')
+    check_json(result, expected_file)
+
+
+def test_csv_minimal():
+    test_dir = test_env.get_test_loc('csv/srp')
+    result_file = test_env.get_temp_file('csv')
+    expected_file = test_env.get_test_loc('csv/minimal.csv')
+    result = run_scan_click(['--copyright', '--format', 'csv', test_dir, result_file])
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    assert open(expected_file).read() == open(result_file).read()
+
+
+def test_csv_full():
     test_dir = test_env.get_test_loc('basic/scan')
     result_file = test_env.get_temp_file('csv')
     expected_file = test_env.get_test_loc('basic/expected.csv')
-    result = run_scan_click(['--format', 'csv', test_dir, result_file])
+    result = run_scan_click(['--copyright', '--format', 'csv', test_dir, result_file])
     assert result.exit_code == 0
     assert open(expected_file).read() == open(result_file).read()
+
+
+def test_key_ordering():
+    test_json = test_env.get_test_loc('csv/key_order.json')
+    scan = load_scan(test_json)
+    headers = OrderedDict([
+        ('info', []),
+        ('license', []),
+        ('copyright', []),
+        ('email', []),
+        ('url', []),
+        ('package', []),
+        ])
+    result = list(flatten_scan(scan, headers))
+    expected_file = test_env.get_test_loc('csv/key_order.expected.json')
+    check_json(result, expected_file)
+
+
+def test_json_with_no_keys_does_not_error_out():
+    # this scan has no results at all
+    test_json = test_env.get_test_loc('csv/no_keys.json')
+    scan = load_scan(test_json)
+    headers = OrderedDict([
+        ('info', []),
+        ('license', []),
+        ('copyright', []),
+        ('email', []),
+        ('url', []),
+        ('package', []),
+        ])
+    result = list(flatten_scan(scan, headers))
+    expected_headers = OrderedDict([
+        ('info', []),
+        ('license', []),
+        ('copyright', []),
+        ('email', []),
+        ('url', []),
+        ('package', []),
+        ])
+    assert expected_headers == headers
+    assert [] == result
+
+
+def test_can_process_package_license_when_license_value_is_null():
+    test_json = test_env.get_test_loc('csv/package_license_value_null.json')
+    scan = load_scan(test_json)
+    headers = OrderedDict([
+        ('info', []),
+        ('license', []),
+        ('copyright', []),
+        ('email', []),
+        ('url', []),
+        ('package', []),
+        ])
+    result = list(flatten_scan(scan, headers))
+    expected_file = test_env.get_test_loc('csv/package_license_value_null.json-expected')
+    check_json(result, expected_file)

@@ -201,12 +201,15 @@ setup(
             'extractcode = scancode.extract_cli:extractcode',
         ],
         'scancode_plugins': [
-            'formats = plugincode.formats',
-            'format_html = plugincode.format_html',
-            'format_html_app = plugincode.format_html_app',
-            'format_json = plugincode.format_json',
-            'format_spdx = plugincode.format_spdx',
-            'format_csv = plugincode.format_csv',
+        ],
+        'scancode_formats': [
+            'html = formattedcode.format_html',
+            'html-app = formattedcode.format_html_app',
+            'json = formattedcode.format_json',
+            'json-pp = formattedcode.format_json_pp',
+            'spdx-tv = formattedcode.format_spdx_tv',
+            'spdx-rdf = formattedcode.format_spdx_rdf',
+            'csv = formattedcode.format_csv',
         ]
     },
 )

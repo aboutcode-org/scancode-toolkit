@@ -20,33 +20,27 @@
 #  ScanCode should be considered or used as legal advice. Consult an Attorney
 #  for any legal advice.
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download..
+#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from os import path
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import division
+from __future__ import unicode_literals
 
-from unittest import TestCase
+from collections import OrderedDict
 
-from plugincode.formats import validate_plugins
-from plugincode.formats import is_template
+import simplejson as json
+from pluggy import HookimplMarker
 
+hookimpl = HookimplMarker('scan_output')
 
-class TestIgnoreFiles(TestCase):
-
-    def test_error_on_loading_duplicate_format(self):
-        test = (
-                ('--foo'),
-                'duplicate_format'
-            )
-        with self.assertRaises(Exception) as context:
-            validate_plugins([test, test])
-        assert 'Invalid plugin found' in context.exception.message
-
-    def test_error_on_invalid_plugin(self):
-        test = (
-                ('--foo'),
-                'invalid_plugin',
-                'extra_arg'
-            )
-        with self.assertRaises(ValueError) as context:
-            validate_plugins([test, test])
-        assert 'Invalid plugin found' in context.exception.message
+@hookimpl
+def write_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
+    meta = OrderedDict()
+    meta['scancode_notice'] = notice
+    meta['scancode_version'] = version
+    meta['scancode_options'] = options
+    meta['files_count'] = files_count
+    meta['files'] = scanned_files
+    output_file.write(unicode(json.dumps(meta, separators=(',', ':'), iterable_as_array=True, encoding='utf-8')))
+    output_file.write('\n')
