@@ -1,0 +1,11 @@
+key: eupl-1.2
+short_name: EUPL 1.2
+name: European Union Public Licence 1.2
+category: Copyleft Limited
+owner: OSOR.eu
+homepage_url: https://joinup.ec.europa.eu/sites/default/files/ckeditor_files/files/EUPL%20v1_2%20EN%20UTF-8.txt
+text_urls:
+    - https://joinup.ec.europa.eu/sites/default/files/ckeditor_files/files/EUPL%20v1_2%20EN%20UTF-8.txt
+faq_url: https://joinup.ec.europa.eu/community/eupl/og_page/eupl-text-11-12
+standard_notice: Licensed under the EUPL
+minimum_coverage: 80
