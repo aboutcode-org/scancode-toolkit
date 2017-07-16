@@ -1,6 +1,8 @@
 key: warranty-disclaimer
-short_name: Bare Warranty Disclaimer
-name: Bare Warranty Disclaimer
-category: Proprietary
-notes: This is a catch all license for plan warranty disclaimers that do not provide much rights.
+short_name: Generic, Bare Warranty Disclaimer
+name: Generic, Bare Warranty Disclaimer
+category: Unknown License
+notes: This is a catch all license for plain, generic warranty
+    disclaimers that do not provide much rights.
     Often seen in Microsoft code.
+owner: Unspecified

@@ -4,3 +4,4 @@ is_exception: yes
 spdx_license_key: Fawkes-Runtime-exception
 other_urls:
     - http://www.fawkesrobotics.org/about/license/
+owner: Fawkes Development Team
