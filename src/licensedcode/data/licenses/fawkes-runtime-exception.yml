@@ -1,0 +1,6 @@
+key: fawkes-runtime-exception
+name: Fawkes Runtime Exception
+is_exception: yes
+spdx_license_key: Fawkes-Runtime-exception
+other_urls:
+    - http://www.fawkesrobotics.org/about/license/
