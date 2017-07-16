@@ -90,6 +90,18 @@ class ExternalLicensesSource(object):
         else:
             os.mkdir(src_dir)
 
+        self.update_dir = self.src_dir.rstrip('\\/') + '-update'
+        if not os.path.exists(self.update_dir):
+            os.mkdir(self.update_dir)
+
+        self.new_dir = self.src_dir.rstrip('\\/') + '-new'
+        if not os.path.exists(self.new_dir):
+            os.mkdir(self.new_dir)
+
+        self.del_dir = self.src_dir.rstrip('\\/') + '-del'
+        if not os.path.exists(self.del_dir):
+            os.mkdir(self.del_dir)
+
         self.scancodes_by_key = get_licenses_db()
 
         self.scancodes_by_spdx_key = {l.spdx_license_key.lower(): l
@@ -121,16 +133,19 @@ class ExternalLicensesSource(object):
         fetched externally or loaded from the existing `self.src_dir`
         """
         if self.fetched:
-            print('Reusing external licenses stored in:', self.src_dir)
-            return load_licenses(self.src_dir, with_deprecated=True)
+            print('Reusing (possibly modified) external licenses stored in:', self.update_dir)
+            return load_licenses(self.update_dir, with_deprecated=True)
         else:
             print('Fetching and storing external licenses in:', self.src_dir)
             licenses = {l.key: l for l in self.fetch_licenses(approx=approx)}
             print('Stored %d external licenses in: %r.' % (len(licenses), self.src_dir,))
-            self.backup()
-            return licenses
+            fileutils.copytree(self.src_dir, self.update_dir)
+            print('Modified external licenses will be in: %r.' % (self.update_dir,))
+            print('New external licenses will be in: %r.' % (self.new_dir,))
+            print('Deleted external licenses will be in: %r.' % (self.del_dir,))
+            return load_licenses(self.update_dir, with_deprecated=True)
 
-    def find_key(self, key, text, include_approx_matches=True):
+    def find_key(self, key, text, include_approx_matches=False):
         """
         Return a ScanCode license key string or None given an existing key and a license text.
         """
@@ -151,7 +166,7 @@ class ExternalLicensesSource(object):
         if not new_key:
             if TRACE_DEEP: print('SKIPPED: Other license key not MATCHED in ScanCode:', key, end='. ')
             return None
-        if exact is True:
+        if exact is True and score == 100:
             if TRACE_DEEP: print('Other license key not in ScanCode: EXACT match to:', new_key, end='. ')
             return new_key
 
@@ -201,18 +216,6 @@ class ExternalLicensesSource(object):
         lic.dump()
         return lic
 
-    def backup(self):
-        """
-        Make a copy of src_dir to a `src_dir`-backup directory after the
-        initial creation of Licenses in src_dir. This is used to find
-        which changes where made to the other licenses.
-        """
-
-        backup_dir = self.src_dir.rstrip('\\/') + '-backup'
-        if not os.path.exists(backup_dir):
-            fileutils.copytree(self.src_dir, backup_dir)
-        print('Original external licenses backup available in: %r.' % backup_dir)
-
 
 def get_response(url, headers, params):
     """
@@ -248,7 +251,8 @@ def get_match(text):
     key = rule.licenses[0]
 
     is_exact = (
-        rule.is_license and len(rule.licenses) == 1
+        len(matches) == 1
+        and rule.is_license and len(rule.licenses) == 1
         and match.matcher == '1-hash'
         and match.score() == 100
         and match.qlen == query_len
@@ -328,12 +332,14 @@ class SpdxSource(ExternalLicensesSource):
                     continue
                 details = json.loads(archive.read(path))
                 try:
-                    yield self._build_license(details, approx)
+                    lic = self._build_license(details, approx)
+                    if lic:
+                        yield self._build_license(details, approx)
                 except:
-                    print(json.dumps(details, indent=2))
+                    # print(json.dumps(details, indent=2))
                     raise
 
-    def _build_license(self, mapping, approx):
+    def _build_license(self, mapping, approx=False):
         """
         Return a ScanCode License object built from an SPDX license
         mapping.
@@ -413,7 +419,7 @@ class SpdxSource(ExternalLicensesSource):
         )
         text = mapping.get('licenseText') or mapping.get('licenseExceptionText')
         text = text.strip()
-        return self.save_licenseey(key, lic, text, include_approx_matches=approx)
+        return self.save_license(key, lic, text, include_approx_matches=approx)
 
 
 class DejaSource(ExternalLicensesSource):
@@ -598,8 +604,7 @@ def merge_licenses(scancode_license, other_license, updatable_attributes):
     skey = scancode_license.key
     okey = other_license.key
     if skey != okey:
-        raise Exception(
-                'Non mergeable licenses with different keys: %(skey)s <> %(okey)s' % locals())
+        raise Exception('Non mergeable licenses with different keys: %(skey)s <> %(okey)s' % locals())
 #         if scancode_license.spdx_license_key != other_license.spdx_license_key:
 #             pass
 #         else:
@@ -688,18 +693,17 @@ def merge_licenses(scancode_license, other_license, updatable_attributes):
     return scancode_updated, other_updated
 
 
-def synchronize_licenses(external_source,
-        create_external=False, update_only=False, approx=False):
+def synchronize_licenses(external_source, approx=False):
     """
     Update the ScanCode licenses data and texts in-place (e.g. in their
     current storage directory) from an `external_source`
     ExternalLicensesSource.
 
-    If `update_only_external` is True, only existing ScanCode licensses
-    are updated. New licenses are NOT created.
+    New licenses are created in external_source.new_dir
+    Modified external licenses are updated in external_source.update_dir
 
-    If `create_external` is True, also create external licenses from
-    ScanCode licenses if they do not exists there.
+    If `approx` is True, treat an approximate match of an external
+    license to ScanCode license as a match.
 
     The process is to:
     1. Fetch external license using the `external_source` and store these.
@@ -724,14 +728,13 @@ def synchronize_licenses(external_source,
 
         if not TRACE:print('.', end='')
 
-        # does this key exists elsewhere?
+        # does this scancode key exists in others?
         ot_license = others_by_key.get(sc_key)
         if not ot_license:
-            if create_external:
-                if TRACE: print('ScanCode license key not in Other: created new other:', sc_key)
-                ot_license = sc_license.relocate(external_source.src_dir)
-                others_added.add(ot_license.key)
-                others_by_key[ot_license.key] = ot_license
+            if TRACE: print('ScanCode license key not in Other: created new other:', sc_key)
+            ot_license = sc_license.relocate(external_source.new_dir)
+            others_added.add(ot_license.key)
+            others_by_key[ot_license.key] = ot_license
             continue
 
         # the key exist in scancode
@@ -764,38 +767,40 @@ def synchronize_licenses(external_source,
 
         if not TRACE:print('.', end='')
 
-        if not update_only:
-            # Create a new ScanCode license
-            sc_license = ot_license.relocate(licensedcode.licenses_data_dir, o_key)
-            scancodes_added.add(sc_license.key)
-            scancodes_by_key[sc_license.key] = sc_license
-            if TRACE: print('Other license key not in ScanCode:', ot_license.key, 'created in ScanCode.')
+        # Create a new ScanCode license
+        sc_license = ot_license.relocate(licensedcode.licenses_data_dir, o_key)
+        scancodes_added.add(sc_license.key)
+        scancodes_by_key[sc_license.key] = sc_license
+        if TRACE: print('Other license key not in ScanCode:', ot_license.key, 'created in ScanCode.')
 
     # finally write changes
     for k in scancodes_changed | scancodes_added:
         scancodes_by_key[k].dump()
 
-    if create_external:
-        for k in others_changed | others_added:
-            others_by_key[k].dump()
+    for k in others_changed | others_added:
+        others_by_key[k].dump()
 
 # TODO: at last: print report of incorrect OTHER licenses to submit
 # updates eg. make API calls to DejaCode to create or update
 # licenses and submit review request e.g. submit requests to SPDX
 # for addition
 
+    print()
+    print('Same licenses:', len(same))
+    print('ScanCode: Added  :', len(scancodes_added))
+    print('ScanCode: Changed:', len(scancodes_changed))
+    print('External: Added  :', len(others_added))
+    print('External: Changed:', len(others_changed))
 
 
 @click.command()
 @click.argument('license_dir', type=click.Path(), metavar='DIR')
 @click.option('-s', '--source', type=click.Choice(SOURCES), help='Select an external license source.')
+@click.option('-a', '--approx', is_flag=True, default=False, help='Include approximate license detection matches for finding a matching ScanCode license.')
+@click.option('-c', '--clean', is_flag=True, default=False, help='Clean directories (original, update, new, del) if they exist.')
 @click.option('-t', '--trace', is_flag=True, default=False, help='Print execution trace.')
-@click.option('-u', '--update-only', is_flag=True, default=False, help='Only update ScanCode licenses. Do not create new licenses in ScanCode.')
-@click.option('-x', '--create-external', is_flag=True, default=False, help='Also create new external licenses from ScanCode if needed.')
-@click.option('-a', '--approx', is_flag=True, default=False, help='Include approximate license detection matches for finding a matching license.')
-@click.option('-c', '--clean', is_flag=True, default=False, help='Clean DIR and backup DIR if they exist.')
 @click.help_option('-h', '--help')
-def cli(license_dir, source, trace, clean, update_only, create_external, approx):
+def cli(license_dir, source, trace, clean, approx):
     """
     Synchronize ScanCode licenses with an external license source.
 
@@ -810,10 +815,12 @@ def cli(license_dir, source, trace, clean, update_only, create_external, approx)
 
     if clean:
         fileutils.delete(license_dir)
-        fileutils.delete(license_dir.rstrip('/\\') + '-backup')
+        fileutils.delete(license_dir.rstrip('/\\') + '-new')
+        fileutils.delete(license_dir.rstrip('/\\') + '-update')
+        fileutils.delete(license_dir.rstrip('/\\') + '-del')
 
     source = SOURCES[source]
-    synchronize_licenses(source(license_dir), create_external=create_external, update_only=update_only, approx=approx)
+    synchronize_licenses(source(license_dir), approx=approx)
     print()
 
 
