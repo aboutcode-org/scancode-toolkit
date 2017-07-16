@@ -155,12 +155,12 @@ class License(object):
         self.data_file = join(self.src_dir, self.key + '.yml')
         self.text_file = join(self.src_dir, self.key + '.LICENSE')
 
-    def relocate(self, src_dir, new_key=None):
+    def relocate(self, target_dir, new_key=None):
         """
         Return a copy of this license object relocated to a new `src_dir`.
         The data and license text files are persisted in the new `src_dir`.
         """
-        if not src_dir or src_dir == self.src_dir:
+        if not target_dir or target_dir == self.src_dir:
             raise ValueError(
                 'Cannot relocate a License to empty directory or same directory.')
 
@@ -169,7 +169,7 @@ class License(object):
         else:
             key = self.key
 
-        newl = License(key, src_dir)
+        newl = License(key, target_dir)
 
         # copy attributes
         excluded_attrs = ('key', 'src_dir', 'data_file', 'text_file',)
