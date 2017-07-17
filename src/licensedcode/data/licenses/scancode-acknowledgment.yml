@@ -2,6 +2,6 @@ key: scancode-acknowledgment
 short_name: ScanCode acknowledgment
 name: ScanCode generated data acknowledgment
 category: Permissive
-owner: nexB Inc.
+owner: nexB
 homepage_url: https://github.com/nexB/scancode-toolkit/
 minimum_coverage: 95
