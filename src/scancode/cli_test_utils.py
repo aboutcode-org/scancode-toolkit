@@ -94,7 +94,7 @@ def run_scan_plain(options, cwd=None):
 
 def run_scan_click(options, monkeypatch=None, catch_exceptions=False):
     """
-    Run a scan as a Clikc-controlled subprocess
+    Run a scan as a Click-controlled subprocess
     If monkeypatch is provided, a tty with a size (80, 43) is mocked.
     Return a click.testing.Result object.
     """
