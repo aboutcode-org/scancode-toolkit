@@ -1,5 +1,8 @@
 key: bsd-3-clause-no-nuclear-warranty
+short_name: Oracle BSD-Style with Nuclear Warranty
 name: BSD 3-Clause No Nuclear Warranty
+category: Permissive
+
 spdx_license_key: BSD-3-Clause-No-Nuclear-Warranty
 owner: Oracle Corporation
 other_urls:
