@@ -9,7 +9,7 @@ Redistribution in binary form must reproduce the above copyright notice,
 this list of conditions and the following disclaimer in the
 documentation and/or other materials provided with the distribution.
 
-Neither the name of Sun Microsystems, Inc. nor the names of contributors
+Neither the name of Sun Microsystems, Inc. or the names of contributors
 may be used to endorse or promote products derived from this software
 without specific prior written permission.
 
@@ -26,6 +26,6 @@ AND REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR
 INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGES.
 
-You acknowledge that this software is not designed, licensed or intended
-for use in the design, construction, operation or maintenance of any
-nuclear facility.
+You acknowledge that this software is not designed or intended for use
+in the design, construction, operation or maintenance of any nuclear
+facility.
