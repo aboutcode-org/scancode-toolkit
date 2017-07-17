@@ -120,6 +120,7 @@ class License(object):
         # if this is a license exception, the license key this exception applies to
         self.is_exception = False
 
+        # FIXME: this is WAY too complicated and likely not needed
         # license key for the next version of this license if any
         self.next_version = ''
         # True if this license allows later versions to be used
@@ -328,13 +329,14 @@ class License(object):
             warn = warnings[key].append
             info = infos[key].append
 
-            # names
             if not lic.short_name:
                 warn('No short name')
             if not lic.name:
                 warn('No name')
             if not lic.category:
                 warn('No category')
+            if not lic.owner:
+                warn('No owner')
 
             if lic.next_version and lic.next_version not in licenses:
                 err('License next version is unknown')
