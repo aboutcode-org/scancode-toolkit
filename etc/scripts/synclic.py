@@ -76,12 +76,15 @@ class ExternalLicensesSource(object):
     # from this source. They can only be set when creating a new license.
     non_updatable_attributes = tuple()
 
-    def __init__(self, src_dir):
+    def __init__(self, src_dir, match_text=False, match_approx=False):
         """
         `src_dir` is where the License objects are dumped.
         """
         src_dir = os.path.realpath(src_dir)
         self.src_dir = src_dir
+
+        self.match_text = match_text
+        self.match_approx = match_approx
 
         self.fetched = False
         if os.path.exists(src_dir):
@@ -120,14 +123,14 @@ class ExternalLicensesSource(object):
             for l in self.non_english_by_key.values()
             if l.spdx_license_key}
 
-    def fetch_licenses(self, approx=False):
+    def fetch_licenses(self):
         """
         Yield License objects fetched from this external source.
         Store the metadata and texts in self.src_dir as a side effect.
         """
         raise NotImplementedError
 
-    def get_licenses(self, approx=False):
+    def get_licenses(self):
         """
         Return a mapping of key -> ScanCode License objects either
         fetched externally or loaded from the existing `self.src_dir`
@@ -137,7 +140,7 @@ class ExternalLicensesSource(object):
             return load_licenses(self.update_dir, with_deprecated=True)
         else:
             print('Fetching and storing external licenses in:', self.src_dir)
-            licenses = {l.key: l for l in self.fetch_licenses(approx=approx)}
+            licenses = {l.key: l for l in self.fetch_licenses()}
             print('Stored %d external licenses in: %r.' % (len(licenses), self.src_dir,))
             fileutils.copytree(self.src_dir, self.update_dir)
             print('Modified external licenses will be in: %r.' % (self.update_dir,))
@@ -145,7 +148,7 @@ class ExternalLicensesSource(object):
             print('Deleted external licenses will be in: %r.' % (self.del_dir,))
             return load_licenses(self.update_dir, with_deprecated=True)
 
-    def find_key(self, key, text, include_approx_matches=False):
+    def find_key(self, key, text):
         """
         Return a ScanCode license key string or None given an existing key and a license text.
         """
@@ -156,36 +159,38 @@ class ExternalLicensesSource(object):
                 if TRACE_DEEP: print('Other license key in ScanCode:', key, end='. ')
                 return keyl
 
-        if keyl in self.scancodes_by_spdx_key:
-            sckey = self.scancodes_by_spdx_key[keyl].key
-            if TRACE_DEEP: print('Other license key in ScanCode as:', sckey, 'for SPDX:', key, end='. ')
-            return sckey
+        elif self.matching_key == 'spdx_license_key':
+            if keyl in self.scancodes_by_spdx_key:
+                sckey = self.scancodes_by_spdx_key[keyl].key
+                if TRACE_DEEP: print('Other license key in ScanCode as:', sckey, 'for SPDX:', key, end='. ')
+                return sckey
 
-        if TRACE_DEEP: print('Matching text for:', key, end='. ')
-        new_key, exact, score = get_match(text)
-        if not new_key:
-            if TRACE_DEEP: print('SKIPPED: Other license key not MATCHED in ScanCode:', key, end='. ')
-            return None
-        if exact is True and score == 100:
-            if TRACE_DEEP: print('Other license key not in ScanCode: EXACT match to:', new_key, end='. ')
-            return new_key
-
-        if include_approx_matches:
-            if exact is False:
-                if TRACE_DEEP: print('Other license key not in ScanCode but OK matched to:', new_key, 'with score:', score, end='. ')
+        if self.match_text:
+            if TRACE_DEEP: print('Matching text for:', key, end='. ')
+            new_key, exact, score = get_match(text)
+            if not new_key:
+                if TRACE_DEEP: print('SKIPPED: Other license key not MATCHED in ScanCode:', key, end='. ')
+                return None
+            if exact is True and score == 100:
+                if TRACE_DEEP: print('Other license key not in ScanCode: EXACT match to:', new_key, end='. ')
                 return new_key
 
-            if exact is None:
-                if TRACE_DEEP: print('Other license key not in ScanCode: WEAK matched to:', new_key, 'with score:', score, end='. ')
-                return new_key
+            if self.match_approx:
+                if exact is False:
+                    if TRACE_DEEP: print('Other license key not in ScanCode but OK matched to:', new_key, 'with score:', score, end='. ')
+                    return new_key
 
-            if exact == -1:
-                if TRACE_DEEP: print('Other license key not in ScanCode: JUNK MATCH to:', new_key, 'with score:', score, end='. ')
-                return new_key
-        else:
-            if TRACE_DEEP: print('SKIPPED: Other license key weakly matched in ScanCode: JUNK MATCH to:', new_key, 'with score:', score, end='. ')
+                if exact is None:
+                    if TRACE_DEEP: print('Other license key not in ScanCode: WEAK matched to:', new_key, 'with score:', score, end='. ')
+                    return new_key
 
-    def save_license(self, key, mapping, text, include_approx_matches=False):
+                if exact == -1:
+                    if TRACE_DEEP: print('Other license key not in ScanCode: JUNK MATCH to:', new_key, 'with score:', score, end='. ')
+                    return new_key
+            else:
+                if TRACE_DEEP: print('SKIPPED: Other license key weakly matched in ScanCode: JUNK MATCH to:', new_key, 'with score:', score, end='. ')
+
+    def save_license(self, key, mapping, text):
         """
         Return a ScanCode License for `key` constructed from a `mapping`
         of attributes and a license `text`. Save the license metadata
@@ -193,7 +198,7 @@ class ExternalLicensesSource(object):
         """
         new_key = None
         if self.matching_key == 'key':
-            new_key = self.find_key(key, text, include_approx_matches)
+            new_key = self.find_key(key, text)
         elif self.matching_key == 'spdx_license_key':
             new_key = self.find_key(mapping['spdx_license_key'], text)
 
@@ -219,8 +224,8 @@ class ExternalLicensesSource(object):
 
 def get_response(url, headers, params):
     """
-    Return a native Python object of the JSON response from calling
-    `url` with `headers` and `params`.
+    Return a native Python object of the JSON response of a GET HTTP
+    request at `url` with `headers` and `params`.
     """
 
     if TRACE_FETCH: print('==> Fetching URL: %(url)s' % locals())
@@ -280,11 +285,6 @@ def get_match(text):
     else:
         return None, None, None
 
-# map to a number of start lines to strip from the lciense text
-# to remove junk copyrights
-STRIP_LINES_FROM = {
-    'BSD-3-Clause-No-Nuclear-Warranty': 1,
-    }
 
 class SpdxSource(ExternalLicensesSource):
     """
@@ -305,7 +305,7 @@ class SpdxSource(ExternalLicensesSource):
         'notes',
     )
 
-    def fetch_licenses(self, approx=False):
+    def fetch_licenses(self):
         """
         Yield all the latest License object from the latest SPDX license list.
         Store the texts in the license_dir.
@@ -331,15 +331,11 @@ class SpdxSource(ExternalLicensesSource):
                     # ScanCode, but they are deprecated in SPDX.
                     continue
                 details = json.loads(archive.read(path))
-                try:
-                    lic = self._build_license(details, approx)
-                    if lic:
-                        yield self._build_license(details, approx)
-                except:
-                    # print(json.dumps(details, indent=2))
-                    raise
+                lic = self._build_license(details)
+                if lic:
+                    yield lic
 
-    def _build_license(self, mapping, approx=False):
+    def _build_license(self, mapping):
         """
         Return a ScanCode License object built from an SPDX license
         mapping.
@@ -419,7 +415,7 @@ class SpdxSource(ExternalLicensesSource):
         )
         text = mapping.get('licenseText') or mapping.get('licenseExceptionText')
         text = text.strip()
-        return self.save_license(key, lic, text, include_approx_matches=approx)
+        return self.save_license(key, lic, text)
 
 
 class DejaSource(ExternalLicensesSource):
@@ -449,8 +445,9 @@ class DejaSource(ExternalLicensesSource):
         'notes',
     )
 
-    def __init__(self, src_dir, api_base_url=None, api_key=None):
-        super(DejaSource, self).__init__(src_dir)
+    def __init__(self, src_dir, match_text=False, match_approx=False,
+                 api_base_url=None, api_key=None):
+        super(DejaSource, self).__init__(src_dir, match_text, match_approx)
 
         self.api_base_url = api_base_url or os.environ.get('DEJACODE_API_URL', None)
         self.api_key = api_key or os.environ.get('DEJACODE_API_KEY', None)
@@ -459,15 +456,15 @@ class DejaSource(ExternalLicensesSource):
             'You must set the DEJACODE_API_URL and DEJACODE_API_KEY ' +
             'environment variables before running this script.')
 
-    def fetch_licenses(self, approx=False):
+    def fetch_licenses(self):
         api_url = '/'.join([self.api_base_url.rstrip('/'), 'licenses/'])
         for licenses in call_deja_api(api_url, self.api_key, paginate=100):
             for lic in licenses:
-                dlic = self._build_license(lic, approx)
+                dlic = self._build_license(lic)
                 if dlic:
                     yield dlic
 
-    def _build_license(self, mapping, approx=False):
+    def _build_license(self, mapping):
         """
         Return a ScanCode License object built from a DejaCode license
         mapping or None for skipped licenses.
@@ -531,7 +528,25 @@ class DejaSource(ExternalLicensesSource):
 
         )
         text = mapping['full_text']
-        return self.save_license(key, lic, text, include_approx_matches=approx)
+        return self.save_license(key, lic, text)
+
+    def check_owners(self):
+        """
+        Chek that all ScanCcode licenses have a proper owner.
+        """
+        downers = set()
+        api_url = '/'.join([self.api_base_url.rstrip('/'), 'owners/'])
+        for owners in call_deja_api(api_url, self.api_key, paginate=100):
+            print('.')
+            downers.update(o['name'] for o in owners)
+
+        for lic in self.scancodes_by_key.values():
+            if not lic.owner or lic.owner not in downers:
+                print('ScanCode license with incorrect owner:', lic.key, ':', lic.owner)
+
+        for lic in self.composites_by_key.values():
+            if not lic.owner or lic.owner not in downers:
+                print('ScanCode Composite license with incorrect owner:', lic.key, ':', lic.owner)
 
 
 def call_deja_api(api_url, api_key, paginate=0, headers=None, params=None):
@@ -539,9 +554,10 @@ def call_deja_api(api_url, api_key, paginate=0, headers=None, params=None):
     Yield result mappings from the reponses of calling the API at
     `api_url` with `api_key` . Raise an exception on failure.
 
-    Pass `headers` and `params` mappings to the underlying request if
-    provided. If `paginate` is a non-zero attempt to paginate with
-    `paginate` number of pages at a time and return all the results.
+    Pass `headers` and `params` mappings to the
+    underlying request if provided.
+    If `paginate` is a non-zero attempt to paginate with `paginate`
+    number of pages at a time and return all the results.
     """
     headers = headers or {
         'Authorization': 'Token {}'.format(api_key),
@@ -693,7 +709,7 @@ def merge_licenses(scancode_license, other_license, updatable_attributes):
     return scancode_updated, other_updated
 
 
-def synchronize_licenses(external_source, approx=False):
+def synchronize_licenses(external_source):
     """
     Update the ScanCode licenses data and texts in-place (e.g. in their
     current storage directory) from an `external_source`
@@ -702,9 +718,6 @@ def synchronize_licenses(external_source, approx=False):
     New licenses are created in external_source.new_dir
     Modified external licenses are updated in external_source.update_dir
 
-    If `approx` is True, treat an approximate match of an external
-    license to ScanCode license as a match.
-
     The process is to:
     1. Fetch external license using the `external_source` and store these.
     2. Compare and update ScanCode licenses with these external licenses.
@@ -712,7 +725,7 @@ def synchronize_licenses(external_source, approx=False):
 
     # mappings of key -> License
     scancodes_by_key = external_source.scancodes_by_key
-    others_by_key = external_source.get_licenses(approx=approx)
+    others_by_key = external_source.get_licenses()
 
     # track changes with sets of license keys
     same = set()
@@ -780,27 +793,37 @@ def synchronize_licenses(external_source, approx=False):
     for k in others_changed | others_added:
         others_by_key[k].dump()
 
+
 # TODO: at last: print report of incorrect OTHER licenses to submit
 # updates eg. make API calls to DejaCode to create or update
 # licenses and submit review request e.g. submit requests to SPDX
 # for addition
 
     print()
+    print('#####################################################')
     print('Same licenses:', len(same))
     print('ScanCode: Added  :', len(scancodes_added))
     print('ScanCode: Changed:', len(scancodes_changed))
     print('External: Added  :', len(others_added))
     print('External: Changed:', len(others_changed))
+    print('#####################################################')
+
+    for key in sorted(others_added):
+        lic = others_by_key[key]
+        lic.dump()
+        if not lic.owner:
+            print('New other license without owner:', key)
 
 
 @click.command()
 @click.argument('license_dir', type=click.Path(), metavar='DIR')
 @click.option('-s', '--source', type=click.Choice(SOURCES), help='Select an external license source.')
-@click.option('-a', '--approx', is_flag=True, default=False, help='Include approximate license detection matches for finding a matching ScanCode license.')
+@click.option('-m', '--match-text', is_flag=True, default=False, help='Match external license texts with license detection to fin a matching ScanCode license.')
+@click.option('-a', '--match-approx', is_flag=True, default=False, help='Include approximate license detection matches for finding a matching ScanCode license.')
 @click.option('-c', '--clean', is_flag=True, default=False, help='Clean directories (original, update, new, del) if they exist.')
 @click.option('-t', '--trace', is_flag=True, default=False, help='Print execution trace.')
 @click.help_option('-h', '--help')
-def cli(license_dir, source, trace, clean, approx):
+def cli(license_dir, source, trace, clean, match_text=False, match_approx=False):
     """
     Synchronize ScanCode licenses with an external license source.
 
@@ -819,8 +842,9 @@ def cli(license_dir, source, trace, clean, approx):
         fileutils.delete(license_dir.rstrip('/\\') + '-update')
         fileutils.delete(license_dir.rstrip('/\\') + '-del')
 
-    source = SOURCES[source]
-    synchronize_licenses(source(license_dir), approx=approx)
+    source_cls = SOURCES[source]
+    source = source_cls(license_dir, match_text, match_approx)
+    synchronize_licenses(source)
     print()
 
 
