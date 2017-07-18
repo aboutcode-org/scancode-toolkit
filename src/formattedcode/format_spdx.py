@@ -30,8 +30,6 @@ from __future__ import unicode_literals
 import os
 from os.path import abspath
 
-from pluggy import HookimplMarker
-
 from spdx.checksum import Algorithm
 from spdx.creationinfo import Tool
 from spdx.document import Document
@@ -43,11 +41,26 @@ from spdx.utils import NoAssert
 from spdx.utils import SPDXNone
 from spdx.version import Version
 
+from plugincode.scan_output_hooks import scan_output
 
-hookimpl = HookimplMarker('scan_output')
 
-@hookimpl
-def write_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
+class Spdx_rdf(object):
+
+    @staticmethod
+    @scan_output
+    def write_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
+        as_spdx('rdf', version, notice, scanned_files, input, output_file)
+
+
+class Spdx_tv(object):
+
+    @staticmethod
+    @scan_output
+    def write_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
+        as_spdx('tv', version, notice, scanned_files, input, output_file)
+
+
+def as_spdx(format, version, notice, scanned_files, input, output_file):
     absinput = abspath(input)
 
     if os.path.isdir(absinput):
@@ -148,7 +161,10 @@ def write_output(format, files_count, version, notice, scanned_files, options, i
         doc.package.add_file(file_entry)
 
     if len(doc.package.files) == 0:
-        output_file.write("# No results for package '{}'.\n".format(doc.package.name))
+        if format == 'tv':
+            output_file.write("# No results for package '{}'.\n".format(doc.package.name))
+        elif format == 'rdf':
+            output_file.write("<!-- No results for package '{}'. -->\n".format(doc.package.name))
 
     # Remove duplicate licenses from the list for the package.
     unique_licenses = set(doc.package.licenses_from_files)
@@ -175,7 +191,10 @@ def write_output(format, files_count, version, notice, scanned_files, options, i
     doc.package.license_declared = NoAssert()
     doc.package.conc_lics = NoAssert()
 
-    from spdx.writers.tagvalue import write_document
+    if format == 'tv':
+        from spdx.writers.tagvalue import write_document
+    elif format == 'rdf':
+        from spdx.writers.rdf import write_document
 
     # As the spdx-tools package can only write the document to a
     # "str" file but ScanCode provides a "unicode" file, write to a

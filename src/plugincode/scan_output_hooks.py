@@ -26,14 +26,16 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from pluggy import HookimplMarker
 from pluggy import HookspecMarker
 
 
-scan_proper = HookspecMarker('scan_proper')
+scan_output = HookimplMarker('scan_output')
+_hookspec = HookspecMarker('scan_output')
 
-@scan_proper
-def add_cmdline_option(scan_output_plugins):
+@_hookspec
+def write_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
     """
-    Return a click.Option instance which will be added to scancode.cli.ScanCommand
+    Save scan results in the format supplied via -f/--format option
     """
     pass

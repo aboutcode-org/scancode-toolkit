@@ -27,18 +27,15 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
-from pluggy import HookimplMarker
-
 from formattedcode.format import as_html_app
 from formattedcode.format import create_html_app_assets
 from formattedcode.format import HtmlAppAssetCopyWarning
 from formattedcode.format import HtmlAppAssetCopyError
+from plugincode.scan_output_hooks import scan_output
 
 
-hookimpl = HookimplMarker('scan_output')
-
-@hookimpl
-def write_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
+@scan_output
+def write_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
     output_file.write(as_html_app(input, output_file))
     try:
         create_html_app_assets(scanned_files, output_file)

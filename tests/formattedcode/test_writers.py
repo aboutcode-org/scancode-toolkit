@@ -28,10 +28,10 @@ from __future__ import division
 from __future__ import unicode_literals
 
 import codecs
+from collections import OrderedDict
+import json
 import os
 import re
-import json
-from collections import OrderedDict
 
 import xmltodict
 

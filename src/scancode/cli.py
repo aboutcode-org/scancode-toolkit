@@ -76,8 +76,8 @@ from scancode.utils import fixed_width_file_name
 from scancode.utils import get_relative_path
 from scancode.utils import progressmanager
 
-from plugincode import scan_proper_hookspec
-from plugincode import scan_output_hookspec
+from plugincode import scan_output_hooks
+from plugincode import scan_proper_hooks
 
 echo_stderr = partial(click.secho, err=True)
 
@@ -115,8 +115,8 @@ notice = acknowledgment_text.strip().replace('  ', '')
 
 scan_proper_plugins = PluginManager('scan_proper')
 scan_output_plugins = PluginManager('scan_output')
-scan_proper_plugins.add_hookspecs(scan_proper_hookspec)
-scan_output_plugins.add_hookspecs(scan_output_hookspec)
+scan_proper_plugins.add_hookspecs(scan_proper_hooks)
+scan_output_plugins.add_hookspecs(scan_output_hooks)
 scan_proper_plugins.load_setuptools_entrypoints('scancode_plugins')
 scan_output_plugins.load_setuptools_entrypoints('scancode_formats')
 formats = [scan_output_plugins.get_name(plugin) for plugin in scan_output_plugins.get_plugins()]
@@ -800,4 +800,4 @@ def save_results(scanners, only_findings, files_count, results, format, options,
         return
 
     output_plugin = scan_output_plugins.get_plugin(format)
-    write_formatted_output(files_count, version, notice, results, format, options, input, output_file, echo_stderr, output_plugin)
+    write_formatted_output(files_count, version, notice, results, options, input, output_file, echo_stderr, output_plugin)

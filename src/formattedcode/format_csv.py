@@ -29,21 +29,14 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 
-from pluggy import HookimplMarker
 from click.utils import LazyFile
-
 import unicodecsv
 
+from plugincode.scan_output_hooks import scan_output
 
-hookimpl = HookimplMarker('scan_output')
 
-@hookimpl
-def write_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
-    """
-    Convert a ScanCode JSON scan file to a nexb-toolkit-like CSV.
-
-    JSON_INPUT is either a ScanCode json format scan or the data.json file from a ScanCode html-app format scan.
-    """
+@scan_output
+def write_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
     scan_results = list(scanned_files)
     if isinstance(output_file, LazyFile):
         output_file = open(output_file.name, 'wb')

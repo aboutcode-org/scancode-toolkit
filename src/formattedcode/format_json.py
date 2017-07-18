@@ -30,17 +30,36 @@ from __future__ import unicode_literals
 from collections import OrderedDict
 
 import simplejson as json
-from pluggy import HookimplMarker
 
-hookimpl = HookimplMarker('scan_output')
+from plugincode.scan_output_hooks import scan_output
 
-@hookimpl
-def write_output(format, files_count, version, notice, scanned_files, options, input, output_file, _echo):
-    meta = OrderedDict()
-    meta['scancode_notice'] = notice
-    meta['scancode_version'] = version
-    meta['scancode_options'] = options
-    meta['files_count'] = files_count
-    meta['files'] = scanned_files
-    output_file.write(unicode(json.dumps(meta, separators=(',', ':'), iterable_as_array=True, encoding='utf-8')))
-    output_file.write('\n')
+
+class Json(object):
+
+    def __init__(self, notice, version, options, files_count, scanned_files):
+        self.meta = OrderedDict()
+        self.meta['scancode_notice'] = notice
+        self.meta['scancode_version'] = version
+        self.meta['scancode_options'] = options
+        self.meta['files_count'] = files_count
+        self.meta['files'] = scanned_files
+
+    @classmethod
+    @scan_output
+    def write_output(cls, files_count, version, notice, scanned_files, options, input, output_file, _echo):
+        meta = cls(notice, version, options, files_count, scanned_files).meta
+        output_file.write(unicode(json.dumps(meta, separators=(',', ':'), iterable_as_array=True, encoding='utf-8')))
+        output_file.write('\n')
+
+
+class Json_pp(Json):
+
+    def __init__(self, notice, version, options, files_count, scanned_files):
+        super(Json_pp, self).__init__(notice, version, options, files_count, scanned_files)
+
+    @classmethod
+    @scan_output
+    def write_output(cls, files_count, version, notice, scanned_files, options, input, output_file, _echo):
+        meta = cls(notice, version, options, files_count, scanned_files).meta
+        output_file.write(unicode(json.dumps(meta, indent=2 * ' ', iterable_as_array=True, encoding='utf-8')))
+        output_file.write('\n')

@@ -205,10 +205,10 @@ setup(
         'scancode_formats': [
             'html = formattedcode.format_html',
             'html-app = formattedcode.format_html_app',
-            'json = formattedcode.format_json',
-            'json-pp = formattedcode.format_json_pp',
-            'spdx-tv = formattedcode.format_spdx_tv',
-            'spdx-rdf = formattedcode.format_spdx_rdf',
+            'json = formattedcode.format_json:Json',
+            'json-pp = formattedcode.format_json:Json_pp',
+            'spdx-tv = formattedcode.format_spdx:Spdx_tv',
+            'spdx-rdf = formattedcode.format_spdx:Spdx_rdf',
             'csv = formattedcode.format_csv',
         ]
     },
