@@ -376,6 +376,7 @@ def scancode(ctx,
     if format in ('spdx-tv', 'spdx-rdf'):
         possible_scans['infos'] = True
 
+    # FIXME: pombredanne: what is this? I cannot understand what this does
     for key in options:
         if key == "--license-score":
             continue
@@ -418,6 +419,7 @@ def scancode(ctx,
         if not quiet:
             echo_stderr('Saving results.', fg='green')
 
+        # FIXME: we should have simpler args: a scan "header" and scan results
         save_results(scanners, only_findings, files_count, results, format, options, input, output_file)
 
     finally:
@@ -762,42 +764,58 @@ def save_results(scanners, only_findings, files_count, results, format, options,
     """
 
     if only_findings:
-        # Find all scans that are both enabled and have a valid function reference.
-        # This deliberately filters out the "info" scan (which always has a "None"
-        # function reference) as there is no dedicated "infos" key in the results
-        # that "has_findings()" could check.
+        # Find all scans that are both enabled and have a valid function
+        # reference. This deliberately filters out the "info" scan
+        # (which always has a "None" function reference) as there is no
+        # dedicated "infos" key in the results that "has_findings()"
+        # could check.
+        # FIXME: we should not use positional tings tuples for v[0], v[1] that are mysterious values for now
         active_scans = [k for k, v in scanners.items() if v[0] and v[1]]
 
         # FIXME: this is forcing all the scan results to be loaded in memory
         # and defeats lazy loading from cache
+        # FIXME: we should instead use a generator of use a filter
+        # function that pass to the scan results loader iterator
         results = [file_data for file_data in results if has_findings(active_scans, file_data)]
-        # FIXME: computing len before hand will need a list and therefore need loding
-        # it all ahead of time
+        # FIXME: computing len before hand will need a list and therefore needs loading
+        # it all ahead of timeand defeats caching entirely
         files_count = len(results)
 
-    # note: in tests, sys.stdout is not used, but some io wrapper with no name
-    # attributes
+    # note: in tests, sys.stdout is not used, but is instead some io
+    # wrapper with no name attributes. We use this to check if this is a
+    # real filesystem file or not.
+    # note: sys.stdout.name == '<stdout>' so it has a name.
     is_real_file = hasattr(output_file, 'name')
 
     if output_file != sys.stdout and is_real_file:
+        # we are writing to a real filesystem file: create directories!
         parent_dir = os.path.dirname(output_file.name)
         if parent_dir:
             fileutils.create_dir(abspath(expanduser(parent_dir)))
 
     if format not in formats:
         # render using a user-provided custom format template
-        if not os.path.isfile(format):
+        if os.path.isfile(format):
+            # this check was done before in the CLI validation, but this
+            # is done again if the function is used directly
             echo_stderr('\nInvalid template passed.', fg='red')
         else:
             for template_chunk in as_template(results, template=format):
                 try:
                     output_file.write(template_chunk)
                 except Exception as e:
-                    extra_context = 'ERROR: Failed to write output to HTML for: ' + repr(template_chunk)
+                    extra_context = 'ERROR: Failed to write custom output with template: ' + repr(template_chunk)
                     echo_stderr(extra_context, fg='red')
                     e.args += (extra_context,)
+                    # FIXME: this is a tad brutal to raise here
                     raise e
         return
 
-    write_output = scan_output_plugins.get_plugin(format)
-    write_formatted_output(files_count, version, notice, results, options, input, output_file, echo_stderr, write_output)
+    # Save scan results to file or screen. using the selected format plugin
+    writer = scan_output_plugins.get_plugin(format)
+    # FIXME: carrying an echo function does not make sense
+    # FIXME: do not use input as a variable name
+    writer(files_count=files_count, version=version, notice=notice,
+           scanned_files=results,
+           options=options,
+           input=input, output_file=output_file, _echo=echo_stderr)
