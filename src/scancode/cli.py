@@ -253,7 +253,7 @@ def validate_formats(ctx, param, value):
     value_lower = value.lower()
     if value_lower in formats:
         return value_lower
-    # render using a userprovided custom format template
+    # render using a user-provided custom format template
     if not os.path.isfile(value):
         raise click.BadParameter('Invalid template file: "%(value)s" does not exist or is not readable.' % locals())
     return value
@@ -799,5 +799,5 @@ def save_results(scanners, only_findings, files_count, results, format, options,
                     raise e
         return
 
-    output_plugin = scan_output_plugins.get_plugin(format)
-    write_formatted_output(files_count, version, notice, results, options, input, output_file, echo_stderr, output_plugin)
+    write_output = scan_output_plugins.get_plugin(format)
+    write_formatted_output(files_count, version, notice, results, options, input, output_file, echo_stderr, write_output)

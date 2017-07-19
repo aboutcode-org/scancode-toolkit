@@ -203,13 +203,13 @@ setup(
         'scancode_plugins': [
         ],
         'scancode_formats': [
-            'html = formattedcode.format_html',
-            'html-app = formattedcode.format_html_app',
-            'json = formattedcode.format_json:Json',
-            'json-pp = formattedcode.format_json:Json_pp',
-            'spdx-tv = formattedcode.format_spdx:Spdx_tv',
-            'spdx-rdf = formattedcode.format_spdx:Spdx_rdf',
-            'csv = formattedcode.format_csv',
+            'html = formattedcode.format_html:write_output',
+            'html-app = formattedcode.format_html_app:write_output',
+            'json = formattedcode.format_json:write_json_output',
+            'json-pp = formattedcode.format_json:write_json_pp_output',
+            'spdx-tv = formattedcode.format_spdx:write_tv_output',
+            'spdx-rdf = formattedcode.format_spdx:write_rdf_output',
+            'csv = formattedcode.format_csv:write_output',
         ]
     },
 )

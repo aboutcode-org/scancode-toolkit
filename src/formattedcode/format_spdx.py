@@ -44,20 +44,14 @@ from spdx.version import Version
 from plugincode.scan_output_hooks import scan_output
 
 
-class Spdx_rdf(object):
-
-    @staticmethod
-    @scan_output
-    def write_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
-        as_spdx('rdf', version, notice, scanned_files, input, output_file)
+@scan_output
+def write_rdf_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
+    as_spdx('rdf', version, notice, scanned_files, input, output_file)
 
 
-class Spdx_tv(object):
-
-    @staticmethod
-    @scan_output
-    def write_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
-        as_spdx('tv', version, notice, scanned_files, input, output_file)
+@scan_output
+def write_tv_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
+    as_spdx('tv', version, notice, scanned_files, input, output_file)
 
 
 def as_spdx(format, version, notice, scanned_files, input, output_file):

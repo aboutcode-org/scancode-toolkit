@@ -30,7 +30,7 @@ from __future__ import unicode_literals
 
 def write_formatted_output(
         files_count, version, notice, scanned_files,
-        options, input, output_file, _echo, output_plugin):
+        options, input, output_file, _echo, write_output):
     """
     Save scan results to file or screen.
     """
@@ -38,6 +38,6 @@ def write_formatted_output(
     # FIXME: carrying an echo function does not make sense
     # FIXME: do not use input as a variable name
 
-    output_plugin.write_output(
+    write_output(
         files_count=files_count, version=version, notice=notice, scanned_files=scanned_files,
         options=options, input=input, output_file=output_file, _echo=_echo)
