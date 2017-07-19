@@ -1,0 +1,9 @@
+key: unicode-dfs-2016
+short_name: Unicode - Data Files and Software (2016)
+name: Unicode License Agreement - Data Files and Software (2016)
+spdx_license_key: Unicode-DFS-2016
+other_urls:
+    - http://www.unicode.org/copyright.html
+category: Permissive
+owner: Unicode Consortium
+minimum_coverage: 70

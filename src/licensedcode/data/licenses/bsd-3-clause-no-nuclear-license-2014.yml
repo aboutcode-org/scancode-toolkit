@@ -1,0 +1,11 @@
+key: bsd-3-clause-no-nuclear-license-2014
+short_name: Oracle BSD-Style with Nuclear Restrictions 2014
+category: Permissive
+name: BSD 3-Clause No Nuclear License 2014
+spdx_license_key: BSD-3-Clause-No-Nuclear-License-2014
+owner: Oracle Corporation
+other_urls:
+    - https://java.net/projects/javaeetutorial/pages/BerkeleyLicense
+    - https://web.archive.org/web/20150906075957/https://java.net/projects/javaeetutorial/pages/BerkeleyLicense
+notes: this is a minor variation on similar licenses by Sun and Oracle.
+minimum_coverage: 80

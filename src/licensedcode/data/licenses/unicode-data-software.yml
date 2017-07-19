@@ -1,8 +1,9 @@
 key: unicode-data-software
-short_name: Unicode Inc License Agreement - Data files and Software
-name: UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
+short_name: Unicode - Data Files and Software
+name: Unicode License Agreement - Data Files and Software (2015)
 category: Permissive
 owner: Unicode Consortium
 homepage_url: http://unicode.org/
 text_urls:
     - http://unicode.org/copyright.html
+minimum_coverage: 70

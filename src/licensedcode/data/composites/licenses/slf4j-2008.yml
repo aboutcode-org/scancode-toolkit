@@ -1,0 +1,8 @@
+key: slf4j-2008
+short_name: SLF4J License 2008
+name: SLF4J License 2008
+category: Permissive
+owner: QOS Project
+homepage_url: http://www.slf4j.org/license.html
+notes: this is really a component-specific simple MIT license with several additional commentaries
+notes: license_expression  mit

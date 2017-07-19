@@ -1,0 +1,9 @@
+key: apache-2.0-runtime-library-exception
+short_name: Apache 2.0 with Runtime Library Exception
+name: Apache 2.0 with Runtime Library Exception
+category: Permissive
+owner: Apple
+homepage_url: https://github.com/apple/swift/blob/master/LICENSE.txt#L205
+other_urls:
+    - https://swift.org/
+is_exception: yes

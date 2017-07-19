@@ -2,10 +2,10 @@ key: agere-bsd
 short_name: Agere BSD
 name: Agere Systems BSD Software license
 category: Permissive
-owner: Agere Systems Inc.
+owner: LSI Corporation
 notes: commonly found in Linux The driver is coverred by the following copyright and software
     license. ... license text ... The following statement from Agere clarifies the status of
-    the firmware I would like to confirm that the two drivers; Linux LKM Wireless Driver Source
+    the firmware. I would like to confirm that the two drivers; Linux LKM Wireless Driver Source
     Code, Version 7.18 and Linux LKM Wireless Driver Source Code, Version 7.22 comply with Open
     Source BSD License. Therefore the source code can be distributed in unmodified or modified
     form consistent with the terms of the license. The Linux driver architecture was based on

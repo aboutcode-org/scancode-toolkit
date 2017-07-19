@@ -1,0 +1,9 @@
+key: unicode-dfs-2015
+name: Unicode License Agreement - Data Files and Software (2015)
+short_name: Unicode - Data Files and Software (2015)
+spdx_license_key: Unicode-DFS-2015
+category: Permissive
+owner: Unicode Consortium
+other_urls:
+    - https://web.archive.org/web/20151224134844/http://unicode.org/copyright.html
+minimum_coverage: 70

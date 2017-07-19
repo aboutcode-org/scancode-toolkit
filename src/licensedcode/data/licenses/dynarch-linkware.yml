@@ -1,0 +1,8 @@
+key: dynarch-linkware
+short_name: Dynarch Linkware Agreement
+name: Dynarch Linkware Agreement
+category: Free Restricted
+owner: Dynarch
+text_urls:
+    - http://wme.cs.kent.edu/manipulatives/GeometryEditor/hmenu/license.html
+minimum_coverage: 95

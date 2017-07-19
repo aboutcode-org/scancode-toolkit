@@ -1,0 +1,9 @@
+key: libtool-exception
+short_name: Libtool Exception
+name: GNU Libtool Exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+is_exception: yes
+spdx_license_key: Libtool-exception
+other_urls:
+    - http://git.savannah.gnu.org/cgit/libtool.git/tree/m4/libtool.m4

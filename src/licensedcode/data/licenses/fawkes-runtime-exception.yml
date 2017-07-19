@@ -1,0 +1,9 @@
+key: fawkes-runtime-exception
+short_name: Fawkes Exception
+name: Fawkes Runtime Exception
+category: Copyleft Limited
+is_exception: yes
+spdx_license_key: Fawkes-Runtime-exception
+other_urls:
+    - http://www.fawkesrobotics.org/about/license/
+owner: Fawkes Development Team

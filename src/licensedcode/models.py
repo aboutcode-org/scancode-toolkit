@@ -120,6 +120,7 @@ class License(object):
         # if this is a license exception, the license key this exception applies to
         self.is_exception = False
 
+        # FIXME: this is WAY too complicated and likely not needed
         # license key for the next version of this license if any
         self.next_version = ''
         # True if this license allows later versions to be used
@@ -155,12 +156,12 @@ class License(object):
         self.data_file = join(self.src_dir, self.key + '.yml')
         self.text_file = join(self.src_dir, self.key + '.LICENSE')
 
-    def relocate(self, src_dir, new_key=None):
+    def relocate(self, target_dir, new_key=None):
         """
         Return a copy of this license object relocated to a new `src_dir`.
         The data and license text files are persisted in the new `src_dir`.
         """
-        if not src_dir or src_dir == self.src_dir:
+        if not target_dir or target_dir == self.src_dir:
             raise ValueError(
                 'Cannot relocate a License to empty directory or same directory.')
 
@@ -169,7 +170,7 @@ class License(object):
         else:
             key = self.key
 
-        newl = License(key, src_dir)
+        newl = License(key, target_dir)
 
         # copy attributes
         excluded_attrs = ('key', 'src_dir', 'data_file', 'text_file',)
@@ -328,13 +329,14 @@ class License(object):
             warn = warnings[key].append
             info = infos[key].append
 
-            # names
             if not lic.short_name:
                 warn('No short name')
             if not lic.name:
                 warn('No name')
             if not lic.category:
                 warn('No category')
+            if not lic.owner:
+                warn('No owner')
 
             if lic.next_version and lic.next_version not in licenses:
                 err('License next version is unknown')
