@@ -205,8 +205,8 @@ setup(
         'scancode_formats': [
             'html = formattedcode.format_html:write_output',
             'html-app = formattedcode.format_html_app:write_output',
-            'json = formattedcode.format_json:write_json_output',
-            'json-pp = formattedcode.format_json:write_json_pp_output',
+            'json = formattedcode.format_json:write_json_compact',
+            'json-pp = formattedcode.format_json:write_json_pretty_printed',
             'spdx-tv = formattedcode.format_spdx:write_tv_output',
             'spdx-rdf = formattedcode.format_spdx:write_rdf_output',
             'csv = formattedcode.format_csv:write_output',

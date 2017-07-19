@@ -37,42 +37,12 @@ import xmltodict
 
 from commoncode import fileutils
 from commoncode.testcase import FileDrivenTesting
-from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from formattedcode.format_csv import flatten_scan
 
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
-
-"""
-These CLI tests are dependent on py.test monkeypatch to  ensure we are testing the
-actual command outputs as if using a real command line call.
-"""
-
-def test_json_pretty_print_option():
-    test_dir = test_env.get_test_loc('json_format')
-    result_file = test_env.get_temp_file('json')
-
-    result = run_scan_click(['--copyright', '--format', 'json-pp', test_dir, result_file])
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-    assert os.path.exists(result_file)
-    assert len(open(result_file).read()) > 10
-    assert len(open(result_file).readlines()) > 1
-
-
-def test_json_output_option_is_minified():
-    test_dir = test_env.get_test_loc('json_format')
-    result_file = test_env.get_temp_file('json')
-
-    result = run_scan_click(['--copyright', '--format', 'json', test_dir, result_file])
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-    assert os.path.exists(result_file)
-    assert len(open(result_file).read()) > 10
-    assert len(open(result_file).readlines()) == 1
 
 
 def test_paths_are_posix_paths_in_html_app_format_output():
@@ -93,16 +63,6 @@ def test_paths_are_posix_in_html_format_output():
     result_file = test_env.get_temp_file('html')
 
     result = run_scan_click(['--copyright', '--format', 'html', test_dir, result_file])
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-    assert 'copyright_acme_c-c.c' in open(result_file).read()
-
-
-def test_paths_are_posix_in_json_format_output():
-    test_dir = test_env.get_test_loc('posix_path')
-    result_file = test_env.get_temp_file('json')
-
-    result = run_scan_click(['--copyright', '--format', 'json', test_dir, result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     assert 'copyright_acme_c-c.c' in open(result_file).read()
@@ -140,32 +100,6 @@ def test_scanned_path_is_present_in_html_app_output():
     assert '<div class="row" id = "scan-result-header">' % locals() in result_content
     assert '<strong>scan results for:</strong>' % locals() in result_content
     assert '<p>%(test_dir)s</p>' % locals() in result_content
-
-
-def test_scan_output_does_not_truncate_copyright_json():
-    test_dir = test_env.get_test_loc('basic/scan/')
-    result_file = test_env.get_temp_file('test.json')
-
-    result = run_scan_click(
-        ['-clip', '--strip-root', '--format', 'json', test_dir, result_file])
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-
-    expected = test_env.get_test_loc('basic/expected.json')
-    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True)
-
-
-def test_scan_output_does_not_truncate_copyright_json_stdout():
-    test_dir = test_env.get_test_loc('basic/scan/')
-    result_file = test_env.get_temp_file('test.json')
-
-    result = run_scan_click(
-        ['-clip', '--strip-root', '--format', 'json', test_dir, result_file])
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-
-    expected = test_env.get_test_loc('basic/expected.json')
-    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True)
 
 
 def test_scan_html_output_does_not_truncate_copyright_html():

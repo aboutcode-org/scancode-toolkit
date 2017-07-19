@@ -23,34 +23,48 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import division
 from __future__ import unicode_literals
 
 from collections import OrderedDict
 
-import simplejson as json
+import simplejson
 
 from plugincode.scan_output_hooks import scan_output
 
 
-@scan_output
-def write_json_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
-    meta = get_meta_data(notice, version, options, files_count, scanned_files)
-    output_file.write(unicode(json.dumps(meta, separators=(',', ':'), iterable_as_array=True, encoding='utf-8')))
-    output_file.write('\n')
+"""
+Output plugins to write scan results as JSON.
+"""
 
 @scan_output
-def write_json_pp_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
-    meta = get_meta_data(notice, version, options, files_count, scanned_files)
-    output_file.write(unicode(json.dumps(meta, indent=2 * ' ', iterable_as_array=True, encoding='utf-8')))
-    output_file.write('\n')
+def write_json_compact(files_count, version, notice, scanned_files, options, output_file, *args, **kwargs):
+    """
+    Write scan output formatted as compact JSON.
+    """
+    _write_json(files_count, version, notice, scanned_files, options, output_file, pretty=False)
 
-def get_meta_data(notice, version, options, files_count, scanned_files):
-    meta = OrderedDict()
-    meta['scancode_notice'] = notice
-    meta['scancode_version'] = version
-    meta['scancode_options'] = options
-    meta['files_count'] = files_count
-    meta['files'] = scanned_files
-    return meta
+
+@scan_output
+def write_json_pretty_printed(files_count, version, notice, scanned_files, options, output_file, *args, **kwargs):
+    """
+    Write scan output formatted as pretty-printed JSON.
+    """
+    _write_json(files_count, version, notice, scanned_files, options, output_file, pretty=True)
+
+
+def _write_json(files_count, version, notice, scanned_files, options, output_file, pretty=False):
+    scan = OrderedDict([
+        ('scancode_notice', notice),
+        ('scancode_version', version),
+        ('scancode_options', options),
+        ('files_count', files_count),
+        ('files', scanned_files),
+    ])
+    kwargs = dict(iterable_as_array=True, encoding='utf-8')
+    if pretty:
+        kwargs['indent'] = 2 * ' '
+    else:
+        kwargs['separators'] = (',', ':',)
+
+    output_file.write(unicode(simplejson.dumps(scan, **kwargs)))
+    output_file.write('\n')
