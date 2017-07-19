@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,7 +24,18 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-years = [str(year) for year in range(1960, 2018)]
+from __future__ import absolute_import
+
+from datetime import datetime
+import re
+
+# A regex to match a string that may contain a copyright year.
+# This is a year between 1960 and today prefixed and suffixed with
+# either a white-space or some punctuation.
+
+years = (str(year) for year in range(1960, datetime.today().year))
+years = r'[\(\.,\-\)\s]+(' + '|'.join(years) + r')[\(\.,\-\)\s]+'
+years = re.compile(years).findall
 
 
 statement_markers = u'''
@@ -41,7 +52,7 @@ left
 auth
 by
 devel
-'''.split() + years
+'''.split()
 
 
 # (various copyright/copyleft signs tm, r etc) http://en.wikipedia.org/wiki/Copyright_symbol

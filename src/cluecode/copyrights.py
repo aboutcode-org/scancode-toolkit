@@ -109,6 +109,7 @@ _YEAR_SHORT = (r'('
 ')')
 
 _YEAR_YEAR = (r'('
+              # fixme   v ....the underscore below is suspicious 
     '19[6-9][0-9][\.,\-]_[6-9][0-9]'  # 1960-99
     '|'
     '19[6-9][0-9][\.,\-]+[0-9]'  # 1998-9
@@ -1086,11 +1087,17 @@ def is_candidate(line):
     line = line.lower()
     line = prepare_text_line(line)
     if has_content(line):
+        if copyrights_hint.years(line):
+            logger.debug('is_candidate: year in line:\n%(line)r' % locals())
+            return True
+        else:
+            logger.debug('is_candidate: NOT year in line:\n%(line)r' % locals())
+
         for marker in copyrights_hint.statement_markers:
             if marker in line:
                 logger.debug('is_candidate: %(marker)r in line:\n%(line)r' % locals())
                 return True
-
+            
 
 def has_content(line):
     """
