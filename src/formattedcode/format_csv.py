@@ -29,17 +29,22 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 
-from click.utils import LazyFile
 import unicodecsv
 
 from plugincode.scan_output_hooks import scan_output
 
 
+"""
+Output plugin to write scan results as CSV.
+"""
+
+
 @scan_output
-def write_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
+def write_csv(scanned_files, output_file, *args, **kwargs):
+    """
+    Write scan output formatted as CSV.
+    """
     scan_results = list(scanned_files)
-    if isinstance(output_file, LazyFile):
-        output_file = open(output_file.name, 'wb')
 
     headers = OrderedDict([
         ('info', []),
@@ -57,6 +62,8 @@ def write_output(files_count, version, notice, scanned_files, options, input, ou
     for key_group in headers.values():
         ordered_headers.extend(key_group)
 
+    print(output_file)
+    print(type(output_file))
     w = unicodecsv.DictWriter(output_file, ordered_headers)
     w.writeheader()
 

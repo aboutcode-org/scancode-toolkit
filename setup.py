@@ -209,9 +209,9 @@ setup(
             'html-app = formattedcode.format_html:write_html_app',
             'json = formattedcode.format_json:write_json_compact',
             'json-pp = formattedcode.format_json:write_json_pretty_printed',
-            'spdx-tv = formattedcode.format_spdx:write_tv_output',
-            'spdx-rdf = formattedcode.format_spdx:write_rdf_output',
-            'csv = formattedcode.format_csv:write_output',
+            'spdx-tv = formattedcode.format_spdx:write_spdx_tag_value',
+            'spdx-rdf = formattedcode.format_spdx:write_spdx_rdf',
+            'csv = formattedcode.format_csv:write_csv',
         ]
     },
 )

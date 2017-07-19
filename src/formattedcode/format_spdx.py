@@ -44,17 +44,32 @@ from spdx.version import Version
 from plugincode.scan_output_hooks import scan_output
 
 
-@scan_output
-def write_rdf_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
-    as_spdx('rdf', version, notice, scanned_files, input, output_file)
+
+"""
+Output plugins to write scan results in SPDX format.
+"""
 
 
 @scan_output
-def write_tv_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
-    as_spdx('tv', version, notice, scanned_files, input, output_file)
+def write_spdx_tag_value(files_count, version, notice, scanned_files, input, output_file, *args, **kwargs):
+    """
+    Write scan output formatted as SPDX Tag/Value.
+    """
+    write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=True)
 
 
-def as_spdx(format, version, notice, scanned_files, input, output_file):
+@scan_output
+def write_spdx_rdf(files_count, version, notice, scanned_files, input, output_file, *args, **kwargs):
+    """
+    Write scan output formatted as SPDX RDF.
+    """
+    write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=False)
+
+
+def write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=True):
+    """
+    Write scan output formatted as SPDX Tag/value or RDF.
+    """
     absinput = abspath(input)
 
     if os.path.isdir(absinput):
@@ -155,9 +170,9 @@ def as_spdx(format, version, notice, scanned_files, input, output_file):
         doc.package.add_file(file_entry)
 
     if len(doc.package.files) == 0:
-        if format == 'tv':
+        if as_tagvalue:
             output_file.write("# No results for package '{}'.\n".format(doc.package.name))
-        elif format == 'rdf':
+        else:
             output_file.write("<!-- No results for package '{}'. -->\n".format(doc.package.name))
 
     # Remove duplicate licenses from the list for the package.
@@ -185,9 +200,9 @@ def as_spdx(format, version, notice, scanned_files, input, output_file):
     doc.package.license_declared = NoAssert()
     doc.package.conc_lics = NoAssert()
 
-    if format == 'tv':
+    if as_tagvalue:
         from spdx.writers.tagvalue import write_document
-    elif format == 'rdf':
+    else:
         from spdx.writers.rdf import write_document
 
     # As the spdx-tools package can only write the document to a

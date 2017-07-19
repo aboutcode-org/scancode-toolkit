@@ -5,7 +5,7 @@
     "ns1:SpdxDocument": {
       "ns1:describesPackage": {
         "ns1:Package": {
-          "ns1:name": "spdx_basic", 
+          "ns1:name": "simple", 
           "ns1:licenseDeclared": {
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           }, 
@@ -30,7 +30,7 @@
       }, 
       "ns1:referencesFile": {
         "ns1:File": {
-          "ns1:fileName": "./spdx_basic/test.txt", 
+          "ns1:fileName": "./simple/test.txt", 
           "ns1:checksum": {
             "ns1:Checksum": {
               "ns1:checksumValue": "b8a793cce3c3a4cd3a4646ddbe86edd542ed0cd8", 

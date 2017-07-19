@@ -50,6 +50,8 @@ from commoncode import filetype
 from commoncode import fileutils
 from commoncode import ignore
 
+from formattedcode import templated
+
 from scancode import __version__ as version
 
 from scancode.api import get_copyrights
@@ -62,9 +64,6 @@ from scancode.api import get_urls
 
 from scancode.cache import ScanFileCache
 from scancode.cache import get_scans_cache_class
-
-from formattedcode.format import as_template
-from formattedcode.writers import write_formatted_output
 
 from scancode.interrupt import DEFAULT_TIMEOUT
 from scancode.interrupt import interruptible
@@ -113,6 +112,7 @@ acknowledgment_text = delimiter + acknowledgment_text
 
 notice = acknowledgment_text.strip().replace('  ', '')
 
+
 scan_proper_plugins = PluginManager('scan_proper')
 scan_output_plugins = PluginManager('scan_output')
 scan_proper_plugins.add_hookspecs(scan_proper_hooks)
@@ -121,6 +121,7 @@ scan_proper_plugins.load_setuptools_entrypoints('scancode_plugins')
 scan_output_plugins.load_setuptools_entrypoints('scancode_formats')
 formats = [scan_output_plugins.get_name(plugin) for plugin in scan_output_plugins.get_plugins()]
 options = [option for option in scan_proper_plugins.hook.add_cmdline_option() if isinstance(option, click.Option)]
+
 
 def print_about(ctx, param, value):
     if not value or ctx.resilient_parsing:
@@ -276,7 +277,7 @@ def validate_exclusive(ctx, exclusive_options):
 
 # ensure that the input path is always Unicode
 @click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True, path_type=str))
-@click.argument('output_file', default='-', metavar='<output_file>', type=click.File('w', encoding='utf-8'))
+@click.argument('output_file', default='-', metavar='<output_file>', type=click.File(mode='wb', lazy=False))
 
 # Note that click's 'default' option is set to 'false' here despite these being documented to be enabled by default in
 # order to more elegantly enable all of these (see code below) if *none* of the command line options are specified.
@@ -800,7 +801,7 @@ def save_results(scanners, only_findings, files_count, results, format, options,
             # is done again if the function is used directly
             echo_stderr('\nInvalid template: must be a file.', fg='red')
         else:
-            for template_chunk in as_template(results, template=format):
+            for template_chunk in templated.as_template(results, template=format):
                 try:
                     output_file.write(template_chunk)
                 except Exception as e:
