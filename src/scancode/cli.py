@@ -305,7 +305,7 @@ def validate_exclusive(ctx, exclusive_options):
 
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
               help=('Set <output_file> format <style> to one of the standard formats: %s '
-                    'or the path to a custom template' % ' or '.join(formats)),
+                    'or the path to a custom template file' % ', '.join(formats)),
                      callback=validate_formats)
 @click.option('--ignore', default=None, multiple=True, metavar='<pattern>',
               help=('Ignore files matching <pattern>.'))
@@ -795,10 +795,10 @@ def save_results(scanners, only_findings, files_count, results, format, options,
 
     if format not in formats:
         # render using a user-provided custom format template
-        if os.path.isfile(format):
+        if not os.path.isfile(format):
             # this check was done before in the CLI validation, but this
             # is done again if the function is used directly
-            echo_stderr('\nInvalid template passed.', fg='red')
+            echo_stderr('\nInvalid template: must be a file.', fg='red')
         else:
             for template_chunk in as_template(results, template=format):
                 try:
