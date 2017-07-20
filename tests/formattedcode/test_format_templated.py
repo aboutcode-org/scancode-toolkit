@@ -124,7 +124,7 @@ def test_custom_format_with_custom_filename_fails_for_directory():
 
     result = run_scan_click(['--format', test_dir, test_dir, result_file])
     assert result.exit_code != 0
-    assert 'Invalid template file' in result.output
+    assert 'Unknwow <format> or invalid template file path' in result.output
 
 
 def test_custom_format_with_custom_filename():

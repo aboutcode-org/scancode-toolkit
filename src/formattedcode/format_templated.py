@@ -35,7 +35,7 @@ import os
 import simplejson as json
 
 from commoncode import fileutils
-from plugincode.scan_output_hooks import scan_output
+from plugincode.output import scan_output_writer
 
 
 """
@@ -46,7 +46,7 @@ which is NOT a plugin
 """
 
 
-@scan_output
+@scan_output_writer
 def write_html(scanned_files, output_file, _echo, *args, **kwargs):
     """
     Write scan output formatted as plain HTML page.
@@ -82,7 +82,7 @@ def _write_templated(scanned_files, output_file, _echo, template_or_format, rais
                 raise
 
 
-@scan_output
+@scan_output_writer
 def write_html_app(scanned_files, input, output_file, _echo, *args, **kwargs):
     """
     Write scan output formatted as a mini HTML application.

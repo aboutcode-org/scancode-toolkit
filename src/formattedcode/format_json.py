@@ -29,14 +29,14 @@ from collections import OrderedDict
 
 import simplejson
 
-from plugincode.scan_output_hooks import scan_output
+from plugincode.output import scan_output_writer
 
 
 """
 Output plugins to write scan results as JSON.
 """
 
-@scan_output
+@scan_output_writer
 def write_json_compact(files_count, version, notice, scanned_files, options, output_file, *args, **kwargs):
     """
     Write scan output formatted as compact JSON.
@@ -44,7 +44,7 @@ def write_json_compact(files_count, version, notice, scanned_files, options, out
     _write_json(files_count, version, notice, scanned_files, options, output_file, pretty=False)
 
 
-@scan_output
+@scan_output_writer
 def write_json_pretty_printed(files_count, version, notice, scanned_files, options, output_file, *args, **kwargs):
     """
     Write scan output formatted as pretty-printed JSON.

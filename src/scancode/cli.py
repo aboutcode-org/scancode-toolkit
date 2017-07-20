@@ -49,7 +49,7 @@ from commoncode import filetype
 from commoncode import fileutils
 from commoncode import ignore
 
-from formattedcode import format_templated
+import plugincode.output
 
 from scancode import __version__ as version
 
@@ -74,8 +74,6 @@ from scancode.utils import fixed_width_file_name
 from scancode.utils import get_relative_path
 from scancode.utils import progressmanager
 
-from plugincode.scan_output_hooks import scan_output_plugins
-from plugincode.scan_proper_hooks import scan_proper_plugins
 
 echo_stderr = partial(click.secho, err=True)
 
@@ -110,12 +108,6 @@ delimiter = '\n\n  '
 acknowledgment_text = delimiter + acknowledgment_text
 
 notice = acknowledgment_text.strip().replace('  ', '')
-
-
-scan_proper_plugins.load_setuptools_entrypoints('scancode_plugins')
-scan_output_plugins.load_setuptools_entrypoints('scancode_formats')
-formats = [scan_output_plugins.get_name(plugin) for plugin in scan_output_plugins.get_plugins()]
-options = [option for option in scan_proper_plugins.hook.add_cmdline_option() if isinstance(option, click.Option)]
 
 
 def print_about(ctx, param, value):
@@ -239,7 +231,7 @@ Try 'scancode --help' for help on options and arguments.'''
         """
         Add options returned by plugins to the params list
         """
-        return super(BaseCommand, self).get_params(ctx) + options
+        return super(BaseCommand, self).get_params(ctx)
 
 
 def validate_formats(ctx, param, value):
@@ -247,12 +239,13 @@ def validate_formats(ctx, param, value):
     Validate formats and template files. Raise a BadParameter on errors.
     """
     value_lower = value.lower()
-    if value_lower in formats:
+    if value_lower in plugincode.output.get_format_plugins():
         return value_lower
     # render using a user-provided custom format template
     if not os.path.isfile(value):
-        raise click.BadParameter('Invalid template file: "%(value)s" does not exist or is not readable.' % locals())
+        raise click.BadParameter('Unknwow <format> or invalid template file path: "%(value)s" does not exist or is not readable.' % locals())
     return value
+
 
 def validate_exclusive(ctx, exclusive_options):
     """
@@ -299,9 +292,9 @@ def validate_exclusive(ctx, exclusive_options):
                    'include the last directory segment of the scanned path such that all paths have a common root directory. '
                    'This cannot be combined with the `--strip-root` option.')
 
-@click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
-              help=('Set <output_file> format <style> to one of the standard formats: %s '
-                    'or the path to a custom template file' % ', '.join(formats)),
+@click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<format>',
+              help=('Set <output_file> format to one of: %s or use <format> '
+                    'as the path to a custom template file' % ', '.join(plugincode.output.get_format_plugins())),
                      callback=validate_formats)
 @click.option('--ignore', default=None, multiple=True, metavar='<pattern>',
               help=('Ignore files matching <pattern>.'))
@@ -791,20 +784,22 @@ def save_results(scanners, only_findings, files_count, results, format, options,
 
     # Write scan results to file or screen as a formatted output ...
     # ... using a user-provided custom format template
-    if format not in formats:
+    format_plugins = plugincode.output.get_format_plugins()
+    if format not in format_plugins:
         # format may be a custom template file path
         if not os.path.isfile(format):
             # this check was done before in the CLI validation, but this
             # is done again if the function is used directly
             echo_stderr('\nInvalid template: must be a file.', fg='red')
         else:
+            from formattedcode import format_templated
             # FIXME: carrying an echo function does not make sense
             format_templated.write_custom(
                 results, output_file, _echo=echo_stderr, template_path=format)
 
     # ... or  using the selected format plugin
     else:
-        writer = scan_output_plugins.get_plugin(format)
+        writer = format_plugins[format]
         # FIXME: carrying an echo function does not make sense
         # FIXME: do not use input as a variable name
         writer(files_count=files_count, version=version, notice=notice,

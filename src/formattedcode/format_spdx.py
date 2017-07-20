@@ -41,16 +41,14 @@ from spdx.utils import NoAssert
 from spdx.utils import SPDXNone
 from spdx.version import Version
 
-from plugincode.scan_output_hooks import scan_output
-
+from plugincode.output import scan_output_writer
 
 
 """
 Output plugins to write scan results in SPDX format.
 """
 
-
-@scan_output
+@scan_output_writer
 def write_spdx_tag_value(files_count, version, notice, scanned_files, input, output_file, *args, **kwargs):
     """
     Write scan output formatted as SPDX Tag/Value.
@@ -58,7 +56,7 @@ def write_spdx_tag_value(files_count, version, notice, scanned_files, input, out
     write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=True)
 
 
-@scan_output
+@scan_output_writer
 def write_spdx_rdf(files_count, version, notice, scanned_files, input, output_file, *args, **kwargs):
     """
     Write scan output formatted as SPDX RDF.

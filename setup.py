@@ -200,11 +200,14 @@ setup(
             'scancode = scancode.cli:scancode',
             'extractcode = scancode.extract_cli:extractcode',
         ],
-        'scancode_plugins': [
-        ],
-        # note: the "name" of the entrypoint (e.g html) becomes the CLI
-        # --format option used to enable a given format plugin
-        'scancode_formats': [
+
+        # scancode_output_writers is an entry point to define plugins
+        # that write a scan output in a given format.
+        # See the plugincode.output module for details and doc.
+        # note: the "name" of the entrypoint (e.g html) becomes the
+        # ScanCode CLI --format option used to enable a given format
+        # plugin
+        'scancode_output_writers': [
             'html = formattedcode.format_templated:write_html',
             'html-app = formattedcode.format_templated:write_html_app',
             'json = formattedcode.format_json:write_json_compact',

@@ -31,7 +31,7 @@ from collections import OrderedDict
 
 import unicodecsv
 
-from plugincode.scan_output_hooks import scan_output
+from plugincode.output import scan_output_writer
 
 
 """
@@ -39,7 +39,7 @@ Output plugin to write scan results as CSV.
 """
 
 
-@scan_output
+@scan_output_writer
 def write_csv(scanned_files, output_file, *args, **kwargs):
     """
     Write scan output formatted as CSV.
@@ -100,7 +100,7 @@ def flatten_scan(scan, headers):
         errors = scanned_file.pop('scan_errors', [])
 
         file_info = OrderedDict(Resource=path)
-        file_info.update(((k, v) for k, v in scanned_file.items() 
+        file_info.update(((k, v) for k, v in scanned_file.items()
         # FIXME: info are NOT lists: lists are the actual scans
                           if not isinstance(v, list)))
         # Scan errors are joined in a single multi-line value

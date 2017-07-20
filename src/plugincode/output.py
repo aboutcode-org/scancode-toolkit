@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import OrderedDict
 import sys
 
 from pluggy import HookimplMarker
@@ -33,15 +34,42 @@ from pluggy import HookspecMarker
 from pluggy import PluginManager
 
 
-scan_output = HookimplMarker('scan_output')
-_hookspec = HookspecMarker('scan_output')
+scan_output_spec = HookspecMarker('scan_output_writer')
+scan_output_writer = HookimplMarker('scan_output_writer')
 
-@_hookspec
+
+# FIXME: simplify the hooskpec
+@scan_output_spec
 def write_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
     """
-    Save scan results in the format supplied via -f/--format option
+    Write the `scanned_files` scan results in the format supplied by
+    the --format command line option.
+    Parameters:
+     - `file_count`: the number of files and directories scanned.
+     - `version`: ScanCode version
+     - `notice`: ScanCode notice
+     - `scanned_files`: an iterable of scan results for each file
+     - `options`: a mapping of key by command line option to a flag True
+        if this option was enabled.
+     - `input`: the original input path scanned.
+     - `output_file`: an opened, file-like object to write the output to.
+     - `_echo`: a funtion to echo strings to stderr. This will be removedd in the future.
     """
     pass
 
-scan_output_plugins = PluginManager('scan_output')
-scan_output_plugins.add_hookspecs(sys.modules[__name__])
+
+output_plugins = PluginManager('scan_output_writer')
+output_plugins.add_hookspecs(sys.modules[__name__])
+
+# NOTE: this defines the entry points for use in setup.py
+# These will be implicitly loaded at import time.
+output_plugins.load_setuptools_entrypoints('scancode_output_writers')
+
+
+def get_format_plugins():
+    """
+    Return an ordered mapping of format name --> plugin callable for all
+    the output plugins. The mapping is ordered by sorted key.
+    This is the main API for other code to access format plugins.
+    """
+    return OrderedDict(sorted(output_plugins.list_name_plugin()))
