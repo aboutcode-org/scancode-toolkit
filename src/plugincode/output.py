@@ -61,9 +61,11 @@ def write_output(files_count, version, notice, scanned_files, options, input, ou
 output_plugins = PluginManager('scan_output_writer')
 output_plugins.add_hookspecs(sys.modules[__name__])
 
-# NOTE: this defines the entry points for use in setup.py
-# These will be implicitly loaded at import time.
-output_plugins.load_setuptools_entrypoints('scancode_output_writers')
+
+def initialize():
+    # NOTE: this defines the entry points for use in setup.py
+    # These will be implicitly loaded at import time.
+    output_plugins.load_setuptools_entrypoints('scancode_output_writers')
 
 
 def get_format_plugins():

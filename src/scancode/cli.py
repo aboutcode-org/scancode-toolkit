@@ -90,6 +90,10 @@ except NameError:
     unicode = str
 
 
+# this will init the plugins
+plugincode.output.initialize()
+
+
 info_text = '''
 ScanCode scans code and other files for origin and license.
 Visit https://github.com/nexB/scancode-toolkit/ for support and download.
