@@ -26,8 +26,11 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import sys
+
 from pluggy import HookimplMarker
 from pluggy import HookspecMarker
+from pluggy import PluginManager
 
 
 scan_output = HookimplMarker('scan_output')
@@ -39,3 +42,6 @@ def write_output(files_count, version, notice, scanned_files, options, input, ou
     Save scan results in the format supplied via -f/--format option
     """
     pass
+
+scan_output_plugins = PluginManager('scan_output')
+scan_output_plugins.add_hookspecs(sys.modules[__name__])

@@ -44,7 +44,6 @@ from types import GeneratorType
 import click
 click.disable_unicode_literals_warning = True
 from click.termui import style
-from pluggy import PluginManager
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -75,8 +74,8 @@ from scancode.utils import fixed_width_file_name
 from scancode.utils import get_relative_path
 from scancode.utils import progressmanager
 
-from plugincode import scan_output_hooks
-from plugincode import scan_proper_hooks
+from plugincode.scan_output_hooks import scan_output_plugins
+from plugincode.scan_proper_hooks import scan_proper_plugins
 
 echo_stderr = partial(click.secho, err=True)
 
@@ -113,10 +112,6 @@ acknowledgment_text = delimiter + acknowledgment_text
 notice = acknowledgment_text.strip().replace('  ', '')
 
 
-scan_proper_plugins = PluginManager('scan_proper')
-scan_output_plugins = PluginManager('scan_output')
-scan_proper_plugins.add_hookspecs(scan_proper_hooks)
-scan_output_plugins.add_hookspecs(scan_output_hooks)
 scan_proper_plugins.load_setuptools_entrypoints('scancode_plugins')
 scan_output_plugins.load_setuptools_entrypoints('scancode_formats')
 formats = [scan_output_plugins.get_name(plugin) for plugin in scan_output_plugins.get_plugins()]

@@ -26,8 +26,11 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import sys
+
 from pluggy import HookimplMarker
 from pluggy import HookspecMarker
+from pluggy import PluginManager
 
 
 scan_proper = HookimplMarker('scan_proper')
@@ -39,3 +42,6 @@ def add_cmdline_option(scan_output_plugins):
     Return a click.Option instance which will be added to scancode.cli.ScanCommand
     """
     pass
+
+scan_proper_plugins = PluginManager('scan_proper')
+scan_proper_plugins.add_hookspecs(sys.modules[__name__])
