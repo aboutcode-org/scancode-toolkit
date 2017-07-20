@@ -49,7 +49,7 @@ from commoncode import filetype
 from commoncode import fileutils
 from commoncode import ignore
 
-from formattedcode import templated
+from formattedcode import format_html
 
 from scancode import __version__ as version
 
@@ -789,29 +789,25 @@ def save_results(scanners, only_findings, files_count, results, format, options,
         if parent_dir:
             fileutils.create_dir(abspath(expanduser(parent_dir)))
 
+    # Write scan results to file or screen as a formatted output ...
+    # ... using a user-provided custom format template
     if format not in formats:
-        # render using a user-provided custom format template
+        # format may be a custom template file path
         if not os.path.isfile(format):
             # this check was done before in the CLI validation, but this
             # is done again if the function is used directly
             echo_stderr('\nInvalid template: must be a file.', fg='red')
         else:
-            for template_chunk in templated.as_template(results, template=format):
-                try:
-                    output_file.write(template_chunk)
-                except Exception as e:
-                    extra_context = 'ERROR: Failed to write custom output with template: ' + repr(template_chunk)
-                    echo_stderr(extra_context, fg='red')
-                    e.args += (extra_context,)
-                    # FIXME: this is a tad brutal to raise here
-                    raise e
-        return
+            # FIXME: carrying an echo function does not make sense
+            format_html.write_custom(
+                results, output_file, _echo=echo_stderr, template_path=format)
 
-    # Save scan results to file or screen. using the selected format plugin
-    writer = scan_output_plugins.get_plugin(format)
-    # FIXME: carrying an echo function does not make sense
-    # FIXME: do not use input as a variable name
-    writer(files_count=files_count, version=version, notice=notice,
-           scanned_files=results,
-           options=options,
-           input=input, output_file=output_file, _echo=echo_stderr)
+    # ... or  using the selected format plugin
+    else:
+        writer = scan_output_plugins.get_plugin(format)
+        # FIXME: carrying an echo function does not make sense
+        # FIXME: do not use input as a variable name
+        writer(files_count=files_count, version=version, notice=notice,
+               scanned_files=results,
+               options=options,
+               input=input, output_file=output_file, _echo=echo_stderr)
