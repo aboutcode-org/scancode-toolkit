@@ -205,6 +205,12 @@ class TestMavenMisc(testcase.FileBasedTesting):
         assert expected == package.to_dict().items()
         package.validate()
 
+    def test_parse_to_package_then_back(self):
+        test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')
+        package = maven.parse(test_file)
+        package2 = maven.MavenPomPackage(**package.to_dict())
+        assert package.to_dict().items() == package2.to_dict().items()
+
 
 class TestPomProperties(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
