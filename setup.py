@@ -205,8 +205,8 @@ setup(
         # note: the "name" of the entrypoint (e.g html) becomes the CLI
         # --format option used to enable a given format plugin
         'scancode_formats': [
-            'html = formattedcode.format_html:write_html',
-            'html-app = formattedcode.format_html:write_html_app',
+            'html = formattedcode.format_templated:write_html',
+            'html-app = formattedcode.format_templated:write_html_app',
             'json = formattedcode.format_json:write_json_compact',
             'json-pp = formattedcode.format_json:write_json_pretty_printed',
             'spdx-tv = formattedcode.format_spdx:write_spdx_tag_value',

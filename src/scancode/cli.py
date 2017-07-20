@@ -49,7 +49,7 @@ from commoncode import filetype
 from commoncode import fileutils
 from commoncode import ignore
 
-from formattedcode import format_html
+from formattedcode import format_templated
 
 from scancode import __version__ as version
 
@@ -799,7 +799,7 @@ def save_results(scanners, only_findings, files_count, results, format, options,
             echo_stderr('\nInvalid template: must be a file.', fg='red')
         else:
             # FIXME: carrying an echo function does not make sense
-            format_html.write_custom(
+            format_templated.write_custom(
                 results, output_file, _echo=echo_stderr, template_path=format)
 
     # ... or  using the selected format plugin

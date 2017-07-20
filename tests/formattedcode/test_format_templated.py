@@ -39,7 +39,7 @@ test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
 def test_paths_are_posix_paths_in_html_app_format_output():
-    test_dir = test_env.get_test_loc('html/simple')
+    test_dir = test_env.get_test_loc('templated/simple')
     result_file = test_env.get_temp_file(extension='html', file_name='test_html')
 
     result = run_scan_click(['--copyright', '--format', 'html-app', test_dir, result_file])
@@ -52,7 +52,7 @@ def test_paths_are_posix_paths_in_html_app_format_output():
 
 
 def test_paths_are_posix_in_html_format_output():
-    test_dir = test_env.get_test_loc('html/simple')
+    test_dir = test_env.get_test_loc('templated/simple')
     result_file = test_env.get_temp_file('html')
 
     result = run_scan_click(['--copyright', '--format', 'html', test_dir, result_file])
@@ -62,7 +62,7 @@ def test_paths_are_posix_in_html_format_output():
 
 
 def test_scanned_path_is_present_in_html_app_output():
-    test_dir = test_env.get_test_loc('html/html_app')
+    test_dir = test_env.get_test_loc('templated/html_app')
     result_file = test_env.get_temp_file('test.html')
 
     result = run_scan_click(['--copyright', '--format', 'html-app', test_dir, result_file])
@@ -77,7 +77,7 @@ def test_scanned_path_is_present_in_html_app_output():
 
 
 def test_scan_html_output_does_not_truncate_copyright_html():
-    test_dir = test_env.get_test_loc('html/tree/scan/')
+    test_dir = test_env.get_test_loc('templated/tree/scan/')
     result_file = test_env.get_temp_file('test.html')
 
     result = run_scan_click(
@@ -128,8 +128,8 @@ def test_custom_format_with_custom_filename_fails_for_directory():
 
 
 def test_custom_format_with_custom_filename():
-    test_dir = test_env.get_test_loc('html/simple')
-    custom_template = test_env.get_test_loc('html/sample-template.html')
+    test_dir = test_env.get_test_loc('templated/simple')
+    custom_template = test_env.get_test_loc('templated/sample-template.html')
     result_file = test_env.get_temp_file('html')
 
     result = run_scan_click(['--format', custom_template, test_dir, result_file])
