@@ -126,7 +126,7 @@ def flatten_scan(scan, headers, prefix_path=False):
         errors = scanned_file.pop('scan_errors', [])
 
         file_info = OrderedDict(Resource=path)
-        file_info.update(((k, v) for k, v in scanned_file.items() 
+        file_info.update(((k, v) for k, v in scanned_file.items()
         # FIXME: info are NOT lists: lists are the actual scans
                           if not isinstance(v, list)))
         # Scan errors are joined in a single multi-line value
@@ -261,6 +261,8 @@ def flatten_scan(scan, headers, prefix_path=False):
 @click.option('--prefix_path', is_flag=True, default=False, help='Add a "/code" directory prefix to all paths.')
 def cli(json_input, csv_output, prefix_path=False):
     """
+    !!! LEGACY: use the new --format csv option in the scancode command line instead
+
     Convert a ScanCode JSON scan file to a nexb-toolkit-like CSV.
 
     JSON_INPUT is either a ScanCode json format scan or the data.json file from a ScanCode html-app format scan.
