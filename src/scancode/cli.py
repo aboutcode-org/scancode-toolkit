@@ -49,6 +49,8 @@ from commoncode import filetype
 from commoncode import fileutils
 from commoncode import ignore
 
+import plugincode.output
+
 from scancode import __version__ as version
 
 from scancode.api import get_copyrights
@@ -62,9 +64,6 @@ from scancode.api import get_urls
 from scancode.cache import ScanFileCache
 from scancode.cache import get_scans_cache_class
 
-from formattedcode.format import as_template
-from formattedcode.writers import write_formatted_output
-
 from scancode.interrupt import DEFAULT_TIMEOUT
 from scancode.interrupt import interruptible
 from scancode.interrupt import TimeoutError
@@ -74,6 +73,7 @@ from scancode.utils import compute_fn_max_len
 from scancode.utils import fixed_width_file_name
 from scancode.utils import get_relative_path
 from scancode.utils import progressmanager
+
 
 echo_stderr = partial(click.secho, err=True)
 
@@ -88,6 +88,10 @@ try:
 except NameError:
     # Python 3
     unicode = str
+
+
+# this will init the plugins
+plugincode.output.initialize()
 
 
 info_text = '''
@@ -223,24 +227,27 @@ Note: when you run scancode, a progress bar is displayed with a counter of the
 number of files processed. Use --verbose to display file-by-file progress.
 '''
 
-
 class ScanCommand(BaseCommand):
     short_usage_help = '''
 Try 'scancode --help' for help on options and arguments.'''
 
+    def get_params(self, ctx):
+        """
+        Add options returned by plugins to the params list
+        """
+        return super(BaseCommand, self).get_params(ctx)
 
-formats = ('json', 'json-pp', 'html', 'html-app', 'spdx-tv', 'spdx-rdf')
 
 def validate_formats(ctx, param, value):
     """
     Validate formats and template files. Raise a BadParameter on errors.
     """
     value_lower = value.lower()
-    if value_lower in formats:
+    if value_lower in plugincode.output.get_format_plugins():
         return value_lower
     # render using a user-provided custom format template
     if not os.path.isfile(value):
-        raise click.BadParameter('Invalid template file: "%(value)s" does not exist or is not readable.' % locals())
+        raise click.BadParameter('Unknwow <format> or invalid template file path: "%(value)s" does not exist or is not readable.' % locals())
     return value
 
 
@@ -262,7 +269,7 @@ def validate_exclusive(ctx, exclusive_options):
 
 # ensure that the input path is always Unicode
 @click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True, path_type=str))
-@click.argument('output_file', default='-', metavar='<output_file>', type=click.File('w', encoding='utf-8'))
+@click.argument('output_file', default='-', metavar='<output_file>', type=click.File(mode='wb', lazy=False))
 
 # Note that click's 'default' option is set to 'false' here despite these being documented to be enabled by default in
 # order to more elegantly enable all of these (see code below) if *none* of the command line options are specified.
@@ -289,10 +296,10 @@ def validate_exclusive(ctx, exclusive_options):
                    'include the last directory segment of the scanned path such that all paths have a common root directory. '
                    'This cannot be combined with the `--strip-root` option.')
 
-@click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<style>',
-              help=('Set <output_file> format <style> to one of the standard formats: %s '
-                    'or the path to a custom template' % ' or '.join(formats)),
-              callback=validate_formats)
+@click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<format>',
+              help=('Set <output_file> format to one of: %s or use <format> '
+                    'as the path to a custom template file' % ', '.join(plugincode.output.get_format_plugins())),
+                     callback=validate_formats)
 @click.option('--ignore', default=None, multiple=True, metavar='<pattern>',
               help=('Ignore files matching <pattern>.'))
 @click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.')
@@ -362,6 +369,7 @@ def scancode(ctx,
     if format in ('spdx-tv', 'spdx-rdf'):
         possible_scans['infos'] = True
 
+    # FIXME: pombredanne: what is this? I cannot understand what this does
     for key in options:
         if key == "--license-score":
             continue
@@ -404,6 +412,7 @@ def scancode(ctx,
         if not quiet:
             echo_stderr('Saving results.', fg='green')
 
+        # FIXME: we should have simpler args: a scan "header" and scan results
         save_results(scanners, only_findings, files_count, results, format, options, input, output_file)
 
     finally:
@@ -748,41 +757,56 @@ def save_results(scanners, only_findings, files_count, results, format, options,
     """
 
     if only_findings:
-        # Find all scans that are both enabled and have a valid function reference.
-        # This deliberately filters out the "info" scan (which always has a "None"
-        # function reference) as there is no dedicated "infos" key in the results
-        # that "has_findings()" could check.
+        # Find all scans that are both enabled and have a valid function
+        # reference. This deliberately filters out the "info" scan
+        # (which always has a "None" function reference) as there is no
+        # dedicated "infos" key in the results that "has_findings()"
+        # could check.
+        # FIXME: we should not use positional tings tuples for v[0], v[1] that are mysterious values for now
         active_scans = [k for k, v in scanners.items() if v[0] and v[1]]
 
         # FIXME: this is forcing all the scan results to be loaded in memory
         # and defeats lazy loading from cache
+        # FIXME: we should instead use a generator of use a filter
+        # function that pass to the scan results loader iterator
         results = [file_data for file_data in results if has_findings(active_scans, file_data)]
-        # FIXME: computing len before hand will need a list and therefore need loding
-        # it all ahead of time
+        # FIXME: computing len before hand will need a list and therefore needs loading
+        # it all ahead of timeand defeats caching entirely
         files_count = len(results)
 
-    # note: in tests, sys.stdout is not used, but some io wrapper with no name
-    # attributes
+    # note: in tests, sys.stdout is not used, but is instead some io
+    # wrapper with no name attributes. We use this to check if this is a
+    # real filesystem file or not.
+    # note: sys.stdout.name == '<stdout>' so it has a name.
     is_real_file = hasattr(output_file, 'name')
 
     if output_file != sys.stdout and is_real_file:
+        # we are writing to a real filesystem file: create directories!
         parent_dir = os.path.dirname(output_file.name)
         if parent_dir:
             fileutils.create_dir(abspath(expanduser(parent_dir)))
 
-    if format not in formats:
-        # render using a user-provided custom format template
+    # Write scan results to file or screen as a formatted output ...
+    # ... using a user-provided custom format template
+    format_plugins = plugincode.output.get_format_plugins()
+    if format not in format_plugins:
+        # format may be a custom template file path
         if not os.path.isfile(format):
-            echo_stderr('\nInvalid template passed.', fg='red')
+            # this check was done before in the CLI validation, but this
+            # is done again if the function is used directly
+            echo_stderr('\nInvalid template: must be a file.', fg='red')
         else:
-            for template_chunk in as_template(results, template=format):
-                try:
-                    output_file.write(template_chunk)
-                except Exception as e:
-                    extra_context = 'ERROR: Failed to write output to HTML for: ' + repr(template_chunk)
-                    echo_stderr(extra_context, fg='red')
-                    e.args += (extra_context,)
-                    raise e
-        return
+            from formattedcode import format_templated
+            # FIXME: carrying an echo function does not make sense
+            format_templated.write_custom(
+                results, output_file, _echo=echo_stderr, template_path=format)
 
-    write_formatted_output(scanners, files_count, version, notice, results, format, options, input, output_file, echo_stderr)
+    # ... or  using the selected format plugin
+    else:
+        writer = format_plugins[format]
+        # FIXME: carrying an echo function does not make sense
+        # FIXME: do not use input as a variable name
+        writer(files_count=files_count, version=version, notice=notice,
+               scanned_files=results,
+               options=options,
+               input=input, output_file=output_file, _echo=echo_stderr)

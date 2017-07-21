@@ -27,94 +27,47 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
-from collections import OrderedDict
 import os
 from os.path import abspath
 
-from formattedcode.format import as_template
-from formattedcode.format import as_html_app
-from formattedcode.format import create_html_app_assets
-from formattedcode.format import HtmlAppAssetCopyWarning
-from formattedcode.format import HtmlAppAssetCopyError
+from spdx.checksum import Algorithm
+from spdx.creationinfo import Tool
+from spdx.document import Document
+from spdx.document import License
+from spdx.document import ExtractedLicense
+from spdx.file import File
+from spdx.package import Package
+from spdx.utils import NoAssert
+from spdx.utils import SPDXNone
+from spdx.version import Version
+
+from plugincode.output import scan_output_writer
 
 
-def write_formatted_output(
-        scanners, files_count, version, notice, scanned_files,
-        format, options, input, output_file, _echo):
+"""
+Output plugins to write scan results in SPDX format.
+"""
+
+@scan_output_writer
+def write_spdx_tag_value(files_count, version, notice, scanned_files, input, output_file, *args, **kwargs):
     """
-    Save scan results to file or screen.
+    Write scan output formatted as SPDX Tag/Value.
     """
-
-    # FIXME: carrying an echo function does not make sense
-    # FIXME: do not use input as a variable name
-
-    if format == 'html':
-        write_html(scanned_files, output_file, _echo)
-
-    elif format == 'html-app':
-        write_html_app(scanned_files, input, output_file, _echo)
-
-    elif format in ('json' , 'json-pp'):
-        write_json(files_count, version, notice, scanned_files, format, options, input, output_file)
-
-    elif format in ('spdx-tv', 'spdx-rdf'):
-        write_spdx(version, notice, scanned_files, format, input, output_file)
-    else:
-        raise Exception('Unknown format')
+    write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=True)
 
 
-def write_html(scanned_files, output_file, _echo):
-    for template_chunk in as_template(scanned_files):
-        try:
-            output_file.write(template_chunk)
-        except Exception as e:
-            extra_context = 'ERROR: Failed to write output to HTML for: ' + repr(template_chunk)
-            _echo(extra_context, fg='red')
-            e.args += (extra_context,)
-            raise e
+@scan_output_writer
+def write_spdx_rdf(files_count, version, notice, scanned_files, input, output_file, *args, **kwargs):
+    """
+    Write scan output formatted as SPDX RDF.
+    """
+    write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=False)
 
 
-def write_html_app(scanned_files, input, output_file, _echo):
-    output_file.write(as_html_app(input, output_file))
-    try:
-        create_html_app_assets(scanned_files, output_file)
-    except HtmlAppAssetCopyWarning:
-        _echo('\nHTML app creation skipped when printing to stdout.', fg='yellow')
-    except HtmlAppAssetCopyError:
-        _echo('\nFailed to create HTML app.', fg='red')
-
-
-def write_json(files_count, version, notice, scanned_files,
-               format, options, input, output_file):
-
-    import simplejson as json
-
-    meta = OrderedDict()
-    meta['scancode_notice'] = notice
-    meta['scancode_version'] = version
-    meta['scancode_options'] = options
-    meta['files_count'] = files_count
-    meta['files'] = scanned_files
-    if format == 'json-pp':
-        output_file.write(unicode(json.dumps(meta, indent=2 * ' ', iterable_as_array=True, encoding='utf-8')))
-    else:
-        output_file.write(unicode(json.dumps(meta, separators=(',', ':'), iterable_as_array=True, encoding='utf-8')))
-    output_file.write('\n')
-
-
-def write_spdx(version, notice, scanned_files, format, input, output_file):
-
-    from spdx.checksum import Algorithm
-    from spdx.creationinfo import Tool
-    from spdx.document import Document
-    from spdx.document import License
-    from spdx.document import ExtractedLicense
-    from spdx.file import File
-    from spdx.package import Package
-    from spdx.utils import NoAssert
-    from spdx.utils import SPDXNone
-    from spdx.version import Version
-
+def write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=True):
+    """
+    Write scan output formatted as SPDX Tag/value or RDF.
+    """
     absinput = abspath(input)
 
     if os.path.isdir(absinput):
@@ -215,9 +168,9 @@ def write_spdx(version, notice, scanned_files, format, input, output_file):
         doc.package.add_file(file_entry)
 
     if len(doc.package.files) == 0:
-        if format == 'spdx-tv':
+        if as_tagvalue:
             output_file.write("# No results for package '{}'.\n".format(doc.package.name))
-        elif format == 'spdx-rdf':
+        else:
             output_file.write("<!-- No results for package '{}'. -->\n".format(doc.package.name))
 
     # Remove duplicate licenses from the list for the package.
@@ -245,9 +198,9 @@ def write_spdx(version, notice, scanned_files, format, input, output_file):
     doc.package.license_declared = NoAssert()
     doc.package.conc_lics = NoAssert()
 
-    if format == 'spdx-tv':
+    if as_tagvalue:
         from spdx.writers.tagvalue import write_document
-    elif format == 'spdx-rdf':
+    else:
         from spdx.writers.rdf import write_document
 
     # As the spdx-tools package can only write the document to a

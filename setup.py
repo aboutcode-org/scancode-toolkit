@@ -141,6 +141,8 @@ setup(
         'bz2file >= 0.98',
         'text-unidecode >= 1.0, < 2.0',
 
+        'pluggy >= 0.4.0, < 1.0',
+
         # licensedcode
         'PyYAML >= 3.0, <4.0',
         'bitarray >= 0.8.1, < 1.0.0',
@@ -198,5 +200,21 @@ setup(
             'scancode = scancode.cli:scancode',
             'extractcode = scancode.extract_cli:extractcode',
         ],
+
+        # scancode_output_writers is an entry point to define plugins
+        # that write a scan output in a given format.
+        # See the plugincode.output module for details and doc.
+        # note: the "name" of the entrypoint (e.g html) becomes the
+        # ScanCode CLI --format option used to enable a given format
+        # plugin
+        'scancode_output_writers': [
+            'html = formattedcode.format_templated:write_html',
+            'html-app = formattedcode.format_templated:write_html_app',
+            'json = formattedcode.format_json:write_json_compact',
+            'json-pp = formattedcode.format_json:write_json_pretty_printed',
+            'spdx-tv = formattedcode.format_spdx:write_spdx_tag_value',
+            'spdx-rdf = formattedcode.format_spdx:write_spdx_rdf',
+            'csv = formattedcode.format_csv:write_csv',
+        ]
     },
 )

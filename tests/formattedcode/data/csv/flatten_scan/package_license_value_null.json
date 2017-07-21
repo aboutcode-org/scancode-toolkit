@@ -1,0 +1,77 @@
+{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+  "scancode_version": "2.0.0rc2",
+  "files_count": 3,
+  "files": [
+    {
+      "path": "srp_vfy.c",
+      "scan_errors": [],
+      "licenses": [
+        {
+          "key": "apache-2.0",
+          "score": 53.85,
+          "short_name": "Apache 2.0",
+          "category": "Permissive",
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+          "dejacode_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+          "spdx_license_key": "Apache-2.0",
+          "spdx_url": "http://spdx.org/licenses/Apache-2.0",
+          "start_line": 4,
+          "end_line": 5,
+          "matched_rule": {
+            "identifier": "apache-2.0_23.RULE",
+            "license_choice": false,
+            "licenses": [
+              "apache-2.0"
+            ]
+          }
+        },
+        {
+          "key": "openssl-ssleay",
+          "score": 10.0,
+          "short_name": "OpenSSL/SSLeay License",
+          "category": "Permissive",
+          "owner": "OpenSSL",
+          "homepage_url": "http://www.openssl.org/source/license.html",
+          "text_url": "",
+          "dejacode_url": "https://enterprise.dejacode.com/urn/urn:dje:license:openssl-ssleay",
+          "spdx_license_key": "OpenSSL",
+          "spdx_url": "http://spdx.org/licenses/OpenSSL",
+          "start_line": 4,
+          "end_line": 4,
+          "matched_rule": {
+            "identifier": "openssl-ssleay_2.RULE",
+            "license_choice": false,
+            "licenses": [
+              "openssl-ssleay"
+            ]
+          }
+        }
+      ],
+      "copyrights": [
+        {
+          "statements": [
+            "Copyright 2011-2016 The OpenSSL Project"
+          ],
+          "holders": [
+            "OpenSSL Project"
+          ],
+          "authors": [],
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "packages": [
+          {
+            "asserted_licenses": [
+                {
+                    "license": null
+                }
+            ]
+          }
+      ]
+    }
+  ]
+}
