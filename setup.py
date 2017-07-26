@@ -215,6 +215,14 @@ setup(
             'spdx-tv = formattedcode.format_spdx:write_spdx_tag_value',
             'spdx-rdf = formattedcode.format_spdx:write_spdx_rdf',
             'csv = formattedcode.format_csv:write_csv',
+        ],
+
+        # scancode_post_scan is an entry point for post_scan_plugins.
+        # See plugincode.post_scan module for details and doc.
+        # note: the "name" of the entrypoint (e.g only-findings)
+        # becomes the ScanCode CLI boolean flag used to enable a
+        # given post_scan plugin
+        'scancode_post_scan': [
         ]
     },
 )

@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
-from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
@@ -34,43 +33,33 @@ from pluggy import HookspecMarker
 from pluggy import PluginManager
 
 
-scan_output_spec = HookspecMarker('scan_output_writer')
-scan_output_writer = HookimplMarker('scan_output_writer')
+post_scan_spec = HookspecMarker('post_scan')
+post_scan_impl = HookimplMarker('post_scan')
 
 
-# FIXME: simplify the hooskpec
-@scan_output_spec
-def write_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
+@post_scan_spec
+def process(scanned_files):
     """
-    Write the `scanned_files` scan results in the format supplied by
-    the --format command line option.
+    Process the `scanned_files` and return the modified results.
     Parameters:
-     - `file_count`: the number of files and directories scanned.
-     - `version`: ScanCode version
-     - `notice`: ScanCode notice
      - `scanned_files`: an iterable of scan results for each file
-     - `options`: a mapping of key by command line option to a flag True
-        if this option was enabled.
-     - `input`: the original input path scanned.
-     - `output_file`: an opened, file-like object to write the output to.
-     - `_echo`: a funtion to echo strings to stderr. This will be removedd in the future.
     """
     pass
 
 
-output_plugins = PluginManager('scan_output_writer')
-output_plugins.add_hookspecs(sys.modules[__name__])
+post_scan_plugins = PluginManager('post_scan')
+post_scan_plugins.add_hookspecs(sys.modules[__name__])
 
 
 def initialize():
     # NOTE: this defines the entry points for use in setup.py
-    output_plugins.load_setuptools_entrypoints('scancode_output_writers')
+    post_scan_plugins.load_setuptools_entrypoints('scancode_post_scan')
 
 
-def get_format_plugins():
+def get_post_scan_plugins():
     """
-    Return an ordered mapping of format name --> plugin callable for all
-    the output plugins. The mapping is ordered by sorted key.
-    This is the main API for other code to access format plugins.
+    Return an ordered mapping of CLI boolean flag name --> plugin callable
+    for all the post_scan plugins. The mapping is ordered by sorted key.
+    This is the main API for other code to access post_scan plugins.
     """
-    return OrderedDict(sorted(output_plugins.list_name_plugin()))
+    return OrderedDict(sorted(post_scan_plugins.list_name_plugin()))
