@@ -459,9 +459,11 @@ class Type(object):
             return False
 
         ft = self.filetype_file.lower()
-        pt = self.filetype_pygment
+        pt = self.filetype_pygment.lower()
 
-        if not 'xml' in ft and (pt or self.is_script is True):
+        if 'xml' not in ft and \
+           ('xml' not in pt or self.location.endswith('pom.xml')) and \
+           (pt or self.is_script is True):
             return True
         else:
             return False

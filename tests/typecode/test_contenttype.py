@@ -877,7 +877,7 @@ class TestContentType(FileBasedTesting):
         test_file = self.get_test_loc('contenttype/media/drawing.svg')
         assert not is_binary(test_file)
         assert is_media(test_file)
-        assert is_media(test_file)
+        assert not is_source(test_file)
 
     def test_media_image_tgg(self):
         test_file = self.get_test_loc('contenttype/media/Image1.tga')
