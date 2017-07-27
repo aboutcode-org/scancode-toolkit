@@ -25,42 +25,34 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from collections import OrderedDict
-import sys
-
-from pluggy import HookimplMarker
-from pluggy import HookspecMarker
-from pluggy import PluginManager
+from plugincode.post_scan import post_scan_impl
 
 
-post_scan_spec = HookspecMarker('post_scan')
-post_scan_impl = HookimplMarker('post_scan')
-
-
-@post_scan_spec
-def process(scanners, results):
+@post_scan_impl
+def process_only_findings(scanners, results):
     """
-    Process the scanned files and yield the modified results.
-    Parameters:
-     - `scanners`: an ordered dict of all possible scans
-     - `results`: an iterable of scan results for each file
+    Only return files or directories with findings for the requested scans. Files without findings are omitted.
     """
-    pass
+    files_count = 0
+    # Find all scans that are both enabled and have a valid function
+    # reference. This deliberately filters out the "info" scan
+    # (which always has a "None" function reference) as there is no
+    # dedicated "infos" key in the results that "has_findings()"
+    # could check.
+    # FIXME: we should not use positional tings tuples for v[0], v[1] that are mysterious values for now
+    active_scans = [k for k, v in scanners.items() if v[0] and v[1]]
 
+    # FIXME: this is forcing all the scan results to be loaded in memory
+    # and defeats lazy loading from cache
+    # FIXME: we should instead use a generator of use a filter
+    # function that pass to the scan results loader iterator
+    for file_data in results:
+        if has_findings(active_scans, file_data):
+            files_count += 1
+            yield file_data
 
-post_scan_plugins = PluginManager('post_scan')
-post_scan_plugins.add_hookspecs(sys.modules[__name__])
-
-
-def initialize():
-    # NOTE: this defines the entry points for use in setup.py
-    post_scan_plugins.load_setuptools_entrypoints('scancode_post_scan')
-
-
-def get_post_scan_plugins():
+def has_findings(active_scans, file_data):
     """
-    Return an ordered mapping of CLI boolean flag name --> plugin callable
-    for all the post_scan plugins. The mapping is ordered by sorted key.
-    This is the main API for other code to access post_scan plugins.
+    Return True if the file_data has findings for any of the `active_scans` names list.
     """
-    return OrderedDict(sorted(post_scan_plugins.list_name_plugin()))
+    return any(file_data.get(scan_name) for scan_name in active_scans)

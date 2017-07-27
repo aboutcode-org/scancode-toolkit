@@ -348,8 +348,6 @@ def validate_exclusive(ctx, exclusive_options):
               help='Do not return license matches with scores lower than this score. A number between 0 and 100.', group=SCANS, cls=ScanOption)
 @click.option('--license-text', is_flag=True, default=False,
               help='Include the detected licenses matched text. Has no effect unless --license is requested.', group=SCANS, cls=ScanOption)
-@click.option('--only-findings', is_flag=True, default=False,
-              help='Only return files or directories with findings for the requested scans. Files without findings are omitted.', group=OUTPUT, cls=ScanOption)
 @click.option('--strip-root', is_flag=True, default=False,
               help='Strip the root directory segment of all paths. The default is to always '
                    'include the last directory segment of the scanned path such that all paths have a common root directory. '
@@ -382,7 +380,7 @@ def scancode(ctx,
              input, output_file,
              copyright, license, package,
              email, url, info,
-             license_score, license_text, only_findings, strip_root, full_root,
+             license_score, license_text, strip_root, full_root,
              format, ignore, verbose, quiet, processes,
              diag, timeout, *args, **kwargs):
     """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
@@ -411,7 +409,6 @@ def scancode(ctx,
         ('--info', info),
         ('--license-score', license_score),
         ('--license-text', license_text),
-        ('--only-findings', only_findings),
         ('--strip-root', strip_root),
         ('--full-root', full_root),
         ('--ignore', ignore),
@@ -475,12 +472,15 @@ def scancode(ctx,
         if not quiet:
             echo_stderr('Saving results.', fg='green')
 
-        for name, callback in post_scan_plugins.items():
-            if name in kwargs:
-                results = callback(results)
+        for option, process in post_scan_plugins.items():
+            if kwargs[option.replace('-', '_')]:
+                options['--' + option] = True
+                results = process(scanners, results)
+                if hasattr(process, 'files_count'):
+                    files_count = process.files_count
 
         # FIXME: we should have simpler args: a scan "header" and scan results
-        save_results(scanners, only_findings, files_count, results, format, options, input, output_file)
+        save_results(scanners, files_count, results, format, options, input, output_file)
 
     finally:
         # cleanup
@@ -811,35 +811,10 @@ def scan_one(input_file, scanners, diag=False):
     return scan_result
 
 
-def has_findings(active_scans, file_data):
-    """
-    Return True if the file_data has findings for any of the `active_scans` names list.
-    """
-    return any(file_data.get(scan_name) for scan_name in active_scans)
-
-
-def save_results(scanners, only_findings, files_count, results, format, options, input, output_file):
+def save_results(scanners, files_count, results, format, options, input, output_file):
     """
     Save scan results to file or screen.
     """
-
-    if only_findings:
-        # Find all scans that are both enabled and have a valid function
-        # reference. This deliberately filters out the "info" scan
-        # (which always has a "None" function reference) as there is no
-        # dedicated "infos" key in the results that "has_findings()"
-        # could check.
-        # FIXME: we should not use positional tings tuples for v[0], v[1] that are mysterious values for now
-        active_scans = [k for k, v in scanners.items() if v[0] and v[1]]
-
-        # FIXME: this is forcing all the scan results to be loaded in memory
-        # and defeats lazy loading from cache
-        # FIXME: we should instead use a generator of use a filter
-        # function that pass to the scan results loader iterator
-        results = [file_data for file_data in results if has_findings(active_scans, file_data)]
-        # FIXME: computing len before hand will need a list and therefore needs loading
-        # it all ahead of timeand defeats caching entirely
-        files_count = len(results)
 
     # note: in tests, sys.stdout is not used, but is instead some io
     # wrapper with no name attributes. We use this to check if this is a

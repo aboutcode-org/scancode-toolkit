@@ -223,6 +223,7 @@ setup(
         # becomes the ScanCode CLI boolean flag used to enable a
         # given post_scan plugin
         'scancode_post_scan': [
+        'only-findings = scancode.plugin_only_findings:process_only_findings'
         ]
     },
 )
