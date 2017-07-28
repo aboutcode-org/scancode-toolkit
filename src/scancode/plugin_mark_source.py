@@ -25,42 +25,29 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from collections import OrderedDict
-import sys
-
-from pluggy import HookimplMarker
-from pluggy import HookspecMarker
-from pluggy import PluginManager
+from commoncode.filetype import is_dir
+from commoncode.fileutils import file_iter
+from plugincode.post_scan import post_scan_impl
+from scancode.api import get_file_infos
 
 
-post_scan_spec = HookspecMarker('post_scan')
-post_scan_impl = HookimplMarker('post_scan')
-
-
-@post_scan_spec
-def process(scanners, results, options):
+@post_scan_impl
+def process_mark_source(scanners, results, options):
     """
-    Process the scanned files and yield the modified results.
-    Parameters:
-     - `scanners`: an ordered dict of all possible scans
-     - `results`: an iterable of scan results for each file
+    Set `is_source` to true for all packages with (~90%) of source files
     """
-    pass
-
-
-post_scan_plugins = PluginManager('post_scan')
-post_scan_plugins.add_hookspecs(sys.modules[__name__])
-
-
-def initialize():
-    # NOTE: this defines the entry points for use in setup.py
-    post_scan_plugins.load_setuptools_entrypoints('scancode_post_scan')
-
-
-def get_post_scan_plugins():
-    """
-    Return an ordered mapping of CLI boolean flag name --> plugin callable
-    for all the post_scan plugins. The mapping is ordered by sorted key.
-    This is the main API for other code to access post_scan plugins.
-    """
-    return OrderedDict(sorted(post_scan_plugins.list_name_plugin()))
+    if not options['--info']:
+        return
+    for scanned_file in results:
+        if is_dir(scanned_file['path']):
+            source_files_count = files_count = 0
+            for file in file_iter(scanned_file['path']):
+                files_count += 1
+                if get_file_infos(file)['is_source']:
+                    source_files_count += 1
+            if files_count == 0:
+                continue
+            # Check if directory has >=90% of source files
+            if source_files_count / files_count >= 0.9:
+                scanned_file['is_source'] = True
+        yield scanned_file

@@ -475,7 +475,7 @@ def scancode(ctx,
         for option, process in post_scan_plugins.items():
             if kwargs[option.replace('-', '_')]:
                 options['--' + option] = True
-                results = process(scanners, results)
+                results = process(scanners, results, options)
                 if hasattr(process, 'files_count'):
                     files_count = process.files_count
 

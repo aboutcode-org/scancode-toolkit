@@ -29,7 +29,7 @@ from plugincode.post_scan import post_scan_impl
 
 
 @post_scan_impl
-def process_only_findings(scanners, results):
+def process_only_findings(scanners, results, options):
     """
     Only return files or directories with findings for the requested scans. Files without findings are omitted.
     """
