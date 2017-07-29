@@ -470,13 +470,16 @@ class LicenseIndex(object):
         exact_matches = match_aho.exact_match(self, whole_query_run, self.rules_automaton)
         if TRACE_EXACT: self.debug_matches(exact_matches, '  #match: EXACT matches#:', location, query_string)
 
-        exact_matches, exact_discarded = match.refine_matches(exact_matches, self, query=qry)
+        # FIXME: do we really need to refine matches here?
+        # by construction we can never have mergeable matches for the same rule: aho matches
+        exact_matches, exact_discarded = match.refine_matches(exact_matches, self, query=qry, merge=False)
 
         if TRACE_EXACT: self.debug_matches(exact_matches, '   #match: ===> exact matches refined')
         if TRACE_EXACT: self.debug_matches(exact_discarded, '   #match: ===> exact matches discarded')
 
         matches = exact_matches
         discarded = exact_discarded
+        if TRACE: logger_debug('#match: EXACT completed')
 
         #######################################################################
         # Per query run matching.
@@ -490,12 +493,13 @@ class LicenseIndex(object):
         # do not match futher if we do not need to
         if whole_query_run.is_matchable(include_low=True, qspans=matched_qspans):
 
+            # FIXME: we should exclude small and "weak" rules from the subset entirely
+            # they are unlikely to be matchable with a seq match
             rules_subset = (self.regular_rids | self.small_rids)
 
             for qrnum, query_run in enumerate(qry.query_runs, 1):
-                if TRACE_QUERY_RUN_SIMPLE:
-                    logger_debug('#match: ===> processing query run #:', qrnum)
-                    logger_debug('  #match:', query_run)
+                if TRACE: logger_debug('#match: ===> processing query run #:', qrnum)
+                if TRACE_QUERY_RUN_SIMPLE: logger_debug('  #match:', query_run)
 
                 if not query_run.is_matchable(include_low=True):
                     if TRACE: logger_debug('#match: query_run NOT MATCHABLE')
@@ -509,6 +513,10 @@ class LicenseIndex(object):
                     matches.extend(hash_matches)
                     continue
 
+                # FIXME: why do not we aho match again here? This would avoid
+                # going into the costly set and seq re-match that may not be needed at all
+                # alternatively we should consider aho matches to excludes them from candidates
+
                 # query run match proper using sequence matching
                 #########################################
                 if TRACE: logger_debug('  #match: Query run MATCHING proper....')
@@ -516,16 +524,14 @@ class LicenseIndex(object):
                 run_matches = []
                 candidates = match_set.compute_candidates(query_run, self, rules_subset=rules_subset, top=40)
 
-                if TRACE_QUERY_RUN: logger_debug('      #match: query_run: number of candidates for seq match #', len(candidates))
+                if TRACE: logger_debug('      #match: query_run: number of candidates for seq match #', len(candidates))
 
                 for candidate_num, candidate in enumerate(candidates):
-                    if TRACE_QUERY_RUN: 
-                        can1, can2 =candidate
-                        logger_debug('         #match: query_run: seq matching candidate#:', candidate_num, 'candidate:', can1)
+                    if TRACE: logger_debug('         #match: query_run: seq matching candidate#:', candidate_num, 'candidate:', candidate[0], candidate[1])
                     start_offset = 0
                     while True:
                         rule_matches = match_seq.match_sequence(self, candidate, query_run, start_offset=start_offset)
-                        if TRACE_QUERY_RUN and rule_matches: self.debug_matches(rule_matches, '           #match: query_run: seq matches for candidate')
+                        if TRACE and rule_matches: self.debug_matches(rule_matches, '           #match: query_run: seq matches for candidate')
                         if not rule_matches:
                             break
                         else:
