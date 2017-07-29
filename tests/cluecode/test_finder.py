@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -30,6 +31,7 @@ import os
 from commoncode.testcase import FileBasedTesting
 
 from cluecode import finder
+from unittest.case import expectedFailure
 
 
 def find_emails_tester(lines_or_location, with_lineno=False, unique=True):
@@ -130,6 +132,33 @@ class TestEmail(FileBasedTesting):
         lines = ['user@me.com', 'user2@me.com']
         expected = [('user@me.com', 1), ('user2@me.com', 2)]
         result = find_emails_tester(lines, with_lineno=True)
+        assert expected == result
+
+    def test_find_emails_does_not_return_junk(self):
+        lines = '''
+            (akpm@linux-foundation.org) serves as a maintainer of last resort.
+            of your patch set.  linux-kernel@vger.kernel.org functions as a list of
+            Linux kernel.  His e-mail address is <torvalds@linux-foundation.org>.
+            to security@kernel.org.  For severe bugs, a short embargo may be considered
+              Cc: stable@vger.kernel.org
+            linux-api@vger.kernel.org.
+            trivial@kernel.org which collects "trivial" patches. Have a look
+                Signed-off-by: Random J Developer <random@developer.example.org>
+                Signed-off-by: Random J Developer <random@developer.example.org>
+                [lucky@maintainer.example.org: struct foo moved from foo.c to foo.h]
+                Signed-off-by: Lucky K Maintainer <lucky@maintainer.example.org>
+                    From: Original Author <author@example.com>
+        '''.splitlines(False)
+        expected = [
+            u'akpm@linux-foundation.org',
+            u'linux-kernel@vger.kernel.org',
+            u'torvalds@linux-foundation.org',
+            u'security@kernel.org',
+            u'stable@vger.kernel.org',
+            u'linux-api@vger.kernel.org',
+            u'trivial@kernel.org'
+        ]
+        result = find_emails_tester(lines, with_lineno=False)
         assert expected == result
 
 
@@ -257,7 +286,9 @@ class TestUrl(FileBasedTesting):
             'http://169.254.0.0',
             'http://172.16.0.0',
             'http://172.31.255.255',
-            'http://172.32.120.155'
+            'http://172.32.120.155',
+            'http://localhost',
+            'http://fc00:ffff:ffff:ffff::',
         ]
         expected = [u'http://172.32.120.155/']
         result = find_urls_tester(lines)
@@ -487,6 +518,150 @@ class TestUrl(FileBasedTesting):
         expected = ['git@github.com:christophercantu/pipeline.git']
         result = find_urls_tester(lines)
         assert expected == result
+
+    def test_misc_valid_urls(self):
+        # set of good URLs from https://mathiasbynens.be/demo/url-regex
+        urls = u'''
+            http://foo.com/blah_blah
+            http://foo.com/blah_blah/
+            http://142.42.1.1/
+            http://142.42.1.1:8080/
+            http://code.google.com/events/#&product=browser
+            ftp://foo.bar/baz
+            http://foo.bar/?q=Test%20URL-encoded%20stuff
+        '''
+        for test in (u.strip() for u in urls.splitlines(False) if u.strip()):
+            result = [val for val, _ln in finder.find_urls([test])]
+            assert [test] == result
+
+    def test_misc_valid_urls_with_trailing_slash(self):
+        # set of good URLs from https://mathiasbynens.be/demo/url-regex
+        # for these, we detect but report a canonical form with a trailing slash
+        urls = u'''
+            http://a.b-c.de
+            http://j.mp
+            http://1337.net
+            http://223.255.255.254
+        '''
+        for test in (u.strip() for u in urls.splitlines(False) if u.strip()):
+            result = [val for val, _ln in finder.find_urls([test])]
+            assert [test + u'/'] == result
+
+    @expectedFailure
+    def test_misc_valid_unicode_or_punycode_urls_that_should_pass(self):
+        # At least per this set of non URLs from https://mathiasbynens.be/demo/url-regex
+        urls = u'''
+            http://foo.com/unicode_(✪)_in_parens
+            http://✪df.ws/123
+            http://➡.ws/䨹
+            http://⌘.ws
+            http://⌘.ws/
+            http://☺.damowmow.com/
+            http://مثال.إختبار
+            http://例子.测试
+            http://उदाहरण.परीक्षा
+        '''
+        for test in (u.strip() for u in urls.splitlines(False) if u.strip()):
+            result = [val for val, _ln in finder.find_urls([test])]
+            assert [test] == result
+
+    @expectedFailure
+    def test_misc_valid_urls_that_should_pass(self):
+        # At least per this set of non URLs from https://mathiasbynens.be/demo/url-regex
+        urls = u'''
+            http://foo.com/blah_blah_(wikipedia)
+            http://foo.com/blah_blah_(wikipedia)_(again)
+            http://www.example.com/wpstyle/?p=364
+            https://www.example.com/foo/?bar=baz&inga=42&quux
+            http://userid:password@example.com:8080
+            http://userid:password@example.com:8080/
+            http://userid@example.com
+            http://userid@example.com/
+            http://userid@example.com:8080
+            http://userid@example.com:8080/
+            http://userid:password@example.com
+            http://userid:password@example.com/
+            http://foo.com/blah_(wikipedia)#cite-1
+            http://foo.com/blah_(wikipedia)_blah#cite-1
+            http://foo.com/(something)?after=parens
+            http://-.~_!$&'()*+,;=:%40:80%2f::::::@example.com
+        '''
+        for test in (u.strip() for u in urls.splitlines(False) if u.strip()):
+            result = [val for val, _ln in finder.find_urls([test])]
+            assert [test] == result
+
+    def test_misc_invalid_urls(self):
+        # set of non URLs from https://mathiasbynens.be/demo/url-regex
+        urls = u'''
+            http://
+            http://.
+            http://..
+            http://../
+            http://?
+            http://??
+            http://??/
+            http://#
+            http://##
+            http://##/
+            //
+            //a
+            ///a
+            ///
+            http:///a
+            foo.com
+            rdar://1234
+            h://test
+            http:// shouldfail.com
+            :// should fail
+            http://-error-.invalid/
+            http://-a.b.co
+            http://0.0.0.0
+            http://10.1.1.0
+            http://10.1.1.255
+            http://224.1.1.1
+            http://1.1.1.1.1
+            http://3628126748
+            http://10.1.1.1
+        '''
+        for test in (u.strip() for u in urls.splitlines(False) if u and u.strip()):
+            result = [val for val, _ln in finder.find_urls([test])]
+            assert not result, test
+
+    @expectedFailure
+    def test_misc_invalid_urls_that_crash(self):
+        # set of non URLs from https://mathiasbynens.be/demo/url-regex
+        urls = u'''
+            http://.www.foo.bar/
+            http://.www.foo.bar./
+        '''
+        for test in (u.strip() for u in urls.splitlines(False) if u.strip()):
+            result = [val for val, _ln in finder.find_urls([test])]
+            assert ([test] == result or [test + u'/'] == result)
+
+    def test_misc_invalid_urls_that_are_still_detected_and_may_not_be_really_invalid(self):
+        # set of non URLs from https://mathiasbynens.be/demo/url-regex
+        urls = u'''
+            ftps://foo.bar/
+            http://a.b--c.de/
+            http://a.b-.co
+            http://123.123.123
+            http://www.foo.bar./
+        '''
+        for test in (u.strip() for u in urls.splitlines(False) if u.strip()):
+            result = [val for val, _ln in finder.find_urls([test])]
+            assert ([test] == result or [test + u'/'] == result)
+
+    def test_misc_invalid_urls_that_should_not_be_detected(self):
+        # At least per this set of non URLs from https://mathiasbynens.be/demo/url-regex
+        urls = u'''
+            http://foo.bar?q=Spaces should be encoded
+            http://foo.bar/foo(bar)baz quux
+            ftps://foo.bar/
+            http://a.b--c.de/
+        '''
+        for test in (u.strip() for u in urls.splitlines(False) if u.strip()):
+            result = [val for val, _ln in finder.find_urls([test])]
+            assert result, test
 
 
 class TestSearch(FileBasedTesting):
