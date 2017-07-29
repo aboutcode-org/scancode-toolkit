@@ -1012,6 +1012,22 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         match = matches[0]
         assert 99 < match.score() < 100
 
+    def test_match_texts_with_short_lgpl_and_gpl_notices(self):
+        idx = cache.get_index()
+        test_loc = self.get_test_loc('detect/short_l_and_gpls')
+        matches = idx.match(location=test_loc)
+        assert 6 == len(matches)
+        results = [m.matched_text(whole_lines=False) for m in matches]
+        expected =[
+            'GNU General Public License (GPL',
+            'GNU Lesser General Public License (LGPL',
+            'GNU General Public License (GPL',
+            'GNU Lesser General Public (LGPL',
+            'GNU Lesser General Public (LGPL',
+            'GNU Lesser General Public (LGPL'
+            ]
+        assert expected == results
+
 
 class TestMatchBinariesWithFullIndex(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
