@@ -1004,6 +1004,14 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         ]
         self.check_position('positions/automake.pl', expected)
 
+    def test_score_is_not_100_for_exact_match_with_extra_words(self):
+        idx = cache.get_index()
+        test_loc = self.get_test_loc('detect/score/test.txt')
+        matches = idx.match(location=test_loc)
+        assert 1 == len(matches)
+        match = matches[0]
+        assert 99 < match.score() < 100
+
 
 class TestMatchBinariesWithFullIndex(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
