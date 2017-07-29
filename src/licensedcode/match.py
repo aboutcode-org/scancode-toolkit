@@ -902,7 +902,7 @@ def filter_false_positive_matches(matches):
     return kept, discarded
 
 
-def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST, filter_false_positive=True):
+def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST, filter_false_positive=True, merge=True):
     """
     Return two sequences of matches: one contains refined good matches, and the
     other contains matches that were filtered out.
