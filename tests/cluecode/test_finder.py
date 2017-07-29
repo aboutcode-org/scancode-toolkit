@@ -286,7 +286,9 @@ class TestUrl(FileBasedTesting):
             'http://169.254.0.0',
             'http://172.16.0.0',
             'http://172.31.255.255',
-            'http://172.32.120.155'
+            'http://172.32.120.155',
+            'http://localhost',
+            'http://fc00:ffff:ffff:ffff::',
         ]
         expected = [u'http://172.32.120.155/']
         result = find_urls_tester(lines)
