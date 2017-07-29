@@ -483,12 +483,13 @@ def junk_url_hosts_filter(matches):
     for key, match, line, lineno in matches:
         if is_filterable(match):
             host, domain = url_host_domain(match)
-            if not   is_good_host(host):
+            if not is_good_host(host):
                 if DEBUG:
                     print('junk_url_hosts_filter: '
                           '!is_good_host:%(host)r): %(match)r' % locals())
                 continue
-            elif not is_good_host(domain) and not is_ip(host):
+
+            if not is_good_host(domain) and not is_ip(host):
                 if DEBUG:
                     print('junk_url_hosts_filter: ''!is_good_host:%(domain)r '
                           'and !is_ip:%(host)r: %(match)r' % locals())
