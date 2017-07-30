@@ -10007,6 +10007,8 @@ lisp
 clisp
 clos
 SAVEINITMEM
+datatables
+datatable
 '''
 
 
