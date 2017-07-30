@@ -231,11 +231,44 @@ class ScanCommand(BaseCommand):
     short_usage_help = '''
 Try 'scancode --help' for help on options and arguments.'''
 
-    def get_params(self, ctx):
-        """
-        Add options returned by plugins to the params list
-        """
-        return super(BaseCommand, self).get_params(ctx)
+    def format_options(self, ctx, formatter):
+        """Writes all the option groups into the formatter if they exist."""
+        opts = OrderedDict([
+            ('scans', []),
+            ('output', []),
+            ('pre-scan', []),
+            ('post-scan', []),
+            ('misc', []),
+            ('core', []),
+        ])
+
+        for param in self.get_params(ctx):
+            rv = param.get_help_record(ctx)
+            if rv is not None:
+                if hasattr(param, 'group'):
+                    opts[param.group].append(rv)
+                else:
+                    opts['core'].append(rv)
+
+        with formatter.section('Options'):
+            for group, opt in opts.items():
+                if opt:
+                    with formatter.section(group):
+                        formatter.write_dl(opt)
+
+class ScanOption(click.Option):
+
+    def __init__(self, param_decls=None, show_default=False,
+                 prompt=False, confirmation_prompt=False,
+                 hide_input=False, is_flag=None, flag_value=None,
+                 multiple=False, count=False, allow_from_autoenv=True,
+                 type=None, help=None, group='General', **attrs):
+        super(ScanOption, self).__init__(param_decls, show_default,
+                     prompt, confirmation_prompt,
+                     hide_input, is_flag, flag_value,
+                     multiple, count, allow_from_autoenv, type, help, **attrs)
+        self.group = group
+
 
 
 def validate_formats(ctx, param, value):
@@ -273,47 +306,47 @@ def validate_exclusive(ctx, exclusive_options):
 
 # Note that click's 'default' option is set to 'false' here despite these being documented to be enabled by default in
 # order to more elegantly enable all of these (see code below) if *none* of the command line options are specified.
-@click.option('-c', '--copyright', is_flag=True, default=False, help='Scan <input> for copyrights. [default]')
-@click.option('-l', '--license', is_flag=True, default=False, help='Scan <input> for licenses. [default]')
-@click.option('-p', '--package', is_flag=True, default=False, help='Scan <input> for packages. [default]')
+@click.option('-c', '--copyright', is_flag=True, default=False, help='Scan <input> for copyrights. [default]', group='scans', cls=ScanOption)
+@click.option('-l', '--license', is_flag=True, default=False, help='Scan <input> for licenses. [default]', group='scans', cls=ScanOption)
+@click.option('-p', '--package', is_flag=True, default=False, help='Scan <input> for packages. [default]', group='scans', cls=ScanOption)
 
-@click.option('-e', '--email', is_flag=True, default=False, help='Scan <input> for emails.')
-@click.option('-u', '--url', is_flag=True, default=False, help='Scan <input> for urls.')
-@click.option('-i', '--info', is_flag=True, default=False, help='Include information such as size, type, etc.')
+@click.option('-e', '--email', is_flag=True, default=False, help='Scan <input> for emails.', group='scans', cls=ScanOption)
+@click.option('-u', '--url', is_flag=True, default=False, help='Scan <input> for urls.', group='scans', cls=ScanOption)
+@click.option('-i', '--info', is_flag=True, default=False, help='Include information such as size, type, etc.', group='scans', cls=ScanOption)
 
 @click.option('--license-score', is_flag=False, default=0, type=int, show_default=True,
-              help='Do not return license matches with scores lower than this score. A number between 0 and 100.')
+              help='Do not return license matches with scores lower than this score. A number between 0 and 100.', group='scans', cls=ScanOption)
 @click.option('--license-text', is_flag=True, default=False,
-              help='Include the detected licenses matched text. Has no effect unless --license is requested.')
+              help='Include the detected licenses matched text. Has no effect unless --license is requested.', group='scans', cls=ScanOption)
 @click.option('--only-findings', is_flag=True, default=False,
-              help='Only return files or directories with findings for the requested scans. Files without findings are omitted.')
+              help='Only return files or directories with findings for the requested scans. Files without findings are omitted.', group='output', cls=ScanOption)
 @click.option('--strip-root', is_flag=True, default=False,
               help='Strip the root directory segment of all paths. The default is to always '
                    'include the last directory segment of the scanned path such that all paths have a common root directory. '
-                   'This cannot be combined with `--full-root` option.')
+                   'This cannot be combined with `--full-root` option.', group='output', cls=ScanOption)
 @click.option('--full-root', is_flag=True, default=False,
               help='Report full, absolute paths. The default is to always '
                    'include the last directory segment of the scanned path such that all paths have a common root directory. '
-                   'This cannot be combined with the `--strip-root` option.')
+                   'This cannot be combined with the `--strip-root` option.', group='output', cls=ScanOption)
 
 @click.option('-f', '--format', is_flag=False, default='json', show_default=True, metavar='<format>',
               help=('Set <output_file> format to one of: %s or use <format> '
                     'as the path to a custom template file' % ', '.join(plugincode.output.get_format_plugins())),
-                     callback=validate_formats)
+                     callback=validate_formats, group='output', cls=ScanOption)
 @click.option('--ignore', default=None, multiple=True, metavar='<pattern>',
-              help=('Ignore files matching <pattern>.'))
-@click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.')
-@click.option('--quiet', is_flag=True, default=False, help='Do not print summary or progress messages.')
-@click.option('-n', '--processes', is_flag=False, default=1, type=int, show_default=True, help='Scan <input> using n parallel processes.')
+              help=('Ignore files matching <pattern>.'), group='pre-scan', cls=ScanOption)
+@click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.', group='output', cls=ScanOption)
+@click.option('--quiet', is_flag=True, default=False, help='Do not print summary or progress messages.', group='output', cls=ScanOption)
+@click.option('-n', '--processes', is_flag=False, default=1, type=int, show_default=True, help='Scan <input> using n parallel processes.', group='core', cls=ScanOption)
 
 @click.help_option('-h', '--help')
-@click.option('--examples', is_flag=True, is_eager=True, callback=print_examples, help=('Show command examples and exit.'))
-@click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.')
-@click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
+@click.option('--examples', is_flag=True, is_eager=True, callback=print_examples, help=('Show command examples and exit.'), group='core', cls=ScanOption)
+@click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.', group='core', cls=ScanOption)
+@click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.', group='core', cls=ScanOption)
 
-@click.option('--diag', is_flag=True, default=False, help='Include additional diagnostic information such as error messages or result details.')
-@click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=float, show_default=True, help='Stop scanning a file if scanning takes longer than a timeout in seconds.')
-@click.option('--reindex-licenses', is_flag=True, default=False, is_eager=True, callback=reindex_licenses, help='Force a check and possible reindexing of the cached license index.')
+@click.option('--diag', is_flag=True, default=False, help='Include additional diagnostic information such as error messages or result details.', group='core', cls=ScanOption)
+@click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=float, show_default=True, help='Stop scanning a file if scanning takes longer than a timeout in seconds.', group='core', cls=ScanOption)
+@click.option('--reindex-licenses', is_flag=True, default=False, is_eager=True, callback=reindex_licenses, help='Force a check and possible reindexing of the cached license index.', group='misc', cls=ScanOption)
 
 def scancode(ctx,
              input, output_file,
