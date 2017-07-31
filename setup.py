@@ -180,7 +180,7 @@ setup(
         'MarkupSafe >= 0.23',
         'colorama',
         'simplejson',
-        'spdx-tools >= 0.5.1',
+        'spdx-tools >= 0.5.4',
 
         # packagedcode
         'requests >= 2.7.0, < 3.0.0',

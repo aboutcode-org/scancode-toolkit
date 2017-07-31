@@ -1,6 +1,6 @@
-about_resource: spdx_tools-0.5.3-py2.py3-none-any.whl
-version: 0.5.3
-download_url: https://pypi.python.org/packages/c5/9f/bdf686b4d323a97a4cb920eba345dbb266d9d23d64322950d4cb59043c96/spdx_tools-0.5.3-py2.py3-none-any.whl#md5=320a448d7384e27bb2f2cc89482a55fb
+about_resource: spdx_tools-0.5.4-py2.py3-none-any.whl
+version: 0.5.4
+download_url:  https://pypi.python.org/packages/ed/55/489f189b0516bf70be3830572331da3311ef8713e476af40dccb6ee11b1d/spdx_tools-0.5.4-py2.py3-none-any.whl
 
 name: spdx-tools
 home_url: https://github.com/spdx/tools-python
