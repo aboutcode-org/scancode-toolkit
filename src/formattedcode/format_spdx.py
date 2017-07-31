@@ -81,10 +81,13 @@ def write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=T
     doc.creation_info.add_creator(Tool('ScanCode ' + version))
     doc.creation_info.set_created_now()
 
-    doc.package = Package(os.path.basename(input_path), NoAssert())
+    package = doc.package = Package(
+        name=os.path.basename(input_path),
+        download_location=NoAssert()
+    )
 
     # Use a set of unique copyrights for the package.
-    doc.package.cr_text = set()
+    package.cr_text = set()
 
     all_files_have_no_license = True
     all_files_have_no_copyright = True
@@ -114,6 +117,7 @@ def write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=T
             for file_license in file_licenses:
                 spdx_id = file_license.get('spdx_license_key')
                 if spdx_id:
+                    # spdx_id = spdx_id.rstrip('+')
                     spdx_license = License.from_identifier(spdx_id)
                 else:
                     license_key = file_license.get('key')
@@ -133,7 +137,7 @@ def write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=T
                 # Add licenses in the order they appear in the file. Maintaining the order
                 # might be useful for provenance purposes.
                 file_entry.add_lics(spdx_license)
-                doc.package.add_lics_from_file(spdx_license)
+                package.add_lics_from_file(spdx_license)
 
         elif file_licenses is None:
             all_files_have_no_license = False
@@ -151,7 +155,7 @@ def write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=T
             for file_copyright in file_copyrights:
                 file_entry.copyright.extend(file_copyright.get('statements'))
 
-            doc.package.cr_text.update(file_entry.copyright)
+            package.cr_text.update(file_entry.copyright)
 
             # Create a text of copyright statements in the order they appear in the file.
             # Maintaining the order might be useful for provenance purposes.
@@ -165,50 +169,57 @@ def write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=T
             file_entry.copyright = SPDXNone()
 
 
-        doc.package.add_file(file_entry)
+        package.add_file(file_entry)
 
-    if len(doc.package.files) == 0:
+    if len(package.files) == 0:
         if as_tagvalue:
-            output_file.write("# No results for package '{}'.\n".format(doc.package.name))
+            output_file.write("# No results for package '{}'.\n".format(package.name))
         else:
-            output_file.write("<!-- No results for package '{}'. -->\n".format(doc.package.name))
+            output_file.write("<!-- No results for package '{}'. -->\n".format(package.name))
 
     # Remove duplicate licenses from the list for the package.
-    unique_licenses = set(doc.package.licenses_from_files)
-    if not len(doc.package.licenses_from_files):
+    unique_licenses = set(package.licenses_from_files)
+    if not len(package.licenses_from_files):
         if all_files_have_no_license:
-            doc.package.licenses_from_files = [SPDXNone()]
+            package.licenses_from_files = [SPDXNone()]
         else:
-            doc.package.licenses_from_files = [NoAssert()]
+            package.licenses_from_files = [NoAssert()]
     else:
         # List license identifiers alphabetically for the package.
-        doc.package.licenses_from_files = sorted(unique_licenses, key=lambda x: x.identifier)
+        package.licenses_from_files = sorted(unique_licenses, key=lambda x: x.identifier)
 
-    if len(doc.package.cr_text) == 0:
+    if len(package.cr_text) == 0:
         if all_files_have_no_copyright:
-            doc.package.cr_text = SPDXNone()
+            package.cr_text = SPDXNone()
         else:
-            doc.package.cr_text = NoAssert()
+            package.cr_text = NoAssert()
     else:
         # Create a text of alphabetically sorted copyright
         # statements for the package.
-        doc.package.cr_text = '\n'.join(sorted(doc.package.cr_text)) + '\n'
+        package.cr_text = '\n'.join(sorted(package.cr_text)) + '\n'
 
-    doc.package.verif_code = doc.package.calc_verif_code()
-    doc.package.license_declared = NoAssert()
-    doc.package.conc_lics = NoAssert()
+    package.verif_code = doc.package.calc_verif_code()
+    package.license_declared = NoAssert()
+    package.conc_lics = NoAssert()
 
     if as_tagvalue:
         from spdx.writers.tagvalue import write_document
     else:
         from spdx.writers.rdf import write_document
 
-    # As the spdx-tools package can only write the document to a
-    # "str" file but ScanCode provides a "unicode" file, write to a
-    # "str" buffer first and then manually write the value to a
-    # "unicode" file.
+    # The spdx-tools write_document returns either:
+    # - unicode for tag values
+    # - UTF8-encoded bytes for rdf because somehow the rd and xml
+    #   libraries do the encoding
+    # The file passed by ScanCode for output is alwasy opened in binary
+    # mode and needs to receive UTF8-encoded bytes.
+    # Therefore in one case we do nothing (rdf) and in the other case we
+    # encode to UTF8 bytes.
+
     from StringIO import StringIO
-    str_buffer = StringIO()
-    write_document(doc, str_buffer, validate=True)
-    as_unicode = str_buffer.getvalue().decode('utf-8')
-    output_file.write(as_unicode)
+    spdx_output = StringIO()
+    write_document(doc, spdx_output, validate=True)
+    result = spdx_output.getvalue()
+    if as_tagvalue:
+        result = result.encode('utf-8')
+    output_file.write(result)
