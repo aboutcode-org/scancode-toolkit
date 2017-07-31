@@ -35,6 +35,7 @@ import xmltodict
 
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
+from scancode.cli_test_utils import run_scan_plain
 
 
 test_env = FileDrivenTesting()
@@ -246,3 +247,54 @@ def test_spdx_rdf_tree():
     result = run_scan_click(['--format', 'spdx-rdf', test_dir, result_file])
     assert result.exit_code == 0
     check_rdf_scan(expected_file, result_file)
+
+
+def test_spdx_tv_with_unicode_license_text_does_not_fail():
+    test_file = test_env.get_test_loc('spdx/unicode/et131x.h')
+    result_file = test_env.get_temp_file('tv')
+    expected_file = test_env.get_test_loc('spdx/unicode/expected.tv')
+    rc, stdout, stderr = run_scan_plain([
+        '--license', '--copyright', '--info',
+        '--format', 'spdx-tv', '--strip-root', '--license-text',
+        '--diag',
+         test_file, result_file
+    ])
+    if rc != 0:
+        print('stdout', stdout)
+        print('stderr', stderr)
+    assert rc == 0
+    check_tv_scan(expected_file, result_file, regen=False)
+
+
+def test_spdx_rdf_with_unicode_license_text_does_not_fail():
+    test_file = test_env.get_test_loc('spdx/unicode/et131x.h')
+    result_file = test_env.get_temp_file('rdf')
+    expected_file = test_env.get_test_loc('spdx/unicode/expected.rdf')
+    rc, stdout, stderr = run_scan_plain([
+        '--license', '--copyright', '--info',
+        '--format', 'spdx-rdf', '--strip-root', '--license-text',
+        '--diag',
+         test_file, result_file
+    ])
+    if rc != 0:
+        print('stdout', stdout)
+        print('stderr', stderr)
+    assert rc == 0
+    check_rdf_scan(expected_file, result_file, regen=False)
+
+
+def test_spdx_rdf_with_or_later_license_does_not_fail():
+    test_file = test_env.get_test_loc('spdx/or_later/test.java')
+    result_file = test_env.get_temp_file('rdf')
+    expected_file = test_env.get_test_loc('spdx/or_later/expected.rdf')
+    rc, stdout, stderr = run_scan_plain([
+        '--license', '--copyright', '--info',
+        '--format', 'spdx-rdf', '--strip-root', '--license-text',
+        '--diag',
+         test_file, result_file
+    ])
+    if rc != 0:
+        print('stdout', stdout)
+        print('stderr', stderr)
+    assert rc == 0
+    check_rdf_scan(expected_file, result_file, regen=False)
