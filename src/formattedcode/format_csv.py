@@ -62,8 +62,6 @@ def write_csv(scanned_files, output_file, *args, **kwargs):
     for key_group in headers.values():
         ordered_headers.extend(key_group)
 
-    print(output_file)
-    print(type(output_file))
     w = unicodecsv.DictWriter(output_file, ordered_headers)
     w.writeheader()
 
