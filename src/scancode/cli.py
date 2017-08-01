@@ -232,7 +232,10 @@ class ScanCommand(BaseCommand):
 Try 'scancode --help' for help on options and arguments.'''
 
     def format_options(self, ctx, formatter):
-        """Writes all the option groups into the formatter if they exist."""
+        """
+        Write all options into the formatter in groups they belong to.
+        If a group is not defined, add the option to `misc` group
+        """
         groups = OrderedDict([
             ('scans', []),
             ('output', []),
@@ -244,7 +247,7 @@ Try 'scancode --help' for help on options and arguments.'''
 
         for param in self.get_params(ctx):
             help_record = param.get_help_record(ctx)
-            if help_record is not None:
+            if help_record:
                 if hasattr(param, 'group') and param.group:
                     groups[param.group].append(help_record)
                 else:
@@ -257,8 +260,10 @@ Try 'scancode --help' for help on options and arguments.'''
                         formatter.write_dl(option)
 
 class ScanOption(click.Option):
-    """Allows an extra param `group` to be set which can be used
-    to determine to which group the option belongs"""
+    """
+    Allow an extra param `group` to be set which can be used
+    to determine to which group the option belongs.
+    """
 
     def __init__(self, param_decls=None, show_default=False,
                  prompt=False, confirmation_prompt=False,

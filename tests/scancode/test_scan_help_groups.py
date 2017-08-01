@@ -26,17 +26,21 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from unittest import TestCase
+from os import path
 
 import click
 click.disable_unicode_literals_warning = True
 from click.testing import CliRunner
 
+from commoncode.testcase import FileBasedTesting
 from scancode.cli import ScanCommand
 from scancode.cli import ScanOption
+from scancode.cli_test_utils import run_scan_click
 
 
-class TestHelpGroups(TestCase):
+class TestHelpGroups(FileBasedTesting):
+
+    test_data_dir = path.join(path.dirname(__file__), 'data')
 
     def test_scan_help_without_custom_class(self):
         @click.command(name='scan', cls=ScanCommand)
@@ -67,3 +71,8 @@ class TestHelpGroups(TestCase):
         runner = CliRunner()
         result = runner.invoke(scan, ['--help'])
         assert 'core:\n    --opt  Help text for option\n' in result.output
+
+    def test_scan_cli_help(self):
+        test_file = self.get_test_loc('help/help.txt')
+        result = run_scan_click(['--help'])
+        assert open(test_file).read() == result.output
