@@ -233,7 +233,7 @@ Try 'scancode --help' for help on options and arguments.'''
 
     def format_options(self, ctx, formatter):
         """Writes all the option groups into the formatter if they exist."""
-        opts = OrderedDict([
+        groups = OrderedDict([
             ('scans', []),
             ('output', []),
             ('pre-scan', []),
@@ -243,26 +243,28 @@ Try 'scancode --help' for help on options and arguments.'''
         ])
 
         for param in self.get_params(ctx):
-            rv = param.get_help_record(ctx)
-            if rv is not None:
-                if hasattr(param, 'group'):
-                    opts[param.group].append(rv)
+            help_record = param.get_help_record(ctx)
+            if help_record is not None:
+                if hasattr(param, 'group') and param.group:
+                    groups[param.group].append(help_record)
                 else:
-                    opts['core'].append(rv)
+                    groups['misc'].append(help_record)
 
         with formatter.section('Options'):
-            for group, opt in opts.items():
-                if opt:
+            for group, option in groups.items():
+                if option:
                     with formatter.section(group):
-                        formatter.write_dl(opt)
+                        formatter.write_dl(option)
 
 class ScanOption(click.Option):
+    """Allows an extra param `group` to be set which can be used
+    to determine to which group the option belongs"""
 
     def __init__(self, param_decls=None, show_default=False,
                  prompt=False, confirmation_prompt=False,
                  hide_input=False, is_flag=None, flag_value=None,
                  multiple=False, count=False, allow_from_autoenv=True,
-                 type=None, help=None, group='General', **attrs):
+                 type=None, help=None, group=None, **attrs):
         super(ScanOption, self).__init__(param_decls, show_default,
                      prompt, confirmation_prompt,
                      hide_input, is_flag, flag_value,
@@ -337,9 +339,9 @@ def validate_exclusive(ctx, exclusive_options):
               help=('Ignore files matching <pattern>.'), group='pre-scan', cls=ScanOption)
 @click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.', group='output', cls=ScanOption)
 @click.option('--quiet', is_flag=True, default=False, help='Do not print summary or progress messages.', group='output', cls=ScanOption)
-@click.option('-n', '--processes', is_flag=False, default=1, type=int, show_default=True, help='Scan <input> using n parallel processes.', group='core', cls=ScanOption)
 
-@click.help_option('-h', '--help')
+@click.help_option('-h', '--help', group='core', cls=ScanOption)
+@click.option('-n', '--processes', is_flag=False, default=1, type=int, show_default=True, help='Scan <input> using n parallel processes.', group='core', cls=ScanOption)
 @click.option('--examples', is_flag=True, is_eager=True, callback=print_examples, help=('Show command examples and exit.'), group='core', cls=ScanOption)
 @click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.', group='core', cls=ScanOption)
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.', group='core', cls=ScanOption)
