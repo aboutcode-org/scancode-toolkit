@@ -64,6 +64,7 @@ is_link = lambda l: get_type(l).is_link
 is_broken_link = lambda l: get_type(l).is_broken_link
 size = lambda l: get_type(l).size
 contains_text = lambda l: get_type(l).contains_text
+is_data = lambda l: get_type(l).is_data
 
 
 class TestContentType(FileBasedTesting):
@@ -1093,3 +1094,7 @@ class TestContentType(FileBasedTesting):
         assert 'data' == get_filetype_file(test_file)
         assert 'application/octet-stream' == get_mimetype_file(test_file)
         assert is_binary(test_file)
+
+    def test_large_text_file_is_data(self):
+        test_file = self.get_test_loc('contenttype/data/nulls.txt')
+        assert is_data(test_file)
