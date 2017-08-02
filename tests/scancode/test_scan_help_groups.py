@@ -73,6 +73,6 @@ class TestHelpGroups(FileBasedTesting):
         assert 'core:\n    --opt  Help text for option\n' in result.output
 
     def test_scan_cli_help(self):
-        test_file = self.get_test_loc('help/help.txt')
+        expected_file = self.get_test_loc('help/help.txt')
         result = run_scan_click(['--help'])
-        assert open(test_file).read() == result.output
+        assert open(expected_file).read() == result.output
