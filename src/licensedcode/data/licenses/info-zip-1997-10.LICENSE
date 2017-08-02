@@ -1,7 +1,7 @@
-__________________________________________________________________________
+ 
 
   This is the Info-ZIP file COPYING (for UnZip), last updated 5 Oct 97.
-__________________________________________________________________________
+ 
 
    There are currently six explicit copyrights on portions of UnZip
    code (at least, of which Info-ZIP is aware):  the original Sam Smith
@@ -27,7 +27,7 @@ __________________________________________________________________________
    responsibility of the user to make his or her peace with Unisys and
    its licensing requirements.  (unshrink.c may be removed from future
    releases altogether.)
-__________________________________________________________________________
+ 
 
    The original unzip source code has been extensively modified and
    almost entirely rewritten (changes include random zipfile access
@@ -211,5 +211,5 @@ __________________________________________________________________________
       you might want to look at zlib instead; it has fewer restrictions
       on commercial use.  See http://www.cdrom.com/pub/infozip/zlib/ .
 
-__________________________________________________________________________
+ 
 
