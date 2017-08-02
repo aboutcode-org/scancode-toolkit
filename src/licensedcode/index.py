@@ -62,6 +62,7 @@ modules that implement a matching strategy.
 # Tracing flags
 TRACE = False
 
+TRACE_CANDIDATES = False
 TRACE_QUERY_RUN = False
 TRACE_QUERY_RUN_SIMPLE = False
 
@@ -399,9 +400,12 @@ class LicenseIndex(object):
 
         self.optimized = True
 
-    def debug_matches(self, matches, message, location=None, query_string=None, with_text=False):
+    def debug_matches(self, matches, message, location=None, query_string=None, with_text=False, query=None):
         if TRACE or TRACE_NEGATIVE:
             logger_debug(message + ':', len(matches))
+            if query:
+                # set line early to ease debugging
+                match.set_lines(matches, query.line_by_pos)
 
             if TRACE_MATCHES or TRACE_NEGATIVE:
                 map(logger_debug, matches)
@@ -411,10 +415,8 @@ class LicenseIndex(object):
                 for m in matches:
                     logger_debug(m)
                     qt, it = match.get_texts(m, location, query_string, self)
-                    print('  MATCHED QUERY TEXT')
-                    print(qt)
-                    print('  MATCHED RULE TEXT')
-                    print(it)
+                    print('  MATCHED QUERY TEXT:', qt)
+                    print('  MATCHED RULE TEXT:', it)
                     print()
 
     def match(self, location=None, query_string=None, min_score=0, detect_negative=True):
@@ -495,7 +497,7 @@ class LicenseIndex(object):
             for qrnum, query_run in enumerate(qry.query_runs, 1):
                 if TRACE_QUERY_RUN_SIMPLE:
                     logger_debug('#match: ===> processing query run #:', qrnum)
-                    logger_debug('  #match:', query_run)
+                    logger_debug('  #match:query_run:', query_run)
 
                 if not query_run.is_matchable(include_low=True):
                     if TRACE: logger_debug('#match: query_run NOT MATCHABLE')
@@ -516,16 +518,17 @@ class LicenseIndex(object):
                 run_matches = []
                 candidates = match_set.compute_candidates(query_run, self, rules_subset=rules_subset, top=40)
 
-                if TRACE_QUERY_RUN: logger_debug('      #match: query_run: number of candidates for seq match #', len(candidates))
+                if TRACE_CANDIDATES: logger_debug('      #match: query_run: number of candidates for seq match #', len(candidates))
 
                 for candidate_num, candidate in enumerate(candidates):
-                    if TRACE_QUERY_RUN: 
-                        can1, can2 =candidate
-                        logger_debug('         #match: query_run: seq matching candidate#:', candidate_num, 'candidate:', can1)
+                    if TRACE_QUERY_RUN:
+                        _, canrule, _ = candidate
+                        logger_debug('         #match: query_run: seq matching candidate#:', candidate_num, 'candidate:', canrule)
                     start_offset = 0
                     while True:
                         rule_matches = match_seq.match_sequence(self, candidate, query_run, start_offset=start_offset)
-                        if TRACE_QUERY_RUN and rule_matches: self.debug_matches(rule_matches, '           #match: query_run: seq matches for candidate')
+                        if TRACE_QUERY_RUN and rule_matches: 
+                            self.debug_matches(rule_matches, '           #match: query_run: seq matches for candidate', with_text=True, query=qry)
                         if not rule_matches:
                             break
                         else:
@@ -539,7 +542,7 @@ class LicenseIndex(object):
                                 break
 
                 ############################################################################
-                if TRACE_QUERY_RUN: self.debug_matches(run_matches, '    #match: ===> Query run matches', location, query_string, with_text=True)
+                if TRACE_QUERY_RUN: self.debug_matches(run_matches, '    #match: ===> Query run matches', location, query_string, with_text=True, query=qry)
 
                 run_matches = match.merge_matches(run_matches, max_dist=MAX_DIST)
                 matches.extend(run_matches)
@@ -561,7 +564,7 @@ class LicenseIndex(object):
             self.debug_matches(matches, '#match: FINAL MERGED', location, query_string)
             if TRACE_MATCHES_DISCARD: self.debug_matches(discarded, '#match: FINAL DISCARDED', location, query_string)
 
-        self.debug_matches(matches, '#match: FINAL MATCHES', location, query_string, with_text=True)
+        self.debug_matches(matches, '#match: FINAL MATCHES', location, query_string, with_text=True, query=qry)
 
         return matches
 
