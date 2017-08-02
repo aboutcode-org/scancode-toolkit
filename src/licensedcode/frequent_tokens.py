@@ -39,6 +39,7 @@ import itertools
 
 def frequent_global_words():
     return u'''
+_
 the
 of
 and
