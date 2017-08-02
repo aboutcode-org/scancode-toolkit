@@ -28,7 +28,6 @@ import logging
 import os
 import re
 
-import nltk
 
 import commoncode
 from textcode import analysis
@@ -963,8 +962,10 @@ class CopyrightDetector(object):
     Class to detect copyrights and authorship.
     """
     def __init__(self):
-        self.tagger = nltk.RegexpTagger(patterns)
-        self.chunker = nltk.RegexpParser(grammar, trace=COPYRIGHT_TRACE)
+        from nltk import RegexpTagger
+        from nltk import RegexpParser
+        self.tagger = RegexpTagger(patterns)
+        self.chunker = RegexpParser(grammar, trace=COPYRIGHT_TRACE)
 
     @staticmethod
     def as_str(node):
@@ -979,6 +980,7 @@ class CopyrightDetector(object):
         Return a sequence of tuples (copyrights, authors, years, holders)
         detected in a sequence of numbered line tuples.
         """
+        from nltk.tree import Tree 
         numbered_lines = list(numbered_lines)
         numbers = [n for n, _l in numbered_lines]
         start_line = min(numbers)
@@ -1008,8 +1010,6 @@ class CopyrightDetector(object):
         tree = self.chunker.parse(tagged_text)
         logger.debug('CopyrightDetector:parse tree: ' + str(tree))
 
-        # OPTIMIZED
-        nltk_tree_Tree = nltk.tree.Tree
         CopyrightDetector_as_str = CopyrightDetector.as_str
 
         def collect_year_and_holder(detected_copyright):
@@ -1018,7 +1018,7 @@ class CopyrightDetector(object):
             node collecting all years and holders.
             """
             for copyr in detected_copyright:
-                if isinstance(copyr, nltk_tree_Tree):
+                if isinstance(copyr, Tree):
                     # logger.debug('n: ' + str(copyr))
                     node_text = CopyrightDetector_as_str(copyr)
                     copyr_label = copyr.label()
@@ -1034,7 +1034,7 @@ class CopyrightDetector(object):
 
         # then walk the parse tree, collecting copyrights, years and authors
         for tree_node in tree:
-            if isinstance(tree_node, nltk_tree_Tree):
+            if isinstance(tree_node, Tree):
                 node_text = CopyrightDetector_as_str(tree_node)
                 tree_node_label = tree_node.label()
                 if 'COPYRIGHT' in tree_node_label:
