@@ -21,8 +21,6 @@ Options:
                              effect unless --license is requested.
 
   output:
-    --only-findings        Only return files or directories with findings for the
-                           requested scans. Files without findings are omitted.
     --strip-root           Strip the root directory segment of all paths. The
                            default is to always include the last directory segment
                            of the scanned path such that all paths have a common
@@ -40,6 +38,12 @@ Options:
 
   pre-scan:
     --ignore <pattern>  Ignore files matching <pattern>.
+
+  post-scan:
+    --mark-source    Set `is_source` to true for all packages with (>=90%) of
+                     source files.
+    --only-findings  Only return files or directories with findings for the
+                     requested scans. Files without findings are omitted.
 
   misc:
     --reindex-licenses  Force a check and possible reindexing of the cached

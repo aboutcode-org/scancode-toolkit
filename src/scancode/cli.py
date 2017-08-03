@@ -95,12 +95,6 @@ except NameError:
 plugincode.output.initialize()
 plugincode.post_scan.initialize()
 
-post_scan_plugins = plugincode.post_scan.get_post_scan_plugins()
-options = []
-for name, callback in post_scan_plugins.items():
-    option = click.Option(('--' + name,), is_flag=True, help=callback.__doc__.strip())
-    options.append(option)
-
 
 info_text = '''
 ScanCode scans code and other files for origin and license.
@@ -247,12 +241,23 @@ class ScanCommand(BaseCommand):
     short_usage_help = '''
 Try 'scancode --help' for help on options and arguments.'''
 
+    options = []
+
+    def __init__(self, name, context_settings=None, callback=None,
+                 params=None, help=None, epilog=None, short_help=None,
+                 options_metavar='[OPTIONS]', add_help_option=True):
+        super(ScanCommand, self).__init__(name, context_settings, callback,
+                 params, help, epilog, short_help, options_metavar, add_help_option)
+        for name, callback in plugincode.post_scan.get_post_scan_plugins().items():
+            option = ScanOption(('--' + name,), is_flag=True, help=callback.__doc__.strip(), group=POST_SCAN)
+            self.options.append(option)
+
     def get_params(self, ctx):
         """
-        Overridden from click.Command to return plugged in options as well as
+        Overridden from click.Command to return plugged in options in addtion to the
         hardcoded ones.
         """
-        return super(BaseCommand, self).get_params(ctx) + options
+        return super(BaseCommand, self).get_params(ctx) + self.options
 
     def format_options(self, ctx, formatter):
         """
@@ -472,7 +477,7 @@ def scancode(ctx,
         if not quiet:
             echo_stderr('Saving results.', fg='green')
 
-        for option, process in post_scan_plugins.items():
+        for option, process in plugincode.post_scan.get_post_scan_plugins().items():
             if kwargs[option.replace('-', '_')]:
                 options['--' + option] = True
                 results = process(scanners, results, options)

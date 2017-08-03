@@ -34,7 +34,7 @@ from scancode.api import get_file_infos
 @post_scan_impl
 def process_mark_source(scanners, results, options):
     """
-    Set `is_source` to true for all packages with (~90%) of source files
+    Set `is_source` to true for all packages with (>=90%) of source files.
     """
     if not options['--info']:
         return
@@ -47,7 +47,6 @@ def process_mark_source(scanners, results, options):
                     source_files_count += 1
             if files_count == 0:
                 continue
-            # Check if directory has >=90% of source files
             if source_files_count / files_count >= 0.9:
                 scanned_file['is_source'] = True
         yield scanned_file
