@@ -241,8 +241,6 @@ class ScanCommand(BaseCommand):
     short_usage_help = '''
 Try 'scancode --help' for help on options and arguments.'''
 
-    options = []
-
     def __init__(self, name, context_settings=None, callback=None,
                  params=None, help=None, epilog=None, short_help=None,
                  options_metavar='[OPTIONS]', add_help_option=True):
@@ -250,14 +248,7 @@ Try 'scancode --help' for help on options and arguments.'''
                  params, help, epilog, short_help, options_metavar, add_help_option)
         for name, callback in plugincode.post_scan.get_post_scan_plugins().items():
             option = ScanOption(('--' + name,), is_flag=True, help=callback.__doc__.strip(), group=POST_SCAN)
-            self.options.append(option)
-
-    def get_params(self, ctx):
-        """
-        Overridden from click.Command to return plugged in options in addtion to the
-        hardcoded ones.
-        """
-        return super(BaseCommand, self).get_params(ctx) + self.options
+            self.params.append(option)
 
     def format_options(self, ctx, formatter):
         """
@@ -481,8 +472,7 @@ def scancode(ctx,
             if kwargs[option.replace('-', '_')]:
                 options['--' + option] = True
                 results = process(scanners, results, options)
-                if hasattr(process, 'files_count'):
-                    files_count = process.files_count
+                files_count = getattr(process, 'files_count', files_count)
 
         # FIXME: we should have simpler args: a scan "header" and scan results
         save_results(scanners, files_count, results, format, options, input, output_file)

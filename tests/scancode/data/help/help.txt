@@ -41,7 +41,7 @@ Options:
 
   post-scan:
     --mark-source    Set `is_source` to true for all packages with (>=90%) of
-                     source files.
+                     source files. Has no effect unless --info is requested.
     --only-findings  Only return files or directories with findings for the
                      requested scans. Files without findings are omitted.
 
