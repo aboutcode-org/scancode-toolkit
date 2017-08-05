@@ -471,7 +471,7 @@ def scancode(ctx,
         for option, process in plugincode.post_scan.get_post_scan_plugins().items():
             if kwargs[option.replace('-', '_')]:
                 options['--' + option] = True
-                results = process(scanners, results, options)
+                results = process(scanners, results, options, input)
                 files_count = getattr(process, 'files_count', files_count)
 
         # FIXME: we should have simpler args: a scan "header" and scan results

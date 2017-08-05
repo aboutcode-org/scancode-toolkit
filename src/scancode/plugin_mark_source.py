@@ -25,6 +25,8 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
+from os import path
+
 from commoncode.filetype import is_dir
 from commoncode.fileutils import file_iter
 from plugincode.post_scan import post_scan_impl
@@ -32,15 +34,16 @@ from scancode.api import get_file_infos
 
 
 @post_scan_impl
-def process_mark_source(scanners, results, options):
+def process_mark_source(scanners, results, options, input):
     """
     Set `is_source` to true for all packages with (>=90%) of source files. Has no effect unless --info is requested.
     """
     for scanned_file in results:
         if '--info' in options:
+            input_dirname = path.dirname(input)
             if scanned_file['type'] == 'directory' and scanned_file['files_count'] > 0:
                 source_files_count = 0
-                for file in file_iter(scanned_file['path']):
+                for file in file_iter(path.join(input_dirname, scanned_file['path'])):
                     if get_file_infos(file)['is_source']:
                         source_files_count += 1
                 if source_files_count / scanned_file['files_count'] >= 0.9:

@@ -23,44 +23,30 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
+from __future__ import print_function
 from __future__ import unicode_literals
 
-from collections import OrderedDict
-import sys
+from os import path
 
-from pluggy import HookimplMarker
-from pluggy import HookspecMarker
-from pluggy import PluginManager
-
-
-post_scan_spec = HookspecMarker('post_scan')
-post_scan_impl = HookimplMarker('post_scan')
+from commoncode.testcase import FileBasedTesting
+from scancode.cli_test_utils import check_json_scan
+from scancode.cli_test_utils import run_scan_click
 
 
-@post_scan_spec
-def process(scanners, results, options, input):
-    """
-    Process the scanned files and yield the modified results.
-    Parameters:
-     - `scanners`: an ordered dict of all possible scans
-     - `results`: an iterable of scan results for each file
-    """
-    pass
+class TestMarkSource(FileBasedTesting):
 
+    test_data_dir = path.join(path.dirname(__file__), 'data')
 
-post_scan_plugins = PluginManager('post_scan')
-post_scan_plugins.add_hookspecs(sys.modules[__name__])
+    def test_scan_mark_source_without_info(self):
+        test_dir = self.extract_test_tar('mark_source/JGroups.tgz')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('mark_source/without_info.expected.json')
+        result = run_scan_click(['--mark-source', test_dir, result_file])
+        check_json_scan(expected_file, result_file)
 
-
-def initialize():
-    # NOTE: this defines the entry points for use in setup.py
-    post_scan_plugins.load_setuptools_entrypoints('scancode_post_scan')
-
-
-def get_post_scan_plugins():
-    """
-    Return an ordered mapping of CLI boolean flag name --> plugin callable
-    for all the post_scan plugins. The mapping is ordered by sorted key.
-    This is the main API for other code to access post_scan plugins.
-    """
-    return OrderedDict(sorted(post_scan_plugins.list_name_plugin()))
+    def test_scan_mark_source_with_info(self):
+        test_dir = self.extract_test_tar('mark_source/JGroups.tgz')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('mark_source/with_info.expected.json')
+        result = run_scan_click(['--info', '--mark-source', test_dir, result_file])
+        check_json_scan(expected_file, result_file)
