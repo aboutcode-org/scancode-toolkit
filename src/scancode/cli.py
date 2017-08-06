@@ -465,14 +465,16 @@ def scancode(ctx,
             full_root=full_root,
             ignore=user_ignore)
 
-        if not quiet:
-            echo_stderr('Saving results.', fg='green')
-
         for option, process in plugincode.post_scan.get_post_scan_plugins().items():
             if kwargs[option.replace('-', '_')]:
                 options['--' + option] = True
+                if not quiet:
+                    echo_stderr('Running post-scan plugin: %(option)s...' % locals(), fg='green')
                 results = process(scanners, results, options, input)
                 files_count = getattr(process, 'files_count', files_count)
+
+        if not quiet:
+            echo_stderr('Saving results.', fg='green')
 
         # FIXME: we should have simpler args: a scan "header" and scan results
         save_results(scanners, files_count, results, format, options, input, output_file)

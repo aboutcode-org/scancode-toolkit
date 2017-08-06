@@ -27,7 +27,6 @@ from __future__ import unicode_literals
 
 from os import path
 
-from commoncode.filetype import is_dir
 from commoncode.fileutils import file_iter
 from plugincode.post_scan import post_scan_impl
 from scancode.api import get_file_infos

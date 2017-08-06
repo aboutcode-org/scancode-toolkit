@@ -189,6 +189,30 @@ def test_scancode_skip_glob_path(monkeypatch):
     scan_locs = [x['path'] for x in scan_result['files']]
     assert [u'user', u'user/ignore.doc', u'user/src', u'user/src/ignore.doc', u'user/src/test'] == scan_locs
 
+def test_scan_mark_source_without_info(monkeypatch):
+    test_dir = test_env.extract_test_tar('mark_source/JGroups.tgz')
+    result_file = test_env.get_temp_file('json')
+    expected_file = test_env.get_test_loc('mark_source/without_info.expected.json')
+
+    result = run_scan_click(['--mark-source', test_dir, result_file], monkeypatch)
+    check_json_scan(expected_file, result_file)
+
+def test_scan_mark_source_with_info(monkeypatch):
+    test_dir = test_env.extract_test_tar('mark_source/JGroups.tgz')
+    result_file = test_env.get_temp_file('json')
+    expected_file = test_env.get_test_loc('mark_source/with_info.expected.json')
+
+    result = run_scan_click(['--info', '--mark-source', test_dir, result_file], monkeypatch)
+    check_json_scan(expected_file, result_file)
+
+def test_scan_only_findings(monkeypatch):
+    test_dir = test_env.extract_test_tar('info/basic.tgz')
+    result_file = test_env.get_temp_file('json')
+    expected_file = test_env.get_test_loc('only_findings/expected.json')
+
+    result = run_scan_click(['--only-findings', test_dir, result_file], monkeypatch)
+    check_json_scan(expected_file, result_file)
+
 
 def test_usage_and_help_return_a_correct_script_name_on_all_platforms():
     result = run_scan_click(['--help'])

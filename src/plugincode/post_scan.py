@@ -42,8 +42,11 @@ def process(scanners, results, options, input):
     """
     Process the scanned files and yield the modified results.
     Parameters:
-     - `scanners`: an ordered dict of all possible scans
-     - `results`: an iterable of scan results for each file
+     - `scanners`: an ordered dict of all possible scans.
+     - `results`: an iterable of scan results for each file.
+     - `options`: a mapping of key by command line option to a flag True
+        if this option was enabled.
+     - `input`: the original input path scanned.
     """
     pass
 
