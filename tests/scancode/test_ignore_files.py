@@ -68,49 +68,49 @@ class TestIgnoreFiles(FileBasedTesting):
         )
         assert is_ignored(*test)
 
-    def test_resource_paths_with_single_file(self):
-        test_dir = self.extract_test_tar('ignore/user.tgz')
-        expected = [
-            'user',
-            'user/ignore.doc',
-            'user/src',
-            'user/src/ignore.doc',
-            'user/src/test',
-            'user/src/test/sample.txt'
-        ]
-        test = [rel_path for abs_path, rel_path in resource_paths(test_dir,{'sample.doc': 'test ignore'})]
-        assert expected == sorted(test)
+    # def test_resource_paths_with_single_file(self):
+    #     test_dir = self.extract_test_tar('ignore/user.tgz')
+    #     expected = [
+    #         'user',
+    #         'user/ignore.doc',
+    #         'user/src',
+    #         'user/src/ignore.doc',
+    #         'user/src/test',
+    #         'user/src/test/sample.txt'
+    #     ]
+    #     test = [rel_path for abs_path, rel_path in resource_paths(test_dir,{'sample.doc': 'test ignore'})]
+    #     assert expected == sorted(test)
 
-    def test_resource_paths_with_multiple_files(self):
-        test_dir = self.extract_test_tar('ignore/user.tgz')
-        expected = [
-            'user',
-            'user/src',
-            'user/src/test',
-            'user/src/test/sample.doc',
-            'user/src/test/sample.txt'
-        ]
-        test = [rel_path for abs_path, rel_path in resource_paths(test_dir,{'ignore.doc': 'test ignore'})]
-        assert expected == sorted(test)
+    # def test_resource_paths_with_multiple_files(self):
+    #     test_dir = self.extract_test_tar('ignore/user.tgz')
+    #     expected = [
+    #         'user',
+    #         'user/src',
+    #         'user/src/test',
+    #         'user/src/test/sample.doc',
+    #         'user/src/test/sample.txt'
+    #     ]
+    #     test = [rel_path for abs_path, rel_path in resource_paths(test_dir,{'ignore.doc': 'test ignore'})]
+    #     assert expected == sorted(test)
 
-    def test_resource_paths_with_glob_file(self):
-        test_dir = self.extract_test_tar('ignore/user.tgz')
-        expected = [
-            'user',
-            'user/src',
-            'user/src/test',
-            'user/src/test/sample.txt'
-        ]
-        test = [rel_path for abs_path, rel_path in resource_paths(test_dir,{'*.doc': 'test ignore'})]
-        assert expected == sorted(test)
+    # def test_resource_paths_with_glob_file(self):
+    #     test_dir = self.extract_test_tar('ignore/user.tgz')
+    #     expected = [
+    #         'user',
+    #         'user/src',
+    #         'user/src/test',
+    #         'user/src/test/sample.txt'
+    #     ]
+    #     test = [rel_path for abs_path, rel_path in resource_paths(test_dir,{'*.doc': 'test ignore'})]
+    #     assert expected == sorted(test)
 
-    def test_resource_paths_with_glob_path(self):
-        test_dir = self.extract_test_tar('ignore/user.tgz')
-        expected = [
-            'user',
-            'user/ignore.doc',
-            'user/src',
-            'user/src/ignore.doc'
-        ]
-        test = [rel_path for abs_path, rel_path in resource_paths(test_dir,{'*/src/test': 'test ignore'})]
-        assert expected == sorted(test)
+    # def test_resource_paths_with_glob_path(self):
+    #     test_dir = self.extract_test_tar('ignore/user.tgz')
+    #     expected = [
+    #         'user',
+    #         'user/ignore.doc',
+    #         'user/src',
+    #         'user/src/ignore.doc'
+    #     ]
+    #     test = [rel_path for abs_path, rel_path in resource_paths(test_dir,{'*/src/test': 'test ignore'})]
+    #     assert expected == sorted(test)
