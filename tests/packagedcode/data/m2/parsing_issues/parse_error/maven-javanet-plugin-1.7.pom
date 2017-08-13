@@ -1,0 +1,113 @@
+<project>
+  <pomVersion>3</pomVersion>
+  <groupId>maven-javanet-plugin</groupId>
+  <artifactId>maven-javanet-plugin</artifactId>
+  <name>Maven java.net plugin</name>
+  <currentVersion>1.7</currentVersion>
+  <shortDescription>Goals for projects on java.net</shortDescription>
+  <issueTrackingUrl>https://maven-javanet-plugin.dev.java.net/servlets/ProjectIssues</issueTrackingUrl>
+  <inceptionYear>2005</inceptionYear>
+  <mailingLists>
+    <mailingList>
+      <name>Users List</name>
+      <subscribe>users-subscribe@maven-javanet-plugin.dev.java.net</subscribe>
+      <unsubscribe>users-unsubscribe@maven-javanet-plugin.dev.java.net</unsubscribe>
+      <archive>https://maven-javanet-plugin.dev.java.net/servlets/SummarizeList?listName=users</archive>
+    </mailingList>
+    <mailingList>
+      <name>Issues List</name>
+      <subscribe>issues-subscribe@maven-javanet-plugin.dev.java.net</subscribe>
+      <unsubscribe>issues-unsubscribe@maven-javanet-plugin.dev.java.net</unsubscribe>
+      <archive>https://maven-javanet-plugin.dev.java.net/servlets/SummarizeList?listName=issues</archive>
+    </mailingList>
+    <mailingList>
+      <name>CVS List</name>
+      <subscribe>cvs-subscribe@maven-javanet-plugin.dev.java.net</subscribe>
+      <unsubscribe>cvs-unsubscribe@maven-javanet-plugin.dev.java.net</unsubscribe>
+      <archive>https://maven-javanet-plugin.dev.java.net/servlets/SummarizeList?listName=cvs</archive>
+    </mailingList>
+  </mailingLists>
+  <developers>
+    <developer>
+      <id>kohsuke</id>
+      <name>Kohsuke Kawaguchi</name>
+      <email>kk@kohsuke.org</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>roscopeco</id>
+      <name>Ross Bamford</name>
+      <email>ross@roscopeco.co.uk</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <repository>
+    <connection>scm:cvs:pserver:guest@cvs.dev.java.net:/cvs:maven-javanet-plugin/maven-javanet-plugin</connection>
+    <developerConnection>scm:cvs:pserver:kohsuke@cvs.dev.java.net:/cvs:maven-javanet-plugin/maven-javanet-plugin</developerConnection>
+    <url>https://maven-javanet-plugin.dev.java.net/source/browse/maven-javanet-plugin/maven-javanet-plugin/</url>
+  </repository>
+  <organization>
+    <name>java.net</name>
+    <url>http://www.java.net/</url>
+    <logo>https://jaxb.dev.java.net/branding/images/header_jnet_new.jpg</logo>
+  </organization>
+  <build>
+    <unitTest />
+    <resources>
+      <resource>
+        <targetPath>plugin-resources</targetPath>
+        <directory>c:\kohsuke\My Projects\maven\maven-javanet-plugin\maven-javanet-plugin/src/plugin-resources</directory>
+      </resource>
+      <resource>
+        <directory>c:\kohsuke\My Projects\maven\maven-javanet-plugin\maven-javanet-plugin</directory>
+        <includes>
+          <include>plugin.jelly</include>
+          <include>plugin.properties</include>
+          <include>project.properties</include>
+          <include>project.xml</include>
+        </includes>
+      </resource>
+    </resources>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>httpunit</groupId>
+      <artifactId>httpunit</artifactId>
+      <version>1.5.4</version>
+    </dependency>
+    <dependency>
+      <groupId>xml-apis</groupId>
+      <artifactId>xml-apis</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xerces</artifactId>
+      <version>2.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>jtidy</groupId>
+      <artifactId>jtidy</artifactId>
+      <version>4aug2000r7-dev</version>
+    </dependency>
+    <dependency>
+      <groupId>nekohtml</groupId>
+      <artifactId>nekohtml</artifactId>
+      <version>0.9.5</version>
+    </dependency>
+    <dependency>
+      <groupId>dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>jaxen</groupId>
+      <artifactId>jaxen</artifactId>
+      <version>1.0-FCS-full</version>
+    </dependency>
+  </dependencies>
+</project>

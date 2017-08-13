@@ -1,0 +1,82 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.osgl", 
+  "artifact_id": "osgl-http", 
+  "version": "1.1.2", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.sonatype.oss", 
+    "artifact_id": "oss-parent", 
+    "version": "7", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "OSGL HTTP", 
+  "description": "Utilities for HTTP", 
+  "inception_year": null, 
+  "url": "http://osgl-http.osgl.org/", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:git:git://github.com/osglworks/java-http.git", 
+    "developer_connection": null, 
+    "url": "git://github.com/osglworks/java-http.git", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "4.10", 
+        "required": true
+      }, 
+      {
+        "group_id": "com.carrotsearch", 
+        "artifact_id": "junit-benchmarks", 
+        "version": "0.7.2", 
+        "required": true
+      }
+    ], 
+    "provided": [
+      {
+        "group_id": "org.osgl", 
+        "artifact_id": "osgl-storage", 
+        "version": "1.2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "servlet-api", 
+        "version": "2.5", 
+        "required": true
+      }
+    ], 
+    "compile": [
+      {
+        "group_id": "org.osgl", 
+        "artifact_id": "osgl-cache", 
+        "version": "1.0.2", 
+        "required": true
+      }
+    ]
+  }
+}

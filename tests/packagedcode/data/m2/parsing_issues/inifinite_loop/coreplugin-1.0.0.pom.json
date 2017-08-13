@@ -1,0 +1,41 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "net.sourceforge.findbugs", 
+  "artifact_id": "coreplugin", 
+  "version": "1.0.0", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": null, 
+  "description": "Core plugin supports the FindBugs tool", 
+  "inception_year": null, 
+  "url": "http://findbugs.sf.net", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:cvs:pserver:anonymous@cvs.sourceforge.net:/cvsroot/findbugs/findbugs", 
+    "developer_connection": null, 
+    "url": null, 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": null, 
+        "artifact_id": null, 
+        "version": "latest.release", 
+        "required": true
+      }
+    ]
+  }
+}

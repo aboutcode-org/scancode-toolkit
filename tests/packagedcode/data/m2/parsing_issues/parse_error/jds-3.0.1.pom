@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.github.subiyacryolite</groupId>
+  <artifactId>jds</artifactId>
+  <version>3.0.1</version>
+  <name>Jenesis Data Store</name>
+  <description>A dynamic, cross platform, high performance, ORM data-mapper. Designed to assist in rapid development and data mining</description>
+  <url>https://github.com/SubiyaCryolite/Jenesis-Data-Store</url>
+  <licenses>
+    <license>
+      <name>The 3-Clause BSD License</name>
+      <url>https://opensource.org/licenses/BSD-3-Clause</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>SubiyaCryolite</id>
+      <name>Ifunga Ndana</name>
+      <email>ifungandana@gmail.com</email>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git@github.com:SubiyaCryolite/Jenesis-Data-Store.git</connection>
+    <developerConnection>scm:git:git@github.com:SubiyaCryolite/Jenesis-Data-Store.git</developerConnection>
+    <url>https://github.com/SubiyaCryolite/Jenesis-Data-Store</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <artifactId>ojdbc8</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.xerial</groupId>
+      <artifactId>sqlite-jdbc</artifactId>
+      <version>3.16.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.microsoft.sqlserver</groupId>
+      <artifactId>sqljdbc4</artifactId>
+      <version>4.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.0.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>6.0.6</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
