@@ -195,21 +195,17 @@ class MavenPom(pom.Pom):
         Return a mapping of extra properties
         """
         properties = {}
-        properties['classifier'] = self.classifier
-        properties['project.classifier'] = self.classifier
-        properties['pom.classifier'] = self.classifier
+        for name in build_property_variants('classifier'):
+            properties[name] = self.classifier
 
-        properties['packaging'] = self.packaging
-        properties['project.packaging'] = self.packaging
-        properties['pom.packaging'] = self.packaging
+        for name in build_property_variants('packaging'):
+            properties[name] = self.packaging
 
-        properties['organization.name'] = self.organization_name
-        properties['project.organization.name'] = self.organization_name
-        properties['pom.organization.name'] = self.organization_name
+        for name in build_property_variants('organization.name'):
+            properties[name] = self.organization_name
 
-        properties['organization.url'] = self.organization_url
-        properties['project.organization.url'] = self.organization_url
-        properties['pom.organization.url'] = self.organization_url
+        for name in build_property_variants('organization.url'):
+            properties[name] = self.organization_url
 
         # TODO: collect props defined in a properties file
         # see https://maven.apache.org/shared/maven-archiver/#class_archive
@@ -579,6 +575,15 @@ class MavenPom(pom.Pom):
         ])
 
 
+def build_property_variants(name):
+    """
+    Return an iterable of property variant names given a a property name.
+    """
+    yield name
+    yield 'project.{}'.format(name)
+    yield 'pom.{}'.format(name)
+
+
 def _get_substring_expression(text):
     """
     Return a tuple of (text, start/end) such that:
@@ -664,9 +669,15 @@ def is_pom(location):
 
 
 def has_basic_pom_attributes(pom):
+    """
+    Return True if a POM object has basic attributes needed to make this
+    a POM.
+    """
     basics = pom.model_version and pom.group_id and pom.artifact_id
     if TRACE and not basics:
-        logger.debug('has_basic_pom_attributes: not a POM, incomplete GAV: "{}":"{}":"{}"'.format(pom.model_version and pom.group_id and pom.artifact_id))
+        logger.debug(
+            'has_basic_pom_attributes: not a POM, incomplete GAV: '
+            '"{}":"{}":"{}"'.format(pom.model_version and pom.group_id and pom.artifact_id))
     return basics
 
 
