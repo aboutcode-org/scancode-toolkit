@@ -1,0 +1,4 @@
+licenses:
+    - gpl-2.0-plus
+    - copyleft-next-0.3.1
+license_choice: copyleft-next-0.3.1 applies when distributed separately from the Linux kernel
