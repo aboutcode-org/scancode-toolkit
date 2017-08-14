@@ -68,6 +68,8 @@ def build_rule_validation_tests(rules, cls):
     `data_set` then mapping attaching the test method to the `cls` test class.
     """
     for rule in rules:
+        if rule.negative:
+            continue
         expected_identifier = rule.identifier
         test_name = ('test_validate_self_detection_of_rule_for_' + text.python_safe_name(expected_identifier))
         test_method = make_license_test_function(

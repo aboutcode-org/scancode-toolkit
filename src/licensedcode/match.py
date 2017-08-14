@@ -23,21 +23,19 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
-from __future__ import print_function
 from __future__ import division
+from __future__ import print_function
 
-from array import array
-from functools import partial
-from functools import total_ordering
-from hashlib import md5
 from itertools import chain
 from itertools import groupby
+from functools import partial
+from functools import total_ordering
 import textwrap
 
-from licensedcode import query
-from licensedcode.spans import Span
 from licensedcode import MAX_DIST
+from licensedcode import query
 from licensedcode import tokenize
+from licensedcode.spans import Span
 
 """
 LicenseMatch data structure and matches merging and filtering routines.
@@ -380,23 +378,6 @@ class LicenseMatch(object):
             logger_debug('LicenseMatch.small(): not small')
 
         return False
-
-    def false_positive(self, idx):
-        """
-        Return a True-ish (e.g. a false positive rule id) if the LicenseMatch match
-        is a false positive or None otherwise (nb: not False). This is done by a
-        lookup of the matched tokens sequence against the `idx` index false positive
-        rules.
-        """
-        ilen = self.ilen()
-        if ilen > idx.largest_false_positive_length:
-            return
-        rule_tokens = idx.tids_by_rid[self.rule.rid]
-        ispan = self.ispan
-        matched_itokens = array('h', (tid for ipos, tid in enumerate(rule_tokens) if ipos in ispan))
-        # note: hash computation is inlined here but MUST be the same code as in match_hash
-        matched_hash = md5(matched_itokens.tostring()).digest()
-        return idx.false_positive_rid_by_hash.get(matched_hash)
 
     def matched_text(self, whole_lines=False, 
                      highlight_matched=u'%s', highlight_not_matched=u'[%s]'):
@@ -904,25 +885,24 @@ def filter_spurious_matches(matches):
     return kept, discarded
 
 
-def filter_false_positive_matches(matches, idx):
+def filter_false_positive_matches(matches):
     """
-    Return a list of matches that are not false positives and a list of false
-    positive matches given an index `idx`.
+    Return a list of matches that are not false positives and a list of
+    false positive matches.
     """
     kept = []
     discarded = []
     for match in matches:
-        fp = match.false_positive(idx)
-        if fp is None:
+        if match.rule.false_positive:
+            if TRACE_REFINE: logger_debug('    ==> DISCARDING FALSE POSITIVE:', match)
+            discarded.append(match)
+        else:
             # if TRACE_REFINE: logger_debug('    ==> NOT DISCARDING FALSE POSITIVE:', match)
             kept.append(match)
-        else:
-            if TRACE_REFINE: logger_debug('    ==> DISCARDING FALSE POSITIVE:', match, 'fp rule:', idx.rules_by_rid[fp].identifier)
-            discarded.append(match)
     return kept, discarded
 
 
-def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST):
+def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST, filter_false_positive=True):
     """
     Return two sequences of matches: one contains refined good matches, and the
     other contains matches that were filtered out.
@@ -957,13 +937,6 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST):
     if TRACE: logger_debug('   #####refine_matches: SHORT discarded#', len(discarded))
     if TRACE_REFINE: map(logger_debug, discarded)
 
-    matches, discarded = filter_false_positive_matches(matches, idx)
-    all_discarded.extend(discarded)
-    if TRACE: logger_debug('   #####refine_matches: NOT FALSE POS #', len(matches))
-    if TRACE_REFINE: map(logger_debug, matches)
-    if TRACE: logger_debug('   #####refine_matches: FALSE POS discarded#', len(discarded))
-    if TRACE_REFINE: map(logger_debug, discarded)
-
     matches, discarded = filter_spurious_matches(matches)
     all_discarded.extend(discarded)
     if TRACE: logger_debug('   #####refine_matches: NOT SPURIOUS#', len(matches))
@@ -981,6 +954,14 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST):
     if TRACE_REFINE: map(logger_debug, matches)
     if TRACE: logger_debug('   #####refine_matches: FILTERED discarded#', len(discarded))
     if TRACE_REFINE: map(logger_debug, discarded)
+
+    if filter_false_positive:
+        matches, discarded = filter_false_positive_matches(matches)
+        all_discarded.extend(discarded)
+        if TRACE: logger_debug('   #####refine_matches: NOT FALSE POS #', len(matches))
+        if TRACE_REFINE: map(logger_debug, matches)
+        if TRACE: logger_debug('   #####refine_matches: FALSE POS discarded#', len(discarded))
+        if TRACE_REFINE: map(logger_debug, discarded)
 
     if min_score:
         matches, discarded = filter_low_score(matches, min_score=min_score)

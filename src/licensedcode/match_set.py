@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -29,7 +29,6 @@ from __future__ import division
 from collections import defaultdict
 from collections import namedtuple
 
-from bitarray import bitarray
 from intbitset import intbitset
 
 from commoncode.dict_utils import sparsify
@@ -139,51 +138,19 @@ if TRACE:
 # TODO: add bigrams sets and multisets
 # TODO: see also https://github.com/bolo1729/python-memopt/blob/master/memopt/memopt.py for multisets
 
-def index_token_bitsets(token_ids, len_junk, len_good):
-    """
-    Return a 4-tuple of low & high tids sets, low & high tids multisets given a
-    token_ids sequence.
-    """
-    # For multisets, we use a defaultdict rather than a Counter. This is midly faster
-    # than a Counter for the common case of rather sparse sets.
-
-    tids_set = bitarray([0] * (len_good + len_junk))
-    low_tids_mset = defaultdict(int)
-    high_tids_mset = defaultdict(int)
-    for tid in token_ids:
-        # this skips unknown token ids that are -1 as well as possible None
-        if tid < 0:
-            continue
-        tids_set[tid] = True
-        if tid < len_junk:
-            low_tids_mset[tid] += 1
-        else:
-            high_tids_mset[tid] += 1
-
-    # sparify for speed
-    sparsify(low_tids_mset)
-    sparsify(high_tids_mset)
-
-    low_tids_set = tids_set[:len_junk]
-    high_tids_set = tids_set[len_junk:]
-    return low_tids_set, high_tids_set, low_tids_mset, high_tids_mset
-
-
 def tids_sets_intersector(qset, iset):
     """
     Return the intersection of a query and index token ids sets.
-    Default for bitarrays.
     """
     return qset & iset
 
 
-def tids_setbit_counter(tset):
+def tids_set_counter(tset):
     """
     Return the number of elements present in a token ids set, aka. the set
     cardinality.
-    Default for bitarrays.
     """
-    return tset.count()
+    return len(tset)
 
 
 def tids_multisets_intersector(qmset, imset):
@@ -216,7 +183,7 @@ def tids_multiset_counter(tmset):
     return sum(tmset.values())
 
 
-def index_token_sets_with_intbitset(token_ids, len_junk, len_good):
+def index_token_sets(token_ids, len_junk, len_good):
     """
     Return a 4-tuple of low & high tids sets, low & high tids multisets given a
     token_ids sequence.
@@ -248,19 +215,6 @@ def index_token_sets_with_intbitset(token_ids, len_junk, len_good):
     sparsify(high_tids_mset)
     return low_tids_set, high_tids_set, low_tids_mset, high_tids_mset
 
-
-def tids_inbitset_counter(tset):
-    """
-    Return the number of elements present in a token ids set, aka. the set
-    cardinality.
-    Default for bitarrays.
-    """
-    return len(tset)
-
-
-# use bitarrays or intbitset
-index_token_sets = index_token_sets_with_intbitset
-tids_set_counter = tids_inbitset_counter
 
 CandidateData = namedtuple('CandidateData', 'intersection distance matched_length high_inter_len low_inter_len')
 
@@ -324,7 +278,7 @@ def compute_candidates(query_run, idx, rules_subset, top=30):
 
         # remove _sort_order
         candidates = [cand[1:] for cand in ranked]
-        # keep only the top fifty candidates
+        # keep only the top candidates
         candidates = candidates[:top]
         if not candidates:
             break
@@ -339,6 +293,10 @@ def compute_candidates(query_run, idx, rules_subset, top=30):
         logger_debug('compute_candidates: FINAL top candidates:', len(candidates))
         tops = [rule.identifier for _rid, rule, _inter in candidates[:10]]
         logger_debug(tops)
+
+    # discard false positive rules from candidates: we never want to to
+    # a sequence match on these
+    candidates = [(rid, rule, inter) for (rid, rule, inter) in candidates if not rule.false_positive]
 
     return candidates
 
@@ -414,10 +372,7 @@ def compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, counter):
 
     # We also return the intersection for the whole token ids range
     # FIXME: but this is NOT used anywhere for now
-    if isinstance(low_inter, bitarray):
-        inter = low_inter + high_inter
-    else:
-        inter = low_inter
-        low_inter.update(high_inter)
+    inter = low_inter
+    low_inter.update(high_inter)
 
     return sort_order, inter
