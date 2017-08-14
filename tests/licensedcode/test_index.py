@@ -168,7 +168,8 @@ class TestIndexing(IndexTesting):
         idx = index.LicenseIndex()
         rules = []
         for key in keys:
-            rules.append(models.Rule(text_file=os.path.join(base, key)))
+            rules.append(models.Rule(
+                text_file=os.path.join(base, key), licenses=['gpl-2.0']))
 
         idx._add_rules(rules)
 
@@ -256,8 +257,8 @@ class TestIndexing(IndexTesting):
         try:
             index.LicenseIndex(models.load_rules(rule_dir))
             self.fail('Exception on dupes not raised')
-        except AssertionError, e:
-            assert u'Duplicate rules' in e.message
+        except AssertionError as e:
+            assert u'Duplicate rules' in str(e)
 
 
 class TestMatchNoTemplates(IndexTesting):
