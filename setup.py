@@ -102,7 +102,9 @@ setup(
     name='scancode-toolkit',
     version=get_version(),
     license='Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others',
-    description='ScanCode is a tool to scan code for license, copyright, package and their documented dependencies and other interesting facts.',
+    description=
+        'ScanCode is a tool to scan code for license, copyright, package '
+        'and their documented dependencies and other interesting facts.',
     long_description=long_description,
     author='ScanCode',
     author_email='info@aboutcode.org',
@@ -128,66 +130,65 @@ setup(
     ],
     install_requires=[
         # cluecode
+        # Some nltk version ranges are buggy
+        'nltk >= 3.2, < 4.0',
+        'publicsuffix2',
         'py2-ipaddress >= 2.0, <3.0',
         'url >= 0.1.4',
-        'publicsuffix2',
-        # Some lntk version ranges were buggy
-        'nltk >= 3.2, < 4.0',
 
         # extractcode
         'patch >= 1.15, < 1.20 ',
         # to work around bug http://bugs.python.org/issue19839
         # on multistream bzip2 files: this can removed in Python 3.
         'bz2file >= 0.98',
+
+        # commoncode
         'text-unidecode >= 1.0, < 2.0',
 
-        'pluggy >= 0.4.0, < 1.0',
-
         # licensedcode
-        'PyYAML >= 3.0, <4.0',
         'bitarray >= 0.8.1, < 1.0.0',
         'intbitset >= 2.3.0,  < 3.0',
         'pyahocorasick >= 1.1, < 1.2',
-        'attrs >=16.0, < 17.0',
-
-        # caching
-        'zc.lockfile >= 1.0.0, < 2.0.1',
-        'yg.lockfile >= 2.0.1, < 3.0.0',
-            # used by yg.lockfile
-            'contextlib2', 'pytz', 'tempora', 'jaraco.timing',
-        'psutil >= 5.0.0, < 6.0.0',
+        'PyYAML >= 3.0, <4.0',
 
         # textcode
         'Beautifulsoup >= 3.2.0, <4.0.0',
         'Beautifulsoup4 >= 4.3.0, <5.0.0',
         'html5lib',
+        'pdfminer >= 20140328',
         'six',
 
-        # typecode and textcode
-        'pygments >= 2.0.1, <3.0.0',
-        'pdfminer >= 20140328',
-
-        # pymaven
-        'pymaven-patch >= 0.2.4',
-
         # typecode
-        'chardet >= 3.0.0, <4.0.0',
         'binaryornot >= 0.4.0',
-
-        # scancode and AboutCode
-        'click >= 6.0.0, < 7.0.0',
-        'jinja2 >= 2.7.0, < 3.0.0',
-        'MarkupSafe >= 0.23',
-        'colorama',
-        'simplejson',
-        'spdx-tools >= 0.5.4',
+        'chardet >= 3.0.0, <4.0.0',
+        'pygments >= 2.0.1, <3.0.0',
 
         # packagedcode
+        'attrs >=16.0, < 17.0',
+        'pymaven-patch >= 0.2.4',
         'requests >= 2.7.0, < 3.0.0',
         'schematics_patched',
 
-        # misc
+        # scancode
+        'click >= 6.0.0, < 7.0.0',
+        'colorama',
+        'pluggy >= 0.4.0, < 1.0',
+
+        # scancode outputs
+        'jinja2 >= 2.7.0, < 3.0.0',
+        'MarkupSafe >= 0.23',
+        'simplejson',
+        'spdx-tools >= 0.5.4',
         'unicodecsv',
+
+        # ScanCode caching and locking
+        'psutil >= 5.0.0, < 6.0.0',
+        'yg.lockfile >= 2.0.1, < 3.0.0',
+            # used by yg.lockfile
+            'contextlib2', 'pytz', 'tempora', 'jaraco.timing',
+        'zc.lockfile >= 1.0.0, < 2.0.1',
+
+
     ],
     extras_require={
         ':platform_system == "Windows"': ['lxml == 3.6.0'],
@@ -204,9 +205,9 @@ setup(
         # scancode_output_writers is an entry point to define plugins
         # that write a scan output in a given format.
         # See the plugincode.output module for details and doc.
-        # note: the "name" of the entrypoint (e.g html) becomes the
-        # ScanCode CLI --format option used to enable a given format
-        # plugin
+        # note: the "name" of the entrypoint (e.g "html") becomes the
+        # ScanCode command line  --format option used to enable a given
+        # format plugin
         'scancode_output_writers': [
             'html = formattedcode.format_templated:write_html',
             'html-app = formattedcode.format_templated:write_html_app',
