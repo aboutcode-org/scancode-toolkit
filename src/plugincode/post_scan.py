@@ -38,15 +38,12 @@ post_scan_impl = HookimplMarker('post_scan')
 
 
 @post_scan_spec
-def process(scanners, results, options, input):
+def post_scan_handler(active_scans, results):
     """
     Process the scanned files and yield the modified results.
     Parameters:
-     - `scanners`: an ordered dict of all possible scans.
+     - `active_scans`: a list of scans which are enabled and have a valid function.
      - `results`: an iterable of scan results for each file.
-     - `options`: a mapping of key by command line option to a flag True
-        if this option was enabled.
-     - `input`: the original input path scanned.
     """
     pass
 

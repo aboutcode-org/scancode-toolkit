@@ -23,42 +23,22 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
-from __future__ import division
 from __future__ import unicode_literals
 
-from os import path
+from unittest import TestCase
+from scancode.plugin_mark_source import mark_source
 
-from plugincode.post_scan import post_scan_impl
 
+class TestMarkSource(TestCase):
 
-@post_scan_impl
-def process_mark_source(active_scans, results):
-    """
-    Set `is_source` to true for all packages with (>=90%) of source files. Has no effect unless --info is requested.
-    """
+    def test_mark_source_above_threshold(self):
+        test_dict = dict(files_count=10, is_source=False)
+        test_source_file_count = 9
+        mark_source(test_source_file_count, test_dict)
+        assert test_dict['is_source']
 
-    # FIXME: this is forcing all the scan results to be loaded in memory
-    # and defeats lazy loading from cache
-    loaded_results = list(results)
-
-    if 'type' not in loaded_results[0]:
-        for scanned_file in loaded_results:
-            yield scanned_file
-        return
-
-    for scanned_file in loaded_results:
-        if scanned_file['type'] == 'directory' and scanned_file['files_count'] > 0:
-            source_files_count = 0
-            for file in loaded_results:
-                if path.dirname(file['path']) == scanned_file['path']:
-                    if file['is_source']:
-                        source_files_count += 1
-            mark_source(source_files_count, scanned_file)
-        yield scanned_file
-
-def mark_source(source_files_count, scanned_file):
-    """
-    Set `is_source` to true for `scanned_file` IFF `source_files_count` is >=90% of files_count.
-    """
-    if source_files_count / scanned_file['files_count'] >= 0.9:
-        scanned_file['is_source'] = True
+    def test_mark_source_below_threshold(self):
+        test_dict = dict(files_count=10, is_source=False)
+        test_source_file_count = 5
+        mark_source(test_source_file_count, test_dict)
+        assert not test_dict['is_source']

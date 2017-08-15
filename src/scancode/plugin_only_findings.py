@@ -29,18 +29,10 @@ from plugincode.post_scan import post_scan_impl
 
 
 @post_scan_impl
-def process_only_findings(scanners, results, options, input):
+def process_only_findings(active_scans, results):
     """
     Only return files or directories with findings for the requested scans. Files without findings are omitted.
     """
-    files_count = 0
-    # Find all scans that are both enabled and have a valid function
-    # reference. This deliberately filters out the "info" scan
-    # (which always has a "None" function reference) as there is no
-    # dedicated "infos" key in the results that "has_findings()"
-    # could check.
-    # FIXME: we should not use positional tings tuples for v[0], v[1] that are mysterious values for now
-    active_scans = [k for k, v in scanners.items() if v[0] and v[1]]
 
     # FIXME: this is forcing all the scan results to be loaded in memory
     # and defeats lazy loading from cache
@@ -48,7 +40,6 @@ def process_only_findings(scanners, results, options, input):
     # function that pass to the scan results loader iterator
     for file_data in results:
         if has_findings(active_scans, file_data):
-            files_count += 1
             yield file_data
 
 def has_findings(active_scans, file_data):

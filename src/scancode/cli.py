@@ -465,13 +465,24 @@ def scancode(ctx,
             full_root=full_root,
             ignore=user_ignore)
 
-        for option, process in plugincode.post_scan.get_post_scan_plugins().items():
+        # Find all scans that are both enabled and have a valid function
+        # reference. This deliberately filters out the "info" scan
+        # (which always has a "None" function reference) as there is no
+        # dedicated "infos" key in the results that "plugin_only_findings.has_findings()"
+        # could check.
+        # FIXME: we should not use positional tings tuples for v[0], v[1] that are mysterious values for now
+        active_scans = [k for k, v in scanners.items() if v[0] and v[1]]
+
+        for option, post_scan_handler in plugincode.post_scan.get_post_scan_plugins().items():
             if kwargs[option.replace('-', '_')]:
                 options['--' + option] = True
                 if not quiet:
                     echo_stderr('Running post-scan plugin: %(option)s...' % locals(), fg='green')
-                results = process(scanners, results, options, input)
-                files_count = getattr(process, 'files_count', files_count)
+                results = post_scan_handler(active_scans, results)
+
+        # FIXME: computing len needs a list and therefore needs loading it all ahead of time
+        results = list(results)
+        files_count = len(results)
 
         if not quiet:
             echo_stderr('Saving results.', fg='green')
