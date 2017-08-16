@@ -473,16 +473,21 @@ def scancode(ctx,
         # FIXME: we should not use positional tings tuples for v[0], v[1] that are mysterious values for now
         active_scans = [k for k, v in scanners.items() if v[0] and v[1]]
 
+        plugins_invoked = False
+
         for option, post_scan_handler in plugincode.post_scan.get_post_scan_plugins().items():
-            if kwargs[option.replace('-', '_')]:
+            is_requested = kwargs[option.replace('-', '_')]
+            if is_requested:
                 options['--' + option] = True
                 if not quiet:
                     echo_stderr('Running post-scan plugin: %(option)s...' % locals(), fg='green')
                 results = post_scan_handler(active_scans, results)
+                plugins_invoked = True
 
-        # FIXME: computing len needs a list and therefore needs loading it all ahead of time
-        results = list(results)
-        files_count = len(results)
+        if plugins_invoked:
+            # FIXME: computing len needs a list and therefore needs loading it all ahead of time
+            results = list(results)
+            files_count = len(results)
 
         if not quiet:
             echo_stderr('Saving results.', fg='green')

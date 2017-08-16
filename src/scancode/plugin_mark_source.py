@@ -41,7 +41,9 @@ def process_mark_source(active_scans, results):
     # and defeats lazy loading from cache
     loaded_results = list(results)
 
-    if 'type' not in loaded_results[0]:
+    has_file_info = 'type' in loaded_results[0]
+
+    if not has_file_info:
         for scanned_file in loaded_results:
             yield scanned_file
         return
