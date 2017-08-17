@@ -253,8 +253,13 @@ Try 'scancode --help' for help on options and arguments.'''
             # normalize white spaces in help.
             help_text = ' '.join(callback.__doc__.split())
             option = ScanOption(('--' + name,), is_flag=True, help=help_text, group=POST_SCAN)
+            self.params.append(option)
         for name, plugin in plugincode.pre_scan.get_pre_scan_plugins().items():
-            option = ScanOption(('--' + name,), group=PRE_SCAN, **plugin.get_option_attrs())
+            attrs = plugin.option_attrs
+            attrs['default'] = None
+            attrs['group'] = PRE_SCAN
+            attrs['help'] = ' '.join(plugin.__doc__.split())
+            option = ScanOption(('--' + name,), **attrs)
             self.params.append(option)
 
     def format_options(self, ctx, formatter):
@@ -453,12 +458,12 @@ def scancode(ctx,
     scanners = OrderedDict(zip(possible_scans.keys(), zip(possible_scans.values(), scan_functions)))
 
     scans_cache_class = get_scans_cache_class()
-    plugins = []
+    pre_scan_plugins = []
     for name, plugin in plugincode.pre_scan.get_pre_scan_plugins().items():
-        name = name.replace('-', '_')
-        options['--' + name] = kwargs[name]
-        if kwargs[name]:
-            plugins.append(plugin.get_instance(kwargs[name]))
+        user_input = kwargs[name.replace('-', '_')]
+        if user_input:
+            options['--' + name] = user_input
+            pre_scan_plugins.append(plugin(user_input))
 
     try:
         files_count, results, success = scan(
@@ -472,7 +477,7 @@ def scancode(ctx,
             scans_cache_class=scans_cache_class,
             strip_root=strip_root,
             full_root=full_root,
-            plugins=plugins)
+            pre_scan_plugins=pre_scan_plugins)
 
         # Find all scans that are both enabled and have a valid function
         # reference. This deliberately filters out the "info" scan
@@ -521,7 +526,7 @@ def scan(input_path,
          scans_cache_class=None,
          strip_root=False,
          full_root=False,
-         plugins=None):
+         pre_scan_plugins=None):
     """
     Return a tuple of (files_count, scan_results, success) where
     scan_results is an iterable and success is a boolean.
@@ -566,7 +571,7 @@ def scan(input_path,
 
     # maxtasksperchild helps with recycling processes in case of leaks
     pool = get_pool(processes=processes, maxtasksperchild=1000)
-    resources = resource_paths(input_path, plugins=plugins)
+    resources = resource_paths(input_path, pre_scan_plugins=pre_scan_plugins)
     logfile_path = scans_cache_class().cache_files_log
     paths_with_error = []
     files_count = 0
@@ -750,7 +755,7 @@ def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT):
     return success, rel_path
 
 
-def resource_paths(base_path, plugins=None):
+def resource_paths(base_path, pre_scan_plugins=None):
     """
     Yield tuples of (absolute path, base_path-relative path) for all the files found
     at base_path (either a directory or file) given an absolute base_path. Only yield
@@ -766,8 +771,8 @@ def resource_paths(base_path, plugins=None):
     len_base_path = len(base_path)
     ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
     resources = fileutils.resource_iter(base_path, ignored=ignored)
-    if plugins:
-        for plugin in plugins:
+    if pre_scan_plugins:
+        for plugin in pre_scan_plugins:
             resources = plugin.process_resources(resources)
 
     for abs_path in resources:

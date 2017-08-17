@@ -25,7 +25,6 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from abc import ABCMeta, abstractmethod
 from collections import OrderedDict
 import sys
 
@@ -38,39 +37,24 @@ pre_scan_spec = HookspecMarker('pre_scan')
 pre_scan_impl = HookimplMarker('pre_scan')
 
 @pre_scan_spec
-class AbstractFactory:
+class PreScanPlugin(object):
     """
-    Factory class to be extended by the pre_scan plugins.
+    A pre-scan plugin layout class to be extended by the pre_scan plugins.
+    Docstring of a plugin class will be used as the plugin option's help text
     """
-    __metaclass__ = ABCMeta
+
+    # attributes to be used while creating the option for this plugin.
+    option_attrs = {}
 
     def __init__(self, user_input):
         self.user_input = user_input
 
-    @abstractmethod
     def process_resources(self, resources):
         """
         Yield the absolute paths after processing.
          - `resources`: a generator with absolute paths of files to be scanned.
         """
         return resources
-
-    @staticmethod
-    @abstractmethod
-    def get_option_attrs():
-        """
-        Returns a dict of attributes to be used while creating the option
-        for this plugin.
-        """
-        return {}
-
-    @classmethod
-    def get_instance(cls, user_input):
-        """
-        Return the current class object initialized with input supplied to
-        the respective plugin cmdline option.
-        """
-        return cls(user_input)
 
 
 pre_scan_plugins = PluginManager('pre_scan')
@@ -80,13 +64,13 @@ pre_scan_plugins.add_hookspecs(sys.modules[__name__])
 def initialize():
     # NOTE: this defines the entry points for use in setup.py
     pre_scan_plugins.load_setuptools_entrypoints('scancode_pre_scan')
-    for plugin in pre_scan_plugins.get_plugins():
-        AbstractFactory.register(plugin)
-
+    for name, plugin in get_pre_scan_plugins().items():
+        if not issubclass(plugin, PreScanPlugin):
+            raise Exception('Invalid pre-scan plugin "%(name)s": does not extend "plugincode.pre_scan.PreScanPlugin".' % locals())
 
 def get_pre_scan_plugins():
     """
-    Return an ordered mapping of CLI boolean flag name --> plugin callable
+    Return an ordered mapping of CLI option name --> plugin callable
     for all the pre_scan plugins. The mapping is ordered by sorted key.
     This is the main API for other code to access pre_scan plugins.
     """

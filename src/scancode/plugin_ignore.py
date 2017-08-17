@@ -28,12 +28,16 @@ from __future__ import unicode_literals
 from functools import partial
 
 from commoncode.ignore import is_ignored
-from plugincode.pre_scan import AbstractFactory
+from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
 
 
 @pre_scan_impl
-class ProcessIgnore(AbstractFactory):
+class ProcessIgnore(PreScanPlugin):
+    """
+    Ignore files matching <pattern>.
+    """
+    option_attrs = dict(multiple=True, metavar='<pattern>')
 
     def __init__(self, user_input):
         super(ProcessIgnore, self).__init__(user_input)
@@ -44,8 +48,3 @@ class ProcessIgnore(AbstractFactory):
         for abs_path in resources:
             if not ignored(abs_path):
                 yield abs_path
-
-    @staticmethod
-    def get_option_attrs():
-        return dict(default=None, multiple=True, metavar='<pattern>',
-                    help=('Ignore files matching <pattern>.'))

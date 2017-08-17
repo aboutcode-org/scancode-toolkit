@@ -6,7 +6,6 @@
     "--package": true,
     "--info": true,
     "--license-score": 0,
-    "--ignore": [],
     "--format": "json"
   },
   "files_count": 1,

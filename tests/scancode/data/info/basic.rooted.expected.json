@@ -3,7 +3,6 @@
   "scancode_options": {
     "--info": true,
     "--license-score": 0,
-    "--ignore": [],
     "--format": "json"
   },
   "files_count": 11,
