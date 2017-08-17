@@ -34,8 +34,9 @@ from plugincode.post_scan import post_scan_impl
 @post_scan_impl
 def process_mark_source(active_scans, results):
     """
-    Set `is_source` to true for all packages with (>=90%) of source files.
-    Has no effect unless --info is requested.
+    Set the "is_source" flag to true for directories that contain
+    over 90% of source files as direct children.
+    Has no effect unless the --info scan is requested.
     """
 
     # FIXME: this is forcing all the scan results to be loaded in memory
@@ -69,7 +70,7 @@ def process_mark_source(active_scans, results):
 def mark_source(source_files_count, scanned_file):
     """
     Set `is_source` to True for a `scanned_file` directory if
-    `source_files_count` is >=90% of files_count.
+    `source_files_count` is >=90% of files_count for this directory.
     """
     if source_files_count / scanned_file['files_count'] >= 0.9:
         scanned_file['is_source'] = True

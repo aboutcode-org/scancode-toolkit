@@ -32,7 +32,8 @@ from plugincode.post_scan import post_scan_impl
 def process_only_findings(active_scans, results):
     """
     Only return files or directories with findings for the requested
-    scans. Files and directories without findings are omitted.
+    scans. Files and directories without findings are omitted (not
+    considering basic file information as findings).
     """
 
     # FIXME: this is forcing all the scan results to be loaded in memory

@@ -218,7 +218,7 @@ def reindex_licenses(ctx, param, value):
     ctx.exit()
 
 
-epilog_text = '''\b\bExamples (use --examples for more):
+epilog_text = '''Examples (use --examples for more):
 
 \b
 Scan the 'samples' directory for licenses and copyrights.
@@ -246,8 +246,11 @@ Try 'scancode --help' for help on options and arguments.'''
                  options_metavar='[OPTIONS]', add_help_option=True):
         super(ScanCommand, self).__init__(name, context_settings, callback,
                  params, help, epilog, short_help, options_metavar, add_help_option)
+
         for name, callback in plugincode.post_scan.get_post_scan_plugins().items():
-            option = ScanOption(('--' + name,), is_flag=True, help=callback.__doc__.strip(), group=POST_SCAN)
+            # normalize white spaces in help.
+            help_text = ' '.join(callback.__doc__.split())
+            option = ScanOption(('--' + name,), is_flag=True, help=help_text, group=POST_SCAN)
             self.params.append(option)
 
     def format_options(self, ctx, formatter):

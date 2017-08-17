@@ -40,10 +40,12 @@ Options:
     --ignore <pattern>  Ignore files matching <pattern>.
 
   post-scan:
-    --mark-source    Set `is_source` to true for all packages with (>=90%) of
-                     source files. Has no effect unless --info is requested.
+    --mark-source    Set the "is_source" flag to true for directories that contain
+                     over 90% of source files as direct children. Has no effect
+                     unless the --info scan is requested.
     --only-findings  Only return files or directories with findings for the
-                     requested scans. Files without findings are omitted.
+                     requested scans. Files and directories without findings are
+                     omitted (not considering basic file information as findings).
 
   misc:
     --reindex-licenses  Force a check and possible reindexing of the cached
@@ -62,7 +64,7 @@ Options:
     --timeout FLOAT          Stop scanning a file if scanning takes longer than a
                              timeout in seconds.  [default: 120]
 
-  Examples (use --examples for more):
+  Examples (use --examples for more):
 
   Scan the 'samples' directory for licenses and copyrights.
   Save scan results to a JSON file:
