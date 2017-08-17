@@ -34,33 +34,42 @@ from plugincode.post_scan import post_scan_impl
 @post_scan_impl
 def process_mark_source(active_scans, results):
     """
-    Set `is_source` to true for all packages with (>=90%) of source files. Has no effect unless --info is requested.
+    Set `is_source` to true for all packages with (>=90%) of source files.
+    Has no effect unless --info is requested.
     """
 
     # FIXME: this is forcing all the scan results to be loaded in memory
     # and defeats lazy loading from cache
-    loaded_results = list(results)
+    results = list(results)
 
-    has_file_info = 'type' in loaded_results[0]
+    # FIXME: we should test for active scans instead, but "info" may not
+    # be present for now. check if the first item has a file info.
+    has_file_info = 'type' in results[0]
 
     if not has_file_info:
-        for scanned_file in loaded_results:
+        # just yield results untouched
+        for scanned_file in results:
             yield scanned_file
         return
 
-    for scanned_file in loaded_results:
+    # FIXME: this is an nested loop, looping twice on results
+    # TODO: this may not recusrively roll up the is_source flag, as we
+    # may not iterate bottom up.
+    for scanned_file in results:
         if scanned_file['type'] == 'directory' and scanned_file['files_count'] > 0:
             source_files_count = 0
-            for file in loaded_results:
-                if path.dirname(file['path']) == scanned_file['path']:
-                    if file['is_source']:
+            for scanned_file2 in results:
+                if path.dirname(scanned_file2['path']) == scanned_file['path']:
+                    if scanned_file2['is_source']:
                         source_files_count += 1
             mark_source(source_files_count, scanned_file)
         yield scanned_file
 
+
 def mark_source(source_files_count, scanned_file):
     """
-    Set `is_source` to true for `scanned_file` IFF `source_files_count` is >=90% of files_count.
+    Set `is_source` to True for a `scanned_file` directory if
+    `source_files_count` is >=90% of files_count.
     """
     if source_files_count / scanned_file['files_count'] >= 0.9:
         scanned_file['is_source'] = True

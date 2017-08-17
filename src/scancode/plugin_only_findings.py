@@ -31,19 +31,23 @@ from plugincode.post_scan import post_scan_impl
 @post_scan_impl
 def process_only_findings(active_scans, results):
     """
-    Only return files or directories with findings for the requested scans. Files without findings are omitted.
+    Only return files or directories with findings for the requested
+    scans. Files and directories without findings are omitted.
     """
 
     # FIXME: this is forcing all the scan results to be loaded in memory
-    # and defeats lazy loading from cache
-    # FIXME: we should instead use a generator of use a filter
-    # function that pass to the scan results loader iterator
-    for file_data in results:
-        if has_findings(active_scans, file_data):
-            yield file_data
+    # and defeats lazy loading from cache. Only a different caching
+    # (e.g. DB) could work here.
+    # FIXME: We should instead use a generator or use a filter function
+    # that pass to the scan results loader iterator
+    for scanned_file in results:
+        if has_findings(active_scans, scanned_file):
+            yield scanned_file
 
-def has_findings(active_scans, file_data):
+
+def has_findings(active_scans, scanned_file):
     """
-    Return True if the file_data has findings for any of the `active_scans` names list.
+    Return True if the `scanned_file` has findings for any of the
+    `active_scans` names list (excluding basic file information).
     """
-    return any(file_data.get(scan_name) for scan_name in active_scans)
+    return any(scanned_file.get(scan_name) for scan_name in active_scans)

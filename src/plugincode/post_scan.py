@@ -42,8 +42,8 @@ def post_scan_handler(active_scans, results):
     """
     Process the scanned files and yield the modified results.
     Parameters:
-     - `active_scans`: a list of scans which are enabled and have a valid function.
-     - `results`: an iterable of scan results for each file.
+     - `active_scans`: a list of scanners names requested in the current run.
+     - `results`: an iterable of scan results for each file or directory.
     """
     pass
 
@@ -53,14 +53,17 @@ post_scan_plugins.add_hookspecs(sys.modules[__name__])
 
 
 def initialize():
-    # NOTE: this defines the entry points for use in setup.py
+    """
+    NOTE: this defines the entry points for use in setup.py
+    """
     post_scan_plugins.load_setuptools_entrypoints('scancode_post_scan')
 
 
 def get_post_scan_plugins():
     """
-    Return an ordered mapping of CLI boolean flag name --> plugin callable
-    for all the post_scan plugins. The mapping is ordered by sorted key.
+    Return an ordered mapping of
+        "command line option name" --> "plugin callable"
+    for all the post_scan plugins. The mapping is sorted by option name.
     This is the main API for other code to access post_scan plugins.
     """
     return OrderedDict(sorted(post_scan_plugins.list_name_plugin()))
