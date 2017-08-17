@@ -63,7 +63,9 @@ output_plugins.add_hookspecs(sys.modules[__name__])
 
 
 def initialize():
-    # NOTE: this defines the entry points for use in setup.py
+    """
+    NOTE: this defines the entry points for use in setup.py
+    """
     output_plugins.load_setuptools_entrypoints('scancode_output_writers')
 
 
