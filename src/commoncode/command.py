@@ -31,15 +31,27 @@ import os
 import logging
 import signal
 import subprocess
-import sys
 
 from commoncode import fileutils
+from commoncode.fileutils import path_to_bytes
+from commoncode.fileutils import path_to_unicode
 from commoncode import text
 from commoncode import system
 from commoncode.system import current_os_arch
 from commoncode.system import current_os_noarch
 from commoncode.system import noarch
 from commoncode.system import on_windows
+from commoncode.system import on_linux
+
+
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+    str = unicode
+except NameError:
+    # Python 3
+    unicode = str
 
 
 """
@@ -327,14 +339,61 @@ def load_lib(libname, root_dir):
     so = os.path.join(lib_dir, libname + system.lib_ext)
 
     # add lib path to the front of the PATH env var
-    new_path = os.pathsep.join([lib_dir, os.environ['PATH']])
-    os.environ['PATH'] = new_path
+    update_path_environment(lib_dir)
 
     if os.path.exists(so):
         if not isinstance(so, bytes):
             # ensure that the path is not Unicode...
-            so = so.encode(sys.getfilesystemencoding() or sys.getdefaultencoding())
+            so = so.encode(fileutils.FS_ENCODING)
         lib = ctypes.CDLL(so)
         if lib and lib._name:
             return lib
     raise ImportError('Failed to load %(libname)s from %(so)r' % locals())
+
+
+def update_path_environment(new_path, _os_module=os):
+    """
+    Update the PATH environment variable by adding `new_path` to the front
+    of PATH if `new_path` is not alreday in the PATH.
+    """
+    # note: _os_module is used to facilitate mock testing using an
+    # object with a sep string attribute and an environ mapping
+    # attribute
+
+    if not new_path:
+        return
+
+    new_path = new_path.strip()
+    if not new_path:
+        return
+
+    path_env = _os_module.environ.get(b'PATH')
+    if not path_env:
+        # this is quite unlikely to ever happen, but here for safety
+        path_env = ''
+
+    # ensure we use unicode or bytes depending on OSes
+    if on_linux:
+        new_path = path_to_bytes(new_path)
+        path_env = path_to_bytes(path_env)
+        sep = _os_module.pathsep
+    else:
+        new_path = path_to_unicode(new_path)
+        path_env = path_to_unicode(path_env)
+        sep = unicode(_os_module.pathsep)
+
+    path_segments = path_env.split(sep)
+
+    # add lib path to the front of the PATH env var
+    # this will use bytes on Linux and unicode elsewhere
+    if new_path not in path_segments:
+        if not path_env:
+            new_path_env = new_path
+        else:
+            new_path_env = sep.join([new_path, path_env])
+
+        if not on_linux:
+            # recode to bytes using FS encoding
+            new_path_env = path_to_bytes(new_path_env)
+        # ... and set the variable back as bytes
+        _os_module.environ[b'PATH'] = new_path_env
