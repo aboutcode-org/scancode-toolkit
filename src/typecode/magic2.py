@@ -193,13 +193,13 @@ def load_lib():
     """
     Return the loaded libmagic shared library object from vendored paths.
     """
+    # FIXME: use command.load_lib instead
     root_dir = command.get_base_dirs(bin_dir)[0]
     _bin_dir, lib_dir = command.get_bin_lib_dirs(root_dir)
     magic_so = os.path.join(lib_dir, 'libmagic' + system.lib_ext)
 
     # add lib path to the front of the PATH env var
-    new_path = os.pathsep.join([lib_dir, os.environ['PATH']])
-    os.environ['PATH'] = new_path
+    command.update_path_environment(lib_dir)
 
     if os.path.exists(magic_so):
         if not isinstance(magic_so, bytes):
