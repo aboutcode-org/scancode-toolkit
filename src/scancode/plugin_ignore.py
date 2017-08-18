@@ -25,9 +25,6 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from functools import partial
-
-from commoncode.ignore import is_ignored
 from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
 
@@ -42,9 +39,5 @@ class ProcessIgnore(PreScanPlugin):
     def __init__(self, user_input):
         super(ProcessIgnore, self).__init__(user_input)
 
-    def process_resources(self, resources):
-        user_ignore = {patt: 'User ignore: Supplied by --ignore' for patt in self.user_input}
-        ignored = partial(is_ignored, ignores=user_ignore, unignores={})
-        for abs_path in resources:
-            if not ignored(abs_path):
-                yield abs_path
+    def get_ignores(self):
+        return {pattern: 'User ignore: Supplied by --ignore' for pattern in self.user_input}

@@ -56,6 +56,12 @@ class PreScanPlugin(object):
         """
         return resources
 
+    def get_ignores(self):
+        """
+        Return a dict of ignores to be used when processing resources
+        """
+        return {}
+
 
 pre_scan_plugins = PluginManager('pre_scan')
 pre_scan_plugins.add_hookspecs(sys.modules[__name__])

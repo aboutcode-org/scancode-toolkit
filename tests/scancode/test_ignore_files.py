@@ -30,6 +30,7 @@ from os import path
 from commoncode.testcase import FileBasedTesting
 from commoncode.ignore import is_ignored
 from scancode.cli import resource_paths
+from scancode.plugin_ignore import ProcessIgnore
 
 
 class TestIgnoreFiles(FileBasedTesting):
@@ -68,49 +69,67 @@ class TestIgnoreFiles(FileBasedTesting):
         )
         assert is_ignored(*test)
 
-    # def test_resource_paths_with_single_file(self):
-    #     test_dir = self.extract_test_tar('ignore/user.tgz')
-    #     expected = [
-    #         'user',
-    #         'user/ignore.doc',
-    #         'user/src',
-    #         'user/src/ignore.doc',
-    #         'user/src/test',
-    #         'user/src/test/sample.txt'
-    #     ]
-    #     test = [rel_path for abs_path, rel_path in resource_paths(test_dir,{'sample.doc': 'test ignore'})]
-    #     assert expected == sorted(test)
+    def test_resource_paths_with_single_file(self):
+        test_dir = self.extract_test_tar('ignore/user.tgz')
+        test_plugin = ProcessIgnore(('sample.doc',))
+        expected = [
+            'user',
+            'user/ignore.doc',
+            'user/src',
+            'user/src/ignore.doc',
+            'user/src/test',
+            'user/src/test/sample.txt'
+        ]
+        test = [rel_path for abs_path, rel_path in resource_paths(test_dir, [test_plugin])]
+        assert expected == sorted(test)
 
-    # def test_resource_paths_with_multiple_files(self):
-    #     test_dir = self.extract_test_tar('ignore/user.tgz')
-    #     expected = [
-    #         'user',
-    #         'user/src',
-    #         'user/src/test',
-    #         'user/src/test/sample.doc',
-    #         'user/src/test/sample.txt'
-    #     ]
-    #     test = [rel_path for abs_path, rel_path in resource_paths(test_dir,{'ignore.doc': 'test ignore'})]
-    #     assert expected == sorted(test)
+    def test_resource_paths_with_multiple_files(self):
+        test_dir = self.extract_test_tar('ignore/user.tgz')
+        test_plugin = ProcessIgnore(('ignore.doc',))
+        expected = [
+            'user',
+            'user/src',
+            'user/src/test',
+            'user/src/test/sample.doc',
+            'user/src/test/sample.txt'
+        ]
+        test = [rel_path for abs_path, rel_path in resource_paths(test_dir, [test_plugin])]
+        assert expected == sorted(test)
 
-    # def test_resource_paths_with_glob_file(self):
-    #     test_dir = self.extract_test_tar('ignore/user.tgz')
-    #     expected = [
-    #         'user',
-    #         'user/src',
-    #         'user/src/test',
-    #         'user/src/test/sample.txt'
-    #     ]
-    #     test = [rel_path for abs_path, rel_path in resource_paths(test_dir,{'*.doc': 'test ignore'})]
-    #     assert expected == sorted(test)
+    def test_resource_paths_with_glob_file(self):
+        test_dir = self.extract_test_tar('ignore/user.tgz')
+        test_plugin = ProcessIgnore(('*.doc',))
+        expected = [
+            'user',
+            'user/src',
+            'user/src/test',
+            'user/src/test/sample.txt'
+        ]
+        test = [rel_path for abs_path, rel_path in resource_paths(test_dir, [test_plugin])]
+        assert expected == sorted(test)
 
-    # def test_resource_paths_with_glob_path(self):
-    #     test_dir = self.extract_test_tar('ignore/user.tgz')
-    #     expected = [
-    #         'user',
-    #         'user/ignore.doc',
-    #         'user/src',
-    #         'user/src/ignore.doc'
-    #     ]
-    #     test = [rel_path for abs_path, rel_path in resource_paths(test_dir,{'*/src/test': 'test ignore'})]
-    #     assert expected == sorted(test)
+    def test_resource_paths_with_glob_path(self):
+        test_dir = self.extract_test_tar('ignore/user.tgz')
+        test_plugin = ProcessIgnore(('*/src/test',))
+        expected = [
+            'user',
+            'user/ignore.doc',
+            'user/src',
+            'user/src/ignore.doc'
+        ]
+        test = [rel_path for abs_path, rel_path in resource_paths(test_dir, [test_plugin])]
+        assert expected == sorted(test)
+
+    def test_resource_paths_with_multiple_plugins(self):
+        test_dir = self.extract_test_tar('ignore/user.tgz')
+        test_plugins = [
+            ProcessIgnore(('*.doc',)),
+            ProcessIgnore(('*/src/test/*',))
+        ]
+        expected = [
+            'user',
+            'user/src',
+            'user/src/test'
+        ]
+        test = [rel_path for abs_path, rel_path in resource_paths(test_dir, test_plugins)]
+        assert expected == sorted(test)

@@ -526,7 +526,7 @@ def scan(input_path,
          scans_cache_class=None,
          strip_root=False,
          full_root=False,
-         pre_scan_plugins=None):
+         pre_scan_plugins=()):
     """
     Return a tuple of (files_count, scan_results, success) where
     scan_results is an iterable and success is a boolean.
@@ -755,7 +755,7 @@ def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT):
     return success, rel_path
 
 
-def resource_paths(base_path, pre_scan_plugins=None):
+def resource_paths(base_path, pre_scan_plugins=()):
     """
     Yield tuples of (absolute path, base_path-relative path) for all the files found
     at base_path (either a directory or file) given an absolute base_path. Only yield
@@ -769,11 +769,13 @@ def resource_paths(base_path, pre_scan_plugins=None):
     base_path = os.path.abspath(os.path.normpath(os.path.expanduser(base_path)))
     base_is_dir = filetype.is_dir(base_path)
     len_base_path = len(base_path)
-    ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS, unignores={})
-    resources = fileutils.resource_iter(base_path, ignored=ignored)
+    ignores = {}
     if pre_scan_plugins:
         for plugin in pre_scan_plugins:
-            resources = plugin.process_resources(resources)
+            ignores.update(plugin.get_ignores())
+    ignores.update(ignore.ignores_VCS)
+    ignored = partial(ignore.is_ignored, ignores=ignores, unignores={})
+    resources = fileutils.resource_iter(base_path, ignored=ignored)
 
     for abs_path in resources:
         posix_path = fileutils.as_posixpath(abs_path)
