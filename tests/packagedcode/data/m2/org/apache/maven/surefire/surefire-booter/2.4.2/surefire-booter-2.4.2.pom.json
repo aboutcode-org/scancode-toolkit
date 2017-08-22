@@ -1,0 +1,56 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.surefire", 
+  "artifact_id": "surefire-booter", 
+  "version": "2.4.2", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.apache.maven.surefire", 
+    "artifact_id": "surefire", 
+    "version": "2.4.2", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "SureFire Booter", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "jmock", 
+        "artifact_id": "jmock", 
+        "version": "1.0.1", 
+        "required": true
+      }
+    ], 
+    "compile": [
+      {
+        "group_id": "org.apache.maven.surefire", 
+        "artifact_id": "surefire-api", 
+        "version": "2.4.2", 
+        "required": true
+      }
+    ]
+  }
+}

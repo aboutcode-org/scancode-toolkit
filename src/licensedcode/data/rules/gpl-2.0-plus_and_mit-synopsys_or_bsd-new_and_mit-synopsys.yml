@@ -1,0 +1,6 @@
+licenses:
+    - gpl-2.0-plus
+    - mit-synopsys
+    - bsd-new
+    - mit-synopsys
+license_expression: (gpl-2.0-plus and mit-synopsys) or (bsd-new and mit-synopsys)

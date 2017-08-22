@@ -1,13 +1,10 @@
 key: apsl-1.1
 short_name: APSL 1.1
 name: Apple Public Source License 1.1
-
 category: Copyleft Limited
 owner: Apple
 homepage_url: http://web.archive.org/web/20000901055846/http://www.opensource.apple.com/apsl/
-notes: |-
-    notes from SPDX:
-    This license was released 19 April 1999.
+notes: Per SPDX.org, this license was released 19 April 1999.
 spdx_license_key: APSL-1.1
 text_urls:
     - http://www.opensource.apple.com/apsl/1.1.txt

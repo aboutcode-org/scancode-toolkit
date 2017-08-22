@@ -1,0 +1,140 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>org.apache.myfaces.maven</groupId>
+    <artifactId>myfaces-master</artifactId>
+		<version>1.0.5</version>	  
+  </parent>
+
+  <groupId>org.apache.myfaces.tomahawk</groupId>
+  <artifactId>tomahawk-project</artifactId>
+  <packaging>pom</packaging>
+  <name>Tomahawk Project</name>
+  <url>http://myfaces.apache.org/tomahawk</url>
+  <version>1.1.5</version>	 
+  <description>Apache MyFaces Tomahawk is a sub-project of Apache MyFaces which provides an extensive sets
+  of custom components for use in your JSF-projects. Additionally, Tomahawk includes many custom
+  features helping you to implement JSF-projects more easily.
+  </description>
+  
+  <scm>
+    <connection>scm:svn:https://svn.apache.org/repos/asf/myfaces/tomahawk/branches/1_1_5</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/myfaces/tomahawk/branches/1_1_5</developerConnection>
+    <url>https://svn.apache.org/repos/asf/myfaces/tomahawk/branches/1_1_5</url>
+  </scm>  
+
+  <issueManagement>
+    <system>jira</system>
+    <url>http://issues.apache.org/jira/browse/TOMAHAWK</url>
+  </issueManagement>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.apache.myfaces.core</groupId>
+        <artifactId>myfaces-api</artifactId>
+        <version>${myfaces.version}</version>
+      </dependency>
+  
+      <dependency>
+        <groupId>org.apache.myfaces.core</groupId>
+        <artifactId>myfaces-impl</artifactId>
+        <version>${myfaces.version}</version>
+      </dependency>
+  
+      <dependency>
+        <groupId>org.apache.myfaces.shared</groupId>
+        <artifactId>myfaces-shared-tomahawk</artifactId>
+        <version>${myfaces-shared.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <repositories>
+    <repository>
+      <id>apache-maven-snapshots</id>
+      <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+
+    <repository>
+      <id>myfaces-staging</id>
+      <url>http://people.apache.org/builds/myfaces/m2-staging-repository</url>
+      <releases>
+        <enabled>false</enabled>  <!-- Enable to test a MyFaces core release candidate with tomahawk -->
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <profiles>
+    <profile>
+      <activation>
+        <jdk>1.5</jdk>
+      </activation>
+      <modules>
+        <module>sandbox15</module>
+      </modules>
+    </profile>
+    
+    <profile>
+      <id>sign-artifacts</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+     
+  </profiles>
+
+  <modules>
+    <module>core</module>
+    <module>examples</module>
+    <!--<module>sandbox</module>-->
+  </modules>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.0-alpha-3</version>
+          </plugin>
+        </plugins>
+    </pluginManagement>
+  </build>
+
+  <properties>
+    <myfaces.version>1.1.5</myfaces.version>
+    <myfaces-shared.version>2.0.5</myfaces-shared.version>
+  </properties>
+
+</project>

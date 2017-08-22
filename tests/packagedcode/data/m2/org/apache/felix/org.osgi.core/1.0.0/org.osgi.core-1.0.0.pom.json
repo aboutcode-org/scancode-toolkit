@@ -1,0 +1,33 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.felix", 
+  "artifact_id": "org.osgi.core", 
+  "version": "1.0.0", 
+  "classifier": null, 
+  "packaging ": "bundle", 
+  "parent": {
+    "group_id": "org.apache.felix", 
+    "artifact_id": "felix", 
+    "version": "1.0.0", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "OSGi R4 Core Bundle", 
+  "description": "OSGi Service Platform Release 4 Core Interfaces and Classes.", 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": "OSGi Alliance", 
+  "organization_url": "http://www.osgi.org/", 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

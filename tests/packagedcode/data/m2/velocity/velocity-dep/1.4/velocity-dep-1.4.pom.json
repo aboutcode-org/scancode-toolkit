@@ -1,0 +1,57 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "velocity", 
+  "artifact_id": "velocity-dep", 
+  "version": "1.4", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Velocity", 
+  "description": "Velocity is a Java-based template engine. It permits anyone to use the\n    simple yet powerful template language to reference objects defined in Java\n    code.", 
+  "inception_year": "2000", 
+  "url": "http://jakarta.apache.org/velocity/", 
+  "organization_name": "Apache Software Foundation", 
+  "organization_url": "http://jakarta.apache.org/", 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Maven User List", 
+      "archive_url": "http://www.mail-archive.com/velocity-user@jakarta.apache.org/"
+    }, 
+    {
+      "name": "Maven Developer List", 
+      "archive_url": "http://www.mail-archive.com/velocity-dev@jakarta.apache.org/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:cvs:pserver:anoncvs@cvs.apache.org:/home/cvspublic:jakarta-velocity", 
+    "developer_connection": null, 
+    "url": "http://cvs.apache.org/viewcvs/jakarta-turbine-maven/", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": null, 
+    "url": "http://nagoya.apache.org/scarab/servlet/scarab/"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "default", 
+      "name": "Default Site", 
+      "url": "scp://jakarta.apache.org//www/jakarta.apache.org/velocity/"
+    }, 
+    "repository": {
+      "id": "default", 
+      "name": "Default Repository", 
+      "url": "file:///www/jakarta.apache.org/builds/jakarta-velocity/"
+    }, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

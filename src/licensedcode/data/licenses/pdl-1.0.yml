@@ -2,7 +2,7 @@ key: pdl-1.0
 short_name: PDL-1.0
 name: PUBLIC DOCUMENTATION LICENSE
 category: Copyleft Limited
-owner: Apache
+owner: Apache Software Foundation
 homepage_url: https://www.openoffice.org/licenses/PDL.html
 notes: this is a derivative of the MPL used in legacy OpenOffice.
 other_urls:

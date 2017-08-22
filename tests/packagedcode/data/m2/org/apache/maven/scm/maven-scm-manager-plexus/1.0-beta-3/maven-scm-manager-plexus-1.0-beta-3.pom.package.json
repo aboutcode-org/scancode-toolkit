@@ -1,0 +1,52 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.apache.maven.scm:maven-scm-manager-plexus", 
+  "version": "1.0-beta-3", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Maven SCM Manager for Plexus", 
+  "description": null, 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": null, 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "org.codehaus.plexus:plexus-container-default", 
+        "version": null, 
+        "version_constraint": "1.0-alpha-9"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

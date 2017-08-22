@@ -1,0 +1,484 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.myfaces.maven", 
+  "artifact_id": "myfaces-master", 
+  "version": "1.0.5", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {}, 
+  "name": "Master POM", 
+  "description": "This is a master POM that is meant to be used by the various MyFaces modules.  It contains information that is\n        common to all projects.", 
+  "inception_year": null, 
+  "url": "http://myfaces.apache.org/projects", 
+  "organization_name": "Apache Software Foundation", 
+  "organization_url": "http://www.apache.org/", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [
+    {
+      "id": "koinov", 
+      "name": "Anton Koinov", 
+      "email": "koinov@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC"
+      ]
+    }, 
+    {
+      "id": "bdudney", 
+      "name": "Bill Dudney", 
+      "email": "bdudney@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC"
+      ]
+    }, 
+    {
+      "id": "grantsmith", 
+      "name": "Grant Smith", 
+      "email": "grantsmith@apache.org", 
+      "url": null, 
+      "organization": "Marathon Computer Systems, USA", 
+      "organization_url": null, 
+      "roles": [
+        "PMC"
+      ]
+    }, 
+    {
+      "id": "manolito", 
+      "name": "Manfred Geiler", 
+      "email": "manolito@apache.org", 
+      "url": null, 
+      "organization": "Oesterreichische Kontrollbank AG, Austria", 
+      "organization_url": "http://www.oekb.at/", 
+      "roles": [
+        "Founder of MyFaces", 
+        "PMC Chair", 
+        "JSR-252 JSF 1.2 EG member"
+      ]
+    }, 
+    {
+      "id": "mmarinschek", 
+      "name": "Martin Marinschek", 
+      "email": "mmarinschek@apache.org", 
+      "url": null, 
+      "organization": "IRIAN.at, Austria", 
+      "organization_url": "http://www.irian.at/index.jsp?lang=en", 
+      "roles": [
+        "PMC"
+      ]
+    }, 
+    {
+      "id": "matzew", 
+      "name": "Matthias Wessendorf", 
+      "email": "matzew@apache.org", 
+      "url": null, 
+      "organization": "Oracle, Germany", 
+      "organization_url": "http://www.oracle.com/", 
+      "roles": [
+        "PMC"
+      ]
+    }, 
+    {
+      "id": "oros", 
+      "name": "Oliver Rossmueller", 
+      "email": "oros@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC"
+      ]
+    }, 
+    {
+      "id": "schof", 
+      "name": "Sean Schofield", 
+      "email": "schof@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC"
+      ]
+    }, 
+    {
+      "id": "svieujot", 
+      "name": "Sylvain Vieujot", 
+      "email": "svieujot@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC"
+      ]
+    }, 
+    {
+      "id": "husted", 
+      "name": "Ted Husted", 
+      "email": "husted@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC", 
+        "ASF Member", 
+        "Struts PMC", 
+        "Jakarta PMC"
+      ]
+    }, 
+    {
+      "id": "tomsp", 
+      "name": "Thomas Spiegl", 
+      "email": "tomsp@apache.org", 
+      "url": null, 
+      "organization": "IRIAN.at, Austria", 
+      "organization_url": "http://www.irian.at/index.jsp?lang=en", 
+      "roles": [
+        "PMC"
+      ]
+    }, 
+    {
+      "id": "prophecy", 
+      "name": "Travis Reeder", 
+      "email": "prophecy@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC"
+      ]
+    }, 
+    {
+      "id": "baranda", 
+      "name": "Bruno Aranda", 
+      "email": "baranda@apache.org", 
+      "url": null, 
+      "organization": "European Bioinformatics Institute, EMBL, UK", 
+      "organization_url": "http://www.ebi.ac.uk", 
+      "roles": [
+        "PMC"
+      ]
+    }, 
+    {
+      "id": "jmitchell", 
+      "name": "James Mitchell", 
+      "email": "jmitchell@apache.org", 
+      "url": null, 
+      "organization": "EdgeTech, Inc.,United States of America", 
+      "organization_url": "www.edgetechservices.net", 
+      "roles": []
+    }, 
+    {
+      "id": "mbr", 
+      "name": "Mathias Broekelmann", 
+      "email": "mbr@apache.org", 
+      "url": null, 
+      "organization": "PSI Information Management GmbH, Germany", 
+      "organization_url": "http://www.psi-im.de", 
+      "roles": []
+    }, 
+    {
+      "id": "werpu", 
+      "name": "Werner Punz", 
+      "email": "werpu@apache.org", 
+      "url": null, 
+      "organization": "Media Data GmbH, Austria", 
+      "organization_url": null, 
+      "roles": [
+        "Mister \"Ajax\""
+      ]
+    }, 
+    {
+      "id": "ssilvert", 
+      "name": "Stan Silvert", 
+      "email": "ssilvert@apache.org", 
+      "url": null, 
+      "organization": "JBoss/Blog/organization", 
+      "organization_url": "http://jboss.org/jbossBlog/blog/Stan%20Silvert/", 
+      "roles": [
+        "Portlets Guru"
+      ]
+    }, 
+    {
+      "id": "mkienenb", 
+      "name": "Mike Kienenberger", 
+      "email": "mkienenb@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC"
+      ]
+    }, 
+    {
+      "id": "skitching", 
+      "name": "Simon Kitching", 
+      "email": "skitching@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "weber", 
+      "name": "Volker Weber", 
+      "email": "weber@apache.org", 
+      "url": null, 
+      "organization": "inexso GmbH, Germany", 
+      "organization_url": "http://www.inexso.de", 
+      "roles": [
+        "PMC"
+      ]
+    }, 
+    {
+      "id": "dennisbyrne", 
+      "name": "Dennis Byrne", 
+      "email": "dennisbyrne@apache.org", 
+      "url": null, 
+      "organization": "ThoughtWorks", 
+      "organization_url": "http://www.thoughtworks.com", 
+      "roles": [
+        "PMC"
+      ]
+    }, 
+    {
+      "id": "bommel", 
+      "name": "Bernd Bohmann", 
+      "email": "bommel@apache.org", 
+      "url": null, 
+      "organization": "atanion GmbH, Germany", 
+      "organization_url": "http://www.atanion.com", 
+      "roles": []
+    }, 
+    {
+      "id": "imario", 
+      "name": "Mario Ivankovits", 
+      "email": "imario@apache.org", 
+      "url": null, 
+      "organization": "OPS EDV GmbH", 
+      "organization_url": "http://www.ops.co.at", 
+      "roles": []
+    }, 
+    {
+      "id": "cagatay", 
+      "name": "Cagatay Civici", 
+      "email": "cagatay@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "sharathreddy", 
+      "name": "Sharath Reddy", 
+      "email": "sharathreddy@yahoo.com", 
+      "url": null, 
+      "organization": "N.A.", 
+      "organization_url": "N.A.", 
+      "roles": []
+    }, 
+    {
+      "id": "jlust", 
+      "name": "Jurgen Lust", 
+      "email": "jlust@apache.org", 
+      "url": null, 
+      "organization": "Ghent University", 
+      "organization_url": "http://www.UGent.be", 
+      "roles": []
+    }, 
+    {
+      "id": "gmuellan", 
+      "name": "Gerald Muellan", 
+      "email": "gmuellan@apache.org", 
+      "url": null, 
+      "organization": "IRIAN.at, Austria", 
+      "organization_url": "http://www.irian.at/index.jsp?lang=en", 
+      "roles": [
+        "PMC"
+      ]
+    }, 
+    {
+      "id": "ckormos", 
+      "name": "Catalin Kormos", 
+      "email": "ckormos@apache.org", 
+      "url": null, 
+      "organization": "CODEBEAT S.R.L, Romania", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "wsmoak", 
+      "name": "Wendy Smoak", 
+      "email": "wsmoak@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "lfrohman", 
+      "name": "Lance Frohman", 
+      "email": "lfrohman@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "paulsp", 
+      "name": "Paul Spencer", 
+      "email": "paulsp@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "Matt Blum", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Portlets Guru"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Jiri Zaloudek", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "WML RenderKit"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Joerg Artaker", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "AutoupdateDataTable"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Thomas Huber", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "AutoupdateDataTable"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Thomas Obereder", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "InputTextHelp"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Jesse Wilson", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "NewspaperDataTable"
+      ]
+    }
+  ], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Myfaces User List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/myfaces-users"
+    }, 
+    {
+      "name": "Myfaces Developer List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/myfaces-dev"
+    }, 
+    {
+      "name": "Myfaces Commits List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/myfaces-commits"
+    }, 
+    {
+      "name": "Myfaces Announcements List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/myfaces-announce"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:https://svn.apache.org/repos/asf/myfaces/maven/branches/1_0_5", 
+    "developer_connection": null, 
+    "url": "https://svn.apache.org/repos/asf/myfaces/maven/branches/1_0_5", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://issues.apache.org/jira/secure/BrowseProject.jspa?id=10600"
+  }, 
+  "ci_management": {
+    "system": "continuum", 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "apache-site", 
+      "name": "Apache Website", 
+      "url": "scpexe://minotaur.apache.org/www/myfaces.apache.org"
+    }, 
+    "repository": {
+      "id": "myfaces-staging", 
+      "name": "Apache MyFaces Staging Repository", 
+      "url": "scpexe://people.apache.org/www/people.apache.org/builds/myfaces/m2-staging-repository"
+    }, 
+    "snapshot_repository": {
+      "id": "apache-maven-snapshots", 
+      "name": "Apache Maven Snapshot Repository", 
+      "url": "scpexe://people.apache.org/www/people.apache.org/repo/m2-snapshot-repository"
+    }
+  }, 
+  "repositories": [
+    {
+      "id": "apache.snapshots", 
+      "name": null, 
+      "url": "http://people.apache.org/repo/m2-snapshot-repository"
+    }
+  ], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

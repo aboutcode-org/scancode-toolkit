@@ -1,0 +1,72 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.plugins", 
+  "artifact_id": "maven-plugins", 
+  "version": "11", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache.maven", 
+    "artifact_id": "maven-parent", 
+    "version": "8", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Plugins", 
+  "description": "Maven Plugins", 
+  "inception_year": null, 
+  "url": "http://maven.apache.org/plugins/", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Maven User List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-users"
+    }, 
+    {
+      "name": "Maven Developer List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-dev"
+    }, 
+    {
+      "name": "Maven Issues List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-issues/"
+    }, 
+    {
+      "name": "Maven Commits List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-dev"
+    }, 
+    {
+      "name": "Maven Announcements List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-announce/"
+    }, 
+    {
+      "name": "Maven Notifications List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-notifications/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/maven/plugins/tags/maven-plugins-11", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewcvs.cgi/maven/plugins/tags/maven-plugins-11", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "apache.website", 
+      "name": null, 
+      "url": "scp://people.apache.org/www/maven.apache.org/plugins/"
+    }, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

@@ -1,0 +1,5 @@
+licenses:
+    - intel-bsd
+    - gpl-2.0
+license_choice: yes
+notes: http://ftp.netbsd.org/pub/NetBSD/NetBSD-current/src/sys/external/bsd/acpica/dist/namespace/nswalk.c

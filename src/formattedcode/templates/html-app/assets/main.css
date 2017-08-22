@@ -52,6 +52,21 @@ table.table-wrap {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+#scan-result-header {
+  margin: 0px 40px 20px 10px;
+}
+
+#file-path {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#file-path p {
+  padding: 0px 20px 0px 20px;
+  line-height: 30px;
+  margin-bottom: 0px;
+}
+
 .data_table, #tree {
 border: 1px solid #CCC;
 border-radius: 4px;

@@ -1,0 +1,5 @@
+"EXPORT_SYMBOL",            .export = export_plain },
+"EXPORT_UNUSED_SYMBOL",     .export = export_unused },
+"EXPORT_SYMBOL_GPL",        .export = export_gpl },
+"EXPORT_UNUSED_SYMBOL_GPL", .export = export_unused_gpl },
+"EXPORT_SYMBOL_GPL_FUTURE", .export = export_gpl_future },

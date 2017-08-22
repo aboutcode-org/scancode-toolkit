@@ -139,6 +139,7 @@ def clean(root_dir):
         .cache
         pip-selfcheck.json
         src/scancode_toolkit.egg-info
+        SCANCODE_DEV_MODE
     '''.split()
 
     # also clean __pycache__ if any

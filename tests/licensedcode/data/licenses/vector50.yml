@@ -1,0 +1,3 @@
+licenses:
+    - boost-1.0
+notes: no other license should be detected as the mpl::int is not an MPL license

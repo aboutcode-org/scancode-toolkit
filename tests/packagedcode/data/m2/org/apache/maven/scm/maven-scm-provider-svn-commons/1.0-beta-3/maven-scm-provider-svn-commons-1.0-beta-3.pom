@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+  <parent>
+    <artifactId>maven-scm-providers-svn</artifactId>
+    <groupId>org.apache.maven.scm</groupId>
+    <version>1.0-beta-3</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>maven-scm-provider-svn-commons</artifactId>
+  <name>Maven SCM Subversion Provider - Common library</name>
+  <version>1.0-beta-3</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.modello</groupId>
+        <artifactId>modello-maven-plugin</artifactId>
+        <version>1.0-alpha-6</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+              <goal>xpp3-reader</goal>
+              <goal>xsd</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <version>1.0.0</version>
+          <model>src/main/mdo/svn-settings.mdo</model>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <distributionManagement>
+    <status>deployed</status>
+  </distributionManagement>
+</project>

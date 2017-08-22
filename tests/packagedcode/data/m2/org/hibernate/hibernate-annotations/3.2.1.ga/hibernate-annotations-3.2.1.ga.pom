@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate-annotations</artifactId>
+	<packaging>jar</packaging>
+	<version>3.2.1.ga</version>
+
+	<name>Hibernate Annotations</name>
+	<description>EJB3-style annotations for Hibernate</description>
+	<url>http://annotations.hibernate.org</url>
+
+	<licenses>
+		<license>
+			<name>GNU LESSER GENERAL PUBLIC LICENSE</name>
+			<url>http://www.gnu.org/licenses/lgpl.txt</url>
+		</license>
+	</licenses>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate</artifactId>
+			<version>3.2.1.ga</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>persistence-api</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-core</artifactId>
+			<version>2.0.0</version>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+	
+</project>

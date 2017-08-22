@@ -1,0 +1,140 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.codehaus.mojo:cobertura-maven-plugin", 
+  "version": "2.2", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Cobertura Maven Plugin", 
+  "description": "Cobertura plugin for maven 2. Cobertura is a free Java tool that calculates the percentage of code accessed by\n    tests. It can be used to identify which parts of your Java program are lacking test coverage.", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Joakim Erdfelt", 
+      "email": "joakim@erdfelt.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Will Gwaltney", 
+      "email": "will.gwaltney@sas.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Fabrizio Giustina", 
+      "email": "fgiust@apache.org", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": null, 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "net.sourceforge.cobertura:cobertura", 
+        "version": null, 
+        "version_constraint": "1.9"
+      }, 
+      {
+        "name": "net.sourceforge.cobertura:cobertura-runtime", 
+        "version": null, 
+        "version_constraint": "1.9"
+      }, 
+      {
+        "name": "urbanophile:java-getopt", 
+        "version": null, 
+        "version_constraint": "1.0.9"
+      }, 
+      {
+        "name": "org.apache.maven:maven-artifact", 
+        "version": null, 
+        "version_constraint": "2.0"
+      }, 
+      {
+        "name": "org.apache.maven:maven-plugin-api", 
+        "version": null, 
+        "version_constraint": "2.0"
+      }, 
+      {
+        "name": "org.apache.maven.reporting:maven-reporting-api", 
+        "version": null, 
+        "version_constraint": "2.0"
+      }, 
+      {
+        "name": "org.apache.maven:maven-project", 
+        "version": null, 
+        "version_constraint": "2.0"
+      }, 
+      {
+        "name": "org.apache.maven.reporting:maven-reporting-impl", 
+        "version": null, 
+        "version_constraint": "2.0"
+      }, 
+      {
+        "name": "org.codehaus.plexus:plexus-container-default", 
+        "version": null, 
+        "version_constraint": "1.0-alpha-9"
+      }, 
+      {
+        "name": "org.codehaus.plexus:plexus-utils", 
+        "version": null, 
+        "version_constraint": "1.1"
+      }
+    ], 
+    "test": [
+      {
+        "name": "httpunit:httpunit", 
+        "version": null, 
+        "version_constraint": "1.6"
+      }, 
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.1"
+      }, 
+      {
+        "name": "org.apache.maven.shared:maven-plugin-testing-harness", 
+        "version": null, 
+        "version_constraint": "1.0-beta-1"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

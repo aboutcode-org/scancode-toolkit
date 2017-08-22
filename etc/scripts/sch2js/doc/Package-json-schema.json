@@ -1,0 +1,1056 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#", 
+  "id": "", 
+  "type": "object", 
+  "title": "package", 
+  "description": "A package object.", 
+  "required": [
+    "type", 
+    "name"
+  ], 
+  "properties": {
+    "type": {
+      "type": "string", 
+      "title": "package type", 
+      "description": "Descriptive name of the type of package: RubyGem, Python Wheel, Java Jar, Debian package, etc."
+    }, 
+    "name": {
+      "type": "string", 
+      "title": "package name", 
+      "description": "Name of the package."
+    }, 
+    "version": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "package version", 
+          "description": "Version of the package. Package types may implement specific handling for versions but this is always serialized as a string."
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "primary_language": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "Primary programming language", 
+          "description": "Primary programming language of the package, such as Java, C, C++. Derived from the package type: i.e. RubyGems are primarily ruby, etc."
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "packaging": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "Packaging", 
+          "description": "How a package is packaged. One of: archive, directory, file", 
+          "enum": [
+            "archive", 
+            "directory", 
+            "file"
+          ]
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "summary": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "Summary", 
+          "description": "Summary for this package i.e. a short description"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "description": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "Description", 
+          "description": "Description for this package i.e. a long description, often several pages of text"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "payload_type": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "Payload type", 
+          "description": "The type of payload for this package. One of: source, binary, doc", 
+          "enum": [
+            "source", 
+            "binary", 
+            "doc"
+          ]
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "size": {
+      "oneOf": [
+        {
+          "type": "integer", 
+          "title": "size", 
+          "description": "size of the package download in bytes"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "release_date": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "release date", 
+          "description": "Release date of the package"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "authors": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "authors", 
+          "description": "A list of party objects. Note: this model schema will change soon.", 
+          "items": {
+            "type": "object", 
+            "title": "party", 
+            "description": "A party is a person, project or organization related to a package.", 
+            "properties": {
+              "type": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "party type", 
+                    "description": "the type of this party: One of: person, project, organization", 
+                    "enum": [
+                      "person", 
+                      "project", 
+                      "organization"
+                    ]
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "name": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "url", 
+                    "description": "URL to a primary web page for this party."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "url": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "email": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "email", 
+                    "description": "Email for this party."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "maintainers": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "maintainers", 
+          "description": "A list of party objects. Note: this model schema will change soon.", 
+          "items": {
+            "type": "object", 
+            "title": "party", 
+            "description": "A party is a person, project or organization related to a package.", 
+            "properties": {
+              "type": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "party type", 
+                    "description": "the type of this party: One of: person, project, organization", 
+                    "enum": [
+                      "person", 
+                      "project", 
+                      "organization"
+                    ]
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "name": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "url", 
+                    "description": "URL to a primary web page for this party."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "url": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "email": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "email", 
+                    "description": "Email for this party."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "contributors": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "contributors", 
+          "description": "A list of party objects. Note: this model schema will change soon.", 
+          "items": {
+            "type": "object", 
+            "title": "party", 
+            "description": "A party is a person, project or organization related to a package.", 
+            "properties": {
+              "type": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "party type", 
+                    "description": "the type of this party: One of: person, project, organization", 
+                    "enum": [
+                      "person", 
+                      "project", 
+                      "organization"
+                    ]
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "name": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "url", 
+                    "description": "URL to a primary web page for this party."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "url": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "email": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "email", 
+                    "description": "Email for this party."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "owners": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "owners", 
+          "description": "A list of party objects. Note: this model schema will change soon.", 
+          "items": {
+            "type": "object", 
+            "title": "party", 
+            "description": "A party is a person, project or organization related to a package.", 
+            "properties": {
+              "type": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "party type", 
+                    "description": "the type of this party: One of: person, project, organization", 
+                    "enum": [
+                      "person", 
+                      "project", 
+                      "organization"
+                    ]
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "name": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "url", 
+                    "description": "URL to a primary web page for this party."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "url": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "email": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "email", 
+                    "description": "Email for this party."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "packagers": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "owners", 
+          "description": "A list of party objects. Note: this model schema will change soon.", 
+          "items": {
+            "type": "object", 
+            "title": "party", 
+            "description": "A party is a person, project or organization related to a package.", 
+            "properties": {
+              "type": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "party type", 
+                    "description": "the type of this party: One of: person, project, organization", 
+                    "enum": [
+                      "person", 
+                      "project", 
+                      "organization"
+                    ]
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "name": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "url", 
+                    "description": "URL to a primary web page for this party."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "url": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "email": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "email", 
+                    "description": "Email for this party."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "distributors": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "distributors", 
+          "description": "A list of party objects. Note: this model schema will change soon.", 
+          "items": {
+            "type": "object", 
+            "title": "party", 
+            "description": "A party is a person, project or organization related to a package.", 
+            "properties": {
+              "type": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "party type", 
+                    "description": "the type of this party: One of: person, project, organization", 
+                    "enum": [
+                      "person", 
+                      "project", 
+                      "organization"
+                    ]
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "name": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "url", 
+                    "description": "URL to a primary web page for this party."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "url": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "email": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "email", 
+                    "description": "Email for this party."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "vendors": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "vendors", 
+          "description": "A list of party objects. Note: this model schema will change soon.", 
+          "items": {
+            "type": "object", 
+            "title": "party", 
+            "description": "A party is a person, project or organization related to a package.", 
+            "properties": {
+              "type": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "party type", 
+                    "description": "the type of this party: One of: person, project, organization", 
+                    "enum": [
+                      "person", 
+                      "project", 
+                      "organization"
+                    ]
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "name": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "url", 
+                    "description": "URL to a primary web page for this party."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "url": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "email": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "email", 
+                    "description": "Email for this party."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "keywords": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "keywords", 
+          "description": "A list of keywords or tags.", 
+          "items": {
+            "type": "string"
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "keywords_doc_url": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "keywords documentation URL", 
+          "description": "URL to a reference documentation for keywords or tags (such as a Pypi or SF.net Trove map)"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "metafile_locations": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "metafile locations", 
+          "description": "A list of metafile locations for this package (such as a package.json, a setup.py). Relative to the package root directory or archive root", 
+          "items": {
+            "type": "string"
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "metafile_urls": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "metafile URLs", 
+          "description": "A list of metafile remote URLs for this package (such as a package.json, a setup.py)", 
+          "items": {
+            "type": "string"
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "homepage_url": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "homepage URL", 
+          "description": "URL to the homepage for this package"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "notes": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "Notes", 
+          "description": "Notes, free text about this package"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "download_urls": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "Download URLs", 
+          "description": "A list of direct download URLs, possibly in SPDX VCS url form. The first item is considered to be the primary download URL", 
+          "items": {
+            "type": "string"
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "download_sha1": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "Download SHA1", 
+          "description": "Shecksum for the download"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "download_sha256": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "Download SHA256", 
+          "description": "Shecksum for the download"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "download_md5": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "Download MD5", 
+          "description": "Shecksum for the download"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "bug_tracking_url": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "bug tracking URL", 
+          "description": "URL to the issue or bug tracker for this package"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "support_contacts": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "Support contacts", 
+          "description": "A list of strings (such as email, urls, etc) for support contacts", 
+          "items": {
+            "type": "string"
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "code_view_url": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "code view URL", 
+          "description": "a URL where the code can be browsed online"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "vcs_tool": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "Version control system tool", 
+          "description": "The type of VCS tool for this package. One of: git, svn, hg, bzr, cvs", 
+          "enum": [
+            "git", 
+            "svn", 
+            "hg", 
+            "bzr", 
+            "cvs"
+          ]
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "vcs_repository": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "VCS Repository URL", 
+          "description": "a URL to the VCS repository in the SPDX form of:git+https://github.com/nexb/scancode-toolkit.git"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "vcs_revision": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "VCS revision", 
+          "description": "a revision, commit, branch or tag reference, etc. (can also be included in the URL)"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "copyright_top_level": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "Top level Copyright", 
+          "description": "a top level copyright often asserted in package metadata"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "copyrights": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "Copyrights", 
+          "description": "A list of effective copyrights as detected and eventually summarized", 
+          "items": {
+            "type": "string"
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "asserted_licenses": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "asserted licenses", 
+          "description": "A list of asserted license objects representing the asserted licensing information for this package", 
+          "items": {
+            "type": "object", 
+            "title": "asserted license", 
+            "description": "Represents the licensing as asserted in a package metadata.", 
+            "properties": {
+              "license": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "license", 
+                    "description": "license as asserted. This can be a text, a name or anything."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "url": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "url", 
+                    "description": "URL to a web page for this license."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "text": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "license text", 
+                    "description": "license text as asserted."
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "notice": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "notice", 
+                    "description": "a license notice for this package"
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "legal_file_locations": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "legal file locations", 
+          "description": "A list of paths to legal files (such as COPYING, NOTICE, LICENSE, README, etc.). Paths are relative to the root of the package", 
+          "items": {
+            "type": "string"
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "license_expression": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "license expression", 
+          "description": "license expression: either resolved or detected license expression"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "license_texts": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "notice texts", 
+          "description": "A list of notice texts for this package.", 
+          "items": {
+            "type": "string"
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "notice_texts": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "items": {
+            "type": "string"
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "dependencies": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "dependencies", 
+          "description": "An object mapping a dependency group to a list of dependency objects for this package. Note: the schema for this will change soon.The possible values for dependency grousp are:runtime, development, optional, test, build, continuous integration, bundled"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "related_packages": {
+      "oneOf": [
+        {
+          "type": "array", 
+          "title": "related packages", 
+          "description": "A list of related_package objects for this package. For instance the SRPM source of a binary RPM.", 
+          "items": {
+            "type": "object", 
+            "title": "related package", 
+            "description": "A generic related package.", 
+            "required": [
+              "type", 
+              "name"
+            ], 
+            "properties": {
+              "type": {
+                "type": "string", 
+                "title": "type", 
+                "description": "Descriptive name of the type of package: RubyGem, Python Wheel, Java Jar, Debian package, etc."
+              }, 
+              "name": {
+                "type": "string", 
+                "title": "name", 
+                "description": "Name of the package."
+              }, 
+              "version": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "version", 
+                    "description": "Version of the package"
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }, 
+              "payload_type": {
+                "oneOf": [
+                  {
+                    "type": "string", 
+                    "title": "Payload type", 
+                    "description": "The type of payload for this package. One of: source, binary, doc", 
+                    "enum": [
+                      "source", 
+                      "binary", 
+                      "doc"
+                    ]
+                  }, 
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

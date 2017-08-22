@@ -1,0 +1,297 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.apache.maven:maven-parent", 
+  "version": "6", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Apache Maven", 
+  "description": "Maven is a software project management and comprehension tool. Based on the concept of a project object model   (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Jason van Zyl", 
+      "email": "jason@maven.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Arnaud Heritier", 
+      "email": "aheritier@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Brett Porter", 
+      "email": "brett@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Brian Fox", 
+      "email": "brianf@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Carlos Sanchez", 
+      "email": "carlos@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Dennis Lundberg", 
+      "email": "dennisl@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Emmanuel Venisse", 
+      "email": "evenisse@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Fabrizio Giustina", 
+      "email": "fgiust@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "John Casey", 
+      "email": "jdcasey@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Joakim Erdfelt", 
+      "email": "joakime@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "James Strachan", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Ernesto Tolentino Jr.", 
+      "email": "jtolentino@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jesse McConnell", 
+      "email": "jmcconnell@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Kenney Westerhof", 
+      "email": "kenney@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Lukas Theussl", 
+      "email": "ltheussl@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Mike Perham", 
+      "email": "mperham@gmail.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Stephane Nicoll", 
+      "email": "snicoll@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Trygve Laugstol", 
+      "email": "trygvis@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Vincent Massol", 
+      "email": "vmassol@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Vincent Siveton", 
+      "email": "vsiveton@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Wendy Smoak", 
+      "email": "wsmoak@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Allan Q. Ramirez", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Barrie Treloar", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Henri Yandell", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Fabrice Bellingard", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Chris Stevenson", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Dan Tran", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "David Blevins", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Daniel Fabulich", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Daniel Kulp", 
+      "email": "dkulp@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Daniel Rall", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Edwin Punzalan", 
+      "email": "epunzalan@mergere.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Felipe Leme", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Andrew Williams", 
+      "email": "handyande@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jeff Jensen", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Milos Kleint", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Maria Odea B. Ching", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Patrick Schneider", 
+      "email": "pschneider@gmail.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Ralph Goers", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Rahul Thakur", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Shinobu Kuwai", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Torbjorn Eikli Smorgrav", 
+      "email": null, 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://maven.apache.org/", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {}, 
+  "related_packages": []
+}

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>commons-io</groupId>
+  <artifactId>commons-io</artifactId>
+  <name>IO</name>
+  <version>1.3.1</version>
+  <description>Commons-IO contains utility classes, stream implementations, file filters, and endian classes.</description>
+  <url>http://jakarta.apache.org/commons/io/</url>
+  <issueManagement>
+    <url>http://issues.apache.org/jira/</url>
+  </issueManagement>
+  <ciManagement>
+    <notifiers>
+      <notifier>
+        <configuration>
+          <address>commons-dev@jakarta.apache.org</address>
+        </configuration>
+      </notifier>
+    </notifiers>
+  </ciManagement>
+  <inceptionYear>2002</inceptionYear>
+  <mailingLists>
+    <mailingList>
+      <name>Commons Dev List</name>
+      <subscribe>commons-dev-subscribe@jakarta.apache.org</subscribe>
+      <unsubscribe>commons-dev-unsubscribe@jakarta.apache.org</unsubscribe>
+      <archive>http://mail-archives.apache.org/mod_mbox/jakarta-commons-dev/</archive>
+    </mailingList>
+    <mailingList>
+      <name>Commons User List</name>
+      <subscribe>commons-user-subscribe@jakarta.apache.org</subscribe>
+      <unsubscribe>commons-user-unsubscribe@jakarta.apache.org</unsubscribe>
+      <archive>http://mail-archives.apache.org/mod_mbox/jakarta-commons-user/</archive>
+    </mailingList>
+  </mailingLists>
+  <developers>
+    <developer>
+      <id>sanders</id>
+      <name>Scott Sanders</name>
+      <email>sanders@apache.org</email>
+      <organization></organization>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>dion</id>
+      <name>dIon Gillard</name>
+      <email>dion@apache.org</email>
+      <organization></organization>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>nicolaken</id>
+      <name>Nicola Ken Barozzi</name>
+      <email>nicolaken@apache.org</email>
+      <organization></organization>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>bayard</id>
+      <name>Henri Yandell</name>
+      <email>bayard@apache.org</email>
+      <organization></organization>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>scolebourne</id>
+      <name>Stephen Colebourne</name>
+      <organization></organization>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+      <timezone>0</timezone>
+    </developer>
+    <developer>
+      <id>jeremias</id>
+      <name>Jeremias Maerki</name>
+      <email>jeremias@apache.org</email>
+      <organization></organization>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+    <developer>
+      <id>matth</id>
+      <name>Matthew Hawthorne</name>
+      <email>matth@apache.org</email>
+      <organization></organization>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>martinc</id>
+      <name>Martin Cooper</name>
+      <email>martinc@apache.org</email>
+      <organization></organization>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>roxspring</id>
+      <name>Rob Oxspring</name>
+      <email>roxspring@apache.org</email>
+      <organization></organization>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <contributors>
+    <contributor>
+      <name>Rahul Akolkar</name>
+    </contributor>
+    <contributor>
+      <name>Jason Anderson</name>
+    </contributor>
+    <contributor>
+      <name>Nathan Beyer</name>
+    </contributor>
+    <contributor>
+      <name>Emmanuel Bourg</name>
+    </contributor>
+    <contributor>
+      <name>Chris Eldredge</name>
+    </contributor>
+    <contributor>
+      <name>Magnus Grimsell</name>
+    </contributor>
+    <contributor>
+      <name>Jim Harrington</name>
+    </contributor>
+    <contributor>
+      <name>Holger Hoffstatte</name>
+    </contributor>
+    <contributor>
+      <name>Thomas Ledoux</name>
+    </contributor>
+    <contributor>
+      <name>Andy Lehane</name>
+    </contributor>
+    <contributor>
+      <name>Marcelo Liberato</name>
+    </contributor>
+    <contributor>
+      <name>Alban Peignier</name>
+      <email>alban.peignier at free.fr</email>
+    </contributor>
+    <contributor>
+      <name>Niall Pemberton</name>
+    </contributor>
+    <contributor>
+      <name>Ian Springer</name>
+    </contributor>
+    <contributor>
+      <name>Masato Tezuka</name>
+    </contributor>
+    <contributor>
+      <name>James Urie</name>
+    </contributor>
+    <contributor>
+      <name>Jochen Wiedmann</name>
+    </contributor>
+    <contributor>
+      <name>Frank W. Zammetti</name>
+    </contributor>
+  </contributors>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>/LICENSE.txt</url>
+    </license>
+  </licenses>
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/jakarta/commons/proper/io/trunk</connection>
+    <url>http://svn.apache.org/repos/asf/jakarta/commons/proper/io/trunk</url>
+  </scm>
+  <organization>
+    <name>The Apache Software Foundation</name>
+    <url>http://jakarta.apache.org</url>
+  </organization>
+  <build>
+    <sourceDirectory>src/java</sourceDirectory>
+    <testSourceDirectory>src/test</testSourceDirectory>
+    <resources>
+      <resource>
+        <targetPath>META-INF</targetPath>
+        <directory>.</directory>
+        <includes>
+          <include>NOTICE.txt</include>
+        </includes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <includes>
+            <include>**/*Test*</include>
+          </includes>
+          <excludes>
+            <exclude>**/*AbstractTestCase*</exclude>
+            <exclude>**/AllIOTestSuite*</exclude>
+            <exclude>**/PackageTestSuite*</exclude>
+            <exclude>**/testtools/**</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>default</id>
+      <name>Default Repository</name>
+      <url>file:///www/jakarta.apache.org/builds/jakarta-commons/io/</url>
+    </repository>
+    <site>
+      <id>default</id>
+      <name>Default Site</name>
+      <url>scp://people.apache.org//www/jakarta.apache.org/commons/io/</url>
+    </site>
+    <status>converted</status>
+  </distributionManagement>
+</project>

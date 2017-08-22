@@ -32,7 +32,6 @@ from collections import Counter
 from collections import defaultdict
 from collections import namedtuple
 from collections import OrderedDict
-from copy import copy
 from itertools import chain
 from operator import itemgetter
 from os.path import exists
@@ -121,6 +120,7 @@ class License(object):
         # if this is a license exception, the license key this exception applies to
         self.is_exception = False
 
+        # FIXME: this is WAY too complicated and likely not needed
         # license key for the next version of this license if any
         self.next_version = ''
         # True if this license allows later versions to be used
@@ -149,20 +149,39 @@ class License(object):
             if exists(self.data_file):
                 self.load(src_dir)
 
+    def __repr__(self, *args, **kwargs):
+        return 'License(key="{}")'.format(self.key)
+
     def set_file_paths(self):
         self.data_file = join(self.src_dir, self.key + '.yml')
         self.text_file = join(self.src_dir, self.key + '.LICENSE')
 
-    def relocate(self, src_dir):
+    def relocate(self, target_dir, new_key=None):
         """
         Return a copy of this license object relocated to a new `src_dir`.
-        Also copy the LICENSE file.
+        The data and license text files are persisted in the new `src_dir`.
         """
-        newl = copy(self)
-        newl.src_dir = src_dir
-        newl.set_file_paths()
+        if not target_dir or target_dir == self.src_dir:
+            raise ValueError(
+                'Cannot relocate a License to empty directory or same directory.')
+
+        if new_key:
+            key = new_key
+        else:
+            key = self.key
+
+        newl = License(key, target_dir)
+
+        # copy attributes
+        excluded_attrs = ('key', 'src_dir', 'data_file', 'text_file',)
+        attrs = [a for a in self.__slots__ if a not in excluded_attrs]
+        for name in attrs:
+            setattr(newl, name, getattr(self, name))
+
+        # save it all to files
         if self.text:
             fileutils.copyfile(self.text_file, newl.text_file)
+        newl.dump()
         return newl
 
     def update(self, mapping):
@@ -310,13 +329,14 @@ class License(object):
             warn = warnings[key].append
             info = infos[key].append
 
-            # names
             if not lic.short_name:
                 warn('No short name')
             if not lic.name:
                 warn('No name')
             if not lic.category:
                 warn('No category')
+            if not lic.owner:
+                warn('No owner')
 
             if lic.next_version and lic.next_version not in licenses:
                 err('License next version is unknown')
@@ -344,15 +364,15 @@ class License(object):
                         warn('Homepage URL same as faq_url')
                     if lic.homepage_url == lic.osi_url:
                         warn('Homepage URL same as osi_url')
-    
+
                 if lic.osi_url or lic.faq_url:
                     if lic.osi_url == lic.faq_url:
                         warn('osi_url same as faq_url')
-    
+
                 all_licenses = lic.text_urls + lic.other_urls
                 for url in lic.osi_url, lic.faq_url, lic.homepage_url:
                     if url: all_licenses.append(url)
-    
+
                 if not len(all_licenses) == len(set(all_licenses)):
                     warn('Some duplicated URLs')
 
@@ -406,71 +426,65 @@ class License(object):
         return errors, warnings, infos
 
 
-# global cache of licenses as mapping of lic key -> lic object
-_LICENSES = {}
-
-
-def get_licenses():
-    """
-    Return a mapping of license key -> license object.
-    """
-    global _LICENSES
-    if not _LICENSES :
-        _LICENSES = load_licenses()
-    return _LICENSES
-
-
-def load_licenses(license_dir=licenses_data_dir , with_deprecated=False):
+def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
     """
     Return a mapping of key -> license objects, loaded from license files.
     """
     licenses = {}
-    for data_file in file_iter(license_dir):
+    for data_file in file_iter(licenses_data_dir):
         if not data_file.endswith('.yml'):
             continue
         key = file_base_name(data_file)
-        lic = License(key, license_dir)
+        lic = License(key, licenses_data_dir)
         if not with_deprecated and lic.is_deprecated:
             continue
         licenses[key] = lic
     return licenses
 
 
-def get_rules():
+def get_rules(licenses_data_dir=licenses_data_dir, rules_data_dir=rules_data_dir):
     """
-    Return a list of all reference rules loaded from licenses and rules files.
-    Raise a MissingLicenses exceptions if a rule references unknown license
-    keys.
+    Return a mapping of key->license and an iterable of license detection
+    rules loaded from licenses and rules files. Raise a MissingLicenses
+    exceptions if a rule references unknown license keys.
     """
-    rls = list(chain(build_rules_from_licenses(), load_rules()))
-    check_rules_integrity(rls)
-    return rls
+    from licensedcode.cache import get_licenses_db
+    licenses = get_licenses_db(licenses_data_dir=licenses_data_dir)
+    rules = list(load_rules(rules_data_dir=rules_data_dir))
+    check_rules_integrity(rules, licenses)
+
+    licenses_as_rules = build_rules_from_licenses(licenses)
+    return chain(licenses_as_rules, rules)
 
 
 class MissingLicenses(Exception):
     pass
 
 
-def check_rules_integrity(rules):
+def check_rules_integrity(rules, licenses):
     """
-    Given a lists of rules, check that all license keys reference a known
-    license. Raise a MissingLicense exception with a message containing the list
+    Given a lists of rules, check that all the rule license keys
+    reference a known license from a mapping of licenses (key->license).
+    Raise a MissingLicense exception with a message containing the list
     of rule files without a corresponding license.
     """
-    invalid_rules = defaultdict(list)
-    licenses = get_licenses()
+    invalid_rules = defaultdict(set)
     for rule in rules:
-        for key in rule.licenses:
-            if key not in licenses:
-                invalid_rules[rule.data_file].append(key)
+        unknown_keys = [key for key in rule.licenses if key not in licenses]
+        if unknown_keys:
+            invalid_rules[rule.data_file].update(unknown_keys)
+
     if invalid_rules:
-        invalid_rules = (data_file + ': ' + ' '.join(keys)
-                         for data_file, keys in invalid_rules.iteritems())
-        msg = 'Rules referencing missing licenses:\n' + '\n'.join(invalid_rules)
+        invalid_rules = (
+            ' '.join(keys) + '\n' +
+            'file://' + data_file + '\n' +
+            'file://' + data_file.replace('.yml', '.RULE') + '\n'
+        for data_file, keys in invalid_rules.iteritems() if keys)
+        msg = 'Rules referencing missing licenses:\n' + '\n'.join(sorted(invalid_rules))
         raise MissingLicenses(msg)
 
 
-def build_rules_from_licenses(licenses=None):
+def build_rules_from_licenses(licenses):
     """
     Return an iterable of rules built from each license text from a `licenses`
     iterable of license objects. Use the reference list if `licenses` is not
@@ -478,17 +492,16 @@ def build_rules_from_licenses(licenses=None):
 
     Load the reference license list from disk if `licenses` is not provided.
     """
-    licenses = licenses or get_licenses()
-    for license_key, license_obj in licenses.items():
-        tfile = join(license_obj.src_dir, license_obj.text_file)
+    for license_key, license_obj in licenses.iteritems():
+        text_file = join(license_obj.src_dir, license_obj.text_file)
         minimum_coverage = license_obj.minimum_coverage
 
-        if exists(tfile):
-            yield Rule(text_file=tfile, licenses=[license_key],
+        if exists(text_file):
+            yield Rule(text_file=text_file, licenses=[license_key],
                        minimum_coverage=minimum_coverage, is_license=True)
 
 
-def load_rules(rule_dir=rules_data_dir):
+def load_rules(rules_data_dir=rules_data_dir):
     """
     Return an iterable of rules loaded from rule files.
     """
@@ -498,10 +511,10 @@ def load_rules(rule_dir=rules_data_dir):
     processed_files = set()
     lower_case_files = set()
     case_problems = set()
-    for data_file in file_iter(rule_dir):
+    for data_file in file_iter(rules_data_dir):
         if data_file.endswith('.yml'):
             base_name = file_base_name(data_file)
-            rule_file = join(rule_dir, base_name + '.RULE')
+            rule_file = join(rules_data_dir, base_name + '.RULE')
             yield Rule(data_file=data_file, text_file=rule_file)
 
             # accumulate sets to ensures we do not have illegal names or extra
@@ -545,16 +558,17 @@ class Rule(object):
     detected licenses and metadata. A rule text can contain variable parts
     marked with double curly braces {{ }}.
     """
-    __slots__ = ('rid', 'identifier',
-                 'licenses', 'license_choice', 'license', 'licensing_identifier',
-                 'false_positive',
-                 'notes',
-                 'data_file', 'text_file', '_text',
-                 'length', 'low_length', 'high_length', '_thresholds',
-                 'length_unique', 'low_unique', 'high_unique', '_thresholds_unique',
-                 'minimum_coverage', 'relevance', 'has_stored_relevance',
-                 'is_license'
-                 )
+    __slots__ = (
+        'rid', 'identifier',
+         'licenses', 'license_choice', 'license', 'licensing_identifier',
+         'false_positive',
+         'notes',
+         'data_file', 'text_file', '_text',
+         'length', 'low_length', 'high_length', '_thresholds',
+         'length_unique', 'low_unique', 'high_unique', '_thresholds_unique',
+         'minimum_coverage', 'relevance', 'has_stored_relevance',
+         'is_license'
+    )
 
     def __init__(self, data_file=None, text_file=None, licenses=None,
                  license_choice=False, notes=None, minimum_coverage=0,
@@ -724,13 +738,14 @@ class Rule(object):
 
     def thresholds(self):
         """
-        Return a Thresholds tuple considering every token occurrence.
+        Return a Thresholds tuple considering the occurrence of all tokens.
         """
         if not self._thresholds:
             min_high = min([self.high_length, MIN_MATCH_HIGH_LENGTH])
             min_len = MIN_MATCH_LENGTH
 
             # note: we cascade ifs from largest to smallest lengths
+            # FIXME: this is not efficient
             if self.length < 30:
                 min_len = self.length // 2
 
@@ -756,7 +771,7 @@ class Rule(object):
 
     def thresholds_unique(self):
         """
-        Return a Thresholds tuple considering only unique token occurrence.
+        Return a Thresholds tuple considering the occurrence of only unique tokens.
         """
         if not self._thresholds_unique:
             highu = (int(self.high_unique // 2)) or self.high_unique
@@ -860,17 +875,17 @@ class Rule(object):
 
     def compute_relevance(self):
         """
-        Compute and set the `relevance` attribute for this rule. The relevance is a
-        float between 0 and 100 where 100 means highly relevant and 0 means not
-        relevant at all.
+        Compute and set the `relevance` attribute for this rule. The
+        relevance is a float between 0 and 100 where 100 means highly
+        relevant and 0 means not relevant at all.
 
-        It is either defined in the rule YAML data file or computed here using this
-        approach:
+        It is either pre-defined in the rule YAML data file with the
+        relevance attribute or computed here using this approach:
 
         - a rule of length up to 20 receives 5 relevance points per token (so a rule
           of length 1 has a 5 relevance and a rule of length 20 has a 100 relevance)
         - a rule of length over 20 has a 100 relevance
-        - a false positive rule has a relevance of zero.
+        - a false positive or a negative rule has a relevance of zero.
 
         For instance a match to the "gpl" or the "cpol" words have a fairly low
         relevance as they are a weak indication of an actual license and could be a
@@ -893,9 +908,9 @@ class Rule(object):
             self.relevance = 0
             return
 
-        # general case
         length = self.length
         if length >= 20:
+            # general case
             self.relevance = 100
         else:
             self.relevance = length * 5
@@ -905,7 +920,7 @@ def _print_rule_stats():
     """
     Print rules statistics.
     """
-    from licensedcode.index import get_index
+    from licensedcode.cache import get_index
     idx = get_index()
     rules = idx.rules_by_rid
     sizes = Counter(r.length for r in rules)

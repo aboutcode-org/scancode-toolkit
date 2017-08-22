@@ -1,0 +1,87 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "de.fzj.unicore.rcp", 
+  "artifact_id": "eclipseSequencePlugin", 
+  "version": "0.0.1-SNAPSHOT", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Eclipse Sequence Plugin", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {
+      "id": "vsgc-public", 
+      "name": "VSGC repository", 
+      "url": "scp://zam904.zam.kfa-juelich.de/srv/www/htdocs/maven"
+    }, 
+    "snapshot_repository": {
+      "id": "vsgc-public-snapshot", 
+      "name": "VSGC SNAPSHOT Repository", 
+      "url": "scp://zam904.zam.kfa-juelich.de/srv/www/htdocs/maven"
+    }
+  }, 
+  "repositories": [
+    {
+      "id": "vsgc-public", 
+      "name": "VSGC internal repository", 
+      "url": "http://zam904.zam.kfa-juelich.de/maven"
+    }
+  ], 
+  "plugin_repositories": [
+    {
+      "id": "vsgc-public", 
+      "name": "VSGC internal repository", 
+      "url": "http://zam904.zam.kfa-juelich.de/maven"
+    }
+  ], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "com.intel.gpe.clients", 
+        "artifact_id": "gpe-clients-all", 
+        "version": "2.0.4-SNAPSHOT", 
+        "required": true
+      }, 
+      {
+        "group_id": "com.intel.gpe.clients", 
+        "artifact_id": "gpe-gridbean-api", 
+        "version": "2.0.5-SNAPSHOT", 
+        "required": true
+      }, 
+      {
+        "group_id": "com.intel.gpe", 
+        "artifact_id": "gpe-utils", 
+        "version": "2.0.5-SNAPSHOT", 
+        "required": true
+      }, 
+      {
+        "group_id": "com.intel.gpe.clients", 
+        "artifact_id": "gpe-gridbeans-swt", 
+        "version": "0.0.2-SNAPSHOT", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

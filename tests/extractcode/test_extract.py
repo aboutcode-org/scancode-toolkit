@@ -880,7 +880,7 @@ class TestExtract(FileBasedTesting):
         fileutils.create_dir(scancode_tmp)
         scancode_root_abs = abspath(scancode_root)
         import tempfile
-        test_src_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs,  '').strip('\\/')
+        test_src_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs, '').strip('\\/')
         test_file = self.get_test_loc('extract/relative_path/basic.zip')
         import shutil
         shutil.copy(test_file, test_src_dir)

@@ -1,0 +1,54 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.codehaus.mojo.natives", 
+  "artifact_id": "maven-native", 
+  "version": "1.0-alpha-2", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.codehaus.mojo", 
+    "artifact_id": "mojo", 
+    "version": "12", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Native", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "dtran", 
+      "name": "Dan T. Tran", 
+      "email": "dantran@gmail.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Lead Developer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [
+    "maven-native-api", 
+    "maven-native-components", 
+    "native-maven-plugin"
+  ], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:https://svn.codehaus.org/mojo/tags/maven-native-1.0-alpha-2", 
+    "developer_connection": null, 
+    "url": "https://svn.codehaus.org/mojo/tags/maven-native-1.0-alpha-2", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

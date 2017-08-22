@@ -1,0 +1,447 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.springframework", 
+  "artifact_id": "spring", 
+  "version": "2.5.4", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Spring Framework", 
+  "description": "Spring Framework", 
+  "inception_year": null, 
+  "url": "http://www.springframework.org", 
+  "organization_name": "Spring Framework", 
+  "organization_url": "http://www.springframework.org/", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:cvs:pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring", 
+    "developer_connection": null, 
+    "url": "http://springframework.cvs.sourceforge.net/springframework/", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {
+      "id": "spring-release", 
+      "name": "Spring Release Repository", 
+      "url": "file:///Users/benhale/development/public/repos/repo"
+    }, 
+    "snapshot_repository": {
+      "id": "spring-snapshot", 
+      "name": "Spring Snapshot Repository", 
+      "url": "s3://maven.springframework.org/snapshot"
+    }
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "aopalliance", 
+        "artifact_id": "aopalliance", 
+        "version": "1.0", 
+        "required": false
+      }, 
+      {
+        "group_id": "asm", 
+        "artifact_id": "asm", 
+        "version": "2.2.3", 
+        "required": false
+      }, 
+      {
+        "group_id": "asm", 
+        "artifact_id": "asm-commons", 
+        "version": "2.2.3", 
+        "required": false
+      }, 
+      {
+        "group_id": "asm", 
+        "artifact_id": "asm-util", 
+        "version": "2.2.3", 
+        "required": false
+      }, 
+      {
+        "group_id": "aspectj", 
+        "artifact_id": "aspectjrt", 
+        "version": "1.5.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "aspectj", 
+        "artifact_id": "aspectjweaver", 
+        "version": "1.5.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "backport-util-concurrent", 
+        "artifact_id": "backport-util-concurrent", 
+        "version": "3.0", 
+        "required": false
+      }, 
+      {
+        "group_id": "c3p0", 
+        "artifact_id": "c3p0", 
+        "version": "0.9.1.2", 
+        "required": false
+      }, 
+      {
+        "group_id": "cglib", 
+        "artifact_id": "cglib-nodep", 
+        "version": "2.1_3", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-attributes", 
+        "artifact_id": "commons-attributes-api", 
+        "version": "2.2", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-attributes", 
+        "artifact_id": "commons-attributes-compiler", 
+        "version": "2.2", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-beanutils", 
+        "artifact_id": "commons-beanutils", 
+        "version": "1.7.0", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-collections", 
+        "artifact_id": "commons-collections", 
+        "version": "3.2", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-dbcp", 
+        "artifact_id": "commons-dbcp", 
+        "version": "1.2.2", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-fileupload", 
+        "artifact_id": "commons-fileupload", 
+        "version": "1.2", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-httpclient", 
+        "artifact_id": "commons-httpclient", 
+        "version": "3.1", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-logging", 
+        "artifact_id": "commons-logging", 
+        "version": "1.1.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-pool", 
+        "artifact_id": "commons-pool", 
+        "version": "1.3", 
+        "required": false
+      }, 
+      {
+        "group_id": "com.bea.wlplatform", 
+        "artifact_id": "commonj-twm", 
+        "version": "1.1", 
+        "required": false
+      }, 
+      {
+        "group_id": "com.experlog", 
+        "artifact_id": "xapool", 
+        "version": "1.5.0", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.apache.ibatis", 
+        "artifact_id": "ibatis-sqlmap", 
+        "version": "2.3.0.677", 
+        "required": false
+      }, 
+      {
+        "group_id": "com.jamonapi", 
+        "artifact_id": "jamon", 
+        "version": "2.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "com.lowagie", 
+        "artifact_id": "itext", 
+        "version": "2.0.7", 
+        "required": false
+      }, 
+      {
+        "group_id": "com.oracle.toplink", 
+        "artifact_id": "toplink", 
+        "version": "10.1.3", 
+        "required": false
+      }, 
+      {
+        "group_id": "com.oracle", 
+        "artifact_id": "toplink-essentials", 
+        "version": "2.41", 
+        "required": false
+      }, 
+      {
+        "group_id": "com.oracle", 
+        "artifact_id": "oc4j", 
+        "version": "1.0", 
+        "required": false
+      }, 
+      {
+        "group_id": "freemarker", 
+        "artifact_id": "freemarker", 
+        "version": "2.3.12", 
+        "required": false
+      }, 
+      {
+        "group_id": "groovy", 
+        "artifact_id": "groovy", 
+        "version": "1.5.5", 
+        "required": false
+      }, 
+      {
+        "group_id": "hessian", 
+        "artifact_id": "hessian", 
+        "version": "3.1.3", 
+        "required": false
+      }, 
+      {
+        "group_id": "jasperreports", 
+        "artifact_id": "jasperreports", 
+        "version": "2.0.5", 
+        "required": false
+      }, 
+      {
+        "group_id": "jexcelapi", 
+        "artifact_id": "jxl", 
+        "version": "2.6.6", 
+        "required": false
+      }, 
+      {
+        "group_id": "jotm", 
+        "artifact_id": "jotm", 
+        "version": "2.0.10", 
+        "required": false
+      }, 
+      {
+        "group_id": "jruby", 
+        "artifact_id": "jruby-bin", 
+        "version": "1.0.1", 
+        "required": false
+      }, 
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": false
+      }, 
+      {
+        "group_id": "log4j", 
+        "artifact_id": "log4j", 
+        "version": "1.2.15", 
+        "required": false
+      }, 
+      {
+        "group_id": "net.sf.ehcache", 
+        "artifact_id": "ehcache", 
+        "version": "1.4.1", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.apache.axis", 
+        "artifact_id": "axis", 
+        "version": "1.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.apache.tiles", 
+        "artifact_id": "tiles-api", 
+        "version": "2.0.5", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.apache.tiles", 
+        "artifact_id": "tiles-core", 
+        "version": "2.0.5", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.apache.tiles", 
+        "artifact_id": "tiles-jsp", 
+        "version": "2.0.5", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.beanshell", 
+        "artifact_id": "bsh", 
+        "version": "2.0b4", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.hibernate", 
+        "artifact_id": "hibernate", 
+        "version": "3.2.6.ga", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.hibernate", 
+        "artifact_id": "hibernate-entitymanager", 
+        "version": "3.3.2.ga", 
+        "required": false
+      }, 
+      {
+        "group_id": "poi", 
+        "artifact_id": "poi", 
+        "version": "3.0.1", 
+        "required": false
+      }, 
+      {
+        "group_id": "opensymphony", 
+        "artifact_id": "quartz-all", 
+        "version": "1.6.0", 
+        "required": false
+      }, 
+      {
+        "group_id": "struts", 
+        "artifact_id": "struts", 
+        "version": "1.2.9", 
+        "required": false
+      }, 
+      {
+        "group_id": "taglibs", 
+        "artifact_id": "standard", 
+        "version": "1.1.2", 
+        "required": false
+      }, 
+      {
+        "group_id": "tomcat", 
+        "artifact_id": "catalina", 
+        "version": "5.5.23", 
+        "required": false
+      }, 
+      {
+        "group_id": "velocity", 
+        "artifact_id": "velocity", 
+        "version": "1.5", 
+        "required": false
+      }, 
+      {
+        "group_id": "velocity-tools", 
+        "artifact_id": "velocity-tools-generic", 
+        "version": "1.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "velocity-tools", 
+        "artifact_id": "velocity-tools-view", 
+        "version": "1.4", 
+        "required": false
+      }
+    ], 
+    "provided": [
+      {
+        "group_id": "javax.activation", 
+        "artifact_id": "activation", 
+        "version": "1.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.ejb", 
+        "artifact_id": "ejb", 
+        "version": "3.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.faces", 
+        "artifact_id": "jsf-api", 
+        "version": "1.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.jdo", 
+        "artifact_id": "jdo2-api", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.jms", 
+        "artifact_id": "jms", 
+        "version": "1.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.mail", 
+        "artifact_id": "mail", 
+        "version": "1.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.persistence", 
+        "artifact_id": "persistence-api", 
+        "version": "1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.portlet", 
+        "artifact_id": "portlet-api", 
+        "version": "1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.resource", 
+        "artifact_id": "connector-api", 
+        "version": "1.5", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "jsp-api", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "jstl", 
+        "version": "1.1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "servlet-api", 
+        "version": "2.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.transaction", 
+        "artifact_id": "jta", 
+        "version": "1.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.xml", 
+        "artifact_id": "jaxrpc-api", 
+        "version": "1.1", 
+        "required": true
+      }
+    ]
+  }
+}

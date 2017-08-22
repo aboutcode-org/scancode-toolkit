@@ -22,8 +22,11 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import print_function
+from __future__ import absolute_import
+from __future__ import unicode_literals
 
+import codecs
 from collections import OrderedDict
 from functools import partial
 import json
@@ -98,10 +101,10 @@ def info_keys(path):
     Return a file info cache keys tripple for a path.
 
     For example:
-    >>> sha1('/w421/scancode-toolkit2').hexdigest()
-    'fb87db2bb28e9501ac7fdc4812782118f4c94a0f'
-    >>> info_keys('/w421/scancode-toolkit2')
-    ('f', 'b', '87db2bb28e9501ac7fdc4812782118f4c94a0f')
+    >>> expected = 'fb87db2bb28e9501ac7fdc4812782118f4c94a0f'
+    >>> assert expected == sha1('/w421/scancode-toolkit2').hexdigest()
+    >>> expected = ('f', 'b', '87db2bb28e9501ac7fdc4812782118f4c94a0f')
+    >>> assert expected == info_keys('/w421/scancode-toolkit2')
     """
     # ensure that we always pass bytes to the hash function
     if isinstance(path, unicode):
@@ -138,8 +141,8 @@ def keys_from_hash(hexdigest):
     issues when there are too many files in a single directory.
 
     For example:
-    >>> keys_from_hash('fb87db2bb28e9501ac7fdc4812782118f4c94a0f')
-    ('f', 'b', '87db2bb28e9501ac7fdc4812782118f4c94a0f')
+    >>> expected = ('f', 'b', '87db2bb28e9501ac7fdc4812782118f4c94a0f')
+    >>> assert expected == keys_from_hash('fb87db2bb28e9501ac7fdc4812782118f4c94a0f')
     """
     return hexdigest[0], hexdigest[1], hexdigest[2:]
 
@@ -199,7 +202,7 @@ class ScanFileCache(object):
         in file_info has already been scanned or False otherwise.
         """
         info_path = self.get_cached_info_path(path)
-        with open(info_path, 'wb') as cached_infos:
+        with open(info_path, 'w') as cached_infos:
             json.dump(file_info, cached_infos, check_circular=False)
         scan_path = self.get_cached_scan_path(path, file_info)
         is_scan_cached = os.path.exists(scan_path)
@@ -214,7 +217,7 @@ class ScanFileCache(object):
         """
         info_path = self.get_cached_info_path(path)
         if os.path.exists(info_path):
-            with open(info_path, 'rb') as ci:
+            with codecs.open(info_path, 'r', encoding='utf-8') as ci:
                 return json.load(ci, object_pairs_hook=OrderedDict)
 
     def get_cached_scan_path(self, path, file_info):
@@ -231,7 +234,7 @@ class ScanFileCache(object):
         """
         scan_path = self.get_cached_scan_path(path, file_info)
         if not os.path.exists(scan_path):
-            with open(scan_path, 'wb') as cached_scan:
+            with open(scan_path, 'w') as cached_scan:
                 json.dump(scan_result, cached_scan, check_circular=False)
         if TRACE:
             logger_debug('put_scan:', 'scan_path:', scan_path, 'file_info:', file_info, 'scan_result:', scan_result, '\n')
@@ -243,20 +246,25 @@ class ScanFileCache(object):
         """
         scan_path = self.get_cached_scan_path(path, file_info)
         if os.path.exists(scan_path):
-            with open(scan_path, 'rb') as cs:
+            with codecs.open(scan_path, 'r', encoding='utf-8') as cs:
                 return json.load(cs, object_pairs_hook=OrderedDict)
 
-    def iterate(self, scan_names, root_dir=None):
+    def iterate(self, scan_names, root_dir=None, paths_subset=tuple()):
         """
-        Yield scan data for all cached scans e.g. the whole cache given a list of
-        scan names.
+        Yield scan data for all cached scans e.g. the whole cache given
+        a list of scan names.
+        If a `paths_subset` sequence of paths is provided, then only
+        these paths are iterated.
 
         The logfile MUST have been closed before calling this method.
         """
-        with open(self.cache_files_log, 'rb') as cached_files:
+        paths_subset = set(paths_subset)
+        with codecs.open(self.cache_files_log, 'r', encoding='utf-8') as cached_files:
             # iterate the list of (path, (info keys)), one by line
             for file_log in cached_files:
                 path = file_log.rstrip('\n')
+                if paths_subset and path not in paths_subset:
+                    continue
                 file_info = self.get_info(path)
 
                 if root_dir:

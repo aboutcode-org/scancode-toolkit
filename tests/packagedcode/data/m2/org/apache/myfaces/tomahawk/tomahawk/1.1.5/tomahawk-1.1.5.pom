@@ -1,0 +1,503 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.apache.myfaces.tomahawk</groupId>
+  <artifactId>tomahawk</artifactId>
+  <packaging>jar</packaging>
+  <name>Tomahawk Core</name>
+
+  <parent>
+    <groupId>org.apache.myfaces.tomahawk</groupId>
+    <artifactId>tomahawk-project</artifactId>
+    <version>1.1.5</version>
+  </parent>
+
+  <scm>
+    <connection>scm:svn:https://svn.apache.org/repos/asf/myfaces/tomahawk/branches/1_1_5</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/myfaces/tomahawk/branches/1_1_5</developerConnection>
+    <url>https://svn.apache.org/repos/asf/myfaces/tomahawk/branches/1_1_5</url>
+  </scm>
+
+  <dependencies>
+
+    <!-- compile dependencies -->
+
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.0.4</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-validator</groupId>
+      <artifactId>commons-validator</artifactId>
+      <version>1.3.1</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.0</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>3.1</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>struts</groupId>
+      <artifactId>struts</artifactId>
+      <version>1.2.9</version>
+      <scope>compile</scope>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-el</groupId>
+      <artifactId>commons-el</artifactId>
+      <version>1.0</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.3</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>oro</groupId>
+      <artifactId>oro</artifactId>
+      <version>2.0.8</version>
+      <scope>compile</scope>
+    </dependency>
+
+      <dependency>
+          <groupId>commons-lang</groupId>
+          <artifactId>commons-lang</artifactId>
+          <version>2.1</version>
+          <scope>compile</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>jstl</artifactId>
+          <version>1.1.0</version>
+          <scope>compile</scope>
+      </dependency>
+
+    <!-- provided dependencies -->
+
+    <dependency>
+      <groupId>org.apache.myfaces.core</groupId>
+      <artifactId>myfaces-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.myfaces.shared</groupId>
+      <artifactId>myfaces-shared-tomahawk</artifactId>
+      <scope>provided</scope> <!-- because we add all classes to the jar directly -->
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jsp-api</artifactId>
+      <version>2.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.3</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>portlet-api</groupId>
+      <artifactId>portlet-api</artifactId>
+      <version>1.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- test dependencies -->
+
+    <dependency>
+      <groupId>org.apache.myfaces.core</groupId>
+      <artifactId>myfaces-impl</artifactId>
+      <!--
+        Since Tomahawk must stay compatible to other JSF implementations we
+        must not have any (compile time) dependency on myfaces-impl other than
+        test classes.
+      -->
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>cactus</groupId>
+      <artifactId>cactus</artifactId>
+      <version>13-1.7.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
+      <version>1.2.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>easymock</groupId>
+      <artifactId>easymock</artifactId>
+      <version>1.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>easymock</groupId>
+      <artifactId>easymockclassextension</artifactId>
+      <version>1.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.shale</groupId>
+      <artifactId>shale-test</artifactId>
+      <version>1.0.3</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.myfaces</groupId>
+          <artifactId>myfaces-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.myfaces</groupId>
+          <artifactId>myfaces-impl</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>myfaces</groupId>
+          <artifactId>myfaces-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>myfaces</groupId>
+          <artifactId>myfaces-impl</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>jmock</groupId>
+      <artifactId>jmock</artifactId>
+      <version>1.0.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>jmock</groupId>
+      <artifactId>jmock-cglib</artifactId>
+      <version>1.0.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>maven-taglib</groupId>
+      <artifactId>maven-taglib-plugin</artifactId>
+      <version>1.4.2</version>
+      <scope>test</scope>
+    </dependency>   
+
+  </dependencies>
+
+  <build>
+
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+      <resource>
+        <directory>src/main/resources-facesconfig</directory>
+      </resource>
+    </resources>
+
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>**/Abstract*.java</exclude>
+            <exclude>**/*HtmlDateRendererTest*</exclude>
+            <exclude>**/TestUtils.java</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>xslt-maven-plugin</artifactId>
+        <version>1.0</version>
+        <configuration>
+          <xslFile>src/main/tld/misc/resolve_entities.xsl</xslFile>
+          <srcIncludes>**/*.tld</srcIncludes>
+          <srcDir>src/main/tld</srcDir>
+          <destDir>target/classes/META-INF</destDir>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>transform</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>dependency-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>unpack-shared-tomahawk</id>
+            <phase>process-classes</phase>
+            <goals><goal>unpack</goal></goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                   <groupId>org.apache.myfaces.shared</groupId>
+                   <artifactId>myfaces-shared-tomahawk</artifactId>
+                   <version>${myfaces-shared.version}</version>
+                 </artifactItem>
+               </artifactItems>
+               <outputDirectory>${project.build.directory}/classes</outputDirectory>
+            </configuration>
+          </execution>
+          <!-- unpack the shared sources into target/shared_sources-->
+          <execution>
+            <id>unpack-shared-impl-sources</id>
+            <phase>process-sources</phase>
+            <goals>
+                <goal>unpack</goal>
+            </goals>
+            <configuration>
+                <artifactItems>
+                    <artifactItem>
+                        <groupId>org.apache.myfaces.shared</groupId>
+                        <artifactId>myfaces-shared-tomahawk</artifactId>
+                        <version>${myfaces-shared.version}</version>
+                        <classifier>sources</classifier>
+                    </artifactItem>
+                </artifactItems>
+                <outputDirectory>${project.build.directory}/shared_sources</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- the following will add the unpacked shared sources directory as source directory into the pom,
+           so also the shared sources are automaticaly included by the attach source plugin -->
+      <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>build-helper-maven-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>add-source</id>
+                    <phase>process-sources</phase>
+                    <goals>
+                        <goal>add-source</goal>
+                    </goals>
+                    <configuration>
+                        <sources>
+                            <source>${project.build.directory}/shared_sources</source>
+                        </sources>
+                    </configuration>
+                </execution>
+            </executions>
+      </plugin>
+    </plugins>
+
+  </build>
+
+  <reporting>
+
+    <plugins>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>changelog-maven-plugin</artifactId>
+        <version>2.0-beta-1</version>
+        <reportSets>
+          <reportSet>
+            <id>dual-report</id>
+            <configuration>
+              <type>range</type>
+              <range>30</range>
+            </configuration>
+            <reports>
+              <report>changelog</report>
+              <report>file-activity</report>
+              <report>dev-activity</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.0-beta-3</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jxr-maven-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>taglist-maven-plugin</artifactId>
+        <version>2.0</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>surefire-report-maven-plugin</artifactId>
+      </plugin>
+
+    </plugins>
+
+  </reporting>
+
+  <profiles>
+      <profile>
+      <id>generate-site</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>xslt-maven-plugin</artifactId>
+            <version>1.0</version>
+            <executions>
+              <execution>
+                <id>generate-tld-for-tlddoc</id>
+                <goals>
+                  <goal>transform</goal>
+                </goals>
+                <configuration>
+                  <xslFile>src/main/tld/misc/resolve_entities-tlddoc.xsl</xslFile>
+                  <srcIncludes>**/*.tld</srcIncludes>
+                  <srcDir>src/main/tld</srcDir>
+                  <destDir>target/tlddoc-site</destDir>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-tld-for-jar</id>
+                <goals>
+                  <goal>transform</goal>
+                </goals>
+                <configuration>
+                  <xslFile>src/main/tld/misc/resolve_entities.xsl</xslFile>
+                  <srcIncludes>**/*.tld</srcIncludes>
+                  <srcDir>src/main/tld</srcDir>
+                  <destDir>target/classes/META-INF</destDir>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+
+      </build>
+      <reporting>
+        <plugins>
+          <plugin>
+            <groupId>net.sourceforge.maven-taglib</groupId>
+            <artifactId>maven-taglib-plugin</artifactId>
+            <configuration>
+              <taglib.src.dir>${basedir}/target/tlddoc-site</taglib.src.dir>
+              <tldDocDir>${basedir}/target/site/tlddoc</tldDocDir>
+            </configuration>
+          </plugin>
+        </plugins>
+      </reporting>
+    </profile>
+    <profile>
+      <id>generate-assembly</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>xslt-maven-plugin</artifactId>
+            <version>1.0</version>
+            <executions>
+              <execution>
+                <id>generate-tld-for-tlddoc</id>
+                <goals>
+                  <goal>transform</goal>
+                </goals>
+                <configuration>
+                  <xslFile>src/main/tld/misc/resolve_entities-tlddoc.xsl</xslFile>
+                  <srcIncludes>**/*.tld</srcIncludes>
+                  <srcDir>src/main/tld</srcDir>
+                  <destDir>target/tlddoc-site</destDir>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-tld-for-jar</id>
+                <goals>
+                  <goal>transform</goal>
+                </goals>
+                <configuration>
+                  <xslFile>src/main/tld/misc/resolve_entities.xsl</xslFile>
+                  <srcIncludes>**/*.tld</srcIncludes>
+                  <srcDir>src/main/tld</srcDir>
+                  <destDir>target/classes/META-INF</destDir>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadoc</id>
+                <goals><goal>jar</goal></goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>net.sourceforge.maven-taglib</groupId>
+            <artifactId>maven-taglib-plugin</artifactId>
+            <configuration>
+              <taglib.src.dir>${basedir}/target/tlddoc-site</taglib.src.dir>
+              <tldDocDir>${basedir}/target/tlddoc</tldDocDir>
+            </configuration>
+            <executions>
+              <execution>
+                <id>attach-javadoc</id>
+                <goals><goal>taglibdocjar</goal></goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-source</id>
+                <goals><goal>jar</goal></goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>

@@ -1,0 +1,221 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven", 
+  "artifact_id": "maven-parent", 
+  "version": "4", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache", 
+    "artifact_id": "apache", 
+    "version": "3", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Apache Maven", 
+  "description": "Maven is a software project management and comprehension tool. Based on the concept of a project object model\n    (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.", 
+  "inception_year": "2002", 
+  "url": "http://maven.apache.org/", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "jvanzyl", 
+      "name": "Jason van Zyl", 
+      "email": "jason@maven.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Chair"
+      ]
+    }, 
+    {
+      "id": "brett", 
+      "name": "Brett Porter", 
+      "email": "brett@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "evenisse", 
+      "name": "Emmanuel Venisse", 
+      "email": "evenisse@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "kenney", 
+      "name": "Kenney Westerhof", 
+      "email": "kenney@apache.org", 
+      "url": null, 
+      "organization": "Neonics", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "snicoll", 
+      "name": "Stephane Nicoll", 
+      "email": "snicoll@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "vmassol", 
+      "name": "Vincent Massol", 
+      "email": "vmassol@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "fgiust", 
+      "name": "Fabrizio Giustina", 
+      "email": "fgiust@apache.org", 
+      "url": null, 
+      "organization": "openmind", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "epunzalan", 
+      "name": "Edwin Punzalan", 
+      "email": "epunzalan@mergere.com", 
+      "url": null, 
+      "organization": "Mergere", 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "mperham", 
+      "name": "Mike Perham", 
+      "email": "mperham@gmail.com", 
+      "url": null, 
+      "organization": "IBM", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "jdcasey", 
+      "name": "John Casey", 
+      "email": "jdcasey@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "trygvis", 
+      "name": "Trygve Laugstol", 
+      "email": "trygvis@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "vsiveton", 
+      "name": "Vincent Siveton", 
+      "email": "vsiveton@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "carlos", 
+      "name": "Carlos Sanchez", 
+      "email": "carlos@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "dennisl", 
+      "name": "Dennis Lundberg", 
+      "email": "dennisl@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Maven Announcements List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-announce/"
+    }, 
+    {
+      "name": "Maven Issues List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-issues/"
+    }, 
+    {
+      "name": "Maven Notifications List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-notifications/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/maven/pom/maven/tags/maven-parent-4", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewvc/maven/pom/maven/tags/maven-parent-4", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://jira.codehaus.org/browse/MPA"
+  }, 
+  "ci_management": {
+    "system": "continuum", 
+    "url": "http://maven.zones.apache.org:8080/continuum"
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "apache.website", 
+      "name": null, 
+      "url": "scp://people.apache.org/www/maven.apache.org"
+    }, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

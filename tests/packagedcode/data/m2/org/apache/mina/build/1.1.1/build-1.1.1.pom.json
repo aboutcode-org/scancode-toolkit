@@ -1,0 +1,77 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.mina", 
+  "artifact_id": "build", 
+  "version": "1.1.1", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache", 
+    "artifact_id": "apache", 
+    "version": "3", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Apache MINA Root Build POM", 
+  "description": "MINA (Multipurpose Infrastructure for Network Applications) is a\n    network application framework which helps users develop high\n    performance and highly scalable network applications easily.", 
+  "inception_year": "2004", 
+  "url": "http://mina.apache.org/", 
+  "organization_name": "Apache MINA Project", 
+  "organization_url": "http://mina.apace.org/", 
+  "licenses": [
+    {
+      "name": "Apache 2.0 License", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [
+    "core", 
+    "filter-ssl", 
+    "filter-codec-netty", 
+    "filter-compression", 
+    "integration-spring", 
+    "integration-jmx", 
+    "example"
+  ], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/mina/tags/1.1.1", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewvc/mina/tags/1.1.1", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://issues.apache.org/jira/browse/DIRMINA"
+  }, 
+  "ci_management": {
+    "system": null, 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "apache.websites", 
+      "name": null, 
+      "url": "scp://people.apache.org/www/mina.apache.org/report/1.1/"
+    }, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

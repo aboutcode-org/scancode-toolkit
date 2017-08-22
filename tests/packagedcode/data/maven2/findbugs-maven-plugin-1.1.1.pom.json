@@ -1,0 +1,115 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.codehaus.mojo", 
+  "artifact_id": "findbugs-maven-plugin", 
+  "version": "1.1.1", 
+  "classifier": null, 
+  "packaging ": "maven-plugin", 
+  "parent": {
+    "group_id": "org.codehaus.mojo", 
+    "artifact_id": "mojo", 
+    "version": "14", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven FindBugs PlugIn", 
+  "description": "This Plug-In generates reports based on the FindBugs Library", 
+  "inception_year": "2005", 
+  "url": null, 
+  "organization_name": "CodeHaus", 
+  "organization_url": "http://www.codehaus.org", 
+  "licenses": [
+    {
+      "name": "MIT", 
+      "url": "LICENSE.txt", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [
+    {
+      "id": "cr", 
+      "name": "Cyrill Ruettimann", 
+      "email": "mypublicaddress@mac.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Documentation", 
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "gl", 
+      "name": "Garvin LeClaire", 
+      "email": "gleclaire@codehaus.org", 
+      "url": "http://gdleclaire.blogspot.com", 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Documentation", 
+        "Java Developer"
+      ]
+    }
+  ], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "Detlef Pleiss", 
+      "email": "d.pleiss@comundus.com", 
+      "url": null, 
+      "organization": "comundus GmbH", 
+      "organization_url": "http://www.comundus.com", 
+      "roles": [
+        "Java Developer"
+      ]
+    }
+  ], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:https://svn.codehaus.org/mojo/tags/findbugs-maven-plugin-1.1.1", 
+    "developer_connection": null, 
+    "url": "https://svn.codehaus.org/mojo/tags/findbugs-maven-plugin-1.1.1", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-artifact", 
+        "version": "2.0.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.reporting", 
+        "artifact_id": "maven-reporting-impl", 
+        "version": "2.0.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.reporting", 
+        "artifact_id": "maven-reporting-api", 
+        "version": "2.0.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.doxia", 
+        "artifact_id": "doxia-core", 
+        "version": "1.0-alpha-8", 
+        "required": true
+      }, 
+      {
+        "group_id": "net.sourceforge.findbugs", 
+        "artifact_id": "findbugs", 
+        "version": "1.2.0", 
+        "required": true
+      }
+    ]
+  }
+}

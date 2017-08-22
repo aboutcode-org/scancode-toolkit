@@ -1,8 +1,8 @@
 licenses:
-    - intel-bsd-special
+    - intel-bsd
     - gpl-2.0
     - bsd-new
     - gpl-2.0
-license: (intel-bsd-special or gpl-2.0) and (bsd-new or gpl)
+license: (intel-bsd or gpl-2.0) and (bsd-new or gpl)
 license_choice: yes
 

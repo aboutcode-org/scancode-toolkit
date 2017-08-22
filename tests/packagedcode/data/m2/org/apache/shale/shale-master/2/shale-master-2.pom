@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to you under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * $Id: pom.xml 489681 2006-12-22 16:22:05Z rahul $
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.apache</groupId>
+        <artifactId>apache</artifactId>
+        <version>3</version>
+    </parent>
+
+    <groupId>org.apache.shale</groupId>
+    <artifactId>shale-master</artifactId>
+    <version>2</version>
+    <packaging>pom</packaging>
+    <name>Apache Shale Framework Master POM</name>
+    <description>Apache Shale</description>
+    <url>http://shale.apache.org</url>
+    <inceptionYear>2004</inceptionYear>
+
+    <mailingLists>
+        <mailingList>
+            <name>Shale User Mailing List (general questions about using Shale)</name>
+            <subscribe>user-subscribe@shale.apache.org</subscribe>
+            <unsubscribe>user-unsubscribe@shale.apache.org</unsubscribe>
+            <post>user@shale.apache.org</post>
+            <archive>http://mail-archives.apache.org/mod_mbox/shale-user/</archive>
+            <otherArchives>
+                <otherArchive>http://www.mail-archive.com/user@shale.apache.org/</otherArchive>
+                <otherArchive>http://dir.gmane.org/gmane.comp.apache.shale.user</otherArchive>
+                <otherArchive>http://www.nabble.com/Shale---User-f15689.html</otherArchive>
+            </otherArchives>
+        </mailingList>
+        <mailingList>
+            <name>Shale Developer Mailing List (questions about developing Shale itself)</name>
+            <subscribe>dev-subscribe@shale.apache.org</subscribe>
+            <unsubscribe>dev-unsubscribe@shale.apache.org</unsubscribe>
+            <post>dev@shale.apache.org</post>
+            <archive>http://mail-archives.apache.org/mod_mbox/shale-dev/</archive>
+            <otherArchives>
+                <otherArchive>http://www.mail-archive.com/dev@shale.apache.org/</otherArchive>
+                <otherArchive>http://dir.gmane.org/gmane.comp.apache.shale.dev</otherArchive>
+                <otherArchive>http://www.nabble.com/Shale---Dev-f15682.html</otherArchive>
+            </otherArchives>
+        </mailingList>
+        <mailingList>
+            <name>Shale Commit Notifications (Subversion commit logs)</name>
+            <subscribe>commits-subscribe@shale.apache.org</subscribe>
+            <unsubscribe>commits-unsubscribe@shale.apache.org</unsubscribe>
+            <archive>http://mail-archives.apache.org/mod_mbox/shale-commits/</archive>
+            <otherArchives>
+                <otherArchive>http://www.mail-archive.com/commits@shale.apache.org/</otherArchive>
+                <otherArchive>http://dir.gmane.org/gmane.comp.apache.shale.commits</otherArchive>
+            </otherArchives>
+        </mailingList>
+        <mailingList>
+            <name>Shale Issue Tracking Notifications (JIRA issue update logs)</name>
+            <subscribe>issues-subscribe@shale.apache.org</subscribe>
+            <unsubscribe>issues-unsubscribe@shale.apache.org</unsubscribe>
+            <archive>http://mail-archives.apache.org/mod_mbox/shale-issues/</archive>
+            <otherArchives>
+                <otherArchive>http://www.mail-archive.com/issues@shale.apache.org/</otherArchive>
+                <otherArchive>http://dir.gmane.org/gmane.comp.apache.shale.issues</otherArchive>
+            </otherArchives>
+        </mailingList>
+    </mailingLists>
+
+    <developers>
+        <developer>
+            <id>rahul</id>
+            <name>Rahul Akolkar</name>
+            <email>rahul at apache.org</email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>dgeary</id>
+            <name>David Geary</name>
+            <email>dgeary at apache.org</email>
+            <roles>
+                <role>Committer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>craigmcc</id>
+            <name>Craig R. McClanahan</name>
+            <email>craigmcc at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>jmitchell</id>
+            <name>James Mitchell</name>
+            <email>jmitchell at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>greddin</id>
+            <name>Greg Reddin</name>
+            <email>greddin at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>schof</id>
+            <name>Sean Schofield</name>
+            <email>schof at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>wsmoak</id>
+            <name>Wendy Smoak</name>
+            <email>wsmoak at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>gvanmatre</id>
+            <name>Gary VanMatre</name>
+            <email>gvanmatre at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>matzew</id>
+            <name>Matthias Wessendorf</name>
+            <email>matzew at apache.org</email>
+            <roles>
+                <role>PMC Member</role>
+            </roles>
+        </developer>
+    </developers>
+    <contributors>
+        <contributor>
+            <name>Walied Amer</name>
+        </contributor>
+        <contributor>
+            <name>Duncan Mills</name>
+        </contributor>
+        <contributor>
+            <name>Ronald Holshausen</name>
+        </contributor>
+        <contributor>
+            <name>Manfred Klug</name>
+        </contributor>
+        <contributor>
+            <name>David DeWolf</name>
+        </contributor>
+        <contributor>
+            <name>Keijo Nurmes</name>
+        </contributor>
+        <contributor>
+            <name>Shane Bryzak</name>
+        </contributor>
+        <contributor>
+            <name>Ted Husted</name>
+        </contributor>
+        <contributor>
+            <name>Dennis Byrne</name>
+        </contributor>
+        <contributor>
+            <name>Richarad Wallace</name>
+        </contributor>
+        <contributor>
+            <name>Bill Young</name>
+        </contributor>
+        <contributor>
+            <name>Alexandre Poitras</name>
+        </contributor>
+        <contributor>
+            <name>Hubert Rabago</name>
+        </contributor>
+        <contributor>
+            <name>David Thielen</name>
+        </contributor>
+        <contributor>
+            <name>Ed Burns</name>
+        </contributor>
+        <contributor>
+            <name>Ingo Dueppe</name>
+        </contributor>
+        <contributor>
+            <name>Jack Cheng</name>
+        </contributor>
+        <contributor>
+            <name>Niall Pemberton</name>
+        </contributor>
+        <contributor>
+            <name>Marcello Teodori</name>
+        </contributor>
+        <contributor>
+            <name>Reind</name>
+        </contributor>
+        <contributor>
+            <name>Mike Kienenberger</name>
+        </contributor>
+        <contributor>
+            <name>Andrew Gilette</name>
+        </contributor>
+        <contributor>
+            <name>Ryan Lubke</name>
+        </contributor>
+        <contributor>
+            <name>Shinsuke Sugaya</name>
+        </contributor>
+        <contributor>
+            <name>Mario Ivankovits</name>
+        </contributor>
+        <contributor>
+            <name>Hermod Opstvedt</name>
+        </contributor>
+        <contributor>
+            <name>Mike Meessen</name>
+        </contributor>
+        <contributor>
+            <name>Luis Parravicini</name>
+        </contributor>
+        <contributor>
+            <name>Ryan Wynn</name>
+        </contributor>
+        <contributor>
+            <name>Rene Zanner</name>
+        </contributor>
+        <contributor>
+            <name>Adrian Mitev</name>
+        </contributor>
+        <contributor>
+            <name>Simon Kitching</name>
+        </contributor>
+    </contributors>
+
+    <scm>
+        <connection>scm:svn:http://svn.apache.org/repos/asf/shale/maven/trunk/master-pom</connection>
+        <developerConnection>scm:svn:https://svn.apache.org/repos/asf/shale/maven/trunk/master-pom</developerConnection>
+        <url>http://svn.apache.org/viewcvs.cgi/shale/maven/trunk/master-pom</url>
+    </scm>   
+
+    <distributionManagement>
+        <repository>
+            <id>shale-staging</id>
+            <name>Apache Shale Staging Repository</name>
+            <url>scpexe://people.apache.org/www/people.apache.org/builds/shale/m2-staging-repository</url>
+        </repository>
+        <snapshotRepository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>apache.snapshots</id>
+            <name>Apache Development Snapshot Repository</name>
+            <url>scpexe://people.apache.org/www/people.apache.org/repo/m2-snapshot-repository</url>
+        </snapshotRepository>
+        <site>
+            <id>apache-site</id>
+            <name>Apache Shale Website</name>
+            <url>scpexe://people.apache.org/www/shale.apache.org</url>
+        </site>
+    </distributionManagement>
+
+</project>

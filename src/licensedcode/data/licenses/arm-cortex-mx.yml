@@ -1,0 +1,7 @@
+key: arm-cortex-mx
+short_name: ARM Cortex-Mx Proprietary
+name: ARM Cortex-Mx Proprietary
+category: Proprietary Free
+owner: ARM
+text_urls:
+    - https://github.com/bitcraze/crazyflie-bootloader/blob/master/stlib/CMSIS/Core/CM3/core_cm3.c

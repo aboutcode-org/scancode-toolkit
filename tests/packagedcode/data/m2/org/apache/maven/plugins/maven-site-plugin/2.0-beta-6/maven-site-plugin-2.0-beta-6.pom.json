@@ -1,0 +1,296 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.plugins", 
+  "artifact_id": "maven-site-plugin", 
+  "version": "2.0-beta-6", 
+  "classifier": null, 
+  "packaging ": "maven-plugin", 
+  "parent": {
+    "group_id": "org.apache.maven.plugins", 
+    "artifact_id": "maven-plugins", 
+    "version": "10", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Site plugin", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "Naoki Nose", 
+      "email": "ikkoan@mail.goo.ne.jp", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Japanese translator"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Michael Wechner", 
+      "email": "michael.wechner@wyona.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "German translator"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Christian Schulte", 
+      "email": "cs@schulte.it", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "German translator"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Piotr Bzdyl", 
+      "email": "piotr@bzdyl.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Polish translator"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Domingos Creado", 
+      "email": "dcreado@users.sf.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Brazilian Portuguese translator"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "John Allen", 
+      "email": "john_h_allen@hotmail.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Laszlo Hornyak Kocka", 
+      "email": "laszlo.hornyak@gmail.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Hungarian translator"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Hermod Opstvedt", 
+      "email": "hermod.opstvedt@dnbnor.no", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Norwegian translator"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Yue Ni", 
+      "email": "ni2yue4@gmail.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Chinese translator"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Arturo Vazquez", 
+      "email": "vaz@root.com.mx", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Spanish translator"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Woonsan Ko", 
+      "email": "woon_san@yahoo.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Korean translator"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Martin Vysny", 
+      "email": "mvy@whitestein.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Slovak translator"
+      ]
+    }, 
+    {
+      "id": null, 
+      "name": "Petr Ferschmann", 
+      "email": "pferschmann@softeu.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Czech translator"
+      ]
+    }
+  ], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/maven/plugins/tags/maven-site-plugin-2.0-beta-6", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewvc/maven/plugins/tags/maven-site-plugin-2.0-beta-6", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "JIRA", 
+    "url": "http://jira.codehaus.org/browse/MSITE"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-artifact", 
+        "version": "2.0.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-artifact-manager", 
+        "version": "2.0.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-model", 
+        "version": "2.0.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-plugin-api", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-project", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-settings", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.doxia", 
+        "artifact_id": "doxia-module-xhtml", 
+        "version": "1.0-alpha-10", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.doxia", 
+        "artifact_id": "doxia-sink-api", 
+        "version": "1.0-alpha-10", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.doxia", 
+        "artifact_id": "doxia-decoration-model", 
+        "version": "1.0-alpha-10", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.doxia", 
+        "artifact_id": "doxia-site-renderer", 
+        "version": "1.0-alpha-10", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.reporting", 
+        "artifact_id": "maven-reporting-api", 
+        "version": "2.0.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.wagon", 
+        "artifact_id": "wagon-provider-api", 
+        "version": "1.0-beta-2", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-archiver", 
+        "version": "1.0-alpha-7", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-container-default", 
+        "version": "1.0-alpha-9", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-i18n", 
+        "version": "1.0-beta-7", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-utils", 
+        "version": "1.4.5", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.mortbay.jetty", 
+        "artifact_id": "jetty", 
+        "version": "6.1.5", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "org.apache.maven.shared", 
+        "artifact_id": "maven-plugin-testing-harness", 
+        "version": "1.0-beta-1", 
+        "required": true
+      }
+    ]
+  }
+}

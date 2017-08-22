@@ -1,0 +1,4 @@
+licenses:
+    - gpl-3.0-plus
+    - gpl-3.0-bison
+license_expression: gpl-3.0-plus with gpl-3.0-bison

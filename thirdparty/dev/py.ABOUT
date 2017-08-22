@@ -1,6 +1,6 @@
-about_resource: py-1.4.32-py2.py3-none-any.whl
-version: 1.4.32
-download_url: https://pypi.python.org/packages/02/79/ea0c2750dde4b19bf2e305d201e4dd488f6671b51f52d8cf87aba174a158/py-1.4.32-py2.py3-none-any.whl#md5=b032575d68c53dca60b8bdd8ffb8716b
+about_resource: py-1.4.33-py2.py3-none-any.whl
+version: 1.4.33
+download_url: https://pypi.python.org/packages/92/8b/ac214296ed28a05efd36e8b55a7820eda62d7028ecf10e5a98afb1982e93/py-1.4.33-py2.py3-none-any.whl
 
 name: py
 description: library with cross-python path, ini-parsing, io, code, log facilities
@@ -10,3 +10,5 @@ contatct: pytest-dev@python.org
 dje_license: mit
 license_text_file: py.LICENSE
 copyright: copyright (c) 2004-2014 Holger Krekel and others
+vcs_tool: git
+vcs_repo: https://github.com/pytest-dev/py.git

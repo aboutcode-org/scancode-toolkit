@@ -1,0 +1,4 @@
+ public domain SHA256 implementation ===== */
+
+/* This is based on SHA256 implementation in LibTomCrypt that was released into
+ * public domain by Tom St Denis. */

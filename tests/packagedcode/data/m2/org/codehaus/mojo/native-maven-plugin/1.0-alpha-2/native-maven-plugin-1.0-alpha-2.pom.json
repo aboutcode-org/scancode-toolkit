@@ -1,0 +1,97 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.codehaus.mojo", 
+  "artifact_id": "native-maven-plugin", 
+  "version": "1.0-alpha-2", 
+  "classifier": null, 
+  "packaging ": "maven-plugin", 
+  "parent": {
+    "group_id": "org.codehaus.mojo.natives", 
+    "artifact_id": "maven-native", 
+    "version": "1.0-alpha-2", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Native Plugin", 
+  "description": null, 
+  "inception_year": "2005", 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-project", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-plugin-api", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.mojo.natives", 
+        "artifact_id": "maven-native-api", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.mojo.natives", 
+        "artifact_id": "maven-native-javah", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.mojo.natives", 
+        "artifact_id": "maven-native-generic-c", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.mojo.natives", 
+        "artifact_id": "maven-native-msvc", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.mojo.natives", 
+        "artifact_id": "maven-native-bcc", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.mojo.natives", 
+        "artifact_id": "maven-native-manager", 
+        "version": "latest.release", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "org.apache.maven.shared", 
+        "artifact_id": "maven-plugin-testing-harness", 
+        "version": "1.0-beta-1", 
+        "required": true
+      }
+    ]
+  }
+}

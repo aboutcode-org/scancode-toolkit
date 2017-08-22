@@ -1,0 +1,10 @@
+key: cc-by-nc-nd-2.0-at
+short_name: CC-BY-NC-ND-2.0-AT
+name: Creative Commons Namensnennung - Nicht-kommerziell - Keine Bearbeitung 2.0
+
+category: Copyleft Limited
+owner: Creative Commons
+homepage_url: https://creativecommons.org/licenses/by-nc-nd/2.0/
+spdx_license_key: CC-BY-NC-ND-2.0
+text_urls:
+    - https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode.at

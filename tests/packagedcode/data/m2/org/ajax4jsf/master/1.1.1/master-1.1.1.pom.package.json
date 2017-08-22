@@ -1,0 +1,70 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.ajax4jsf:master", 
+  "version": "1.1.1", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Ajax for Java Server faces core project", 
+  "description": null, 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Alexander Smirnov", 
+      "email": "alexsmirnov@exadel.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Igor Shabalov", 
+      "email": "ishabalov@exadel.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Sergey Smirnov", 
+      "email": "sergeysmirnov@exadel.com", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://labs.jboss.com/jbossajax4jsf", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "LGPL 2.1", 
+      "url": "http://www.gnu.org/licenses/lgpl.html", 
+      "text": null, 
+      "notice": "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1"
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {}, 
+  "related_packages": []
+}

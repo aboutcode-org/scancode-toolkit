@@ -11,19 +11,35 @@ from os.path import dirname
 from os.path import join
 from os.path import splitext
 import re
+import sys
 
 from setuptools import find_packages
 from setuptools import setup
 
 
-version = '2.0.0rc3'
+version = '2.1.0'
 
 
-def get_version(default=version, template='{tag}.{distance}.{commit}{dirty}'):
+#### Small hack to force using a plain version number if the option
+#### --plain-version is passed to setup.py
+
+USE_DEFAULT_VERSION = False
+try:
+    sys.argv.remove('--use-default-version')
+    USE_DEFAULT_VERSION = True
+except ValueError:
+    pass
+####
+
+def get_version(default=version, template='{tag}.{distance}.{commit}{dirty}',
+                use_default=USE_DEFAULT_VERSION):
     """
-    Return a version collected from git if possible or fall back to an hard-coded
-    version otherwise.
+    Return a version collected from git if possible or fall back to an
+    hard-coded default version otherwise. If `use_default` is True,
+    always use the default version.
     """
+    if use_default:
+        return default
     try:
         tag, distance, commit, dirty = get_git_version()
         if not distance and not dirty:
@@ -86,7 +102,7 @@ setup(
     name='scancode-toolkit',
     version=get_version(),
     license='Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others',
-    description='ScanCode is a tool to scan code for license, copyright and other interesting facts.',
+    description='ScanCode is a tool to scan code for license, copyright, package and their documented dependencies and other interesting facts.',
     long_description=long_description,
     author='ScanCode',
     author_email='info@aboutcode.org',
@@ -98,17 +114,17 @@ setup(
     zip_safe=False,
     classifiers=[
         # complete classifier list: http://pypi.python.org/pypi?%3Aaction=list_classifiers
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
-        'License :: OSI Approved :: CC0',
+        'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
         'Topic :: Utilities',
     ],
     keywords=[
-        'open source', 'scan', 'license', 'package',
-        'copyright', 'filetype', 'urn', 'date', 'codec',
+        'open source', 'scan', 'license', 'package', 'dependency',
+        'copyright', 'filetype', 'author', 'extract', 'licensing',
     ],
     install_requires=[
         # cluecode
@@ -119,11 +135,13 @@ setup(
         'nltk >= 3.2, < 4.0',
 
         # extractcode
-        'patch >= 1.14.2, < 1.15 ',
+        'patch >= 1.15, < 1.20 ',
         # to work around bug http://bugs.python.org/issue19839
         # on multistream bzip2 files: this can removed in Python 3.
         'bz2file >= 0.98',
         'text-unidecode >= 1.0, < 2.0',
+
+        'pluggy >= 0.4.0, < 1.0',
 
         # licensedcode
         'PyYAML >= 3.0, <4.0',
@@ -133,10 +151,10 @@ setup(
         'attrs >=16.0, < 17.0',
 
         # caching
-        'zc.lockfile >= 1.0.0, < 2.0.0',
-        'yg.lockfile >= 2.0.0, < 3.0.0',
-            # used by yg.lockfile 
-            'contextlib2', 'pytz', 'tempora', 'jaraco.timing', 
+        'zc.lockfile >= 1.0.0, < 2.0.1',
+        'yg.lockfile >= 2.0.1, < 3.0.0',
+            # used by yg.lockfile
+            'contextlib2', 'pytz', 'tempora', 'jaraco.timing',
         'psutil >= 5.0.0, < 6.0.0',
 
         # textcode
@@ -146,24 +164,27 @@ setup(
         'six',
 
         # typecode and textcode
-        'pygments >= 2.0.0, <3.0.0',
+        'pygments >= 2.0.1, <3.0.0',
         'pdfminer >= 20140328',
 
+        # pymaven
+        'pymaven-patch >= 0.2.4',
+
         # typecode
-        'chardet >= 2.1.1, <3.0.0',
+        'chardet >= 3.0.0, <4.0.0',
         'binaryornot >= 0.4.0',
 
         # scancode and AboutCode
-        'click >= 4.0.0, < 5.0.0',
+        'click >= 6.0.0, < 7.0.0',
         'jinja2 >= 2.7.0, < 3.0.0',
         'MarkupSafe >= 0.23',
         'colorama',
         'simplejson',
-        'spdx-tools >= 0.4.1',
+        'spdx-tools >= 0.5.4',
 
         # packagedcode
         'requests >= 2.7.0, < 3.0.0',
-        'schematics >= 1.1.1, < 2.0.0',
+        'schematics_patched',
 
         # misc
         'unicodecsv',
@@ -179,5 +200,31 @@ setup(
             'scancode = scancode.cli:scancode',
             'extractcode = scancode.extract_cli:extractcode',
         ],
+
+        # scancode_output_writers is an entry point to define plugins
+        # that write a scan output in a given format.
+        # See the plugincode.output module for details and doc.
+        # note: the "name" of the entrypoint (e.g html) becomes the
+        # ScanCode CLI --format option used to enable a given format
+        # plugin
+        'scancode_output_writers': [
+            'html = formattedcode.format_templated:write_html',
+            'html-app = formattedcode.format_templated:write_html_app',
+            'json = formattedcode.format_json:write_json_compact',
+            'json-pp = formattedcode.format_json:write_json_pretty_printed',
+            'spdx-tv = formattedcode.format_spdx:write_spdx_tag_value',
+            'spdx-rdf = formattedcode.format_spdx:write_spdx_rdf',
+            'csv = formattedcode.format_csv:write_csv',
+        ],
+
+        # scancode_post_scan is an entry point for post_scan_plugins.
+        # See plugincode.post_scan module for details and doc.
+        # note: the "name" of the entrypoint (e.g only-findings)
+        # becomes the ScanCode CLI boolean flag used to enable a
+        # given post_scan plugin
+        'scancode_post_scan': [
+            'only-findings = scancode.plugin_only_findings:process_only_findings',
+            'mark-source = scancode.plugin_mark_source:process_mark_source',
+        ]
     },
 )

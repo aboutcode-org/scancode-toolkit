@@ -1,0 +1,252 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.codehaus.plexus", 
+  "artifact_id": "plexus", 
+  "version": "1.0.8", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {}, 
+  "name": "Plexus", 
+  "description": null, 
+  "inception_year": "2001", 
+  "url": null, 
+  "organization_name": "Codehaus", 
+  "organization_url": "http://www.codehaus.org/", 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "jvanzyl", 
+      "name": "Jason van Zyl", 
+      "email": "jason@maven.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer", 
+        "Release Manager"
+      ]
+    }, 
+    {
+      "id": "kaz", 
+      "name": "Pete Kazmier", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "jtaylor", 
+      "name": "James Taylor", 
+      "email": "james@jamestaylor.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "dandiep", 
+      "name": "Dan Diephouse", 
+      "email": "dan@envoisolutions.com", 
+      "url": null, 
+      "organization": "Envoi solutions", 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "kasper", 
+      "name": "Kasper Nielsen", 
+      "email": "apache@kav.dk", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "bwalding", 
+      "name": "Ben Walding", 
+      "email": "bwalding@codehaus.org", 
+      "url": null, 
+      "organization": "Walding Consulting Services", 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "mhw", 
+      "name": "Mark Wilkinson", 
+      "email": "mhw@kremvax.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "michal", 
+      "name": "Michal Maczka", 
+      "email": "mmaczka@interia.pl", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "evenisse", 
+      "name": "Emmanuel Venisse", 
+      "email": "evenisse@codehaus.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "trygvis", 
+      "name": "Trygve Laugstol", 
+      "email": "trygvis@codehaus.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "kenney", 
+      "name": "Kenney Westerhof", 
+      "email": "kenney@codehaus.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "carlos", 
+      "name": "Carlos Sanchez", 
+      "email": "carlos@codehaus.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "brett", 
+      "name": "Brett Porter", 
+      "email": "brett@codehaus.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "jdcasey", 
+      "name": "John Casey", 
+      "email": "jdcasey@codehaus.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [
+    "plexus-archetypes", 
+    "plexus-examples", 
+    "plexus-components", 
+    "plexus-component-factories", 
+    "plexus-containers", 
+    "plexus-logging", 
+    "plexus-maven-plugin", 
+    "plexus-tools", 
+    "plexus-utils"
+  ], 
+  "mailing_lists": [
+    {
+      "name": "Plexus Developer List", 
+      "archive_url": "http://lists.codehaus.org/pipermail/plexus-dev/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:http://svn.codehaus.org/plexus/trunk/", 
+    "developer_connection": null, 
+    "url": null, 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "JIRA", 
+    "url": "http://jira.codehaus.org/browse/PLX"
+  }, 
+  "ci_management": {
+    "system": null, 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "codehaus.org", 
+      "name": null, 
+      "url": "dav:https://dav.codehaus.org/plexus"
+    }, 
+    "repository": {
+      "id": "codehaus.org", 
+      "name": "Plexus Central Repository", 
+      "url": "dav:https://dav.codehaus.org/repository/plexus"
+    }, 
+    "snapshot_repository": {
+      "id": "codehaus.org", 
+      "name": "Plexus Central Development Repository", 
+      "url": "dav:https://dav.codehaus.org/snapshots.repository/plexus"
+    }
+  }, 
+  "repositories": [
+    {
+      "id": "apache-snapshots", 
+      "name": "Snapshot repository", 
+      "url": "http://people.apache.org/maven-snapshot-repository"
+    }, 
+    {
+      "id": "codehaus-snapshots", 
+      "name": "Codehaus Snapshot Development Repository", 
+      "url": "http://snapshots.repository.codehaus.org"
+    }
+  ], 
+  "plugin_repositories": [
+    {
+      "id": "codehaus-snapshots", 
+      "name": "Codehaus Snapshot Development Repository", 
+      "url": "http://snapshots.repository.codehaus.org"
+    }
+  ], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

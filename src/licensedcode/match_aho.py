@@ -26,6 +26,8 @@ from __future__ import print_function, absolute_import, division
 
 from array import array
 
+import ahocorasick
+
 from licensedcode.match import LicenseMatch
 from licensedcode.spans import Span
 
@@ -51,6 +53,13 @@ if TRACE:
 else:
     def logger_debug(*args):
         pass
+
+
+def get_automaton():
+    """
+    Return a new empty automaton.
+    """
+    return ahocorasick.Automaton(ahocorasick.STORE_ANY)
 
 
 def add_sequence(automaton, tids, rid, start=0):
@@ -89,6 +98,7 @@ def exact_match(idx, query_run, automaton):
     qtokens = query_run.tokens
     qbegin = query_run.start
     query_run_matchables = query_run.matchables
+    query = query_run.query
 
     qtokens_as_str = array('h', qtokens).tostring()
     matches = []
@@ -125,7 +135,10 @@ def exact_match(idx, query_run, automaton):
             qposses = range(qbegin + real_qend - match_len + 1, qbegin + real_qend + 1)
 
             if any(p not in query_run_matchables for p in qposses):
-                if TRACE: logger_debug('   #exact_AHO: not matchable match: any(p not in query_run_matchables for p in qposses), discarding rule:', rule.identifier)
+                if TRACE: logger_debug(
+                    '   #exact_AHO: not matchable match: '
+                    'any(p not in query_run_matchables for p in qposses), discarding rule:',
+                    rule.identifier)
                 continue
 
             qspan = Span(qposses)
@@ -134,7 +147,7 @@ def exact_match(idx, query_run, automaton):
             itokens = idx.tids_by_rid[rid]
             hispan = Span(p for p in ispan if itokens[p] >= len_junk)
 
-            match = LicenseMatch(rule, qspan, ispan, hispan, query_run.start, matcher=matcher)
+            match = LicenseMatch(rule, qspan, ispan, hispan, qbegin, matcher=matcher, query=query)
             matches.append(match)
 
     if TRACE and matches:

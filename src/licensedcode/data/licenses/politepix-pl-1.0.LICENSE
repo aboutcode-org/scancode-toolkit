@@ -1,0 +1,37 @@
+Politepix Public License version 1.0
+
+Definitions
+
+"Politepix" refers to Politepix UG (haftungsbeschränkt), which may also be known as Politepix or Politepix UG, and which may at a later date be known as Politepix GmbH.
+"Software" refers to all elements of the OpenEars framework that are copyrighted to Politepix.
+"Application" for the purpose of this license refers exclusively to a self-contained compiled software program of the type that can be downloaded from the iTunes App Store or Cydia for use on an enduser's device, commonly known as an App. It explicitly excludes the following: frameworks, SDKs or client or server systems used for the creation of such software programs or for the creation of other types of software, as well as reusable components, operating systems, and plugins which modify apps, frameworks or operating systems.
+
+Granted Rights
+
+You are granted the non-exclusive rights set forth in this license provided you agree to and comply with any and all conditions in this license. It is transferable to other parties provided that they agree to and comply with any and all conditions in this license. Use of the software signifies acceptance of this license.
+
+1. You may make modifications to the Software and you may use the original or modified versions of the Software to link, compile and build Applications, including commercial Applications.
+2. You may distribute these Applications in a binary, machine-executable form.
+
+If your project wants more rights than this, please feel welcome to get in touch at http://www.politepix.com/contact and inquire about whether it is possible to obtain other licensing terms. Educational and public good projects are especially encouraged to inquire.
+
+Credit
+
+You must include credit in your Application as follows in a user-readable form in an accessible view of your Application, replacing <this app> with the name of your Application:
+<this app> uses the CMU Pocketsphinx library, the CMU Flite library, the CMU CMUCMLTK library (http://cmusphinx.sourceforge.net) and Politepix’s OpenEars (http://www.politepix.com/openears).
+
+Contributions
+
+Each contributor, defined as a party who submits source code modifications for the Software whose purpose is to modify the behavior of the Software, also commonly known as patches or fixes, hereby grants Politepix a world-wide, royalty-free, non-exclusive license to use, reproduce, modify, display, perform, sublicense and distribute the modifications or portions thereof either on an unmodified basis or with other modifications. Submitting a contribution is defined as intentionally communicating the information to Politepix employees and representatives, including posts on the Politepix forums, sending uploads or diffs or pull requests to Politepix/OpenEars repositories or servers, and emails to Politepix employees or representatives.
+
+Termination and Survival
+
+The rights granted hereunder will terminate automatically if you fail to comply with terms herein. The other provisions shall survive.
+
+Miscellaneous
+
+This license represents the complete agreement concerning subject matter hereof. If any provision of this license is held to be unenforceable, such provision shall be reformed only to the extent necessary to make it enforceable. This license and any litigation relating to it shall be subject to the jurisdiction of the courts located in Berlin, Germany.
+
+Limitation of Liability
+
+The Software and this license document are provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ACCURACY AND TITLE, AND THOSE ARISING FROM A COURSE OF DEALING OR USAGE OF TRADE. POLITEPIX UG (HAFTUNGSBESCHRÄNKT) SHALL NOT BE LIABLE FOR, AND HEREBY EXPRESSLY DISCLAIMS ANY LIABILITY FOR: DAMAGES FOR LOST PROFITS, LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, LOSS OF BUSINESS, OR ANY AND ALL OTHER CONSEQUENTIAL, SPECIAL, COMMERCIAL, INDIRECT OR PUNITIVE DAMAGES OR LOSSES, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES, OR FOR ANY CLAIM BY ANY THIRD-PARTY.

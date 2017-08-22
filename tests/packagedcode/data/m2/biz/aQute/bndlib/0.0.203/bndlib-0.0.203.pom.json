@@ -1,0 +1,34 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "biz.aQute", 
+  "artifact_id": "bndlib", 
+  "version": "0.0.203", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "BND Library", 
+  "description": "JAR Processing Library for creating and verifying OSGi manifest headers", 
+  "inception_year": null, 
+  "url": "http://www.aQute.biz/Code/Bnd", 
+  "organization_name": "aQute SARL", 
+  "organization_url": "http://www.aQute.biz", 
+  "licenses": [
+    {
+      "name": "This material is licensed under the Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

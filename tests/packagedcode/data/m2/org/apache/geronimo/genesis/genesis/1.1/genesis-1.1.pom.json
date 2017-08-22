@@ -1,0 +1,47 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.geronimo.genesis", 
+  "artifact_id": "genesis", 
+  "version": "1.1", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache", 
+    "artifact_id": "apache", 
+    "version": "3", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Genesis", 
+  "description": "Genesis provides support for Maven2 builds; adding shared configurations\n        and common plugins.", 
+  "inception_year": "2003", 
+  "url": "http://geronimo.apache.org", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:https://svn.apache.org/repos/asf/geronimo/genesis/tags/genesis-1.1", 
+    "developer_connection": null, 
+    "url": "https://svn.apache.org/repos/asf/geronimo/genesis/tags/genesis-1.1", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "geronimo-website", 
+      "name": null, 
+      "url": "scp://people.apache.org/www/geronimo.apache.org/maven/genesis"
+    }, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

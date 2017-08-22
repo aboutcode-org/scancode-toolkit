@@ -1,0 +1,96 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.shared", 
+  "artifact_id": "maven-plugin-testing-harness", 
+  "version": "1.1", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.apache.maven.shared", 
+    "artifact_id": "maven-shared-components", 
+    "version": "7", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Plugin Testing Mechanism", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Maven User List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-users"
+    }, 
+    {
+      "name": "Maven Developer List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-dev"
+    }, 
+    {
+      "name": "Maven Commits List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-dev"
+    }, 
+    {
+      "name": "Maven Announcements List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-announce/"
+    }, 
+    {
+      "name": "Maven Issues List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-issues/"
+    }, 
+    {
+      "name": "Maven Notifications List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-notifications/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:https://svn.apache.org/repos/asf/maven/shared/tags/maven-plugin-testing-harness-1.1", 
+    "developer_connection": null, 
+    "url": "https://svn.apache.org/repos/asf/maven/shared/tags/maven-plugin-testing-harness-1.1", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-project", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-core", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-utils", 
+        "version": "1.4.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-archiver", 
+        "version": "1.0-alpha-7", 
+        "required": true
+      }
+    ]
+  }
+}

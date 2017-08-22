@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <!--
+    This POM cannot be used to build TestNG; it should only be used as part of a Maven
+    repository upload bundle.
+    
+    See the guide to creating a bundle here:
+    http://maven.apache.org/guides/mini/guide-central-repository-upload.html
+    -->
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <name>TestNG</name>
+    <version>5.8</version>
+    <description>TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionalities that make it more powerful and easier to use.</description>
+    <url>http://testng.org</url>
+    
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:svn:http://testng.googlecode.com/svn/trunk/</connection>
+        <developerConnection>scm:svn:http://testng.googlecode.com/svn/trunk/</developerConnection>
+        <url>http://testng.googlecode.com/svn/trunk</url>
+    </scm>
+    
+    <dependencies>
+        <dependency>
+            <groupId>ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>1.6.5</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>qdox</groupId>
+            <artifactId>qdox</artifactId>
+            <version>1.6.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.beanshell</groupId>
+            <artifactId>bsh</artifactId>
+            <version>2.0b4</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>    
+    
+</project>

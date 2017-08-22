@@ -1,15 +1,15 @@
 licenses:
-    - gpl
+    - gpl-1.0-plus
     - apache-2.0
     - mit
-    - lgpl
+    - lgpl-2.0-plus
     - proprietary
-    - gpl
+    - gpl-1.0-plus
     - ms-pl
     - mit
     - nunit-v2
     - mpl-1.1
     - apache-2.0
-    - gpl
+    - gpl-1.0-plus
 expected_failure: yes
 

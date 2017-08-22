@@ -1,0 +1,12 @@
+key: ecosrh-1.0
+short_name: Cygnus eCos Public License 1.0
+name: Cygnus  eCos Public License 1.0
+category: Copyleft
+owner: Red Hat
+homepage_url: http://web.archive.org/web/19990224105519/http://sourceware.cygnus.com/ecos/license-overview.html
+notes: this predates the 1.1 version that Red Hat created when they acquired Cygnus but since
+    the terms are similar we used the same license key as this is also a rare license.
+text_urls:
+    - http://web.archive.org/web/19990224105519/http://sourceware.cygnus.com/ecos/license-overview.html
+    - http://sourceware.cygnus.com/ecos/license-overview.html
+minimum_coverage: 70

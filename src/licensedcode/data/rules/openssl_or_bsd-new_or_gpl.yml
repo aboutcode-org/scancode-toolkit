@@ -1,0 +1,4 @@
+licenses:
+    - openssl
+    - bsd-new
+license_choice: yes

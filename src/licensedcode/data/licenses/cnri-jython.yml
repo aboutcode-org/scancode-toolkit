@@ -1,0 +1,7 @@
+key: cnri-jython
+short_name: CNRI Jython License
+name: CNRI Jython License
+category: Permissive
+owner: CNRI
+homepage_url: http://www.jython.org/license.html
+spdx_license_key: CNRI-Jython

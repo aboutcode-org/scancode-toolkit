@@ -1,0 +1,44 @@
+<?xml version="1.0"?><project>
+  <parent>
+    <artifactId>slf4j-parent</artifactId>
+    <groupId>org.slf4j</groupId>
+    <version>1.4.2</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.slf4j</groupId>
+  <artifactId>slf4j-log4j12</artifactId>
+  <name>SLF4J LOG4J-12 Binding</name>
+  <version>1.4.2</version>
+  <description>The slf4j log4j-12 binding</description>
+  <url>http://www.slf4j.org</url>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Bundle-Version>${pv4osgi}</Bundle-Version>
+              <Bundle-Description>${project.description}</Bundle-Description>
+              <Implementation-Version>1.4.2</Implementation-Version>
+            </manifestEntries>
+            <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+    </dependency>
+  </dependencies>
+  <distributionManagement>
+    <status>deployed</status>
+  </distributionManagement>
+</project>

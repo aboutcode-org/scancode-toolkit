@@ -1,0 +1,924 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "commons-collections", 
+  "artifact_id": "commons-collections", 
+  "version": "3.2", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Collections", 
+  "description": "Types that extend and augment the Java Collections Framework.", 
+  "inception_year": "2001", 
+  "url": "http://jakarta.apache.org/commons/collections/", 
+  "organization_name": "The Apache Software Foundation", 
+  "organization_url": "http://jakarta.apache.org", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "/LICENSE.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [
+    {
+      "id": "scolebourne", 
+      "name": "Stephen Colebourne", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "morgand", 
+      "name": "Morgan Delagrange", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "matth", 
+      "name": "Matthew Hawthorne", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "geirm", 
+      "name": "Geir Magnusson", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "craigmcc", 
+      "name": "Craig McClanahan", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "psteitz", 
+      "name": "Phil Steitz", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "amamment", 
+      "name": "Arun M. Thomas", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "rwaldhoff", 
+      "name": "Rodney Waldhoff", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "bayard", 
+      "name": "Henri Yandell", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jcarman", 
+      "name": "James Carman", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "rdonkin", 
+      "name": "Robert Burrell Donkin", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "Rafael U. C. Afonso", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Max Rydahl Andersen", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Federico Barbieri", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Arron Bates", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Nicola Ken Barozzi", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Sebastian Bazley", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Matt Benson", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Ola Berg", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Christopher Berry", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Nathan Beyer", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Janek Bogucki", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Chuck Burdick", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Dave Bryson", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Julien Buret", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Jonathan Carlson", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Ram Chidambaram", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Steve Clark", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Eric Crampton", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Dimiter Dimitrov", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Peter Donald", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Steve Downey", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Rich Dougherty", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Tom Dunham", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Stefano Fornari", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Andrew Freeman", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Gerhard Froehlich", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Paul Jack", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Eric Johnson", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Kent Johnson", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Marc Johnson", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Nissim Karpenstein", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Shinobu Kawai", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Mohan Kishore", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Simon Kitching", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Thomas Knych", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Serge Knystautas", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Peter KoBek", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Jordan Krey", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Olaf Krische", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Guilhem Lavaux", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Paul Legato", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "David Leppik", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Berin Loritsch", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Stefano Mazzocchi", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Brian McCallister", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Steven Melzer", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Leon Messerschmidt", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Mauricio S. Moura", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Kasper Nielsen", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Stanislaw Osinski", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Alban Peignier", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Mike Pettypiece", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Steve Phelps", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Ilkka Priha", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Jonas Van Poucke", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Will Pugh", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Herve Quiroz", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Daniel Rall", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Robert Ribnitz", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Huw Roberts", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Henning P. Schmiedehausen", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Howard Lewis Ship", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Joe Raysa", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Thomas Schapitz", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Jon Schewe", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Andreas Schlosser", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Christian Siefkes", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Michael Smith", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Stephen Smith", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Jan Sorensen", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Jon S. Stevens", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "James Strachan", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Leo Sutic", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Chris Tilden", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Neil O'Toole", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Jeff Turner", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Kazuya Ujihara", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Jeff Varszegi", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Ralph Wagner", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "David Weinrich", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Dieter Wimberger", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Serhiy Yevtushenko", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Jason van Zyl", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Commons Dev List", 
+      "archive_url": "http://mail-archives.apache.org/eyebrowse/SummarizeList?listName=commons-dev@jakarta.apache.org"
+    }, 
+    {
+      "name": "Commons User List", 
+      "archive_url": "http://mail-archives.apache.org/eyebrowse/SummarizeList?listName=commons-user@jakarta.apache.org"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/jakarta/commons/proper/collections/trunk", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/repos/asf/jakarta/commons/proper/collections/trunk", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": null, 
+    "url": "http://issues.apache.org/bugzilla/"
+  }, 
+  "ci_management": {
+    "system": null, 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "default", 
+      "name": "Default Site", 
+      "url": "scp://people.apache.org//www/jakarta.apache.org/commons/collections/"
+    }, 
+    "repository": {
+      "id": "default", 
+      "name": "Default Repository", 
+      "url": "file:///www/jakarta.apache.org/builds/jakarta-commons/collections/"
+    }, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

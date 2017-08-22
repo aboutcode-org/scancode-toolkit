@@ -1,0 +1,376 @@
+<!-- 
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+    http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License. 
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.apache</groupId>
+    <artifactId>apache</artifactId>
+    <version>4</version>
+  </parent>
+
+  <groupId>org.apache.felix</groupId>
+  <artifactId>felix</artifactId>
+  <packaging>pom</packaging>
+  <name>Apache Felix</name>
+  <version>1.0.0</version>
+  <url>http://felix.apache.org/</url>
+  <inceptionYear>2006</inceptionYear>
+  <description>Apache felix is an OSGi implementation.</description>
+
+  <issueManagement>
+    <system>Jira</system>
+    <url>http://issues.apache.org/jira/browse/FELIX</url>
+  </issueManagement>
+
+  <mailingLists>
+    <mailingList>
+      <name>Felix Dev</name>
+      <subscribe>dev-subscribe@felix.apache.org</subscribe>
+      <unsubscribe>dev-unsubscribe@felix.apache.org</unsubscribe>
+      <post>-</post>
+      <archive>http://www.mail-archive.com/dev%40felix.apache.org/</archive>
+    </mailingList>
+    <mailingList>
+      <name>Felix Commits</name>
+      <subscribe>commits-subscribe@felix.apache.org</subscribe>
+      <unsubscribe>commits-unsubscribe@felix.apache.org</unsubscribe>
+      <post>-</post>
+      <archive>http://www.mail-archive.com/commits%40felix.apache.org/</archive>
+    </mailingList>
+  </mailingLists>
+
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/felix/trunk</connection>
+    <developerConnection>scm:svn:http://svn.apache.org/repos/asf/felix/trunk</developerConnection>
+    <url>http://svn.apache.org/viewvc/felix/trunk/?root=Apache-SVN</url>
+  </scm>
+
+  <!-- 
+  Felix contains 3 custom maven packaging plugins. Each creates a jar file
+  as an artifact. 
+  
+  maven-bundle-plugin 
+    (bundle packaging - latest prefered plugin for generating OSGi bundles.)
+  maven-osgi-plugin 
+    (osgi-bundle packaging - old plugin for generating OSGi bundles.)
+  org.apache.felix.ipojo.plugin 
+    (plugin for generating iPOJO OSGi bundles.)
+    
+  But with maven bug https://issues.apache.org/jira/browse/FELIX-198 files
+  are not always created with the correct extension in the repository.
+
+  As a work around, this pom creates different profiles for building the 
+  different types of felix modules. 
+
+  Usage:
+  mvn -Dpackaging=<type> clean install
+  -->
+
+  <profiles>
+
+    <profile>
+      <id>packaging-plugins</id>
+      <activation>
+        <property>
+          <name>packaging</name>
+          <value>plugins</value>
+        </property>
+      </activation>
+      <modules>
+        <module>../bundleplugin</module>
+        <module>../tools/maven2/maven-osgi-plugin</module>
+        <module>../ipojo/metadata</module>
+        <module>../ipojo/manipulator</module>
+        <module>../ipojo/plugin</module>
+      </modules>
+    </profile>
+
+    <profile>
+      <id>packaging-ipojo-bundle</id>
+      <activation>
+        <property>
+          <name>packaging</name>
+          <value>ipojo-bundle</value>
+        </property>
+      </activation>
+      <modules>
+        <!--<module>ipojo/arch</module>-->
+      </modules>
+    </profile>
+
+    <profile>
+      <id>packaging-bundle</id>
+      <activation>
+        <property>
+          <name>packaging</name>
+          <value>bundle</value>
+        </property>
+      </activation>
+      <modules>
+        <module>../org.osgi.foundation</module>
+        <module>../javax.servlet</module>
+        <module>../org.osgi.core</module>
+        <module>../org.osgi.compendium</module>
+        <module>../framework</module>
+        <module>../main</module>
+        <module>../shell</module>
+        <module>../shell.tui</module>
+        <module>../shell.gui</module>
+        <module>../shell.gui.plugin</module>
+        <module>../bundlerepository</module>
+        <module>../log</module>
+        <module>../eventadmin</module>
+        <module>../http.jetty</module>
+        <module>../scr</module>
+        <module>../configadmin</module>
+        <module>../metatype</module>
+        <module>../dependencymanager</module>
+        <module>../servicebinder</module>
+        <module>../wireadmin</module>
+        
+        <module>../ipojo/core</module>
+        <module>../ipojo/arch</module>
+	
+	<module>../mosgi</module>
+      </modules>
+    </profile>
+    
+    <profile>
+      <id>packaging-osgi-bundle</id>
+      <activation>
+        <property>
+          <name>packaging</name>
+          <value>osgi-bundle</value>
+        </property>
+      </activation>
+      <modules>
+        <module>../org.apache.felix.daemon</module>
+
+        <module>../examples</module>
+
+        <module>../upnp.extra</module>
+        <module>../upnp.basedriver</module>
+        <module>../upnp.tester</module>
+        <module>../upnp.sample.tv</module>
+        <module>../upnp.sample.clock</module>
+        <module>../upnp.sample.binaryLight</module>
+
+        <!--    <module>tools/mangen</module> -->
+
+
+      </modules>
+    </profile>
+  </profiles>
+
+  <distributionManagement>
+    <site>
+      <id>felix website</id>
+      <url>file:///${user.dir}/target/site-deployed/</url>
+    </site>
+    <repository>
+      <id>apache.incubator.releases</id>
+      <name>Apache Incubator Release Distribution Repository</name>
+      <url>scp://people.apache.org/www/people.apache.org/repo/m2-incubating-repository</url>
+    </repository>
+  </distributionManagement>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>apache.snapshots</id>
+      <name>snapshot plugins</name>
+      <url>
+        http://people.apache.org/repo/m2-snapshot-repository
+      </url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <!-- definitions for testing -->
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>easymock</groupId>
+      <artifactId>easymock</artifactId>
+      <version>1.2_Java1.3</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>2.0.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.3</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>2.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-plugin-plugin</artifactId>
+          <version>2.3</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.3</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>2.0-beta-5</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>2.0.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jxr-plugin</artifactId>
+          <version>2.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-report-plugin</artifactId>
+          <version>2.3</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>2.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>maven-bundle-plugin</artifactId>
+          <version>1.0.0</version>
+        </plugin>
+<!--        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-remote-resources-plugin</artifactId>
+          <version>1.0-alpha-5</version>
+        </plugin> -->
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <target>1.4</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+      </plugin>
+      <!-- plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+      </plugin -->
+      <!-- We want to package up license resources in the JARs produced
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-remote-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>process</goal>
+            </goals>
+            <configuration>
+              <resourceBundles>
+                <resourceBundle>org.apache:apache-jar-resource-bundle:1.0</resourceBundle>
+              </resourceBundles>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>-->
+    </plugins>
+  </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <templateDirectory>${user.dir}/src/site/</templateDirectory>
+          <template>maven-site.vm</template>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>index</report>
+              <report>dependencies</report>
+              <report>project-team</report>
+              <report>mailing-list</report>
+              <report>issue-tracking</report>
+              <report>license</report>
+              <report>scm</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+      <!--plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <aggregate>true</aggregate>
+        </configuration> 
+      </plugin-->
+    </plugins>
+  </reporting>
+</project>

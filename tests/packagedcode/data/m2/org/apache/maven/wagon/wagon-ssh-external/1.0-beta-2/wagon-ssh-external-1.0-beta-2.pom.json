@@ -1,0 +1,64 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.wagon", 
+  "artifact_id": "wagon-ssh-external", 
+  "version": "1.0-beta-2", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.apache.maven.wagon", 
+    "artifact_id": "wagon-providers", 
+    "version": "1.0-beta-2", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Wagon SSH External Provider", 
+  "description": "Wagon that gets and puts artifacts using SSH protocol with a preinstalled SSH client", 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://jira.codehaus.org/browse/WAGONSSH"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-utils", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.wagon", 
+        "artifact_id": "wagon-ssh-common", 
+        "version": "latest.release", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "org.apache.maven.wagon", 
+        "artifact_id": "wagon-ssh-common-test", 
+        "version": "latest.release", 
+        "required": true
+      }
+    ]
+  }
+}

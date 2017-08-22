@@ -1,0 +1,290 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.apache.myfaces.maven:myfaces-master", 
+  "version": "1.0.5", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Master POM", 
+  "description": "This is a master POM that is meant to be used by the various MyFaces modules.  It contains information that is\n        common to all projects.", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Anton Koinov", 
+      "email": "koinov@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Bill Dudney", 
+      "email": "bdudney@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Grant Smith", 
+      "email": "grantsmith@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Manfred Geiler", 
+      "email": "manolito@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Martin Marinschek", 
+      "email": "mmarinschek@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Matthias Wessendorf", 
+      "email": "matzew@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Oliver Rossmueller", 
+      "email": "oros@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Sean Schofield", 
+      "email": "schof@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Sylvain Vieujot", 
+      "email": "svieujot@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Ted Husted", 
+      "email": "husted@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Thomas Spiegl", 
+      "email": "tomsp@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Travis Reeder", 
+      "email": "prophecy@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Bruno Aranda", 
+      "email": "baranda@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "James Mitchell", 
+      "email": "jmitchell@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Mathias Broekelmann", 
+      "email": "mbr@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Werner Punz", 
+      "email": "werpu@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Stan Silvert", 
+      "email": "ssilvert@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Mike Kienenberger", 
+      "email": "mkienenb@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Simon Kitching", 
+      "email": "skitching@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Volker Weber", 
+      "email": "weber@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Dennis Byrne", 
+      "email": "dennisbyrne@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Bernd Bohmann", 
+      "email": "bommel@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Mario Ivankovits", 
+      "email": "imario@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Cagatay Civici", 
+      "email": "cagatay@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Sharath Reddy", 
+      "email": "sharathreddy@yahoo.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jurgen Lust", 
+      "email": "jlust@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Gerald Muellan", 
+      "email": "gmuellan@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Catalin Kormos", 
+      "email": "ckormos@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Wendy Smoak", 
+      "email": "wsmoak@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Lance Frohman", 
+      "email": "lfrohman@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Paul Spencer", 
+      "email": "paulsp@apache.org", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [
+    {
+      "type": "person", 
+      "name": "Matt Blum", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jiri Zaloudek", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Joerg Artaker", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Thomas Huber", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Thomas Obereder", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jesse Wilson", 
+      "email": null, 
+      "url": null
+    }
+  ], 
+  "owners": [
+    {
+      "type": "organization", 
+      "name": "Apache Software Foundation", 
+      "email": null, 
+      "url": "http://www.apache.org/"
+    }
+  ], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://myfaces.apache.org/projects", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "test": [
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.1"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

@@ -1,0 +1,34 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "com.jcraft", 
+  "artifact_id": "jsch", 
+  "version": "0.1.23", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "jsch", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": "jcraft", 
+  "organization_url": "http://www.jcraft.com/jsch", 
+  "licenses": [
+    {
+      "name": "BSD", 
+      "url": "http://www.jcraft.com/jsch/LICENSE.txt", 
+      "comments": "License information from http://www.jcraft.com/jsch", 
+      "distribution": null
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

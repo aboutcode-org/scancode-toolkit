@@ -32,8 +32,9 @@ import os
 
 from commoncode.testcase import FileBasedTesting
 
-from licensedcode import models
+from licensedcode import cache
 from licensedcode import index
+from licensedcode import models
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -42,7 +43,7 @@ TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 def check_json(expected, results, regen=False):
     if regen:
         with open(expected, 'wb') as ex:
-            json.dump(results, ex, indent=2)
+            json.dump(results, ex, indent=2, separators=(',', ': '))
     with open(expected) as ex:
         expected = json.load(ex, object_pairs_hook=OrderedDict)
     assert expected == results
@@ -74,7 +75,7 @@ class TestLicense(FileBasedTesting):
         check_json(expected, results)
 
     def test_validate_licenses(self):
-        errors, warnings, infos = models.License.validate(models.get_licenses())
+        errors, warnings, infos = models.License.validate(cache.get_licenses_db())
         assert {} == errors
         assert {} == warnings
         assert infos

@@ -1,0 +1,41 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.wagon", 
+  "artifact_id": "wagon-file", 
+  "version": "1.0-beta-2", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.apache.maven.wagon", 
+    "artifact_id": "wagon-providers", 
+    "version": "1.0-beta-2", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Wagon File Provider", 
+  "description": "Wagon that gets and puts artifacts using file system protocol", 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://jira.codehaus.org/browse/WAGONFILE"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

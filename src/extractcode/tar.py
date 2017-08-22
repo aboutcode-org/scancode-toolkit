@@ -51,7 +51,9 @@
 # Credits: Gustavo Niemeyer, Niels Gustabel, Richard Townsend.
 
 
-from __future__ import print_function, absolute_import
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import os
 import copy
@@ -151,16 +153,16 @@ def extract(location, target_dir):
 
                 realfile = tar._getmember(linkname, tarinfo=limit, normalize=True)
                 if realfile is None:
-                    warnings[tinfo.name].append('Skipping broken link to: %(linkname)r' % locals())
+                    warnings[tinfo.name].append('Skipping broken link to: %(linkname)s' % locals())
                     continue
 
                 if not (realfile.isfile() or realfile.isdir()):
-                    warnings[tinfo.name].append('Skipping link to special file: %(linkname)r' % locals())
+                    warnings[tinfo.name].append('Skipping link to special file: %(linkname)s' % locals())
                     continue
 
                 if realfile.islnk() or realfile.issym():
                     # FIXME: Check tarbomb
-                    warnings[tinfo.name].append('Skipping multi-level link to: %(linkname)r' % locals())
+                    warnings[tinfo.name].append('Skipping multi-level link to: %(linkname)s' % locals())
                     continue
 
                 # replace the tarinfo with the linked-to file info
@@ -192,7 +194,7 @@ def extract(location, target_dir):
                 raise ExtractError()
 
     # Set correct mtime on directories, starting from the bottom of the tree
-    def dir_sorter(a, b): 
+    def dir_sorter(a, b):
         return cmp(a.name, b.name)
 
     for tinfo in sorted(directories, cmp=dir_sorter, reverse=True):

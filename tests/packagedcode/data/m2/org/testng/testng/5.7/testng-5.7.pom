@@ -1,0 +1,306 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <!--
+    ~ Generously contributed by Brett Porter of maven, brett.porter@gmail.com.
+    ~
+    ~ The build instructions given were:
+    ~
+    ~ POM for test NG. Usage:
+    ~
+    ~ mvn clean install -P jdk14
+    ~ mvn clean install -P jdk15
+    ~
+    ~ gotchas:
+    ~
+    ~    * can't build them both in one go. This would be done by having a -core, -jdk14 and -jdk15 library instead
+    ~    * you end up with a testng-$version.jar as well as the per-jdk versions
+    ~    * doesn't run tests
+    ~    * the backport library is not a version that I can find anywhere on the web.
+    ~
+    ~ There are certainly better ways to do this (especially if restructuring is an option), but this
+    ~ was teh most expedient to get things in the local repo.
+    ~
+    ~
+    ~ Creating an ibiblio upload bundle(added by jesse) :
+    ~
+    ~  Main instructions here: http://maven.apache.org/guides/mini/guide-ibiblio-upload.html
+    ~
+    ~  For either jdk15/jdk14 replace the -P option with the bundle type you want to create.
+    ~
+    ~ mvn source:jar repository:bundle-create -P jdk15
+    ~ mv target/testng-<version>-bundle.jar target/testng-<version>-<jdk15/jdk14>-bundle.jar (this step is weird, but necessary)
+    ~
+    ~ Repeat for jdk14. I usually run the bundle command with a 1.4 jre to be sure I've done it right.
+    ~
+    ~
+    ~ When you are all done, open a JIRA upload request as was done here: http://jira.codehaus.org/browse/MAVENUPLOAD-1010
+    -->
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <name>TestNG</name>
+    <version>5.7</version>
+    <description>TestNG is a unit testing framework.</description>
+    <url>http://testng.org</url>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:svn:a${scm.url}</connection>
+        <url>http://testng.googlecode.com/svn/trunk</url>
+    </scm>
+
+    <profiles>
+        <profile>
+            <id>jdk14</id>
+            <activation>
+                <jdk>1.4</jdk>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>build-helper-maven-plugin</artifactId>
+                        <configuration>
+                            <sources>
+                                <source>src/jdk14</source>
+                            </sources>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>add-source</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+                            <source>1.4</source>
+                            <target>1.4</target>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <configuration>
+                                    <classifier>jdk14</classifier>
+                                </configuration>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>dependency-maven-plugin</artifactId>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>backport-util-concurrent</groupId>
+                                    <artifactId>backport-util-concurrent</artifactId>
+                                    <version>2.2</version>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>process-sources</phase>
+                                <configuration>
+                                    <tasks>
+                                        <unzip dest="target/classes" src="3rdparty/backport-util-concurrent-2.2.jar" />
+                                    </tasks>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>jdk15</id>
+            <activation>
+                <jdk>!1.4</jdk>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <configuration>
+                                    <classifier>jdk15</classifier>
+                                </configuration>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <source>1.5</source>
+                            <target>1.5</target>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>build-helper-maven-plugin</artifactId>
+                        <configuration>
+                            <sources>
+                                <source>src/jdk15</source>
+                            </sources>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>add-source</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>default-tools.jar</id>
+            <activation>
+                <property>
+                    <name>java.vendor</name>
+                    <value>Sun Microsystems Inc.</value>
+                </property>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>com.sun</groupId>
+                    <artifactId>tools</artifactId>
+                    <version>1.4.2</version>
+                    <scope>system</scope>
+                    <optional>true</optional>
+                    <systemPath>${java.home}/../lib/tools.jar</systemPath>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+    <dependencies>
+        <dependency>
+            <groupId>ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>1.6.5</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>qdox</groupId>
+            <artifactId>qdox</artifactId>
+            <version>1.6.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.beanshell</groupId>
+            <artifactId>bsh</artifactId>
+            <version>2.0b4</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <sourceDirectory>src/main</sourceDirectory>
+	<resources>
+	   <resource>
+		<directory>src/main</directory>
+		<includes>
+		   <include>**/*.dtd</include>
+		</includes>
+	   </resource>
+	</resources>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>dependency-maven-plugin</artifactId>
+                <configuration>
+                    <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                    <artifactItems>
+                        <artifactItem>
+                            <groupId>qdox</groupId>
+                            <artifactId>qdox</artifactId>
+                            <version>1.6.1</version>
+                        </artifactItem>
+                        <artifactItem>
+                            <groupId>org.beanshell</groupId>
+                            <artifactId>bsh</artifactId>
+                            <version>2.0b4</version>
+                        </artifactItem>
+                    </artifactItems>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <!-- <version>2.2-SNAPSHOT</version> -->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+			<index>true</index>
+			<compress>true</compress>
+                        <manifest>
+                            <mainClass>org.testng.TestNG</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+	    <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+<!--
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>scp://beaver.codehaus.org/home/projects/maven/repository-staging/snapshots/maven2</url>
+        </snapshotRepository>
+    </distributionManagement>
+-->
+</project>

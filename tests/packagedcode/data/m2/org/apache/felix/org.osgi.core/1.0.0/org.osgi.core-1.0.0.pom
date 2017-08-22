@@ -1,0 +1,56 @@
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+<project>
+  <parent>
+    <groupId>org.apache.felix</groupId>
+    <artifactId>felix</artifactId>
+    <version>1.0.0</version>
+    <relativePath>../pom/pom.xml</relativePath>
+  </parent>
+  <organization>
+    <name>OSGi Alliance</name>
+    <url>http://www.osgi.org/</url>
+  </organization>
+  <modelVersion>4.0.0</modelVersion>
+  <name>OSGi R4 Core Bundle</name>
+  <description>OSGi Service Platform Release 4 Core Interfaces and Classes.</description>
+  <artifactId>org.osgi.core</artifactId>
+  <version>1.0.0</version>
+  <packaging>bundle</packaging>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>1.0.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Bundle-SymbolicName>org.osgi.core</Bundle-SymbolicName>
+            <Export-Package>org.osgi.framework, org.osgi.service.condpermadmin, org.osgi.service.packageadmin, org.osgi.service.permissionadmin, org.osgi.service.startlevel, org.osgi.service.url</Export-Package>
+            <Import-Package>org.osgi.framework,org.osgi.service.packageadmin,org.osgi.service.startlevel,org.osgi.service.url,!org.osgi.*,*</Import-Package>
+            <Bundle-Version>4</Bundle-Version>
+            <Bundle-Copyright>Copyright (c) OSGi Alliance (2000, 2006). All Rights Reserved.</Bundle-Copyright>
+            <Bundle-Category>osgi</Bundle-Category>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

@@ -1,0 +1,101 @@
+Syntext, Inc. GPL License Exception for Syntext Serna Free Edition 
+
+                      Version 1.0
+
+Additional rights granted beyond the GPL (the "Exception").
+
+As a special exception to the terms and conditions of GPL version 2.0 
+or GPL version 3.0, Syntext, Inc. hereby grants you the rights described below,
+provided you agree to the terms and conditions in this Exception, including its
+obligations and restrictions on use.    
+
+Nothing in this Exception gives you or anyone else the right to change the
+licensing terms of the Syntext Serna Free Editon.
+
+1) Definitions
+
+"FOSS Application" means a free and open source software application 
+distributed subject to a license listed in the section below titled 
+"FOSS License List."
+
+"Licensed Software" shall refer to the software licensed under the GPL 
+ version 2.0 or GPL version 3.0 and this exception.
+
+"Derivative Work" means a derivative work, as defined under applicable
+copyright law, formed entirely from the Licensed Software and one or more FOSS
+Applications.
+
+"Independent Work" means portions of the Derivative Work that are not derived 
+from the Licensed Software and can reasonably be considered independent and
+separate works.
+
+2) The right to use open source licenses not compatible with the GNU General
+Public License version 2.0 or GNU General Public License version 3.0: You may
+distribute Derivative Work in object code or executable form, provided that:
+
+A) You distribute Independent Works subject to a license listed in the 
+section 4 below, titled "FOSS License List";
+
+and
+
+B) You obey the GPL in all respects for the Licensed Software and all portions 
+(including modifications and extensions) of the Licensed Software included in
+the Derivative Work (provided that this condition does not apply to 
+Independent Works);
+
+C) You must, on request, make a complete package including the complete source
+code of Derivative Work (as defined in the GNU General Public License 
+version 2, section 3, but excluding anything excluded by the special exception 
+in the same section) available to Syntext, Inc. under the same license as that
+granted to other recipients of the source code of Derivative Work;
+
+and
+
+D) Your or any other contributor's rights to:
+
+i) distribute the source code of Derivative Work to anyone for any purpose;
+
+and
+
+ii) publicly discuss the development project for Derivative Work and its goals
+in any form and in any forum are not prohibited by any legal instrument, 
+including but not limited to contracts, non-disclosure agreements, and 
+employee contracts.
+
+3) Syntext, Inc. reserves all rights not expressly granted in these terms and 
+conditions. If all of the above conditions are not met, then this FOSS License
+Exception does not apply to you or your Derivative Work.
+
+
+4) FOSS License List
+
+License name                                            Version
+-----------------------------------------------------------------
+Academic Free License                                   2.0, 2.1, 3.0
+Apache Software License	                                1.0 or 1.1
+Apache License                                          2.0
+Apple Public Source License                     	2.0
+Artistic license                        (as set forth in the addendum file)
+BSD license	                                        "July 22 1999"
+Common Development and Distribution License (CDDL)	1.0
+Common Public License                           	1.0
+Eclipse Public License	                                1.0
+GNU Library or "Lesser" General Public License (LGPL)	2.0, 2.1, 3.0
+Jabber Open Source License                              1.0
+MIT License	                        (as set forth in the addendum file)
+Mozilla Public License (MPL)                            1.0 or 1.1
+Open Software License	                                2.0, 3.0
+OpenSSL license (with original SSLeay license)	        "2003" ("1998")
+PHP License	                                        3.0
+Python license (CNRI Python License)	(as set forth in the addendum file)
+Python Software Foundation License	                2.1.1
+Q Public License	                                1.0
+Sleepycat License	                                "1999"
+W3C License	                                        "2001"
+X11 License	                                        X11R6.6
+Zlib/libpng License                     (as set forth in the addendum file)
+Zope Public License                                     2.0, 2.1
+
+(Licenses without a specific version number or date are reproduced in the file
+GPL_Exception_Addendum.txt in your source package).
+------------------------------------------------------------------

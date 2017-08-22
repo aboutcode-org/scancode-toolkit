@@ -1,0 +1,189 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.myfaces.tomahawk", 
+  "artifact_id": "tomahawk", 
+  "version": "1.1.5", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.apache.myfaces.tomahawk", 
+    "artifact_id": "tomahawk-project", 
+    "version": "1.1.5", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Tomahawk Core", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:https://svn.apache.org/repos/asf/myfaces/tomahawk/branches/1_1_5", 
+    "developer_connection": null, 
+    "url": "https://svn.apache.org/repos/asf/myfaces/tomahawk/branches/1_1_5", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "commons-logging", 
+        "artifact_id": "commons-logging", 
+        "version": "1.0.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-validator", 
+        "artifact_id": "commons-validator", 
+        "version": "1.3.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-fileupload", 
+        "artifact_id": "commons-fileupload", 
+        "version": "1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-collections", 
+        "artifact_id": "commons-collections", 
+        "version": "3.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "struts", 
+        "artifact_id": "struts", 
+        "version": "1.2.9", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-el", 
+        "artifact_id": "commons-el", 
+        "version": "1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-codec", 
+        "artifact_id": "commons-codec", 
+        "version": "1.3", 
+        "required": true
+      }, 
+      {
+        "group_id": "oro", 
+        "artifact_id": "oro", 
+        "version": "2.0.8", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-lang", 
+        "artifact_id": "commons-lang", 
+        "version": "2.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "jstl", 
+        "version": "1.1.0", 
+        "required": true
+      }
+    ], 
+    "provided": [
+      {
+        "group_id": "org.apache.myfaces.core", 
+        "artifact_id": "myfaces-api", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.myfaces.shared", 
+        "artifact_id": "myfaces-shared-tomahawk", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "jsp-api", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "servlet-api", 
+        "version": "2.3", 
+        "required": true
+      }, 
+      {
+        "group_id": "portlet-api", 
+        "artifact_id": "portlet-api", 
+        "version": "1.0", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "org.apache.myfaces.core", 
+        "artifact_id": "myfaces-impl", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "cactus", 
+        "artifact_id": "cactus", 
+        "version": "13-1.7.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "aspectj", 
+        "artifact_id": "aspectjrt", 
+        "version": "1.2.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "easymock", 
+        "artifact_id": "easymock", 
+        "version": "1.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "easymock", 
+        "artifact_id": "easymockclassextension", 
+        "version": "1.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.shale", 
+        "artifact_id": "shale-test", 
+        "version": "1.0.3", 
+        "required": true
+      }, 
+      {
+        "group_id": "jmock", 
+        "artifact_id": "jmock", 
+        "version": "1.0.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "jmock", 
+        "artifact_id": "jmock-cglib", 
+        "version": "1.0.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "maven-taglib", 
+        "artifact_id": "maven-taglib-plugin", 
+        "version": "1.4.2", 
+        "required": true
+      }
+    ]
+  }
+}

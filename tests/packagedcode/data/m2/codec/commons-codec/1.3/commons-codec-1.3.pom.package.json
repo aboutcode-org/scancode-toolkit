@@ -1,0 +1,170 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "commons-codec:commons-codec", 
+  "version": "1.3", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Codec", 
+  "description": "The codec package contains simple encoder and decoders for\n   various formats such as Base64 and Hexadecimal.  In addition to these\n   widely used encoders and decoders, the codec package also maintains a\n   collection of phonetic encoding utilities.", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Henri Yandell", 
+      "email": "bayard@generationjava.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Tim OBrien", 
+      "email": "tobrien@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Scott Sanders", 
+      "email": "sanders@totalsync.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Rodney Waldhoff", 
+      "email": "rwaldhoff@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Daniel Rall", 
+      "email": "dlr@finemaltcoding.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jon S. Stevens", 
+      "email": "jon@collab.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Gary D. Gregory", 
+      "email": "ggregory@seagullsw.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "David Graham", 
+      "email": "dgraham@apache.org", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [
+    {
+      "type": "person", 
+      "name": "Christopher O'Brien", 
+      "email": "siege@preoccupied.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Martin Redington", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jeffery Dever", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Steve Zimmermann", 
+      "email": "steve.zimmermann@heii.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Benjamin Walstrum", 
+      "email": "ben@walstrum.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Oleg Kalnichevski", 
+      "email": "oleg@ural.ru", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Dave Dribin", 
+      "email": "apache@dave.dribin.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Alex Karasulu", 
+      "email": "aok123 at bellsouth.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Matthew Inger", 
+      "email": "mattinger at yahoo.com", 
+      "url": null
+    }
+  ], 
+  "owners": [
+    {
+      "type": "organization", 
+      "name": "The Apache Software Foundation", 
+      "email": null, 
+      "url": "http://jakarta.apache.org"
+    }
+  ], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://jakarta.apache.org/commons/codec/", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "The Apache Software License, Version 2.0", 
+      "url": "/LICENSE.txt", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "test": [
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.1"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

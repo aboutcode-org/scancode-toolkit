@@ -1,0 +1,83 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "commons-collections:commons-collections", 
+  "version": "2.1", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Collections", 
+  "description": "Commons Collections", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Morgan Delagrange", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Geir Magnusson", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Craig McClanahan", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Rodney Waldoff", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "David Weinrich", 
+      "email": null, 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": null, 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "test": [
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.7"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

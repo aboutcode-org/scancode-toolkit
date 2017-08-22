@@ -1,0 +1,16 @@
+about_resource: pluggy-0.4.0-py2.py3-none-any.whl
+download_url: https://pypi.python.org/packages/38/e2/b23434f4030bbb1af3bcdbb2ecff6b11cf2e467622446ce66a08e99f2ea9/pluggy-0.4.0.zip#md5=447a92368175965d2fbacaef9f3df842
+name: pluggy
+version: 0.4.0
+
+homepage_url: https://github.com/pytest-dev/pluggy
+dje_license: mit
+license_text_file: pluggy.LICENSE
+
+owner: Holger Krekel
+copyright: Copyright (c) 2015 holger krekel (rather uses bitbucket/hpk42)
+
+vcs_tool: git
+vcs_repository: https://github.com/pytest-dev/pluggy.git
+
+description: Plugin and hook calling mechanisms for python

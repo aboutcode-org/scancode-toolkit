@@ -1,0 +1,178 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.acegisecurity", 
+  "artifact_id": "acegi-security", 
+  "version": "1.0.7", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.acegisecurity", 
+    "artifact_id": "acegi-security-parent", 
+    "version": "1.0.7", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Acegi Security Core", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-core", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-remoting", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-jdbc", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-web", 
+        "version": "latest.release", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-mock", 
+        "version": "latest.release", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-ldap", 
+        "version": "1.1.2", 
+        "required": false
+      }, 
+      {
+        "group_id": "net.sf.ehcache", 
+        "artifact_id": "ehcache", 
+        "version": "1.2.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "cas", 
+        "artifact_id": "casclient", 
+        "version": "2.0.11", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-lang", 
+        "artifact_id": "commons-lang", 
+        "version": "2.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-logging", 
+        "artifact_id": "commons-logging", 
+        "version": "1.0.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-codec", 
+        "artifact_id": "commons-codec", 
+        "version": "1.3", 
+        "required": true
+      }, 
+      {
+        "group_id": "oro", 
+        "artifact_id": "oro", 
+        "version": "2.0.8", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-collections", 
+        "artifact_id": "commons-collections", 
+        "version": "3.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "aspectj", 
+        "artifact_id": "aspectjrt", 
+        "version": "1.2", 
+        "required": false
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "jsp-api", 
+        "version": "2.0", 
+        "required": false
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "servlet-api", 
+        "version": "2.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "taglibs", 
+        "artifact_id": "standard", 
+        "version": "1.0.6", 
+        "required": false
+      }, 
+      {
+        "group_id": "log4j", 
+        "artifact_id": "log4j", 
+        "version": "latest.release", 
+        "required": true
+      }
+    ], 
+    "runtime": [
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-support", 
+        "version": "latest.release", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "hsqldb", 
+        "artifact_id": "hsqldb", 
+        "version": "1.8.0.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.directory.server", 
+        "artifact_id": "apacheds-core", 
+        "version": "1.0.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.slf4j", 
+        "artifact_id": "slf4j-log4j12", 
+        "version": "1.0.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "jmock", 
+        "artifact_id": "jmock", 
+        "version": "1.0.1", 
+        "required": true
+      }
+    ]
+  }
+}

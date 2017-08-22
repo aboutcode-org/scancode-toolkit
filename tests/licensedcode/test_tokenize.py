@@ -22,10 +22,13 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import codecs
 import itertools
+from time import time
 import os
 
 from commoncode.testcase import FileBasedTesting
@@ -366,6 +369,27 @@ class TestRuleTokenizer(FileBasedTesting):
         text = u'}}{{{{abcd}}ddd}}{{'
         assert [u'ddd'] == list(rule_tokenizer(text))
 
+    def test_tokenizers_regex_do_not_choke_on_some_text(self):
+        # somehow this text was making the regex choke.
+        tf = self.get_test_loc('tokenize/parser.js')
+        with codecs.open(tf, 'rb', encoding='utf-8') as text:
+            content = text.read()
+
+        start = time()
+        list(rule_tokenizer(content))
+        duration = time() - start
+        assert duration < 5
+
+        start = time()
+        list(query_tokenizer(content))
+        duration = time() - start
+        assert duration < 5
+
+        start = time()
+        list(matched_query_text_tokenizer(content))
+        duration = time() - start
+        assert duration < 5
+
 
 class TestNgrams(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
@@ -474,7 +498,7 @@ class MatchedTextTokenizer(FileBasedTesting):
 
         result_as_text = u''.join(itertools.chain.from_iterable([v for v in m.groupdict().values() if v] for m in tokens_and_non_tokens(text)))
         assert text == result_as_text
-        
+
     def matched_query_text_tokenizer_yield_properly_all_texts(self):
         text = u'''Redistribution+ ;and use in! 2003 source and binary forms, 
         ()with or without modification, are permitted.\t\n

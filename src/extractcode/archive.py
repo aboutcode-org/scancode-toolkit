@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 from collections import namedtuple
 import functools
@@ -353,8 +355,33 @@ def extract_with_fallback(location, target_dir, extractor1, extractor2):
     return warnings
 
 
+def try_to_extract(location, target_dir, extractor):
+    """
+    Extract archive at `location` to `target_dir` trying the `extractor` function.
+    If extract fails, just return without returning warnings nor raising exceptions.
+
+    Note: there are a few cases where we want to attempt extracting something
+    but do not care if this fails.
+    """
+    abs_location = os.path.abspath(os.path.expanduser(location))
+    abs_target_dir = unicode(os.path.abspath(os.path.expanduser(target_dir)))
+    temp_target = unicode(fileutils.get_temp_dir('extract1'))
+    warnings = []
+    try:
+        warnings = extractor(abs_location, temp_target)
+        if TRACE:
+            logger.debug('try_to_extract: temp_target: %(temp_target)r' % locals())
+        fileutils.copytree(temp_target, abs_target_dir)
+    except:
+        return warnings
+    finally:
+        fileutils.delete(temp_target)
+    return warnings
+
+
 # High level aliases to lower level extraction functions
 ########################################################
+
 extract_tar = libarchive2.extract
 extract_patch = patch.extract
 
@@ -368,6 +395,9 @@ extract_7z = functools.partial(extract_with_fallback, extractor1=libarchive2.ext
 
 # libarchive is best for the run of the mill zips, but sevenzip sometimes is better
 extract_zip = functools.partial(extract_with_fallback, extractor1=libarchive2.extract, extractor2=sevenzip.extract)
+
+extract_springboot = functools.partial(try_to_extract, extractor=extract_zip)
+
 
 extract_iso = sevenzip.extract
 extract_rar = sevenzip.extract
@@ -511,13 +541,14 @@ JavaJarHandler = Handler(
 
 # See https://projects.spring.io/spring-boot/
 # this is a ZIP with a shell header (e.g. a self-executing zip of sorts)
+# internall the zip is really a war rather than a jar
 SpringBootShellJarHandler = Handler(
     name='Springboot Java Jar package',
     filetypes=('Bourne-Again shell script executable (binary data)',),
     mimetypes=('text/x-shellscript',),
-    extensions=('.jar', ),
+    extensions=('.jar',),
     kind=package,
-    extractors=[extract_zip],
+    extractors=[extract_springboot],
     strict=False
 )
 
@@ -601,7 +632,7 @@ TarGzipHandler = Handler(
     strict=False
 )
 
-#https://wiki.openwrt.org/doc/techref/opkg: ipk
+# https://wiki.openwrt.org/doc/techref/opkg: ipk
 # http://downloads.openwrt.org/snapshots/trunk/x86/64/packages/base/
 
 OpkgHandler = Handler(
@@ -743,7 +774,7 @@ DebHandler = Handler(
     name='Debian package',
     filetypes=('debian binary package',),
     mimetypes=('application/x-archive', 'application/vnd.debian.binary-package',),
-    extensions=('.deb','.udeb',),
+    extensions=('.deb', '.udeb',),
     kind=package,
     extractors=[extract_deb],
     strict=True

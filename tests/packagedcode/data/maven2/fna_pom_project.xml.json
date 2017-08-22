@@ -1,0 +1,84 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "com.adobe.ac.samples.bash", 
+  "artifact_id": "bash_flex_app", 
+  "version": "1.0", 
+  "classifier": null, 
+  "packaging ": "swf", 
+  "parent": {
+    "group_id": "com.adobe.ac.samples.bash", 
+    "artifact_id": "bash", 
+    "version": "1.0", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "com.adobe.ac.samples.bash bash bash_flex_app", 
+  "description": "This project hold the flex (blazeds enabled) flex front-end.\n\tIts architecture is based on adobe consulting mvn framework: cairngorm.", 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "provided": [
+      {
+        "group_id": "com.adobe.ac.samples.bash", 
+        "artifact_id": "bash_blazeds_service_config", 
+        "version": "1.0", 
+        "required": true
+      }
+    ], 
+    "internal": [
+      {
+        "group_id": "com.adobe.ac.samples.bash", 
+        "artifact_id": "bash_flex_remoted_objects", 
+        "version": "1.0", 
+        "required": true
+      }
+    ], 
+    "compile": [
+      {
+        "group_id": "com.adobe.flex", 
+        "artifact_id": "compiler", 
+        "version": "${flex.sdk.version}", 
+        "required": true
+      }, 
+      {
+        "group_id": "com.adobe.flex.framework", 
+        "artifact_id": "flex-framework", 
+        "version": "${flex.sdk.version}", 
+        "required": true
+      }, 
+      {
+        "group_id": "com.adobe.cairngorm", 
+        "artifact_id": "cairngorm", 
+        "version": "${cairngorm.version}", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "com.adobe.flexunit", 
+        "artifact_id": "flexunit", 
+        "version": "${flexunit.version}", 
+        "required": true
+      }, 
+      {
+        "group_id": "info.flex-mojos", 
+        "artifact_id": "testing-support", 
+        "version": "${flex-mojos.version}", 
+        "required": true
+      }
+    ]
+  }
+}

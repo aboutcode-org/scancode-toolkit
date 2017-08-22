@@ -1,0 +1,10 @@
+about_resource: chardet-3.0.3-py2.py3-none-any.whl
+name: chardet
+version: 3.0.3
+home_url: https://github.com/chardet/chardet
+download_url: https://pypi.python.org/packages/8c/27/99f781a11e4daa5acadf97add6e5883ec5f8f9abbf279e790fd0ff371db7/chardet-3.0.3-py2.py3-none-any.whl
+dje_license: lgpl-2.1
+license_text_url: https://raw.github.com/erikrose/chardet/70af46cb8e146326081fd76360d1c19675ee627c/COPYING
+license_text_file: lgpl-2.1.LICENSE
+vcs_tool: git
+vcs_repository: https://github.com/chardet/chardet.git

@@ -7,6 +7,8 @@
   "summary": "Slim is a PHP micro framework that helps you quickly write simple yet powerful web applications and APIs", 
   "description": null, 
   "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
   "authors": [
     {
       "type": "person", 

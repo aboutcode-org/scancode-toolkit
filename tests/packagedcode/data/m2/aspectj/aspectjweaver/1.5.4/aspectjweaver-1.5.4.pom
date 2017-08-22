@@ -1,0 +1,13 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>aspectj</groupId>
+  <artifactId>aspectjweaver</artifactId>
+  <version>1.5.4</version>
+
+  <distributionManagement>
+    <relocation>
+      <groupId>org.aspectj</groupId>
+    </relocation>
+  </distributionManagement>
+
+</project>

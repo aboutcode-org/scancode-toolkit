@@ -1,7 +1,6 @@
 key: facebook-software-license
 short_name: Facebook Software License
 name: Facebook Software License
-
 category: Free Restricted
 owner: Facebook
 notes: license found in several Facebook SDKs

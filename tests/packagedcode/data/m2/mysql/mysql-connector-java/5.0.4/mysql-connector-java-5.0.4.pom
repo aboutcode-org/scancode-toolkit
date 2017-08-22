@@ -1,0 +1,37 @@
+<project>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.0.4</version>
+    <packaging>jar</packaging>
+
+    <name>MySQL java connector</name>
+    <description>MySQL java connector</description>
+    
+    <licenses>
+    	<license>
+      		<name>The GNU General Public License, Version 2</name>
+      		<url>http://www.gnu.org/licenses/gpl.txt</url>
+      		<distribution>repo</distribution>
+      		<comments>MySQL Connector/J contains exceptions to GPL requirements when linking with other components
+      		that are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J
+      		in this distribution for more details.</comments>
+    	</license>
+	</licenses>
+  
+    <url>http://dev.mysql.com/usingmysql/java/</url>
+
+    <scm>
+        <connection>
+            scm:svn:http://svn.mysql.com/svnpublic/connector-j/trunk/connector-j
+        </connection>
+        <developerConnection>
+            scm:svn:http://svn.mysql.com/svnpublic/connector-j/trunk/connector-j
+        </developerConnection>
+        <url>
+            http://svn.mysql.com/svnpublic/connector-j/trunk/connector-j
+        </url>
+    </scm>
+
+</project>

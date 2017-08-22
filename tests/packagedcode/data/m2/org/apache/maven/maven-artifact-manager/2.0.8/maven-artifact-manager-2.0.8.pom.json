@@ -1,0 +1,80 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven", 
+  "artifact_id": "maven-artifact-manager", 
+  "version": "2.0.8", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.apache.maven", 
+    "artifact_id": "maven", 
+    "version": "2.0.8", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Artifact Manager", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-repository-metadata", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-utils", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-artifact", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-container-default", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.wagon", 
+        "artifact_id": "wagon-provider-api", 
+        "version": "latest.release", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "org.apache.maven.wagon", 
+        "artifact_id": "wagon-file", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "easymock", 
+        "artifact_id": "easymock", 
+        "version": "1.2_Java1.3", 
+        "required": true
+      }
+    ]
+  }
+}

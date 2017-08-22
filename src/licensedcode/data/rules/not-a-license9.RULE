@@ -1,0 +1,6 @@
+One implication of this ownership structure is that any attempt to change
+the licensing of the kernel is doomed to almost certain failure.  There are
+few practical scenarios where the agreement of all copyright holders could
+be obtained (or their code removed from the kernel).  So, in particular,
+there is no prospect of a migration to version 3 of the GPL in the
+foreseeable future.

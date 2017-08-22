@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<project
+		xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-core</artifactId>
+	<packaging>jar</packaging>
+	<name>Spring Framework: Core</name>
+	<version>2.5.3</version>
+	<description>Spring Framework: Core</description>
+	<url>http://www.springframework.org</url>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<scm>
+		<connection>scm:cvs:pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring</connection>
+		<developerConnection>scm:cvs:ext:username@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring</developerConnection>
+		<url>http://springframework.cvs.sourceforge.net/springframework/</url>
+	</scm>
+	<organization>
+		<name>Spring Framework</name>
+		<url>http://www.springframework.org/</url>
+	</organization>
+<!-- External Dependencies -->
+	<dependencies>
+		<dependency>
+			<groupId>asm</groupId>
+			<artifactId>asm</artifactId>
+			<version>2.2.3</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>asm</groupId>
+			<artifactId>asm-commons</artifactId>
+			<version>2.2.3</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>asm</groupId>
+			<artifactId>asm-util</artifactId>
+			<version>2.2.3</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>backport-util-concurrent</groupId>
+			<artifactId>backport-util-concurrent</artifactId>
+			<version>3.0</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.13</version>
+			<optional>true</optional>
+		</dependency>
+<!-- Spring Dependencies -->
+	</dependencies>
+	<distributionManagement>
+		<repository>
+			<id>spring-release</id>
+			<name>Spring Release Repository</name>
+			<url>file:///Users/benhale/development/public/repos/repo</url>
+		</repository>
+		<snapshotRepository>
+			<id>spring-snapshot</id>
+			<name>Spring Snapshot Repository</name>
+			<url>s3://maven.springframework.org/snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>

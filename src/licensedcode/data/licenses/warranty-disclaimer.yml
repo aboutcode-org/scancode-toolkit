@@ -1,0 +1,8 @@
+key: warranty-disclaimer
+short_name: Generic, Bare Warranty Disclaimer
+name: Generic, Bare Warranty Disclaimer
+category: Unknown License
+notes: This is a catch all license for plain, generic warranty
+    disclaimers that do not provide much rights.
+    Often seen in Microsoft code.
+owner: Unspecified

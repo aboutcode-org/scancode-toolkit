@@ -1,0 +1,38 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.scm", 
+  "artifact_id": "maven-scm-provider-svn-commons", 
+  "version": "1.0-beta-3", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.apache.maven.scm", 
+    "artifact_id": "maven-scm-providers-svn", 
+    "version": "1.0-beta-3", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven SCM Subversion Provider - Common library", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

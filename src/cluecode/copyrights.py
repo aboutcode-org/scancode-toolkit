@@ -1,4 +1,3 @@
-#
 # Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
@@ -29,19 +28,19 @@ import logging
 import os
 import re
 
-import nltk
 
 import commoncode
 from textcode import analysis
 from cluecode import copyrights_hint
 
 
+COPYRIGHT_TRACE = 0
 logger = logging.getLogger(__name__)
 if os.environ.get('SCANCODE_COPYRIGHT_DEBUG'):
     import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
-
+    COPYRIGHT_TRACE = 0
 
 """
 Detect and collect copyright statements.
@@ -109,6 +108,7 @@ _YEAR_SHORT = (r'('
 ')')
 
 _YEAR_YEAR = (r'('
+              # fixme   v ....the underscore below is suspicious 
     '19[6-9][0-9][\.,\-]_[6-9][0-9]'  # 1960-99
     '|'
     '19[6-9][0-9][\.,\-]+[0-9]'  # 1998-9
@@ -123,7 +123,7 @@ _PUNCT = (r'('
         '\W'  # not a word (word includes underscore)
         '\D'  # not a digit
         '\_'  # underscore
-        'i'   # oddity
+        'i'  # oddity
         '\?'
     ']'
     '|'
@@ -170,15 +170,16 @@ patterns = [
     (r'^([Rr]eserved|RESERVED)[,]?$', 'JUNK'),
 
     # found in crypto certificates and LDAP
-    (r'^(O=|OU=|OU|XML)$', 'JUNK'),
+    (r'^(O=|OU=|XML)$', 'JUNK'),
     (r'^(Parser|Dual|Crypto|NO|PART|[Oo]riginall?y?|[Rr]epresentations?\.?)$', 'JUNK'),
 
     (r'^(Refer|Apt|Agreement|Usage|Please|Based|Upstream|Files?|Filename:?|'
      r'Description:?|Holder?s|HOLDER?S|[Pp]rocedures?|You|Everyone)$', 'JUNK'),
     (r'^(Rights?|Unless|rant|Subject|Acknowledgements?|Special)$', 'JUNK'),
+    (r'^(LICEN[SC]E[EDS]?|Licen[sc]e[eds]?)$', 'TOIGNORE'),
     (r'^(Derivative|Work|[Ll]icensable|[Ss]ince|[Ll]icen[cs]e[\.d]?|'
      r'[Ll]icen[cs]ors?|under|COPYING)$', 'JUNK'),
-    (r'^(TCK|Use|[Rr]estrictions?|[Ii]ntroduction)$', 'JUNK'),
+    (r'^(TCK|Use|[Rr]estrictions?|[Ii]ntrodu`ction)$', 'JUNK'),
     (r'^([Ii]ncludes?|[Vv]oluntary|[Cc]ontributions?|[Mm]odifications?)$', 'JUNK'),
     (r'^(CONTRIBUTORS?|OTHERS?|Contributors?\:)$', 'JUNK'),
     (r'^(Company:|For|File|Last|[Rr]eleased?|[Cc]opyrighting)$', 'JUNK'),
@@ -192,10 +193,24 @@ patterns = [
     (r'^\.byte$', 'JUNK'),
     (r'^[Cc]ontributed?$', 'JUNK'),
     (r'^[Ff]unctions?$', 'JUNK'),
+    (r'^[Nn]otices?|[Mm]ust$', 'JUNK'),
+    (r'^ISUPPER?|ISLOWER$', 'JUNK'),
+    (r'^AppPublisher$', 'JUNK'),
+    (r'^DISCLAIMS?|SPECIFICALLY|WARRANT(Y|I)E?S?$', 'JUNK'),
+    (r'^(hispagestyle|Generic|Change|Add|Generic|Average|Taken|LAWS\.?|design|Driver)$', 'JUNK'),
+    # Windows XP
+    (r'^(Windows|XP|SP1|SP2|SP3|SP4)$', 'JUNK'),
+
+    (r'^example\.com$', 'JUNK'),
+
+    # C/C++
+    (r'^(template|struct|typedef|type|next|typename|namespace|type_of|begin|end)$', 'JUNK'),
 
     # various trailing words that are junk
     (r'^(?:Copyleft|LegalCopyright|AssemblyCopyright|Distributed|Report|'
      r'Available|true|false|node|jshint|node\':true|node:true)$', 'JUNK'),
+
+    (r'^\$?LastChangedDate\$?$', 'YR'),
 
     # Bare C char is COPYRIGHT SIGN
     # (r'^C$', 'COPY'),
@@ -209,10 +224,13 @@ patterns = [
     (r'^[Cc](opyright(s|ed)?|OPYRIGHT(S|ED))\.$', 'NN'),
     # copyright word or symbol
     # note the leading @ .... this may be a source of problems
-    (r'.?(@?([Cc]opyright)s?:?|[(][Cc][)]|(COPYRIGHT)S?:?)', 'COPY'),
+    (r'.?(@?([Cc]opyright)s?:?|[Cc]opr\.?|[(][Cc][)]|(COPYRIGHT)S?:?)', 'COPY'),
 
     # copyright in markup, until we strip markup: apache'>Copyright
     (r'[A-Za-z0-9]+[\'">]+[Cc]opyright', 'COPY'),
+
+    # AT&T (the company), needs special handling
+    (r'^AT\&T[\.,]?$', 'COMP'),
 
     # company suffix
     (r'^([Ii]nc[.]?|[I]ncorporated|[Cc]ompany|Limited|LIMITED).?$', 'COMP'),
@@ -223,26 +241,34 @@ patterns = [
     (r'^([cC]orp(oration|[.])?|[fF]oundation|[Aa]lliance|Working|[Gg]roup|'
      r'[Tt]echnolog(y|ies)|[Cc]ommunit(y|ies)|[Mm]icrosystems.?|[Pp]roject|'
      r'[Tt]eams?|[Tt]ech).?$', 'COMP'),
+    (r"^Limited'?,?$", 'COMP'),
 
     # company suffix : LLC, LTD, LLP followed by one extra char
     (r'^([Ll][Ll][CcPp]|[Ll][Tt][Dd])\.,$', 'COMP'),
     (r'^([Ll][Ll][CcPp]|[Ll][Tt][Dd])\.?,?$', 'COMP'),
     (r'^([Ll][Ll][CcPp]|[Ll][Tt][Dd])\.$', 'COMP'),
+    (r'^L\.P\.$', 'COMP'),
     # company suffix : SA, SAS, AG, AB, AS, CO, labs followed by a dot
-    (r'^(S\.?A\.?S?|Sas|sas|A[GBS]|Labs?|[Cc][Oo]\.|Research|INRIA).?$', 'COMP'),
+    (r'^(S\.?A\.?S?|Sas|sas|AG|AB|Labs?|[Cc][Oo]\.|Research|INRIA).?$', 'COMP'),
     # (german) company suffix
     (r'^[Gg][Mm][Bb][Hh].?$', 'COMP'),
     # (italian) company suffix
     (r'^[sS]\.[pP]\.[aA]\.?$', 'COMP'),
+    # (Laboratory) company suffix
+    (r'^(Labs?|Laboratory|Laboratories)\.?,?$', 'COMP'),
     # (dutch and belgian) company suffix
     (r'^[Bb]\.?[Vv]\.?|BVBA$', 'COMP'),
     # university
-    (r'^\(?[Uu]niv(?:[.]|ersit(?:y|e|at?|ad?))\)?$', 'UNI'),
-    # university
+    (r'^\(?[Uu]niv(?:[.]|ersit(?:y|e|at?|ad?))\)?\.?$', 'UNI'),
     # institutes
     (r'^[Ii]nstitut(s|o|os|e|es|et|a|at|as|u|i)?$', 'NNP'),
     # "holders" is considered as a common noun
     (r'^([Hh]olders?|HOLDERS?|[Rr]espective)$', 'NN'),
+    # affiliates
+    (r'^[Aa]ffiliates?\.?$', 'NNP'),
+
+    # OU as in Org unit, found in some certficates
+    (r'^OU$', 'OU'),
 
     # (r'^[Cc]ontributors?\.?', 'NN'),
     # "authors" or "contributors" is interesting, and so a tag of its own
@@ -262,17 +288,21 @@ patterns = [
     # of
     (r'^[Oo][Ff]|[Dd][Eei]$', 'OF'),
     # in
-    (r'^in$', 'IN'),
+    (r'^(in|en)$', 'IN'),
     # by
     (r'^by$', 'BY'),
+    # following
+    (r'^following$', 'FOLLOW'),
+
     # conjunction: and
-    (r'^([Aa]nd|&)$', 'CC'),
+    (r'^([Aa]nd|&|[Uu]nd|ET|[Ee]t|at|and/or)$', 'CC'),
+
     # conjunction: or. Even though or is not conjunctive ....
     # (r'^or$', 'CC'),
     # conjunction: or. Even though or is not conjunctive ....
     # (r'^,$', 'CC'),
     # ie. in things like "Copyright (c) 2012 John Li and others"
-    (r'^others$', 'OTH'),
+    (r'^other?s\.?$', 'OTH'),
     # in year ranges: dash, or 'to': "1990-1995", "1990/1995" or "1990 to 1995"
     (r'^([-/]|to)$', 'DASH'),
 
@@ -293,20 +323,20 @@ patterns = [
     # multi years
     # dual years with second part abbreviated
     # 1994/95. or 2002-04 or 1991-9
-    (r'^' + _PUNCT + _YEAR_OR_YEAR_YEAR_WITH_PUNCT + '+'+
-        '('+
+    (r'^' + _PUNCT + _YEAR_OR_YEAR_YEAR_WITH_PUNCT + '+' +
+        '(' +
             _YEAR_OR_YEAR_YEAR_WITH_PUNCT +
-        '|' + 
-            _YEAR_THEN_YEAR_SHORT + 
+        '|' +
+            _YEAR_THEN_YEAR_SHORT +
         ')*' + '$', 'YR'),
 
-    (r'^' + _PUNCT + _YEAR_OR_YEAR_YEAR_WITH_PUNCT + '+'+
-        '('+
+    (r'^' + _PUNCT + _YEAR_OR_YEAR_YEAR_WITH_PUNCT + '+' +
+        '(' +
             _YEAR_OR_YEAR_YEAR_WITH_PUNCT +
-        '|' + 
-            _YEAR_THEN_YEAR_SHORT + 
-        '|' + 
-            _YEAR_SHORT_PUNCT + 
+        '|' +
+            _YEAR_THEN_YEAR_SHORT +
+        '|' +
+            _YEAR_SHORT_PUNCT +
         ')*' + '$', 'YR'),
 
     # cardinal numbers
@@ -319,11 +349,17 @@ patterns = [
     # FIXME: what about a variant with spaces around the dash?
     (r'^[A-Z][a-zA-Z]*\s?[\-]\s?[A-Z]?[a-zA-Z]+.?$', 'NNP'),
 
+    # Countries abbreviations
+    (r'^U\.S\.A\.?$', 'NNP'),
+
+    # Places
+    (r'^\(?(?:Cambridge|Stockholm|Davis|Sweden|California)\)?,?.?$', 'NNP'),
+
     # proper nouns with digits
     (r'^[A-Z][a-z0-9]+.?$', 'NNP'),
     # saxon genitive, ie. Philippe's
     (r"^[A-Z][a-z]+[']s$", 'NNP'),
-    # dotted name, ie. P.
+    # Uppercase dotted name, ie. P.
     (r"^([A-Z][.]?|[A-Z]+[\.])$", 'PN'),
     # proper noun with some separator and trailing comma
     (r"^[A-Z]+[.][A-Z][a-z]+[,]?$", 'NNP'),
@@ -343,22 +379,26 @@ patterns = [
     (r'^[A-Z][a-zA-Z0-9]+[,]?$', 'NNP'),
 
     # email
-    (r'[a-zA-Z0-9\+_\-\.\%]+@[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]*\.[a-zA-Z]{2,5}?', 'EMAIL'),
+    (r'[a-zA-Z0-9\+_\-\.\%]+(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]*\.[a-zA-Z]{2,5}?', 'EMAIL'),
 
     # email eventually in parens or brackets. The closing > or ) is optional
-    (r'[\<\(][a-zA-Z0-9\+_\-\.\%]+@[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]*\.[a-zA-Z]{2,5}?[\>\)]?', 'EMAIL'),
+    (r'[\<\(][a-zA-Z0-9\+_\-\.\%]+(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]*\.[a-zA-Z]{2,5}?[\>\)]?', 'EMAIL'),
 
     # URLS such as ibm.com
     # TODO: add more extensions?
-    (r'<?a?.(href)?.[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|io|edu|co\.[a-z][a-z]|eu|biz)', 'URL'),
+    (r'\(+[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|biz)[\.\)]+$', 'URL'),
+    (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|biz)[\.\)]?$', 'URL'),
     # derived from regex in cluecode.finder
     (r'<?a?.(href)?.('
      r'(?:http|ftp|sftp)s?://[^\s<>\[\]"]+'
      r'|(?:www|ftp)\.[^\s<>\[\]"]+'
-     r')', 'URL'),
+     r')\.?', 'URL'),
 
-    # AT&T (the company), needed special handling
-    (r'^AT&T$', 'ATT'),
+    (r'^https?://[a-zA-Z0-9_\-]+(\.([a-zA-Z0-9_\-])+)+.?$', 'URL'),
+
+    # K.K. (a company suffix), needs special handling
+    (r'^K.K.,?$', 'NAME'),
+
     # comma as a conjunction
     (r'^,$', 'CC'),
     # .\" is not a noun
@@ -373,235 +413,322 @@ patterns = [
 
 # Comments in the Grammar are lines that start with #
 grammar = """
-    COPY: {<COPY>}
-    YR-RANGE: {<YR>+ <CC>+ <YR>}
-    YR-RANGE: {<YR> <DASH>* <YR|CD>+}
-    YR-RANGE: {<CD>? <YR>+}
-    YR-RANGE: {<YR>+ }
-    YR-AND: {<CC>? <YR>+ <CC>+ <YR>}
-    YR-RANGE: {<YR-AND>+}
+    YR-RANGE: {<YR>+ <CC>+ <YR>}        #20
+    YR-RANGE: {<YR> <DASH>* <YR|CD>+}        #30
+    YR-RANGE: {<CD>? <YR>+}        #40
+    YR-RANGE: {<YR>+ }        #50
+    YR-AND: {<CC>? <YR>+ <CC>+ <YR>}        #60
+    YR-RANGE: {<YR-AND>+}        #70
 
-    NAME: {<NNP> <VAN|OF> <NN*> <NNP>}
-    NAME: {<NNP> <PN> <VAN> <NNP>}
+    NAME: {<NN|NNP> <CC> <URL>} #80
+    NAME: {<NNP> <VAN|OF> <NN*> <NNP>}        #90
+    NAME: {<NNP> <PN> <VAN> <NNP>}        #100
+    # by the netfilter coreteam <coreteam@netfilter.org>
+    NAME: {<BY> <NN>+ <EMAIL>}        #110
 
-# the Regents of the University of California
-    COMPANY: {<BY>? <NN> <NNP> <OF> <NN> <UNI> <OF> <COMPANY|NAME|NAME2|NAME3><COMP>?}
+    # Kaleb S. KEITHLEY
+    NAME: {<NNP> <PN> <CAPS>}        #120
 
+    DASHCAPS: {<DASH> <CAPS>}
+   # INRIA - CIRAD - INRA
+    COMPANY: { <COMP> <DASHCAPS>+}        #1280
 
-# "And" some name
-    ANDCO: {<CC>+ <NN> <NNP>+<UNI|COMP>?}
-    ANDCO: {<CC>+ <NNP> <NNP>+<UNI|COMP>?}
-    ANDCO: {<CC>+ <COMPANY|NAME|NAME2|NAME3>+<UNI|COMP>?}
-    COMPANY: {<COMPANY|NAME|NAME2|NAME3> <ANDCO>+}
+    # the Regents of the University of California
+    COMPANY: {<BY>? <NN> <NNP> <OF> <NN> <UNI> <OF> <COMPANY|NAME|NAME2|NAME3><COMP>?}        #130
 
+   # Corporation/COMP for/NN  National/NNP Research/COMP Initiatives/NNP
+    COMPANY: {<COMP> <NN> <NNP> <COMP> <NNP>}       #140
 
-# rare "Software in the public interest, Inc."
-    COMPANY: {<COMP> <CD> <COMP>}
-    COMPANY: {<NNP> <IN><NN> <NNP> <NNP>+<COMP>?}
+    # Sun Microsystems, Inc. Mountain View
+    COMPANY: {<COMP> <COMP> <NNP><NNP>}       #144
+    # AT&T Laboratories, Cambridge
+    COMPANY: {<COMP> <COMP> <NNP>}       #145
 
-    COMPANY: {<NNP> <CC> <NNP> <COMP>}
-    COMPANY: {<NNP|CAPS> <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <COMP> <COMP>?}
-    COMPANY: {<UNI|NNP> <VAN|OF> <NNP>+ <UNI>?}
-    COMPANY: {<NNP>+ <UNI>}
-    COMPANY: {<UNI> <OF> <NN|NNP>}
-    COMPANY: {<COMPANY> <CC> <COMPANY>}
-    COMPANY: {<ATT> <COMP>?}
-    COMPANY: {<COMPANY> <CC> <NNP>}
+    # rare "Software in the public interest, Inc."
+    COMPANY: {<COMP> <CD> <COMP>}        #170
+    COMPANY: {<NNP> <IN><NN> <NNP> <NNP>+<COMP>?}        #180
+
+    COMPANY: {<NNP> <CC> <NNP> <COMP>}        #200
+    COMPANY: {<NNP|CAPS> <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <COMP> <COMP>?}        #210
+    COMPANY: {<UNI|NNP> <VAN|OF> <NNP>+ <UNI>?}        #220
+    COMPANY: {<NNP>+ <UNI>}        #230
+    COMPANY: {<UNI> <OF> <NN|NNP>}        #240
+    COMPANY: {<COMPANY> <CC> <COMPANY>}        #250
+    COMPANY: {<COMP>+}        #260
+    COMPANY: {<COMPANY> <CC> <NNP>+}        #270
     # AIRVENT SAM s.p.a - RIMINI(ITALY)
-    COMPANY: {<COMPANY> <DASH> <NNP|NN> <EMAIL>?}
+    COMPANY: {<COMPANY> <DASH> <NNP|NN> <EMAIL>?}        #290
+
 
 # Typical names
     #John Robert LoVerso
-    NAME: {<NNP> <NNP> <MIXEDCAP>}
-    NAME: {<NNP|PN>+ <NNP>+}
-    NAME: {<NNP> <PN>? <NNP>+}
-    NAME: {<NNP> <NNP>}
+    NAME: {<NNP> <NNP> <MIXEDCAP>}        #340
+    NAME: {<NNP|PN>+ <NNP>+}        #350
+    NAME: {<NNP> <PN>? <NNP>+}        #360
+    NAME: {<NNP> <NNP>}        #370
 
-    NAME: {<NNP> <NN> <EMAIL>}
-    NAME: {<NNP> <PN|VAN>? <PN|VAN>? <NNP>}
-    NAME: {<NNP> <NN> <NNP>}
-    NAME: {<NNP> <COMMIT>}
+    NAME: {<NNP> <NN> <EMAIL>}        #390
+    NAME: {<NNP> <PN|VAN>? <PN|VAN>? <NNP>}        #400
+    NAME: {<NNP> <NN> <NNP>}        #410
+    NAME: {<NNP> <COMMIT>}        #420
     # the LGPL VGABios developers Team
-    NAME: {<NN>? <NNP> <MAINT> <COMP>}
+    NAME: {<NN>? <NNP> <MAINT> <COMP>}        #440
     # Debian Qt/KDE Maintainers
-    NAME: {<NNP> <NN>? <MAINT>}
-    NAME: {<NN> <NNP> <ANDCO>}
-    NAME: {<NN>? <NNP> <CC> <NAME>}
-    NAME: {<NN>? <NNP> <OF> <NN>? <NNP> <NNP>?}
-    NAME: {<NAME> <CC> <NAME>}
-    COMPANY: {<NNP> <IN> <NN>? <COMPANY>}
+    NAME: {<NNP> <NN>? <MAINT>}        #460
+    NAME: {<NN> <NNP> <ANDCO>}        #470
+    NAME: {<NN>? <NNP> <CC> <NAME>}        #480
+    NAME: {<NN>? <NNP> <OF> <NN>? <NNP> <NNP>?}        #490
+    NAME: {<NAME> <CC> <NAME>}        #500
+    COMPANY: {<NNP> <IN> <NN>? <COMPANY>}        #510
 
-    NAME2: {<NAME> <EMAIL>}
-    NAME3: {<YR-RANGE> <NAME2|COMPANY>+}
-    NAME: {<NAME|NAME2>+ <OF> <NNP> <OF> <NN>? <COMPANY>}
-    NAME: {<NAME|NAME2>+ <CC|OF>? <NAME|NAME2|COMPANY>}
-    NAME3: {<YR-RANGE> <NAME>+}
-    NAME: {<NNP> <OF> <NNP>}
-    NAME: {<NAME> <NNP>}
-    NAME: {<NN|NNP|CAPS>+ <CC> <OTH>}
-    NAME: {<NNP> <CAPS>}
-    NAME: {<CAPS> <DASH>? <NNP|NAME>}
-    NAME: {<NNP> <CD> <NNP>}
-    NAME: {<COMP> <NAME>+}
+    NAME2: {<NAME> <EMAIL>}        #530
+    NAME3: {<YR-RANGE> <NAME2|COMPANY>+}        #540
+    NAME: {<NAME|NAME2>+ <OF> <NNP> <OF> <NN>? <COMPANY>}        #550
+    NAME: {<NAME|NAME2>+ <CC|OF>? <NAME|NAME2|COMPANY>}        #560
+    NAME3: {<YR-RANGE> <NAME>+}        #570
+    NAME: {<NNP> <OF> <NNP>}        #580
+    NAME: {<NAME> <NNP>}        #590
+    NAME: {<NN|NNP|CAPS>+ <CC> <OTH>}        #600
+    NAME: {<NNP> <CAPS>}        #610
+    NAME: {<CAPS> <DASH>? <NNP|NAME>}        #620
+    NAME: {<NNP> <CD> <NNP>}        #630
+    NAME: {<COMP> <NAME>+}        #640
 
-    NAME: {<NNP|CAPS>+ <AUTH>}
+    NAME: {<NNP|CAPS>+ <AUTH>}        #660
 
-    NAME: {<VAN|OF> <NAME>}
-    NAME: {<NAME3> <COMP>}
+    NAME: {<VAN|OF> <NAME>}        #680
+    NAME: {<NAME3> <COMP>}        #690
+    # more names
+    NAME: {<NNP> <NAME>}        #710
+    NAME: {<CC>? <IN> <NAME|NNP>}        #720
+    NAME: {<NAME><UNI>}        #730
+    NAME: { <NAME> <IN> <NNP> <CC|IN>+ <NNP>}        #740
 
 # Companies
-    COMPANY: {<NAME|NAME2|NAME3|NNP>+ <OF> <NN>? <COMPANY|COMP>}
-    COMPANY: {<NNP> <COMP> <COMP>}
-    COMPANY: {<NN>? <COMPANY|NAME|NAME2> <CC> <COMPANY|NAME|NAME2>}
-    COMPANY: {<COMP|NNP> <NN> <COMPANY> <NNP>+}
-    COMPANY: {<COMPANY> <CC> <AUTH>}
-    COMPANY: {<NN> <COMP>+}
-    COMPANY: {<URL>}
+    COMPANY: {<NAME|NAME2|NAME3|NNP>+ <OF> <NN>? <COMPANY|COMP>}        #770
+    COMPANY: {<NNP> <COMP> <COMP>}        #780
+    COMPANY: {<NN>? <COMPANY|NAME|NAME2> <CC> <COMPANY|NAME|NAME2>}        #790
+    COMPANY: {<COMP|NNP> <NN> <COMPANY> <NNP>+}        #800
+    COMPANY: {<COMPANY> <CC> <AUTH>}        #810
+    COMPANY: {<NN> <COMP>+}        #820
+    COMPANY: {<URL>}        #830
+    COMPANY: {<COMPANY> <COMP>}        #840
 
 # The Regents of the University of California
-    NAME: {<NN> <NNP> <OF> <NN> <COMPANY>}
+    NAME: {<NN> <NNP> <OF> <NN> <COMPANY>}        #870
 
 # Trailing Authors
-    COMPANY: {<NAME|NAME2|NAME3|NNP>+ <AUTH>}
+    COMPANY: {<NAME|NAME2|NAME3|NNP>+ <AUTH>}        #900
+
+    # Jeffrey C. Foo
+    COMPANY: {<PN> <COMPANY>}        #910
 
 # "And" some name
-    ANDCO: {<CC> <NNP> <NNP>+}
-    ANDCO: {<CC> <COMPANY|NAME|NAME2|NAME3>+}
-    COMPANY: {<COMPANY|NAME|NAME2|NAME3> <ANDCO>+}
-    NAME: {<NNP> <ANDCO>+}
+    ANDCO: {<CC> <NNP> <NNP>+}        #930
+    ANDCO: {<CC> <OTH>}        #940
+    ANDCO: {<CC> <NN> <NAME>+}        #950
+    ANDCO: {<CC> <COMPANY|NAME|NAME2|NAME3>+}        #960
+    COMPANY: {<COMPANY|NAME|NAME2|NAME3> <ANDCO>+}        #970
+    NAME: {<NNP> <ANDCO>+}        #980
 
-    NAME: {<BY> <NN> <AUTH>}
+    NAME: {<BY> <NN> <AUTH>}        #1000
 
 # NetGroup, Politecnico di Torino (Italy)
-    COMPANY: {<NNP> <COMPANY> <NN>}
+    COMPANY: {<NNP> <COMPANY> <NN>}        #1030
 
 # Arizona Board of Regents (University of Arizona)
-    NAME: {<COMPANY> <OF> <NN|NNP>}
+    NAME: {<COMPANY> <OF> <NN|NNP>}        #1060
 
 # The Regents of the University of California
-    NAME: {<NAME> <COMPANY>}
+    NAME: {<NAME> <COMPANY>}        #1090
 
 # John Doe and Myriam Doe
-    NAME: {<NAME|NNP> <CC> <NNP|NAME>}
+    NAME: {<NAME|NNP> <CC> <NNP|NAME>}        #1120
 
+# International Business Machines Corporation and others
+    COMPANY: {<COMPANY> <CC> <OTH>}        #1150
+    COMPANY: {<NAME3> <CC> <OTH>}        #1160
+
+# Nara Institute of Science and Technology.
+    COMPANY: {<NNP> <COMPANY> <CC> <COMP>}        #1190
+
+# Commonwealth Scientific and Industrial Research Organisation (CSIRO)
+    COMPANY: {<NNP> <COMPANY> <NAME>}        #1220
+
+# Bio++ Development Team
+    COMPANY: {<NN> <COMPANY>}        #1250
+
+# Institut en recherche ....
+    COMPANY: {<NNP> <IN> <NN>+ <COMPANY>}        #1310
+
+#  OU OISTE Foundation
+    COMPANY: {<OU> <COMPANY>}        #1340
+
+# NETLABS, Temple University
+    COMPANY: {<CAPS> <COMPANY>}        #1370
+
+# XZY emails
+    COMPANY: {<COMPANY> <EMAIL>+}        #1400
+
+
+# "And" some name
+    ANDCO: {<CC>+ <NN> <NNP>+<UNI|COMP>?}        #1430
+    ANDCO: {<CC>+ <NNP> <NNP>+<UNI|COMP>?}        #1440
+    ANDCO: {<CC>+ <COMPANY|NAME|NAME2|NAME3>+<UNI|COMP>?}        #1450
+    COMPANY: {<COMPANY|NAME|NAME2|NAME3> <ANDCO>+}        #1460
+
+    COMPANY: {<COMPANY><COMPANY>+}        #1480
+
+# Oracle and/or its affiliates.
+    NAME: {<NNP> <ANDCO>}        #1410
 
 # Various forms of copyright statements
-    COPYRIGHT: {<COPY> <NAME> <COPY> <YR-RANGE>}
+    COPYRIGHT: {<COPY> <NAME> <COPY> <YR-RANGE>}        #1510
 
-    COPYRIGHT: {<COPY> <COPY>? <BY>? <COMPANY|NAME*|YR-RANGE>* <BY>? <EMAIL>+}
+    COPYRIGHT: {<COPY> <COPY>? <BY>? <COMPANY|NAME*|YR-RANGE>* <BY>? <EMAIL>+}        #1530
 
-    COPYRIGHT: {<COPY> <COPY>? <NAME|NAME2|NAME3> <CAPS> <YR-RANGE>}
+    COPYRIGHT: {<COPY> <COPY>? <NAME|NAME2|NAME3> <CAPS> <YR-RANGE>}        #1550
 
-    COPYRIGHT: {<COPY> <COPY>? <NAME|NAME2|NAME3>+ <YR-RANGE>*}
+    #Copyright . 2008 Mycom Pany, inc.
+    COPYRIGHT: {<COPY> <NN> <NAME3>}        #1560
 
-    COPYRIGHT: {<COPY> <COPY>? <CAPS|NNP>+ <CC> <NN> <COPY> <YR-RANGE>?}
+    COPYRIGHT: {<COPY> <COPY>? <NAME|NAME2|NAME3>+ <YR-RANGE>*}        #1570
 
-    COPYRIGHT: {<COPY> <COPY>? <BY>? <COMPANY|NAME*>+ <YR-RANGE>*}
+    COPYRIGHT: {<COPY> <COPY>? <CAPS|NNP>+ <CC> <NN> <COPY> <YR-RANGE>?}        #1590
 
-    COPYRIGHT: {<NNP>? <COPY> <COPY>? (<YR-RANGE>+ <BY>? <NN>? <COMPANY|NAME|NAME2>+ <EMAIL>?)+}
+    COPYRIGHT: {<COPY> <COPY>? <BY>? <COMPANY|NAME*>+ <YR-RANGE>*}        #1610
 
-    COPYRIGHT: {<COPY> <COPY>? <NN> <NAME> <YR-RANGE>}
+    COPYRIGHT: {<NNP>? <COPY> <COPY>? (<YR-RANGE>+ <BY>? <NN>? <COMPANY|NAME|NAME2>+ <EMAIL>?)+}        #1630
 
-    COPYRIGHT: {<COPY>+ <BY> <NAME|NAME2|NAME3>+}
+    COPYRIGHT: {<COPY> <COPY>? <NN> <NAME> <YR-RANGE>}        #1650
 
-    COPYRIGHT: {<COPY> <COPY> <COMP>+}
+    COPYRIGHT: {<COPY>+ <BY> <NAME|NAME2|NAME3>+}        #1670
 
-    COPYRIGHT: {<COPY> <COPY> <NN>+ <COMPANY|NAME|NAME2>+}
+    COPYRIGHT: {<COPY> <COPY> <COMP>+}        #1690
 
-    COPYRIGHT: {<COPY> <COPY>? <NN> <NN>? <COMP> <YR-RANGE>?}
+    COPYRIGHT: {<COPY> <COPY> <NN>+ <COMPANY|NAME|NAME2>+}        #1710
 
-    COPYRIGHT: {<COPY> <COPY>? <NN> <NN>? <COMP> <YR-RANGE>?}
-    COPYRIGHT: {<COPY> <NN> <NN>? <COMPANY> <YR-RANGE>?}
+    COPYRIGHT: {<COPY> <COPY>? <NN> <NN>? <COMP> <YR-RANGE>?}        #1730
 
-    COPYRIGHT: {<COPY> <COPY>? <YR-RANGE|NNP> <CAPS|BY>? <NNP|YR-RANGE|NAME>+}
+    COPYRIGHT: {<COPY> <COPY>? <NN> <NN>? <COMP> <YR-RANGE>?}        #1750
+    COPYRIGHT: {<COPY> <NN> <NN>? <COMPANY> <YR-RANGE>?}        #1760
 
-    COPYRIGHT: {<COPY> <COPY> <NNP>+}
+    COPYRIGHT: {<COPY> <COPY>? <YR-RANGE|NNP> <CAPS|BY>? <NNP|YR-RANGE|NAME>+}        #1780
+
+    COPYRIGHT: {<COPY> <COPY> <NNP>+}        #1800
 
     # Copyright (c) 2016 Project Admins foobar
-    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE>+ <COMP> <NNP> <NN>}
+    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE>+ <COMP> <NNP> <NN>}        #1830
 
     # Copyright (c) 1995, 1996 The President and Fellows of Harvard University
-    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <NN> <NNP> <ANDCO>}
+    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <NN> <NNP> <ANDCO>}        #1860
 
-    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <NN> <AUTH>}
+    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <NN> <AUTH>}        #1880
 
     # Copyright 1999, 2000 - D.T.Shield.
     # Copyright (c) 1999, 2000 - D.T.Shield.
-    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <DASH> <NN>}
+    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <DASH> <NN>}        #1920
 
     # Copyright 2007-2010 the original author or authors.
     # Copyright (c) 2007-2010 the original author or authors.
-    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <NN> <JUNK> <AUTH> <NN> <AUTH>}
+    COPYRIGHT2: {<COPY>+ <YR-RANGE> <NN> <JUNK> <AUTH> <NN> <AUTH>}        #1960
 
-    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <BY> <NN> <NN> <NAME>}
-    COPYRIGHT2: {<COPY> <YR-RANGE> <BY> <NN> <NN> <NAME>}
+    #(c) 2017 The Chromium Authors
+    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <NN> <NNP> <NN>}        #1990
 
-    COPYRIGHT2: {<COPY> <COPY><NN>? <COPY> <YR-RANGE> <BY> <NN>}
-    COPYRIGHT2: {<COPY> <NN>? <COPY> <YR-RANGE> <BY> <NN>}
+    # Copyright (C) Research In Motion Limited 2010. All rights reserved.
+    COPYRIGHT2: {<COPYRIGHT> <COMPANY> <YR-RANGE>}        #2020
 
-    COPYRIGHT2: {<COPY> <COPY>? <NN> <YR-RANGE> <BY> <NAME>}
+    #  Copyright (c) 1999 Computer Systems and Communication Lab,
+    #                    Institute of Information Science, Academia Sinica.
+    COPYRIGHT2: {<COPYRIGHT> <COMPANY> <COMPANY>}        #2060
 
-    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <DASH> <BY>? <NAME2|NAME>}
+    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <BY> <NN> <NN> <NAME>}        #2080
+    COPYRIGHT2: {<COPY> <YR-RANGE> <BY> <NN> <NN> <NAME>}        #2090
 
-    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <NNP> <NAME>}
+    COPYRIGHT2: {<COPY> <COPY><NN>? <COPY> <YR-RANGE> <BY> <NN>}        #2110
+    COPYRIGHT2: {<COPY> <NN>? <COPY> <YR-RANGE> <BY> <NN>}        #2120
+
+    COPYRIGHT2: {<COPY> <COPY>? <NN> <YR-RANGE> <BY> <NAME>}        #2140
+
+    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <DASH> <BY>? <NAME2|NAME>}        #2160
+
+    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <NNP> <NAME>}        #2180
 
     # Copyright (c) 2012-2016, Project contributors
-    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <COMP> <AUTH>}
+    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <COMP> <AUTH>}        #2210
 
-    COPYRIGHT2: {<COPY>+ <YR-RANGE> <COMP>}
-    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE>+ <CAPS>? <MIXEDCAP>}
+    COPYRIGHT2: {<COPY>+ <YR-RANGE> <COMP>}        #2230
+    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE>+ <CAPS>? <MIXEDCAP>}        #2240
 
-    COPYRIGHT2: {<NAME> <COPY> <YR-RANGE>}
+    COPYRIGHT2: {<NAME> <COPY> <YR-RANGE>}        #2260
 
-    COPYRIGHT2: {<COPY> <COPY>? <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>*}
+    COPYRIGHT2: {<COPY> <COPY>? <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>*}        #2280
 
-    COPYRIGHT2: {<COPY> <COPY>? <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <COMPANY>}
+    COPYRIGHT2: {<COPY> <COPY>? <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <COMPANY>}        #2300
 
-    COPYRIGHT2: {<COPY> <COPY>? <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <DASH> <COMPANY>}
+    COPYRIGHT2: {<COPY> <COPY>? <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <DASH> <COMPANY>}        #2320
 
-    COPYRIGHT2: {<NNP|NAME|COMPANY> <COPYRIGHT2>}
+    COPYRIGHT2: {<NNP|NAME|COMPANY> <COPYRIGHT2>}        #2340
 
-    COPYRIGHT: {<COPYRIGHT> <NN> <COMPANY>}
+    COPYRIGHT: {<COPYRIGHT> <NN> <COMPANY>}        #2360
 
-    COPYRIGHT: {<COPY> <COPY>? <BY>? <NN> <COMPANY>}
+    COPYRIGHT: {<COPY> <COPY>? <BY>? <NN> <COMPANY>}        #2380
 
-    COPYRIGHT: {<COMPANY> <NN> <NAME> <COPYRIGHT2>}
-    COPYRIGHT: {<COPYRIGHT2> <COMP> <COMPANY>}
-    COPYRIGHT: {<COMPANY> <NN> <COPYRIGHT2>}
-    COPYRIGHT: {<COPYRIGHT2> <NNP> <CC> <COMPANY>}
+    COPYRIGHT: {<COMPANY> <NN> <NAME> <COPYRIGHT2>}        #2400
+    COPYRIGHT: {<COPYRIGHT2> <COMP> <COMPANY>}        #2410
+    COPYRIGHT: {<COMPANY> <NN> <COPYRIGHT2>}        #2420
+    COPYRIGHT: {<COPYRIGHT2> <NNP> <CC> <COMPANY>}        #2430
 
-    #COPYRIGHT2: {<COPYRIGHT2> <JUNK>* <COMPANY>}
+    COPYRIGHT: {<COPYRIGHT2> <NAME|NAME2|NAME3>+}        #2860
 
 # copyrights in the style of Scilab/INRIA
-    COPYRIGHT: {<NNP> <NN> <COPY> <NNP>}
-    COPYRIGHT: {<NNP> <COPY> <NNP>}
+    COPYRIGHT: {<NNP> <NN> <COPY> <NNP>}        #2460
+    COPYRIGHT: {<NNP> <COPY> <NNP>}        #2470
 
-# portions copyright
-    COPYRIGHT: {<PORTIONS> <COPYRIGHT|COPYRIGHT2>}
+    # Copyright or Copr. 2006 INRIA - CIRAD - INRA
+    COPYRIGHT: {<COPY> <NN> <COPY> <YR-RANGE>+ <COMPANY>+}        #2500
+
+    #Copyright or Copr. CNRS
+    COPYRIGHT: {<COPY> <NN> <COPY> <CAPS>}        #2530
+
+    #Copyright or Copr. CNRS
+    COPYRIGHT: {<COPY> <NN> <COPY> <COPYRIGHT>}        #2560
+
+    COPYRIGHT: {<COPYRIGHT|COPYRIGHT2> <COMPANY>+ <NAME>*}        #2580
+
+    # at iClick, Inc., software copyright (c) 1999
+    COPYRIGHT: {<ANDCO> <NN> <COPYRIGHT2>}        #2590
+
+    # portions copyright
+    COPYRIGHT: {<PORTIONS> <COPYRIGHT|COPYRIGHT2>}        #2610
+
+    #copyright notice (3dfx Interactive, Inc. 1999), (notice is JUNK)
+    COPYRIGHT: {<COPY> <JUNK> <COMPANY> <YR-RANGE>}       #2620
 
 # Authors
-    AUTH: {<AUTH2>+ <BY>}
-    AUTHOR: {<AUTH>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}
-    AUTHOR: {<AUTH>+ <NN>? <COMPANY|NAME|NAME2>+ <YR-RANGE>*}
-    AUTHOR: {<AUTH>+ <YR-RANGE>+ <BY>? <COMPANY|NAME|NAME2>+}
-    AUTHOR: {<AUTH>+ <YR-RANGE|NNP> <NNP|YR-RANGE>+}
-    AUTHOR: {<AUTH>+ <NN|CAPS>? <YR-RANGE>+}
-    AUTHOR: {<COMPANY|NAME|NAME2>+ <AUTH>+ <YR-RANGE>+}
-    AUTHOR: {<YR-RANGE> <NAME|NAME2>+}
-    AUTHOR: {<NAME2>+}
-    AUTHOR: {<AUTHOR> <CC> <NN>? <AUTH>}
-    AUTHOR: {<BY> <EMAIL>}
-    ANDAUTH: {<CC> <AUTH|NAME>+}
-    AUTHOR: {<AUTHOR> <ANDAUTH>+}
+    AUTH: {<AUTH2>+ <BY>}        #2640
+    AUTHOR: {<AUTH>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
+    AUTHOR: {<AUTH>+ <NN>? <COMPANY|NAME|NAME2>+ <YR-RANGE>*}        #2660
+    AUTHOR: {<AUTH>+ <YR-RANGE>+ <BY>? <COMPANY|NAME|NAME2>+}        #2670
+    AUTHOR: {<AUTH>+ <YR-RANGE|NNP> <NNP|YR-RANGE>+}        #2680
+    AUTHOR: {<AUTH>+ <NN|CAPS>? <YR-RANGE>+}        #2690
+    AUTHOR: {<COMPANY|NAME|NAME2>+ <AUTH>+ <YR-RANGE>+}        #2700
+    AUTHOR: {<YR-RANGE> <NAME|NAME2>+}        #2710
+    AUTHOR: {<NAME2>+}        #2720
+    AUTHOR: {<AUTHOR> <CC> <NN>? <AUTH>}        #2730
+    AUTHOR: {<BY> <EMAIL>}        #2740
+    ANDAUTH: {<CC> <AUTH|NAME>+}        #2750
+    AUTHOR: {<AUTHOR> <ANDAUTH>+}        #2760
 
 # Compounded statements usings authors
     # found in some rare cases with a long list of authors.
-    COPYRIGHT: {<COPY> <BY> <AUTHOR>+ <YR-RANGE>*}
+    COPYRIGHT: {<COPY> <BY> <AUTHOR>+ <YR-RANGE>*}        #2800
 
-    COPYRIGHT: {<AUTHOR> <COPYRIGHT2>}
-    COPYRIGHT: {<AUTHOR> <YR-RANGE>}
-    
-    COPYRIGHT: {<COPYRIGHT> <NAME3>}
+    COPYRIGHT: {<AUTHOR> <COPYRIGHT2>}        #2820
+    COPYRIGHT: {<AUTHOR> <YR-RANGE>}        #2830
+
+    COPYRIGHT: {<COPYRIGHT> <NAME3>}        #2850
 
 """
 
@@ -755,15 +882,32 @@ def refine_copyright(c):
 
 def refine_author(c):
     """
-    Refine a detected author
+    Refine a detected author.
     FIXME: the grammar should not allow this to happen.
     """
     c = strip_some_punct(c)
     c = strip_numbers(c)
     c = strip_all_unbalanced_parens(c)
     c = c.split()
-    # this is hard to catch otherwise, unless we split the author vs copyright grammar in two
-    if c[0].lower() == 'author':
+    # FIXME: also split comma separated lists: gthomas, sorin@netappi.com, andrew.lunn@ascom.che.g.
+
+    # strip prefixes.
+    # NOTE: prefixes are hard to catch otherwise, unless we split the
+    # author vs copyright grammar in two
+    prefixes = set([
+        'author',
+        'authors',
+        'author(s)',
+        'authored',
+        'contributor',
+        'contributors',
+        'contributor(s)',
+        'by',
+        'developed',
+        'written',
+        'created',
+    ])
+    while c and c[0].lower() in prefixes:
         c = c[1:]
     c = u' '.join(c)
     return c.strip()
@@ -818,8 +962,10 @@ class CopyrightDetector(object):
     Class to detect copyrights and authorship.
     """
     def __init__(self):
-        self.tagger = nltk.RegexpTagger(patterns)
-        self.chunker = nltk.RegexpParser(grammar)
+        from nltk import RegexpTagger
+        from nltk import RegexpParser
+        self.tagger = RegexpTagger(patterns)
+        self.chunker = RegexpParser(grammar, trace=COPYRIGHT_TRACE)
 
     @staticmethod
     def as_str(node):
@@ -834,6 +980,7 @@ class CopyrightDetector(object):
         Return a sequence of tuples (copyrights, authors, years, holders)
         detected in a sequence of numbered line tuples.
         """
+        from nltk.tree import Tree 
         numbered_lines = list(numbered_lines)
         numbers = [n for n, _l in numbered_lines]
         start_line = min(numbers)
@@ -863,8 +1010,6 @@ class CopyrightDetector(object):
         tree = self.chunker.parse(tagged_text)
         logger.debug('CopyrightDetector:parse tree: ' + str(tree))
 
-        # OPTIMIZED
-        nltk_tree_Tree = nltk.tree.Tree
         CopyrightDetector_as_str = CopyrightDetector.as_str
 
         def collect_year_and_holder(detected_copyright):
@@ -873,7 +1018,7 @@ class CopyrightDetector(object):
             node collecting all years and holders.
             """
             for copyr in detected_copyright:
-                if isinstance(copyr, nltk_tree_Tree):
+                if isinstance(copyr, Tree):
                     # logger.debug('n: ' + str(copyr))
                     node_text = CopyrightDetector_as_str(copyr)
                     copyr_label = copyr.label()
@@ -884,11 +1029,12 @@ class CopyrightDetector(object):
                         # where a company name contains numbers
                         holders_append(refine_author(node_text))
                         # logger.debug('CopyrightDetector: node_text: ' + node_text)
-                    collect_year_and_holder(copyr)
+                    else:
+                        collect_year_and_holder(copyr)
 
         # then walk the parse tree, collecting copyrights, years and authors
         for tree_node in tree:
-            if isinstance(tree_node, nltk_tree_Tree):
+            if isinstance(tree_node, Tree):
                 node_text = CopyrightDetector_as_str(tree_node)
                 tree_node_label = tree_node.label()
                 if 'COPYRIGHT' in tree_node_label:
@@ -940,8 +1086,18 @@ def is_candidate(line):
     """
     line = line.lower()
     line = prepare_text_line(line)
-    return (has_content(line) and any(s in line for s in copyrights_hint.statement_markers))
+    if has_content(line):
+        if copyrights_hint.years(line):
+            logger.debug('is_candidate: year in line:\n%(line)r' % locals())
+            return True
+        else:
+            logger.debug('is_candidate: NOT year in line:\n%(line)r' % locals())
 
+        for marker in copyrights_hint.statement_markers:
+            if marker in line:
+                logger.debug('is_candidate: %(marker)r in line:\n%(line)r' % locals())
+                return True
+            
 
 def has_content(line):
     """
@@ -1175,6 +1331,7 @@ def prepare_text_line(line):
 
 
     # note that we do not replace the debian tag by a space:  we remove it
+    # TODO: use POS tag:     (r'^(?:\<s\>).*(?:\<s\\/>)$', 'NAME'),
     line = re_sub(DEBIAN_COPYRIGHT_TAGS_RE(), '', line)
 
     line = re_sub(IGNORED_PUNCTUATION_RE(), ' ', line)

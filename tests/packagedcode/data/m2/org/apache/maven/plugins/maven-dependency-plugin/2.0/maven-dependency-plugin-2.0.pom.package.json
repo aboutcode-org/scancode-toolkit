@@ -1,0 +1,175 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.apache.maven.plugins:maven-dependency-plugin", 
+  "version": "2.0", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Maven Dependency Plugin", 
+  "description": null, 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Brian Fox", 
+      "email": "brianf@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Dan T. Tran", 
+      "email": "dantran@gmail.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "John Casey", 
+      "email": "casey.john.d@gmail.com", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": null, 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "Apache License 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "org.apache.maven:maven-artifact", 
+        "version": null, 
+        "version_constraint": "2.0.8"
+      }, 
+      {
+        "name": "org.apache.maven:maven-plugin-api", 
+        "version": null, 
+        "version_constraint": "2.0.8"
+      }, 
+      {
+        "name": "org.apache.maven:maven-project", 
+        "version": null, 
+        "version_constraint": "2.0.8"
+      }, 
+      {
+        "name": "org.apache.maven:maven-model", 
+        "version": null, 
+        "version_constraint": "2.0.8"
+      }, 
+      {
+        "name": "org.apache.maven:maven-core", 
+        "version": null, 
+        "version_constraint": "2.0.8"
+      }, 
+      {
+        "name": "org.codehaus.plexus:plexus-archiver", 
+        "version": null, 
+        "version_constraint": "1.0-alpha-9"
+      }, 
+      {
+        "name": "org.codehaus.plexus:plexus-utils", 
+        "version": null, 
+        "version_constraint": "1.4.6"
+      }, 
+      {
+        "name": "org.apache.maven.shared:file-management", 
+        "version": null, 
+        "version_constraint": "1.1"
+      }, 
+      {
+        "name": "org.codehaus.plexus:plexus-container-default", 
+        "version": null, 
+        "version_constraint": "1.0-alpha-9-stable-1"
+      }, 
+      {
+        "name": "org.apache.maven.shared:maven-dependency-analyzer", 
+        "version": null, 
+        "version_constraint": "1.0"
+      }, 
+      {
+        "name": "org.apache.maven.shared:maven-dependency-tree", 
+        "version": null, 
+        "version_constraint": "1.1"
+      }, 
+      {
+        "name": "org.apache.maven.shared:maven-common-artifact-filters", 
+        "version": null, 
+        "version_constraint": "1.0"
+      }, 
+      {
+        "name": "org.codehaus.plexus:plexus-io", 
+        "version": null, 
+        "version_constraint": "1.0-alpha-1"
+      }, 
+      {
+        "name": "org.apache.maven.reporting:maven-reporting-api", 
+        "version": null, 
+        "version_constraint": "2.0.6"
+      }, 
+      {
+        "name": "org.apache.maven.reporting:maven-reporting-impl", 
+        "version": null, 
+        "version_constraint": "2.0.4"
+      }, 
+      {
+        "name": "org.apache.maven.doxia:doxia-sink-api", 
+        "version": null, 
+        "version_constraint": "1.0-alpha-8"
+      }, 
+      {
+        "name": "org.apache.maven.doxia:doxia-site-renderer", 
+        "version": null, 
+        "version_constraint": "1.0-alpha-8"
+      }
+    ], 
+    "test": [
+      {
+        "name": "org.apache.maven.shared:maven-plugin-testing-tools", 
+        "version": null, 
+        "version_constraint": "1.0-alpha-3"
+      }, 
+      {
+        "name": "org.apache.maven.shared:maven-plugin-testing-harness", 
+        "version": null, 
+        "version_constraint": "1.1"
+      }, 
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.2"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

@@ -1,0 +1,210 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "commons-math:commons-math", 
+  "version": "1.2", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Commons Math", 
+  "description": "The Math project is a library of lightweight, self-contained mathematics and statistics components addressing the most common practical problems not immediately available in the Java programming language or commons-lang.", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Albert Davidson Chou", 
+      "email": "achou at apache dot org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Mark Diggory", 
+      "email": "mdiggory at apache dot org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Robert Burrell Donkin", 
+      "email": "rdonkin at apache dot org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Tim O'Brien", 
+      "email": "tobrien at apache dot org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Luc Maisonobe", 
+      "email": "luc at apache dot org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "J. Pietschmann", 
+      "email": "j3322ptm at yahoo dot de", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Phil Steitz", 
+      "email": "psteitz at apache dot org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Brent Worden", 
+      "email": "brentworden at apache dot org", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [
+    {
+      "type": "person", 
+      "name": "C. Scott Ananian", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Rodrigo di Lorenzo Lopes", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Hasan Diwan", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Ken Geis", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Elliotte Rusty Harold", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Matthias Hummel", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Piotr Kochanski", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Bob MacCallum", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Fredrik Norin", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Todd C. Parnell", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Joni Salonen", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Christopher Schuck", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Mauro Talevi", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Kim van der Linde", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "J\u00f6rg Weimar", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Xiaogang Zhang", 
+      "email": null, 
+      "url": null
+    }
+  ], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://commons.apache.org/math/", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "test": [
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.2"
+      }
+    ], 
+    "compile": [
+      {
+        "name": "commons-logging:commons-logging", 
+        "version": null, 
+        "version_constraint": "1.0.4"
+      }, 
+      {
+        "name": "commons-discovery:commons-discovery", 
+        "version": null, 
+        "version_constraint": "0.2"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

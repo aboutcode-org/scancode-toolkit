@@ -1,0 +1,521 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.sf.ehcache</groupId>
+    <artifactId>ehcache</artifactId>
+    <packaging>jar</packaging>
+    <version>1.2.3</version>
+    <name>ehcache</name>
+    <description><![CDATA[
+
+ehcache is a pure Java, in-process cache with the following features:
+
+   1. Fast.
+   2. Simple.
+   3. Multiple eviction policies: LRU, LFU and FIFO.
+   4. Caches can be in memory or on disk.
+   5. Disk Stores can be persistent between VM restarts.
+   6. Distributed caching using multicast and RMI, with a pluggable API.
+   7. Cache and CacheManager listeners
+   8. Supports multiple Caches per CacheManager, and multiple CacheManagers per application.
+   9. Acts as a pluggable cache for Hibernate 3.1, 3 and 2.1.
+   10. Small foot print. Both in terms of size and memory requirements.
+   11. Minimal dependencies apart from J2SE.
+   12. Fully documented. See the online Documentation and the online JavaDoc.
+   13. Comprehensive Test Coverage. See the clover test report.
+   14. Available under the Apache 1.1 license. EHCache's copyright and licensing has been reviewed and approved by the Apache Software Foundation, making EHCache suitable for use in Apache projects.
+   15. Production tested. EHCache is used on a large and very busy eCommerce site.
+   16. Web caching, pull-through caches and other common caching implementations are provided in the ehcache-constructs module.
+]]>
+    </description>
+    <url>http://ehcache.sf.net</url>
+    <inceptionYear>2003</inceptionYear>
+
+
+    <developers>
+        <developer>
+            <id>gregluck</id>
+            <name>Greg Luck</name>
+            <email>gregluck at users.sourceforge.net</email>
+            <url>http://gregluck.com</url>
+            <roles>
+                <role>Maintainer</role>
+                <role>Developer</role>
+            </roles>
+            <timezone>+10</timezone>
+            <properties>
+                <skype>gregrluck</skype>
+                <yahoo>gregrluck</yahoo>
+            </properties>
+        </developer>
+        <developer>
+            <id>ssuravarapu</id>
+            <name>Surya Suravarapu</name>
+            <email>ssuravarapu at users.sourceforge.net</email>
+            <url></url>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>-5</timezone>
+        </developer>
+        <developer>
+            <id>oneovthafew</id>
+            <name>Gavin King</name>
+            <email>oneovthafew at users.sourceforge.net</email>
+            <url>http://hibernate.org</url>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>+10</timezone>
+        </developer>
+
+    </developers>
+
+    <contributors>
+        <contributor>
+            <name>Adam Murdoch</name>
+            <email/>
+            <url/>
+            <organization/>
+            <organizationUrl/>
+            <roles>
+                <role>Former Developer</role>
+            </roles>
+            <timezone>+10</timezone>
+            <properties>
+                <contribution>Created the initial DiskStore. Named ehcache. Threading advice.
+                </contribution>
+            </properties>
+        </contributor>
+        <contributor>
+            <name>Ben Houston</name>
+            <email/>
+            <url/>
+            <organization/>
+            <organizationUrl/>
+            <roles/>
+            <timezone/>
+            <properties/>
+        </contributor>
+        <contributor>
+            <name>Claus Ibsen</name>
+            <email/>
+            <url/>
+            <organization/>
+            <organizationUrl/>
+            <roles/>
+            <timezone/>
+            <properties>
+                <contribution>Patches</contribution>
+            </properties>
+        </contributor>
+        <contributor>
+            <name>Mauro Talevi</name>
+            <email/>
+            <url/>
+            <organization/>
+            <organizationUrl/>
+            <roles/>
+            <timezone/>
+            <properties>
+                <contribution>Maven magic</contribution>
+            </properties>
+        </contributor>
+    </contributors>
+
+    <repositories>
+        <repository>
+            <id>codehaus-repository</id>
+            <name>Codehaus Repository</name>
+            <url>http://repository.codehaus.org</url>
+        </repository>
+        <repository>
+            <id>apache-snapshot-repository</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.0.4</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>2.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate</artifactId>
+            <version>3.2.0.cr3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.transaction</groupId>
+                    <artifactId>jta</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.security</groupId>
+                    <artifactId>jacc</artifactId>
+                </exclusion>
+            </exclusions>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.hibernate</groupId>
+            <artifactId>hibernate</artifactId>
+            <version>2.1.8</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.transaction</groupId>
+                    <artifactId>jta</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.security</groupId>
+                    <artifactId>jacc</artifactId>
+                </exclusion>
+            </exclusions>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.4</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>httpunit</groupId>
+            <artifactId>httpunit</artifactId>
+            <version>1.6</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.0.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://ehcache.sourceforge.net/LICENSE.txt</url>
+            <distribution>repo</distribution>
+            <comments>The license is the standard wording from the Apache license, but with
+                Greg Luck as copyright
+                owner.
+            </comments>
+        </license>
+    </licenses>
+
+    <issueManagement>
+        <system>Sourceforge</system>
+        <url>http://sourceforge.net/tracker/?group_id=93232&amp;atid=603559</url>
+    </issueManagement>
+
+
+    <distributionManagement>
+        <repository>
+            <id>sf-ehcache-repository</id>
+            <name>SF EHCache Repository</name>
+            <url>scp://gregluck@shell.sf.net:/home/groups/e/eh/ehcache/htdocs/repository</url>
+        </repository>
+        <snapshotRepository>
+            <id>sf-ehcache-snapshot-repository</id>
+            <name>SF EHCache Snapshot Repository</name>
+            <url>
+                scp://gregluck@shell.sf.net:/home/groups/e/eh/ehcache/htdocs/snapshot-repository
+            </url>
+        </snapshotRepository>
+        <site>
+            <id>sf-ehcache-site</id>
+            <name>SF EHCache Site</name>
+            <url>scp://gregluck@shell.sf.net:/home/groups/e/eh/ehcache/htdocs</url>
+        </site>
+    </distributionManagement>
+
+    <mailingLists>
+        <mailingList>
+            <name>ehcache-list@lists.sourceforge.net</name>
+            <subscribe>http://lists.sourceforge.net/lists/listinfo/ehcache-list</subscribe>
+            <unsubscribe>http://lists.sourceforge.net/lists/listinfo/ehcache-list</unsubscribe>
+            <post>ehcache-list@lists.sourceforge.net</post>
+            <archive>http://sourceforge.net/mailarchive/forum.php?forum=ehcache-list</archive>
+        </mailingList>
+    </mailingLists>
+
+    <scm>
+        <connection>scm:svn:https://svn.sourceforge.net/svnroot/ehcache</connection>
+        <developerConnection>scm:svn:https://username@svn.sourceforge.net/svnroot/ehcache
+        </developerConnection>
+        <tag/>
+        <url>http://svn.sourceforge.net/viewcvs.cgi/ehcache/</url>
+    </scm>
+
+    <build>
+        <plugins>                                                       
+            <!-- Site -->
+            <plugin>
+                <artifactId>maven-site-plugin</artifactId>
+                <configuration>
+                    <locales>en</locales>
+                    <templateDirectory>file://${basedir}/src/site/</templateDirectory>
+                    <template>maven-site.vm</template>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.2</version>
+            </plugin>
+            <!-- Ant -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>rmic</id>
+                        <phase>validate</phase>
+                        <configuration>
+                            <tasks>
+                                <rmic base="${project.build.outputDirectory}"
+                                      includes="**/RMICachePeer.class" excludes="**/*CLOVER*"/>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+
+                    <execution>
+                        <id>book</id>
+                        <phase>validate</phase>
+                        <configuration>
+                            <tasks>
+                                <ant antfile="${basedir}/build.xml" inheritRefs="true">
+                                    <target name="generate-checkstyle-config"/>
+                                </ant>
+                                <ant antfile="${basedir}/build.xml" inheritRefs="true">
+                                    <target name="book"/>
+                                </ant>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>singlepageguide</id>
+                        <phase>validate</phase>
+                        <configuration>
+                            <tasks>
+                                <ant antfile="${basedir}/build.xml" inheritRefs="true">
+                                    <target name="singlepageguide"/>
+                                </ant>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>**/TestSquare.java</exclude>
+                        <exclude>**/constructs/web/**</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <!-- Clover. This seems to quite broken
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clover-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <cloverDatabase>${basedir}/target/log/mycoverage.db</cloverDatabase>
+                    <cloverOutputDirectory>${basedir}/clover_html</cloverOutputDirectory>
+                    <targetPercentage>85.9%</targetPercentage>
+                    <licenseFile>/Users/gluck/work/ehcache/tools/clover.license</licenseFile>
+                </configuration>
+            </plugin>   -->
+
+
+        </plugins>
+    </build>
+
+    <!-- Reports -->
+    <reporting>
+        <plugins>
+
+            <!-- Reports -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependencies</report>
+                            <report>project-team</report>
+                            <report>mailing-list</report>
+                            <report>issue-tracking</report>
+                            <report>license</report>
+                            <report>scm</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <!-- Checkstyle -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <configuration>
+                    <configLocation>target/log/checkstyle.xml</configLocation>
+                    <enableRSS>false</enableRSS>
+                </configuration>
+            </plugin>
+
+            <!-- Ant deps for Checkstyle plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <configuration>
+                    <tasks>
+                        <ant antfile="${basedir}/build.xml" inheritRefs="true">
+                            <target name="generate-checkstyle-config"/>
+                        </ant>
+                    </tasks>
+                </configuration>
+            </plugin>
+
+            <!-- javadoc -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <author>true</author>
+                    <bottom>true</bottom>
+                    <destDir>target/site/javadoc</destDir>
+                    <header><![CDATA[<a href="/" target="_top">ehcache</a>]]></header>
+                    <minmemory>128m</minmemory>
+                    <maxmemory>512</maxmemory>
+                    <overview>${basedir}/src/main/java/net/sf/ehcache/overview.html</overview>
+                    <packagenames>net.sf.*</packagenames>
+                    <use>true</use>
+                    <version>true</version>
+                    <windowtitle>${project.name} ${project.version} API</windowtitle>
+                    <doclet>ydoc.doclets.YStandard</doclet>
+                    <docletPath>
+                        ${basedir}/tools/ydoc-2.2_02-jdk1.5/lib/ydoc.jar:${basedir}/tools/ydoc-2.2_02-jdk1.5/lib/class2svg.jar:${basedir}/tools/ydoc-2.2_02-jdk1.5/resources:${build.classes.dir}
+                    </docletPath>
+                    <!--<docletpathref>project.class.path</docletpathref>-->
+                    <additionalparam>-umlautogen</additionalparam>
+                    <tag name="noinspection" description="IntelliJ Inspection Ignore tag"
+                         enabled="false"/>
+                </configuration>
+            </plugin>
+
+            <!-- Clover
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clover-plugin</artifactId>
+            </plugin> -->
+
+            <!-- PMD and CPD -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <configuration>
+                    <targetjdk>1.4</targetjdk>
+                    <rulesets>
+                        <ruleset>/rulesets/basic.xml</ruleset>
+                        <ruleset>/rulesets/controversial.xml</ruleset>
+                    </rulesets>
+                    <format>xml</format>
+                    <linkXref>true</linkXref>
+                    <sourceEncoding>utf-8</sourceEncoding>
+                    <minimumTokens>100</minimumTokens>
+                    <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
+                </configuration>
+            </plugin>
+
+            <!-- Manual Changelist -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>changes-maven-plugin</artifactId>
+                <configuration>
+                    <link_template>
+                        %URL%/index.php?func=detail&amp;group_id=93232&amp;atid=603559&amp;aid=%ISSUE%
+                    </link_template>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>changes-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <!-- Automated Changelist - using fisheye instead
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>changelog-maven-plugin</artifactId>
+            </plugin> -->
+
+            <!-- ToDos -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>taglist-maven-plugin</artifactId>
+                <configuration>
+                    <tags>todo</tags>
+                </configuration>
+            </plugin>
+
+            <!-- Java Cross Reference (JXR) -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jxr-maven-plugin</artifactId>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/site</outputDirectory>
+                </configuration>
+            </plugin>
+
+            <!-- Surefire
+            <plugin>
+               <groupId>org.codehaus.mojo</groupId>
+               <artifactId>surefire-report-maven-plugin</artifactId>
+            </plugin> -->
+
+        </plugins>
+    </reporting>
+
+
+    <properties>
+        <licenseFile>${basedir}/tools/clover.license</licenseFile>
+    </properties>
+</project>

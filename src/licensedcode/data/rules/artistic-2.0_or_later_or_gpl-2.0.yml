@@ -1,0 +1,5 @@
+licenses:
+    - artistic-2.0
+    - gpl-2.0
+license_choice: yes
+license_expression: artistic-2.0-plus or gpl-2.0

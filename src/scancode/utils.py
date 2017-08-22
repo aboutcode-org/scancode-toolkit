@@ -22,20 +22,32 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import division
+from __future__ import unicode_literals
 
-from urllib import quote_plus
+import sys
 
 import click
-from click._termui_impl import ProgressBar
 from click.utils import echo
+from click._termui_impl import ProgressBar
 
 from commoncode import fileutils
+from commoncode.text import as_unicode
 
 
 """
 Various CLI UI utilities, many related to Click and progress reporting.
 """
+
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+except NameError:
+    # Python 3
+    unicode = str
 
 
 class BaseCommand(click.Command):
@@ -116,11 +128,18 @@ class ProgressLogger(ProgressBar):
         if item_info:
             return item_info
 
+    def render_finish(self):
+        self.file.flush()
+
+
+BAR_WIDTH = 20
+BAR_SEP = ' '
+BAR_SEP_LEN = len(BAR_SEP)
 
 def progressmanager(iterable=None, length=None, label=None, show_eta=True,
                     show_percent=None, show_pos=False, item_show_func=None,
                     fill_char='#', empty_char='-', bar_template=None,
-                    info_sep='  ', width=36, file=None, color=None,
+                    info_sep=BAR_SEP, width=BAR_WIDTH, file=None, color=None,
                     verbose=False, quiet=False):
 
     """This function creates an iterable context manager showing progress as a
@@ -138,7 +157,7 @@ def progressmanager(iterable=None, length=None, label=None, show_eta=True,
         progress_class = ProgressLogger
     else:
         progress_class = EnhancedProgressBar
-        bar_template = ('%(label)s  [%(bar)s]  %(info)s'
+        bar_template = ('[%(bar)s]' + BAR_SEP + '%(info)s'
                         if bar_template is None else bar_template)
 
     return progress_class(iterable=iterable, length=length, show_eta=show_eta,
@@ -149,26 +168,92 @@ def progressmanager(iterable=None, length=None, label=None, show_eta=True,
                           width=width, color=color)
 
 
-def encode_path(path):
+def get_fs_encoding():
     """
-    Return a path as ASCII possibly URL-encoded if it cannot be decoded as UTF-8.
+    Return the current filesystem encoding or default encoding
+    """
+    return sys.getfilesystemencoding() or sys.getdefaultencoding()
+
+
+def path_as_unicode(path):
+    """
+    Return path as unicode.
     """
     if isinstance(path, unicode):
-        path = path.encode('utf-8')
-    return quote_plus(path)
+        return path
+    try:
+        return path.decode(get_fs_encoding())
+    except UnicodeDecodeError:
+        return as_unicode(path)
 
 
 def get_relative_path(path, len_base_path, base_is_dir):
     """
-    Return a posix relative path from the posix 'path' relative to a base path of
-    `len_base_path` length where the base is a directory if `base_is_dir` True or a
-    file otherwise.
+    Return a posix relative path from the posix 'path' relative to a
+    base path of `len_base_path` length where the base is a directory if
+    `base_is_dir` True or a file otherwise.
     """
+    path = path_as_unicode(path)
     if base_is_dir:
         rel_path = path[len_base_path:]
     else:
         rel_path = fileutils.file_name(path)
 
-    encoded_segments = [encode_path(p) for p in rel_path.split('/')]
+    return rel_path.lstrip('/')
 
-    return '/'.join(encoded_segments).lstrip('/')
+
+def fixed_width_file_name(path, max_length=25):
+    """
+    Return a fixed width file name of at most `max_length` characters
+    extracted from the `path` string and usable for fixed width display.
+    If the file_name is longer than `max_length`, it is truncated in the
+    middle with using three dots "..." as an ellipsis and the extension
+    is kept.
+
+    For example:
+    >>> short = fixed_width_file_name('0123456789012345678901234.c')
+    >>> assert '0123456789...5678901234.c' == short
+    """
+    if not path:
+        return ''
+
+    filename = fileutils.file_name(path)
+    if len(filename) <= max_length:
+        return filename
+    base_name, extension = fileutils.splitext(filename)
+    number_of_dots = 3
+    len_extension = len(extension)
+    remaining_length = max_length - len_extension - number_of_dots
+
+    if remaining_length < (len_extension + number_of_dots) or remaining_length < 5:
+        return ''
+
+    prefix_and_suffix_length = abs(remaining_length // 2)
+    prefix = base_name[:prefix_and_suffix_length]
+    ellipsis = number_of_dots * '.'
+    suffix = base_name[-prefix_and_suffix_length:]
+    return "{prefix}{ellipsis}{suffix}{extension}".format(**locals())
+
+
+def compute_fn_max_len(used_width=BAR_WIDTH + BAR_SEP_LEN + 7 + BAR_SEP_LEN + 8 + BAR_SEP_LEN):
+    """
+    Return the max length of a path given the current terminal width.
+
+    A progress bar is composed of these elements:
+      [-----------------------------------#]  1667  Scanned: tu-berlin.yml
+    - the bar proper which is BAR_WIDTH characters
+    - one BAR_SEP
+    - the number of files. We set it to 7 chars, eg. 9 999 999 files
+    - one BAR_SEP
+    - the word Scanned: 8 chars
+    - one BAR_SEP
+    - the file name proper
+    The space usage is therefore: BAR_WIDTH + BAR_SEP_LEN + 7 + BAR_SEP_LEN + 8 + BAR_SEP_LEN + the file name length
+    """
+    term_width, _height = click.get_terminal_size()
+    max_filename_length = term_width - used_width
+#     if term_width < 70:
+#         # if we have a small term width that is less than 70 column, we
+#         # may spill over and damage the progress bar...
+#         max_filename_length = 10
+    return max_filename_length

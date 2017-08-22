@@ -1,0 +1,115 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "p6spy:p6spy", 
+  "version": "1.3", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "P6Spy", 
+  "description": "P6Spy is an open source framework for applications that intercept and optionally modify database statements.", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Alan Arvesen", 
+      "email": "aarvesen@users.sourceforge.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Bradley Johnson", 
+      "email": "bradleydot@users.sourceforge.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Frank Quatro", 
+      "email": "cheechq@users.sourceforge.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jeff Goke", 
+      "email": "jeffgoke@users.sourceforge.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "thinknot", 
+      "email": "thinknot@users.sourceforge.net", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://www.p6spy.com/", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "The P6Spy Software License, Version 1.1", 
+      "url": "http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "regexp:regexp", 
+        "version": null, 
+        "version_constraint": "1.3"
+      }, 
+      {
+        "name": "gnu-regexp:gnu-regexp", 
+        "version": null, 
+        "version_constraint": "1.1.4"
+      }, 
+      {
+        "name": "log4j:log4j", 
+        "version": null, 
+        "version_constraint": "1.2.8"
+      }, 
+      {
+        "name": "ant:ant", 
+        "version": null, 
+        "version_constraint": "1.6.2"
+      }, 
+      {
+        "name": "oracle:classes12", 
+        "version": null, 
+        "version_constraint": "9.2.0.5"
+      }, 
+      {
+        "name": "jboss:jboss", 
+        "version": null, 
+        "version_constraint": "2.4.6"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

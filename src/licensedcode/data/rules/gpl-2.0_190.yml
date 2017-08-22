@@ -1,0 +1,4 @@
+licenses:
+    - gpl-2.0
+minimum_coverage: 90
+notes: Intel e100 GPL-licensed linux driver

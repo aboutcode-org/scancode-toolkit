@@ -63,7 +63,7 @@ class PackageTester(testcase.FileBasedTesting):
             regened_exp_loc = self.get_temp_file()
 
             with open(regened_exp_loc, 'wb') as ex:
-                json.dump(results, ex, indent=2)
+                json.dump(results, ex, indent=2, separators=(',', ': '))
 
             expected_dir = os.path.dirname(expected_loc)
             if not os.path.exists(expected_dir):

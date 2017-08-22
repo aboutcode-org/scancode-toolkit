@@ -1,0 +1,97 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.surefire", 
+  "artifact_id": "surefire", 
+  "version": "2.4.2", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache.maven", 
+    "artifact_id": "maven-parent", 
+    "version": "7", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "SureFire", 
+  "description": "Surefire is a test framework project.", 
+  "inception_year": "2004", 
+  "url": "http://maven.apache.org/surefire", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "Jesse Kuhnert", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Vincent Siveton", 
+      "email": "vincent.siveton@gmail.com", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }
+  ], 
+  "modules": [
+    "surefire-api", 
+    "surefire-booter", 
+    "surefire-providers", 
+    "maven-surefire-plugin", 
+    "maven-surefire-report-plugin", 
+    "surefire-integration-tests"
+  ], 
+  "mailing_lists": [
+    {
+      "name": "Surefire User List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-surefire-users/"
+    }, 
+    {
+      "name": "Surefire Developer List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-surefire-dev/"
+    }, 
+    {
+      "name": "Surefire Commits List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-surefire-commits/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/maven/surefire/tags/surefire-2.4.2", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewcvs.cgi/maven/surefire/tags/surefire-2.4.2", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://jira.codehaus.org/browse/SUREFIRE"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "jmock", 
+        "artifact_id": "jmock", 
+        "version": "1.0.1", 
+        "required": true
+      }
+    ]
+  }
+}

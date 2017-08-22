@@ -1,0 +1,4 @@
+licenses:
+    - gpl-3.0
+    - gpl-3.0-gcc
+license: gpl-3.0-plus with gpl-3.0-gcc

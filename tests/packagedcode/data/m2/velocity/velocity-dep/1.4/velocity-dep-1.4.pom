@@ -1,0 +1,49 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>velocity</groupId>
+  <artifactId>velocity-dep</artifactId>
+  <name>Velocity</name>
+  <version>1.4</version>
+  <description>Velocity is a Java-based template engine. It permits anyone to use the
+    simple yet powerful template language to reference objects defined in Java
+    code.</description>
+  <url>http://jakarta.apache.org/velocity/</url>
+  <issueManagement>
+    <url>http://nagoya.apache.org/scarab/servlet/scarab/</url>
+  </issueManagement>
+  <inceptionYear>2000</inceptionYear>
+  <mailingLists>
+    <mailingList>
+      <name>Maven User List</name>
+      <subscribe>velocity-user-subscribe@jakarta.apache.org</subscribe>
+      <unsubscribe>velocity-user-unsubscribe@jakarta.apache.org</unsubscribe>
+      <archive>http://www.mail-archive.com/velocity-user@jakarta.apache.org/</archive>
+    </mailingList>
+    <mailingList>
+      <name>Maven Developer List</name>
+      <subscribe>velocity-dev-subscribe@jakarta.apache.org</subscribe>
+      <unsubscribe>velocity-dev-unsubscribe@jakarta.apache.org</unsubscribe>
+      <archive>http://www.mail-archive.com/velocity-dev@jakarta.apache.org/</archive>
+    </mailingList>
+  </mailingLists>
+  <scm>
+    <connection>scm:cvs:pserver:anoncvs@cvs.apache.org:/home/cvspublic:jakarta-velocity</connection>
+    <url>http://cvs.apache.org/viewcvs/jakarta-turbine-maven/</url>
+  </scm>
+  <organization>
+    <name>Apache Software Foundation</name>
+    <url>http://jakarta.apache.org/</url>
+  </organization>
+  <distributionManagement>
+    <repository>
+      <id>default</id>
+      <name>Default Repository</name>
+      <url>file:///www/jakarta.apache.org/builds/jakarta-velocity/</url>
+    </repository>
+    <site>
+      <id>default</id>
+      <name>Default Site</name>
+      <url>scp://jakarta.apache.org//www/jakarta.apache.org/velocity/</url>
+    </site>
+  </distributionManagement>
+</project>

@@ -1,0 +1,77 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.doxia", 
+  "artifact_id": "doxia-site-renderer", 
+  "version": "1.0-alpha-7", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.apache.maven.doxia", 
+    "artifact_id": "doxia", 
+    "version": "1.0-alpha-7", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Doxia Site Renderer Component", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "Vincent Siveton", 
+      "email": "vsiveton@apache.org", 
+      "url": null, 
+      "organization": "Apache Software Foundation", 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }
+  ], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.apache.maven.doxia", 
+        "artifact_id": "doxia-core", 
+        "version": "1.0-alpha-7", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-i18n", 
+        "version": "1.0-beta-6", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-velocity", 
+        "version": "1.1.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.doxia", 
+        "artifact_id": "doxia-decoration-model", 
+        "version": "1.0-alpha-7", 
+        "required": true
+      }
+    ]
+  }
+}

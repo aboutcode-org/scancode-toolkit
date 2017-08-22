@@ -1,0 +1,8 @@
+key: tenable-nessus
+short_name: Tenable Nessus License
+name: Tenable Nessus Software License and Subscription Agreement
+category: Proprietary Free
+owner: Tenable
+homepage_url: https://static.tenable.com/prod_docs/Nessus_6_SLA_and_Subscription_Agreement.pdf
+text_urls:
+    - https://static.tenable.com/prod_docs/Nessus_6_SLA_and_Subscription_Agreement.pdf

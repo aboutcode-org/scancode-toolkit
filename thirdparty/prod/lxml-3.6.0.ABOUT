@@ -13,9 +13,10 @@ component:
 
     copyright: Copyright (c) 2004 Infrae. All rights reserved.
     license:
-        text_file: lxml.LICENSE
-        expression: bsd-new and (mit gpl-2.0-plus and zope-2.0 and zlib)
-        text_file: lxml.LICENSE
+        text_file:
+            - lxml.LICENSE
+            - gpl-2.0.LICENSE
+        expression: bsd-new and (mit and gpl-2.0-plus and zope-2.0 and zlib)
         notice_file: lxml.NOTICE
 
     vcs:
@@ -27,3 +28,4 @@ component:
         the MacOSX and Windows wheels are statically linked as needed 
         with libxml and libxslt. The Linux wheels are manylinux builds
         and the build loop may have vendored shared objects in these automatically.
+        test.py, the test-runner script, is GPL and copyright Shuttleworth Foundation

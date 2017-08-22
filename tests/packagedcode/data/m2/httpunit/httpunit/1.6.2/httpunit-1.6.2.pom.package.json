@@ -1,0 +1,96 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "httpunit:httpunit", 
+  "version": "1.6.2", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "HttpUnit", 
+  "description": "A Java library for the automatic stimulation and testing of web applications.", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://httpunit.sourceforge.net", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "MIT License", 
+      "url": "http://httpunit.sourceforge.net/doc/license.html", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "xerces:xmlParserAPIs", 
+        "version": null, 
+        "version_constraint": "2.2.1"
+      }, 
+      {
+        "name": "xerces:xercesImpl", 
+        "version": null, 
+        "version_constraint": "2.6.2"
+      }, 
+      {
+        "name": "nekohtml:nekohtml", 
+        "version": null, 
+        "version_constraint": "0.9.1"
+      }, 
+      {
+        "name": "rhino:js", 
+        "version": null, 
+        "version_constraint": "1.5R4.1"
+      }, 
+      {
+        "name": "javax.servlet:servlet-api", 
+        "version": null, 
+        "version_constraint": "2.3"
+      }, 
+      {
+        "name": "jtidy:jtidy", 
+        "version": null, 
+        "version_constraint": "4aug2000r7-dev"
+      }, 
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.1"
+      }
+    ], 
+    "test": [
+      {
+        "name": "javax.mail:mail", 
+        "version": null, 
+        "version_constraint": "1.4"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

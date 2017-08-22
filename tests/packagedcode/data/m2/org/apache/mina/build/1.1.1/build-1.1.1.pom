@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache</groupId>
+    <artifactId>apache</artifactId>
+    <version>3</version>
+  </parent>
+  <organization>
+    <name>Apache MINA Project</name>
+    <url>http://mina.apace.org/</url>
+  </organization>
+  <groupId>org.apache.mina</groupId>
+  <version>1.1.1</version>
+  <artifactId>build</artifactId>
+  <name>Apache MINA Root Build POM</name>
+  <packaging>pom</packaging>
+
+  <url>http://mina.apache.org/</url>
+  <inceptionYear>2004</inceptionYear>
+
+  <issueManagement>
+    <system>jira</system>
+    <url>http://issues.apache.org/jira/browse/DIRMINA</url>
+  </issueManagement>
+
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/mina/tags/1.1.1</connection>
+    <url>http://svn.apache.org/viewvc/mina/tags/1.1.1</url>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/mina/tags/1.1.1</developerConnection>
+  </scm>
+
+  <distributionManagement>
+    <site>
+      <id>apache.websites</id>
+      <url>scp://people.apache.org/www/mina.apache.org/report/1.1/</url>
+    </site>
+  </distributionManagement>
+
+  <ciManagement>
+    <notifiers>
+      <notifier>
+        <type>mail</type>
+        <address>dev@mina.apache.org</address>
+      </notifier>
+    </notifiers>
+  </ciManagement>
+
+  <description>
+    MINA (Multipurpose Infrastructure for Network Applications) is a
+    network application framework which helps users develop high
+    performance and highly scalable network applications easily.
+  </description>
+
+  <licenses>
+    <license>
+      <name>Apache 2.0 License</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <dependencies>
+   <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+  </repositories>
+
+  <modules>
+    <module>core</module>
+    <module>filter-ssl</module>
+    <module>filter-codec-netty</module>
+    <module>filter-compression</module>
+    <module>integration-spring</module>
+    <module>integration-jmx</module>
+    <module>example</module>
+  </modules>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <encoding>UTF-8</encoding>
+          <source>1.5</source>
+          <target>1.5</target>
+          <debug>true</debug>
+          <optimize>true</optimize>
+          <showDeprecations>true</showDeprecations>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>**/Abstract*</exclude>
+
+            <!-- Timing issues with these tests due to VM bug for releasing file descriptors -->
+            <exclude>**/DatagramBindTest.java</exclude>
+            <exclude>**/VmPipeTrafficControlTest.java</exclude>
+
+            <exclude>**/*RegressionTest*</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptors>
+            <descriptor>release.xml</descriptor>
+          </descriptors>
+          <finalName>mina-${pom.version}</finalName>
+          <appendAssemblyId>false</appendAssemblyId>
+          <tarLongFileMode>gnu</tarLongFileMode>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <tagBase>
+            https://svn.apache.org/repos/asf/mina/tags
+          </tagBase>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <inherited>false</inherited>
+        <configuration>
+          <aggregate>true</aggregate>
+          <breakiterator>true</breakiterator>
+          <charset>UTF-8</charset>
+          <docencoding>UTF-8</docencoding>
+          <windowtitle>Apache MINA ${project.version} API Documentation</windowtitle>
+          <doctitle>Apache MINA ${project.version} API Documentation</doctitle>
+          <encoding>UTF-8</encoding>
+          <excludePackageNames>*.support:*.example.*</excludePackageNames>
+          <links>
+            <link>http://java.sun.com/j2se/1.5.0/docs/api/</link>
+            <link>http://www.slf4j.org/api/</link>
+            <link>http://static.springframework.org/spring/docs/2.0.x/api/</link>
+          </links>
+          <locale>en_US</locale>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <inherited>false</inherited>
+        <configuration>
+          <aggregate>true</aggregate>
+          <inputEncoding>UTF-8</inputEncoding>
+          <outputEncoding>UTF-8</outputEncoding>
+          <windowTitle>Apache MINA ${project.version} Cross Reference</windowTitle>
+          <docTitle>Apache MINA ${project.version} Cross Reference</docTitle>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>

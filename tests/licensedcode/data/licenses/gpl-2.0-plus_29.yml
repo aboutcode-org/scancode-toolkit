@@ -1,4 +1,4 @@
 licenses:
     - gpl-2.0-plus
-    - gpl
+    - gpl-2.0
 notes: EXPORT_SYMBOL_GPL

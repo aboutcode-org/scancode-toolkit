@@ -1,13 +1,12 @@
 key: ngpl
 short_name: Nethack General Public License
 name: Nethack General Public License
-
 category: Copyleft Limited
 owner: NetHack
 homepage_url: http://www.nethack.org/common/license.html
-notes: |-
-    notes from SPDX:
-    This license is OSI certified.
+notes: Per SPDX.org, this license is OSI certified.
 spdx_license_key: NGPL
 text_urls:
     - http://www.nethack.org/common/license.html
+other_urls:
+    - http://www.opensource.org/licenses/NGPL

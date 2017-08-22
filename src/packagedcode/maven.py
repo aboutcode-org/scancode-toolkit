@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,22 +22,27 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
-from functools import partial
-from itertools import izip_longest
+import codecs
+from collections import OrderedDict
 import logging
 import os.path
 from os.path import dirname
 from os.path import join
 import re
 
+from lxml import etree
+from pymaven import pom
+from pymaven import artifact
+
 from commoncode import filetype
 from commoncode import fileutils
-from typecode import contenttype
-
-from packagedcode import xmlutils
 from packagedcode import models
+from typecode import contenttype
+from textcode import analysis
 
 
 logger = logging.getLogger(__name__)
@@ -47,398 +52,524 @@ logger = logging.getLogger(__name__)
 
 
 """
-Support Maven POMs including older versions.
-Attempts to resolve some Maven properties when possible.
+Support Maven2 POMs.
+Attempts to resolve Maven properties when possible.
 """
 
-# FIXME: use Maven Java code directly or pymaven instead. The parsing done here is rather weird.
-# the only part that is somewheta interesting short of using the original Maven parser is the properties resolution
-
-# FIXME: Maven 1 is an oddity and the code should cleaned to deal separately with each version
-# or Maven1 support dropped entirely
-
-
-
-class MavenJar(models.JavaJar):
-    metafiles = ('META-INF/**/*.pom', 'pom.xml',)
+class MavenPomPackage(models.Package):
+    metafiles = ('.pom', 'pom.xml',)
+    extensions = ('.pom', '.xml',)
     repo_types = (models.repo_maven,)
-
-    type = models.StringType(default='Apache Maven')
+    type = models.StringType(default='Apache Maven POM')
+    packaging = models.StringType(default=models.as_archive)
+    primary_language = models.StringType(default='Java')
 
     @classmethod
     def recognize(cls, location):
         return parse(location)
 
 
-# Maven1 field name -> xpath
-MAVEN1_FIELDS = [
-    ('component_extend_1', '/project/extend'),
-    ('component_current_version_1', '/project/currentVersion'),
-    ('distribution_management_site_1', '/project/distributionSite'),
-    ('distribution_management_directory_1', '/project/distributionDirectory'),
-    ('project_short_description_1', '/project/shortDescription'),
-    ('repository_url_1', '/project/repository/url'),
-    ('repository_connection_1', '/project/repository/connection'),
-    ('repository_developer_connection_1', '/project/repository/developerConnection'),
-]
-
-
-# Maven2 field name -> xpath
-MAVEN2_FIELDS = [
-    ('component_artifact_id', '/project/artifactId'),
-    ('component_classifier', '/project/classifier'),
-    ('component_group_id', '/project/groupId'),
-    ('component_parent_group_id', '/project/parent/groupId'),
-    ('component_parent_version', '/project/parent/version'),
-    ('component_packaging', '/project/packaging'),
-    ('component_version', '/project/version'),
-
-    ('developer_email', '/project/developers/developer/email'),
-    ('developer_name', '/project/developers/developer/name'),
-
-    ('distribution_management_site_url', '/project/distributionManagement/site/url'),
-    ('distribution_management_repository_url', '/project/distributionManagement/repository/url'),
-
-    ('license', '/project/licenses/license/name'),
-    ('license_comments', '/project/licenses/license/comments'),
-    ('license_distribution', '/project/licenses/license/distribution'),
-    ('license_url', '/project/licenses/license/url'),
-
-    ('organization_name', '/project/organization/name'),
-    ('organization_url', '/project/organization/url'),
-
-    ('project_name', '/project/name'),
-    ('project_description', '/project/description'),
-    ('project_inception_year', '/project/inceptionYear'),
-    ('project_url', '/project/url'),
-
-    ('repository_id', '/project/repositories/repository/id'),
-    ('repository_layout', '/project/repositories/repository/layout'),
-    ('repository_name', '/project/repositories/repository/name'),
-    ('repository_url', '/project/repositories/repository/url'),
-
-    ('scm_connection', '/project/scm/connection'),
-    ('scm_developer_connection', '/project/scm/developerConnection'),
-    ('scm_url', '/project/scm/url'),
-
-    ('distribution_management_group_id', '/project/distributionManagement/relocation/groupId'),
-    ('model_version', '/project/modelVersion')
-]
-
-
-MAVEN_FIELDS = [('maven_' + key, xmlutils.namespace_unaware(xpath)) for key, xpath in (MAVEN2_FIELDS + MAVEN1_FIELDS)]
-
-
-# Common Maven property keys and corresponding XPath to the value
-
-MAVEN_PROPS = [
-    ('pom.groupId', '/project/groupId'),
-    ('project.groupId', '/project/groupId'),
-    ('groupId', '/project/groupId'),
-    # fall back to parent
-    ('groupId', '/project/parent/groupId'),
-    ('pom.groupId', '/project/parent/groupId'),
-    ('project.groupId', '/project/parent/groupId'),
-
-    ('artifactId', '/project/artifactId'),
-    ('pom.artifactId', '/project/artifactId'),
-    ('project.artifactId', '/project/artifactId'),
-    # fall back to parent
-    ('artifactId', '/project/parent/artifactId'),
-    ('pom.artifactId', '/project/parent/artifactId'),
-    ('project.artifactId', '/project/parent/artifactId'),
-
-    ('version', '/project/version'),
-    ('pom.version', '/project/version'),
-    ('project.version', '/project/version'),
-    # fall back to parent
-    ('version', '/project/parent/version'),
-    ('pom.version', '/project/parent/version'),
-    ('project.version', '/project/parent/version'),
-
-    ('classifier', '/project/classifier'),
-    ('pom.classifier', '/project/classifier'),
-    ('project.classifier', '/project/classifier'),
-    # fall back to parent
-    ('classifier', '/project/parent/classifier'),
-    ('pom.classifier', '/project/parent/classifier'),
-    ('project.classifier', '/project/parent/classifier'),
-
-    ('packaging', '/project/packaging'),
-    ('pom.packaging', '/project/packaging'),
-    ('project.packaging', '/project/packaging'),
-
-    # fall back to parent
-    ('packaging', '/project/parent/packaging'),
-    ('pom.packaging', '/project/parent/packaging'),
-    ('project.packaging', '/project/parent/packaging'),
-
-    ('pom.organization.name', '/project/organization/name'),
-    ('project.organization.name', '/project/organization/name'),
-
-    ('pom.description', '/project/description'),
-    ('project.description', '/project/description'),
-
-    ('scm.url', '/project/scm/url'),
-
-    # parent
-    ('parent.groupId', '/project/parent/groupId'),
-    ('pom.parent.groupId', '/project/parent/groupId'),
-    ('project.parent.groupId', '/project/parent/groupId'),
-
-    ('parent.artifactId', '/project/parent/artifactId'),
-    ('pom.parent.artifactId', '/project/parent/artifactId'),
-    ('project.parent.artifactId', '/project/parent/artifactId'),
-
-    ('parent.version', '/project/parent/version'),
-    ('pom.parent.version', '/project/parent/version'),
-    ('project.parent.version', '/project/parent/version'),
-
-    ('parent.classifier', '/project/parent/classifier'),
-    ('pom.parent.classifier', '/project/parent/classifier'),
-    ('project.parent.classifier', '/project/parent/classifier'),
-
-    ('parent.packaging', '/project/parent/packaging'),
-    ('pom.parent.packaging', '/project/parent/packaging'),
-    ('project.parent.packaging', '/project/parent/packaging'),
-]
-
-
-STANDARD_MAVEN_PROPERTIES = [(p, xmlutils.namespace_unaware(xp)) for p, xp in MAVEN_PROPS]
-
-
-# We hardcode some uncommon properties
-HARDCODED_PROPERTIES = {
-    'maven.javanet.project': 'maven2-repository'
-}
-
-
-def get_properties(xdoc):
+class ParentPom(artifact.Artifact):
     """
-    Given an etree `xdoc` return a mapping of property key -> value using
-    standard maven properties and pom-specific properties. This mapping is used
-    later to resolve properties to values in a POM.
+    A minimal Artifact subclass used to store parent poms when no POM file is available for these.
     """
-    props = {}
 
-    # collect core maven properties
-    props.update(get_standard_properties(xdoc))
+    def __init__(self, coordinate):
+        super(ParentPom, self).__init__(coordinate)
 
-    # collect props defined in the POM proper
-    props.update(get_pom_defined_properties(xdoc))
+        # add empty, pom.Pom-class-like empty attributes
+        self.client = None
+        self.dependencies = {}
+        self.dependency_management = {}
+        self.parent = None
+        self.properties = {}
+        # TODO: ????
+        # self.pom_data/self._xml = None
 
-    props.update(HARDCODED_PROPERTIES)
-
-    # property values values can reference other properties
-    # so we repeat resolve a few times to expand such nested properties
-    for _step in range(3):
-        for key in props:
-            props[key] = resolve_properties(props[key], props)
-
-    return props
-
-
-def get_standard_properties(xdoc):
-    """
-    Given an XML etree `xdoc`, build a dict mapping property keys to their
-    values for "standard" maven properties and pom-specific properties. This
-    mapping is used later to resolve properties in the values of the document.
-    """
-    properties = {}
-    for name, xpath in STANDARD_MAVEN_PROPERTIES:
-        values = xmlutils.find_text(xdoc, xpath)
-#         logger.debug('get_standard_properties: with name=%(name)r,  xpath=%(xpath)r found: values=%(values)r' % locals())
-        if not values:
-            continue
-        if name not in properties or not properties[name]:
-#             logger.debug('get_standard_properties:  adding name=%(name)r, values=%(values)r' % locals())
-            # FIXME: what if we have several times the same property defined?
-            properties[name] = ' '.join(values)
-
-    return properties
+    def to_dict(self):
+        """
+        Return a mapping representing this POM
+        """
+        return OrderedDict([
+            ('group_id', self.group_id),
+            ('artifact_id', self.artifact_id),
+            ('version', str(self.version) if self.version else None),
+            ('classifier', self.classifier),
+            ('type', self.type),
+        ])
 
 
-# XPaths for properties
-PROPS_XPATH = [
-    "/*[local-name()='project']/*[local-name()='properties']/*",
-    "/*[local-name()='project']/*[local-name()='profiles']/*[local-name()='profile']/*[local-name()='properties']/*"
-]
+STRIP_NAMESPACE_RE = re.compile(r"<project(.|\s)*?>", re.UNICODE)
 
 
-def get_pom_defined_properties(xdoc):
-    """
-    Resolve the maven properties section:
-
-      <properties>
-        <maven.compile.source>1.2</maven.compile.source>
-        <maven.compile.target>1.1</maven.compile.target>
-      </properties>
-    """
-    props = {}
-
-    for xpath in PROPS_XPATH:
-        xpath
-        prop_vals = list(xdoc.xpath(xpath))
-        logger.debug('get_pom_defined_properties: ###: {xpath} :'.format(**locals()) + repr(prop_vals))
-        # FIXME: what if we have several times the same property defined?
-        if prop_vals:
-            props.update(map(xmlutils.name_value, prop_vals))
-    return props
-
-
-property_start = u'${'
-property_end = u'}'
-
-
-# use non capturing groups for alternation
-_split_prop = re.compile(
-    r'(?:[^\$\{\}])+'
-    r'|'
-    '(?:\$\{)'
-    r'|'
-    '(?:\})',
-    re.UNICODE).finditer
-
-
-def value_splitter(value):
-    """
-    Given a string value, return a list of strings splitting `value` in a
-    tuple of regular text, property start and property end.
-    """
-    if not value:
-        return
-    for word in _split_prop(value):
-        yield word.group()
-
-
-def resolve_properties(value, properties):
-    """
-    Return a string based on a `value` string with maven properties resolved.
-
-    Resolve the properties (e.g. ${ } parts) against the `properties`
-    dictionary of keys/values. Resolve possible maven expressions (e.g.
-    substring) using an equivalent substring_slice.
-    """
-    resolved_props = []
-    next_is_prop = False
-
-    # iterate the split value
-    for val in value_splitter(value):
-        logger.debug('  resolve_properties: %(val)r' % locals())
-
-        if not val:
-            logger.debug('   resolve_properties: if not val')
-            continue
-
-        # if we have a property marker start or end, just skip and setup a
-        # flag telling that the next item will be a property or not
-        if val == property_start:
-            next_is_prop = True
-            logger.debug('   resolve_properties: val == property_start')
-            continue
-
-        if val == property_end:
-            # TODO: handle braces balancing issues
-            next_is_prop = False
-            logger.debug('   resolve_properties: val == property_end')
-            continue
-
-        # Here val != property_start and val != property_end: val is either a
-        # regular value or a property based on the flag. If this is not a prop,
-        # just accumulate the value and continue
-        if not next_is_prop:
-            resolved_props.append(val)
-            logger.debug('   resolve_properties: not next_is_prop: resolved_props.append(%(val)r)' % locals())
-            continue
-
-        # Here val is guaranteed to be a property name to be resolved. Does it
-        # contain a maven expression? this is true if the property name ends
-        # with a known maven expression. find it with string.partition
-        for maven_expression, substring_slice in MAVEN_SUBSTRINGS.items():
-            prop_key, has_expression, _ = val.partition(maven_expression)
-            if has_expression:
-                break
-
-        # Now has_expression and substring_slice are known
-        # resolve the property proper
+class MavenPom(pom.Pom):
+    def __init__(self, location):
+        # NOTE: most of this is copied over from Pom.__init__
         try:
-            # resolve the property key to a value
-            resolved_val = properties[prop_key]
+            with codecs.open(location, 'rb', encoding='UTF-8') as fh:
+                xml = fh.read()
+        except UnicodeDecodeError as _a:
+            xml = analysis.unicode_text(location)
 
-            # get the slice if needed
-            if has_expression:
-                resolved_val = substring(resolved_val, substring_slice)
+        xml = xml[xml.find('<project'):]
+        xml = STRIP_NAMESPACE_RE.sub('<project>', xml, 1)
 
-            resolved_props.append(resolved_val)
-            logger.debug('   resolve_properties: resolved_props.append(%(resolved_val)r)' % locals())
+        parser = etree.XMLParser(
+            recover=True,
+            remove_comments=True,
+            remove_pis=True,
+            remove_blank_text=True, resolve_entities=False
+        )
 
-            next_is_prop = False
-        except KeyError, e:
-            logger.debug('   resolve_properties: KeyError')
+        self._xml = etree.fromstring(xml, parser=parser)
 
-            msg = ('Failed to resolve property %(val)r. error:\n%(e)r' % locals())
-            logger.debug('   resolve_properties: ' + msg)
-            # always accumulate the raw value if we failed to resolve
-            original = u'${%(val)s}' % locals()
-            logger.debug('   resolve_properties: IndexError: resolved_props.append(%(original)r)' % locals())
-            resolved_props.append(original)
+        # FXIME: we do not use a client for now. there are pending issues at pymaven to address this
+        self._client = None
 
-    logger.debug('### resolve_properties: %(resolved_props)r' % locals())
-    return u''.join(resolved_props)
+        self.model_version = self._get_attribute('modelVersion')
+        self.group_id = self._get_attribute('groupId')
+        self.artifact_id = self._get_attribute('artifactId')
+        self.version = self._get_attribute('version')
+        self.classifier = self._get_attribute('classifier')
+        self.packaging = self._get_attribute('packaging') or 'jar'
+        self.name = self._get_attribute('name')
+        self.description = self._get_attribute('description')
+        self.inception_year = self._get_attribute('inceptionYear')
+        self.url = self._get_attribute('url')
+        self.organization_name = self._get_attribute('organization/name')
+        self.organization_url = self._get_attribute('organization/url')
+        self.licenses = list(self._find_licenses())
+        self.developers = list(self._find_parties('developers/developer'))
+        self.contributors = list(self._find_parties('contributors/contributor'))
+        self.mailing_lists = list(self._find_mailing_lists())
+        self.scm = self._find_scm()
+        self.issue_management = self._find_issue_management()
+        self.ci_management = self._find_ci_management()
+        self.distribution_management = self._find_distribution_management()
+        self.repositories = list(self._find_repositories('repositories/repository'))
+        self.plugin_repositories = list(self._find_repositories('pluginRepositories/pluginRepository'))
+        self.modules = self._get_attributes_list('modules/module')
+
+        # FIXME: this attribute should be collected with the parent but
+        # is not retrieved yet by pymaven it points to the relative path
+        # where to find the full parent POM
+        self.parent_relative_path = self._get_attribute('relativePath')  # or '../pom.xml'
+
+        # FIXME: Other types that are not collected for now (or
+        # indirectly through dependencies management) include: build,
+        # reporting, profiles, etc
+
+        # dynamic attributes
+        self._parent = None
+        self._dep_mgmt = None
+        self._dependencies = None
+        self._properties = None
+
+    def _extra_properties(self):
+        """
+        Return a mapping of extra properties
+        """
+        properties = {}
+        properties['classifier'] = self.classifier
+        properties['project.classifier'] = self.classifier
+        properties['pom.classifier'] = self.classifier
+
+        properties['packaging'] = self.packaging
+        properties['project.packaging'] = self.packaging
+        properties['pom.packaging'] = self.packaging
+
+        properties['organization.name'] = self.organization_name
+        properties['project.organization.name'] = self.organization_name
+        properties['pom.organization.name'] = self.organization_name
+
+        properties['organization.url'] = self.organization_url
+        properties['project.organization.url'] = self.organization_url
+        properties['pom.organization.url'] = self.organization_url
+
+        # TODO: collect props defined in a properties file
+        # see https://maven.apache.org/shared/maven-archiver/#class_archive
+        # afaik this only applies for POMs stored inside a JAR
+
+        return properties
+
+    @classmethod
+    def _replace_props(cls, text, properties):
+
+        def subfunc(matchobj):
+            """Return the replacement value for a matched property key."""
+            key = matchobj.group(1)
+            # does this key contain a substring?
+            real_key, start_end = _get_substring_expression(key)
+            if not start_end:
+                value = properties.get(key)
+
+                return value
+            # apply the substring transform
+            value = properties.get(real_key)
+            if not value:
+                return value
+            start, end = start_end
+            return substring(value, start, end)
+
+        result = pom.PROPERTY_RE.sub(subfunc, text)
+        while result and pom.PROPERTY_RE.match(result):
+            result = pom.PROPERTY_RE.sub(subfunc, result)
+
+        if not result:
+            result = text
+        return result.strip()
+
+    def _replace_properties(self, text, properties=None):
+        # copied from pymavem.pom.Pom
+        if properties is None:
+            properties = self.properties
+        return MavenPom._replace_props(text, properties)
+
+    def resolve(self):
+        """
+        Resolve POM Maven "properties" in attribute values and inherit
+        from parent. Update the POM attributes in place.
+        """
+        # inherit first to get essential parent properties
+        self._inherit_from_parent()
+
+        # then collect properties + extra
+        properties = dict(self.properties)
+        properties.update(self._extra_properties())
+
+        # these attributes are plain strings
+        plain_attributes = [
+            'group_id',
+            'version',
+            'classifier',
+            'packaging',
+            'name',
+            'description',
+            'inception_year',
+            'url',
+            'organization_name',
+            'organization_url',
+        ]
+        for attr in plain_attributes:
+            attr_val = getattr(self, attr, None)
+            if not attr_val:
+                continue
+            resolved = self._replace_properties(attr_val, properties)
+            setattr(self, attr, resolved)
+
+        # these attributes are mappings
+        mapping_attributes = [
+            'scm',
+            'issue_management',
+            'ci_management',
+        ]
+        for map_attr in mapping_attributes:
+            mapping = getattr(self, map_attr, {})
+            if not mapping:
+                continue
+            for key, value in mapping.items():
+                if not value:
+                    continue
+                mapping[key] = self._replace_properties(value, properties)
+
+        # these attributes are lists of mappings
+        mappings_list_attributes = [
+            'repositories',
+            'plugin_repositories',
+        ]
+        for lmap_attr in mappings_list_attributes:
+            lmapping = getattr(self, lmap_attr, [])
+            if not lmapping:
+                continue
+            for mapping in lmapping:
+                for key, value in mapping.items():
+                    if not value:
+                        continue
+                    mapping[key] = self._replace_properties(value, properties)
+
+        # these attributes are complex nested and lists mappings
+
+        # TODO: add:
+        # nest dicts
+        # 'distribution_management',
+        # nest lists
+        #    'mailing_lists',
 
 
-# A map of known maven substring expressions and the corresponding string slice
+    def _inherit_from_parent(self):
+        """
+        Update attributes using inheritance from parent attributes. For
+        instance, the parent group_id is used if group_id is not defined.
+        """
+        # TODO: there are more attributes (all) that can be inherited
+        if not self.parent:
+            return
+        if self.group_id is None and self.parent.group_id:
+            self.group_id = self.parent.group_id
+        if self.version is None and self.parent.version:
+            self.version = str(self.parent.version)
+        if not self.classifier is None and self.parent.classifier:
+            self.classifier = self.parent.classifier
 
-MAVEN_SUBSTRINGS = {
-    '.substring(1)': (1, None),
-    '.substring(2)': (2, None),
-    '.substring(3)': (3, None),
-    '.substring(4)': (4, None),
-    '.substring(5)': (5, None),
-    '.substring(6)': (6, None),
-    '.substring(7)': (7, None),
-    '.substring(8)': (8, None),
-    '.substring(9)': (9, None),
-    '.substring(0,1)': (None, 1),
-    '.substring(0,2)': (None, 2),
-    '.substring(0,3)': (None, 3),
-    '.substring(0,4)': (None, 4),
-    '.substring(0,5)': (None, 5),
-    '.substring(0,6)': (None, 6),
-    '.substring(0,7)': (None, 7),
-    '.substring(0,8)': (None, 8),
-    '.substring(0,9)': (None, 9),
-}
+        # special handling for URLs: see
+        # http://maven.apache.org/ref/3.5.0/maven-model-builder/index.html#Inheritance_Assembly
+        # Notice that the 5 URLs from the model:
+        # project.url,
+        # project.scm.connection, project.scm.developerConnection, project.scm.url
+        # project.distributionManagement.site.url)
+        # ... have a special inheritance handling: if not configured in
+        # current model, the inherited value is the parent's one with
+        # current artifact id appended.
+        if (self.url is None
+            and hasattr(self.parent, 'url')
+            and getattr(self.parent, 'url', None)
+            and self.artifact_id):
+            self.url = self.parent.url + self.artifact_id
+
+        parent_scm = getattr(self.parent, 'scm', None)
+        if self.scm and parent_scm and self.artifact_id:
+            ps_url = parent_scm.get('url')
+            if not self.scm.get('url') and ps_url:
+                self.scm['url'] = ps_url + self.artifact_id
+
+            ps_connection = parent_scm.get('connection')
+            if not self.scm.get('connection') and ps_connection:
+                self.scm['connection'] = ps_connection + self.artifact_id
+
+            ps_devconnection = parent_scm.get('developer_connection')
+            if not self.scm.get('developer_connection') and ps_devconnection:
+                self.scm['developer_connection'] = ps_devconnection + self.artifact_id
+
+        # TODO: distribution_management.site.url
 
 
-def substring(s, start_end):
+    def _pom_factory(self, group_id, artifact_id, version):
+        return ParentPom('%s:%s:pom:%s' % (group_id, artifact_id, version))
+
+    def _get_attribute(self, xpath, xml=None):
+        """Return a single value text attribute for a given xpath or None."""
+        if xml is None:
+            xml = self._xml
+        attr = xml.findtext(xpath)
+        return attr and attr.strip() or None
+
+    def _get_attributes_list(self, xpath, xml=None):
+        """Return a list of text attribute values for a given xpath or None."""
+        if xml is None:
+            xml = self._xml
+        attrs = xml.findall(xpath)
+        attrs = [attr.text for attr in attrs]
+        return [attr.strip() for attr in attrs if attr and attr.strip()]
+
+    def _find_licenses(self):
+        """Return an iterable of license mappings."""
+        for lic in self._xml.findall('licenses/license'):
+            yield OrderedDict([
+                ('name', self._get_attribute('name', lic)),
+                ('url', self._get_attribute('url', lic)),
+                ('comments', self._get_attribute('comments', lic)),
+                # arcane and seldom used
+                ('distribution', self._get_attribute('distribution', lic)),
+            ])
+
+    def _find_parties(self, key='developers/developer'):
+        """Return an iterable of party mappings for a given xpath."""
+        for party in self._xml.findall(key):
+            yield OrderedDict([
+                ('id', self._get_attribute('id', party)),
+                ('name', self._get_attribute('name', party)),
+                ('email', self._get_attribute('email', party)),
+                ('url', self._get_attribute('url', party)),
+                ('organization', self._get_attribute('organization', party)),
+                ('organization_url', self._get_attribute('organizationUrl', party)),
+                ('roles', [role.findtext('.') for role in party.findall('roles/role')]),
+            ])
+
+    def _find_mailing_lists(self):
+        """Return an iterable of mailing lists mappings."""
+        for ml in self._xml.findall('mailingLists/mailingList'):
+            archive_url = self._get_attribute('archive', ml)
+            # TODO: add 'otherArchives/otherArchive' as lists?
+            yield OrderedDict([
+                ('name', self._get_attribute('name', ml)),
+                ('archive_url', archive_url),
+            ])
+
+    def _find_scm(self):
+        """Return a version control/scm mapping."""
+        scm = self._xml.find('scm')
+        if scm is None:
+            return {}
+        return OrderedDict([
+            ('connection', self._get_attribute('connection', scm)),
+            ('developer_connection', self._get_attribute('developer_connection', scm)),
+            ('url', self._get_attribute('url', scm)),
+            ('tag', self._get_attribute('tag', scm)),
+        ])
+
+    def _find_issue_management(self):
+        """Return an issue management mapping."""
+        imgt = self._xml.find('issueManagement')
+        if imgt is None:
+            return {}
+        return OrderedDict([
+            ('system', self._get_attribute('system', imgt)),
+            ('url', self._get_attribute('url', imgt)),
+        ])
+
+    def _find_ci_management(self):
+        """Return a CI mapping."""
+        cimgt = self._xml.find('ciManagement')
+        if cimgt is None:
+            return {}
+        return OrderedDict([
+            ('system', self._get_attribute('system', cimgt)),
+            ('url', self._get_attribute('url', cimgt)),
+        ])
+
+    def _find_repository(self, xpath, xml=None):
+        """Return a repository mapping for an xpath."""
+        if xml is None:
+            xml = self._xml
+        repo = xml.find(xpath)
+        if repo is None:
+            return {}
+        return OrderedDict([
+            ('id', self._get_attribute('id', repo)),
+            ('name', self._get_attribute('name', repo)),
+            ('url', self._get_attribute('url', repo)),
+        ])
+
+    def _find_distribution_management(self):
+        """Return a distribution management mapping."""
+        dmgt = self._xml.find('distributionManagement')
+        if dmgt is None:
+            return {}
+        return OrderedDict([
+            ('download_url', self._get_attribute('distributionManagement/downloadUrl')),
+            ('site', self._find_repository('distributionManagement/site')),
+            ('repository', self._find_repository('distributionManagement/repository')),
+            ('snapshot_repository', self._find_repository('distributionManagement/snapshotRepository'))
+        ])
+
+    def _find_repositories(self, key='repositories/repository'):
+        """Return an iterable or repository mappings for an xpath."""
+        for repo in self._xml.findall(key):
+            rep = self._find_repository('.', repo)
+            if rep:
+                yield rep
+
+    def to_dict(self):
+        """
+        Return a mapping representing this POM.
+        """
+        dependencies = OrderedDict()
+        for scope, deps in self.dependencies.items():
+            dependencies[scope] = [
+                OrderedDict([
+                    ('group_id', gid),
+                    ('artifact_id', aid),
+                    ('version', version),
+                    ('required', required),
+                ])
+            for ((gid, aid, version), required) in deps]
+
+        return OrderedDict([
+            ('model_version', self.model_version),
+            ('group_id', self.group_id),
+            ('artifact_id', self.artifact_id),
+            ('version', self.version),
+            ('classifier', self.classifier),
+            ('packaging ', self.packaging),
+
+            ('parent', self.parent.to_dict() if self.parent else {}),
+
+            ('name', self.name),
+            ('description', self.description),
+            ('inception_year', self.inception_year),
+            ('url', self.url),
+            ('organization_name', self.organization_name),
+            ('organization_url', self.organization_url),
+
+            ('licenses', self.licenses or []),
+
+            ('developers', self.developers or []),
+            ('contributors', self.contributors or []),
+
+            ('modules', self.modules or []),
+            ('mailing_lists', self.mailing_lists),
+            ('scm', self.scm),
+            ('issue_management', self.issue_management),
+            ('ci_management', self.ci_management),
+            ('distribution_management', self.distribution_management),
+            ('repositories', self.repositories),
+            ('plugin_repositories', self.plugin_repositories),
+            # FIXME: move to proper place in sequeence of attributes
+            ('dependencies', dependencies or {}),
+        ])
+
+
+def _get_substring_expression(text):
     """
-    Return a slice of s where start_end is the start and end of a slice.
+    Return a tuple of (text, start/end) such that:
+
+    - if there is a substring() expression in text, the returned text
+    has been stripped from it and start/end is a tuple representing
+    slice indexes for the substring expression.
+
+    - if there is no substring() expression in text, text is returned
+    as-is and start/end is None.
+
+    For example:
+    >>> assert ('pom.artifactId', (8, None)) == _get_substring_expression('pom.artifactId.substring(8)')
+    >>> assert ('pom.artifactId', None) == _get_substring_expression('pom.artifactId')
     """
-    start, end = start_end
+    key, _, start_end = text.partition('.substring(')
+    if not start_end:
+        return text, None
+
+    start_end = start_end.rstrip(')')
+    start_end = [se.strip() for se in start_end.split(',')]
+
+    # we cannot parse less than 1 and more than 2 slice indexes
+    if len(start_end) not in (1, 2):
+        return text, None
+
+    # we cannot parse slice indexes that are not numbers
+    if not all(se.isdigit() for se in start_end):
+        return text, None
+    start_end = [int(se) for se in start_end]
+
+    if len(start_end) == 1:
+        start = start_end[0]
+        end = None
+    else:
+        start, end = start_end
+
+    return key, (start, end)
+
+
+def substring(s, start, end):
+    """
+    Return a slice of s based on start and end indexes (that can be None).
+    """
     startless = start is None
     endless = end is None
     if startless and endless:
         return s
-    if startless:
-        return s[:end]
     if endless:
         return s[start:]
-
+    if startless:
+        return s[:end]
     return s[start:end]
 
 
-pom_extensions = ('.pom', 'pom.xml', 'project.xml', '.xml')
-
-
-def pom_version(location):
+def is_pom(location):
     """
-    Return 1 or 2 corresponding to the maven major
-    version of POM style, not the POM version) if the file at location is
-    highly likely to be a POM, otherwise None.
+    Return True if the file at location is highly likely to be a POM.
     """
     if (not filetype.is_file(location)
-        or not location.endswith(pom_extensions)):
+    or not location.endswith(('.pom', 'pom.xml', 'project.xml',))):
         return
 
     T = contenttype.get_type(location)
@@ -449,134 +580,104 @@ def pom_version(location):
                       or 'genshi' in T.filetype_pygment.lower()):
 
         # check the POM version in the first 100 lines
-        with open(location, 'rb') as pom:
-            for n, l in enumerate(pom):
+        with codecs.open(location, encoding='utf-8') as pom:
+            for n, line in enumerate(pom):
                 if n > 100:
                     break
-                if ('http://maven.apache.org/POM/4.0.0' in l
-                    or '<modelVersion>' in l):
-                    return 2
-                elif '<pomVersion>' in l:
-                    return 1
+                if any(x in line for x in
+                       ('http://maven.apache.org/POM/4.0.0', '<modelVersion>',)):
+                    return True
 
 
-def parse_pom(location, fields=MAVEN_FIELDS):
+def parse_pom(location, check_is_pom=False):
     """
-    Parse the Maven POM object for the file at location using a `fields` mapping
-    of field name -> xpath.
-    Return a mapping of field name -> [values].
+    Return a MavenPom object from the Maven POM file at location.
     """
-    if not pom_version(location):
-        return {}
-
-    pom_handler = partial(extract_pom_data, fields=fields)
-
-    pom = xmlutils.parse(location, handler=pom_handler)
-    logger.debug('###parse_pom: {pom}'.format(**locals()))
+    pom = _get_mavenpom(location, check_is_pom)
     if not pom:
         return {}
+    return pom.to_dict()
+
+
+def _get_mavenpom(location, check_is_pom=False):
+    if check_is_pom and not is_pom(location):
+        return
+    pom = MavenPom(location)
+    pom.resolve()
+    if check_is_pom and not (pom.model_version and pom.group_id and pom.artifact_id):
+        return
     return pom
 
 
-def extract_pom_data(xdoc, fields=MAVEN_FIELDS):
-    """
-    Extract POM data from an etree document using a `fields` mapping of field
-    name -> xpath.
-    Return a mapping of field name -> [values].
-    """
-    pom_data = {}
-    props = get_properties(xdoc)
-
-    for name, xpath in fields:
-        values = xmlutils.find_text(xdoc, xpath)
-        if values:
-            pass
-            # logger.debug('processing name: {name}, xpath: {xpath}'.format(**locals()))
-            # logger.debug(' found: {values}'.format(**locals()))
-        resolved = [resolve_properties(val , props)for val in values]
-
-        if resolved:
-            logger.debug(' extract_pom_data: found: {resolved}'.format(**locals()))
-        # FIXME: this is grossly incorrect!
-        pom_data[name] = resolved or []
-
-    # logger.debug(' found: {pom_data}'.format(**locals()))
-    pom_data = inherit_from_parent(pom_data)
-    # logger.debug(' inherited: {pom_data}'.format(**locals()))
-    return pom_data
-
-
-def inherit_from_parent(pom_data):
-    """
-    Add defaults to a pom `pom_data` mapping using inheritance from parent data
-    when needed. For instance, the parent groupid is used if no groupid is
-    defined.
-    """
-    gid = pom_data.get('maven_component_group_id')
-    pgid = pom_data.get('maven_component_parent_group_id')
-    if not gid and pgid:
-        pom_data['maven_component_group_id'] = pgid
-
-    gvers = pom_data.get('maven_component_version')
-    pvers = pom_data.get('maven_component_parent_version')
-    if not gvers and pvers:
-        pom_data['maven_component_version'] = pvers
-    return pom_data
-
-
-def parse(location):
+def parse(location, check_is_pom=True):
     """
     Parse a pom file at location and return a Package or None.
     """
-    if not location.endswith('pom.xml') or location.endswith('.pom'):
+    mavenpom = _get_mavenpom(location, check_is_pom=check_is_pom)
+    if not mavenpom:
         return
 
-    pom = parse_pom(location)
+    pom = mavenpom.to_dict()
 
-    def get_val(key):
-        val = pom.get(key)
-        if not val:
-            return
-        if isinstance(val, list) and len(val) == 1:
-            return val[0]
-        else:
-            return u'\n'.join(val)
+    licenses = []
+    for lic in pom['licenses']:
+        licenses.append(models.AssertedLicense(
+            license=lic['name'],
+            url=lic['url'],
+            notice=lic['comments']
+        ))
 
-    group_artifact = ':'.join([get_val('maven_component_group_id'), get_val('maven_component_artifact_id')])
+    # FIXME: we are skipping all the organization related fields, roles and the id
+    authors = []
+    for dev in pom['developers']:
+        authors.append(models.Party(
+                type=models.party_person,
+                name=dev['name'],
+                email=dev['email'],
+                url=dev['url'],
+        ))
 
-    # FIXME: the way we collect nested tags is entirely WRONG, especially for licenses
-    # attempt to align licenses for now
-    licenses = izip_longest(
-        pom['maven_license'],
-        pom['maven_license_url'],
-        pom['maven_license_comments'],
-    )
-    licenses = [models.AssertedLicense(license=lic, url=url, notice=comments)
-                for lic, url, comments in licenses]
+    # FIXME: we are skipping all the organization related fields and roles
+    contributors = []
+    for cont in pom['contributors']:
+        contributors.append(models.Party(
+                type=models.party_person,
+                name=cont['name'],
+                email=cont['email'],
+                url=cont['url'],
+        ))
 
-    authors = izip_longest(
-        pom['maven_developer_name'],
-        pom['maven_developer_email'],
-    )
-    authors = [models.Party(type=models.party_person, name=name, email=email) for name, email in authors]
 
-    orgs = izip_longest(
-        pom['maven_organization_name'],
-        pom['maven_organization_url'],
-    )
-    orgs = [models.Party(type=models.party_org, name=name, url=url) for name, url in orgs]
+    name = pom['organization_name']
+    url = pom['organization_url']
+    if name or url:
+        owners = [models.Party(type=models.party_org, name=name, url=url)]
+    else:
+        owners = []
 
-    package = MavenJar(
+    dependencies = OrderedDict()
+    for scope, deps in pom['dependencies'].items():
+        scoped_deps = dependencies[scope] = []
+        for dep in deps:
+            scoped_deps.append(models.Dependency(
+                name='{group_id}:{artifact_id}'.format(**dep),
+                version_constraint=dep['version'],
+            ))
+
+    # FIXME: there are still a lot of other data to map in a Package
+    package = MavenPomPackage(
+        # FIXME: what is this location about?
         location=location,
-        name=group_artifact,
-        # FIXME: this is not right: name and identifier should be storable
-        summary=get_val('maven_project_name'),
-        version=get_val('maven_component_version'),
-        homepage_url=get_val('maven_project_url'),
-        description=get_val('maven_project_description'),
+        name='{group_id}:{artifact_id}'.format(**pom),
+        version=pom['version'],
+        summary=pom['name'],
+        description=pom['description'],
+        homepage_url=pom['url'],
         asserted_licenses=licenses,
         authors=authors,
-        owners=orgs,
+        owners=owners,
+        contributors=contributors,
+        dependencies=dependencies,
     )
     return package
 
@@ -594,8 +695,7 @@ class MavenRecognizer(object):
             if not filetype.is_file(loc):
                 continue
             # a pom is an xml doc
-            pom_ver = pom_version(location)
-            if not pom_ver:
+            if not is_pom(location):
                 continue
 
             if f == 'pom.xml':
@@ -631,4 +731,4 @@ class MavenRecognizer(object):
                 # return that, with a type and the POM metafile to parse.
                     pass
 
-                # second case: a maven .pom nested in MANIFEST.MF
+                # second case: a maven .pom nested in META-INF

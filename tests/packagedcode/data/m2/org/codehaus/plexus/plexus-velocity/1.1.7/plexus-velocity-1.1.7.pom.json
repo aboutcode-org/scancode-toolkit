@@ -1,0 +1,59 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.codehaus.plexus", 
+  "artifact_id": "plexus-velocity", 
+  "version": "1.1.7", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.codehaus.plexus", 
+    "artifact_id": "plexus-components", 
+    "version": "1.1.12", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Plexus Velocity Component", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.codehaus.org/plexus/plexus-components/tags/plexus-velocity-1.1.7", 
+    "developer_connection": null, 
+    "url": "http://fisheye.codehaus.org/browse/plexus/plexus-components/tags/plexus-velocity-1.1.7", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-container-default", 
+        "version": "1.0-alpha-20", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-collections", 
+        "artifact_id": "commons-collections", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "velocity", 
+        "artifact_id": "velocity", 
+        "version": "1.4", 
+        "required": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.reporting", 
+  "artifact_id": "maven-reporting-api", 
+  "version": "2.0.6", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.apache.maven.reporting", 
+    "artifact_id": "maven-reporting", 
+    "version": "2.0.6", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Reporting API", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "vsiveton", 
+      "name": "Vincent Siveton", 
+      "email": "vincent.siveton@gmail.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.apache.maven.doxia", 
+        "artifact_id": "doxia-sink-api", 
+        "version": "1.0-alpha-7", 
+        "required": true
+      }
+    ]
+  }
+}

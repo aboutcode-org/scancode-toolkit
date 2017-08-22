@@ -1,0 +1,5 @@
+licenses:
+    - gpl-2.0
+    - bsd-simplified
+    - unknown
+license_expression: (gpl-2.0 or bsd-simplified) and unknown

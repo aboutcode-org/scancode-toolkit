@@ -1,5 +1,5 @@
 licenses:
-    - gpl
+    - gpl-1.0-plus
 notes: |
     No version is specified in this notice found in ansiknr.c as redistributed
     with automake in this RPM

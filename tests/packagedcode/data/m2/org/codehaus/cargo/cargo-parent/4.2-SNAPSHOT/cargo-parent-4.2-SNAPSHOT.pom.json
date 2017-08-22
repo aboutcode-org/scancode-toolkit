@@ -1,0 +1,365 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.codehaus.cargo", 
+  "artifact_id": "cargo-parent", 
+  "version": "4.2-SNAPSHOT", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {}, 
+  "name": "Cargo", 
+  "description": null, 
+  "inception_year": "2004", 
+  "url": "http://cargo.codehaus.org", 
+  "organization_name": "Codehaus", 
+  "organization_url": "http://codehaus.org/", 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "vmassol", 
+      "name": "Vincent Massol", 
+      "email": "vmassol@codehaus.org", 
+      "url": null, 
+      "organization": "Codehaus", 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "datanga", 
+      "name": "Desire Atanga", 
+      "email": null, 
+      "url": null, 
+      "organization": "OCTO Technology", 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "hendriks", 
+      "name": "Hendrik Schreiber", 
+      "email": "hs@tagtraum.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "aheritier", 
+      "name": "Arnaud Heritier", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "mkleint", 
+      "name": "Milos Kleint", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "winwin", 
+      "name": "I Nyoman Winardi", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "oleo", 
+      "name": "Lev Olkhovich", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "mark", 
+      "name": "Mark Hobson", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "grimsell", 
+      "name": "Magnus Grimsell", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "magnayn", 
+      "name": "Nigel Magnay", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "janb", 
+      "name": "Jan Bartel", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "sfarquhar", 
+      "name": "Scott Farquhar", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "vsiveton", 
+      "name": "Vincent Siveton", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "david", 
+      "name": "David J. M. Karlsen", 
+      "email": "david@codehaus.org", 
+      "url": null, 
+      "organization": "davidkarlsen.com", 
+      "organization_url": "http://www.davidkarlsen.com", 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "mwringe", 
+      "name": "Matt Wringe", 
+      "email": "mwringe@redhat.com", 
+      "url": null, 
+      "organization": "Red Hat", 
+      "organization_url": "www.redhat.com", 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "adriancole", 
+      "name": "Adrian Cole", 
+      "email": "ferncam1@gmail.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }
+  ], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "Jerome Lacoste", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Tim Shadel", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Matt Raible", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Jan Zuchhold", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Eoghan McIlwaine", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Bill Dudney", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Rahul Thakur", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Lester Ecarma", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Juri Artamonov", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Kohsuke Kawaguchi", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Wendy Smoak", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Cedric Vidal", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Cedric Munger", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Savas Ali Tokmen (OW2)", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Adriana Danes (OW2)", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.codehaus.org/cargo/pom/tags/cargo-parent-4.1", 
+    "developer_connection": null, 
+    "url": "http://svn.cargo.codehaus.org/cargo/pom/tags/cargo-parent-4.1", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://jira.codehaus.org/browse/CARGO"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "cargo-website", 
+      "name": null, 
+      "url": "dav:https://dav.codehaus.org/cargo/maven-site/"
+    }, 
+    "repository": {
+      "id": "cargo-release", 
+      "name": "Cargo's release repository", 
+      "url": "dav:https://dav.codehaus.org/repository/cargo/"
+    }, 
+    "snapshot_repository": {
+      "id": "cargo-snapshot", 
+      "name": "Cargo's snapshot repository", 
+      "url": "dav:https://dav.codehaus.org/snapshots.repository/cargo/"
+    }
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

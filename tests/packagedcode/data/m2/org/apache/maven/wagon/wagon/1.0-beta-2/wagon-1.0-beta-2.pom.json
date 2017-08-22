@@ -1,0 +1,79 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.wagon", 
+  "artifact_id": "wagon", 
+  "version": "1.0-beta-2", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache.maven", 
+    "artifact_id": "maven-parent", 
+    "version": "4", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Wagon", 
+  "description": "Tools to manage artifacts and deployment", 
+  "inception_year": "2003", 
+  "url": "http://maven.apache.org/wagon", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "michal", 
+      "name": "Michal Maczka", 
+      "email": "michal@codehaus.org", 
+      "url": null, 
+      "organization": "Codehaus", 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [
+    "wagon-provider-api", 
+    "wagon-provider-test", 
+    "wagon-providers"
+  ], 
+  "mailing_lists": [
+    {
+      "name": "Maven Wagon User List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-wagon-users/"
+    }, 
+    {
+      "name": "Maven Wagon Developer List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-wagon-dev/"
+    }, 
+    {
+      "name": "Maven Commits List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-wagon-commits/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:https://svn.apache.org/repos/asf/maven/wagon/tags/wagon-1.0-beta-2", 
+    "developer_connection": null, 
+    "url": "https://svn.apache.org/repos/asf/maven/wagon/tags/wagon-1.0-beta-2", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://jira.codehaus.org/browse/WAGON"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

@@ -13,8 +13,8 @@ set -e
 
 echo "###  BUILDING ScanCode release ###"
 
-echo -n "  RELEASE: Cleaning previous release archives, then setup and config: "
-rm -rf dist/
+echo "  RELEASE: Cleaning previous release archives, then setup and config: "
+rm -rf dist/ build/
 
 # backup dev manifests
 cp MANIFEST.in MANIFEST.in.dev 
@@ -26,12 +26,12 @@ cp etc/release/setup.cfg.release setup.cfg
 
 ./configure --clean
 export CONFIGURE_QUIET=1
-./configure etc/conf
+./configure etc/conf --no-reindex-licenses
 
 echo "  RELEASE: Building release archives..."
 
 # build a zip and tar.bz2
-bin/python setup.py --quiet release
+bin/python setup.py --quiet release --use-default-version
 
 # restore dev manifests
 mv MANIFEST.in.dev MANIFEST.in
@@ -44,7 +44,7 @@ function test_scan {
     extract_command=$2
     for archive in *.$file_extension;
         do
-            echo -n "    RELEASE: Testing release archive: $archive ... "
+            echo "    RELEASE: Testing release archive: $archive ... "
             $($extract_command $archive)
             extract_dir=$(ls -d */)
             cd $extract_dir
@@ -72,13 +72,16 @@ function test_scan {
 }
 
 cd dist
-echo "  RELEASE: Testing..."
-test_scan gz "tar -xf"
-test_scan bz2 "tar -xf"
-test_scan zip "unzip -q"
+if [ "$1" != "--no-tests" ]; then
+    echo "  RELEASE: Testing..."
+    test_scan bz2 "tar -xf"
+    test_scan zip "unzip -q"
+else
+    echo "  RELEASE: !!!!NOT Testing..."
+fi
 
 
-echo "###  RELEASE is ready for publishing ###"
+echo "###  RELEASE is ready for publishing  ###"
 
 set +e
 set +x

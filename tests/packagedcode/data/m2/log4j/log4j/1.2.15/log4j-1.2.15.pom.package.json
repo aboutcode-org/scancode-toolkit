@@ -1,0 +1,93 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "log4j:log4j", 
+  "version": "1.2.15", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Apache Log4j", 
+  "description": "Apache Log4j 1.2", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [
+    {
+      "type": "organization", 
+      "name": "Apache Software Foundation", 
+      "email": null, 
+      "url": "http://www.apache.org"
+    }
+  ], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://logging.apache.org:80/log4j/1.2/", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "javax.mail:mail", 
+        "version": null, 
+        "version_constraint": "1.4"
+      }, 
+      {
+        "name": "javax.jms:jms", 
+        "version": null, 
+        "version_constraint": "1.1"
+      }, 
+      {
+        "name": "com.sun.jdmk:jmxtools", 
+        "version": null, 
+        "version_constraint": "1.2.1"
+      }, 
+      {
+        "name": "com.sun.jmx:jmxri", 
+        "version": null, 
+        "version_constraint": "1.2.1"
+      }
+    ], 
+    "test": [
+      {
+        "name": "oro:oro", 
+        "version": null, 
+        "version_constraint": "2.0.8"
+      }, 
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.1"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

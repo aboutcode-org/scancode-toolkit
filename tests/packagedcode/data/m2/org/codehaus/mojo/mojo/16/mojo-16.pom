@@ -1,0 +1,243 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.codehaus.mojo</groupId>
+  <artifactId>mojo</artifactId>
+  <version>16</version>
+  <packaging>pom</packaging>
+  <name>Codehaus Mojo</name>
+  <url>http://mojo.codehaus.org</url>
+
+  <organization>
+    <name>Codehaus</name>
+    <url>http://codehaus.org</url>
+  </organization>
+
+  <mailingLists>
+    <mailingList>
+      <name>Development List</name>
+      <subscribe>dev-subscribe@mojo.codehaus.org</subscribe>
+      <unsubscribe>dev-unsubscribe@mojo.codehaus.org</unsubscribe>
+      <post>dev@mojo.codehaus.org</post>
+      <archive>http://archive.mojo.codehaus.org/dev/</archive>
+    </mailingList>
+    <mailingList>
+      <name>User List</name>
+      <subscribe>user-subscribe@mojo.codehaus.org</subscribe>
+      <unsubscribe>user-unsubscribe@mojo.codehaus.org</unsubscribe>
+      <post>user@mojo.codehaus.org</post>
+      <archive>http://archive.mojo.codehaus.org/user/</archive>
+    </mailingList>
+    <mailingList>
+      <name>Commits List</name>
+      <subscribe>scm-subscribe@mojo.codehaus.org</subscribe>
+      <unsubscribe>scm-unsubscribe@mojo.codehaus.org</unsubscribe>
+      <archive>http://archive.mojo.codehaus.org/scm/</archive>
+    </mailingList>
+  </mailingLists>
+  <issueManagement>
+    <system>jira</system>
+    <url>http://jira.codehaus.org/browse/MOJO</url>
+  </issueManagement>
+  <scm>
+    <connection>scm:svn:http://svn.codehaus.org/mojo/tags/mojo-16</connection>
+    <developerConnection>scm:svn:https://svn.codehaus.org/mojo/tags/mojo-16</developerConnection>
+    <url>http://svn.codehaus.org/mojo/tags/mojo-16</url>
+  </scm>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.apache.maven</groupId>
+        <artifactId>maven-plugin-api</artifactId>
+        <version>2.0</version>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>3.8.1</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <distributionManagement>
+    <repository>
+      <id>codehaus.org</id>
+      <name>Mojo Central Repository</name>
+      <url>dav:https://dav.codehaus.org/repository/mojo/</url>
+    </repository>
+    <snapshotRepository>
+      <id>codehaus.org</id>
+      <name>Mojo Central Development Repository</name>
+      <url>dav:https://dav.codehaus.org/snapshots.repository/mojo/</url>
+    </snapshotRepository>
+    <site>
+      <id>codehaus.org</id>
+      <name>Mojo Website</name>
+      <url>dav:https://dav.codehaus.org/mojo/</url>
+    </site>
+  </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>codehaus.org</id>
+      <name>Maven Central Development Repository</name>
+      <url>http://snapshots.repository.codehaus.org</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>codehaus.org</id>
+      <name>Maven Central Development Plugin Repository</name>
+      <url>http://snapshots.repository.codehaus.org</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <modules>
+    <module>appassembler</module>
+    <module>aspectj-maven-plugin</module>
+    <module>axistools-maven-plugin</module>
+    <module>build-helper-maven-plugin</module>
+    <module>castor-maven-plugin</module>
+    <module>clirr-maven-plugin</module>
+    <module>cobertura-maven-plugin</module>
+    <module>commons-attributes-maven-plugin</module>
+    <module>docbook-maven-plugin</module>
+    <module>exec-maven-plugin</module>
+    <module>findbugs-maven-plugin</module>
+    <module>hibernate2-maven-plugin</module>
+    <module>jalopy-maven-plugin</module>
+    <module>jaxb2-maven-plugin</module>
+    <module>javacc-maven-plugin</module>
+    <module>javancss-maven-plugin</module>
+    <module>jboss-maven-plugin</module>
+    <module>jdepend-maven-plugin</module>
+    <module>jdiff-maven-plugin</module>
+    <module>jpox-maven-plugin</module>
+    <module>jruby-maven-plugin</module>
+    <module>keytool-maven-plugin</module>
+    <module>maven-native</module>
+    <module>maven-hibernate3</module>
+    <module>minijar-maven-plugin</module>
+    <module>netbeans-freeform-maven-plugin</module>
+    <module>sablecc-maven-plugin</module>
+    <module>selenium-maven-plugin</module>
+    <module>taglist-maven-plugin</module>
+    <module>tomcat-maven-plugin</module>
+    <module>webstart-maven-plugin</module>
+    <module>wsdl2java-maven-plugin</module>
+    <module>xdoclet-maven-plugin</module>
+    <module>xmlbeans-maven-plugin</module>
+    <module>xslt-maven-plugin</module>
+    <module>nbm-maven-plugin</module>
+    <module>retrotranslator-maven-plugin</module>
+    <module>xml-maven-plugin</module>
+    <module>rat-maven-plugin</module>
+    <module>groovy</module>
+    <module>jspc</module>
+  </modules>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-webdav</artifactId>
+        <version>1.0-beta-2</version>
+      </extension>
+    </extensions>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <configuration>
+            <tagBase>https://svn.codehaus.org/mojo/tags</tagBase>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>2.0-beta-5</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+  </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>2.3</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>2.1</version>
+        <configuration>
+          <configLocation>http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-checkstyle-plugin/src/main/resources/config/maven_checks.xml</configLocation>
+          <headerLocation>http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-checkstyle-plugin/src/main/resources/config/maven-header.txt</headerLocation>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>2.2</version>
+      </plugin>
+      <!--
+      <plugin>
+       org.codehaus.mojo:cobertura-maven-plugin > org.codehaus.mojo:taglist-maven-plugin > org.codehaus.mojo:cobertura-maven-plugin
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+      </plugin>
+      -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>2.1</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <links>
+            <link>http://java.sun.com/j2ee/1.4/docs/api</link>
+            <link>http://java.sun.com/j2se/1.5.0/docs/api</link>
+            <link>http://jakarta.apache.org/commons/collections/apidocs-COLLECTIONS_3_0/</link>
+            <link>http://jakarta.apache.org/commons/dbcp/apidocs/</link>
+            <link>http://jakarta.apache.org/commons/fileupload/apidocs/</link>
+            <link>http://jakarta.apache.org/commons/httpclient/apidocs/</link>
+            <link>http://jakarta.apache.org/commons/logging/apidocs/</link>
+            <link>http://jakarta.apache.org/commons/pool/apidocs/</link>
+            <link>http://www.junit.org/junit/javadoc/</link>
+            <link>http://logging.apache.org/log4j/docs/api/</link>
+            <link>http://jakarta.apache.org/regexp/apidocs/</link>
+            <link>http://jakarta.apache.org/velocity/api/</link>
+          </links>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>taglist-maven-plugin</artifactId>
+        <version>2.0</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-plugin-plugin</artifactId>
+        <version>2.3</version>
+      </plugin>
+    </plugins>
+  </reporting>
+
+</project>

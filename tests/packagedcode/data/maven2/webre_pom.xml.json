@@ -1,0 +1,33 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.webreformatter.wrappers", 
+  "artifact_id": "com.google.gwt.query", 
+  "version": "0.1.5.SNAPSHOT", 
+  "classifier": null, 
+  "packaging ": "bundle", 
+  "parent": {
+    "group_id": "org.webreformatter", 
+    "artifact_id": "parent-gwt", 
+    "version": "0.1.5.SNAPSHOT", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "com.google.gwt.query", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

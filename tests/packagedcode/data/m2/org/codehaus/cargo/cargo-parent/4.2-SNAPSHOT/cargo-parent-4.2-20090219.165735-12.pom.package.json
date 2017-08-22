@@ -1,0 +1,239 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.codehaus.cargo:cargo-parent", 
+  "version": "4.2-SNAPSHOT", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Cargo", 
+  "description": null, 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Vincent Massol", 
+      "email": "vmassol@codehaus.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Desire Atanga", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Hendrik Schreiber", 
+      "email": "hs@tagtraum.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Arnaud Heritier", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Milos Kleint", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "I Nyoman Winardi", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Lev Olkhovich", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Mark Hobson", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Magnus Grimsell", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Nigel Magnay", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jan Bartel", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Scott Farquhar", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Vincent Siveton", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "David J. M. Karlsen", 
+      "email": "david@codehaus.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Matt Wringe", 
+      "email": "mwringe@redhat.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Adrian Cole", 
+      "email": "ferncam1@gmail.com", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [
+    {
+      "type": "person", 
+      "name": "Jerome Lacoste", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Tim Shadel", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Matt Raible", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jan Zuchhold", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Eoghan McIlwaine", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Bill Dudney", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Rahul Thakur", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Lester Ecarma", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Juri Artamonov", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Kohsuke Kawaguchi", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Wendy Smoak", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Cedric Vidal", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Cedric Munger", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Savas Ali Tokmen (OW2)", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Adriana Danes (OW2)", 
+      "email": null, 
+      "url": null
+    }
+  ], 
+  "owners": [
+    {
+      "type": "organization", 
+      "name": "Codehaus", 
+      "email": null, 
+      "url": "http://codehaus.org/"
+    }
+  ], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://cargo.codehaus.org", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {}, 
+  "related_packages": []
+}

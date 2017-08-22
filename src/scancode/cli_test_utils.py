@@ -25,10 +25,12 @@
 from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
+from __future__ import unicode_literals
 
 import codecs
 from collections import OrderedDict
 import json
+import os
 
 
 def remove_dates(scan_result):
@@ -40,7 +42,7 @@ def remove_dates(scan_result):
             del scanned_file['date']
 
 
-def check_scan(expected_file, result_file, regen=False, strip_dates=False):
+def check_json_scan(expected_file, result_file, regen=False, strip_dates=False):
     """
     Check the scan result_file JSON results against the expected_file expected JSON
     results. Removes references to test_dir for the comparison. If regen is True the
@@ -52,15 +54,15 @@ def check_scan(expected_file, result_file, regen=False, strip_dates=False):
         remove_dates(result)
     if regen:
         with open(expected_file, 'wb') as reg:
-            json.dump(result, reg, indent=2)
+            json.dump(result, reg, indent=2, separators=(',', ': '))
     expected = _load_json_result(expected_file)
     if strip_dates:
         remove_dates(expected)
 
     # NOTE we redump the JSON as a string for a more efficient comparison of
     # failures
-    expected = json.dumps(expected, indent=2, sort_keys=True)
-    result = json.dumps(result, indent=2, sort_keys=True)
+    expected = json.dumps(expected, indent=2, sort_keys=True, separators=(',', ': '))
+    result = json.dumps(result, indent=2, sort_keys=True, separators=(',', ': '))
     assert expected == result
 
 
@@ -78,3 +80,30 @@ def _load_json_result(result_file):
 
     scan_result['files'].sort(key=lambda x: x['path'])
     return scan_result
+
+
+def run_scan_plain(options, cwd=None):
+    """
+    Run a scan as a plain subprocess. Return rc, stdout, stderr.
+    """
+    import scancode
+    from commoncode.command import execute
+    scan_cmd = os.path.join(scancode.root_dir, 'scancode')
+    return execute(scan_cmd, options, cwd=cwd)
+
+
+def run_scan_click(options, monkeypatch=None, catch_exceptions=False):
+    """
+    Run a scan as a Click-controlled subprocess
+    If monkeypatch is provided, a tty with a size (80, 43) is mocked.
+    Return a click.testing.Result object.
+    """
+    import click
+    from click.testing import CliRunner
+    from scancode import cli
+
+    if monkeypatch:
+        monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+        monkeypatch.setattr(click , 'get_terminal_size', lambda : (80, 43,))
+    runner = CliRunner()
+    return runner.invoke(cli.scancode, options, catch_exceptions=catch_exceptions)

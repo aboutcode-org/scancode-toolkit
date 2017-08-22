@@ -1,0 +1,123 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.codehaus.mojo", 
+  "artifact_id": "mojo", 
+  "version": "12", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {}, 
+  "name": "Codehaus Mojo", 
+  "description": null, 
+  "inception_year": null, 
+  "url": "http://mojo.codehaus.org", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [
+    "aspectj-maven-plugin", 
+    "axistools-maven-plugin", 
+    "build-helper-maven-plugin", 
+    "castor-maven-plugin", 
+    "clirr-maven-plugin", 
+    "cobertura-maven-plugin", 
+    "commons-attributes-maven-plugin", 
+    "exec-maven-plugin", 
+    "hibernate2-maven-plugin", 
+    "jalopy-maven-plugin", 
+    "jaxb2-maven-plugin", 
+    "javacc-maven-plugin", 
+    "javancss-maven-plugin", 
+    "jboss-maven-plugin", 
+    "jdepend-maven-plugin", 
+    "jdiff-maven-plugin", 
+    "jpox-maven-plugin", 
+    "jspc-maven-plugin", 
+    "keytool-maven-plugin", 
+    "maven-native", 
+    "netbeans-freeform-maven-plugin", 
+    "sablecc-maven-plugin", 
+    "taglist-maven-plugin", 
+    "webstart-maven-plugin", 
+    "wsdl2java-maven-plugin", 
+    "xdoclet-maven-plugin", 
+    "xmlbeans-maven-plugin", 
+    "xslt-maven-plugin", 
+    "nbm-maven-plugin"
+  ], 
+  "mailing_lists": [
+    {
+      "name": "Development List", 
+      "archive_url": "http://archive.mojo.codehaus.org/dev/"
+    }, 
+    {
+      "name": "User List", 
+      "archive_url": "http://archive.mojo.codehaus.org/user/"
+    }, 
+    {
+      "name": "Commits List", 
+      "archive_url": "http://archive.mojo.codehaus.org/scm/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:http://svn.codehaus.org/mojo/trunk/mojo", 
+    "developer_connection": null, 
+    "url": "http://svn.mojo.codehaus.org/mojo/trunk/mojo", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://jira.codehaus.org/browse/MOJO"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "codehaus.org", 
+      "name": "Mojo Website", 
+      "url": "dav:https://dav.codehaus.org/mojo/"
+    }, 
+    "repository": {
+      "id": "codehaus.org", 
+      "name": "Mojo Central Repository", 
+      "url": "dav:https://dav.codehaus.org/repository/mojo/"
+    }, 
+    "snapshot_repository": {
+      "id": "codehaus.org", 
+      "name": "Mojo Central Development Repository", 
+      "url": "dav:https://dav.codehaus.org/snapshots.repository/mojo/"
+    }
+  }, 
+  "repositories": [
+    {
+      "id": "snapshots", 
+      "name": "Maven Central Development Repository", 
+      "url": "http://snapshots.repository.codehaus.org"
+    }, 
+    {
+      "id": "codehaus.org", 
+      "name": "Codehaus Central Repository", 
+      "url": "http://repository.codehaus.org"
+    }
+  ], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-plugin-api", 
+        "version": "2.0", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

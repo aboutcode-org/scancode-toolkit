@@ -1,0 +1,124 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "com.thoughtworks.xstream:xstream", 
+  "version": "1.2.2", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "XStream Core", 
+  "description": null, 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": null, 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "dom4j:dom4j", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "jdom:jdom", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "joda-time:joda-time", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "com.megginson.sax:xml-writer", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "stax:stax", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "org.codehaus.woodstox:wstx-asl", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "stax:stax-api", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "xom:xom", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "xpp3:xpp3_min", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "cglib:cglib-nodep", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "org.codehaus.jettison:jettison", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "jmock:jmock", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }
+    ], 
+    "test": [
+      {
+        "name": "oro:oro", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "commons-lang:commons-lang", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

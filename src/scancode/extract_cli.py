@@ -30,6 +30,7 @@ from functools import partial
 import os
 
 import click
+click.disable_unicode_literals_warning = True
 
 from commoncode import fileutils
 from commoncode import filetype
@@ -39,6 +40,17 @@ from scancode.api import extract_archives
 from scancode.cli import print_about
 from scancode.cli import version
 from scancode import utils
+
+
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+    str = unicode
+except NameError:
+    # Python 3
+    unicode = str
+
 
 
 echo_stderr = partial(click.secho, err=True)
@@ -82,7 +94,7 @@ Try 'extractcode --help' for help on options and arguments.'''
 @click.command(name='extractcode', epilog=epilog_text, cls=ExtractCommand)
 @click.pass_context
 
-@click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True))
+@click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True, path_type=str))
 
 @click.option('--verbose', is_flag=True, default=False, help='Print verbose file-by-file progress messages.')
 @click.option('--quiet', is_flag=True, default=False, help='Do not print any summary or progress message.')
@@ -110,12 +122,15 @@ def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # @Reser
             return ''
         if not item:
             return ''
+        source = item.source
+        if not isinstance(source, unicode):
+            source = toascii(source, translit=True).decode('utf-8', 'replace')
         if verbose:
             if item.done:
                 return ''
-            line = item.source and utils.get_relative_path(path=item.source, len_base_path=len_base_path, base_is_dir=base_is_dir) or ''
+            line = source and utils.get_relative_path(path=source, len_base_path=len_base_path, base_is_dir=base_is_dir) or ''
         else:
-            line = item.source and fileutils.file_name(item.source) or ''
+            line = source and fileutils.file_name(source) or ''
         if not isinstance(line, unicode):
             line = toascii(line, translit=True).decode('utf-8', 'replace')
         return 'Extracting: %(line)s' % locals()
@@ -131,13 +146,13 @@ def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # @Reser
             has_errors = has_errors or bool(xev.errors)
             has_warnings = has_warnings or bool(xev.warnings)
             source = fileutils.as_posixpath(xev.source)
-            source = utils.get_relative_path(path=source, len_base_path=len_base_path, base_is_dir=base_is_dir)
             if not isinstance(source, unicode):
                 source = toascii(source, translit=True).decode('utf-8', 'replace')
+                source = utils.get_relative_path(path=source, len_base_path=len_base_path, base_is_dir=base_is_dir)
             for e in xev.errors:
-                echo_stderr('ERROR extracting: %(source)s: %(e)r' % locals(), fg='red')
+                echo_stderr('ERROR extracting: %(source)s: %(e)s' % locals(), fg='red')
             for warn in xev.warnings:
-                echo_stderr('WARNING extracting: %(source)s: %(warn)r' % locals(), fg='yellow')
+                echo_stderr('WARNING extracting: %(source)s: %(warn)s' % locals(), fg='yellow')
 
         summary_color = 'green'
         if has_warnings:

@@ -1,0 +1,77 @@
+Xming Terms and Conditions
+
+1. Component licenses
+
+Xming is a derivative work with many Open Source component licenses and exceptions. [WWW]X11 style licenses apply to libX11 and X.Org xserver source code (two of the largest components), and X.Org client applications. Xming does not link to the Cygwin™ API library or use Cygwin code. See Appendix A for license detail of components sourced external to the [WWW]X.Org Foundation.
+
+Note: The U.S. spelling for the noun licence is used throughout this website as most licenses referenced are of U.S. origin.
+
+2. Applicability
+
+This agreement is mandatory for Project Xming releases and components downloaded from this website, but not Public Domain releases from [WWW]SourceForge Project Xming.
+
+3. Distribution
+
+Please distribute freely Public Domain releases from SourceForge.
+
+Redistributing any part (or whole) of the Xming website, documentation, images, executables or installers, by the internet, other projects/products or via media such as CD's, without asking permission, attributing 'Colin Harrison' and providing links to StraightRunning.com/XmingNotes/ and [WWW]SourceForge Project Xming will be regarded as a breach of copyright.
+
+4. Clarifications
+
+Xming installers and components are Public Domain if put on [WWW]SourceForge, by me. You can do what you like with Public Domain releases including freely distributing them; they still retain all original authors' licenses appropriately, but I have relinquished my rights over them. However; everything downloaded from this website (for Project Xming) has this mandatory agreement.
+
+Some Xming components contain cryptographic items and as such are illegal in countries where encryption is outlawed. The encryption methods and algorithms used are freely available in the Public Domain and therefore not subject to export controls in Europe. If you are a U.S. citizen exporting Project Xming code: you are solely responsible for being compliant with any applicable U.S. Export Administration Regulations.
+
+Commercial and Public Sector users, who want to use Xming Website Releases (fully or partially) in connection with their work must have purchased a licence (i.e. not just made a donation). Here is the Xming License Order Form (note: Xming installation on a shared computer can be counted as just one 'User' and a Site License allows unlimited numbers of 'Users'). Academic or research institutions must obtain an Academic Site License in order to use Xming Website Releases. Installation is only allowed on equipment owned by the person, organisation or site named on their license document. Licenses are for the lifetime of the product and come with access to one year of updates (i.e. this access has a small annual renewal fee).
+
+Xming licenses are only available directly and no reselling or transfer is permitted or possible. Xming software is licensed not sold. You may not publish Project Xming software for others to copy; or distribute, rent, lease or lend any part of it without written permission.
+
+Private individuals, who want to use Xming Website Releases as sole user at home, will be given access to them for one year after making a small Donation to help fund the replacement equipment needed to further Xming development (i.e. by renewable subscription). This donation access can also be used to trial Xming, prior to purchase of a full license, but please ask for permission before doing this.
+
+All customer information and emails are treated as confidential. No customer specific data will be disclosed on StraightRunning.com or by Colin Harrison to any third-party without obtaining consent. No Project Xming software is used to control usage or collect and return data to me or any third-party.
+
+I Colin Harrison, in my sole discretion, have the right to suspend or terminate your access and use of StraightRunning.com, for any reason at any time.
+
+Xming comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law i.e. all Project Xming components are provided "as is" with no implied fitness for any purpose. I accept NO LIABILITY for any loss or damage arising out of use of Xming or any Project Xming components i.e. use at your own risk.
+
+Genuine Xming dlls and binaries always have a project [WWW]version-information resource. Beware of Xming imitations and untraceable installers/uninstallers (please ask me to confirm VERSIONINFO and MD5 signatures of any suspicious file). Note: all Project Xming dlls and binaries are made 'fresh' and consistent from strictly controlled source code (using a cross-compiler toolchain also built, by me, from canonical sources); none are supplied from third-party builds.
+
+I can be contacted by email at colin<at>xming<dot>myzen<dot>co<dot>uk or colin<dot>harrison<at>virgin<dot>net (the latter email address will die when TalkTalk switch off Virgin Media addresses ending in <at>virgin<dot>net :)). These addresses are also shared by my PayPal account.
+
+5. Appendices
+
+Component licenses in detail
+
+This appendix details Xming's Open Source code licenses for components sourced external to the [WWW]X.Org Foundation. These licenses allow Project Xming to be as unconstrained as possible... Xming source code can be used proprietary and closed, and at the same time, all component source licenses are GPL compatible (with the caveat, below, for FreeType and noting that Htmlhelp.lib(s) are optional closed source static libraries from Microsoft).
+
+No source code is GPL licensed in any release, other than for run.exe, and any GPL COPYING file or file marking (e.g. in Xming 6.9.0.31), can be assumed to be an error and deleted/ignored. Put simply: Xming is not licensed under the GPL and non-copyleft; but the Run utility is (N.B. run.exe, and its source, are now separate from Project Xming).
+
+Xming dynamically links to one LGPL library. Also two FSF exceptions are applicable. Details of source code, modifications and licenses; plus both FSF exceptions...
+
+winlocalename.c is adapted from file localename.c (an LGPLv2.1 file in [WWW]gettext-0.17/gettext-runtime/intl/).
+
+[WWW]DejaVue fonts are supplied unmodified under this license.
+
+FreeType is supplied modified from the canonical [WWW]FreeType2 source under this BSD-style license (which has a credit clause). Note: builders of FreeType can [WWW]choose to use GPLv2 instead.
+
+[WWW]Mesa 11.3.0-devel is supplied modified from the canonical [WWW]freedesktop.org source under this Mesa license.
+
+Extension headers and specifications from the canonical [WWW]OpenGL Registry are used under SGI Free Software License B.
+
+The [WWW]Pthreads-Win32 dll, built from modified source, is dynamically-linked from Xming and supplied compliant with LGPLv2.1.
+
+[WWW]PuTTY is used under its permissive MIT license.
+
+Xmon is supplied modified from this source code under this license.
+
+[WWW]zlib is supplied modified from this source code under this license.
+
+[WWW]Inno Setup is used under this license to create the Xming installers.
+
+Htmlhelp.lib static libraries, from Microsoft's x86 and x64 Distributable Code in the [WWW]Windows Software Development Kit (SDK) for Windows 8, are linked to XLaunch and portablePuTTY executables under this license.
+
+[WWW]MinGW-w64 is used under this runtime license to create Project Xming executables and libraries.
+
+Header files and runtime libraries from the [WWW]GNU Complier Collection are included in compiled code under the GCC runtime library exception.
+
+Output from the [WWW]GNU Bison utility, which includes the skeleton code for the parser's implementation, is compiled into some Project Xming components. This is licensed under the Bison special exception.

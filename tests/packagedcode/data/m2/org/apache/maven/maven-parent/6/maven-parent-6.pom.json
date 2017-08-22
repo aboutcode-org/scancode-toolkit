@@ -1,0 +1,529 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven", 
+  "artifact_id": "maven-parent", 
+  "version": "6", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache", 
+    "artifact_id": "apache", 
+    "version": "4", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Apache Maven", 
+  "description": "Maven is a software project management and comprehension tool. Based on the concept of a project object model   (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.", 
+  "inception_year": "2002", 
+  "url": "http://maven.apache.org/", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "jvanzyl", 
+      "name": "Jason van Zyl", 
+      "email": "jason@maven.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Chair"
+      ]
+    }, 
+    {
+      "id": "aheritier", 
+      "name": "Arnaud Heritier", 
+      "email": "aheritier@apache.org", 
+      "url": null, 
+      "organization": "OCTO Technology", 
+      "organization_url": "http://www.octo.com", 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "brett", 
+      "name": "Brett Porter", 
+      "email": "brett@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "brianf", 
+      "name": "Brian Fox", 
+      "email": "brianf@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "carlos", 
+      "name": "Carlos Sanchez", 
+      "email": "carlos@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "dennisl", 
+      "name": "Dennis Lundberg", 
+      "email": "dennisl@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "evenisse", 
+      "name": "Emmanuel Venisse", 
+      "email": "evenisse@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "fgiust", 
+      "name": "Fabrizio Giustina", 
+      "email": "fgiust@apache.org", 
+      "url": null, 
+      "organization": "openmind", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "jdcasey", 
+      "name": "John Casey", 
+      "email": "jdcasey@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "joakime", 
+      "name": "Joakim Erdfelt", 
+      "email": "joakime@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "jstrachan", 
+      "name": "James Strachan", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "jtolentino", 
+      "name": "Ernesto Tolentino Jr.", 
+      "email": "jtolentino@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "jmcconnell", 
+      "name": "Jesse McConnell", 
+      "email": "jmcconnell@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "kenney", 
+      "name": "Kenney Westerhof", 
+      "email": "kenney@apache.org", 
+      "url": null, 
+      "organization": "Neonics", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "ltheussl", 
+      "name": "Lukas Theussl", 
+      "email": "ltheussl@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "mperham", 
+      "name": "Mike Perham", 
+      "email": "mperham@gmail.com", 
+      "url": null, 
+      "organization": "IBM", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "snicoll", 
+      "name": "Stephane Nicoll", 
+      "email": "snicoll@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "trygvis", 
+      "name": "Trygve Laugstol", 
+      "email": "trygvis@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "vmassol", 
+      "name": "Vincent Massol", 
+      "email": "vmassol@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "vsiveton", 
+      "name": "Vincent Siveton", 
+      "email": "vsiveton@apache.org", 
+      "url": null, 
+      "organization": "ASF", 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "wsmoak", 
+      "name": "Wendy Smoak", 
+      "email": "wsmoak@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "PMC Member"
+      ]
+    }, 
+    {
+      "id": "aramirez", 
+      "name": "Allan Q. Ramirez", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "baerrach", 
+      "name": "Barrie Treloar", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "bayard", 
+      "name": "Henri Yandell", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "bellingard", 
+      "name": "Fabrice Bellingard", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "chrisjs", 
+      "name": "Chris Stevenson", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "dantran", 
+      "name": "Dan Tran", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "dblevins", 
+      "name": "David Blevins", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "dfabulich", 
+      "name": "Daniel Fabulich", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "dkulp", 
+      "name": "Daniel Kulp", 
+      "email": "dkulp@apache.org", 
+      "url": null, 
+      "organization": "IONA", 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "dlr", 
+      "name": "Daniel Rall", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "epunzalan", 
+      "name": "Edwin Punzalan", 
+      "email": "epunzalan@mergere.com", 
+      "url": null, 
+      "organization": "Mergere", 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "felipeal", 
+      "name": "Felipe Leme", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "handyande", 
+      "name": "Andrew Williams", 
+      "email": "handyande@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "jjensen", 
+      "name": "Jeff Jensen", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "mkleint", 
+      "name": "Milos Kleint", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "oching", 
+      "name": "Maria Odea B. Ching", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "pschneider", 
+      "name": "Patrick Schneider", 
+      "email": "pschneider@gmail.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "rgoers", 
+      "name": "Ralph Goers", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "rinku", 
+      "name": "Rahul Thakur", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "shinobu", 
+      "name": "Shinobu Kuwai", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }, 
+    {
+      "id": "smorgrav", 
+      "name": "Torbjorn Eikli Smorgrav", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Committer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Maven Announcements List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-announce/"
+    }, 
+    {
+      "name": "Maven Issues List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-issues/"
+    }, 
+    {
+      "name": "Maven Notifications List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-notifications/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:https://svn.apache.org/repos/asf/maven/pom/tags/maven-parent-6", 
+    "developer_connection": null, 
+    "url": "https://svn.apache.org/repos/asf/maven/pom/tags/maven-parent-6", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://jira.codehaus.org/browse/MNG"
+  }, 
+  "ci_management": {
+    "system": "continuum", 
+    "url": "http://maven.zones.apache.org/continuum"
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "apache.website", 
+      "name": null, 
+      "url": "scp://people.apache.org/www/maven.apache.org"
+    }, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

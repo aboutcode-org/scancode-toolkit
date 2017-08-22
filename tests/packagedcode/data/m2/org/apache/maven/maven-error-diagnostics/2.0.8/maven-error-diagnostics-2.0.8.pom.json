@@ -1,0 +1,42 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven", 
+  "artifact_id": "maven-error-diagnostics", 
+  "version": "2.0.8", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.apache.maven", 
+    "artifact_id": "maven", 
+    "version": "2.0.8", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Error Diagnostics", 
+  "description": "Provides a manager component which will process a given Throwable instance through a set of diagnostic\n    sub-components, and return a String message with user-friendly information about the error and possibly\n    how to fix it.", 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-container-default", 
+        "version": "latest.release", 
+        "required": true
+      }
+    ]
+  }
+}

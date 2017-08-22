@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,17 +22,19 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import os
 
 from commoncode.testcase import FileBasedTesting
 
+from licensedcode import cache
 from licensedcode import index
-from licensedcode.models import Rule
-
-from licensedcode.query import Query
 from licensedcode import models
+from licensedcode.models import Rule
+from licensedcode.query import Query
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -228,9 +230,9 @@ class TestQueryWithSingleRun(IndexTesting):
              },
             {'end': 36, 'start': 36, 'tokens': u'redistributions'}]
         assert expected == result
- 
+
         expected_lbp = [
-            4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 
+            4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8,
             9, 9, 9, 9, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 15
         ]
         assert expected_lbp == qry.line_by_pos
@@ -410,6 +412,18 @@ class TestQueryWithMultipleRuns(IndexTesting):
         expected = ['redistributions', 'in', 'binary', 'form', 'must', 'redistributions', 'in']
         assert expected == result
 
+    def test_QueryRun_repr(self):
+        idx = index.LicenseIndex([Rule(_text='redistributions in binary form must redistributions in')])
+        qry = Query(query_string='redistributions in binary form must redistributions in', idx=idx)
+        qruns = qry.query_runs
+        qr = qruns[0]
+        # test
+        expected = 'QueryRun(start=0, len=7, start_line=1, end_line=1)'
+        assert expected == repr(qr)
+
+        expected = 'QueryRun(start=0, len=7, start_line=1, end_line=1, tokens="redistributions in binary form must redistributions in")'
+        assert expected == qr.__repr__(trace_repr=True)
+
     def test_query_runs_text_is_correct(self):
         test_rules = self.get_test_rules('query/full_text/idx',)
         idx = index.LicenseIndex(test_rules)
@@ -514,9 +528,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
         result = [qr.to_dict() for qr in q.query_runs]
         expected = [
             {'end': 0, 'start': 0, 'tokens': u'inc'},
-            {
-            'end': 123,
-            'start': 1,
+            {'end': 123, 'start': 1,
             'tokens': (
                 u'this library is free software you can redistribute it and or modify '
                 u'it under the terms of the gnu library general public license as '
@@ -528,10 +540,43 @@ class TestQueryWithMultipleRuns(IndexTesting):
                 u'license for more details you should have received a copy of the gnu '
                 u'library general public license along with this library see the file '
                 u'copying lib if not write to the free software foundation inc 51 '
-                u'franklin street fifth floor boston ma 02110 1301 usa'
-            )
-        }]
+                u'franklin street fifth floor boston ma 02110 1301 usa')
+             }
+        ]
         assert expected == result
+
+    def test_query_run_and_tokenizing_breaking_works__with_plus_as_expected(self):
+        rule_dir = self.get_test_loc('query/run_breaking/rules')
+        rules = list(models.load_rules(rule_dir))
+        idx = index.LicenseIndex(rules)
+        query_doc = self.get_test_loc('query/run_breaking/query.txt')
+        q = Query(query_doc, idx=idx)
+        result = [qr.to_dict() for qr in q.query_runs]
+        expected = [
+            {'end': 121, 'start': 0,
+             'tokens': 
+                'this library is free software you can redistribute it '
+                'and or modify it under the terms of the gnu library '
+                'general public license as published by the free software '
+                'foundation either version 2 of the license or at your '
+                'option any later version this library is distributed in '
+                'the hope that it will be useful but without any warranty '
+                'without even the implied warranty of merchantability or '
+                'fitness for a particular purpose see the gnu library '
+                'general public license for more details you should have '
+                'received a copy of the gnu library general public '
+                'license along with this library see the file copying lib '
+                'if not write to the free software foundation 51 franklin '
+                'street fifth floor boston ma 02110 1301 usa'}
+        ]
+
+        assert expected == result
+        q.tokens
+        # check rules token are the same exact set as the set of the last query run
+        txtid = idx.tokens_by_tid
+        qrt = [txtid[t] for t in q.query_runs[-1].tokens]
+        irt = [txtid[t] for t in idx.tids_by_rid[0]]
+        assert irt == qrt
 
 
 class TestQueryWithFullIndex(FileBasedTesting):
@@ -539,13 +584,13 @@ class TestQueryWithFullIndex(FileBasedTesting):
 
     def test_query_from_binary_lkms_1(self):
         location = self.get_test_loc('query/ath_pci.ko')
-        idx = index.get_index()
+        idx = cache.get_index()
         result = Query(location, idx=idx)
         assert len(result.query_runs) < 15
 
     def test_query_from_binary_lkms_2(self):
         location = self.get_test_loc('query/eeepc_acpi.ko')
-        idx = index.get_index()
+        idx = cache.get_index()
         result = Query(location, idx=idx)
         assert len(result.query_runs) < 500
         qrs = result.query_runs[5:10]
@@ -554,7 +599,7 @@ class TestQueryWithFullIndex(FileBasedTesting):
 
     def test_query_from_binary_lkms_3(self):
         location = self.get_test_loc('query/wlan_xauth.ko')
-        idx = index.get_index()
+        idx = cache.get_index()
         result = Query(location, idx=idx)
         assert len(result.query_runs) < 900
         qr = result.query_runs[0]
@@ -571,16 +616,21 @@ class TestQueryWithFullIndex(FileBasedTesting):
         include asm generic include acpi acpi c posix types 32 h types h types h h h
         h h
         '''.split())
-        idx = index.get_index()
+        idx = cache.get_index()
         result = Query(query_string=query_s, idx=idx)
         assert 1 == len(result.query_runs)
         qr = result.query_runs[0]
         # NOTE: this is not a token present in any rules or licenses
-        unknown_token = u'baridationally'
-        assert unknown_token not in idx.dictionary
-        assert u' '.join([t for t in query_s.split() if t not in (unknown_token, 'proc')]) == u' '.join(idx.tokens_by_tid[t] for t in qr.tokens)
+        unknown_tokens = ('baridationally',)
+        assert unknown_tokens not in idx.dictionary
+        assert u' '.join([t for t in query_s.split() if t not in unknown_tokens]) == u' '.join(idx.tokens_by_tid[t] for t in qr.tokens)
 
     def test_query_run_tokens_matchable(self):
+        idx = cache.get_index()
+        # NOTE: this is not a token present in any rules or licenses
+        unknown_token = u'baridationally'
+        assert unknown_token not in idx.dictionary
+
         query_s = u' '.join(u'''
 
         3 unable to create proc entry license gpl description driver author eric
@@ -593,27 +643,24 @@ class TestQueryWithFullIndex(FileBasedTesting):
         linux include asm include asm generic include acpi acpi c posix types 32 h
         types h types h h h h h
         '''.split())
-        idx = index.get_index()
         result = Query(query_string=query_s, idx=idx)
-
         assert 1 == len(result.query_runs)
         qr = result.query_runs[0]
         expected_qr0 = u' '.join(u'''
-        3 unable to create entry license gpl description driver author eric depends 2
-        6 24 19 generic smp mod module acpi register driver acpi disabled acpi
-        install notify acpi get status cache caches create entry generate event acpi
-        evaluate object acpi remove notify remove entry acpi driver acpi acpi gcc gnu
-        4 2 3 ubuntu 4 2 3 gcc gnu 4 2 3 ubuntu 4 2 3 current stack pointer current
-        stack pointer this module end usr src modules acpi include linux include asm
-        include asm generic include acpi acpi c posix types 32 h types h types h h h
-        h h
+        3 unable to create proc entry license gpl description driver author eric
+        depends 2 6 24 19 generic smp mod module acpi             register driver
+        proc acpi disabled acpi install notify acpi               get status cache
+        caches create proc entry                generate proc event acpi evaluate
+        object acpi remove notify remove proc entry acpi             driver acpi
+        acpi gcc gnu 4 2 3 ubuntu 4 2 3 gcc gnu 4 2 3 ubuntu 4 2 3 current stack
+        pointer current stack pointer this module end usr src modules acpi include
+        linux include asm include asm generic include acpi acpi c posix types 32 h
+        types h types h h h h h
         '''.split())
         assert expected_qr0 == u' '.join(idx.tokens_by_tid[t] for t in qr.tokens)
 
-        # NOTE: this is not a token present in any rules or licenses
-        unknown_token = u'baridationally'
-        assert unknown_token not in idx.dictionary
         assert expected_qr0 == u' '.join(idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.matchables)
 
+        # only gpl is in high matchables
         expected = u'gpl'
         assert expected == u' '.join(idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.high_matchables)

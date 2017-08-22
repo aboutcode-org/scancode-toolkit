@@ -1,0 +1,56 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.mortbay.jetty", 
+  "artifact_id": "jetty", 
+  "version": "6.1.5", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.mortbay.jetty", 
+    "artifact_id": "project", 
+    "version": "6.1.5", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Jetty Server", 
+  "description": "Jetty server core", 
+  "inception_year": null, 
+  "url": "http://jetty.mortbay.org", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "latest.release", 
+        "required": true
+      }
+    ], 
+    "compile": [
+      {
+        "group_id": "org.mortbay.jetty", 
+        "artifact_id": "jetty-util", 
+        "version": "6.1.5", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.mortbay.jetty", 
+        "artifact_id": "servlet-api-2.5", 
+        "version": "6.1.5", 
+        "required": true
+      }
+    ]
+  }
+}

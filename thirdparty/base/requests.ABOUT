@@ -1,0 +1,15 @@
+about_resource: requests-2.17.3-py2.py3-none-any.whl
+version: 2.17.3
+download_url: https://pypi.python.org/packages/29/b9/d26a6ab2ee178415ab8c0c591d2a1eb782a50c42a417ae390055f86a63c1/requests-2.17.3-py2.py3-none-any.whl
+
+name: requests
+home_url: http://python-requests.org
+owner: Kenneth Reitz
+dje_license: apache-2.0
+notice_file: requests.NOTICE
+license_text_file: apache-2.0.LICENSE
+
+vcs_tool: git
+vcs_repository: https://github.com/kennethreitz/requests.git
+
+copyright: Copyright (c) 2017 Kenneth Reitz

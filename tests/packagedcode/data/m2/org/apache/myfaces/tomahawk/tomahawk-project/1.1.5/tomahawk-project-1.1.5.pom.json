@@ -1,0 +1,55 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.myfaces.tomahawk", 
+  "artifact_id": "tomahawk-project", 
+  "version": "1.1.5", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache.myfaces.maven", 
+    "artifact_id": "myfaces-master", 
+    "version": "1.0.5", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Tomahawk Project", 
+  "description": "Apache MyFaces Tomahawk is a sub-project of Apache MyFaces which provides an extensive sets\n  of custom components for use in your JSF-projects. Additionally, Tomahawk includes many custom\n  features helping you to implement JSF-projects more easily.", 
+  "inception_year": null, 
+  "url": "http://myfaces.apache.org/tomahawk", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [
+    "core", 
+    "examples"
+  ], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:https://svn.apache.org/repos/asf/myfaces/tomahawk/branches/1_1_5", 
+    "developer_connection": null, 
+    "url": "https://svn.apache.org/repos/asf/myfaces/tomahawk/branches/1_1_5", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://issues.apache.org/jira/browse/TOMAHAWK"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [
+    {
+      "id": "apache-maven-snapshots", 
+      "name": null, 
+      "url": "http://people.apache.org/repo/m2-snapshot-repository"
+    }, 
+    {
+      "id": "myfaces-staging", 
+      "name": null, 
+      "url": "http://people.apache.org/builds/myfaces/m2-staging-repository"
+    }
+  ], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

@@ -1,0 +1,3 @@
+Modules without a
+ MODULE_LICENSE or with a MODULE_LICENSE that is not recognised by
+ insmod as GPL compatible are assumed to be proprietary.

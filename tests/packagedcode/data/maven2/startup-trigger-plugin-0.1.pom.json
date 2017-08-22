@@ -1,0 +1,57 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.jvnet.hudson.plugins", 
+  "artifact_id": "startup-trigger-plugin", 
+  "version": "0.1", 
+  "classifier": null, 
+  "packaging ": "hpi", 
+  "parent": {
+    "group_id": "org.jvnet.hudson.plugins", 
+    "artifact_id": "plugin", 
+    "version": "1.339", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Startup Trigger", 
+  "description": null, 
+  "inception_year": null, 
+  "url": "http://wiki.hudson-ci.org/display/HUDSON/Startup+Trigger", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "ashlux", 
+      "name": "Ash Lux", 
+      "email": "ashlux@gmail.com", 
+      "url": "http://www.ashlux.com/", 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:https://guest@svn.dev.java.net/svn/hudson/tags/startup-trigger-plugin-0.1", 
+    "developer_connection": null, 
+    "url": "https://hudson.dev.java.net/source/browse/hudson/tags/startup-trigger-plugin-0.1", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "org.mockito", 
+        "artifact_id": "mockito-all", 
+        "version": "1.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

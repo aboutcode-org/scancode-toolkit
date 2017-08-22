@@ -24,6 +24,7 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 import os
 from collections import OrderedDict
@@ -109,9 +110,9 @@ def get_link_target(location):
 # The order of types check matters: link -> file -> directory -> special
 TYPES = OrderedDict([
     (is_link, ('l', 'link',)),
-     (is_file, ('f', 'file',)),
-     (is_dir, ('d', 'directory',)),
-     (is_special, ('s', 'special',))
+    (is_file, ('f', 'file',)),
+    (is_dir, ('d', 'directory',)),
+    (is_special, ('s', 'special',))
 ])
 
 
@@ -166,7 +167,7 @@ def is_executable(location):
 
 def is_rwx(location):
     """
-    Return True if the file at location has read, write and executable 
+    Return True if the file at location has read, write and executable
     permission set. Does not follow links.
     """
     return is_readable(location) and is_writable(location) and is_executable(location)

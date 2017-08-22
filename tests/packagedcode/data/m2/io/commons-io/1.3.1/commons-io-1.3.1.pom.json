@@ -1,0 +1,339 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "commons-io", 
+  "artifact_id": "commons-io", 
+  "version": "1.3.1", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "IO", 
+  "description": "Commons-IO contains utility classes, stream implementations, file filters, and endian classes.", 
+  "inception_year": "2002", 
+  "url": "http://jakarta.apache.org/commons/io/", 
+  "organization_name": "The Apache Software Foundation", 
+  "organization_url": "http://jakarta.apache.org", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "/LICENSE.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [
+    {
+      "id": "sanders", 
+      "name": "Scott Sanders", 
+      "email": "sanders@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "dion", 
+      "name": "dIon Gillard", 
+      "email": "dion@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "nicolaken", 
+      "name": "Nicola Ken Barozzi", 
+      "email": "nicolaken@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "bayard", 
+      "name": "Henri Yandell", 
+      "email": "bayard@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "scolebourne", 
+      "name": "Stephen Colebourne", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "jeremias", 
+      "name": "Jeremias Maerki", 
+      "email": "jeremias@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "matth", 
+      "name": "Matthew Hawthorne", 
+      "email": "matth@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "martinc", 
+      "name": "Martin Cooper", 
+      "email": "martinc@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "roxspring", 
+      "name": "Rob Oxspring", 
+      "email": "roxspring@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }
+  ], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "Rahul Akolkar", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Jason Anderson", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Nathan Beyer", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Emmanuel Bourg", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Chris Eldredge", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Magnus Grimsell", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Jim Harrington", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Holger Hoffstatte", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Thomas Ledoux", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Andy Lehane", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Marcelo Liberato", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Alban Peignier", 
+      "email": "alban.peignier at free.fr", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Niall Pemberton", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Ian Springer", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Masato Tezuka", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "James Urie", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Jochen Wiedmann", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Frank W. Zammetti", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Commons Dev List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/jakarta-commons-dev/"
+    }, 
+    {
+      "name": "Commons User List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/jakarta-commons-user/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/jakarta/commons/proper/io/trunk", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/repos/asf/jakarta/commons/proper/io/trunk", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": null, 
+    "url": "http://issues.apache.org/jira/"
+  }, 
+  "ci_management": {
+    "system": null, 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "default", 
+      "name": "Default Site", 
+      "url": "scp://people.apache.org//www/jakarta.apache.org/commons/io/"
+    }, 
+    "repository": {
+      "id": "default", 
+      "name": "Default Repository", 
+      "url": "file:///www/jakarta.apache.org/builds/jakarta-commons/io/"
+    }, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }
+    ]
+  }
+}

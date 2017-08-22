@@ -1,0 +1,74 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.apache.maven.wagon:wagon-ssh", 
+  "version": "1.0-beta-2", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Maven Wagon SSH Provider", 
+  "description": null, 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": null, 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "com.jcraft:jsch", 
+        "version": null, 
+        "version_constraint": "0.1.27"
+      }, 
+      {
+        "name": "org.codehaus.plexus:plexus-interactivity-api", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "org.codehaus.plexus:plexus-utils", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "org.apache.maven.wagon:wagon-ssh-common", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }
+    ], 
+    "test": [
+      {
+        "name": "org.apache.maven.wagon:wagon-ssh-common-test", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

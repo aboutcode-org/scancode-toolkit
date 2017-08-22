@@ -1,0 +1,14 @@
+key: bsd-3-clause-no-nuclear-warranty
+short_name: Oracle BSD-Style with Nuclear Warranty
+name: BSD 3-Clause No Nuclear Warranty
+category: Permissive
+
+spdx_license_key: BSD-3-Clause-No-Nuclear-Warranty
+owner: Oracle Corporation
+other_urls:
+    - https://jogamp.org/git/?p=gluegen.git;a=blob_plain;f=LICENSE.txt
+
+notes: per SPDX.org, it is the same license as 
+    BSD-3-Clause-No-Nuclear-License, except it has a disclaimer for
+    nuclear factility use, instead of the software not licensed for
+    such use.

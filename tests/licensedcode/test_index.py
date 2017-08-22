@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import os
 import json
@@ -59,7 +61,7 @@ class TestIndexing(IndexTesting):
         expected = self.get_test_loc(expected)
         if regen:
             with open(expected, 'wb') as jx:
-                jx.write(json.dumps(as_dict, indent=2))
+                jx.write(json.dumps(as_dict, indent=2, separators=(',', ': ')))
 
         expected_as_dict = json.load(open(expected))
         assert expected_as_dict == as_dict

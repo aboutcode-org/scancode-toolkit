@@ -1,0 +1,236 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.acegisecurity:acegi-security-parent", 
+  "version": "1.0.5", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Acegi Security", 
+  "description": "Acegi Security System for Spring", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Ben Alex", 
+      "email": "benalex at users.sourceforge.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Colin Sampaleanu", 
+      "email": "colinml1 at exis.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Carlos Sanchez", 
+      "email": "carlossg at users.sourceforge.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Luke Taylor", 
+      "email": "luke_t at users.sourceforge.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Ray Krueger", 
+      "email": "raykrueger at users.sourceforge.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Robert Sanders", 
+      "email": "robertsanders at users.sourceforge.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Mark St.Godard", 
+      "email": "markstg at users.sourceforge.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "John A. Lewis", 
+      "email": "johnalewis at users.sourceforge.net", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [
+    {
+      "type": "person", 
+      "name": "Alan Stewart", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Cameron Braid", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Patrick Burleson", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Francois Beausoleil", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Wesley Hall", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Scott Evans", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Travis Gregg", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Karel Miarka", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "James Monaghan", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Andrew Petro", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Aaron Tang", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Orlando Garcia Carmona", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Joni Suominen", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Sergio Berna", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Paulo Neves", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Mike Perham", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Robin Bramley", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Robert Sanders", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Vishal Puri", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Martin Algesten", 
+      "email": null, 
+      "url": null
+    }
+  ], 
+  "owners": [
+    {
+      "type": "organization", 
+      "name": "Interface21, Inc", 
+      "email": null, 
+      "url": "http://sourceforge.net/projects/acegisecurity"
+    }
+  ], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://acegisecurity.org/", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "test": [
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.1"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 {#
 <!--
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -29,6 +29,9 @@
 -->
 #}
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>ScanCode scan results for: {{ scanned_path }}</title>
     <link href="{{ assets_dir }}/style.min.css" rel="stylesheet"/>
     <link href="{{ assets_dir }}/bootstrap.min.css" rel="stylesheet"/>
@@ -37,33 +40,33 @@
     <link href="{{ assets_dir }}/simple-sidebar.css" rel="stylesheet"/>
 </head>
 <body>
-
-<div class="container-fluid">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-            <span class="navbar-brand icon-primary"><a href="https://github.com/nexB/scancode-toolkit/" target="_blank">ScanCode</a> scan results for: {{ scanned_path }}</span>
-        </div>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="{{ assets_dir }}/help.html" target="_blank">Help</a></li>
-            <li><a href="http://www.nexb.com" target="_blank">Made by nexB</a></li>
-         </ul>
-      </div>
-    </nav>
-    <!--
+  <div class="navbar navbar-inverse navbar-static-top">
     <div class="container-fluid">
-      <div class="row">
-        <button id="button" class="btn btn-default" type="button" style="margin:10px">Toggle Path</button>
-          <div id="selected"></div>
+      <div class="navbar-header">
+          <span class="navbar-brand icon-primary"><a href="https://github.com/nexB/scancode-toolkit/" target="_blank"><strong>ScanCode</strong></a></span>
       </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{ assets_dir }}/help.html" target="_blank">Help</a></li>
+          <li><a href="http://www.nexb.com" target="_blank">Made by nexB</a></li>
+       </ul>
     </div>
-    -->
-    <div class="row">
-    <div class="col-md-4" id="leftCol">
-      <div id="tree" style="overflow-x:scroll; overflow-y:auto;"></div>
-    </div>
+  </div>
 
-    <div id="tabbar" class="col-md-8">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="row" id = "scan-result-header">
+        <div class="col-md-4">
+          <strong>scan results for:</strong>
+        </div>
+        <div class = "col-md-8" id = "file-path">
+          <p>{{ scanned_path }}</p>
+        </div>
+      </div>
+      <div class="col-md-4" id="leftCol">
+        <div id="tree" style="overflow-x:scroll; overflow-y:auto;"></div>
+      </div>
+
+      <div id="tabbar" class="col-md-8">
         <ul class="nav nav-tabs">
             <li id="tab4" class="active"><a data-toggle="tab" href="#chart">License Summary</a></li>
             <li id="tab5"><a data-toggle="tab" href="#">Copyright Summary</a></li>
@@ -78,18 +81,18 @@
         <div id="details">
             <table id="data_table" class="data_table display table-wrap" cellspacing="0" width="100%"></table>
         </div>
+      </div>
     </div>
   </div>
-</div>
-<footer class="footer">
-    <div class="container-fluid">
-        <p class="text-muted">Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-        No content created from ScanCode should be considered or used as legal advice. Consult an Attorney for any legal advice.
-        ScanCode is a free software code scanning tool from nexB Inc. and others.
-        Visit <a href="http://www.nexb.com/" target="_blank">http://www.nexb.com</a> and <a href="https://github.com/nexB/scancode-toolkit/" target="_blank">https://github.com/nexB/scancode-toolkit/</a> for support and download.
-        </p>
-    </div>
-</footer>
+  <footer class="footer">
+      <div class="container-fluid">
+          <p class="text-muted">Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+          No content created from ScanCode should be considered or used as legal advice. Consult an Attorney for any legal advice.
+          ScanCode is a free software code scanning tool from nexB Inc. and others.
+          Visit <a href="http://www.nexb.com/" target="_blank">http://www.nexb.com</a> and <a href="https://github.com/nexB/scancode-toolkit/" target="_blank">https://github.com/nexB/scancode-toolkit/</a> for support and download.
+          </p>
+      </div>
+  </footer>
   <script src="{{ assets_dir }}/jquery.min.js"></script>
   <script src="{{ assets_dir }}/bootstrap.min.js"></script>
   <script src="{{ assets_dir }}/jstree.min.js"></script>
@@ -188,7 +191,7 @@
           return $.map(data, function(item){
               var pattern = '^' + nodeData.selected[0];
               pattern += nodeData.node.children.length > 0 ? '/' : '';
-              if (item.location.match(pattern)){
+              if (item.path.match(pattern)){
                   return item;
               } else {
                   return;
@@ -250,7 +253,7 @@
         // Transform license count into array of objects with license name & count
         var chartData = $.map(count, function(val, key) {
             return {
-                name: key,
+                name: key.substr(0, 80),
                 val: val
             };
         });

@@ -7,6 +7,8 @@
   "summary": "A simple timer.", 
   "description": null, 
   "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
   "authors": [
     {
       "type": "person", 

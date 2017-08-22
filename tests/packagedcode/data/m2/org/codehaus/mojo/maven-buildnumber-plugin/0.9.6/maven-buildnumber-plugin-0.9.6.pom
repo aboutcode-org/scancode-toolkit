@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>maven-buildnumber-plugin</artifactId>
+    <packaging>maven-plugin</packaging>
+    <name>Maven Build Number Plugin</name>
+    <version>0.9.6</version>
+
+    <developers>
+        <developer>
+            <id>woodj</id>
+            <name>Julian Wood</name>
+            <email>woodj@ucalgary.ca</email>
+            <organization>Learning Commons, University of Calgary</organization>
+            <organizationUrl>http://commons.ucalgary.ca</organizationUrl>
+            <roles>
+                <role>Programmer</role>
+            </roles>
+        </developer>
+    </developers>
+
+
+    <scm>
+        <connection>scm:svn:http://woodj@apollo.ucalgary.ca:8800/maven-buildnumber-plugin/tags/maven-buildnumber-plugin-0.9.6</connection>
+        <developerConnection>scm:svn:http://woodj@apollo.ucalgary.ca:8800/maven-buildnumber-plugin/tags/maven-buildnumber-plugin-0.9.6</developerConnection>
+        <url>http://woodj@apollo.ucalgary.ca:8800/maven-buildnumber-plugin/tags/maven-buildnumber-plugin-0.9.6</url>
+    </scm>
+
+    <issueManagement>
+        <system>mantis</system>
+        <url>http://commons.ucalgary.ca/mantis/set_project.php?project_id=36</url>
+    </issueManagement>
+
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-project</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-settings</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-api</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-api</artifactId>
+            <version>1.0-beta-3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-manager-plexus</artifactId>
+            <version>1.0-beta-3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-provider-svnexe</artifactId>
+            <version>1.0-beta-3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-provider-cvsexe</artifactId>
+            <version>1.0-beta-3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-provider-starteam</artifactId>
+            <version>1.0-beta-3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-provider-clearcase</artifactId>
+            <version>1.0-beta-3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-provider-perforce</artifactId>
+            <version>1.0-beta-3</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>2.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.0-beta-4</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.0.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>2.0-beta-5</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.3</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>2.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven</groupId>
+                    <artifactId>maven-archiver</artifactId>
+                    <version>2.0.1</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>maven-buildnumber-plugin</artifactId>
+                <version>0.9.6</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Implementation-Build>${buildNumber}</Implementation-Build>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <tagBase>http://woodj@apollo.ucalgary.ca:8800/${project.artifactId}/tags</tagBase>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-idea-plugin</artifactId>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.4</source>
+                    <target>1.4</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+            <url>http://commons.ucalgary.ca/projects/licenses/mit-license.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <distributionManagement>
+        <repository>
+            <id>commons.ucalgary.ca</id>
+            <name>Learning Commons Server</name>
+            <url>sftp://commons.ucalgary.ca/Library/WebServer/Documents/pub/m2</url>
+        </repository>
+        <site>
+            <id>commons.ucalgary.ca</id>
+            <name>Learning Commons</name>
+            <url>scp://commons.ucalgary.ca/Library/WebServer/Documents/projects/${project.artifactId}/</url>
+        </site>
+        <snapshotRepository>
+            <id>tlc-snapshots</id>
+            <name>TLC Snapshot Development Repository</name>
+            <url>sftp://commons.ucalgary.ca/Library/WebServer/Documents/pub/m2-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>tlc-snapshots</id>
+            <name>TLC Snapshot Development Repository</name>
+            <url>http://commons.ucalgary.ca/pub/m2-snapshots</url>
+        </repository>
+        <repository>
+            <id>snapshots</id>
+            <name>Maven Snapshot Development Repository</name>
+            <url>http://snapshots.maven.codehaus.org/maven2</url>
+        </repository>
+    </repositories>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependencies</report>
+                            <report>project-team</report>
+                            <report>issue-tracking</report>
+                            <report>license</report>
+                            <report>scm</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-plugin-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>changes-maven-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <configuration>
+                            <xmlPath>${basedir}/src/site/changes.xml</xmlPath>
+                            <link_template>%URL%/view.php?id=%ISSUE%</link_template>
+                        </configuration>
+                        <reports>
+                            <report>changes-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jxr-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </reporting>
+
+</project>

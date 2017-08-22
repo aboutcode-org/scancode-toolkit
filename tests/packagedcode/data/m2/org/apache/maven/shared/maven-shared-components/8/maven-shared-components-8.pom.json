@@ -1,0 +1,71 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.shared", 
+  "artifact_id": "maven-shared-components", 
+  "version": "8", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache.maven", 
+    "artifact_id": "maven-parent", 
+    "version": "7", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Shared Components", 
+  "description": "Maven shared components", 
+  "inception_year": null, 
+  "url": "http://maven.apache.org/shared/", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [
+    "maven-ant", 
+    "maven-archiver", 
+    "maven-plugin-tools", 
+    "maven-reporting-impl", 
+    "maven-model-converter", 
+    "maven-shared-io", 
+    "maven-shared-monitor", 
+    "file-management", 
+    "maven-plugin-testing-harness", 
+    "maven-invoker", 
+    "maven-verifier", 
+    "maven-web-ui-tests", 
+    "maven-app-configuration", 
+    "maven-plugin-testing-tools", 
+    "maven-test-tools", 
+    "maven-repository-builder", 
+    "maven-script", 
+    "maven-common-artifact-filters", 
+    "maven-dependency-analyzer", 
+    "maven-shared-jar"
+  ], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/maven/shared/tags/maven-shared-components-8", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewcvs.cgi/maven/shared/tags/maven-shared-components-8", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://jira.codehaus.org/browse/MNG"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "apache.website", 
+      "name": null, 
+      "url": "scp://people.apache.org/www/maven.apache.org/shared/"
+    }, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

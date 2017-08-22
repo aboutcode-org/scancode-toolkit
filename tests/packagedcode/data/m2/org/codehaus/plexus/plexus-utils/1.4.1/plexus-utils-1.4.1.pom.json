@@ -1,0 +1,38 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.codehaus.plexus", 
+  "artifact_id": "plexus-utils", 
+  "version": "1.4.1", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.codehaus.plexus", 
+    "artifact_id": "plexus", 
+    "version": "1.0.11", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Plexus Common Utilities", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.codehaus.org/plexus/plexus-utils/tags/plexus-utils-1.4.1", 
+    "developer_connection": null, 
+    "url": "http://fisheye.codehaus.org/browse/plexus/plexus-utils/tags/plexus-utils-1.4.1", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

@@ -119,6 +119,8 @@ class TestNuget(FileBasedTesting):
                             u' .NET Framework 4.5, Windows 8, or Windows Phone 8.1 when consuming a library that uses this package.\n\nSupported Platforms:'
                             u'\n- .NET Framework 4\n- Windows 8\n- Windows Phone 8.1\n- Windows Phone Silverlight 7.5\n- Silverlight 4\n- Portable Class Libraries'),
             ('payload_type', None),
+            ('size', None),
+            ('release_date', None),
             ('authors', [OrderedDict([('type', None), ('name', u'Microsoft'), ('email', None), ('url', None)])]),
             ('maintainers', []), ('contributors', []),
             ('owners', [OrderedDict([('type', None), ('name', u'Microsoft'), ('email', None), ('url', None)])]),

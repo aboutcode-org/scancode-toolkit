@@ -3,8 +3,8 @@ licenses:
     - gpl-3.0-plus
     - gpl-2.0-glibc
     - gpl-2.0-plus-ada
-    - gpl
-    - gpl
+    - gpl-1.0-plus
+    - gpl-1.0-plus
     - gpl-2.0-gcc-compiler-exception
     - classpath-exception-2.0
     - gpl-2.0-gcc
@@ -13,7 +13,7 @@ licenses:
     - gpl-2.0-plus-linking
     - gpl-2.0-plus
     - d-zlib
-    - lgpl
+    - lgpl-2.0-plus
     - gpl-2.0-plus-linking
     - mit
     - gfdl-1.2

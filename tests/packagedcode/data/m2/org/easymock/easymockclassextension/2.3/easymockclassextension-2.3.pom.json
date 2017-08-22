@@ -1,0 +1,70 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.easymock", 
+  "artifact_id": "easymockclassextension", 
+  "version": "2.3", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "EasyMock class extension", 
+  "description": "The EasyMock Class Extension allows to generate Mock Objects for classes", 
+  "inception_year": null, 
+  "url": "http://www.easymock.org", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [
+    {
+      "name": "MIT License", 
+      "url": "http://www.easymock.org/License.html", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:cvs:pserver:anonymous@easymock.cvs.sourceforge.net:/cvsroot/easymock:easymockclassextension", 
+    "developer_connection": null, 
+    "url": "http://easymock.cvs.sourceforge.net/easymock/easymockclassextension/", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.easymock", 
+        "artifact_id": "easymock", 
+        "version": "2.3", 
+        "required": true
+      }, 
+      {
+        "group_id": "cglib", 
+        "artifact_id": "cglib-nodep", 
+        "version": "2.1_3", 
+        "required": true
+      }
+    ], 
+    "provided": [
+      {
+        "group_id": "org.objenesis", 
+        "artifact_id": "objenesis", 
+        "version": "1.1", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "4.4", 
+        "required": true
+      }
+    ]
+  }
+}

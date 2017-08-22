@@ -1,0 +1,141 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.plugins", 
+  "artifact_id": "maven-pmd-plugin", 
+  "version": "2.3", 
+  "classifier": null, 
+  "packaging ": "maven-plugin", 
+  "parent": {
+    "group_id": "org.apache.maven.plugins", 
+    "artifact_id": "maven-plugins", 
+    "version": "10", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven PMD Plugin", 
+  "description": "A Maven plugin for the PMD toolkit, that produces a report on both code rule violations and detected copy and paste\n    fragments,\n    as well as being able to fail the build based on these metrics.", 
+  "inception_year": "2005", 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "John Allen", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Maven User List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-users"
+    }, 
+    {
+      "name": "Maven Developer List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-dev"
+    }, 
+    {
+      "name": "Maven Commits List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-dev"
+    }, 
+    {
+      "name": "Maven Announcements List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-announce/"
+    }, 
+    {
+      "name": "Maven Issues List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-issues/"
+    }, 
+    {
+      "name": "Maven Notifications List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/maven-notifications/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/maven/plugins/tags/maven-pmd-plugin-2.3", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewvc/maven/plugins/tags/maven-pmd-plugin-2.3", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "JIRA", 
+    "url": "http://jira.codehaus.org/browse/MPMD"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-model", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-plugin-api", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-project", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.reporting", 
+        "artifact_id": "maven-reporting-api", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.reporting", 
+        "artifact_id": "maven-reporting-impl", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.shared", 
+        "artifact_id": "maven-plugin-testing-harness", 
+        "version": "1.0-beta-1", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-resources", 
+        "version": "1.0-alpha-4", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-utils", 
+        "version": "1.4.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "pmd", 
+        "artifact_id": "pmd-jdk14", 
+        "version": "4.1.1", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-artifact", 
+        "version": "2.0", 
+        "required": true
+      }
+    ]
+  }
+}

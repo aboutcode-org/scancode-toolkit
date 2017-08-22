@@ -1,0 +1,34 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.aspectj", 
+  "artifact_id": "aspectjtools", 
+  "version": "1.6.0", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "AspectJ tools", 
+  "description": null, 
+  "inception_year": null, 
+  "url": "http://www.aspectj.org", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [
+    {
+      "name": "Eclipse Public License - v 1.0", 
+      "url": "http://www.eclipse.org/legal/epl-v10.html", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

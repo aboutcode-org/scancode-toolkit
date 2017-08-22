@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # NOTE: the iso-8859-15 charset is not a mistake.
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -26,11 +26,24 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 import re
 import logging
 import unicodedata
+
+import chardet
 from text_unidecode import unidecode
+
+
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+except NameError:
+    # Python 3
+    unicode = str
+
 
 """
 A text processing module providing functions to process and prepare text
@@ -69,8 +82,8 @@ def lines(s):
     ... '''
     >>> len([p[1] for p in lines(t)])
     5
-    >>> [p for p in lines(t)]
-    ['This problem is.', 'It is therefore', 'However,we', 'without introducing ..', 'However, I have']
+    >>> expected = ['This problem is.', 'It is therefore', 'However,we', 'without introducing ..', 'However, I have']
+    >>> assert expected == [p for p in lines(t)]
     """
     return [l.strip() for l in s.splitlines() if l.strip()]
 
@@ -94,14 +107,14 @@ def nopunctuation(text):
 
     For example:
     >>> t = '''This problem is about sequence-bunching, %^$^%**^&*Â©Â©^(*&(*()()_+)_!@@#:><>>?/./,.,';][{}{]just'''
-    >>> nopunctuation(t).split()
-    ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'just']
+    >>> expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'just']
+    >>> assert expected == nopunctuation(t).split()
     >>> t = r'''This problem is about: sequence-bunching
     ...
     ... just
     ... '''
-    >>> nopunctuation(t)
-    'This problem is about  sequence bunching  just '
+    >>> expected = 'This problem is about  sequence bunching  just '
+    >>> assert expected == nopunctuation(t)
     """
     return re.sub(nopunc(), ' ', text)
 
@@ -140,17 +153,17 @@ def nolinesep(text):
 
 def toascii(s, translit=False):
     u""" Convert a Unicode string to ASCII characters, including replacing accented
-    characters with their non-accented equivalent. 
-    
+    characters with their non-accented equivalent.
+
     If `translit` is False use the Unicode NFKD equivalence.
-    
+
     If `translit` is True, use a transliteration with the unidecode library.
-    
+
     Non ISO-Latin and non ASCII characters are stripped from the
-    output. 
+    output.
     When no transliteration is possible, the resulting character is replaced
     by an underscore "_".
-    
+
     For Unicode NFKD equivalence, see http://en.wikipedia.org/wiki/Unicode_equivalence
 
     The convertion may NOT preserve the original string length and with NFKD some
@@ -183,11 +196,8 @@ def python_safe_name(s):
     Return a name derived from string `s` safe to use as a Python identifier.
 
     For example:
-
     >>> s = "not `\\a /`good` -safe name ??"
-    >>> python_safe_name(s)
-    'not_good_safe_name'
-
+    >>> assert python_safe_name(s) == 'not_good_safe_name'
     """
     s = toascii(s)
     s = foldcase(s)
@@ -195,3 +205,35 @@ def python_safe_name(s):
     s = s.strip()
     s = '_'.join(s.split())
     return s
+
+
+def as_unicode(s):
+    """
+    Return unicode for a string be it bytes or unicode.
+    Try to decode as Unicode. Try first some default encodings,
+    then attempt Unicode trans-literation and finally
+    fall-back to ASCII strings extraction.
+
+    TODO: Add file/magic detection, unicodedmanit/BS3/4
+    """
+    if not s:
+        return s
+
+    if isinstance(s, unicode):
+        return s
+
+    try:
+        return s.decode('utf-8')
+    except UnicodeDecodeError:
+        try:
+            encoding = chardet.detect(s)
+            if encoding:
+                encoding = encoding.get('encoding')
+                return s.decode(encoding)
+        except UnicodeDecodeError:
+                pass
+        s = toascii(s, translit=True)
+        if not isinstance(s, unicode):
+            s = unicode(s)
+        return s
+

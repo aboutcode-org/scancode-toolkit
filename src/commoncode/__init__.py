@@ -22,10 +22,12 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 # set re and fnmatch _MAXCACHE to 1M to cache regex compiled aggressively
 # their default is 100 and many utilities and libraries use a lot of regex
-
 import re
 
 remax = getattr(re, '_MAXCACHE', 0)

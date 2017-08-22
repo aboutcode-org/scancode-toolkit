@@ -26,9 +26,9 @@
 from __future__ import absolute_import, division, print_function
 
 from array import array
-import cPickle
 from collections import Counter
 from collections import defaultdict
+import cPickle
 from functools import partial
 from itertools import izip
 from operator import itemgetter
@@ -36,32 +36,19 @@ import os
 import sys
 from time import time
 
-import ahocorasick
-
 from commoncode.dict_utils import sparsify
 
 from licensedcode import MAX_DIST
-
+from licensedcode.cache import get_index
 from licensedcode.frequent_tokens import global_tokens_by_ranks
 
-from licensedcode.match import get_texts
-from licensedcode.match import merge_matches
-from licensedcode.match import refine_matches
-from licensedcode.match import set_lines
-
+from licensedcode import match
 from licensedcode import match_aho
-from licensedcode.match_aho import exact_match
-from licensedcode.match_hash import index_hash
-from licensedcode.match_hash import match_hash
-from licensedcode.match_seq import match_sequence
-from licensedcode.match_set import compute_candidates
-from licensedcode.match_set import index_token_sets
-from licensedcode.match_set import tids_multiset_counter
-from licensedcode.match_set import tids_set_counter
-
+from licensedcode import match_hash
+from licensedcode import match_seq
+from licensedcode import match_set
 from licensedcode import query
-from licensedcode.tokenize import ngrams
-from licensedcode.tokenize import select_ngrams
+from licensedcode import tokenize
 
 """
 Main license index construction, query processing and matching entry points for
@@ -120,23 +107,8 @@ def get_license_matches(location=None, query_string=None, min_score=0):
     return get_index().match(location=location, query_string=query_string, min_score=min_score)
 
 
-# global in-memory cache of the license index
-_LICENSES_INDEX = None
-
-
-def get_index():
-    """
-    Return and eventually cache an index built from an iterable of rules.
-    Build the index from the built-in rules dataset.
-    """
-    global _LICENSES_INDEX
-    if not _LICENSES_INDEX:
-        from licensedcode.cache import get_or_build_index_from_cache
-        _LICENSES_INDEX = get_or_build_index_from_cache()
-    return _LICENSES_INDEX
-
-
 # Feature switch to enable or not ngram fragments detection
+# FIXME: this is not used
 USE_AHO_FRAGMENTS = False
 
 # length of ngrams used for fragments detection
@@ -209,8 +181,8 @@ class LicenseIndex(object):
         # token id and the value the actual token string
         self.tokens_by_tid = []
 
-        # Note: all mappings of rid-> data are lists of data where the index
-        # is the rule id.
+        # Note: all the following are mappings-like (using lists) of
+        # rid-> data are lists of data where the index is the rule id.
 
         # rule objects proper
         self.rules_by_rid = []
@@ -229,12 +201,13 @@ class LicenseIndex(object):
         # (low_tids_mset, high_tids_mset)
         self.tids_msets_by_rid = []
 
+        # ---
         # mapping of hash -> single rid : duplicated rules are not allowed
         self.rid_by_hash = {}
 
         # Aho-Corasick automatons for negative and small rules
-        self.rules_automaton = ahocorasick.Automaton(ahocorasick.STORE_ANY)
-        self.negative_automaton = ahocorasick.Automaton(ahocorasick.STORE_ANY)
+        self.rules_automaton = match_aho.get_automaton()
+        self.negative_automaton = match_aho.get_automaton()
 
         # disjunctive sets of rule ids: regular, negative, small, false positive
         self.regular_rids = set()
@@ -358,7 +331,7 @@ class LicenseIndex(object):
             rule = self.rules_by_rid[rid]
 
             # build hashes index and check for duplicates rule texts
-            rule_hash = index_hash(rule_token_ids)
+            rule_hash = match_hash.index_hash(rule_token_ids)
             dupe_rules_by_hash[rule_hash].append(rule)
 
             if rule.false_positive:
@@ -384,7 +357,7 @@ class LicenseIndex(object):
                 self.high_postings_by_rid[rid] = postings
 
                 # build high and low tids sets and multisets
-                rlow_set, rhigh_set, rlow_mset, rhigh_mset = index_token_sets(rule_token_ids, len_junk, len_good)
+                rlow_set, rhigh_set, rlow_mset, rhigh_mset = match_set.index_token_sets(rule_token_ids, len_junk, len_good)
                 self.tids_sets_by_rid[rid] = rlow_set, rhigh_set
                 self.tids_msets_by_rid[rid] = rlow_mset, rhigh_mset
 
@@ -397,17 +370,17 @@ class LicenseIndex(object):
                     rules_automaton_add(tids=rule_token_ids, rid=rid)
                     # ... and ngrams: compute ngrams and populate the automaton with ngrams
                     if USE_AHO_FRAGMENTS and rule.minimum_coverage < 100 and len(rule_token_ids) > NGRAM_LEN:
-                        all_ngrams = ngrams(rule_token_ids, ngram_length=NGRAM_LEN)
-                        selected_ngrams = select_ngrams(all_ngrams, with_pos=True)
+                        all_ngrams = tokenize.ngrams(rule_token_ids, ngram_length=NGRAM_LEN)
+                        selected_ngrams = tokenize.select_ngrams(all_ngrams, with_pos=True)
                         for pos, ngram in selected_ngrams:
                             rules_automaton_add(tids=ngram, rid=rid, start=pos)
 
                 # update rule thresholds
-                rule.low_unique = tids_set_counter(rlow_set)
-                rule.high_unique = tids_set_counter(rhigh_set)
+                rule.low_unique = match_set.tids_set_counter(rlow_set)
+                rule.high_unique = match_set.tids_set_counter(rhigh_set)
                 rule.length_unique = rule.high_unique + rule.low_unique
-                rule.low_length = tids_multiset_counter(rlow_mset)
-                rule.high_length = tids_multiset_counter(rhigh_mset)
+                rule.low_length = match_set.tids_multiset_counter(rlow_mset)
+                rule.high_length = match_set.tids_multiset_counter(rhigh_mset)
                 assert rule.length == rule.low_length + rule.high_length
 
         # # finalize automatons
@@ -437,7 +410,7 @@ class LicenseIndex(object):
                 logger_debug(message + ' MATCHED TEXTS')
                 for m in matches:
                     logger_debug(m)
-                    qt, it = get_texts(m, location, query_string, self)
+                    qt, it = match.get_texts(m, location, query_string, self)
                     print('  MATCHED QUERY TEXT')
                     print(qt)
                     print('  MATCHED RULE TEXT')
@@ -475,10 +448,10 @@ class LicenseIndex(object):
             return []
 
         # hash
-        hash_matches = match_hash(self, whole_query_run)
+        hash_matches = match_hash.hash_match(self, whole_query_run)
         if hash_matches:
             self.debug_matches(hash_matches, '#match FINAL Hash matched', location, query_string)
-            set_lines(hash_matches, qry.line_by_pos)
+            match.set_lines(hash_matches, qry.line_by_pos)
             return hash_matches
 
         # negative rules exact matching
@@ -494,10 +467,10 @@ class LicenseIndex(object):
 
         # exact matches
         if TRACE_EXACT: logger_debug('#match: EXACT')
-        exact_matches = exact_match(self, whole_query_run, self.rules_automaton)
+        exact_matches = match_aho.exact_match(self, whole_query_run, self.rules_automaton)
         if TRACE_EXACT: self.debug_matches(exact_matches, '  #match: EXACT matches#:', location, query_string)
 
-        exact_matches, exact_discarded = refine_matches(exact_matches, self, query=qry)
+        exact_matches, exact_discarded = match.refine_matches(exact_matches, self, query=qry)
 
         if TRACE_EXACT: self.debug_matches(exact_matches, '   #match: ===> exact matches refined')
         if TRACE_EXACT: self.debug_matches(exact_discarded, '   #match: ===> exact matches discarded')
@@ -530,7 +503,7 @@ class LicenseIndex(object):
 
                 # hash match
                 #########################
-                hash_matches = match_hash(self, query_run)
+                hash_matches = match_hash.hash_match(self, query_run)
                 if hash_matches:
                     if TRACE: self.debug_matches(hash_matches, '  #match Query run matches (hash)', location, query_string)
                     matches.extend(hash_matches)
@@ -541,15 +514,17 @@ class LicenseIndex(object):
                 if TRACE: logger_debug('  #match: Query run MATCHING proper....')
 
                 run_matches = []
-                candidates = compute_candidates(query_run, self, rules_subset=rules_subset, top=40)
+                candidates = match_set.compute_candidates(query_run, self, rules_subset=rules_subset, top=40)
 
                 if TRACE_QUERY_RUN: logger_debug('      #match: query_run: number of candidates for seq match #', len(candidates))
 
                 for candidate_num, candidate in enumerate(candidates):
-                    if TRACE_QUERY_RUN: logger_debug('         #match: query_run: seq matching candidate#:', candidate_num, 'candidate:', candidate)
+                    if TRACE_QUERY_RUN: 
+                        can1, can2 =candidate
+                        logger_debug('         #match: query_run: seq matching candidate#:', candidate_num, 'candidate:', can1)
                     start_offset = 0
                     while True:
-                        rule_matches = match_sequence(self, candidate, query_run, start_offset=start_offset)
+                        rule_matches = match_seq.match_sequence(self, candidate, query_run, start_offset=start_offset)
                         if TRACE_QUERY_RUN and rule_matches: self.debug_matches(rule_matches, '           #match: query_run: seq matches for candidate')
                         if not rule_matches:
                             break
@@ -566,7 +541,7 @@ class LicenseIndex(object):
                 ############################################################################
                 if TRACE_QUERY_RUN: self.debug_matches(run_matches, '    #match: ===> Query run matches', location, query_string, with_text=True)
 
-                run_matches = merge_matches(run_matches, max_dist=MAX_DIST)
+                run_matches = match.merge_matches(run_matches, max_dist=MAX_DIST)
                 matches.extend(run_matches)
 
                 if TRACE: self.debug_matches(run_matches, '     #match: Query run matches merged', location, query_string)
@@ -578,11 +553,11 @@ class LicenseIndex(object):
             logger_debug('!!!!!!!!!!!!!!!!!!!!REFINING!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
             self.debug_matches(matches, '#match: ALL matches from all query runs', location, query_string)
 
-            matches, whole_discarded = refine_matches(matches, idx=self, query=qry, min_score=min_score, max_dist=MAX_DIST // 2)
+            matches, whole_discarded = match.refine_matches(matches, idx=self, query=qry, min_score=min_score, max_dist=MAX_DIST // 2)
             if TRACE_MATCHES_DISCARD:
                 discarded.extend(whole_discarded)
             matches.sort()
-            set_lines(matches, qry.line_by_pos)
+            match.set_lines(matches, qry.line_by_pos)
             self.debug_matches(matches, '#match: FINAL MERGED', location, query_string)
             if TRACE_MATCHES_DISCARD: self.debug_matches(discarded, '#match: FINAL DISCARDED', location, query_string)
 
@@ -595,7 +570,7 @@ class LicenseIndex(object):
         Match a query run exactly against negative, license-less rules.
         Return a list of negative LicenseMatch for a query run, subtract these matches from the query run.
         """
-        matches = exact_match(self, query_run, self.negative_automaton)
+        matches = match_aho.exact_match(self, query_run, self.negative_automaton)
 
         if TRACE_NEGATIVE and matches: logger_debug('     ##final _negative_matches:....', len(matches))
         if TRACE_NEGATIVE and matches: map(logger_debug, matches)

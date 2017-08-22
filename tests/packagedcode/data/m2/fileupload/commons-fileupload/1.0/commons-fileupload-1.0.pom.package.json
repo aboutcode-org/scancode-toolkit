@@ -1,0 +1,102 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "commons-fileupload:commons-fileupload", 
+  "version": "1.0", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "FileUpload", 
+  "description": "The FileUpload component provides a simple yet flexible means of adding\n    support for multipart file upload functionality to servlets and web\n    applications.", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Martin Cooper", 
+      "email": "martinc@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "dIon Gillard", 
+      "email": "dion@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "John McNally", 
+      "email": "jmcnally@collab.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Daniel Rall", 
+      "email": "dlr@finemaltcoding.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jason van Zyl", 
+      "email": "jason@zenplex.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Robert Burrell Donkin", 
+      "email": "rdonkin@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Sean C. Sullivan", 
+      "email": "sean |at| seansullivan |dot| com", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://jakarta.apache.org/commons/fileupload/", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "test": [
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.1"
+      }
+    ], 
+    "provided": [
+      {
+        "name": "servletapi:servletapi", 
+        "version": null, 
+        "version_constraint": "2.3"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

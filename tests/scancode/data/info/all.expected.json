@@ -1,12 +1,13 @@
 {
   "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
   "scancode_options": {
-      "--copyright": true,
-      "--format": "json",
-      "--info": true,
-      "--license": true,
-      "--license-score": 0,
-      "--strip-root": true
+    "--copyright": true,
+    "--license": true,
+    "--info": true,
+    "--license-score": 0,
+    "--strip-root": true,
+    "--ignore": [],
+    "--format": "json"
   },
   "files_count": 11,
   "files": [
@@ -14,6 +15,7 @@
       "path": "basic",
       "type": "directory",
       "name": "basic",
+      "base_name": "basic",
       "extension": "",
       "date": null,
       "size": 57066,
@@ -37,6 +39,7 @@
       "path": "basic/dbase.fdt",
       "type": "file",
       "name": "dbase.fdt",
+      "base_name": "dbase",
       "extension": ".fdt",
       "date": "2015-06-19",
       "size": 183,
@@ -60,6 +63,7 @@
       "path": "basic/dir",
       "type": "directory",
       "name": "dir",
+      "base_name": "dir",
       "extension": "",
       "date": null,
       "size": 18486,
@@ -83,6 +87,7 @@
       "path": "basic/dir/e.tar",
       "type": "file",
       "name": "e.tar",
+      "base_name": "e",
       "extension": ".tar",
       "date": "2015-06-19",
       "size": 10240,
@@ -106,6 +111,7 @@
       "path": "basic/dir/subdir",
       "type": "directory",
       "name": "subdir",
+      "base_name": "subdir",
       "extension": "",
       "date": null,
       "size": 8246,
@@ -129,6 +135,7 @@
       "path": "basic/dir/subdir/a.aif",
       "type": "file",
       "name": "a.aif",
+      "base_name": "a",
       "extension": ".aif",
       "date": "2015-06-19",
       "size": 8246,
@@ -152,6 +159,7 @@
       "path": "basic/dir2",
       "type": "directory",
       "name": "dir2",
+      "base_name": "dir2",
       "extension": "",
       "date": null,
       "size": 36457,
@@ -175,6 +183,7 @@
       "path": "basic/dir2/subdir",
       "type": "directory",
       "name": "subdir",
+      "base_name": "subdir",
       "extension": "",
       "date": null,
       "size": 36457,
@@ -198,6 +207,7 @@
       "path": "basic/dir2/subdir/bcopy.s",
       "type": "file",
       "name": "bcopy.s",
+      "base_name": "bcopy",
       "extension": ".s",
       "date": "2015-06-19",
       "size": 32452,
@@ -243,12 +253,20 @@
             "Copyright (c) 1993 The Regents of the University of California."
           ],
           "holders": [
-            "Regents of the University of California.",
-            "University of California."
+            "The Regents of the University of California."
           ],
           "authors": [],
           "start_line": 22,
           "end_line": 23
+        },
+        {
+          "statements": [],
+          "holders": [],
+          "authors": [
+            "the University of California, Berkeley and its contributors."
+          ],
+          "start_line": 34,
+          "end_line": 37
         }
       ]
     },
@@ -256,6 +274,7 @@
       "path": "basic/dir2/subdir/config.conf",
       "type": "file",
       "name": "config.conf",
+      "base_name": "config",
       "extension": ".conf",
       "date": "2015-06-19",
       "size": 4005,
@@ -279,6 +298,7 @@
       "path": "basic/main.c",
       "type": "file",
       "name": "main.c",
+      "base_name": "main",
       "extension": ".c",
       "date": "2015-06-19",
       "size": 1940,

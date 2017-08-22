@@ -1,0 +1,6 @@
+licenses:
+    - lgpl-2.1-plus
+    - mpl-1.1
+    - gpl-2.0
+license_choice: yes
+notes: Mozilla tri license

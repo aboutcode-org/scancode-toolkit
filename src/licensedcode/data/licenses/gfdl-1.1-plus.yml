@@ -1,0 +1,13 @@
+key: gfdl-1.1-plus
+short_name: GFDL 1.1 or later
+name: GNU Free Documentation License 1.1 or any later version
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/copyleft/fdl.html
+notes: This license was released March 2000
+spdx_license_key: GFDL-1.1+
+text_urls:
+    - http://www.gnu.org/licenses/fdl-1.1.txt
+faq_url: http://www.fsf.org/licensing/licenses/fdl.html
+other_urls:
+    - http://www.lysator.liu.se/~kjell-e/tekla/linux/security/fdl.html

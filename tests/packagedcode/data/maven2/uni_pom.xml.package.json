@@ -1,0 +1,74 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "de.fzj.unicore.rcp:eclipseSequencePlugin", 
+  "version": "0.0.1-SNAPSHOT", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Eclipse Sequence Plugin", 
+  "description": null, 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": null, 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "com.intel.gpe.clients:gpe-clients-all", 
+        "version": null, 
+        "version_constraint": "2.0.4-SNAPSHOT"
+      }, 
+      {
+        "name": "com.intel.gpe.clients:gpe-gridbean-api", 
+        "version": null, 
+        "version_constraint": "2.0.5-SNAPSHOT"
+      }, 
+      {
+        "name": "com.intel.gpe:gpe-utils", 
+        "version": null, 
+        "version_constraint": "2.0.5-SNAPSHOT"
+      }, 
+      {
+        "name": "com.intel.gpe.clients:gpe-gridbeans-swt", 
+        "version": null, 
+        "version_constraint": "0.0.2-SNAPSHOT"
+      }
+    ], 
+    "test": [
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.1"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

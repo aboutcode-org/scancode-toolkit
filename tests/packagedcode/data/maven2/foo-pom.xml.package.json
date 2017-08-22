@@ -1,0 +1,76 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "com.myco.foo.bar.baz:baz-bar-parent", 
+  "version": "1.0", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": null, 
+  "description": null, 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "John Doe", 
+      "email": "jdoe@myco.com", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": null, 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "Eclipse Public License - v 1.0", 
+      "url": "http://www.eclipse.org/legal/epl-v10.html", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "import": [
+      {
+        "name": "com.myco.foo:common-dependencies", 
+        "version": null, 
+        "version_constraint": "1.1"
+      }, 
+      {
+        "name": "org.springframework.boot:spring-boot-dependencies", 
+        "version": null, 
+        "version_constraint": "1.4.2.RELEASE"
+      }, 
+      {
+        "name": "org.springframework.cloud:spring-cloud-dependencies", 
+        "version": null, 
+        "version_constraint": "Camden.SR5"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

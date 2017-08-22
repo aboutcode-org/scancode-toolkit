@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#", 
+  "id": "", 
+  "type": "object", 
+  "title": "party", 
+  "description": "A party is a person, project or organization related to a package.", 
+  "properties": {
+    "type": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "party type", 
+          "description": "the type of this party: One of: person, project, organization", 
+          "enum": [
+            "person", 
+            "project", 
+            "organization"
+          ]
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "name": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "url", 
+          "description": "URL to a primary web page for this party."
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "url": {
+      "oneOf": [
+        {
+          "type": "string"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "email": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "email", 
+          "description": "Email for this party."
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "it.assist.jrecordbind:jrecordbind${artifactId.ext}", 
+  "version": "2.3.4", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "jrecordbind", 
+  "description": "Transform fixed-length and variable-length text files into beans and back", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Federico Fissore", 
+      "email": "fridrik@dev.java.net", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "https://jrecordbind.dev.java.net/", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "LGPL", 
+      "url": "http://www.gnu.org/copyleft/lesser.html", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "relaxngDatatype:relaxngDatatype", 
+        "version": null, 
+        "version_constraint": "20020414"
+      }, 
+      {
+        "name": "com.sun.xml.bind:jaxb-impl", 
+        "version": null, 
+        "version_constraint": "2.1.11"
+      }, 
+      {
+        "name": "com.sun.xml.bind:jaxb-xjc", 
+        "version": null, 
+        "version_constraint": "2.1.11"
+      }, 
+      {
+        "name": "com.sun.xsom:xsom", 
+        "version": null, 
+        "version_constraint": "20081112"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

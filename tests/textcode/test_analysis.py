@@ -22,9 +22,11 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
-import cPickle
+import json
 import os.path
 
 from commoncode.testcase import FileBasedTesting
@@ -51,8 +53,12 @@ class TestAnalysis(FileBasedTesting):
         test_file = self.get_test_loc('analysis/weird_encoding/easyconf-0.9.0.pom')
         result = list(unicode_text_lines(test_file))
         expected_file = self.get_test_loc('analysis/weird_encoding/easyconf-0.9.0.pom.expected')
+        regen = False
+        if regen:
+            with open(expected_file, 'wb') as tf:
+                json.dump(result, tf)
         with open(expected_file, 'rb') as tf:
-            expected = cPickle.load(tf)
+            expected = json.load(tf)
         assert expected == result
 
     def test_archives_do_not_yield_text_lines(self):

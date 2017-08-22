@@ -1,0 +1,7 @@
+key: intel-bsd
+short_name: Intel BSD
+name: Intel BSD
+category: Permissive
+owner: Intel Corporation
+notes: this license is often used in conjuncation with a choice of gpl-2.0 such as in the Linux Kernel
+    This is a composite named intel-bsd-special

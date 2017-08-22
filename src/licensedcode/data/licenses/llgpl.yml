@@ -1,0 +1,10 @@
+key: llgpl
+short_name: LLGPL
+name: Lisp Lesser General Public License (LLPGL)
+category: Copyleft Limited
+owner: Franz Inc
+homepage_url: http://opensource.franz.com/preamble.html
+faq_url: http://opensource.franz.com/
+other_urls:
+    - http://www.gnu.org/licenses/lgpl-2.1.txt
+    - https://github.com/franzinc

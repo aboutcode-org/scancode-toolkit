@@ -1,0 +1,20 @@
+<?xml version="1.0"?><project>
+  <parent>
+    <artifactId>maven-native-components</artifactId>
+    <groupId>org.codehaus.mojo.natives</groupId>
+    <version>1.0-alpha-2</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>maven-native-msvc</artifactId>
+  <name>Maven Native MSVC</name>
+  <version>1.0-alpha-2</version>
+  <dependencies>
+    <dependency>
+      <groupId>org.codehaus.mojo.natives</groupId>
+      <artifactId>maven-native-generic-c</artifactId>
+    </dependency>
+  </dependencies>
+  <distributionManagement>
+    <status>deployed</status>
+  </distributionManagement>
+</project>

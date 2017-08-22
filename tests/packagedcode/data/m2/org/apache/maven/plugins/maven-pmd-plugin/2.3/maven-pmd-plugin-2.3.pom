@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>maven-plugins</artifactId>
+    <groupId>org.apache.maven.plugins</groupId>
+    <version>10</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>maven-pmd-plugin</artifactId>
+  <packaging>maven-plugin</packaging>
+  <name>Maven PMD Plugin</name>
+  <version>2.3</version>
+  <description>
+    A Maven plugin for the PMD toolkit, that produces a report on both code rule violations and detected copy and paste
+    fragments,
+    as well as being able to fail the build based on these metrics.
+  </description>
+  <prerequisites>
+    <maven>2.0.6</maven>
+  </prerequisites>
+  <issueManagement>
+    <system>JIRA</system>
+    <url>http://jira.codehaus.org/browse/MPMD</url>
+  </issueManagement>
+  <inceptionYear>2005</inceptionYear>
+  <mailingLists>
+        <!-- duplication from maven-plugins pom - temporary until they inherit properly
+    -->
+    <mailingList>
+      <name>Maven User List</name>
+      <subscribe>users-subscribe@maven.apache.org</subscribe>
+      <unsubscribe>users-unsubscribe@maven.apache.org</unsubscribe>
+      <post>users@maven.apache.org</post>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-users</archive>
+      <otherArchives>
+        <otherArchive>http://www.mail-archive.com/users@maven.apache.org/</otherArchive>
+        <otherArchive>http://www.nabble.com/Maven---Users-f178.html</otherArchive>
+      </otherArchives>
+    </mailingList>
+    <mailingList>
+      <name>Maven Developer List</name>
+      <subscribe>dev-subscribe@maven.apache.org</subscribe>
+      <unsubscribe>dev-unsubscribe@maven.apache.org</unsubscribe>
+      <post>dev@maven.apache.org</post>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-dev</archive>
+    </mailingList>
+    <mailingList>
+      <name>Maven Commits List</name>
+      <subscribe>commits-subscribe@maven.apache.org</subscribe>
+      <unsubscribe>commits-unsubscribe@maven.apache.org</unsubscribe>
+      <post>commits@maven.apache.org</post>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-dev</archive>
+    </mailingList>
+        <!-- duplication from maven-parent pom - temporary until they inherit properly
+    -->
+    <mailingList>
+      <name>Maven Announcements List</name>
+      <post>announce@maven.apache.org</post>
+      <subscribe>announce-subscribe@maven.apache.org</subscribe>
+      <unsubscribe>announce-unsubscribe@maven.apache.org</unsubscribe>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-announce/</archive>
+    </mailingList>
+    <mailingList>
+      <name>Maven Issues List</name>
+      <post>issues@maven.apache.org</post>
+      <subscribe>issues-subscribe@maven.apache.org</subscribe>
+      <unsubscribe>issues-unsubscribe@maven.apache.org</unsubscribe>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-issues/</archive>
+    </mailingList>
+    <mailingList>
+      <name>Maven Notifications List</name>
+      <post>notifications@maven.apache.org</post>
+      <subscribe>notifications-subscribe@maven.apache.org</subscribe>
+      <unsubscribe>notifications-unsubscribe@maven.apache.org</unsubscribe>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-notifications/</archive>
+    </mailingList>
+  </mailingLists>
+  <contributors>
+    <contributor>
+      <name>John Allen</name>
+    </contributor>
+  </contributors>
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/plugins/tags/maven-pmd-plugin-2.3</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/plugins/tags/maven-pmd-plugin-2.3</developerConnection>
+    <url>http://svn.apache.org/viewvc/maven/plugins/tags/maven-pmd-plugin-2.3</url>
+  </scm>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>2.0.4</version>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-model</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-plugin-api</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-project</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.reporting</groupId>
+      <artifactId>maven-reporting-api</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.reporting</groupId>
+      <artifactId>maven-reporting-impl</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-plugin-testing-harness</artifactId>
+      <version>1.0-beta-1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-resources</artifactId>
+      <version>1.0-alpha-4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-utils</artifactId>
+      <version>1.4.2</version>
+    </dependency>
+    <dependency>
+      <groupId>pmd</groupId>
+      <artifactId>pmd-jdk14</artifactId>
+      <version>4.1.1</version>
+    </dependency>
+    <!-- test -->
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-artifact</artifactId>
+      <version>2.0</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <reporting>
+    <plugins>
+      <plugin>
+        <artifactId>maven-changelog-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>

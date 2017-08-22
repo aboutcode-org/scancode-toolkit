@@ -1,0 +1,62 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.apache.maven.surefire:surefire-testng", 
+  "version": "2.4.2", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "SureFire TestNG Runner", 
+  "description": null, 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": null, 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "org.apache.maven:maven-artifact", 
+        "version": null, 
+        "version_constraint": "2.0"
+      }, 
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.1"
+      }, 
+      {
+        "name": "org.testng:testng", 
+        "version": null, 
+        "version_constraint": "5.7"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

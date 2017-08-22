@@ -1,8 +1,6 @@
 key: ms-net-framework-4-supplemental-terms
-short_name: MS .NET Framework 4 Supplemental License
-name: >-
-    Microsoft .NET Framework 4 Supplemental License
-
+short_name: MS Supplemental License - .NET Framework 4
+name: Microsoft Software Supplemental License - .NET Framework 4
 category: Proprietary Free
 owner: Microsoft
 faq_url: http://go.microsoft.com/fwlink/?LinkID=66406&clcid=0x409

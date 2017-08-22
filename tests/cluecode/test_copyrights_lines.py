@@ -85,13 +85,10 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_03e16f6c_0(self):
         test_file = self.get_test_loc('copyrights/copyright_03e16f6c_0-e_f_c.0')
         expected = [
-            (
-             [u'Copyright (c) 1997 Microsoft Corp.',
-              u'Copyright (c) 1997 Microsoft Corp.',
-              u'(c) 1997 Microsoft'
-             ],
-             28, 78
-            )
+            ([u'Copyright (c) 1997 Microsoft Corp., OU Microsoft Corporation, CN Microsoft Root',
+              u'Copyright (c) 1997 Microsoft Corp., OU Microsoft Corporation, CN Microsoft Root'],
+              30, 37),
+            ([u'(c) 1997 Microsoft'], 60, 63)
         ]
         check_detection(expected, test_file)
 
@@ -100,11 +97,16 @@ class TestCopyrightLinesDetection(FileBasedTesting):
         # could be either Wisekey or OISTE Foundation.
         test_file = self.get_test_loc('copyrights/copyright_3a3b02ce_0-a_b_ce.0')
         expected = [([
-                u'Copyright (c) 2005, OU OISTE Foundation', 
-                u'Copyright (c) 2005, OU OISTE Foundation'
-            ], 
-                28, 66
+                u'Copyright (c) 2005, OU OISTE Foundation Endorsed, CN OISTE WISeKey Global Root',
+                u'Copyright (c) 2005, OU OISTE Foundation Endorsed, CN OISTE WISeKey Global Root'
+            ],
+            30, 37
         )]
+        check_detection(expected, test_file)
+
+    def test_copyright_boost_vector(self):
+        test_file = self.get_test_loc('copyrights/vector50.hpp')
+        expected = [([u'Copyright (c) 2005 Arkadiy Vertleyb', u'Copyright (c) 2005 Peder Holt'], 2, 3)]
         check_detection(expected, test_file)
 
     def test_copyright_ABC_cpp(self):
@@ -129,7 +131,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
 
     def test_copyright_sample_py(self):
         test_file = self.get_test_loc('copyrights/copyright_sample_py-py.py')
-        expected = [([u'COPYRIGHT 2006 ABC'], 6, 7)]
+        expected = [([u'COPYRIGHT 2006 ABC ABC'], 6, 7)]
         check_detection(expected, test_file)
 
     def test_copyright_abc(self):
@@ -145,7 +147,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_abiword_common_copyright(self):
         test_file = self.get_test_loc('copyrights/copyright_abiword_common_copyright-abiword_common_copyright.copyright')
         expected = [
-            ([u'Copyright (c) 1998- AbiSource, Inc.'], 17, 17),
+            ([u'Copyright (c) 1998- AbiSource, Inc. & Co.'], 17, 17),
              ([u'Copyright (c) 2009 Masayuki Hatta',
                u'Copyright (c) 2009 Patrik Fimml <patrik@fimml.at>'],
               41, 42),
@@ -202,7 +204,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
             ([u'Copyright 1999-2006 The Apache Software Foundation'], 6, 7),
             ([u'Copyright 1999-2006 The Apache Software Foundation'], 16, 17),
             ([u'Copyright 2001-2003,2006 The Apache Software Foundation.'], 27, 28),
-            ([u'copyright (c) 2000 World Wide Web Consortium'], 33, 34)
+            ([u'copyright (c) 2000 World Wide Web Consortium, http://www.w3.org'], 33, 34)
         ]
         check_detection(expected, test_file)
 

@@ -1,8 +1,6 @@
 key: ampas
 short_name: AMPAS BSD-Style License
-name: >-
-    Academy of Motion Picture Arts and Sciences BSD-Style
-
+name: Academy of Motion Picture Arts and Sciences BSD-Style
 category: Permissive
 owner: AMPAS
 homepage_url: https://fedoraproject.org/wiki/Licensing/BSD#AMPASBSD

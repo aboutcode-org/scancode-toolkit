@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,13 +22,16 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import os
 from unittest.case import skip
 
 from commoncode.testcase import FileBasedTesting
 
+from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
 
@@ -77,7 +80,7 @@ class TestMatchingPerf(FileBasedTesting):
     @skip('Use only for local profiling')
     def test_match_license_performance_profiling_on_full_index_match_hash(self):
         # pre-index : we are profiling only the detection, not the indexing
-        idx = index.get_index()
+        idx = cache.get_index()
 
         stats_file = 'license_match_chunk_full_index_profile_log.txt'
         locations = [self.get_test_loc('perf/cc-by-nc-sa-3.0.SPDX')]
@@ -86,7 +89,7 @@ class TestMatchingPerf(FileBasedTesting):
     @skip('Use only for local profiling')
     def test_match_license_performance_profiling_on_full_index_mixed_matching(self):
         # pre-index : we are profiling only the detection, not the indexing
-        idx = index.get_index()
+        idx = cache.get_index()
         stats_file = 'license_match_mixed_matching_full_index_profile_log1.txt'
         locations = [self.get_test_loc(f) for f in ['perf/test1.txt', 'perf/whatever.py']]
         self.profile_match(idx, locations, stats_file)
@@ -94,7 +97,7 @@ class TestMatchingPerf(FileBasedTesting):
     @skip('Use only for local profiling')
     def test_match_license_performance_profiling_on_full_index_mixed_matching_long(self):
         # pre-index : we are profiling only the detection, not the indexing
-        idx = index.get_index()
+        idx = cache.get_index()
         stats_file = 'license_match_mixed_matching_full_index_profile_log2.txt'
         locations = [self.get_test_loc(f) for f in ['perf/test1.txt', 'perf/whatever.py', 'perf/udll.cxx']]
         self.profile_match(idx, locations, stats_file)
@@ -102,7 +105,7 @@ class TestMatchingPerf(FileBasedTesting):
     @skip('Use only for local profiling')
     def test_match_license_performance_profiling_on_full_index_with_spurious_filtered_seq_matches(self):
         # pre-index : we are profiling only the detection, not the indexing
-        idx = index.get_index()
+        idx = cache.get_index()
         stats_file = 'license_match_mixed_matching_full_index_profile_filtered_seq_matches_log.txt'
         locations = [self.get_test_loc(f) for f in ['perf/bsd-new_37.txt']]
         self.profile_match(idx, locations, stats_file)
@@ -110,7 +113,7 @@ class TestMatchingPerf(FileBasedTesting):
     @skip('Use only for local profiling')
     def test_match_license_performance_profiling_on_full_index_binary_lkm(self):
         # pre-index : we are profiling only the detection, not the indexing
-        idx = index.get_index()
+        idx = cache.get_index()
         stats_file = 'license_match_full_index_profile_log.txt'
         locations = [self.get_test_loc('perf/eeepc_acpi.ko')]
         self.profile_match(idx, locations, stats_file)
@@ -118,7 +121,7 @@ class TestMatchingPerf(FileBasedTesting):
     @skip('Use only for local profiling')
     def test_match_license_performance_profiling_on_full_index_small_binary_lkm2(self):
         # pre-index : we are profiling only the detection, not the indexing
-        idx = index.get_index()
+        idx = cache.get_index()
         stats_file = 'license_match_full_index_profile_log.txt'
         locations = [self.get_test_loc('perf/ath_pci.ko')]
         self.profile_match(idx, locations, stats_file)
@@ -132,7 +135,7 @@ class TestIndexingPerformance(FileBasedTesting):
         import cProfile as profile
         import pstats
         stats = 'build_index_performance_profile_log.txt'
-        test_py = 'index.get_index()'
+        test_py = 'cache.get_index()'
         profile.runctx(test_py, globals(), locals(), stats)
         p = pstats.Stats(stats)
         p.sort_stats('time').print_stats(40)

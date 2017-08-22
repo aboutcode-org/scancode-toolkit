@@ -1,0 +1,82 @@
+Usage: scancode [OPTIONS] <input> <output_file>
+
+  scan the <input> file or directory for origin clues and license and save
+  results to the <output_file>.
+
+  The scan results are printed to stdout if <output_file> is not provided.
+  Error and progress is printed to stderr.
+
+Options:
+
+  scans:
+    -c, --copyright          Scan <input> for copyrights. [default]
+    -l, --license            Scan <input> for licenses. [default]
+    -p, --package            Scan <input> for packages. [default]
+    -e, --email              Scan <input> for emails.
+    -u, --url                Scan <input> for urls.
+    -i, --info               Include information such as size, type, etc.
+    --license-score INTEGER  Do not return license matches with scores lower than
+                             this score. A number between 0 and 100.  [default: 0]
+    --license-text           Include the detected licenses matched text. Has no
+                             effect unless --license is requested.
+
+  output:
+    --strip-root           Strip the root directory segment of all paths. The
+                           default is to always include the last directory segment
+                           of the scanned path such that all paths have a common
+                           root directory. This cannot be combined with `--full-
+                           root` option.
+    --full-root            Report full, absolute paths. The default is to always
+                           include the last directory segment of the scanned path
+                           such that all paths have a common root directory. This
+                           cannot be combined with the `--strip-root` option.
+    -f, --format <format>  Set <output_file> format to one of: csv, html, html-
+                           app, json, json-pp, spdx-rdf, spdx-tv or use <format>
+                           as the path to a custom template file  [default: json]
+    --verbose              Print verbose file-by-file progress messages.
+    --quiet                Do not print summary or progress messages.
+
+  pre-scan:
+    --ignore <pattern>  Ignore files matching <pattern>.
+
+  post-scan:
+    --mark-source    Set the "is_source" flag to true for directories that contain
+                     over 90% of source files as direct children. Has no effect
+                     unless the --info scan is requested.
+    --only-findings  Only return files or directories with findings for the
+                     requested scans. Files and directories without findings are
+                     omitted (not considering basic file information as findings).
+
+  misc:
+    --reindex-licenses  Force a check and possible reindexing of the cached
+                        license index.
+
+  core:
+    -h, --help               Show this message and exit.
+    -n, --processes INTEGER  Scan <input> using n parallel processes.  [default:
+                             1]
+    --examples               Show command examples and exit.
+    --about                  Show information about ScanCode and licensing and
+                             exit.
+    --version                Show the version and exit.
+    --diag                   Include additional diagnostic information such as
+                             error messages or result details.
+    --timeout FLOAT          Stop scanning a file if scanning takes longer than a
+                             timeout in seconds.  [default: 120]
+
+  Examples (use --examples for more):
+
+  Scan the 'samples' directory for licenses and copyrights.
+  Save scan results to a JSON file:
+
+      scancode --format json samples scancode_result.json
+
+  Scan the 'samples' directory for licenses and copyrights. Save scan results to
+  an HTML app file for interactive web browser results navigation. Additional app
+  files are saved to the 'myscan_files' directory:
+
+      scancode --format html-app samples myscan.html
+
+  Note: when you run scancode, a progress bar is displayed with a counter of
+  the number of files processed. Use --verbose to display file-by-file
+  progress.

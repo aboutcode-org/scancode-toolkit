@@ -1,13 +1,9 @@
 key: upl-1.0
 short_name: UPL 1.0
 name: Universal Permissive License (UPL) v1.0
-
 category: Permissive
 owner: Oracle Corporation
 homepage_url: http://opensource.org/licenses/UPL
-notes: |-
-    notes from SPDX:
-    approved for SDPX 2.0 license list
 spdx_license_key: UPL-1.0
 osi_url: http://opensource.org/licenses/UPL
 other_urls:

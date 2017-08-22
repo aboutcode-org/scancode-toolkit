@@ -1,0 +1,15 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cglib</groupId>
+  <artifactId>cglib</artifactId>
+  <name>cglib</name>
+  <version>2.1_3</version>
+  <url>http://cglib.sourceforge.net/</url>
+  <dependencies>
+    <dependency>
+      <groupId>asm</groupId>
+      <artifactId>asm</artifactId>
+      <version>1.5.3</version>
+    </dependency>
+  </dependencies>
+</project>

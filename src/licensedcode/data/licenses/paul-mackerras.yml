@@ -1,6 +1,6 @@
 key: paul-mackerras
 short_name: Paul Mackerras License
 name: Paul Mackerras License
-
 category: Permissive
 owner: Paul Mackerras
+minimum_coverage: 50

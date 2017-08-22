@@ -1,0 +1,21 @@
+about_resource: idna-2.5-py2.py3-none-any.whl
+version: 2.5
+
+download_url: https://pypi.python.org/packages/11/7d/9bbbd7bb35f34b0169542487d2a8859e44306bb2e6a4455d491800a5621f/idna-2.5-py2.py3-none-any.whl
+
+owner: Kim Davies
+home_url: https://github.com/kjd/idna
+name: idna
+
+copyright: 
+    - Copyright (c) 2013-2017, Kim Davies
+    - Copyright (c) 2001-2014 Python Software Foundation
+    - Copyright (c) 1991-2014 Unicode, Inc.
+
+dje_license: bsd-new and python and unicode-data-software
+
+license_text_file: 
+    - idna.LICENSE
+    - PSF.LICENSE
+    - unicode-data-software.LICENSE
+notice_file: idna.NOTICE

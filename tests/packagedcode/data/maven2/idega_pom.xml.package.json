@@ -1,0 +1,92 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "com.idega.block.addon:com.idega.block.contract", 
+  "version": "4.1.3-SNAPSHOT", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "idegaWeb Contract Block", 
+  "description": "Contract", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Tryggvi Larusson", 
+      "email": "tryggvi@idega.is", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Pall Helgason", 
+      "email": "palli@idega.is", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Eirikur Sveinn Hrafnsson", 
+      "email": "eiki@idega.is", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Thorhallur Helgason", 
+      "email": "laddi@idega.is", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": null, 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "com.idega.block.platform:com.idega.core", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "com.idega.block.platform:com.idega.block.media", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "itextpdf:itext-paulo", 
+        "version": null, 
+        "version_constraint": "${itextpdf-itext-paulo-version}"
+      }, 
+      {
+        "name": "itext:itext-xml", 
+        "version": null, 
+        "version_constraint": "${itext-itext-xml-version}"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

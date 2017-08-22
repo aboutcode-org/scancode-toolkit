@@ -1,0 +1,79 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "ch.qos.logback:logback-access", 
+  "version": "0.2.5", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Logback Access Module", 
+  "description": "Logback: the generic, reliable, fast and flexible logging library for Java.", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://logback.qos.ch/access", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "GNU Lesser General Public License", 
+      "url": "http://www.gnu.org/licenses/lgpl.html", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "ch.qos.logback:logback-core", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "tomcat:catalina", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "org.mortbay.jetty:jetty", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "com.caucho:resin", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "org.mortbay.jetty:servlet-api-2.5", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

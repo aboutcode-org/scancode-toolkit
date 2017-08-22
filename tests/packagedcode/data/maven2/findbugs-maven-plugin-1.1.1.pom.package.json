@@ -1,0 +1,106 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.codehaus.mojo:findbugs-maven-plugin", 
+  "version": "1.1.1", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Maven FindBugs PlugIn", 
+  "description": "This Plug-In generates reports based on the FindBugs Library", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Cyrill Ruettimann", 
+      "email": "mypublicaddress@mac.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Garvin LeClaire", 
+      "email": "gleclaire@codehaus.org", 
+      "url": "http://gdleclaire.blogspot.com"
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [
+    {
+      "type": "person", 
+      "name": "Detlef Pleiss", 
+      "email": "d.pleiss@comundus.com", 
+      "url": null
+    }
+  ], 
+  "owners": [
+    {
+      "type": "organization", 
+      "name": "CodeHaus", 
+      "email": null, 
+      "url": "http://www.codehaus.org"
+    }
+  ], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": null, 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "MIT", 
+      "url": "LICENSE.txt", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "org.apache.maven:maven-artifact", 
+        "version": null, 
+        "version_constraint": "2.0.4"
+      }, 
+      {
+        "name": "org.apache.maven.reporting:maven-reporting-impl", 
+        "version": null, 
+        "version_constraint": "2.0.4"
+      }, 
+      {
+        "name": "org.apache.maven.reporting:maven-reporting-api", 
+        "version": null, 
+        "version_constraint": "2.0.4"
+      }, 
+      {
+        "name": "org.apache.maven.doxia:doxia-core", 
+        "version": null, 
+        "version_constraint": "1.0-alpha-8"
+      }, 
+      {
+        "name": "net.sourceforge.findbugs:findbugs", 
+        "version": null, 
+        "version_constraint": "1.2.0"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

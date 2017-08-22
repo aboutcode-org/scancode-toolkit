@@ -1,0 +1,51 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "asm", 
+  "artifact_id": "asm-attrs", 
+  "version": "1.5.3", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "asm-attrs", 
+  "description": null, 
+  "inception_year": "2000", 
+  "url": "http://asm.objectweb.org/", 
+  "organization_name": "ObjectWeb", 
+  "organization_url": "http://www.objectweb.org/", 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "ebruneton", 
+      "name": "Eric Bruneton", 
+      "email": "Eric.Bruneton@rd.francetelecom.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Creator", 
+        "Java Developer"
+      ]
+    }, 
+    {
+      "id": "eu", 
+      "name": "Eugene Kuleshov", 
+      "email": "eu@javatx.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Java Developer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

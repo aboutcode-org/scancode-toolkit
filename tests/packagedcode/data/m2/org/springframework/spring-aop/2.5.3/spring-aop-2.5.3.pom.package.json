@@ -1,0 +1,121 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.springframework:spring-aop", 
+  "version": "2.5.3", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Spring Framework: AOP", 
+  "description": "Spring Framework: AOP", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [
+    {
+      "type": "organization", 
+      "name": "Spring Framework", 
+      "email": null, 
+      "url": "http://www.springframework.org/"
+    }
+  ], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://www.springframework.org", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "aopalliance:aopalliance", 
+        "version": null, 
+        "version_constraint": "1.0"
+      }, 
+      {
+        "name": "aspectj:aspectjrt", 
+        "version": null, 
+        "version_constraint": "1.5.4"
+      }, 
+      {
+        "name": "aspectj:aspectjweaver", 
+        "version": null, 
+        "version_constraint": "1.5.4"
+      }, 
+      {
+        "name": "cglib:cglib-nodep", 
+        "version": null, 
+        "version_constraint": "2.1_3"
+      }, 
+      {
+        "name": "commons-attributes:commons-attributes-api", 
+        "version": null, 
+        "version_constraint": "2.2"
+      }, 
+      {
+        "name": "commons-attributes:commons-attributes-compiler", 
+        "version": null, 
+        "version_constraint": "2.2"
+      }, 
+      {
+        "name": "commons-logging:commons-logging", 
+        "version": null, 
+        "version_constraint": "1.1.1"
+      }, 
+      {
+        "name": "commons-pool:commons-pool", 
+        "version": null, 
+        "version_constraint": "1.3"
+      }, 
+      {
+        "name": "com.jamonapi:jamon", 
+        "version": null, 
+        "version_constraint": "2.4"
+      }, 
+      {
+        "name": "oro:oro", 
+        "version": null, 
+        "version_constraint": "2.0.8"
+      }, 
+      {
+        "name": "org.springframework:spring-beans", 
+        "version": null, 
+        "version_constraint": "2.5.3"
+      }, 
+      {
+        "name": "org.springframework:spring-core", 
+        "version": null, 
+        "version_constraint": "2.5.3"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

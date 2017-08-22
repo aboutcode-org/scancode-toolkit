@@ -1,0 +1,80 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "com.myco.foo.bar.baz", 
+  "artifact_id": "baz-bar-parent", 
+  "version": "1.0", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "com.myco.foo", 
+    "artifact_id": "root-parent", 
+    "version": "0.2.4", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": null, 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [
+    {
+      "name": "Eclipse Public License - v 1.0", 
+      "url": "http://www.eclipse.org/legal/epl-v10.html", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [
+    {
+      "id": null, 
+      "name": "John Doe", 
+      "email": "jdoe@myco.com", 
+      "url": null, 
+      "organization": "com.myco.foo", 
+      "organization_url": "https://github.com/jdoe", 
+      "roles": []
+    }
+  ], 
+  "contributors": [], 
+  "modules": [
+    "baz-bar", 
+    "baz-bar-web", 
+    "baz-bar-distribution"
+  ], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:git:git://github.com/jode/baz-bar-parent.git", 
+    "developer_connection": null, 
+    "url": "https://github.com/jode/baz-bar-parent/tree/master", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "import": [
+      {
+        "group_id": "com.myco.foo", 
+        "artifact_id": "common-dependencies", 
+        "version": "1.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.springframework.boot", 
+        "artifact_id": "spring-boot-dependencies", 
+        "version": "1.4.2.RELEASE", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.springframework.cloud", 
+        "artifact_id": "spring-cloud-dependencies", 
+        "version": "Camden.SR5", 
+        "required": true
+      }
+    ]
+  }
+}

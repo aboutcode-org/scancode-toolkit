@@ -1,7 +1,6 @@
 key: nunit-v2
 short_name: NUnit v2 License
 name: NUnit v2 License
-
 category: Permissive
 owner: Charlie Poole
 homepage_url: https://fedoraproject.org/wiki/Licensing:Nunit?rd=Licensing/Nunit
@@ -10,3 +9,4 @@ text_urls:
     - http://nunit.org/index.php?p=license&r=2.6
 other_urls:
     - http://nunit.org/
+    - https://fedoraproject.org/wiki/Licensing/Nunit

@@ -1,0 +1,11 @@
+key: apache-1.0
+short_name: Apache 1.0
+name: Apache License 1.0
+
+category: Permissive
+owner: Apache Software Foundation
+homepage_url: http://www.apache.org/licenses/
+spdx_license_key: Apache-1.0
+text_urls:
+    - http://www.apache.org/licenses/LICENSE-1.0
+faq_url: http://www.apache.org/foundation/licence-FAQ.html

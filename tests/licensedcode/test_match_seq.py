@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import os
 
@@ -45,7 +47,7 @@ class TestMatchSeq(FileBasedTesting):
         # beginning of an index doc. We may still skip that, but capture a large match anyway.
 
         rule_text = u'''
-            Copyright {{some copyright}} 
+            Copyright {{some copyright}}
             THIS IS FROM {{THE CODEHAUS}} AND CONTRIBUTORS
             IN NO EVENT SHALL {{THE CODEHAUS}} OR ITS CONTRIBUTORS BE LIABLE
             EVEN IF ADVISED OF THE {{POSSIBILITY OF SUCH}} DAMAGE
@@ -69,7 +71,7 @@ class TestMatchSeq(FileBasedTesting):
             Copyright [2003] [C] [James] [All] [Rights] [Reserved]
             THIS IS FROM <THE> [CODEHAUS]
             AND CONTRIBUTORS
-            IN NO EVENT SHALL <THE> [CODEHAUS] OR ITS CONTRIBUTORS BE LIABLE 
+            IN NO EVENT SHALL <THE> [CODEHAUS] OR ITS CONTRIBUTORS BE LIABLE
             EVEN IF ADVISED OF THE [POSSIBILITY] <OF> [SUCH] DAMAGE
         """.split()
 
@@ -77,7 +79,7 @@ class TestMatchSeq(FileBasedTesting):
             Copyright
             THIS IS FROM
             AND CONTRIBUTORS
-            IN NO EVENT SHALL OR ITS CONTRIBUTORS BE LIABLE 
+            IN NO EVENT SHALL OR ITS CONTRIBUTORS BE LIABLE
             EVEN IF ADVISED OF THE DAMAGE
         """.split()
         qtext, itext = get_texts(match, query_string=querys, idx=idx)

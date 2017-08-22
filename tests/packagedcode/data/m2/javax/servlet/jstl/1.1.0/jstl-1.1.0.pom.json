@@ -1,0 +1,36 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "javax.servlet", 
+  "artifact_id": "jstl", 
+  "version": "1.1.0", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": null, 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "provided": [
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "jsp-api", 
+        "version": "2.0", 
+        "required": true
+      }
+    ]
+  }
+}

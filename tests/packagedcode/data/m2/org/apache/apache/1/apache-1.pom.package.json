@@ -1,0 +1,58 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.apache:apache", 
+  "version": "1", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "The Apache Software Foundation", 
+  "description": "The Apache Software Foundation provides support for the Apache community of open-source software projects.\n    The Apache projects are characterized by a collaborative, consensus based development process, an open and\n    pragmatic software license, and a desire to create high quality software that leads the way in its field.\n    We consider ourselves not simply a group of projects sharing a server, but rather a community of developers\n    and users.", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [
+    {
+      "type": "organization", 
+      "name": "Apache Software Foundation", 
+      "email": null, 
+      "url": "http://www.apache.org/"
+    }
+  ], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://www.apache.org/", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {}, 
+  "related_packages": []
+}

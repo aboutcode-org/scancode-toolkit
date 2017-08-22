@@ -1,0 +1,6 @@
+licenses:
+    - gpl-2.0-plus
+    - gpl-2.0-glibc
+license_expresion: gpl-2.0-plus with gpl-2.0-glibc
+notes: seen in U-Boot and the kernel
+minimum_score: 99

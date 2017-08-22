@@ -1,3 +1,4 @@
 licenses:
     - mpl-1.1
 notes: MPL in rabbitmq
+minimum_coverage: 80

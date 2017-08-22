@@ -1,13 +1,10 @@
 key: freetype
 short_name: FreeType Project License
 name: FreeType Project License
-
 category: Permissive
 owner: FreeType Project
 homepage_url: http://www.freetype.org/license.html
-notes: |-
-    notes from SPDX:
-    This license was released 27 Jan 2006
+notes: Per SPDX.org, this license was released 27 Jan 2006
 spdx_license_key: FTL
 text_urls:
     - http://www.freetype.org/FTL.TXT

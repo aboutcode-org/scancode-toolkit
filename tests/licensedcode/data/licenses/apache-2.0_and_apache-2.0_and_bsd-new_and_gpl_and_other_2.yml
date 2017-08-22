@@ -1,16 +1,19 @@
 licenses:
-    - gpl
+    - gpl-1.0-plus
     - apache-2.0
     - mit
-    - lgpl
     - proprietary
-    - gpl
+    - lgpl-2.0-plus
+    - gpl-1.0-plus
     - ms-pl
     - mit
-    - nunit-v2
-    - mpl-1.1
+    - zlib-acknowledgement
     - apache-2.0
-    - gpl
-notes: TODO refine expectations
-expected_failure: yes
+    - mpl-1.1
+    - bsd-new
+    - cc-by-sa-2.5
+    - bsd-new
+    - ms-pl
+    - gpl-1.0-plus
 
+expected_failure: yes

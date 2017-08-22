@@ -1,0 +1,292 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.apache.shale:shale-master", 
+  "version": "2", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Apache Shale Framework Master POM", 
+  "description": "Apache Shale", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Rahul Akolkar", 
+      "email": "rahul at apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "David Geary", 
+      "email": "dgeary at apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Craig R. McClanahan", 
+      "email": "craigmcc at apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "James Mitchell", 
+      "email": "jmitchell at apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Greg Reddin", 
+      "email": "greddin at apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Sean Schofield", 
+      "email": "schof at apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Wendy Smoak", 
+      "email": "wsmoak at apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Gary VanMatre", 
+      "email": "gvanmatre at apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Matthias Wessendorf", 
+      "email": "matzew at apache.org", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [
+    {
+      "type": "person", 
+      "name": "Walied Amer", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Duncan Mills", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Ronald Holshausen", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Manfred Klug", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "David DeWolf", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Keijo Nurmes", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Shane Bryzak", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Ted Husted", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Dennis Byrne", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Richarad Wallace", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Bill Young", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Alexandre Poitras", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Hubert Rabago", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "David Thielen", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Ed Burns", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Ingo Dueppe", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jack Cheng", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Niall Pemberton", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Marcello Teodori", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Reind", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Mike Kienenberger", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Andrew Gilette", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Ryan Lubke", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Shinsuke Sugaya", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Mario Ivankovits", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Hermod Opstvedt", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Mike Meessen", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Luis Parravicini", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Ryan Wynn", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Rene Zanner", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Adrian Mitev", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Simon Kitching", 
+      "email": null, 
+      "url": null
+    }
+  ], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://shale.apache.org", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {}, 
+  "related_packages": []
+}

@@ -1,0 +1,67 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.commons", 
+  "artifact_id": "commons-parent", 
+  "version": "9", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache", 
+    "artifact_id": "apache", 
+    "version": "4", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Commons Parent", 
+  "description": null, 
+  "inception_year": "2001", 
+  "url": "http://commons.apache.org/", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Commons User List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/commons-user/"
+    }, 
+    {
+      "name": "Commons Dev List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/commons-dev/"
+    }, 
+    {
+      "name": "Commons Issues List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/commons-issues/"
+    }, 
+    {
+      "name": "Commons Commits List", 
+      "archive_url": "http://mail-archives.apache.org/mod_mbox/commons-commits/"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/commons/proper/commons-parent/tags/commons-parent-9", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewvc/commons/proper/commons-parent/tags/commons-parent-9", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {
+    "system": "continuum", 
+    "url": "http://vmbuild.apache.org/continuum/"
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {
+      "id": "dummy", 
+      "name": "Dummy to avoid accidental deploys", 
+      "url": null
+    }, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

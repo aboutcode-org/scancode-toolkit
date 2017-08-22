@@ -1,0 +1,139 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.apache.velocity:velocity", 
+  "version": "1.5", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Apache Velocity", 
+  "description": "Apache Velocity is a general purpose template engine.", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Will Glass-Husain", 
+      "email": "wglass@forio.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Geir Magnusson Jr.", 
+      "email": "geirm@optonline.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Daniel Rall", 
+      "email": "dlr@finemaltcoding.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Henning P. Schmiedehausen", 
+      "email": "hps@intermeta.de", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Nathan Bubna", 
+      "email": "nathan@esha.com", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [
+    {
+      "type": "organization", 
+      "name": "The Apache Software Foundation", 
+      "email": null, 
+      "url": "http://www.apache.org/"
+    }
+  ], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://velocity.apache.org/engine/releases/velocity-1.5/", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "commons-collections:commons-collections", 
+        "version": null, 
+        "version_constraint": "3.1"
+      }, 
+      {
+        "name": "commons-lang:commons-lang", 
+        "version": null, 
+        "version_constraint": "2.1"
+      }, 
+      {
+        "name": "oro:oro", 
+        "version": null, 
+        "version_constraint": "2.0.8"
+      }
+    ], 
+    "provided": [
+      {
+        "name": "jdom:jdom", 
+        "version": null, 
+        "version_constraint": "1.0"
+      }, 
+      {
+        "name": "log4j:log4j", 
+        "version": null, 
+        "version_constraint": "1.2.12"
+      }, 
+      {
+        "name": "javax.servlet:servlet-api", 
+        "version": null, 
+        "version_constraint": "2.3"
+      }, 
+      {
+        "name": "logkit:logkit", 
+        "version": null, 
+        "version_constraint": "2.0"
+      }, 
+      {
+        "name": "ant:ant", 
+        "version": null, 
+        "version_constraint": "1.6"
+      }, 
+      {
+        "name": "werken-xpath:werken-xpath", 
+        "version": null, 
+        "version_constraint": "0.9.4"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

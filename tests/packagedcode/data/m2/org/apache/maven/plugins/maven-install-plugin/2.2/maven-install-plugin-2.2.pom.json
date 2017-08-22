@@ -1,0 +1,82 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.plugins", 
+  "artifact_id": "maven-install-plugin", 
+  "version": "2.2", 
+  "classifier": null, 
+  "packaging ": "maven-plugin", 
+  "parent": {
+    "group_id": "org.apache.maven.plugins", 
+    "artifact_id": "maven-plugins", 
+    "version": "8", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Install Plugin", 
+  "description": null, 
+  "inception_year": "2004", 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:https://svn.apache.org/repos/asf/maven/plugins/tags/maven-install-plugin-2.2", 
+    "developer_connection": null, 
+    "url": "https://svn.apache.org/repos/asf/maven/plugins/tags/maven-install-plugin-2.2", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://jira.codehaus.org/browse/MINSTALL"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-plugin-api", 
+        "version": "2.0.6", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-project", 
+        "version": "2.0.6", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-artifact-manager", 
+        "version": "2.0.6", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-artifact", 
+        "version": "2.0.6", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-digest", 
+        "version": "1.0", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "org.apache.maven.shared", 
+        "artifact_id": "maven-plugin-testing-harness", 
+        "version": "1.0-beta-1", 
+        "required": true
+      }
+    ]
+  }
+}

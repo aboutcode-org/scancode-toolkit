@@ -1,0 +1,108 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.shared", 
+  "artifact_id": "maven-shared-io", 
+  "version": "1.1", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.apache.maven.shared", 
+    "artifact_id": "maven-shared-components", 
+    "version": "8", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Shared I/O API", 
+  "description": "API for I/O support like logging, download or file scanning.", 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "Joakim Erdfelt", 
+      "email": "joakim@erdfelt.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/maven/shared/tags/maven-shared-io-1.1", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewcvs.cgi/maven/shared/tags/maven-shared-io-1.1", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {
+      "id": "apache", 
+      "name": null, 
+      "url": "scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository"
+    }, 
+    "snapshot_repository": {
+      "id": "apache.snapshots", 
+      "name": null, 
+      "url": "scp://people.apache.org/www/people.apache.org/repo/m2-snapshot-repository"
+    }
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-artifact", 
+        "version": "2.0.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-artifact-manager", 
+        "version": "2.0.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.wagon", 
+        "artifact_id": "wagon-provider-api", 
+        "version": "1.0-alpha-6", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-plugin-api", 
+        "version": "2.0", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-utils", 
+        "version": "1.4.6", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.codehaus.plexus", 
+        "artifact_id": "plexus-container-default", 
+        "version": "1.0-alpha-9", 
+        "required": false
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "easymock", 
+        "artifact_id": "easymock", 
+        "version": "1.2_Java1.3", 
+        "required": true
+      }
+    ]
+  }
+}

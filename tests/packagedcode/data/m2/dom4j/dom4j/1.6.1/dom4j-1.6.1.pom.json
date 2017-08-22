@@ -1,0 +1,273 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "dom4j", 
+  "artifact_id": "dom4j", 
+  "version": "1.6.1", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "dom4j", 
+  "description": "dom4j: the flexible XML framework for Java", 
+  "inception_year": "2001", 
+  "url": "http://dom4j.org", 
+  "organization_name": "MetaStuff Ltd.", 
+  "organization_url": "http://sourceforge.net/projects/dom4j", 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "carnold", 
+      "name": "Curt Arnold", 
+      "email": "carnold@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "ddlucas", 
+      "name": "David Lucas", 
+      "email": "ddlucas@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "drwhite", 
+      "name": "David White", 
+      "email": "drwhite@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jjenkov", 
+      "name": "Jakob Jenkov", 
+      "email": "jjenkov@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jstrachan", 
+      "name": "James Strachan", 
+      "email": "jstrachan@apache.org", 
+      "url": null, 
+      "organization": "SpiritSoft, Inc.", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "laramiec", 
+      "name": "Laramie Crocker", 
+      "email": "laramiec@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "maartenc", 
+      "name": "Maarten Coene", 
+      "email": "maartenc@users.sourceforge.net", 
+      "url": null, 
+      "organization": "Cronos", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "mskells", 
+      "name": "Michael Skells", 
+      "email": "mskells@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "nicksanderson", 
+      "name": "Nick Sanderson", 
+      "email": "nicksanderson@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "slehmann", 
+      "name": "Steen Lehmann", 
+      "email": "slehmann@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "tradem", 
+      "name": "Tobias Rademacher", 
+      "email": "tradem@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "werken", 
+      "name": "Bob McWhirter", 
+      "email": "werken@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "wolfftw", 
+      "name": "Todd Wolff", 
+      "email": "wolfftw@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "yeekee", 
+      "name": "OuYang Chen", 
+      "email": "yeekee@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "yruan2", 
+      "name": "Yuxin Ruan", 
+      "email": "yruan2@users.sourceforge.net", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "dom4j user list", 
+      "archive_url": "http://www.mail-archive.com/dom4j-user%40lists.sourceforge.net/"
+    }, 
+    {
+      "name": "dom4j developer list", 
+      "archive_url": "http://www.mail-archive.com/dom4j-dev%40lists.sourceforge.net/"
+    }, 
+    {
+      "name": "dom4j commits list", 
+      "archive_url": null
+    }
+  ], 
+  "scm": {
+    "connection": "scm:cvs:pserver:anonymous@cvs.sourceforge.net:/cvsroot/dom4j:dom4j", 
+    "developer_connection": null, 
+    "url": "http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/dom4j/dom4j/", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": null, 
+    "url": "http://sourceforge.net/tracker/?group_id=16035"
+  }, 
+  "ci_management": {
+    "system": null, 
+    "url": null
+  }, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "default", 
+      "name": "Default Site", 
+      "url": "scp://dom4j.org//home/groups/d/do/dom4j/htdocs"
+    }, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "jaxme", 
+        "artifact_id": "jaxme-api", 
+        "version": "0.3", 
+        "required": false
+      }, 
+      {
+        "group_id": "jaxen", 
+        "artifact_id": "jaxen", 
+        "version": "1.1-beta-6", 
+        "required": false
+      }, 
+      {
+        "group_id": "msv", 
+        "artifact_id": "xsdlib", 
+        "version": "20030807", 
+        "required": false
+      }, 
+      {
+        "group_id": "msv", 
+        "artifact_id": "relaxngDatatype", 
+        "version": "20030807", 
+        "required": false
+      }, 
+      {
+        "group_id": "pull-parser", 
+        "artifact_id": "pull-parser", 
+        "version": "2", 
+        "required": false
+      }, 
+      {
+        "group_id": "xpp3", 
+        "artifact_id": "xpp3", 
+        "version": "1.1.3.3", 
+        "required": false
+      }, 
+      {
+        "group_id": "stax", 
+        "artifact_id": "stax-api", 
+        "version": "1.0", 
+        "required": false
+      }, 
+      {
+        "group_id": "xml-apis", 
+        "artifact_id": "xml-apis", 
+        "version": "1.0.b2", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "junitperf", 
+        "artifact_id": "junitperf", 
+        "version": "1.8", 
+        "required": true
+      }, 
+      {
+        "group_id": "stax", 
+        "artifact_id": "stax-ri", 
+        "version": "1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "xerces", 
+        "artifact_id": "xercesImpl", 
+        "version": "2.6.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "xalan", 
+        "artifact_id": "xalan", 
+        "version": "2.5.1", 
+        "required": true
+      }
+    ]
+  }
+}

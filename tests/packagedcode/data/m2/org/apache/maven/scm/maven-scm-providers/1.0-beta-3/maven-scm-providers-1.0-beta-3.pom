@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>maven-scm</artifactId>
+    <groupId>org.apache.maven.scm</groupId>
+    <version>1.0-beta-3</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>maven-scm-providers</artifactId>
+  <packaging>pom</packaging>
+  <name>Maven SCM Providers</name>
+  <version>1.0-beta-3</version>
+  <modules>
+    <module>maven-scm-provider-bazaar</module>
+    <module>maven-scm-provider-clearcase</module>
+    <module>maven-scm-provider-local</module>
+    <module>maven-scm-provider-perforce</module>
+    <module>maven-scm-provider-starteam</module>
+    <module>maven-scm-providers-cvs</module>
+    <module>maven-scm-providers-svn</module>
+    <module>maven-scm-provider-vss</module>
+  </modules>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.maven.scm</groupId>
+      <artifactId>maven-scm-api</artifactId>
+      <version>1.0-beta-3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.scm</groupId>
+      <artifactId>maven-scm-test</artifactId>
+      <version>1.0-beta-3</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

@@ -1,0 +1,10 @@
+key: bsd-source-code
+short_name: BSD Source Code Attribution
+name: BSD Source Code Attribution
+category: Permissive
+owner: TSRM
+homepage_url: https://github.com/infusion/PHP/blob/master/TSRM/LICENSE
+spdx_license_key: BSD-Source-Code
+text_urls:
+    - https://github.com/infusion/PHP/blob/master/TSRM/LICENSE
+    - https://github.com/robbiehanson/CocoaHTTPServer/blob/master/LICENSE.txt

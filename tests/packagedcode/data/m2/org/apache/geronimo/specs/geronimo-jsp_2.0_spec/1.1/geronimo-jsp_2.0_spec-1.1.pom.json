@@ -1,0 +1,52 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.geronimo.specs", 
+  "artifact_id": "geronimo-jsp_2.0_spec", 
+  "version": "1.1", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.apache.geronimo.specs", 
+    "artifact_id": "specs", 
+    "version": "1.2", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "JSP 2.0", 
+  "description": null, 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-jsp_2.0_spec-1.1", 
+    "developer_connection": null, 
+    "url": "https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-jsp_2.0_spec-1.1", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "provided": [
+      {
+        "group_id": "org.apache.geronimo.specs", 
+        "artifact_id": "geronimo-servlet_2.4_spec", 
+        "version": "1.1", 
+        "required": true
+      }
+    ]
+  }
+}

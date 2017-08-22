@@ -1,0 +1,144 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.apache.felix:maven-bundle-plugin", 
+  "version": "1.4.0", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Maven Bundle Plugin", 
+  "description": "Provides a maven plugin that supports creating an OSGi bundle\n  from the contents of the compilation classpath along with its\n  resources and dependencies. Plus a zillion other features.\n  The plugin uses the Bnd tool (http://www.aqute.biz/Code/Bnd)", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": null, 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "biz.aQute:bndlib", 
+        "version": null, 
+        "version_constraint": "0.0.238"
+      }, 
+      {
+        "name": "net.sf.kxml:kxml2", 
+        "version": null, 
+        "version_constraint": "2.2.2"
+      }, 
+      {
+        "name": "xmlpull:xmlpull", 
+        "version": null, 
+        "version_constraint": "1.1.3.1"
+      }, 
+      {
+        "name": "org.apache.felix:org.osgi.core", 
+        "version": null, 
+        "version_constraint": "1.0.0"
+      }, 
+      {
+        "name": "org.apache.felix:org.osgi.service.obr", 
+        "version": null, 
+        "version_constraint": "1.0.1"
+      }, 
+      {
+        "name": "org.apache.maven:maven-project", 
+        "version": null, 
+        "version_constraint": "2.0.7"
+      }, 
+      {
+        "name": "org.apache.maven:maven-model", 
+        "version": null, 
+        "version_constraint": "2.0.7"
+      }, 
+      {
+        "name": "org.apache.maven:maven-plugin-api", 
+        "version": null, 
+        "version_constraint": "2.0.7"
+      }, 
+      {
+        "name": "org.apache.maven:maven-artifact", 
+        "version": null, 
+        "version_constraint": "2.0.7"
+      }, 
+      {
+        "name": "org.apache.maven:maven-archiver", 
+        "version": null, 
+        "version_constraint": "2.2"
+      }, 
+      {
+        "name": "org.apache.maven:maven-artifact-manager", 
+        "version": null, 
+        "version_constraint": "2.0.7"
+      }, 
+      {
+        "name": "org.apache.maven:maven-settings", 
+        "version": null, 
+        "version_constraint": "2.0.7"
+      }, 
+      {
+        "name": "org.apache.maven.shared:maven-dependency-tree", 
+        "version": null, 
+        "version_constraint": "1.1"
+      }, 
+      {
+        "name": "org.apache.maven.shared:maven-osgi", 
+        "version": null, 
+        "version_constraint": "0.2.0"
+      }, 
+      {
+        "name": "org.apache.maven.wagon:wagon-provider-api", 
+        "version": null, 
+        "version_constraint": "1.0-beta-2"
+      }, 
+      {
+        "name": "org.codehaus.plexus:plexus-container-default", 
+        "version": null, 
+        "version_constraint": "1.0-alpha-9-stable-1"
+      }, 
+      {
+        "name": "org.codehaus.plexus:plexus-archiver", 
+        "version": null, 
+        "version_constraint": "1.0-alpha-7"
+      }, 
+      {
+        "name": "org.codehaus.plexus:plexus-utils", 
+        "version": null, 
+        "version_constraint": "1.4.7"
+      }
+    ], 
+    "test": [
+      {
+        "name": "org.apache.maven.shared:maven-plugin-testing-harness", 
+        "version": null, 
+        "version_constraint": "1.1"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

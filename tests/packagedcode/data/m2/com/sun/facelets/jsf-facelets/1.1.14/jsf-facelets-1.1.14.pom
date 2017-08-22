@@ -1,0 +1,6 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.sun.facelets</groupId>
+  <artifactId>jsf-facelets</artifactId>
+  <version>1.1.14</version>
+</project>

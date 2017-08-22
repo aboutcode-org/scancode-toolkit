@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import os
 
@@ -167,20 +169,84 @@ class TestLicenseMatchBasic(FileBasedTesting):
             pass
 
     def test_LicenseMatch_small(self):
-        r1_text = u'licensed under the GPL, licensed under the GPL'
-        r1 = Rule(text_file='r1', licenses=['apache-1.1'], _text=r1_text)
-        r2_text = u'licensed under the GPL, licensed under the GPL' * 10
-        r2 = Rule(text_file='r1', licenses=['apache-1.1'], _text=r2_text)
-        _idx = index.LicenseIndex([r1, r2])
+        r1_text = u'licensed under the GPL, licensed under the GPL distribute extent of law'
+        small_rule = Rule(text_file='small_rule', licenses=['apache-1.1'], _text=r1_text)
 
-        assert LicenseMatch(rule=r1, qspan=Span(0, 10), ispan=Span(0, 10), hispan=Span(12)).small()
-        assert LicenseMatch(rule=r1, qspan=Span(0, 10), ispan=Span(0, 10), hispan=Span(11, 12)).small()
-        assert LicenseMatch(rule=r1, qspan=Span(10, 11, 12), ispan=Span(10, 11, 12), hispan=Span(11, 12)).small()
-        assert LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6)).small()
+        r2_text = u'licensed under the GPL, licensed under the GPL re distribute extent of law' * 10
+        long_rule = Rule(text_file='long_rule', licenses=['apache-1.1'], _text=r2_text)
 
-        assert LicenseMatch(rule=r2, qspan=Span(0, 10), ispan=Span(0, 10), hispan=Span(12)).small()
-        assert LicenseMatch(rule=r2, qspan=Span(5, 10), ispan=Span(5, 10), hispan=Span(5, 6)).small()
-        assert LicenseMatch(rule=r2, qspan=Span(1, 6), ispan=Span(1, 6)).small()
+        _idx = index.LicenseIndex([small_rule, long_rule])
+
+        test = LicenseMatch(rule=small_rule, qspan=Span(0, 10), ispan=Span(0, 10), hispan=Span(12))
+        assert test.small()
+        test = LicenseMatch(rule=small_rule, qspan=Span(0, 10), ispan=Span(0, 10), hispan=Span(11, 12))
+        assert test.small()
+
+        test = LicenseMatch(rule=small_rule, qspan=Span(10, 11, 12), ispan=Span(10, 11, 12), hispan=Span(11, 12))
+        assert test.small()
+
+        test = LicenseMatch(rule=small_rule, qspan=Span(1, 6), ispan=Span(1, 6))
+        assert test.small()
+
+        test = LicenseMatch(rule=long_rule, qspan=Span(0, 10), ispan=Span(0, 10), hispan=Span(12))
+        assert test.small()
+
+        test = LicenseMatch(rule=long_rule, qspan=Span(5, 10), ispan=Span(5, 10), hispan=Span(5, 6))
+        assert test.small()
+
+        test = LicenseMatch(rule=small_rule, qspan=Span(1, 10), ispan=Span(1, 10), hispan=Span(3, 6))
+        assert not test.small()
+
+    def test_LicenseMatch_score_is_not_100_with_aho_match_and_extra_unknown_token_hash_match(self):
+        text = (
+            'this file is licensed under the GPL license version2 only '
+            'or any other version. You can redistribute this file under '
+            'this or any other license.')
+        r1 = Rule(text_file='r1', licenses=['apache-1.1'], _text=text)
+        idx = index.LicenseIndex([r1])
+
+        querys = (
+            'this file is licensed under the GPL license version2 only '
+            + ' big ' +
+            'or any other version. You can redistribute this file under '
+            'this or any other license.')
+
+        match = idx.match(query_string=querys)[0]
+        assert match.score() < 100
+
+    def test_LicenseMatch_score_is_not_100_with_aho_match_and_extra_unknown_token_seq_match(self):
+        text = (
+            'this file is licensed under the GPL license version2 only '
+            'or any other version. You can redistribute this file under '
+            'this or any other license.')
+        r1 = Rule(text_file='r1', licenses=['apache-1.1'], _text=text)
+        idx = index.LicenseIndex([r1])
+
+        querys = (
+            'this file is licensed under the GPL license version2 only '
+            + ' is ' +
+            'or any other version. You can redistribute this file under '
+            'this or any other license.')
+
+        match = idx.match(query_string=querys)[0]
+        assert match.score() < 100
+
+    def test_LicenseMatch_score_is_not_100_with_aho_match_and_extra_unknown_token_aho_match(self):
+        text = (
+            'this file is licensed under the GPL license version2 only '
+            'or any other version. You can redistribute this file under '
+            'this or any other license.')
+        r1 = Rule(text_file='r1', licenses=['apache-1.1'], _text=text)
+        idx = index.LicenseIndex([r1])
+
+        querys = (
+            'this this file is licensed under the GPL license version2 only '
+            + ' big ' +
+            'or any other version. You can redistribute this file under '
+            'this or any other license. that')
+
+        match = idx.match(query_string=querys)[0]
+        assert match.score() < 100
 
 
 class TestMergeMatches(FileBasedTesting):
@@ -595,13 +661,14 @@ class TestLicenseMatchScore(FileBasedTesting):
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
         assert m1.score() == 50
 
-    def test_LicenseMatch_score_25(self):
+    def test_LicenseMatch_score_25_with_stored_relvance(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0'])
         r1.relevance = 50
         r1.length = 6
 
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
-        assert m1.score() == 25
+        # NB we do not have a query here
+        assert m1.score() == 50
 
     def test_LicenseMatch_score_0(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0'])

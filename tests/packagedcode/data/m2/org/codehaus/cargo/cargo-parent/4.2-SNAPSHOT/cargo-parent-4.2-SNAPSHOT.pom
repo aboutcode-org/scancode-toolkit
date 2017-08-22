@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright 2005-2007 Vincent Massol.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.codehaus.cargo</groupId>
+  <artifactId>cargo-parent</artifactId>
+  <name>Cargo</name>
+  <packaging>pom</packaging>
+  <version>4.2-SNAPSHOT</version>
+  <url>http://cargo.codehaus.org</url>
+  <prerequisites>
+    <!-- There are some issues with Maven 2.0.4 that have been fixed in Maven 2.0.5 -->
+    <maven>2.0.5</maven>
+  </prerequisites>
+  <inceptionYear>2004</inceptionYear>
+  <issueManagement>
+    <system>jira</system>
+    <url>http://jira.codehaus.org/browse/CARGO</url>
+  </issueManagement>
+  <developers>
+    <developer>
+      <name>Vincent Massol</name>
+      <id>vmassol</id>
+      <email>vmassol@codehaus.org</email>
+      <organization>Codehaus</organization>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+    <developer>
+      <name>Desire Atanga</name>
+      <id>datanga</id>
+      <email />
+      <organization>OCTO Technology</organization>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+    <developer>
+      <name>Hendrik Schreiber</name>
+      <id>hendriks</id>
+      <email>hs@tagtraum.com</email>
+      <organization />
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Arnaud Heritier</name>
+      <id>aheritier</id>
+      <email />
+      <organization />
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+    <developer>
+      <name>Milos Kleint</name>
+      <id>mkleint</id>
+      <email />
+      <organization />
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>I Nyoman Winardi</name>
+      <id>winwin</id>
+      <email />
+      <organization />
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Lev Olkhovich</name>
+      <id>oleo</id>
+      <email />
+      <organization />
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Mark Hobson</name>
+      <id>mark</id>
+      <email />
+      <organization />
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Magnus Grimsell</name>
+      <id>grimsell</id>
+      <email />
+      <organization />
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Nigel Magnay</name>
+      <id>magnayn</id>
+      <email />
+      <organization />
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Jan Bartel</name>
+      <id>janb</id>
+      <email />
+      <organization />
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Scott Farquhar</name>
+      <id>sfarquhar</id>
+      <email />
+      <organization />
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Vincent Siveton</name>
+      <id>vsiveton</id>
+      <email />
+      <organization />
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>David J. M. Karlsen</name>
+      <email>david@codehaus.org</email>
+      <id>david</id>
+      <organization>davidkarlsen.com</organization>
+      <organizationUrl>http://www.davidkarlsen.com</organizationUrl>
+      <timezone>+1</timezone>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Matt Wringe</name>
+      <email>mwringe@redhat.com</email>
+      <id>mwringe</id>
+      <organization>Red Hat</organization>
+      <organizationUrl>www.redhat.com</organizationUrl>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Adrian Cole</name>
+      <email>ferncam1@gmail.com</email>
+      <id>adriancole</id>
+      <organization />
+      <timezone>0</timezone>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <contributors>
+    <contributor>
+      <name>Jerome Lacoste</name>
+    </contributor>
+    <contributor>
+      <name>Tim Shadel</name>
+    </contributor>
+    <contributor>
+      <name>Matt Raible</name>
+    </contributor>
+    <contributor>
+      <name>Jan Zuchhold</name>
+    </contributor>
+    <contributor>
+      <name>Eoghan McIlwaine</name>
+    </contributor>
+    <contributor>
+      <name>Bill Dudney</name>
+    </contributor>
+    <contributor>
+      <name>Rahul Thakur</name>
+    </contributor>
+    <contributor>
+      <name>Lester Ecarma</name>
+    </contributor>
+    <contributor>
+      <name>Juri Artamonov</name>
+    </contributor>
+    <contributor>
+      <name>Kohsuke Kawaguchi</name>
+    </contributor>
+    <contributor>
+      <name>Wendy Smoak</name>
+    </contributor>
+    <contributor>
+      <name>Cedric Vidal</name>
+    </contributor>
+    <contributor>
+      <name>Cedric Munger</name>
+    </contributor>
+    <contributor>
+      <name>Savas Ali Tokmen (OW2)</name>
+    </contributor>
+    <contributor>
+      <name>Adriana Danes (OW2)</name>
+    </contributor>
+  </contributors>
+  <dependencies />
+  <organization>
+    <name>Codehaus</name>
+    <url>http://codehaus.org/</url>
+  </organization>
+  <distributionManagement>
+    <repository>
+      <id>cargo-release</id>
+      <name>Cargo's release repository</name>
+      <url>dav:https://dav.codehaus.org/repository/cargo/</url>
+    </repository>
+    <snapshotRepository>
+      <id>cargo-snapshot</id>
+      <name>Cargo's snapshot repository</name>
+      <url>dav:https://dav.codehaus.org/snapshots.repository/cargo/</url>
+    </snapshotRepository>
+    <site>
+      <id>cargo-website</id>
+      <url>dav:https://dav.codehaus.org/cargo/maven-site/</url>
+    </site>
+  </distributionManagement>
+  <scm>
+    <connection>scm:svn:http://svn.codehaus.org/cargo/pom/tags/cargo-parent-4.1</connection>
+    <developerConnection>scm:svn:https://svn.codehaus.org/cargo/pom/tags/cargo-parent-4.1</developerConnection>
+    <url>http://svn.cargo.codehaus.org/cargo/pom/tags/cargo-parent-4.1</url> 
+  </scm>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+      </plugin>
+      <!-- disabled due to: http://jira.codehaus.org/browse/MCLIRR-7 -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>clirr-maven-plugin</artifactId>
+        <configuration>
+          <minSeverity>info</minSeverity>
+          <failOnError>false</failOnError>
+          <textOutputFile>${project.build.directory}/clirr.txt</textOutputFile>
+          <excludes>
+            <exclude>**/internal/**</exclude>
+            <exclude>**/spi/**</exclude>
+            <exclude>org/codehaus/cargo/module/webapp/VendorWebAppDescriptor</exclude>
+            <exclude>org/codehaus/cargo/module/webapp/orion/OrionWebXml</exclude>
+            <exclude>org/codehaus/cargo/module/webapp/resin/ResinWebXml</exclude>
+            <exclude>org/codehaus/cargo/module/webapp/weblogic/WeblogicXml</exclude>
+            <exclude>org/codehaus/cargo/module/webapp/websphere/IbmWebBndXmi</exclude>            
+          </excludes>
+        </configuration>
+      </plugin>
+<!-- Disabling the clover plugin until the license is renewed -->
+<!--      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clover-plugin</artifactId>
+      </plugin> -->
+    </plugins>
+  </reporting>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <!-- Apply checkstyle rules and fail the build in case of errors. The checkstyle config
+             files are taken from the build-tools JAR module -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <dependencies>
+            <dependency>
+              <groupId>org.codehaus.cargo</groupId>
+              <artifactId>cargo-build-tools</artifactId>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <consoleOutput>true</consoleOutput>
+            <configLocation>build-tools/checkstyle.xml</configLocation>
+            <headerLocation>build-tools/checkstyle.license</headerLocation>
+            <suppressionsLocation>build-tools/checkstyle-suppressions.xml</suppressionsLocation>
+            <suppressionsFileExpression>checkstyle.suppressions.file</suppressionsFileExpression>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>check</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.4</source>
+          <target>1.4</target>
+        </configuration>
+      </plugin>
+      <!-- disabled until http://jira.codehaus.org/browse/MCLIRR-7 is released
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>clirr-maven-plugin</artifactId>
+	<configuration>
+	  <failOnError>false</failOnError>
+	</configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.4.3</version>
+        <configuration>
+          <excludes>
+            <exclude>**/Abstract*.java</exclude>
+            <exclude>**/Test*.java</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+
+<!-- Disabling the clover plugin until the clover license is renewed -->
+<!--      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clover-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>pre-site</phase>
+            <goals>
+              <goal>instrument</goal>
+              <goal>aggregate</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin> -->
+    </plugins>
+
+    <!-- Codehaus is now using WebDav so we need to use the correct Maven Wagon to access it -->
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-webdav</artifactId>
+        <version>1.0-beta-1</version>
+      </extension>
+    </extensions>
+
+  </build>
+</project>

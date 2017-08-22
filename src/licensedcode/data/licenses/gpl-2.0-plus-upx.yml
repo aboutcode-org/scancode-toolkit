@@ -1,0 +1,10 @@
+key: gpl-2.0-plus-upx
+short_name: GPL 2.0 or later with UPX exception
+name: GNU General Public License 2.0 or later with UPX exception
+category: Copyleft Limited
+owner: UPX
+homepage_url: https://github.com/upx/upx/blob/master/LICENSE
+other_urls:
+    - http://wildsau.idv.uni-linz.ac.at/mfx/upx.html
+    - http://www.nexus.hu/upx
+    - http://upx.tsx.org

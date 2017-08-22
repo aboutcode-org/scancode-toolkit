@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>mojo</artifactId>
+    <groupId>org.codehaus.mojo</groupId>
+    <version>16</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <prerequisites>
+    <maven>2.0.3</maven>
+  </prerequisites>
+  <artifactId>cobertura-maven-plugin</artifactId>
+  <packaging>maven-plugin</packaging>
+  <version>2.2</version>
+  <name>Cobertura Maven Plugin</name>
+  <inceptionYear>2005</inceptionYear>
+  <description>
+    Cobertura plugin for maven 2. Cobertura is a free Java tool that calculates the percentage of code accessed by
+    tests. It can be used to identify which parts of your Java program are lacking test coverage.
+  </description>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <issueManagement>
+    <system>JIRA</system>
+    <url>http://jira.codehaus.org/browse/MCOBERTURA</url>
+  </issueManagement>
+  <developers>
+    <developer>
+      <id>joakime</id>
+      <name>Joakim Erdfelt</name>
+      <email>joakim@erdfelt.net</email>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+      <timezone>-5</timezone>
+    </developer>
+    <developer>
+      <id>wgwaltney</id>
+      <name>Will Gwaltney</name>
+      <email>will.gwaltney@sas.com</email>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>fgiust</id>
+      <name>Fabrizio Giustina</name>
+      <email>fgiust@apache.org</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.3</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-changes-plugin</artifactId>
+        <version>2.0-beta-3</version>
+      </plugin>
+    </plugins>
+  </reporting>
+  <dependencies>
+    <!-- cobertura plugin deps -->
+    <dependency>
+      <groupId>net.sourceforge.cobertura</groupId>
+      <artifactId>cobertura</artifactId>
+      <version>1.9</version>
+    </dependency>
+    <!--
+      runtime has no 3rd party deps.  This allows us to
+      pass this dependency into the project's classpath
+      at runtime without risk of introducing dep version
+      clashes e.g. projects which require an older version of
+      asm (namely Hibernate).
+    -->
+    <dependency>
+      <groupId>net.sourceforge.cobertura</groupId>
+      <artifactId>cobertura-runtime</artifactId>
+      <version>1.9</version>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>urbanophile</groupId>
+      <artifactId>java-getopt</artifactId>
+      <version>1.0.9</version>
+    </dependency>
+    <!-- maven plugin deps -->
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-artifact</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-plugin-api</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.reporting</groupId>
+      <artifactId>maven-reporting-api</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-project</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.reporting</groupId>
+      <artifactId>maven-reporting-impl</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-container-default</artifactId>
+      <version>1.0-alpha-9</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-utils</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <!-- testing deps -->
+    <dependency>
+      <groupId>httpunit</groupId>
+      <artifactId>httpunit</artifactId>
+      <version>1.6</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-plugin-testing-harness</artifactId>
+      <version>1.0-beta-1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <scm>
+    <connection>scm:svn:http://svn.codehaus.org/mojo/tags/cobertura-maven-plugin-2.2</connection>
+    <developerConnection>scm:svn:https://svn.codehaus.org/mojo/tags/cobertura-maven-plugin-2.2</developerConnection>
+    <url>http://svn.codehaus.org/mojo/tags/cobertura-maven-plugin-2.2</url>
+  </scm>
+</project>

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,21 +22,24 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import ctypes
 import os
 import logging
 import signal
 import subprocess
+import sys
 
-from commoncode.system import on_windows
-from commoncode.system import current_os_arch
-from commoncode.system import current_os_noarch
-from commoncode.system import noarch
 from commoncode import fileutils
 from commoncode import text
 from commoncode import system
+from commoncode.system import current_os_arch
+from commoncode.system import current_os_noarch
+from commoncode.system import noarch
+from commoncode.system import on_windows
 
 
 """
@@ -233,6 +236,12 @@ def get_env(base_vars=None, lib_dir=None):
         env_vars['LD_LIBRARY_PATH'] = path_var
         # on Mac
         env_vars['DYLD_LIBRARY_PATH'] = path_var
+
+    # ensure that we use bytes, not unicode
+    def to_bytes(s):
+        return s if isinstance(s, bytes) else s.encode('utf-8')
+
+    env_vars = {to_bytes(k): to_bytes(v) for k, v in env_vars.items()}
     return env_vars
 
 
@@ -322,6 +331,9 @@ def load_lib(libname, root_dir):
     os.environ['PATH'] = new_path
 
     if os.path.exists(so):
+        if not isinstance(so, bytes):
+            # ensure that the path is not Unicode...
+            so = so.encode(sys.getfilesystemencoding() or sys.getdefaultencoding())
         lib = ctypes.CDLL(so)
         if lib and lib._name:
             return lib

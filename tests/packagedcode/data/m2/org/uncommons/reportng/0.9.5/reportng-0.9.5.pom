@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.uncommons</groupId>
+  <artifactId>reportng</artifactId>
+  <version>0.9.5</version>
+  
+  <dependencies>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.5</version>
+		</dependency>		
+	</dependencies>
+  
+</project>

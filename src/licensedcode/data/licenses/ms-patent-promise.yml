@@ -1,0 +1,8 @@
+key: ms-patent-promise
+short_name: MS Patent Promise for .NET
+name: Microsoft Patent Promise for .NET Libraries and Runtime Components
+category: Patent License
+owner: Microsoft
+homepage_url: https://github.com/dotnet/corefx/blob/master/PATENTS.TXT
+other_urls:
+    - https://techcrunch.com/2016/11/16/google-signs-on-to-the-net-foundation-and-samsung-brings-net-support-to-tizen/

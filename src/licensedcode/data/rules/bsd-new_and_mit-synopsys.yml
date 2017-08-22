@@ -1,0 +1,4 @@
+licenses:
+    - bsd-new
+    - mit-synopsys
+license_expression: bsd-new and mit-synopsys

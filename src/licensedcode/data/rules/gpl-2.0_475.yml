@@ -1,0 +1,3 @@
+licenses:
+    - gpl-2.0
+notes: gpl2 because this is derived from a Linux driver

@@ -6,3 +6,7 @@ colorama
 execnet
 pytest-xdist
 bumpversion
+coverage
+pytest-cov
+codecov
+xmltodict

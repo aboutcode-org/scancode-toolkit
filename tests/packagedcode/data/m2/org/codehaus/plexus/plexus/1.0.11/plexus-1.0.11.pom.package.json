@@ -1,0 +1,175 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.codehaus.plexus:plexus", 
+  "version": "1.0.11", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Plexus", 
+  "description": null, 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Jason van Zyl", 
+      "email": "jason@maven.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Pete Kazmier", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "James Taylor", 
+      "email": "james@jamestaylor.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Dan Diephouse", 
+      "email": "dan@envoisolutions.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Kasper Nielsen", 
+      "email": "apache@kav.dk", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Ben Walding", 
+      "email": "bwalding@codehaus.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Mark Wilkinson", 
+      "email": "mhw@kremvax.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Michal Maczka", 
+      "email": "mmaczka@interia.pl", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Emmanuel Venisse", 
+      "email": "evenisse@codehaus.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Trygve Laugstol", 
+      "email": "trygvis@codehaus.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Kenney Westerhof", 
+      "email": "kenney@codehaus.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Carlos Sanchez", 
+      "email": "carlos@codehaus.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Brett Porter", 
+      "email": "brett@codehaus.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "John Casey", 
+      "email": "jdcasey@codehaus.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Andrew Williams", 
+      "email": "andy@handyande.co.uk", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Rahul Thakur", 
+      "email": "rahul.thakur.xdev@gmail.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Joakim Erdfelt", 
+      "email": "joakim@erdfelt.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Olivier Lamy", 
+      "email": "olamy@codehaus.org", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [
+    {
+      "type": "organization", 
+      "name": "Codehaus", 
+      "email": null, 
+      "url": "http://www.codehaus.org/"
+    }
+  ], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": null, 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "test": [
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.1"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

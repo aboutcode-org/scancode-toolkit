@@ -1,0 +1,115 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.apache.maven.plugins:maven-plugin-parent", 
+  "version": "2.0.1", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Maven Plugins", 
+  "description": "Maven Plugins", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Jason van Zyl", 
+      "email": "jason@maven.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Brett Porter", 
+      "email": "brett@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Emmanuel Venisse", 
+      "email": "evenisse@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Kenney Westerhof", 
+      "email": "kenney@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Stephane Nicoll", 
+      "email": "snicoll@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Vincent Massol", 
+      "email": "vmassol@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Fabrizio Giustina", 
+      "email": "fgiust@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Edwin Punzalan", 
+      "email": "epunzalan@mergere.com", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [
+    {
+      "type": "organization", 
+      "name": "Apache Software Foundation", 
+      "email": null, 
+      "url": "http://www.apache.org/"
+    }
+  ], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://maven.apache.org/plugins/", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "test": [
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.1"
+      }
+    ], 
+    "compile": [
+      {
+        "name": "org.apache.maven:maven-plugin-api", 
+        "version": null, 
+        "version_constraint": "2.0.1"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

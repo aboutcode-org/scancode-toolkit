@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,121 +24,26 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-years = u'''
-01
-02
-03
-04
-05
-06
-07
-08
-09
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-1960
-1961
-1962
-1963
-1964
-1965
-1966
-1967
-1968
-1969
-1970
-1971
-1972
-1973
-1974
-1975
-1976
-1977
-1978
-1979
-1980
-1981
-1982
-1983
-1984
-1985
-1986
-1987
-1988
-1989
-1990
-1991
-1992
-1993
-1994
-1995
-1996
-1997
-1998
-1999
-2000
-2001
-2002
-2003
-2004
-2005
-2006
-2007
-2008
-2009
-2010
-2011
-2012
-2013
-2014
-2015
-2016
-2017
-2018
-2019
-'''.split()
+from __future__ import absolute_import
+
+from datetime import datetime
+import re
+
+# A regex to match a string that may contain a copyright year.
+# This is a year between 1960 and today prefixed and suffixed with
+# either a white-space or some punctuation.
+
+years = (str(year) for year in range(1960, datetime.today().year))
+years = r'[\(\.,\-\)\s]+(' + '|'.join(years) + r')[\(\.,\-\)\s]+'
+years = re.compile(years).findall
 
 
 statement_markers = u'''
 ©
 cop
-169
-A9
-251
+&#169
+&#xA9
+00A9
 \251
 (c)
 right
@@ -147,7 +52,7 @@ left
 auth
 by
 devel
-'''.split() + years
+'''.split()
 
 
 # (various copyright/copyleft signs tm, r etc) http://en.wikipedia.org/wiki/Copyright_symbol

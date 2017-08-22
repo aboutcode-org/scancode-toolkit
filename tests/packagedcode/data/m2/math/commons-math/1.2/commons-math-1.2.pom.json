@@ -1,0 +1,291 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "commons-math", 
+  "artifact_id": "commons-math", 
+  "version": "1.2", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "org.apache.commons", 
+    "artifact_id": "commons-parent", 
+    "version": "7", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Commons Math", 
+  "description": "The Math project is a library of lightweight, self-contained mathematics and statistics components addressing the most common practical problems not immediately available in the Java programming language or commons-lang.", 
+  "inception_year": "2003", 
+  "url": "http://commons.apache.org/math/", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "achou", 
+      "name": "Albert Davidson Chou", 
+      "email": "achou at apache dot org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "mdiggory", 
+      "name": "Mark Diggory", 
+      "email": "mdiggory at apache dot org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "rdonkin", 
+      "name": "Robert Burrell Donkin", 
+      "email": "rdonkin at apache dot org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "tobrien", 
+      "name": "Tim O'Brien", 
+      "email": "tobrien at apache dot org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "luc", 
+      "name": "Luc Maisonobe", 
+      "email": "luc at apache dot org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "pietsch", 
+      "name": "J. Pietschmann", 
+      "email": "j3322ptm at yahoo dot de", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "psteitz", 
+      "name": "Phil Steitz", 
+      "email": "psteitz at apache dot org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "brentworden", 
+      "name": "Brent Worden", 
+      "email": "brentworden at apache dot org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [
+    {
+      "id": null, 
+      "name": "C. Scott Ananian", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Rodrigo di Lorenzo Lopes", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Hasan Diwan", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Ken Geis", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Elliotte Rusty Harold", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Matthias Hummel", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Piotr Kochanski", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Bob MacCallum", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Fredrik Norin", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Todd C. Parnell", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Joni Salonen", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Christopher Schuck", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Mauro Talevi", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Kim van der Linde", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "J\u00f6rg Weimar", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": null, 
+      "name": "Xiaogang Zhang", 
+      "email": null, 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:svn:http://svn.apache.org/repos/asf/commons/proper/math/trunk", 
+    "developer_connection": null, 
+    "url": "http://svn.apache.org/viewvc/commons/proper/math/trunk", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://issues.apache.org/jira/browse/MATH"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {
+      "id": "people.apache.org", 
+      "name": "Commons Math", 
+      "url": "scp://people.apache.org/www/commons.apache.org/math"
+    }, 
+    "repository": {}, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.2", 
+        "required": true
+      }
+    ], 
+    "compile": [
+      {
+        "group_id": "commons-logging", 
+        "artifact_id": "commons-logging", 
+        "version": "1.0.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-discovery", 
+        "artifact_id": "commons-discovery", 
+        "version": "0.2", 
+        "required": false
+      }
+    ]
+  }
+}

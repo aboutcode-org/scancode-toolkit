@@ -1,0 +1,6 @@
+key: bsd-innosys
+short_name: BSD-InnoSys
+name: BSD-InnoSys
+category: Permissive
+owner: InnoSys
+notes: This is a BSD variant with extra conditions on the placement of the notice. Common in the Linux kernel

@@ -1,0 +1,153 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.springframework", 
+  "artifact_id": "spring-test", 
+  "version": "2.5.4", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Spring Framework: Test", 
+  "description": "Spring Framework: Test", 
+  "inception_year": null, 
+  "url": "http://www.springframework.org", 
+  "organization_name": "Spring Framework", 
+  "organization_url": "http://www.springframework.org/", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:cvs:pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring", 
+    "developer_connection": null, 
+    "url": "http://springframework.cvs.sourceforge.net/springframework/", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {
+      "id": "spring-release", 
+      "name": "Spring Release Repository", 
+      "url": "file:///Users/benhale/development/public/repos/repo"
+    }, 
+    "snapshot_repository": {
+      "id": "spring-snapshot", 
+      "name": "Spring Snapshot Repository", 
+      "url": "s3://maven.springframework.org/snapshot"
+    }
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "aspectj", 
+        "artifact_id": "aspectjrt", 
+        "version": "1.5.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "aspectj", 
+        "artifact_id": "aspectjweaver", 
+        "version": "1.5.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "commons-logging", 
+        "artifact_id": "commons-logging", 
+        "version": "1.1.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "3.8.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "taglibs", 
+        "artifact_id": "standard", 
+        "version": "1.1.2", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-beans", 
+        "version": "2.5.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-context", 
+        "version": "2.5.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-core", 
+        "version": "2.5.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-jdbc", 
+        "version": "2.5.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-orm", 
+        "version": "2.5.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-tx", 
+        "version": "2.5.4", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-webmvc", 
+        "version": "2.5.4", 
+        "required": false
+      }
+    ], 
+    "provided": [
+      {
+        "group_id": "javax.persistence", 
+        "artifact_id": "persistence-api", 
+        "version": "1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.portlet", 
+        "artifact_id": "portlet-api", 
+        "version": "1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "jsp-api", 
+        "version": "2.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "servlet-api", 
+        "version": "2.4", 
+        "required": true
+      }
+    ]
+  }
+}

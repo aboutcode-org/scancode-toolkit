@@ -1,0 +1,206 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.mortbay.jetty", 
+  "artifact_id": "jetty-parent", 
+  "version": "7", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {}, 
+  "name": "Jetty :: Administrative Parent", 
+  "description": null, 
+  "inception_year": "1995", 
+  "url": "http://jetty.mortbay.org", 
+  "organization_name": "Mort Bay Consulting", 
+  "organization_url": "http://www.mortbay.com", 
+  "licenses": [
+    {
+      "name": "Apache License Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [
+    {
+      "id": "gregw", 
+      "name": "Greg Wilkins", 
+      "email": "gregw@apache.org", 
+      "url": "http://www.mortbay.com/mortbay/people/gregw", 
+      "organization": "Mort Bay Consulting", 
+      "organization_url": "http://www.mortbay.com", 
+      "roles": []
+    }, 
+    {
+      "id": "janb", 
+      "name": "Jan Bartel", 
+      "email": "janb@apache.org", 
+      "url": "http://www.mortbay.com/people/janb", 
+      "organization": "Mort Bay Consulting", 
+      "organization_url": "http://www.mortbay.com", 
+      "roles": []
+    }, 
+    {
+      "id": "jules", 
+      "name": "Jules Gosnell", 
+      "email": "jules@apache.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jstrachan", 
+      "name": "James Strachan", 
+      "email": "jstrachan@apache.org", 
+      "url": null, 
+      "organization": "Logic Blaze", 
+      "organization_url": "http://www.logicblaze.com", 
+      "roles": []
+    }, 
+    {
+      "id": "sbordet", 
+      "name": "Simone Bordet", 
+      "email": "simone.bordet@gmail.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "tvernum", 
+      "name": "Tim Vernum", 
+      "email": "tim@adjective.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "ngonzalez", 
+      "name": "Nik Gonzalez", 
+      "email": "ngonzalez@exist.com", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "jfarcand", 
+      "name": "Jeanfrancois Arcand", 
+      "email": "jfarcand@apache.org", 
+      "url": null, 
+      "organization": "Sun Microsystems", 
+      "organization_url": "http://www.sun.com", 
+      "roles": []
+    }, 
+    {
+      "id": "jesse", 
+      "name": "Jesse McConnell", 
+      "email": "jesse@webtide.org", 
+      "url": null, 
+      "organization": "Webtide, LLC", 
+      "organization_url": "http://www.webtide.com", 
+      "roles": []
+    }, 
+    {
+      "id": "djencks", 
+      "name": "David Jencks", 
+      "email": "david_jencks@yahoo.com", 
+      "url": null, 
+      "organization": "IBM", 
+      "organization_url": null, 
+      "roles": []
+    }, 
+    {
+      "id": "dyu", 
+      "name": "David Yu", 
+      "email": "david.yu.ftw@gmail.com", 
+      "url": null, 
+      "organization": "Webtide", 
+      "organization_url": "http://www.webtide.com", 
+      "roles": []
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Jetty User List", 
+      "archive_url": "http://archive.jetty.codehaus.org/user"
+    }, 
+    {
+      "name": "Jetty Developer List", 
+      "archive_url": "http://archive.jetty.codehaus.org/dev"
+    }, 
+    {
+      "name": "Jetty Announce List", 
+      "archive_url": "http://archive.jetty.codehaus.org/announce"
+    }, 
+    {
+      "name": "Jetty Commit List", 
+      "archive_url": "http://archive.jetty.codehaus.org/scm"
+    }, 
+    {
+      "name": "Defunct - Jetty Discuss List", 
+      "archive_url": "http://lists.sourceforge.net/lists/listinfo/jetty-discuss"
+    }, 
+    {
+      "name": "Defunct - Jetty Support List", 
+      "archive_url": "http://lists.sourceforge.net/lists/listinfo/jetty-support"
+    }, 
+    {
+      "name": "Defunct - Jetty Announce List", 
+      "archive_url": "http://lists.sourceforge.net/lists/listinfo/jetty-announce"
+    }
+  ], 
+  "scm": {
+    "connection": "scm:svn:https://svn.codehaus.org/jetty/pom/tags/jetty-parent-7", 
+    "developer_connection": null, 
+    "url": "scm:svn:https://svn.codehaus.org/jetty/pom/tags/jetty-parent-7", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "jira", 
+    "url": "http://jira.codehaus.org/browse/JETTY"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {
+      "id": "codehaus.org", 
+      "name": "Jetty Repository", 
+      "url": "dav:https://dav.codehaus.org/repository/jetty/"
+    }, 
+    "snapshot_repository": {
+      "id": "codehaus.org", 
+      "name": "Jetty Snapshot Repository", 
+      "url": "dav:https://dav.codehaus.org/snapshots.repository/jetty/"
+    }
+  }, 
+  "repositories": [
+    {
+      "id": "codehaus.org", 
+      "name": "Jetty Snapshot Repository", 
+      "url": "http://snapshots.repository.codehaus.org"
+    }, 
+    {
+      "id": "java.net", 
+      "name": null, 
+      "url": "http://download.java.net/maven/2"
+    }, 
+    {
+      "id": "m1.java.net", 
+      "name": null, 
+      "url": "http://download.java.net/maven/1"
+    }
+  ], 
+  "plugin_repositories": [
+    {
+      "id": "codehaus.org", 
+      "name": "Jetty Snapshot Repository", 
+      "url": "http://snapshots.repository.codehaus.org"
+    }
+  ], 
+  "dependencies": {}
+}

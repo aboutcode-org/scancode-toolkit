@@ -1,0 +1,69 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.hibernate:hibernate-entitymanager", 
+  "version": "3.2.1.ga", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Hibernate EntityManager", 
+  "description": "Hibernate EntityManager implements the programming interfaces and lifecycle rules as defined by the EJB3 persistence specification.", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://entitymanager.hibernate.org", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "GNU LESSER GENERAL PUBLIC LICENSE", 
+      "url": "http://www.gnu.org/licenses/lgpl.txt", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "org.hibernate:hibernate-annotations", 
+        "version": null, 
+        "version_constraint": "3.2.1.ga"
+      }, 
+      {
+        "name": "jboss:javassist", 
+        "version": null, 
+        "version_constraint": "3.3.ga"
+      }, 
+      {
+        "name": "jboss:jboss-archive-browsing", 
+        "version": null, 
+        "version_constraint": "5.0.0alpha-200607201-119"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

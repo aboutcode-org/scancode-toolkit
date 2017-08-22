@@ -1,0 +1,103 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "com.adobe.ac.samples.lcds:flex_app", 
+  "version": "1.0-SNAPSHOT", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "com.adobe.ac.samples.lcds custom flex_app", 
+  "description": "This project hold the flex (blazeds enabled) flex front-end.\n        Its architecture is based on adobe consulting mvn framework: cairngorm.", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": null, 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "test": [
+      {
+        "name": "info.flex-mojos:testing-support", 
+        "version": null, 
+        "version_constraint": "${flex-mojos.version}"
+      }, 
+      {
+        "name": "com.adobe.flexunit:flexunit", 
+        "version": null, 
+        "version_constraint": "${flexUnit.version}"
+      }, 
+      {
+        "name": "com.adobe.flexunit:flexunit-optional", 
+        "version": null, 
+        "version_constraint": "${flexUnit.version}"
+      }
+    ], 
+    "provided": [
+      {
+        "name": "com.adobe.ac.samples.lcds:blazeds_service_config", 
+        "version": null, 
+        "version_constraint": "1.0-SNAPSHOT"
+      }
+    ], 
+    "internal": [
+      {
+        "name": "com.adobe.ac.samples.lcds:flex_remoted_objects", 
+        "version": null, 
+        "version_constraint": "1.0-SNAPSHOT"
+      }
+    ], 
+    "compile": [
+      {
+        "name": "com.adobe.flex:compiler", 
+        "version": null, 
+        "version_constraint": "${flex.sdk.version}"
+      }, 
+      {
+        "name": "com.adobe.flex.framework:flex-framework", 
+        "version": null, 
+        "version_constraint": "${flex.sdk.version}"
+      }, 
+      {
+        "name": "com.adobe.cairngorm:cairngorm", 
+        "version": null, 
+        "version_constraint": "${cairngorm.version}"
+      }, 
+      {
+        "name": "com.adobe.cairngorm:cairngorm-enterprise", 
+        "version": null, 
+        "version_constraint": "${cairngorm.version}"
+      }, 
+      {
+        "name": "com.adobe.lcds:fds", 
+        "version": null, 
+        "version_constraint": "${lcds.version}"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

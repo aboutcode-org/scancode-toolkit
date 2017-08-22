@@ -1,0 +1,230 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "commons-io:commons-io", 
+  "version": "1.3.1", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "IO", 
+  "description": "Commons-IO contains utility classes, stream implementations, file filters, and endian classes.", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Scott Sanders", 
+      "email": "sanders@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "dIon Gillard", 
+      "email": "dion@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Nicola Ken Barozzi", 
+      "email": "nicolaken@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Henri Yandell", 
+      "email": "bayard@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Stephen Colebourne", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jeremias Maerki", 
+      "email": "jeremias@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Matthew Hawthorne", 
+      "email": "matth@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Martin Cooper", 
+      "email": "martinc@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Rob Oxspring", 
+      "email": "roxspring@apache.org", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [
+    {
+      "type": "person", 
+      "name": "Rahul Akolkar", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jason Anderson", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Nathan Beyer", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Emmanuel Bourg", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Chris Eldredge", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Magnus Grimsell", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jim Harrington", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Holger Hoffstatte", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Thomas Ledoux", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Andy Lehane", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Marcelo Liberato", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Alban Peignier", 
+      "email": "alban.peignier at free.fr", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Niall Pemberton", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Ian Springer", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Masato Tezuka", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "James Urie", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jochen Wiedmann", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Frank W. Zammetti", 
+      "email": null, 
+      "url": null
+    }
+  ], 
+  "owners": [
+    {
+      "type": "organization", 
+      "name": "The Apache Software Foundation", 
+      "email": null, 
+      "url": "http://jakarta.apache.org"
+    }
+  ], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://jakarta.apache.org/commons/io/", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "The Apache Software License, Version 2.0", 
+      "url": "/LICENSE.txt", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "test": [
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.1"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

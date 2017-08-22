@@ -1,0 +1,16 @@
+key: ac3filter
+short_name: AC3Filter License
+name: AC3Filter License
+category: Copyleft
+owner: Alexander Vigovsky
+homepage_url: http://www.ac3filter.net/wiki/Download_AC3Filter
+other_urls:
+    - http://ac3filter.net
+    - http://ac3filter.net/forum
+minimum_coverage: 95
+notes: The license text contains terms that contradict, and are
+    completely incompatible with, the terms of GPL 2.0. 
+    "This application may solely be used for demonstration and
+    educational purposes. Any other use may be prohibited by law in
+    some coutries."
+    The typo "coutries" is in the original license text.

@@ -1,0 +1,77 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.apache.shale:shale-test", 
+  "version": "1.0.4", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Shale Test Framework", 
+  "description": null, 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [], 
+  "maintainers": [], 
+  "contributors": [], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": null, 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "htmlunit:htmlunit", 
+        "version": null, 
+        "version_constraint": "latest.release"
+      }, 
+      {
+        "name": "jmock:jmock", 
+        "version": null, 
+        "version_constraint": "1.0.1"
+      }, 
+      {
+        "name": "jmock:jmock-cglib", 
+        "version": null, 
+        "version_constraint": "1.0.1"
+      }, 
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.1"
+      }, 
+      {
+        "name": "org.codehaus.cargo:cargo-core-uberjar", 
+        "version": null, 
+        "version_constraint": "0.8"
+      }, 
+      {
+        "name": "org.codehaus.cargo:cargo-ant", 
+        "version": null, 
+        "version_constraint": "0.8"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

@@ -1,0 +1,35 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.apache.maven.reporting", 
+  "artifact_id": "maven-reporting", 
+  "version": "2.0.8", 
+  "classifier": null, 
+  "packaging ": "pom", 
+  "parent": {
+    "group_id": "org.apache.maven", 
+    "artifact_id": "maven", 
+    "version": "2.0.8", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Maven Reporting", 
+  "description": null, 
+  "inception_year": "2005", 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [
+    "maven-reporting-api"
+  ], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {}
+}

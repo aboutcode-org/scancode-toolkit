@@ -1,0 +1,26 @@
+
+   This code was developed from version of the  drivers,
+   released by corp. under the GPL in . It also
+   includes code from the Linux  drivers (C) ,
+   and the Linux package, (C)  and the Linux wireless
+   extensions, (C) .
+
+   The firmware module for reading the MAC address of the card comes from
+   , written by  and copyright
+   by him.  is used under the GPL license version 2.
+   This file contains the module in binary form and, under the terms
+   of the GPL, in source form. The source is located at the end of the file.
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   This software is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with Atmel wireless lan drivers; if not, see
+   <http://www.gnu.org/licenses/>.

@@ -1,0 +1,219 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "commons-digester:commons-digester", 
+  "version": "1.8", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "Digester", 
+  "description": "The Digester package lets you configure an XML->Java object mapping module\n    which triggers certain actions called rules whenever a particular \n    pattern of nested XML elements is recognized.", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [
+    {
+      "type": "person", 
+      "name": "Craig McClanahan", 
+      "email": "craigmcc@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Robert Burrell Donkin", 
+      "email": "rdonkin@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Scott Sanders", 
+      "email": "sanders@totalsync.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "James Strachan", 
+      "email": "jstrachan@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jason van Zyl", 
+      "email": "jvanzyl@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Tim OBrien", 
+      "email": "tobrien@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Jean-Francois Arcand", 
+      "email": "jfarcand@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Simon Kitching", 
+      "email": "skitching@apache.org", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Rahul Akolkar", 
+      "email": "rahul AT apache DOT org", 
+      "url": null
+    }
+  ], 
+  "maintainers": [], 
+  "contributors": [
+    {
+      "type": "person", 
+      "name": "Bradley M. Handy", 
+      "email": "bhandy@users.sf.net", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Christopher Lenz", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Ted Husted", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "David H. Martin", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Henri Chen", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Janek Bogucki", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Mark Huisman", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Paul Jack", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Anton Maslovsky", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Matt Cleveland", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Gabriele Carcassi", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Wendy Smoak", 
+      "email": "java@wendysmoak.com", 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Kevin Ross", 
+      "email": "kevin.ross@iverticalleap.com", 
+      "url": null
+    }
+  ], 
+  "owners": [
+    {
+      "type": "organization", 
+      "name": "The Apache Software Foundation", 
+      "email": null, 
+      "url": "http://jakarta.apache.org"
+    }
+  ], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://jakarta.apache.org/commons/digester/", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [
+    {
+      "license": "The Apache Software License, Version 2.0", 
+      "url": "/LICENSE.txt", 
+      "text": null, 
+      "notice": null
+    }
+  ], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "name": "commons-beanutils:commons-beanutils", 
+        "version": null, 
+        "version_constraint": "1.7.0"
+      }, 
+      {
+        "name": "commons-logging:commons-logging", 
+        "version": null, 
+        "version_constraint": "1.1"
+      }
+    ], 
+    "provided": [
+      {
+        "name": "xml-apis:xml-apis", 
+        "version": null, 
+        "version_constraint": "1.0.b2"
+      }
+    ], 
+    "test": [
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.1"
+      }
+    ]
+  }, 
+  "related_packages": []
+}

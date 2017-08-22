@@ -1,0 +1,5 @@
+licenses:
+    - gpl-2.0-plus
+    - mit
+license: gpl-2.0-plus or mit
+license_choice: yes

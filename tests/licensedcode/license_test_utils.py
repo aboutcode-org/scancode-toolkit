@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,16 +22,25 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 from unittest.case import expectedFailure
 from unittest.case import skip
 
 from commoncode import functional
-
-from licensedcode import index
-from licensedcode.match import get_texts
 from commoncode.text import python_safe_name
+from licensedcode import cache
+from licensedcode.match import get_texts
+
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+except NameError:
+    # Python 3
+    unicode = str
 
 
 """
@@ -49,11 +58,14 @@ def make_license_test_function(
     """
     Build and return a test function closing on tests arguments.
     """
+    if isinstance(test_name, unicode):
+        test_name = test_name.encode('utf-8')
+
     if not isinstance(expected_licenses, list):
         expected_licenses = [expected_licenses]
 
     def closure_test_function(*args, **kwargs):
-        idx = index.get_index()
+        idx = cache.get_index()
         matches = idx.match(location=test_file, min_score=min_score,
                             # if negative, do not detect negative rules when testing negative rules
                             detect_negative=detect_negative)
@@ -126,7 +138,7 @@ def print_matched_texts(match, location=None, query_string=None, idx=None):
 
 def check_license(location=None, query_string=None, expected=(), test_data_dir=None):
     if query_string:
-        idx = index.get_index()
+        idx = cache.get_index()
         matches = idx.match(location=location, query_string=query_string)
         results = functional.flatten(map(unicode, match.rule.licenses) for match in matches)
         assert expected == results

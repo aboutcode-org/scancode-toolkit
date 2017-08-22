@@ -1,3 +1,4 @@
 licenses:
     - gpl-2.0-plus
 notes: gpl 2 dedian notice
+minimum_coverage: 80

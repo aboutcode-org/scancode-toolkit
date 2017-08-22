@@ -1,13 +1,10 @@
 key: mit
 short_name: MIT License
 name: MIT License
-
 category: Permissive
 owner: MIT
 homepage_url: http://opensource.org/licenses/mit-license.php
-notes: |-
-    notes from SPDX:
-    This license is OSI certified.
+notes: Per SPDX.org, this license is OSI certified.
 spdx_license_key: MIT
 text_urls:
     - http://opensource.org/licenses/mit-license.php

@@ -1,0 +1,7 @@
+key: bsd-simplified-source
+short_name: BSD-Simplified source
+name: BSD-Simplified source
+category: Permissive
+notes: a very simplified bsd variant metioning only source and without disclaimer. Found in the
+    Linux kernel
+owner: Unspecified

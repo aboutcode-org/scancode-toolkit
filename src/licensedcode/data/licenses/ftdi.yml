@@ -1,0 +1,8 @@
+key: ftdi
+short_name: FTDI License
+name: Future Technology Devices International License
+category: Proprietary Free
+owner: FTDI
+homepage_url: https://github.com/psi46/psi46test/blob/master/linux/ftd2xx.h
+other_urls:
+    - http://www.ftdichip.com/

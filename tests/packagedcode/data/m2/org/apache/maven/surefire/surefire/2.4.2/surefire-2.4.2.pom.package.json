@@ -1,0 +1,70 @@
+{
+  "type": "Apache Maven POM", 
+  "name": "org.apache.maven.surefire:surefire", 
+  "version": "2.4.2", 
+  "primary_language": "Java", 
+  "packaging": "archive", 
+  "summary": "SureFire", 
+  "description": "Surefire is a test framework project.", 
+  "payload_type": null, 
+  "size": null, 
+  "release_date": null, 
+  "authors": [], 
+  "maintainers": [], 
+  "contributors": [
+    {
+      "type": "person", 
+      "name": "Jesse Kuhnert", 
+      "email": null, 
+      "url": null
+    }, 
+    {
+      "type": "person", 
+      "name": "Vincent Siveton", 
+      "email": "vincent.siveton@gmail.com", 
+      "url": null
+    }
+  ], 
+  "owners": [], 
+  "packagers": [], 
+  "distributors": [], 
+  "vendors": [], 
+  "keywords": [], 
+  "keywords_doc_url": null, 
+  "metafile_locations": [], 
+  "metafile_urls": [], 
+  "homepage_url": "http://maven.apache.org/surefire", 
+  "notes": null, 
+  "download_urls": [], 
+  "download_sha1": null, 
+  "download_sha256": null, 
+  "download_md5": null, 
+  "bug_tracking_url": null, 
+  "support_contacts": [], 
+  "code_view_url": null, 
+  "vcs_tool": null, 
+  "vcs_repository": null, 
+  "vcs_revision": null, 
+  "copyright_top_level": null, 
+  "copyrights": [], 
+  "asserted_licenses": [], 
+  "legal_file_locations": [], 
+  "license_expression": null, 
+  "license_texts": [], 
+  "notice_texts": [], 
+  "dependencies": {
+    "test": [
+      {
+        "name": "junit:junit", 
+        "version": null, 
+        "version_constraint": "3.8.1"
+      }, 
+      {
+        "name": "jmock:jmock", 
+        "version": null, 
+        "version_constraint": "1.0.1"
+      }
+    ]
+  }, 
+  "related_packages": []
+}
