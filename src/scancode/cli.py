@@ -33,6 +33,7 @@ from scancode.pool import get_pool
 import codecs
 from collections import OrderedDict
 from functools import partial
+from itertools import imap
 import os
 from os.path import expanduser
 from os.path import abspath
@@ -67,6 +68,7 @@ from scancode.cache import ScanFileCache
 from scancode.cache import get_scans_cache_class
 
 from scancode.interrupt import DEFAULT_TIMEOUT
+from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
 from scancode.interrupt import TimeoutError
 
@@ -566,11 +568,8 @@ def scan(input_path,
 
     scan_summary['indexing_time'] = indexing_time
 
-    # TODO: handle pickling errors as in ./scancode -cilp   samples/ -n3: note they are only caused by a FanoutCache
-    # TODO: handle other exceptions properly to avoid any hanging
+    pool = None
 
-    # maxtasksperchild helps with recycling processes in case of leaks
-    pool = get_pool(processes=processes, maxtasksperchild=1000)
     resources = resource_paths(input_path, pre_scan_plugins=pre_scan_plugins)
     logfile_path = scans_cache_class().cache_files_log
     paths_with_error = []
@@ -580,18 +579,25 @@ def scan(input_path,
         logged_resources = _resource_logger(logfile_fd, resources)
 
         scanit = partial(_scanit, scanners=scanners, scans_cache_class=scans_cache_class,
-                         diag=diag, timeout=timeout)
-
+                         diag=diag, timeout=timeout, processes=processes)
 
         max_file_name_len = compute_fn_max_len()
         # do not display a file name in progress bar if there is less than 5 chars available.
         display_fn = bool(max_file_name_len > 10)
         try:
-            # Using chunksize is documented as much more efficient in the Python doc.
-            # Yet "1" still provides a better and more progressive feedback.
-            # With imap_unordered, results are returned as soon as ready and out of order.
-            scanned_files = pool.imap_unordered(scanit, logged_resources, chunksize=1)
-            pool.close()
+            if processes:
+                # maxtasksperchild helps with recycling processes in case of leaks
+                pool = get_pool(processes=processes, maxtasksperchild=1000)
+                # Using chunksize is documented as much more efficient in the Python doc.
+                # Yet "1" still provides a better and more progressive feedback.
+                # With imap_unordered, results are returned as soon as ready and out of order.
+                scanned_files = pool.imap_unordered(scanit, logged_resources, chunksize=1)
+                pool.close()
+            else:
+                # no multiprocessing with processes=0
+                scanned_files = imap(scanit, logged_resources)
+                if not quiet:
+                    echo_stderr('Disabling multi-processing and multi-threading...', fg='yellow')
 
             if not quiet:
                 echo_stderr('Scanning files...', fg='green')
@@ -623,12 +629,14 @@ def scan(input_path,
                         break
                     except KeyboardInterrupt:
                         print('\nAborted with Ctrl+C!')
-                        pool.terminate()
+                        if pool:
+                            pool.terminate()
                         break
         finally:
-            # ensure the pool is really dead to work around a Python 2.7.3 bug:
-            # http://bugs.python.org/issue15101
-            pool.terminate()
+            if pool:
+                # ensure the pool is really dead to work around a Python 2.7.3 bug:
+                # http://bugs.python.org/issue15101
+                pool.terminate()
 
     # TODO: add stats to results somehow
 
@@ -711,7 +719,7 @@ def _resource_logger(logfile_fd, resources):
         yield posix_path, rel_path
 
 
-def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT):
+def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, processes=1):
     """
     Run scans and cache results on disk. Return a tuple of (success, scanned relative
     path) where sucess is True on success, False on error. Note that this is really
@@ -732,14 +740,19 @@ def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT):
     scanner_functions = map(lambda t : t[0] and t[1], scanners.values())
     scanners = OrderedDict(zip(scanners.keys(), scanner_functions))
 
+    if processes:
+        interrupter = interruptible
+    else:
+        # fake, non inteerrupting used for debugging when processes=0
+        interrupter = fake_interruptible
+
     if any(scanner_functions):
         # Skip other scans if already cached
         # FIXME: ENSURE we only do this for files not directories
         if not is_cached:
             # run the scan as an interruptiple task
             scans_runner = partial(scan_one, abs_path, scanners, diag)
-            # quota keyword args for interruptible
-            success, scan_result = interruptible(scans_runner, timeout=timeout)
+            success, scan_result = interrupter(scans_runner, timeout=timeout)
             if not success:
                 # Use scan errors as the scan result for that file on failure this is
                 # a top-level error not attachedd to a specific scanner, hence the
