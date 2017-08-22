@@ -1,0 +1,148 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "com.github.vincentrussell", 
+  "artifact_id": "springmvc-rest-docs-maven-plugin", 
+  "version": "1.0-RC1", 
+  "classifier": null, 
+  "packaging ": "maven-plugin", 
+  "parent": {
+    "group_id": "com.github.vincentrussell", 
+    "artifact_id": "springmvc-rest-docs-parent", 
+    "version": "1.0-RC1", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": null, 
+  "description": null, 
+  "inception_year": null, 
+  "url": "http://maven.apache.org", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "com.github.vincentrussell", 
+        "artifact_id": "springmvc-rest-docs-deps", 
+        "version": "latest.release", 
+        "required": true
+      }, 
+      {
+        "group_id": "com.fasterxml.jackson.core", 
+        "artifact_id": "jackson-databind", 
+        "version": "2.7.8", 
+        "required": true
+      }, 
+      {
+        "group_id": "com.fasterxml.jackson.core", 
+        "artifact_id": "jackson-core", 
+        "version": "2.7.8", 
+        "required": true
+      }, 
+      {
+        "group_id": "io.springfox", 
+        "artifact_id": "springfox-swagger2", 
+        "version": "2.7.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "com.google.guava", 
+        "artifact_id": "guava", 
+        "version": "22.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-webmvc", 
+        "version": "4.3.8.RELEASE", 
+        "required": true
+      }, 
+      {
+        "group_id": "io.github.swagger2markup", 
+        "artifact_id": "swagger2markup", 
+        "version": "1.3.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax.servlet", 
+        "artifact_id": "javax.servlet-api", 
+        "version": "3.1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-test", 
+        "version": "4.3.8.RELEASE", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven.plugin-tools", 
+        "artifact_id": "maven-plugin-annotations", 
+        "version": "3.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.eclipse.aether", 
+        "artifact_id": "aether-api", 
+        "version": "1.1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.eclipse.aether", 
+        "artifact_id": "aether-util", 
+        "version": "1.1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.commons", 
+        "artifact_id": "commons-lang3", 
+        "version": "3.5", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-io", 
+        "artifact_id": "commons-io", 
+        "version": "1.3.2", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.hamcrest", 
+        "artifact_id": "hamcrest-core", 
+        "version": "1.3", 
+        "required": true
+      }
+    ], 
+    "provided": [
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-core", 
+        "version": "3.1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.apache.maven", 
+        "artifact_id": "maven-plugin-api", 
+        "version": "3.1.0", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "4.11", 
+        "required": true
+      }
+    ]
+  }
+}

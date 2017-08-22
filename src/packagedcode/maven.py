@@ -32,6 +32,7 @@ import logging
 import os.path
 from os.path import dirname
 from os.path import join
+from pprint import pformat
 import re
 
 from lxml import etree
@@ -46,9 +47,12 @@ from textcode import analysis
 
 
 logger = logging.getLogger(__name__)
-# import sys
-# logging.basicConfig(stream=sys.stdout)
-# logger.setLevel(logging.DEBUG)
+TRACE = False
+
+if TRACE:
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
 
 
 """
@@ -86,6 +90,17 @@ class ParentPom(artifact.Artifact):
         # TODO: ????
         # self.pom_data/self._xml = None
 
+    def resolve(self, **properties):
+        """
+        Resolve possible parent POM properties using the provided
+        properties.
+        """
+        if not properties:
+            return
+        self.group_id = MavenPom._replace_props(self.group_id, properties)
+        self.artifact_id = MavenPom._replace_props(self.artifact_id, properties)
+        self.version = MavenPom._replace_props(self.version, properties)
+
     def to_dict(self):
         """
         Return a mapping representing this POM
@@ -103,13 +118,20 @@ STRIP_NAMESPACE_RE = re.compile(r"<project(.|\s)*?>", re.UNICODE)
 
 
 class MavenPom(pom.Pom):
-    def __init__(self, location):
+    def __init__(self, location=None, text=None):
+        """
+        Build a POM from a location or unicode text.
+        """
+        assert (location or text) and (not (location and text))
         # NOTE: most of this is copied over from Pom.__init__
-        try:
-            with codecs.open(location, 'rb', encoding='UTF-8') as fh:
-                xml = fh.read()
-        except UnicodeDecodeError as _a:
-            xml = analysis.unicode_text(location)
+        if location:
+            try:
+                with codecs.open(location, 'rb', encoding='UTF-8') as fh:
+                    xml = fh.read()
+            except UnicodeDecodeError as _a:
+                xml = analysis.unicode_text(location)
+        else:
+            xml = text
 
         xml = xml[xml.find('<project'):]
         xml = STRIP_NAMESPACE_RE.sub('<project>', xml, 1)
@@ -127,6 +149,9 @@ class MavenPom(pom.Pom):
         self._client = None
 
         self.model_version = self._get_attribute('modelVersion')
+        if not self.model_version:
+            # for version 3
+            self.model_version = self._get_attribute('pomVersion')
         self.group_id = self._get_attribute('groupId')
         self.artifact_id = self._get_attribute('artifactId')
         self.version = self._get_attribute('version')
@@ -170,21 +195,17 @@ class MavenPom(pom.Pom):
         Return a mapping of extra properties
         """
         properties = {}
-        properties['classifier'] = self.classifier
-        properties['project.classifier'] = self.classifier
-        properties['pom.classifier'] = self.classifier
+        for name in build_property_variants('classifier'):
+            properties[name] = self.classifier
 
-        properties['packaging'] = self.packaging
-        properties['project.packaging'] = self.packaging
-        properties['pom.packaging'] = self.packaging
+        for name in build_property_variants('packaging'):
+            properties[name] = self.packaging
 
-        properties['organization.name'] = self.organization_name
-        properties['project.organization.name'] = self.organization_name
-        properties['pom.organization.name'] = self.organization_name
+        for name in build_property_variants('organization.name'):
+            properties[name] = self.organization_name
 
-        properties['organization.url'] = self.organization_url
-        properties['project.organization.url'] = self.organization_url
-        properties['pom.organization.url'] = self.organization_url
+        for name in build_property_variants('organization.url'):
+            properties[name] = self.organization_url
 
         # TODO: collect props defined in a properties file
         # see https://maven.apache.org/shared/maven-archiver/#class_archive
@@ -194,7 +215,8 @@ class MavenPom(pom.Pom):
 
     @classmethod
     def _replace_props(cls, text, properties):
-
+        if not text:
+            return text
         def subfunc(matchobj):
             """Return the replacement value for a matched property key."""
             key = matchobj.group(1)
@@ -212,8 +234,11 @@ class MavenPom(pom.Pom):
             return substring(value, start, end)
 
         result = pom.PROPERTY_RE.sub(subfunc, text)
-        while result and pom.PROPERTY_RE.match(result):
+        # we loop a maximum of 5 times to avoid cases of infinite recursion
+        cycles = 5
+        while cycles > 0 and result and pom.PROPERTY_RE.match(result):
             result = pom.PROPERTY_RE.sub(subfunc, result)
+            cycles -= 1
 
         if not result:
             result = text
@@ -221,21 +246,46 @@ class MavenPom(pom.Pom):
 
     def _replace_properties(self, text, properties=None):
         # copied from pymavem.pom.Pom
+        if not text:
+            return text
         if properties is None:
             properties = self.properties
         return MavenPom._replace_props(text, properties)
 
-    def resolve(self):
+    def resolve(self, **extra_properties):
         """
         Resolve POM Maven "properties" in attribute values and inherit
-        from parent. Update the POM attributes in place.
+        from parent. Update the POM attributes in place. Use the extra
+        keywords to override and supplement existing properties.
         """
         # inherit first to get essential parent properties
+        # FIXME: the parent needs to be resolved first!? but we have a chicken and egg problem then
+        if self.parent:
+            pass
+
         self._inherit_from_parent()
 
         # then collect properties + extra
         properties = dict(self.properties)
         properties.update(self._extra_properties())
+
+        # "extra" properties are things that would be loaded from a
+        # properties files and provided as is they overwrite any
+        # existing property
+        properties.update(extra_properties)
+
+        if TRACE:
+            logger.debug('resolve: properties before self-resolution:\n{}'.format(pformat(properties)))
+
+        # FIXME: we could remove any property that itself contains
+        # ${property} as we do not know how to resolve these
+        # recursively. Or we could do a single pass on properties to
+        # resolve values against themselves
+        for key, value in list(properties.items()):
+            properties[key] = MavenPom._replace_props(value, properties)
+
+        if TRACE:
+            logger.debug('resolve: used properties:\n{}'.format(pformat(properties)))
 
         # these attributes are plain strings
         plain_attributes = [
@@ -289,12 +339,20 @@ class MavenPom(pom.Pom):
 
         # these attributes are complex nested and lists mappings
 
+        for scope, dependencies in self.dependencies.items():
+            resolved_deps = []
+            for (group, artifact, version,), required in dependencies:
+                group = self._replace_properties(group, properties)
+                artifact = self._replace_properties(artifact, properties)
+                version = self._replace_properties(version, properties)
+                resolved_deps.append(((group, artifact, version,), required))
+            self._dependencies[scope] = resolved_deps
+
         # TODO: add:
         # nest dicts
         # 'distribution_management',
         # nest lists
         #    'mailing_lists',
-
 
     def _inherit_from_parent(self):
         """
@@ -306,11 +364,15 @@ class MavenPom(pom.Pom):
             return
         if self.group_id is None and self.parent.group_id:
             self.group_id = self.parent.group_id
+            if TRACE: logger.debug('_inherit_from_parent: group_id: {}'.format(self.parent.group_id))
         if self.version is None and self.parent.version:
             self.version = str(self.parent.version)
+            if TRACE: logger.debug('_inherit_from_parent: version: {}'.format(self.parent.version))
         if not self.classifier is None and self.parent.classifier:
             self.classifier = self.parent.classifier
+            if TRACE: logger.debug('_inherit_from_parent: classifier: {}'.format(self.parent.classifier))
 
+        # FIXME: the parent may need to be resolved too?
         # special handling for URLs: see
         # http://maven.apache.org/ref/3.5.0/maven-model-builder/index.html#Inheritance_Assembly
         # Notice that the 5 URLs from the model:
@@ -324,24 +386,28 @@ class MavenPom(pom.Pom):
             and hasattr(self.parent, 'url')
             and getattr(self.parent, 'url', None)
             and self.artifact_id):
+            # FIXME: this is not the way to join URLs parts!
             self.url = self.parent.url + self.artifact_id
 
+        # FIXME: this is not the way to join URLs parts!
         parent_scm = getattr(self.parent, 'scm', None)
         if self.scm and parent_scm and self.artifact_id:
             ps_url = parent_scm.get('url')
             if not self.scm.get('url') and ps_url:
+                # FIXME: this is not the way to join URLs parts!
                 self.scm['url'] = ps_url + self.artifact_id
 
             ps_connection = parent_scm.get('connection')
             if not self.scm.get('connection') and ps_connection:
+                # FIXME: this is not the way to join URLs parts!
                 self.scm['connection'] = ps_connection + self.artifact_id
 
             ps_devconnection = parent_scm.get('developer_connection')
             if not self.scm.get('developer_connection') and ps_devconnection:
+                # FIXME: this is not the way to join URLs parts!
                 self.scm['developer_connection'] = ps_devconnection + self.artifact_id
 
         # TODO: distribution_management.site.url
-
 
     def _pom_factory(self, group_id, artifact_id, version):
         return ParentPom('%s:%s:pom:%s' % (group_id, artifact_id, version))
@@ -509,6 +575,15 @@ class MavenPom(pom.Pom):
         ])
 
 
+def build_property_variants(name):
+    """
+    Return an iterable of property variant names given a a property name.
+    """
+    yield name
+    yield 'project.{}'.format(name)
+    yield 'pom.{}'.format(name)
+
+
 def _get_substring_expression(text):
     """
     Return a tuple of (text, start/end) such that:
@@ -570,50 +645,65 @@ def is_pom(location):
     """
     if (not filetype.is_file(location)
     or not location.endswith(('.pom', 'pom.xml', 'project.xml',))):
+        if TRACE: logger.debug('is_pom: not a POM on name: {}'.format(location))
         return
 
     T = contenttype.get_type(location)
-    # logger.debug('location: %(location)r, T: %(T)r)' % locals())
-    if T.is_text and ('xml' in T.filetype_file.lower()
-                      or 'sgml' in T.filetype_file.lower()
-                      or 'xml' in T.filetype_pygment.lower()
-                      or 'genshi' in T.filetype_pygment.lower()):
+    if T.is_text:
 
-        # check the POM version in the first 100 lines
+        # check the POM version in the first 150 lines
         with codecs.open(location, encoding='utf-8') as pom:
             for n, line in enumerate(pom):
-                if n > 100:
+                if n > 150:
                     break
                 if any(x in line for x in
-                       ('http://maven.apache.org/POM/4.0.0', '<modelVersion>',)):
+                       ('http://maven.apache.org/POM/4.0.0',
+                        'http://maven.apache.org/xsd/maven-4.0.0.xsd',
+                        '<modelVersion>',
+                        # somehow we can still parse version 3 poms too
+                        '<pomVersion>',)
+                       ):
                     return True
 
+    if TRACE: logger.debug('is_pom: not a POM based on type: {}: {}'.format(T, location))
 
-def parse_pom(location, check_is_pom=False):
+
+def has_basic_pom_attributes(pom):
     """
-    Return a MavenPom object from the Maven POM file at location.
+    Return True if a POM object has basic attributes needed to make this
+    a POM.
     """
-    pom = _get_mavenpom(location, check_is_pom)
-    if not pom:
-        return {}
-    return pom.to_dict()
+    basics = pom.model_version and pom.group_id and pom.artifact_id
+    if TRACE and not basics:
+        logger.debug(
+            'has_basic_pom_attributes: not a POM, incomplete GAV: '
+            '"{}":"{}":"{}"'.format(pom.model_version and pom.group_id and pom.artifact_id))
+    return basics
 
 
-def _get_mavenpom(location, check_is_pom=False):
-    if check_is_pom and not is_pom(location):
+def _get_mavenpom(location=None, text=None, check_is_pom=False, extra_properties=None):
+    if location and check_is_pom and not is_pom(location):
         return
-    pom = MavenPom(location)
-    pom.resolve()
-    if check_is_pom and not (pom.model_version and pom.group_id and pom.artifact_id):
+    pom = MavenPom(location, text)
+    if not extra_properties:
+        extra_properties = {}
+    pom.resolve(**extra_properties)
+    # TODO: we cannot do much without these??
+    if check_is_pom and not has_basic_pom_attributes(pom):
         return
     return pom
 
 
-def parse(location, check_is_pom=True):
+def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
     """
-    Parse a pom file at location and return a Package or None.
+    Return a Package or None.
+    Parse a pom file at `location` or using the provided `text` (one or
+    the other but not both).
+    Check if the location is a POM if `check_is_pom` is True.
+    When resolving the POM, use an optional `extra_properties` mapping
+    of name/value pairs to resolve properties.
     """
-    mavenpom = _get_mavenpom(location, check_is_pom=check_is_pom)
+    mavenpom = _get_mavenpom(location, text, check_is_pom, extra_properties)
     if not mavenpom:
         return
 
@@ -646,7 +736,6 @@ def parse(location, check_is_pom=True):
                 email=cont['email'],
                 url=cont['url'],
         ))
-
 
     name = pom['organization_name']
     url = pom['organization_url']

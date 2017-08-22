@@ -28,13 +28,24 @@ from __future__ import unicode_literals
 
 import codecs
 from collections import OrderedDict
-import os.path
 import json
+import os.path
 
 from commoncode import fileutils
 from commoncode import text
 from commoncode import testcase
 from packagedcode import maven
+
+
+def parse_pom(location=None, text=None, check_is_pom=False):
+    """
+    Return a POM mapping from the Maven POM file at location.
+    """
+    from packagedcode.maven import _get_mavenpom
+    pom = _get_mavenpom(location, text, check_is_pom)
+    if not pom:
+        return {}
+    return pom.to_dict()
 
 
 class TestIsPom(testcase.FileBasedTesting):
@@ -53,6 +64,10 @@ class TestIsPom(testcase.FileBasedTesting):
             loc = os.path.join(test_dir, test_file)
             assert maven.is_pom(loc), loc + ' should be a POM'
 
+    def test_is_pom_not_misc2(self):
+        test_file = self.get_test_loc('maven_misc/parse/properties-section-single.xml')
+        assert not maven.is_pom(test_file)
+
     def test_is_pom_m2(self):
         test_dir = self.get_test_loc('m2')
         for test_file in fileutils.file_iter(test_dir):
@@ -60,14 +75,10 @@ class TestIsPom(testcase.FileBasedTesting):
                 continue
 
             loc = os.path.join(test_dir, test_file)
-            assert maven.is_pom(loc), loc + ' should be a POM'
+            assert maven.is_pom(loc), 'file://' + loc + ' should be a POM'
 
-    def test_is_pom_misc(self):
+    def test_is_pom_not_misc(self):
         test_file = self.get_test_loc('maven_misc/parse/properties-section.xml')
-        assert not maven.is_pom(test_file)
-
-    def test_is_pom_misc2(self):
-        test_file = self.get_test_loc('maven_misc/parse/properties-section-single.xml')
         assert not maven.is_pom(test_file)
 
 
@@ -76,9 +87,9 @@ class TestMavenMisc(testcase.FileBasedTesting):
 
     def test_parse_pom_non_pom(self):
         test_pom_loc = self.get_test_loc('maven_misc/non-maven.pom')
-        results = maven.parse_pom(location=test_pom_loc, check_is_pom=True)
+        results = parse_pom(location=test_pom_loc, check_is_pom=True)
         assert {} == results
-        results = maven.parse_pom(location=test_pom_loc, check_is_pom=False)
+        results = parse_pom(location=test_pom_loc, check_is_pom=False)
         expected = OrderedDict([
             (u'model_version', None),
             (u'group_id', None),
@@ -108,9 +119,9 @@ class TestMavenMisc(testcase.FileBasedTesting):
         ])
         assert expected == results
 
-    def test_pymaven_dependencies(self):
+    def test_pom_dependencies(self):
         test_loc = self.get_test_loc('maven2/activemq-camel-pom.xml')
-        pymaven = maven.MavenPom(test_loc)
+        pom = maven.MavenPom(test_loc)
         expected = [
             ('compile', [
                 (('commons-logging', 'commons-logging-api', 'latest.release'), True),
@@ -129,7 +140,36 @@ class TestMavenMisc(testcase.FileBasedTesting):
             ]),
         ]
 
-        assert expected == pymaven.dependencies.items()
+        expected = [(s, sorted(v)) for s, v in expected]
+
+        results = [(s, sorted(v)) for s, v in pom.dependencies.items()]
+        assert expected == results
+
+    def test_pom_dependencies_are_resolved(self):
+        test_loc = self.get_test_loc('maven2/activemq-camel-pom.xml')
+        pom = maven.MavenPom(test_loc)
+        pom.resolve()
+        expected = [
+            (u'compile', [
+                ((u'commons-logging', u'commons-logging-api', u'latest.release'), True),
+                ((u'org.apache.camel', u'camel-jms', u'latest.release'), True),
+                ((u'org.apache.activemq', u'activemq-core', u'latest.release'), True),
+                ((u'org.apache.activemq', u'activemq-pool', u'latest.release'), True),
+                ((u'org.apache.geronimo.specs', u'geronimo-annotation_1.0_spec', u'latest.release'), False)
+            ]),
+            (u'test', [
+                ((u'org.apache.activemq', u'activemq-core', u'latest.release'), True),
+                ((u'org.apache.camel', u'camel-core', u'latest.release'), True),
+                ((u'org.apache.camel', u'camel-spring', u'latest.release'), True),
+                ((u'org.springframework', u'spring-test', u'latest.release'), True),
+                ((u'junit', u'junit', u'latest.release'), True),
+                ((u'org.hamcrest', u'hamcrest-all', u'latest.release'), True),
+            ]),
+        ]
+        expected = [(s, sorted(v)) for s, v in expected]
+
+        results = [(s, sorted(v)) for s, v in pom.dependencies.items()]
+        assert expected == results
 
     def test_parse_to_package(self):
         test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')
@@ -302,41 +342,45 @@ class TestPomProperties(testcase.FileBasedTesting):
 class BaseMavenCase(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_pom(self, test_pom, regen=False):
+    def check_parse_pom(self, test_pom, regen=False):
         """
         Test the parsing of POM at test_pom against an expected JSON
         from the same name with a .json extension.
         """
         test_pom_loc = self.get_test_loc(test_pom)
         expected_json_loc = test_pom_loc + '.json'
-        parsed_pom = maven.parse_pom(location=test_pom_loc)
+        parsed_pom = parse_pom(location=test_pom_loc)
 
         if regen:
             with codecs.open(expected_json_loc, 'wb', encoding='utf-8') as ex:
-                json.dump(parsed_pom, ex, indent=2, separators=(',', ': '))
+                json.dump(parsed_pom, ex, indent=2)  # , separators=(',', ': '))
 
         with codecs.open(expected_json_loc, encoding='utf-8') as ex:
             expected = json.load(ex, object_pairs_hook=OrderedDict)
 
-        assert expected == parsed_pom
+        assert expected.items() == parsed_pom.items()
 
-    def check_package(self, test_pom, regen=False):
+    def check_parse_to_package(self, test_pom, regen=False):
         """
         Test the creation of a Package from a POM at test_pom against an
         expected JSON from the same name with a .package.json extension.
         """
         test_pom_loc = self.get_test_loc(test_pom)
         expected_json_loc = test_pom_loc + '.package.json'
-        package = maven.parse(location=test_pom_loc).to_dict()
+        package = maven.parse(location=test_pom_loc)
+        if not package:
+            package = {}
+        else:
+            package = package.to_dict()
 
         if regen:
             with codecs.open(expected_json_loc, 'wb', encoding='utf-8') as ex:
-                json.dump(package, ex, indent=2, separators=(',', ': '))
+                json.dump(package, ex, indent=2)  # , separators=(',', ': '))
 
         with codecs.open(expected_json_loc, encoding='utf-8') as ex:
             expected = json.load(ex, object_pairs_hook=OrderedDict)
 
-        assert expected == package
+        assert expected.items() == package.items()
 
 
 def relative_walk(dir_path):
@@ -356,15 +400,15 @@ def relative_walk(dir_path):
 def create_test_function(test_pom_loc, test_name, check_pom=True, regen=False):
     """
     Return a test function closed on test arguments.
-    If check_pom is True, test the POM parsing; otherwise, test Package creation
+    If check_parse_pom is True, test the POM parsing; otherwise, test Package creation
     """
     # closure on the test params
     if check_pom:
         def test_pom(self):
-            self.check_pom(test_pom_loc, regen)
+            self.check_parse_pom(test_pom_loc, regen)
     else:
         def test_pom(self):
-            self.check_package(test_pom_loc, regen)
+            self.check_parse_to_package(test_pom_loc, regen)
     # set a proper function name to display in reports and use in discovery
     # function names are best as bytes
     if isinstance(test_name, unicode):
@@ -378,7 +422,7 @@ def build_tests(test_dir, clazz, prefix='test_maven2_parse_', check_pom=True, re
     """
     Dynamically build test methods for each POMs in `test_dir`  and
     attach the test method to the `clazz` class.
-    If check_pom is True, test the POM parsing; otherwise, test Package creation
+    If check_parse_pom is True, test the POM parsing; otherwise, test Package creation
     """
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
     test_dir = os.path.join(test_data_dir, test_dir)
@@ -403,17 +447,17 @@ class TestMavenDataDrivenParsePomBasic(BaseMavenCase):
 build_tests(test_dir='maven2', clazz=TestMavenDataDrivenParsePomBasic, prefix='test_maven2_basic_parse_', check_pom=True, regen=False)
 
 
+class TestMavenDataDrivenCreatePackageBasic(BaseMavenCase):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+build_tests(test_dir='maven2', clazz=TestMavenDataDrivenCreatePackageBasic, prefix='test_maven2_basic_package_', check_pom=False, regen=False)
+
+
 class TestMavenDataDrivenParsePomComprehensive(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 # note: we use short dir names to deal with Windows long paths limitations
 build_tests(test_dir='m2', clazz=TestMavenDataDrivenParsePomComprehensive, prefix='test_maven2_parse', check_pom=True, regen=False)
-
-
-class TestMavenDataDrivenCreatePackageBasic(BaseMavenCase):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
-build_tests(test_dir='maven2', clazz=TestMavenDataDrivenCreatePackageBasic, prefix='test_maven2_basic_package_', check_pom=False, regen=False)
 
 
 class TestMavenDataDrivenCreatePackageComprehensive(BaseMavenCase):

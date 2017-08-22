@@ -1,0 +1,54 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "com.github.albertoanguita", 
+  "artifact_id": "jacuzzi-database", 
+  "version": "${version}", 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {
+    "group_id": "com.github.albertoanguita", 
+    "artifact_id": "jacuzzi", 
+    "version": "${version}", 
+    "classifier": null, 
+    "type": "pom"
+  }, 
+  "name": "Jacuzzi - Database", 
+  "description": "A generic java utilities collection project - extended functionality with ActiveJDBC dependencies", 
+  "inception_year": null, 
+  "url": null, 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [], 
+  "developers": [], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "com.github.albertoanguita", 
+        "artifact_id": "jacuzzi-core", 
+        "version": "${version}", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.javalite", 
+        "artifact_id": "activejdbc", 
+        "version": "1.4.12", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.xerial", 
+        "artifact_id": "sqlite-jdbc", 
+        "version": "3.8.11.1", 
+        "required": true
+      }
+    ]
+  }
+}

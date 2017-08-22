@@ -1,0 +1,22 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.sourceforge.findbugs</groupId>
+  <artifactId>coreplugin</artifactId>
+  <version>1.0.0</version>
+  <url>http://findbugs.sf.net</url>
+  <description>Core plugin supports the FindBugs tool</description>
+  <scm>
+    <connection>scm:cvs:pserver:anonymous@cvs.sourceforge.net:/cvsroot/findbugs/findbugs</connection>
+  </scm>
+
+  <dependencies>
+    <dependency>
+      <dependency>
+        <groupId>net.sourceforge.findbugs</groupId>
+        <artifactId>findbugs</artifactId>
+        <version>1.0.0</version>
+      </dependency>
+    </dependency>
+  </dependencies>
+
+</project>

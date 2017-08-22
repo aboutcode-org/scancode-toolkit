@@ -1,0 +1,108 @@
+{
+  "model_version": "3", 
+  "group_id": "maven-javanet-plugin", 
+  "artifact_id": "maven-javanet-plugin", 
+  "version": null, 
+  "classifier": null, 
+  "packaging ": "jar", 
+  "parent": {}, 
+  "name": "Maven java.net plugin", 
+  "description": null, 
+  "inception_year": "2005", 
+  "url": null, 
+  "organization_name": "java.net", 
+  "organization_url": "http://www.java.net/", 
+  "licenses": [], 
+  "developers": [
+    {
+      "id": "kohsuke", 
+      "name": "Kohsuke Kawaguchi", 
+      "email": "kk@kohsuke.org", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }, 
+    {
+      "id": "roscopeco", 
+      "name": "Ross Bamford", 
+      "email": "ross@roscopeco.co.uk", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "Developer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [
+    {
+      "name": "Users List", 
+      "archive_url": "https://maven-javanet-plugin.dev.java.net/servlets/SummarizeList?listName=users"
+    }, 
+    {
+      "name": "Issues List", 
+      "archive_url": "https://maven-javanet-plugin.dev.java.net/servlets/SummarizeList?listName=issues"
+    }, 
+    {
+      "name": "CVS List", 
+      "archive_url": "https://maven-javanet-plugin.dev.java.net/servlets/SummarizeList?listName=cvs"
+    }
+  ], 
+  "scm": {}, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "httpunit", 
+        "artifact_id": "httpunit", 
+        "version": "1.5.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "xml-apis", 
+        "artifact_id": "xml-apis", 
+        "version": "2.0.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "xerces", 
+        "artifact_id": "xerces", 
+        "version": "2.2.1", 
+        "required": true
+      }, 
+      {
+        "group_id": "jtidy", 
+        "artifact_id": "jtidy", 
+        "version": "4aug2000r7-dev", 
+        "required": true
+      }, 
+      {
+        "group_id": "nekohtml", 
+        "artifact_id": "nekohtml", 
+        "version": "0.9.5", 
+        "required": true
+      }, 
+      {
+        "group_id": "dom4j", 
+        "artifact_id": "dom4j", 
+        "version": "1.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "jaxen", 
+        "artifact_id": "jaxen", 
+        "version": "1.0-FCS-full", 
+        "required": true
+      }
+    ]
+  }
+}

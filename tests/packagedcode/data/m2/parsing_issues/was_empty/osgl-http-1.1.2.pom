@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2013 The OSGL HTTP Project
+  ~
+  ~ The OSGL HTTP Project licenses this file to you under the Apache License,
+  ~ version 2.0 (the "License"); you may not use this file except in compliance
+  ~ with the License. You may obtain a copy of the License at:
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+  ~ WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+  ~ License for the specific language governing permissions and limitations
+  ~ under the License.
+  -->
+<!-- history
+1.1.2
+- #7 Support unknown HTTP method
+
+1.1.1
+- #4 Define http status int constant
+
+1.0.6
+- #5 `H.Response.writeBinary` shall close the outputstream
+
+1.0.5
+- #3 `H.Method.actionMethod()` shall include `H.Method.Patch`
+
+1.0.4
+- #2 `H.Session` and `H.Flash` shall implement `hashCode()` and `equals()` method
+
+1.0.3
+- Decouple the osgl-storage dependency by making it provided scope
+
+1.0.2
+- Take out version range. See https://issues.apache.org/jira/browse/MNG-3092
+
+1.0.1
+- #1 H.Rquest.fullUrl() shall not output `80` when sending to port `80`
+
+1.0.0
+- baseline from 0.5
+
+0.5.0-SNAPSHOT
+- update tool to 0.10.0
+- update storage to 0.8.0
+- update cache to 0.5.0
+- add H.MediaType enum
+
+0.4.0-SNAPSHOT
+- add H.Response.writeBinary(ISObject) API
+
+0.3.4-SNAPSHOT
+- update HttpConfig cache service relevant API
+
+0.3.3-SNAPSHOT
+- update osgl-storage to 0.7.3-SNAPSHOT
+
+0.3.1-SNAPSHOT
+- Add secure configuration to HttpConfig
+- Add H.Response.prepareDownload(String, String) method
+- Add H.Format.isText() method
+- Add H.Request.referer() and H.Request.referrer() methods
+
+0.3.0-SNAPSHOT
+- update to osgl-tool 0.9
+- allow parsing remote address aggressively
+- Add H.Format.CSS and H.Format.JAVASCRIPT content type
+
+0.2.5-SNAPSHOT
+- update osgl-tool to 0.7.1-SNAPSHOT
+
+0.2.4-SNAPSHOT
+- H.Session.getId() should try to pull from data map before generating new one
+- H.Request.format() now renamed to H.Request.accept()
+- H.Request.contentType() now return H.Format type
+- H.Status now implemented with class instead of enum. And it allows to create non-standard http status instance
+- H.Format now implemented with class instead of enum. And it allows to create custom http format instances
+- H.Cookie, H.Session, H.Status, H.Format now implement Serializable interface
+
+0.2.3-SNAPSHOT
+- Fix issue in getting expires() on H.Cookie when maxAge is less than zero
+
+0.2.2-SNAPSHOT
+- Remove threadlocal from cookie operations on Request
+- Add accept(Format) method to H.Request to allow set a accept to request
+
+0.2.1-SNAPSHOT
+- add FOUND_AJAX(278) as new http status
+- KV as abstract class for Session and Flash
+
+0.2-SNAPSHOT
+- upgrade to osgl-tool 0.4-SNAPSHOT
+- H.Request param now support multiple param values
+- Binding now take H.Request instead of Map<String, String[]> as parameter source
+- Add more methods to H.Response and H.Cookie
+
+0.1-SNAPSHOT
+- base version when history log started
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.osgl</groupId>
+    <artifactId>osgl-http</artifactId>
+    <packaging>jar</packaging>
+    <version>1.1.2</version>
+
+    <name>OSGL HTTP</name>
+    <description>Utilities for HTTP</description>
+    <url>http://osgl-http.osgl.org/</url>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
+    <scm>
+        <connection>scm:git:git://github.com/osglworks/java-http.git</connection>
+        <developerConnection>scm:git:git@github.com:osglworks/java-http.git</developerConnection>
+        <url>git://github.com/osglworks/java-http.git</url>
+    </scm>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <maven.test.skip>false</maven.test.skip>
+        <osgl-storage.version>1.2.0</osgl-storage.version>
+        <osgl-cache.version>1.0.2</osgl-cache.version>
+        <servlet.version>2.5</servlet.version>
+    </properties>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.3</version>
+                    <configuration>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.1.2</version>
+                    <configuration>
+                        <includePom>true</includePom>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.carrotsearch</groupId>
+            <artifactId>junit-benchmarks</artifactId>
+            <version>0.7.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.osgl</groupId>
+            <artifactId>osgl-storage</artifactId>
+            <version>${osgl-storage.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.osgl</groupId>
+            <artifactId>osgl-cache</artifactId>
+            <version>${osgl-cache.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>${servlet.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>dist</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>2.2</version>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>${basedir}/assembly-dist.xml</descriptor>
+                            </descriptors>
+                            <tarLongFileMode>gnu</tarLongFileMode>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>make-assembly</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <descriptors>
+                                        <descriptor>${basedir}/assembly-dist.xml</descriptor>
+                                    </descriptors>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.9</version>
+                        <configuration>
+                            <stylesheetfile>src/etc/javadoc.css</stylesheetfile>
+                            <quiet />
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>gen-javadoc</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>javadoc</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>com.mycila.maven-license-plugin</groupId>
+                        <artifactId>maven-license-plugin</artifactId>
+                        <configuration>
+                            <header>src/etc/header.txt</header>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>
