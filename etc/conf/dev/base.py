@@ -1,3 +1,7 @@
+"""
+This base config script gets automatically executed for all platforms via
+configure if the "dev" sub-configuration is specified (which is the default).
+"""
 
 import os
 

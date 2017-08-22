@@ -1,3 +1,7 @@
+"""
+This base config script gets automatically executed for all platforms via
+configure.
+"""
 
 import sys
 
