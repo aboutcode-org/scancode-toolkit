@@ -85,6 +85,11 @@ if not on_windows:
         except TimeoutError:
             return False, ('ERROR: Processing interrupted: timeout after '
                            '%(timeout)d seconds.' % locals())
+
+        except Exception:
+            import traceback
+            return False, ('ERROR: Unknown error:\n' + traceback.format_exc())
+
         finally:
             signal.setitimer(signal.ITIMER_REAL, 0)
 
@@ -124,6 +129,9 @@ else:
         except (Queue.Empty, multiprocessing.TimeoutError):
             return False, ('ERROR: Processing interrupted: timeout after '
                            '%(timeout)d seconds.' % locals())
+        except Exception:
+            import traceback
+            return False, ('ERROR: Unknown error:\n' + traceback.format_exc())
         finally:
             try:
                 async_raise(tid, Exception)
@@ -152,3 +160,17 @@ else:
             # and you should call it again with exc=NULL to revert the effect
             ctypes.pythonapi.PyThreadState_SetAsyncExc(tid, 0)
             raise SystemError('PyThreadState_SetAsyncExc failed.')
+
+
+def fake_interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
+    """
+    Fake, non-interruptible, using no threads and no signals
+    implementation used for debugging. This ignores the timeout and just
+    the function as-is.
+    """
+
+    try:
+        return True, func(*(args or ()), **(kwargs or {}))
+    except Exception:
+        import traceback
+        return False, ('ERROR: Unknown error:\n' + traceback.format_exc())

@@ -370,6 +370,23 @@ def test_scan_works_with_multiple_processes():
     assert sorted(res1['files']) == sorted(res3['files'])
 
 
+def test_scan_works_with_no_processes_in_single_threaded_mode():
+    test_dir = test_env.get_test_loc('multiprocessing', copy=True)
+
+    # run the same scan with zero or one process
+    result_file_0 = test_env.get_temp_file('json')
+    result0 = run_scan_click([ '--copyright', '--processes', '0', '--format', 'json', test_dir, result_file_0])
+    assert result0.exit_code == 0
+    assert 'Disabling multi-processing and multi-threading...' in result0.output
+
+    result_file_1 = test_env.get_temp_file('json')
+    result1 = run_scan_click([ '--copyright', '--processes', '1', '--format', 'json', test_dir, result_file_1])
+    assert result1.exit_code == 0
+    res0 = json.loads(open(result_file_0).read())
+    res1 = json.loads(open(result_file_1).read())
+    assert sorted(res0['files']) == sorted(res1['files'])
+
+
 def test_scan_works_with_multiple_processes_and_timeouts():
     # this contains test files with a lot of copyrights that should
     # take more thant timeout to scan
