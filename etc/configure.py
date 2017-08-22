@@ -3,7 +3,7 @@
 # Copyright (c) 2017 nexB Inc. http://www.nexb.com/ - All rights reserved.
 
 """
-This script a configuration helper to select pip requirement files to install
+This script is a configuration helper to select pip requirement files to install
 and python and shell configuration scripts to execute based on provided config
 directories paths arguments and the operating system platform. To use, create
 a configuration directory tree that contains any of these:
