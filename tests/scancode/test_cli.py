@@ -189,6 +189,17 @@ def test_scancode_skip_glob_path(monkeypatch):
     scan_locs = [x['path'] for x in scan_result['files']]
     assert [u'user', u'user/ignore.doc', u'user/src', u'user/src/ignore.doc', u'user/src/test'] == scan_locs
 
+def test_scancode_multiple_ignores(monkeypatch):
+    test_dir = test_env.extract_test_tar('ignore/user.tgz')
+    result_file = test_env.get_temp_file('json')
+
+    result = run_scan_click(['--copyright', '--strip-root', '--ignore', '*/src/test', '--ignore', '*.doc', test_dir, result_file], monkeypatch)
+    assert result.exit_code == 0
+    scan_result = _load_json_result(result_file)
+    assert 2 == scan_result['files_count']
+    scan_locs = [x['path'] for x in scan_result['files']]
+    assert [u'user', u'user/src'] == scan_locs
+
 def test_scan_mark_source_without_info(monkeypatch):
     test_dir = test_env.extract_test_tar('mark_source/JGroups.tgz')
     result_file = test_env.get_temp_file('json')

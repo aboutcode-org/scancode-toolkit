@@ -4,7 +4,6 @@
     "--copyright": true,
     "--license-score": 0,
     "--strip-root": true,
-    "--ignore": [],
     "--format": "json"
   },
   "files_count": 1,

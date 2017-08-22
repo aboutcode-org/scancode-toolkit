@@ -6,7 +6,6 @@
     "--email": true,
     "--url": true,
     "--license-score": 0,
-    "--ignore": [],
     "--format": "json"
   },
   "files_count": 11,

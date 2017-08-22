@@ -225,6 +225,14 @@ setup(
         'scancode_post_scan': [
             'only-findings = scancode.plugin_only_findings:process_only_findings',
             'mark-source = scancode.plugin_mark_source:process_mark_source',
+        ],
+
+        # scancode_pre_scan is an entry point to define pre_scan plugins.
+        # See plugincode.pre_scan module for details and doc.
+        # note: the "name" of the entrypoint (e.g ignore) will be used for
+        # the option name which passes the input to the given pre_scan plugin
+        'scancode_pre_scan': [
+            'ignore = scancode.plugin_ignore:ProcessIgnore',
         ]
     },
 )

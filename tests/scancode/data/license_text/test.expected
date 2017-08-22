@@ -5,7 +5,6 @@
     "--license-score": 0,
     "--license-text": true,
     "--strip-root": true,
-    "--ignore": [],
     "--format": "json"
   },
   "files_count": 1,
