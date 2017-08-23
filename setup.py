@@ -171,7 +171,7 @@ setup(
 
         # scancode
         'click >= 6.0.0, < 7.0.0',
-        'colorama',
+        'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
 
         # scancode outputs

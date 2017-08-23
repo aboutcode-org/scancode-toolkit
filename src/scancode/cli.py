@@ -49,6 +49,7 @@ from click.termui import style
 from commoncode import filetype
 from commoncode import fileutils
 from commoncode import ignore
+from commoncode.text import toascii
 
 import plugincode.output
 import plugincode.post_scan
@@ -56,16 +57,16 @@ import plugincode.pre_scan
 
 from scancode import __version__ as version
 
+from scancode.api import _empty_file_infos
 from scancode.api import get_copyrights
 from scancode.api import get_emails
 from scancode.api import get_file_infos
-from scancode.api import _empty_file_infos
 from scancode.api import get_licenses
 from scancode.api import get_package_infos
 from scancode.api import get_urls
 
-from scancode.cache import ScanFileCache
 from scancode.cache import get_scans_cache_class
+from scancode.cache import ScanFileCache
 
 from scancode.interrupt import DEFAULT_TIMEOUT
 from scancode.interrupt import fake_interruptible
@@ -607,6 +608,7 @@ def scan(input_path,
                 if quiet or not item or not display_fn:
                     return ''
                 _scan_success, _scanned_path = item
+                _scanned_path = unicode(toascii(_scanned_path))
                 if verbose:
                     _progress_line = _scanned_path
                 else:
