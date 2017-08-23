@@ -80,7 +80,7 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src/test',
             'user/src/test/sample.txt'
         ]
-        test = [rel_path for abs_path, rel_path in resource_paths(test_dir, [test_plugin])]
+        test = [resource.rel_path for resource in resource_paths(test_dir, False, [test_plugin])]
         assert expected == sorted(test)
 
     def test_resource_paths_with_multiple_files(self):
@@ -93,7 +93,7 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src/test/sample.doc',
             'user/src/test/sample.txt'
         ]
-        test = [rel_path for abs_path, rel_path in resource_paths(test_dir, [test_plugin])]
+        test = [resource.rel_path for resource in resource_paths(test_dir, False, [test_plugin])]
         assert expected == sorted(test)
 
     def test_resource_paths_with_glob_file(self):
@@ -105,7 +105,7 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src/test',
             'user/src/test/sample.txt'
         ]
-        test = [rel_path for abs_path, rel_path in resource_paths(test_dir, [test_plugin])]
+        test = [resource.rel_path for resource in resource_paths(test_dir, False, [test_plugin])]
         assert expected == sorted(test)
 
     def test_resource_paths_with_glob_path(self):
@@ -117,7 +117,7 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src',
             'user/src/ignore.doc'
         ]
-        test = [rel_path for abs_path, rel_path in resource_paths(test_dir, [test_plugin])]
+        test = [resource.rel_path for resource in resource_paths(test_dir, False, [test_plugin])]
         assert expected == sorted(test)
 
     def test_resource_paths_with_multiple_plugins(self):
@@ -131,5 +131,5 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src',
             'user/src/test'
         ]
-        test = [rel_path for abs_path, rel_path in resource_paths(test_dir, test_plugins)]
+        test = [resource.rel_path for resource in resource_paths(test_dir, False, test_plugins)]
         assert expected == sorted(test)
