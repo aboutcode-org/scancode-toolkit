@@ -46,8 +46,7 @@ class Resource(object):
     such as infos and path
     """
 
-    def __init__(self, abs_path, base_path, base_is_dir, len_base_path):
-        self.base_path = base_path
+    def __init__(self, abs_path, base_is_dir, len_base_path):
         self.abs_path = abs_path
         self.base_is_dir = base_is_dir
         posix_path = as_posixpath(abs_path)

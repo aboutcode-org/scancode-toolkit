@@ -821,7 +821,7 @@ def resource_paths(base_path, diag, pre_scan_plugins=()):
     resources = fileutils.resource_iter(base_path, ignored=ignorer)
 
     for abs_path in resources:
-        resource = Resource(abs_path, base_path, base_is_dir, len_base_path)
+        resource = Resource(abs_path, base_is_dir, len_base_path)
         # always fetch infos and cache.
         resource.infos.update(scan_infos(abs_path, diag=diag))
         yield resource
