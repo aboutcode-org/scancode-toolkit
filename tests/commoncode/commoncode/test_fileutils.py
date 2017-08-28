@@ -510,40 +510,42 @@ class TestFileUtils(FileBasedTesting):
         assert expected == result
 
     def test_resource_iter_can_walk_non_utf8_path_from_unicode_path(self):
-        test_dir = self.extract_test_tar('fileutils/walk_non_utf8/non_unicode.tgz')
+        test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
 
         if not on_linux:
             test_dir = unicode(test_dir)
         result = list(fileutils.resource_iter(test_dir))
-        assert 1 == len(result)
+        assert 18 == len(result)
 
     def test_walk_can_walk_non_utf8_path_from_unicode_path(self):
-        test_dir = self.extract_test_tar('fileutils/walk_non_utf8/non_unicode.tgz')
+        test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
 
         if not on_linux:
             test_dir = unicode(test_dir)
-        result = list(fileutils.walk(test_dir))
-        assert 1 == len(result)
+        result = list(fileutils.walk(test_dir))[0]
+        _dirpath, _dirnames, filenames = result
+        assert 18 == len(filenames)
 
     def test_file_iter_can_walk_non_utf8_path_from_unicode_path(self):
-        test_dir = self.extract_test_tar('fileutils/walk_non_utf8/non_unicode.tgz')
+        test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
 
         if not on_linux:
             test_dir = unicode(test_dir)
         result = list(fileutils.file_iter(test_dir))
-        assert 1 == len(result)
+        assert 18 == len(result)
 
     def test_os_walk_can_walk_non_utf8_path_from_unicode_path(self):
-        test_dir = self.extract_test_tar('fileutils/walk_non_utf8/non_unicode.tgz')
+        test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
 
         if not on_linux:
             test_dir = unicode(test_dir)
-        result = list(os.walk(test_dir))
-        assert 1 == len(result)
+        result = list(os.walk(test_dir))[0]
+        _dirpath, _dirnames, filenames = result
+        assert 18 == len(filenames)
 
     def test_path_to_unicode_and_path_to_bytes_are_idempotent(self):
         a = b'foo\xb1bar'
