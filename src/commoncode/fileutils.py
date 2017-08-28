@@ -37,7 +37,6 @@ except NameError:
 
 import codecs
 import errno
-import logging
 import os
 import ntpath
 import posixpath
@@ -46,8 +45,7 @@ import stat
 import sys
 import tempfile
 
-from future.utils import surrogateescape
-surrogateescape.register_surrogateescape()
+from backports import os as osb
 
 from commoncode import filetype
 from commoncode.filetype import is_rwx
@@ -62,8 +60,22 @@ except NameError:
     WindowsError = None  # @ReservedAssignment
 
 
-DEBUG = False
+TRACE = False
+
+import logging
+
 logger = logging.getLogger(__name__)
+
+def logger_debug(*args):
+    pass
+
+if TRACE:
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
+
 
 FS_ENCODING = sys.getfilesystemencoding() or sys.getdefaultencoding()
 
@@ -197,7 +209,7 @@ def read_text_file(location, universal_new_lines=True):
 # PATHS AND NAMES MANIPULATIONS
 #
 
-# TODO: move these functions to paths.py
+# TODO: move these functions to paths.py or codecs.py
 
 def path_to_unicode(path):
     """
@@ -205,7 +217,8 @@ def path_to_unicode(path):
     """
     if isinstance(path, unicode):
         return path
-    return surrogateescape.decodefilename(path)
+    if TRACE: logger_debug('path_to_unicode:', osb.fsdecode(path))
+    return osb.fsdecode(path)
 
 
 def path_to_bytes(path):
@@ -214,7 +227,8 @@ def path_to_bytes(path):
     """
     if isinstance(path, bytes):
         return path
-    return surrogateescape.encodefilename(path)
+    if TRACE: logger_debug('path_to_bytes:' , repr(osb.fsencode(path)))
+    return osb.fsencode(path)
 
 
 def is_posixpath(location):
@@ -382,9 +396,9 @@ def walk(location, ignored=ignore_nothing):
         location = path_to_bytes(location)
 
     # TODO: consider using the new "scandir" module for some speed-up.
-    if DEBUG:
+    if TRACE:
         ign = ignored(location)
-        logger.debug('walk: ignored:', location, ign)
+        logger_debug('walk: ignored:', location, ign)
     if ignored(location):
         return
 
@@ -398,9 +412,9 @@ def walk(location, ignored=ignore_nothing):
         for name in os.listdir(location):
             loc = os.path.join(location, name)
             if filetype.is_special(loc) or ignored(loc):
-                if DEBUG:
+                if TRACE:
                     ign = ignored(loc)
-                    logger.debug('walk: ignored:', loc, ign)
+                    logger_debug('walk: ignored:', loc, ign)
                 continue
             # special files and symlinks are always ignored
             if filetype.is_dir(loc):

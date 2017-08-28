@@ -437,7 +437,9 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
     assert 'Scanning done' in result.output
 
     # the paths for each OS end up encoded differently.
-    # See https://github.com/nexB/scancode-toolkit/issues/390 for details
+    # See for details:
+    # https://github.com/nexB/scancode-toolkit/issues/390
+    # https://github.com/nexB/scancode-toolkit/issues/688
 
     if on_linux:
         expected = 'unicodepath/unicodepath.expected-linux.json'
@@ -518,14 +520,13 @@ def test_scan_can_handle_weird_file_names():
         expected = 'weird_file_name/expected-linux.json'
     elif on_mac:
         expected = 'weird_file_name/expected-mac.json'
-    elif on_windows:
-        expected = 'weird_file_name/expected-win.json'
-
-    check_json_scan(test_env.get_test_loc(expected), result_file)
+    else:
+        raise Exception('Not a supported OS?')
+    check_json_scan(test_env.get_test_loc(expected), result_file, regen=False)
 
 
 def test_scan_can_handle_non_utf8_file_names_on_posix():
-    test_dir = test_env.extract_test_tar('non_utf8/non_unicode.tgz')
+    test_dir = test_env.extract_test_tar_raw('non_utf8/non_unicode.tgz')
     result_file = test_env.get_temp_file('json')
 
     if on_linux:
@@ -536,7 +537,11 @@ def test_scan_can_handle_non_utf8_file_names_on_posix():
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
-    # Some info vary on each OS
+    # the paths for each OS end up encoded differently.
+    # See for details:
+    # https://github.com/nexB/scancode-toolkit/issues/390
+    # https://github.com/nexB/scancode-toolkit/issues/688
+
     if on_linux:
         expected = 'non_utf8/expected-linux.json'
     elif on_mac:

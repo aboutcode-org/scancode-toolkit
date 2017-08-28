@@ -48,6 +48,7 @@ from click.termui import style
 
 from commoncode import filetype
 from commoncode import fileutils
+from commoncode.fileutils import path_to_bytes
 from commoncode.fileutils import path_to_unicode
 from commoncode import ignore
 from commoncode.system import on_linux
@@ -574,10 +575,16 @@ def scan(input_path,
     pool = None
 
     resources = resource_paths(input_path, pre_scan_plugins=pre_scan_plugins)
-    logfile_path = scans_cache_class().cache_files_log
     paths_with_error = []
     files_count = 0
-    with codecs.open(logfile_path, 'w', encoding='utf-8') as logfile_fd:
+
+    logfile_path = scans_cache_class().cache_files_log
+    if on_linux:
+        file_logger = partial(open, logfile_path, 'wb')
+    else:
+        file_logger = partial(codecs.open, logfile_path, 'w', encoding='utf-8')
+
+    with file_logger() as logfile_fd:
 
         logged_resources = _resource_logger(logfile_fd, resources)
 
@@ -772,6 +779,22 @@ def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, p
     return success, rel_path
 
 
+def build_ignorer(ignores, unignores):
+    """
+    Return a callable suitable for path ignores with OS-specific encoding
+    preset.
+    """
+    ignores = ignores or {}
+    unignores = unignores or {}
+    if on_linux:
+        ignores = {path_to_bytes(k): v for k, v in ignores.items()}
+        unignores = {path_to_bytes(k): v for k, v in unignores.items()}
+    else:
+        ignores = {path_to_unicode(k): v for k, v in ignores.items()}
+        unignores = {path_to_unicode(k): v for k, v in unignores.items()}
+    return partial(ignore.is_ignored, ignores=ignores, unignores=unignores)
+
+
 def resource_paths(base_path, pre_scan_plugins=()):
     """
     Yield tuples of (absolute path, base_path-relative path) for all the files found
@@ -783,6 +806,12 @@ def resource_paths(base_path, pre_scan_plugins=()):
     The relative path is guaranted to be unicode and may be URL-encoded and may not
     be suitable to address an actual file.
     """
+    if base_path:
+        if on_linux:
+            base_path = path_to_bytes(base_path)
+        else:
+            base_path = path_to_unicode(base_path)
+
     base_path = os.path.abspath(os.path.normpath(os.path.expanduser(base_path)))
     base_is_dir = filetype.is_dir(base_path)
     len_base_path = len(base_path)
@@ -791,12 +820,14 @@ def resource_paths(base_path, pre_scan_plugins=()):
         for plugin in pre_scan_plugins:
             ignores.update(plugin.get_ignores())
     ignores.update(ignore.ignores_VCS)
-    ignored = partial(ignore.is_ignored, ignores=ignores, unignores={})
-    resources = fileutils.resource_iter(base_path, ignored=ignored)
+
+    ignorer = build_ignorer(ignores, unignores={})
+    resources = fileutils.resource_iter(base_path, ignored=ignorer)
 
     for abs_path in resources:
         posix_path = fileutils.as_posixpath(abs_path)
-        # fix paths: keep the path as relative to the original base_path
+        # fix paths: keep the path as relative to the original
+        # base_path. This is always Unicode
         rel_path = get_relative_path(posix_path, len_base_path, base_is_dir)
         yield abs_path, rel_path
 
@@ -822,21 +853,29 @@ def scan_infos(input_file, diag=False):
     return infos
 
 
-def scan_one(input_file, scanners, diag=False):
+def scan_one(location, scanners, diag=False):
     """
-    Scan one file or directory and return a scanned data, calling every scan in
-    the `scans` mapping of (scan name -> scan function). Scan data contain a
-    'scan_errors' key with a list of error messages.
-    If `diag` is True, 'scan_errors' error messages also contain detailed diagnostic
-    information such as a traceback if available.
+    Scan one file or directory at `location` and return a scan result
+    mapping, calling every scanner callable in the `scanners` mapping of
+    (scan name -> scan function).
+
+    The scan result mapping contain a 'scan_errors' key with a list of
+    error messages. If `diag` is True, 'scan_errors' error messages also
+    contain detailed diagnostic information such as a traceback if
+    available.
     """
+    if on_linux:
+        location = path_to_bytes(location)
+    else:
+        location = path_to_unicode(location)
+
     scan_result = OrderedDict()
     scan_errors = []
-    for scan_name, scan_func in scanners.items():
-        if not scan_func:
+    for scan_name, scanner in scanners.items():
+        if not scanner:
             continue
         try:
-            scan_details = scan_func(input_file)
+            scan_details = scanner(location)
             # consume generators
             if isinstance(scan_details, GeneratorType):
                 scan_details = list(scan_details)

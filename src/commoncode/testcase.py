@@ -30,20 +30,20 @@ from __future__ import unicode_literals
 
 from unittest import TestCase as TestCaseClass
 
+import filecmp
 import os
 import shutil
-import sys
-import filecmp
-import zipfile
-import tarfile
 import stat
+import sys
+import tarfile
+import zipfile
 
-from commoncode.system import on_windows
 from commoncode import fileutils
-from commoncode.system import on_posix
+from commoncode.fileutils import path_to_bytes
 from commoncode import filetype
 from commoncode.system import on_linux
-from commoncode.fileutils import path_to_bytes
+from commoncode.system import on_posix
+from commoncode.system import on_windows
 
 
 class EnhancedAssertions(TestCaseClass):
@@ -274,6 +274,24 @@ class FileDrivenTesting(object):
 
     def extract_test_tar(self, test_path, verbatim=False):
         return self.__extract(test_path, extract_tar, verbatim)
+
+    def extract_test_tar_raw(self, test_path, *args, **kwargs):
+        return self.__extract(test_path, extract_tar_raw)
+
+
+def extract_tar_raw(test_path, target_dir, *args, **kwargs):
+    """
+    Raw simplified extract for certain really weird paths and file
+    names.
+    """
+    if on_linux:
+        target_dir = path_to_bytes(target_dir)
+        test_path = path_to_bytes(test_path)
+
+    tar = tarfile.open(test_path)
+    tar.extractall(path=target_dir)
+    tar.close()
+    return target_dir
 
 
 def extract_tar(location, target_dir, verbatim=False, *args, **kwargs):

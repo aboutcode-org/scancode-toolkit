@@ -7,35 +7,42 @@ name: future
 home_url: http://python-future.org/
 owner: Python Charmers Pty Ltd
 
-dje_license: mit and bsd-new and python and apache-2.0 and historical and public-domain
+dje_license: mit and bsd-new and python and apache-2.0 and bsd-simplified and historical and public-domain and (python or gpl-2.0)
 license_text_file:
     - future.LICENSE
     - PSF.LICENSE
     - apache-2.0.LICENSE
+    - gpl-2.0.LICENSE
 
 copyright: >
+ Copyright: (c) 2013-2016, Ed Schofield <ed@pythoncharmers.com>
   Copyright (c) 2013-2016 Python Charmers Pty Ltd, Australia
-  Portions Copyright (c) 2002-2010 Python Software Foundation (multiple backports)
-  Portions Copyright (c) 2011 Ryan Kelly (magicsuper backport https://github.com/rfk/magicsuper)
-  Portions Copyright (c) Dan Crosta (xrange https://github.com/dcrosta/xrange)
-  Portions Copyright (c) 2006 Google, Inc. (lib2to3, part of the Python standard library)
-  Portions Copyright (c) 2009-2010 Joseph Amenta (lib3to2 (which includes part of lib2to3) 
-   https://bitbucket.org/amentajo/lib3to2/)
-  Portions Copyright (c) Armin Ronacher (python modernize https://github.com/python-modernize/python-modernize )
-  Portions Copyright (c) 2010 Armin Ronacher (Flask)
-  Portions Copyright (c) Django Software Foundation and individual contributors. (https://github.com/django/django/
-  Portions Copyright (c) 2009 by the Jinja Team, see AUTHORS for more details. (https://github.com/pallets/jinja)
-  Portions Copyright (c) 2010-2017 Benjamin Peterson  (https://github.com/benjaminp/six)
-  Portions Copyright (c) Jeff Tratner (raise_with_traceback and _raise https://github.com/PythonCharmers/python-future/commits?author=jtratner
-  Portions Copyright (c) Varriount https://github.com/Varriount
-  Portions Copyright (c) 2012 by Vinay Sajip.  (https://bitbucket.org/vinay.sajip/uprefix/)
-  Portions Copyright (c) IPython Development Team.  (https://ipython.org/)
-  Portions Copyright (c) 2000 Luke Kenneth Casson Leighton <lkcl@samba.org>
-  Portions Copyright (c) 1999-2002 by Secret Labs AB. Copyright (c) 1999-2002 by Fredrik Lundh."
-  Portions Copyright (c) 2000 by Timothy O'Malley <timo@alum.mit.edu>
-  Portions Copyright (c) 2000  Bastian Kleineidam
-  Portions Copyright (c) 2013 - Damian Avila
-  Portions Copyright (C) 2015 Association of Universities for Research in Astronomy (AURA)
+  Copyright (c) Python Software Foundation and contributors (multiple backports)
+  Copyright (c) Jack Diederich (2to3 fixers)
+  Copyright (c) Daniel Neuhäuser (2to3 fixers)
+  Copyright (c) 2013 Damian Avila (2to3 fixers)
+  Copyright (c) 2010 Armin Ronacher (Flask and 2to3 fixers)
+  Copyright (c) Armin Ronacher (python modernize https://github.com/python-modernize/python-modernize )
+  Copyright (c) 2011 Ryan Kelly (magicsuper backport https://github.com/rfk/magicsuper)
+  Copyright (c) Dan Crosta (xrange https://github.com/dcrosta/xrange)
+  Copyright (c) 2006 Google, Inc. (lib2to3, part of the Python standard library)
+  Copyright (c) 2009-2010 Joseph Amenta (lib3to2 (which includes part of lib2to3 https://bitbucket.org/amentajo/lib3to2/)
+  Copyright (c) Django Software Foundation and individual contributors. (https://github.com/django/django/
+  Copyright (c) 2009 Jinja Team. (https://github.com/pallets/jinja)
+  Copyright (c) 2010-2017 Benjamin Peterson  (https://github.com/benjaminp/six)
+  Copyright (c) Jeff Tratner (raise_with_traceback and _raise https://github.com/PythonCharmers/python-future/commits?author=jtratner
+  Copyright (c) Varriount https://github.com/Varriount
+  Copyright (c) 2012 Vinay Sajip  (https://bitbucket.org/vinay.sajip/uprefix/)
+  Copyright (c) IPython Development Team.  (https://ipython.org/)
+  Copyright (c) 2000 Luke Kenneth Casson Leighton <lkcl@samba.org>
+  Copyright (c) 1999-2002 Secret Labs AB. Copyright (c) 1999-2002 by Fredrik Lundh."
+  Copyright (c) 2000 Timothy O'Malley <timo@alum.mit.edu>
+  Copyright (c) 2000 Bastian Kleineidam (robotparser)
+  Copyright (c) 2015 Association of Universities for Research in Astronomy (AURA)
+  Copyright (c) Victor Stinner (surrogateescape)
+  Copyright (c) Raymond Hettinger (ordereddict, counter)
+  Copyright (c) Benjamin Peterson (pandas comapt)
+
 
 notes: >
     The code contains other code borrowed from several other places
@@ -49,7 +56,7 @@ notes: >
     six is using an mit license
     uprefix uses a bsdd-new license
     Some code comes also from iPython (From IPython's py3compat.py module. License BSD)
-
+    surrogateescape is from Victor Stinner (haypo)
 
 vcs_tool: git
 vcs_repository: https://github.com/PythonCharmers/python-future.git
