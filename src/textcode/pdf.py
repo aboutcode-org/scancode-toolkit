@@ -27,7 +27,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import contextlib
-from StringIO import StringIO
+from io import BytesIO
 
 from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
@@ -39,10 +39,11 @@ from pdfminer.pdfparser import PDFParser
 
 def get_text_lines(location):
     """
-    Return a list of text lines extracted from a pdf file at `location`.
-    May raise exceptions.
+    Return a list of unicode text lines extracted from a pdf file at
+    `location`. May raise exceptions.
     """
-    extracted_text = StringIO()
+    extracted_text = BytesIO()
+    lines = []
     laparams = LAParams()
     with open(location, 'rb') as pdf_file:
         with contextlib.closing(PDFParser(pdf_file)) as parser:
@@ -54,6 +55,5 @@ def get_text_lines(location):
                 pages = PDFPage.create_pages(document)
                 for page in pages:
                     interpreter.process_page(page)
-                extracted_text.seek(0)
-                lines = extracted_text.readlines()
+                lines = extracted_text.getvalue().splitlines(True)
     return lines
