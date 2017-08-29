@@ -261,11 +261,11 @@ class FileDrivenTesting(object):
         test_path = to_os_native_path(test_path)
         target_path = os.path.basename(test_path)
         target_dir = self.get_temp_dir(target_path)
-        origin_archive = self.get_test_loc(test_path)
+        original_archive = self.get_test_loc(test_path)
         if on_linux:
             target_dir = path_to_bytes(target_dir)
-            origin_archive = path_to_bytes(origin_archive)
-        extract_func(origin_archive, target_dir,
+            original_archive = path_to_bytes(original_archive)
+        extract_func(original_archive, target_dir,
                      verbatim=verbatim)
         return target_dir
 
@@ -284,14 +284,12 @@ def extract_tar_raw(test_path, target_dir, *args, **kwargs):
     Raw simplified extract for certain really weird paths and file
     names.
     """
-    if on_linux:
-        target_dir = path_to_bytes(target_dir)
-        test_path = path_to_bytes(test_path)
-
+    # use bytes for paths on ALL OSes (though this may fail on macOS)
+    target_dir = path_to_bytes(target_dir)
+    test_path = path_to_bytes(test_path)
     tar = tarfile.open(test_path)
     tar.extractall(path=target_dir)
     tar.close()
-    return target_dir
 
 
 def extract_tar(location, target_dir, verbatim=False, *args, **kwargs):
