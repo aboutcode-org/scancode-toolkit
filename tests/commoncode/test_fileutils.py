@@ -547,6 +547,7 @@ class TestFileUtils(FileBasedTesting):
         _dirpath, _dirnames, filenames = result
         assert 18 == len(filenames)
 
+    @skipIf(on_windows, 'Windows FS encoding is ... different')
     def test_path_to_unicode_and_path_to_bytes_are_idempotent(self):
         a = b'foo\xb1bar'
         b = u'foo\udcb1bar'
