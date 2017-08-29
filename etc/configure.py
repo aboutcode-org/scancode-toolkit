@@ -3,7 +3,7 @@
 # Copyright (c) 2017 nexB Inc. http://www.nexb.com/ - All rights reserved.
 
 """
-This script a configuration helper to select pip requirement files to install
+This script is a configuration helper to select pip requirement files to install
 and python and shell configuration scripts to execute based on provided config
 directories paths arguments and the operating system platform. To use, create
 a configuration directory tree that contains any of these:
@@ -21,8 +21,9 @@ a configuration directory tree that contains any of these:
  - posix.sh, linux.sh, mac.sh are os-specific scripts to execute.
 
 The config directory structure contains one or more directories paths. This
-way you can have a main configuration and additional sub-configurations of a
-product such as for prod, test, ci, dev, or anything else.
+way you can have a main configuration (that is always used) and additional
+sub-configurations of a product such as for prod, test, ci, dev, or anything
+else.
 
 All scripts and requirements are optional and only used if presents. Scripts
 are executed in sequence, one after the other after all requirements are
@@ -39,7 +40,7 @@ scripts.
 The base scripts or packages are always installed first before platform-
 specific ones.
 
-For example a tree could be looking like this::
+For example a tree could be looking like this:
     etc/conf
         base.txt : base pip requirements for all platforms
         linux.txt : linux-only pip requirements
