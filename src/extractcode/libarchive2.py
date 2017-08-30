@@ -32,7 +32,6 @@ from functools import partial
 import locale
 import logging
 import os
-import sys
 
 import ctypes
 from ctypes import c_char_p, c_wchar_p
@@ -43,9 +42,9 @@ from ctypes import POINTER
 from ctypes import create_string_buffer
 
 from commoncode import command
+from commoncode import fileutils
 from commoncode import paths
 from commoncode import system
-from commoncode import fileutils
 
 import extractcode
 from extractcode import ExtractError
@@ -94,19 +93,18 @@ def load_lib():
     e.g. this assumes that libarchive is stored in a well known location under
     exttractcode/bin with subdirectories for each supported OS.
     """
+    # FIXME: use command.load_lib instead
     root_dir = command.get_base_dirs(extractcode.root_dir)[0]
     _bin_dir, lib_dir = command.get_bin_lib_dirs(root_dir)
     libarchive = os.path.join(lib_dir, 'libarchive' + system.lib_ext)
 
     # add lib path to the front of the PATH env var
-    if lib_dir not in os.environ['PATH'].split(os.pathsep):
-        new_path = os.pathsep.join([lib_dir, os.environ['PATH']])
-        os.environ['PATH'] = new_path
+    command.update_path_environment(lib_dir)
 
     if os.path.exists(libarchive):
         if not isinstance(libarchive, bytes):
             # ensure that the path is not Unicode...
-            libarchive = libarchive.encode(sys.getfilesystemencoding() or sys.getdefaultencoding())
+            libarchive = libarchive.encode(fileutils.FS_ENCODING)
         lib = ctypes.CDLL(libarchive)
         if lib and lib._name:
             return lib
