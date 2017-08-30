@@ -1,0 +1,17 @@
+about_resource: backports.os-0.1rc1-py2-none-any.whl
+version: 0.1rc1
+name: backports.os
+home_url: https://github.com/pjdelport/backports.os
+download_url: https://pypi.python.org/packages/82/1d/461604fd8b2c6f798a18fb9161019d35c005a489bdd91279dfcf9b65859e/backports.os-0.1rc1-py2-none-any.whl#md5=7677278e0dd1135b7c422495daa72573
+license_text: 
+    - backports.os.LICENSE
+    - PSF.LICENSE
+dje_license: python and mit
+owner: Piët Delport
+
+copyright: Copyright (c) Piët Delport, and Python Software Foundation
+ Copyright (c) 2010 Bob Ippolito
+
+notes: the invalid_utf8_indexes() helper is copied from Bob Ippolito's 
+ pyutf8 package (pyutf8/ref.py) and is MIT-licensed
+ https://github.com/etrepum/pyutf8/blob/master/pyutf8/ref.py

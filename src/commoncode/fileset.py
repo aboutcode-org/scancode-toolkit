@@ -27,17 +27,24 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import fnmatch
+import os
 import logging
 
-import os
 from commoncode import fileutils
 from commoncode import paths
+from commoncode.system import on_linux
+
 
 DEBUG = False
 logger = logging.getLogger(__name__)
 # import sys
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 # logger.setLevel(logging.DEBUG)
+
+
+POSIX_PATH_SEP = b'/' if on_linux else '/'
+EMPTY_STRING = b'' if on_linux else ''
+
 
 """
 Match files and directories paths based on inclusion and exclusion glob-style
@@ -115,7 +122,7 @@ def _match(path, patterns):
         return False
 
     path = fileutils.as_posixpath(path).lower()
-    pathstripped = path.lstrip('/')
+    pathstripped = path.lstrip(POSIX_PATH_SEP)
     if not pathstripped:
         return False
     segments = paths.split(pathstripped)
@@ -125,9 +132,9 @@ def _match(path, patterns):
     for pat, msg in patterns.items():
         if not pat and not pat.strip():
             continue
-        msg = msg or ''
-        pat = pat.lstrip('/').lower()
-        is_plain = '/' not in pat
+        msg = msg or EMPTY_STRING
+        pat = pat.lstrip(POSIX_PATH_SEP).lower()
+        is_plain = POSIX_PATH_SEP not in pat
         if is_plain:
             if any(fnmatch.fnmatchcase(s, pat) for s in segments):
                 mtch = msg

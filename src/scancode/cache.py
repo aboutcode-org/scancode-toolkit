@@ -22,8 +22,8 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function
 from __future__ import absolute_import
+from __future__ import print_function
 from __future__ import unicode_literals
 
 import codecs
@@ -37,9 +37,13 @@ import sys
 
 from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
+from commoncode.fileutils import path_to_bytes
+from commoncode.fileutils import path_to_unicode
+from commoncode.system import on_linux
 from commoncode import timeutils
 
 from scancode import scans_cache_dir
+
 
 """
 Cache scan results for a file or directory disk using a file-based cache.
@@ -80,7 +84,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
 
 
 def get_scans_cache_class(cache_dir=scans_cache_dir):
@@ -89,16 +93,19 @@ def get_scans_cache_class(cache_dir=scans_cache_dir):
     """
     # create a unique temp directory in cache_dir
     fileutils.create_dir(cache_dir)
-    # ensure that the cache dir is alwasy unicode
-    cache_dir = fileutils.get_temp_dir(unicode(cache_dir), prefix=unicode(timeutils.time2tstamp()) + u'-')
+    prefix = timeutils.time2tstamp() + u'-'
+    cache_dir = fileutils.get_temp_dir(cache_dir, prefix=prefix)
+    if on_linux:
+        cache_dir = path_to_bytes(cache_dir)
     sc = ScanFileCache(cache_dir)
     sc.setup()
     return partial(ScanFileCache, cache_dir)
 
 
-def info_keys(path):
+def info_keys(path, seed=None):
     """
-    Return a file info cache keys tripple for a path.
+    Return a file info cache "keys" tripple for a path composed of three
+    paths segments derived from a checksum.
 
     For example:
     >>> expected = 'fb87db2bb28e9501ac7fdc4812782118f4c94a0f'
@@ -108,10 +115,12 @@ def info_keys(path):
     """
     # ensure that we always pass bytes to the hash function
     if isinstance(path, unicode):
-        pa = path.encode('utf-8')
-    else:
-        pa = path
-    return keys_from_hash(sha1(pa).hexdigest())
+        path = path_to_bytes(path)
+    if seed:
+        if isinstance(seed, unicode):
+            seed = path_to_bytes(seed)
+        path = seed + path
+    return keys_from_hash(sha1(path).hexdigest())
 
 
 def scan_keys(path, file_info):
@@ -119,14 +128,15 @@ def scan_keys(path, file_info):
     Return a scan cache keys tripple for a path and file_info. If the file_info
     sha1 is empty (e.g. such as a directory), return a key based on the path instead.
     """
-    # we "get" because in some off cases getting file info may have failed.
+    # we "get" because in some off cases getting file info may have failed
+    # or there may be none for a directory
     sha1_digest = file_info.get('sha1')
     if sha1_digest:
         return keys_from_hash(sha1_digest)
     else:
-        # we may eventually store directories, in which case we use the path as a key
-        # with some extra seed
-        return  info_keys('empty hash' + path)
+        # we may eventually store directories, in which case we use the
+        # path as a key with some extra seed
+        return  info_keys(path, seed=b'empty hash')
 
 
 def keys_from_hash(hexdigest):
@@ -144,18 +154,27 @@ def keys_from_hash(hexdigest):
     >>> expected = ('f', 'b', '87db2bb28e9501ac7fdc4812782118f4c94a0f')
     >>> assert expected == keys_from_hash('fb87db2bb28e9501ac7fdc4812782118f4c94a0f')
     """
+    if on_linux:
+        hexdigest = bytes(hexdigest)
     return hexdigest[0], hexdigest[1], hexdigest[2:]
 
 
 def paths_from_keys(base_path, keys):
     """
-    Return a tuple of (parent dir path, filename) built from a cache keys triple and
-    a base_directory. Ensure that the parent directory exist.
+    Return a tuple of (parent dir path, filename) for a cache entry built from a cache
+    keys triple and a base_directory. Ensure that the parent directory exist.
     """
-    dir1, dir2, fname = keys
+    if on_linux:
+        keys = [path_to_bytes(k) for k in keys]
+        base_path = path_to_bytes(base_path)
+    else:
+        keys = [path_to_unicode(k) for k in keys]
+        base_path = path_to_unicode(base_path)
+
+    dir1, dir2, file_name = keys
     parent = os.path.join(base_path, dir1, dir2)
     fileutils.create_dir(parent)
-    return parent, fname
+    return parent, file_name
 
 
 class ScanFileCache(object):
@@ -165,28 +184,42 @@ class ScanFileCache(object):
     we cache the scan for a given file once and read it only a few times.
     """
     def __init__(self, cache_dir):
-        self.cache_base_dir = cache_dir
-        # subdirs for info and scans caches
-        self.cache_infos_dir = as_posixpath(os.path.join(self.cache_base_dir, u'infos/'))
-        self.cache_scans_dir = as_posixpath(os.path.join(self.cache_base_dir, u'scans/'))
-        self.cache_files_log = as_posixpath(os.path.join(self.cache_base_dir, u'files_log'))
+        # subdirs for info and scans_dir caches
+        if on_linux:
+            infos_dir = b'infos_dir/'
+            scans_dir = b'scans_dir/'
+            files_log = b'files_log'
+            self.cache_base_dir = path_to_bytes(cache_dir)
+
+        else:
+            infos_dir = u'infos_dir/'
+            scans_dir = u'scans_dir/'
+            files_log = u'files_log'
+            self.cache_base_dir = cache_dir
+
+        self.cache_infos_dir = as_posixpath(os.path.join(self.cache_base_dir, infos_dir))
+        self.cache_scans_dir = as_posixpath(os.path.join(self.cache_base_dir, scans_dir))
+        self.cache_files_log = as_posixpath(os.path.join(self.cache_base_dir, files_log))
 
     def setup(self):
         """
         Setup the cache: must be called at least once globally after cache
         initialization.
         """
-        os.makedirs(self.cache_infos_dir)
-        os.makedirs(self.cache_scans_dir)
+        fileutils.create_dir(self.cache_infos_dir)
+        fileutils.create_dir(self.cache_scans_dir)
 
     @classmethod
     def log_file_path(cls, logfile_fd, path):
         """
         Log file path in the cache logfile_fd **opened** file descriptor.
         """
-        # we dump one path per line.
+        # we dump one path per line written as bytes or unicode
+        if on_linux:
+            path = path_to_bytes(path) + b'\n'
+        else:
+            path = path_to_unicode(path) + '\n'
         logfile_fd.write(path)
-        logfile_fd.write('\n')
 
     def get_cached_info_path(self, path):
         """
@@ -202,7 +235,7 @@ class ScanFileCache(object):
         in file_info has already been scanned or False otherwise.
         """
         info_path = self.get_cached_info_path(path)
-        with open(info_path, 'w') as cached_infos:
+        with codecs.open(info_path, 'wb', encoding='utf-8') as cached_infos:
             json.dump(file_info, cached_infos, check_circular=False)
         scan_path = self.get_cached_scan_path(path, file_info)
         is_scan_cached = os.path.exists(scan_path)
@@ -234,7 +267,7 @@ class ScanFileCache(object):
         """
         scan_path = self.get_cached_scan_path(path, file_info)
         if not os.path.exists(scan_path):
-            with open(scan_path, 'w') as cached_scan:
+            with codecs.open(scan_path, 'wb', encoding='utf-8') as cached_scan:
                 json.dump(scan_result, cached_scan, check_circular=False)
         if TRACE:
             logger_debug('put_scan:', 'scan_path:', scan_path, 'file_info:', file_info, 'scan_result:', scan_result, '\n')
@@ -246,8 +279,8 @@ class ScanFileCache(object):
         """
         scan_path = self.get_cached_scan_path(path, file_info)
         if os.path.exists(scan_path):
-            with codecs.open(scan_path, 'r', encoding='utf-8') as cs:
-                return json.load(cs, object_pairs_hook=OrderedDict)
+            with codecs.open(scan_path, 'r', encoding='utf-8') as cached_scan:
+                return json.load(cached_scan, object_pairs_hook=OrderedDict)
 
     def iterate(self, scan_names, root_dir=None, paths_subset=tuple()):
         """
@@ -258,19 +291,38 @@ class ScanFileCache(object):
 
         The logfile MUST have been closed before calling this method.
         """
-        paths_subset = set(paths_subset)
-        with codecs.open(self.cache_files_log, 'r', encoding='utf-8') as cached_files:
-            # iterate the list of (path, (info keys)), one by line
+        if on_linux:
+            paths_subset = set(path_to_bytes(p) for p in paths_subset)
+        else:
+            paths_subset = set(path_to_unicode(p) for p in paths_subset)
+
+        if on_linux:
+            log_opener = partial(open, self.cache_files_log, 'rb')
+        else:
+            log_opener = partial(codecs.open, self.cache_files_log, 'rb', encoding='utf-8')
+        EOL = b'\n' if on_linux else '\n'
+
+        with log_opener() as cached_files:
+            # iterate paths, one by line
             for file_log in cached_files:
-                path = file_log.rstrip('\n')
+                # must be unicode
+                path = file_log.rstrip(EOL)
                 if paths_subset and path not in paths_subset:
                     continue
                 file_info = self.get_info(path)
 
-                if root_dir:
-                    rooted_path = posixpath.join(root_dir, path)
+                if on_linux:
+                    unicode_path = path_to_unicode(path)
                 else:
-                    rooted_path = path
+                    unicode_path = path
+
+                if root_dir:
+                    # must be unicode
+                    if on_linux:
+                        root_dir = path_to_unicode(root_dir)
+                    rooted_path = posixpath.join(root_dir, unicode_path)
+                else:
+                    rooted_path = unicode_path
                 logger_debug('iterate:', 'rooted_path:', rooted_path)
 
                 # rare but possible corner case
@@ -284,13 +336,18 @@ class ScanFileCache(object):
                     yield scan_result
                     continue
 
-                path = file_info.pop('path')
+                unicode_path_from_file_info = file_info.pop('path')
+                #print('unicode_path_from_file_info', type(unicode_path_from_file_info), repr(unicode_path_from_file_info))
+                #print('unicode_path', type(unicode_path), repr(unicode_path))
+                #print('rooted_path', type(rooted_path), repr(rooted_path))
+                #print('path', type(path), repr(path))
                 scan_result = OrderedDict(path=rooted_path)
 
                 if 'infos' in scan_names:
-                    # infos is always collected but only returned if requested
+                    # info are always collected but only returned if requested
                     # we flatten these as direct attributes of a file object
                     scan_result.update(file_info.items())
+
                 if not scan_result.get('scan_errors'):
                     scan_result['scan_errors'] = []
 

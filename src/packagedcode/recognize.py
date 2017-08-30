@@ -31,6 +31,9 @@ from commoncode import filetype
 from typecode import contenttype
 
 from packagedcode import PACKAGE_TYPES
+from commoncode.system import on_linux
+from commoncode.fileutils import path_to_unicode
+from commoncode.fileutils import path_to_bytes
 
 
 logger = logging.getLogger(__name__)
@@ -45,6 +48,7 @@ def recognize_package(location):
     """
     Return a Package object if one was recognized or None for this `location`.
     """
+
     if not filetype.is_file(location):
         return
 
@@ -52,9 +56,13 @@ def recognize_package(location):
     ftype = T.filetype_file.lower()
     mtype = T.mimetype_file
 
+
     for package in PACKAGE_TYPES:
         # Note: default to True if there is nothing to match against
-        if location.endswith(tuple(package.metafiles)):
+        metafiles = package.metafiles
+        if on_linux:
+            metafiles = (path_to_bytes(m) for m in metafiles)
+        if location.endswith(tuple(metafiles)):
             return package.recognize(location)
 
         if package.filetypes:
@@ -66,8 +74,12 @@ def recognize_package(location):
         else:
             mime_matched = False
 
-        if package.extensions:
-            extension_matched = location.lower().endswith(package.extensions)
+
+        extensions = package.extensions
+        if extensions:
+            if on_linux:
+                extensions = tuple(path_to_bytes(e) for e in extensions)
+            extension_matched = location.lower().endswith(extensions)
         else:
             extension_matched = False
 

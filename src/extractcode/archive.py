@@ -49,6 +49,8 @@ from extractcode import sevenzip
 from extractcode import libarchive2
 from extractcode.uncompress import uncompress_gzip
 from extractcode.uncompress import uncompress_bzip2
+from commoncode.system import on_linux
+from commoncode.fileutils import path_to_bytes
 
 
 logger = logging.getLogger(__name__)
@@ -147,6 +149,8 @@ def get_best_handler(location, kinds=all_kinds):
     """
     Return the best handler of None for the file at location.
     """
+    if on_linux:
+        location = path_to_bytes(location)
     location = os.path.abspath(os.path.expanduser(location))
     if not filetype.is_file(location):
         return
@@ -161,6 +165,9 @@ def get_handlers(location):
     Return an iterable of (handler, type_matched, mime_matched,
     extension_matched,) for this `location`.
     """
+    if on_linux:
+        location = path_to_bytes(location)
+
     if filetype.is_file(location):
         T = typecode.contenttype.get_type(location)
         ftype = T.filetype_file.lower()
@@ -177,7 +184,11 @@ def get_handlers(location):
             # default to False
             type_matched = handler.filetypes and any(t in ftype for t in handler.filetypes)
             mime_matched = handler.mimetypes and any(m in mtype for m in handler.mimetypes)
-            extension_matched = handler.extensions and location.lower().endswith(handler.extensions)
+            exts = handler.extensions
+            if exts:
+                if on_linux:
+                    exts = tuple(path_to_bytes(e) for e in exts)
+                extension_matched = exts and location.lower().endswith(exts)
 
             if TRACE_DEEP:
                 handler_name = handler.name
@@ -299,6 +310,9 @@ def extract_twice(location, target_dir, extractor1, extractor2):
     hard to trace and debug very quickly. A depth of two is simple and sane and
     covers most common cases.
     """
+    if on_linux:
+        location = path_to_bytes(location)
+        target_dir = path_to_bytes(target_dir)
     abs_location = os.path.abspath(os.path.expanduser(location))
     abs_target_dir = unicode(os.path.abspath(os.path.expanduser(target_dir)))
     # extract first the intermediate payload to a temp dir

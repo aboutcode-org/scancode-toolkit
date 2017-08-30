@@ -1,0 +1,63 @@
+about_resource: future-0.16.0-cp27-none-any.whl
+version: 0.16.0
+
+download_url: https://pypi.python.org/packages/00/2b/8d082ddfed935f3608cc61140df6dcbf0edea1bc3ab52fb6c29ae3e81e85/future-0.16.0.tar.gz#md5=3e8e88a2bda48d54b1da7634d04760d7
+
+name: future
+home_url: http://python-future.org/
+owner: Python Charmers Pty Ltd
+
+dje_license: mit and bsd-new and python and apache-2.0 and bsd-simplified and historical and public-domain and (python or gpl-2.0)
+license_text_file:
+    - future.LICENSE
+    - PSF.LICENSE
+    - apache-2.0.LICENSE
+    - gpl-2.0.LICENSE
+
+copyright: >
+ Copyright: (c) 2013-2016, Ed Schofield <ed@pythoncharmers.com>
+  Copyright (c) 2013-2016 Python Charmers Pty Ltd, Australia
+  Copyright (c) Python Software Foundation and contributors (multiple backports)
+  Copyright (c) Jack Diederich (2to3 fixers)
+  Copyright (c) Daniel Neuhäuser (2to3 fixers)
+  Copyright (c) 2013 Damian Avila (2to3 fixers)
+  Copyright (c) 2010 Armin Ronacher (Flask and 2to3 fixers)
+  Copyright (c) Armin Ronacher (python modernize https://github.com/python-modernize/python-modernize )
+  Copyright (c) 2011 Ryan Kelly (magicsuper backport https://github.com/rfk/magicsuper)
+  Copyright (c) Dan Crosta (xrange https://github.com/dcrosta/xrange)
+  Copyright (c) 2006 Google, Inc. (lib2to3, part of the Python standard library)
+  Copyright (c) 2009-2010 Joseph Amenta (lib3to2 (which includes part of lib2to3 https://bitbucket.org/amentajo/lib3to2/)
+  Copyright (c) Django Software Foundation and individual contributors. (https://github.com/django/django/
+  Copyright (c) 2009 Jinja Team. (https://github.com/pallets/jinja)
+  Copyright (c) 2010-2017 Benjamin Peterson  (https://github.com/benjaminp/six)
+  Copyright (c) Jeff Tratner (raise_with_traceback and _raise https://github.com/PythonCharmers/python-future/commits?author=jtratner
+  Copyright (c) Varriount https://github.com/Varriount
+  Copyright (c) 2012 Vinay Sajip  (https://bitbucket.org/vinay.sajip/uprefix/)
+  Copyright (c) IPython Development Team.  (https://ipython.org/)
+  Copyright (c) 2000 Luke Kenneth Casson Leighton <lkcl@samba.org>
+  Copyright (c) 1999-2002 Secret Labs AB. Copyright (c) 1999-2002 by Fredrik Lundh."
+  Copyright (c) 2000 Timothy O'Malley <timo@alum.mit.edu>
+  Copyright (c) 2000 Bastian Kleineidam (robotparser)
+  Copyright (c) 2015 Association of Universities for Research in Astronomy (AURA)
+  Copyright (c) Victor Stinner (surrogateescape)
+  Copyright (c) Raymond Hettinger (ordereddict, counter)
+  Copyright (c) Benjamin Peterson (pandas comapt)
+
+
+notes: >
+    The code contains other code borrowed from several other places
+    magicsuper is mit though since it is a backport from Python it may contain python licensed code
+    xrange is using a bsd license
+    lib2to3 is using the python license
+    lib3to3 is using the apache 2.0 license with code also under the python license
+    modernize is under bsd-new and python license
+    django is using a bsd-new license
+    jinja is using a bsd-new license
+    six is using an mit license
+    uprefix uses a bsdd-new license
+    Some code comes also from iPython (From IPython's py3compat.py module. License BSD)
+    surrogateescape is from Victor Stinner (haypo)
+
+vcs_tool: git
+vcs_repository: https://github.com/PythonCharmers/python-future.git
+

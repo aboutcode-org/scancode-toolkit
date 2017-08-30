@@ -31,6 +31,7 @@ import codecs
 from collections import OrderedDict
 import json
 import os
+from commoncode.system import on_linux
 
 
 def remove_dates(scan_result):
@@ -87,8 +88,9 @@ def run_scan_plain(options, cwd=None):
     Run a scan as a plain subprocess. Return rc, stdout, stderr.
     """
     import scancode
+    scmd = b'scancode' if on_linux else 'scancode'
     from commoncode.command import execute
-    scan_cmd = os.path.join(scancode.root_dir, 'scancode')
+    scan_cmd = os.path.join(scancode.root_dir, scmd)
     return execute(scan_cmd, options, cwd=cwd)
 
 

@@ -28,6 +28,10 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 
+from commoncode.fileutils import path_to_bytes
+from commoncode.fileutils import path_to_unicode
+from commoncode.system import on_linux
+
 
 """
 Main scanning functions.
@@ -169,6 +173,11 @@ def get_file_infos(location):
     from commoncode.hash import multi_checksums
     from typecode import contenttype
 
+    if on_linux:
+        location = path_to_bytes(location)
+    else:
+        location = path_to_unicode(location)
+
     infos = OrderedDict()
     is_file = filetype.is_file(location)
     is_dir = filetype.is_dir(location)
@@ -177,14 +186,21 @@ def get_file_infos(location):
 
     infos['type'] = filetype.get_type(location, short=False)
     name = fileutils.file_name(location)
-    infos['name'] = fileutils.file_name(location)
     if is_file:
         base_name, extension = fileutils.splitext(location)
     else:
         base_name = name
         extension = ''
-    infos['base_name'] = base_name
-    infos['extension'] = extension
+
+    if on_linux:
+        infos['name'] = path_to_unicode(name)
+        infos['base_name'] = path_to_unicode(base_name)
+        infos['extension'] = path_to_unicode(extension)
+    else:
+        infos['name'] = name
+        infos['base_name'] = base_name
+        infos['extension'] = extension
+
     infos['date'] = is_file and filetype.get_last_modified_date(location) or None
     infos['size'] = T.size
     infos.update(multi_checksums(location, ('sha1', 'md5',)))

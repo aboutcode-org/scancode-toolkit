@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -27,14 +27,12 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
-import sys
-
 import click
 from click.utils import echo
 from click._termui_impl import ProgressBar
 
 from commoncode import fileutils
-from commoncode.text import as_unicode
+from commoncode.fileutils import path_to_unicode
 
 
 """
@@ -168,32 +166,13 @@ def progressmanager(iterable=None, length=None, label=None, show_eta=True,
                           width=width, color=color)
 
 
-def get_fs_encoding():
-    """
-    Return the current filesystem encoding or default encoding
-    """
-    return sys.getfilesystemencoding() or sys.getdefaultencoding()
-
-
-def path_as_unicode(path):
-    """
-    Return path as unicode.
-    """
-    if isinstance(path, unicode):
-        return path
-    try:
-        return path.decode(get_fs_encoding())
-    except UnicodeDecodeError:
-        return as_unicode(path)
-
-
 def get_relative_path(path, len_base_path, base_is_dir):
     """
     Return a posix relative path from the posix 'path' relative to a
     base path of `len_base_path` length where the base is a directory if
     `base_is_dir` True or a file otherwise.
     """
-    path = path_as_unicode(path)
+    path = path_to_unicode(path)
     if base_is_dir:
         rel_path = path[len_base_path:]
     else:
@@ -217,6 +196,8 @@ def fixed_width_file_name(path, max_length=25):
     if not path:
         return ''
 
+    # get the path as unicode for display!
+    path = path_to_unicode(path)
     filename = fileutils.file_name(path)
     if len(filename) <= max_length:
         return filename
@@ -232,7 +213,7 @@ def fixed_width_file_name(path, max_length=25):
     prefix = base_name[:prefix_and_suffix_length]
     ellipsis = number_of_dots * '.'
     suffix = base_name[-prefix_and_suffix_length:]
-    return "{prefix}{ellipsis}{suffix}{extension}".format(**locals())
+    return '{prefix}{ellipsis}{suffix}{extension}'.format(**locals())
 
 
 def compute_fn_max_len(used_width=BAR_WIDTH + BAR_SEP_LEN + 7 + BAR_SEP_LEN + 8 + BAR_SEP_LEN):
