@@ -709,14 +709,16 @@ def _get_root_dir(input_path, strip_root=False, full_root=False):
 
     scanned_path = os.path.abspath(os.path.normpath(os.path.expanduser(input_path)))
     scanned_path = fileutils.as_posixpath(scanned_path)
-    if full_root:
-        return scanned_path
-
     if filetype.is_dir(scanned_path):
         root_dir = scanned_path
     else:
         root_dir = fileutils.parent_directory(scanned_path)
-    return fileutils.file_name(root_dir)
+        root_dir = fileutils.as_posixpath(root_dir)
+
+    if full_root:
+        return root_dir
+    else:
+        return fileutils.file_name(root_dir)
 
 
 def _resource_logger(logfile_fd, resources):
