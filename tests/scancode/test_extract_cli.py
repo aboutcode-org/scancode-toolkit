@@ -251,9 +251,6 @@ def test_extractcode_command_can_extract_nuget(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     runner = CliRunner()
     result = runner.invoke(extract_cli.extractcode, ['--verbose', test_dir], catch_exceptions=False)
-    try:
-        assert result.exit_code == 0
-        assert 'ERROR extracting' not in result.output
-    except:
+    if result.exit_code != 0:
         print(result.output)
-        raise
+    assert 'ERROR extracting' not in result.output
