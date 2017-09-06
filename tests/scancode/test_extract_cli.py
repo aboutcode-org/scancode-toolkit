@@ -247,6 +247,7 @@ def test_extractcode_command_can_extract_shallow(monkeypatch):
 
 
 def test_extractcode_command_can_extract_nuget(monkeypatch):
+    # note: this test fails on Windows until we have support for long file names
     test_dir = test_env.get_test_loc('extract_nuget', copy=True)
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     runner = CliRunner()
