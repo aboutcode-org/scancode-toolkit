@@ -1,4 +1,8 @@
 licenses:
-    - gpl-2.0
     - openjdk-exception
-license:  gpl-2.0 with openjdk-exception
+    - gpl-2.0
+    - classpath-exception-2.0
+
+license_expressions:
+    - openjdk-exception
+    - gpl-2.0 with classpath-exception-2.0
