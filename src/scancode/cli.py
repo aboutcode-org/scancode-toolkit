@@ -574,7 +574,7 @@ def scan(input_path,
 
     pool = None
 
-    resources = resource_paths(input_path, diag, pre_scan_plugins=pre_scan_plugins)
+    resources = resource_paths(input_path, diag, scans_cache_class, pre_scan_plugins=pre_scan_plugins)
     paths_with_error = []
     files_count = 0
 
@@ -740,7 +740,6 @@ def _scanit(resource, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT
     """
     success = True
     scans_cache = scans_cache_class()
-    is_cached = scans_cache.put_info(resource.rel_path, resource.infos)
 
     # note: "flag and function" expressions return the function if flag is True
     # note: the order of the scans matters to show things in logical order
@@ -756,7 +755,7 @@ def _scanit(resource, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT
     if any(scanner_functions):
         # Skip other scans if already cached
         # FIXME: ENSURE we only do this for files not directories
-        if not is_cached:
+        if not resource.is_cached:
             # run the scan as an interruptiple task
             scans_runner = partial(scan_one, resource.abs_path, scanners, diag)
             success, scan_result = interrupter(scans_runner, timeout=timeout)
@@ -766,7 +765,7 @@ def _scanit(resource, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT
                 # "scan" key is used for these errors
                 scan_result = {'scan_errors': [scan_result]}
 
-            scans_cache.put_scan(resource.rel_path, resource.infos, scan_result)
+            scans_cache.put_scan(resource.rel_path, resource.get_info(), scan_result)
 
             # do not report success if some other errors happened
             if scan_result.get('scan_errors'):
@@ -791,7 +790,7 @@ def build_ignorer(ignores, unignores):
     return partial(ignore.is_ignored, ignores=ignores, unignores=unignores)
 
 
-def resource_paths(base_path, diag, pre_scan_plugins=()):
+def resource_paths(base_path, diag, scans_cache_class, pre_scan_plugins=()):
     """
     Yield tuples of (absolute path, base_path-relative path) for all the files found
     at base_path (either a directory or file) given an absolute base_path. Only yield
@@ -821,9 +820,9 @@ def resource_paths(base_path, diag, pre_scan_plugins=()):
     resources = fileutils.resource_iter(base_path, ignored=ignorer)
 
     for abs_path in resources:
-        resource = Resource(abs_path, base_is_dir, len_base_path)
+        resource = Resource(scans_cache_class, abs_path, base_is_dir, len_base_path)
         # always fetch infos and cache.
-        resource.infos.update(scan_infos(abs_path, diag=diag))
+        resource.put_info(scan_infos(abs_path, diag=diag))
         yield resource
 
 

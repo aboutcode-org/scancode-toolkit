@@ -29,6 +29,7 @@ from os import path
 
 from commoncode.testcase import FileBasedTesting
 from commoncode.ignore import is_ignored
+from scancode.cache import get_scans_cache_class
 from scancode.cli import resource_paths
 from scancode.plugin_ignore import ProcessIgnore
 
@@ -36,6 +37,7 @@ from scancode.plugin_ignore import ProcessIgnore
 class TestIgnoreFiles(FileBasedTesting):
 
     test_data_dir = path.join(path.dirname(__file__), 'data')
+    scan_cache_class = get_scans_cache_class()
 
     def test_ignore_glob_path(self):
         test = (
@@ -80,7 +82,7 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src/test',
             'user/src/test/sample.txt'
         ]
-        test = [resource.rel_path for resource in resource_paths(test_dir, False, [test_plugin])]
+        test = [resource.rel_path for resource in resource_paths(test_dir, False, self.scan_cache_class, [test_plugin])]
         assert expected == sorted(test)
 
     def test_resource_paths_with_multiple_files(self):
@@ -93,7 +95,7 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src/test/sample.doc',
             'user/src/test/sample.txt'
         ]
-        test = [resource.rel_path for resource in resource_paths(test_dir, False, [test_plugin])]
+        test = [resource.rel_path for resource in resource_paths(test_dir, False, self.scan_cache_class, [test_plugin])]
         assert expected == sorted(test)
 
     def test_resource_paths_with_glob_file(self):
@@ -105,7 +107,7 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src/test',
             'user/src/test/sample.txt'
         ]
-        test = [resource.rel_path for resource in resource_paths(test_dir, False, [test_plugin])]
+        test = [resource.rel_path for resource in resource_paths(test_dir, False, self.scan_cache_class, [test_plugin])]
         assert expected == sorted(test)
 
     def test_resource_paths_with_glob_path(self):
@@ -117,7 +119,7 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src',
             'user/src/ignore.doc'
         ]
-        test = [resource.rel_path for resource in resource_paths(test_dir, False, [test_plugin])]
+        test = [resource.rel_path for resource in resource_paths(test_dir, False, self.scan_cache_class, [test_plugin])]
         assert expected == sorted(test)
 
     def test_resource_paths_with_multiple_plugins(self):
@@ -131,5 +133,5 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src',
             'user/src/test'
         ]
-        test = [resource.rel_path for resource in resource_paths(test_dir, False, test_plugins)]
+        test = [resource.rel_path for resource in resource_paths(test_dir, False, self.scan_cache_class, test_plugins)]
         assert expected == sorted(test)

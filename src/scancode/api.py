@@ -46,7 +46,9 @@ class Resource(object):
     such as infos and path
     """
 
-    def __init__(self, abs_path, base_is_dir, len_base_path):
+    def __init__(self, scan_cache_class, abs_path, base_is_dir, len_base_path):
+        self.scan_cache_class = scan_cache_class()
+        self.is_cached = False
         self.abs_path = abs_path
         self.base_is_dir = base_is_dir
         posix_path = as_posixpath(abs_path)
@@ -55,6 +57,19 @@ class Resource(object):
         self.rel_path = get_relative_path(posix_path, len_base_path, base_is_dir)
         self.infos = OrderedDict()
         self.infos['path'] = self.rel_path
+
+    def put_info(self, infos):
+        """
+        Cache file info and set `is_cached` to True if already cached or false otherwise.
+        """
+        self.infos.update(infos)
+        self.is_cached = self.scan_cache_class.put_info(self.rel_path, self.infos)
+
+    def get_info(self):
+        """
+        Retrieve info from cache.
+        """
+        return self.scan_cache_class.get_info(self.rel_path)
 
 
 def extract_archives(location, recurse=True):
