@@ -1,0 +1,26 @@
+OpenJDK Designated Exception Modules
+
+8 May 2007
+
+For purposes of those files in the OpenJDK distribution that are subject
+to the Assembly Exception, the following shall be deemed Designated
+Exception Modules:
+
+    Those files in the OpenJDK distribution available at
+    openjdk.java.net, openjdk.dev.java.net, and download.java.net to
+    which Sun has applied the Classpath Exception,
+
+    Any of your derivative works of #1 above, to the extent you license
+    them under the GPLv2 with the Classpath Exception as defined in the
+    OpenJDK distribution available at openjdk.java.net,
+    openjdk.dev.java.net, or download.java.net,
+    
+    Any files in the OpenJDK distribution that are made available at
+    openjdk.java.net, openjdk.dev.java.net, or download.java.net under a
+    binary code license, and
+    
+    Any files in the OpenJDK distribution that are made available at
+    openjdk.java.net, openjdk.dev.java.net, or download.java.net under
+    an open source license other than GPL, and your derivatives thereof
+    that are in compliance with the applicable open source license.
+

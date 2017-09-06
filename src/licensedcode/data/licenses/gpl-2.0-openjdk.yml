@@ -4,3 +4,5 @@ name: GNU General Public License 2.0 with OpenJDK Classpath exception
 category: Copyleft Limited
 owner: Oracle (Sun)
 faq_url: http://openjdk.java.net/legal/exception-modules-2007-05-08.html
+is_deprecated: yes
+notes: use a GPL with the openjdk-exception  or with the classpath-exception-2.0 instead
