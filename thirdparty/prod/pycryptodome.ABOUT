@@ -3,6 +3,11 @@ about_resources:
     - pycryptodome-3.4.7.tar.gz
     - pycryptodome-3.4.7-cp27-cp27m-win_amd64.whl
     - pycryptodome-3.4.7-cp27-cp27m-win32.whl
+    - pycryptodome-3.4.7-cp27-cp27m-linux_i686.whl
+    - pycryptodome-3.4.7-cp27-cp27mu-linux_i686.whl
+    - pycryptodome-3.4.7-cp27-cp27m-linux_x86_64.whl
+    - pycryptodome-3.4.7-cp27-cp27mu-linux_x86_64.whl
+    - pycryptodome-3.4.7-cp27-cp27m-macosx_10_11_x86_64.whl
 
 homepage_url: https://github.com/Legrandin/pycryptodome
 
