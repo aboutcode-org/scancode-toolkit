@@ -451,6 +451,21 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
     check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True, regen=False)
 
 
+def test_scan_does_not_fail_when_scanning_unicode_test_files_from_express():
+    test_dir = test_env.get_test_loc(u'unicode_fixtures')
+
+    if on_linux:
+        test_dir = path_to_bytes(test_dir)
+
+    args = ['-n0', '--info', '--license', '--copyright',
+            '--package', '--email', '--url', '--strip-root',
+            test_dir]
+    result = run_scan_click(args, catch_exceptions=False)
+    if result.exit_code != 0:
+        raise Exception(result.output, args)
+    assert 'Scanning done' in result.output
+
+
 def test_scan_can_handle_licenses_with_unicode_metadata():
     test_dir = test_env.get_test_loc('license_with_unicode_meta')
     result_file = test_env.get_temp_file('json')
