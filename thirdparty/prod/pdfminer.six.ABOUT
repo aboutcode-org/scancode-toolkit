@@ -1,0 +1,31 @@
+about_resource: pdfminer.six-20170720-py2-none-any.whl
+name: pdfminer.six
+version: 20170720
+home_url: https://github.com/pdfminer/pdfminer.six
+download_url: https://pypi.python.org/packages/a5/4c/dfc462296ff431aa072c952560ee8e43304523b5e7be82e220fae72dc61c/pdfminer.six-20170720.tar.gz#md5=e278ac3318239b954ec961bd11128719
+owner: Philippe Guglielmetti goulib@goulu.net
+copyright: Copyright (c) 2004-2016  Yusuke Shinyama <yusuke at shinyama dot jp> and contributors
+
+notes: PDFMiner.six is a fork of PDFMiner using six for Python 2+3 compatibility
+ the cmapsrc directory contains Adobe files:
+  This directory contains Adobe CMap resources. CMaps are required 
+  to decode text data written in CJK (Chinese, Japanese, Korean) language.
+  CMap resources are now available freely from Adobe web site:
+  http://opensource.adobe.com/wiki/display/cmap/CMap+Resources
+ 
+  The follwing files were extracted from the downloadable tarballs:
+  cid2code_Adobe_CNS1.txt:
+    http://download.macromedia.com/pub/opensource/cmap/cmapresources_cns1-6.tar.z
+  cid2code_Adobe_GB1.txt:
+    http://download.macromedia.com/pub/opensource/cmap/cmapresources_gb1-5.tar.z
+  cid2code_Adobe_Japan1.txt:
+    http://download.macromedia.com/pub/opensource/cmap/cmapresources_japan1-6.tar.z
+  cid2code_Adobe_Korea1.txt:
+    http://download.macromedia.com/pub/opensource/cmap/cmapresources_korean1-2.tar.z
+
+
+vcs_tool: git
+vcs_repository: https://github.com/pdfminer/pdfminer.six
+
+dje_license: mit and bsd
+license_text_file: pdfminer.six.LICENSE

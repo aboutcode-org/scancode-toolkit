@@ -1,0 +1,17 @@
+name: pycryptodome
+about_resources:
+    - pycryptodome-3.4.7.tar.gz
+    - pycryptodome-3.4.7-cp27-cp27m-win_amd64.whl
+    - pycryptodome-3.4.7-cp27-cp27m-win32.whl
+    - pycryptodome-3.4.7-cp27-cp27m-linux_i686.whl
+    - pycryptodome-3.4.7-cp27-cp27mu-linux_i686.whl
+    - pycryptodome-3.4.7-cp27-cp27m-linux_x86_64.whl
+    - pycryptodome-3.4.7-cp27-cp27mu-linux_x86_64.whl
+    - pycryptodome-3.4.7-cp27-cp27m-macosx_10_11_x86_64.whl
+
+homepage_url: https://github.com/Legrandin/pycryptodome
+
+download_urls: 
+    - https://pypi.python.org/packages/2b/9b/aaa940ab8affd66eed043d69332dc607cddd68f9e399d93dcdfc8149fb21/pycryptodome-3.4.7.tar.gz#md5=8744863c7d5980ae3f81c2e288701a61
+    - https://pypi.python.org/packages/bd/e8/ea44ba5357a0b4fd16e5fb60c355fc8722eae31b93d7597eec50f7c35a52/pycryptodome-3.4.7-cp27-cp27m-win_amd64.whl#md5=f20bb847322baf7ae24700e5cbb15e07
+    - https://pypi.python.org/packages/f6/ae/bbc6a204f33d9d57c798fb3857a072cd14b836792244eea4b446fdb674c6/pycryptodome-3.4.7-cp27-cp27m-win32.whl#md5=78b341de1cd686077745cd9e3a93d8d3

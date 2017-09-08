@@ -157,8 +157,9 @@ setup(
         'Beautifulsoup >= 3.2.0, <4.0.0',
         'Beautifulsoup4 >= 4.3.0, <5.0.0',
         'html5lib',
-        'pdfminer >= 20140328',
         'six',
+        'pdfminer.six >= 20170720',
+        'pycryptodome >= 3.4',
 
         # typecode
         'binaryornot >= 0.4.0',
