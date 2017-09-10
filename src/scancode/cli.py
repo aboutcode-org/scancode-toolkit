@@ -792,8 +792,8 @@ def build_ignorer(ignores, unignores):
 
 def resource_paths(base_path, diag, scans_cache_class, pre_scan_plugins=()):
     """
-    Yield tuples of (absolute path, base_path-relative path) for all the files found
-    at base_path (either a directory or file) given an absolute base_path. Only yield
+    Yield `Resource` objects for all the files found at base_path
+    (either a directory or file) given an absolute base_path. Only yield
     Files, not directories.
     absolute path is a native OS path.
     base_path-relative path is a POSIX path.

@@ -37,7 +37,6 @@ from scancode.plugin_ignore import ProcessIgnore
 class TestIgnoreFiles(FileBasedTesting):
 
     test_data_dir = path.join(path.dirname(__file__), 'data')
-    scan_cache_class = get_scans_cache_class()
 
     def test_ignore_glob_path(self):
         test = (
@@ -74,6 +73,7 @@ class TestIgnoreFiles(FileBasedTesting):
     def test_resource_paths_with_single_file(self):
         test_dir = self.extract_test_tar('ignore/user.tgz')
         test_plugin = ProcessIgnore(('sample.doc',))
+        scan_cache_class = get_scans_cache_class(self.get_temp_dir())
         expected = [
             'user',
             'user/ignore.doc',
@@ -82,12 +82,13 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src/test',
             'user/src/test/sample.txt'
         ]
-        test = [resource.rel_path for resource in resource_paths(test_dir, False, self.scan_cache_class, [test_plugin])]
+        test = [resource.rel_path for resource in resource_paths(test_dir, False, scan_cache_class, [test_plugin])]
         assert expected == sorted(test)
 
     def test_resource_paths_with_multiple_files(self):
         test_dir = self.extract_test_tar('ignore/user.tgz')
         test_plugin = ProcessIgnore(('ignore.doc',))
+        scan_cache_class = get_scans_cache_class(self.get_temp_dir())
         expected = [
             'user',
             'user/src',
@@ -95,35 +96,38 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src/test/sample.doc',
             'user/src/test/sample.txt'
         ]
-        test = [resource.rel_path for resource in resource_paths(test_dir, False, self.scan_cache_class, [test_plugin])]
+        test = [resource.rel_path for resource in resource_paths(test_dir, False, scan_cache_class, [test_plugin])]
         assert expected == sorted(test)
 
     def test_resource_paths_with_glob_file(self):
         test_dir = self.extract_test_tar('ignore/user.tgz')
         test_plugin = ProcessIgnore(('*.doc',))
+        scan_cache_class = get_scans_cache_class(self.get_temp_dir())
         expected = [
             'user',
             'user/src',
             'user/src/test',
             'user/src/test/sample.txt'
         ]
-        test = [resource.rel_path for resource in resource_paths(test_dir, False, self.scan_cache_class, [test_plugin])]
+        test = [resource.rel_path for resource in resource_paths(test_dir, False, scan_cache_class, [test_plugin])]
         assert expected == sorted(test)
 
     def test_resource_paths_with_glob_path(self):
         test_dir = self.extract_test_tar('ignore/user.tgz')
         test_plugin = ProcessIgnore(('*/src/test',))
+        scan_cache_class = get_scans_cache_class(self.get_temp_dir())
         expected = [
             'user',
             'user/ignore.doc',
             'user/src',
             'user/src/ignore.doc'
         ]
-        test = [resource.rel_path for resource in resource_paths(test_dir, False, self.scan_cache_class, [test_plugin])]
+        test = [resource.rel_path for resource in resource_paths(test_dir, False, scan_cache_class, [test_plugin])]
         assert expected == sorted(test)
 
     def test_resource_paths_with_multiple_plugins(self):
         test_dir = self.extract_test_tar('ignore/user.tgz')
+        scan_cache_class = get_scans_cache_class(self.get_temp_dir())
         test_plugins = [
             ProcessIgnore(('*.doc',)),
             ProcessIgnore(('*/src/test/*',))
@@ -133,5 +137,5 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src',
             'user/src/test'
         ]
-        test = [resource.rel_path for resource in resource_paths(test_dir, False, self.scan_cache_class, test_plugins)]
+        test = [resource.rel_path for resource in resource_paths(test_dir, False, scan_cache_class, test_plugins)]
         assert expected == sorted(test)
