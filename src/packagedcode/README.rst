@@ -99,7 +99,7 @@ we could report that the GPL detected in such script does not conflict with the
 overall asserted MIT license of the package.  The same could be done with test
 scripts/code, or documentation code (such as doxygen-generated docs)
 
-> Licenses from transitive dependencies are not taking into account.
+> Licenses from transitive dependencies are not taken into account.
 
 If the transitive dependencies have been resolved and their code is present in the
 codebase, then they would be caught by a static ScanCode scan and eventually scanned
