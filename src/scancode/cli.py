@@ -344,8 +344,8 @@ def validate_exclusive(ctx, exclusive_options):
 @click.command(name='scancode', epilog=epilog_text, cls=ScanCommand)
 @click.pass_context
 
-# ensure that the input path is always Unicode
-@click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True, path_type=str))
+# ensure that the input path is bytes on Linux, unicode elsewhere
+@click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True, path_type=fileutils.PATH_TYPE))
 @click.argument('output_file', default='-', metavar='<output_file>', type=click.File(mode='wb', lazy=False))
 
 # Note that click's 'default' option is set to 'false' here despite these being documented to be enabled by default in
