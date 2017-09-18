@@ -77,7 +77,9 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
 
-FS_ENCODING = sys.getfilesystemencoding() or sys.getdefaultencoding()
+FS_ENCODING = sys.getfilesystemencoding()
+# normalize the encoding name
+FS_ENCODING = codecs.lookup(FS_ENCODING).name
 
 # Paths can only be sanely handled as raw bytes on Linux
 PATH_TYPE = bytes if on_linux else unicode
