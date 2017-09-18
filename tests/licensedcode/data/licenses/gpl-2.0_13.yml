@@ -1,2 +1,3 @@
 licenses:
-    - gpl-2.0-plus
+    - gpl-2.0
+notes: The hex resolves to GPL v2 and per module.h this GPL-2.0 only
