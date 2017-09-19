@@ -48,6 +48,7 @@ from scancode.cli_test_utils import run_scan_plain
 
 from scancode import cli
 from commoncode.fileutils import path_to_bytes
+from commoncode.fileutils import path_to_unicode
 
 
 test_env = FileDrivenTesting()
@@ -452,7 +453,7 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
 
 
 def test_scan_does_not_fail_when_scanning_unicode_test_files_from_express():
-    test_dir = test_env.get_test_loc(u'unicode_fixtures')
+    test_dir = test_env.extract_test_tar_raw(b'unicode_fixtures.tar.gz')
 
     if on_linux:
         test_dir = path_to_bytes(test_dir)
