@@ -1,0 +1,12 @@
+    Linking this OpenJDK Code statically or dynamically with other code
+    is making a combined work based on this library.  Thus, the terms
+    and conditions of GPL2 cover the whole combination.
+
+    As a special exception, Sun gives you permission to link this
+    OpenJDK Code with certain code licensed by Sun as indicated at
+    http://openjdk.java.net/legal/exception-modules-2007-05-08.html
+    ("Designated Exception Modules") to produce an executable,
+    regardless of the license terms of the Designated Exception Modules,
+    and to copy and distribute the resulting executable under GPL2,
+    provided that the Designated Exception Modules continue to be
+    governed by the licenses under which they were offered by Sun.

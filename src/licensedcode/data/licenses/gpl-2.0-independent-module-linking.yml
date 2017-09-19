@@ -4,3 +4,5 @@ name: GPL 2.0 with Independent Module Linking exception
 category: Copyleft Limited
 owner: ICSharpCode
 homepage_url: http://icsharpcode.github.io/SharpZipLib/
+is_deprecated: yes
+notes: this is a classpath exception

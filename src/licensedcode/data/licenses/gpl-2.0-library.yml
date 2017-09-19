@@ -5,3 +5,6 @@ category: Copyleft Limited
 owner: Grammatica
 other_urls:
     - http://grammatica.percederberg.net/index.html
+is_deprecated: yes
+notes: this classpath exception notice was last used in older versions
+ of grammatica and is no longer relevant. Use the classpath-exception-2.0 instead. 

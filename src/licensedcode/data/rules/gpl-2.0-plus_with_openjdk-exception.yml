@@ -1,0 +1,4 @@
+licenses:
+    - gpl-2.0-plus
+    - openjdk-exception
+license: gpl-2.0-plus with openjdk-exception

@@ -540,11 +540,11 @@ def load_rules(rules_data_dir=rules_data_dir):
     if unknown_files or case_problems:
         if unknown_files:
             files = '\n'.join(sorted(unknown_files))
-            msg = 'Orphaned files in rule directory: %(rule_dir)r\n%(files)s'
+            msg = 'Orphaned files in rule directory: %(rules_data_dir)r\n%(files)s'
 
         if case_problems:
             files = '\n'.join(sorted(case_problems))
-            msg += '\nRule files with non-unique name ignoring casein rule directory: %(rule_dir)r\n%(files)s'
+            msg += '\nRule files with non-unique name ignoring casein rule directory: %(rules_data_dir)r\n%(files)s'
 
         raise Exception(msg % locals())
 
