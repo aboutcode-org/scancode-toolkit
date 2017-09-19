@@ -105,10 +105,33 @@ _canonicalize_file_path() {
 SCANCODE_BIN="$( realpath "${BASH_SOURCE[0]}" )"
 SCANCODE_ROOT_DIR="$( cd "$( dirname "${SCANCODE_BIN}" )" && pwd )"
 
+SCANCODE_CONFIG_DIR="etc/conf"
+
+GIT_STATUS=$(git -C "$SCANCODE_ROOT_DIR" status --porcelain 2> /dev/null)
+if [ $? -eq 0 ]; then
+    # This is a Git working tree, check whether it is clean.
+    if [ -z "$GIT_STATUS" ]; then
+        # This is a clean working tree, check whether configure has been run
+        # before for this commit.
+        GIT_COMMIT_CONFIGURED=$(cat "$SCANCODE_ROOT_DIR/SCANCODE_GIT_MODE" 2> /dev/null)
+        GIT_COMMIT_HEAD=$(git -C "$SCANCODE_ROOT_DIR" rev-parse HEAD)
+        if [ "$GIT_COMMIT_CONFIGURED" != "$GIT_COMMIT_HEAD" ]; then
+            echo "* (Re-)Configuring ScanCode because Git commits have changed..."
+            CONFIGURE_QUIET=1 $SCANCODE_ROOT_DIR/configure $SCANCODE_CONFIG_DIR
+        fi
+        echo $GIT_COMMIT_HEAD > "$SCANCODE_ROOT_DIR/SCANCODE_GIT_MODE"
+    else
+        echo "* (Re-)Configuring ScanCode because Git working tree is not clean..."
+        CONFIGURE_QUIET=1 $SCANCODE_ROOT_DIR/configure $SCANCODE_CONFIG_DIR
+    fi
+else
+    rm -f "$SCANCODE_ROOT_DIR/SCANCODE_GIT_MODE"
+fi
+
 SCANCODE_CONFIGURED_PYTHON=$SCANCODE_ROOT_DIR/bin/python
 if [ ! -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
     echo "* Configuring ScanCode for first use..."
-    CONFIGURE_QUIET=1 $SCANCODE_ROOT_DIR/configure etc/conf
+    CONFIGURE_QUIET=1 $SCANCODE_ROOT_DIR/configure $SCANCODE_CONFIG_DIR
 fi
 
 $SCANCODE_ROOT_DIR/bin/scancode "$@"

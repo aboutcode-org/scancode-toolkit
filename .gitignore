@@ -1,5 +1,6 @@
 # ScanCode special files
 /SCANCODE_DEV_MODE
+/SCANCODE_GIT_MODE
 
 # Python compiled files
 *.py[cod]
