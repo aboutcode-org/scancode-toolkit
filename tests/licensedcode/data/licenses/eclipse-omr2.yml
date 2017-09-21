@@ -1,0 +1,24 @@
+licenses:
+    - epl-2.0
+    - apache-2.0
+    - gpl-2.0
+    - classpath-exception-2.0
+    - gpl-2.0
+    - openjdk-exception
+    - bsd-new
+    - mit
+    - bsd-new
+    - gpl-3.0-plus
+    - autoconf-simple-exception
+    - bsd-new
+    - mit
+    - bsd-new
+    - gpl-3.0-plus
+    - autoconf-simple-exception
+
+license:
+    - (epl-2.0 or apache-2.0 or (gpl-2.0 with classpath-exception-2.0 and gpl-2.0 with openjdk-exception)) and bsd-new and mit and gpl-3.0-plus with autoconf-simple-exception
+    - bsd-new
+    - mit
+    - bsd-new
+    - gpl-3.0-plus with autoconf-simple-exception

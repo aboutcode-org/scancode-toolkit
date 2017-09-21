@@ -1,0 +1,20 @@
+licenses:
+    - epl-1.0
+    - apache-2.0
+    - bsd-new
+    - mit
+    - bsd-new
+    - gpl-3.0-plus
+    - autoconf-simple-exception
+    - bsd-new
+    - mit
+    - bsd-new
+    - gpl-3.0-plus
+    - autoconf-simple-exception
+
+license: 
+    - (epl-1.0 or apache-2.0) and bsd-new and mit and bsd-new and gpl-3.0-plus with autoconf-simple-exception
+    - bsd-new
+    - mit
+    - bsd-new
+    - gpl-3.0-plus with autoconf-simple-exception

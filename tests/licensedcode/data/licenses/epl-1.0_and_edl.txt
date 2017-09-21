@@ -1,0 +1,45 @@
+/*******************************************************************************
+ * Copyright (c) 2009, 2017 IBM Corp.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * and Eclipse Distribution License v1.0 which accompany this distribution.
+ *
+ * The Eclipse Public License is available at
+ *    http://www.eclipse.org/legal/epl-v10.html
+ * and the Eclipse Distribution License is available at
+ *   http://www.eclipse.org/org/documents/edl-v10.php.
+ *
+ * Contributors:
+ *    Ian Craggs - initial API and implementation and/or initial documentation
+ *    Ian Craggs - bug 384016 - segv setting will message
+ *    Ian Craggs - bug 384053 - v1.0.0.7 - stop MQTTClient_receive on socket error
+ *    Ian Craggs, Allan Stockdill-Mander - add ability to connect with SSL
+ *    Ian Craggs - multiple server connection support
+ *    Ian Craggs - fix for bug 413429 - connectionLost not called
+ *    Ian Craggs - fix for bug 421103 - trying to write to same socket, in publish/retries
+ *    Ian Craggs - fix for bug 419233 - mutexes not reporting errors
+ *    Ian Craggs - fix for bug 420851
+ *    Ian Craggs - fix for bug 432903 - queue persistence
+ *    Ian Craggs - MQTT 3.1.1 support
+ *    Ian Craggs - fix for bug 438176 - MQTT version selection
+ *    Rong Xiang, Ian Craggs - C++ compatibility
+ *    Ian Craggs - fix for bug 443724 - stack corruption
+ *    Ian Craggs - fix for bug 447672 - simultaneous access to socket structure
+ *    Ian Craggs - fix for bug 459791 - deadlock in WaitForCompletion for bad client
+ *    Ian Craggs - fix for bug 474905 - insufficient synchronization for subscribe, unsubscribe, connect
+ *    Ian Craggs - make it clear that yield and receive are not intended for multi-threaded mode (bug 474748)
+ *    Ian Craggs - SNI support, message queue unpersist bug
+ *    Ian Craggs - binary will message support
+ *    Ian Craggs - waitforCompletion fix #240
+ *******************************************************************************/
+
+/**
+ * @file
+ * \brief Synchronous API implementation
+ *
+ */
+
+#define _GNU_SOURCE /* for pthread_mutexattr_settype */
+#include <stdlib.h>
+#include <string.h>
