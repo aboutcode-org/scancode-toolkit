@@ -53,6 +53,11 @@ except NameError:
     # Python 3
     unicode = str
 
+try:
+    from os import fsencode
+except ImportError:
+    from backports.os import fsencode
+
 
 """
 Minimal wrapper for executing external commands in sub-processes. The approach
@@ -344,7 +349,7 @@ def load_lib(libname, root_dir):
     if os.path.exists(so):
         if not isinstance(so, bytes):
             # ensure that the path is not Unicode...
-            so = so.encode(fileutils.FS_ENCODING)
+            so = fsencode(so)
         lib = ctypes.CDLL(so)
         if lib and lib._name:
             return lib
