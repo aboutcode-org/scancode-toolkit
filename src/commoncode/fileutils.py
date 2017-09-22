@@ -35,6 +35,13 @@ except NameError:
     # Python 3
     unicode = str
 
+try:
+    from os import fsencode
+except ImportError:
+    from backports.os import fsencode
+    from backports.os import fsdecode
+
+
 import codecs
 import errno
 import os
@@ -45,7 +52,6 @@ import stat
 import sys
 import tempfile
 
-from backports import os as osb
 
 from commoncode import filetype
 from commoncode.filetype import is_rwx
@@ -76,10 +82,6 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
-
-FS_ENCODING = sys.getfilesystemencoding()
-# normalize the encoding name
-FS_ENCODING = codecs.lookup(FS_ENCODING).name
 
 # Paths can only be sanely handled as raw bytes on Linux
 PATH_TYPE = bytes if on_linux else unicode
@@ -219,8 +221,8 @@ def path_to_unicode(path):
     """
     if isinstance(path, unicode):
         return path
-    if TRACE: logger_debug('path_to_unicode:', osb.fsdecode(path))
-    return osb.fsdecode(path)
+    if TRACE: logger_debug('path_to_unicode:', fsdecode(path))
+    return fsdecode(path)
 
 
 def path_to_bytes(path):
@@ -229,8 +231,8 @@ def path_to_bytes(path):
     """
     if isinstance(path, bytes):
         return path
-    if TRACE: logger_debug('path_to_bytes:' , repr(osb.fsencode(path)))
-    return osb.fsencode(path)
+    if TRACE: logger_debug('path_to_bytes:' , repr(fsencode(path)))
+    return fsencode(path)
 
 
 def is_posixpath(location):

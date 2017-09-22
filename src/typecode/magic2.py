@@ -48,10 +48,16 @@
 
 import os.path
 import ctypes
-import sys
 
 from commoncode import system
 from commoncode import command
+
+# Python 2 and 3 support
+try:
+    from os import fsencode
+except ImportError:
+    from backports.os import fsencode
+
 
 """
 magic2 is minimal and specialized wrapper around a vendored libmagic file
@@ -204,7 +210,7 @@ def load_lib():
     if os.path.exists(magic_so):
         if not isinstance(magic_so, bytes):
             # ensure that the path is not Unicode...
-            magic_so = magic_so.encode(sys.getfilesystemencoding() or sys.getdefaultencoding())
+            magic_so = fsencode(magic_so)
         lib = ctypes.CDLL(magic_so)
         if lib and lib._name:
             return lib
