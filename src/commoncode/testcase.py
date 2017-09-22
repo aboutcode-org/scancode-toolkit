@@ -28,14 +28,14 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
-from unittest import TestCase as TestCaseClass
-
 import filecmp
+from functools import partial
 import os
 import shutil
 import stat
 import sys
 import tarfile
+from unittest import TestCase as TestCaseClass
 import zipfile
 
 from commoncode import fileutils
@@ -278,18 +278,26 @@ class FileDrivenTesting(object):
     def extract_test_tar_raw(self, test_path, *args, **kwargs):
         return self.__extract(test_path, extract_tar_raw)
 
+    def extract_test_tar_unicode(self, test_path, *args, **kwargs):
+        return self.__extract(test_path, extract_tar_uni)
 
-def extract_tar_raw(test_path, target_dir, *args, **kwargs):
+
+def _extract_tar_raw(test_path, target_dir, to_bytes, *args, **kwargs):
     """
     Raw simplified extract for certain really weird paths and file
     names.
     """
-    # use bytes for paths on ALL OSes (though this may fail on macOS)
-    target_dir = path_to_bytes(target_dir)
-    test_path = path_to_bytes(test_path)
+    if to_bytes:
+        # use bytes for paths on ALL OSes (though this may fail on macOS)
+        target_dir = path_to_bytes(target_dir)
+        test_path = path_to_bytes(test_path)
     tar = tarfile.open(test_path)
     tar.extractall(path=target_dir)
     tar.close()
+
+extract_tar_raw = partial(_extract_tar_raw, to_bytes=True)
+
+extract_tar_uni = partial(_extract_tar_raw, to_bytes=False)
 
 
 def extract_tar(location, target_dir, verbatim=False, *args, **kwargs):
