@@ -264,11 +264,32 @@ def test_scan_info_does_collect_infos_with_root():
 
 def test_scan_info_returns_full_root():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
+    result_file = test_env.get_temp_file('json')
+    result = run_scan_click(['--info', '--full-root', test_dir, result_file])
 
-    result = run_scan_click(['--info', '--full-root', test_dir])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    assert fileutils.as_posixpath(test_dir) in result.output
+    result_data = json.loads(open(result_file, 'rb').read())
+    file_paths = [f['path'] for f in result_data['files']]
+    assert 11 == len(file_paths)
+    root = fileutils.as_posixpath(test_dir)
+    assert all(p.startswith(root) for p in file_paths)
+
+
+def test_scan_info_returns_correct_full_root_with_single_file():
+    test_file = test_env.get_test_loc('info/basic.tgz')
+    result_file = test_env.get_temp_file('json')
+    result = run_scan_click(['--info', '--full-root', test_file, result_file])
+
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    result_data = json.loads(open(result_file, 'rb').read())
+    files = result_data['files']
+    # we have a single file
+    assert len(files) == 1
+    scanned_file = files[0]
+    # and we check that the path is the full path without repeating the file name
+    assert fileutils.as_posixpath(test_file) == scanned_file['path']
 
 
 def test_scan_info_license_copyrights():

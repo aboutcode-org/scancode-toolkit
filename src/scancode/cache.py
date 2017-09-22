@@ -323,6 +323,7 @@ class ScanFileCache(object):
                     rooted_path = posixpath.join(root_dir, unicode_path)
                 else:
                     rooted_path = unicode_path
+                rooted_path = fileutils.as_posixpath(rooted_path)
                 logger_debug('iterate:', 'rooted_path:', rooted_path)
 
                 # rare but possible corner case
@@ -336,11 +337,7 @@ class ScanFileCache(object):
                     yield scan_result
                     continue
 
-                unicode_path_from_file_info = file_info.pop('path')
-                #print('unicode_path_from_file_info', type(unicode_path_from_file_info), repr(unicode_path_from_file_info))
-                #print('unicode_path', type(unicode_path), repr(unicode_path))
-                #print('rooted_path', type(rooted_path), repr(rooted_path))
-                #print('path', type(path), repr(path))
+                _unicode_path_from_file_info = file_info.pop('path')
                 scan_result = OrderedDict(path=rooted_path)
 
                 if 'infos' in scan_names:
