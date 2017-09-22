@@ -452,6 +452,7 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
     check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True, regen=False)
 
 
+@skipIf(on_windows, 'Tar cannot extract some files on Windows')
 def test_scan_does_not_fail_when_scanning_unicode_test_files_from_express():
     if on_linux:
         test_dir = test_env.extract_test_tar_raw(b'unicode_fixtures.tar.gz')
