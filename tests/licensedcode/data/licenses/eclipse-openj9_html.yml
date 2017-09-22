@@ -1,0 +1,40 @@
+licenses:
+    - epl-2.0
+    - apache-2.0
+    - gpl-2.0
+    - classpath-exception-2.0
+    - gpl-2.0
+    - openjdk-exception
+    - epl-2.0
+    - gpl-2.0
+    - apache-2.0
+    - unicode-data-software
+    - public-domain
+    - mit
+    - zlib
+    - zlib
+    - epl-2.0
+    - apache-2.0
+    - unicode-data-software
+    - public-domain
+    - mit
+    - zlib
+    - zlib
+
+expected_failure: yes
+
+license: 
+    - (epl-2.0 or apache-2.0 or (gpl-2.0 with classpath-exception-2.0 and gpl-2.0 with openjdk-exception)) 
+    - epl-2.0 or apache-2.0 or gpl-2.0
+    - unicode-data-software
+    - public-domain
+    - mit
+    - zlib
+    - zlib
+    - epl-2.0 or apache-2.0
+    - unicode-data-software
+    - public-domain
+    - mit
+    - zlib
+    - zlib
+

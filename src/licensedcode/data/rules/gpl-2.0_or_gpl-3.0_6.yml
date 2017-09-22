@@ -1,0 +1,6 @@
+licenses:
+    - gpl-2.0
+    - gpl-3.0
+license_choice: yes
+notes: gpl 2 or 3, and no other versions
+minimum_coverage: 93

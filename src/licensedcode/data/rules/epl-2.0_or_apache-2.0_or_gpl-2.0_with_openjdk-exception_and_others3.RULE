@@ -1,0 +1,29 @@
+This program and the accompanying materials are made available under the
+terms of the Eclipse Public License 2 which accompanies this
+distribution and is available at https://www.eclipse.org/legal/epl-2.0/
+or the Apache License, Version 2.0 which accompanies this distribution
+and is available at https://www.apache.org/licenses/LICENSE-2.0.
+
+This Source Code may also be made available under the following
+Secondary Licenses when the conditions for such availability set forth
+in the Eclipse Public License, v. 2.0 are satisfied: GNU General Public
+License, version 2 with the GNU Classpath Exception [1] and GNU General
+Public License, version 2 with the OpenJDK Assembly Exception [2].
+
+[1] https://www.gnu.org/software/classpath/license.html 
+[2] http://openjdk.java.net/legal/assembly-exception.html
+
+SPDX-License-Identifier: EPL-2.0 OR Apache-2.0
+
+Subject to the following notices:
+
+1.      Eclipse OMR is provided under the Eclipse Public License 2 and secondary GPLv2 license (section A) or the Apache version 2 license (section B).
+2.      Unicode 6.0 & Unicode 8.0 are provided under the Unicode licence below (section C).
+3.      MurmurHash3 is provided under the MurmurHash3 license below (section D).
+4.      libffi is provided under the libffi license below (section E).
+5.      zlib is provided under the zlib license below (section F).
+6.      CuTest is provided under the CuTest license below (section G).
+
+You may distribute this program and materials under either the
+Eclipse Public License 2 or the Apache V2.0 License as long as you pass through
+the exceptions noted above.

@@ -1,0 +1,12 @@
+This program and the accompanying materials are licensed under
+the terms of the Eclipse Public License v1.0 and Apache v2.0 License which
+are reproduced below  subject to the following notices:
+1.    Google Test is provided under the Google Test license below.
+2.    Pugixml is provided under the pugixml license below.
+3.    Libauxv is provided under the libauxv license below.
+4.    config.sub and config.guess are provided under the GPL v3.0 with the
+    Autoconf exception (see below).
+
+You may distribute this program and materials under either the
+Eclipse Public License or the Apache V2.0 License as long as you pass through
+the exceptions noted above.

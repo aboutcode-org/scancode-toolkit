@@ -1,0 +1,4 @@
+licenses:
+    - gpl-3.0-plus
+    - autoconf-simple-exception
+license: gpl-3.0-plus with autoconf-simple-exception
