@@ -518,7 +518,7 @@ class MSDOSSessionLexer(ShellSessionBaseLexer):
     mimetypes = []
 
     _innerLexerCls = BatchLexer
-    _ps1rgx = r'^([^>]+>)(.*\n?)'
+    _ps1rgx = r'^([^>]*>)(.*\n?)'
     _ps2 = 'More? '
 
 
