@@ -4,8 +4,48 @@ Changelog
 (NEXT)
 ------------------
 
- * Ensure that authors are reported even if there is no copyright #669
- * 
+
+2.1.0 (2017-09-22)
+------------------
+
+This is a minor release with several new and improved features and bug
+fixes but no significant API changes.
+
+ * New plugin architecture by @yashdsaraf
+
+  * we can now have pre-scan, post-scan and output format plugins
+  * there is a new CSV output format and some example, experimental plugins
+  * the CLI UI has changed to better support these plugins
+
+ * New and improved licenses and license detection rules including
+   support for EPL-2.0 and OpenJDK-related licensing and synchronization
+   with the latest SPDX license list
+
+ * Multiple bug fixes such as:
+
+   * Ensure that authors are reported even if there is no copyright #669
+   * Fix Maven package POM parsing infinite loop #721
+   * Improve handling of weird non-unicode byte paths #688 and #706
+   * Improve PDF parsing to avoid some crash #723
+
+Credits: Many thanks to everyone that contributed to this release with code and bug reports
+(and this list is likely missing some)
+
+* @abuhman
+* @chinyeungli
+* @jimjag
+* @JonoYang
+* @jpopelka
+* @majurg
+* @mjherzog
+* @pgier
+* @pkajaba
+* @pombredanne
+* @scottctr
+* @sschuberth
+* @yahalom5776
+* @yashdsaraf
+
 
 2.0.1 (2017-07-03)
 ------------------
