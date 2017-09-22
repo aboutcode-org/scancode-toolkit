@@ -453,10 +453,11 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
 
 
 def test_scan_does_not_fail_when_scanning_unicode_test_files_from_express():
-    test_dir = test_env.extract_test_tar_raw(b'unicode_fixtures.tar.gz')
-
     if on_linux:
+        test_dir = test_env.extract_test_tar_raw(b'unicode_fixtures.tar.gz')
         test_dir = path_to_bytes(test_dir)
+    else:
+        test_dir = test_env.extract_test_tar_unicode('unicode_fixtures.tar.gz')
 
     args = ['-n0', '--info', '--license', '--copyright',
             '--package', '--email', '--url', '--strip-root',
