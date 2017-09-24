@@ -1,6 +1,8 @@
 about_resource: pytz-2017.2-py2.py3-none-any.whl
 version: 2017.2
-download_url: https://pypi.python.org/packages/55/62/e7cd0e15b76062d298413f14bb4ec3cd8568a22d274427f9c3c7286969f4/pytz-2017.2-py2.py3-none-any.whl
+download_url: https://pypi.python.org/packages/55/62/e7cd0e15b76062d298413f14bb4ec3cd8568a22d274427f9c3c7286969f4/pytz-2017.2-py2.py3-none-any.whl#md5=84bcac3df0fdd58a9570a8404f3d933c
+
+name: pytz
 description: World timezone definitions, modern and historical
 home_url: http://pythonhosted.org/pytz
 author: Stuart Bishop
