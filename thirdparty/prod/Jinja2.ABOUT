@@ -1,15 +1,9 @@
-about_resource: Jinja2-2.8-py2.py3-none-any.whl
-version: 2.8
-download_url: https://pypi.python.org/packages/96/a1/c56bc4d99dc2663514a8481511e80eba8994133ae75eebdadfc91a5597d9/Jinja2-2.8-py2.py3-none-any.whl#md5=75acb6f1abfc46ed75f4fd392f321ac2
+about_resource: Jinja2-2.9.6-py2.py3-none-any.whl
+version: 2.9.6
+download_url: https://pypi.python.org/packages/5e/73/10c45b82a88ed6b7751bd40da31eeefd7b362e07b56a99aa6e56655a0794/Jinja2-2.9.6-py2.py3-none-any.whl#md5=61a215bcdb0f7939c70582bc00b293f1
 
 name: Jinja2
-home_url: http://jinja.pocoo.org/
-
 dje_license: bsd-new
-license_text_file: Jinja2.LICENSE
-
-vcs_tool: git
-vcs_repository: https://github.com/mitsuhiko/jinja2.git
-
-owner: Armin Ronacher
 copyright: Copyright (c) 2009 by the Jinja Team
+license_text_file: Jinja2.LICENSE
+home_url: http://jinja.pocoo.org/
