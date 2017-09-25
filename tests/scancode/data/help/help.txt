@@ -9,16 +9,19 @@ Usage: scancode [OPTIONS] <input> <output_file>
 Options:
 
   scans:
-    -c, --copyright          Scan <input> for copyrights. [default]
-    -l, --license            Scan <input> for licenses. [default]
-    -p, --package            Scan <input> for packages. [default]
-    -e, --email              Scan <input> for emails.
-    -u, --url                Scan <input> for urls.
-    -i, --info               Include information such as size, type, etc.
-    --license-score INTEGER  Do not return license matches with scores lower than
-                             this score. A number between 0 and 100.  [default: 0]
-    --license-text           Include the detected licenses matched text. Has no
-                             effect unless --license is requested.
+    -c, --copyright              Scan <input> for copyrights. [default]
+    -l, --license                Scan <input> for licenses. [default]
+    -p, --package                Scan <input> for packages. [default]
+    -e, --email                  Scan <input> for emails.
+    -u, --url                    Scan <input> for urls.
+    -i, --info                   Include information such as size, type, etc.
+    --license-score INTEGER      Do not return license matches with scores lower
+                                 than this score. A number between 0 and 100.
+                                 [default: 0]
+    --license-text               Include the detected licenses matched text. Has
+                                 no effect unless --license is requested.
+    --license-url-template TEXT  Change the base URL used for "dejacode_url" in
+                                 the scan results
 
   output:
     --strip-root           Strip the root directory segment of all paths. The
