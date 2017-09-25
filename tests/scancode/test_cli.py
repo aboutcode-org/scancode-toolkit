@@ -302,6 +302,16 @@ def test_scan_info_license_copyrights():
     check_json_scan(test_env.get_test_loc('info/all.expected.json'), result_file)
 
 
+def test_scan_license_with_url_template():
+    test_dir = test_env.get_test_loc('license_url', copy=True)
+
+    result = run_scan_click(['--license', '--license-url-template', 'https://example.com/urn:{}', test_dir])
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    assert 'https://example.com/urn:apache-1.0' in result.output
+    assert 'https://example.com/urn:public-domain' in result.output
+
+
 def test_scan_noinfo_license_copyrights_with_root():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     result_file = test_env.get_temp_file('json')
