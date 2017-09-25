@@ -20,8 +20,11 @@ Options:
                                  [default: 0]
     --license-text               Include the detected licenses matched text. Has
                                  no effect unless --license is requested.
-    --license-url-template TEXT  Change the base URL used for "reference_url" in
-                                 the scan results
+    --license-url-template TEXT  Set the template URL used for the license
+                                 reference URLs. In a template URL, curly braces
+                                 ({}) are replaced by the license key.
+                                 [default: https://enterprise.dejacode.com/urn/u
+                                 rn:dje:license:{}]
 
   output:
     --strip-root           Strip the root directory segment of all paths. The
