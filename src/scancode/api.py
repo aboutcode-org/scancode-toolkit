@@ -135,7 +135,7 @@ def get_licenses(location, min_score=0, include_text=False, diag=False, license_
             result['owner'] = lic.owner
             result['homepage_url'] = lic.homepage_url
             result['text_url'] = lic.text_urls[0] if lic.text_urls else ''
-            result['dejacode_url'] = license_url_template.format(lic.key)
+            result['reference_url'] = license_url_template.format(lic.key)
             spdx_key = lic.spdx_license_key
             result['spdx_license_key'] = spdx_key
             if spdx_key:

@@ -364,7 +364,7 @@ def validate_exclusive(ctx, exclusive_options):
 @click.option('--license-text', is_flag=True, default=False,
               help='Include the detected licenses matched text. Has no effect unless --license is requested.', group=SCANS, cls=ScanOption)
 @click.option('--license-url-template', is_flag=False, default=DEJACODE_LICENSE_URL,
-              help='Change the base URL used for "dejacode_url" in the scan results', group=SCANS, cls=ScanOption)
+              help='Change the base URL used for "reference_url" in the scan results', group=SCANS, cls=ScanOption)
 @click.option('--strip-root', is_flag=True, default=False,
               help='Strip the root directory segment of all paths. The default is to always '
                    'include the last directory segment of the scanned path such that all paths have a common root directory. '

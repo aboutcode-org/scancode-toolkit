@@ -145,7 +145,7 @@ function ScancodeDataTable(tagId, data){
             '</tr>'+
             '<tr>'+
             '<td><b>DejaCode URL:</b></td>'+
-            '<td><a href="'+d.dejacode_url+'" target="_blank">'+d.dejacode_url+'</a></td>'+
+            '<td><a href="'+d.reference_url+'" target="_blank">'+d.reference_url+'</a></td>'+
             '</tr>'+
             '</table>';
     }
@@ -196,7 +196,7 @@ function ScancodeDataTable(tagId, data){
                         "end_line": y.end_line || "",
                         // somehow we return sometimes something else than an Array?
                         // see https://github.com/nexB/scancode-toolkit/issues/362#issuecomment-259942416
-                        "info": (y.statements && 
+                        "info": (y.statements &&
                         			((Array.isArray(y.statements) && y.statements.join("</br>"))
                         			||
                         			(typeof y.statements === "string" && y.statements))

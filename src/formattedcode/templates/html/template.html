@@ -184,7 +184,7 @@
           <th>short_name</th>
           <th>category</th>
           <th>owner</th>
-          <th>dejacode_url</th>
+          <th>reference_url</th>
           <th>homepage_url</th>
           <th>text_url</th>
           <th>spdx_license_key</th>
@@ -198,7 +198,7 @@
             <td>{{ license.short_name }}</td>
             <td>{{ license.category }}</td>
             <td>{{ license.owner }}</td>
-            <td>{{ license.dejacode_url|urlize(target='_blank') }}</td>
+            <td>{{ license.reference_url|urlize(target='_blank') }}</td>
             <td>{{ license.homepage_url|urlize(target='_blank') }}</td>
             <td>{{ license.text_url|urlize(target='_blank') }}</td>
             <td>{{ license.spdx_license_key }}</td>

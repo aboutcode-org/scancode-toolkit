@@ -20,7 +20,7 @@ Options:
                                  [default: 0]
     --license-text               Include the detected licenses matched text. Has
                                  no effect unless --license is requested.
-    --license-url-template TEXT  Change the base URL used for "dejacode_url" in
+    --license-url-template TEXT  Change the base URL used for "reference_url" in
                                  the scan results
 
   output:
