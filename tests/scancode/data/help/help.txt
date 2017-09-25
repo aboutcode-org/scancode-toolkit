@@ -22,9 +22,9 @@ Options:
                                  no effect unless --license is requested.
     --license-url-template TEXT  Set the template URL used for the license
                                  reference URLs. In a template URL, curly braces
-                                 ({}) are replaced by the license key.
-                                 [default: https://enterprise.dejacode.com/urn/u
-                                 rn:dje:license:{}]
+                                 ({}) are replaced by the license key.  [default: h
+                                 ttps://enterprise.dejacode.com/urn/urn:dje:licens
+                                 e:{}]
 
   output:
     --strip-root           Strip the root directory segment of all paths. The
