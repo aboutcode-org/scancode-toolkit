@@ -504,15 +504,18 @@ class LicenseIndex(object):
                 run_matches = []
                 candidates = match_set.compute_candidates(query_run, self, rules_subset=rules_subset, top=40)
 
+                if TRACE: logger_debug('      #match: query_run: number of candidates for seq match #', len(candidates))
                 if TRACE_CANDIDATES: logger_debug('      #match: query_run: number of candidates for seq match #', len(candidates))
 
                 for candidate_num, candidate in enumerate(candidates):
+                    if TRACE: logger_debug('         #match: query_run: seq matching candidate#:', candidate_num, 'candidate:', candidate[0], candidate[1])
                     if TRACE_QUERY_RUN:
                         _, canrule, _ = candidate
                         logger_debug('         #match: query_run: seq matching candidate#:', candidate_num, 'candidate:', canrule)
                     start_offset = 0
                     while True:
                         rule_matches = match_seq.match_sequence(self, candidate, query_run, start_offset=start_offset)
+                        if TRACE and rule_matches: self.debug_matches(rule_matches, '           #match: query_run: seq matches for candidate')
                         if TRACE_QUERY_RUN and rule_matches:
                             self.debug_matches(rule_matches, '           #match: query_run: seq matches for candidate', with_text=True, query=qry)
                         if not rule_matches:
