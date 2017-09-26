@@ -43,21 +43,6 @@ if arch not in arches:
     unsupported(os + arch)
 
 
-def clear_dev_mode():
-    """
-    Remove any stale development tag file from previous configure runs.
-    """
-    import os
-    from scancode import root_dir
-    try:
-        os.remove(os.path.join(root_dir, 'SCANCODE_DEV_MODE'))
-    except OSError:
-        pass
-
-
-clear_dev_mode()
-
-
 """
 Re/build the license cache on every configure run.
 """
