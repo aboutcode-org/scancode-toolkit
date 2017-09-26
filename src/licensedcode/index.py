@@ -478,6 +478,8 @@ class LicenseIndex(object):
         # do not match futher if we do not need to
         if whole_query_run.is_matchable(include_low=True, qspans=matched_qspans):
 
+            # FIXME: we should exclude small and "weak" rules from the subset entirely
+            # they are unlikely to be matchable with a seq match
             rules_subset = (self.regular_rids | self.small_rids)
 
             for qrnum, query_run in enumerate(qry.query_runs, 1):
