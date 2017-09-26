@@ -302,7 +302,7 @@ def compute_candidates(query_run, idx, rules_subset, top=30):
         tops = [rule.identifier for _rid, rule, _inter in candidates[:10]]
         logger_debug(tops)
 
-    # discard false positive rules from candidates: we never want to to
+    # discard false positive rules from candidates: we never want to run
     # a sequence match on these
     candidates = [(rid, rule, inter) for (rid, rule, inter) in candidates if not rule.false_positive]
 

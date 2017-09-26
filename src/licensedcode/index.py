@@ -499,6 +499,10 @@ class LicenseIndex(object):
                     matches.extend(hash_matches)
                     continue
 
+                # FIXME: why do not we aho match again here? This would avoid
+                # going into the costly set and seq re-match that may not be needed at all
+                # alternatively we should consider aho matches to excludes them from candidates
+
                 # query run match proper using sequence matching
                 #########################################
                 if TRACE: logger_debug('  #match: Query run MATCHING proper....')
