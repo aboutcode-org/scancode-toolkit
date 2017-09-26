@@ -365,8 +365,6 @@ if __name__ == '__main__':
             abs_path = os.path.join(root_dir, path)
             if os.path.exists(abs_path):
                 configs.append(path)
-                print('Using configuration directory:\n'
-                      '  %(path)s' % locals())
         else:
             print()
             print('WARNING: Skipping missing Configuration directory:\n'
