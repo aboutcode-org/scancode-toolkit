@@ -1,4 +1,4 @@
-about_resource: interrup.py
+about_resource: interrupt.py
 version: 3.0.2
 download_url: https://pypi.python.org/packages/3e/79/d8b9a7ea833cf4f33d51c0d5f24b825ac72105bf30c147b472da10895143/robotframework-3.0.2.tar.gz#md5=ea49a54b9d7e38302712194e85c37eaa
 
