@@ -23,11 +23,11 @@ else:
 
 sys_platform = str(sys.platform).lower()
 if 'linux' in sys_platform:
-    platform = 'linux'
+    os = 'linux'
 elif'win32' in sys_platform:
-    platform = 'win'
+    os = 'win'
 elif 'darwin' in sys_platform:
-    platform = 'mac'
+    os = 'mac'
 else:
     unsupported(sys_platform)
 
@@ -38,9 +38,9 @@ supported_combos = {
     'mac': ['64',],
 }
 
-arches = supported_combos[platform]
+arches = supported_combos[os]
 if arch not in arches:
-    unsupported(platform + arch)
+    unsupported(os + arch)
 
 
 def clear_dev_mode():
