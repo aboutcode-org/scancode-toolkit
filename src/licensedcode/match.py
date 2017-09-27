@@ -437,7 +437,7 @@ def merge_matches(matches, max_dist=MAX_DIST):
     for rid, rule_matches in matches_by_rule:
         if TRACE_MERGE: logger_debug('merge_matches: processing rule:', rid)
         rlen = rule_matches[0].rule.length
-        max_rlen_dist = min(rlen // 5, MAX_DIST)
+        max_rlen_dist = min((rlen // 5) or 1, MAX_DIST)
 
         # compare two matches in the sorted sequence: current and next
         i = 0
@@ -585,7 +585,7 @@ def filter_contained_matches(matches):
 
     if TRACE_FILTER_CONTAINS: print('filter_contained_matches: number of matches to process:', len(matches))
     if TRACE_FILTER_CONTAINS:
-        print('filter_contained_matches: matches')
+        print('filter_contained_matches: initial matches')
         map(print, matches)
 
     # compare two matches in the sorted sequence: current and next match
@@ -596,15 +596,15 @@ def filter_contained_matches(matches):
         while j < len(matches):
             current_match = matches[i]
             next_match = matches[j]
+            if TRACE_FILTER_CONTAINS: logger_debug('---> filter_contained_matches: current: i=', i, current_match)
+            if TRACE_FILTER_CONTAINS: logger_debug('---> filter_contained_matches: next:    j=', j, next_match)
 
             # TODO: is this really correct?
             # stop when no overlap: Touching and overlapping matches have a zero distance.
             if current_match.qdistance_to(next_match):
-                if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: matches have a distance: NO OVERLAP POSSIBLE\n')
-                break
-
-            if TRACE_FILTER_CONTAINS: logger_debug('---> filter_contained_matches: current: i=', i, current_match)
-            if TRACE_FILTER_CONTAINS: logger_debug('---> filter_contained_matches: next:    j=', j, next_match)
+                if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: matches have a distance: NO OVERLAP POSSIBLE -->', 'qdist:', current_match.qdistance_to(next_match))
+                j += 1
+                continue
 
             # equals matches
             if current_match.qspan == next_match.qspan:
