@@ -50,9 +50,9 @@ logger = logging.getLogger(__name__)
 
 
 class PHPComposerPackage(models.Package):
-    metafiles = ('composer.json')
+    metafiles = ('composer.json',)
     filetypes = ('.json',)
-    mimetypes = ('application/json')
+    mimetypes = ('application/json',)
     repo_types = (models.repo_phpcomposer,)
 
     type = models.StringType(default='phpcomposer')
@@ -106,7 +106,8 @@ def parse(location):
     # a composer.json is at the root of a PHP composer package
     base_dir = fileutils.parent_directory(location)
     package.location = base_dir
-    package.metafile_locations = [location]
+    metafile = fileutils.file_name(location)
+    package.metafile_locations = [metafile]
 
     for source, target in plain_fields.items():
         value = data.get(source)
