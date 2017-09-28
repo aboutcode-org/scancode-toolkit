@@ -81,7 +81,8 @@ TRACE_INDEXING_CHECK = False
 def logger_debug(*args):
     pass
 
-if TRACE or TRACE_INDEXING_PERF or TRACE_QUERY_RUN_SIMPLE or os.environ.get('SCANCODE_LICENSE_DEBUG'):
+if (TRACE or TRACE_INDEXING_PERF or TRACE_QUERY_RUN_SIMPLE 
+    or os.environ.get('SCANCODE_LICENSE_DEBUG') or TRACE_NEGATIVE):
     import logging
 
     logger = logging.getLogger(__name__)
@@ -262,13 +263,10 @@ class LicenseIndex(object):
             rul.rid = rid
 
             # classify rules and build disjuncted sets of rids
-            rul_len = rul.length
             if rul.false_positive:
                 # false positive rules do not participate in the matches at all
                 # they are used only in post-matching filtering
                 self.false_positive_rids.add(rid)
-                if rul_len > self.largest_false_positive_length:
-                    self.largest_false_positive_length = rul_len
             elif rul.negative:
                 # negative rules are matched early and their exactly matched
                 # tokens are removed from the token stream
@@ -428,7 +426,7 @@ class LicenseIndex(object):
             return []
 
         #######################################################################
-        # Whole file matching: hash, negative and exact matching
+        # Whole file matching: hash and exact matching
         #######################################################################
         whole_query_run = qry.whole_query_run()
         if not whole_query_run or not whole_query_run.matchables:
@@ -438,7 +436,7 @@ class LicenseIndex(object):
         # hash
         hash_matches = match_hash.hash_match(self, whole_query_run)
         if hash_matches:
-            self.debug_matches(hash_matches, '#match FINAL Hash matched', location, query_string)
+            if TRACE: self.debug_matches(hash_matches, '#match FINAL Hash matched', location, query_string)
             match.set_lines(hash_matches, qry.line_by_pos)
             return hash_matches
 
@@ -449,9 +447,7 @@ class LicenseIndex(object):
             if TRACE: logger_debug('#match: NEGATIVE')
             negative_matches = self.negative_match(whole_query_run)
             for neg in negative_matches:
-                if TRACE_NEGATIVE: self.debug_matches(negative_matches, '   ##match: NEGATIVE subtracting #:', location, query_string)
                 whole_query_run.subtract(neg.qspan)
-            if TRACE_NEGATIVE: logger_debug('     #match: NEGATIVE found', negative_matches)
 
         # exact matches
         if TRACE_EXACT: logger_debug('#match: EXACT')
@@ -567,10 +563,8 @@ class LicenseIndex(object):
         from the query run.
         """
         matches = match_aho.exact_match(self, query_run, self.negative_automaton)
-
+        
         if TRACE_NEGATIVE and matches: logger_debug('     ##final _negative_matches:....', len(matches))
-        if TRACE_NEGATIVE and matches: map(logger_debug, matches)
-
         return matches
 
     def _print_index_stats(self):
