@@ -68,6 +68,7 @@ from scancode.api import get_file_infos
 from scancode.api import get_licenses
 from scancode.api import get_package_infos
 from scancode.api import get_urls
+from scancode.api import Resource
 
 from scancode.cache import get_scans_cache_class
 from scancode.cache import ScanFileCache
@@ -80,7 +81,6 @@ from scancode.interrupt import TimeoutError
 from scancode.utils import BaseCommand
 from scancode.utils import compute_fn_max_len
 from scancode.utils import fixed_width_file_name
-from scancode.utils import get_relative_path
 from scancode.utils import progressmanager
 
 
@@ -578,7 +578,7 @@ def scan(input_path,
 
     pool = None
 
-    resources = resource_paths(input_path, pre_scan_plugins=pre_scan_plugins)
+    resources = resource_paths(input_path, diag, scans_cache_class, pre_scan_plugins=pre_scan_plugins)
     paths_with_error = []
     files_count = 0
 
@@ -731,26 +731,19 @@ def _resource_logger(logfile_fd, resources):
     yield back the resources.
     """
     file_logger = ScanFileCache.log_file_path
-    for posix_path, rel_path in resources:
-        file_logger(logfile_fd, rel_path)
-        yield posix_path, rel_path
+    for resource in resources:
+        file_logger(logfile_fd, resource.rel_path)
+        yield resource
 
 
-def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, processes=1):
+def _scanit(resource, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, processes=1):
     """
     Run scans and cache results on disk. Return a tuple of (success, scanned relative
     path) where sucess is True on success, False on error. Note that this is really
     only a wrapper function used as an execution unit for parallel processing.
     """
-    abs_path, rel_path = paths
-    # always fetch infos and cache.
-    infos = OrderedDict()
-    infos['path'] = rel_path
-    infos.update(scan_infos(abs_path, diag=diag))
-
     success = True
     scans_cache = scans_cache_class()
-    is_cached = scans_cache.put_info(rel_path, infos)
 
     # note: "flag and function" expressions return the function if flag is True
     # note: the order of the scans matters to show things in logical order
@@ -766,9 +759,9 @@ def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, p
     if any(scanner_functions):
         # Skip other scans if already cached
         # FIXME: ENSURE we only do this for files not directories
-        if not is_cached:
+        if not resource.is_cached:
             # run the scan as an interruptiple task
-            scans_runner = partial(scan_one, abs_path, scanners, diag)
+            scans_runner = partial(scan_one, resource.abs_path, scanners, diag)
             success, scan_result = interrupter(scans_runner, timeout=timeout)
             if not success:
                 # Use scan errors as the scan result for that file on failure this is
@@ -776,13 +769,13 @@ def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, p
                 # "scan" key is used for these errors
                 scan_result = {'scan_errors': [scan_result]}
 
-            scans_cache.put_scan(rel_path, infos, scan_result)
+            scans_cache.put_scan(resource.rel_path, resource.get_info(), scan_result)
 
             # do not report success if some other errors happened
             if scan_result.get('scan_errors'):
                 success = False
 
-    return success, rel_path
+    return success, resource.rel_path
 
 
 def build_ignorer(ignores, unignores):
@@ -801,10 +794,10 @@ def build_ignorer(ignores, unignores):
     return partial(ignore.is_ignored, ignores=ignores, unignores=unignores)
 
 
-def resource_paths(base_path, pre_scan_plugins=()):
+def resource_paths(base_path, diag, scans_cache_class, pre_scan_plugins=()):
     """
-    Yield tuples of (absolute path, base_path-relative path) for all the files found
-    at base_path (either a directory or file) given an absolute base_path. Only yield
+    Yield `Resource` objects for all the files found at base_path
+    (either a directory or file) given an absolute base_path. Only yield
     Files, not directories.
     absolute path is a native OS path.
     base_path-relative path is a POSIX path.
@@ -831,11 +824,10 @@ def resource_paths(base_path, pre_scan_plugins=()):
     resources = fileutils.resource_iter(base_path, ignored=ignorer)
 
     for abs_path in resources:
-        posix_path = fileutils.as_posixpath(abs_path)
-        # fix paths: keep the path as relative to the original
-        # base_path. This is always Unicode
-        rel_path = get_relative_path(posix_path, len_base_path, base_is_dir)
-        yield abs_path, rel_path
+        resource = Resource(scans_cache_class, abs_path, base_is_dir, len_base_path)
+        # always fetch infos and cache.
+        resource.put_info(scan_infos(abs_path, diag=diag))
+        yield resource
 
 
 def scan_infos(input_file, diag=False):

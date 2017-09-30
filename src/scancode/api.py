@@ -28,15 +28,49 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 
+from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import path_to_bytes
 from commoncode.fileutils import path_to_unicode
 from commoncode.system import on_linux
+from scancode.utils import get_relative_path
 
 
 """
 Main scanning functions.
 Note: this API is unstable and still evolving.
 """
+
+class Resource(object):
+    """
+    Store scanned details for a single resource (file or a directory)
+    such as infos and path
+    """
+
+    def __init__(self, scan_cache_class, abs_path, base_is_dir, len_base_path):
+        self.scan_cache_class = scan_cache_class()
+        self.is_cached = False
+        self.abs_path = abs_path
+        self.base_is_dir = base_is_dir
+        posix_path = as_posixpath(abs_path)
+        # fix paths: keep the path as relative to the original
+        # base_path. This is always Unicode
+        self.rel_path = get_relative_path(posix_path, len_base_path, base_is_dir)
+        self.infos = OrderedDict()
+        self.infos['path'] = self.rel_path
+
+    def put_info(self, infos):
+        """
+        Cache file info and set `is_cached` to True if already cached or false otherwise.
+        """
+        self.infos.update(infos)
+        self.is_cached = self.scan_cache_class.put_info(self.rel_path, self.infos)
+
+    def get_info(self):
+        """
+        Retrieve info from cache.
+        """
+        return self.scan_cache_class.get_info(self.rel_path)
+
 
 def extract_archives(location, recurse=True):
     """
