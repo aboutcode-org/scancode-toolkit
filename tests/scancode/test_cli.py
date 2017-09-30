@@ -36,6 +36,7 @@ from unittest.case import skipIf
 # from click.testing import CliRunner
 
 from commoncode import fileutils
+from commoncode.fileutils import path_to_bytes
 from commoncode.testcase import FileDrivenTesting
 from commoncode.system import on_linux
 from commoncode.system import on_mac
@@ -47,8 +48,6 @@ from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
 
 from scancode import cli
-from commoncode.fileutils import path_to_bytes
-from commoncode.fileutils import path_to_unicode
 
 
 test_env = FileDrivenTesting()
@@ -207,7 +206,7 @@ def test_scan_mark_source_without_info(monkeypatch):
     result_file = test_env.get_temp_file('json')
     expected_file = test_env.get_test_loc('mark_source/without_info.expected.json')
 
-    result = run_scan_click(['--mark-source', test_dir, result_file], monkeypatch)
+    _result = run_scan_click(['--mark-source', test_dir, result_file], monkeypatch)
     check_json_scan(expected_file, result_file)
 
 def test_scan_mark_source_with_info(monkeypatch):
@@ -215,7 +214,7 @@ def test_scan_mark_source_with_info(monkeypatch):
     result_file = test_env.get_temp_file('json')
     expected_file = test_env.get_test_loc('mark_source/with_info.expected.json')
 
-    result = run_scan_click(['--info', '--mark-source', test_dir, result_file], monkeypatch)
+    _result = run_scan_click(['--info', '--mark-source', test_dir, result_file], monkeypatch)
     check_json_scan(expected_file, result_file)
 
 def test_scan_only_findings(monkeypatch):
@@ -223,7 +222,7 @@ def test_scan_only_findings(monkeypatch):
     result_file = test_env.get_temp_file('json')
     expected_file = test_env.get_test_loc('only_findings/expected.json')
 
-    result = run_scan_click(['--only-findings', test_dir, result_file], monkeypatch)
+    _result = run_scan_click(['--only-findings', test_dir, result_file], monkeypatch)
     check_json_scan(expected_file, result_file)
 
 
@@ -452,13 +451,17 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
     check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True, regen=False)
 
 
-@skipIf(on_windows, 'Tar cannot extract some files on Windows')
+@skipIf(on_windows, 'Python tar cannot extract these files on Windows')
 def test_scan_does_not_fail_when_scanning_unicode_test_files_from_express():
-    if on_linux:
-        test_dir = test_env.extract_test_tar_raw(b'unicode_fixtures.tar.gz')
-        test_dir = path_to_bytes(test_dir)
-    else:
-        test_dir = test_env.extract_test_tar_unicode('unicode_fixtures.tar.gz')
+
+    # On Windows, Python tar cannot extract these files. Other
+    # extractors either fail or change the file name, making the test
+    # moot. Git cannot check these files. So for now it makes no sense
+    # to test this on Windows at all. Extractcode works fine, but does
+    # rename the problematic files.
+
+    test_dir = test_env.extract_test_tar_raw(b'unicode_fixtures.tar.gz')
+    test_dir = path_to_bytes(test_dir)
 
     args = ['-n0', '--info', '--license', '--copyright',
             '--package', '--email', '--url', '--strip-root',
