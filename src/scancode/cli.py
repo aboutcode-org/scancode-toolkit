@@ -60,6 +60,7 @@ import plugincode.pre_scan
 
 from scancode import __version__ as version
 
+from scancode.api import DEJACODE_LICENSE_URL
 from scancode.api import _empty_file_infos
 from scancode.api import get_copyrights
 from scancode.api import get_emails
@@ -362,6 +363,8 @@ def validate_exclusive(ctx, exclusive_options):
               help='Do not return license matches with scores lower than this score. A number between 0 and 100.', group=SCANS, cls=ScanOption)
 @click.option('--license-text', is_flag=True, default=False,
               help='Include the detected licenses matched text. Has no effect unless --license is requested.', group=SCANS, cls=ScanOption)
+@click.option('--license-url-template', is_flag=False, default=DEJACODE_LICENSE_URL, show_default=True,
+              help='Set the template URL used for the license reference URLs. In a template URL, curly braces ({}) are replaced by the license key.', group=SCANS, cls=ScanOption)
 @click.option('--strip-root', is_flag=True, default=False,
               help='Strip the root directory segment of all paths. The default is to always '
                    'include the last directory segment of the scanned path such that all paths have a common root directory. '
@@ -393,7 +396,8 @@ def scancode(ctx,
              input, output_file,
              copyright, license, package,
              email, url, info,
-             license_score, license_text, strip_root, full_root,
+             license_score, license_text, license_url_template,
+             strip_root, full_root,
              format, verbose, quiet, processes,
              diag, timeout, *args, **kwargs):
     """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
@@ -448,7 +452,7 @@ def scancode(ctx,
         if options[key] == False:
             del options[key]
 
-    get_licenses_with_score = partial(get_licenses, min_score=license_score, include_text=license_text, diag=diag)
+    get_licenses_with_score = partial(get_licenses, min_score=license_score, include_text=license_text, diag=diag, license_url_template=license_url_template)
 
     # List of scan functions in the same order as "possible_scans".
     scan_functions = [

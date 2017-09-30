@@ -101,7 +101,7 @@ DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
 SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 
 
-def get_licenses(location, min_score=0, include_text=False, diag=False):
+def get_licenses(location, min_score=0, include_text=False, diag=False, license_url_template=DEJACODE_LICENSE_URL):
     """
     Yield mappings of license data detected in the file at `location`.
 
@@ -135,7 +135,7 @@ def get_licenses(location, min_score=0, include_text=False, diag=False):
             result['owner'] = lic.owner
             result['homepage_url'] = lic.homepage_url
             result['text_url'] = lic.text_urls[0] if lic.text_urls else ''
-            result['dejacode_url'] = DEJACODE_LICENSE_URL.format(lic.key)
+            result['reference_url'] = license_url_template.format(lic.key)
             spdx_key = lic.spdx_license_key
             result['spdx_license_key'] = spdx_key
             if spdx_key:
