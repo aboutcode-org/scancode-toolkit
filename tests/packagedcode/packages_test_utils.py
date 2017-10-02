@@ -51,13 +51,16 @@ class PackageTester(testcase.FileBasedTesting):
         return package_dict
 
 
-    def check_package(self, package, expected_loc, regen=False):
+    def check_package(self, package, expected_loc, regen=False, fix_locations=True):
         """
         Helper to test a package object against an expected JSON file.
         """
         expected_loc = self.get_test_loc(expected_loc)
 
-        results = self.make_locations_relative(package.to_dict())
+        results = package.to_dict()
+
+        if fix_locations:
+            results = self.make_locations_relative(results)
 
         if regen:
             regened_exp_loc = self.get_temp_file()
