@@ -1,130 +1,130 @@
 {
-  "type": "phpcomposer", 
-  "name": "slim/slim", 
-  "version": null, 
-  "primary_language": "PHP", 
-  "packaging": null, 
-  "summary": "Slim is a PHP micro framework that helps you quickly write simple yet powerful web applications and APIs", 
-  "description": null, 
-  "payload_type": null, 
-  "size": null, 
-  "release_date": null, 
+  "type": "phpcomposer",
+  "name": "slim/slim",
+  "version": null,
+  "primary_language": "PHP",
+  "packaging": null,
+  "summary": "Slim is a PHP micro framework that helps you quickly write simple yet powerful web applications and APIs",
+  "description": null,
+  "payload_type": null,
+  "size": null,
+  "release_date": null,
   "authors": [
     {
-      "type": "person", 
-      "name": "Josh Lockhart", 
-      "email": "hello@joshlockhart.com", 
+      "type": "person",
+      "name": "Josh Lockhart",
+      "email": "hello@joshlockhart.com",
       "url": "https://joshlockhart.com"
-    }, 
+    },
     {
-      "type": "person", 
-      "name": "Andrew Smith", 
-      "email": "a.smith@silentworks.co.uk", 
+      "type": "person",
+      "name": "Andrew Smith",
+      "email": "a.smith@silentworks.co.uk",
       "url": "http://silentworks.co.uk"
-    }, 
+    },
     {
-      "type": "person", 
-      "name": "Rob Allen", 
-      "email": "rob@akrabat.com", 
+      "type": "person",
+      "name": "Rob Allen",
+      "email": "rob@akrabat.com",
       "url": "http://akrabat.com"
-    }, 
+    },
     {
-      "type": "person", 
-      "name": "Gabriel Manricks", 
-      "email": "gmanricks@me.com", 
+      "type": "person",
+      "name": "Gabriel Manricks",
+      "email": "gmanricks@me.com",
       "url": "http://gabrielmanricks.com"
     }
-  ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
+  ],
+  "maintainers": [],
+  "contributors": [],
+  "owners": [],
+  "packagers": [],
+  "distributors": [],
   "vendors": [
     {
-      "type": null, 
-      "name": "slim", 
-      "email": null, 
+      "type": null,
+      "name": "slim",
+      "email": null,
       "url": null
     }
-  ], 
+  ],
   "keywords": [
-    "framework", 
-    "micro", 
-    "api", 
+    "framework",
+    "micro",
+    "api",
     "router"
-  ], 
-  "keywords_doc_url": null, 
+  ],
+  "keywords_doc_url": null,
   "metafile_locations": [
     "composer.json"
-  ], 
-  "metafile_urls": [], 
-  "homepage_url": "https://slimframework.com", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
-  "bug_tracking_url": null, 
-  "support_contacts": [], 
-  "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
+  ],
+  "metafile_urls": [],
+  "homepage_url": "https://slimframework.com",
+  "notes": null,
+  "download_urls": [],
+  "download_sha1": null,
+  "download_sha256": null,
+  "download_md5": null,
+  "bug_tracking_url": null,
+  "support_contacts": [],
+  "code_view_url": null,
+  "vcs_tool": null,
+  "vcs_repository": null,
+  "vcs_revision": null,
+  "copyright_top_level": null,
+  "copyrights": [],
   "asserted_licenses": [
     {
-      "license": "MIT", 
-      "url": null, 
-      "text": null, 
+      "license": "MIT",
+      "url": null,
+      "text": null,
       "notice": null
     }
-  ], 
-  "legal_file_locations": [], 
-  "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
+  ],
+  "legal_file_locations": [],
+  "license_expression": null,
+  "license_texts": [],
+  "notice_texts": [],
   "dependencies": {
     "development": [
       {
-        "name": "squizlabs/php_codesniffer", 
-        "version": null, 
+        "name": "squizlabs/php_codesniffer",
+        "version": null,
         "version_constraint": "^2.5"
-      }, 
+      },
       {
-        "name": "phpunit/phpunit", 
-        "version": null, 
+        "name": "phpunit/phpunit",
+        "version": null,
         "version_constraint": "^4.0"
       }
-    ], 
+    ],
     "runtime": [
       {
-        "name": "php", 
-        "version": null, 
+        "name": "php",
+        "version": null,
         "version_constraint": ">=5.5.0"
-      }, 
+      },
       {
-        "name": "pimple/pimple", 
-        "version": null, 
+        "name": "pimple/pimple",
+        "version": null,
         "version_constraint": "^3.0"
-      }, 
+      },
       {
-        "name": "psr/http-message", 
-        "version": null, 
+        "name": "psr/http-message",
+        "version": null,
         "version_constraint": "^1.0"
-      }, 
+      },
       {
-        "name": "nikic/fast-route", 
-        "version": null, 
+        "name": "nikic/fast-route",
+        "version": null,
         "version_constraint": "^1.0"
-      }, 
+      },
       {
-        "name": "container-interop/container-interop", 
-        "version": null, 
+        "name": "container-interop/container-interop",
+        "version": null,
         "version_constraint": "^1.1"
       }
     ]
-  }, 
+  },
   "related_packages": []
 }
