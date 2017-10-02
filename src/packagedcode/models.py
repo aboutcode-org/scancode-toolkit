@@ -123,12 +123,12 @@ The payload of files and directories possibly contains:
 """
 
 
-class ListType(ListType):
+class BaseListType(ListType):
     """
     ListType with a default of an empty list.
     """
     def __init__(self, field, **kwargs):
-        super(ListType, self).__init__(field=field, default=[], **kwargs)
+        super(BaseListType, self).__init__(field=field, default=[], **kwargs)
 
 
 PackageId = namedtuple('PackageId', 'type name version')
@@ -361,7 +361,7 @@ class Repository(BaseModel):
         label='public repository',
         description='A flag set to true if this is a public repository.')
 
-    mirror_urls = ListType(URIType)
+    mirror_urls = BaseListType(URIType)
     mirror_urls.metadata = dict(
         label='repository mirror urls',
         description='A list of URLs for mirrors of this repository.')
@@ -502,7 +502,7 @@ class Dependency(BaseModel):
         # A normalized list of version constraints for this dep. This is package-
         # independent and should be a normalized data structure describing all the
         # different version range constraints
-        # normalized_version_constraints = ListType(StringType())
+        # normalized_version_constraints = BaseListType(StringType())
         raise NotImplementedError()
 
 
@@ -644,42 +644,42 @@ class Package(BaseModel):
         description='Release date of the package')
 
     # FIXME: this would be simpler as a list where each Party has also a type
-    authors = ListType(ModelType(Party))
+    authors = BaseListType(ModelType(Party))
     authors.metadata = dict(
         label='authors',
         description='A list of party objects. Note: this model schema will change soon.')
 
-    maintainers = ListType(ModelType(Party))
+    maintainers = BaseListType(ModelType(Party))
     maintainers.metadata = dict(
         label='maintainers',
         description='A list of party objects. Note: this model schema will change soon.')
 
-    contributors = ListType(ModelType(Party))
+    contributors = BaseListType(ModelType(Party))
     contributors.metadata = dict(
         label='contributors',
         description='A list of party objects. Note: this model schema will change soon.')
 
-    owners = ListType(ModelType(Party))
+    owners = BaseListType(ModelType(Party))
     owners.metadata = dict(
         label='owners',
         description='A list of party objects. Note: this model schema will change soon.')
 
-    packagers = ListType(ModelType(Party))
+    packagers = BaseListType(ModelType(Party))
     packagers.metadata = dict(
         label='owners',
         description='A list of party objects. Note: this model schema will change soon.')
 
-    distributors = ListType(ModelType(Party))
+    distributors = BaseListType(ModelType(Party))
     distributors.metadata = dict(
         label='distributors',
         description='A list of party objects. Note: this model schema will change soon.')
 
-    vendors = ListType(ModelType(Party))
+    vendors = BaseListType(ModelType(Party))
     vendors.metadata = dict(
         label='vendors',
         description='A list of party objects. Note: this model schema will change soon.')
 
-    keywords = ListType(StringType())
+    keywords = BaseListType(StringType())
     keywords.metadata = dict(
         label='keywords',
         description='A list of keywords or tags.')
@@ -691,14 +691,14 @@ class Package(BaseModel):
         description='URL to a reference documentation for keywords or '
         'tags (such as a Pypi or SF.net Trove map)')
 
-    metafile_locations = ListType(StringType())
+    metafile_locations = BaseListType(StringType())
     metafile_locations.metadata = dict(
         label='metafile locations',
         description='A list of metafile locations for this package '
         '(such as a package.json, a setup.py). '
         'Relative to the package root directory or archive root')
 
-    metafile_urls = ListType(URIType())
+    metafile_urls = BaseListType(URIType())
     metafile_urls.metadata = dict(
         label='metafile URLs',
         description='A list of metafile remote URLs for this package '
@@ -714,7 +714,7 @@ class Package(BaseModel):
         label='Notes',
         description='Notes, free text about this package')
 
-    download_urls = ListType(URIType())
+    download_urls = BaseListType(URIType())
     download_urls.metadata = dict(
         label='Download URLs',
         description='A list of direct download URLs, possibly in SPDX VCS url form. '
@@ -732,7 +732,7 @@ class Package(BaseModel):
         label='bug tracking URL',
         description='URL to the issue or bug tracker for this package')
 
-    support_contacts = ListType(StringType())
+    support_contacts = BaseListType(StringType())
     support_contacts.metadata = dict(
         label='Support contacts',
         description='A list of strings (such as email, urls, etc) for support contacts')
@@ -765,18 +765,18 @@ class Package(BaseModel):
         label='Top level Copyright',
         description='a top level copyright often asserted in package metadata')
 
-    copyrights = ListType(StringType())
+    copyrights = BaseListType(StringType())
     copyrights.metadata = dict(
         label='Copyrights',
         description='A list of effective copyrights as detected and eventually summarized')
 
-    asserted_licenses = ListType(ModelType(AssertedLicense))
+    asserted_licenses = BaseListType(ModelType(AssertedLicense))
     asserted_licenses.metadata = dict(
         label='asserted licenses',
         description='A list of asserted license objects representing '
         'the asserted licensing information for this package')
 
-    legal_file_locations = ListType(StringType())
+    legal_file_locations = BaseListType(StringType())
     legal_file_locations.metadata = dict(
         label='legal file locations',
         description='A list of paths to legal files '
@@ -788,12 +788,12 @@ class Package(BaseModel):
         label='license expression',
         description='license expression: either resolved or detected license expression')
 
-    license_texts = ListType(StringType())
+    license_texts = BaseListType(StringType())
     license_texts.metadata = dict(
         label='license texts',
         description='A list of license texts for this package.')
 
-    notice_texts = ListType(StringType())
+    notice_texts = BaseListType(StringType())
     license_texts.metadata = dict(
         label='notice texts',
         description='A list of notice texts for this package.')
@@ -809,7 +809,7 @@ class Package(BaseModel):
         'The possible values for dependency grousp are:' + ', '.join(DEPENDENCY_GROUPS)
         )
 
-    related_packages = ListType(ModelType(RelatedPackage))
+    related_packages = BaseListType(ModelType(RelatedPackage))
     related_packages.metadata = dict(
         label='related packages',
         description='A list of related_package objects for this package. '
