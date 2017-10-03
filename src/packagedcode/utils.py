@@ -67,11 +67,18 @@ def parse_repo_url(repo_url):
         https://gitlab.com/foo/private.git
         git@gitlab.com:foo/private.git
     """
+    if not repo_url or not isinstance(repo_url, basestring):
+        return
 
+    repo_url = repo_url.strip()
+    if not repo_url:
+        return
+
+    # TODO: If we match http and https, we may should add more check in
+    # case if the url is not a repo one. For example, check the domain
+    # name in the url...
     is_vcs_url = repo_url.startswith(VCS_URLS)
     if is_vcs_url:
-        # TODO: If we match http and https, we may should add more check in case if the url is not a repo one.
-        # For example, check the domain name in the url...
         return repo_url
 
     if repo_url.startswith('git@'):

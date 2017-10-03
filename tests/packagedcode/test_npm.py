@@ -135,3 +135,10 @@ class TestNpm(PackageTester):
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False, fix_locations=False)
         package.validate()
+
+    def test_parse_does_not_crash_if_partial_repo_url(self):
+        test_file = self.get_test_loc('npm/repo_url/package.json')
+        expected_loc = self.get_test_loc('npm/repo_url/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
+        package.validate()

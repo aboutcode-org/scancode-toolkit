@@ -106,3 +106,8 @@ class TestPackageUtils(TestCase):
         test = 'git@github.com/Filirom1/npm2aur.git'
         expected = 'https://github.com/Filirom1/npm2aur.git'
         assert expected == parse_repo_url(test)
+
+    def test_parse_repo_url_does_not_fail_on_empty(self):
+        assert None == parse_repo_url(None)
+        assert None == parse_repo_url('')
+        assert None == parse_repo_url(' ')

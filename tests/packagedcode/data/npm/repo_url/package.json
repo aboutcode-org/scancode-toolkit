@@ -1,0 +1,83 @@
+{
+      "name": "react-mobile-navigation-modal",
+      "version": "0.1.0-rc.3",
+      "description": "React mobile navigation modal.",
+      "author": {
+        "name": "Rostyslav Khanas",
+        "email": "rk@try.cards"
+      },
+      "repository": {
+        "type": "git"
+      },
+      "scripts": {
+        "clean": "rimraf lib",
+        "lint": "eslint src",
+        "build": "npm run lint && npm run clean && babel src --out-dir lib"
+      },
+      "files": [
+        "lib"
+      ],
+      "main": "lib/index.js",
+      "dependencies": {
+        "binary-ui-icons": "^0.1.0-rc.8",
+        "binary-ui-stack": "^0.0.1-rc.4",
+        "binary-ui-styles": "^0.1.0-rc.8",
+        "invariant": "^2.2.1",
+        "react-mobile-navigation-core": "^0.1.0-rc.3",
+        "react-mobile-navigation-engine": "^0.1.0-rc.3"
+      },
+      "peerDependencies": {
+        "react": "~15.3.2"
+      },
+      "devDependencies": {
+        "babel": "^6.3.26",
+        "babel-cli": "^6.7.7",
+        "babel-core": "^6.7.7",
+        "babel-eslint": "^6.0.3",
+        "babel-loader": "^6.2.1",
+        "babel-plugin-transform-decorators-legacy": "^1.3.4",
+        "babel-plugin-transform-object-rest-spread": "^6.5.0",
+        "babel-preset-es2015": "^6.3.13",
+        "babel-preset-es2015-allow-top-level-this": "0.0.1",
+        "babel-preset-react": "^6.3.13",
+        "eslint": "^2.5.3",
+        "eslint-config-airbnb": "^9.0.1",
+        "eslint-plugin-import": "^1.5.0",
+        "eslint-plugin-jsx-a11y": "^1.0.2",
+        "eslint-plugin-react": "^5.0.1",
+        "node-uuid": "^1.4.7",
+        "react": "~15.3.2",
+        "react-art": "^0.15.1",
+        "react-dom": "~15.3.2",
+        "react-motion": "^0.4.7",
+        "react-redux": "^4.0.6",
+        "redux": "^3.0.5",
+        "rimraf": "^2.3.4",
+        "webpack": "^1.12.15",
+        "webpack-dev-server": "^1.14.1"
+      },
+      "_id": "react-mobile-navigation-modal@0.1.0-rc.3",
+      "_shasum": "0ae0b2065295b14c9db60852215b3f60d5510a99",
+      "_from": ".",
+      "_npmVersion": "4.3.0",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "rtkhanas",
+        "email": "rtkhanas@gmail.com"
+      },
+      "dist": {
+        "shasum": "0ae0b2065295b14c9db60852215b3f60d5510a99",
+        "tarball": "https://registry.npmjs.org/react-mobile-navigation-modal/-/react-mobile-navigation-modal-0.1.0-rc.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rtkhanas",
+          "email": "rtkhanas@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/react-mobile-navigation-modal-0.1.0-rc.3.tgz_1489492444412_0.4683970238547772"
+      },
+      "directories": {}
+}
