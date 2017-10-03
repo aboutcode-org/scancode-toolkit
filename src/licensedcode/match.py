@@ -437,7 +437,7 @@ def merge_matches(matches, max_dist=MAX_DIST):
     for rid, rule_matches in matches_by_rule:
         if TRACE_MERGE: logger_debug('merge_matches: processing rule:', rid)
         rlen = rule_matches[0].rule.length
-        max_rlen_dist = min((rlen // 5) or 1, MAX_DIST)
+        max_rlen_dist = min((rlen // 2) or 1, MAX_DIST)
 
         # compare two matches in the sorted sequence: current and next
         i = 0
@@ -450,13 +450,14 @@ def merge_matches(matches, max_dist=MAX_DIST):
                 if TRACE_MERGE: logger_debug('---> merge_matches: next:   ', next_match)
 
                 # two exact matches can never be merged as they will not be overlapping
-                if current_match.matcher != MATCH_SEQ and next_match.matcher != MATCH_SEQ:
-                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: both matches are EXACT_MATCHES, skipping')
-                    break
+                # only sequence matches for the same rule can be merged
+                #if current_match.matcher != MATCH_SEQ and next_match.matcher != MATCH_SEQ:
+                #    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: both matches are EXACT_MATCHES, skipping')
+                #    break
 
                 # FIXME: also considers the match length!
                 # stop if we exceed max dist
-                # or distance over 1/5 of rule length
+                # or distance over 1/2 of rule length
                 if (current_match.qdistance_to(next_match) > max_rlen_dist
                 or current_match.idistance_to(next_match) > max_rlen_dist):
                     if TRACE_MERGE: logger_debug('    ---> ###merge_matches: MAX_DIST reached, breaking')
