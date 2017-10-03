@@ -26,10 +26,12 @@ from packagedcode import models
 from packagedcode import maven
 from packagedcode import npm
 from packagedcode import nuget
+from packagedcode import phpcomposer
 from packagedcode import rpm
 
 
 # Note: the order matters: from the most to the least specific
+# Package classes MUST be added to this list to be active
 PACKAGE_TYPES = [
     rpm.RpmPackage,
     models.DebianPackage,
@@ -43,8 +45,9 @@ PACKAGE_TYPES = [
     models.Axis2Mar,
 
     npm.NpmPackage,
-    models.BowerPackage,
+    phpcomposer.PHPComposerPackage,
     models.MeteorPackage,
+    models.BowerPackage,
     models.CpanModule,
     models.RubyGem,
     models.AndroidApp,

@@ -1,91 +1,91 @@
 {
-  "type": "phpcomposer", 
-  "name": "jandreasn/a-timer", 
-  "version": null, 
-  "primary_language": "PHP", 
-  "packaging": null, 
-  "summary": "A simple timer.", 
-  "description": null, 
-  "payload_type": null, 
-  "size": null, 
-  "release_date": null, 
+  "type": "phpcomposer",
+  "name": "jandreasn/a-timer",
+  "version": null,
+  "primary_language": "PHP",
+  "packaging": null,
+  "summary": "A simple timer.",
+  "description": null,
+  "payload_type": null,
+  "size": null,
+  "release_date": null,
   "authors": [
     {
-      "type": "person", 
-      "name": "Andreas Nilsson", 
-      "email": null, 
+      "type": "person",
+      "name": "Andreas Nilsson",
+      "email": null,
       "url": null
     }
-  ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
+  ],
+  "maintainers": [],
+  "contributors": [],
+  "owners": [],
+  "packagers": [],
+  "distributors": [],
   "vendors": [
     {
-      "type": null, 
-      "name": "jandreasn", 
-      "email": null, 
+      "type": null,
+      "name": "jandreasn",
+      "email": null,
       "url": null
     }
-  ], 
+  ],
   "keywords": [
-    "timer", 
-    "timing", 
+    "timer",
+    "timing",
     "benchmark"
-  ], 
-  "keywords_doc_url": null, 
+  ],
+  "keywords_doc_url": null,
   "metafile_locations": [
     "composer.json"
-  ], 
-  "metafile_urls": [], 
-  "homepage_url": "http://github.com/jandreasn/a-timer", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
-  "bug_tracking_url": null, 
-  "support_contacts": [], 
-  "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
+  ],
+  "metafile_urls": [],
+  "homepage_url": "http://github.com/jandreasn/a-timer",
+  "notes": null,
+  "download_urls": [],
+  "download_sha1": null,
+  "download_sha256": null,
+  "download_md5": null,
+  "bug_tracking_url": null,
+  "support_contacts": [],
+  "code_view_url": null,
+  "vcs_tool": null,
+  "vcs_repository": null,
+  "vcs_revision": null,
+  "copyright_top_level": null,
+  "copyrights": [],
   "asserted_licenses": [
     {
-      "license": "MIT", 
-      "url": null, 
-      "text": null, 
+      "license": "MIT",
+      "url": null,
+      "text": null,
       "notice": null
     }
-  ], 
-  "legal_file_locations": [], 
-  "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
+  ],
+  "legal_file_locations": [],
+  "license_expression": null,
+  "license_texts": [],
+  "notice_texts": [],
   "dependencies": {
     "development": [
       {
-        "name": "phpunit/phpunit", 
-        "version": null, 
+        "name": "phpunit/phpunit",
+        "version": null,
         "version_constraint": "^5.6"
-      }, 
+      },
       {
-        "name": "squizlabs/php_codesniffer", 
-        "version": null, 
+        "name": "squizlabs/php_codesniffer",
+        "version": null,
         "version_constraint": "^2.7"
       }
-    ], 
+    ],
     "runtime": [
       {
-        "name": "php", 
-        "version": null, 
+        "name": "php",
+        "version": null,
         "version_constraint": ">=5.6.0"
       }
     ]
-  }, 
+  },
   "related_packages": []
 }

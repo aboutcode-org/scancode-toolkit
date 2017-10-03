@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -50,9 +50,9 @@ logger = logging.getLogger(__name__)
 
 
 class PHPComposerPackage(models.Package):
-    metafiles = ('composer.json')
+    metafiles = ('composer.json',)
     filetypes = ('.json',)
-    mimetypes = ('application/json')
+    mimetypes = ('application/json',)
     repo_types = (models.repo_phpcomposer,)
 
     type = models.StringType(default='phpcomposer')
@@ -74,7 +74,24 @@ def parse(location):
     """
     if not is_phpcomposer_json(location):
         return
-    # mapping of top level composer.json items to the Package object field name
+
+    with codecs.open(location, encoding='utf-8') as loc:
+        package_data = json.load(loc, object_pairs_hook=OrderedDict)
+
+    base_dir = fileutils.parent_directory(location)
+    metafile_name = fileutils.file_name(location)
+
+    return build_package(package_data, base_dir, metafile_name)
+
+
+def build_package(package_data, base_dir =None, metafile_name='composer.json'):
+    """
+    Return a composer Package object from a package data mapping or
+    None.
+    """
+
+    # mapping of top level composer.json items to the Package object
+    # field name
     plain_fields = OrderedDict([
         ('name', 'name'),
         ('description', 'summary'),
@@ -83,8 +100,9 @@ def parse(location):
         ('homepage', 'homepage_url'),
     ])
 
-    # mapping of top level composer.json items to a function accepting as arguments
-    # the composer.json element value and returning an iterable of key, values Package Object to update
+    # mapping of top level composer.json items to a function accepting
+    # as arguments the composer.json element value and returning an
+    # iterable of key, values Package Object to update
     field_mappers = OrderedDict([
         ('authors', author_mapper),
         ('license', licensing_mapper),
@@ -94,22 +112,20 @@ def parse(location):
         ('support', support_mapper),
     ])
 
-    with codecs.open(location, encoding='utf-8') as loc:
-        data = json.load(loc, object_pairs_hook=OrderedDict)
 
-    if not data.get('name') or not data.get('description'):
-        # a composer.json without name and description is not a usable PHP composer package
-        # name and description fields are required: https://getcomposer.org/doc/04-schema.md#name
-        return
+    # A composer.json without name and description is not a usable PHP
+    # composer package. Name and description fields are required but
+    # only for published packages:
+    # https://getcomposer.org/doc/04-schema.md#name 
+    # We want to catch both published and non-published packages here.
 
     package = PHPComposerPackage()
     # a composer.json is at the root of a PHP composer package
-    base_dir = fileutils.parent_directory(location)
     package.location = base_dir
-    package.metafile_locations = [location]
+    package.metafile_locations = [metafile_name]
 
     for source, target in plain_fields.items():
-        value = data.get(source)
+        value = package_data.get(source)
         if value:
             if isinstance(value, basestring):
                 value = value.strip()
@@ -118,13 +134,14 @@ def parse(location):
 
     for source, func in field_mappers.items():
         logger.debug('parse: %(source)r, %(func)r' % locals())
-        value = data.get(source)
+        value = package_data.get(source)
         if value:
             if isinstance(value, basestring):
                 value = value.strip()
             if value:
                 func(value, package)
-    vendor_mapper(package)  # Parse vendor from name value
+    # Parse vendor from name value
+    vendor_mapper(package)  
     return package
 
 
@@ -145,27 +162,25 @@ def licensing_mapper(licenses, package):
     if not licenses:
         return package
 
-    if isinstance(licenses, basestring):
-        package.asserted_licenses.append(models.AssertedLicense(license=licenses))
-    elif isinstance(licenses, list):
+    if isinstance(licenses, list):
+        # For a package, when there is a choice between licenses
+        # ("disjunctive license"), multiple can be specified as array.
         """
         "license": [
                "LGPL-2.1",
                "GPL-3.0+"
             ]
         """
-        for lic in licenses:
-            if isinstance(lic, basestring):
-                package.asserted_licenses.append(models.AssertedLicense(license=lic))
-            else:
-                # use the bare repr
-                if lic:
-                    package.asserted_licenses.append(models.AssertedLicense(license=repr(lic)))
+        # build a proper license expression
+        lics = [l.strip() for l in licenses if l and l.strip()]
+        lics = ' OR '.join(lics)
 
+    elif not isinstance(licenses, basestring):
+        lics = repr(licenses)
     else:
-        # use the bare repr
-        package.asserted_licenses.append(models.AssertedLicense(license=repr(licenses)))
+        lics = licenses
 
+    package.asserted_licenses.append(models.AssertedLicense(license=lics))
     return package
 
 
@@ -186,22 +201,24 @@ def support_mapper(support, package):
     Update support and bug tracking url.
     https://getcomposer.org/doc/04-schema.md#support
     """
-    package.support_contacts = [support.get('email')]
-    package.bug_tracking_url = support.get('issues')
-    package.code_view_url = support.get('source')
+    email = support.get('email')
+    if email and email.strip():
+        package.support_contacts = [email]
+    package.bug_tracking_url = support.get('issues') or None
+    package.code_view_url = support.get('source') or None
     return package
 
 
 def vendor_mapper(package):
     """
-    Vender is part of name element.
+    Vendor is the first part of the name element.
     https://getcomposer.org/doc/04-schema.md#name
     """
     name = package.name
     if name and '/' in name:
-        vendors = name.split('/')
-        if vendors[0]:
-            package.vendors = [models.Party(name=vendors[0])]
+        vendor, _base_name = name.split('/', 1)
+        if vendor:
+            package.vendors = [models.Party(name=vendor)]
     return package
 
 
@@ -326,6 +343,7 @@ def parse_person(persons):
             name = person.get('name')
             email = person.get('email')
             url = person.get('homepage')
+            # FIXME: this got cargoculted from npm package.json parsing
             yield name and name.strip(), email and email.strip('<> '), url and url.strip('() ')
     else:
         raise Exception('Incorrect PHP composer composer.json person: %(person)r' % locals())
