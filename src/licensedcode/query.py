@@ -97,9 +97,6 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
 
-MAX_TOKENS_PER_LINE = 100
-
-
 def build_query(location=None, query_string=None, idx=None):
     """
     Return a Query built from location or query string given an index.
@@ -186,7 +183,7 @@ class Query(object):
         if _test_mode:
             return
 
-        self.tokenize_and_build_chunked_runs(self.token_slices_by_line(tokenizer=tokenizer), line_threshold=line_threshold)
+        self.tokenize_and_build_runs(self.tokens_by_line(tokenizer=tokenizer), line_threshold=line_threshold)
 
         # sets of integers initialized after query tokenization
         len_junk = idx.len_junk
@@ -278,56 +275,6 @@ class Query(object):
         # for intersection with the query span for scoring matches
         self.unknowns_span = Span(unknowns_pos)
 
-    def token_slices_by_line(self, tokenizer=query_tokenizer, tokens_per_line=MAX_TOKENS_PER_LINE):
-        """
-        Yield a list of sequence of tokens chunk sfor each line in this query.
-        Populate the query `line_by_pos`, `unknowns_by_pos`, `unknowns_by_pos` and
-        `shorts_and_digits_pos` as a side effect.
-        """
-        # bind frequently called functions to local scope
-        line_by_pos_append = self.line_by_pos.append
-        self_unknowns_by_pos = self.unknowns_by_pos
-        unknowns_pos = set()
-        unknowns_pos_add = unknowns_pos.add
-        self_shorts_and_digits_pos_add = self.shorts_and_digits_pos.add
-        dic_get = self.idx.dictionary.get
-
-        # note: positions start at zero
-        # this is the absolute position, including the unknown tokens
-        abs_pos = -1
-        # lines start at one
-        line_start = 1
-
-        # this is a relative position, excluding the unknown tokens
-        known_pos = -1
-
-        started = False
-        for lnum, line  in enumerate(query_lines(self.location, self.query_string), line_start):
-            line_tokens = []
-            line_tokens_append = line_tokens.append
-            for abs_pos, token in enumerate(tokenizer(line), abs_pos + 1):
-                tid = dic_get(token)
-                if tid is not None:
-                    known_pos += 1
-                    started = True
-                    line_by_pos_append(lnum)
-                    if len(token) == 1 or token.isdigit():
-                        self_shorts_and_digits_pos_add(known_pos)
-                else:
-                    # we have not yet started
-                    if not started:
-                        self_unknowns_by_pos[-1] += 1
-                    else:
-                        self_unknowns_by_pos[known_pos] += 1
-                        unknowns_pos_add(known_pos)
-                line_tokens_append(tid)
-            yield [line_tokens[i:i + tokens_per_line] for i in xrange(0, len(line_tokens), tokens_per_line)]
-
-        # finally create a Span of positions followed by unknwons, used
-        # for intersection with the query span for scoring matches
-        self.unknowns_span = Span(unknowns_pos)
-
-
     def tokenize_and_build_runs(self, tokens_by_line, line_threshold=4):
         """
         Tokenize this query and populate tokens and query_runs at each break point.
@@ -389,77 +336,6 @@ class Query(object):
             else:
                 empty_lines += 1
 
-        # append final run if any
-        if len(query_run) > 0:
-            self.query_runs.append(query_run)
-
-        if TRACE:
-            logger_debug('Query runs for query:', self.location)
-            map(print, self.query_runs)
-
-
-    def tokenize_and_build_chunked_runs(self, token_slices_by_line, line_threshold=4):
-        """
-        Tokenize this query and populate tokens and query_runs at each break point.
-        Only keep known token ids but consider unknown token ids to break a query in
-        runs.
-
-        `tokens_by_line` is the output of the self.token_slices_by_line() method.
-        `line_threshold` is the number of empty or junk lines to break a new run.
-        """
-        len_junk = self.idx.len_junk
-
-        # initial query run
-        query_run = QueryRun(query=self, start=0)
-
-        # break in runs based on threshold of lines that are either empty, all
-        # unknown or all low id/junk jokens.
-        empty_lines = 0
-
-        # token positions start at zero
-        pos = 0
-
-        # bind frequently called functions to local scope
-        tokens_append = self.tokens.append
-        query_runs_append = self.query_runs.append
-
-        for token_slice in token_slices_by_line:
-            for tokens in token_slice:
-                # have we reached a run break point?
-                if (len(query_run) > 0 and empty_lines >= line_threshold):
-                    # start new query run
-                    query_runs_append(query_run)
-                    query_run = QueryRun(query=self, start=pos)
-                    empty_lines = 0
-    
-                if len(query_run) == 0:
-                    query_run.start = pos
-    
-                if not tokens:
-                    empty_lines += 1
-                    continue
-    
-                line_has_known_tokens = False
-                line_has_good_tokens = False
-    
-                for token_id in tokens:
-                    if token_id is not None:
-                        tokens_append(token_id)
-                        line_has_known_tokens = True
-                        if token_id >= len_junk:
-                            line_has_good_tokens = True
-                        query_run.end = pos
-                        pos += 1
-    
-                if not line_has_known_tokens:
-                    empty_lines += 1
-                    continue
-    
-                if line_has_good_tokens:
-                    empty_lines = 0
-                else:
-                    empty_lines += 1
-        
         # append final run if any
         if len(query_run) > 0:
             self.query_runs.append(query_run)
