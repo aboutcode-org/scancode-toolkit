@@ -29,10 +29,12 @@ import os.path
 
 from commoncode.testcase import FileBasedTesting
 
-from packagedcode import models
-from packagedcode.recognize import recognize_package
-from packagedcode import rpm
+import packagedcode
 from packagedcode import maven
+from packagedcode import npm
+from packagedcode import phpcomposer
+from packagedcode import rpm
+from packagedcode.recognize import recognize_package
 
 
 class TestRecognize(FileBasedTesting):
@@ -41,7 +43,7 @@ class TestRecognize(FileBasedTesting):
     def test_recognize_package_deb(self):
         test_file = self.get_test_loc('archives/adduser_3.112ubuntu1_all.deb')
         package = recognize_package(test_file)
-        assert isinstance(package, models.DebianPackage)
+        assert isinstance(package, packagedcode.models.DebianPackage)
 
     def test_recognize_package_rpm(self):
         test_file = self.get_test_loc('archives/alfandega-2.2-2.rh80.src.rpm')
@@ -51,37 +53,37 @@ class TestRecognize(FileBasedTesting):
     def test_recognize_package_cab(self):
         test_file = self.get_test_loc('archives/basic.cab')
         package = recognize_package(test_file)
-        assert isinstance(package, models.CabPackage)
+        assert isinstance(package, packagedcode.models.CabPackage)
 
     def test_recognize_package_rar(self):
         test_file = self.get_test_loc('archives/basic.rar')
         package = recognize_package(test_file)
-        assert isinstance(package, models.RarPackage)
+        assert isinstance(package, packagedcode.models.RarPackage)
 
     def test_recognize_package_zip(self):
         test_file = self.get_test_loc('archives/myarch-2.3.0.7z')
         package = recognize_package(test_file)
-        assert isinstance(package, models.PlainZipPackage)
+        assert isinstance(package, packagedcode.models.PlainZipPackage)
 
     def test_recognize_package_gem(self):
         test_file = self.get_test_loc('archives/mysmallidea-address_standardization-0.4.1.gem')
         package = recognize_package(test_file)
-        assert isinstance(package, models.RubyGem)
+        assert isinstance(package, packagedcode.models.RubyGem)
 
     def test_recognize_package_jar(self):
         test_file = self.get_test_loc('archives/simple.jar')
         package = recognize_package(test_file)
-        assert isinstance(package, models.JavaJar)
+        assert isinstance(package, packagedcode.models.JavaJar)
 
     def test_recognize_package_iso(self):
         test_file = self.get_test_loc('archives/small.iso')
         package = recognize_package(test_file)
-        assert isinstance(package, models.IsoImagePackage)
+        assert isinstance(package, packagedcode.models.IsoImagePackage)
 
     def test_recognize_package_tarball(self):
         test_file = self.get_test_loc('archives/tarred_bzipped.tar.bz2')
         package = recognize_package(test_file)
-        assert isinstance(package, models.TarPackage)
+        assert isinstance(package, packagedcode.models.TarPackage)
 
     def test_recognize_cpan_manifest_is_not_yet_supported(self):
         test_file = self.get_test_loc('cpan/MANIFEST')
@@ -97,3 +99,13 @@ class TestRecognize(FileBasedTesting):
         test_file = self.get_test_loc('maven2/urwerk_pom.xml')
         package = recognize_package(test_file)
         assert isinstance(package, maven.MavenPomPackage)
+
+    def test_recognize_npm(self):
+        test_file = self.get_test_loc('recon/package.json')
+        package = recognize_package(test_file)
+        assert isinstance(package, npm.NpmPackage)
+
+    def test_recognize_composer(self):
+        test_file = self.get_test_loc('recon/composer.json')
+        package = recognize_package(test_file)
+        assert isinstance(package, phpcomposer.PHPComposerPackage)

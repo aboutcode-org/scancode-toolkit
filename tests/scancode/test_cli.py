@@ -656,6 +656,17 @@ def test_scan_progress_display_is_not_damaged_with_long_file_names_orig(monkeypa
     assert expected2 in result.output
 
 
+def test_scan_does_scan_php_composer():
+    test_file = test_env.get_test_loc('composer/composer.json')
+    expected_file = test_env.get_test_loc('composer/composer.expected.json')
+    result_file = test_env.get_temp_file('results.json')
+
+    result = run_scan_click(['--package', test_file, result_file])
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    check_json_scan(expected_file, result_file)
+
+
 class TestFixedWidthFilename(TestCase):
 
     def test_fixed_width_file_name_with_file_name_larger_than_max_length_is_shortened(self):
