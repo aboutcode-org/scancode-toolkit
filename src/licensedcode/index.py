@@ -62,6 +62,7 @@ modules that implement a matching strategy.
 # Tracing flags
 TRACE = False
 
+TRACE_CANDIDATES = False
 TRACE_QUERY_RUN = False
 TRACE_QUERY_RUN_SIMPLE = False
 
@@ -154,8 +155,6 @@ class LicenseIndex(object):
         'small_rids',
         'negative_rids',
         'false_positive_rids',
-
-        'false_positive_rid_by_hash',
         'largest_false_positive_length',
 
         'optimized',
@@ -201,7 +200,6 @@ class LicenseIndex(object):
         # (low_tids_mset, high_tids_mset)
         self.tids_msets_by_rid = []
 
-        # ---
         # mapping of hash -> single rid : duplicated rules are not allowed
         self.rid_by_hash = {}
 
@@ -217,8 +215,6 @@ class LicenseIndex(object):
 
         # length of the largest false_positive rule
         self.largest_false_positive_length = 0
-        # mapping of hash -> rid for false positive rule tokens hashes
-        self.false_positive_rid_by_hash = {}
 
         # if True the index has been optimized and becomes read only:
         # no new rules can be added
@@ -273,7 +269,7 @@ class LicenseIndex(object):
                 self.false_positive_rids.add(rid)
                 if rul_len > self.largest_false_positive_length:
                     self.largest_false_positive_length = rul_len
-            elif rul.negative():
+            elif rul.negative:
                 # negative rules are matched early and their exactly matched
                 # tokens are removed from the token stream
                 self.negative_rids.add(rid)
@@ -334,13 +330,10 @@ class LicenseIndex(object):
             rule_hash = match_hash.index_hash(rule_token_ids)
             dupe_rules_by_hash[rule_hash].append(rule)
 
-            if rule.false_positive:
-                # FP rules are not used for any matching
-                # there is nothing else for these rules
-                self.false_positive_rid_by_hash[rule_hash] = rid
-            else:
-                # negative, small and regular
+            if rule.negative:
+                negative_automaton_add(tids=rule_token_ids, rid=rid)
 
+            else:
                 # update hashes index
                 self.rid_by_hash[rule_hash] = rid
 
@@ -361,19 +354,14 @@ class LicenseIndex(object):
                 self.tids_sets_by_rid[rid] = rlow_set, rhigh_set
                 self.tids_msets_by_rid[rid] = rlow_mset, rhigh_mset
 
-                # populate automatons...
-                if rule.negative():
-                    # ... with only the whole rule tokens sequence
-                    negative_automaton_add(tids=rule_token_ids, rid=rid)
-                else:
-                    # ... or with the whole rule tokens sequence
-                    rules_automaton_add(tids=rule_token_ids, rid=rid)
-                    # ... and ngrams: compute ngrams and populate the automaton with ngrams
-                    if USE_AHO_FRAGMENTS and rule.minimum_coverage < 100 and len(rule_token_ids) > NGRAM_LEN:
-                        all_ngrams = tokenize.ngrams(rule_token_ids, ngram_length=NGRAM_LEN)
-                        selected_ngrams = tokenize.select_ngrams(all_ngrams, with_pos=True)
-                        for pos, ngram in selected_ngrams:
-                            rules_automaton_add(tids=ngram, rid=rid, start=pos)
+                # populate automaton with the whole rule tokens sequence
+                rules_automaton_add(tids=rule_token_ids, rid=rid)
+                # ... and ngrams: compute ngrams and populate the automaton with ngrams
+                if USE_AHO_FRAGMENTS and rule.minimum_coverage < 100 and len(rule_token_ids) > NGRAM_LEN:
+                    all_ngrams = tokenize.ngrams(rule_token_ids, ngram_length=NGRAM_LEN)
+                    selected_ngrams = tokenize.select_ngrams(all_ngrams, with_pos=True)
+                    for pos, ngram in selected_ngrams:
+                        rules_automaton_add(tids=ngram, rid=rid, start=pos)
 
                 # update rule thresholds
                 rule.low_unique = match_set.tids_set_counter(rlow_set)
@@ -389,7 +377,6 @@ class LicenseIndex(object):
 
         # sparser dicts for faster lookup
         sparsify(self.rid_by_hash)
-        sparsify(self.false_positive_rid_by_hash)
 
         dupe_rules = [rules for rules in dupe_rules_by_hash.values() if len(rules) > 1]
         if dupe_rules:
@@ -399,9 +386,12 @@ class LicenseIndex(object):
 
         self.optimized = True
 
-    def debug_matches(self, matches, message, location=None, query_string=None, with_text=False):
+    def debug_matches(self, matches, message, location=None, query_string=None, with_text=False, query=None):
         if TRACE or TRACE_NEGATIVE:
             logger_debug(message + ':', len(matches))
+            if query:
+                # set line early to ease debugging
+                match.set_lines(matches, query.line_by_pos)
 
             if TRACE_MATCHES or TRACE_NEGATIVE:
                 map(logger_debug, matches)
@@ -411,10 +401,8 @@ class LicenseIndex(object):
                 for m in matches:
                     logger_debug(m)
                     qt, it = match.get_texts(m, location, query_string, self)
-                    print('  MATCHED QUERY TEXT')
-                    print(qt)
-                    print('  MATCHED RULE TEXT')
-                    print(it)
+                    print('  MATCHED QUERY TEXT:', qt)
+                    print('  MATCHED RULE TEXT:', it)
                     print()
 
     def match(self, location=None, query_string=None, min_score=0, detect_negative=True):
@@ -455,22 +443,22 @@ class LicenseIndex(object):
             return hash_matches
 
         # negative rules exact matching
-        negative = []
+        negative_matches = []
         # note: detect_negative is false only to test negative rules detection proper
         if detect_negative and self.negative_rids:
             if TRACE: logger_debug('#match: NEGATIVE')
-            negative = self.negative_match(whole_query_run)
-            for neg in negative:
-                if TRACE_NEGATIVE: self.debug_matches(negative, '   ##match: NEGATIVE subtracting #:', location, query_string)
+            negative_matches = self.negative_match(whole_query_run)
+            for neg in negative_matches:
+                if TRACE_NEGATIVE: self.debug_matches(negative_matches, '   ##match: NEGATIVE subtracting #:', location, query_string)
                 whole_query_run.subtract(neg.qspan)
-            if TRACE_NEGATIVE: logger_debug('     #match: NEGATIVE found', negative)
+            if TRACE_NEGATIVE: logger_debug('     #match: NEGATIVE found', negative_matches)
 
         # exact matches
         if TRACE_EXACT: logger_debug('#match: EXACT')
         exact_matches = match_aho.exact_match(self, whole_query_run, self.rules_automaton)
         if TRACE_EXACT: self.debug_matches(exact_matches, '  #match: EXACT matches#:', location, query_string)
 
-        exact_matches, exact_discarded = match.refine_matches(exact_matches, self, query=qry)
+        exact_matches, exact_discarded = match.refine_matches(exact_matches, self, query=qry, filter_false_positive=False)
 
         if TRACE_EXACT: self.debug_matches(exact_matches, '   #match: ===> exact matches refined')
         if TRACE_EXACT: self.debug_matches(exact_discarded, '   #match: ===> exact matches discarded')
@@ -495,7 +483,7 @@ class LicenseIndex(object):
             for qrnum, query_run in enumerate(qry.query_runs, 1):
                 if TRACE_QUERY_RUN_SIMPLE:
                     logger_debug('#match: ===> processing query run #:', qrnum)
-                    logger_debug('  #match:', query_run)
+                    logger_debug('  #match:query_run:', query_run)
 
                 if not query_run.is_matchable(include_low=True):
                     if TRACE: logger_debug('#match: query_run NOT MATCHABLE')
@@ -516,16 +504,17 @@ class LicenseIndex(object):
                 run_matches = []
                 candidates = match_set.compute_candidates(query_run, self, rules_subset=rules_subset, top=40)
 
-                if TRACE_QUERY_RUN: logger_debug('      #match: query_run: number of candidates for seq match #', len(candidates))
+                if TRACE_CANDIDATES: logger_debug('      #match: query_run: number of candidates for seq match #', len(candidates))
 
                 for candidate_num, candidate in enumerate(candidates):
-                    if TRACE_QUERY_RUN: 
-                        can1, can2 =candidate
-                        logger_debug('         #match: query_run: seq matching candidate#:', candidate_num, 'candidate:', can1)
+                    if TRACE_QUERY_RUN:
+                        _, canrule, _ = candidate
+                        logger_debug('         #match: query_run: seq matching candidate#:', candidate_num, 'candidate:', canrule)
                     start_offset = 0
                     while True:
                         rule_matches = match_seq.match_sequence(self, candidate, query_run, start_offset=start_offset)
-                        if TRACE_QUERY_RUN and rule_matches: self.debug_matches(rule_matches, '           #match: query_run: seq matches for candidate')
+                        if TRACE_QUERY_RUN and rule_matches:
+                            self.debug_matches(rule_matches, '           #match: query_run: seq matches for candidate', with_text=True, query=qry)
                         if not rule_matches:
                             break
                         else:
@@ -539,7 +528,7 @@ class LicenseIndex(object):
                                 break
 
                 ############################################################################
-                if TRACE_QUERY_RUN: self.debug_matches(run_matches, '    #match: ===> Query run matches', location, query_string, with_text=True)
+                if TRACE_QUERY_RUN: self.debug_matches(run_matches, '    #match: ===> Query run matches', location, query_string, with_text=True, query=qry)
 
                 run_matches = match.merge_matches(run_matches, max_dist=MAX_DIST)
                 matches.extend(run_matches)
@@ -553,7 +542,7 @@ class LicenseIndex(object):
             logger_debug('!!!!!!!!!!!!!!!!!!!!REFINING!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
             self.debug_matches(matches, '#match: ALL matches from all query runs', location, query_string)
 
-            matches, whole_discarded = match.refine_matches(matches, idx=self, query=qry, min_score=min_score, max_dist=MAX_DIST // 2)
+            matches, whole_discarded = match.refine_matches(matches, idx=self, query=qry, min_score=min_score, max_dist=MAX_DIST // 2, filter_false_positive=True)
             if TRACE_MATCHES_DISCARD:
                 discarded.extend(whole_discarded)
             matches.sort()
@@ -561,14 +550,15 @@ class LicenseIndex(object):
             self.debug_matches(matches, '#match: FINAL MERGED', location, query_string)
             if TRACE_MATCHES_DISCARD: self.debug_matches(discarded, '#match: FINAL DISCARDED', location, query_string)
 
-        self.debug_matches(matches, '#match: FINAL MATCHES', location, query_string, with_text=True)
+        self.debug_matches(matches, '#match: FINAL MATCHES', location, query_string, with_text=True, query=qry)
 
         return matches
 
     def negative_match(self, query_run):
         """
-        Match a query run exactly against negative, license-less rules.
-        Return a list of negative LicenseMatch for a query run, subtract these matches from the query run.
+        Match a query run exactly against negative rules. Return a list
+        of negative LicenseMatch for a query run, subtract these matches
+        from the query run.
         """
         matches = match_aho.exact_match(self, query_run, self.negative_automaton)
 
@@ -601,8 +591,6 @@ class LicenseIndex(object):
         'negative_rids',
         'small_rids',
         'false_positive_rids',
-
-        'false_positive_rid_by_hash',
         ]
 
         plen = max(map(len, fields)) + 1

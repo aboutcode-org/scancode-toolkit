@@ -1,0 +1,12 @@
+ Copyright
+ ---------
+ The driver is free software. It is protected by the GNU General Public
+ License (GPL). Please read it, before using this driver. It should be
+ included in your kernel sources and with your distribution. It carries the
+ filename COPYING. If you don't have it, please ask me to send you one by
+ email.
+ Note: The GNU GPL says also something about warranty and liability. 
+ Please be aware the following: While we do my best to provide a working and
+ reliable driver, there is a chance, that it will kill your valuable data. 
+ We refuse to take any responsibility for that. The driver is provided as-is
+ and YOU USE IT AT YOUR OWN RESPONSIBILITY.

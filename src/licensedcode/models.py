@@ -501,7 +501,7 @@ def build_rules_from_licenses(licenses):
                        minimum_coverage=minimum_coverage, is_license=True)
 
 
-def load_rules(rules_data_dir=rules_data_dir):
+def load_rules(rules_data_dir=rules_data_dir, load_notes=False):
     """
     Return an iterable of rules loaded from rule files.
     """
@@ -515,7 +515,8 @@ def load_rules(rules_data_dir=rules_data_dir):
         if data_file.endswith('.yml'):
             base_name = file_base_name(data_file)
             rule_file = join(rules_data_dir, base_name + '.RULE')
-            yield Rule(data_file=data_file, text_file=rule_file)
+            yield Rule(data_file=data_file, text_file=rule_file,
+                       load_notes=load_notes)
 
             # accumulate sets to ensures we do not have illegal names or extra
             # orphaned files
@@ -561,7 +562,7 @@ class Rule(object):
     __slots__ = (
         'rid', 'identifier',
          'licenses', 'license_choice', 'license', 'licensing_identifier',
-         'false_positive',
+         'false_positive', 'negative',
          'notes',
          'data_file', 'text_file', '_text',
          'length', 'low_length', 'high_length', '_thresholds',
@@ -572,7 +573,7 @@ class Rule(object):
 
     def __init__(self, data_file=None, text_file=None, licenses=None,
                  license_choice=False, notes=None, minimum_coverage=0,
-                 is_license=False, _text=None):
+                 is_license=False, _text=None, load_notes=False):
 
         ###########
         # FIXME: !!! TWO RULES MAY DIFFER BECAUSE THEY ARE UPDATED BY INDEXING
@@ -582,6 +583,7 @@ class Rule(object):
         self.rid = None
 
         if not text_file:
+            # for tests only
             assert _text
             self.identifier = '_tst_' + str(len(_text))
         else:
@@ -589,6 +591,7 @@ class Rule(object):
 
         # list of valid license keys
         self.licenses = licenses or []
+
         # True if the rule is for a choice of all licenses. default to False
         self.license_choice = license_choice
 
@@ -600,6 +603,8 @@ class Rule(object):
         # should be unified with the relevance: a false positive match is a a match
         # with a relevance of zero
         self.false_positive = False
+
+        self.negative = False
 
         # is this rule text only to be matched with a minimum coverage?
         self.minimum_coverage = minimum_coverage
@@ -623,7 +628,7 @@ class Rule(object):
         self.data_file = data_file
         if data_file:
             try:
-                self.load()
+                self.load(load_notes=load_notes)
             except Exception as e:
                 message = 'While loading: %(data_file)r' % locals() + e.message
                 print(message)
@@ -688,7 +693,7 @@ class Rule(object):
         elif self.text_file and exists(self.text_file):
             # IMPORTANT: use the same process as query text loading for symmetry
             lines = text_lines(self.text_file, demarkup=False)
-            return ' '.join(lines)
+            return ''.join(lines)
         else:
             raise Exception('Inconsistent rule text for:', self.identifier)
 
@@ -704,8 +709,10 @@ class Rule(object):
         keys = self.licenses
         choice = self.license_choice
         fp = self.false_positive
+        neg = self.negative
         minimum_coverage = self.minimum_coverage
-        return 'Rule(%(idf)r, lics=%(keys)r, fp=%(fp)r, minimum_coverage=%(minimum_coverage)r, %(text)r)' % locals()
+        return ('Rule(%(idf)r, lics=%(keys)r, fp=%(fp)r, neg=%(neg)r, '
+                'minimum_coverage=%(minimum_coverage)r, %(text)r)' % locals())
 
     def same_licensing(self, other):
         """
@@ -720,14 +727,6 @@ class Rule(object):
         """
         # TODO: include license expressions
         return set(self.licensing_identifier).issuperset(other.licensing_identifier)
-
-    def negative(self):
-        """
-        Return True if this Rule does not point to real licenses and is
-        therefore a "negative" rule denoting that a match to this rule should be
-        ignored.
-        """
-        return not self.licenses and not self.false_positive
 
     def small(self):
         """
@@ -816,12 +815,14 @@ class Rule(object):
             data['license'] = self.license
         if self.false_positive:
             data['false_positive'] = self.false_positive
+        if self.negative:
+            data['negative'] = self.negative
         if self.has_stored_relevance:
             data['relevance'] = self.relevance
         if self.minimum_coverage:
             data['minimum_coverage'] = self.minimum_coverage
         if self.notes:
-            data['notes'] = self.note
+            data['notes'] = self.notes
         return data
 
     def dump(self):
@@ -834,8 +835,9 @@ class Rule(object):
             as_yaml = saneyaml.dump(self.to_dict())
             with codecs.open(self.data_file, 'wb', encoding='utf-8') as df:
                 df.write(as_yaml)
+            text = self.text()
             with codecs.open(self.text_file, 'wb', encoding='utf-8') as tf:
-                tf.write(self.text())
+                tf.write(text)
 
     def load(self, load_notes=False):
         """
@@ -859,6 +861,7 @@ class Rule(object):
         self.license_choice = data.get('license_choice', False)
         self.license = data.get('license')
         self.false_positive = data.get('false_positive', False)
+        self.negative = data.get('negative', False)
         relevance = data.get('relevance')
         if relevance is not None:
             # Keep track if we have a stored relevance of not.
@@ -904,7 +907,7 @@ class Rule(object):
 
         # case for negative rules with no license (and are not an FP)
         # they do not have licenses and their matches are never returned
-        if self.negative():
+        if self.negative:
             self.relevance = 0
             return
 

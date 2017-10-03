@@ -140,11 +140,6 @@ class TestRule(FileBasedTesting):
         rule_tokens = list(rule.tokens(lower=False))
         assert ['I', 'hereby', 'abandon', 'any', 'and', 'Release', 'all', 'of', 'source', 'code', 'of', 'his'] == rule_tokens
 
-    def test_negative(self):
-        assert models.Rule(_text='test_text').negative()
-        assert not models.Rule(_text='test_text', licenses=['mylicense']).negative()
-        assert models.Rule(_text='test_text', licenses=[]).negative()
-
     def test_Thresholds(self):
         r1_text = 'licensed under the GPL, licensed under the GPL'
         r1 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r1_text)
@@ -181,7 +176,8 @@ class TestRule(FileBasedTesting):
         assert 0 == rule.relevance
 
     def test_compute_relevance_is_zero_for_negative(self):
-        rule = models.Rule(_text='1', licenses=[])
+        rule = models.Rule(_text='1')
+        rule.negative = True
         rule.relevance = 13
         rule.has_stored_relevance = False
         rule.false_positive = False
