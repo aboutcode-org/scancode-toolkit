@@ -4012,9 +4012,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = ['(c) Copyright 2000 Paolo Scaffardi, AIRVENT SAM s.p.a - RIMINI(ITALY), arsenio@tin.it']
         check_detection(expected, test_file)
 
-    @expectedFailure
-    def test_copyright_should_not_detected_in_apache_html(self):
-        # This should not detect a copyright see #191
+    def test_copyright_should_not_be_detected_in_apache_html(self):
         test_file = self.get_test_loc('copyrights/copyright_apache_in_html.html')
         expected = []
         check_detection(expected, test_file)
