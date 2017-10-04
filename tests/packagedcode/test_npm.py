@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -30,6 +30,7 @@ import os.path
 from packagedcode import npm
 
 from packages_test_utils import PackageTester
+import schematics
 
 
 class TestNpm(PackageTester):
@@ -77,14 +78,14 @@ class TestNpm(PackageTester):
         test_file = self.get_test_loc('npm/from_tarball/package.json')
         expected_loc = self.get_test_loc('npm/from_tarball/package.json.expected')
         package = npm.parse(test_file)
-        self.check_package(package, expected_loc)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
         package.validate()
 
     def test_parse_basic(self):
         test_file = self.get_test_loc('npm/basic/package.json')
         expected_loc = self.get_test_loc('npm/basic/package.json.expected')
         package = npm.parse(test_file)
-        self.check_package(package, expected_loc)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
         package.validate()
 
     def test_parse_invalid_json(self):
@@ -92,4 +93,52 @@ class TestNpm(PackageTester):
         try:
             npm.parse(test_file)
         except ValueError, e:
-            assert 'No JSON object could be decoded' == e.message
+            assert 'No JSON object could be decoded' in str(e)
+
+    def test_parse_as_installed(self):
+        test_file = self.get_test_loc('npm/as_installed/package.json')
+        expected_loc = self.get_test_loc('npm/as_installed/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
+        try:
+            package.validate()
+        except schematics.models.ModelValidationError:
+            pass
+
+    def test_parse_nodep(self):
+        test_file = self.get_test_loc('npm/nodep/package.json')
+        expected_loc = self.get_test_loc('npm/nodep/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
+        package.validate()
+
+    def test_parse_from_npmjs(self):
+        test_file = self.get_test_loc('npm/from_npmjs/package.json')
+        expected_loc = self.get_test_loc('npm/from_npmjs/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
+        try:
+            package.validate()
+        except schematics.models.ModelValidationError:
+            pass
+
+    def test_parse_from_uri_vcs(self):
+        test_file = self.get_test_loc('npm/uri_vcs/package.json')
+        expected_loc = self.get_test_loc('npm/uri_vcs/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
+        package.validate()
+
+    def test_parse_from_urls_dict_legacy_is_ignored(self):
+        test_file = self.get_test_loc('npm/urls_dict/package.json')
+        expected_loc = self.get_test_loc('npm/urls_dict/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
+        package.validate()
+
+    def test_parse_does_not_crash_if_partial_repo_url(self):
+        test_file = self.get_test_loc('npm/repo_url/package.json')
+        expected_loc = self.get_test_loc('npm/repo_url/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
+        package.validate()

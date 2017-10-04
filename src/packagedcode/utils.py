@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -67,16 +67,27 @@ def parse_repo_url(repo_url):
         https://gitlab.com/foo/private.git
         git@gitlab.com:foo/private.git
     """
+    if not repo_url or not isinstance(repo_url, basestring):
+        return
 
+    repo_url = repo_url.strip()
+    if not repo_url:
+        return
+
+    # TODO: If we match http and https, we may should add more check in
+    # case if the url is not a repo one. For example, check the domain
+    # name in the url...
     is_vcs_url = repo_url.startswith(VCS_URLS)
     if is_vcs_url:
-        # TODO: If we match http and https, we may should add more check in case if the url is not a repo one.
-        # For example, check the domain name in the url...
         return repo_url
 
     if repo_url.startswith('git@'):
-        left, right = repo_url.split('@', 1)
-        host, repo = right.split(':', 1)
+        left, _, right = repo_url.partition('@')
+        if ':' in repo_url:
+            host, _, repo = right.partition(':')
+        else:
+            # git@github.com/Filirom1/npm2aur.git
+            host, _, repo = right.partition('/')
         if any(h in host for h in ['github', 'bitbucket', 'gitlab']):
             return 'https://%(host)s/%(repo)s' % locals()
         else:
@@ -89,7 +100,7 @@ def parse_repo_url(repo_url):
             'gitlab': 'https://gitlab.com/%(repo)s',
             'gist': 'https://gist.github.com/%(repo)s',
         }
-        hoster, repo = repo_url.split(':', 1)
+        hoster, _, repo = repo_url.partition(':')
         return hoster_urls[hoster] % locals()
     elif len(repo_url.split('/')) == 2:
         # implicit github

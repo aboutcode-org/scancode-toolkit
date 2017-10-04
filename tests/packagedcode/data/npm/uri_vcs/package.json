@@ -1,0 +1,33 @@
+{
+  "author": "Filirom1 <filirom1@gmail.com>",
+  "name": "npm2aur",
+  "description": "Sync AUR with NPM packages",
+  "version": "0.1.3",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/Filirom1/npm2aur.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "./lib/npm2aur.js",
+  "bin": {
+    "npm2aur": "bin/npm2aur"
+  },
+  "engines": {
+    "node": "~0.6.0"
+  },
+  "dependencies": {
+    "optimist": "0.2.x",
+    "colors": "0.5.x",
+    "coffee-script": "~1.3.3",
+    "underscore": "~1.3.3",
+    "npm": "~1.1.32",
+    "npm2arch": "~0.1.10",
+    "aur": "~0.1.2"
+  },
+  "devDependencies": {}
+}

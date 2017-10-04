@@ -1,0 +1,2319 @@
+{
+  "type": "npm",
+  "name": "npm",
+  "version": "2.13.5",
+  "primary_language": "JavaScript",
+  "packaging": null,
+  "summary": "a package manager for JavaScript",
+  "description": null,
+  "payload_type": null,
+  "size": null,
+  "release_date": null,
+  "authors": [
+    {
+      "type": "person",
+      "name": "Isaac Z. Schlueter",
+      "email": "i@izs.me",
+      "url": "http://blog.izs.me"
+    }
+  ],
+  "maintainers": [
+    {
+      "type": "person",
+      "name": "isaacs",
+      "email": "isaacs@npmjs.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "othiym23",
+      "email": "ogd@aoaioxxysz.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "iarna",
+      "email": "me@re-becca.org",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "zkat",
+      "email": "kat@sykosomatic.org",
+      "url": null
+    }
+  ],
+  "contributors": [
+    {
+      "type": "person",
+      "name": "Isaac Z. Schlueter",
+      "email": "i@izs.me",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Steve Steiner",
+      "email": "ssteinerX@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Mikeal Rogers",
+      "email": "mikeal.rogers@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Aaron Blohowiak",
+      "email": "aaron.blohowiak@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Martyn Smith",
+      "email": "martyn@dollyfish.net.nz",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Charlie Robbins",
+      "email": "charlie.robbins@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Francisco Treacy",
+      "email": "francisco.treacy@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Cliffano Subagio",
+      "email": "cliffano@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Christian Eager",
+      "email": "christian.eager@nokia.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Dav Glass",
+      "email": "davglass@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Alex K. Wolfe",
+      "email": "alexkwolfe@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "James Sanders",
+      "email": "jimmyjazz14@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Reid Burke",
+      "email": "me@reidburke.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Arlo Breault",
+      "email": "arlolra@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Timo Derstappen",
+      "email": "teemow@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Bart Teeuwisse",
+      "email": "bart.teeuwisse@thecodemill.biz",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Ben Noordhuis",
+      "email": "info@bnoordhuis.nl",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Tor Valamo",
+      "email": "tor.valamo@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Whyme.Lyu",
+      "email": "5longluna@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Olivier Melcher",
+      "email": "olivier.melcher@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Toma\u017e Muraus",
+      "email": "kami@k5-storitve.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Evan Meagher",
+      "email": "evan.meagher@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Orlando Vazquez",
+      "email": "ovazquez@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Kai Chen",
+      "email": "kaichenxyz@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "George Miroshnykov",
+      "email": "gmiroshnykov@lohika.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Geoff Flarity",
+      "email": "geoff.flarity@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Max Goodman",
+      "email": "c@chromakode.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Pete Kruckenberg",
+      "email": "pete@kruckenberg.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Laurie Harper",
+      "email": "laurie@holoweb.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Chris Wong",
+      "email": "chris@chriswongstudio.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Scott Bronson",
+      "email": "brons_github@rinspin.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Federico Romero",
+      "email": "federomero@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Visnu Pitiyanuvath",
+      "email": "visnupx@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Irakli Gozalishvili",
+      "email": "rfobic@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Mark Cahill",
+      "email": "mark@tiemonster.info",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Tony",
+      "email": "zearin@gonk.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Iain Sproat",
+      "email": "iainsproat@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Trent Mick",
+      "email": "trentm@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Felix Geisendo\u0308rfer",
+      "email": "felix@debuggable.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jameson Little",
+      "email": "t.jameson.little@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Conny Brunnkvist",
+      "email": "conny@fuchsia.se",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Will Elwood",
+      "email": "w.elwood08@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Dean Landolt",
+      "email": "dean@deanlandolt.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Oleg Efimov",
+      "email": "efimovov@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Martin Cooper",
+      "email": "mfncooper@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jann Horn",
+      "email": "jannhorn@googlemail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Andrew Bradley",
+      "email": "cspotcode@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Maciej Ma\u0142ecki",
+      "email": "me@mmalecki.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Stephen Sugden",
+      "email": "glurgle@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Michael Budde",
+      "email": "mbudde@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jason Smith",
+      "email": "jhs@iriscouch.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Gautham Pai",
+      "email": "buzypi@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "David Trejo",
+      "email": "david.daniel.trejo@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Paul Vorbach",
+      "email": "paul@vorb.de",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "George Ornbo",
+      "email": "george@shapeshed.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Tim Oxley",
+      "email": "secoif@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Tyler Green",
+      "email": "tyler.green2@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Dave Pacheco",
+      "email": "dap@joyent.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Danila Gerasimov",
+      "email": "danila.gerasimov@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Rod Vagg",
+      "email": "rod@vagg.org",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Christian Howe",
+      "email": "coderarity@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Andrew Lunny",
+      "email": "alunny@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Henrik Hodne",
+      "email": "dvyjones@binaryhex.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Adam Blackburn",
+      "email": "regality@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Kris Windham",
+      "email": "kriswindham@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jens Grunert",
+      "email": "jens.grunert@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Joost-Wim Boekesteijn",
+      "email": "joost-wim@boekesteijn.nl",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Dalmais Maxence",
+      "email": "root@ip-10-195-202-5.ec2.internal",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Marcus Ekwall",
+      "email": "marcus.ekwall@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Aaron Stacy",
+      "email": "aaron.r.stacy@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Phillip Howell",
+      "email": "phowell@cothm.org",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Domenic Denicola",
+      "email": "domenic@domenicdenicola.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "James Halliday",
+      "email": "mail@substack.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jeremy Cantrell",
+      "email": "jmcantrell@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Ribettes",
+      "email": "patlogan29@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Don Park",
+      "email": "donpark@docuverse.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Einar Otto Stangvik",
+      "email": "einaros@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Kei Son",
+      "email": "heyacct@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Nicolas Morel",
+      "email": "marsup@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Mark Dube",
+      "email": "markisdee@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Nathan Rajlich",
+      "email": "nathan@tootallnate.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Maxim Bogushevich",
+      "email": "boga1@mail.ru",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Meaglin",
+      "email": "Meaglin.wasabi@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Ben Evans",
+      "email": "ben@bensbit.co.uk",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Nathan Zadoks",
+      "email": "nathan@nathan7.eu",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Brian White",
+      "email": "mscdex@mscdex.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jed Schmidt",
+      "email": "tr@nslator.jp",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Ian Livingstone",
+      "email": "ianl@cs.dal.ca",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Patrick Pfeiffer",
+      "email": "patrick@buzzle.at",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Paul Miller",
+      "email": "paul@paulmillr.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Ryan Emery",
+      "email": "seebees@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Carl Lange",
+      "email": "carl@flax.ie",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jan Lehnardt",
+      "email": "jan@apache.org",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Stuart P. Bentley",
+      "email": "stuart@testtrack4.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Johan Sk\u00f6ld",
+      "email": "johan@skold.cc",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Stuart Knightley",
+      "email": "stuart@stuartk.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Niggler",
+      "email": "nirk.niggler@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Paolo Fragomeni",
+      "email": "paolo@async.ly",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jaakko Manninen",
+      "email": "jaakko@rocketpack.fi",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Luke Arduini",
+      "email": "luke.arduini@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Larz Conwell",
+      "email": "larz@larz-laptop.(none)",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Marcel Klehr",
+      "email": "mklehr@gmx.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Robert Kowalski",
+      "email": "rok@kowalski.gd",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Forbes Lindesay",
+      "email": "forbes@lindesay.co.uk",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Vaz Allen",
+      "email": "vaz@tryptid.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jake Verbaten",
+      "email": "raynos2@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Schabse Laks",
+      "email": "Dev@SLaks.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Florian Margaine",
+      "email": "florian@margaine.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Johan Nordberg",
+      "email": "its@johan-nordberg.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Ian Babrou",
+      "email": "ibobrik@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Di Wu",
+      "email": "dwu@palantir.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Mathias Bynens",
+      "email": "mathias@qiwi.be",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Matt McClure",
+      "email": "matt.mcclure@mapmyfitness.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Matt Lunn",
+      "email": "matt@mattlunn.me.uk",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Alexey Kreschuk",
+      "email": "akrsch@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "elisee",
+      "email": "elisee@sparklin.org",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Robert Gieseke",
+      "email": "robert.gieseke@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Franc\u0327ois Frisch",
+      "email": "francoisfrisch@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Trevor Burnham",
+      "email": "tburnham@hubspot.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Alan Shaw",
+      "email": "alan@freestyle-developments.co.uk",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "TJ Holowaychuk",
+      "email": "tj@vision-media.ca",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Nicholas Kinsey",
+      "email": "pyro@feisty.io",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Paulo Cesar",
+      "email": "pauloc062@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Elan Shanker",
+      "email": "elan.shanker@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jon Spencer",
+      "email": "jon@jonspencer.ca",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jason Diamond",
+      "email": "jason@diamond.name",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Maximilian Antoni",
+      "email": "mail@maxantoni.de",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Thom Blake",
+      "email": "tblake@brightroll.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jess Martin",
+      "email": "jessmartin@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Spain Train",
+      "email": "michael.spainhower@opower.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Alex Rodionov",
+      "email": "p0deje@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Matt Colyer",
+      "email": "matt@colyer.name",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Evan You",
+      "email": "yyx990803@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "bitspill",
+      "email": "bitspill+github@bitspill.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Gabriel Falkenberg",
+      "email": "gabriel.falkenberg@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Alexej Yaroshevich",
+      "email": "alex@qfox.ru",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Quim Calpe",
+      "email": "quim@kalpe.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Steve Mason",
+      "email": "stevem@brandwatch.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Wil Moore III",
+      "email": "wil.moore@wilmoore.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Sergey Belov",
+      "email": "peimei@ya.ru",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Tom Huang",
+      "email": "hzlhu.dargon@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "CamilleM",
+      "email": "camille.moulin@alterway.fr",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "S\u00e9bastien Santoro",
+      "email": "dereckson@espace-win.org",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Evan Lucas",
+      "email": "evan@btc.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Quinn Slack",
+      "email": "qslack@qslack.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Alex Kocharin",
+      "email": "alex@kocharin.ru",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Daniel Santiago",
+      "email": "daniel.santiago@highlevelwebs.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Denis Gladkikh",
+      "email": "outcoldman@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Andrew Horton",
+      "email": "andrew.j.horton@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Zeke Sikelianos",
+      "email": "zeke@sikelianos.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Dylan Greene",
+      "email": "dylang@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Franck Cuny",
+      "email": "franck.cuny@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Yeonghoon Park",
+      "email": "sola92@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Rafael de Oleza",
+      "email": "rafa@spotify.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Mikola Lysenko",
+      "email": "mikolalysenko@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Yazhong Liu",
+      "email": "yorkiefixer@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Neil Gentleman",
+      "email": "ngentleman@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Kris Kowal",
+      "email": "kris.kowal@cixar.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Alex Gorbatchev",
+      "email": "alex.gorbatchev@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Shawn Wildermuth",
+      "email": "shawn@wildermuth.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Wesley de Souza",
+      "email": "wesleywex@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "yoyoyogi",
+      "email": "yogesh.k@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "J. Tangelder",
+      "email": "j.tangelder@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jean Lauliac",
+      "email": "jean@lauliac.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Andrey Kislyuk",
+      "email": "kislyuk@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Thorsten Lorenz",
+      "email": "thlorenz@gmx.de",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Julian Gruber",
+      "email": "julian@juliangruber.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Benjamin Coe",
+      "email": "bencoe@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Alex Ford",
+      "email": "Alex.Ford@CodeTunnel.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Matt Hickford",
+      "email": "matt.hickford@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Sean McGivern",
+      "email": "sean.mcgivern@rightscale.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "C J Silverio",
+      "email": "ceejceej@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Robin Tweedie",
+      "email": "robin@songkick.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Miroslav Bajto\u0161",
+      "email": "miroslav@strongloop.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "David Glasser",
+      "email": "glasser@davidglasser.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Gianluca Casati",
+      "email": "casati_gianluca@yahoo.it",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Forrest L Norvell",
+      "email": "ogd@aoaioxxysz.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Karsten Tinnefeld",
+      "email": "k.tinnefeld@googlemail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Bryan Burgers",
+      "email": "bryan@burgers.io",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "David Beitey",
+      "email": "david@davidjb.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Evan You",
+      "email": "yyou@google.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Zach Pomerantz",
+      "email": "zmp@umich.edu",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Chris Williams",
+      "email": "cwilliams88@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "sudodoki",
+      "email": "smd.deluzion@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Mick Thompson",
+      "email": "dthompson@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Felix Rabe",
+      "email": "felix@rabe.io",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Michael Hayes",
+      "email": "michael@hayes.io",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Chris Dickinson",
+      "email": "christopher.s.dickinson@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Bradley Meck",
+      "email": "bradley.meck@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "GeJ",
+      "email": "geraud@gcu.info",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Andrew Terris",
+      "email": "atterris@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Michael Nisi",
+      "email": "michael.nisi@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "fengmk2",
+      "email": "fengmk2@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Adam Meadows",
+      "email": "adam.meadows@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Chulki Lee",
+      "email": "chulki.lee@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "\u4e0d\u56db",
+      "email": "busi.hyy@taobao.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "dead_horse",
+      "email": "dead_horse@qq.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Kenan Yildirim",
+      "email": "kenan@kenany.me",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Laurie Voss",
+      "email": "git@seldo.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Rebecca Turner",
+      "email": "me@re-becca.org",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Hunter Loftis",
+      "email": "hunter@hunterloftis.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Peter Richardson",
+      "email": "github@zoomy.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jussi Kalliokoski",
+      "email": "jussi.kalliokoski@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Filip Weiss",
+      "email": "me@fiws.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Timo Wei\u00df",
+      "email": "timoweiss@Timo-MBP.local",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Christopher Hiller",
+      "email": "chiller@badwing.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "J\u00e9r\u00e9my Lal",
+      "email": "kapouer@melix.org",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Anders Janmyr",
+      "email": "anders@janmyr.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Chris Meyers",
+      "email": "chris.meyers.fsu@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Ludwig Magnusson",
+      "email": "ludwig@mediatool.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Wout Mertens",
+      "email": "Wout.Mertens@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Nick Santos",
+      "email": "nick@medium.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Terin Stock",
+      "email": "terinjokes@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Faiq Raza",
+      "email": "faiqrazarizvi@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Thomas Torp",
+      "email": "thomas@erupt.no",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Sam Mikes",
+      "email": "smikes@cubane.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Mat Tyndall",
+      "email": "mat.tyndall@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Tauren Mills",
+      "email": "tauren@sportzing.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Ron Martinez",
+      "email": "ramartin.net@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Kazuhito Hokamura",
+      "email": "k.hokamura@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Tristan Davies",
+      "email": "github@tristan.io",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "David Volm",
+      "email": "david@volminator.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Lin Clark",
+      "email": "lin.w.clark@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Ben Page",
+      "email": "bpage@dewalch.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jeff Jo",
+      "email": "jeffjo@squareup.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "martinvd",
+      "email": "martinvdpub@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Mark J. Titorenko",
+      "email": "nospam-github.com@titorenko.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Oddur Sigurdsson",
+      "email": "oddurs@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Eric Mill",
+      "email": "eric@konklone.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Gabriel Barros",
+      "email": "descartavel1@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "KevinSheedy",
+      "email": "kevinsheedy@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Aleksey Smolenchuk",
+      "email": "aleksey@uber.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Ed Morley",
+      "email": "emorley@mozilla.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Blaine Bublitz",
+      "email": "blaine@iceddev.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Andrey Fedorov",
+      "email": "anfedorov@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Daijiro Wachi",
+      "email": "daijiro.wachi@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Luc Thevenard",
+      "email": "lucthevenard@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Aria Stewart",
+      "email": "aredridel@nbtsc.org",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Charlie Rudolph",
+      "email": "charles.w.rudolph@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Vladimir Rutsky",
+      "email": "rutsky@users.noreply.github.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Isaac Murchie",
+      "email": "isaac@saucelabs.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Marcin Wosinek",
+      "email": "marcin.wosinek@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "David Marr",
+      "email": "davemarr@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Bryan English",
+      "email": "bryan@bryanenglish.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Anthony Zotti",
+      "email": "amZotti@users.noreply.github.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Karl Horky",
+      "email": "karl.horky@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jordan Harband",
+      "email": "ljharb@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Gu\u00f0laugur Stef\u00e1n Egilsson",
+      "email": "gulli@kolibri.is",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Helge Skogly Holm",
+      "email": "helge.holm@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Peter A. Shevtsov",
+      "email": "petr.shevtsov@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Alain Kalker",
+      "email": "a.c.kalker@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Bryant Williams",
+      "email": "b.n.williams@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jonas Weber",
+      "email": "github@jonasw.de",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Tim Whidden",
+      "email": "twhid@twhid.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Andreas",
+      "email": "functino@users.noreply.github.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Karolis Narkevicius",
+      "email": "karolis.n@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Adrian Lynch",
+      "email": "adi_ady_ade@hotmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Richard Littauer",
+      "email": "richard.littauer@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Oli Evans",
+      "email": "oli@zilla.org.uk",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Matt Brennan",
+      "email": "mattyb1000@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jeff Barczewski",
+      "email": "jeff.barczewski@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Danny Fritz",
+      "email": "dannyfritz@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Takaya Kobayashi",
+      "email": "jigsaw@live.jp",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Ra'Shaun Stovall",
+      "email": "rashaunstovall@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Julien Meddah",
+      "email": "julien.meddah@deveryware.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Michiel Sikma",
+      "email": "michiel@wedemandhtml.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jakob Krigovsky",
+      "email": "jakob.krigovsky@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Charmander",
+      "email": "~@charmander.me",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Erik Wienhold",
+      "email": "git@ewie.name",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "James Butler",
+      "email": "james.butler@sandfox.co.uk",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Kevin Kragenbrink",
+      "email": "kevin@gaikai.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Arnaud Rinquin",
+      "email": "rinquin.arnaud@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Mike MacCana",
+      "email": "mike.maccana@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Antti Mattila",
+      "email": "anttti@fastmail.fm",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "laiso",
+      "email": "laiso@lai.so",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Matt Zorn",
+      "email": "zornme@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Kyle Mitchell",
+      "email": "kyle@kemitchell.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Jeremiah Senkpiel",
+      "email": "fishrock123@rocketmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Michael Klein",
+      "email": "mischkl@users.noreply.github.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Simen Bekkhus",
+      "email": "sbekkhus91@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Victor",
+      "email": "victor.shih@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "thefourtheye",
+      "email": "thechargingvolcano@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Clay Carpenter",
+      "email": "claycarpenter@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "bangbang93",
+      "email": "bangbang93@163.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Nick Malaguti",
+      "email": "nmalaguti@palantir.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Cedric Nelson",
+      "email": "cedric.nelson@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Kat March\u00e1n",
+      "email": "kzm@sykosomatic.org",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Andrew",
+      "email": "talktome@aboutandrew.co.uk",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Eduardo Pinho",
+      "email": "enet4mikeenet@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Rachel Hutchison",
+      "email": "rhutchix@intel.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Ryan Temple",
+      "email": "ryantemple145@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Eugene Sharygin",
+      "email": "eush77@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Nick Heiner",
+      "email": "nick.heiner@opower.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "James Talmage",
+      "email": "james@talmage.io",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "jane arc",
+      "email": "jane@uber.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Joseph Dykstra",
+      "email": "josephdykstra@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Joshua Egan",
+      "email": "josh-egan@users.noreply.github.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Thomas Cort",
+      "email": "thomasc@ssimicro.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Thaddee Tyl",
+      "email": "thaddee.tyl@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Steve Klabnik",
+      "email": "steve@steveklabnik.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Andrew Murray",
+      "email": "radarhere@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Stephan B\u00f6nnemann",
+      "email": "stephan@excellenteasy.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Kyle M. Tarplee",
+      "email": "kyle.tarplee@numerica.us",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Derek Peterson",
+      "email": "derekpetey@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "Greg Whiteley",
+      "email": "greg.whiteley@atomos.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "name": "murgatroid99",
+      "email": "mlumish@google.com",
+      "url": null
+    }
+  ],
+  "owners": [],
+  "packagers": [],
+  "distributors": [],
+  "vendors": [],
+  "keywords": [
+    "package manager",
+    "modules",
+    "install",
+    "package.json"
+  ],
+  "keywords_doc_url": null,
+  "metafile_locations": [
+    "package"
+  ],
+  "metafile_urls": [],
+  "homepage_url": "https://docs.npmjs.com/",
+  "notes": null,
+  "download_urls": [
+    "http://registry.npmjs.org/npm/-/npm-2.13.5.tgz"
+  ],
+  "download_sha1": "a124386bce4a90506f28ad4b1d1a804a17baaf32",
+  "download_sha256": null,
+  "download_md5": null,
+  "bug_tracking_url": "http://github.com/npm/npm/issues",
+  "support_contacts": [],
+  "code_view_url": null,
+  "vcs_tool": "git",
+  "vcs_repository": "git+https://github.com/npm/npm.git",
+  "vcs_revision": null,
+  "copyright_top_level": null,
+  "copyrights": [],
+  "asserted_licenses": [
+    {
+      "license": "Artistic-2.0",
+      "url": null,
+      "text": null,
+      "notice": null
+    }
+  ],
+  "legal_file_locations": [],
+  "license_expression": null,
+  "license_texts": [],
+  "notice_texts": [],
+  "dependencies": {
+    "development": [
+      {
+        "name": "deep-equal",
+        "version": null,
+        "version_constraint": "~1.0.0"
+      },
+      {
+        "name": "marked",
+        "version": null,
+        "version_constraint": "~0.3.3"
+      },
+      {
+        "name": "marked-man",
+        "version": null,
+        "version_constraint": "~0.1.5"
+      },
+      {
+        "name": "nock",
+        "version": null,
+        "version_constraint": "~2.10.0"
+      },
+      {
+        "name": "npm-registry-couchapp",
+        "version": null,
+        "version_constraint": "~2.6.7"
+      },
+      {
+        "name": "npm-registry-mock",
+        "version": null,
+        "version_constraint": "~1.0.0"
+      },
+      {
+        "name": "require-inject",
+        "version": null,
+        "version_constraint": "~1.2.0"
+      },
+      {
+        "name": "sprintf-js",
+        "version": null,
+        "version_constraint": "~1.0.2"
+      },
+      {
+        "name": "tap",
+        "version": null,
+        "version_constraint": "~1.3.1"
+      }
+    ],
+    "runtime": [
+      {
+        "name": "abbrev",
+        "version": null,
+        "version_constraint": "~1.0.7"
+      },
+      {
+        "name": "ansi",
+        "version": null,
+        "version_constraint": "~0.3.0"
+      },
+      {
+        "name": "ansicolors",
+        "version": null,
+        "version_constraint": "~0.3.2"
+      },
+      {
+        "name": "ansistyles",
+        "version": null,
+        "version_constraint": "~0.1.3"
+      },
+      {
+        "name": "archy",
+        "version": null,
+        "version_constraint": "~1.0.0"
+      },
+      {
+        "name": "async-some",
+        "version": null,
+        "version_constraint": "~1.0.2"
+      },
+      {
+        "name": "block-stream",
+        "version": null,
+        "version_constraint": "0.0.8"
+      },
+      {
+        "name": "char-spinner",
+        "version": null,
+        "version_constraint": "~1.0.1"
+      },
+      {
+        "name": "chmodr",
+        "version": null,
+        "version_constraint": "~1.0.1"
+      },
+      {
+        "name": "chownr",
+        "version": null,
+        "version_constraint": "0.0.2"
+      },
+      {
+        "name": "cmd-shim",
+        "version": null,
+        "version_constraint": "~2.0.1"
+      },
+      {
+        "name": "columnify",
+        "version": null,
+        "version_constraint": "~1.5.1"
+      },
+      {
+        "name": "config-chain",
+        "version": null,
+        "version_constraint": "~1.1.9"
+      },
+      {
+        "name": "dezalgo",
+        "version": null,
+        "version_constraint": "~1.0.3"
+      },
+      {
+        "name": "editor",
+        "version": null,
+        "version_constraint": "~1.0.0"
+      },
+      {
+        "name": "fs-vacuum",
+        "version": null,
+        "version_constraint": "~1.2.6"
+      },
+      {
+        "name": "fs-write-stream-atomic",
+        "version": null,
+        "version_constraint": "~1.0.3"
+      },
+      {
+        "name": "fstream",
+        "version": null,
+        "version_constraint": "~1.0.7"
+      },
+      {
+        "name": "fstream-npm",
+        "version": null,
+        "version_constraint": "~1.0.4"
+      },
+      {
+        "name": "github-url-from-git",
+        "version": null,
+        "version_constraint": "~1.4.0"
+      },
+      {
+        "name": "github-url-from-username-repo",
+        "version": null,
+        "version_constraint": "~1.0.2"
+      },
+      {
+        "name": "glob",
+        "version": null,
+        "version_constraint": "~5.0.14"
+      },
+      {
+        "name": "graceful-fs",
+        "version": null,
+        "version_constraint": "~4.1.2"
+      },
+      {
+        "name": "hosted-git-info",
+        "version": null,
+        "version_constraint": "~2.1.4"
+      },
+      {
+        "name": "inflight",
+        "version": null,
+        "version_constraint": "~1.0.4"
+      },
+      {
+        "name": "inherits",
+        "version": null,
+        "version_constraint": "~2.0.1"
+      },
+      {
+        "name": "ini",
+        "version": null,
+        "version_constraint": "~1.3.4"
+      },
+      {
+        "name": "init-package-json",
+        "version": null,
+        "version_constraint": "~1.7.1"
+      },
+      {
+        "name": "lockfile",
+        "version": null,
+        "version_constraint": "~1.0.1"
+      },
+      {
+        "name": "lru-cache",
+        "version": null,
+        "version_constraint": "~2.6.5"
+      },
+      {
+        "name": "minimatch",
+        "version": null,
+        "version_constraint": "~2.0.10"
+      },
+      {
+        "name": "mkdirp",
+        "version": null,
+        "version_constraint": "~0.5.1"
+      },
+      {
+        "name": "node-gyp",
+        "version": null,
+        "version_constraint": "~2.0.2"
+      },
+      {
+        "name": "nopt",
+        "version": null,
+        "version_constraint": "~3.0.3"
+      },
+      {
+        "name": "normalize-git-url",
+        "version": null,
+        "version_constraint": "~3.0.1"
+      },
+      {
+        "name": "normalize-package-data",
+        "version": null,
+        "version_constraint": "~2.3.1"
+      },
+      {
+        "name": "npm-cache-filename",
+        "version": null,
+        "version_constraint": "~1.0.2"
+      },
+      {
+        "name": "npm-install-checks",
+        "version": null,
+        "version_constraint": "~1.0.6"
+      },
+      {
+        "name": "npm-package-arg",
+        "version": null,
+        "version_constraint": "~4.0.2"
+      },
+      {
+        "name": "npm-registry-client",
+        "version": null,
+        "version_constraint": "~6.5.1"
+      },
+      {
+        "name": "npm-user-validate",
+        "version": null,
+        "version_constraint": "~0.1.2"
+      },
+      {
+        "name": "npmlog",
+        "version": null,
+        "version_constraint": "~1.2.1"
+      },
+      {
+        "name": "once",
+        "version": null,
+        "version_constraint": "~1.3.2"
+      },
+      {
+        "name": "opener",
+        "version": null,
+        "version_constraint": "~1.4.1"
+      },
+      {
+        "name": "osenv",
+        "version": null,
+        "version_constraint": "~0.1.3"
+      },
+      {
+        "name": "path-is-inside",
+        "version": null,
+        "version_constraint": "~1.0.0"
+      },
+      {
+        "name": "read",
+        "version": null,
+        "version_constraint": "~1.0.6"
+      },
+      {
+        "name": "read-installed",
+        "version": null,
+        "version_constraint": "~4.0.2"
+      },
+      {
+        "name": "read-package-json",
+        "version": null,
+        "version_constraint": "~2.0.0"
+      },
+      {
+        "name": "readable-stream",
+        "version": null,
+        "version_constraint": "~1.1.13"
+      },
+      {
+        "name": "realize-package-specifier",
+        "version": null,
+        "version_constraint": "~3.0.1"
+      },
+      {
+        "name": "request",
+        "version": null,
+        "version_constraint": "~2.60.0"
+      },
+      {
+        "name": "retry",
+        "version": null,
+        "version_constraint": "~0.6.1"
+      },
+      {
+        "name": "rimraf",
+        "version": null,
+        "version_constraint": "~2.4.2"
+      },
+      {
+        "name": "semver",
+        "version": null,
+        "version_constraint": "~5.0.1"
+      },
+      {
+        "name": "sha",
+        "version": null,
+        "version_constraint": "~1.3.0"
+      },
+      {
+        "name": "slide",
+        "version": null,
+        "version_constraint": "~1.1.6"
+      },
+      {
+        "name": "sorted-object",
+        "version": null,
+        "version_constraint": "~1.0.0"
+      },
+      {
+        "name": "spdx",
+        "version": null,
+        "version_constraint": "~0.4.1"
+      },
+      {
+        "name": "tar",
+        "version": null,
+        "version_constraint": "~2.1.1"
+      },
+      {
+        "name": "text-table",
+        "version": null,
+        "version_constraint": "~0.2.0"
+      },
+      {
+        "name": "uid-number",
+        "version": null,
+        "version_constraint": "0.0.6"
+      },
+      {
+        "name": "umask",
+        "version": null,
+        "version_constraint": "~1.1.0"
+      },
+      {
+        "name": "validate-npm-package-name",
+        "version": null,
+        "version_constraint": "~2.2.2"
+      },
+      {
+        "name": "which",
+        "version": null,
+        "version_constraint": "~1.1.1"
+      },
+      {
+        "name": "wrappy",
+        "version": null,
+        "version_constraint": "~1.0.1"
+      },
+      {
+        "name": "write-file-atomic",
+        "version": null,
+        "version_constraint": "~1.1.2"
+      },
+      {
+        "name": "validate-npm-package-license",
+        "version": null,
+        "version_constraint": "*"
+      }
+    ]
+  },
+  "related_packages": []
+}

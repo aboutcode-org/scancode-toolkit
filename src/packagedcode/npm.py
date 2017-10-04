@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -86,6 +86,20 @@ def parse(location):
     if not is_package_json(location):
         return
 
+    with codecs.open(location, encoding='utf-8') as loc:
+        package_data = json.load(loc, object_pairs_hook=OrderedDict)
+
+    # a package.json is at the root of an NPM package
+    base_dir = fileutils.parent_directory(location)
+    metafile_name = fileutils.file_base_name(location)
+    return build_package(package_data, base_dir, metafile_name)
+
+
+def build_package(package_data, base_dir=None, metafile_name='package.json'):
+    """
+    Return a Package object from a package_data mapping (from a
+    package.json or similar) or None.
+    """
     # mapping of top level package.json items to the Package object field name
     plain_fields = OrderedDict([
         ('name', 'name'),
@@ -101,33 +115,35 @@ def parse(location):
         ('bugs', bugs_mapper),
         ('contributors', contributors_mapper),
         ('maintainers', maintainers_mapper),
+        # current form
         ('license', licensing_mapper),
+        # old, deprecated form
         ('licenses', licensing_mapper),
         ('dependencies', dependencies_mapper),
         ('devDependencies', dev_dependencies_mapper),
         ('peerDependencies', peer_dependencies_mapper),
         ('optionalDependencies', optional_dependencies_mapper),
-        ('url', url_mapper),
+        # legacy, ignored
+        # ('url', url_mapper),
         ('dist', dist_mapper),
         ('repository', repository_mapper),
     ])
 
-    with codecs.open(location, encoding='utf-8') as loc:
-        data = json.load(loc, object_pairs_hook=OrderedDict)
 
-    if not data.get('name') or not data.get('version'):
+    if not package_data.get('name') or not package_data.get('version'):
         # a package.json without name and version is not a usable NPM package
         return
 
     package = NpmPackage()
     # a package.json is at the root of an NPM package
-    base_dir = fileutils.parent_directory(location)
     package.location = base_dir
     # for now we only recognize a package.json, not a node_modules directory yet
-    package.metafile_locations = [location]
-    package.version = data.get('version')
+    if metafile_name:
+        package.metafile_locations = [metafile_name]
+
+    package.version = package_data.get('version') or None
     for source, target in plain_fields.items():
-        value = data.get(source)
+        value = package_data.get(source) or None
         if value:
             if isinstance(value, basestring):
                 value = value.strip()
@@ -136,14 +152,21 @@ def parse(location):
 
     for source, func in field_mappers.items():
         logger.debug('parse: %(source)r, %(func)r' % locals())
-        value = data.get(source)
+        value = package_data.get(source) or None
         if value:
             if isinstance(value, basestring):
                 value = value.strip()
             if value:
                 func(value, package)
-    # this should be a mapper function but requires two args
-    package.download_urls.append(public_download_url(package.name, package.version))
+
+    # this should be a mapper function but requires two args.
+    # Note: we only add a synthetic download URL if there is none from
+    # the dist mapping.
+    if not package.download_urls:
+        tarball = public_download_url(package.name, package.version)
+        if tarball:
+            package.download_urls.append(tarball)
+
     return package
 
 
@@ -152,7 +175,7 @@ def licensing_mapper(licenses, package):
     Update package licensing and return package.
     Licensing data structure has evolved over time and is a tad messy.
     https://docs.npmjs.com/files/package.json#license
-    licenses is either:
+    license(s) is either:
     - a string with:
      - an SPDX id or expression { "license" : "(ISC OR GPL-3.0)" }
      - some license name or id
@@ -163,9 +186,13 @@ def licensing_mapper(licenses, package):
         return package
 
     if isinstance(licenses, basestring):
+        # current form
+        # TODO:  handle "SEE LICENSE IN <filename>"
+        # TODO: parse expression with license_expression library
         package.asserted_licenses.append(models.AssertedLicense(license=licenses))
 
     elif isinstance(licenses, dict):
+        # old, deprecated form
         """
          "license": {
             "type": "MIT",
@@ -176,6 +203,7 @@ def licensing_mapper(licenses, package):
                                                          url=licenses.get('url')))
 
     elif isinstance(licenses, list):
+        # old, deprecated form
         """
         "licenses": ["type": "Apache License, Version 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0" } ]
@@ -295,19 +323,28 @@ def repository_mapper(repo, package):
     if isinstance(repo, basestring):
         package.vcs_repository = parse_repo_url(repo)
     elif isinstance(repo, dict):
-        package.vcs_tool = repo.get('type') or 'git'
-        package.vcs_repository = parse_repo_url(repo.get('url'))
+        repurl = parse_repo_url(repo.get('url'))
+        if repurl:
+            package.vcs_tool = repo.get('type') or 'git'
+            package.vcs_repository = repurl
     return package
 
 
 def url_mapper(url, package):
     """
-    In a package.json, the "url" field is a redirection to a package download
-    URL published somewhere else than on the public npm registry.
-    We map it to a download url.
+    In a package.json, the "url" field is a legacy field that contained
+    various URLs either as a string or as a mapping of type->url
     """
-    if url:
-        package.download_urls.append(url)
+    if not url:
+        return package
+
+    if isinstance(url, basestring):
+        # TOOD: map to a miscellaneous urls dict
+        pass
+    elif isinstance(url, dict):
+        # typical key is "web"
+        # TOOD: map to a miscellaneous urls dict
+        pass
     return package
 
 
@@ -395,6 +432,11 @@ def parse_person(person):
     Both forms are equivalent.
     """
     # TODO: detect if this is a person name or a company name
+
+    name = None
+    email = None
+    url = None
+
     if isinstance(person, basestring):
         parsed = person_parser(person)
         if not parsed:
@@ -409,10 +451,28 @@ def parse_person(person):
         name = person.get('name')
         email = person.get('email')
         url = person.get('url')
+
     else:
         raise Exception('Incorrect NPM package.json person: %(person)r' % locals())
 
-    return name and name.strip(), email and email.strip('<> '), url and url.strip('() ')
+    if name:
+        name = name.strip()
+        if name.lower() == 'none':
+            name = None
+    name = name or None
+
+    if email:
+        email = email.strip('<> ')
+        if email.lower() == 'none':
+            email = None
+    email = email or None
+
+    if url:
+        url = url.strip('() ')
+        if url.lower() == 'none':
+            url = None
+    url = url or None
+    return name, email, url
 
 
 def public_download_url(name, version, registry='https://registry.npmjs.org'):

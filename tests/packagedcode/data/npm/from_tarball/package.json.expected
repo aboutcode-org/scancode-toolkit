@@ -1,452 +1,452 @@
 {
-  "type": "npm", 
-  "name": "npm", 
-  "version": "2.13.5", 
-  "primary_language": "JavaScript", 
-  "packaging": null, 
-  "summary": "a package manager for JavaScript", 
-  "description": null, 
-  "payload_type": null, 
-  "size": null, 
-  "release_date": null, 
+  "type": "npm",
+  "name": "npm",
+  "version": "2.13.5",
+  "primary_language": "JavaScript",
+  "packaging": null,
+  "summary": "a package manager for JavaScript",
+  "description": null,
+  "payload_type": null,
+  "size": null,
+  "release_date": null,
   "authors": [
     {
-      "type": "person", 
-      "name": "Isaac Z. Schlueter", 
-      "email": "i@izs.me", 
+      "type": "person",
+      "name": "Isaac Z. Schlueter",
+      "email": "i@izs.me",
       "url": "http://blog.izs.me"
     }
-  ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  ],
+  "maintainers": [],
+  "contributors": [],
+  "owners": [],
+  "packagers": [],
+  "distributors": [],
+  "vendors": [],
   "keywords": [
-    "package manager", 
-    "modules", 
-    "install", 
+    "package manager",
+    "modules",
+    "install",
     "package.json"
-  ], 
-  "keywords_doc_url": null, 
+  ],
+  "keywords_doc_url": null,
   "metafile_locations": [
-    "package.json"
-  ], 
-  "metafile_urls": [], 
-  "homepage_url": "https://docs.npmjs.com/", 
-  "notes": null, 
+    "package"
+  ],
+  "metafile_urls": [],
+  "homepage_url": "https://docs.npmjs.com/",
+  "notes": null,
   "download_urls": [
     "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz"
-  ], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
-  "bug_tracking_url": "http://github.com/npm/npm/issues", 
-  "support_contacts": [], 
-  "code_view_url": null, 
-  "vcs_tool": "git", 
-  "vcs_repository": "https://github.com/npm/npm", 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
+  ],
+  "download_sha1": null,
+  "download_sha256": null,
+  "download_md5": null,
+  "bug_tracking_url": "http://github.com/npm/npm/issues",
+  "support_contacts": [],
+  "code_view_url": null,
+  "vcs_tool": "git",
+  "vcs_repository": "https://github.com/npm/npm",
+  "vcs_revision": null,
+  "copyright_top_level": null,
+  "copyrights": [],
   "asserted_licenses": [
     {
-      "license": "Artistic-2.0", 
-      "url": null, 
-      "text": null, 
+      "license": "Artistic-2.0",
+      "url": null,
+      "text": null,
       "notice": null
     }
-  ], 
-  "legal_file_locations": [], 
-  "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
+  ],
+  "legal_file_locations": [],
+  "license_expression": null,
+  "license_texts": [],
+  "notice_texts": [],
   "dependencies": {
     "development": [
       {
-        "name": "deep-equal", 
-        "version": null, 
+        "name": "deep-equal",
+        "version": null,
         "version_constraint": "~1.0.0"
-      }, 
+      },
       {
-        "name": "marked", 
-        "version": null, 
+        "name": "marked",
+        "version": null,
         "version_constraint": "~0.3.3"
-      }, 
+      },
       {
-        "name": "marked-man", 
-        "version": null, 
+        "name": "marked-man",
+        "version": null,
         "version_constraint": "~0.1.5"
-      }, 
+      },
       {
-        "name": "nock", 
-        "version": null, 
+        "name": "nock",
+        "version": null,
         "version_constraint": "~2.10.0"
-      }, 
+      },
       {
-        "name": "npm-registry-couchapp", 
-        "version": null, 
+        "name": "npm-registry-couchapp",
+        "version": null,
         "version_constraint": "~2.6.7"
-      }, 
+      },
       {
-        "name": "npm-registry-mock", 
-        "version": null, 
+        "name": "npm-registry-mock",
+        "version": null,
         "version_constraint": "~1.0.0"
-      }, 
+      },
       {
-        "name": "require-inject", 
-        "version": null, 
+        "name": "require-inject",
+        "version": null,
         "version_constraint": "~1.2.0"
-      }, 
+      },
       {
-        "name": "sprintf-js", 
-        "version": null, 
+        "name": "sprintf-js",
+        "version": null,
         "version_constraint": "~1.0.2"
-      }, 
+      },
       {
-        "name": "tap", 
-        "version": null, 
+        "name": "tap",
+        "version": null,
         "version_constraint": "~1.3.1"
       }
-    ], 
+    ],
     "runtime": [
       {
-        "name": "abbrev", 
-        "version": null, 
+        "name": "abbrev",
+        "version": null,
         "version_constraint": "~1.0.7"
-      }, 
+      },
       {
-        "name": "ansi", 
-        "version": null, 
+        "name": "ansi",
+        "version": null,
         "version_constraint": "~0.3.0"
-      }, 
+      },
       {
-        "name": "ansicolors", 
-        "version": null, 
+        "name": "ansicolors",
+        "version": null,
         "version_constraint": "~0.3.2"
-      }, 
+      },
       {
-        "name": "ansistyles", 
-        "version": null, 
+        "name": "ansistyles",
+        "version": null,
         "version_constraint": "~0.1.3"
-      }, 
+      },
       {
-        "name": "archy", 
-        "version": null, 
+        "name": "archy",
+        "version": null,
         "version_constraint": "~1.0.0"
-      }, 
+      },
       {
-        "name": "async-some", 
-        "version": null, 
+        "name": "async-some",
+        "version": null,
         "version_constraint": "~1.0.2"
-      }, 
+      },
       {
-        "name": "block-stream", 
-        "version": null, 
+        "name": "block-stream",
+        "version": null,
         "version_constraint": "0.0.8"
-      }, 
+      },
       {
-        "name": "char-spinner", 
-        "version": null, 
+        "name": "char-spinner",
+        "version": null,
         "version_constraint": "~1.0.1"
-      }, 
+      },
       {
-        "name": "chmodr", 
-        "version": null, 
+        "name": "chmodr",
+        "version": null,
         "version_constraint": "~1.0.1"
-      }, 
+      },
       {
-        "name": "chownr", 
-        "version": null, 
+        "name": "chownr",
+        "version": null,
         "version_constraint": "0.0.2"
-      }, 
+      },
       {
-        "name": "cmd-shim", 
-        "version": null, 
+        "name": "cmd-shim",
+        "version": null,
         "version_constraint": "~2.0.1"
-      }, 
+      },
       {
-        "name": "columnify", 
-        "version": null, 
+        "name": "columnify",
+        "version": null,
         "version_constraint": "~1.5.1"
-      }, 
+      },
       {
-        "name": "config-chain", 
-        "version": null, 
+        "name": "config-chain",
+        "version": null,
         "version_constraint": "~1.1.9"
-      }, 
+      },
       {
-        "name": "dezalgo", 
-        "version": null, 
+        "name": "dezalgo",
+        "version": null,
         "version_constraint": "~1.0.3"
-      }, 
+      },
       {
-        "name": "editor", 
-        "version": null, 
+        "name": "editor",
+        "version": null,
         "version_constraint": "~1.0.0"
-      }, 
+      },
       {
-        "name": "fs-vacuum", 
-        "version": null, 
+        "name": "fs-vacuum",
+        "version": null,
         "version_constraint": "~1.2.6"
-      }, 
+      },
       {
-        "name": "fs-write-stream-atomic", 
-        "version": null, 
+        "name": "fs-write-stream-atomic",
+        "version": null,
         "version_constraint": "~1.0.3"
-      }, 
+      },
       {
-        "name": "fstream", 
-        "version": null, 
+        "name": "fstream",
+        "version": null,
         "version_constraint": "~1.0.7"
-      }, 
+      },
       {
-        "name": "fstream-npm", 
-        "version": null, 
+        "name": "fstream-npm",
+        "version": null,
         "version_constraint": "~1.0.4"
-      }, 
+      },
       {
-        "name": "github-url-from-git", 
-        "version": null, 
+        "name": "github-url-from-git",
+        "version": null,
         "version_constraint": "~1.4.0"
-      }, 
+      },
       {
-        "name": "github-url-from-username-repo", 
-        "version": null, 
+        "name": "github-url-from-username-repo",
+        "version": null,
         "version_constraint": "~1.0.2"
-      }, 
+      },
       {
-        "name": "glob", 
-        "version": null, 
+        "name": "glob",
+        "version": null,
         "version_constraint": "~5.0.14"
-      }, 
+      },
       {
-        "name": "graceful-fs", 
-        "version": null, 
+        "name": "graceful-fs",
+        "version": null,
         "version_constraint": "~4.1.2"
-      }, 
+      },
       {
-        "name": "hosted-git-info", 
-        "version": null, 
+        "name": "hosted-git-info",
+        "version": null,
         "version_constraint": "~2.1.4"
-      }, 
+      },
       {
-        "name": "inflight", 
-        "version": null, 
+        "name": "inflight",
+        "version": null,
         "version_constraint": "~1.0.4"
-      }, 
+      },
       {
-        "name": "inherits", 
-        "version": null, 
+        "name": "inherits",
+        "version": null,
         "version_constraint": "~2.0.1"
-      }, 
+      },
       {
-        "name": "ini", 
-        "version": null, 
+        "name": "ini",
+        "version": null,
         "version_constraint": "~1.3.4"
-      }, 
+      },
       {
-        "name": "init-package-json", 
-        "version": null, 
+        "name": "init-package-json",
+        "version": null,
         "version_constraint": "~1.7.1"
-      }, 
+      },
       {
-        "name": "lockfile", 
-        "version": null, 
+        "name": "lockfile",
+        "version": null,
         "version_constraint": "~1.0.1"
-      }, 
+      },
       {
-        "name": "lru-cache", 
-        "version": null, 
+        "name": "lru-cache",
+        "version": null,
         "version_constraint": "~2.6.5"
-      }, 
+      },
       {
-        "name": "minimatch", 
-        "version": null, 
+        "name": "minimatch",
+        "version": null,
         "version_constraint": "~2.0.10"
-      }, 
+      },
       {
-        "name": "mkdirp", 
-        "version": null, 
+        "name": "mkdirp",
+        "version": null,
         "version_constraint": "~0.5.1"
-      }, 
+      },
       {
-        "name": "node-gyp", 
-        "version": null, 
+        "name": "node-gyp",
+        "version": null,
         "version_constraint": "~2.0.2"
-      }, 
+      },
       {
-        "name": "nopt", 
-        "version": null, 
+        "name": "nopt",
+        "version": null,
         "version_constraint": "~3.0.3"
-      }, 
+      },
       {
-        "name": "normalize-git-url", 
-        "version": null, 
+        "name": "normalize-git-url",
+        "version": null,
         "version_constraint": "~3.0.1"
-      }, 
+      },
       {
-        "name": "normalize-package-data", 
-        "version": null, 
+        "name": "normalize-package-data",
+        "version": null,
         "version_constraint": "~2.3.1"
-      }, 
+      },
       {
-        "name": "npm-cache-filename", 
-        "version": null, 
+        "name": "npm-cache-filename",
+        "version": null,
         "version_constraint": "~1.0.2"
-      }, 
+      },
       {
-        "name": "npm-install-checks", 
-        "version": null, 
+        "name": "npm-install-checks",
+        "version": null,
         "version_constraint": "~1.0.6"
-      }, 
+      },
       {
-        "name": "npm-package-arg", 
-        "version": null, 
+        "name": "npm-package-arg",
+        "version": null,
         "version_constraint": "~4.0.2"
-      }, 
+      },
       {
-        "name": "npm-registry-client", 
-        "version": null, 
+        "name": "npm-registry-client",
+        "version": null,
         "version_constraint": "~6.5.1"
-      }, 
+      },
       {
-        "name": "npm-user-validate", 
-        "version": null, 
+        "name": "npm-user-validate",
+        "version": null,
         "version_constraint": "~0.1.2"
-      }, 
+      },
       {
-        "name": "npmlog", 
-        "version": null, 
+        "name": "npmlog",
+        "version": null,
         "version_constraint": "~1.2.1"
-      }, 
+      },
       {
-        "name": "once", 
-        "version": null, 
+        "name": "once",
+        "version": null,
         "version_constraint": "~1.3.2"
-      }, 
+      },
       {
-        "name": "opener", 
-        "version": null, 
+        "name": "opener",
+        "version": null,
         "version_constraint": "~1.4.1"
-      }, 
+      },
       {
-        "name": "osenv", 
-        "version": null, 
+        "name": "osenv",
+        "version": null,
         "version_constraint": "~0.1.3"
-      }, 
+      },
       {
-        "name": "path-is-inside", 
-        "version": null, 
+        "name": "path-is-inside",
+        "version": null,
         "version_constraint": "~1.0.0"
-      }, 
+      },
       {
-        "name": "read", 
-        "version": null, 
+        "name": "read",
+        "version": null,
         "version_constraint": "~1.0.6"
-      }, 
+      },
       {
-        "name": "read-installed", 
-        "version": null, 
+        "name": "read-installed",
+        "version": null,
         "version_constraint": "~4.0.2"
-      }, 
+      },
       {
-        "name": "read-package-json", 
-        "version": null, 
+        "name": "read-package-json",
+        "version": null,
         "version_constraint": "~2.0.0"
-      }, 
+      },
       {
-        "name": "readable-stream", 
-        "version": null, 
+        "name": "readable-stream",
+        "version": null,
         "version_constraint": "~1.1.13"
-      }, 
+      },
       {
-        "name": "realize-package-specifier", 
-        "version": null, 
+        "name": "realize-package-specifier",
+        "version": null,
         "version_constraint": "~3.0.1"
-      }, 
+      },
       {
-        "name": "request", 
-        "version": null, 
+        "name": "request",
+        "version": null,
         "version_constraint": "~2.60.0"
-      }, 
+      },
       {
-        "name": "retry", 
-        "version": null, 
+        "name": "retry",
+        "version": null,
         "version_constraint": "~0.6.1"
-      }, 
+      },
       {
-        "name": "rimraf", 
-        "version": null, 
+        "name": "rimraf",
+        "version": null,
         "version_constraint": "~2.4.2"
-      }, 
+      },
       {
-        "name": "semver", 
-        "version": null, 
+        "name": "semver",
+        "version": null,
         "version_constraint": "~5.0.1"
-      }, 
+      },
       {
-        "name": "sha", 
-        "version": null, 
+        "name": "sha",
+        "version": null,
         "version_constraint": "~1.3.0"
-      }, 
+      },
       {
-        "name": "slide", 
-        "version": null, 
+        "name": "slide",
+        "version": null,
         "version_constraint": "~1.1.6"
-      }, 
+      },
       {
-        "name": "sorted-object", 
-        "version": null, 
+        "name": "sorted-object",
+        "version": null,
         "version_constraint": "~1.0.0"
-      }, 
+      },
       {
-        "name": "spdx", 
-        "version": null, 
+        "name": "spdx",
+        "version": null,
         "version_constraint": "~0.4.1"
-      }, 
+      },
       {
-        "name": "tar", 
-        "version": null, 
+        "name": "tar",
+        "version": null,
         "version_constraint": "~2.1.1"
-      }, 
+      },
       {
-        "name": "text-table", 
-        "version": null, 
+        "name": "text-table",
+        "version": null,
         "version_constraint": "~0.2.0"
-      }, 
+      },
       {
-        "name": "uid-number", 
-        "version": null, 
+        "name": "uid-number",
+        "version": null,
         "version_constraint": "0.0.6"
-      }, 
+      },
       {
-        "name": "umask", 
-        "version": null, 
+        "name": "umask",
+        "version": null,
         "version_constraint": "~1.1.0"
-      }, 
+      },
       {
-        "name": "validate-npm-package-name", 
-        "version": null, 
+        "name": "validate-npm-package-name",
+        "version": null,
         "version_constraint": "~2.2.2"
-      }, 
+      },
       {
-        "name": "which", 
-        "version": null, 
+        "name": "which",
+        "version": null,
         "version_constraint": "~1.1.1"
-      }, 
+      },
       {
-        "name": "wrappy", 
-        "version": null, 
+        "name": "wrappy",
+        "version": null,
         "version_constraint": "~1.0.1"
-      }, 
+      },
       {
-        "name": "write-file-atomic", 
-        "version": null, 
+        "name": "write-file-atomic",
+        "version": null,
         "version_constraint": "~1.1.2"
       }
     ]
-  }, 
+  },
   "related_packages": []
 }
