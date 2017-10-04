@@ -346,6 +346,9 @@ patterns = [
     # exceptions to proper nouns
     (r'^(The|Commons|AUTHOR|software)$', 'NN'),
 
+    # exceptions to proper noun
+    (r"^(Natural|Docs?)$", 'NN'),
+
     # composed proper nouns, ie. Jean-Claude or ST-Microelectronics
     # FIXME: what about a variant with spaces around the dash?
     (r'^[A-Z][a-zA-Z]*\s?[\-]\s?[A-Z]?[a-zA-Z]+.?$', 'NNP'),
@@ -570,6 +573,9 @@ grammar = """
 
 # XZY emails
     COMPANY: {<COMPANY> <EMAIL>+}        #1400
+
+# by the a href http wtforms.simplecodes.com WTForms Team
+    COMPANY: {<BY> <NN>+ <COMP|COMPANY>}        #1420
 
 
 # "And" some name
