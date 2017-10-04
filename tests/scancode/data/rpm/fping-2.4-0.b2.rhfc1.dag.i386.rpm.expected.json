@@ -1,0 +1,89 @@
+{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+  "scancode_options": {
+    "--package": true,
+    "--license-score": 0,
+    "--format": "json"
+  },
+  "files_count": 1,
+  "files": [
+    {
+      "path": "rpm/fping-2.4-0.b2.rhfc1.dag.i386.rpm",
+      "scan_errors": [],
+      "packages": [
+        {
+          "type": "RPM",
+          "name": "fping",
+          "version": "2.4-0.b2.rhfc1.dag",
+          "primary_language": null,
+          "packaging": "archive",
+          "summary": "A utility to ping multiple hosts at once.",
+          "description": "fping is a ping-like program which uses the Internet Control Message\nProtocol (ICMP) echo request to determine if a target host is responding.\n\nfping is different from ping in that you can specify any number of hosts\non the command line, or specify a file containing the lists of hosts to\nping. Instead of trying one host until it timeouts or replies, fping will\nsend out a ping packet and move on to the next host in a round-robin fashion.\nIf a host replies, it is noted and removed from the list of hosts to check.\nIf a host does not respond within a certain time limit and/or retry limit it\nwill be considered unreachable.",
+          "payload_type": null,
+          "size": null,
+          "release_date": null,
+          "authors": [],
+          "maintainers": [],
+          "contributors": [],
+          "owners": [],
+          "packagers": [],
+          "distributors": [
+            {
+              "type": null,
+              "name": "",
+              "email": null,
+              "url": null
+            }
+          ],
+          "vendors": [
+            {
+              "type": null,
+              "name": "Dag Apt Repository, http://dag.wieers.com/apt/",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "keywords_doc_url": null,
+          "metafile_locations": [],
+          "metafile_urls": [],
+          "homepage_url": "http://www.fping.com/",
+          "notes": null,
+          "download_urls": [],
+          "download_sha1": null,
+          "download_sha256": null,
+          "download_md5": null,
+          "bug_tracking_url": null,
+          "support_contacts": [],
+          "code_view_url": null,
+          "vcs_tool": null,
+          "vcs_repository": null,
+          "vcs_revision": null,
+          "copyright_top_level": null,
+          "copyrights": [],
+          "asserted_licenses": [
+            {
+              "license": "distributable",
+              "url": null,
+              "text": null,
+              "notice": null
+            }
+          ],
+          "legal_file_locations": [],
+          "license_expression": null,
+          "license_texts": [],
+          "notice_texts": [],
+          "dependencies": {},
+          "related_packages": [
+            {
+              "type": "RPM",
+              "name": "fping",
+              "version": "2.4-0.b2.rhfc1.dag",
+              "payload_type": "source"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

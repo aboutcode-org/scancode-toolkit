@@ -667,6 +667,17 @@ def test_scan_does_scan_php_composer():
     check_json_scan(expected_file, result_file)
 
 
+def test_scan_does_scan_rpm():
+    test_file = test_env.get_test_loc('rpm/fping-2.4-0.b2.rhfc1.dag.i386.rpm')
+    expected_file = test_env.get_test_loc('rpm/fping-2.4-0.b2.rhfc1.dag.i386.rpm.expected.json')
+    result_file = test_env.get_temp_file('results.json')
+
+    result = run_scan_click(['--package', test_file, result_file])
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    check_json_scan(expected_file, result_file, regen=False)
+
+
 class TestFixedWidthFilename(TestCase):
 
     def test_fixed_width_file_name_with_file_name_larger_than_max_length_is_shortened(self):
