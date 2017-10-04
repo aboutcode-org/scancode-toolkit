@@ -280,11 +280,24 @@ class TestMergeMatches(FileBasedTesting):
 
     def test_merge_does_not_merge_overlapping_matches_of_same_rules_if_in_sequence_with_gaps(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
+        r1.length = 50
 
         m1 = LicenseMatch(rule=r1, qspan=Span(1, 3), ispan=Span(1, 3))
         m2 = LicenseMatch(rule=r1, qspan=Span(14, 20), ispan=Span(4, 10))
 
-        assert [LicenseMatch(rule=r1, qspan=Span(1, 3) | Span(14, 20), ispan=Span(1, 10))] == merge_matches([m1, m2])
+        expected = [LicenseMatch(rule=r1, qspan=Span(1, 3) | Span(14, 20), ispan=Span(1, 10))]
+        results = merge_matches([m1, m2])
+        assert expected == results
+
+    def test_merge_does_not_merge_overlapping_matches_of_same_rules_if_in_sequence_with_gaps_for_long_match(self):
+        r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])
+        r1.length = 20
+        m1 = LicenseMatch(rule=r1, qspan=Span(1, 10), ispan=Span(1, 10))
+        m2 = LicenseMatch(rule=r1, qspan=Span(14, 20), ispan=Span(14, 20))
+
+        expected = [LicenseMatch(rule=r1, qspan=Span(1, 10) | Span(14, 20), ispan=Span(1, 10) | Span(14, 20))]
+        results = merge_matches([m1, m2])
+        assert expected == results
 
     def test_merge_does_not_merge_overlapping_matches_of_same_rules_if_in_not_sequence(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0', 'gpl'])

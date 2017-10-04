@@ -2,7 +2,6 @@ licenses:
     - epl-2.0
     - bsd-new
     - epl-2.0
-    - epl-2.0
     - cpl-1.0
     - cpl-1.0
     - apache-1.1
@@ -16,7 +15,6 @@ licenses:
 license: 
     - epl-2.0
     - bsd-new
-    - epl-2.0
     - epl-2.0
     - cpl-1.0
     - cpl-1.0

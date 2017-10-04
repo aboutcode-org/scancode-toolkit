@@ -27,9 +27,10 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import codecs
+from collections import OrderedDict
 import itertools
-from time import time
 import os
+from time import time
 
 from commoncode.testcase import FileBasedTesting
 
@@ -163,17 +164,23 @@ class TestTokenizers(FileBasedTesting):
         disclaimer'''.split()
         assert expected == result
 
-    def test_rule_and_query_tokenizer_have_the_same_behavior(self):
-        texts = [
-            ('MODULE_LICENSE("Dual BSD/GPL");', ['module', 'license', 'dual', 'bsd', 'gpl']),
-            ('Dual BSD/GPL', ['dual', 'bsd', 'gpl']),
-            ('license=Dual BSD/GPL', ['license', 'dual', 'bsd', 'gpl']),
-            ('license_Dual+BSD-GPL', ['license', 'dual+bsd', 'gpl']),
-        ]
-        for text , expected in texts:
-            assert expected == list(rule_tokenizer(text)) == list(query_tokenizer(text))
+    def test_rule_and_query_tokenizer_have_the_same_behavior1(self):
+        text , expected = 'MODULE_LICENSE("Dual BSD/GPL");', ['module_license', 'dual', 'bsd', 'gpl']
+        assert expected == list(rule_tokenizer(text)) == list(query_tokenizer(text))
 
     def test_rule_and_query_tokenizer_have_the_same_behavior2(self):
+        text , expected = 'Dual BSD/GPL', ['dual', 'bsd', 'gpl']
+        assert expected == list(rule_tokenizer(text)) == list(query_tokenizer(text))
+
+    def test_rule_and_query_tokenizer_have_the_same_behavior3(self):
+        text , expected = 'license=Dual BSD/GPL', ['license', 'dual', 'bsd', 'gpl']
+        assert expected == list(rule_tokenizer(text)) == list(query_tokenizer(text))
+
+    def test_rule_and_query_tokenizer_have_the_same_behavior4(self):
+        text , expected = 'license_Dual+BSD-GPL', ['license_dual+bsd', 'gpl']
+        assert expected == list(rule_tokenizer(text)) == list(query_tokenizer(text))
+
+    def test_rule_and_query_tokenizer_have_the_same_behavior_from_file(self):
         test_file = self.get_test_loc('tokenize/freertos/gpl-2.0-freertos.RULE')
         with codecs.open(test_file, encoding='utf-8') as test:
             text = test.read()
@@ -354,11 +361,22 @@ class TestRuleTokenizer(FileBasedTesting):
         text = u'abcd{{ddd'
         assert [u'abcd', u'ddd'] == list(rule_tokenizer(text))
 
-    def test_rule_tokenizer_can_parse_ill_formed_template(self):
-        tf = self.get_test_loc('tokenize/ill_formed_template/text.txt')
-        with codecs.open(tf, 'rb', encoding='utf-8') as text:
+    def test_rule_tokenizer_can_parse_ill_formed_template_from_file(self):
+        test_file = self.get_test_loc('tokenize/ill_formed_template/text.txt')
+        with codecs.open(test_file, 'rb', encoding='utf-8') as text:
             result = list(rule_tokenizer(text.read()))
-            assert 3875 == len(result)
+        expected_file = self.get_test_loc('tokenize/ill_formed_template/expected.json')
+
+        import json
+        regen = False
+        if regen:
+            with codecs.open(expected_file, 'wb', encoding='utf-8') as ex:
+                json.dump(result, ex, indent=2, separators=(',', ': '))
+
+        with codecs.open(expected_file, encoding='utf-8') as ex:
+            expected = json.load(ex, object_pairs_hook=OrderedDict)
+
+        assert expected == result
 
     def test_rule_tokenizer_handles_combination_of_well_formed_and_ill_formed_templates(self):
         text = u'ab{{c}}d}}ef'

@@ -1,0 +1,7 @@
+licenses:
+    - gpl-2.0
+    - broadcom-linking-unmodified
+    - proprietary
+license_choice: yes
+expression: (gpl-2.0 with broadcom-linking-unmodified) or proprietary
+
