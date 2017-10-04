@@ -1,8 +1,27 @@
 Changelog
 =========
 
-(NEXT)
+2.2.0 (NEXT)
 ------------------
+This is a minor release with several bug fixes, minor new features
+and one minor API changes.
+
+API change:
+ * Licenses data now contains a reference_url attribute instead of a
+   dejacode_url attribute. This defaults to the public DejaCode URL and
+   can be configured with the new --license-url-template command line
+   option. 
+
+Other:
+ * Several new and improved license detection rules have been added.
+   The logic of detection has been refined to handle some rare corner cases.
+   Underscore is treated as part of a license word and the handling of
+   negative and false_positive license rules has been simplified. 
+ * Several issues with dealing with codebase with non-ASCII,
+   non-UTF-decodable file paths and other filesystem encodings-related
+   bug have been fixed.
+ * PHP Composer and RPM packages are now detected with --package
+ * Several bugs are fixed when parsing NPM packages
 
 
 2.1.0 (2017-09-22)

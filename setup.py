@@ -17,7 +17,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-version = '2.1.0'
+version = '2.2.0'
 
 
 #### Small hack to force using a plain version number if the option
