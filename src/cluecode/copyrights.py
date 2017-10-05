@@ -108,7 +108,7 @@ _YEAR_SHORT = (r'('
 ')')
 
 _YEAR_YEAR = (r'('
-              # fixme   v ....the underscore below is suspicious 
+              # fixme   v ....the underscore below is suspicious
     '19[6-9][0-9][\.,\-]_[6-9][0-9]'  # 1960-99
     '|'
     '19[6-9][0-9][\.,\-]+[0-9]'  # 1998-9
@@ -227,7 +227,7 @@ patterns = [
     # note the leading @ .... this may be a source of problems
     (r'.?(@?([Cc]opyright)s?:?|[Cc]opr\.?|[(][Cc][)]|(COPYRIGHT)S?:?)', 'COPY'),
 
-    # copyright in markup, until we strip markup: apache'>Copyright
+    # copyright in markup, until we strip markup: apache'>Copyright or left'>Copyright
     (r'[A-Za-z0-9]+[\'">]+[Cc]opyright', 'COPY'),
 
     # AT&T (the company), needs special handling
@@ -249,6 +249,8 @@ patterns = [
     (r'^([Ll][Ll][CcPp]|[Ll][Tt][Dd])\.?,?$', 'COMP'),
     (r'^([Ll][Ll][CcPp]|[Ll][Tt][Dd])\.$', 'COMP'),
     (r'^L\.P\.$', 'COMP'),
+    (r'^[Ss]ubsidiar(y|ies)$', 'COMP'),
+    (r'^[Ss]ubsidiary\(\-ies\)$', 'COMP'),
     # company suffix : SA, SAS, AG, AB, AS, CO, labs followed by a dot
     (r'^(S\.?A\.?S?|Sas|sas|AG|AB|Labs?|[Cc][Oo]\.|Research|INRIA).?$', 'COMP'),
     # (german) company suffix
@@ -440,6 +442,9 @@ grammar = """
     # the Regents of the University of California
     COMPANY: {<BY>? <NN> <NNP> <OF> <NN> <UNI> <OF> <COMPANY|NAME|NAME2|NAME3><COMP>?}        #130
 
+   # Free Software Foundation, Inc.
+    COMPANY: {<NNP> <NNP> <COMP> <COMP>}       #135
+
    # Corporation/COMP for/NN  National/NNP Research/COMP Initiatives/NNP
     COMPANY: {<COMP> <NN> <NNP> <COMP> <NNP>}       #140
 
@@ -471,7 +476,7 @@ grammar = """
     NAME: {<NNP> <PN>? <NNP>+}        #360
     NAME: {<NNP> <NNP>}        #370
 
-    NAME: {<NNP> <NN> <EMAIL>}        #390
+    NAME: {<NNP> <NN|NNP> <EMAIL>}        #390
     NAME: {<NNP> <PN|VAN>? <PN|VAN>? <NNP>}        #400
     NAME: {<NNP> <NN> <NNP>}        #410
     NAME: {<NNP> <COMMIT>}        #420
@@ -486,7 +491,8 @@ grammar = """
     COMPANY: {<NNP> <IN> <NN>? <COMPANY>}        #510
 
     NAME2: {<NAME> <EMAIL>}        #530
-    NAME3: {<YR-RANGE> <NAME2|COMPANY>+}        #540
+    NAME3: {<YR-RANGE> <NAME2|COMPANY>+}        #535
+    NAME3: {<YR-RANGE> <NAME2|COMPANY>+ <CC> <YR-RANGE>}        #540
     NAME: {<NAME|NAME2>+ <OF> <NNP> <OF> <NN>? <COMPANY>}        #550
     NAME: {<NAME|NAME2>+ <CC|OF>? <NAME|NAME2|COMPANY>}        #560
     NAME3: {<YR-RANGE> <NAME>+}        #570
@@ -576,6 +582,9 @@ grammar = """
 
 # by the a href http wtforms.simplecodes.com WTForms Team
     COMPANY: {<BY> <NN>+ <COMP|COMPANY>}        #1420
+
+# the Regents of the University of California, Sun Microsystems, Inc., Scriptics Corporation
+  COMPANY: {<NN> <NNP> <OF> <NN> <UNI> <OF> <COMPANY>+}
 
 
 # "And" some name
@@ -987,7 +996,7 @@ class CopyrightDetector(object):
         Return a sequence of tuples (copyrights, authors, years, holders)
         detected in a sequence of numbered line tuples.
         """
-        from nltk.tree import Tree 
+        from nltk.tree import Tree
         numbered_lines = list(numbered_lines)
         numbers = [n for n, _l in numbered_lines]
         start_line = min(numbers)
@@ -1104,7 +1113,7 @@ def is_candidate(line):
             if marker in line:
                 logger.debug('is_candidate: %(marker)r in line:\n%(line)r' % locals())
                 return True
-            
+
 
 def has_content(line):
     """
@@ -1306,7 +1315,7 @@ def prepare_text_line(line):
     # un common pipe chars in some ascii art
     line = line.replace('|', ' ')
 
-    # normalize copyright signs and spacing aournd them
+    # normalize copyright signs and spacing around them
     line = line.replace('(C)', ' (c) ')
     line = line.replace('(c)', ' (c) ')
     # the case of \251 is tested by 'weirdencoding.h'
@@ -1336,7 +1345,6 @@ def prepare_text_line(line):
     # some trailing garbage ')
     line = line.replace("')", '  ')
 
-
     # note that we do not replace the debian tag by a space:  we remove it
     # TODO: use POS tag:     (r'^(?:\<s\>).*(?:\<s\\/>)$', 'NAME'),
     line = re_sub(DEBIAN_COPYRIGHT_TAGS_RE(), '', line)
@@ -1360,6 +1368,12 @@ def prepare_text_line(line):
     line = line.replace('\\n', ' ')
     line = line.replace('\\t', ' ')
     line = line.replace('\\0', ' ')
+
+    # in apache'>Copyright replace ">" by "> "
+    line = line.replace('>', '> ')
+    line = line.replace('>  ', '> ')
+    line = line.replace('<', ' <')
+    line = line.replace('  <', ' <')
 
     # TODO: Why?
     # replace contiguous spaces with only one occurrence
