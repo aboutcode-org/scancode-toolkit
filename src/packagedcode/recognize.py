@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -26,16 +26,28 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import logging
+import sys
 
 from commoncode import filetype
-from typecode import contenttype
-
-from packagedcode import PACKAGE_TYPES
 from commoncode.system import on_linux
 from commoncode.fileutils import path_to_bytes
+from packagedcode import PACKAGE_TYPES
+from typecode import contenttype
 
+
+TRACE = False
+
+def logger_debug(*args):
+    pass
 
 logger = logging.getLogger(__name__)
+
+if TRACE:
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
 
 """
@@ -56,24 +68,25 @@ def recognize_package(location):
     mtype = T.mimetype_file
 
 
-    for package in PACKAGE_TYPES:
+    for package_type in PACKAGE_TYPES:
         # Note: default to True if there is nothing to match against
-        metafiles = package.metafiles
+        metafiles = package_type.metafiles
         if on_linux:
             metafiles = (path_to_bytes(m) for m in metafiles)
         if location.endswith(tuple(metafiles)):
-            return package.recognize(location)
+            logger_debug('metafile matching: package_type is of type:', package_type)
+            return package_type.recognize(location)
 
-        if package.filetypes:
-            type_matched = any(t in ftype for t in package.filetypes)
+        if package_type.filetypes:
+            type_matched = any(t in ftype for t in package_type.filetypes)
         else:
             type_matched = False
-        if package.mimetypes:
-            mime_matched = any(m in mtype for m in package.mimetypes)
+        if package_type.mimetypes:
+            mime_matched = any(m in mtype for m in package_type.mimetypes)
         else:
             mime_matched = False
 
-        extensions = package.extensions
+        extensions = package_type.extensions
         if extensions:
             if on_linux:
                 extensions = tuple(path_to_bytes(e) for e in extensions)
@@ -83,4 +96,9 @@ def recognize_package(location):
 
         if type_matched and mime_matched and extension_matched:
             # we return the first match in the order of PACKAGE_TYPES
-            return package(location=location)
+            logger_debug('all matching: package is of type:', package_type)
+            recognized = package_type.recognize(location)
+            logger_debug('all matching: recognized as:', repr(recognized))
+            return recognized
+
+        logger_debug('no match: package is not of known type:', package_type)

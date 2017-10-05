@@ -85,10 +85,10 @@ class TestRecognize(FileBasedTesting):
         package = recognize_package(test_file)
         assert isinstance(package, packagedcode.models.TarPackage)
 
-    def test_recognize_cpan_manifest_is_not_yet_supported(self):
+    def test_recognize_cpan_manifest_as_plain_package(self):
         test_file = self.get_test_loc('cpan/MANIFEST')
         package = recognize_package(test_file)
-        assert not package
+        assert isinstance(package, packagedcode.models.CpanModule)
 
     def test_recognize_maven_dot_pom(self):
         test_file = self.get_test_loc('m2/aspectj/aspectjrt/1.5.3/aspectjrt-1.5.3.pom')
