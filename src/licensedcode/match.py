@@ -23,21 +23,19 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
-from __future__ import print_function
 from __future__ import division
+from __future__ import print_function
 
-from array import array
-from functools import partial
-from functools import total_ordering
-from hashlib import md5
 from itertools import chain
 from itertools import groupby
+from functools import partial
+from functools import total_ordering
 import textwrap
 
-from licensedcode import query
-from licensedcode.spans import Span
 from licensedcode import MAX_DIST
+from licensedcode import query
 from licensedcode import tokenize
+from licensedcode.spans import Span
 
 """
 LicenseMatch data structure and matches merging and filtering routines.
@@ -381,23 +379,6 @@ class LicenseMatch(object):
 
         return False
 
-    def false_positive(self, idx):
-        """
-        Return a True-ish (e.g. a false positive rule id) if the LicenseMatch match
-        is a false positive or None otherwise (nb: not False). This is done by a
-        lookup of the matched tokens sequence against the `idx` index false positive
-        rules.
-        """
-        ilen = self.ilen()
-        if ilen > idx.largest_false_positive_length:
-            return
-        rule_tokens = idx.tids_by_rid[self.rule.rid]
-        ispan = self.ispan
-        matched_itokens = array('h', (tid for ipos, tid in enumerate(rule_tokens) if ipos in ispan))
-        # note: hash computation is inlined here but MUST be the same code as in match_hash
-        matched_hash = md5(matched_itokens.tostring()).digest()
-        return idx.false_positive_rid_by_hash.get(matched_hash)
-
     def matched_text(self, whole_lines=False, 
                      highlight_matched=u'%s', highlight_not_matched=u'[%s]'):
         """
@@ -438,6 +419,8 @@ def merge_matches(matches, max_dist=MAX_DIST):
     returned as-is.
     For being merged two matches must also be in increasing query and index positions.
     """
+    from licensedcode.match_seq import MATCH_SEQ
+
     # shortcut for single matches
     if len(matches) < 2:
         return matches
@@ -453,6 +436,8 @@ def merge_matches(matches, max_dist=MAX_DIST):
     merged = []
     for rid, rule_matches in matches_by_rule:
         if TRACE_MERGE: logger_debug('merge_matches: processing rule:', rid)
+        rlen = rule_matches[0].rule.length
+        max_rlen_dist = min((rlen // 2) or 1, MAX_DIST)
 
         # compare two matches in the sorted sequence: current and next
         i = 0
@@ -464,12 +449,23 @@ def merge_matches(matches, max_dist=MAX_DIST):
                 if TRACE_MERGE: logger_debug('---> merge_matches: current:', current_match)
                 if TRACE_MERGE: logger_debug('---> merge_matches: next:   ', next_match)
 
+                # two exact matches can never be merged as they will not be overlapping
+                # only sequence matches for the same rule can be merged
+                #if current_match.matcher != MATCH_SEQ and next_match.matcher != MATCH_SEQ:
+                #    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: both matches are EXACT_MATCHES, skipping')
+                #    break
+
+                # FIXME: also considers the match length!
                 # stop if we exceed max dist
-                if (current_match.qdistance_to(next_match) > MAX_DIST
-                or current_match.idistance_to(next_match) > MAX_DIST):
+                # or distance over 1/2 of rule length
+                if (current_match.qdistance_to(next_match) > max_rlen_dist
+                or current_match.idistance_to(next_match) > max_rlen_dist):
+                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: MAX_DIST reached, breaking')
                     break
 
+
                 # keep one of equal matches
+                # with same qspan: FIXME: is this ever possible?
                 if current_match.qspan == next_match.qspan and current_match.ispan == next_match.ispan:
                     if TRACE_MERGE: logger_debug('    ---> ###merge_matches: next EQUALS current, del next')
                     del rule_matches[j]
@@ -526,6 +522,8 @@ def merge_matches(matches, max_dist=MAX_DIST):
                         i -= 1
                         break
 
+                # FIXME: what about the distance??
+
                 # next_match is strictly in increasing sequence: merge in current
                 if next_match.is_after(current_match):
                     current_match.update(next_match)
@@ -554,6 +552,9 @@ def merge_matches(matches, max_dist=MAX_DIST):
         merged.extend(rule_matches)
     return merged
 
+
+# FIXME we should consider the length and distance between matches to break
+# early from the loops: trying to check containment on wildly separated matches does not make sense
 
 def filter_contained_matches(matches):
     """
@@ -585,7 +586,7 @@ def filter_contained_matches(matches):
 
     if TRACE_FILTER_CONTAINS: print('filter_contained_matches: number of matches to process:', len(matches))
     if TRACE_FILTER_CONTAINS:
-        print('filter_contained_matches: matches')
+        print('filter_contained_matches: initial matches')
         map(print, matches)
 
     # compare two matches in the sorted sequence: current and next match
@@ -596,13 +597,15 @@ def filter_contained_matches(matches):
         while j < len(matches):
             current_match = matches[i]
             next_match = matches[j]
-
-            # stop when no overlap: Touching and overlapping matches have a zero distance.
-#             if current_match.qdistance_to(next_match):
-#                 break
-
             if TRACE_FILTER_CONTAINS: logger_debug('---> filter_contained_matches: current: i=', i, current_match)
             if TRACE_FILTER_CONTAINS: logger_debug('---> filter_contained_matches: next:    j=', j, next_match)
+
+            # TODO: is this really correct?
+            # stop when no overlap: Touching and overlapping matches have a zero distance.
+            if current_match.qdistance_to(next_match):
+                if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: matches have a distance: NO OVERLAP POSSIBLE -->', 'qdist:', current_match.qdistance_to(next_match))
+                j += 1
+                continue
 
             # equals matches
             if current_match.qspan == next_match.qspan:
@@ -779,9 +782,15 @@ def filter_rule_min_coverage(matches):
     Return a list of matches scoring at or above a rule-defined minimum coverage and
     a list of matches with a coverage below a rule-defined minimum coverage.
     """
+    from licensedcode.match_seq import MATCH_SEQ
+
     kept = []
     discarded = []
     for match in matches:
+        # always keep exact matches
+        if match.matcher != MATCH_SEQ:
+            kept.append(match)
+            continue
         if match.coverage() < match.rule.minimum_coverage:
             if TRACE_REFINE_RULE_MIN_COVERAGE: logger_debug('    ==> DISCARDING rule.minimum_coverage:', type(match.rule.minimum_coverage), ':', repr(match.rule.minimum_coverage), 'match:', match)
             discarded.append(match)
@@ -817,6 +826,7 @@ def filter_spurious_single_token(matches, query=None, unknown_count=5):
     on both sides by at least `unknown_count` tokens of either unknown tokens, short
     tokens composed of a single character or tokens composed only of digits.
     """
+    from licensedcode.match_seq import MATCH_SEQ
     kept = []
     discarded = []
     if not query:
@@ -826,6 +836,10 @@ def filter_spurious_single_token(matches, query=None, unknown_count=5):
     shorts_and_digits = query.shorts_and_digits_pos
     for match in matches:
         if not match.qlen() == 1:
+            kept.append(match)
+            continue
+        # always keep extact matches
+        if match.matcher != MATCH_SEQ:
             kept.append(match)
             continue
 
@@ -864,9 +878,15 @@ def filter_short_matches(matches):
     """
     Return a list of matches that are not short and a list of short spurious matches.
     """
+    from licensedcode.match_seq import MATCH_SEQ
     kept = []
     discarded = []
     for match in matches:
+        # always keep exact matches
+        if match.matcher != MATCH_SEQ:
+            kept.append(match)
+            continue
+
         if match.small():
             if TRACE_REFINE_SMALL: logger_debug('    ==> DISCARDING SHORT:', match)
             discarded.append(match)
@@ -883,10 +903,16 @@ def filter_spurious_matches(matches):
     Spurious matches are small matches with a low density (e.g. where the matched
     tokens are separated by many unmatched tokens.)
     """
+    from licensedcode.match_seq import MATCH_SEQ
     kept = []
     discarded = []
 
     for match in matches:
+        # always keep exact matches
+        if match.matcher != MATCH_SEQ:
+            kept.append(match)
+            continue
+
         qdens = match.qspan.density()
         idens = match.ispan.density()
         ilen = match.ilen()
@@ -904,25 +930,24 @@ def filter_spurious_matches(matches):
     return kept, discarded
 
 
-def filter_false_positive_matches(matches, idx):
+def filter_false_positive_matches(matches):
     """
-    Return a list of matches that are not false positives and a list of false
-    positive matches given an index `idx`.
+    Return a list of matches that are not false positives and a list of
+    false positive matches.
     """
     kept = []
     discarded = []
     for match in matches:
-        fp = match.false_positive(idx)
-        if fp is None:
+        if match.rule.false_positive:
+            if TRACE_REFINE: logger_debug('    ==> DISCARDING FALSE POSITIVE:', match)
+            discarded.append(match)
+        else:
             # if TRACE_REFINE: logger_debug('    ==> NOT DISCARDING FALSE POSITIVE:', match)
             kept.append(match)
-        else:
-            if TRACE_REFINE: logger_debug('    ==> DISCARDING FALSE POSITIVE:', match, 'fp rule:', idx.rules_by_rid[fp].identifier)
-            discarded.append(match)
     return kept, discarded
 
 
-def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST):
+def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST, filter_false_positive=True, merge=True):
     """
     Return two sequences of matches: one contains refined good matches, and the
     other contains matches that were filtered out.
@@ -931,10 +956,14 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST):
     if TRACE: logger_debug(' #####refine_matches: STARTING matches#', len(matches))
     if TRACE_REFINE: map(logger_debug, matches)
 
-    matches = merge_matches(matches, max_dist=max_dist)
-    if TRACE: logger_debug('     ##### refine_matches: STARTING MERGED_matches#:', len(matches))
+    if merge:
+        matches = merge_matches(matches, max_dist=max_dist)
+        if TRACE: logger_debug('     ##### refine_matches: STARTING MERGED_matches#:', len(matches))
 
     all_discarded = []
+
+    # FIXME: we should have only a single loop on all the matches at once!!
+    # and not 10's of loops!!!
 
     matches, discarded = filter_rule_min_coverage(matches)
     all_discarded.extend(discarded)
@@ -957,13 +986,6 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST):
     if TRACE: logger_debug('   #####refine_matches: SHORT discarded#', len(discarded))
     if TRACE_REFINE: map(logger_debug, discarded)
 
-    matches, discarded = filter_false_positive_matches(matches, idx)
-    all_discarded.extend(discarded)
-    if TRACE: logger_debug('   #####refine_matches: NOT FALSE POS #', len(matches))
-    if TRACE_REFINE: map(logger_debug, matches)
-    if TRACE: logger_debug('   #####refine_matches: FALSE POS discarded#', len(discarded))
-    if TRACE_REFINE: map(logger_debug, discarded)
-
     matches, discarded = filter_spurious_matches(matches)
     all_discarded.extend(discarded)
     if TRACE: logger_debug('   #####refine_matches: NOT SPURIOUS#', len(matches))
@@ -982,6 +1004,14 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST):
     if TRACE: logger_debug('   #####refine_matches: FILTERED discarded#', len(discarded))
     if TRACE_REFINE: map(logger_debug, discarded)
 
+    if filter_false_positive:
+        matches, discarded = filter_false_positive_matches(matches)
+        all_discarded.extend(discarded)
+        if TRACE: logger_debug('   #####refine_matches: NOT FALSE POS #', len(matches))
+        if TRACE_REFINE: map(logger_debug, matches)
+        if TRACE: logger_debug('   #####refine_matches: FALSE POS discarded#', len(discarded))
+        if TRACE_REFINE: map(logger_debug, discarded)
+
     if min_score:
         matches, discarded = filter_low_score(matches, min_score=min_score)
         all_discarded.extend(discarded)
@@ -990,7 +1020,8 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST):
         if TRACE: logger_debug('   ###refine_matches: LOW SCORE discarded #:', len(discarded))
         if TRACE_REFINE: map(logger_debug, discarded)
 
-    matches = merge_matches(matches, max_dist=max_dist)
+    if merge:
+        matches = merge_matches(matches, max_dist=max_dist)
 
     logger_debug('   ##### refine_matches: FINAL MERGED_matches#:', len(matches))
     if TRACE_REFINE: map(logger_debug, matches)

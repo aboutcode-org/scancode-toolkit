@@ -1,0 +1,82 @@
+{
+    "name": "integration-hub",
+    "license": "proprietary",
+    "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:somegroup/Symfony3-custom"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        },
+        "classmap": [
+            "app/AppKernel.php",
+            "app/AppCache.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "7.1.*",
+        "symfony/symfony": "3.2.*",
+        "sensio/distribution-bundle": "^5.0",
+        "doctrine/orm": "^2.5",
+        "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/doctrine-cache-bundle": "^1.2",
+        "symfony/swiftmailer-bundle": "^2.3.10",
+        "symfony/monolog-bundle": "^3.0.2",
+        "symfony/polyfill-apcu": "^1.0",
+        "sensio/framework-extra-bundle": "^3.0.2",
+        "incenteev/composer-parameter-handler": "^2.0",
+        "twig/twig": "^1.0||^2.0",
+        "doctrine/doctrine-migrations-bundle": "^1.0",
+        "greenlion/php-sql-parser": "^4.1",
+        "eightpoints/guzzle-bundle": "^5.3",
+        "jms/serializer-bundle": "^1.1",
+        "friendsofsymfony/rest-bundle": "^2.1",
+        "nelmio/api-doc-bundle": "^2.13",
+        "snc/redis-bundle": "^2.0",
+        "predis/predis": "^1.0",
+        "paragonie/halite": "^3.2",
+        "knplabs/knp-paginator-bundle": "^2.5",
+        "egeloen/base64-file-bundle": "^1.0",
+        "liip/imagine-bundle": "^1.7",
+        "sonata-project/admin-bundle": "^3.17",
+        "sonata-project/doctrine-orm-admin-bundle": "^3.1",
+        "doctrine/doctrine-fixtures-bundle": "^2.3",
+        "php-amqplib/rabbitmq-bundle": "^1.12",
+        "mtdowling/cron-expression": "^1.2"
+    },
+    "require-dev": {
+        "sensio/generator-bundle": "^3.0",
+        "symfony/phpunit-bridge": "^3.2"
+    },
+    "scripts": {
+        "symfony-scripts": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ],
+        "post-install-cmd": [
+            "@symfony-scripts"
+        ],
+        "post-update-cmd": [
+            "@symfony-scripts"
+        ]
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-bin-dir": "bin",
+        "symfony-var-dir": "var",
+        "symfony-web-dir": "web",
+        "symfony-tests-dir": "tests",
+        "symfony-assets-install": "relative",
+        "branch-alias": null
+    }
+}

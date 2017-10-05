@@ -17,7 +17,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-version = '2.1.0'
+version = '2.2.0'
 
 
 #### Small hack to force using a plain version number if the option
@@ -143,7 +143,7 @@ setup(
         'bz2file >= 0.98',
 
         # commoncode
-        'backports.os == 0.1rc1',
+        'backports.os == 0.1.1',
         'future >= 0.16.0, < 0.17.0',
         'text-unidecode >= 1.0, < 2.0',
 

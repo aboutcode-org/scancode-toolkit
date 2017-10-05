@@ -51,6 +51,13 @@ from extractcode import ExtractError
 from extractcode import ExtractErrorPasswordProtected
 
 
+# Python 2 and 3 support
+try:
+    from os import fsencode
+except ImportError:
+    from backports.os import fsencode
+
+
 logger = logging.getLogger(__name__)
 DEBUG = False
 # logging.basicConfig(level=logging.DEBUG)
@@ -104,7 +111,7 @@ def load_lib():
     if os.path.exists(libarchive):
         if not isinstance(libarchive, bytes):
             # ensure that the path is not Unicode...
-            libarchive = libarchive.encode(fileutils.FS_ENCODING)
+            libarchive = fsencode(libarchive)
         lib = ctypes.CDLL(libarchive)
         if lib and lib._name:
             return lib

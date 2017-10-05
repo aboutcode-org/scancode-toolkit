@@ -45,6 +45,7 @@ from commoncode import fileutils
 from commoncode import filetype
 
 from typecode import magic2
+from typecode import entropy
 
 """
 Utilities to detect and report the type of a file or path based on its name,
@@ -140,6 +141,7 @@ class Type(object):
         '_is_pdf_with_text',
         '_is_text',
         '_is_binary',
+        '_is_data',
         '_contains_text',
     )
 
@@ -174,6 +176,7 @@ class Type(object):
         self._is_pdf_with_text = None
         self._is_text = None
         self._is_binary = None
+        self._is_data = None
         self._contains_text = None
 
     def __repr__(self):
@@ -255,7 +258,7 @@ class Type(object):
                     self._filetype_pygments = ''
         return self._filetype_pygments
 
-    # FIXME: we way we use tri boolean is a tad ugly
+    # FIXME: we way we use tri booleans is a tad ugly
 
     @property
     def is_binary(self):
@@ -312,6 +315,7 @@ class Type(object):
         """
         Return True if the file is some kind of packaged archive.
         """
+        # FIXME: this should beased on proper package recognition, not this simplistic check
         ft = self.filetype_file.lower()
         loc = self.location.lower()
         if ('debian binary package' in ft
@@ -319,7 +323,7 @@ class Type(object):
          or (ft == 'posix tar archive' and loc.endswith('.gem'))
          or (ft.startswith(('zip archive',)) and loc.endswith(('.jar', '.war', '.ear', '.egg', '.whl',)))
          or (ft.startswith(('java archive',)) and loc.endswith(('.jar', '.war', '.ear', '.zip',)))
-         ):
+        ):
             return True
         else:
             return False
@@ -437,6 +441,33 @@ class Type(object):
         return self._contains_text
 
     @property
+    def is_data(self):
+        """
+        Return True if the file is some kind of data file.
+        """
+        if self._is_data is None:
+            if not self.is_file:
+                self._is_data = False
+
+            large_file = 5 * 1000 * 1000
+            large_text_file = 2 * 1000 * 1000
+
+            ft = self.filetype_file.lower()
+
+            size = self.size
+            max_entropy = 1.3
+
+            if (('data' in ft and size > large_file)
+             or (self.is_text and size > large_text_file)
+             or (self.is_text and size > large_text_file)
+             or (entropy.entropy(self.location, length=5000) < max_entropy)
+            ):
+                self._is_data = True
+            else:
+                self._is_data = False
+        return self._is_data
+
+    @property
     def is_script(self):
         """
         Return True if the file is script-like.
@@ -499,9 +530,10 @@ class Type(object):
     def is_elf(self):
         ft = self.filetype_file.lower()
         if (ft.startswith('elf')
-            and (ELF_EXE in ft
-            or ELF_SHARED in ft
-            or ELF_RELOC in ft)):
+         and (ELF_EXE in ft
+          or ELF_SHARED in ft
+          or ELF_RELOC in ft)
+        ):
             return True
         else:
             return False
@@ -535,9 +567,9 @@ class Type(object):
         if self.is_file is True:
             name = fileutils.file_name(self.location)
             if (fnmatch.fnmatch(name, '*.java')
-                or fnmatch.fnmatch(name, '*.aj')
-                or fnmatch.fnmatch(name, '*.ajt')
-                ):
+             or fnmatch.fnmatch(name, '*.aj')
+             or fnmatch.fnmatch(name, '*.ajt')
+            ):
                 return True
             else:
                 return False

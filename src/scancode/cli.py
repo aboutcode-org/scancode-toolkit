@@ -60,6 +60,7 @@ import plugincode.pre_scan
 
 from scancode import __version__ as version
 
+from scancode.api import DEJACODE_LICENSE_URL
 from scancode.api import _empty_file_infos
 from scancode.api import get_copyrights
 from scancode.api import get_emails
@@ -67,6 +68,7 @@ from scancode.api import get_file_infos
 from scancode.api import get_licenses
 from scancode.api import get_package_infos
 from scancode.api import get_urls
+from scancode.api import Resource
 
 from scancode.cache import get_scans_cache_class
 from scancode.cache import ScanFileCache
@@ -79,7 +81,6 @@ from scancode.interrupt import TimeoutError
 from scancode.utils import BaseCommand
 from scancode.utils import compute_fn_max_len
 from scancode.utils import fixed_width_file_name
-from scancode.utils import get_relative_path
 from scancode.utils import progressmanager
 
 
@@ -362,6 +363,8 @@ def validate_exclusive(ctx, exclusive_options):
               help='Do not return license matches with scores lower than this score. A number between 0 and 100.', group=SCANS, cls=ScanOption)
 @click.option('--license-text', is_flag=True, default=False,
               help='Include the detected licenses matched text. Has no effect unless --license is requested.', group=SCANS, cls=ScanOption)
+@click.option('--license-url-template', is_flag=False, default=DEJACODE_LICENSE_URL, show_default=True,
+              help='Set the template URL used for the license reference URLs. In a template URL, curly braces ({}) are replaced by the license key.', group=SCANS, cls=ScanOption)
 @click.option('--strip-root', is_flag=True, default=False,
               help='Strip the root directory segment of all paths. The default is to always '
                    'include the last directory segment of the scanned path such that all paths have a common root directory. '
@@ -393,7 +396,8 @@ def scancode(ctx,
              input, output_file,
              copyright, license, package,
              email, url, info,
-             license_score, license_text, strip_root, full_root,
+             license_score, license_text, license_url_template,
+             strip_root, full_root,
              format, verbose, quiet, processes,
              diag, timeout, *args, **kwargs):
     """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
@@ -448,7 +452,7 @@ def scancode(ctx,
         if options[key] == False:
             del options[key]
 
-    get_licenses_with_score = partial(get_licenses, min_score=license_score, include_text=license_text, diag=diag)
+    get_licenses_with_score = partial(get_licenses, min_score=license_score, include_text=license_text, diag=diag, license_url_template=license_url_template)
 
     # List of scan functions in the same order as "possible_scans".
     scan_functions = [
@@ -574,7 +578,7 @@ def scan(input_path,
 
     pool = None
 
-    resources = resource_paths(input_path, pre_scan_plugins=pre_scan_plugins)
+    resources = resource_paths(input_path, diag, scans_cache_class, pre_scan_plugins=pre_scan_plugins)
     paths_with_error = []
     files_count = 0
 
@@ -709,14 +713,16 @@ def _get_root_dir(input_path, strip_root=False, full_root=False):
 
     scanned_path = os.path.abspath(os.path.normpath(os.path.expanduser(input_path)))
     scanned_path = fileutils.as_posixpath(scanned_path)
-    if full_root:
-        return scanned_path
-
     if filetype.is_dir(scanned_path):
         root_dir = scanned_path
     else:
         root_dir = fileutils.parent_directory(scanned_path)
-    return fileutils.file_name(root_dir)
+        root_dir = fileutils.as_posixpath(root_dir)
+
+    if full_root:
+        return root_dir
+    else:
+        return fileutils.file_name(root_dir)
 
 
 def _resource_logger(logfile_fd, resources):
@@ -725,26 +731,19 @@ def _resource_logger(logfile_fd, resources):
     yield back the resources.
     """
     file_logger = ScanFileCache.log_file_path
-    for posix_path, rel_path in resources:
-        file_logger(logfile_fd, rel_path)
-        yield posix_path, rel_path
+    for resource in resources:
+        file_logger(logfile_fd, resource.rel_path)
+        yield resource
 
 
-def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, processes=1):
+def _scanit(resource, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, processes=1):
     """
     Run scans and cache results on disk. Return a tuple of (success, scanned relative
     path) where sucess is True on success, False on error. Note that this is really
     only a wrapper function used as an execution unit for parallel processing.
     """
-    abs_path, rel_path = paths
-    # always fetch infos and cache.
-    infos = OrderedDict()
-    infos['path'] = rel_path
-    infos.update(scan_infos(abs_path, diag=diag))
-
     success = True
     scans_cache = scans_cache_class()
-    is_cached = scans_cache.put_info(rel_path, infos)
 
     # note: "flag and function" expressions return the function if flag is True
     # note: the order of the scans matters to show things in logical order
@@ -760,9 +759,9 @@ def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, p
     if any(scanner_functions):
         # Skip other scans if already cached
         # FIXME: ENSURE we only do this for files not directories
-        if not is_cached:
+        if not resource.is_cached:
             # run the scan as an interruptiple task
-            scans_runner = partial(scan_one, abs_path, scanners, diag)
+            scans_runner = partial(scan_one, resource.abs_path, scanners, diag)
             success, scan_result = interrupter(scans_runner, timeout=timeout)
             if not success:
                 # Use scan errors as the scan result for that file on failure this is
@@ -770,13 +769,13 @@ def _scanit(paths, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, p
                 # "scan" key is used for these errors
                 scan_result = {'scan_errors': [scan_result]}
 
-            scans_cache.put_scan(rel_path, infos, scan_result)
+            scans_cache.put_scan(resource.rel_path, resource.get_info(), scan_result)
 
             # do not report success if some other errors happened
             if scan_result.get('scan_errors'):
                 success = False
 
-    return success, rel_path
+    return success, resource.rel_path
 
 
 def build_ignorer(ignores, unignores):
@@ -795,10 +794,10 @@ def build_ignorer(ignores, unignores):
     return partial(ignore.is_ignored, ignores=ignores, unignores=unignores)
 
 
-def resource_paths(base_path, pre_scan_plugins=()):
+def resource_paths(base_path, diag, scans_cache_class, pre_scan_plugins=()):
     """
-    Yield tuples of (absolute path, base_path-relative path) for all the files found
-    at base_path (either a directory or file) given an absolute base_path. Only yield
+    Yield `Resource` objects for all the files found at base_path
+    (either a directory or file) given an absolute base_path. Only yield
     Files, not directories.
     absolute path is a native OS path.
     base_path-relative path is a POSIX path.
@@ -825,11 +824,10 @@ def resource_paths(base_path, pre_scan_plugins=()):
     resources = fileutils.resource_iter(base_path, ignored=ignorer)
 
     for abs_path in resources:
-        posix_path = fileutils.as_posixpath(abs_path)
-        # fix paths: keep the path as relative to the original
-        # base_path. This is always Unicode
-        rel_path = get_relative_path(posix_path, len_base_path, base_is_dir)
-        yield abs_path, rel_path
+        resource = Resource(scans_cache_class, abs_path, base_is_dir, len_base_path)
+        # always fetch infos and cache.
+        resource.put_info(scan_infos(abs_path, diag=diag))
+        yield resource
 
 
 def scan_infos(input_file, diag=False):

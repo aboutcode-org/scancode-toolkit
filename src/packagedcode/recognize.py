@@ -32,7 +32,6 @@ from typecode import contenttype
 
 from packagedcode import PACKAGE_TYPES
 from commoncode.system import on_linux
-from commoncode.fileutils import path_to_unicode
 from commoncode.fileutils import path_to_bytes
 
 
@@ -73,7 +72,6 @@ def recognize_package(location):
             mime_matched = any(m in mtype for m in package.mimetypes)
         else:
             mime_matched = False
-
 
         extensions = package.extensions
         if extensions:

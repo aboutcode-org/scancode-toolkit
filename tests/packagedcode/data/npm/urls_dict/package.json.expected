@@ -1,0 +1,75 @@
+{
+  "type": "npm",
+  "name": "jsonp-filter",
+  "version": "0.0.3",
+  "primary_language": "JavaScript",
+  "packaging": null,
+  "summary": "JSONP filter for express",
+  "description": null,
+  "payload_type": null,
+  "size": null,
+  "release_date": null,
+  "authors": [
+    {
+      "type": "person",
+      "name": "Stephen Veerman",
+      "email": "sveerman@postmedia.com",
+      "url": null
+    }
+  ],
+  "maintainers": [],
+  "contributors": [],
+  "owners": [],
+  "packagers": [],
+  "distributors": [],
+  "vendors": [],
+  "keywords": [
+    "coffeescript",
+    "express",
+    "json",
+    "jsonp"
+  ],
+  "keywords_doc_url": null,
+  "metafile_locations": [
+    "package"
+  ],
+  "metafile_urls": [],
+  "homepage_url": "https://github.com/Postmedia/jsonp-filter",
+  "notes": null,
+  "download_urls": [
+    "https://registry.npmjs.org/jsonp-filter/-/jsonp-filter-0.0.3.tgz"
+  ],
+  "download_sha1": null,
+  "download_sha256": null,
+  "download_md5": null,
+  "bug_tracking_url": null,
+  "support_contacts": [],
+  "code_view_url": null,
+  "vcs_tool": null,
+  "vcs_repository": "git://github.com/Postmedia/jsonp-filter",
+  "vcs_revision": null,
+  "copyright_top_level": null,
+  "copyrights": [],
+  "asserted_licenses": [
+    {
+      "license": "MIT",
+      "url": "https://github.com/Postmedia/jsonp-filter/blob/master/LICENSE",
+      "text": null,
+      "notice": null
+    }
+  ],
+  "legal_file_locations": [],
+  "license_expression": null,
+  "license_texts": [],
+  "notice_texts": [],
+  "dependencies": {
+    "runtime": [
+      {
+        "name": "styout",
+        "version": null,
+        "version_constraint": ">= 0.6.0"
+      }
+    ]
+  },
+  "related_packages": []
+}

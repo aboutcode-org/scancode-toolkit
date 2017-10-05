@@ -1,0 +1,4 @@
+licenses:
+    - gpl-2.0-plus
+notes: MODULE_LICENSE in LKMs. 
+minimum_coverage: 100

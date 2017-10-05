@@ -213,7 +213,7 @@ def create_virtualenv(std_python, root_dir, tpp_dirs, quiet=False):
 
 def activate(root_dir):
     """ Activate a virtualenv in the current process."""
-    print("* Activating...")
+    print("* Activating ...")
     bin_dir = os.path.join(root_dir, 'bin')
     activate_this = os.path.join(bin_dir, 'activate_this.py')
     with open(activate_this) as f:
@@ -365,8 +365,6 @@ if __name__ == '__main__':
             abs_path = os.path.join(root_dir, path)
             if os.path.exists(abs_path):
                 configs.append(path)
-                print('Using configuration directory:\n'
-                      '  %(path)s' % locals())
         else:
             print()
             print('WARNING: Skipping missing Configuration directory:\n'

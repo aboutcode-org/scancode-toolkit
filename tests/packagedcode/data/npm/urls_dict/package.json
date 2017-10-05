@@ -1,0 +1,21 @@
+{
+	"name": "jsonp-filter",
+	"description": "JSONP filter for express",
+	"version": "0.0.3",
+	"homepage": "https://github.com/Postmedia/jsonp-filter",
+	"author": "Stephen Veerman <sveerman@postmedia.com>",
+	"dependencies": {
+		"styout": ">= 0.6.0"
+	},
+	"url": { "web": "https://github.com/Postmedia/jsonp-filter/issues"},
+	"licenses": [
+		{ "type": "MIT", "url": "https://github.com/Postmedia/jsonp-filter/blob/master/LICENSE"}
+	],
+	"keywords": ["coffeescript", "express", "json", "jsonp"],
+	"repository": "git://github.com/Postmedia/jsonp-filter",
+	"main": "./lib/jsonp-filter",
+	"scripts": {
+		"build": "cake build"
+	},
+	"engines": { "node": ">= 0.4.5" }
+}

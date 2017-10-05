@@ -36,6 +36,7 @@ from unittest.case import skipIf
 # from click.testing import CliRunner
 
 from commoncode import fileutils
+from commoncode.fileutils import path_to_bytes
 from commoncode.testcase import FileDrivenTesting
 from commoncode.system import on_linux
 from commoncode.system import on_mac
@@ -47,7 +48,6 @@ from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
 
 from scancode import cli
-from commoncode.fileutils import path_to_bytes
 
 
 test_env = FileDrivenTesting()
@@ -206,7 +206,7 @@ def test_scan_mark_source_without_info(monkeypatch):
     result_file = test_env.get_temp_file('json')
     expected_file = test_env.get_test_loc('mark_source/without_info.expected.json')
 
-    result = run_scan_click(['--mark-source', test_dir, result_file], monkeypatch)
+    _result = run_scan_click(['--mark-source', test_dir, result_file], monkeypatch)
     check_json_scan(expected_file, result_file)
 
 def test_scan_mark_source_with_info(monkeypatch):
@@ -214,7 +214,7 @@ def test_scan_mark_source_with_info(monkeypatch):
     result_file = test_env.get_temp_file('json')
     expected_file = test_env.get_test_loc('mark_source/with_info.expected.json')
 
-    result = run_scan_click(['--info', '--mark-source', test_dir, result_file], monkeypatch)
+    _result = run_scan_click(['--info', '--mark-source', test_dir, result_file], monkeypatch)
     check_json_scan(expected_file, result_file)
 
 def test_scan_only_findings(monkeypatch):
@@ -222,7 +222,7 @@ def test_scan_only_findings(monkeypatch):
     result_file = test_env.get_temp_file('json')
     expected_file = test_env.get_test_loc('only_findings/expected.json')
 
-    result = run_scan_click(['--only-findings', test_dir, result_file], monkeypatch)
+    _result = run_scan_click(['--only-findings', test_dir, result_file], monkeypatch)
     check_json_scan(expected_file, result_file)
 
 
@@ -264,11 +264,32 @@ def test_scan_info_does_collect_infos_with_root():
 
 def test_scan_info_returns_full_root():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
+    result_file = test_env.get_temp_file('json')
+    result = run_scan_click(['--info', '--full-root', test_dir, result_file])
 
-    result = run_scan_click(['--info', '--full-root', test_dir])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    assert fileutils.as_posixpath(test_dir) in result.output
+    result_data = json.loads(open(result_file, 'rb').read())
+    file_paths = [f['path'] for f in result_data['files']]
+    assert 11 == len(file_paths)
+    root = fileutils.as_posixpath(test_dir)
+    assert all(p.startswith(root) for p in file_paths)
+
+
+def test_scan_info_returns_correct_full_root_with_single_file():
+    test_file = test_env.get_test_loc('info/basic.tgz')
+    result_file = test_env.get_temp_file('json')
+    result = run_scan_click(['--info', '--full-root', test_file, result_file])
+
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    result_data = json.loads(open(result_file, 'rb').read())
+    files = result_data['files']
+    # we have a single file
+    assert len(files) == 1
+    scanned_file = files[0]
+    # and we check that the path is the full path without repeating the file name
+    assert fileutils.as_posixpath(test_file) == scanned_file['path']
 
 
 def test_scan_info_license_copyrights():
@@ -279,6 +300,16 @@ def test_scan_info_license_copyrights():
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_json_scan(test_env.get_test_loc('info/all.expected.json'), result_file)
+
+
+def test_scan_license_with_url_template():
+    test_dir = test_env.get_test_loc('license_url', copy=True)
+
+    result = run_scan_click(['--license', '--license-url-template', 'https://example.com/urn:{}', test_dir])
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    assert 'https://example.com/urn:apache-1.0' in result.output
+    assert 'https://example.com/urn:public-domain' in result.output
 
 
 def test_scan_noinfo_license_copyrights_with_root():
@@ -451,11 +482,17 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
     check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True, regen=False)
 
 
+@skipIf(on_windows, 'Python tar cannot extract these files on Windows')
 def test_scan_does_not_fail_when_scanning_unicode_test_files_from_express():
-    test_dir = test_env.get_test_loc(u'unicode_fixtures')
 
-    if on_linux:
-        test_dir = path_to_bytes(test_dir)
+    # On Windows, Python tar cannot extract these files. Other
+    # extractors either fail or change the file name, making the test
+    # moot. Git cannot check these files. So for now it makes no sense
+    # to test this on Windows at all. Extractcode works fine, but does
+    # rename the problematic files.
+
+    test_dir = test_env.extract_test_tar_raw(b'unicode_fixtures.tar.gz')
+    test_dir = path_to_bytes(test_dir)
 
     args = ['-n0', '--info', '--license', '--copyright',
             '--package', '--email', '--url', '--strip-root',
@@ -617,6 +654,17 @@ def test_scan_progress_display_is_not_damaged_with_long_file_names_orig(monkeypa
     expected2 = 'Scanned: 0123456789012345678901234567890123456789.c'
     assert expected1 in result.output
     assert expected2 in result.output
+
+
+def test_scan_does_scan_php_composer():
+    test_file = test_env.get_test_loc('composer/composer.json')
+    expected_file = test_env.get_test_loc('composer/composer.expected.json')
+    result_file = test_env.get_temp_file('results.json')
+
+    result = run_scan_click(['--package', test_file, result_file])
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+    check_json_scan(expected_file, result_file)
 
 
 class TestFixedWidthFilename(TestCase):

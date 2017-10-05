@@ -1,0 +1,125 @@
+{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+  "scancode_options": {
+    "--package": true,
+    "--license-score": 0,
+    "--format": "json"
+  },
+  "files_count": 1,
+  "files": [
+    {
+      "path": "composer/composer.json",
+      "scan_errors": [],
+      "packages": [
+        {
+          "type": "phpcomposer",
+          "name": "laravel/laravel",
+          "version": null,
+          "primary_language": "PHP",
+          "packaging": null,
+          "summary": "The Laravel Framework.",
+          "description": null,
+          "payload_type": null,
+          "size": null,
+          "release_date": null,
+          "authors": [],
+          "maintainers": [],
+          "contributors": [],
+          "owners": [],
+          "packagers": [],
+          "distributors": [],
+          "vendors": [
+            {
+              "type": null,
+              "name": "laravel",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [
+            "framework",
+            "laravel"
+          ],
+          "keywords_doc_url": null,
+          "metafile_locations": [
+            "composer.json"
+          ],
+          "metafile_urls": [],
+          "homepage_url": null,
+          "notes": null,
+          "download_urls": [],
+          "download_sha1": null,
+          "download_sha256": null,
+          "download_md5": null,
+          "bug_tracking_url": null,
+          "support_contacts": [],
+          "code_view_url": null,
+          "vcs_tool": null,
+          "vcs_repository": null,
+          "vcs_revision": null,
+          "copyright_top_level": null,
+          "copyrights": [],
+          "asserted_licenses": [
+            {
+              "license": "MIT",
+              "url": null,
+              "text": null,
+              "notice": null
+            }
+          ],
+          "legal_file_locations": [],
+          "license_expression": null,
+          "license_texts": [],
+          "notice_texts": [],
+          "dependencies": {
+            "development": [
+              {
+                "name": "filp/whoops",
+                "version": null,
+                "version_constraint": "~2.0"
+              },
+              {
+                "name": "fzaninotto/faker",
+                "version": null,
+                "version_constraint": "~1.4"
+              },
+              {
+                "name": "mockery/mockery",
+                "version": null,
+                "version_constraint": "0.9.*"
+              },
+              {
+                "name": "phpunit/phpunit",
+                "version": null,
+                "version_constraint": "~6.0"
+              }
+            ],
+            "runtime": [
+              {
+                "name": "php",
+                "version": null,
+                "version_constraint": ">=7.0.0"
+              },
+              {
+                "name": "fideloper/proxy",
+                "version": null,
+                "version_constraint": "~3.3"
+              },
+              {
+                "name": "laravel/framework",
+                "version": null,
+                "version_constraint": "5.5.*"
+              },
+              {
+                "name": "laravel/tinker",
+                "version": null,
+                "version_constraint": "~1.0"
+              }
+            ]
+          },
+          "related_packages": []
+        }
+      ]
+    }
+  ]
+}
